@@ -1,11 +1,10 @@
 import unittest
-
-from oraclebmi import ConfigFileLoader
+import oraclebmi
 
 class TestConfigFileLoader(unittest.TestCase):
 
     def test_load_default_profile(self):
-        config = ConfigFileLoader.load_config(config_file_location='tests/resources/config')
+        config = oraclebmi.config_file_loader.load_config(file_location='tests/resources/config')
 
         # check some default properties
         self.assertEqual('https://identity.us-az-phoenix-1.OracleIaaS.com/v1', config.endpoint_identity_api)
@@ -18,7 +17,7 @@ class TestConfigFileLoader(unittest.TestCase):
         self.assertEqual(False, config.debugging)
 
     def test_child_profile(self):
-        config = ConfigFileLoader.load_config(config_file_location='tests/resources/config', profile_name='DEBUG')
+        config = oraclebmi.config_file_loader.load_config(file_location='tests/resources/config', profile_name='DEBUG')
 
         # check some default properties
         self.assertEqual('https://identity.us-az-phoenix-1.OracleIaaS.com/v1', config.endpoint_identity_api)
@@ -34,7 +33,7 @@ class TestConfigFileLoader(unittest.TestCase):
 
     def test_invalid_parameter(self):
         # The invalid parameter should be ignored.
-        config = ConfigFileLoader.load_config(config_file_location='tests/resources/config', profile_name='INVALID_PARAMETER')
+        config = oraclebmi.config_file_loader.load_config(file_location='tests/resources/config', profile_name='INVALID_PARAMETER')
 
         # check some default properties
         self.assertEqual('https://identity.us-az-phoenix-1.OracleIaaS.com/v1', config.endpoint_identity_api)
@@ -51,8 +50,16 @@ class TestConfigFileLoader(unittest.TestCase):
         assert(not hasattr(config, 'foo'))
 
     def test_file_not_found(self):
-        with self.assertRaises(Exception):
-            ConfigFileLoader.load_config(config_file_location='blah')
+        with self.assertRaises(oraclebmi.config_file_loader.ConfigFileNotFoundError) as errorContext:
+            oraclebmi.config_file_loader.load_config(file_location='does_not_exist')
+
+        assert('does_not_exist' in errorContext.exception.message)
+
+    def test_profile_not_found(self):
+        with self.assertRaises(oraclebmi.config_file_loader.ProfileNotFoundError) as errorContext:
+            oraclebmi.config_file_loader.load_config(profile_name='does_not_exist')
+
+        assert ('does_not_exist' in errorContext.exception.message)
 
 
 if __name__ == '__main__':

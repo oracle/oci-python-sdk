@@ -1,13 +1,13 @@
 from .config import Config
-from .config_file_loader import ConfigFileLoader
+from . import config_file_loader
 from .signer import Signer
 from .api_client import ApiClient
-import apis
+from . import apis
 
 class Context(object):
 
-    def __init__(self, config_file_location=ConfigFileLoader.DEFAULT_CONFIG_FILE, profile_name=ConfigFileLoader.DEFAULT_PROFILE):
-        self.config = ConfigFileLoader.load_config(config_file_location, profile_name)
+    def __init__(self, config_file_location=config_file_loader.DEFAULT_CONFIG_FILE, profile_name=config_file_loader.DEFAULT_PROFILE):
+        self.config = config_file_loader.load_config(config_file_location, profile_name)
 
         self.signer = Signer(self.config.tenancy, self.config.user, self.config.fingerprint, self.config.key_file)
         self.api_client = ApiClient(self.config, self.signer)

@@ -10,6 +10,7 @@ oraclebmi/models/*
 .DS_Store
 .idea/
 *.pyc
-Oracle_BMI_SDK.egg-info/
+*.egg-info/
 build/
 dist/
+__pycache__/

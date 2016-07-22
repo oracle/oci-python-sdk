@@ -1,3 +1,4 @@
+from . import constants
 
 class Response(object):
 
@@ -10,8 +11,8 @@ class Response(object):
         self._request_id = None
 
         if self._headers != None:
-            self._next_page = self._headers.get('opc-next-page')
-            self._request_id = self._headers.get('opc-request-id')
+            self._next_page = self._headers.get(constants.HEADER_NEXT_PAGE)
+            self._request_id = self._headers.get(constants.HEADER_REQUEST_ID)
 
     @property
     def status(self):
