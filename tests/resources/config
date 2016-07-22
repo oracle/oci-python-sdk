@@ -1,0 +1,27 @@
+# Config for the R2 tenant InternalBrianGustafson
+# Contact brian.gustafson@oracle.com to get a user.
+[DEFAULT]
+user=ocidv1:user:oc1:phx:1460406592659:aaaaaaaawcbqrkycbolrirg2n3xjl5fyxe
+fingerprint=20:3b:97:13:55:1c:5b:0d:d3:37:d8:50:4e:c5:3a:34
+key_file=~/.ssh/id_rsa.pem
+tenancy=ocidv1:tenancy:oc1:phx:1460406592660:aaaaaaaab4faofrfkxecohhjuivjq262pu
+debugging=false
+
+[INVALID_USER]
+user=invaliduser
+
+[INVALID_CREDENTIALS]
+fingerprint=00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
+
+[INVALID_ENDPOINT_PATH]
+endpoint_identity_api=https://identity.us-az-phoenix-1.OracleIaaS.com/invalid
+
+[INVALID_ENDPOINT_HOST]
+endpoint_identity_api=https://identity.us-az-phoenix-999999.OracleIaaS.com/v1
+
+[DEBUG]
+endpoint_compute_api=foo
+debugging=true
+
+[INVALID_PARAMETER]
+foo=bar

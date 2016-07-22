@@ -1,0 +1,15 @@
+target/
+abandoned/
+.classpath
+.project
+.settings
+oraclebmi/apis/*
+oraclebmi/models/*
+!oraclebmi/apis/__init__.py
+!oraclebmi/models/__init__.py
+.DS_Store
+.idea/
+*.pyc
+Oracle_BMI_SDK.egg-info/
+build/
+dist/
