@@ -44,6 +44,7 @@ import threading
 
 from datetime import datetime
 from datetime import date
+from dateutil.parser import parse
 
 # python 2 and python 3 compatibility library
 from six import iteritems
@@ -59,27 +60,29 @@ logger = logging.getLogger(__name__)
 
 class ApiClient(object):
 
+    primitive_type_map = {
+        'int': int,
+        'float': float,
+        'str': str,
+        'bool': bool,
+        'date': date,
+        'datetime': datetime,
+    }
+
     def __init__(self, config, signer):
         self.config = config
         self.signer = signer
 
-        # cert_reqs
         if config.verify_ssl:
             cert_reqs = ssl.CERT_REQUIRED
         else:
             cert_reqs = ssl.CERT_NONE
 
-        # ca_certs
-        if config.ssl_ca_cert:
-            ca_certs = config.ssl_ca_cert
-        else:
-            ca_certs = certifi.where()
-
-        # cert_file
+        ca_certs = config.ssl_ca_cert or certifi.where()
         cert_file = config.cert_file
-
-        # key file
         key_file = config.key_file
+
+        self.type_mappings = self.merge_type_mappings(self.primitive_type_map, models.core_type_mapping, models.identity_type_mapping)
 
         # https pool manager
         self.pool_manager = urllib3.PoolManager(
@@ -89,6 +92,12 @@ class ApiClient(object):
             cert_file=cert_file,
             key_file=key_file
         )
+
+    def merge_type_mappings(self, *dictionaries):
+        merged = {}
+        for dictionary in dictionaries:
+            merged.update(dictionary)
+        return merged
 
     def call_api(self,
                    endpoint,
@@ -267,60 +276,53 @@ class ApiClient(object):
 
         return self.__deserialize(data, response_type)
 
-    def __deserialize(self, data, klass):
+    def __deserialize(self, data, cls):
         """
         Deserializes dict, list, str into an object.
 
         :param data: dict, list or str.
-        :param klass: class literal, or string of class name.
+        :param cls: class literal, or string of class name.
 
         :return: object.
         """
         if data is None:
             return None
 
-        if type(klass) == str:
-            if klass.startswith('list['):
-                sub_kls = re.match('list\[(.*)\]', klass).group(1)
+        if type(cls) == str:
+            if cls.startswith('list['):
+                sub_kls = re.match('list\[(.*)\]', cls).group(1)
                 return [self.__deserialize(sub_data, sub_kls)
                         for sub_data in data]
 
-            if klass.startswith('dict('):
-                sub_kls = re.match('dict\(([^,]*), (.*)\)', klass).group(2)
+            if cls.startswith('dict('):
+                sub_kls = re.match('dict\(([^,]*), (.*)\)', cls).group(2)
                 return {k: self.__deserialize(v, sub_kls)
                         for k, v in iteritems(data)}
 
-            # convert str to class
-            # for native types
-            if klass in ['int', 'float', 'str', 'bool',
-                         "date", 'datetime', "object"]:
-                klass = eval(klass)
-            # for model types
-            else:
-                klass = eval('models.' + klass)
+            cls = self.type_mappings[cls]
 
-        if klass in [int, float, str, bool]:
-            return self.__deserialize_primitive(data, klass)
-        elif klass == object:
+        if cls in [int, float, str, bool]:
+            return self.__deserialize_primitive(data, cls)
+        elif cls == object:
             return data
-        elif klass == date:
+        elif cls == date:
             return self.__deserialize_date(data)
-        elif klass == datetime:
+        elif cls == datetime:
             return self.__deserialize_datatime(data)
         else:
-            return self.__deserialize_model(data, klass)
+            return self.__deserialize_model(data, cls)
 
-    def __deserialize_primitive(self, data, klass):
+    def __deserialize_primitive(self, data, cls):
         """
         Deserializes string to primitive type.
 
         :param data: str.
-        :param klass: class literal.
+        :param cls: class literal.
 
         :return: int, float, str, bool.
         """
         try:
-            value = klass(data)
+            value = cls(data)
         except UnicodeEncodeError:
             value = unicode(data)
         except TypeError:
@@ -335,7 +337,6 @@ class ApiClient(object):
         :return: date.
         """
         try:
-            from dateutil.parser import parse
             return parse(string).date()
         except ImportError:
             return string
@@ -352,22 +353,21 @@ class ApiClient(object):
         :return: datetime.
         """
         try:
-            from dateutil.parser import parse
             return parse(string)
         except ImportError:
             return string
         except ValueError:
             raise Exception("Failed to parse `{0}` into a datetime object".format(string))
 
-    def __deserialize_model(self, data, klass):
+    def __deserialize_model(self, data, cls):
         """
         Deserializes list or dict to model.
 
         :param data: dict, list.
-        :param klass: class literal.
+        :param cls: class literal.
         :return: model object.
         """
-        instance = klass()
+        instance = cls()
 
         for attr, attr_type in iteritems(instance.swagger_types):
             property = instance.attribute_map[attr]

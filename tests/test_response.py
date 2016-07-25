@@ -1,5 +1,4 @@
 import unittest
-
 import oraclebmi
 
 class TestResponse(unittest.TestCase):

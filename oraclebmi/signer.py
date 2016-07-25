@@ -29,6 +29,7 @@ class Signer:
     def __init__(self, tenancy, user, fingerprint, private_key_file_location):
         self.api_key = tenancy + "/" + user + "/" + fingerprint
         self.private_key_file_location = private_key_file_location
+        self._private_key = None
 
     def inject_missing_headers(self, headers, body, sign_body):
         # Inject date if missing
@@ -55,15 +56,11 @@ class Signer:
 
     def sign(self, method, headers, url, path_url, query_params, body):
         verb = method.lower()
-        signer = None
 
-        with open(self.private_key_file_location) as f:
-            private_key = f.read().strip()
-
-            signer = httpsig.sign.HeaderSigner(key_id=self.api_key,
-                                               secret=private_key,
-                                               algorithm="rsa-sha256",
-                                               headers=self.required_headers[verb])
+        signer = httpsig.sign.HeaderSigner(key_id=self.api_key,
+                                           secret=self.private_key,
+                                           algorithm="rsa-sha256",
+                                           headers=self.required_headers[verb])
 
         # Inject body headers for put/post requests, date for all requests
         sign_body = verb in ["put", "post"]
@@ -76,3 +73,10 @@ class Signer:
         signed_headers = signer.sign(headers, method=method, path=path)
 
         return signed_headers
+
+    @property
+    def private_key(self):
+        if self._private_key is None:
+            with open(self.private_key_file_location) as f:
+                self._private_key = f.read().strip()
+        return self._private_key
