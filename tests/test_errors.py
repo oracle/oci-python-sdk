@@ -1,4 +1,4 @@
-from service_test_base import ServiceTestBase
+from tests.service_test_base import ServiceTestBase
 import oraclebmi
 
 class TestErrors(ServiceTestBase):
@@ -7,7 +7,7 @@ class TestErrors(ServiceTestBase):
         with self.assertRaises(oraclebmi.ServiceError) as errorContext:
             self.context.identity_api.list_users('invalid_compartment')
 
-        self.assertEquals(403, errorContext.exception.status)
+        self.assertEqual(403, errorContext.exception.status)
         assert (errorContext.exception.headers != None)
         assert (type(errorContext.exception.data) is oraclebmi.models.Error)
 

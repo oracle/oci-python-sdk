@@ -1,4 +1,4 @@
-from service_test_base import ServiceTestBase
+from tests.service_test_base import ServiceTestBase
 import oraclebmi
 
 class TestPaging(ServiceTestBase):
@@ -24,7 +24,7 @@ class TestPaging(ServiceTestBase):
             # Somethings probably wrong if we go past 30 requests.
             assert(request_number < 30)
 
-            self.assertEquals(200, response.status)
+            self.assertEqual(200, response.status)
 
             self.assertNotEqual(previous_first_ocid, response.data[0].id)
             previous_first_ocid = response.data[0].id

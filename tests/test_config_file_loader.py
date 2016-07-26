@@ -53,13 +53,13 @@ class TestConfigFileLoader(unittest.TestCase):
         with self.assertRaises(oraclebmi.config_file_loader.ConfigFileNotFoundError) as errorContext:
             oraclebmi.config_file_loader.load_config(file_location='does_not_exist')
 
-        assert('does_not_exist' in errorContext.exception.message)
+        assert('does_not_exist' in str(errorContext.exception))
 
     def test_profile_not_found(self):
         with self.assertRaises(oraclebmi.config_file_loader.ProfileNotFoundError) as errorContext:
             oraclebmi.config_file_loader.load_config(profile_name='does_not_exist')
 
-        assert ('does_not_exist' in errorContext.exception.message)
+        assert ('does_not_exist' in str(errorContext.exception))
 
 
 if __name__ == '__main__':

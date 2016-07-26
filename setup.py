@@ -3,10 +3,15 @@
 import sys
 from setuptools import setup, find_packages
 
-NAME = "Oracle BMI SDK"
+NAME = "oraclebmi"
 VERSION = "0.0.1"
 
-REQUIRES = ["certifi >= 2016.2.28", "httpsig >= 1.1.2", "pycrypto >= 2.6.1", "six >= 1.9", "urllib3 >= 1.10", "python-dateutil >= 1.5"]
+REQUIRES = ['certifi',
+            'httpsig >= 1.1.2',
+            'six >= 1.9',
+            'urllib3 >= 1.10',
+            'python-dateutil >= 2.0',
+            'requests >= 2.7.0']
 
 setup(
     name=NAME,

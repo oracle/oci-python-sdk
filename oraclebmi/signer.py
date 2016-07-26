@@ -2,10 +2,8 @@ import base64
 import email.utils
 import hashlib
 import httpsig.requests_auth
-import six
 import json
 import urllib
-from urlparse import urlparse
 
 class Signer:
     """A request signer that can be reused across requests"""
@@ -66,9 +64,9 @@ class Signer:
         sign_body = verb in ["put", "post"]
         self.inject_missing_headers(headers=headers, body=body, sign_body=sign_body)
 
-        path = urlparse(url).path
+        path = urllib.parse.urlparse(url).path
         if query_params:
-            path += "?" + urllib.urlencode(query_params)
+            path += "?" + urllib.parse.urlencode(query_params)
 
         signed_headers = signer.sign(headers, method=method, path=path)
 

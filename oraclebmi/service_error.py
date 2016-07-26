@@ -1,5 +1,5 @@
 
-class ServiceError(StandardError):
+class ServiceError(Exception):
 
     def __init__(self, status, headers, data):
         self.status = status
