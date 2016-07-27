@@ -6,12 +6,13 @@ from setuptools import setup, find_packages
 NAME = "oraclebmi"
 VERSION = "0.0.1"
 
-REQUIRES = ['certifi',
-            'httpsig >= 1.1.2',
-            'six >= 1.9',
-            'urllib3 >= 1.10',
-            'python-dateutil >= 2.0',
-            'requests >= 2.7.0']
+REQUIRES = ['certifi==2016.2.28',
+            'httpsig==1.1.2',
+            'pycrypto==2.6.1',
+            'python-dateutil==2.5.3',
+            'requests==2.10.0',
+            'six==1.10.0',
+            'urllib3==1.16']
 
 setup(
     name=NAME,
