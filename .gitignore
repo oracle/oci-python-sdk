@@ -3,10 +3,6 @@ abandoned/
 .classpath
 .project
 .settings
-oraclebmi/apis/*
-oraclebmi/models/*
-!oraclebmi/apis/__init__.py
-!oraclebmi/models/__init__.py
 .DS_Store
 .idea/
 *.pyc
@@ -14,3 +10,4 @@ oraclebmi/models/*
 build/
 dist/
 __pycache__/
+env/
