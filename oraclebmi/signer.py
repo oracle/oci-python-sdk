@@ -1,14 +1,15 @@
 import base64
 import email.utils
 import hashlib
-import httpsig.requests_auth
-import json
-import urllib
 
-class Signer:
-    """A request signer that can be reused across requests"""
+import httpsig.requests_auth
+import requests
+
+class Signer(requests.auth.AuthBase):
+    """A requests auth instance that can be reused across requests"""
     generic_headers = [
-        "date", "(request-target)"
+        "date",
+        "(request-target)"
     ]
     body_headers = [
         "content-length",
@@ -29,48 +30,31 @@ class Signer:
         self.private_key_file_location = private_key_file_location
         self._private_key = None
 
-    def inject_missing_headers(self, headers, body, sign_body):
-        # Inject date if missing
-        headers.setdefault(
-            "date", email.utils.formatdate(usegmt=True))
+        # Build a httpsig.requests_auth.HTTPSignatureAuth for each
+        # HTTP method's required headers
+        self.signers = {}
+        for method, headers in self.required_headers.items():
+            signer = httpsig.sign.HeaderSigner(
+                key_id=self.api_key, secret=self.private_key,
+                algorithm="rsa-sha256", headers=headers[:])
+            self.signers[method] = signer
 
-        headers.setdefault("content-type", "application/json")
-        headers.setdefault("accept", "*/*")
+    def inject_missing_headers(self, request, sign_body):
+        # Inject date and content-type if missing
+        request.headers.setdefault(
+            "date", email.utils.formatdate(usegmt=True))
+        request.headers.setdefault("content-type", "application/json")
 
         # Requests with a body need to send content-type,
         # content-length, and x-content-sha256
         if sign_body:
-            if body is None:
-                body = ""
-            else:
-                body = json.dumps(body)
-
-            if "x-content-sha256" not in headers:
+            body = request.body or ""
+            if "x-content-sha256" not in request.headers:
                 m = hashlib.sha256(body.encode("utf-8"))
                 base64digest = base64.b64encode(m.digest())
                 base64string = base64digest.decode("utf-8")
-                headers["x-content-sha256"] = base64string
-            headers.setdefault("content-length", len(body))
-
-    def sign(self, method, headers, url, path_url, query_params, body):
-        verb = method.lower()
-
-        signer = httpsig.sign.HeaderSigner(key_id=self.api_key,
-                                           secret=self.private_key,
-                                           algorithm="rsa-sha256",
-                                           headers=self.required_headers[verb])
-
-        # Inject body headers for put/post requests, date for all requests
-        sign_body = verb in ["put", "post"]
-        self.inject_missing_headers(headers=headers, body=body, sign_body=sign_body)
-
-        path = urllib.parse.urlparse(url).path
-        if query_params:
-            path += "?" + urllib.parse.urlencode(query_params)
-
-        signed_headers = signer.sign(headers, method=method, path=path)
-
-        return signed_headers
+                request.headers["x-content-sha256"] = base64string
+            request.headers.setdefault("content-length", len(body))
 
     @property
     def private_key(self):
@@ -78,3 +62,23 @@ class Signer:
             with open(self.private_key_file_location) as f:
                 self._private_key = f.read().strip()
         return self._private_key
+
+    def __call__(self, request):
+        verb = request.method.lower()
+        signer = self.signers.get(verb, (None, None))
+        if signer is None:
+            raise ValueError(
+                "Don't know how to sign request verb {}".format(verb))
+
+        # Inject body headers for put/post requests, date for all requests
+        sign_body = verb in ["put", "post"]
+        self.inject_missing_headers(request, sign_body=sign_body)
+
+        signed_headers = signer.sign(
+            request.headers,
+            method=request.method,
+            path=request.path_url)
+
+        request.headers.update(signed_headers)
+        return request
+

@@ -20,7 +20,5 @@ class Config(object):
         self.endpoint_vcn_service_api = core_endpoint
 
         self.verify_ssl = True
-        self.ssl_ca_cert = None
-        self.cert_file = None
         self.debugging = False
 
