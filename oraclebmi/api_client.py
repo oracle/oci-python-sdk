@@ -34,29 +34,28 @@ import io
 import os
 import re
 import sys
-import urllib
-import urllib3
 import json
 import mimetypes
-import random
-import tempfile
-import threading
+import requests
 
 from datetime import datetime
 from datetime import date
 from dateutil.parser import parse
 
-# python 2 and python 3 compatibility library
-from six import iteritems
-
 try:
     # for python3
-    from urllib.parse import quote
+    from urllib.parse import quote, urlencode
 except ImportError:
     # for python2
     from urllib import quote
 
 logger = logging.getLogger(__name__)
+
+def merge_type_mappings(*dictionaries):
+    merged = {}
+    for dictionary in dictionaries:
+        merged.update(dictionary)
+    return merged
 
 class ApiClient(object):
 
@@ -73,31 +72,15 @@ class ApiClient(object):
         self.config = config
         self.signer = signer
 
-        if config.verify_ssl:
-            cert_reqs = ssl.CERT_REQUIRED
-        else:
-            cert_reqs = ssl.CERT_NONE
+        self.type_mappings = merge_type_mappings(self.primitive_type_map, models.core_type_mapping, models.identity_type_mapping)
+        self._session = None
 
-        ca_certs = config.ssl_ca_cert or certifi.where()
-        cert_file = config.cert_file
-        key_file = config.key_file
-
-        self.type_mappings = self.merge_type_mappings(self.primitive_type_map, models.core_type_mapping, models.identity_type_mapping)
-
-        # https pool manager
-        self.pool_manager = urllib3.PoolManager(
-            num_pools=4,
-            cert_reqs=cert_reqs,
-            ca_certs=ca_certs,
-            cert_file=cert_file,
-            key_file=key_file
-        )
-
-    def merge_type_mappings(self, *dictionaries):
-        merged = {}
-        for dictionary in dictionaries:
-            merged.update(dictionary)
-        return merged
+    @property
+    def session(self):
+        if self._session is None:
+            self._session = requests.Session()
+            self._session.verify = self.config.verify_ssl
+        return self._session
 
     def call_api(self,
                    endpoint,
@@ -130,7 +113,7 @@ class ApiClient(object):
 
         if path_params:
             path_params = self.sanitize_for_serialization(path_params)
-            for k, v in iteritems(path_params):
+            for k, v in path_params.items():
                 replacement = quote(str(self.to_path_value(v)))
                 resource_path = resource_path.\
                     replace('{' + k + '}', replacement)
@@ -138,68 +121,36 @@ class ApiClient(object):
         if query_params:
             query_params = self.sanitize_for_serialization(query_params)
             query_params = {k: self.to_path_value(v)
-                            for k, v in iteritems(query_params)}
+                            for k, v in query_params.items()}
 
         if body:
             body = self.sanitize_for_serialization(body)
 
         url = endpoint + resource_path
 
-        if (self.signer is not None):
-            header_params = self.signer.sign(method=method, headers=header_params, url=url, path_url=endpoint, query_params=query_params, body=body)
+        response = self.session.request(method,
+                                 url,
+                                 auth=self.signer,
+                                 params=query_params,
+                                 headers=header_params,
+                                 data=json.dumps(body))
 
-        raw_response = self.request(method, url, query_params=query_params, headers=header_params, body=body)
-
-        is_error = raw_response.status not in range(200, 299)
+        is_error = response.status_code not in range(200, 299)
         if is_error:
             response_type = 'Error'
 
         # deserialize response data
         if response_type:
-            deserialized_data = self.deserialize_response_data(raw_response.data, response_type)
+            deserialized_data = self.deserialize_response_data(response.content, response_type)
         else:
             deserialized_data = None
 
-        header_dict = {}
-        if raw_response.getheaders() != None:
-            header_dict = {k: v for k, v in raw_response.getheaders().items()}
-
         if is_error:
-            raise ServiceError(raw_response.status, header_dict, deserialized_data)
+            raise ServiceError(response.status_code, response.headers, deserialized_data)
 
-        return Response(raw_response.status, header_dict, deserialized_data)
+        logger.debug("Response body: %s" % str(deserialized_data))
 
-    def request(self, method, url, query_params=None, headers=None, body=None):
-        """
-        :param method: http request method
-        :param url: http request url
-        :param query_params: query parameters in the url
-        :param headers: http request headers
-        :param body: request json body, for `application/json`
-        """
-
-        method = method.upper()
-        headers = headers or {}
-
-        if method in ['POST', 'PUT', 'PATCH', 'OPTIONS']:
-            if query_params:
-                url += '?' + urlencode(query_params)
-
-            # Only content-type application/json is supported.
-            r = self.pool_manager.request(method, url,
-                                          body=json.dumps(body),
-                                          headers=headers)
-
-        # For `GET`, `HEAD`, `DELETE`
-        else:
-            r = self.pool_manager.request(method, url,
-                                          fields=query_params,
-                                          headers=headers)
-
-        # log response body
-        logger.debug("response body: %s" % r.data)
-
-        return r
+        return Response(response.status_code, response.headers, deserialized_data)
 
     def to_path_value(self, obj):
         """
@@ -247,11 +198,11 @@ class ApiClient(object):
                 obj_dict = obj
             else:
                 obj_dict = {obj.attribute_map[attr]: getattr(obj, attr)
-                            for attr, _ in iteritems(obj.swagger_types)
+                            for attr, _ in obj.swagger_types.items()
                             if getattr(obj, attr) is not None}
 
             return {key: self.sanitize_for_serialization(val)
-                    for key, val in iteritems(obj_dict)}
+                    for key, val in obj_dict.items()}
 
     def deserialize_response_data(self, response_data, response_type):
         """
@@ -297,7 +248,7 @@ class ApiClient(object):
             if cls.startswith('dict('):
                 sub_kls = re.match('dict\(([^,]*), (.*)\)', cls).group(2)
                 return {k: self.__deserialize(v, sub_kls)
-                        for k, v in iteritems(data)}
+                        for k, v in data.items()}
 
             cls = self.type_mappings[cls]
 
@@ -369,7 +320,7 @@ class ApiClient(object):
         """
         instance = cls()
 
-        for attr, attr_type in iteritems(instance.swagger_types):
+        for attr, attr_type in instance.swagger_types.items():
             property = instance.attribute_map[attr]
             if property in data:
                 value = data[property]
