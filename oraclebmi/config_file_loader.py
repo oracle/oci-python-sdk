@@ -2,6 +2,7 @@ import configparser
 import logging
 import os.path
 from .config import Config
+from . import exceptions
 
 logger = logging.getLogger(__name__)
 
@@ -9,18 +10,12 @@ DEFAULT_PROFILE = configparser.DEFAULTSECT
 
 DEFAULT_CONFIG_FILE = '~/.oraclebmi/config'
 
-class ConfigFileNotFoundError(Exception):
-    """Config file not be found."""
-
-class ProfileNotFoundError(Exception):
-    """The specified profile was not found in the config file."""
-
 def load_config(file_location=DEFAULT_CONFIG_FILE, profile_name=DEFAULT_PROFILE):
     file_location = os.path.expanduser(file_location)
 
     parser = configparser.RawConfigParser()
     if len(parser.read(file_location)) != 1:
-        raise ConfigFileNotFoundError('Could not find config file at ' + file_location)
+        raise exceptions.ConfigFileNotFoundError('Could not find config file at ' + file_location)
 
     config = Config()
 
@@ -31,7 +26,7 @@ def load_config(file_location=DEFAULT_CONFIG_FILE, profile_name=DEFAULT_PROFILE)
         try:
             parameters = parser.options(profile_name)
         except configparser.NoSectionError:
-            raise ProfileNotFoundError("Profile '{}' not found".format(profile_name))
+            raise exceptions.ProfileNotFoundError("Profile '{}' not found".format(profile_name))
 
 
     for param in parameters:

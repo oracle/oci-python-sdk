@@ -25,7 +25,8 @@ from __future__ import absolute_import
 
 from . import models
 from .response import Response
-from .service_error import ServiceError
+from . import exceptions
+from .request import Request
 
 import logging
 import ssl
@@ -48,8 +49,6 @@ try:
 except ImportError:
     # for python2
     from urllib import quote
-
-logger = logging.getLogger(__name__)
 
 def merge_type_mappings(*dictionaries):
     merged = {}
@@ -74,6 +73,12 @@ class ApiClient(object):
 
         self.type_mappings = merge_type_mappings(self.primitive_type_map, models.core_type_mapping, models.identity_type_mapping)
         self._session = None
+
+        self.logger = logging.getLogger("%s.%s" % (__name__, str(id(self))))
+
+        if self.config.debugging:
+            self.logger.addHandler(logging.StreamHandler())
+            self.logger.setLevel(logging.DEBUG)
 
     @property
     def session(self):
@@ -129,13 +134,26 @@ class ApiClient(object):
 
         url = endpoint + resource_path
 
-        response = self.session.request(method,
-                                 url,
-                                 auth=self.signer,
-                                 params=query_params,
-                                 headers=header_params,
-                                 data=body)
+        request = Request(method=method,
+                          url=url,
+                          query_params=query_params,
+                          header_params=header_params,
+                          body=body,
+                          response_type=response_type)
 
+        return self.request(request)
+
+    def request(self, request):
+        self.logger.info("Request: %s %s" % (str(request.method), request.url))
+
+        response = self.session.request(request.method,
+                                        request.url,
+                                        auth=self.signer,
+                                        params=request.query_params,
+                                        headers=request.header_params,
+                                        data=request.body)
+
+        response_type = request.response_type
         is_error = response.status_code not in range(200, 299)
         if is_error:
             response_type = 'Error'
@@ -147,11 +165,11 @@ class ApiClient(object):
             deserialized_data = None
 
         if is_error:
-            raise ServiceError(response.status_code, response.headers, deserialized_data)
+            raise exceptions.ServiceError(response.status_code, response.headers, deserialized_data)
 
-        logger.debug("Response body: %s" % str(deserialized_data))
+        self.logger.info("Response status: %s" % str(response.status_code))
 
-        return Response(response.status_code, response.headers, deserialized_data)
+        return Response(response.status_code, response.headers, deserialized_data, request)
 
     def to_path_value(self, obj):
         """

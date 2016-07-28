@@ -2,10 +2,11 @@ from . import constants
 
 class Response(object):
 
-    def __init__(self, status, headers, data):
+    def __init__(self, status, headers, data, request):
         self._status = status
         self._headers = headers
         self._data = data
+        self._request = request
 
         self._next_page = None
         self._request_id = None
@@ -25,6 +26,10 @@ class Response(object):
     @property
     def data(self):
         return self._data
+
+    @property
+    def request(self):
+        return self._request
 
     @property
     def next_page(self):

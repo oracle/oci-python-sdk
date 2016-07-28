@@ -82,7 +82,7 @@
       <plugin>
         <groupId>com.oracle.pic.commons.maven</groupId>
         <artifactId>oracle-swagger-maven-plugin</artifactId>
-        <version>0.2.3-SNAPSHOT</version>
+        <version>0.2.4-SNAPSHOT</version>
         <executions>
           <execution>
             <id>python-public-sdk-identity</id>

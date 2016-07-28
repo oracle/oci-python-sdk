@@ -20,7 +20,6 @@ endpoint_identity_api=https://identity.us-az-phoenix-1.OracleIaaS.com/invalid
 endpoint_identity_api=https://identity.us-az-phoenix-999999.OracleIaaS.com/v1
 
 [DEBUG]
-endpoint_compute_api=foo
 debugging=true
 
 [INVALID_PARAMETER]
