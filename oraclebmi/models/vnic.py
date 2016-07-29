@@ -31,6 +31,7 @@ class Vnic(object):
         """
         Vnic - a model defined in Swagger
         """
+
         self.swagger_types = {
             'availability_domain': 'str',
             'compartment_id': 'str',
@@ -64,6 +65,7 @@ class Vnic(object):
         self._state = None
         self._subnet_id = None
         self._time_created = None
+
 
     @property
     def availability_domain(self):
@@ -311,6 +313,9 @@ class Vnic(object):
         """
         Returns true if objects are equal
         """
+        if other is None:
+            return False
+
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):

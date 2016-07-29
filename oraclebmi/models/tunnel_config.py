@@ -31,6 +31,7 @@ class TunnelConfig(object):
         """
         TunnelConfig - a model defined in Swagger
         """
+
         self.swagger_types = {
             'ip_address': 'str',
             'shared_secret': 'str',
@@ -46,6 +47,7 @@ class TunnelConfig(object):
         self._ip_address = None
         self._shared_secret = None
         self._time_created = None
+
 
     @property
     def ip_address(self):
@@ -155,6 +157,9 @@ class TunnelConfig(object):
         """
         Returns true if objects are equal
         """
+        if other is None:
+            return False
+
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):

@@ -31,6 +31,7 @@ class TunnelStatus(object):
         """
         TunnelStatus - a model defined in Swagger
         """
+
         self.swagger_types = {
             'ip_address': 'str',
             'state': 'str',
@@ -49,6 +50,7 @@ class TunnelStatus(object):
         self._state = None
         self._time_created = None
         self._time_state_modified = None
+
 
     @property
     def ip_address(self):
@@ -186,6 +188,9 @@ class TunnelStatus(object):
         """
         Returns true if objects are equal
         """
+        if other is None:
+            return False
+
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):

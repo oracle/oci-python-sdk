@@ -271,6 +271,11 @@ class ApiClient(object):
 
             cls = self.type_mappings[cls]
 
+            if hasattr(cls, 'get_subtype'):
+                # Use the discriminator value to get the correct subtype.
+                cls = cls.get_subtype(data)
+                cls = self.type_mappings[cls]
+
         if cls in [int, float, str, bool]:
             return self.__deserialize_primitive(data, cls)
         elif cls == object:

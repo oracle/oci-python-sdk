@@ -31,6 +31,7 @@ class DrgAttachment(object):
         """
         DrgAttachment - a model defined in Swagger
         """
+
         self.swagger_types = {
             'compartment_id': 'str',
             'display_name': 'str',
@@ -58,6 +59,7 @@ class DrgAttachment(object):
         self._state = None
         self._time_created = None
         self._vcn_id = None
+
 
     @property
     def compartment_id(self):
@@ -261,6 +263,9 @@ class DrgAttachment(object):
         """
         Returns true if objects are equal
         """
+        if other is None:
+            return False
+
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):

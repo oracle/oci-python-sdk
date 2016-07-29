@@ -31,6 +31,7 @@ class AvailabilityDomain(object):
         """
         AvailabilityDomain - a model defined in Swagger
         """
+
         self.swagger_types = {
             'name': 'str',
             'compartment_id': 'str'
@@ -43,6 +44,7 @@ class AvailabilityDomain(object):
 
         self._name = None
         self._compartment_id = None
+
 
     @property
     def name(self):
@@ -130,6 +132,9 @@ class AvailabilityDomain(object):
         """
         Returns true if objects are equal
         """
+        if other is None:
+            return False
+
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):

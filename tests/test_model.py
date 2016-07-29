@@ -32,6 +32,14 @@ class TestModel(unittest.TestCase):
 
         assert (instance1 != instance2)
 
+    def test_equal_none(self):
+        instance1 = self.create_instance()
+        instance2 = None
+
+        assert (instance1 != instance2)
+        assert (instance2 != instance1)
+        assert (not (instance1 == instance2))
+
     def test_to_string(self):
         instance = self.create_instance()
 
@@ -54,6 +62,23 @@ class TestModel(unittest.TestCase):
         self.assertEqual('some shape', dict['shape'])
         self.assertEqual('RUNNING', dict['state'])
         self.assertEqual(datetime.date(1999, 12, 31), dict['time_created'])
+
+    def test_subclass(self):
+        volume_attachment = oraclebmi.models.IScsiVolumeAttachment()
+        self.assertEqual('iscsi', volume_attachment.attachment_type)
+        assert(hasattr(volume_attachment, 'chap_username'))
+        assert (hasattr(volume_attachment, 'availability_domain'))
+
+        volume_attachment.chap_secret = 'foo'
+        volume_attachment.compartment_id = 'bar'
+
+        self.assertEqual('foo', volume_attachment.chap_secret)
+        self.assertEqual('bar', volume_attachment.compartment_id)
+
+        dict = volume_attachment.to_dict()
+
+        self.assertEqual('foo', dict['chap_secret'])
+        self.assertEqual('bar', dict['compartment_id'])
 
     def create_instance(self):
         instance = oraclebmi.models.Instance()

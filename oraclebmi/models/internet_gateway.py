@@ -31,6 +31,7 @@ class InternetGateway(object):
         """
         InternetGateway - a model defined in Swagger
         """
+
         self.swagger_types = {
             'compartment_id': 'str',
             'display_name': 'str',
@@ -58,6 +59,7 @@ class InternetGateway(object):
         self._modified_time = None
         self._state = None
         self._time_created = None
+
 
     @property
     def compartment_id(self):
@@ -261,6 +263,9 @@ class InternetGateway(object):
         """
         Returns true if objects are equal
         """
+        if other is None:
+            return False
+
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):

@@ -31,6 +31,7 @@ class RouteRule(object):
         """
         RouteRule - a model defined in Swagger
         """
+
         self.swagger_types = {
             'cidr_block': 'str',
             'display_name': 'str',
@@ -52,6 +53,7 @@ class RouteRule(object):
         self._network_entity_id = None
         self._network_entity_type = None
         self._time_created = None
+
 
     @property
     def cidr_block(self):
@@ -211,6 +213,9 @@ class RouteRule(object):
         """
         Returns true if objects are equal
         """
+        if other is None:
+            return False
+
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):

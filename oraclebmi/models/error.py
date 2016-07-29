@@ -31,6 +31,7 @@ class Error(object):
         """
         Error - a model defined in Swagger
         """
+
         self.swagger_types = {
             'code': 'str',
             'message': 'str'
@@ -43,6 +44,7 @@ class Error(object):
 
         self._code = None
         self._message = None
+
 
     @property
     def code(self):
@@ -130,6 +132,9 @@ class Error(object):
         """
         Returns true if objects are equal
         """
+        if other is None:
+            return False
+
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):

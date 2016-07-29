@@ -31,6 +31,7 @@ class VolumeAttachment(object):
         """
         VolumeAttachment - a model defined in Swagger
         """
+
         self.swagger_types = {
             'attachment_type': 'str',
             'availability_domain': 'str',
@@ -64,6 +65,19 @@ class VolumeAttachment(object):
         self._state = None
         self._time_created = None
         self._volume_id = None
+
+    @staticmethod
+    def get_subtype(object_dictionary):
+        """
+        Given the hash representation of a subtype of this class,
+        use the info in the hash to return the class of the subtype.
+        """
+        type = object_dictionary['attachmentType']
+
+        if type == 'iscsi':
+               return 'IScsiVolumeAttachment'
+
+        raise ValueError('Could not resolve subtype type based on the object dictionary.')
 
     @property
     def attachment_type(self):
@@ -311,6 +325,9 @@ class VolumeAttachment(object):
         """
         Returns true if objects are equal
         """
+        if other is None:
+            return False
+
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):

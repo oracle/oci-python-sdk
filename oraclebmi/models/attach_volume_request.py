@@ -31,6 +31,7 @@ class AttachVolumeRequest(object):
         """
         AttachVolumeRequest - a model defined in Swagger
         """
+
         self.swagger_types = {
             'compartment_id': 'str',
             'instance_id': 'str',
@@ -49,6 +50,19 @@ class AttachVolumeRequest(object):
         self._instance_id = None
         self._type = None
         self._volume_id = None
+
+    @staticmethod
+    def get_subtype(object_dictionary):
+        """
+        Given the hash representation of a subtype of this class,
+        use the info in the hash to return the class of the subtype.
+        """
+        type = object_dictionary['type']
+
+        if type == 'iscsi':
+               return 'AttachIScsiVolumeRequest'
+
+        raise ValueError('Could not resolve subtype type based on the object dictionary.')
 
     @property
     def compartment_id(self):
@@ -180,6 +194,9 @@ class AttachVolumeRequest(object):
         """
         Returns true if objects are equal
         """
+        if other is None:
+            return False
+
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):

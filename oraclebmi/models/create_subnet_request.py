@@ -31,6 +31,7 @@ class CreateSubnetRequest(object):
         """
         CreateSubnetRequest - a model defined in Swagger
         """
+
         self.swagger_types = {
             'availability_domain': 'str',
             'cidr_block': 'str',
@@ -55,6 +56,7 @@ class CreateSubnetRequest(object):
         self._display_name = None
         self._route_table_id = None
         self._vcn_id = None
+
 
     @property
     def availability_domain(self):
@@ -230,6 +232,9 @@ class CreateSubnetRequest(object):
         """
         Returns true if objects are equal
         """
+        if other is None:
+            return False
+
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):

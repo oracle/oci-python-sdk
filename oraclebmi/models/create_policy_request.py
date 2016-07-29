@@ -31,6 +31,7 @@ class CreatePolicyRequest(object):
         """
         CreatePolicyRequest - a model defined in Swagger
         """
+
         self.swagger_types = {
             'compartment_id': 'str',
             'name': 'str',
@@ -49,6 +50,7 @@ class CreatePolicyRequest(object):
         self._name = None
         self._statements = None
         self._description = None
+
 
     @property
     def compartment_id(self):
@@ -180,6 +182,9 @@ class CreatePolicyRequest(object):
         """
         Returns true if objects are equal
         """
+        if other is None:
+            return False
+
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):

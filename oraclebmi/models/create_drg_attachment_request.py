@@ -31,6 +31,7 @@ class CreateDrgAttachmentRequest(object):
         """
         CreateDrgAttachmentRequest - a model defined in Swagger
         """
+
         self.swagger_types = {
             'display_name': 'str',
             'drg_id': 'str',
@@ -46,6 +47,7 @@ class CreateDrgAttachmentRequest(object):
         self._display_name = None
         self._drg_id = None
         self._vcn_id = None
+
 
     @property
     def display_name(self):
@@ -155,6 +157,9 @@ class CreateDrgAttachmentRequest(object):
         """
         Returns true if objects are equal
         """
+        if other is None:
+            return False
+
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):

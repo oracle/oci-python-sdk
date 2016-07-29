@@ -31,6 +31,7 @@ class CreateCpeRequest(object):
         """
         CreateCpeRequest - a model defined in Swagger
         """
+
         self.swagger_types = {
             'compartment_id': 'str',
             'display_name': 'str',
@@ -46,6 +47,7 @@ class CreateCpeRequest(object):
         self._compartment_id = None
         self._display_name = None
         self._ip_address = None
+
 
     @property
     def compartment_id(self):
@@ -155,6 +157,9 @@ class CreateCpeRequest(object):
         """
         Returns true if objects are equal
         """
+        if other is None:
+            return False
+
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):

@@ -31,6 +31,7 @@ class IPSecConnectionDeviceStatus(object):
         """
         IPSecConnectionDeviceStatus - a model defined in Swagger
         """
+
         self.swagger_types = {
             'compartment_id': 'str',
             'id': 'str',
@@ -49,6 +50,7 @@ class IPSecConnectionDeviceStatus(object):
         self._id = None
         self._time_created = None
         self._tunnels = None
+
 
     @property
     def compartment_id(self):
@@ -180,6 +182,9 @@ class IPSecConnectionDeviceStatus(object):
         """
         Returns true if objects are equal
         """
+        if other is None:
+            return False
+
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):

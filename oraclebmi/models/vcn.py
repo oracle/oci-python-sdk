@@ -31,6 +31,7 @@ class Vcn(object):
         """
         Vcn - a model defined in Swagger
         """
+
         self.swagger_types = {
             'cidr_block': 'str',
             'compartment_id': 'str',
@@ -58,6 +59,7 @@ class Vcn(object):
         self._id = None
         self._state = None
         self._time_created = None
+
 
     @property
     def cidr_block(self):
@@ -261,6 +263,9 @@ class Vcn(object):
         """
         Returns true if objects are equal
         """
+        if other is None:
+            return False
+
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):

@@ -31,6 +31,7 @@ class UIPassword(object):
         """
         UIPassword - a model defined in Swagger
         """
+
         self.swagger_types = {
             'password': 'str',
             'user_id': 'str',
@@ -52,6 +53,7 @@ class UIPassword(object):
         self._time_created = None
         self._time_modified = None
         self._state = None
+
 
     @property
     def password(self):
@@ -205,6 +207,9 @@ class UIPassword(object):
         """
         Returns true if objects are equal
         """
+        if other is None:
+            return False
+
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):
