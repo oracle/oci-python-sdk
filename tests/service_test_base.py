@@ -10,6 +10,6 @@ class ServiceTestBase(unittest.TestCase):
         # two different working directories, depending on where the test is run.
         try:
             return oraclebmi.Context(config_file_location='tests/resources/config', profile_name=profile_name)
-        except oraclebmi.config_file_loader.ConfigFileNotFoundError:
+        except oraclebmi.exceptions.ConfigFileNotFound:
             return oraclebmi.Context(config_file_location='resources/config', profile_name=profile_name)
 
