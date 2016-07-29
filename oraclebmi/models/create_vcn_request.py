@@ -31,6 +31,7 @@ class CreateVcnRequest(object):
         """
         CreateVcnRequest - a model defined in Swagger
         """
+
         self.swagger_types = {
             'cidr_block': 'str',
             'compartment_id': 'str',
@@ -46,6 +47,7 @@ class CreateVcnRequest(object):
         self._cidr_block = None
         self._compartment_id = None
         self._display_name = None
+
 
     @property
     def cidr_block(self):
@@ -155,6 +157,9 @@ class CreateVcnRequest(object):
         """
         Returns true if objects are equal
         """
+        if other is None:
+            return False
+
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):

@@ -36,10 +36,12 @@ class TestLaunchInstanceTutorial(ServiceTestBase):
             self.launch_instance()
             self.get_public_ip_address()
             self.create_volume()
+            self.attach_volume()
         except Exception as e:
             print('Exception during creation phase: ' + e)
             raise
         finally:
+            self.detach_volume()
             self.delete_volume()
             self.terminate_instance()
             self.delete_subnet()
@@ -70,7 +72,7 @@ class TestLaunchInstanceTutorial(ServiceTestBase):
             response = self.context.vcn_service_api.delete_vcn(self.vcn.id)
             self.assertEqual(204, response.status)
 
-            with self.assertRaises(oraclebmi.ServiceError) as errorContext:
+            with self.assertRaises(oraclebmi.exceptions.ServiceError) as errorContext:
                 response = self.context.vcn_service_api.get_vcn(self.vcn.id)
                 self.context.wait_until(response, 'state', 'TERMINATED', max_wait_seconds=180)
 
@@ -100,7 +102,7 @@ class TestLaunchInstanceTutorial(ServiceTestBase):
             response = self.context.vcn_service_api.delete_subnet(self.subnet.id)
             self.assertEqual(204, response.status)
 
-            with self.assertRaises(oraclebmi.ServiceError) as errorContext:
+            with self.assertRaises(oraclebmi.exceptions.ServiceError) as errorContext:
                 response = self.context.vcn_service_api.get_subnet(self.subnet.id)
                 self.context.wait_until(response, 'state', 'TERMINATED')
 
@@ -211,8 +213,7 @@ class TestLaunchInstanceTutorial(ServiceTestBase):
 
         self.vnic_attachment = next((va for va in response.data if va.instance_id == self.instance.id), None)
 
-        # TODO: add this check back in once checking against None is fixed.
-        #assert(self.vnic_attachment != None)
+        assert(self.vnic_attachment != None)
 
         # Just get the address for the first vnic attachment.
         response = self.context.vcn_ad_service_api.get_vnic(self.vnic_attachment.vnic_id)
@@ -223,6 +224,32 @@ class TestLaunchInstanceTutorial(ServiceTestBase):
         assert(self.vnic.public_ip != None)
 
         print('Public IP Address: ' + self.vnic.public_ip)
+
+
+    def attach_volume(self):
+        print('Attaching volume')
+        request = oraclebmi.models.AttachIScsiVolumeRequest()
+        request.compartment_id = self.compartment
+        request.instance_id = self.instance.id
+        request.volume_id = self.volume.id
+        response = self.context.compute_api.attach_volume(request)
+
+        self.volume_attachment = response.data
+        self.assertEqual(200, response.status)
+        assert (type(self.volume_attachment) is oraclebmi.models.IScsiVolumeAttachment)
+
+        response = self.context.compute_api.get_volume_attachment(self.volume_attachment.id)
+        self.context.wait_until(response, 'state', 'ATTACHED')
+
+
+    def detach_volume(self):
+        if hasattr(self, 'volume'):
+            print('Detaching volume')
+            response = self.context.compute_api.detach_volume(self.volume_attachment.id)
+            self.assertEqual(204, response.status)
+
+            response = self.context.compute_api.get_volume_attachment(self.volume_attachment.id)
+            self.context.wait_until(response, 'state', 'DETACHED')
 
 if __name__ == '__main__':
     unittest.main()

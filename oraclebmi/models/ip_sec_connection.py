@@ -31,6 +31,7 @@ class IPSecConnection(object):
         """
         IPSecConnection - a model defined in Swagger
         """
+
         self.swagger_types = {
             'compartment_id': 'str',
             'cpe_id': 'str',
@@ -61,6 +62,7 @@ class IPSecConnection(object):
         self._state = None
         self._static_routes = None
         self._time_created = None
+
 
     @property
     def compartment_id(self):
@@ -286,6 +288,9 @@ class IPSecConnection(object):
         """
         Returns true if objects are equal
         """
+        if other is None:
+            return False
+
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):

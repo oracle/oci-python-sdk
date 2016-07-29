@@ -31,6 +31,7 @@ class CreateIPSecConnectionRequest(object):
         """
         CreateIPSecConnectionRequest - a model defined in Swagger
         """
+
         self.swagger_types = {
             'compartment_id': 'str',
             'cpe_id': 'str',
@@ -52,6 +53,7 @@ class CreateIPSecConnectionRequest(object):
         self._display_name = None
         self._drg_id = None
         self._static_routes = None
+
 
     @property
     def compartment_id(self):
@@ -205,6 +207,9 @@ class CreateIPSecConnectionRequest(object):
         """
         Returns true if objects are equal
         """
+        if other is None:
+            return False
+
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):

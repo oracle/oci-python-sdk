@@ -31,6 +31,7 @@ class UpdateCompartmentRequest(object):
         """
         UpdateCompartmentRequest - a model defined in Swagger
         """
+
         self.swagger_types = {
             'description': 'str'
         }
@@ -40,6 +41,7 @@ class UpdateCompartmentRequest(object):
         }
 
         self._description = None
+
 
     @property
     def description(self):
@@ -105,6 +107,9 @@ class UpdateCompartmentRequest(object):
         """
         Returns true if objects are equal
         """
+        if other is None:
+            return False
+
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):

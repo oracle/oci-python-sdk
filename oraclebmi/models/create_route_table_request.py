@@ -31,6 +31,7 @@ class CreateRouteTableRequest(object):
         """
         CreateRouteTableRequest - a model defined in Swagger
         """
+
         self.swagger_types = {
             'compartment_id': 'str',
             'display_name': 'str',
@@ -49,6 +50,7 @@ class CreateRouteTableRequest(object):
         self._display_name = None
         self._route_rules = None
         self._vcn_id = None
+
 
     @property
     def compartment_id(self):
@@ -180,6 +182,9 @@ class CreateRouteTableRequest(object):
         """
         Returns true if objects are equal
         """
+        if other is None:
+            return False
+
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):

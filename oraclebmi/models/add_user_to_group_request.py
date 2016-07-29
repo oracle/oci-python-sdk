@@ -31,6 +31,7 @@ class AddUserToGroupRequest(object):
         """
         AddUserToGroupRequest - a model defined in Swagger
         """
+
         self.swagger_types = {
             'user_id': 'str',
             'group_id': 'str'
@@ -43,6 +44,7 @@ class AddUserToGroupRequest(object):
 
         self._user_id = None
         self._group_id = None
+
 
     @property
     def user_id(self):
@@ -130,6 +132,9 @@ class AddUserToGroupRequest(object):
         """
         Returns true if objects are equal
         """
+        if other is None:
+            return False
+
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):

@@ -31,6 +31,7 @@ class Policy(object):
         """
         Policy - a model defined in Swagger
         """
+
         self.swagger_types = {
             'id': 'str',
             'compartment_id': 'str',
@@ -61,6 +62,7 @@ class Policy(object):
         self._time_created = None
         self._time_modified = None
         self._state = None
+
 
     @property
     def id(self):
@@ -280,6 +282,9 @@ class Policy(object):
         """
         Returns true if objects are equal
         """
+        if other is None:
+            return False
+
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):

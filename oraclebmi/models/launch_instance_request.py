@@ -31,6 +31,7 @@ class LaunchInstanceRequest(object):
         """
         LaunchInstanceRequest - a model defined in Swagger
         """
+
         self.swagger_types = {
             'availability_domain': 'str',
             'compartment_id': 'str',
@@ -58,6 +59,7 @@ class LaunchInstanceRequest(object):
         self._metadata = None
         self._shape = None
         self._subnet_id = None
+
 
     @property
     def availability_domain(self):
@@ -255,6 +257,9 @@ class LaunchInstanceRequest(object):
         """
         Returns true if objects are equal
         """
+        if other is None:
+            return False
+
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):

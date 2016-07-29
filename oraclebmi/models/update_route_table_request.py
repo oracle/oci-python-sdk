@@ -31,6 +31,7 @@ class UpdateRouteTableRequest(object):
         """
         UpdateRouteTableRequest - a model defined in Swagger
         """
+
         self.swagger_types = {
             'route_rules': 'list[RouteRule]'
         }
@@ -40,6 +41,7 @@ class UpdateRouteTableRequest(object):
         }
 
         self._route_rules = None
+
 
     @property
     def route_rules(self):
@@ -105,6 +107,9 @@ class UpdateRouteTableRequest(object):
         """
         Returns true if objects are equal
         """
+        if other is None:
+            return False
+
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):

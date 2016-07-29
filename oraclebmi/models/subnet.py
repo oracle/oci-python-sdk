@@ -31,6 +31,7 @@ class Subnet(object):
         """
         Subnet - a model defined in Swagger
         """
+
         self.swagger_types = {
             'availability_domain': 'str',
             'cidr_block': 'str',
@@ -70,6 +71,7 @@ class Subnet(object):
         self._vcn_id = None
         self._virtual_router_ip = None
         self._virtual_router_mac = None
+
 
     @property
     def availability_domain(self):
@@ -361,6 +363,9 @@ class Subnet(object):
         """
         Returns true if objects are equal
         """
+        if other is None:
+            return False
+
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):

@@ -24,13 +24,15 @@ The original license is below.
 
 from pprint import pformat
 from six import iteritems
+from .attach_volume_request import AttachVolumeRequest
 
-class AttachIScsiVolumeRequest(object):
+class AttachIScsiVolumeRequest(AttachVolumeRequest):
 
     def __init__(self):
         """
         AttachIScsiVolumeRequest - a model defined in Swagger
         """
+
         self.swagger_types = {
             'compartment_id': 'str',
             'instance_id': 'str',
@@ -50,93 +52,7 @@ class AttachIScsiVolumeRequest(object):
         self._type = None
         self._volume_id = None
 
-    @property
-    def compartment_id(self):
-        """
-        Gets the compartment_id of this AttachIScsiVolumeRequest.
-        The OCID of the compartment.
-
-        :return: The compartment_id of this AttachIScsiVolumeRequest.
-        :rtype: str
-        """
-        return self._compartment_id
-
-    @compartment_id.setter
-    def compartment_id(self, compartment_id):
-        """
-        Sets the compartment_id of this AttachIScsiVolumeRequest.
-        The OCID of the compartment.
-
-        :param compartment_id: The compartment_id of this AttachIScsiVolumeRequest.
-        :type: str
-        """
-        self._compartment_id = compartment_id
-
-    @property
-    def instance_id(self):
-        """
-        Gets the instance_id of this AttachIScsiVolumeRequest.
-        The OCID of the instance.
-
-        :return: The instance_id of this AttachIScsiVolumeRequest.
-        :rtype: str
-        """
-        return self._instance_id
-
-    @instance_id.setter
-    def instance_id(self, instance_id):
-        """
-        Sets the instance_id of this AttachIScsiVolumeRequest.
-        The OCID of the instance.
-
-        :param instance_id: The instance_id of this AttachIScsiVolumeRequest.
-        :type: str
-        """
-        self._instance_id = instance_id
-
-    @property
-    def type(self):
-        """
-        Gets the type of this AttachIScsiVolumeRequest.
-        The type of volume. The only supported value is \"iscsi\".
-
-        :return: The type of this AttachIScsiVolumeRequest.
-        :rtype: str
-        """
-        return self._type
-
-    @type.setter
-    def type(self, type):
-        """
-        Sets the type of this AttachIScsiVolumeRequest.
-        The type of volume. The only supported value is \"iscsi\".
-
-        :param type: The type of this AttachIScsiVolumeRequest.
-        :type: str
-        """
-        self._type = type
-
-    @property
-    def volume_id(self):
-        """
-        Gets the volume_id of this AttachIScsiVolumeRequest.
-        The OCID of the volume.
-
-        :return: The volume_id of this AttachIScsiVolumeRequest.
-        :rtype: str
-        """
-        return self._volume_id
-
-    @volume_id.setter
-    def volume_id(self, volume_id):
-        """
-        Sets the volume_id of this AttachIScsiVolumeRequest.
-        The OCID of the volume.
-
-        :param volume_id: The volume_id of this AttachIScsiVolumeRequest.
-        :type: str
-        """
-        self._volume_id = volume_id
+        self._type = 'iscsi'
 
     def to_dict(self):
         """
@@ -180,6 +96,9 @@ class AttachIScsiVolumeRequest(object):
         """
         Returns true if objects are equal
         """
+        if other is None:
+            return False
+
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):

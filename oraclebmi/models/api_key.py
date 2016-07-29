@@ -31,6 +31,7 @@ class ApiKey(object):
         """
         ApiKey - a model defined in Swagger
         """
+
         self.swagger_types = {
             'key_id': 'str',
             'key_value': 'str',
@@ -58,6 +59,7 @@ class ApiKey(object):
         self._time_created = None
         self._time_modified = None
         self._state = None
+
 
     @property
     def key_id(self):
@@ -255,6 +257,9 @@ class ApiKey(object):
         """
         Returns true if objects are equal
         """
+        if other is None:
+            return False
+
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):

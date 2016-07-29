@@ -31,6 +31,7 @@ class UpdateInstanceRequest(object):
         """
         UpdateInstanceRequest - a model defined in Swagger
         """
+
         self.swagger_types = {
             'display_name': 'str'
         }
@@ -40,6 +41,7 @@ class UpdateInstanceRequest(object):
         }
 
         self._display_name = None
+
 
     @property
     def display_name(self):
@@ -105,6 +107,9 @@ class UpdateInstanceRequest(object):
         """
         Returns true if objects are equal
         """
+        if other is None:
+            return False
+
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):

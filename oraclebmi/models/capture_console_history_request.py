@@ -31,6 +31,7 @@ class CaptureConsoleHistoryRequest(object):
         """
         CaptureConsoleHistoryRequest - a model defined in Swagger
         """
+
         self.swagger_types = {
             'instance_id': 'str'
         }
@@ -40,6 +41,7 @@ class CaptureConsoleHistoryRequest(object):
         }
 
         self._instance_id = None
+
 
     @property
     def instance_id(self):
@@ -105,6 +107,9 @@ class CaptureConsoleHistoryRequest(object):
         """
         Returns true if objects are equal
         """
+        if other is None:
+            return False
+
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):

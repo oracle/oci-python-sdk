@@ -31,6 +31,7 @@ class Cpe(object):
         """
         Cpe - a model defined in Swagger
         """
+
         self.swagger_types = {
             'compartment_id': 'str',
             'display_name': 'str',
@@ -52,6 +53,7 @@ class Cpe(object):
         self._id = None
         self._ip_address = None
         self._time_created = None
+
 
     @property
     def compartment_id(self):
@@ -205,6 +207,9 @@ class Cpe(object):
         """
         Returns true if objects are equal
         """
+        if other is None:
+            return False
+
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):
