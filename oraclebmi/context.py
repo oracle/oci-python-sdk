@@ -20,7 +20,6 @@ class Context(object):
         self.vcn_ad_service_api = apis.VcnADServiceApi(self.api_client)
         self.vcn_service_api = apis.VcnServiceApi(self.api_client)
 
-
     def wait_until(self, response, property, state, max_interval_seconds=5, max_wait_seconds=60):
         """Wait until the value of the given property in the response data has the given value.
 

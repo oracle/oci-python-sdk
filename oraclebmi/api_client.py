@@ -155,6 +155,7 @@ class ApiClient(object):
 
         response_type = request.response_type
         is_error = not 200 <= response.status_code <= 299
+
         if is_error:
             response_type = 'Error'
 
