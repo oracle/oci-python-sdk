@@ -21,7 +21,7 @@ class Context(object):
         self.vcn_service_api = apis.VcnServiceApi(self.api_client)
 
 
-    def wait_until(self, response, property, state, max_interval_seconds=15, max_wait_seconds=1200):
+    def wait_until(self, response, property, state, max_interval_seconds=5, max_wait_seconds=60):
         """Wait until the value of the given property in the response data has the given value.
 
         This will block the current thread until either the
@@ -44,26 +44,20 @@ class Context(object):
         resulting in the wait being aborted.
 
         :param response: A Response object resulting from a GET operation.
-        :param property: The property of the response data to evaluate. For example, 'state'.
-        :param state: The value of the property that will indicate successful completion of the wait.
+        :param property: A string with the name of the property from the response data to evaluate. For example, 'state'.
+        :param state: The value of the property that will indicate successful completion of the wait. Type corresponds to the property type.
         :param max_interval_seconds: The maximum interval between queries, in seconds. Must be at least 10 seconds.
         :param max_wait_seconds: The maximum time to wait, in seconds. Must be one hour or less.
         :return: The final response, which will contain the property in the specified state.
         """
 
-        if max_interval_seconds < 10:
-            raise ValueError('max_interval_seconds must be at least 10 seconds.')
-        if max_wait_seconds > 3600:
-            raise ValueError('max_wait_seconds cannot be more than 3600 seconds (one hour).')
-        if not response.request:
-            raise ValueError('Cannot wait on a response without a request.')
         if response.request.method.lower() != 'get':
-            raise exceptions.WaitUntilNotSupportedError('wait_until is only supported for get operations.')
+            raise exceptions.WaitUntilNotSupported('wait_until is only supported for get operations.')
         if not hasattr(response.data, property):
             raise ValueError('Response data does not contain the given property.')
 
         count = 0
-        interval_seconds = 1
+        sleep_interval_seconds = 1
         start_time = time.time()
 
         while True:
@@ -72,17 +66,16 @@ class Context(object):
 
             elapsed_seconds = (time.time() - start_time)
 
-            if elapsed_seconds + interval_seconds > max_wait_seconds:
+            if elapsed_seconds + sleep_interval_seconds > max_wait_seconds:
                 if max_wait_seconds > elapsed_seconds:
                     # Make one last request right at the maximum wait time.
                     interval_seconds = max_wait_seconds - elapsed_seconds
                 else:
-                    raise exceptions.MaximumWaitTimeExceededError('Maximum wait time has been exceeded.')
+                    raise exceptions.MaximumWaitTimeExceeded('Maximum wait time has been exceeded.')
 
-            time.sleep(interval_seconds)
+            time.sleep(sleep_interval_seconds)
 
-            interval_seconds *= 2
-            if interval_seconds > max_interval_seconds:
-                interval_seconds = max_interval_seconds
+            # Double the sleep each time up to the maximum.
+            sleep_interval_seconds = min(sleep_interval_seconds * 2, max_interval_seconds)
 
             response = self.api_client.request(response.request)

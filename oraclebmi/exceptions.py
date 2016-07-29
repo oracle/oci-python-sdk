@@ -16,14 +16,17 @@ class ServiceError(Exception):
 
         super(ServiceError, self).__init__(message)
 
-class ConfigFileNotFoundError(Exception):
+class ClientError(Exception):
+    """A client-side error occurred.."""
+
+class ConfigFileNotFound(ClientError):
     """Config file not be found."""
 
-class ProfileNotFoundError(Exception):
+class ProfileNotFound(ClientError):
     """The specified profile was not found in the config file."""
 
-class WaitUntilNotSupportedError(Exception):
+class WaitUntilNotSupported(ClientError):
     """wait_until is not supported by this response."""
 
-class MaximumWaitTimeExceededError(Exception):
+class MaximumWaitTimeExceeded(ClientError):
     """Maximum wait time has been exceeded."""

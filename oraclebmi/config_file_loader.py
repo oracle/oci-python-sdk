@@ -15,7 +15,7 @@ def load_config(file_location=DEFAULT_CONFIG_FILE, profile_name=DEFAULT_PROFILE)
 
     parser = configparser.RawConfigParser()
     if len(parser.read(file_location)) != 1:
-        raise exceptions.ConfigFileNotFoundError('Could not find config file at ' + file_location)
+        raise exceptions.ConfigFileNotFound('Could not find config file at ' + file_location)
 
     config = Config()
 
@@ -26,7 +26,7 @@ def load_config(file_location=DEFAULT_CONFIG_FILE, profile_name=DEFAULT_PROFILE)
         try:
             parameters = parser.options(profile_name)
         except configparser.NoSectionError:
-            raise exceptions.ProfileNotFoundError("Profile '{}' not found".format(profile_name))
+            raise exceptions.ProfileNotFound("Profile '{}' not found".format(profile_name))
 
 
     for param in parameters:

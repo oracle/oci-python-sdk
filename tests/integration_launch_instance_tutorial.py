@@ -11,6 +11,10 @@ class TestLaunchInstanceTutorial(ServiceTestBase):
         self.context = self.create_context(profile_name='DEBUG')
 
         self.test_id = str(random.randint(0,1000))
+
+        # TODO DEX-17: Currently this test only runs against R2 and
+        # if you have the private and public key files. We should be
+        # getting these dynamically based on a specified environment.
         self.availability_domain = 'kIdk:PHX-AD-2'
         self.compartment = self.context.config.tenancy
         self.public_key_file = '~/.ssh/id_rsa.pub'
@@ -68,7 +72,7 @@ class TestLaunchInstanceTutorial(ServiceTestBase):
 
             with self.assertRaises(oraclebmi.ServiceError) as errorContext:
                 response = self.context.vcn_service_api.get_vcn(self.vcn.id)
-                self.context.wait_until(response, 'state', 'TERMINATED')
+                self.context.wait_until(response, 'state', 'TERMINATED', max_wait_seconds=180)
 
             self.assertEqual(404, errorContext.exception.status)
 
@@ -162,10 +166,9 @@ class TestLaunchInstanceTutorial(ServiceTestBase):
         self.assertEqual('PROVISIONING', self.instance.state)
 
         response = self.context.compute_api.get_instance(self.instance.id)
-        self.instance = self.context.wait_until(response, 'state', 'RUNNING').data
+        self.instance = self.context.wait_until(response, 'state', 'RUNNING', max_wait_seconds=300).data
 
         self.assertEqual('RUNNING', self.instance.state)
-
 
     def terminate_instance(self):
         if hasattr(self, 'instance'):
@@ -189,7 +192,7 @@ class TestLaunchInstanceTutorial(ServiceTestBase):
         assert (type(self.volume) is oraclebmi.models.Volume)
 
         response = self.context.blockstorage_api.get_volume(self.volume.id)
-        self.context.wait_until(response, 'state', 'AVAILABLE')
+        self.context.wait_until(response, 'state', 'AVAILABLE', max_wait_seconds=180)
 
     def delete_volume(self):
         if hasattr(self, 'volume'):
@@ -198,7 +201,7 @@ class TestLaunchInstanceTutorial(ServiceTestBase):
             self.assertEqual(202, response.status)
 
             response = self.context.blockstorage_api.get_volume(self.volume.id)
-            self.context.wait_until(response, 'state', 'TERMINATED')
+            self.context.wait_until(response, 'state', 'TERMINATED', max_wait_seconds=180)
 
     def get_public_ip_address(self):
         print('Getting public IP address')

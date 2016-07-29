@@ -49,13 +49,13 @@ class TestConfigFileLoader(unittest.TestCase):
         assert(not hasattr(config, 'foo'))
 
     def test_file_not_found(self):
-        with self.assertRaises(oraclebmi.exceptions.ConfigFileNotFoundError) as errorContext:
+        with self.assertRaises(oraclebmi.exceptions.ConfigFileNotFound) as errorContext:
             oraclebmi.config_file_loader.load_config(file_location='does_not_exist')
 
         assert('does_not_exist' in str(errorContext.exception))
 
     def test_profile_not_found(self):
-        with self.assertRaises(oraclebmi.exceptions.ProfileNotFoundError) as errorContext:
+        with self.assertRaises(oraclebmi.exceptions.ProfileNotFound) as errorContext:
             oraclebmi.config_file_loader.load_config(profile_name='does_not_exist')
 
         assert ('does_not_exist' in str(errorContext.exception))
