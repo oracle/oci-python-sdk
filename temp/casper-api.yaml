@@ -1,0 +1,539 @@
+#==========[ Schema ]===================================================================================================
+
+swagger: "2.0"
+info:
+  version: 2.0.0
+  title: Casper Object Storage
+  description: The Casper 2.0 API for Object Storage
+  contact:
+    name: Casper Object Storage Team
+    url: https://confluence.aka.lgl.grungy.us/display/CASPER/Integrating+With+Casper
+    email: opc_casper_users_us_grp@oracle.com
+  license:
+    name: Oracle Corporation
+host: localhost:9000
+basePath: /
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+
+#==========[ Paths ]====================================================================================================
+
+paths:
+
+  #----------[ Namespace Collection ]-----------------------------------------------------------------------------------
+
+  /n/:
+    get:
+      summary: GetNamespace
+      description: |
+        Get the name of the namespace for the user making the request.
+      operationId: GetNamespace
+      responses:
+        200:
+          description: The name of the users namespace.
+          schema:
+            type: string
+        default:
+          $ref: '#/responses/Error'
+      tags:
+      - objectStorage
+
+  #----------[ Bucket Collection ]--------------------------------------------------------------------------------------
+
+  /n/{namespaceName}/b/:
+
+    get:
+      summary: ListBuckets
+      description: |
+        Get a list of all the buckets in a namespace.
+      operationId: ListBuckets
+      parameters:
+        - $ref: '#/parameters/NamespacePathParam'
+        - $ref: '#/parameters/PaginationLimitQueryParam'
+        - $ref: '#/parameters/PaginationTokenQueryParam'
+      responses:
+        200:
+          description: A page of `Bucket` objects.
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Bucket'
+          headers:
+            opc-request-id:
+              type: string
+              description: |
+                Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+                request, please provide this request ID.
+            opc-next-page:
+              type: string
+              description: |
+                A token used for paginating through the list of `Buckets`. If this header appears in the response there
+                are additional Buckets that can be fetched. Include this value as the `page` parameter in a subsequent
+                GET request.
+        default:
+          $ref: '#/responses/Error'
+      tags:
+      - objectStorage
+
+    post:
+      summary: CreateBucket
+      description: |
+        Create a bucket in the given namespace with a bucket name and optional user-defined metadata.
+      operationId: CreateBucket
+      parameters:
+        - $ref: '#/parameters/NamespacePathParam'
+        - name: CreateBucket
+          description: Request object for creating a bucket.
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/CreateBucket'
+      responses:
+        200:
+          description: The full bucket representation, including fields set by the server.
+          schema:
+            $ref: '#/definitions/Bucket'
+          headers:
+            ETag:
+              description: The entity tag for the bucket that was created.
+              type: string
+            Location:
+              description: The full path to the bucket that was created.
+              type: string
+        default:
+          $ref: '#/responses/Error'
+      tags:
+      - objectStorage
+
+  #----------[ Bucket ]-------------------------------------------------------------------------------------------------
+
+  /n/{namespaceName}/b/{bucketName}/:
+
+    get:
+      summary: GetBucket
+      description: |
+        Get the current representation of the given bucket in the given namespace.
+      operationId: GetBucket
+      parameters:
+        - $ref: '#/parameters/NamespacePathParam'
+        - $ref: '#/parameters/BucketPathParam'
+        - $ref: '#/parameters/IfMatchHeader'
+        - $ref: '#/parameters/IfNoneMatchHeader'
+      responses:
+        200:
+          description: A bucket representation for the requested bucket.
+          schema:
+            $ref: '#/definitions/Bucket'
+          headers:
+            opc-request-id:
+              type: string
+              description: |
+                Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+                request, please provide this request ID.
+            ETag:
+              type: string
+              description: The current entity tag for the bucket.
+        default:
+          $ref: '#/responses/Error'
+      tags:
+      - objectStorage
+
+    post:
+      summary: UpdateBucket
+      description: |
+        Perform a partial (or full) update of a bucket, currently including just the user-defined metadata.
+      operationId: UpdateBucket
+      parameters:
+        - $ref: '#/parameters/NamespacePathParam'
+        - $ref: '#/parameters/BucketPathParam'
+        - $ref: '#/parameters/IfMatchHeader'
+        - name: UpdateBucket
+          description: Request object for updating a bucket.
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/UpdateBucket'
+      responses:
+        200:
+          description: The full representation of the bucket, including fields set by the server.
+          schema:
+            $ref: '#/definitions/Bucket'
+          headers:
+            opc-request-id:
+              type: string
+              description: |
+                Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+                request, please provide this request ID.
+            ETag:
+              type: string
+              description: The entity tag for the updated bucket.
+        default:
+          $ref: '#/responses/Error'
+      tags:
+      - objectStorage
+
+    delete:
+      summary: DeleteBucket
+      description: |
+        Delete a bucket if it is already empty.
+      operationId: DeleteBucket
+      parameters:
+        - $ref: '#/parameters/NamespacePathParam'
+        - $ref: '#/parameters/BucketPathParam'
+        - $ref: '#/parameters/IfMatchHeader'
+      responses:
+        200:
+          description: The response body is always empty.
+          headers:
+            opc-request-id:
+              type: string
+              description: |
+                Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+                request, please provide this request ID.
+        default:
+          $ref: '#/responses/Error'
+      tags:
+      - objectStorage
+
+  #----------[ Object Collection ]--------------------------------------------------------------------------------------
+
+  /n/{namespaceName}/b/{bucketName}/o:
+
+    get:
+      summary: ListObjects
+      description: |
+        List the objects in a bucket.
+      operationId: ListObjects
+      parameters:
+        - $ref: '#/parameters/NamespacePathParam'
+        - $ref: '#/parameters/BucketPathParam'
+        - $ref: '#/parameters/PrefixQueryParam'
+        - $ref: '#/parameters/StartWithQueryParam'
+        - $ref: '#/parameters/EndBeforeQueryParam'
+        - $ref: '#/parameters/PaginationLimitQueryParam'
+        - $ref: '#/parameters/DelimiterQueryParam'
+        - $ref: '#/parameters/FieldsQueryParam'
+      responses:
+        200:
+          description: List objects response containing list of object summaries, optionally, prefixes, and optionally name of the object to start next page in a truncated response.
+          schema:
+            $ref: '#/definitions/ListObjects'
+          headers:
+            opc-request-id:
+              type: string
+              description: |
+                Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+                request, please provide this request ID.
+        default:
+          $ref: '#/responses/Error'
+      tags:
+      - objectStorage
+
+  #----------[ Object ]-------------------------------------------------------------------------------------------------
+
+  /n/{namespaceName}/b/{bucketName}/o/{objectName}:
+
+    get:
+      summary: GetObject
+      description: |
+        Get the metadata and body of an object.
+      operationId: GetObject
+      parameters:
+        - $ref: '#/parameters/NamespacePathParam'
+        - $ref: '#/parameters/BucketPathParam'
+        - $ref: '#/parameters/ObjectPathParam'
+        - $ref: '#/parameters/IfMatchHeader'
+        - $ref: '#/parameters/IfNoneMatchHeader'
+      responses:
+        200:
+          description: The object metadata and bytes.
+          schema:
+            type: string
+            format: binary
+          headers:
+            opc-request-id:
+              type: string
+              description: |
+                Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+                request, please provide this request ID.
+            ETag:
+              type: string
+              description: The entity tag for the object.
+            orcl-meta-*:
+              type: string
+              description: The user-defined metadata for the object.
+        default:
+          $ref: '#/responses/Error'
+      tags:
+      - objectStorage
+
+    head:
+      summary: HeadObject
+      description: |
+        Get the user-defined metadata and entity tag for an object.
+      operationId: HeadObject
+      parameters:
+        - $ref: '#/parameters/NamespacePathParam'
+        - $ref: '#/parameters/BucketPathParam'
+        - $ref: '#/parameters/ObjectPathParam'
+        - $ref: '#/parameters/IfMatchHeader'
+        - $ref: '#/parameters/IfNoneMatchHeader'
+      responses:
+        200:
+          description: The object metadata and bytes.
+          headers:
+            opc-request-id:
+              type: string
+              description: |
+                Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+                request, please provide this request ID.
+            ETag:
+              type: string
+              description: The entity tag for the object.
+            orcl-meta-*:
+              type: string
+              description: The user-defined metadata for the object.
+        default:
+          $ref: '#/responses/Error'
+      tags:
+      - objectStorage
+
+    put:
+      summary: PutObject
+      description: |
+        Create a new object or overwrite an existing one.
+      operationId: PutObject
+      parameters:
+        - $ref: '#/parameters/NamespacePathParam'
+        - $ref: '#/parameters/BucketPathParam'
+        - $ref: '#/parameters/ObjectPathParam'
+        - $ref: '#/parameters/IfMatchHeader'
+        - $ref: '#/parameters/IfNoneMatchHeader'
+        - name: PutObjectBody
+          description: The object being put to the object store.
+          required: true
+          in: body
+          schema:
+            type: string
+            format: binary
+      responses:
+        200:
+          description: The object was successfully created.
+          headers:
+            opc-request-id:
+              type: string
+              description: |
+                Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+                request, please provide this request ID.
+            ETag:
+              type: string
+              description: The entity tag for the object.
+        default:
+          $ref: '#/responses/Error'
+      tags:
+      - objectStorage
+
+    delete:
+      summary: DeleteObject
+      description: |
+        Delete an object.
+      operationId: DeleteObject
+      parameters:
+        - $ref: '#/parameters/NamespacePathParam'
+        - $ref: '#/parameters/BucketPathParam'
+        - $ref: '#/parameters/ObjectPathParam'
+        - $ref: '#/parameters/IfMatchHeader'
+      responses:
+        200:
+          description: The object was successfully deleted.
+        default:
+          $ref: '#/responses/Error'
+      tags:
+      - objectStorage
+
+#==========[ Definitions ]==============================================================================================
+
+definitions:
+  Bucket:
+    required:
+      - name
+      - metadata
+      - timeCreated
+      - timeModified
+      - etag
+    properties:
+      name:
+        type: string
+        description: The name of the bucket.
+      metadata:
+        type: object
+        description: Arbitrary string keys and values for the user-defined metadata.
+        additionalProperties:
+          type: string
+      timeCreated:
+        type: string
+        format: date-time
+        description: The date and time at which the bucket was created.
+      timeModified:
+        type: string
+        format: date-time
+        description: The date and time at which the bucket was last modified.
+      etag:
+        type: string
+        description: The entity tag for the bucket.
+  CreateBucket:
+    required:
+      - name
+    properties:
+      name:
+        type: string
+        description: The name of the bucket.
+      metadata:
+        type: object
+        description: Arbitrary string keys and values for the user-defined metadata.
+        additionalProperties:
+          type: string
+  UpdateBucket:
+    properties:
+      name:
+        type: string
+        description: The name of the bucket.
+      metadata:
+        type: object
+        description: Arbitrary string keys and values for the user-defined metadata.
+        additionalProperties:
+          type: string
+  ListObjects:
+    required:
+      - objects
+    properties:
+      objects:
+        type: array
+        items:
+          $ref: "#/definitions/ObjectSummary"
+      prefixes:
+        type: array
+        items:
+          type: string
+      nextStartWith:
+        type: string
+        description: The name of the object to be used in startWith parameter to obtain next page of
+                      a truncated list objects response.
+  ObjectSummary:
+    required:
+      - name
+    properties:
+      name:
+        type: string
+        description: The name of the object.
+      size:
+        type: integer
+        description: Size of the object in bytes.
+      md5_hash:
+        type: string
+        description: Base64 encoded MD5 hash of the object data.
+      created:
+        type: string
+        description: Date and time of object creation.
+  Error:
+    required:
+      - code
+      - message
+    properties:
+      code:
+        type: string
+        description: A short error code that defines the error, meant for programmatic parsing.
+      message:
+        type: string
+        description: A human-readable error string.
+
+#==========[ Parameters ]===============================================================================================
+
+parameters:
+  NamespacePathParam:
+    name: namespaceName
+    in: path
+    required: true
+    type: string
+    description: The top-level namespace used for the request.
+  BucketPathParam:
+    name: bucketName
+    in: path
+    required: true
+    type: string
+    description: The name of the bucket.
+  ObjectPathParam:
+    name: objectName
+    in: path
+    required: true
+    type: string
+    description: The name of the object.
+  PaginationLimitQueryParam:
+    name: limit
+    in: query
+    type: integer
+    description: The maximum number of items to return.
+  PaginationTokenQueryParam:
+    name: page
+    in: query
+    type: string
+    description: The page at which to start retrieving results.
+  PrefixQueryParam:
+    name: prefix
+    in: query
+    type: string
+    description: Object names returned by a list query must start with prefix
+  StartWithQueryParam:
+    name: start
+    in: query
+    type: string
+    description: Object names returned by a list query must be greater or equal to this parameter
+  EndBeforeQueryParam:
+    name: end
+    in: query
+    type: string
+    description: Object names returned by a list query must be strictly less than this parameter
+  DelimiterQueryParam:
+    name: delimiter
+    in: query
+    type: string
+    description: When this parameter is set to '/' character (other values not supported), only objects that
+                 do not have it in name, after an optionally specified prefix, are returned.   For all other
+                 scanned objects, part of their name up to the last occurence of the delimiter, after prefix,
+                 is returned as a set of prefixes.
+  FieldsQueryParam:
+    name: fields
+    in: query
+    type: string
+    description: Object summary in list of objects includes the 'name' field.   This parameter may be used to also include 'size'
+                 (object size in bytes), 'md5_hash', and 'created' (object creation date and time) fields.
+                 Value of this parameter should be a comma separated, case-insensitive list of those field names.
+                 For example 'name,created,md5_hash'
+  IfMatchHeader:
+    name: if-match
+    in: header
+    type: string
+    description: the entity tag to match.
+  IfNoneMatchHeader:
+    name: if-none-match
+    in: header
+    type: string
+    description: the entity tag to avoid matching.
+
+#==========[ Responses ]================================================================================================
+
+responses:
+  Error:
+    description: A description of an error that occurred.
+    schema:
+      $ref: '#/definitions/Error'
+    headers:
+      opc-request-id:
+        type: string
+        description: |
+          Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+          request, please provide this request ID.

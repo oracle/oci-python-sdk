@@ -19,6 +19,7 @@
     <spec-temp-dir>${project.build.directory}</spec-temp-dir>
     <swagger-spec-file-coreservices>${spec-temp-dir}/coreservices/coreservices-api-spec.yaml</swagger-spec-file-coreservices>
     <swagger-spec-file-identity>${spec-temp-dir}/identity/identity-control-plane-api-spec.yaml</swagger-spec-file-identity>
+      <swagger-spec-file-casper>temp/casper-api.yaml</swagger-spec-file-casper>
     <!-- remove when upgrading to pic-pom:0.4.4 -->
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
@@ -31,6 +32,10 @@
     <dependency>
       <groupId>com.oracle.pic.identity</groupId>
       <artifactId>identity-control-plane-api-spec</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.pic.casper</groupId>
+      <artifactId>casper-api-spec</artifactId>
     </dependency>
   </dependencies>
 
@@ -77,6 +82,24 @@
               </artifactItems>
             </configuration>
           </execution>
+          <execution>
+            <id>unpack-casper</id>
+            <phase>initialize</phase>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>com.oracle.pic.casper</groupId>
+                  <artifactId>casper-api-spec</artifactId>
+                  <type>jar</type>
+                  <includes>casper-api.yaml</includes>
+                  <outputDirectory>${spec-temp-dir}/casper/</outputDirectory>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
       <plugin>
@@ -115,6 +138,23 @@
               <additionalProperties>
                   <packageName>oraclebmi</packageName>
                   <specName>core</specName>
+              </additionalProperties>
+            </configuration>
+          </execution>
+          <execution>
+            <id>python-public-sdk-casper</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <language>oracle-python-sdk</language>
+              <specPath>${swagger-spec-file-casper}</specPath>
+              <outputDir>oraclebmi</outputDir>
+              <basePackage>OracleBMI</basePackage>
+              <additionalProperties>
+                  <packageName>oraclebmi</packageName>
+                  <specName>object_storage</specName>
               </additionalProperties>
             </configuration>
           </execution>
@@ -163,6 +203,11 @@
         <groupId>com.oracle.pic.identity</groupId>
         <artifactId>identity-control-plane-api-spec</artifactId>
         <version>0.1.1</version>
+      </dependency>
+      <dependency>
+        <groupId>com.oracle.pic.casper</groupId>
+        <artifactId>casper-api-spec</artifactId>
+        <version>0.1-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
@@ -303,6 +348,11 @@
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-api</artifactId>
         <version>1.7.12</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.code.findbugs</groupId>
+        <artifactId>jsr305</artifactId>
+        <version>3.0.0</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

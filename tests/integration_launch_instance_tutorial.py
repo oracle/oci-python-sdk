@@ -1,4 +1,5 @@
 from tests.service_test_base import ServiceTestBase
+import tests.util
 import oraclebmi
 import random
 import os.path
@@ -10,7 +11,7 @@ class TestLaunchInstanceTutorial(ServiceTestBase):
     def setUp(self):
         self.context = self.create_context(profile_name='DEBUG')
 
-        self.test_id = str(random.randint(0,1000))
+        self.test_id = tests.util.random_number_string()
 
         # TODO DEX-17: Currently this test only runs against R2 and
         # if you have the private and public key files. We should be

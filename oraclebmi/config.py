@@ -18,6 +18,7 @@ class Config(object):
         self.endpoint_compute_api = core_endpoint
         self.endpoint_vcn_ad_service_api = core_endpoint
         self.endpoint_vcn_service_api = core_endpoint
+        self.endpoint_object_storage_api = 'https://object-store.us-az-phoenix-1.oracleiaas.com'
 
         self.verify_ssl = True
         self.debugging = False

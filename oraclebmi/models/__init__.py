@@ -63,6 +63,14 @@ from .update_user_request import UpdateUserRequest
 from .user import User
 from .user_group_membership import UserGroupMembership
 
+# import models into model package
+from .bucket import Bucket
+from .create_bucket import CreateBucket
+from .error import Error
+from .list_objects import ListObjects
+from .object_summary import ObjectSummary
+from .update_bucket import UpdateBucket
+
 # Maps type names to classes for core services.
 core_type_mapping = {
     'AttachIScsiVolumeRequest': AttachIScsiVolumeRequest,
@@ -128,4 +136,14 @@ identity_type_mapping = {
     'UpdateUserRequest': UpdateUserRequest,
     'User': User,
     'UserGroupMembership': UserGroupMembership,
+}
+
+# Maps type names to classes for object_storage services.
+object_storage_type_mapping = {
+    'Bucket': Bucket,
+    'CreateBucket': CreateBucket,
+    'Error': Error,
+    'ListObjects': ListObjects,
+    'ObjectSummary': ObjectSummary,
+    'UpdateBucket': UpdateBucket,
 }
