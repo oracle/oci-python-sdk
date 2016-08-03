@@ -1,7 +1,6 @@
 from tests.service_test_base import ServiceTestBase
 import tests.util
 import oraclebmi
-import random
 import time
 
 class TestWaiters(ServiceTestBase):
