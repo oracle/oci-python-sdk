@@ -25,70 +25,70 @@ The original license is below.
 from pprint import pformat
 from six import iteritems
 
-class Error(object):
+class CreateBucket(object):
 
     def __init__(self):
         """
-        Error - a model defined in Swagger
+        CreateBucket - a model defined in Swagger
         """
 
         self.swagger_types = {
-            'code': 'str',
-            'message': 'str'
+            'name': 'str',
+            'metadata': 'dict(str, str)'
         }
 
         self.attribute_map = {
-            'code': 'code',
-            'message': 'message'
+            'name': 'name',
+            'metadata': 'metadata'
         }
 
-        self._code = None
-        self._message = None
+        self._name = None
+        self._metadata = None
 
 
     @property
-    def code(self):
+    def name(self):
         """
-        Gets the code of this Error.
-        A short error code that defines the error, meant for programmatic parsing.
+        Gets the name of this CreateBucket.
+        The name of the bucket.
 
-        :return: The code of this Error.
+        :return: The name of this CreateBucket.
         :rtype: str
         """
-        return self._code
+        return self._name
 
-    @code.setter
-    def code(self, code):
+    @name.setter
+    def name(self, name):
         """
-        Sets the code of this Error.
-        A short error code that defines the error, meant for programmatic parsing.
+        Sets the name of this CreateBucket.
+        The name of the bucket.
 
-        :param code: The code of this Error.
+        :param name: The name of this CreateBucket.
         :type: str
         """
-        self._code = code
+        self._name = name
 
     @property
-    def message(self):
+    def metadata(self):
         """
-        Gets the message of this Error.
-        A human-readable error string.
+        Gets the metadata of this CreateBucket.
+        Arbitrary string keys and values for the user-defined metadata.
 
-        :return: The message of this Error.
-        :rtype: str
+        :return: The metadata of this CreateBucket.
+        :rtype: dict(str, str)
         """
-        return self._message
+        return self._metadata
 
-    @message.setter
-    def message(self, message):
+    @metadata.setter
+    def metadata(self, metadata):
         """
-        Sets the message of this Error.
-        A human-readable error string.
+        Sets the metadata of this CreateBucket.
+        Arbitrary string keys and values for the user-defined metadata.
 
-        :param message: The message of this Error.
-        :type: str
+        :param metadata: The metadata of this CreateBucket.
+        :type: dict(str, str)
         """
-        self._message = message
+        self._metadata = metadata
 
     def to_dict(self):
         """

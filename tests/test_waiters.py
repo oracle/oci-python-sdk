@@ -1,14 +1,14 @@
 from tests.service_test_base import ServiceTestBase
+import tests.util
 import oraclebmi
-import random
 import time
 
 class TestWaiters(ServiceTestBase):
 
     def test_basic_wait(self):
-        """Creates and deletes a VCN, waiting after earch operation."""
+        """Creates and deletes a VCN, waiting after each operation."""
 
-        id = str(random.randint(0,1000))
+        id = tests.util.random_number_string()
         print('Creating cloud network ' + id)
 
         start_time = time.time()
@@ -48,7 +48,7 @@ class TestWaiters(ServiceTestBase):
         # Create User
         request = oraclebmi.models.CreateUserRequest()
         request.compartment_id = self.context.config.tenancy
-        request.name = 'python_wait_test_user' + str(random.randint(0,1000))
+        request.name = tests.util.unique_name('python_wait_test_user')
         request.description = 'test user'
         response = self.context.identity_api.create_user(request)
         user_id = response.data.id
@@ -70,7 +70,7 @@ class TestWaiters(ServiceTestBase):
         description = 'test user'
         request = oraclebmi.models.CreateUserRequest()
         request.compartment_id = self.context.config.tenancy
-        request.name = 'python_wait_test_user' + str(random.randint(0,1000))
+        request.name = tests.util.unique_name('python_wait_test_user')
         request.description = description
         response = self.context.identity_api.create_user(request)
         user_id = response.data.id
@@ -89,7 +89,7 @@ class TestWaiters(ServiceTestBase):
         description = 'test user'
         request = oraclebmi.models.CreateUserRequest()
         request.compartment_id = self.context.config.tenancy
-        request.name = 'python_wait_test_user' + str(random.randint(0,1000))
+        request.name = tests.util.unique_name('python_wait_test_user')
         request.description = description
         response = self.context.identity_api.create_user(request)
         user_id = response.data.id

@@ -25,70 +25,95 @@ The original license is below.
 from pprint import pformat
 from six import iteritems
 
-class Error(object):
+class ListObjects(object):
 
     def __init__(self):
         """
-        Error - a model defined in Swagger
+        ListObjects - a model defined in Swagger
         """
 
         self.swagger_types = {
-            'code': 'str',
-            'message': 'str'
+            'objects': 'list[ObjectSummary]',
+            'prefixes': 'list[str]',
+            'next_start_with': 'str'
         }
 
         self.attribute_map = {
-            'code': 'code',
-            'message': 'message'
+            'objects': 'objects',
+            'prefixes': 'prefixes',
+            'next_start_with': 'nextStartWith'
         }
 
-        self._code = None
-        self._message = None
+        self._objects = None
+        self._prefixes = None
+        self._next_start_with = None
 
 
     @property
-    def code(self):
+    def objects(self):
         """
-        Gets the code of this Error.
-        A short error code that defines the error, meant for programmatic parsing.
+        Gets the objects of this ListObjects.
 
-        :return: The code of this Error.
-        :rtype: str
-        """
-        return self._code
 
-    @code.setter
-    def code(self, code):
+        :return: The objects of this ListObjects.
+        :rtype: list[ObjectSummary]
         """
-        Sets the code of this Error.
-        A short error code that defines the error, meant for programmatic parsing.
+        return self._objects
 
-        :param code: The code of this Error.
-        :type: str
+    @objects.setter
+    def objects(self, objects):
         """
-        self._code = code
+        Sets the objects of this ListObjects.
+
+
+        :param objects: The objects of this ListObjects.
+        :type: list[ObjectSummary]
+        """
+        self._objects = objects
 
     @property
-    def message(self):
+    def prefixes(self):
         """
-        Gets the message of this Error.
-        A human-readable error string.
+        Gets the prefixes of this ListObjects.
 
-        :return: The message of this Error.
+
+        :return: The prefixes of this ListObjects.
+        :rtype: list[str]
+        """
+        return self._prefixes
+
+    @prefixes.setter
+    def prefixes(self, prefixes):
+        """
+        Sets the prefixes of this ListObjects.
+
+
+        :param prefixes: The prefixes of this ListObjects.
+        :type: list[str]
+        """
+        self._prefixes = prefixes
+
+    @property
+    def next_start_with(self):
+        """
+        Gets the next_start_with of this ListObjects.
+        The name of the object to be used in startWith parameter to obtain next page of a truncated list objects response.
+
+        :return: The next_start_with of this ListObjects.
         :rtype: str
         """
-        return self._message
+        return self._next_start_with
 
-    @message.setter
-    def message(self, message):
+    @next_start_with.setter
+    def next_start_with(self, next_start_with):
         """
-        Sets the message of this Error.
-        A human-readable error string.
+        Sets the next_start_with of this ListObjects.
+        The name of the object to be used in startWith parameter to obtain next page of a truncated list objects response.
 
-        :param message: The message of this Error.
+        :param next_start_with: The next_start_with of this ListObjects.
         :type: str
         """
-        self._message = message
+        self._next_start_with = next_start_with
 
     def to_dict(self):
         """

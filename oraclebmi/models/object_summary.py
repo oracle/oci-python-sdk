@@ -25,70 +25,120 @@ The original license is below.
 from pprint import pformat
 from six import iteritems
 
-class Error(object):
+class ObjectSummary(object):
 
     def __init__(self):
         """
-        Error - a model defined in Swagger
+        ObjectSummary - a model defined in Swagger
         """
 
         self.swagger_types = {
-            'code': 'str',
-            'message': 'str'
+            'name': 'str',
+            'size': 'int',
+            'md5_hash': 'str',
+            'created': 'str'
         }
 
         self.attribute_map = {
-            'code': 'code',
-            'message': 'message'
+            'name': 'name',
+            'size': 'size',
+            'md5_hash': 'md5_hash',
+            'created': 'created'
         }
 
-        self._code = None
-        self._message = None
+        self._name = None
+        self._size = None
+        self._md5_hash = None
+        self._created = None
 
 
     @property
-    def code(self):
+    def name(self):
         """
-        Gets the code of this Error.
-        A short error code that defines the error, meant for programmatic parsing.
+        Gets the name of this ObjectSummary.
+        The name of the object.
 
-        :return: The code of this Error.
+        :return: The name of this ObjectSummary.
         :rtype: str
         """
-        return self._code
+        return self._name
 
-    @code.setter
-    def code(self, code):
+    @name.setter
+    def name(self, name):
         """
-        Sets the code of this Error.
-        A short error code that defines the error, meant for programmatic parsing.
+        Sets the name of this ObjectSummary.
+        The name of the object.
 
-        :param code: The code of this Error.
+        :param name: The name of this ObjectSummary.
         :type: str
         """
-        self._code = code
+        self._name = name
 
     @property
-    def message(self):
+    def size(self):
         """
-        Gets the message of this Error.
-        A human-readable error string.
+        Gets the size of this ObjectSummary.
+        Size of the object in bytes.
 
-        :return: The message of this Error.
+        :return: The size of this ObjectSummary.
+        :rtype: int
+        """
+        return self._size
+
+    @size.setter
+    def size(self, size):
+        """
+        Sets the size of this ObjectSummary.
+        Size of the object in bytes.
+
+        :param size: The size of this ObjectSummary.
+        :type: int
+        """
+        self._size = size
+
+    @property
+    def md5_hash(self):
+        """
+        Gets the md5_hash of this ObjectSummary.
+        Base64 encoded MD5 hash of the object data.
+
+        :return: The md5_hash of this ObjectSummary.
         :rtype: str
         """
-        return self._message
+        return self._md5_hash
 
-    @message.setter
-    def message(self, message):
+    @md5_hash.setter
+    def md5_hash(self, md5_hash):
         """
-        Sets the message of this Error.
-        A human-readable error string.
+        Sets the md5_hash of this ObjectSummary.
+        Base64 encoded MD5 hash of the object data.
 
-        :param message: The message of this Error.
+        :param md5_hash: The md5_hash of this ObjectSummary.
         :type: str
         """
-        self._message = message
+        self._md5_hash = md5_hash
+
+    @property
+    def created(self):
+        """
+        Gets the created of this ObjectSummary.
+        Date and time of object creation.
+
+        :return: The created of this ObjectSummary.
+        :rtype: str
+        """
+        return self._created
+
+    @created.setter
+    def created(self, created):
+        """
+        Sets the created of this ObjectSummary.
+        Date and time of object creation.
+
+        :param created: The created of this ObjectSummary.
+        :type: str
+        """
+        self._created = created
 
     def to_dict(self):
         """

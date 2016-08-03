@@ -64,14 +64,17 @@ class ApiClient(object):
         'str': str,
         'bool': bool,
         'date': date,
-        'datetime': datetime,
+        'datetime': datetime
     }
 
     def __init__(self, config, signer):
         self.config = config
         self.signer = signer
 
-        self.type_mappings = merge_type_mappings(self.primitive_type_map, models.core_type_mapping, models.identity_type_mapping)
+        self.type_mappings = merge_type_mappings(self.primitive_type_map,
+                                                 models.core_type_mapping,
+                                                 models.identity_type_mapping,
+                                                 models.object_storage_type_mapping)
         self._session = None
 
         self.logger = logging.getLogger("%s.%s" % (__name__, str(id(self))))
