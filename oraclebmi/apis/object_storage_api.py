@@ -26,11 +26,12 @@ from __future__ import absolute_import
 
 import sys
 import os
+from io import IOBase
 
 # python 2 and python 3 compatibility library
 from six import iteritems
 
-from ..api_client import ApiClient
+
 
 
 class ObjectStorageApi(object):
@@ -396,7 +397,8 @@ class ObjectStorageApi(object):
                                             query_params,
                                             header_params,
                                             body=body_params,
-                                            response_type='str')
+                                            response_type='str',
+                                            stream=True)
         return response
 
     def head_object(self, namespace_name, bucket_name, object_name, **kwargs):
@@ -663,7 +665,9 @@ class ObjectStorageApi(object):
             body_params = params['put_object_body']
 
         header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
+
+        if not (isinstance(body_params, str) or isinstance(body_params, IOBase)):
+            raise TypeError('The body of put_object must be a string or io.IOBase.')
 
         response = self.api_client.call_api(self.api_client.config.endpoint_object_storage_api,
                                             resource_path,
@@ -672,7 +676,8 @@ class ObjectStorageApi(object):
                                             query_params,
                                             header_params,
                                             body=body_params,
-                                            response_type=None)
+                                            response_type=None,
+                                            enforce_content_headers=False)
         return response
 
     def update_bucket(self, namespace_name, bucket_name, update_bucket, **kwargs):

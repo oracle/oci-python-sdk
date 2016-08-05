@@ -27,28 +27,18 @@ from . import models
 from .response import Response
 from . import exceptions
 from .request import Request
+from .data_stream import DataStream
+from .signer import SignerWrapper
 
 import logging
-import ssl
-import certifi
-import io
-import os
 import re
-import sys
 import json
-import mimetypes
 import requests
-
+from io import IOBase
 from datetime import datetime
 from datetime import date
 from dateutil.parser import parse
-
-try:
-    # for python3
-    from urllib.parse import quote, urlencode
-except ImportError:
-    # for python2
-    from urllib import quote
+from urllib.parse import quote, urlencode
 
 def merge_type_mappings(*dictionaries):
     merged = {}
@@ -98,7 +88,9 @@ class ApiClient(object):
                    query_params=None,
                    header_params=None,
                    body=None,
-                   response_type=None):
+                   response_type=None,
+                   stream=False,
+                   enforce_content_headers=True):
         """
         Makes the HTTP request and return the deserialized data.
 
@@ -109,7 +101,10 @@ class ApiClient(object):
         :param query_params: Query parameters in the url.
         :param header_params: Request header params.
         :param body: Request body.
-        :param response: Response data type.
+        :param response_type: Response data type.
+        :param stream: True if the response should be streamed.
+        :param enforce_content_headers: True if content headers should be added for put and post requests
+            when not present.
         :return: A Response object, or throw in the case of an error.
 
         """
@@ -131,7 +126,7 @@ class ApiClient(object):
             query_params = {k: self.to_path_value(v)
                             for k, v in query_params.items()}
 
-        if body:
+        if body and header_params.get('content-type') == 'application/json':
             body = self.sanitize_for_serialization(body)
             body = json.dumps(body)
 
@@ -142,19 +137,26 @@ class ApiClient(object):
                           query_params=query_params,
                           header_params=header_params,
                           body=body,
-                          response_type=response_type)
+                          response_type=response_type,
+                          stream=stream,
+                          enforce_content_headers=enforce_content_headers)
 
         return self.request(request)
 
     def request(self, request):
         self.logger.info("Request: %s %s" % (str(request.method), request.url))
 
+        signer = self.signer
+        if not request.enforce_content_headers:
+            signer = SignerWrapper(signer, enforce_content_headers=False)
+
         response = self.session.request(request.method,
                                         request.url,
-                                        auth=self.signer,
+                                        auth=signer,
                                         params=request.query_params,
                                         headers=request.header_params,
-                                        data=request.body)
+                                        data=request.body,
+                                        stream=request.stream)
 
         response_type = request.response_type
         is_error = not 200 <= response.status_code <= 299
@@ -163,7 +165,9 @@ class ApiClient(object):
             response_type = 'Error'
 
         # deserialize response data
-        if response_type:
+        if request.stream and not is_error:
+            deserialized_data = DataStream(response)
+        elif response_type:
             deserialized_data = self.deserialize_response_data(response.content, response_type)
         else:
             deserialized_data = None

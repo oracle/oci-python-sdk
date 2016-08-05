@@ -1,6 +1,6 @@
 
 class ServiceError(Exception):
-    '''The service returned an error response.'''
+    """The service returned an error response."""
 
     def __init__(self, status, headers, data):
         self.status = status
@@ -16,6 +16,9 @@ class ServiceError(Exception):
 
         super(ServiceError, self).__init__(message)
 
+class NetworkError(Exception):
+    """A network error has occurred."""
+
 class ClientError(Exception):
     """A client-side error occurred.."""
 
@@ -30,3 +33,7 @@ class WaitUntilNotSupported(ClientError):
 
 class MaximumWaitTimeExceeded(ClientError):
     """Maximum wait time has been exceeded."""
+
+class StreamAlreadyConsumed(ClientError):
+    """The stream content has already been consumed."""
+

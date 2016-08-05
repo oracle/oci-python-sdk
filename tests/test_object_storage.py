@@ -1,18 +1,19 @@
 from tests.service_test_base import ServiceTestBase
 import oraclebmi
 import tests.util
+import resource
 
 class TestObjectStorage(ServiceTestBase):
+    """Tests the operations of the ObjectStorageApi."""
 
     def test_get_namespace(self):
         response = self.context.object_storage_api.get_namespace()
-        print('Namespace: ' + response.data)
         self.assertEqual(200, response.status)
 
     def test_bucket_CRUD(self):
         bucket_name = tests.util.unique_name('test_bucket')
         namespace = self.context.object_storage_api.get_namespace().data
-        bucket_count = len(self.context.object_storage_api.list_buckets(namespace).data)
+        bucket_count = len(self.context.object_storage_api.list_buckets(namespace, limit=100).data)
 
         # Create
         request = oraclebmi.models.CreateBucket()
@@ -33,7 +34,7 @@ class TestObjectStorage(ServiceTestBase):
         self.assertEqual(bucket_name, response.data.name)
 
         # List
-        response = self.context.object_storage_api.list_buckets(namespace)
+        response = self.context.object_storage_api.list_buckets(namespace, limit=100)
         self.assertEqual(200, response.status)
         self.assertEqual(bucket_count + 1, len(response.data))
         assert (type(response.data[0]) is oraclebmi.models.Bucket)
@@ -55,9 +56,8 @@ class TestObjectStorage(ServiceTestBase):
     def test_object_CRUD(self):
         # Setup a bucket to use.
         object_name_A = 'object_A'
-        object_name_B = 'object_B'
         bucket_name = tests.util.unique_name('test_object_CRUD')
-        test_data = 'This is a test ' + tests.util.random_number_string() + "!"
+        test_data = 'This is a test ' + tests.util.random_number_string() + '!/n/r/\/~%s;"/,{}><+=:.*)('''
         namespace = self.context.object_storage_api.get_namespace().data
 
         request = oraclebmi.models.CreateBucket()
@@ -72,23 +72,26 @@ class TestObjectStorage(ServiceTestBase):
         # Get it back
         response = self.context.object_storage_api.get_object(namespace, bucket_name, object_name_A)
         self.assertEqual(200, response.status)
-        self.assertEqual(test_data, response.data)
+        response_text = response.data.content.decode('UTF-8')
+        self.assertEqual(len(test_data), len(response_text))
+        self.assertEqual(test_data, response_text)
+        assert (type(response.data) is oraclebmi.DataStream)
 
         # Head
         response = self.context.object_storage_api.head_object(namespace, bucket_name, object_name_A)
         self.assertEqual(200, response.status)
-        # content-length should be at least as long as the string that we sent as data.
-        assert(len(test_data) <= int(response.headers['content-length']))
+        assert (len(test_data) == int(response.headers['content-length']))
 
-        response = self.context.object_storage_api.put_object(namespace, bucket_name, object_name_B, tests.util.random_number_string())
-        self.assertEqual(200, response.status)
+        # Put a couple more objects
+        self.context.object_storage_api.put_object(namespace, bucket_name, 'second_object', tests.util.random_number_string())
+        self.context.object_storage_api.put_object(namespace, bucket_name, 'third_object', tests.util.random_number_string())
 
         # List
         response = self.context.object_storage_api.list_objects(namespace, bucket_name)
         self.assertEqual(200, response.status)
         object_list = response.data
         assert (type(object_list) is oraclebmi.models.ListObjects)
-        self.assertEqual(2, len(object_list.objects))
+        self.assertEqual(3, len(object_list.objects))
         assert (type(object_list.objects[0]) is oraclebmi.models.ObjectSummary)
 
         # Delete
