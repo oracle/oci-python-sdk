@@ -1,7 +1,6 @@
 from tests.service_test_base import ServiceTestBase
 import oraclebmi
 import tests.util
-import resource
 
 class TestObjectStorage(ServiceTestBase):
     """Tests the operations of the ObjectStorageApi."""
@@ -111,6 +110,107 @@ class TestObjectStorage(ServiceTestBase):
 
         self.assertEqual(404, errorContext.exception.status)
         assert (type(errorContext.exception.data) is oraclebmi.models.Error)
+
+    def test_get_bucket(self):
+        namespace = self.context.object_storage_api.get_namespace().data
+        response = self.context.object_storage_api.get_bucket(namespace, 'ReadOnlyTestBucket1')
+        self.assertEqual(200, response.status)
+        assert (type(response.data) is oraclebmi.models.Bucket)
+        self.assertIsNotNone(response.data.metadata)
+        self.assertEqual(0, len(response.data.metadata))
+
+    def test_get_bucket_with_metadata(self):
+        namespace = self.context.object_storage_api.get_namespace().data
+        response = self.context.object_storage_api.get_bucket(namespace, 'ReadOnlyTestBucket5')
+        self.assertEqual(200, response.status)
+        assert (type(response.data) is oraclebmi.models.Bucket)
+        self.assertIsNotNone(response.data.metadata)
+        self.assertEqual('bar1', response.data.metadata['foo1'])
+        self.assertEqual('bar2', response.data.metadata['foo2'])
+
+    def test_list_buckets(self):
+        namespace = self.context.object_storage_api.get_namespace().data
+        response = self.context.object_storage_api.list_buckets(namespace)
+        self.assertEqual(200, response.status)
+        assert (len(response.data) > 0)
+        assert (type(response.data[0]) is oraclebmi.models.Bucket)
+
+    def test_list_buckets_truncated(self):
+        namespace = self.context.object_storage_api.get_namespace().data
+        response = self.context.object_storage_api.list_buckets(namespace, limit=2)
+        self.assertEqual(200, response.status)
+        self.assertEqual(2, len(response.data))
+        assert (type(response.data[0]) is oraclebmi.models.Bucket)
+        assert (response.has_next_page)
+        first_bucket_name = response.data[0].name
+
+        response = self.context.object_storage_api.list_buckets(namespace, limit=2, page=response.next_page)
+        self.assertEqual(200, response.status)
+        self.assertEqual(2, len(response.data))
+        self.assertNotEqual(first_bucket_name, response.data[0].name)
+
+    def test_get_object(self):
+        namespace = self.context.object_storage_api.get_namespace().data
+        response = self.context.object_storage_api.get_object(namespace, 'ReadOnlyTestBucket1', 'object1')
+        self.assertEqual(200, response.status)
+        assert (type(response.data) is oraclebmi.DataStream)
+
+    def test_get_object_with_user_metadata(self):
+        namespace = self.context.object_storage_api.get_namespace().data
+        response = self.context.object_storage_api.get_object(namespace, 'ReadOnlyTestBucket4', 'hasUserMetadata.json')
+        self.assertEqual(200, response.status)
+        assert (type(response.data) is oraclebmi.DataStream)
+        self.assertEqual('bar1', response.headers['opc-meta-foo1'])
+        self.assertEqual('bar2', response.headers['opc-meta-foo2'])
+
+    def test_list_objects(self):
+        namespace = self.context.object_storage_api.get_namespace().data
+        response = self.context.object_storage_api.list_objects(namespace, 'ReadOnlyTestBucket1')
+        self.assertEqual(200, response.status)
+        assert (type(response.data) is oraclebmi.models.ListObjects)
+        self.assertEqual(5, len(response.data.objects))
+        self.assertIsNone(response.data.prefixes)
+
+    def test_list_objects_empty_bucket(self):
+        namespace = self.context.object_storage_api.get_namespace().data
+        response = self.context.object_storage_api.list_objects(namespace, 'ReadOnlyTestBucket5')
+        self.assertEqual(200, response.status)
+        assert (type(response.data) is oraclebmi.models.ListObjects)
+        self.assertEqual(0, len(response.data.objects))
+        self.assertIsNone(response.data.prefixes)
+
+    def test_list_objects_with_prefix_and_delimiter(self):
+        namespace = self.context.object_storage_api.get_namespace().data
+        response = self.context.object_storage_api.list_objects(namespace, 'ReadOnlyTestBucket2', prefix='a/b/', delimiter='/')
+        self.assertEqual(200, response.status)
+        assert (type(response.data) is oraclebmi.models.ListObjects)
+        self.assertEqual(2, len(response.data.objects))
+        self.assertEqual(1, len(response.data.prefixes))
+        self.assertIsNone(response.data.next_start_with)
+
+    def test_list_objects_truncated(self):
+        namespace = self.context.object_storage_api.get_namespace().data
+        response = self.context.object_storage_api.list_objects(namespace, 'ReadOnlyTestBucket1', limit=3)
+        self.assertEqual(200, response.status)
+        assert (type(response.data) is oraclebmi.models.ListObjects)
+        self.assertEqual(3, len(response.data.objects))
+        self.assertIsNone(response.data.prefixes)
+        self.assertIsNotNone(response.data.next_start_with)
+        first_object_name = response.data.objects[0].name
+
+        response = self.context.object_storage_api.list_objects(namespace, 'ReadOnlyTestBucket1', start=response.data.next_start_with)
+        self.assertEqual(2, len(response.data.objects))
+        self.assertIsNone(response.data.prefixes)
+        self.assertIsNone(response.data.next_start_with)
+        self.assertNotEqual(first_object_name, response.data.objects[0].name)
+
+    def test_head_object(self):
+        namespace = self.context.object_storage_api.get_namespace().data
+        response = self.context.object_storage_api.head_object(namespace, 'ReadOnlyTestBucket4', 'hasUserMetadata.json')
+        self.assertEqual(200, response.status)
+        self.assertIsNone (response.data)
+        self.assertEqual('bar1', response.headers['opc-meta-foo1'])
+        self.assertEqual('bar2', response.headers['opc-meta-foo2'])
 
 if __name__ == '__main__':
     unittest.main()

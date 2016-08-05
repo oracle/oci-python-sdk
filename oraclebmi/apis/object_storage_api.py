@@ -24,15 +24,11 @@ The original license is below.
 
 from __future__ import absolute_import
 
-import sys
-import os
 from io import IOBase
 
 # python 2 and python 3 compatibility library
 from six import iteritems
-
-
-
+from ..api_client import STREAM_RESPONSE_TYPE
 
 class ObjectStorageApi(object):
 
@@ -397,8 +393,7 @@ class ObjectStorageApi(object):
                                             query_params,
                                             header_params,
                                             body=body_params,
-                                            response_type='str',
-                                            stream=True)
+                                            response_type=STREAM_RESPONSE_TYPE)
         return response
 
     def head_object(self, namespace_name, bucket_name, object_name, **kwargs):

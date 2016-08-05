@@ -1,7 +1,5 @@
 from tests.service_test_base import ServiceTestBase
 import oraclebmi
-import tests.util
-import time
 
 class TestDataStream(ServiceTestBase):
     """Tests the oraclebmi.DataStream object."""

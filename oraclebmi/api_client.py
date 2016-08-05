@@ -46,6 +46,8 @@ def merge_type_mappings(*dictionaries):
         merged.update(dictionary)
     return merged
 
+STREAM_RESPONSE_TYPE = 'stream'
+
 class ApiClient(object):
 
     primitive_type_map = {
@@ -89,7 +91,6 @@ class ApiClient(object):
                    header_params=None,
                    body=None,
                    response_type=None,
-                   stream=False,
                    enforce_content_headers=True):
         """
         Makes the HTTP request and return the deserialized data.
@@ -102,7 +103,6 @@ class ApiClient(object):
         :param header_params: Request header params.
         :param body: Request body.
         :param response_type: Response data type.
-        :param stream: True if the response should be streamed.
         :param enforce_content_headers: True if content headers should be added for put and post requests
             when not present.
         :return: A Response object, or throw in the case of an error.
@@ -138,7 +138,6 @@ class ApiClient(object):
                           header_params=header_params,
                           body=body,
                           response_type=response_type,
-                          stream=stream,
                           enforce_content_headers=enforce_content_headers)
 
         return self.request(request)
@@ -150,13 +149,17 @@ class ApiClient(object):
         if not request.enforce_content_headers:
             signer = SignerWrapper(signer, enforce_content_headers=False)
 
+        stream = False
+        if request.response_type == STREAM_RESPONSE_TYPE:
+            stream = True
+
         response = self.session.request(request.method,
                                         request.url,
                                         auth=signer,
                                         params=request.query_params,
                                         headers=request.header_params,
                                         data=request.body,
-                                        stream=request.stream)
+                                        stream=stream)
 
         response_type = request.response_type
         is_error = not 200 <= response.status_code <= 299
@@ -165,7 +168,7 @@ class ApiClient(object):
             response_type = 'Error'
 
         # deserialize response data
-        if request.stream and not is_error:
+        if stream and not is_error:
             deserialized_data = DataStream(response)
         elif response_type:
             deserialized_data = self.deserialize_response_data(response.content, response_type)

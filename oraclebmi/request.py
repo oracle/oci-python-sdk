@@ -8,7 +8,6 @@ class Request(object):
                  header_params,
                  body,
                  response_type,
-                 stream=False,
                  enforce_content_headers=True):
 
         self._method = method
@@ -17,7 +16,6 @@ class Request(object):
         self._header_params = header_params
         self._body = body
         self._response_type = response_type
-        self._stream = stream
         self._enforce_content_headers = enforce_content_headers
 
     @property
@@ -43,11 +41,6 @@ class Request(object):
     @property
     def response_type(self):
         return self._response_type
-
-    @property
-    def stream(self):
-        """True if the the response should be stream, otherwise false."""
-        return self._stream
 
     @property
     def enforce_content_headers(self):
