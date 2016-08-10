@@ -19,8 +19,9 @@ class TestLargeFileTransfer(ServiceTestBase):
         self.temp_file = tests.util.get_resource_directory() + '/file_download_test_temp_file.dat'
         self.namespace = self.context.object_storage_api.get_namespace().data
 
-        request = oraclebmi.models.CreateBucket()
+        request = oraclebmi.models.CreateBucketDetails()
         request.name = self.write_bucket_name
+        request.compartment_id = self.context.config.tenancy
         response = self.context.object_storage_api.create_bucket(self.namespace, request)
         self.assertEqual(200, response.status)
 

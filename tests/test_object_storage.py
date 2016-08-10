@@ -15,8 +15,9 @@ class TestObjectStorage(ServiceTestBase):
         bucket_count = len(self.context.object_storage_api.list_buckets(namespace, limit=100).data)
 
         # Create
-        request = oraclebmi.models.CreateBucket()
+        request = oraclebmi.models.CreateBucketDetails()
         request.name = bucket_name
+        request.compartment_id = self.context.config.tenancy
         request.metadata = {'some key': 'some example metadata'}
         response = self.context.object_storage_api.create_bucket(namespace, request)
 
@@ -39,7 +40,7 @@ class TestObjectStorage(ServiceTestBase):
         assert (type(response.data[0]) is oraclebmi.models.Bucket)
 
         # Update
-        request = oraclebmi.models.UpdateBucket()
+        request = oraclebmi.models.UpdateBucketDetails()
         request.name = bucket_name
         request.metadata = {'new key': 'updated!', 'key2': 'another value'}
         response = self.context.object_storage_api.update_bucket(namespace, bucket_name, request)
@@ -59,8 +60,9 @@ class TestObjectStorage(ServiceTestBase):
         test_data = 'This is a test ' + tests.util.random_number_string() + '!/n/r/\/~%s;"/,{}><+=:.*)('''
         namespace = self.context.object_storage_api.get_namespace().data
 
-        request = oraclebmi.models.CreateBucket()
+        request = oraclebmi.models.CreateBucketDetails()
         request.name = bucket_name
+        request.compartment_id = self.context.config.tenancy
         response = self.context.object_storage_api.create_bucket(namespace, request)
         self.assertEqual(200, response.status)
 

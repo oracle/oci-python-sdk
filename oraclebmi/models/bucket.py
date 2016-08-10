@@ -1,26 +1,24 @@
 # coding: utf-8
 
-"""
-This is a modified version of the same template from swagger-codegen.
-The original can be found at https://github.com/swagger-api/swagger-codegen.
-The original license is below.
-
-    Copyright 2016 SmartBear Software
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-
-    Ref: https://github.com/swagger-api/swagger-codegen
-"""
+# This is a modified version of the same template from swagger-codegen.
+# The original can be found at https://github.com/swagger-api/swagger-codegen.
+# The original license is below.
+#
+#     Copyright 2016 SmartBear Software
+#
+#     Licensed under the Apache License, Version 2.0 (the "License");
+#     you may not use this file except in compliance with the License.
+#     You may obtain a copy of the License at
+#
+#         http://www.apache.org/licenses/LICENSE-2.0
+#
+#     Unless required by applicable law or agreed to in writing, software
+#     distributed under the License is distributed on an "AS IS" BASIS,
+#     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#     See the License for the specific language governing permissions and
+#     limitations under the License.
+#
+#     Ref: https://github.com/swagger-api/swagger-codegen
 
 from pprint import pformat
 from six import iteritems
@@ -28,32 +26,57 @@ from six import iteritems
 class Bucket(object):
 
     def __init__(self):
-        """
-        Bucket - a model defined in Swagger
-        """
 
         self.swagger_types = {
+            'namespace': 'str',
             'name': 'str',
+            'compartment': 'str',
             'metadata': 'dict(str, str)',
-            'time_created': 'datetime',
-            'time_modified': 'datetime',
+            'created_by': 'str',
+            'created_on': 'datetime',
             'etag': 'str'
         }
 
         self.attribute_map = {
+            'namespace': 'namespace',
             'name': 'name',
+            'compartment': 'compartment',
             'metadata': 'metadata',
-            'time_created': 'timeCreated',
-            'time_modified': 'timeModified',
+            'created_by': 'createdBy',
+            'created_on': 'createdOn',
             'etag': 'etag'
         }
 
+        self._namespace = None
         self._name = None
+        self._compartment = None
         self._metadata = None
-        self._time_created = None
-        self._time_modified = None
+        self._created_by = None
+        self._created_on = None
         self._etag = None
 
+
+    @property
+    def namespace(self):
+        """
+        Gets the namespace of this Bucket.
+        the namespace in which the bucket lives.
+
+        :return: The namespace of this Bucket.
+        :rtype: str
+        """
+        return self._namespace
+
+    @namespace.setter
+    def namespace(self, namespace):
+        """
+        Sets the namespace of this Bucket.
+        the namespace in which the bucket lives.
+
+        :param namespace: The namespace of this Bucket.
+        :type: str
+        """
+        self._namespace = namespace
 
     @property
     def name(self):
@@ -78,6 +101,28 @@ class Bucket(object):
         self._name = name
 
     @property
+    def compartment(self):
+        """
+        Gets the compartment of this Bucket.
+        the compartment in which the bucket is authorized.
+
+        :return: The compartment of this Bucket.
+        :rtype: str
+        """
+        return self._compartment
+
+    @compartment.setter
+    def compartment(self, compartment):
+        """
+        Sets the compartment of this Bucket.
+        the compartment in which the bucket is authorized.
+
+        :param compartment: The compartment of this Bucket.
+        :type: str
+        """
+        self._compartment = compartment
+
+    @property
     def metadata(self):
         """
         Gets the metadata of this Bucket.
@@ -100,48 +145,48 @@ class Bucket(object):
         self._metadata = metadata
 
     @property
-    def time_created(self):
+    def created_by(self):
         """
-        Gets the time_created of this Bucket.
-        The date and time at which the bucket was created.
+        Gets the created_by of this Bucket.
+        the OCID of the user who created the bucket.
 
-        :return: The time_created of this Bucket.
-        :rtype: datetime
+        :return: The created_by of this Bucket.
+        :rtype: str
         """
-        return self._time_created
+        return self._created_by
 
-    @time_created.setter
-    def time_created(self, time_created):
+    @created_by.setter
+    def created_by(self, created_by):
         """
-        Sets the time_created of this Bucket.
-        The date and time at which the bucket was created.
+        Sets the created_by of this Bucket.
+        the OCID of the user who created the bucket.
 
-        :param time_created: The time_created of this Bucket.
-        :type: datetime
+        :param created_by: The created_by of this Bucket.
+        :type: str
         """
-        self._time_created = time_created
+        self._created_by = created_by
 
     @property
-    def time_modified(self):
+    def created_on(self):
         """
-        Gets the time_modified of this Bucket.
-        The date and time at which the bucket was last modified.
+        Gets the created_on of this Bucket.
+        The date and time at which the bucket was created.
 
-        :return: The time_modified of this Bucket.
+        :return: The created_on of this Bucket.
         :rtype: datetime
         """
-        return self._time_modified
+        return self._created_on
 
-    @time_modified.setter
-    def time_modified(self, time_modified):
+    @created_on.setter
+    def created_on(self, created_on):
         """
-        Sets the time_modified of this Bucket.
-        The date and time at which the bucket was last modified.
+        Sets the created_on of this Bucket.
+        The date and time at which the bucket was created.
 
-        :param time_modified: The time_modified of this Bucket.
+        :param created_on: The created_on of this Bucket.
         :type: datetime
         """
-        self._time_modified = time_modified
+        self._created_on = created_on
 
     @property
     def etag(self):

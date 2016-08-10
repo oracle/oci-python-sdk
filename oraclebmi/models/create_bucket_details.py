@@ -23,59 +23,59 @@
 from pprint import pformat
 from six import iteritems
 
-class CreatePolicyRequest(object):
+class CreateBucketDetails(object):
 
     def __init__(self):
 
         self.swagger_types = {
-            'compartment_id': 'str',
+            'namespace': 'str',
             'name': 'str',
-            'statements': 'list[str]',
-            'description': 'str'
+            'compartment_id': 'str',
+            'metadata': 'dict(str, str)'
         }
 
         self.attribute_map = {
-            'compartment_id': 'compartmentId',
+            'namespace': 'namespace',
             'name': 'name',
-            'statements': 'statements',
-            'description': 'description'
+            'compartment_id': 'compartmentId',
+            'metadata': 'metadata'
         }
 
-        self._compartment_id = None
+        self._namespace = None
         self._name = None
-        self._statements = None
-        self._description = None
+        self._compartment_id = None
+        self._metadata = None
 
 
     @property
-    def compartment_id(self):
+    def namespace(self):
         """
-        Gets the compartment_id of this CreatePolicyRequest.
-        The OCID of the tenancy containing the policy.
+        Gets the namespace of this CreateBucketDetails.
+        The namespace in which the bucket lives.
 
-        :return: The compartment_id of this CreatePolicyRequest.
+        :return: The namespace of this CreateBucketDetails.
         :rtype: str
         """
-        return self._compartment_id
+        return self._namespace
 
-    @compartment_id.setter
-    def compartment_id(self, compartment_id):
+    @namespace.setter
+    def namespace(self, namespace):
         """
-        Sets the compartment_id of this CreatePolicyRequest.
-        The OCID of the tenancy containing the policy.
+        Sets the namespace of this CreateBucketDetails.
+        The namespace in which the bucket lives.
 
-        :param compartment_id: The compartment_id of this CreatePolicyRequest.
+        :param namespace: The namespace of this CreateBucketDetails.
         :type: str
         """
-        self._compartment_id = compartment_id
+        self._namespace = namespace
 
     @property
     def name(self):
         """
-        Gets the name of this CreatePolicyRequest.
-        A unique, unchangeable name you assign to the policy during creation. Must be unique across all policies\nin the tenancy.\n
+        Gets the name of this CreateBucketDetails.
+        The name of the bucket.
 
-        :return: The name of this CreatePolicyRequest.
+        :return: The name of this CreateBucketDetails.
         :rtype: str
         """
         return self._name
@@ -83,57 +83,57 @@ class CreatePolicyRequest(object):
     @name.setter
     def name(self, name):
         """
-        Sets the name of this CreatePolicyRequest.
-        A unique, unchangeable name you assign to the policy during creation. Must be unique across all policies\nin the tenancy.\n
+        Sets the name of this CreateBucketDetails.
+        The name of the bucket.
 
-        :param name: The name of this CreatePolicyRequest.
+        :param name: The name of this CreateBucketDetails.
         :type: str
         """
         self._name = name
 
     @property
-    def statements(self):
+    def compartment_id(self):
         """
-        Gets the statements of this CreatePolicyRequest.
-        An array of policy statements written in the policy language. See [Policies](../../../#Identity/Concepts/policies.htm).\n
+        Gets the compartment_id of this CreateBucketDetails.
+        The compartment ID used to authorize the bucket.
 
-        :return: The statements of this CreatePolicyRequest.
-        :rtype: list[str]
-        """
-        return self._statements
-
-    @statements.setter
-    def statements(self, statements):
-        """
-        Sets the statements of this CreatePolicyRequest.
-        An array of policy statements written in the policy language. See [Policies](../../../#Identity/Concepts/policies.htm).\n
-
-        :param statements: The statements of this CreatePolicyRequest.
-        :type: list[str]
-        """
-        self._statements = statements
-
-    @property
-    def description(self):
-        """
-        Gets the description of this CreatePolicyRequest.
-        The non-unique, changeable description you assign to the policy during creation.
-
-        :return: The description of this CreatePolicyRequest.
+        :return: The compartment_id of this CreateBucketDetails.
         :rtype: str
         """
-        return self._description
+        return self._compartment_id
 
-    @description.setter
-    def description(self, description):
+    @compartment_id.setter
+    def compartment_id(self, compartment_id):
         """
-        Sets the description of this CreatePolicyRequest.
-        The non-unique, changeable description you assign to the policy during creation.
+        Sets the compartment_id of this CreateBucketDetails.
+        The compartment ID used to authorize the bucket.
 
-        :param description: The description of this CreatePolicyRequest.
+        :param compartment_id: The compartment_id of this CreateBucketDetails.
         :type: str
         """
-        self._description = description
+        self._compartment_id = compartment_id
+
+    @property
+    def metadata(self):
+        """
+        Gets the metadata of this CreateBucketDetails.
+        Arbitrary string keys and values for the user-defined metadata.
+
+        :return: The metadata of this CreateBucketDetails.
+        :rtype: dict(str, str)
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """
+        Sets the metadata of this CreateBucketDetails.
+        Arbitrary string keys and values for the user-defined metadata.
+
+        :param metadata: The metadata of this CreateBucketDetails.
+        :type: dict(str, str)
+        """
+        self._metadata = metadata
 
     def to_dict(self):
         """

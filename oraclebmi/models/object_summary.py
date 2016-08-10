@@ -1,26 +1,24 @@
 # coding: utf-8
 
-"""
-This is a modified version of the same template from swagger-codegen.
-The original can be found at https://github.com/swagger-api/swagger-codegen.
-The original license is below.
-
-    Copyright 2016 SmartBear Software
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-
-    Ref: https://github.com/swagger-api/swagger-codegen
-"""
+# This is a modified version of the same template from swagger-codegen.
+# The original can be found at https://github.com/swagger-api/swagger-codegen.
+# The original license is below.
+#
+#     Copyright 2016 SmartBear Software
+#
+#     Licensed under the Apache License, Version 2.0 (the "License");
+#     you may not use this file except in compliance with the License.
+#     You may obtain a copy of the License at
+#
+#         http://www.apache.org/licenses/LICENSE-2.0
+#
+#     Unless required by applicable law or agreed to in writing, software
+#     distributed under the License is distributed on an "AS IS" BASIS,
+#     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#     See the License for the specific language governing permissions and
+#     limitations under the License.
+#
+#     Ref: https://github.com/swagger-api/swagger-codegen
 
 from pprint import pformat
 from six import iteritems
@@ -28,27 +26,24 @@ from six import iteritems
 class ObjectSummary(object):
 
     def __init__(self):
-        """
-        ObjectSummary - a model defined in Swagger
-        """
 
         self.swagger_types = {
             'name': 'str',
             'size': 'int',
-            'md5_hash': 'str',
+            'md5': 'str',
             'created': 'str'
         }
 
         self.attribute_map = {
             'name': 'name',
             'size': 'size',
-            'md5_hash': 'md5_hash',
+            'md5': 'md5',
             'created': 'created'
         }
 
         self._name = None
         self._size = None
-        self._md5_hash = None
+        self._md5 = None
         self._created = None
 
 
@@ -97,26 +92,26 @@ class ObjectSummary(object):
         self._size = size
 
     @property
-    def md5_hash(self):
+    def md5(self):
         """
-        Gets the md5_hash of this ObjectSummary.
+        Gets the md5 of this ObjectSummary.
         Base64 encoded MD5 hash of the object data.
 
-        :return: The md5_hash of this ObjectSummary.
+        :return: The md5 of this ObjectSummary.
         :rtype: str
         """
-        return self._md5_hash
+        return self._md5
 
-    @md5_hash.setter
-    def md5_hash(self, md5_hash):
+    @md5.setter
+    def md5(self, md5):
         """
-        Sets the md5_hash of this ObjectSummary.
+        Sets the md5 of this ObjectSummary.
         Base64 encoded MD5 hash of the object data.
 
-        :param md5_hash: The md5_hash of this ObjectSummary.
+        :param md5: The md5 of this ObjectSummary.
         :type: str
         """
-        self._md5_hash = md5_hash
+        self._md5 = md5
 
     @property
     def created(self):

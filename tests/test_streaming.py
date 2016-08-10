@@ -12,8 +12,9 @@ class TestStreaming(ServiceTestBase):
         self.bucket_name = tests.util.unique_name('test_python_streaming')
         self.namespace = self.context.object_storage_api.get_namespace().data
 
-        request = oraclebmi.models.CreateBucket()
+        request = oraclebmi.models.CreateBucketDetails()
         request.name = self.bucket_name
+        request.compartment_id = self.context.config.tenancy
         response = self.context.object_storage_api.create_bucket(self.namespace, request)
         self.assertEqual(200, response.status)
 

@@ -103,9 +103,9 @@
         </executions>
       </plugin>
       <plugin>
-        <groupId>com.oracle.pic.commons.maven</groupId>
-        <artifactId>oracle-swagger-maven-plugin</artifactId>
-        <version>0.2.5-SNAPSHOT</version>
+        <groupId>com.oracle.bmc.sdk</groupId>
+        <artifactId>bmc-sdk-swagger-maven-plugin</artifactId>
+        <version>0.1.0-SNAPSHOT</version>
         <executions>
           <execution>
             <id>python-public-sdk-identity</id>

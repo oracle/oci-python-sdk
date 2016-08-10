@@ -1,30 +1,30 @@
 # coding: utf-8
 
-"""
-This is a modified version of the same template from swagger-codegen.
-The original can be found at https://github.com/swagger-api/swagger-codegen.
-The original license is below.
-
-    Copyright 2016 SmartBear Software
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-
-    Ref: https://github.com/swagger-api/swagger-codegen
-"""
+# This is a modified version of the same template from swagger-codegen.
+# The original can be found at https://github.com/swagger-api/swagger-codegen.
+# The original license is below.
+#
+#     Copyright 2016 SmartBear Software
+#
+#     Licensed under the Apache License, Version 2.0 (the "License");
+#     you may not use this file except in compliance with the License.
+#     You may obtain a copy of the License at
+#
+#         http://www.apache.org/licenses/LICENSE-2.0
+#
+#     Unless required by applicable law or agreed to in writing, software
+#     distributed under the License is distributed on an "AS IS" BASIS,
+#     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#     See the License for the specific language governing permissions and
+#     limitations under the License.
+#
+#     Ref: https://github.com/swagger-api/swagger-codegen
 
 from __future__ import absolute_import
+
 # python 2 and python 3 compatibility library
 from six import iteritems
+from io import IOBase
 
 class BlockstorageApi(object):
 
@@ -39,9 +39,7 @@ class BlockstorageApi(object):
 
         :param CreateVolumeRequest create_volume_request: Request to create a new volume. (required)
         :param str opc_idempotency_token: A token you supply to uniquely identify the request and provide idempotency if\nthe request is retried. Idempotency tokens expire after 30 minutes.\n
-        :return: Volume
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type Volume
         """
 
         all_params = ['create_volume_request', 'opc_idempotency_token']
@@ -93,9 +91,7 @@ class BlockstorageApi(object):
 
         :param str volume_id: The Oracle Cloud ID (OCID) that uniquely identifies the volume. (required)
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type None
         """
 
         all_params = ['volume_id', 'if_match']
@@ -146,9 +142,7 @@ class BlockstorageApi(object):
         Gets information on the specified volume.
 
         :param str volume_id: The Oracle Cloud ID (OCID) that uniquely identifies the volume. (required)
-        :return: Volume
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type Volume
         """
 
         all_params = ['volume_id']
@@ -200,9 +194,7 @@ class BlockstorageApi(object):
         :param str availability_domain: The name of the Availability Domain.
         :param int limit: The maximum number of items to return in a paginated \"List\" call. For information about pagination, see\n[List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
         :param str page: The value of the `opc-next-page` response header from the previous \"List\" call. For information about\npagination, see [List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
-        :return: list[Volume]
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type list[Volume]
         """
 
         all_params = ['compartment_id', 'availability_domain', 'limit', 'page']
@@ -259,9 +251,7 @@ class BlockstorageApi(object):
         :param str volume_id: The Oracle Cloud ID (OCID) that uniquely identifies the volume. (required)
         :param UpdateVolumeRequest update_volume_request: Update volume's display name. (required)
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
-        :return: Volume
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type Volume
         """
 
         all_params = ['volume_id', 'update_volume_request', 'if_match']

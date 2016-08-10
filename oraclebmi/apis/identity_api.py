@@ -1,31 +1,30 @@
 # coding: utf-8
 
-"""
-This is a modified version of the same template from swagger-codegen.
-The original can be found at https://github.com/swagger-api/swagger-codegen.
-The original license is below.
-
-    Copyright 2016 SmartBear Software
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-
-    Ref: https://github.com/swagger-api/swagger-codegen
-"""
+# This is a modified version of the same template from swagger-codegen.
+# The original can be found at https://github.com/swagger-api/swagger-codegen.
+# The original license is below.
+#
+#     Copyright 2016 SmartBear Software
+#
+#     Licensed under the Apache License, Version 2.0 (the "License");
+#     you may not use this file except in compliance with the License.
+#     You may obtain a copy of the License at
+#
+#         http://www.apache.org/licenses/LICENSE-2.0
+#
+#     Unless required by applicable law or agreed to in writing, software
+#     distributed under the License is distributed on an "AS IS" BASIS,
+#     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#     See the License for the specific language governing permissions and
+#     limitations under the License.
+#
+#     Ref: https://github.com/swagger-api/swagger-codegen
 
 from __future__ import absolute_import
 
 # python 2 and python 3 compatibility library
 from six import iteritems
+from io import IOBase
 
 class IdentityApi(object):
 
@@ -40,9 +39,7 @@ class IdentityApi(object):
 
         :param AddUserToGroupRequest add_user_to_group_request: Request object for adding a user to a group. (required)
         :param str opc_idempotency_token: A token you supply to uniquely identify the request and provide idempotency if\nthe request is retried. Idempotency tokens expire after 30 minutes.\n
-        :return: UserGroupMembership
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type UserGroupMembership
         """
 
         all_params = ['add_user_to_group_request', 'opc_idempotency_token']
@@ -94,9 +91,7 @@ class IdentityApi(object):
 
         :param CreateCompartmentRequest create_compartment_request: Request object for creating a new compartment. (required)
         :param str opc_idempotency_token: A token you supply to uniquely identify the request and provide idempotency if\nthe request is retried. Idempotency tokens expire after 30 minutes.\n
-        :return: Compartment
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type Compartment
         """
 
         all_params = ['create_compartment_request', 'opc_idempotency_token']
@@ -148,9 +143,7 @@ class IdentityApi(object):
 
         :param CreateGroupRequest create_group_request: Request object for creating a new group. (required)
         :param str opc_idempotency_token: A token you supply to uniquely identify the request and provide idempotency if\nthe request is retried. Idempotency tokens expire after 30 minutes.\n
-        :return: Group
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type Group
         """
 
         all_params = ['create_group_request', 'opc_idempotency_token']
@@ -202,9 +195,7 @@ class IdentityApi(object):
 
         :param str user_id: The user's OCID. (required)
         :param str opc_idempotency_token: A token you supply to uniquely identify the request and provide idempotency if\nthe request is retried. Idempotency tokens expire after 30 minutes.\n
-        :return: UIPassword
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type UIPassword
         """
 
         all_params = ['user_id', 'opc_idempotency_token']
@@ -256,9 +247,7 @@ class IdentityApi(object):
 
         :param CreatePolicyRequest create_policy_request: Request object for creating a new policy. (required)
         :param str opc_idempotency_token: A token you supply to uniquely identify the request and provide idempotency if\nthe request is retried. Idempotency tokens expire after 30 minutes.\n
-        :return: Policy
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type Policy
         """
 
         all_params = ['create_policy_request', 'opc_idempotency_token']
@@ -310,9 +299,7 @@ class IdentityApi(object):
 
         :param CreateUserRequest create_user_request: Request object for creating a new user. (required)
         :param str opc_idempotency_token: A token you supply to uniquely identify the request and provide idempotency if\nthe request is retried. Idempotency tokens expire after 30 minutes.\n
-        :return: User
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type User
         """
 
         all_params = ['create_user_request', 'opc_idempotency_token']
@@ -365,9 +352,7 @@ class IdentityApi(object):
         :param str user_id: The user's OCID. (required)
         :param str fingerprint: The key's fingerprint. (required)
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type None
         """
 
         all_params = ['user_id', 'fingerprint', 'if_match']
@@ -424,9 +409,7 @@ class IdentityApi(object):
 
         :param str group_id: The group's OCID. (required)
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type None
         """
 
         all_params = ['group_id', 'if_match']
@@ -478,9 +461,7 @@ class IdentityApi(object):
 
         :param str policy_id: The policy's OCID. (required)
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type None
         """
 
         all_params = ['policy_id', 'if_match']
@@ -532,9 +513,7 @@ class IdentityApi(object):
 
         :param str user_id: The user's OCID. (required)
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type None
         """
 
         all_params = ['user_id', 'if_match']
@@ -585,9 +564,7 @@ class IdentityApi(object):
         Gets the specified compartment's information.\n\nThis operation does not return a list of all the resources inside the compartment. There is no single\nAPI operation that does that. Compartments can contain multiple types of resources (instances, block\nstorage volumes, etc.). To find out what's in a compartment, you must call the \"List\" operation for\neach resource type and specify the compartment's OCID as a query parameter in the request. For example,\ncall the `ListInstances` operation in the Cloud Compute Service or the `ListVolumes` operation in\n Cloud Block Storage.\n
 
         :param str compartment_id: The compartment's OCID. (required)
-        :return: Compartment
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type Compartment
         """
 
         all_params = ['compartment_id']
@@ -636,9 +613,7 @@ class IdentityApi(object):
         Gets the specified group's information.\n\nThis operation does not return a list of all the users in the group. To do that, use\n[ListUserGroupMemberships](#listUserGroupMemberships) and provide the group's OCID as a\nquery parameter in the request.\n
 
         :param str group_id: The group's OCID. (required)
-        :return: Group
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type Group
         """
 
         all_params = ['group_id']
@@ -687,9 +662,7 @@ class IdentityApi(object):
         Gets the specified policy's information.
 
         :param str policy_id: The policy's OCID. (required)
-        :return: Policy
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type Policy
         """
 
         all_params = ['policy_id']
@@ -738,9 +711,7 @@ class IdentityApi(object):
         Gets the specified user's information.
 
         :param str user_id: The user's OCID. (required)
-        :return: User
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type User
         """
 
         all_params = ['user_id']
@@ -789,9 +760,7 @@ class IdentityApi(object):
         Gets the specified UserGroupMembership's information.
 
         :param str user_group_membership_id: The userGroupMembership's OCID. (required)
-        :return: UserGroupMembership
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type UserGroupMembership
         """
 
         all_params = ['user_group_membership_id']
@@ -840,9 +809,7 @@ class IdentityApi(object):
         Gets a list of the API signing keys for the specified user. A user can have a maximum of three keys.\n\nEvery user has permission to use this API call for *their own user ID*.  An Administrator in your\norganization does not need to write a policy to give users this ability.\n
 
         :param str user_id: The user's OCID. (required)
-        :return: list[ApiKey]
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type list[ApiKey]
         """
 
         all_params = ['user_id']
@@ -891,9 +858,7 @@ class IdentityApi(object):
         Gets a list of all the Availability Domains in your tenancy. You must specify your tenancy's OCID\nas the value for the compartment ID (remember that the tenancy is simply the root compartment). See\n[Where to Find Your Tenancy's OCID](../../../#API/Concepts/usingapi.htm#Where_to_Find_Your_Tenancy's_OCID).\nFor information about Availability Domains, see\n[Regions and Availability Domains](../../../#General/Concepts/regions.htm).\n\nFor information about endpoints and signing API requests,\nsee [Making API Requests](../../../#API/Concepts/usingapi.htm).\n
 
         :param str compartment_id: Your tenancy's OCID (remember that the tenancy is simply the root compartment).\n (required)
-        :return: list[AvailabilityDomain]
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type list[AvailabilityDomain]
         """
 
         all_params = ['compartment_id']
@@ -944,9 +909,7 @@ class IdentityApi(object):
         :param str compartment_id: Your tenancy's OCID (remember that the tenancy is simply the root compartment).\n (required)
         :param str page: The value of the `opc-next-page` response header from the previous \"List\" call. For information about\npagination, see [List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
         :param int limit: The maximum number of items to return in a paginated \"List\" call. For information about pagination, see\n[List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
-        :return: list[Compartment]
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type list[Compartment]
         """
 
         all_params = ['compartment_id', 'page', 'limit']
@@ -1001,9 +964,7 @@ class IdentityApi(object):
         :param str compartment_id: Your tenancy's OCID (remember that the tenancy is simply the root compartment).\n (required)
         :param str page: The value of the `opc-next-page` response header from the previous \"List\" call. For information about\npagination, see [List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
         :param int limit: The maximum number of items to return in a paginated \"List\" call. For information about pagination, see\n[List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
-        :return: list[Group]
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type list[Group]
         """
 
         all_params = ['compartment_id', 'page', 'limit']
@@ -1058,9 +1019,7 @@ class IdentityApi(object):
         :param str compartment_id: Your tenancy's OCID (remember that the tenancy is simply the root compartment).\n (required)
         :param str page: The value of the `opc-next-page` response header from the previous \"List\" call. For information about\npagination, see [List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
         :param int limit: The maximum number of items to return in a paginated \"List\" call. For information about pagination, see\n[List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
-        :return: list[Policy]
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type list[Policy]
         """
 
         all_params = ['compartment_id', 'page', 'limit']
@@ -1117,9 +1076,7 @@ class IdentityApi(object):
         :param str group_id: The group's OCID.
         :param str page: The value of the `opc-next-page` response header from the previous \"List\" call. For information about\npagination, see [List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
         :param int limit: The maximum number of items to return in a paginated \"List\" call. For information about pagination, see\n[List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
-        :return: list[UserGroupMembership]
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type list[UserGroupMembership]
         """
 
         all_params = ['compartment_id', 'user_id', 'group_id', 'page', 'limit']
@@ -1178,9 +1135,7 @@ class IdentityApi(object):
         :param str compartment_id: Your tenancy's OCID (remember that the tenancy is simply the root compartment).\n (required)
         :param str page: The value of the `opc-next-page` response header from the previous \"List\" call. For information about\npagination, see [List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
         :param int limit: The maximum number of items to return in a paginated \"List\" call. For information about pagination, see\n[List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
-        :return: list[User]
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type list[User]
         """
 
         all_params = ['compartment_id', 'page', 'limit']
@@ -1234,9 +1189,7 @@ class IdentityApi(object):
 
         :param str user_group_membership_id: The userGroupMembership's OCID. (required)
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type None
         """
 
         all_params = ['user_group_membership_id', 'if_match']
@@ -1289,9 +1242,7 @@ class IdentityApi(object):
         :param str compartment_id: The compartment's OCID. (required)
         :param UpdateCompartmentRequest update_compartment_request: Request object for updating a compartment. (required)
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
-        :return: Compartment
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type Compartment
         """
 
         all_params = ['compartment_id', 'update_compartment_request', 'if_match']
@@ -1349,9 +1300,7 @@ class IdentityApi(object):
         :param str group_id: The group's OCID. (required)
         :param UpdateGroupRequest update_group_request: Request object for updating a group. (required)
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
-        :return: Group
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type Group
         """
 
         all_params = ['group_id', 'update_group_request', 'if_match']
@@ -1409,9 +1358,7 @@ class IdentityApi(object):
         :param str policy_id: The policy's OCID. (required)
         :param UpdatePolicyRequest update_policy_request: Request object for updating a policy. (required)
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
-        :return: Policy
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type Policy
         """
 
         all_params = ['policy_id', 'update_policy_request', 'if_match']
@@ -1469,9 +1416,7 @@ class IdentityApi(object):
         :param str user_id: The user's OCID. (required)
         :param UpdateUserRequest update_user_request: Request object for updating a user. (required)
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
-        :return: User
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type User
         """
 
         all_params = ['user_id', 'update_user_request', 'if_match']
@@ -1529,9 +1474,7 @@ class IdentityApi(object):
         :param str user_id: The user's OCID. (required)
         :param UpdateUiPasswordRequest update_ui_password_request: Request object for updating a user's UI password. (required)
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
-        :return: UIPassword
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type UIPassword
         """
 
         all_params = ['user_id', 'update_ui_password_request', 'if_match']
@@ -1589,9 +1532,7 @@ class IdentityApi(object):
         :param str user_id: The user's OCID. (required)
         :param CreateApiKeyRequest create_api_key_request: Request object for uploading an API key for a user. (required)
         :param str opc_idempotency_token: A token you supply to uniquely identify the request and provide idempotency if\nthe request is retried. Idempotency tokens expire after 30 minutes.\n
-        :return: ApiKey
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type ApiKey
         """
 
         all_params = ['user_id', 'create_api_key_request', 'opc_idempotency_token']
