@@ -1,31 +1,30 @@
 # coding: utf-8
 
-"""
-This is a modified version of the same template from swagger-codegen.
-The original can be found at https://github.com/swagger-api/swagger-codegen.
-The original license is below.
-
-    Copyright 2016 SmartBear Software
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-
-    Ref: https://github.com/swagger-api/swagger-codegen
-"""
+# This is a modified version of the same template from swagger-codegen.
+# The original can be found at https://github.com/swagger-api/swagger-codegen.
+# The original license is below.
+#
+#     Copyright 2016 SmartBear Software
+#
+#     Licensed under the Apache License, Version 2.0 (the "License");
+#     you may not use this file except in compliance with the License.
+#     You may obtain a copy of the License at
+#
+#         http://www.apache.org/licenses/LICENSE-2.0
+#
+#     Unless required by applicable law or agreed to in writing, software
+#     distributed under the License is distributed on an "AS IS" BASIS,
+#     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#     See the License for the specific language governing permissions and
+#     limitations under the License.
+#
+#     Ref: https://github.com/swagger-api/swagger-codegen
 
 from __future__ import absolute_import
 
 # python 2 and python 3 compatibility library
 from six import iteritems
+from io import IOBase
 
 class VcnServiceApi(object):
 
@@ -40,9 +39,7 @@ class VcnServiceApi(object):
 
         :param CreateCpeRequest create_cpe_request: Request object for creating a CPE. (required)
         :param str opc_idempotency_token: A token you supply to uniquely identify the request and provide idempotency if\nthe request is retried. Idempotency tokens expire after 30 minutes.\n
-        :return: Cpe
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type Cpe
         """
 
         all_params = ['create_cpe_request', 'opc_idempotency_token']
@@ -94,9 +91,7 @@ class VcnServiceApi(object):
 
         :param CreateDrgRequest create_drg_request: Request object for creating a DRG. (required)
         :param str opc_idempotency_token: A token you supply to uniquely identify the request and provide idempotency if\nthe request is retried. Idempotency tokens expire after 30 minutes.\n
-        :return: Drg
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type Drg
         """
 
         all_params = ['create_drg_request', 'opc_idempotency_token']
@@ -148,9 +143,7 @@ class VcnServiceApi(object):
 
         :param CreateDrgAttachmentRequest create_drg_attachment_request: Request object for creating a `DrgAttachment`. (required)
         :param str opc_idempotency_token: A token you supply to uniquely identify the request and provide idempotency if\nthe request is retried. Idempotency tokens expire after 30 minutes.\n
-        :return: DrgAttachment
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type DrgAttachment
         """
 
         all_params = ['create_drg_attachment_request', 'opc_idempotency_token']
@@ -202,9 +195,7 @@ class VcnServiceApi(object):
 
         :param CreateInternetGatewayRequest create_internet_gateway_request: Request object for creating a new Internet Gateway. (required)
         :param str opc_idempotency_token: A token you supply to uniquely identify the request and provide idempotency if\nthe request is retried. Idempotency tokens expire after 30 minutes.\n
-        :return: InternetGateway
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type InternetGateway
         """
 
         all_params = ['create_internet_gateway_request', 'opc_idempotency_token']
@@ -256,9 +247,7 @@ class VcnServiceApi(object):
 
         :param CreateIPSecConnectionRequest create_ip_sec_connection_request: Request object for creating an `IPSecConnection`. (required)
         :param str opc_idempotency_token: A token you supply to uniquely identify the request and provide idempotency if\nthe request is retried. Idempotency tokens expire after 30 minutes.\n
-        :return: IPSecConnection
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type IPSecConnection
         """
 
         all_params = ['create_ip_sec_connection_request', 'opc_idempotency_token']
@@ -310,9 +299,7 @@ class VcnServiceApi(object):
 
         :param CreateRouteTableRequest create_route_table_request: Request object for creating a new route table. (required)
         :param str opc_idempotency_token: A token you supply to uniquely identify the request and provide idempotency if\nthe request is retried. Idempotency tokens expire after 30 minutes.\n
-        :return: RouteTable
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type RouteTable
         """
 
         all_params = ['create_route_table_request', 'opc_idempotency_token']
@@ -364,9 +351,7 @@ class VcnServiceApi(object):
 
         :param CreateSubnetRequest create_subnet_request: Request object for creating a subnet. (required)
         :param str opc_idempotency_token: A token you supply to uniquely identify the request and provide idempotency if\nthe request is retried. Idempotency tokens expire after 30 minutes.\n
-        :return: Subnet
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type Subnet
         """
 
         all_params = ['create_subnet_request', 'opc_idempotency_token']
@@ -418,9 +403,7 @@ class VcnServiceApi(object):
 
         :param CreateVcnRequest create_vcn_request: Request object for creating a new VCN. (required)
         :param str opc_idempotency_token: A token you supply to uniquely identify the request and provide idempotency if\nthe request is retried. Idempotency tokens expire after 30 minutes.\n
-        :return: Vcn
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type Vcn
         """
 
         all_params = ['create_vcn_request', 'opc_idempotency_token']
@@ -472,9 +455,7 @@ class VcnServiceApi(object):
 
         :param str cpe_id: The CPE's OCID. (required)
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type None
         """
 
         all_params = ['cpe_id', 'if_match']
@@ -526,9 +507,7 @@ class VcnServiceApi(object):
 
         :param str drg_id: The DRG's OCID. (required)
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type None
         """
 
         all_params = ['drg_id', 'if_match']
@@ -580,9 +559,7 @@ class VcnServiceApi(object):
 
         :param str drg_attachment_id: The DRG attachment's OCID. (required)
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type None
         """
 
         all_params = ['drg_attachment_id', 'if_match']
@@ -634,9 +611,7 @@ class VcnServiceApi(object):
 
         :param str ig_id: The Internet Gateway's OCID. (required)
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type None
         """
 
         all_params = ['ig_id', 'if_match']
@@ -688,9 +663,7 @@ class VcnServiceApi(object):
 
         :param str ipsc_id: The IPsec connection's OCID. (required)
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type None
         """
 
         all_params = ['ipsc_id', 'if_match']
@@ -742,9 +715,7 @@ class VcnServiceApi(object):
 
         :param str rt_id: The route table's OCID. (required)
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type None
         """
 
         all_params = ['rt_id', 'if_match']
@@ -796,9 +767,7 @@ class VcnServiceApi(object):
 
         :param str subnet_id: The subnet's OCID. (required)
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type None
         """
 
         all_params = ['subnet_id', 'if_match']
@@ -850,9 +819,7 @@ class VcnServiceApi(object):
 
         :param str vcn_id: The VCN's OCID. (required)
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type None
         """
 
         all_params = ['vcn_id', 'if_match']
@@ -903,9 +870,7 @@ class VcnServiceApi(object):
         Gets the specified CPE's information.
 
         :param str cpe_id: The CPE's OCID. (required)
-        :return: Cpe
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type Cpe
         """
 
         all_params = ['cpe_id']
@@ -954,9 +919,7 @@ class VcnServiceApi(object):
         Gets the specified DRG's information.
 
         :param str drg_id: The DRG's OCID. (required)
-        :return: Drg
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type Drg
         """
 
         all_params = ['drg_id']
@@ -1005,9 +968,7 @@ class VcnServiceApi(object):
         Gets the information for the specified `DrgAttachment`.
 
         :param str drg_attachment_id: The DRG attachment's OCID. (required)
-        :return: DrgAttachment
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type DrgAttachment
         """
 
         all_params = ['drg_attachment_id']
@@ -1056,9 +1017,7 @@ class VcnServiceApi(object):
         Gets the specified Internet Gateway's information.
 
         :param str ig_id: The Internet Gateway's OCID. (required)
-        :return: InternetGateway
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type InternetGateway
         """
 
         all_params = ['ig_id']
@@ -1107,9 +1066,7 @@ class VcnServiceApi(object):
         Gets the specified IPsec connection's basic information, including the static routes for the\non-premise router. If you want the status of the connection (whether it's up or down), use\n[GetIPSecConnectionDeviceStatus](#getIPSecConnectionDeviceStatus).\n
 
         :param str ipsc_id: The IPsec connection's OCID. (required)
-        :return: IPSecConnection
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type IPSecConnection
         """
 
         all_params = ['ipsc_id']
@@ -1158,9 +1115,7 @@ class VcnServiceApi(object):
         Gets the configuration information for the specified IPsec connection. For each tunnel, the\nresponse includes the IP address of Oracle's VPN headend and the shared secret.\n
 
         :param str ipsc_id: The IPsec connection's OCID. (required)
-        :return: IPSecConnectionDeviceConfig
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type IPSecConnectionDeviceConfig
         """
 
         all_params = ['ipsc_id']
@@ -1209,9 +1164,7 @@ class VcnServiceApi(object):
         Gets the status of the specified IPsec connection (whether it's up or down).
 
         :param str ipsc_id: The IPsec connection's OCID. (required)
-        :return: IPSecConnectionDeviceStatus
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type IPSecConnectionDeviceStatus
         """
 
         all_params = ['ipsc_id']
@@ -1260,9 +1213,7 @@ class VcnServiceApi(object):
         Gets the specified route table's information.
 
         :param str rt_id: The route table's OCID. (required)
-        :return: RouteTable
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type RouteTable
         """
 
         all_params = ['rt_id']
@@ -1311,9 +1262,7 @@ class VcnServiceApi(object):
         Gets the specified subnet's information.
 
         :param str subnet_id: The subnet's OCID. (required)
-        :return: Subnet
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type Subnet
         """
 
         all_params = ['subnet_id']
@@ -1362,9 +1311,7 @@ class VcnServiceApi(object):
         Gets the specified VCN's information.
 
         :param str vcn_id: The VCN's OCID. (required)
-        :return: Vcn
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type Vcn
         """
 
         all_params = ['vcn_id']
@@ -1415,9 +1362,7 @@ class VcnServiceApi(object):
         :param str compartment_id: The OCID of the compartment. (required)
         :param int limit: The maximum number of items to return in a paginated \"List\" call. For information about pagination, see\n[List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
         :param str page: The value of the `opc-next-page` response header from the previous \"List\" call. For information about\npagination, see [List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
-        :return: list[Cpe]
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type list[Cpe]
         """
 
         all_params = ['compartment_id', 'limit', 'page']
@@ -1474,9 +1419,7 @@ class VcnServiceApi(object):
         :param str drg_id: The DRG's OCID.
         :param int limit: The maximum number of items to return in a paginated \"List\" call. For information about pagination, see\n[List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
         :param str page: The value of the `opc-next-page` response header from the previous \"List\" call. For information about\npagination, see [List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
-        :return: list[DrgAttachment]
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type list[DrgAttachment]
         """
 
         all_params = ['compartment_id', 'vcn_id', 'drg_id', 'limit', 'page']
@@ -1535,9 +1478,7 @@ class VcnServiceApi(object):
         :param str compartment_id: The OCID of the compartment. (required)
         :param int limit: The maximum number of items to return in a paginated \"List\" call. For information about pagination, see\n[List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
         :param str page: The value of the `opc-next-page` response header from the previous \"List\" call. For information about\npagination, see [List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
-        :return: list[Drg]
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type list[Drg]
         """
 
         all_params = ['compartment_id', 'limit', 'page']
@@ -1593,9 +1534,7 @@ class VcnServiceApi(object):
         :param str vcn: The VCN's OCID. (required)
         :param int limit: The maximum number of items to return in a paginated \"List\" call. For information about pagination, see\n[List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
         :param str page: The value of the `opc-next-page` response header from the previous \"List\" call. For information about\npagination, see [List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
-        :return: list[InternetGateway]
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type list[InternetGateway]
         """
 
         all_params = ['compartment_id', 'vcn', 'limit', 'page']
@@ -1657,9 +1596,7 @@ class VcnServiceApi(object):
         :param str cpe_id: The CPE's OCID.
         :param int limit: The maximum number of items to return in a paginated \"List\" call. For information about pagination, see\n[List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
         :param str page: The value of the `opc-next-page` response header from the previous \"List\" call. For information about\npagination, see [List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
-        :return: list[IPSecConnection]
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type list[IPSecConnection]
         """
 
         all_params = ['compartment_id', 'drg_id', 'cpe_id', 'limit', 'page']
@@ -1719,9 +1656,7 @@ class VcnServiceApi(object):
         :param str vcn: The VCN's OCID. (required)
         :param int limit: The maximum number of items to return in a paginated \"List\" call. For information about pagination, see\n[List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
         :param str page: The value of the `opc-next-page` response header from the previous \"List\" call. For information about\npagination, see [List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
-        :return: list[RouteTable]
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type list[RouteTable]
         """
 
         all_params = ['compartment_id', 'vcn', 'limit', 'page']
@@ -1782,9 +1717,7 @@ class VcnServiceApi(object):
         :param str vcn: The VCN's OCID. (required)
         :param int limit: The maximum number of items to return in a paginated \"List\" call. For information about pagination, see\n[List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
         :param str page: The value of the `opc-next-page` response header from the previous \"List\" call. For information about\npagination, see [List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
-        :return: list[Subnet]
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type list[Subnet]
         """
 
         all_params = ['compartment_id', 'vcn', 'limit', 'page']
@@ -1844,9 +1777,7 @@ class VcnServiceApi(object):
         :param str compartment_id: The OCID of the compartment. (required)
         :param int limit: The maximum number of items to return in a paginated \"List\" call. For information about pagination, see\n[List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
         :param str page: The value of the `opc-next-page` response header from the previous \"List\" call. For information about\npagination, see [List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
-        :return: list[Vcn]
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type list[Vcn]
         """
 
         all_params = ['compartment_id', 'limit', 'page']
@@ -1901,9 +1832,7 @@ class VcnServiceApi(object):
         :param str ig_id: The Internet Gateway's OCID. (required)
         :param UpdateInternetGatewayRequest update_internet_gateway_request: Request object for updating the Internet Gateway. (required)
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
-        :return: InternetGateway
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type InternetGateway
         """
 
         all_params = ['ig_id', 'update_internet_gateway_request', 'if_match']
@@ -1961,9 +1890,7 @@ class VcnServiceApi(object):
         :param str rt_id: The route table's OCID. (required)
         :param UpdateRouteTableRequest update_route_table_request: Request object for updating a route table. (required)
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
-        :return: RouteTable
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type RouteTable
         """
 
         all_params = ['rt_id', 'update_route_table_request', 'if_match']

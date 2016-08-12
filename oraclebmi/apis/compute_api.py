@@ -1,31 +1,30 @@
 # coding: utf-8
 
-"""
-This is a modified version of the same template from swagger-codegen.
-The original can be found at https://github.com/swagger-api/swagger-codegen.
-The original license is below.
-
-    Copyright 2016 SmartBear Software
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-
-    Ref: https://github.com/swagger-api/swagger-codegen
-"""
+# This is a modified version of the same template from swagger-codegen.
+# The original can be found at https://github.com/swagger-api/swagger-codegen.
+# The original license is below.
+#
+#     Copyright 2016 SmartBear Software
+#
+#     Licensed under the Apache License, Version 2.0 (the "License");
+#     you may not use this file except in compliance with the License.
+#     You may obtain a copy of the License at
+#
+#         http://www.apache.org/licenses/LICENSE-2.0
+#
+#     Unless required by applicable law or agreed to in writing, software
+#     distributed under the License is distributed on an "AS IS" BASIS,
+#     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#     See the License for the specific language governing permissions and
+#     limitations under the License.
+#
+#     Ref: https://github.com/swagger-api/swagger-codegen
 
 from __future__ import absolute_import
 
 # python 2 and python 3 compatibility library
 from six import iteritems
+from io import IOBase
 
 class ComputeApi(object):
 
@@ -40,9 +39,7 @@ class ComputeApi(object):
 
         :param AttachVolumeRequest attach_volume_request: Attach volume request (required)
         :param str opc_idempotency_token: A token you supply to uniquely identify the request and provide idempotency if\nthe request is retried. Idempotency tokens expire after 30 minutes.\n
-        :return: VolumeAttachment
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type VolumeAttachment
         """
 
         all_params = ['attach_volume_request', 'opc_idempotency_token']
@@ -94,9 +91,7 @@ class ComputeApi(object):
 
         :param CaptureConsoleHistoryRequest capture_console_history_request: Console history request (required)
         :param str opc_idempotency_token: A token you supply to uniquely identify the request and provide idempotency if\nthe request is retried. Idempotency tokens expire after 30 minutes.\n
-        :return: ConsoleHistoryMetadata
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type ConsoleHistoryMetadata
         """
 
         all_params = ['capture_console_history_request', 'opc_idempotency_token']
@@ -148,9 +143,7 @@ class ComputeApi(object):
 
         :param str instance_console_history_id: The OCID of the console history. (required)
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type None
         """
 
         all_params = ['instance_console_history_id', 'if_match']
@@ -202,9 +195,7 @@ class ComputeApi(object):
 
         :param str volume_attachment_id: The OCID of the volume attachment. (required)
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type None
         """
 
         all_params = ['volume_attachment_id', 'if_match']
@@ -255,9 +246,7 @@ class ComputeApi(object):
         Shows the metadata for the specified console history.\nSee [CaptureConsoleHistory] (#captureConsoleHistory)\nfor details about using the console history operations.\n
 
         :param str instance_console_history_id: The OCID of the console history. (required)
-        :return: ConsoleHistoryMetadata
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type ConsoleHistoryMetadata
         """
 
         all_params = ['instance_console_history_id']
@@ -306,9 +295,7 @@ class ComputeApi(object):
         Gets information about the specified instance.
 
         :param str instance_id: The OCID of the instance. (required)
-        :return: Instance
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type Instance
         """
 
         all_params = ['instance_id']
@@ -357,9 +344,7 @@ class ComputeApi(object):
         Gets information about the specified volume attachment.
 
         :param str volume_attachment_id: The OCID of the volume attachment. (required)
-        :return: VolumeAttachment
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type VolumeAttachment
         """
 
         all_params = ['volume_attachment_id']
@@ -411,9 +396,7 @@ class ComputeApi(object):
         :param str action: The action to perform on the instance. (required)
         :param str opc_idempotency_token: A token you supply to uniquely identify the request and provide idempotency if\nthe request is retried. Idempotency tokens expire after 30 minutes.\n
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
-        :return: Instance
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type Instance
         """
 
         all_params = ['instance_id', 'action', 'opc_idempotency_token', 'if_match']
@@ -474,9 +457,7 @@ class ComputeApi(object):
         :param str opc_idempotency_token: A token you supply to uniquely identify the request and provide idempotency if\nthe request is retried. Idempotency tokens expire after 30 minutes.\n
         :param str opc_host_serial: For Oracle internal use only.
         :param str opc_vnic_id: For Oracle internal use only.
-        :return: Instance
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type Instance
         """
 
         all_params = ['launch_instance_request', 'opc_idempotency_token', 'opc_host_serial', 'opc_vnic_id']
@@ -535,9 +516,7 @@ class ComputeApi(object):
         :param int limit: The maximum number of items to return in a paginated \"List\" call. For information about pagination, see\n[List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
         :param str page: The value of the `opc-next-page` response header from the previous \"List\" call. For information about\npagination, see [List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
         :param str instance_id: The OCID of the instance.
-        :return: list[ConsoleHistoryMetadata]
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type list[ConsoleHistoryMetadata]
         """
 
         all_params = ['compartment_id', 'availability_domain', 'limit', 'page', 'instance_id']
@@ -598,9 +577,7 @@ class ComputeApi(object):
         :param str display_name: The non-unique, changeable name of the instance.
         :param int limit: The maximum number of items to return in a paginated \"List\" call. For information about pagination, see\n[List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
         :param str page: The value of the `opc-next-page` response header from the previous \"List\" call. For information about\npagination, see [List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
-        :return: list[Instance]
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type list[Instance]
         """
 
         all_params = ['compartment_id', 'availability_domain', 'display_name', 'limit', 'page']
@@ -661,9 +638,7 @@ class ComputeApi(object):
         :param int limit: The maximum number of items to return in a paginated \"List\" call. For information about pagination, see\n[List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
         :param str page: The value of the `opc-next-page` response header from the previous \"List\" call. For information about\npagination, see [List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
         :param str image_id: The Oracle ID (OCID) of an image\n
-        :return: list[Shape]
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type list[Shape]
         """
 
         all_params = ['compartment_id', 'availability_domain', 'limit', 'page', 'image_id']
@@ -725,9 +700,7 @@ class ComputeApi(object):
         :param int limit: The maximum number of items to return in a paginated \"List\" call. For information about pagination, see\n[List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
         :param str page: The value of the `opc-next-page` response header from the previous \"List\" call. For information about\npagination, see [List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
         :param str vnic_id: The OCID of the VNIC.
-        :return: list[VnicAttachment]
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type list[VnicAttachment]
         """
 
         all_params = ['compartment_id', 'availability_domain', 'instance_id', 'limit', 'page', 'vnic_id']
@@ -791,9 +764,7 @@ class ComputeApi(object):
         :param str page: The value of the `opc-next-page` response header from the previous \"List\" call. For information about\npagination, see [List Pagination](../../../#API/Concepts/usingapi.htm#List_Pagination).\n
         :param str instance_id: The OCID of the instance.
         :param str volume_id: The OCID of the volume.
-        :return: list[VolumeAttachment]
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type list[VolumeAttachment]
         """
 
         all_params = ['compartment_id', 'availability_domain', 'limit', 'page', 'instance_id', 'volume_id']
@@ -854,9 +825,7 @@ class ComputeApi(object):
         :param str instance_console_history_id: The OCID of the console history. (required)
         :param int offset: Offset of snapshot data to retrieve
         :param int length: Length of snapshot data to retrieve
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type str
         """
 
         all_params = ['instance_console_history_id', 'offset', 'length']
@@ -910,9 +879,7 @@ class ComputeApi(object):
 
         :param str instance_id: The OCID of the instance. (required)
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type None
         """
 
         all_params = ['instance_id', 'if_match']
@@ -966,9 +933,7 @@ class ComputeApi(object):
         :param UpdateInstanceRequest update_instance_request: Update instance fields (required)
         :param str opc_idempotency_token: A token you supply to uniquely identify the request and provide idempotency if\nthe request is retried. Idempotency tokens expire after 30 minutes.\n
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
-        :return: Instance
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :return: A Response object with data of type Instance
         """
 
         all_params = ['instance_id', 'update_instance_request', 'opc_idempotency_token', 'if_match']

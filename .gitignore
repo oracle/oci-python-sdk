@@ -11,4 +11,6 @@ build/
 dist/
 __pycache__/
 env/
+docs/_build/
+docs/apidocs/
 

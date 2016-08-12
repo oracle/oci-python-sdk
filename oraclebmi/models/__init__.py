@@ -65,11 +65,11 @@ from .user_group_membership import UserGroupMembership
 
 # import models into model package
 from .bucket import Bucket
-from .create_bucket import CreateBucket
+from .create_bucket_details import CreateBucketDetails
 from .error import Error
 from .list_objects import ListObjects
 from .object_summary import ObjectSummary
-from .update_bucket import UpdateBucket
+from .update_bucket_details import UpdateBucketDetails
 
 # Maps type names to classes for core services.
 core_type_mapping = {
@@ -141,9 +141,9 @@ identity_type_mapping = {
 # Maps type names to classes for object_storage services.
 object_storage_type_mapping = {
     'Bucket': Bucket,
-    'CreateBucket': CreateBucket,
+    'CreateBucket': CreateBucketDetails,
     'Error': Error,
     'ListObjects': ListObjects,
     'ObjectSummary': ObjectSummary,
-    'UpdateBucket': UpdateBucket,
+    'UpdateBucket': UpdateBucketDetails,
 }

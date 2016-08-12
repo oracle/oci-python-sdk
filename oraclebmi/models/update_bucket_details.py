@@ -1,58 +1,78 @@
 # coding: utf-8
 
-"""
-This is a modified version of the same template from swagger-codegen.
-The original can be found at https://github.com/swagger-api/swagger-codegen.
-The original license is below.
-
-    Copyright 2016 SmartBear Software
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-
-    Ref: https://github.com/swagger-api/swagger-codegen
-"""
+# This is a modified version of the same template from swagger-codegen.
+# The original can be found at https://github.com/swagger-api/swagger-codegen.
+# The original license is below.
+#
+#     Copyright 2016 SmartBear Software
+#
+#     Licensed under the Apache License, Version 2.0 (the "License");
+#     you may not use this file except in compliance with the License.
+#     You may obtain a copy of the License at
+#
+#         http://www.apache.org/licenses/LICENSE-2.0
+#
+#     Unless required by applicable law or agreed to in writing, software
+#     distributed under the License is distributed on an "AS IS" BASIS,
+#     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#     See the License for the specific language governing permissions and
+#     limitations under the License.
+#
+#     Ref: https://github.com/swagger-api/swagger-codegen
 
 from pprint import pformat
 from six import iteritems
 
-class UpdateBucket(object):
+class UpdateBucketDetails(object):
 
     def __init__(self):
-        """
-        UpdateBucket - a model defined in Swagger
-        """
 
         self.swagger_types = {
+            'namespace': 'str',
             'name': 'str',
             'metadata': 'dict(str, str)'
         }
 
         self.attribute_map = {
+            'namespace': 'namespace',
             'name': 'name',
             'metadata': 'metadata'
         }
 
+        self._namespace = None
         self._name = None
         self._metadata = None
 
 
     @property
+    def namespace(self):
+        """
+        Gets the namespace of this UpdateBucketDetails.
+        The namespace in which the bucket lives.
+
+        :return: The namespace of this UpdateBucketDetails.
+        :rtype: str
+        """
+        return self._namespace
+
+    @namespace.setter
+    def namespace(self, namespace):
+        """
+        Sets the namespace of this UpdateBucketDetails.
+        The namespace in which the bucket lives.
+
+        :param namespace: The namespace of this UpdateBucketDetails.
+        :type: str
+        """
+        self._namespace = namespace
+
+    @property
     def name(self):
         """
-        Gets the name of this UpdateBucket.
+        Gets the name of this UpdateBucketDetails.
         The name of the bucket.
 
-        :return: The name of this UpdateBucket.
+        :return: The name of this UpdateBucketDetails.
         :rtype: str
         """
         return self._name
@@ -60,10 +80,10 @@ class UpdateBucket(object):
     @name.setter
     def name(self, name):
         """
-        Sets the name of this UpdateBucket.
+        Sets the name of this UpdateBucketDetails.
         The name of the bucket.
 
-        :param name: The name of this UpdateBucket.
+        :param name: The name of this UpdateBucketDetails.
         :type: str
         """
         self._name = name
@@ -71,10 +91,10 @@ class UpdateBucket(object):
     @property
     def metadata(self):
         """
-        Gets the metadata of this UpdateBucket.
+        Gets the metadata of this UpdateBucketDetails.
         Arbitrary string keys and values for the user-defined metadata.
 
-        :return: The metadata of this UpdateBucket.
+        :return: The metadata of this UpdateBucketDetails.
         :rtype: dict(str, str)
         """
         return self._metadata
@@ -82,10 +102,10 @@ class UpdateBucket(object):
     @metadata.setter
     def metadata(self, metadata):
         """
-        Sets the metadata of this UpdateBucket.
+        Sets the metadata of this UpdateBucketDetails.
         Arbitrary string keys and values for the user-defined metadata.
 
-        :param metadata: The metadata of this UpdateBucket.
+        :param metadata: The metadata of this UpdateBucketDetails.
         :type: dict(str, str)
         """
         self._metadata = metadata

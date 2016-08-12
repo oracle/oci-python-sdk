@@ -1,34 +1,30 @@
 # coding: utf-8
 
-"""
-This is a modified version of the same template from swagger-codegen.
-The original can be found at https://github.com/swagger-api/swagger-codegen.
-The original license is below.
-
-    Copyright 2016 SmartBear Software
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-
-    Ref: https://github.com/swagger-api/swagger-codegen
-"""
+# This is a modified version of the same template from swagger-codegen.
+# The original can be found at https://github.com/swagger-api/swagger-codegen.
+# The original license is below.
+#
+#     Copyright 2016 SmartBear Software
+#
+#     Licensed under the Apache License, Version 2.0 (the "License");
+#     you may not use this file except in compliance with the License.
+#     You may obtain a copy of the License at
+#
+#         http://www.apache.org/licenses/LICENSE-2.0
+#
+#     Unless required by applicable law or agreed to in writing, software
+#     distributed under the License is distributed on an "AS IS" BASIS,
+#     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#     See the License for the specific language governing permissions and
+#     limitations under the License.
+#
+#     Ref: https://github.com/swagger-api/swagger-codegen
 
 from __future__ import absolute_import
 
-from io import IOBase
-
 # python 2 and python 3 compatibility library
 from six import iteritems
-from ..api_client import STREAM_RESPONSE_TYPE
+from io import IOBase
 
 class ObjectStorageApi(object):
 
@@ -36,19 +32,18 @@ class ObjectStorageApi(object):
         self.api_client = api_client
 
 
-    def create_bucket(self, namespace_name, create_bucket, **kwargs):
+    def create_bucket(self, namespace_name, create_bucket_details, **kwargs):
         """
         CreateBucket
         Create a bucket in the given namespace with a bucket name and optional user-defined metadata.\n
 
         :param str namespace_name: The top-level namespace used for the request. (required)
-        :param CreateBucket create_bucket: Request object for creating a bucket. (required)
-        :return: Bucket
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :param CreateBucketDetails create_bucket_details: Request object for creating a bucket. (required)
+        :param str opc_client_request_id: client request ID for tracing
+        :return: A Response object with data of type Bucket
         """
 
-        all_params = ['namespace_name', 'create_bucket']
+        all_params = ['namespace_name', 'create_bucket_details', 'opc_client_request_id']
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -63,9 +58,9 @@ class ObjectStorageApi(object):
         # verify the required parameter 'namespace_name' is set
         if ('namespace_name' not in params) or (params['namespace_name'] is None):
             raise ValueError("Missing the required parameter `namespace_name` when calling `create_bucket`")
-        # verify the required parameter 'create_bucket' is set
-        if ('create_bucket' not in params) or (params['create_bucket'] is None):
-            raise ValueError("Missing the required parameter `create_bucket` when calling `create_bucket`")
+        # verify the required parameter 'create_bucket_details' is set
+        if ('create_bucket_details' not in params) or (params['create_bucket_details'] is None):
+            raise ValueError("Missing the required parameter `create_bucket_details` when calling `create_bucket`")
 
         resource_path = '/n/{namespaceName}/b/'
         path_params = {}
@@ -75,10 +70,12 @@ class ObjectStorageApi(object):
         query_params = {}
 
         header_params = {}
+        if 'opc_client_request_id' in params:
+            header_params['opc-client-request-id'] = params['opc_client_request_id']
 
         body_params = None
-        if 'create_bucket' in params:
-            body_params = params['create_bucket']
+        if 'create_bucket_details' in params:
+            body_params = params['create_bucket_details']
 
         header_params['accept'] = 'application/json'
         header_params['content-type'] = 'application/json'
@@ -101,12 +98,11 @@ class ObjectStorageApi(object):
         :param str namespace_name: The top-level namespace used for the request. (required)
         :param str bucket_name: The name of the bucket. (required)
         :param str if_match: the entity tag to match.
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :param str opc_client_request_id: client request ID for tracing
+        :return: A Response object with data of type None
         """
 
-        all_params = ['namespace_name', 'bucket_name', 'if_match']
+        all_params = ['namespace_name', 'bucket_name', 'if_match', 'opc_client_request_id']
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -137,6 +133,8 @@ class ObjectStorageApi(object):
         header_params = {}
         if 'if_match' in params:
             header_params['if-match'] = params['if_match']
+        if 'opc_client_request_id' in params:
+            header_params['opc-client-request-id'] = params['opc_client_request_id']
 
         body_params = None
 
@@ -162,12 +160,11 @@ class ObjectStorageApi(object):
         :param str bucket_name: The name of the bucket. (required)
         :param str object_name: The name of the object. (required)
         :param str if_match: the entity tag to match.
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :param str opc_client_request_id: client request ID for tracing
+        :return: A Response object with data of type None
         """
 
-        all_params = ['namespace_name', 'bucket_name', 'object_name', 'if_match']
+        all_params = ['namespace_name', 'bucket_name', 'object_name', 'if_match', 'opc_client_request_id']
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -203,6 +200,8 @@ class ObjectStorageApi(object):
         header_params = {}
         if 'if_match' in params:
             header_params['if-match'] = params['if_match']
+        if 'opc_client_request_id' in params:
+            header_params['opc-client-request-id'] = params['opc_client_request_id']
 
         body_params = None
 
@@ -228,12 +227,11 @@ class ObjectStorageApi(object):
         :param str bucket_name: The name of the bucket. (required)
         :param str if_match: the entity tag to match.
         :param str if_none_match: the entity tag to avoid matching.
-        :return: Bucket
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :param str opc_client_request_id: client request ID for tracing
+        :return: A Response object with data of type Bucket
         """
 
-        all_params = ['namespace_name', 'bucket_name', 'if_match', 'if_none_match']
+        all_params = ['namespace_name', 'bucket_name', 'if_match', 'if_none_match', 'opc_client_request_id']
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -266,6 +264,8 @@ class ObjectStorageApi(object):
             header_params['if-match'] = params['if_match']
         if 'if_none_match' in params:
             header_params['if-none-match'] = params['if_none_match']
+        if 'opc_client_request_id' in params:
+            header_params['opc-client-request-id'] = params['opc_client_request_id']
 
         body_params = None
 
@@ -285,14 +285,13 @@ class ObjectStorageApi(object):
     def get_namespace(self, **kwargs):
         """
         GetNamespace
-        Get the name of the namespace for the user making the request.\n
+        Get the name of the namespace for the user making the request. An account name must be unique, must start with a\nletter, and can have up to 15 lower case letters and numbers. You cannot use spaces and special characters.\n
 
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :param str opc_client_request_id: client request ID for tracing
+        :return: A Response object with data of type str
         """
 
-        all_params = []
+        all_params = ['opc_client_request_id']
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -311,6 +310,8 @@ class ObjectStorageApi(object):
         query_params = {}
 
         header_params = {}
+        if 'opc_client_request_id' in params:
+            header_params['opc-client-request-id'] = params['opc_client_request_id']
 
         body_params = None
 
@@ -337,12 +338,11 @@ class ObjectStorageApi(object):
         :param str object_name: The name of the object. (required)
         :param str if_match: the entity tag to match.
         :param str if_none_match: the entity tag to avoid matching.
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :param str opc_client_request_id: client request ID for tracing
+        :return: A Response object with data of type stream
         """
 
-        all_params = ['namespace_name', 'bucket_name', 'object_name', 'if_match', 'if_none_match']
+        all_params = ['namespace_name', 'bucket_name', 'object_name', 'if_match', 'if_none_match', 'opc_client_request_id']
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -380,6 +380,8 @@ class ObjectStorageApi(object):
             header_params['if-match'] = params['if_match']
         if 'if_none_match' in params:
             header_params['if-none-match'] = params['if_none_match']
+        if 'opc_client_request_id' in params:
+            header_params['opc-client-request-id'] = params['opc_client_request_id']
 
         body_params = None
 
@@ -393,7 +395,7 @@ class ObjectStorageApi(object):
                                             query_params,
                                             header_params,
                                             body=body_params,
-                                            response_type=STREAM_RESPONSE_TYPE)
+                                            response_type='stream')
         return response
 
     def head_object(self, namespace_name, bucket_name, object_name, **kwargs):
@@ -406,12 +408,11 @@ class ObjectStorageApi(object):
         :param str object_name: The name of the object. (required)
         :param str if_match: the entity tag to match.
         :param str if_none_match: the entity tag to avoid matching.
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :param str opc_client_request_id: client request ID for tracing
+        :return: A Response object with data of type None
         """
 
-        all_params = ['namespace_name', 'bucket_name', 'object_name', 'if_match', 'if_none_match']
+        all_params = ['namespace_name', 'bucket_name', 'object_name', 'if_match', 'if_none_match', 'opc_client_request_id']
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -449,6 +450,8 @@ class ObjectStorageApi(object):
             header_params['if-match'] = params['if_match']
         if 'if_none_match' in params:
             header_params['if-none-match'] = params['if_none_match']
+        if 'opc_client_request_id' in params:
+            header_params['opc-client-request-id'] = params['opc_client_request_id']
 
         body_params = None
 
@@ -473,12 +476,11 @@ class ObjectStorageApi(object):
         :param str namespace_name: The top-level namespace used for the request. (required)
         :param int limit: The maximum number of items to return.
         :param str page: The page at which to start retrieving results.
-        :return: list[Bucket]
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :param str opc_client_request_id: client request ID for tracing
+        :return: A Response object with data of type list[Bucket]
         """
 
-        all_params = ['namespace_name', 'limit', 'page']
+        all_params = ['namespace_name', 'limit', 'page', 'opc_client_request_id']
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -506,6 +508,8 @@ class ObjectStorageApi(object):
             query_params['page'] = params['page']
 
         header_params = {}
+        if 'opc_client_request_id' in params:
+            header_params['opc-client-request-id'] = params['opc_client_request_id']
 
         body_params = None
 
@@ -534,13 +538,12 @@ class ObjectStorageApi(object):
         :param str end: Object names returned by a list query must be strictly less than this parameter
         :param int limit: The maximum number of items to return.
         :param str delimiter: When this parameter is set to '/' character (other values not supported), only objects that do not have it in name, after an optionally specified prefix, are returned.   For all other scanned objects, part of their name up to the last occurence of the delimiter, after prefix, is returned as a set of prefixes.
-        :param str fields: Object summary in list of objects includes the 'name' field.   This parameter may be used to also include 'size' (object size in bytes), 'md5_hash', and 'created' (object creation date and time) fields. Value of this parameter should be a comma separated, case-insensitive list of those field names. For example 'name,created,md5_hash'
-        :return: ListObjects
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :param str fields: Object summary in list of objects includes the 'name' field.   This parameter may be used to also include 'size' (object size in bytes), 'md5', and 'created' (object creation date and time) fields. Value of this parameter should be a comma separated, case-insensitive list of those field names. For example 'name,created,md5'
+        :param str opc_client_request_id: client request ID for tracing
+        :return: A Response object with data of type ListObjects
         """
 
-        all_params = ['namespace_name', 'bucket_name', 'prefix', 'start', 'end', 'limit', 'delimiter', 'fields']
+        all_params = ['namespace_name', 'bucket_name', 'prefix', 'start', 'end', 'limit', 'delimiter', 'fields', 'opc_client_request_id']
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -581,6 +584,8 @@ class ObjectStorageApi(object):
             query_params['fields'] = params['fields']
 
         header_params = {}
+        if 'opc_client_request_id' in params:
+            header_params['opc-client-request-id'] = params['opc_client_request_id']
 
         body_params = None
 
@@ -608,12 +613,15 @@ class ObjectStorageApi(object):
         :param str put_object_body: The object being put to the object store. (required)
         :param str if_match: the entity tag to match.
         :param str if_none_match: the entity tag to avoid matching.
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :param str opc_client_request_id: client request ID for tracing
+        :param str expect: 100-continue
+        :param int content_length: The content type of the body.
+        :param str content_md5: The base-64 encoded MD5 hash of the body.
+        :param str opc_meta_: Optional user-defined metadata key and value.
+        :return: A Response object with data of type None
         """
 
-        all_params = ['namespace_name', 'bucket_name', 'object_name', 'put_object_body', 'if_match', 'if_none_match']
+        all_params = ['namespace_name', 'bucket_name', 'object_name', 'put_object_body', 'if_match', 'if_none_match', 'opc_client_request_id', 'expect', 'content_length', 'content_md5', 'opc_meta_']
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -654,16 +662,24 @@ class ObjectStorageApi(object):
             header_params['if-match'] = params['if_match']
         if 'if_none_match' in params:
             header_params['if-none-match'] = params['if_none_match']
+        if 'opc_client_request_id' in params:
+            header_params['opc-client-request-id'] = params['opc_client_request_id']
+        if 'expect' in params:
+            header_params['Expect'] = params['expect']
+        if 'content_length' in params:
+            header_params['Content-Length'] = params['content_length']
+        if 'content_md5' in params:
+            header_params['Content-MD5'] = params['content_md5']
+        if 'opc_meta_' in params:
+            header_params['opc-meta-*'] = params['opc_meta_']
 
         body_params = None
         if 'put_object_body' in params:
             body_params = params['put_object_body']
 
         header_params['accept'] = 'application/json'
-
         if not (isinstance(body_params, str) or isinstance(body_params, IOBase)):
-            raise TypeError('The body of put_object must be a string or io.IOBase.')
-
+            raise TypeError('The body must be a string or io.IOBase.')
         response = self.api_client.call_api(self.api_client.config.endpoint_object_storage_api,
                                             resource_path,
                                             'PUT',
@@ -671,25 +687,24 @@ class ObjectStorageApi(object):
                                             query_params,
                                             header_params,
                                             body=body_params,
-                                            response_type=None,
-                                            enforce_content_headers=False)
+                                            enforce_content_headers=False,
+                                            response_type=None)
         return response
 
-    def update_bucket(self, namespace_name, bucket_name, update_bucket, **kwargs):
+    def update_bucket(self, namespace_name, bucket_name, update_bucket_details, **kwargs):
         """
         UpdateBucket
         Perform a partial (or full) update of a bucket, currently including just the user-defined metadata.\n
 
         :param str namespace_name: The top-level namespace used for the request. (required)
         :param str bucket_name: The name of the bucket. (required)
-        :param UpdateBucket update_bucket: Request object for updating a bucket. (required)
+        :param UpdateBucketDetails update_bucket_details: Request object for updating a bucket. (required)
         :param str if_match: the entity tag to match.
-        :return: Bucket
-                 If the method is called asynchronously,
-                 returns the request thread.
+        :param str opc_client_request_id: client request ID for tracing
+        :return: A Response object with data of type Bucket
         """
 
-        all_params = ['namespace_name', 'bucket_name', 'update_bucket', 'if_match']
+        all_params = ['namespace_name', 'bucket_name', 'update_bucket_details', 'if_match', 'opc_client_request_id']
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -707,9 +722,9 @@ class ObjectStorageApi(object):
         # verify the required parameter 'bucket_name' is set
         if ('bucket_name' not in params) or (params['bucket_name'] is None):
             raise ValueError("Missing the required parameter `bucket_name` when calling `update_bucket`")
-        # verify the required parameter 'update_bucket' is set
-        if ('update_bucket' not in params) or (params['update_bucket'] is None):
-            raise ValueError("Missing the required parameter `update_bucket` when calling `update_bucket`")
+        # verify the required parameter 'update_bucket_details' is set
+        if ('update_bucket_details' not in params) or (params['update_bucket_details'] is None):
+            raise ValueError("Missing the required parameter `update_bucket_details` when calling `update_bucket`")
 
         resource_path = '/n/{namespaceName}/b/{bucketName}/'
         path_params = {}
@@ -723,10 +738,12 @@ class ObjectStorageApi(object):
         header_params = {}
         if 'if_match' in params:
             header_params['if-match'] = params['if_match']
+        if 'opc_client_request_id' in params:
+            header_params['opc-client-request-id'] = params['opc_client_request_id']
 
         body_params = None
-        if 'update_bucket' in params:
-            body_params = params['update_bucket']
+        if 'update_bucket_details' in params:
+            body_params = params['update_bucket_details']
 
         header_params['accept'] = 'application/json'
         header_params['content-type'] = 'application/json'
