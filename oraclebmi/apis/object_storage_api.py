@@ -610,7 +610,7 @@ class ObjectStorageApi(object):
         :param str namespace_name: The top-level namespace used for the request. (required)
         :param str bucket_name: The name of the bucket. (required)
         :param str object_name: The name of the object. (required)
-        :param str put_object_body: The object being put to the object store. (required)
+        :param stream put_object_body: The object being put to the object store. (required)
         :param str if_match: the entity tag to match.
         :param str if_none_match: the entity tag to avoid matching.
         :param str opc_client_request_id: client request ID for tracing
