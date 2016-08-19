@@ -39,7 +39,7 @@ class ObjectStorageApi(object):
 
         :param str namespace_name: The top-level namespace used for the request. (required)
         :param CreateBucketDetails create_bucket_details: Request object for creating a bucket. (required)
-        :param str opc_client_request_id: client request ID for tracing
+        :param str opc_client_request_id: The client request ID for tracing
         :return: A Response object with data of type Bucket
         """
 
@@ -97,8 +97,8 @@ class ObjectStorageApi(object):
 
         :param str namespace_name: The top-level namespace used for the request. (required)
         :param str bucket_name: The name of the bucket. (required)
-        :param str if_match: the entity tag to match.
-        :param str opc_client_request_id: client request ID for tracing
+        :param str if_match: The entity tag to match.
+        :param str opc_client_request_id: The client request ID for tracing
         :return: A Response object with data of type None
         """
 
@@ -159,8 +159,8 @@ class ObjectStorageApi(object):
         :param str namespace_name: The top-level namespace used for the request. (required)
         :param str bucket_name: The name of the bucket. (required)
         :param str object_name: The name of the object. (required)
-        :param str if_match: the entity tag to match.
-        :param str opc_client_request_id: client request ID for tracing
+        :param str if_match: The entity tag to match.
+        :param str opc_client_request_id: The client request ID for tracing
         :return: A Response object with data of type None
         """
 
@@ -225,9 +225,9 @@ class ObjectStorageApi(object):
 
         :param str namespace_name: The top-level namespace used for the request. (required)
         :param str bucket_name: The name of the bucket. (required)
-        :param str if_match: the entity tag to match.
-        :param str if_none_match: the entity tag to avoid matching.
-        :param str opc_client_request_id: client request ID for tracing
+        :param str if_match: The entity tag to match.
+        :param str if_none_match: The entity tag to avoid matching.
+        :param str opc_client_request_id: The client request ID for tracing
         :return: A Response object with data of type Bucket
         """
 
@@ -287,7 +287,7 @@ class ObjectStorageApi(object):
         GetNamespace
         Get the name of the namespace for the user making the request. An account name must be unique, must start with a\nletter, and can have up to 15 lower case letters and numbers. You cannot use spaces and special characters.\n
 
-        :param str opc_client_request_id: client request ID for tracing
+        :param str opc_client_request_id: The client request ID for tracing
         :return: A Response object with data of type str
         """
 
@@ -336,13 +336,14 @@ class ObjectStorageApi(object):
         :param str namespace_name: The top-level namespace used for the request. (required)
         :param str bucket_name: The name of the bucket. (required)
         :param str object_name: The name of the object. (required)
-        :param str if_match: the entity tag to match.
-        :param str if_none_match: the entity tag to avoid matching.
-        :param str opc_client_request_id: client request ID for tracing
+        :param str if_match: The entity tag to match.
+        :param str if_none_match: The entity tag to avoid matching.
+        :param str opc_client_request_id: The client request ID for tracing
+        :param str range: Optional byte range to fetch, follows https://tools.ietf.org/html/rfc7233#section-2.1. Note, only one byte range is supported.
         :return: A Response object with data of type stream
         """
 
-        all_params = ['namespace_name', 'bucket_name', 'object_name', 'if_match', 'if_none_match', 'opc_client_request_id']
+        all_params = ['namespace_name', 'bucket_name', 'object_name', 'if_match', 'if_none_match', 'opc_client_request_id', 'range']
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -382,6 +383,8 @@ class ObjectStorageApi(object):
             header_params['if-none-match'] = params['if_none_match']
         if 'opc_client_request_id' in params:
             header_params['opc-client-request-id'] = params['opc_client_request_id']
+        if 'range' in params:
+            header_params['range'] = params['range']
 
         body_params = None
 
@@ -406,9 +409,9 @@ class ObjectStorageApi(object):
         :param str namespace_name: The top-level namespace used for the request. (required)
         :param str bucket_name: The name of the bucket. (required)
         :param str object_name: The name of the object. (required)
-        :param str if_match: the entity tag to match.
-        :param str if_none_match: the entity tag to avoid matching.
-        :param str opc_client_request_id: client request ID for tracing
+        :param str if_match: The entity tag to match.
+        :param str if_none_match: The entity tag to avoid matching.
+        :param str opc_client_request_id: The client request ID for tracing
         :return: A Response object with data of type None
         """
 
@@ -468,19 +471,20 @@ class ObjectStorageApi(object):
                                             response_type=None)
         return response
 
-    def list_buckets(self, namespace_name, **kwargs):
+    def list_buckets(self, namespace_name, compartment_id, **kwargs):
         """
         ListBuckets
         Get a list of all the buckets in a namespace.\n
 
         :param str namespace_name: The top-level namespace used for the request. (required)
+        :param str compartment_id: The compartment ID in which to create the bucket. (required)
         :param int limit: The maximum number of items to return.
         :param str page: The page at which to start retrieving results.
-        :param str opc_client_request_id: client request ID for tracing
+        :param str opc_client_request_id: The client request ID for tracing
         :return: A Response object with data of type list[Bucket]
         """
 
-        all_params = ['namespace_name', 'limit', 'page', 'opc_client_request_id']
+        all_params = ['namespace_name', 'compartment_id', 'limit', 'page', 'opc_client_request_id']
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -495,6 +499,9 @@ class ObjectStorageApi(object):
         # verify the required parameter 'namespace_name' is set
         if ('namespace_name' not in params) or (params['namespace_name'] is None):
             raise ValueError("Missing the required parameter `namespace_name` when calling `list_buckets`")
+        # verify the required parameter 'compartment_id' is set
+        if ('compartment_id' not in params) or (params['compartment_id'] is None):
+            raise ValueError("Missing the required parameter `compartment_id` when calling `list_buckets`")
 
         resource_path = '/n/{namespaceName}/b/'
         path_params = {}
@@ -502,6 +509,8 @@ class ObjectStorageApi(object):
             path_params['namespaceName'] = params['namespace_name']
 
         query_params = {}
+        if 'compartment_id' in params:
+            query_params['compartmentId'] = params['compartment_id']
         if 'limit' in params:
             query_params['limit'] = params['limit']
         if 'page' in params:
@@ -538,8 +547,8 @@ class ObjectStorageApi(object):
         :param str end: Object names returned by a list query must be strictly less than this parameter
         :param int limit: The maximum number of items to return.
         :param str delimiter: When this parameter is set to '/' character (other values not supported), only objects that do not have it in name, after an optionally specified prefix, are returned.   For all other scanned objects, part of their name up to the last occurence of the delimiter, after prefix, is returned as a set of prefixes.
-        :param str fields: Object summary in list of objects includes the 'name' field.   This parameter may be used to also include 'size' (object size in bytes), 'md5', and 'created' (object creation date and time) fields. Value of this parameter should be a comma separated, case-insensitive list of those field names. For example 'name,created,md5'
-        :param str opc_client_request_id: client request ID for tracing
+        :param str fields: Object summary in list of objects includes the 'name' field.   This parameter may be used to also include 'size' (object size in bytes), 'md5', and 'timeCreated' (object creation date and time) fields. Value of this parameter should be a comma separated, case-insensitive list of those field names. For example 'name,timeCreated,md5'
+        :param str opc_client_request_id: The client request ID for tracing
         :return: A Response object with data of type ListObjects
         """
 
@@ -610,18 +619,18 @@ class ObjectStorageApi(object):
         :param str namespace_name: The top-level namespace used for the request. (required)
         :param str bucket_name: The name of the bucket. (required)
         :param str object_name: The name of the object. (required)
-        :param stream put_object_body: The object being put to the object store. (required)
-        :param str if_match: the entity tag to match.
-        :param str if_none_match: the entity tag to avoid matching.
-        :param str opc_client_request_id: client request ID for tracing
-        :param str expect: 100-continue
         :param int content_length: The content type of the body.
+        :param stream put_object_body: The object being put to the object store. (required)
+        :param str if_match: The entity tag to match.
+        :param str if_none_match: The entity tag to avoid matching.
+        :param str opc_client_request_id: The client request ID for tracing
+        :param str expect: 100-continue
         :param str content_md5: The base-64 encoded MD5 hash of the body.
         :param str opc_meta_: Optional user-defined metadata key and value.
         :return: A Response object with data of type None
         """
 
-        all_params = ['namespace_name', 'bucket_name', 'object_name', 'put_object_body', 'if_match', 'if_none_match', 'opc_client_request_id', 'expect', 'content_length', 'content_md5', 'opc_meta_']
+        all_params = ['namespace_name', 'bucket_name', 'object_name', 'content_length', 'put_object_body', 'if_match', 'if_none_match', 'opc_client_request_id', 'expect', 'content_md5', 'opc_meta_']
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -699,8 +708,8 @@ class ObjectStorageApi(object):
         :param str namespace_name: The top-level namespace used for the request. (required)
         :param str bucket_name: The name of the bucket. (required)
         :param UpdateBucketDetails update_bucket_details: Request object for updating a bucket. (required)
-        :param str if_match: the entity tag to match.
-        :param str opc_client_request_id: client request ID for tracing
+        :param str if_match: The entity tag to match.
+        :param str opc_client_request_id: The client request ID for tracing
         :return: A Response object with data of type Bucket
         """
 
