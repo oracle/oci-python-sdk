@@ -1,8 +1,8 @@
 from tests.service_test_base import ServiceTestBase
-import oraclebmi
+import oraclebmc
 
 class TestDataStream(ServiceTestBase):
-    """Tests the oraclebmi.DataStream object."""
+    """Tests the oraclebmc.DataStream object."""
 
     def setUp(self):
         self.context = self.create_context()
@@ -58,7 +58,7 @@ class TestDataStream(ServiceTestBase):
             response_text += chunk.decode('UTF-8')
         self.assertEqual(response_text, self.expected_content)
 
-        with self.assertRaises(oraclebmi.exceptions.StreamAlreadyConsumed):
+        with self.assertRaises(oraclebmc.exceptions.StreamAlreadyConsumed):
             self.response.data.content
 
     def test_stream_twice(self):
@@ -67,7 +67,7 @@ class TestDataStream(ServiceTestBase):
             response_text += chunk.decode('UTF-8')
         self.assertEqual(response_text, self.expected_content)
 
-        with self.assertRaises(oraclebmi.exceptions.StreamAlreadyConsumed):
+        with self.assertRaises(oraclebmc.exceptions.StreamAlreadyConsumed):
             for chunk in self.response.data.iter_content():
                 response_text += chunk.decode('UTF-8')
 

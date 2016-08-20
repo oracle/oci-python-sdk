@@ -116,10 +116,10 @@
             <configuration>
               <language>oracle-python-sdk</language>
               <specPath>${swagger-spec-file-identity}</specPath>
-              <outputDir>oraclebmi</outputDir>
-              <basePackage>OracleBMI</basePackage>
+              <outputDir>oraclebmc</outputDir>
+              <basePackage>OracleBMC</basePackage>
               <additionalProperties>
-                  <packageName>oraclebmi</packageName>
+                  <packageName>oraclebmc</packageName>
                   <specName>identity</specName>
               </additionalProperties>
             </configuration>
@@ -133,10 +133,10 @@
             <configuration>
               <language>oracle-python-sdk</language>
               <specPath>${swagger-spec-file-coreservices}</specPath>
-              <outputDir>oraclebmi</outputDir>
-              <basePackage>OracleBMI</basePackage>
+              <outputDir>oraclebmc</outputDir>
+              <basePackage>OracleBMC</basePackage>
               <additionalProperties>
-                  <packageName>oraclebmi</packageName>
+                  <packageName>oraclebmc</packageName>
                   <specName>core</specName>
               </additionalProperties>
             </configuration>
@@ -150,10 +150,10 @@
             <configuration>
               <language>oracle-python-sdk</language>
               <specPath>${swagger-spec-file-casper}</specPath>
-              <outputDir>oraclebmi</outputDir>
-              <basePackage>OracleBMI</basePackage>
+              <outputDir>oraclebmc</outputDir>
+              <basePackage>OracleBMC</basePackage>
               <additionalProperties>
-                  <packageName>oraclebmi</packageName>
+                  <packageName>oraclebmc</packageName>
                   <specName>object_storage</specName>
               </additionalProperties>
             </configuration>
@@ -166,9 +166,9 @@
         <configuration>
           <filesets>
             <fileset>
-              <directory>oraclebmi/models</directory>
+              <directory>oraclebmc/models</directory>
               <excludes>
-                  <exclude>oraclebmi/models/__init__.py</exclude>
+                  <exclude>oraclebmc/models/__init__.py</exclude>
                   <exclude>__init__.py</exclude>
               </excludes>
               <includes>
@@ -177,9 +177,9 @@
 
             </fileset>
             <fileset>
-                <directory>oraclebmi/apis</directory>
+                <directory>oraclebmc/apis</directory>
                 <excludes>
-                    <exclude>oraclebmi/apis/__init__.py</exclude>
+                    <exclude>oraclebmc/apis/__init__.py</exclude>
                     <exclude>__init__.py</exclude>
                 </excludes>
                 <includes>

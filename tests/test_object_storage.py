@@ -1,5 +1,5 @@
 from tests.service_test_base import ServiceTestBase
-import oraclebmi
+import oraclebmc
 import tests.util
 
 class TestObjectStorage(ServiceTestBase):
@@ -15,7 +15,7 @@ class TestObjectStorage(ServiceTestBase):
         bucket_count = len(self.context.object_storage_api.list_buckets(namespace, self.context.config.tenancy, limit=100).data)
 
         # Create
-        request = oraclebmi.models.CreateBucketDetails()
+        request = oraclebmc.models.CreateBucketDetails()
         request.name = bucket_name
         request.compartment_id = self.context.config.tenancy
         request.metadata = {'some key': 'some example metadata'}
@@ -23,30 +23,30 @@ class TestObjectStorage(ServiceTestBase):
 
         self.assertEqual(200, response.status)
         bucket = response.data
-        assert (type(bucket) is oraclebmi.models.Bucket)
+        assert (type(bucket) is oraclebmc.models.Bucket)
         self.assertEqual(bucket_name, bucket.name)
         self.assertEqual('some example metadata', bucket.metadata['some key'])
 
         # Get
         response = self.context.object_storage_api.get_bucket(namespace, bucket_name)
         self.assertEqual(200, response.status)
-        assert (type(response.data) is oraclebmi.models.Bucket)
+        assert (type(response.data) is oraclebmc.models.Bucket)
         self.assertEqual(bucket_name, response.data.name)
 
         # List
         response = self.context.object_storage_api.list_buckets(namespace, self.context.config.tenancy, limit=100)
         self.assertEqual(200, response.status)
         self.assertEqual(bucket_count + 1, len(response.data))
-        assert (type(response.data[0]) is oraclebmi.models.Bucket)
+        assert (type(response.data[0]) is oraclebmc.models.Bucket)
 
         # Update
-        request = oraclebmi.models.UpdateBucketDetails()
+        request = oraclebmc.models.UpdateBucketDetails()
         request.name = bucket_name
         request.metadata = {'new key': 'updated!', 'key2': 'another value'}
         response = self.context.object_storage_api.update_bucket(namespace, bucket_name, request)
         bucket = response.data
         self.assertEqual(200, response.status)
-        assert (type(bucket) is oraclebmi.models.Bucket)
+        assert (type(bucket) is oraclebmc.models.Bucket)
         self.assertEqual('another value', bucket.metadata['key2'])
 
         # Delete
@@ -60,7 +60,7 @@ class TestObjectStorage(ServiceTestBase):
         test_data = 'This is a test ' + tests.util.random_number_string() + '!/n/r/\/~%s;"/,{}><+=:.*)('''
         namespace = self.context.object_storage_api.get_namespace().data
 
-        request = oraclebmi.models.CreateBucketDetails()
+        request = oraclebmc.models.CreateBucketDetails()
         request.name = bucket_name
         request.compartment_id = self.context.config.tenancy
         response = self.context.object_storage_api.create_bucket(namespace, request)
@@ -76,7 +76,7 @@ class TestObjectStorage(ServiceTestBase):
         response_text = response.data.content.decode('UTF-8')
         self.assertEqual(len(test_data), len(response_text))
         self.assertEqual(test_data, response_text)
-        assert (type(response.data) is oraclebmi.DataStream)
+        assert (type(response.data) is oraclebmc.DataStream)
 
         # Head
         response = self.context.object_storage_api.head_object(namespace, bucket_name, object_name_A)
@@ -91,9 +91,9 @@ class TestObjectStorage(ServiceTestBase):
         response = self.context.object_storage_api.list_objects(namespace, bucket_name)
         self.assertEqual(200, response.status)
         object_list = response.data
-        assert (type(object_list) is oraclebmi.models.ListObjects)
+        assert (type(object_list) is oraclebmc.models.ListObjects)
         self.assertEqual(3, len(object_list.objects))
-        assert (type(object_list.objects[0]) is oraclebmi.models.ObjectSummary)
+        assert (type(object_list.objects[0]) is oraclebmc.models.ObjectSummary)
 
         # Delete
         for summary in object_list.objects:
@@ -107,17 +107,17 @@ class TestObjectStorage(ServiceTestBase):
     def test_bucket_not_found(self):
         namespace = self.context.object_storage_api.get_namespace().data
 
-        with self.assertRaises(oraclebmi.exceptions.ServiceError) as errorContext:
+        with self.assertRaises(oraclebmc.exceptions.ServiceError) as errorContext:
             self.context.object_storage_api.get_bucket(namespace, tests.util.unique_name('does_not_exist'))
 
         self.assertEqual(404, errorContext.exception.status)
-        assert (type(errorContext.exception.data) is oraclebmi.models.Error)
+        assert (type(errorContext.exception.data) is oraclebmc.models.Error)
 
     def test_get_bucket(self):
         namespace = self.context.object_storage_api.get_namespace().data
         response = self.context.object_storage_api.get_bucket(namespace, 'ReadOnlyTestBucket1')
         self.assertEqual(200, response.status)
-        assert (type(response.data) is oraclebmi.models.Bucket)
+        assert (type(response.data) is oraclebmc.models.Bucket)
         self.assertIsNotNone(response.data.metadata)
         self.assertEqual(0, len(response.data.metadata))
 
@@ -125,7 +125,7 @@ class TestObjectStorage(ServiceTestBase):
         namespace = self.context.object_storage_api.get_namespace().data
         response = self.context.object_storage_api.get_bucket(namespace, 'ReadOnlyTestBucket5')
         self.assertEqual(200, response.status)
-        assert (type(response.data) is oraclebmi.models.Bucket)
+        assert (type(response.data) is oraclebmc.models.Bucket)
         self.assertIsNotNone(response.data.metadata)
         self.assertEqual('bar1', response.data.metadata['foo1'])
         self.assertEqual('bar2', response.data.metadata['foo2'])
@@ -135,14 +135,14 @@ class TestObjectStorage(ServiceTestBase):
         response = self.context.object_storage_api.list_buckets(namespace, self.context.config.tenancy)
         self.assertEqual(200, response.status)
         assert (len(response.data) > 0)
-        assert (type(response.data[0]) is oraclebmi.models.Bucket)
+        assert (type(response.data[0]) is oraclebmc.models.Bucket)
 
     def test_list_buckets_truncated(self):
         namespace = self.context.object_storage_api.get_namespace().data
         response = self.context.object_storage_api.list_buckets(namespace, self.context.config.tenancy, limit=2)
         self.assertEqual(200, response.status)
         self.assertEqual(2, len(response.data))
-        assert (type(response.data[0]) is oraclebmi.models.Bucket)
+        assert (type(response.data[0]) is oraclebmc.models.Bucket)
         assert (response.has_next_page)
         first_bucket_name = response.data[0].name
 
@@ -155,13 +155,13 @@ class TestObjectStorage(ServiceTestBase):
         namespace = self.context.object_storage_api.get_namespace().data
         response = self.context.object_storage_api.get_object(namespace, 'ReadOnlyTestBucket1', 'object1')
         self.assertEqual(200, response.status)
-        assert (type(response.data) is oraclebmi.DataStream)
+        assert (type(response.data) is oraclebmc.DataStream)
 
     def test_get_object_with_user_metadata(self):
         namespace = self.context.object_storage_api.get_namespace().data
         response = self.context.object_storage_api.get_object(namespace, 'ReadOnlyTestBucket4', 'hasUserMetadata.json')
         self.assertEqual(200, response.status)
-        assert (type(response.data) is oraclebmi.DataStream)
+        assert (type(response.data) is oraclebmc.DataStream)
         self.assertEqual('bar1', response.headers['opc-meta-foo1'])
         self.assertEqual('bar2', response.headers['opc-meta-foo2'])
 
@@ -169,7 +169,7 @@ class TestObjectStorage(ServiceTestBase):
         namespace = self.context.object_storage_api.get_namespace().data
         response = self.context.object_storage_api.list_objects(namespace, 'ReadOnlyTestBucket1')
         self.assertEqual(200, response.status)
-        assert (type(response.data) is oraclebmi.models.ListObjects)
+        assert (type(response.data) is oraclebmc.models.ListObjects)
         self.assertEqual(5, len(response.data.objects))
         self.assertIsNone(response.data.prefixes)
 
@@ -177,7 +177,7 @@ class TestObjectStorage(ServiceTestBase):
         namespace = self.context.object_storage_api.get_namespace().data
         response = self.context.object_storage_api.list_objects(namespace, 'ReadOnlyTestBucket5')
         self.assertEqual(200, response.status)
-        assert (type(response.data) is oraclebmi.models.ListObjects)
+        assert (type(response.data) is oraclebmc.models.ListObjects)
         self.assertEqual(0, len(response.data.objects))
         self.assertIsNone(response.data.prefixes)
 
@@ -185,7 +185,7 @@ class TestObjectStorage(ServiceTestBase):
         namespace = self.context.object_storage_api.get_namespace().data
         response = self.context.object_storage_api.list_objects(namespace, 'ReadOnlyTestBucket2', prefix='a/b/', delimiter='/')
         self.assertEqual(200, response.status)
-        assert (type(response.data) is oraclebmi.models.ListObjects)
+        assert (type(response.data) is oraclebmc.models.ListObjects)
         self.assertEqual(2, len(response.data.objects))
         self.assertEqual(1, len(response.data.prefixes))
         self.assertIsNone(response.data.next_start_with)
@@ -194,7 +194,7 @@ class TestObjectStorage(ServiceTestBase):
         namespace = self.context.object_storage_api.get_namespace().data
         response = self.context.object_storage_api.list_objects(namespace, 'ReadOnlyTestBucket1', limit=3)
         self.assertEqual(200, response.status)
-        assert (type(response.data) is oraclebmi.models.ListObjects)
+        assert (type(response.data) is oraclebmc.models.ListObjects)
         self.assertEqual(3, len(response.data.objects))
         self.assertIsNone(response.data.prefixes)
         self.assertIsNotNone(response.data.next_start_with)

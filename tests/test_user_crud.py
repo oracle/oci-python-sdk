@@ -1,5 +1,5 @@
 from tests.service_test_base import ServiceTestBase
-import oraclebmi
+import oraclebmc
 
 class TestUserCrud(ServiceTestBase):
 
@@ -11,14 +11,14 @@ class TestUserCrud(ServiceTestBase):
         initial_user_count = len(self.context.identity_api.list_users(self.context.config.tenancy).data)
 
         # Create User
-        request = oraclebmi.models.CreateUserRequest()
+        request = oraclebmc.models.CreateUserRequest()
         request.compartment_id = compartment
         request.name = user_name
         request.description = user_description
 
         response = self.context.identity_api.create_user(request)
 
-        assert (type(response.data) is oraclebmi.models.User)
+        assert (type(response.data) is oraclebmc.models.User)
         self.assertEqual(user_name, response.data.name)
         self.assertEqual(user_description, response.data.description)
         self.assertEqual(compartment, response.data.compartment_id)
@@ -28,7 +28,7 @@ class TestUserCrud(ServiceTestBase):
 
         # Get User
         response = self.context.identity_api.get_user(user_id)
-        assert (type(response.data) is oraclebmi.models.User)
+        assert (type(response.data) is oraclebmc.models.User)
         self.assertEqual(user_name, response.data.name)
         self.assertEqual(user_description, response.data.description)
         self.assertEqual(compartment, response.data.compartment_id)
@@ -36,11 +36,11 @@ class TestUserCrud(ServiceTestBase):
         # Update User
         user_description = "Updated description"
         newDescription = "updated user description"
-        request = oraclebmi.models.UpdateUserRequest()
+        request = oraclebmc.models.UpdateUserRequest()
         request.description = newDescription
         response = self.context.identity_api.update_user(user_id, request)
 
-        assert (type(response.data) is oraclebmi.models.User)
+        assert (type(response.data) is oraclebmc.models.User)
         self.assertEqual(user_name, response.data.name)
         self.assertEqual(newDescription, response.data.description)
         self.assertEqual(compartment, response.data.compartment_id)

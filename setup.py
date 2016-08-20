@@ -3,7 +3,7 @@
 import sys
 from setuptools import setup, find_packages
 
-NAME = "oraclebmi"
+NAME = "oraclebmc"
 VERSION = "0.0.1"
 
 REQUIRES = ['certifi==2016.2.28',
@@ -17,7 +17,7 @@ REQUIRES = ['certifi==2016.2.28',
 setup(
     name=NAME,
     version=VERSION,
-    description="Oracle Bare Metal IaaS Python SDK",
+    description="Oracle Bare Metal Cloud Python SDK",
     author_email="",
     url="",
     keywords=[""],
@@ -25,7 +25,7 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     long_description="""\
-    This is the Public Python SDK for the Oracle Bare Metal IaaS.
+    This is the Public Python SDK for the Oracle Bare Metal Cloud.
     """
 )
 

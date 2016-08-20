@@ -1,5 +1,5 @@
 import unittest
-import oraclebmi
+import oraclebmc
 import datetime
 
 class TestModel(unittest.TestCase):
@@ -64,7 +64,7 @@ class TestModel(unittest.TestCase):
         self.assertEqual(datetime.date(1999, 12, 31), dict['time_created'])
 
     def test_subclass(self):
-        volume_attachment = oraclebmi.models.IScsiVolumeAttachment()
+        volume_attachment = oraclebmc.models.IScsiVolumeAttachment()
         self.assertEqual('iscsi', volume_attachment.attachment_type)
         assert(hasattr(volume_attachment, 'chap_username'))
         assert (hasattr(volume_attachment, 'availability_domain'))
@@ -81,7 +81,7 @@ class TestModel(unittest.TestCase):
         self.assertEqual('bar', dict['compartment_id'])
 
     def create_instance(self):
-        instance = oraclebmi.models.Instance()
+        instance = oraclebmc.models.Instance()
         instance.availability_domain = 'some ad'
         instance.compartment_id = 'some compartment'
         instance.display_name = 'some name'

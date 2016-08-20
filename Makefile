@@ -1,9 +1,17 @@
+.PHONY: clean
+clean:
+	@echo Cleaning generated code, build, docs, and distributables
+	mvn clean
+	cd docs && make clean
+	rm -r dist
+	rm -r build
+
 .PHONY: docs
 docs:
 	@echo Generating HTML docs. Note that this will use the installed
-	@echo version of OracleBMI, so you might want to run gen, build, and
+	@echo version of OracleBMC, so you might want to run gen, build, and
 	@echo install first.
-	cd docs && make clean && sphinx-apidoc -o apidocs/ ../oraclebmi
+	cd docs && make clean && sphinx-apidoc -o apidocs/ ../oraclebmc
 	cd docs && make html
 	@echo View the docs at docs/_build/html/index.html
 
@@ -25,6 +33,6 @@ build:
 
 .PHONY: install
 install:
-	@echo Uninstalling then reinstalling OracleBMI whl.
-	pip uninstall -y oraclebmi || true
-	pip install dist/oraclebmi-*-py3-none-any.whl
+	@echo Uninstalling then reinstalling OracleBMC whl.
+	pip uninstall -y oraclebmc || true
+	pip install dist/oraclebmc-*-py3-none-any.whl
