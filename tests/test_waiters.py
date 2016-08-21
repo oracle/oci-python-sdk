@@ -40,9 +40,9 @@ class TestWaiters(ServiceTestBase):
 
         total_time =  time.time() - start_time
 
-        # This should always be between 10 seconds and 5 minutes.
+        # This should always be between 2 seconds and 5 minutes.
         assert (total_time < 60 * 5)
-        assert (total_time > 10)
+        assert (total_time > 2)
 
     def test_invalid_operation(self):
         # Create User

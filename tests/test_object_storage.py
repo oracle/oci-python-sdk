@@ -12,7 +12,7 @@ class TestObjectStorage(ServiceTestBase):
     def test_bucket_CRUD(self):
         bucket_name = tests.util.unique_name('test_bucket')
         namespace = self.context.object_storage_api.get_namespace().data
-        bucket_count = len(self.context.object_storage_api.list_buckets(namespace, limit=100).data)
+        bucket_count = len(self.context.object_storage_api.list_buckets(namespace, self.context.config.tenancy, limit=100).data)
 
         # Create
         request = oraclebmi.models.CreateBucketDetails()
@@ -34,7 +34,7 @@ class TestObjectStorage(ServiceTestBase):
         self.assertEqual(bucket_name, response.data.name)
 
         # List
-        response = self.context.object_storage_api.list_buckets(namespace, limit=100)
+        response = self.context.object_storage_api.list_buckets(namespace, self.context.config.tenancy, limit=100)
         self.assertEqual(200, response.status)
         self.assertEqual(bucket_count + 1, len(response.data))
         assert (type(response.data[0]) is oraclebmi.models.Bucket)
@@ -51,7 +51,7 @@ class TestObjectStorage(ServiceTestBase):
 
         # Delete
         response = self.context.object_storage_api.delete_bucket(namespace, bucket_name)
-        self.assertEqual(200, response.status)
+        self.assertEqual(204, response.status)
 
     def test_object_CRUD(self):
         # Setup a bucket to use.
@@ -98,11 +98,11 @@ class TestObjectStorage(ServiceTestBase):
         # Delete
         for summary in object_list.objects:
             response = self.context.object_storage_api.delete_object(namespace, bucket_name, summary.name)
-            self.assertEqual(200, response.status)
+            self.assertEqual(204, response.status)
 
         # Clean up
         response = self.context.object_storage_api.delete_bucket(namespace, bucket_name)
-        self.assertEqual(200, response.status)
+        self.assertEqual(204, response.status)
 
     def test_bucket_not_found(self):
         namespace = self.context.object_storage_api.get_namespace().data
@@ -132,21 +132,21 @@ class TestObjectStorage(ServiceTestBase):
 
     def test_list_buckets(self):
         namespace = self.context.object_storage_api.get_namespace().data
-        response = self.context.object_storage_api.list_buckets(namespace)
+        response = self.context.object_storage_api.list_buckets(namespace, self.context.config.tenancy)
         self.assertEqual(200, response.status)
         assert (len(response.data) > 0)
         assert (type(response.data[0]) is oraclebmi.models.Bucket)
 
     def test_list_buckets_truncated(self):
         namespace = self.context.object_storage_api.get_namespace().data
-        response = self.context.object_storage_api.list_buckets(namespace, limit=2)
+        response = self.context.object_storage_api.list_buckets(namespace, self.context.config.tenancy, limit=2)
         self.assertEqual(200, response.status)
         self.assertEqual(2, len(response.data))
         assert (type(response.data[0]) is oraclebmi.models.Bucket)
         assert (response.has_next_page)
         first_bucket_name = response.data[0].name
 
-        response = self.context.object_storage_api.list_buckets(namespace, limit=2, page=response.next_page)
+        response = self.context.object_storage_api.list_buckets(namespace, self.context.config.tenancy, limit=2, page=response.next_page)
         self.assertEqual(200, response.status)
         self.assertEqual(2, len(response.data))
         self.assertNotEqual(first_bucket_name, response.data[0].name)

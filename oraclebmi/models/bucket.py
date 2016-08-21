@@ -30,29 +30,29 @@ class Bucket(object):
         self.swagger_types = {
             'namespace': 'str',
             'name': 'str',
-            'compartment': 'str',
+            'compartment_id': 'str',
             'metadata': 'dict(str, str)',
             'created_by': 'str',
-            'created_on': 'datetime',
+            'time_created': 'datetime',
             'etag': 'str'
         }
 
         self.attribute_map = {
             'namespace': 'namespace',
             'name': 'name',
-            'compartment': 'compartment',
+            'compartment_id': 'compartmentId',
             'metadata': 'metadata',
             'created_by': 'createdBy',
-            'created_on': 'createdOn',
+            'time_created': 'timeCreated',
             'etag': 'etag'
         }
 
         self._namespace = None
         self._name = None
-        self._compartment = None
+        self._compartment_id = None
         self._metadata = None
         self._created_by = None
-        self._created_on = None
+        self._time_created = None
         self._etag = None
 
 
@@ -60,7 +60,7 @@ class Bucket(object):
     def namespace(self):
         """
         Gets the namespace of this Bucket.
-        the namespace in which the bucket lives.
+        The namespace in which the bucket lives.
 
         :return: The namespace of this Bucket.
         :rtype: str
@@ -71,7 +71,7 @@ class Bucket(object):
     def namespace(self, namespace):
         """
         Sets the namespace of this Bucket.
-        the namespace in which the bucket lives.
+        The namespace in which the bucket lives.
 
         :param namespace: The namespace of this Bucket.
         :type: str
@@ -101,26 +101,26 @@ class Bucket(object):
         self._name = name
 
     @property
-    def compartment(self):
+    def compartment_id(self):
         """
-        Gets the compartment of this Bucket.
-        the compartment in which the bucket is authorized.
+        Gets the compartment_id of this Bucket.
+        The compartment ID in which the bucket is authorized.
 
-        :return: The compartment of this Bucket.
+        :return: The compartment_id of this Bucket.
         :rtype: str
         """
-        return self._compartment
+        return self._compartment_id
 
-    @compartment.setter
-    def compartment(self, compartment):
+    @compartment_id.setter
+    def compartment_id(self, compartment_id):
         """
-        Sets the compartment of this Bucket.
-        the compartment in which the bucket is authorized.
+        Sets the compartment_id of this Bucket.
+        The compartment ID in which the bucket is authorized.
 
-        :param compartment: The compartment of this Bucket.
+        :param compartment_id: The compartment_id of this Bucket.
         :type: str
         """
-        self._compartment = compartment
+        self._compartment_id = compartment_id
 
     @property
     def metadata(self):
@@ -167,26 +167,26 @@ class Bucket(object):
         self._created_by = created_by
 
     @property
-    def created_on(self):
+    def time_created(self):
         """
-        Gets the created_on of this Bucket.
+        Gets the time_created of this Bucket.
         The date and time at which the bucket was created.
 
-        :return: The created_on of this Bucket.
+        :return: The time_created of this Bucket.
         :rtype: datetime
         """
-        return self._created_on
+        return self._time_created
 
-    @created_on.setter
-    def created_on(self, created_on):
+    @time_created.setter
+    def time_created(self, time_created):
         """
-        Sets the created_on of this Bucket.
+        Sets the time_created of this Bucket.
         The date and time at which the bucket was created.
 
-        :param created_on: The created_on of this Bucket.
+        :param time_created: The time_created of this Bucket.
         :type: datetime
         """
-        self._created_on = created_on
+        self._time_created = time_created
 
     @property
     def etag(self):

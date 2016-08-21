@@ -31,20 +31,20 @@ class ObjectSummary(object):
             'name': 'str',
             'size': 'int',
             'md5': 'str',
-            'created': 'str'
+            'time_created': 'datetime'
         }
 
         self.attribute_map = {
             'name': 'name',
             'size': 'size',
             'md5': 'md5',
-            'created': 'created'
+            'time_created': 'timeCreated'
         }
 
         self._name = None
         self._size = None
         self._md5 = None
-        self._created = None
+        self._time_created = None
 
 
     @property
@@ -114,26 +114,26 @@ class ObjectSummary(object):
         self._md5 = md5
 
     @property
-    def created(self):
+    def time_created(self):
         """
-        Gets the created of this ObjectSummary.
+        Gets the time_created of this ObjectSummary.
         Date and time of object creation.
 
-        :return: The created of this ObjectSummary.
-        :rtype: str
+        :return: The time_created of this ObjectSummary.
+        :rtype: datetime
         """
-        return self._created
+        return self._time_created
 
-    @created.setter
-    def created(self, created):
+    @time_created.setter
+    def time_created(self, time_created):
         """
-        Sets the created of this ObjectSummary.
+        Sets the time_created of this ObjectSummary.
         Date and time of object creation.
 
-        :param created: The created of this ObjectSummary.
-        :type: str
+        :param time_created: The time_created of this ObjectSummary.
+        :type: datetime
         """
-        self._created = created
+        self._time_created = time_created
 
     def to_dict(self):
         """

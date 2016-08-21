@@ -19,7 +19,7 @@
     <spec-temp-dir>${project.build.directory}</spec-temp-dir>
     <swagger-spec-file-coreservices>${spec-temp-dir}/coreservices/coreservices-api-spec.yaml</swagger-spec-file-coreservices>
     <swagger-spec-file-identity>${spec-temp-dir}/identity/identity-control-plane-api-spec.yaml</swagger-spec-file-identity>
-      <swagger-spec-file-casper>temp/casper-api.yaml</swagger-spec-file-casper>
+    <swagger-spec-file-casper>${spec-temp-dir}/casper/casper-api.yaml</swagger-spec-file-casper>
     <!-- remove when upgrading to pic-pom:0.4.4 -->
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
@@ -207,7 +207,7 @@
       <dependency>
         <groupId>com.oracle.pic.casper</groupId>
         <artifactId>casper-api-spec</artifactId>
-        <version>0.1-SNAPSHOT</version>
+        <version>1.0.0</version>
       </dependency>
       <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
