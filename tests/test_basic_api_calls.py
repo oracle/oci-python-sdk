@@ -1,5 +1,5 @@
 from tests.service_test_base import ServiceTestBase
-import oraclebmi
+import oraclebmc
 
 class TestBasicAPICalls(ServiceTestBase):
 
@@ -8,7 +8,7 @@ class TestBasicAPICalls(ServiceTestBase):
 
         assert(response != None)
         assert(len(response.data) > 0)
-        assert(type(response.data[0]) is oraclebmi.models.User)
+        assert(type(response.data[0]) is oraclebmc.models.User)
         self.assertEqual(200, response.status)
         assert(response.request_id != None)
 
@@ -17,7 +17,7 @@ class TestBasicAPICalls(ServiceTestBase):
 
         assert (response != None)
         assert (len(response.data) > 0)
-        assert (type(response.data[0]) is oraclebmi.models.Vcn)
+        assert (type(response.data[0]) is oraclebmc.models.Vcn)
         self.assertEqual(200, response.status)
         assert (response.request_id != None)
 
@@ -33,7 +33,7 @@ class TestBasicAPICalls(ServiceTestBase):
 
         assert (response != None)
         assert (len(response.data) == 1)
-        assert (type(response.data[0]) is oraclebmi.models.User)
+        assert (type(response.data[0]) is oraclebmc.models.User)
         self.assertEqual(200, response.status)
         assert (response.request_id != None)
 

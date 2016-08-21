@@ -1,6 +1,6 @@
 from tests.service_test_base import ServiceTestBase
 import tests.util
-import oraclebmi
+import oraclebmc
 import time
 
 class TestWaiters(ServiceTestBase):
@@ -13,7 +13,7 @@ class TestWaiters(ServiceTestBase):
 
         start_time = time.time()
 
-        request = oraclebmi.models.CreateVcnRequest()
+        request = oraclebmc.models.CreateVcnRequest()
         request.cidr_block = '10.0.0.0/16'
         request.display_name = 'pythonsdk_waiter_' + id
         request.compartment_id = self.context.config.tenancy
@@ -31,7 +31,7 @@ class TestWaiters(ServiceTestBase):
 
         self.assertEqual(204, response.status)
 
-        with self.assertRaises(oraclebmi.exceptions.ServiceError) as errorContext:
+        with self.assertRaises(oraclebmc.exceptions.ServiceError) as errorContext:
             response = self.context.vcn_service_api.get_vcn(vcn.id)
             self.assertEqual('TERMINATING', response.data.state)
             self.context.wait_until(response, 'state', 'TERMINATED')
@@ -46,14 +46,14 @@ class TestWaiters(ServiceTestBase):
 
     def test_invalid_operation(self):
         # Create User
-        request = oraclebmi.models.CreateUserRequest()
+        request = oraclebmc.models.CreateUserRequest()
         request.compartment_id = self.context.config.tenancy
         request.name = tests.util.unique_name('python_wait_test_user')
         request.description = 'test user'
         response = self.context.identity_api.create_user(request)
         user_id = response.data.id
 
-        with self.assertRaises(oraclebmi.exceptions.WaitUntilNotSupported) as errorContext:
+        with self.assertRaises(oraclebmc.exceptions.WaitUntilNotSupported) as errorContext:
             self.context.wait_until(response, 'name', 'test')
 
         with self.assertRaises(ValueError) as errorContext:
@@ -63,12 +63,12 @@ class TestWaiters(ServiceTestBase):
         # Delete User
         response = self.context.identity_api.delete_user(user_id)
 
-        with self.assertRaises(oraclebmi.exceptions.WaitUntilNotSupported) as errorContext:
+        with self.assertRaises(oraclebmc.exceptions.WaitUntilNotSupported) as errorContext:
             self.context.wait_until(response, 'not a real property', 'test')
 
     def test_already_in_state(self):
         description = 'test user'
-        request = oraclebmi.models.CreateUserRequest()
+        request = oraclebmc.models.CreateUserRequest()
         request.compartment_id = self.context.config.tenancy
         request.name = tests.util.unique_name('python_wait_test_user')
         request.description = description
@@ -87,7 +87,7 @@ class TestWaiters(ServiceTestBase):
 
     def test_wait_time_exceeded(self):
         description = 'test user'
-        request = oraclebmi.models.CreateUserRequest()
+        request = oraclebmc.models.CreateUserRequest()
         request.compartment_id = self.context.config.tenancy
         request.name = tests.util.unique_name('python_wait_test_user')
         request.description = description
@@ -98,7 +98,7 @@ class TestWaiters(ServiceTestBase):
         self.assertEqual(description, response.data.description)
 
         start_time = time.time()
-        with self.assertRaises(oraclebmi.exceptions.MaximumWaitTimeExceeded) as errorContext:
+        with self.assertRaises(oraclebmc.exceptions.MaximumWaitTimeExceeded) as errorContext:
             # Wait on a property that will not change until we time out.
             self.context.wait_until(response, 'name', 'test', max_wait_seconds=2)
 

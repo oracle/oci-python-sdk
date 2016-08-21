@@ -1,6 +1,6 @@
 from tests.service_test_base import ServiceTestBase
 import tests.util
-import oraclebmi
+import oraclebmc
 import os.path
 import time
 
@@ -50,7 +50,7 @@ class TestLaunchInstanceTutorial(ServiceTestBase):
 
     def create_cloud_network(self):
         print('Creating cloud network')
-        request = oraclebmi.models.CreateVcnRequest()
+        request = oraclebmc.models.CreateVcnRequest()
         request.cidr_block = '10.0.0.0/16'
         request.display_name = 'pythonsdk_test_vcn_' + self.test_id
         request.compartment_id = self.compartment
@@ -59,7 +59,7 @@ class TestLaunchInstanceTutorial(ServiceTestBase):
 
         self.vcn = response.data
         self.assertEqual(200, response.status)
-        assert (type(response.data) is oraclebmi.models.Vcn)
+        assert (type(response.data) is oraclebmc.models.Vcn)
 
         response = self.context.vcn_service_api.get_vcn(self.vcn.id)
         response = self.context.wait_until(response, 'state', 'AVAILABLE')
@@ -72,7 +72,7 @@ class TestLaunchInstanceTutorial(ServiceTestBase):
             response = self.context.vcn_service_api.delete_vcn(self.vcn.id)
             self.assertEqual(204, response.status)
 
-            with self.assertRaises(oraclebmi.exceptions.ServiceError) as errorContext:
+            with self.assertRaises(oraclebmc.exceptions.ServiceError) as errorContext:
                 response = self.context.vcn_service_api.get_vcn(self.vcn.id)
                 self.context.wait_until(response, 'state', 'TERMINATED', max_wait_seconds=180)
 
@@ -80,7 +80,7 @@ class TestLaunchInstanceTutorial(ServiceTestBase):
 
     def create_subnet(self):
         print('Creating subnet')
-        request = oraclebmi.models.CreateSubnetRequest()
+        request = oraclebmc.models.CreateSubnetRequest()
         request.cidr_block = '10.0.0.0/16'
         request.availability_domain = self.availability_domain
         request.display_name = 'pythonsdk_test_subnet_' + self.test_id
@@ -91,7 +91,7 @@ class TestLaunchInstanceTutorial(ServiceTestBase):
 
         self.subnet = response.data
         self.assertEqual(200, response.status)
-        assert (type(self.subnet) is oraclebmi.models.Subnet)
+        assert (type(self.subnet) is oraclebmc.models.Subnet)
 
         response = self.context.vcn_service_api.get_subnet(self.subnet.id)
         self.context.wait_until(response, 'state', 'AVAILABLE')
@@ -102,7 +102,7 @@ class TestLaunchInstanceTutorial(ServiceTestBase):
             response = self.context.vcn_service_api.delete_subnet(self.subnet.id)
             self.assertEqual(204, response.status)
 
-            with self.assertRaises(oraclebmi.exceptions.ServiceError) as errorContext:
+            with self.assertRaises(oraclebmc.exceptions.ServiceError) as errorContext:
                 response = self.context.vcn_service_api.get_subnet(self.subnet.id)
                 self.context.wait_until(response, 'state', 'TERMINATED')
 
@@ -110,7 +110,7 @@ class TestLaunchInstanceTutorial(ServiceTestBase):
 
     def create_internet_gateway(self):
         print('Creating internet gateway')
-        request = oraclebmi.models.CreateInternetGatewayRequest()
+        request = oraclebmc.models.CreateInternetGatewayRequest()
         request.display_name = 'pythonsdk_test_ig_' + self.test_id
         request.compartment_id = self.compartment
         request.is_enabled = True
@@ -119,26 +119,26 @@ class TestLaunchInstanceTutorial(ServiceTestBase):
 
         self.internet_gateway = response.data
         self.assertEqual(200, response.status)
-        assert (type(self.internet_gateway) is oraclebmi.models.InternetGateway)
+        assert (type(self.internet_gateway) is oraclebmc.models.InternetGateway)
 
         response = self.context.vcn_service_api.get_internet_gateway(self.internet_gateway.id)
         self.context.wait_until(response, 'state', 'AVAILABLE')
 
     def update_route_table(self):
         print('Updating route table')
-        route_rule = oraclebmi.models.RouteRule()
+        route_rule = oraclebmc.models.RouteRule()
         route_rule.cidr_block = '0.0.0.0/0'
         route_rule.display_name = 'pythonsdk_route_rule_' + self.test_id
         route_rule.network_entity_id = self.internet_gateway.id
         route_rule.network_entity_type = 'INTERNET_GATEWAY'
 
-        request = oraclebmi.models.UpdateRouteTableRequest()
+        request = oraclebmc.models.UpdateRouteTableRequest()
         request.route_rules = [route_rule]
         response = self.context.vcn_service_api.update_route_table(self.vcn.default_route_table_id, request)
 
         self.route_table = response.data
         self.assertEqual(200, response.status)
-        assert (type(self.route_table) is oraclebmi.models.RouteTable)
+        assert (type(self.route_table) is oraclebmc.models.RouteTable)
 
         response = self.context.vcn_service_api.get_route_table(self.vcn.default_route_table_id)
         self.context.wait_until(response, 'state', 'AVAILABLE')
@@ -153,7 +153,7 @@ class TestLaunchInstanceTutorial(ServiceTestBase):
 
         ssh_public_key = self.get_public_key(self.public_key_file)
 
-        request = oraclebmi.models.LaunchInstanceRequest()
+        request = oraclebmc.models.LaunchInstanceRequest()
         request.availability_domain = self.availability_domain
         request.compartment_id = self.compartment
         request.display_name = 'pythonsdk_tutorial_instance_' + self.test_id
@@ -183,7 +183,7 @@ class TestLaunchInstanceTutorial(ServiceTestBase):
 
     def create_volume(self):
         print('Creating volume')
-        request = oraclebmi.models.CreateVolumeRequest()
+        request = oraclebmc.models.CreateVolumeRequest()
         request.display_name = 'pythonsdk_volume_' + self.test_id
         request.compartment_id = self.compartment
         request.availability_domain = self.availability_domain
@@ -191,7 +191,7 @@ class TestLaunchInstanceTutorial(ServiceTestBase):
 
         self.volume = response.data
         self.assertEqual(202, response.status)
-        assert (type(self.volume) is oraclebmi.models.Volume)
+        assert (type(self.volume) is oraclebmc.models.Volume)
 
         response = self.context.blockstorage_api.get_volume(self.volume.id)
         self.context.wait_until(response, 'state', 'AVAILABLE', max_wait_seconds=180)
@@ -228,7 +228,7 @@ class TestLaunchInstanceTutorial(ServiceTestBase):
 
     def attach_volume(self):
         print('Attaching volume')
-        request = oraclebmi.models.AttachIScsiVolumeRequest()
+        request = oraclebmc.models.AttachIScsiVolumeRequest()
         request.compartment_id = self.compartment
         request.instance_id = self.instance.id
         request.volume_id = self.volume.id
@@ -236,7 +236,7 @@ class TestLaunchInstanceTutorial(ServiceTestBase):
 
         self.volume_attachment = response.data
         self.assertEqual(200, response.status)
-        assert (type(self.volume_attachment) is oraclebmi.models.IScsiVolumeAttachment)
+        assert (type(self.volume_attachment) is oraclebmc.models.IScsiVolumeAttachment)
 
         response = self.context.compute_api.get_volume_attachment(self.volume_attachment.id)
         self.context.wait_until(response, 'state', 'ATTACHED')

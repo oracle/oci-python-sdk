@@ -1,5 +1,5 @@
 from tests.service_test_base import ServiceTestBase
-import oraclebmi
+import oraclebmc
 import tests.util
 import time
 
@@ -12,7 +12,7 @@ class TestStreaming(ServiceTestBase):
         self.bucket_name = tests.util.unique_name('test_python_streaming')
         self.namespace = self.context.object_storage_api.get_namespace().data
 
-        request = oraclebmi.models.CreateBucketDetails()
+        request = oraclebmc.models.CreateBucketDetails()
         request.name = self.bucket_name
         request.compartment_id = self.context.config.tenancy
         response = self.context.object_storage_api.create_bucket(self.namespace, request)
@@ -120,15 +120,15 @@ class TestStreaming(ServiceTestBase):
             self.context.object_storage_api.put_object(self.namespace, self.bucket_name, 'a_time', time.time())
 
         with self.assertRaises(TypeError):
-            self.context.object_storage_api.put_object(self.namespace, self.bucket_name, 'a_user', oraclebmi.models.User())
+            self.context.object_storage_api.put_object(self.namespace, self.bucket_name, 'a_user', oraclebmc.models.User())
 
 
     def test_object_not_found(self):
-        with self.assertRaises(oraclebmi.exceptions.ServiceError) as errorContext:
+        with self.assertRaises(oraclebmc.exceptions.ServiceError) as errorContext:
             self.context.object_storage_api.get_object(self.namespace, self.bucket_name, 'does_not_exist')
 
         self.assertEqual(404, errorContext.exception.status)
-        assert (type(errorContext.exception.data) is oraclebmi.models.Error)
+        assert (type(errorContext.exception.data) is oraclebmc.models.Error)
 
 if __name__ == '__main__':
     unittest.main()

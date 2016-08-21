@@ -1,5 +1,4 @@
 from tests.service_test_base import ServiceTestBase
-import oraclebmi
 
 class TestPaging(ServiceTestBase):
 

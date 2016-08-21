@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 
 DEFAULT_PROFILE = configparser.DEFAULTSECT
 
-DEFAULT_CONFIG_FILE = '~/.oraclebmi/config'
+DEFAULT_CONFIG_FILE = '~/.oraclebmc/config'
 
 def load_config(file_location=DEFAULT_CONFIG_FILE, profile_name=DEFAULT_PROFILE):
     file_location = os.path.expanduser(file_location)

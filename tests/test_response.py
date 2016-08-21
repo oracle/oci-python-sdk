@@ -1,5 +1,5 @@
 import unittest
-import oraclebmi
+import oraclebmc
 
 class TestResponse(unittest.TestCase):
 
@@ -7,9 +7,9 @@ class TestResponse(unittest.TestCase):
         status = "mystatus"
         headers = {'h1': 'h1val', 'opc-next-page': 'next!', 'opc-request-id': 'myid'}
         data = 'testdata'
-        request = oraclebmi.Request('method', 'url', 'query_params', 'header_params', 'body', 'response_type')
+        request = oraclebmc.Request('method', 'url', 'query_params', 'header_params', 'body', 'response_type')
 
-        response = oraclebmi.Response(status, headers, data, request)
+        response = oraclebmc.Response(status, headers, data, request)
 
         self.assertEqual(status, response.status)
         self.assertEqual('h1val', response.headers['h1'])
@@ -22,7 +22,7 @@ class TestResponse(unittest.TestCase):
         headers = None
         data = 'testdata'
 
-        response = oraclebmi.Response(status, headers, data, None)
+        response = oraclebmc.Response(status, headers, data, None)
 
         self.assertEqual(status, response.status)
         self.assertEqual(None, response.next_page)
@@ -34,7 +34,7 @@ class TestResponse(unittest.TestCase):
         headers = {}
         data = 'testdata'
 
-        response = oraclebmi.Response(status, headers, data, None)
+        response = oraclebmc.Response(status, headers, data, None)
 
         self.assertEqual(status, response.status)
         self.assertEqual(None, response.next_page)
