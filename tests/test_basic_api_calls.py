@@ -16,8 +16,6 @@ class TestBasicAPICalls(ServiceTestBase):
         response = self.context.vcn_service_api.list_vcns(self.context.config.tenancy)
 
         assert (response != None)
-        assert (len(response.data) > 0)
-        assert (type(response.data[0]) is oraclebmc.models.Vcn)
         self.assertEqual(200, response.status)
         assert (response.request_id != None)
 
