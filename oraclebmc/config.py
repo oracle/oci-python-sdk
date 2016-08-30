@@ -12,8 +12,8 @@ class Config(object):
         self.fingerprint = None
         self.key_file = None
 
-        core_endpoint = 'https://core.us-az-phoenix-1.OracleIaaS.com/v1'
-        self.endpoint_identity_api = 'https://identity.us-az-phoenix-1.OracleIaaS.com/v1'
+        core_endpoint = 'https://core.us-az-phoenix-1.OracleIaaS.com/20160918'
+        self.endpoint_identity_api = 'https://identity.us-az-phoenix-1.OracleIaaS.com/20160918'
         self.endpoint_blockstorage_api = core_endpoint
         self.endpoint_compute_api = core_endpoint
         self.endpoint_vcn_ad_service_api = core_endpoint
