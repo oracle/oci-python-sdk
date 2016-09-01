@@ -33,7 +33,7 @@ class ConsoleHistoryMetadata(object):
             'display_name': 'str',
             'id': 'str',
             'instance_id': 'str',
-            'state': 'str',
+            'lifecycle_state': 'str',
             'time_created': 'datetime'
         }
 
@@ -43,7 +43,7 @@ class ConsoleHistoryMetadata(object):
             'display_name': 'displayName',
             'id': 'id',
             'instance_id': 'instanceId',
-            'state': 'state',
+            'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated'
         }
 
@@ -52,7 +52,7 @@ class ConsoleHistoryMetadata(object):
         self._display_name = None
         self._id = None
         self._instance_id = None
-        self._state = None
+        self._lifecycle_state = None
         self._time_created = None
 
 
@@ -104,7 +104,7 @@ class ConsoleHistoryMetadata(object):
     def display_name(self):
         """
         Gets the display_name of this ConsoleHistoryMetadata.
-        The non-unique, changeable name of an instance.
+        A user-friendly name. Does not have to be unique, and it's changeable.\n
 
         :return: The display_name of this ConsoleHistoryMetadata.
         :rtype: str
@@ -115,7 +115,7 @@ class ConsoleHistoryMetadata(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ConsoleHistoryMetadata.
-        The non-unique, changeable name of an instance.
+        A user-friendly name. Does not have to be unique, and it's changeable.\n
 
         :param display_name: The display_name of this ConsoleHistoryMetadata.
         :type: str
@@ -167,38 +167,38 @@ class ConsoleHistoryMetadata(object):
         self._instance_id = instance_id
 
     @property
-    def state(self):
+    def lifecycle_state(self):
         """
-        Gets the state of this ConsoleHistoryMetadata.
+        Gets the lifecycle_state of this ConsoleHistoryMetadata.
         The current state of the console history.
 
-        :return: The state of this ConsoleHistoryMetadata.
+        :return: The lifecycle_state of this ConsoleHistoryMetadata.
         :rtype: str
         """
-        return self._state
+        return self._lifecycle_state
 
-    @state.setter
-    def state(self, state):
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
         """
-        Sets the state of this ConsoleHistoryMetadata.
+        Sets the lifecycle_state of this ConsoleHistoryMetadata.
         The current state of the console history.
 
-        :param state: The state of this ConsoleHistoryMetadata.
+        :param lifecycle_state: The lifecycle_state of this ConsoleHistoryMetadata.
         :type: str
         """
         allowed_values = ["REQUESTED", "GETTING-HISTORY", "SUCCEEDED", "FAILED"]
-        if state not in allowed_values:
+        if lifecycle_state not in allowed_values:
             raise ValueError(
-                "Invalid value for `state`, must be one of {0}"
+                "Invalid value for `lifecycle_state`, must be one of {0}"
                 .format(allowed_values)
             )
-        self._state = state
+        self._lifecycle_state = lifecycle_state
 
     @property
     def time_created(self):
         """
         Gets the time_created of this ConsoleHistoryMetadata.
-        The date and time the instance was created.
+        The date and time the console history metadata was created.
 
         :return: The time_created of this ConsoleHistoryMetadata.
         :rtype: datetime
@@ -209,7 +209,7 @@ class ConsoleHistoryMetadata(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this ConsoleHistoryMetadata.
-        The date and time the instance was created.
+        The date and time the console history metadata was created.
 
         :param time_created: The time_created of this ConsoleHistoryMetadata.
         :type: datetime

@@ -33,7 +33,7 @@ class IPSecConnection(object):
             'display_name': 'str',
             'drg_id': 'str',
             'id': 'str',
-            'state': 'str',
+            'lifecycle_state': 'str',
             'static_routes': 'list[str]',
             'time_created': 'datetime'
         }
@@ -44,7 +44,7 @@ class IPSecConnection(object):
             'display_name': 'displayName',
             'drg_id': 'drgId',
             'id': 'id',
-            'state': 'state',
+            'lifecycle_state': 'lifecycleState',
             'static_routes': 'staticRoutes',
             'time_created': 'timeCreated'
         }
@@ -54,7 +54,7 @@ class IPSecConnection(object):
         self._display_name = None
         self._drg_id = None
         self._id = None
-        self._state = None
+        self._lifecycle_state = None
         self._static_routes = None
         self._time_created = None
 
@@ -107,7 +107,7 @@ class IPSecConnection(object):
     def display_name(self):
         """
         Gets the display_name of this IPSecConnection.
-        A user-friendly name. Does not have to be unique, and it's unchangeable.\n
+        A user-friendly name. Does not have to be unique, and it's not changeable.\n
 
         :return: The display_name of this IPSecConnection.
         :rtype: str
@@ -118,7 +118,7 @@ class IPSecConnection(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this IPSecConnection.
-        A user-friendly name. Does not have to be unique, and it's unchangeable.\n
+        A user-friendly name. Does not have to be unique, and it's not changeable.\n
 
         :param display_name: The display_name of this IPSecConnection.
         :type: str
@@ -170,32 +170,32 @@ class IPSecConnection(object):
         self._id = id
 
     @property
-    def state(self):
+    def lifecycle_state(self):
         """
-        Gets the state of this IPSecConnection.
+        Gets the lifecycle_state of this IPSecConnection.
         The IPsec connection's current state.
 
-        :return: The state of this IPSecConnection.
+        :return: The lifecycle_state of this IPSecConnection.
         :rtype: str
         """
-        return self._state
+        return self._lifecycle_state
 
-    @state.setter
-    def state(self, state):
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
         """
-        Sets the state of this IPSecConnection.
+        Sets the lifecycle_state of this IPSecConnection.
         The IPsec connection's current state.
 
-        :param state: The state of this IPSecConnection.
+        :param lifecycle_state: The lifecycle_state of this IPSecConnection.
         :type: str
         """
         allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"]
-        if state not in allowed_values:
+        if lifecycle_state not in allowed_values:
             raise ValueError(
-                "Invalid value for `state`, must be one of {0}"
+                "Invalid value for `lifecycle_state`, must be one of {0}"
                 .format(allowed_values)
             )
-        self._state = state
+        self._lifecycle_state = lifecycle_state
 
     @property
     def static_routes(self):
@@ -223,7 +223,7 @@ class IPSecConnection(object):
     def time_created(self):
         """
         Gets the time_created of this IPSecConnection.
-        Date and time the IPsec connection was created.
+        The date and time the IPsec connection was created.
 
         :return: The time_created of this IPSecConnection.
         :rtype: datetime
@@ -234,7 +234,7 @@ class IPSecConnection(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this IPSecConnection.
-        Date and time the IPsec connection was created.
+        The date and time the IPsec connection was created.
 
         :param time_created: The time_created of this IPSecConnection.
         :type: datetime

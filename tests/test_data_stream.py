@@ -7,7 +7,7 @@ class TestDataStream(ServiceTestBase):
     def setUp(self):
         self.context = self.create_context()
 
-        self.namespace = 'InternalBrianGustafson'
+        self.namespace = 'internalbriangustafson'
         self.bucket_name = 'ReadOnlyTestBucket2'
         self.object_name = 'a/b/c/object3'
         self.expected_content = self.object_name

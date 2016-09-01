@@ -32,9 +32,9 @@ class Vnic(object):
             'compartment_id': 'str',
             'display_name': 'str',
             'id': 'str',
-            'overlay_ip': 'str',
+            'lifecycle_state': 'str',
+            'private_ip': 'str',
             'public_ip': 'str',
-            'state': 'str',
             'subnet_id': 'str',
             'time_created': 'datetime'
         }
@@ -44,9 +44,9 @@ class Vnic(object):
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'id': 'id',
-            'overlay_ip': 'overlayIp',
+            'lifecycle_state': 'lifecycleState',
+            'private_ip': 'privateIp',
             'public_ip': 'publicIp',
-            'state': 'state',
             'subnet_id': 'subnetId',
             'time_created': 'timeCreated'
         }
@@ -55,9 +55,9 @@ class Vnic(object):
         self._compartment_id = None
         self._display_name = None
         self._id = None
-        self._overlay_ip = None
+        self._lifecycle_state = None
+        self._private_ip = None
         self._public_ip = None
-        self._state = None
         self._subnet_id = None
         self._time_created = None
 
@@ -110,7 +110,7 @@ class Vnic(object):
     def display_name(self):
         """
         Gets the display_name of this Vnic.
-        A user-friendly name. Does not have to be unique, and it's unchangeable.\n
+        A user-friendly name. Does not have to be unique, and it's not changeable.\n
 
         :return: The display_name of this Vnic.
         :rtype: str
@@ -121,7 +121,7 @@ class Vnic(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Vnic.
-        A user-friendly name. Does not have to be unique, and it's unchangeable.\n
+        A user-friendly name. Does not have to be unique, and it's not changeable.\n
 
         :param display_name: The display_name of this Vnic.
         :type: str
@@ -151,26 +151,54 @@ class Vnic(object):
         self._id = id
 
     @property
-    def overlay_ip(self):
+    def lifecycle_state(self):
         """
-        Gets the overlay_ip of this Vnic.
-        The private IP addresses of the VNIC, which is within the VNIC subnet\nand is accessible within the VCN.\n
+        Gets the lifecycle_state of this Vnic.
+        The current state of the VNIC
 
-        :return: The overlay_ip of this Vnic.
+        :return: The lifecycle_state of this Vnic.
         :rtype: str
         """
-        return self._overlay_ip
+        return self._lifecycle_state
 
-    @overlay_ip.setter
-    def overlay_ip(self, overlay_ip):
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
         """
-        Sets the overlay_ip of this Vnic.
-        The private IP addresses of the VNIC, which is within the VNIC subnet\nand is accessible within the VCN.\n
+        Sets the lifecycle_state of this Vnic.
+        The current state of the VNIC
 
-        :param overlay_ip: The overlay_ip of this Vnic.
+        :param lifecycle_state: The lifecycle_state of this Vnic.
         :type: str
         """
-        self._overlay_ip = overlay_ip
+        allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"]
+        if lifecycle_state not in allowed_values:
+            raise ValueError(
+                "Invalid value for `lifecycle_state`, must be one of {0}"
+                .format(allowed_values)
+            )
+        self._lifecycle_state = lifecycle_state
+
+    @property
+    def private_ip(self):
+        """
+        Gets the private_ip of this Vnic.
+        The private IP addresses of the VNIC, which is within the VNIC subnet\nand is accessible within the VCN.\n
+
+        :return: The private_ip of this Vnic.
+        :rtype: str
+        """
+        return self._private_ip
+
+    @private_ip.setter
+    def private_ip(self, private_ip):
+        """
+        Sets the private_ip of this Vnic.
+        The private IP addresses of the VNIC, which is within the VNIC subnet\nand is accessible within the VCN.\n
+
+        :param private_ip: The private_ip of this Vnic.
+        :type: str
+        """
+        self._private_ip = private_ip
 
     @property
     def public_ip(self):
@@ -193,34 +221,6 @@ class Vnic(object):
         :type: str
         """
         self._public_ip = public_ip
-
-    @property
-    def state(self):
-        """
-        Gets the state of this Vnic.
-        The current state of the VNIC
-
-        :return: The state of this Vnic.
-        :rtype: str
-        """
-        return self._state
-
-    @state.setter
-    def state(self, state):
-        """
-        Sets the state of this Vnic.
-        The current state of the VNIC
-
-        :param state: The state of this Vnic.
-        :type: str
-        """
-        allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"]
-        if state not in allowed_values:
-            raise ValueError(
-                "Invalid value for `state`, must be one of {0}"
-                .format(allowed_values)
-            )
-        self._state = state
 
     @property
     def subnet_id(self):
@@ -248,7 +248,7 @@ class Vnic(object):
     def time_created(self):
         """
         Gets the time_created of this Vnic.
-        Date and time the VNIC was created.
+        The date and time the VNIC was created.
 
         :return: The time_created of this Vnic.
         :rtype: datetime
@@ -259,7 +259,7 @@ class Vnic(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Vnic.
-        Date and time the VNIC was created.
+        The date and time the VNIC was created.
 
         :param time_created: The time_created of this Vnic.
         :type: datetime

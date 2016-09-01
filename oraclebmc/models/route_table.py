@@ -31,9 +31,8 @@ class RouteTable(object):
             'compartment_id': 'str',
             'display_name': 'str',
             'id': 'str',
-            'modified_time': 'datetime',
+            'lifecycle_state': 'str',
             'route_rules': 'list[RouteRule]',
-            'state': 'str',
             'time_created': 'datetime'
         }
 
@@ -41,18 +40,16 @@ class RouteTable(object):
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'id': 'id',
-            'modified_time': 'modifiedTime',
+            'lifecycle_state': 'lifecycleState',
             'route_rules': 'routeRules',
-            'state': 'state',
             'time_created': 'timeCreated'
         }
 
         self._compartment_id = None
         self._display_name = None
         self._id = None
-        self._modified_time = None
+        self._lifecycle_state = None
         self._route_rules = None
-        self._state = None
         self._time_created = None
 
 
@@ -82,7 +79,7 @@ class RouteTable(object):
     def display_name(self):
         """
         Gets the display_name of this RouteTable.
-        A user-friendly name. Does not have to be unique, and it's unchangeable.\n
+        A user-friendly name. Does not have to be unique, and it's not changeable.\n
 
         :return: The display_name of this RouteTable.
         :rtype: str
@@ -93,7 +90,7 @@ class RouteTable(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this RouteTable.
-        A user-friendly name. Does not have to be unique, and it's unchangeable.\n
+        A user-friendly name. Does not have to be unique, and it's not changeable.\n
 
         :param display_name: The display_name of this RouteTable.
         :type: str
@@ -123,26 +120,32 @@ class RouteTable(object):
         self._id = id
 
     @property
-    def modified_time(self):
+    def lifecycle_state(self):
         """
-        Gets the modified_time of this RouteTable.
-        Date and time the route table was last modified (same as `TimeCreated` if not yet modified).
+        Gets the lifecycle_state of this RouteTable.
+        The route table's current state.
 
-        :return: The modified_time of this RouteTable.
-        :rtype: datetime
+        :return: The lifecycle_state of this RouteTable.
+        :rtype: str
         """
-        return self._modified_time
+        return self._lifecycle_state
 
-    @modified_time.setter
-    def modified_time(self, modified_time):
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
         """
-        Sets the modified_time of this RouteTable.
-        Date and time the route table was last modified (same as `TimeCreated` if not yet modified).
+        Sets the lifecycle_state of this RouteTable.
+        The route table's current state.
 
-        :param modified_time: The modified_time of this RouteTable.
-        :type: datetime
+        :param lifecycle_state: The lifecycle_state of this RouteTable.
+        :type: str
         """
-        self._modified_time = modified_time
+        allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"]
+        if lifecycle_state not in allowed_values:
+            raise ValueError(
+                "Invalid value for `lifecycle_state`, must be one of {0}"
+                .format(allowed_values)
+            )
+        self._lifecycle_state = lifecycle_state
 
     @property
     def route_rules(self):
@@ -167,38 +170,10 @@ class RouteTable(object):
         self._route_rules = route_rules
 
     @property
-    def state(self):
-        """
-        Gets the state of this RouteTable.
-        The route table's current state.
-
-        :return: The state of this RouteTable.
-        :rtype: str
-        """
-        return self._state
-
-    @state.setter
-    def state(self, state):
-        """
-        Sets the state of this RouteTable.
-        The route table's current state.
-
-        :param state: The state of this RouteTable.
-        :type: str
-        """
-        allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"]
-        if state not in allowed_values:
-            raise ValueError(
-                "Invalid value for `state`, must be one of {0}"
-                .format(allowed_values)
-            )
-        self._state = state
-
-    @property
     def time_created(self):
         """
         Gets the time_created of this RouteTable.
-        Date and time the route table was created.
+        The date and time the route table was created.
 
         :return: The time_created of this RouteTable.
         :rtype: datetime
@@ -209,7 +184,7 @@ class RouteTable(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this RouteTable.
-        Date and time the route table was created.
+        The date and time the route table was created.
 
         :param time_created: The time_created of this RouteTable.
         :type: datetime

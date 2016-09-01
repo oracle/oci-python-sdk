@@ -1,67 +1,181 @@
 from __future__ import absolute_import
 
 # import models into model package
-from .attach_i_scsi_volume_request import AttachIScsiVolumeRequest
-from .attach_volume_request import AttachVolumeRequest
-from .capture_console_history_request import CaptureConsoleHistoryRequest
+from .attach_i_scsi_volume_details import AttachIScsiVolumeDetails
+from .attach_volume_details import AttachVolumeDetails
+from .capture_console_history_details import CaptureConsoleHistoryDetails
 from .console_history_metadata import ConsoleHistoryMetadata
 from .cpe import Cpe
-from .create_cpe_request import CreateCpeRequest
-from .create_drg_attachment_request import CreateDrgAttachmentRequest
-from .create_drg_request import CreateDrgRequest
-from .create_ip_sec_connection_request import CreateIPSecConnectionRequest
-from .create_internet_gateway_request import CreateInternetGatewayRequest
-from .create_route_table_request import CreateRouteTableRequest
-from .create_subnet_request import CreateSubnetRequest
-from .create_vcn_request import CreateVcnRequest
-from .create_volume_request import CreateVolumeRequest
+from .create_cpe_details import CreateCpeDetails
+from .create_dhcp_details import CreateDhcpDetails
+from .create_drg_attachment_details import CreateDrgAttachmentDetails
+from .create_drg_details import CreateDrgDetails
+from .create_ip_sec_connection_details import CreateIPSecConnectionDetails
+from .create_image_details import CreateImageDetails
+from .create_internet_gateway_details import CreateInternetGatewayDetails
+from .create_route_table_details import CreateRouteTableDetails
+from .create_security_list_details import CreateSecurityListDetails
+from .create_subnet_details import CreateSubnetDetails
+from .create_vcn_details import CreateVcnDetails
+from .create_volume_backup_details import CreateVolumeBackupDetails
+from .create_volume_details import CreateVolumeDetails
+from .dhcp_dns_option import DhcpDnsOption
+from .dhcp_option import DhcpOption
+from .dhcp_options import DhcpOptions
 from .drg import Drg
 from .drg_attachment import DrgAttachment
+from .egress_security_rule import EgressSecurityRule
 from .error import Error
 from .ip_sec_connection import IPSecConnection
 from .ip_sec_connection_device_config import IPSecConnectionDeviceConfig
 from .ip_sec_connection_device_status import IPSecConnectionDeviceStatus
 from .i_scsi_volume_attachment import IScsiVolumeAttachment
+from .icmp_options import IcmpOptions
+from .image import Image
+from .ingress_security_rule import IngressSecurityRule
 from .instance import Instance
 from .internet_gateway import InternetGateway
-from .launch_instance_request import LaunchInstanceRequest
+from .launch_instance_details import LaunchInstanceDetails
+from .port_range import PortRange
 from .route_rule import RouteRule
 from .route_table import RouteTable
+from .security_list import SecurityList
 from .shape import Shape
 from .subnet import Subnet
+from .tcp_options import TcpOptions
 from .tunnel_config import TunnelConfig
 from .tunnel_status import TunnelStatus
-from .update_instance_request import UpdateInstanceRequest
-from .update_internet_gateway_request import UpdateInternetGatewayRequest
-from .update_route_table_request import UpdateRouteTableRequest
-from .update_volume_request import UpdateVolumeRequest
+from .udp_options import UdpOptions
+from .update_dhcp_details import UpdateDhcpDetails
+from .update_image_details import UpdateImageDetails
+from .update_instance_details import UpdateInstanceDetails
+from .update_internet_gateway_details import UpdateInternetGatewayDetails
+from .update_route_table_details import UpdateRouteTableDetails
+from .update_security_list_details import UpdateSecurityListDetails
+from .update_volume_backup_details import UpdateVolumeBackupDetails
+from .update_volume_details import UpdateVolumeDetails
 from .vcn import Vcn
 from .vnic import Vnic
 from .vnic_attachment import VnicAttachment
 from .volume import Volume
 from .volume_attachment import VolumeAttachment
+from .volume_backup import VolumeBackup
+
+# Maps type names to classes for core services.
+core_type_mapping = {
+    'AttachIScsiVolumeDetails': AttachIScsiVolumeDetails,
+    'AttachVolumeDetails': AttachVolumeDetails,
+    'CaptureConsoleHistoryDetails': CaptureConsoleHistoryDetails,
+    'ConsoleHistoryMetadata': ConsoleHistoryMetadata,
+    'Cpe': Cpe,
+    'CreateCpeDetails': CreateCpeDetails,
+    'CreateDhcpDetails': CreateDhcpDetails,
+    'CreateDrgAttachmentDetails': CreateDrgAttachmentDetails,
+    'CreateDrgDetails': CreateDrgDetails,
+    'CreateIPSecConnectionDetails': CreateIPSecConnectionDetails,
+    'CreateImageDetails': CreateImageDetails,
+    'CreateInternetGatewayDetails': CreateInternetGatewayDetails,
+    'CreateRouteTableDetails': CreateRouteTableDetails,
+    'CreateSecurityListDetails': CreateSecurityListDetails,
+    'CreateSubnetDetails': CreateSubnetDetails,
+    'CreateVcnDetails': CreateVcnDetails,
+    'CreateVolumeBackupDetails': CreateVolumeBackupDetails,
+    'CreateVolumeDetails': CreateVolumeDetails,
+    'DhcpDnsOption': DhcpDnsOption,
+    'DhcpOption': DhcpOption,
+    'DhcpOptions': DhcpOptions,
+    'Drg': Drg,
+    'DrgAttachment': DrgAttachment,
+    'EgressSecurityRule': EgressSecurityRule,
+    'Error': Error,
+    'IPSecConnection': IPSecConnection,
+    'IPSecConnectionDeviceConfig': IPSecConnectionDeviceConfig,
+    'IPSecConnectionDeviceStatus': IPSecConnectionDeviceStatus,
+    'IScsiVolumeAttachment': IScsiVolumeAttachment,
+    'IcmpOptions': IcmpOptions,
+    'Image': Image,
+    'IngressSecurityRule': IngressSecurityRule,
+    'Instance': Instance,
+    'InternetGateway': InternetGateway,
+    'LaunchInstanceDetails': LaunchInstanceDetails,
+    'PortRange': PortRange,
+    'RouteRule': RouteRule,
+    'RouteTable': RouteTable,
+    'SecurityList': SecurityList,
+    'Shape': Shape,
+    'Subnet': Subnet,
+    'TcpOptions': TcpOptions,
+    'TunnelConfig': TunnelConfig,
+    'TunnelStatus': TunnelStatus,
+    'UdpOptions': UdpOptions,
+    'UpdateDhcpDetails': UpdateDhcpDetails,
+    'UpdateImageDetails': UpdateImageDetails,
+    'UpdateInstanceDetails': UpdateInstanceDetails,
+    'UpdateInternetGatewayDetails': UpdateInternetGatewayDetails,
+    'UpdateRouteTableDetails': UpdateRouteTableDetails,
+    'UpdateSecurityListDetails': UpdateSecurityListDetails,
+    'UpdateVolumeBackupDetails': UpdateVolumeBackupDetails,
+    'UpdateVolumeDetails': UpdateVolumeDetails,
+    'Vcn': Vcn,
+    'Vnic': Vnic,
+    'VnicAttachment': VnicAttachment,
+    'Volume': Volume,
+    'VolumeAttachment': VolumeAttachment,
+    'VolumeBackup': VolumeBackup,
+}
+
 
 # import models into model package
-from .add_user_to_group_request import AddUserToGroupRequest
+from .add_user_to_group_details import AddUserToGroupDetails
 from .api_key import ApiKey
 from .availability_domain import AvailabilityDomain
 from .compartment import Compartment
-from .create_api_key_request import CreateApiKeyRequest
-from .create_compartment_request import CreateCompartmentRequest
-from .create_group_request import CreateGroupRequest
-from .create_policy_request import CreatePolicyRequest
-from .create_user_request import CreateUserRequest
+from .create_api_key_details import CreateApiKeyDetails
+from .create_compartment_details import CreateCompartmentDetails
+from .create_group_details import CreateGroupDetails
+from .create_policy_details import CreatePolicyDetails
+from .create_swift_password_details import CreateSwiftPasswordDetails
+from .create_user_details import CreateUserDetails
 from .error import Error
 from .group import Group
 from .policy import Policy
+from .swift_password import SwiftPassword
 from .ui_password import UIPassword
-from .update_compartment_request import UpdateCompartmentRequest
-from .update_group_request import UpdateGroupRequest
-from .update_policy_request import UpdatePolicyRequest
-from .update_ui_password_request import UpdateUiPasswordRequest
-from .update_user_request import UpdateUserRequest
+from .update_compartment_details import UpdateCompartmentDetails
+from .update_group_details import UpdateGroupDetails
+from .update_policy_details import UpdatePolicyDetails
+from .update_state_details import UpdateStateDetails
+from .update_swift_password_details import UpdateSwiftPasswordDetails
+from .update_user_details import UpdateUserDetails
 from .user import User
 from .user_group_membership import UserGroupMembership
+
+# Maps type names to classes for identity services.
+identity_type_mapping = {
+    'AddUserToGroupDetails': AddUserToGroupDetails,
+    'ApiKey': ApiKey,
+    'AvailabilityDomain': AvailabilityDomain,
+    'Compartment': Compartment,
+    'CreateApiKeyDetails': CreateApiKeyDetails,
+    'CreateCompartmentDetails': CreateCompartmentDetails,
+    'CreateGroupDetails': CreateGroupDetails,
+    'CreatePolicyDetails': CreatePolicyDetails,
+    'CreateSwiftPasswordDetails': CreateSwiftPasswordDetails,
+    'CreateUserDetails': CreateUserDetails,
+    'Error': Error,
+    'Group': Group,
+    'Policy': Policy,
+    'SwiftPassword': SwiftPassword,
+    'UIPassword': UIPassword,
+    'UpdateCompartmentDetails': UpdateCompartmentDetails,
+    'UpdateGroupDetails': UpdateGroupDetails,
+    'UpdatePolicyDetails': UpdatePolicyDetails,
+    'UpdateStateDetails': UpdateStateDetails,
+    'UpdateSwiftPasswordDetails': UpdateSwiftPasswordDetails,
+    'UpdateUserDetails': UpdateUserDetails,
+    'User': User,
+    'UserGroupMembership': UserGroupMembership,
+}
 
 # import models into model package
 from .bucket import Bucket
@@ -71,79 +185,12 @@ from .list_objects import ListObjects
 from .object_summary import ObjectSummary
 from .update_bucket_details import UpdateBucketDetails
 
-# Maps type names to classes for core services.
-core_type_mapping = {
-    'AttachIScsiVolumeRequest': AttachIScsiVolumeRequest,
-    'AttachVolumeRequest': AttachVolumeRequest,
-    'CaptureConsoleHistoryRequest': CaptureConsoleHistoryRequest,
-    'ConsoleHistoryMetadata': ConsoleHistoryMetadata,
-    'Cpe': Cpe,
-    'CreateCpeRequest': CreateCpeRequest,
-    'CreateDrgAttachmentRequest': CreateDrgAttachmentRequest,
-    'CreateDrgRequest': CreateDrgRequest,
-    'CreateIPSecConnectionRequest': CreateIPSecConnectionRequest,
-    'CreateInternetGatewayRequest': CreateInternetGatewayRequest,
-    'CreateRouteTableRequest': CreateRouteTableRequest,
-    'CreateSubnetRequest': CreateSubnetRequest,
-    'CreateVcnRequest': CreateVcnRequest,
-    'CreateVolumeRequest': CreateVolumeRequest,
-    'Drg': Drg,
-    'DrgAttachment': DrgAttachment,
-    'Error': Error,
-    'IPSecConnection': IPSecConnection,
-    'IPSecConnectionDeviceConfig': IPSecConnectionDeviceConfig,
-    'IPSecConnectionDeviceStatus': IPSecConnectionDeviceStatus,
-    'IScsiVolumeAttachment': IScsiVolumeAttachment,
-    'Instance': Instance,
-    'InternetGateway': InternetGateway,
-    'LaunchInstanceRequest': LaunchInstanceRequest,
-    'RouteRule': RouteRule,
-    'RouteTable': RouteTable,
-    'Shape': Shape,
-    'Subnet': Subnet,
-    'TunnelConfig': TunnelConfig,
-    'TunnelStatus': TunnelStatus,
-    'UpdateInstanceRequest': UpdateInstanceRequest,
-    'UpdateInternetGatewayRequest': UpdateInternetGatewayRequest,
-    'UpdateRouteTableRequest': UpdateRouteTableRequest,
-    'UpdateVolumeRequest': UpdateVolumeRequest,
-    'Vcn': Vcn,
-    'Vnic': Vnic,
-    'VnicAttachment': VnicAttachment,
-    'Volume': Volume,
-    'VolumeAttachment': VolumeAttachment,
-}
-
-# Maps type names to classes for identity services.
-identity_type_mapping = {
-    'AddUserToGroupRequest': AddUserToGroupRequest,
-    'ApiKey': ApiKey,
-    'AvailabilityDomain': AvailabilityDomain,
-    'Compartment': Compartment,
-    'CreateApiKeyRequest': CreateApiKeyRequest,
-    'CreateCompartmentRequest': CreateCompartmentRequest,
-    'CreateGroupRequest': CreateGroupRequest,
-    'CreatePolicyRequest': CreatePolicyRequest,
-    'CreateUserRequest': CreateUserRequest,
-    'Error': Error,
-    'Group': Group,
-    'Policy': Policy,
-    'UIPassword': UIPassword,
-    'UpdateCompartmentRequest': UpdateCompartmentRequest,
-    'UpdateGroupRequest': UpdateGroupRequest,
-    'UpdatePolicyRequest': UpdatePolicyRequest,
-    'UpdateUiPasswordRequest': UpdateUiPasswordRequest,
-    'UpdateUserRequest': UpdateUserRequest,
-    'User': User,
-    'UserGroupMembership': UserGroupMembership,
-}
-
 # Maps type names to classes for object_storage services.
 object_storage_type_mapping = {
     'Bucket': Bucket,
-    'CreateBucket': CreateBucketDetails,
+    'CreateBucketDetails': CreateBucketDetails,
     'Error': Error,
     'ListObjects': ListObjects,
     'ObjectSummary': ObjectSummary,
-    'UpdateBucket': UpdateBucketDetails,
+    'UpdateBucketDetails': UpdateBucketDetails,
 }

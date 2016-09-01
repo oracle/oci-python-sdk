@@ -34,7 +34,7 @@ class VolumeAttachment(object):
             'display_name': 'str',
             'id': 'str',
             'instance_id': 'str',
-            'state': 'str',
+            'lifecycle_state': 'str',
             'time_created': 'datetime',
             'volume_id': 'str'
         }
@@ -46,7 +46,7 @@ class VolumeAttachment(object):
             'display_name': 'displayName',
             'id': 'id',
             'instance_id': 'instanceId',
-            'state': 'state',
+            'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'volume_id': 'volumeId'
         }
@@ -57,7 +57,7 @@ class VolumeAttachment(object):
         self._display_name = None
         self._id = None
         self._instance_id = None
-        self._state = None
+        self._lifecycle_state = None
         self._time_created = None
         self._volume_id = None
 
@@ -144,7 +144,7 @@ class VolumeAttachment(object):
     def display_name(self):
         """
         Gets the display_name of this VolumeAttachment.
-        The name of the volume attachment.
+        A user-friendly name. Does not have to be unique, and it's not changeable.\n
 
         :return: The display_name of this VolumeAttachment.
         :rtype: str
@@ -155,7 +155,7 @@ class VolumeAttachment(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this VolumeAttachment.
-        The name of the volume attachment.
+        A user-friendly name. Does not have to be unique, and it's not changeable.\n
 
         :param display_name: The display_name of this VolumeAttachment.
         :type: str
@@ -207,32 +207,32 @@ class VolumeAttachment(object):
         self._instance_id = instance_id
 
     @property
-    def state(self):
+    def lifecycle_state(self):
         """
-        Gets the state of this VolumeAttachment.
+        Gets the lifecycle_state of this VolumeAttachment.
         The current state of the volume attachment.
 
-        :return: The state of this VolumeAttachment.
+        :return: The lifecycle_state of this VolumeAttachment.
         :rtype: str
         """
-        return self._state
+        return self._lifecycle_state
 
-    @state.setter
-    def state(self, state):
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
         """
-        Sets the state of this VolumeAttachment.
+        Sets the lifecycle_state of this VolumeAttachment.
         The current state of the volume attachment.
 
-        :param state: The state of this VolumeAttachment.
+        :param lifecycle_state: The lifecycle_state of this VolumeAttachment.
         :type: str
         """
         allowed_values = ["ATTACHING", "ATTACHED", "DETACHING", "DETACHED"]
-        if state not in allowed_values:
+        if lifecycle_state not in allowed_values:
             raise ValueError(
-                "Invalid value for `state`, must be one of {0}"
+                "Invalid value for `lifecycle_state`, must be one of {0}"
                 .format(allowed_values)
             )
-        self._state = state
+        self._lifecycle_state = lifecycle_state
 
     @property
     def time_created(self):

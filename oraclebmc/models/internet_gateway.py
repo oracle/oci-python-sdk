@@ -32,8 +32,7 @@ class InternetGateway(object):
             'display_name': 'str',
             'id': 'str',
             'is_enabled': 'bool',
-            'modified_time': 'datetime',
-            'state': 'str',
+            'lifecycle_state': 'str',
             'time_created': 'datetime'
         }
 
@@ -42,8 +41,7 @@ class InternetGateway(object):
             'display_name': 'displayName',
             'id': 'id',
             'is_enabled': 'isEnabled',
-            'modified_time': 'modifiedTime',
-            'state': 'state',
+            'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated'
         }
 
@@ -51,8 +49,7 @@ class InternetGateway(object):
         self._display_name = None
         self._id = None
         self._is_enabled = None
-        self._modified_time = None
-        self._state = None
+        self._lifecycle_state = None
         self._time_created = None
 
 
@@ -82,7 +79,7 @@ class InternetGateway(object):
     def display_name(self):
         """
         Gets the display_name of this InternetGateway.
-        A user-friendly name. Does not have to be unique, and it's unchangeable.\n
+        A user-friendly name. Does not have to be unique, and it's not changeable.\n
 
         :return: The display_name of this InternetGateway.
         :rtype: str
@@ -93,7 +90,7 @@ class InternetGateway(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this InternetGateway.
-        A user-friendly name. Does not have to be unique, and it's unchangeable.\n
+        A user-friendly name. Does not have to be unique, and it's not changeable.\n
 
         :param display_name: The display_name of this InternetGateway.
         :type: str
@@ -145,60 +142,38 @@ class InternetGateway(object):
         self._is_enabled = is_enabled
 
     @property
-    def modified_time(self):
+    def lifecycle_state(self):
         """
-        Gets the modified_time of this InternetGateway.
-        Date and time the Internet Gateway was last modified\n(same as `TimeCreated` if not yet modified).\n
-
-        :return: The modified_time of this InternetGateway.
-        :rtype: datetime
-        """
-        return self._modified_time
-
-    @modified_time.setter
-    def modified_time(self, modified_time):
-        """
-        Sets the modified_time of this InternetGateway.
-        Date and time the Internet Gateway was last modified\n(same as `TimeCreated` if not yet modified).\n
-
-        :param modified_time: The modified_time of this InternetGateway.
-        :type: datetime
-        """
-        self._modified_time = modified_time
-
-    @property
-    def state(self):
-        """
-        Gets the state of this InternetGateway.
+        Gets the lifecycle_state of this InternetGateway.
         The Internet Gateway's current state.
 
-        :return: The state of this InternetGateway.
+        :return: The lifecycle_state of this InternetGateway.
         :rtype: str
         """
-        return self._state
+        return self._lifecycle_state
 
-    @state.setter
-    def state(self, state):
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
         """
-        Sets the state of this InternetGateway.
+        Sets the lifecycle_state of this InternetGateway.
         The Internet Gateway's current state.
 
-        :param state: The state of this InternetGateway.
+        :param lifecycle_state: The lifecycle_state of this InternetGateway.
         :type: str
         """
         allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"]
-        if state not in allowed_values:
+        if lifecycle_state not in allowed_values:
             raise ValueError(
-                "Invalid value for `state`, must be one of {0}"
+                "Invalid value for `lifecycle_state`, must be one of {0}"
                 .format(allowed_values)
             )
-        self._state = state
+        self._lifecycle_state = lifecycle_state
 
     @property
     def time_created(self):
         """
         Gets the time_created of this InternetGateway.
-        Date and time the Internet Gateway was created.
+        The date and time the Internet Gateway was created.
 
         :return: The time_created of this InternetGateway.
         :rtype: datetime
@@ -209,7 +184,7 @@ class InternetGateway(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this InternetGateway.
-        Date and time the Internet Gateway was created.
+        The date and time the Internet Gateway was created.
 
         :param time_created: The time_created of this InternetGateway.
         :type: datetime

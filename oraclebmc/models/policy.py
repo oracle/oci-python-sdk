@@ -34,8 +34,8 @@ class Policy(object):
             'statements': 'list[str]',
             'description': 'str',
             'time_created': 'datetime',
-            'time_modified': 'datetime',
-            'state': 'str'
+            'lifecycle_state': 'str',
+            'inactive_status': 'int'
         }
 
         self.attribute_map = {
@@ -45,8 +45,8 @@ class Policy(object):
             'statements': 'statements',
             'description': 'description',
             'time_created': 'timeCreated',
-            'time_modified': 'timeModified',
-            'state': 'state'
+            'lifecycle_state': 'lifecycleState',
+            'inactive_status': 'inactiveStatus'
         }
 
         self._id = None
@@ -55,8 +55,8 @@ class Policy(object):
         self._statements = None
         self._description = None
         self._time_created = None
-        self._time_modified = None
-        self._state = None
+        self._lifecycle_state = None
+        self._inactive_status = None
 
 
     @property
@@ -192,48 +192,54 @@ class Policy(object):
         self._time_created = time_created
 
     @property
-    def time_modified(self):
+    def lifecycle_state(self):
         """
-        Gets the time_modified of this Policy.
-        Date and time the policy was last modified (same as `TimeCreated` if not yet modified).
+        Gets the lifecycle_state of this Policy.
+        The policy's current state. After creating a policy, make sure its `lifecycleState` changes from CREATING to\nACTIVE before using it.\n
 
-        :return: The time_modified of this Policy.
-        :rtype: datetime
-        """
-        return self._time_modified
-
-    @time_modified.setter
-    def time_modified(self, time_modified):
-        """
-        Sets the time_modified of this Policy.
-        Date and time the policy was last modified (same as `TimeCreated` if not yet modified).
-
-        :param time_modified: The time_modified of this Policy.
-        :type: datetime
-        """
-        self._time_modified = time_modified
-
-    @property
-    def state(self):
-        """
-        Gets the state of this Policy.
-        The policy's state. After creating a policy, make sure its state changes from CREATING to\nCREATED before using it.\n
-
-        :return: The state of this Policy.
+        :return: The lifecycle_state of this Policy.
         :rtype: str
         """
-        return self._state
+        return self._lifecycle_state
 
-    @state.setter
-    def state(self, state):
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
         """
-        Sets the state of this Policy.
-        The policy's state. After creating a policy, make sure its state changes from CREATING to\nCREATED before using it.\n
+        Sets the lifecycle_state of this Policy.
+        The policy's current state. After creating a policy, make sure its `lifecycleState` changes from CREATING to\nACTIVE before using it.\n
 
-        :param state: The state of this Policy.
+        :param lifecycle_state: The lifecycle_state of this Policy.
         :type: str
         """
-        self._state = state
+        allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED"]
+        if lifecycle_state not in allowed_values:
+            raise ValueError(
+                "Invalid value for `lifecycle_state`, must be one of {0}"
+                .format(allowed_values)
+            )
+        self._lifecycle_state = lifecycle_state
+
+    @property
+    def inactive_status(self):
+        """
+        Gets the inactive_status of this Policy.
+        The detailed status of INACTIVE lifecycleState.
+
+        :return: The inactive_status of this Policy.
+        :rtype: int
+        """
+        return self._inactive_status
+
+    @inactive_status.setter
+    def inactive_status(self, inactive_status):
+        """
+        Sets the inactive_status of this Policy.
+        The detailed status of INACTIVE lifecycleState.
+
+        :param inactive_status: The inactive_status of this Policy.
+        :type: int
+        """
+        self._inactive_status = inactive_status
 
     def to_dict(self):
         """

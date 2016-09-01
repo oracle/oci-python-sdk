@@ -95,7 +95,7 @@ class IPSecConnectionDeviceStatus(object):
     def time_created(self):
         """
         Gets the time_created of this IPSecConnectionDeviceStatus.
-        Date and time the IPsec connection was created.
+        The date and time the IPsec connection was created.
 
         :return: The time_created of this IPSecConnectionDeviceStatus.
         :rtype: datetime
@@ -106,7 +106,7 @@ class IPSecConnectionDeviceStatus(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this IPSecConnectionDeviceStatus.
-        Date and time the IPsec connection was created.
+        The date and time the IPsec connection was created.
 
         :param time_created: The time_created of this IPSecConnectionDeviceStatus.
         :type: datetime
@@ -117,7 +117,7 @@ class IPSecConnectionDeviceStatus(object):
     def tunnels(self):
         """
         Gets the tunnels of this IPSecConnectionDeviceStatus.
-        Two [TunnelStatus](#TunnelStatus) objects.
+        Two [TunnelStatus](#/en/core/20160918/TunnelStatus/) objects.
 
         :return: The tunnels of this IPSecConnectionDeviceStatus.
         :rtype: list[TunnelStatus]
@@ -128,7 +128,7 @@ class IPSecConnectionDeviceStatus(object):
     def tunnels(self, tunnels):
         """
         Sets the tunnels of this IPSecConnectionDeviceStatus.
-        Two [TunnelStatus](#TunnelStatus) objects.
+        Two [TunnelStatus](#/en/core/20160918/TunnelStatus/) objects.
 
         :param tunnels: The tunnels of this IPSecConnectionDeviceStatus.
         :type: list[TunnelStatus]

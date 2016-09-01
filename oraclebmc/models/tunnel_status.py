@@ -29,20 +29,20 @@ class TunnelStatus(object):
 
         self.swagger_types = {
             'ip_address': 'str',
-            'state': 'str',
+            'lifecycle_state': 'str',
             'time_created': 'datetime',
             'time_state_modified': 'datetime'
         }
 
         self.attribute_map = {
             'ip_address': 'ipAddress',
-            'state': 'state',
+            'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'time_state_modified': 'timeStateModified'
         }
 
         self._ip_address = None
-        self._state = None
+        self._lifecycle_state = None
         self._time_created = None
         self._time_state_modified = None
 
@@ -70,38 +70,38 @@ class TunnelStatus(object):
         self._ip_address = ip_address
 
     @property
-    def state(self):
+    def lifecycle_state(self):
         """
-        Gets the state of this TunnelStatus.
+        Gets the lifecycle_state of this TunnelStatus.
         The tunnel's current state.
 
-        :return: The state of this TunnelStatus.
+        :return: The lifecycle_state of this TunnelStatus.
         :rtype: str
         """
-        return self._state
+        return self._lifecycle_state
 
-    @state.setter
-    def state(self, state):
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
         """
-        Sets the state of this TunnelStatus.
+        Sets the lifecycle_state of this TunnelStatus.
         The tunnel's current state.
 
-        :param state: The state of this TunnelStatus.
+        :param lifecycle_state: The lifecycle_state of this TunnelStatus.
         :type: str
         """
         allowed_values = ["UP", "DOWN", "DOWN_FOR_MAINTENANCE"]
-        if state not in allowed_values:
+        if lifecycle_state not in allowed_values:
             raise ValueError(
-                "Invalid value for `state`, must be one of {0}"
+                "Invalid value for `lifecycle_state`, must be one of {0}"
                 .format(allowed_values)
             )
-        self._state = state
+        self._lifecycle_state = lifecycle_state
 
     @property
     def time_created(self):
         """
         Gets the time_created of this TunnelStatus.
-        Date and time the IPsec connection was created.
+        The date and time the IPsec connection was created.
 
         :return: The time_created of this TunnelStatus.
         :rtype: datetime
@@ -112,7 +112,7 @@ class TunnelStatus(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this TunnelStatus.
-        Date and time the IPsec connection was created.
+        The date and time the IPsec connection was created.
 
         :param time_created: The time_created of this TunnelStatus.
         :type: datetime
