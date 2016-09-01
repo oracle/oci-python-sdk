@@ -76,7 +76,7 @@ class Cpe(object):
     def display_name(self):
         """
         Gets the display_name of this Cpe.
-        A user-friendly name. Does not have to be unique, and it's unchangeable.\n
+        A user-friendly name. Does not have to be unique, and it's not changeable.\n
 
         :return: The display_name of this Cpe.
         :rtype: str
@@ -87,7 +87,7 @@ class Cpe(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Cpe.
-        A user-friendly name. Does not have to be unique, and it's unchangeable.\n
+        A user-friendly name. Does not have to be unique, and it's not changeable.\n
 
         :param display_name: The display_name of this Cpe.
         :type: str
@@ -142,7 +142,7 @@ class Cpe(object):
     def time_created(self):
         """
         Gets the time_created of this Cpe.
-        Date and time the CPE was created.
+        The date and time the CPE was created.
 
         :return: The time_created of this Cpe.
         :rtype: datetime
@@ -153,7 +153,7 @@ class Cpe(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Cpe.
-        Date and time the CPE was created.
+        The date and time the CPE was created.
 
         :param time_created: The time_created of this Cpe.
         :type: datetime

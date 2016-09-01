@@ -17,8 +17,7 @@ class Context(object):
         self.blockstorage_api = apis.BlockstorageApi(self.api_client)
         self.compute_api = apis.ComputeApi(self.api_client)
         self.identity_api = apis.IdentityApi(self.api_client)
-        self.vcn_ad_service_api = apis.VcnADServiceApi(self.api_client)
-        self.vcn_service_api = apis.VcnServiceApi(self.api_client)
+        self.virtual_network_api = apis.VirtualNetworkApi(self.api_client)
         self.object_storage_api = apis.ObjectStorageApi(self.api_client)
 
     def wait_until(self, response, property, state, max_interval_seconds=5, max_wait_seconds=60):

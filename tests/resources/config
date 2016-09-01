@@ -26,11 +26,10 @@ debugging=true
 foo=bar
 
 [R0_STABLE]
-endpoint_identity_api=https://identity-stable-integ.aka.r0.grungy.us/v1
-endpoint_blockstorage_api=https://iaas-stable-integ.aka.r0.grungy.us/v1
-endpoint_compute_api=https://iaas-stable-integ.aka.r0.grungy.us/v1
-endpoint_vcn_ad_service_api=https://iaas-stable-integ.aka.r0.grungy.us/v1
-endpoint_vcn_service_api=https://iaas-stable-integ.aka.r0.grungy.us/v1
+endpoint_identity_api=https://identity-stable-integ.aka.r0.grungy.us/20160918
+endpoint_blockstorage_api=https://iaas-stable-integ.aka.r0.grungy.us/20160918
+endpoint_compute_api=https://iaas-stable-integ.aka.r0.grungy.us/20160918
+endpoint_virtual_network_api=https://iaas-stable-integ.aka.r0.grungy.us/20160918
 user=ocidv1:user:integ-stable:integ-stable:1461711049110:aaaaaaaaeuhzapiritehle2dmrcoeijvve
 fingerprint=20:3b:97:13:55:1c:5b:0d:d3:37:d8:50:4e:c5:3a:34
 key_file=~/.ssh/id_rsa.pem

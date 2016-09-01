@@ -29,25 +29,16 @@ class RouteRule(object):
 
         self.swagger_types = {
             'cidr_block': 'str',
-            'display_name': 'str',
-            'network_entity_id': 'str',
-            'network_entity_type': 'str',
-            'time_created': 'datetime'
+            'network_entity_id': 'str'
         }
 
         self.attribute_map = {
             'cidr_block': 'cidrBlock',
-            'display_name': 'displayName',
-            'network_entity_id': 'networkEntityId',
-            'network_entity_type': 'networkEntityType',
-            'time_created': 'timeCreated'
+            'network_entity_id': 'networkEntityId'
         }
 
         self._cidr_block = None
-        self._display_name = None
         self._network_entity_id = None
-        self._network_entity_type = None
-        self._time_created = None
 
 
     @property
@@ -73,28 +64,6 @@ class RouteRule(object):
         self._cidr_block = cidr_block
 
     @property
-    def display_name(self):
-        """
-        Gets the display_name of this RouteRule.
-        A user-friendly name. Does not have to be unique, and it's unchangeable.\n
-
-        :return: The display_name of this RouteRule.
-        :rtype: str
-        """
-        return self._display_name
-
-    @display_name.setter
-    def display_name(self, display_name):
-        """
-        Sets the display_name of this RouteRule.
-        A user-friendly name. Does not have to be unique, and it's unchangeable.\n
-
-        :param display_name: The display_name of this RouteRule.
-        :type: str
-        """
-        self._display_name = display_name
-
-    @property
     def network_entity_id(self):
         """
         Gets the network_entity_id of this RouteRule.
@@ -115,56 +84,6 @@ class RouteRule(object):
         :type: str
         """
         self._network_entity_id = network_entity_id
-
-    @property
-    def network_entity_type(self):
-        """
-        Gets the network_entity_type of this RouteRule.
-        The type of target.
-
-        :return: The network_entity_type of this RouteRule.
-        :rtype: str
-        """
-        return self._network_entity_type
-
-    @network_entity_type.setter
-    def network_entity_type(self, network_entity_type):
-        """
-        Sets the network_entity_type of this RouteRule.
-        The type of target.
-
-        :param network_entity_type: The network_entity_type of this RouteRule.
-        :type: str
-        """
-        allowed_values = ["VNIC", "INTERNET_GATEWAY", "DYNAMICALLY_ROUTING_GATEWAY"]
-        if network_entity_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `network_entity_type`, must be one of {0}"
-                .format(allowed_values)
-            )
-        self._network_entity_type = network_entity_type
-
-    @property
-    def time_created(self):
-        """
-        Gets the time_created of this RouteRule.
-        Date and time the route rule was created.
-
-        :return: The time_created of this RouteRule.
-        :rtype: datetime
-        """
-        return self._time_created
-
-    @time_created.setter
-    def time_created(self, time_created):
-        """
-        Sets the time_created of this RouteRule.
-        Date and time the route rule was created.
-
-        :param time_created: The time_created of this RouteRule.
-        :type: datetime
-        """
-        self._time_created = time_created
 
     def to_dict(self):
         """

@@ -32,8 +32,8 @@ class Volume(object):
             'compartment_id': 'str',
             'display_name': 'str',
             'id': 'str',
+            'lifecycle_state': 'str',
             'size_in_m_bs': 'int',
-            'state': 'str',
             'time_created': 'datetime'
         }
 
@@ -42,8 +42,8 @@ class Volume(object):
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'id': 'id',
+            'lifecycle_state': 'lifecycleState',
             'size_in_m_bs': 'sizeInMBs',
-            'state': 'state',
             'time_created': 'timeCreated'
         }
 
@@ -51,8 +51,8 @@ class Volume(object):
         self._compartment_id = None
         self._display_name = None
         self._id = None
+        self._lifecycle_state = None
         self._size_in_m_bs = None
-        self._state = None
         self._time_created = None
 
 
@@ -104,7 +104,7 @@ class Volume(object):
     def display_name(self):
         """
         Gets the display_name of this Volume.
-        A user-friendly name for the volume. Does not have to be unique, and it's changeable.
+        A user-friendly name. Does not have to be unique, and it's changeable.\n
 
         :return: The display_name of this Volume.
         :rtype: str
@@ -115,7 +115,7 @@ class Volume(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Volume.
-        A user-friendly name for the volume. Does not have to be unique, and it's changeable.
+        A user-friendly name. Does not have to be unique, and it's changeable.\n
 
         :param display_name: The display_name of this Volume.
         :type: str
@@ -145,6 +145,34 @@ class Volume(object):
         self._id = id
 
     @property
+    def lifecycle_state(self):
+        """
+        Gets the lifecycle_state of this Volume.
+        The current state of a volume.
+
+        :return: The lifecycle_state of this Volume.
+        :rtype: str
+        """
+        return self._lifecycle_state
+
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
+        """
+        Sets the lifecycle_state of this Volume.
+        The current state of a volume.
+
+        :param lifecycle_state: The lifecycle_state of this Volume.
+        :type: str
+        """
+        allowed_values = ["PROVISIONING", "RESTORING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAULTY"]
+        if lifecycle_state not in allowed_values:
+            raise ValueError(
+                "Invalid value for `lifecycle_state`, must be one of {0}"
+                .format(allowed_values)
+            )
+        self._lifecycle_state = lifecycle_state
+
+    @property
     def size_in_m_bs(self):
         """
         Gets the size_in_m_bs of this Volume.
@@ -165,34 +193,6 @@ class Volume(object):
         :type: int
         """
         self._size_in_m_bs = size_in_m_bs
-
-    @property
-    def state(self):
-        """
-        Gets the state of this Volume.
-        The current state of a volume.
-
-        :return: The state of this Volume.
-        :rtype: str
-        """
-        return self._state
-
-    @state.setter
-    def state(self, state):
-        """
-        Sets the state of this Volume.
-        The current state of a volume.
-
-        :param state: The state of this Volume.
-        :type: str
-        """
-        allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAULTY"]
-        if state not in allowed_values:
-            raise ValueError(
-                "Invalid value for `state`, must be one of {0}"
-                .format(allowed_values)
-            )
-        self._state = state
 
     @property
     def time_created(self):

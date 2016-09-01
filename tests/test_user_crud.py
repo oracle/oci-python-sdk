@@ -11,7 +11,7 @@ class TestUserCrud(ServiceTestBase):
         initial_user_count = len(self.context.identity_api.list_users(self.context.config.tenancy).data)
 
         # Create User
-        request = oraclebmc.models.CreateUserRequest()
+        request = oraclebmc.models.CreateUserDetails()
         request.compartment_id = compartment
         request.name = user_name
         request.description = user_description
@@ -36,7 +36,7 @@ class TestUserCrud(ServiceTestBase):
         # Update User
         user_description = "Updated description"
         newDescription = "updated user description"
-        request = oraclebmc.models.UpdateUserRequest()
+        request = oraclebmc.models.UpdateUserDetails()
         request.description = newDescription
         response = self.context.identity_api.update_user(user_id, request)
 

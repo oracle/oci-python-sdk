@@ -31,7 +31,7 @@ class Drg(object):
             'compartment_id': 'str',
             'display_name': 'str',
             'id': 'str',
-            'state': 'str',
+            'lifecycle_state': 'str',
             'time_created': 'datetime'
         }
 
@@ -39,14 +39,14 @@ class Drg(object):
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'id': 'id',
-            'state': 'state',
+            'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated'
         }
 
         self._compartment_id = None
         self._display_name = None
         self._id = None
-        self._state = None
+        self._lifecycle_state = None
         self._time_created = None
 
 
@@ -76,7 +76,7 @@ class Drg(object):
     def display_name(self):
         """
         Gets the display_name of this Drg.
-        A user-friendly name. Does not have to be unique, and it's unchangeable.\n
+        A user-friendly name. Does not have to be unique, and it's not changeable.\n
 
         :return: The display_name of this Drg.
         :rtype: str
@@ -87,7 +87,7 @@ class Drg(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Drg.
-        A user-friendly name. Does not have to be unique, and it's unchangeable.\n
+        A user-friendly name. Does not have to be unique, and it's not changeable.\n
 
         :param display_name: The display_name of this Drg.
         :type: str
@@ -117,38 +117,38 @@ class Drg(object):
         self._id = id
 
     @property
-    def state(self):
+    def lifecycle_state(self):
         """
-        Gets the state of this Drg.
+        Gets the lifecycle_state of this Drg.
         The DRG's current state.
 
-        :return: The state of this Drg.
+        :return: The lifecycle_state of this Drg.
         :rtype: str
         """
-        return self._state
+        return self._lifecycle_state
 
-    @state.setter
-    def state(self, state):
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
         """
-        Sets the state of this Drg.
+        Sets the lifecycle_state of this Drg.
         The DRG's current state.
 
-        :param state: The state of this Drg.
+        :param lifecycle_state: The lifecycle_state of this Drg.
         :type: str
         """
         allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"]
-        if state not in allowed_values:
+        if lifecycle_state not in allowed_values:
             raise ValueError(
-                "Invalid value for `state`, must be one of {0}"
+                "Invalid value for `lifecycle_state`, must be one of {0}"
                 .format(allowed_values)
             )
-        self._state = state
+        self._lifecycle_state = lifecycle_state
 
     @property
     def time_created(self):
         """
         Gets the time_created of this Drg.
-        Date and time the DRG was created.
+        The date and time the DRG was created.
 
         :return: The time_created of this Drg.
         :rtype: datetime
@@ -159,7 +159,7 @@ class Drg(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Drg.
-        Date and time the DRG was created.
+        The date and time the DRG was created.
 
         :param time_created: The time_created of this Drg.
         :type: datetime

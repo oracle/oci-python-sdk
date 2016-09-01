@@ -7,6 +7,7 @@ abandoned/
 .idea/
 *.pyc
 *.egg-info/
+.tox
 build/
 dist/
 __pycache__/

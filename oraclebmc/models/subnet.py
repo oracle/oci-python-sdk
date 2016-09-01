@@ -31,10 +31,12 @@ class Subnet(object):
             'availability_domain': 'str',
             'cidr_block': 'str',
             'compartment_id': 'str',
+            'dhcp_options_id': 'str',
             'display_name': 'str',
             'id': 'str',
+            'lifecycle_state': 'str',
             'route_table_id': 'str',
-            'state': 'str',
+            'security_list_ids': 'list[str]',
             'time_created': 'datetime',
             'vcn_id': 'str',
             'virtual_router_ip': 'str',
@@ -45,10 +47,12 @@ class Subnet(object):
             'availability_domain': 'availabilityDomain',
             'cidr_block': 'cidrBlock',
             'compartment_id': 'compartmentId',
+            'dhcp_options_id': 'dhcpOptionsId',
             'display_name': 'displayName',
             'id': 'id',
+            'lifecycle_state': 'lifecycleState',
             'route_table_id': 'routeTableId',
-            'state': 'state',
+            'security_list_ids': 'securityListIds',
             'time_created': 'timeCreated',
             'vcn_id': 'vcnId',
             'virtual_router_ip': 'virtualRouterIp',
@@ -58,10 +62,12 @@ class Subnet(object):
         self._availability_domain = None
         self._cidr_block = None
         self._compartment_id = None
+        self._dhcp_options_id = None
         self._display_name = None
         self._id = None
+        self._lifecycle_state = None
         self._route_table_id = None
-        self._state = None
+        self._security_list_ids = None
         self._time_created = None
         self._vcn_id = None
         self._virtual_router_ip = None
@@ -135,10 +141,32 @@ class Subnet(object):
         self._compartment_id = compartment_id
 
     @property
+    def dhcp_options_id(self):
+        """
+        Gets the dhcp_options_id of this Subnet.
+        The OCID of the set of DHCP options associated with the subnet.\n
+
+        :return: The dhcp_options_id of this Subnet.
+        :rtype: str
+        """
+        return self._dhcp_options_id
+
+    @dhcp_options_id.setter
+    def dhcp_options_id(self, dhcp_options_id):
+        """
+        Sets the dhcp_options_id of this Subnet.
+        The OCID of the set of DHCP options associated with the subnet.\n
+
+        :param dhcp_options_id: The dhcp_options_id of this Subnet.
+        :type: str
+        """
+        self._dhcp_options_id = dhcp_options_id
+
+    @property
     def display_name(self):
         """
         Gets the display_name of this Subnet.
-        A user-friendly name. Does not have to be unique, and it's unchangeable.\n
+        A user-friendly name. Does not have to be unique, and it's not changeable.\n
 
         :return: The display_name of this Subnet.
         :rtype: str
@@ -149,7 +177,7 @@ class Subnet(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Subnet.
-        A user-friendly name. Does not have to be unique, and it's unchangeable.\n
+        A user-friendly name. Does not have to be unique, and it's not changeable.\n
 
         :param display_name: The display_name of this Subnet.
         :type: str
@@ -179,6 +207,34 @@ class Subnet(object):
         self._id = id
 
     @property
+    def lifecycle_state(self):
+        """
+        Gets the lifecycle_state of this Subnet.
+        The subnet's current state.
+
+        :return: The lifecycle_state of this Subnet.
+        :rtype: str
+        """
+        return self._lifecycle_state
+
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
+        """
+        Sets the lifecycle_state of this Subnet.
+        The subnet's current state.
+
+        :param lifecycle_state: The lifecycle_state of this Subnet.
+        :type: str
+        """
+        allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"]
+        if lifecycle_state not in allowed_values:
+            raise ValueError(
+                "Invalid value for `lifecycle_state`, must be one of {0}"
+                .format(allowed_values)
+            )
+        self._lifecycle_state = lifecycle_state
+
+    @property
     def route_table_id(self):
         """
         Gets the route_table_id of this Subnet.
@@ -201,38 +257,32 @@ class Subnet(object):
         self._route_table_id = route_table_id
 
     @property
-    def state(self):
+    def security_list_ids(self):
         """
-        Gets the state of this Subnet.
-        The subnet's current state.
+        Gets the security_list_ids of this Subnet.
+        IDs for the security lists to use for VNICs in this subnet.
 
-        :return: The state of this Subnet.
-        :rtype: str
+        :return: The security_list_ids of this Subnet.
+        :rtype: list[str]
         """
-        return self._state
+        return self._security_list_ids
 
-    @state.setter
-    def state(self, state):
+    @security_list_ids.setter
+    def security_list_ids(self, security_list_ids):
         """
-        Sets the state of this Subnet.
-        The subnet's current state.
+        Sets the security_list_ids of this Subnet.
+        IDs for the security lists to use for VNICs in this subnet.
 
-        :param state: The state of this Subnet.
-        :type: str
+        :param security_list_ids: The security_list_ids of this Subnet.
+        :type: list[str]
         """
-        allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"]
-        if state not in allowed_values:
-            raise ValueError(
-                "Invalid value for `state`, must be one of {0}"
-                .format(allowed_values)
-            )
-        self._state = state
+        self._security_list_ids = security_list_ids
 
     @property
     def time_created(self):
         """
         Gets the time_created of this Subnet.
-        Date and time the subnet was created.
+        The date and time the subnet was created.
 
         :return: The time_created of this Subnet.
         :rtype: datetime
@@ -243,7 +293,7 @@ class Subnet(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Subnet.
-        Date and time the subnet was created.
+        The date and time the subnet was created.
 
         :param time_created: The time_created of this Subnet.
         :type: datetime

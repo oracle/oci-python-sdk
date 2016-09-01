@@ -33,7 +33,7 @@ class VnicAttachment(object):
             'display_name': 'str',
             'id': 'str',
             'instance_id': 'str',
-            'state': 'str',
+            'lifecycle_state': 'str',
             'subnet_id': 'str',
             'time_created': 'datetime',
             'vnic_id': 'str'
@@ -45,7 +45,7 @@ class VnicAttachment(object):
             'display_name': 'displayName',
             'id': 'id',
             'instance_id': 'instanceId',
-            'state': 'state',
+            'lifecycle_state': 'lifecycleState',
             'subnet_id': 'subnetId',
             'time_created': 'timeCreated',
             'vnic_id': 'vnicId'
@@ -56,7 +56,7 @@ class VnicAttachment(object):
         self._display_name = None
         self._id = None
         self._instance_id = None
-        self._state = None
+        self._lifecycle_state = None
         self._subnet_id = None
         self._time_created = None
         self._vnic_id = None
@@ -110,7 +110,7 @@ class VnicAttachment(object):
     def display_name(self):
         """
         Gets the display_name of this VnicAttachment.
-        The name of the VNIC attachment.
+        A user-friendly name. Does not have to be unique, and it's not changeable.\n
 
         :return: The display_name of this VnicAttachment.
         :rtype: str
@@ -121,7 +121,7 @@ class VnicAttachment(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this VnicAttachment.
-        The name of the VNIC attachment.
+        A user-friendly name. Does not have to be unique, and it's not changeable.\n
 
         :param display_name: The display_name of this VnicAttachment.
         :type: str
@@ -173,32 +173,32 @@ class VnicAttachment(object):
         self._instance_id = instance_id
 
     @property
-    def state(self):
+    def lifecycle_state(self):
         """
-        Gets the state of this VnicAttachment.
+        Gets the lifecycle_state of this VnicAttachment.
         The current state of the VNIC attachment.
 
-        :return: The state of this VnicAttachment.
+        :return: The lifecycle_state of this VnicAttachment.
         :rtype: str
         """
-        return self._state
+        return self._lifecycle_state
 
-    @state.setter
-    def state(self, state):
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
         """
-        Sets the state of this VnicAttachment.
+        Sets the lifecycle_state of this VnicAttachment.
         The current state of the VNIC attachment.
 
-        :param state: The state of this VnicAttachment.
+        :param lifecycle_state: The lifecycle_state of this VnicAttachment.
         :type: str
         """
         allowed_values = ["ATTACHING", "ATTACHED", "DETACHING", "DETACHED"]
-        if state not in allowed_values:
+        if lifecycle_state not in allowed_values:
             raise ValueError(
-                "Invalid value for `state`, must be one of {0}"
+                "Invalid value for `lifecycle_state`, must be one of {0}"
                 .format(allowed_values)
             )
-        self._state = state
+        self._lifecycle_state = lifecycle_state
 
     @property
     def subnet_id(self):
@@ -226,7 +226,7 @@ class VnicAttachment(object):
     def time_created(self):
         """
         Gets the time_created of this VnicAttachment.
-
+        The date and time the VNIC attachment was created.
 
         :return: The time_created of this VnicAttachment.
         :rtype: datetime
@@ -237,7 +237,7 @@ class VnicAttachment(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this VnicAttachment.
-
+        The date and time the VNIC attachment was created.
 
         :param time_created: The time_created of this VnicAttachment.
         :type: datetime

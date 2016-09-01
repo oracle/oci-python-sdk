@@ -17,8 +17,8 @@
 
   <properties>
     <spec-temp-dir>${project.build.directory}</spec-temp-dir>
-    <swagger-spec-file-coreservices>${spec-temp-dir}/coreservices/coreservices-api-spec.yaml</swagger-spec-file-coreservices>
-    <swagger-spec-file-identity>${spec-temp-dir}/identity/identity-control-plane-api-spec.yaml</swagger-spec-file-identity>
+    <swagger-spec-file-coreservices>${spec-temp-dir}/coreservices/coreservices-api-spec-20160918.yaml</swagger-spec-file-coreservices>
+    <swagger-spec-file-identity>${spec-temp-dir}/identity/identity-control-plane-api-spec-20160918.yaml</swagger-spec-file-identity>
     <swagger-spec-file-casper>${spec-temp-dir}/casper/casper-api.yaml</swagger-spec-file-casper>
     <!-- remove when upgrading to pic-pom:0.4.4 -->
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -58,7 +58,7 @@
                   <groupId>com.oracle.pic.commons</groupId>
                   <artifactId>coreservices-api-spec</artifactId>
                   <type>jar</type>
-                  <includes>coreservices-api-spec.yaml</includes>
+                  <includes>coreservices-api-spec-20160918.yaml</includes>
                   <outputDirectory>${spec-temp-dir}/coreservices/</outputDirectory>
                 </artifactItem>
               </artifactItems>
@@ -76,7 +76,7 @@
                   <groupId>com.oracle.pic.identity</groupId>
                   <artifactId>identity-control-plane-api-spec</artifactId>
                   <type>jar</type>
-                  <includes>identity-control-plane-api-spec.yaml</includes>
+                  <includes>identity-control-plane-api-spec-20160918.yaml</includes>
                   <outputDirectory>${spec-temp-dir}/identity/</outputDirectory>
                 </artifactItem>
               </artifactItems>
@@ -197,12 +197,12 @@
       <dependency>
         <groupId>com.oracle.pic.commons</groupId>
         <artifactId>coreservices-api-spec</artifactId>
-        <version>0.0.7</version>
+        <version>0.0.9</version>
       </dependency>
       <dependency>
         <groupId>com.oracle.pic.identity</groupId>
         <artifactId>identity-control-plane-api-spec</artifactId>
-        <version>0.1.1</version>
+        <version>0.2.1</version>
       </dependency>
       <dependency>
         <groupId>com.oracle.pic.casper</groupId>

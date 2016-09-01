@@ -13,7 +13,7 @@ class TestBasicAPICalls(ServiceTestBase):
         assert(response.request_id != None)
 
     def test_vcn_list_vcns(self):
-        response = self.context.vcn_service_api.list_vcns(self.context.config.tenancy)
+        response = self.context.virtual_network_api.list_vcns(self.context.config.tenancy)
 
         assert (response != None)
         self.assertEqual(200, response.status)

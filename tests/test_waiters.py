@@ -13,28 +13,28 @@ class TestWaiters(ServiceTestBase):
 
         start_time = time.time()
 
-        request = oraclebmc.models.CreateVcnRequest()
+        request = oraclebmc.models.CreateVcnDetails()
         request.cidr_block = '10.0.0.0/16'
         request.display_name = 'pythonsdk_waiter_' + id
         request.compartment_id = self.context.config.tenancy
 
-        response = self.context.vcn_service_api.create_vcn(request)
+        response = self.context.virtual_network_api.create_vcn(request)
         vcn = response.data
 
-        response = self.context.vcn_service_api.get_vcn(vcn.id)
-        response = self.context.wait_until(response, 'state', 'AVAILABLE')
+        response = self.context.virtual_network_api.get_vcn(vcn.id)
+        response = self.context.wait_until(response, 'lifecycle_state', 'AVAILABLE')
 
-        self.assertEqual('AVAILABLE', response.data.state)
+        self.assertEqual('AVAILABLE', response.data.lifecycle_state)
 
         print('Deleting vcn')
-        response = self.context.vcn_service_api.delete_vcn(vcn.id)
+        response = self.context.virtual_network_api.delete_vcn(vcn.id)
 
         self.assertEqual(204, response.status)
 
         with self.assertRaises(oraclebmc.exceptions.ServiceError) as errorContext:
-            response = self.context.vcn_service_api.get_vcn(vcn.id)
-            self.assertEqual('TERMINATING', response.data.state)
-            self.context.wait_until(response, 'state', 'TERMINATED')
+            response = self.context.virtual_network_api.get_vcn(vcn.id)
+            self.assertEqual('TERMINATING', response.data.lifecycle_state)
+            self.context.wait_until(response, 'lifecycle_state', 'TERMINATED')
 
         self.assertEqual(404, errorContext.exception.status)
 
@@ -46,7 +46,7 @@ class TestWaiters(ServiceTestBase):
 
     def test_invalid_operation(self):
         # Create User
-        request = oraclebmc.models.CreateUserRequest()
+        request = oraclebmc.models.CreateUserDetails()
         request.compartment_id = self.context.config.tenancy
         request.name = tests.util.unique_name('python_wait_test_user')
         request.description = 'test user'
@@ -68,7 +68,7 @@ class TestWaiters(ServiceTestBase):
 
     def test_already_in_state(self):
         description = 'test user'
-        request = oraclebmc.models.CreateUserRequest()
+        request = oraclebmc.models.CreateUserDetails()
         request.compartment_id = self.context.config.tenancy
         request.name = tests.util.unique_name('python_wait_test_user')
         request.description = description
@@ -87,7 +87,7 @@ class TestWaiters(ServiceTestBase):
 
     def test_wait_time_exceeded(self):
         description = 'test user'
-        request = oraclebmc.models.CreateUserRequest()
+        request = oraclebmc.models.CreateUserDetails()
         request.compartment_id = self.context.config.tenancy
         request.name = tests.util.unique_name('python_wait_test_user')
         request.description = description

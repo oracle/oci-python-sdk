@@ -32,7 +32,7 @@ class DrgAttachment(object):
             'display_name': 'str',
             'drg_id': 'str',
             'id': 'str',
-            'state': 'str',
+            'lifecycle_state': 'str',
             'time_created': 'datetime',
             'vcn_id': 'str'
         }
@@ -42,7 +42,7 @@ class DrgAttachment(object):
             'display_name': 'displayName',
             'drg_id': 'drgId',
             'id': 'id',
-            'state': 'state',
+            'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'vcn_id': 'vcnId'
         }
@@ -51,7 +51,7 @@ class DrgAttachment(object):
         self._display_name = None
         self._drg_id = None
         self._id = None
-        self._state = None
+        self._lifecycle_state = None
         self._time_created = None
         self._vcn_id = None
 
@@ -82,7 +82,7 @@ class DrgAttachment(object):
     def display_name(self):
         """
         Gets the display_name of this DrgAttachment.
-        A user-friendly name. Does not have to be unique, and it's unchangeable.\n
+        A user-friendly name. Does not have to be unique, and it's not changeable.\n
 
         :return: The display_name of this DrgAttachment.
         :rtype: str
@@ -93,7 +93,7 @@ class DrgAttachment(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this DrgAttachment.
-        A user-friendly name. Does not have to be unique, and it's unchangeable.\n
+        A user-friendly name. Does not have to be unique, and it's not changeable.\n
 
         :param display_name: The display_name of this DrgAttachment.
         :type: str
@@ -145,38 +145,38 @@ class DrgAttachment(object):
         self._id = id
 
     @property
-    def state(self):
+    def lifecycle_state(self):
         """
-        Gets the state of this DrgAttachment.
+        Gets the lifecycle_state of this DrgAttachment.
         The DRG attachment's current state.
 
-        :return: The state of this DrgAttachment.
+        :return: The lifecycle_state of this DrgAttachment.
         :rtype: str
         """
-        return self._state
+        return self._lifecycle_state
 
-    @state.setter
-    def state(self, state):
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
         """
-        Sets the state of this DrgAttachment.
+        Sets the lifecycle_state of this DrgAttachment.
         The DRG attachment's current state.
 
-        :param state: The state of this DrgAttachment.
+        :param lifecycle_state: The lifecycle_state of this DrgAttachment.
         :type: str
         """
         allowed_values = ["ATTACHING", "ATTACHED", "DETACHING", "DETACHED"]
-        if state not in allowed_values:
+        if lifecycle_state not in allowed_values:
             raise ValueError(
-                "Invalid value for `state`, must be one of {0}"
+                "Invalid value for `lifecycle_state`, must be one of {0}"
                 .format(allowed_values)
             )
-        self._state = state
+        self._lifecycle_state = lifecycle_state
 
     @property
     def time_created(self):
         """
         Gets the time_created of this DrgAttachment.
-        Date and time the DRG attachment was created.
+        The date and time the DRG attachment was created.
 
         :return: The time_created of this DrgAttachment.
         :rtype: datetime
@@ -187,7 +187,7 @@ class DrgAttachment(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this DrgAttachment.
-        Date and time the DRG attachment was created.
+        The date and time the DRG attachment was created.
 
         :param time_created: The time_created of this DrgAttachment.
         :type: datetime

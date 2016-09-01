@@ -30,29 +30,35 @@ class Vcn(object):
         self.swagger_types = {
             'cidr_block': 'str',
             'compartment_id': 'str',
+            'default_dhcp_options_id': 'str',
             'default_route_table_id': 'str',
+            'default_security_list_id': 'str',
             'display_name': 'str',
             'id': 'str',
-            'state': 'str',
+            'lifecycle_state': 'str',
             'time_created': 'datetime'
         }
 
         self.attribute_map = {
             'cidr_block': 'cidrBlock',
             'compartment_id': 'compartmentId',
+            'default_dhcp_options_id': 'defaultDhcpOptionsId',
             'default_route_table_id': 'defaultRouteTableId',
+            'default_security_list_id': 'defaultSecurityListId',
             'display_name': 'displayName',
             'id': 'id',
-            'state': 'state',
+            'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated'
         }
 
         self._cidr_block = None
         self._compartment_id = None
+        self._default_dhcp_options_id = None
         self._default_route_table_id = None
+        self._default_security_list_id = None
         self._display_name = None
         self._id = None
-        self._state = None
+        self._lifecycle_state = None
         self._time_created = None
 
 
@@ -101,6 +107,28 @@ class Vcn(object):
         self._compartment_id = compartment_id
 
     @property
+    def default_dhcp_options_id(self):
+        """
+        Gets the default_dhcp_options_id of this Vcn.
+        The OCID for the VCN's default set of DHCP options.\n
+
+        :return: The default_dhcp_options_id of this Vcn.
+        :rtype: str
+        """
+        return self._default_dhcp_options_id
+
+    @default_dhcp_options_id.setter
+    def default_dhcp_options_id(self, default_dhcp_options_id):
+        """
+        Sets the default_dhcp_options_id of this Vcn.
+        The OCID for the VCN's default set of DHCP options.\n
+
+        :param default_dhcp_options_id: The default_dhcp_options_id of this Vcn.
+        :type: str
+        """
+        self._default_dhcp_options_id = default_dhcp_options_id
+
+    @property
     def default_route_table_id(self):
         """
         Gets the default_route_table_id of this Vcn.
@@ -123,10 +151,32 @@ class Vcn(object):
         self._default_route_table_id = default_route_table_id
 
     @property
+    def default_security_list_id(self):
+        """
+        Gets the default_security_list_id of this Vcn.
+        The OCID for the VCN's default security list.
+
+        :return: The default_security_list_id of this Vcn.
+        :rtype: str
+        """
+        return self._default_security_list_id
+
+    @default_security_list_id.setter
+    def default_security_list_id(self, default_security_list_id):
+        """
+        Sets the default_security_list_id of this Vcn.
+        The OCID for the VCN's default security list.
+
+        :param default_security_list_id: The default_security_list_id of this Vcn.
+        :type: str
+        """
+        self._default_security_list_id = default_security_list_id
+
+    @property
     def display_name(self):
         """
         Gets the display_name of this Vcn.
-        A user-friendly name. Does not have to be unique, and it's unchangeable.\n
+        A user-friendly name. Does not have to be unique, and it's not changeable.\n
 
         :return: The display_name of this Vcn.
         :rtype: str
@@ -137,7 +187,7 @@ class Vcn(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Vcn.
-        A user-friendly name. Does not have to be unique, and it's unchangeable.\n
+        A user-friendly name. Does not have to be unique, and it's not changeable.\n
 
         :param display_name: The display_name of this Vcn.
         :type: str
@@ -167,38 +217,38 @@ class Vcn(object):
         self._id = id
 
     @property
-    def state(self):
+    def lifecycle_state(self):
         """
-        Gets the state of this Vcn.
+        Gets the lifecycle_state of this Vcn.
         The VCN's current state.
 
-        :return: The state of this Vcn.
+        :return: The lifecycle_state of this Vcn.
         :rtype: str
         """
-        return self._state
+        return self._lifecycle_state
 
-    @state.setter
-    def state(self, state):
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
         """
-        Sets the state of this Vcn.
+        Sets the lifecycle_state of this Vcn.
         The VCN's current state.
 
-        :param state: The state of this Vcn.
+        :param lifecycle_state: The lifecycle_state of this Vcn.
         :type: str
         """
         allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"]
-        if state not in allowed_values:
+        if lifecycle_state not in allowed_values:
             raise ValueError(
-                "Invalid value for `state`, must be one of {0}"
+                "Invalid value for `lifecycle_state`, must be one of {0}"
                 .format(allowed_values)
             )
-        self._state = state
+        self._lifecycle_state = lifecycle_state
 
     @property
     def time_created(self):
         """
         Gets the time_created of this Vcn.
-        Date and time the VCN was created.
+        The date and time the VCN was created.
 
         :return: The time_created of this Vcn.
         :rtype: datetime
@@ -209,7 +259,7 @@ class Vcn(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Vcn.
-        Date and time the VCN was created.
+        The date and time the VCN was created.
 
         :param time_created: The time_created of this Vcn.
         :type: datetime

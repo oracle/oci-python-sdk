@@ -35,7 +35,7 @@ class IScsiVolumeAttachment(VolumeAttachment):
             'display_name': 'str',
             'id': 'str',
             'instance_id': 'str',
-            'state': 'str',
+            'lifecycle_state': 'str',
             'time_created': 'datetime',
             'volume_id': 'str',
             'chap_secret': 'str',
@@ -52,7 +52,7 @@ class IScsiVolumeAttachment(VolumeAttachment):
             'display_name': 'displayName',
             'id': 'id',
             'instance_id': 'instanceId',
-            'state': 'state',
+            'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'volume_id': 'volumeId',
             'chap_secret': 'chapSecret',
@@ -68,7 +68,7 @@ class IScsiVolumeAttachment(VolumeAttachment):
         self._display_name = None
         self._id = None
         self._instance_id = None
-        self._state = None
+        self._lifecycle_state = None
         self._time_created = None
         self._volume_id = None
         self._chap_secret = None
@@ -83,7 +83,7 @@ class IScsiVolumeAttachment(VolumeAttachment):
     def chap_secret(self):
         """
         Gets the chap_secret of this IScsiVolumeAttachment.
-        The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP user name. (Also called the \"CHAP password\".)\n\nExample: `d6866c0d-298b-48ba-95af-309b4faux45e`\n
+        The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP user name.\n(Also called the \"CHAP password\".)\n\nExample: `d6866c0d-298b-48ba-95af-309b4faux45e`\n
 
         :return: The chap_secret of this IScsiVolumeAttachment.
         :rtype: str
@@ -94,7 +94,7 @@ class IScsiVolumeAttachment(VolumeAttachment):
     def chap_secret(self, chap_secret):
         """
         Sets the chap_secret of this IScsiVolumeAttachment.
-        The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP user name. (Also called the \"CHAP password\".)\n\nExample: `d6866c0d-298b-48ba-95af-309b4faux45e`\n
+        The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP user name.\n(Also called the \"CHAP password\".)\n\nExample: `d6866c0d-298b-48ba-95af-309b4faux45e`\n
 
         :param chap_secret: The chap_secret of this IScsiVolumeAttachment.
         :type: str

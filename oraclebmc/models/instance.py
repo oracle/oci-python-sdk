@@ -32,11 +32,11 @@ class Instance(object):
             'compartment_id': 'str',
             'display_name': 'str',
             'id': 'str',
-            'image': 'str',
+            'image_id': 'str',
+            'lifecycle_state': 'str',
             'metadata': 'dict(str, str)',
             'region': 'str',
             'shape': 'str',
-            'state': 'str',
             'time_created': 'datetime'
         }
 
@@ -45,11 +45,11 @@ class Instance(object):
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'id': 'id',
-            'image': 'image',
+            'image_id': 'imageId',
+            'lifecycle_state': 'lifecycleState',
             'metadata': 'metadata',
             'region': 'region',
             'shape': 'shape',
-            'state': 'state',
             'time_created': 'timeCreated'
         }
 
@@ -57,11 +57,11 @@ class Instance(object):
         self._compartment_id = None
         self._display_name = None
         self._id = None
-        self._image = None
+        self._image_id = None
+        self._lifecycle_state = None
         self._metadata = None
         self._region = None
         self._shape = None
-        self._state = None
         self._time_created = None
 
 
@@ -113,7 +113,7 @@ class Instance(object):
     def display_name(self):
         """
         Gets the display_name of this Instance.
-        The non-unique, changeable name of the instance.
+        A user-friendly name. Does not have to be unique, and it's changeable.\n
 
         :return: The display_name of this Instance.
         :rtype: str
@@ -124,7 +124,7 @@ class Instance(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Instance.
-        The non-unique, changeable name of the instance.
+        A user-friendly name. Does not have to be unique, and it's changeable.\n
 
         :param display_name: The display_name of this Instance.
         :type: str
@@ -154,26 +154,54 @@ class Instance(object):
         self._id = id
 
     @property
-    def image(self):
+    def image_id(self):
         """
-        Gets the image of this Instance.
-        The image used to boot the instance. The available images are:\n\n  * __ol7.1-base-0.0.1__ - For Oracle Linux 7.1.\n\n  * __ol6.7-oracledbee_12.1.0.2/11.2.0.4-0.0.1__ - For Oracle Linux 6.7 with Oracle Database Enterprise Edition 11.2.0.4 or 12.1.0.2.\n\n  * __ol6.7-base-0.0.1__ - For Oracle Linux 6.7 with Unbreakable Enterprise Kernel (UEK) Release 3.\n
+        Gets the image_id of this Instance.
+        The image used to boot the instance. You may enumerate all available images by calling\n[ListImages](#/en/core/20160918/Image/ListImages).\n
 
-        :return: The image of this Instance.
+        :return: The image_id of this Instance.
         :rtype: str
         """
-        return self._image
+        return self._image_id
 
-    @image.setter
-    def image(self, image):
+    @image_id.setter
+    def image_id(self, image_id):
         """
-        Sets the image of this Instance.
-        The image used to boot the instance. The available images are:\n\n  * __ol7.1-base-0.0.1__ - For Oracle Linux 7.1.\n\n  * __ol6.7-oracledbee_12.1.0.2/11.2.0.4-0.0.1__ - For Oracle Linux 6.7 with Oracle Database Enterprise Edition 11.2.0.4 or 12.1.0.2.\n\n  * __ol6.7-base-0.0.1__ - For Oracle Linux 6.7 with Unbreakable Enterprise Kernel (UEK) Release 3.\n
+        Sets the image_id of this Instance.
+        The image used to boot the instance. You may enumerate all available images by calling\n[ListImages](#/en/core/20160918/Image/ListImages).\n
 
-        :param image: The image of this Instance.
+        :param image_id: The image_id of this Instance.
         :type: str
         """
-        self._image = image
+        self._image_id = image_id
+
+    @property
+    def lifecycle_state(self):
+        """
+        Gets the lifecycle_state of this Instance.
+        The current state of the instance.
+
+        :return: The lifecycle_state of this Instance.
+        :rtype: str
+        """
+        return self._lifecycle_state
+
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
+        """
+        Sets the lifecycle_state of this Instance.
+        The current state of the instance.
+
+        :param lifecycle_state: The lifecycle_state of this Instance.
+        :type: str
+        """
+        allowed_values = ["PROVISIONING", "RUNNING", "STARTING", "STOPPING", "STOPPED", "CREATING_IMAGE", "TERMINATING", "TERMINATED"]
+        if lifecycle_state not in allowed_values:
+            raise ValueError(
+                "Invalid value for `lifecycle_state`, must be one of {0}"
+                .format(allowed_values)
+            )
+        self._lifecycle_state = lifecycle_state
 
     @property
     def metadata(self):
@@ -240,34 +268,6 @@ class Instance(object):
         :type: str
         """
         self._shape = shape
-
-    @property
-    def state(self):
-        """
-        Gets the state of this Instance.
-        The current state of the instance.
-
-        :return: The state of this Instance.
-        :rtype: str
-        """
-        return self._state
-
-    @state.setter
-    def state(self, state):
-        """
-        Sets the state of this Instance.
-        The current state of the instance.
-
-        :param state: The state of this Instance.
-        :type: str
-        """
-        allowed_values = ["PROVISIONING", "RUNNING", "STARTING", "STOPPING", "STOPPED", "TERMINATING", "TERMINATED"]
-        if state not in allowed_values:
-            raise ValueError(
-                "Invalid value for `state`, must be one of {0}"
-                .format(allowed_values)
-            )
-        self._state = state
 
     @property
     def time_created(self):
