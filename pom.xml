@@ -11,7 +11,7 @@
 
   <groupId>com.oracle.pic.sdk</groupId>
   <artifactId>python-sdk</artifactId>
-  <version>0.0.1</version>
+  <version>0.0.2</version>
 
   <name>Public Python SDK</name>
 
