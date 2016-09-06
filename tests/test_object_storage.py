@@ -104,6 +104,50 @@ class TestObjectStorage(ServiceTestBase):
         response = self.context.object_storage_api.delete_bucket(namespace, bucket_name)
         self.assertEqual(204, response.status)
 
+    def test_object_CRUD_with_metadata(self):
+        # Setup a bucket to use.
+        object_name_A = 'object_A'
+        bucket_name = tests.util.unique_name('test_object_CRUD_with_metadata')
+        test_data = 'This is a test ' + tests.util.random_number_string() + '!/n/r/\/~%s;"/,{}><+=:.*)('''
+        namespace = self.context.object_storage_api.get_namespace().data
+
+        request = oraclebmc.models.CreateBucketDetails()
+        request.name = bucket_name
+        request.compartment_id = self.context.config.tenancy
+        response = self.context.object_storage_api.create_bucket(namespace, request)
+        self.assertEqual(200, response.status)
+
+        # Put an object
+        response = self.context.object_storage_api.put_object(namespace, bucket_name, object_name_A, test_data,
+                                                              opc_meta={'foo1': 'bar1',
+                                                                        'foo2': 'bar2'})
+        self.assertEqual(200, response.status)
+
+        # Get it back
+        response = self.context.object_storage_api.get_object(namespace, bucket_name, object_name_A)
+        self.assertEqual(200, response.status)
+        response_text = response.data.content.decode('UTF-8')
+        self.assertEqual(len(test_data), len(response_text))
+        self.assertEqual(test_data, response_text)
+        assert (type(response.data) is oraclebmc.DataStream)
+        self.assertEqual('bar1', response.headers['opc-meta-foo1'])
+        self.assertEqual('bar2', response.headers['opc-meta-foo2'])
+
+        # Head
+        response = self.context.object_storage_api.head_object(namespace, bucket_name, object_name_A)
+        self.assertEqual(200, response.status)
+        assert (len(test_data) == int(response.headers['content-length']))
+        self.assertEqual('bar1', response.headers['opc-meta-foo1'])
+        self.assertEqual('bar2', response.headers['opc-meta-foo2'])
+
+        # Delete
+        response = self.context.object_storage_api.delete_object(namespace, bucket_name, object_name_A)
+        self.assertEqual(204, response.status)
+
+        # Clean up
+        response = self.context.object_storage_api.delete_bucket(namespace, bucket_name)
+        self.assertEqual(204, response.status)
+
     def test_bucket_not_found(self):
         namespace = self.context.object_storage_api.get_namespace().data
 
@@ -157,8 +201,7 @@ class TestObjectStorage(ServiceTestBase):
         self.assertEqual(200, response.status)
         assert (type(response.data) is oraclebmc.DataStream)
 
-    # TODO: metadata is not yet hooked up
-    def DISABLE_test_get_object_with_user_metadata(self):
+    def test_get_object_with_user_metadata(self):
         namespace = self.context.object_storage_api.get_namespace().data
         response = self.context.object_storage_api.get_object(namespace, 'ReadOnlyTestBucket4', 'hasUserMetadata.json')
         self.assertEqual(200, response.status)
@@ -214,9 +257,8 @@ class TestObjectStorage(ServiceTestBase):
         self.assertEqual(200, response.status)
         self.assertIsNone (response.data)
 
-        # TODO: metadata is not yet hooked up
-        # self.assertEqual('bar1', response.headers['opc-meta-foo1'])
-        # self.assertEqual('bar2', response.headers['opc-meta-foo2'])
+        self.assertEqual('bar1', response.headers['opc-meta-foo1'])
+        self.assertEqual('bar2', response.headers['opc-meta-foo2'])
 
 if __name__ == '__main__':
     unittest.main()

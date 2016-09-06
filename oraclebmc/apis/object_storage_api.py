@@ -626,11 +626,11 @@ class ObjectStorageApi(object):
         :param str opc_client_request_id: The client request ID for tracing
         :param str expect: 100-continue
         :param str content_md5: The base-64 encoded MD5 hash of the body.
-        :param str opc_meta_: Optional user-defined metadata key and value.
+        :param dict(str, str) opc_meta: Optional user-defined metadata key and value.
         :return: A Response object with data of type None
         """
 
-        all_params = ['namespace_name', 'bucket_name', 'object_name', 'content_length', 'put_object_body', 'if_match', 'if_none_match', 'opc_client_request_id', 'expect', 'content_md5', 'opc_meta_']
+        all_params = ['namespace_name', 'bucket_name', 'object_name', 'content_length', 'put_object_body', 'if_match', 'if_none_match', 'opc_client_request_id', 'expect', 'content_md5', 'opc_meta']
 
         params = locals()
         for key, val in iteritems(params['kwargs']):
@@ -679,8 +679,9 @@ class ObjectStorageApi(object):
             header_params['Content-Length'] = params['content_length']
         if 'content_md5' in params:
             header_params['Content-MD5'] = params['content_md5']
-        if 'opc_meta_' in params:
-            header_params['opc-meta-*'] = params['opc_meta_']
+        if 'opc_meta' in params:
+            for key, value in params['opc_meta'].items():
+                header_params['opc-meta-' + key] = value
 
         body_params = None
         if 'put_object_body' in params:

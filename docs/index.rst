@@ -6,7 +6,7 @@
 Oracle BMC Python SDK
 =====================================
 
-This is 0.0.1 version of the public Python SDK for Oracle Bare Metal Cloud (OBMC).
+This is 0.0.2 version of the public Python SDK for Oracle Bare Metal Cloud (OBMC).
 
 Contents:
 
