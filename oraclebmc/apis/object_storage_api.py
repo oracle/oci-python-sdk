@@ -26,10 +26,14 @@ from __future__ import absolute_import
 from six import iteritems
 from io import IOBase
 
+from ..signer import Signer
+from ..api_client import ApiClient
+
 class ObjectStorageApi(object):
 
-    def __init__(self, api_client):
-        self.api_client = api_client
+    def __init__(self, config):
+        signer = Signer(config.tenancy, config.user, config.fingerprint, config.key_file)
+        self.api_client =  ApiClient(config, signer)
 
 
     def create_bucket(self, namespace_name, create_bucket_details, **kwargs):

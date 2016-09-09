@@ -23,22 +23,30 @@ The original license is below.
 
 from __future__ import absolute_import
 
-from . import models
-from .response import Response
-from . import exceptions
-from .request import Request
-from .data_stream import DataStream
-from .signer import SignerWrapper
-
-import logging
-import re
+import http.client
 import json
-import requests
-from io import IOBase
-from datetime import datetime
+import logging
+import platform
+import re
+import uuid
 from datetime import date
+from datetime import datetime
+from urllib.parse import quote
+
+
+
+import requests
 from dateutil.parser import parse
-from urllib.parse import quote, urlencode
+
+from . import constants
+from . import exceptions
+from . import models
+from .data_stream import DataStream
+from .request import Request
+from .response import Response
+from .signer import SignerWrapper
+from . import __version__
+
 
 def merge_type_mappings(*dictionaries):
     merged = {}
@@ -71,9 +79,13 @@ class ApiClient(object):
 
         self.logger = logging.getLogger("%s.%s" % (__name__, str(id(self))))
 
-        if self.config.debugging:
+        if self.config.log_requests:
             self.logger.addHandler(logging.StreamHandler())
             self.logger.setLevel(logging.DEBUG)
+
+            http.client.HTTPConnection.debuglevel = 1
+        else:
+            http.client.HTTPConnection.debuglevel = 0
 
     @property
     def session(self):
@@ -113,6 +125,12 @@ class ApiClient(object):
             header_params = self.sanitize_for_serialization(header_params)
 
         header_params = header_params or {}
+
+        header_params[constants.HEADER_CLIENT_INFO] = self.build_user_info()
+        header_params[constants.HEADER_USER_AGENT] = self.build_user_agent()
+
+        # TODO: Disabling until Object Storage API starts accepting opc-request-id.
+        # header_params[constants.HEADER_REQUEST_ID] = self.build_request_id()
 
         if path_params:
             path_params = self.sanitize_for_serialization(path_params)
@@ -181,6 +199,24 @@ class ApiClient(object):
         self.logger.info("Response status: %s" % str(response.status_code))
 
         return Response(response.status_code, response.headers, deserialized_data, request)
+
+    # Builds the client info string to be sent with each request.
+    def build_request_id(self):
+        return str(uuid.uuid4()).replace('-', '').upper()
+
+    # Builds the client info string to be sent with each request.
+    def build_user_info(self):
+        return "Oracle-PythonSDK/{0}".format(__version__)
+
+    # Build the user agent string to be send with each request.
+    def build_user_agent(self):
+        # Example: Oracle-PythonSDK/0.0.2 (python 3.5.2; x86_64-Darwin)
+        agent = "{0} (python {1}; {2}-{3})".format(self.build_user_info(), platform.python_version(), platform.machine(), platform.system())
+
+        if self.config.additional_user_agent:
+            agent = "{0} {1}".format(agent, self.config.additional_user_agent)
+
+        return agent
 
     def to_path_value(self, obj):
         """

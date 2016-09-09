@@ -1,8 +1,10 @@
+import oraclebmc
 from tests.service_test_base import ServiceTestBase
 
 class TestPaging(ServiceTestBase):
 
     def test_manual_paging(self):
+        api = oraclebmc.apis.IdentityApi(self.config)
 
         request_number = 0
         previous_first_ocid = None
@@ -10,9 +12,9 @@ class TestPaging(ServiceTestBase):
 
         while True:
             if request_number == 0:
-                response = self.context.identity_api.list_users(self.context.config.tenancy, limit=2)
+                response = api.list_users(self.config.tenancy, limit=2)
             else:
-                response = self.context.identity_api.list_users(self.context.config.tenancy, limit=2, page=next_page)
+                response = api.list_users(self.config.tenancy, limit=2, page=next_page)
 
             if not response.has_next_page:
                 break

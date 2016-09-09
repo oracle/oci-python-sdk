@@ -14,7 +14,7 @@ class TestConfigFileLoader(unittest.TestCase):
         self.assertEqual('ocidv1:user:oc1:phx:1460406592659:aaaaaaaawcbqrkycbolrirg2n3xjl5fyxe', config.user)
         self.assertEqual('20:3b:97:13:55:1c:5b:0d:d3:37:d8:50:4e:c5:3a:34', config.fingerprint)
         self.assertEqual('ocidv1:tenancy:oc1:phx:1460406592660:aaaaaaaab4faofrfkxecohhjuivjq262pu', config.tenancy)
-        self.assertEqual(False, config.debugging)
+        self.assertEqual(False, config.log_requests)
 
     def test_child_profile(self):
         config = oraclebmc.config_file_loader.load_config(file_location='tests/resources/config', profile_name='DEBUG')
@@ -28,7 +28,8 @@ class TestConfigFileLoader(unittest.TestCase):
         self.assertEqual('ocidv1:tenancy:oc1:phx:1460406592660:aaaaaaaab4faofrfkxecohhjuivjq262pu', config.tenancy)
 
         # check properties overridden by the specified profile
-        self.assertEqual(True, config.debugging)
+        self.assertEqual(True, config.log_requests)
+        assert(len(config.additional_user_agent) > 0)
 
     def test_invalid_parameter(self):
         # The invalid parameter should be ignored.
@@ -43,7 +44,7 @@ class TestConfigFileLoader(unittest.TestCase):
         self.assertEqual('20:3b:97:13:55:1c:5b:0d:d3:37:d8:50:4e:c5:3a:34', config.fingerprint)
         assert('/.ssh/id_rsa.pem' in config.key_file and '~' not in config.key_file)
         self.assertEqual('ocidv1:tenancy:oc1:phx:1460406592660:aaaaaaaab4faofrfkxecohhjuivjq262pu', config.tenancy)
-        self.assertEqual(False, config.debugging)
+        self.assertEqual(False, config.log_requests)
 
         # Make sure that hte invalid attribute was not added.
         assert(not hasattr(config, 'foo'))

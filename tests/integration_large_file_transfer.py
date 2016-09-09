@@ -8,7 +8,8 @@ class TestLargeFileTransfer(ServiceTestBase):
     """Downloads a large file (2.6 GB) from Object Storage, uploads it to a new bucket, and cleans up."""
 
     def setUp(self):
-        self.context = self.create_context()
+        self.config = self.create_config()
+        self.api = oraclebmc.apis.ObjectStorageApi(self.config)
 
         self.read_bucket_name = 'ReadOnlyTestBucket4'
         self.read_object_name = 'reallyLargeFile.dat'
@@ -17,23 +18,23 @@ class TestLargeFileTransfer(ServiceTestBase):
         self.write_bucket_name = tests.util.unique_name('test_large_file_streaming')
 
         self.temp_file = tests.util.get_resource_directory() + '/file_download_test_temp_file.dat'
-        self.namespace = self.context.object_storage_api.get_namespace().data
+        self.namespace = self.api.get_namespace().data
 
         request = oraclebmc.models.CreateBucketDetails()
         request.name = self.write_bucket_name
-        request.compartment_id = self.context.config.tenancy
-        response = self.context.object_storage_api.create_bucket(self.namespace, request)
+        request.compartment_id = self.config.tenancy
+        response = self.api.create_bucket(self.namespace, request)
         self.assertEqual(200, response.status)
 
     def tearDown(self):
         # Delete new object, bucket, and file
         try:
-            self.context.object_storage_api.delete_object(self.namespace, self.write_bucket_name, self.write_object_name)
+            self.api.delete_object(self.namespace, self.write_bucket_name, self.write_object_name)
         except:
             print('TearDown: Could not delete new object.')
 
         try:
-            self.context.object_storage_api.delete_bucket(self.namespace, self.write_bucket_name)
+            self.api.delete_bucket(self.namespace, self.write_bucket_name)
         except:
             print('TearDown: Could not delete new bucket.')
 
@@ -43,7 +44,7 @@ class TestLargeFileTransfer(ServiceTestBase):
             print('TearDown: Could not delete temporary local file.')
 
     def test_large_file_transfer(self):
-        response = self.context.object_storage_api.head_object(self.namespace, self.read_bucket_name, self.read_object_name)
+        response = self.api.head_object(self.namespace, self.read_bucket_name, self.read_object_name)
         self.assertEqual(200, response.status)
 
         content_length = int(response.headers['content-length'])
@@ -55,7 +56,7 @@ class TestLargeFileTransfer(ServiceTestBase):
         initial_max_memory_usage = tests.util.max_memory_usage()
 
         with tests.util.timer('get large file'):
-            response = self.context.object_storage_api.get_object(self.namespace, self.read_bucket_name, self.read_object_name)
+            response = self.api.get_object(self.namespace, self.read_bucket_name, self.read_object_name)
             self.assertEqual(200, response.status)
 
             with io.open(self.temp_file, 'wb') as file:
@@ -81,10 +82,10 @@ class TestLargeFileTransfer(ServiceTestBase):
         print('Uploading to bucket %s with name %s....' % (self.write_bucket_name, self.write_object_name))
         with tests.util.timer('put large file'):
             with open(self.temp_file, 'rb') as file:
-                response = self.context.object_storage_api.put_object(self.namespace, self.write_bucket_name, self.write_object_name, file)
+                response = self.api.put_object(self.namespace, self.write_bucket_name, self.write_object_name, file)
                 self.assertEqual(200, response.status)
 
-        response = self.context.object_storage_api.head_object(self.namespace, self.write_bucket_name, self.write_object_name)
+        response = self.api.head_object(self.namespace, self.write_bucket_name, self.write_object_name)
         self.assertEqual(200, response.status)
 
         uploaded_content_length = int(response.headers['content-length'])

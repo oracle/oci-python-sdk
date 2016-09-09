@@ -5,7 +5,7 @@ class TestDataStream(ServiceTestBase):
     """Tests the oraclebmc.DataStream object."""
 
     def setUp(self):
-        self.context = self.create_context()
+        self.config = self.create_config()
 
         self.namespace = 'internalbriangustafson'
         self.bucket_name = 'ReadOnlyTestBucket2'
@@ -13,7 +13,7 @@ class TestDataStream(ServiceTestBase):
         self.expected_content = self.object_name
 
         # Get the object
-        self.response = self.context.object_storage_api.get_object(self.namespace, self.bucket_name, self.object_name)
+        self.response = oraclebmc.apis.ObjectStorageApi(self.config).get_object(self.namespace, self.bucket_name, self.object_name)
         self.assertEqual(200, self.response.status)
 
     def test_content(self):
