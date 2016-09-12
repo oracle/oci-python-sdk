@@ -20,5 +20,6 @@ class Config(object):
         self.endpoint_object_storage_api = 'https://object-store.us-az-phoenix-1.oracleiaas.com'
 
         self.verify_ssl = True
-        self.debugging = False
+        self.log_requests = False
+        self.additional_user_agent = None
 

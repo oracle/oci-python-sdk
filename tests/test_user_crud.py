@@ -4,11 +4,13 @@ import oraclebmc
 class TestUserCrud(ServiceTestBase):
 
     def test_user_CRUD(self):
-        compartment = self.context.config.tenancy
-        user_name = "python_test_user_A"
+        api = oraclebmc.apis.IdentityApi(self.config)
+        
+        compartment = self.config.tenancy
+        user_name = "python_temp_user_1"
         user_description = "Created by python SDK TestUserCrud test."
 
-        initial_user_count = len(self.context.identity_api.list_users(self.context.config.tenancy).data)
+        initial_user_count = len(api.list_users(compartment).data)
 
         # Create User
         request = oraclebmc.models.CreateUserDetails()
@@ -16,7 +18,7 @@ class TestUserCrud(ServiceTestBase):
         request.name = user_name
         request.description = user_description
 
-        response = self.context.identity_api.create_user(request)
+        response = api.create_user(request)
 
         assert (type(response.data) is oraclebmc.models.User)
         self.assertEqual(user_name, response.data.name)
@@ -24,10 +26,10 @@ class TestUserCrud(ServiceTestBase):
         self.assertEqual(compartment, response.data.compartment_id)
         user_id = response.data.id
 
-        self.assertEqual(initial_user_count + 1, len(self.context.identity_api.list_users(self.context.config.tenancy).data))
+        self.assertEqual(initial_user_count + 1, len(api.list_users(compartment).data))
 
         # Get User
-        response = self.context.identity_api.get_user(user_id)
+        response = api.get_user(user_id)
         assert (type(response.data) is oraclebmc.models.User)
         self.assertEqual(user_name, response.data.name)
         self.assertEqual(user_description, response.data.description)
@@ -38,7 +40,7 @@ class TestUserCrud(ServiceTestBase):
         newDescription = "updated user description"
         request = oraclebmc.models.UpdateUserDetails()
         request.description = newDescription
-        response = self.context.identity_api.update_user(user_id, request)
+        response = api.update_user(user_id, request)
 
         assert (type(response.data) is oraclebmc.models.User)
         self.assertEqual(user_name, response.data.name)
@@ -46,8 +48,8 @@ class TestUserCrud(ServiceTestBase):
         self.assertEqual(compartment, response.data.compartment_id)
 
         # Delete User
-        self.context.identity_api.delete_user(user_id)
-        self.assertEqual(initial_user_count, len(self.context.identity_api.list_users(self.context.config.tenancy).data))
+        api.delete_user(user_id)
+        self.assertEqual(initial_user_count, len(api.list_users(self.config.tenancy).data))
 
 if __name__ == '__main__':
     unittest.main()

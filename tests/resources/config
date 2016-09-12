@@ -5,7 +5,6 @@ user=ocidv1:user:oc1:phx:1460406592659:aaaaaaaawcbqrkycbolrirg2n3xjl5fyxe
 fingerprint=20:3b:97:13:55:1c:5b:0d:d3:37:d8:50:4e:c5:3a:34
 key_file=~/.ssh/id_rsa.pem
 tenancy=ocidv1:tenancy:oc1:phx:1460406592660:aaaaaaaab4faofrfkxecohhjuivjq262pu
-debugging=false
 
 [INVALID_USER]
 user=invaliduser
@@ -20,7 +19,8 @@ endpoint_identity_api=https://identity.us-az-phoenix-1.OracleIaaS.com/invalid
 endpoint_identity_api=https://identity.us-az-phoenix-999999.OracleIaaS.com/v1
 
 [DEBUG]
-debugging=true
+log_requests=true
+additional_user_agent=example_extra_user_agent_text
 
 [INVALID_PARAMETER]
 foo=bar

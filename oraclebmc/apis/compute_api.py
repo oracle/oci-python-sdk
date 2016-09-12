@@ -26,10 +26,14 @@ from __future__ import absolute_import
 from six import iteritems
 from io import IOBase
 
+from ..signer import Signer
+from ..api_client import ApiClient
+
 class ComputeApi(object):
 
-    def __init__(self, api_client):
-        self.api_client = api_client
+    def __init__(self, config):
+        signer = Signer(config.tenancy, config.user, config.fingerprint, config.key_file)
+        self.api_client =  ApiClient(config, signer)
 
 
     def attach_volume(self, attach_volume_details, **kwargs):

@@ -8,7 +8,10 @@ class TestLaunchInstanceTutorial(ServiceTestBase):
     """This test is based on the Launching Your First Instance tutorial in the help docs."""
 
     def setUp(self):
-        self.context = self.create_context(profile_name='DEBUG')
+        self.config = self.create_config()
+        self.virtual_network_api =  oraclebmc.apis.VirtualNetworkApi(self.config)
+        self.compute_api = oraclebmc.apis.ComputeApi(self.config)
+        self.blockstorage_api = oraclebmc.apis.BlockstorageApi(self.config)
 
         self.test_id = tests.util.random_number_string()
 
@@ -16,7 +19,7 @@ class TestLaunchInstanceTutorial(ServiceTestBase):
         # if you have the private and public key files. We should be
         # getting these dynamically based on a specified environment.
         self.availability_domain = 'kIdk:PHX-AD-2'
-        self.compartment = self.context.config.tenancy
+        self.compartment = self.config.tenancy
         self.public_key_file = '~/.ssh/id_rsa.pub'
 
     def test_tutorial(self):
@@ -55,26 +58,26 @@ class TestLaunchInstanceTutorial(ServiceTestBase):
         request.display_name = 'pythonsdk_test_vcn_' + self.test_id
         request.compartment_id = self.compartment
 
-        response = self.context.virtual_network_api.create_vcn(request)
+        response = self.virtual_network_api.create_vcn(request)
 
         self.vcn = response.data
         self.assertEqual(200, response.status)
         assert (type(response.data) is oraclebmc.models.Vcn)
 
-        response = self.context.virtual_network_api.get_vcn(self.vcn.id)
-        response = self.context.wait_until(response, 'lifecycle_state', 'AVAILABLE')
+        response = self.virtual_network_api.get_vcn(self.vcn.id)
+        response = oraclebmc.wait_until(self.virtual_network_api, response, 'lifecycle_state', 'AVAILABLE')
 
-        self.assertEquals('AVAILABLE', response.data.lifecycle_state)
+        self.assertEqual('AVAILABLE', response.data.lifecycle_state)
 
     def delete_cloud_network(self):
         if hasattr(self, 'vcn'):
             print('Deleting vcn')
-            response = self.context.virtual_network_api.delete_vcn(self.vcn.id)
+            response = self.virtual_network_api.delete_vcn(self.vcn.id)
             self.assertEqual(204, response.status)
 
             with self.assertRaises(oraclebmc.exceptions.ServiceError) as errorContext:
-                response = self.context.virtual_network_api.get_vcn(self.vcn.id)
-                self.context.wait_until(response, 'lifecycle_state', 'TERMINATED', max_wait_seconds=180)
+                response = self.virtual_network_api.get_vcn(self.vcn.id)
+                oraclebmc.wait_until(self.virtual_network_api, response, 'lifecycle_state', 'TERMINATED', max_wait_seconds=180)
 
             self.assertEqual(404, errorContext.exception.status)
 
@@ -87,24 +90,24 @@ class TestLaunchInstanceTutorial(ServiceTestBase):
         request.compartment_id = self.compartment
         request.route_table_id = self.vcn.default_route_table_id
         request.vcn_id = self.vcn.id
-        response = self.context.virtual_network_api.create_subnet(request)
+        response = self.virtual_network_api.create_subnet(request)
 
         self.subnet = response.data
         self.assertEqual(200, response.status)
         assert (type(self.subnet) is oraclebmc.models.Subnet)
 
-        response = self.context.virtual_network_api.get_subnet(self.subnet.id)
-        self.context.wait_until(response, 'lifecycle_state', 'AVAILABLE')
+        response = self.virtual_network_api.get_subnet(self.subnet.id)
+        oraclebmc.wait_until(self.virtual_network_api, response, 'lifecycle_state', 'AVAILABLE')
 
     def delete_subnet(self):
         if hasattr(self, 'subnet'):
             print('Deleting subnet')
-            response = self.context.virtual_network_api.delete_subnet(self.subnet.id)
+            response = self.virtual_network_api.delete_subnet(self.subnet.id)
             self.assertEqual(204, response.status)
 
             with self.assertRaises(oraclebmc.exceptions.ServiceError) as errorContext:
-                response = self.context.virtual_network_api.get_subnet(self.subnet.id)
-                self.context.wait_until(response, 'lifecycle_state', 'TERMINATED')
+                response = self.virtual_network_api.get_subnet(self.subnet.id)
+                oraclebmc.wait_until(self.virtual_network_api, response, 'lifecycle_state', 'TERMINATED')
 
             self.assertEqual(404, errorContext.exception.status)
 
@@ -115,14 +118,14 @@ class TestLaunchInstanceTutorial(ServiceTestBase):
         request.compartment_id = self.compartment
         request.is_enabled = True
         request.vcn_id = self.vcn.id
-        response = self.context.virtual_network_api.create_internet_gateway(request)
+        response = self.virtual_network_api.create_internet_gateway(request)
 
         self.internet_gateway = response.data
         self.assertEqual(200, response.status)
         assert (type(self.internet_gateway) is oraclebmc.models.InternetGateway)
 
-        response = self.context.virtual_network_api.get_internet_gateway(self.internet_gateway.id)
-        self.context.wait_until(response, 'lifecycle_state', 'AVAILABLE')
+        response = self.virtual_network_api.get_internet_gateway(self.internet_gateway.id)
+        oraclebmc.wait_until(self.virtual_network_api, response, 'lifecycle_state', 'AVAILABLE')
 
     def update_route_table(self):
         print('Updating route table')
@@ -134,14 +137,14 @@ class TestLaunchInstanceTutorial(ServiceTestBase):
 
         request = oraclebmc.models.UpdateRouteTableDetails()
         request.route_rules = [route_rule]
-        response = self.context.virtual_network_api.update_route_table(self.vcn.default_route_table_id, request)
+        response = self.virtual_network_api.update_route_table(self.vcn.default_route_table_id, request)
 
         self.route_table = response.data
         self.assertEqual(200, response.status)
         assert (type(self.route_table) is oraclebmc.models.RouteTable)
 
-        response = self.context.virtual_network_api.get_route_table(self.vcn.default_route_table_id)
-        self.context.wait_until(response, 'lifecycle_state', 'AVAILABLE')
+        response = self.virtual_network_api.get_route_table(self.vcn.default_route_table_id)
+        oraclebmc.wait_until(self.virtual_network_api, response, 'lifecycle_state', 'AVAILABLE')
 
     def get_public_key(self, file):
         file = os.path.expanduser(file)
@@ -161,25 +164,25 @@ class TestLaunchInstanceTutorial(ServiceTestBase):
         request.shape = 'x5-2.36.256'
         request.subnet_id = self.subnet.id
         request.metadata = {'ssh_authorized_keys': ssh_public_key}
-        response = self.context.compute_api.launch_instance(request)
+        response = self.compute_api.launch_instance(request)
 
         self.instance = response.data
         self.assertEqual(200, response.status)
         self.assertEqual('PROVISIONING', self.instance.lifecycle_state)
 
-        response = self.context.compute_api.get_instance(self.instance.id)
-        self.instance = self.context.wait_until(response, 'lifecycle_state', 'RUNNING', max_wait_seconds=300).data
+        response = self.compute_api.get_instance(self.instance.id)
+        self.instance = oraclebmc.wait_until(self.compute_api, response, 'lifecycle_state', 'RUNNING', max_wait_seconds=300).data
 
         self.assertEqual('RUNNING', self.instance.lifecycle_state)
 
     def terminate_instance(self):
         if hasattr(self, 'instance'):
             print('Terminating instance')
-            response = self.context.compute_api.terminate_instance(self.instance.id)
+            response = self.compute_api.terminate_instance(self.instance.id)
             self.assertEqual(204, response.status)
 
-            response = self.context.compute_api.get_instance(self.instance.id)
-            self.context.wait_until(response, 'lifecycle_state', 'TERMINATED')
+            response = self.compute_api.get_instance(self.instance.id)
+            oraclebmc.wait_until(self.compute_api, response, 'lifecycle_state', 'TERMINATED')
 
     def create_volume(self):
         print('Creating volume')
@@ -187,27 +190,27 @@ class TestLaunchInstanceTutorial(ServiceTestBase):
         request.display_name = 'pythonsdk_volume_' + self.test_id
         request.compartment_id = self.compartment
         request.availability_domain = self.availability_domain
-        response = self.context.blockstorage_api.create_volume(request, opc_retry_token='testtoken' + self.test_id)
+        response = self.blockstorage_api.create_volume(request, opc_retry_token='testtoken' + self.test_id)
 
         self.volume = response.data
         self.assertEqual(200, response.status)
         assert (type(self.volume) is oraclebmc.models.Volume)
 
-        response = self.context.blockstorage_api.get_volume(self.volume.id)
-        self.context.wait_until(response, 'lifecycle_state', 'AVAILABLE', max_wait_seconds=180)
+        response = self.blockstorage_api.get_volume(self.volume.id)
+        oraclebmc.wait_until(self.blockstorage_api, response, 'lifecycle_state', 'AVAILABLE', max_wait_seconds=180)
 
     def delete_volume(self):
         if hasattr(self, 'volume'):
             print('Deleting volume')
-            response = self.context.blockstorage_api.delete_volume(self.volume.id)
+            response = self.blockstorage_api.delete_volume(self.volume.id)
             self.assertEqual(204, response.status)
 
-            response = self.context.blockstorage_api.get_volume(self.volume.id)
-            self.context.wait_until(response, 'lifecycle_state', 'TERMINATED', max_wait_seconds=180)
+            response = self.blockstorage_api.get_volume(self.volume.id)
+            oraclebmc.wait_until(self.blockstorage_api, response, 'lifecycle_state', 'TERMINATED', max_wait_seconds=180)
 
     def get_public_ip_address(self):
         print('Getting public IP address')
-        response = self.context.compute_api.list_vnic_attachments(self.compartment, instance_id = self.instance.id)
+        response = self.compute_api.list_vnic_attachments(self.compartment, instance_id = self.instance.id)
         self.assertEqual(200, response.status)
         assert (len(response.data) > 0)
 
@@ -216,8 +219,8 @@ class TestLaunchInstanceTutorial(ServiceTestBase):
         assert(self.vnic_attachment != None)
 
         # Just get the address for the first vnic attachment.
-        response = self.context.virtual_network_api.get_vnic(self.vnic_attachment.vnic_id)
-        self.vnic_attachment = self.context.wait_until(response, 'lifecycle_state', 'AVAILABLE').data
+        response = self.virtual_network_api.get_vnic(self.vnic_attachment.vnic_id)
+        self.vnic_attachment = oraclebmc.wait_until(self.virtual_network_api, response, 'lifecycle_state', 'AVAILABLE').data
 
         self.vnic = response.data
         self.assertEqual(200, response.status)
@@ -232,24 +235,24 @@ class TestLaunchInstanceTutorial(ServiceTestBase):
         request.compartment_id = self.compartment
         request.instance_id = self.instance.id
         request.volume_id = self.volume.id
-        response = self.context.compute_api.attach_volume(request)
+        response = self.compute_api.attach_volume(request)
 
         self.volume_attachment = response.data
         self.assertEqual(200, response.status)
         assert (type(self.volume_attachment) is oraclebmc.models.IScsiVolumeAttachment)
 
-        response = self.context.compute_api.get_volume_attachment(self.volume_attachment.id)
-        self.context.wait_until(response, 'lifecycle_state', 'ATTACHED')
+        response = self.compute_api.get_volume_attachment(self.volume_attachment.id)
+        oraclebmc.wait_until(self.compute_api, response, 'lifecycle_state', 'ATTACHED')
 
 
     def detach_volume(self):
         if hasattr(self, 'volume'):
             print('Detaching volume')
-            response = self.context.compute_api.detach_volume(self.volume_attachment.id)
+            response = self.compute_api.detach_volume(self.volume_attachment.id)
             self.assertEqual(204, response.status)
 
-            response = self.context.compute_api.get_volume_attachment(self.volume_attachment.id)
-            self.context.wait_until(response, 'lifecycle_state', 'DETACHED')
+            response = self.compute_api.get_volume_attachment(self.volume_attachment.id)
+            oraclebmc.wait_until(self.compute_api, response, 'lifecycle_state', 'DETACHED')
 
 if __name__ == '__main__':
     unittest.main()

@@ -7,40 +7,41 @@ class TestStreaming(ServiceTestBase):
     """Tests streaming of various types to and from the ObjectStorageApi."""
 
     def setUp(self):
-        self.context = self.create_context()
+        self.config = self.create_config()
+        self.api = oraclebmc.apis.ObjectStorageApi(self.config)
 
         self.bucket_name = tests.util.unique_name('test_python_streaming')
-        self.namespace = self.context.object_storage_api.get_namespace().data
+        self.namespace = self.api.get_namespace().data
 
         request = oraclebmc.models.CreateBucketDetails()
         request.name = self.bucket_name
-        request.compartment_id = self.context.config.tenancy
-        response = self.context.object_storage_api.create_bucket(self.namespace, request)
+        request.compartment_id = self.config.tenancy
+        response = self.api.create_bucket(self.namespace, request)
         self.assertEqual(200, response.status)
 
     def tearDown(self):
         # Delete new objects and bucket
         try:
-            object_list = self.context.object_storage_api.list_objects(self.namespace, self.bucket_name).data
+            object_list = self.api.list_objects(self.namespace, self.bucket_name).data
 
             for summary in object_list.objects:
-                response = self.context.object_storage_api.delete_object(self.namespace, self.bucket_name, summary.name)
+                response = self.api.delete_object(self.namespace, self.bucket_name, summary.name)
                 self.assertEqual(200, response.status)
         except:
             print('TearDown: Could not delete new objects.')
 
         try:
-            self.context.object_storage_api.delete_bucket(self.namespace, self.bucket_name)
+            self.api.delete_bucket(self.namespace, self.bucket_name)
         except:
             print('TearDown: Could not delete new bucket.')
 
     def test_string_object(self):
         name = 'string_1'
         body = 'This is a test string.'
-        response = self.context.object_storage_api.put_object(self.namespace, self.bucket_name, name, body)
+        response = self.api.put_object(self.namespace, self.bucket_name, name, body)
         self.assertEqual(200, response.status)
 
-        response = self.context.object_storage_api.get_object(self.namespace, self.bucket_name, name)
+        response = self.api.get_object(self.namespace, self.bucket_name, name)
         self.assertEqual(200, response.status)
         self.assertEqual(body, response.data.content.decode('UTF-8'))
 
@@ -50,11 +51,11 @@ class TestStreaming(ServiceTestBase):
 
         # Put an object
         with open(test_file, 'r') as file:
-            response = self.context.object_storage_api.put_object(self.namespace, self.bucket_name, name, file)
+            response = self.api.put_object(self.namespace, self.bucket_name, name, file)
         self.assertEqual(200, response.status)
 
         # Get it back
-        response = self.context.object_storage_api.get_object(self.namespace, self.bucket_name, name)
+        response = self.api.get_object(self.namespace, self.bucket_name, name)
         self.assertEqual(200, response.status)
 
         # Stream the file into memory
@@ -74,7 +75,7 @@ class TestStreaming(ServiceTestBase):
             self.assertEquals(file_content, response_text)
 
         # Head
-        response = self.context.object_storage_api.head_object(self.namespace, self.bucket_name, name)
+        response = self.api.head_object(self.namespace, self.bucket_name, name)
         self.assertEqual(200, response.status)
         assert (len(file_content) == int(response.headers['content-length']))
 
@@ -84,11 +85,11 @@ class TestStreaming(ServiceTestBase):
 
         # Put an object
         with open(test_file, 'rb') as file:
-            response = self.context.object_storage_api.put_object(self.namespace, self.bucket_name, name, file)
+            response = self.api.put_object(self.namespace, self.bucket_name, name, file)
         self.assertEqual(200, response.status)
 
         # Get it back
-        response = self.context.object_storage_api.get_object(self.namespace, self.bucket_name, name)
+        response = self.api.get_object(self.namespace, self.bucket_name, name)
         self.assertEqual(200, response.status)
 
         # Stream the file into memory
@@ -108,24 +109,24 @@ class TestStreaming(ServiceTestBase):
             self.assertEquals(file_content, response_data)
 
         # Head
-        response = self.context.object_storage_api.head_object(self.namespace, self.bucket_name, name)
+        response = self.api.head_object(self.namespace, self.bucket_name, name)
         self.assertEqual(200, response.status)
         assert (len(file_content) == int(response.headers['content-length']))
 
     def test_invalid_object_types(self):
         with self.assertRaises(TypeError):
-            self.context.object_storage_api.put_object(self.namespace, self.bucket_name, 'an_int', 24601)
+            self.api.put_object(self.namespace, self.bucket_name, 'an_int', 24601)
 
         with self.assertRaises(TypeError):
-            self.context.object_storage_api.put_object(self.namespace, self.bucket_name, 'a_time', time.time())
+            self.api.put_object(self.namespace, self.bucket_name, 'a_time', time.time())
 
         with self.assertRaises(TypeError):
-            self.context.object_storage_api.put_object(self.namespace, self.bucket_name, 'a_user', oraclebmc.models.User())
+            self.api.put_object(self.namespace, self.bucket_name, 'a_user', oraclebmc.models.User())
 
 
     def test_object_not_found(self):
         with self.assertRaises(oraclebmc.exceptions.ServiceError) as errorContext:
-            self.context.object_storage_api.get_object(self.namespace, self.bucket_name, 'does_not_exist')
+            self.api.get_object(self.namespace, self.bucket_name, 'does_not_exist')
 
         self.assertEqual(404, errorContext.exception.status)
         assert (type(errorContext.exception.data) is oraclebmc.models.Error)
