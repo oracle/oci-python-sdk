@@ -128,9 +128,7 @@ class ApiClient(object):
 
         header_params[constants.HEADER_CLIENT_INFO] = self.build_user_info()
         header_params[constants.HEADER_USER_AGENT] = self.build_user_agent()
-
-        # TODO: Disabling until Object Storage API starts accepting opc-request-id.
-        # header_params[constants.HEADER_REQUEST_ID] = self.build_request_id()
+        header_params[constants.HEADER_REQUEST_ID] = self.build_request_id()
 
         if path_params:
             path_params = self.sanitize_for_serialization(path_params)

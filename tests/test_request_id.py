@@ -9,7 +9,7 @@ class TestRequestId(ServiceTestBase):
         self.assertEqual(200, response.status)
         assert (response.request_id != None)
         self.assertEquals(3, len(response.request_id.split('/')))
-        self.assertEquals(66, len(response.request_id))
+        self.assertEquals(98, len(response.request_id))
 
 '''
 Commenting this out until Casper updates support for request ID.
