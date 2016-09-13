@@ -13,10 +13,10 @@ user=invaliduser
 fingerprint=00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
 
 [INVALID_ENDPOINT_PATH]
-endpoint_identity_api=https://identity.us-az-phoenix-1.OracleIaaS.com/invalid
+endpoint_identity_api=https://identity.us-phoenix-1.oraclecloud.com/invalid
 
 [INVALID_ENDPOINT_HOST]
-endpoint_identity_api=https://identity.us-az-phoenix-999999.OracleIaaS.com/v1
+endpoint_identity_api=https://identity.us-phoenix-999999.oraclecloud.com/v1
 
 [DEBUG]
 log_requests=true
