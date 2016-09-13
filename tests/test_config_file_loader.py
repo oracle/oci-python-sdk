@@ -7,8 +7,8 @@ class TestConfigFileLoader(unittest.TestCase):
         config = oraclebmc.config_file_loader.load_config(file_location='tests/resources/config')
 
         # check some default properties
-        self.assertEqual('https://identity.us-az-phoenix-1.OracleIaaS.com/20160918', config.endpoint_identity_api)
-        self.assertEqual('https://core.us-az-phoenix-1.OracleIaaS.com/20160918', config.endpoint_compute_api)
+        self.assertEqual('https://identity.us-phoenix-1.oraclecloud.com/20160918', config.endpoint_identity_api)
+        self.assertEqual('https://iaas.us-phoenix-1.oraclecloud.com/20160918', config.endpoint_compute_api)
 
         # check properties set in file
         self.assertEqual('ocidv1:user:oc1:phx:1460406592659:aaaaaaaawcbqrkycbolrirg2n3xjl5fyxe', config.user)
@@ -20,7 +20,7 @@ class TestConfigFileLoader(unittest.TestCase):
         config = oraclebmc.config_file_loader.load_config(file_location='tests/resources/config', profile_name='DEBUG')
 
         # check some default properties
-        self.assertEqual('https://identity.us-az-phoenix-1.OracleIaaS.com/20160918', config.endpoint_identity_api)
+        self.assertEqual('https://identity.us-phoenix-1.oraclecloud.com/20160918', config.endpoint_identity_api)
 
         # check properties inherited from the default profile
         self.assertEqual('ocidv1:user:oc1:phx:1460406592659:aaaaaaaawcbqrkycbolrirg2n3xjl5fyxe', config.user)
@@ -36,8 +36,8 @@ class TestConfigFileLoader(unittest.TestCase):
         config = oraclebmc.config_file_loader.load_config(file_location='tests/resources/config', profile_name='INVALID_PARAMETER')
 
         # check some default properties
-        self.assertEqual('https://identity.us-az-phoenix-1.OracleIaaS.com/20160918', config.endpoint_identity_api)
-        self.assertEqual('https://core.us-az-phoenix-1.OracleIaaS.com/20160918', config.endpoint_compute_api)
+        self.assertEqual('https://identity.us-phoenix-1.oraclecloud.com/20160918', config.endpoint_identity_api)
+        self.assertEqual('https://iaas.us-phoenix-1.oraclecloud.com/20160918', config.endpoint_compute_api)
 
         # check properties set in file
         self.assertEqual('ocidv1:user:oc1:phx:1460406592659:aaaaaaaawcbqrkycbolrirg2n3xjl5fyxe', config.user)
