@@ -2,6 +2,7 @@ target/
 abandoned/
 .classpath
 .project
+.python-version
 .settings
 .DS_Store
 .idea/
