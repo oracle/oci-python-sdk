@@ -4,6 +4,8 @@ import hashlib
 
 import httpsig.requests_auth
 import requests
+import six
+
 
 class Signer(requests.auth.AuthBase):
     """A requests auth instance that can be reused across requests"""
@@ -15,7 +17,8 @@ class Signer(requests.auth.AuthBase):
 
         generic_headers = [
             "date",
-            "(request-target)"
+            "(request-target)",
+            "host"
         ]
         body_headers = [
             "content-length",
@@ -23,20 +26,25 @@ class Signer(requests.auth.AuthBase):
             "x-content-sha256",
         ]
 
-        self._basic_signer = httpsig.sign.HeaderSigner(key_id=self.api_key,
-                                                     secret=self.private_key,
-                                                     algorithm="rsa-sha256",
-                                                     headers=generic_headers)
+        self._basic_signer = httpsig.sign.HeaderSigner(
+            key_id=self.api_key,
+            secret=self.private_key,
+            algorithm="rsa-sha256",
+            headers=generic_headers)
 
-        self._body_signer = httpsig.sign.HeaderSigner(key_id=self.api_key,
-                                                     secret=self.private_key,
-                                                     algorithm="rsa-sha256",
-                                                     headers=generic_headers + body_headers)
+        self._body_signer = httpsig.sign.HeaderSigner(
+            key_id=self.api_key,
+            secret=self.private_key,
+            algorithm="rsa-sha256",
+            headers=generic_headers + body_headers)
 
     def inject_missing_headers(self, request, sign_body, enforce_content_headers):
-        # Inject date and content-type if missing
+        # Inject date, host, and content-type if missing
         request.headers.setdefault(
             "date", email.utils.formatdate(usegmt=True))
+
+        request.headers.setdefault(
+            "host", six.moves.urllib.parse.urlparse(request.url).netloc)
 
         if enforce_content_headers:
             request.headers.setdefault("content-type", "application/json")
@@ -77,6 +85,7 @@ class Signer(requests.auth.AuthBase):
 
         signed_headers = signer.sign(
             request.headers,
+            host=six.moves.urllib.parse.urlparse(request.url).netloc,
             method=request.method,
             path=request.path_url)
 
