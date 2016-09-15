@@ -4,6 +4,8 @@ import hashlib
 
 import httpsig.requests_auth
 import requests
+import six
+
 
 class Signer(requests.auth.AuthBase):
     """A requests auth instance that can be reused across requests"""
