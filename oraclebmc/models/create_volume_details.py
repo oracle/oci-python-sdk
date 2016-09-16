@@ -117,7 +117,7 @@ class CreateVolumeDetails(object):
     def volume_backup_id(self):
         """
         Gets the volume_backup_id of this CreateVolumeDetails.
-        Id of the volumeBackup from which the data should be restored on the newly created volume.\n
+        The ID of the volume backup from which the data should be restored on the newly created volume.\n
 
         :return: The volume_backup_id of this CreateVolumeDetails.
         :rtype: str
@@ -128,7 +128,7 @@ class CreateVolumeDetails(object):
     def volume_backup_id(self, volume_backup_id):
         """
         Sets the volume_backup_id of this CreateVolumeDetails.
-        Id of the volumeBackup from which the data should be restored on the newly created volume.\n
+        The ID of the volume backup from which the data should be restored on the newly created volume.\n
 
         :param volume_backup_id: The volume_backup_id of this CreateVolumeDetails.
         :type: str

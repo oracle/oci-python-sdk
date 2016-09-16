@@ -101,7 +101,7 @@ class TunnelStatus(object):
     def time_created(self):
         """
         Gets the time_created of this TunnelStatus.
-        The date and time the IPsec connection was created.
+        The date and time the IPSec connection was created.
 
         :return: The time_created of this TunnelStatus.
         :rtype: datetime
@@ -112,7 +112,7 @@ class TunnelStatus(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this TunnelStatus.
-        The date and time the IPsec connection was created.
+        The date and time the IPSec connection was created.
 
         :param time_created: The time_created of this TunnelStatus.
         :type: datetime

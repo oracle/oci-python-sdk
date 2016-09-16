@@ -42,7 +42,7 @@ class UpdateImageDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateImageDetails.
-        The non-unique, changeable name of the image.
+        The non-unique, changeable name of the image.\n\nExample: `My custom Oracle Linux image`\n
 
         :return: The display_name of this UpdateImageDetails.
         :rtype: str
@@ -53,7 +53,7 @@ class UpdateImageDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateImageDetails.
-        The non-unique, changeable name of the image.
+        The non-unique, changeable name of the image.\n\nExample: `My custom Oracle Linux image`\n
 
         :param display_name: The display_name of this UpdateImageDetails.
         :type: str

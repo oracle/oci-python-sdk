@@ -98,7 +98,7 @@ class CreatePolicyDetails(object):
     def statements(self):
         """
         Gets the statements of this CreatePolicyDetails.
-        An array of policy statements written in the policy language. See\n[Policies](../../../#Identity/Concepts/policies.htm).\n
+        An array of policy statements written in the policy language. See\n[Policies](/Content/Identity/Concepts/policies.htm).\n
 
         :return: The statements of this CreatePolicyDetails.
         :rtype: list[str]
@@ -109,7 +109,7 @@ class CreatePolicyDetails(object):
     def statements(self, statements):
         """
         Sets the statements of this CreatePolicyDetails.
-        An array of policy statements written in the policy language. See\n[Policies](../../../#Identity/Concepts/policies.htm).\n
+        An array of policy statements written in the policy language. See\n[Policies](/Content/Identity/Concepts/policies.htm).\n
 
         :param statements: The statements of this CreatePolicyDetails.
         :type: list[str]

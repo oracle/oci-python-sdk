@@ -63,7 +63,7 @@ class IPSecConnection(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this IPSecConnection.
-        The OCID of the compartment containing the IPsec connection.
+        The OCID of the compartment containing the IPSec connection.
 
         :return: The compartment_id of this IPSecConnection.
         :rtype: str
@@ -74,7 +74,7 @@ class IPSecConnection(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this IPSecConnection.
-        The OCID of the compartment containing the IPsec connection.
+        The OCID of the compartment containing the IPSec connection.
 
         :param compartment_id: The compartment_id of this IPSecConnection.
         :type: str
@@ -151,7 +151,7 @@ class IPSecConnection(object):
     def id(self):
         """
         Gets the id of this IPSecConnection.
-        The IPsec connection's Oracle ID (OCID).
+        The IPSec connection's Oracle ID (OCID).
 
         :return: The id of this IPSecConnection.
         :rtype: str
@@ -162,7 +162,7 @@ class IPSecConnection(object):
     def id(self, id):
         """
         Sets the id of this IPSecConnection.
-        The IPsec connection's Oracle ID (OCID).
+        The IPSec connection's Oracle ID (OCID).
 
         :param id: The id of this IPSecConnection.
         :type: str
@@ -173,7 +173,7 @@ class IPSecConnection(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this IPSecConnection.
-        The IPsec connection's current state.
+        The IPSec connection's current state.
 
         :return: The lifecycle_state of this IPSecConnection.
         :rtype: str
@@ -184,7 +184,7 @@ class IPSecConnection(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this IPSecConnection.
-        The IPsec connection's current state.
+        The IPSec connection's current state.
 
         :param lifecycle_state: The lifecycle_state of this IPSecConnection.
         :type: str
@@ -223,7 +223,7 @@ class IPSecConnection(object):
     def time_created(self):
         """
         Gets the time_created of this IPSecConnection.
-        The date and time the IPsec connection was created.
+        The date and time the IPSec connection was created.
 
         :return: The time_created of this IPSecConnection.
         :rtype: datetime
@@ -234,7 +234,7 @@ class IPSecConnection(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this IPSecConnection.
-        The date and time the IPsec connection was created.
+        The date and time the IPSec connection was created.
 
         :param time_created: The time_created of this IPSecConnection.
         :type: datetime

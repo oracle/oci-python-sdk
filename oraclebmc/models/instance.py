@@ -69,7 +69,7 @@ class Instance(object):
     def availability_domain(self):
         """
         Gets the availability_domain of this Instance.
-        The Availability Domain the instance is running in.
+        The Availability Domain the instance is running in.\n\nExample: `Uocm:PHX-AD-1`\n
 
         :return: The availability_domain of this Instance.
         :rtype: str
@@ -80,7 +80,7 @@ class Instance(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this Instance.
-        The Availability Domain the instance is running in.
+        The Availability Domain the instance is running in.\n\nExample: `Uocm:PHX-AD-1`\n
 
         :param availability_domain: The availability_domain of this Instance.
         :type: str
@@ -113,7 +113,7 @@ class Instance(object):
     def display_name(self):
         """
         Gets the display_name of this Instance.
-        A user-friendly name. Does not have to be unique, and it's changeable.\n
+        A user-friendly name. Does not have to be unique, and it's changeable.\n\nExample: `My bare metal instance`\n
 
         :return: The display_name of this Instance.
         :rtype: str
@@ -124,7 +124,7 @@ class Instance(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Instance.
-        A user-friendly name. Does not have to be unique, and it's changeable.\n
+        A user-friendly name. Does not have to be unique, and it's changeable.\n\nExample: `My bare metal instance`\n
 
         :param display_name: The display_name of this Instance.
         :type: str
@@ -157,7 +157,7 @@ class Instance(object):
     def image_id(self):
         """
         Gets the image_id of this Instance.
-        The image used to boot the instance. You may enumerate all available images by calling\n[ListImages](#/en/core/20160918/Image/ListImages).\n
+        The image used to boot the instance. You can enumerate all available images by calling\n[ListImages](#/en/iaas/20160918/Image/ListImages).\n
 
         :return: The image_id of this Instance.
         :rtype: str
@@ -168,7 +168,7 @@ class Instance(object):
     def image_id(self, image_id):
         """
         Sets the image_id of this Instance.
-        The image used to boot the instance. You may enumerate all available images by calling\n[ListImages](#/en/core/20160918/Image/ListImages).\n
+        The image used to boot the instance. You can enumerate all available images by calling\n[ListImages](#/en/iaas/20160918/Image/ListImages).\n
 
         :param image_id: The image_id of this Instance.
         :type: str
@@ -229,7 +229,7 @@ class Instance(object):
     def region(self):
         """
         Gets the region of this Instance.
-        The region that contains the Availability Domain the instance is running in.
+        The region that contains the Availability Domain the instance is running in.\n\nExample: `phx`\n
 
         :return: The region of this Instance.
         :rtype: str
@@ -240,7 +240,7 @@ class Instance(object):
     def region(self, region):
         """
         Sets the region of this Instance.
-        The region that contains the Availability Domain the instance is running in.
+        The region that contains the Availability Domain the instance is running in.\n\nExample: `phx`\n
 
         :param region: The region of this Instance.
         :type: str
@@ -251,7 +251,7 @@ class Instance(object):
     def shape(self):
         """
         Gets the shape of this Instance.
-        The shape of the instance. The shape determines the number of CPUs and the amount of memory allocated to the instance.
+        The shape of the instance. The shape determines the number of CPUs and the amount of memory\nallocated to the instance. You can enumerate all available shapes by calling\n[ListShapes](#/en/iaas/20160918/Shape/ListShapes).\n
 
         :return: The shape of this Instance.
         :rtype: str
@@ -262,7 +262,7 @@ class Instance(object):
     def shape(self, shape):
         """
         Sets the shape of this Instance.
-        The shape of the instance. The shape determines the number of CPUs and the amount of memory allocated to the instance.
+        The shape of the instance. The shape determines the number of CPUs and the amount of memory\nallocated to the instance. You can enumerate all available shapes by calling\n[ListShapes](#/en/iaas/20160918/Shape/ListShapes).\n
 
         :param shape: The shape of this Instance.
         :type: str
@@ -273,7 +273,7 @@ class Instance(object):
     def time_created(self):
         """
         Gets the time_created of this Instance.
-        The date and time the instance was created.
+        The date and time the instance was created, in the format defined by RFC3339.\n\nExample: `2016-08-25T21:10:29.600Z`\n
 
         :return: The time_created of this Instance.
         :rtype: datetime
@@ -284,7 +284,7 @@ class Instance(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Instance.
-        The date and time the instance was created.
+        The date and time the instance was created, in the format defined by RFC3339.\n\nExample: `2016-08-25T21:10:29.600Z`\n
 
         :param time_created: The time_created of this Instance.
         :type: datetime

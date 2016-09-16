@@ -176,7 +176,7 @@ class Volume(object):
     def size_in_m_bs(self):
         """
         Gets the size_in_m_bs of this Volume.
-        The size of the volume in MBs.
+        The size of the volume, in MBs.
 
         :return: The size_in_m_bs of this Volume.
         :rtype: int
@@ -187,7 +187,7 @@ class Volume(object):
     def size_in_m_bs(self, size_in_m_bs):
         """
         Sets the size_in_m_bs of this Volume.
-        The size of the volume in MBs.
+        The size of the volume, in MBs.
 
         :param size_in_m_bs: The size_in_m_bs of this Volume.
         :type: int

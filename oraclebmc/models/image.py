@@ -132,7 +132,7 @@ class Image(object):
     def display_name(self):
         """
         Gets the display_name of this Image.
-        A user-friendly name for the image. It does not have to be unique, and it's changeable.\nYou cannot use an Oracle-provided image name as a custom image name.\n\nExample: `My custom Oracle Linux 7.1 image`\n
+        A user-friendly name for the image. It does not have to be unique, and it's changeable.\nYou cannot use an Oracle-provided image name as a custom image name.\n\nExample: `My custom Oracle Linux image`\n
 
         :return: The display_name of this Image.
         :rtype: str
@@ -143,7 +143,7 @@ class Image(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Image.
-        A user-friendly name for the image. It does not have to be unique, and it's changeable.\nYou cannot use an Oracle-provided image name as a custom image name.\n\nExample: `My custom Oracle Linux 7.1 image`\n
+        A user-friendly name for the image. It does not have to be unique, and it's changeable.\nYou cannot use an Oracle-provided image name as a custom image name.\n\nExample: `My custom Oracle Linux image`\n
 
         :param display_name: The display_name of this Image.
         :type: str
@@ -226,7 +226,7 @@ class Image(object):
     def operating_system_version(self):
         """
         Gets the operating_system_version of this Image.
-        The image's operating system version.\n\nExample: `7.1`\n
+        The image's operating system version.\n\nExample: `7.2`\n
 
         :return: The operating_system_version of this Image.
         :rtype: str
@@ -237,7 +237,7 @@ class Image(object):
     def operating_system_version(self, operating_system_version):
         """
         Sets the operating_system_version of this Image.
-        The image's operating system version.\n\nExample: `7.1`\n
+        The image's operating system version.\n\nExample: `7.2`\n
 
         :param operating_system_version: The operating_system_version of this Image.
         :type: str
@@ -248,7 +248,7 @@ class Image(object):
     def time_created(self):
         """
         Gets the time_created of this Image.
-        The date and time the image was created, in the format defined by RFC3339.\n\nExample: `2016-07-22T17:43:01.389+0000`\n
+        The date and time the image was created, in the format defined by RFC3339.\n\nExample: `2016-08-25T21:10:29.600Z`\n
 
         :return: The time_created of this Image.
         :rtype: datetime
@@ -259,7 +259,7 @@ class Image(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Image.
-        The date and time the image was created, in the format defined by RFC3339.\n\nExample: `2016-07-22T17:43:01.389+0000`\n
+        The date and time the image was created, in the format defined by RFC3339.\n\nExample: `2016-08-25T21:10:29.600Z`\n
 
         :param time_created: The time_created of this Image.
         :type: datetime

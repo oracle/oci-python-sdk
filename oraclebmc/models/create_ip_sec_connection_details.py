@@ -54,7 +54,7 @@ class CreateIPSecConnectionDetails(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this CreateIPSecConnectionDetails.
-        The OCID of the compartment to contain the IPsec connection.
+        The OCID of the compartment to contain the IPSec connection.
 
         :return: The compartment_id of this CreateIPSecConnectionDetails.
         :rtype: str
@@ -65,7 +65,7 @@ class CreateIPSecConnectionDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateIPSecConnectionDetails.
-        The OCID of the compartment to contain the IPsec connection.
+        The OCID of the compartment to contain the IPSec connection.
 
         :param compartment_id: The compartment_id of this CreateIPSecConnectionDetails.
         :type: str

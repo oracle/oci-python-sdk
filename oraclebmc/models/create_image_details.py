@@ -70,7 +70,7 @@ class CreateImageDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateImageDetails.
-        A user-friendly name for the image. It does not have to be unique, and it's changeable. You cannot use an\nOracle-provided image name as a custom image name.\n\nExample: `My Oracle Linux 7.1 image`\n
+        A user-friendly name for the image. It does not have to be unique, and it's changeable. You cannot use an\nOracle-provided image name as a custom image name.\n\nExample: `My Oracle Linux image`\n
 
         :return: The display_name of this CreateImageDetails.
         :rtype: str
@@ -81,7 +81,7 @@ class CreateImageDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateImageDetails.
-        A user-friendly name for the image. It does not have to be unique, and it's changeable. You cannot use an\nOracle-provided image name as a custom image name.\n\nExample: `My Oracle Linux 7.1 image`\n
+        A user-friendly name for the image. It does not have to be unique, and it's changeable. You cannot use an\nOracle-provided image name as a custom image name.\n\nExample: `My Oracle Linux image`\n
 
         :param display_name: The display_name of this CreateImageDetails.
         :type: str

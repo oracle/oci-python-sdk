@@ -70,7 +70,7 @@ class TunnelConfig(object):
     def shared_secret(self):
         """
         Gets the shared_secret of this TunnelConfig.
-        The shared secret of the IPsec tunnel.
+        The shared secret of the IPSec tunnel.
 
         :return: The shared_secret of this TunnelConfig.
         :rtype: str
@@ -81,7 +81,7 @@ class TunnelConfig(object):
     def shared_secret(self, shared_secret):
         """
         Sets the shared_secret of this TunnelConfig.
-        The shared secret of the IPsec tunnel.
+        The shared secret of the IPSec tunnel.
 
         :param shared_secret: The shared_secret of this TunnelConfig.
         :type: str
@@ -92,7 +92,7 @@ class TunnelConfig(object):
     def time_created(self):
         """
         Gets the time_created of this TunnelConfig.
-        The date and time the IPsec connection was created.
+        The date and time the IPSec connection was created.
 
         :return: The time_created of this TunnelConfig.
         :rtype: datetime
@@ -103,7 +103,7 @@ class TunnelConfig(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this TunnelConfig.
-        The date and time the IPsec connection was created.
+        The date and time the IPSec connection was created.
 
         :param time_created: The time_created of this TunnelConfig.
         :type: datetime

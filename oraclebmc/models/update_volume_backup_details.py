@@ -42,7 +42,7 @@ class UpdateVolumeBackupDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateVolumeBackupDetails.
-        A friendly user-specified name for the volumeBackup.
+        A friendly user-specified name for the volume backup.
 
         :return: The display_name of this UpdateVolumeBackupDetails.
         :rtype: str
@@ -53,7 +53,7 @@ class UpdateVolumeBackupDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateVolumeBackupDetails.
-        A friendly user-specified name for the volumeBackup.
+        A friendly user-specified name for the volume backup.
 
         :param display_name: The display_name of this UpdateVolumeBackupDetails.
         :type: str
