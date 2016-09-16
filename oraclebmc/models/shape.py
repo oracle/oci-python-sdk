@@ -42,7 +42,7 @@ class Shape(object):
     def shape(self):
         """
         Gets the shape of this Shape.
-        The name of the shape
+        The name of the shape. You can enumerate all available shapes by calling\n[ListShapes](#/en/iaas/20160918/Shape/ListShapes).\n
 
         :return: The shape of this Shape.
         :rtype: str
@@ -53,7 +53,7 @@ class Shape(object):
     def shape(self, shape):
         """
         Sets the shape of this Shape.
-        The name of the shape
+        The name of the shape. You can enumerate all available shapes by calling\n[ListShapes](#/en/iaas/20160918/Shape/ListShapes).\n
 
         :param shape: The shape of this Shape.
         :type: str

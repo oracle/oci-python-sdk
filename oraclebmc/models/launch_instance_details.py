@@ -33,6 +33,7 @@ class LaunchInstanceDetails(object):
             'display_name': 'str',
             'image_id': 'str',
             'metadata': 'dict(str, str)',
+            'opc_ipxe_script': 'str',
             'shape': 'str',
             'subnet_id': 'str'
         }
@@ -43,6 +44,7 @@ class LaunchInstanceDetails(object):
             'display_name': 'displayName',
             'image_id': 'imageId',
             'metadata': 'metadata',
+            'opc_ipxe_script': 'opcIpxeScript',
             'shape': 'shape',
             'subnet_id': 'subnetId'
         }
@@ -52,6 +54,7 @@ class LaunchInstanceDetails(object):
         self._display_name = None
         self._image_id = None
         self._metadata = None
+        self._opc_ipxe_script = None
         self._shape = None
         self._subnet_id = None
 
@@ -60,7 +63,7 @@ class LaunchInstanceDetails(object):
     def availability_domain(self):
         """
         Gets the availability_domain of this LaunchInstanceDetails.
-        The Availability Domain of an instance.
+        The Availability Domain of the instance.\n\nExample: `Uocm:PHX-AD-1`\n
 
         :return: The availability_domain of this LaunchInstanceDetails.
         :rtype: str
@@ -71,7 +74,7 @@ class LaunchInstanceDetails(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this LaunchInstanceDetails.
-        The Availability Domain of an instance.
+        The Availability Domain of the instance.\n\nExample: `Uocm:PHX-AD-1`\n
 
         :param availability_domain: The availability_domain of this LaunchInstanceDetails.
         :type: str
@@ -104,7 +107,7 @@ class LaunchInstanceDetails(object):
     def display_name(self):
         """
         Gets the display_name of this LaunchInstanceDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable.\n
+        A user-friendly name. Does not have to be unique, and it's changeable.\n\nExample: `My bare metal instance`\n
 
         :return: The display_name of this LaunchInstanceDetails.
         :rtype: str
@@ -115,7 +118,7 @@ class LaunchInstanceDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this LaunchInstanceDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable.\n
+        A user-friendly name. Does not have to be unique, and it's changeable.\n\nExample: `My bare metal instance`\n
 
         :param display_name: The display_name of this LaunchInstanceDetails.
         :type: str
@@ -167,10 +170,32 @@ class LaunchInstanceDetails(object):
         self._metadata = metadata
 
     @property
+    def opc_ipxe_script(self):
+        """
+        Gets the opc_ipxe_script of this LaunchInstanceDetails.
+        For Oracle internal use only.
+
+        :return: The opc_ipxe_script of this LaunchInstanceDetails.
+        :rtype: str
+        """
+        return self._opc_ipxe_script
+
+    @opc_ipxe_script.setter
+    def opc_ipxe_script(self, opc_ipxe_script):
+        """
+        Sets the opc_ipxe_script of this LaunchInstanceDetails.
+        For Oracle internal use only.
+
+        :param opc_ipxe_script: The opc_ipxe_script of this LaunchInstanceDetails.
+        :type: str
+        """
+        self._opc_ipxe_script = opc_ipxe_script
+
+    @property
     def shape(self):
         """
         Gets the shape of this LaunchInstanceDetails.
-        The shape of an instance. The shape determines the number of CPUs, amount of memory,\nand other resources allocated to the instance.\n\nYou may enumerate all available shapes by calling [ListShapes](#/en/core/20160918/Shape/ListShapes).\n
+        The shape of an instance. The shape determines the number of CPUs, amount of memory,\nand other resources allocated to the instance.\n\nYou can enumerate all available shapes by calling [ListShapes](#/en/iaas/20160918/Shape/ListShapes).\n
 
         :return: The shape of this LaunchInstanceDetails.
         :rtype: str
@@ -181,7 +206,7 @@ class LaunchInstanceDetails(object):
     def shape(self, shape):
         """
         Sets the shape of this LaunchInstanceDetails.
-        The shape of an instance. The shape determines the number of CPUs, amount of memory,\nand other resources allocated to the instance.\n\nYou may enumerate all available shapes by calling [ListShapes](#/en/core/20160918/Shape/ListShapes).\n
+        The shape of an instance. The shape determines the number of CPUs, amount of memory,\nand other resources allocated to the instance.\n\nYou can enumerate all available shapes by calling [ListShapes](#/en/iaas/20160918/Shape/ListShapes).\n
 
         :param shape: The shape of this LaunchInstanceDetails.
         :type: str

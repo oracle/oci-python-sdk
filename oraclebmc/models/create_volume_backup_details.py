@@ -45,7 +45,7 @@ class CreateVolumeBackupDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateVolumeBackupDetails.
-        A user-friendly name for the volumeBackup. Does not have to be unique and it's changeable.
+        A user-friendly name for the volume backup. Does not have to be unique and it's changeable.
 
         :return: The display_name of this CreateVolumeBackupDetails.
         :rtype: str
@@ -56,7 +56,7 @@ class CreateVolumeBackupDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateVolumeBackupDetails.
-        A user-friendly name for the volumeBackup. Does not have to be unique and it's changeable.
+        A user-friendly name for the volume backup. Does not have to be unique and it's changeable.
 
         :param display_name: The display_name of this CreateVolumeBackupDetails.
         :type: str
@@ -67,7 +67,7 @@ class CreateVolumeBackupDetails(object):
     def volume_id(self):
         """
         Gets the volume_id of this CreateVolumeBackupDetails.
-        The OCID of the volume that needs to be backed-up.
+        The OCID of the volume that needs to be backed up.
 
         :return: The volume_id of this CreateVolumeBackupDetails.
         :rtype: str
@@ -78,7 +78,7 @@ class CreateVolumeBackupDetails(object):
     def volume_id(self, volume_id):
         """
         Sets the volume_id of this CreateVolumeBackupDetails.
-        The OCID of the volume that needs to be backed-up.
+        The OCID of the volume that needs to be backed up.
 
         :param volume_id: The volume_id of this CreateVolumeBackupDetails.
         :type: str

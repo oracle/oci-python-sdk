@@ -70,7 +70,7 @@ class UpdatePolicyDetails(object):
     def statements(self):
         """
         Gets the statements of this UpdatePolicyDetails.
-        An array of policy statements written in the policy language. See\n[Policies](../../../#Identity/Concepts/policies.htm).\n
+        An array of policy statements written in the policy language. See\n[Policies](/Content/Identity/Concepts/policies.htm).\n
 
         :return: The statements of this UpdatePolicyDetails.
         :rtype: list[str]
@@ -81,7 +81,7 @@ class UpdatePolicyDetails(object):
     def statements(self, statements):
         """
         Sets the statements of this UpdatePolicyDetails.
-        An array of policy statements written in the policy language. See\n[Policies](../../../#Identity/Concepts/policies.htm).\n
+        An array of policy statements written in the policy language. See\n[Policies](/Content/Identity/Concepts/policies.htm).\n
 
         :param statements: The statements of this UpdatePolicyDetails.
         :type: list[str]

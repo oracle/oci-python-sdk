@@ -66,7 +66,7 @@ class VolumeBackup(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this VolumeBackup.
-        The OCID of the compartment that contains the volumeBackup.
+        The OCID of the compartment that contains the volume backup.
 
         :return: The compartment_id of this VolumeBackup.
         :rtype: str
@@ -77,7 +77,7 @@ class VolumeBackup(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this VolumeBackup.
-        The OCID of the compartment that contains the volumeBackup.
+        The OCID of the compartment that contains the volume backup.
 
         :param compartment_id: The compartment_id of this VolumeBackup.
         :type: str
@@ -88,7 +88,7 @@ class VolumeBackup(object):
     def display_name(self):
         """
         Gets the display_name of this VolumeBackup.
-        A user-friendly name for the volumeBackup. Does not have to be unique and it's changeable.
+        A user-friendly name for the volume backup. Does not have to be unique and it's changeable.
 
         :return: The display_name of this VolumeBackup.
         :rtype: str
@@ -99,7 +99,7 @@ class VolumeBackup(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this VolumeBackup.
-        A user-friendly name for the volumeBackup. Does not have to be unique and it's changeable.
+        A user-friendly name for the volume backup. Does not have to be unique and it's changeable.
 
         :param display_name: The display_name of this VolumeBackup.
         :type: str
@@ -110,7 +110,7 @@ class VolumeBackup(object):
     def id(self):
         """
         Gets the id of this VolumeBackup.
-        The Oracle Cloud ID (OCID) that uniquely identifies the volumeBackup.
+        The Oracle Cloud ID (OCID) that uniquely identifies the volume backup.
 
         :return: The id of this VolumeBackup.
         :rtype: str
@@ -121,7 +121,7 @@ class VolumeBackup(object):
     def id(self, id):
         """
         Sets the id of this VolumeBackup.
-        The Oracle Cloud ID (OCID) that uniquely identifies the volumeBackup.
+        The Oracle Cloud ID (OCID) that uniquely identifies the volume backup.
 
         :param id: The id of this VolumeBackup.
         :type: str
@@ -132,7 +132,7 @@ class VolumeBackup(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this VolumeBackup.
-        The current state of a volumeBackup.
+        The current state of a volume backup.
 
         :return: The lifecycle_state of this VolumeBackup.
         :rtype: str
@@ -143,7 +143,7 @@ class VolumeBackup(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this VolumeBackup.
-        The current state of a volumeBackup.
+        The current state of a volume backup.
 
         :param lifecycle_state: The lifecycle_state of this VolumeBackup.
         :type: str
@@ -160,7 +160,7 @@ class VolumeBackup(object):
     def size_in_m_bs(self):
         """
         Gets the size_in_m_bs of this VolumeBackup.
-        The size of the volumeBackup in MBs.
+        The size of the volume, in MBs.\n
 
         :return: The size_in_m_bs of this VolumeBackup.
         :rtype: int
@@ -171,7 +171,7 @@ class VolumeBackup(object):
     def size_in_m_bs(self, size_in_m_bs):
         """
         Sets the size_in_m_bs of this VolumeBackup.
-        The size of the volumeBackup in MBs.
+        The size of the volume, in MBs.\n
 
         :param size_in_m_bs: The size_in_m_bs of this VolumeBackup.
         :type: int
@@ -182,7 +182,7 @@ class VolumeBackup(object):
     def time_created(self):
         """
         Gets the time_created of this VolumeBackup.
-        The date and time the volumeBackup was created. This is the time actual snapshot of the volume\ndata was taken. Format defined by RFC3339.\n
+        The date and time the volume backup was created. This is the time the actual point-in-time image\nof the volume data was taken. Format defined by RFC3339.\n
 
         :return: The time_created of this VolumeBackup.
         :rtype: datetime
@@ -193,7 +193,7 @@ class VolumeBackup(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this VolumeBackup.
-        The date and time the volumeBackup was created. This is the time actual snapshot of the volume\ndata was taken. Format defined by RFC3339.\n
+        The date and time the volume backup was created. This is the time the actual point-in-time image\nof the volume data was taken. Format defined by RFC3339.\n
 
         :param time_created: The time_created of this VolumeBackup.
         :type: datetime
@@ -204,7 +204,7 @@ class VolumeBackup(object):
     def time_request_received(self):
         """
         Gets the time_request_received of this VolumeBackup.
-        The date and time the request for creating volumeBackup was received. Format defined by RFC3339.
+        The date and time the request to create the volume backup was received. Format defined by RFC3339.\n
 
         :return: The time_request_received of this VolumeBackup.
         :rtype: datetime
@@ -215,7 +215,7 @@ class VolumeBackup(object):
     def time_request_received(self, time_request_received):
         """
         Sets the time_request_received of this VolumeBackup.
-        The date and time the request for creating volumeBackup was received. Format defined by RFC3339.
+        The date and time the request to create the volume backup was received. Format defined by RFC3339.\n
 
         :param time_request_received: The time_request_received of this VolumeBackup.
         :type: datetime
@@ -226,7 +226,7 @@ class VolumeBackup(object):
     def unique_size_in_mbs(self):
         """
         Gets the unique_size_in_mbs of this VolumeBackup.
-        The size of the volumeBackup volume in MBs.
+        The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space\nconsumed on the volume and whether the backup is full or incremental.\n
 
         :return: The unique_size_in_mbs of this VolumeBackup.
         :rtype: int
@@ -237,7 +237,7 @@ class VolumeBackup(object):
     def unique_size_in_mbs(self, unique_size_in_mbs):
         """
         Sets the unique_size_in_mbs of this VolumeBackup.
-        The size of the volumeBackup volume in MBs.
+        The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space\nconsumed on the volume and whether the backup is full or incremental.\n
 
         :param unique_size_in_mbs: The unique_size_in_mbs of this VolumeBackup.
         :type: int

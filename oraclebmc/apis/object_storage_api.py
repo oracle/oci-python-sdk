@@ -39,7 +39,7 @@ class ObjectStorageApi(object):
     def create_bucket(self, namespace_name, create_bucket_details, **kwargs):
         """
         CreateBucket
-        Create a bucket in the given namespace with a bucket name and optional user-defined metadata.\n
+        Creates a bucket in the given namespace with a bucket name and optional user-defined metadata.\n\nTo use this and other API operations, you must be authorized in an IAM policy. If you're not authorized, \ntalk to an administrator. If you're an admin who needs to write policies to give users access, see \n[Getting Started with Policies](/Content/Identity/Concepts/policygetstarted.htm).\n
 
         :param str namespace_name: The top-level namespace used for the request. (required)
         :param CreateBucketDetails create_bucket_details: Request object for creating a bucket. (required)
@@ -97,7 +97,7 @@ class ObjectStorageApi(object):
     def delete_bucket(self, namespace_name, bucket_name, **kwargs):
         """
         DeleteBucket
-        Delete a bucket if it is already empty.\n
+        Deletes a bucket if it is already empty. If the bucket is not empty, use DeleteBucket first.\n
 
         :param str namespace_name: The top-level namespace used for the request. (required)
         :param str bucket_name: The name of the bucket. (required)
@@ -225,7 +225,7 @@ class ObjectStorageApi(object):
     def get_bucket(self, namespace_name, bucket_name, **kwargs):
         """
         GetBucket
-        Get the current representation of the given bucket in the given namespace.\n
+        Gets the current representation of the given bucket in the given namespace.\n
 
         :param str namespace_name: The top-level namespace used for the request. (required)
         :param str bucket_name: The name of the bucket. (required)
@@ -335,7 +335,7 @@ class ObjectStorageApi(object):
     def get_object(self, namespace_name, bucket_name, object_name, **kwargs):
         """
         GetObject
-        Get the metadata and body of an object.\n
+        Gets the metadata and body of an object.\n
 
         :param str namespace_name: The top-level namespace used for the request. (required)
         :param str bucket_name: The name of the bucket. (required)
@@ -343,7 +343,7 @@ class ObjectStorageApi(object):
         :param str if_match: The entity tag to match.
         :param str if_none_match: The entity tag to avoid matching.
         :param str opc_client_request_id: The client request ID for tracing
-        :param str range: Optional byte range to fetch, follows https://tools.ietf.org/html/rfc7233#section-2.1. Note, only one byte range is supported.
+        :param str range: Optional byte range to fetch. Follows https://tools.ietf.org/html/rfc7233#section-2.1. Note, only one byte range is supported.
         :return: A Response object with data of type stream
         """
 
@@ -408,7 +408,7 @@ class ObjectStorageApi(object):
     def head_object(self, namespace_name, bucket_name, object_name, **kwargs):
         """
         HeadObject
-        Get the user-defined metadata and entity tag for an object.\n
+        Gets the user-defined metadata and entity tag for an object.\n
 
         :param str namespace_name: The top-level namespace used for the request. (required)
         :param str bucket_name: The name of the bucket. (required)
@@ -478,7 +478,7 @@ class ObjectStorageApi(object):
     def list_buckets(self, namespace_name, compartment_id, **kwargs):
         """
         ListBuckets
-        Get a list of all the buckets in a namespace.\n
+        Gets a list of all the `Bucket`s in a namespace.\n\nTo use this and other API operations, you must be authorized in an IAM policy. If you're not authorized, \ntalk to an administrator. If you're an admin who needs to write policies to give users access, see \n[Getting Started with Policies](/Content/Identity/Concepts/policygetstarted.htm).\n
 
         :param str namespace_name: The top-level namespace used for the request. (required)
         :param str compartment_id: The compartment ID in which to create the bucket. (required)
@@ -542,7 +542,7 @@ class ObjectStorageApi(object):
     def list_objects(self, namespace_name, bucket_name, **kwargs):
         """
         ListObjects
-        List the objects in a bucket.\n
+        Lists the objects in a bucket.\n\nTo use this and other API operations, you must be authorized in an IAM policy. If you're not authorized, \ntalk to an administrator. If you're an admin who needs to write policies to give users access, see \n[Getting Started with Policies](/Content/Identity/Concepts/policygetstarted.htm).\n
 
         :param str namespace_name: The top-level namespace used for the request. (required)
         :param str bucket_name: The name of the bucket. (required)
@@ -550,8 +550,8 @@ class ObjectStorageApi(object):
         :param str start: Object names returned by a list query must be greater or equal to this parameter
         :param str end: Object names returned by a list query must be strictly less than this parameter
         :param int limit: The maximum number of items to return.
-        :param str delimiter: When this parameter is set to '/' character (other values not supported), only objects that do not have it in name, after an optionally specified prefix, are returned.   For all other scanned objects, part of their name up to the last occurence of the delimiter, after prefix, is returned as a set of prefixes.
-        :param str fields: Object summary in list of objects includes the 'name' field.   This parameter may be used to also include 'size' (object size in bytes), 'md5', and 'timeCreated' (object creation date and time) fields. Value of this parameter should be a comma separated, case-insensitive list of those field names. For example 'name,timeCreated,md5'
+        :param str delimiter: When this parameter is set, only objects whose names do not contain the delimiter character (after an optionally specified prefix) are returned. Scanned objects whose names contain the delimiter have part of their name up to the last occurrence of the delimiter (after the optional prefix) returned as a set of prefixes. Note that only '/' is a supported delimiter character at this time.
+        :param str fields: Object summary in list of objects includes the 'name' field.   This parameter may also include 'size' (object size in bytes), 'md5', and 'timeCreated' (object creation date and time) fields. Value of this parameter should be a comma separated, case-insensitive list of those field names. For example 'name,timeCreated,md5'
         :param str opc_client_request_id: The client request ID for tracing
         :return: A Response object with data of type ListObjects
         """
@@ -618,7 +618,7 @@ class ObjectStorageApi(object):
     def put_object(self, namespace_name, bucket_name, object_name, put_object_body, **kwargs):
         """
         PutObject
-        Create a new object or overwrite an existing one.\n
+        Create a new object or overwrite an existing one.\n\nTo use this and other API operations, you must be authorized in an IAM policy. If you're not authorized, \ntalk to an administrator. If you're an admin who needs to write policies to give users access, see \n[Getting Started with Policies](/Content/Identity/Concepts/policygetstarted.htm).\n
 
         :param str namespace_name: The top-level namespace used for the request. (required)
         :param str bucket_name: The name of the bucket. (required)
@@ -708,7 +708,7 @@ class ObjectStorageApi(object):
     def update_bucket(self, namespace_name, bucket_name, update_bucket_details, **kwargs):
         """
         UpdateBucket
-        Perform a partial (or full) update of a bucket, currently including just the user-defined metadata.\n
+        Performs a partial (or full) update of a bucket, currently including just the user-defined metadata.\n
 
         :param str namespace_name: The top-level namespace used for the request. (required)
         :param str bucket_name: The name of the bucket. (required)

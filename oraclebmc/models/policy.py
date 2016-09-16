@@ -35,7 +35,8 @@ class Policy(object):
             'description': 'str',
             'time_created': 'datetime',
             'lifecycle_state': 'str',
-            'inactive_status': 'int'
+            'inactive_status': 'int',
+            'version_date': 'datetime'
         }
 
         self.attribute_map = {
@@ -46,7 +47,8 @@ class Policy(object):
             'description': 'description',
             'time_created': 'timeCreated',
             'lifecycle_state': 'lifecycleState',
-            'inactive_status': 'inactiveStatus'
+            'inactive_status': 'inactiveStatus',
+            'version_date': 'versionDate'
         }
 
         self._id = None
@@ -57,6 +59,7 @@ class Policy(object):
         self._time_created = None
         self._lifecycle_state = None
         self._inactive_status = None
+        self._version_date = None
 
 
     @property
@@ -240,6 +243,28 @@ class Policy(object):
         :type: int
         """
         self._inactive_status = inactive_status
+
+    @property
+    def version_date(self):
+        """
+        Gets the version_date of this Policy.
+        The version of the policy. If null or set to an empty string, when a request comes in for authorization, the\npolicy will be evaluated according to the current behavior of the services at that moment. If set to a particular\ndate (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date.\n
+
+        :return: The version_date of this Policy.
+        :rtype: datetime
+        """
+        return self._version_date
+
+    @version_date.setter
+    def version_date(self, version_date):
+        """
+        Sets the version_date of this Policy.
+        The version of the policy. If null or set to an empty string, when a request comes in for authorization, the\npolicy will be evaluated according to the current behavior of the services at that moment. If set to a particular\ndate (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date.\n
+
+        :param version_date: The version_date of this Policy.
+        :type: datetime
+        """
+        self._version_date = version_date
 
     def to_dict(self):
         """

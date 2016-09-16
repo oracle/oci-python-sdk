@@ -39,7 +39,7 @@ class BlockstorageApi(object):
     def create_volume(self, create_volume_details, **kwargs):
         """
         CreateVolume
-        Creates a new 256 GB volume in the specified compartment.\n\nA volume and instance can be in separate compartments but must be in the same Availability Domain. You can set\nthe Availability Domain that the volume will reside in by defining `availabilityDomain`. This setting is\npermanent. You may optionally specify a display name for the volume, which is simply a friendly name or\ndescription. This does not have to be unique and you can change it with `UpdateVolume`.\n
+        Creates a new 256 GB volume in the specified compartment.\n\nA volume and instance can be in separate compartments but must be in the same Availability Domain. You can set\nthe Availability Domain that the volume will reside in by defining `availabilityDomain`. This setting is\npermanent. You may optionally specify a display name for the volume, which is simply a friendly name or\ndescription. This does not have to be unique and you can change it with `UpdateVolume`.\n\nTo use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,\ntalk to an administrator. If you're an administrator who needs to write policies to give users access, see\n[Getting Started with Policies](/Content/Identity/Concepts/policygetstarted.htm).\n
 
         :param CreateVolumeDetails create_volume_details: Request to create a new volume. (required)
         :param str opc_retry_token: A token that uniquely identifies a request so it can be retried in case of a timeout or\nserver error without risk of executing that same action again. Retry tokens expire after 24\nhours, but can be invalidated before then due to conflicting operations (e.g., if a resource\nhas been deleted and purged from the system, then a retry of the original creation request\nmay be rejected).\n
@@ -91,9 +91,9 @@ class BlockstorageApi(object):
     def create_volume_backup(self, create_volume_backup_details, **kwargs):
         """
         CreateVolumeBackup
-        Creates a new backup of the specified volume.\nWhen create backup request is received backup object is in REQUEST_RECEIVED state.\nWhen the data is snapshotted it goes into CREATING state.\nAfter the backup is fully uploaded to cloud it goes into AVAILABLE state.\n
+        Creates a new backup of the specified volume.\nWhen the request is received, the backup object is in a REQUEST_RECEIVED state.\nWhen the data is imaged, it goes into a CREATING state.\nAfter the backup is fully uploaded to the cloud, it goes into an AVAILABLE state.\n\nTo use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,\ntalk to an administrator. If you're an administrator who needs to write policies to give users access, see\n[Getting Started with Policies](/Content/Identity/Concepts/policygetstarted.htm).\n
 
-        :param CreateVolumeBackupDetails create_volume_backup_details: Request to create a new Backup of given volume. (required)
+        :param CreateVolumeBackupDetails create_volume_backup_details: Request to create a new backup of given volume. (required)
         :param str opc_retry_token: A token that uniquely identifies a request so it can be retried in case of a timeout or\nserver error without risk of executing that same action again. Retry tokens expire after 24\nhours, but can be invalidated before then due to conflicting operations (e.g., if a resource\nhas been deleted and purged from the system, then a retry of the original creation request\nmay be rejected).\n
         :return: A Response object with data of type VolumeBackup
         """
@@ -143,7 +143,7 @@ class BlockstorageApi(object):
     def delete_volume(self, volume_id, **kwargs):
         """
         DeleteVolume
-        Deletes the specified volume. The volume can't have an active connection to an instance.\nTo disconnect the volume from a connected instance, see\n[Disconnecting From a Volume](../../../#Block/Tasks/disconnectingfromavolume.htm).\n**Warning:** All data on the volume will be permanently lost once the volume is deleted.\n
+        Deletes the specified volume. The volume cannot have an active connection to an instance.\nTo disconnect the volume from a connected instance, see\n[Disconnecting From a Volume](/Content/Block/Tasks/disconnectingfromavolume.htm).\n**Warning:** All data on the volume will be permanently lost when the volume is deleted.\n
 
         :param str volume_id: The Oracle Cloud ID (OCID) that uniquely identifies the volume. (required)
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
@@ -195,9 +195,9 @@ class BlockstorageApi(object):
     def delete_volume_backup(self, volume_backup_id, **kwargs):
         """
         DeleteVolumeBackup
-        Delete a volumeBackup. Also aborts ongoing volumeBackup operation.
+        Deletes a volume backup.
 
-        :param str volume_backup_id: The Oracle Cloud ID (OCID) that uniquely identifies the volumeBackup. (required)
+        :param str volume_backup_id: The Oracle Cloud ID (OCID) that uniquely identifies the volume backup. (required)
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
         :return: A Response object with data of type None
         """
@@ -296,9 +296,9 @@ class BlockstorageApi(object):
     def get_volume_backup(self, volume_backup_id, **kwargs):
         """
         GetVolumeBackup
-        Gets information for the specified volumeBackup.
+        Gets information for the specified volume backup.
 
-        :param str volume_backup_id: The Oracle Cloud ID (OCID) that uniquely identifies the volumeBackup. (required)
+        :param str volume_backup_id: The Oracle Cloud ID (OCID) that uniquely identifies the volume backup. (required)
         :return: A Response object with data of type VolumeBackup
         """
 
@@ -345,11 +345,11 @@ class BlockstorageApi(object):
     def list_volume_backups(self, compartment_id, **kwargs):
         """
         ListVolumeBackups
-        Gets a list of volumeBackups in the specified compartment.
+        Gets a list of volume backups in the specified compartment.\n\nTo use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,\ntalk to an administrator. If you're an administrator who needs to write policies to give users access, see\n[Getting Started with Policies](/Content/Identity/Concepts/policygetstarted.htm).\n
 
         :param str compartment_id: The OCID of the compartment. (required)
         :param str volume_id: The OCID of the volume.
-        :param int limit: The maximum number of items to return in a paginated \"List\" call.\n
+        :param int limit: The maximum number of items to return in a paginated \"List\" call.\n\nExample: `500`\n
         :param str page: The value of the `opc-next-page` response header from the previous \"List\" call.\n
         :return: A Response object with data of type list[VolumeBackup]
         """
@@ -403,11 +403,11 @@ class BlockstorageApi(object):
     def list_volumes(self, compartment_id, **kwargs):
         """
         ListVolumes
-        Gets a list of volumes in the specified compartment and Availability Domain.
+        Gets a list of volumes in the specified compartment and Availability Domain.\n\nTo use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,\ntalk to an administrator. If you're an administrator who needs to write policies to give users access, see\n[Getting Started with Policies](/Content/Identity/Concepts/policygetstarted.htm).\n
 
         :param str compartment_id: The OCID of the compartment. (required)
-        :param str availability_domain: The name of the Availability Domain.
-        :param int limit: The maximum number of items to return in a paginated \"List\" call.\n
+        :param str availability_domain: The name of the Availability Domain.\n\nExample: `Uocm:PHX-AD-1`\n
+        :param int limit: The maximum number of items to return in a paginated \"List\" call.\n\nExample: `500`\n
         :param str page: The value of the `opc-next-page` response header from the previous \"List\" call.\n
         :return: A Response object with data of type list[Volume]
         """
@@ -519,10 +519,10 @@ class BlockstorageApi(object):
     def update_volume_backup(self, volume_backup_id, update_volume_backup_details, **kwargs):
         """
         UpdateVolumeBackup
-        Update an volumeBackup specified by the ID
+        Updates the display name for the specified volume backup.
 
-        :param str volume_backup_id: The Oracle Cloud ID (OCID) that uniquely identifies the volumeBackup. (required)
-        :param UpdateVolumeBackupDetails update_volume_backup_details: Update volumeBackup fields (required)
+        :param str volume_backup_id: The Oracle Cloud ID (OCID) that uniquely identifies the volume backup. (required)
+        :param UpdateVolumeBackupDetails update_volume_backup_details: Update volume backup fields (required)
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
         :return: A Response object with data of type VolumeBackup
         """
