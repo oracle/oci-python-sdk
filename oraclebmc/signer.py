@@ -92,17 +92,20 @@ class Signer(requests.auth.AuthBase):
         request.headers.update(signed_headers)
         return request
 
-class SignerWrapper(requests.auth.AuthBase):
+class ObjectUploadSigner(requests.auth.AuthBase):
 
     def __init__(self, signer, enforce_content_headers=True):
-        """Wraps an existing Signer and applies additional options.
+        """Wraps an existing signer and applies options required for object upload.
 
         :param signer: The signer to be wrapped.
-        :param enforce_content_headers: True if content headers should be automatically added if not present when
-            signing put and post requests.
         """
         self._signer = signer
-        self._enforce_content_headers = enforce_content_headers
 
     def __call__(self, request):
-        return self._signer.__call__(request, enforce_content_headers = self._enforce_content_headers)
+        # The requests library sets the Transfer-Encoding header to 'chunked' if the body is a stream with
+        # 0 length. Object storage does not currently support this option, and the request will fail if it is
+        # not removed. This is the only hook available where we can do this after the header is added and before
+        # the request is sent.
+        request.headers.pop('Transfer-Encoding', None)
+
+        return self._signer.__call__(request, enforce_content_headers=False)

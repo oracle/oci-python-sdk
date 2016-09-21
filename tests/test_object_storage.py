@@ -152,6 +152,74 @@ class TestObjectStorage(ServiceTestBase):
         response = self.api.delete_bucket(namespace, bucket_name)
         self.assertEqual(204, response.status)
 
+    def test_put_empty_file(self):
+        # Setup a bucket to use.
+        object_name = 'empty_object'
+        bucket_name = tests.util.unique_name('test_object_CRUD')
+        namespace = self.api.get_namespace().data
+        test_file = tests.util.get_resource_path('empty_file')
+
+        request = oraclebmc.models.CreateBucketDetails()
+        request.name = bucket_name
+        request.compartment_id = self.config.tenancy
+        response = self.api.create_bucket(namespace, request)
+        self.assertEqual(200, response.status)
+
+        # Put empty file
+        with open(test_file, 'rb') as file:
+            response = self.api.put_object(namespace, bucket_name, object_name, file)
+            self.assertEqual(200, response.status)
+
+        # Get it back
+        response = self.api.get_object(namespace, bucket_name, object_name)
+        self.assertEqual(200, response.status)
+        response_text = response.data.content.decode('UTF-8')
+        self.assertEqual(0, len(response_text))
+
+        # Head
+        response = self.api.head_object(namespace, bucket_name, object_name)
+        self.assertEqual(200, response.status)
+        assert (0 == int(response.headers['content-length']))
+
+        # Clean up
+        response = self.api.delete_object(namespace, bucket_name, object_name)
+        self.assertEqual(204, response.status)
+        response = self.api.delete_bucket(namespace, bucket_name)
+        self.assertEqual(204, response.status)
+
+    def test_put_empty_string(self):
+        # Setup a bucket to use.
+        object_name = 'empty_object'
+        bucket_name = tests.util.unique_name('test_object_CRUD')
+        namespace = self.api.get_namespace().data
+
+        request = oraclebmc.models.CreateBucketDetails()
+        request.name = bucket_name
+        request.compartment_id = self.config.tenancy
+        response = self.api.create_bucket(namespace, request)
+        self.assertEqual(200, response.status)
+
+        # Put empty string
+        response = self.api.put_object(namespace, bucket_name, object_name, '')
+        self.assertEqual(200, response.status)
+
+        # Get it back
+        response = self.api.get_object(namespace, bucket_name, object_name)
+        self.assertEqual(200, response.status)
+        response_text = response.data.content.decode('UTF-8')
+        self.assertEqual(0, len(response_text))
+
+        # Head
+        response = self.api.head_object(namespace, bucket_name, object_name)
+        self.assertEqual(200, response.status)
+        assert (0 == int(response.headers['content-length']))
+
+        # Clean up
+        response = self.api.delete_object(namespace, bucket_name, object_name)
+        self.assertEqual(204, response.status)
+        response = self.api.delete_bucket(namespace, bucket_name)
+        self.assertEqual(204, response.status)
+
     def test_bucket_not_found(self):
         namespace = self.api.get_namespace().data
 

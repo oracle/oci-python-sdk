@@ -4,7 +4,7 @@ import sys
 from setuptools import setup, find_packages
 
 NAME = "oraclebmc"
-VERSION = "0.1.1"
+VERSION = "0.1.2"
 
 REQUIRES = ['certifi',
             'httpsig==1.1.2',

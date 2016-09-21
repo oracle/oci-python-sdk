@@ -44,7 +44,7 @@ from . import models
 from .data_stream import DataStream
 from .request import Request
 from .response import Response
-from .signer import SignerWrapper
+from .signer import ObjectUploadSigner
 from . import __version__
 
 
@@ -163,7 +163,7 @@ class ApiClient(object):
 
         signer = self.signer
         if not request.enforce_content_headers:
-            signer = SignerWrapper(signer, enforce_content_headers=False)
+            signer = ObjectUploadSigner(signer)
 
         stream = False
         if request.response_type == STREAM_RESPONSE_TYPE:
