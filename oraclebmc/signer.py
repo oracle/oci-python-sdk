@@ -104,7 +104,7 @@ class ObjectUploadSigner(requests.auth.AuthBase):
     def __call__(self, request):
         # The requests library sets the Transfer-Encoding header to 'chunked' if the body is a stream with
         # 0 length. Object storage does not currently support this option, and the request will fail if it is
-        # not removed. The is the only hook available where we can do this after the header is added and before
+        # not removed. This is the only hook available where we can do this after the header is added and before
         # the request is sent.
         request.headers.pop('Transfer-Encoding', None)
 

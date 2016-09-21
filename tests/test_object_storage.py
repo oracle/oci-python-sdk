@@ -7,7 +7,6 @@ class TestObjectStorage(ServiceTestBase):
 
     def setUp(self):
         self.config = self.create_config()
-        self.config.log_requests = True
         self.api = oraclebmc.apis.ObjectStorageApi(self.config)
 
     def test_get_namespace(self):
