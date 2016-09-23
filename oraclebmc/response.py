@@ -1,7 +1,7 @@
-from . import constants
+from .constants import HEADER_NEXT_PAGE, HEADER_REQUEST_ID
+
 
 class Response(object):
-
     def __init__(self, status, headers, data, request):
         self._status = status
         self._headers = headers
@@ -11,9 +11,9 @@ class Response(object):
         self._next_page = None
         self._request_id = None
 
-        if self._headers != None:
-            self._next_page = self._headers.get(constants.HEADER_NEXT_PAGE)
-            self._request_id = self._headers.get(constants.HEADER_REQUEST_ID)
+        if self._headers is not None:
+            self._next_page = self._headers.get(HEADER_NEXT_PAGE)
+            self._request_id = self._headers.get(HEADER_REQUEST_ID)
 
     @property
     def status(self):
@@ -41,4 +41,4 @@ class Response(object):
 
     @property
     def has_next_page(self):
-        return self._next_page != None
+        return self._next_page is not None

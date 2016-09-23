@@ -1,10 +1,6 @@
 import time
-from .config import Config
-from . import config_file_loader
-from .signer import Signer
-from .api_client import ApiClient
-from . import apis
-from . import exceptions
+from .exceptions import MaximumWaitTimeExceeded, WaitUntilNotSupported
+
 
 def wait_until(api, response, property, state, max_interval_seconds=5, max_wait_seconds=60):
     """Wait until the value of the given property in the response data has the given value.
@@ -28,21 +24,24 @@ def wait_until(api, response, property, state, max_interval_seconds=5, max_wait_
     If any responses result in an error, then the error will be thrown as normal
     resulting in the wait being aborted.
 
-    :param api_client: A Response object resulting from a GET operation.
+    :param api: A Response object resulting from a GET operation.
     :param response: A Response object resulting from a GET operation.
-    :param property: A string with the name of the property from the response data to evaluate. For example, 'state'.
-    :param state: The value of the property that will indicate successful completion of the wait. Type corresponds to the property type.
-    :param max_interval_seconds: The maximum interval between queries, in seconds. Must be at least 10 seconds.
-    :param max_wait_seconds: The maximum time to wait, in seconds. Must be one hour or less.
+    :param property: A string with the name of the property from the response data to evaluate.
+        For example, 'state'.
+    :param state: The value of the property that will indicate successful completion of the wait.
+        Type corresponds to the property type.
+    :param max_interval_seconds: (optional) The maximum interval between queries, in seconds.
+        Defaults to 5 seconds.
+    :param max_wait_seconds: (optional) The maximum time to wait, in seconds.
+        Defaults to 60 seconds.
     :return: The final response, which will contain the property in the specified state.
     """
 
     if response.request.method.lower() != 'get':
-        raise exceptions.WaitUntilNotSupported('wait_until is only supported for get operations.')
+        raise WaitUntilNotSupported('wait_until is only supported for get operations.')
     if not hasattr(response.data, property):
         raise ValueError('Response data does not contain the given property.')
 
-    count = 0
     sleep_interval_seconds = 1
     start_time = time.time()
 
@@ -53,11 +52,8 @@ def wait_until(api, response, property, state, max_interval_seconds=5, max_wait_
         elapsed_seconds = (time.time() - start_time)
 
         if elapsed_seconds + sleep_interval_seconds > max_wait_seconds:
-            if max_wait_seconds > elapsed_seconds:
-                # Make one last request right at the maximum wait time.
-                interval_seconds = max_wait_seconds - elapsed_seconds
-            else:
-                raise exceptions.MaximumWaitTimeExceeded('Maximum wait time has been exceeded.')
+            if max_wait_seconds <= elapsed_seconds:
+                raise MaximumWaitTimeExceeded('Maximum wait time has been exceeded.')
 
         time.sleep(sleep_interval_seconds)
 

@@ -3,6 +3,7 @@ from requests.exceptions import (ConnectionError, StreamConsumedError)
 
 DEFAULT_CHUNK_SIZE = 512
 
+
 class DataStream(object):
     """Represents the data for a streamed response."""
 
@@ -39,4 +40,3 @@ class DataStream(object):
     def raw(self):
         """Returns the raw urllib3.response.HTTPResponse"""
         return self._response.raw
-

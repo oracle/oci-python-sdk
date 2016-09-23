@@ -47,4 +47,3 @@ class Request(object):
         """True if content headers should be automatically added if not present when
         signing put and post requests."""
         return self._enforce_content_headers
-
