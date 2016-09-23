@@ -8,7 +8,8 @@ abandoned/
 .idea/
 *.pyc
 *.egg-info/
-.tox
+.tox/
+.cache/
 build/
 dist/
 __pycache__/
