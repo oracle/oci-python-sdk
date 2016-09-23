@@ -35,11 +35,12 @@ import requests
 import six
 from dateutil.parser import parse
 
-from . import __version__, constants, exceptions, models
+from . import constants, exceptions, models
 from .data_stream import DataStream
 from .request import Request
 from .response import Response
 from .signer import ObjectUploadSigner
+from .version import __version__
 
 
 def merge_type_mappings(*dictionaries):

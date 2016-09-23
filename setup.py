@@ -15,7 +15,7 @@ def open_relative(*path):
     return io.open(filename, mode="r", encoding="utf-8")
 
 
-with open_relative("oraclebmc", "__init__.py") as fd:
+with open_relative("oraclebmc", "version.py") as fd:
     version = re.search(
         r"^__version__\s*=\s*['\"]([^'\"]*)['\"]",
         fd.read(), re.MULTILINE).group(1)
