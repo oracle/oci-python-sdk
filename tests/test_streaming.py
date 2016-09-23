@@ -3,9 +3,9 @@ import oraclebmc
 import tests.util
 import time
 
+
 class TestStreaming(ServiceTestBase):
     """Tests streaming of various types to and from the ObjectStorageApi."""
-
     def setUp(self):
         self.config = self.create_config()
         self.api = oraclebmc.apis.ObjectStorageApi(self.config)
@@ -17,7 +17,7 @@ class TestStreaming(ServiceTestBase):
         request.name = self.bucket_name
         request.compartment_id = self.config.tenancy
         response = self.api.create_bucket(self.namespace, request)
-        self.assertEqual(200, response.status)
+        assert response.status == 200
 
     def tearDown(self):
         # Delete new objects and bucket
@@ -26,7 +26,7 @@ class TestStreaming(ServiceTestBase):
 
             for summary in object_list.objects:
                 response = self.api.delete_object(self.namespace, self.bucket_name, summary.name)
-                self.assertEqual(200, response.status)
+                assert response.status == 200
         except:
             print('TearDown: Could not delete new objects.')
 
@@ -39,11 +39,11 @@ class TestStreaming(ServiceTestBase):
         name = 'string_1'
         body = 'This is a test string.'
         response = self.api.put_object(self.namespace, self.bucket_name, name, body)
-        self.assertEqual(200, response.status)
+        assert response.status == 200
 
         response = self.api.get_object(self.namespace, self.bucket_name, name)
-        self.assertEqual(200, response.status)
-        self.assertEqual(body, response.data.content.decode('UTF-8'))
+        assert response.status == 200
+        assert body == response.data.content.decode('UTF-8')
 
     def test_text_file_streaming(self):
         name = 'text_file'
@@ -52,15 +52,15 @@ class TestStreaming(ServiceTestBase):
         # Put an object
         with open(test_file, 'r') as file:
             response = self.api.put_object(self.namespace, self.bucket_name, name, file)
-        self.assertEqual(200, response.status)
+        assert response.status == 200
 
         # Get it back
         response = self.api.get_object(self.namespace, self.bucket_name, name)
-        self.assertEqual(200, response.status)
+        assert response.status == 200
 
         # Stream the file into memory
         response_text = ''
-        chunk_count = 0;
+        chunk_count = 0
         for chunk in response.data.iter_content(chunk_size=5):
             text = chunk.decode('UTF-8')
             response_text += text
@@ -69,15 +69,14 @@ class TestStreaming(ServiceTestBase):
         assert (chunk_count > 1)
 
         # Check content against the original file
-        file_content = None
         with open(test_file, 'r') as file:
             file_content = file.read()
-            self.assertEquals(file_content, response_text)
+            assert file_content == response_text
 
         # Head
         response = self.api.head_object(self.namespace, self.bucket_name, name)
-        self.assertEqual(200, response.status)
-        assert (len(file_content) == int(response.headers['content-length']))
+        assert response.status == 200
+        assert len(file_content) == int(response.headers['content-length'])
 
     def test_binary_file_streaming(self):
         name = 'image_file'
@@ -86,15 +85,15 @@ class TestStreaming(ServiceTestBase):
         # Put an object
         with open(test_file, 'rb') as file:
             response = self.api.put_object(self.namespace, self.bucket_name, name, file)
-        self.assertEqual(200, response.status)
+        assert response.status == 200
 
         # Get it back
         response = self.api.get_object(self.namespace, self.bucket_name, name)
-        self.assertEqual(200, response.status)
+        assert response.status == 200
 
         # Stream the file into memory
         response_data = b''
-        chunk_count = 0;
+        chunk_count = 0
         for chunk in response.data.iter_content(chunk_size=10):
             text = chunk
             response_data += text
@@ -103,15 +102,14 @@ class TestStreaming(ServiceTestBase):
         assert (chunk_count > 1)
 
         # Check content against the original file
-        file_content = None
         with open(test_file, 'rb') as file:
             file_content = file.read()
-            self.assertEquals(file_content, response_data)
+            assert file_content == response_data
 
         # Head
         response = self.api.head_object(self.namespace, self.bucket_name, name)
-        self.assertEqual(200, response.status)
-        assert (len(file_content) == int(response.headers['content-length']))
+        assert response.status == 200
+        assert len(file_content) == int(response.headers['content-length'])
 
     def test_invalid_object_types(self):
         with self.assertRaises(TypeError):
@@ -121,15 +119,16 @@ class TestStreaming(ServiceTestBase):
             self.api.put_object(self.namespace, self.bucket_name, 'a_time', time.time())
 
         with self.assertRaises(TypeError):
-            self.api.put_object(self.namespace, self.bucket_name, 'a_user', oraclebmc.models.User())
-
+            self.api.put_object(
+                self.namespace,
+                self.bucket_name,
+                'a_user',
+                oraclebmc.models.User()
+            )
 
     def test_object_not_found(self):
         with self.assertRaises(oraclebmc.exceptions.ServiceError) as errorContext:
             self.api.get_object(self.namespace, self.bucket_name, 'does_not_exist')
 
-        self.assertEqual(404, errorContext.exception.status)
-        assert (type(errorContext.exception.data) is oraclebmc.models.Error)
-
-if __name__ == '__main__':
-    unittest.main()
+        assert errorContext.exception.status == 404
+        assert type(errorContext.exception.data) is oraclebmc.models.Error

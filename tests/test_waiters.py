@@ -3,13 +3,12 @@ import tests.util
 import oraclebmc
 import time
 
-class TestWaiters(ServiceTestBase):
 
+class TestWaiters(ServiceTestBase):
     def test_basic_wait(self):
         """Creates and deletes a VCN, waiting after each operation."""
 
         api = oraclebmc.apis.VirtualNetworkApi(self.config)
-
         id = tests.util.random_number_string()
         print('Creating cloud network ' + id)
 
@@ -36,15 +35,21 @@ class TestWaiters(ServiceTestBase):
         with self.assertRaises(oraclebmc.exceptions.ServiceError) as errorContext:
             response = api.get_vcn(vcn.id)
             self.assertEqual('TERMINATING', response.data.lifecycle_state)
-            oraclebmc.wait_until(api, response, 'lifecycle_state', 'TERMINATED', max_wait_seconds=180)
+            oraclebmc.wait_until(
+                api,
+                response,
+                'lifecycle_state',
+                'TERMINATED',
+                max_wait_seconds=180
+            )
 
         self.assertEqual(404, errorContext.exception.status)
 
-        total_time =  time.time() - start_time
+        total_time = time.time() - start_time
 
         # This should always be between 2 seconds and 5 minutes.
-        assert (total_time < 60 * 5)
-        assert (total_time > 2)
+        assert total_time < 60 * 5
+        assert total_time > 2
 
     def test_invalid_operation(self):
         # Create User
@@ -57,17 +62,17 @@ class TestWaiters(ServiceTestBase):
         response = api.create_user(request)
         user_id = response.data.id
 
-        with self.assertRaises(oraclebmc.exceptions.WaitUntilNotSupported) as errorContext:
+        with self.assertRaises(oraclebmc.exceptions.WaitUntilNotSupported):
             oraclebmc.wait_until(api, response, 'name', 'test')
 
-        with self.assertRaises(ValueError) as errorContext:
+        with self.assertRaises(ValueError):
             response = api.get_user(user_id)
             oraclebmc.wait_until(api, response, 'fake_property', 'test')
 
         # Delete User
         response = api.delete_user(user_id)
 
-        with self.assertRaises(oraclebmc.exceptions.WaitUntilNotSupported) as errorContext:
+        with self.assertRaises(oraclebmc.exceptions.WaitUntilNotSupported):
             oraclebmc.wait_until(api, response, 'not a real property', 'test')
 
     def test_already_in_state(self):
@@ -86,10 +91,10 @@ class TestWaiters(ServiceTestBase):
 
         start_time = time.time()
         oraclebmc.wait_until(api, response, 'description', description)
-        assert (start_time - time.time() < 1)
+        assert start_time - time.time() < 1
 
         # clean up
-        response = api.delete_user(user_id)
+        api.delete_user(user_id)
 
     def test_wait_time_exceeded(self):
         api = oraclebmc.apis.IdentityApi(self.config)
@@ -106,16 +111,13 @@ class TestWaiters(ServiceTestBase):
         self.assertEqual(description, response.data.description)
 
         start_time = time.time()
-        with self.assertRaises(oraclebmc.exceptions.MaximumWaitTimeExceeded) as errorContext:
+        with self.assertRaises(oraclebmc.exceptions.MaximumWaitTimeExceeded):
             # Wait on a property that will not change until we time out.
             oraclebmc.wait_until(api, response, 'name', 'test', max_wait_seconds=2)
 
         total_time = time.time() - start_time
-        assert (total_time > 1)
-        assert (total_time < 4)
+        assert total_time > 1
+        assert total_time < 4
 
         # clean up
-        response = api.delete_user(user_id)
-
-if __name__ == '__main__':
-    unittest.main()
+        api.delete_user(user_id)

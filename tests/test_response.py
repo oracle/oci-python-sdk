@@ -1,13 +1,20 @@
 import unittest
 import oraclebmc
 
-class TestResponse(unittest.TestCase):
 
+class TestResponse(unittest.TestCase):
     def test_response(self):
         status = "mystatus"
         headers = {'h1': 'h1val', 'opc-next-page': 'next!', 'opc-request-id': 'myid'}
         data = 'testdata'
-        request = oraclebmc.Request('method', 'url', 'query_params', 'header_params', 'body', 'response_type')
+        request = oraclebmc.Request(
+            'method',
+            'url',
+            'query_params',
+            'header_params',
+            'body',
+            'response_type'
+        )
 
         response = oraclebmc.Response(status, headers, data, request)
 
@@ -40,6 +47,3 @@ class TestResponse(unittest.TestCase):
         self.assertEqual(None, response.next_page)
         self.assertEqual(None, response.request_id)
         self.assertEqual(False, response.has_next_page)
-
-if __name__ == '__main__':
-    unittest.main()

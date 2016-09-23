@@ -4,8 +4,8 @@ import sys
 import oraclebmc
 import tests.util
 
-class TestDebug(ServiceTestBase):
 
+class TestDebug(ServiceTestBase):
     def test_api_call_success(self):
         log_file = tests.util.get_resource_path('test_debug.log')
         if os.path.isfile(log_file):
@@ -26,12 +26,9 @@ class TestDebug(ServiceTestBase):
             sys.stdout = previous_stdout
 
         log = open(log_file, 'r').read()
-        assert (len(log) > 0)
-        assert ('user-agent: Oracle-PythonSDK/' in log)
-        assert ('opc-client-info: Oracle-PythonSDK/' in log)
-        assert ('opc-request-id: ' in log)
-        assert ('200 OK' in log)
-        assert ('example_extra_user_agent_text' in log)
-
-if __name__ == '__main__':
-    unittest.main()
+        assert len(log) > 0
+        assert 'user-agent: Oracle-PythonSDK/' in log
+        assert 'opc-client-info: Oracle-PythonSDK/' in log
+        assert 'opc-request-id: ' in log
+        assert '200 OK' in log
+        assert 'example_extra_user_agent_text' in log

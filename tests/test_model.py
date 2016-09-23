@@ -2,8 +2,8 @@ import unittest
 import oraclebmc
 import datetime
 
-class TestModel(unittest.TestCase):
 
+class TestModel(unittest.TestCase):
     def test_model_values(self):
         instance = self.create_instance()
 
@@ -22,7 +22,7 @@ class TestModel(unittest.TestCase):
         instance1 = self.create_instance()
         instance2 = self.create_instance()
 
-        assert(instance1 == instance2)
+        assert instance1 == instance2
 
     def test_not_equal(self):
         instance1 = self.create_instance()
@@ -30,23 +30,23 @@ class TestModel(unittest.TestCase):
 
         instance2.shape = 'some other shape'
 
-        assert (instance1 != instance2)
+        assert instance1 != instance2
 
     def test_equal_none(self):
         instance1 = self.create_instance()
         instance2 = None
 
-        assert (instance1 != instance2)
-        assert (instance2 != instance1)
-        assert (not (instance1 == instance2))
+        assert instance1 != instance2
+        assert instance2 != instance1
+        assert not (instance1 == instance2)
 
     def test_to_string(self):
         instance = self.create_instance()
 
         string = instance.to_str()
-        assert ('some name' in string)
-        assert ('foo2' in string)
-        assert ('1999' in string)
+        assert 'some name' in string
+        assert 'foo2' in string
+        assert '1999' in string
 
     def test_to_dict(self):
         instance = self.create_instance()
@@ -66,8 +66,8 @@ class TestModel(unittest.TestCase):
     def test_subclass(self):
         volume_attachment = oraclebmc.models.IScsiVolumeAttachment()
         self.assertEqual('iscsi', volume_attachment.attachment_type)
-        assert(hasattr(volume_attachment, 'chap_username'))
-        assert (hasattr(volume_attachment, 'availability_domain'))
+        assert hasattr(volume_attachment, 'chap_username')
+        assert hasattr(volume_attachment, 'availability_domain')
 
         volume_attachment.chap_secret = 'foo'
         volume_attachment.compartment_id = 'bar'
@@ -94,6 +94,3 @@ class TestModel(unittest.TestCase):
         instance.time_created = datetime.date(1999, 12, 31)
 
         return instance
-
-if __name__ == '__main__':
-    unittest.main()

@@ -1,15 +1,16 @@
 from tests.service_test_base import ServiceTestBase
 import oraclebmc
 
+
 class TestRequestId(ServiceTestBase):
 
     def test_core_automatic_request_id(self):
         api = oraclebmc.apis.VirtualNetworkApi(self.config)
         response = api.list_vcns(self.config.tenancy)
         self.assertEqual(200, response.status)
-        assert (response.request_id != None)
-        self.assertEquals(3, len(response.request_id.split('/')))
-        self.assertEquals(98, len(response.request_id))
+        assert response.request_id is not None
+        assert len(response.request_id.split('/')) == 3
+        assert len(response.request_id) == 98
 
 '''
 Commenting this out until Casper updates support for request ID.
@@ -30,6 +31,3 @@ Commenting this out until Casper updates support for request ID.
         assert (response.request_id != None)
         self.assertEquals(3, len(response.request_id.split('/')))
 '''
-
-if __name__ == '__main__':
-    unittest.main()

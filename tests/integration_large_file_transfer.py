@@ -4,8 +4,9 @@ import oraclebmc
 import io
 import os
 
+
 class TestLargeFileTransfer(ServiceTestBase):
-    """Downloads a large file (2.6 GB) from Object Storage, uploads it to a new bucket, and cleans up."""
+    """Download, upload, and delete a large file (2.6 GB)"""
 
     def setUp(self):
         self.config = self.create_config()
@@ -44,19 +45,27 @@ class TestLargeFileTransfer(ServiceTestBase):
             print('TearDown: Could not delete temporary local file.')
 
     def test_large_file_transfer(self):
-        response = self.api.head_object(self.namespace, self.read_bucket_name, self.read_object_name)
+        response = self.api.head_object(
+            self.namespace,
+            self.read_bucket_name,
+            self.read_object_name
+        )
         self.assertEqual(200, response.status)
 
         content_length = int(response.headers['content-length'])
         print('Downloading file with %s bytes....' % str(content_length))
         next_percent_to_report = 0
-        chunk_count = 0;
-        total_size = 0;
-        chunk_size = 512;
+        chunk_count = 0
+        total_size = 0
+        chunk_size = 512
         initial_max_memory_usage = tests.util.max_memory_usage()
 
         with tests.util.timer('get large file'):
-            response = self.api.get_object(self.namespace, self.read_bucket_name, self.read_object_name)
+            response = self.api.get_object(
+                self.namespace,
+                self.read_bucket_name,
+                self.read_object_name
+            )
             self.assertEqual(200, response.status)
 
             with io.open(self.temp_file, 'wb') as file:
@@ -66,34 +75,40 @@ class TestLargeFileTransfer(ServiceTestBase):
                     file.write(chunk)
                     percent = total_size * 100 / content_length
                     if percent > next_percent_to_report:
-                        print ('%.0f percent complete' % percent)
+                        print('%.0f percent complete' % percent)
                         next_percent_to_report += 2
 
                         # Make sure that memory usage doesn't go too far past where we started.
-                        assert (tests.util.max_memory_usage() < 3 * initial_max_memory_usage)
+                        assert tests.util.max_memory_usage() < 3 * initial_max_memory_usage
 
             print('Download complete')
 
-        assert (chunk_count >= (total_size / chunk_size))
+        assert chunk_count >= (total_size / chunk_size)
         self.assertEqual(total_size, int(response.headers['content-length']))
         file_size = os.path.getsize(self.temp_file)
         self.assertEqual(total_size, file_size)
 
-        print('Uploading to bucket %s with name %s....' % (self.write_bucket_name, self.write_object_name))
+        upload_msg = 'Uploading to bucket {} with name {}....'
+        print(upload_msg.format(self.write_bucket_name, self.write_object_name))
         with tests.util.timer('put large file'):
             with open(self.temp_file, 'rb') as file:
-                response = self.api.put_object(self.namespace, self.write_bucket_name, self.write_object_name, file)
+                response = self.api.put_object(
+                    self.namespace,
+                    self.write_bucket_name,
+                    self.write_object_name,
+                    file
+                )
                 self.assertEqual(200, response.status)
 
-        response = self.api.head_object(self.namespace, self.write_bucket_name, self.write_object_name)
+        response = self.api.head_object(
+            self.namespace,
+            self.write_bucket_name,
+            self.write_object_name
+        )
         self.assertEqual(200, response.status)
 
         uploaded_content_length = int(response.headers['content-length'])
         self.assertEqual(uploaded_content_length, file_size)
 
         max_memory = tests.util.max_memory_usage()
-        assert(max_memory < file_size)
-
-
-if __name__ == '__main__':
-    unittest.main()
+        assert max_memory < file_size

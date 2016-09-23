@@ -1,8 +1,8 @@
 import oraclebmc
 from tests.service_test_base import ServiceTestBase
 
-class TestPaging(ServiceTestBase):
 
+class TestPaging(ServiceTestBase):
     def test_manual_paging(self):
         api = oraclebmc.apis.IdentityApi(self.config)
 
@@ -32,6 +32,3 @@ class TestPaging(ServiceTestBase):
 
         # Make sure we've at least looked at a couple pages.
         assert(request_number > 1)
-
-if __name__ == '__main__':
-    unittest.main()
