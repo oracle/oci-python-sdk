@@ -3,8 +3,8 @@ import oraclebmc
 
 HARDCODED_IDENTITY_ENDPOINT = 'https://identity.us-phoenix-1.oraclecloud.com/20160918'
 HARDCODED_COMPUTE_ENDPOINT = 'https://iaas.us-phoenix-1.oraclecloud.com/20160918'
-HARDCODED_USER_OCID = 'ocidv1:user:oc1:phx:1460406592659:aaaaaaaawcbqrkycbolrirg2n3xjl5fyxe'
-HARDCODED_FINGERPRINT = '20:3b:97:13:55:1c:5b:0d:d3:37:d8:50:4e:c5:3a:34'
+HARDCODED_USER = 'ocid1.user.oc1..aaaaaaaaizi4xazrfv747ul6qwazrutt4dhg7ciazibypbjtkxdaszoicemq'
+HARDCODED_FINGERPRINT = '35:69:71:f1:54:19:b8:12:71:76:0f:27:f4:26:04:fd'
 HARDCODED_TENANCY = 'ocidv1:tenancy:oc1:phx:1460406592660:aaaaaaaab4faofrfkxecohhjuivjq262pu'
 
 
@@ -17,7 +17,7 @@ class TestConfigFileLoader(unittest.TestCase):
         assert config.endpoint_compute_api == HARDCODED_COMPUTE_ENDPOINT
 
         # check properties set in file
-        assert config.user == HARDCODED_USER_OCID
+        assert config.user == HARDCODED_USER
         assert config.fingerprint == HARDCODED_FINGERPRINT
         assert config.tenancy == HARDCODED_TENANCY
         assert config.log_requests is False
@@ -31,7 +31,7 @@ class TestConfigFileLoader(unittest.TestCase):
         assert config.endpoint_compute_api == HARDCODED_COMPUTE_ENDPOINT
 
         # check properties inherited from the default profile
-        assert config.user == HARDCODED_USER_OCID
+        assert config.user == HARDCODED_USER
         assert config.fingerprint == HARDCODED_FINGERPRINT
         assert config.tenancy == HARDCODED_TENANCY
 
@@ -49,9 +49,9 @@ class TestConfigFileLoader(unittest.TestCase):
         assert config.endpoint_compute_api == HARDCODED_COMPUTE_ENDPOINT
 
         # check properties set in file
-        assert config.user == HARDCODED_USER_OCID
+        assert config.user == HARDCODED_USER
         assert config.fingerprint == HARDCODED_FINGERPRINT
-        assert '/.ssh/id_rsa.pem' in config.key_file and '~' not in config.key_file
+        assert '/.ssh/bmc_key' in config.key_file and '~' not in config.key_file
         assert config.tenancy == HARDCODED_TENANCY
         assert config.log_requests is False
 
