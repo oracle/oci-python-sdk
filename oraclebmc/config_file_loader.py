@@ -1,8 +1,10 @@
 import configparser
 import logging
 import os.path
-from .config import Config
+
 from . import exceptions
+from .config import Config
+
 
 logger = logging.getLogger(__name__)
 

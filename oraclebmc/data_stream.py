@@ -1,5 +1,7 @@
-from .exceptions import NetworkError, StreamAlreadyConsumed
 from requests.exceptions import ConnectionError, StreamConsumedError
+
+from .exceptions import NetworkError, StreamAlreadyConsumed
+
 
 DEFAULT_CHUNK_SIZE = 512
 

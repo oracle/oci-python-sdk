@@ -22,28 +22,24 @@ The original license is below.
 """
 
 from __future__ import absolute_import
-
 import http.client
 import json
 import logging
 import platform
 import re
-import six
 import uuid
-from datetime import date
-from datetime import datetime
+from datetime import date, datetime
 from urllib.parse import quote
+
 import requests
+import six
 from dateutil.parser import parse
 
-from . import constants
-from . import exceptions
-from . import models
+from . import __version__, constants, exceptions, models
 from .data_stream import DataStream
 from .request import Request
 from .response import Response
 from .signer import ObjectUploadSigner
-from . import __version__
 
 
 def merge_type_mappings(*dictionaries):
