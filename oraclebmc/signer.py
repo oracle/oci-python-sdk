@@ -2,18 +2,78 @@ import base64
 import email.utils
 import hashlib
 
-import httpsig.requests_auth
+from httpsig import utils
+import io
 import requests.auth
 import six
+
+from Crypto.Hash import SHA256
+from Crypto.PublicKey import RSA
+from Crypto.Signature import PKCS1_v1_5
+
+
+__all__ = ["Signer", "ObjectUploadSigner"]
+
+
+def load_private_key(filename, passphrase=None):
+    with io.open(filename, "r") as f:
+        return PKCS1_v1_5.new(RSA.importKey(
+            extern_key=f.read().strip(),
+            passphrase=passphrase
+        ))
+
+
+def inject_missing_headers(request, sign_body, enforce_content_headers):
+    # Inject date, host, and content-type if missing
+    request.headers.setdefault(
+        "date", email.utils.formatdate(usegmt=True))
+
+    request.headers.setdefault(
+        "host", six.moves.urllib.parse.urlparse(request.url).netloc)
+
+    if enforce_content_headers:
+        request.headers.setdefault("content-type", "application/json")
+
+        # Requests with a body need to send content-type,
+        # content-length, and x-content-sha256
+        if sign_body:
+            body = request.body or ""
+            if "x-content-sha256" not in request.headers:
+                m = hashlib.sha256(body.encode("utf-8"))
+                base64digest = base64.b64encode(m.digest())
+                base64string = base64digest.decode("utf-8")
+                request.headers["x-content-sha256"] = base64string
+            request.headers.setdefault("content-length", len(body))
+
+
+class PrimitiveSigner:
+    def __init__(self, key_id, required_headers, private_key_file_path, passphrase=None):
+        self.key_id = key_id
+        self.required_headers = required_headers
+        self.private_key = load_private_key(filename=private_key_file_path, passphrase=passphrase)
+        self.signature_template = utils.build_signature_template(
+            key_id, "rsa-sha256", required_headers)
+
+    def sign(self, headers, host, method, path):
+        headers = utils.CaseInsensitiveDict(headers)
+        signable = utils.generate_message(self.required_headers, headers, host, method, path)
+        signature = self._sign(signable)
+        headers['authorization'] = self.signature_template % signature
+
+        return headers
+
+    def _sign(self, signable):
+        if isinstance(signable, six.string_types):
+            signable = signable.encode("ascii")
+        signed = self.private_key.sign(SHA256.new(signable))
+        return base64.b64encode(signed).decode("ascii")
 
 
 class Signer(requests.auth.AuthBase):
     """A requests auth instance that can be reused across requests"""
 
-    def __init__(self, tenancy, user, fingerprint, private_key_file_location):
+    def __init__(self, tenancy, user, fingerprint, private_key_file_path, passphrase=None):
         self.api_key = tenancy + "/" + user + "/" + fingerprint
-        self.private_key_file_location = private_key_file_location
-        self._private_key = None
 
         generic_headers = [
             "date",
@@ -26,46 +86,17 @@ class Signer(requests.auth.AuthBase):
             "x-content-sha256",
         ]
 
-        self._basic_signer = httpsig.sign.HeaderSigner(
+        self._basic_signer = PrimitiveSigner(
             key_id=self.api_key,
-            secret=self.private_key,
-            algorithm="rsa-sha256",
-            headers=generic_headers)
+            required_headers=generic_headers,
+            private_key_file_path=private_key_file_path,
+            passphrase=passphrase)
 
-        self._body_signer = httpsig.sign.HeaderSigner(
+        self._body_signer = PrimitiveSigner(
             key_id=self.api_key,
-            secret=self.private_key,
-            algorithm="rsa-sha256",
-            headers=generic_headers + body_headers)
-
-    def inject_missing_headers(self, request, sign_body, enforce_content_headers):
-        # Inject date, host, and content-type if missing
-        request.headers.setdefault(
-            "date", email.utils.formatdate(usegmt=True))
-
-        request.headers.setdefault(
-            "host", six.moves.urllib.parse.urlparse(request.url).netloc)
-
-        if enforce_content_headers:
-            request.headers.setdefault("content-type", "application/json")
-
-            # Requests with a body need to send content-type,
-            # content-length, and x-content-sha256
-            if sign_body:
-                body = request.body or ""
-                if "x-content-sha256" not in request.headers:
-                    m = hashlib.sha256(body.encode("utf-8"))
-                    base64digest = base64.b64encode(m.digest())
-                    base64string = base64digest.decode("utf-8")
-                    request.headers["x-content-sha256"] = base64string
-                request.headers.setdefault("content-length", len(body))
-
-    @property
-    def private_key(self):
-        if self._private_key is None:
-            with open(self.private_key_file_location) as f:
-                self._private_key = f.read().strip()
-        return self._private_key
+            required_headers=generic_headers + body_headers,
+            private_key_file_path=private_key_file_path,
+            passphrase=passphrase)
 
     def __call__(self, request, enforce_content_headers=True):
         verb = request.method.lower()
@@ -81,7 +112,7 @@ class Signer(requests.auth.AuthBase):
         else:
             signer = self._basic_signer
 
-        self.inject_missing_headers(request, sign_body, enforce_content_headers)
+        inject_missing_headers(request, sign_body, enforce_content_headers)
 
         signed_headers = signer.sign(
             request.headers,
