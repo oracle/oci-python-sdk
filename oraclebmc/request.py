@@ -3,46 +3,26 @@ class Request(object):
     def __init__(self,
                  method,
                  url,
-                 query_params,
-                 header_params,
-                 body,
-                 response_type,
+                 query_params=None,
+                 header_params=None,
+                 body=None,
+                 response_type=None,
                  enforce_content_headers=True):
+        """
+        :param method: HTTP method
+        :param url: URL that will serve the request
+        :param query_params: (optional) Query parameters in the url.
+        :param header_params: (optional) Request header params.
+        :param body: (optional) Request body.
+        :param response_type: (optional) Response data type.
+        :param enforce_content_headers: (optional) Whether content headers should be added for
+            PUT and POST requests when not present.  Defaults to True.
+        """
 
-        self._method = method
-        self._url = url
-        self._query_params = query_params
-        self._header_params = header_params
-        self._body = body
-        self._response_type = response_type
-        self._enforce_content_headers = enforce_content_headers
-
-    @property
-    def method(self):
-        return self._method
-
-    @property
-    def url(self):
-        return self._url
-
-    @property
-    def query_params(self):
-        return self._query_params
-
-    @property
-    def header_params(self):
-        return self._header_params
-
-    @property
-    def body(self):
-        return self._body
-
-    @property
-    def response_type(self):
-        return self._response_type
-
-    @property
-    def enforce_content_headers(self):
-        """True if content headers should be automatically added if not present when
-        signing put and post requests."""
-        return self._enforce_content_headers
+        self.method = method
+        self.url = url
+        self.query_params = query_params
+        self.header_params = header_params or {}
+        self.body = body
+        self.response_type = response_type
+        self.enforce_content_headers = enforce_content_headers
