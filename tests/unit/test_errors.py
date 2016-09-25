@@ -1,21 +1,22 @@
-from tests.service_test_base import ServiceTestBase
 import oraclebmc
+import pytest
+import tests.util
 
 
-class TestErrors(ServiceTestBase):
-    def test_invalid_compartment(self):
-        api = oraclebmc.apis.IdentityApi(self.config)
+def test_invalid_compartment(identity):
 
-        with self.assertRaises(oraclebmc.exceptions.ServiceError) as errorContext:
-            api.list_users('invalid_compartment')
+    with pytest.raises(oraclebmc.exceptions.ServiceError) as excinfo:
+        identity.list_users('invalid_compartment')
+    assert excinfo.value.status == 403
+    assert excinfo.value.headers is not None
+    assert type(excinfo.value.data) is oraclebmc.models.Error
 
-        self.assertEqual(403, errorContext.exception.status)
-        assert errorContext.exception.headers is not None
-        assert type(errorContext.exception.data) is oraclebmc.models.Error
 
-    def test_invalid_endpoint_host(self):
-        api = oraclebmc.apis.VirtualNetworkApi(
-            self.create_config(profile_name='INVALID_ENDPOINT_HOST'))
+def test_invalid_endpoint_host():
+    api = oraclebmc.config_file_loader.load_config(
+        file_location=tests.util.get_resource_path('config'),
+        profile_name="INVALID_ENDPOINT_HOST"
+    )
 
-        with self.assertRaises(Exception):
-            api.list_users('invalid_compartment')
+    with pytest.raises(Exception):
+        api.list_users('invalid_compartment')
