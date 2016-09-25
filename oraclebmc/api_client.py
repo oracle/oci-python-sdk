@@ -72,12 +72,10 @@ class ApiClient(object):
                                                  models.object_storage_type_mapping)
         self._session = None
 
-        self.logger = logging.getLogger("%s.%s" % (__name__, str(id(self))))
-
+        self.logger = logging.getLogger("{}.{}".format(__name__, id(self)))
+        self.logger.addHandler(logging.NullHandler())
         if self.config.log_requests:
-            self.logger.addHandler(logging.StreamHandler())
             self.logger.setLevel(logging.DEBUG)
-
             http.client.HTTPConnection.debuglevel = 1
         else:
             http.client.HTTPConnection.debuglevel = 0
