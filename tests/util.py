@@ -14,15 +14,11 @@ def unique_name(base_name):
 
 
 def get_resource_directory():
-    """Get the relative path to the test resources directory.
-    This will change depending on where the tests are run."""
-    path = 'resources'
-    if os.path.isdir(path):
-        return path
-
-    path = 'tests/' + path
-    if os.path.isdir(path):
-        return path
+    """Get the absolute path to the test resources directory.
+    File is located based on the relative location of this file (util.py).
+    """
+    here = os.path.abspath(os.path.dirname(__file__))
+    return os.path.join(here, "resources")
 
 
 def get_resource_path(file_name):
