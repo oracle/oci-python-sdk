@@ -1,13 +1,7 @@
-alabaster==0.7.9
 certifi
-coverage==4.2
-flake8==3.0.4
 httpsig==1.1.2
-pycrypto=2.6.1
+pycrypto==2.6.1
 pytest==3.0.2
 python-dateutil==2.5.3
 requests==2.10.0
 six==1.10.0
-sphinx==1.4.6
-tox==2.3.1
-wheel==0.29.0
