@@ -3,7 +3,7 @@ certifi
 coverage==4.2
 flake8==3.0.4
 httpsig==1.1.2
-git+git://github.com/dlitz/pycrypto@v2.7a1
+pycrypto=2.6.1
 pytest==3.0.2
 python-dateutil==2.5.3
 requests==2.10.0
