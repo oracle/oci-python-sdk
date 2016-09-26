@@ -70,6 +70,17 @@ Install development-only dependencies::
 
     pip install -r requirements.txt
 
+
+Pending Approval
+================
+
+We don't have approval for internal use of all of the packages that we need for development.
+Specifically, all of the packages in the following command are pending approval for internal use::
+
+    pip install alabaster coverage flake8 sphinx tox wheel
+
+When we do get approval, add these packages to ``requirements.txt`` so we can have tests, coverage, and build the sdk.
+
 Running the tests
 =================
 
