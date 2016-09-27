@@ -1,10 +1,10 @@
 # Config for the R2 tenant InternalBrianGustafson
 # Contact brian.gustafson@oracle.com to get a user.
 [DEFAULT]
-user=REPLACE_ME
-fingerprint=REPLACE_ME
-key_file=REPLACE_ME
-tenancy=REPLACE_ME
+user=USER_OCID
+fingerprint=FINGERPRINT
+key_file=~/.ssh/id_rsa.pem
+tenancy=TENANCY_OCID
 
 [INVALID_USER]
 user=invaliduser

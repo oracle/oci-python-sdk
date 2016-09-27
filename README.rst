@@ -94,6 +94,22 @@ whatever environment is used by your interpreter, and not a tox env)::
 
     py.test tests/test_file.py::test_name
 
+Specifying a config file
+------------------------
+
+By default, the tests will use the ``DEFAULT`` profile from the default
+config location, ``~/.oraclebmc/config``.  You can change this with the
+``--config-file`` and ``--config-profile`` options::
+
+    # Use a different config file, still using the DEFAULT profile
+    tox -- --config-file ~/.oraclebmc/r2config
+
+    # Using a different profile in the default config file
+    tox -- --config-profile R2Testing
+
+These are dynamically added by py.test when it collects tests; you can
+view them with ``py.test --help`` or ``tox -- --help``.
+
 Building the SDK
 ================
 
