@@ -2,7 +2,7 @@ import base64
 import email.utils
 import hashlib
 
-import httpsig.requests_auth
+import httpsig_cffi.sign
 import requests.auth
 import six
 
@@ -26,13 +26,13 @@ class Signer(requests.auth.AuthBase):
             "x-content-sha256",
         ]
 
-        self._basic_signer = httpsig.sign.HeaderSigner(
+        self._basic_signer = httpsig_cffi.sign.HeaderSigner(
             key_id=self.api_key,
             secret=self.private_key,
             algorithm="rsa-sha256",
             headers=generic_headers)
 
-        self._body_signer = httpsig.sign.HeaderSigner(
+        self._body_signer = httpsig_cffi.sign.HeaderSigner(
             key_id=self.api_key,
             secret=self.private_key,
             algorithm="rsa-sha256",

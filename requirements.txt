@@ -1,6 +1,6 @@
 certifi
-httpsig==1.1.2
-pycrypto==2.6.1
+cryptography==1.5.2
+httpsig_cffi==15.0.0
 pytest==3.0.2
 python-dateutil==2.5.3
 requests==2.10.0

@@ -33,8 +33,8 @@ packages = [
 
 requires = [
     "certifi",
-    "httpsig==1.1.2",
-    "pycrypto==2.6.1",
+    "cryptography==1.5.2",
+    "httpsig_cffi==15.0.0",
     "python-dateutil==2.5.3",
     "requests==2.10.0",
     "six==1.10.0",
