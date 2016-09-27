@@ -1,14 +1,17 @@
 import configparser
 import logging
 import os.path
-from .config import Config
+
 from . import exceptions
+from .config import Config
+
 
 logger = logging.getLogger(__name__)
 
 DEFAULT_PROFILE = configparser.DEFAULTSECT
 
 DEFAULT_CONFIG_FILE = '~/.oraclebmc/config'
+
 
 def load_config(file_location=DEFAULT_CONFIG_FILE, profile_name=DEFAULT_PROFILE):
     file_location = os.path.expanduser(file_location)
@@ -19,7 +22,6 @@ def load_config(file_location=DEFAULT_CONFIG_FILE, profile_name=DEFAULT_PROFILE)
 
     config = Config()
 
-    parameters = None
     if profile_name == DEFAULT_PROFILE:
         parameters = parser.defaults()
     else:
@@ -27,7 +29,6 @@ def load_config(file_location=DEFAULT_CONFIG_FILE, profile_name=DEFAULT_PROFILE)
             parameters = parser.options(profile_name)
         except configparser.NoSectionError:
             raise exceptions.ProfileNotFound("Profile '{}' not found".format(profile_name))
-
 
     for param in parameters:
         try:
@@ -49,4 +50,3 @@ def load_config(file_location=DEFAULT_CONFIG_FILE, profile_name=DEFAULT_PROFILE)
             logger.info("Error setting Config parameter %s." % param)
 
     return config
-

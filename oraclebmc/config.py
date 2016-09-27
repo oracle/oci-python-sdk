@@ -1,6 +1,4 @@
 from __future__ import absolute_import
-import base64
-import urllib3
 
 
 class Config(object):
@@ -22,4 +20,3 @@ class Config(object):
         self.verify_ssl = True
         self.log_requests = False
         self.additional_user_agent = None
-

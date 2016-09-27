@@ -1,7 +1,10 @@
-from .exceptions import (NetworkError, StreamAlreadyConsumed)
-from requests.exceptions import (ConnectionError, StreamConsumedError)
+from requests.exceptions import ConnectionError, StreamConsumedError
+
+from .exceptions import NetworkError, StreamAlreadyConsumed
+
 
 DEFAULT_CHUNK_SIZE = 512
+
 
 class DataStream(object):
     """Represents the data for a streamed response."""
@@ -12,7 +15,7 @@ class DataStream(object):
     def iter_content(self, chunk_size=DEFAULT_CHUNK_SIZE):
         """Iterates over the response data.
 
-        :param chunk_size: The number of bytes in each chunk.
+        :param chunk_size: The number of bytes in each chunk.  Defaults to 512.
         """
         try:
             for chunk in self._response.iter_content(chunk_size=chunk_size):
@@ -39,4 +42,3 @@ class DataStream(object):
     def raw(self):
         """Returns the raw urllib3.response.HTTPResponse"""
         return self._response.raw
-

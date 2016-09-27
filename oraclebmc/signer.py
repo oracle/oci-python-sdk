@@ -2,8 +2,8 @@ import base64
 import email.utils
 import hashlib
 
-import httpsig.requests_auth
-import requests
+import httpsig_cffi.sign
+import requests.auth
 import six
 
 
@@ -26,13 +26,13 @@ class Signer(requests.auth.AuthBase):
             "x-content-sha256",
         ]
 
-        self._basic_signer = httpsig.sign.HeaderSigner(
+        self._basic_signer = httpsig_cffi.sign.HeaderSigner(
             key_id=self.api_key,
             secret=self.private_key,
             algorithm="rsa-sha256",
             headers=generic_headers)
 
-        self._body_signer = httpsig.sign.HeaderSigner(
+        self._body_signer = httpsig_cffi.sign.HeaderSigner(
             key_id=self.api_key,
             secret=self.private_key,
             algorithm="rsa-sha256",
@@ -92,20 +92,20 @@ class Signer(requests.auth.AuthBase):
         request.headers.update(signed_headers)
         return request
 
-class ObjectUploadSigner(requests.auth.AuthBase):
 
-    def __init__(self, signer, enforce_content_headers=True):
+class ObjectUploadSigner(requests.auth.AuthBase):
+    def __init__(self, signer):
         """Wraps an existing signer and applies options required for object upload.
 
         :param signer: The signer to be wrapped.
         """
-        self._signer = signer
+        self.signer = signer
 
     def __call__(self, request):
-        # The requests library sets the Transfer-Encoding header to 'chunked' if the body is a stream with
-        # 0 length. Object storage does not currently support this option, and the request will fail if it is
-        # not removed. This is the only hook available where we can do this after the header is added and before
-        # the request is sent.
+        # The requests library sets the Transfer-Encoding header to 'chunked' if the
+        # body is a stream with 0 length. Object storage does not currently support this option,
+        # and the request will fail if it is not removed. This is the only hook available where we
+        # can do this after the header is added and before the request is sent.
         request.headers.pop('Transfer-Encoding', None)
 
-        return self._signer.__call__(request, enforce_content_headers=False)
+        return self.signer.__call__(request, enforce_content_headers=False)

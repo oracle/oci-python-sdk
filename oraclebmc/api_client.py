@@ -22,30 +22,25 @@ The original license is below.
 """
 
 from __future__ import absolute_import
-
 import http.client
 import json
 import logging
 import platform
 import re
 import uuid
-from datetime import date
-from datetime import datetime
+from datetime import date, datetime
 from urllib.parse import quote
 
-
-
 import requests
+import six
 from dateutil.parser import parse
 
-from . import constants
-from . import exceptions
-from . import models
+from . import constants, exceptions, models
 from .data_stream import DataStream
 from .request import Request
 from .response import Response
 from .signer import ObjectUploadSigner
-from . import __version__
+from .version import __version__
 
 
 def merge_type_mappings(*dictionaries):
@@ -56,8 +51,8 @@ def merge_type_mappings(*dictionaries):
 
 STREAM_RESPONSE_TYPE = 'stream'
 
-class ApiClient(object):
 
+class ApiClient(object):
     primitive_type_map = {
         'int': int,
         'float': float,
@@ -77,12 +72,10 @@ class ApiClient(object):
                                                  models.object_storage_type_mapping)
         self._session = None
 
-        self.logger = logging.getLogger("%s.%s" % (__name__, str(id(self))))
-
+        self.logger = logging.getLogger("{}.{}".format(__name__, id(self)))
+        self.logger.addHandler(logging.NullHandler())
         if self.config.log_requests:
-            self.logger.addHandler(logging.StreamHandler())
             self.logger.setLevel(logging.DEBUG)
-
             http.client.HTTPConnection.debuglevel = 1
         else:
             http.client.HTTPConnection.debuglevel = 0
@@ -94,29 +87,26 @@ class ApiClient(object):
             self._session.verify = self.config.verify_ssl
         return self._session
 
-    def call_api(self,
-                   endpoint,
-                   resource_path,
-                   method,
-                   path_params=None,
-                   query_params=None,
-                   header_params=None,
-                   body=None,
-                   response_type=None,
-                   enforce_content_headers=True):
+    def call_api(self, endpoint, resource_path, method,
+                 path_params=None,
+                 query_params=None,
+                 header_params=None,
+                 body=None,
+                 response_type=None,
+                 enforce_content_headers=True):
         """
         Makes the HTTP request and return the deserialized data.
 
         :param endpoint: URL of the endpoint
-        :param resource_path: Path to the resourcd (e.g. /instance)
+        :param resource_path: Path to the resource (e.g. /instance)
         :param method: HTTP method
-        :param path_params: Path parameters in the url.
-        :param query_params: Query parameters in the url.
-        :param header_params: Request header params.
-        :param body: Request body.
-        :param response_type: Response data type.
-        :param enforce_content_headers: True if content headers should be added for put and post requests
-            when not present.
+        :param path_params: (optional) Path parameters in the url.
+        :param query_params: (optional) Query parameters in the url.
+        :param header_params: (optional) Request header params.
+        :param body: (optional) Request body.
+        :param response_type: (optional) Response data type.
+        :param enforce_content_headers: (optional) Whether content headers should be added for
+            PUT and POST requests when not present.  Defaults to True.
         :return: A Response object, or throw in the case of an error.
 
         """
@@ -148,13 +138,15 @@ class ApiClient(object):
 
         url = endpoint + resource_path
 
-        request = Request(method=method,
-                          url=url,
-                          query_params=query_params,
-                          header_params=header_params,
-                          body=body,
-                          response_type=response_type,
-                          enforce_content_headers=enforce_content_headers)
+        request = Request(
+            method=method,
+            url=url,
+            query_params=query_params,
+            header_params=header_params,
+            body=body,
+            response_type=response_type,
+            enforce_content_headers=enforce_content_headers
+        )
 
         return self.request(request)
 
@@ -169,13 +161,14 @@ class ApiClient(object):
         if request.response_type == STREAM_RESPONSE_TYPE:
             stream = True
 
-        response = self.session.request(request.method,
-                                        request.url,
-                                        auth=signer,
-                                        params=request.query_params,
-                                        headers=request.header_params,
-                                        data=request.body,
-                                        stream=stream)
+        response = self.session.request(
+            request.method,
+            request.url,
+            auth=signer,
+            params=request.query_params,
+            headers=request.header_params,
+            data=request.body,
+            stream=stream)
 
         response_type = request.response_type
         is_error = not 200 <= response.status_code <= 299
@@ -192,7 +185,10 @@ class ApiClient(object):
             deserialized_data = None
 
         if is_error:
-            raise exceptions.ServiceError(response.status_code, response.headers, deserialized_data)
+            raise exceptions.ServiceError(
+                response.status_code,
+                response.headers,
+                deserialized_data)
 
         self.logger.info("Response status: %s" % str(response.status_code))
 
@@ -204,15 +200,20 @@ class ApiClient(object):
 
     # Builds the client info string to be sent with each request.
     def build_user_info(self):
-        return "Oracle-PythonSDK/{0}".format(__version__)
+        return "Oracle-PythonSDK/{}".format(__version__)
 
     # Build the user agent string to be send with each request.
     def build_user_agent(self):
         # Example: Oracle-PythonSDK/0.0.2 (python 3.5.2; x86_64-Darwin)
-        agent = "{0} (python {1}; {2}-{3})".format(self.build_user_info(), platform.python_version(), platform.machine(), platform.system())
+        agent = "{} (python {}; {}-{})".format(
+            self.build_user_info(),
+            platform.python_version(),
+            platform.machine(),
+            platform.system()
+        )
 
         if self.config.additional_user_agent:
-            agent = "{0} {1}".format(agent, self.config.additional_user_agent)
+            agent = "{} {}".format(agent, self.config.additional_user_agent)
 
         return agent
 
@@ -343,7 +344,7 @@ class ApiClient(object):
         try:
             value = cls(data)
         except UnicodeEncodeError:
-            value = unicode(data)
+            value = six.u(data)
         except TypeError:
             value = data
         return value
@@ -395,5 +396,3 @@ class ApiClient(object):
                 setattr(instance, attr, self.__deserialize(value, attr_type))
 
         return instance
-
-

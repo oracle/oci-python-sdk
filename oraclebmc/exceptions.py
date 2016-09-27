@@ -1,4 +1,3 @@
-
 class ServiceError(Exception):
     """The service returned an error response."""
 
@@ -11,29 +10,35 @@ class ServiceError(Exception):
         if data:
             message = data.message
 
-        if message == None:
+        if message is None:
             message = "The service returned error code %s" % self.status
 
         super(ServiceError, self).__init__(message)
 
+
 class NetworkError(Exception):
     """A network error has occurred."""
+
 
 class ClientError(Exception):
     """A client-side error occurred.."""
 
+
 class ConfigFileNotFound(ClientError):
     """Config file not be found."""
+
 
 class ProfileNotFound(ClientError):
     """The specified profile was not found in the config file."""
 
+
 class WaitUntilNotSupported(ClientError):
     """wait_until is not supported by this response."""
+
 
 class MaximumWaitTimeExceeded(ClientError):
     """Maximum wait time has been exceeded."""
 
+
 class StreamAlreadyConsumed(ClientError):
     """The stream content has already been consumed."""
-
