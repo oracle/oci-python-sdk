@@ -1,3 +1,5 @@
+import six
+
 from requests.exceptions import ConnectionError, StreamConsumedError
 
 from .exceptions import NetworkError, StreamAlreadyConsumed
@@ -21,9 +23,9 @@ class DataStream(object):
             for chunk in self._response.iter_content(chunk_size=chunk_size):
                 yield chunk
         except ConnectionError as e:
-            raise NetworkError() from e
+            six.raise_from(NetworkError(), e)
         except StreamConsumedError as e:
-            raise StreamAlreadyConsumed() from e
+            six.raise_from(StreamAlreadyConsumed(), e)
 
     @property
     def content(self):
@@ -36,7 +38,7 @@ class DataStream(object):
         except RuntimeError as e:
             # requests throws a RuntimeError in this case
             # instead of a StreamConsumedError.
-            raise StreamAlreadyConsumed() from e
+            six.raise_from(StreamAlreadyConsumed(), e)
 
     @property
     def raw(self):

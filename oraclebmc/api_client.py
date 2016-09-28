@@ -22,14 +22,13 @@ The original license is below.
 """
 
 from __future__ import absolute_import
-import http.client
 import json
 import logging
 import platform
 import re
 import uuid
 from datetime import date, datetime
-from urllib.parse import quote
+from six.moves import http_client, urllib
 
 import requests
 import six
@@ -76,9 +75,9 @@ class ApiClient(object):
         self.logger.addHandler(logging.NullHandler())
         if self.config.log_requests:
             self.logger.setLevel(logging.DEBUG)
-            http.client.HTTPConnection.debuglevel = 1
+            http_client.HTTPConnection.debuglevel = 1
         else:
-            http.client.HTTPConnection.debuglevel = 0
+            http_client.HTTPConnection.debuglevel = 0
 
     @property
     def session(self):
@@ -123,7 +122,7 @@ class ApiClient(object):
         if path_params:
             path_params = self.sanitize_for_serialization(path_params)
             for k, v in path_params.items():
-                replacement = quote(str(self.to_path_value(v)))
+                replacement = urllib.parse.quote(str(self.to_path_value(v)))
                 resource_path = resource_path.\
                     replace('{' + k + '}', replacement)
 
