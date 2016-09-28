@@ -4,9 +4,9 @@ import pytest
 
 HARDCODED_IDENTITY_ENDPOINT = 'https://identity.us-phoenix-1.oraclecloud.com/20160918'
 HARDCODED_COMPUTE_ENDPOINT = 'https://iaas.us-phoenix-1.oraclecloud.com/20160918'
-HARDCODED_USER = 'ocid1.user.oc1..aaaaaaaaizi4xazrfv747ul6qwazrutt4dhg7ciazibypbjtkxdaszoicemq'
-HARDCODED_FINGERPRINT = '35:69:71:f1:54:19:b8:12:71:76:0f:27:f4:26:04:fd'
-HARDCODED_TENANCY = 'ocidv1:tenancy:oc1:phx:1460406592660:aaaaaaaab4faofrfkxecohhjuivjq262pu'
+HARDCODED_USER = 'USER_OCID'
+HARDCODED_FINGERPRINT = 'FINGERPRINT'
+HARDCODED_TENANCY = 'TENANCY_OCID'
 
 
 def test_load_default_profile():
@@ -53,7 +53,7 @@ def test_invalid_parameter():
     # check properties set in file
     assert config.user == HARDCODED_USER
     assert config.fingerprint == HARDCODED_FINGERPRINT
-    assert '/.ssh/bmc_key' in config.key_file and '~' not in config.key_file
+    assert '/.ssh/id_rsa.pem' in config.key_file and '~' not in config.key_file
     assert config.tenancy == HARDCODED_TENANCY
     assert config.log_requests is False
 
@@ -64,12 +64,10 @@ def test_invalid_parameter():
 def test_file_not_found():
     with pytest.raises(oraclebmc.exceptions.ConfigFileNotFound) as excinfo:
         oraclebmc.config_file_loader.load_config(file_location='does_not_exist')
-
     assert 'does_not_exist' in str(excinfo.value)
 
 
 def test_profile_not_found():
     with pytest.raises(oraclebmc.exceptions.ProfileNotFound) as excinfo:
         oraclebmc.config_file_loader.load_config(profile_name='does_not_exist')
-
     assert 'does_not_exist' in str(excinfo.value)

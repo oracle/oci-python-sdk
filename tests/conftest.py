@@ -1,14 +1,20 @@
 import pytest
-
 import oraclebmc
-import tests.util
+
+
+def pytest_addoption(parser):
+    parser.addoption("--config-file", action="store", help="location of the config file",
+                     default=oraclebmc.config_file_loader.DEFAULT_CONFIG_FILE)
+    parser.addoption("--config-profile", action="store",
+                     help="profile to use from the config file",
+                     default=oraclebmc.config_file_loader.DEFAULT_PROFILE)
 
 
 @pytest.fixture
-def config():
+def config(request):
     return oraclebmc.config_file_loader.load_config(
-        file_location=tests.util.get_resource_path('config'),
-        profile_name=oraclebmc.config_file_loader.DEFAULT_PROFILE
+        file_location=request.config.getoption("--config-file"),
+        profile_name=request.config.getoption("--config-profile")
     )
 
 
