@@ -112,8 +112,7 @@ def test_wait_time_exceeded(identity, config):
         oraclebmc.wait_until(identity, response, 'name', 'test', max_wait_seconds=2)
 
     total_time = time.time() - start_time
-    assert total_time > 1
-    assert total_time < 4
+    assert 1 < total_time < 4
 
     # clean up
     identity.delete_user(user_id)

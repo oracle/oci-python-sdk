@@ -126,7 +126,7 @@ class Bucket(object):
     def metadata(self):
         """
         Gets the metadata of this Bucket.
-        Arbitrary string keys and values for user-defined metadata.
+        Arbitrary string keys and values for the user-defined metadata.
 
         :return: The metadata of this Bucket.
         :rtype: dict(str, str)
@@ -137,7 +137,7 @@ class Bucket(object):
     def metadata(self, metadata):
         """
         Sets the metadata of this Bucket.
-        Arbitrary string keys and values for user-defined metadata.
+        Arbitrary string keys and values for the user-defined metadata.
 
         :param metadata: The metadata of this Bucket.
         :type: dict(str, str)
@@ -148,7 +148,7 @@ class Bucket(object):
     def created_by(self):
         """
         Gets the created_by of this Bucket.
-        The OCID of the user who created the bucket.
+        the OCID of the user who created the bucket.
 
         :return: The created_by of this Bucket.
         :rtype: str
@@ -159,7 +159,7 @@ class Bucket(object):
     def created_by(self, created_by):
         """
         Sets the created_by of this Bucket.
-        The OCID of the user who created the bucket.
+        the OCID of the user who created the bucket.
 
         :param created_by: The created_by of this Bucket.
         :type: str

@@ -234,8 +234,7 @@ class ApiClient(object):
         """
         Builds a JSON POST object.
 
-        If obj is None, return None.
-        If obj is str, int, float, bool, return directly.
+        If obj is str, int, float, bool, None, return directly.
         If obj is datetime.datetime, datetime.date
             convert to string in iso8601 format.
         If obj is list, sanitize each element in the list.
@@ -245,11 +244,9 @@ class ApiClient(object):
         :param obj: The data to serialize.
         :return: The serialized form of data.
         """
-        types = (str, int, float, bool, tuple)
+        types = (str, int, float, bool, type(None))
 
-        if isinstance(obj, type(None)):
-            return None
-        elif isinstance(obj, types):
+        if isinstance(obj, types):
             return obj
         elif isinstance(obj, list):
             return [self.sanitize_for_serialization(sub_obj)

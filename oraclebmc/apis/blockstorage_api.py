@@ -22,19 +22,18 @@
 
 from __future__ import absolute_import
 
-# python 2 and python 3 compatibility library
-from six import iteritems
-from io import IOBase
+import six
 
-from ..signer import Signer
 from ..api_client import ApiClient
+from ..signer import Signer
+missing_param = object()
+
 
 class BlockstorageApi(object):
 
     def __init__(self, config):
         signer = Signer(config.tenancy, config.user, config.fingerprint, config.key_file)
-        self.api_client =  ApiClient(config, signer)
-
+        self.api_client = ApiClient(config, signer)
 
     def create_volume(self, create_volume_details, **kwargs):
         """
@@ -45,48 +44,33 @@ class BlockstorageApi(object):
         :param str opc_retry_token: A token that uniquely identifies a request so it can be retried in case of a timeout or\nserver error without risk of executing that same action again. Retry tokens expire after 24\nhours, but can be invalidated before then due to conflicting operations (e.g., if a resource\nhas been deleted and purged from the system, then a retry of the original creation request\nmay be rejected).\n
         :return: A Response object with data of type Volume
         """
+        resource_path = "/volumes"
+        method = "POST"
 
-        all_params = ['create_volume_details', 'opc_retry_token']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "create_volume_details",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "create_volume got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_volume" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        # verify the required parameter 'create_volume_details' is set
-        if ('create_volume_details' not in params) or (params['create_volume_details'] is None):
-            raise ValueError("Missing the required parameter `create_volume_details` when calling `create_volume`")
-
-        resource_path = '/volumes'
-        path_params = {}
-
-        query_params = {}
-
-        header_params = {}
-        if 'opc_retry_token' in params:
-            header_params['opc-retry-token'] = params['opc_retry_token']
-
-        body_params = None
-        if 'create_volume_details' in params:
-            body_params = params['create_volume_details']
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_blockstorage_api,
-                                            resource_path,
-                                            'POST',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='Volume')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_blockstorage_api,
+            resource_path=resource_path,
+            method=method,
+            header_params=header_params,
+            body=create_volume_details,
+            response_type="Volume")
 
     def create_volume_backup(self, create_volume_backup_details, **kwargs):
         """
@@ -97,48 +81,33 @@ class BlockstorageApi(object):
         :param str opc_retry_token: A token that uniquely identifies a request so it can be retried in case of a timeout or\nserver error without risk of executing that same action again. Retry tokens expire after 24\nhours, but can be invalidated before then due to conflicting operations (e.g., if a resource\nhas been deleted and purged from the system, then a retry of the original creation request\nmay be rejected).\n
         :return: A Response object with data of type VolumeBackup
         """
+        resource_path = "/volumeBackups"
+        method = "POST"
 
-        all_params = ['create_volume_backup_details', 'opc_retry_token']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "create_volume_backup_details",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "create_volume_backup got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_volume_backup" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        # verify the required parameter 'create_volume_backup_details' is set
-        if ('create_volume_backup_details' not in params) or (params['create_volume_backup_details'] is None):
-            raise ValueError("Missing the required parameter `create_volume_backup_details` when calling `create_volume_backup`")
-
-        resource_path = '/volumeBackups'
-        path_params = {}
-
-        query_params = {}
-
-        header_params = {}
-        if 'opc_retry_token' in params:
-            header_params['opc-retry-token'] = params['opc_retry_token']
-
-        body_params = None
-        if 'create_volume_backup_details' in params:
-            body_params = params['create_volume_backup_details']
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_blockstorage_api,
-                                            resource_path,
-                                            'POST',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='VolumeBackup')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_blockstorage_api,
+            resource_path=resource_path,
+            method=method,
+            header_params=header_params,
+            body=create_volume_backup_details,
+            response_type="VolumeBackup")
 
     def delete_volume(self, volume_id, **kwargs):
         """
@@ -149,48 +118,37 @@ class BlockstorageApi(object):
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
         :return: A Response object with data of type None
         """
+        resource_path = "/volumes/{volumeId}"
+        method = "DELETE"
 
-        all_params = ['volume_id', 'if_match']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "volume_id",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_volume got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_volume" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "volumeId": volume_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'volume_id' is set
-        if ('volume_id' not in params) or (params['volume_id'] is None):
-            raise ValueError("Missing the required parameter `volume_id` when calling `delete_volume`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        resource_path = '/volumes/{volumeId}'
-        path_params = {}
-        if 'volume_id' in params:
-            path_params['volumeId'] = params['volume_id']
-
-        query_params = {}
-
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_blockstorage_api,
-                                            resource_path,
-                                            'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type=None)
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_blockstorage_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params)
 
     def delete_volume_backup(self, volume_backup_id, **kwargs):
         """
@@ -201,48 +159,37 @@ class BlockstorageApi(object):
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
         :return: A Response object with data of type None
         """
+        resource_path = "/volumeBackups/{volumeBackupId}"
+        method = "DELETE"
 
-        all_params = ['volume_backup_id', 'if_match']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "volume_backup_id",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_volume_backup got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_volume_backup" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "volumeBackupId": volume_backup_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'volume_backup_id' is set
-        if ('volume_backup_id' not in params) or (params['volume_backup_id'] is None):
-            raise ValueError("Missing the required parameter `volume_backup_id` when calling `delete_volume_backup`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        resource_path = '/volumeBackups/{volumeBackupId}'
-        path_params = {}
-        if 'volume_backup_id' in params:
-            path_params['volumeBackupId'] = params['volume_backup_id']
-
-        query_params = {}
-
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_blockstorage_api,
-                                            resource_path,
-                                            'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type=None)
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_blockstorage_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params)
 
     def get_volume(self, volume_id, **kwargs):
         """
@@ -252,46 +199,35 @@ class BlockstorageApi(object):
         :param str volume_id: The Oracle Cloud ID (OCID) that uniquely identifies the volume. (required)
         :return: A Response object with data of type Volume
         """
+        resource_path = "/volumes/{volumeId}"
+        method = "GET"
 
-        all_params = ['volume_id']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "volume_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "get_volume got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_volume" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "volumeId": volume_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'volume_id' is set
-        if ('volume_id' not in params) or (params['volume_id'] is None):
-            raise ValueError("Missing the required parameter `volume_id` when calling `get_volume`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/volumes/{volumeId}'
-        path_params = {}
-        if 'volume_id' in params:
-            path_params['volumeId'] = params['volume_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_blockstorage_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='Volume')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_blockstorage_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="Volume")
 
     def get_volume_backup(self, volume_backup_id, **kwargs):
         """
@@ -301,46 +237,35 @@ class BlockstorageApi(object):
         :param str volume_backup_id: The Oracle Cloud ID (OCID) that uniquely identifies the volume backup. (required)
         :return: A Response object with data of type VolumeBackup
         """
+        resource_path = "/volumeBackups/{volumeBackupId}"
+        method = "GET"
 
-        all_params = ['volume_backup_id']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "volume_backup_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "get_volume_backup got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_volume_backup" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "volumeBackupId": volume_backup_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'volume_backup_id' is set
-        if ('volume_backup_id' not in params) or (params['volume_backup_id'] is None):
-            raise ValueError("Missing the required parameter `volume_backup_id` when calling `get_volume_backup`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/volumeBackups/{volumeBackupId}'
-        path_params = {}
-        if 'volume_backup_id' in params:
-            path_params['volumeBackupId'] = params['volume_backup_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_blockstorage_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='VolumeBackup')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_blockstorage_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="VolumeBackup")
 
     def list_volume_backups(self, compartment_id, **kwargs):
         """
@@ -353,52 +278,41 @@ class BlockstorageApi(object):
         :param str page: The value of the `opc-next-page` response header from the previous \"List\" call.\n
         :return: A Response object with data of type list[VolumeBackup]
         """
+        resource_path = "/volumeBackups"
+        method = "GET"
 
-        all_params = ['compartment_id', 'volume_id', 'limit', 'page']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "compartment_id",
+            "volume_id",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "list_volume_backups got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_volume_backups" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        query_params = {
+            "compartmentId": compartment_id,
+            "volumeId": kwargs.get("volume_id", missing_param),
+            "limit": kwargs.get("limit", missing_param),
+            "page": kwargs.get("page", missing_param)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing_param}
 
-        # verify the required parameter 'compartment_id' is set
-        if ('compartment_id' not in params) or (params['compartment_id'] is None):
-            raise ValueError("Missing the required parameter `compartment_id` when calling `list_volume_backups`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/volumeBackups'
-        path_params = {}
-
-        query_params = {}
-        if 'compartment_id' in params:
-            query_params['compartmentId'] = params['compartment_id']
-        if 'volume_id' in params:
-            query_params['volumeId'] = params['volume_id']
-        if 'limit' in params:
-            query_params['limit'] = params['limit']
-        if 'page' in params:
-            query_params['page'] = params['page']
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_blockstorage_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='list[VolumeBackup]')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_blockstorage_api,
+            resource_path=resource_path,
+            method=method,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[VolumeBackup]")
 
     def list_volumes(self, compartment_id, **kwargs):
         """
@@ -411,52 +325,41 @@ class BlockstorageApi(object):
         :param str page: The value of the `opc-next-page` response header from the previous \"List\" call.\n
         :return: A Response object with data of type list[Volume]
         """
+        resource_path = "/volumes"
+        method = "GET"
 
-        all_params = ['compartment_id', 'availability_domain', 'limit', 'page']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "compartment_id",
+            "availability_domain",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "list_volumes got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_volumes" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        query_params = {
+            "availabilityDomain": kwargs.get("availability_domain", missing_param),
+            "compartmentId": compartment_id,
+            "limit": kwargs.get("limit", missing_param),
+            "page": kwargs.get("page", missing_param)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing_param}
 
-        # verify the required parameter 'compartment_id' is set
-        if ('compartment_id' not in params) or (params['compartment_id'] is None):
-            raise ValueError("Missing the required parameter `compartment_id` when calling `list_volumes`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/volumes'
-        path_params = {}
-
-        query_params = {}
-        if 'availability_domain' in params:
-            query_params['availabilityDomain'] = params['availability_domain']
-        if 'compartment_id' in params:
-            query_params['compartmentId'] = params['compartment_id']
-        if 'limit' in params:
-            query_params['limit'] = params['limit']
-        if 'page' in params:
-            query_params['page'] = params['page']
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_blockstorage_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='list[Volume]')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_blockstorage_api,
+            resource_path=resource_path,
+            method=method,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[Volume]")
 
     def update_volume(self, volume_id, update_volume_details, **kwargs):
         """
@@ -468,53 +371,40 @@ class BlockstorageApi(object):
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
         :return: A Response object with data of type Volume
         """
+        resource_path = "/volumes/{volumeId}"
+        method = "PUT"
 
-        all_params = ['volume_id', 'update_volume_details', 'if_match']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "volume_id",
+            "update_volume_details",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "update_volume got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method update_volume" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "volumeId": volume_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'volume_id' is set
-        if ('volume_id' not in params) or (params['volume_id'] is None):
-            raise ValueError("Missing the required parameter `volume_id` when calling `update_volume`")
-        # verify the required parameter 'update_volume_details' is set
-        if ('update_volume_details' not in params) or (params['update_volume_details'] is None):
-            raise ValueError("Missing the required parameter `update_volume_details` when calling `update_volume`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        resource_path = '/volumes/{volumeId}'
-        path_params = {}
-        if 'volume_id' in params:
-            path_params['volumeId'] = params['volume_id']
-
-        query_params = {}
-
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-
-        body_params = None
-        if 'update_volume_details' in params:
-            body_params = params['update_volume_details']
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_blockstorage_api,
-                                            resource_path,
-                                            'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='Volume')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_blockstorage_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=update_volume_details,
+            response_type="Volume")
 
     def update_volume_backup(self, volume_backup_id, update_volume_backup_details, **kwargs):
         """
@@ -526,50 +416,37 @@ class BlockstorageApi(object):
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
         :return: A Response object with data of type VolumeBackup
         """
+        resource_path = "/volumeBackups/{volumeBackupId}"
+        method = "PUT"
 
-        all_params = ['volume_backup_id', 'update_volume_backup_details', 'if_match']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "volume_backup_id",
+            "update_volume_backup_details",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "update_volume_backup got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method update_volume_backup" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "volumeBackupId": volume_backup_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'volume_backup_id' is set
-        if ('volume_backup_id' not in params) or (params['volume_backup_id'] is None):
-            raise ValueError("Missing the required parameter `volume_backup_id` when calling `update_volume_backup`")
-        # verify the required parameter 'update_volume_backup_details' is set
-        if ('update_volume_backup_details' not in params) or (params['update_volume_backup_details'] is None):
-            raise ValueError("Missing the required parameter `update_volume_backup_details` when calling `update_volume_backup`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        resource_path = '/volumeBackups/{volumeBackupId}'
-        path_params = {}
-        if 'volume_backup_id' in params:
-            path_params['volumeBackupId'] = params['volume_backup_id']
-
-        query_params = {}
-
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-
-        body_params = None
-        if 'update_volume_backup_details' in params:
-            body_params = params['update_volume_backup_details']
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_blockstorage_api,
-                                            resource_path,
-                                            'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='VolumeBackup')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_blockstorage_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=update_volume_backup_details,
+            response_type="VolumeBackup")

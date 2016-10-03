@@ -95,7 +95,7 @@ class CreateBucketDetails(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this CreateBucketDetails.
-        The ID of the compartment in which to create the bucket.
+        The compartment ID used to authorize the bucket.
 
         :return: The compartment_id of this CreateBucketDetails.
         :rtype: str
@@ -106,7 +106,7 @@ class CreateBucketDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateBucketDetails.
-        The ID of the compartment in which to create the bucket.
+        The compartment ID used to authorize the bucket.
 
         :param compartment_id: The compartment_id of this CreateBucketDetails.
         :type: str
@@ -117,7 +117,7 @@ class CreateBucketDetails(object):
     def metadata(self):
         """
         Gets the metadata of this CreateBucketDetails.
-        Arbitrary string keys and values for user-defined metadata.
+        Arbitrary string keys and values for the user-defined metadata.
 
         :return: The metadata of this CreateBucketDetails.
         :rtype: dict(str, str)
@@ -128,7 +128,7 @@ class CreateBucketDetails(object):
     def metadata(self, metadata):
         """
         Sets the metadata of this CreateBucketDetails.
-        Arbitrary string keys and values for user-defined metadata.
+        Arbitrary string keys and values for the user-defined metadata.
 
         :param metadata: The metadata of this CreateBucketDetails.
         :type: dict(str, str)

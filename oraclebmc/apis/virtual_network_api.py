@@ -22,19 +22,18 @@
 
 from __future__ import absolute_import
 
-# python 2 and python 3 compatibility library
-from six import iteritems
-from io import IOBase
+import six
 
-from ..signer import Signer
 from ..api_client import ApiClient
+from ..signer import Signer
+missing_param = object()
+
 
 class VirtualNetworkApi(object):
 
     def __init__(self, config):
         signer = Signer(config.tenancy, config.user, config.fingerprint, config.key_file)
-        self.api_client =  ApiClient(config, signer)
-
+        self.api_client = ApiClient(config, signer)
 
     def create_cpe(self, create_cpe_details, **kwargs):
         """
@@ -45,48 +44,33 @@ class VirtualNetworkApi(object):
         :param str opc_retry_token: A token that uniquely identifies a request so it can be retried in case of a timeout or\nserver error without risk of executing that same action again. Retry tokens expire after 24\nhours, but can be invalidated before then due to conflicting operations (e.g., if a resource\nhas been deleted and purged from the system, then a retry of the original creation request\nmay be rejected).\n
         :return: A Response object with data of type Cpe
         """
+        resource_path = "/cpes"
+        method = "POST"
 
-        all_params = ['create_cpe_details', 'opc_retry_token']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "create_cpe_details",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "create_cpe got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_cpe" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        # verify the required parameter 'create_cpe_details' is set
-        if ('create_cpe_details' not in params) or (params['create_cpe_details'] is None):
-            raise ValueError("Missing the required parameter `create_cpe_details` when calling `create_cpe`")
-
-        resource_path = '/cpes'
-        path_params = {}
-
-        query_params = {}
-
-        header_params = {}
-        if 'opc_retry_token' in params:
-            header_params['opc-retry-token'] = params['opc_retry_token']
-
-        body_params = None
-        if 'create_cpe_details' in params:
-            body_params = params['create_cpe_details']
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'POST',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='Cpe')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            header_params=header_params,
+            body=create_cpe_details,
+            response_type="Cpe")
 
     def create_dhcp_options(self, create_dhcp_details, **kwargs):
         """
@@ -97,48 +81,33 @@ class VirtualNetworkApi(object):
         :param str opc_retry_token: A token that uniquely identifies a request so it can be retried in case of a timeout or\nserver error without risk of executing that same action again. Retry tokens expire after 24\nhours, but can be invalidated before then due to conflicting operations (e.g., if a resource\nhas been deleted and purged from the system, then a retry of the original creation request\nmay be rejected).\n
         :return: A Response object with data of type DhcpOptions
         """
+        resource_path = "/dhcps"
+        method = "POST"
 
-        all_params = ['create_dhcp_details', 'opc_retry_token']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "create_dhcp_details",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "create_dhcp_options got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_dhcp_options" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        # verify the required parameter 'create_dhcp_details' is set
-        if ('create_dhcp_details' not in params) or (params['create_dhcp_details'] is None):
-            raise ValueError("Missing the required parameter `create_dhcp_details` when calling `create_dhcp_options`")
-
-        resource_path = '/dhcps'
-        path_params = {}
-
-        query_params = {}
-
-        header_params = {}
-        if 'opc_retry_token' in params:
-            header_params['opc-retry-token'] = params['opc_retry_token']
-
-        body_params = None
-        if 'create_dhcp_details' in params:
-            body_params = params['create_dhcp_details']
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'POST',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='DhcpOptions')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            header_params=header_params,
+            body=create_dhcp_details,
+            response_type="DhcpOptions")
 
     def create_drg(self, create_drg_details, **kwargs):
         """
@@ -149,48 +118,33 @@ class VirtualNetworkApi(object):
         :param str opc_retry_token: A token that uniquely identifies a request so it can be retried in case of a timeout or\nserver error without risk of executing that same action again. Retry tokens expire after 24\nhours, but can be invalidated before then due to conflicting operations (e.g., if a resource\nhas been deleted and purged from the system, then a retry of the original creation request\nmay be rejected).\n
         :return: A Response object with data of type Drg
         """
+        resource_path = "/drgs"
+        method = "POST"
 
-        all_params = ['create_drg_details', 'opc_retry_token']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "create_drg_details",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "create_drg got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_drg" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        # verify the required parameter 'create_drg_details' is set
-        if ('create_drg_details' not in params) or (params['create_drg_details'] is None):
-            raise ValueError("Missing the required parameter `create_drg_details` when calling `create_drg`")
-
-        resource_path = '/drgs'
-        path_params = {}
-
-        query_params = {}
-
-        header_params = {}
-        if 'opc_retry_token' in params:
-            header_params['opc-retry-token'] = params['opc_retry_token']
-
-        body_params = None
-        if 'create_drg_details' in params:
-            body_params = params['create_drg_details']
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'POST',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='Drg')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            header_params=header_params,
+            body=create_drg_details,
+            response_type="Drg")
 
     def create_drg_attachment(self, create_drg_attachment_details, **kwargs):
         """
@@ -201,48 +155,33 @@ class VirtualNetworkApi(object):
         :param str opc_retry_token: A token that uniquely identifies a request so it can be retried in case of a timeout or\nserver error without risk of executing that same action again. Retry tokens expire after 24\nhours, but can be invalidated before then due to conflicting operations (e.g., if a resource\nhas been deleted and purged from the system, then a retry of the original creation request\nmay be rejected).\n
         :return: A Response object with data of type DrgAttachment
         """
+        resource_path = "/drgAttachments"
+        method = "POST"
 
-        all_params = ['create_drg_attachment_details', 'opc_retry_token']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "create_drg_attachment_details",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "create_drg_attachment got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_drg_attachment" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        # verify the required parameter 'create_drg_attachment_details' is set
-        if ('create_drg_attachment_details' not in params) or (params['create_drg_attachment_details'] is None):
-            raise ValueError("Missing the required parameter `create_drg_attachment_details` when calling `create_drg_attachment`")
-
-        resource_path = '/drgAttachments'
-        path_params = {}
-
-        query_params = {}
-
-        header_params = {}
-        if 'opc_retry_token' in params:
-            header_params['opc-retry-token'] = params['opc_retry_token']
-
-        body_params = None
-        if 'create_drg_attachment_details' in params:
-            body_params = params['create_drg_attachment_details']
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'POST',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='DrgAttachment')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            header_params=header_params,
+            body=create_drg_attachment_details,
+            response_type="DrgAttachment")
 
     def create_internet_gateway(self, create_internet_gateway_details, **kwargs):
         """
@@ -253,48 +192,33 @@ class VirtualNetworkApi(object):
         :param str opc_retry_token: A token that uniquely identifies a request so it can be retried in case of a timeout or\nserver error without risk of executing that same action again. Retry tokens expire after 24\nhours, but can be invalidated before then due to conflicting operations (e.g., if a resource\nhas been deleted and purged from the system, then a retry of the original creation request\nmay be rejected).\n
         :return: A Response object with data of type InternetGateway
         """
+        resource_path = "/internetGateways"
+        method = "POST"
 
-        all_params = ['create_internet_gateway_details', 'opc_retry_token']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "create_internet_gateway_details",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "create_internet_gateway got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_internet_gateway" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        # verify the required parameter 'create_internet_gateway_details' is set
-        if ('create_internet_gateway_details' not in params) or (params['create_internet_gateway_details'] is None):
-            raise ValueError("Missing the required parameter `create_internet_gateway_details` when calling `create_internet_gateway`")
-
-        resource_path = '/internetGateways'
-        path_params = {}
-
-        query_params = {}
-
-        header_params = {}
-        if 'opc_retry_token' in params:
-            header_params['opc-retry-token'] = params['opc_retry_token']
-
-        body_params = None
-        if 'create_internet_gateway_details' in params:
-            body_params = params['create_internet_gateway_details']
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'POST',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='InternetGateway')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            header_params=header_params,
+            body=create_internet_gateway_details,
+            response_type="InternetGateway")
 
     def create_ip_sec_connection(self, create_ip_sec_connection_details, **kwargs):
         """
@@ -305,48 +229,33 @@ class VirtualNetworkApi(object):
         :param str opc_retry_token: A token that uniquely identifies a request so it can be retried in case of a timeout or\nserver error without risk of executing that same action again. Retry tokens expire after 24\nhours, but can be invalidated before then due to conflicting operations (e.g., if a resource\nhas been deleted and purged from the system, then a retry of the original creation request\nmay be rejected).\n
         :return: A Response object with data of type IPSecConnection
         """
+        resource_path = "/ipsecConnections"
+        method = "POST"
 
-        all_params = ['create_ip_sec_connection_details', 'opc_retry_token']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "create_ip_sec_connection_details",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "create_ip_sec_connection got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_ip_sec_connection" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        # verify the required parameter 'create_ip_sec_connection_details' is set
-        if ('create_ip_sec_connection_details' not in params) or (params['create_ip_sec_connection_details'] is None):
-            raise ValueError("Missing the required parameter `create_ip_sec_connection_details` when calling `create_ip_sec_connection`")
-
-        resource_path = '/ipsecConnections'
-        path_params = {}
-
-        query_params = {}
-
-        header_params = {}
-        if 'opc_retry_token' in params:
-            header_params['opc-retry-token'] = params['opc_retry_token']
-
-        body_params = None
-        if 'create_ip_sec_connection_details' in params:
-            body_params = params['create_ip_sec_connection_details']
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'POST',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='IPSecConnection')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            header_params=header_params,
+            body=create_ip_sec_connection_details,
+            response_type="IPSecConnection")
 
     def create_route_table(self, create_route_table_details, **kwargs):
         """
@@ -357,48 +266,33 @@ class VirtualNetworkApi(object):
         :param str opc_retry_token: A token that uniquely identifies a request so it can be retried in case of a timeout or\nserver error without risk of executing that same action again. Retry tokens expire after 24\nhours, but can be invalidated before then due to conflicting operations (e.g., if a resource\nhas been deleted and purged from the system, then a retry of the original creation request\nmay be rejected).\n
         :return: A Response object with data of type RouteTable
         """
+        resource_path = "/routeTables"
+        method = "POST"
 
-        all_params = ['create_route_table_details', 'opc_retry_token']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "create_route_table_details",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "create_route_table got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_route_table" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        # verify the required parameter 'create_route_table_details' is set
-        if ('create_route_table_details' not in params) or (params['create_route_table_details'] is None):
-            raise ValueError("Missing the required parameter `create_route_table_details` when calling `create_route_table`")
-
-        resource_path = '/routeTables'
-        path_params = {}
-
-        query_params = {}
-
-        header_params = {}
-        if 'opc_retry_token' in params:
-            header_params['opc-retry-token'] = params['opc_retry_token']
-
-        body_params = None
-        if 'create_route_table_details' in params:
-            body_params = params['create_route_table_details']
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'POST',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='RouteTable')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            header_params=header_params,
+            body=create_route_table_details,
+            response_type="RouteTable")
 
     def create_security_list(self, details, **kwargs):
         """
@@ -409,48 +303,33 @@ class VirtualNetworkApi(object):
         :param str opc_retry_token: A token that uniquely identifies a request so it can be retried in case of a timeout or\nserver error without risk of executing that same action again. Retry tokens expire after 24\nhours, but can be invalidated before then due to conflicting operations (e.g., if a resource\nhas been deleted and purged from the system, then a retry of the original creation request\nmay be rejected).\n
         :return: A Response object with data of type SecurityList
         """
+        resource_path = "/securityLists"
+        method = "POST"
 
-        all_params = ['details', 'opc_retry_token']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "details",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "create_security_list got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_security_list" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        # verify the required parameter 'details' is set
-        if ('details' not in params) or (params['details'] is None):
-            raise ValueError("Missing the required parameter `details` when calling `create_security_list`")
-
-        resource_path = '/securityLists'
-        path_params = {}
-
-        query_params = {}
-
-        header_params = {}
-        if 'opc_retry_token' in params:
-            header_params['opc-retry-token'] = params['opc_retry_token']
-
-        body_params = None
-        if 'details' in params:
-            body_params = params['details']
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'POST',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='SecurityList')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            header_params=header_params,
+            body=details,
+            response_type="SecurityList")
 
     def create_subnet(self, create_subnet_details, **kwargs):
         """
@@ -461,48 +340,33 @@ class VirtualNetworkApi(object):
         :param str opc_retry_token: A token that uniquely identifies a request so it can be retried in case of a timeout or\nserver error without risk of executing that same action again. Retry tokens expire after 24\nhours, but can be invalidated before then due to conflicting operations (e.g., if a resource\nhas been deleted and purged from the system, then a retry of the original creation request\nmay be rejected).\n
         :return: A Response object with data of type Subnet
         """
+        resource_path = "/subnets"
+        method = "POST"
 
-        all_params = ['create_subnet_details', 'opc_retry_token']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "create_subnet_details",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "create_subnet got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_subnet" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        # verify the required parameter 'create_subnet_details' is set
-        if ('create_subnet_details' not in params) or (params['create_subnet_details'] is None):
-            raise ValueError("Missing the required parameter `create_subnet_details` when calling `create_subnet`")
-
-        resource_path = '/subnets'
-        path_params = {}
-
-        query_params = {}
-
-        header_params = {}
-        if 'opc_retry_token' in params:
-            header_params['opc-retry-token'] = params['opc_retry_token']
-
-        body_params = None
-        if 'create_subnet_details' in params:
-            body_params = params['create_subnet_details']
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'POST',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='Subnet')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            header_params=header_params,
+            body=create_subnet_details,
+            response_type="Subnet")
 
     def create_vcn(self, create_vcn_details, **kwargs):
         """
@@ -513,48 +377,33 @@ class VirtualNetworkApi(object):
         :param str opc_retry_token: A token that uniquely identifies a request so it can be retried in case of a timeout or\nserver error without risk of executing that same action again. Retry tokens expire after 24\nhours, but can be invalidated before then due to conflicting operations (e.g., if a resource\nhas been deleted and purged from the system, then a retry of the original creation request\nmay be rejected).\n
         :return: A Response object with data of type Vcn
         """
+        resource_path = "/vcns"
+        method = "POST"
 
-        all_params = ['create_vcn_details', 'opc_retry_token']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "create_vcn_details",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "create_vcn got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_vcn" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        # verify the required parameter 'create_vcn_details' is set
-        if ('create_vcn_details' not in params) or (params['create_vcn_details'] is None):
-            raise ValueError("Missing the required parameter `create_vcn_details` when calling `create_vcn`")
-
-        resource_path = '/vcns'
-        path_params = {}
-
-        query_params = {}
-
-        header_params = {}
-        if 'opc_retry_token' in params:
-            header_params['opc-retry-token'] = params['opc_retry_token']
-
-        body_params = None
-        if 'create_vcn_details' in params:
-            body_params = params['create_vcn_details']
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'POST',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='Vcn')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            header_params=header_params,
+            body=create_vcn_details,
+            response_type="Vcn")
 
     def delete_cpe(self, cpe_id, **kwargs):
         """
@@ -565,48 +414,37 @@ class VirtualNetworkApi(object):
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
         :return: A Response object with data of type None
         """
+        resource_path = "/cpes/{cpeId}"
+        method = "DELETE"
 
-        all_params = ['cpe_id', 'if_match']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "cpe_id",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_cpe got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_cpe" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "cpeId": cpe_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'cpe_id' is set
-        if ('cpe_id' not in params) or (params['cpe_id'] is None):
-            raise ValueError("Missing the required parameter `cpe_id` when calling `delete_cpe`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        resource_path = '/cpes/{cpeId}'
-        path_params = {}
-        if 'cpe_id' in params:
-            path_params['cpeId'] = params['cpe_id']
-
-        query_params = {}
-
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type=None)
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params)
 
     def delete_dhcp_options(self, dhcp_id, **kwargs):
         """
@@ -617,48 +455,37 @@ class VirtualNetworkApi(object):
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
         :return: A Response object with data of type None
         """
+        resource_path = "/dhcps/{dhcpId}"
+        method = "DELETE"
 
-        all_params = ['dhcp_id', 'if_match']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "dhcp_id",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_dhcp_options got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_dhcp_options" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "dhcpId": dhcp_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'dhcp_id' is set
-        if ('dhcp_id' not in params) or (params['dhcp_id'] is None):
-            raise ValueError("Missing the required parameter `dhcp_id` when calling `delete_dhcp_options`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        resource_path = '/dhcps/{dhcpId}'
-        path_params = {}
-        if 'dhcp_id' in params:
-            path_params['dhcpId'] = params['dhcp_id']
-
-        query_params = {}
-
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type=None)
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params)
 
     def delete_drg(self, drg_id, **kwargs):
         """
@@ -669,48 +496,37 @@ class VirtualNetworkApi(object):
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
         :return: A Response object with data of type None
         """
+        resource_path = "/drgs/{drgId}"
+        method = "DELETE"
 
-        all_params = ['drg_id', 'if_match']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "drg_id",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_drg got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_drg" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "drgId": drg_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'drg_id' is set
-        if ('drg_id' not in params) or (params['drg_id'] is None):
-            raise ValueError("Missing the required parameter `drg_id` when calling `delete_drg`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        resource_path = '/drgs/{drgId}'
-        path_params = {}
-        if 'drg_id' in params:
-            path_params['drgId'] = params['drg_id']
-
-        query_params = {}
-
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type=None)
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params)
 
     def delete_drg_attachment(self, drg_attachment_id, **kwargs):
         """
@@ -721,48 +537,37 @@ class VirtualNetworkApi(object):
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
         :return: A Response object with data of type None
         """
+        resource_path = "/drgAttachments/{drgAttachmentId}"
+        method = "DELETE"
 
-        all_params = ['drg_attachment_id', 'if_match']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "drg_attachment_id",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_drg_attachment got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_drg_attachment" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "drgAttachmentId": drg_attachment_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'drg_attachment_id' is set
-        if ('drg_attachment_id' not in params) or (params['drg_attachment_id'] is None):
-            raise ValueError("Missing the required parameter `drg_attachment_id` when calling `delete_drg_attachment`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        resource_path = '/drgAttachments/{drgAttachmentId}'
-        path_params = {}
-        if 'drg_attachment_id' in params:
-            path_params['drgAttachmentId'] = params['drg_attachment_id']
-
-        query_params = {}
-
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type=None)
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params)
 
     def delete_internet_gateway(self, ig_id, **kwargs):
         """
@@ -773,48 +578,37 @@ class VirtualNetworkApi(object):
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
         :return: A Response object with data of type None
         """
+        resource_path = "/internetGateways/{igId}"
+        method = "DELETE"
 
-        all_params = ['ig_id', 'if_match']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "ig_id",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_internet_gateway got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_internet_gateway" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "igId": ig_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'ig_id' is set
-        if ('ig_id' not in params) or (params['ig_id'] is None):
-            raise ValueError("Missing the required parameter `ig_id` when calling `delete_internet_gateway`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        resource_path = '/internetGateways/{igId}'
-        path_params = {}
-        if 'ig_id' in params:
-            path_params['igId'] = params['ig_id']
-
-        query_params = {}
-
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type=None)
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params)
 
     def delete_ip_sec_connection(self, ipsc_id, **kwargs):
         """
@@ -825,48 +619,37 @@ class VirtualNetworkApi(object):
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
         :return: A Response object with data of type None
         """
+        resource_path = "/ipsecConnections/{ipscId}"
+        method = "DELETE"
 
-        all_params = ['ipsc_id', 'if_match']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "ipsc_id",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_ip_sec_connection got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_ip_sec_connection" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "ipscId": ipsc_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'ipsc_id' is set
-        if ('ipsc_id' not in params) or (params['ipsc_id'] is None):
-            raise ValueError("Missing the required parameter `ipsc_id` when calling `delete_ip_sec_connection`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        resource_path = '/ipsecConnections/{ipscId}'
-        path_params = {}
-        if 'ipsc_id' in params:
-            path_params['ipscId'] = params['ipsc_id']
-
-        query_params = {}
-
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type=None)
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params)
 
     def delete_route_table(self, rt_id, **kwargs):
         """
@@ -877,48 +660,37 @@ class VirtualNetworkApi(object):
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
         :return: A Response object with data of type None
         """
+        resource_path = "/routeTables/{rtId}"
+        method = "DELETE"
 
-        all_params = ['rt_id', 'if_match']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "rt_id",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_route_table got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_route_table" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "rtId": rt_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'rt_id' is set
-        if ('rt_id' not in params) or (params['rt_id'] is None):
-            raise ValueError("Missing the required parameter `rt_id` when calling `delete_route_table`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        resource_path = '/routeTables/{rtId}'
-        path_params = {}
-        if 'rt_id' in params:
-            path_params['rtId'] = params['rt_id']
-
-        query_params = {}
-
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type=None)
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params)
 
     def delete_security_list(self, security_list_id, **kwargs):
         """
@@ -929,48 +701,37 @@ class VirtualNetworkApi(object):
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
         :return: A Response object with data of type None
         """
+        resource_path = "/securityLists/{securityListId}"
+        method = "DELETE"
 
-        all_params = ['security_list_id', 'if_match']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "security_list_id",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_security_list got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_security_list" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "securityListId": security_list_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'security_list_id' is set
-        if ('security_list_id' not in params) or (params['security_list_id'] is None):
-            raise ValueError("Missing the required parameter `security_list_id` when calling `delete_security_list`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        resource_path = '/securityLists/{securityListId}'
-        path_params = {}
-        if 'security_list_id' in params:
-            path_params['securityListId'] = params['security_list_id']
-
-        query_params = {}
-
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type=None)
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params)
 
     def delete_subnet(self, subnet_id, **kwargs):
         """
@@ -981,48 +742,37 @@ class VirtualNetworkApi(object):
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
         :return: A Response object with data of type None
         """
+        resource_path = "/subnets/{subnetId}"
+        method = "DELETE"
 
-        all_params = ['subnet_id', 'if_match']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "subnet_id",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_subnet got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_subnet" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "subnetId": subnet_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'subnet_id' is set
-        if ('subnet_id' not in params) or (params['subnet_id'] is None):
-            raise ValueError("Missing the required parameter `subnet_id` when calling `delete_subnet`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        resource_path = '/subnets/{subnetId}'
-        path_params = {}
-        if 'subnet_id' in params:
-            path_params['subnetId'] = params['subnet_id']
-
-        query_params = {}
-
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type=None)
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params)
 
     def delete_vcn(self, vcn_id, **kwargs):
         """
@@ -1033,48 +783,37 @@ class VirtualNetworkApi(object):
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
         :return: A Response object with data of type None
         """
+        resource_path = "/vcns/{vcnId}"
+        method = "DELETE"
 
-        all_params = ['vcn_id', 'if_match']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "vcn_id",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_vcn got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_vcn" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "vcnId": vcn_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'vcn_id' is set
-        if ('vcn_id' not in params) or (params['vcn_id'] is None):
-            raise ValueError("Missing the required parameter `vcn_id` when calling `delete_vcn`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        resource_path = '/vcns/{vcnId}'
-        path_params = {}
-        if 'vcn_id' in params:
-            path_params['vcnId'] = params['vcn_id']
-
-        query_params = {}
-
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type=None)
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params)
 
     def get_cpe(self, cpe_id, **kwargs):
         """
@@ -1084,46 +823,35 @@ class VirtualNetworkApi(object):
         :param str cpe_id: The CPE's OCID. (required)
         :return: A Response object with data of type Cpe
         """
+        resource_path = "/cpes/{cpeId}"
+        method = "GET"
 
-        all_params = ['cpe_id']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "cpe_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "get_cpe got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_cpe" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "cpeId": cpe_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'cpe_id' is set
-        if ('cpe_id' not in params) or (params['cpe_id'] is None):
-            raise ValueError("Missing the required parameter `cpe_id` when calling `get_cpe`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/cpes/{cpeId}'
-        path_params = {}
-        if 'cpe_id' in params:
-            path_params['cpeId'] = params['cpe_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='Cpe')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="Cpe")
 
     def get_dhcp_options(self, dhcp_id, **kwargs):
         """
@@ -1133,46 +861,35 @@ class VirtualNetworkApi(object):
         :param str dhcp_id: The OCID for the set of DHCP options. (required)
         :return: A Response object with data of type DhcpOptions
         """
+        resource_path = "/dhcps/{dhcpId}"
+        method = "GET"
 
-        all_params = ['dhcp_id']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "dhcp_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "get_dhcp_options got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_dhcp_options" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "dhcpId": dhcp_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'dhcp_id' is set
-        if ('dhcp_id' not in params) or (params['dhcp_id'] is None):
-            raise ValueError("Missing the required parameter `dhcp_id` when calling `get_dhcp_options`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/dhcps/{dhcpId}'
-        path_params = {}
-        if 'dhcp_id' in params:
-            path_params['dhcpId'] = params['dhcp_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='DhcpOptions')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="DhcpOptions")
 
     def get_drg(self, drg_id, **kwargs):
         """
@@ -1182,46 +899,35 @@ class VirtualNetworkApi(object):
         :param str drg_id: The DRG's OCID. (required)
         :return: A Response object with data of type Drg
         """
+        resource_path = "/drgs/{drgId}"
+        method = "GET"
 
-        all_params = ['drg_id']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "drg_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "get_drg got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_drg" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "drgId": drg_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'drg_id' is set
-        if ('drg_id' not in params) or (params['drg_id'] is None):
-            raise ValueError("Missing the required parameter `drg_id` when calling `get_drg`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/drgs/{drgId}'
-        path_params = {}
-        if 'drg_id' in params:
-            path_params['drgId'] = params['drg_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='Drg')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="Drg")
 
     def get_drg_attachment(self, drg_attachment_id, **kwargs):
         """
@@ -1231,46 +937,35 @@ class VirtualNetworkApi(object):
         :param str drg_attachment_id: The DRG attachment's OCID. (required)
         :return: A Response object with data of type DrgAttachment
         """
+        resource_path = "/drgAttachments/{drgAttachmentId}"
+        method = "GET"
 
-        all_params = ['drg_attachment_id']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "drg_attachment_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "get_drg_attachment got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_drg_attachment" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "drgAttachmentId": drg_attachment_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'drg_attachment_id' is set
-        if ('drg_attachment_id' not in params) or (params['drg_attachment_id'] is None):
-            raise ValueError("Missing the required parameter `drg_attachment_id` when calling `get_drg_attachment`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/drgAttachments/{drgAttachmentId}'
-        path_params = {}
-        if 'drg_attachment_id' in params:
-            path_params['drgAttachmentId'] = params['drg_attachment_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='DrgAttachment')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="DrgAttachment")
 
     def get_internet_gateway(self, ig_id, **kwargs):
         """
@@ -1280,46 +975,35 @@ class VirtualNetworkApi(object):
         :param str ig_id: The Internet Gateway's OCID. (required)
         :return: A Response object with data of type InternetGateway
         """
+        resource_path = "/internetGateways/{igId}"
+        method = "GET"
 
-        all_params = ['ig_id']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "ig_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "get_internet_gateway got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_internet_gateway" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "igId": ig_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'ig_id' is set
-        if ('ig_id' not in params) or (params['ig_id'] is None):
-            raise ValueError("Missing the required parameter `ig_id` when calling `get_internet_gateway`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/internetGateways/{igId}'
-        path_params = {}
-        if 'ig_id' in params:
-            path_params['igId'] = params['ig_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='InternetGateway')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="InternetGateway")
 
     def get_ip_sec_connection(self, ipsc_id, **kwargs):
         """
@@ -1329,46 +1013,35 @@ class VirtualNetworkApi(object):
         :param str ipsc_id: The IPSec connection's OCID. (required)
         :return: A Response object with data of type IPSecConnection
         """
+        resource_path = "/ipsecConnections/{ipscId}"
+        method = "GET"
 
-        all_params = ['ipsc_id']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "ipsc_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "get_ip_sec_connection got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_ip_sec_connection" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "ipscId": ipsc_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'ipsc_id' is set
-        if ('ipsc_id' not in params) or (params['ipsc_id'] is None):
-            raise ValueError("Missing the required parameter `ipsc_id` when calling `get_ip_sec_connection`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/ipsecConnections/{ipscId}'
-        path_params = {}
-        if 'ipsc_id' in params:
-            path_params['ipscId'] = params['ipsc_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='IPSecConnection')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="IPSecConnection")
 
     def get_ip_sec_connection_device_config(self, ipsc_id, **kwargs):
         """
@@ -1378,46 +1051,35 @@ class VirtualNetworkApi(object):
         :param str ipsc_id: The IPSec connection's OCID. (required)
         :return: A Response object with data of type IPSecConnectionDeviceConfig
         """
+        resource_path = "/ipsecConnections/{ipscId}/deviceConfig"
+        method = "GET"
 
-        all_params = ['ipsc_id']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "ipsc_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "get_ip_sec_connection_device_config got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_ip_sec_connection_device_config" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "ipscId": ipsc_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'ipsc_id' is set
-        if ('ipsc_id' not in params) or (params['ipsc_id'] is None):
-            raise ValueError("Missing the required parameter `ipsc_id` when calling `get_ip_sec_connection_device_config`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/ipsecConnections/{ipscId}/deviceConfig'
-        path_params = {}
-        if 'ipsc_id' in params:
-            path_params['ipscId'] = params['ipsc_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='IPSecConnectionDeviceConfig')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="IPSecConnectionDeviceConfig")
 
     def get_ip_sec_connection_device_status(self, ipsc_id, **kwargs):
         """
@@ -1427,46 +1089,35 @@ class VirtualNetworkApi(object):
         :param str ipsc_id: The IPSec connection's OCID. (required)
         :return: A Response object with data of type IPSecConnectionDeviceStatus
         """
+        resource_path = "/ipsecConnections/{ipscId}/deviceStatus"
+        method = "GET"
 
-        all_params = ['ipsc_id']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "ipsc_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "get_ip_sec_connection_device_status got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_ip_sec_connection_device_status" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "ipscId": ipsc_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'ipsc_id' is set
-        if ('ipsc_id' not in params) or (params['ipsc_id'] is None):
-            raise ValueError("Missing the required parameter `ipsc_id` when calling `get_ip_sec_connection_device_status`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/ipsecConnections/{ipscId}/deviceStatus'
-        path_params = {}
-        if 'ipsc_id' in params:
-            path_params['ipscId'] = params['ipsc_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='IPSecConnectionDeviceStatus')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="IPSecConnectionDeviceStatus")
 
     def get_route_table(self, rt_id, **kwargs):
         """
@@ -1476,46 +1127,35 @@ class VirtualNetworkApi(object):
         :param str rt_id: The route table's OCID. (required)
         :return: A Response object with data of type RouteTable
         """
+        resource_path = "/routeTables/{rtId}"
+        method = "GET"
 
-        all_params = ['rt_id']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "rt_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "get_route_table got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_route_table" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "rtId": rt_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'rt_id' is set
-        if ('rt_id' not in params) or (params['rt_id'] is None):
-            raise ValueError("Missing the required parameter `rt_id` when calling `get_route_table`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/routeTables/{rtId}'
-        path_params = {}
-        if 'rt_id' in params:
-            path_params['rtId'] = params['rt_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='RouteTable')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="RouteTable")
 
     def get_security_list(self, security_list_id, **kwargs):
         """
@@ -1525,46 +1165,35 @@ class VirtualNetworkApi(object):
         :param str security_list_id: The security list's OCID. (required)
         :return: A Response object with data of type SecurityList
         """
+        resource_path = "/securityLists/{securityListId}"
+        method = "GET"
 
-        all_params = ['security_list_id']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "security_list_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "get_security_list got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_security_list" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "securityListId": security_list_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'security_list_id' is set
-        if ('security_list_id' not in params) or (params['security_list_id'] is None):
-            raise ValueError("Missing the required parameter `security_list_id` when calling `get_security_list`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/securityLists/{securityListId}'
-        path_params = {}
-        if 'security_list_id' in params:
-            path_params['securityListId'] = params['security_list_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='SecurityList')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="SecurityList")
 
     def get_subnet(self, subnet_id, **kwargs):
         """
@@ -1574,46 +1203,35 @@ class VirtualNetworkApi(object):
         :param str subnet_id: The subnet's OCID. (required)
         :return: A Response object with data of type Subnet
         """
+        resource_path = "/subnets/{subnetId}"
+        method = "GET"
 
-        all_params = ['subnet_id']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "subnet_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "get_subnet got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_subnet" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "subnetId": subnet_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'subnet_id' is set
-        if ('subnet_id' not in params) or (params['subnet_id'] is None):
-            raise ValueError("Missing the required parameter `subnet_id` when calling `get_subnet`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/subnets/{subnetId}'
-        path_params = {}
-        if 'subnet_id' in params:
-            path_params['subnetId'] = params['subnet_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='Subnet')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="Subnet")
 
     def get_vcn(self, vcn_id, **kwargs):
         """
@@ -1623,46 +1241,35 @@ class VirtualNetworkApi(object):
         :param str vcn_id: The VCN's OCID. (required)
         :return: A Response object with data of type Vcn
         """
+        resource_path = "/vcns/{vcnId}"
+        method = "GET"
 
-        all_params = ['vcn_id']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "vcn_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "get_vcn got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_vcn" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "vcnId": vcn_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'vcn_id' is set
-        if ('vcn_id' not in params) or (params['vcn_id'] is None):
-            raise ValueError("Missing the required parameter `vcn_id` when calling `get_vcn`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/vcns/{vcnId}'
-        path_params = {}
-        if 'vcn_id' in params:
-            path_params['vcnId'] = params['vcn_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='Vcn')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="Vcn")
 
     def get_vnic(self, vnic_id, **kwargs):
         """
@@ -1672,46 +1279,35 @@ class VirtualNetworkApi(object):
         :param str vnic_id: The VNIC's OCID. (required)
         :return: A Response object with data of type Vnic
         """
+        resource_path = "/vnics/{vnicId}"
+        method = "GET"
 
-        all_params = ['vnic_id']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "vnic_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "get_vnic got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_vnic" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "vnicId": vnic_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'vnic_id' is set
-        if ('vnic_id' not in params) or (params['vnic_id'] is None):
-            raise ValueError("Missing the required parameter `vnic_id` when calling `get_vnic`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/vnics/{vnicId}'
-        path_params = {}
-        if 'vnic_id' in params:
-            path_params['vnicId'] = params['vnic_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='Vnic')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="Vnic")
 
     def list_cpes(self, compartment_id, **kwargs):
         """
@@ -1723,50 +1319,39 @@ class VirtualNetworkApi(object):
         :param str page: The value of the `opc-next-page` response header from the previous \"List\" call.\n
         :return: A Response object with data of type list[Cpe]
         """
+        resource_path = "/cpes"
+        method = "GET"
 
-        all_params = ['compartment_id', 'limit', 'page']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "compartment_id",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "list_cpes got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_cpes" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        query_params = {
+            "compartmentId": compartment_id,
+            "limit": kwargs.get("limit", missing_param),
+            "page": kwargs.get("page", missing_param)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing_param}
 
-        # verify the required parameter 'compartment_id' is set
-        if ('compartment_id' not in params) or (params['compartment_id'] is None):
-            raise ValueError("Missing the required parameter `compartment_id` when calling `list_cpes`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/cpes'
-        path_params = {}
-
-        query_params = {}
-        if 'compartment_id' in params:
-            query_params['compartmentId'] = params['compartment_id']
-        if 'limit' in params:
-            query_params['limit'] = params['limit']
-        if 'page' in params:
-            query_params['page'] = params['page']
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='list[Cpe]')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[Cpe]")
 
     def list_dhcp_options(self, compartment_id, vcn_id, **kwargs):
         """
@@ -1779,55 +1364,41 @@ class VirtualNetworkApi(object):
         :param str page: The value of the `opc-next-page` response header from the previous \"List\" call.\n
         :return: A Response object with data of type list[DhcpOptions]
         """
+        resource_path = "/dhcps"
+        method = "GET"
 
-        all_params = ['compartment_id', 'vcn_id', 'limit', 'page']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "compartment_id",
+            "vcn_id",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "list_dhcp_options got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_dhcp_options" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        query_params = {
+            "compartmentId": compartment_id,
+            "vcnId": vcn_id,
+            "limit": kwargs.get("limit", missing_param),
+            "page": kwargs.get("page", missing_param)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing_param}
 
-        # verify the required parameter 'compartment_id' is set
-        if ('compartment_id' not in params) or (params['compartment_id'] is None):
-            raise ValueError("Missing the required parameter `compartment_id` when calling `list_dhcp_options`")
-        # verify the required parameter 'vcn_id' is set
-        if ('vcn_id' not in params) or (params['vcn_id'] is None):
-            raise ValueError("Missing the required parameter `vcn_id` when calling `list_dhcp_options`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/dhcps'
-        path_params = {}
-
-        query_params = {}
-        if 'compartment_id' in params:
-            query_params['compartmentId'] = params['compartment_id']
-        if 'vcn_id' in params:
-            query_params['vcnId'] = params['vcn_id']
-        if 'limit' in params:
-            query_params['limit'] = params['limit']
-        if 'page' in params:
-            query_params['page'] = params['page']
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='list[DhcpOptions]')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[DhcpOptions]")
 
     def list_drg_attachments(self, compartment_id, **kwargs):
         """
@@ -1841,54 +1412,43 @@ class VirtualNetworkApi(object):
         :param str page: The value of the `opc-next-page` response header from the previous \"List\" call.\n
         :return: A Response object with data of type list[DrgAttachment]
         """
+        resource_path = "/drgAttachments"
+        method = "GET"
 
-        all_params = ['compartment_id', 'vcn_id', 'drg_id', 'limit', 'page']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "compartment_id",
+            "vcn_id",
+            "drg_id",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "list_drg_attachments got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_drg_attachments" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        query_params = {
+            "compartmentId": compartment_id,
+            "vcnId": kwargs.get("vcn_id", missing_param),
+            "drgId": kwargs.get("drg_id", missing_param),
+            "limit": kwargs.get("limit", missing_param),
+            "page": kwargs.get("page", missing_param)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing_param}
 
-        # verify the required parameter 'compartment_id' is set
-        if ('compartment_id' not in params) or (params['compartment_id'] is None):
-            raise ValueError("Missing the required parameter `compartment_id` when calling `list_drg_attachments`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/drgAttachments'
-        path_params = {}
-
-        query_params = {}
-        if 'compartment_id' in params:
-            query_params['compartmentId'] = params['compartment_id']
-        if 'vcn_id' in params:
-            query_params['vcnId'] = params['vcn_id']
-        if 'drg_id' in params:
-            query_params['drgId'] = params['drg_id']
-        if 'limit' in params:
-            query_params['limit'] = params['limit']
-        if 'page' in params:
-            query_params['page'] = params['page']
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='list[DrgAttachment]')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[DrgAttachment]")
 
     def list_drgs(self, compartment_id, **kwargs):
         """
@@ -1900,50 +1460,39 @@ class VirtualNetworkApi(object):
         :param str page: The value of the `opc-next-page` response header from the previous \"List\" call.\n
         :return: A Response object with data of type list[Drg]
         """
+        resource_path = "/drgs"
+        method = "GET"
 
-        all_params = ['compartment_id', 'limit', 'page']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "compartment_id",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "list_drgs got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_drgs" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        query_params = {
+            "compartmentId": compartment_id,
+            "limit": kwargs.get("limit", missing_param),
+            "page": kwargs.get("page", missing_param)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing_param}
 
-        # verify the required parameter 'compartment_id' is set
-        if ('compartment_id' not in params) or (params['compartment_id'] is None):
-            raise ValueError("Missing the required parameter `compartment_id` when calling `list_drgs`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/drgs'
-        path_params = {}
-
-        query_params = {}
-        if 'compartment_id' in params:
-            query_params['compartmentId'] = params['compartment_id']
-        if 'limit' in params:
-            query_params['limit'] = params['limit']
-        if 'page' in params:
-            query_params['page'] = params['page']
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='list[Drg]')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[Drg]")
 
     def list_internet_gateways(self, compartment_id, vcn_id, **kwargs):
         """
@@ -1956,55 +1505,41 @@ class VirtualNetworkApi(object):
         :param str page: The value of the `opc-next-page` response header from the previous \"List\" call.\n
         :return: A Response object with data of type list[InternetGateway]
         """
+        resource_path = "/internetGateways"
+        method = "GET"
 
-        all_params = ['compartment_id', 'vcn_id', 'limit', 'page']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "compartment_id",
+            "vcn_id",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "list_internet_gateways got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_internet_gateways" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        query_params = {
+            "compartmentId": compartment_id,
+            "vcnId": vcn_id,
+            "limit": kwargs.get("limit", missing_param),
+            "page": kwargs.get("page", missing_param)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing_param}
 
-        # verify the required parameter 'compartment_id' is set
-        if ('compartment_id' not in params) or (params['compartment_id'] is None):
-            raise ValueError("Missing the required parameter `compartment_id` when calling `list_internet_gateways`")
-        # verify the required parameter 'vcn_id' is set
-        if ('vcn_id' not in params) or (params['vcn_id'] is None):
-            raise ValueError("Missing the required parameter `vcn_id` when calling `list_internet_gateways`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/internetGateways'
-        path_params = {}
-
-        query_params = {}
-        if 'compartment_id' in params:
-            query_params['compartmentId'] = params['compartment_id']
-        if 'vcn_id' in params:
-            query_params['vcnId'] = params['vcn_id']
-        if 'limit' in params:
-            query_params['limit'] = params['limit']
-        if 'page' in params:
-            query_params['page'] = params['page']
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='list[InternetGateway]')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[InternetGateway]")
 
     def list_ip_sec_connections(self, compartment_id, **kwargs):
         """
@@ -2018,54 +1553,43 @@ class VirtualNetworkApi(object):
         :param str page: The value of the `opc-next-page` response header from the previous \"List\" call.\n
         :return: A Response object with data of type list[IPSecConnection]
         """
+        resource_path = "/ipsecConnections"
+        method = "GET"
 
-        all_params = ['compartment_id', 'drg_id', 'cpe_id', 'limit', 'page']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "compartment_id",
+            "drg_id",
+            "cpe_id",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "list_ip_sec_connections got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_ip_sec_connections" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        query_params = {
+            "compartmentId": compartment_id,
+            "drgId": kwargs.get("drg_id", missing_param),
+            "cpeId": kwargs.get("cpe_id", missing_param),
+            "limit": kwargs.get("limit", missing_param),
+            "page": kwargs.get("page", missing_param)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing_param}
 
-        # verify the required parameter 'compartment_id' is set
-        if ('compartment_id' not in params) or (params['compartment_id'] is None):
-            raise ValueError("Missing the required parameter `compartment_id` when calling `list_ip_sec_connections`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/ipsecConnections'
-        path_params = {}
-
-        query_params = {}
-        if 'compartment_id' in params:
-            query_params['compartmentId'] = params['compartment_id']
-        if 'drg_id' in params:
-            query_params['drgId'] = params['drg_id']
-        if 'cpe_id' in params:
-            query_params['cpeId'] = params['cpe_id']
-        if 'limit' in params:
-            query_params['limit'] = params['limit']
-        if 'page' in params:
-            query_params['page'] = params['page']
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='list[IPSecConnection]')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[IPSecConnection]")
 
     def list_route_tables(self, compartment_id, vcn_id, **kwargs):
         """
@@ -2078,55 +1602,41 @@ class VirtualNetworkApi(object):
         :param str page: The value of the `opc-next-page` response header from the previous \"List\" call.\n
         :return: A Response object with data of type list[RouteTable]
         """
+        resource_path = "/routeTables"
+        method = "GET"
 
-        all_params = ['compartment_id', 'vcn_id', 'limit', 'page']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "compartment_id",
+            "vcn_id",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "list_route_tables got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_route_tables" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        query_params = {
+            "compartmentId": compartment_id,
+            "limit": kwargs.get("limit", missing_param),
+            "page": kwargs.get("page", missing_param),
+            "vcnId": vcn_id
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing_param}
 
-        # verify the required parameter 'compartment_id' is set
-        if ('compartment_id' not in params) or (params['compartment_id'] is None):
-            raise ValueError("Missing the required parameter `compartment_id` when calling `list_route_tables`")
-        # verify the required parameter 'vcn_id' is set
-        if ('vcn_id' not in params) or (params['vcn_id'] is None):
-            raise ValueError("Missing the required parameter `vcn_id` when calling `list_route_tables`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/routeTables'
-        path_params = {}
-
-        query_params = {}
-        if 'compartment_id' in params:
-            query_params['compartmentId'] = params['compartment_id']
-        if 'limit' in params:
-            query_params['limit'] = params['limit']
-        if 'page' in params:
-            query_params['page'] = params['page']
-        if 'vcn_id' in params:
-            query_params['vcnId'] = params['vcn_id']
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='list[RouteTable]')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[RouteTable]")
 
     def list_security_lists(self, compartment_id, vcn_id, **kwargs):
         """
@@ -2139,55 +1649,41 @@ class VirtualNetworkApi(object):
         :param str page: The value of the `opc-next-page` response header from the previous \"List\" call.\n
         :return: A Response object with data of type list[SecurityList]
         """
+        resource_path = "/securityLists"
+        method = "GET"
 
-        all_params = ['compartment_id', 'vcn_id', 'limit', 'page']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "compartment_id",
+            "vcn_id",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "list_security_lists got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_security_lists" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        query_params = {
+            "compartmentId": compartment_id,
+            "limit": kwargs.get("limit", missing_param),
+            "page": kwargs.get("page", missing_param),
+            "vcnId": vcn_id
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing_param}
 
-        # verify the required parameter 'compartment_id' is set
-        if ('compartment_id' not in params) or (params['compartment_id'] is None):
-            raise ValueError("Missing the required parameter `compartment_id` when calling `list_security_lists`")
-        # verify the required parameter 'vcn_id' is set
-        if ('vcn_id' not in params) or (params['vcn_id'] is None):
-            raise ValueError("Missing the required parameter `vcn_id` when calling `list_security_lists`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/securityLists'
-        path_params = {}
-
-        query_params = {}
-        if 'compartment_id' in params:
-            query_params['compartmentId'] = params['compartment_id']
-        if 'limit' in params:
-            query_params['limit'] = params['limit']
-        if 'page' in params:
-            query_params['page'] = params['page']
-        if 'vcn_id' in params:
-            query_params['vcnId'] = params['vcn_id']
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='list[SecurityList]')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[SecurityList]")
 
     def list_subnets(self, compartment_id, vcn_id, **kwargs):
         """
@@ -2200,55 +1696,41 @@ class VirtualNetworkApi(object):
         :param str page: The value of the `opc-next-page` response header from the previous \"List\" call.\n
         :return: A Response object with data of type list[Subnet]
         """
+        resource_path = "/subnets"
+        method = "GET"
 
-        all_params = ['compartment_id', 'vcn_id', 'limit', 'page']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "compartment_id",
+            "vcn_id",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "list_subnets got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_subnets" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        query_params = {
+            "compartmentId": compartment_id,
+            "limit": kwargs.get("limit", missing_param),
+            "page": kwargs.get("page", missing_param),
+            "vcnId": vcn_id
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing_param}
 
-        # verify the required parameter 'compartment_id' is set
-        if ('compartment_id' not in params) or (params['compartment_id'] is None):
-            raise ValueError("Missing the required parameter `compartment_id` when calling `list_subnets`")
-        # verify the required parameter 'vcn_id' is set
-        if ('vcn_id' not in params) or (params['vcn_id'] is None):
-            raise ValueError("Missing the required parameter `vcn_id` when calling `list_subnets`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/subnets'
-        path_params = {}
-
-        query_params = {}
-        if 'compartment_id' in params:
-            query_params['compartmentId'] = params['compartment_id']
-        if 'limit' in params:
-            query_params['limit'] = params['limit']
-        if 'page' in params:
-            query_params['page'] = params['page']
-        if 'vcn_id' in params:
-            query_params['vcnId'] = params['vcn_id']
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='list[Subnet]')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[Subnet]")
 
     def list_vcns(self, compartment_id, **kwargs):
         """
@@ -2260,50 +1742,39 @@ class VirtualNetworkApi(object):
         :param str page: The value of the `opc-next-page` response header from the previous \"List\" call.\n
         :return: A Response object with data of type list[Vcn]
         """
+        resource_path = "/vcns"
+        method = "GET"
 
-        all_params = ['compartment_id', 'limit', 'page']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "compartment_id",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "list_vcns got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_vcns" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        query_params = {
+            "compartmentId": compartment_id,
+            "limit": kwargs.get("limit", missing_param),
+            "page": kwargs.get("page", missing_param)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing_param}
 
-        # verify the required parameter 'compartment_id' is set
-        if ('compartment_id' not in params) or (params['compartment_id'] is None):
-            raise ValueError("Missing the required parameter `compartment_id` when calling `list_vcns`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/vcns'
-        path_params = {}
-
-        query_params = {}
-        if 'compartment_id' in params:
-            query_params['compartmentId'] = params['compartment_id']
-        if 'limit' in params:
-            query_params['limit'] = params['limit']
-        if 'page' in params:
-            query_params['page'] = params['page']
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='list[Vcn]')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[Vcn]")
 
     def update_dhcp_options(self, dhcp_id, update_dhcp_details, **kwargs):
         """
@@ -2315,53 +1786,40 @@ class VirtualNetworkApi(object):
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
         :return: A Response object with data of type DhcpOptions
         """
+        resource_path = "/dhcps/{dhcpId}"
+        method = "PUT"
 
-        all_params = ['dhcp_id', 'update_dhcp_details', 'if_match']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "dhcp_id",
+            "update_dhcp_details",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "update_dhcp_options got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method update_dhcp_options" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "dhcpId": dhcp_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'dhcp_id' is set
-        if ('dhcp_id' not in params) or (params['dhcp_id'] is None):
-            raise ValueError("Missing the required parameter `dhcp_id` when calling `update_dhcp_options`")
-        # verify the required parameter 'update_dhcp_details' is set
-        if ('update_dhcp_details' not in params) or (params['update_dhcp_details'] is None):
-            raise ValueError("Missing the required parameter `update_dhcp_details` when calling `update_dhcp_options`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        resource_path = '/dhcps/{dhcpId}'
-        path_params = {}
-        if 'dhcp_id' in params:
-            path_params['dhcpId'] = params['dhcp_id']
-
-        query_params = {}
-
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-
-        body_params = None
-        if 'update_dhcp_details' in params:
-            body_params = params['update_dhcp_details']
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='DhcpOptions')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=update_dhcp_details,
+            response_type="DhcpOptions")
 
     def update_internet_gateway(self, ig_id, update_internet_gateway_details, **kwargs):
         """
@@ -2373,53 +1831,40 @@ class VirtualNetworkApi(object):
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
         :return: A Response object with data of type InternetGateway
         """
+        resource_path = "/internetGateways/{igId}"
+        method = "PUT"
 
-        all_params = ['ig_id', 'update_internet_gateway_details', 'if_match']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "ig_id",
+            "update_internet_gateway_details",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "update_internet_gateway got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method update_internet_gateway" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "igId": ig_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'ig_id' is set
-        if ('ig_id' not in params) or (params['ig_id'] is None):
-            raise ValueError("Missing the required parameter `ig_id` when calling `update_internet_gateway`")
-        # verify the required parameter 'update_internet_gateway_details' is set
-        if ('update_internet_gateway_details' not in params) or (params['update_internet_gateway_details'] is None):
-            raise ValueError("Missing the required parameter `update_internet_gateway_details` when calling `update_internet_gateway`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        resource_path = '/internetGateways/{igId}'
-        path_params = {}
-        if 'ig_id' in params:
-            path_params['igId'] = params['ig_id']
-
-        query_params = {}
-
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-
-        body_params = None
-        if 'update_internet_gateway_details' in params:
-            body_params = params['update_internet_gateway_details']
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='InternetGateway')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=update_internet_gateway_details,
+            response_type="InternetGateway")
 
     def update_route_table(self, rt_id, update_route_table_details, **kwargs):
         """
@@ -2431,53 +1876,40 @@ class VirtualNetworkApi(object):
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
         :return: A Response object with data of type RouteTable
         """
+        resource_path = "/routeTables/{rtId}"
+        method = "PUT"
 
-        all_params = ['rt_id', 'update_route_table_details', 'if_match']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "rt_id",
+            "update_route_table_details",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "update_route_table got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method update_route_table" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "rtId": rt_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'rt_id' is set
-        if ('rt_id' not in params) or (params['rt_id'] is None):
-            raise ValueError("Missing the required parameter `rt_id` when calling `update_route_table`")
-        # verify the required parameter 'update_route_table_details' is set
-        if ('update_route_table_details' not in params) or (params['update_route_table_details'] is None):
-            raise ValueError("Missing the required parameter `update_route_table_details` when calling `update_route_table`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        resource_path = '/routeTables/{rtId}'
-        path_params = {}
-        if 'rt_id' in params:
-            path_params['rtId'] = params['rt_id']
-
-        query_params = {}
-
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-
-        body_params = None
-        if 'update_route_table_details' in params:
-            body_params = params['update_route_table_details']
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='RouteTable')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=update_route_table_details,
+            response_type="RouteTable")
 
     def update_security_list(self, security_list_id, details, **kwargs):
         """
@@ -2489,50 +1921,37 @@ class VirtualNetworkApi(object):
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
         :return: A Response object with data of type SecurityList
         """
+        resource_path = "/securityLists/{securityListId}"
+        method = "PUT"
 
-        all_params = ['security_list_id', 'details', 'if_match']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "security_list_id",
+            "details",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "update_security_list got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method update_security_list" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "securityListId": security_list_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'security_list_id' is set
-        if ('security_list_id' not in params) or (params['security_list_id'] is None):
-            raise ValueError("Missing the required parameter `security_list_id` when calling `update_security_list`")
-        # verify the required parameter 'details' is set
-        if ('details' not in params) or (params['details'] is None):
-            raise ValueError("Missing the required parameter `details` when calling `update_security_list`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        resource_path = '/securityLists/{securityListId}'
-        path_params = {}
-        if 'security_list_id' in params:
-            path_params['securityListId'] = params['security_list_id']
-
-        query_params = {}
-
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-
-        body_params = None
-        if 'details' in params:
-            body_params = params['details']
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_virtual_network_api,
-                                            resource_path,
-                                            'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='SecurityList')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_virtual_network_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=details,
+            response_type="SecurityList")

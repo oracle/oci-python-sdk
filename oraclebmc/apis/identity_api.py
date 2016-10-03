@@ -22,19 +22,18 @@
 
 from __future__ import absolute_import
 
-# python 2 and python 3 compatibility library
-from six import iteritems
-from io import IOBase
+import six
 
-from ..signer import Signer
 from ..api_client import ApiClient
+from ..signer import Signer
+missing_param = object()
+
 
 class IdentityApi(object):
 
     def __init__(self, config):
         signer = Signer(config.tenancy, config.user, config.fingerprint, config.key_file)
-        self.api_client =  ApiClient(config, signer)
-
+        self.api_client = ApiClient(config, signer)
 
     def add_user_to_group(self, add_user_to_group_details, **kwargs):
         """
@@ -45,48 +44,33 @@ class IdentityApi(object):
         :param str opc_retry_token: A token that uniquely identifies a request so it can be retried in case of a timeout or\nserver error without risk of executing that same action again. Retry tokens expire after 24\nhours, but can be invalidated before then due to conflicting operations (e.g., if a resource\nhas been deleted and purged from the system, then a retry of the original creation request\nmay be rejected).\n
         :return: A Response object with data of type UserGroupMembership
         """
+        resource_path = "/userGroupMemberships/"
+        method = "POST"
 
-        all_params = ['add_user_to_group_details', 'opc_retry_token']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "add_user_to_group_details",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "add_user_to_group got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_user_to_group" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        # verify the required parameter 'add_user_to_group_details' is set
-        if ('add_user_to_group_details' not in params) or (params['add_user_to_group_details'] is None):
-            raise ValueError("Missing the required parameter `add_user_to_group_details` when calling `add_user_to_group`")
-
-        resource_path = '/userGroupMemberships/'
-        path_params = {}
-
-        query_params = {}
-
-        header_params = {}
-        if 'opc_retry_token' in params:
-            header_params['opc-retry-token'] = params['opc_retry_token']
-
-        body_params = None
-        if 'add_user_to_group_details' in params:
-            body_params = params['add_user_to_group_details']
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_identity_api,
-                                            resource_path,
-                                            'POST',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='UserGroupMembership')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_identity_api,
+            resource_path=resource_path,
+            method=method,
+            header_params=header_params,
+            body=add_user_to_group_details,
+            response_type="UserGroupMembership")
 
     def create_compartment(self, create_compartment_details, **kwargs):
         """
@@ -97,48 +81,33 @@ class IdentityApi(object):
         :param str opc_retry_token: A token that uniquely identifies a request so it can be retried in case of a timeout or\nserver error without risk of executing that same action again. Retry tokens expire after 24\nhours, but can be invalidated before then due to conflicting operations (e.g., if a resource\nhas been deleted and purged from the system, then a retry of the original creation request\nmay be rejected).\n
         :return: A Response object with data of type Compartment
         """
+        resource_path = "/compartments/"
+        method = "POST"
 
-        all_params = ['create_compartment_details', 'opc_retry_token']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "create_compartment_details",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "create_compartment got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_compartment" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        # verify the required parameter 'create_compartment_details' is set
-        if ('create_compartment_details' not in params) or (params['create_compartment_details'] is None):
-            raise ValueError("Missing the required parameter `create_compartment_details` when calling `create_compartment`")
-
-        resource_path = '/compartments/'
-        path_params = {}
-
-        query_params = {}
-
-        header_params = {}
-        if 'opc_retry_token' in params:
-            header_params['opc-retry-token'] = params['opc_retry_token']
-
-        body_params = None
-        if 'create_compartment_details' in params:
-            body_params = params['create_compartment_details']
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_identity_api,
-                                            resource_path,
-                                            'POST',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='Compartment')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_identity_api,
+            resource_path=resource_path,
+            method=method,
+            header_params=header_params,
+            body=create_compartment_details,
+            response_type="Compartment")
 
     def create_group(self, create_group_details, **kwargs):
         """
@@ -149,48 +118,33 @@ class IdentityApi(object):
         :param str opc_retry_token: A token that uniquely identifies a request so it can be retried in case of a timeout or\nserver error without risk of executing that same action again. Retry tokens expire after 24\nhours, but can be invalidated before then due to conflicting operations (e.g., if a resource\nhas been deleted and purged from the system, then a retry of the original creation request\nmay be rejected).\n
         :return: A Response object with data of type Group
         """
+        resource_path = "/groups/"
+        method = "POST"
 
-        all_params = ['create_group_details', 'opc_retry_token']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "create_group_details",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "create_group got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_group" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        # verify the required parameter 'create_group_details' is set
-        if ('create_group_details' not in params) or (params['create_group_details'] is None):
-            raise ValueError("Missing the required parameter `create_group_details` when calling `create_group`")
-
-        resource_path = '/groups/'
-        path_params = {}
-
-        query_params = {}
-
-        header_params = {}
-        if 'opc_retry_token' in params:
-            header_params['opc-retry-token'] = params['opc_retry_token']
-
-        body_params = None
-        if 'create_group_details' in params:
-            body_params = params['create_group_details']
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_identity_api,
-                                            resource_path,
-                                            'POST',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='Group')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_identity_api,
+            resource_path=resource_path,
+            method=method,
+            header_params=header_params,
+            body=create_group_details,
+            response_type="Group")
 
     def create_or_reset_ui_password(self, user_id, **kwargs):
         """
@@ -201,48 +155,38 @@ class IdentityApi(object):
         :param str opc_retry_token: A token that uniquely identifies a request so it can be retried in case of a timeout or\nserver error without risk of executing that same action again. Retry tokens expire after 24\nhours, but can be invalidated before then due to conflicting operations (e.g., if a resource\nhas been deleted and purged from the system, then a retry of the original creation request\nmay be rejected).\n
         :return: A Response object with data of type UIPassword
         """
+        resource_path = "/users/{userId}/uiPassword"
+        method = "POST"
 
-        all_params = ['user_id', 'opc_retry_token']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "user_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "create_or_reset_ui_password got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_or_reset_ui_password" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "userId": user_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'user_id' is set
-        if ('user_id' not in params) or (params['user_id'] is None):
-            raise ValueError("Missing the required parameter `user_id` when calling `create_or_reset_ui_password`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        resource_path = '/users/{userId}/uiPassword'
-        path_params = {}
-        if 'user_id' in params:
-            path_params['userId'] = params['user_id']
-
-        query_params = {}
-
-        header_params = {}
-        if 'opc_retry_token' in params:
-            header_params['opc-retry-token'] = params['opc_retry_token']
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_identity_api,
-                                            resource_path,
-                                            'POST',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='UIPassword')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_identity_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="UIPassword")
 
     def create_policy(self, create_policy_details, **kwargs):
         """
@@ -253,48 +197,33 @@ class IdentityApi(object):
         :param str opc_retry_token: A token that uniquely identifies a request so it can be retried in case of a timeout or\nserver error without risk of executing that same action again. Retry tokens expire after 24\nhours, but can be invalidated before then due to conflicting operations (e.g., if a resource\nhas been deleted and purged from the system, then a retry of the original creation request\nmay be rejected).\n
         :return: A Response object with data of type Policy
         """
+        resource_path = "/policies/"
+        method = "POST"
 
-        all_params = ['create_policy_details', 'opc_retry_token']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "create_policy_details",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "create_policy got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_policy" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        # verify the required parameter 'create_policy_details' is set
-        if ('create_policy_details' not in params) or (params['create_policy_details'] is None):
-            raise ValueError("Missing the required parameter `create_policy_details` when calling `create_policy`")
-
-        resource_path = '/policies/'
-        path_params = {}
-
-        query_params = {}
-
-        header_params = {}
-        if 'opc_retry_token' in params:
-            header_params['opc-retry-token'] = params['opc_retry_token']
-
-        body_params = None
-        if 'create_policy_details' in params:
-            body_params = params['create_policy_details']
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_identity_api,
-                                            resource_path,
-                                            'POST',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='Policy')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_identity_api,
+            resource_path=resource_path,
+            method=method,
+            header_params=header_params,
+            body=create_policy_details,
+            response_type="Policy")
 
     def create_swift_password(self, create_swift_password_details, user_id, **kwargs):
         """
@@ -306,53 +235,40 @@ class IdentityApi(object):
         :param str opc_retry_token: A token that uniquely identifies a request so it can be retried in case of a timeout or\nserver error without risk of executing that same action again. Retry tokens expire after 24\nhours, but can be invalidated before then due to conflicting operations (e.g., if a resource\nhas been deleted and purged from the system, then a retry of the original creation request\nmay be rejected).\n
         :return: A Response object with data of type SwiftPassword
         """
+        resource_path = "/users/{userId}/swiftPasswords/"
+        method = "POST"
 
-        all_params = ['create_swift_password_details', 'user_id', 'opc_retry_token']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "create_swift_password_details",
+            "user_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "create_swift_password got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_swift_password" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "userId": user_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'create_swift_password_details' is set
-        if ('create_swift_password_details' not in params) or (params['create_swift_password_details'] is None):
-            raise ValueError("Missing the required parameter `create_swift_password_details` when calling `create_swift_password`")
-        # verify the required parameter 'user_id' is set
-        if ('user_id' not in params) or (params['user_id'] is None):
-            raise ValueError("Missing the required parameter `user_id` when calling `create_swift_password`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        resource_path = '/users/{userId}/swiftPasswords/'
-        path_params = {}
-        if 'user_id' in params:
-            path_params['userId'] = params['user_id']
-
-        query_params = {}
-
-        header_params = {}
-        if 'opc_retry_token' in params:
-            header_params['opc-retry-token'] = params['opc_retry_token']
-
-        body_params = None
-        if 'create_swift_password_details' in params:
-            body_params = params['create_swift_password_details']
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_identity_api,
-                                            resource_path,
-                                            'POST',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='SwiftPassword')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_identity_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=create_swift_password_details,
+            response_type="SwiftPassword")
 
     def create_user(self, create_user_details, **kwargs):
         """
@@ -363,48 +279,33 @@ class IdentityApi(object):
         :param str opc_retry_token: A token that uniquely identifies a request so it can be retried in case of a timeout or\nserver error without risk of executing that same action again. Retry tokens expire after 24\nhours, but can be invalidated before then due to conflicting operations (e.g., if a resource\nhas been deleted and purged from the system, then a retry of the original creation request\nmay be rejected).\n
         :return: A Response object with data of type User
         """
+        resource_path = "/users/"
+        method = "POST"
 
-        all_params = ['create_user_details', 'opc_retry_token']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "create_user_details",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "create_user got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_user" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        # verify the required parameter 'create_user_details' is set
-        if ('create_user_details' not in params) or (params['create_user_details'] is None):
-            raise ValueError("Missing the required parameter `create_user_details` when calling `create_user`")
-
-        resource_path = '/users/'
-        path_params = {}
-
-        query_params = {}
-
-        header_params = {}
-        if 'opc_retry_token' in params:
-            header_params['opc-retry-token'] = params['opc_retry_token']
-
-        body_params = None
-        if 'create_user_details' in params:
-            body_params = params['create_user_details']
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_identity_api,
-                                            resource_path,
-                                            'POST',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='User')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_identity_api,
+            resource_path=resource_path,
+            method=method,
+            header_params=header_params,
+            body=create_user_details,
+            response_type="User")
 
     def delete_api_key(self, user_id, fingerprint, **kwargs):
         """
@@ -416,53 +317,39 @@ class IdentityApi(object):
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
         :return: A Response object with data of type None
         """
+        resource_path = "/users/{userId}/apiKeys/{fingerprint}"
+        method = "DELETE"
 
-        all_params = ['user_id', 'fingerprint', 'if_match']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "user_id",
+            "fingerprint",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_api_key got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_api_key" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "userId": user_id,
+            "fingerprint": fingerprint
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'user_id' is set
-        if ('user_id' not in params) or (params['user_id'] is None):
-            raise ValueError("Missing the required parameter `user_id` when calling `delete_api_key`")
-        # verify the required parameter 'fingerprint' is set
-        if ('fingerprint' not in params) or (params['fingerprint'] is None):
-            raise ValueError("Missing the required parameter `fingerprint` when calling `delete_api_key`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        resource_path = '/users/{userId}/apiKeys/{fingerprint}'
-        path_params = {}
-        if 'user_id' in params:
-            path_params['userId'] = params['user_id']
-        if 'fingerprint' in params:
-            path_params['fingerprint'] = params['fingerprint']
-
-        query_params = {}
-
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_identity_api,
-                                            resource_path,
-                                            'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type=None)
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_identity_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params)
 
     def delete_group(self, group_id, **kwargs):
         """
@@ -473,48 +360,37 @@ class IdentityApi(object):
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
         :return: A Response object with data of type None
         """
+        resource_path = "/groups/{groupId}"
+        method = "DELETE"
 
-        all_params = ['group_id', 'if_match']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "group_id",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_group got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_group" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "groupId": group_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'group_id' is set
-        if ('group_id' not in params) or (params['group_id'] is None):
-            raise ValueError("Missing the required parameter `group_id` when calling `delete_group`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        resource_path = '/groups/{groupId}'
-        path_params = {}
-        if 'group_id' in params:
-            path_params['groupId'] = params['group_id']
-
-        query_params = {}
-
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_identity_api,
-                                            resource_path,
-                                            'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type=None)
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_identity_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params)
 
     def delete_policy(self, policy_id, **kwargs):
         """
@@ -525,48 +401,37 @@ class IdentityApi(object):
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
         :return: A Response object with data of type None
         """
+        resource_path = "/policies/{policyId}"
+        method = "DELETE"
 
-        all_params = ['policy_id', 'if_match']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "policy_id",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_policy got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_policy" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "policyId": policy_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'policy_id' is set
-        if ('policy_id' not in params) or (params['policy_id'] is None):
-            raise ValueError("Missing the required parameter `policy_id` when calling `delete_policy`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        resource_path = '/policies/{policyId}'
-        path_params = {}
-        if 'policy_id' in params:
-            path_params['policyId'] = params['policy_id']
-
-        query_params = {}
-
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_identity_api,
-                                            resource_path,
-                                            'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type=None)
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_identity_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params)
 
     def delete_swift_password(self, user_id, swift_password_id, **kwargs):
         """
@@ -578,53 +443,39 @@ class IdentityApi(object):
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
         :return: A Response object with data of type None
         """
+        resource_path = "/users/{userId}/swiftPasswords/{swiftPasswordId}"
+        method = "DELETE"
 
-        all_params = ['user_id', 'swift_password_id', 'if_match']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "user_id",
+            "swift_password_id",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_swift_password got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_swift_password" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "userId": user_id,
+            "swiftPasswordId": swift_password_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'user_id' is set
-        if ('user_id' not in params) or (params['user_id'] is None):
-            raise ValueError("Missing the required parameter `user_id` when calling `delete_swift_password`")
-        # verify the required parameter 'swift_password_id' is set
-        if ('swift_password_id' not in params) or (params['swift_password_id'] is None):
-            raise ValueError("Missing the required parameter `swift_password_id` when calling `delete_swift_password`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        resource_path = '/users/{userId}/swiftPasswords/{swiftPasswordId}'
-        path_params = {}
-        if 'user_id' in params:
-            path_params['userId'] = params['user_id']
-        if 'swift_password_id' in params:
-            path_params['swiftPasswordId'] = params['swift_password_id']
-
-        query_params = {}
-
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_identity_api,
-                                            resource_path,
-                                            'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type=None)
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_identity_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params)
 
     def delete_user(self, user_id, **kwargs):
         """
@@ -635,48 +486,37 @@ class IdentityApi(object):
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
         :return: A Response object with data of type None
         """
+        resource_path = "/users/{userId}"
+        method = "DELETE"
 
-        all_params = ['user_id', 'if_match']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "user_id",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_user got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_user" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "userId": user_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'user_id' is set
-        if ('user_id' not in params) or (params['user_id'] is None):
-            raise ValueError("Missing the required parameter `user_id` when calling `delete_user`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        resource_path = '/users/{userId}'
-        path_params = {}
-        if 'user_id' in params:
-            path_params['userId'] = params['user_id']
-
-        query_params = {}
-
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_identity_api,
-                                            resource_path,
-                                            'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type=None)
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_identity_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params)
 
     def get_compartment(self, compartment_id, **kwargs):
         """
@@ -686,46 +526,35 @@ class IdentityApi(object):
         :param str compartment_id: The compartment's OCID. (required)
         :return: A Response object with data of type Compartment
         """
+        resource_path = "/compartments/{compartmentId}"
+        method = "GET"
 
-        all_params = ['compartment_id']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "compartment_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "get_compartment got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_compartment" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "compartmentId": compartment_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'compartment_id' is set
-        if ('compartment_id' not in params) or (params['compartment_id'] is None):
-            raise ValueError("Missing the required parameter `compartment_id` when calling `get_compartment`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/compartments/{compartmentId}'
-        path_params = {}
-        if 'compartment_id' in params:
-            path_params['compartmentId'] = params['compartment_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_identity_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='Compartment')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_identity_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="Compartment")
 
     def get_group(self, group_id, **kwargs):
         """
@@ -735,46 +564,35 @@ class IdentityApi(object):
         :param str group_id: The group's OCID. (required)
         :return: A Response object with data of type Group
         """
+        resource_path = "/groups/{groupId}"
+        method = "GET"
 
-        all_params = ['group_id']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "group_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "get_group got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_group" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "groupId": group_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'group_id' is set
-        if ('group_id' not in params) or (params['group_id'] is None):
-            raise ValueError("Missing the required parameter `group_id` when calling `get_group`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/groups/{groupId}'
-        path_params = {}
-        if 'group_id' in params:
-            path_params['groupId'] = params['group_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_identity_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='Group')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_identity_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="Group")
 
     def get_policy(self, policy_id, **kwargs):
         """
@@ -784,46 +602,35 @@ class IdentityApi(object):
         :param str policy_id: The policy's OCID. (required)
         :return: A Response object with data of type Policy
         """
+        resource_path = "/policies/{policyId}"
+        method = "GET"
 
-        all_params = ['policy_id']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "policy_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "get_policy got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_policy" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "policyId": policy_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'policy_id' is set
-        if ('policy_id' not in params) or (params['policy_id'] is None):
-            raise ValueError("Missing the required parameter `policy_id` when calling `get_policy`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/policies/{policyId}'
-        path_params = {}
-        if 'policy_id' in params:
-            path_params['policyId'] = params['policy_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_identity_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='Policy')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_identity_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="Policy")
 
     def get_user(self, user_id, **kwargs):
         """
@@ -833,46 +640,35 @@ class IdentityApi(object):
         :param str user_id: The user's OCID. (required)
         :return: A Response object with data of type User
         """
+        resource_path = "/users/{userId}"
+        method = "GET"
 
-        all_params = ['user_id']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "user_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "get_user got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_user" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "userId": user_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'user_id' is set
-        if ('user_id' not in params) or (params['user_id'] is None):
-            raise ValueError("Missing the required parameter `user_id` when calling `get_user`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/users/{userId}'
-        path_params = {}
-        if 'user_id' in params:
-            path_params['userId'] = params['user_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_identity_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='User')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_identity_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="User")
 
     def get_user_group_membership(self, user_group_membership_id, **kwargs):
         """
@@ -882,46 +678,35 @@ class IdentityApi(object):
         :param str user_group_membership_id: The userGroupMembership's OCID. (required)
         :return: A Response object with data of type UserGroupMembership
         """
+        resource_path = "/userGroupMemberships/{userGroupMembershipId}"
+        method = "GET"
 
-        all_params = ['user_group_membership_id']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "user_group_membership_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "get_user_group_membership got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_user_group_membership" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "userGroupMembershipId": user_group_membership_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'user_group_membership_id' is set
-        if ('user_group_membership_id' not in params) or (params['user_group_membership_id'] is None):
-            raise ValueError("Missing the required parameter `user_group_membership_id` when calling `get_user_group_membership`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/userGroupMemberships/{userGroupMembershipId}'
-        path_params = {}
-        if 'user_group_membership_id' in params:
-            path_params['userGroupMembershipId'] = params['user_group_membership_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_identity_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='UserGroupMembership')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_identity_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="UserGroupMembership")
 
     def list_api_keys(self, user_id, **kwargs):
         """
@@ -931,46 +716,35 @@ class IdentityApi(object):
         :param str user_id: The user's OCID. (required)
         :return: A Response object with data of type list[ApiKey]
         """
+        resource_path = "/users/{userId}/apiKeys/"
+        method = "GET"
 
-        all_params = ['user_id']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "user_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "list_api_keys got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_api_keys" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "userId": user_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'user_id' is set
-        if ('user_id' not in params) or (params['user_id'] is None):
-            raise ValueError("Missing the required parameter `user_id` when calling `list_api_keys`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/users/{userId}/apiKeys/'
-        path_params = {}
-        if 'user_id' in params:
-            path_params['userId'] = params['user_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_identity_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='list[ApiKey]')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_identity_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="list[ApiKey]")
 
     def list_availability_domains(self, compartment_id, **kwargs):
         """
@@ -980,46 +754,35 @@ class IdentityApi(object):
         :param str compartment_id: Your tenancy's OCID (remember that the tenancy is simply the root compartment).\n (required)
         :return: A Response object with data of type list[AvailabilityDomain]
         """
+        resource_path = "/availabilityDomains/"
+        method = "GET"
 
-        all_params = ['compartment_id']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "compartment_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "list_availability_domains got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_availability_domains" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        query_params = {
+            "compartmentId": compartment_id
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing_param}
 
-        # verify the required parameter 'compartment_id' is set
-        if ('compartment_id' not in params) or (params['compartment_id'] is None):
-            raise ValueError("Missing the required parameter `compartment_id` when calling `list_availability_domains`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/availabilityDomains/'
-        path_params = {}
-
-        query_params = {}
-        if 'compartment_id' in params:
-            query_params['compartmentId'] = params['compartment_id']
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_identity_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='list[AvailabilityDomain]')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_identity_api,
+            resource_path=resource_path,
+            method=method,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[AvailabilityDomain]")
 
     def list_compartments(self, compartment_id, **kwargs):
         """
@@ -1031,50 +794,39 @@ class IdentityApi(object):
         :param int limit: The maximum number of items to return in a paginated \"List\" call.\n
         :return: A Response object with data of type list[Compartment]
         """
+        resource_path = "/compartments/"
+        method = "GET"
 
-        all_params = ['compartment_id', 'page', 'limit']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "compartment_id",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "list_compartments got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_compartments" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        query_params = {
+            "compartmentId": compartment_id,
+            "page": kwargs.get("page", missing_param),
+            "limit": kwargs.get("limit", missing_param)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing_param}
 
-        # verify the required parameter 'compartment_id' is set
-        if ('compartment_id' not in params) or (params['compartment_id'] is None):
-            raise ValueError("Missing the required parameter `compartment_id` when calling `list_compartments`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/compartments/'
-        path_params = {}
-
-        query_params = {}
-        if 'compartment_id' in params:
-            query_params['compartmentId'] = params['compartment_id']
-        if 'page' in params:
-            query_params['page'] = params['page']
-        if 'limit' in params:
-            query_params['limit'] = params['limit']
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_identity_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='list[Compartment]')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_identity_api,
+            resource_path=resource_path,
+            method=method,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[Compartment]")
 
     def list_groups(self, compartment_id, **kwargs):
         """
@@ -1086,50 +838,39 @@ class IdentityApi(object):
         :param int limit: The maximum number of items to return in a paginated \"List\" call.\n
         :return: A Response object with data of type list[Group]
         """
+        resource_path = "/groups/"
+        method = "GET"
 
-        all_params = ['compartment_id', 'page', 'limit']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "compartment_id",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "list_groups got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_groups" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        query_params = {
+            "compartmentId": compartment_id,
+            "page": kwargs.get("page", missing_param),
+            "limit": kwargs.get("limit", missing_param)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing_param}
 
-        # verify the required parameter 'compartment_id' is set
-        if ('compartment_id' not in params) or (params['compartment_id'] is None):
-            raise ValueError("Missing the required parameter `compartment_id` when calling `list_groups`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/groups/'
-        path_params = {}
-
-        query_params = {}
-        if 'compartment_id' in params:
-            query_params['compartmentId'] = params['compartment_id']
-        if 'page' in params:
-            query_params['page'] = params['page']
-        if 'limit' in params:
-            query_params['limit'] = params['limit']
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_identity_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='list[Group]')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_identity_api,
+            resource_path=resource_path,
+            method=method,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[Group]")
 
     def list_policies(self, compartment_id, **kwargs):
         """
@@ -1141,50 +882,39 @@ class IdentityApi(object):
         :param int limit: The maximum number of items to return in a paginated \"List\" call.\n
         :return: A Response object with data of type list[Policy]
         """
+        resource_path = "/policies/"
+        method = "GET"
 
-        all_params = ['compartment_id', 'page', 'limit']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "compartment_id",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "list_policies got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_policies" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        query_params = {
+            "compartmentId": compartment_id,
+            "page": kwargs.get("page", missing_param),
+            "limit": kwargs.get("limit", missing_param)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing_param}
 
-        # verify the required parameter 'compartment_id' is set
-        if ('compartment_id' not in params) or (params['compartment_id'] is None):
-            raise ValueError("Missing the required parameter `compartment_id` when calling `list_policies`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/policies/'
-        path_params = {}
-
-        query_params = {}
-        if 'compartment_id' in params:
-            query_params['compartmentId'] = params['compartment_id']
-        if 'page' in params:
-            query_params['page'] = params['page']
-        if 'limit' in params:
-            query_params['limit'] = params['limit']
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_identity_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='list[Policy]')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_identity_api,
+            resource_path=resource_path,
+            method=method,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[Policy]")
 
     def list_swift_passwords(self, user_id, **kwargs):
         """
@@ -1194,46 +924,35 @@ class IdentityApi(object):
         :param str user_id: The user's OCID. (required)
         :return: A Response object with data of type list[SwiftPassword]
         """
+        resource_path = "/users/{userId}/swiftPasswords/"
+        method = "GET"
 
-        all_params = ['user_id']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "user_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "list_swift_passwords got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_swift_passwords" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "userId": user_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'user_id' is set
-        if ('user_id' not in params) or (params['user_id'] is None):
-            raise ValueError("Missing the required parameter `user_id` when calling `list_swift_passwords`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/users/{userId}/swiftPasswords/'
-        path_params = {}
-        if 'user_id' in params:
-            path_params['userId'] = params['user_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_identity_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='list[SwiftPassword]')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_identity_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="list[SwiftPassword]")
 
     def list_user_group_memberships(self, compartment_id, **kwargs):
         """
@@ -1247,54 +966,43 @@ class IdentityApi(object):
         :param int limit: The maximum number of items to return in a paginated \"List\" call.\n
         :return: A Response object with data of type list[UserGroupMembership]
         """
+        resource_path = "/userGroupMemberships/"
+        method = "GET"
 
-        all_params = ['compartment_id', 'user_id', 'group_id', 'page', 'limit']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "compartment_id",
+            "user_id",
+            "group_id",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "list_user_group_memberships got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_user_group_memberships" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        query_params = {
+            "compartmentId": compartment_id,
+            "userId": kwargs.get("user_id", missing_param),
+            "groupId": kwargs.get("group_id", missing_param),
+            "page": kwargs.get("page", missing_param),
+            "limit": kwargs.get("limit", missing_param)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing_param}
 
-        # verify the required parameter 'compartment_id' is set
-        if ('compartment_id' not in params) or (params['compartment_id'] is None):
-            raise ValueError("Missing the required parameter `compartment_id` when calling `list_user_group_memberships`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/userGroupMemberships/'
-        path_params = {}
-
-        query_params = {}
-        if 'compartment_id' in params:
-            query_params['compartmentId'] = params['compartment_id']
-        if 'user_id' in params:
-            query_params['userId'] = params['user_id']
-        if 'group_id' in params:
-            query_params['groupId'] = params['group_id']
-        if 'page' in params:
-            query_params['page'] = params['page']
-        if 'limit' in params:
-            query_params['limit'] = params['limit']
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_identity_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='list[UserGroupMembership]')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_identity_api,
+            resource_path=resource_path,
+            method=method,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[UserGroupMembership]")
 
     def list_users(self, compartment_id, **kwargs):
         """
@@ -1306,50 +1014,39 @@ class IdentityApi(object):
         :param int limit: The maximum number of items to return in a paginated \"List\" call.\n
         :return: A Response object with data of type list[User]
         """
+        resource_path = "/users/"
+        method = "GET"
 
-        all_params = ['compartment_id', 'page', 'limit']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "compartment_id",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "list_users got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_users" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        query_params = {
+            "compartmentId": compartment_id,
+            "page": kwargs.get("page", missing_param),
+            "limit": kwargs.get("limit", missing_param)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing_param}
 
-        # verify the required parameter 'compartment_id' is set
-        if ('compartment_id' not in params) or (params['compartment_id'] is None):
-            raise ValueError("Missing the required parameter `compartment_id` when calling `list_users`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
 
-        resource_path = '/users/'
-        path_params = {}
-
-        query_params = {}
-        if 'compartment_id' in params:
-            query_params['compartmentId'] = params['compartment_id']
-        if 'page' in params:
-            query_params['page'] = params['page']
-        if 'limit' in params:
-            query_params['limit'] = params['limit']
-
-        header_params = {}
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_identity_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='list[User]')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_identity_api,
+            resource_path=resource_path,
+            method=method,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[User]")
 
     def remove_user_from_group(self, user_group_membership_id, **kwargs):
         """
@@ -1360,48 +1057,37 @@ class IdentityApi(object):
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
         :return: A Response object with data of type None
         """
+        resource_path = "/userGroupMemberships/{userGroupMembershipId}"
+        method = "DELETE"
 
-        all_params = ['user_group_membership_id', 'if_match']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "user_group_membership_id",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "remove_user_from_group got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method remove_user_from_group" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "userGroupMembershipId": user_group_membership_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'user_group_membership_id' is set
-        if ('user_group_membership_id' not in params) or (params['user_group_membership_id'] is None):
-            raise ValueError("Missing the required parameter `user_group_membership_id` when calling `remove_user_from_group`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        resource_path = '/userGroupMemberships/{userGroupMembershipId}'
-        path_params = {}
-        if 'user_group_membership_id' in params:
-            path_params['userGroupMembershipId'] = params['user_group_membership_id']
-
-        query_params = {}
-
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_identity_api,
-                                            resource_path,
-                                            'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type=None)
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_identity_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params)
 
     def update_compartment(self, compartment_id, update_compartment_details, **kwargs):
         """
@@ -1413,53 +1099,40 @@ class IdentityApi(object):
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
         :return: A Response object with data of type Compartment
         """
+        resource_path = "/compartments/{compartmentId}"
+        method = "PUT"
 
-        all_params = ['compartment_id', 'update_compartment_details', 'if_match']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "compartment_id",
+            "update_compartment_details",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "update_compartment got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method update_compartment" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "compartmentId": compartment_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'compartment_id' is set
-        if ('compartment_id' not in params) or (params['compartment_id'] is None):
-            raise ValueError("Missing the required parameter `compartment_id` when calling `update_compartment`")
-        # verify the required parameter 'update_compartment_details' is set
-        if ('update_compartment_details' not in params) or (params['update_compartment_details'] is None):
-            raise ValueError("Missing the required parameter `update_compartment_details` when calling `update_compartment`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        resource_path = '/compartments/{compartmentId}'
-        path_params = {}
-        if 'compartment_id' in params:
-            path_params['compartmentId'] = params['compartment_id']
-
-        query_params = {}
-
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-
-        body_params = None
-        if 'update_compartment_details' in params:
-            body_params = params['update_compartment_details']
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_identity_api,
-                                            resource_path,
-                                            'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='Compartment')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_identity_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=update_compartment_details,
+            response_type="Compartment")
 
     def update_group(self, group_id, update_group_details, **kwargs):
         """
@@ -1471,53 +1144,40 @@ class IdentityApi(object):
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
         :return: A Response object with data of type Group
         """
+        resource_path = "/groups/{groupId}"
+        method = "PUT"
 
-        all_params = ['group_id', 'update_group_details', 'if_match']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "group_id",
+            "update_group_details",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "update_group got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method update_group" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "groupId": group_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'group_id' is set
-        if ('group_id' not in params) or (params['group_id'] is None):
-            raise ValueError("Missing the required parameter `group_id` when calling `update_group`")
-        # verify the required parameter 'update_group_details' is set
-        if ('update_group_details' not in params) or (params['update_group_details'] is None):
-            raise ValueError("Missing the required parameter `update_group_details` when calling `update_group`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        resource_path = '/groups/{groupId}'
-        path_params = {}
-        if 'group_id' in params:
-            path_params['groupId'] = params['group_id']
-
-        query_params = {}
-
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-
-        body_params = None
-        if 'update_group_details' in params:
-            body_params = params['update_group_details']
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_identity_api,
-                                            resource_path,
-                                            'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='Group')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_identity_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=update_group_details,
+            response_type="Group")
 
     def update_policy(self, policy_id, update_policy_details, **kwargs):
         """
@@ -1529,53 +1189,40 @@ class IdentityApi(object):
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
         :return: A Response object with data of type Policy
         """
+        resource_path = "/policies/{policyId}"
+        method = "PUT"
 
-        all_params = ['policy_id', 'update_policy_details', 'if_match']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "policy_id",
+            "update_policy_details",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "update_policy got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method update_policy" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "policyId": policy_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'policy_id' is set
-        if ('policy_id' not in params) or (params['policy_id'] is None):
-            raise ValueError("Missing the required parameter `policy_id` when calling `update_policy`")
-        # verify the required parameter 'update_policy_details' is set
-        if ('update_policy_details' not in params) or (params['update_policy_details'] is None):
-            raise ValueError("Missing the required parameter `update_policy_details` when calling `update_policy`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        resource_path = '/policies/{policyId}'
-        path_params = {}
-        if 'policy_id' in params:
-            path_params['policyId'] = params['policy_id']
-
-        query_params = {}
-
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-
-        body_params = None
-        if 'update_policy_details' in params:
-            body_params = params['update_policy_details']
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_identity_api,
-                                            resource_path,
-                                            'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='Policy')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_identity_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=update_policy_details,
+            response_type="Policy")
 
     def update_swift_password(self, user_id, swift_password_id, update_swift_password_details, **kwargs):
         """
@@ -1588,58 +1235,42 @@ class IdentityApi(object):
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
         :return: A Response object with data of type SwiftPassword
         """
+        resource_path = "/users/{userId}/swiftPasswords/{swiftPasswordId}"
+        method = "PUT"
 
-        all_params = ['user_id', 'swift_password_id', 'update_swift_password_details', 'if_match']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "user_id",
+            "swift_password_id",
+            "update_swift_password_details",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "update_swift_password got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method update_swift_password" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "userId": user_id,
+            "swiftPasswordId": swift_password_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'user_id' is set
-        if ('user_id' not in params) or (params['user_id'] is None):
-            raise ValueError("Missing the required parameter `user_id` when calling `update_swift_password`")
-        # verify the required parameter 'swift_password_id' is set
-        if ('swift_password_id' not in params) or (params['swift_password_id'] is None):
-            raise ValueError("Missing the required parameter `swift_password_id` when calling `update_swift_password`")
-        # verify the required parameter 'update_swift_password_details' is set
-        if ('update_swift_password_details' not in params) or (params['update_swift_password_details'] is None):
-            raise ValueError("Missing the required parameter `update_swift_password_details` when calling `update_swift_password`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        resource_path = '/users/{userId}/swiftPasswords/{swiftPasswordId}'
-        path_params = {}
-        if 'user_id' in params:
-            path_params['userId'] = params['user_id']
-        if 'swift_password_id' in params:
-            path_params['swiftPasswordId'] = params['swift_password_id']
-
-        query_params = {}
-
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-
-        body_params = None
-        if 'update_swift_password_details' in params:
-            body_params = params['update_swift_password_details']
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_identity_api,
-                                            resource_path,
-                                            'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='SwiftPassword')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_identity_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=update_swift_password_details,
+            response_type="SwiftPassword")
 
     def update_user(self, user_id, update_user_details, **kwargs):
         """
@@ -1651,53 +1282,40 @@ class IdentityApi(object):
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
         :return: A Response object with data of type User
         """
+        resource_path = "/users/{userId}"
+        method = "PUT"
 
-        all_params = ['user_id', 'update_user_details', 'if_match']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "user_id",
+            "update_user_details",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "update_user got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method update_user" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "userId": user_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'user_id' is set
-        if ('user_id' not in params) or (params['user_id'] is None):
-            raise ValueError("Missing the required parameter `user_id` when calling `update_user`")
-        # verify the required parameter 'update_user_details' is set
-        if ('update_user_details' not in params) or (params['update_user_details'] is None):
-            raise ValueError("Missing the required parameter `update_user_details` when calling `update_user`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        resource_path = '/users/{userId}'
-        path_params = {}
-        if 'user_id' in params:
-            path_params['userId'] = params['user_id']
-
-        query_params = {}
-
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-
-        body_params = None
-        if 'update_user_details' in params:
-            body_params = params['update_user_details']
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_identity_api,
-                                            resource_path,
-                                            'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='User')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_identity_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=update_user_details,
+            response_type="User")
 
     def update_user_state(self, user_id, update_state_details, **kwargs):
         """
@@ -1709,53 +1327,40 @@ class IdentityApi(object):
         :param str if_match: For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`\nparameter to the value of the etag from a previous GET or POST response for that resource.  The resource\nwill be updated or deleted only if the etag you provide matches the resource's current etag value.\n
         :return: A Response object with data of type User
         """
+        resource_path = "/users/{userId}/state/"
+        method = "PUT"
 
-        all_params = ['user_id', 'update_state_details', 'if_match']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "user_id",
+            "update_state_details",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "update_user_state got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method update_user_state" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "userId": user_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'user_id' is set
-        if ('user_id' not in params) or (params['user_id'] is None):
-            raise ValueError("Missing the required parameter `user_id` when calling `update_user_state`")
-        # verify the required parameter 'update_state_details' is set
-        if ('update_state_details' not in params) or (params['update_state_details'] is None):
-            raise ValueError("Missing the required parameter `update_state_details` when calling `update_user_state`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        resource_path = '/users/{userId}/state/'
-        path_params = {}
-        if 'user_id' in params:
-            path_params['userId'] = params['user_id']
-
-        query_params = {}
-
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-
-        body_params = None
-        if 'update_state_details' in params:
-            body_params = params['update_state_details']
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_identity_api,
-                                            resource_path,
-                                            'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='User')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_identity_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=update_state_details,
+            response_type="User")
 
     def upload_api_key(self, user_id, create_api_key_details, **kwargs):
         """
@@ -1767,50 +1372,37 @@ class IdentityApi(object):
         :param str opc_retry_token: A token that uniquely identifies a request so it can be retried in case of a timeout or\nserver error without risk of executing that same action again. Retry tokens expire after 24\nhours, but can be invalidated before then due to conflicting operations (e.g., if a resource\nhas been deleted and purged from the system, then a retry of the original creation request\nmay be rejected).\n
         :return: A Response object with data of type ApiKey
         """
+        resource_path = "/users/{userId}/apiKeys/"
+        method = "POST"
 
-        all_params = ['user_id', 'create_api_key_details', 'opc_retry_token']
+        # Don't accept unknown kwargs
+        expected_params = [
+            "user_id",
+            "create_api_key_details",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_params]
+        if extra_kwargs:
+            raise ValueError(
+                "upload_api_key got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method upload_api_key" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "userId": user_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing_param}
 
-        # verify the required parameter 'user_id' is set
-        if ('user_id' not in params) or (params['user_id'] is None):
-            raise ValueError("Missing the required parameter `user_id` when calling `upload_api_key`")
-        # verify the required parameter 'create_api_key_details' is set
-        if ('create_api_key_details' not in params) or (params['create_api_key_details'] is None):
-            raise ValueError("Missing the required parameter `create_api_key_details` when calling `upload_api_key`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing_param)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing_param}
 
-        resource_path = '/users/{userId}/apiKeys/'
-        path_params = {}
-        if 'user_id' in params:
-            path_params['userId'] = params['user_id']
-
-        query_params = {}
-
-        header_params = {}
-        if 'opc_retry_token' in params:
-            header_params['opc-retry-token'] = params['opc_retry_token']
-
-        body_params = None
-        if 'create_api_key_details' in params:
-            body_params = params['create_api_key_details']
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_identity_api,
-                                            resource_path,
-                                            'POST',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='ApiKey')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_identity_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=create_api_key_details,
+            response_type="ApiKey")
