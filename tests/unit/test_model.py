@@ -1,4 +1,5 @@
 import oraclebmc
+import oraclebmc.util
 import datetime
 import pytest
 
@@ -58,14 +59,14 @@ def test_equal_none(instance):
 
 
 def test_to_string(instance):
-    string = instance.to_str()
+    string = str(instance)
     assert 'some name' in string
     assert 'foo2' in string
     assert '1999' in string
 
 
 def test_to_dict(instance):
-    instance_dict = instance.to_dict()
+    instance_dict = oraclebmc.util.to_dict(instance)
 
     assert 'some ad' == instance_dict['availability_domain']
     assert 'some compartment' == instance_dict['compartment_id']
@@ -76,7 +77,7 @@ def test_to_dict(instance):
     assert 'some region' == instance_dict['region']
     assert 'some shape' == instance_dict['shape']
     assert 'RUNNING' == instance_dict['lifecycle_state']
-    assert datetime.date(1999, 12, 31) == instance_dict['time_created']
+    assert "1999-12-31" == instance_dict['time_created']
 
 
 def test_subclass():
@@ -91,7 +92,7 @@ def test_subclass():
     assert 'foo' == volume_attachment.chap_secret
     assert 'bar' == volume_attachment.compartment_id
 
-    attachment_dict = volume_attachment.to_dict()
+    attachment_dict = oraclebmc.util.to_dict(volume_attachment)
 
     assert 'foo' == attachment_dict['chap_secret']
     assert 'bar' == attachment_dict['compartment_id']

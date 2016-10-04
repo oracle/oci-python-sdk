@@ -15,15 +15,22 @@ def to_dict(obj):
     """Helper to flatten models into dicts for rendering.
 
     The following conversions are applied:
-        * datetime.datetime is converted into an ISO8601 UTC string
+        * datetime.date, datetime.datetime, datetime.time
+          are converted into ISO8601 UTC strings
     """
     # Shortcut strings so they don't count as Iterables
     if isinstance(obj, six.string_types):
         return obj
-    elif isinstance(obj, datetime.datetime):
-        # returned datetimes are always UTC
+    elif isinstance(obj, (datetime.datetime, datetime.time)):
+        # always UTC
         as_utc = obj.replace(tzinfo=datetime.timezone.utc)
-        return as_utc.isoformat(sep='T')
+        if isinstance(obj, datetime.datetime):
+            # only datetime.datetime takes a separator
+            return as_utc.isoformat(sep="T")
+        return as_utc.isoformat()
+    elif isinstance(obj, datetime.date):
+        # datetime.date doesn't have a timezone
+        return obj.isoformat()
     elif isinstance(obj, abc.Mapping):
         return {k: to_dict(v) for k, v in six.iteritems(obj)}
     elif isinstance(obj, abc.Iterable):
@@ -43,8 +50,9 @@ def to_dict(obj):
 
 def formatted_flat_dict(model):
     """Returns a string of the model flattened as a dict, sorted"""
+    as_dict = to_dict(model)
     return json.dumps(
-        to_dict(model),
+        as_dict,
         indent=2,
         sort_keys=True
     )
