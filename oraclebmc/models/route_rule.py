@@ -86,7 +86,6 @@ class RouteRule(object):
         """
         self._network_entity_id = network_entity_id
 
-
     def __repr__(self):
         return formatted_flat_dict(self)
 

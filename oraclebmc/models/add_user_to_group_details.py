@@ -86,7 +86,6 @@ class AddUserToGroupDetails(object):
         """
         self._group_id = group_id
 
-
     def __repr__(self):
         return formatted_flat_dict(self)
 

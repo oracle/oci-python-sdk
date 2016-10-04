@@ -161,7 +161,6 @@ class IngressSecurityRule(object):
         """
         self._udp_options = udp_options
 
-
     def __repr__(self):
         return formatted_flat_dict(self)
 

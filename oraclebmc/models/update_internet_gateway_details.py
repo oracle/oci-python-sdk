@@ -61,7 +61,6 @@ class UpdateInternetGatewayDetails(object):
         """
         self._is_enabled = is_enabled
 
-
     def __repr__(self):
         return formatted_flat_dict(self)
 

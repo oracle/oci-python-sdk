@@ -86,7 +86,6 @@ class CreateDrgDetails(object):
         """
         self._display_name = display_name
 
-
     def __repr__(self):
         return formatted_flat_dict(self)
 

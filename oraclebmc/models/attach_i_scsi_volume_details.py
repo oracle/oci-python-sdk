@@ -74,7 +74,6 @@ class AttachIScsiVolumeDetails(AttachVolumeDetails):
         """
         self._use_chap = use_chap
 
-
     def __repr__(self):
         return formatted_flat_dict(self)
 

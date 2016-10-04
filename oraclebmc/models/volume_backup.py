@@ -267,7 +267,6 @@ class VolumeBackup(object):
         """
         self._volume_id = volume_id
 
-
     def __repr__(self):
         return formatted_flat_dict(self)
 

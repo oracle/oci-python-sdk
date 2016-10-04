@@ -61,7 +61,6 @@ class CreateApiKeyDetails(object):
         """
         self._key = key
 
-
     def __repr__(self):
         return formatted_flat_dict(self)
 

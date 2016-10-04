@@ -61,7 +61,6 @@ class CaptureConsoleHistoryDetails(object):
         """
         self._instance_id = instance_id
 
-
     def __repr__(self):
         return formatted_flat_dict(self)
 

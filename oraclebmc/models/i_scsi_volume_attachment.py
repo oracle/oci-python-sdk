@@ -189,7 +189,6 @@ class IScsiVolumeAttachment(VolumeAttachment):
         """
         self._port = port
 
-
     def __repr__(self):
         return formatted_flat_dict(self)
 

@@ -61,7 +61,6 @@ class Shape(object):
         """
         self._shape = shape
 
-
     def __repr__(self):
         return formatted_flat_dict(self)
 

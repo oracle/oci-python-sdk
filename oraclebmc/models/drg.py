@@ -167,7 +167,6 @@ class Drg(object):
         """
         self._time_created = time_created
 
-
     def __repr__(self):
         return formatted_flat_dict(self)
 

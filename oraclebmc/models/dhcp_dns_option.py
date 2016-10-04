@@ -96,7 +96,6 @@ class DhcpDnsOption(DhcpOption):
             )
         self._server_type = server_type
 
-
     def __repr__(self):
         return formatted_flat_dict(self)
 

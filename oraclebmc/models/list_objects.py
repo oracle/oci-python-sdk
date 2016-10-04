@@ -111,7 +111,6 @@ class ListObjects(object):
         """
         self._next_start_with = next_start_with
 
-
     def __repr__(self):
         return formatted_flat_dict(self)
 

@@ -217,7 +217,6 @@ class DrgAttachment(object):
         """
         self._vcn_id = vcn_id
 
-
     def __repr__(self):
         return formatted_flat_dict(self)
 

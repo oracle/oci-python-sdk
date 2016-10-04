@@ -367,7 +367,6 @@ class Subnet(object):
         """
         self._virtual_router_mac = virtual_router_mac
 
-
     def __repr__(self):
         return formatted_flat_dict(self)
 

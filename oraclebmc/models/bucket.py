@@ -211,7 +211,6 @@ class Bucket(object):
         """
         self._etag = etag
 
-
     def __repr__(self):
         return formatted_flat_dict(self)
 

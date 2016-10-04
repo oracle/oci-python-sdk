@@ -136,7 +136,6 @@ class CreateBucketDetails(object):
         """
         self._metadata = metadata
 
-
     def __repr__(self):
         return formatted_flat_dict(self)
 

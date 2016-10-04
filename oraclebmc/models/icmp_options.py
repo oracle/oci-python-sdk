@@ -86,7 +86,6 @@ class IcmpOptions(object):
         """
         self._type = type
 
-
     def __repr__(self):
         return formatted_flat_dict(self)
 

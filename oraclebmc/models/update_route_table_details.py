@@ -61,7 +61,6 @@ class UpdateRouteTableDetails(object):
         """
         self._route_rules = route_rules
 
-
     def __repr__(self):
         return formatted_flat_dict(self)
 

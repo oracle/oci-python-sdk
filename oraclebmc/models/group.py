@@ -217,7 +217,6 @@ class Group(object):
         """
         self._inactive_status = inactive_status
 
-
     def __repr__(self):
         return formatted_flat_dict(self)
 

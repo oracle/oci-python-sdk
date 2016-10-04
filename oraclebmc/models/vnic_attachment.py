@@ -267,7 +267,6 @@ class VnicAttachment(object):
         """
         self._vnic_id = vnic_id
 
-
     def __repr__(self):
         return formatted_flat_dict(self)
 

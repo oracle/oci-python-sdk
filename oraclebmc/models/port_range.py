@@ -86,7 +86,6 @@ class PortRange(object):
         """
         self._min = min
 
-
     def __repr__(self):
         return formatted_flat_dict(self)
 

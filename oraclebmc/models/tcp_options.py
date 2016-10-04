@@ -61,7 +61,6 @@ class TcpOptions(object):
         """
         self._destination_port_range = destination_port_range
 
-
     def __repr__(self):
         return formatted_flat_dict(self)
 

@@ -111,7 +111,6 @@ class CreateCpeDetails(object):
         """
         self._ip_address = ip_address
 
-
     def __repr__(self):
         return formatted_flat_dict(self)
 

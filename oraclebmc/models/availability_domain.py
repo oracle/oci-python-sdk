@@ -86,7 +86,6 @@ class AvailabilityDomain(object):
         """
         self._compartment_id = compartment_id
 
-
     def __repr__(self):
         return formatted_flat_dict(self)
 

@@ -111,7 +111,6 @@ class UpdatePolicyDetails(object):
         """
         self._version_date = version_date
 
-
     def __repr__(self):
         return formatted_flat_dict(self)
 

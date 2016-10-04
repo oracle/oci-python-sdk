@@ -142,7 +142,6 @@ class TunnelStatus(object):
         """
         self._time_state_modified = time_state_modified
 
-
     def __repr__(self):
         return formatted_flat_dict(self)
 

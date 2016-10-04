@@ -86,7 +86,6 @@ class UpdateSecurityListDetails(object):
         """
         self._ingress_security_rules = ingress_security_rules
 
-
     def __repr__(self):
         return formatted_flat_dict(self)
 

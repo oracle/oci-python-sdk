@@ -236,7 +236,6 @@ class LaunchInstanceDetails(object):
         """
         self._subnet_id = subnet_id
 
-
     def __repr__(self):
         return formatted_flat_dict(self)
 

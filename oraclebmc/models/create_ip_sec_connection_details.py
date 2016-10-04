@@ -161,7 +161,6 @@ class CreateIPSecConnectionDetails(object):
         """
         self._static_routes = static_routes
 
-
     def __repr__(self):
         return formatted_flat_dict(self)
 

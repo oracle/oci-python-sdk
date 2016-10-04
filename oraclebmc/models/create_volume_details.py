@@ -136,7 +136,6 @@ class CreateVolumeDetails(object):
         """
         self._volume_backup_id = volume_backup_id
 
-
     def __repr__(self):
         return formatted_flat_dict(self)
 

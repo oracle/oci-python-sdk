@@ -86,7 +86,6 @@ class Error(object):
         """
         self._message = message
 
-
     def __repr__(self):
         return formatted_flat_dict(self)
 
