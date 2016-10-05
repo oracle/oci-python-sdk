@@ -56,3 +56,36 @@ def formatted_flat_dict(model):
         indent=2,
         sort_keys=True
     )
+
+
+class Sentinel(object):
+    """
+    >>> missing = Sentinel("Missing", False)
+    >>> also_missing = Sentinel("Missing", False)
+    >>> assert missing is also_missing
+    >>> repr(missing)
+    <Missing>
+    >>> assert bool(missing) is False
+    """
+    _symbols = {}
+
+    def __new__(cls, name, truthy=True):
+        sentinel = Sentinel._symbols.get(name, None)
+        if sentinel is None:
+            sentinel = Sentinel._symbols[name] = super(Sentinel, cls).__new__(cls)
+        elif sentinel.truthy is not truthy:
+            raise ValueError("Tried to get existing Sentinel {!r} with wrong truthy value".format(sentinel))
+        return sentinel
+
+    def __init__(self, name, truthy=True):
+        self.name = name
+        self.truthy = truthy
+
+    def __repr__(self):
+        # Sentinel("Missing") -> <Missing>
+        return "<{}>".format(self.name)
+
+    def __bool__(self):
+        return self.truthy
+    # PY2 Compatibility
+    __nonzero__ = __bool__
