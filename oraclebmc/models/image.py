@@ -88,7 +88,7 @@ class Image(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this Image.
-        The OCID of the compartment containing the instance you want to use as the basis for the image.\n
+        The OCID of the compartment containing the instance you want to use as the basis for the image.
 
         :return: The compartment_id of this Image.
         :rtype: str
@@ -99,7 +99,7 @@ class Image(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this Image.
-        The OCID of the compartment containing the instance you want to use as the basis for the image.\n
+        The OCID of the compartment containing the instance you want to use as the basis for the image.
 
         :param compartment_id: The compartment_id of this Image.
         :type: str
@@ -110,7 +110,8 @@ class Image(object):
     def create_image_allowed(self):
         """
         Gets the create_image_allowed of this Image.
-        Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.\n\nExample: `true`\n
+        Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.
+        Example: `true`
 
         :return: The create_image_allowed of this Image.
         :rtype: bool
@@ -121,7 +122,8 @@ class Image(object):
     def create_image_allowed(self, create_image_allowed):
         """
         Sets the create_image_allowed of this Image.
-        Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.\n\nExample: `true`\n
+        Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.
+        Example: `true`
 
         :param create_image_allowed: The create_image_allowed of this Image.
         :type: bool
@@ -132,7 +134,9 @@ class Image(object):
     def display_name(self):
         """
         Gets the display_name of this Image.
-        A user-friendly name for the image. It does not have to be unique, and it's changeable.\nYou cannot use an Oracle-provided image name as a custom image name.\n\nExample: `My custom Oracle Linux image`\n
+        A user-friendly name for the image. It does not have to be unique, and it's changeable.
+        You cannot use an Oracle-provided image name as a custom image name.
+        Example: `My custom Oracle Linux image`
 
         :return: The display_name of this Image.
         :rtype: str
@@ -143,7 +147,9 @@ class Image(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Image.
-        A user-friendly name for the image. It does not have to be unique, and it's changeable.\nYou cannot use an Oracle-provided image name as a custom image name.\n\nExample: `My custom Oracle Linux image`\n
+        A user-friendly name for the image. It does not have to be unique, and it's changeable.
+        You cannot use an Oracle-provided image name as a custom image name.
+        Example: `My custom Oracle Linux image`
 
         :param display_name: The display_name of this Image.
         :type: str
@@ -202,7 +208,8 @@ class Image(object):
     def operating_system(self):
         """
         Gets the operating_system of this Image.
-        The image's operating system.\n\nExample: `Oracle Linux`\n
+        The image's operating system.
+        Example: `Oracle Linux`
 
         :return: The operating_system of this Image.
         :rtype: str
@@ -213,7 +220,8 @@ class Image(object):
     def operating_system(self, operating_system):
         """
         Sets the operating_system of this Image.
-        The image's operating system.\n\nExample: `Oracle Linux`\n
+        The image's operating system.
+        Example: `Oracle Linux`
 
         :param operating_system: The operating_system of this Image.
         :type: str
@@ -224,7 +232,8 @@ class Image(object):
     def operating_system_version(self):
         """
         Gets the operating_system_version of this Image.
-        The image's operating system version.\n\nExample: `7.2`\n
+        The image's operating system version.
+        Example: `7.2`
 
         :return: The operating_system_version of this Image.
         :rtype: str
@@ -235,7 +244,8 @@ class Image(object):
     def operating_system_version(self, operating_system_version):
         """
         Sets the operating_system_version of this Image.
-        The image's operating system version.\n\nExample: `7.2`\n
+        The image's operating system version.
+        Example: `7.2`
 
         :param operating_system_version: The operating_system_version of this Image.
         :type: str
@@ -246,7 +256,8 @@ class Image(object):
     def time_created(self):
         """
         Gets the time_created of this Image.
-        The date and time the image was created, in the format defined by RFC3339.\n\nExample: `2016-08-25T21:10:29.600Z`\n
+        The date and time the image was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :return: The time_created of this Image.
         :rtype: datetime
@@ -257,7 +268,8 @@ class Image(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Image.
-        The date and time the image was created, in the format defined by RFC3339.\n\nExample: `2016-08-25T21:10:29.600Z`\n
+        The date and time the image was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :param time_created: The time_created of this Image.
         :type: datetime

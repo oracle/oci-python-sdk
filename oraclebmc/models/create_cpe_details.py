@@ -70,7 +70,7 @@ class CreateCpeDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateCpeDetails.
-        A user-friendly name. Does not have to be unique, and it's not changeable.\n
+        A user-friendly name. Does not have to be unique, and it's not changeable.
 
         :return: The display_name of this CreateCpeDetails.
         :rtype: str
@@ -81,7 +81,7 @@ class CreateCpeDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateCpeDetails.
-        A user-friendly name. Does not have to be unique, and it's not changeable.\n
+        A user-friendly name. Does not have to be unique, and it's not changeable.
 
         :param display_name: The display_name of this CreateCpeDetails.
         :type: str

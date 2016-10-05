@@ -42,7 +42,8 @@ class UpdateInstanceDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateInstanceDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable.\n\nExample: `My bare metal instance`\n
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Example: `My bare metal instance`
 
         :return: The display_name of this UpdateInstanceDetails.
         :rtype: str
@@ -53,7 +54,8 @@ class UpdateInstanceDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateInstanceDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable.\n\nExample: `My bare metal instance`\n
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Example: `My bare metal instance`
 
         :param display_name: The display_name of this UpdateInstanceDetails.
         :type: str

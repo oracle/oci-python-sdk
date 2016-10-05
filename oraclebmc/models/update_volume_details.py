@@ -42,7 +42,7 @@ class UpdateVolumeDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateVolumeDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable.\n
+        A user-friendly name. Does not have to be unique, and it's changeable.
 
         :return: The display_name of this UpdateVolumeDetails.
         :rtype: str
@@ -53,7 +53,7 @@ class UpdateVolumeDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateVolumeDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable.\n
+        A user-friendly name. Does not have to be unique, and it's changeable.
 
         :param display_name: The display_name of this UpdateVolumeDetails.
         :type: str

@@ -60,7 +60,8 @@ class ConsoleHistoryMetadata(object):
     def availability_domain(self):
         """
         Gets the availability_domain of this ConsoleHistoryMetadata.
-        The Availability Domain of an instance.\n\nExample: `Uocm:PHX-AD-1`\n
+        The Availability Domain of an instance.
+        Example: `Uocm:PHX-AD-1`
 
         :return: The availability_domain of this ConsoleHistoryMetadata.
         :rtype: str
@@ -71,7 +72,8 @@ class ConsoleHistoryMetadata(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this ConsoleHistoryMetadata.
-        The Availability Domain of an instance.\n\nExample: `Uocm:PHX-AD-1`\n
+        The Availability Domain of an instance.
+        Example: `Uocm:PHX-AD-1`
 
         :param availability_domain: The availability_domain of this ConsoleHistoryMetadata.
         :type: str
@@ -104,7 +106,8 @@ class ConsoleHistoryMetadata(object):
     def display_name(self):
         """
         Gets the display_name of this ConsoleHistoryMetadata.
-        A user-friendly name. Does not have to be unique, and it's changeable.\n\nExample: `My console history metadata`\n
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Example: `My console history metadata`
 
         :return: The display_name of this ConsoleHistoryMetadata.
         :rtype: str
@@ -115,7 +118,8 @@ class ConsoleHistoryMetadata(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ConsoleHistoryMetadata.
-        A user-friendly name. Does not have to be unique, and it's changeable.\n\nExample: `My console history metadata`\n
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Example: `My console history metadata`
 
         :param display_name: The display_name of this ConsoleHistoryMetadata.
         :type: str
@@ -198,7 +202,8 @@ class ConsoleHistoryMetadata(object):
     def time_created(self):
         """
         Gets the time_created of this ConsoleHistoryMetadata.
-        The date and time the history was created, in the format defined by RFC3339.\n\nExample: `2016-08-25T21:10:29.600Z`\n
+        The date and time the history was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :return: The time_created of this ConsoleHistoryMetadata.
         :rtype: datetime
@@ -209,7 +214,8 @@ class ConsoleHistoryMetadata(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this ConsoleHistoryMetadata.
-        The date and time the history was created, in the format defined by RFC3339.\n\nExample: `2016-08-25T21:10:29.600Z`\n
+        The date and time the history was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :param time_created: The time_created of this ConsoleHistoryMetadata.
         :type: datetime

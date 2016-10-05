@@ -110,7 +110,7 @@ class Vcn(object):
     def default_dhcp_options_id(self):
         """
         Gets the default_dhcp_options_id of this Vcn.
-        The OCID for the VCN's default set of DHCP options.\n
+        The OCID for the VCN's default set of DHCP options.
 
         :return: The default_dhcp_options_id of this Vcn.
         :rtype: str
@@ -121,7 +121,7 @@ class Vcn(object):
     def default_dhcp_options_id(self, default_dhcp_options_id):
         """
         Sets the default_dhcp_options_id of this Vcn.
-        The OCID for the VCN's default set of DHCP options.\n
+        The OCID for the VCN's default set of DHCP options.
 
         :param default_dhcp_options_id: The default_dhcp_options_id of this Vcn.
         :type: str
@@ -176,7 +176,7 @@ class Vcn(object):
     def display_name(self):
         """
         Gets the display_name of this Vcn.
-        A user-friendly name. Does not have to be unique, and it's not changeable.\n
+        A user-friendly name. Does not have to be unique, and it's not changeable.
 
         :return: The display_name of this Vcn.
         :rtype: str
@@ -187,7 +187,7 @@ class Vcn(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Vcn.
-        A user-friendly name. Does not have to be unique, and it's not changeable.\n
+        A user-friendly name. Does not have to be unique, and it's not changeable.
 
         :param display_name: The display_name of this Vcn.
         :type: str

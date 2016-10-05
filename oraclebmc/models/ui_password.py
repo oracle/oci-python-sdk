@@ -120,7 +120,8 @@ class UIPassword(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this UIPassword.
-        The password's current state. After creating a password, make sure its `lifecycleState` changes from\nCREATING to ACTIVE before using it.\n
+        The password's current state. After creating a password, make sure its `lifecycleState` changes from
+        CREATING to ACTIVE before using it.
 
         :return: The lifecycle_state of this UIPassword.
         :rtype: str
@@ -131,7 +132,8 @@ class UIPassword(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this UIPassword.
-        The password's current state. After creating a password, make sure its `lifecycleState` changes from\nCREATING to ACTIVE before using it.\n
+        The password's current state. After creating a password, make sure its `lifecycleState` changes from
+        CREATING to ACTIVE before using it.
 
         :param lifecycle_state: The lifecycle_state of this UIPassword.
         :type: str

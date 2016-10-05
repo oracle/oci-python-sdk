@@ -79,7 +79,7 @@ class InternetGateway(object):
     def display_name(self):
         """
         Gets the display_name of this InternetGateway.
-        A user-friendly name. Does not have to be unique, and it's not changeable.\n
+        A user-friendly name. Does not have to be unique, and it's not changeable.
 
         :return: The display_name of this InternetGateway.
         :rtype: str
@@ -90,7 +90,7 @@ class InternetGateway(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this InternetGateway.
-        A user-friendly name. Does not have to be unique, and it's not changeable.\n
+        A user-friendly name. Does not have to be unique, and it's not changeable.
 
         :param display_name: The display_name of this InternetGateway.
         :type: str
@@ -123,7 +123,8 @@ class InternetGateway(object):
     def is_enabled(self):
         """
         Gets the is_enabled of this InternetGateway.
-        Whether the gateway is enabled. When the gateway is disabled, traffic is not\nrouted to/from the Internet, regardless of route rules.\n
+        Whether the gateway is enabled. When the gateway is disabled, traffic is not
+        routed to/from the Internet, regardless of route rules.
 
         :return: The is_enabled of this InternetGateway.
         :rtype: bool
@@ -134,7 +135,8 @@ class InternetGateway(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this InternetGateway.
-        Whether the gateway is enabled. When the gateway is disabled, traffic is not\nrouted to/from the Internet, regardless of route rules.\n
+        Whether the gateway is enabled. When the gateway is disabled, traffic is not
+        routed to/from the Internet, regardless of route rules.
 
         :param is_enabled: The is_enabled of this InternetGateway.
         :type: bool

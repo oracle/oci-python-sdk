@@ -104,7 +104,8 @@ class User(object):
     def name(self):
         """
         Gets the name of this User.
-        The unique, unchangeable name you assign to the user during creation. This is the user's login for\nthe Console. Must be unique across all users in the tenancy.\n
+        The unique, unchangeable name you assign to the user during creation. This is the user's login for
+        the Console. Must be unique across all users in the tenancy.
 
         :return: The name of this User.
         :rtype: str
@@ -115,7 +116,8 @@ class User(object):
     def name(self, name):
         """
         Sets the name of this User.
-        The unique, unchangeable name you assign to the user during creation. This is the user's login for\nthe Console. Must be unique across all users in the tenancy.\n
+        The unique, unchangeable name you assign to the user during creation. This is the user's login for
+        the Console. Must be unique across all users in the tenancy.
 
         :param name: The name of this User.
         :type: str
@@ -170,7 +172,8 @@ class User(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this User.
-        The user's current state. After creating a user, make sure its `lifecycleState` changes from CREATING to\nACTIVE before using it.\n
+        The user's current state. After creating a user, make sure its `lifecycleState` changes from CREATING to
+        ACTIVE before using it.
 
         :return: The lifecycle_state of this User.
         :rtype: str
@@ -181,7 +184,8 @@ class User(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this User.
-        The user's current state. After creating a user, make sure its `lifecycleState` changes from CREATING to\nACTIVE before using it.\n
+        The user's current state. After creating a user, make sure its `lifecycleState` changes from CREATING to
+        ACTIVE before using it.
 
         :param lifecycle_state: The lifecycle_state of this User.
         :type: str
@@ -198,7 +202,11 @@ class User(object):
     def inactive_status(self):
         """
         Gets the inactive_status of this User.
-        Returned only if the user's `lifecycleState` is INACTIVE. A 16-bit value showing the reason why the user\nis inactive:\n\n- bit 0: SUSPENDED (reserved for future use)\n- bit 1: DISABLED (reserved for future use)\n- bit 2: BLOCKED (the user has exceeded the maximum number of failed login attempts for the Console)\n
+        Returned only if the user's `lifecycleState` is INACTIVE. A 16-bit value showing the reason why the user
+        is inactive:
+        - bit 0: SUSPENDED (reserved for future use)
+        - bit 1: DISABLED (reserved for future use)
+        - bit 2: BLOCKED (the user has exceeded the maximum number of failed login attempts for the Console)
 
         :return: The inactive_status of this User.
         :rtype: int
@@ -209,7 +217,11 @@ class User(object):
     def inactive_status(self, inactive_status):
         """
         Sets the inactive_status of this User.
-        Returned only if the user's `lifecycleState` is INACTIVE. A 16-bit value showing the reason why the user\nis inactive:\n\n- bit 0: SUSPENDED (reserved for future use)\n- bit 1: DISABLED (reserved for future use)\n- bit 2: BLOCKED (the user has exceeded the maximum number of failed login attempts for the Console)\n
+        Returned only if the user's `lifecycleState` is INACTIVE. A 16-bit value showing the reason why the user
+        is inactive:
+        - bit 0: SUSPENDED (reserved for future use)
+        - bit 1: DISABLED (reserved for future use)
+        - bit 2: BLOCKED (the user has exceeded the maximum number of failed login attempts for the Console)
 
         :param inactive_status: The inactive_status of this User.
         :type: int

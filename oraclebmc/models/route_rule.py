@@ -45,7 +45,8 @@ class RouteRule(object):
     def cidr_block(self):
         """
         Gets the cidr_block of this RouteRule.
-        A destination IP address range in CIDR notation. Matching packets will\nbe routed to the indicated network entity (the target).\n
+        A destination IP address range in CIDR notation. Matching packets will
+        be routed to the indicated network entity (the target).
 
         :return: The cidr_block of this RouteRule.
         :rtype: str
@@ -56,7 +57,8 @@ class RouteRule(object):
     def cidr_block(self, cidr_block):
         """
         Sets the cidr_block of this RouteRule.
-        A destination IP address range in CIDR notation. Matching packets will\nbe routed to the indicated network entity (the target).\n
+        A destination IP address range in CIDR notation. Matching packets will
+        be routed to the indicated network entity (the target).
 
         :param cidr_block: The cidr_block of this RouteRule.
         :type: str

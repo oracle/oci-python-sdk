@@ -117,7 +117,7 @@ class IPSecConnectionDeviceConfig(object):
     def tunnels(self):
         """
         Gets the tunnels of this IPSecConnectionDeviceConfig.
-        Two [TunnelConfig](#/en/iaas/20160918/TunnelConfig/) objects.
+        Two TunnelConfig objects.
 
         :return: The tunnels of this IPSecConnectionDeviceConfig.
         :rtype: list[TunnelConfig]
@@ -128,7 +128,7 @@ class IPSecConnectionDeviceConfig(object):
     def tunnels(self, tunnels):
         """
         Sets the tunnels of this IPSecConnectionDeviceConfig.
-        Two [TunnelConfig](#/en/iaas/20160918/TunnelConfig/) objects.
+        Two TunnelConfig objects.
 
         :param tunnels: The tunnels of this IPSecConnectionDeviceConfig.
         :type: list[TunnelConfig]

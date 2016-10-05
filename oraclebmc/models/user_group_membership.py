@@ -170,7 +170,8 @@ class UserGroupMembership(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this UserGroupMembership.
-        The membership's current state.  After creating a membership object, make sure its `lifecycleState` changes\nfrom CREATING to ACTIVE before using it.\n
+        The membership's current state.  After creating a membership object, make sure its `lifecycleState` changes
+        from CREATING to ACTIVE before using it.
 
         :return: The lifecycle_state of this UserGroupMembership.
         :rtype: str
@@ -181,7 +182,8 @@ class UserGroupMembership(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this UserGroupMembership.
-        The membership's current state.  After creating a membership object, make sure its `lifecycleState` changes\nfrom CREATING to ACTIVE before using it.\n
+        The membership's current state.  After creating a membership object, make sure its `lifecycleState` changes
+        from CREATING to ACTIVE before using it.
 
         :param lifecycle_state: The lifecycle_state of this UserGroupMembership.
         :type: str

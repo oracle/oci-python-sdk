@@ -129,7 +129,8 @@ class CreateSubnetDetails(object):
     def dhcp_options_id(self):
         """
         Gets the dhcp_options_id of this CreateSubnetDetails.
-        The OCID of the set of DHCP options the subnet will use. If you don't\nprovide a value, the subnet will use the VCN's default set of DHCP options.\n
+        The OCID of the set of DHCP options the subnet will use. If you don't
+        provide a value, the subnet will use the VCN's default set of DHCP options.
 
         :return: The dhcp_options_id of this CreateSubnetDetails.
         :rtype: str
@@ -140,7 +141,8 @@ class CreateSubnetDetails(object):
     def dhcp_options_id(self, dhcp_options_id):
         """
         Sets the dhcp_options_id of this CreateSubnetDetails.
-        The OCID of the set of DHCP options the subnet will use. If you don't\nprovide a value, the subnet will use the VCN's default set of DHCP options.\n
+        The OCID of the set of DHCP options the subnet will use. If you don't
+        provide a value, the subnet will use the VCN's default set of DHCP options.
 
         :param dhcp_options_id: The dhcp_options_id of this CreateSubnetDetails.
         :type: str
@@ -151,7 +153,7 @@ class CreateSubnetDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateSubnetDetails.
-        A user-friendly name. Does not have to be unique, and it's not changeable.\n
+        A user-friendly name. Does not have to be unique, and it's not changeable.
 
         :return: The display_name of this CreateSubnetDetails.
         :rtype: str
@@ -162,7 +164,7 @@ class CreateSubnetDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateSubnetDetails.
-        A user-friendly name. Does not have to be unique, and it's not changeable.\n
+        A user-friendly name. Does not have to be unique, and it's not changeable.
 
         :param display_name: The display_name of this CreateSubnetDetails.
         :type: str
@@ -173,7 +175,8 @@ class CreateSubnetDetails(object):
     def route_table_id(self):
         """
         Gets the route_table_id of this CreateSubnetDetails.
-        The OCID of the route table the subnet will use. If you don't provide a value,\nthe subnet will use the VCN's default route table.\n
+        The OCID of the route table the subnet will use. If you don't provide a value,
+        the subnet will use the VCN's default route table.
 
         :return: The route_table_id of this CreateSubnetDetails.
         :rtype: str
@@ -184,7 +187,8 @@ class CreateSubnetDetails(object):
     def route_table_id(self, route_table_id):
         """
         Sets the route_table_id of this CreateSubnetDetails.
-        The OCID of the route table the subnet will use. If you don't provide a value,\nthe subnet will use the VCN's default route table.\n
+        The OCID of the route table the subnet will use. If you don't provide a value,
+        the subnet will use the VCN's default route table.
 
         :param route_table_id: The route_table_id of this CreateSubnetDetails.
         :type: str
@@ -195,7 +199,10 @@ class CreateSubnetDetails(object):
     def security_list_ids(self):
         """
         Gets the security_list_ids of this CreateSubnetDetails.
-        OCIDs for the security lists to associate with the subnet. If you don't\nprovide a value, the VCN's default security list will be associated with\nthe subnet. Remember that security lists are associated at the subnet\nlevel, but the rules are applied to the individual VNICs in the subnet.\n
+        OCIDs for the security lists to associate with the subnet. If you don't
+        provide a value, the VCN's default security list will be associated with
+        the subnet. Remember that security lists are associated at the subnet
+        level, but the rules are applied to the individual VNICs in the subnet.
 
         :return: The security_list_ids of this CreateSubnetDetails.
         :rtype: list[str]
@@ -206,7 +213,10 @@ class CreateSubnetDetails(object):
     def security_list_ids(self, security_list_ids):
         """
         Sets the security_list_ids of this CreateSubnetDetails.
-        OCIDs for the security lists to associate with the subnet. If you don't\nprovide a value, the VCN's default security list will be associated with\nthe subnet. Remember that security lists are associated at the subnet\nlevel, but the rules are applied to the individual VNICs in the subnet.\n
+        OCIDs for the security lists to associate with the subnet. If you don't
+        provide a value, the VCN's default security list will be associated with
+        the subnet. Remember that security lists are associated at the subnet
+        level, but the rules are applied to the individual VNICs in the subnet.
 
         :param security_list_ids: The security_list_ids of this CreateSubnetDetails.
         :type: list[str]

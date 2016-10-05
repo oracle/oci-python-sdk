@@ -70,7 +70,8 @@ class CreateGroupDetails(object):
     def name(self):
         """
         Gets the name of this CreateGroupDetails.
-        A unique, unchangeable name you assign to the group during creation. Must be unique across all groups\nin the tenancy.\n
+        A unique, unchangeable name you assign to the group during creation. Must be unique across all groups
+        in the tenancy.
 
         :return: The name of this CreateGroupDetails.
         :rtype: str
@@ -81,7 +82,8 @@ class CreateGroupDetails(object):
     def name(self, name):
         """
         Sets the name of this CreateGroupDetails.
-        A unique, unchangeable name you assign to the group during creation. Must be unique across all groups\nin the tenancy.\n
+        A unique, unchangeable name you assign to the group during creation. Must be unique across all groups
+        in the tenancy.
 
         :param name: The name of this CreateGroupDetails.
         :type: str

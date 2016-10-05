@@ -70,7 +70,8 @@ class CreateUserDetails(object):
     def name(self):
         """
         Gets the name of this CreateUserDetails.
-        A unique, unchangeable name you assign to the user during creation. This is the user's login for the\nConsole. Must be unique across all users in the tenancy.\n
+        A unique, unchangeable name you assign to the user during creation. This is the user's login for the
+        Console. Must be unique across all users in the tenancy.
 
         :return: The name of this CreateUserDetails.
         :rtype: str
@@ -81,7 +82,8 @@ class CreateUserDetails(object):
     def name(self, name):
         """
         Sets the name of this CreateUserDetails.
-        A unique, unchangeable name you assign to the user during creation. This is the user's login for the\nConsole. Must be unique across all users in the tenancy.\n
+        A unique, unchangeable name you assign to the user during creation. This is the user's login for the
+        Console. Must be unique across all users in the tenancy.
 
         :param name: The name of this CreateUserDetails.
         :type: str

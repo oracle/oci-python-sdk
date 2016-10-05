@@ -60,7 +60,8 @@ class ApiKey(object):
     def key_id(self):
         """
         Gets the key_id of this ApiKey.
-        An Oracle-assigned identifier for the key, in this format:\nTENANCY_OCID/USER_OCID/KEY_FINGERPRINT.\n
+        An Oracle-assigned identifier for the key, in this format:
+        TENANCY_OCID/USER_OCID/KEY_FINGERPRINT.
 
         :return: The key_id of this ApiKey.
         :rtype: str
@@ -71,7 +72,8 @@ class ApiKey(object):
     def key_id(self, key_id):
         """
         Sets the key_id of this ApiKey.
-        An Oracle-assigned identifier for the key, in this format:\nTENANCY_OCID/USER_OCID/KEY_FINGERPRINT.\n
+        An Oracle-assigned identifier for the key, in this format:
+        TENANCY_OCID/USER_OCID/KEY_FINGERPRINT.
 
         :param key_id: The key_id of this ApiKey.
         :type: str
@@ -170,7 +172,8 @@ class ApiKey(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this ApiKey.
-        The API key's current state. After creating an `ApiKey` object, make sure its `lifecycleState` changes from\nCREATING to ACTIVE before using it.\n
+        The API key's current state. After creating an `ApiKey` object, make sure its `lifecycleState` changes from
+        CREATING to ACTIVE before using it.
 
         :return: The lifecycle_state of this ApiKey.
         :rtype: str
@@ -181,7 +184,8 @@ class ApiKey(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this ApiKey.
-        The API key's current state. After creating an `ApiKey` object, make sure its `lifecycleState` changes from\nCREATING to ACTIVE before using it.\n
+        The API key's current state. After creating an `ApiKey` object, make sure its `lifecycleState` changes from
+        CREATING to ACTIVE before using it.
 
         :param lifecycle_state: The lifecycle_state of this ApiKey.
         :type: str

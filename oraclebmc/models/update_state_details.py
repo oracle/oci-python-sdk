@@ -42,7 +42,7 @@ class UpdateStateDetails(object):
     def blocked(self):
         """
         Gets the blocked of this UpdateStateDetails.
-        Update state to blocked or unblocked. Only \"false\" is supported (for changing the state to unblocked).\n
+        Update state to blocked or unblocked. Only \"false\" is supported (for changing the state to unblocked).
 
         :return: The blocked of this UpdateStateDetails.
         :rtype: bool
@@ -53,7 +53,7 @@ class UpdateStateDetails(object):
     def blocked(self, blocked):
         """
         Sets the blocked of this UpdateStateDetails.
-        Update state to blocked or unblocked. Only \"false\" is supported (for changing the state to unblocked).\n
+        Update state to blocked or unblocked. Only \"false\" is supported (for changing the state to unblocked).
 
         :param blocked: The blocked of this UpdateStateDetails.
         :type: bool

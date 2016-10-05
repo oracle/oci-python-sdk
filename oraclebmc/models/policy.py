@@ -110,7 +110,8 @@ class Policy(object):
     def name(self):
         """
         Gets the name of this Policy.
-        The unique, unchangeable name you assign to the policy during creation. Must be unique across all\npolicies in the tenancy.\n
+        The unique, unchangeable name you assign to the policy during creation. Must be unique across all
+        policies in the tenancy.
 
         :return: The name of this Policy.
         :rtype: str
@@ -121,7 +122,8 @@ class Policy(object):
     def name(self, name):
         """
         Sets the name of this Policy.
-        The unique, unchangeable name you assign to the policy during creation. Must be unique across all\npolicies in the tenancy.\n
+        The unique, unchangeable name you assign to the policy during creation. Must be unique across all
+        policies in the tenancy.
 
         :param name: The name of this Policy.
         :type: str
@@ -198,7 +200,8 @@ class Policy(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this Policy.
-        The policy's current state. After creating a policy, make sure its `lifecycleState` changes from CREATING to\nACTIVE before using it.\n
+        The policy's current state. After creating a policy, make sure its `lifecycleState` changes from CREATING to
+        ACTIVE before using it.
 
         :return: The lifecycle_state of this Policy.
         :rtype: str
@@ -209,7 +212,8 @@ class Policy(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Policy.
-        The policy's current state. After creating a policy, make sure its `lifecycleState` changes from CREATING to\nACTIVE before using it.\n
+        The policy's current state. After creating a policy, make sure its `lifecycleState` changes from CREATING to
+        ACTIVE before using it.
 
         :param lifecycle_state: The lifecycle_state of this Policy.
         :type: str
@@ -248,7 +252,9 @@ class Policy(object):
     def version_date(self):
         """
         Gets the version_date of this Policy.
-        The version of the policy. If null or set to an empty string, when a request comes in for authorization, the\npolicy will be evaluated according to the current behavior of the services at that moment. If set to a particular\ndate (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date.\n
+        The version of the policy. If null or set to an empty string, when a request comes in for authorization, the
+        policy will be evaluated according to the current behavior of the services at that moment. If set to a particular
+        date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date.
 
         :return: The version_date of this Policy.
         :rtype: datetime
@@ -259,7 +265,9 @@ class Policy(object):
     def version_date(self, version_date):
         """
         Sets the version_date of this Policy.
-        The version of the policy. If null or set to an empty string, when a request comes in for authorization, the\npolicy will be evaluated according to the current behavior of the services at that moment. If set to a particular\ndate (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date.\n
+        The version of the policy. If null or set to an empty string, when a request comes in for authorization, the
+        policy will be evaluated according to the current behavior of the services at that moment. If set to a particular
+        date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date.
 
         :param version_date: The version_date of this Policy.
         :type: datetime

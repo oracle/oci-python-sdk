@@ -82,7 +82,7 @@ class DrgAttachment(object):
     def display_name(self):
         """
         Gets the display_name of this DrgAttachment.
-        A user-friendly name. Does not have to be unique, and it's not changeable.\n
+        A user-friendly name. Does not have to be unique, and it's not changeable.
 
         :return: The display_name of this DrgAttachment.
         :rtype: str
@@ -93,7 +93,7 @@ class DrgAttachment(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this DrgAttachment.
-        A user-friendly name. Does not have to be unique, and it's not changeable.\n
+        A user-friendly name. Does not have to be unique, and it's not changeable.
 
         :param display_name: The display_name of this DrgAttachment.
         :type: str

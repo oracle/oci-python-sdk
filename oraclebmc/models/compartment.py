@@ -104,7 +104,8 @@ class Compartment(object):
     def name(self):
         """
         Gets the name of this Compartment.
-        The unique, unchangeable name you assign to the compartment during creation. Must be unique across\nall compartments in the tenancy.\n
+        The unique, unchangeable name you assign to the compartment during creation. Must be unique across
+        all compartments in the tenancy.
 
         :return: The name of this Compartment.
         :rtype: str
@@ -115,7 +116,8 @@ class Compartment(object):
     def name(self, name):
         """
         Sets the name of this Compartment.
-        The unique, unchangeable name you assign to the compartment during creation. Must be unique across\nall compartments in the tenancy.\n
+        The unique, unchangeable name you assign to the compartment during creation. Must be unique across
+        all compartments in the tenancy.
 
         :param name: The name of this Compartment.
         :type: str
@@ -170,7 +172,8 @@ class Compartment(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this Compartment.
-        The compartment's current state. After creating a compartment, make sure its `lifecycleState` changes from\nCREATING to ACTIVE before using it.\n
+        The compartment's current state. After creating a compartment, make sure its `lifecycleState` changes from
+        CREATING to ACTIVE before using it.
 
         :return: The lifecycle_state of this Compartment.
         :rtype: str
@@ -181,7 +184,8 @@ class Compartment(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Compartment.
-        The compartment's current state. After creating a compartment, make sure its `lifecycleState` changes from\nCREATING to ACTIVE before using it.\n
+        The compartment's current state. After creating a compartment, make sure its `lifecycleState` changes from
+        CREATING to ACTIVE before using it.
 
         :param lifecycle_state: The lifecycle_state of this Compartment.
         :type: str

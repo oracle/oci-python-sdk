@@ -70,7 +70,8 @@ class CreateCompartmentDetails(object):
     def name(self):
         """
         Gets the name of this CreateCompartmentDetails.
-        A unique, unchangeable name you assign to the compartment during creation. Must be unique across all\ncompartments in the tenancy.\n
+        A unique, unchangeable name you assign to the compartment during creation. Must be unique across all
+        compartments in the tenancy.
 
         :return: The name of this CreateCompartmentDetails.
         :rtype: str
@@ -81,7 +82,8 @@ class CreateCompartmentDetails(object):
     def name(self, name):
         """
         Sets the name of this CreateCompartmentDetails.
-        A unique, unchangeable name you assign to the compartment during creation. Must be unique across all\ncompartments in the tenancy.\n
+        A unique, unchangeable name you assign to the compartment during creation. Must be unique across all
+        compartments in the tenancy.
 
         :param name: The name of this CreateCompartmentDetails.
         :type: str

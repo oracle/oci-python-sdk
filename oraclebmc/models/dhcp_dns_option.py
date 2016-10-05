@@ -49,7 +49,8 @@ class DhcpDnsOption(DhcpOption):
     def custom_dns_servers(self):
         """
         Gets the custom_dns_servers of this DhcpDnsOption.
-        If you set `serverType` to `CustomDnsServer`, specify the IP address\nof at least one DNS server of your choice (three maximum).\n
+        If you set `serverType` to `CustomDnsServer`, specify the IP address
+        of at least one DNS server of your choice (three maximum).
 
         :return: The custom_dns_servers of this DhcpDnsOption.
         :rtype: list[str]
@@ -60,7 +61,8 @@ class DhcpDnsOption(DhcpOption):
     def custom_dns_servers(self, custom_dns_servers):
         """
         Sets the custom_dns_servers of this DhcpDnsOption.
-        If you set `serverType` to `CustomDnsServer`, specify the IP address\nof at least one DNS server of your choice (three maximum).\n
+        If you set `serverType` to `CustomDnsServer`, specify the IP address
+        of at least one DNS server of your choice (three maximum).
 
         :param custom_dns_servers: The custom_dns_servers of this DhcpDnsOption.
         :type: list[str]
@@ -71,7 +73,12 @@ class DhcpDnsOption(DhcpOption):
     def server_type(self):
         """
         Gets the server_type of this DhcpDnsOption.
-        - *VcnLocal:* Reserved for future use.\n- *VcnLocalPlusInternet:* Instances can resolve only internet host\nnames (no Internet Gateway is required). The instances still need to use\ntheir IP addresses to communicate with each other. This is the default\nvalue in the default set of DHCP options in the VCN.\n- *CustomDnsServer:* Instances use a DNS server of your choice (three maximum).\n
+        - *VcnLocal:* Reserved for future use.
+        - *VcnLocalPlusInternet:* Instances can resolve only internet host
+        names (no Internet Gateway is required). The instances still need to use
+        their IP addresses to communicate with each other. This is the default
+        value in the default set of DHCP options in the VCN.
+        - *CustomDnsServer:* Instances use a DNS server of your choice (three maximum).
 
         :return: The server_type of this DhcpDnsOption.
         :rtype: str
@@ -82,7 +89,12 @@ class DhcpDnsOption(DhcpOption):
     def server_type(self, server_type):
         """
         Sets the server_type of this DhcpDnsOption.
-        - *VcnLocal:* Reserved for future use.\n- *VcnLocalPlusInternet:* Instances can resolve only internet host\nnames (no Internet Gateway is required). The instances still need to use\ntheir IP addresses to communicate with each other. This is the default\nvalue in the default set of DHCP options in the VCN.\n- *CustomDnsServer:* Instances use a DNS server of your choice (three maximum).\n
+        - *VcnLocal:* Reserved for future use.
+        - *VcnLocalPlusInternet:* Instances can resolve only internet host
+        names (no Internet Gateway is required). The instances still need to use
+        their IP addresses to communicate with each other. This is the default
+        value in the default set of DHCP options in the VCN.
+        - *CustomDnsServer:* Instances use a DNS server of your choice (three maximum).
 
         :param server_type: The server_type of this DhcpDnsOption.
         :type: str

@@ -73,7 +73,7 @@ class CreateDhcpDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateDhcpDetails.
-        A user-friendly name. Does not have to be unique, and it's unchangeable.\n
+        A user-friendly name. Does not have to be unique, and it's unchangeable.
 
         :return: The display_name of this CreateDhcpDetails.
         :rtype: str
@@ -84,7 +84,7 @@ class CreateDhcpDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateDhcpDetails.
-        A user-friendly name. Does not have to be unique, and it's unchangeable.\n
+        A user-friendly name. Does not have to be unique, and it's unchangeable.
 
         :param display_name: The display_name of this CreateDhcpDetails.
         :type: str

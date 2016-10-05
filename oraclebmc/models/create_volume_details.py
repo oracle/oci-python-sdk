@@ -95,7 +95,7 @@ class CreateVolumeDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateVolumeDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable.\n
+        A user-friendly name. Does not have to be unique, and it's changeable.
 
         :return: The display_name of this CreateVolumeDetails.
         :rtype: str
@@ -106,7 +106,7 @@ class CreateVolumeDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateVolumeDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable.\n
+        A user-friendly name. Does not have to be unique, and it's changeable.
 
         :param display_name: The display_name of this CreateVolumeDetails.
         :type: str
@@ -117,7 +117,7 @@ class CreateVolumeDetails(object):
     def volume_backup_id(self):
         """
         Gets the volume_backup_id of this CreateVolumeDetails.
-        The ID of the volume backup from which the data should be restored on the newly created volume.\n
+        The ID of the volume backup from which the data should be restored on the newly created volume.
 
         :return: The volume_backup_id of this CreateVolumeDetails.
         :rtype: str
@@ -128,7 +128,7 @@ class CreateVolumeDetails(object):
     def volume_backup_id(self, volume_backup_id):
         """
         Sets the volume_backup_id of this CreateVolumeDetails.
-        The ID of the volume backup from which the data should be restored on the newly created volume.\n
+        The ID of the volume backup from which the data should be restored on the newly created volume.
 
         :param volume_backup_id: The volume_backup_id of this CreateVolumeDetails.
         :type: str

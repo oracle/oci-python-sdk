@@ -66,7 +66,8 @@ class VnicAttachment(object):
     def availability_domain(self):
         """
         Gets the availability_domain of this VnicAttachment.
-        The Availability Domain of an instance.\n\nExample: `Uocm:PHX-AD-1`\n
+        The Availability Domain of an instance.
+        Example: `Uocm:PHX-AD-1`
 
         :return: The availability_domain of this VnicAttachment.
         :rtype: str
@@ -77,7 +78,8 @@ class VnicAttachment(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this VnicAttachment.
-        The Availability Domain of an instance.\n\nExample: `Uocm:PHX-AD-1`\n
+        The Availability Domain of an instance.
+        Example: `Uocm:PHX-AD-1`
 
         :param availability_domain: The availability_domain of this VnicAttachment.
         :type: str
@@ -110,7 +112,8 @@ class VnicAttachment(object):
     def display_name(self):
         """
         Gets the display_name of this VnicAttachment.
-        A user-friendly name. Does not have to be unique, and it's not changeable.\n\nExample: `My VNIC attachment`\n
+        A user-friendly name. Does not have to be unique, and it's not changeable.
+        Example: `My VNIC attachment`
 
         :return: The display_name of this VnicAttachment.
         :rtype: str
@@ -121,7 +124,8 @@ class VnicAttachment(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this VnicAttachment.
-        A user-friendly name. Does not have to be unique, and it's not changeable.\n\nExample: `My VNIC attachment`\n
+        A user-friendly name. Does not have to be unique, and it's not changeable.
+        Example: `My VNIC attachment`
 
         :param display_name: The display_name of this VnicAttachment.
         :type: str
@@ -226,7 +230,8 @@ class VnicAttachment(object):
     def time_created(self):
         """
         Gets the time_created of this VnicAttachment.
-        The date and time the VNIC attachment was created, in the format defined by RFC3339.\n\nExample: `2016-08-25T21:10:29.600Z`\n
+        The date and time the VNIC attachment was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :return: The time_created of this VnicAttachment.
         :rtype: datetime
@@ -237,7 +242,8 @@ class VnicAttachment(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this VnicAttachment.
-        The date and time the VNIC attachment was created, in the format defined by RFC3339.\n\nExample: `2016-08-25T21:10:29.600Z`\n
+        The date and time the VNIC attachment was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :param time_created: The time_created of this VnicAttachment.
         :type: datetime
