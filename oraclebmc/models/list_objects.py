@@ -44,12 +44,10 @@ class ListObjects(object):
         self._prefixes = None
         self._next_start_with = None
 
-
     @property
     def objects(self):
         """
         Gets the objects of this ListObjects.
-
 
         :return: The objects of this ListObjects.
         :rtype: list[ObjectSummary]
@@ -61,7 +59,6 @@ class ListObjects(object):
         """
         Sets the objects of this ListObjects.
 
-
         :param objects: The objects of this ListObjects.
         :type: list[ObjectSummary]
         """
@@ -72,7 +69,6 @@ class ListObjects(object):
         """
         Gets the prefixes of this ListObjects.
 
-
         :return: The prefixes of this ListObjects.
         :rtype: list[str]
         """
@@ -82,7 +78,6 @@ class ListObjects(object):
     def prefixes(self, prefixes):
         """
         Sets the prefixes of this ListObjects.
-
 
         :param prefixes: The prefixes of this ListObjects.
         :type: list[str]
@@ -122,4 +117,3 @@ class ListObjects(object):
 
     def __ne__(self, other):
         return not self == other
-

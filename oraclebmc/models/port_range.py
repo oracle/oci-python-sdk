@@ -41,7 +41,6 @@ class PortRange(object):
         self._max = None
         self._min = None
 
-
     @property
     def max(self):
         """
@@ -97,4 +96,3 @@ class PortRange(object):
 
     def __ne__(self, other):
         return not self == other
-

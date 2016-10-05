@@ -50,7 +50,6 @@ class CreatePolicyDetails(object):
         self._description = None
         self._version_date = None
 
-
     @property
     def compartment_id(self):
         """
@@ -172,4 +171,3 @@ class CreatePolicyDetails(object):
 
     def __ne__(self, other):
         return not self == other
-

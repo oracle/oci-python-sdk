@@ -53,7 +53,6 @@ class RouteTable(object):
         self._route_rules = None
         self._time_created = None
 
-
     @property
     def compartment_id(self):
         """
@@ -203,4 +202,3 @@ class RouteTable(object):
 
     def __ne__(self, other):
         return not self == other
-

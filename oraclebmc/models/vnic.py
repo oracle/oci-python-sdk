@@ -62,7 +62,6 @@ class Vnic(object):
         self._subnet_id = None
         self._time_created = None
 
-
     @property
     def availability_domain(self):
         """
@@ -278,4 +277,3 @@ class Vnic(object):
 
     def __ne__(self, other):
         return not self == other
-

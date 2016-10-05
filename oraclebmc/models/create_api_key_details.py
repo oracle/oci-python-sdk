@@ -38,7 +38,6 @@ class CreateApiKeyDetails(object):
 
         self._key = None
 
-
     @property
     def key(self):
         """
@@ -72,4 +71,3 @@ class CreateApiKeyDetails(object):
 
     def __ne__(self, other):
         return not self == other
-

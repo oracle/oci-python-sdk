@@ -56,7 +56,6 @@ class Compartment(object):
         self._lifecycle_state = None
         self._inactive_status = None
 
-
     @property
     def id(self):
         """
@@ -228,4 +227,3 @@ class Compartment(object):
 
     def __ne__(self, other):
         return not self == other
-

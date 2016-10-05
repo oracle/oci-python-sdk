@@ -47,7 +47,6 @@ class IPSecConnectionDeviceStatus(object):
         self._time_created = None
         self._tunnels = None
 
-
     @property
     def compartment_id(self):
         """
@@ -147,4 +146,3 @@ class IPSecConnectionDeviceStatus(object):
 
     def __ne__(self, other):
         return not self == other
-

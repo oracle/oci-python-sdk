@@ -56,7 +56,7 @@ class AttachVolumeDetails(object):
         type = object_dictionary['type']
 
         if type == 'iscsi':
-               return 'AttachIScsiVolumeDetails'
+            return 'AttachIScsiVolumeDetails'
 
         raise ValueError('Could not resolve subtype type based on the object dictionary.')
 
@@ -159,4 +159,3 @@ class AttachVolumeDetails(object):
 
     def __ne__(self, other):
         return not self == other
-

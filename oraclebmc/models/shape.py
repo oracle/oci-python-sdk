@@ -38,7 +38,6 @@ class Shape(object):
 
         self._shape = None
 
-
     @property
     def shape(self):
         """
@@ -72,4 +71,3 @@ class Shape(object):
 
     def __ne__(self, other):
         return not self == other
-

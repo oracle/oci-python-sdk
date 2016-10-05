@@ -49,7 +49,6 @@ class AttachIScsiVolumeDetails(AttachVolumeDetails):
         self._type = None
         self._volume_id = None
         self._use_chap = None
-
         self._type = 'iscsi'
 
     @property
@@ -85,4 +84,3 @@ class AttachIScsiVolumeDetails(AttachVolumeDetails):
 
     def __ne__(self, other):
         return not self == other
-

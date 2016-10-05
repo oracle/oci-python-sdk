@@ -44,7 +44,6 @@ class CreateImageDetails(object):
         self._display_name = None
         self._instance_id = None
 
-
     @property
     def compartment_id(self):
         """
@@ -122,4 +121,3 @@ class CreateImageDetails(object):
 
     def __ne__(self, other):
         return not self == other
-

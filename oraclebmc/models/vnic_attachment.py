@@ -62,7 +62,6 @@ class VnicAttachment(object):
         self._time_created = None
         self._vnic_id = None
 
-
     @property
     def availability_domain(self):
         """
@@ -278,4 +277,3 @@ class VnicAttachment(object):
 
     def __ne__(self, other):
         return not self == other
-

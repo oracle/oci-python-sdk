@@ -38,12 +38,10 @@ class UpdateDhcpDetails(object):
 
         self._options = None
 
-
     @property
     def options(self):
         """
         Gets the options of this UpdateDhcpDetails.
-
 
         :return: The options of this UpdateDhcpDetails.
         :rtype: list[DhcpOption]
@@ -54,7 +52,6 @@ class UpdateDhcpDetails(object):
     def options(self, options):
         """
         Sets the options of this UpdateDhcpDetails.
-
 
         :param options: The options of this UpdateDhcpDetails.
         :type: list[DhcpOption]
@@ -72,4 +69,3 @@ class UpdateDhcpDetails(object):
 
     def __ne__(self, other):
         return not self == other
-

@@ -38,7 +38,6 @@ class CreateSwiftPasswordDetails(object):
 
         self._description = None
 
-
     @property
     def description(self):
         """
@@ -72,4 +71,3 @@ class CreateSwiftPasswordDetails(object):
 
     def __ne__(self, other):
         return not self == other
-

@@ -41,7 +41,6 @@ class CreateDrgDetails(object):
         self._compartment_id = None
         self._display_name = None
 
-
     @property
     def compartment_id(self):
         """
@@ -97,4 +96,3 @@ class CreateDrgDetails(object):
 
     def __ne__(self, other):
         return not self == other
-

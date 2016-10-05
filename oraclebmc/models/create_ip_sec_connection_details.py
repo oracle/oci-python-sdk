@@ -50,7 +50,6 @@ class CreateIPSecConnectionDetails(object):
         self._drg_id = None
         self._static_routes = None
 
-
     @property
     def compartment_id(self):
         """
@@ -172,4 +171,3 @@ class CreateIPSecConnectionDetails(object):
 
     def __ne__(self, other):
         return not self == other
-

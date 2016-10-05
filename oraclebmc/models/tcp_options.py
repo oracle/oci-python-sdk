@@ -38,7 +38,6 @@ class TcpOptions(object):
 
         self._destination_port_range = None
 
-
     @property
     def destination_port_range(self):
         """
@@ -72,4 +71,3 @@ class TcpOptions(object):
 
     def __ne__(self, other):
         return not self == other
-

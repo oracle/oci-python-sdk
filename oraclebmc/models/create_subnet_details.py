@@ -59,7 +59,6 @@ class CreateSubnetDetails(object):
         self._security_list_ids = None
         self._vcn_id = None
 
-
     @property
     def availability_domain(self):
         """
@@ -247,4 +246,3 @@ class CreateSubnetDetails(object):
 
     def __ne__(self, other):
         return not self == other
-

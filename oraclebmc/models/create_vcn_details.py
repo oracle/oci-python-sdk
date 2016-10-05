@@ -44,7 +44,6 @@ class CreateVcnDetails(object):
         self._compartment_id = None
         self._display_name = None
 
-
     @property
     def cidr_block(self):
         """
@@ -122,4 +121,3 @@ class CreateVcnDetails(object):
 
     def __ne__(self, other):
         return not self == other
-

@@ -50,7 +50,6 @@ class IngressSecurityRule(object):
         self._tcp_options = None
         self._udp_options = None
 
-
     @property
     def icmp_options(self):
         """
@@ -172,4 +171,3 @@ class IngressSecurityRule(object):
 
     def __ne__(self, other):
         return not self == other
-

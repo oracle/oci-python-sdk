@@ -25,7 +25,6 @@ from .dhcp_options import DhcpOptions
 from .drg import Drg
 from .drg_attachment import DrgAttachment
 from .egress_security_rule import EgressSecurityRule
-from .error import Error
 from .ip_sec_connection import IPSecConnection
 from .ip_sec_connection_device_config import IPSecConnectionDeviceConfig
 from .ip_sec_connection_device_status import IPSecConnectionDeviceStatus
@@ -60,6 +59,38 @@ from .vnic_attachment import VnicAttachment
 from .volume import Volume
 from .volume_attachment import VolumeAttachment
 from .volume_backup import VolumeBackup
+
+from .add_user_to_group_details import AddUserToGroupDetails
+from .api_key import ApiKey
+from .availability_domain import AvailabilityDomain
+from .compartment import Compartment
+from .create_api_key_details import CreateApiKeyDetails
+from .create_compartment_details import CreateCompartmentDetails
+from .create_group_details import CreateGroupDetails
+from .create_policy_details import CreatePolicyDetails
+from .create_swift_password_details import CreateSwiftPasswordDetails
+from .create_user_details import CreateUserDetails
+from .group import Group
+from .policy import Policy
+from .swift_password import SwiftPassword
+from .ui_password import UIPassword
+from .update_compartment_details import UpdateCompartmentDetails
+from .update_group_details import UpdateGroupDetails
+from .update_policy_details import UpdatePolicyDetails
+from .update_state_details import UpdateStateDetails
+from .update_swift_password_details import UpdateSwiftPasswordDetails
+from .update_user_details import UpdateUserDetails
+from .user import User
+from .user_group_membership import UserGroupMembership
+
+from .bucket import Bucket
+from .create_bucket_details import CreateBucketDetails
+from .list_objects import ListObjects
+from .object_summary import ObjectSummary
+from .update_bucket_details import UpdateBucketDetails
+
+from .error import Error
+
 
 # Maps type names to classes for core services.
 core_type_mapping = {
@@ -124,33 +155,6 @@ core_type_mapping = {
     'VolumeBackup': VolumeBackup,
 }
 
-
-# import models into model package
-from .add_user_to_group_details import AddUserToGroupDetails
-from .api_key import ApiKey
-from .availability_domain import AvailabilityDomain
-from .compartment import Compartment
-from .create_api_key_details import CreateApiKeyDetails
-from .create_compartment_details import CreateCompartmentDetails
-from .create_group_details import CreateGroupDetails
-from .create_policy_details import CreatePolicyDetails
-from .create_swift_password_details import CreateSwiftPasswordDetails
-from .create_user_details import CreateUserDetails
-from .error import Error
-from .group import Group
-from .policy import Policy
-from .swift_password import SwiftPassword
-from .ui_password import UIPassword
-from .update_compartment_details import UpdateCompartmentDetails
-from .update_group_details import UpdateGroupDetails
-from .update_policy_details import UpdatePolicyDetails
-from .update_state_details import UpdateStateDetails
-from .update_swift_password_details import UpdateSwiftPasswordDetails
-from .update_user_details import UpdateUserDetails
-from .user import User
-from .user_group_membership import UserGroupMembership
-
-# Maps type names to classes for identity services.
 identity_type_mapping = {
     'AddUserToGroupDetails': AddUserToGroupDetails,
     'ApiKey': ApiKey,
@@ -177,15 +181,6 @@ identity_type_mapping = {
     'UserGroupMembership': UserGroupMembership,
 }
 
-# import models into model package
-from .bucket import Bucket
-from .create_bucket_details import CreateBucketDetails
-from .error import Error
-from .list_objects import ListObjects
-from .object_summary import ObjectSummary
-from .update_bucket_details import UpdateBucketDetails
-
-# Maps type names to classes for object_storage services.
 object_storage_type_mapping = {
     'Bucket': Bucket,
     'CreateBucketDetails': CreateBucketDetails,

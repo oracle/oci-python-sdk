@@ -53,7 +53,6 @@ class InternetGateway(object):
         self._lifecycle_state = None
         self._time_created = None
 
-
     @property
     def compartment_id(self):
         """
@@ -203,4 +202,3 @@ class InternetGateway(object):
 
     def __ne__(self, other):
         return not self == other
-

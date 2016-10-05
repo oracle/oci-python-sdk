@@ -44,7 +44,6 @@ class CreateDrgAttachmentDetails(object):
         self._drg_id = None
         self._vcn_id = None
 
-
     @property
     def display_name(self):
         """
@@ -122,4 +121,3 @@ class CreateDrgAttachmentDetails(object):
 
     def __ne__(self, other):
         return not self == other
-

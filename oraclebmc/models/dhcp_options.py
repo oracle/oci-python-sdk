@@ -53,7 +53,6 @@ class DhcpOptions(object):
         self._options = None
         self._time_created = None
 
-
     @property
     def compartment_id(self):
         """
@@ -203,4 +202,3 @@ class DhcpOptions(object):
 
     def __ne__(self, other):
         return not self == other
-

@@ -41,7 +41,6 @@ class UpdateSecurityListDetails(object):
         self._egress_security_rules = None
         self._ingress_security_rules = None
 
-
     @property
     def egress_security_rules(self):
         """
@@ -97,4 +96,3 @@ class UpdateSecurityListDetails(object):
 
     def __ne__(self, other):
         return not self == other
-

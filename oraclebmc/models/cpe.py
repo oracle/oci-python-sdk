@@ -50,7 +50,6 @@ class Cpe(object):
         self._ip_address = None
         self._time_created = None
 
-
     @property
     def compartment_id(self):
         """
@@ -172,4 +171,3 @@ class Cpe(object):
 
     def __ne__(self, other):
         return not self == other
-

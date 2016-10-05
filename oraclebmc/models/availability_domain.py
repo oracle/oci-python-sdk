@@ -41,7 +41,6 @@ class AvailabilityDomain(object):
         self._name = None
         self._compartment_id = None
 
-
     @property
     def name(self):
         """
@@ -97,4 +96,3 @@ class AvailabilityDomain(object):
 
     def __ne__(self, other):
         return not self == other
-

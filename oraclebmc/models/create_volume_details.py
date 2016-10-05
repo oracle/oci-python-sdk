@@ -47,7 +47,6 @@ class CreateVolumeDetails(object):
         self._display_name = None
         self._volume_backup_id = None
 
-
     @property
     def availability_domain(self):
         """
@@ -147,4 +146,3 @@ class CreateVolumeDetails(object):
 
     def __ne__(self, other):
         return not self == other
-

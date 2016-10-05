@@ -62,7 +62,6 @@ class Vcn(object):
         self._lifecycle_state = None
         self._time_created = None
 
-
     @property
     def cidr_block(self):
         """
@@ -278,4 +277,3 @@ class Vcn(object):
 
     def __ne__(self, other):
         return not self == other
-

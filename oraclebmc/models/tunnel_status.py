@@ -47,7 +47,6 @@ class TunnelStatus(object):
         self._time_created = None
         self._time_state_modified = None
 
-
     @property
     def ip_address(self):
         """
@@ -153,4 +152,3 @@ class TunnelStatus(object):
 
     def __ne__(self, other):
         return not self == other
-

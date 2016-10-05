@@ -41,7 +41,6 @@ class CreateVolumeBackupDetails(object):
         self._display_name = None
         self._volume_id = None
 
-
     @property
     def display_name(self):
         """
@@ -97,4 +96,3 @@ class CreateVolumeBackupDetails(object):
 
     def __ne__(self, other):
         return not self == other
-

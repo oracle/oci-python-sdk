@@ -38,7 +38,6 @@ class UpdateVolumeDetails(object):
 
         self._display_name = None
 
-
     @property
     def display_name(self):
         """
@@ -72,4 +71,3 @@ class UpdateVolumeDetails(object):
 
     def __ne__(self, other):
         return not self == other
-

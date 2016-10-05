@@ -43,7 +43,6 @@ class DhcpDnsOption(DhcpOption):
         self._type = None
         self._custom_dns_servers = None
         self._server_type = None
-
         self._type = 'DomainNameServer'
 
     @property
@@ -107,4 +106,3 @@ class DhcpDnsOption(DhcpOption):
 
     def __ne__(self, other):
         return not self == other
-

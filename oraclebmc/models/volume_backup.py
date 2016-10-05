@@ -62,7 +62,6 @@ class VolumeBackup(object):
         self._unique_size_in_mbs = None
         self._volume_id = None
 
-
     @property
     def compartment_id(self):
         """
@@ -278,4 +277,3 @@ class VolumeBackup(object):
 
     def __ne__(self, other):
         return not self == other
-

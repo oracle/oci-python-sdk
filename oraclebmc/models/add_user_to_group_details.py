@@ -41,7 +41,6 @@ class AddUserToGroupDetails(object):
         self._user_id = None
         self._group_id = None
 
-
     @property
     def user_id(self):
         """
@@ -97,4 +96,3 @@ class AddUserToGroupDetails(object):
 
     def __ne__(self, other):
         return not self == other
-

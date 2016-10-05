@@ -65,7 +65,6 @@ class Instance(object):
         self._shape = None
         self._time_created = None
 
-
     @property
     def availability_domain(self):
         """
@@ -303,4 +302,3 @@ class Instance(object):
 
     def __ne__(self, other):
         return not self == other
-

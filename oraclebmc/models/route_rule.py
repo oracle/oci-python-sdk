@@ -41,7 +41,6 @@ class RouteRule(object):
         self._cidr_block = None
         self._network_entity_id = None
 
-
     @property
     def cidr_block(self):
         """
@@ -97,4 +96,3 @@ class RouteRule(object):
 
     def __ne__(self, other):
         return not self == other
-

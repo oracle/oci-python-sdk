@@ -59,7 +59,6 @@ class SecurityList(object):
         self._time_created = None
         self._vcn_id = None
 
-
     @property
     def compartment_id(self):
         """
@@ -253,4 +252,3 @@ class SecurityList(object):
 
     def __ne__(self, other):
         return not self == other
-

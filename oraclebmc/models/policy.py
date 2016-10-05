@@ -62,7 +62,6 @@ class Policy(object):
         self._inactive_status = None
         self._version_date = None
 
-
     @property
     def id(self):
         """
@@ -278,4 +277,3 @@ class Policy(object):
 
     def __ne__(self, other):
         return not self == other
-

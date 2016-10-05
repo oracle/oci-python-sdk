@@ -56,7 +56,6 @@ class Bucket(object):
         self._time_created = None
         self._etag = None
 
-
     @property
     def namespace(self):
         """
@@ -222,4 +221,3 @@ class Bucket(object):
 
     def __ne__(self, other):
         return not self == other
-

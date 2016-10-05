@@ -50,7 +50,6 @@ class CreateSecurityListDetails(object):
         self._ingress_security_rules = None
         self._vcn_id = None
 
-
     @property
     def compartment_id(self):
         """
@@ -172,4 +171,3 @@ class CreateSecurityListDetails(object):
 
     def __ne__(self, other):
         return not self == other
-

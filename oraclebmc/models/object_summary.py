@@ -47,7 +47,6 @@ class ObjectSummary(object):
         self._md5 = None
         self._time_created = None
 
-
     @property
     def name(self):
         """
@@ -147,4 +146,3 @@ class ObjectSummary(object):
 
     def __ne__(self, other):
         return not self == other
-

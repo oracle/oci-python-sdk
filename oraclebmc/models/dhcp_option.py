@@ -47,7 +47,7 @@ class DhcpOption(object):
         type = object_dictionary['type']
 
         if type == 'DomainNameServer':
-               return 'DhcpDnsOption'
+            return 'DhcpDnsOption'
 
         raise ValueError('Could not resolve subtype type based on the object dictionary.')
 
@@ -55,7 +55,6 @@ class DhcpOption(object):
     def type(self):
         """
         Gets the type of this DhcpOption.
-
 
         :return: The type of this DhcpOption.
         :rtype: str
@@ -66,7 +65,6 @@ class DhcpOption(object):
     def type(self, type):
         """
         Sets the type of this DhcpOption.
-
 
         :param type: The type of this DhcpOption.
         :type: str
@@ -84,4 +82,3 @@ class DhcpOption(object):
 
     def __ne__(self, other):
         return not self == other
-

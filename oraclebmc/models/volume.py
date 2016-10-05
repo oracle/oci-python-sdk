@@ -56,7 +56,6 @@ class Volume(object):
         self._size_in_m_bs = None
         self._time_created = None
 
-
     @property
     def availability_domain(self):
         """
@@ -228,4 +227,3 @@ class Volume(object):
 
     def __ne__(self, other):
         return not self == other
-

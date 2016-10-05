@@ -38,7 +38,6 @@ class UpdateUserDetails(object):
 
         self._description = None
 
-
     @property
     def description(self):
         """
@@ -72,4 +71,3 @@ class UpdateUserDetails(object):
 
     def __ne__(self, other):
         return not self == other
-

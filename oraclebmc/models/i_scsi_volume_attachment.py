@@ -76,7 +76,6 @@ class IScsiVolumeAttachment(VolumeAttachment):
         self._ipv4 = None
         self._iqn = None
         self._port = None
-
         self._attachment_type = 'iscsi'
 
     @property
@@ -200,4 +199,3 @@ class IScsiVolumeAttachment(VolumeAttachment):
 
     def __ne__(self, other):
         return not self == other
-

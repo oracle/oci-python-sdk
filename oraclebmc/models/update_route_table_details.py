@@ -38,7 +38,6 @@ class UpdateRouteTableDetails(object):
 
         self._route_rules = None
 
-
     @property
     def route_rules(self):
         """
@@ -72,4 +71,3 @@ class UpdateRouteTableDetails(object):
 
     def __ne__(self, other):
         return not self == other
-

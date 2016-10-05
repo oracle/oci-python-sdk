@@ -50,7 +50,6 @@ class EgressSecurityRule(object):
         self._tcp_options = None
         self._udp_options = None
 
-
     @property
     def destination(self):
         """
@@ -172,4 +171,3 @@ class EgressSecurityRule(object):
 
     def __ne__(self, other):
         return not self == other
-

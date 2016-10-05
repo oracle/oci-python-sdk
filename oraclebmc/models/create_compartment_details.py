@@ -44,7 +44,6 @@ class CreateCompartmentDetails(object):
         self._name = None
         self._description = None
 
-
     @property
     def compartment_id(self):
         """
@@ -122,4 +121,3 @@ class CreateCompartmentDetails(object):
 
     def __ne__(self, other):
         return not self == other
-

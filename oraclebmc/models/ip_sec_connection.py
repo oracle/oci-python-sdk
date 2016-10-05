@@ -59,7 +59,6 @@ class IPSecConnection(object):
         self._static_routes = None
         self._time_created = None
 
-
     @property
     def compartment_id(self):
         """
@@ -253,4 +252,3 @@ class IPSecConnection(object):
 
     def __ne__(self, other):
         return not self == other
-

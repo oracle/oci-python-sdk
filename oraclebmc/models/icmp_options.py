@@ -41,7 +41,6 @@ class IcmpOptions(object):
         self._code = None
         self._type = None
 
-
     @property
     def code(self):
         """
@@ -97,4 +96,3 @@ class IcmpOptions(object):
 
     def __ne__(self, other):
         return not self == other
-

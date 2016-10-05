@@ -38,7 +38,6 @@ class UpdateInternetGatewayDetails(object):
 
         self._is_enabled = None
 
-
     @property
     def is_enabled(self):
         """
@@ -72,4 +71,3 @@ class UpdateInternetGatewayDetails(object):
 
     def __ne__(self, other):
         return not self == other
-

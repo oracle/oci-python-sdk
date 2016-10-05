@@ -59,7 +59,6 @@ class SwiftPassword(object):
         self._lifecycle_state = None
         self._inactive_status = None
 
-
     @property
     def password(self):
         """
@@ -253,4 +252,3 @@ class SwiftPassword(object):
 
     def __ne__(self, other):
         return not self == other
-

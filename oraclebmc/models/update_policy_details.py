@@ -44,7 +44,6 @@ class UpdatePolicyDetails(object):
         self._statements = None
         self._version_date = None
 
-
     @property
     def description(self):
         """
@@ -122,4 +121,3 @@ class UpdatePolicyDetails(object):
 
     def __ne__(self, other):
         return not self == other
-

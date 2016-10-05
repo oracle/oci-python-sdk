@@ -38,7 +38,6 @@ class UpdateGroupDetails(object):
 
         self._description = None
 
-
     @property
     def description(self):
         """
@@ -72,4 +71,3 @@ class UpdateGroupDetails(object):
 
     def __ne__(self, other):
         return not self == other
-

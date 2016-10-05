@@ -41,7 +41,6 @@ class Error(object):
         self._code = None
         self._message = None
 
-
     @property
     def code(self):
         """
@@ -97,4 +96,3 @@ class Error(object):
 
     def __ne__(self, other):
         return not self == other
-

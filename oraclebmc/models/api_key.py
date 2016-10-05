@@ -56,7 +56,6 @@ class ApiKey(object):
         self._lifecycle_state = None
         self._inactive_status = None
 
-
     @property
     def key_id(self):
         """
@@ -228,4 +227,3 @@ class ApiKey(object):
 
     def __ne__(self, other):
         return not self == other
-

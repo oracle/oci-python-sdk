@@ -47,7 +47,6 @@ class CreateBucketDetails(object):
         self._compartment_id = None
         self._metadata = None
 
-
     @property
     def namespace(self):
         """
@@ -147,4 +146,3 @@ class CreateBucketDetails(object):
 
     def __ne__(self, other):
         return not self == other
-

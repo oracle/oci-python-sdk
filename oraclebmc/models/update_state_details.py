@@ -38,7 +38,6 @@ class UpdateStateDetails(object):
 
         self._blocked = None
 
-
     @property
     def blocked(self):
         """
@@ -72,4 +71,3 @@ class UpdateStateDetails(object):
 
     def __ne__(self, other):
         return not self == other
-

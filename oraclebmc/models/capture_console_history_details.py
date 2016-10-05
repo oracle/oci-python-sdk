@@ -38,7 +38,6 @@ class CaptureConsoleHistoryDetails(object):
 
         self._instance_id = None
 
-
     @property
     def instance_id(self):
         """
@@ -72,4 +71,3 @@ class CaptureConsoleHistoryDetails(object):
 
     def __ne__(self, other):
         return not self == other
-

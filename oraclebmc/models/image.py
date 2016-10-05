@@ -62,7 +62,6 @@ class Image(object):
         self._operating_system_version = None
         self._time_created = None
 
-
     @property
     def base_image_id(self):
         """
@@ -178,7 +177,6 @@ class Image(object):
         """
         Gets the lifecycle_state of this Image.
 
-
         :return: The lifecycle_state of this Image.
         :rtype: str
         """
@@ -188,7 +186,6 @@ class Image(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Image.
-
 
         :param lifecycle_state: The lifecycle_state of this Image.
         :type: str
@@ -278,4 +275,3 @@ class Image(object):
 
     def __ne__(self, other):
         return not self == other
-

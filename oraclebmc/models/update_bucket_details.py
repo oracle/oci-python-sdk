@@ -44,7 +44,6 @@ class UpdateBucketDetails(object):
         self._name = None
         self._metadata = None
 
-
     @property
     def namespace(self):
         """
@@ -122,4 +121,3 @@ class UpdateBucketDetails(object):
 
     def __ne__(self, other):
         return not self == other
-

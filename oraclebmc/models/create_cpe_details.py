@@ -44,7 +44,6 @@ class CreateCpeDetails(object):
         self._display_name = None
         self._ip_address = None
 
-
     @property
     def compartment_id(self):
         """
@@ -122,4 +121,3 @@ class CreateCpeDetails(object):
 
     def __ne__(self, other):
         return not self == other
-

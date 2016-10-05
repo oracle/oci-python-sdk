@@ -44,7 +44,6 @@ class TunnelConfig(object):
         self._shared_secret = None
         self._time_created = None
 
-
     @property
     def ip_address(self):
         """
@@ -122,4 +121,3 @@ class TunnelConfig(object):
 
     def __ne__(self, other):
         return not self == other
-

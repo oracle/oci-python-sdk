@@ -59,7 +59,6 @@ class LaunchInstanceDetails(object):
         self._shape = None
         self._subnet_id = None
 
-
     @property
     def availability_domain(self):
         """
@@ -247,4 +246,3 @@ class LaunchInstanceDetails(object):
 
     def __ne__(self, other):
         return not self == other
-

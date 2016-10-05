@@ -74,7 +74,6 @@ class Subnet(object):
         self._virtual_router_ip = None
         self._virtual_router_mac = None
 
-
     @property
     def availability_domain(self):
         """
@@ -378,4 +377,3 @@ class Subnet(object):
 
     def __ne__(self, other):
         return not self == other
-

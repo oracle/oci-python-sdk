@@ -38,7 +38,6 @@ class UpdateImageDetails(object):
 
         self._display_name = None
 
-
     @property
     def display_name(self):
         """
@@ -72,4 +71,3 @@ class UpdateImageDetails(object):
 
     def __ne__(self, other):
         return not self == other
-
