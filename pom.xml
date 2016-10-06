@@ -27,7 +27,7 @@
         <swagger-identity-version>0.2.3</swagger-identity-version>
 
         <swagger-casper-file>${spec-temp-dir}/casper/casper-api.yaml</swagger-casper-file>
-        <swagger-casper-version>1.0.0</swagger-casper-version>
+        <swagger-casper-version>1.0.1</swagger-casper-version>
 
         <!-- remove when upgrading to pic-pom:0.4.4 -->
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
