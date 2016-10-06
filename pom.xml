@@ -17,10 +17,18 @@
 
   <properties>
     <spec-temp-dir>${project.build.directory}</spec-temp-dir>
-    <swagger-spec-file-coreservices>${spec-temp-dir}/coreservices/coreservices-api-spec-20160918.yaml</swagger-spec-file-coreservices>
-    <swagger-spec-file-identity>${spec-temp-dir}/identity/identity-control-plane-api-spec-20160918.yaml</swagger-spec-file-identity>
-    <swagger-spec-file-casper>${spec-temp-dir}/casper/casper-api.yaml</swagger-spec-file-casper>
+
     <bmc-generator-version>0.3.0-SNAPSHOT</bmc-generator-version>
+
+    <swagger-coreservices-file>${spec-temp-dir}/coreservices/coreservices-api-spec-20160918.yaml</swagger-coreservices-file>
+    <swagger-coreservices-version>0.0.11</swagger-coreservices-version>
+
+    <swagger-identity-file>${spec-temp-dir}/identity/identity-control-plane-api-spec-20160918.yaml</swagger-identity-file>
+    <swagger-identity-version>0.2.3</swagger-identity-version>
+
+    <swagger-casper-file>${spec-temp-dir}/casper/casper-api.yaml</swagger-casper-file>
+    <swagger-casper-version>1.0.0</swagger-casper-version>
+
     <!-- remove when upgrading to pic-pom:0.4.4 -->
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
@@ -116,7 +124,7 @@
             </goals>
             <configuration>
               <language>oracle-python-sdk</language>
-              <specPath>${swagger-spec-file-identity}</specPath>
+              <specPath>${swagger-identity-file}</specPath>
               <outputDir>oraclebmc</outputDir>
               <basePackage>OracleBMC</basePackage>
               <additionalProperties>
@@ -133,7 +141,7 @@
             </goals>
             <configuration>
               <language>oracle-python-sdk</language>
-              <specPath>${swagger-spec-file-coreservices}</specPath>
+              <specPath>${swagger-coreservices-file}</specPath>
               <outputDir>oraclebmc</outputDir>
               <basePackage>OracleBMC</basePackage>
               <additionalProperties>
@@ -150,7 +158,7 @@
             </goals>
             <configuration>
               <language>oracle-python-sdk</language>
-              <specPath>${swagger-spec-file-casper}</specPath>
+              <specPath>${swagger-casper-file}</specPath>
               <outputDir>oraclebmc</outputDir>
               <basePackage>OracleBMC</basePackage>
               <additionalProperties>
@@ -198,17 +206,17 @@
       <dependency>
         <groupId>com.oracle.pic.commons</groupId>
         <artifactId>coreservices-api-spec</artifactId>
-        <version>0.0.11</version>
+        <version>${swagger-coreservices-version}</version>
       </dependency>
       <dependency>
         <groupId>com.oracle.pic.identity</groupId>
         <artifactId>identity-control-plane-api-spec</artifactId>
-        <version>0.2.3</version>
+        <version>${swagger-identity-version}</version>
       </dependency>
       <dependency>
         <groupId>com.oracle.pic.casper</groupId>
         <artifactId>casper-api-spec</artifactId>
-        <version>1.0.0</version>
+        <version>${swagger-casper-version}</version>
       </dependency>
       <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
