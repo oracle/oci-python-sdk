@@ -11,11 +11,11 @@ class Config(object):
         self.key_file = None
 
         core_endpoint = 'https://iaas.us-phoenix-1.oraclecloud.com/20160918'
-        self.endpoint_identity_api = 'https://identity.us-phoenix-1.oraclecloud.com/20160918'
-        self.endpoint_blockstorage_api = core_endpoint
-        self.endpoint_compute_api = core_endpoint
-        self.endpoint_virtual_network_api = core_endpoint
-        self.endpoint_object_storage_api = 'https://objectstorage.us-phoenix-1.oraclecloud.com'
+        self.identity_endpoint = 'https://identity.us-phoenix-1.oraclecloud.com/20160918'
+        self.blockstorage_endpoint = core_endpoint
+        self.compute_endpoint = core_endpoint
+        self.virtual_network_endpoint = core_endpoint
+        self.object_storage_endpoint = 'https://objectstorage.us-phoenix-1.oraclecloud.com'
 
         self.verify_ssl = True
         self.log_requests = False

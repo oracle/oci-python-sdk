@@ -27,7 +27,7 @@ with open_relative("README.rst") as f:
 
 packages = [
     "oraclebmc",
-    "oraclebmc.apis",
+    "oraclebmc.clients",
     "oraclebmc.models"
 ]
 

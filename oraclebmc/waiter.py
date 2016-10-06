@@ -3,7 +3,7 @@ import time
 from .exceptions import MaximumWaitTimeExceeded, WaitUntilNotSupported
 
 
-def wait_until(api, response, property, state, max_interval_seconds=5, max_wait_seconds=60):
+def wait_until(client, response, property, state, max_interval_seconds=5, max_wait_seconds=60):
     """Wait until the value of the given property in the response data has the given value.
 
     This will block the current thread until either the
@@ -25,7 +25,7 @@ def wait_until(api, response, property, state, max_interval_seconds=5, max_wait_
     If any responses result in an error, then the error will be thrown as normal
     resulting in the wait being aborted.
 
-    :param api: A Response object resulting from a GET operation.
+    :param client: A Response object resulting from a GET operation.
     :param response: A Response object resulting from a GET operation.
     :param property: A string with the name of the property from the response data to evaluate.
         For example, 'state'.
@@ -61,4 +61,4 @@ def wait_until(api, response, property, state, max_interval_seconds=5, max_wait_
         # Double the sleep each time up to the maximum.
         sleep_interval_seconds = min(sleep_interval_seconds * 2, max_interval_seconds)
 
-        response = api.api_client.request(response.request)
+        response = client.base_client.request(response.request)

@@ -1,9 +1,18 @@
 Public Python SDK
 ^^^^^^^^^^^^^^^^^
 
-- Run all tests with 'python -m unittest discover'
-- Run a single test class with 'python -m unittest tests.<class name>'
-- Build whl with build.sh.
+- Run all tests with ``tox``
+- Run a single test file with ``py.test tests/unit/<test_file>.py``
+- Run a single test with ``py.test tests/unit/<test_file>.py::<test_function_name>``
+
+Required Test Files
+===================
+
+To ensure we're resolving ``~`` to the home folder correctly, the tests expect ~/.ssh/id_rsa.pem to exist.
+
+if you have an ``id_rsa`` but not the ``.pem`` version, you probably want to run this::
+
+    openssl rsa -in ~/.ssh/id_rsa -pubout > ~/.ssh/id_rsa.pem
 
 Setting up the development environment
 ======================================
@@ -70,16 +79,6 @@ Install development-only dependencies::
 
     pip install -r requirements.txt
 
-
-Pending Approval
-================
-
-We don't have approval for internal use of all of the packages that we need for development.
-Specifically, all of the packages in the following command are pending approval for internal use::
-
-    pip install alabaster coverage flake8 sphinx tox wheel
-
-When we do get approval, add these packages to ``requirements.txt`` so we can have tests, coverage, and build the sdk.
 
 Running the tests
 =================
