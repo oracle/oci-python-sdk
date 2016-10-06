@@ -11,10 +11,20 @@ def pytest_addoption(parser):
 
 
 @pytest.fixture
-def config(request):
+def config_file(request):
+    return request.config.getoption("--config-file")
+
+
+@pytest.fixture
+def config_profile(request):
+    return request.config.getoption("--config-profile")
+
+
+@pytest.fixture
+def config(config_file, config_profile):
     return oraclebmc.config_file_loader.load_config(
-        file_location=request.config.getoption("--config-file"),
-        profile_name=request.config.getoption("--config-profile")
+        file_location=config_file,
+        profile_name=config_profile
     )
 
 

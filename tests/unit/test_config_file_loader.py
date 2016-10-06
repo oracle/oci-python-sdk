@@ -16,8 +16,8 @@ def test_load_default_profile():
         file_location=get_resource_path('config'))
 
     # check some default properties
-    assert config.endpoint_identity_api == HARDCODED_IDENTITY_ENDPOINT
-    assert config.endpoint_compute_api == HARDCODED_COMPUTE_ENDPOINT
+    assert config.identity_endpoint == HARDCODED_IDENTITY_ENDPOINT
+    assert config.compute_endpoint == HARDCODED_COMPUTE_ENDPOINT
 
     # check properties set in file
     assert config.user == HARDCODED_USER
@@ -31,8 +31,8 @@ def test_child_profile():
         file_location=get_resource_path('config'), profile_name='DEBUG')
 
     # check some default properties
-    assert config.endpoint_identity_api == HARDCODED_IDENTITY_ENDPOINT
-    assert config.endpoint_compute_api == HARDCODED_COMPUTE_ENDPOINT
+    assert config.identity_endpoint == HARDCODED_IDENTITY_ENDPOINT
+    assert config.compute_endpoint == HARDCODED_COMPUTE_ENDPOINT
 
     # check properties inherited from the default profile
     assert config.user == HARDCODED_USER
@@ -50,8 +50,8 @@ def test_invalid_parameter():
         file_location=get_resource_path('config'), profile_name='INVALID_PARAMETER')
 
     # check some default properties
-    assert config.endpoint_identity_api == HARDCODED_IDENTITY_ENDPOINT
-    assert config.endpoint_compute_api == HARDCODED_COMPUTE_ENDPOINT
+    assert config.identity_endpoint == HARDCODED_IDENTITY_ENDPOINT
+    assert config.compute_endpoint == HARDCODED_COMPUTE_ENDPOINT
 
     # check properties set in file
     assert config.user == HARDCODED_USER

@@ -13,10 +13,11 @@ def test_invalid_compartment(identity):
 
 
 def test_invalid_endpoint_host():
-    api = oraclebmc.config_file_loader.load_config(
+    config = oraclebmc.config_file_loader.load_config(
         file_location=tests.util.get_resource_path('config'),
         profile_name="INVALID_ENDPOINT_HOST"
     )
+    client = oraclebmc.clients.IdentityClient(config)
 
     with pytest.raises(Exception):
-        api.list_users('invalid_compartment')
+        client.list_users('invalid_compartment')

@@ -13,10 +13,10 @@ user=invaliduser
 fingerprint=00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
 
 [INVALID_ENDPOINT_PATH]
-endpoint_identity_api=https://identity.us-phoenix-1.oraclecloud.com/invalid
+identity_endpoint=https://identity.us-phoenix-1.oraclecloud.com/invalid
 
 [INVALID_ENDPOINT_HOST]
-endpoint_identity_api=https://identity.us-phoenix-999999.oraclecloud.com/v1
+identity_endpoint=https://identity.us-phoenix-999999.oraclecloud.com/v1
 
 [DEBUG]
 log_requests=true
@@ -26,10 +26,10 @@ additional_user_agent=example_extra_user_agent_text
 foo=bar
 
 [R0_STABLE]
-endpoint_identity_api=https://identity-stable-integ.aka.r0.grungy.us/20160918
-endpoint_blockstorage_api=https://iaas-stable-integ.aka.r0.grungy.us/20160918
-endpoint_compute_api=https://iaas-stable-integ.aka.r0.grungy.us/20160918
-endpoint_virtual_network_api=https://iaas-stable-integ.aka.r0.grungy.us/20160918
+identity_endpoint=https://identity-stable-integ.aka.r0.grungy.us/20160918
+blockstorage_endpoint=https://iaas-stable-integ.aka.r0.grungy.us/20160918
+compute_endpoint=https://iaas-stable-integ.aka.r0.grungy.us/20160918
+virtual_network_endpoint=https://iaas-stable-integ.aka.r0.grungy.us/20160918
 user=ocidv1:user:integ-stable:integ-stable:1461711049110:aaaaaaaaeuhzapiritehle2dmrcoeijvve
 fingerprint=20:3b:97:13:55:1c:5b:0d:d3:37:d8:50:4e:c5:3a:34
 key_file=~/.ssh/id_rsa.pem
