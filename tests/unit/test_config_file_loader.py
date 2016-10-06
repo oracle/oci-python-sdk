@@ -2,6 +2,8 @@ import oraclebmc
 
 import pytest
 
+from tests.util import get_resource_path
+
 HARDCODED_IDENTITY_ENDPOINT = 'https://identity.us-phoenix-1.oraclecloud.com/20160918'
 HARDCODED_COMPUTE_ENDPOINT = 'https://iaas.us-phoenix-1.oraclecloud.com/20160918'
 HARDCODED_USER = 'USER_OCID'
@@ -10,7 +12,8 @@ HARDCODED_TENANCY = 'TENANCY_OCID'
 
 
 def test_load_default_profile():
-    config = oraclebmc.config_file_loader.load_config(file_location='tests/resources/config')
+    config = oraclebmc.config_file_loader.load_config(
+        file_location=get_resource_path('config'))
 
     # check some default properties
     assert config.endpoint_identity_api == HARDCODED_IDENTITY_ENDPOINT
@@ -25,7 +28,7 @@ def test_load_default_profile():
 
 def test_child_profile():
     config = oraclebmc.config_file_loader.load_config(
-        file_location='tests/resources/config', profile_name='DEBUG')
+        file_location=get_resource_path('config'), profile_name='DEBUG')
 
     # check some default properties
     assert config.endpoint_identity_api == HARDCODED_IDENTITY_ENDPOINT
@@ -44,7 +47,7 @@ def test_child_profile():
 def test_invalid_parameter():
     # The invalid parameter should be ignored.
     config = oraclebmc.config_file_loader.load_config(
-        file_location='tests/resources/config', profile_name='INVALID_PARAMETER')
+        file_location=get_resource_path('config'), profile_name='INVALID_PARAMETER')
 
     # check some default properties
     assert config.endpoint_identity_api == HARDCODED_IDENTITY_ENDPOINT
