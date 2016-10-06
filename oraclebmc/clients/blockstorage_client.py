@@ -24,17 +24,17 @@ from __future__ import absolute_import
 
 import six
 
-from ..api_client import ApiClient
+from ..base_client import BaseClient
 from ..signer import Signer
 from ..util import Sentinel
 missing = Sentinel("Missing")
 
 
-class BlockstorageApi(object):
+class BlockstorageClient(object):
 
     def __init__(self, config):
         signer = Signer(config.tenancy, config.user, config.fingerprint, config.key_file)
-        self.api_client = ApiClient(config, signer)
+        self.base_client = BaseClient(config, signer)
 
     def create_volume(self, create_volume_details, **kwargs):
         """
@@ -77,8 +77,8 @@ class BlockstorageApi(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.api_client.call_api(
-            endpoint=self.api_client.config.endpoint_blockstorage_api,
+        return self.base_client.call_api(
+            endpoint=self.base_client.config.blockstorage_endpoint,
             resource_path=resource_path,
             method=method,
             header_params=header_params,
@@ -125,8 +125,8 @@ class BlockstorageApi(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.api_client.call_api(
-            endpoint=self.api_client.config.endpoint_blockstorage_api,
+        return self.base_client.call_api(
+            endpoint=self.base_client.config.blockstorage_endpoint,
             resource_path=resource_path,
             method=method,
             header_params=header_params,
@@ -173,8 +173,8 @@ class BlockstorageApi(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.api_client.call_api(
-            endpoint=self.api_client.config.endpoint_blockstorage_api,
+        return self.base_client.call_api(
+            endpoint=self.base_client.config.blockstorage_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -217,8 +217,8 @@ class BlockstorageApi(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.api_client.call_api(
-            endpoint=self.api_client.config.endpoint_blockstorage_api,
+        return self.base_client.call_api(
+            endpoint=self.base_client.config.blockstorage_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -250,8 +250,8 @@ class BlockstorageApi(object):
             "content-type": "application/json"
         }
 
-        return self.api_client.call_api(
-            endpoint=self.api_client.config.endpoint_blockstorage_api,
+        return self.base_client.call_api(
+            endpoint=self.base_client.config.blockstorage_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -284,8 +284,8 @@ class BlockstorageApi(object):
             "content-type": "application/json"
         }
 
-        return self.api_client.call_api(
-            endpoint=self.api_client.config.endpoint_blockstorage_api,
+        return self.base_client.call_api(
+            endpoint=self.base_client.config.blockstorage_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -338,8 +338,8 @@ class BlockstorageApi(object):
             "content-type": "application/json"
         }
 
-        return self.api_client.call_api(
-            endpoint=self.api_client.config.endpoint_blockstorage_api,
+        return self.base_client.call_api(
+            endpoint=self.base_client.config.blockstorage_endpoint,
             resource_path=resource_path,
             method=method,
             query_params=query_params,
@@ -393,8 +393,8 @@ class BlockstorageApi(object):
             "content-type": "application/json"
         }
 
-        return self.api_client.call_api(
-            endpoint=self.api_client.config.endpoint_blockstorage_api,
+        return self.base_client.call_api(
+            endpoint=self.base_client.config.blockstorage_endpoint,
             resource_path=resource_path,
             method=method,
             query_params=query_params,
@@ -440,8 +440,8 @@ class BlockstorageApi(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.api_client.call_api(
-            endpoint=self.api_client.config.endpoint_blockstorage_api,
+        return self.base_client.call_api(
+            endpoint=self.base_client.config.blockstorage_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -488,8 +488,8 @@ class BlockstorageApi(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.api_client.call_api(
-            endpoint=self.api_client.config.endpoint_blockstorage_api,
+        return self.base_client.call_api(
+            endpoint=self.base_client.config.blockstorage_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,

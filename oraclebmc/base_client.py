@@ -50,7 +50,7 @@ def merge_type_mappings(*dictionaries):
 STREAM_RESPONSE_TYPE = 'stream'
 
 
-class ApiClient(object):
+class BaseClient(object):
     primitive_type_map = {
         'int': int,
         'float': float,

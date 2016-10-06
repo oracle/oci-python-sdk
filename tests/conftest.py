@@ -11,33 +11,43 @@ def pytest_addoption(parser):
 
 
 @pytest.fixture
-def config(request):
+def config_file(request):
+    return request.config.getoption("--config-file")
+
+
+@pytest.fixture
+def config_profile(request):
+    return request.config.getoption("--config-profile")
+
+
+@pytest.fixture
+def config(config_file, config_profile):
     return oraclebmc.config_file_loader.load_config(
-        file_location=request.config.getoption("--config-file"),
-        profile_name=request.config.getoption("--config-profile")
+        file_location=config_file,
+        profile_name=config_profile
     )
 
 
 @pytest.fixture
 def object_storage(config):
-    return oraclebmc.apis.ObjectStorageApi(config)
+    return oraclebmc.clients.ObjectStorageClient(config)
 
 
 @pytest.fixture
 def virtual_network(config):
-    return oraclebmc.apis.VirtualNetworkApi(config)
+    return oraclebmc.clients.VirtualNetworkClient(config)
 
 
 @pytest.fixture
 def identity(config):
-    return oraclebmc.apis.IdentityApi(config)
+    return oraclebmc.clients.IdentityClient(config)
 
 
 @pytest.fixture
 def compute(config):
-    return oraclebmc.apis.ComputeApi(config)
+    return oraclebmc.clients.ComputeClient(config)
 
 
 @pytest.fixture
 def block_storage(config):
-    return oraclebmc.apis.BlockstorageApi(config)
+    return oraclebmc.clients.BlockstorageClient(config)

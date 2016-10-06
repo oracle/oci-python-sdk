@@ -20,6 +20,7 @@
     <swagger-spec-file-coreservices>${spec-temp-dir}/coreservices/coreservices-api-spec-20160918.yaml</swagger-spec-file-coreservices>
     <swagger-spec-file-identity>${spec-temp-dir}/identity/identity-control-plane-api-spec-20160918.yaml</swagger-spec-file-identity>
     <swagger-spec-file-casper>${spec-temp-dir}/casper/casper-api.yaml</swagger-spec-file-casper>
+    <bmc-generator-version>0.3.0-SNAPSHOT</bmc-generator-version>
     <!-- remove when upgrading to pic-pom:0.4.4 -->
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
@@ -105,7 +106,7 @@
       <plugin>
         <groupId>com.oracle.bmc.sdk</groupId>
         <artifactId>bmc-sdk-swagger-maven-plugin</artifactId>
-        <version>0.2.0</version>
+        <version>${bmc-generator-version}</version>
         <executions>
           <execution>
             <id>python-public-sdk-identity</id>
@@ -177,9 +178,9 @@
 
             </fileset>
             <fileset>
-                <directory>oraclebmc/apis</directory>
+                <directory>oraclebmc/clients</directory>
                 <excludes>
-                    <exclude>oraclebmc/apis/__init__.py</exclude>
+                    <exclude>oraclebmc/clients/__init__.py</exclude>
                     <exclude>__init__.py</exclude>
                 </excludes>
                 <includes>
