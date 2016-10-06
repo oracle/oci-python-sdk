@@ -1,6 +1,22 @@
 from tests.util import get_resource_path, random_number_string, unique_name
 import oraclebmc
 import pytest
+import requests
+
+# Static content for get_object tests
+expected_content = "a/b/c/object3"
+
+
+# Response from GetObject for streaming tests
+@pytest.fixture
+def get_object_response(object_storage):
+    _response = object_storage.get_object(
+        namespace_name="internalbriangustafson",
+        bucket_name="ReadOnlyTestBucket2",
+        object_name=expected_content
+    )
+    assert _response.status == 200
+    return _response
 
 
 def test_get_namespace(object_storage):
@@ -76,7 +92,7 @@ def test_object_crud(object_storage, config):
     response_text = response.data.content.decode('UTF-8')
     assert len(test_data) == len(response_text)
     assert test_data == response_text
-    assert type(response.data) is oraclebmc.DataStream
+    assert isinstance(response.data, requests.Response)
 
     # Head
     response = object_storage.head_object(namespace, bucket_name, object_name_a)
@@ -93,7 +109,7 @@ def test_object_crud(object_storage, config):
     response = object_storage.list_objects(namespace, bucket_name)
     assert response.status == 200
     object_list = response.data
-    assert type(object_list) is oraclebmc.models.ListObjects
+    assert isinstance(object_list, oraclebmc.models.ListObjects)
     assert 3 == len(object_list.objects)
     assert type(object_list.objects[0]) is oraclebmc.models.ObjectSummary
 
@@ -132,7 +148,7 @@ def test_object_crud_with_metadata(object_storage, config):
     response_text = response.data.content.decode('UTF-8')
     assert len(test_data) == len(response_text)
     assert test_data == response_text
-    assert type(response.data) is oraclebmc.DataStream
+    assert isinstance(response.data, requests.Response)
     assert 'bar1' == response.headers['opc-meta-foo1']
     assert 'bar2' == response.headers['opc-meta-foo2']
 
@@ -278,14 +294,14 @@ def test_get_object(object_storage):
     namespace = object_storage.get_namespace().data
     response = object_storage.get_object(namespace, 'ReadOnlyTestBucket1', 'object1')
     assert response.status == 200
-    assert type(response.data) is oraclebmc.DataStream
+    assert isinstance(response.data, requests.Response)
 
 
 def test_get_object_with_user_metadata(object_storage):
     namespace = object_storage.get_namespace().data
     response = object_storage.get_object(namespace, 'ReadOnlyTestBucket4', 'hasUserMetadata.json')
     assert response.status == 200
-    assert type(response.data) is oraclebmc.DataStream
+    assert isinstance(response.data, requests.Response)
     assert 'bar1' == response.headers['opc-meta-foo1']
     assert 'bar2' == response.headers['opc-meta-foo2']
 
@@ -358,3 +374,66 @@ def test_head_not_found(object_storage):
         object_storage.head_object(
             namespace, "unknown-bucket" + random_number_string(), "hasUserMetadata.json")
     assert excinfo.value.status == 404
+
+
+def test_content(get_object_response):
+    assert expected_content == get_object_response.data.content.decode('UTF-8')
+
+
+def test_iter_content(get_object_response):
+    response_text = ''
+    chunk_count = 0
+    chunk_size = 2
+    for chunk in get_object_response.data.iter_content(chunk_size=chunk_size):
+        response_text += chunk.decode('UTF-8')
+        chunk_count += 1
+
+    assert chunk_count >= (len(expected_content) / chunk_size)
+    assert response_text == expected_content
+
+
+def test_raw(get_object_response):
+    response_text = get_object_response.data.raw.read(100).decode('UTF-8')
+    assert response_text == expected_content
+
+
+def test_content_multiple_access(get_object_response):
+    assert expected_content == get_object_response.data.content.decode('UTF-8')
+    assert expected_content == get_object_response.data.content.decode('UTF-8')
+    assert expected_content == get_object_response.data.content.decode('UTF-8')
+
+
+def test_stream_after_content(get_object_response):
+    assert expected_content == get_object_response.data.content.decode('UTF-8')
+
+    response_text = ''
+    chunk_count = 0
+    chunk_size = 2
+    for chunk in get_object_response.data.iter_content(chunk_size=chunk_size):
+        response_text += chunk.decode('UTF-8')
+        chunk_count += 1
+
+    assert chunk_count >= (len(expected_content) / chunk_size)
+    assert response_text == expected_content
+
+
+def test_content_after_stream(get_object_response):
+    response_text = ''
+    for chunk in get_object_response.data.iter_content():
+        response_text += chunk.decode('UTF-8')
+    assert response_text == expected_content
+
+    with pytest.raises(RuntimeError):
+        # content was already consumed by iter_content above
+        getattr(get_object_response.data, "content")
+
+
+def test_stream_twice(get_object_response):
+    response_text = ''
+    for chunk in get_object_response.data.iter_content():
+        response_text += chunk.decode('UTF-8')
+    assert response_text == expected_content
+
+    with pytest.raises(requests.exceptions.StreamConsumedError):
+        for chunk in get_object_response.data.iter_content():
+            response_text += chunk.decode('UTF-8')

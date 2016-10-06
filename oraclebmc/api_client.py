@@ -26,7 +26,6 @@ import json
 import logging
 import platform
 import re
-import six
 import six.moves
 import uuid
 from datetime import date, datetime
@@ -36,7 +35,6 @@ import six
 from dateutil.parser import parse
 
 from . import constants, exceptions, models
-from .data_stream import DataStream
 from .request import Request
 from .response import Response
 from .signer import ObjectUploadSigner
@@ -176,9 +174,9 @@ class ApiClient(object):
         if is_error:
             response_type = 'Error'
 
-        # deserialize response data
         if stream and not is_error:
-            deserialized_data = DataStream(response)
+            # Don't unpack a streaming response body
+            deserialized_data = response
         elif response_type:
             deserialized_data = self.deserialize_response_data(response.content, response_type)
         else:

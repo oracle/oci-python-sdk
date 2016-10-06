@@ -38,7 +38,3 @@ class WaitUntilNotSupported(ClientError):
 
 class MaximumWaitTimeExceeded(ClientError):
     """Maximum wait time has been exceeded."""
-
-
-class StreamAlreadyConsumed(ClientError):
-    """The stream content has already been consumed."""
