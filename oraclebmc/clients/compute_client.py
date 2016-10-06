@@ -74,7 +74,7 @@ class ComputeClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_compute_client,
+            endpoint=self.base_client.config.compute_endpoint,
             resource_path=resource_path,
             method=method,
             header_params=header_params,
@@ -136,7 +136,7 @@ class ComputeClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_compute_client,
+            endpoint=self.base_client.config.compute_endpoint,
             resource_path=resource_path,
             method=method,
             header_params=header_params,
@@ -188,7 +188,7 @@ class ComputeClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_compute_client,
+            endpoint=self.base_client.config.compute_endpoint,
             resource_path=resource_path,
             method=method,
             header_params=header_params,
@@ -233,7 +233,7 @@ class ComputeClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_compute_client,
+            endpoint=self.base_client.config.compute_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -277,7 +277,7 @@ class ComputeClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_compute_client,
+            endpoint=self.base_client.config.compute_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -323,7 +323,7 @@ class ComputeClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_compute_client,
+            endpoint=self.base_client.config.compute_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -358,7 +358,7 @@ class ComputeClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_compute_client,
+            endpoint=self.base_client.config.compute_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -392,7 +392,7 @@ class ComputeClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_compute_client,
+            endpoint=self.base_client.config.compute_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -426,7 +426,7 @@ class ComputeClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_compute_client,
+            endpoint=self.base_client.config.compute_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -460,7 +460,7 @@ class ComputeClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_compute_client,
+            endpoint=self.base_client.config.compute_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -532,7 +532,7 @@ class ComputeClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_compute_client,
+            endpoint=self.base_client.config.compute_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -610,7 +610,7 @@ class ComputeClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_compute_client,
+            endpoint=self.base_client.config.compute_endpoint,
             resource_path=resource_path,
             method=method,
             query_params=query_params,
@@ -670,7 +670,7 @@ class ComputeClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_compute_client,
+            endpoint=self.base_client.config.compute_endpoint,
             resource_path=resource_path,
             method=method,
             query_params=query_params,
@@ -732,7 +732,7 @@ class ComputeClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_compute_client,
+            endpoint=self.base_client.config.compute_endpoint,
             resource_path=resource_path,
             method=method,
             query_params=query_params,
@@ -794,7 +794,7 @@ class ComputeClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_compute_client,
+            endpoint=self.base_client.config.compute_endpoint,
             resource_path=resource_path,
             method=method,
             query_params=query_params,
@@ -851,7 +851,7 @@ class ComputeClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_compute_client,
+            endpoint=self.base_client.config.compute_endpoint,
             resource_path=resource_path,
             method=method,
             query_params=query_params,
@@ -915,7 +915,7 @@ class ComputeClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_compute_client,
+            endpoint=self.base_client.config.compute_endpoint,
             resource_path=resource_path,
             method=method,
             query_params=query_params,
@@ -980,7 +980,7 @@ class ComputeClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_compute_client,
+            endpoint=self.base_client.config.compute_endpoint,
             resource_path=resource_path,
             method=method,
             query_params=query_params,
@@ -1032,7 +1032,7 @@ class ComputeClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_compute_client,
+            endpoint=self.base_client.config.compute_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -1081,7 +1081,7 @@ class ComputeClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_compute_client,
+            endpoint=self.base_client.config.compute_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -1135,7 +1135,7 @@ class ComputeClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_compute_client,
+            endpoint=self.base_client.config.compute_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -1191,7 +1191,7 @@ class ComputeClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_compute_client,
+            endpoint=self.base_client.config.compute_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,

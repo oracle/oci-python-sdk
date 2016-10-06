@@ -89,7 +89,7 @@ class VirtualNetworkClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             header_params=header_params,
@@ -145,7 +145,7 @@ class VirtualNetworkClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             header_params=header_params,
@@ -203,7 +203,7 @@ class VirtualNetworkClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             header_params=header_params,
@@ -255,7 +255,7 @@ class VirtualNetworkClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             header_params=header_params,
@@ -317,7 +317,7 @@ class VirtualNetworkClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             header_params=header_params,
@@ -384,7 +384,7 @@ class VirtualNetworkClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             header_params=header_params,
@@ -439,7 +439,7 @@ class VirtualNetworkClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             header_params=header_params,
@@ -499,7 +499,7 @@ class VirtualNetworkClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             header_params=header_params,
@@ -567,7 +567,7 @@ class VirtualNetworkClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             header_params=header_params,
@@ -634,7 +634,7 @@ class VirtualNetworkClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             header_params=header_params,
@@ -681,7 +681,7 @@ class VirtualNetworkClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -728,7 +728,7 @@ class VirtualNetworkClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -775,7 +775,7 @@ class VirtualNetworkClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -821,7 +821,7 @@ class VirtualNetworkClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -868,7 +868,7 @@ class VirtualNetworkClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -918,7 +918,7 @@ class VirtualNetworkClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -965,7 +965,7 @@ class VirtualNetworkClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -1011,7 +1011,7 @@ class VirtualNetworkClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -1057,7 +1057,7 @@ class VirtualNetworkClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -1103,7 +1103,7 @@ class VirtualNetworkClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -1136,7 +1136,7 @@ class VirtualNetworkClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -1170,7 +1170,7 @@ class VirtualNetworkClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -1204,7 +1204,7 @@ class VirtualNetworkClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -1238,7 +1238,7 @@ class VirtualNetworkClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -1272,7 +1272,7 @@ class VirtualNetworkClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -1308,7 +1308,7 @@ class VirtualNetworkClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -1346,7 +1346,7 @@ class VirtualNetworkClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -1380,7 +1380,7 @@ class VirtualNetworkClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -1414,7 +1414,7 @@ class VirtualNetworkClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -1448,7 +1448,7 @@ class VirtualNetworkClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -1482,7 +1482,7 @@ class VirtualNetworkClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -1516,7 +1516,7 @@ class VirtualNetworkClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -1553,7 +1553,7 @@ class VirtualNetworkClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -1603,7 +1603,7 @@ class VirtualNetworkClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             query_params=query_params,
@@ -1658,7 +1658,7 @@ class VirtualNetworkClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             query_params=query_params,
@@ -1717,7 +1717,7 @@ class VirtualNetworkClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             query_params=query_params,
@@ -1767,7 +1767,7 @@ class VirtualNetworkClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             query_params=query_params,
@@ -1820,7 +1820,7 @@ class VirtualNetworkClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             query_params=query_params,
@@ -1879,7 +1879,7 @@ class VirtualNetworkClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             query_params=query_params,
@@ -1934,7 +1934,7 @@ class VirtualNetworkClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             query_params=query_params,
@@ -1987,7 +1987,7 @@ class VirtualNetworkClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             query_params=query_params,
@@ -2040,7 +2040,7 @@ class VirtualNetworkClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             query_params=query_params,
@@ -2090,7 +2090,7 @@ class VirtualNetworkClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             query_params=query_params,
@@ -2138,7 +2138,7 @@ class VirtualNetworkClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -2188,7 +2188,7 @@ class VirtualNetworkClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -2238,7 +2238,7 @@ class VirtualNetworkClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -2287,7 +2287,7 @@ class VirtualNetworkClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.endpoint_virtual_network_client,
+            endpoint=self.base_client.config.virtual_network_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
