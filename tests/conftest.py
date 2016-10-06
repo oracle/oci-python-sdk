@@ -20,24 +20,24 @@ def config(request):
 
 @pytest.fixture
 def object_storage(config):
-    return oraclebmc.apis.ObjectStorageApi(config)
+    return oraclebmc.clients.ObjectStorageClient(config)
 
 
 @pytest.fixture
 def virtual_network(config):
-    return oraclebmc.apis.VirtualNetworkApi(config)
+    return oraclebmc.clients.VirtualNetworkClient(config)
 
 
 @pytest.fixture
 def identity(config):
-    return oraclebmc.apis.IdentityApi(config)
+    return oraclebmc.clients.IdentityClient(config)
 
 
 @pytest.fixture
 def compute(config):
-    return oraclebmc.apis.ComputeApi(config)
+    return oraclebmc.clients.ComputeClient(config)
 
 
 @pytest.fixture
 def block_storage(config):
-    return oraclebmc.apis.BlockstorageApi(config)
+    return oraclebmc.clients.BlockstorageClient(config)
