@@ -350,11 +350,11 @@ def test_head_not_found(object_storage):
     namespace = object_storage.get_namespace().data
     # Bucket exists, unknown key
     with pytest.raises(oraclebmc.exceptions.ServiceError) as excinfo:
-        response = object_storage.head_object(
+        object_storage.head_object(
             namespace, "ReadOnlyTestBucket4", "unknown-key" + random_number_string())
     assert excinfo.value.status == 404
     # Unknown bucket, key exists
     with pytest.raises(oraclebmc.exceptions.ServiceError) as excinfo:
-        response = object_storage.head_object(
+        object_storage.head_object(
             namespace, "unknown-bucket" + random_number_string(), "hasUserMetadata.json")
     assert excinfo.value.status == 404
