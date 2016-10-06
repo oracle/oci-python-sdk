@@ -22,21 +22,19 @@ The original license is below.
 """
 
 from __future__ import absolute_import
-import http.client
 import json
 import logging
 import platform
 import re
+import six.moves
 import uuid
 from datetime import date, datetime
-from urllib.parse import quote
 
 import requests
 import six
 from dateutil.parser import parse
 
 from . import constants, exceptions, models
-from .data_stream import DataStream
 from .request import Request
 from .response import Response
 from .signer import ObjectUploadSigner
@@ -56,7 +54,7 @@ class ApiClient(object):
     primitive_type_map = {
         'int': int,
         'float': float,
-        'str': str,
+        'str': six.u,
         'bool': bool,
         'date': date,
         'datetime': datetime
@@ -76,9 +74,9 @@ class ApiClient(object):
         self.logger.addHandler(logging.NullHandler())
         if self.config.log_requests:
             self.logger.setLevel(logging.DEBUG)
-            http.client.HTTPConnection.debuglevel = 1
+            six.moves.http_client.HTTPConnection.debuglevel = 1
         else:
-            http.client.HTTPConnection.debuglevel = 0
+            six.moves.http_client.HTTPConnection.debuglevel = 0
 
     @property
     def session(self):
@@ -123,7 +121,7 @@ class ApiClient(object):
         if path_params:
             path_params = self.sanitize_for_serialization(path_params)
             for k, v in path_params.items():
-                replacement = quote(str(self.to_path_value(v)))
+                replacement = six.moves.urllib.parse.quote(str(self.to_path_value(v)))
                 resource_path = resource_path.\
                     replace('{' + k + '}', replacement)
 
@@ -176,9 +174,9 @@ class ApiClient(object):
         if is_error:
             response_type = 'Error'
 
-        # deserialize response data
         if stream and not is_error:
-            deserialized_data = DataStream(response)
+            # Don't unpack a streaming response body
+            deserialized_data = response
         elif response_type:
             deserialized_data = self.deserialize_response_data(response.content, response_type)
         else:
@@ -235,8 +233,7 @@ class ApiClient(object):
         """
         Builds a JSON POST object.
 
-        If obj is None, return None.
-        If obj is str, int, float, bool, return directly.
+        If obj is str, int, float, bool, None, return directly.
         If obj is datetime.datetime, datetime.date
             convert to string in iso8601 format.
         If obj is list, sanitize each element in the list.
@@ -246,11 +243,9 @@ class ApiClient(object):
         :param obj: The data to serialize.
         :return: The serialized form of data.
         """
-        types = (str, int, float, bool, tuple)
+        types = (six.string_types, int, float, bool, type(None))
 
-        if isinstance(obj, type(None)):
-            return None
-        elif isinstance(obj, types):
+        if isinstance(obj, types):
             return obj
         elif isinstance(obj, list):
             return [self.sanitize_for_serialization(sub_obj)
@@ -272,56 +267,55 @@ class ApiClient(object):
         """
         Deserializes response into an object.
 
-        :param response: object to be deserialized.
+        :param response_data: object to be deserialized.
         :param response_type: class literal for
-            deserialzied object, or string of class name.
+            deserialized object, or string of class name.
 
         :return: deserialized object.
         """
 
-        # In the python 3, the response.data is bytes.
-        # we need to decode it to string.
-        if response_data:
-            response_data = response_data.decode('utf8')
+        # response.content is always bytes
+        response_data = response_data.decode('utf8')
 
+        # TODO: not all valid json strings should be loaded as JSON.
+        # TODO: conditionally load json based on response_type.
         try:
-            data = json.loads(response_data)
+            response_data = json.loads(response_data)
         except ValueError:
-            data = response_data
+            pass
 
-        return self.__deserialize(data, response_type)
+        return self.__deserialize(response_data, response_type)
 
     def __deserialize(self, data, cls):
         """
-        Deserializes dict, list, str into an object.
+        Deserialize a dict, list, or str into an object.
 
-        :param data: dict, list or str.
-        :param cls: class literal, or string of class name.
+        :param data: dict, list or str
+        :param cls: string of class name
 
         :return: object.
         """
         if data is None:
             return None
 
-        if type(cls) == str:
-            if cls.startswith('list['):
-                sub_kls = re.match('list\[(.*)\]', cls).group(1)
-                return [self.__deserialize(sub_data, sub_kls)
-                        for sub_data in data]
+        if cls.startswith('list['):
+            sub_kls = re.match('list\[(.*)\]', cls).group(1)
+            return [self.__deserialize(sub_data, sub_kls)
+                    for sub_data in data]
 
-            if cls.startswith('dict('):
-                sub_kls = re.match('dict\(([^,]*), (.*)\)', cls).group(2)
-                return {k: self.__deserialize(v, sub_kls)
-                        for k, v in data.items()}
+        if cls.startswith('dict('):
+            sub_kls = re.match('dict\(([^,]*), (.*)\)', cls).group(2)
+            return {k: self.__deserialize(v, sub_kls)
+                    for k, v in data.items()}
 
+        cls = self.type_mappings[cls]
+
+        if hasattr(cls, 'get_subtype'):
+            # Use the discriminator value to get the correct subtype.
+            cls = cls.get_subtype(data)  # get_subtype returns a str
             cls = self.type_mappings[cls]
 
-            if hasattr(cls, 'get_subtype'):
-                # Use the discriminator value to get the correct subtype.
-                cls = cls.get_subtype(data)
-                cls = self.type_mappings[cls]
-
-        if cls in [int, float, str, bool]:
+        if cls in [int, float, six.u, bool]:
             return self.__deserialize_primitive(data, cls)
         elif cls == object:
             return data

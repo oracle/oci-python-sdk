@@ -36,7 +36,7 @@ requires = [
     "cryptography==1.5.2",
     "httpsig_cffi==15.0.0",
     "python-dateutil==2.5.3",
-    "requests==2.10.0",
+    "requests==2.11.1",
     "six==1.10.0",
 ]
 

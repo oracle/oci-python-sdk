@@ -20,8 +20,9 @@
 #
 #     Ref: https://github.com/swagger-api/swagger-codegen
 
-from pprint import pformat
-from six import iteritems
+
+from ..util import formatted_flat_dict
+
 
 class ApiKey(object):
 
@@ -55,12 +56,12 @@ class ApiKey(object):
         self._lifecycle_state = None
         self._inactive_status = None
 
-
     @property
     def key_id(self):
         """
         Gets the key_id of this ApiKey.
-        An Oracle-assigned identifier for the key, in this format:\nTENANCY_OCID/USER_OCID/KEY_FINGERPRINT.\n
+        An Oracle-assigned identifier for the key, in this format:
+        TENANCY_OCID/USER_OCID/KEY_FINGERPRINT.
 
         :return: The key_id of this ApiKey.
         :rtype: str
@@ -71,7 +72,8 @@ class ApiKey(object):
     def key_id(self, key_id):
         """
         Sets the key_id of this ApiKey.
-        An Oracle-assigned identifier for the key, in this format:\nTENANCY_OCID/USER_OCID/KEY_FINGERPRINT.\n
+        An Oracle-assigned identifier for the key, in this format:
+        TENANCY_OCID/USER_OCID/KEY_FINGERPRINT.
 
         :param key_id: The key_id of this ApiKey.
         :type: str
@@ -170,7 +172,8 @@ class ApiKey(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this ApiKey.
-        The API key's current state. After creating an `ApiKey` object, make sure its `lifecycleState` changes from\nCREATING to ACTIVE before using it.\n
+        The API key's current state. After creating an `ApiKey` object, make sure its `lifecycleState` changes from
+        CREATING to ACTIVE before using it.
 
         :return: The lifecycle_state of this ApiKey.
         :rtype: str
@@ -181,7 +184,8 @@ class ApiKey(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this ApiKey.
-        The API key's current state. After creating an `ApiKey` object, make sure its `lifecycleState` changes from\nCREATING to ACTIVE before using it.\n
+        The API key's current state. After creating an `ApiKey` object, make sure its `lifecycleState` changes from
+        CREATING to ACTIVE before using it.
 
         :param lifecycle_state: The lifecycle_state of this ApiKey.
         :type: str
@@ -216,56 +220,14 @@ class ApiKey(object):
         """
         self._inactive_status = inactive_status
 
-    def to_dict(self):
-        """
-        Returns the model properties as a dict
-        """
-        result = {}
-
-        for attr, _ in iteritems(self.swagger_types):
-            value = getattr(self, attr)
-            if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
-            elif hasattr(value, "to_dict"):
-                result[attr] = value.to_dict()
-            elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
-            else:
-                result[attr] = value
-
-        return result
-
-    def to_str(self):
-        """
-        Returns the string representation of the model
-        """
-        return pformat(self.to_dict())
-
     def __repr__(self):
-        """
-        For `print` and `pprint`
-        """
-        return self.to_str()
+        return formatted_flat_dict(self)
 
     def __eq__(self, other):
-        """
-        Returns true if objects are equal
-        """
         if other is None:
             return False
 
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):
-        """
-        Returns true if objects are not equal
-        """
         return not self == other
-

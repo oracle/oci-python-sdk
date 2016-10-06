@@ -1,4 +1,4 @@
-import configparser
+from six.moves import configparser
 import logging
 import os.path
 

@@ -20,8 +20,9 @@
 #
 #     Ref: https://github.com/swagger-api/swagger-codegen
 
-from pprint import pformat
-from six import iteritems
+
+from ..util import formatted_flat_dict
+
 
 class Instance(object):
 
@@ -64,12 +65,12 @@ class Instance(object):
         self._shape = None
         self._time_created = None
 
-
     @property
     def availability_domain(self):
         """
         Gets the availability_domain of this Instance.
-        The Availability Domain the instance is running in.\n\nExample: `Uocm:PHX-AD-1`\n
+        The Availability Domain the instance is running in.
+        Example: `Uocm:PHX-AD-1`
 
         :return: The availability_domain of this Instance.
         :rtype: str
@@ -80,7 +81,8 @@ class Instance(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this Instance.
-        The Availability Domain the instance is running in.\n\nExample: `Uocm:PHX-AD-1`\n
+        The Availability Domain the instance is running in.
+        Example: `Uocm:PHX-AD-1`
 
         :param availability_domain: The availability_domain of this Instance.
         :type: str
@@ -113,7 +115,8 @@ class Instance(object):
     def display_name(self):
         """
         Gets the display_name of this Instance.
-        A user-friendly name. Does not have to be unique, and it's changeable.\n\nExample: `My bare metal instance`\n
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Example: `My bare metal instance`
 
         :return: The display_name of this Instance.
         :rtype: str
@@ -124,7 +127,8 @@ class Instance(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Instance.
-        A user-friendly name. Does not have to be unique, and it's changeable.\n\nExample: `My bare metal instance`\n
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Example: `My bare metal instance`
 
         :param display_name: The display_name of this Instance.
         :type: str
@@ -157,7 +161,8 @@ class Instance(object):
     def image_id(self):
         """
         Gets the image_id of this Instance.
-        The image used to boot the instance. You can enumerate all available images by calling\n[ListImages](#/en/iaas/20160918/Image/ListImages).\n
+        The image used to boot the instance. You can enumerate all available images by calling
+        ListImages.
 
         :return: The image_id of this Instance.
         :rtype: str
@@ -168,7 +173,8 @@ class Instance(object):
     def image_id(self, image_id):
         """
         Sets the image_id of this Instance.
-        The image used to boot the instance. You can enumerate all available images by calling\n[ListImages](#/en/iaas/20160918/Image/ListImages).\n
+        The image used to boot the instance. You can enumerate all available images by calling
+        ListImages.
 
         :param image_id: The image_id of this Instance.
         :type: str
@@ -229,7 +235,8 @@ class Instance(object):
     def region(self):
         """
         Gets the region of this Instance.
-        The region that contains the Availability Domain the instance is running in.\n\nExample: `phx`\n
+        The region that contains the Availability Domain the instance is running in.
+        Example: `phx`
 
         :return: The region of this Instance.
         :rtype: str
@@ -240,7 +247,8 @@ class Instance(object):
     def region(self, region):
         """
         Sets the region of this Instance.
-        The region that contains the Availability Domain the instance is running in.\n\nExample: `phx`\n
+        The region that contains the Availability Domain the instance is running in.
+        Example: `phx`
 
         :param region: The region of this Instance.
         :type: str
@@ -251,7 +259,9 @@ class Instance(object):
     def shape(self):
         """
         Gets the shape of this Instance.
-        The shape of the instance. The shape determines the number of CPUs and the amount of memory\nallocated to the instance. You can enumerate all available shapes by calling\n[ListShapes](#/en/iaas/20160918/Shape/ListShapes).\n
+        The shape of the instance. The shape determines the number of CPUs and the amount of memory
+        allocated to the instance. You can enumerate all available shapes by calling
+        ListShapes.
 
         :return: The shape of this Instance.
         :rtype: str
@@ -262,7 +272,9 @@ class Instance(object):
     def shape(self, shape):
         """
         Sets the shape of this Instance.
-        The shape of the instance. The shape determines the number of CPUs and the amount of memory\nallocated to the instance. You can enumerate all available shapes by calling\n[ListShapes](#/en/iaas/20160918/Shape/ListShapes).\n
+        The shape of the instance. The shape determines the number of CPUs and the amount of memory
+        allocated to the instance. You can enumerate all available shapes by calling
+        ListShapes.
 
         :param shape: The shape of this Instance.
         :type: str
@@ -273,7 +285,8 @@ class Instance(object):
     def time_created(self):
         """
         Gets the time_created of this Instance.
-        The date and time the instance was created, in the format defined by RFC3339.\n\nExample: `2016-08-25T21:10:29.600Z`\n
+        The date and time the instance was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :return: The time_created of this Instance.
         :rtype: datetime
@@ -284,63 +297,22 @@ class Instance(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Instance.
-        The date and time the instance was created, in the format defined by RFC3339.\n\nExample: `2016-08-25T21:10:29.600Z`\n
+        The date and time the instance was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :param time_created: The time_created of this Instance.
         :type: datetime
         """
         self._time_created = time_created
 
-    def to_dict(self):
-        """
-        Returns the model properties as a dict
-        """
-        result = {}
-
-        for attr, _ in iteritems(self.swagger_types):
-            value = getattr(self, attr)
-            if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
-            elif hasattr(value, "to_dict"):
-                result[attr] = value.to_dict()
-            elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
-            else:
-                result[attr] = value
-
-        return result
-
-    def to_str(self):
-        """
-        Returns the string representation of the model
-        """
-        return pformat(self.to_dict())
-
     def __repr__(self):
-        """
-        For `print` and `pprint`
-        """
-        return self.to_str()
+        return formatted_flat_dict(self)
 
     def __eq__(self, other):
-        """
-        Returns true if objects are equal
-        """
         if other is None:
             return False
 
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):
-        """
-        Returns true if objects are not equal
-        """
         return not self == other
-

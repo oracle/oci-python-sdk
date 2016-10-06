@@ -20,8 +20,9 @@
 #
 #     Ref: https://github.com/swagger-api/swagger-codegen
 
-from pprint import pformat
-from six import iteritems
+
+from ..util import formatted_flat_dict
+
 
 class Group(object):
 
@@ -54,7 +55,6 @@ class Group(object):
         self._time_created = None
         self._lifecycle_state = None
         self._inactive_status = None
-
 
     @property
     def id(self):
@@ -104,7 +104,8 @@ class Group(object):
     def name(self):
         """
         Gets the name of this Group.
-        The unique, unchangeable name you assign to the group during creation. Must be unique across all\ngroups in the tenancy.\n
+        The unique, unchangeable name you assign to the group during creation. Must be unique across all
+        groups in the tenancy.
 
         :return: The name of this Group.
         :rtype: str
@@ -115,7 +116,8 @@ class Group(object):
     def name(self, name):
         """
         Sets the name of this Group.
-        The unique, unchangeable name you assign to the group during creation. Must be unique across all\ngroups in the tenancy.\n
+        The unique, unchangeable name you assign to the group during creation. Must be unique across all
+        groups in the tenancy.
 
         :param name: The name of this Group.
         :type: str
@@ -170,7 +172,8 @@ class Group(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this Group.
-        The group's current state. After creating a group, make sure its `lifecycleState` changes from CREATING to\nACTIVE before using it.\n
+        The group's current state. After creating a group, make sure its `lifecycleState` changes from CREATING to
+        ACTIVE before using it.
 
         :return: The lifecycle_state of this Group.
         :rtype: str
@@ -181,7 +184,8 @@ class Group(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Group.
-        The group's current state. After creating a group, make sure its `lifecycleState` changes from CREATING to\nACTIVE before using it.\n
+        The group's current state. After creating a group, make sure its `lifecycleState` changes from CREATING to
+        ACTIVE before using it.
 
         :param lifecycle_state: The lifecycle_state of this Group.
         :type: str
@@ -216,56 +220,14 @@ class Group(object):
         """
         self._inactive_status = inactive_status
 
-    def to_dict(self):
-        """
-        Returns the model properties as a dict
-        """
-        result = {}
-
-        for attr, _ in iteritems(self.swagger_types):
-            value = getattr(self, attr)
-            if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
-            elif hasattr(value, "to_dict"):
-                result[attr] = value.to_dict()
-            elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
-            else:
-                result[attr] = value
-
-        return result
-
-    def to_str(self):
-        """
-        Returns the string representation of the model
-        """
-        return pformat(self.to_dict())
-
     def __repr__(self):
-        """
-        For `print` and `pprint`
-        """
-        return self.to_str()
+        return formatted_flat_dict(self)
 
     def __eq__(self, other):
-        """
-        Returns true if objects are equal
-        """
         if other is None:
             return False
 
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):
-        """
-        Returns true if objects are not equal
-        """
         return not self == other
-

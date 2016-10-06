@@ -20,8 +20,9 @@
 #
 #     Ref: https://github.com/swagger-api/swagger-codegen
 
-from pprint import pformat
-from six import iteritems
+
+from ..util import formatted_flat_dict
+
 
 class LaunchInstanceDetails(object):
 
@@ -58,12 +59,12 @@ class LaunchInstanceDetails(object):
         self._shape = None
         self._subnet_id = None
 
-
     @property
     def availability_domain(self):
         """
         Gets the availability_domain of this LaunchInstanceDetails.
-        The Availability Domain of the instance.\n\nExample: `Uocm:PHX-AD-1`\n
+        The Availability Domain of the instance.
+        Example: `Uocm:PHX-AD-1`
 
         :return: The availability_domain of this LaunchInstanceDetails.
         :rtype: str
@@ -74,7 +75,8 @@ class LaunchInstanceDetails(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this LaunchInstanceDetails.
-        The Availability Domain of the instance.\n\nExample: `Uocm:PHX-AD-1`\n
+        The Availability Domain of the instance.
+        Example: `Uocm:PHX-AD-1`
 
         :param availability_domain: The availability_domain of this LaunchInstanceDetails.
         :type: str
@@ -107,7 +109,8 @@ class LaunchInstanceDetails(object):
     def display_name(self):
         """
         Gets the display_name of this LaunchInstanceDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable.\n\nExample: `My bare metal instance`\n
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Example: `My bare metal instance`
 
         :return: The display_name of this LaunchInstanceDetails.
         :rtype: str
@@ -118,7 +121,8 @@ class LaunchInstanceDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this LaunchInstanceDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable.\n\nExample: `My bare metal instance`\n
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Example: `My bare metal instance`
 
         :param display_name: The display_name of this LaunchInstanceDetails.
         :type: str
@@ -151,7 +155,49 @@ class LaunchInstanceDetails(object):
     def metadata(self):
         """
         Gets the metadata of this LaunchInstanceDetails.
-        Custom metadata key/value pairs that you provide, such as the SSH public key\nrequired to connect to the instance.\n\nA metadata service runs on every launched instance. The service is an HTTP\nendpoint listening on 169.254.169.254. You can use the service to:\n\n* Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/)\n  to be used for various system initialization tasks.\n\n* Get information about the instance, including the custom metadata that you\n  provide when you launch the instance.\n\n __Providing Cloud-Init Metadata__\n\n You can use the following metadata key names to provide information to\n Cloud-Init:\n\n __\"ssh_authorized_keys\"__ - Provide one or more public SSH keys to be\n included in the `~/.ssh/authorized_keys` file for the default user on the\n instance. Use a newline character to separate multiple keys. The SSH\n keys must be in the format necessary for the `authorized_keys` file, as shown\n in the example below.\n\n __\"user_data\"__ - Provide your own base64-encoded data to be used by\n Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For\n information about how to take advantage of user data, see the\n [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).\n\n __Note:__ Cloud-Init does not pull this data from the `http://169.254.169.254/opc/v1/instance/metadata/`\n path. When the instance launches and either of these keys are provided, the key values are formatted as\n OpenStack metadata and copied to the following locations, which are recognized by Cloud-Init:\n\n `http://169.254.169.254/openstack/latest/meta_data.json` - This JSON blob\n contains, among other things, the SSH keys that you provided for\n  __\"ssh_authorized_keys\"__.\n\n `http://169.254.169.254/openstack/latest/user_data` - Contains the\n base64-decoded data that you provided for __\"user_data\"__.\n\n __Metadata Example__\n\n      \"metadata\" : {\n         \"quake_bot_level\" : \"Severe\",\n         \"ssh_authorized_keys\" : \"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCZ06fccNTQfq+xubFlJ5ZR3kt+uzspdH9tXL+lAejSM1NXM+CFZev7MIxfEjas06y80ZBZ7DUTQO0GxJPeD8NCOb1VorF8M4xuLwrmzRtkoZzU16umt4y1W0Q4ifdp3IiiU0U8/WxczSXcUVZOLqkz5dc6oMHdMVpkimietWzGZ4LBBsH/LjEVY7E0V+a0sNchlVDIZcm7ErReBLcdTGDq0uLBiuChyl6RUkX1PNhusquTGwK7zc8OBXkRuubn5UKXhI3Ul9Nyk4XESkVWIGNKmw8mSpoJSjR8P9ZjRmcZVo8S+x4KVPMZKQEor== ryan.smith@company.com\n         ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAzJSAtwEPoB3Jmr58IXrDGzLuDYkWAYg8AsLYlo6JZvKpjY1xednIcfEVQJm4T2DhVmdWhRrwQ8DmayVZvBkLt+zs2LdoAJEVimKwXcJFD/7wtH8Lnk17HiglbbbNXsemjDY0hea4JUE5CfvkIdZBITuMrfqSmA4n3VNoorXYdvtTMoGG8fxMub46RPtuxtqi9bG9Zqenordkg5FJt2mVNfQRqf83CWojcOkklUWq4CjyxaeLf5i9gv1fRoBo4QhiA8I6NCSppO8GnoV/6Ox6TNoh9BiifqGKC9VGYuC89RvUajRBTZSK2TK4DPfaT+2R+slPsFrwiT/oPEhhEK1S5Q== rsa-key-20160227\",\n         \"user_data\" : \"SWYgeW91IGNhbiBzZWUgdGhpcywgdGhlbiBpdCB3b3JrZWQgbWF5YmUuCg==\"\n      }\n __Getting Metadata on the Instance__\n\n To get information about your instance, connect to the instance using SSH and issue any of the\n following GET requests:\n\n     curl http://169.254.169.254/opc/v1/instance/\n     curl http://169.254.169.254/opc/v1/instance/metadata/\n     curl http://169.254.169.254/opc/v1/instance/metadata/<any-key-name>\n\n You'll get back a response that includes all the instance information; only the metadata information; or\n the metadata information for the specified key name, respectively.\n
+        Custom metadata key/value pairs that you provide, such as the SSH public key
+        required to connect to the instance.
+        A metadata service runs on every launched instance. The service is an HTTP
+        endpoint listening on 169.254.169.254. You can use the service to:
+        * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/)
+          to be used for various system initialization tasks.
+        * Get information about the instance, including the custom metadata that you
+          provide when you launch the instance.
+         __Providing Cloud-Init Metadata__
+         You can use the following metadata key names to provide information to
+         Cloud-Init:
+         __\"ssh_authorized_keys\"__ - Provide one or more public SSH keys to be
+         included in the `~/.ssh/authorized_keys` file for the default user on the
+         instance. Use a newline character to separate multiple keys. The SSH
+         keys must be in the format necessary for the `authorized_keys` file, as shown
+         in the example below.
+         __\"user_data\"__ - Provide your own base64-encoded data to be used by
+         Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For
+         information about how to take advantage of user data, see the
+         [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
+         __Note:__ Cloud-Init does not pull this data from the `http://169.254.169.254/opc/v1/instance/metadata/`
+         path. When the instance launches and either of these keys are provided, the key values are formatted as
+         OpenStack metadata and copied to the following locations, which are recognized by Cloud-Init:
+         `http://169.254.169.254/openstack/latest/meta_data.json` - This JSON blob
+         contains, among other things, the SSH keys that you provided for
+          __\"ssh_authorized_keys\"__.
+         `http://169.254.169.254/openstack/latest/user_data` - Contains the
+         base64-decoded data that you provided for __\"user_data\"__.
+         __Metadata Example__
+              \"metadata\" : {
+                 \"quake_bot_level\" : \"Severe\",
+                 \"ssh_authorized_keys\" : \"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCZ06fccNTQfq+xubFlJ5ZR3kt+uzspdH9tXL+lAejSM1NXM+CFZev7MIxfEjas06y80ZBZ7DUTQO0GxJPeD8NCOb1VorF8M4xuLwrmzRtkoZzU16umt4y1W0Q4ifdp3IiiU0U8/WxczSXcUVZOLqkz5dc6oMHdMVpkimietWzGZ4LBBsH/LjEVY7E0V+a0sNchlVDIZcm7ErReBLcdTGDq0uLBiuChyl6RUkX1PNhusquTGwK7zc8OBXkRuubn5UKXhI3Ul9Nyk4XESkVWIGNKmw8mSpoJSjR8P9ZjRmcZVo8S+x4KVPMZKQEor== ryan.smith@company.com
+                 ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAzJSAtwEPoB3Jmr58IXrDGzLuDYkWAYg8AsLYlo6JZvKpjY1xednIcfEVQJm4T2DhVmdWhRrwQ8DmayVZvBkLt+zs2LdoAJEVimKwXcJFD/7wtH8Lnk17HiglbbbNXsemjDY0hea4JUE5CfvkIdZBITuMrfqSmA4n3VNoorXYdvtTMoGG8fxMub46RPtuxtqi9bG9Zqenordkg5FJt2mVNfQRqf83CWojcOkklUWq4CjyxaeLf5i9gv1fRoBo4QhiA8I6NCSppO8GnoV/6Ox6TNoh9BiifqGKC9VGYuC89RvUajRBTZSK2TK4DPfaT+2R+slPsFrwiT/oPEhhEK1S5Q== rsa-key-20160227\",
+                 \"user_data\" : \"SWYgeW91IGNhbiBzZWUgdGhpcywgdGhlbiBpdCB3b3JrZWQgbWF5YmUuCg==\"
+              }
+         __Getting Metadata on the Instance__
+         To get information about your instance, connect to the instance using SSH and issue any of the
+         following GET requests:
+             curl http://169.254.169.254/opc/v1/instance/
+             curl http://169.254.169.254/opc/v1/instance/metadata/
+             curl http://169.254.169.254/opc/v1/instance/metadata/<any-key-name>
+         You'll get back a response that includes all the instance information; only the metadata information; or
+         the metadata information for the specified key name, respectively.
 
         :return: The metadata of this LaunchInstanceDetails.
         :rtype: dict(str, str)
@@ -162,7 +208,49 @@ class LaunchInstanceDetails(object):
     def metadata(self, metadata):
         """
         Sets the metadata of this LaunchInstanceDetails.
-        Custom metadata key/value pairs that you provide, such as the SSH public key\nrequired to connect to the instance.\n\nA metadata service runs on every launched instance. The service is an HTTP\nendpoint listening on 169.254.169.254. You can use the service to:\n\n* Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/)\n  to be used for various system initialization tasks.\n\n* Get information about the instance, including the custom metadata that you\n  provide when you launch the instance.\n\n __Providing Cloud-Init Metadata__\n\n You can use the following metadata key names to provide information to\n Cloud-Init:\n\n __\"ssh_authorized_keys\"__ - Provide one or more public SSH keys to be\n included in the `~/.ssh/authorized_keys` file for the default user on the\n instance. Use a newline character to separate multiple keys. The SSH\n keys must be in the format necessary for the `authorized_keys` file, as shown\n in the example below.\n\n __\"user_data\"__ - Provide your own base64-encoded data to be used by\n Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For\n information about how to take advantage of user data, see the\n [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).\n\n __Note:__ Cloud-Init does not pull this data from the `http://169.254.169.254/opc/v1/instance/metadata/`\n path. When the instance launches and either of these keys are provided, the key values are formatted as\n OpenStack metadata and copied to the following locations, which are recognized by Cloud-Init:\n\n `http://169.254.169.254/openstack/latest/meta_data.json` - This JSON blob\n contains, among other things, the SSH keys that you provided for\n  __\"ssh_authorized_keys\"__.\n\n `http://169.254.169.254/openstack/latest/user_data` - Contains the\n base64-decoded data that you provided for __\"user_data\"__.\n\n __Metadata Example__\n\n      \"metadata\" : {\n         \"quake_bot_level\" : \"Severe\",\n         \"ssh_authorized_keys\" : \"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCZ06fccNTQfq+xubFlJ5ZR3kt+uzspdH9tXL+lAejSM1NXM+CFZev7MIxfEjas06y80ZBZ7DUTQO0GxJPeD8NCOb1VorF8M4xuLwrmzRtkoZzU16umt4y1W0Q4ifdp3IiiU0U8/WxczSXcUVZOLqkz5dc6oMHdMVpkimietWzGZ4LBBsH/LjEVY7E0V+a0sNchlVDIZcm7ErReBLcdTGDq0uLBiuChyl6RUkX1PNhusquTGwK7zc8OBXkRuubn5UKXhI3Ul9Nyk4XESkVWIGNKmw8mSpoJSjR8P9ZjRmcZVo8S+x4KVPMZKQEor== ryan.smith@company.com\n         ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAzJSAtwEPoB3Jmr58IXrDGzLuDYkWAYg8AsLYlo6JZvKpjY1xednIcfEVQJm4T2DhVmdWhRrwQ8DmayVZvBkLt+zs2LdoAJEVimKwXcJFD/7wtH8Lnk17HiglbbbNXsemjDY0hea4JUE5CfvkIdZBITuMrfqSmA4n3VNoorXYdvtTMoGG8fxMub46RPtuxtqi9bG9Zqenordkg5FJt2mVNfQRqf83CWojcOkklUWq4CjyxaeLf5i9gv1fRoBo4QhiA8I6NCSppO8GnoV/6Ox6TNoh9BiifqGKC9VGYuC89RvUajRBTZSK2TK4DPfaT+2R+slPsFrwiT/oPEhhEK1S5Q== rsa-key-20160227\",\n         \"user_data\" : \"SWYgeW91IGNhbiBzZWUgdGhpcywgdGhlbiBpdCB3b3JrZWQgbWF5YmUuCg==\"\n      }\n __Getting Metadata on the Instance__\n\n To get information about your instance, connect to the instance using SSH and issue any of the\n following GET requests:\n\n     curl http://169.254.169.254/opc/v1/instance/\n     curl http://169.254.169.254/opc/v1/instance/metadata/\n     curl http://169.254.169.254/opc/v1/instance/metadata/<any-key-name>\n\n You'll get back a response that includes all the instance information; only the metadata information; or\n the metadata information for the specified key name, respectively.\n
+        Custom metadata key/value pairs that you provide, such as the SSH public key
+        required to connect to the instance.
+        A metadata service runs on every launched instance. The service is an HTTP
+        endpoint listening on 169.254.169.254. You can use the service to:
+        * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/)
+          to be used for various system initialization tasks.
+        * Get information about the instance, including the custom metadata that you
+          provide when you launch the instance.
+         __Providing Cloud-Init Metadata__
+         You can use the following metadata key names to provide information to
+         Cloud-Init:
+         __\"ssh_authorized_keys\"__ - Provide one or more public SSH keys to be
+         included in the `~/.ssh/authorized_keys` file for the default user on the
+         instance. Use a newline character to separate multiple keys. The SSH
+         keys must be in the format necessary for the `authorized_keys` file, as shown
+         in the example below.
+         __\"user_data\"__ - Provide your own base64-encoded data to be used by
+         Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For
+         information about how to take advantage of user data, see the
+         [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
+         __Note:__ Cloud-Init does not pull this data from the `http://169.254.169.254/opc/v1/instance/metadata/`
+         path. When the instance launches and either of these keys are provided, the key values are formatted as
+         OpenStack metadata and copied to the following locations, which are recognized by Cloud-Init:
+         `http://169.254.169.254/openstack/latest/meta_data.json` - This JSON blob
+         contains, among other things, the SSH keys that you provided for
+          __\"ssh_authorized_keys\"__.
+         `http://169.254.169.254/openstack/latest/user_data` - Contains the
+         base64-decoded data that you provided for __\"user_data\"__.
+         __Metadata Example__
+              \"metadata\" : {
+                 \"quake_bot_level\" : \"Severe\",
+                 \"ssh_authorized_keys\" : \"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCZ06fccNTQfq+xubFlJ5ZR3kt+uzspdH9tXL+lAejSM1NXM+CFZev7MIxfEjas06y80ZBZ7DUTQO0GxJPeD8NCOb1VorF8M4xuLwrmzRtkoZzU16umt4y1W0Q4ifdp3IiiU0U8/WxczSXcUVZOLqkz5dc6oMHdMVpkimietWzGZ4LBBsH/LjEVY7E0V+a0sNchlVDIZcm7ErReBLcdTGDq0uLBiuChyl6RUkX1PNhusquTGwK7zc8OBXkRuubn5UKXhI3Ul9Nyk4XESkVWIGNKmw8mSpoJSjR8P9ZjRmcZVo8S+x4KVPMZKQEor== ryan.smith@company.com
+                 ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAzJSAtwEPoB3Jmr58IXrDGzLuDYkWAYg8AsLYlo6JZvKpjY1xednIcfEVQJm4T2DhVmdWhRrwQ8DmayVZvBkLt+zs2LdoAJEVimKwXcJFD/7wtH8Lnk17HiglbbbNXsemjDY0hea4JUE5CfvkIdZBITuMrfqSmA4n3VNoorXYdvtTMoGG8fxMub46RPtuxtqi9bG9Zqenordkg5FJt2mVNfQRqf83CWojcOkklUWq4CjyxaeLf5i9gv1fRoBo4QhiA8I6NCSppO8GnoV/6Ox6TNoh9BiifqGKC9VGYuC89RvUajRBTZSK2TK4DPfaT+2R+slPsFrwiT/oPEhhEK1S5Q== rsa-key-20160227\",
+                 \"user_data\" : \"SWYgeW91IGNhbiBzZWUgdGhpcywgdGhlbiBpdCB3b3JrZWQgbWF5YmUuCg==\"
+              }
+         __Getting Metadata on the Instance__
+         To get information about your instance, connect to the instance using SSH and issue any of the
+         following GET requests:
+             curl http://169.254.169.254/opc/v1/instance/
+             curl http://169.254.169.254/opc/v1/instance/metadata/
+             curl http://169.254.169.254/opc/v1/instance/metadata/<any-key-name>
+         You'll get back a response that includes all the instance information; only the metadata information; or
+         the metadata information for the specified key name, respectively.
 
         :param metadata: The metadata of this LaunchInstanceDetails.
         :type: dict(str, str)
@@ -195,7 +283,9 @@ class LaunchInstanceDetails(object):
     def shape(self):
         """
         Gets the shape of this LaunchInstanceDetails.
-        The shape of an instance. The shape determines the number of CPUs, amount of memory,\nand other resources allocated to the instance.\n\nYou can enumerate all available shapes by calling [ListShapes](#/en/iaas/20160918/Shape/ListShapes).\n
+        The shape of an instance. The shape determines the number of CPUs, amount of memory,
+        and other resources allocated to the instance.
+        You can enumerate all available shapes by calling ListShapes.
 
         :return: The shape of this LaunchInstanceDetails.
         :rtype: str
@@ -206,7 +296,9 @@ class LaunchInstanceDetails(object):
     def shape(self, shape):
         """
         Sets the shape of this LaunchInstanceDetails.
-        The shape of an instance. The shape determines the number of CPUs, amount of memory,\nand other resources allocated to the instance.\n\nYou can enumerate all available shapes by calling [ListShapes](#/en/iaas/20160918/Shape/ListShapes).\n
+        The shape of an instance. The shape determines the number of CPUs, amount of memory,
+        and other resources allocated to the instance.
+        You can enumerate all available shapes by calling ListShapes.
 
         :param shape: The shape of this LaunchInstanceDetails.
         :type: str
@@ -235,56 +327,14 @@ class LaunchInstanceDetails(object):
         """
         self._subnet_id = subnet_id
 
-    def to_dict(self):
-        """
-        Returns the model properties as a dict
-        """
-        result = {}
-
-        for attr, _ in iteritems(self.swagger_types):
-            value = getattr(self, attr)
-            if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
-            elif hasattr(value, "to_dict"):
-                result[attr] = value.to_dict()
-            elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
-            else:
-                result[attr] = value
-
-        return result
-
-    def to_str(self):
-        """
-        Returns the string representation of the model
-        """
-        return pformat(self.to_dict())
-
     def __repr__(self):
-        """
-        For `print` and `pprint`
-        """
-        return self.to_str()
+        return formatted_flat_dict(self)
 
     def __eq__(self, other):
-        """
-        Returns true if objects are equal
-        """
         if other is None:
             return False
 
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):
-        """
-        Returns true if objects are not equal
-        """
         return not self == other
-

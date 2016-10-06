@@ -20,8 +20,9 @@
 #
 #     Ref: https://github.com/swagger-api/swagger-codegen
 
-from pprint import pformat
-from six import iteritems
+
+from ..util import formatted_flat_dict
+
 
 class InternetGateway(object):
 
@@ -52,7 +53,6 @@ class InternetGateway(object):
         self._lifecycle_state = None
         self._time_created = None
 
-
     @property
     def compartment_id(self):
         """
@@ -79,7 +79,7 @@ class InternetGateway(object):
     def display_name(self):
         """
         Gets the display_name of this InternetGateway.
-        A user-friendly name. Does not have to be unique, and it's not changeable.\n
+        A user-friendly name. Does not have to be unique, and it's not changeable.
 
         :return: The display_name of this InternetGateway.
         :rtype: str
@@ -90,7 +90,7 @@ class InternetGateway(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this InternetGateway.
-        A user-friendly name. Does not have to be unique, and it's not changeable.\n
+        A user-friendly name. Does not have to be unique, and it's not changeable.
 
         :param display_name: The display_name of this InternetGateway.
         :type: str
@@ -123,7 +123,8 @@ class InternetGateway(object):
     def is_enabled(self):
         """
         Gets the is_enabled of this InternetGateway.
-        Whether the gateway is enabled. When the gateway is disabled, traffic is not\nrouted to/from the Internet, regardless of route rules.\n
+        Whether the gateway is enabled. When the gateway is disabled, traffic is not
+        routed to/from the Internet, regardless of route rules.
 
         :return: The is_enabled of this InternetGateway.
         :rtype: bool
@@ -134,7 +135,8 @@ class InternetGateway(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this InternetGateway.
-        Whether the gateway is enabled. When the gateway is disabled, traffic is not\nrouted to/from the Internet, regardless of route rules.\n
+        Whether the gateway is enabled. When the gateway is disabled, traffic is not
+        routed to/from the Internet, regardless of route rules.
 
         :param is_enabled: The is_enabled of this InternetGateway.
         :type: bool
@@ -191,56 +193,14 @@ class InternetGateway(object):
         """
         self._time_created = time_created
 
-    def to_dict(self):
-        """
-        Returns the model properties as a dict
-        """
-        result = {}
-
-        for attr, _ in iteritems(self.swagger_types):
-            value = getattr(self, attr)
-            if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
-            elif hasattr(value, "to_dict"):
-                result[attr] = value.to_dict()
-            elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
-            else:
-                result[attr] = value
-
-        return result
-
-    def to_str(self):
-        """
-        Returns the string representation of the model
-        """
-        return pformat(self.to_dict())
-
     def __repr__(self):
-        """
-        For `print` and `pprint`
-        """
-        return self.to_str()
+        return formatted_flat_dict(self)
 
     def __eq__(self, other):
-        """
-        Returns true if objects are equal
-        """
         if other is None:
             return False
 
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):
-        """
-        Returns true if objects are not equal
-        """
         return not self == other
-

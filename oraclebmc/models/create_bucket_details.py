@@ -20,8 +20,9 @@
 #
 #     Ref: https://github.com/swagger-api/swagger-codegen
 
-from pprint import pformat
-from six import iteritems
+
+from ..util import formatted_flat_dict
+
 
 class CreateBucketDetails(object):
 
@@ -45,7 +46,6 @@ class CreateBucketDetails(object):
         self._name = None
         self._compartment_id = None
         self._metadata = None
-
 
     @property
     def namespace(self):
@@ -95,7 +95,7 @@ class CreateBucketDetails(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this CreateBucketDetails.
-        The ID of the compartment in which to create the bucket.
+        The compartment ID used to authorize the bucket.
 
         :return: The compartment_id of this CreateBucketDetails.
         :rtype: str
@@ -106,7 +106,7 @@ class CreateBucketDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateBucketDetails.
-        The ID of the compartment in which to create the bucket.
+        The compartment ID used to authorize the bucket.
 
         :param compartment_id: The compartment_id of this CreateBucketDetails.
         :type: str
@@ -117,7 +117,7 @@ class CreateBucketDetails(object):
     def metadata(self):
         """
         Gets the metadata of this CreateBucketDetails.
-        Arbitrary string keys and values for user-defined metadata.
+        Arbitrary string keys and values for the user-defined metadata.
 
         :return: The metadata of this CreateBucketDetails.
         :rtype: dict(str, str)
@@ -128,63 +128,21 @@ class CreateBucketDetails(object):
     def metadata(self, metadata):
         """
         Sets the metadata of this CreateBucketDetails.
-        Arbitrary string keys and values for user-defined metadata.
+        Arbitrary string keys and values for the user-defined metadata.
 
         :param metadata: The metadata of this CreateBucketDetails.
         :type: dict(str, str)
         """
         self._metadata = metadata
 
-    def to_dict(self):
-        """
-        Returns the model properties as a dict
-        """
-        result = {}
-
-        for attr, _ in iteritems(self.swagger_types):
-            value = getattr(self, attr)
-            if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
-            elif hasattr(value, "to_dict"):
-                result[attr] = value.to_dict()
-            elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
-            else:
-                result[attr] = value
-
-        return result
-
-    def to_str(self):
-        """
-        Returns the string representation of the model
-        """
-        return pformat(self.to_dict())
-
     def __repr__(self):
-        """
-        For `print` and `pprint`
-        """
-        return self.to_str()
+        return formatted_flat_dict(self)
 
     def __eq__(self, other):
-        """
-        Returns true if objects are equal
-        """
         if other is None:
             return False
 
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):
-        """
-        Returns true if objects are not equal
-        """
         return not self == other
-

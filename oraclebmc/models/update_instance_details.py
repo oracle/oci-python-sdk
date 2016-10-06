@@ -20,8 +20,9 @@
 #
 #     Ref: https://github.com/swagger-api/swagger-codegen
 
-from pprint import pformat
-from six import iteritems
+
+from ..util import formatted_flat_dict
+
 
 class UpdateInstanceDetails(object):
 
@@ -37,12 +38,12 @@ class UpdateInstanceDetails(object):
 
         self._display_name = None
 
-
     @property
     def display_name(self):
         """
         Gets the display_name of this UpdateInstanceDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable.\n\nExample: `My bare metal instance`\n
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Example: `My bare metal instance`
 
         :return: The display_name of this UpdateInstanceDetails.
         :rtype: str
@@ -53,63 +54,22 @@ class UpdateInstanceDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateInstanceDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable.\n\nExample: `My bare metal instance`\n
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Example: `My bare metal instance`
 
         :param display_name: The display_name of this UpdateInstanceDetails.
         :type: str
         """
         self._display_name = display_name
 
-    def to_dict(self):
-        """
-        Returns the model properties as a dict
-        """
-        result = {}
-
-        for attr, _ in iteritems(self.swagger_types):
-            value = getattr(self, attr)
-            if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
-            elif hasattr(value, "to_dict"):
-                result[attr] = value.to_dict()
-            elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
-            else:
-                result[attr] = value
-
-        return result
-
-    def to_str(self):
-        """
-        Returns the string representation of the model
-        """
-        return pformat(self.to_dict())
-
     def __repr__(self):
-        """
-        For `print` and `pprint`
-        """
-        return self.to_str()
+        return formatted_flat_dict(self)
 
     def __eq__(self, other):
-        """
-        Returns true if objects are equal
-        """
         if other is None:
             return False
 
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):
-        """
-        Returns true if objects are not equal
-        """
         return not self == other
-

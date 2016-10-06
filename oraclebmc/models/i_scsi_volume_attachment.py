@@ -20,9 +20,9 @@
 #
 #     Ref: https://github.com/swagger-api/swagger-codegen
 
-from pprint import pformat
-from six import iteritems
 from .volume_attachment import VolumeAttachment
+from ..util import formatted_flat_dict
+
 
 class IScsiVolumeAttachment(VolumeAttachment):
 
@@ -76,14 +76,15 @@ class IScsiVolumeAttachment(VolumeAttachment):
         self._ipv4 = None
         self._iqn = None
         self._port = None
-
         self._attachment_type = 'iscsi'
 
     @property
     def chap_secret(self):
         """
         Gets the chap_secret of this IScsiVolumeAttachment.
-        The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP user name.\n(Also called the \"CHAP password\".)\n\nExample: `d6866c0d-298b-48ba-95af-309b4faux45e`\n
+        The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP user name.
+        (Also called the \"CHAP password\".)
+        Example: `d6866c0d-298b-48ba-95af-309b4faux45e`
 
         :return: The chap_secret of this IScsiVolumeAttachment.
         :rtype: str
@@ -94,7 +95,9 @@ class IScsiVolumeAttachment(VolumeAttachment):
     def chap_secret(self, chap_secret):
         """
         Sets the chap_secret of this IScsiVolumeAttachment.
-        The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP user name.\n(Also called the \"CHAP password\".)\n\nExample: `d6866c0d-298b-48ba-95af-309b4faux45e`\n
+        The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP user name.
+        (Also called the \"CHAP password\".)
+        Example: `d6866c0d-298b-48ba-95af-309b4faux45e`
 
         :param chap_secret: The chap_secret of this IScsiVolumeAttachment.
         :type: str
@@ -105,7 +108,8 @@ class IScsiVolumeAttachment(VolumeAttachment):
     def chap_username(self):
         """
         Gets the chap_username of this IScsiVolumeAttachment.
-        The volume's system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user name.\n\nExample: `ocid1.volume.oc1.phx.abyhqljrgvttnlx73nmrwfaux7kcvzfs3s66izvxf2h4lgvyndsdsnoiwr5q`\n
+        The volume's system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user name.
+        Example: `ocid1.volume.oc1.phx.abyhqljrgvttnlx73nmrwfaux7kcvzfs3s66izvxf2h4lgvyndsdsnoiwr5q`
 
         :return: The chap_username of this IScsiVolumeAttachment.
         :rtype: str
@@ -116,7 +120,8 @@ class IScsiVolumeAttachment(VolumeAttachment):
     def chap_username(self, chap_username):
         """
         Sets the chap_username of this IScsiVolumeAttachment.
-        The volume's system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user name.\n\nExample: `ocid1.volume.oc1.phx.abyhqljrgvttnlx73nmrwfaux7kcvzfs3s66izvxf2h4lgvyndsdsnoiwr5q`\n
+        The volume's system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user name.
+        Example: `ocid1.volume.oc1.phx.abyhqljrgvttnlx73nmrwfaux7kcvzfs3s66izvxf2h4lgvyndsdsnoiwr5q`
 
         :param chap_username: The chap_username of this IScsiVolumeAttachment.
         :type: str
@@ -127,7 +132,8 @@ class IScsiVolumeAttachment(VolumeAttachment):
     def ipv4(self):
         """
         Gets the ipv4 of this IScsiVolumeAttachment.
-        The volume's iSCSI IP address.\n\nExample: `169.254.0.2`\n
+        The volume's iSCSI IP address.
+        Example: `169.254.0.2`
 
         :return: The ipv4 of this IScsiVolumeAttachment.
         :rtype: str
@@ -138,7 +144,8 @@ class IScsiVolumeAttachment(VolumeAttachment):
     def ipv4(self, ipv4):
         """
         Sets the ipv4 of this IScsiVolumeAttachment.
-        The volume's iSCSI IP address.\n\nExample: `169.254.0.2`\n
+        The volume's iSCSI IP address.
+        Example: `169.254.0.2`
 
         :param ipv4: The ipv4 of this IScsiVolumeAttachment.
         :type: str
@@ -149,7 +156,8 @@ class IScsiVolumeAttachment(VolumeAttachment):
     def iqn(self):
         """
         Gets the iqn of this IScsiVolumeAttachment.
-        The target volume's iSCSI Qualified Name in the format defined by RFC 3720.\n\nExample: `iqn.2015-12.us.oracle.com:456b0391-17b8-4122-bbf1-f85fc0bb97d9`\n
+        The target volume's iSCSI Qualified Name in the format defined by RFC 3720.
+        Example: `iqn.2015-12.us.oracle.com:456b0391-17b8-4122-bbf1-f85fc0bb97d9`
 
         :return: The iqn of this IScsiVolumeAttachment.
         :rtype: str
@@ -160,7 +168,8 @@ class IScsiVolumeAttachment(VolumeAttachment):
     def iqn(self, iqn):
         """
         Sets the iqn of this IScsiVolumeAttachment.
-        The target volume's iSCSI Qualified Name in the format defined by RFC 3720.\n\nExample: `iqn.2015-12.us.oracle.com:456b0391-17b8-4122-bbf1-f85fc0bb97d9`\n
+        The target volume's iSCSI Qualified Name in the format defined by RFC 3720.
+        Example: `iqn.2015-12.us.oracle.com:456b0391-17b8-4122-bbf1-f85fc0bb97d9`
 
         :param iqn: The iqn of this IScsiVolumeAttachment.
         :type: str
@@ -171,7 +180,8 @@ class IScsiVolumeAttachment(VolumeAttachment):
     def port(self):
         """
         Gets the port of this IScsiVolumeAttachment.
-        The volume's iSCSI port.\n\nExample: `3260`\n
+        The volume's iSCSI port.
+        Example: `3260`
 
         :return: The port of this IScsiVolumeAttachment.
         :rtype: int
@@ -182,63 +192,22 @@ class IScsiVolumeAttachment(VolumeAttachment):
     def port(self, port):
         """
         Sets the port of this IScsiVolumeAttachment.
-        The volume's iSCSI port.\n\nExample: `3260`\n
+        The volume's iSCSI port.
+        Example: `3260`
 
         :param port: The port of this IScsiVolumeAttachment.
         :type: int
         """
         self._port = port
 
-    def to_dict(self):
-        """
-        Returns the model properties as a dict
-        """
-        result = {}
-
-        for attr, _ in iteritems(self.swagger_types):
-            value = getattr(self, attr)
-            if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
-            elif hasattr(value, "to_dict"):
-                result[attr] = value.to_dict()
-            elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
-            else:
-                result[attr] = value
-
-        return result
-
-    def to_str(self):
-        """
-        Returns the string representation of the model
-        """
-        return pformat(self.to_dict())
-
     def __repr__(self):
-        """
-        For `print` and `pprint`
-        """
-        return self.to_str()
+        return formatted_flat_dict(self)
 
     def __eq__(self, other):
-        """
-        Returns true if objects are equal
-        """
         if other is None:
             return False
 
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):
-        """
-        Returns true if objects are not equal
-        """
         return not self == other
-

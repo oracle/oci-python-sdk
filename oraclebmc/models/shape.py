@@ -20,8 +20,9 @@
 #
 #     Ref: https://github.com/swagger-api/swagger-codegen
 
-from pprint import pformat
-from six import iteritems
+
+from ..util import formatted_flat_dict
+
 
 class Shape(object):
 
@@ -37,12 +38,12 @@ class Shape(object):
 
         self._shape = None
 
-
     @property
     def shape(self):
         """
         Gets the shape of this Shape.
-        The name of the shape. You can enumerate all available shapes by calling\n[ListShapes](#/en/iaas/20160918/Shape/ListShapes).\n
+        The name of the shape. You can enumerate all available shapes by calling
+        ListShapes.
 
         :return: The shape of this Shape.
         :rtype: str
@@ -53,63 +54,22 @@ class Shape(object):
     def shape(self, shape):
         """
         Sets the shape of this Shape.
-        The name of the shape. You can enumerate all available shapes by calling\n[ListShapes](#/en/iaas/20160918/Shape/ListShapes).\n
+        The name of the shape. You can enumerate all available shapes by calling
+        ListShapes.
 
         :param shape: The shape of this Shape.
         :type: str
         """
         self._shape = shape
 
-    def to_dict(self):
-        """
-        Returns the model properties as a dict
-        """
-        result = {}
-
-        for attr, _ in iteritems(self.swagger_types):
-            value = getattr(self, attr)
-            if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
-            elif hasattr(value, "to_dict"):
-                result[attr] = value.to_dict()
-            elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
-            else:
-                result[attr] = value
-
-        return result
-
-    def to_str(self):
-        """
-        Returns the string representation of the model
-        """
-        return pformat(self.to_dict())
-
     def __repr__(self):
-        """
-        For `print` and `pprint`
-        """
-        return self.to_str()
+        return formatted_flat_dict(self)
 
     def __eq__(self, other):
-        """
-        Returns true if objects are equal
-        """
         if other is None:
             return False
 
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):
-        """
-        Returns true if objects are not equal
-        """
         return not self == other
-

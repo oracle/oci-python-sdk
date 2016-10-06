@@ -1,6 +1,5 @@
 from __future__ import absolute_import
 
-# import models into model package
 from .add_user_to_group_details import AddUserToGroupDetails
 from .api_key import ApiKey
 from .availability_domain import AvailabilityDomain
@@ -27,27 +26,27 @@ from .user_group_membership import UserGroupMembership
 
 # Maps type names to classes for identity services.
 identity_type_mapping = {
-    'AddUserToGroupDetails': AddUserToGroupDetails,
-    'ApiKey': ApiKey,
-    'AvailabilityDomain': AvailabilityDomain,
-    'Compartment': Compartment,
-    'CreateApiKeyDetails': CreateApiKeyDetails,
-    'CreateCompartmentDetails': CreateCompartmentDetails,
-    'CreateGroupDetails': CreateGroupDetails,
-    'CreatePolicyDetails': CreatePolicyDetails,
-    'CreateSwiftPasswordDetails': CreateSwiftPasswordDetails,
-    'CreateUserDetails': CreateUserDetails,
-    'Error': Error,
-    'Group': Group,
-    'Policy': Policy,
-    'SwiftPassword': SwiftPassword,
-    'UIPassword': UIPassword,
-    'UpdateCompartmentDetails': UpdateCompartmentDetails,
-    'UpdateGroupDetails': UpdateGroupDetails,
-    'UpdatePolicyDetails': UpdatePolicyDetails,
-    'UpdateStateDetails': UpdateStateDetails,
-    'UpdateSwiftPasswordDetails': UpdateSwiftPasswordDetails,
-    'UpdateUserDetails': UpdateUserDetails,
-    'User': User,
-    'UserGroupMembership': UserGroupMembership,
+    "AddUserToGroupDetails": AddUserToGroupDetails,
+    "ApiKey": ApiKey,
+    "AvailabilityDomain": AvailabilityDomain,
+    "Compartment": Compartment,
+    "CreateApiKeyDetails": CreateApiKeyDetails,
+    "CreateCompartmentDetails": CreateCompartmentDetails,
+    "CreateGroupDetails": CreateGroupDetails,
+    "CreatePolicyDetails": CreatePolicyDetails,
+    "CreateSwiftPasswordDetails": CreateSwiftPasswordDetails,
+    "CreateUserDetails": CreateUserDetails,
+    "Error": Error,
+    "Group": Group,
+    "Policy": Policy,
+    "SwiftPassword": SwiftPassword,
+    "UIPassword": UIPassword,
+    "UpdateCompartmentDetails": UpdateCompartmentDetails,
+    "UpdateGroupDetails": UpdateGroupDetails,
+    "UpdatePolicyDetails": UpdatePolicyDetails,
+    "UpdateStateDetails": UpdateStateDetails,
+    "UpdateSwiftPasswordDetails": UpdateSwiftPasswordDetails,
+    "UpdateUserDetails": UpdateUserDetails,
+    "User": User,
+    "UserGroupMembership": UserGroupMembership
 }

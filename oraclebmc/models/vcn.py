@@ -20,8 +20,9 @@
 #
 #     Ref: https://github.com/swagger-api/swagger-codegen
 
-from pprint import pformat
-from six import iteritems
+
+from ..util import formatted_flat_dict
+
 
 class Vcn(object):
 
@@ -60,7 +61,6 @@ class Vcn(object):
         self._id = None
         self._lifecycle_state = None
         self._time_created = None
-
 
     @property
     def cidr_block(self):
@@ -110,7 +110,7 @@ class Vcn(object):
     def default_dhcp_options_id(self):
         """
         Gets the default_dhcp_options_id of this Vcn.
-        The OCID for the VCN's default set of DHCP options.\n
+        The OCID for the VCN's default set of DHCP options.
 
         :return: The default_dhcp_options_id of this Vcn.
         :rtype: str
@@ -121,7 +121,7 @@ class Vcn(object):
     def default_dhcp_options_id(self, default_dhcp_options_id):
         """
         Sets the default_dhcp_options_id of this Vcn.
-        The OCID for the VCN's default set of DHCP options.\n
+        The OCID for the VCN's default set of DHCP options.
 
         :param default_dhcp_options_id: The default_dhcp_options_id of this Vcn.
         :type: str
@@ -176,7 +176,7 @@ class Vcn(object):
     def display_name(self):
         """
         Gets the display_name of this Vcn.
-        A user-friendly name. Does not have to be unique, and it's not changeable.\n
+        A user-friendly name. Does not have to be unique, and it's not changeable.
 
         :return: The display_name of this Vcn.
         :rtype: str
@@ -187,7 +187,7 @@ class Vcn(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Vcn.
-        A user-friendly name. Does not have to be unique, and it's not changeable.\n
+        A user-friendly name. Does not have to be unique, and it's not changeable.
 
         :param display_name: The display_name of this Vcn.
         :type: str
@@ -266,56 +266,14 @@ class Vcn(object):
         """
         self._time_created = time_created
 
-    def to_dict(self):
-        """
-        Returns the model properties as a dict
-        """
-        result = {}
-
-        for attr, _ in iteritems(self.swagger_types):
-            value = getattr(self, attr)
-            if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
-            elif hasattr(value, "to_dict"):
-                result[attr] = value.to_dict()
-            elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
-            else:
-                result[attr] = value
-
-        return result
-
-    def to_str(self):
-        """
-        Returns the string representation of the model
-        """
-        return pformat(self.to_dict())
-
     def __repr__(self):
-        """
-        For `print` and `pprint`
-        """
-        return self.to_str()
+        return formatted_flat_dict(self)
 
     def __eq__(self, other):
-        """
-        Returns true if objects are equal
-        """
         if other is None:
             return False
 
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):
-        """
-        Returns true if objects are not equal
-        """
         return not self == other
-

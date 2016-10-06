@@ -20,8 +20,9 @@
 #
 #     Ref: https://github.com/swagger-api/swagger-codegen
 
-from pprint import pformat
-from six import iteritems
+
+from ..util import formatted_flat_dict
+
 
 class VolumeBackup(object):
 
@@ -60,7 +61,6 @@ class VolumeBackup(object):
         self._time_request_received = None
         self._unique_size_in_mbs = None
         self._volume_id = None
-
 
     @property
     def compartment_id(self):
@@ -160,7 +160,7 @@ class VolumeBackup(object):
     def size_in_m_bs(self):
         """
         Gets the size_in_m_bs of this VolumeBackup.
-        The size of the volume, in MBs.\n
+        The size of the volume, in MBs.
 
         :return: The size_in_m_bs of this VolumeBackup.
         :rtype: int
@@ -171,7 +171,7 @@ class VolumeBackup(object):
     def size_in_m_bs(self, size_in_m_bs):
         """
         Sets the size_in_m_bs of this VolumeBackup.
-        The size of the volume, in MBs.\n
+        The size of the volume, in MBs.
 
         :param size_in_m_bs: The size_in_m_bs of this VolumeBackup.
         :type: int
@@ -182,7 +182,8 @@ class VolumeBackup(object):
     def time_created(self):
         """
         Gets the time_created of this VolumeBackup.
-        The date and time the volume backup was created. This is the time the actual point-in-time image\nof the volume data was taken. Format defined by RFC3339.\n
+        The date and time the volume backup was created. This is the time the actual point-in-time image
+        of the volume data was taken. Format defined by RFC3339.
 
         :return: The time_created of this VolumeBackup.
         :rtype: datetime
@@ -193,7 +194,8 @@ class VolumeBackup(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this VolumeBackup.
-        The date and time the volume backup was created. This is the time the actual point-in-time image\nof the volume data was taken. Format defined by RFC3339.\n
+        The date and time the volume backup was created. This is the time the actual point-in-time image
+        of the volume data was taken. Format defined by RFC3339.
 
         :param time_created: The time_created of this VolumeBackup.
         :type: datetime
@@ -204,7 +206,7 @@ class VolumeBackup(object):
     def time_request_received(self):
         """
         Gets the time_request_received of this VolumeBackup.
-        The date and time the request to create the volume backup was received. Format defined by RFC3339.\n
+        The date and time the request to create the volume backup was received. Format defined by RFC3339.
 
         :return: The time_request_received of this VolumeBackup.
         :rtype: datetime
@@ -215,7 +217,7 @@ class VolumeBackup(object):
     def time_request_received(self, time_request_received):
         """
         Sets the time_request_received of this VolumeBackup.
-        The date and time the request to create the volume backup was received. Format defined by RFC3339.\n
+        The date and time the request to create the volume backup was received. Format defined by RFC3339.
 
         :param time_request_received: The time_request_received of this VolumeBackup.
         :type: datetime
@@ -226,7 +228,8 @@ class VolumeBackup(object):
     def unique_size_in_mbs(self):
         """
         Gets the unique_size_in_mbs of this VolumeBackup.
-        The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space\nconsumed on the volume and whether the backup is full or incremental.\n
+        The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space
+        consumed on the volume and whether the backup is full or incremental.
 
         :return: The unique_size_in_mbs of this VolumeBackup.
         :rtype: int
@@ -237,7 +240,8 @@ class VolumeBackup(object):
     def unique_size_in_mbs(self, unique_size_in_mbs):
         """
         Sets the unique_size_in_mbs of this VolumeBackup.
-        The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space\nconsumed on the volume and whether the backup is full or incremental.\n
+        The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space
+        consumed on the volume and whether the backup is full or incremental.
 
         :param unique_size_in_mbs: The unique_size_in_mbs of this VolumeBackup.
         :type: int
@@ -266,56 +270,14 @@ class VolumeBackup(object):
         """
         self._volume_id = volume_id
 
-    def to_dict(self):
-        """
-        Returns the model properties as a dict
-        """
-        result = {}
-
-        for attr, _ in iteritems(self.swagger_types):
-            value = getattr(self, attr)
-            if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
-            elif hasattr(value, "to_dict"):
-                result[attr] = value.to_dict()
-            elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
-            else:
-                result[attr] = value
-
-        return result
-
-    def to_str(self):
-        """
-        Returns the string representation of the model
-        """
-        return pformat(self.to_dict())
-
     def __repr__(self):
-        """
-        For `print` and `pprint`
-        """
-        return self.to_str()
+        return formatted_flat_dict(self)
 
     def __eq__(self, other):
-        """
-        Returns true if objects are equal
-        """
         if other is None:
             return False
 
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):
-        """
-        Returns true if objects are not equal
-        """
         return not self == other
-

@@ -20,8 +20,9 @@
 #
 #     Ref: https://github.com/swagger-api/swagger-codegen
 
-from pprint import pformat
-from six import iteritems
+
+from ..util import formatted_flat_dict
+
 
 class EgressSecurityRule(object):
 
@@ -49,12 +50,12 @@ class EgressSecurityRule(object):
         self._tcp_options = None
         self._udp_options = None
 
-
     @property
     def destination(self):
         """
         Gets the destination of this EgressSecurityRule.
-        The destination CIDR block for the egress rule. This is the range of IP addresses that a\npacket originating from the instance can go to.\n
+        The destination CIDR block for the egress rule. This is the range of IP addresses that a
+        packet originating from the instance can go to.
 
         :return: The destination of this EgressSecurityRule.
         :rtype: str
@@ -65,7 +66,8 @@ class EgressSecurityRule(object):
     def destination(self, destination):
         """
         Sets the destination of this EgressSecurityRule.
-        The destination CIDR block for the egress rule. This is the range of IP addresses that a\npacket originating from the instance can go to.\n
+        The destination CIDR block for the egress rule. This is the range of IP addresses that a
+        packet originating from the instance can go to.
 
         :param destination: The destination of this EgressSecurityRule.
         :type: str
@@ -76,7 +78,14 @@ class EgressSecurityRule(object):
     def icmp_options(self):
         """
         Gets the icmp_options of this EgressSecurityRule.
-        Optional and valid only for ICMP. Use to specify a particular ICMP type and code\nas defined in\n[ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml).\nIf you specify ICMP as the protocol but omit this object, then all ICMP types and\ncodes are allowed. If you do provide this object, the type is required and the code is optional.\nTo enable MTU negotiation for ingress internet traffic, make sure to allow type 3 (\"Destination\nUnreachable\") code 4 (\"Fragmentation Needed and Don't Fragment was Set\"). If you need to specify\nmultiple codes for a single type, create a separate security list rule for each.\n
+        Optional and valid only for ICMP. Use to specify a particular ICMP type and code
+        as defined in
+        [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml).
+        If you specify ICMP as the protocol but omit this object, then all ICMP types and
+        codes are allowed. If you do provide this object, the type is required and the code is optional.
+        To enable MTU negotiation for ingress internet traffic, make sure to allow type 3 (\"Destination
+        Unreachable\") code 4 (\"Fragmentation Needed and Don't Fragment was Set\"). If you need to specify
+        multiple codes for a single type, create a separate security list rule for each.
 
         :return: The icmp_options of this EgressSecurityRule.
         :rtype: IcmpOptions
@@ -87,7 +96,14 @@ class EgressSecurityRule(object):
     def icmp_options(self, icmp_options):
         """
         Sets the icmp_options of this EgressSecurityRule.
-        Optional and valid only for ICMP. Use to specify a particular ICMP type and code\nas defined in\n[ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml).\nIf you specify ICMP as the protocol but omit this object, then all ICMP types and\ncodes are allowed. If you do provide this object, the type is required and the code is optional.\nTo enable MTU negotiation for ingress internet traffic, make sure to allow type 3 (\"Destination\nUnreachable\") code 4 (\"Fragmentation Needed and Don't Fragment was Set\"). If you need to specify\nmultiple codes for a single type, create a separate security list rule for each.\n
+        Optional and valid only for ICMP. Use to specify a particular ICMP type and code
+        as defined in
+        [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml).
+        If you specify ICMP as the protocol but omit this object, then all ICMP types and
+        codes are allowed. If you do provide this object, the type is required and the code is optional.
+        To enable MTU negotiation for ingress internet traffic, make sure to allow type 3 (\"Destination
+        Unreachable\") code 4 (\"Fragmentation Needed and Don't Fragment was Set\"). If you need to specify
+        multiple codes for a single type, create a separate security list rule for each.
 
         :param icmp_options: The icmp_options of this EgressSecurityRule.
         :type: IcmpOptions
@@ -98,7 +114,10 @@ class EgressSecurityRule(object):
     def protocol(self):
         """
         Gets the protocol of this EgressSecurityRule.
-        The transport protocol. Specify either `all` or an IPv4 protocol number as\ndefined in\n[Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml).\nOptions are supported only for ICMP (\"1\"), TCP (\"6\"), and UDP (\"17\").\n
+        The transport protocol. Specify either `all` or an IPv4 protocol number as
+        defined in
+        [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml).
+        Options are supported only for ICMP (\"1\"), TCP (\"6\"), and UDP (\"17\").
 
         :return: The protocol of this EgressSecurityRule.
         :rtype: str
@@ -109,7 +128,10 @@ class EgressSecurityRule(object):
     def protocol(self, protocol):
         """
         Sets the protocol of this EgressSecurityRule.
-        The transport protocol. Specify either `all` or an IPv4 protocol number as\ndefined in\n[Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml).\nOptions are supported only for ICMP (\"1\"), TCP (\"6\"), and UDP (\"17\").\n
+        The transport protocol. Specify either `all` or an IPv4 protocol number as
+        defined in
+        [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml).
+        Options are supported only for ICMP (\"1\"), TCP (\"6\"), and UDP (\"17\").
 
         :param protocol: The protocol of this EgressSecurityRule.
         :type: str
@@ -120,7 +142,8 @@ class EgressSecurityRule(object):
     def tcp_options(self):
         """
         Gets the tcp_options of this EgressSecurityRule.
-        Optional and valid only for TCP. Use to specify particular destination ports for TCP rules.\nIf you specify TCP as the protocol but omit this object, then all destination ports are allowed.\n
+        Optional and valid only for TCP. Use to specify particular destination ports for TCP rules.
+        If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
 
         :return: The tcp_options of this EgressSecurityRule.
         :rtype: TcpOptions
@@ -131,7 +154,8 @@ class EgressSecurityRule(object):
     def tcp_options(self, tcp_options):
         """
         Sets the tcp_options of this EgressSecurityRule.
-        Optional and valid only for TCP. Use to specify particular destination ports for TCP rules.\nIf you specify TCP as the protocol but omit this object, then all destination ports are allowed.\n
+        Optional and valid only for TCP. Use to specify particular destination ports for TCP rules.
+        If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
 
         :param tcp_options: The tcp_options of this EgressSecurityRule.
         :type: TcpOptions
@@ -142,7 +166,8 @@ class EgressSecurityRule(object):
     def udp_options(self):
         """
         Gets the udp_options of this EgressSecurityRule.
-        Optional and valid only for UDP. Use to specify particular destination ports for UDP rules.\nIf you specify UDP as the protocol but omit this object, then all destination ports are allowed.\n
+        Optional and valid only for UDP. Use to specify particular destination ports for UDP rules.
+        If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
 
         :return: The udp_options of this EgressSecurityRule.
         :rtype: UdpOptions
@@ -153,63 +178,22 @@ class EgressSecurityRule(object):
     def udp_options(self, udp_options):
         """
         Sets the udp_options of this EgressSecurityRule.
-        Optional and valid only for UDP. Use to specify particular destination ports for UDP rules.\nIf you specify UDP as the protocol but omit this object, then all destination ports are allowed.\n
+        Optional and valid only for UDP. Use to specify particular destination ports for UDP rules.
+        If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
 
         :param udp_options: The udp_options of this EgressSecurityRule.
         :type: UdpOptions
         """
         self._udp_options = udp_options
 
-    def to_dict(self):
-        """
-        Returns the model properties as a dict
-        """
-        result = {}
-
-        for attr, _ in iteritems(self.swagger_types):
-            value = getattr(self, attr)
-            if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
-            elif hasattr(value, "to_dict"):
-                result[attr] = value.to_dict()
-            elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
-            else:
-                result[attr] = value
-
-        return result
-
-    def to_str(self):
-        """
-        Returns the string representation of the model
-        """
-        return pformat(self.to_dict())
-
     def __repr__(self):
-        """
-        For `print` and `pprint`
-        """
-        return self.to_str()
+        return formatted_flat_dict(self)
 
     def __eq__(self, other):
-        """
-        Returns true if objects are equal
-        """
         if other is None:
             return False
 
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):
-        """
-        Returns true if objects are not equal
-        """
         return not self == other
-

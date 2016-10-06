@@ -20,9 +20,9 @@
 #
 #     Ref: https://github.com/swagger-api/swagger-codegen
 
-from pprint import pformat
-from six import iteritems
 from .dhcp_option import DhcpOption
+from ..util import formatted_flat_dict
+
 
 class DhcpDnsOption(DhcpOption):
 
@@ -43,14 +43,14 @@ class DhcpDnsOption(DhcpOption):
         self._type = None
         self._custom_dns_servers = None
         self._server_type = None
-
         self._type = 'DomainNameServer'
 
     @property
     def custom_dns_servers(self):
         """
         Gets the custom_dns_servers of this DhcpDnsOption.
-        If you set `serverType` to `CustomDnsServer`, specify the IP address\nof at least one DNS server of your choice (three maximum).\n
+        If you set `serverType` to `CustomDnsServer`, specify the IP address
+        of at least one DNS server of your choice (three maximum).
 
         :return: The custom_dns_servers of this DhcpDnsOption.
         :rtype: list[str]
@@ -61,7 +61,8 @@ class DhcpDnsOption(DhcpOption):
     def custom_dns_servers(self, custom_dns_servers):
         """
         Sets the custom_dns_servers of this DhcpDnsOption.
-        If you set `serverType` to `CustomDnsServer`, specify the IP address\nof at least one DNS server of your choice (three maximum).\n
+        If you set `serverType` to `CustomDnsServer`, specify the IP address
+        of at least one DNS server of your choice (three maximum).
 
         :param custom_dns_servers: The custom_dns_servers of this DhcpDnsOption.
         :type: list[str]
@@ -72,7 +73,12 @@ class DhcpDnsOption(DhcpOption):
     def server_type(self):
         """
         Gets the server_type of this DhcpDnsOption.
-        - *VcnLocal:* Reserved for future use.\n- *VcnLocalPlusInternet:* Instances can resolve only internet host\nnames (no Internet Gateway is required). The instances still need to use\ntheir IP addresses to communicate with each other. This is the default\nvalue in the default set of DHCP options in the VCN.\n- *CustomDnsServer:* Instances use a DNS server of your choice (three maximum).\n
+        - *VcnLocal:* Reserved for future use.
+        - *VcnLocalPlusInternet:* Instances can resolve only internet host
+        names (no Internet Gateway is required). The instances still need to use
+        their IP addresses to communicate with each other. This is the default
+        value in the default set of DHCP options in the VCN.
+        - *CustomDnsServer:* Instances use a DNS server of your choice (three maximum).
 
         :return: The server_type of this DhcpDnsOption.
         :rtype: str
@@ -83,7 +89,12 @@ class DhcpDnsOption(DhcpOption):
     def server_type(self, server_type):
         """
         Sets the server_type of this DhcpDnsOption.
-        - *VcnLocal:* Reserved for future use.\n- *VcnLocalPlusInternet:* Instances can resolve only internet host\nnames (no Internet Gateway is required). The instances still need to use\ntheir IP addresses to communicate with each other. This is the default\nvalue in the default set of DHCP options in the VCN.\n- *CustomDnsServer:* Instances use a DNS server of your choice (three maximum).\n
+        - *VcnLocal:* Reserved for future use.
+        - *VcnLocalPlusInternet:* Instances can resolve only internet host
+        names (no Internet Gateway is required). The instances still need to use
+        their IP addresses to communicate with each other. This is the default
+        value in the default set of DHCP options in the VCN.
+        - *CustomDnsServer:* Instances use a DNS server of your choice (three maximum).
 
         :param server_type: The server_type of this DhcpDnsOption.
         :type: str
@@ -96,56 +107,14 @@ class DhcpDnsOption(DhcpOption):
             )
         self._server_type = server_type
 
-    def to_dict(self):
-        """
-        Returns the model properties as a dict
-        """
-        result = {}
-
-        for attr, _ in iteritems(self.swagger_types):
-            value = getattr(self, attr)
-            if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
-            elif hasattr(value, "to_dict"):
-                result[attr] = value.to_dict()
-            elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
-            else:
-                result[attr] = value
-
-        return result
-
-    def to_str(self):
-        """
-        Returns the string representation of the model
-        """
-        return pformat(self.to_dict())
-
     def __repr__(self):
-        """
-        For `print` and `pprint`
-        """
-        return self.to_str()
+        return formatted_flat_dict(self)
 
     def __eq__(self, other):
-        """
-        Returns true if objects are equal
-        """
         if other is None:
             return False
 
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):
-        """
-        Returns true if objects are not equal
-        """
         return not self == other
-

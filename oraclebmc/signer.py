@@ -1,6 +1,7 @@
 import base64
 import email.utils
 import hashlib
+import io
 
 import httpsig_cffi.sign
 import requests.auth
@@ -52,9 +53,18 @@ class Signer(requests.auth.AuthBase):
             # Requests with a body need to send content-type,
             # content-length, and x-content-sha256
             if sign_body:
+                # TODO: does not handle streaming bodies (files, stdin)
                 body = request.body or ""
+                try:
+                    body = body.encode("utf-8")
+                except UnicodeDecodeError:
+                    # PY2 - str is already encoded byte string
+                    pass
+                except AttributeError:
+                    # PY3 - body was already bytes
+                    pass
                 if "x-content-sha256" not in request.headers:
-                    m = hashlib.sha256(body.encode("utf-8"))
+                    m = hashlib.sha256(body)
                     base64digest = base64.b64encode(m.digest())
                     base64string = base64digest.decode("utf-8")
                     request.headers["x-content-sha256"] = base64string
@@ -63,7 +73,7 @@ class Signer(requests.auth.AuthBase):
     @property
     def private_key(self):
         if self._private_key is None:
-            with open(self.private_key_file_location) as f:
+            with io.open(self.private_key_file_location, mode="r") as f:
                 self._private_key = f.read().strip()
         return self._private_key
 

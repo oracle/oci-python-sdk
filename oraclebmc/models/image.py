@@ -20,8 +20,9 @@
 #
 #     Ref: https://github.com/swagger-api/swagger-codegen
 
-from pprint import pformat
-from six import iteritems
+
+from ..util import formatted_flat_dict
+
 
 class Image(object):
 
@@ -61,7 +62,6 @@ class Image(object):
         self._operating_system_version = None
         self._time_created = None
 
-
     @property
     def base_image_id(self):
         """
@@ -88,7 +88,7 @@ class Image(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this Image.
-        The OCID of the compartment containing the instance you want to use as the basis for the image.\n
+        The OCID of the compartment containing the instance you want to use as the basis for the image.
 
         :return: The compartment_id of this Image.
         :rtype: str
@@ -99,7 +99,7 @@ class Image(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this Image.
-        The OCID of the compartment containing the instance you want to use as the basis for the image.\n
+        The OCID of the compartment containing the instance you want to use as the basis for the image.
 
         :param compartment_id: The compartment_id of this Image.
         :type: str
@@ -110,7 +110,8 @@ class Image(object):
     def create_image_allowed(self):
         """
         Gets the create_image_allowed of this Image.
-        Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.\n\nExample: `true`\n
+        Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.
+        Example: `true`
 
         :return: The create_image_allowed of this Image.
         :rtype: bool
@@ -121,7 +122,8 @@ class Image(object):
     def create_image_allowed(self, create_image_allowed):
         """
         Sets the create_image_allowed of this Image.
-        Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.\n\nExample: `true`\n
+        Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.
+        Example: `true`
 
         :param create_image_allowed: The create_image_allowed of this Image.
         :type: bool
@@ -132,7 +134,9 @@ class Image(object):
     def display_name(self):
         """
         Gets the display_name of this Image.
-        A user-friendly name for the image. It does not have to be unique, and it's changeable.\nYou cannot use an Oracle-provided image name as a custom image name.\n\nExample: `My custom Oracle Linux image`\n
+        A user-friendly name for the image. It does not have to be unique, and it's changeable.
+        You cannot use an Oracle-provided image name as a custom image name.
+        Example: `My custom Oracle Linux image`
 
         :return: The display_name of this Image.
         :rtype: str
@@ -143,7 +147,9 @@ class Image(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Image.
-        A user-friendly name for the image. It does not have to be unique, and it's changeable.\nYou cannot use an Oracle-provided image name as a custom image name.\n\nExample: `My custom Oracle Linux image`\n
+        A user-friendly name for the image. It does not have to be unique, and it's changeable.
+        You cannot use an Oracle-provided image name as a custom image name.
+        Example: `My custom Oracle Linux image`
 
         :param display_name: The display_name of this Image.
         :type: str
@@ -177,7 +183,6 @@ class Image(object):
         """
         Gets the lifecycle_state of this Image.
 
-
         :return: The lifecycle_state of this Image.
         :rtype: str
         """
@@ -187,7 +192,6 @@ class Image(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Image.
-
 
         :param lifecycle_state: The lifecycle_state of this Image.
         :type: str
@@ -204,7 +208,8 @@ class Image(object):
     def operating_system(self):
         """
         Gets the operating_system of this Image.
-        The image's operating system.\n\nExample: `Oracle Linux`\n
+        The image's operating system.
+        Example: `Oracle Linux`
 
         :return: The operating_system of this Image.
         :rtype: str
@@ -215,7 +220,8 @@ class Image(object):
     def operating_system(self, operating_system):
         """
         Sets the operating_system of this Image.
-        The image's operating system.\n\nExample: `Oracle Linux`\n
+        The image's operating system.
+        Example: `Oracle Linux`
 
         :param operating_system: The operating_system of this Image.
         :type: str
@@ -226,7 +232,8 @@ class Image(object):
     def operating_system_version(self):
         """
         Gets the operating_system_version of this Image.
-        The image's operating system version.\n\nExample: `7.2`\n
+        The image's operating system version.
+        Example: `7.2`
 
         :return: The operating_system_version of this Image.
         :rtype: str
@@ -237,7 +244,8 @@ class Image(object):
     def operating_system_version(self, operating_system_version):
         """
         Sets the operating_system_version of this Image.
-        The image's operating system version.\n\nExample: `7.2`\n
+        The image's operating system version.
+        Example: `7.2`
 
         :param operating_system_version: The operating_system_version of this Image.
         :type: str
@@ -248,7 +256,8 @@ class Image(object):
     def time_created(self):
         """
         Gets the time_created of this Image.
-        The date and time the image was created, in the format defined by RFC3339.\n\nExample: `2016-08-25T21:10:29.600Z`\n
+        The date and time the image was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :return: The time_created of this Image.
         :rtype: datetime
@@ -259,63 +268,22 @@ class Image(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Image.
-        The date and time the image was created, in the format defined by RFC3339.\n\nExample: `2016-08-25T21:10:29.600Z`\n
+        The date and time the image was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :param time_created: The time_created of this Image.
         :type: datetime
         """
         self._time_created = time_created
 
-    def to_dict(self):
-        """
-        Returns the model properties as a dict
-        """
-        result = {}
-
-        for attr, _ in iteritems(self.swagger_types):
-            value = getattr(self, attr)
-            if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
-            elif hasattr(value, "to_dict"):
-                result[attr] = value.to_dict()
-            elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
-            else:
-                result[attr] = value
-
-        return result
-
-    def to_str(self):
-        """
-        Returns the string representation of the model
-        """
-        return pformat(self.to_dict())
-
     def __repr__(self):
-        """
-        For `print` and `pprint`
-        """
-        return self.to_str()
+        return formatted_flat_dict(self)
 
     def __eq__(self, other):
-        """
-        Returns true if objects are equal
-        """
         if other is None:
             return False
 
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):
-        """
-        Returns true if objects are not equal
-        """
         return not self == other
-

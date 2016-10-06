@@ -20,8 +20,9 @@
 #
 #     Ref: https://github.com/swagger-api/swagger-codegen
 
-from pprint import pformat
-from six import iteritems
+
+from ..util import formatted_flat_dict
+
 
 class CreateSubnetDetails(object):
 
@@ -57,7 +58,6 @@ class CreateSubnetDetails(object):
         self._route_table_id = None
         self._security_list_ids = None
         self._vcn_id = None
-
 
     @property
     def availability_domain(self):
@@ -129,7 +129,8 @@ class CreateSubnetDetails(object):
     def dhcp_options_id(self):
         """
         Gets the dhcp_options_id of this CreateSubnetDetails.
-        The OCID of the set of DHCP options the subnet will use. If you don't\nprovide a value, the subnet will use the VCN's default set of DHCP options.\n
+        The OCID of the set of DHCP options the subnet will use. If you don't
+        provide a value, the subnet will use the VCN's default set of DHCP options.
 
         :return: The dhcp_options_id of this CreateSubnetDetails.
         :rtype: str
@@ -140,7 +141,8 @@ class CreateSubnetDetails(object):
     def dhcp_options_id(self, dhcp_options_id):
         """
         Sets the dhcp_options_id of this CreateSubnetDetails.
-        The OCID of the set of DHCP options the subnet will use. If you don't\nprovide a value, the subnet will use the VCN's default set of DHCP options.\n
+        The OCID of the set of DHCP options the subnet will use. If you don't
+        provide a value, the subnet will use the VCN's default set of DHCP options.
 
         :param dhcp_options_id: The dhcp_options_id of this CreateSubnetDetails.
         :type: str
@@ -151,7 +153,7 @@ class CreateSubnetDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateSubnetDetails.
-        A user-friendly name. Does not have to be unique, and it's not changeable.\n
+        A user-friendly name. Does not have to be unique, and it's not changeable.
 
         :return: The display_name of this CreateSubnetDetails.
         :rtype: str
@@ -162,7 +164,7 @@ class CreateSubnetDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateSubnetDetails.
-        A user-friendly name. Does not have to be unique, and it's not changeable.\n
+        A user-friendly name. Does not have to be unique, and it's not changeable.
 
         :param display_name: The display_name of this CreateSubnetDetails.
         :type: str
@@ -173,7 +175,8 @@ class CreateSubnetDetails(object):
     def route_table_id(self):
         """
         Gets the route_table_id of this CreateSubnetDetails.
-        The OCID of the route table the subnet will use. If you don't provide a value,\nthe subnet will use the VCN's default route table.\n
+        The OCID of the route table the subnet will use. If you don't provide a value,
+        the subnet will use the VCN's default route table.
 
         :return: The route_table_id of this CreateSubnetDetails.
         :rtype: str
@@ -184,7 +187,8 @@ class CreateSubnetDetails(object):
     def route_table_id(self, route_table_id):
         """
         Sets the route_table_id of this CreateSubnetDetails.
-        The OCID of the route table the subnet will use. If you don't provide a value,\nthe subnet will use the VCN's default route table.\n
+        The OCID of the route table the subnet will use. If you don't provide a value,
+        the subnet will use the VCN's default route table.
 
         :param route_table_id: The route_table_id of this CreateSubnetDetails.
         :type: str
@@ -195,7 +199,10 @@ class CreateSubnetDetails(object):
     def security_list_ids(self):
         """
         Gets the security_list_ids of this CreateSubnetDetails.
-        OCIDs for the security lists to associate with the subnet. If you don't\nprovide a value, the VCN's default security list will be associated with\nthe subnet. Remember that security lists are associated at the subnet\nlevel, but the rules are applied to the individual VNICs in the subnet.\n
+        OCIDs for the security lists to associate with the subnet. If you don't
+        provide a value, the VCN's default security list will be associated with
+        the subnet. Remember that security lists are associated at the subnet
+        level, but the rules are applied to the individual VNICs in the subnet.
 
         :return: The security_list_ids of this CreateSubnetDetails.
         :rtype: list[str]
@@ -206,7 +213,10 @@ class CreateSubnetDetails(object):
     def security_list_ids(self, security_list_ids):
         """
         Sets the security_list_ids of this CreateSubnetDetails.
-        OCIDs for the security lists to associate with the subnet. If you don't\nprovide a value, the VCN's default security list will be associated with\nthe subnet. Remember that security lists are associated at the subnet\nlevel, but the rules are applied to the individual VNICs in the subnet.\n
+        OCIDs for the security lists to associate with the subnet. If you don't
+        provide a value, the VCN's default security list will be associated with
+        the subnet. Remember that security lists are associated at the subnet
+        level, but the rules are applied to the individual VNICs in the subnet.
 
         :param security_list_ids: The security_list_ids of this CreateSubnetDetails.
         :type: list[str]
@@ -235,56 +245,14 @@ class CreateSubnetDetails(object):
         """
         self._vcn_id = vcn_id
 
-    def to_dict(self):
-        """
-        Returns the model properties as a dict
-        """
-        result = {}
-
-        for attr, _ in iteritems(self.swagger_types):
-            value = getattr(self, attr)
-            if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
-            elif hasattr(value, "to_dict"):
-                result[attr] = value.to_dict()
-            elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
-            else:
-                result[attr] = value
-
-        return result
-
-    def to_str(self):
-        """
-        Returns the string representation of the model
-        """
-        return pformat(self.to_dict())
-
     def __repr__(self):
-        """
-        For `print` and `pprint`
-        """
-        return self.to_str()
+        return formatted_flat_dict(self)
 
     def __eq__(self, other):
-        """
-        Returns true if objects are equal
-        """
         if other is None:
             return False
 
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):
-        """
-        Returns true if objects are not equal
-        """
         return not self == other
-

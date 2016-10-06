@@ -20,8 +20,9 @@
 #
 #     Ref: https://github.com/swagger-api/swagger-codegen
 
-from pprint import pformat
-from six import iteritems
+
+from ..util import formatted_flat_dict
+
 
 class UpdatePolicyDetails(object):
 
@@ -42,7 +43,6 @@ class UpdatePolicyDetails(object):
         self._description = None
         self._statements = None
         self._version_date = None
-
 
     @property
     def description(self):
@@ -70,7 +70,8 @@ class UpdatePolicyDetails(object):
     def statements(self):
         """
         Gets the statements of this UpdatePolicyDetails.
-        An array of policy statements written in the policy language. See\n[Policies](/Content/Identity/Concepts/policies.htm).\n
+        An array of policy statements written in the policy language. See
+        [Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policies.htm).
 
         :return: The statements of this UpdatePolicyDetails.
         :rtype: list[str]
@@ -81,7 +82,8 @@ class UpdatePolicyDetails(object):
     def statements(self, statements):
         """
         Sets the statements of this UpdatePolicyDetails.
-        An array of policy statements written in the policy language. See\n[Policies](/Content/Identity/Concepts/policies.htm).\n
+        An array of policy statements written in the policy language. See
+        [Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policies.htm).
 
         :param statements: The statements of this UpdatePolicyDetails.
         :type: list[str]
@@ -92,7 +94,9 @@ class UpdatePolicyDetails(object):
     def version_date(self):
         """
         Gets the version_date of this UpdatePolicyDetails.
-        The version of the policy. If null or set to an empty string, when a request comes in for authorization, the\npolicy will be evaluated according to the current behavior of the services at that moment. If set to a particular\ndate (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date.\n
+        The version of the policy. If null or set to an empty string, when a request comes in for authorization, the
+        policy will be evaluated according to the current behavior of the services at that moment. If set to a particular
+        date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date.
 
         :return: The version_date of this UpdatePolicyDetails.
         :rtype: datetime
@@ -103,63 +107,23 @@ class UpdatePolicyDetails(object):
     def version_date(self, version_date):
         """
         Sets the version_date of this UpdatePolicyDetails.
-        The version of the policy. If null or set to an empty string, when a request comes in for authorization, the\npolicy will be evaluated according to the current behavior of the services at that moment. If set to a particular\ndate (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date.\n
+        The version of the policy. If null or set to an empty string, when a request comes in for authorization, the
+        policy will be evaluated according to the current behavior of the services at that moment. If set to a particular
+        date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date.
 
         :param version_date: The version_date of this UpdatePolicyDetails.
         :type: datetime
         """
         self._version_date = version_date
 
-    def to_dict(self):
-        """
-        Returns the model properties as a dict
-        """
-        result = {}
-
-        for attr, _ in iteritems(self.swagger_types):
-            value = getattr(self, attr)
-            if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
-            elif hasattr(value, "to_dict"):
-                result[attr] = value.to_dict()
-            elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
-            else:
-                result[attr] = value
-
-        return result
-
-    def to_str(self):
-        """
-        Returns the string representation of the model
-        """
-        return pformat(self.to_dict())
-
     def __repr__(self):
-        """
-        For `print` and `pprint`
-        """
-        return self.to_str()
+        return formatted_flat_dict(self)
 
     def __eq__(self, other):
-        """
-        Returns true if objects are equal
-        """
         if other is None:
             return False
 
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):
-        """
-        Returns true if objects are not equal
-        """
         return not self == other
-

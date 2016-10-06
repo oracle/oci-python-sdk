@@ -22,752 +22,638 @@
 
 from __future__ import absolute_import
 
-# python 2 and python 3 compatibility library
-from six import iteritems
-from io import IOBase
+import six
 
-from ..signer import Signer
 from ..api_client import ApiClient
+from ..signer import Signer
+from ..util import Sentinel
+missing = Sentinel("Missing")
+
 
 class ObjectStorageApi(object):
 
     def __init__(self, config):
         signer = Signer(config.tenancy, config.user, config.fingerprint, config.key_file)
-        self.api_client =  ApiClient(config, signer)
-
+        self.api_client = ApiClient(config, signer)
 
     def create_bucket(self, namespace_name, create_bucket_details, **kwargs):
         """
         CreateBucket
-        Creates a bucket in the given namespace with a bucket name and optional user-defined metadata.\n\nTo use this and other API operations, you must be authorized in an IAM policy. If you're not authorized, \ntalk to an administrator. If you're an admin who needs to write policies to give users access, see \n[Getting Started with Policies](/Content/Identity/Concepts/policygetstarted.htm).\n
+        Create a bucket in the given namespace with a bucket name and optional user-defined metadata.
 
-        :param str namespace_name: The top-level namespace used for the request. (required)
-        :param CreateBucketDetails create_bucket_details: Request object for creating a bucket. (required)
-        :param str opc_client_request_id: The client request ID for tracing
+        :param str namespace_name: (required)
+            The top-level namespace used for the request.
+                :param CreateBucketDetails create_bucket_details: (required)
+            Request object for creating a bucket.
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing
         :return: A Response object with data of type Bucket
         """
+        resource_path = "/n/{namespaceName}/b/"
+        method = "POST"
 
-        all_params = ['namespace_name', 'create_bucket_details', 'opc_client_request_id']
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_bucket got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_bucket" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "namespaceName": namespace_name
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
-        # verify the required parameter 'namespace_name' is set
-        if ('namespace_name' not in params) or (params['namespace_name'] is None):
-            raise ValueError("Missing the required parameter `namespace_name` when calling `create_bucket`")
-        # verify the required parameter 'create_bucket_details' is set
-        if ('create_bucket_details' not in params) or (params['create_bucket_details'] is None):
-            raise ValueError("Missing the required parameter `create_bucket_details` when calling `create_bucket`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        resource_path = '/n/{namespaceName}/b/'
-        path_params = {}
-        if 'namespace_name' in params:
-            path_params['namespaceName'] = params['namespace_name']
-
-        query_params = {}
-
-        header_params = {}
-        if 'opc_client_request_id' in params:
-            header_params['opc-client-request-id'] = params['opc_client_request_id']
-
-        body_params = None
-        if 'create_bucket_details' in params:
-            body_params = params['create_bucket_details']
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_object_storage_api,
-                                            resource_path,
-                                            'POST',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='Bucket')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_object_storage_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=create_bucket_details,
+            response_type="Bucket")
 
     def delete_bucket(self, namespace_name, bucket_name, **kwargs):
         """
         DeleteBucket
-        Deletes a bucket if it is already empty. If the bucket is not empty, use DeleteBucket first.\n
+        Delete a bucket if it is already empty.
 
-        :param str namespace_name: The top-level namespace used for the request. (required)
-        :param str bucket_name: The name of the bucket. (required)
-        :param str if_match: The entity tag to match.
-        :param str opc_client_request_id: The client request ID for tracing
+        :param str namespace_name: (required)
+            The top-level namespace used for the request.
+                :param str bucket_name: (required)
+            The name of the bucket.
+        :param str if_match: (optional)
+            The entity tag to match.
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing
         :return: A Response object with data of type None
         """
+        resource_path = "/n/{namespaceName}/b/{bucketName}/"
+        method = "DELETE"
 
-        all_params = ['namespace_name', 'bucket_name', 'if_match', 'opc_client_request_id']
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match",
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_bucket got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_bucket" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "namespaceName": namespace_name,
+            "bucketName": bucket_name
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
-        # verify the required parameter 'namespace_name' is set
-        if ('namespace_name' not in params) or (params['namespace_name'] is None):
-            raise ValueError("Missing the required parameter `namespace_name` when calling `delete_bucket`")
-        # verify the required parameter 'bucket_name' is set
-        if ('bucket_name' not in params) or (params['bucket_name'] is None):
-            raise ValueError("Missing the required parameter `bucket_name` when calling `delete_bucket`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        resource_path = '/n/{namespaceName}/b/{bucketName}/'
-        path_params = {}
-        if 'namespace_name' in params:
-            path_params['namespaceName'] = params['namespace_name']
-        if 'bucket_name' in params:
-            path_params['bucketName'] = params['bucket_name']
-
-        query_params = {}
-
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-        if 'opc_client_request_id' in params:
-            header_params['opc-client-request-id'] = params['opc_client_request_id']
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_object_storage_api,
-                                            resource_path,
-                                            'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type=None)
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_object_storage_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params)
 
     def delete_object(self, namespace_name, bucket_name, object_name, **kwargs):
         """
         DeleteObject
-        Delete an object.\n
+        Delete an object.
 
-        :param str namespace_name: The top-level namespace used for the request. (required)
-        :param str bucket_name: The name of the bucket. (required)
-        :param str object_name: The name of the object. (required)
-        :param str if_match: The entity tag to match.
-        :param str opc_client_request_id: The client request ID for tracing
+        :param str namespace_name: (required)
+            The top-level namespace used for the request.
+                :param str bucket_name: (required)
+            The name of the bucket.
+                :param str object_name: (required)
+            The name of the object.
+        :param str if_match: (optional)
+            The entity tag to match.
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing
         :return: A Response object with data of type None
         """
+        resource_path = "/n/{namespaceName}/b/{bucketName}/o/{objectName}"
+        method = "DELETE"
 
-        all_params = ['namespace_name', 'bucket_name', 'object_name', 'if_match', 'opc_client_request_id']
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match",
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_object got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_object" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "namespaceName": namespace_name,
+            "bucketName": bucket_name,
+            "objectName": object_name
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
-        # verify the required parameter 'namespace_name' is set
-        if ('namespace_name' not in params) or (params['namespace_name'] is None):
-            raise ValueError("Missing the required parameter `namespace_name` when calling `delete_object`")
-        # verify the required parameter 'bucket_name' is set
-        if ('bucket_name' not in params) or (params['bucket_name'] is None):
-            raise ValueError("Missing the required parameter `bucket_name` when calling `delete_object`")
-        # verify the required parameter 'object_name' is set
-        if ('object_name' not in params) or (params['object_name'] is None):
-            raise ValueError("Missing the required parameter `object_name` when calling `delete_object`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        resource_path = '/n/{namespaceName}/b/{bucketName}/o/{objectName}'
-        path_params = {}
-        if 'namespace_name' in params:
-            path_params['namespaceName'] = params['namespace_name']
-        if 'bucket_name' in params:
-            path_params['bucketName'] = params['bucket_name']
-        if 'object_name' in params:
-            path_params['objectName'] = params['object_name']
-
-        query_params = {}
-
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-        if 'opc_client_request_id' in params:
-            header_params['opc-client-request-id'] = params['opc_client_request_id']
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_object_storage_api,
-                                            resource_path,
-                                            'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type=None)
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_object_storage_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params)
 
     def get_bucket(self, namespace_name, bucket_name, **kwargs):
         """
         GetBucket
-        Gets the current representation of the given bucket in the given namespace.\n
+        Get the current representation of the given bucket in the given namespace.
 
-        :param str namespace_name: The top-level namespace used for the request. (required)
-        :param str bucket_name: The name of the bucket. (required)
-        :param str if_match: The entity tag to match.
-        :param str if_none_match: The entity tag to avoid matching.
-        :param str opc_client_request_id: The client request ID for tracing
+        :param str namespace_name: (required)
+            The top-level namespace used for the request.
+                :param str bucket_name: (required)
+            The name of the bucket.
+        :param str if_match: (optional)
+            The entity tag to match.
+        :param str if_none_match: (optional)
+            The entity tag to avoid matching.
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing
         :return: A Response object with data of type Bucket
         """
+        resource_path = "/n/{namespaceName}/b/{bucketName}/"
+        method = "GET"
 
-        all_params = ['namespace_name', 'bucket_name', 'if_match', 'if_none_match', 'opc_client_request_id']
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match",
+            "if_none_match",
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_bucket got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_bucket" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "namespaceName": namespace_name,
+            "bucketName": bucket_name
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
-        # verify the required parameter 'namespace_name' is set
-        if ('namespace_name' not in params) or (params['namespace_name'] is None):
-            raise ValueError("Missing the required parameter `namespace_name` when calling `get_bucket`")
-        # verify the required parameter 'bucket_name' is set
-        if ('bucket_name' not in params) or (params['bucket_name'] is None):
-            raise ValueError("Missing the required parameter `bucket_name` when calling `get_bucket`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "if-none-match": kwargs.get("if_none_match", missing),
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        resource_path = '/n/{namespaceName}/b/{bucketName}/'
-        path_params = {}
-        if 'namespace_name' in params:
-            path_params['namespaceName'] = params['namespace_name']
-        if 'bucket_name' in params:
-            path_params['bucketName'] = params['bucket_name']
-
-        query_params = {}
-
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-        if 'if_none_match' in params:
-            header_params['if-none-match'] = params['if_none_match']
-        if 'opc_client_request_id' in params:
-            header_params['opc-client-request-id'] = params['opc_client_request_id']
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_object_storage_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='Bucket')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_object_storage_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="Bucket")
 
     def get_namespace(self, **kwargs):
         """
         GetNamespace
-        Get the name of the namespace for the user making the request. An account name must be unique, must start with a\nletter, and can have up to 15 lower case letters and numbers. You cannot use spaces and special characters.\n
+        Get the name of the namespace for the user making the request. An account name must be unique, must start with a
+        letter, and can have up to 15 lower case letters and numbers. You cannot use spaces and special characters.
 
-        :param str opc_client_request_id: The client request ID for tracing
+:param str opc_client_request_id: (optional)
+            The client request ID for tracing
         :return: A Response object with data of type str
         """
+        resource_path = "/n/"
+        method = "GET"
 
-        all_params = ['opc_client_request_id']
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_namespace got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_namespace" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-
-        resource_path = '/n/'
-        path_params = {}
-
-        query_params = {}
-
-        header_params = {}
-        if 'opc_client_request_id' in params:
-            header_params['opc-client-request-id'] = params['opc_client_request_id']
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_object_storage_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='str')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_object_storage_api,
+            resource_path=resource_path,
+            method=method,
+            header_params=header_params,
+            response_type="str")
 
     def get_object(self, namespace_name, bucket_name, object_name, **kwargs):
         """
         GetObject
-        Gets the metadata and body of an object.\n
+        Get the metadata and body of an object.
 
-        :param str namespace_name: The top-level namespace used for the request. (required)
-        :param str bucket_name: The name of the bucket. (required)
-        :param str object_name: The name of the object. (required)
-        :param str if_match: The entity tag to match.
-        :param str if_none_match: The entity tag to avoid matching.
-        :param str opc_client_request_id: The client request ID for tracing
-        :param str range: Optional byte range to fetch. Follows https://tools.ietf.org/html/rfc7233#section-2.1. Note, only one byte range is supported.
+        :param str namespace_name: (required)
+            The top-level namespace used for the request.
+                :param str bucket_name: (required)
+            The name of the bucket.
+                :param str object_name: (required)
+            The name of the object.
+        :param str if_match: (optional)
+            The entity tag to match.
+        :param str if_none_match: (optional)
+            The entity tag to avoid matching.
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing
+        :param str range: (optional)
+            Optional byte range to fetch, follows https://tools.ietf.org/html/rfc7233#section-2.1. Note, only one byte range is supported.
         :return: A Response object with data of type stream
         """
+        resource_path = "/n/{namespaceName}/b/{bucketName}/o/{objectName}"
+        method = "GET"
 
-        all_params = ['namespace_name', 'bucket_name', 'object_name', 'if_match', 'if_none_match', 'opc_client_request_id', 'range']
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match",
+            "if_none_match",
+            "opc_client_request_id",
+            "range"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_object got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_object" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "namespaceName": namespace_name,
+            "bucketName": bucket_name,
+            "objectName": object_name
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
-        # verify the required parameter 'namespace_name' is set
-        if ('namespace_name' not in params) or (params['namespace_name'] is None):
-            raise ValueError("Missing the required parameter `namespace_name` when calling `get_object`")
-        # verify the required parameter 'bucket_name' is set
-        if ('bucket_name' not in params) or (params['bucket_name'] is None):
-            raise ValueError("Missing the required parameter `bucket_name` when calling `get_object`")
-        # verify the required parameter 'object_name' is set
-        if ('object_name' not in params) or (params['object_name'] is None):
-            raise ValueError("Missing the required parameter `object_name` when calling `get_object`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "if-none-match": kwargs.get("if_none_match", missing),
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing),
+            "range": kwargs.get("range", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        resource_path = '/n/{namespaceName}/b/{bucketName}/o/{objectName}'
-        path_params = {}
-        if 'namespace_name' in params:
-            path_params['namespaceName'] = params['namespace_name']
-        if 'bucket_name' in params:
-            path_params['bucketName'] = params['bucket_name']
-        if 'object_name' in params:
-            path_params['objectName'] = params['object_name']
-
-        query_params = {}
-
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-        if 'if_none_match' in params:
-            header_params['if-none-match'] = params['if_none_match']
-        if 'opc_client_request_id' in params:
-            header_params['opc-client-request-id'] = params['opc_client_request_id']
-        if 'range' in params:
-            header_params['range'] = params['range']
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_object_storage_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='stream')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_object_storage_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="stream")
 
     def head_object(self, namespace_name, bucket_name, object_name, **kwargs):
         """
         HeadObject
-        Gets the user-defined metadata and entity tag for an object.\n
+        Get the user-defined metadata and entity tag for an object.
 
-        :param str namespace_name: The top-level namespace used for the request. (required)
-        :param str bucket_name: The name of the bucket. (required)
-        :param str object_name: The name of the object. (required)
-        :param str if_match: The entity tag to match.
-        :param str if_none_match: The entity tag to avoid matching.
-        :param str opc_client_request_id: The client request ID for tracing
+        :param str namespace_name: (required)
+            The top-level namespace used for the request.
+                :param str bucket_name: (required)
+            The name of the bucket.
+                :param str object_name: (required)
+            The name of the object.
+        :param str if_match: (optional)
+            The entity tag to match.
+        :param str if_none_match: (optional)
+            The entity tag to avoid matching.
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing
         :return: A Response object with data of type None
         """
+        resource_path = "/n/{namespaceName}/b/{bucketName}/o/{objectName}"
+        method = "HEAD"
 
-        all_params = ['namespace_name', 'bucket_name', 'object_name', 'if_match', 'if_none_match', 'opc_client_request_id']
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match",
+            "if_none_match",
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "head_object got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method head_object" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "namespaceName": namespace_name,
+            "bucketName": bucket_name,
+            "objectName": object_name
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
-        # verify the required parameter 'namespace_name' is set
-        if ('namespace_name' not in params) or (params['namespace_name'] is None):
-            raise ValueError("Missing the required parameter `namespace_name` when calling `head_object`")
-        # verify the required parameter 'bucket_name' is set
-        if ('bucket_name' not in params) or (params['bucket_name'] is None):
-            raise ValueError("Missing the required parameter `bucket_name` when calling `head_object`")
-        # verify the required parameter 'object_name' is set
-        if ('object_name' not in params) or (params['object_name'] is None):
-            raise ValueError("Missing the required parameter `object_name` when calling `head_object`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "if-none-match": kwargs.get("if_none_match", missing),
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        resource_path = '/n/{namespaceName}/b/{bucketName}/o/{objectName}'
-        path_params = {}
-        if 'namespace_name' in params:
-            path_params['namespaceName'] = params['namespace_name']
-        if 'bucket_name' in params:
-            path_params['bucketName'] = params['bucket_name']
-        if 'object_name' in params:
-            path_params['objectName'] = params['object_name']
-
-        query_params = {}
-
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-        if 'if_none_match' in params:
-            header_params['if-none-match'] = params['if_none_match']
-        if 'opc_client_request_id' in params:
-            header_params['opc-client-request-id'] = params['opc_client_request_id']
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_object_storage_api,
-                                            resource_path,
-                                            'HEAD',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type=None)
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_object_storage_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params)
 
     def list_buckets(self, namespace_name, compartment_id, **kwargs):
         """
         ListBuckets
-        Gets a list of all the `Bucket`s in a namespace.\n\nTo use this and other API operations, you must be authorized in an IAM policy. If you're not authorized, \ntalk to an administrator. If you're an admin who needs to write policies to give users access, see \n[Getting Started with Policies](/Content/Identity/Concepts/policygetstarted.htm).\n
+        Get a list of all the buckets in a namespace.
 
-        :param str namespace_name: The top-level namespace used for the request. (required)
-        :param str compartment_id: The compartment ID in which to create the bucket. (required)
-        :param int limit: The maximum number of items to return.
-        :param str page: The page at which to start retrieving results.
-        :param str opc_client_request_id: The client request ID for tracing
+        :param str namespace_name: (required)
+            The top-level namespace used for the request.
+                :param str compartment_id: (required)
+            The compartment ID in which to create the bucket.
+        :param int limit: (optional)
+            The maximum number of items to return.
+        :param str page: (optional)
+            The page at which to start retrieving results.
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing
         :return: A Response object with data of type list[Bucket]
         """
+        resource_path = "/n/{namespaceName}/b/"
+        method = "GET"
 
-        all_params = ['namespace_name', 'compartment_id', 'limit', 'page', 'opc_client_request_id']
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "limit",
+            "page",
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_buckets got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_buckets" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "namespaceName": namespace_name
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
-        # verify the required parameter 'namespace_name' is set
-        if ('namespace_name' not in params) or (params['namespace_name'] is None):
-            raise ValueError("Missing the required parameter `namespace_name` when calling `list_buckets`")
-        # verify the required parameter 'compartment_id' is set
-        if ('compartment_id' not in params) or (params['compartment_id'] is None):
-            raise ValueError("Missing the required parameter `compartment_id` when calling `list_buckets`")
+        query_params = {
+            "compartmentId": compartment_id,
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
 
-        resource_path = '/n/{namespaceName}/b/'
-        path_params = {}
-        if 'namespace_name' in params:
-            path_params['namespaceName'] = params['namespace_name']
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        query_params = {}
-        if 'compartment_id' in params:
-            query_params['compartmentId'] = params['compartment_id']
-        if 'limit' in params:
-            query_params['limit'] = params['limit']
-        if 'page' in params:
-            query_params['page'] = params['page']
-
-        header_params = {}
-        if 'opc_client_request_id' in params:
-            header_params['opc-client-request-id'] = params['opc_client_request_id']
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_object_storage_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='list[Bucket]')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_object_storage_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[Bucket]")
 
     def list_objects(self, namespace_name, bucket_name, **kwargs):
         """
         ListObjects
-        Lists the objects in a bucket.\n\nTo use this and other API operations, you must be authorized in an IAM policy. If you're not authorized, \ntalk to an administrator. If you're an admin who needs to write policies to give users access, see \n[Getting Started with Policies](/Content/Identity/Concepts/policygetstarted.htm).\n
+        List the objects in a bucket.
 
-        :param str namespace_name: The top-level namespace used for the request. (required)
-        :param str bucket_name: The name of the bucket. (required)
-        :param str prefix: Object names returned by a list query must start with prefix
-        :param str start: Object names returned by a list query must be greater or equal to this parameter
-        :param str end: Object names returned by a list query must be strictly less than this parameter
-        :param int limit: The maximum number of items to return.
-        :param str delimiter: When this parameter is set, only objects whose names do not contain the delimiter character (after an optionally specified prefix) are returned. Scanned objects whose names contain the delimiter have part of their name up to the last occurrence of the delimiter (after the optional prefix) returned as a set of prefixes. Note that only '/' is a supported delimiter character at this time.
-        :param str fields: Object summary in list of objects includes the 'name' field.   This parameter may also include 'size' (object size in bytes), 'md5', and 'timeCreated' (object creation date and time) fields. Value of this parameter should be a comma separated, case-insensitive list of those field names. For example 'name,timeCreated,md5'
-        :param str opc_client_request_id: The client request ID for tracing
+        :param str namespace_name: (required)
+            The top-level namespace used for the request.
+                :param str bucket_name: (required)
+            The name of the bucket.
+        :param str prefix: (optional)
+            Object names returned by a list query must start with prefix
+        :param str start: (optional)
+            Object names returned by a list query must be greater or equal to this parameter
+        :param str end: (optional)
+            Object names returned by a list query must be strictly less than this parameter
+        :param int limit: (optional)
+            The maximum number of items to return.
+        :param str delimiter: (optional)
+            When this parameter is set to '/' character (other values not supported), only objects that do not have it in name, after an optionally specified prefix, are returned.   For all other scanned objects, part of their name up to the last occurence of the delimiter, after prefix, is returned as a set of prefixes.
+        :param str fields: (optional)
+            Object summary in list of objects includes the 'name' field.   This parameter may be used to also include 'size' (object size in bytes), 'md5', and 'timeCreated' (object creation date and time) fields. Value of this parameter should be a comma separated, case-insensitive list of those field names. For example 'name,timeCreated,md5'
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing
         :return: A Response object with data of type ListObjects
         """
+        resource_path = "/n/{namespaceName}/b/{bucketName}/o"
+        method = "GET"
 
-        all_params = ['namespace_name', 'bucket_name', 'prefix', 'start', 'end', 'limit', 'delimiter', 'fields', 'opc_client_request_id']
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "prefix",
+            "start",
+            "end",
+            "limit",
+            "delimiter",
+            "fields",
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_objects got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_objects" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "namespaceName": namespace_name,
+            "bucketName": bucket_name
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
-        # verify the required parameter 'namespace_name' is set
-        if ('namespace_name' not in params) or (params['namespace_name'] is None):
-            raise ValueError("Missing the required parameter `namespace_name` when calling `list_objects`")
-        # verify the required parameter 'bucket_name' is set
-        if ('bucket_name' not in params) or (params['bucket_name'] is None):
-            raise ValueError("Missing the required parameter `bucket_name` when calling `list_objects`")
+        query_params = {
+            "prefix": kwargs.get("prefix", missing),
+            "start": kwargs.get("start", missing),
+            "end": kwargs.get("end", missing),
+            "limit": kwargs.get("limit", missing),
+            "delimiter": kwargs.get("delimiter", missing),
+            "fields": kwargs.get("fields", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
 
-        resource_path = '/n/{namespaceName}/b/{bucketName}/o'
-        path_params = {}
-        if 'namespace_name' in params:
-            path_params['namespaceName'] = params['namespace_name']
-        if 'bucket_name' in params:
-            path_params['bucketName'] = params['bucket_name']
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        query_params = {}
-        if 'prefix' in params:
-            query_params['prefix'] = params['prefix']
-        if 'start' in params:
-            query_params['start'] = params['start']
-        if 'end' in params:
-            query_params['end'] = params['end']
-        if 'limit' in params:
-            query_params['limit'] = params['limit']
-        if 'delimiter' in params:
-            query_params['delimiter'] = params['delimiter']
-        if 'fields' in params:
-            query_params['fields'] = params['fields']
-
-        header_params = {}
-        if 'opc_client_request_id' in params:
-            header_params['opc-client-request-id'] = params['opc_client_request_id']
-
-        body_params = None
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_object_storage_api,
-                                            resource_path,
-                                            'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='ListObjects')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_object_storage_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="ListObjects")
 
     def put_object(self, namespace_name, bucket_name, object_name, put_object_body, **kwargs):
         """
         PutObject
-        Create a new object or overwrite an existing one.\n\nTo use this and other API operations, you must be authorized in an IAM policy. If you're not authorized, \ntalk to an administrator. If you're an admin who needs to write policies to give users access, see \n[Getting Started with Policies](/Content/Identity/Concepts/policygetstarted.htm).\n
+        Create a new object or overwrite an existing one.
 
-        :param str namespace_name: The top-level namespace used for the request. (required)
-        :param str bucket_name: The name of the bucket. (required)
-        :param str object_name: The name of the object. (required)
-        :param int content_length: The content type of the body.
-        :param stream put_object_body: The object being put to the object store. (required)
-        :param str if_match: The entity tag to match.
-        :param str if_none_match: The entity tag to avoid matching.
-        :param str opc_client_request_id: The client request ID for tracing
-        :param str expect: 100-continue
-        :param str content_md5: The base-64 encoded MD5 hash of the body.
-        :param dict(str, str) opc_meta: Optional user-defined metadata key and value.
+        :param str namespace_name: (required)
+            The top-level namespace used for the request.
+                :param str bucket_name: (required)
+            The name of the bucket.
+                :param str object_name: (required)
+            The name of the object.
+                :param stream put_object_body: (required)
+            The object being put to the object store.
+        :param int content_length: (optional)
+            The content type of the body.
+        :param str if_match: (optional)
+            The entity tag to match.
+        :param str if_none_match: (optional)
+            The entity tag to avoid matching.
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing
+        :param str expect: (optional)
+            100-continue
+        :param str content_md5: (optional)
+            The base-64 encoded MD5 hash of the body.
+        :param dict(str, str) opc_meta: (optional)
+            Optional user-defined metadata key and value.
         :return: A Response object with data of type None
         """
+        resource_path = "/n/{namespaceName}/b/{bucketName}/o/{objectName}"
+        method = "PUT"
 
-        all_params = ['namespace_name', 'bucket_name', 'object_name', 'content_length', 'put_object_body', 'if_match', 'if_none_match', 'opc_client_request_id', 'expect', 'content_md5', 'opc_meta']
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "content_length",
+            "if_match",
+            "if_none_match",
+            "opc_client_request_id",
+            "expect",
+            "content_md5",
+            "opc_meta"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "put_object got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method put_object" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "namespaceName": namespace_name,
+            "bucketName": bucket_name,
+            "objectName": object_name
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
-        # verify the required parameter 'namespace_name' is set
-        if ('namespace_name' not in params) or (params['namespace_name'] is None):
-            raise ValueError("Missing the required parameter `namespace_name` when calling `put_object`")
-        # verify the required parameter 'bucket_name' is set
-        if ('bucket_name' not in params) or (params['bucket_name'] is None):
-            raise ValueError("Missing the required parameter `bucket_name` when calling `put_object`")
-        # verify the required parameter 'object_name' is set
-        if ('object_name' not in params) or (params['object_name'] is None):
-            raise ValueError("Missing the required parameter `object_name` when calling `put_object`")
-        # verify the required parameter 'put_object_body' is set
-        if ('put_object_body' not in params) or (params['put_object_body'] is None):
-            raise ValueError("Missing the required parameter `put_object_body` when calling `put_object`")
+        header_params = {
+            "accept": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "if-none-match": kwargs.get("if_none_match", missing),
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing),
+            "Expect": kwargs.get("expect", missing),
+            "Content-Length": kwargs.get("content_length", missing),
+            "Content-MD5": kwargs.get("content_md5", missing),
 
-        resource_path = '/n/{namespaceName}/b/{bucketName}/o/{objectName}'
-        path_params = {}
-        if 'namespace_name' in params:
-            path_params['namespaceName'] = params['namespace_name']
-        if 'bucket_name' in params:
-            path_params['bucketName'] = params['bucket_name']
-        if 'object_name' in params:
-            path_params['objectName'] = params['object_name']
+        }
+        for key, value in six.iteritems(kwargs.get("opc_meta", {})):
+            header_params["opc-meta-" + key] = value
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        query_params = {}
+        if (not isinstance(put_object_body, (six.binary_type, six.string_types)) and
+                not hasattr(put_object_body, "read")):
+            raise TypeError('The body must be a string, bytes, or provide a read() method.')
 
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-        if 'if_none_match' in params:
-            header_params['if-none-match'] = params['if_none_match']
-        if 'opc_client_request_id' in params:
-            header_params['opc-client-request-id'] = params['opc_client_request_id']
-        if 'expect' in params:
-            header_params['Expect'] = params['expect']
-        if 'content_length' in params:
-            header_params['Content-Length'] = params['content_length']
-        if 'content_md5' in params:
-            header_params['Content-MD5'] = params['content_md5']
-        if 'opc_meta' in params:
-            for key, value in params['opc_meta'].items():
-                header_params['opc-meta-' + key] = value
-
-        body_params = None
-        if 'put_object_body' in params:
-            body_params = params['put_object_body']
-
-        header_params['accept'] = 'application/json'
-        if not (isinstance(body_params, str) or isinstance(body_params, IOBase)):
-            raise TypeError('The body must be a string or io.IOBase.')
-        response = self.api_client.call_api(self.api_client.config.endpoint_object_storage_api,
-                                            resource_path,
-                                            'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            enforce_content_headers=False,
-                                            response_type=None)
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_object_storage_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=put_object_body,
+            enforce_content_headers=False)
 
     def update_bucket(self, namespace_name, bucket_name, update_bucket_details, **kwargs):
         """
         UpdateBucket
-        Performs a partial (or full) update of a bucket, currently including just the user-defined metadata.\n
+        Perform a partial (or full) update of a bucket, currently including just the user-defined metadata.
 
-        :param str namespace_name: The top-level namespace used for the request. (required)
-        :param str bucket_name: The name of the bucket. (required)
-        :param UpdateBucketDetails update_bucket_details: Request object for updating a bucket. (required)
-        :param str if_match: The entity tag to match.
-        :param str opc_client_request_id: The client request ID for tracing
+        :param str namespace_name: (required)
+            The top-level namespace used for the request.
+                :param str bucket_name: (required)
+            The name of the bucket.
+                :param UpdateBucketDetails update_bucket_details: (required)
+            Request object for updating a bucket.
+        :param str if_match: (optional)
+            The entity tag to match.
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing
         :return: A Response object with data of type Bucket
         """
+        resource_path = "/n/{namespaceName}/b/{bucketName}/"
+        method = "POST"
 
-        all_params = ['namespace_name', 'bucket_name', 'update_bucket_details', 'if_match', 'opc_client_request_id']
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match",
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_bucket got unknown kwargs: {!r}".format(extra_kwargs))
 
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method update_bucket" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        path_params = {
+            "namespaceName": namespace_name,
+            "bucketName": bucket_name
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
-        # verify the required parameter 'namespace_name' is set
-        if ('namespace_name' not in params) or (params['namespace_name'] is None):
-            raise ValueError("Missing the required parameter `namespace_name` when calling `update_bucket`")
-        # verify the required parameter 'bucket_name' is set
-        if ('bucket_name' not in params) or (params['bucket_name'] is None):
-            raise ValueError("Missing the required parameter `bucket_name` when calling `update_bucket`")
-        # verify the required parameter 'update_bucket_details' is set
-        if ('update_bucket_details' not in params) or (params['update_bucket_details'] is None):
-            raise ValueError("Missing the required parameter `update_bucket_details` when calling `update_bucket`")
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        resource_path = '/n/{namespaceName}/b/{bucketName}/'
-        path_params = {}
-        if 'namespace_name' in params:
-            path_params['namespaceName'] = params['namespace_name']
-        if 'bucket_name' in params:
-            path_params['bucketName'] = params['bucket_name']
-
-        query_params = {}
-
-        header_params = {}
-        if 'if_match' in params:
-            header_params['if-match'] = params['if_match']
-        if 'opc_client_request_id' in params:
-            header_params['opc-client-request-id'] = params['opc_client_request_id']
-
-        body_params = None
-        if 'update_bucket_details' in params:
-            body_params = params['update_bucket_details']
-
-        header_params['accept'] = 'application/json'
-        header_params['content-type'] = 'application/json'
-
-        response = self.api_client.call_api(self.api_client.config.endpoint_object_storage_api,
-                                            resource_path,
-                                            'POST',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            response_type='Bucket')
-        return response
+        return self.api_client.call_api(
+            endpoint=self.api_client.config.endpoint_object_storage_api,
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=update_bucket_details,
+            response_type="Bucket")
