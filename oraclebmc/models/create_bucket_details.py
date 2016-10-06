@@ -29,45 +29,20 @@ class CreateBucketDetails(object):
     def __init__(self):
 
         self.swagger_types = {
-            'namespace': 'str',
             'name': 'str',
             'compartment_id': 'str',
             'metadata': 'dict(str, str)'
         }
 
         self.attribute_map = {
-            'namespace': 'namespace',
             'name': 'name',
             'compartment_id': 'compartmentId',
             'metadata': 'metadata'
         }
 
-        self._namespace = None
         self._name = None
         self._compartment_id = None
         self._metadata = None
-
-    @property
-    def namespace(self):
-        """
-        Gets the namespace of this CreateBucketDetails.
-        The namespace in which the bucket lives.
-
-        :return: The namespace of this CreateBucketDetails.
-        :rtype: str
-        """
-        return self._namespace
-
-    @namespace.setter
-    def namespace(self, namespace):
-        """
-        Sets the namespace of this CreateBucketDetails.
-        The namespace in which the bucket lives.
-
-        :param namespace: The namespace of this CreateBucketDetails.
-        :type: str
-        """
-        self._namespace = namespace
 
     @property
     def name(self):
@@ -95,7 +70,7 @@ class CreateBucketDetails(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this CreateBucketDetails.
-        The compartment ID used to authorize the bucket.
+        The ID of the compartment in which to create the bucket.
 
         :return: The compartment_id of this CreateBucketDetails.
         :rtype: str
@@ -106,7 +81,7 @@ class CreateBucketDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateBucketDetails.
-        The compartment ID used to authorize the bucket.
+        The ID of the compartment in which to create the bucket.
 
         :param compartment_id: The compartment_id of this CreateBucketDetails.
         :type: str
@@ -117,7 +92,7 @@ class CreateBucketDetails(object):
     def metadata(self):
         """
         Gets the metadata of this CreateBucketDetails.
-        Arbitrary string keys and values for the user-defined metadata.
+        Arbitrary string keys and values for user-defined metadata.
 
         :return: The metadata of this CreateBucketDetails.
         :rtype: dict(str, str)
@@ -128,7 +103,7 @@ class CreateBucketDetails(object):
     def metadata(self, metadata):
         """
         Sets the metadata of this CreateBucketDetails.
-        Arbitrary string keys and values for the user-defined metadata.
+        Arbitrary string keys and values for user-defined metadata.
 
         :param metadata: The metadata of this CreateBucketDetails.
         :type: dict(str, str)
