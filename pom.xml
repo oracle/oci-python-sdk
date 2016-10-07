@@ -10,21 +10,7 @@
     <name>Public Python SDK</name>
 
     <properties>
-        <spec-temp-dir>${project.build.directory}</spec-temp-dir>
-
-        <bmc-generator-version>0.3.0-SNAPSHOT</bmc-generator-version>
-
-        <swagger-coreservices-file>${spec-temp-dir}/coreservices/coreservices-api-spec-20160918.yaml</swagger-coreservices-file>
-        <swagger-coreservices-version>0.0.11</swagger-coreservices-version>
-
-        <swagger-identity-file>${spec-temp-dir}/identity/identity-control-plane-api-spec-20160918.yaml</swagger-identity-file>
-        <swagger-identity-version>0.2.3</swagger-identity-version>
-
-        <swagger-casper-file>${spec-temp-dir}/casper/casper-api.yaml</swagger-casper-file>
-        <swagger-casper-version>1.0.1</swagger-casper-version>
-
-        <!-- remove when upgrading to pic-pom:0.4.4 -->
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <spec-temp-dir>${project.build.directory}/swagger</spec-temp-dir>
     </properties>
 
     <dependencies>
@@ -62,7 +48,7 @@
                                     <artifactId>coreservices-api-spec</artifactId>
                                     <type>jar</type>
                                     <includes>coreservices-api-spec-20160918.yaml</includes>
-                                    <outputDirectory>${spec-temp-dir}/coreservices/</outputDirectory>
+                                    <outputDirectory>${spec-temp-dir}</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
@@ -80,7 +66,7 @@
                                     <artifactId>identity-control-plane-api-spec</artifactId>
                                     <type>jar</type>
                                     <includes>identity-control-plane-api-spec-20160918.yaml</includes>
-                                    <outputDirectory>${spec-temp-dir}/identity/</outputDirectory>
+                                    <outputDirectory>${spec-temp-dir}</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
@@ -98,7 +84,7 @@
                                     <artifactId>casper-api-spec</artifactId>
                                     <type>jar</type>
                                     <includes>casper-api.yaml</includes>
-                                    <outputDirectory>${spec-temp-dir}/casper/</outputDirectory>
+                                    <outputDirectory>${spec-temp-dir}</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
@@ -108,7 +94,7 @@
             <plugin>
                 <groupId>com.oracle.bmc.sdk</groupId>
                 <artifactId>bmc-sdk-swagger-maven-plugin</artifactId>
-                <version>${bmc-generator-version}</version>
+                <version>0.3.0-SNAPSHOT</version>
                 <executions>
                     <execution>
                         <id>python-public-sdk-identity</id>
@@ -118,7 +104,7 @@
                         </goals>
                         <configuration>
                             <language>oracle-python-sdk</language>
-                            <specPath>${swagger-identity-file}</specPath>
+                            <specPath>${spec-temp-dir}/identity-control-plane-api-spec-20160918.yaml</specPath>
                             <outputDir>oraclebmc</outputDir>
                             <basePackage>OracleBMC</basePackage>
                             <additionalProperties>
@@ -135,7 +121,7 @@
                         </goals>
                         <configuration>
                             <language>oracle-python-sdk</language>
-                            <specPath>${swagger-coreservices-file}</specPath>
+                            <specPath>${spec-temp-dir}/coreservices-api-spec-20160918.yaml</specPath>
                             <outputDir>oraclebmc</outputDir>
                             <basePackage>OracleBMC</basePackage>
                             <additionalProperties>
@@ -152,7 +138,7 @@
                         </goals>
                         <configuration>
                             <language>oracle-python-sdk</language>
-                            <specPath>${swagger-casper-file}</specPath>
+                            <specPath>${spec-temp-dir}/casper-api.yaml</specPath>
                             <outputDir>oraclebmc</outputDir>
                             <basePackage>OracleBMC</basePackage>
                             <additionalProperties>
@@ -200,162 +186,17 @@
             <dependency>
                 <groupId>com.oracle.pic.commons</groupId>
                 <artifactId>coreservices-api-spec</artifactId>
-                <version>${swagger-coreservices-version}</version>
+                <version>0.0.11</version>
             </dependency>
             <dependency>
                 <groupId>com.oracle.pic.identity</groupId>
                 <artifactId>identity-control-plane-api-spec</artifactId>
-                <version>${swagger-identity-version}</version>
+                <version>0.2.3</version>
             </dependency>
             <dependency>
                 <groupId>com.oracle.pic.casper</groupId>
                 <artifactId>casper-api-spec</artifactId>
-                <version>${swagger-casper-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-annotations</artifactId>
-                <version>2.5.4</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-core</artifactId>
-                <version>2.5.4</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-databind</artifactId>
-                <version>2.5.4</version>
-            </dependency>
-            <dependency>
-                <groupId>com.google.collections</groupId>
-                <artifactId>google-collections</artifactId>
-                <version>1.0</version>
-            </dependency>
-            <dependency>
-                <groupId>com.google.guava</groupId>
-                <artifactId>guava</artifactId>
-                <version>18.0</version>
-            </dependency>
-            <dependency>
-                <groupId>commons-codec</groupId>
-                <artifactId>commons-codec</artifactId>
-                <version>1.9</version>
-            </dependency>
-            <dependency>
-                <groupId>commons-io</groupId>
-                <artifactId>commons-io</artifactId>
-                <version>2.3</version>
-            </dependency>
-            <dependency>
-                <groupId>io.swagger</groupId>
-                <artifactId>swagger-codegen</artifactId>
-                <version>2.1.2</version>
-            </dependency>
-            <dependency>
-                <groupId>io.swagger</groupId>
-                <artifactId>swagger-models</artifactId>
-                <version>1.5.0</version>
-            </dependency>
-            <dependency>
-                <groupId>io.swagger</groupId>
-                <artifactId>swagger-parser</artifactId>
-                <version>1.0.8</version>
-            </dependency>
-            <dependency>
-                <groupId>joda-time</groupId>
-                <artifactId>joda-time</artifactId>
-                <version>2.8.2</version>
-            </dependency>
-            <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>4.12</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.commons</groupId>
-                <artifactId>commons-lang3</artifactId>
-                <version>3.2.1</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.maven</groupId>
-                <artifactId>maven-artifact</artifactId>
-                <version>2.0.7</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.maven</groupId>
-                <artifactId>maven-artifact-manager</artifactId>
-                <version>2.0.7</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.maven</groupId>
-                <artifactId>maven-core</artifactId>
-                <version>3.3.3</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.maven</groupId>
-                <artifactId>maven-model</artifactId>
-                <version>3.3.3</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.maven</groupId>
-                <artifactId>maven-plugin-api</artifactId>
-                <version>3.3.3</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.maven</groupId>
-                <artifactId>maven-project</artifactId>
-                <version>2.0.11</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.maven</groupId>
-                <artifactId>maven-repository-metadata</artifactId>
-                <version>3.3.3</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.maven</groupId>
-                <artifactId>maven-settings</artifactId>
-                <version>3.3.3</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.maven.plugin-tools</groupId>
-                <artifactId>maven-plugin-annotations</artifactId>
-                <version>3.3</version>
-            </dependency>
-            <dependency>
-                <groupId>org.codehaus.plexus</groupId>
-                <artifactId>plexus-classworlds</artifactId>
-                <version>2.5.2</version>
-            </dependency>
-            <dependency>
-                <groupId>org.codehaus.plexus</groupId>
-                <artifactId>plexus-container-default</artifactId>
-                <version>1.6</version>
-            </dependency>
-            <dependency>
-                <groupId>org.codehaus.plexus</groupId>
-                <artifactId>plexus-interpolation</artifactId>
-                <version>1.22</version>
-            </dependency>
-            <dependency>
-                <groupId>org.codehaus.plexus</groupId>
-                <artifactId>plexus-utils</artifactId>
-                <version>3.0.20</version>
-            </dependency>
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>1.16.6</version>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>1.7.12</version>
-            </dependency>
-            <dependency>
-                <groupId>com.google.code.findbugs</groupId>
-                <artifactId>jsr305</artifactId>
-                <version>3.0.0</version>
+                <version>1.0.1</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
