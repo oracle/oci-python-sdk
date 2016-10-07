@@ -3,15 +3,9 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>com.oracle.pic.commons</groupId>
-        <artifactId>pic-pom</artifactId>
-        <version>0.4.3</version>
-    </parent>
-
-    <groupId>com.oracle.pic.sdk</groupId>
+    <groupId>com.oracle.bmc.sdk</groupId>
     <artifactId>python-sdk</artifactId>
-    <version>0.1.2</version>
+    <version>0.1.3</version>
 
     <name>Public Python SDK</name>
 
