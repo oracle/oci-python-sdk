@@ -187,7 +187,7 @@ def launch_instance(compute, compartment, test_id, availability_domain, subnet, 
     request.availability_domain = availability_domain
     request.compartment_id = compartment
     request.display_name = 'pythonsdk_tutorial_instance_' + test_id
-    request.image_id = 'ol7.1-base-0.0.1'
+    request.image_id = 'ocid1.image.oc1.phx.aaaaaaaa4wdx32cwjdjdasqyzatmvlxbef4673rs5y7cowvc3g3o7iwhmhfa' # ol7.1-base-0.0.1
     request.shape = 'x5-2.36.256'
     request.subnet_id = subnet.id
     request.metadata = {'ssh_authorized_keys': public_key}
