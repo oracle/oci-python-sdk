@@ -1,5 +1,6 @@
 alabaster==0.7.9
 certifi
+configparser==3.5.0
 coverage==4.2
 cryptography==1.5.2
 flake8==3.0.4
