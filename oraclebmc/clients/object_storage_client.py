@@ -33,8 +33,8 @@ missing = Sentinel("Missing")
 class ObjectStorageClient(object):
 
     def __init__(self, config):
-        signer = Signer(config.tenancy, config.user, config.fingerprint, config.key_file)
-        self.base_client = BaseClient(config, signer)
+        signer = Signer(config["tenancy"], config["user"], config["fingerprint"], config["key_file"])
+        self.base_client = BaseClient("object_storage", config, signer)
 
     def create_bucket(self, namespace_name, create_bucket_details, **kwargs):
         """
@@ -77,7 +77,6 @@ class ObjectStorageClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.object_storage_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -128,7 +127,6 @@ class ObjectStorageClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.object_storage_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -180,7 +178,6 @@ class ObjectStorageClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.object_storage_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -233,7 +230,6 @@ class ObjectStorageClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.object_storage_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -270,7 +266,6 @@ class ObjectStorageClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.object_storage_endpoint,
             resource_path=resource_path,
             method=method,
             header_params=header_params,
@@ -330,7 +325,6 @@ class ObjectStorageClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.object_storage_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -384,7 +378,6 @@ class ObjectStorageClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.object_storage_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -440,7 +433,6 @@ class ObjectStorageClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.object_storage_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -500,7 +492,6 @@ class ObjectStorageClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.object_storage_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -578,7 +569,6 @@ class ObjectStorageClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.object_storage_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -662,7 +652,6 @@ class ObjectStorageClient(object):
             raise TypeError('The body must be a string, bytes, or provide a read() method.')
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.object_storage_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -715,7 +704,6 @@ class ObjectStorageClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.object_storage_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,

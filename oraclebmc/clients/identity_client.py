@@ -33,8 +33,8 @@ missing = Sentinel("Missing")
 class IdentityClient(object):
 
     def __init__(self, config):
-        signer = Signer(config.tenancy, config.user, config.fingerprint, config.key_file)
-        self.base_client = BaseClient(config, signer)
+        signer = Signer(config["tenancy"], config["user"], config["fingerprint"], config["key_file"])
+        self.base_client = BaseClient("identity", config, signer)
 
     def add_user_to_group(self, add_user_to_group_details, **kwargs):
         """
@@ -73,7 +73,6 @@ class IdentityClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.identity_endpoint,
             resource_path=resource_path,
             method=method,
             header_params=header_params,
@@ -139,7 +138,6 @@ class IdentityClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.identity_endpoint,
             resource_path=resource_path,
             method=method,
             header_params=header_params,
@@ -202,7 +200,6 @@ class IdentityClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.identity_endpoint,
             resource_path=resource_path,
             method=method,
             header_params=header_params,
@@ -257,7 +254,6 @@ class IdentityClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.identity_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -316,7 +312,6 @@ class IdentityClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.identity_endpoint,
             resource_path=resource_path,
             method=method,
             header_params=header_params,
@@ -372,7 +367,6 @@ class IdentityClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.identity_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -444,7 +438,6 @@ class IdentityClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.identity_endpoint,
             resource_path=resource_path,
             method=method,
             header_params=header_params,
@@ -496,7 +489,6 @@ class IdentityClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.identity_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -540,7 +532,6 @@ class IdentityClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.identity_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -584,7 +575,6 @@ class IdentityClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.identity_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -631,7 +621,6 @@ class IdentityClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.identity_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -675,7 +664,6 @@ class IdentityClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.identity_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -714,7 +702,6 @@ class IdentityClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.identity_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -751,7 +738,6 @@ class IdentityClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.identity_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -785,7 +771,6 @@ class IdentityClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.identity_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -819,7 +804,6 @@ class IdentityClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.identity_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -853,7 +837,6 @@ class IdentityClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.identity_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -889,7 +872,6 @@ class IdentityClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.identity_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -929,7 +911,6 @@ class IdentityClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.identity_endpoint,
             resource_path=resource_path,
             method=method,
             query_params=query_params,
@@ -980,7 +961,6 @@ class IdentityClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.identity_endpoint,
             resource_path=resource_path,
             method=method,
             query_params=query_params,
@@ -1031,7 +1011,6 @@ class IdentityClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.identity_endpoint,
             resource_path=resource_path,
             method=method,
             query_params=query_params,
@@ -1083,7 +1062,6 @@ class IdentityClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.identity_endpoint,
             resource_path=resource_path,
             method=method,
             query_params=query_params,
@@ -1119,7 +1097,6 @@ class IdentityClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.identity_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -1183,7 +1160,6 @@ class IdentityClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.identity_endpoint,
             resource_path=resource_path,
             method=method,
             query_params=query_params,
@@ -1234,7 +1210,6 @@ class IdentityClient(object):
         }
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.identity_endpoint,
             resource_path=resource_path,
             method=method,
             query_params=query_params,
@@ -1279,7 +1254,6 @@ class IdentityClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.identity_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -1325,7 +1299,6 @@ class IdentityClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.identity_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -1373,7 +1346,6 @@ class IdentityClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.identity_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -1422,7 +1394,6 @@ class IdentityClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.identity_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -1473,7 +1444,6 @@ class IdentityClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.identity_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -1521,7 +1491,6 @@ class IdentityClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.identity_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -1569,7 +1538,6 @@ class IdentityClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.identity_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
@@ -1635,7 +1603,6 @@ class IdentityClient(object):
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         return self.base_client.call_api(
-            endpoint=self.base_client.config.identity_endpoint,
             resource_path=resource_path,
             method=method,
             path_params=path_params,
