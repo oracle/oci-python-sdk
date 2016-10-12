@@ -40,7 +40,7 @@ REQUIRED = {
 POST_PROCESSORS = {
     "verify_ssl": ("verify_ssl", _as_bool),
     "log_requests": ("log_requests", _as_bool),
-    "key_file": ("key_file", lambda f: os.path.expanduser(six.u(f))),
+    "key_file": ("key_file", lambda f: os.path.expanduser(f)),
     "region": ("endpoints", regions.get_endpoints)
 }
 

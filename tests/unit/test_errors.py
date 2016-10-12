@@ -18,7 +18,7 @@ def test_invalid_endpoint_host():
         profile_name="DEFAULT"
     )
     client = oraclebmc.clients.IdentityClient(config)
-    client.base_client.endpoints["identity"] = "https://identity.us-phoenix-999999.oraclecloud.com/v1"
+    client.base_client.endpoint = "https://identity.us-phoenix-999999.oraclecloud.com/v1"
 
     with pytest.raises(Exception):
         client.list_users('invalid_compartment')

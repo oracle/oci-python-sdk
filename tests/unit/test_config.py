@@ -23,7 +23,7 @@ def test_load_default_profile():
     assert config["tenancy"] == HARDCODED_TENANCY
     assert config["user"] == HARDCODED_USER
     assert config["fingerprint"] == HARDCODED_FINGERPRINT
-    assert config["region"] == HARDCODED_REGION
+    assert config["endpoints"] == oraclebmc.regions.get_endpoints(HARDCODED_REGION)
     assert config["key_file"] == os.path.expanduser(HARDCODED_KEYFILE)
 
 
