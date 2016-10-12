@@ -25,7 +25,7 @@ def names():
 def write_bucket(namespace, object_storage, config, names):
     request = oraclebmc.models.CreateBucketDetails()
     request.name = names["write-bucket"]
-    request.compartment_id = config.tenancy
+    request.compartment_id = config["tenancy"]
     response = object_storage.create_bucket(namespace, request)
     assert response.status == 200
 

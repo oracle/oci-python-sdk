@@ -27,12 +27,12 @@ def test_get_namespace(object_storage):
 def test_bucket_crud(object_storage, config):
     bucket_name = unique_name('test_bucket')
     namespace = object_storage.get_namespace().data
-    bucket_count = len(object_storage.list_buckets(namespace, config.tenancy, limit=100).data)
+    bucket_count = len(object_storage.list_buckets(namespace, config["tenancy"], limit=100).data)
 
     # Create
     request = oraclebmc.models.CreateBucketDetails()
     request.name = bucket_name
-    request.compartment_id = config.tenancy
+    request.compartment_id = config["tenancy"]
     request.metadata = {'some key': 'some example metadata'}
     response = object_storage.create_bucket(namespace, request)
     assert response.status == 200
@@ -49,7 +49,7 @@ def test_bucket_crud(object_storage, config):
     assert bucket_name == response.data.name
 
     # List
-    response = object_storage.list_buckets(namespace, config.tenancy, limit=100)
+    response = object_storage.list_buckets(namespace, config["tenancy"], limit=100)
     assert response.status == 200
     assert bucket_count + 1 == len(response.data)
     assert type(response.data[0]) is oraclebmc.models.Bucket
@@ -78,7 +78,7 @@ def test_object_crud(object_storage, config):
 
     request = oraclebmc.models.CreateBucketDetails()
     request.name = bucket_name
-    request.compartment_id = config.tenancy
+    request.compartment_id = config["tenancy"]
     response = object_storage.create_bucket(namespace, request)
     assert response.status == 200
 
@@ -132,7 +132,7 @@ def test_object_crud_with_metadata(object_storage, config):
 
     request = oraclebmc.models.CreateBucketDetails()
     request.name = bucket_name
-    request.compartment_id = config.tenancy
+    request.compartment_id = config["tenancy"]
     response = object_storage.create_bucket(namespace, request)
     assert response.status == 200
 
@@ -177,7 +177,7 @@ def test_put_empty_file(object_storage, config):
 
     request = oraclebmc.models.CreateBucketDetails()
     request.name = bucket_name
-    request.compartment_id = config.tenancy
+    request.compartment_id = config["tenancy"]
     response = object_storage.create_bucket(namespace, request)
     assert response.status == 200
 
@@ -212,7 +212,7 @@ def test_put_empty_string(object_storage, config):
 
     request = oraclebmc.models.CreateBucketDetails()
     request.name = bucket_name
-    request.compartment_id = config.tenancy
+    request.compartment_id = config["tenancy"]
     response = object_storage.create_bucket(namespace, request)
     assert response.status == 200
 
@@ -268,7 +268,7 @@ def test_get_bucket_with_metadata(object_storage):
 
 def test_list_buckets(object_storage, config):
     namespace = object_storage.get_namespace().data
-    response = object_storage.list_buckets(namespace, config.tenancy)
+    response = object_storage.list_buckets(namespace, config["tenancy"])
     assert response.status == 200
     assert len(response.data) > 0
     assert type(response.data[0]) is oraclebmc.models.Bucket
@@ -276,7 +276,7 @@ def test_list_buckets(object_storage, config):
 
 def test_list_buckets_truncated(object_storage, config):
     namespace = object_storage.get_namespace().data
-    response = object_storage.list_buckets(namespace, config.tenancy, limit=2)
+    response = object_storage.list_buckets(namespace, config["tenancy"], limit=2)
     assert response.status == 200
     assert 2 == len(response.data)
     assert type(response.data[0]) is oraclebmc.models.Bucket
@@ -284,7 +284,7 @@ def test_list_buckets_truncated(object_storage, config):
     first_bucket_name = response.data[0].name
 
     response = object_storage.list_buckets(
-        namespace, config.tenancy, limit=2, page=response.next_page)
+        namespace, config["tenancy"], limit=2, page=response.next_page)
     assert response.status == 200
     assert 2 == len(response.data)
     assert first_bucket_name != response.data[0].name

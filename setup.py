@@ -33,6 +33,7 @@ packages = [
 
 requires = [
     "certifi",
+    "configparser==3.5.0",
     "cryptography==1.5.2",
     "httpsig_cffi==15.0.0",
     "python-dateutil==2.5.3",
@@ -45,9 +46,15 @@ setup(
     version=version,
     description="Oracle Bare Metal Cloud Python SDK",
     long_description=readme,
-    author_email="",
-    url="",
+    author="Oracle",
     packages=packages,
     include_package_data=True,
     install_requires=requires,
+    classifiers=[
+        "Development Status :: 4 - Beta",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: Apache Software License",
+        "Programming Language :: Python :: 2.7",
+        "Programming Language :: Python :: 3.5",
+    ]
 )

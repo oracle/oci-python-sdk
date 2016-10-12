@@ -2,7 +2,7 @@ import oraclebmc
 
 
 def test_identity_list_users(identity, config):
-    response = identity.list_users(config.tenancy)
+    response = identity.list_users(config["tenancy"])
 
     assert response is not None
     assert len(response.data) > 0
@@ -12,7 +12,7 @@ def test_identity_list_users(identity, config):
 
 
 def test_vcn_list_vcns(virtual_network, config):
-    response = virtual_network.list_vcns(config.tenancy)
+    response = virtual_network.list_vcns(config["tenancy"])
 
     assert response is not None
     assert response.status == 200
@@ -20,7 +20,7 @@ def test_vcn_list_vcns(virtual_network, config):
 
 
 def test_vcn_list_instances(compute, config):
-    response = compute.list_instances(config.tenancy)
+    response = compute.list_instances(config["tenancy"])
 
     assert response is not None
     assert response.status == 200
@@ -28,7 +28,7 @@ def test_vcn_list_instances(compute, config):
 
 
 def test_limit(identity, config):
-    response = identity.list_users(config.tenancy, limit=1)
+    response = identity.list_users(config["tenancy"], limit=1)
 
     assert response is not None
     assert len(response.data) == 1

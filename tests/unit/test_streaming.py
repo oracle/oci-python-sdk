@@ -14,7 +14,7 @@ def bucket_name(namespace, object_storage, config):
     name = tests.util.unique_name("test_python_streaming")
     request = oraclebmc.models.CreateBucketDetails()
     request.name = name
-    request.compartment_id = config.tenancy
+    request.compartment_id = config["tenancy"]
     assert object_storage.create_bucket(namespace, request).status == 200
 
     yield name
