@@ -2,7 +2,7 @@ import oraclebmc
 
 
 def test_user_crud(identity, config):
-    compartment = config.tenancy
+    compartment = config["tenancy"]
     user_name = "python_temp_user_1"
     user_description = "Created by python SDK TestUserCrud test."
 

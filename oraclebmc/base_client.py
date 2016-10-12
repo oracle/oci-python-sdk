@@ -40,12 +40,25 @@ from .response import Response
 from .signer import ObjectUploadSigner
 from .version import __version__
 
+USER_INFO = "Oracle-PythonSDK/{}".format(__version__)
+
 
 def merge_type_mappings(*dictionaries):
     merged = {}
     for dictionary in dictionaries:
         merged.update(dictionary)
     return merged
+
+
+def build_user_agent(extra=""):
+    agent = "{} (python {}; {}-{}) {}".format(
+        USER_INFO,
+        platform.python_version(),
+        platform.machine(),
+        platform.system(),
+        (extra or "")
+    )
+    return agent.strip()
 
 STREAM_RESPONSE_TYPE = 'stream'
 
@@ -60,32 +73,27 @@ class BaseClient(object):
         'datetime': datetime
     }
 
-    def __init__(self, config, signer):
-        self.config = config
+    def __init__(self, service, config, signer):
         self.signer = signer
+        self.endpoint = config["endpoints"][service]
 
         self.type_mappings = merge_type_mappings(self.primitive_type_map,
                                                  models.core_type_mapping,
                                                  models.identity_type_mapping,
                                                  models.object_storage_type_mapping)
-        self._session = None
+        self.session = requests.Session()
+        self.session.verify = config["verify_ssl"]
+        self.user_agent = build_user_agent(config["additional_user_agent"])
 
         self.logger = logging.getLogger("{}.{}".format(__name__, id(self)))
         self.logger.addHandler(logging.NullHandler())
-        if self.config.log_requests:
+        if config["log_requests"]:
             self.logger.setLevel(logging.DEBUG)
             six.moves.http_client.HTTPConnection.debuglevel = 1
         else:
             six.moves.http_client.HTTPConnection.debuglevel = 0
 
-    @property
-    def session(self):
-        if self._session is None:
-            self._session = requests.Session()
-            self._session.verify = self.config.verify_ssl
-        return self._session
-
-    def call_api(self, endpoint, resource_path, method,
+    def call_api(self, resource_path, method,
                  path_params=None,
                  query_params=None,
                  header_params=None,
@@ -95,7 +103,6 @@ class BaseClient(object):
         """
         Makes the HTTP request and return the deserialized data.
 
-        :param endpoint: URL of the endpoint
         :param resource_path: Path to the resource (e.g. /instance)
         :param method: HTTP method
         :param path_params: (optional) Path parameters in the url.
@@ -114,8 +121,8 @@ class BaseClient(object):
 
         header_params = header_params or {}
 
-        header_params[constants.HEADER_CLIENT_INFO] = self.build_user_info()
-        header_params[constants.HEADER_USER_AGENT] = self.build_user_agent()
+        header_params[constants.HEADER_CLIENT_INFO] = USER_INFO
+        header_params[constants.HEADER_USER_AGENT] = self.user_agent
         header_params[constants.HEADER_REQUEST_ID] = self.build_request_id()
 
         if path_params:
@@ -134,7 +141,7 @@ class BaseClient(object):
             body = self.sanitize_for_serialization(body)
             body = json.dumps(body)
 
-        url = endpoint + resource_path
+        url = self.endpoint + resource_path
 
         request = Request(
             method=method,
@@ -195,25 +202,6 @@ class BaseClient(object):
     # Builds the client info string to be sent with each request.
     def build_request_id(self):
         return str(uuid.uuid4()).replace('-', '').upper()
-
-    # Builds the client info string to be sent with each request.
-    def build_user_info(self):
-        return "Oracle-PythonSDK/{}".format(__version__)
-
-    # Build the user agent string to be send with each request.
-    def build_user_agent(self):
-        # Example: Oracle-PythonSDK/0.0.2 (python 3.5.2; x86_64-Darwin)
-        agent = "{} (python {}; {}-{})".format(
-            self.build_user_info(),
-            platform.python_version(),
-            platform.machine(),
-            platform.system()
-        )
-
-        if self.config.additional_user_agent:
-            agent = "{} {}".format(agent, self.config.additional_user_agent)
-
-        return agent
 
     def to_path_value(self, obj):
         """

@@ -5,9 +5,9 @@ def test_manual_paging(identity, config):
 
     while True:
         if request_number == 0:
-            response = identity.list_users(config.tenancy, limit=2)
+            response = identity.list_users(config["tenancy"], limit=2)
         else:
-            response = identity.list_users(config.tenancy, limit=2, page=next_page)
+            response = identity.list_users(config["tenancy"], limit=2, page=next_page)
 
         if not response.has_next_page:
             break

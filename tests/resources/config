@@ -1,37 +1,25 @@
-# Config for the R2 tenant InternalBrianGustafson
-# Contact brian.gustafson@oracle.com to get a user.
 [DEFAULT]
-user=USER_OCID
-fingerprint=FINGERPRINT
-key_file=~/.ssh/id_rsa.pem
-tenancy=TENANCY_OCID
+tenancy = ocidv1:tenancy:region:az:1457568341552:aaaaaaaak5kqrgabmglda4oz7mcdedhuym
+user = ocid1.user.region..1461711049110:aaaaaaaaeuhzapiritehle2dmrcoeijvve
+fingerprint = 20:3b:97:13:55:1c:5b:0d:d3:37:d8:50:4e:c5:3a:34
+key_file = ~/.ssh/id_rsa.pem
+region = us-phoenix-1
 
 [INVALID_USER]
-user=invaliduser
+user = invaliduser
 
 [INVALID_CREDENTIALS]
-fingerprint=00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
+fingerprint = 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
 
-[INVALID_ENDPOINT_PATH]
-identity_endpoint=https://identity.us-phoenix-1.oraclecloud.com/invalid
+[INVALID_REGION]
+region = whoami
 
-[INVALID_ENDPOINT_HOST]
-identity_endpoint=https://identity.us-phoenix-999999.oraclecloud.com/v1
+[MALFORMED_TENANCY]
+tenancy = "not-a-valid-ocid"
 
 [DEBUG]
-log_requests=true
-additional_user_agent=example_extra_user_agent_text
+log_requests = true
+additional_user_agent = example_extra_user_agent_text
 
 [INVALID_PARAMETER]
-foo=bar
-
-[R0_STABLE]
-identity_endpoint=https://identity-stable-integ.aka.r0.grungy.us/20160918
-blockstorage_endpoint=https://iaas-stable-integ.aka.r0.grungy.us/20160918
-compute_endpoint=https://iaas-stable-integ.aka.r0.grungy.us/20160918
-virtual_network_endpoint=https://iaas-stable-integ.aka.r0.grungy.us/20160918
-user=ocidv1:user:integ-stable:integ-stable:1461711049110:aaaaaaaaeuhzapiritehle2dmrcoeijvve
-fingerprint=20:3b:97:13:55:1c:5b:0d:d3:37:d8:50:4e:c5:3a:34
-key_file=~/.ssh/id_rsa.pem
-tenancy=ocidv1:tenancy:integ-stable:integ-stable:1457568341552:aaaaaaaak5kqrgabmglda4oz7mcdedhuym
-verify_ssl=false
+foo = bar

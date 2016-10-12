@@ -1,6 +1,5 @@
-from . import clients, config_file_loader, constants, exceptions, models
+from . import clients, config, constants, exceptions, models, regions
 from .base_client import BaseClient
-from .config import Config
 from .request import Request
 from .response import Response
 from .signer import Signer
@@ -9,7 +8,7 @@ from .waiter import wait_until
 
 
 __all__ = [
-    "BaseClient", "Config", "Request", "Response", "Signer",
-    "clients", "config_file_loader", "constants", "exceptions", "models",
-    "wait_until"
+    "BaseClient", "Request", "Response", "Signer",
+    "clients", "config", "constants", "exceptions", "models",
+    "regions", "wait_until"
 ]
