@@ -20,6 +20,7 @@ tenancy = "not-a-valid-ocid"
 [DEBUG]
 log_requests = true
 additional_user_agent = example_extra_user_agent_text
+endpoint = non-oracle-endpoint.com
 
 [INVALID_PARAMETER]
 foo = bar

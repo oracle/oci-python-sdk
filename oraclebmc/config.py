@@ -1,11 +1,39 @@
+"""
+Helpers for loading and validating service configuration.
+
+You can configure services by passing a config dict directly, or by loading
+one from a configuration file.
+
+The following keys are required:
+
+    fingerprint
+    key_file
+    region (or endpoint)
+    tenancy
+    user
+
+Note that if you provide both "region" and "endpoint" then the endpoint will
+be used.
+
+Additionally, the following keys are optional:
+
+    additional_user_agent (default "")
+    log_requests (default False)
+    verify_ssl (default True)
+
+At a minimum, you should call config.validate(config_dict) before creating
+clients from that config.
+
+"""
+
 from __future__ import absolute_import
 import configparser
 import os.path
 import re
 import six
 
-from . import regions
 from .exceptions import ConfigFileNotFound, ProfileNotFound
+from .regions import is_region
 
 __all__ = ["DEFAULT_CONFIG", "from_dict", "from_file", "validate"]
 
@@ -16,55 +44,18 @@ DEFAULT_CONFIG = {
 }
 DEFAULT_LOCATION = '~/.oraclebmc/config'
 DEFAULT_PROFILE = "DEFAULT"
-
-
-def _as_bool(x):
-    if x in [True, False]:
-        return x
-    if x.lower() in ["1", "yes", "true", "on"]:
-        return True
-    elif x.lower() in ["0", "no", "false", "off"]:
-        return False
-    else:
-        raise ValueError("{!r} is not a valid alias for True/False".format(x))
-
-
-REQUIRED = {
-    "user",
-    "tenancy",
-    "fingerprint",
-    "key_file",
-    "region"
-}
-
-POST_PROCESSORS = {
-    "verify_ssl": ("verify_ssl", _as_bool),
-    "log_requests": ("log_requests", _as_bool),
-    "key_file": ("key_file", lambda f: os.path.expanduser(f)),
-    "region": ("endpoints", regions.get_endpoints)
-}
-
 PATTERNS = {
     # Tenancy and user have the same shape
     "tenancy": re.compile("^([0-9a-zA-Z-_]+[.:])([0-9a-zA-Z-_]*[.:]){3,}([0-9a-zA-Z-_]+)$"),
     "user": re.compile("^([0-9a-zA-Z-_]+[.:])([0-9a-zA-Z-_]*[.:]){3,}([0-9a-zA-Z-_]+)$"),
     "fingerprint": re.compile("^([0-9a-f]{2}:){15}[0-9a-f]{2}$")
 }
-
-VALIDATORS = {
-    "region": (regions.contains, "{!r} is not a recognized region"),
-    "tenancy": (PATTERNS["tenancy"].match, "Malformed tenancy {!r}"),
-    "user": (PATTERNS["user"].match, "Malformed user {!r}"),
-    "fingerprint": (PATTERNS["fingerprint"].match, "Malformed fingerprint {!r}")
+REQUIRED = {
+    "user",
+    "tenancy",
+    "fingerprint",
+    "key_file"
 }
-
-
-def _raise_on_errors(errors):
-    # report all errors at once
-    if len(errors) == 1:
-        raise ValueError("Error in config: {}".format(errors[0]))
-    elif errors:
-        raise ValueError("Found the following config errors: {!r}".format(errors))
 
 
 def from_dict(config):
@@ -93,11 +84,9 @@ def from_dict(config):
     for key, value in six.iteritems(DEFAULT_CONFIG):
         new_config.setdefault(key, value)
     validate(new_config)
-    for key, (new_key, process) in six.iteritems(POST_PROCESSORS):
-        if key not in new_config:
-            continue
-        value = new_config.pop(key)
-        new_config[new_key] = process(value)
+    new_config["verify_ssl"] = _as_bool(new_config["verify_ssl"])
+    new_config["log_requests"] = _as_bool(new_config["log_requests"])
+    new_config["key_file"] = os.path.expanduser(new_config["key_file"])
     return new_config
 
 
@@ -128,12 +117,33 @@ def validate(config):
     for required_key in REQUIRED:
         if required_key not in config:
             errors.append("Missing required config key: {!r}".format(required_key))
+    # If both are provided, endpoint will be used.
+    if "region" not in config and "endpoint" not in config:
+        errors.append("Must specify at least one of 'region' or 'endpoint'")
+    if "region" in config and not is_region(config["region"]):
+        errors.append("Unknown region {!r}".format(config["region"]))
     _raise_on_errors(errors)
 
-    # Unconditional lookups on config, since
-    # required params were checked above.
-    for key, (check, err) in six.iteritems(VALIDATORS):
-        value = config[key]
-        if not check(value):
-            errors.append(err.format(value))
+    for key, pattern in six.iteritems(PATTERNS):
+        if not pattern.match(config[key]):
+            errors.append("Malformed {} {!r}".format(key, config[key]))
     _raise_on_errors(errors)
+
+
+def _as_bool(x):
+    if x in [True, False]:
+        return x
+    if x.lower() in ["1", "yes", "true", "on"]:
+        return True
+    elif x.lower() in ["0", "no", "false", "off"]:
+        return False
+    else:
+        raise ValueError("{!r} is not a valid alias for True/False".format(x))
+
+
+def _raise_on_errors(errors):
+    # report all errors at once
+    if len(errors) == 1:
+        raise ValueError("Error in config: {}".format(errors[0]))
+    elif errors:
+        raise ValueError("Found the following config errors: {!r}".format(errors))

@@ -11,6 +11,7 @@ HARDCODED_USER = "ocid1.user.region..1461711049110:aaaaaaaaeuhzapiritehle2dmrcoe
 HARDCODED_FINGERPRINT = "20:3b:97:13:55:1c:5b:0d:d3:37:d8:50:4e:c5:3a:34"
 HARDCODED_KEYFILE = "~/.ssh/id_rsa.pem"
 HARDCODED_REGION = "us-phoenix-1"
+HARDCODED_ENDPOINT = "non-oracle-endpoint.com"
 
 
 def test_load_default_profile():
@@ -23,7 +24,7 @@ def test_load_default_profile():
     assert config["tenancy"] == HARDCODED_TENANCY
     assert config["user"] == HARDCODED_USER
     assert config["fingerprint"] == HARDCODED_FINGERPRINT
-    assert config["endpoints"] == oraclebmc.regions.get_endpoints(HARDCODED_REGION)
+    assert config["region"] == HARDCODED_REGION
     assert config["key_file"] == os.path.expanduser(HARDCODED_KEYFILE)
 
 
@@ -38,10 +39,12 @@ def test_child_profile():
     assert config["tenancy"] == HARDCODED_TENANCY
     assert config["user"] == HARDCODED_USER
     assert config["fingerprint"] == HARDCODED_FINGERPRINT
+    assert config["region"] == HARDCODED_REGION
 
     # check properties overridden by the specified profile
     assert config["log_requests"]
     assert config["additional_user_agent"]
+    assert config["endpoint"] == HARDCODED_ENDPOINT
 
 
 def test_extra_config_values():
@@ -69,4 +72,4 @@ def test_invalid_region():
         oraclebmc.config.from_file(
             get_resource_path('config'),
             profile_name='INVALID_REGION')
-    assert "'whoami' is not a recognized region" in str(excinfo.value)
+    assert "Unknown region 'whoami'" in str(excinfo.value)

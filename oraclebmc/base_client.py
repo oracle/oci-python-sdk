@@ -34,7 +34,7 @@ import requests
 import six
 from dateutil.parser import parse
 
-from . import constants, exceptions, models
+from . import constants, exceptions, models, regions
 from .request import Request
 from .response import Response
 from .signer import ObjectUploadSigner
@@ -75,7 +75,10 @@ class BaseClient(object):
 
     def __init__(self, service, config, signer):
         self.signer = signer
-        self.endpoint = config["endpoints"][service]
+        self.endpoint = regions.endpoint_for(
+            service,
+            region=config.get("region"),
+            endpoint=config.get("endpoint"))
 
         self.type_mappings = merge_type_mappings(self.primitive_type_map,
                                                  models.core_type_mapping,
