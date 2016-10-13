@@ -8,7 +8,6 @@ The following keys are required:
 
     fingerprint
     key_file
-    pass_phrase (if your key_file has a passphrase)
     region (or endpoint)
     tenancy
     user
@@ -16,13 +15,11 @@ The following keys are required:
 Note that if you provide both "region" and "endpoint" then the endpoint will
 be used.
 
-You do not need to supply pass_phrase if your private key does not have one.
-
 Additionally, the following keys are optional:
 
     additional_user_agent (default "")
     log_requests (default False)
-    verify_ssl (default True)
+    pass_phrase (required if your key_file has a passphrase)
 
 At a minimum, you should call config.validate(config_dict) before creating
 clients from that config.

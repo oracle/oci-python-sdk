@@ -25,6 +25,7 @@ class PatchedHeaderSigner(httpsig_cffi.sign.HeaderSigner):
         assert algorithm in httpsig_cffi.utils.ALGORITHMS, "Unknown algorithm"
         if isinstance(secret, six.string_types):
             secret = secret.encode("ascii")
+        # CHANGED: added str -> bytes for new param
         if isinstance(pass_phrase, six.string_types):
             pass_phrase = pass_phrase.encode("ascii")
 
@@ -38,7 +39,7 @@ class PatchedHeaderSigner(httpsig_cffi.sign.HeaderSigner):
             try:
                 self._rsahash = httpsig_cffi.utils.HASHES[self.hash_algorithm]
                 self._rsa_private = serialization.load_pem_private_key(
-                    # CHANGED: None -> password
+                    # CHANGED: None -> pass_phrase
                     secret, pass_phrase, backend=default_backend())
                 self._rsa_public = self._rsa_private.public_key()
             except ValueError:
