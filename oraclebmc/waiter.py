@@ -3,7 +3,7 @@ import time
 from .exceptions import MaximumWaitTimeExceeded, WaitUntilNotSupported
 
 
-def wait_until(client, response, property, state, max_interval_seconds=5, max_wait_seconds=60):
+def wait_until(client, response, property, state, max_interval_seconds=30, max_wait_seconds=1200):
     """Wait until the value of the given property in the response data has the given value.
 
     This will block the current thread until either the
@@ -32,9 +32,9 @@ def wait_until(client, response, property, state, max_interval_seconds=5, max_wa
     :param state: The value of the property that will indicate successful completion of the wait.
         Type corresponds to the property type.
     :param max_interval_seconds: (optional) The maximum interval between queries, in seconds.
-        Defaults to 5 seconds.
+        Defaults to 30 seconds.
     :param max_wait_seconds: (optional) The maximum time to wait, in seconds.
-        Defaults to 60 seconds.
+        Defaults to 1200 seconds.
     :return: The final response, which will contain the property in the specified state.
     """
 
