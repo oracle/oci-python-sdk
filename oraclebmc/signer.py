@@ -25,6 +25,8 @@ class PatchedHeaderSigner(httpsig_cffi.sign.HeaderSigner):
         assert algorithm in httpsig_cffi.utils.ALGORITHMS, "Unknown algorithm"
         if isinstance(secret, six.string_types):
             secret = secret.encode("ascii")
+        if isinstance(pass_phrase, six.string_types):
+            pass_phrase = pass_phrase.encode("ascii")
 
         self._rsa_public = None
         self._rsa_private = None
