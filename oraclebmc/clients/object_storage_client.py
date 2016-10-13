@@ -33,7 +33,13 @@ missing = Sentinel("Missing")
 class ObjectStorageClient(object):
 
     def __init__(self, config):
-        signer = Signer(config["tenancy"], config["user"], config["fingerprint"], config["key_file"])
+        signer = Signer(
+            tenancy=config["tenancy"],
+            user=config["user"],
+            fingerprint=config["fingerprint"],
+            private_key_file_location=config["key_file"],
+            pass_phrase=config["pass_phrase"]
+        )
         self.base_client = BaseClient("object_storage", config, signer)
 
     def create_bucket(self, namespace_name, create_bucket_details, **kwargs):

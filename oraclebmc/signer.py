@@ -4,14 +4,62 @@ import hashlib
 import io
 
 import httpsig_cffi.sign
+import httpsig_cffi.utils
 import requests.auth
 import six
+
+from cryptography.hazmat.backends import default_backend
+from cryptography.hazmat.primitives import hmac, serialization
+
+
+# HeaderSigner doesn't support private keys with passwords.
+# We have to rewrite the constructor since the base parses the key
+# during __init__
+class PatchedHeaderSigner(httpsig_cffi.sign.HeaderSigner):
+    def __init__(self, key_id, secret, algorithm=None, pass_phrase=None, headers=None):
+
+        # COPIED from Signer.__init__
+        if algorithm is None:
+            algorithm = "hmac-sha256"
+
+        assert algorithm in httpsig_cffi.utils.ALGORITHMS, "Unknown algorithm"
+        if isinstance(secret, six.string_types):
+            secret = secret.encode("ascii")
+
+        self._rsa_public = None
+        self._rsa_private = None
+        self._hash = None
+        self.sign_algorithm, self.hash_algorithm = algorithm.split('-')
+
+        if self.sign_algorithm == 'rsa':
+
+            try:
+                self._rsahash = httpsig_cffi.utils.HASHES[self.hash_algorithm]
+                self._rsa_private = serialization.load_pem_private_key(
+                    # CHANGED: None -> password
+                    secret, pass_phrase, backend=default_backend())
+                self._rsa_public = self._rsa_private.public_key()
+            except ValueError:
+                try:
+                    self._rsa_public = serialization.load_pem_public_key(
+                        secret, backend=default_backend())
+                except ValueError:
+                    raise httpsig_cffi.utils.HttpSigException("Invalid key.")
+
+        elif self.sign_algorithm == 'hmac':
+
+            self._hash = hmac.HMAC(
+                secret, httpsig_cffi.utils.HASHES[self.hash_algorithm](), backend=default_backend())
+
+        # COPIED from HeaderSigner.__init__
+        self.headers = headers or ['date']
+        self.signature_template = httpsig_cffi.utils.build_signature_template(key_id, algorithm, headers)
 
 
 class Signer(requests.auth.AuthBase):
     """A requests auth instance that can be reused across requests"""
 
-    def __init__(self, tenancy, user, fingerprint, private_key_file_location):
+    def __init__(self, tenancy, user, fingerprint, private_key_file_location, pass_phrase=None):
         self.api_key = tenancy + "/" + user + "/" + fingerprint
         self.private_key_file_location = private_key_file_location
         self._private_key = None
@@ -27,16 +75,18 @@ class Signer(requests.auth.AuthBase):
             "x-content-sha256",
         ]
 
-        self._basic_signer = httpsig_cffi.sign.HeaderSigner(
+        self._basic_signer = PatchedHeaderSigner(
             key_id=self.api_key,
             secret=self.private_key,
             algorithm="rsa-sha256",
+            pass_phrase=pass_phrase,
             headers=generic_headers)
 
-        self._body_signer = httpsig_cffi.sign.HeaderSigner(
+        self._body_signer = PatchedHeaderSigner(
             key_id=self.api_key,
             secret=self.private_key,
             algorithm="rsa-sha256",
+            pass_phrase=pass_phrase,
             headers=generic_headers + body_headers)
 
     def inject_missing_headers(self, request, sign_body, enforce_content_headers):
