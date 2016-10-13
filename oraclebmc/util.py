@@ -1,5 +1,6 @@
 import datetime
 import json
+import pytz
 import six
 try:
     # PY3+
@@ -22,12 +23,13 @@ def to_dict(obj):
     if isinstance(obj, six.string_types):
         return obj
     elif isinstance(obj, (datetime.datetime, datetime.time)):
-        # always UTC
-        as_utc = obj.replace(tzinfo=datetime.timezone.utc)
+        # always use UTC
+        if not obj.tzinfo:
+            obj = pytz.utc.localize(obj)
         if isinstance(obj, datetime.datetime):
             # only datetime.datetime takes a separator
-            return as_utc.isoformat(sep="T")
-        return as_utc.isoformat()
+            return obj.isoformat(sep="T")
+        return obj.isoformat()
     elif isinstance(obj, datetime.date):
         # datetime.date doesn't have a timezone
         return obj.isoformat()

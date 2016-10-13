@@ -1,3 +1,8 @@
+0.1.5
+^^^^^
+
+(Internal) using ``pytz`` to localize response datetimes to UTC when the timezone isn't provided.
+
 0.1.4
 ^^^^^
 

@@ -98,7 +98,7 @@ def from_file(file_location=DEFAULT_LOCATION, profile_name=DEFAULT_PROFILE):
     :param profile_name: The profile to load from the config file.  Defaults to "DEFAULT"
     :return: A config dict that can be used to create clients.
     """
-    file_location = six.u(os.path.expanduser(file_location))
+    file_location = os.path.expanduser(file_location)
 
     parser = configparser.ConfigParser(interpolation=None)
     if not parser.read(file_location):
