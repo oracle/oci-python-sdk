@@ -20,7 +20,7 @@ If you have an ``id_rsa`` but not the ``.pem`` version, you probably want to run
 
 Then copy and upload it::
 
-    cat ~/.ssh/od_rsa.pem | pbcopy
+    cat ~/.ssh/id_rsa.pem | pbcopy
 
 Setting up the development environment
 ======================================
