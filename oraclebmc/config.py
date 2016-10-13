@@ -8,12 +8,15 @@ The following keys are required:
 
     fingerprint
     key_file
+    pass_phrase (if your key_file has a passphrase)
     region (or endpoint)
     tenancy
     user
 
 Note that if you provide both "region" and "endpoint" then the endpoint will
 be used.
+
+You do not need to supply pass_phrase if your private key does not have one.
 
 Additionally, the following keys are optional:
 
@@ -41,6 +44,7 @@ DEFAULT_CONFIG = {
     "verify_ssl": True,
     "log_requests": False,
     "additional_user_agent": "",
+    "pass_phrase": None
 }
 DEFAULT_LOCATION = '~/.oraclebmc/config'
 DEFAULT_PROFILE = "DEFAULT"

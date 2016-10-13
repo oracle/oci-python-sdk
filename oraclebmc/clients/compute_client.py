@@ -33,7 +33,13 @@ missing = Sentinel("Missing")
 class ComputeClient(object):
 
     def __init__(self, config):
-        signer = Signer(config["tenancy"], config["user"], config["fingerprint"], config["key_file"])
+        signer = Signer(
+            tenancy=config["tenancy"],
+            user=config["user"],
+            fingerprint=config["fingerprint"],
+            private_key_file_location=config["key_file"],
+            pass_phrase=config["pass_phrase"]
+        )
         self.base_client = BaseClient("compute", config, signer)
 
     def attach_volume(self, attach_volume_details, **kwargs):

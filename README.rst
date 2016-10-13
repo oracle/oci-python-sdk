@@ -10,9 +10,17 @@ Required Test Files
 
 To ensure we're resolving ``~`` to the home folder correctly, the tests expect ~/.ssh/id_rsa.pem to exist.
 
-if you have an ``id_rsa`` but not the ``.pem`` version, you probably want to run this::
+If you don't have keys set up::
+
+    ssh-keygen -t rsa -b 2048 -f ~/.ssh/id_rsa
+
+If you have an ``id_rsa`` but not the ``.pem`` version, you probably want to run this::
 
     openssl rsa -in ~/.ssh/id_rsa -pubout > ~/.ssh/id_rsa.pem
+
+Then copy and upload it::
+
+    cat ~/.ssh/id_rsa.pem | pbcopy
 
 Setting up the development environment
 ======================================
@@ -37,15 +45,15 @@ Make sure to set up auto completion for both pyenv and pyenv-virtualenv.
     # Run once to install the python versions we test against
     pyenv install 2.7.12
     pyenv install 3.5.1
-    
+
     # Create new virtual environments for sdk-specific work:
     pyenv virtualenv 2.7.12 sdk-2
     pyenv virtualenv 3.5.1 sdk-3
-    
+
     # Set pyenv to use these virtualenvs when you're running commands from
     # the project or any subdirectory
     pyenv local sdk-3 sdk-2
-    
+
     # Update pip if necessary, in both pythons
     pip3 install -U pip
     pip2 install -U pip

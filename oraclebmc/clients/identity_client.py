@@ -33,7 +33,13 @@ missing = Sentinel("Missing")
 class IdentityClient(object):
 
     def __init__(self, config):
-        signer = Signer(config["tenancy"], config["user"], config["fingerprint"], config["key_file"])
+        signer = Signer(
+            tenancy=config["tenancy"],
+            user=config["user"],
+            fingerprint=config["fingerprint"],
+            private_key_file_location=config["key_file"],
+            pass_phrase=config["pass_phrase"]
+        )
         self.base_client = BaseClient("identity", config, signer)
 
     def add_user_to_group(self, add_user_to_group_details, **kwargs):
