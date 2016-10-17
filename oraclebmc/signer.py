@@ -2,6 +2,7 @@ import base64
 import email.utils
 import hashlib
 import io
+import os
 
 import httpsig_cffi.sign
 import httpsig_cffi.utils
@@ -64,7 +65,7 @@ class Signer(requests.auth.AuthBase):
 
     def __init__(self, tenancy, user, fingerprint, private_key_file_location, pass_phrase=None):
         self.api_key = tenancy + "/" + user + "/" + fingerprint
-        self.private_key_file_location = private_key_file_location
+        self.private_key_file_location = os.path.expanduser(private_key_file_location)
         self._private_key = None
 
         generic_headers = [

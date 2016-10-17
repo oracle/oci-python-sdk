@@ -34,7 +34,7 @@ import six
 
 from .exceptions import ConfigFileNotFound, ProfileNotFound, InvalidConfig
 
-__all__ = ["DEFAULT_CONFIG", "from_dict", "from_file", "validate"]
+__all__ = ["DEFAULT_CONFIG", "from_file", "validate_config"]
 
 DEFAULT_CONFIG = {
     "log_requests": False,
@@ -58,37 +58,8 @@ REQUIRED = {
 }
 
 
-def from_dict(config):
-    """Create a valid config dict from an existing dict.
-
-    This will insert defaults for any missing optional keys, and validate the resulting dict.
-
-        import oraclebmc.config
-
-        # From local variables
-        config = oraclebmc.config.load({
-            "user": user_ocid,
-            "tenancy": tenancy_ocid,
-            "fingerprint": fingerprint,
-            "region": region
-        })
-
-        # From an existing dict, always enable logging
-        config = from_somewhere(...)
-        config["log_requests"] = True
-        config = oraclebmc.config.from_dict(config)
-    """
-    new_config = dict(config)
-    for key, value in six.iteritems(DEFAULT_CONFIG):
-        new_config.setdefault(key, value)
-    validate(new_config)
-    new_config["log_requests"] = _as_bool(new_config["log_requests"])
-    new_config["key_file"] = os.path.expanduser(new_config["key_file"])
-    return new_config
-
-
 def from_file(file_location=DEFAULT_LOCATION, profile_name=DEFAULT_PROFILE):
-    """Create a valid config dict from a file.
+    """Create a config dict from a file.
 
     :param file_location: Path to the config file.  Defaults to ~/.oraclebmc/config
     :param profile_name: The profile to load from the config file.  Defaults to "DEFAULT"
@@ -103,12 +74,13 @@ def from_file(file_location=DEFAULT_LOCATION, profile_name=DEFAULT_PROFILE):
     if profile_name not in parser:
         raise ProfileNotFound("Profile '{}' not found".format(profile_name))
 
-    # load -> add defaults -> post-process -> validate
-    config = dict(parser[profile_name])
-    return from_dict(config)
+    config = dict(DEFAULT_CONFIG)
+    config.update(parser[profile_name])
+    config["log_requests"] = _as_bool(config["log_requests"])
+    return config
 
 
-def validate(config):
+def validate_config(config):
     """Raises ValueError if required fields are missing or malformed."""
     errors = {}
     for required_key in REQUIRED:

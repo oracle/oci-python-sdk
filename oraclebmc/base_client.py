@@ -35,6 +35,7 @@ import six
 from dateutil.parser import parse
 
 from . import constants, exceptions, models, regions
+from .config import validate_config
 from .request import Request
 from .response import Response
 from .signer import ObjectUploadSigner
@@ -74,6 +75,7 @@ class BaseClient(object):
     }
 
     def __init__(self, service, config, signer):
+        validate_config(config)
         self.signer = signer
         self.endpoint = regions.endpoint_for(
             service,

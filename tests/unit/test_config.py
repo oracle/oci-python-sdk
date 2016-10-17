@@ -1,5 +1,4 @@
 import logging
-import os.path
 import oraclebmc
 
 import pytest
@@ -26,7 +25,8 @@ def test_load_default_profile():
     assert config["user"] == HARDCODED_USER
     assert config["fingerprint"] == HARDCODED_FINGERPRINT
     assert config["region"] == HARDCODED_REGION
-    assert config["key_file"] == os.path.expanduser(HARDCODED_KEYFILE)
+    # key file is expanded by the signer, not config
+    assert config["key_file"] == HARDCODED_KEYFILE
 
 
 def test_child_profile():
@@ -90,7 +90,7 @@ def test_missing_required():
         "key_file": "~/.oraclebmc/config"
     }
     with pytest.raises(oraclebmc.exceptions.InvalidConfig) as excinfo:
-        oraclebmc.config.from_dict(config)
+        oraclebmc.config.validate_config(config)
 
     assert excinfo.value.errors == {
         "user": "malformed",
