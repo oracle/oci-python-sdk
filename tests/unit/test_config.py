@@ -1,3 +1,4 @@
+import logging
 import os.path
 import oraclebmc
 
@@ -32,9 +33,6 @@ def test_child_profile():
     config = oraclebmc.config.from_file(
         file_location=get_resource_path('config'), profile_name='DEBUG')
 
-    # check some default properties
-    assert config["verify_ssl"]
-
     # check properties inherited from the default profile
     assert config["tenancy"] == HARDCODED_TENANCY
     assert config["user"] == HARDCODED_USER
@@ -44,7 +42,6 @@ def test_child_profile():
     # check properties overridden by the specified profile
     assert config["log_requests"]
     assert config["additional_user_agent"]
-    assert config["endpoint"] == HARDCODED_ENDPOINT
 
 
 def test_extra_config_values():
@@ -67,9 +64,36 @@ def test_profile_not_found():
     assert 'does_not_exist' in str(excinfo.value)
 
 
-def test_invalid_region():
-    with pytest.raises(ValueError) as excinfo:
-        oraclebmc.config.from_file(
-            get_resource_path('config'),
-            profile_name='INVALID_REGION')
-    assert "Unknown region 'whoami'" in str(excinfo.value)
+def test_unknown_region(caplog):
+    config = oraclebmc.config.from_file(
+        get_resource_path('config'),
+        profile_name='UNKNOWN_REGION')
+
+    # Creating a config object doesn't log anything
+    assert not caplog.records
+
+    # Creating the client (which builds an endpoint) fires a warning
+    oraclebmc.clients.IdentityClient(config)
+    assert caplog.record_tuples == [
+        ("oraclebmc.regions", logging.WARN,
+         "Using unknown region '{}' to build service endpoint for 'identity'".format(HARDCODED_ENDPOINT))
+    ]
+
+
+def test_missing_required():
+    config = {
+        "user": "malformed-user",
+        "tenancy": "malformed-tenancy",
+        # missing "region"
+        # valid fingerprint
+        "fingerprint": "00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00",
+        "key_file": "~/.oraclebmc/config"
+    }
+    with pytest.raises(oraclebmc.exceptions.InvalidConfig) as excinfo:
+        oraclebmc.config.from_dict(config)
+
+    assert excinfo.value.errors == {
+        "user": "malformed",
+        "tenancy": "malformed",
+        "region": "missing"
+    }

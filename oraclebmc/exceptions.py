@@ -28,6 +28,23 @@ class ConfigFileNotFound(ClientError):
     """Config file not be found."""
 
 
+class InvalidConfig(ClientError):
+    """The config object is missing required keys or contains malformed values.
+
+    Example
+
+        raise InvalidConfig({
+            "region": "missing",
+            "key_id": "malformed'
+        })
+    """
+    def __init__(self, errors):
+        """
+        :param errors: {config key: error code}
+        """
+        self.errors = errors
+
+
 class ProfileNotFound(ClientError):
     """The specified profile was not found in the config file."""
 

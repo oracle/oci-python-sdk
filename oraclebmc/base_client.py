@@ -85,7 +85,6 @@ class BaseClient(object):
                                                  models.identity_type_mapping,
                                                  models.object_storage_type_mapping)
         self.session = requests.Session()
-        self.session.verify = config["verify_ssl"]
         self.user_agent = build_user_agent(config["additional_user_agent"])
 
         self.logger = logging.getLogger("{}.{}".format(__name__, id(self)))

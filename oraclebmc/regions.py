@@ -1,3 +1,6 @@
+import logging
+logger = logging.getLogger(__name__)
+
 REGIONS = {
     "us-phoenix-1": "us-phoenix-1.oraclecloud.com"
 }
@@ -17,18 +20,22 @@ def is_region(region_name):
 def endpoint_for(service, region=None, endpoint=None):
     """Returns the base URl for a service, either in the given region or at the specified endpoint.
 
-    Must provide only one of region """
+    If endpoint and region are provided, endpoint is used.
+    """
     if service.lower() not in SERVICE_ENDPOINTS:
         raise ValueError("Unknown service {!r}".format(service))
+
     if not (endpoint or region):
         raise ValueError("Must supply either a region or an endpoint.")
     elif endpoint:
         # endpoint takes priority
-        pass
-    elif region.lower() not in REGIONS:
-        raise ValueError("Unknown region {!r}".format(region))
+        domain = endpoint
     else:
-        endpoint = REGIONS.get(region.lower())
+        # no endpoint provided; use region, warn if unknown
+        if region.lower() not in REGIONS:
+            logger.warn("Using unknown region '%s' to build service endpoint for '%s'", region, service)
+        region = region.lower()
+        domain = REGIONS.get(region, region)
 
     url_format = SERVICE_ENDPOINTS[service.lower()]
-    return url_format.format(domain=endpoint)
+    return url_format.format(domain=domain)

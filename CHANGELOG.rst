@@ -74,7 +74,7 @@ You can easily validate your config, and create copies with:
 
     config = oraclebmc.config.from_dict(base_config)
 
-Additionally, any optional settings that you did not specify (such as ``verify_ssl``)
+Additionally, any optional settings that you did not specify (such as ``additional_user_agent``)
 will be set from their defaults in ``oraclebmc.config.DEFAULT_CONFIG``.
 
 Regions and Endpoints

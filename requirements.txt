@@ -6,6 +6,7 @@ cryptography==1.5.2
 flake8==3.0.4
 httpsig_cffi==15.0.0
 pytest==3.0.2
+pytest-catchlog==1.2.2
 python-dateutil==2.5.3
 pytz==2016.7
 requests==2.11.1

@@ -11,8 +11,8 @@ user = invaliduser
 [INVALID_CREDENTIALS]
 fingerprint = 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
 
-[INVALID_REGION]
-region = whoami
+[UNKNOWN_REGION]
+region = non-oracle-endpoint.com
 
 [MALFORMED_TENANCY]
 tenancy = "not-a-valid-ocid"
@@ -20,7 +20,6 @@ tenancy = "not-a-valid-ocid"
 [DEBUG]
 log_requests = true
 additional_user_agent = example_extra_user_agent_text
-endpoint = non-oracle-endpoint.com
 
 [INVALID_PARAMETER]
 foo = bar

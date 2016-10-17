@@ -32,13 +32,11 @@ import os.path
 import re
 import six
 
-from .exceptions import ConfigFileNotFound, ProfileNotFound
-from .regions import is_region
+from .exceptions import ConfigFileNotFound, ProfileNotFound, InvalidConfig
 
 __all__ = ["DEFAULT_CONFIG", "from_dict", "from_file", "validate"]
 
 DEFAULT_CONFIG = {
-    "verify_ssl": True,
     "log_requests": False,
     "additional_user_agent": "",
     "pass_phrase": None
@@ -55,7 +53,8 @@ REQUIRED = {
     "user",
     "tenancy",
     "fingerprint",
-    "key_file"
+    "key_file",
+    "region"
 }
 
 
@@ -71,9 +70,7 @@ def from_dict(config):
             "user": user_ocid,
             "tenancy": tenancy_ocid,
             "fingerprint": fingerprint,
-            "region": region,
-
-            "verify_ssl": True
+            "region": region
         })
 
         # From an existing dict, always enable logging
@@ -85,7 +82,6 @@ def from_dict(config):
     for key, value in six.iteritems(DEFAULT_CONFIG):
         new_config.setdefault(key, value)
     validate(new_config)
-    new_config["verify_ssl"] = _as_bool(new_config["verify_ssl"])
     new_config["log_requests"] = _as_bool(new_config["log_requests"])
     new_config["key_file"] = os.path.expanduser(new_config["key_file"])
     return new_config
@@ -113,22 +109,20 @@ def from_file(file_location=DEFAULT_LOCATION, profile_name=DEFAULT_PROFILE):
 
 
 def validate(config):
-    """Raises ValueError if required fields are missing, malformed, or map to unknown resources."""
-    errors = []
+    """Raises ValueError if required fields are missing or malformed."""
+    errors = {}
     for required_key in REQUIRED:
         if required_key not in config:
-            errors.append("Missing required config key: {!r}".format(required_key))
-    # If both are provided, endpoint will be used.
-    if "region" not in config and "endpoint" not in config:
-        errors.append("Must specify at least one of 'region' or 'endpoint'")
-    if "region" in config and not is_region(config["region"]):
-        errors.append("Unknown region {!r}".format(config["region"]))
-    _raise_on_errors(errors)
+            errors[required_key] = "missing"
 
     for key, pattern in six.iteritems(PATTERNS):
+        if key in errors:
+            # key is missing, can't possibly match pattern
+            continue
         if not pattern.match(config[key]):
-            errors.append("Malformed {} {!r}".format(key, config[key]))
-    _raise_on_errors(errors)
+            errors[key] = "malformed"
+    if errors:
+        raise InvalidConfig(errors)
 
 
 def _as_bool(x):
