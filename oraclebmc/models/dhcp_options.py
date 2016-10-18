@@ -34,7 +34,8 @@ class DhcpOptions(object):
             'id': 'str',
             'lifecycle_state': 'str',
             'options': 'list[DhcpOption]',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'vcn_id': 'str'
         }
 
         self.attribute_map = {
@@ -43,7 +44,8 @@ class DhcpOptions(object):
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
             'options': 'options',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'vcn_id': 'vcnId'
         }
 
         self._compartment_id = None
@@ -52,6 +54,7 @@ class DhcpOptions(object):
         self._lifecycle_state = None
         self._options = None
         self._time_created = None
+        self._vcn_id = None
 
     @property
     def compartment_id(self):
@@ -79,7 +82,7 @@ class DhcpOptions(object):
     def display_name(self):
         """
         Gets the display_name of this DhcpOptions.
-        A user-friendly name. Does not have to be unique, and it's unchangeable.
+        A user-friendly name. Does not have to be unique, and it's changeable.
 
         :return: The display_name of this DhcpOptions.
         :rtype: str
@@ -90,7 +93,7 @@ class DhcpOptions(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this DhcpOptions.
-        A user-friendly name. Does not have to be unique, and it's unchangeable.
+        A user-friendly name. Does not have to be unique, and it's changeable.
 
         :param display_name: The display_name of this DhcpOptions.
         :type: str
@@ -190,6 +193,28 @@ class DhcpOptions(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def vcn_id(self):
+        """
+        Gets the vcn_id of this DhcpOptions.
+        The OCID of the VCN the set of DHCP options belongs to.
+
+        :return: The vcn_id of this DhcpOptions.
+        :rtype: str
+        """
+        return self._vcn_id
+
+    @vcn_id.setter
+    def vcn_id(self, vcn_id):
+        """
+        Sets the vcn_id of this DhcpOptions.
+        The OCID of the VCN the set of DHCP options belongs to.
+
+        :param vcn_id: The vcn_id of this DhcpOptions.
+        :type: str
+        """
+        self._vcn_id = vcn_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

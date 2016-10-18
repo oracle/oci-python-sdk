@@ -52,7 +52,7 @@ def test_bucket_crud(object_storage, config):
     response = object_storage.list_buckets(namespace, config["tenancy"], limit=100)
     assert response.status == 200
     assert bucket_count + 1 == len(response.data)
-    assert type(response.data[0]) is oraclebmc.models.Bucket
+    assert type(response.data[0]) is oraclebmc.models.BucketSummary
 
     # Update
     request = oraclebmc.models.UpdateBucketDetails()
@@ -271,7 +271,7 @@ def test_list_buckets(object_storage, config):
     response = object_storage.list_buckets(namespace, config["tenancy"])
     assert response.status == 200
     assert len(response.data) > 0
-    assert type(response.data[0]) is oraclebmc.models.Bucket
+    assert type(response.data[0]) is oraclebmc.models.BucketSummary
 
 
 def test_list_buckets_truncated(object_storage, config):
@@ -279,7 +279,7 @@ def test_list_buckets_truncated(object_storage, config):
     response = object_storage.list_buckets(namespace, config["tenancy"], limit=2)
     assert response.status == 200
     assert 2 == len(response.data)
-    assert type(response.data[0]) is oraclebmc.models.Bucket
+    assert type(response.data[0]) is oraclebmc.models.BucketSummary
     assert response.has_next_page
     first_bucket_name = response.data[0].name
 

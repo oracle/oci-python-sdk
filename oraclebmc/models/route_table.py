@@ -34,7 +34,8 @@ class RouteTable(object):
             'id': 'str',
             'lifecycle_state': 'str',
             'route_rules': 'list[RouteRule]',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'vcn_id': 'str'
         }
 
         self.attribute_map = {
@@ -43,7 +44,8 @@ class RouteTable(object):
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
             'route_rules': 'routeRules',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'vcn_id': 'vcnId'
         }
 
         self._compartment_id = None
@@ -52,6 +54,7 @@ class RouteTable(object):
         self._lifecycle_state = None
         self._route_rules = None
         self._time_created = None
+        self._vcn_id = None
 
     @property
     def compartment_id(self):
@@ -79,7 +82,7 @@ class RouteTable(object):
     def display_name(self):
         """
         Gets the display_name of this RouteTable.
-        A user-friendly name. Does not have to be unique, and it's not changeable.
+        A user-friendly name. Does not have to be unique, and it's changeable.
 
         :return: The display_name of this RouteTable.
         :rtype: str
@@ -90,7 +93,7 @@ class RouteTable(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this RouteTable.
-        A user-friendly name. Does not have to be unique, and it's not changeable.
+        A user-friendly name. Does not have to be unique, and it's changeable.
 
         :param display_name: The display_name of this RouteTable.
         :type: str
@@ -190,6 +193,28 @@ class RouteTable(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def vcn_id(self):
+        """
+        Gets the vcn_id of this RouteTable.
+        The OCID of the VCN the route table list belongs to.
+
+        :return: The vcn_id of this RouteTable.
+        :rtype: str
+        """
+        return self._vcn_id
+
+    @vcn_id.setter
+    def vcn_id(self, vcn_id):
+        """
+        Sets the vcn_id of this RouteTable.
+        The OCID of the VCN the route table list belongs to.
+
+        :param vcn_id: The vcn_id of this RouteTable.
+        :type: str
+        """
+        self._vcn_id = vcn_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

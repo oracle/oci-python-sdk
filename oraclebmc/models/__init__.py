@@ -1,10 +1,9 @@
 from __future__ import absolute_import
 
-# import models into model package
 from .attach_i_scsi_volume_details import AttachIScsiVolumeDetails
 from .attach_volume_details import AttachVolumeDetails
 from .capture_console_history_details import CaptureConsoleHistoryDetails
-from .console_history_metadata import ConsoleHistoryMetadata
+from .console_history import ConsoleHistory
 from .cpe import Cpe
 from .create_cpe_details import CreateCpeDetails
 from .create_dhcp_details import CreateDhcpDetails
@@ -45,12 +44,18 @@ from .tcp_options import TcpOptions
 from .tunnel_config import TunnelConfig
 from .tunnel_status import TunnelStatus
 from .udp_options import UdpOptions
+from .update_cpe_details import UpdateCpeDetails
 from .update_dhcp_details import UpdateDhcpDetails
+from .update_drg_attachment_details import UpdateDrgAttachmentDetails
+from .update_drg_details import UpdateDrgDetails
+from .update_ip_sec_connection_details import UpdateIPSecConnectionDetails
 from .update_image_details import UpdateImageDetails
 from .update_instance_details import UpdateInstanceDetails
 from .update_internet_gateway_details import UpdateInternetGatewayDetails
 from .update_route_table_details import UpdateRouteTableDetails
 from .update_security_list_details import UpdateSecurityListDetails
+from .update_subnet_details import UpdateSubnetDetails
+from .update_vcn_details import UpdateVcnDetails
 from .update_volume_backup_details import UpdateVolumeBackupDetails
 from .update_volume_details import UpdateVolumeDetails
 from .vcn import Vcn
@@ -84,6 +89,7 @@ from .user import User
 from .user_group_membership import UserGroupMembership
 
 from .bucket import Bucket
+from .bucket_summary import BucketSummary
 from .create_bucket_details import CreateBucketDetails
 from .list_objects import ListObjects
 from .object_summary import ObjectSummary
@@ -94,98 +100,105 @@ from .error import Error
 
 # Maps type names to classes for core services.
 core_type_mapping = {
-    'AttachIScsiVolumeDetails': AttachIScsiVolumeDetails,
-    'AttachVolumeDetails': AttachVolumeDetails,
-    'CaptureConsoleHistoryDetails': CaptureConsoleHistoryDetails,
-    'ConsoleHistoryMetadata': ConsoleHistoryMetadata,
-    'Cpe': Cpe,
-    'CreateCpeDetails': CreateCpeDetails,
-    'CreateDhcpDetails': CreateDhcpDetails,
-    'CreateDrgAttachmentDetails': CreateDrgAttachmentDetails,
-    'CreateDrgDetails': CreateDrgDetails,
-    'CreateIPSecConnectionDetails': CreateIPSecConnectionDetails,
-    'CreateImageDetails': CreateImageDetails,
-    'CreateInternetGatewayDetails': CreateInternetGatewayDetails,
-    'CreateRouteTableDetails': CreateRouteTableDetails,
-    'CreateSecurityListDetails': CreateSecurityListDetails,
-    'CreateSubnetDetails': CreateSubnetDetails,
-    'CreateVcnDetails': CreateVcnDetails,
-    'CreateVolumeBackupDetails': CreateVolumeBackupDetails,
-    'CreateVolumeDetails': CreateVolumeDetails,
-    'DhcpDnsOption': DhcpDnsOption,
-    'DhcpOption': DhcpOption,
-    'DhcpOptions': DhcpOptions,
-    'Drg': Drg,
-    'DrgAttachment': DrgAttachment,
-    'EgressSecurityRule': EgressSecurityRule,
-    'Error': Error,
-    'IPSecConnection': IPSecConnection,
-    'IPSecConnectionDeviceConfig': IPSecConnectionDeviceConfig,
-    'IPSecConnectionDeviceStatus': IPSecConnectionDeviceStatus,
-    'IScsiVolumeAttachment': IScsiVolumeAttachment,
-    'IcmpOptions': IcmpOptions,
-    'Image': Image,
-    'IngressSecurityRule': IngressSecurityRule,
-    'Instance': Instance,
-    'InternetGateway': InternetGateway,
-    'LaunchInstanceDetails': LaunchInstanceDetails,
-    'PortRange': PortRange,
-    'RouteRule': RouteRule,
-    'RouteTable': RouteTable,
-    'SecurityList': SecurityList,
-    'Shape': Shape,
-    'Subnet': Subnet,
-    'TcpOptions': TcpOptions,
-    'TunnelConfig': TunnelConfig,
-    'TunnelStatus': TunnelStatus,
-    'UdpOptions': UdpOptions,
-    'UpdateDhcpDetails': UpdateDhcpDetails,
-    'UpdateImageDetails': UpdateImageDetails,
-    'UpdateInstanceDetails': UpdateInstanceDetails,
-    'UpdateInternetGatewayDetails': UpdateInternetGatewayDetails,
-    'UpdateRouteTableDetails': UpdateRouteTableDetails,
-    'UpdateSecurityListDetails': UpdateSecurityListDetails,
-    'UpdateVolumeBackupDetails': UpdateVolumeBackupDetails,
-    'UpdateVolumeDetails': UpdateVolumeDetails,
-    'Vcn': Vcn,
-    'Vnic': Vnic,
-    'VnicAttachment': VnicAttachment,
-    'Volume': Volume,
-    'VolumeAttachment': VolumeAttachment,
-    'VolumeBackup': VolumeBackup,
+    "AttachIScsiVolumeDetails": AttachIScsiVolumeDetails,
+    "AttachVolumeDetails": AttachVolumeDetails,
+    "CaptureConsoleHistoryDetails": CaptureConsoleHistoryDetails,
+    "ConsoleHistory": ConsoleHistory,
+    "Cpe": Cpe,
+    "CreateCpeDetails": CreateCpeDetails,
+    "CreateDhcpDetails": CreateDhcpDetails,
+    "CreateDrgAttachmentDetails": CreateDrgAttachmentDetails,
+    "CreateDrgDetails": CreateDrgDetails,
+    "CreateIPSecConnectionDetails": CreateIPSecConnectionDetails,
+    "CreateImageDetails": CreateImageDetails,
+    "CreateInternetGatewayDetails": CreateInternetGatewayDetails,
+    "CreateRouteTableDetails": CreateRouteTableDetails,
+    "CreateSecurityListDetails": CreateSecurityListDetails,
+    "CreateSubnetDetails": CreateSubnetDetails,
+    "CreateVcnDetails": CreateVcnDetails,
+    "CreateVolumeBackupDetails": CreateVolumeBackupDetails,
+    "CreateVolumeDetails": CreateVolumeDetails,
+    "DhcpDnsOption": DhcpDnsOption,
+    "DhcpOption": DhcpOption,
+    "DhcpOptions": DhcpOptions,
+    "Drg": Drg,
+    "DrgAttachment": DrgAttachment,
+    "EgressSecurityRule": EgressSecurityRule,
+    "Error": Error,
+    "IPSecConnection": IPSecConnection,
+    "IPSecConnectionDeviceConfig": IPSecConnectionDeviceConfig,
+    "IPSecConnectionDeviceStatus": IPSecConnectionDeviceStatus,
+    "IScsiVolumeAttachment": IScsiVolumeAttachment,
+    "IcmpOptions": IcmpOptions,
+    "Image": Image,
+    "IngressSecurityRule": IngressSecurityRule,
+    "Instance": Instance,
+    "InternetGateway": InternetGateway,
+    "LaunchInstanceDetails": LaunchInstanceDetails,
+    "PortRange": PortRange,
+    "RouteRule": RouteRule,
+    "RouteTable": RouteTable,
+    "SecurityList": SecurityList,
+    "Shape": Shape,
+    "Subnet": Subnet,
+    "TcpOptions": TcpOptions,
+    "TunnelConfig": TunnelConfig,
+    "TunnelStatus": TunnelStatus,
+    "UdpOptions": UdpOptions,
+    "UpdateCpeDetails": UpdateCpeDetails,
+    "UpdateDhcpDetails": UpdateDhcpDetails,
+    "UpdateDrgAttachmentDetails": UpdateDrgAttachmentDetails,
+    "UpdateDrgDetails": UpdateDrgDetails,
+    "UpdateIPSecConnectionDetails": UpdateIPSecConnectionDetails,
+    "UpdateImageDetails": UpdateImageDetails,
+    "UpdateInstanceDetails": UpdateInstanceDetails,
+    "UpdateInternetGatewayDetails": UpdateInternetGatewayDetails,
+    "UpdateRouteTableDetails": UpdateRouteTableDetails,
+    "UpdateSecurityListDetails": UpdateSecurityListDetails,
+    "UpdateSubnetDetails": UpdateSubnetDetails,
+    "UpdateVcnDetails": UpdateVcnDetails,
+    "UpdateVolumeBackupDetails": UpdateVolumeBackupDetails,
+    "UpdateVolumeDetails": UpdateVolumeDetails,
+    "Vcn": Vcn,
+    "Vnic": Vnic,
+    "VnicAttachment": VnicAttachment,
+    "Volume": Volume,
+    "VolumeAttachment": VolumeAttachment,
+    "VolumeBackup": VolumeBackup
 }
 
 identity_type_mapping = {
-    'AddUserToGroupDetails': AddUserToGroupDetails,
-    'ApiKey': ApiKey,
-    'AvailabilityDomain': AvailabilityDomain,
-    'Compartment': Compartment,
-    'CreateApiKeyDetails': CreateApiKeyDetails,
-    'CreateCompartmentDetails': CreateCompartmentDetails,
-    'CreateGroupDetails': CreateGroupDetails,
-    'CreatePolicyDetails': CreatePolicyDetails,
-    'CreateSwiftPasswordDetails': CreateSwiftPasswordDetails,
-    'CreateUserDetails': CreateUserDetails,
-    'Error': Error,
-    'Group': Group,
-    'Policy': Policy,
-    'SwiftPassword': SwiftPassword,
-    'UIPassword': UIPassword,
-    'UpdateCompartmentDetails': UpdateCompartmentDetails,
-    'UpdateGroupDetails': UpdateGroupDetails,
-    'UpdatePolicyDetails': UpdatePolicyDetails,
-    'UpdateStateDetails': UpdateStateDetails,
-    'UpdateSwiftPasswordDetails': UpdateSwiftPasswordDetails,
-    'UpdateUserDetails': UpdateUserDetails,
-    'User': User,
-    'UserGroupMembership': UserGroupMembership,
+    "AddUserToGroupDetails": AddUserToGroupDetails,
+    "ApiKey": ApiKey,
+    "AvailabilityDomain": AvailabilityDomain,
+    "Compartment": Compartment,
+    "CreateApiKeyDetails": CreateApiKeyDetails,
+    "CreateCompartmentDetails": CreateCompartmentDetails,
+    "CreateGroupDetails": CreateGroupDetails,
+    "CreatePolicyDetails": CreatePolicyDetails,
+    "CreateSwiftPasswordDetails": CreateSwiftPasswordDetails,
+    "CreateUserDetails": CreateUserDetails,
+    "Error": Error,
+    "Group": Group,
+    "Policy": Policy,
+    "SwiftPassword": SwiftPassword,
+    "UIPassword": UIPassword,
+    "UpdateCompartmentDetails": UpdateCompartmentDetails,
+    "UpdateGroupDetails": UpdateGroupDetails,
+    "UpdatePolicyDetails": UpdatePolicyDetails,
+    "UpdateStateDetails": UpdateStateDetails,
+    "UpdateSwiftPasswordDetails": UpdateSwiftPasswordDetails,
+    "UpdateUserDetails": UpdateUserDetails,
+    "User": User,
+    "UserGroupMembership": UserGroupMembership
 }
 
 object_storage_type_mapping = {
-    'Bucket': Bucket,
-    'CreateBucketDetails': CreateBucketDetails,
-    'Error': Error,
-    'ListObjects': ListObjects,
-    'ObjectSummary': ObjectSummary,
-    'UpdateBucketDetails': UpdateBucketDetails,
+    "Bucket": Bucket,
+    "BucketSummary": BucketSummary,
+    "CreateBucketDetails": CreateBucketDetails,
+    "Error": Error,
+    "ListObjects": ListObjects,
+    "ObjectSummary": ObjectSummary,
+    "UpdateBucketDetails": UpdateBucketDetails
 }

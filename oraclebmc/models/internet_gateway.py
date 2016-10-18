@@ -34,7 +34,8 @@ class InternetGateway(object):
             'id': 'str',
             'is_enabled': 'bool',
             'lifecycle_state': 'str',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'vcn_id': 'str'
         }
 
         self.attribute_map = {
@@ -43,7 +44,8 @@ class InternetGateway(object):
             'id': 'id',
             'is_enabled': 'isEnabled',
             'lifecycle_state': 'lifecycleState',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'vcn_id': 'vcnId'
         }
 
         self._compartment_id = None
@@ -52,6 +54,7 @@ class InternetGateway(object):
         self._is_enabled = None
         self._lifecycle_state = None
         self._time_created = None
+        self._vcn_id = None
 
     @property
     def compartment_id(self):
@@ -79,7 +82,7 @@ class InternetGateway(object):
     def display_name(self):
         """
         Gets the display_name of this InternetGateway.
-        A user-friendly name. Does not have to be unique, and it's not changeable.
+        A user-friendly name. Does not have to be unique, and it's changeable.
 
         :return: The display_name of this InternetGateway.
         :rtype: str
@@ -90,7 +93,7 @@ class InternetGateway(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this InternetGateway.
-        A user-friendly name. Does not have to be unique, and it's not changeable.
+        A user-friendly name. Does not have to be unique, and it's changeable.
 
         :param display_name: The display_name of this InternetGateway.
         :type: str
@@ -192,6 +195,28 @@ class InternetGateway(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def vcn_id(self):
+        """
+        Gets the vcn_id of this InternetGateway.
+        The OCID of the VCN the Internet Gateway belongs to.
+
+        :return: The vcn_id of this InternetGateway.
+        :rtype: str
+        """
+        return self._vcn_id
+
+    @vcn_id.setter
+    def vcn_id(self, vcn_id):
+        """
+        Sets the vcn_id of this InternetGateway.
+        The OCID of the VCN the Internet Gateway belongs to.
+
+        :param vcn_id: The vcn_id of this InternetGateway.
+        :type: str
+        """
+        self._vcn_id = vcn_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

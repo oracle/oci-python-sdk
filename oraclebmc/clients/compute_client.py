@@ -99,13 +99,13 @@ class ComputeClient(object):
         The `CaptureConsoleHistory` operation works with the other console history operations
         as described below.
         1. Use `CaptureConsoleHistory` to request the capture of up to a megabyte of the
-        most recent console history. This call returns a `ConsoleHistoryMetadata`
+        most recent console history. This call returns a `ConsoleHistory`
         object. The object will have a state of `requested`.
         2. Wait for the capture operation to succeed by polling `GetConsoleHistory` with
         the identifier of the console history metadata. The state of the
-        `ConsoleHistoryMetadata` object will go from `requested` to `getting-history` and
+        `ConsoleHistory` object will go from `requested` to `getting-history` and
         then `succeeded` (or `failed`).
-        3. Use `ShowConsoleHistoryData` to get the actual console history data (not the
+        3. Use `GetConsoleHistoryContent` to get the actual console history data (not the
         metadata).
         4. Optionally, use `DeleteConsoleHistory` to delete the console history metadata
         and the console history data.
@@ -121,7 +121,7 @@ class ComputeClient(object):
             hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
-        :return: A Response object with data of type ConsoleHistoryMetadata
+        :return: A Response object with data of type ConsoleHistory
         """
         resource_path = "/instanceConsoleHistories/"
         method = "POST"
@@ -147,7 +147,7 @@ class ComputeClient(object):
             method=method,
             header_params=header_params,
             body=capture_console_history_details,
-            response_type="ConsoleHistoryMetadata")
+            response_type="ConsoleHistory")
 
     def create_image(self, create_image_details, **kwargs):
         """
@@ -340,7 +340,7 @@ class ComputeClient(object):
 
         :param str instance_console_history_id: (required)
             The OCID of the console history.
-        :return: A Response object with data of type ConsoleHistoryMetadata
+        :return: A Response object with data of type ConsoleHistory
         """
         resource_path = "/instanceConsoleHistories/{instanceConsoleHistoryId}"
         method = "GET"
@@ -364,7 +364,59 @@ class ComputeClient(object):
             method=method,
             path_params=path_params,
             header_params=header_params,
-            response_type="ConsoleHistoryMetadata")
+            response_type="ConsoleHistory")
+
+    def get_console_history_content(self, instance_console_history_id, **kwargs):
+        """
+        GetConsoleHistoryContent
+        Gets the actual console history data (not the metadata).
+        See CaptureConsoleHistory
+        for details about using the console history operations.
+
+        :param str instance_console_history_id: (required)
+            The OCID of the console history.
+        :param int offset: (optional)
+            Offset of the snapshot data to retrieve.
+        :param int length: (optional)
+            Length of the snapshot data to retrieve.
+        :return: A Response object with data of type str
+        """
+        resource_path = "/instanceConsoleHistories/{instanceConsoleHistoryId}/data"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "offset",
+            "length"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_console_history_content got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "instanceConsoleHistoryId": instance_console_history_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        query_params = {
+            "offset": kwargs.get("offset", missing),
+            "length": kwargs.get("length", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="str")
 
     def get_image(self, image_id, **kwargs):
         """
@@ -634,7 +686,7 @@ class ComputeClient(object):
             The value of the `opc-next-page` response header from the previous \"List\" call.
         :param str instance_id: (optional)
             The OCID of the instance.
-        :return: A Response object with data of type list[ConsoleHistoryMetadata]
+        :return: A Response object with data of type list[ConsoleHistory]
         """
         resource_path = "/instanceConsoleHistories/"
         method = "GET"
@@ -670,7 +722,7 @@ class ComputeClient(object):
             method=method,
             query_params=query_params,
             header_params=header_params,
-            response_type="list[ConsoleHistoryMetadata]")
+            response_type="list[ConsoleHistory]")
 
     def list_images(self, compartment_id, **kwargs):
         """
@@ -976,58 +1028,6 @@ class ComputeClient(object):
             query_params=query_params,
             header_params=header_params,
             response_type="list[VolumeAttachment]")
-
-    def show_console_history_data(self, instance_console_history_id, **kwargs):
-        """
-        ShowConsoleHistoryData
-        Gets the actual console history data (not the metadata).
-        See CaptureConsoleHistory
-        for details about using the console history operations.
-
-        :param str instance_console_history_id: (required)
-            The OCID of the console history.
-        :param int offset: (optional)
-            Offset of the snapshot data to retrieve.
-        :param int length: (optional)
-            Length of the snapshot data to retrieve.
-        :return: A Response object with data of type str
-        """
-        resource_path = "/instanceConsoleHistories/{instanceConsoleHistoryId}/data"
-        method = "GET"
-
-        # Don't accept unknown kwargs
-        expected_kwargs = [
-            "offset",
-            "length"
-        ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
-        if extra_kwargs:
-            raise ValueError(
-                "show_console_history_data got unknown kwargs: {!r}".format(extra_kwargs))
-
-        path_params = {
-            "instanceConsoleHistoryId": instance_console_history_id
-        }
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
-
-        query_params = {
-            "offset": kwargs.get("offset", missing),
-            "length": kwargs.get("length", missing)
-        }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
-
-        header_params = {
-            "accept": "application/json",
-            "content-type": "application/json"
-        }
-
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="str")
 
     def terminate_instance(self, instance_id, **kwargs):
         """

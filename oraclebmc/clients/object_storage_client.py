@@ -95,7 +95,7 @@ class ObjectStorageClient(object):
     def delete_bucket(self, namespace_name, bucket_name, **kwargs):
         """
         DeleteBucket
-        Deletes a bucket if it is already empty. If the bucket is not empty, use DeleteBucket first.
+        Deletes a bucket if it is already empty. If the bucket is not empty, use DeleteObject first.
 
         :param str namespace_name: (required)
             The top-level namespace used for the request.
@@ -297,7 +297,8 @@ class ObjectStorageClient(object):
         :param str opc_client_request_id: (optional)
             The client request ID for tracing
         :param str range: (optional)
-            Optional byte range to fetch. Follows https://tools.ietf.org/html/rfc7233#section-2.1. Note, only one byte range is supported.
+            Optional byte range to fetch. Follows https://tools.ietf.org/html/rfc7233#section-2.1.
+            Note, only one byte range is supported.
         :return: A Response object with data of type stream
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/o/{objectName}"
@@ -449,7 +450,8 @@ class ObjectStorageClient(object):
     def list_buckets(self, namespace_name, compartment_id, **kwargs):
         """
         ListBuckets
-        Gets a list of all the `Bucket`s in a namespace.
+        Get a list of all `BucketSummary`s in a namespace. A `BucketSummary` contains only summary fields for the bucket
+        and does not contain fields like the user-defined metadata.
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
         talk to an administrator. If you're an admin who needs to write policies to give users access, see
         [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
@@ -464,7 +466,7 @@ class ObjectStorageClient(object):
             The page at which to start retrieving results.
         :param str opc_client_request_id: (optional)
             The client request ID for tracing
-        :return: A Response object with data of type list[Bucket]
+        :return: A Response object with data of type list[BucketSummary]
         """
         resource_path = "/n/{namespaceName}/b/"
         method = "GET"
@@ -505,7 +507,7 @@ class ObjectStorageClient(object):
             path_params=path_params,
             query_params=query_params,
             header_params=header_params,
-            response_type="list[Bucket]")
+            response_type="list[BucketSummary]")
 
     def list_objects(self, namespace_name, bucket_name, **kwargs):
         """
@@ -528,9 +530,16 @@ class ObjectStorageClient(object):
         :param int limit: (optional)
             The maximum number of items to return.
         :param str delimiter: (optional)
-            When this parameter is set, only objects whose names do not contain the delimiter character (after an optionally specified prefix) are returned. Scanned objects whose names contain the delimiter have part of their name up to the last occurrence of the delimiter (after the optional prefix) returned as a set of prefixes. Note that only '/' is a supported delimiter character at this time.
+            When this parameter is set, only objects whose names do not contain the delimiter character
+            (after an optionally specified prefix) are returned. Scanned objects whose names contain the
+            delimiter have part of their name up to the last occurrence of the delimiter (after the optional
+            prefix) returned as a set of prefixes. Note that only '/' is a supported delimiter character at
+            this time.
         :param str fields: (optional)
-            Object summary in list of objects includes the 'name' field.   This parameter may also include 'size' (object size in bytes), 'md5', and 'timeCreated' (object creation date and time) fields. Value of this parameter should be a comma separated, case-insensitive list of those field names. For example 'name,timeCreated,md5'
+            Object summary in list of objects includes the 'name' field.   This parameter may also include 'size'
+            (object size in bytes), 'md5', and 'timeCreated' (object creation date and time) fields.
+            Value of this parameter should be a comma separated, case-insensitive list of those field names.
+            For example 'name,timeCreated,md5'
         :param str opc_client_request_id: (optional)
             The client request ID for tracing
         :return: A Response object with data of type ListObjects

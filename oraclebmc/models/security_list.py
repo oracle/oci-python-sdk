@@ -85,7 +85,7 @@ class SecurityList(object):
     def display_name(self):
         """
         Gets the display_name of this SecurityList.
-        A user-friendly name. Does not have to be unique, and it's not changeable.
+        A user-friendly name. Does not have to be unique, and it's changeable.
 
         :return: The display_name of this SecurityList.
         :rtype: str
@@ -96,7 +96,7 @@ class SecurityList(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this SecurityList.
-        A user-friendly name. Does not have to be unique, and it's not changeable.
+        A user-friendly name. Does not have to be unique, and it's changeable.
 
         :param display_name: The display_name of this SecurityList.
         :type: str

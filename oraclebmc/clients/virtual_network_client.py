@@ -61,8 +61,8 @@ class VirtualNetworkClient(object):
         For information about OCIDs, see [Resource Identifiers]({{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm).
         You must provide the public IP address of your on-premise router. See
         [Configuring Your On-Premise Router]({{DOC_SERVER_URL}}/Content/Network/Tasks/configuringCPE.htm).
-        You may optionally specify a *display name* for the CPE, which is simply a friendly name or description.
-        It does not have to be unique, and it's not changeable.
+        You may optionally specify a *display name* for the CPE, otherwise a default is provided. It does not have to
+        be unique, and you can change it.
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
         talk to an administrator. If you're an administrator who needs to write policies to give users access, see
         [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
@@ -116,8 +116,8 @@ class VirtualNetworkClient(object):
         of DHCP options in the same compartment as the VCN. For more information about compartments and access control, see
         [Overview of the Identity and Access Management Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
         [Resource Identifiers]({{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm).
-        You may optionally specify a *display name* for the set of DHCP options, which is simply a friendly name or description.
-        It does not have to be unique, and it's unchangeable.
+        You may optionally specify a *display name* for the set of DHCP options, otherwise a default is provided. It does not have to
+        be unique, and you can change it.
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
         talk to an administrator. If you're an administrator who needs to write policies to give users access, see
         [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
@@ -173,8 +173,8 @@ class VirtualNetworkClient(object):
         to use, put the DRG in the same compartment as the VCN. For more information about compartments
         and access control, see [Overview of the Identity and Access Management Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm).
         For information about OCIDs, see [Resource Identifiers]({{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm).
-        You may optionally specify a *display name* for the DRG, which is simply a friendly name or
-        description. It does not have to be unique, and it's not changeable.
+        You may optionally specify a *display name* for the DRG, otherwise a default is provided. It does not have to
+        be unique, and you can change it.
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
         talk to an administrator. If you're an administrator who needs to write policies to give users access, see
         [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
@@ -221,8 +221,8 @@ class VirtualNetworkClient(object):
         Attaches the specified DRG to the specified VCN. A VCN can be attached to only one DRG at a time.
         The response includes a `DrgAttachment` object with its own OCID. For more information about DRGs, see
         [Managing Dynamic Routing Gateways (DRGs)]({{DOC_SERVER_URL}}/Content/Network/Tasks/managingDRGs.htm).
-        You may optionally specify a *display name* for the attachment, which is simply a friendly name or
-        description. It does not have to be unique, and it's not changeable.
+        You may optionally specify a *display name* for the attachment, otherwise a default is provided. It does not have to
+        be unique, and you can change it.
         For the purposes of access control, the DRG attachment is automatically placed into the same compartment
         as the VCN. For more information about compartments and access control, see
         [Overview of the Identity and Access Management Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm).
@@ -279,8 +279,8 @@ class VirtualNetworkClient(object):
         Gateway in the same compartment with the VCN. For more information about compartments and access control, see
         [Overview of the Identity and Access Management Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
         [Resource Identifiers]({{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm).
-        You may optionally specify a *display name* for the Internet Gateway, which is simply a friendly name or
-        description. It does not have to be unique, and it's not changeable.
+        You may optionally specify a *display name* for the Internet Gateway, otherwise a default is provided. It does not have to
+        be unique, and you can change it.
         For traffic to flow between a subnet and an Internet Gateway, you must create a route rule accordingly in
         the subnet's route table (e.g., 0.0.0.0/0 > Internet Gateway). See UpdateRouteTable.
         You must specify whether the Internet Gateway is enabled when you create it. If it's disabled, that means no
@@ -344,8 +344,8 @@ class VirtualNetworkClient(object):
         compartments and access control, see
         [Overview of the Identity and Access Management Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm).
         For information about OCIDs, see [Resource Identifiers]({{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm).
-        You may optionally specify a *display name* for the IPSec connection, which is simply a friendly
-        name or description. It does not have to be unique, and it is not changeable.
+        You may optionally specify a *display name* for the IPSec connection, otherwise a default is provided. It does not have to
+        be unique, and you can change it.
         After creating the IPSec connection, you need to configure your on-premise router
         with tunnel-specific information returned by
         GetIPSecConnectionDeviceConfig. For each tunnel, that operation gives
@@ -405,8 +405,8 @@ class VirtualNetworkClient(object):
         table in the same compartment as the VCN. For more information about compartments and access control, see
         [Overview of the Identity and Access Management Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
         [Resource Identifiers]({{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm).
-        You may optionally specify a *display name* for the route table, which is simply a friendly name or description.
-        It does not have to be unique, and it's not changeable.
+        You may optionally specify a *display name* for the route table, otherwise a default is provided. It does not have to
+        be unique, and you can change it.
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
         talk to an administrator. If you're an administrator who needs to write policies to give users access, see
         [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
@@ -447,7 +447,7 @@ class VirtualNetworkClient(object):
             body=create_route_table_details,
             response_type="RouteTable")
 
-    def create_security_list(self, details, **kwargs):
+    def create_security_list(self, create_security_list_details, **kwargs):
         """
         CreateSecurityList
         Creates a new security list for the specified VCN. A security list provides a stateful firewall
@@ -464,13 +464,13 @@ class VirtualNetworkClient(object):
         list in the same compartment as the VCN. For more information about compartments and access control, see
         [Overview of the Identity and Access Management Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
         [Resource Identifiers]({{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm).
-        You may optionally specify a *display name* for the security list, which is simply a friendly name or
-        description. It does not have to be unique, and it's not changeable.
+        You may optionally specify a *display name* for the security list, otherwise a default is provided. It does not have to
+        be unique, and you can change it.
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
         talk to an administrator. If you're an administrator who needs to write policies to give users access, see
         [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
 
-        :param CreateSecurityListDetails details: (required)
+        :param CreateSecurityListDetails create_security_list_details: (required)
             Details regarding the security list to create.
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -503,7 +503,7 @@ class VirtualNetworkClient(object):
             resource_path=resource_path,
             method=method,
             header_params=header_params,
-            body=details,
+            body=create_security_list_details,
             response_type="SecurityList")
 
     def create_subnet(self, create_subnet_details, **kwargs):
@@ -531,8 +531,8 @@ class VirtualNetworkClient(object):
         You may optionally specify a set of DHCP options for the subnet to use. If you don't, the subnet will use the
         VCN's default set. For more information about DHCP options, see
         [Managing DHCP Options]({{DOC_SERVER_URL}}/Content/Network/Tasks/managingDHCP.htm).
-        You may optionally specify a *display name* for the subnet, which is simply a friendly name or description.
-        It does not have to be unique, and it's not changeable.
+        You may optionally specify a *display name* for the subnet, otherwise a default is provided. It does not have to
+        be unique, and you can change it.
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
         talk to an administrator. If you're an administrator who needs to write policies to give users access, see
         [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
@@ -589,8 +589,8 @@ class VirtualNetworkClient(object):
         Virtual Network Service components. For more information about compartments and access control, see
         [Overview of the Identity and Access Management Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
         [Resource Identifiers]({{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm).
-        You may optionally specify a *display name* for the VCN, which is simply a friendly name or description.
-        It does not have to be unique, and it is not changeable.
+        You may optionally specify a *display name* for the VCN, otherwise a default is provided. It does not have to
+        be unique, and you can change it.
         The VCN automatically comes with a default route table, default security list, and default set of DHCP options.
         The OCID for each is returned in the response. You can't delete these default objects, but you can change their
         contents (i.e., route rules, etc.)
@@ -2062,6 +2062,53 @@ class VirtualNetworkClient(object):
             header_params=header_params,
             response_type="list[Vcn]")
 
+    def update_cpe(self, cpe_id, update_cpe_details, **kwargs):
+        """
+        UpdateCpe
+        Updates the specified CPE.
+
+        :param str cpe_id: (required)
+            The CPE's OCID.
+                :param UpdateCpeDetails update_cpe_details: (required)
+            Details object for updating a CPE.
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+        :return: A Response object with data of type Cpe
+        """
+        resource_path = "/cpes/{cpeId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_cpe got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "cpeId": cpe_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=update_cpe_details,
+            response_type="Cpe")
+
     def update_dhcp_options(self, dhcp_id, update_dhcp_details, **kwargs):
         """
         UpdateDhcpOptions
@@ -2109,6 +2156,100 @@ class VirtualNetworkClient(object):
             header_params=header_params,
             body=update_dhcp_details,
             response_type="DhcpOptions")
+
+    def update_drg(self, drg_id, update_drg_details, **kwargs):
+        """
+        UpdateDrg
+        Updates the specified DRG.
+
+        :param str drg_id: (required)
+            The DRG's OCID.
+                :param UpdateDrgDetails update_drg_details: (required)
+            Details object for updating a DRG.
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+        :return: A Response object with data of type Drg
+        """
+        resource_path = "/drgs/{drgId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_drg got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "drgId": drg_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=update_drg_details,
+            response_type="Drg")
+
+    def update_drg_attachment(self, drg_attachment_id, update_drg_attachment_details, **kwargs):
+        """
+        UpdateDrgAttachment
+        Updates the specified `DrgAttachment`.
+
+        :param str drg_attachment_id: (required)
+            The DRG attachment's OCID.
+                :param UpdateDrgAttachmentDetails update_drg_attachment_details: (required)
+            Details object for updating a `DrgAttachment`.
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+        :return: A Response object with data of type DrgAttachment
+        """
+        resource_path = "/drgAttachments/{drgAttachmentId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_drg_attachment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "drgAttachmentId": drg_attachment_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=update_drg_attachment_details,
+            response_type="DrgAttachment")
 
     def update_internet_gateway(self, ig_id, update_internet_gateway_details, **kwargs):
         """
@@ -2159,12 +2300,58 @@ class VirtualNetworkClient(object):
             body=update_internet_gateway_details,
             response_type="InternetGateway")
 
+    def update_ip_sec_connection(self, ipsc_id, update_ip_sec_connection_details, **kwargs):
+        """
+        UpdateIPSecConnection
+        Updates the specified IPSec connection.
+
+        :param str ipsc_id: (required)
+            The IPSec connection's OCID.
+                :param UpdateIPSecConnectionDetails update_ip_sec_connection_details: (required)
+            Details object for updating a IPSec connection.
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+        :return: A Response object with data of type IPSecConnection
+        """
+        resource_path = "/ipsecConnections/{ipscId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_ip_sec_connection got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "ipscId": ipsc_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=update_ip_sec_connection_details,
+            response_type="IPSecConnection")
+
     def update_route_table(self, rt_id, update_route_table_details, **kwargs):
         """
         UpdateRouteTable
-        Updates the specified route table's rules.
-        When updating the route table, the new `RouteRules` object you provide replaces the entire
-        existing set of rules.
+        Updates the specified route table. If you specify a set of rules, it
+        replaces the entire existing set.
 
         :param str rt_id: (required)
             The route table's OCID.
@@ -2208,15 +2395,15 @@ class VirtualNetworkClient(object):
             body=update_route_table_details,
             response_type="RouteTable")
 
-    def update_security_list(self, security_list_id, details, **kwargs):
+    def update_security_list(self, security_list_id, update_security_list_details, **kwargs):
         """
         UpdateSecurityList
-        Updates the specified security list's rules. The entire set of existing rules is replaced by
-        the new set of rules.
+        Updates the specified security list. If you specify a set of rules, it
+        replaces the entire existing set.
 
         :param str security_list_id: (required)
             The security list's OCID.
-                :param UpdateSecurityListDetails details: (required)
+                :param UpdateSecurityListDetails update_security_list_details: (required)
             Updated details for the security list.
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -2253,5 +2440,99 @@ class VirtualNetworkClient(object):
             method=method,
             path_params=path_params,
             header_params=header_params,
-            body=details,
+            body=update_security_list_details,
             response_type="SecurityList")
+
+    def update_subnet(self, subnet_id, update_subnet_details, **kwargs):
+        """
+        UpdateSubnet
+        Updates the specified subnet.
+
+        :param str subnet_id: (required)
+            The subnet's OCID.
+                :param UpdateSubnetDetails update_subnet_details: (required)
+            Details object for updating a subnet.
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+        :return: A Response object with data of type Subnet
+        """
+        resource_path = "/subnets/{subnetId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_subnet got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "subnetId": subnet_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=update_subnet_details,
+            response_type="Subnet")
+
+    def update_vcn(self, vcn_id, update_vcn_details, **kwargs):
+        """
+        UpdateVcn
+        Updates the specified VCN.
+
+        :param str vcn_id: (required)
+            The VCN's OCID.
+                :param UpdateVcnDetails update_vcn_details: (required)
+            Details object for updating a VCN.
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+        :return: A Response object with data of type Vcn
+        """
+        resource_path = "/vcns/{vcnId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_vcn got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "vcnId": vcn_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=update_vcn_details,
+            response_type="Vcn")

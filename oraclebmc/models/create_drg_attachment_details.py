@@ -48,7 +48,7 @@ class CreateDrgAttachmentDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateDrgAttachmentDetails.
-        A user-friendly name. Does not have to be unique, and it's not changeable.
+        A user-friendly name. Does not have to be unique.
 
         :return: The display_name of this CreateDrgAttachmentDetails.
         :rtype: str
@@ -59,7 +59,7 @@ class CreateDrgAttachmentDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateDrgAttachmentDetails.
-        A user-friendly name. Does not have to be unique, and it's not changeable.
+        A user-friendly name. Does not have to be unique.
 
         :param display_name: The display_name of this CreateDrgAttachmentDetails.
         :type: str
