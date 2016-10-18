@@ -1,5 +1,6 @@
 import logging
 logger = logging.getLogger(__name__)
+logger.addHandler(logging.NullHandler())
 
 REGIONS = {
     "us-phoenix-1": "us-phoenix-1.oraclecloud.com"

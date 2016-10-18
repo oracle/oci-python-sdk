@@ -69,10 +69,10 @@ def from_file(file_location=DEFAULT_LOCATION, profile_name=DEFAULT_PROFILE):
 
     parser = configparser.ConfigParser(interpolation=None)
     if not parser.read(file_location):
-        raise ConfigFileNotFound("Could not find config file at {!r}".format(file_location))
+        raise ConfigFileNotFound("Could not find config file at {}".format(file_location))
 
     if profile_name not in parser:
-        raise ProfileNotFound("Profile '{}' not found".format(profile_name))
+        raise ProfileNotFound("Profile '{}' not found in config file {}".format(profile_name, file_location))
 
     config = dict(DEFAULT_CONFIG)
     config.update(parser[profile_name])
