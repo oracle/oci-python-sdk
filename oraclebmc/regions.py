@@ -32,10 +32,10 @@ def endpoint_for(service, region=None, endpoint=None):
         # endpoint takes priority
         domain = endpoint
     else:
-        # no endpoint provided; use region, warn if unknown
-        if region.lower() not in REGIONS:
-            logger.warn("Using unknown region '%s' to build service endpoint for '%s'", region, service)
         region = region.lower()
+        # no endpoint provided; use region, warn if unknown
+        if region not in REGIONS:
+            logger.warn("Using unknown region '%s' to build service endpoint for '%s'", region, service)
         domain = REGIONS.get(region, region)
 
     url_format = SERVICE_ENDPOINTS[service.lower()]
