@@ -25,6 +25,7 @@ from __future__ import absolute_import
 import six
 
 from ..base_client import BaseClient
+from ..config import validate_config
 from ..signer import Signer
 from ..util import Sentinel
 missing = Sentinel("Missing")
@@ -33,6 +34,7 @@ missing = Sentinel("Missing")
 class VirtualNetworkClient(object):
 
     def __init__(self, config):
+        validate_config(config)
         signer = Signer(
             tenancy=config["tenancy"],
             user=config["user"],

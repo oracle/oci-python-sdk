@@ -32,13 +32,11 @@ import os.path
 import re
 import six
 
-from .exceptions import ConfigFileNotFound, ProfileNotFound
-from .regions import is_region
+from .exceptions import ConfigFileNotFound, ProfileNotFound, InvalidConfig
 
-__all__ = ["DEFAULT_CONFIG", "from_dict", "from_file", "validate"]
+__all__ = ["DEFAULT_CONFIG", "from_file", "validate_config"]
 
 DEFAULT_CONFIG = {
-    "verify_ssl": True,
     "log_requests": False,
     "additional_user_agent": "",
     "pass_phrase": None
@@ -55,44 +53,13 @@ REQUIRED = {
     "user",
     "tenancy",
     "fingerprint",
-    "key_file"
+    "key_file",
+    "region"
 }
 
 
-def from_dict(config):
-    """Create a valid config dict from an existing dict.
-
-    This will insert defaults for any missing optional keys, and validate the resulting dict.
-
-        import oraclebmc.config
-
-        # From local variables
-        config = oraclebmc.config.load({
-            "user": user_ocid,
-            "tenancy": tenancy_ocid,
-            "fingerprint": fingerprint,
-            "region": region,
-
-            "verify_ssl": True
-        })
-
-        # From an existing dict, always enable logging
-        config = from_somewhere(...)
-        config["log_requests"] = True
-        config = oraclebmc.config.from_dict(config)
-    """
-    new_config = dict(config)
-    for key, value in six.iteritems(DEFAULT_CONFIG):
-        new_config.setdefault(key, value)
-    validate(new_config)
-    new_config["verify_ssl"] = _as_bool(new_config["verify_ssl"])
-    new_config["log_requests"] = _as_bool(new_config["log_requests"])
-    new_config["key_file"] = os.path.expanduser(new_config["key_file"])
-    return new_config
-
-
 def from_file(file_location=DEFAULT_LOCATION, profile_name=DEFAULT_PROFILE):
-    """Create a valid config dict from a file.
+    """Create a config dict from a file.
 
     :param file_location: Path to the config file.  Defaults to ~/.oraclebmc/config
     :param profile_name: The profile to load from the config file.  Defaults to "DEFAULT"
@@ -102,33 +69,32 @@ def from_file(file_location=DEFAULT_LOCATION, profile_name=DEFAULT_PROFILE):
 
     parser = configparser.ConfigParser(interpolation=None)
     if not parser.read(file_location):
-        raise ConfigFileNotFound("Could not find config file at {!r}".format(file_location))
+        raise ConfigFileNotFound("Could not find config file at {}".format(file_location))
 
     if profile_name not in parser:
-        raise ProfileNotFound("Profile '{}' not found".format(profile_name))
+        raise ProfileNotFound("Profile '{}' not found in config file {}".format(profile_name, file_location))
 
-    # load -> add defaults -> post-process -> validate
-    config = dict(parser[profile_name])
-    return from_dict(config)
+    config = dict(DEFAULT_CONFIG)
+    config.update(parser[profile_name])
+    config["log_requests"] = _as_bool(config["log_requests"])
+    return config
 
 
-def validate(config):
-    """Raises ValueError if required fields are missing, malformed, or map to unknown resources."""
-    errors = []
+def validate_config(config):
+    """Raises ValueError if required fields are missing or malformed."""
+    errors = {}
     for required_key in REQUIRED:
         if required_key not in config:
-            errors.append("Missing required config key: {!r}".format(required_key))
-    # If both are provided, endpoint will be used.
-    if "region" not in config and "endpoint" not in config:
-        errors.append("Must specify at least one of 'region' or 'endpoint'")
-    if "region" in config and not is_region(config["region"]):
-        errors.append("Unknown region {!r}".format(config["region"]))
-    _raise_on_errors(errors)
+            errors[required_key] = "missing"
 
     for key, pattern in six.iteritems(PATTERNS):
+        if key in errors:
+            # key is missing, can't possibly match pattern
+            continue
         if not pattern.match(config[key]):
-            errors.append("Malformed {} {!r}".format(key, config[key]))
-    _raise_on_errors(errors)
+            errors[key] = "malformed"
+    if errors:
+        raise InvalidConfig(errors)
 
 
 def _as_bool(x):

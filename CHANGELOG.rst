@@ -1,3 +1,27 @@
+0.1.6
+^^^^^
+
+Config Loading
+==============
+
+To simplify the work of setting up config at runtime, the config validation is
+performed automatically as part of creating a client.  This means you no longer
+need to call ``config.from_dict(your_config)`` before creating a client.
+
+If your config object fails to validate, ``InvalidConfig`` is raised.
+
+For example:
+
+    >>> import oraclebmc
+    >>> invalid_config = {"user": "malformed ocid"}
+    >>> oraclebmc.clients.IdentityClient(invalid_config)
+    Traceback (most recent call last):
+      ...
+    oraclebmc.exceptions.InvalidConfig: {'user': 'malformed', 'tenancy': 'missing', ...}
+
+* removed ``config.from_dict``
+* new exception ``InvalidConfig``
+
 0.1.5
 ^^^^^
 
@@ -74,7 +98,7 @@ You can easily validate your config, and create copies with:
 
     config = oraclebmc.config.from_dict(base_config)
 
-Additionally, any optional settings that you did not specify (such as ``verify_ssl``)
+Additionally, any optional settings that you did not specify (such as ``additional_user_agent``)
 will be set from their defaults in ``oraclebmc.config.DEFAULT_CONFIG``.
 
 Regions and Endpoints
