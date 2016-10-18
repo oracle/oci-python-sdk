@@ -76,7 +76,7 @@ class Drg(object):
     def display_name(self):
         """
         Gets the display_name of this Drg.
-        A user-friendly name. Does not have to be unique, and it's not changeable.
+        A user-friendly name. Does not have to be unique, and it's changeable.
 
         :return: The display_name of this Drg.
         :rtype: str
@@ -87,7 +87,7 @@ class Drg(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Drg.
-        A user-friendly name. Does not have to be unique, and it's not changeable.
+        A user-friendly name. Does not have to be unique, and it's changeable.
 
         :param display_name: The display_name of this Drg.
         :type: str

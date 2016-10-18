@@ -88,7 +88,8 @@ class ListObjects(object):
     def next_start_with(self):
         """
         Gets the next_start_with of this ListObjects.
-        The name of the object to be used in startWith parameter to obtain next page of a truncated list objects response.
+        The name of the object to be used in startWith parameter to obtain next page of
+        a truncated list objects response.
 
         :return: The next_start_with of this ListObjects.
         :rtype: str
@@ -99,7 +100,8 @@ class ListObjects(object):
     def next_start_with(self, next_start_with):
         """
         Sets the next_start_with of this ListObjects.
-        The name of the object to be used in startWith parameter to obtain next page of a truncated list objects response.
+        The name of the object to be used in startWith parameter to obtain next page of
+        a truncated list objects response.
 
         :param next_start_with: The next_start_with of this ListObjects.
         :type: str

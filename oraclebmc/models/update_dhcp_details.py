@@ -29,14 +29,39 @@ class UpdateDhcpDetails(object):
     def __init__(self):
 
         self.swagger_types = {
+            'display_name': 'str',
             'options': 'list[DhcpOption]'
         }
 
         self.attribute_map = {
+            'display_name': 'displayName',
             'options': 'options'
         }
 
+        self._display_name = None
         self._options = None
+
+    @property
+    def display_name(self):
+        """
+        Gets the display_name of this UpdateDhcpDetails.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+
+        :return: The display_name of this UpdateDhcpDetails.
+        :rtype: str
+        """
+        return self._display_name
+
+    @display_name.setter
+    def display_name(self, display_name):
+        """
+        Sets the display_name of this UpdateDhcpDetails.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+
+        :param display_name: The display_name of this UpdateDhcpDetails.
+        :type: str
+        """
+        self._display_name = display_name
 
     @property
     def options(self):

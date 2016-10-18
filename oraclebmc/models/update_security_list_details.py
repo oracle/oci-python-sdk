@@ -29,17 +29,42 @@ class UpdateSecurityListDetails(object):
     def __init__(self):
 
         self.swagger_types = {
+            'display_name': 'str',
             'egress_security_rules': 'list[EgressSecurityRule]',
             'ingress_security_rules': 'list[IngressSecurityRule]'
         }
 
         self.attribute_map = {
+            'display_name': 'displayName',
             'egress_security_rules': 'egressSecurityRules',
             'ingress_security_rules': 'ingressSecurityRules'
         }
 
+        self._display_name = None
         self._egress_security_rules = None
         self._ingress_security_rules = None
+
+    @property
+    def display_name(self):
+        """
+        Gets the display_name of this UpdateSecurityListDetails.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+
+        :return: The display_name of this UpdateSecurityListDetails.
+        :rtype: str
+        """
+        return self._display_name
+
+    @display_name.setter
+    def display_name(self, display_name):
+        """
+        Sets the display_name of this UpdateSecurityListDetails.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+
+        :param display_name: The display_name of this UpdateSecurityListDetails.
+        :type: str
+        """
+        self._display_name = display_name
 
     @property
     def egress_security_rules(self):
