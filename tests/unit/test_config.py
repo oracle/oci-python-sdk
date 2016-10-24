@@ -9,7 +9,7 @@ DEFAULT_REGION = "us-phoenix-1"
 HARDCODED_TENANCY = "ocidv1:tenancy:region:az:1457568341552:aaaaaaaak5kqrgabmglda4oz7mcdedhuym"
 HARDCODED_USER = "ocid1.user.region..1461711049110:aaaaaaaaeuhzapiritehle2dmrcoeijvve"
 HARDCODED_FINGERPRINT = "20:3b:97:13:55:1c:5b:0d:d3:37:d8:50:4e:c5:3a:34"
-HARDCODED_KEYFILE = "~/.ssh/id_rsa.pem"
+HARDCODED_KEYFILE = "~/.ssh/bmc_key_001"
 HARDCODED_REGION = "us-phoenix-1"
 HARDCODED_ENDPOINT = "non-oracle-endpoint.com"
 
