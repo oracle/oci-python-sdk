@@ -24,10 +24,9 @@ def load_private_key(secret, pass_phrase=None):
     - provided pass_phrase but didn't need one
     - provided a public key
     """
-    if isinstance(secret, six.string_types):
+    if isinstance(secret, six.text_type):
         secret = secret.encode("ascii")
-    # CHANGED: added str -> bytes for new param
-    if isinstance(pass_phrase, six.string_types):
+    if isinstance(pass_phrase, six.text_type):
         pass_phrase = pass_phrase.encode("ascii")
 
     backend = default_backend()
@@ -86,14 +85,8 @@ def inject_missing_headers(request, sign_body, enforce_content_headers):
         if sign_body:
             # TODO: does not handle streaming bodies (files, stdin)
             body = request.body or ""
-            try:
+            if isinstance(body, six.string_types):
                 body = body.encode("utf-8")
-            except UnicodeDecodeError:
-                # PY2 - str is already encoded byte string
-                pass
-            except AttributeError:
-                # PY3 - body was already bytes
-                pass
             if "x-content-sha256" not in request.headers:
                 m = hashlib.sha256(body)
                 base64digest = base64.b64encode(m.digest())
@@ -170,8 +163,7 @@ class Signer(requests.auth.AuthBase):
 
     @property
     def private_key(self):
-        # TODO: this should return the private key instance,
-        # not the (possibly encrypted) key bytes.
+        # TODO: this should return the private key instance, not the (possibly encrypted) key bytes.
         if self._private_key is None:
             with io.open(self.private_key_file_location, mode="r") as f:
                 self._private_key = f.read().strip()
