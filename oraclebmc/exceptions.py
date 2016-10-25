@@ -45,6 +45,10 @@ class InvalidConfig(ClientError):
         self.errors = errors
 
 
+class InvalidPrivateKey(ClientError):
+    """The provided key is not a private key, or the provided passphrase is incorrect."""
+
+
 class ProfileNotFound(ClientError):
     """The specified profile was not found in the config file."""
 

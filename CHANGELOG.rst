@@ -1,3 +1,29 @@
+0.1.7
+^^^^^
+
+Private Key Loading
+===================
+
+``Signer`` tries to apply a bit more intelligence while loading your private key.
+ It will raise ``oraclebmc.exceptions.InvalidPrivateKey`` in the following cases:
+
+* A pass_phrase is required, but not provided
+* A public key is provided
+* The file is not a private or public key
+
+If loading the private key fails with a pass_phrase, it will retry loading the key
+without the pass_phrase.  This is useful if the config comes from a file where
+the DEFAULT profile contains ``pass_phrase`` but the loaded profile uses a different
+private key which does not require a pass_phrase::
+
+    [DEFAULT]
+    # Usual config
+    key_file = ~/.ssh/key_with_passphrase
+    pass_phrase = hunter2
+
+    [TestRunner]
+    key_file = ~/.ssh/key_without_passphrase
+
 0.1.6
 ^^^^^
 
