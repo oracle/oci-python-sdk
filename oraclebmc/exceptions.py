@@ -46,7 +46,7 @@ class InvalidConfig(ClientError):
 
 
 class InvalidPrivateKey(ClientError):
-    """The provided key is not a private key or the pass phrase is incorrect."""
+    """The provided key is not a private key, or the provided passphrase is incorrect."""
 
 
 class ProfileNotFound(ClientError):

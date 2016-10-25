@@ -45,7 +45,7 @@ def load_private_key(secret, pass_phrase=None):
         #    another profile uses a key file without a pass_phrase.
         if pass_phrase is None:
             # 1.1) private key needed a pass_phrase and we don't have one
-            raise InvalidPrivateKey("Private key requires a pass_phrase.")
+            raise InvalidPrivateKey("The provided private key requires a passphrase.")
         else:
             # 1.2) try again without pass_phrase; could be an artifact from DEFAULT
             return serialization.load_pem_private_key(secret, None, backend=backend)
@@ -67,7 +67,7 @@ def load_private_key(secret, pass_phrase=None):
                 # 2.2) This is a public key
                 raise InvalidPrivateKey("Authentication requires a private key, but a public key was provided.")
         # 2.3) Password is probably wrong.
-        raise InvalidPrivateKey("Private key is malformed or the pass_phrase is incorrect.")
+        raise InvalidPrivateKey("The provided key is not a private key, or the provided passphrase is incorrect.")
 
 
 def inject_missing_headers(request, sign_body, enforce_content_headers):
