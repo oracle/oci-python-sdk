@@ -1,6 +1,12 @@
 0.1.7
 ^^^^^
 
+Breaking changes:
+
+* ``Signer.private_key`` now returns a ``RSAPrivateKey`` instead of the
+  possibly encrypted text of the private key file.
+* ``PatchedHeaderSigner`` is now internal, and should not be used directly.
+
 Private Key Loading
 ===================
 
