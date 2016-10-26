@@ -1,7 +1,24 @@
+import base64
+import re
 import six
 from cryptography.hazmat.backends import default_backend
-from cryptography.hazmat.primitives.asymmetric import rsa
-from cryptography.hazmat.primitives import serialization
+from cryptography.hazmat.primitives.asymmetric import rsa, padding
+from cryptography.hazmat.primitives import serialization, hashes
+
+SIGNATURE_PATTERN = re.compile(
+    r"""
+    ^Signature\s
+    algorithm="(?P<algorithm>[^"]*)",
+    headers="(?P<headers>[^"]*)",
+    keyId="(?P<key_id>[^"]*)",
+    signature="(?P<signature>[^"]*)"
+    $
+    """,
+    re.VERBOSE)
+
+
+def unpack_authorization_header(authorization_header):
+    return SIGNATURE_PATTERN.match(authorization_header).groupdict()
 
 
 def generate_key(key_size=2048):
@@ -46,3 +63,21 @@ def serialize_key(private_key=None, public_key=None, password=None, encoding="pe
         return public_key.public_bytes(
             encoding=encoding,
             format=format)
+
+
+def verify_signature(public_key, headers):
+    signature_pieces = unpack_authorization_header(headers["authorization"])
+
+    signed_headers = signature_pieces["headers"].split(" ")
+    signing_string = []
+    for header in signed_headers:
+        if header == "(request-target)":
+            value = "post /some-path"
+        else:
+            value = headers[header]
+        signing_string.append("{}: {}".format(header, value))
+    signing_string = "\n".join(signing_string)
+    signature_bytes = base64.b64decode(signature_pieces["signature"])
+    public_key.verify(signature_bytes, signing_string.encode("utf-8"),
+                      padding.PKCS1v15(),
+                      hashes.SHA256())
