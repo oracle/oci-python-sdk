@@ -175,4 +175,4 @@ class ObjectUploadSigner(requests.auth.AuthBase):
         # can do this after the header is added and before the request is sent.
         request.headers.pop('Transfer-Encoding', None)
 
-        return self.signer.__call__(request, enforce_content_headers=False)
+        return self.signer(request, enforce_content_headers=False)

@@ -2,6 +2,8 @@ import six
 import base64
 import hashlib
 import pytest
+import os
+import tempfile
 from requests import Request
 from oraclebmc.exceptions import InvalidPrivateKey
 from oraclebmc import signer
@@ -20,17 +22,29 @@ def private_key():
     return generate_key(2048)
 
 
+@pytest.fixture(scope="module", params=["hunter2", None])
+def pass_phrase(request):
+    return request.param
+
+
+@pytest.yield_fixture(scope="module")
+def private_key_file(private_key, pass_phrase):
+    with tempfile.NamedTemporaryFile(mode="w+b") as file:
+        file.write(serialize_key(private_key=private_key, password=pass_phrase))
+        file.seek(0)  # So the key can be read again
+        yield file
+
+
 @pytest.fixture(scope="module")
 def public_key(private_key):
     return private_key.public_key()
 
 
 @pytest.mark.parametrize("format", ["pkcs8", "pkcs1"])
-@pytest.mark.parametrize("password", ["hunter2", None])
-def test_load_private_key(private_key, format, password):
+def test_load_private_key(private_key, format, pass_phrase):
     """Successfully load a private key"""
-    secret = serialize_key(private_key=private_key, password=password, encoding="pem", format=format)
-    loaded_key = signer.load_private_key(secret, password)
+    secret = serialize_key(private_key=private_key, password=pass_phrase, encoding="pem", format=format)
+    loaded_key = signer.load_private_key(secret, pass_phrase)
     assert loaded_key.private_numbers() == private_key.private_numbers()
 
 
@@ -51,12 +65,11 @@ def test_load_private_key_wrong_password(private_key, actual, provided):
 
 @pytest.mark.parametrize("encoding", ["pem", "der"])
 @pytest.mark.parametrize("format", ["spk", "pkcs1"])
-@pytest.mark.parametrize("password", ["hunter2", None])
-def test_load_fails_for_public_key(public_key, encoding, format, password):
+def test_load_fails_for_public_key(public_key, encoding, format, pass_phrase):
     """Trying to load a public key as a private key provides a detailed error message"""
     secret = serialize_key(public_key=public_key, encoding=encoding, format=format)
     with pytest.raises(InvalidPrivateKey) as excinfo:
-        signer.load_private_key(secret, password)
+        signer.load_private_key(secret, pass_phrase)
     assert str(excinfo.value) == "Authentication requires a private key, but a public key was provided."
 
 
@@ -95,3 +108,13 @@ def test_inject_headers(body, sign_body, enforce_content_headers, existing_heade
 
     for header, expected_value in six.iteritems(expected):
         assert request.headers[header] == expected_value
+
+
+def test_from_file_expands_user(monkeypatch, private_key, pass_phrase, private_key_file):
+    """~/.ssh/id_rsa should load a key from the full path to user's home"""
+
+    # Hardcode os.path.expanduser to expand every path to the temp private key
+    monkeypatch.setattr(os.path, "expanduser", lambda path: private_key_file.name)
+
+    loaded_key = signer.load_private_key_from_file("~/.ssh/not-a-real-key-file", pass_phrase)
+    assert loaded_key.private_numbers() == private_key.private_numbers()
