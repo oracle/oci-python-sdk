@@ -118,7 +118,8 @@ class _PatchedHeaderSigner(httpsig_cffi.sign.HeaderSigner):
         self._rsa_public = self._rsa_private.public_key()
 
         self.headers = headers
-        self.signature_template = httpsig_cffi.utils.build_signature_template(key_id, "rsa-sha256", headers)
+        template = 'Signature algorithm="rsa-sha256",headers="{}",keyId="{}",signature="%s"'
+        self.signature_template = template.format(" ".join(headers), key_id)
 
 
 class Signer(requests.auth.AuthBase):
