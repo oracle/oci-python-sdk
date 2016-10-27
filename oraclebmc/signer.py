@@ -13,10 +13,17 @@ from .exceptions import InvalidPrivateKey
 
 from cryptography.exceptions import UnsupportedAlgorithm
 from cryptography.hazmat.backends import default_backend
-from cryptography.hazmat.primitives import hmac, serialization
+from cryptography.hazmat.primitives import serialization
 
 
-def load_private_key(secret, pass_phrase=None):
+def load_private_key_from_file(filename, pass_phrase=None):
+    filename = os.path.expanduser(filename)
+    with io.open(filename, mode="rb") as f:
+        private_key_data = f.read().strip()
+    return load_private_key(private_key_data, pass_phrase)
+
+
+def load_private_key(secret, pass_phrase):
     """Loads a private key that may use a pass_phrase.
 
     Tries to correct or diagnose common errors:
@@ -24,10 +31,9 @@ def load_private_key(secret, pass_phrase=None):
     - provided pass_phrase but didn't need one
     - provided a public key
     """
-    if isinstance(secret, six.string_types):
+    if isinstance(secret, six.text_type):
         secret = secret.encode("ascii")
-    # CHANGED: added str -> bytes for new param
-    if isinstance(pass_phrase, six.string_types):
+    if isinstance(pass_phrase, six.text_type):
         pass_phrase = pass_phrase.encode("ascii")
 
     backend = default_backend()
@@ -86,53 +92,34 @@ def inject_missing_headers(request, sign_body, enforce_content_headers):
         if sign_body:
             # TODO: does not handle streaming bodies (files, stdin)
             body = request.body or ""
-            try:
+            if isinstance(body, six.string_types):
                 body = body.encode("utf-8")
-            except UnicodeDecodeError:
-                # PY2 - str is already encoded byte string
-                pass
-            except AttributeError:
-                # PY3 - body was already bytes
-                pass
             if "x-content-sha256" not in request.headers:
                 m = hashlib.sha256(body)
                 base64digest = base64.b64encode(m.digest())
                 base64string = base64digest.decode("utf-8")
                 request.headers["x-content-sha256"] = base64string
-            request.headers.setdefault("content-length", len(body))
+            request.headers.setdefault("content-length", str(len(body)))
 
 
 # HeaderSigner doesn't support private keys with passwords.
-# We have to rewrite the constructor since the base parses the key
-# during __init__
-class PatchedHeaderSigner(httpsig_cffi.sign.HeaderSigner):
-    def __init__(self, key_id, secret, algorithm=None, pass_phrase=None, headers=None):
+# Patched since the constructor parses the key in __init__
+class _PatchedHeaderSigner(httpsig_cffi.sign.HeaderSigner):
+    """Internal.  If you need to construct a Signer, use :class:`~.Signer` instead."""
+    def __init__(self, key_id, private_key, headers):
+        # Dropped general support for the specific signing/hash the SDK uses.
+        self.sign_algorithm = "rsa"
+        self.hash_algorithm = "sha256"
 
-        # COPIED from Signer.__init__
-        if algorithm is None:
-            algorithm = "hmac-sha256"
-
-        assert algorithm in httpsig_cffi.utils.ALGORITHMS, "Unknown algorithm"
-
-        self._rsa_public = None
-        self._rsa_private = None
         self._hash = None
-        self.sign_algorithm, self.hash_algorithm = algorithm.split('-')
+        self._rsahash = httpsig_cffi.utils.HASHES[self.hash_algorithm]
 
-        if self.sign_algorithm == 'rsa':
-            self._rsahash = httpsig_cffi.utils.HASHES[self.hash_algorithm]
-            # CHANGED from Signer.__init__
-            # Only loads private key. Signer loaded public keys because it's also used for verification.
-            self._rsa_private = load_private_key(secret, pass_phrase=pass_phrase)
-            self._rsa_public = self._rsa_private.public_key()
+        self._rsa_private = private_key
+        self._rsa_public = self._rsa_private.public_key()
 
-        elif self.sign_algorithm == 'hmac':
-            self._hash = hmac.HMAC(
-                secret, httpsig_cffi.utils.HASHES[self.hash_algorithm](), backend=default_backend())
-
-        # COPIED from HeaderSigner.__init__
-        self.headers = headers or ['date']
-        self.signature_template = httpsig_cffi.utils.build_signature_template(key_id, algorithm, headers)
+        self.headers = headers
+        template = 'Signature algorithm="rsa-sha256",headers="{}",keyId="{}",signature="%s"'
+        self.signature_template = template.format(" ".join(headers), key_id)
 
 
 class Signer(requests.auth.AuthBase):
@@ -140,42 +127,20 @@ class Signer(requests.auth.AuthBase):
 
     def __init__(self, tenancy, user, fingerprint, private_key_file_location, pass_phrase=None):
         self.api_key = tenancy + "/" + user + "/" + fingerprint
-        self.private_key_file_location = os.path.expanduser(private_key_file_location)
-        self._private_key = None
+        self.private_key = load_private_key_from_file(private_key_file_location, pass_phrase)
 
-        generic_headers = [
-            "date",
-            "(request-target)",
-            "host"
-        ]
-        body_headers = [
-            "content-length",
-            "content-type",
-            "x-content-sha256",
-        ]
+        generic_headers = ["date", "(request-target)", "host"]
+        body_headers = ["content-length", "content-type", "x-content-sha256"]
 
-        self._basic_signer = PatchedHeaderSigner(
+        self._basic_signer = _PatchedHeaderSigner(
             key_id=self.api_key,
-            secret=self.private_key,
-            algorithm="rsa-sha256",
-            pass_phrase=pass_phrase,
+            private_key=self.private_key,
             headers=generic_headers)
 
-        self._body_signer = PatchedHeaderSigner(
+        self._body_signer = _PatchedHeaderSigner(
             key_id=self.api_key,
-            secret=self.private_key,
-            algorithm="rsa-sha256",
-            pass_phrase=pass_phrase,
+            private_key=self.private_key,
             headers=generic_headers + body_headers)
-
-    @property
-    def private_key(self):
-        # TODO: this should return the private key instance,
-        # not the (possibly encrypted) key bytes.
-        if self._private_key is None:
-            with io.open(self.private_key_file_location, mode="r") as f:
-                self._private_key = f.read().strip()
-        return self._private_key
 
     def __call__(self, request, enforce_content_headers=True):
         verb = request.method.lower()
@@ -201,10 +166,7 @@ class Signer(requests.auth.AuthBase):
 
 class ObjectUploadSigner(requests.auth.AuthBase):
     def __init__(self, signer):
-        """Wraps an existing signer and applies options required for object upload.
-
-        :param signer: The signer to be wrapped.
-        """
+        """Wraps an existing signer, omitting content headers."""
         self.signer = signer
 
     def __call__(self, request):
@@ -214,4 +176,4 @@ class ObjectUploadSigner(requests.auth.AuthBase):
         # can do this after the header is added and before the request is sent.
         request.headers.pop('Transfer-Encoding', None)
 
-        return self.signer.__call__(request, enforce_content_headers=False)
+        return self.signer(request, enforce_content_headers=False)
