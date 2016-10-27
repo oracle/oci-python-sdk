@@ -7,11 +7,13 @@ from cryptography.hazmat.primitives import serialization, hashes
 
 SIGNATURE_PATTERN = re.compile(
     r"""
-    ^Signature\s
+    ^
+    Signature\s
     algorithm="(?P<algorithm>[^"]*)",
     headers="(?P<headers>[^"]*)",
     keyId="(?P<key_id>[^"]*)",
-    signature="(?P<signature>[^"]*)"
+    signature="(?P<signature>[^"]*)",
+    version="(?P<version>[^"]*)"
     $
     """,
     re.VERBOSE)
@@ -67,8 +69,12 @@ def serialize_key(private_key=None, public_key=None, password=None, encoding="pe
 
 def verify_signature(public_key, headers):
     signature_pieces = unpack_authorization_header(headers["authorization"])
-
     signed_headers = signature_pieces["headers"].split(" ")
+
+    # Hardcoded to guard against unexpected changes to signer behavior
+    assert signature_pieces["algorithm"] == "rsa-sha256"
+    assert signature_pieces["version"] == "1"
+
     signing_string = []
     for header in signed_headers:
         if header == "(request-target)":
@@ -78,6 +84,7 @@ def verify_signature(public_key, headers):
         signing_string.append("{}: {}".format(header, value))
     signing_string = "\n".join(signing_string)
     signature_bytes = base64.b64decode(signature_pieces["signature"])
+
     public_key.verify(signature_bytes, signing_string.encode("utf-8"),
                       padding.PKCS1v15(),
                       hashes.SHA256())

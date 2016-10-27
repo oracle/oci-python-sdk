@@ -15,6 +15,8 @@ from cryptography.exceptions import UnsupportedAlgorithm
 from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives import serialization
 
+SIGNATURE_VERSION = "1"
+
 
 def load_private_key_from_file(filename, pass_phrase=None):
     filename = os.path.expanduser(filename)
@@ -118,8 +120,9 @@ class _PatchedHeaderSigner(httpsig_cffi.sign.HeaderSigner):
         self._rsa_public = self._rsa_private.public_key()
 
         self.headers = headers
-        template = 'Signature algorithm="rsa-sha256",headers="{}",keyId="{}",signature="%s"'
-        self.signature_template = template.format(" ".join(headers), key_id)
+        # Base template doesn't include version
+        template = 'Signature algorithm="rsa-sha256",headers="{}",keyId="{}",signature="%s",version="{}"'
+        self.signature_template = template.format(" ".join(headers), key_id, SIGNATURE_VERSION)
 
 
 class Signer(requests.auth.AuthBase):
