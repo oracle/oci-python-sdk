@@ -1,3 +1,6 @@
+# coding: utf-8
+# Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+
 from .constants import HEADER_NEXT_PAGE, HEADER_REQUEST_ID
 
 
