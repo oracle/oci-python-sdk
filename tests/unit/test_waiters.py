@@ -7,7 +7,7 @@ import pytest
 def test_basic_wait(virtual_network, config):
     """Creates and deletes a VCN, waiting after each operation."""
 
-    name = "pythonsdk_wiater_" + tests.util.random_number_string()
+    name = "pythonsdk_waiter_" + tests.util.random_number_string()
     print('Creating cloud network ' + name)
 
     start_time = time.time()
