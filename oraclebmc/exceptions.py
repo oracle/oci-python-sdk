@@ -1,3 +1,6 @@
+# coding: utf-8
+# Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+
 class ServiceError(Exception):
     """The service returned an error response."""
 

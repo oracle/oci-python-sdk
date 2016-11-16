@@ -1,3 +1,6 @@
+# coding: utf-8
+# Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+
 """
 Helpers for loading and validating service configuration.
 
@@ -8,21 +11,15 @@ The following keys are required:
 
     fingerprint
     key_file
-    region (or endpoint)
+    region
     tenancy
     user
-
-Note that if you provide both "region" and "endpoint" then the endpoint will
-be used.
 
 Additionally, the following keys are optional:
 
     additional_user_agent (default "")
     log_requests (default False)
     pass_phrase (required if your key_file has a passphrase)
-
-At a minimum, you should call config.validate(config_dict) before creating
-clients from that config.
 
 """
 
