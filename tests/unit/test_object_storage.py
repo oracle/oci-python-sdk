@@ -19,6 +19,28 @@ def get_object_response(object_storage):
     return _response
 
 
+@pytest.fixture
+def namespace(object_storage):
+    return object_storage.get_namespace().data
+
+
+@pytest.yield_fixture
+def bucket(object_storage, namespace, config, request):
+    bucket_name = unique_name(request.node.name)
+    request = oraclebmc.models.CreateBucketDetails()
+    request.name = bucket_name
+    request.compartment_id = config["tenancy"]
+    response = object_storage.create_bucket(namespace, request)
+    assert response.status == 200
+
+    yield bucket_name
+
+    for obj in object_storage.list_objects(namespace, bucket_name).data.objects:
+        object_storage.delete_object(namespace, bucket_name, obj.name)
+    response = object_storage.delete_bucket(namespace, bucket_name)
+    assert response.status == 204
+
+
 def test_get_namespace(object_storage):
     response = object_storage.get_namespace()
     assert response.status == 200
@@ -236,6 +258,30 @@ def test_put_empty_string(object_storage, config):
     assert response.status == 204
     response = object_storage.delete_bucket(namespace, bucket_name)
     assert response.status == 204
+
+
+def test_put_readable_custom_content_length(object_storage, namespace, bucket):
+    """User-provided content length is used when a readable without a length is provided."""
+    class ReadableData(object):
+        def __init__(self, data):
+            self.data = data
+
+        def read(self, n):
+            if not self.data:
+                return None
+            char, self.data = self.data[:1], self.data[1:]
+            return char
+
+    data = b"hello, world"
+    readable_data = ReadableData(data)
+    obj = unique_name("put_streaming_content_length")
+
+    resp = object_storage.put_object(namespace, bucket, obj, readable_data, content_length=str(len(data)))
+    assert resp.status == 200
+
+    response = object_storage.get_object(namespace, bucket, obj)
+    assert response.status == 200
+    assert response.data.content == data
 
 
 def test_bucket_not_found(object_storage):
