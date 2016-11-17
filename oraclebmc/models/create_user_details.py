@@ -51,8 +51,8 @@ class CreateUserDetails(object):
     def name(self):
         """
         Gets the name of this CreateUserDetails.
-        A unique, unchangeable name you assign to the user during creation. This is the user's login for the
-        Console. Must be unique across all users in the tenancy.
+        The name you assign to the user during creation. This is the user's login for the Console.
+        The name must be unique across all users in the tenancy and cannot be changed.
 
         :return: The name of this CreateUserDetails.
         :rtype: str
@@ -63,8 +63,8 @@ class CreateUserDetails(object):
     def name(self, name):
         """
         Sets the name of this CreateUserDetails.
-        A unique, unchangeable name you assign to the user during creation. This is the user's login for the
-        Console. Must be unique across all users in the tenancy.
+        The name you assign to the user during creation. This is the user's login for the Console.
+        The name must be unique across all users in the tenancy and cannot be changed.
 
         :param name: The name of this CreateUserDetails.
         :type: str
@@ -75,7 +75,7 @@ class CreateUserDetails(object):
     def description(self):
         """
         Gets the description of this CreateUserDetails.
-        The non-unique, changeable description you assign to the user during creation.
+        The description you assign to the user during creation. Does not have to be unique, and it's changeable.
 
         :return: The description of this CreateUserDetails.
         :rtype: str
@@ -86,7 +86,7 @@ class CreateUserDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateUserDetails.
-        The non-unique, changeable description you assign to the user during creation.
+        The description you assign to the user during creation. Does not have to be unique, and it's changeable.
 
         :param description: The description of this CreateUserDetails.
         :type: str

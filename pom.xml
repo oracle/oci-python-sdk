@@ -186,12 +186,12 @@
             <dependency>
                 <groupId>com.oracle.pic.commons</groupId>
                 <artifactId>coreservices-api-spec</artifactId>
-                <version>0.0.12</version>
+                <version>0.0.16</version>
             </dependency>
             <dependency>
                 <groupId>com.oracle.pic.identity</groupId>
                 <artifactId>identity-control-plane-api-spec</artifactId>
-                <version>0.2.3</version>
+                <version>0.2.4</version>
             </dependency>
             <dependency>
                 <groupId>com.oracle.pic.casper</groupId>

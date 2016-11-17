@@ -23,7 +23,7 @@ class UpdateCompartmentDetails(object):
     def description(self):
         """
         Gets the description of this UpdateCompartmentDetails.
-        The non-unique, changeable description you assign to the compartment.
+        The description you assign to the compartment. Does not have to be unique, and it's changeable.
 
         :return: The description of this UpdateCompartmentDetails.
         :rtype: str
@@ -34,7 +34,7 @@ class UpdateCompartmentDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateCompartmentDetails.
-        The non-unique, changeable description you assign to the compartment.
+        The description you assign to the compartment. Does not have to be unique, and it's changeable.
 
         :param description: The description of this UpdateCompartmentDetails.
         :type: str

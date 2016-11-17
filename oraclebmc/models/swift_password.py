@@ -110,7 +110,7 @@ class SwiftPassword(object):
     def description(self):
         """
         Gets the description of this SwiftPassword.
-        The description of the Swift password.
+        The description you assign to the Swift password. Does not have to be unique, and it's changeable.
 
         :return: The description of this SwiftPassword.
         :rtype: str
@@ -121,7 +121,7 @@ class SwiftPassword(object):
     def description(self, description):
         """
         Sets the description of this SwiftPassword.
-        The description of the Swift password.
+        The description you assign to the Swift password. Does not have to be unique, and it's changeable.
 
         :param description: The description of this SwiftPassword.
         :type: str
@@ -132,7 +132,8 @@ class SwiftPassword(object):
     def time_created(self):
         """
         Gets the time_created of this SwiftPassword.
-        Date and time the `SwiftPassword` object was created.
+        Date and time the `SwiftPassword` object was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :return: The time_created of this SwiftPassword.
         :rtype: datetime
@@ -143,7 +144,8 @@ class SwiftPassword(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this SwiftPassword.
-        Date and time the `SwiftPassword` object was created.
+        Date and time the `SwiftPassword` object was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :param time_created: The time_created of this SwiftPassword.
         :type: datetime
@@ -154,7 +156,9 @@ class SwiftPassword(object):
     def expires_on(self):
         """
         Gets the expires_on of this SwiftPassword.
-        Date and time when this password will expire. Null if it never expires.
+        Date and time when this password will expire, in the format defined by RFC3339.
+        Null if it never expires.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :return: The expires_on of this SwiftPassword.
         :rtype: datetime
@@ -165,7 +169,9 @@ class SwiftPassword(object):
     def expires_on(self, expires_on):
         """
         Sets the expires_on of this SwiftPassword.
-        Date and time when this password will expire. Null if it never expires.
+        Date and time when this password will expire, in the format defined by RFC3339.
+        Null if it never expires.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :param expires_on: The expires_on of this SwiftPassword.
         :type: datetime

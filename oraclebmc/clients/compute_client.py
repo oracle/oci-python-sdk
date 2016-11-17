@@ -28,7 +28,7 @@ class ComputeClient(object):
     def attach_volume(self, attach_volume_details, **kwargs):
         """
         AttachVolume
-        Attaches a storage volume to the specified instance.
+        Attaches the specified storage volume to the specified instance.
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
         talk to an administrator. If you're an administrator who needs to write policies to give users access, see
         [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
@@ -81,11 +81,11 @@ class ComputeClient(object):
         as described below.
         1. Use `CaptureConsoleHistory` to request the capture of up to a megabyte of the
         most recent console history. This call returns a `ConsoleHistory`
-        object. The object will have a state of `requested`.
+        object. The object will have a state of REQUESTED.
         2. Wait for the capture operation to succeed by polling `GetConsoleHistory` with
         the identifier of the console history metadata. The state of the
-        `ConsoleHistory` object will go from `requested` to `getting-history` and
-        then `succeeded` (or `failed`).
+        `ConsoleHistory` object will go from REQUESTED to GETTING-HISTORY and
+        then SUCCEEDED (or FAILED).
         3. Use `GetConsoleHistoryContent` to get the actual console history data (not the
         metadata).
         4. Optionally, use `DeleteConsoleHistory` to delete the console history metadata
@@ -135,12 +135,10 @@ class ComputeClient(object):
         CreateImage
         Creates a boot disk image for the specified instance. For more information about images, see
         [Managing Custom Images]({{DOC_SERVER_URL}}/Content/Compute/Tasks/managingcustomimages.htm).
-        You must provide the OCID of the instance you want to use as the basis for the image.
-        You must provide the OCID of the compartment containing the instance you want to use as the basis for the image.
-        Consult an Oracle Bare Metal Cloud Administrator in your organization if you're not sure which compartment to
-        use.
-        You may specify a *display name* for the image, which is simply a friendly name or description.
-        It does not have to be unique, and it is changeable. See UpdateImage.
+        You must provide the OCID of the instance you want to use as the basis for the image, and
+        the OCID of the compartment containing that instance.
+        You may optionally specify a *display name* for the image, which is simply a friendly name or description.
+        It does not have to be unique, and you can change it. See UpdateImage.
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
         talk to an administrator. If you're an administrator who needs to write policies to give users access, see
         [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
@@ -270,7 +268,7 @@ class ComputeClient(object):
     def detach_volume(self, volume_attachment_id, **kwargs):
         """
         DetachVolume
-        Detaches a storage volume from the specified instance.
+        Detaches a storage volume from an instance. You must specify the OCID of the volume attachment.
         This is an asynchronous operation; the attachment's `lifecycleState` will change to DETACHING temporarily
         until the attachment is completely removed.
 
@@ -501,7 +499,7 @@ class ComputeClient(object):
     def instance_action(self, instance_id, action, **kwargs):
         """
         InstanceAction
-        Performs one of the power actions (start, stop, softreset, or reset),
+        Performs one of the power actions (start, stop, softreset, or reset)
         on the specified instance.
         **start** - power on
         **stop** - power off
@@ -509,8 +507,9 @@ class ComputeClient(object):
         **reset** - power off and power on
         Note that the **stop** state has no effect on the resources you consume.
         Billing continues for instances that you stop, and related resources continue
-        to apply against any relevant quotas. You must TerminateInstance
-        an instance to remove its resources from billing and quotas.
+        to apply against any relevant quotas. You must terminate an instance
+        (TerminateInstance)
+        to remove its resources from billing and quotas.
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
         talk to an administrator. If you're an administrator who needs to write policies to give users access, see
         [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
@@ -574,13 +573,15 @@ class ComputeClient(object):
         """
         LaunchInstance
         Creates a new instance in the specified compartment and the specified Availability Domain.
+        For general information about instances, see
+        [Overview of the Compute Service]({{DOC_SERVER_URL}}/Content/Compute/Concepts/computeoverview.htm)
         For information about access control and compartments, see
-        [Overview of the Identity and Access Management Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm).
+        [Overview of the IAM Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm).
         For information about Availability Domains, see
         [Regions and Availability Domains]({{DOC_SERVER_URL}}/Content/General/Concepts/regions.htm).
-        To get a list of Availablity Domains, use the `ListAvailabilityDomains` operation
+        To get a list of Availability Domains, use the `ListAvailabilityDomains` operation
         in the Identity and Access Management Service API.
-        All Oracle Bare Metal IaaS resources, including instances, get an Oracle-assigned,
+        All Oracle Bare Metal Cloud Services resources, including instances, get an Oracle-assigned,
         unique ID called an Oracle Cloud Identifier (OCID).
         When you create a resource, you can find its OCID in the response. You can
         also retrieve a resource's OCID by using a List API operation
@@ -593,6 +594,9 @@ class ComputeClient(object):
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
         talk to an administrator. If you're an administrator who needs to write policies to give users access, see
         [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
+        For information about endpoints and signing API requests, see
+        [About the API]({{DOC_SERVER_URL}}/Content/API/Concepts/usingapi.htm). For information about available SDKs and tools, see
+        [SDKS and Other Tools]({{DOC_SERVER_URL}}/Content/API/Concepts/sdks.htm).
 
         :param LaunchInstanceDetails launch_instance_details: (required)
             Instance details
@@ -708,7 +712,9 @@ class ComputeClient(object):
     def list_images(self, compartment_id, **kwargs):
         """
         ListImages
-        Lists images
+        Gets a list of the available images in the specified compartment. For more
+        information about images, see
+        [Managing Custom Images]({{DOC_SERVER_URL}}/Content/Compute/Tasks/managingcustomimages.htm).
 
         :param str compartment_id: (required)
             The OCID of the compartment.
@@ -770,7 +776,7 @@ class ComputeClient(object):
         """
         ListInstances
         Gets a list of all the instances in the specified compartment and the specified Availability Domain.
-        You can limit the list by specifying an instance name (the list will include all the identically-named
+        You can filter the results by specifying an instance name (the list will include all the identically-named
         instances in the compartment).
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
         talk to an administrator. If you're an administrator who needs to write policies to give users access, see
@@ -830,8 +836,8 @@ class ComputeClient(object):
     def list_shapes(self, compartment_id, **kwargs):
         """
         ListShapes
-        Lists all shapes that can be used to launch an instance within this compartment. Can filter by
-        compatibility with a specific image.
+        Lists all shapes that can be used to launch an instance within the specified compartment. You can
+        filter the list by compatibility with a specific image.
 
         :param str compartment_id: (required)
             The OCID of the compartment.
@@ -949,7 +955,7 @@ class ComputeClient(object):
     def list_volume_attachments(self, compartment_id, **kwargs):
         """
         ListVolumeAttachments
-        Gets a list of the volume attachments in the specified compartment. You can limit the
+        Gets a list of the volume attachments in the specified compartment. You can filter the
         list by specifying an instance OCID, volume OCID, or both.
         Currently, the only supported volume attachment type is IScsiVolumeAttachment.
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
@@ -1059,7 +1065,7 @@ class ComputeClient(object):
     def update_image(self, image_id, update_image_details, **kwargs):
         """
         UpdateImage
-        Updates the name of the image.
+        Updates the display name of the image.
 
         :param str image_id: (required)
             The OCID of the image.
@@ -1114,7 +1120,8 @@ class ComputeClient(object):
     def update_instance(self, instance_id, update_instance_details, **kwargs):
         """
         UpdateInstance
-        Updates the name of the specified instance. The OCID of the instance remains the same.
+        Updates the display name of the specified instance. The OCID of the instance
+        remains the same.
 
         :param str instance_id: (required)
             The OCID of the instance.

@@ -13,6 +13,7 @@ class CreateVolumeDetails(object):
             'availability_domain': 'str',
             'compartment_id': 'str',
             'display_name': 'str',
+            'size_in_m_bs': 'int',
             'volume_backup_id': 'str'
         }
 
@@ -20,12 +21,14 @@ class CreateVolumeDetails(object):
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
+            'size_in_m_bs': 'sizeInMBs',
             'volume_backup_id': 'volumeBackupId'
         }
 
         self._availability_domain = None
         self._compartment_id = None
         self._display_name = None
+        self._size_in_m_bs = None
         self._volume_backup_id = None
 
     @property
@@ -33,6 +36,7 @@ class CreateVolumeDetails(object):
         """
         Gets the availability_domain of this CreateVolumeDetails.
         The Availability Domain of the volume.
+        Example: `Uocm:PHX-AD-1`
 
         :return: The availability_domain of this CreateVolumeDetails.
         :rtype: str
@@ -44,6 +48,7 @@ class CreateVolumeDetails(object):
         """
         Sets the availability_domain of this CreateVolumeDetails.
         The Availability Domain of the volume.
+        Example: `Uocm:PHX-AD-1`
 
         :param availability_domain: The availability_domain of this CreateVolumeDetails.
         :type: str
@@ -95,10 +100,32 @@ class CreateVolumeDetails(object):
         self._display_name = display_name
 
     @property
+    def size_in_m_bs(self):
+        """
+        Gets the size_in_m_bs of this CreateVolumeDetails.
+        The size of the volume in MBs.
+
+        :return: The size_in_m_bs of this CreateVolumeDetails.
+        :rtype: int
+        """
+        return self._size_in_m_bs
+
+    @size_in_m_bs.setter
+    def size_in_m_bs(self, size_in_m_bs):
+        """
+        Sets the size_in_m_bs of this CreateVolumeDetails.
+        The size of the volume in MBs.
+
+        :param size_in_m_bs: The size_in_m_bs of this CreateVolumeDetails.
+        :type: int
+        """
+        self._size_in_m_bs = size_in_m_bs
+
+    @property
     def volume_backup_id(self):
         """
         Gets the volume_backup_id of this CreateVolumeDetails.
-        The ID of the volume backup from which the data should be restored on the newly created volume.
+        The OCID of the volume backup from which the data should be restored on the newly created volume.
 
         :return: The volume_backup_id of this CreateVolumeDetails.
         :rtype: str
@@ -109,7 +136,7 @@ class CreateVolumeDetails(object):
     def volume_backup_id(self, volume_backup_id):
         """
         Sets the volume_backup_id of this CreateVolumeDetails.
-        The ID of the volume backup from which the data should be restored on the newly created volume.
+        The OCID of the volume backup from which the data should be restored on the newly created volume.
 
         :param volume_backup_id: The volume_backup_id of this CreateVolumeDetails.
         :type: str

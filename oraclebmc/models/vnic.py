@@ -48,6 +48,7 @@ class Vnic(object):
         """
         Gets the availability_domain of this Vnic.
         The VNIC's Availability Domain.
+        Example: `Uocm:PHX-AD-1`
 
         :return: The availability_domain of this Vnic.
         :rtype: str
@@ -59,6 +60,7 @@ class Vnic(object):
         """
         Sets the availability_domain of this Vnic.
         The VNIC's Availability Domain.
+        Example: `Uocm:PHX-AD-1`
 
         :param availability_domain: The availability_domain of this Vnic.
         :type: str
@@ -135,7 +137,7 @@ class Vnic(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this Vnic.
-        The current state of the VNIC
+        The current state of the VNIC.
 
         :return: The lifecycle_state of this Vnic.
         :rtype: str
@@ -146,7 +148,7 @@ class Vnic(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Vnic.
-        The current state of the VNIC
+        The current state of the VNIC.
 
         :param lifecycle_state: The lifecycle_state of this Vnic.
         :type: str
@@ -231,7 +233,8 @@ class Vnic(object):
     def time_created(self):
         """
         Gets the time_created of this Vnic.
-        The date and time the VNIC was created.
+        The date and time the VNIC was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :return: The time_created of this Vnic.
         :rtype: datetime
@@ -242,7 +245,8 @@ class Vnic(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Vnic.
-        The date and time the VNIC was created.
+        The date and time the VNIC was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :param time_created: The time_created of this Vnic.
         :type: datetime

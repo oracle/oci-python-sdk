@@ -91,7 +91,8 @@ class Image(object):
     def create_image_allowed(self):
         """
         Gets the create_image_allowed of this Image.
-        Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.
+        Whether instances launched with this image can be used to create new images.
+        For example, you cannot create an image of an Oracle Database instance.
         Example: `true`
 
         :return: The create_image_allowed of this Image.
@@ -103,7 +104,8 @@ class Image(object):
     def create_image_allowed(self, create_image_allowed):
         """
         Sets the create_image_allowed of this Image.
-        Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.
+        Whether instances launched with this image can be used to create new images.
+        For example, you cannot create an image of an Oracle Database instance.
         Example: `true`
 
         :param create_image_allowed: The create_image_allowed of this Image.

@@ -74,6 +74,7 @@ class CreateCpeDetails(object):
         """
         Gets the ip_address of this CreateCpeDetails.
         The public IP address of the on-premise router.
+        Example: `143.19.23.16`
 
         :return: The ip_address of this CreateCpeDetails.
         :rtype: str
@@ -85,6 +86,7 @@ class CreateCpeDetails(object):
         """
         Sets the ip_address of this CreateCpeDetails.
         The public IP address of the on-premise router.
+        Example: `143.19.23.16`
 
         :param ip_address: The ip_address of this CreateCpeDetails.
         :type: str

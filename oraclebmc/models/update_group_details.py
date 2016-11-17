@@ -23,7 +23,7 @@ class UpdateGroupDetails(object):
     def description(self):
         """
         Gets the description of this UpdateGroupDetails.
-        The non-unique, changeable description you assign to the group.
+        The description you assign to the group. Does not have to be unique, and it's changeable.
 
         :return: The description of this UpdateGroupDetails.
         :rtype: str
@@ -34,7 +34,7 @@ class UpdateGroupDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateGroupDetails.
-        The non-unique, changeable description you assign to the group.
+        The description you assign to the group. Does not have to be unique, and it's changeable.
 
         :param description: The description of this UpdateGroupDetails.
         :type: str

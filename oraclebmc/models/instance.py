@@ -120,7 +120,7 @@ class Instance(object):
     def id(self):
         """
         Gets the id of this Instance.
-        The OCID that uniquely identifies the instance.
+        The OCID of the instance.
 
         :return: The id of this Instance.
         :rtype: str
@@ -131,7 +131,7 @@ class Instance(object):
     def id(self, id):
         """
         Sets the id of this Instance.
-        The OCID that uniquely identifies the instance.
+        The OCID of the instance.
 
         :param id: The id of this Instance.
         :type: str

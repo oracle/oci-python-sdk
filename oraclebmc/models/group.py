@@ -41,7 +41,7 @@ class Group(object):
     def id(self):
         """
         Gets the id of this Group.
-        The group's Oracle ID (OCID).
+        The OCID of the group.
 
         :return: The id of this Group.
         :rtype: str
@@ -52,7 +52,7 @@ class Group(object):
     def id(self, id):
         """
         Sets the id of this Group.
-        The group's Oracle ID (OCID).
+        The OCID of the group.
 
         :param id: The id of this Group.
         :type: str
@@ -85,8 +85,8 @@ class Group(object):
     def name(self):
         """
         Gets the name of this Group.
-        The unique, unchangeable name you assign to the group during creation. Must be unique across all
-        groups in the tenancy.
+        The name you assign to the group during creation. The name must be unique across all groups in
+        the tenancy and cannot be changed.
 
         :return: The name of this Group.
         :rtype: str
@@ -97,8 +97,8 @@ class Group(object):
     def name(self, name):
         """
         Sets the name of this Group.
-        The unique, unchangeable name you assign to the group during creation. Must be unique across all
-        groups in the tenancy.
+        The name you assign to the group during creation. The name must be unique across all groups in
+        the tenancy and cannot be changed.
 
         :param name: The name of this Group.
         :type: str
@@ -109,7 +109,7 @@ class Group(object):
     def description(self):
         """
         Gets the description of this Group.
-        The non-unique, changeable description you assign to the group during creation.
+        The description you assign to the group. Does not have to be unique, and it's changeable.
 
         :return: The description of this Group.
         :rtype: str
@@ -120,7 +120,7 @@ class Group(object):
     def description(self, description):
         """
         Sets the description of this Group.
-        The non-unique, changeable description you assign to the group during creation.
+        The description you assign to the group. Does not have to be unique, and it's changeable.
 
         :param description: The description of this Group.
         :type: str
@@ -131,7 +131,8 @@ class Group(object):
     def time_created(self):
         """
         Gets the time_created of this Group.
-        Date and time the group was created.
+        Date and time the group was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :return: The time_created of this Group.
         :rtype: datetime
@@ -142,7 +143,8 @@ class Group(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Group.
-        Date and time the group was created.
+        Date and time the group was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :param time_created: The time_created of this Group.
         :type: datetime

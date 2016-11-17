@@ -182,7 +182,8 @@ class SecurityList(object):
     def time_created(self):
         """
         Gets the time_created of this SecurityList.
-        The date and time the security list was created.
+        The date and time the security list was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :return: The time_created of this SecurityList.
         :rtype: datetime
@@ -193,7 +194,8 @@ class SecurityList(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this SecurityList.
-        The date and time the security list was created.
+        The date and time the security list was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :param time_created: The time_created of this SecurityList.
         :type: datetime

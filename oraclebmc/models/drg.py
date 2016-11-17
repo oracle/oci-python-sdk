@@ -129,7 +129,8 @@ class Drg(object):
     def time_created(self):
         """
         Gets the time_created of this Drg.
-        The date and time the DRG was created.
+        The date and time the DRG was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :return: The time_created of this Drg.
         :rtype: datetime
@@ -140,7 +141,8 @@ class Drg(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Drg.
-        The date and time the DRG was created.
+        The date and time the DRG was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :param time_created: The time_created of this Drg.
         :type: datetime

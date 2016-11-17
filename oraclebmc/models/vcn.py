@@ -48,6 +48,7 @@ class Vcn(object):
         """
         Gets the cidr_block of this Vcn.
         The CIDR IP address block of the VCN.
+        Example: `172.16.0.0/16`
 
         :return: The cidr_block of this Vcn.
         :rtype: str
@@ -59,6 +60,7 @@ class Vcn(object):
         """
         Sets the cidr_block of this Vcn.
         The CIDR IP address block of the VCN.
+        Example: `172.16.0.0/16`
 
         :param cidr_block: The cidr_block of this Vcn.
         :type: str
@@ -229,7 +231,8 @@ class Vcn(object):
     def time_created(self):
         """
         Gets the time_created of this Vcn.
-        The date and time the VCN was created.
+        The date and time the VCN was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :return: The time_created of this Vcn.
         :rtype: datetime
@@ -240,7 +243,8 @@ class Vcn(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Vcn.
-        The date and time the VCN was created.
+        The date and time the VCN was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :param time_created: The time_created of this Vcn.
         :type: datetime

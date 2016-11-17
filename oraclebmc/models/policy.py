@@ -47,7 +47,7 @@ class Policy(object):
     def id(self):
         """
         Gets the id of this Policy.
-        The policy's Oracle ID (OCID).
+        The OCID of the policy.
 
         :return: The id of this Policy.
         :rtype: str
@@ -58,7 +58,7 @@ class Policy(object):
     def id(self, id):
         """
         Sets the id of this Policy.
-        The policy's Oracle ID (OCID).
+        The OCID of the policy.
 
         :param id: The id of this Policy.
         :type: str
@@ -69,7 +69,7 @@ class Policy(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this Policy.
-        The OCID of the tenancy containing the policy.
+        The OCID of the compartment containing the policy (either the tenancy or another compartment).
 
         :return: The compartment_id of this Policy.
         :rtype: str
@@ -80,7 +80,7 @@ class Policy(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this Policy.
-        The OCID of the tenancy containing the policy.
+        The OCID of the compartment containing the policy (either the tenancy or another compartment).
 
         :param compartment_id: The compartment_id of this Policy.
         :type: str
@@ -91,8 +91,8 @@ class Policy(object):
     def name(self):
         """
         Gets the name of this Policy.
-        The unique, unchangeable name you assign to the policy during creation. Must be unique across all
-        policies in the tenancy.
+        The name you assign to the policy during creation. The name must be unique across all policies
+        in the tenancy and cannot be changed.
 
         :return: The name of this Policy.
         :rtype: str
@@ -103,8 +103,8 @@ class Policy(object):
     def name(self, name):
         """
         Sets the name of this Policy.
-        The unique, unchangeable name you assign to the policy during creation. Must be unique across all
-        policies in the tenancy.
+        The name you assign to the policy during creation. The name must be unique across all policies
+        in the tenancy and cannot be changed.
 
         :param name: The name of this Policy.
         :type: str
@@ -137,7 +137,7 @@ class Policy(object):
     def description(self):
         """
         Gets the description of this Policy.
-        The non-unique, changeable description you assign to the policy during creation.
+        The description you assign to the policy. Does not have to be unique, and it's changeable.
 
         :return: The description of this Policy.
         :rtype: str
@@ -148,7 +148,7 @@ class Policy(object):
     def description(self, description):
         """
         Sets the description of this Policy.
-        The non-unique, changeable description you assign to the policy during creation.
+        The description you assign to the policy. Does not have to be unique, and it's changeable.
 
         :param description: The description of this Policy.
         :type: str
@@ -159,7 +159,8 @@ class Policy(object):
     def time_created(self):
         """
         Gets the time_created of this Policy.
-        Date and time the policy was created.
+        Date and time the policy was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :return: The time_created of this Policy.
         :rtype: datetime
@@ -170,7 +171,8 @@ class Policy(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Policy.
-        Date and time the policy was created.
+        Date and time the policy was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :param time_created: The time_created of this Policy.
         :type: datetime

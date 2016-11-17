@@ -60,6 +60,7 @@ class Subnet(object):
         """
         Gets the availability_domain of this Subnet.
         The subnet's Availability Domain.
+        Example: `Uocm:PHX-AD-1`
 
         :return: The availability_domain of this Subnet.
         :rtype: str
@@ -71,6 +72,7 @@ class Subnet(object):
         """
         Sets the availability_domain of this Subnet.
         The subnet's Availability Domain.
+        Example: `Uocm:PHX-AD-1`
 
         :param availability_domain: The availability_domain of this Subnet.
         :type: str
@@ -82,6 +84,7 @@ class Subnet(object):
         """
         Gets the cidr_block of this Subnet.
         The subnet's CIDR block.
+        Example: `172.16.1.0/24`
 
         :return: The cidr_block of this Subnet.
         :rtype: str
@@ -93,6 +96,7 @@ class Subnet(object):
         """
         Sets the cidr_block of this Subnet.
         The subnet's CIDR block.
+        Example: `172.16.1.0/24`
 
         :param cidr_block: The cidr_block of this Subnet.
         :type: str
@@ -241,7 +245,7 @@ class Subnet(object):
     def security_list_ids(self):
         """
         Gets the security_list_ids of this Subnet.
-        IDs for the security lists to use for VNICs in this subnet.
+        OCIDs for the security lists to use for VNICs in this subnet.
 
         :return: The security_list_ids of this Subnet.
         :rtype: list[str]
@@ -252,7 +256,7 @@ class Subnet(object):
     def security_list_ids(self, security_list_ids):
         """
         Sets the security_list_ids of this Subnet.
-        IDs for the security lists to use for VNICs in this subnet.
+        OCIDs for the security lists to use for VNICs in this subnet.
 
         :param security_list_ids: The security_list_ids of this Subnet.
         :type: list[str]
@@ -263,7 +267,8 @@ class Subnet(object):
     def time_created(self):
         """
         Gets the time_created of this Subnet.
-        The date and time the subnet was created.
+        The date and time the subnet was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :return: The time_created of this Subnet.
         :rtype: datetime
@@ -274,7 +279,8 @@ class Subnet(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Subnet.
-        The date and time the subnet was created.
+        The date and time the subnet was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :param time_created: The time_created of this Subnet.
         :type: datetime
@@ -308,6 +314,7 @@ class Subnet(object):
         """
         Gets the virtual_router_ip of this Subnet.
         The IP address of the virtual router.
+        Example: `10.0.14.1`
 
         :return: The virtual_router_ip of this Subnet.
         :rtype: str
@@ -319,6 +326,7 @@ class Subnet(object):
         """
         Sets the virtual_router_ip of this Subnet.
         The IP address of the virtual router.
+        Example: `10.0.14.1`
 
         :param virtual_router_ip: The virtual_router_ip of this Subnet.
         :type: str
@@ -330,6 +338,7 @@ class Subnet(object):
         """
         Gets the virtual_router_mac of this Subnet.
         The MAC address of the virtual router.
+        Example: `00:00:17:B6:4D:DD`
 
         :return: The virtual_router_mac of this Subnet.
         :rtype: str
@@ -341,6 +350,7 @@ class Subnet(object):
         """
         Sets the virtual_router_mac of this Subnet.
         The MAC address of the virtual router.
+        Example: `00:00:17:B6:4D:DD`
 
         :param virtual_router_mac: The virtual_router_mac of this Subnet.
         :type: str
