@@ -3,8 +3,7 @@ clean:
 	@echo Cleaning generated code, build, docs, and distributables
 	mvn clean
 	cd docs && make clean
-	rm -r dist
-	rm -r build
+	rm -rf dist build
 
 .PHONY: docs
 docs:
@@ -28,8 +27,7 @@ gen:
 .PHONY: build
 build:
 	@echo Creating whl file for distribution.
-	python3 setup.py sdist
-	python3 setup.py bdist_wheel
+	python3 setup.py sdist bdist_wheel
 
 .PHONY: install
 install:
