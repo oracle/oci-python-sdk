@@ -157,7 +157,8 @@ class DrgAttachment(object):
     def time_created(self):
         """
         Gets the time_created of this DrgAttachment.
-        The date and time the DRG attachment was created.
+        The date and time the DRG attachment was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :return: The time_created of this DrgAttachment.
         :rtype: datetime
@@ -168,7 +169,8 @@ class DrgAttachment(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this DrgAttachment.
-        The date and time the DRG attachment was created.
+        The date and time the DRG attachment was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :param time_created: The time_created of this DrgAttachment.
         :type: datetime

@@ -183,6 +183,7 @@ class IPSecConnection(object):
         """
         Gets the static_routes of this IPSecConnection.
         Static routes to the CPE.
+        Example: `10.0.1.0/24`
 
         :return: The static_routes of this IPSecConnection.
         :rtype: list[str]
@@ -194,6 +195,7 @@ class IPSecConnection(object):
         """
         Sets the static_routes of this IPSecConnection.
         Static routes to the CPE.
+        Example: `10.0.1.0/24`
 
         :param static_routes: The static_routes of this IPSecConnection.
         :type: list[str]
@@ -204,7 +206,8 @@ class IPSecConnection(object):
     def time_created(self):
         """
         Gets the time_created of this IPSecConnection.
-        The date and time the IPSec connection was created.
+        The date and time the IPSec connection was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :return: The time_created of this IPSecConnection.
         :rtype: datetime
@@ -215,7 +218,8 @@ class IPSecConnection(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this IPSecConnection.
-        The date and time the IPSec connection was created.
+        The date and time the IPSec connection was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :param time_created: The time_created of this IPSecConnection.
         :type: datetime

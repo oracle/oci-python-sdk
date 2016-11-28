@@ -45,6 +45,7 @@ class CreateSubnetDetails(object):
         """
         Gets the availability_domain of this CreateSubnetDetails.
         The Availability Domain to contain the subnet.
+        Example: `Uocm:PHX-AD-1`
 
         :return: The availability_domain of this CreateSubnetDetails.
         :rtype: str
@@ -56,6 +57,7 @@ class CreateSubnetDetails(object):
         """
         Sets the availability_domain of this CreateSubnetDetails.
         The Availability Domain to contain the subnet.
+        Example: `Uocm:PHX-AD-1`
 
         :param availability_domain: The availability_domain of this CreateSubnetDetails.
         :type: str
@@ -67,6 +69,7 @@ class CreateSubnetDetails(object):
         """
         Gets the cidr_block of this CreateSubnetDetails.
         The CIDR IP address range of the subnet.
+        Example: `172.16.1.0/24`
 
         :return: The cidr_block of this CreateSubnetDetails.
         :rtype: str
@@ -78,6 +81,7 @@ class CreateSubnetDetails(object):
         """
         Sets the cidr_block of this CreateSubnetDetails.
         The CIDR IP address range of the subnet.
+        Example: `172.16.1.0/24`
 
         :param cidr_block: The cidr_block of this CreateSubnetDetails.
         :type: str

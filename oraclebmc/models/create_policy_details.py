@@ -35,7 +35,7 @@ class CreatePolicyDetails(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this CreatePolicyDetails.
-        The OCID of the tenancy containing the policy.
+        The OCID of the compartment containing the policy (either the tenancy or another compartment).
 
         :return: The compartment_id of this CreatePolicyDetails.
         :rtype: str
@@ -46,7 +46,7 @@ class CreatePolicyDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreatePolicyDetails.
-        The OCID of the tenancy containing the policy.
+        The OCID of the compartment containing the policy (either the tenancy or another compartment).
 
         :param compartment_id: The compartment_id of this CreatePolicyDetails.
         :type: str
@@ -57,8 +57,8 @@ class CreatePolicyDetails(object):
     def name(self):
         """
         Gets the name of this CreatePolicyDetails.
-        A unique, unchangeable name you assign to the policy during creation. Must be unique across all policies
-        in the tenancy.
+        The name you assign to the policy during creation. The name must be unique across all policies
+        in the tenancy and cannot be changed.
 
         :return: The name of this CreatePolicyDetails.
         :rtype: str
@@ -69,8 +69,8 @@ class CreatePolicyDetails(object):
     def name(self, name):
         """
         Sets the name of this CreatePolicyDetails.
-        A unique, unchangeable name you assign to the policy during creation. Must be unique across all policies
-        in the tenancy.
+        The name you assign to the policy during creation. The name must be unique across all policies
+        in the tenancy and cannot be changed.
 
         :param name: The name of this CreatePolicyDetails.
         :type: str
@@ -82,7 +82,8 @@ class CreatePolicyDetails(object):
         """
         Gets the statements of this CreatePolicyDetails.
         An array of policy statements written in the policy language. See
-        [Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policies.htm).
+        [How Policies Work]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policies.htm) and
+        [Common Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/commonpolicies.htm).
 
         :return: The statements of this CreatePolicyDetails.
         :rtype: list[str]
@@ -94,7 +95,8 @@ class CreatePolicyDetails(object):
         """
         Sets the statements of this CreatePolicyDetails.
         An array of policy statements written in the policy language. See
-        [Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policies.htm).
+        [How Policies Work]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policies.htm) and
+        [Common Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/commonpolicies.htm).
 
         :param statements: The statements of this CreatePolicyDetails.
         :type: list[str]
@@ -105,7 +107,7 @@ class CreatePolicyDetails(object):
     def description(self):
         """
         Gets the description of this CreatePolicyDetails.
-        The non-unique, changeable description you assign to the policy during creation.
+        The description you assign to the policy during creation. Does not have to be unique, and it's changeable.
 
         :return: The description of this CreatePolicyDetails.
         :rtype: str
@@ -116,7 +118,7 @@ class CreatePolicyDetails(object):
     def description(self, description):
         """
         Sets the description of this CreatePolicyDetails.
-        The non-unique, changeable description you assign to the policy during creation.
+        The description you assign to the policy during creation. Does not have to be unique, and it's changeable.
 
         :param description: The description of this CreatePolicyDetails.
         :type: str

@@ -91,7 +91,7 @@ class VolumeBackup(object):
     def id(self):
         """
         Gets the id of this VolumeBackup.
-        The Oracle Cloud ID (OCID) that uniquely identifies the volume backup.
+        The OCID of the volume backup.
 
         :return: The id of this VolumeBackup.
         :rtype: str
@@ -102,7 +102,7 @@ class VolumeBackup(object):
     def id(self, id):
         """
         Sets the id of this VolumeBackup.
-        The Oracle Cloud ID (OCID) that uniquely identifies the volume backup.
+        The OCID of the volume backup.
 
         :param id: The id of this VolumeBackup.
         :type: str
@@ -233,7 +233,7 @@ class VolumeBackup(object):
     def volume_id(self):
         """
         Gets the volume_id of this VolumeBackup.
-        A OCID that uniquely identifies the volume.
+        The OCID of the volume.
 
         :return: The volume_id of this VolumeBackup.
         :rtype: str
@@ -244,7 +244,7 @@ class VolumeBackup(object):
     def volume_id(self, volume_id):
         """
         Sets the volume_id of this VolumeBackup.
-        A OCID that uniquely identifies the volume.
+        The OCID of the volume.
 
         :param volume_id: The volume_id of this VolumeBackup.
         :type: str

@@ -30,6 +30,7 @@ class TunnelConfig(object):
         """
         Gets the ip_address of this TunnelConfig.
         The IP address of Oracle's VPN headend.
+        Example: `129.146.17.50`
 
         :return: The ip_address of this TunnelConfig.
         :rtype: str
@@ -41,6 +42,7 @@ class TunnelConfig(object):
         """
         Sets the ip_address of this TunnelConfig.
         The IP address of Oracle's VPN headend.
+        Example: `129.146.17.50`
 
         :param ip_address: The ip_address of this TunnelConfig.
         :type: str
@@ -52,6 +54,7 @@ class TunnelConfig(object):
         """
         Gets the shared_secret of this TunnelConfig.
         The shared secret of the IPSec tunnel.
+        Example: `vFG2IF6TWq4UToUiLSRDoJEUs6j1c.p8G.dVQxiMfMO0yXMLi.lZTbYIWhGu4V8o`
 
         :return: The shared_secret of this TunnelConfig.
         :rtype: str
@@ -63,6 +66,7 @@ class TunnelConfig(object):
         """
         Sets the shared_secret of this TunnelConfig.
         The shared secret of the IPSec tunnel.
+        Example: `vFG2IF6TWq4UToUiLSRDoJEUs6j1c.p8G.dVQxiMfMO0yXMLi.lZTbYIWhGu4V8o`
 
         :param shared_secret: The shared_secret of this TunnelConfig.
         :type: str
@@ -73,7 +77,8 @@ class TunnelConfig(object):
     def time_created(self):
         """
         Gets the time_created of this TunnelConfig.
-        The date and time the IPSec connection was created.
+        The date and time the IPSec connection was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :return: The time_created of this TunnelConfig.
         :rtype: datetime
@@ -84,7 +89,8 @@ class TunnelConfig(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this TunnelConfig.
-        The date and time the IPSec connection was created.
+        The date and time the IPSec connection was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :param time_created: The time_created of this TunnelConfig.
         :type: datetime

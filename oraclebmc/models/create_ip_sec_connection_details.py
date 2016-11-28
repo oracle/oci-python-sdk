@@ -124,6 +124,7 @@ class CreateIPSecConnectionDetails(object):
         """
         Gets the static_routes of this CreateIPSecConnectionDetails.
         Static routes to the CPE.
+        Example: `10.0.1.0/24`
 
         :return: The static_routes of this CreateIPSecConnectionDetails.
         :rtype: list[str]
@@ -135,6 +136,7 @@ class CreateIPSecConnectionDetails(object):
         """
         Sets the static_routes of this CreateIPSecConnectionDetails.
         Static routes to the CPE.
+        Example: `10.0.1.0/24`
 
         :param static_routes: The static_routes of this CreateIPSecConnectionDetails.
         :type: list[str]

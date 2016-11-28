@@ -33,6 +33,7 @@ class TunnelStatus(object):
         """
         Gets the ip_address of this TunnelStatus.
         The IP address of Oracle's VPN headend.
+        Example: `129.146.17.50`
 
         :return: The ip_address of this TunnelStatus.
         :rtype: str
@@ -44,6 +45,7 @@ class TunnelStatus(object):
         """
         Sets the ip_address of this TunnelStatus.
         The IP address of Oracle's VPN headend.
+        Example: `129.146.17.50`
 
         :param ip_address: The ip_address of this TunnelStatus.
         :type: str
@@ -82,7 +84,8 @@ class TunnelStatus(object):
     def time_created(self):
         """
         Gets the time_created of this TunnelStatus.
-        The date and time the IPSec connection was created.
+        The date and time the IPSec connection was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :return: The time_created of this TunnelStatus.
         :rtype: datetime
@@ -93,7 +96,8 @@ class TunnelStatus(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this TunnelStatus.
-        The date and time the IPSec connection was created.
+        The date and time the IPSec connection was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :param time_created: The time_created of this TunnelStatus.
         :type: datetime
@@ -104,7 +108,8 @@ class TunnelStatus(object):
     def time_state_modified(self):
         """
         Gets the time_state_modified of this TunnelStatus.
-        When the state of the tunnel last changed.
+        When the state of the tunnel last changed, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :return: The time_state_modified of this TunnelStatus.
         :rtype: datetime
@@ -115,7 +120,8 @@ class TunnelStatus(object):
     def time_state_modified(self, time_state_modified):
         """
         Sets the time_state_modified of this TunnelStatus.
-        When the state of the tunnel last changed.
+        When the state of the tunnel last changed, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :param time_state_modified: The time_state_modified of this TunnelStatus.
         :type: datetime

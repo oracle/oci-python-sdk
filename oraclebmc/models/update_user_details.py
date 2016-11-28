@@ -23,7 +23,7 @@ class UpdateUserDetails(object):
     def description(self):
         """
         Gets the description of this UpdateUserDetails.
-        The non-unique, changeable description you assign to the user.
+        The description you assign to the user. Does not have to be unique, and it's changeable.
 
         :return: The description of this UpdateUserDetails.
         :rtype: str
@@ -34,7 +34,7 @@ class UpdateUserDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateUserDetails.
-        The non-unique, changeable description you assign to the user.
+        The description you assign to the user. Does not have to be unique, and it's changeable.
 
         :param description: The description of this UpdateUserDetails.
         :type: str

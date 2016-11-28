@@ -32,13 +32,13 @@ class VirtualNetworkClient(object):
         think of a CPE object as a virtual representation of the actual router that is on-premise at your site,
         at your end of the VPN connection to your VCN. You need to create this object as part of the process of
         setting up the VPN. For more information, see
-        [Typical Virtual Cloud Network Scenarios]({{DOC_SERVER_URL}}/Content/Network/Concepts/overview.htm#Typical_Cloud_Network_Scenarios)
+        [Typical Networking Service Scenarios]({{DOC_SERVER_URL}}/Content/Network/Concepts/overview.htm#three)
         and [Managing Customer-Premise Equipment (CPE)]({{DOC_SERVER_URL}}/Content/Network/Tasks/managingCPEs.htm).
         For the purposes of access control, you must provide the OCID of the compartment where you want
         the CPE to reside. Notice that the CPE doesn't have to be in the same compartment as the IPSec
-        connection or other Virtual Network Service components. If you're not sure which compartment to
+        connection or other Networking Service components. If you're not sure which compartment to
         use, put the CPE in the same compartment as the IPSec connection. For more information about
-        compartments and access control, see [Overview of the Identity and Access Management Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm).
+        compartments and access control, see [Overview of the IAM Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm).
         For information about OCIDs, see [Resource Identifiers]({{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm).
         You must provide the public IP address of your on-premise router. See
         [Configuring Your On-Premise Router]({{DOC_SERVER_URL}}/Content/Network/Tasks/configuringCPE.htm).
@@ -47,6 +47,9 @@ class VirtualNetworkClient(object):
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
         talk to an administrator. If you're an administrator who needs to write policies to give users access, see
         [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
+        For information about endpoints and signing API requests, see
+        [About the API]({{DOC_SERVER_URL}}/Content/API/Concepts/usingapi.htm). For information about available SDKs and tools, see
+        [SDKS and Other Tools]({{DOC_SERVER_URL}}/Content/API/Concepts/sdks.htm).
 
         :param CreateCpeDetails create_cpe_details: (required)
             Details for creating a CPE.
@@ -93,12 +96,12 @@ class VirtualNetworkClient(object):
         [Managing DHCP Options]({{DOC_SERVER_URL}}/Content/Network/Tasks/managingDHCP.htm).
         For the purposes of access control, you must provide the OCID of the compartment where you want the set of
         DHCP options to reside. Notice that the set of options doesn't have to be in the same compartment as the VCN,
-        subnets, or other Virtual Network Service components. If you're not sure which compartment to use, put the set
+        subnets, or other Networking Service components. If you're not sure which compartment to use, put the set
         of DHCP options in the same compartment as the VCN. For more information about compartments and access control, see
-        [Overview of the Identity and Access Management Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
+        [Overview of the IAM Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
         [Resource Identifiers]({{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm).
-        You may optionally specify a *display name* for the set of DHCP options, otherwise a default is provided. It does not have to
-        be unique, and you can change it.
+        You may optionally specify a *display name* for the set of DHCP options, otherwise a default is provided.
+        It does not have to be unique, and you can change it.
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
         talk to an administrator. If you're an administrator who needs to write policies to give users access, see
         [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
@@ -144,21 +147,24 @@ class VirtualNetworkClient(object):
         CreateDrg
         Creates a new Dynamic Routing Gateway (DRG) in the specified compartment. You can think of a DRG
         as a virtual router that provides a path for private traffic between your VCN and your on-premise
-        network. You use it with other Virtual Network Service components and an on-premise router to create
+        network. You use it with other Networking Service components and an on-premise router to create
         a site-to-site VPN. For more information, see
-        [Typical Virtual Cloud Network Scenarios]({{DOC_SERVER_URL}}/Content/Network/Concepts/overview.htm#Typical_Cloud_Network_Scenarios)
+        [Typical Networking Service Scenarios]({{DOC_SERVER_URL}}/Content/Network/Concepts/overview.htm#three)
         and [Managing Dynamic Routing Gateways (DRGs)]({{DOC_SERVER_URL}}/Content/Network/Tasks/managingDRGs.htm).
         For the purposes of access control, you must provide the OCID of the compartment where you want
         the DRG to reside. Notice that the DRG doesn't have to be in the same compartment as the VCN,
-        the DRG attachment, or other Virtual Network Service components. If you're not sure which compartment
+        the DRG attachment, or other Networking Service components. If you're not sure which compartment
         to use, put the DRG in the same compartment as the VCN. For more information about compartments
-        and access control, see [Overview of the Identity and Access Management Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm).
+        and access control, see [Overview of the IAM Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm).
         For information about OCIDs, see [Resource Identifiers]({{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm).
-        You may optionally specify a *display name* for the DRG, otherwise a default is provided. It does not have to
-        be unique, and you can change it.
+        You may optionally specify a *display name* for the DRG, otherwise a default is provided.
+        It does not have to be unique, and you can change it.
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
         talk to an administrator. If you're an administrator who needs to write policies to give users access, see
         [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
+        For information about endpoints and signing API requests, see
+        [About the API]({{DOC_SERVER_URL}}/Content/API/Concepts/usingapi.htm). For information about available SDKs and tools, see
+        [SDKS and Other Tools]({{DOC_SERVER_URL}}/Content/API/Concepts/sdks.htm).
 
         :param CreateDrgDetails create_drg_details: (required)
             Details for creating a DRG.
@@ -202,11 +208,11 @@ class VirtualNetworkClient(object):
         Attaches the specified DRG to the specified VCN. A VCN can be attached to only one DRG at a time.
         The response includes a `DrgAttachment` object with its own OCID. For more information about DRGs, see
         [Managing Dynamic Routing Gateways (DRGs)]({{DOC_SERVER_URL}}/Content/Network/Tasks/managingDRGs.htm).
-        You may optionally specify a *display name* for the attachment, otherwise a default is provided. It does not have to
-        be unique, and you can change it.
+        You may optionally specify a *display name* for the attachment, otherwise a default is provided.
+        It does not have to be unique, and you can change it.
         For the purposes of access control, the DRG attachment is automatically placed into the same compartment
         as the VCN. For more information about compartments and access control, see
-        [Overview of the Identity and Access Management Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm).
+        [Overview of the IAM Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm).
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
         talk to an administrator. If you're an administrator who needs to write policies to give users access, see
         [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
@@ -252,25 +258,29 @@ class VirtualNetworkClient(object):
         CreateInternetGateway
         Creates a new Internet Gateway for the specified VCN. You can think of an Internet Gateway as a router
         that connects the edge of the VCN with the Internet. For an example scenario that uses an Internet Gateway,
-        see [Typical Virtual Cloud Network Scenarios]({{DOC_SERVER_URL}}/Content/Network/Concepts/overview.htm#Typical_Cloud_Network_Scenarios)
+        see [Typical Networking Service Scenarios]({{DOC_SERVER_URL}}/Content/Network/Concepts/overview.htm#three)
         and [Managing Internet Gateways]({{DOC_SERVER_URL}}/Content/Network/Tasks/managingIGs.htm).
         For the purposes of access control, you must provide the OCID of the compartment where you want the Internet
         Gateway to reside. Notice that the Internet Gateway doesn't have to be in the same compartment as the VCN or
-        other Virtual Network Service components. If you're not sure which compartment to use, put the Internet
+        other Networking Service components. If you're not sure which compartment to use, put the Internet
         Gateway in the same compartment with the VCN. For more information about compartments and access control, see
-        [Overview of the Identity and Access Management Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
+        [Overview of the IAM Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
         [Resource Identifiers]({{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm).
-        You may optionally specify a *display name* for the Internet Gateway, otherwise a default is provided. It does not have to
-        be unique, and you can change it.
+        You may optionally specify a *display name* for the Internet Gateway, otherwise a default is provided. It
+        does not have to be unique, and you can change it.
         For traffic to flow between a subnet and an Internet Gateway, you must create a route rule accordingly in
-        the subnet's route table (e.g., 0.0.0.0/0 > Internet Gateway). See UpdateRouteTable.
+        the subnet's route table (e.g., 0.0.0.0/0 > Internet Gateway). See
+        UpdateRouteTable.
         You must specify whether the Internet Gateway is enabled when you create it. If it's disabled, that means no
-        traffic will flow to/from the Internet even if there's a route rule that enables that traffic. You can later
-        use UpdateInternetGateway to easily disable/enable the gateway without changing the
-        route rule.
+        traffic will flow to/from the internet even if there's a route rule that enables that traffic. You can later
+        use UpdateInternetGateway to easily disable/enable
+        the gateway without changing the route rule.
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
         talk to an administrator. If you're an administrator who needs to write policies to give users access, see
         [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
+        For information about endpoints and signing API requests, see
+        [About the API]({{DOC_SERVER_URL}}/Content/API/Concepts/usingapi.htm). For information about available SDKs and tools, see
+        [SDKS and Other Tools]({{DOC_SERVER_URL}}/Content/API/Concepts/sdks.htm).
 
         :param CreateInternetGatewayDetails create_internet_gateway_details: (required)
             Details for creating a new Internet Gateway.
@@ -311,32 +321,36 @@ class VirtualNetworkClient(object):
     def create_ip_sec_connection(self, create_ip_sec_connection_details, **kwargs):
         """
         CreateIPSecConnection
-        Creates a new IPSec connection between the specified DRG and CPE. This connection consists of two IPSec
+        Creates a new IPSec connection between the specified DRG and CPE. This connection consists of multiple IPSec
         tunnels. Creating this connection is one of the steps required when setting up a VPN. For more
         information, see
-        [Typical Virtual Cloud Network Scenarios]({{DOC_SERVER_URL}}/Content/Network/Concepts/overview.htm#Typical_Cloud_Network_Scenarios)
+        [Typical Networking Service Scenarios]({{DOC_SERVER_URL}}/Content/Network/Concepts/overview.htm#three)
         and [Managing IPSec Connections]({{DOC_SERVER_URL}}/Content/Network/Tasks/managingIPsec.htm).
         In the request, you must include at least one static route to the CPE object (you're allowed a maximum
         of 10). For example: 10.0.8.0/16.
         For the purposes of access control, you must provide the OCID of the compartment where you want the
         IPSec connection to reside. Notice that the IPSec connection doesn't have to be in the same compartment
-        as the DRG, CPE, or other Virtual Network Service components. If you're not sure which compartment to
+        as the DRG, CPE, or other Networking Service components. If you're not sure which compartment to
         use, put the IPSec connection in the same compartment as the CPE. For more information about
         compartments and access control, see
-        [Overview of the Identity and Access Management Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm).
+        [Overview of the IAM Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm).
         For information about OCIDs, see [Resource Identifiers]({{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm).
-        You may optionally specify a *display name* for the IPSec connection, otherwise a default is provided. It does not have to
-        be unique, and you can change it.
+        You may optionally specify a *display name* for the IPSec connection, otherwise a default is provided.
+        It does not have to be unique, and you can change it.
         After creating the IPSec connection, you need to configure your on-premise router
         with tunnel-specific information returned by
-        GetIPSecConnectionDeviceConfig. For each tunnel, that operation gives
-        you the IP address of Oracle's VPN headend and the shared secret (i.e., the pre-shared key). For more
-        information, see [Configuring Your On-Premise Router]({{DOC_SERVER_URL}}/Content/Network/Tasks/configuringCPE.htm).
+        GetIPSecConnectionDeviceConfig.
+        For each tunnel, that operation gives you the IP address of Oracle's VPN headend and the shared secret
+        (i.e., the pre-shared key). For more information, see
+        [Configuring Your On-Premise Router]({{DOC_SERVER_URL}}/Content/Network/Tasks/configuringCPE.htm).
         To get the status of the tunnels (whether they're up or down), use
         GetIPSecConnectionDeviceStatus.
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
         talk to an administrator. If you're an administrator who needs to write policies to give users access, see
         [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
+        For information about endpoints and signing API requests, see
+        [About the API]({{DOC_SERVER_URL}}/Content/API/Concepts/usingapi.htm). For information about available SDKs and tools, see
+        [SDKS and Other Tools]({{DOC_SERVER_URL}}/Content/API/Concepts/sdks.htm).
 
         :param CreateIPSecConnectionDetails create_ip_sec_connection_details: (required)
             Details for creating an `IPSecConnection`.
@@ -378,16 +392,17 @@ class VirtualNetworkClient(object):
         """
         CreateRouteTable
         Creates a new route table for the specified VCN. In the request you must also include at least one route
-        rule for the new route table (10 route rules maximum per table). For general information about route
+        rule for the new route table. For information on the number of rules you can have in a route table, see
+        [Service Limits]({{DOC_SERVER_URL}}/Content/General/Concepts/servicelimits.htm). For general information about route
         tables in your VCN, see [Managing Route Tables]({{DOC_SERVER_URL}}/Content/Network/Tasks/managingroutetables.htm).
         For the purposes of access control, you must provide the OCID of the compartment where you want the route
         table to reside. Notice that the route table doesn't have to be in the same compartment as the VCN, subnets,
-        or other Virtual Network Service components. If you're not sure which compartment to use, put the route
+        or other Networking Service components. If you're not sure which compartment to use, put the route
         table in the same compartment as the VCN. For more information about compartments and access control, see
-        [Overview of the Identity and Access Management Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
+        [Overview of the IAM Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
         [Resource Identifiers]({{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm).
-        You may optionally specify a *display name* for the route table, otherwise a default is provided. It does not have to
-        be unique, and you can change it.
+        You may optionally specify a *display name* for the route table, otherwise a default is provided.
+        It does not have to be unique, and you can change it.
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
         talk to an administrator. If you're an administrator who needs to write policies to give users access, see
         [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
@@ -435,18 +450,20 @@ class VirtualNetworkClient(object):
         for the instance. Security lists are configured at the subnet level, but the rules are applied
         to the ingress and egress traffic for the individual instances in the subnet. For more information
         about security lists, see [Security Lists]({{DOC_SERVER_URL}}/Content/Network/Concepts/permissions.htm#Security_Lists).
-        **Important:** Oracle Bare Metal Cloud images that run Oracle Linux automatically include iptables rules.
+        For information on the number of rules you can have in a security list, see
+        [Service Limits]({{DOC_SERVER_URL}}/Content/General/Concepts/servicelimits.htm).
+        **Important:** Oracle Bare Metal Cloud Services images that run Oracle Linux automatically include iptables rules.
         If there are issues with some type of access to an instance, make sure both the security lists associated
         with the instance's subnet and the instance's iptables rules are set correctly. For more information,
-        see [Ways to Secure Your Network]({{DOC_SERVER_URL}}/Content/Network/Concepts/permissions.htm#Ways_to_Secure_Your_Network).
+        see [Ways to Secure Your Network]({{DOC_SERVER_URL}}/Content/Network/Concepts/permissions.htm#one).
         For the purposes of access control, you must provide the OCID of the compartment where you want the security
         list to reside. Notice that the security list doesn't have to be in the same compartment as the VCN, subnets,
-        or other Virtual Network Service components. If you're not sure which compartment to use, put the security
+        or other Networking Service components. If you're not sure which compartment to use, put the security
         list in the same compartment as the VCN. For more information about compartments and access control, see
-        [Overview of the Identity and Access Management Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
+        [Overview of the IAM Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
         [Resource Identifiers]({{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm).
-        You may optionally specify a *display name* for the security list, otherwise a default is provided. It does not have to
-        be unique, and you can change it.
+        You may optionally specify a *display name* for the security list, otherwise a default is provided.
+        It does not have to be unique, and you can change it.
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
         talk to an administrator. If you're an administrator who needs to write policies to give users access, see
         [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
@@ -494,29 +511,33 @@ class VirtualNetworkClient(object):
         in a single Availability Domain and consists of a contiguous range of IP addresses that do not overlap with
         other subnets in the VCN. Example: 172.16.1.0/24. You can't change the size of the subnet after creation,
         so it's important to think about the size of subnets you need before creating them.
-        You can have up to 300 subnets in your VCN. For conceptual information about VCNs, subnets, and other
-        Virtual Network Service components, see [Overview of your Cloud Network]({{DOC_SERVER_URL}}/Content/Network/Concepts/overview.htm)
-        and [Managing Subnets]({{DOC_SERVER_URL}}/Content/Network/Tasks/managingsubnets.htm).
+        For conceptual information about VCNs, subnets, and other Networking Service components, see
+        [Overview of the Networking Service]({{DOC_SERVER_URL}}/Content/Network/Concepts/overview.htm)
+        and [Managing Subnets]({{DOC_SERVER_URL}}/Content/Network/Tasks/managingsubnets.htm). For information on
+        the number of subnets you can have in a VCN, see [Service Limits]({{DOC_SERVER_URL}}/Content/General/Concepts/servicelimits.htm).
         For the purposes of access control, you must provide the OCID of the compartment where you want the subnet
         to reside. Notice that the subnet doesn't have to be in the same compartment as the VCN, route tables, or
-        other Virtual Network Service components. If you're not sure which compartment to use, put the subnet in
+        other Networking Service components. If you're not sure which compartment to use, put the subnet in
         the same compartment as the VCN. For more information about compartments and access control, see
-        [Overview of the Identity and Access Management Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm). For information about OCIDs,
+        [Overview of the IAM Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm). For information about OCIDs,
         see [Resource Identifiers]({{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm).
-        You may optionally specify a route table for the subnet to use. If you don't, the subnet will use the
+        You may optionally associate a route table with the subnet. If you don't, the subnet will use the
         VCN's default route table. For more information about route tables, see
         [Managing Route Tables]({{DOC_SERVER_URL}}/Content/Network/Tasks/managingroutetables.htm).
-        You may optionally specify a security list for the subnet to use. If you don't, the subnet will use the
+        You may optionally associate a security list with the subnet. If you don't, the subnet will use the
         VCN's default security list. For more information about security lists, see
         [Security Lists]({{DOC_SERVER_URL}}/Content/Network/Concepts/permissions.htm#Security_Lists).
-        You may optionally specify a set of DHCP options for the subnet to use. If you don't, the subnet will use the
+        You may optionally associate a set of DHCP options with the subnet. If you don't, the subnet will use the
         VCN's default set. For more information about DHCP options, see
         [Managing DHCP Options]({{DOC_SERVER_URL}}/Content/Network/Tasks/managingDHCP.htm).
-        You may optionally specify a *display name* for the subnet, otherwise a default is provided. It does not have to
-        be unique, and you can change it.
+        You may optionally specify a *display name* for the subnet, otherwise a default is provided.
+        It does not have to be unique, and you can change it.
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
         talk to an administrator. If you're an administrator who needs to write policies to give users access, see
         [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
+        For information about endpoints and signing API requests, see
+        [About the API]({{DOC_SERVER_URL}}/Content/API/Concepts/usingapi.htm). For information about available SDKs and tools, see
+        [SDKS and Other Tools]({{DOC_SERVER_URL}}/Content/API/Concepts/sdks.htm).
 
         :param CreateSubnetDetails create_subnet_details: (required)
             Details for creating a subnet.
@@ -558,17 +579,17 @@ class VirtualNetworkClient(object):
         """
         CreateVcn
         Creates a new Virtual Cloud Network (VCN). For conceptual information about VCNs and other Virtual Network
-        Service components, see [Overview of your Cloud Network]({{DOC_SERVER_URL}}/Content/Network/Concepts/overview.htm) and
+        Service components, see [Overview of the Networking Service]({{DOC_SERVER_URL}}/Content/Network/Concepts/overview.htm) and
         [Managing Virtual Cloud Networks (VCNs)]({{DOC_SERVER_URL}}/Content/Network/Tasks/managingVCNs.htm).
         For the VCN you must specify a single, contiguous IPv4 CIDR block in the private IP address ranges specified in
         [RFC 1918](https://tools.ietf.org/html/rfc1918) (10.0.0.0/8, 172.16/12, and 192.168/16). Example: 172.16.0.0/16.
         The CIDR block can range from /16 to /30, and it must not overlap with your on-premise network. You can't
         change the size of the VCN after creation.
         For the purposes of access control, you must provide the OCID of the compartment where you want the VCN to
-        reside. Consult an Oracle Bare Metal IaaS Administrator in your organization if you're not sure which
+        reside. Consult an Oracle Bare Metal Cloud Services administrator in your organization if you're not sure which
         compartment to use. Notice that the VCN doesn't have to be in the same compartment as the subnets or other
-        Virtual Network Service components. For more information about compartments and access control, see
-        [Overview of the Identity and Access Management Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
+        Networking Service components. For more information about compartments and access control, see
+        [Overview of the IAM Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
         [Resource Identifiers]({{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm).
         You may optionally specify a *display name* for the VCN, otherwise a default is provided. It does not have to
         be unique, and you can change it.
@@ -577,12 +598,13 @@ class VirtualNetworkClient(object):
         contents (i.e., route rules, etc.)
         The VCN and subnets you create are not accessible until you attach an Internet Gateway or set up a VPN.
         For more information, see
-        [Typical Virtual Cloud Network Scenarios]({{DOC_SERVER_URL}}/Content/Network/Concepts/overview.htm#Typical_Cloud_Network_Scenarios).
+        [Typical Networking Service Scenarios]({{DOC_SERVER_URL}}/Content/Network/Concepts/overview.htm#three).
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
         talk to an administrator. If you're an administrator who needs to write policies to give users access, see
         [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
         For information about endpoints and signing API requests, see
-        [Making API Requests]({{DOC_SERVER_URL}}/Content/API/Concepts/usingapi.htm).
+        [About the API]({{DOC_SERVER_URL}}/Content/API/Concepts/usingapi.htm). For information about available SDKs and tools, see
+        [SDKS and Other Tools]({{DOC_SERVER_URL}}/Content/API/Concepts/sdks.htm).
 
         :param CreateVcnDetails create_vcn_details: (required)
             Details for creating a new VCN.
@@ -628,7 +650,7 @@ class VirtualNetworkClient(object):
         removed.
 
         :param str cpe_id: (required)
-            The CPE's OCID.
+            The OCID of the CPE.
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
@@ -668,7 +690,7 @@ class VirtualNetworkClient(object):
     def delete_dhcp_options(self, dhcp_id, **kwargs):
         """
         DeleteDhcpOptions
-        Deletes the specified set of DHCP options, but only if it's not in use by a subnet. You can't delete a
+        Deletes the specified set of DHCP options, but only if it's not associated with a subnet. You can't delete a
         VCN's default set of DHCP options.
         This is an asynchronous operation; the state of the set of options will switch to TERMINATING temporarily
         until the set is completely removed.
@@ -720,7 +742,7 @@ class VirtualNetworkClient(object):
         removed.
 
         :param str drg_id: (required)
-            The DRG's OCID.
+            The OCID of the DRG.
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
@@ -761,11 +783,11 @@ class VirtualNetworkClient(object):
         """
         DeleteDrgAttachment
         Detaches a DRG from a VCN by deleting the corresponding `DrgAttachment`. This is an asynchronous
-        operation; the attachment's `lifecycleState` will change to TERMINATING temporarily until the attachment
+        operation; the attachment's `lifecycleState` will change to DETACHING temporarily until the attachment
         is completely removed.
 
         :param str drg_attachment_id: (required)
-            The DRG attachment's OCID.
+            The OCID of the DRG attachment.
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
@@ -811,7 +833,7 @@ class VirtualNetworkClient(object):
         until the gateway is completely removed.
 
         :param str ig_id: (required)
-            The Internet Gateway's OCID.
+            The OCID of the Internet Gateway.
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
@@ -860,7 +882,7 @@ class VirtualNetworkClient(object):
         until the connection is completely removed.
 
         :param str ipsc_id: (required)
-            The IPSec connection's OCID.
+            The OCID of the IPSec connection.
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
@@ -900,13 +922,13 @@ class VirtualNetworkClient(object):
     def delete_route_table(self, rt_id, **kwargs):
         """
         DeleteRouteTable
-        Deletes the specified route table, but only if it's not in use by a subnet. You can't delete a
+        Deletes the specified route table, but only if it's not associated with a subnet. You can't delete a
         VCN's default route table.
         This is an asynchronous operation; the route table's `lifecycleState` will change to TERMINATING temporarily
         until the route table is completely removed.
 
         :param str rt_id: (required)
-            The route table's OCID.
+            The OCID of the route table.
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
@@ -946,12 +968,13 @@ class VirtualNetworkClient(object):
     def delete_security_list(self, security_list_id, **kwargs):
         """
         DeleteSecurityList
-        Deletes the specified security list, but only if it's not in use.
+        Deletes the specified security list, but only if it's not associated with a subnet. You can't delete
+        a VCN's default security list.
         This is an asynchronous operation; the security list's `lifecycleState` will change to TERMINATING temporarily
         until the security list is completely removed.
 
         :param str security_list_id: (required)
-            The security list's OCID.
+            The OCID of the security list.
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
@@ -996,7 +1019,7 @@ class VirtualNetworkClient(object):
         instances in the subnet, the state will instead change back to AVAILABLE.
 
         :param str subnet_id: (required)
-            The subnet's OCID.
+            The OCID of the subnet.
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
@@ -1041,7 +1064,7 @@ class VirtualNetworkClient(object):
         removed.
 
         :param str vcn_id: (required)
-            The VCN's OCID.
+            The OCID of the VCN.
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
@@ -1084,7 +1107,7 @@ class VirtualNetworkClient(object):
         Gets the specified CPE's information.
 
         :param str cpe_id: (required)
-            The CPE's OCID.
+            The OCID of the CPE.
         :return: A Response object with data of type Cpe
         """
         resource_path = "/cpes/{cpeId}"
@@ -1150,7 +1173,7 @@ class VirtualNetworkClient(object):
         Gets the specified DRG's information.
 
         :param str drg_id: (required)
-            The DRG's OCID.
+            The OCID of the DRG.
         :return: A Response object with data of type Drg
         """
         resource_path = "/drgs/{drgId}"
@@ -1183,7 +1206,7 @@ class VirtualNetworkClient(object):
         Gets the information for the specified `DrgAttachment`.
 
         :param str drg_attachment_id: (required)
-            The DRG attachment's OCID.
+            The OCID of the DRG attachment.
         :return: A Response object with data of type DrgAttachment
         """
         resource_path = "/drgAttachments/{drgAttachmentId}"
@@ -1216,7 +1239,7 @@ class VirtualNetworkClient(object):
         Gets the specified Internet Gateway's information.
 
         :param str ig_id: (required)
-            The Internet Gateway's OCID.
+            The OCID of the Internet Gateway.
         :return: A Response object with data of type InternetGateway
         """
         resource_path = "/internetGateways/{igId}"
@@ -1251,7 +1274,7 @@ class VirtualNetworkClient(object):
         GetIPSecConnectionDeviceStatus.
 
         :param str ipsc_id: (required)
-            The IPSec connection's OCID.
+            The OCID of the IPSec connection.
         :return: A Response object with data of type IPSecConnection
         """
         resource_path = "/ipsecConnections/{ipscId}"
@@ -1288,7 +1311,7 @@ class VirtualNetworkClient(object):
         [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
 
         :param str ipsc_id: (required)
-            The IPSec connection's OCID.
+            The OCID of the IPSec connection.
         :return: A Response object with data of type IPSecConnectionDeviceConfig
         """
         resource_path = "/ipsecConnections/{ipscId}/deviceConfig"
@@ -1321,7 +1344,7 @@ class VirtualNetworkClient(object):
         Gets the status of the specified IPSec connection (whether it's up or down).
 
         :param str ipsc_id: (required)
-            The IPSec connection's OCID.
+            The OCID of the IPSec connection.
         :return: A Response object with data of type IPSecConnectionDeviceStatus
         """
         resource_path = "/ipsecConnections/{ipscId}/deviceStatus"
@@ -1354,7 +1377,7 @@ class VirtualNetworkClient(object):
         Gets the specified route table's information.
 
         :param str rt_id: (required)
-            The route table's OCID.
+            The OCID of the route table.
         :return: A Response object with data of type RouteTable
         """
         resource_path = "/routeTables/{rtId}"
@@ -1387,7 +1410,7 @@ class VirtualNetworkClient(object):
         Gets the specified security list's information.
 
         :param str security_list_id: (required)
-            The security list's OCID.
+            The OCID of the security list.
         :return: A Response object with data of type SecurityList
         """
         resource_path = "/securityLists/{securityListId}"
@@ -1420,7 +1443,7 @@ class VirtualNetworkClient(object):
         Gets the specified subnet's information.
 
         :param str subnet_id: (required)
-            The subnet's OCID.
+            The OCID of the subnet.
         :return: A Response object with data of type Subnet
         """
         resource_path = "/subnets/{subnetId}"
@@ -1453,7 +1476,7 @@ class VirtualNetworkClient(object):
         Gets the specified VCN's information.
 
         :param str vcn_id: (required)
-            The VCN's OCID.
+            The OCID of the VCN.
         :return: A Response object with data of type Vcn
         """
         resource_path = "/vcns/{vcnId}"
@@ -1489,7 +1512,7 @@ class VirtualNetworkClient(object):
         Cloud Compute Service's ListVnicAttachments operation.
 
         :param str vnic_id: (required)
-            The VNIC's OCID.
+            The OCID of the VNIC.
         :return: A Response object with data of type Vnic
         """
         resource_path = "/vnics/{vnicId}"
@@ -1578,7 +1601,7 @@ class VirtualNetworkClient(object):
         :param str compartment_id: (required)
             The OCID of the compartment.
                 :param str vcn_id: (required)
-            The VCN's OCID.
+            The OCID of the VCN.
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
             Example: `500`
@@ -1622,7 +1645,7 @@ class VirtualNetworkClient(object):
     def list_drg_attachments(self, compartment_id, **kwargs):
         """
         ListDrgAttachments
-        Gets a list of the `DrgAttachment`s for the specified compartment. You can optionally filter the
+        Gets a list of the `DrgAttachment` objects for the specified compartment. You can filter the
         results by VCN or DRG.
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
         talk to an administrator. If you're an administrator who needs to write policies to give users access, see
@@ -1631,9 +1654,9 @@ class VirtualNetworkClient(object):
         :param str compartment_id: (required)
             The OCID of the compartment.
         :param str vcn_id: (optional)
-            The VCN's OCID.
+            The OCID of the VCN.
         :param str drg_id: (optional)
-            The DRG's OCID.
+            The OCID of the DRG.
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
             Example: `500`
@@ -1737,7 +1760,7 @@ class VirtualNetworkClient(object):
         :param str compartment_id: (required)
             The OCID of the compartment.
                 :param str vcn_id: (required)
-            The VCN's OCID.
+            The OCID of the VCN.
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
             Example: `500`
@@ -1781,7 +1804,7 @@ class VirtualNetworkClient(object):
     def list_ip_sec_connections(self, compartment_id, **kwargs):
         """
         ListIPSecConnections
-        Gets a list of the IPSec connections for the specified compartment. You can optionally filter the
+        Gets a list of the IPSec connections for the specified compartment. You can filter the
         results by DRG or CPE.
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
         talk to an administrator. If you're an administrator who needs to write policies to give users access, see
@@ -1790,9 +1813,9 @@ class VirtualNetworkClient(object):
         :param str compartment_id: (required)
             The OCID of the compartment.
         :param str drg_id: (optional)
-            The DRG's OCID.
+            The OCID of the DRG.
         :param str cpe_id: (optional)
-            The CPE's OCID.
+            The OCID of the CPE.
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
             Example: `500`
@@ -1849,7 +1872,7 @@ class VirtualNetworkClient(object):
         :param str compartment_id: (required)
             The OCID of the compartment.
                 :param str vcn_id: (required)
-            The VCN's OCID.
+            The OCID of the VCN.
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
             Example: `500`
@@ -1901,7 +1924,7 @@ class VirtualNetworkClient(object):
         :param str compartment_id: (required)
             The OCID of the compartment.
                 :param str vcn_id: (required)
-            The VCN's OCID.
+            The OCID of the VCN.
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
             Example: `500`
@@ -1953,7 +1976,7 @@ class VirtualNetworkClient(object):
         :param str compartment_id: (required)
             The OCID of the compartment.
                 :param str vcn_id: (required)
-            The VCN's OCID.
+            The OCID of the VCN.
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
             Example: `500`
@@ -2046,10 +2069,10 @@ class VirtualNetworkClient(object):
     def update_cpe(self, cpe_id, update_cpe_details, **kwargs):
         """
         UpdateCpe
-        Updates the specified CPE.
+        Updates the specified CPE's display name.
 
         :param str cpe_id: (required)
-            The CPE's OCID.
+            The OCID of the CPE.
                 :param UpdateCpeDetails update_cpe_details: (required)
             Details object for updating a CPE.
         :param str if_match: (optional)
@@ -2093,8 +2116,8 @@ class VirtualNetworkClient(object):
     def update_dhcp_options(self, dhcp_id, update_dhcp_details, **kwargs):
         """
         UpdateDhcpOptions
-        Updates the specified set of DHCP options. When updating the set, the new `DhcpOptions` object
-        you provide replaces the entire existing set of options.
+        Updates the specified set of DHCP options. You can update the display name or the options
+        themselves. Note that the `options` object you provide replaces the entire existing set of options.
 
         :param str dhcp_id: (required)
             The OCID for the set of DHCP options.
@@ -2141,10 +2164,10 @@ class VirtualNetworkClient(object):
     def update_drg(self, drg_id, update_drg_details, **kwargs):
         """
         UpdateDrg
-        Updates the specified DRG.
+        Updates the specified DRG's display name.
 
         :param str drg_id: (required)
-            The DRG's OCID.
+            The OCID of the DRG.
                 :param UpdateDrgDetails update_drg_details: (required)
             Details object for updating a DRG.
         :param str if_match: (optional)
@@ -2188,10 +2211,10 @@ class VirtualNetworkClient(object):
     def update_drg_attachment(self, drg_attachment_id, update_drg_attachment_details, **kwargs):
         """
         UpdateDrgAttachment
-        Updates the specified `DrgAttachment`.
+        Updates the display name for the specified `DrgAttachment`.
 
         :param str drg_attachment_id: (required)
-            The DRG attachment's OCID.
+            The OCID of the DRG attachment.
                 :param UpdateDrgAttachmentDetails update_drg_attachment_details: (required)
             Details object for updating a `DrgAttachment`.
         :param str if_match: (optional)
@@ -2235,12 +2258,12 @@ class VirtualNetworkClient(object):
     def update_internet_gateway(self, ig_id, update_internet_gateway_details, **kwargs):
         """
         UpdateInternetGateway
-        Disables/enables the Internet Gateway.
-        If the gateway is disabled, that means no traffic will flow to/from the Internet even if there's
+        Updates the specified Internet Gateway. You can disable/enable it, or change its display name.
+        If the gateway is disabled, that means no traffic will flow to/from the internet even if there's
         a route rule that enables that traffic.
 
         :param str ig_id: (required)
-            The Internet Gateway's OCID.
+            The OCID of the Internet Gateway.
                 :param UpdateInternetGatewayDetails update_internet_gateway_details: (required)
             Details for updating the Internet Gateway.
         :param str if_match: (optional)
@@ -2284,10 +2307,10 @@ class VirtualNetworkClient(object):
     def update_ip_sec_connection(self, ipsc_id, update_ip_sec_connection_details, **kwargs):
         """
         UpdateIPSecConnection
-        Updates the specified IPSec connection.
+        Updates the display name for the specified IPSec connection.
 
         :param str ipsc_id: (required)
-            The IPSec connection's OCID.
+            The OCID of the IPSec connection.
                 :param UpdateIPSecConnectionDetails update_ip_sec_connection_details: (required)
             Details object for updating a IPSec connection.
         :param str if_match: (optional)
@@ -2331,11 +2354,11 @@ class VirtualNetworkClient(object):
     def update_route_table(self, rt_id, update_route_table_details, **kwargs):
         """
         UpdateRouteTable
-        Updates the specified route table. If you specify a set of rules, it
-        replaces the entire existing set.
+        Updates the specified route table's display name or route rules. Note that the
+        `routeRules` object you provide replaces the entire existing set of rules.
 
         :param str rt_id: (required)
-            The route table's OCID.
+            The OCID of the route table.
                 :param UpdateRouteTableDetails update_route_table_details: (required)
             Details object for updating a route table.
         :param str if_match: (optional)
@@ -2379,11 +2402,12 @@ class VirtualNetworkClient(object):
     def update_security_list(self, security_list_id, update_security_list_details, **kwargs):
         """
         UpdateSecurityList
-        Updates the specified security list. If you specify a set of rules, it
-        replaces the entire existing set.
+        Updates the specified security list's display name or rules. Note that the
+        `egressSecurityRules` or `ingressSecurityRules` objects you provide replace the entire
+        existing objects.
 
         :param str security_list_id: (required)
-            The security list's OCID.
+            The OCID of the security list.
                 :param UpdateSecurityListDetails update_security_list_details: (required)
             Updated details for the security list.
         :param str if_match: (optional)
@@ -2427,10 +2451,10 @@ class VirtualNetworkClient(object):
     def update_subnet(self, subnet_id, update_subnet_details, **kwargs):
         """
         UpdateSubnet
-        Updates the specified subnet.
+        Updates the specified subnet's display name.
 
         :param str subnet_id: (required)
-            The subnet's OCID.
+            The OCID of the subnet.
                 :param UpdateSubnetDetails update_subnet_details: (required)
             Details object for updating a subnet.
         :param str if_match: (optional)
@@ -2474,10 +2498,10 @@ class VirtualNetworkClient(object):
     def update_vcn(self, vcn_id, update_vcn_details, **kwargs):
         """
         UpdateVcn
-        Updates the specified VCN.
+        Updates the specified VCN's display name.
 
         :param str vcn_id: (required)
-            The VCN's OCID.
+            The OCID of the VCN.
                 :param UpdateVcnDetails update_vcn_details: (required)
             Details object for updating a VCN.
         :param str if_match: (optional)

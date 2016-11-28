@@ -123,7 +123,8 @@ class Cpe(object):
     def time_created(self):
         """
         Gets the time_created of this Cpe.
-        The date and time the CPE was created.
+        The date and time the CPE was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :return: The time_created of this Cpe.
         :rtype: datetime
@@ -134,7 +135,8 @@ class Cpe(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Cpe.
-        The date and time the CPE was created.
+        The date and time the CPE was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :param time_created: The time_created of this Cpe.
         :type: datetime

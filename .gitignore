@@ -16,4 +16,5 @@ __pycache__/
 env/
 docs/_build/
 docs/apidocs/
+oraclebmc/models/init_*
 tests/resources/test_debug.log

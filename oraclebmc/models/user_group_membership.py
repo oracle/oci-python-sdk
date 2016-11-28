@@ -41,7 +41,7 @@ class UserGroupMembership(object):
     def id(self):
         """
         Gets the id of this UserGroupMembership.
-        The membership's Oracle ID (OCID).
+        The OCID of the membership.
 
         :return: The id of this UserGroupMembership.
         :rtype: str
@@ -52,7 +52,7 @@ class UserGroupMembership(object):
     def id(self, id):
         """
         Sets the id of this UserGroupMembership.
-        The membership's Oracle ID (OCID).
+        The OCID of the membership.
 
         :param id: The id of this UserGroupMembership.
         :type: str
@@ -129,7 +129,8 @@ class UserGroupMembership(object):
     def time_created(self):
         """
         Gets the time_created of this UserGroupMembership.
-        Date and time the membership was created.
+        Date and time the membership was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :return: The time_created of this UserGroupMembership.
         :rtype: datetime
@@ -140,7 +141,8 @@ class UserGroupMembership(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this UserGroupMembership.
-        Date and time the membership was created.
+        Date and time the membership was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :param time_created: The time_created of this UserGroupMembership.
         :type: datetime

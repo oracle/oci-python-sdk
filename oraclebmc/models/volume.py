@@ -42,6 +42,7 @@ class Volume(object):
         """
         Gets the availability_domain of this Volume.
         The Availability Domain of the volume.
+        Example: `Uocm:PHX-AD-1`
 
         :return: The availability_domain of this Volume.
         :rtype: str
@@ -53,6 +54,7 @@ class Volume(object):
         """
         Sets the availability_domain of this Volume.
         The Availability Domain of the volume.
+        Example: `Uocm:PHX-AD-1`
 
         :param availability_domain: The availability_domain of this Volume.
         :type: str
@@ -107,7 +109,7 @@ class Volume(object):
     def id(self):
         """
         Gets the id of this Volume.
-        The Oracle Cloud ID (OCID) that uniquely identifies the volume.
+        The volume's Oracle ID (OCID).
 
         :return: The id of this Volume.
         :rtype: str
@@ -118,7 +120,7 @@ class Volume(object):
     def id(self, id):
         """
         Sets the id of this Volume.
-        The Oracle Cloud ID (OCID) that uniquely identifies the volume.
+        The volume's Oracle ID (OCID).
 
         :param id: The id of this Volume.
         :type: str
@@ -157,7 +159,7 @@ class Volume(object):
     def size_in_m_bs(self):
         """
         Gets the size_in_m_bs of this Volume.
-        The size of the volume, in MBs.
+        The size of the volume in MBs.
 
         :return: The size_in_m_bs of this Volume.
         :rtype: int
@@ -168,7 +170,7 @@ class Volume(object):
     def size_in_m_bs(self, size_in_m_bs):
         """
         Sets the size_in_m_bs of this Volume.
-        The size of the volume, in MBs.
+        The size of the volume in MBs.
 
         :param size_in_m_bs: The size_in_m_bs of this Volume.
         :type: int

@@ -157,7 +157,8 @@ class DhcpOptions(object):
     def time_created(self):
         """
         Gets the time_created of this DhcpOptions.
-        Date and time the set of DHCP options was created.
+        Date and time the set of DHCP options was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :return: The time_created of this DhcpOptions.
         :rtype: datetime
@@ -168,7 +169,8 @@ class DhcpOptions(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this DhcpOptions.
-        Date and time the set of DHCP options was created.
+        Date and time the set of DHCP options was created, in the format defined by RFC3339.
+        Example: `2016-08-25T21:10:29.600Z`
 
         :param time_created: The time_created of this DhcpOptions.
         :type: datetime

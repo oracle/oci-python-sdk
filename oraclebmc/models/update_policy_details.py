@@ -29,7 +29,7 @@ class UpdatePolicyDetails(object):
     def description(self):
         """
         Gets the description of this UpdatePolicyDetails.
-        The non-unique, changeable description you assign to the policy.
+        The description you assign to the policy. Does not have to be unique, and it's changeable.
 
         :return: The description of this UpdatePolicyDetails.
         :rtype: str
@@ -40,7 +40,7 @@ class UpdatePolicyDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdatePolicyDetails.
-        The non-unique, changeable description you assign to the policy.
+        The description you assign to the policy. Does not have to be unique, and it's changeable.
 
         :param description: The description of this UpdatePolicyDetails.
         :type: str
@@ -52,7 +52,8 @@ class UpdatePolicyDetails(object):
         """
         Gets the statements of this UpdatePolicyDetails.
         An array of policy statements written in the policy language. See
-        [Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policies.htm).
+        [How Policies Work]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policies.htm) and
+        [Common Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/commonpolicies.htm).
 
         :return: The statements of this UpdatePolicyDetails.
         :rtype: list[str]
@@ -64,7 +65,8 @@ class UpdatePolicyDetails(object):
         """
         Sets the statements of this UpdatePolicyDetails.
         An array of policy statements written in the policy language. See
-        [Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policies.htm).
+        [How Policies Work]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policies.htm) and
+        [Common Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/commonpolicies.htm).
 
         :param statements: The statements of this UpdatePolicyDetails.
         :type: list[str]

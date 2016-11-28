@@ -28,6 +28,7 @@ class RouteRule(object):
         Gets the cidr_block of this RouteRule.
         A destination IP address range in CIDR notation. Matching packets will
         be routed to the indicated network entity (the target).
+        Example: `0.0.0.0/0`
 
         :return: The cidr_block of this RouteRule.
         :rtype: str
@@ -40,6 +41,7 @@ class RouteRule(object):
         Sets the cidr_block of this RouteRule.
         A destination IP address range in CIDR notation. Matching packets will
         be routed to the indicated network entity (the target).
+        Example: `0.0.0.0/0`
 
         :param cidr_block: The cidr_block of this RouteRule.
         :type: str

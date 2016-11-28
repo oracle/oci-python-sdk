@@ -51,8 +51,8 @@ class CreateCompartmentDetails(object):
     def name(self):
         """
         Gets the name of this CreateCompartmentDetails.
-        A unique, unchangeable name you assign to the compartment during creation. Must be unique across all
-        compartments in the tenancy.
+        The name you assign to the compartment during creation. The name must be unique across all compartments
+        in the tenancy and cannot be changed.
 
         :return: The name of this CreateCompartmentDetails.
         :rtype: str
@@ -63,8 +63,8 @@ class CreateCompartmentDetails(object):
     def name(self, name):
         """
         Sets the name of this CreateCompartmentDetails.
-        A unique, unchangeable name you assign to the compartment during creation. Must be unique across all
-        compartments in the tenancy.
+        The name you assign to the compartment during creation. The name must be unique across all compartments
+        in the tenancy and cannot be changed.
 
         :param name: The name of this CreateCompartmentDetails.
         :type: str
@@ -75,7 +75,7 @@ class CreateCompartmentDetails(object):
     def description(self):
         """
         Gets the description of this CreateCompartmentDetails.
-        The non-unique, changeable description you assign to the compartment during creation.
+        The description you assign to the compartment during creation. Does not have to be unique, and it's changeable.
 
         :return: The description of this CreateCompartmentDetails.
         :rtype: str
@@ -86,7 +86,7 @@ class CreateCompartmentDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateCompartmentDetails.
-        The non-unique, changeable description you assign to the compartment during creation.
+        The description you assign to the compartment during creation. Does not have to be unique, and it's changeable.
 
         :param description: The description of this CreateCompartmentDetails.
         :type: str

@@ -602,6 +602,12 @@ class ObjectStorageClient(object):
             100-continue
         :param str content_md5: (optional)
             The base-64 encoded MD5 hash of the body.
+        :param str content_type: (optional)
+            The content type of the object.  Defaults to 'application/octet-stream' if not overridden during the PutObject call.
+        :param str content_language: (optional)
+            The content language of the object.
+        :param str content_encoding: (optional)
+            The content encoding of the object.
         :param dict(str, str) opc_meta: (optional)
             Optional user-defined metadata key and value.
         :return: A Response object with data of type None
@@ -617,6 +623,9 @@ class ObjectStorageClient(object):
             "opc_client_request_id",
             "expect",
             "content_md5",
+            "content_type",
+            "content_language",
+            "content_encoding",
             "opc_meta"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -639,6 +648,9 @@ class ObjectStorageClient(object):
             "Expect": kwargs.get("expect", missing),
             "Content-Length": kwargs.get("content_length", missing),
             "Content-MD5": kwargs.get("content_md5", missing),
+            "Content-Type": kwargs.get("content_type", missing),
+            "Content-Language": kwargs.get("content_language", missing),
+            "Content-Encoding": kwargs.get("content_encoding", missing),
 
         }
         for key, value in six.iteritems(kwargs.get("opc_meta", {})):

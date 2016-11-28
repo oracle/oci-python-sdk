@@ -28,14 +28,22 @@ class BlockstorageClient(object):
     def create_volume(self, create_volume_details, **kwargs):
         """
         CreateVolume
-        Creates a new 256 GB volume in the specified compartment.
-        A volume and instance can be in separate compartments but must be in the same Availability Domain. You can set
-        the Availability Domain that the volume will reside in by defining `availabilityDomain`. This setting is
-        permanent. You may optionally specify a display name for the volume, which is simply a friendly name or
-        description. This does not have to be unique and you can change it with `UpdateVolume`.
+        Creates a new 256 GB volume in the specified compartment. For general information about block volumes, see
+        [Overview of Block Volume Service]({{DOC_SERVER_URL}}/Content/Block/Concepts/overview.htm)
+        A volume and instance can be in separate compartments but must be in the same Availability Domain.
+        For information about access control and compartments, see
+        [Overview of the IAM Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm). For information about
+        Availability Domains, see [Regions and Availability Domains]({{DOC_SERVER_URL}}/Content/General/Concepts/regions.htm).
+        To get a list of Availability Domains, use the `ListAvailabilityDomains` operation
+        in the Identity and Access Management Service API.
+        You may optionally specify a *display name* for the volume, which is simply a friendly name or
+        description. It does not have to be unique, and you can change it.
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
         talk to an administrator. If you're an administrator who needs to write policies to give users access, see
         [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
+        For information about endpoints and signing API requests, see
+        [About the API]({{DOC_SERVER_URL}}/Content/API/Concepts/usingapi.htm). For information about available SDKs and tools, see
+        [SDKS and Other Tools]({{DOC_SERVER_URL}}/Content/API/Concepts/sdks.htm).
 
         :param CreateVolumeDetails create_volume_details: (required)
             Request to create a new volume.
@@ -76,7 +84,8 @@ class BlockstorageClient(object):
     def create_volume_backup(self, create_volume_backup_details, **kwargs):
         """
         CreateVolumeBackup
-        Creates a new backup of the specified volume.
+        Creates a new backup of the specified volume. For general information about volume backups,
+        see [Overview of Block Volume Service Backups]({{DOC_SERVER_URL}}/Content/Block/Concepts/blockvolumebackups.htm)
         When the request is received, the backup object is in a REQUEST_RECEIVED state.
         When the data is imaged, it goes into a CREATING state.
         After the backup is fully uploaded to the cloud, it goes into an AVAILABLE state.
@@ -129,7 +138,7 @@ class BlockstorageClient(object):
         **Warning:** All data on the volume will be permanently lost when the volume is deleted.
 
         :param str volume_id: (required)
-            The Oracle Cloud ID (OCID) that uniquely identifies the volume.
+            The OCID of the volume.
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
@@ -172,7 +181,7 @@ class BlockstorageClient(object):
         Deletes a volume backup.
 
         :param str volume_backup_id: (required)
-            The Oracle Cloud ID (OCID) that uniquely identifies the volume backup.
+            The OCID of the volume backup.
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
@@ -212,10 +221,10 @@ class BlockstorageClient(object):
     def get_volume(self, volume_id, **kwargs):
         """
         GetVolume
-        Gets information on the specified volume.
+        Gets information for the specified volume.
 
         :param str volume_id: (required)
-            The Oracle Cloud ID (OCID) that uniquely identifies the volume.
+            The OCID of the volume.
         :return: A Response object with data of type Volume
         """
         resource_path = "/volumes/{volumeId}"
@@ -248,7 +257,7 @@ class BlockstorageClient(object):
         Gets information for the specified volume backup.
 
         :param str volume_backup_id: (required)
-            The Oracle Cloud ID (OCID) that uniquely identifies the volume backup.
+            The OCID of the volume backup.
         :return: A Response object with data of type VolumeBackup
         """
         resource_path = "/volumeBackups/{volumeBackupId}"
@@ -278,7 +287,7 @@ class BlockstorageClient(object):
     def list_volume_backups(self, compartment_id, **kwargs):
         """
         ListVolumeBackups
-        Gets a list of volume backups in the specified compartment.
+        Gets a list of volume backups in the specified compartment. You can filter the results by volume.
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
         talk to an administrator. If you're an administrator who needs to write policies to give users access, see
         [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
@@ -388,7 +397,7 @@ class BlockstorageClient(object):
         Updates the specified volume's display name.
 
         :param str volume_id: (required)
-            The Oracle Cloud ID (OCID) that uniquely identifies the volume.
+            The OCID of the volume.
                 :param UpdateVolumeDetails update_volume_details: (required)
             Update volume's display name.
         :param str if_match: (optional)
@@ -435,7 +444,7 @@ class BlockstorageClient(object):
         Updates the display name for the specified volume backup.
 
         :param str volume_backup_id: (required)
-            The Oracle Cloud ID (OCID) that uniquely identifies the volume backup.
+            The OCID of the volume backup.
                 :param UpdateVolumeBackupDetails update_volume_backup_details: (required)
             Update volume backup fields
         :param str if_match: (optional)
