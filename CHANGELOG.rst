@@ -1,3 +1,16 @@
+Unreleased (0.1.9)
+^^^^^^^^^^^^^^^^^^
+
+0.1.8
+^^^^^
+
+* Docstring improvements
+* CreateVolumeDetails supports the new optional argument sizeInMBs (size_in_m_bs) when creating new volumes.  For
+  backwards compatibility, this defaults to the previously fixed size of 256GB.
+* ObjectStorageClient.put_object supports additional headers through new params ``content_type``,
+  ``content_language``, ``content_encoding``
+
+
 0.1.7
 ^^^^^
 
