@@ -5,7 +5,7 @@ import os
 import shutil
 here = os.path.abspath(os.path.dirname(__file__))
 dist = os.path.join(here, "..", "dist")
-zip_folder = "oraclebmc"
+zip_folder = "oracle-bmcs-python"
 zip_name = "oracle-bmcs-python-sdk-{v}".format(v=oraclebmc.__version__)
 
 
