@@ -5,8 +5,10 @@ import os
 import shutil
 here = os.path.abspath(os.path.dirname(__file__))
 dist = os.path.join(here, "..", "dist")
-zip_folder = "oracle-bmcs-python"
-zip_name = "oracle-bmcs-python-sdk-{v}".format(v=oraclebmc.__version__)
+# The name of the folder that the zip unpacks into
+zip_folder = "oracle-bmcs-python-sdk"
+# The name of the zip file itself
+zip_name = "oracle-bmcs-python-sdk"
 
 
 def copy(*src_path):
