@@ -31,7 +31,8 @@ with open_relative("README.rst") as f:
 packages = [
     "oraclebmc",
     "oraclebmc.clients",
-    "oraclebmc.models"
+    "oraclebmc.models",
+    "oraclebmc.util"
 ]
 
 requires = [
