@@ -8,7 +8,7 @@ dist = os.path.join(here, "..", "dist")
 # The name of the folder that the zip unpacks into
 zip_folder = "oracle-bmcs-python-sdk"
 # The name of the zip file itself
-zip_name = "oracle-bmcs-python-sdk"
+zip_name = "oracle-bmcs-python-sdk-{v}".format(v=oraclebmc.__version__)
 
 
 def copy(*src_path):
