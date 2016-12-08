@@ -4,7 +4,7 @@
 import io
 import os
 import re
-from setuptools import setup
+from setuptools import setup, find_packages
 
 
 def open_relative(*path):
@@ -28,12 +28,6 @@ with open_relative("oraclebmc", "version.py") as fd:
 with open_relative("README.rst") as f:
     readme = f.read()
 
-packages = [
-    "oraclebmc",
-    "oraclebmc.clients",
-    "oraclebmc.models"
-]
-
 requires = [
     "certifi",
     "configparser==3.5.0",
@@ -51,7 +45,7 @@ setup(
     description="Oracle Bare Metal Cloud Python SDK",
     long_description=readme,
     author="Oracle",
-    packages=packages,
+    packages=find_packages(exclude=["tests", "docs"]),
     include_package_data=True,
     install_requires=requires,
     classifiers=[
