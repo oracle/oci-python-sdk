@@ -10,14 +10,17 @@ class ServiceError(Exception):
         self.headers = headers
         self.data = data
 
-        message = None
         if data:
             message = data.message
-
-        if message is None:
+        else:
             message = "The service returned error code %s" % self.status
 
-        super(ServiceError, self).__init__(message)
+        super(ServiceError, self).__init__({
+            "opc-request-id": headers.get("opc-request-id"),
+            "code": data.code,
+            "message": message,
+            "status": status
+        })
 
 
 class NetworkError(Exception):
