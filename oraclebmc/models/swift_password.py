@@ -44,7 +44,8 @@ class SwiftPassword(object):
     def password(self):
         """
         Gets the password of this SwiftPassword.
-        The Swift password.
+        The Swift password. The value is available only in the response for `CreateSwiftPassword`, and not
+        for `ListSwiftPasswords` or `UpdateSwiftPassword`.
 
         :return: The password of this SwiftPassword.
         :rtype: str
@@ -55,7 +56,8 @@ class SwiftPassword(object):
     def password(self, password):
         """
         Sets the password of this SwiftPassword.
-        The Swift password.
+        The Swift password. The value is available only in the response for `CreateSwiftPassword`, and not
+        for `ListSwiftPasswords` or `UpdateSwiftPassword`.
 
         :param password: The password of this SwiftPassword.
         :type: str

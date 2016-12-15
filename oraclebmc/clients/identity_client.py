@@ -71,10 +71,7 @@ class IdentityClient(object):
     def create_compartment(self, create_compartment_details, **kwargs):
         """
         CreateCompartment
-        Creates a new compartment in your tenancy. A compartment is a collection of related resources that can
-        be accessed only by certain groups that have been granted access in a policy. For conceptual
-        information about compartments and other IAM Service components,
-        see [Overview of the IAM Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm).
+        Creates a new compartment in your tenancy.
         **Important:** Compartments cannot be renamed or deleted.
         You must specify your tenancy's OCID as the compartment ID in the request object. Remember that the tenancy
         is simply the root compartment. For information about OCIDs, see
@@ -88,16 +85,6 @@ class IdentityClient(object):
         UpdateCompartment.
         After you send your request, the new object's `lifecycleState` will temporarily be CREATING. Before using the
         object, first make sure its `lifecycleState` has changed to ACTIVE.
-        To place a resource in a compartment, simply specify the compartment ID in the \"Create\" request object when
-        initially creating the resource. For example, to launch an instance into a particular compartment, specify
-        that compartment's OCID in the `LaunchInstance` request. You can't move an existing resource from one
-        compartment to another.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
-        For information about endpoints and signing API requests, see
-        [About the API]({{DOC_SERVER_URL}}/Content/API/Concepts/usingapi.htm). For information about available SDKs and tools, see
-        [SDKS and Other Tools]({{DOC_SERVER_URL}}/Content/API/Concepts/sdks.htm).
 
         :param CreateCompartmentDetails create_compartment_details: (required)
             Request object for creating a new compartment.
@@ -138,9 +125,7 @@ class IdentityClient(object):
     def create_group(self, create_group_details, **kwargs):
         """
         CreateGroup
-        Creates a new group in your tenancy. A group is a collection of users who all need the same type of access to
-        a particular set of resources or compartment. For conceptual information about groups and other IAM Service
-        components, see [Overview of the IAM Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm).
+        Creates a new group in your tenancy.
         You must specify your tenancy's OCID as the compartment ID in the request object (remember that the tenancy
         is simply the root compartment). Notice that IAM resources (users, groups, compartments, and some policies)
         reside within the tenancy itself, unlike cloud resources such as compute instances, which typically
@@ -156,12 +141,6 @@ class IdentityClient(object):
         After creating the group, you need to put users in it and write policies for it.
         See AddUserToGroup and
         CreatePolicy.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
-        For information about endpoints and signing API requests, see
-        [About the API]({{DOC_SERVER_URL}}/Content/API/Concepts/usingapi.htm). For information about available SDKs and tools, see
-        [SDKS and Other Tools]({{DOC_SERVER_URL}}/Content/API/Concepts/sdks.htm).
 
         :param CreateGroupDetails create_group_details: (required)
             Request object for creating a new group.
@@ -257,10 +236,7 @@ class IdentityClient(object):
         """
         CreatePolicy
         Creates a new policy in the specified compartment (either the tenancy or another of your compartments).
-        A policy is a document that specifies the type of access a group has to the resources in a compartment.
-        For information about policies and other IAM Service components,
-        see [Overview of the IAM Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm). Also see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
+        If you're new to policies, see [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
         You must specify a *name* for the policy, which must be unique across all policies in your tenancy
         and cannot be changed.
         You must also specify a *description* for the policy (although it can be an empty string). It does not
@@ -271,11 +247,6 @@ class IdentityClient(object):
         After you send your request, the new object's `lifecycleState` will temporarily be CREATING. Before using the
         object, first make sure its `lifecycleState` has changed to ACTIVE.
         New policies take effect typically within 10 seconds.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator.
-        For information about endpoints and signing API requests, see
-        [About the API]({{DOC_SERVER_URL}}/Content/API/Concepts/usingapi.htm). For information about available SDKs and tools, see
-        [SDKS and Other Tools]({{DOC_SERVER_URL}}/Content/API/Concepts/sdks.htm).
 
         :param CreatePolicyDetails create_policy_details: (required)
             Request object for creating a new policy.
@@ -316,8 +287,7 @@ class IdentityClient(object):
     def create_swift_password(self, create_swift_password_details, user_id, **kwargs):
         """
         CreateSwiftPassword
-        Creates a new Swift password for the specified user. A user can have up to two Swift passwords at a time. Swift
-        passwords never expire. For information about what Swift passwords are for, see
+        Creates a new Swift password for the specified user. For information about what Swift passwords are for, see
         [Managing User Credentials]({{DOC_SERVER_URL}}/Content/Identity/Tasks/managingcredentials.htm).
         You must specify a *description* for the Swift password (although it can be an empty string). It does not
         have to be unique, and you can change it anytime with
@@ -402,12 +372,6 @@ class IdentityClient(object):
         [Required Keys and OCIDs]({{DOC_SERVER_URL}}/Content/API/Concepts/apisigningkey.htm) and also
         UploadApiKey).
         **Important:** Make sure to inform the new user which compartment(s) they have access to.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access,
-        see [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
-        For information about endpoints and signing API requests, see
-        [About the API]({{DOC_SERVER_URL}}/Content/API/Concepts/usingapi.htm). For information about available SDKs and tools,
-        see [SDKS and Other Tools]({{DOC_SERVER_URL}}/Content/API/Concepts/sdks.htm).
 
         :param CreateUserDetails create_user_details: (required)
             Request object for creating a new user.
@@ -847,7 +811,7 @@ class IdentityClient(object):
     def list_api_keys(self, user_id, **kwargs):
         """
         ListApiKeys
-        Gets a list of the API signing keys for the specified user. A user can have a maximum of three keys.
+        Lists the API signing keys for the specified user. A user can have a maximum of three keys.
         Every user has permission to use this API call for *their own user ID*.  An administrator in your
         organization does not need to write a policy to give users this ability.
 
@@ -882,14 +846,9 @@ class IdentityClient(object):
     def list_availability_domains(self, compartment_id, **kwargs):
         """
         ListAvailabilityDomains
-        Gets a list of all the Availability Domains in your tenancy. Specify the OCID of either the tenancy or another
+        Lists the Availability Domains in your tenancy. Specify the OCID of either the tenancy or another
         of your compartments as the value for the compartment ID (remember that the tenancy is simply the root compartment).
         See [Where to Get the Tenancy's OCID and User's OCID]({{DOC_SERVER_URL}}/Content/API/Concepts/apisigningkey.htm#five).
-        For information about Availability Domains, see
-        [Regions and Availability Domains]({{DOC_SERVER_URL}}/Content/General/Concepts/regions.htm).
-        For information about endpoints and signing API requests, see
-        [About the API]({{DOC_SERVER_URL}}/Content/API/Concepts/usingapi.htm). For information about available SDKs and tools, see
-        [SDKS and Other Tools]({{DOC_SERVER_URL}}/Content/API/Concepts/sdks.htm).
 
         :param str compartment_id: (required)
             The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -922,7 +881,7 @@ class IdentityClient(object):
     def list_compartments(self, compartment_id, **kwargs):
         """
         ListCompartments
-        Gets a list of all the compartments in your tenancy. You must specify your tenancy's OCID as the value
+        Lists the compartments in your tenancy. You must specify your tenancy's OCID as the value
         for the compartment ID (remember that the tenancy is simply the root compartment).
         See [Where to Get the Tenancy's OCID and User's OCID]({{DOC_SERVER_URL}}/Content/API/Concepts/apisigningkey.htm#five).
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
@@ -972,12 +931,9 @@ class IdentityClient(object):
     def list_groups(self, compartment_id, **kwargs):
         """
         ListGroups
-        Gets a list of all the groups in your tenancy. You must specify your tenancy's OCID as the value for
+        Lists the groups in your tenancy. You must specify your tenancy's OCID as the value for
         the compartment ID (remember that the tenancy is simply the root compartment).
         See [Where to Get the Tenancy's OCID and User's OCID]({{DOC_SERVER_URL}}/Content/API/Concepts/apisigningkey.htm#five).
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
 
         :param str compartment_id: (required)
             The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -1022,13 +978,10 @@ class IdentityClient(object):
     def list_policies(self, compartment_id, **kwargs):
         """
         ListPolicies
-        Gets a list of all the policies in the specified compartment (either the tenancy or another of your compartments).
+        Lists the policies in the specified compartment (either the tenancy or another of your compartments).
         See [Where to Get the Tenancy's OCID and User's OCID]({{DOC_SERVER_URL}}/Content/API/Concepts/apisigningkey.htm#five).
         To determine which policies apply to a particular group or compartment, you must view the individual
         statements inside all your policies. There isn't a way to automatically obtain that information via the API.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
 
         :param str compartment_id: (required)
             The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -1073,9 +1026,8 @@ class IdentityClient(object):
     def list_swift_passwords(self, user_id, **kwargs):
         """
         ListSwiftPasswords
-        Gets a list of the Swift passwords for the specified user. The returned object contains the password's OCID, but not
-        the password itself. The actual password is returned only upon creation. A user can have up to two Swift passwords at
-        a time.
+        Lists the Swift passwords for the specified user. The returned object contains the password's OCID, but not
+        the password itself. The actual password is returned only upon creation.
 
         :param str user_id: (required)
             The OCID of the user.
@@ -1108,7 +1060,7 @@ class IdentityClient(object):
     def list_user_group_memberships(self, compartment_id, **kwargs):
         """
         ListUserGroupMemberships
-        Gets a list of all the `UserGroupMembership` objects in your tenancy. You must specify your tenancy's OCID
+        Lists the `UserGroupMembership` objects in your tenancy. You must specify your tenancy's OCID
         as the value for the compartment ID
         (see [Where to Get the Tenancy's OCID and User's OCID]({{DOC_SERVER_URL}}/Content/API/Concepts/apisigningkey.htm#five)).
         You must also then filter the list in one of these ways:
@@ -1171,12 +1123,9 @@ class IdentityClient(object):
     def list_users(self, compartment_id, **kwargs):
         """
         ListUsers
-        Gets a list of all the users in your tenancy. You must specify your tenancy's OCID as the value for the
+        Lists the users in your tenancy. You must specify your tenancy's OCID as the value for the
         compartment ID (remember that the tenancy is simply the root compartment).
         See [Where to Get the Tenancy's OCID and User's OCID]({{DOC_SERVER_URL}}/Content/API/Concepts/apisigningkey.htm#five).
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
 
         :param str compartment_id: (required)
             The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -1504,9 +1453,6 @@ class IdentityClient(object):
         """
         UpdateUserState
         Updates the state of the specified user.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
 
         :param str user_id: (required)
             The OCID of the user.
@@ -1553,10 +1499,7 @@ class IdentityClient(object):
     def upload_api_key(self, user_id, create_api_key_details, **kwargs):
         """
         UploadApiKey
-        Uploads an API signing key for the specified user.  Each user can have a maximum of three keys.
-        Each key must be an RSA public key in PEM format. For more information about the format and how
-        to generate a key, see [Required Keys and OCIDs]({{DOC_SERVER_URL}}/Content/API/Concepts/apisigningkey.htm). For more
-        information about user credentials, see [User Credentials]({{DOC_SERVER_URL}}/Content/Identity/Concepts/usercredentials.htm).
+        Uploads an API signing key for the specified user.
         Every user has permission to use this operation to upload a key for *their own user ID*. An
         administrator in your organization does not need to write a policy to give users this ability.
         To compare, administrators who have permission to the tenancy can use this operation to upload a
@@ -1566,8 +1509,6 @@ class IdentityClient(object):
         management (e.g., `ListUsers`, `LaunchInstance`) and receive an \"unauthorized\" error,
         check with an administrator to confirm which IAM Service group(s) you're in and what access
         you have. Also confirm you're working in the correct compartment.
-        **Note:** The resulting `ApiKey` object includes a placeholder, Oracle-assigned description.
-        You can't set or change that value.
         After you send your request, the new object's `lifecycleState` will temporarily be CREATING. Before using
         the object, first make sure its `lifecycleState` has changed to ACTIVE.
 
