@@ -1,4 +1,3 @@
-import logging
 import oraclebmc
 
 import pytest
