@@ -28,7 +28,8 @@ class BlockstorageClient(object):
     def create_volume(self, create_volume_details, **kwargs):
         """
         CreateVolume
-        Creates a new 256 GB volume in the specified compartment. For general information about block volumes, see
+        Creates a new volume in the specified compartment. The size of a volume can be either 256 GB or 2 TB.
+        For general information about block volumes, see
         [Overview of Block Volume Service]({{DOC_SERVER_URL}}/Content/Block/Concepts/overview.htm)
         A volume and instance can be in separate compartments but must be in the same Availability Domain.
         For information about access control and compartments, see

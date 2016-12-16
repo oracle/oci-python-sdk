@@ -1,4 +1,3 @@
-import logging
 import oraclebmc
 
 import pytest
@@ -64,20 +63,14 @@ def test_profile_not_found():
     assert 'does_not_exist' in str(excinfo.value)
 
 
-def test_unknown_region(caplog):
+def test_new_region():
     config = oraclebmc.config.from_file(
         get_resource_path('config'),
-        profile_name='UNKNOWN_REGION')
+        profile_name='NEW_REGION')
 
-    # Creating a config object doesn't log anything
-    assert not caplog.records
-
-    # Creating the client (which builds an endpoint) fires a warning
-    oraclebmc.clients.IdentityClient(config)
-    assert caplog.record_tuples == [
-        ("oraclebmc.regions", logging.WARN,
-         "Using unknown region '{}' to build service endpoint for 'identity'".format(HARDCODED_ENDPOINT))
-    ]
+    # Creating the client (which builds an endpoint)
+    client = oraclebmc.clients.IdentityClient(config)
+    assert config["region"] in client.base_client.endpoint
 
 
 def test_missing_required():

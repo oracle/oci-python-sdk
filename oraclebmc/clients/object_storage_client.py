@@ -82,6 +82,7 @@ class ObjectStorageClient(object):
             The top-level namespace used for the request.
                 :param str bucket_name: (required)
             The name of the bucket.
+            Example: `my-new-bucket1`
         :param str if_match: (optional)
             The entity tag to match.
         :param str opc_client_request_id: (optional)
@@ -130,8 +131,10 @@ class ObjectStorageClient(object):
             The top-level namespace used for the request.
                 :param str bucket_name: (required)
             The name of the bucket.
+            Example: `my-new-bucket1`
                 :param str object_name: (required)
             The name of the object.
+            Example: `test/test1`
         :param str if_match: (optional)
             The entity tag to match.
         :param str opc_client_request_id: (optional)
@@ -181,10 +184,11 @@ class ObjectStorageClient(object):
             The top-level namespace used for the request.
                 :param str bucket_name: (required)
             The name of the bucket.
+            Example: `my-new-bucket1`
         :param str if_match: (optional)
             The entity tag to match.
         :param str if_none_match: (optional)
-            The entity tag to avoid matching.
+            The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
         :param str opc_client_request_id: (optional)
             The client request ID for tracing
         :return: A Response object with data of type Bucket
@@ -269,12 +273,14 @@ class ObjectStorageClient(object):
             The top-level namespace used for the request.
                 :param str bucket_name: (required)
             The name of the bucket.
+            Example: `my-new-bucket1`
                 :param str object_name: (required)
             The name of the object.
+            Example: `test/test1`
         :param str if_match: (optional)
             The entity tag to match.
         :param str if_none_match: (optional)
-            The entity tag to avoid matching.
+            The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
         :param str opc_client_request_id: (optional)
             The client request ID for tracing
         :param str range: (optional)
@@ -330,10 +336,11 @@ class ObjectStorageClient(object):
             The top-level namespace used for the request.
                 :param str bucket_name: (required)
             The name of the bucket.
+            Example: `my-new-bucket1`
         :param str if_match: (optional)
             The entity tag to match.
         :param str if_none_match: (optional)
-            The entity tag to avoid matching.
+            The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
         :param str opc_client_request_id: (optional)
             The client request ID for tracing
         :return: A Response object with data of type None
@@ -382,12 +389,14 @@ class ObjectStorageClient(object):
             The top-level namespace used for the request.
                 :param str bucket_name: (required)
             The name of the bucket.
+            Example: `my-new-bucket1`
                 :param str object_name: (required)
             The name of the object.
+            Example: `test/test1`
         :param str if_match: (optional)
             The entity tag to match.
         :param str if_none_match: (optional)
-            The entity tag to avoid matching.
+            The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
         :param str opc_client_request_id: (optional)
             The client request ID for tracing
         :return: A Response object with data of type None
@@ -502,6 +511,7 @@ class ObjectStorageClient(object):
             The top-level namespace used for the request.
                 :param str bucket_name: (required)
             The name of the bucket.
+            Example: `my-new-bucket1`
         :param str prefix: (optional)
             Object names returned by a list query must start with prefix
         :param str start: (optional)
@@ -586,16 +596,18 @@ class ObjectStorageClient(object):
             The top-level namespace used for the request.
                 :param str bucket_name: (required)
             The name of the bucket.
+            Example: `my-new-bucket1`
                 :param str object_name: (required)
             The name of the object.
+            Example: `test/test1`
                 :param stream put_object_body: (required)
             The object being put to the object store.
         :param int content_length: (optional)
-            The content type of the body.
+            The content length of the body.
         :param str if_match: (optional)
             The entity tag to match.
         :param str if_none_match: (optional)
-            The entity tag to avoid matching.
+            The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
         :param str opc_client_request_id: (optional)
             The client request ID for tracing
         :param str expect: (optional)
@@ -678,6 +690,7 @@ class ObjectStorageClient(object):
             The top-level namespace used for the request.
                 :param str bucket_name: (required)
             The name of the bucket.
+            Example: `my-new-bucket1`
                 :param UpdateBucketDetails update_bucket_details: (required)
             Request object for updating a bucket.
         :param str if_match: (optional)

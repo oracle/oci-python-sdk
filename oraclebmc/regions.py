@@ -1,10 +1,6 @@
 # coding: utf-8
 # Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
 
-import logging
-logger = logging.getLogger(__name__)
-logger.addHandler(logging.NullHandler())
-
 REGIONS = {
     "us-phoenix-1": "us-phoenix-1.oraclecloud.com"
 }
@@ -35,10 +31,10 @@ def endpoint_for(service, region=None, endpoint=None):
         # endpoint takes priority
         domain = endpoint
     else:
+        # no endpoint provided
         region = region.lower()
-        # no endpoint provided; use region, warn if unknown
-        if region not in REGIONS:
-            logger.warn("Using unknown region '%s' to build service endpoint for '%s'", region, service)
+        # Provide aliases for known regions, fall back to the literal
+        # value if it's not a known alias.
         domain = REGIONS.get(region, region)
 
     url_format = SERVICE_ENDPOINTS[service.lower()]

@@ -11,8 +11,8 @@ user = invaliduser
 [INVALID_CREDENTIALS]
 fingerprint = 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
 
-[UNKNOWN_REGION]
-region = non-oracle-endpoint.com
+[NEW_REGION]
+region = us-phoenix-2.oraclecloud.com
 
 [MALFORMED_TENANCY]
 tenancy = "not-a-valid-ocid"

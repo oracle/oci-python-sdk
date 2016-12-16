@@ -29,7 +29,8 @@ class CreateBucketDetails(object):
     def name(self):
         """
         Gets the name of this CreateBucketDetails.
-        The name of the bucket.
+        The name of the bucket. Valid characters are letters (upper or lower case),
+        numbers and dashes. Bucket names must be unique within the namespace.
 
         :return: The name of this CreateBucketDetails.
         :rtype: str
@@ -40,7 +41,8 @@ class CreateBucketDetails(object):
     def name(self, name):
         """
         Sets the name of this CreateBucketDetails.
-        The name of the bucket.
+        The name of the bucket. Valid characters are letters (upper or lower case),
+        numbers and dashes. Bucket names must be unique within the namespace.
 
         :param name: The name of this CreateBucketDetails.
         :type: str
