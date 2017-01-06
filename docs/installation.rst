@@ -38,18 +38,29 @@ __ https://tools.ietf.org/html/rfc5246
  Note for OSX Users
 ====================
 
-MacOS no longer keeps openssl updated.  If you have `brew`_, it is recommended to install Python, which should
-build against brew's version of openssl::
+OS X already has Python and OpenSSL preinstalled. However, the preinstalled OpenSSL is probably not version 1.0.x or newer, which is what you need. To check whether you have a supported OpenSSL version, run this command:
 
-    brew update
-    brew install python
+::
 
-By default brew installs Python to ``/usr/local/bin``, while the system Python is located in ``/usr/bin``.  If your
-``$PATH`` does not have ``/usr/local/bin`` first, invoking python or creating a virtualenv with ``virtualenv my-venv``
-will still use the system's python.  You can use ``brew doctor`` to verify that your path is set up correctly, or
-``which python`` to see which Python will be used.
+    python -c "import ssl; print(ssl.OPENSSL_VERSION)"
 
-.. _brew: http://brew.sh/
+If the version is ``0.9.x``, you need to reinstall Python and OpenSSL using Homebrew (a package manager for the OS X platform).
+
+If you've never used Homebrew to install Python on the system, follow these instructions:
+
+    1. Download and install `Homebrew <http://brew.sh/>`_.
+    2. Use these commands to update Homebrew and then install OpenSSL and Python:
+
+       ::
+
+        brew update
+        brew install openssl
+        brew install python
+
+  .. note:: If you get a "Permission denied" message when running any brew command, it's probably because the OS X permissions model conflicts with Homebrew's default installation location of ``/usr/local``. You can usually fix this by taking back control of the folder with ``sudo chown -R $(whoami) /usr/local``.
+
+Check the OpenSSL version again. If it's still 0.9, see `Troubleshooting Mac Issues`_.
+
 
 ==========================
 Troubleshooting Mac Issues
@@ -62,17 +73,23 @@ OpenSSL Version Still 0.9.x
 
 If the Python installation instructions listed in Mac above still result in OpenSSL version 0.9.x, it might be one of these reasons:
 
-    * Your python command is pointing to the wrong Python installation. To check, use the which python command. The default system Python is at /usr/bin/python, whereas the Homebrew-installed version that you want is typically at usr/local/bin. Edit the etc/paths file to move the usr/local/bin line to the top of the list. Don't remove the system Python line.
+    * Your python command is pointing to the wrong Python installation. To check, use the which python command. The default system Python is at ``/usr/bin/python``, whereas the Homebrew-installed version that you want is typically at ``usr/local/bin``. Edit the ``etc/paths`` file to move the ``usr/local/bin`` line to the top of the list. Don't remove the system Python line.
 
-    * Your virtualenv is pointing to the wrong Python installation. By default, virtualenv uses /usr/bin/python, whereas the Homebrew-installed Python is typically at usr/local/bin. To fix this, use this command:
+    * Your virtualenv is pointing to the wrong Python installation. By default, virtualenv uses ``/usr/bin/python``, whereas the Homebrew-installed Python is typically at ``usr/local/bin``. To fix this, use this command:
 
-    virtualenv -p <path to Homebrew Python>  <directory for the virtualenv>
+     ::
 
-    For example, if your installation is at /usr/local/bin/python:
+            virtualenv -p <path to Homebrew Python>  <directory for the virtualenv>
 
-    virtualenv -p /usr/local/bin/python cli_env
+            For example, if your installation is at /usr/local/bin/python:
+
+     ::
+
+            virtualenv -p /usr/local/bin/python cli_env
 
 To determine the location of your Homebrew-installed Python, try one of these commands:
+
+::
 
     brew info python
     which -a python (the -a option lists all the Python installations)
@@ -80,17 +97,23 @@ To determine the location of your Homebrew-installed Python, try one of these co
 
 If the above items don't fix the problem, the best strategy is to uninstall and reinstall Python with the following commands. Note that you will need to reinstall any packages you previously installed into Homebrew's Python via pip.
 
-brew uninstall openssl
-brew uninstall python
-brew update
-brew install python
+::
+
+    brew uninstall openssl
+    brew uninstall python
+    brew update
+    brew install python
 
 If you're still having problems, you may need slightly different commands depending on the version of Homebrew that was used to install your Python or OpenSSL libraries. Here's a recent post that may be helpful: Updating Python and OpenSSL on OS X.
 
 SSL/TLS or Certificate Exception
 --------------------------------
 
-When trying to use the CLI, if you get an exception related to SSL/TLS or certificates/certificate validation, the underlying issue is that OpenSSL is the wrong version (0.9.x). See the solution for uninstalling and reinstalling Python above. Make sure to also reinstall the wheel with this command: pip install oraclebmc_cli-<VERSION>-py2.py3-none-any.whl.
+When trying to use the CLI, if you get an exception related to SSL/TLS or certificates/certificate validation, the underlying issue is that OpenSSL is the wrong version (0.9.x). See the solution for uninstalling and reinstalling Python above. Make sure to also reinstall the wheel with this command:
+
+::
+
+    pip install oraclebmc_cli-<VERSION>-py2.py3-none-any.whl.
 
 bmcs Command Not Found
 ----------------------
