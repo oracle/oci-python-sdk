@@ -170,7 +170,7 @@ class BaseClient(object):
             # Don't unpack a streaming response body
             deserialized_data = response
         elif response_type == BYTES_RESPONSE_TYPE and not is_error:
-            #
+            # Don't deserialize data responses.
             deserialized_data = response.content
         elif response_type:
             deserialized_data = self.deserialize_response_data(response.content, response_type)
