@@ -358,7 +358,7 @@ class ComputeClient(object):
             Offset of the snapshot data to retrieve.
         :param int length: (optional)
             Length of the snapshot data to retrieve.
-        :return: A Response object with data of type str
+        :return: A Response object with data of type bytes
         """
         resource_path = "/instanceConsoleHistories/{instanceConsoleHistoryId}/data"
         method = "GET"
@@ -395,7 +395,7 @@ class ComputeClient(object):
             path_params=path_params,
             query_params=query_params,
             header_params=header_params,
-            response_type="str")
+            response_type="bytes")
 
     def get_image(self, image_id, **kwargs):
         """

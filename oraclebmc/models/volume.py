@@ -15,7 +15,7 @@ class Volume(object):
             'display_name': 'str',
             'id': 'str',
             'lifecycle_state': 'str',
-            'size_in_m_bs': 'int',
+            'size_in_mbs': 'int',
             'time_created': 'datetime'
         }
 
@@ -25,7 +25,7 @@ class Volume(object):
             'display_name': 'displayName',
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
-            'size_in_m_bs': 'sizeInMBs',
+            'size_in_mbs': 'sizeInMBs',
             'time_created': 'timeCreated'
         }
 
@@ -34,7 +34,7 @@ class Volume(object):
         self._display_name = None
         self._id = None
         self._lifecycle_state = None
-        self._size_in_m_bs = None
+        self._size_in_mbs = None
         self._time_created = None
 
     @property
@@ -156,26 +156,26 @@ class Volume(object):
         self._lifecycle_state = lifecycle_state
 
     @property
-    def size_in_m_bs(self):
+    def size_in_mbs(self):
         """
-        Gets the size_in_m_bs of this Volume.
+        Gets the size_in_mbs of this Volume.
         The size of the volume in MBs.
 
-        :return: The size_in_m_bs of this Volume.
+        :return: The size_in_mbs of this Volume.
         :rtype: int
         """
-        return self._size_in_m_bs
+        return self._size_in_mbs
 
-    @size_in_m_bs.setter
-    def size_in_m_bs(self, size_in_m_bs):
+    @size_in_mbs.setter
+    def size_in_mbs(self, size_in_mbs):
         """
-        Sets the size_in_m_bs of this Volume.
+        Sets the size_in_mbs of this Volume.
         The size of the volume in MBs.
 
-        :param size_in_m_bs: The size_in_m_bs of this Volume.
+        :param size_in_mbs: The size_in_mbs of this Volume.
         :type: int
         """
-        self._size_in_m_bs = size_in_m_bs
+        self._size_in_mbs = size_in_mbs
 
     @property
     def time_created(self):
