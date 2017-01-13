@@ -43,11 +43,6 @@ Downloading and Installing the SDK
 1. Download the SDK from `SDKs and Other Tools`_.
    The download is a zip containing a whl file and documentation.
 
-2. Install the whl file::
-
-    pip install oraclebmc-*-py2.py3-none-any.whl
-
-
 2.  (Optional) Oracle recommends that you run the SDK in a virtual environment with virtualenv.
     With Linux, it's usually in a separate package from the main Python package.
     If you need to install virtualenv, use pip install virtualenv.
