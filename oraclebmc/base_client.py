@@ -160,7 +160,7 @@ class BaseClient(object):
             stream=stream)
 
         response_type = request.response_type
-        self.logger.info("Response status: %s" % str(response.status_code))
+        self.logger.debug("Response status: %s" % str(response.status_code))
 
         if not 200 <= response.status_code <= 299:
             self.raise_service_error(response)
