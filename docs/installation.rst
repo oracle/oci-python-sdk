@@ -46,7 +46,7 @@ Downloading and Installing the SDK
 
 2. Install the whl file::
 
-    pip install oraclebmc-<version>-py2.py3-none-any.whl
+    pip install oraclebmc-*-py2.py3-none-any.whl
 
 
 2.  (Optional) Oracle recommends that you run the SDK in a virtual environment with virtualenv.
@@ -64,7 +64,7 @@ Downloading and Installing the SDK
 
 3.  Install the Python SDK using the following command::
 
-      pip install path/to/oraclebmc-<VERSION>-py2.py3-none-any.whl
+      pip install path/to/oraclebmc-*-py2.py3-none-any.whl
 
   .. note::
 
@@ -178,7 +178,7 @@ When trying to use the SDK, if you get an exception related to SSL/TLS or certif
 the underlying issue is that OpenSSL is the wrong version (0.9.x). See the solution for uninstalling and
 reinstalling Python above. Make sure to also reinstall the wheel with this command::
 
-    pip install oraclebmc-<VERSION>-py2.py3-none-any.whl.
+    pip install oraclebmc-*-py2.py3-none-any.whl.
 
 ======================
 Questions or Feedback?
