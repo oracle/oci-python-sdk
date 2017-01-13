@@ -27,7 +27,7 @@ def namespace(object_storage):
 @pytest.yield_fixture
 def bucket(object_storage, namespace, config, request):
     bucket_name = unique_name(request.node.name)
-    request = oraclebmc.models.CreateBucketDetails()
+    request = oraclebmc.object_storage.models.CreateBucketDetails()
     request.name = bucket_name
     request.compartment_id = config["tenancy"]
     response = object_storage.create_bucket(namespace, request)
@@ -52,7 +52,7 @@ def test_bucket_crud(object_storage, config):
     bucket_count = len(object_storage.list_buckets(namespace, config["tenancy"], limit=100).data)
 
     # Create
-    request = oraclebmc.models.CreateBucketDetails()
+    request = oraclebmc.object_storage.models.CreateBucketDetails()
     request.name = bucket_name
     request.compartment_id = config["tenancy"]
     request.metadata = {'some key': 'some example metadata'}
@@ -60,30 +60,30 @@ def test_bucket_crud(object_storage, config):
     assert response.status == 200
 
     bucket = response.data
-    assert type(bucket) is oraclebmc.models.Bucket
+    assert type(bucket) is oraclebmc.object_storage.models.Bucket
     assert bucket_name == bucket.name
     assert 'some example metadata' == bucket.metadata['some key']
 
     # Get
     response = object_storage.get_bucket(namespace, bucket_name)
     assert response.status == 200
-    assert type(response.data) is oraclebmc.models.Bucket
+    assert type(response.data) is oraclebmc.object_storage.models.Bucket
     assert bucket_name == response.data.name
 
     # List
     response = object_storage.list_buckets(namespace, config["tenancy"], limit=100)
     assert response.status == 200
     assert bucket_count + 1 == len(response.data)
-    assert type(response.data[0]) is oraclebmc.models.BucketSummary
+    assert type(response.data[0]) is oraclebmc.object_storage.models.BucketSummary
 
     # Update
-    request = oraclebmc.models.UpdateBucketDetails()
+    request = oraclebmc.object_storage.models.UpdateBucketDetails()
     request.name = bucket_name
     request.metadata = {'new key': 'updated!', 'key2': 'another value'}
     response = object_storage.update_bucket(namespace, bucket_name, request)
     bucket = response.data
     assert response.status == 200
-    assert type(bucket) is oraclebmc.models.Bucket
+    assert type(bucket) is oraclebmc.object_storage.models.Bucket
     assert 'another value' == bucket.metadata['key2']
 
     # Delete
@@ -98,7 +98,7 @@ def test_object_crud(object_storage, config):
     test_data = 'This is a test ' + random_number_string() + '!/n/r/\/~%s;"/,{}><+=:.*)('''
     namespace = object_storage.get_namespace().data
 
-    request = oraclebmc.models.CreateBucketDetails()
+    request = oraclebmc.object_storage.models.CreateBucketDetails()
     request.name = bucket_name
     request.compartment_id = config["tenancy"]
     response = object_storage.create_bucket(namespace, request)
@@ -131,9 +131,9 @@ def test_object_crud(object_storage, config):
     response = object_storage.list_objects(namespace, bucket_name)
     assert response.status == 200
     object_list = response.data
-    assert isinstance(object_list, oraclebmc.models.ListObjects)
+    assert isinstance(object_list, oraclebmc.object_storage.models.ListObjects)
     assert 3 == len(object_list.objects)
-    assert type(object_list.objects[0]) is oraclebmc.models.ObjectSummary
+    assert type(object_list.objects[0]) is oraclebmc.object_storage.models.ObjectSummary
 
     # Delete
     for summary in object_list.objects:
@@ -152,7 +152,7 @@ def test_object_crud_with_metadata(object_storage, config):
     test_data = 'This is a test ' + random_number_string() + '!/n/r/\/~%s;"/,{}><+=:.*)('''
     namespace = object_storage.get_namespace().data
 
-    request = oraclebmc.models.CreateBucketDetails()
+    request = oraclebmc.object_storage.models.CreateBucketDetails()
     request.name = bucket_name
     request.compartment_id = config["tenancy"]
     response = object_storage.create_bucket(namespace, request)
@@ -197,7 +197,7 @@ def test_put_empty_file(object_storage, config):
     namespace = object_storage.get_namespace().data
     test_file = get_resource_path('empty_file')
 
-    request = oraclebmc.models.CreateBucketDetails()
+    request = oraclebmc.object_storage.models.CreateBucketDetails()
     request.name = bucket_name
     request.compartment_id = config["tenancy"]
     response = object_storage.create_bucket(namespace, request)
@@ -232,7 +232,7 @@ def test_put_empty_string(object_storage, config):
     bucket_name = unique_name('test_object_CRUD')
     namespace = object_storage.get_namespace().data
 
-    request = oraclebmc.models.CreateBucketDetails()
+    request = oraclebmc.object_storage.models.CreateBucketDetails()
     request.name = bucket_name
     request.compartment_id = config["tenancy"]
     response = object_storage.create_bucket(namespace, request)
@@ -297,7 +297,7 @@ def test_get_bucket(object_storage):
     namespace = object_storage.get_namespace().data
     response = object_storage.get_bucket(namespace, 'ReadOnlyTestBucket1')
     assert response.status == 200
-    assert type(response.data) is oraclebmc.models.Bucket
+    assert type(response.data) is oraclebmc.object_storage.models.Bucket
     assert response.data.metadata is not None
     assert 0 == len(response.data.metadata)
 
@@ -306,7 +306,7 @@ def test_get_bucket_with_metadata(object_storage):
     namespace = object_storage.get_namespace().data
     response = object_storage.get_bucket(namespace, 'ReadOnlyTestBucket5')
     assert response.status == 200
-    assert type(response.data) is oraclebmc.models.Bucket
+    assert type(response.data) is oraclebmc.object_storage.models.Bucket
     assert response.data.metadata is not None
     assert 'bar1' == response.data.metadata['foo1']
     assert 'bar2' == response.data.metadata['foo2']
@@ -317,7 +317,7 @@ def test_list_buckets(object_storage, config):
     response = object_storage.list_buckets(namespace, config["tenancy"])
     assert response.status == 200
     assert len(response.data) > 0
-    assert type(response.data[0]) is oraclebmc.models.BucketSummary
+    assert type(response.data[0]) is oraclebmc.object_storage.models.BucketSummary
 
 
 def test_list_buckets_truncated(object_storage, config):
@@ -325,7 +325,7 @@ def test_list_buckets_truncated(object_storage, config):
     response = object_storage.list_buckets(namespace, config["tenancy"], limit=2)
     assert response.status == 200
     assert 2 == len(response.data)
-    assert type(response.data[0]) is oraclebmc.models.BucketSummary
+    assert type(response.data[0]) is oraclebmc.object_storage.models.BucketSummary
     assert response.has_next_page
     first_bucket_name = response.data[0].name
 
@@ -356,7 +356,7 @@ def test_list_objects(object_storage):
     namespace = object_storage.get_namespace().data
     response = object_storage.list_objects(namespace, 'ReadOnlyTestBucket1')
     assert response.status == 200
-    assert type(response.data) is oraclebmc.models.ListObjects
+    assert type(response.data) is oraclebmc.object_storage.models.ListObjects
     assert 5 == len(response.data.objects)
     assert response.data.prefixes is None
 
@@ -365,7 +365,7 @@ def test_list_objects_empty_bucket(object_storage):
     namespace = object_storage.get_namespace().data
     response = object_storage.list_objects(namespace, 'ReadOnlyTestBucket5')
     assert response.status == 200
-    assert type(response.data) is oraclebmc.models.ListObjects
+    assert type(response.data) is oraclebmc.object_storage.models.ListObjects
     assert 0 == len(response.data.objects)
     assert response.data.prefixes is None
 
@@ -375,7 +375,7 @@ def test_list_objects_with_prefix_and_delimiter(object_storage):
     response = object_storage.list_objects(
         namespace, 'ReadOnlyTestBucket2', prefix='a/b/', delimiter='/')
     assert response.status == 200
-    assert type(response.data) is oraclebmc.models.ListObjects
+    assert type(response.data) is oraclebmc.object_storage.models.ListObjects
     assert 2 == len(response.data.objects)
     assert 1 == len(response.data.prefixes)
     assert response.data.next_start_with is None
@@ -385,7 +385,7 @@ def test_list_objects_truncated(object_storage):
     namespace = object_storage.get_namespace().data
     response = object_storage.list_objects(namespace, 'ReadOnlyTestBucket1', limit=3)
     assert response.status == 200
-    assert type(response.data) is oraclebmc.models.ListObjects
+    assert type(response.data) is oraclebmc.object_storage.models.ListObjects
     assert len(response.data.objects) == 3
     assert response.data.prefixes is None
     assert response.data.next_start_with is not None

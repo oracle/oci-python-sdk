@@ -155,22 +155,19 @@
                 <configuration>
                     <filesets>
                         <fileset>
-                            <directory>oraclebmc/models</directory>
-                            <excludes>
-                                <exclude>oraclebmc/models/__init__.py</exclude>
-                                <exclude>__init__.py</exclude>
-                            </excludes>
+                            <directory>oraclebmc/core</directory>
                             <includes>
                                 <include>**/*</include>
                             </includes>
-
                         </fileset>
                         <fileset>
-                            <directory>oraclebmc/clients</directory>
-                            <excludes>
-                                <exclude>oraclebmc/clients/__init__.py</exclude>
-                                <exclude>__init__.py</exclude>
-                            </excludes>
+                            <directory>oraclebmc/identity</directory>
+                            <includes>
+                                <include>**/*</include>
+                            </includes>
+                        </fileset>
+                        <fileset>
+                            <directory>oraclebmc/object_storage</directory>
                             <includes>
                                 <include>**/*</include>
                             </includes>

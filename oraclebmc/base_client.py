@@ -14,8 +14,9 @@ import requests
 import six
 from dateutil.parser import parse
 
-from . import constants, exceptions, models, regions
+from . import constants, exceptions, regions
 from .config import validate_config
+from .error import Error
 from .request import Request
 from .response import Response
 from .signer import ObjectUploadSigner
@@ -52,10 +53,11 @@ class BaseClient(object):
         'str': six.u,
         'bool': bool,
         'date': date,
-        'datetime': datetime
+        'datetime': datetime,
+        "Error": Error
     }
 
-    def __init__(self, service, config, signer):
+    def __init__(self, service, config, signer, type_mapping):
         validate_config(config)
         self.signer = signer
         self.endpoint = regions.endpoint_for(
@@ -63,10 +65,7 @@ class BaseClient(object):
             region=config.get("region"),
             endpoint=config.get("endpoint"))
 
-        self.type_mappings = merge_type_mappings(self.primitive_type_map,
-                                                 models.core_type_mapping,
-                                                 models.identity_type_mapping,
-                                                 models.object_storage_type_mapping)
+        self.type_mappings = merge_type_mappings(self.primitive_type_map, type_mapping)
         self.session = requests.Session()
         self.user_agent = build_user_agent(config["additional_user_agent"])
 

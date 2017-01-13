@@ -9,14 +9,14 @@ def test_user_crud(identity, config):
     initial_user_count = len(identity.list_users(compartment).data)
 
     # Create User
-    request = oraclebmc.models.CreateUserDetails()
+    request = oraclebmc.identity.models.CreateUserDetails()
     request.compartment_id = compartment
     request.name = user_name
     request.description = user_description
 
     response = identity.create_user(request)
 
-    assert type(response.data) is oraclebmc.models.User
+    assert type(response.data) is oraclebmc.identity.models.User
     assert user_name == response.data.name
     assert user_description == response.data.description
     assert compartment == response.data.compartment_id
@@ -26,18 +26,18 @@ def test_user_crud(identity, config):
 
     # Get User
     response = identity.get_user(user_id)
-    assert type(response.data) is oraclebmc.models.User
+    assert type(response.data) is oraclebmc.identity.models.User
     assert user_name == response.data.name
     assert user_description == response.data.description
     assert compartment == response.data.compartment_id
 
     # Update User
     new_description = "updated user description"
-    request = oraclebmc.models.UpdateUserDetails()
+    request = oraclebmc.identity.models.UpdateUserDetails()
     request.description = new_description
     response = identity.update_user(user_id, request)
 
-    assert type(response.data) is oraclebmc.models.User
+    assert type(response.data) is oraclebmc.identity.models.User
     assert user_name == response.data.name
     assert new_description == response.data.description
     assert compartment == response.data.compartment_id

@@ -12,7 +12,7 @@ def namespace(object_storage):
 @pytest.yield_fixture
 def bucket_name(namespace, object_storage, config):
     name = tests.util.unique_name("test_python_streaming")
-    request = oraclebmc.models.CreateBucketDetails()
+    request = oraclebmc.object_storage.models.CreateBucketDetails()
     request.name = name
     request.compartment_id = config["tenancy"]
     assert object_storage.create_bucket(namespace, request).status == 200
@@ -122,7 +122,7 @@ def test_invalid_object_types(namespace, bucket_name, object_storage):
         object_storage.put_object(namespace, bucket_name, 'a_time', time.time())
 
     with pytest.raises(TypeError):
-        object_storage.put_object(namespace, bucket_name, 'a_user', oraclebmc.models.User())
+        object_storage.put_object(namespace, bucket_name, 'a_user', oraclebmc.identity.models.User())
 
 
 def test_object_not_found(namespace, bucket_name, object_storage):
