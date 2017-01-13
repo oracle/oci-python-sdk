@@ -28,8 +28,8 @@ The Python SDK supports operations for the following services:
 * A keypair used for signing API requests, with the public key uploaded to Oracle. Only the user calling
   the API should be in possession of the private key. See Configuring the SDK below.
 
-.. _Adding Users: https://bit.ly/2jknlLI
-.. _Common Policies: https://bit.ly/2jwwfoH
+.. _Adding Users: https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Tasks/addingusers.htm
+.. _Common Policies: https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/commonpolicies.htm
 .. _cryptography.io: https://cryptography.io/en/latest/
 .. _build requirements: https://cryptography.io/en/latest/installation/
 .. _TLS 1.2: https://docs.us-az-phoenix-1.oracleiaas.com/Content/API/Concepts/sdks.htm
@@ -65,7 +65,7 @@ Downloading and Installing the SDK
       If you're unable to install the whl file, make sure pip is up to date.
       Use ``pip install -U pip`` and then try to install the whl file again.
 
-.. _SDKs and Other Tools: https://bit.ly/2jEQeWy
+.. _SDKs and Other Tools: https://docs.us-az-phoenix-1.oracleiaas.com/Content/API/Concepts/sdks.htm
 
 ===================
 Configuring the SDK
@@ -189,6 +189,6 @@ Ways to get in touch:
 .. _Stack Overflow: https://stackoverflow.com/
 .. _oracle-bmcs: https://stackoverflow.com/questions/tagged/oracle-bmcs
 .. _oracle-bmcs-python-sdk: https://stackoverflow.com/questions/tagged/oracle-bmcs-python-sdk
-.. _Developer Tools section: https://bit.ly/2jwtPX2
+.. _Developer Tools section: https://community.oracle.com/community/cloud_computing/bare-metal/content?filterID=contentstatus[published]~category[developer-tools]
 .. _My Oracle Support: https://support.oracle.com/
 
