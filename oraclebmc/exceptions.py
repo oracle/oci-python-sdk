@@ -5,26 +5,21 @@
 class ServiceError(Exception):
     """The service returned an error response."""
 
-    def __init__(self, status, headers, data):
+    def __init__(self, status, service_code, headers, message):
         self.status = status
+        self.service_code = service_code
         self.headers = headers
-        self.data = data
+        self.message = message
 
-        if data:
-            message = data.message
-        else:
+        if not message:
             message = "The service returned error code %s" % self.status
 
         super(ServiceError, self).__init__({
             "opc-request-id": headers.get("opc-request-id"),
-            "code": data.code,
+            "service code": service_code,
             "message": message,
             "status": status
         })
-
-
-class NetworkError(Exception):
-    """A network error has occurred."""
 
 
 class ClientError(Exception):

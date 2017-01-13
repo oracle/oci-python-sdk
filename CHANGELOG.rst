@@ -1,7 +1,12 @@
 Unreleased (0.1.9)
 ^^^^^^^^^^^^^^^^^^
 
+0.1.12
+^^^^^
 
+* Removed packages 'models' and 'clients', and added separate packages for each service/service group.
+  Currently, this is 'identity', 'object_storage', and 'core'.
+* Removed the Error model, and added the code from the Error model to ServiceError as the property 'service_code'.
 
 0.1.8
 ^^^^^

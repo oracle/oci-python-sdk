@@ -16,7 +16,6 @@ from dateutil.parser import parse
 
 from . import constants, exceptions, regions
 from .config import validate_config
-from .error import Error
 from .request import Request
 from .response import Response
 from .signer import ObjectUploadSigner
@@ -55,7 +54,7 @@ class BaseClient(object):
         'bool': bool,
         'date': date,
         'datetime': datetime,
-        "Error": Error
+        "object": object
     }
 
     def __init__(self, service, config, signer, type_mapping):
@@ -161,29 +160,21 @@ class BaseClient(object):
             stream=stream)
 
         response_type = request.response_type
-        is_error = not 200 <= response.status_code <= 299
+        self.logger.info("Response status: %s" % str(response.status_code))
 
-        if is_error:
-            response_type = 'Error'
+        if not 200 <= response.status_code <= 299:
+            self.raise_service_error(response)
 
-        if stream and not is_error:
+        if stream:
             # Don't unpack a streaming response body
             deserialized_data = response
-        elif response_type == BYTES_RESPONSE_TYPE and not is_error:
+        elif response_type == BYTES_RESPONSE_TYPE:
             # Don't deserialize data responses.
             deserialized_data = response.content
         elif response_type:
             deserialized_data = self.deserialize_response_data(response.content, response_type)
         else:
             deserialized_data = None
-
-        if is_error:
-            raise exceptions.ServiceError(
-                response.status_code,
-                response.headers,
-                deserialized_data)
-
-        self.logger.info("Response status: %s" % str(response.status_code))
 
         return Response(response.status_code, response.headers, deserialized_data, request)
 
@@ -238,6 +229,21 @@ class BaseClient(object):
 
             return {key: self.sanitize_for_serialization(val)
                     for key, val in obj_dict.items()}
+
+    def raise_service_error(self, response):
+        deserialized_data = self.deserialize_response_data(response.content, 'object')
+        service_code = None
+        message = None
+
+        if isinstance(deserialized_data, dict):
+            service_code = deserialized_data.get('code')
+            message = deserialized_data.get('message')
+
+        raise exceptions.ServiceError(
+            response.status_code,
+            service_code,
+            response.headers,
+            message)
 
     def deserialize_response_data(self, response_data, response_type):
         """
