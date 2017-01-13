@@ -6,7 +6,6 @@ Installation
 This topic describes how to install, configure, and use the Oracle Bare Metal Cloud Services Python SDK.
 The Python SDK supports operations for the following services:
 
-* Core Services (Networking Service, Compute Service, Block Volume Service)
 * Identity and Access Management Service
 * Object Storage Service
 
