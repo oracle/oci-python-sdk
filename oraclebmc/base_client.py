@@ -42,6 +42,7 @@ def build_user_agent(extra=""):
     )
     return agent.strip()
 
+
 STREAM_RESPONSE_TYPE = 'stream'
 BYTES_RESPONSE_TYPE = 'bytes'
 
