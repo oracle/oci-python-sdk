@@ -7,7 +7,7 @@ import pytest
 @pytest.fixture
 def new_instance():
     def _new_instance(**kwargs):
-        instance = oraclebmc.models.Instance()
+        instance = oraclebmc.core.models.Instance()
         instance.availability_domain = 'some ad'
         instance.compartment_id = 'some compartment'
         instance.display_name = 'some name'
@@ -81,7 +81,7 @@ def test_to_dict(instance):
 
 
 def test_subclass():
-    volume_attachment = oraclebmc.models.IScsiVolumeAttachment()
+    volume_attachment = oraclebmc.core.models.IScsiVolumeAttachment()
     assert 'iscsi' == volume_attachment.attachment_type
     assert hasattr(volume_attachment, 'chap_username')
     assert hasattr(volume_attachment, 'availability_domain')

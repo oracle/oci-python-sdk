@@ -69,7 +69,7 @@ def test_new_region():
         profile_name='NEW_REGION')
 
     # Creating the client (which builds an endpoint)
-    client = oraclebmc.clients.IdentityClient(config)
+    client = oraclebmc.identity.IdentityClient(config)
     assert config["region"] in client.base_client.endpoint
 
 

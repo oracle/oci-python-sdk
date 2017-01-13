@@ -12,7 +12,7 @@ def test_basic_wait(virtual_network, config):
 
     start_time = time.time()
 
-    request = oraclebmc.models.CreateVcnDetails()
+    request = oraclebmc.core.models.CreateVcnDetails()
     request.cidr_block = '10.0.0.0/16'
     request.display_name = name
     request.compartment_id = config["tenancy"]
@@ -52,7 +52,7 @@ def test_basic_wait(virtual_network, config):
 
 def test_invalid_operation(identity, config):
     # Create User
-    request = oraclebmc.models.CreateUserDetails()
+    request = oraclebmc.identity.models.CreateUserDetails()
     request.compartment_id = config["tenancy"]
     request.name = tests.util.unique_name('python_wait_test_user')
     request.description = 'test user'
@@ -76,7 +76,7 @@ def test_invalid_operation(identity, config):
 def test_already_in_state(identity, config):
 
     description = 'test user'
-    request = oraclebmc.models.CreateUserDetails()
+    request = oraclebmc.identity.models.CreateUserDetails()
     request.compartment_id = config["tenancy"]
     request.name = tests.util.unique_name('python_wait_test_user')
     request.description = description
@@ -96,7 +96,7 @@ def test_already_in_state(identity, config):
 
 def test_wait_time_exceeded(identity, config):
     description = 'test user'
-    request = oraclebmc.models.CreateUserDetails()
+    request = oraclebmc.identity.models.CreateUserDetails()
     request.compartment_id = config["tenancy"]
     request.name = tests.util.unique_name('python_wait_test_user')
     request.description = description
