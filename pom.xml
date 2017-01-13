@@ -94,7 +94,7 @@
             <plugin>
                 <groupId>com.oracle.bmc.sdk</groupId>
                 <artifactId>bmc-sdk-swagger-maven-plugin</artifactId>
-                <version>1.1.0-SNAPSHOT</version>
+                <version>1.3.0-SNAPSHOT</version>
                 <executions>
                     <execution>
                         <id>python-public-sdk-identity</id>
@@ -155,22 +155,19 @@
                 <configuration>
                     <filesets>
                         <fileset>
-                            <directory>oraclebmc/models</directory>
-                            <excludes>
-                                <exclude>oraclebmc/models/__init__.py</exclude>
-                                <exclude>__init__.py</exclude>
-                            </excludes>
+                            <directory>oraclebmc/core</directory>
                             <includes>
                                 <include>**/*</include>
                             </includes>
-
                         </fileset>
                         <fileset>
-                            <directory>oraclebmc/clients</directory>
-                            <excludes>
-                                <exclude>oraclebmc/clients/__init__.py</exclude>
-                                <exclude>__init__.py</exclude>
-                            </excludes>
+                            <directory>oraclebmc/identity</directory>
+                            <includes>
+                                <include>**/*</include>
+                            </includes>
+                        </fileset>
+                        <fileset>
+                            <directory>oraclebmc/object_storage</directory>
                             <includes>
                                 <include>**/*</include>
                             </includes>
@@ -186,17 +183,17 @@
             <dependency>
                 <groupId>com.oracle.pic.commons</groupId>
                 <artifactId>coreservices-api-spec</artifactId>
-                <version>0.0.16</version>
+                <version>0.0.17</version>
             </dependency>
             <dependency>
                 <groupId>com.oracle.pic.identity</groupId>
                 <artifactId>identity-control-plane-api-spec</artifactId>
-                <version>0.2.4</version>
+                <version>0.2.5</version>
             </dependency>
             <dependency>
                 <groupId>com.oracle.pic.casper</groupId>
                 <artifactId>casper-api-spec</artifactId>
-                <version>1.0.4</version>
+                <version>1.0.5</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

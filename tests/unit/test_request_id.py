@@ -5,6 +5,7 @@ def test_core_automatic_request_id(virtual_network, config):
     assert len(response.request_id.split('/')) == 3
     assert len(response.request_id) == 98
 
+
 '''
 # Commenting this out until Casper updates support for request ID.
 

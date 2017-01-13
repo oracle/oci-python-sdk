@@ -14,8 +14,9 @@ import requests
 import six
 from dateutil.parser import parse
 
-from . import constants, exceptions, models, regions
+from . import constants, exceptions, regions
 from .config import validate_config
+from .error import Error
 from .request import Request
 from .response import Response
 from .signer import ObjectUploadSigner
@@ -41,7 +42,9 @@ def build_user_agent(extra=""):
     )
     return agent.strip()
 
+
 STREAM_RESPONSE_TYPE = 'stream'
+BYTES_RESPONSE_TYPE = 'bytes'
 
 
 class BaseClient(object):
@@ -51,10 +54,11 @@ class BaseClient(object):
         'str': six.u,
         'bool': bool,
         'date': date,
-        'datetime': datetime
+        'datetime': datetime,
+        "Error": Error
     }
 
-    def __init__(self, service, config, signer):
+    def __init__(self, service, config, signer, type_mapping):
         validate_config(config)
         self.signer = signer
         self.endpoint = regions.endpoint_for(
@@ -62,10 +66,7 @@ class BaseClient(object):
             region=config.get("region"),
             endpoint=config.get("endpoint"))
 
-        self.type_mappings = merge_type_mappings(self.primitive_type_map,
-                                                 models.core_type_mapping,
-                                                 models.identity_type_mapping,
-                                                 models.object_storage_type_mapping)
+        self.type_mappings = merge_type_mappings(self.primitive_type_map, type_mapping)
         self.session = requests.Session()
         self.user_agent = build_user_agent(config["additional_user_agent"])
 
@@ -168,6 +169,9 @@ class BaseClient(object):
         if stream and not is_error:
             # Don't unpack a streaming response body
             deserialized_data = response
+        elif response_type == BYTES_RESPONSE_TYPE and not is_error:
+            # Don't deserialize data responses.
+            deserialized_data = response.content
         elif response_type:
             deserialized_data = self.deserialize_response_data(response.content, response_type)
         else:

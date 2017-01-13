@@ -30,24 +30,24 @@ def config(config_file, config_profile):
 
 @pytest.fixture
 def object_storage(config):
-    return oraclebmc.clients.ObjectStorageClient(config)
+    return oraclebmc.object_storage.ObjectStorageClient(config)
 
 
 @pytest.fixture
 def virtual_network(config):
-    return oraclebmc.clients.VirtualNetworkClient(config)
+    return oraclebmc.core.VirtualNetworkClient(config)
 
 
 @pytest.fixture
 def identity(config):
-    return oraclebmc.clients.IdentityClient(config)
+    return oraclebmc.identity.IdentityClient(config)
 
 
 @pytest.fixture
 def compute(config):
-    return oraclebmc.clients.ComputeClient(config)
+    return oraclebmc.core.ComputeClient(config)
 
 
 @pytest.fixture
 def block_storage(config):
-    return oraclebmc.clients.BlockstorageClient(config)
+    return oraclebmc.core.BlockstorageClient(config)

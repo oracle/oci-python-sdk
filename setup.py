@@ -41,11 +41,13 @@ requires = [
 
 setup(
     name="oraclebmc",
+    url="https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdks.htm",
     version=version,
     description="Oracle Bare Metal Cloud Python SDK",
     long_description=readme,
     author="Oracle",
-    packages=find_packages(exclude=["tests", "docs"]),
+    author_email="",
+    packages=find_packages(exclude=["docs", "tests*"]),
     include_package_data=True,
     install_requires=requires,
     classifiers=[
