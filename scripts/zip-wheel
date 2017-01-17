@@ -15,7 +15,10 @@ def copy(*src_path):
     # copies foo/../file.txt to dist/zip_filder/file.txt
     src = os.path.join(here, *src_path)
     dst = os.path.join(dist, zip_folder, src_path[-1])
-    shutil.copy(src, dst)
+    try:
+        shutil.copy(src, dst)
+    except IsADirectoryError:
+        shutil.copytree(src, dst)
 
 # 0. clean out stale artifacts, rebuild dst folder
 # (no error handling, dist/ must already exist to have a .whl file
@@ -25,6 +28,7 @@ os.mkdir(os.path.join(dist, zip_folder))
 # 1. copy files
 copy("..", "LICENSE.txt")
 copy("..", "CHANGELOG.rst")
+copy("..", "examples")
 copy("..", "dist", "oraclebmc-{v}-py2.py3-none-any.whl".format(v=oraclebmc.__version__))
 
 # 2. zip target folder so that unzipping doesn't dump artifacts in CWD
