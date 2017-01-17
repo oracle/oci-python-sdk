@@ -9,10 +9,10 @@ This is the public Python SDK for Oracle Bare Metal Cloud (OBMC).  Python 2.7+ a
     >>> import oraclebmc
     # Set up config
     >>> config = oraclebmc.config.from_file(
-    ...     "~/.oraclebmc",
+    ...     "~/.oraclebmc/config",
     ...     "integ-beta-profile")
     # Create a service client
-    >>> identity = oraclebmc.clients.IdentityClient(config)
+    >>> identity = oraclebmc.identity.IdentityClient(config)
     # Get the current user
     >>> user = identity.get_user(config["user"]).data
     >>> print(user)
