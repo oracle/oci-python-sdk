@@ -17,7 +17,7 @@ print("Creating a new bucket {!r} in compartment {!r}".format(
     bucket_name, compartment_id))
 request = CreateBucketDetails()
 request.compartment_id = compartment_id
-request.name = "MyTestBucket"
+request.name = bucket_name
 bucket = object_storage.create_bucket(namespace, request)
 
 print("Uploading new object {!r}".format(object_name))
@@ -38,3 +38,6 @@ print("{!r} == {!r}: {}".format(
 
 print("Deleting object {}".format(object_name))
 object_storage.delete_object(namespace, bucket_name, object_name)
+
+print("Deleting bucket {}".format(bucket_name))
+object_storage.delete_bucket(namespace, bucket_name)
