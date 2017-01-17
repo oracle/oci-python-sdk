@@ -34,20 +34,5 @@ def object_storage(config):
 
 
 @pytest.fixture
-def virtual_network(config):
-    return oraclebmc.core.VirtualNetworkClient(config)
-
-
-@pytest.fixture
 def identity(config):
     return oraclebmc.identity.IdentityClient(config)
-
-
-@pytest.fixture
-def compute(config):
-    return oraclebmc.core.ComputeClient(config)
-
-
-@pytest.fixture
-def block_storage(config):
-    return oraclebmc.core.BlockstorageClient(config)

@@ -23,7 +23,7 @@ def names():
 
 @pytest.yield_fixture
 def write_bucket(namespace, object_storage, config, names):
-    request = oraclebmc.models.CreateBucketDetails()
+    request = oraclebmc.object_storage.models.CreateBucketDetails()
     request.name = names["write-bucket"]
     request.compartment_id = config["tenancy"]
     response = object_storage.create_bucket(namespace, request)

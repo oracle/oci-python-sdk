@@ -11,20 +11,21 @@ def test_identity_list_users(identity, config):
     assert response.request_id is not None
 
 
-def test_vcn_list_vcns(virtual_network, config):
-    response = virtual_network.list_vcns(config["tenancy"])
-
-    assert response is not None
-    assert response.status == 200
-    assert response.request_id is not None
-
-
-def test_vcn_list_instances(compute, config):
-    response = compute.list_instances(config["tenancy"])
-
-    assert response is not None
-    assert response.status == 200
-    assert response.request_id is not None
+# TODO (jmcross) disabled for initial release (identity, object_storage only)
+# def test_vcn_list_vcns(virtual_network, config):
+#     response = virtual_network.list_vcns(config["tenancy"])
+#
+#     assert response is not None
+#     assert response.status == 200
+#     assert response.request_id is not None
+#
+#
+# def test_vcn_list_instances(compute, config):
+#     response = compute.list_instances(config["tenancy"])
+#
+#     assert response is not None
+#     assert response.status == 200
+#     assert response.request_id is not None
 
 
 def test_limit(identity, config):

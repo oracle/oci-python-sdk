@@ -1,60 +1,61 @@
-import tests.util
+# import tests.util
 import oraclebmc
-import os.path
-import time
+# import os.path
+# import time
 import pytest
 
 
-def test_tutorial(virtual_network, compute, block_storage, config):
-    test_id = tests.util.random_number_string()
-    print('Running Launching Your First Instance tutorial')
-    print('Objects will have ID ' + test_id)
-
-    # TODO DEX-17: Currently this test only runs against R2 and
-    # if you have the private and public key files. We should be
-    # getting these dynamically based on a specified environment.
-    availability_domain = 'kIdk:PHX-AD-2'
-    compartment = config["tenancy"]
-    filename = os.path.expanduser('~/.ssh/id_rsa.pub')
-    with open(filename) as f:
-        public_key = f.read().strip()
-
-    vcn = None
-    subnet = None
-    instance = None
-    volume = None
-    attachment = None
-
-    try:
-        vcn = create_cloud_network(virtual_network, compartment, test_id)
-        subnet = create_subnet(virtual_network, compartment, test_id, availability_domain, vcn)
-        gateway = create_internet_gateway(virtual_network, compartment, test_id, vcn)
-        update_route_table(virtual_network, test_id, vcn, gateway)
-
-        # There's a bug where the instance will immediately terminate if we
-        # don't add some extra wait time before launching. (COM-79)
-        time.sleep(15)
-
-        instance = launch_instance(
-            compute, compartment, test_id, availability_domain, subnet, public_key)
-        log_public_ip_address(compute, virtual_network, compartment, instance)
-
-        volume = create_volume(block_storage, compartment, test_id, availability_domain)
-        attachment = attach_volume(compute, compartment, instance, volume)
-    except Exception as e:
-        print('Exception during creation phase: ' + str(e))
-        raise
-    finally:
-        if volume:
-            if attachment:
-                detach_volume(compute, attachment)
-            delete_volume(block_storage, volume)
-        if instance:
-            terminate_instance(compute, instance)
-        if subnet:
-            delete_subnet(virtual_network, subnet)
-        if vcn:
-            delete_cloud_network(virtual_network, vcn)
+# TODO (jmcross) disabled for initial release (identity, object_storage only)
+# def test_tutorial(virtual_network, compute, block_storage, config):
+#     test_id = tests.util.random_number_string()
+#     print('Running Launching Your First Instance tutorial')
+#     print('Objects will have ID ' + test_id)
+#
+#     # TODO DEX-17: Currently this test only runs against R2 and
+#     # if you have the private and public key files. We should be
+#     # getting these dynamically based on a specified environment.
+#     availability_domain = 'kIdk:PHX-AD-2'
+#     compartment = config["tenancy"]
+#     filename = os.path.expanduser('~/.ssh/id_rsa.pub')
+#     with open(filename) as f:
+#         public_key = f.read().strip()
+#
+#     vcn = None
+#     subnet = None
+#     instance = None
+#     volume = None
+#     attachment = None
+#
+#     try:
+#         vcn = create_cloud_network(virtual_network, compartment, test_id)
+#         subnet = create_subnet(virtual_network, compartment, test_id, availability_domain, vcn)
+#         gateway = create_internet_gateway(virtual_network, compartment, test_id, vcn)
+#         update_route_table(virtual_network, test_id, vcn, gateway)
+#
+#         # There's a bug where the instance will immediately terminate if we
+#         # don't add some extra wait time before launching. (COM-79)
+#         time.sleep(15)
+#
+#         instance = launch_instance(
+#             compute, compartment, test_id, availability_domain, subnet, public_key)
+#         log_public_ip_address(compute, virtual_network, compartment, instance)
+#
+#         volume = create_volume(block_storage, compartment, test_id, availability_domain)
+#         attachment = attach_volume(compute, compartment, instance, volume)
+#     except Exception as e:
+#         print('Exception during creation phase: ' + str(e))
+#         raise
+#     finally:
+#         if volume:
+#             if attachment:
+#                 detach_volume(compute, attachment)
+#             delete_volume(block_storage, volume)
+#         if instance:
+#             terminate_instance(compute, instance)
+#         if subnet:
+#             delete_subnet(virtual_network, subnet)
+#         if vcn:
+#             delete_cloud_network(virtual_network, vcn)
 
 
 def create_cloud_network(virtual_network, compartment, test_id):
