@@ -39,15 +39,15 @@ def max_memory_usage():
     return resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
 
 
-def validate_service_error(error, status, service_code, message):
+def validate_service_error(error, status, code, message):
     assert isinstance(error, oraclebmc.exceptions.ServiceError)
     assert error.status == status
-    assert error.service_code == service_code
+    assert error.code == code
     assert error.message.startswith(message)
     assert error.headers is not None
     assert error.headers.get('opc-request-id') is not None
     assert len(error.headers.get('opc-request-id')) == 98
 
     # Check to string
-    for info in [str(status), service_code, "opc-request-id", message]:
+    for info in [str(status), code, "opc-request-id", message]:
         assert info in str(error)
