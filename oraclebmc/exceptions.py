@@ -5,9 +5,9 @@
 class ServiceError(Exception):
     """The service returned an error response."""
 
-    def __init__(self, status, service_code, headers, message):
+    def __init__(self, status, code, headers, message):
         self.status = status
-        self.service_code = service_code
+        self.code = code
         self.headers = headers
         self.message = message
 
@@ -16,7 +16,7 @@ class ServiceError(Exception):
 
         super(ServiceError, self).__init__({
             "opc-request-id": headers.get("opc-request-id"),
-            "service code": service_code,
+            "code": code,
             "message": message,
             "status": status
         })
