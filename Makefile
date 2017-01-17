@@ -20,8 +20,8 @@ docs:
 
 .PHONY: test
 test:
-	@echo Running all tests that fit the pattern 'tests/test_*.py'
-	python -m unittest discover
+	@echo Running all tox environments
+	tox
 
 
 .PHONY: gen
