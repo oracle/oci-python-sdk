@@ -36,9 +36,9 @@ The Python SDK supports operations for the following services:
 .. _PyPI: https://pypi.python.org/pypi
 .. _openssl: https://www.openssl.org/
 
-==================================
-Downloading and Installing the SDK
-==================================
+====================================
+ Downloading and Installing the SDK
+====================================
 
 1. Download the SDK from `SDKs and Other Tools`_.
    The download is a zip containing a whl file and documentation.
@@ -67,9 +67,9 @@ Downloading and Installing the SDK
 
 .. _SDKs and Other Tools: https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdks.htm
 
-===================
-Configuring the SDK
-===================
+=====================
+ Configuring the SDK
+=====================
 
 Before using the SDK, you must set up your config file with the required credentials.
 For instructions, see `SDK and Tool Configuration`_ in the User Guide.
@@ -108,24 +108,25 @@ Check the OpenSSL version again. If it's still 0.9, see `Troubleshooting Mac Iss
 
 .. _Homebrew: http://brew.sh/
 
-===============
-Troubleshooting
-===============
+=================
+ Troubleshooting
+=================
 
 You might encounter issues when installing Python or the SDK, or using the SDK itself.
 
-Troubleshooting OEL Issues
---------------------------
+----------------------------
+ Troubleshooting OEL Issues
+----------------------------
 On OEL 7.3, if you encounter permission issues when running pip install, you might need to use ``sudo``.
 
-
-Troubleshooting Mac Issues
---------------------------
+----------------------------
+ Troubleshooting Mac Issues
+----------------------------
 
 There are several general types of issues you might encounter.
 
 OpenSSL Version Still 0.9.x
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+===========================
 
 If the Python installation instructions listed in Mac above still result in OpenSSL version 0.9.x,
 it might be one of these reasons:
@@ -166,7 +167,7 @@ that was used to install your Python or OpenSSL libraries. Here's a recent post 
 __ https://community.dev.hpe.com/t5/Blogs/Updating-Python-and-Openssl-on-OS-X/ba-p/237791
 
 SSL/TLS or Certificate Exception
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+================================
 
 When trying to use the SDK, if you get an exception related to SSL/TLS or certificates/certificate validation,
 the underlying issue is that OpenSSL is the wrong version (0.9.x). See the solution for uninstalling and
@@ -174,9 +175,9 @@ reinstalling Python above. Make sure to also reinstall the wheel with this comma
 
     pip install oraclebmc-*-py2.py3-none-any.whl.
 
-======================
-Questions or Feedback?
-======================
+========================
+ Questions or Feedback?
+========================
 
 Ways to get in touch:
 

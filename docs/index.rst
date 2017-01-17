@@ -1,7 +1,7 @@
 Oracle BMC Python SDK
 ~~~~~~~~~~~~~~~~~~~~~
 
-This is the public Python SDK for Oracle Bare Metal Cloud (OBMC).  Python 2.7+ and 3.5+ are supported.
+This is the public Python SDK for Oracle Bare Metal Cloud Services.  Python 2.7+ and 3.5+ are supported.
 
 
 .. code-block:: pycon
