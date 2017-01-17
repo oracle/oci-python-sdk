@@ -46,7 +46,7 @@ Next we'll need to populate an instance of the ``CreateGroupDetails`` model with
     >>> request.details = "Created with the Python SDK"
 
     >>> group = identity.create_group(request)
-    >>> print(group.data.id.)
+    >>> print(group.data.id)
     "id": "ocid1.group.oc1..aaaaaaaaikib..."
 
 
