@@ -8,9 +8,9 @@ This is the public Python SDK for Oracle Bare Metal Cloud Services.  Python 2.7+
 
     >>> import oraclebmc
     >>> config = oraclebmc.config.from_file(
-    ...     "~/.oraclebmc",
+    ...     "~/.oraclebmc/config",
     ...     "integ-beta-profile")
-    >>> identity = oraclebmc.clients.IdentityClient(config)
+    >>> identity = oraclebmc.identity.IdentityClient(config)
     >>> user = identity.get_user(config["user"]).data
     >>> print(user)
     {

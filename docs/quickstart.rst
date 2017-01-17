@@ -7,9 +7,8 @@ Clients only require a valid config object:
 
 .. code-block:: pycon
 
-    >>> from oraclebmc import clients
-    >>> identity = clients.IdentityClient(config)
-    >>> networking = clients.VirtualNetworkClient(config)
+    >>> from oraclebmc.identity import IdentityClient
+    >>> identity = IdentityClient(config)
 
 ================================
  CRUD operations and Pagination
