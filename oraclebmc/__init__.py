@@ -3,7 +3,6 @@
 
 from . import config, constants, exceptions, identity, object_storage, regions
 from .base_client import BaseClient
-from .error import Error
 from .request import Request
 from .response import Response
 from .signer import Signer
