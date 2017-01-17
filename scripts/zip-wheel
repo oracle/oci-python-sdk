@@ -15,10 +15,10 @@ def copy(*src_path):
     # copies foo/../file.txt to dist/zip_filder/file.txt
     src = os.path.join(here, *src_path)
     dst = os.path.join(dist, zip_folder, src_path[-1])
-    try:
-        shutil.copy(src, dst)
-    except IsADirectoryError:
+    if os.path.isdir(src):
         shutil.copytree(src, dst)
+    else:
+        shutil.copy(src, dst)
 
 # 0. clean out stale artifacts, rebuild dst folder
 # (no error handling, dist/ must already exist to have a .whl file
