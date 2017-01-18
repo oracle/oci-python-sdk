@@ -42,7 +42,7 @@ Next we'll need to populate an instance of the ``CreateGroupDetails`` model with
     >>> request = CreateGroupDetails()
     >>> request.compartment_id = compartment_id
     >>> request.name = "my-test-group"
-    >>> request.details = "Created with the Python SDK"
+    >>> request.description = "Created with the Python SDK"
 
     >>> group = identity.create_group(request)
     >>> print(group.data.id)
@@ -138,7 +138,7 @@ result set:
     ...     user_id=user.data.id,
     ...     group_id=group.data.id)
     # There can never be more than one membership for a unique user/group combination
-    >>> assert len(memberships) == 1
+    >>> assert len(memberships.data) == 1
     >>> membership_id = memberships.data[0].id
 
 Finally, we can remove the user from the group, and delete both resources.  Here we're using ``response.status`` to
