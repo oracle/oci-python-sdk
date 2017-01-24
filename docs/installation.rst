@@ -58,7 +58,7 @@ The Python SDK supports operations for the following services:
 
 3.  Install the Python SDK using the following command::
 
-      pip install path/to/oraclebmc-*-py2.py3-none-any.whl
+      pip install oraclebmc-*-py2.py3-none-any.whl
 
   .. note::
 
