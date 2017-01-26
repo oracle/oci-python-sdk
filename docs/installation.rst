@@ -58,7 +58,7 @@ The Python SDK supports operations for the following services:
 
 3.  Install the Python SDK using the following command::
 
-      pip install path/to/oraclebmc-*-py2.py3-none-any.whl
+      pip install oraclebmc-*-py2.py3-none-any.whl
 
   .. note::
 
@@ -173,7 +173,7 @@ When trying to use the SDK, if you get an exception related to SSL/TLS or certif
 the underlying issue is that OpenSSL is the wrong version (0.9.x). See the solution for uninstalling and
 reinstalling Python above. Make sure to also reinstall the wheel with this command::
 
-    pip install oraclebmc-*-py2.py3-none-any.whl.
+    pip install oraclebmc-*-py2.py3-none-any.whl
 
 ========================
  Questions or Feedback?
