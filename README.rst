@@ -34,7 +34,6 @@ This is the Python SDK for Oracle Bare Metal Cloud Services (BMCS).  Python 2.7+
 
     pip install oraclebmc
 
-
 Because Oracle Bare Metal Cloud uses modern security best practices including TLS 1.2, you may encounter issues when
 installing or running the SDK.  Please see our full `Python Installation Guide`_ for details and troubleshooting.
 

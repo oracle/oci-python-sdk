@@ -1,10 +1,9 @@
-# TODO (jmcross) disabled for initial release (identity, object_storage only)
-# def test_core_automatic_request_id(virtual_network, config):
-#     response = virtual_network.list_vcns(config["tenancy"])
-#     assert response.status == 200
-#     assert response.request_id is not None
-#     assert len(response.request_id.split('/')) == 3
-#     assert len(response.request_id) == 98
+def test_core_automatic_request_id(virtual_network, config):
+    response = virtual_network.list_vcns(config["tenancy"])
+    assert response.status == 200
+    assert response.request_id is not None
+    assert len(response.request_id.split('/')) == 3
+    assert len(response.request_id) == 98
 
 
 '''

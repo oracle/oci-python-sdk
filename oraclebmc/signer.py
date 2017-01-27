@@ -129,7 +129,21 @@ class _PatchedHeaderSigner(httpsig_cffi.sign.HeaderSigner):
 
 
 class Signer(requests.auth.AuthBase):
-    """A requests auth instance that can be reused across requests"""
+    """A requests auth instance that can be reused across requests.
+
+    You can manually sign calls by creating an instance of the signer, and
+    providing it as the ``auth`` argument to Requests functions:
+
+    .. code-block:: python
+
+        import requests
+        from oraclebmc import Signer
+
+        auth = Signer(...)
+        resp = requests.get("https://...", auth=auth)
+
+
+    """
 
     def __init__(self, tenancy, user, fingerprint, private_key_file_location, pass_phrase=None):
         self.api_key = tenancy + "/" + user + "/" + fingerprint
@@ -171,6 +185,10 @@ class Signer(requests.auth.AuthBase):
 
 
 class ObjectUploadSigner(requests.auth.AuthBase):
+    """Wraps a :class:`~Signer` instance.
+
+    PutObject does not sign the x-content-sha256 or content-length headers.
+    """
     def __init__(self, signer):
         """Wraps an existing signer, omitting content headers."""
         self.signer = signer

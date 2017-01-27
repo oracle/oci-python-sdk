@@ -19,8 +19,9 @@ def to_dict(obj):
     """Helper to flatten models into dicts for rendering.
 
     The following conversions are applied:
-        * datetime.date, datetime.datetime, datetime.time
-          are converted into ISO8601 UTC strings
+
+    * datetime.date, datetime.datetime, datetime.time
+      are converted into ISO8601 UTC strings
     """
     # Shortcut strings so they don't count as Iterables
     if isinstance(obj, six.string_types):
@@ -64,13 +65,17 @@ def formatted_flat_dict(model):
 
 
 class Sentinel(object):
-    """
-    >>> missing = Sentinel("Missing", False)
-    >>> also_missing = Sentinel("Missing", False)
-    >>> assert missing is also_missing
-    >>> repr(missing)
-    <Missing>
-    >>> assert bool(missing) is False
+    """Named singletons for clear docstrings.
+    Also used to differentiate an explicit param of None from a lack of argument.
+
+    .. code-block:: pycon
+
+        >>> missing = Sentinel("Missing", False)
+        >>> also_missing = Sentinel("Missing", False)
+        >>> assert missing is also_missing
+        >>> repr(missing)
+        <Missing>
+        >>> assert bool(missing) is False
     """
     _symbols = {}
 

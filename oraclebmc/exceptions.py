@@ -33,7 +33,9 @@ class ConfigFileNotFound(ClientError):
 class InvalidConfig(ClientError):
     """The config object is missing required keys or contains malformed values.
 
-    Example
+    For example:
+
+    .. code-block:: python
 
         raise InvalidConfig({
             "region": "missing",
@@ -41,9 +43,7 @@ class InvalidConfig(ClientError):
         })
     """
     def __init__(self, errors):
-        """
-        :param errors: {config key: error code}
-        """
+        """:param errors: {config key: error code}"""
         self.errors = errors
 
 

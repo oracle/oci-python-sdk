@@ -7,7 +7,7 @@ Helpers for loading and validating service configuration.
 You can configure services by passing a config dict directly, or by loading
 one from a configuration file.
 
-The following keys are required:
+The following keys are required::
 
     fingerprint
     key_file
@@ -15,7 +15,7 @@ The following keys are required:
     tenancy
     user
 
-Additionally, the following keys are optional:
+Additionally, the following keys are optional::
 
     additional_user_agent (default "")
     log_requests (default False)
