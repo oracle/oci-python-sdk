@@ -10,7 +10,7 @@ This is the Python SDK for Oracle Bare Metal Cloud Services (BMCS).  Python 2.7+
     # Set up config
     >>> config = oraclebmc.config.from_file(
     ...     "~/.oraclebmc/config",
-    ...     "integ-beta-profile")
+    ...     "DEFAULT")
     # Create a service client
     >>> identity = oraclebmc.identity.IdentityClient(config)
     # Get the current user
@@ -18,11 +18,11 @@ This is the Python SDK for Oracle Bare Metal Cloud Services (BMCS).  Python 2.7+
     >>> print(user)
     {
       "compartment_id": "ocid1.tenancy.oc1...",
-      "description": "Integration testing user [BETA]",
+      "description": "Test user",
       "id": "ocid1.user.oc1...",
       "inactive_status": null,
       "lifecycle_state": "ACTIVE",
-      "name": "testing+integ-beta@corp.com",
+      "name": "test-user@corp.com",
       "time_created": "2016-08-30T23:46:44.680000+00:00"
     }
 
