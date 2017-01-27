@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
 
 import io
 import os
@@ -41,17 +41,18 @@ requires = [
 
 setup(
     name="oraclebmc",
-    url="https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdks.htm",
+    url="https://docs.us-phoenix-1.oraclecloud.com/tools/python/latest/index.html",
     version=version,
-    description="Oracle Bare Metal Cloud Python SDK",
+    description="Oracle Bare Metal Cloud Services Python SDK",
     long_description=readme,
     author="Oracle",
-    author_email="",
+    author_email="joe.levy@oracle.com",
     packages=find_packages(exclude=["docs", "tests*"]),
     include_package_data=True,
     install_requires=requires,
+    license="Universal Permissive License 1.0 or Apache License 2.0",
     classifiers=[
-        "Development Status :: 4 - Beta",
+        "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: Apache Software License",
         "Programming Language :: Python :: 2.7",

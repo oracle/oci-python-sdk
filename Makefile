@@ -40,3 +40,21 @@ install:
 	@echo Uninstalling then reinstalling OracleBMC whl.
 	pip uninstall -y oraclebmc || true
 	pip install dist/oraclebmc-*-py3-none-any.whl
+
+.PHONY: release-test
+release-test:
+	@echo Uploading whl file to Test PyPI.
+	@read -p "Press any key to continue: " -n 1 -r
+	@echo
+	pip install twine
+	twine register dist/* -r testpypi
+	twine upload dist/* -r testpypi
+	
+.PHONY: release
+release:
+	@echo Uploading whl file to PyPI.
+	@read -p "Press any key to continue: " -n 1 -r
+	@echo
+	pip install twine
+	twine register dist/*
+	twine upload dist/*

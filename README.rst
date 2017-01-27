@@ -1,7 +1,7 @@
-Oracle BMC Python SDK
-~~~~~~~~~~~~~~~~~~~~~
+Oracle BMCS Python SDK
+~~~~~~~~~~~~~~~~~~~~~~
 
-This is the public Python SDK for Oracle Bare Metal Cloud (OBMC).  Python 2.7+ and 3.5+ are supported.
+This is the Python SDK for Oracle Bare Metal Cloud Services (BMCS).  Python 2.7+ and 3.5+ are supported.
 
 
 .. code-block:: pycon
@@ -10,7 +10,7 @@ This is the public Python SDK for Oracle Bare Metal Cloud (OBMC).  Python 2.7+ a
     # Set up config
     >>> config = oraclebmc.config.from_file(
     ...     "~/.oraclebmc/config",
-    ...     "integ-beta-profile")
+    ...     "DEFAULT")
     # Create a service client
     >>> identity = oraclebmc.identity.IdentityClient(config)
     # Get the current user
@@ -18,11 +18,11 @@ This is the public Python SDK for Oracle Bare Metal Cloud (OBMC).  Python 2.7+ a
     >>> print(user)
     {
       "compartment_id": "ocid1.tenancy.oc1...",
-      "description": "Integration testing user [BETA]",
+      "description": "Test user",
       "id": "ocid1.user.oc1...",
       "inactive_status": null,
       "lifecycle_state": "ACTIVE",
-      "name": "testing+integ-beta@corp.com",
+      "name": "test-user@corp.com",
       "time_created": "2016-08-30T23:46:44.680000+00:00"
     }
 
@@ -37,8 +37,7 @@ This is the public Python SDK for Oracle Bare Metal Cloud (OBMC).  Python 2.7+ a
 Because Oracle Bare Metal Cloud uses modern security best practices including TLS 1.2, you may encounter issues when
 installing or running the SDK.  Please see our full `Python Installation Guide`_ for details and troubleshooting.
 
-__ https://docs.us-az-phoenix-1.oracleiaas.com/tools/python/latest/download/oracle-bmcs-python-sdk.zip
-.. _Python Installation Guide: <TODO LINK HERE>
+.. _Python Installation Guide: https://docs.us-phoenix-1.oraclecloud.com/tools/python/latest/installation.html
 
 ===============
  Documentation
@@ -46,4 +45,4 @@ __ https://docs.us-az-phoenix-1.oracleiaas.com/tools/python/latest/download/orac
 
 You can read the full SDK documentation `here`_, which will eventually be available on ReadTheDocs.
 
-.. _here: <TODO LINK HERE>
+.. _here: https://docs.us-phoenix-1.oraclecloud.com/tools/python/latest/index.html
