@@ -23,7 +23,7 @@ Let's create a new user and group, and add the user to the group.  Then we'll li
 finally clean up the user and group we created.
 
 First, we'll need to create a valid config object and service client.  If you haven't set up a config file, head over
-to the `Configuration <configuration>`_ section to create one.  We'll use the default location ``~/.oraclebmc/config``
+to the :ref:`Configuration <configuration>` section to create one.  We'll use the default location ``~/.oraclebmc/config``
 and default profile name ``DEFAULT`` to create an Identity client.  Since we'll be using the root compartment
 (or tenancy) for most operations, let's also extract that from the config object:
 
@@ -206,8 +206,8 @@ And to get it back:
  Next Steps
 ============
 
-Next, head to the `User Guides`_ or jump right into the `API Reference`_ to explore the available operations for each
-service, and their parameters.
+Next, head to the `User Guides`_ or jump right into the :ref:`API Reference <api-reference>`
+to explore the available operations for each service, and their parameters.
 
 
 .. note::
@@ -219,4 +219,3 @@ service, and their parameters.
     .. _ListApiKeys: https://docs.us-az-phoenix-1.oracleiaas.com/api/#/en/identity/20160918/ApiKey/ListApiKeys
 
 .. _User Guides: https://docs.us-az-phoenix-1.oracleiaas.com/Content/services.htm
-.. _API Reference: https://docs.us-az-phoenix-1.oracleiaas.com/api/

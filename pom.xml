@@ -35,25 +35,24 @@
                 <artifactId>maven-dependency-plugin</artifactId>
                 <version>2.10</version>
                 <executions>
-                    <!--TODO (jmcross) initial release is only identity and object storage-->
-                    <!--<execution>-->
-                        <!--<id>unpack-coreservices</id>-->
-                        <!--<phase>initialize</phase>-->
-                        <!--<goals>-->
-                            <!--<goal>unpack</goal>-->
-                        <!--</goals>-->
-                        <!--<configuration>-->
-                            <!--<artifactItems>-->
-                                <!--<artifactItem>-->
-                                    <!--<groupId>com.oracle.pic.commons</groupId>-->
-                                    <!--<artifactId>coreservices-api-spec</artifactId>-->
-                                    <!--<type>jar</type>-->
-                                    <!--<includes>coreservices-api-spec-20160918.yaml</includes>-->
-                                    <!--<outputDirectory>${spec-temp-dir}</outputDirectory>-->
-                                <!--</artifactItem>-->
-                            <!--</artifactItems>-->
-                        <!--</configuration>-->
-                    <!--</execution>-->
+                    <execution>
+                        <id>unpack-coreservices</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>com.oracle.pic.commons</groupId>
+                                    <artifactId>coreservices-api-spec</artifactId>
+                                    <type>jar</type>
+                                    <includes>coreservices-api-spec-20160918.yaml</includes>
+                                    <outputDirectory>${spec-temp-dir}</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
                     <execution>
                         <id>unpack-identity</id>
                         <phase>initialize</phase>
@@ -114,24 +113,23 @@
                             </additionalProperties>
                         </configuration>
                     </execution>
-                    <!--TODO (jmcross) initial release is only identity and object storage-->
-                    <!--<execution>-->
-                        <!--<id>python-public-sdk-coreservices</id>-->
-                        <!--<phase>compile</phase>-->
-                        <!--<goals>-->
-                            <!--<goal>generate</goal>-->
-                        <!--</goals>-->
-                        <!--<configuration>-->
-                            <!--<language>oracle-python-sdk</language>-->
-                            <!--<specPath>${spec-temp-dir}/coreservices-api-spec-20160918.yaml</specPath>-->
-                            <!--<outputDir>oraclebmc</outputDir>-->
-                            <!--<basePackage>OracleBMC</basePackage>-->
-                            <!--<additionalProperties>-->
-                                <!--<packageName>oraclebmc</packageName>-->
-                                <!--<specName>core</specName>-->
-                            <!--</additionalProperties>-->
-                        <!--</configuration>-->
-                    <!--</execution>-->
+                    <execution>
+                        <id>python-public-sdk-coreservices</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <language>oracle-python-sdk</language>
+                            <specPath>${spec-temp-dir}/coreservices-api-spec-20160918.yaml</specPath>
+                            <outputDir>oraclebmc</outputDir>
+                            <basePackage>OracleBMC</basePackage>
+                            <additionalProperties>
+                                <packageName>oraclebmc</packageName>
+                                <specName>core</specName>
+                            </additionalProperties>
+                        </configuration>
+                    </execution>
                     <execution>
                         <id>python-public-sdk-casper</id>
                         <phase>compile</phase>

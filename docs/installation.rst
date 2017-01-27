@@ -8,6 +8,7 @@ The Python SDK supports operations for the following services:
 
 * Identity and Access Management Service
 * Object Storage Service
+* Core Services (Networking Service, Compute Service, and Block Volume Service)
 
 
 ===============

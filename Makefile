@@ -11,10 +11,7 @@ docs:
 	@echo Generating HTML docs. Note that this will use the installed
 	@echo version of OracleBMC, so you might want to run gen, build, and
 	@echo install first.
-	# TODO uncomment when we have useful docstrings
-	# cd docs && make clean && sphinx-apidoc -o api/ ../oraclebmc --no-toc
-	# cd docs && make html
-	cd docs && make clean && make html
+	cd docs && make html
 	@echo View the docs at docs/_build/html/index.html
 
 

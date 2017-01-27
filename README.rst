@@ -30,11 +30,9 @@ This is the public Python SDK for Oracle Bare Metal Cloud (OBMC).  Python 2.7+ a
  Installation
 ==============
 
-``oraclebmc`` isn't on pip yet, so you'll need to `download the zip`__ and extract the wheel to install directly::
+::
 
-    $ cd Downloads
-    $ unzip oracle-bmcs-python-sdk.zip
-    $ pip install oracle-bmcs-python-sdk/oraclebmc*.whl
+    pip install oraclebmc
 
 Because Oracle Bare Metal Cloud uses modern security best practices including TLS 1.2, you may encounter issues when
 installing or running the SDK.  Please see our full `Python Installation Guide`_ for details and troubleshooting.
