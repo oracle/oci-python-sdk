@@ -13,7 +13,12 @@ The project is open source and maintained by Oracle Corp. The home page for the 
 Installation
 ============
 
-See `the installation guide <https://docs.us-phoenix-1.oraclecloud.com/tools/python/latest/installation.html>`_ for details.
+::
+
+    pip install oraclebmc
+
+
+See `the installation guide <https://docs.us-phoenix-1.oraclecloud.com/tools/python/latest/installation.html>`_ for installation troubleshooting and alternative install methods.
 
 ========
 Examples
