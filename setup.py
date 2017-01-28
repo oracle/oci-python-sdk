@@ -25,7 +25,7 @@ with open_relative("oraclebmc", "version.py") as fd:
     if not version:
         raise RuntimeError("Cannot find version information")
 
-with open_relative("PyPI-README.rst") as f:
+with open_relative("README.rst") as f:
     readme = f.read()
 
 requires = [
