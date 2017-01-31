@@ -30,9 +30,6 @@ class ComputeClient(object):
         """
         AttachVolume
         Attaches the specified storage volume to the specified instance.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
 
         :param AttachVolumeDetails attach_volume_details: (required)
             Attach volume request
@@ -74,10 +71,7 @@ class ComputeClient(object):
         """
         CaptureConsoleHistory
         Captures the most recent serial console data (up to a megabyte) for the
-        specified instance. The data includes configuration messages that occur when the
-        instance boots, such as kernel and BIOS messages, and is useful for checking the
-        status of the instance or diagnosing problems.  The console data is minimally
-        formatted ASCII text.
+        specified instance.
         The `CaptureConsoleHistory` operation works with the other console history operations
         as described below.
         1. Use `CaptureConsoleHistory` to request the capture of up to a megabyte of the
@@ -91,9 +85,6 @@ class ComputeClient(object):
         metadata).
         4. Optionally, use `DeleteConsoleHistory` to delete the console history metadata
         and the console history data.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
 
         :param CaptureConsoleHistoryDetails capture_console_history_details: (required)
             Console history details
@@ -140,9 +131,6 @@ class ComputeClient(object):
         the OCID of the compartment containing that instance.
         You may optionally specify a *display name* for the image, which is simply a friendly name or description.
         It does not have to be unique, and you can change it. See UpdateImage.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
 
         :param CreateImageDetails create_image_details: (required)
             Image creation details
@@ -511,9 +499,6 @@ class ComputeClient(object):
         to apply against any relevant quotas. You must terminate an instance
         (TerminateInstance)
         to remove its resources from billing and quotas.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
 
         :param str instance_id: (required)
             The OCID of the instance.
@@ -575,7 +560,7 @@ class ComputeClient(object):
         LaunchInstance
         Creates a new instance in the specified compartment and the specified Availability Domain.
         For general information about instances, see
-        [Overview of the Compute Service]({{DOC_SERVER_URL}}/Content/Compute/Concepts/computeoverview.htm)
+        [Overview of the Compute Service]({{DOC_SERVER_URL}}/Content/Compute/Concepts/computeoverview.htm).
         For information about access control and compartments, see
         [Overview of the IAM Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm).
         For information about Availability Domains, see
@@ -592,12 +577,6 @@ class ComputeClient(object):
         To get both addresses, use the ListVnicAttachments
         operation to get the VNIC ID for the instance, and then call
         GetVnic with the VNIC ID.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
-        For information about endpoints and signing API requests, see
-        [About the API]({{DOC_SERVER_URL}}/Content/API/Concepts/usingapi.htm). For information about available SDKs and tools, see
-        [SDKS and Other Tools]({{DOC_SERVER_URL}}/Content/API/Concepts/sdks.htm).
 
         :param LaunchInstanceDetails launch_instance_details: (required)
             Instance details
@@ -655,10 +634,7 @@ class ComputeClient(object):
     def list_console_histories(self, compartment_id, **kwargs):
         """
         ListConsoleHistories
-        Lists all the console history metadata for the specified compartment or instance.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
+        Lists the console history metadata for the specified compartment or instance.
 
         :param str compartment_id: (required)
             The OCID of the compartment.
@@ -713,7 +689,7 @@ class ComputeClient(object):
     def list_images(self, compartment_id, **kwargs):
         """
         ListImages
-        Gets a list of the available images in the specified compartment. For more
+        Lists the available images in the specified compartment. For more
         information about images, see
         [Managing Custom Images]({{DOC_SERVER_URL}}/Content/Compute/Tasks/managingcustomimages.htm).
 
@@ -776,12 +752,9 @@ class ComputeClient(object):
     def list_instances(self, compartment_id, **kwargs):
         """
         ListInstances
-        Gets a list of all the instances in the specified compartment and the specified Availability Domain.
+        Lists the instances in the specified compartment and the specified Availability Domain.
         You can filter the results by specifying an instance name (the list will include all the identically-named
         instances in the compartment).
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
 
         :param str compartment_id: (required)
             The OCID of the compartment.
@@ -837,7 +810,7 @@ class ComputeClient(object):
     def list_shapes(self, compartment_id, **kwargs):
         """
         ListShapes
-        Lists all shapes that can be used to launch an instance within the specified compartment. You can
+        Lists the shapes that can be used to launch an instance within the specified compartment. You can
         filter the list by compatibility with a specific image.
 
         :param str compartment_id: (required)
@@ -893,11 +866,8 @@ class ComputeClient(object):
     def list_vnic_attachments(self, compartment_id, **kwargs):
         """
         ListVnicAttachments
-        Gets a list of the VNIC attachments for the specified compartment. The list can be filtered by
+        Lists the VNIC attachments for the specified compartment. The list can be filtered by
         instance and by VNIC.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
 
         :param str compartment_id: (required)
             The OCID of the compartment.
@@ -956,12 +926,9 @@ class ComputeClient(object):
     def list_volume_attachments(self, compartment_id, **kwargs):
         """
         ListVolumeAttachments
-        Gets a list of the volume attachments in the specified compartment. You can filter the
+        Lists the volume attachments in the specified compartment. You can filter the
         list by specifying an instance OCID, volume OCID, or both.
         Currently, the only supported volume attachment type is IScsiVolumeAttachment.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
 
         :param str compartment_id: (required)
             The OCID of the compartment.

@@ -123,7 +123,8 @@ class CreateIPSecConnectionDetails(object):
     def static_routes(self):
         """
         Gets the static_routes of this CreateIPSecConnectionDetails.
-        Static routes to the CPE.
+        Static routes to the CPE. At least one route must be included. The CIDR must not be a
+        multicast address or class E address.
         Example: `10.0.1.0/24`
 
         :return: The static_routes of this CreateIPSecConnectionDetails.
@@ -135,7 +136,8 @@ class CreateIPSecConnectionDetails(object):
     def static_routes(self, static_routes):
         """
         Sets the static_routes of this CreateIPSecConnectionDetails.
-        Static routes to the CPE.
+        Static routes to the CPE. At least one route must be included. The CIDR must not be a
+        multicast address or class E address.
         Example: `10.0.1.0/24`
 
         :param static_routes: The static_routes of this CreateIPSecConnectionDetails.

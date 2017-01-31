@@ -31,7 +31,7 @@ class BlockstorageClient(object):
         CreateVolume
         Creates a new volume in the specified compartment. The size of a volume can be either 256 GB or 2 TB.
         For general information about block volumes, see
-        [Overview of Block Volume Service]({{DOC_SERVER_URL}}/Content/Block/Concepts/overview.htm)
+        [Overview of Block Volume Service]({{DOC_SERVER_URL}}/Content/Block/Concepts/overview.htm).
         A volume and instance can be in separate compartments but must be in the same Availability Domain.
         For information about access control and compartments, see
         [Overview of the IAM Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm). For information about
@@ -40,12 +40,6 @@ class BlockstorageClient(object):
         in the Identity and Access Management Service API.
         You may optionally specify a *display name* for the volume, which is simply a friendly name or
         description. It does not have to be unique, and you can change it.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
-        For information about endpoints and signing API requests, see
-        [About the API]({{DOC_SERVER_URL}}/Content/API/Concepts/usingapi.htm). For information about available SDKs and tools, see
-        [SDKS and Other Tools]({{DOC_SERVER_URL}}/Content/API/Concepts/sdks.htm).
 
         :param CreateVolumeDetails create_volume_details: (required)
             Request to create a new volume.
@@ -91,9 +85,6 @@ class BlockstorageClient(object):
         When the request is received, the backup object is in a REQUEST_RECEIVED state.
         When the data is imaged, it goes into a CREATING state.
         After the backup is fully uploaded to the cloud, it goes into an AVAILABLE state.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
 
         :param CreateVolumeBackupDetails create_volume_backup_details: (required)
             Request to create a new backup of given volume.
@@ -289,10 +280,7 @@ class BlockstorageClient(object):
     def list_volume_backups(self, compartment_id, **kwargs):
         """
         ListVolumeBackups
-        Gets a list of volume backups in the specified compartment. You can filter the results by volume.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
+        Lists the volume backups in the specified compartment. You can filter the results by volume.
 
         :param str compartment_id: (required)
             The OCID of the compartment.
@@ -342,10 +330,7 @@ class BlockstorageClient(object):
     def list_volumes(self, compartment_id, **kwargs):
         """
         ListVolumes
-        Gets a list of volumes in the specified compartment and Availability Domain.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
+        Lists the volumes in the specified compartment and Availability Domain.
 
         :param str compartment_id: (required)
             The OCID of the compartment.
