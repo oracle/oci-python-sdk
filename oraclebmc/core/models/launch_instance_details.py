@@ -14,6 +14,7 @@ class LaunchInstanceDetails(object):
             'compartment_id': 'str',
             'display_name': 'str',
             'image_id': 'str',
+            'ipxe_script': 'str',
             'metadata': 'dict(str, str)',
             'opc_ipxe_script': 'str',
             'shape': 'str',
@@ -25,6 +26,7 @@ class LaunchInstanceDetails(object):
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'image_id': 'imageId',
+            'ipxe_script': 'ipxeScript',
             'metadata': 'metadata',
             'opc_ipxe_script': 'opcIpxeScript',
             'shape': 'shape',
@@ -35,6 +37,7 @@ class LaunchInstanceDetails(object):
         self._compartment_id = None
         self._display_name = None
         self._image_id = None
+        self._ipxe_script = None
         self._metadata = None
         self._opc_ipxe_script = None
         self._shape = None
@@ -131,6 +134,58 @@ class LaunchInstanceDetails(object):
         :type: str
         """
         self._image_id = image_id
+
+    @property
+    def ipxe_script(self):
+        """
+        Gets the ipxe_script of this LaunchInstanceDetails.
+        This is an advanced option.
+        When an Oracle Bare Metal Cloud Services or virtual machine
+        instance boots, the iPXE firmware that runs on the instance is
+        configured to run an iPXE script to continue the boot process.
+        If you want more control over the boot process, you can provide
+        your own custom iPXE script that will run when the instance boots;
+        however, you should be aware that the same iPXE script will run
+        every time an instance boots; not only after the initial
+        LaunchInstance call.
+        The default iPXE script connects to the instance\u2019s local boot
+        volume over iSCSI and performs a network boot. If you use a custom iPXE
+        script and want to network-boot from the instance\u2019s local boot volume
+        over iSCSI the same way as the default iPXE script, you should use the
+        following iSCSI IP address: 169.254.0.2, and boot volume IQN:
+        iqn.2015-02.oracle.boot.
+        For more information about iPXE, see http://ipxe.org.
+
+        :return: The ipxe_script of this LaunchInstanceDetails.
+        :rtype: str
+        """
+        return self._ipxe_script
+
+    @ipxe_script.setter
+    def ipxe_script(self, ipxe_script):
+        """
+        Sets the ipxe_script of this LaunchInstanceDetails.
+        This is an advanced option.
+        When an Oracle Bare Metal Cloud Services or virtual machine
+        instance boots, the iPXE firmware that runs on the instance is
+        configured to run an iPXE script to continue the boot process.
+        If you want more control over the boot process, you can provide
+        your own custom iPXE script that will run when the instance boots;
+        however, you should be aware that the same iPXE script will run
+        every time an instance boots; not only after the initial
+        LaunchInstance call.
+        The default iPXE script connects to the instance\u2019s local boot
+        volume over iSCSI and performs a network boot. If you use a custom iPXE
+        script and want to network-boot from the instance\u2019s local boot volume
+        over iSCSI the same way as the default iPXE script, you should use the
+        following iSCSI IP address: 169.254.0.2, and boot volume IQN:
+        iqn.2015-02.oracle.boot.
+        For more information about iPXE, see http://ipxe.org.
+
+        :param ipxe_script: The ipxe_script of this LaunchInstanceDetails.
+        :type: str
+        """
+        self._ipxe_script = ipxe_script
 
     @property
     def metadata(self):

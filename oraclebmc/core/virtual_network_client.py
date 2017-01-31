@@ -29,12 +29,8 @@ class VirtualNetworkClient(object):
     def create_cpe(self, create_cpe_details, **kwargs):
         """
         CreateCpe
-        Creates a new virtual Customer-Premise Equipment (CPE) object in the specified compartment. You can
-        think of a CPE object as a virtual representation of the actual router that is on-premise at your site,
-        at your end of the VPN connection to your VCN. You need to create this object as part of the process of
-        setting up the VPN. For more information, see
-        [Typical Networking Service Scenarios]({{DOC_SERVER_URL}}/Content/Network/Concepts/overview.htm#three)
-        and [Managing Customer-Premise Equipment (CPE)]({{DOC_SERVER_URL}}/Content/Network/Tasks/managingCPEs.htm).
+        Creates a new virtual Customer-Premise Equipment (CPE) object in the specified compartment. For
+        more information, see [Managing Customer-Premise Equipment (CPE)]({{DOC_SERVER_URL}}/Content/Network/Tasks/managingCPEs.htm).
         For the purposes of access control, you must provide the OCID of the compartment where you want
         the CPE to reside. Notice that the CPE doesn't have to be in the same compartment as the IPSec
         connection or other Networking Service components. If you're not sure which compartment to
@@ -45,12 +41,6 @@ class VirtualNetworkClient(object):
         [Configuring Your On-Premise Router]({{DOC_SERVER_URL}}/Content/Network/Tasks/configuringCPE.htm).
         You may optionally specify a *display name* for the CPE, otherwise a default is provided. It does not have to
         be unique, and you can change it.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
-        For information about endpoints and signing API requests, see
-        [About the API]({{DOC_SERVER_URL}}/Content/API/Concepts/usingapi.htm). For information about available SDKs and tools, see
-        [SDKS and Other Tools]({{DOC_SERVER_URL}}/Content/API/Concepts/sdks.htm).
 
         :param CreateCpeDetails create_cpe_details: (required)
             Details for creating a CPE.
@@ -103,9 +93,6 @@ class VirtualNetworkClient(object):
         [Resource Identifiers]({{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm).
         You may optionally specify a *display name* for the set of DHCP options, otherwise a default is provided.
         It does not have to be unique, and you can change it.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
 
         :param CreateDhcpDetails create_dhcp_details: (required)
             Request object for creating a new set of DHCP options.
@@ -146,12 +133,8 @@ class VirtualNetworkClient(object):
     def create_drg(self, create_drg_details, **kwargs):
         """
         CreateDrg
-        Creates a new Dynamic Routing Gateway (DRG) in the specified compartment. You can think of a DRG
-        as a virtual router that provides a path for private traffic between your VCN and your on-premise
-        network. You use it with other Networking Service components and an on-premise router to create
-        a site-to-site VPN. For more information, see
-        [Typical Networking Service Scenarios]({{DOC_SERVER_URL}}/Content/Network/Concepts/overview.htm#three)
-        and [Managing Dynamic Routing Gateways (DRGs)]({{DOC_SERVER_URL}}/Content/Network/Tasks/managingDRGs.htm).
+        Creates a new Dynamic Routing Gateway (DRG) in the specified compartment. For more information,
+        see [Managing Dynamic Routing Gateways (DRGs)]({{DOC_SERVER_URL}}/Content/Network/Tasks/managingDRGs.htm).
         For the purposes of access control, you must provide the OCID of the compartment where you want
         the DRG to reside. Notice that the DRG doesn't have to be in the same compartment as the VCN,
         the DRG attachment, or other Networking Service components. If you're not sure which compartment
@@ -160,12 +143,6 @@ class VirtualNetworkClient(object):
         For information about OCIDs, see [Resource Identifiers]({{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm).
         You may optionally specify a *display name* for the DRG, otherwise a default is provided.
         It does not have to be unique, and you can change it.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
-        For information about endpoints and signing API requests, see
-        [About the API]({{DOC_SERVER_URL}}/Content/API/Concepts/usingapi.htm). For information about available SDKs and tools, see
-        [SDKS and Other Tools]({{DOC_SERVER_URL}}/Content/API/Concepts/sdks.htm).
 
         :param CreateDrgDetails create_drg_details: (required)
             Details for creating a DRG.
@@ -214,9 +191,6 @@ class VirtualNetworkClient(object):
         For the purposes of access control, the DRG attachment is automatically placed into the same compartment
         as the VCN. For more information about compartments and access control, see
         [Overview of the IAM Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm).
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
 
         :param CreateDrgAttachmentDetails create_drg_attachment_details: (required)
             Details for creating a `DrgAttachment`.
@@ -257,10 +231,8 @@ class VirtualNetworkClient(object):
     def create_internet_gateway(self, create_internet_gateway_details, **kwargs):
         """
         CreateInternetGateway
-        Creates a new Internet Gateway for the specified VCN. You can think of an Internet Gateway as a router
-        that connects the edge of the VCN with the Internet. For an example scenario that uses an Internet Gateway,
-        see [Typical Networking Service Scenarios]({{DOC_SERVER_URL}}/Content/Network/Concepts/overview.htm#three)
-        and [Managing Internet Gateways]({{DOC_SERVER_URL}}/Content/Network/Tasks/managingIGs.htm).
+        Creates a new Internet Gateway for the specified VCN. For more information, see
+        [Managing Internet Gateways]({{DOC_SERVER_URL}}/Content/Network/Tasks/managingIGs.htm).
         For the purposes of access control, you must provide the OCID of the compartment where you want the Internet
         Gateway to reside. Notice that the Internet Gateway doesn't have to be in the same compartment as the VCN or
         other Networking Service components. If you're not sure which compartment to use, put the Internet
@@ -276,12 +248,6 @@ class VirtualNetworkClient(object):
         traffic will flow to/from the internet even if there's a route rule that enables that traffic. You can later
         use UpdateInternetGateway to easily disable/enable
         the gateway without changing the route rule.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
-        For information about endpoints and signing API requests, see
-        [About the API]({{DOC_SERVER_URL}}/Content/API/Concepts/usingapi.htm). For information about available SDKs and tools, see
-        [SDKS and Other Tools]({{DOC_SERVER_URL}}/Content/API/Concepts/sdks.htm).
 
         :param CreateInternetGatewayDetails create_internet_gateway_details: (required)
             Details for creating a new Internet Gateway.
@@ -322,11 +288,8 @@ class VirtualNetworkClient(object):
     def create_ip_sec_connection(self, create_ip_sec_connection_details, **kwargs):
         """
         CreateIPSecConnection
-        Creates a new IPSec connection between the specified DRG and CPE. This connection consists of multiple IPSec
-        tunnels. Creating this connection is one of the steps required when setting up a VPN. For more
-        information, see
-        [Typical Networking Service Scenarios]({{DOC_SERVER_URL}}/Content/Network/Concepts/overview.htm#three)
-        and [Managing IPSec Connections]({{DOC_SERVER_URL}}/Content/Network/Tasks/managingIPsec.htm).
+        Creates a new IPSec connection between the specified DRG and CPE. For more information, see
+        [Managing IPSec Connections]({{DOC_SERVER_URL}}/Content/Network/Tasks/managingIPsec.htm).
         In the request, you must include at least one static route to the CPE object (you're allowed a maximum
         of 10). For example: 10.0.8.0/16.
         For the purposes of access control, you must provide the OCID of the compartment where you want the
@@ -346,12 +309,6 @@ class VirtualNetworkClient(object):
         [Configuring Your On-Premise Router]({{DOC_SERVER_URL}}/Content/Network/Tasks/configuringCPE.htm).
         To get the status of the tunnels (whether they're up or down), use
         GetIPSecConnectionDeviceStatus.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
-        For information about endpoints and signing API requests, see
-        [About the API]({{DOC_SERVER_URL}}/Content/API/Concepts/usingapi.htm). For information about available SDKs and tools, see
-        [SDKS and Other Tools]({{DOC_SERVER_URL}}/Content/API/Concepts/sdks.htm).
 
         :param CreateIPSecConnectionDetails create_ip_sec_connection_details: (required)
             Details for creating an `IPSecConnection`.
@@ -404,9 +361,6 @@ class VirtualNetworkClient(object):
         [Resource Identifiers]({{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm).
         You may optionally specify a *display name* for the route table, otherwise a default is provided.
         It does not have to be unique, and you can change it.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
 
         :param CreateRouteTableDetails create_route_table_details: (required)
             Details for creating a new route table.
@@ -447,16 +401,10 @@ class VirtualNetworkClient(object):
     def create_security_list(self, create_security_list_details, **kwargs):
         """
         CreateSecurityList
-        Creates a new security list for the specified VCN. A security list provides a stateful firewall
-        for the instance. Security lists are configured at the subnet level, but the rules are applied
-        to the ingress and egress traffic for the individual instances in the subnet. For more information
-        about security lists, see [Security Lists]({{DOC_SERVER_URL}}/Content/Network/Concepts/permissions.htm#Security_Lists).
+        Creates a new security list for the specified VCN. For more information
+        about security lists, see [Security Lists]({{DOC_SERVER_URL}}/Content/Network/Concepts/securitylists.htm).
         For information on the number of rules you can have in a security list, see
         [Service Limits]({{DOC_SERVER_URL}}/Content/General/Concepts/servicelimits.htm).
-        **Important:** Oracle Bare Metal Cloud Services images that run Oracle Linux automatically include iptables rules.
-        If there are issues with some type of access to an instance, make sure both the security lists associated
-        with the instance's subnet and the instance's iptables rules are set correctly. For more information,
-        see [Ways to Secure Your Network]({{DOC_SERVER_URL}}/Content/Network/Concepts/permissions.htm#one).
         For the purposes of access control, you must provide the OCID of the compartment where you want the security
         list to reside. Notice that the security list doesn't have to be in the same compartment as the VCN, subnets,
         or other Networking Service components. If you're not sure which compartment to use, put the security
@@ -465,9 +413,6 @@ class VirtualNetworkClient(object):
         [Resource Identifiers]({{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm).
         You may optionally specify a *display name* for the security list, otherwise a default is provided.
         It does not have to be unique, and you can change it.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
 
         :param CreateSecurityListDetails create_security_list_details: (required)
             Details regarding the security list to create.
@@ -508,14 +453,11 @@ class VirtualNetworkClient(object):
     def create_subnet(self, create_subnet_details, **kwargs):
         """
         CreateSubnet
-        Creates a new subnet in the specified VCN. A subnet is a logical subdivision of a VCN. Each subnet exists
-        in a single Availability Domain and consists of a contiguous range of IP addresses that do not overlap with
-        other subnets in the VCN. Example: 172.16.1.0/24. You can't change the size of the subnet after creation,
+        Creates a new subnet in the specified VCN. You can't change the size of the subnet after creation,
         so it's important to think about the size of subnets you need before creating them.
-        For conceptual information about VCNs, subnets, and other Networking Service components, see
-        [Overview of the Networking Service]({{DOC_SERVER_URL}}/Content/Network/Concepts/overview.htm)
-        and [Managing Subnets]({{DOC_SERVER_URL}}/Content/Network/Tasks/managingsubnets.htm). For information on
-        the number of subnets you can have in a VCN, see [Service Limits]({{DOC_SERVER_URL}}/Content/General/Concepts/servicelimits.htm).
+        For more information, see [Managing Subnets]({{DOC_SERVER_URL}}/Content/Network/Tasks/managingsubnets.htm).
+        For information on the number of subnets you can have in a VCN, see
+        [Service Limits]({{DOC_SERVER_URL}}/Content/General/Concepts/servicelimits.htm).
         For the purposes of access control, you must provide the OCID of the compartment where you want the subnet
         to reside. Notice that the subnet doesn't have to be in the same compartment as the VCN, route tables, or
         other Networking Service components. If you're not sure which compartment to use, put the subnet in
@@ -527,18 +469,12 @@ class VirtualNetworkClient(object):
         [Managing Route Tables]({{DOC_SERVER_URL}}/Content/Network/Tasks/managingroutetables.htm).
         You may optionally associate a security list with the subnet. If you don't, the subnet will use the
         VCN's default security list. For more information about security lists, see
-        [Security Lists]({{DOC_SERVER_URL}}/Content/Network/Concepts/permissions.htm#Security_Lists).
+        [Security Lists]({{DOC_SERVER_URL}}/Content/Network/Concepts/securitylists.htm).
         You may optionally associate a set of DHCP options with the subnet. If you don't, the subnet will use the
         VCN's default set. For more information about DHCP options, see
         [Managing DHCP Options]({{DOC_SERVER_URL}}/Content/Network/Tasks/managingDHCP.htm).
         You may optionally specify a *display name* for the subnet, otherwise a default is provided.
         It does not have to be unique, and you can change it.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
-        For information about endpoints and signing API requests, see
-        [About the API]({{DOC_SERVER_URL}}/Content/API/Concepts/usingapi.htm). For information about available SDKs and tools, see
-        [SDKS and Other Tools]({{DOC_SERVER_URL}}/Content/API/Concepts/sdks.htm).
 
         :param CreateSubnetDetails create_subnet_details: (required)
             Details for creating a subnet.
@@ -579,8 +515,7 @@ class VirtualNetworkClient(object):
     def create_vcn(self, create_vcn_details, **kwargs):
         """
         CreateVcn
-        Creates a new Virtual Cloud Network (VCN). For conceptual information about VCNs and other Virtual Network
-        Service components, see [Overview of the Networking Service]({{DOC_SERVER_URL}}/Content/Network/Concepts/overview.htm) and
+        Creates a new Virtual Cloud Network (VCN). For more information, see
         [Managing Virtual Cloud Networks (VCNs)]({{DOC_SERVER_URL}}/Content/Network/Tasks/managingVCNs.htm).
         For the VCN you must specify a single, contiguous IPv4 CIDR block in the private IP address ranges specified in
         [RFC 1918](https://tools.ietf.org/html/rfc1918) (10.0.0.0/8, 172.16/12, and 192.168/16). Example: 172.16.0.0/16.
@@ -600,12 +535,6 @@ class VirtualNetworkClient(object):
         The VCN and subnets you create are not accessible until you attach an Internet Gateway or set up a VPN.
         For more information, see
         [Typical Networking Service Scenarios]({{DOC_SERVER_URL}}/Content/Network/Concepts/overview.htm#three).
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
-        For information about endpoints and signing API requests, see
-        [About the API]({{DOC_SERVER_URL}}/Content/API/Concepts/usingapi.htm). For information about available SDKs and tools, see
-        [SDKS and Other Tools]({{DOC_SERVER_URL}}/Content/API/Concepts/sdks.htm).
 
         :param CreateVcnDetails create_vcn_details: (required)
             Details for creating a new VCN.
@@ -1307,9 +1236,6 @@ class VirtualNetworkClient(object):
         GetIPSecConnectionDeviceConfig
         Gets the configuration information for the specified IPSec connection. For each tunnel, the
         response includes the IP address of Oracle's VPN headend and the shared secret.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
 
         :param str ipsc_id: (required)
             The OCID of the IPSec connection.
@@ -1508,8 +1434,7 @@ class VirtualNetworkClient(object):
         """
         GetVnic
         Gets the information for the specified Virtual Network Interface Card (VNIC), including the attached
-        instance's public and private IP addresses. Each instance automatically has a VNIC attached to it,
-        and the VNIC connects the instance to the subnet. You can get the instance's VNIC OCID from the
+        instance's public and private IP addresses. You can get the instance's VNIC OCID from the
         Cloud Compute Service's ListVnicAttachments operation.
 
         :param str vnic_id: (required)
@@ -1543,10 +1468,7 @@ class VirtualNetworkClient(object):
     def list_cpes(self, compartment_id, **kwargs):
         """
         ListCpes
-        Gets a list of the Customer-Premise Equipment objects (CPEs) in the specified compartment.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
+        Lists the Customer-Premise Equipment objects (CPEs) in the specified compartment.
 
         :param str compartment_id: (required)
             The OCID of the compartment.
@@ -1592,12 +1514,9 @@ class VirtualNetworkClient(object):
     def list_dhcp_options(self, compartment_id, vcn_id, **kwargs):
         """
         ListDhcpOptions
-        Gets a list of the sets of DHCP options in the specified VCN and specified compartment.
+        Lists the sets of DHCP options in the specified VCN and specified compartment.
         The response includes the default set of options that automatically comes with each VCN,
         plus any other sets you've created.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
 
         :param str compartment_id: (required)
             The OCID of the compartment.
@@ -1646,11 +1565,8 @@ class VirtualNetworkClient(object):
     def list_drg_attachments(self, compartment_id, **kwargs):
         """
         ListDrgAttachments
-        Gets a list of the `DrgAttachment` objects for the specified compartment. You can filter the
+        Lists the `DrgAttachment` objects for the specified compartment. You can filter the
         results by VCN or DRG.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
 
         :param str compartment_id: (required)
             The OCID of the compartment.
@@ -1704,10 +1620,7 @@ class VirtualNetworkClient(object):
     def list_drgs(self, compartment_id, **kwargs):
         """
         ListDrgs
-        Gets a list of the DRGs in the specified compartment.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
+        Lists the DRGs in the specified compartment.
 
         :param str compartment_id: (required)
             The OCID of the compartment.
@@ -1753,10 +1666,7 @@ class VirtualNetworkClient(object):
     def list_internet_gateways(self, compartment_id, vcn_id, **kwargs):
         """
         ListInternetGateways
-        Gets a list of the Internet Gateways in the specified VCN and the specified compartment.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
+        Lists the Internet Gateways in the specified VCN and the specified compartment.
 
         :param str compartment_id: (required)
             The OCID of the compartment.
@@ -1805,11 +1715,8 @@ class VirtualNetworkClient(object):
     def list_ip_sec_connections(self, compartment_id, **kwargs):
         """
         ListIPSecConnections
-        Gets a list of the IPSec connections for the specified compartment. You can filter the
+        Lists the IPSec connections for the specified compartment. You can filter the
         results by DRG or CPE.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
 
         :param str compartment_id: (required)
             The OCID of the compartment.
@@ -1863,12 +1770,9 @@ class VirtualNetworkClient(object):
     def list_route_tables(self, compartment_id, vcn_id, **kwargs):
         """
         ListRouteTables
-        Gets a list of the route tables in the specified VCN and specified compartment. The response
+        Lists the route tables in the specified VCN and specified compartment. The response
         includes the default route table that automatically comes with each VCN, plus any route tables
         you've created.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
 
         :param str compartment_id: (required)
             The OCID of the compartment.
@@ -1917,10 +1821,7 @@ class VirtualNetworkClient(object):
     def list_security_lists(self, compartment_id, vcn_id, **kwargs):
         """
         ListSecurityLists
-        Gets a list of the security lists in the specified VCN and compartment.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
+        Lists the security lists in the specified VCN and compartment.
 
         :param str compartment_id: (required)
             The OCID of the compartment.
@@ -1969,10 +1870,7 @@ class VirtualNetworkClient(object):
     def list_subnets(self, compartment_id, vcn_id, **kwargs):
         """
         ListSubnets
-        Gets a list of the subnets in the specified VCN and the specified compartment.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
+        Lists the subnets in the specified VCN and the specified compartment.
 
         :param str compartment_id: (required)
             The OCID of the compartment.
@@ -2021,10 +1919,7 @@ class VirtualNetworkClient(object):
     def list_vcns(self, compartment_id, **kwargs):
         """
         ListVcns
-        Gets a list of the Virtual Cloud Networks (VCNs) in the specified compartment.
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
+        Lists the Virtual Cloud Networks (VCNs) in the specified compartment.
 
         :param str compartment_id: (required)
             The OCID of the compartment.
