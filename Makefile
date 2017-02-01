@@ -39,7 +39,7 @@ build:
 install:
 	@echo Uninstalling then reinstalling OracleBMC whl.
 	pip uninstall -y oraclebmc || true
-	pip install dist/oraclebmc-*-py3-none-any.whl
+	pip install dist/oraclebmc-*.whl
 
 .PHONY: release-test
 release-test:
