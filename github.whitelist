@@ -2,7 +2,14 @@
 ^docs/conf\.py$
 ^docs/.*\.rst$
 ^docs/Makefile$
+
 ^examples/
+
+^oraclebmc/core/.*\.py$
+^oraclebmc/identity/.*\.py$
+^oraclebmc/object_storage/.*\.py$
+^oraclebmc/[^/]*\.py$
+
 ^\.gitignore$
 ^CHANGELOG\.rst$
 ^CONTRIBUTING\.rst$
