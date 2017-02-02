@@ -10,6 +10,11 @@
 ^oraclebmc/object_storage/.*\.py$
 ^oraclebmc/[^/]*\.py$
 
+
+^tests/[^/]*\.py$
+^tests/integ/.*\.py$
+
+
 ^\.gitignore$
 ^CHANGELOG\.rst$
 ^CONTRIBUTING\.rst$
