@@ -7,7 +7,7 @@ def test_core_automatic_request_id(virtual_network, config):
 
 
 '''
-# Commenting this out until Casper updates support for request ID.
+# Commenting this out until Object Storage updates support for request ID.
 
 def test_object_storage_request_id(object_storage):
     request_id = 'example_request_id_1234'
