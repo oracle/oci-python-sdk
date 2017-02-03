@@ -100,7 +100,7 @@ def delete_cloud_network(virtual_network, vcn):
 
 def create_subnet(virtual_network, compartment, test_id, availability_domain, vcn):
     print('Creating subnet')
-    request = oraclebmc.models.CreateSubnetDetails()
+    request = oraclebmc.core.models.CreateSubnetDetails()
     request.cidr_block = '10.0.0.0/16'
     request.availability_domain = availability_domain
     request.display_name = 'pythonsdk_test_subnet_' + test_id

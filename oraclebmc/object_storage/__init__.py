@@ -5,5 +5,6 @@ from __future__ import absolute_import
 
 
 from .object_storage_client import ObjectStorageClient
+from . import models
 
 __all__ = ["ObjectStorageClient", "models"]
