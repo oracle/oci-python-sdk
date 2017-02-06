@@ -47,7 +47,7 @@ release-test:
 	@read -p "Press any key to continue: " -n 1 -r
 	@echo
 	pip install twine
-	twine register dist/* -r testpypi
+	twine register dist/*.whl -r testpypi
 	twine upload dist/* -r testpypi
 	
 .PHONY: release
@@ -56,5 +56,5 @@ release:
 	@read -p "Press any key to continue: " -n 1 -r
 	@echo
 	pip install twine
-	twine register dist/*
+	twine register dist/*.whl
 	twine upload dist/*
