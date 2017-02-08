@@ -41,7 +41,7 @@ The Python SDK supports operations for the following services:
  Downloading and Installing the SDK
 ====================================
 
-1. Download the SDK from the `GitHub releases page`_.
+1. Download the SDK from `GitHub`__.
    The download is a zip containing a whl file and documentation.
 
 2.  (Optional) Oracle recommends that you run the SDK in a virtual environment with virtualenv.
@@ -66,7 +66,7 @@ The Python SDK supports operations for the following services:
       If you're unable to install the whl file, make sure pip is up to date.
       Use ``pip install -U pip`` and then try to install the whl file again.
 
-.. _GitHub releases page: https://github.com/oracle/bmcs-python-sdk/releases
+__ https://github.com/oracle/bmcs-python-sdk/releases
 
 =====================
  Configuring the SDK
@@ -180,9 +180,9 @@ reinstalling Python above. Make sure to also reinstall the wheel with this comma
  Contributions
 ================
 
-Got a fix for a bug, or a new feature you'd like to contribute? The SDK is open source and accepting pull requests on `GitHub`_.
+Got a fix for a bug, or a new feature you'd like to contribute? The SDK is open source and accepting pull requests on `GitHub`__.
 
-.. _GitHub: https://github.com/oracle/bmcs-python-sdk
+__ https://github.com/oracle/bmcs-python-sdk
 
 ================
  Notifications
@@ -206,7 +206,7 @@ Ways to get in touch:
 
 *  `My Oracle Support`_
 
-.. _GitHub: https://github.com/oracle/bmcs-python-sdk
+.. _GitHub: https://github.com/oracle/bmcs-python-sdk/issues
 .. _Stack Overflow: https://stackoverflow.com/
 .. _oracle-bmcs: https://stackoverflow.com/questions/tagged/oracle-bmcs
 .. _oracle-bmcs-python-sdk: https://stackoverflow.com/questions/tagged/oracle-bmcs-python-sdk
