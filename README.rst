@@ -31,7 +31,7 @@ This is the Python SDK for Oracle Bare Metal Cloud Services. Python 2.7+ and 3.5
 
 The project is open source and maintained by Oracle Corp. The home page for the project is `here`__.
 
-__ https://docs.us-phoenix-1.oraclecloud.com/tools/python/latest/index.html
+__ https://oracle-bare-metal-cloud-services-python-sdk.readthedocs.io/en/latest/index.html
 
 ============
 Installation
@@ -62,8 +62,8 @@ Full documentation, including prerequisites and installation and configuration i
 
 API reference can be found `here`__.
 
-__ https://docs.us-phoenix-1.oraclecloud.com/tools/python/latest/index.html
-__ https://docs.us-phoenix-1.oraclecloud.com/tools/python/latest/api/index.html
+__ https://oracle-bare-metal-cloud-services-python-sdk.readthedocs.io/en/latest/index.html
+__ https://oracle-bare-metal-cloud-services-python-sdk.readthedocs.io/en/latest/api/index.html
 
 ====
 Help
@@ -71,7 +71,7 @@ Help
 
 See the “Questions or Feedback?” section `here`__.
 
-__ https://docs.us-phoenix-1.oraclecloud.com/tools/python/latest/installation.html
+__ https://oracle-bare-metal-cloud-services-python-sdk.readthedocs.io/en/latest/installation.html#questions-or-feedback
 
 =======
 Changes
