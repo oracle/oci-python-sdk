@@ -29,7 +29,8 @@ Virtual Network
 ===============
 
 .. autoclass:: oraclebmc.core.virtual_network_client.VirtualNetworkClient
-
+    :members:
+       
 --------
  Models
 --------
