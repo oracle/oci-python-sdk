@@ -2,6 +2,7 @@
 # Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
 
 import datetime
+import functools
 import json
 import pytz
 import six
@@ -99,3 +100,14 @@ class Sentinel(object):
         return self.truthy
     # PY2 Compatibility
     __nonzero__ = __bool__
+
+def initkwargs(fn):
+    @functools.wraps(fn)
+    def init(self, **kwargs):
+        fn(self)
+        for kw, value in kwargs.items():
+            if kw not in self.swagger_types:
+                raise TypeError("%s doesn't have atribute %s" %(self.__class__, kw))
+            else:
+                setattr(self, kw, value)
+    return init

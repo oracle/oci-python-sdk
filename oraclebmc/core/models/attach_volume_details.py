@@ -2,11 +2,12 @@
 # Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
 
 
-from ...util import formatted_flat_dict
+from ...util import formatted_flat_dict, initkwargs
 
 
 class AttachVolumeDetails(object):
 
+    @initkwargs
     def __init__(self):
 
         self.swagger_types = {
