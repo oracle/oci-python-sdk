@@ -50,6 +50,7 @@ class BlockstorageClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
         :return: A Response object with data of type Volume
+        :rtype: Volume
         """
         resource_path = "/volumes"
         method = "POST"
@@ -95,6 +96,7 @@ class BlockstorageClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
         :return: A Response object with data of type VolumeBackup
+        :rtype: VolumeBackup
         """
         resource_path = "/volumeBackups"
         method = "POST"
@@ -137,6 +139,7 @@ class BlockstorageClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/volumes/{volumeId}"
         method = "DELETE"
@@ -180,6 +183,7 @@ class BlockstorageClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/volumeBackups/{volumeBackupId}"
         method = "DELETE"
@@ -219,6 +223,7 @@ class BlockstorageClient(object):
         :param str volume_id: (required)
             The OCID of the volume.
         :return: A Response object with data of type Volume
+        :rtype: Volume
         """
         resource_path = "/volumes/{volumeId}"
         method = "GET"
@@ -252,6 +257,7 @@ class BlockstorageClient(object):
         :param str volume_backup_id: (required)
             The OCID of the volume backup.
         :return: A Response object with data of type VolumeBackup
+        :rtype: VolumeBackup
         """
         resource_path = "/volumeBackups/{volumeBackupId}"
         method = "GET"
@@ -292,6 +298,7 @@ class BlockstorageClient(object):
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
         :return: A Response object with data of type list[VolumeBackup]
+        :rtype: list[VolumeBackup]
         """
         resource_path = "/volumeBackups"
         method = "GET"
@@ -343,6 +350,7 @@ class BlockstorageClient(object):
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
         :return: A Response object with data of type list[Volume]
+        :rtype: list[Volume]
         """
         resource_path = "/volumes"
         method = "GET"
@@ -385,13 +393,14 @@ class BlockstorageClient(object):
 
         :param str volume_id: (required)
             The OCID of the volume.
-                :param UpdateVolumeDetails update_volume_details: (required)
+        :param UpdateVolumeDetails update_volume_details: (required)
             Update volume's display name.
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
         :return: A Response object with data of type Volume
+        :rtype: Volume
         """
         resource_path = "/volumes/{volumeId}"
         method = "PUT"
@@ -432,13 +441,14 @@ class BlockstorageClient(object):
 
         :param str volume_backup_id: (required)
             The OCID of the volume backup.
-                :param UpdateVolumeBackupDetails update_volume_backup_details: (required)
+        :param UpdateVolumeBackupDetails update_volume_backup_details: (required)
             Update volume backup fields
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
         :return: A Response object with data of type VolumeBackup
+        :rtype: VolumeBackup
         """
         resource_path = "/volumeBackups/{volumeBackupId}"
         method = "PUT"

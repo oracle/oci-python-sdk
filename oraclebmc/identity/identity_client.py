@@ -42,6 +42,7 @@ class IdentityClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
         :return: A Response object with data of type UserGroupMembership
+        :rtype: UserGroupMembership
         """
         resource_path = "/userGroupMemberships/"
         method = "POST"
@@ -96,6 +97,7 @@ class IdentityClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
         :return: A Response object with data of type Compartment
+        :rtype: Compartment
         """
         resource_path = "/compartments/"
         method = "POST"
@@ -152,6 +154,7 @@ class IdentityClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
         :return: A Response object with data of type Group
+        :rtype: Group
         """
         resource_path = "/groups/"
         method = "POST"
@@ -201,6 +204,7 @@ class IdentityClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
         :return: A Response object with data of type UIPassword
+        :rtype: UIPassword
         """
         resource_path = "/users/{userId}/uiPassword"
         method = "POST"
@@ -258,6 +262,7 @@ class IdentityClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
         :return: A Response object with data of type Policy
+        :rtype: Policy
         """
         resource_path = "/policies/"
         method = "POST"
@@ -299,7 +304,7 @@ class IdentityClient(object):
 
         :param CreateSwiftPasswordDetails create_swift_password_details: (required)
             Request object for creating a new swift password.
-                :param str user_id: (required)
+        :param str user_id: (required)
             The OCID of the user.
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -308,6 +313,7 @@ class IdentityClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
         :return: A Response object with data of type SwiftPassword
+        :rtype: SwiftPassword
         """
         resource_path = "/users/{userId}/swiftPasswords/"
         method = "POST"
@@ -383,6 +389,7 @@ class IdentityClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
         :return: A Response object with data of type User
+        :rtype: User
         """
         resource_path = "/users/"
         method = "POST"
@@ -421,13 +428,14 @@ class IdentityClient(object):
 
         :param str user_id: (required)
             The OCID of the user.
-                :param str fingerprint: (required)
+        :param str fingerprint: (required)
             The key's fingerprint.
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/users/{userId}/apiKeys/{fingerprint}"
         method = "DELETE"
@@ -472,6 +480,7 @@ class IdentityClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/groups/{groupId}"
         method = "DELETE"
@@ -515,6 +524,7 @@ class IdentityClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/policies/{policyId}"
         method = "DELETE"
@@ -553,13 +563,14 @@ class IdentityClient(object):
 
         :param str user_id: (required)
             The OCID of the user.
-                :param str swift_password_id: (required)
+        :param str swift_password_id: (required)
             The OCID of the Swift password.
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/users/{userId}/swiftPasswords/{swiftPasswordId}"
         method = "DELETE"
@@ -604,6 +615,7 @@ class IdentityClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/users/{userId}"
         method = "DELETE"
@@ -649,6 +661,7 @@ class IdentityClient(object):
         :param str compartment_id: (required)
             The OCID of the compartment.
         :return: A Response object with data of type Compartment
+        :rtype: Compartment
         """
         resource_path = "/compartments/{compartmentId}"
         method = "GET"
@@ -685,6 +698,7 @@ class IdentityClient(object):
         :param str group_id: (required)
             The OCID of the group.
         :return: A Response object with data of type Group
+        :rtype: Group
         """
         resource_path = "/groups/{groupId}"
         method = "GET"
@@ -718,6 +732,7 @@ class IdentityClient(object):
         :param str policy_id: (required)
             The OCID of the policy.
         :return: A Response object with data of type Policy
+        :rtype: Policy
         """
         resource_path = "/policies/{policyId}"
         method = "GET"
@@ -751,6 +766,7 @@ class IdentityClient(object):
         :param str user_id: (required)
             The OCID of the user.
         :return: A Response object with data of type User
+        :rtype: User
         """
         resource_path = "/users/{userId}"
         method = "GET"
@@ -784,6 +800,7 @@ class IdentityClient(object):
         :param str user_group_membership_id: (required)
             The OCID of the userGroupMembership.
         :return: A Response object with data of type UserGroupMembership
+        :rtype: UserGroupMembership
         """
         resource_path = "/userGroupMemberships/{userGroupMembershipId}"
         method = "GET"
@@ -819,6 +836,7 @@ class IdentityClient(object):
         :param str user_id: (required)
             The OCID of the user.
         :return: A Response object with data of type list[ApiKey]
+        :rtype: list[ApiKey]
         """
         resource_path = "/users/{userId}/apiKeys/"
         method = "GET"
@@ -854,6 +872,7 @@ class IdentityClient(object):
         :param str compartment_id: (required)
             The OCID of the compartment (remember that the tenancy is simply the root compartment).
         :return: A Response object with data of type list[AvailabilityDomain]
+        :rtype: list[AvailabilityDomain]
         """
         resource_path = "/availabilityDomains/"
         method = "GET"
@@ -896,6 +915,7 @@ class IdentityClient(object):
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
         :return: A Response object with data of type list[Compartment]
+        :rtype: list[Compartment]
         """
         resource_path = "/compartments/"
         method = "GET"
@@ -943,6 +963,7 @@ class IdentityClient(object):
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
         :return: A Response object with data of type list[Group]
+        :rtype: list[Group]
         """
         resource_path = "/groups/"
         method = "GET"
@@ -991,6 +1012,7 @@ class IdentityClient(object):
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
         :return: A Response object with data of type list[Policy]
+        :rtype: list[Policy]
         """
         resource_path = "/policies/"
         method = "GET"
@@ -1033,6 +1055,7 @@ class IdentityClient(object):
         :param str user_id: (required)
             The OCID of the user.
         :return: A Response object with data of type list[SwiftPassword]
+        :rtype: list[SwiftPassword]
         """
         resource_path = "/users/{userId}/swiftPasswords/"
         method = "GET"
@@ -1084,6 +1107,7 @@ class IdentityClient(object):
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
         :return: A Response object with data of type list[UserGroupMembership]
+        :rtype: list[UserGroupMembership]
         """
         resource_path = "/userGroupMemberships/"
         method = "GET"
@@ -1135,6 +1159,7 @@ class IdentityClient(object):
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
         :return: A Response object with data of type list[User]
+        :rtype: list[User]
         """
         resource_path = "/users/"
         method = "GET"
@@ -1180,6 +1205,7 @@ class IdentityClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/userGroupMemberships/{userGroupMembershipId}"
         method = "DELETE"
@@ -1218,13 +1244,14 @@ class IdentityClient(object):
 
         :param str compartment_id: (required)
             The OCID of the compartment.
-                :param UpdateCompartmentDetails update_compartment_details: (required)
+        :param UpdateCompartmentDetails update_compartment_details: (required)
             Request object for updating a compartment.
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
         :return: A Response object with data of type Compartment
+        :rtype: Compartment
         """
         resource_path = "/compartments/{compartmentId}"
         method = "PUT"
@@ -1265,13 +1292,14 @@ class IdentityClient(object):
 
         :param str group_id: (required)
             The OCID of the group.
-                :param UpdateGroupDetails update_group_details: (required)
+        :param UpdateGroupDetails update_group_details: (required)
             Request object for updating a group.
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
         :return: A Response object with data of type Group
+        :rtype: Group
         """
         resource_path = "/groups/{groupId}"
         method = "PUT"
@@ -1313,13 +1341,14 @@ class IdentityClient(object):
 
         :param str policy_id: (required)
             The OCID of the policy.
-                :param UpdatePolicyDetails update_policy_details: (required)
+        :param UpdatePolicyDetails update_policy_details: (required)
             Request object for updating a policy.
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
         :return: A Response object with data of type Policy
+        :rtype: Policy
         """
         resource_path = "/policies/{policyId}"
         method = "PUT"
@@ -1360,15 +1389,16 @@ class IdentityClient(object):
 
         :param str user_id: (required)
             The OCID of the user.
-                :param str swift_password_id: (required)
+        :param str swift_password_id: (required)
             The OCID of the Swift password.
-                :param UpdateSwiftPasswordDetails update_swift_password_details: (required)
+        :param UpdateSwiftPasswordDetails update_swift_password_details: (required)
             Request object for updating a Swift password.
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
         :return: A Response object with data of type SwiftPassword
+        :rtype: SwiftPassword
         """
         resource_path = "/users/{userId}/swiftPasswords/{swiftPasswordId}"
         method = "PUT"
@@ -1410,13 +1440,14 @@ class IdentityClient(object):
 
         :param str user_id: (required)
             The OCID of the user.
-                :param UpdateUserDetails update_user_details: (required)
+        :param UpdateUserDetails update_user_details: (required)
             Request object for updating a user.
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
         :return: A Response object with data of type User
+        :rtype: User
         """
         resource_path = "/users/{userId}"
         method = "PUT"
@@ -1457,13 +1488,14 @@ class IdentityClient(object):
 
         :param str user_id: (required)
             The OCID of the user.
-                :param UpdateStateDetails update_state_details: (required)
+        :param UpdateStateDetails update_state_details: (required)
             Request object for updating a user state.
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
         :return: A Response object with data of type User
+        :rtype: User
         """
         resource_path = "/users/{userId}/state/"
         method = "PUT"
@@ -1515,7 +1547,7 @@ class IdentityClient(object):
 
         :param str user_id: (required)
             The OCID of the user.
-                :param CreateApiKeyDetails create_api_key_details: (required)
+        :param CreateApiKeyDetails create_api_key_details: (required)
             Request object for uploading an API key for a user.
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -1524,6 +1556,7 @@ class IdentityClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
         :return: A Response object with data of type ApiKey
+        :rtype: ApiKey
         """
         resource_path = "/users/{userId}/apiKeys/"
         method = "POST"

@@ -40,6 +40,7 @@ class ComputeClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
         :return: A Response object with data of type VolumeAttachment
+        :rtype: VolumeAttachment
         """
         resource_path = "/volumeAttachments/"
         method = "POST"
@@ -95,6 +96,7 @@ class ComputeClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
         :return: A Response object with data of type ConsoleHistory
+        :rtype: ConsoleHistory
         """
         resource_path = "/instanceConsoleHistories/"
         method = "POST"
@@ -141,6 +143,7 @@ class ComputeClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
         :return: A Response object with data of type Image
+        :rtype: Image
         """
         resource_path = "/images/"
         method = "POST"
@@ -180,6 +183,7 @@ class ComputeClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/instanceConsoleHistories/{instanceConsoleHistoryId}"
         method = "DELETE"
@@ -223,6 +227,7 @@ class ComputeClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/images/{imageId}"
         method = "DELETE"
@@ -268,6 +273,7 @@ class ComputeClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/volumeAttachments/{volumeAttachmentId}"
         method = "DELETE"
@@ -309,6 +315,7 @@ class ComputeClient(object):
         :param str instance_console_history_id: (required)
             The OCID of the console history.
         :return: A Response object with data of type ConsoleHistory
+        :rtype: ConsoleHistory
         """
         resource_path = "/instanceConsoleHistories/{instanceConsoleHistoryId}"
         method = "GET"
@@ -348,6 +355,7 @@ class ComputeClient(object):
         :param int length: (optional)
             Length of the snapshot data to retrieve.
         :return: A Response object with data of type bytes
+        :rtype: bytes
         """
         resource_path = "/instanceConsoleHistories/{instanceConsoleHistoryId}/data"
         method = "GET"
@@ -394,6 +402,7 @@ class ComputeClient(object):
         :param str image_id: (required)
             The OCID of the image.
         :return: A Response object with data of type Image
+        :rtype: Image
         """
         resource_path = "/images/{imageId}"
         method = "GET"
@@ -427,6 +436,7 @@ class ComputeClient(object):
         :param str instance_id: (required)
             The OCID of the instance.
         :return: A Response object with data of type Instance
+        :rtype: Instance
         """
         resource_path = "/instances/{instanceId}"
         method = "GET"
@@ -460,6 +470,7 @@ class ComputeClient(object):
         :param str volume_attachment_id: (required)
             The OCID of the volume attachment.
         :return: A Response object with data of type VolumeAttachment
+        :rtype: VolumeAttachment
         """
         resource_path = "/volumeAttachments/{volumeAttachmentId}"
         method = "GET"
@@ -502,7 +513,7 @@ class ComputeClient(object):
 
         :param str instance_id: (required)
             The OCID of the instance.
-                :param str action: (required)
+        :param str action: (required)
             The action to perform on the instance.
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -515,6 +526,7 @@ class ComputeClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
         :return: A Response object with data of type Instance
+        :rtype: Instance
         """
         resource_path = "/instances/{instanceId}"
         method = "POST"
@@ -593,6 +605,7 @@ class ComputeClient(object):
         :param str opc_vnic_id: (optional)
             For Oracle internal use only.
         :return: A Response object with data of type Instance
+        :rtype: Instance
         """
         resource_path = "/instances/"
         method = "POST"
@@ -649,6 +662,7 @@ class ComputeClient(object):
         :param str instance_id: (optional)
             The OCID of the instance.
         :return: A Response object with data of type list[ConsoleHistory]
+        :rtype: list[ConsoleHistory]
         """
         resource_path = "/instanceConsoleHistories/"
         method = "GET"
@@ -710,6 +724,7 @@ class ComputeClient(object):
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
         :return: A Response object with data of type list[Image]
+        :rtype: list[Image]
         """
         resource_path = "/images/"
         method = "GET"
@@ -770,6 +785,7 @@ class ComputeClient(object):
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
         :return: A Response object with data of type list[Instance]
+        :rtype: list[Instance]
         """
         resource_path = "/instances/"
         method = "GET"
@@ -826,6 +842,7 @@ class ComputeClient(object):
         :param str image_id: (optional)
             The OCID of an image.
         :return: A Response object with data of type list[Shape]
+        :rtype: list[Shape]
         """
         resource_path = "/shapes"
         method = "GET"
@@ -884,6 +901,7 @@ class ComputeClient(object):
         :param str vnic_id: (optional)
             The OCID of the VNIC.
         :return: A Response object with data of type list[VnicAttachment]
+        :rtype: list[VnicAttachment]
         """
         resource_path = "/vnicAttachments/"
         method = "GET"
@@ -945,6 +963,7 @@ class ComputeClient(object):
         :param str volume_id: (optional)
             The OCID of the volume.
         :return: A Response object with data of type list[VolumeAttachment]
+        :rtype: list[VolumeAttachment]
         """
         resource_path = "/volumeAttachments/"
         method = "GET"
@@ -999,6 +1018,7 @@ class ComputeClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/instances/{instanceId}"
         method = "DELETE"
@@ -1037,7 +1057,7 @@ class ComputeClient(object):
 
         :param str image_id: (required)
             The OCID of the image.
-                :param UpdateImageDetails update_image_details: (required)
+        :param UpdateImageDetails update_image_details: (required)
             Updates the image display name field.
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -1050,6 +1070,7 @@ class ComputeClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
         :return: A Response object with data of type Image
+        :rtype: Image
         """
         resource_path = "/images/{imageId}"
         method = "PUT"
@@ -1093,7 +1114,7 @@ class ComputeClient(object):
 
         :param str instance_id: (required)
             The OCID of the instance.
-                :param UpdateInstanceDetails update_instance_details: (required)
+        :param UpdateInstanceDetails update_instance_details: (required)
             Update instance fields
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -1106,6 +1127,7 @@ class ComputeClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
         :return: A Response object with data of type Instance
+        :rtype: Instance
         """
         resource_path = "/instances/{instanceId}"
         method = "PUT"

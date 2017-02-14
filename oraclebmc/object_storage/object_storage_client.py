@@ -36,11 +36,12 @@ class ObjectStorageClient(object):
 
         :param str namespace_name: (required)
             The top-level namespace used for the request.
-                :param CreateBucketDetails create_bucket_details: (required)
+        :param CreateBucketDetails create_bucket_details: (required)
             Request object for creating a bucket.
         :param str opc_client_request_id: (optional)
             The client request ID for tracing
         :return: A Response object with data of type Bucket
+        :rtype: Bucket
         """
         resource_path = "/n/{namespaceName}/b/"
         method = "POST"
@@ -81,7 +82,7 @@ class ObjectStorageClient(object):
 
         :param str namespace_name: (required)
             The top-level namespace used for the request.
-                :param str bucket_name: (required)
+        :param str bucket_name: (required)
             The name of the bucket.
             Example: `my-new-bucket1`
         :param str if_match: (optional)
@@ -89,6 +90,7 @@ class ObjectStorageClient(object):
         :param str opc_client_request_id: (optional)
             The client request ID for tracing
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/"
         method = "DELETE"
@@ -130,10 +132,10 @@ class ObjectStorageClient(object):
 
         :param str namespace_name: (required)
             The top-level namespace used for the request.
-                :param str bucket_name: (required)
+        :param str bucket_name: (required)
             The name of the bucket.
             Example: `my-new-bucket1`
-                :param str object_name: (required)
+        :param str object_name: (required)
             The name of the object.
             Example: `test/test1`
         :param str if_match: (optional)
@@ -141,6 +143,7 @@ class ObjectStorageClient(object):
         :param str opc_client_request_id: (optional)
             The client request ID for tracing
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/o/{objectName}"
         method = "DELETE"
@@ -183,7 +186,7 @@ class ObjectStorageClient(object):
 
         :param str namespace_name: (required)
             The top-level namespace used for the request.
-                :param str bucket_name: (required)
+        :param str bucket_name: (required)
             The name of the bucket.
             Example: `my-new-bucket1`
         :param str if_match: (optional)
@@ -193,6 +196,7 @@ class ObjectStorageClient(object):
         :param str opc_client_request_id: (optional)
             The client request ID for tracing
         :return: A Response object with data of type Bucket
+        :rtype: Bucket
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/"
         method = "GET"
@@ -236,9 +240,10 @@ class ObjectStorageClient(object):
         Get the name of the namespace for the user making the request. An account name must be unique, must start with a
         letter, and can have up to 15 lower case letters and numbers. You cannot use spaces and special characters.
 
-:param str opc_client_request_id: (optional)
+        :param str opc_client_request_id: (optional)
             The client request ID for tracing
         :return: A Response object with data of type str
+        :rtype: str
         """
         resource_path = "/n/"
         method = "GET"
@@ -272,10 +277,10 @@ class ObjectStorageClient(object):
 
         :param str namespace_name: (required)
             The top-level namespace used for the request.
-                :param str bucket_name: (required)
+        :param str bucket_name: (required)
             The name of the bucket.
             Example: `my-new-bucket1`
-                :param str object_name: (required)
+        :param str object_name: (required)
             The name of the object.
             Example: `test/test1`
         :param str if_match: (optional)
@@ -288,6 +293,7 @@ class ObjectStorageClient(object):
             Optional byte range to fetch. Follows https://tools.ietf.org/html/rfc7233#section-2.1.
             Note, only one byte range is supported.
         :return: A Response object with data of type stream
+        :rtype: stream
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/o/{objectName}"
         method = "GET"
@@ -335,7 +341,7 @@ class ObjectStorageClient(object):
 
         :param str namespace_name: (required)
             The top-level namespace used for the request.
-                :param str bucket_name: (required)
+        :param str bucket_name: (required)
             The name of the bucket.
             Example: `my-new-bucket1`
         :param str if_match: (optional)
@@ -345,6 +351,7 @@ class ObjectStorageClient(object):
         :param str opc_client_request_id: (optional)
             The client request ID for tracing
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/"
         method = "HEAD"
@@ -388,10 +395,10 @@ class ObjectStorageClient(object):
 
         :param str namespace_name: (required)
             The top-level namespace used for the request.
-                :param str bucket_name: (required)
+        :param str bucket_name: (required)
             The name of the bucket.
             Example: `my-new-bucket1`
-                :param str object_name: (required)
+        :param str object_name: (required)
             The name of the object.
             Example: `test/test1`
         :param str if_match: (optional)
@@ -401,6 +408,7 @@ class ObjectStorageClient(object):
         :param str opc_client_request_id: (optional)
             The client request ID for tracing
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/o/{objectName}"
         method = "HEAD"
@@ -449,7 +457,7 @@ class ObjectStorageClient(object):
 
         :param str namespace_name: (required)
             The top-level namespace used for the request.
-                :param str compartment_id: (required)
+        :param str compartment_id: (required)
             The compartment ID in which to create the bucket.
         :param int limit: (optional)
             The maximum number of items to return.
@@ -458,6 +466,7 @@ class ObjectStorageClient(object):
         :param str opc_client_request_id: (optional)
             The client request ID for tracing
         :return: A Response object with data of type list[BucketSummary]
+        :rtype: list[BucketSummary]
         """
         resource_path = "/n/{namespaceName}/b/"
         method = "GET"
@@ -510,7 +519,7 @@ class ObjectStorageClient(object):
 
         :param str namespace_name: (required)
             The top-level namespace used for the request.
-                :param str bucket_name: (required)
+        :param str bucket_name: (required)
             The name of the bucket.
             Example: `my-new-bucket1`
         :param str prefix: (optional)
@@ -535,6 +544,7 @@ class ObjectStorageClient(object):
         :param str opc_client_request_id: (optional)
             The client request ID for tracing
         :return: A Response object with data of type ListObjects
+        :rtype: ListObjects
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/o"
         method = "GET"
@@ -595,13 +605,13 @@ class ObjectStorageClient(object):
 
         :param str namespace_name: (required)
             The top-level namespace used for the request.
-                :param str bucket_name: (required)
+        :param str bucket_name: (required)
             The name of the bucket.
             Example: `my-new-bucket1`
-                :param str object_name: (required)
+        :param str object_name: (required)
             The name of the object.
             Example: `test/test1`
-                :param stream put_object_body: (required)
+        :param stream put_object_body: (required)
             The object being put to the object store.
         :param int content_length: (optional)
             The content length of the body.
@@ -624,6 +634,7 @@ class ObjectStorageClient(object):
         :param dict(str, str) opc_meta: (optional)
             Optional user-defined metadata key and value.
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/o/{objectName}"
         method = "PUT"
@@ -689,16 +700,17 @@ class ObjectStorageClient(object):
 
         :param str namespace_name: (required)
             The top-level namespace used for the request.
-                :param str bucket_name: (required)
+        :param str bucket_name: (required)
             The name of the bucket.
             Example: `my-new-bucket1`
-                :param UpdateBucketDetails update_bucket_details: (required)
+        :param UpdateBucketDetails update_bucket_details: (required)
             Request object for updating a bucket.
         :param str if_match: (optional)
             The entity tag to match.
         :param str opc_client_request_id: (optional)
             The client request ID for tracing
         :return: A Response object with data of type Bucket
+        :rtype: Bucket
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/"
         method = "POST"

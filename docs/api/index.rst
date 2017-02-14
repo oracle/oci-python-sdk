@@ -36,6 +36,7 @@ Virtual Network
 
 .. automodule:: oraclebmc.core.models
     :members:
+    :undoc-members:
     :imported-members:
 
 ==========
