@@ -56,7 +56,7 @@ def load_private_key(secret, pass_phrase):
         #    another profile uses a key file without a pass_phrase.
         if pass_phrase is None:
             # 1.1) private key needed a pass_phrase and we don't have one
-            raise MissingPrivateKeyPassphrase()
+            raise MissingPrivateKeyPassphrase("The provided key requires a passphrase.")
         else:
             # 1.2) try again without pass_phrase; could be an artifact from DEFAULT
             return serialization.load_pem_private_key(secret, None, backend=backend)

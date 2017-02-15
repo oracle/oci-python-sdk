@@ -83,19 +83,19 @@ def test_load_unencrypted_private_key_with_password(private_key):
     assert loaded_key.private_numbers() == private_key.private_numbers()
 
 
-@pytest.mark.parametrize("actual, provided", [("hunter2", None), ("hunter2", "secret")])
-def test_load_private_key_wrong_password(private_key, actual, provided):
+def test_load_private_key_wrong_password(private_key):
     """Wrong password or omitted"""
-    secret = serialize_key(private_key=private_key, password=actual)
+    secret = serialize_key(private_key=private_key, password="correctpassphrase")
     with pytest.raises(InvalidPrivateKey) as excinfo:
-        load_private_key(secret, provided)
+        load_private_key(secret, "incorrectpassphrase")
+    assert "provided passphrase is incorrect" in str(excinfo)
 
-    # Since MissingPrivateKeyPassphrase derives from InvalidPrivateKey, pytest.raises(InvalidPrivateKey)
-    # will pass for both. So, add more specif checks on type.
-    if provided is None:
-        assert(isinstance(excinfo.value, MissingPrivateKeyPassphrase))
-    else:
-        assert (not isinstance(excinfo.value, MissingPrivateKeyPassphrase))
+
+def test_load_private_key_missing_password(private_key):
+    """Wrong password or omitted"""
+    secret = serialize_key(private_key=private_key, password="correctpassphrase")
+    with pytest.raises(MissingPrivateKeyPassphrase):
+        load_private_key(secret, None)
 
 
 @pytest.mark.parametrize("encoding", ["pem", "der"])
