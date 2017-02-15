@@ -51,6 +51,10 @@ class InvalidPrivateKey(ClientError):
     """The provided key is not a private key, or the provided passphrase is incorrect."""
 
 
+class MissingPrivateKeyPassphrase(InvalidPrivateKey):
+    """The provided key requires a passphrase."""
+
+
 class ProfileNotFound(ClientError):
     """The specified profile was not found in the config file."""
 

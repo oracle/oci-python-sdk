@@ -40,11 +40,11 @@ The Python SDK supports operations for the following services:
  Downloading and Installing the SDK
 ====================================
 
-You can install using a GitHub download or by using the Python Package Index (PyPI).
+You can install the Python SDK from GitHub or through the Python Package Index (PyPI).
 
-To install using the SDK download:
+To install from GitHub:
 
-1. Download the SDK from `GitHub`__. 
+1. Download the SDK from `GitHub <https://github.com/oracle/bmcs-python-sdk/releases>`_. 
    The download is a zip containing a whl file and documentation.
 2. Extract the files from the zip.
 3. Use the following command to install the SDK::
@@ -56,10 +56,9 @@ To install using the SDK download:
       If you're unable to install the whl file, make sure pip is up to date.
       Use ``pip install -U pip`` and then try to install the whl file again.
 
-To install from the `Python Package Index <https://pypi/python.org/pypi/oraclebmc/1.1.0>`_
-:
-
-   Use the following command::
+To install from `PyPI <https://pypi.python.org/pypi/oraclebmc>`_:
+  
+    Use the following command::
 
       pip install oraclebmc
 
