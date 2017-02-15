@@ -5,7 +5,7 @@ import pytest
 import os
 import tempfile
 from requests import Request
-from oraclebmc.exceptions import InvalidPrivateKey
+from oraclebmc.exceptions import InvalidPrivateKey, MissingPrivateKeyPassphrase
 from oraclebmc.signer import load_private_key, load_private_key_from_file, inject_missing_headers, Signer
 from .utils import generate_key, serialize_key, verify_signature
 
@@ -87,8 +87,15 @@ def test_load_unencrypted_private_key_with_password(private_key):
 def test_load_private_key_wrong_password(private_key, actual, provided):
     """Wrong password or omitted"""
     secret = serialize_key(private_key=private_key, password=actual)
-    with pytest.raises(InvalidPrivateKey):
+    with pytest.raises(InvalidPrivateKey) as excinfo:
         load_private_key(secret, provided)
+
+    # Since MissingPrivateKeyPassphrase derives from InvalidPrivateKey, pytest.raises(InvalidPrivateKey)
+    # will pass for both. So, add more specif checks on type.
+    if provided is None:
+        assert(isinstance(excinfo.value, MissingPrivateKeyPassphrase))
+    else:
+        assert (not isinstance(excinfo.value, MissingPrivateKeyPassphrase))
 
 
 @pytest.mark.parametrize("encoding", ["pem", "der"])

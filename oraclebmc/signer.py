@@ -12,7 +12,7 @@ import httpsig_cffi.utils
 import requests.auth
 import six
 
-from .exceptions import InvalidPrivateKey
+from .exceptions import InvalidPrivateKey, MissingPrivateKeyPassphrase
 
 from cryptography.exceptions import UnsupportedAlgorithm
 from cryptography.hazmat.backends import default_backend
@@ -56,7 +56,7 @@ def load_private_key(secret, pass_phrase):
         #    another profile uses a key file without a pass_phrase.
         if pass_phrase is None:
             # 1.1) private key needed a pass_phrase and we don't have one
-            raise InvalidPrivateKey("The provided private key requires a passphrase.")
+            raise MissingPrivateKeyPassphrase()
         else:
             # 1.2) try again without pass_phrase; could be an artifact from DEFAULT
             return serialization.load_pem_private_key(secret, None, backend=backend)
