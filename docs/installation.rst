@@ -10,7 +10,6 @@ The Python SDK supports operations for the following services:
 * Object Storage Service
 * Core Services (Networking Service, Compute Service, and Block Volume Service)
 
-
 ===============
  Prerequisites
 ===============
