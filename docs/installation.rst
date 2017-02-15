@@ -19,15 +19,15 @@ The Python SDK supports operations for the following services:
 * A user created in that account, in a group with a policy that grants the desired permissions.
   This can be a user for yourself, or another person/system that needs to call the API.
   For an example of how to set up a new user, group, compartment, and policy, see
-  `Adding Users`_ in the Getting Started Guide. For a list of other typical
-  Oracle Bare Metal Cloud Services policies, see `Common Policies`_ in the User Guide.
+  `Adding Users`_ in the Getting Started Guide. For a list of other typical
+  Oracle Bare Metal Cloud Services policies, see `Common Policies`_ in the User Guide.
 * Python version 2.7.5 or 3.5 or later, running on Mac, Windows, or Linux. 
 * The Python SDK uses the `cryptography.io`_ library, which has its own additional `build requirements`_.
 * The Python SDK requires `TLS 1.2`_, which versions of `openssl`_ before 1.0.1 do not provide.
   If your version of Python was built against an earlier version, you will need to install a new
   Python that links against a newer version.
 * A keypair used for signing API requests, with the public key uploaded to Oracle. Only the user calling
-  the API should be in possession of the private key. See Configuring the SDK below.
+  the API should be in possession of the private key. See Configuring the SDK below.
 
 .. _Adding Users: https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Tasks/addingusers.htm
 .. _Common Policies: https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/commonpolicies.htm
@@ -41,12 +41,35 @@ The Python SDK supports operations for the following services:
  Downloading and Installing the SDK
 ====================================
 
-1. Download the SDK from `SDKs and Other Tools`_.
-   The download is a zip containing a whl file and documentation.
+You can install using a GitHub download or by using the Python Package Index (PyPI).
 
-2.  (Optional) Oracle recommends that you run the SDK in a virtual environment with virtualenv.
+To install using the SDK download:
+
+1. Download the SDK from `GitHub`__. 
+   The download is a zip containing a whl file and documentation.
+2. Extract the files from the zip.
+3. Use the following command to install the SDK::
+
+      pip install oraclebmc-*-py2.py3-none-any.whl
+
+  .. note::
+
+      If you're unable to install the whl file, make sure pip is up to date.
+      Use ``pip install -U pip`` and then try to install the whl file again.
+
+To install from the `Python Package Index <https://pypi/python.org/pypi/oraclebmc/1.1.0>`_
+:
+
+   Use the following command::
+
+      pip install oraclebmc
+
+
+(Optional) 
+Oracle recommends that you run the SDK in a virtual environment with virtualenv.
+
     With Linux, it's usually in a separate package from the main Python package.
-    If you need to install virtualenv, use pip install virtualenv.
+    If you need to install virtualenv, use pip install virtualenv.
     To create and activate a virtual environment::
 
         virtualenv <environment name>
@@ -57,23 +80,14 @@ The Python SDK supports operations for the following services:
         virtualenv bmcs_sdk_env
         . bmcs_sdk_env/bin/activate
 
-3.  Install the Python SDK using the following command::
 
-      pip install oraclebmc-*-py2.py3-none-any.whl
-
-  .. note::
-
-      If you're unable to install the whl file, make sure pip is up to date.
-      Use ``pip install -U pip`` and then try to install the whl file again.
-
-.. _SDKs and Other Tools: https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdks.htm
 
 =====================
  Configuring the SDK
 =====================
 
 Before using the SDK, you must set up your config file with the required credentials.
-For instructions, see `SDK and Tool Configuration`_ in the User Guide.
+For instructions, see `SDK and Tool Configuration`_ in the User Guide.
 
 .. _SDK and Tool Configuration: https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdkconfig.htm
 
@@ -118,7 +132,7 @@ You might encounter issues when installing Python or the SDK, or using the SDK i
 ----------------------------
  Troubleshooting OEL Issues
 ----------------------------
-On OEL 7.3, if you encounter permission issues when running pip install, you might need to use ``sudo``.
+On OEL 7.3, if you encounter permission issues when running pip install, you might need to use ``sudo``.
 
 ----------------------------
  Troubleshooting Mac Issues
@@ -176,21 +190,20 @@ reinstalling Python above. Make sure to also reinstall the wheel with this comma
 
     pip install oraclebmc-*-py2.py3-none-any.whl
 
-========================
- Questions or Feedback?
-========================
+================
+ Contributions
+================
 
-Ways to get in touch:
+Got a fix for a bug, or a new feature you'd like to contribute? The SDK is open source and accepting pull requests on `GitHub`__.
 
-*  `Stack Overflow`_: Please use the `oracle-bmcs`_ and `oracle-bmcs-python-sdk`_ tags in your post
+__ https://github.com/oracle/bmcs-python-sdk
 
-*  `Developer Tools section`_ of the Oracle Cloud forums
+================
+ Notifications
+================
 
-*  `My Oracle Support`_
+To be notified when a new version of the Python SDK is released, subscribe to the `Atom feed`_.
 
-.. _Stack Overflow: https://stackoverflow.com/
-.. _oracle-bmcs: https://stackoverflow.com/questions/tagged/oracle-bmcs
-.. _oracle-bmcs-python-sdk: https://stackoverflow.com/questions/tagged/oracle-bmcs-python-sdk
-.. _Developer Tools section: https://community.oracle.com/community/cloud_computing/bare-metal/content?filterID=contentstatus[published]~category[developer-tools]
-.. _My Oracle Support: https://support.oracle.com/
+.. _Atom feed: https://github.com/oracle/bmcs-python-sdk/releases.atom
+
 

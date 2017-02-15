@@ -36,3 +36,4 @@ To get started, head over to the :ref:`installation instructions <install>` or s
     quickstart
     api/index
     license
+    feedback
