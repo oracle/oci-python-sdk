@@ -24,7 +24,9 @@ class UpdateInstanceDetails(object):
         """
         Gets the display_name of this UpdateInstanceDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
+
         Example: `My bare metal instance`
+
 
         :return: The display_name of this UpdateInstanceDetails.
         :rtype: str
@@ -36,7 +38,9 @@ class UpdateInstanceDetails(object):
         """
         Sets the display_name of this UpdateInstanceDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
+
         Example: `My bare metal instance`
+
 
         :param display_name: The display_name of this UpdateInstanceDetails.
         :type: str

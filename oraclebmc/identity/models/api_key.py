@@ -44,6 +44,7 @@ class ApiKey(object):
         An Oracle-assigned identifier for the key, in this format:
         TENANCY_OCID/USER_OCID/KEY_FINGERPRINT.
 
+
         :return: The key_id of this ApiKey.
         :rtype: str
         """
@@ -56,6 +57,7 @@ class ApiKey(object):
         An Oracle-assigned identifier for the key, in this format:
         TENANCY_OCID/USER_OCID/KEY_FINGERPRINT.
 
+
         :param key_id: The key_id of this ApiKey.
         :type: str
         """
@@ -66,6 +68,7 @@ class ApiKey(object):
         """
         Gets the key_value of this ApiKey.
         The key's value.
+
 
         :return: The key_value of this ApiKey.
         :rtype: str
@@ -78,6 +81,7 @@ class ApiKey(object):
         Sets the key_value of this ApiKey.
         The key's value.
 
+
         :param key_value: The key_value of this ApiKey.
         :type: str
         """
@@ -88,6 +92,7 @@ class ApiKey(object):
         """
         Gets the fingerprint of this ApiKey.
         The key's fingerprint (e.g., 12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef).
+
 
         :return: The fingerprint of this ApiKey.
         :rtype: str
@@ -100,6 +105,7 @@ class ApiKey(object):
         Sets the fingerprint of this ApiKey.
         The key's fingerprint (e.g., 12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef).
 
+
         :param fingerprint: The fingerprint of this ApiKey.
         :type: str
         """
@@ -110,6 +116,7 @@ class ApiKey(object):
         """
         Gets the user_id of this ApiKey.
         The OCID of the user the key belongs to.
+
 
         :return: The user_id of this ApiKey.
         :rtype: str
@@ -122,6 +129,7 @@ class ApiKey(object):
         Sets the user_id of this ApiKey.
         The OCID of the user the key belongs to.
 
+
         :param user_id: The user_id of this ApiKey.
         :type: str
         """
@@ -132,7 +140,9 @@ class ApiKey(object):
         """
         Gets the time_created of this ApiKey.
         Date and time the `ApiKey` object was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :return: The time_created of this ApiKey.
         :rtype: datetime
@@ -144,7 +154,9 @@ class ApiKey(object):
         """
         Sets the time_created of this ApiKey.
         Date and time the `ApiKey` object was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :param time_created: The time_created of this ApiKey.
         :type: datetime
@@ -158,6 +170,7 @@ class ApiKey(object):
         The API key's current state. After creating an `ApiKey` object, make sure its `lifecycleState` changes from
         CREATING to ACTIVE before using it.
 
+
         :return: The lifecycle_state of this ApiKey.
         :rtype: str
         """
@@ -169,6 +182,7 @@ class ApiKey(object):
         Sets the lifecycle_state of this ApiKey.
         The API key's current state. After creating an `ApiKey` object, make sure its `lifecycleState` changes from
         CREATING to ACTIVE before using it.
+
 
         :param lifecycle_state: The lifecycle_state of this ApiKey.
         :type: str
@@ -187,6 +201,7 @@ class ApiKey(object):
         Gets the inactive_status of this ApiKey.
         The detailed status of INACTIVE lifecycleState.
 
+
         :return: The inactive_status of this ApiKey.
         :rtype: int
         """
@@ -197,6 +212,7 @@ class ApiKey(object):
         """
         Sets the inactive_status of this ApiKey.
         The detailed status of INACTIVE lifecycleState.
+
 
         :param inactive_status: The inactive_status of this ApiKey.
         :type: int

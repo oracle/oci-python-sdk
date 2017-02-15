@@ -25,6 +25,7 @@ class UdpOptions(object):
         Gets the destination_port_range of this UdpOptions.
         A single destination port or a range.
 
+
         :return: The destination_port_range of this UdpOptions.
         :rtype: PortRange
         """
@@ -35,6 +36,7 @@ class UdpOptions(object):
         """
         Sets the destination_port_range of this UdpOptions.
         A single destination port or a range.
+
 
         :param destination_port_range: The destination_port_range of this UdpOptions.
         :type: PortRange

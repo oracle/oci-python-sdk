@@ -43,6 +43,7 @@ class Group(object):
         Gets the id of this Group.
         The OCID of the group.
 
+
         :return: The id of this Group.
         :rtype: str
         """
@@ -53,6 +54,7 @@ class Group(object):
         """
         Sets the id of this Group.
         The OCID of the group.
+
 
         :param id: The id of this Group.
         :type: str
@@ -65,6 +67,7 @@ class Group(object):
         Gets the compartment_id of this Group.
         The OCID of the tenancy containing the group.
 
+
         :return: The compartment_id of this Group.
         :rtype: str
         """
@@ -75,6 +78,7 @@ class Group(object):
         """
         Sets the compartment_id of this Group.
         The OCID of the tenancy containing the group.
+
 
         :param compartment_id: The compartment_id of this Group.
         :type: str
@@ -88,6 +92,7 @@ class Group(object):
         The name you assign to the group during creation. The name must be unique across all groups in
         the tenancy and cannot be changed.
 
+
         :return: The name of this Group.
         :rtype: str
         """
@@ -100,6 +105,7 @@ class Group(object):
         The name you assign to the group during creation. The name must be unique across all groups in
         the tenancy and cannot be changed.
 
+
         :param name: The name of this Group.
         :type: str
         """
@@ -110,6 +116,7 @@ class Group(object):
         """
         Gets the description of this Group.
         The description you assign to the group. Does not have to be unique, and it's changeable.
+
 
         :return: The description of this Group.
         :rtype: str
@@ -122,6 +129,7 @@ class Group(object):
         Sets the description of this Group.
         The description you assign to the group. Does not have to be unique, and it's changeable.
 
+
         :param description: The description of this Group.
         :type: str
         """
@@ -132,7 +140,9 @@ class Group(object):
         """
         Gets the time_created of this Group.
         Date and time the group was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :return: The time_created of this Group.
         :rtype: datetime
@@ -144,7 +154,9 @@ class Group(object):
         """
         Sets the time_created of this Group.
         Date and time the group was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :param time_created: The time_created of this Group.
         :type: datetime
@@ -158,6 +170,7 @@ class Group(object):
         The group's current state. After creating a group, make sure its `lifecycleState` changes from CREATING to
         ACTIVE before using it.
 
+
         :return: The lifecycle_state of this Group.
         :rtype: str
         """
@@ -169,6 +182,7 @@ class Group(object):
         Sets the lifecycle_state of this Group.
         The group's current state. After creating a group, make sure its `lifecycleState` changes from CREATING to
         ACTIVE before using it.
+
 
         :param lifecycle_state: The lifecycle_state of this Group.
         :type: str
@@ -187,6 +201,7 @@ class Group(object):
         Gets the inactive_status of this Group.
         The detailed status of INACTIVE lifecycleState.
 
+
         :return: The inactive_status of this Group.
         :rtype: int
         """
@@ -197,6 +212,7 @@ class Group(object):
         """
         Sets the inactive_status of this Group.
         The detailed status of INACTIVE lifecycleState.
+
 
         :param inactive_status: The inactive_status of this Group.
         :type: int

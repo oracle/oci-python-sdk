@@ -33,6 +33,7 @@ class DhcpDnsOption(DhcpOption):
         If you set `serverType` to `CustomDnsServer`, specify the IP address
         of at least one DNS server of your choice (three maximum).
 
+
         :return: The custom_dns_servers of this DhcpDnsOption.
         :rtype: list[str]
         """
@@ -44,6 +45,7 @@ class DhcpDnsOption(DhcpOption):
         Sets the custom_dns_servers of this DhcpDnsOption.
         If you set `serverType` to `CustomDnsServer`, specify the IP address
         of at least one DNS server of your choice (three maximum).
+
 
         :param custom_dns_servers: The custom_dns_servers of this DhcpDnsOption.
         :type: list[str]
@@ -61,6 +63,7 @@ class DhcpDnsOption(DhcpOption):
         value in the default set of DHCP options in the VCN.
         - *CustomDnsServer:* Instances use a DNS server of your choice (three maximum).
 
+
         :return: The server_type of this DhcpDnsOption.
         :rtype: str
         """
@@ -76,6 +79,7 @@ class DhcpDnsOption(DhcpOption):
         their IP addresses to communicate with each other. This is the default
         value in the default set of DHCP options in the VCN.
         - *CustomDnsServer:* Instances use a DNS server of your choice (three maximum).
+
 
         :param server_type: The server_type of this DhcpDnsOption.
         :type: str

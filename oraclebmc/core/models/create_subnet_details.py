@@ -45,7 +45,9 @@ class CreateSubnetDetails(object):
         """
         Gets the availability_domain of this CreateSubnetDetails.
         The Availability Domain to contain the subnet.
+
         Example: `Uocm:PHX-AD-1`
+
 
         :return: The availability_domain of this CreateSubnetDetails.
         :rtype: str
@@ -57,7 +59,9 @@ class CreateSubnetDetails(object):
         """
         Sets the availability_domain of this CreateSubnetDetails.
         The Availability Domain to contain the subnet.
+
         Example: `Uocm:PHX-AD-1`
+
 
         :param availability_domain: The availability_domain of this CreateSubnetDetails.
         :type: str
@@ -69,7 +73,9 @@ class CreateSubnetDetails(object):
         """
         Gets the cidr_block of this CreateSubnetDetails.
         The CIDR IP address range of the subnet.
+
         Example: `172.16.1.0/24`
+
 
         :return: The cidr_block of this CreateSubnetDetails.
         :rtype: str
@@ -81,7 +87,9 @@ class CreateSubnetDetails(object):
         """
         Sets the cidr_block of this CreateSubnetDetails.
         The CIDR IP address range of the subnet.
+
         Example: `172.16.1.0/24`
+
 
         :param cidr_block: The cidr_block of this CreateSubnetDetails.
         :type: str
@@ -94,6 +102,7 @@ class CreateSubnetDetails(object):
         Gets the compartment_id of this CreateSubnetDetails.
         The OCID of the compartment to contain the subnet.
 
+
         :return: The compartment_id of this CreateSubnetDetails.
         :rtype: str
         """
@@ -104,6 +113,7 @@ class CreateSubnetDetails(object):
         """
         Sets the compartment_id of this CreateSubnetDetails.
         The OCID of the compartment to contain the subnet.
+
 
         :param compartment_id: The compartment_id of this CreateSubnetDetails.
         :type: str
@@ -117,6 +127,7 @@ class CreateSubnetDetails(object):
         The OCID of the set of DHCP options the subnet will use. If you don't
         provide a value, the subnet will use the VCN's default set of DHCP options.
 
+
         :return: The dhcp_options_id of this CreateSubnetDetails.
         :rtype: str
         """
@@ -129,6 +140,7 @@ class CreateSubnetDetails(object):
         The OCID of the set of DHCP options the subnet will use. If you don't
         provide a value, the subnet will use the VCN's default set of DHCP options.
 
+
         :param dhcp_options_id: The dhcp_options_id of this CreateSubnetDetails.
         :type: str
         """
@@ -140,6 +152,7 @@ class CreateSubnetDetails(object):
         Gets the display_name of this CreateSubnetDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
 
+
         :return: The display_name of this CreateSubnetDetails.
         :rtype: str
         """
@@ -150,6 +163,7 @@ class CreateSubnetDetails(object):
         """
         Sets the display_name of this CreateSubnetDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
+
 
         :param display_name: The display_name of this CreateSubnetDetails.
         :type: str
@@ -163,6 +177,7 @@ class CreateSubnetDetails(object):
         The OCID of the route table the subnet will use. If you don't provide a value,
         the subnet will use the VCN's default route table.
 
+
         :return: The route_table_id of this CreateSubnetDetails.
         :rtype: str
         """
@@ -174,6 +189,7 @@ class CreateSubnetDetails(object):
         Sets the route_table_id of this CreateSubnetDetails.
         The OCID of the route table the subnet will use. If you don't provide a value,
         the subnet will use the VCN's default route table.
+
 
         :param route_table_id: The route_table_id of this CreateSubnetDetails.
         :type: str
@@ -189,6 +205,7 @@ class CreateSubnetDetails(object):
         the subnet. Remember that security lists are associated at the subnet
         level, but the rules are applied to the individual VNICs in the subnet.
 
+
         :return: The security_list_ids of this CreateSubnetDetails.
         :rtype: list[str]
         """
@@ -203,6 +220,7 @@ class CreateSubnetDetails(object):
         the subnet. Remember that security lists are associated at the subnet
         level, but the rules are applied to the individual VNICs in the subnet.
 
+
         :param security_list_ids: The security_list_ids of this CreateSubnetDetails.
         :type: list[str]
         """
@@ -214,6 +232,7 @@ class CreateSubnetDetails(object):
         Gets the vcn_id of this CreateSubnetDetails.
         The OCID of the VCN to contain the subnet.
 
+
         :return: The vcn_id of this CreateSubnetDetails.
         :rtype: str
         """
@@ -224,6 +243,7 @@ class CreateSubnetDetails(object):
         """
         Sets the vcn_id of this CreateSubnetDetails.
         The OCID of the VCN to contain the subnet.
+
 
         :param vcn_id: The vcn_id of this CreateSubnetDetails.
         :type: str

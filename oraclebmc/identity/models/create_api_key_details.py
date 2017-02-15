@@ -25,6 +25,7 @@ class CreateApiKeyDetails(object):
         Gets the key of this CreateApiKeyDetails.
         The public key.  Must be an RSA key in PEM format.
 
+
         :return: The key of this CreateApiKeyDetails.
         :rtype: str
         """
@@ -35,6 +36,7 @@ class CreateApiKeyDetails(object):
         """
         Sets the key of this CreateApiKeyDetails.
         The public key.  Must be an RSA key in PEM format.
+
 
         :param key: The key of this CreateApiKeyDetails.
         :type: str

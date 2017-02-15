@@ -49,6 +49,7 @@ class VolumeBackup(object):
         Gets the compartment_id of this VolumeBackup.
         The OCID of the compartment that contains the volume backup.
 
+
         :return: The compartment_id of this VolumeBackup.
         :rtype: str
         """
@@ -59,6 +60,7 @@ class VolumeBackup(object):
         """
         Sets the compartment_id of this VolumeBackup.
         The OCID of the compartment that contains the volume backup.
+
 
         :param compartment_id: The compartment_id of this VolumeBackup.
         :type: str
@@ -71,6 +73,7 @@ class VolumeBackup(object):
         Gets the display_name of this VolumeBackup.
         A user-friendly name for the volume backup. Does not have to be unique and it's changeable.
 
+
         :return: The display_name of this VolumeBackup.
         :rtype: str
         """
@@ -81,6 +84,7 @@ class VolumeBackup(object):
         """
         Sets the display_name of this VolumeBackup.
         A user-friendly name for the volume backup. Does not have to be unique and it's changeable.
+
 
         :param display_name: The display_name of this VolumeBackup.
         :type: str
@@ -93,6 +97,7 @@ class VolumeBackup(object):
         Gets the id of this VolumeBackup.
         The OCID of the volume backup.
 
+
         :return: The id of this VolumeBackup.
         :rtype: str
         """
@@ -103,6 +108,7 @@ class VolumeBackup(object):
         """
         Sets the id of this VolumeBackup.
         The OCID of the volume backup.
+
 
         :param id: The id of this VolumeBackup.
         :type: str
@@ -115,6 +121,7 @@ class VolumeBackup(object):
         Gets the lifecycle_state of this VolumeBackup.
         The current state of a volume backup.
 
+
         :return: The lifecycle_state of this VolumeBackup.
         :rtype: str
         """
@@ -125,6 +132,7 @@ class VolumeBackup(object):
         """
         Sets the lifecycle_state of this VolumeBackup.
         The current state of a volume backup.
+
 
         :param lifecycle_state: The lifecycle_state of this VolumeBackup.
         :type: str
@@ -143,6 +151,7 @@ class VolumeBackup(object):
         Gets the size_in_mbs of this VolumeBackup.
         The size of the volume, in MBs.
 
+
         :return: The size_in_mbs of this VolumeBackup.
         :rtype: int
         """
@@ -153,6 +162,7 @@ class VolumeBackup(object):
         """
         Sets the size_in_mbs of this VolumeBackup.
         The size of the volume, in MBs.
+
 
         :param size_in_mbs: The size_in_mbs of this VolumeBackup.
         :type: int
@@ -166,6 +176,7 @@ class VolumeBackup(object):
         The date and time the volume backup was created. This is the time the actual point-in-time image
         of the volume data was taken. Format defined by RFC3339.
 
+
         :return: The time_created of this VolumeBackup.
         :rtype: datetime
         """
@@ -178,6 +189,7 @@ class VolumeBackup(object):
         The date and time the volume backup was created. This is the time the actual point-in-time image
         of the volume data was taken. Format defined by RFC3339.
 
+
         :param time_created: The time_created of this VolumeBackup.
         :type: datetime
         """
@@ -189,6 +201,7 @@ class VolumeBackup(object):
         Gets the time_request_received of this VolumeBackup.
         The date and time the request to create the volume backup was received. Format defined by RFC3339.
 
+
         :return: The time_request_received of this VolumeBackup.
         :rtype: datetime
         """
@@ -199,6 +212,7 @@ class VolumeBackup(object):
         """
         Sets the time_request_received of this VolumeBackup.
         The date and time the request to create the volume backup was received. Format defined by RFC3339.
+
 
         :param time_request_received: The time_request_received of this VolumeBackup.
         :type: datetime
@@ -212,6 +226,7 @@ class VolumeBackup(object):
         The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space
         consumed on the volume and whether the backup is full or incremental.
 
+
         :return: The unique_size_in_mbs of this VolumeBackup.
         :rtype: int
         """
@@ -224,6 +239,7 @@ class VolumeBackup(object):
         The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space
         consumed on the volume and whether the backup is full or incremental.
 
+
         :param unique_size_in_mbs: The unique_size_in_mbs of this VolumeBackup.
         :type: int
         """
@@ -235,6 +251,7 @@ class VolumeBackup(object):
         Gets the volume_id of this VolumeBackup.
         The OCID of the volume.
 
+
         :return: The volume_id of this VolumeBackup.
         :rtype: str
         """
@@ -245,6 +262,7 @@ class VolumeBackup(object):
         """
         Sets the volume_id of this VolumeBackup.
         The OCID of the volume.
+
 
         :param volume_id: The volume_id of this VolumeBackup.
         :type: str

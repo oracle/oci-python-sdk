@@ -31,6 +31,7 @@ class CreateDrgAttachmentDetails(object):
         Gets the display_name of this CreateDrgAttachmentDetails.
         A user-friendly name. Does not have to be unique.
 
+
         :return: The display_name of this CreateDrgAttachmentDetails.
         :rtype: str
         """
@@ -41,6 +42,7 @@ class CreateDrgAttachmentDetails(object):
         """
         Sets the display_name of this CreateDrgAttachmentDetails.
         A user-friendly name. Does not have to be unique.
+
 
         :param display_name: The display_name of this CreateDrgAttachmentDetails.
         :type: str
@@ -53,6 +55,7 @@ class CreateDrgAttachmentDetails(object):
         Gets the drg_id of this CreateDrgAttachmentDetails.
         The OCID of the DRG.
 
+
         :return: The drg_id of this CreateDrgAttachmentDetails.
         :rtype: str
         """
@@ -63,6 +66,7 @@ class CreateDrgAttachmentDetails(object):
         """
         Sets the drg_id of this CreateDrgAttachmentDetails.
         The OCID of the DRG.
+
 
         :param drg_id: The drg_id of this CreateDrgAttachmentDetails.
         :type: str
@@ -75,6 +79,7 @@ class CreateDrgAttachmentDetails(object):
         Gets the vcn_id of this CreateDrgAttachmentDetails.
         The OCID of the VCN.
 
+
         :return: The vcn_id of this CreateDrgAttachmentDetails.
         :rtype: str
         """
@@ -85,6 +90,7 @@ class CreateDrgAttachmentDetails(object):
         """
         Sets the vcn_id of this CreateDrgAttachmentDetails.
         The OCID of the VCN.
+
 
         :param vcn_id: The vcn_id of this CreateDrgAttachmentDetails.
         :type: str

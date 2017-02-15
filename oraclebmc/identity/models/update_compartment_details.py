@@ -25,6 +25,7 @@ class UpdateCompartmentDetails(object):
         Gets the description of this UpdateCompartmentDetails.
         The description you assign to the compartment. Does not have to be unique, and it's changeable.
 
+
         :return: The description of this UpdateCompartmentDetails.
         :rtype: str
         """
@@ -35,6 +36,7 @@ class UpdateCompartmentDetails(object):
         """
         Sets the description of this UpdateCompartmentDetails.
         The description you assign to the compartment. Does not have to be unique, and it's changeable.
+
 
         :param description: The description of this UpdateCompartmentDetails.
         :type: str

@@ -46,6 +46,7 @@ class IPSecConnection(object):
         Gets the compartment_id of this IPSecConnection.
         The OCID of the compartment containing the IPSec connection.
 
+
         :return: The compartment_id of this IPSecConnection.
         :rtype: str
         """
@@ -56,6 +57,7 @@ class IPSecConnection(object):
         """
         Sets the compartment_id of this IPSecConnection.
         The OCID of the compartment containing the IPSec connection.
+
 
         :param compartment_id: The compartment_id of this IPSecConnection.
         :type: str
@@ -68,6 +70,7 @@ class IPSecConnection(object):
         Gets the cpe_id of this IPSecConnection.
         The OCID of the CPE.
 
+
         :return: The cpe_id of this IPSecConnection.
         :rtype: str
         """
@@ -78,6 +81,7 @@ class IPSecConnection(object):
         """
         Sets the cpe_id of this IPSecConnection.
         The OCID of the CPE.
+
 
         :param cpe_id: The cpe_id of this IPSecConnection.
         :type: str
@@ -90,6 +94,7 @@ class IPSecConnection(object):
         Gets the display_name of this IPSecConnection.
         A user-friendly name. Does not have to be unique, and it's changeable.
 
+
         :return: The display_name of this IPSecConnection.
         :rtype: str
         """
@@ -100,6 +105,7 @@ class IPSecConnection(object):
         """
         Sets the display_name of this IPSecConnection.
         A user-friendly name. Does not have to be unique, and it's changeable.
+
 
         :param display_name: The display_name of this IPSecConnection.
         :type: str
@@ -112,6 +118,7 @@ class IPSecConnection(object):
         Gets the drg_id of this IPSecConnection.
         The OCID of the DRG.
 
+
         :return: The drg_id of this IPSecConnection.
         :rtype: str
         """
@@ -122,6 +129,7 @@ class IPSecConnection(object):
         """
         Sets the drg_id of this IPSecConnection.
         The OCID of the DRG.
+
 
         :param drg_id: The drg_id of this IPSecConnection.
         :type: str
@@ -134,6 +142,7 @@ class IPSecConnection(object):
         Gets the id of this IPSecConnection.
         The IPSec connection's Oracle ID (OCID).
 
+
         :return: The id of this IPSecConnection.
         :rtype: str
         """
@@ -144,6 +153,7 @@ class IPSecConnection(object):
         """
         Sets the id of this IPSecConnection.
         The IPSec connection's Oracle ID (OCID).
+
 
         :param id: The id of this IPSecConnection.
         :type: str
@@ -156,6 +166,7 @@ class IPSecConnection(object):
         Gets the lifecycle_state of this IPSecConnection.
         The IPSec connection's current state.
 
+
         :return: The lifecycle_state of this IPSecConnection.
         :rtype: str
         """
@@ -166,6 +177,7 @@ class IPSecConnection(object):
         """
         Sets the lifecycle_state of this IPSecConnection.
         The IPSec connection's current state.
+
 
         :param lifecycle_state: The lifecycle_state of this IPSecConnection.
         :type: str
@@ -184,7 +196,9 @@ class IPSecConnection(object):
         Gets the static_routes of this IPSecConnection.
         Static routes to the CPE. At least one route must be included. The CIDR must not be a
         multicast address or class E address.
+
         Example: `10.0.1.0/24`
+
 
         :return: The static_routes of this IPSecConnection.
         :rtype: list[str]
@@ -197,7 +211,9 @@ class IPSecConnection(object):
         Sets the static_routes of this IPSecConnection.
         Static routes to the CPE. At least one route must be included. The CIDR must not be a
         multicast address or class E address.
+
         Example: `10.0.1.0/24`
+
 
         :param static_routes: The static_routes of this IPSecConnection.
         :type: list[str]
@@ -209,7 +225,9 @@ class IPSecConnection(object):
         """
         Gets the time_created of this IPSecConnection.
         The date and time the IPSec connection was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :return: The time_created of this IPSecConnection.
         :rtype: datetime
@@ -221,7 +239,9 @@ class IPSecConnection(object):
         """
         Sets the time_created of this IPSecConnection.
         The date and time the IPSec connection was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :param time_created: The time_created of this IPSecConnection.
         :type: datetime

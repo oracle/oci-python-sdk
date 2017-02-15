@@ -25,6 +25,7 @@ class UpdateUserDetails(object):
         Gets the description of this UpdateUserDetails.
         The description you assign to the user. Does not have to be unique, and it's changeable.
 
+
         :return: The description of this UpdateUserDetails.
         :rtype: str
         """
@@ -35,6 +36,7 @@ class UpdateUserDetails(object):
         """
         Sets the description of this UpdateUserDetails.
         The description you assign to the user. Does not have to be unique, and it's changeable.
+
 
         :param description: The description of this UpdateUserDetails.
         :type: str

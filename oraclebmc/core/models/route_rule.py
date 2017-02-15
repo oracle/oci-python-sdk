@@ -28,7 +28,9 @@ class RouteRule(object):
         Gets the cidr_block of this RouteRule.
         A destination IP address range in CIDR notation. Matching packets will
         be routed to the indicated network entity (the target).
+
         Example: `0.0.0.0/0`
+
 
         :return: The cidr_block of this RouteRule.
         :rtype: str
@@ -41,7 +43,9 @@ class RouteRule(object):
         Sets the cidr_block of this RouteRule.
         A destination IP address range in CIDR notation. Matching packets will
         be routed to the indicated network entity (the target).
+
         Example: `0.0.0.0/0`
+
 
         :param cidr_block: The cidr_block of this RouteRule.
         :type: str
@@ -54,6 +58,7 @@ class RouteRule(object):
         Gets the network_entity_id of this RouteRule.
         The OCID for the route rule's target.
 
+
         :return: The network_entity_id of this RouteRule.
         :rtype: str
         """
@@ -64,6 +69,7 @@ class RouteRule(object):
         """
         Sets the network_entity_id of this RouteRule.
         The OCID for the route rule's target.
+
 
         :param network_entity_id: The network_entity_id of this RouteRule.
         :type: str

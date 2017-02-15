@@ -28,6 +28,7 @@ class AvailabilityDomain(object):
         Gets the name of this AvailabilityDomain.
         The name of the Availability Domain.
 
+
         :return: The name of this AvailabilityDomain.
         :rtype: str
         """
@@ -38,6 +39,7 @@ class AvailabilityDomain(object):
         """
         Sets the name of this AvailabilityDomain.
         The name of the Availability Domain.
+
 
         :param name: The name of this AvailabilityDomain.
         :type: str
@@ -50,6 +52,7 @@ class AvailabilityDomain(object):
         Gets the compartment_id of this AvailabilityDomain.
         The OCID of the tenancy.
 
+
         :return: The compartment_id of this AvailabilityDomain.
         :rtype: str
         """
@@ -60,6 +63,7 @@ class AvailabilityDomain(object):
         """
         Sets the compartment_id of this AvailabilityDomain.
         The OCID of the tenancy.
+
 
         :param compartment_id: The compartment_id of this AvailabilityDomain.
         :type: str

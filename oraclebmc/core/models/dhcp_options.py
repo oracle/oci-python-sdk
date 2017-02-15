@@ -43,6 +43,7 @@ class DhcpOptions(object):
         Gets the compartment_id of this DhcpOptions.
         The OCID of the compartment containing the set of DHCP options.
 
+
         :return: The compartment_id of this DhcpOptions.
         :rtype: str
         """
@@ -53,6 +54,7 @@ class DhcpOptions(object):
         """
         Sets the compartment_id of this DhcpOptions.
         The OCID of the compartment containing the set of DHCP options.
+
 
         :param compartment_id: The compartment_id of this DhcpOptions.
         :type: str
@@ -65,6 +67,7 @@ class DhcpOptions(object):
         Gets the display_name of this DhcpOptions.
         A user-friendly name. Does not have to be unique, and it's changeable.
 
+
         :return: The display_name of this DhcpOptions.
         :rtype: str
         """
@@ -75,6 +78,7 @@ class DhcpOptions(object):
         """
         Sets the display_name of this DhcpOptions.
         A user-friendly name. Does not have to be unique, and it's changeable.
+
 
         :param display_name: The display_name of this DhcpOptions.
         :type: str
@@ -87,6 +91,7 @@ class DhcpOptions(object):
         Gets the id of this DhcpOptions.
         Oracle ID (OCID) for the set of DHCP options.
 
+
         :return: The id of this DhcpOptions.
         :rtype: str
         """
@@ -97,6 +102,7 @@ class DhcpOptions(object):
         """
         Sets the id of this DhcpOptions.
         Oracle ID (OCID) for the set of DHCP options.
+
 
         :param id: The id of this DhcpOptions.
         :type: str
@@ -109,6 +115,7 @@ class DhcpOptions(object):
         Gets the lifecycle_state of this DhcpOptions.
         The current state of the set of DHCP options.
 
+
         :return: The lifecycle_state of this DhcpOptions.
         :rtype: str
         """
@@ -119,6 +126,7 @@ class DhcpOptions(object):
         """
         Sets the lifecycle_state of this DhcpOptions.
         The current state of the set of DHCP options.
+
 
         :param lifecycle_state: The lifecycle_state of this DhcpOptions.
         :type: str
@@ -137,6 +145,7 @@ class DhcpOptions(object):
         Gets the options of this DhcpOptions.
         The collection of individual DHCP options.
 
+
         :return: The options of this DhcpOptions.
         :rtype: list[DhcpOption]
         """
@@ -148,6 +157,7 @@ class DhcpOptions(object):
         Sets the options of this DhcpOptions.
         The collection of individual DHCP options.
 
+
         :param options: The options of this DhcpOptions.
         :type: list[DhcpOption]
         """
@@ -158,7 +168,9 @@ class DhcpOptions(object):
         """
         Gets the time_created of this DhcpOptions.
         Date and time the set of DHCP options was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :return: The time_created of this DhcpOptions.
         :rtype: datetime
@@ -170,7 +182,9 @@ class DhcpOptions(object):
         """
         Sets the time_created of this DhcpOptions.
         Date and time the set of DHCP options was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :param time_created: The time_created of this DhcpOptions.
         :type: datetime
@@ -183,6 +197,7 @@ class DhcpOptions(object):
         Gets the vcn_id of this DhcpOptions.
         The OCID of the VCN the set of DHCP options belongs to.
 
+
         :return: The vcn_id of this DhcpOptions.
         :rtype: str
         """
@@ -193,6 +208,7 @@ class DhcpOptions(object):
         """
         Sets the vcn_id of this DhcpOptions.
         The OCID of the VCN the set of DHCP options belongs to.
+
 
         :param vcn_id: The vcn_id of this DhcpOptions.
         :type: str

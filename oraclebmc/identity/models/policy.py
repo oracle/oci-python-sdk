@@ -49,6 +49,7 @@ class Policy(object):
         Gets the id of this Policy.
         The OCID of the policy.
 
+
         :return: The id of this Policy.
         :rtype: str
         """
@@ -59,6 +60,7 @@ class Policy(object):
         """
         Sets the id of this Policy.
         The OCID of the policy.
+
 
         :param id: The id of this Policy.
         :type: str
@@ -71,6 +73,7 @@ class Policy(object):
         Gets the compartment_id of this Policy.
         The OCID of the compartment containing the policy (either the tenancy or another compartment).
 
+
         :return: The compartment_id of this Policy.
         :rtype: str
         """
@@ -81,6 +84,7 @@ class Policy(object):
         """
         Sets the compartment_id of this Policy.
         The OCID of the compartment containing the policy (either the tenancy or another compartment).
+
 
         :param compartment_id: The compartment_id of this Policy.
         :type: str
@@ -94,6 +98,7 @@ class Policy(object):
         The name you assign to the policy during creation. The name must be unique across all policies
         in the tenancy and cannot be changed.
 
+
         :return: The name of this Policy.
         :rtype: str
         """
@@ -106,6 +111,7 @@ class Policy(object):
         The name you assign to the policy during creation. The name must be unique across all policies
         in the tenancy and cannot be changed.
 
+
         :param name: The name of this Policy.
         :type: str
         """
@@ -116,6 +122,7 @@ class Policy(object):
         """
         Gets the statements of this Policy.
         An array of one or more policy statements written in the policy language.
+
 
         :return: The statements of this Policy.
         :rtype: list[str]
@@ -128,6 +135,7 @@ class Policy(object):
         Sets the statements of this Policy.
         An array of one or more policy statements written in the policy language.
 
+
         :param statements: The statements of this Policy.
         :type: list[str]
         """
@@ -138,6 +146,7 @@ class Policy(object):
         """
         Gets the description of this Policy.
         The description you assign to the policy. Does not have to be unique, and it's changeable.
+
 
         :return: The description of this Policy.
         :rtype: str
@@ -150,6 +159,7 @@ class Policy(object):
         Sets the description of this Policy.
         The description you assign to the policy. Does not have to be unique, and it's changeable.
 
+
         :param description: The description of this Policy.
         :type: str
         """
@@ -160,7 +170,9 @@ class Policy(object):
         """
         Gets the time_created of this Policy.
         Date and time the policy was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :return: The time_created of this Policy.
         :rtype: datetime
@@ -172,7 +184,9 @@ class Policy(object):
         """
         Sets the time_created of this Policy.
         Date and time the policy was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :param time_created: The time_created of this Policy.
         :type: datetime
@@ -186,6 +200,7 @@ class Policy(object):
         The policy's current state. After creating a policy, make sure its `lifecycleState` changes from CREATING to
         ACTIVE before using it.
 
+
         :return: The lifecycle_state of this Policy.
         :rtype: str
         """
@@ -197,6 +212,7 @@ class Policy(object):
         Sets the lifecycle_state of this Policy.
         The policy's current state. After creating a policy, make sure its `lifecycleState` changes from CREATING to
         ACTIVE before using it.
+
 
         :param lifecycle_state: The lifecycle_state of this Policy.
         :type: str
@@ -215,6 +231,7 @@ class Policy(object):
         Gets the inactive_status of this Policy.
         The detailed status of INACTIVE lifecycleState.
 
+
         :return: The inactive_status of this Policy.
         :rtype: int
         """
@@ -225,6 +242,7 @@ class Policy(object):
         """
         Sets the inactive_status of this Policy.
         The detailed status of INACTIVE lifecycleState.
+
 
         :param inactive_status: The inactive_status of this Policy.
         :type: int
@@ -239,6 +257,7 @@ class Policy(object):
         policy will be evaluated according to the current behavior of the services at that moment. If set to a particular
         date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date.
 
+
         :return: The version_date of this Policy.
         :rtype: datetime
         """
@@ -251,6 +270,7 @@ class Policy(object):
         The version of the policy. If null or set to an empty string, when a request comes in for authorization, the
         policy will be evaluated according to the current behavior of the services at that moment. If set to a particular
         date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date.
+
 
         :param version_date: The version_date of this Policy.
         :type: datetime

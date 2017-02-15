@@ -24,7 +24,9 @@ class UpdateImageDetails(object):
         """
         Gets the display_name of this UpdateImageDetails.
         The non-unique, changeable name of the image.
+
         Example: `My custom Oracle Linux image`
+
 
         :return: The display_name of this UpdateImageDetails.
         :rtype: str
@@ -36,7 +38,9 @@ class UpdateImageDetails(object):
         """
         Sets the display_name of this UpdateImageDetails.
         The non-unique, changeable name of the image.
+
         Example: `My custom Oracle Linux image`
+
 
         :param display_name: The display_name of this UpdateImageDetails.
         :type: str

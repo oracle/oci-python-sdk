@@ -28,6 +28,7 @@ class CreateDrgDetails(object):
         Gets the compartment_id of this CreateDrgDetails.
         The OCID of the compartment to contain the DRG.
 
+
         :return: The compartment_id of this CreateDrgDetails.
         :rtype: str
         """
@@ -38,6 +39,7 @@ class CreateDrgDetails(object):
         """
         Sets the compartment_id of this CreateDrgDetails.
         The OCID of the compartment to contain the DRG.
+
 
         :param compartment_id: The compartment_id of this CreateDrgDetails.
         :type: str
@@ -50,6 +52,7 @@ class CreateDrgDetails(object):
         Gets the display_name of this CreateDrgDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
 
+
         :return: The display_name of this CreateDrgDetails.
         :rtype: str
         """
@@ -60,6 +63,7 @@ class CreateDrgDetails(object):
         """
         Sets the display_name of this CreateDrgDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
+
 
         :param display_name: The display_name of this CreateDrgDetails.
         :type: str

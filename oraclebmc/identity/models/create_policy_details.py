@@ -37,6 +37,7 @@ class CreatePolicyDetails(object):
         Gets the compartment_id of this CreatePolicyDetails.
         The OCID of the compartment containing the policy (either the tenancy or another compartment).
 
+
         :return: The compartment_id of this CreatePolicyDetails.
         :rtype: str
         """
@@ -47,6 +48,7 @@ class CreatePolicyDetails(object):
         """
         Sets the compartment_id of this CreatePolicyDetails.
         The OCID of the compartment containing the policy (either the tenancy or another compartment).
+
 
         :param compartment_id: The compartment_id of this CreatePolicyDetails.
         :type: str
@@ -60,6 +62,7 @@ class CreatePolicyDetails(object):
         The name you assign to the policy during creation. The name must be unique across all policies
         in the tenancy and cannot be changed.
 
+
         :return: The name of this CreatePolicyDetails.
         :rtype: str
         """
@@ -72,6 +75,7 @@ class CreatePolicyDetails(object):
         The name you assign to the policy during creation. The name must be unique across all policies
         in the tenancy and cannot be changed.
 
+
         :param name: The name of this CreatePolicyDetails.
         :type: str
         """
@@ -82,8 +86,12 @@ class CreatePolicyDetails(object):
         """
         Gets the statements of this CreatePolicyDetails.
         An array of policy statements written in the policy language. See
-        [How Policies Work]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policies.htm) and
-        [Common Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/commonpolicies.htm).
+        `How Policies Work`__ and
+        `Common Policies`__.
+
+        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/policies.htm
+        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/commonpolicies.htm
+
 
         :return: The statements of this CreatePolicyDetails.
         :rtype: list[str]
@@ -95,8 +103,12 @@ class CreatePolicyDetails(object):
         """
         Sets the statements of this CreatePolicyDetails.
         An array of policy statements written in the policy language. See
-        [How Policies Work]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policies.htm) and
-        [Common Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/commonpolicies.htm).
+        `How Policies Work`__ and
+        `Common Policies`__.
+
+        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/policies.htm
+        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/commonpolicies.htm
+
 
         :param statements: The statements of this CreatePolicyDetails.
         :type: list[str]
@@ -109,6 +121,7 @@ class CreatePolicyDetails(object):
         Gets the description of this CreatePolicyDetails.
         The description you assign to the policy during creation. Does not have to be unique, and it's changeable.
 
+
         :return: The description of this CreatePolicyDetails.
         :rtype: str
         """
@@ -119,6 +132,7 @@ class CreatePolicyDetails(object):
         """
         Sets the description of this CreatePolicyDetails.
         The description you assign to the policy during creation. Does not have to be unique, and it's changeable.
+
 
         :param description: The description of this CreatePolicyDetails.
         :type: str
@@ -133,6 +147,7 @@ class CreatePolicyDetails(object):
         policy will be evaluated according to the current behavior of the services at that moment. If set to a particular
         date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date.
 
+
         :return: The version_date of this CreatePolicyDetails.
         :rtype: datetime
         """
@@ -145,6 +160,7 @@ class CreatePolicyDetails(object):
         The version of the policy. If null or set to an empty string, when a request comes in for authorization, the
         policy will be evaluated according to the current behavior of the services at that moment. If set to a particular
         date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date.
+
 
         :param version_date: The version_date of this CreatePolicyDetails.
         :type: datetime

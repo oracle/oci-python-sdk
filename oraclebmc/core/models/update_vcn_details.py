@@ -25,6 +25,7 @@ class UpdateVcnDetails(object):
         Gets the display_name of this UpdateVcnDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
 
+
         :return: The display_name of this UpdateVcnDetails.
         :rtype: str
         """
@@ -35,6 +36,7 @@ class UpdateVcnDetails(object):
         """
         Sets the display_name of this UpdateVcnDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
+
 
         :param display_name: The display_name of this UpdateVcnDetails.
         :type: str

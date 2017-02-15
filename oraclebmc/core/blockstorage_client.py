@@ -31,24 +31,33 @@ class BlockstorageClient(object):
         CreateVolume
         Creates a new volume in the specified compartment. The size of a volume can be either 256 GB or 2 TB.
         For general information about block volumes, see
-        [Overview of Block Volume Service]({{DOC_SERVER_URL}}/Content/Block/Concepts/overview.htm).
+        `Overview of Block Volume Service`__.
+
         A volume and instance can be in separate compartments but must be in the same Availability Domain.
         For information about access control and compartments, see
-        [Overview of the IAM Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm). For information about
-        Availability Domains, see [Regions and Availability Domains]({{DOC_SERVER_URL}}/Content/General/Concepts/regions.htm).
+        `Overview of the IAM Service`__. For information about
+        Availability Domains, see `Regions and Availability Domains`__.
         To get a list of Availability Domains, use the `ListAvailabilityDomains` operation
         in the Identity and Access Management Service API.
+
         You may optionally specify a *display name* for the volume, which is simply a friendly name or
         description. It does not have to be unique, and you can change it.
 
+        __ {{DOC_SERVER_URL}}/Content/Block/Concepts/overview.htm
+        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm
+        __ {{DOC_SERVER_URL}}/Content/General/Concepts/regions.htm
+
+
         :param CreateVolumeDetails create_volume_details: (required)
             Request to create a new volume.
+
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
             server error without risk of executing that same action again. Retry tokens expire after 24
             hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
+
         :return: A Response object with data of type Volume
         """
         resource_path = "/volumes"
@@ -81,19 +90,25 @@ class BlockstorageClient(object):
         """
         CreateVolumeBackup
         Creates a new backup of the specified volume. For general information about volume backups,
-        see [Overview of Block Volume Service Backups]({{DOC_SERVER_URL}}/Content/Block/Concepts/blockvolumebackups.htm)
+        see `Overview of Block Volume Service Backups`__
+
         When the request is received, the backup object is in a REQUEST_RECEIVED state.
         When the data is imaged, it goes into a CREATING state.
         After the backup is fully uploaded to the cloud, it goes into an AVAILABLE state.
 
+        __ {{DOC_SERVER_URL}}/Content/Block/Concepts/blockvolumebackups.htm
+
+
         :param CreateVolumeBackupDetails create_volume_backup_details: (required)
             Request to create a new backup of given volume.
+
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
             server error without risk of executing that same action again. Retry tokens expire after 24
             hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
+
         :return: A Response object with data of type VolumeBackup
         """
         resource_path = "/volumeBackups"
@@ -127,15 +142,20 @@ class BlockstorageClient(object):
         DeleteVolume
         Deletes the specified volume. The volume cannot have an active connection to an instance.
         To disconnect the volume from a connected instance, see
-        [Disconnecting From a Volume]({{DOC_SERVER_URL}}/Content/Block/Tasks/disconnectingfromavolume.htm).
+        `Disconnecting From a Volume`__.
         **Warning:** All data on the volume will be permanently lost when the volume is deleted.
+
+        __ {{DOC_SERVER_URL}}/Content/Block/Tasks/disconnectingfromavolume.htm
+
 
         :param str volume_id: (required)
             The OCID of the volume.
+
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
         :return: A Response object with data of type None
         """
         resource_path = "/volumes/{volumeId}"
@@ -173,12 +193,15 @@ class BlockstorageClient(object):
         DeleteVolumeBackup
         Deletes a volume backup.
 
+
         :param str volume_backup_id: (required)
             The OCID of the volume backup.
+
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
         :return: A Response object with data of type None
         """
         resource_path = "/volumeBackups/{volumeBackupId}"
@@ -216,8 +239,10 @@ class BlockstorageClient(object):
         GetVolume
         Gets information for the specified volume.
 
+
         :param str volume_id: (required)
             The OCID of the volume.
+
         :return: A Response object with data of type Volume
         """
         resource_path = "/volumes/{volumeId}"
@@ -249,8 +274,10 @@ class BlockstorageClient(object):
         GetVolumeBackup
         Gets information for the specified volume backup.
 
+
         :param str volume_backup_id: (required)
             The OCID of the volume backup.
+
         :return: A Response object with data of type VolumeBackup
         """
         resource_path = "/volumeBackups/{volumeBackupId}"
@@ -282,15 +309,21 @@ class BlockstorageClient(object):
         ListVolumeBackups
         Lists the volume backups in the specified compartment. You can filter the results by volume.
 
+
         :param str compartment_id: (required)
             The OCID of the compartment.
+
         :param str volume_id: (optional)
             The OCID of the volume.
+
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
+
             Example: `500`
+
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
+
         :return: A Response object with data of type list[VolumeBackup]
         """
         resource_path = "/volumeBackups"
@@ -332,16 +365,23 @@ class BlockstorageClient(object):
         ListVolumes
         Lists the volumes in the specified compartment and Availability Domain.
 
+
         :param str compartment_id: (required)
             The OCID of the compartment.
+
         :param str availability_domain: (optional)
             The name of the Availability Domain.
+
             Example: `Uocm:PHX-AD-1`
+
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
+
             Example: `500`
+
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
+
         :return: A Response object with data of type list[Volume]
         """
         resource_path = "/volumes"
@@ -383,14 +423,18 @@ class BlockstorageClient(object):
         UpdateVolume
         Updates the specified volume's display name.
 
+
         :param str volume_id: (required)
             The OCID of the volume.
-                :param UpdateVolumeDetails update_volume_details: (required)
+
+        :param UpdateVolumeDetails update_volume_details: (required)
             Update volume's display name.
+
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
         :return: A Response object with data of type Volume
         """
         resource_path = "/volumes/{volumeId}"
@@ -430,14 +474,18 @@ class BlockstorageClient(object):
         UpdateVolumeBackup
         Updates the display name for the specified volume backup.
 
+
         :param str volume_backup_id: (required)
             The OCID of the volume backup.
-                :param UpdateVolumeBackupDetails update_volume_backup_details: (required)
+
+        :param UpdateVolumeBackupDetails update_volume_backup_details: (required)
             Update volume backup fields
+
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
         :return: A Response object with data of type VolumeBackup
         """
         resource_path = "/volumeBackups/{volumeBackupId}"

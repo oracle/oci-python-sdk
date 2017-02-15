@@ -37,6 +37,7 @@ class CreateIPSecConnectionDetails(object):
         Gets the compartment_id of this CreateIPSecConnectionDetails.
         The OCID of the compartment to contain the IPSec connection.
 
+
         :return: The compartment_id of this CreateIPSecConnectionDetails.
         :rtype: str
         """
@@ -47,6 +48,7 @@ class CreateIPSecConnectionDetails(object):
         """
         Sets the compartment_id of this CreateIPSecConnectionDetails.
         The OCID of the compartment to contain the IPSec connection.
+
 
         :param compartment_id: The compartment_id of this CreateIPSecConnectionDetails.
         :type: str
@@ -59,6 +61,7 @@ class CreateIPSecConnectionDetails(object):
         Gets the cpe_id of this CreateIPSecConnectionDetails.
         The OCID of the CPE.
 
+
         :return: The cpe_id of this CreateIPSecConnectionDetails.
         :rtype: str
         """
@@ -69,6 +72,7 @@ class CreateIPSecConnectionDetails(object):
         """
         Sets the cpe_id of this CreateIPSecConnectionDetails.
         The OCID of the CPE.
+
 
         :param cpe_id: The cpe_id of this CreateIPSecConnectionDetails.
         :type: str
@@ -81,6 +85,7 @@ class CreateIPSecConnectionDetails(object):
         Gets the display_name of this CreateIPSecConnectionDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
 
+
         :return: The display_name of this CreateIPSecConnectionDetails.
         :rtype: str
         """
@@ -91,6 +96,7 @@ class CreateIPSecConnectionDetails(object):
         """
         Sets the display_name of this CreateIPSecConnectionDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
+
 
         :param display_name: The display_name of this CreateIPSecConnectionDetails.
         :type: str
@@ -103,6 +109,7 @@ class CreateIPSecConnectionDetails(object):
         Gets the drg_id of this CreateIPSecConnectionDetails.
         The OCID of the DRG.
 
+
         :return: The drg_id of this CreateIPSecConnectionDetails.
         :rtype: str
         """
@@ -113,6 +120,7 @@ class CreateIPSecConnectionDetails(object):
         """
         Sets the drg_id of this CreateIPSecConnectionDetails.
         The OCID of the DRG.
+
 
         :param drg_id: The drg_id of this CreateIPSecConnectionDetails.
         :type: str
@@ -125,7 +133,9 @@ class CreateIPSecConnectionDetails(object):
         Gets the static_routes of this CreateIPSecConnectionDetails.
         Static routes to the CPE. At least one route must be included. The CIDR must not be a
         multicast address or class E address.
+
         Example: `10.0.1.0/24`
+
 
         :return: The static_routes of this CreateIPSecConnectionDetails.
         :rtype: list[str]
@@ -138,7 +148,9 @@ class CreateIPSecConnectionDetails(object):
         Sets the static_routes of this CreateIPSecConnectionDetails.
         Static routes to the CPE. At least one route must be included. The CIDR must not be a
         multicast address or class E address.
+
         Example: `10.0.1.0/24`
+
 
         :param static_routes: The static_routes of this CreateIPSecConnectionDetails.
         :type: list[str]

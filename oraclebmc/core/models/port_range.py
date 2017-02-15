@@ -29,6 +29,7 @@ class PortRange(object):
         The maximum port number. Must not be lower than the minimum port number. To specify
         a single port number, set both the min and max to the same value.
 
+
         :return: The max of this PortRange.
         :rtype: int
         """
@@ -41,6 +42,7 @@ class PortRange(object):
         The maximum port number. Must not be lower than the minimum port number. To specify
         a single port number, set both the min and max to the same value.
 
+
         :param max: The max of this PortRange.
         :type: int
         """
@@ -52,6 +54,7 @@ class PortRange(object):
         Gets the min of this PortRange.
         The minimum port number. Must not be greater than the maximum port number.
 
+
         :return: The min of this PortRange.
         :rtype: int
         """
@@ -62,6 +65,7 @@ class PortRange(object):
         """
         Sets the min of this PortRange.
         The minimum port number. Must not be greater than the maximum port number.
+
 
         :param min: The min of this PortRange.
         :type: int

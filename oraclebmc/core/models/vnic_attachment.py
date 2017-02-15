@@ -48,7 +48,9 @@ class VnicAttachment(object):
         """
         Gets the availability_domain of this VnicAttachment.
         The Availability Domain of an instance.
+
         Example: `Uocm:PHX-AD-1`
+
 
         :return: The availability_domain of this VnicAttachment.
         :rtype: str
@@ -60,7 +62,9 @@ class VnicAttachment(object):
         """
         Sets the availability_domain of this VnicAttachment.
         The Availability Domain of an instance.
+
         Example: `Uocm:PHX-AD-1`
+
 
         :param availability_domain: The availability_domain of this VnicAttachment.
         :type: str
@@ -73,6 +77,7 @@ class VnicAttachment(object):
         Gets the compartment_id of this VnicAttachment.
         The OCID of the compartment.
 
+
         :return: The compartment_id of this VnicAttachment.
         :rtype: str
         """
@@ -83,6 +88,7 @@ class VnicAttachment(object):
         """
         Sets the compartment_id of this VnicAttachment.
         The OCID of the compartment.
+
 
         :param compartment_id: The compartment_id of this VnicAttachment.
         :type: str
@@ -95,6 +101,7 @@ class VnicAttachment(object):
         Gets the display_name of this VnicAttachment.
         A user-friendly name. Does not have to be unique.
 
+
         :return: The display_name of this VnicAttachment.
         :rtype: str
         """
@@ -105,6 +112,7 @@ class VnicAttachment(object):
         """
         Sets the display_name of this VnicAttachment.
         A user-friendly name. Does not have to be unique.
+
 
         :param display_name: The display_name of this VnicAttachment.
         :type: str
@@ -117,6 +125,7 @@ class VnicAttachment(object):
         Gets the id of this VnicAttachment.
         The OCID of the VNIC attachment.
 
+
         :return: The id of this VnicAttachment.
         :rtype: str
         """
@@ -127,6 +136,7 @@ class VnicAttachment(object):
         """
         Sets the id of this VnicAttachment.
         The OCID of the VNIC attachment.
+
 
         :param id: The id of this VnicAttachment.
         :type: str
@@ -139,6 +149,7 @@ class VnicAttachment(object):
         Gets the instance_id of this VnicAttachment.
         The OCID of the instance.
 
+
         :return: The instance_id of this VnicAttachment.
         :rtype: str
         """
@@ -149,6 +160,7 @@ class VnicAttachment(object):
         """
         Sets the instance_id of this VnicAttachment.
         The OCID of the instance.
+
 
         :param instance_id: The instance_id of this VnicAttachment.
         :type: str
@@ -161,6 +173,7 @@ class VnicAttachment(object):
         Gets the lifecycle_state of this VnicAttachment.
         The current state of the VNIC attachment.
 
+
         :return: The lifecycle_state of this VnicAttachment.
         :rtype: str
         """
@@ -171,6 +184,7 @@ class VnicAttachment(object):
         """
         Sets the lifecycle_state of this VnicAttachment.
         The current state of the VNIC attachment.
+
 
         :param lifecycle_state: The lifecycle_state of this VnicAttachment.
         :type: str
@@ -189,6 +203,7 @@ class VnicAttachment(object):
         Gets the subnet_id of this VnicAttachment.
         The OCID of the subnet of the VNIC.
 
+
         :return: The subnet_id of this VnicAttachment.
         :rtype: str
         """
@@ -200,6 +215,7 @@ class VnicAttachment(object):
         Sets the subnet_id of this VnicAttachment.
         The OCID of the subnet of the VNIC.
 
+
         :param subnet_id: The subnet_id of this VnicAttachment.
         :type: str
         """
@@ -210,7 +226,9 @@ class VnicAttachment(object):
         """
         Gets the time_created of this VnicAttachment.
         The date and time the VNIC attachment was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :return: The time_created of this VnicAttachment.
         :rtype: datetime
@@ -222,7 +240,9 @@ class VnicAttachment(object):
         """
         Sets the time_created of this VnicAttachment.
         The date and time the VNIC attachment was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :param time_created: The time_created of this VnicAttachment.
         :type: datetime
@@ -235,6 +255,7 @@ class VnicAttachment(object):
         Gets the vnic_id of this VnicAttachment.
         The OCID of the VNIC.
 
+
         :return: The vnic_id of this VnicAttachment.
         :rtype: str
         """
@@ -245,6 +266,7 @@ class VnicAttachment(object):
         """
         Sets the vnic_id of this VnicAttachment.
         The OCID of the VNIC.
+
 
         :param vnic_id: The vnic_id of this VnicAttachment.
         :type: str

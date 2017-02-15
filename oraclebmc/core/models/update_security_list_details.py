@@ -31,6 +31,7 @@ class UpdateSecurityListDetails(object):
         Gets the display_name of this UpdateSecurityListDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
 
+
         :return: The display_name of this UpdateSecurityListDetails.
         :rtype: str
         """
@@ -41,6 +42,7 @@ class UpdateSecurityListDetails(object):
         """
         Sets the display_name of this UpdateSecurityListDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
+
 
         :param display_name: The display_name of this UpdateSecurityListDetails.
         :type: str
@@ -53,6 +55,7 @@ class UpdateSecurityListDetails(object):
         Gets the egress_security_rules of this UpdateSecurityListDetails.
         Rules for allowing egress IP packets.
 
+
         :return: The egress_security_rules of this UpdateSecurityListDetails.
         :rtype: list[EgressSecurityRule]
         """
@@ -63,6 +66,7 @@ class UpdateSecurityListDetails(object):
         """
         Sets the egress_security_rules of this UpdateSecurityListDetails.
         Rules for allowing egress IP packets.
+
 
         :param egress_security_rules: The egress_security_rules of this UpdateSecurityListDetails.
         :type: list[EgressSecurityRule]
@@ -75,6 +79,7 @@ class UpdateSecurityListDetails(object):
         Gets the ingress_security_rules of this UpdateSecurityListDetails.
         Rules for allowing ingress IP packets.
 
+
         :return: The ingress_security_rules of this UpdateSecurityListDetails.
         :rtype: list[IngressSecurityRule]
         """
@@ -85,6 +90,7 @@ class UpdateSecurityListDetails(object):
         """
         Sets the ingress_security_rules of this UpdateSecurityListDetails.
         Rules for allowing ingress IP packets.
+
 
         :param ingress_security_rules: The ingress_security_rules of this UpdateSecurityListDetails.
         :type: list[IngressSecurityRule]

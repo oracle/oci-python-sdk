@@ -38,6 +38,7 @@ class EgressSecurityRule(object):
         The destination CIDR block for the egress rule. This is the range of IP addresses that a
         packet originating from the instance can go to.
 
+
         :return: The destination of this EgressSecurityRule.
         :rtype: str
         """
@@ -50,6 +51,7 @@ class EgressSecurityRule(object):
         The destination CIDR block for the egress rule. This is the range of IP addresses that a
         packet originating from the instance can go to.
 
+
         :param destination: The destination of this EgressSecurityRule.
         :type: str
         """
@@ -61,12 +63,15 @@ class EgressSecurityRule(object):
         Gets the icmp_options of this EgressSecurityRule.
         Optional and valid only for ICMP. Use to specify a particular ICMP type and code
         as defined in
-        [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml).
+        `ICMP Parameters`__.
         If you specify ICMP as the protocol but omit this object, then all ICMP types and
         codes are allowed. If you do provide this object, the type is required and the code is optional.
         To enable MTU negotiation for ingress internet traffic, make sure to allow type 3 (\"Destination
         Unreachable\") code 4 (\"Fragmentation Needed and Don't Fragment was Set\"). If you need to specify
         multiple codes for a single type, create a separate security list rule for each.
+
+         __ http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml
+
 
         :return: The icmp_options of this EgressSecurityRule.
         :rtype: IcmpOptions
@@ -79,12 +84,15 @@ class EgressSecurityRule(object):
         Sets the icmp_options of this EgressSecurityRule.
         Optional and valid only for ICMP. Use to specify a particular ICMP type and code
         as defined in
-        [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml).
+        `ICMP Parameters`__.
         If you specify ICMP as the protocol but omit this object, then all ICMP types and
         codes are allowed. If you do provide this object, the type is required and the code is optional.
         To enable MTU negotiation for ingress internet traffic, make sure to allow type 3 (\"Destination
         Unreachable\") code 4 (\"Fragmentation Needed and Don't Fragment was Set\"). If you need to specify
         multiple codes for a single type, create a separate security list rule for each.
+
+         __ http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml
+
 
         :param icmp_options: The icmp_options of this EgressSecurityRule.
         :type: IcmpOptions
@@ -97,8 +105,11 @@ class EgressSecurityRule(object):
         Gets the protocol of this EgressSecurityRule.
         The transport protocol. Specify either `all` or an IPv4 protocol number as
         defined in
-        [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml).
+        `Protocol Numbers`__.
         Options are supported only for ICMP (\"1\"), TCP (\"6\"), and UDP (\"17\").
+
+         __ http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml
+
 
         :return: The protocol of this EgressSecurityRule.
         :rtype: str
@@ -111,8 +122,11 @@ class EgressSecurityRule(object):
         Sets the protocol of this EgressSecurityRule.
         The transport protocol. Specify either `all` or an IPv4 protocol number as
         defined in
-        [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml).
+        `Protocol Numbers`__.
         Options are supported only for ICMP (\"1\"), TCP (\"6\"), and UDP (\"17\").
+
+         __ http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml
+
 
         :param protocol: The protocol of this EgressSecurityRule.
         :type: str
@@ -126,6 +140,7 @@ class EgressSecurityRule(object):
         Optional and valid only for TCP. Use to specify particular destination ports for TCP rules.
         If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
 
+
         :return: The tcp_options of this EgressSecurityRule.
         :rtype: TcpOptions
         """
@@ -137,6 +152,7 @@ class EgressSecurityRule(object):
         Sets the tcp_options of this EgressSecurityRule.
         Optional and valid only for TCP. Use to specify particular destination ports for TCP rules.
         If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
+
 
         :param tcp_options: The tcp_options of this EgressSecurityRule.
         :type: TcpOptions
@@ -150,6 +166,7 @@ class EgressSecurityRule(object):
         Optional and valid only for UDP. Use to specify particular destination ports for UDP rules.
         If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
 
+
         :return: The udp_options of this EgressSecurityRule.
         :rtype: UdpOptions
         """
@@ -161,6 +178,7 @@ class EgressSecurityRule(object):
         Sets the udp_options of this EgressSecurityRule.
         Optional and valid only for UDP. Use to specify particular destination ports for UDP rules.
         If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
+
 
         :param udp_options: The udp_options of this EgressSecurityRule.
         :type: UdpOptions
