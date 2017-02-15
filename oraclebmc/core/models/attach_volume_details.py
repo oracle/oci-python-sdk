@@ -47,6 +47,7 @@ class AttachVolumeDetails(object):
         Gets the display_name of this AttachVolumeDetails.
         A user-friendly name. Does not have to be unique, and it cannot be changed.
 
+
         :return: The display_name of this AttachVolumeDetails.
         :rtype: str
         """
@@ -57,6 +58,7 @@ class AttachVolumeDetails(object):
         """
         Sets the display_name of this AttachVolumeDetails.
         A user-friendly name. Does not have to be unique, and it cannot be changed.
+
 
         :param display_name: The display_name of this AttachVolumeDetails.
         :type: str
@@ -69,6 +71,7 @@ class AttachVolumeDetails(object):
         Gets the instance_id of this AttachVolumeDetails.
         The OCID of the instance.
 
+
         :return: The instance_id of this AttachVolumeDetails.
         :rtype: str
         """
@@ -79,6 +82,7 @@ class AttachVolumeDetails(object):
         """
         Sets the instance_id of this AttachVolumeDetails.
         The OCID of the instance.
+
 
         :param instance_id: The instance_id of this AttachVolumeDetails.
         :type: str
@@ -91,6 +95,7 @@ class AttachVolumeDetails(object):
         Gets the type of this AttachVolumeDetails.
         The type of volume. The only supported value is \"iscsi\".
 
+
         :return: The type of this AttachVolumeDetails.
         :rtype: str
         """
@@ -101,6 +106,7 @@ class AttachVolumeDetails(object):
         """
         Sets the type of this AttachVolumeDetails.
         The type of volume. The only supported value is \"iscsi\".
+
 
         :param type: The type of this AttachVolumeDetails.
         :type: str
@@ -113,6 +119,7 @@ class AttachVolumeDetails(object):
         Gets the volume_id of this AttachVolumeDetails.
         The OCID of the volume.
 
+
         :return: The volume_id of this AttachVolumeDetails.
         :rtype: str
         """
@@ -123,6 +130,7 @@ class AttachVolumeDetails(object):
         """
         Sets the volume_id of this AttachVolumeDetails.
         The OCID of the volume.
+
 
         :param volume_id: The volume_id of this AttachVolumeDetails.
         :type: str

@@ -31,6 +31,7 @@ class CreateCompartmentDetails(object):
         Gets the compartment_id of this CreateCompartmentDetails.
         The OCID of the tenancy containing the compartment.
 
+
         :return: The compartment_id of this CreateCompartmentDetails.
         :rtype: str
         """
@@ -41,6 +42,7 @@ class CreateCompartmentDetails(object):
         """
         Sets the compartment_id of this CreateCompartmentDetails.
         The OCID of the tenancy containing the compartment.
+
 
         :param compartment_id: The compartment_id of this CreateCompartmentDetails.
         :type: str
@@ -54,6 +56,7 @@ class CreateCompartmentDetails(object):
         The name you assign to the compartment during creation. The name must be unique across all compartments
         in the tenancy and cannot be changed.
 
+
         :return: The name of this CreateCompartmentDetails.
         :rtype: str
         """
@@ -66,6 +69,7 @@ class CreateCompartmentDetails(object):
         The name you assign to the compartment during creation. The name must be unique across all compartments
         in the tenancy and cannot be changed.
 
+
         :param name: The name of this CreateCompartmentDetails.
         :type: str
         """
@@ -77,6 +81,7 @@ class CreateCompartmentDetails(object):
         Gets the description of this CreateCompartmentDetails.
         The description you assign to the compartment during creation. Does not have to be unique, and it's changeable.
 
+
         :return: The description of this CreateCompartmentDetails.
         :rtype: str
         """
@@ -87,6 +92,7 @@ class CreateCompartmentDetails(object):
         """
         Sets the description of this CreateCompartmentDetails.
         The description you assign to the compartment during creation. Does not have to be unique, and it's changeable.
+
 
         :param description: The description of this CreateCompartmentDetails.
         :type: str

@@ -38,6 +38,7 @@ class AttachIScsiVolumeDetails(AttachVolumeDetails):
         Gets the use_chap of this AttachIScsiVolumeDetails.
         Whether to use CHAP authentication for the volume attachment. Defaults to false.
 
+
         :return: The use_chap of this AttachIScsiVolumeDetails.
         :rtype: bool
         """
@@ -48,6 +49,7 @@ class AttachIScsiVolumeDetails(AttachVolumeDetails):
         """
         Sets the use_chap of this AttachIScsiVolumeDetails.
         Whether to use CHAP authentication for the volume attachment. Defaults to false.
+
 
         :param use_chap: The use_chap of this AttachIScsiVolumeDetails.
         :type: bool

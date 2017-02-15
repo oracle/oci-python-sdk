@@ -43,6 +43,7 @@ class User(object):
         Gets the id of this User.
         The OCID of the user.
 
+
         :return: The id of this User.
         :rtype: str
         """
@@ -53,6 +54,7 @@ class User(object):
         """
         Sets the id of this User.
         The OCID of the user.
+
 
         :param id: The id of this User.
         :type: str
@@ -65,6 +67,7 @@ class User(object):
         Gets the compartment_id of this User.
         The OCID of the tenancy containing the user.
 
+
         :return: The compartment_id of this User.
         :rtype: str
         """
@@ -75,6 +78,7 @@ class User(object):
         """
         Sets the compartment_id of this User.
         The OCID of the tenancy containing the user.
+
 
         :param compartment_id: The compartment_id of this User.
         :type: str
@@ -88,6 +92,7 @@ class User(object):
         The name you assign to the user during creation. This is the user's login for the Console.
         The name must be unique across all users in the tenancy and cannot be changed.
 
+
         :return: The name of this User.
         :rtype: str
         """
@@ -100,6 +105,7 @@ class User(object):
         The name you assign to the user during creation. This is the user's login for the Console.
         The name must be unique across all users in the tenancy and cannot be changed.
 
+
         :param name: The name of this User.
         :type: str
         """
@@ -110,6 +116,7 @@ class User(object):
         """
         Gets the description of this User.
         The description you assign to the user. Does not have to be unique, and it's changeable.
+
 
         :return: The description of this User.
         :rtype: str
@@ -122,6 +129,7 @@ class User(object):
         Sets the description of this User.
         The description you assign to the user. Does not have to be unique, and it's changeable.
 
+
         :param description: The description of this User.
         :type: str
         """
@@ -132,7 +140,9 @@ class User(object):
         """
         Gets the time_created of this User.
         Date and time the user was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :return: The time_created of this User.
         :rtype: datetime
@@ -144,7 +154,9 @@ class User(object):
         """
         Sets the time_created of this User.
         Date and time the user was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :param time_created: The time_created of this User.
         :type: datetime
@@ -158,6 +170,7 @@ class User(object):
         The user's current state. After creating a user, make sure its `lifecycleState` changes from CREATING to
         ACTIVE before using it.
 
+
         :return: The lifecycle_state of this User.
         :rtype: str
         """
@@ -169,6 +182,7 @@ class User(object):
         Sets the lifecycle_state of this User.
         The user's current state. After creating a user, make sure its `lifecycleState` changes from CREATING to
         ACTIVE before using it.
+
 
         :param lifecycle_state: The lifecycle_state of this User.
         :type: str
@@ -187,9 +201,11 @@ class User(object):
         Gets the inactive_status of this User.
         Returned only if the user's `lifecycleState` is INACTIVE. A 16-bit value showing the reason why the user
         is inactive:
+
         - bit 0: SUSPENDED (reserved for future use)
         - bit 1: DISABLED (reserved for future use)
         - bit 2: BLOCKED (the user has exceeded the maximum number of failed login attempts for the Console)
+
 
         :return: The inactive_status of this User.
         :rtype: int
@@ -202,9 +218,11 @@ class User(object):
         Sets the inactive_status of this User.
         Returned only if the user's `lifecycleState` is INACTIVE. A 16-bit value showing the reason why the user
         is inactive:
+
         - bit 0: SUSPENDED (reserved for future use)
         - bit 1: DISABLED (reserved for future use)
         - bit 2: BLOCKED (the user has exceeded the maximum number of failed login attempts for the Console)
+
 
         :param inactive_status: The inactive_status of this User.
         :type: int

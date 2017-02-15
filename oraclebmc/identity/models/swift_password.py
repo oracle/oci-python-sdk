@@ -47,6 +47,7 @@ class SwiftPassword(object):
         The Swift password. The value is available only in the response for `CreateSwiftPassword`, and not
         for `ListSwiftPasswords` or `UpdateSwiftPassword`.
 
+
         :return: The password of this SwiftPassword.
         :rtype: str
         """
@@ -59,6 +60,7 @@ class SwiftPassword(object):
         The Swift password. The value is available only in the response for `CreateSwiftPassword`, and not
         for `ListSwiftPasswords` or `UpdateSwiftPassword`.
 
+
         :param password: The password of this SwiftPassword.
         :type: str
         """
@@ -69,6 +71,7 @@ class SwiftPassword(object):
         """
         Gets the id of this SwiftPassword.
         The OCID of the Swift password.
+
 
         :return: The id of this SwiftPassword.
         :rtype: str
@@ -81,6 +84,7 @@ class SwiftPassword(object):
         Sets the id of this SwiftPassword.
         The OCID of the Swift password.
 
+
         :param id: The id of this SwiftPassword.
         :type: str
         """
@@ -91,6 +95,7 @@ class SwiftPassword(object):
         """
         Gets the user_id of this SwiftPassword.
         The OCID of the user the password belongs to.
+
 
         :return: The user_id of this SwiftPassword.
         :rtype: str
@@ -103,6 +108,7 @@ class SwiftPassword(object):
         Sets the user_id of this SwiftPassword.
         The OCID of the user the password belongs to.
 
+
         :param user_id: The user_id of this SwiftPassword.
         :type: str
         """
@@ -113,6 +119,7 @@ class SwiftPassword(object):
         """
         Gets the description of this SwiftPassword.
         The description you assign to the Swift password. Does not have to be unique, and it's changeable.
+
 
         :return: The description of this SwiftPassword.
         :rtype: str
@@ -125,6 +132,7 @@ class SwiftPassword(object):
         Sets the description of this SwiftPassword.
         The description you assign to the Swift password. Does not have to be unique, and it's changeable.
 
+
         :param description: The description of this SwiftPassword.
         :type: str
         """
@@ -135,7 +143,9 @@ class SwiftPassword(object):
         """
         Gets the time_created of this SwiftPassword.
         Date and time the `SwiftPassword` object was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :return: The time_created of this SwiftPassword.
         :rtype: datetime
@@ -147,7 +157,9 @@ class SwiftPassword(object):
         """
         Sets the time_created of this SwiftPassword.
         Date and time the `SwiftPassword` object was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :param time_created: The time_created of this SwiftPassword.
         :type: datetime
@@ -160,7 +172,9 @@ class SwiftPassword(object):
         Gets the expires_on of this SwiftPassword.
         Date and time when this password will expire, in the format defined by RFC3339.
         Null if it never expires.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :return: The expires_on of this SwiftPassword.
         :rtype: datetime
@@ -173,7 +187,9 @@ class SwiftPassword(object):
         Sets the expires_on of this SwiftPassword.
         Date and time when this password will expire, in the format defined by RFC3339.
         Null if it never expires.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :param expires_on: The expires_on of this SwiftPassword.
         :type: datetime
@@ -187,6 +203,7 @@ class SwiftPassword(object):
         The password's current state. After creating a password, make sure its `lifecycleState` changes from
         CREATING to ACTIVE before using it.
 
+
         :return: The lifecycle_state of this SwiftPassword.
         :rtype: str
         """
@@ -198,6 +215,7 @@ class SwiftPassword(object):
         Sets the lifecycle_state of this SwiftPassword.
         The password's current state. After creating a password, make sure its `lifecycleState` changes from
         CREATING to ACTIVE before using it.
+
 
         :param lifecycle_state: The lifecycle_state of this SwiftPassword.
         :type: str
@@ -216,6 +234,7 @@ class SwiftPassword(object):
         Gets the inactive_status of this SwiftPassword.
         The detailed status of INACTIVE lifecycleState.
 
+
         :return: The inactive_status of this SwiftPassword.
         :rtype: int
         """
@@ -226,6 +245,7 @@ class SwiftPassword(object):
         """
         Sets the inactive_status of this SwiftPassword.
         The detailed status of INACTIVE lifecycleState.
+
 
         :param inactive_status: The inactive_status of this SwiftPassword.
         :type: int

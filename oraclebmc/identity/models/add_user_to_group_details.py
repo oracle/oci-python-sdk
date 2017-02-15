@@ -28,6 +28,7 @@ class AddUserToGroupDetails(object):
         Gets the user_id of this AddUserToGroupDetails.
         The OCID of the user.
 
+
         :return: The user_id of this AddUserToGroupDetails.
         :rtype: str
         """
@@ -38,6 +39,7 @@ class AddUserToGroupDetails(object):
         """
         Sets the user_id of this AddUserToGroupDetails.
         The OCID of the user.
+
 
         :param user_id: The user_id of this AddUserToGroupDetails.
         :type: str
@@ -50,6 +52,7 @@ class AddUserToGroupDetails(object):
         Gets the group_id of this AddUserToGroupDetails.
         The OCID of the group.
 
+
         :return: The group_id of this AddUserToGroupDetails.
         :rtype: str
         """
@@ -60,6 +63,7 @@ class AddUserToGroupDetails(object):
         """
         Sets the group_id of this AddUserToGroupDetails.
         The OCID of the group.
+
 
         :param group_id: The group_id of this AddUserToGroupDetails.
         :type: str

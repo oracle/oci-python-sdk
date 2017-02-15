@@ -34,6 +34,7 @@ class CreateInternetGatewayDetails(object):
         Gets the compartment_id of this CreateInternetGatewayDetails.
         The OCID of the compartment to contain the Internet Gateway.
 
+
         :return: The compartment_id of this CreateInternetGatewayDetails.
         :rtype: str
         """
@@ -44,6 +45,7 @@ class CreateInternetGatewayDetails(object):
         """
         Sets the compartment_id of this CreateInternetGatewayDetails.
         The OCID of the compartment to contain the Internet Gateway.
+
 
         :param compartment_id: The compartment_id of this CreateInternetGatewayDetails.
         :type: str
@@ -56,6 +58,7 @@ class CreateInternetGatewayDetails(object):
         Gets the display_name of this CreateInternetGatewayDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
 
+
         :return: The display_name of this CreateInternetGatewayDetails.
         :rtype: str
         """
@@ -66,6 +69,7 @@ class CreateInternetGatewayDetails(object):
         """
         Sets the display_name of this CreateInternetGatewayDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
+
 
         :param display_name: The display_name of this CreateInternetGatewayDetails.
         :type: str
@@ -78,6 +82,7 @@ class CreateInternetGatewayDetails(object):
         Gets the is_enabled of this CreateInternetGatewayDetails.
         Whether the gateway is enabled upon creation.
 
+
         :return: The is_enabled of this CreateInternetGatewayDetails.
         :rtype: bool
         """
@@ -88,6 +93,7 @@ class CreateInternetGatewayDetails(object):
         """
         Sets the is_enabled of this CreateInternetGatewayDetails.
         Whether the gateway is enabled upon creation.
+
 
         :param is_enabled: The is_enabled of this CreateInternetGatewayDetails.
         :type: bool
@@ -100,6 +106,7 @@ class CreateInternetGatewayDetails(object):
         Gets the vcn_id of this CreateInternetGatewayDetails.
         The OCID of the VCN the Internet Gateway is attached to.
 
+
         :return: The vcn_id of this CreateInternetGatewayDetails.
         :rtype: str
         """
@@ -110,6 +117,7 @@ class CreateInternetGatewayDetails(object):
         """
         Sets the vcn_id of this CreateInternetGatewayDetails.
         The OCID of the VCN the Internet Gateway is attached to.
+
 
         :param vcn_id: The vcn_id of this CreateInternetGatewayDetails.
         :type: str

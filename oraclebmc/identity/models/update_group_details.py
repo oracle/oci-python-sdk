@@ -25,6 +25,7 @@ class UpdateGroupDetails(object):
         Gets the description of this UpdateGroupDetails.
         The description you assign to the group. Does not have to be unique, and it's changeable.
 
+
         :return: The description of this UpdateGroupDetails.
         :rtype: str
         """
@@ -35,6 +36,7 @@ class UpdateGroupDetails(object):
         """
         Sets the description of this UpdateGroupDetails.
         The description you assign to the group. Does not have to be unique, and it's changeable.
+
 
         :param description: The description of this UpdateGroupDetails.
         :type: str

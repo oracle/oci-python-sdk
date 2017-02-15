@@ -25,6 +25,7 @@ class UpdateDrgAttachmentDetails(object):
         Gets the display_name of this UpdateDrgAttachmentDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
 
+
         :return: The display_name of this UpdateDrgAttachmentDetails.
         :rtype: str
         """
@@ -35,6 +36,7 @@ class UpdateDrgAttachmentDetails(object):
         """
         Sets the display_name of this UpdateDrgAttachmentDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
+
 
         :param display_name: The display_name of this UpdateDrgAttachmentDetails.
         :type: str

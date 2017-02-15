@@ -25,6 +25,7 @@ class TcpOptions(object):
         Gets the destination_port_range of this TcpOptions.
         A single destination port or a range.
 
+
         :return: The destination_port_range of this TcpOptions.
         :rtype: PortRange
         """
@@ -35,6 +36,7 @@ class TcpOptions(object):
         """
         Sets the destination_port_range of this TcpOptions.
         A single destination port or a range.
+
 
         :param destination_port_range: The destination_port_range of this TcpOptions.
         :type: PortRange

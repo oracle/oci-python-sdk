@@ -31,6 +31,7 @@ class UpdatePolicyDetails(object):
         Gets the description of this UpdatePolicyDetails.
         The description you assign to the policy. Does not have to be unique, and it's changeable.
 
+
         :return: The description of this UpdatePolicyDetails.
         :rtype: str
         """
@@ -42,6 +43,7 @@ class UpdatePolicyDetails(object):
         Sets the description of this UpdatePolicyDetails.
         The description you assign to the policy. Does not have to be unique, and it's changeable.
 
+
         :param description: The description of this UpdatePolicyDetails.
         :type: str
         """
@@ -52,8 +54,12 @@ class UpdatePolicyDetails(object):
         """
         Gets the statements of this UpdatePolicyDetails.
         An array of policy statements written in the policy language. See
-        [How Policies Work]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policies.htm) and
-        [Common Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/commonpolicies.htm).
+        `How Policies Work`__ and
+        `Common Policies`__.
+
+        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/policies.htm
+        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/commonpolicies.htm
+
 
         :return: The statements of this UpdatePolicyDetails.
         :rtype: list[str]
@@ -65,8 +71,12 @@ class UpdatePolicyDetails(object):
         """
         Sets the statements of this UpdatePolicyDetails.
         An array of policy statements written in the policy language. See
-        [How Policies Work]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policies.htm) and
-        [Common Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/commonpolicies.htm).
+        `How Policies Work`__ and
+        `Common Policies`__.
+
+        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/policies.htm
+        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/commonpolicies.htm
+
 
         :param statements: The statements of this UpdatePolicyDetails.
         :type: list[str]
@@ -81,6 +91,7 @@ class UpdatePolicyDetails(object):
         policy will be evaluated according to the current behavior of the services at that moment. If set to a particular
         date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date.
 
+
         :return: The version_date of this UpdatePolicyDetails.
         :rtype: datetime
         """
@@ -93,6 +104,7 @@ class UpdatePolicyDetails(object):
         The version of the policy. If null or set to an empty string, when a request comes in for authorization, the
         policy will be evaluated according to the current behavior of the services at that moment. If set to a particular
         date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date.
+
 
         :param version_date: The version_date of this UpdatePolicyDetails.
         :type: datetime

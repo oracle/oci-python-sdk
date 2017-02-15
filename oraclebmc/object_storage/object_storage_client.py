@@ -30,16 +30,23 @@ class ObjectStorageClient(object):
         """
         CreateBucket
         Creates a bucket in the given namespace with a bucket name and optional user-defined metadata.
+
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
         talk to an administrator. If you're an admin who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
+        `Getting Started with Policies`__.
+
+        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm
+
 
         :param str namespace_name: (required)
             The top-level namespace used for the request.
-                :param CreateBucketDetails create_bucket_details: (required)
+
+        :param CreateBucketDetails create_bucket_details: (required)
             Request object for creating a bucket.
+
         :param str opc_client_request_id: (optional)
             The client request ID for tracing
+
         :return: A Response object with data of type Bucket
         """
         resource_path = "/n/{namespaceName}/b/"
@@ -79,15 +86,21 @@ class ObjectStorageClient(object):
         DeleteBucket
         Deletes a bucket if it is already empty. If the bucket is not empty, use DeleteObject first.
 
+
         :param str namespace_name: (required)
             The top-level namespace used for the request.
-                :param str bucket_name: (required)
+
+        :param str bucket_name: (required)
             The name of the bucket.
+
             Example: `my-new-bucket1`
+
         :param str if_match: (optional)
             The entity tag to match.
+
         :param str opc_client_request_id: (optional)
             The client request ID for tracing
+
         :return: A Response object with data of type None
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/"
@@ -128,18 +141,26 @@ class ObjectStorageClient(object):
         DeleteObject
         Delete an object.
 
+
         :param str namespace_name: (required)
             The top-level namespace used for the request.
-                :param str bucket_name: (required)
+
+        :param str bucket_name: (required)
             The name of the bucket.
+
             Example: `my-new-bucket1`
-                :param str object_name: (required)
+
+        :param str object_name: (required)
             The name of the object.
+
             Example: `test/test1`
+
         :param str if_match: (optional)
             The entity tag to match.
+
         :param str opc_client_request_id: (optional)
             The client request ID for tracing
+
         :return: A Response object with data of type None
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/o/{objectName}"
@@ -181,17 +202,24 @@ class ObjectStorageClient(object):
         GetBucket
         Gets the current representation of the given bucket in the given namespace.
 
+
         :param str namespace_name: (required)
             The top-level namespace used for the request.
-                :param str bucket_name: (required)
+
+        :param str bucket_name: (required)
             The name of the bucket.
+
             Example: `my-new-bucket1`
+
         :param str if_match: (optional)
             The entity tag to match.
+
         :param str if_none_match: (optional)
             The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
+
         :param str opc_client_request_id: (optional)
             The client request ID for tracing
+
         :return: A Response object with data of type Bucket
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/"
@@ -236,8 +264,10 @@ class ObjectStorageClient(object):
         Get the name of the namespace for the user making the request. An account name must be unique, must start with a
         letter, and can have up to 15 lower case letters and numbers. You cannot use spaces and special characters.
 
-:param str opc_client_request_id: (optional)
+
+        :param str opc_client_request_id: (optional)
             The client request ID for tracing
+
         :return: A Response object with data of type str
         """
         resource_path = "/n/"
@@ -270,23 +300,33 @@ class ObjectStorageClient(object):
         GetObject
         Gets the metadata and body of an object.
 
+
         :param str namespace_name: (required)
             The top-level namespace used for the request.
-                :param str bucket_name: (required)
+
+        :param str bucket_name: (required)
             The name of the bucket.
+
             Example: `my-new-bucket1`
-                :param str object_name: (required)
+
+        :param str object_name: (required)
             The name of the object.
+
             Example: `test/test1`
+
         :param str if_match: (optional)
             The entity tag to match.
+
         :param str if_none_match: (optional)
             The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
+
         :param str opc_client_request_id: (optional)
             The client request ID for tracing
+
         :param str range: (optional)
             Optional byte range to fetch. Follows https://tools.ietf.org/html/rfc7233#section-2.1.
             Note, only one byte range is supported.
+
         :return: A Response object with data of type stream
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/o/{objectName}"
@@ -333,17 +373,24 @@ class ObjectStorageClient(object):
         HeadBucket
         An efficient method to check if a bucket exists, and to get the current ETag for the bucket.
 
+
         :param str namespace_name: (required)
             The top-level namespace used for the request.
-                :param str bucket_name: (required)
+
+        :param str bucket_name: (required)
             The name of the bucket.
+
             Example: `my-new-bucket1`
+
         :param str if_match: (optional)
             The entity tag to match.
+
         :param str if_none_match: (optional)
             The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
+
         :param str opc_client_request_id: (optional)
             The client request ID for tracing
+
         :return: A Response object with data of type None
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/"
@@ -386,20 +433,29 @@ class ObjectStorageClient(object):
         HeadObject
         Gets the user-defined metadata and entity tag for an object.
 
+
         :param str namespace_name: (required)
             The top-level namespace used for the request.
-                :param str bucket_name: (required)
+
+        :param str bucket_name: (required)
             The name of the bucket.
+
             Example: `my-new-bucket1`
-                :param str object_name: (required)
+
+        :param str object_name: (required)
             The name of the object.
+
             Example: `test/test1`
+
         :param str if_match: (optional)
             The entity tag to match.
+
         :param str if_none_match: (optional)
             The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
+
         :param str opc_client_request_id: (optional)
             The client request ID for tracing
+
         :return: A Response object with data of type None
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/o/{objectName}"
@@ -443,20 +499,29 @@ class ObjectStorageClient(object):
         ListBuckets
         Get a list of all `BucketSummary`s in a namespace. A `BucketSummary` contains only summary fields for the bucket
         and does not contain fields like the user-defined metadata.
+
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
         talk to an administrator. If you're an admin who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
+        `Getting Started with Policies`__.
+
+        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm
+
 
         :param str namespace_name: (required)
             The top-level namespace used for the request.
-                :param str compartment_id: (required)
+
+        :param str compartment_id: (required)
             The compartment ID in which to create the bucket.
+
         :param int limit: (optional)
             The maximum number of items to return.
+
         :param str page: (optional)
             The page at which to start retrieving results.
+
         :param str opc_client_request_id: (optional)
             The client request ID for tracing
+
         :return: A Response object with data of type list[BucketSummary]
         """
         resource_path = "/n/{namespaceName}/b/"
@@ -504,36 +569,50 @@ class ObjectStorageClient(object):
         """
         ListObjects
         Lists the objects in a bucket.
+
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
         talk to an administrator. If you're an admin who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
+        `Getting Started with Policies`__.
+
+        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm
+
 
         :param str namespace_name: (required)
             The top-level namespace used for the request.
-                :param str bucket_name: (required)
+
+        :param str bucket_name: (required)
             The name of the bucket.
+
             Example: `my-new-bucket1`
+
         :param str prefix: (optional)
             Object names returned by a list query must start with prefix
+
         :param str start: (optional)
             Object names returned by a list query must be greater or equal to this parameter
+
         :param str end: (optional)
             Object names returned by a list query must be strictly less than this parameter
+
         :param int limit: (optional)
             The maximum number of items to return.
+
         :param str delimiter: (optional)
             When this parameter is set, only objects whose names do not contain the delimiter character
             (after an optionally specified prefix) are returned. Scanned objects whose names contain the
             delimiter have part of their name up to the last occurrence of the delimiter (after the optional
             prefix) returned as a set of prefixes. Note that only '/' is a supported delimiter character at
             this time.
+
         :param str fields: (optional)
             Object summary in list of objects includes the 'name' field.   This parameter may also include 'size'
             (object size in bytes), 'md5', and 'timeCreated' (object creation date and time) fields.
             Value of this parameter should be a comma separated, case-insensitive list of those field names.
             For example 'name,timeCreated,md5'
+
         :param str opc_client_request_id: (optional)
             The client request ID for tracing
+
         :return: A Response object with data of type ListObjects
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/o"
@@ -589,40 +668,60 @@ class ObjectStorageClient(object):
         """
         PutObject
         Create a new object or overwrite an existing one.
+
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
         talk to an administrator. If you're an admin who needs to write policies to give users access, see
-        [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
+        `Getting Started with Policies`__.
+
+        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm
+
 
         :param str namespace_name: (required)
             The top-level namespace used for the request.
-                :param str bucket_name: (required)
+
+        :param str bucket_name: (required)
             The name of the bucket.
+
             Example: `my-new-bucket1`
-                :param str object_name: (required)
+
+        :param str object_name: (required)
             The name of the object.
+
             Example: `test/test1`
-                :param stream put_object_body: (required)
+
+        :param stream put_object_body: (required)
             The object being put to the object store.
+
         :param int content_length: (optional)
             The content length of the body.
+
         :param str if_match: (optional)
             The entity tag to match.
+
         :param str if_none_match: (optional)
             The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
+
         :param str opc_client_request_id: (optional)
             The client request ID for tracing
+
         :param str expect: (optional)
             100-continue
+
         :param str content_md5: (optional)
             The base-64 encoded MD5 hash of the body.
+
         :param str content_type: (optional)
             The content type of the object.  Defaults to 'application/octet-stream' if not overridden during the PutObject call.
+
         :param str content_language: (optional)
             The content language of the object.
+
         :param str content_encoding: (optional)
             The content encoding of the object.
+
         :param dict(str, str) opc_meta: (optional)
             Optional user-defined metadata key and value.
+
         :return: A Response object with data of type None
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/o/{objectName}"
@@ -687,17 +786,24 @@ class ObjectStorageClient(object):
         UpdateBucket
         Performs a partial (or full) update of a bucket, currently including just the user-defined metadata.
 
+
         :param str namespace_name: (required)
             The top-level namespace used for the request.
-                :param str bucket_name: (required)
+
+        :param str bucket_name: (required)
             The name of the bucket.
+
             Example: `my-new-bucket1`
-                :param UpdateBucketDetails update_bucket_details: (required)
+
+        :param UpdateBucketDetails update_bucket_details: (required)
             Request object for updating a bucket.
+
         :param str if_match: (optional)
             The entity tag to match.
+
         :param str opc_client_request_id: (optional)
             The client request ID for tracing
+
         :return: A Response object with data of type Bucket
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/"
