@@ -48,4 +48,4 @@ Since ``config`` is a dict, you can also build it manually and check it with
     These are supported across the SDKs, so if you've already set this file up for the Ruby or Java SDKs,
     you're all set.
 
-    __ https://docs.us-az-phoenix-1.oracleiaas.com/Content/API/Concepts/sdkconfig.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdkconfig.htm
