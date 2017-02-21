@@ -16,7 +16,6 @@ class LaunchInstanceDetails(object):
             'image_id': 'str',
             'ipxe_script': 'str',
             'metadata': 'dict(str, str)',
-            'opc_ipxe_script': 'str',
             'shape': 'str',
             'subnet_id': 'str'
         }
@@ -28,7 +27,6 @@ class LaunchInstanceDetails(object):
             'image_id': 'imageId',
             'ipxe_script': 'ipxeScript',
             'metadata': 'metadata',
-            'opc_ipxe_script': 'opcIpxeScript',
             'shape': 'shape',
             'subnet_id': 'subnetId'
         }
@@ -39,7 +37,6 @@ class LaunchInstanceDetails(object):
         self._image_id = None
         self._ipxe_script = None
         self._metadata = None
-        self._opc_ipxe_script = None
         self._shape = None
         self._subnet_id = None
 
@@ -352,30 +349,6 @@ class LaunchInstanceDetails(object):
         :type: dict(str, str)
         """
         self._metadata = metadata
-
-    @property
-    def opc_ipxe_script(self):
-        """
-        Gets the opc_ipxe_script of this LaunchInstanceDetails.
-        For Oracle internal use only.
-
-
-        :return: The opc_ipxe_script of this LaunchInstanceDetails.
-        :rtype: str
-        """
-        return self._opc_ipxe_script
-
-    @opc_ipxe_script.setter
-    def opc_ipxe_script(self, opc_ipxe_script):
-        """
-        Sets the opc_ipxe_script of this LaunchInstanceDetails.
-        For Oracle internal use only.
-
-
-        :param opc_ipxe_script: The opc_ipxe_script of this LaunchInstanceDetails.
-        :type: str
-        """
-        self._opc_ipxe_script = opc_ipxe_script
 
     @property
     def shape(self):

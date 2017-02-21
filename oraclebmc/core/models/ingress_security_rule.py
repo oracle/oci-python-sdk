@@ -11,6 +11,7 @@ class IngressSecurityRule(object):
 
         self.swagger_types = {
             'icmp_options': 'IcmpOptions',
+            'is_stateless': 'bool',
             'protocol': 'str',
             'source': 'str',
             'tcp_options': 'TcpOptions',
@@ -19,6 +20,7 @@ class IngressSecurityRule(object):
 
         self.attribute_map = {
             'icmp_options': 'icmpOptions',
+            'is_stateless': 'isStateless',
             'protocol': 'protocol',
             'source': 'source',
             'tcp_options': 'tcpOptions',
@@ -26,6 +28,7 @@ class IngressSecurityRule(object):
         }
 
         self._icmp_options = None
+        self._is_stateless = None
         self._protocol = None
         self._source = None
         self._tcp_options = None
@@ -72,6 +75,38 @@ class IngressSecurityRule(object):
         :type: IcmpOptions
         """
         self._icmp_options = icmp_options
+
+    @property
+    def is_stateless(self):
+        """
+        Gets the is_stateless of this IngressSecurityRule.
+        A stateless rule allows traffic in one direction. Remember to add a corresponding
+        stateless rule in the other direction if you need to support bidirectional traffic. For
+        example, if ingress traffic allows TCP destination port 80, there should be an egress
+        rule to allow TCP source port 80. Defaults to false, which means the rule is stateful
+        and a corresponding rule is not necessary for bidirectional traffic.
+
+
+        :return: The is_stateless of this IngressSecurityRule.
+        :rtype: bool
+        """
+        return self._is_stateless
+
+    @is_stateless.setter
+    def is_stateless(self, is_stateless):
+        """
+        Sets the is_stateless of this IngressSecurityRule.
+        A stateless rule allows traffic in one direction. Remember to add a corresponding
+        stateless rule in the other direction if you need to support bidirectional traffic. For
+        example, if ingress traffic allows TCP destination port 80, there should be an egress
+        rule to allow TCP source port 80. Defaults to false, which means the rule is stateful
+        and a corresponding rule is not necessary for bidirectional traffic.
+
+
+        :param is_stateless: The is_stateless of this IngressSecurityRule.
+        :type: bool
+        """
+        self._is_stateless = is_stateless
 
     @property
     def protocol(self):
