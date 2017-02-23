@@ -6,7 +6,7 @@ import tests.util
 def test_invalid_compartment(identity):
     with pytest.raises(oraclebmc.exceptions.ServiceError) as excinfo:
         identity.list_users('invalid_compartment')
-    tests.util.validate_service_error(excinfo.value, 403, "NotAllowed", "Operation not allowed")
+    tests.util.validate_service_error(excinfo.value, 404, "NotAuthorizedOrNotFound", "Authorization failed or requested resource not found")
 
 
 def test_invalid_policy(identity, config):

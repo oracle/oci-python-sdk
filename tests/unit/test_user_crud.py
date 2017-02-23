@@ -6,7 +6,7 @@ def test_user_crud(identity, config):
     user_name = "python_temp_user_1"
     user_description = "Created by python SDK TestUserCrud test."
 
-    initial_user_count = len(identity.list_users(compartment).data)
+    initial_user_count = len(identity.list_users(compartment, limit=500).data)
 
     # Create User
     request = oraclebmc.identity.models.CreateUserDetails()
@@ -22,7 +22,7 @@ def test_user_crud(identity, config):
     assert compartment == response.data.compartment_id
     user_id = response.data.id
 
-    assert initial_user_count + 1 == len(identity.list_users(compartment).data)
+    assert initial_user_count + 1 == len(identity.list_users(compartment, limit=500).data)
 
     # Get User
     response = identity.get_user(user_id)
@@ -44,4 +44,4 @@ def test_user_crud(identity, config):
 
     # Delete User
     identity.delete_user(user_id)
-    assert initial_user_count == len(identity.list_users(compartment).data)
+    assert initial_user_count == len(identity.list_users(compartment, limit=500).data)

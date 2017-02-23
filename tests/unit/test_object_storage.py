@@ -49,7 +49,7 @@ def test_get_namespace(object_storage):
 def test_bucket_crud(object_storage, config):
     bucket_name = unique_name('test_bucket')
     namespace = object_storage.get_namespace().data
-    bucket_count = len(object_storage.list_buckets(namespace, config["tenancy"], limit=100).data)
+    bucket_count = len(object_storage.list_buckets(namespace, config["tenancy"], limit=500).data)
 
     # Create
     request = oraclebmc.object_storage.models.CreateBucketDetails()
@@ -71,7 +71,7 @@ def test_bucket_crud(object_storage, config):
     assert bucket_name == response.data.name
 
     # List
-    response = object_storage.list_buckets(namespace, config["tenancy"], limit=100)
+    response = object_storage.list_buckets(namespace, config["tenancy"], limit=500)
     assert response.status == 200
     assert bucket_count + 1 == len(response.data)
     assert type(response.data[0]) is oraclebmc.object_storage.models.BucketSummary
