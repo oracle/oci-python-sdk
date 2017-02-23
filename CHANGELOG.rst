@@ -12,12 +12,20 @@ The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
  1.1.1 - 2017-02-03
 ====================
 
-* Support added for Stateless Security settings
-* Support added for the IPXE parameter when launching a Compute Instance.
+-------
+ Added
+-------
+
+* Support for iPXE script parameter to launch_instance operation
+* Support for stateless security list rules
 
 ====================
  1.1.0 - 2017-02-03
 ====================
+
+-------
+ Added
+-------
 
 * Support added for Core Services:
 
