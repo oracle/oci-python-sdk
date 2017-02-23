@@ -29,6 +29,7 @@ Virtual Network
 ===============
 
 .. autoclass:: oraclebmc.core.virtual_network_client.VirtualNetworkClient
+    :members:
 
 --------
  Models
@@ -36,6 +37,7 @@ Virtual Network
 
 .. automodule:: oraclebmc.core.models
     :members:
+    :undoc-members:
     :imported-members:
 
 ==========
