@@ -37,6 +37,7 @@ class CreateSecurityListDetails(object):
         Gets the compartment_id of this CreateSecurityListDetails.
         The OCID of the compartment to contain the security list.
 
+
         :return: The compartment_id of this CreateSecurityListDetails.
         :rtype: str
         """
@@ -47,6 +48,7 @@ class CreateSecurityListDetails(object):
         """
         Sets the compartment_id of this CreateSecurityListDetails.
         The OCID of the compartment to contain the security list.
+
 
         :param compartment_id: The compartment_id of this CreateSecurityListDetails.
         :type: str
@@ -59,6 +61,7 @@ class CreateSecurityListDetails(object):
         Gets the display_name of this CreateSecurityListDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
 
+
         :return: The display_name of this CreateSecurityListDetails.
         :rtype: str
         """
@@ -69,6 +72,7 @@ class CreateSecurityListDetails(object):
         """
         Sets the display_name of this CreateSecurityListDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
+
 
         :param display_name: The display_name of this CreateSecurityListDetails.
         :type: str
@@ -81,6 +85,7 @@ class CreateSecurityListDetails(object):
         Gets the egress_security_rules of this CreateSecurityListDetails.
         Rules for allowing egress IP packets.
 
+
         :return: The egress_security_rules of this CreateSecurityListDetails.
         :rtype: list[EgressSecurityRule]
         """
@@ -91,6 +96,7 @@ class CreateSecurityListDetails(object):
         """
         Sets the egress_security_rules of this CreateSecurityListDetails.
         Rules for allowing egress IP packets.
+
 
         :param egress_security_rules: The egress_security_rules of this CreateSecurityListDetails.
         :type: list[EgressSecurityRule]
@@ -103,6 +109,7 @@ class CreateSecurityListDetails(object):
         Gets the ingress_security_rules of this CreateSecurityListDetails.
         Rules for allowing ingress IP packets.
 
+
         :return: The ingress_security_rules of this CreateSecurityListDetails.
         :rtype: list[IngressSecurityRule]
         """
@@ -113,6 +120,7 @@ class CreateSecurityListDetails(object):
         """
         Sets the ingress_security_rules of this CreateSecurityListDetails.
         Rules for allowing ingress IP packets.
+
 
         :param ingress_security_rules: The ingress_security_rules of this CreateSecurityListDetails.
         :type: list[IngressSecurityRule]
@@ -125,6 +133,7 @@ class CreateSecurityListDetails(object):
         Gets the vcn_id of this CreateSecurityListDetails.
         The OCID of the VCN the security list belongs to.
 
+
         :return: The vcn_id of this CreateSecurityListDetails.
         :rtype: str
         """
@@ -135,6 +144,7 @@ class CreateSecurityListDetails(object):
         """
         Sets the vcn_id of this CreateSecurityListDetails.
         The OCID of the VCN the security list belongs to.
+
 
         :param vcn_id: The vcn_id of this CreateSecurityListDetails.
         :type: str

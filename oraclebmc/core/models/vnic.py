@@ -48,7 +48,9 @@ class Vnic(object):
         """
         Gets the availability_domain of this Vnic.
         The VNIC's Availability Domain.
+
         Example: `Uocm:PHX-AD-1`
+
 
         :return: The availability_domain of this Vnic.
         :rtype: str
@@ -60,7 +62,9 @@ class Vnic(object):
         """
         Sets the availability_domain of this Vnic.
         The VNIC's Availability Domain.
+
         Example: `Uocm:PHX-AD-1`
+
 
         :param availability_domain: The availability_domain of this Vnic.
         :type: str
@@ -73,6 +77,7 @@ class Vnic(object):
         Gets the compartment_id of this Vnic.
         The OCID of the compartment containing the VNIC.
 
+
         :return: The compartment_id of this Vnic.
         :rtype: str
         """
@@ -83,6 +88,7 @@ class Vnic(object):
         """
         Sets the compartment_id of this Vnic.
         The OCID of the compartment containing the VNIC.
+
 
         :param compartment_id: The compartment_id of this Vnic.
         :type: str
@@ -95,6 +101,7 @@ class Vnic(object):
         Gets the display_name of this Vnic.
         A user-friendly name. Does not have to be unique.
 
+
         :return: The display_name of this Vnic.
         :rtype: str
         """
@@ -105,6 +112,7 @@ class Vnic(object):
         """
         Sets the display_name of this Vnic.
         A user-friendly name. Does not have to be unique.
+
 
         :param display_name: The display_name of this Vnic.
         :type: str
@@ -117,6 +125,7 @@ class Vnic(object):
         Gets the id of this Vnic.
         The VNIC's Oracle ID (OCID).
 
+
         :return: The id of this Vnic.
         :rtype: str
         """
@@ -127,6 +136,7 @@ class Vnic(object):
         """
         Sets the id of this Vnic.
         The VNIC's Oracle ID (OCID).
+
 
         :param id: The id of this Vnic.
         :type: str
@@ -139,6 +149,7 @@ class Vnic(object):
         Gets the lifecycle_state of this Vnic.
         The current state of the VNIC.
 
+
         :return: The lifecycle_state of this Vnic.
         :rtype: str
         """
@@ -149,6 +160,7 @@ class Vnic(object):
         """
         Sets the lifecycle_state of this Vnic.
         The current state of the VNIC.
+
 
         :param lifecycle_state: The lifecycle_state of this Vnic.
         :type: str
@@ -168,6 +180,7 @@ class Vnic(object):
         The private IP addresses of the VNIC, which is within the VNIC subnet
         and is accessible within the VCN.
 
+
         :return: The private_ip of this Vnic.
         :rtype: str
         """
@@ -180,6 +193,7 @@ class Vnic(object):
         The private IP addresses of the VNIC, which is within the VNIC subnet
         and is accessible within the VCN.
 
+
         :param private_ip: The private_ip of this Vnic.
         :type: str
         """
@@ -190,6 +204,7 @@ class Vnic(object):
         """
         Gets the public_ip of this Vnic.
         The public IP address of the VNIC, which Oracle performs NAT for at the gateway.
+
 
         :return: The public_ip of this Vnic.
         :rtype: str
@@ -202,6 +217,7 @@ class Vnic(object):
         Sets the public_ip of this Vnic.
         The public IP address of the VNIC, which Oracle performs NAT for at the gateway.
 
+
         :param public_ip: The public_ip of this Vnic.
         :type: str
         """
@@ -212,6 +228,7 @@ class Vnic(object):
         """
         Gets the subnet_id of this Vnic.
         The OCID of the subnet the VNIC is in.
+
 
         :return: The subnet_id of this Vnic.
         :rtype: str
@@ -224,6 +241,7 @@ class Vnic(object):
         Sets the subnet_id of this Vnic.
         The OCID of the subnet the VNIC is in.
 
+
         :param subnet_id: The subnet_id of this Vnic.
         :type: str
         """
@@ -234,7 +252,9 @@ class Vnic(object):
         """
         Gets the time_created of this Vnic.
         The date and time the VNIC was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :return: The time_created of this Vnic.
         :rtype: datetime
@@ -246,7 +266,9 @@ class Vnic(object):
         """
         Sets the time_created of this Vnic.
         The date and time the VNIC was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :param time_created: The time_created of this Vnic.
         :type: datetime

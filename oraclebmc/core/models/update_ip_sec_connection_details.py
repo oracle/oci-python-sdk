@@ -25,6 +25,7 @@ class UpdateIPSecConnectionDetails(object):
         Gets the display_name of this UpdateIPSecConnectionDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
 
+
         :return: The display_name of this UpdateIPSecConnectionDetails.
         :rtype: str
         """
@@ -35,6 +36,7 @@ class UpdateIPSecConnectionDetails(object):
         """
         Sets the display_name of this UpdateIPSecConnectionDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
+
 
         :param display_name: The display_name of this UpdateIPSecConnectionDetails.
         :type: str

@@ -28,6 +28,7 @@ class IcmpOptions(object):
         Gets the code of this IcmpOptions.
         The ICMP code (optional).
 
+
         :return: The code of this IcmpOptions.
         :rtype: int
         """
@@ -38,6 +39,7 @@ class IcmpOptions(object):
         """
         Sets the code of this IcmpOptions.
         The ICMP code (optional).
+
 
         :param code: The code of this IcmpOptions.
         :type: int
@@ -50,6 +52,7 @@ class IcmpOptions(object):
         Gets the type of this IcmpOptions.
         The ICMP type.
 
+
         :return: The type of this IcmpOptions.
         :rtype: int
         """
@@ -60,6 +63,7 @@ class IcmpOptions(object):
         """
         Sets the type of this IcmpOptions.
         The ICMP type.
+
 
         :param type: The type of this IcmpOptions.
         :type: int

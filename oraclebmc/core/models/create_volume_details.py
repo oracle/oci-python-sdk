@@ -36,7 +36,9 @@ class CreateVolumeDetails(object):
         """
         Gets the availability_domain of this CreateVolumeDetails.
         The Availability Domain of the volume.
+
         Example: `Uocm:PHX-AD-1`
+
 
         :return: The availability_domain of this CreateVolumeDetails.
         :rtype: str
@@ -48,7 +50,9 @@ class CreateVolumeDetails(object):
         """
         Sets the availability_domain of this CreateVolumeDetails.
         The Availability Domain of the volume.
+
         Example: `Uocm:PHX-AD-1`
+
 
         :param availability_domain: The availability_domain of this CreateVolumeDetails.
         :type: str
@@ -61,6 +65,7 @@ class CreateVolumeDetails(object):
         Gets the compartment_id of this CreateVolumeDetails.
         The OCID of the compartment that contains the volume.
 
+
         :return: The compartment_id of this CreateVolumeDetails.
         :rtype: str
         """
@@ -71,6 +76,7 @@ class CreateVolumeDetails(object):
         """
         Sets the compartment_id of this CreateVolumeDetails.
         The OCID of the compartment that contains the volume.
+
 
         :param compartment_id: The compartment_id of this CreateVolumeDetails.
         :type: str
@@ -83,6 +89,7 @@ class CreateVolumeDetails(object):
         Gets the display_name of this CreateVolumeDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
 
+
         :return: The display_name of this CreateVolumeDetails.
         :rtype: str
         """
@@ -93,6 +100,7 @@ class CreateVolumeDetails(object):
         """
         Sets the display_name of this CreateVolumeDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
+
 
         :param display_name: The display_name of this CreateVolumeDetails.
         :type: str
@@ -105,6 +113,7 @@ class CreateVolumeDetails(object):
         Gets the size_in_mbs of this CreateVolumeDetails.
         The size of the volume in MBs.
 
+
         :return: The size_in_mbs of this CreateVolumeDetails.
         :rtype: int
         """
@@ -115,6 +124,7 @@ class CreateVolumeDetails(object):
         """
         Sets the size_in_mbs of this CreateVolumeDetails.
         The size of the volume in MBs.
+
 
         :param size_in_mbs: The size_in_mbs of this CreateVolumeDetails.
         :type: int
@@ -127,6 +137,7 @@ class CreateVolumeDetails(object):
         Gets the volume_backup_id of this CreateVolumeDetails.
         The OCID of the volume backup from which the data should be restored on the newly created volume.
 
+
         :return: The volume_backup_id of this CreateVolumeDetails.
         :rtype: str
         """
@@ -137,6 +148,7 @@ class CreateVolumeDetails(object):
         """
         Sets the volume_backup_id of this CreateVolumeDetails.
         The OCID of the volume backup from which the data should be restored on the newly created volume.
+
 
         :param volume_backup_id: The volume_backup_id of this CreateVolumeDetails.
         :type: str

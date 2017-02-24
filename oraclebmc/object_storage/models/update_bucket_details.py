@@ -31,6 +31,7 @@ class UpdateBucketDetails(object):
         Gets the namespace of this UpdateBucketDetails.
         The namespace in which the bucket lives.
 
+
         :return: The namespace of this UpdateBucketDetails.
         :rtype: str
         """
@@ -41,6 +42,7 @@ class UpdateBucketDetails(object):
         """
         Sets the namespace of this UpdateBucketDetails.
         The namespace in which the bucket lives.
+
 
         :param namespace: The namespace of this UpdateBucketDetails.
         :type: str
@@ -53,6 +55,7 @@ class UpdateBucketDetails(object):
         Gets the name of this UpdateBucketDetails.
         The name of the bucket.
 
+
         :return: The name of this UpdateBucketDetails.
         :rtype: str
         """
@@ -63,6 +66,7 @@ class UpdateBucketDetails(object):
         """
         Sets the name of this UpdateBucketDetails.
         The name of the bucket.
+
 
         :param name: The name of this UpdateBucketDetails.
         :type: str
@@ -75,6 +79,7 @@ class UpdateBucketDetails(object):
         Gets the metadata of this UpdateBucketDetails.
         Arbitrary string keys and values for the user-defined metadata.
 
+
         :return: The metadata of this UpdateBucketDetails.
         :rtype: dict(str, str)
         """
@@ -85,6 +90,7 @@ class UpdateBucketDetails(object):
         """
         Sets the metadata of this UpdateBucketDetails.
         Arbitrary string keys and values for the user-defined metadata.
+
 
         :param metadata: The metadata of this UpdateBucketDetails.
         :type: dict(str, str)

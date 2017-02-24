@@ -65,7 +65,9 @@ class IScsiVolumeAttachment(VolumeAttachment):
         Gets the chap_secret of this IScsiVolumeAttachment.
         The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP user name.
         (Also called the \"CHAP password\".)
+
         Example: `d6866c0d-298b-48ba-95af-309b4faux45e`
+
 
         :return: The chap_secret of this IScsiVolumeAttachment.
         :rtype: str
@@ -78,7 +80,9 @@ class IScsiVolumeAttachment(VolumeAttachment):
         Sets the chap_secret of this IScsiVolumeAttachment.
         The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP user name.
         (Also called the \"CHAP password\".)
+
         Example: `d6866c0d-298b-48ba-95af-309b4faux45e`
+
 
         :param chap_secret: The chap_secret of this IScsiVolumeAttachment.
         :type: str
@@ -90,7 +94,9 @@ class IScsiVolumeAttachment(VolumeAttachment):
         """
         Gets the chap_username of this IScsiVolumeAttachment.
         The volume's system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user name.
+
         Example: `ocid1.volume.oc1.phx.abyhqljrgvttnlx73nmrwfaux7kcvzfs3s66izvxf2h4lgvyndsdsnoiwr5q`
+
 
         :return: The chap_username of this IScsiVolumeAttachment.
         :rtype: str
@@ -102,7 +108,9 @@ class IScsiVolumeAttachment(VolumeAttachment):
         """
         Sets the chap_username of this IScsiVolumeAttachment.
         The volume's system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user name.
+
         Example: `ocid1.volume.oc1.phx.abyhqljrgvttnlx73nmrwfaux7kcvzfs3s66izvxf2h4lgvyndsdsnoiwr5q`
+
 
         :param chap_username: The chap_username of this IScsiVolumeAttachment.
         :type: str
@@ -114,7 +122,9 @@ class IScsiVolumeAttachment(VolumeAttachment):
         """
         Gets the ipv4 of this IScsiVolumeAttachment.
         The volume's iSCSI IP address.
+
         Example: `169.254.0.2`
+
 
         :return: The ipv4 of this IScsiVolumeAttachment.
         :rtype: str
@@ -126,7 +136,9 @@ class IScsiVolumeAttachment(VolumeAttachment):
         """
         Sets the ipv4 of this IScsiVolumeAttachment.
         The volume's iSCSI IP address.
+
         Example: `169.254.0.2`
+
 
         :param ipv4: The ipv4 of this IScsiVolumeAttachment.
         :type: str
@@ -138,7 +150,9 @@ class IScsiVolumeAttachment(VolumeAttachment):
         """
         Gets the iqn of this IScsiVolumeAttachment.
         The target volume's iSCSI Qualified Name in the format defined by RFC 3720.
+
         Example: `iqn.2015-12.us.oracle.com:456b0391-17b8-4122-bbf1-f85fc0bb97d9`
+
 
         :return: The iqn of this IScsiVolumeAttachment.
         :rtype: str
@@ -150,7 +164,9 @@ class IScsiVolumeAttachment(VolumeAttachment):
         """
         Sets the iqn of this IScsiVolumeAttachment.
         The target volume's iSCSI Qualified Name in the format defined by RFC 3720.
+
         Example: `iqn.2015-12.us.oracle.com:456b0391-17b8-4122-bbf1-f85fc0bb97d9`
+
 
         :param iqn: The iqn of this IScsiVolumeAttachment.
         :type: str
@@ -162,7 +178,9 @@ class IScsiVolumeAttachment(VolumeAttachment):
         """
         Gets the port of this IScsiVolumeAttachment.
         The volume's iSCSI port.
+
         Example: `3260`
+
 
         :return: The port of this IScsiVolumeAttachment.
         :rtype: int
@@ -174,7 +192,9 @@ class IScsiVolumeAttachment(VolumeAttachment):
         """
         Sets the port of this IScsiVolumeAttachment.
         The volume's iSCSI port.
+
         Example: `3260`
+
 
         :param port: The port of this IScsiVolumeAttachment.
         :type: int

@@ -28,6 +28,7 @@ class UpdateDhcpDetails(object):
         Gets the display_name of this UpdateDhcpDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
 
+
         :return: The display_name of this UpdateDhcpDetails.
         :rtype: str
         """
@@ -38,6 +39,7 @@ class UpdateDhcpDetails(object):
         """
         Sets the display_name of this UpdateDhcpDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
+
 
         :param display_name: The display_name of this UpdateDhcpDetails.
         :type: str

@@ -25,6 +25,7 @@ class UpdateCpeDetails(object):
         Gets the display_name of this UpdateCpeDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
 
+
         :return: The display_name of this UpdateCpeDetails.
         :rtype: str
         """
@@ -35,6 +36,7 @@ class UpdateCpeDetails(object):
         """
         Sets the display_name of this UpdateCpeDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
+
 
         :param display_name: The display_name of this UpdateCpeDetails.
         :type: str

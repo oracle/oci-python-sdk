@@ -46,6 +46,7 @@ class SecurityList(object):
         Gets the compartment_id of this SecurityList.
         The OCID of the compartment containing the security list.
 
+
         :return: The compartment_id of this SecurityList.
         :rtype: str
         """
@@ -56,6 +57,7 @@ class SecurityList(object):
         """
         Sets the compartment_id of this SecurityList.
         The OCID of the compartment containing the security list.
+
 
         :param compartment_id: The compartment_id of this SecurityList.
         :type: str
@@ -68,6 +70,7 @@ class SecurityList(object):
         Gets the display_name of this SecurityList.
         A user-friendly name. Does not have to be unique, and it's changeable.
 
+
         :return: The display_name of this SecurityList.
         :rtype: str
         """
@@ -78,6 +81,7 @@ class SecurityList(object):
         """
         Sets the display_name of this SecurityList.
         A user-friendly name. Does not have to be unique, and it's changeable.
+
 
         :param display_name: The display_name of this SecurityList.
         :type: str
@@ -90,6 +94,7 @@ class SecurityList(object):
         Gets the egress_security_rules of this SecurityList.
         Rules for allowing egress IP packets.
 
+
         :return: The egress_security_rules of this SecurityList.
         :rtype: list[EgressSecurityRule]
         """
@@ -100,6 +105,7 @@ class SecurityList(object):
         """
         Sets the egress_security_rules of this SecurityList.
         Rules for allowing egress IP packets.
+
 
         :param egress_security_rules: The egress_security_rules of this SecurityList.
         :type: list[EgressSecurityRule]
@@ -112,6 +118,7 @@ class SecurityList(object):
         Gets the id of this SecurityList.
         The security list's Oracle Cloud ID (OCID).
 
+
         :return: The id of this SecurityList.
         :rtype: str
         """
@@ -122,6 +129,7 @@ class SecurityList(object):
         """
         Sets the id of this SecurityList.
         The security list's Oracle Cloud ID (OCID).
+
 
         :param id: The id of this SecurityList.
         :type: str
@@ -134,6 +142,7 @@ class SecurityList(object):
         Gets the ingress_security_rules of this SecurityList.
         Rules for allowing ingress IP packets.
 
+
         :return: The ingress_security_rules of this SecurityList.
         :rtype: list[IngressSecurityRule]
         """
@@ -144,6 +153,7 @@ class SecurityList(object):
         """
         Sets the ingress_security_rules of this SecurityList.
         Rules for allowing ingress IP packets.
+
 
         :param ingress_security_rules: The ingress_security_rules of this SecurityList.
         :type: list[IngressSecurityRule]
@@ -156,6 +166,7 @@ class SecurityList(object):
         Gets the lifecycle_state of this SecurityList.
         The security list's current state.
 
+
         :return: The lifecycle_state of this SecurityList.
         :rtype: str
         """
@@ -166,6 +177,7 @@ class SecurityList(object):
         """
         Sets the lifecycle_state of this SecurityList.
         The security list's current state.
+
 
         :param lifecycle_state: The lifecycle_state of this SecurityList.
         :type: str
@@ -183,7 +195,9 @@ class SecurityList(object):
         """
         Gets the time_created of this SecurityList.
         The date and time the security list was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :return: The time_created of this SecurityList.
         :rtype: datetime
@@ -195,7 +209,9 @@ class SecurityList(object):
         """
         Sets the time_created of this SecurityList.
         The date and time the security list was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :param time_created: The time_created of this SecurityList.
         :type: datetime
@@ -208,6 +224,7 @@ class SecurityList(object):
         Gets the vcn_id of this SecurityList.
         The OCID of the VCN the security list belongs to.
 
+
         :return: The vcn_id of this SecurityList.
         :rtype: str
         """
@@ -218,6 +235,7 @@ class SecurityList(object):
         """
         Sets the vcn_id of this SecurityList.
         The OCID of the VCN the security list belongs to.
+
 
         :param vcn_id: The vcn_id of this SecurityList.
         :type: str

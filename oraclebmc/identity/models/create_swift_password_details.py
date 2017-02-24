@@ -25,6 +25,7 @@ class CreateSwiftPasswordDetails(object):
         Gets the description of this CreateSwiftPasswordDetails.
         The description you assign to the Swift password during creation. Does not have to be unique, and it's changeable.
 
+
         :return: The description of this CreateSwiftPasswordDetails.
         :rtype: str
         """
@@ -35,6 +36,7 @@ class CreateSwiftPasswordDetails(object):
         """
         Sets the description of this CreateSwiftPasswordDetails.
         The description you assign to the Swift password during creation. Does not have to be unique, and it's changeable.
+
 
         :param description: The description of this CreateSwiftPasswordDetails.
         :type: str

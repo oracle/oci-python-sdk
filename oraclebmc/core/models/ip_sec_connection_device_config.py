@@ -34,6 +34,7 @@ class IPSecConnectionDeviceConfig(object):
         Gets the compartment_id of this IPSecConnectionDeviceConfig.
         The OCID of the compartment containing the IPSec connection.
 
+
         :return: The compartment_id of this IPSecConnectionDeviceConfig.
         :rtype: str
         """
@@ -44,6 +45,7 @@ class IPSecConnectionDeviceConfig(object):
         """
         Sets the compartment_id of this IPSecConnectionDeviceConfig.
         The OCID of the compartment containing the IPSec connection.
+
 
         :param compartment_id: The compartment_id of this IPSecConnectionDeviceConfig.
         :type: str
@@ -56,6 +58,7 @@ class IPSecConnectionDeviceConfig(object):
         Gets the id of this IPSecConnectionDeviceConfig.
         The IPSec connection's Oracle ID (OCID).
 
+
         :return: The id of this IPSecConnectionDeviceConfig.
         :rtype: str
         """
@@ -66,6 +69,7 @@ class IPSecConnectionDeviceConfig(object):
         """
         Sets the id of this IPSecConnectionDeviceConfig.
         The IPSec connection's Oracle ID (OCID).
+
 
         :param id: The id of this IPSecConnectionDeviceConfig.
         :type: str
@@ -78,6 +82,7 @@ class IPSecConnectionDeviceConfig(object):
         Gets the time_created of this IPSecConnectionDeviceConfig.
         The date and time the IPSec connection was created.
 
+
         :return: The time_created of this IPSecConnectionDeviceConfig.
         :rtype: datetime
         """
@@ -89,6 +94,7 @@ class IPSecConnectionDeviceConfig(object):
         Sets the time_created of this IPSecConnectionDeviceConfig.
         The date and time the IPSec connection was created.
 
+
         :param time_created: The time_created of this IPSecConnectionDeviceConfig.
         :type: datetime
         """
@@ -98,7 +104,8 @@ class IPSecConnectionDeviceConfig(object):
     def tunnels(self):
         """
         Gets the tunnels of this IPSecConnectionDeviceConfig.
-        Two TunnelConfig objects.
+        Two :class:`TunnelConfig` objects.
+
 
         :return: The tunnels of this IPSecConnectionDeviceConfig.
         :rtype: list[TunnelConfig]
@@ -109,7 +116,8 @@ class IPSecConnectionDeviceConfig(object):
     def tunnels(self, tunnels):
         """
         Sets the tunnels of this IPSecConnectionDeviceConfig.
-        Two TunnelConfig objects.
+        Two :class:`TunnelConfig` objects.
+
 
         :param tunnels: The tunnels of this IPSecConnectionDeviceConfig.
         :type: list[TunnelConfig]
