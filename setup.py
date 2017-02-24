@@ -41,7 +41,7 @@ requires = [
 
 setup(
     name="oraclebmc",
-    url="https://docs.us-phoenix-1.oraclecloud.com/tools/python/latest/index.html",
+    url="https://oracle-bare-metal-cloud-services-python-sdk.readthedocs.io/en/latest/index.html",
     version=version,
     description="Oracle Bare Metal Cloud Services Python SDK",
     long_description=readme,
