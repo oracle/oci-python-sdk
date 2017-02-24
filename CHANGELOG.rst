@@ -9,7 +9,7 @@ The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ============
 
 ====================
- 1.1.1 - 2017-02-03
+ 1.1.1 - 2017-02-23
 ====================
 
 -------
