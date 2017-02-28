@@ -46,6 +46,9 @@ class InvalidConfig(ClientError):
         """:param errors: {config key: error code}"""
         self.errors = errors
 
+    def __str__(self):
+        return str(self.errors)
+
 
 class InvalidPrivateKey(ClientError):
     """The provided key is not a private key, or the provided passphrase is incorrect."""
