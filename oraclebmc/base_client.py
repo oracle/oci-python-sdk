@@ -339,7 +339,7 @@ class BaseClient(object):
         except ValueError:
             raise Exception("Failed to parse `{0}` into a date object".format(string))
 
-    def __deserialize_datatime(self, string):
+    def __deserialize_datetime(self, string):
         """
         Deserializes string to datetime.
 

@@ -2,8 +2,8 @@ Raw Requests
 ~~~~~~~~~~~~
 
 The Python SDK exposes a custom :class:`requests.auth.AuthBase` which you can use to sign non-standard calls.
-This can be helpful if you have opted into a beta program and need to communicate with a non-public endpoint, or
-otherwise modify your request in a way that the SDK does not support.
+This can be helpful if you need to make a BMCS- authenticated request to an alternate endpoint or to a
+BMCS API not yet supported in the SDK.
 
 ===================
  Creating a Signer
@@ -20,7 +20,7 @@ to pull in the values from a file:
         tenancy='ocid1.tenancy.oc1..aaaaaaaa[...]',
         user='ocid1.user.oc1..aaaaaaaa[...]',
         fingerprint='20:3b:97:13:55:1c:[...]',
-        private_key_file_location='~/.oraclebmc/config',
+        private_key_file_location='~/.oraclebmc/bmcs_api_key.pem',
         pass_phrase='hunter2'  # optional
     }
 
@@ -50,8 +50,8 @@ Once you have an instance of the auth handler, simply include it as the ``auth=`
     url = 'https://iaas.us-phoenix-1.oraclecloud.com/20160918/instances[...]'
     response = requests.get(url, auth=auth)
 
-Remember that the result will come back as a json blob, and is not automatically unpacked into the corresponding
-model instance.  You will need to handle the (de)serialization yourself.
+Remember that the result will come back in its raw form and is not unpacked into a model instance.
+You will need to handle the (de)serialization yourself.
 
 The following creates a new user by talking to the identity endpoint:
 
@@ -60,11 +60,11 @@ The following creates a new user by talking to the identity endpoint:
     endpoint = 'https://identity.us-phoenix-1.oraclecloud.com/20160918/users/'
     body = {
         'compartmentId': config['tenancy'],  # root compartment
-        'name': 'TestUserPleaseIgnore',
+        'name': 'TestUser',
         'description': 'Created with a raw request'
     }
 
     response = requests.post(endpoint, json=body, auth=auth)
 
     response.raise_for_status()
-    print(response.json['id'])
+    print(response.json()['id'])
