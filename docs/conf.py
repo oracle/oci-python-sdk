@@ -20,7 +20,7 @@ master_doc = "index"
 
 # General information about the project.
 project = "oraclebmc"
-copyright = "2017, Oracle"
+copyright = "2016, Oracle"
 author = "Oracle"
 
 try:
