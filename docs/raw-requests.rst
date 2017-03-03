@@ -16,28 +16,32 @@ to pull in the values from a file:
 .. code-block:: python
 
     from oraclebmc.signer import Signer
-    config = {
-        'tenancy': 'ocid1.tenancy.oc1..aaaaaaaa[...]',
-        'user': 'ocid1.user.oc1..aaaaaaaa[...]',
-        'fingerprint': '20:3b:97:13:55:1c:[...]',
-        'private_key_file_location': '~/.oraclebmc/config',
-        'pass_phrase': 'hunter2'  # optional
+    auth = Signer(
+        tenancy='ocid1.tenancy.oc1..aaaaaaaa[...]',
+        user='ocid1.user.oc1..aaaaaaaa[...]',
+        fingerprint='20:3b:97:13:55:1c:[...]',
+        private_key_file_location='~/.oraclebmc/config',
+        pass_phrase='hunter2'  # optional
     }
 
 
     # Or load directly from a file
     from oraclebmc.config import from_file
     config = from_file('~/.oraclebmc/config')
-
-
-    auth = Signer(**config)
+    auth = Signer(
+        tenancy=config['tenancy'],
+        user=config['user'],
+        fingerprint=config['fingerprint'],
+        private_key_file_location=config['key_file'],
+        pass_phrase=config['pass_phrase']
+    )
 
 
 ==================
  Using the Signer
 ==================
 
-Once you have an instance of the auth handler, simply include it in the ``auth=`` when making a call with requests.
+Once you have an instance of the auth handler, simply include it as the ``auth=`` param when using Requests.
 
 .. code-block:: python
 
@@ -53,14 +57,14 @@ The following creates a new user by talking to the identity endpoint:
 
 .. code-block:: python
 
-    endpoint = 'https://identity.us-phoenix-1.oraclecloud.com/20160918/users'
+    endpoint = 'https://identity.us-phoenix-1.oraclecloud.com/20160918/users/'
     body = {
-        'compartment_id': config['tenancy'],  # root compartment
+        'compartmentId': config['tenancy'],  # root compartment
         'name': 'TestUserPleaseIgnore',
-        'description': 'Created without the Identity Service Client'
+        'description': 'Created with a raw request'
     }
 
     response = requests.post(endpoint, json=body, auth=auth)
-    response.raise_for_status()
 
+    response.raise_for_status()
     print(response.json['id'])

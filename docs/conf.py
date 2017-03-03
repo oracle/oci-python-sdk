@@ -32,7 +32,7 @@ except pkg_resources.DistributionNotFound:
     print("metadata.  A virtualenv is recommended!")
     sys.exit(1)
 del pkg_resources
-version = ".".join(release.split(".")[:2])
+version = ".".join(release.split(".")[:3])
 
 language = "en"
 
