@@ -18,7 +18,6 @@ from . import constants, exceptions, regions
 from .config import validate_config
 from .request import Request
 from .response import Response
-from .signer import ObjectUploadSigner
 from .version import __version__
 
 USER_INFO = "Oracle-PythonSDK/{}".format(__version__)
@@ -144,7 +143,7 @@ class BaseClient(object):
 
         signer = self.signer
         if not request.enforce_content_headers:
-            signer = ObjectUploadSigner(signer)
+            signer = signer.without_content_headers
 
         stream = False
         if request.response_type == STREAM_RESPONSE_TYPE:
@@ -304,7 +303,7 @@ class BaseClient(object):
         elif cls == date:
             return self.__deserialize_date(data)
         elif cls == datetime:
-            return self.__deserialize_datatime(data)
+            return self.__deserialize_datetime(data)
         else:
             return self.__deserialize_model(data, cls)
 
