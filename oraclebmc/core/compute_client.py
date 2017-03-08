@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 from __future__ import absolute_import
 
@@ -644,15 +644,6 @@ class ComputeClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :param str opc_host_serial: (optional)
-            For Oracle internal use only.
-
-        :param str opc_pool_name: (optional)
-            For Oracle internal use only.
-
-        :param str opc_vnic_id: (optional)
-            For Oracle internal use only.
-
         :return: A Response object with data of type Instance
         """
         resource_path = "/instances/"
@@ -660,22 +651,12 @@ class ComputeClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
-            "opc_retry_token",
-            "opc_host_serial",
-            "opc_pool_name",
-            "opc_vnic_id"
+            "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "launch_instance got unknown kwargs: {!r}".format(extra_kwargs))
-
-        query_params = {
-            "opc-host-serial": kwargs.get("opc_host_serial", missing),
-            "opc-pool-name": kwargs.get("opc_pool_name", missing),
-            "opc-vnic-id": kwargs.get("opc_vnic_id", missing)
-        }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
 
         header_params = {
             "accept": "application/json",
@@ -687,7 +668,6 @@ class ComputeClient(object):
         return self.base_client.call_api(
             resource_path=resource_path,
             method=method,
-            query_params=query_params,
             header_params=header_params,
             body=launch_instance_details,
             response_type="Instance")

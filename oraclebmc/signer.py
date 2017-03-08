@@ -1,10 +1,11 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 import base64
 import email.utils
 import hashlib
 import io
+import functools
 import os
 
 import httpsig_cffi.sign
@@ -172,6 +173,11 @@ class Signer(requests.auth.AuthBase):
             signer = self._body_signer
         else:
             signer = self._basic_signer
+            # The requests library sets the Transfer-Encoding header to 'chunked' if the
+            # body is a stream with 0 length. Object storage does not currently support this option,
+            # and the request will fail if it is not removed. This is the only hook available where we
+            # can do this after the header is added and before the request is sent.
+            request.headers.pop('Transfer-Encoding', None)
 
         inject_missing_headers(request, sign_body, enforce_content_headers)
         signed_headers = signer.sign(
@@ -183,21 +189,6 @@ class Signer(requests.auth.AuthBase):
 
         return request
 
-
-class ObjectUploadSigner(requests.auth.AuthBase):
-    """Wraps a :class:`~Signer` instance.
-
-    PutObject does not sign the x-content-sha256 or content-length headers.
-    """
-    def __init__(self, signer):
-        """Wraps an existing signer, omitting content headers."""
-        self.signer = signer
-
-    def __call__(self, request):
-        # The requests library sets the Transfer-Encoding header to 'chunked' if the
-        # body is a stream with 0 length. Object storage does not currently support this option,
-        # and the request will fail if it is not removed. This is the only hook available where we
-        # can do this after the header is added and before the request is sent.
-        request.headers.pop('Transfer-Encoding', None)
-
-        return self.signer(request, enforce_content_headers=False)
+    @property
+    def without_content_headers(self):
+        return functools.partial(self, enforce_content_headers=False)
