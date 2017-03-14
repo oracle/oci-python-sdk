@@ -46,9 +46,17 @@ Make sure to set up auto completion for both pyenv and pyenv-virtualenv.
     pyenv install 2.7.12
     pyenv install 3.5.1
 
+    # Ensure you're using a newer virtualenv, packaged with
+    # recent versions of python, pip (3.5+, 9.0+)
+    pyenv shell 3.5.1
+    pip install -U pip
+
     # Create new virtual environments for sdk-specific work:
-    pyenv virtualenv 2.7.12 sdk-2
-    pyenv virtualenv 3.5.1 sdk-3
+    pyenv virtualenv --always-copy 3.5.1 sdk-3
+    pyenv virtualenv --always-copy 2.7.12 sdk-2
+
+    # Drop the shell venv
+    pyenv shell --unset
 
     # Set pyenv to use these virtualenvs when you're running commands from
     # the project or any subdirectory
@@ -57,6 +65,9 @@ Make sure to set up auto completion for both pyenv and pyenv-virtualenv.
     # Update pip if necessary, in both pythons
     pip3 install -U pip
     pip2 install -U pip
+
+    # Verify sdk-3 installed correctly
+    tox -e flake8
 
 
 Using ``pyenv local`` told pyenv that within this directory and subdirectories, only the sdk-2
