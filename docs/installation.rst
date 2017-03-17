@@ -188,20 +188,5 @@ reinstalling Python above. Make sure to also reinstall the wheel with this comma
 
     pip install oraclebmc-*-py2.py3-none-any.whl
 
-================
- Contributions
-================
-
-Got a fix for a bug, or a new feature you'd like to contribute? The SDK is open source and accepting pull requests on `GitHub`__.
-
-__ https://github.com/oracle/bmcs-python-sdk
-
-================
- Notifications
-================
-
-To be notified when a new version of the Python SDK is released, subscribe to the `Atom feed`_.
-
-.. _Atom feed: https://github.com/oracle/bmcs-python-sdk/releases.atom
 
 

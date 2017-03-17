@@ -207,7 +207,7 @@ And to get it back:
 ============
 
 Next, head to the `User Guides`_ or jump right into the :ref:`API Reference <api-reference>`
-to explore the available operations for each service, and their parameters.
+to explore the available operations for each service, and their parameters. Additional Python examples can be found on `GitHub <https://github.com/oracle/bmcs-python-sdk/tree/master/examples>`_.
 
 
 .. note::
