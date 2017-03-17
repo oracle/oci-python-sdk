@@ -15,7 +15,7 @@ The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 * Updated cryptography version to 1.8.1
 
 ====================
- 1.1.1 - 2017-02-03
+ 1.1.1 - 2017-02-23
 ====================
 
 -------
