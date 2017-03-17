@@ -54,7 +54,7 @@ def write_bucket(namespace, object_storage, config, names):
         print('TearDown: Could not delete temporary local file.')
 
 
-def test_large_file_transfer(namespace, object_storage, names):
+def test_large_file_transfer(namespace, object_storage, write_bucket, names):
     """Download, upload, and delete a large file (2.6 GB)"""
     response = object_storage.head_object(
         namespace,

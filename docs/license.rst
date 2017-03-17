@@ -1,7 +1,7 @@
 License
 ~~~~~~~
 
-Copyright (c) 2017, Oracle and/or its affiliates.  All rights reserved.
+Copyright (c) 2016, 2017, Oracle and/or its affiliates.  All rights reserved.
 
 This software is dual-licensed to you under the Universal Permissive License (UPL) and Apache License 2.0.
 See below for license terms.  You may choose either license, or both.
@@ -13,7 +13,7 @@ See below for license terms.  You may choose either license, or both.
 =====
 
 The Universal Permissive License (UPL), Version 1.0
-Copyright (c) 2017, Oracle and/or its affiliates.  All rights reserved.
+Copyright (c) 2016, 2017, Oracle and/or its affiliates.  All rights reserved.
 
 Subject to the condition set forth below, permission is hereby granted to any person obtaining a copy of this software,
 associated documentation and/or data (collectively the "Software"), free of charge and under any and all copyright
@@ -46,7 +46,7 @@ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEAL
 
 The Apache Software License, Version 2.0
 
-Copyright (c) 2017, Oracle and/or its affiliates.  All rights reserved.
+Copyright (c) 2016, 2017, Oracle and/or its affiliates.  All rights reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 You may not use this product except in compliance with the License.

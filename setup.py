@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017 Oracle and/or its affiliates. All rights reserved.
 
 import io
 import os
@@ -31,7 +31,7 @@ with open_relative("README.rst") as f:
 requires = [
     "certifi",
     "configparser==3.5.0",
-    "cryptography==1.5.2",
+    "cryptography==1.8.1",
     "httpsig_cffi==15.0.0",
     "python-dateutil==2.5.3",
     "pytz==2016.7",
@@ -41,7 +41,7 @@ requires = [
 
 setup(
     name="oraclebmc",
-    url="https://docs.us-phoenix-1.oraclecloud.com/tools/python/latest/index.html",
+    url="https://oracle-bare-metal-cloud-services-python-sdk.readthedocs.io/en/latest/index.html",
     version=version,
     description="Oracle Bare Metal Cloud Services Python SDK",
     long_description=readme,
