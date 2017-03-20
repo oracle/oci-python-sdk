@@ -127,6 +127,12 @@ Check the OpenSSL version again. If it's still 0.9, see `Troubleshooting Mac Iss
 
 You might encounter issues when installing Python or the SDK, or using the SDK itself.
 
+-------------------------------
+ Troubleshooting Service Errors
+-------------------------------
+Any operation resulting in a service error will cause an exception of type oraclebmc.exceptions.ServiceError to be thrown by the SDK. For information about common service errors returned by BMCS, see` API Errors <https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm>`_
+. 
+
 ----------------------------
  Troubleshooting OEL Issues
 ----------------------------
