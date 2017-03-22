@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 from __future__ import absolute_import
 import json
@@ -18,7 +18,6 @@ from . import constants, exceptions, regions
 from .config import validate_config
 from .request import Request
 from .response import Response
-from .signer import ObjectUploadSigner
 from .version import __version__
 
 USER_INFO = "Oracle-PythonSDK/{}".format(__version__)
@@ -144,7 +143,7 @@ class BaseClient(object):
 
         signer = self.signer
         if not request.enforce_content_headers:
-            signer = ObjectUploadSigner(signer)
+            signer = signer.without_content_headers
 
         stream = False
         if request.response_type == STREAM_RESPONSE_TYPE:
@@ -304,7 +303,7 @@ class BaseClient(object):
         elif cls == date:
             return self.__deserialize_date(data)
         elif cls == datetime:
-            return self.__deserialize_datatime(data)
+            return self.__deserialize_datetime(data)
         else:
             return self.__deserialize_model(data, cls)
 
@@ -339,7 +338,7 @@ class BaseClient(object):
         except ValueError:
             raise Exception("Failed to parse `{0}` into a date object".format(string))
 
-    def __deserialize_datatime(self, string):
+    def __deserialize_datetime(self, string):
         """
         Deserializes string to datetime.
 

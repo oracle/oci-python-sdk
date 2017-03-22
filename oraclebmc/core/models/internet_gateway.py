@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict
@@ -43,6 +43,7 @@ class InternetGateway(object):
         Gets the compartment_id of this InternetGateway.
         The OCID of the compartment containing the Internet Gateway.
 
+
         :return: The compartment_id of this InternetGateway.
         :rtype: str
         """
@@ -53,6 +54,7 @@ class InternetGateway(object):
         """
         Sets the compartment_id of this InternetGateway.
         The OCID of the compartment containing the Internet Gateway.
+
 
         :param compartment_id: The compartment_id of this InternetGateway.
         :type: str
@@ -65,6 +67,7 @@ class InternetGateway(object):
         Gets the display_name of this InternetGateway.
         A user-friendly name. Does not have to be unique, and it's changeable.
 
+
         :return: The display_name of this InternetGateway.
         :rtype: str
         """
@@ -75,6 +78,7 @@ class InternetGateway(object):
         """
         Sets the display_name of this InternetGateway.
         A user-friendly name. Does not have to be unique, and it's changeable.
+
 
         :param display_name: The display_name of this InternetGateway.
         :type: str
@@ -87,6 +91,7 @@ class InternetGateway(object):
         Gets the id of this InternetGateway.
         The Internet Gateway's Oracle ID (OCID).
 
+
         :return: The id of this InternetGateway.
         :rtype: str
         """
@@ -97,6 +102,7 @@ class InternetGateway(object):
         """
         Sets the id of this InternetGateway.
         The Internet Gateway's Oracle ID (OCID).
+
 
         :param id: The id of this InternetGateway.
         :type: str
@@ -110,6 +116,7 @@ class InternetGateway(object):
         Whether the gateway is enabled. When the gateway is disabled, traffic is not
         routed to/from the Internet, regardless of route rules.
 
+
         :return: The is_enabled of this InternetGateway.
         :rtype: bool
         """
@@ -122,6 +129,7 @@ class InternetGateway(object):
         Whether the gateway is enabled. When the gateway is disabled, traffic is not
         routed to/from the Internet, regardless of route rules.
 
+
         :param is_enabled: The is_enabled of this InternetGateway.
         :type: bool
         """
@@ -133,6 +141,7 @@ class InternetGateway(object):
         Gets the lifecycle_state of this InternetGateway.
         The Internet Gateway's current state.
 
+
         :return: The lifecycle_state of this InternetGateway.
         :rtype: str
         """
@@ -143,6 +152,7 @@ class InternetGateway(object):
         """
         Sets the lifecycle_state of this InternetGateway.
         The Internet Gateway's current state.
+
 
         :param lifecycle_state: The lifecycle_state of this InternetGateway.
         :type: str
@@ -160,7 +170,9 @@ class InternetGateway(object):
         """
         Gets the time_created of this InternetGateway.
         The date and time the Internet Gateway was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :return: The time_created of this InternetGateway.
         :rtype: datetime
@@ -172,7 +184,9 @@ class InternetGateway(object):
         """
         Sets the time_created of this InternetGateway.
         The date and time the Internet Gateway was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :param time_created: The time_created of this InternetGateway.
         :type: datetime
@@ -185,6 +199,7 @@ class InternetGateway(object):
         Gets the vcn_id of this InternetGateway.
         The OCID of the VCN the Internet Gateway belongs to.
 
+
         :return: The vcn_id of this InternetGateway.
         :rtype: str
         """
@@ -195,6 +210,7 @@ class InternetGateway(object):
         """
         Sets the vcn_id of this InternetGateway.
         The OCID of the VCN the Internet Gateway belongs to.
+
 
         :param vcn_id: The vcn_id of this InternetGateway.
         :type: str

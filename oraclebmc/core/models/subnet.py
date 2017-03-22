@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict
@@ -60,7 +60,9 @@ class Subnet(object):
         """
         Gets the availability_domain of this Subnet.
         The subnet's Availability Domain.
+
         Example: `Uocm:PHX-AD-1`
+
 
         :return: The availability_domain of this Subnet.
         :rtype: str
@@ -72,7 +74,9 @@ class Subnet(object):
         """
         Sets the availability_domain of this Subnet.
         The subnet's Availability Domain.
+
         Example: `Uocm:PHX-AD-1`
+
 
         :param availability_domain: The availability_domain of this Subnet.
         :type: str
@@ -84,7 +88,9 @@ class Subnet(object):
         """
         Gets the cidr_block of this Subnet.
         The subnet's CIDR block.
+
         Example: `172.16.1.0/24`
+
 
         :return: The cidr_block of this Subnet.
         :rtype: str
@@ -96,7 +102,9 @@ class Subnet(object):
         """
         Sets the cidr_block of this Subnet.
         The subnet's CIDR block.
+
         Example: `172.16.1.0/24`
+
 
         :param cidr_block: The cidr_block of this Subnet.
         :type: str
@@ -109,6 +117,7 @@ class Subnet(object):
         Gets the compartment_id of this Subnet.
         The OCID of the compartment containing the subnet.
 
+
         :return: The compartment_id of this Subnet.
         :rtype: str
         """
@@ -119,6 +128,7 @@ class Subnet(object):
         """
         Sets the compartment_id of this Subnet.
         The OCID of the compartment containing the subnet.
+
 
         :param compartment_id: The compartment_id of this Subnet.
         :type: str
@@ -131,6 +141,7 @@ class Subnet(object):
         Gets the dhcp_options_id of this Subnet.
         The OCID of the set of DHCP options associated with the subnet.
 
+
         :return: The dhcp_options_id of this Subnet.
         :rtype: str
         """
@@ -141,6 +152,7 @@ class Subnet(object):
         """
         Sets the dhcp_options_id of this Subnet.
         The OCID of the set of DHCP options associated with the subnet.
+
 
         :param dhcp_options_id: The dhcp_options_id of this Subnet.
         :type: str
@@ -153,6 +165,7 @@ class Subnet(object):
         Gets the display_name of this Subnet.
         A user-friendly name. Does not have to be unique, and it's changeable.
 
+
         :return: The display_name of this Subnet.
         :rtype: str
         """
@@ -163,6 +176,7 @@ class Subnet(object):
         """
         Sets the display_name of this Subnet.
         A user-friendly name. Does not have to be unique, and it's changeable.
+
 
         :param display_name: The display_name of this Subnet.
         :type: str
@@ -175,6 +189,7 @@ class Subnet(object):
         Gets the id of this Subnet.
         The subnet's Oracle ID (OCID).
 
+
         :return: The id of this Subnet.
         :rtype: str
         """
@@ -185,6 +200,7 @@ class Subnet(object):
         """
         Sets the id of this Subnet.
         The subnet's Oracle ID (OCID).
+
 
         :param id: The id of this Subnet.
         :type: str
@@ -197,6 +213,7 @@ class Subnet(object):
         Gets the lifecycle_state of this Subnet.
         The subnet's current state.
 
+
         :return: The lifecycle_state of this Subnet.
         :rtype: str
         """
@@ -207,6 +224,7 @@ class Subnet(object):
         """
         Sets the lifecycle_state of this Subnet.
         The subnet's current state.
+
 
         :param lifecycle_state: The lifecycle_state of this Subnet.
         :type: str
@@ -225,6 +243,7 @@ class Subnet(object):
         Gets the route_table_id of this Subnet.
         The OCID of the route table the subnet is using.
 
+
         :return: The route_table_id of this Subnet.
         :rtype: str
         """
@@ -235,6 +254,7 @@ class Subnet(object):
         """
         Sets the route_table_id of this Subnet.
         The OCID of the route table the subnet is using.
+
 
         :param route_table_id: The route_table_id of this Subnet.
         :type: str
@@ -247,6 +267,7 @@ class Subnet(object):
         Gets the security_list_ids of this Subnet.
         OCIDs for the security lists to use for VNICs in this subnet.
 
+
         :return: The security_list_ids of this Subnet.
         :rtype: list[str]
         """
@@ -258,6 +279,7 @@ class Subnet(object):
         Sets the security_list_ids of this Subnet.
         OCIDs for the security lists to use for VNICs in this subnet.
 
+
         :param security_list_ids: The security_list_ids of this Subnet.
         :type: list[str]
         """
@@ -268,7 +290,9 @@ class Subnet(object):
         """
         Gets the time_created of this Subnet.
         The date and time the subnet was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :return: The time_created of this Subnet.
         :rtype: datetime
@@ -280,7 +304,9 @@ class Subnet(object):
         """
         Sets the time_created of this Subnet.
         The date and time the subnet was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :param time_created: The time_created of this Subnet.
         :type: datetime
@@ -293,6 +319,7 @@ class Subnet(object):
         Gets the vcn_id of this Subnet.
         The OCID of the VCN the subnet is in.
 
+
         :return: The vcn_id of this Subnet.
         :rtype: str
         """
@@ -304,6 +331,7 @@ class Subnet(object):
         Sets the vcn_id of this Subnet.
         The OCID of the VCN the subnet is in.
 
+
         :param vcn_id: The vcn_id of this Subnet.
         :type: str
         """
@@ -314,7 +342,9 @@ class Subnet(object):
         """
         Gets the virtual_router_ip of this Subnet.
         The IP address of the virtual router.
+
         Example: `10.0.14.1`
+
 
         :return: The virtual_router_ip of this Subnet.
         :rtype: str
@@ -326,7 +356,9 @@ class Subnet(object):
         """
         Sets the virtual_router_ip of this Subnet.
         The IP address of the virtual router.
+
         Example: `10.0.14.1`
+
 
         :param virtual_router_ip: The virtual_router_ip of this Subnet.
         :type: str
@@ -338,7 +370,9 @@ class Subnet(object):
         """
         Gets the virtual_router_mac of this Subnet.
         The MAC address of the virtual router.
+
         Example: `00:00:17:B6:4D:DD`
+
 
         :return: The virtual_router_mac of this Subnet.
         :rtype: str
@@ -350,7 +384,9 @@ class Subnet(object):
         """
         Sets the virtual_router_mac of this Subnet.
         The MAC address of the virtual router.
+
         Example: `00:00:17:B6:4D:DD`
+
 
         :param virtual_router_mac: The virtual_router_mac of this Subnet.
         :type: str

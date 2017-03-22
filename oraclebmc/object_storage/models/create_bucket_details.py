@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict
@@ -32,6 +32,7 @@ class CreateBucketDetails(object):
         The name of the bucket. Valid characters are letters (upper or lower case),
         numbers and dashes. Bucket names must be unique within the namespace.
 
+
         :return: The name of this CreateBucketDetails.
         :rtype: str
         """
@@ -44,6 +45,7 @@ class CreateBucketDetails(object):
         The name of the bucket. Valid characters are letters (upper or lower case),
         numbers and dashes. Bucket names must be unique within the namespace.
 
+
         :param name: The name of this CreateBucketDetails.
         :type: str
         """
@@ -54,6 +56,7 @@ class CreateBucketDetails(object):
         """
         Gets the compartment_id of this CreateBucketDetails.
         The ID of the compartment in which to create the bucket.
+
 
         :return: The compartment_id of this CreateBucketDetails.
         :rtype: str
@@ -66,6 +69,7 @@ class CreateBucketDetails(object):
         Sets the compartment_id of this CreateBucketDetails.
         The ID of the compartment in which to create the bucket.
 
+
         :param compartment_id: The compartment_id of this CreateBucketDetails.
         :type: str
         """
@@ -77,6 +81,7 @@ class CreateBucketDetails(object):
         Gets the metadata of this CreateBucketDetails.
         Arbitrary string keys and values for user-defined metadata.
 
+
         :return: The metadata of this CreateBucketDetails.
         :rtype: dict(str, str)
         """
@@ -87,6 +92,7 @@ class CreateBucketDetails(object):
         """
         Sets the metadata of this CreateBucketDetails.
         Arbitrary string keys and values for user-defined metadata.
+
 
         :param metadata: The metadata of this CreateBucketDetails.
         :type: dict(str, str)

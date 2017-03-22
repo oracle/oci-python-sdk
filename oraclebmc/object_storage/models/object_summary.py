@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict
@@ -34,6 +34,7 @@ class ObjectSummary(object):
         Gets the name of this ObjectSummary.
         The name of the object.
 
+
         :return: The name of this ObjectSummary.
         :rtype: str
         """
@@ -44,6 +45,7 @@ class ObjectSummary(object):
         """
         Sets the name of this ObjectSummary.
         The name of the object.
+
 
         :param name: The name of this ObjectSummary.
         :type: str
@@ -56,6 +58,7 @@ class ObjectSummary(object):
         Gets the size of this ObjectSummary.
         Size of the object in bytes.
 
+
         :return: The size of this ObjectSummary.
         :rtype: int
         """
@@ -66,6 +69,7 @@ class ObjectSummary(object):
         """
         Sets the size of this ObjectSummary.
         Size of the object in bytes.
+
 
         :param size: The size of this ObjectSummary.
         :type: int
@@ -78,6 +82,7 @@ class ObjectSummary(object):
         Gets the md5 of this ObjectSummary.
         Base64 encoded MD5 hash of the object data.
 
+
         :return: The md5 of this ObjectSummary.
         :rtype: str
         """
@@ -88,6 +93,7 @@ class ObjectSummary(object):
         """
         Sets the md5 of this ObjectSummary.
         Base64 encoded MD5 hash of the object data.
+
 
         :param md5: The md5 of this ObjectSummary.
         :type: str
@@ -100,6 +106,7 @@ class ObjectSummary(object):
         Gets the time_created of this ObjectSummary.
         Date and time of object creation.
 
+
         :return: The time_created of this ObjectSummary.
         :rtype: datetime
         """
@@ -110,6 +117,7 @@ class ObjectSummary(object):
         """
         Sets the time_created of this ObjectSummary.
         Date and time of object creation.
+
 
         :param time_created: The time_created of this ObjectSummary.
         :type: datetime

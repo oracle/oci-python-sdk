@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict
@@ -43,6 +43,7 @@ class Compartment(object):
         Gets the id of this Compartment.
         The OCID of the compartment.
 
+
         :return: The id of this Compartment.
         :rtype: str
         """
@@ -53,6 +54,7 @@ class Compartment(object):
         """
         Sets the id of this Compartment.
         The OCID of the compartment.
+
 
         :param id: The id of this Compartment.
         :type: str
@@ -65,6 +67,7 @@ class Compartment(object):
         Gets the compartment_id of this Compartment.
         The OCID of the tenancy containing the compartment.
 
+
         :return: The compartment_id of this Compartment.
         :rtype: str
         """
@@ -75,6 +78,7 @@ class Compartment(object):
         """
         Sets the compartment_id of this Compartment.
         The OCID of the tenancy containing the compartment.
+
 
         :param compartment_id: The compartment_id of this Compartment.
         :type: str
@@ -88,6 +92,7 @@ class Compartment(object):
         The name you assign to the compartment during creation. The name must be unique across all
         compartments in the tenancy and cannot be changed.
 
+
         :return: The name of this Compartment.
         :rtype: str
         """
@@ -100,6 +105,7 @@ class Compartment(object):
         The name you assign to the compartment during creation. The name must be unique across all
         compartments in the tenancy and cannot be changed.
 
+
         :param name: The name of this Compartment.
         :type: str
         """
@@ -110,6 +116,7 @@ class Compartment(object):
         """
         Gets the description of this Compartment.
         The description you assign to the compartment. Does not have to be unique, and it's changeable.
+
 
         :return: The description of this Compartment.
         :rtype: str
@@ -122,6 +129,7 @@ class Compartment(object):
         Sets the description of this Compartment.
         The description you assign to the compartment. Does not have to be unique, and it's changeable.
 
+
         :param description: The description of this Compartment.
         :type: str
         """
@@ -132,7 +140,9 @@ class Compartment(object):
         """
         Gets the time_created of this Compartment.
         Date and time the compartment was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :return: The time_created of this Compartment.
         :rtype: datetime
@@ -144,7 +154,9 @@ class Compartment(object):
         """
         Sets the time_created of this Compartment.
         Date and time the compartment was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :param time_created: The time_created of this Compartment.
         :type: datetime
@@ -158,6 +170,7 @@ class Compartment(object):
         The compartment's current state. After creating a compartment, make sure its `lifecycleState` changes from
         CREATING to ACTIVE before using it.
 
+
         :return: The lifecycle_state of this Compartment.
         :rtype: str
         """
@@ -169,6 +182,7 @@ class Compartment(object):
         Sets the lifecycle_state of this Compartment.
         The compartment's current state. After creating a compartment, make sure its `lifecycleState` changes from
         CREATING to ACTIVE before using it.
+
 
         :param lifecycle_state: The lifecycle_state of this Compartment.
         :type: str
@@ -187,6 +201,7 @@ class Compartment(object):
         Gets the inactive_status of this Compartment.
         The detailed status of INACTIVE lifecycleState.
 
+
         :return: The inactive_status of this Compartment.
         :rtype: int
         """
@@ -197,6 +212,7 @@ class Compartment(object):
         """
         Sets the inactive_status of this Compartment.
         The detailed status of INACTIVE lifecycleState.
+
 
         :param inactive_status: The inactive_status of this Compartment.
         :type: int

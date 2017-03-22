@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict
@@ -43,6 +43,7 @@ class DrgAttachment(object):
         Gets the compartment_id of this DrgAttachment.
         The OCID of the compartment containing the DRG attachment.
 
+
         :return: The compartment_id of this DrgAttachment.
         :rtype: str
         """
@@ -53,6 +54,7 @@ class DrgAttachment(object):
         """
         Sets the compartment_id of this DrgAttachment.
         The OCID of the compartment containing the DRG attachment.
+
 
         :param compartment_id: The compartment_id of this DrgAttachment.
         :type: str
@@ -65,6 +67,7 @@ class DrgAttachment(object):
         Gets the display_name of this DrgAttachment.
         A user-friendly name. Does not have to be unique, and it's changeable.
 
+
         :return: The display_name of this DrgAttachment.
         :rtype: str
         """
@@ -75,6 +78,7 @@ class DrgAttachment(object):
         """
         Sets the display_name of this DrgAttachment.
         A user-friendly name. Does not have to be unique, and it's changeable.
+
 
         :param display_name: The display_name of this DrgAttachment.
         :type: str
@@ -87,6 +91,7 @@ class DrgAttachment(object):
         Gets the drg_id of this DrgAttachment.
         The OCID of the DRG.
 
+
         :return: The drg_id of this DrgAttachment.
         :rtype: str
         """
@@ -97,6 +102,7 @@ class DrgAttachment(object):
         """
         Sets the drg_id of this DrgAttachment.
         The OCID of the DRG.
+
 
         :param drg_id: The drg_id of this DrgAttachment.
         :type: str
@@ -109,6 +115,7 @@ class DrgAttachment(object):
         Gets the id of this DrgAttachment.
         The DRG attachment's Oracle ID (OCID).
 
+
         :return: The id of this DrgAttachment.
         :rtype: str
         """
@@ -119,6 +126,7 @@ class DrgAttachment(object):
         """
         Sets the id of this DrgAttachment.
         The DRG attachment's Oracle ID (OCID).
+
 
         :param id: The id of this DrgAttachment.
         :type: str
@@ -131,6 +139,7 @@ class DrgAttachment(object):
         Gets the lifecycle_state of this DrgAttachment.
         The DRG attachment's current state.
 
+
         :return: The lifecycle_state of this DrgAttachment.
         :rtype: str
         """
@@ -141,6 +150,7 @@ class DrgAttachment(object):
         """
         Sets the lifecycle_state of this DrgAttachment.
         The DRG attachment's current state.
+
 
         :param lifecycle_state: The lifecycle_state of this DrgAttachment.
         :type: str
@@ -158,7 +168,9 @@ class DrgAttachment(object):
         """
         Gets the time_created of this DrgAttachment.
         The date and time the DRG attachment was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :return: The time_created of this DrgAttachment.
         :rtype: datetime
@@ -170,7 +182,9 @@ class DrgAttachment(object):
         """
         Sets the time_created of this DrgAttachment.
         The date and time the DRG attachment was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :param time_created: The time_created of this DrgAttachment.
         :type: datetime
@@ -183,6 +197,7 @@ class DrgAttachment(object):
         Gets the vcn_id of this DrgAttachment.
         The OCID of the VCN.
 
+
         :return: The vcn_id of this DrgAttachment.
         :rtype: str
         """
@@ -193,6 +208,7 @@ class DrgAttachment(object):
         """
         Sets the vcn_id of this DrgAttachment.
         The OCID of the VCN.
+
 
         :param vcn_id: The vcn_id of this DrgAttachment.
         :type: str

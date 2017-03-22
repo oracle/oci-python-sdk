@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict
@@ -54,7 +54,9 @@ class Instance(object):
         """
         Gets the availability_domain of this Instance.
         The Availability Domain the instance is running in.
+
         Example: `Uocm:PHX-AD-1`
+
 
         :return: The availability_domain of this Instance.
         :rtype: str
@@ -66,7 +68,9 @@ class Instance(object):
         """
         Sets the availability_domain of this Instance.
         The Availability Domain the instance is running in.
+
         Example: `Uocm:PHX-AD-1`
+
 
         :param availability_domain: The availability_domain of this Instance.
         :type: str
@@ -79,6 +83,7 @@ class Instance(object):
         Gets the compartment_id of this Instance.
         The OCID of the compartment that contains the instance.
 
+
         :return: The compartment_id of this Instance.
         :rtype: str
         """
@@ -90,6 +95,7 @@ class Instance(object):
         Sets the compartment_id of this Instance.
         The OCID of the compartment that contains the instance.
 
+
         :param compartment_id: The compartment_id of this Instance.
         :type: str
         """
@@ -100,7 +106,9 @@ class Instance(object):
         """
         Gets the display_name of this Instance.
         A user-friendly name. Does not have to be unique, and it's changeable.
+
         Example: `My bare metal instance`
+
 
         :return: The display_name of this Instance.
         :rtype: str
@@ -112,7 +120,9 @@ class Instance(object):
         """
         Sets the display_name of this Instance.
         A user-friendly name. Does not have to be unique, and it's changeable.
+
         Example: `My bare metal instance`
+
 
         :param display_name: The display_name of this Instance.
         :type: str
@@ -125,6 +135,7 @@ class Instance(object):
         Gets the id of this Instance.
         The OCID of the instance.
 
+
         :return: The id of this Instance.
         :rtype: str
         """
@@ -136,6 +147,7 @@ class Instance(object):
         Sets the id of this Instance.
         The OCID of the instance.
 
+
         :param id: The id of this Instance.
         :type: str
         """
@@ -146,7 +158,8 @@ class Instance(object):
         """
         Gets the image_id of this Instance.
         The image used to boot the instance. You can enumerate all available images by calling
-        ListImages.
+        :func:`list_images`.
+
 
         :return: The image_id of this Instance.
         :rtype: str
@@ -158,7 +171,8 @@ class Instance(object):
         """
         Sets the image_id of this Instance.
         The image used to boot the instance. You can enumerate all available images by calling
-        ListImages.
+        :func:`list_images`.
+
 
         :param image_id: The image_id of this Instance.
         :type: str
@@ -172,18 +186,22 @@ class Instance(object):
         When an Oracle Bare Metal Cloud Services or virtual machine
         instance boots, the iPXE firmware that runs on the instance is
         configured to run an iPXE script to continue the boot process.
+
         If you want more control over the boot process, you can provide
         your own custom iPXE script that will run when the instance boots;
         however, you should be aware that the same iPXE script will run
         every time an instance boots; not only after the initial
         LaunchInstance call.
+
         The default iPXE script connects to the instance\u2019s local boot
         volume over iSCSI and performs a network boot. If you use a custom iPXE
         script and want to network-boot from the instance\u2019s local boot volume
         over iSCSI the same way as the default iPXE script, you should use the
         following iSCSI IP address: 169.254.0.2, and boot volume IQN:
         iqn.2015-02.oracle.boot.
+
         For more information about iPXE, see http://ipxe.org.
+
 
         :return: The ipxe_script of this Instance.
         :rtype: str
@@ -197,18 +215,22 @@ class Instance(object):
         When an Oracle Bare Metal Cloud Services or virtual machine
         instance boots, the iPXE firmware that runs on the instance is
         configured to run an iPXE script to continue the boot process.
+
         If you want more control over the boot process, you can provide
         your own custom iPXE script that will run when the instance boots;
         however, you should be aware that the same iPXE script will run
         every time an instance boots; not only after the initial
         LaunchInstance call.
+
         The default iPXE script connects to the instance\u2019s local boot
         volume over iSCSI and performs a network boot. If you use a custom iPXE
         script and want to network-boot from the instance\u2019s local boot volume
         over iSCSI the same way as the default iPXE script, you should use the
         following iSCSI IP address: 169.254.0.2, and boot volume IQN:
         iqn.2015-02.oracle.boot.
+
         For more information about iPXE, see http://ipxe.org.
+
 
         :param ipxe_script: The ipxe_script of this Instance.
         :type: str
@@ -221,6 +243,7 @@ class Instance(object):
         Gets the lifecycle_state of this Instance.
         The current state of the instance.
 
+
         :return: The lifecycle_state of this Instance.
         :rtype: str
         """
@@ -231,6 +254,7 @@ class Instance(object):
         """
         Sets the lifecycle_state of this Instance.
         The current state of the instance.
+
 
         :param lifecycle_state: The lifecycle_state of this Instance.
         :type: str
@@ -249,6 +273,7 @@ class Instance(object):
         Gets the metadata of this Instance.
         Custom metadata that you provide.
 
+
         :return: The metadata of this Instance.
         :rtype: dict(str, str)
         """
@@ -260,6 +285,7 @@ class Instance(object):
         Sets the metadata of this Instance.
         Custom metadata that you provide.
 
+
         :param metadata: The metadata of this Instance.
         :type: dict(str, str)
         """
@@ -270,7 +296,9 @@ class Instance(object):
         """
         Gets the region of this Instance.
         The region that contains the Availability Domain the instance is running in.
+
         Example: `phx`
+
 
         :return: The region of this Instance.
         :rtype: str
@@ -282,7 +310,9 @@ class Instance(object):
         """
         Sets the region of this Instance.
         The region that contains the Availability Domain the instance is running in.
+
         Example: `phx`
+
 
         :param region: The region of this Instance.
         :type: str
@@ -295,7 +325,8 @@ class Instance(object):
         Gets the shape of this Instance.
         The shape of the instance. The shape determines the number of CPUs and the amount of memory
         allocated to the instance. You can enumerate all available shapes by calling
-        ListShapes.
+        :func:`list_shapes`.
+
 
         :return: The shape of this Instance.
         :rtype: str
@@ -308,7 +339,8 @@ class Instance(object):
         Sets the shape of this Instance.
         The shape of the instance. The shape determines the number of CPUs and the amount of memory
         allocated to the instance. You can enumerate all available shapes by calling
-        ListShapes.
+        :func:`list_shapes`.
+
 
         :param shape: The shape of this Instance.
         :type: str
@@ -320,7 +352,9 @@ class Instance(object):
         """
         Gets the time_created of this Instance.
         The date and time the instance was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :return: The time_created of this Instance.
         :rtype: datetime
@@ -332,7 +366,9 @@ class Instance(object):
         """
         Sets the time_created of this Instance.
         The date and time the instance was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :param time_created: The time_created of this Instance.
         :type: datetime

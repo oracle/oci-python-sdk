@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict
@@ -31,6 +31,7 @@ class CreateUserDetails(object):
         Gets the compartment_id of this CreateUserDetails.
         The OCID of the tenancy containing the user.
 
+
         :return: The compartment_id of this CreateUserDetails.
         :rtype: str
         """
@@ -41,6 +42,7 @@ class CreateUserDetails(object):
         """
         Sets the compartment_id of this CreateUserDetails.
         The OCID of the tenancy containing the user.
+
 
         :param compartment_id: The compartment_id of this CreateUserDetails.
         :type: str
@@ -54,6 +56,7 @@ class CreateUserDetails(object):
         The name you assign to the user during creation. This is the user's login for the Console.
         The name must be unique across all users in the tenancy and cannot be changed.
 
+
         :return: The name of this CreateUserDetails.
         :rtype: str
         """
@@ -66,6 +69,7 @@ class CreateUserDetails(object):
         The name you assign to the user during creation. This is the user's login for the Console.
         The name must be unique across all users in the tenancy and cannot be changed.
 
+
         :param name: The name of this CreateUserDetails.
         :type: str
         """
@@ -77,6 +81,7 @@ class CreateUserDetails(object):
         Gets the description of this CreateUserDetails.
         The description you assign to the user during creation. Does not have to be unique, and it's changeable.
 
+
         :return: The description of this CreateUserDetails.
         :rtype: str
         """
@@ -87,6 +92,7 @@ class CreateUserDetails(object):
         """
         Sets the description of this CreateUserDetails.
         The description you assign to the user during creation. Does not have to be unique, and it's changeable.
+
 
         :param description: The description of this CreateUserDetails.
         :type: str

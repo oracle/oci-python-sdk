@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 from __future__ import absolute_import
 
@@ -31,14 +31,17 @@ class ComputeClient(object):
         AttachVolume
         Attaches the specified storage volume to the specified instance.
 
+
         :param AttachVolumeDetails attach_volume_details: (required)
             Attach volume request
+
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
             server error without risk of executing that same action again. Retry tokens expire after 24
             hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
+
         :return: A Response object with data of type VolumeAttachment
         :rtype: VolumeAttachment
         """
@@ -73,8 +76,10 @@ class ComputeClient(object):
         CaptureConsoleHistory
         Captures the most recent serial console data (up to a megabyte) for the
         specified instance.
+
         The `CaptureConsoleHistory` operation works with the other console history operations
         as described below.
+
         1. Use `CaptureConsoleHistory` to request the capture of up to a megabyte of the
         most recent console history. This call returns a `ConsoleHistory`
         object. The object will have a state of REQUESTED.
@@ -87,14 +92,17 @@ class ComputeClient(object):
         4. Optionally, use `DeleteConsoleHistory` to delete the console history metadata
         and the console history data.
 
+
         :param CaptureConsoleHistoryDetails capture_console_history_details: (required)
             Console history details
+
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
             server error without risk of executing that same action again. Retry tokens expire after 24
             hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
+
         :return: A Response object with data of type ConsoleHistory
         :rtype: ConsoleHistory
         """
@@ -128,20 +136,27 @@ class ComputeClient(object):
         """
         CreateImage
         Creates a boot disk image for the specified instance. For more information about images, see
-        [Managing Custom Images]({{DOC_SERVER_URL}}/Content/Compute/Tasks/managingcustomimages.htm).
+        `Managing Custom Images`__.
+
         You must provide the OCID of the instance you want to use as the basis for the image, and
         the OCID of the compartment containing that instance.
+
         You may optionally specify a *display name* for the image, which is simply a friendly name or description.
-        It does not have to be unique, and you can change it. See UpdateImage.
+        It does not have to be unique, and you can change it. See :func:`update_image`.
+
+        __ {{DOC_SERVER_URL}}/Content/Compute/Tasks/managingcustomimages.htm
+
 
         :param CreateImageDetails create_image_details: (required)
             Image creation details
+
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
             server error without risk of executing that same action again. Retry tokens expire after 24
             hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
+
         :return: A Response object with data of type Image
         :rtype: Image
         """
@@ -176,12 +191,15 @@ class ComputeClient(object):
         DeleteConsoleHistory
         Deletes the specified console history metadata and the console history data.
 
+
         :param str instance_console_history_id: (required)
             The OCID of the console history.
+
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
         :return: A Response object with data of type None
         :rtype: None
         """
@@ -220,12 +238,15 @@ class ComputeClient(object):
         DeleteImage
         Deletes an image.
 
+
         :param str image_id: (required)
             The OCID of the image.
+
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
         :return: A Response object with data of type None
         :rtype: None
         """
@@ -263,15 +284,19 @@ class ComputeClient(object):
         """
         DetachVolume
         Detaches a storage volume from an instance. You must specify the OCID of the volume attachment.
+
         This is an asynchronous operation; the attachment's `lifecycleState` will change to DETACHING temporarily
         until the attachment is completely removed.
 
+
         :param str volume_attachment_id: (required)
             The OCID of the volume attachment.
+
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
         :return: A Response object with data of type None
         :rtype: None
         """
@@ -309,11 +334,13 @@ class ComputeClient(object):
         """
         GetConsoleHistory
         Shows the metadata for the specified console history.
-        See CaptureConsoleHistory
+        See :func:`capture_console_history`
         for details about using the console history operations.
+
 
         :param str instance_console_history_id: (required)
             The OCID of the console history.
+
         :return: A Response object with data of type ConsoleHistory
         :rtype: ConsoleHistory
         """
@@ -345,15 +372,19 @@ class ComputeClient(object):
         """
         GetConsoleHistoryContent
         Gets the actual console history data (not the metadata).
-        See CaptureConsoleHistory
+        See :func:`capture_console_history`
         for details about using the console history operations.
+
 
         :param str instance_console_history_id: (required)
             The OCID of the console history.
+
         :param int offset: (optional)
             Offset of the snapshot data to retrieve.
+
         :param int length: (optional)
             Length of the snapshot data to retrieve.
+
         :return: A Response object with data of type bytes
         :rtype: bytes
         """
@@ -399,8 +430,10 @@ class ComputeClient(object):
         GetImage
         Gets the specified image.
 
+
         :param str image_id: (required)
             The OCID of the image.
+
         :return: A Response object with data of type Image
         :rtype: Image
         """
@@ -433,8 +466,10 @@ class ComputeClient(object):
         GetInstance
         Gets information about the specified instance.
 
+
         :param str instance_id: (required)
             The OCID of the instance.
+
         :return: A Response object with data of type Instance
         :rtype: Instance
         """
@@ -467,8 +502,10 @@ class ComputeClient(object):
         GetVolumeAttachment
         Gets information about the specified volume attachment.
 
+
         :param str volume_attachment_id: (required)
             The OCID of the volume attachment.
+
         :return: A Response object with data of type VolumeAttachment
         :rtype: VolumeAttachment
         """
@@ -501,30 +538,40 @@ class ComputeClient(object):
         InstanceAction
         Performs one of the power actions (start, stop, softreset, or reset)
         on the specified instance.
+
         **start** - power on
+
         **stop** - power off
+
         **softreset** - ACPI shutdown and power on
+
         **reset** - power off and power on
+
         Note that the **stop** state has no effect on the resources you consume.
         Billing continues for instances that you stop, and related resources continue
         to apply against any relevant quotas. You must terminate an instance
-        (TerminateInstance)
+        (:func:`terminate_instance`)
         to remove its resources from billing and quotas.
+
 
         :param str instance_id: (required)
             The OCID of the instance.
+
         :param str action: (required)
             The action to perform on the instance.
+
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
             server error without risk of executing that same action again. Retry tokens expire after 24
             hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
+
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
         :return: A Response object with data of type Instance
         :rtype: Instance
         """
@@ -572,38 +619,43 @@ class ComputeClient(object):
         LaunchInstance
         Creates a new instance in the specified compartment and the specified Availability Domain.
         For general information about instances, see
-        [Overview of the Compute Service]({{DOC_SERVER_URL}}/Content/Compute/Concepts/computeoverview.htm).
+        `Overview of the Compute Service`__.
+
         For information about access control and compartments, see
-        [Overview of the IAM Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm).
+        `Overview of the IAM Service`__.
+
         For information about Availability Domains, see
-        [Regions and Availability Domains]({{DOC_SERVER_URL}}/Content/General/Concepts/regions.htm).
+        `Regions and Availability Domains`__.
         To get a list of Availability Domains, use the `ListAvailabilityDomains` operation
         in the Identity and Access Management Service API.
+
         All Oracle Bare Metal Cloud Services resources, including instances, get an Oracle-assigned,
         unique ID called an Oracle Cloud Identifier (OCID).
         When you create a resource, you can find its OCID in the response. You can
         also retrieve a resource's OCID by using a List API operation
         on that resource type, or by viewing the resource in the Console.
+
         When you launch an instance, it is automatically attached to a Virtual
         Network Interface Card (VNIC) and given both a public and private IP address.
-        To get both addresses, use the ListVnicAttachments
+        To get both addresses, use the :func:`list_vnic_attachments`
         operation to get the VNIC ID for the instance, and then call
-        GetVnic with the VNIC ID.
+        :func:`get_vnic` with the VNIC ID.
+
+        __ {{DOC_SERVER_URL}}/Content/Compute/Concepts/computeoverview.htm
+        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm
+        __ {{DOC_SERVER_URL}}/Content/General/Concepts/regions.htm
+
 
         :param LaunchInstanceDetails launch_instance_details: (required)
             Instance details
+
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
             server error without risk of executing that same action again. Retry tokens expire after 24
             hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
-        :param str opc_host_serial: (optional)
-            For Oracle internal use only.
-        :param str opc_pool_name: (optional)
-            For Oracle internal use only.
-        :param str opc_vnic_id: (optional)
-            For Oracle internal use only.
+
         :return: A Response object with data of type Instance
         :rtype: Instance
         """
@@ -612,22 +664,12 @@ class ComputeClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
-            "opc_retry_token",
-            "opc_host_serial",
-            "opc_pool_name",
-            "opc_vnic_id"
+            "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "launch_instance got unknown kwargs: {!r}".format(extra_kwargs))
-
-        query_params = {
-            "opc-host-serial": kwargs.get("opc_host_serial", missing),
-            "opc-pool-name": kwargs.get("opc_pool_name", missing),
-            "opc-vnic-id": kwargs.get("opc_vnic_id", missing)
-        }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
 
         header_params = {
             "accept": "application/json",
@@ -639,7 +681,6 @@ class ComputeClient(object):
         return self.base_client.call_api(
             resource_path=resource_path,
             method=method,
-            query_params=query_params,
             header_params=header_params,
             body=launch_instance_details,
             response_type="Instance")
@@ -649,18 +690,26 @@ class ComputeClient(object):
         ListConsoleHistories
         Lists the console history metadata for the specified compartment or instance.
 
+
         :param str compartment_id: (required)
             The OCID of the compartment.
+
         :param str availability_domain: (optional)
             The name of the Availability Domain.
+
             Example: `Uocm:PHX-AD-1`
+
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
+
             Example: `500`
+
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
+
         :param str instance_id: (optional)
             The OCID of the instance.
+
         :return: A Response object with data of type list[ConsoleHistory]
         :rtype: list[ConsoleHistory]
         """
@@ -705,24 +754,37 @@ class ComputeClient(object):
         ListImages
         Lists the available images in the specified compartment. For more
         information about images, see
-        [Managing Custom Images]({{DOC_SERVER_URL}}/Content/Compute/Tasks/managingcustomimages.htm).
+        `Managing Custom Images`__.
+
+        __ {{DOC_SERVER_URL}}/Content/Compute/Tasks/managingcustomimages.htm
+
 
         :param str compartment_id: (required)
             The OCID of the compartment.
+
         :param str display_name: (optional)
             A user-friendly name. Does not have to be unique, and it's changeable.
+
             Example: `My new resource`
+
         :param str operating_system: (optional)
             The image's operating system.
+
             Example: `Oracle Linux`
+
         :param str operating_system_version: (optional)
             The image's operating system version.
+
             Example: `7.2`
+
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
+
             Example: `500`
+
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
+
         :return: A Response object with data of type list[Image]
         :rtype: list[Image]
         """
@@ -771,19 +833,28 @@ class ComputeClient(object):
         You can filter the results by specifying an instance name (the list will include all the identically-named
         instances in the compartment).
 
+
         :param str compartment_id: (required)
             The OCID of the compartment.
+
         :param str availability_domain: (optional)
             The name of the Availability Domain.
+
             Example: `Uocm:PHX-AD-1`
+
         :param str display_name: (optional)
             A user-friendly name. Does not have to be unique, and it's changeable.
+
             Example: `My new resource`
+
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
+
             Example: `500`
+
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
+
         :return: A Response object with data of type list[Instance]
         :rtype: list[Instance]
         """
@@ -829,18 +900,26 @@ class ComputeClient(object):
         Lists the shapes that can be used to launch an instance within the specified compartment. You can
         filter the list by compatibility with a specific image.
 
+
         :param str compartment_id: (required)
             The OCID of the compartment.
+
         :param str availability_domain: (optional)
             The name of the Availability Domain.
+
             Example: `Uocm:PHX-AD-1`
+
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
+
             Example: `500`
+
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
+
         :param str image_id: (optional)
             The OCID of an image.
+
         :return: A Response object with data of type list[Shape]
         :rtype: list[Shape]
         """
@@ -886,20 +965,29 @@ class ComputeClient(object):
         Lists the VNIC attachments for the specified compartment. The list can be filtered by
         instance and by VNIC.
 
+
         :param str compartment_id: (required)
             The OCID of the compartment.
+
         :param str availability_domain: (optional)
             The name of the Availability Domain.
+
             Example: `Uocm:PHX-AD-1`
+
         :param str instance_id: (optional)
             The OCID of the instance.
+
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
+
             Example: `500`
+
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
+
         :param str vnic_id: (optional)
             The OCID of the VNIC.
+
         :return: A Response object with data of type list[VnicAttachment]
         :rtype: list[VnicAttachment]
         """
@@ -946,22 +1034,32 @@ class ComputeClient(object):
         ListVolumeAttachments
         Lists the volume attachments in the specified compartment. You can filter the
         list by specifying an instance OCID, volume OCID, or both.
-        Currently, the only supported volume attachment type is IScsiVolumeAttachment.
+
+        Currently, the only supported volume attachment type is :class:`IScsiVolumeAttachment`.
+
 
         :param str compartment_id: (required)
             The OCID of the compartment.
+
         :param str availability_domain: (optional)
             The name of the Availability Domain.
+
             Example: `Uocm:PHX-AD-1`
+
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
+
             Example: `500`
+
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
+
         :param str instance_id: (optional)
             The OCID of the instance.
+
         :param str volume_id: (optional)
             The OCID of the volume.
+
         :return: A Response object with data of type list[VolumeAttachment]
         :rtype: list[VolumeAttachment]
         """
@@ -1008,15 +1106,19 @@ class ComputeClient(object):
         TerminateInstance
         Terminates the specified instance. Any attached VNICs and volumes are automatically detached
         when the instance terminates.
+
         This is an asynchronous operation; the instance's `lifecycleState` will change to TERMINATING temporarily
         until the instance is completely removed.
 
+
         :param str instance_id: (required)
             The OCID of the instance.
+
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
         :return: A Response object with data of type None
         :rtype: None
         """
@@ -1055,20 +1157,25 @@ class ComputeClient(object):
         UpdateImage
         Updates the display name of the image.
 
+
         :param str image_id: (required)
             The OCID of the image.
+
         :param UpdateImageDetails update_image_details: (required)
             Updates the image display name field.
+
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
             server error without risk of executing that same action again. Retry tokens expire after 24
             hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
+
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
         :return: A Response object with data of type Image
         :rtype: Image
         """
@@ -1112,20 +1219,25 @@ class ComputeClient(object):
         Updates the display name of the specified instance. The OCID of the instance
         remains the same.
 
+
         :param str instance_id: (required)
             The OCID of the instance.
+
         :param UpdateInstanceDetails update_instance_details: (required)
             Update instance fields
+
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
             server error without risk of executing that same action again. Retry tokens expire after 24
             hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
+
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
         :return: A Response object with data of type Instance
         :rtype: Instance
         """

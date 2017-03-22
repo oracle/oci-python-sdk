@@ -207,7 +207,7 @@ And to get it back:
 ============
 
 Next, head to the `User Guides`_ or jump right into the :ref:`API Reference <api-reference>`
-to explore the available operations for each service, and their parameters.
+to explore the available operations for each service, and their parameters. Additional Python examples can be found on `GitHub <https://github.com/oracle/bmcs-python-sdk/tree/master/examples>`_.
 
 
 .. note::
@@ -216,6 +216,6 @@ to explore the available operations for each service, and their parameters.
     `ListApiKeys`_ operation is called with ``IdentityClient.list_api_keys`` and its parameter
     ``userId`` is translated to ``user_id``.
 
-    .. _ListApiKeys: https://docs.us-az-phoenix-1.oracleiaas.com/api/#/en/identity/20160918/ApiKey/ListApiKeys
+    .. _ListApiKeys: https://docs.us-phoenix-1.oraclecloud.com/api/#/en/identity/20160918/ApiKey/ListApiKeys
 
-.. _User Guides: https://docs.us-az-phoenix-1.oracleiaas.com/Content/services.htm
+.. _User Guides: https://docs.us-phoenix-1.oraclecloud.com/Content/services.htm

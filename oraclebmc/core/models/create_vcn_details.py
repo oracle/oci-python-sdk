@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict
@@ -30,7 +30,9 @@ class CreateVcnDetails(object):
         """
         Gets the cidr_block of this CreateVcnDetails.
         The CIDR IP address block of the VCN.
+
         Example: `172.16.0.0/16`
+
 
         :return: The cidr_block of this CreateVcnDetails.
         :rtype: str
@@ -42,7 +44,9 @@ class CreateVcnDetails(object):
         """
         Sets the cidr_block of this CreateVcnDetails.
         The CIDR IP address block of the VCN.
+
         Example: `172.16.0.0/16`
+
 
         :param cidr_block: The cidr_block of this CreateVcnDetails.
         :type: str
@@ -55,6 +59,7 @@ class CreateVcnDetails(object):
         Gets the compartment_id of this CreateVcnDetails.
         The OCID of the compartment to contain the VCN.
 
+
         :return: The compartment_id of this CreateVcnDetails.
         :rtype: str
         """
@@ -65,6 +70,7 @@ class CreateVcnDetails(object):
         """
         Sets the compartment_id of this CreateVcnDetails.
         The OCID of the compartment to contain the VCN.
+
 
         :param compartment_id: The compartment_id of this CreateVcnDetails.
         :type: str
@@ -77,6 +83,7 @@ class CreateVcnDetails(object):
         Gets the display_name of this CreateVcnDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
 
+
         :return: The display_name of this CreateVcnDetails.
         :rtype: str
         """
@@ -87,6 +94,7 @@ class CreateVcnDetails(object):
         """
         Sets the display_name of this CreateVcnDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
+
 
         :param display_name: The display_name of this CreateVcnDetails.
         :type: str

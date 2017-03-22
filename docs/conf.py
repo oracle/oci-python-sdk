@@ -20,7 +20,7 @@ master_doc = "index"
 
 # General information about the project.
 project = "oraclebmc"
-copyright = "2017, Oracle"
+copyright = "2016, 2017, Oracle"
 author = "Oracle"
 
 try:
@@ -32,7 +32,7 @@ except pkg_resources.DistributionNotFound:
     print("metadata.  A virtualenv is recommended!")
     sys.exit(1)
 del pkg_resources
-version = ".".join(release.split(".")[:2])
+version = ".".join(release.split(".")[:3])
 
 language = "en"
 

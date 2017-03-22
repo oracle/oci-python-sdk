@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict
@@ -28,6 +28,7 @@ class CreateVolumeBackupDetails(object):
         Gets the display_name of this CreateVolumeBackupDetails.
         A user-friendly name for the volume backup. Does not have to be unique and it's changeable.
 
+
         :return: The display_name of this CreateVolumeBackupDetails.
         :rtype: str
         """
@@ -38,6 +39,7 @@ class CreateVolumeBackupDetails(object):
         """
         Sets the display_name of this CreateVolumeBackupDetails.
         A user-friendly name for the volume backup. Does not have to be unique and it's changeable.
+
 
         :param display_name: The display_name of this CreateVolumeBackupDetails.
         :type: str
@@ -50,6 +52,7 @@ class CreateVolumeBackupDetails(object):
         Gets the volume_id of this CreateVolumeBackupDetails.
         The OCID of the volume that needs to be backed up.
 
+
         :return: The volume_id of this CreateVolumeBackupDetails.
         :rtype: str
         """
@@ -60,6 +63,7 @@ class CreateVolumeBackupDetails(object):
         """
         Sets the volume_id of this CreateVolumeBackupDetails.
         The OCID of the volume that needs to be backed up.
+
 
         :param volume_id: The volume_id of this CreateVolumeBackupDetails.
         :type: str

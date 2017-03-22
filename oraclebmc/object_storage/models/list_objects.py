@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict
@@ -72,6 +72,7 @@ class ListObjects(object):
         The name of the object to be used in startWith parameter to obtain next page of
         a truncated list objects response.
 
+
         :return: The next_start_with of this ListObjects.
         :rtype: str
         """
@@ -83,6 +84,7 @@ class ListObjects(object):
         Sets the next_start_with of this ListObjects.
         The name of the object to be used in startWith parameter to obtain next page of
         a truncated list objects response.
+
 
         :param next_start_with: The next_start_with of this ListObjects.
         :type: str

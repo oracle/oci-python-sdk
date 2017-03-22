@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict
@@ -43,6 +43,7 @@ class RouteTable(object):
         Gets the compartment_id of this RouteTable.
         The OCID of the compartment containing the route table.
 
+
         :return: The compartment_id of this RouteTable.
         :rtype: str
         """
@@ -53,6 +54,7 @@ class RouteTable(object):
         """
         Sets the compartment_id of this RouteTable.
         The OCID of the compartment containing the route table.
+
 
         :param compartment_id: The compartment_id of this RouteTable.
         :type: str
@@ -65,6 +67,7 @@ class RouteTable(object):
         Gets the display_name of this RouteTable.
         A user-friendly name. Does not have to be unique, and it's changeable.
 
+
         :return: The display_name of this RouteTable.
         :rtype: str
         """
@@ -75,6 +78,7 @@ class RouteTable(object):
         """
         Sets the display_name of this RouteTable.
         A user-friendly name. Does not have to be unique, and it's changeable.
+
 
         :param display_name: The display_name of this RouteTable.
         :type: str
@@ -87,6 +91,7 @@ class RouteTable(object):
         Gets the id of this RouteTable.
         The route table's Oracle ID (OCID).
 
+
         :return: The id of this RouteTable.
         :rtype: str
         """
@@ -97,6 +102,7 @@ class RouteTable(object):
         """
         Sets the id of this RouteTable.
         The route table's Oracle ID (OCID).
+
 
         :param id: The id of this RouteTable.
         :type: str
@@ -109,6 +115,7 @@ class RouteTable(object):
         Gets the lifecycle_state of this RouteTable.
         The route table's current state.
 
+
         :return: The lifecycle_state of this RouteTable.
         :rtype: str
         """
@@ -119,6 +126,7 @@ class RouteTable(object):
         """
         Sets the lifecycle_state of this RouteTable.
         The route table's current state.
+
 
         :param lifecycle_state: The lifecycle_state of this RouteTable.
         :type: str
@@ -137,6 +145,7 @@ class RouteTable(object):
         Gets the route_rules of this RouteTable.
         The collection of rules for routing destination IPs to network devices.
 
+
         :return: The route_rules of this RouteTable.
         :rtype: list[RouteRule]
         """
@@ -148,6 +157,7 @@ class RouteTable(object):
         Sets the route_rules of this RouteTable.
         The collection of rules for routing destination IPs to network devices.
 
+
         :param route_rules: The route_rules of this RouteTable.
         :type: list[RouteRule]
         """
@@ -158,7 +168,9 @@ class RouteTable(object):
         """
         Gets the time_created of this RouteTable.
         The date and time the route table was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :return: The time_created of this RouteTable.
         :rtype: datetime
@@ -170,7 +182,9 @@ class RouteTable(object):
         """
         Sets the time_created of this RouteTable.
         The date and time the route table was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :param time_created: The time_created of this RouteTable.
         :type: datetime
@@ -183,6 +197,7 @@ class RouteTable(object):
         Gets the vcn_id of this RouteTable.
         The OCID of the VCN the route table list belongs to.
 
+
         :return: The vcn_id of this RouteTable.
         :rtype: str
         """
@@ -193,6 +208,7 @@ class RouteTable(object):
         """
         Sets the vcn_id of this RouteTable.
         The OCID of the VCN the route table list belongs to.
+
 
         :param vcn_id: The vcn_id of this RouteTable.
         :type: str

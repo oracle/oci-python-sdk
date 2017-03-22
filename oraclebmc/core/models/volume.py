@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict
@@ -42,7 +42,9 @@ class Volume(object):
         """
         Gets the availability_domain of this Volume.
         The Availability Domain of the volume.
+
         Example: `Uocm:PHX-AD-1`
+
 
         :return: The availability_domain of this Volume.
         :rtype: str
@@ -54,7 +56,9 @@ class Volume(object):
         """
         Sets the availability_domain of this Volume.
         The Availability Domain of the volume.
+
         Example: `Uocm:PHX-AD-1`
+
 
         :param availability_domain: The availability_domain of this Volume.
         :type: str
@@ -67,6 +71,7 @@ class Volume(object):
         Gets the compartment_id of this Volume.
         The OCID of the compartment that contains the volume.
 
+
         :return: The compartment_id of this Volume.
         :rtype: str
         """
@@ -77,6 +82,7 @@ class Volume(object):
         """
         Sets the compartment_id of this Volume.
         The OCID of the compartment that contains the volume.
+
 
         :param compartment_id: The compartment_id of this Volume.
         :type: str
@@ -89,6 +95,7 @@ class Volume(object):
         Gets the display_name of this Volume.
         A user-friendly name. Does not have to be unique, and it's changeable.
 
+
         :return: The display_name of this Volume.
         :rtype: str
         """
@@ -99,6 +106,7 @@ class Volume(object):
         """
         Sets the display_name of this Volume.
         A user-friendly name. Does not have to be unique, and it's changeable.
+
 
         :param display_name: The display_name of this Volume.
         :type: str
@@ -111,6 +119,7 @@ class Volume(object):
         Gets the id of this Volume.
         The volume's Oracle ID (OCID).
 
+
         :return: The id of this Volume.
         :rtype: str
         """
@@ -121,6 +130,7 @@ class Volume(object):
         """
         Sets the id of this Volume.
         The volume's Oracle ID (OCID).
+
 
         :param id: The id of this Volume.
         :type: str
@@ -133,6 +143,7 @@ class Volume(object):
         Gets the lifecycle_state of this Volume.
         The current state of a volume.
 
+
         :return: The lifecycle_state of this Volume.
         :rtype: str
         """
@@ -143,6 +154,7 @@ class Volume(object):
         """
         Sets the lifecycle_state of this Volume.
         The current state of a volume.
+
 
         :param lifecycle_state: The lifecycle_state of this Volume.
         :type: str
@@ -161,6 +173,7 @@ class Volume(object):
         Gets the size_in_mbs of this Volume.
         The size of the volume in MBs.
 
+
         :return: The size_in_mbs of this Volume.
         :rtype: int
         """
@@ -171,6 +184,7 @@ class Volume(object):
         """
         Sets the size_in_mbs of this Volume.
         The size of the volume in MBs.
+
 
         :param size_in_mbs: The size_in_mbs of this Volume.
         :type: int
@@ -183,6 +197,7 @@ class Volume(object):
         Gets the time_created of this Volume.
         The date and time the volume was created. Format defined by RFC3339.
 
+
         :return: The time_created of this Volume.
         :rtype: datetime
         """
@@ -193,6 +208,7 @@ class Volume(object):
         """
         Sets the time_created of this Volume.
         The date and time the volume was created. Format defined by RFC3339.
+
 
         :param time_created: The time_created of this Volume.
         :type: datetime
