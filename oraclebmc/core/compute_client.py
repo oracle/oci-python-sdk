@@ -43,6 +43,7 @@ class ComputeClient(object):
             may be rejected).
 
         :return: A Response object with data of type VolumeAttachment
+        :rtype: VolumeAttachment
         """
         resource_path = "/volumeAttachments/"
         method = "POST"
@@ -103,6 +104,7 @@ class ComputeClient(object):
             may be rejected).
 
         :return: A Response object with data of type ConsoleHistory
+        :rtype: ConsoleHistory
         """
         resource_path = "/instanceConsoleHistories/"
         method = "POST"
@@ -156,6 +158,7 @@ class ComputeClient(object):
             may be rejected).
 
         :return: A Response object with data of type Image
+        :rtype: Image
         """
         resource_path = "/images/"
         method = "POST"
@@ -198,6 +201,7 @@ class ComputeClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/instanceConsoleHistories/{instanceConsoleHistoryId}"
         method = "DELETE"
@@ -244,6 +248,7 @@ class ComputeClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/images/{imageId}"
         method = "DELETE"
@@ -293,6 +298,7 @@ class ComputeClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/volumeAttachments/{volumeAttachmentId}"
         method = "DELETE"
@@ -336,6 +342,7 @@ class ComputeClient(object):
             The OCID of the console history.
 
         :return: A Response object with data of type ConsoleHistory
+        :rtype: ConsoleHistory
         """
         resource_path = "/instanceConsoleHistories/{instanceConsoleHistoryId}"
         method = "GET"
@@ -379,6 +386,7 @@ class ComputeClient(object):
             Length of the snapshot data to retrieve.
 
         :return: A Response object with data of type bytes
+        :rtype: bytes
         """
         resource_path = "/instanceConsoleHistories/{instanceConsoleHistoryId}/data"
         method = "GET"
@@ -427,6 +435,7 @@ class ComputeClient(object):
             The OCID of the image.
 
         :return: A Response object with data of type Image
+        :rtype: Image
         """
         resource_path = "/images/{imageId}"
         method = "GET"
@@ -462,6 +471,7 @@ class ComputeClient(object):
             The OCID of the instance.
 
         :return: A Response object with data of type Instance
+        :rtype: Instance
         """
         resource_path = "/instances/{instanceId}"
         method = "GET"
@@ -497,6 +507,7 @@ class ComputeClient(object):
             The OCID of the volume attachment.
 
         :return: A Response object with data of type VolumeAttachment
+        :rtype: VolumeAttachment
         """
         resource_path = "/volumeAttachments/{volumeAttachmentId}"
         method = "GET"
@@ -562,6 +573,7 @@ class ComputeClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type Instance
+        :rtype: Instance
         """
         resource_path = "/instances/{instanceId}"
         method = "POST"
@@ -645,6 +657,7 @@ class ComputeClient(object):
             may be rejected).
 
         :return: A Response object with data of type Instance
+        :rtype: Instance
         """
         resource_path = "/instances/"
         method = "POST"
@@ -698,6 +711,7 @@ class ComputeClient(object):
             The OCID of the instance.
 
         :return: A Response object with data of type list[ConsoleHistory]
+        :rtype: list[ConsoleHistory]
         """
         resource_path = "/instanceConsoleHistories/"
         method = "GET"
@@ -772,6 +786,7 @@ class ComputeClient(object):
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
         :return: A Response object with data of type list[Image]
+        :rtype: list[Image]
         """
         resource_path = "/images/"
         method = "GET"
@@ -841,6 +856,7 @@ class ComputeClient(object):
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
         :return: A Response object with data of type list[Instance]
+        :rtype: list[Instance]
         """
         resource_path = "/instances/"
         method = "GET"
@@ -905,6 +921,7 @@ class ComputeClient(object):
             The OCID of an image.
 
         :return: A Response object with data of type list[Shape]
+        :rtype: list[Shape]
         """
         resource_path = "/shapes"
         method = "GET"
@@ -972,6 +989,7 @@ class ComputeClient(object):
             The OCID of the VNIC.
 
         :return: A Response object with data of type list[VnicAttachment]
+        :rtype: list[VnicAttachment]
         """
         resource_path = "/vnicAttachments/"
         method = "GET"
@@ -1043,6 +1061,7 @@ class ComputeClient(object):
             The OCID of the volume.
 
         :return: A Response object with data of type list[VolumeAttachment]
+        :rtype: list[VolumeAttachment]
         """
         resource_path = "/volumeAttachments/"
         method = "GET"
@@ -1101,6 +1120,7 @@ class ComputeClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/instances/{instanceId}"
         method = "DELETE"
@@ -1157,6 +1177,7 @@ class ComputeClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type Image
+        :rtype: Image
         """
         resource_path = "/images/{imageId}"
         method = "PUT"
@@ -1218,6 +1239,7 @@ class ComputeClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type Instance
+        :rtype: Instance
         """
         resource_path = "/instances/{instanceId}"
         method = "PUT"

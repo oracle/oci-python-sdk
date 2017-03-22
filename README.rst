@@ -69,9 +69,9 @@ __ https://oracle-bare-metal-cloud-services-python-sdk.readthedocs.io/en/latest/
 Help
 ====
 
-See the “Questions or Feedback?” section `here`__.
+See the “Questions or Feedback” section `here`__.
 
-__ https://oracle-bare-metal-cloud-services-python-sdk.readthedocs.io/en/latest/installation.html#questions-or-feedback
+__ https://oracle-bare-metal-cloud-services-python-sdk.readthedocs.io/en/latest/feedback.html
 
 =======
 Changes

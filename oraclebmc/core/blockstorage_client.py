@@ -59,6 +59,7 @@ class BlockstorageClient(object):
             may be rejected).
 
         :return: A Response object with data of type Volume
+        :rtype: Volume
         """
         resource_path = "/volumes"
         method = "POST"
@@ -110,6 +111,7 @@ class BlockstorageClient(object):
             may be rejected).
 
         :return: A Response object with data of type VolumeBackup
+        :rtype: VolumeBackup
         """
         resource_path = "/volumeBackups"
         method = "POST"
@@ -157,6 +159,7 @@ class BlockstorageClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/volumes/{volumeId}"
         method = "DELETE"
@@ -203,6 +206,7 @@ class BlockstorageClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/volumeBackups/{volumeBackupId}"
         method = "DELETE"
@@ -244,6 +248,7 @@ class BlockstorageClient(object):
             The OCID of the volume.
 
         :return: A Response object with data of type Volume
+        :rtype: Volume
         """
         resource_path = "/volumes/{volumeId}"
         method = "GET"
@@ -279,6 +284,7 @@ class BlockstorageClient(object):
             The OCID of the volume backup.
 
         :return: A Response object with data of type VolumeBackup
+        :rtype: VolumeBackup
         """
         resource_path = "/volumeBackups/{volumeBackupId}"
         method = "GET"
@@ -325,6 +331,7 @@ class BlockstorageClient(object):
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
         :return: A Response object with data of type list[VolumeBackup]
+        :rtype: list[VolumeBackup]
         """
         resource_path = "/volumeBackups"
         method = "GET"
@@ -383,6 +390,7 @@ class BlockstorageClient(object):
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
         :return: A Response object with data of type list[Volume]
+        :rtype: list[Volume]
         """
         resource_path = "/volumes"
         method = "GET"
@@ -436,6 +444,7 @@ class BlockstorageClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type Volume
+        :rtype: Volume
         """
         resource_path = "/volumes/{volumeId}"
         method = "PUT"
@@ -487,6 +496,7 @@ class BlockstorageClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type VolumeBackup
+        :rtype: VolumeBackup
         """
         resource_path = "/volumeBackups/{volumeBackupId}"
         method = "PUT"
