@@ -13,6 +13,7 @@ class Vnic(object):
             'availability_domain': 'str',
             'compartment_id': 'str',
             'display_name': 'str',
+            'hostname_label': 'str',
             'id': 'str',
             'lifecycle_state': 'str',
             'private_ip': 'str',
@@ -25,6 +26,7 @@ class Vnic(object):
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
+            'hostname_label': 'hostnameLabel',
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
             'private_ip': 'privateIp',
@@ -36,6 +38,7 @@ class Vnic(object):
         self._availability_domain = None
         self._compartment_id = None
         self._display_name = None
+        self._hostname_label = None
         self._id = None
         self._lifecycle_state = None
         self._private_ip = None
@@ -120,10 +123,66 @@ class Vnic(object):
         self._display_name = display_name
 
     @property
+    def hostname_label(self):
+        """
+        Gets the hostname_label of this Vnic.
+        The hostname for the VNIC that is created during instance launch.
+        Used for DNS. The value is the hostname portion of the instance's
+        fully qualified domain name (FQDN) (e.g., `bminstance-1` in FQDN
+        `bminstance-1.subnet-123.vcn-1.oraclevcn.com`).
+        Must be unique across all VNICs in the subnet and comply with
+        `RFC 952`__ and
+        `RFC 1123`__.
+        The value cannot be changed.
+
+        For more information, see
+        `DNS in Your Virtual Cloud Network`__.
+
+        Example: `bminstance-1`
+
+         __ https://tools.ietf.org/html/rfc952
+         __ https://tools.ietf.org/html/rfc1123
+        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
+
+
+        :return: The hostname_label of this Vnic.
+        :rtype: str
+        """
+        return self._hostname_label
+
+    @hostname_label.setter
+    def hostname_label(self, hostname_label):
+        """
+        Sets the hostname_label of this Vnic.
+        The hostname for the VNIC that is created during instance launch.
+        Used for DNS. The value is the hostname portion of the instance's
+        fully qualified domain name (FQDN) (e.g., `bminstance-1` in FQDN
+        `bminstance-1.subnet-123.vcn-1.oraclevcn.com`).
+        Must be unique across all VNICs in the subnet and comply with
+        `RFC 952`__ and
+        `RFC 1123`__.
+        The value cannot be changed.
+
+        For more information, see
+        `DNS in Your Virtual Cloud Network`__.
+
+        Example: `bminstance-1`
+
+         __ https://tools.ietf.org/html/rfc952
+         __ https://tools.ietf.org/html/rfc1123
+        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
+
+
+        :param hostname_label: The hostname_label of this Vnic.
+        :type: str
+        """
+        self._hostname_label = hostname_label
+
+    @property
     def id(self):
         """
         Gets the id of this Vnic.
-        The VNIC's Oracle ID (OCID).
+        The OCID of the VNIC.
 
 
         :return: The id of this Vnic.
@@ -135,7 +194,7 @@ class Vnic(object):
     def id(self, id):
         """
         Sets the id of this Vnic.
-        The VNIC's Oracle ID (OCID).
+        The OCID of the VNIC.
 
 
         :param id: The id of this Vnic.
@@ -177,7 +236,7 @@ class Vnic(object):
     def private_ip(self):
         """
         Gets the private_ip of this Vnic.
-        The private IP addresses of the VNIC, which is within the VNIC subnet
+        The private IP address of the VNIC. The address is within the subnet's CIDR
         and is accessible within the VCN.
 
 
@@ -190,7 +249,7 @@ class Vnic(object):
     def private_ip(self, private_ip):
         """
         Sets the private_ip of this Vnic.
-        The private IP addresses of the VNIC, which is within the VNIC subnet
+        The private IP address of the VNIC. The address is within the subnet's CIDR
         and is accessible within the VCN.
 
 
@@ -203,7 +262,7 @@ class Vnic(object):
     def public_ip(self):
         """
         Gets the public_ip of this Vnic.
-        The public IP address of the VNIC, which Oracle performs NAT for at the gateway.
+        The public IP address of the VNIC.
 
 
         :return: The public_ip of this Vnic.
@@ -215,7 +274,7 @@ class Vnic(object):
     def public_ip(self, public_ip):
         """
         Sets the public_ip of this Vnic.
-        The public IP address of the VNIC, which Oracle performs NAT for at the gateway.
+        The public IP address of the VNIC.
 
 
         :param public_ip: The public_ip of this Vnic.
