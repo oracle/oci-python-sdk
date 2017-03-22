@@ -92,10 +92,8 @@ class VirtualNetworkClient(object):
     def create_dhcp_options(self, create_dhcp_details, **kwargs):
         """
         CreateDhcpOptions
-        Creates a new set of DHCP options for the specified VCN. The only option available to use is
-        :class:`DhcpDnsOption`, which lets you specify how DNS (host name resolution) is
-        handled in the subnets in your VCN. For more information, see
-        `Managing DHCP Options`__.
+        Creates a new set of DHCP options for the specified VCN. For more information, see
+        :class:`DhcpOptions`.
 
         For the purposes of access control, you must provide the OCID of the compartment where you want the set of
         DHCP options to reside. Notice that the set of options doesn't have to be in the same compartment as the VCN,
@@ -107,7 +105,6 @@ class VirtualNetworkClient(object):
         You may optionally specify a *display name* for the set of DHCP options, otherwise a default is provided.
         It does not have to be unique, and you can change it.
 
-        __ {{DOC_SERVER_URL}}/Content/Network/Tasks/managingDHCP.htm
         __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm
         __ {{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm
 
@@ -562,6 +559,10 @@ class VirtualNetworkClient(object):
         You may optionally specify a *display name* for the subnet, otherwise a default is provided.
         It does not have to be unique, and you can change it.
 
+        You can also add a DNS label for the subnet, which is required if you want the VCN Resolver to resolve
+        hostnames for instances in the subnet. For more information, see
+        `DNS in Your Virtual Cloud Network`__.
+
         __ {{DOC_SERVER_URL}}/Content/Network/Tasks/managingsubnets.htm
         __ {{DOC_SERVER_URL}}/Content/General/Concepts/servicelimits.htm
         __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm
@@ -569,6 +570,7 @@ class VirtualNetworkClient(object):
         __ {{DOC_SERVER_URL}}/Content/Network/Tasks/managingroutetables.htm
         __ {{DOC_SERVER_URL}}/Content/Network/Concepts/securitylists.htm
         __ {{DOC_SERVER_URL}}/Content/Network/Tasks/managingDHCP.htm
+        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
 
 
         :param CreateSubnetDetails create_subnet_details: (required)
@@ -630,6 +632,10 @@ class VirtualNetworkClient(object):
         You may optionally specify a *display name* for the VCN, otherwise a default is provided. It does not have to
         be unique, and you can change it.
 
+        You can also add a DNS label for the VCN, which is required if you want the instances to use the VCN Resolver
+        option for DNS in the VCN. For more information, see
+        `DNS in Your Virtual Cloud Network`__.
+
         The VCN automatically comes with a default route table, default security list, and default set of DHCP options.
         The OCID for each is returned in the response. You can't delete these default objects, but you can change their
         contents (i.e., route rules, etc.)
@@ -642,6 +648,7 @@ class VirtualNetworkClient(object):
          __ https://tools.ietf.org/html/rfc1918
         __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm
         __ {{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm
+        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
         __ {{DOC_SERVER_URL}}/Content/Network/Concepts/overview.htm#three
 
 

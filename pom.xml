@@ -47,7 +47,7 @@
                                     <groupId>com.oracle.pic.commons</groupId>
                                     <artifactId>coreservices-api-spec</artifactId>
                                     <type>jar</type>
-                                    <includes>coreservices-api-spec-20160918.yaml</includes>
+                                    <includes>coreservices-api-spec-20160918-external.yaml</includes>
                                     <outputDirectory>${spec-temp-dir}</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
@@ -121,7 +121,7 @@
                         </goals>
                         <configuration>
                             <language>oracle-python-sdk</language>
-                            <specPath>${spec-temp-dir}/coreservices-api-spec-20160918.yaml</specPath>
+                            <specPath>${spec-temp-dir}/coreservices-api-spec-20160918-external.yaml</specPath>
                             <outputDir>oraclebmc</outputDir>
                             <basePackage>OracleBMC</basePackage>
                             <additionalProperties>
@@ -183,7 +183,7 @@
             <dependency>
                 <groupId>com.oracle.pic.commons</groupId>
                 <artifactId>coreservices-api-spec</artifactId>
-                <version>0.0.21</version>
+                <version>0.0.22</version>
             </dependency>
             <dependency>
                 <groupId>com.oracle.pic.identity</groupId>

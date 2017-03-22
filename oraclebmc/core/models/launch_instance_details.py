@@ -13,6 +13,7 @@ class LaunchInstanceDetails(object):
             'availability_domain': 'str',
             'compartment_id': 'str',
             'display_name': 'str',
+            'hostname_label': 'str',
             'image_id': 'str',
             'ipxe_script': 'str',
             'metadata': 'dict(str, str)',
@@ -24,6 +25,7 @@ class LaunchInstanceDetails(object):
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
+            'hostname_label': 'hostnameLabel',
             'image_id': 'imageId',
             'ipxe_script': 'ipxeScript',
             'metadata': 'metadata',
@@ -34,6 +36,7 @@ class LaunchInstanceDetails(object):
         self._availability_domain = None
         self._compartment_id = None
         self._display_name = None
+        self._hostname_label = None
         self._image_id = None
         self._ipxe_script = None
         self._metadata = None
@@ -119,6 +122,64 @@ class LaunchInstanceDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def hostname_label(self):
+        """
+        Gets the hostname_label of this LaunchInstanceDetails.
+        The hostname for the VNIC that is created during instance launch.
+        Used for DNS. The value is the hostname portion of the instance's
+        fully qualified domain name (FQDN) (e.g., `bminstance-1` in FQDN
+        `bminstance-1.subnet-123.vcn-1.oraclevcn.com`).
+        Must be unique across all VNICs in the subnet and comply with
+        `RFC 952`__ and
+        `RFC 1123`__.
+        The value cannot be changed, and it can be retrieved from the
+        :class:`Vnic`.
+
+        For more information, see
+        `DNS in Your Virtual Cloud Network`__.
+
+        Example: `bminstance-1`
+
+         __ https://tools.ietf.org/html/rfc952
+         __ https://tools.ietf.org/html/rfc1123
+        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
+
+
+        :return: The hostname_label of this LaunchInstanceDetails.
+        :rtype: str
+        """
+        return self._hostname_label
+
+    @hostname_label.setter
+    def hostname_label(self, hostname_label):
+        """
+        Sets the hostname_label of this LaunchInstanceDetails.
+        The hostname for the VNIC that is created during instance launch.
+        Used for DNS. The value is the hostname portion of the instance's
+        fully qualified domain name (FQDN) (e.g., `bminstance-1` in FQDN
+        `bminstance-1.subnet-123.vcn-1.oraclevcn.com`).
+        Must be unique across all VNICs in the subnet and comply with
+        `RFC 952`__ and
+        `RFC 1123`__.
+        The value cannot be changed, and it can be retrieved from the
+        :class:`Vnic`.
+
+        For more information, see
+        `DNS in Your Virtual Cloud Network`__.
+
+        Example: `bminstance-1`
+
+         __ https://tools.ietf.org/html/rfc952
+         __ https://tools.ietf.org/html/rfc1123
+        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
+
+
+        :param hostname_label: The hostname_label of this LaunchInstanceDetails.
+        :type: str
+        """
+        self._hostname_label = hostname_label
 
     @property
     def image_id(self):
