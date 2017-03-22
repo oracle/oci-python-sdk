@@ -46,6 +46,7 @@ class IdentityClient(object):
             may be rejected).
 
         :return: A Response object with data of type UserGroupMembership
+        :rtype: UserGroupMembership
         """
         resource_path = "/userGroupMemberships/"
         method = "POST"
@@ -111,6 +112,7 @@ class IdentityClient(object):
             may be rejected).
 
         :return: A Response object with data of type Compartment
+        :rtype: Compartment
         """
         resource_path = "/compartments/"
         method = "POST"
@@ -178,6 +180,7 @@ class IdentityClient(object):
             may be rejected).
 
         :return: A Response object with data of type Group
+        :rtype: Group
         """
         resource_path = "/groups/"
         method = "POST"
@@ -234,6 +237,7 @@ class IdentityClient(object):
             may be rejected).
 
         :return: A Response object with data of type UIPassword
+        :rtype: UIPassword
         """
         resource_path = "/users/{userId}/uiPassword"
         method = "POST"
@@ -303,6 +307,7 @@ class IdentityClient(object):
             may be rejected).
 
         :return: A Response object with data of type Policy
+        :rtype: Policy
         """
         resource_path = "/policies/"
         method = "POST"
@@ -361,6 +366,7 @@ class IdentityClient(object):
             may be rejected).
 
         :return: A Response object with data of type SwiftPassword
+        :rtype: SwiftPassword
         """
         resource_path = "/users/{userId}/swiftPasswords/"
         method = "POST"
@@ -449,6 +455,7 @@ class IdentityClient(object):
             may be rejected).
 
         :return: A Response object with data of type User
+        :rtype: User
         """
         resource_path = "/users/"
         method = "POST"
@@ -499,6 +506,7 @@ class IdentityClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/users/{userId}/apiKeys/{fingerprint}"
         method = "DELETE"
@@ -546,6 +554,7 @@ class IdentityClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/groups/{groupId}"
         method = "DELETE"
@@ -592,6 +601,7 @@ class IdentityClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/policies/{policyId}"
         method = "DELETE"
@@ -641,6 +651,7 @@ class IdentityClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/users/{userId}/swiftPasswords/{swiftPasswordId}"
         method = "DELETE"
@@ -688,6 +699,7 @@ class IdentityClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/users/{userId}"
         method = "DELETE"
@@ -736,6 +748,7 @@ class IdentityClient(object):
             The OCID of the compartment.
 
         :return: A Response object with data of type Compartment
+        :rtype: Compartment
         """
         resource_path = "/compartments/{compartmentId}"
         method = "GET"
@@ -775,6 +788,7 @@ class IdentityClient(object):
             The OCID of the group.
 
         :return: A Response object with data of type Group
+        :rtype: Group
         """
         resource_path = "/groups/{groupId}"
         method = "GET"
@@ -810,6 +824,7 @@ class IdentityClient(object):
             The OCID of the policy.
 
         :return: A Response object with data of type Policy
+        :rtype: Policy
         """
         resource_path = "/policies/{policyId}"
         method = "GET"
@@ -845,6 +860,7 @@ class IdentityClient(object):
             The OCID of the user.
 
         :return: A Response object with data of type User
+        :rtype: User
         """
         resource_path = "/users/{userId}"
         method = "GET"
@@ -880,6 +896,7 @@ class IdentityClient(object):
             The OCID of the userGroupMembership.
 
         :return: A Response object with data of type UserGroupMembership
+        :rtype: UserGroupMembership
         """
         resource_path = "/userGroupMemberships/{userGroupMembershipId}"
         method = "GET"
@@ -918,6 +935,7 @@ class IdentityClient(object):
             The OCID of the user.
 
         :return: A Response object with data of type list[ApiKey]
+        :rtype: list[ApiKey]
         """
         resource_path = "/users/{userId}/apiKeys/"
         method = "GET"
@@ -957,6 +975,7 @@ class IdentityClient(object):
             The OCID of the compartment (remember that the tenancy is simply the root compartment).
 
         :return: A Response object with data of type list[AvailabilityDomain]
+        :rtype: list[AvailabilityDomain]
         """
         resource_path = "/availabilityDomains/"
         method = "GET"
@@ -1007,6 +1026,7 @@ class IdentityClient(object):
             The maximum number of items to return in a paginated \"List\" call.
 
         :return: A Response object with data of type list[Compartment]
+        :rtype: list[Compartment]
         """
         resource_path = "/compartments/"
         method = "GET"
@@ -1060,6 +1080,7 @@ class IdentityClient(object):
             The maximum number of items to return in a paginated \"List\" call.
 
         :return: A Response object with data of type list[Group]
+        :rtype: list[Group]
         """
         resource_path = "/groups/"
         method = "GET"
@@ -1115,6 +1136,7 @@ class IdentityClient(object):
             The maximum number of items to return in a paginated \"List\" call.
 
         :return: A Response object with data of type list[Policy]
+        :rtype: list[Policy]
         """
         resource_path = "/policies/"
         method = "GET"
@@ -1159,6 +1181,7 @@ class IdentityClient(object):
             The OCID of the user.
 
         :return: A Response object with data of type list[SwiftPassword]
+        :rtype: list[SwiftPassword]
         """
         resource_path = "/users/{userId}/swiftPasswords/"
         method = "GET"
@@ -1221,6 +1244,7 @@ class IdentityClient(object):
             The maximum number of items to return in a paginated \"List\" call.
 
         :return: A Response object with data of type list[UserGroupMembership]
+        :rtype: list[UserGroupMembership]
         """
         resource_path = "/userGroupMemberships/"
         method = "GET"
@@ -1278,6 +1302,7 @@ class IdentityClient(object):
             The maximum number of items to return in a paginated \"List\" call.
 
         :return: A Response object with data of type list[User]
+        :rtype: list[User]
         """
         resource_path = "/users/"
         method = "GET"
@@ -1326,6 +1351,7 @@ class IdentityClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/userGroupMemberships/{userGroupMembershipId}"
         method = "DELETE"
@@ -1375,6 +1401,7 @@ class IdentityClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type Compartment
+        :rtype: Compartment
         """
         resource_path = "/compartments/{compartmentId}"
         method = "PUT"
@@ -1426,6 +1453,7 @@ class IdentityClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type Group
+        :rtype: Group
         """
         resource_path = "/groups/{groupId}"
         method = "PUT"
@@ -1479,6 +1507,7 @@ class IdentityClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type Policy
+        :rtype: Policy
         """
         resource_path = "/policies/{policyId}"
         method = "PUT"
@@ -1517,7 +1546,6 @@ class IdentityClient(object):
         UpdateSwiftPassword
         Updates the specified Swift password's description.
 
-
         :param str user_id: (required)
             The OCID of the user.
 
@@ -1533,6 +1561,7 @@ class IdentityClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type SwiftPassword
+        :rtype: SwiftPassword
         """
         resource_path = "/users/{userId}/swiftPasswords/{swiftPasswordId}"
         method = "PUT"
@@ -1585,6 +1614,7 @@ class IdentityClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type User
+        :rtype: User
         """
         resource_path = "/users/{userId}"
         method = "PUT"
@@ -1636,6 +1666,7 @@ class IdentityClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type User
+        :rtype: User
         """
         resource_path = "/users/{userId}/state/"
         method = "PUT"
@@ -1703,6 +1734,7 @@ class IdentityClient(object):
             may be rejected).
 
         :return: A Response object with data of type ApiKey
+        :rtype: ApiKey
         """
         resource_path = "/users/{userId}/apiKeys/"
         method = "POST"
