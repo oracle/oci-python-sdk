@@ -29,8 +29,8 @@ class DhcpOption(object):
 
         if type == 'DomainNameServer':
             return 'DhcpDnsOption'
-
-        raise ValueError('Could not resolve subtype type based on the object dictionary.')
+        else:
+            return 'DhcpOption'
 
     @property
     def type(self):
