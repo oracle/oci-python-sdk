@@ -71,7 +71,6 @@ class DhcpDnsOption(DhcpOption):
         __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
 
 
-
         :return: The server_type of this DhcpDnsOption.
         :rtype: str
         """
@@ -94,7 +93,6 @@ class DhcpDnsOption(DhcpOption):
         - **CustomDnsServer:** Instances use a DNS server of your choice (three maximum).
 
         __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
-
 
 
         :param server_type: The server_type of this DhcpDnsOption.

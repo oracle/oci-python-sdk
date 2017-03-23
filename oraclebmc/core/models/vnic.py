@@ -185,7 +185,6 @@ class Vnic(object):
         The OCID of the VNIC.
 
 
-
         :return: The id of this Vnic.
         :rtype: str
         """
@@ -196,7 +195,6 @@ class Vnic(object):
         """
         Sets the id of this Vnic.
         The OCID of the VNIC.
-
 
 
         :param id: The id of this Vnic.
@@ -267,7 +265,6 @@ class Vnic(object):
         The public IP address of the VNIC.
 
 
-
         :return: The public_ip of this Vnic.
         :rtype: str
         """
@@ -278,7 +275,6 @@ class Vnic(object):
         """
         Sets the public_ip of this Vnic.
         The public IP address of the VNIC.
-
 
 
         :param public_ip: The public_ip of this Vnic.
