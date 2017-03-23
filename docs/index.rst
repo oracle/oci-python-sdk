@@ -36,7 +36,7 @@ To get started, head over to the :ref:`installation instructions <install>` or s
     quickstart
     raw-requests
     api/index
-	contributions
-	notifications
+    contributions
+    notifications
     license
     feedback

@@ -48,6 +48,7 @@ class ObjectStorageClient(object):
             The client request ID for tracing
 
         :return: A Response object with data of type Bucket
+        :rtype: Bucket
         """
         resource_path = "/n/{namespaceName}/b/"
         method = "POST"
@@ -102,6 +103,7 @@ class ObjectStorageClient(object):
             The client request ID for tracing
 
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/"
         method = "DELETE"
@@ -162,6 +164,7 @@ class ObjectStorageClient(object):
             The client request ID for tracing
 
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/o/{objectName}"
         method = "DELETE"
@@ -221,6 +224,7 @@ class ObjectStorageClient(object):
             The client request ID for tracing
 
         :return: A Response object with data of type Bucket
+        :rtype: Bucket
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/"
         method = "GET"
@@ -264,11 +268,11 @@ class ObjectStorageClient(object):
         Get the name of the namespace for the user making the request. An account name must be unique, must start with a
         letter, and can have up to 15 lower case letters and numbers. You cannot use spaces and special characters.
 
-
         :param str opc_client_request_id: (optional)
             The client request ID for tracing
 
         :return: A Response object with data of type str
+        :rtype: str
         """
         resource_path = "/n/"
         method = "GET"
@@ -328,6 +332,7 @@ class ObjectStorageClient(object):
             Note, only one byte range is supported.
 
         :return: A Response object with data of type stream
+        :rtype: stream
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/o/{objectName}"
         method = "GET"
@@ -392,6 +397,7 @@ class ObjectStorageClient(object):
             The client request ID for tracing
 
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/"
         method = "HEAD"
@@ -457,6 +463,7 @@ class ObjectStorageClient(object):
             The client request ID for tracing
 
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/o/{objectName}"
         method = "HEAD"
@@ -523,6 +530,7 @@ class ObjectStorageClient(object):
             The client request ID for tracing
 
         :return: A Response object with data of type list[BucketSummary]
+        :rtype: list[BucketSummary]
         """
         resource_path = "/n/{namespaceName}/b/"
         method = "GET"
@@ -614,6 +622,7 @@ class ObjectStorageClient(object):
             The client request ID for tracing
 
         :return: A Response object with data of type ListObjects
+        :rtype: ListObjects
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/o"
         method = "GET"
@@ -723,6 +732,7 @@ class ObjectStorageClient(object):
             Optional user-defined metadata key and value.
 
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/o/{objectName}"
         method = "PUT"
@@ -805,6 +815,7 @@ class ObjectStorageClient(object):
             The client request ID for tracing
 
         :return: A Response object with data of type Bucket
+        :rtype: Bucket
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/"
         method = "POST"

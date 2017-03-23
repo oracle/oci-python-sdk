@@ -62,6 +62,7 @@ class VirtualNetworkClient(object):
             may be rejected).
 
         :return: A Response object with data of type Cpe
+        :rtype: Cpe
         """
         resource_path = "/cpes"
         method = "POST"
@@ -120,6 +121,7 @@ class VirtualNetworkClient(object):
             may be rejected).
 
         :return: A Response object with data of type DhcpOptions
+        :rtype: DhcpOptions
         """
         resource_path = "/dhcps"
         method = "POST"
@@ -179,6 +181,7 @@ class VirtualNetworkClient(object):
             may be rejected).
 
         :return: A Response object with data of type Drg
+        :rtype: Drg
         """
         resource_path = "/drgs"
         method = "POST"
@@ -235,6 +238,7 @@ class VirtualNetworkClient(object):
             may be rejected).
 
         :return: A Response object with data of type DrgAttachment
+        :rtype: DrgAttachment
         """
         resource_path = "/drgAttachments"
         method = "POST"
@@ -303,6 +307,7 @@ class VirtualNetworkClient(object):
             may be rejected).
 
         :return: A Response object with data of type InternetGateway
+        :rtype: InternetGateway
         """
         resource_path = "/internetGateways"
         method = "POST"
@@ -377,6 +382,7 @@ class VirtualNetworkClient(object):
             may be rejected).
 
         :return: A Response object with data of type IPSecConnection
+        :rtype: IPSecConnection
         """
         resource_path = "/ipsecConnections"
         method = "POST"
@@ -439,6 +445,7 @@ class VirtualNetworkClient(object):
             may be rejected).
 
         :return: A Response object with data of type RouteTable
+        :rtype: RouteTable
         """
         resource_path = "/routeTables"
         method = "POST"
@@ -501,6 +508,7 @@ class VirtualNetworkClient(object):
             may be rejected).
 
         :return: A Response object with data of type SecurityList
+        :rtype: SecurityList
         """
         resource_path = "/securityLists"
         method = "POST"
@@ -584,6 +592,7 @@ class VirtualNetworkClient(object):
             may be rejected).
 
         :return: A Response object with data of type Subnet
+        :rtype: Subnet
         """
         resource_path = "/subnets"
         method = "POST"
@@ -663,6 +672,7 @@ class VirtualNetworkClient(object):
             may be rejected).
 
         :return: A Response object with data of type Vcn
+        :rtype: Vcn
         """
         resource_path = "/vcns"
         method = "POST"
@@ -707,6 +717,7 @@ class VirtualNetworkClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/cpes/{cpeId}"
         method = "DELETE"
@@ -757,6 +768,7 @@ class VirtualNetworkClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/dhcps/{dhcpId}"
         method = "DELETE"
@@ -806,6 +818,7 @@ class VirtualNetworkClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/drgs/{drgId}"
         method = "DELETE"
@@ -854,6 +867,7 @@ class VirtualNetworkClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/drgAttachments/{drgAttachmentId}"
         method = "DELETE"
@@ -904,6 +918,7 @@ class VirtualNetworkClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/internetGateways/{igId}"
         method = "DELETE"
@@ -957,6 +972,7 @@ class VirtualNetworkClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/ipsecConnections/{ipscId}"
         method = "DELETE"
@@ -1007,6 +1023,7 @@ class VirtualNetworkClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/routeTables/{rtId}"
         method = "DELETE"
@@ -1057,6 +1074,7 @@ class VirtualNetworkClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/securityLists/{securityListId}"
         method = "DELETE"
@@ -1105,6 +1123,7 @@ class VirtualNetworkClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/subnets/{subnetId}"
         method = "DELETE"
@@ -1153,6 +1172,7 @@ class VirtualNetworkClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/vcns/{vcnId}"
         method = "DELETE"
@@ -1194,6 +1214,7 @@ class VirtualNetworkClient(object):
             The OCID of the CPE.
 
         :return: A Response object with data of type Cpe
+        :rtype: Cpe
         """
         resource_path = "/cpes/{cpeId}"
         method = "GET"
@@ -1229,6 +1250,7 @@ class VirtualNetworkClient(object):
             The OCID for the set of DHCP options.
 
         :return: A Response object with data of type DhcpOptions
+        :rtype: DhcpOptions
         """
         resource_path = "/dhcps/{dhcpId}"
         method = "GET"
@@ -1264,6 +1286,7 @@ class VirtualNetworkClient(object):
             The OCID of the DRG.
 
         :return: A Response object with data of type Drg
+        :rtype: Drg
         """
         resource_path = "/drgs/{drgId}"
         method = "GET"
@@ -1299,6 +1322,7 @@ class VirtualNetworkClient(object):
             The OCID of the DRG attachment.
 
         :return: A Response object with data of type DrgAttachment
+        :rtype: DrgAttachment
         """
         resource_path = "/drgAttachments/{drgAttachmentId}"
         method = "GET"
@@ -1334,6 +1358,7 @@ class VirtualNetworkClient(object):
             The OCID of the Internet Gateway.
 
         :return: A Response object with data of type InternetGateway
+        :rtype: InternetGateway
         """
         resource_path = "/internetGateways/{igId}"
         method = "GET"
@@ -1371,6 +1396,7 @@ class VirtualNetworkClient(object):
             The OCID of the IPSec connection.
 
         :return: A Response object with data of type IPSecConnection
+        :rtype: IPSecConnection
         """
         resource_path = "/ipsecConnections/{ipscId}"
         method = "GET"
@@ -1407,6 +1433,7 @@ class VirtualNetworkClient(object):
             The OCID of the IPSec connection.
 
         :return: A Response object with data of type IPSecConnectionDeviceConfig
+        :rtype: IPSecConnectionDeviceConfig
         """
         resource_path = "/ipsecConnections/{ipscId}/deviceConfig"
         method = "GET"
@@ -1442,6 +1469,7 @@ class VirtualNetworkClient(object):
             The OCID of the IPSec connection.
 
         :return: A Response object with data of type IPSecConnectionDeviceStatus
+        :rtype: IPSecConnectionDeviceStatus
         """
         resource_path = "/ipsecConnections/{ipscId}/deviceStatus"
         method = "GET"
@@ -1477,6 +1505,7 @@ class VirtualNetworkClient(object):
             The OCID of the route table.
 
         :return: A Response object with data of type RouteTable
+        :rtype: RouteTable
         """
         resource_path = "/routeTables/{rtId}"
         method = "GET"
@@ -1512,6 +1541,7 @@ class VirtualNetworkClient(object):
             The OCID of the security list.
 
         :return: A Response object with data of type SecurityList
+        :rtype: SecurityList
         """
         resource_path = "/securityLists/{securityListId}"
         method = "GET"
@@ -1547,6 +1577,7 @@ class VirtualNetworkClient(object):
             The OCID of the subnet.
 
         :return: A Response object with data of type Subnet
+        :rtype: Subnet
         """
         resource_path = "/subnets/{subnetId}"
         method = "GET"
@@ -1582,6 +1613,7 @@ class VirtualNetworkClient(object):
             The OCID of the VCN.
 
         :return: A Response object with data of type Vcn
+        :rtype: Vcn
         """
         resource_path = "/vcns/{vcnId}"
         method = "GET"
@@ -1619,6 +1651,7 @@ class VirtualNetworkClient(object):
             The OCID of the VNIC.
 
         :return: A Response object with data of type Vnic
+        :rtype: Vnic
         """
         resource_path = "/vnics/{vnicId}"
         method = "GET"
@@ -1662,6 +1695,7 @@ class VirtualNetworkClient(object):
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
         :return: A Response object with data of type list[Cpe]
+        :rtype: list[Cpe]
         """
         resource_path = "/cpes"
         method = "GET"
@@ -1718,6 +1752,7 @@ class VirtualNetworkClient(object):
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
         :return: A Response object with data of type list[DhcpOptions]
+        :rtype: list[DhcpOptions]
         """
         resource_path = "/dhcps"
         method = "GET"
@@ -1777,6 +1812,7 @@ class VirtualNetworkClient(object):
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
         :return: A Response object with data of type list[DrgAttachment]
+        :rtype: list[DrgAttachment]
         """
         resource_path = "/drgAttachments"
         method = "GET"
@@ -1832,6 +1868,7 @@ class VirtualNetworkClient(object):
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
         :return: A Response object with data of type list[Drg]
+        :rtype: list[Drg]
         """
         resource_path = "/drgs"
         method = "GET"
@@ -1886,6 +1923,7 @@ class VirtualNetworkClient(object):
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
         :return: A Response object with data of type list[InternetGateway]
+        :rtype: list[InternetGateway]
         """
         resource_path = "/internetGateways"
         method = "GET"
@@ -1945,6 +1983,7 @@ class VirtualNetworkClient(object):
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
         :return: A Response object with data of type list[IPSecConnection]
+        :rtype: list[IPSecConnection]
         """
         resource_path = "/ipsecConnections"
         method = "GET"
@@ -2005,6 +2044,7 @@ class VirtualNetworkClient(object):
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
         :return: A Response object with data of type list[RouteTable]
+        :rtype: list[RouteTable]
         """
         resource_path = "/routeTables"
         method = "GET"
@@ -2060,6 +2100,7 @@ class VirtualNetworkClient(object):
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
         :return: A Response object with data of type list[SecurityList]
+        :rtype: list[SecurityList]
         """
         resource_path = "/securityLists"
         method = "GET"
@@ -2115,6 +2156,7 @@ class VirtualNetworkClient(object):
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
         :return: A Response object with data of type list[Subnet]
+        :rtype: list[Subnet]
         """
         resource_path = "/subnets"
         method = "GET"
@@ -2167,6 +2209,7 @@ class VirtualNetworkClient(object):
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
         :return: A Response object with data of type list[Vcn]
+        :rtype: list[Vcn]
         """
         resource_path = "/vcns"
         method = "GET"
@@ -2218,6 +2261,7 @@ class VirtualNetworkClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type Cpe
+        :rtype: Cpe
         """
         resource_path = "/cpes/{cpeId}"
         method = "PUT"
@@ -2270,6 +2314,7 @@ class VirtualNetworkClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type DhcpOptions
+        :rtype: DhcpOptions
         """
         resource_path = "/dhcps/{dhcpId}"
         method = "PUT"
@@ -2321,6 +2366,7 @@ class VirtualNetworkClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type Drg
+        :rtype: Drg
         """
         resource_path = "/drgs/{drgId}"
         method = "PUT"
@@ -2372,6 +2418,7 @@ class VirtualNetworkClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type DrgAttachment
+        :rtype: DrgAttachment
         """
         resource_path = "/drgAttachments/{drgAttachmentId}"
         method = "PUT"
@@ -2426,6 +2473,7 @@ class VirtualNetworkClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type InternetGateway
+        :rtype: InternetGateway
         """
         resource_path = "/internetGateways/{igId}"
         method = "PUT"
@@ -2477,6 +2525,7 @@ class VirtualNetworkClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type IPSecConnection
+        :rtype: IPSecConnection
         """
         resource_path = "/ipsecConnections/{ipscId}"
         method = "PUT"
@@ -2529,6 +2578,7 @@ class VirtualNetworkClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type RouteTable
+        :rtype: RouteTable
         """
         resource_path = "/routeTables/{rtId}"
         method = "PUT"
@@ -2582,6 +2632,7 @@ class VirtualNetworkClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type SecurityList
+        :rtype: SecurityList
         """
         resource_path = "/securityLists/{securityListId}"
         method = "PUT"
@@ -2633,6 +2684,7 @@ class VirtualNetworkClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type Subnet
+        :rtype: Subnet
         """
         resource_path = "/subnets/{subnetId}"
         method = "PUT"
@@ -2684,6 +2736,7 @@ class VirtualNetworkClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :return: A Response object with data of type Vcn
+        :rtype: Vcn
         """
         resource_path = "/vcns/{vcnId}"
         method = "PUT"
