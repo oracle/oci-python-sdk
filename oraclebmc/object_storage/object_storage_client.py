@@ -268,6 +268,7 @@ class ObjectStorageClient(object):
         Get the name of the namespace for the user making the request. An account name must be unique, must start with a
         letter, and can have up to 15 lower case letters and numbers. You cannot use spaces and special characters.
 
+
         :param str opc_client_request_id: (optional)
             The client request ID for tracing
 
