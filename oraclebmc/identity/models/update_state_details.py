@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict
@@ -25,6 +25,7 @@ class UpdateStateDetails(object):
         Gets the blocked of this UpdateStateDetails.
         Update state to blocked or unblocked. Only \"false\" is supported (for changing the state to unblocked).
 
+
         :return: The blocked of this UpdateStateDetails.
         :rtype: bool
         """
@@ -35,6 +36,7 @@ class UpdateStateDetails(object):
         """
         Sets the blocked of this UpdateStateDetails.
         Update state to blocked or unblocked. Only \"false\" is supported (for changing the state to unblocked).
+
 
         :param blocked: The blocked of this UpdateStateDetails.
         :type: bool

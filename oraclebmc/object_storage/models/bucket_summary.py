@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict
@@ -40,6 +40,7 @@ class BucketSummary(object):
         Gets the namespace of this BucketSummary.
         The namespace in which the bucket lives.
 
+
         :return: The namespace of this BucketSummary.
         :rtype: str
         """
@@ -50,6 +51,7 @@ class BucketSummary(object):
         """
         Sets the namespace of this BucketSummary.
         The namespace in which the bucket lives.
+
 
         :param namespace: The namespace of this BucketSummary.
         :type: str
@@ -62,6 +64,7 @@ class BucketSummary(object):
         Gets the name of this BucketSummary.
         The name of the bucket.
 
+
         :return: The name of this BucketSummary.
         :rtype: str
         """
@@ -72,6 +75,7 @@ class BucketSummary(object):
         """
         Sets the name of this BucketSummary.
         The name of the bucket.
+
 
         :param name: The name of this BucketSummary.
         :type: str
@@ -84,6 +88,7 @@ class BucketSummary(object):
         Gets the compartment_id of this BucketSummary.
         The compartment ID in which the bucket is authorized.
 
+
         :return: The compartment_id of this BucketSummary.
         :rtype: str
         """
@@ -94,6 +99,7 @@ class BucketSummary(object):
         """
         Sets the compartment_id of this BucketSummary.
         The compartment ID in which the bucket is authorized.
+
 
         :param compartment_id: The compartment_id of this BucketSummary.
         :type: str
@@ -106,6 +112,7 @@ class BucketSummary(object):
         Gets the created_by of this BucketSummary.
         The OCID of the user who created the bucket.
 
+
         :return: The created_by of this BucketSummary.
         :rtype: str
         """
@@ -116,6 +123,7 @@ class BucketSummary(object):
         """
         Sets the created_by of this BucketSummary.
         The OCID of the user who created the bucket.
+
 
         :param created_by: The created_by of this BucketSummary.
         :type: str
@@ -128,6 +136,7 @@ class BucketSummary(object):
         Gets the time_created of this BucketSummary.
         The date and time at which the bucket was created.
 
+
         :return: The time_created of this BucketSummary.
         :rtype: datetime
         """
@@ -138,6 +147,7 @@ class BucketSummary(object):
         """
         Sets the time_created of this BucketSummary.
         The date and time at which the bucket was created.
+
 
         :param time_created: The time_created of this BucketSummary.
         :type: datetime
@@ -150,6 +160,7 @@ class BucketSummary(object):
         Gets the etag of this BucketSummary.
         The entity tag for the bucket.
 
+
         :return: The etag of this BucketSummary.
         :rtype: str
         """
@@ -160,6 +171,7 @@ class BucketSummary(object):
         """
         Sets the etag of this BucketSummary.
         The entity tag for the bucket.
+
 
         :param etag: The etag of this BucketSummary.
         :type: str

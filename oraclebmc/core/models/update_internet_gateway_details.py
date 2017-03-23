@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict
@@ -28,6 +28,7 @@ class UpdateInternetGatewayDetails(object):
         Gets the display_name of this UpdateInternetGatewayDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
 
+
         :return: The display_name of this UpdateInternetGatewayDetails.
         :rtype: str
         """
@@ -38,6 +39,7 @@ class UpdateInternetGatewayDetails(object):
         """
         Sets the display_name of this UpdateInternetGatewayDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
+
 
         :param display_name: The display_name of this UpdateInternetGatewayDetails.
         :type: str
@@ -50,6 +52,7 @@ class UpdateInternetGatewayDetails(object):
         Gets the is_enabled of this UpdateInternetGatewayDetails.
         Whether the gateway is enabled.
 
+
         :return: The is_enabled of this UpdateInternetGatewayDetails.
         :rtype: bool
         """
@@ -60,6 +63,7 @@ class UpdateInternetGatewayDetails(object):
         """
         Sets the is_enabled of this UpdateInternetGatewayDetails.
         Whether the gateway is enabled.
+
 
         :param is_enabled: The is_enabled of this UpdateInternetGatewayDetails.
         :type: bool

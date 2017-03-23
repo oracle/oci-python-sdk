@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict
@@ -24,7 +24,8 @@ class Shape(object):
         """
         Gets the shape of this Shape.
         The name of the shape. You can enumerate all available shapes by calling
-        ListShapes.
+        :func:`list_shapes`.
+
 
         :return: The shape of this Shape.
         :rtype: str
@@ -36,7 +37,8 @@ class Shape(object):
         """
         Sets the shape of this Shape.
         The name of the shape. You can enumerate all available shapes by calling
-        ListShapes.
+        :func:`list_shapes`.
+
 
         :param shape: The shape of this Shape.
         :type: str

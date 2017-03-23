@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict
@@ -34,6 +34,7 @@ class IPSecConnectionDeviceStatus(object):
         Gets the compartment_id of this IPSecConnectionDeviceStatus.
         The OCID of the compartment containing the IPSec connection.
 
+
         :return: The compartment_id of this IPSecConnectionDeviceStatus.
         :rtype: str
         """
@@ -44,6 +45,7 @@ class IPSecConnectionDeviceStatus(object):
         """
         Sets the compartment_id of this IPSecConnectionDeviceStatus.
         The OCID of the compartment containing the IPSec connection.
+
 
         :param compartment_id: The compartment_id of this IPSecConnectionDeviceStatus.
         :type: str
@@ -56,6 +58,7 @@ class IPSecConnectionDeviceStatus(object):
         Gets the id of this IPSecConnectionDeviceStatus.
         The IPSec connection's Oracle ID (OCID).
 
+
         :return: The id of this IPSecConnectionDeviceStatus.
         :rtype: str
         """
@@ -67,6 +70,7 @@ class IPSecConnectionDeviceStatus(object):
         Sets the id of this IPSecConnectionDeviceStatus.
         The IPSec connection's Oracle ID (OCID).
 
+
         :param id: The id of this IPSecConnectionDeviceStatus.
         :type: str
         """
@@ -77,7 +81,9 @@ class IPSecConnectionDeviceStatus(object):
         """
         Gets the time_created of this IPSecConnectionDeviceStatus.
         The date and time the IPSec connection was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :return: The time_created of this IPSecConnectionDeviceStatus.
         :rtype: datetime
@@ -89,7 +95,9 @@ class IPSecConnectionDeviceStatus(object):
         """
         Sets the time_created of this IPSecConnectionDeviceStatus.
         The date and time the IPSec connection was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :param time_created: The time_created of this IPSecConnectionDeviceStatus.
         :type: datetime
@@ -100,7 +108,8 @@ class IPSecConnectionDeviceStatus(object):
     def tunnels(self):
         """
         Gets the tunnels of this IPSecConnectionDeviceStatus.
-        Two TunnelStatus objects.
+        Two :class:`TunnelStatus` objects.
+
 
         :return: The tunnels of this IPSecConnectionDeviceStatus.
         :rtype: list[TunnelStatus]
@@ -111,7 +120,8 @@ class IPSecConnectionDeviceStatus(object):
     def tunnels(self, tunnels):
         """
         Sets the tunnels of this IPSecConnectionDeviceStatus.
-        Two TunnelStatus objects.
+        Two :class:`TunnelStatus` objects.
+
 
         :param tunnels: The tunnels of this IPSecConnectionDeviceStatus.
         :type: list[TunnelStatus]

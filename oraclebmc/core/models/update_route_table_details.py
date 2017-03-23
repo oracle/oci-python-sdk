@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict
@@ -28,6 +28,7 @@ class UpdateRouteTableDetails(object):
         Gets the display_name of this UpdateRouteTableDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
 
+
         :return: The display_name of this UpdateRouteTableDetails.
         :rtype: str
         """
@@ -38,6 +39,7 @@ class UpdateRouteTableDetails(object):
         """
         Sets the display_name of this UpdateRouteTableDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
+
 
         :param display_name: The display_name of this UpdateRouteTableDetails.
         :type: str
@@ -50,6 +52,7 @@ class UpdateRouteTableDetails(object):
         Gets the route_rules of this UpdateRouteTableDetails.
         The collection of rules used for routing destination IPs to network devices.
 
+
         :return: The route_rules of this UpdateRouteTableDetails.
         :rtype: list[RouteRule]
         """
@@ -60,6 +63,7 @@ class UpdateRouteTableDetails(object):
         """
         Sets the route_rules of this UpdateRouteTableDetails.
         The collection of rules used for routing destination IPs to network devices.
+
 
         :param route_rules: The route_rules of this UpdateRouteTableDetails.
         :type: list[RouteRule]

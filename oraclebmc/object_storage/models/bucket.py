@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict
@@ -43,6 +43,7 @@ class Bucket(object):
         Gets the namespace of this Bucket.
         The namespace in which the bucket lives.
 
+
         :return: The namespace of this Bucket.
         :rtype: str
         """
@@ -53,6 +54,7 @@ class Bucket(object):
         """
         Sets the namespace of this Bucket.
         The namespace in which the bucket lives.
+
 
         :param namespace: The namespace of this Bucket.
         :type: str
@@ -65,6 +67,7 @@ class Bucket(object):
         Gets the name of this Bucket.
         The name of the bucket.
 
+
         :return: The name of this Bucket.
         :rtype: str
         """
@@ -75,6 +78,7 @@ class Bucket(object):
         """
         Sets the name of this Bucket.
         The name of the bucket.
+
 
         :param name: The name of this Bucket.
         :type: str
@@ -87,6 +91,7 @@ class Bucket(object):
         Gets the compartment_id of this Bucket.
         The compartment ID in which the bucket is authorized.
 
+
         :return: The compartment_id of this Bucket.
         :rtype: str
         """
@@ -97,6 +102,7 @@ class Bucket(object):
         """
         Sets the compartment_id of this Bucket.
         The compartment ID in which the bucket is authorized.
+
 
         :param compartment_id: The compartment_id of this Bucket.
         :type: str
@@ -109,6 +115,7 @@ class Bucket(object):
         Gets the metadata of this Bucket.
         Arbitrary string keys and values for user-defined metadata.
 
+
         :return: The metadata of this Bucket.
         :rtype: dict(str, str)
         """
@@ -119,6 +126,7 @@ class Bucket(object):
         """
         Sets the metadata of this Bucket.
         Arbitrary string keys and values for user-defined metadata.
+
 
         :param metadata: The metadata of this Bucket.
         :type: dict(str, str)
@@ -131,6 +139,7 @@ class Bucket(object):
         Gets the created_by of this Bucket.
         The OCID of the user who created the bucket.
 
+
         :return: The created_by of this Bucket.
         :rtype: str
         """
@@ -141,6 +150,7 @@ class Bucket(object):
         """
         Sets the created_by of this Bucket.
         The OCID of the user who created the bucket.
+
 
         :param created_by: The created_by of this Bucket.
         :type: str
@@ -153,6 +163,7 @@ class Bucket(object):
         Gets the time_created of this Bucket.
         The date and time at which the bucket was created.
 
+
         :return: The time_created of this Bucket.
         :rtype: datetime
         """
@@ -163,6 +174,7 @@ class Bucket(object):
         """
         Sets the time_created of this Bucket.
         The date and time at which the bucket was created.
+
 
         :param time_created: The time_created of this Bucket.
         :type: datetime
@@ -175,6 +187,7 @@ class Bucket(object):
         Gets the etag of this Bucket.
         The entity tag for the bucket.
 
+
         :return: The etag of this Bucket.
         :rtype: str
         """
@@ -185,6 +198,7 @@ class Bucket(object):
         """
         Sets the etag of this Bucket.
         The entity tag for the bucket.
+
 
         :param etag: The etag of this Bucket.
         :type: str

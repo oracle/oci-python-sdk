@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict
@@ -37,6 +37,7 @@ class Cpe(object):
         Gets the compartment_id of this Cpe.
         The OCID of the compartment containing the CPE.
 
+
         :return: The compartment_id of this Cpe.
         :rtype: str
         """
@@ -47,6 +48,7 @@ class Cpe(object):
         """
         Sets the compartment_id of this Cpe.
         The OCID of the compartment containing the CPE.
+
 
         :param compartment_id: The compartment_id of this Cpe.
         :type: str
@@ -59,6 +61,7 @@ class Cpe(object):
         Gets the display_name of this Cpe.
         A user-friendly name. Does not have to be unique, and it's changeable.
 
+
         :return: The display_name of this Cpe.
         :rtype: str
         """
@@ -69,6 +72,7 @@ class Cpe(object):
         """
         Sets the display_name of this Cpe.
         A user-friendly name. Does not have to be unique, and it's changeable.
+
 
         :param display_name: The display_name of this Cpe.
         :type: str
@@ -81,6 +85,7 @@ class Cpe(object):
         Gets the id of this Cpe.
         The CPE's Oracle ID (OCID).
 
+
         :return: The id of this Cpe.
         :rtype: str
         """
@@ -91,6 +96,7 @@ class Cpe(object):
         """
         Sets the id of this Cpe.
         The CPE's Oracle ID (OCID).
+
 
         :param id: The id of this Cpe.
         :type: str
@@ -103,6 +109,7 @@ class Cpe(object):
         Gets the ip_address of this Cpe.
         The public IP address of the on-premise router.
 
+
         :return: The ip_address of this Cpe.
         :rtype: str
         """
@@ -114,6 +121,7 @@ class Cpe(object):
         Sets the ip_address of this Cpe.
         The public IP address of the on-premise router.
 
+
         :param ip_address: The ip_address of this Cpe.
         :type: str
         """
@@ -124,7 +132,9 @@ class Cpe(object):
         """
         Gets the time_created of this Cpe.
         The date and time the CPE was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :return: The time_created of this Cpe.
         :rtype: datetime
@@ -136,7 +146,9 @@ class Cpe(object):
         """
         Sets the time_created of this Cpe.
         The date and time the CPE was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :param time_created: The time_created of this Cpe.
         :type: datetime

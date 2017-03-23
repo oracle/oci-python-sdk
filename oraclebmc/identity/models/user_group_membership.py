@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict
@@ -43,6 +43,7 @@ class UserGroupMembership(object):
         Gets the id of this UserGroupMembership.
         The OCID of the membership.
 
+
         :return: The id of this UserGroupMembership.
         :rtype: str
         """
@@ -53,6 +54,7 @@ class UserGroupMembership(object):
         """
         Sets the id of this UserGroupMembership.
         The OCID of the membership.
+
 
         :param id: The id of this UserGroupMembership.
         :type: str
@@ -65,6 +67,7 @@ class UserGroupMembership(object):
         Gets the compartment_id of this UserGroupMembership.
         The OCID of the tenancy containing the user, group, and membership object.
 
+
         :return: The compartment_id of this UserGroupMembership.
         :rtype: str
         """
@@ -75,6 +78,7 @@ class UserGroupMembership(object):
         """
         Sets the compartment_id of this UserGroupMembership.
         The OCID of the tenancy containing the user, group, and membership object.
+
 
         :param compartment_id: The compartment_id of this UserGroupMembership.
         :type: str
@@ -87,6 +91,7 @@ class UserGroupMembership(object):
         Gets the group_id of this UserGroupMembership.
         The OCID of the group.
 
+
         :return: The group_id of this UserGroupMembership.
         :rtype: str
         """
@@ -97,6 +102,7 @@ class UserGroupMembership(object):
         """
         Sets the group_id of this UserGroupMembership.
         The OCID of the group.
+
 
         :param group_id: The group_id of this UserGroupMembership.
         :type: str
@@ -109,6 +115,7 @@ class UserGroupMembership(object):
         Gets the user_id of this UserGroupMembership.
         The OCID of the user.
 
+
         :return: The user_id of this UserGroupMembership.
         :rtype: str
         """
@@ -120,6 +127,7 @@ class UserGroupMembership(object):
         Sets the user_id of this UserGroupMembership.
         The OCID of the user.
 
+
         :param user_id: The user_id of this UserGroupMembership.
         :type: str
         """
@@ -130,7 +138,9 @@ class UserGroupMembership(object):
         """
         Gets the time_created of this UserGroupMembership.
         Date and time the membership was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :return: The time_created of this UserGroupMembership.
         :rtype: datetime
@@ -142,7 +152,9 @@ class UserGroupMembership(object):
         """
         Sets the time_created of this UserGroupMembership.
         Date and time the membership was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :param time_created: The time_created of this UserGroupMembership.
         :type: datetime
@@ -156,6 +168,7 @@ class UserGroupMembership(object):
         The membership's current state.  After creating a membership object, make sure its `lifecycleState` changes
         from CREATING to ACTIVE before using it.
 
+
         :return: The lifecycle_state of this UserGroupMembership.
         :rtype: str
         """
@@ -167,6 +180,7 @@ class UserGroupMembership(object):
         Sets the lifecycle_state of this UserGroupMembership.
         The membership's current state.  After creating a membership object, make sure its `lifecycleState` changes
         from CREATING to ACTIVE before using it.
+
 
         :param lifecycle_state: The lifecycle_state of this UserGroupMembership.
         :type: str
@@ -185,6 +199,7 @@ class UserGroupMembership(object):
         Gets the inactive_status of this UserGroupMembership.
         The detailed status of INACTIVE lifecycleState.
 
+
         :return: The inactive_status of this UserGroupMembership.
         :rtype: int
         """
@@ -195,6 +210,7 @@ class UserGroupMembership(object):
         """
         Sets the inactive_status of this UserGroupMembership.
         The detailed status of INACTIVE lifecycleState.
+
 
         :param inactive_status: The inactive_status of this UserGroupMembership.
         :type: int

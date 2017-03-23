@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict
@@ -25,6 +25,7 @@ class UpdateVolumeBackupDetails(object):
         Gets the display_name of this UpdateVolumeBackupDetails.
         A friendly user-specified name for the volume backup.
 
+
         :return: The display_name of this UpdateVolumeBackupDetails.
         :rtype: str
         """
@@ -35,6 +36,7 @@ class UpdateVolumeBackupDetails(object):
         """
         Sets the display_name of this UpdateVolumeBackupDetails.
         A friendly user-specified name for the volume backup.
+
 
         :param display_name: The display_name of this UpdateVolumeBackupDetails.
         :type: str

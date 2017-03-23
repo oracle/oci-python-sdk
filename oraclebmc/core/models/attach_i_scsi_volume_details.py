@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 from .attach_volume_details import AttachVolumeDetails
 from ...util import formatted_flat_dict
@@ -38,6 +38,7 @@ class AttachIScsiVolumeDetails(AttachVolumeDetails):
         Gets the use_chap of this AttachIScsiVolumeDetails.
         Whether to use CHAP authentication for the volume attachment. Defaults to false.
 
+
         :return: The use_chap of this AttachIScsiVolumeDetails.
         :rtype: bool
         """
@@ -48,6 +49,7 @@ class AttachIScsiVolumeDetails(AttachVolumeDetails):
         """
         Sets the use_chap of this AttachIScsiVolumeDetails.
         Whether to use CHAP authentication for the volume attachment. Defaults to false.
+
 
         :param use_chap: The use_chap of this AttachIScsiVolumeDetails.
         :type: bool

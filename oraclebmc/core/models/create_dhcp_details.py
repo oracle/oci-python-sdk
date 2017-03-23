@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict
@@ -34,6 +34,7 @@ class CreateDhcpDetails(object):
         Gets the compartment_id of this CreateDhcpDetails.
         The OCID of the compartment to contain the set of DHCP options.
 
+
         :return: The compartment_id of this CreateDhcpDetails.
         :rtype: str
         """
@@ -44,6 +45,7 @@ class CreateDhcpDetails(object):
         """
         Sets the compartment_id of this CreateDhcpDetails.
         The OCID of the compartment to contain the set of DHCP options.
+
 
         :param compartment_id: The compartment_id of this CreateDhcpDetails.
         :type: str
@@ -56,6 +58,7 @@ class CreateDhcpDetails(object):
         Gets the display_name of this CreateDhcpDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
 
+
         :return: The display_name of this CreateDhcpDetails.
         :rtype: str
         """
@@ -66,6 +69,7 @@ class CreateDhcpDetails(object):
         """
         Sets the display_name of this CreateDhcpDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
+
 
         :param display_name: The display_name of this CreateDhcpDetails.
         :type: str
@@ -78,6 +82,7 @@ class CreateDhcpDetails(object):
         Gets the options of this CreateDhcpDetails.
         A set of DHCP options.
 
+
         :return: The options of this CreateDhcpDetails.
         :rtype: list[DhcpOption]
         """
@@ -88,6 +93,7 @@ class CreateDhcpDetails(object):
         """
         Sets the options of this CreateDhcpDetails.
         A set of DHCP options.
+
 
         :param options: The options of this CreateDhcpDetails.
         :type: list[DhcpOption]
@@ -100,6 +106,7 @@ class CreateDhcpDetails(object):
         Gets the vcn_id of this CreateDhcpDetails.
         The OCID of the VCN the set of DHCP options belongs to.
 
+
         :return: The vcn_id of this CreateDhcpDetails.
         :rtype: str
         """
@@ -110,6 +117,7 @@ class CreateDhcpDetails(object):
         """
         Sets the vcn_id of this CreateDhcpDetails.
         The OCID of the VCN the set of DHCP options belongs to.
+
 
         :param vcn_id: The vcn_id of this CreateDhcpDetails.
         :type: str

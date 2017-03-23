@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict
@@ -25,6 +25,7 @@ class CreateApiKeyDetails(object):
         Gets the key of this CreateApiKeyDetails.
         The public key.  Must be an RSA key in PEM format.
 
+
         :return: The key of this CreateApiKeyDetails.
         :rtype: str
         """
@@ -35,6 +36,7 @@ class CreateApiKeyDetails(object):
         """
         Sets the key of this CreateApiKeyDetails.
         The public key.  Must be an RSA key in PEM format.
+
 
         :param key: The key of this CreateApiKeyDetails.
         :type: str

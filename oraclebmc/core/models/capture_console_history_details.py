@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict
@@ -25,6 +25,7 @@ class CaptureConsoleHistoryDetails(object):
         Gets the instance_id of this CaptureConsoleHistoryDetails.
         The OCID of the instance to get the console history from.
 
+
         :return: The instance_id of this CaptureConsoleHistoryDetails.
         :rtype: str
         """
@@ -35,6 +36,7 @@ class CaptureConsoleHistoryDetails(object):
         """
         Sets the instance_id of this CaptureConsoleHistoryDetails.
         The OCID of the instance to get the console history from.
+
 
         :param instance_id: The instance_id of this CaptureConsoleHistoryDetails.
         :type: str

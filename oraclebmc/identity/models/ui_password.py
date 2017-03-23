@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict
@@ -37,6 +37,7 @@ class UIPassword(object):
         Gets the password of this UIPassword.
         The user's password for the Console.
 
+
         :return: The password of this UIPassword.
         :rtype: str
         """
@@ -47,6 +48,7 @@ class UIPassword(object):
         """
         Sets the password of this UIPassword.
         The user's password for the Console.
+
 
         :param password: The password of this UIPassword.
         :type: str
@@ -59,6 +61,7 @@ class UIPassword(object):
         Gets the user_id of this UIPassword.
         The OCID of the user.
 
+
         :return: The user_id of this UIPassword.
         :rtype: str
         """
@@ -70,6 +73,7 @@ class UIPassword(object):
         Sets the user_id of this UIPassword.
         The OCID of the user.
 
+
         :param user_id: The user_id of this UIPassword.
         :type: str
         """
@@ -80,7 +84,9 @@ class UIPassword(object):
         """
         Gets the time_created of this UIPassword.
         Date and time the password was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :return: The time_created of this UIPassword.
         :rtype: datetime
@@ -92,7 +98,9 @@ class UIPassword(object):
         """
         Sets the time_created of this UIPassword.
         Date and time the password was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :param time_created: The time_created of this UIPassword.
         :type: datetime
@@ -106,6 +114,7 @@ class UIPassword(object):
         The password's current state. After creating a password, make sure its `lifecycleState` changes from
         CREATING to ACTIVE before using it.
 
+
         :return: The lifecycle_state of this UIPassword.
         :rtype: str
         """
@@ -117,6 +126,7 @@ class UIPassword(object):
         Sets the lifecycle_state of this UIPassword.
         The password's current state. After creating a password, make sure its `lifecycleState` changes from
         CREATING to ACTIVE before using it.
+
 
         :param lifecycle_state: The lifecycle_state of this UIPassword.
         :type: str
@@ -135,6 +145,7 @@ class UIPassword(object):
         Gets the inactive_status of this UIPassword.
         The detailed status of INACTIVE lifecycleState.
 
+
         :return: The inactive_status of this UIPassword.
         :rtype: int
         """
@@ -145,6 +156,7 @@ class UIPassword(object):
         """
         Sets the inactive_status of this UIPassword.
         The detailed status of INACTIVE lifecycleState.
+
 
         :param inactive_status: The inactive_status of this UIPassword.
         :type: int

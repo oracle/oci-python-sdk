@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict
@@ -31,6 +31,7 @@ class CreateImageDetails(object):
         Gets the compartment_id of this CreateImageDetails.
         The OCID of the compartment containing the instance you want to use as the basis for the image.
 
+
         :return: The compartment_id of this CreateImageDetails.
         :rtype: str
         """
@@ -41,6 +42,7 @@ class CreateImageDetails(object):
         """
         Sets the compartment_id of this CreateImageDetails.
         The OCID of the compartment containing the instance you want to use as the basis for the image.
+
 
         :param compartment_id: The compartment_id of this CreateImageDetails.
         :type: str
@@ -53,7 +55,9 @@ class CreateImageDetails(object):
         Gets the display_name of this CreateImageDetails.
         A user-friendly name for the image. It does not have to be unique, and it's changeable. You cannot use an
         Oracle-provided image name as a custom image name.
+
         Example: `My Oracle Linux image`
+
 
         :return: The display_name of this CreateImageDetails.
         :rtype: str
@@ -66,7 +70,9 @@ class CreateImageDetails(object):
         Sets the display_name of this CreateImageDetails.
         A user-friendly name for the image. It does not have to be unique, and it's changeable. You cannot use an
         Oracle-provided image name as a custom image name.
+
         Example: `My Oracle Linux image`
+
 
         :param display_name: The display_name of this CreateImageDetails.
         :type: str
@@ -79,6 +85,7 @@ class CreateImageDetails(object):
         Gets the instance_id of this CreateImageDetails.
         The OCID of the instance you want to use as the basis for the image.
 
+
         :return: The instance_id of this CreateImageDetails.
         :rtype: str
         """
@@ -89,6 +96,7 @@ class CreateImageDetails(object):
         """
         Sets the instance_id of this CreateImageDetails.
         The OCID of the instance you want to use as the basis for the image.
+
 
         :param instance_id: The instance_id of this CreateImageDetails.
         :type: str

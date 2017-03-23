@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict
@@ -42,7 +42,9 @@ class ConsoleHistory(object):
         """
         Gets the availability_domain of this ConsoleHistory.
         The Availability Domain of an instance.
+
         Example: `Uocm:PHX-AD-1`
+
 
         :return: The availability_domain of this ConsoleHistory.
         :rtype: str
@@ -54,7 +56,9 @@ class ConsoleHistory(object):
         """
         Sets the availability_domain of this ConsoleHistory.
         The Availability Domain of an instance.
+
         Example: `Uocm:PHX-AD-1`
+
 
         :param availability_domain: The availability_domain of this ConsoleHistory.
         :type: str
@@ -67,6 +71,7 @@ class ConsoleHistory(object):
         Gets the compartment_id of this ConsoleHistory.
         The OCID of the compartment.
 
+
         :return: The compartment_id of this ConsoleHistory.
         :rtype: str
         """
@@ -78,6 +83,7 @@ class ConsoleHistory(object):
         Sets the compartment_id of this ConsoleHistory.
         The OCID of the compartment.
 
+
         :param compartment_id: The compartment_id of this ConsoleHistory.
         :type: str
         """
@@ -88,7 +94,9 @@ class ConsoleHistory(object):
         """
         Gets the display_name of this ConsoleHistory.
         A user-friendly name. Does not have to be unique, and it's changeable.
+
         Example: `My console history metadata`
+
 
         :return: The display_name of this ConsoleHistory.
         :rtype: str
@@ -100,7 +108,9 @@ class ConsoleHistory(object):
         """
         Sets the display_name of this ConsoleHistory.
         A user-friendly name. Does not have to be unique, and it's changeable.
+
         Example: `My console history metadata`
+
 
         :param display_name: The display_name of this ConsoleHistory.
         :type: str
@@ -113,6 +123,7 @@ class ConsoleHistory(object):
         Gets the id of this ConsoleHistory.
         The OCID of the console history metadata object.
 
+
         :return: The id of this ConsoleHistory.
         :rtype: str
         """
@@ -123,6 +134,7 @@ class ConsoleHistory(object):
         """
         Sets the id of this ConsoleHistory.
         The OCID of the console history metadata object.
+
 
         :param id: The id of this ConsoleHistory.
         :type: str
@@ -135,6 +147,7 @@ class ConsoleHistory(object):
         Gets the instance_id of this ConsoleHistory.
         The OCID of the instance this console history was fetched from.
 
+
         :return: The instance_id of this ConsoleHistory.
         :rtype: str
         """
@@ -145,6 +158,7 @@ class ConsoleHistory(object):
         """
         Sets the instance_id of this ConsoleHistory.
         The OCID of the instance this console history was fetched from.
+
 
         :param instance_id: The instance_id of this ConsoleHistory.
         :type: str
@@ -157,6 +171,7 @@ class ConsoleHistory(object):
         Gets the lifecycle_state of this ConsoleHistory.
         The current state of the console history.
 
+
         :return: The lifecycle_state of this ConsoleHistory.
         :rtype: str
         """
@@ -167,6 +182,7 @@ class ConsoleHistory(object):
         """
         Sets the lifecycle_state of this ConsoleHistory.
         The current state of the console history.
+
 
         :param lifecycle_state: The lifecycle_state of this ConsoleHistory.
         :type: str
@@ -184,7 +200,9 @@ class ConsoleHistory(object):
         """
         Gets the time_created of this ConsoleHistory.
         The date and time the history was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :return: The time_created of this ConsoleHistory.
         :rtype: datetime
@@ -196,7 +214,9 @@ class ConsoleHistory(object):
         """
         Sets the time_created of this ConsoleHistory.
         The date and time the history was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :param time_created: The time_created of this ConsoleHistory.
         :type: datetime

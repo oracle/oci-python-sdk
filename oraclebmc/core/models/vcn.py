@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict
@@ -48,7 +48,9 @@ class Vcn(object):
         """
         Gets the cidr_block of this Vcn.
         The CIDR IP address block of the VCN.
+
         Example: `172.16.0.0/16`
+
 
         :return: The cidr_block of this Vcn.
         :rtype: str
@@ -60,7 +62,9 @@ class Vcn(object):
         """
         Sets the cidr_block of this Vcn.
         The CIDR IP address block of the VCN.
+
         Example: `172.16.0.0/16`
+
 
         :param cidr_block: The cidr_block of this Vcn.
         :type: str
@@ -73,6 +77,7 @@ class Vcn(object):
         Gets the compartment_id of this Vcn.
         The OCID of the compartment containing the VCN.
 
+
         :return: The compartment_id of this Vcn.
         :rtype: str
         """
@@ -83,6 +88,7 @@ class Vcn(object):
         """
         Sets the compartment_id of this Vcn.
         The OCID of the compartment containing the VCN.
+
 
         :param compartment_id: The compartment_id of this Vcn.
         :type: str
@@ -95,6 +101,7 @@ class Vcn(object):
         Gets the default_dhcp_options_id of this Vcn.
         The OCID for the VCN's default set of DHCP options.
 
+
         :return: The default_dhcp_options_id of this Vcn.
         :rtype: str
         """
@@ -105,6 +112,7 @@ class Vcn(object):
         """
         Sets the default_dhcp_options_id of this Vcn.
         The OCID for the VCN's default set of DHCP options.
+
 
         :param default_dhcp_options_id: The default_dhcp_options_id of this Vcn.
         :type: str
@@ -117,6 +125,7 @@ class Vcn(object):
         Gets the default_route_table_id of this Vcn.
         The OCID for the VCN's default route table.
 
+
         :return: The default_route_table_id of this Vcn.
         :rtype: str
         """
@@ -127,6 +136,7 @@ class Vcn(object):
         """
         Sets the default_route_table_id of this Vcn.
         The OCID for the VCN's default route table.
+
 
         :param default_route_table_id: The default_route_table_id of this Vcn.
         :type: str
@@ -139,6 +149,7 @@ class Vcn(object):
         Gets the default_security_list_id of this Vcn.
         The OCID for the VCN's default security list.
 
+
         :return: The default_security_list_id of this Vcn.
         :rtype: str
         """
@@ -149,6 +160,7 @@ class Vcn(object):
         """
         Sets the default_security_list_id of this Vcn.
         The OCID for the VCN's default security list.
+
 
         :param default_security_list_id: The default_security_list_id of this Vcn.
         :type: str
@@ -161,6 +173,7 @@ class Vcn(object):
         Gets the display_name of this Vcn.
         A user-friendly name. Does not have to be unique, and it's changeable.
 
+
         :return: The display_name of this Vcn.
         :rtype: str
         """
@@ -171,6 +184,7 @@ class Vcn(object):
         """
         Sets the display_name of this Vcn.
         A user-friendly name. Does not have to be unique, and it's changeable.
+
 
         :param display_name: The display_name of this Vcn.
         :type: str
@@ -183,6 +197,7 @@ class Vcn(object):
         Gets the id of this Vcn.
         The VCN's Oracle ID (OCID).
 
+
         :return: The id of this Vcn.
         :rtype: str
         """
@@ -193,6 +208,7 @@ class Vcn(object):
         """
         Sets the id of this Vcn.
         The VCN's Oracle ID (OCID).
+
 
         :param id: The id of this Vcn.
         :type: str
@@ -205,6 +221,7 @@ class Vcn(object):
         Gets the lifecycle_state of this Vcn.
         The VCN's current state.
 
+
         :return: The lifecycle_state of this Vcn.
         :rtype: str
         """
@@ -215,6 +232,7 @@ class Vcn(object):
         """
         Sets the lifecycle_state of this Vcn.
         The VCN's current state.
+
 
         :param lifecycle_state: The lifecycle_state of this Vcn.
         :type: str
@@ -232,7 +250,9 @@ class Vcn(object):
         """
         Gets the time_created of this Vcn.
         The date and time the VCN was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :return: The time_created of this Vcn.
         :rtype: datetime
@@ -244,7 +264,9 @@ class Vcn(object):
         """
         Sets the time_created of this Vcn.
         The date and time the VCN was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
+
 
         :param time_created: The time_created of this Vcn.
         :type: datetime

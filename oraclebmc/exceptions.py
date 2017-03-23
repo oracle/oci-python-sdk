@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
 class ServiceError(Exception):
@@ -46,9 +46,16 @@ class InvalidConfig(ClientError):
         """:param errors: {config key: error code}"""
         self.errors = errors
 
+    def __str__(self):
+        return str(self.errors)
+
 
 class InvalidPrivateKey(ClientError):
     """The provided key is not a private key, or the provided passphrase is incorrect."""
+
+
+class MissingPrivateKeyPassphrase(InvalidPrivateKey):
+    """The provided key requires a passphrase."""
 
 
 class ProfileNotFound(ClientError):

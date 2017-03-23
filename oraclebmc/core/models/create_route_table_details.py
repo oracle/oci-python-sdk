@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict
@@ -34,6 +34,7 @@ class CreateRouteTableDetails(object):
         Gets the compartment_id of this CreateRouteTableDetails.
         The OCID of the compartment to contain the route table.
 
+
         :return: The compartment_id of this CreateRouteTableDetails.
         :rtype: str
         """
@@ -44,6 +45,7 @@ class CreateRouteTableDetails(object):
         """
         Sets the compartment_id of this CreateRouteTableDetails.
         The OCID of the compartment to contain the route table.
+
 
         :param compartment_id: The compartment_id of this CreateRouteTableDetails.
         :type: str
@@ -56,6 +58,7 @@ class CreateRouteTableDetails(object):
         Gets the display_name of this CreateRouteTableDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
 
+
         :return: The display_name of this CreateRouteTableDetails.
         :rtype: str
         """
@@ -66,6 +69,7 @@ class CreateRouteTableDetails(object):
         """
         Sets the display_name of this CreateRouteTableDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
+
 
         :param display_name: The display_name of this CreateRouteTableDetails.
         :type: str
@@ -78,6 +82,7 @@ class CreateRouteTableDetails(object):
         Gets the route_rules of this CreateRouteTableDetails.
         The collection of rules used for routing destination IPs to network devices.
 
+
         :return: The route_rules of this CreateRouteTableDetails.
         :rtype: list[RouteRule]
         """
@@ -88,6 +93,7 @@ class CreateRouteTableDetails(object):
         """
         Sets the route_rules of this CreateRouteTableDetails.
         The collection of rules used for routing destination IPs to network devices.
+
 
         :param route_rules: The route_rules of this CreateRouteTableDetails.
         :type: list[RouteRule]
@@ -100,6 +106,7 @@ class CreateRouteTableDetails(object):
         Gets the vcn_id of this CreateRouteTableDetails.
         The OCID of the VCN the route table belongs to.
 
+
         :return: The vcn_id of this CreateRouteTableDetails.
         :rtype: str
         """
@@ -110,6 +117,7 @@ class CreateRouteTableDetails(object):
         """
         Sets the vcn_id of this CreateRouteTableDetails.
         The OCID of the VCN the route table belongs to.
+
 
         :param vcn_id: The vcn_id of this CreateRouteTableDetails.
         :type: str
