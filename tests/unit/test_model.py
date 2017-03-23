@@ -85,6 +85,8 @@ def test_subclass():
     assert 'iscsi' == volume_attachment.attachment_type
     assert hasattr(volume_attachment, 'chap_username')
     assert hasattr(volume_attachment, 'availability_domain')
+    assert oraclebmc.core.models.VolumeAttachment.get_subtype(
+        {'attachmentType': volume_attachment.attachment_type}) == 'IScsiVolumeAttachment'
 
     volume_attachment.chap_secret = 'foo'
     volume_attachment.compartment_id = 'bar'
@@ -96,3 +98,8 @@ def test_subclass():
 
     assert 'foo' == attachment_dict['chap_secret']
     assert 'bar' == attachment_dict['compartment_id']
+
+
+def test_subclass_for_unknown_subtype_defaults_to_base_type():
+    subtype = oraclebmc.core.models.VolumeAttachment.get_subtype({'attachmentType': 'new_subtype'})
+    assert 'VolumeAttachment' == subtype

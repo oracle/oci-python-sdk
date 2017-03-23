@@ -53,8 +53,8 @@ class VolumeAttachment(object):
 
         if type == 'iscsi':
             return 'IScsiVolumeAttachment'
-
-        raise ValueError('Could not resolve subtype type based on the object dictionary.')
+        else:
+            return 'VolumeAttachment'
 
     @property
     def attachment_type(self):
