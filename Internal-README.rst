@@ -10,17 +10,7 @@ Required Test Files
 
 To ensure we're resolving ``~`` to the home folder correctly, the tests expect ~/.ssh/id_rsa.pem to exist.
 
-If you don't have keys set up::
-
-    ssh-keygen -t rsa -b 2048 -f ~/.ssh/id_rsa
-
-If you have an ``id_rsa`` but not the ``.pem`` version, you probably want to run this::
-
-    openssl rsa -in ~/.ssh/id_rsa -pubout > ~/.ssh/id_rsa.pem
-
-Then copy and upload it::
-
-    cat ~/.ssh/id_rsa.pem | pbcopy
+If you don't have a key pair setup, see _How to Generate an API Signing Key: https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#How for more details
 
 Setting up the development environment
 ======================================
@@ -52,8 +42,16 @@ Make sure to set up auto completion for both pyenv and pyenv-virtualenv.
     pip install -U pip
 
     # Create new virtual environments for sdk-specific work:
-    pyenv virtualenv --always-copy 3.5.1 sdk-3
+    pyenv virtualenv --copies 3.5.1 sdk-3
     pyenv virtualenv --always-copy 2.7.12 sdk-2
+
+    # Check to see that pyenv recognizes the new virtualenvs
+    # You should  something like this:
+    #    2.7.12/envs/sdk-2 (created from ~/.pyenv/versions/2.7.12)
+    #    3.5.1/envs/sdk-3 (created from ~/.pyenv/versions/3.5.1)
+    #    sdk-2 (created from ~/.pyenv/versions/2.7.12)
+    #    sdk-3 (created from ~/.pyenv/versions/3.5.1)
+    pyenv virtualenvs
 
     # Drop the shell venv
     pyenv shell --unset
@@ -102,8 +100,8 @@ Install development-only dependencies::
 Running the tests
 =================
 
-To run the full suite of tests against all tox environments (currently
-this is just Python 3.5.1 but will soon include Python 2.7.11)::
+To run the full suite of tests against all tox environments::
+Note: Make sure to unset virtual environment using 'pyenv shell --unset'
 
     tox
 
