@@ -7,8 +7,8 @@ This topic describes how to install, configure, and use the Oracle Bare Metal Cl
 The Python SDK supports operations for the following services:
 
 * Identity and Access Management Service
-* Object Storage Service
 * Core Services (Networking Service, Compute Service, and Block Volume Service)
+* Object Storage Service
 
 ===============
  Prerequisites
@@ -22,25 +22,30 @@ The Python SDK supports operations for the following services:
   Oracle Bare Metal Cloud Services policies, see `Common Policies`_ in the User Guide.
 * Python version 2.7.5 or 3.5 or later, running on Mac, Windows, or Linux. 
 * The Python SDK uses the `cryptography.io`_ library, which has its own additional `build requirements`_.
-* The Python SDK requires `TLS 1.2`_, which versions of `openssl`_ before 1.0.1 do not provide.
+* The Python SDK requires `TLS 1.2`_, which is not provided in `openssl`_ before OpenSSL version 1.0.1.
   If your version of Python was built against an earlier version, you will need to install a new
   Python that links against a newer version.
 * A keypair used for signing API requests, with the public key uploaded to Oracle. Only the user calling
-  the API should be in possession of the private key. See Configuring the SDK below.
+  the API should be in possession of the private key. (For more information, see Configuring the SDK.)
 
-.. _Adding Users: https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Tasks/addingusers.htm
-.. _Common Policies: https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/commonpolicies.htm
-.. _cryptography.io: https://cryptography.io/en/latest/
-.. _build requirements: https://cryptography.io/en/latest/installation/
-.. _TLS 1.2: https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdks.htm
-.. _PyPI: https://pypi.python.org/pypi
-.. _openssl: https://www.openssl.org/
 
 ====================================
  Downloading and Installing the SDK
 ====================================
 
-You can install the Python SDK from GitHub or through the Python Package Index (PyPI).
+You can install the Python SDK through the Python Package Index (PyPI), or use GitHub as an alternative source. 
+
+**PyPi Source**
+
+To install from `PyPI <https://pypi.python.org/pypi/oraclebmc>`_:
+
+  Use the following command::
+
+      pip install oraclebmc
+
+**GitHub SDK alternative**
+
+You can use GitHub as an alternative source for the Python SDK.
 
 To install from GitHub:
 
@@ -56,15 +61,10 @@ To install from GitHub:
       If you're unable to install the whl file, make sure pip is up to date.
       Use ``pip install -U pip`` and then try to install the whl file again.
 
-To install from `PyPI <https://pypi.python.org/pypi/oraclebmc>`_:
-  
-    Use the following command::
 
-      pip install oraclebmc
+**Virtual environment (Optional)** 
 
-
-(Optional) 
-Oracle recommends that you run the SDK in a virtual environment with virtualenv.
+Although optional, Oracle recommends that you run the SDK in a virtual environment with virtualenv.
 
     With Linux, it's usually in a separate package from the main Python package.
     If you need to install virtualenv, use pip install virtualenv.
@@ -89,17 +89,18 @@ For instructions, see `SDK and Tool Configuration`_ in the User Guide.
 
 .. _SDK and Tool Configuration: https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdkconfig.htm
 
-====================
- Note for OSX Users
-====================
+Note for OS X Users
+-------------------
 
-OS X already has Python and OpenSSL preinstalled. However, the preinstalled OpenSSL is probably not version 1.0.x or
-newer, which is what you need. To check whether you have a supported OpenSSL version, run this command::
+The supported version of OpenSSL for the Python SDK is version 1.0.x or newer. Although OS X has Python and OpenSSL preinstalled, verify that you have the supported version of OpenSSL. Run the following command to find out the version of OpenSSL that you have::
 
     python -c "import ssl; print(ssl.OPENSSL_VERSION)"
 
-If the version is ``0.9.x``, you need to reinstall Python and OpenSSL using Homebrew
-(a package manager for the OS X platform).
+If the version is ``0.9.x``, you need to reinstall Python and OpenSSL using Homebrew, a package manager for OS X. 
+
+--------------------------------
+ Reinstalling Python and OpenSSL
+--------------------------------
 
 If you've never used Homebrew to install Python on the system, follow these instructions:
 
@@ -127,33 +128,30 @@ Check the OpenSSL version again. If it's still 0.9, see `Troubleshooting Mac Iss
 
 You might encounter issues when installing Python or the SDK, or using the SDK itself.
 
--------------------------------
- Troubleshooting Service Errors
+
+Troubleshooting Service Errors
 -------------------------------
 Any operation resulting in a service error will cause an exception of type oraclebmc.exceptions.ServiceError to be thrown by the SDK. For information about common service errors returned by BMCS, see` API Errors <https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm>`_
 . 
 
-----------------------------
- Troubleshooting OEL Issues
-----------------------------
+Troubleshooting OEL Issues
+--------------------------
 On OEL 7.3, if you encounter permission issues when running pip install, you might need to use ``sudo``.
 
-----------------------------
- Troubleshooting Mac Issues
-----------------------------
+
+Troubleshooting Mac Issues
+--------------------------
 
 There are several general types of issues you might encounter.
 
-OpenSSL Version Still 0.9.x
-===========================
+**OpenSSL Version is Still 0.9.x**
 
-If the Python installation instructions listed in Mac above still result in OpenSSL version 0.9.x,
-it might be one of these reasons:
+If the Python installation still shows 0.9.x as the OpenSSL version, this is likely a result of Homebrew installing Python in a different location that the default system location. Either the Python command or your virtualenv is pointing to the wrong Python installation. 
 
-* Your python command is pointing to the wrong Python installation. To check, use the which python command.
-  The default system Python is at ``/usr/bin/python``, whereas the Homebrew-installed version that you want
-  is typically at ``usr/local/bin``. Edit the ``etc/paths`` file to move the ``usr/local/bin`` line to the
-  top of the list. Don't remove the system Python line.
+* Your python command is pointing to the wrong Python installation. Use the Python ``which`` command to see which installation is referenced. 
+  The default OS X Python location is at ``/usr/bin/python``, whereas the Homebrew-installed version that you want to use 
+  is typically at ``usr/local/bin``. To fix this, edit the ``etc/paths`` file and move the ``usr/local/bin`` line to the
+  top of the list.  **Don't remove the system Python line**. 
 
 * Your virtualenv is pointing to the wrong Python installation. By default, virtualenv uses ``/usr/bin/python``,
   whereas the Homebrew-installed Python is typically at ``usr/local/bin``. To fix this, use this command::
@@ -170,8 +168,13 @@ To determine the location of your Homebrew-installed Python, try one of these co
     which -a python  # (the -a option lists all the Python installations)
     brew doctor
 
-If the above items don't fix the problem, the best strategy is to uninstall and reinstall Python with the following
-commands. Note that you will need to reinstall any packages you previously installed into Homebrew's Python via pip.
+If none of the previous troubleshooting fixes the problem, the best strategy is to uninstall and reinstall Python using the following
+commands. 
+
+.. note::
+
+    You have to reinstall any packages that were part of Homebrew's pip installation of Python.
+
 ::
 
     brew uninstall openssl
@@ -185,8 +188,7 @@ that was used to install your Python or OpenSSL libraries. Here's a recent post 
 
 __ https://community.dev.hpe.com/t5/Blogs/Updating-Python-and-Openssl-on-OS-X/ba-p/237791
 
-SSL/TLS or Certificate Exception
-================================
+**SSL/TLS or Certificate Exception**
 
 When trying to use the SDK, if you get an exception related to SSL/TLS or certificates/certificate validation,
 the underlying issue is that OpenSSL is the wrong version (0.9.x). See the solution for uninstalling and
@@ -195,4 +197,11 @@ reinstalling Python above. Make sure to also reinstall the wheel with this comma
     pip install oraclebmc-*-py2.py3-none-any.whl
 
 
+.. _Adding Users: https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Tasks/addingusers.htm
+.. _Common Policies: https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/commonpolicies.htm
+.. _cryptography.io: https://cryptography.io/en/latest/
+.. _build requirements: https://cryptography.io/en/latest/installation/
+.. _TLS 1.2: https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdks.htm
+.. _PyPI: https://pypi.python.org/pypi
+.. _openssl: https://www.openssl.org/
 
