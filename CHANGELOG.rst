@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+ 1.1.3 - 2017-03-28
+====================
+
+-------
+ Fixed
+-------
+
+* Allow service responses to deserialize to base classes when unknown subtypes are returned. Previously this would result in an exception.
+
+-------
+ Added
+-------
+
+* Support hostnames for instances and DNS labels for VCNs and subnets.
+
+====================
  1.1.2 - 2017-03-16
 ====================
 
