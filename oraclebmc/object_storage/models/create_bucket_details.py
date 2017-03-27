@@ -29,8 +29,8 @@ class CreateBucketDetails(object):
     def name(self):
         """
         Gets the name of this CreateBucketDetails.
-        The name of the bucket. Valid characters are letters (upper or lower case),
-        numbers and dashes. Bucket names must be unique within the namespace.
+        The name of the bucket. Valid characters are uppercase or lowercase letters,
+        numbers, and dashes. Bucket names must be unique within the namespace.
 
 
         :return: The name of this CreateBucketDetails.
@@ -42,8 +42,8 @@ class CreateBucketDetails(object):
     def name(self, name):
         """
         Sets the name of this CreateBucketDetails.
-        The name of the bucket. Valid characters are letters (upper or lower case),
-        numbers and dashes. Bucket names must be unique within the namespace.
+        The name of the bucket. Valid characters are uppercase or lowercase letters,
+        numbers, and dashes. Bucket names must be unique within the namespace.
 
 
         :param name: The name of this CreateBucketDetails.
@@ -79,7 +79,7 @@ class CreateBucketDetails(object):
     def metadata(self):
         """
         Gets the metadata of this CreateBucketDetails.
-        Arbitrary string keys and values for user-defined metadata.
+        Arbitrary string, up to 4KB, of keys and values for user-defined metadata.
 
 
         :return: The metadata of this CreateBucketDetails.
@@ -91,7 +91,7 @@ class CreateBucketDetails(object):
     def metadata(self, metadata):
         """
         Sets the metadata of this CreateBucketDetails.
-        Arbitrary string keys and values for user-defined metadata.
+        Arbitrary string, up to 4KB, of keys and values for user-defined metadata.
 
 
         :param metadata: The metadata of this CreateBucketDetails.

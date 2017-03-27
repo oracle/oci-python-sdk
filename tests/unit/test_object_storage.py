@@ -483,3 +483,121 @@ def test_stream_twice(get_object_response):
     with pytest.raises(requests.exceptions.StreamConsumedError):
         for chunk in get_object_response.data.iter_content():
             response_text += chunk.decode('UTF-8')
+
+
+def test_list_multipart_uploads_empty_bucket(object_storage, bucket):
+    namespace = object_storage.get_namespace().data
+    response = object_storage.list_multipart_uploads(namespace, bucket)
+    assert response.status == 200
+    assert type(response.data) is oraclebmc.object_storage.models.ListObjects
+    assert 0 == len(response.data.objects)
+    assert response.data.prefixes is None
+
+
+def test_list_multipart_uploads(object_storage, bucket):
+    namespace = object_storage.get_namespace().data
+    request = oraclebmc.object_storage.models.CreateMultipartUploadDetails()
+    request.object = "test_multipart_file"
+    request.content_encoding = "gzip, deflate"
+    request.content_type = "application/octet-stream"
+    response = object_storage.create_multipart_upload(namespace, bucket, request)
+    assert response.status == 200
+
+    upload_id = response.data.upload_id
+
+    response = object_storage.list_multipart_uploads(namespace, bucket)
+    assert response.status == 200
+    assert 1 == len(response.data)
+    assert type(response.data[0]) is oraclebmc.object_storage.models.MultipartUpload
+    assert response.data[0].upload_id == upload_id
+
+    # Abort the upload since it was only created to make sure list works.
+    response = object_storage.abort_multipart_upload(namespace,
+                                                     bucket,
+                                                     "test_multipart_file",
+                                                     upload_id)
+
+    assert response.status == 204
+
+
+def test_create_multipart_upload(object_storage, bucket):
+    namespace = object_storage.get_namespace().data
+    request = oraclebmc.object_storage.models.CreateMultipartUploadDetails()
+    request.object = "test_multipart_file"
+    request.content_encoding = "gzip, deflate"
+    request.content_type = "application/octet-stream"
+    response = object_storage.create_multipart_upload(namespace, bucket, request)
+
+    assert response.status == 200
+    print(response.headers)
+    print(response.data)
+    print(response.data.upload_id)
+
+    response = object_storage.abort_multipart_upload(namespace,
+                                                     bucket,
+                                                     "test_multipart_file",
+                                                     response.data.upload_id)
+
+    assert response.status == 204
+
+
+def test_multipart_upload_crud(object_storage, bucket):
+    object_name = "test_multipart_file"
+
+    # Create
+    namespace = object_storage.get_namespace().data
+    request = oraclebmc.object_storage.models.CreateMultipartUploadDetails()
+    request.object = object_name
+    request.content_encoding = "gzip, deflate"
+    request.content_type = "application/octet-stream"
+    response = object_storage.create_multipart_upload(namespace, bucket, request)
+
+    assert response.status == 200
+
+    upload_id = response.data.upload_id
+
+    # Upload some parts
+    test_data = 'This is a test {0}!\n\r'
+    etags = []
+    contents = ''
+    for i in range(1, 4):
+        part = test_data.format(i)
+        response = object_storage.upload_part(namespace, bucket, object_name, upload_id, i, part)
+        assert response.status == 200
+        etags.append({"part_num": i, "etag": response.headers['etag']})
+        contents += part
+
+    response = object_storage.list_multipart_upload_parts(namespace, bucket, object_name, upload_id)
+    assert response.status == 200
+    assert 3 == len(response.data)
+
+    # Prepare to commit the upload
+    manifest = oraclebmc.object_storage.models.CommitMultipartUploadDetails()
+
+    # Parts to exclude
+    manifest.parts_to_exclude = []
+
+    # Parts to commit
+    parts_to_commit = []
+    for etag in etags:
+        detail = oraclebmc.object_storage.models.CommitMultipartUploadPartDetails()
+        detail.etag = etag["etag"]
+        detail.part_num = etag["part_num"]
+        parts_to_commit.append(detail)
+    manifest.parts_to_commit = parts_to_commit
+
+    # Commit the multipart upload
+    response = object_storage.commit_multipart_upload(namespace, bucket, object_name, upload_id, manifest)
+    assert response.status == 200
+
+    # Check that the remote object equals the parts uploaded.
+    response = object_storage.get_object(namespace, bucket, object_name)
+    assert response.status == 200
+    object_contents = response.data.content.decode('UTF-8')
+    assert contents == object_contents
+    print(response.data.content.decode('UTF-8'))
+
+    # Delete the upload.  This isn't needed for clean up since the bucket fixture will take care of
+    # cleanup, but it tests the API.
+    response = object_storage.delete_object(namespace, bucket, object_name)
+    assert response.status == 204
