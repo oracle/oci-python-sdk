@@ -18,7 +18,7 @@ The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
  Added
 -------
 
-* Support hostnames and DNS labels.
+* Support hostnames for instances and DNS labels for VCNs and subnets.
 
 ====================
  1.1.2 - 2017-03-16
