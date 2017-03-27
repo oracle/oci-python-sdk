@@ -119,51 +119,7 @@ On Oracle Linux 7.3, if you encounter permission issues when running pip install
 Troubleshooting Mac Issues
 --------------------------
 
-There are several general types of issues you might encounter.
-
-**OpenSSL Version is Still 0.9.x**
-
-If the Python installation still shows 0.9.x as the OpenSSL version, this is likely a result of Homebrew installing Python in a different location that the default system location. Either the Python command or your virtualenv is pointing to the wrong Python installation. 
-
-* Your python command is pointing to the wrong Python installation. Use the Python ``which`` command to see which installation is referenced. 
-  The default OS X Python location is at ``/usr/bin/python``, whereas the Homebrew-installed version that you want to use 
-  is typically at ``usr/local/bin``. To fix this, edit the ``etc/paths`` file and move the ``usr/local/bin`` line to the
-  top of the list.  **Don't remove the system Python line**. 
-
-* Your virtualenv is pointing to the wrong Python installation. By default, virtualenv uses ``/usr/bin/python``,
-  whereas the Homebrew-installed Python is typically at ``usr/local/bin``. To fix this, use this command::
-
-      virtualenv -p <path to Homebrew Python>  <directory for the virtualenv>
-
-  For example, if your installation is at /usr/local/bin/python::
-
-      virtualenv -p /usr/local/bin/python bmcs_sdk_env
-
-To determine the location of your Homebrew-installed Python, try one of these commands::
-
-    brew info python
-    which -a python  # (the -a option lists all the Python installations)
-    brew doctor
-
-If none of the previous troubleshooting fixes the problem, the best strategy is to uninstall and reinstall Python using the following
-commands. 
-
-.. note::
-
-    You have to reinstall any packages that were part of Homebrew's pip installation of Python.
-
-::
-
-    brew uninstall openssl
-    brew uninstall python
-    brew update
-    brew install python
-
-If you're still having problems, you may need slightly different commands depending on the version of Homebrew
-that was used to install your Python or OpenSSL libraries. Here's a recent post that may be helpful:
-`Updating Python and OpenSSL on OS X`__.
-
-__ https://community.dev.hpe.com/t5/Blogs/Updating-Python-and-Openssl-on-OS-X/ba-p/237791
+There are general types of issues that you might encounter.
 
 **SSL/TLS or Certificate Exception**
 
