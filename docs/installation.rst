@@ -84,8 +84,8 @@ For instructions, see `SDK and Tool Configuration`_ in the User Guide.
 
 .. _SDK and Tool Configuration: https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdkconfig.htm
 
-Note for SDK Users
--------------------
+Verify OpenSSL Version
+----------------------
 
 The supported version of OpenSSL for the Python SDK is version 1.0.1 or newer.  Run the following command to find out the version of OpenSSL that you have::
 
@@ -124,7 +124,7 @@ On Oracle Linux 7.3, if you encounter permission issues when running pip install
 SSL/TLS or Certificate Issues
 -----------------------------
 
-When trying to use the SDK, if you get an exception related to SSL/TLS or certificates/certificate validation, see the command for installing requests in `Note for SDK Users`_.
+When trying to use the SDK, if you get an exception related to SSL/TLS or certificates/certificate validation, see the command for installing requests[security] in `Verify OpenSSL Version`_.
 
 
 .. _Adding Users: https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Tasks/addingusers.htm
@@ -135,4 +135,4 @@ When trying to use the SDK, if you get an exception related to SSL/TLS or certif
 .. _PyPI link: https://pypi.python.org/pypi
 .. _openssl: https://www.openssl.org/
 .. _ConfiguringSDK: Configuring the SDK
-.. _OSXUsers: Note for SDK Users
+.. _OSXUsers: Verify OpenSSL Version
