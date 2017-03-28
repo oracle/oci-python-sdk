@@ -5,12 +5,11 @@ import pytest
 from tests.util import get_resource_path
 
 DEFAULT_REGION = "us-phoenix-1"
-HARDCODED_TENANCY = "ocidv1:tenancy:region:az:1457568341552:aaaaaaaak5kqrgabmglda4oz7mcdedhuym"
-HARDCODED_USER = "ocid1.user.region..1461711049110:aaaaaaaaeuhzapiritehle2dmrcoeijvve"
-HARDCODED_FINGERPRINT = "20:3b:97:13:55:1c:5b:0d:d3:37:d8:50:4e:c5:3a:34"
-HARDCODED_KEYFILE = "~/.ssh/bmc_key_001"
+HARDCODED_TENANCY = "ocidv1:tenancy:oc1:phx:1460406592660:aaaaaaaab4faofrfkxecohhjuivjq262pu"
+HARDCODED_USER = "ocid1.user.oc1..aaaaaaaakjkdrsqwljdpszrynrcosihxf2uspf7pzt7d4fmqomui2ngzysna"
+HARDCODED_FINGERPRINT = "e1:8d:6a:cb:74:ed:25:51:a2:9f:38:a4:71:42:01:c8"
+HARDCODED_KEYFILE = "keys/r2_sdk_test_admin_user_key.pem"
 HARDCODED_REGION = "us-phoenix-1"
-HARDCODED_ENDPOINT = "non-oracle-endpoint.com"
 
 
 def test_load_default_profile():

@@ -1,8 +1,8 @@
 [DEFAULT]
-tenancy = ocidv1:tenancy:region:az:1457568341552:aaaaaaaak5kqrgabmglda4oz7mcdedhuym
-user = ocid1.user.region..1461711049110:aaaaaaaaeuhzapiritehle2dmrcoeijvve
-fingerprint = 20:3b:97:13:55:1c:5b:0d:d3:37:d8:50:4e:c5:3a:34
-key_file = ~/.ssh/bmc_key_001
+tenancy = ocidv1:tenancy:oc1:phx:1460406592660:aaaaaaaab4faofrfkxecohhjuivjq262pu
+user = ocid1.user.oc1..aaaaaaaakjkdrsqwljdpszrynrcosihxf2uspf7pzt7d4fmqomui2ngzysna
+fingerprint = e1:8d:6a:cb:74:ed:25:51:a2:9f:38:a4:71:42:01:c8
+key_file = keys/r2_sdk_test_admin_user_key.pem
 region = us-phoenix-1
 
 [INVALID_USER]
@@ -13,6 +13,8 @@ fingerprint = 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
 
 [NEW_REGION]
 region = us-phoenix-2.oraclecloud.com
+fingerprint = c8:b6:55:2a:e8:33:5e:92:a0:6a:1c:cd:ae:ca:42:7e
+key_file = keys/no_permissions_unencrypted_key.pem
 
 [MALFORMED_TENANCY]
 tenancy = "not-a-valid-ocid"
