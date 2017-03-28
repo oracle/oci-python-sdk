@@ -100,8 +100,15 @@ Install development-only dependencies::
 Running the tests
 =================
 
+Prerequisites::
+
+    - Set the pass phrase for the private key (ask the SDK team for the correct pass phrase)::
+
+        export PYTHON_TESTS_ADMIN_PASS_PHRASE='<TODO: enter pass phrase>'
+
+    - Make sure to unset virtual environment using 'pyenv shell --unset'
+
 To run the full suite of tests against all tox environments::
-Note: Make sure to unset virtual environment using 'pyenv shell --unset'
 
     tox
 
@@ -113,9 +120,9 @@ whatever environment is used by your interpreter, and not a tox env)::
 Specifying a config file
 ------------------------
 
-By default, the tests will use the ``DEFAULT`` profile from the default
-config location, ``~/.oraclebmc/config``.  You can change this with the
-``--config-file`` and ``--config-profile`` options::
+By default, the tests will use the ``DEFAULT`` profile from the config file
+at 'tests/resources/config'.  You can change this with the ``--config-file``
+and ``--config-profile`` options::
 
     # Use a different config file, still using the DEFAULT profile
     tox -- --config-file ~/.oraclebmc/r2config
