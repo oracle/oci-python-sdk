@@ -84,20 +84,27 @@ For instructions, see `SDK and Tool Configuration`_ in the User Guide.
 
 .. _SDK and Tool Configuration: https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdkconfig.htm
 
-Note for OS X Users
+Note for SDK Users
 -------------------
 
-The supported version of OpenSSL for the Python SDK is version 1.0.x or newer. Although OS X has Python and OpenSSL preinstalled, verify that you have the supported version of OpenSSL. Run the following command to find out the version of OpenSSL that you have::
+The supported version of OpenSSL for the Python SDK is version 1.0.1 or newer.  Run the following command to find out the version of OpenSSL that you have::
 
     python -c "import ssl; print(ssl.OPENSSL_VERSION)"
 
-If the version is ``0.9.x``, run the following command to bypass the version issue::
+If the version is lower than ``1.0.1``, run the following command to bypass the version issue::
 
     pip install requests[security]
 
-The preceding command instructs the Python SDK requests library to use the version of OpenSSL that is bundled with the SDK's cryptography library. 
+This command instructs the `requests <https://pypi.python.org/pypi/requests>`_
+library used by the Python SDK to use the version of OpenSSL that is bundled with the `cryptography <https://pypi.python.org/pypi/cryptography>`_
+library used by the SDK.
 
+**Note:**
+If you don't want to use ``requests[security]`` you can update OpenSSL as you normally would. For example, on OS X, use Homebrew to update OpenSSL using the following commands::
 
+ brew update
+ brew install openssl
+ brew install python
 
 =================
  Troubleshooting
@@ -105,25 +112,19 @@ The preceding command instructs the Python SDK requests library to use the versi
 
 You might encounter issues when installing Python or the SDK, or using the SDK itself.
 
+Service Errors
+--------------
+Any operation resulting in a service error will cause an exception of type oraclebmc.exceptions.ServiceError to be thrown by the SDK. For information about common service errors returned by BMCS, see `API Errors <https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm>`_
+.
 
-Troubleshooting Service Errors
--------------------------------
-Any operation resulting in a service error will cause an exception of type oraclebmc.exceptions.ServiceError to be thrown by the SDK. For information about common service errors returned by BMCS, see` API Errors <https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm>`_
-. 
-
-Troubleshooting Oracle Linux Issues
------------------------------------
+Oracle Linux Permission Issues
+------------------------------
 On Oracle Linux 7.3, if you encounter permission issues when running pip install, you might need to use ``sudo``.
 
+SSL/TLS or Certificate Issues
+-----------------------------
 
-Troubleshooting Mac Issues
---------------------------
-
-There are general types of issues that you might encounter.
-
-**SSL/TLS or Certificate Exception**
-
-When trying to use the SDK, if you get an exception related to SSL/TLS or certificates/certificate validation, see the command for installing requests in `Note for OS X Users`_.
+When trying to use the SDK, if you get an exception related to SSL/TLS or certificates/certificate validation, see the command for installing requests in `Note for SDK Users`_.
 
 
 .. _Adding Users: https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Tasks/addingusers.htm
@@ -134,4 +135,4 @@ When trying to use the SDK, if you get an exception related to SSL/TLS or certif
 .. _PyPI link: https://pypi.python.org/pypi
 .. _openssl: https://www.openssl.org/
 .. _ConfiguringSDK: Configuring the SDK
-.. _OSXUsers: Note for OS X Users
+.. _OSXUsers: Note for SDK Users
