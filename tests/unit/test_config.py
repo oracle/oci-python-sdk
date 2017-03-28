@@ -58,7 +58,7 @@ def test_file_not_found():
 
 def test_profile_not_found():
     with pytest.raises(oraclebmc.exceptions.ProfileNotFound) as excinfo:
-        oraclebmc.config.from_file(profile_name='does_not_exist')
+        oraclebmc.config.from_file(file_location=get_resource_path('config'), profile_name='does_not_exist')
     assert 'does_not_exist' in str(excinfo.value)
 
 

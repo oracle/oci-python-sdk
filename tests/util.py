@@ -22,8 +22,14 @@ def get_resource_directory():
     return os.path.join(here, "resources")
 
 
+def get_key_file_path(file_name):
+    """Get the absolute path to a file in the keys directory."""
+    here = os.path.abspath(os.path.dirname(__file__))
+    return os.path.join(here, "..", "keys", file_name)
+
+
 def get_resource_path(file_name):
-    return get_resource_directory() + '/' + file_name
+    return os.path.join(get_resource_directory(), file_name)
 
 
 @contextmanager
