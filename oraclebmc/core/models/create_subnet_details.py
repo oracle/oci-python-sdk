@@ -15,6 +15,7 @@ class CreateSubnetDetails(object):
             'compartment_id': 'str',
             'dhcp_options_id': 'str',
             'display_name': 'str',
+            'dns_label': 'str',
             'route_table_id': 'str',
             'security_list_ids': 'list[str]',
             'vcn_id': 'str'
@@ -26,6 +27,7 @@ class CreateSubnetDetails(object):
             'compartment_id': 'compartmentId',
             'dhcp_options_id': 'dhcpOptionsId',
             'display_name': 'displayName',
+            'dns_label': 'dnsLabel',
             'route_table_id': 'routeTableId',
             'security_list_ids': 'securityListIds',
             'vcn_id': 'vcnId'
@@ -36,6 +38,7 @@ class CreateSubnetDetails(object):
         self._compartment_id = None
         self._dhcp_options_id = None
         self._display_name = None
+        self._dns_label = None
         self._route_table_id = None
         self._security_list_ids = None
         self._vcn_id = None
@@ -169,6 +172,66 @@ class CreateSubnetDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def dns_label(self):
+        """
+        Gets the dns_label of this CreateSubnetDetails.
+        A DNS label for the subnet, used in conjunction with the VNIC's hostname and
+        VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC
+        within this subnet (e.g., `bminstance-1.subnet-123.vcn-1.oraclevcn.com`).
+        Must be unique within the VCN and comply with
+        `RFC 952`__ and
+        `RFC 1123`__. The value cannot be changed.
+
+        This value must be set if you want to use the VCN Resolver to resolve the
+        hostnames of instances in the subnet. It can only be set if the VCN itself
+        was created with a DNS label.
+
+        For more information, see
+        `DNS in Your Virtual Cloud Network`__.
+
+        Example: `subnet-123`
+
+         __ https://tools.ietf.org/html/rfc952
+         __ https://tools.ietf.org/html/rfc1123
+        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
+
+
+        :return: The dns_label of this CreateSubnetDetails.
+        :rtype: str
+        """
+        return self._dns_label
+
+    @dns_label.setter
+    def dns_label(self, dns_label):
+        """
+        Sets the dns_label of this CreateSubnetDetails.
+        A DNS label for the subnet, used in conjunction with the VNIC's hostname and
+        VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC
+        within this subnet (e.g., `bminstance-1.subnet-123.vcn-1.oraclevcn.com`).
+        Must be unique within the VCN and comply with
+        `RFC 952`__ and
+        `RFC 1123`__. The value cannot be changed.
+
+        This value must be set if you want to use the VCN Resolver to resolve the
+        hostnames of instances in the subnet. It can only be set if the VCN itself
+        was created with a DNS label.
+
+        For more information, see
+        `DNS in Your Virtual Cloud Network`__.
+
+        Example: `subnet-123`
+
+         __ https://tools.ietf.org/html/rfc952
+         __ https://tools.ietf.org/html/rfc1123
+        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
+
+
+        :param dns_label: The dns_label of this CreateSubnetDetails.
+        :type: str
+        """
+        self._dns_label = dns_label
 
     @property
     def route_table_id(self):

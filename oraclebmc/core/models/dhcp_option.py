@@ -29,13 +29,16 @@ class DhcpOption(object):
 
         if type == 'DomainNameServer':
             return 'DhcpDnsOption'
-
-        raise ValueError('Could not resolve subtype type based on the object dictionary.')
+        else:
+            return 'DhcpOption'
 
     @property
     def type(self):
         """
         Gets the type of this DhcpOption.
+        The specific DHCP option. `DomainNameServer`
+        (for :class:`DhcpDnsOption`).
+
 
         :return: The type of this DhcpOption.
         :rtype: str
@@ -46,6 +49,9 @@ class DhcpOption(object):
     def type(self, type):
         """
         Sets the type of this DhcpOption.
+        The specific DHCP option. `DomainNameServer`
+        (for :class:`DhcpDnsOption`).
+
 
         :param type: The type of this DhcpOption.
         :type: str

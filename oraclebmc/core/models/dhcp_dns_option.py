@@ -56,12 +56,19 @@ class DhcpDnsOption(DhcpOption):
     def server_type(self):
         """
         Gets the server_type of this DhcpDnsOption.
-        - *VcnLocal:* Reserved for future use.
-        - *VcnLocalPlusInternet:* Instances can resolve only internet host
-        names (no Internet Gateway is required). The instances still need to use
-        their IP addresses to communicate with each other. This is the default
-        value in the default set of DHCP options in the VCN.
-        - *CustomDnsServer:* Instances use a DNS server of your choice (three maximum).
+        - **VcnLocal:** Reserved for future use.
+
+        - **VcnLocalPlusInternet:** Also referred to as \"Internet and VCN Resolver\".
+        Instances can resolve internet hostnames (no Internet Gateway is required),
+        and can resolve hostnames of instances in the VCN. This is the default
+        value in the default set of DHCP options in the VCN. For the VCN Resolver to
+        work across the VCN, there must also be a DNS label set for the VCN, a DNS
+        label set for each subnet, and a hostname for each instance. For more information,
+        see `DNS in Your Virtual Cloud Network`__.
+
+        - **CustomDnsServer:** Instances use a DNS server of your choice (three maximum).
+
+        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
 
 
         :return: The server_type of this DhcpDnsOption.
@@ -73,12 +80,19 @@ class DhcpDnsOption(DhcpOption):
     def server_type(self, server_type):
         """
         Sets the server_type of this DhcpDnsOption.
-        - *VcnLocal:* Reserved for future use.
-        - *VcnLocalPlusInternet:* Instances can resolve only internet host
-        names (no Internet Gateway is required). The instances still need to use
-        their IP addresses to communicate with each other. This is the default
-        value in the default set of DHCP options in the VCN.
-        - *CustomDnsServer:* Instances use a DNS server of your choice (three maximum).
+        - **VcnLocal:** Reserved for future use.
+
+        - **VcnLocalPlusInternet:** Also referred to as \"Internet and VCN Resolver\".
+        Instances can resolve internet hostnames (no Internet Gateway is required),
+        and can resolve hostnames of instances in the VCN. This is the default
+        value in the default set of DHCP options in the VCN. For the VCN Resolver to
+        work across the VCN, there must also be a DNS label set for the VCN, a DNS
+        label set for each subnet, and a hostname for each instance. For more information,
+        see `DNS in Your Virtual Cloud Network`__.
+
+        - **CustomDnsServer:** Instances use a DNS server of your choice (three maximum).
+
+        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
 
 
         :param server_type: The server_type of this DhcpDnsOption.

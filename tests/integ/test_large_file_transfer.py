@@ -55,7 +55,7 @@ def write_bucket(namespace, object_storage, config, names):
 
 
 def test_large_file_transfer(namespace, object_storage, write_bucket, names):
-    """Download, upload, and delete a large file (2.6 GB)"""
+    """Download, upload, and delete a large file."""
     response = object_storage.head_object(
         namespace,
         names["read-bucket"],
@@ -70,6 +70,7 @@ def test_large_file_transfer(namespace, object_storage, write_bucket, names):
     total_size = 0
     chunk_size = 512
     initial_max_memory_usage = tests.util.max_memory_usage()
+    print("Initial memory usage: {} bytes".format(str(initial_max_memory_usage)))
 
     with tests.util.timer('get large file'):
         response = object_storage.get_object(
@@ -121,4 +122,5 @@ def test_large_file_transfer(namespace, object_storage, write_bucket, names):
     assert uploaded_content_length == file_size
 
     max_memory = tests.util.max_memory_usage()
+    print("Final max memory usage: {} bytes".format(str(max_memory)))
     assert max_memory < file_size
