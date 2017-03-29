@@ -38,8 +38,8 @@ class AttachVolumeDetails(object):
 
         if type == 'iscsi':
             return 'AttachIScsiVolumeDetails'
-
-        raise ValueError('Could not resolve subtype type based on the object dictionary.')
+        else:
+            return 'AttachVolumeDetails'
 
     @property
     def display_name(self):

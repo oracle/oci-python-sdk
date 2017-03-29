@@ -1546,6 +1546,7 @@ class IdentityClient(object):
         UpdateSwiftPassword
         Updates the specified Swift password's description.
 
+
         :param str user_id: (required)
             The OCID of the user.
 

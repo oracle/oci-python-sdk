@@ -1,6 +1,5 @@
 import tests.util
 import oraclebmc
-import os.path
 import time
 import pytest
 
@@ -15,8 +14,8 @@ def test_tutorial(virtual_network, compute, block_storage, config):
     # getting these dynamically based on a specified environment.
     availability_domain = 'kIdk:PHX-AD-2'
     compartment = config["tenancy"]
-    filename = os.path.expanduser('~/.ssh/id_rsa.pub')
-    with open(filename) as f:
+
+    with open(tests.util.get_key_file_path("public_ssh_key.pub")) as f:
         public_key = f.read().strip()
 
     vcn = None

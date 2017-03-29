@@ -15,10 +15,12 @@ class Subnet(object):
             'compartment_id': 'str',
             'dhcp_options_id': 'str',
             'display_name': 'str',
+            'dns_label': 'str',
             'id': 'str',
             'lifecycle_state': 'str',
             'route_table_id': 'str',
             'security_list_ids': 'list[str]',
+            'subnet_domain_name': 'str',
             'time_created': 'datetime',
             'vcn_id': 'str',
             'virtual_router_ip': 'str',
@@ -31,10 +33,12 @@ class Subnet(object):
             'compartment_id': 'compartmentId',
             'dhcp_options_id': 'dhcpOptionsId',
             'display_name': 'displayName',
+            'dns_label': 'dnsLabel',
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
             'route_table_id': 'routeTableId',
             'security_list_ids': 'securityListIds',
+            'subnet_domain_name': 'subnetDomainName',
             'time_created': 'timeCreated',
             'vcn_id': 'vcnId',
             'virtual_router_ip': 'virtualRouterIp',
@@ -46,10 +50,12 @@ class Subnet(object):
         self._compartment_id = None
         self._dhcp_options_id = None
         self._display_name = None
+        self._dns_label = None
         self._id = None
         self._lifecycle_state = None
         self._route_table_id = None
         self._security_list_ids = None
+        self._subnet_domain_name = None
         self._time_created = None
         self._vcn_id = None
         self._virtual_router_ip = None
@@ -184,6 +190,54 @@ class Subnet(object):
         self._display_name = display_name
 
     @property
+    def dns_label(self):
+        """
+        Gets the dns_label of this Subnet.
+        A DNS label for the subnet, used in conjunction with the VNIC's hostname and
+        VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC
+        within this subnet (e.g., `bminstance-1.subnet-123.vcn-1.oraclevcn.com`).
+
+        The absence of this parameter means the VCN Resolver will not resolve hostnames
+        of instances in this subnet.
+
+        For more information, see
+        `DNS in Your Virtual Cloud Network`__.
+
+        Example: `subnet-123`
+
+        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
+
+
+        :return: The dns_label of this Subnet.
+        :rtype: str
+        """
+        return self._dns_label
+
+    @dns_label.setter
+    def dns_label(self, dns_label):
+        """
+        Sets the dns_label of this Subnet.
+        A DNS label for the subnet, used in conjunction with the VNIC's hostname and
+        VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC
+        within this subnet (e.g., `bminstance-1.subnet-123.vcn-1.oraclevcn.com`).
+
+        The absence of this parameter means the VCN Resolver will not resolve hostnames
+        of instances in this subnet.
+
+        For more information, see
+        `DNS in Your Virtual Cloud Network`__.
+
+        Example: `subnet-123`
+
+        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
+
+
+        :param dns_label: The dns_label of this Subnet.
+        :type: str
+        """
+        self._dns_label = dns_label
+
+    @property
     def id(self):
         """
         Gets the id of this Subnet.
@@ -284,6 +338,46 @@ class Subnet(object):
         :type: list[str]
         """
         self._security_list_ids = security_list_ids
+
+    @property
+    def subnet_domain_name(self):
+        """
+        Gets the subnet_domain_name of this Subnet.
+        The subnet's domain name, which consists of the subnet's DNS label,
+        the VCN's DNS label, and the `oraclevcn.com` domain.
+
+        For more information, see
+        `DNS in Your Virtual Cloud Network`__.
+
+        Example: `subnet-123.vcn-1.oraclevcn.com`
+
+        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
+
+
+        :return: The subnet_domain_name of this Subnet.
+        :rtype: str
+        """
+        return self._subnet_domain_name
+
+    @subnet_domain_name.setter
+    def subnet_domain_name(self, subnet_domain_name):
+        """
+        Sets the subnet_domain_name of this Subnet.
+        The subnet's domain name, which consists of the subnet's DNS label,
+        the VCN's DNS label, and the `oraclevcn.com` domain.
+
+        For more information, see
+        `DNS in Your Virtual Cloud Network`__.
+
+        Example: `subnet-123.vcn-1.oraclevcn.com`
+
+        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
+
+
+        :param subnet_domain_name: The subnet_domain_name of this Subnet.
+        :type: str
+        """
+        self._subnet_domain_name = subnet_domain_name
 
     @property
     def time_created(self):

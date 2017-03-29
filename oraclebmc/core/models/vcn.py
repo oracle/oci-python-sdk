@@ -16,9 +16,11 @@ class Vcn(object):
             'default_route_table_id': 'str',
             'default_security_list_id': 'str',
             'display_name': 'str',
+            'dns_label': 'str',
             'id': 'str',
             'lifecycle_state': 'str',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'vcn_domain_name': 'str'
         }
 
         self.attribute_map = {
@@ -28,9 +30,11 @@ class Vcn(object):
             'default_route_table_id': 'defaultRouteTableId',
             'default_security_list_id': 'defaultSecurityListId',
             'display_name': 'displayName',
+            'dns_label': 'dnsLabel',
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'vcn_domain_name': 'vcnDomainName'
         }
 
         self._cidr_block = None
@@ -39,9 +43,11 @@ class Vcn(object):
         self._default_route_table_id = None
         self._default_security_list_id = None
         self._display_name = None
+        self._dns_label = None
         self._id = None
         self._lifecycle_state = None
         self._time_created = None
+        self._vcn_domain_name = None
 
     @property
     def cidr_block(self):
@@ -192,6 +198,52 @@ class Vcn(object):
         self._display_name = display_name
 
     @property
+    def dns_label(self):
+        """
+        Gets the dns_label of this Vcn.
+        A DNS label for the VCN, used in conjunction with the VNIC's hostname and
+        subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC
+        within this subnet (e.g., `bminstance-1.subnet-123.vcn-1.oraclevcn.com`).
+
+        The absence of this parameter means the VCN Resolver will not work for this VCN.
+
+        For more information, see
+        `DNS in Your Virtual Cloud Network`__.
+
+        Example: `vcn-1`
+
+        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
+
+
+        :return: The dns_label of this Vcn.
+        :rtype: str
+        """
+        return self._dns_label
+
+    @dns_label.setter
+    def dns_label(self, dns_label):
+        """
+        Sets the dns_label of this Vcn.
+        A DNS label for the VCN, used in conjunction with the VNIC's hostname and
+        subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC
+        within this subnet (e.g., `bminstance-1.subnet-123.vcn-1.oraclevcn.com`).
+
+        The absence of this parameter means the VCN Resolver will not work for this VCN.
+
+        For more information, see
+        `DNS in Your Virtual Cloud Network`__.
+
+        Example: `vcn-1`
+
+        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
+
+
+        :param dns_label: The dns_label of this Vcn.
+        :type: str
+        """
+        self._dns_label = dns_label
+
+    @property
     def id(self):
         """
         Gets the id of this Vcn.
@@ -272,6 +324,46 @@ class Vcn(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def vcn_domain_name(self):
+        """
+        Gets the vcn_domain_name of this Vcn.
+        The VCN's domain name, which consists of the VCN's DNS label, and the
+        `oraclevcn.com` domain.
+
+        For more information, see
+        `DNS in Your Virtual Cloud Network`__.
+
+        Example: `vcn-1.oraclevcn.com`
+
+        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
+
+
+        :return: The vcn_domain_name of this Vcn.
+        :rtype: str
+        """
+        return self._vcn_domain_name
+
+    @vcn_domain_name.setter
+    def vcn_domain_name(self, vcn_domain_name):
+        """
+        Sets the vcn_domain_name of this Vcn.
+        The VCN's domain name, which consists of the VCN's DNS label, and the
+        `oraclevcn.com` domain.
+
+        For more information, see
+        `DNS in Your Virtual Cloud Network`__.
+
+        Example: `vcn-1.oraclevcn.com`
+
+        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
+
+
+        :param vcn_domain_name: The vcn_domain_name of this Vcn.
+        :type: str
+        """
+        self._vcn_domain_name = vcn_domain_name
 
     def __repr__(self):
         return formatted_flat_dict(self)
