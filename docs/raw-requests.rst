@@ -22,7 +22,7 @@ to pull in the values from a file:
         fingerprint='20:3b:97:13:55:1c:[...]',
         private_key_file_location='~/.oraclebmc/bmcs_api_key.pem',
         pass_phrase='hunter2'  # optional
-    }
+    )
 
 
     # Or load directly from a file
