@@ -203,14 +203,17 @@ class Vcn(object):
         Gets the dns_label of this Vcn.
         A DNS label for the VCN, used in conjunction with the VNIC's hostname and
         subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC
-        within this subnet (e.g., `bminstance-1.subnet-123.vcn-1.oraclevcn.com`).
+        within this subnet (e.g., `bminstance-1.subnet123.vcn1.oraclevcn.com`).
+        Must be an alphanumeric string that begins with a letter.
+        The value cannot be changed.
 
-        The absence of this parameter means the VCN Resolver will not work for this VCN.
+        The absence of this parameter means the Internet and VCN Resolver will
+        not work for this VCN.
 
         For more information, see
         `DNS in Your Virtual Cloud Network`__.
 
-        Example: `vcn-1`
+        Example: `vcn1`
 
         __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
 
@@ -226,14 +229,17 @@ class Vcn(object):
         Sets the dns_label of this Vcn.
         A DNS label for the VCN, used in conjunction with the VNIC's hostname and
         subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC
-        within this subnet (e.g., `bminstance-1.subnet-123.vcn-1.oraclevcn.com`).
+        within this subnet (e.g., `bminstance-1.subnet123.vcn1.oraclevcn.com`).
+        Must be an alphanumeric string that begins with a letter.
+        The value cannot be changed.
 
-        The absence of this parameter means the VCN Resolver will not work for this VCN.
+        The absence of this parameter means the Internet and VCN Resolver will
+        not work for this VCN.
 
         For more information, see
         `DNS in Your Virtual Cloud Network`__.
 
-        Example: `vcn-1`
+        Example: `vcn1`
 
         __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
 
@@ -335,7 +341,7 @@ class Vcn(object):
         For more information, see
         `DNS in Your Virtual Cloud Network`__.
 
-        Example: `vcn-1.oraclevcn.com`
+        Example: `vcn1.oraclevcn.com`
 
         __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
 
@@ -355,7 +361,7 @@ class Vcn(object):
         For more information, see
         `DNS in Your Virtual Cloud Network`__.
 
-        Example: `vcn-1.oraclevcn.com`
+        Example: `vcn1.oraclevcn.com`
 
         __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
 

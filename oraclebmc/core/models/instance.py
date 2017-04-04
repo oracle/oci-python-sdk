@@ -200,6 +200,11 @@ class Instance(object):
         following iSCSI IP address: 169.254.0.2, and boot volume IQN:
         iqn.2015-02.oracle.boot.
 
+        For more information about the Bring Your Own Image feature of
+        Oracle Bare Metal Cloud Services, see [Bring Your Own Custom
+        Image: RHEL 7.x & Derivatives (CentOS, Oracle Linux)]
+        (/Content/General/Reference/aqswhitepapers.htm).
+
         For more information about iPXE, see http://ipxe.org.
 
 
@@ -228,6 +233,11 @@ class Instance(object):
         over iSCSI the same way as the default iPXE script, you should use the
         following iSCSI IP address: 169.254.0.2, and boot volume IQN:
         iqn.2015-02.oracle.boot.
+
+        For more information about the Bring Your Own Image feature of
+        Oracle Bare Metal Cloud Services, see [Bring Your Own Custom
+        Image: RHEL 7.x & Derivatives (CentOS, Oracle Linux)]
+        (/Content/General/Reference/aqswhitepapers.htm).
 
         For more information about iPXE, see http://ipxe.org.
 
