@@ -24,6 +24,7 @@ from .create_volume_details import CreateVolumeDetails
 from .dhcp_dns_option import DhcpDnsOption
 from .dhcp_option import DhcpOption
 from .dhcp_options import DhcpOptions
+from .dhcp_search_domain_option import DhcpSearchDomainOption
 from .drg import Drg
 from .drg_attachment import DrgAttachment
 from .egress_security_rule import EgressSecurityRule
@@ -35,6 +36,7 @@ from .icmp_options import IcmpOptions
 from .image import Image
 from .ingress_security_rule import IngressSecurityRule
 from .instance import Instance
+from .instance_credentials import InstanceCredentials
 from .internet_gateway import InternetGateway
 from .launch_instance_details import LaunchInstanceDetails
 from .port_range import PortRange
@@ -91,6 +93,7 @@ core_type_mapping = {
     "DhcpDnsOption": DhcpDnsOption,
     "DhcpOption": DhcpOption,
     "DhcpOptions": DhcpOptions,
+    "DhcpSearchDomainOption": DhcpSearchDomainOption,
     "Drg": Drg,
     "DrgAttachment": DrgAttachment,
     "EgressSecurityRule": EgressSecurityRule,
@@ -102,6 +105,7 @@ core_type_mapping = {
     "Image": Image,
     "IngressSecurityRule": IngressSecurityRule,
     "Instance": Instance,
+    "InstanceCredentials": InstanceCredentials,
     "InternetGateway": InternetGateway,
     "LaunchInstanceDetails": LaunchInstanceDetails,
     "PortRange": PortRange,

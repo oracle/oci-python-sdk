@@ -533,6 +533,43 @@ class ComputeClient(object):
             header_params=header_params,
             response_type="VolumeAttachment")
 
+    def get_windows_instance_initial_credentials(self, instance_id, **kwargs):
+        """
+        GetWindowsInstanceInitialCredentials
+        Gets the generated credentials for the instance. Only works for Windows instances. The returned credentials
+        are only valid for the initial login.
+
+
+        :param str instance_id: (required)
+            The OCID of the instance.
+
+        :return: A Response object with data of type InstanceCredentials
+        :rtype: InstanceCredentials
+        """
+        resource_path = "/instances/{instanceId}/initialCredentials"
+        method = "GET"
+
+        if kwargs:
+            raise ValueError(
+                "get_windows_instance_initial_credentials got unknown kwargs: {!r}".format(kwargs))
+
+        path_params = {
+            "instanceId": instance_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="InstanceCredentials")
+
     def instance_action(self, instance_id, action, **kwargs):
         """
         InstanceAction
