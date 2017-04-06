@@ -50,7 +50,7 @@ class CommitMultipartUploadDetails(object):
     def parts_to_exclude(self):
         """
         Gets the parts_to_exclude of this CommitMultipartUploadDetails.
-        The part numbers for the parts to be excluded from the final object.
+        The part numbers for the parts to be excluded from the completed object.
         Each part created for this upload must be in either partsToExclude or partsToCommit, but cannot be in both.
 
 
@@ -63,7 +63,7 @@ class CommitMultipartUploadDetails(object):
     def parts_to_exclude(self, parts_to_exclude):
         """
         Sets the parts_to_exclude of this CommitMultipartUploadDetails.
-        The part numbers for the parts to be excluded from the final object.
+        The part numbers for the parts to be excluded from the completed object.
         Each part created for this upload must be in either partsToExclude or partsToCommit, but cannot be in both.
 
 

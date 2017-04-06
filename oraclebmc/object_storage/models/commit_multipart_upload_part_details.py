@@ -50,7 +50,7 @@ class CommitMultipartUploadPartDetails(object):
     def etag(self):
         """
         Gets the etag of this CommitMultipartUploadPartDetails.
-        the ETag returned when the part was uploaded.
+        The ETag returned when this part was uploaded.
 
 
         :return: The etag of this CommitMultipartUploadPartDetails.
@@ -62,7 +62,7 @@ class CommitMultipartUploadPartDetails(object):
     def etag(self, etag):
         """
         Sets the etag of this CommitMultipartUploadPartDetails.
-        the ETag returned when the part was uploaded.
+        The ETag returned when this part was uploaded.
 
 
         :param etag: The etag of this CommitMultipartUploadPartDetails.

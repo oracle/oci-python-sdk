@@ -29,7 +29,7 @@ class ObjectStorageClient(object):
     def abort_multipart_upload(self, namespace_name, bucket_name, object_name, upload_id, **kwargs):
         """
         AbortMultipartUpload
-        Abort a multi-part upload and delete all the parts that have been uploaded.
+        Aborts an in-progress multipart upload and deletes all parts that have been uploaded.
 
 
         :param str namespace_name: (required)
@@ -43,15 +43,16 @@ class ObjectStorageClient(object):
         :param str object_name: (required)
             The name of the object.
 
-            Example: `test/test1`
+            Example: `test/object1.log`
 
         :param str upload_id: (required)
-            The upload ID for a multi-part upload.
+            The upload ID for a multipart upload.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
 
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/u/{objectName}"
         method = "DELETE"
@@ -94,7 +95,7 @@ class ObjectStorageClient(object):
     def commit_multipart_upload(self, namespace_name, bucket_name, object_name, upload_id, commit_multipart_upload_details, **kwargs):
         """
         CommitMultipartUpload
-        Commit a multi-part upload and check the ETags of the parts.
+        Commits a multipart upload, which involves checking part numbers and ETags of the parts, to create an aggregate object.
 
 
         :param str namespace_name: (required)
@@ -108,24 +109,28 @@ class ObjectStorageClient(object):
         :param str object_name: (required)
             The name of the object.
 
-            Example: `test/test1`
+            Example: `test/object1.log`
 
         :param str upload_id: (required)
-            The upload ID for a multi-part upload.
+            The upload ID for a multipart upload.
 
         :param CommitMultipartUploadDetails commit_multipart_upload_details: (required)
-            The part numbers and ETags for the parts to be commited.
+            The part numbers and ETags for the parts you want to commit.
 
         :param str if_match: (optional)
-            The entity tag to match. For starting and committing a multi-part upload to an object, this is the entity tag of the target object.
+            The entity tag to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
+            For uploading a part, this is the entity tag of the target part.
 
         :param str if_none_match: (optional)
             The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
+            For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag
+            of the target part.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
 
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/u/{objectName}"
         method = "POST"
@@ -175,12 +180,6 @@ class ObjectStorageClient(object):
         CreateBucket
         Creates a bucket in the given namespace with a bucket name and optional user-defined metadata.
 
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        `Getting Started with Policies`__.
-
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm
-
 
         :param str namespace_name: (required)
             The top-level namespace used for the request.
@@ -229,7 +228,7 @@ class ObjectStorageClient(object):
     def create_multipart_upload(self, namespace_name, bucket_name, create_multipart_upload_details, **kwargs):
         """
         CreateMultipartUpload
-        Start a new multi-part upload to a specific object in the given bucket in the given namespace.
+        Starts a new multipart upload to a specific object in the given bucket in the given namespace.
 
 
         :param str namespace_name: (required)
@@ -244,15 +243,19 @@ class ObjectStorageClient(object):
             Request object for creating a multi-part upload.
 
         :param str if_match: (optional)
-            The entity tag to match. For starting and committing a multi-part upload to an object, this is the entity tag of the target object.
+            The entity tag to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
+            For uploading a part, this is the entity tag of the target part.
 
         :param str if_none_match: (optional)
             The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
+            For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag
+            of the target part.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
 
         :return: A Response object with data of type MultipartUpload
+        :rtype: MultipartUpload
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/u"
         method = "POST"
@@ -306,7 +309,8 @@ class ObjectStorageClient(object):
             Example: `my-new-bucket1`
 
         :param str if_match: (optional)
-            The entity tag to match. For starting and committing a multi-part upload to an object, this is the entity tag of the target object.
+            The entity tag to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
+            For uploading a part, this is the entity tag of the target part.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -364,10 +368,11 @@ class ObjectStorageClient(object):
         :param str object_name: (required)
             The name of the object.
 
-            Example: `test/test1`
+            Example: `test/object1.log`
 
         :param str if_match: (optional)
-            The entity tag to match. For starting and committing a multi-part upload to an object, this is the entity tag of the target object.
+            The entity tag to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
+            For uploading a part, this is the entity tag of the target part.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -424,10 +429,13 @@ class ObjectStorageClient(object):
             Example: `my-new-bucket1`
 
         :param str if_match: (optional)
-            The entity tag to match. For starting and committing a multi-part upload to an object, this is the entity tag of the target object.
+            The entity tag to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
+            For uploading a part, this is the entity tag of the target part.
 
         :param str if_none_match: (optional)
             The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
+            For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag
+            of the target part.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -526,19 +534,22 @@ class ObjectStorageClient(object):
         :param str object_name: (required)
             The name of the object.
 
-            Example: `test/test1`
+            Example: `test/object1.log`
 
         :param str if_match: (optional)
-            The entity tag to match. For starting and committing a multi-part upload to an object, this is the entity tag of the target object.
+            The entity tag to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
+            For uploading a part, this is the entity tag of the target part.
 
         :param str if_none_match: (optional)
             The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
+            For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag
+            of the target part.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
 
         :param str range: (optional)
-            Optional byte range to fetch, per `RFC 7233`__, section 2.1.
+            Optional byte range to fetch, as described in `RFC 7233`__, section 2.1.
             Note, only a single range of bytes is supported.
 
              __ https://tools.ietf.org/rfc/rfc7233
@@ -600,10 +611,13 @@ class ObjectStorageClient(object):
             Example: `my-new-bucket1`
 
         :param str if_match: (optional)
-            The entity tag to match. For starting and committing a multi-part upload to an object, this is the entity tag of the target object.
+            The entity tag to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
+            For uploading a part, this is the entity tag of the target part.
 
         :param str if_none_match: (optional)
             The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
+            For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag
+            of the target part.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -663,13 +677,16 @@ class ObjectStorageClient(object):
         :param str object_name: (required)
             The name of the object.
 
-            Example: `test/test1`
+            Example: `test/object1.log`
 
         :param str if_match: (optional)
-            The entity tag to match. For starting and committing a multi-part upload to an object, this is the entity tag of the target object.
+            The entity tag to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
+            For uploading a part, this is the entity tag of the target part.
 
         :param str if_none_match: (optional)
             The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
+            For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag
+            of the target part.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -719,18 +736,12 @@ class ObjectStorageClient(object):
         Gets a list of all `BucketSummary`s in a compartment. A `BucketSummary` contains only summary fields for the bucket
         and does not contain fields like the user-defined metadata.
 
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        `Getting Started with Policies`__.
-
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm
-
 
         :param str namespace_name: (required)
             The top-level namespace used for the request.
 
         :param str compartment_id: (required)
-            The compartment ID in which to create the bucket.
+            The ID of the compartment in which to create the bucket.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -788,7 +799,7 @@ class ObjectStorageClient(object):
     def list_multipart_upload_parts(self, namespace_name, bucket_name, object_name, upload_id, **kwargs):
         """
         ListMultipartUploadParts
-        List the parts of an in-progress multi-part upload.
+        Lists the parts of an in-progress multipart upload.
 
 
         :param str namespace_name: (required)
@@ -802,10 +813,10 @@ class ObjectStorageClient(object):
         :param str object_name: (required)
             The name of the object.
 
-            Example: `test/test1`
+            Example: `test/object1.log`
 
         :param str upload_id: (required)
-            The upload ID for a multi-part upload.
+            The upload ID for a multipart upload.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -817,6 +828,7 @@ class ObjectStorageClient(object):
             The client request ID for tracing.
 
         :return: A Response object with data of type list[MultipartUploadPartSummary]
+        :rtype: list[MultipartUploadPartSummary]
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/u/{objectName}"
         method = "GET"
@@ -864,7 +876,7 @@ class ObjectStorageClient(object):
     def list_multipart_uploads(self, namespace_name, bucket_name, **kwargs):
         """
         ListMultipartUploads
-        List all in-progress multi-part uploads for the given bucket in the given namespace.
+        Lists all in-progress multipart uploads for the given bucket in the given namespace.
 
 
         :param str namespace_name: (required)
@@ -885,6 +897,7 @@ class ObjectStorageClient(object):
             The client request ID for tracing.
 
         :return: A Response object with data of type list[MultipartUpload]
+        :rtype: list[MultipartUpload]
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/u"
         method = "GET"
@@ -932,12 +945,6 @@ class ObjectStorageClient(object):
         ListObjects
         Lists the objects in a bucket.
 
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        `Getting Started with Policies`__.
-
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm
-
 
         :param str namespace_name: (required)
             The top-level namespace used for the request.
@@ -948,13 +955,13 @@ class ObjectStorageClient(object):
             Example: `my-new-bucket1`
 
         :param str prefix: (optional)
-            Object names returned by a list query must start with prefix
+            The string to use for matching against the start of object names in a list query.
 
         :param str start: (optional)
-            Object names returned by a list query must be greater or equal to this parameter
+            Object names returned by a list query must be greater or equal to this parameter.
 
         :param str end: (optional)
-            Object names returned by a list query must be strictly less than this parameter
+            Object names returned by a list query must be strictly less than this parameter.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -967,10 +974,10 @@ class ObjectStorageClient(object):
             this time.
 
         :param str fields: (optional)
-            Object summary in list of objects includes the 'name' field.   This parameter may also include 'size'
+            Object summary in list of objects includes the 'name' field. This parameter can also include 'size'
             (object size in bytes), 'md5', and 'timeCreated' (object creation date and time) fields.
-            Value of this parameter should be a comma separated, case-insensitive list of those field names.
-            For example 'name,timeCreated,md5'
+            Value of this parameter should be a comma-separated, case-insensitive list of those field names.
+            For example 'name,timeCreated,md5'.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -1032,12 +1039,6 @@ class ObjectStorageClient(object):
         PutObject
         Creates a new object or overwrites an existing one.
 
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        `Getting Started with Policies`__.
-
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm
-
 
         :param str namespace_name: (required)
             The top-level namespace used for the request.
@@ -1050,7 +1051,7 @@ class ObjectStorageClient(object):
         :param str object_name: (required)
             The name of the object.
 
-            Example: `test/test1`
+            Example: `test/object1.log`
 
         :param stream put_object_body: (required)
             The object to upload to the object store.
@@ -1059,10 +1060,13 @@ class ObjectStorageClient(object):
             The content length of the body.
 
         :param str if_match: (optional)
-            The entity tag to match. For starting and committing a multi-part upload to an object, this is the entity tag of the target object.
+            The entity tag to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
+            For uploading a part, this is the entity tag of the target part.
 
         :param str if_none_match: (optional)
             The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
+            For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag
+            of the target part.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -1163,7 +1167,8 @@ class ObjectStorageClient(object):
             Request object for updating a bucket.
 
         :param str if_match: (optional)
-            The entity tag to match. For starting and committing a multi-part upload to an object, this is the entity tag of the target object.
+            The entity tag to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
+            For uploading a part, this is the entity tag of the target part.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -1209,7 +1214,7 @@ class ObjectStorageClient(object):
     def upload_part(self, namespace_name, bucket_name, object_name, upload_id, upload_part_num, upload_part_body, **kwargs):
         """
         UploadPart
-        Upload a single part of a multi-part upload.
+        Uploads a single part of a multipart upload.
 
 
         :param str namespace_name: (required)
@@ -1223,16 +1228,16 @@ class ObjectStorageClient(object):
         :param str object_name: (required)
             The name of the object.
 
-            Example: `test/test1`
+            Example: `test/object1.log`
 
         :param str upload_id: (required)
-            The upload ID for a multi-part upload.
+            The upload ID for a multipart upload.
 
         :param int upload_part_num: (required)
-            The part number being uploaded to an existing upload.
+            The part number that identifies the object part currently being uploaded.
 
         :param stream upload_part_body: (required)
-            The part being uploaded to the object store.
+            The part being uploaded to the Object Storage Service.
 
         :param int content_length: (optional)
             The content length of the body.
@@ -1241,10 +1246,13 @@ class ObjectStorageClient(object):
             The client request ID for tracing.
 
         :param str if_match: (optional)
-            The entity tag to match. For starting and committing a multi-part upload to an object, this is the entity tag of the target object.
+            The entity tag to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
+            For uploading a part, this is the entity tag of the target part.
 
         :param str if_none_match: (optional)
             The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
+            For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag
+            of the target part.
 
         :param str expect: (optional)
             100-continue
@@ -1253,6 +1261,7 @@ class ObjectStorageClient(object):
             The base-64 encoded MD5 hash of the body.
 
         :return: A Response object with data of type None
+        :rtype: None
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/u/{objectName}"
         method = "PUT"

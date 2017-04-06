@@ -35,7 +35,7 @@ class MultipartUpload(object):
     def namespace(self):
         """
         Gets the namespace of this MultipartUpload.
-        the namespace in which the in-progress upload lives.
+        The namespace in which the in-progress multipart upload is stored.
 
 
         :return: The namespace of this MultipartUpload.
@@ -47,7 +47,7 @@ class MultipartUpload(object):
     def namespace(self, namespace):
         """
         Sets the namespace of this MultipartUpload.
-        the namespace in which the in-progress upload lives.
+        The namespace in which the in-progress multipart upload is stored.
 
 
         :param namespace: The namespace of this MultipartUpload.
@@ -59,7 +59,7 @@ class MultipartUpload(object):
     def bucket(self):
         """
         Gets the bucket of this MultipartUpload.
-        the bucket in which the in-progress upload lives.
+        The bucket in which the in-progress multipart upload is stored.
 
 
         :return: The bucket of this MultipartUpload.
@@ -71,7 +71,7 @@ class MultipartUpload(object):
     def bucket(self, bucket):
         """
         Sets the bucket of this MultipartUpload.
-        the bucket in which the in-progress upload lives.
+        The bucket in which the in-progress multipart upload is stored.
 
 
         :param bucket: The bucket of this MultipartUpload.
@@ -83,7 +83,7 @@ class MultipartUpload(object):
     def object(self):
         """
         Gets the object of this MultipartUpload.
-        the object name for the in-progress upload.
+        The object name of the in-progress multipart upload.
 
 
         :return: The object of this MultipartUpload.
@@ -95,7 +95,7 @@ class MultipartUpload(object):
     def object(self, object):
         """
         Sets the object of this MultipartUpload.
-        the object name for the in-progress upload.
+        The object name of the in-progress multipart upload.
 
 
         :param object: The object of this MultipartUpload.
@@ -107,7 +107,7 @@ class MultipartUpload(object):
     def upload_id(self):
         """
         Gets the upload_id of this MultipartUpload.
-        the ID of the in-progress upload.
+        The unique identifier for the in-progress multipart upload.
 
 
         :return: The upload_id of this MultipartUpload.
@@ -119,7 +119,7 @@ class MultipartUpload(object):
     def upload_id(self, upload_id):
         """
         Sets the upload_id of this MultipartUpload.
-        the ID of the in-progress upload.
+        The unique identifier for the in-progress multipart upload.
 
 
         :param upload_id: The upload_id of this MultipartUpload.
@@ -131,7 +131,7 @@ class MultipartUpload(object):
     def time_created(self):
         """
         Gets the time_created of this MultipartUpload.
-        The date and time at which the upload was created.
+        The date and time when the upload was created.
 
 
         :return: The time_created of this MultipartUpload.
@@ -143,7 +143,7 @@ class MultipartUpload(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this MultipartUpload.
-        The date and time at which the upload was created.
+        The date and time when the upload was created.
 
 
         :param time_created: The time_created of this MultipartUpload.
