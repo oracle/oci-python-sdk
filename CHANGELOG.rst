@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+ 1.3.0 - 2017-04-06
+====================
+
+-------
+ Added
+-------
+
+* Support for DHCP Search Domain Option.
+* Support for ComputeClient.get_windows_instance_initial_credentials.
+
+====================
  1.2.0 - 2017-03-28
 ====================
 
