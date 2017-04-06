@@ -179,22 +179,19 @@ class CreateSubnetDetails(object):
         Gets the dns_label of this CreateSubnetDetails.
         A DNS label for the subnet, used in conjunction with the VNIC's hostname and
         VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC
-        within this subnet (e.g., `bminstance-1.subnet-123.vcn-1.oraclevcn.com`).
-        Must be unique within the VCN and comply with
-        `RFC 952`__ and
-        `RFC 1123`__. The value cannot be changed.
+        within this subnet (e.g., `bminstance-1.subnet123.vcn1.oraclevcn.com`).
+        Must be an alphanumeric string that begins with a letter and is unique within the VCN.
+        The value cannot be changed.
 
-        This value must be set if you want to use the VCN Resolver to resolve the
+        This value must be set if you want to use the Internet and VCN Resolver to resolve the
         hostnames of instances in the subnet. It can only be set if the VCN itself
         was created with a DNS label.
 
         For more information, see
         `DNS in Your Virtual Cloud Network`__.
 
-        Example: `subnet-123`
+        Example: `subnet123`
 
-         __ https://tools.ietf.org/html/rfc952
-         __ https://tools.ietf.org/html/rfc1123
         __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
 
 
@@ -209,22 +206,19 @@ class CreateSubnetDetails(object):
         Sets the dns_label of this CreateSubnetDetails.
         A DNS label for the subnet, used in conjunction with the VNIC's hostname and
         VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC
-        within this subnet (e.g., `bminstance-1.subnet-123.vcn-1.oraclevcn.com`).
-        Must be unique within the VCN and comply with
-        `RFC 952`__ and
-        `RFC 1123`__. The value cannot be changed.
+        within this subnet (e.g., `bminstance-1.subnet123.vcn1.oraclevcn.com`).
+        Must be an alphanumeric string that begins with a letter and is unique within the VCN.
+        The value cannot be changed.
 
-        This value must be set if you want to use the VCN Resolver to resolve the
+        This value must be set if you want to use the Internet and VCN Resolver to resolve the
         hostnames of instances in the subnet. It can only be set if the VCN itself
         was created with a DNS label.
 
         For more information, see
         `DNS in Your Virtual Cloud Network`__.
 
-        Example: `subnet-123`
+        Example: `subnet123`
 
-         __ https://tools.ietf.org/html/rfc952
-         __ https://tools.ietf.org/html/rfc1123
         __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
 
 
