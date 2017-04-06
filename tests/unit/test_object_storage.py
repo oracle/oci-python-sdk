@@ -489,15 +489,16 @@ def test_list_multipart_uploads_empty_bucket(object_storage, bucket):
     namespace = object_storage.get_namespace().data
     response = object_storage.list_multipart_uploads(namespace, bucket)
     assert response.status == 200
-    assert type(response.data) is oraclebmc.object_storage.models.ListObjects
-    assert 0 == len(response.data.objects)
-    assert response.data.prefixes is None
+    print(type(response.data))
+    assert type(response.data) is list
+    assert 0 == len(response.data)
 
 
 def test_list_multipart_uploads(object_storage, bucket):
+    object_name = "test_multipart_file"
     namespace = object_storage.get_namespace().data
     request = oraclebmc.object_storage.models.CreateMultipartUploadDetails()
-    request.object = "test_multipart_file"
+    request.object = object_name
     request.content_encoding = "gzip, deflate"
     request.content_type = "application/octet-stream"
     response = object_storage.create_multipart_upload(namespace, bucket, request)
@@ -510,14 +511,18 @@ def test_list_multipart_uploads(object_storage, bucket):
     assert 1 == len(response.data)
     assert type(response.data[0]) is oraclebmc.object_storage.models.MultipartUpload
     assert response.data[0].upload_id == upload_id
-
     # Abort the upload since it was only created to make sure list works.
     response = object_storage.abort_multipart_upload(namespace,
                                                      bucket,
-                                                     "test_multipart_file",
+                                                     object_name,
                                                      upload_id)
 
     assert response.status == 204
+
+    # Verify the upload_id no longer exists.
+    with pytest.raises(oraclebmc.exceptions.ServiceError):
+        response = object_storage.list_multipart_upload_parts(namespace, bucket, object_name, upload_id)
+        assert response.status == 404
 
 
 def test_create_multipart_upload(object_storage, bucket):
