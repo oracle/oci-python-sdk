@@ -11,6 +11,9 @@ def pytest_addoption(parser):
     parser.addoption("--config-profile", action="store",
                      help="profile to use from the config file",
                      default=oraclebmc.config.DEFAULT_PROFILE)
+    parser.addoption("--fast", action="store_true",
+                     help="Skip slow tests, as marked with the @slow annotation.",
+                     default=False)
 
 
 @pytest.fixture

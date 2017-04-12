@@ -1,0 +1,242 @@
+# coding: utf-8
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+
+from __future__ import print_function
+import functools
+import random
+import pytest
+import time
+import traceback
+import oraclebmc
+
+TEST_DATA_VERSION = '1'
+
+USER_ID = 'ocid1.user.oc1..aaaaaaaals2zarcjikii4cwunpwogjsz4m2dowy3ilmafqpebotnfyntu3ha'
+TENANT_ID = 'ocidv1:tenancy:oc1:phx:1460406592660:aaaaaaaab4faofrfkxecohhjuivjq262pu'
+COMPARTMENT_ID = 'ocid1.compartment.oc1..aaaaaaaan5brzve7w7oyhrfngjfsrf72r67aqdd2sbhlarjas6pwamy4425a'
+COMPARTMENT_NAME = 'PythonSDKTestCompartment'
+AVAILABILITY_DOMAIN = 'kIdk:PHX-AD-2'
+
+
+# Tests marked with @slow will only be skipped if '--fast' is specified for the test run.
+slow = pytest.mark.skipif(
+    pytest.config.getoption("--fast"),
+    reason="Slow tests are skipped when using the --fast option."
+)
+
+
+def random_name(prefix, insert_underscore=True):
+    return prefix + ('_' if insert_underscore else '') + str(random.randint(0, 1000000))
+
+
+def validate_response(result, extra_validation=None, includes_debug_data=False, expect_etag=False):
+    try:
+        assert result.status == 200 or result.status == 204
+
+        if includes_debug_data:
+            assert result.headers['opc-request-id']
+            assert result.headers['opc-client-info']
+            assert result.headers['user-agent']
+
+        if expect_etag:
+            assert result.headers['etag']
+
+        if extra_validation:
+            extra_validation(result)
+
+    except AssertionError:
+        print(result)
+        raise
+
+
+def validate_service_error(result, error_message=None, debug=False):
+    try:
+        assert result.status != 200
+        if debug:
+            assert isinstance(result.exception, oraclebmc.exceptions.ServiceError)
+            if error_message:
+                assert error_message in str(result.exception)
+        else:
+            if error_message:
+                assert error_message in result.message
+    except AssertionError:
+        # TODO better inspection for failing tests
+        print(str(result))
+        raise
+
+
+def wait_until(get_command, state, max_wait_seconds=30, max_interval_seconds=15, succeed_if_not_found=False, item_index_in_list_response=None):
+    """Poll the given get command until the result has a lifecycle-state that matches the given state.
+    The Polling interval will double with each call until max_interval_seconds is reached."""
+    sleep_interval_seconds = 1
+    start_time = time.time()
+
+    while True:
+        try:
+            result = get_command()
+        except Exception as error:
+            if succeed_if_not_found and hasattr(error, 'status') and error.status == 404:
+                break
+
+            raise RuntimeError('Error while waiting for state: ' + str(error))
+
+        # if an index is supplied, check the state of the corresponding item in the list
+        if result:
+            if item_index_in_list_response is not None:
+                if len(result.data) > item_index_in_list_response and result.data[item_index_in_list_response].lifecycle_state == state:
+                    break
+            elif result.data.lifecycle_state == state:
+                break
+
+        time.sleep(sleep_interval_seconds)
+
+        # Double the sleep each time up to the maximum.
+        sleep_interval_seconds = min(sleep_interval_seconds * 2, max_interval_seconds)
+
+        elapsed_seconds = (time.time() - start_time)
+
+        if elapsed_seconds + sleep_interval_seconds > max_wait_seconds:
+            if max_wait_seconds <= elapsed_seconds:
+                raise RuntimeError('Maximum wait time has been exceeded.')
+
+
+def print_latest_exception(exception):
+    print("ERROR {type}: {message}".format(type=exception.__class__.__name__, message=str(exception)))
+    traceback.print_exc()
+
+
+def log_test(func):
+    @functools.wraps(func)
+    def wrapped_call(ctx, *args, **kwargs):
+        print("Test {name}...".format(name=func.__name__))
+        func(ctx, *args, **kwargs)
+        print("Test {name} Complete".format(name=func.__name__))
+
+    return wrapped_call
+
+
+def ensure_test_data(api, namespace, compartment, bucket_prefix):
+    """The test data will be deleted and recreated only if the version has changed."""
+    test_data_metadata_bucket = bucket_prefix + '_test_metadata'
+    test_data_version_object = 'test_data_version'
+
+    # Check test data version.
+    try:
+        version = api.get_object(
+            namespace,
+            test_data_metadata_bucket,
+            test_data_version_object).data.content.decode('UTF-8')
+
+        if version == TEST_DATA_VERSION:
+            return
+    except Exception as error:
+        # if the bucket has never been created with the test_metadata, then create it
+        if error.status == 404:
+            create_bucket(api, namespace, compartment, test_data_metadata_bucket)
+            api.put_object(namespace, test_data_metadata_bucket, test_data_version_object, TEST_DATA_VERSION)
+        else:
+            raise error
+
+    print("Recreating test data.")
+    clear_test_data(api, namespace, compartment)
+
+    print('Creating test data.')
+    create_bucket(api, namespace, compartment, bucket_prefix + 'ReadOnlyTestBucket1',
+                  objects=['object1', 'object2', 'object3', 'object4', 'object5'])
+    create_bucket(api, namespace, compartment, bucket_prefix + 'ReadOnlyTestBucket2',
+                  objects=['a/b/c/object1', 'a/b/c/object2', 'a/b/c/object3', 'a/b/object4', 'a/b/object5'])
+    create_bucket(api, namespace, compartment, bucket_prefix + 'ReadOnlyTestBucket3', objects=['a/b/object1'])
+    create_bucket(api, namespace, compartment, bucket_prefix + 'ReadOnlyTestBucket4')
+    create_object(api, namespace, bucket_prefix + 'ReadOnlyTestBucket4', 'reallyLargeFile.dat', file_name='data/reallyLargeFile.dat')
+    create_bucket(api, namespace, compartment, bucket_prefix + 'ReadOnlyTestBucket5', {'foo1': 'bar1', 'foo2': 'bar2'})
+    create_bucket(api, namespace, compartment, bucket_prefix + 'ReadOnlyTestBucket6')
+
+    for num in range(1, 213):
+        create_object(api, namespace, bucket_prefix + 'ReadOnlyTestBucket6', 'ob' + str(num))
+
+    for num in range(7, 209):
+        create_bucket(api, namespace, compartment, bucket_prefix + 'ReadOnlyTestBucket' + str(num))
+
+    # Update test data version
+    create_bucket(api, namespace, compartment, test_data_metadata_bucket)
+    api.put_object(namespace, test_data_metadata_bucket, test_data_version_object, TEST_DATA_VERSION)
+
+
+def create_bucket(api, namespace, compartment, bucket_name, metadata=None, objects=None):
+    """Deletes all buckets and objects in the given compartment."""
+    request = oraclebmc.object_storage.models.CreateBucketDetails()
+    request.name = bucket_name
+    request.compartment_id = compartment
+    request.metadata = metadata
+    api.create_bucket(namespace, request)
+    show_progress()
+
+    if objects:
+        for obj in objects:
+            create_object(api, namespace, bucket_name, obj)
+
+
+def create_object(api, namespace, bucket_name, object_name, file_name=None, metadata=None):
+    args = {}
+    if metadata:
+        # TODO what is this for?
+        args['opc_meta', metadata]
+    if file_name:
+        with open(file_name, 'rb') as file:
+            api.put_object(namespace, bucket_name, object_name, file, **args)
+    else:
+        api.put_object(namespace, bucket_name, object_name, object_name, **args)
+
+    show_progress()
+
+
+def clear_test_data(api, namespace, compartment):
+    print('Deleting test data.')
+    bucket_list = []
+    next_page = None
+    count = 0
+    while True:
+        if next_page:
+            response = api.list_buckets(namespace, compartment, page=next_page)
+        else:
+            response = api.list_buckets(namespace, compartment)
+
+        bucket_list.extend([bucket.name for bucket in response.data])
+
+        count += 1
+        if count > 100:
+            raise RuntimeError("Too many pages, something is probably wrong.")
+
+        if not response.has_next_page:
+            break
+        next_page = response.next_page
+
+    for bucket in bucket_list:
+        object_list = []
+        next_start = None
+        count = 0
+        while True:
+            if next_start:
+                response = api.list_objects(namespace, bucket, start=next_start)
+            else:
+                response = api.list_objects(namespace, bucket)
+
+            object_list.extend([obj.name for obj in response.data.objects])
+
+            count += 1
+            if count > 100:
+                raise RuntimeError("Too many pages, something is probably wrong.")
+
+            next_start = response.data.next_start_with
+            if next_start is None:
+                break
+
+        for obj in object_list:
+            api.delete_object(namespace, bucket, obj)
+
+        api.delete_bucket(namespace, bucket)
+        show_progress()
+
+
+def show_progress():
+    print('.', end='', flush=True)
