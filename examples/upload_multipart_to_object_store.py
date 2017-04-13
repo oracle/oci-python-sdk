@@ -8,7 +8,7 @@ config = oraclebmc.config.from_file()
 compartment_id = config["tenancy"]
 object_storage = oraclebmc.object_storage.ObjectStorageClient(config)
 namespace_name = object_storage.get_namespace().data
-object_name = "song_1.mp3"
+object_name = "song.mp3"
 
 # Create bucket
 # Uncomment this code if the bucket doesn't already exist
@@ -17,6 +17,7 @@ object_name = "song_1.mp3"
 # request.name = bucket_name
 # bucket = object_storage.create_bucket(namespace_name, request)
 
+chunk = 1000000
 test = oraclebmc.MultipartAssembler(object_storage, namespace_name, bucket_name, object_name)
 test.new_upload()
 
@@ -27,7 +28,6 @@ with io.open(filename, mode='rb') as file:
     end = file.tell()
     file.seek(0, io.SEEK_SET)
     offset = 0
-    chunk = 100000
     while file.tell() < end:
         test.add_part(filename, offset=offset, chunk=chunk)
         offset += chunk

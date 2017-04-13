@@ -2,6 +2,7 @@ import six
 import io
 import hashlib
 import base64
+from threading import Thread
 from oraclebmc.object_storage import models
 
 
@@ -66,30 +67,39 @@ class MultipartAssembler:
             # ToDo: Determine what errors can come back and act on them
             print(response.status)
 
+    def upload_part(self, part, part_num):
+        print("uploading part: {}".format(part_num))
+        with io.open(part["file"], mode='rb') as file:
+            file.seek(part["offset"], io.SEEK_SET)
+            response = self.object_storage.upload_part(self.manifest["nameSpace"],
+                                                       self.manifest["bucketName"],
+                                                       self.manifest["objectName"],
+                                                       self.manifest["uploadId"],
+                                                       part_num,
+                                                       file.read(part["chunk"]))
+
+        # ToDo: Handle any issues if the upload didn't work
+        if response.status == 200:
+            part["etag"] = response.headers['etag']
+            part["opc_md5"] = str(response.headers['opc-content-md5'])
+            if part["hash"] != part["opc_md5"]:
+                # ToDo: throw an error if the hashes do not agree
+                print("Upload for part {} failed with hash mismatch".format(part_num))
+                print("{} vs {}".format(part["hash"], part["opc_md5"]))
+            else:
+                print("Part {} uploaded successfully".format(part_num))
+
     def upload(self):
         # Todo: Determine correct action if there is no uploadId in the manifest.
         #       Create the upload or throw exception?
-        for partNum, part in enumerate(self.manifest["parts"]):
-            print("uploading part: {}".format(partNum + 1))
-            with io.open(part["file"], mode='rb') as file:
-                file.seek(part["offset"], io.SEEK_SET)
-                response = self.object_storage.upload_part(self.manifest["nameSpace"],
-                                                           self.manifest["bucketName"],
-                                                           self.manifest["objectName"],
-                                                           self.manifest["uploadId"],
-                                                           partNum + 1,
-                                                           file.read(part["chunk"]))
+        threads = []
+        for part_num, part in enumerate(self.manifest["parts"]):
+            t = Thread(target=self.upload_part, args=(part, part_num + 1))
+            t.start()
+            threads.append(t)
 
-            # ToDo: Handle any issues if the upload didn't work
-            if response.status == 200:
-                part["etag"] = response.headers['etag']
-                part["opc_md5"] = str(response.headers['opc-content-md5'])
-                if part["hash"] != part["opc_md5"]:
-                    # ToDo: throw an error if the hashes do not agree
-                    print("Upload for part {} failed with hash mismatch".format(partNum + 1))
-                    print("{} vs {}".format(part["hash"], part["opc_md5"]))
-                else:
-                    print("Part {} uploaded successfully".format(partNum + 1))
+        for t in threads:
+            t.join()
 
     def commit(self):
         # Prepare to commit the upload
