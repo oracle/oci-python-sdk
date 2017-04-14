@@ -1,9 +1,9 @@
 # Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 #
-# Uploads all files from a local directory to an object store bucket
+# Uploads all files from a local directory to an object storage bucket
 # using multiple processes so that the uploads are done in parallel.
 #
-# Assumptions: Object store bucket already exists. See object_crud.py for
+# Assumptions: Object storage bucket already exists. See object_crud.py for
 # example of creating a bucket.
 
 import oraclebmc
@@ -13,17 +13,17 @@ from multiprocessing import Process
 from glob import glob
 
 
-def upload_to_object_store(config, namespace, bucket, path):
+def upload_to_object_storage(config, namespace, bucket, path):
     """
-    upload_to_object_store will upload a file to a object store bucket.
+    upload_to_object_store will upload a file to a object storage bucket.
     This function is intended to be run as a separate process.  The client is
     created with each invocation so that the separate processes do
-    not have a reference to the same object.
+    not have a reference to the same client.
     
     :param config: a configuration dictionary used to create ObjectStorageClient
     :param namespace: Namespace where the bucket resides
     :param bucket: Name of the bucket in which the object will be stored
-    :param path: path to file to upload to object store
+    :param path: path to file to upload to object storage
     :rtype: None
     """
     in_file = open(path, "rb")
@@ -48,14 +48,12 @@ parallel. The example uses multiple processes.
 All the files in 'directory' will be uploaded to the object store bucket
 specified by 'bucket_name'  The default profile will is used.
     
-The bucket must already exists. See object_crud.py for a bucket creation
+The bucket must already exist. See object_crud.py for a bucket creation
 example.
 """
-    epilog = "Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved."
 
     parser = argparse.ArgumentParser(description=description,
-                                     formatter_class=argparse.RawDescriptionHelpFormatter,
-                                     epilog=epilog)
+                                     formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument(dest='bucket_name',
                         help="Name of object store bucket")
     parser.add_argument(dest='directory',
@@ -72,7 +70,7 @@ example.
     proc_list = []
     for file_path in glob(dir):
         print("Starting upload for {}".format(file_path))
-        p = Process(target=upload_to_object_store, args=(config,
+        p = Process(target=upload_to_object_storage, args=(config,
                                                          namespace,
                                                          args.bucket_name,
                                                          file_path))
