@@ -15,7 +15,7 @@ from glob import glob
 
 def upload_to_object_storage(config, namespace, bucket, path):
     """
-    upload_to_object_store will upload a file to a object storage bucket.
+    upload_to_object_storage will upload a file to a object storage bucket.
     This function is intended to be run as a separate process.  The client is
     created with each invocation so that the separate processes do
     not have a reference to the same client.
@@ -29,11 +29,11 @@ def upload_to_object_storage(config, namespace, bucket, path):
     in_file = open(path, "rb")
     data = in_file.read()
     name = os.path.basename(path)
-    ostore = oraclebmc.object_storage.ObjectStorageClient(config)
-    ostore.put_object(namespace,
-                      bucket,
-                      name,
-                      data)
+    ostorage = oraclebmc.object_storage.ObjectStorageClient(config)
+    ostorage.put_object(namespace,
+                        bucket,
+                        name,
+                        data)
     print("Finished uploading {}".format(name))
 
 if __name__ == "__main__":
@@ -45,7 +45,7 @@ if __name__ == "__main__":
 """This is an example to show how multiple files can be uploaded to in
 parallel. The example uses multiple processes.
 
-All the files in 'directory' will be uploaded to the object store bucket
+All the files in 'directory' will be uploaded to the object storage bucket
 specified by 'bucket_name'  The default profile will is used.
     
 The bucket must already exist. See object_crud.py for a bucket creation
@@ -55,7 +55,7 @@ example.
     parser = argparse.ArgumentParser(description=description,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument(dest='bucket_name',
-                        help="Name of object store bucket")
+                        help="Name of object storage bucket")
     parser.add_argument(dest='directory',
                         help="Path to local directory containing files to upload. Do not include trailing path delimiter.")
     args = parser.parse_args()
