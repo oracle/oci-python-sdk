@@ -6,11 +6,13 @@ abandoned/
 .settings
 .DS_Store
 .idea/
+*.iml
 *.pyc
 *.egg-info/
 .tox/
 .cache/
 build/
+data/
 dist/
 __pycache__/
 env/

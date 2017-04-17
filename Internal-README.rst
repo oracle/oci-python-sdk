@@ -117,6 +117,14 @@ whatever environment is used by your interpreter, and not a tox env)::
 
     py.test tests/test_file.py::test_name
 
+Some tests are marked as slow. These will be run by default, but can
+be skipped by specifying '--fast' when running py.test. Also,
+it is recommended to run tests with the '-s' option so that stdout
+from the tests is shown. Example run:
+
+    py.test --fast -s
+
+
 Specifying a config file
 ------------------------
 
