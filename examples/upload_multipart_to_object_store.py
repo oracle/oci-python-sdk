@@ -1,6 +1,6 @@
 import oraclebmc
+import sys
 import io
-# from oraclebmc.object_storage.models import CreateBucketDetails
 
 bucket_name = "DEX-836_multipart_uploads"
 tmp_dir = "/tmp"
@@ -10,35 +10,46 @@ object_storage = oraclebmc.object_storage.ObjectStorageClient(config)
 namespace_name = object_storage.get_namespace().data
 object_name = "song.mp3"
 
-# Create bucket
-# Uncomment this code if the bucket doesn't already exist
-# request = CreateBucketDetails()
-# request.compartment_id = compartment_id
-# request.name = bucket_name
-# bucket = object_storage.create_bucket(namespace_name, request)
 
-chunk = 1000000
-test = oraclebmc.MultipartAssembler(object_storage, namespace_name, bucket_name, object_name)
-test.new_upload()
+def create_bucket():
+    # Create bucket
+    from oraclebmc.object_storage.models import CreateBucketDetails
+    request = CreateBucketDetails()
+    request.compartment_id = compartment_id
+    request.name = bucket_name
+    object_storage.create_bucket(namespace_name, request)
 
-# add parts
-filename = tmp_dir + '/' + object_name
-with io.open(filename, mode='rb') as file:
-    file.seek(0, io.SEEK_END)
-    end = file.tell()
-    file.seek(0, io.SEEK_SET)
-    offset = 0
-    while file.tell() < end:
-        test.add_part(filename, offset=offset, chunk=chunk)
-        offset += chunk
-        file.seek(offset, io.SEEK_SET)
 
-try:
-    test.upload()
-except Exception:
-    test.abort_upload()
-else:
+def upload_multipart():
+    chunk = 1500000
+    test = oraclebmc.MultipartAssembler(object_storage, namespace_name, bucket_name, object_name, part_size=chunk)
+    test.new_upload()
+
+    # add parts
+    filepath = tmp_dir + '/' + object_name
+    test.add_parts_from_file(filepath=filepath)
+
+    try:
+        test.upload()
+    except Exception:
+        test.abort()
+    else:
+        test.commit()
+
+    print(test.manifest, file=sys.stderr)
+
+
+def resume_multipart(upload_id):
+    chunk = 1500000
+    test = oraclebmc.MultipartAssembler(object_storage, namespace_name, bucket_name, object_name, part_size=chunk)
+    # add parts
+    filepath = tmp_dir + '/' + object_name
+    test.add_parts_from_file(filepath=filepath)
+    test.resume(upload_id=upload_id)
     test.commit()
 
-print(test.manifest)
+if __name__ == "__main__":
+    # create_bucket()
+    # upload_multipart()
+    resume_multipart("97fd0622-0d27-8cac-9f7b-e9a8afdc490a")
 
