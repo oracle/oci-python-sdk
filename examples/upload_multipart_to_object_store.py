@@ -10,6 +10,8 @@ object_storage = oraclebmc.object_storage.ObjectStorageClient(config)
 namespace_name = object_storage.get_namespace().data
 object_name = "song.mp3"
 
+# TODO: Flesh this out to be a valid example.
+
 
 def create_bucket():
     # Create bucket
@@ -21,8 +23,8 @@ def create_bucket():
 
 
 def upload_multipart():
-    chunk = 1500000
-    test = oraclebmc.MultipartAssembler(object_storage, namespace_name, bucket_name, object_name, part_size=chunk)
+    part_size = 1500000
+    test = oraclebmc.MultipartAssembler(object_storage, namespace_name, bucket_name, object_name, part_size=part_size)
     test.new_upload()
 
     # add parts
@@ -40,8 +42,8 @@ def upload_multipart():
 
 
 def resume_multipart(upload_id):
-    chunk = 1500000
-    test = oraclebmc.MultipartAssembler(object_storage, namespace_name, bucket_name, object_name, part_size=chunk)
+    part_size = 1500000
+    test = oraclebmc.MultipartAssembler(object_storage, namespace_name, bucket_name, object_name, part_size=part_size)
     # add parts
     filepath = tmp_dir + '/' + object_name
     test.add_parts_from_file(filepath=filepath)

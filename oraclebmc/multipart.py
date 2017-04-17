@@ -7,6 +7,13 @@ from threading import Thread
 from oraclebmc.object_storage import models
 from oraclebmc.exceptions import ServiceError
 
+# TODO: Add docstrings to everything.
+# TODO: Determine if parts should be overwritten.  Currently keep all parts with a matching hash
+# TODO: Calculate and verify mulitpart hash.  Currently only checking parts.
+# TODO: Abort abandoned multipart uploads.
+# TODO: Add thread limit.  Currently will create a thread for each part.
+# TODO: Automatic retries for failed parts.
+
 
 class MultipartAssembler:
     PART_SIZE = 1000000
@@ -43,21 +50,21 @@ class MultipartAssembler:
             file.seek(0, io.SEEK_SET)
             offset = 0
             while file.tell() < end:
-                self.add_part(filepath, offset=offset, chunk=self.part_size)
+                self.add_part(filepath, offset=offset, size=self.part_size)
                 offset += self.part_size
                 file.seek(offset, io.SEEK_SET)
 
     def add_part(self,
                  file,
                  offset,
-                 chunk,
+                 size,
                  part_hash=None):
         if part_hash is None:
-            part_hash = self.calculate_md5(file, offset, chunk)
+            part_hash = self.calculate_md5(file, offset, size)
 
         self.manifest["parts"].append({"file": file,
                                        "offset": offset,
-                                       "chunk": chunk,
+                                       "size": size,
                                        "hash": part_hash})
 
     def set_part(self,
@@ -67,12 +74,12 @@ class MultipartAssembler:
         self.manifest["parts"][part_number] = part
 
     def abort(self):
-        # ToDo: verify that there is an upload ID before trying to abort the upload
+        # TODO: verify that there is an upload ID before trying to abort the upload
         response = self.object_storage.abort_multipart_upload(self.manifest["nameSpace"],
                                                               self.manifest["bucketName"],
                                                               self.manifest["objectName"],
                                                               self.manifest["uploadId"])
-        # ToDo: check for errors in response and act on them
+        # TODO: check for errors in response and act on them
         if response.status != 200:
             print(response.status)
 
@@ -85,7 +92,7 @@ class MultipartAssembler:
             print("Cannot resume upload for upload id {}. The id is invalid".format(upload_id), file=sys.stderr)
         else:
             if not self.manifest["parts"]:
-                # ToDo: rebuild parts, need filepath
+                # TODO: rebuild parts, need filepath
                 pass
 
         # Get parts details from object storage to see which parts didn't complete
@@ -97,14 +104,13 @@ class MultipartAssembler:
         except ServiceError as e:
             if e.status == 404:
                 print("Upload id {} not found".format(self.manifest["uploadId"]), file=sys.stderr)
-
             raise e
         else:
-            # Determine which parts need to be uploaded
+            # Update manifest with information from object storage
             parts = self.manifest["parts"]
             for part in response.data:
                 part_index = part.part_number - 1
-                if part_index > -1 and part_index < len(parts):
+                if -1 < part_index < len(parts):
                     manifest_part = parts[part_index]
                     if manifest_part["hash"] == part.md5:
                         manifest_part["etag"] = part.etag
@@ -113,6 +119,7 @@ class MultipartAssembler:
             # Upload parts that are missing or incomplete
             self.upload()
 
+    # TODO: Come up with a better name for this method.
     def new_upload(self):
         request = models.CreateMultipartUploadDetails()
         request.object = self.manifest["objectName"]
@@ -123,7 +130,7 @@ class MultipartAssembler:
             self.manifest["uploadId"] = response.data.upload_id
             print("Upload ID: {}".format(self.manifest["uploadId"]), file=sys.stderr)
         else:
-            # ToDo: Determine what errors can come back and act on them
+            # TODO: Determine what errors can come back and act on them
             print(response.status, file=sys.stderr)
 
     def upload_part(self, part, part_num):
@@ -135,21 +142,21 @@ class MultipartAssembler:
                                                        self.manifest["objectName"],
                                                        self.manifest["uploadId"],
                                                        part_num,
-                                                       file.read(part["chunk"]))
+                                                       file.read(part["size"]))
 
-        # ToDo: Handle any issues if the upload didn't work
+        # TODO: Handle any issues if the upload didn't work
         if response.status == 200:
             part["etag"] = response.headers['etag']
             part["opc_md5"] = str(response.headers['opc-content-md5'])
             if part["hash"] != part["opc_md5"]:
-                # ToDo: throw an error if the hashes do not agree
+                # TODO: throw an error if the hashes do not agree
                 print("Upload for part {} failed with hash mismatch".format(part_num), file=sys.stderr)
                 print("{} vs {}".format(part["hash"], part["opc_md5"]), file=sys.stderr)
             else:
                 print("Part {} uploaded successfully".format(part_num), file=sys.stderr)
 
     def upload(self):
-        # Todo: Determine correct action if there is no uploadId in the manifest.
+        # TODO: Determine correct action if there is no uploadId in the manifest.
         #       Create the upload or throw exception?
         threads = []
         for part_num, part in enumerate(self.manifest["parts"]):
@@ -165,7 +172,7 @@ class MultipartAssembler:
         # Prepare to commit the upload
         commitDetails = models.CommitMultipartUploadDetails()
 
-        # Parts to commit and parts to exclude
+        # Determine which parts to commit and which parts to exclude.
         parts_to_commit = []
         parts_to_exclude = []
         for partNum, part in enumerate(self.manifest["parts"]):
@@ -187,7 +194,7 @@ class MultipartAssembler:
                                                                self.manifest["uploadId"],
                                                                commitDetails)
 
-        # ToDo determine how to clean up if there is a failure.
+        # TODO: determine how to clean up if there is a failure.
         if response.status == 200:
             print("Commit successful for upload id {}".format(self.manifest["uploadId"]), file=sys.stderr)
         else:
