@@ -4,7 +4,9 @@
 # using multiple processes so that the uploads are done in parallel.
 #
 # Assumptions: Object storage bucket already exists. See object_crud.py for
-# an example of creating a bucket.
+#                an example of creating a bucket.
+#              Loads configuration from default profile in the default config
+#                file
 
 import oraclebmc
 import os
