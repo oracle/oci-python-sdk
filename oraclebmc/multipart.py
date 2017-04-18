@@ -1,4 +1,3 @@
-import six
 import sys
 import io
 import hashlib
@@ -68,9 +67,9 @@ class MultipartAssembler:
                                        "hash": part_hash})
 
     def set_part(self,
-                part,
-                part_number,
-                md5=None):
+                 part,
+                 part_number,
+                 md5=None):
         self.manifest["parts"][part_number] = part
 
     def abort(self):
@@ -84,7 +83,7 @@ class MultipartAssembler:
             print(response.status)
 
     def resume(self, upload_id=None):
-        if not upload_id == None:
+        if upload_id:
             self.manifest["uploadId"] = upload_id
 
         # Verify that the upload id is valid
@@ -199,4 +198,3 @@ class MultipartAssembler:
             print("Commit successful for upload id {}".format(self.manifest["uploadId"]), file=sys.stderr)
         else:
             print("Something went wrong", file=sys.stderr)
-

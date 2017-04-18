@@ -1,6 +1,5 @@
 import oraclebmc
 import sys
-import io
 
 bucket_name = "DEX-836_multipart_uploads"
 tmp_dir = "/tmp"
@@ -50,8 +49,8 @@ def resume_multipart(upload_id):
     test.resume(upload_id=upload_id)
     test.commit()
 
+
 if __name__ == "__main__":
     # create_bucket()
     # upload_multipart()
     resume_multipart("97fd0622-0d27-8cac-9f7b-e9a8afdc490a")
-
