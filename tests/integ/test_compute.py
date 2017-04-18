@@ -126,8 +126,11 @@ class TestCompute:
         util.validate_response(result, expect_etag=True)
         self.windows_instance_ocid = result.data.id
 
-        oraclebmc.wait_until(compute, compute.get_instance(self.windows_instance_ocid), 'lifecycle_state', 'RUNNING',
-                        max_wait_seconds=600)
+        oraclebmc.wait_until(compute,
+                             compute.get_instance(self.windows_instance_ocid),
+                             'lifecycle_state',
+                             'RUNNING',
+                             max_wait_seconds=600)
 
         result = compute.get_instance(self.windows_instance_ocid)
         util.validate_response(result, expect_etag=True)

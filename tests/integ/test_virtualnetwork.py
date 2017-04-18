@@ -455,8 +455,11 @@ class TestVirtualNetwork:
         if hasattr(self, 'ig_ocid'):
             try:
                 virtual_network.delete_internet_gateway(self.ig_ocid)
-                oraclebmc.wait_until(virtual_network, virtual_network.get_internet_gateway(self.ig_ocid), 'lifecycle_state', 'TERMINATED',
-                                max_wait_seconds=600)
+                oraclebmc.wait_until(virtual_network,
+                                     virtual_network.get_internet_gateway(self.ig_ocid),
+                                     'lifecycle_state',
+                                     'TERMINATED',
+                                     max_wait_seconds=600)
             except Exception as error:
                 if not hasattr(error, 'status') or error.status != 404:
                     util.print_latest_exception(error)
@@ -465,9 +468,11 @@ class TestVirtualNetwork:
         if hasattr(self, 'subnet_ocid'):
             try:
                 virtual_network.delete_subnet(self.subnet_ocid)
-                oraclebmc.wait_until(virtual_network, virtual_network.get_subnet(self.subnet_ocid),
-                                     'lifecycle_state', 'TERMINATED',
-                                max_wait_seconds=600)
+                oraclebmc.wait_until(virtual_network,
+                                     virtual_network.get_subnet(self.subnet_ocid),
+                                     'lifecycle_state',
+                                     'TERMINATED',
+                                     max_wait_seconds=600)
             except Exception as error:
                 if not hasattr(error, 'status') or error.status != 404:
                     util.print_latest_exception(error)

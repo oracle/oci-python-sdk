@@ -21,7 +21,7 @@ def upload_to_object_storage(config, namespace, bucket, path):
     This function is intended to be run as a separate process.  The client is
     created with each invocation so that the separate processes do
     not have a reference to the same client.
-    
+
     :param config: a configuration dictionary used to create ObjectStorageClient
     :param namespace: Namespace where the bucket resides
     :param bucket: Name of the bucket in which the object will be stored
@@ -32,26 +32,25 @@ def upload_to_object_storage(config, namespace, bucket, path):
         name = os.path.basename(path)
         ostorage = oraclebmc.object_storage.ObjectStorageClient(config)
         ostorage.put_object(namespace,
-                        bucket,
-                        name,
-                        in_file)
+                            bucket,
+                            name,
+                            in_file)
         print("Finished uploading {}".format(name))
+
 
 if __name__ == "__main__":
     config = oraclebmc.config.from_file()
     object_storage = oraclebmc.object_storage.ObjectStorageClient(config)
     namespace = object_storage.get_namespace().data
 
-    description = \
-"""This is an example to show how multiple files can be uploaded to in
-parallel. The example uses multiple processes.
-
-All the files in 'directory' will be uploaded to the object storage bucket
-specified by 'bucket_name'  The default profile will is used.
-    
-The bucket must already exist. See object_crud.py for a bucket creation
-example.
-"""
+    description = "\n".join(["This is an example to show how multiple files can be uploaded to in",
+                             "parallel. The example uses multiple processes.",
+                             "",
+                             "All the files in 'directory' will be uploaded to the object storage bucket",
+                             "specified by 'bucket_name'  The default profile will is used.",
+                             "",
+                             "The bucket must already exist. See object_crud.py for a bucket creation",
+                             "example."])
 
     parser = argparse.ArgumentParser(description=description,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -72,9 +71,9 @@ example.
     for file_path in glob(dir):
         print("Starting upload for {}".format(file_path))
         p = Process(target=upload_to_object_storage, args=(config,
-                                                         namespace,
-                                                         args.bucket_name,
-                                                         file_path))
+                                                           namespace,
+                                                           args.bucket_name,
+                                                           file_path))
         p.start()
         proc_list.append(p)
 
