@@ -117,10 +117,6 @@ Service Errors
 Any operation resulting in a service error will cause an exception of type oraclebmc.exceptions.ServiceError to be thrown by the SDK. For information about common service errors returned by BMCS, see `API Errors <https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm>`_
 .
 
-Oracle Linux Permission Issues
-------------------------------
-On Oracle Linux 7.3, if you encounter permission issues when running pip install, you might need to use ``sudo``.
-
 SSL/TLS or Certificate Issues
 -----------------------------
 
