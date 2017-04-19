@@ -461,7 +461,6 @@ class TestObjectStorage:
                 response_text += chunk.decode('UTF-8')
 
 
-
 def test_list_multipart_uploads_empty_bucket(object_storage, bucket):
     namespace = object_storage.get_namespace().data
     response = object_storage.list_multipart_uploads(namespace, bucket)
@@ -585,4 +584,3 @@ def test_multipart_upload_crud(object_storage, bucket):
     # cleanup, but it tests the API.
     response = object_storage.delete_object(namespace, bucket, object_name)
     assert response.status == 204
-
