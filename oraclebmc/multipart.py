@@ -1,21 +1,28 @@
+# coding: utf-8
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+from __future__ import print_function
 import sys
 import io
 import hashlib
 import base64
+import time
 from threading import Thread
-from oraclebmc.object_storage import models
-from oraclebmc.exceptions import ServiceError
+from .object_storage import models
+from .exceptions import ServiceError
 
 # TODO: Add docstrings to everything.
 # TODO: Determine if parts should be overwritten.  Currently keep all parts with a matching hash
 # TODO: Calculate and verify mulitpart hash.  Currently only checking parts.
 # TODO: Abort abandoned multipart uploads.
-# TODO: Add thread limit.  Currently will create a thread for each part.
+# TODO: Find a better way to limit threads.
 # TODO: Automatic retries for failed parts.
+
+# TODO: Replace with correct value for a object storage unit
+DEFAULT_PART_SIZE = 1500000
+DEFAULT_THREAD_COUNT = 10
 
 
 class MultipartAssembler:
-    PART_SIZE = 1000000
 
     def __init__(self,
                  object_storage,
@@ -28,7 +35,7 @@ class MultipartAssembler:
         if part_size:
             self.part_size = part_size
         else:
-            self.part_size = self.PART_SIZE
+            self.part_size = DEFAULT_PART_SIZE
         self.manifest = {"uploadId": 0,
                          "nameSpace": namespace_name,
                          "bucketName": bucket_name,
@@ -58,8 +65,8 @@ class MultipartAssembler:
                  offset,
                  size,
                  part_hash=None):
-        if part_hash is None:
-            part_hash = self.calculate_md5(file, offset, size)
+        # if part_hash is None:
+        #     part_hash = self.calculate_md5(file, offset, size)
 
         self.manifest["parts"].append({"file": file,
                                        "offset": offset,
@@ -111,11 +118,11 @@ class MultipartAssembler:
                 part_index = part.part_number - 1
                 if -1 < part_index < len(parts):
                     manifest_part = parts[part_index]
-                    if manifest_part["hash"] == part.md5:
-                        manifest_part["etag"] = part.etag
-                        manifest_part["opc_md5"] = part.md5
+                    manifest_part["etag"] = part.etag
+                    manifest_part["opc_md5"] = part.md5
 
             # Upload parts that are missing or incomplete
+            print("Resuming upload for upload id: {}".format(self.manifest["uploadId"]))
             self.upload()
 
     # TODO: Come up with a better name for this method.
@@ -154,16 +161,34 @@ class MultipartAssembler:
             else:
                 print("Part {} uploaded successfully".format(part_num), file=sys.stderr)
 
-    def upload(self):
+    def upload(self, thread_count=DEFAULT_THREAD_COUNT):
         # TODO: Determine correct action if there is no uploadId in the manifest.
         #       Create the upload or throw exception?
         threads = []
         for part_num, part in enumerate(self.manifest["parts"]):
+            # TODO: Determine how to calculate the hash without needing to read the
+            #       file chunk twice.
+
+            # Calculate the hash before uploading.  The hash will be uses
+            # to determine if the part needs to be uploaded.  It will also
+            # be used to determine if the part was successfully uploaded.
+            if part["hash"] is None:
+                part["hash"] = self.calculate_md5(part["file"], part["offset"], part["size"])
+
             if "opc_md5" not in part or part["hash"] != part["opc_md5"]:
                 t = Thread(target=self.upload_part, args=(part, part_num + 1))
                 t.start()
                 threads.append(t)
+            # Wait for some threads to complete before starting new ones
+            while len(threads) >= thread_count:
+                for i in range(len(threads)):
+                    if not threads[i].is_alive():
+                        threads[i].join()
+                        threads.pop(i)
+                        break
+                    time.sleep(0.1)
 
+        # Wait for the final threads to finish
         for t in threads:
             t.join()
 
@@ -198,3 +223,41 @@ class MultipartAssembler:
             print("Commit successful for upload id {}".format(self.manifest["uploadId"]), file=sys.stderr)
         else:
             print("Something went wrong", file=sys.stderr)
+
+
+class Multipart:
+    @staticmethod
+    def upload(object_storage_client,
+               namespace_name,
+               bucket_name,
+               object_name,
+               file,
+               part_size=DEFAULT_PART_SIZE):
+
+        ma = MultipartAssembler(object_storage_client, namespace_name, bucket_name, object_name, part_size)
+        ma.new_upload()
+
+        # add parts
+        print(file.name)
+        ma.add_parts_from_file(filepath=file.name)
+
+        try:
+            ma.upload()
+        except Exception:
+            ma.abort()
+        else:
+            ma.commit()
+
+    @staticmethod
+    def resume(object_storage_client,
+               namespace_name,
+               bucket_name,
+               object_name,
+               file,
+               upload_id,
+               part_size=DEFAULT_PART_SIZE):
+
+        ma = MultipartAssembler(object_storage_client, namespace_name, bucket_name, object_name, part_size=part_size)
+        ma.add_parts_from_file(filepath=file.name)
+        ma.resume(upload_id=upload_id)
+        ma.commit()

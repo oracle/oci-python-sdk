@@ -8,7 +8,7 @@ from .response import Response
 from .signer import Signer
 from .version import __version__  # noqa
 from .waiter import wait_until
-from .multipart import MultipartAssembler
+from .multipart import MultipartAssembler, Multipart  # noqa
 
 
 __all__ = [
