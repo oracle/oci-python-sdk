@@ -144,6 +144,7 @@
                             <additionalProperties>
                                 <packageName>oraclebmc</packageName>
                                 <specName>object_storage</specName>
+                                <generateInitFile>false</generateInitFile>
                             </additionalProperties>
                         </configuration>
                     </execution>
@@ -171,6 +172,11 @@
                             <includes>
                                 <include>**/*</include>
                             </includes>
+                            <excludes>
+                                <exclude>transfer</exclude>
+                                <exclude>transfer/*</exclude>
+                                <exclude>__init__.py</exclude>
+                            </excludes>
                         </fileset>
                     </filesets>
                 </configuration>
