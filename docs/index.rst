@@ -34,6 +34,7 @@ To get started, head over to the :ref:`installation instructions <install>` or s
     installation
     configuration
     quickstart
+    parallel-ops
     raw-requests
     api/index
     contributions
