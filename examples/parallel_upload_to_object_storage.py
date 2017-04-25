@@ -47,7 +47,7 @@ if __name__ == "__main__":
                              "parallel. The example uses multiple processes.",
                              "",
                              "All the files in 'directory' will be uploaded to the object storage bucket",
-                             "specified by 'bucket_name'  The default profile will is used.",
+                             "specified by 'bucket_name'  The default profile is used.",
                              "",
                              "The bucket must already exist. See object_crud.py for a bucket creation",
                              "example."])

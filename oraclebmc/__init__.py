@@ -8,12 +8,10 @@ from .response import Response
 from .signer import Signer
 from .version import __version__  # noqa
 from .waiter import wait_until
-from .multipart import MultipartObjectAssembler, UploadManager  # noqa
 
 
 __all__ = [
     "BaseClient", "Error", "Request", "Response", "Signer",
     "config", "constants", "core", "exceptions", "identity",
-    "object_storage", "regions", "wait_until", "MultipartObjectAssembler",
-    "UploadManager"
+    "object_storage", "regions", "wait_until"
 ]
