@@ -1,5 +1,5 @@
-from multipart_object_assembler import MultipartObjectAssembler
-from constants import DEFAULT_PART_SIZE
+from .multipart_object_assembler import MultipartObjectAssembler
+from .constants import DEFAULT_PART_SIZE
 
 
 class UploadManager:

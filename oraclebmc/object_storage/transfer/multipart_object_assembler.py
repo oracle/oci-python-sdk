@@ -8,7 +8,7 @@ import base64
 from os import stat
 from .constants import DEFAULT_PART_SIZE
 from .. import models
-from oraclebmc.exceptions import ServiceError
+from ...exceptions import ServiceError
 
 # TODO: Add docstrings to everything.
 # TODO: Determine if parts should be overwritten.  Currently keep all parts with a matching hash
@@ -35,7 +35,7 @@ class MultipartObjectAssembler:
         else:
             self.part_size = DEFAULT_PART_SIZE
         self.manifest = {"uploadId": None,
-                         "nameSpace": namespace_name,
+                         "namespace": namespace_name,
                          "bucketName": bucket_name,
                          "objectName": object_name,
                          "parts": []}
@@ -82,7 +82,7 @@ class MultipartObjectAssembler:
     def abort(self):
         # TODO: verify that there is an upload ID before trying to abort the upload
         try:
-            self.object_storage_client.abort_multipart_upload(self.manifest["nameSpace"],
+            self.object_storage_client.abort_multipart_upload(self.manifest["namespace"],
                                                               self.manifest["bucketName"],
                                                               self.manifest["objectName"],
                                                               self.manifest["uploadId"])
@@ -99,16 +99,17 @@ class MultipartObjectAssembler:
 
         # Get parts details from object storage to see which parts didn't complete
         try:
-            response = self.object_storage_client.list_multipart_upload_parts(self.manifest["nameSpace"],
+            response = self.object_storage_client.list_multipart_upload_parts(self.manifest["namespace"],
                                                                               self.manifest["bucketName"],
                                                                               self.manifest["objectName"],
                                                                               self.manifest["uploadId"])
         except ServiceError as e:
             if e.status == 404:
+                print(e.message)
                 new_exception = ServiceError(e.status,
                                              e.code,
                                              e.headers,
-                                             "Cannot resume, Upload id {} not found".format(self.manifest["uploadId"]))
+                                             "Cannot resume, upload id {} not found".format(self.manifest["uploadId"]))
                 raise new_exception
             else:
                 raise e
@@ -130,7 +131,7 @@ class MultipartObjectAssembler:
     def new_upload(self):
         request = models.CreateMultipartUploadDetails()
         request.object = self.manifest["objectName"]
-        response = self.object_storage_client.create_multipart_upload(self.manifest["nameSpace"],
+        response = self.object_storage_client.create_multipart_upload(self.manifest["namespace"],
                                                                       self.manifest["bucketName"],
                                                                       request)
         if response.status == 200:
@@ -144,7 +145,7 @@ class MultipartObjectAssembler:
         print("uploading part: {}".format(part_num), file=sys.stderr)
         with io.open(part["file"], mode='rb') as file:
             file.seek(part["offset"], io.SEEK_SET)
-            response = self.object_storage_client.upload_part(self.manifest["nameSpace"],
+            response = self.object_storage_client.upload_part(self.manifest["namespace"],
                                                               self.manifest["bucketName"],
                                                               self.manifest["objectName"],
                                                               self.manifest["uploadId"],
@@ -198,7 +199,7 @@ class MultipartObjectAssembler:
         commitDetails.parts_to_exclude = parts_to_exclude
 
         # Commit the multipart upload
-        response = self.object_storage_client.commit_multipart_upload(self.manifest["nameSpace"],
+        response = self.object_storage_client.commit_multipart_upload(self.manifest["namespace"],
                                                                       self.manifest["bucketName"],
                                                                       self.manifest["objectName"],
                                                                       self.manifest["uploadId"],
