@@ -109,7 +109,7 @@ class MultipartObjectAssembler:
 
             # Upload parts that are missing or incomplete
             # print("Resuming upload for upload id: {}".format(self.manifest["uploadId"]))
-            self.upload_multipart()
+            self.upload()
 
     # TODO: Come up with a better name for this method.
     def new_upload(self):
