@@ -12,7 +12,6 @@ from .. import models
 from ...exceptions import ServiceError
 
 # TODO: Add docstrings to everything.
-# TODO: Determine if parts should be overwritten.  Currently keep all parts with a matching hash
 # TODO: Calculate and verify mulitpart hash.  Currently only checking parts.
 # TODO: Add parallel uploads of multipart parts.
 # TODO: Automatic retries for failed parts.
@@ -136,7 +135,6 @@ class MultipartObjectAssembler:
             # print("Resuming upload for upload id: {}".format(self.manifest["uploadId"]))
             self.upload()
 
-    # TODO: Come up with a better name for this method.
     def new_upload(self):
         request = models.CreateMultipartUploadDetails()
         request.object = self.manifest["objectName"]

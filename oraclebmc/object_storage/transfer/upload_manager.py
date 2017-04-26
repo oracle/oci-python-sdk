@@ -5,6 +5,10 @@ import os
 from .multipart_object_assembler import MultipartObjectAssembler
 from .constants import DEFAULT_PART_SIZE
 
+# TODO: Add docstrings to everything.
+# TODO: Warn if the content_md5 is set and the multipart upload is chosen.
+#       Replicate JavaSDK behavior for the warning.
+
 
 class UploadManager:
     @staticmethod
