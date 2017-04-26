@@ -14,11 +14,8 @@ from ...exceptions import ServiceError
 # TODO: Add docstrings to everything.
 # TODO: Determine if parts should be overwritten.  Currently keep all parts with a matching hash
 # TODO: Calculate and verify mulitpart hash.  Currently only checking parts.
-# TODO: Abort abandoned multipart uploads.
 # TODO: Add parallel uploads of multipart parts.
 # TODO: Automatic retries for failed parts.
-
-# TODO: Replace with correct value for a object storage unit
 
 
 class MultipartObjectAssembler:
@@ -28,13 +25,30 @@ class MultipartObjectAssembler:
                  namespace_name,
                  bucket_name,
                  object_name,
-                 part_size=None
+                 part_size=None,
+                 if_match=None,
+                 if_none_match=None,
+                 opc_client_request_id=None,
+                 content_type=None,
+                 content_language=None,
+                 content_encoding=None,
+                 metadata=None
                  ):
         self.object_storage_client = object_storage_client
+
         if part_size:
             self.part_size = part_size
         else:
             self.part_size = DEFAULT_PART_SIZE
+
+        self.if_match = if_match
+        self.if_none_match = if_none_match
+        self.opc_client_request_id = opc_client_request_id
+        self.content_type = content_type
+        self.content_language = content_language
+        self.content_encoding = content_encoding
+        self.metadata = metadata
+
         self.manifest = {"uploadId": None,
                          "namespace": namespace_name,
                          "bucketName": bucket_name,
@@ -49,26 +63,26 @@ class MultipartObjectAssembler:
         return base64.b64encode(m.digest()).decode("utf-8")
 
     def add_parts_from_file(self, filepath):
-        with io.open(filepath, mode='rb') as file:
-            file.seek(0, io.SEEK_END)
-            end = file.tell()
-            file.seek(0, io.SEEK_SET)
+        with io.open(filepath, mode='rb') as file_object:
+            file_object.seek(0, io.SEEK_END)
+            end = file_object.tell()
+            file_object.seek(0, io.SEEK_SET)
             offset = 0
-            while file.tell() < end:
+            while file_object.tell() < end:
                 self.add_part(filepath, offset=offset, size=self.part_size)
                 offset += self.part_size
-                file.seek(offset, io.SEEK_SET)
+                file_object.seek(offset, io.SEEK_SET)
 
     def add_part(self,
-                 file,
+                 file_object,
                  offset=0,
                  size=None,
                  part_hash=None):
 
         if size is None:
-            size = stat(file.name).st_size
+            size = stat(file_object.fileno()).st_size
 
-        self.manifest["parts"].append({"file": file,
+        self.manifest["parts"].append({"file": file_object,
                                        "offset": offset,
                                        "size": size,
                                        "hash": part_hash})
@@ -76,10 +90,15 @@ class MultipartObjectAssembler:
     def abort(self):
         # TODO: verify that there is an upload ID before trying to abort the upload
 
+        kwargs = {}
+        if self.opc_client_request_id:
+            kwargs['opc_client_request_id'] = self.opc_client_request_id
+
         self.object_storage_client.abort_multipart_upload(self.manifest["namespace"],
                                                           self.manifest["bucketName"],
                                                           self.manifest["objectName"],
-                                                          self.manifest["uploadId"])
+                                                          self.manifest["uploadId"],
+                                                          **kwargs)
 
     def resume(self, upload_id=None):
         if upload_id:
@@ -87,14 +106,20 @@ class MultipartObjectAssembler:
 
         # Verify that the upload id is valid
         if self.manifest["uploadId"] is None:
-            raise RuntimeError("Cannot resume with out an upload id.")
+            raise RuntimeError("Cannot resume without an upload id.")
+
+        kwargs = {}
+        if self.opc_client_request_id:
+            kwargs['opc_client_request_id'] = self.opc_client_request_id
 
         # Get parts details from object storage to see which parts didn't complete
+        # TODO: page through results as there may be multiple pages of parts.
         try:
             response = self.object_storage_client.list_multipart_upload_parts(self.manifest["namespace"],
                                                                               self.manifest["bucketName"],
                                                                               self.manifest["objectName"],
-                                                                              self.manifest["uploadId"])
+                                                                              self.manifest["uploadId"],
+                                                                              **kwargs)
         except ServiceError as e:
             raise e
         else:
@@ -115,19 +140,37 @@ class MultipartObjectAssembler:
     def new_upload(self):
         request = models.CreateMultipartUploadDetails()
         request.object = self.manifest["objectName"]
+        if self.content_type:
+            request.content_type = self.content_type
+        if self.content_language:
+            request.content_language = self.content_language
+        if self.content_encoding:
+            request.content_encoding = self.content_encoding
+        if self.metadata:
+            request.metadata = self.metadata
 
-        try:
-            response = self.object_storage_client.create_multipart_upload(self.manifest["namespace"],
-                                                                          self.manifest["bucketName"],
-                                                                          request)
-        except Exception as e:
-            raise e
-        else:
-            self.manifest["uploadId"] = response.data.upload_id
-            print("Upload ID: {}".format(self.manifest["uploadId"]), file=sys.stderr)
+        kwargs = {}
+        if self.opc_client_request_id:
+            kwargs['opc_client_request_id'] = self.opc_client_request_id
+
+        response = self.object_storage_client.create_multipart_upload(self.manifest["namespace"],
+                                                                      self.manifest["bucketName"],
+                                                                      request,
+                                                                      **kwargs)
+
+        self.manifest["uploadId"] = response.data.upload_id
+
+        # TODO: provide a better way to notify the CLI user of the upload id
+        print("Upload ID: {}".format(self.manifest["uploadId"]), file=sys.stderr)
 
     def upload_part(self, part, part_num):
+        # TODO: Determine how to provide this information to a CLI user, without printing
         print("uploading part: {}".format(part_num), file=sys.stderr)
+
+        kwargs = {'content_md5': part["hash"]}
+        if self.opc_client_request_id:
+            kwargs['opc_client_request_id'] = self.opc_client_request_id
+
         with io.open(part["file"], mode='rb') as file:
             file.seek(part["offset"], io.SEEK_SET)
             response = self.object_storage_client.upload_part(self.manifest["namespace"],
@@ -135,18 +178,15 @@ class MultipartObjectAssembler:
                                                               self.manifest["objectName"],
                                                               self.manifest["uploadId"],
                                                               part_num,
-                                                              file.read(part["size"]))
+                                                              file.read(part["size"]),
+                                                              **kwargs)
 
-        # TODO: Handle any issues if the upload didn't work
         if response.status == 200:
             part["etag"] = response.headers['etag']
             part["opc_md5"] = str(response.headers['opc-content-md5'])
-            if part["hash"] != part["opc_md5"]:
-                # TODO: throw an error if the hashes do not agree
-                print("Upload for part {} failed with hash mismatch".format(part_num), file=sys.stderr)
-                print("{} vs {}".format(part["hash"], part["opc_md5"]), file=sys.stderr)
-            else:
-                print("Part {} uploaded successfully".format(part_num), file=sys.stderr)
+
+        # TODO: Determine how to provide this information to a CLI user, without printing
+        print("Part {} uploaded successfully".format(part_num), file=sys.stderr)
 
     def upload(self):
         # TODO: Determine correct action if there is no uploadId in the manifest.
@@ -164,14 +204,13 @@ class MultipartObjectAssembler:
 
             if "opc_md5" not in part:
                 self.upload_part(part, part_num + 1)
-            elif part["hash"] != part["opc_md5"]:
-                raise RuntimeError("The local part does not match the part already uploaded to object storage")
 
     def commit(self):
         # Prepare to commit the upload
         commit_details = models.CommitMultipartUploadDetails()
 
         # Determine which parts to commit and which parts to exclude.
+        # TODO: Are there ever parts_to_exclude?
         parts_to_commit = []
         parts_to_exclude = []
         for partNum, part in enumerate(self.manifest["parts"]):
@@ -186,12 +225,15 @@ class MultipartObjectAssembler:
         commit_details.parts_to_commit = parts_to_commit
         commit_details.parts_to_exclude = parts_to_exclude
 
+        kwargs = {}
+        if self.opc_client_request_id:
+            kwargs['opc_client_request_id'] = self.opc_client_request_id
+
         # Commit the multipart upload
         response = self.object_storage_client.commit_multipart_upload(self.manifest["namespace"],
                                                                       self.manifest["bucketName"],
                                                                       self.manifest["objectName"],
                                                                       self.manifest["uploadId"],
-                                                                      commit_details)
-
-        if response.status == 200:
-            print("Commit successful for upload id {}".format(self.manifest["uploadId"]), file=sys.stderr)
+                                                                      commit_details,
+                                                                      **kwargs)
+        return response
