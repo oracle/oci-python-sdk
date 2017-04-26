@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+ 1.3.1 - 2017-04-27
+====================
+
+-------
+ Changed
+-------
+
+* No longer throwing exceptions for unrecognized enum values returned by services.  Any unrecognized enum value returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'
+
+====================
  1.3.0 - 2017-04-06
 ====================
 
