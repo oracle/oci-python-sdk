@@ -189,6 +189,12 @@ class VnicAttachment(object):
         :param lifecycle_state: The lifecycle_state of this VnicAttachment.
         :type: str
         """
+        allowed_values = ["ATTACHING", "ATTACHED", "DETACHING", "DETACHED"]
+        if lifecycle_state not in allowed_values:
+            raise ValueError(
+                "Invalid value for `lifecycle_state`, must be one of {0}"
+                .format(allowed_values)
+            )
         self._lifecycle_state = lifecycle_state
 
     @property
