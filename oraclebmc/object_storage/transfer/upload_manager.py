@@ -16,8 +16,7 @@ class UploadManager:
                file,
                part_size=DEFAULT_PART_SIZE):
 
-        if part_size < OBJECT_USE_MULTIPART_SIZE or \
-                        os.fstat(file.fileno()).st_size >= OBJECT_USE_MULTIPART_SIZE:
+        if part_size < OBJECT_USE_MULTIPART_SIZE or os.fstat(file.fileno()).st_size >= OBJECT_USE_MULTIPART_SIZE:
 
             ma = MultipartObjectAssembler(object_storage_client, namespace_name, bucket_name, object_name, part_size)
             ma.new_upload()
