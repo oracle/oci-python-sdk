@@ -18,13 +18,6 @@ COMPARTMENT_NAME = 'PythonSDKTestCompartment'
 AVAILABILITY_DOMAIN = 'kIdk:PHX-AD-2'
 
 
-# Tests marked with @slow will only be skipped if '--fast' is specified for the test run.
-slow = pytest.mark.skipif(
-    pytest.config.getoption("--fast"),
-    reason="Slow tests are skipped when using the --fast option."
-)
-
-
 def random_name(prefix, insert_underscore=True):
     return prefix + ('_' if insert_underscore else '') + str(random.randint(0, 1000000))
 

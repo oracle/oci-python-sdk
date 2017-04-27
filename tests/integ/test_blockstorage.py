@@ -7,7 +7,6 @@ import oraclebmc
 
 class TestBlockStorage:
 
-    @util.slow
     def test_all_operations(self, block_storage):
         try:
             self.subtest_volume_operations(block_storage)

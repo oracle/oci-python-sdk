@@ -8,7 +8,6 @@ import oraclebmc
 
 class TestCompute:
 
-    @util.slow
     def test_all_operations(self, block_storage, compute, virtual_network):
         try:
             self.subtest_setup(block_storage, virtual_network)
