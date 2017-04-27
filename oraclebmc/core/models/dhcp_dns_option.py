@@ -73,6 +73,9 @@ class DhcpDnsOption(DhcpOption):
 
         __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
 
+        Allowed values for this property are: "VcnLocal", "VcnLocalPlusInternet", "CustomDnsServer", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        
 
         :return: The server_type of this DhcpDnsOption.
         :rtype: str
@@ -106,10 +109,7 @@ class DhcpDnsOption(DhcpOption):
         """
         allowed_values = ["VcnLocal", "VcnLocalPlusInternet", "CustomDnsServer"]
         if server_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `server_type`, must be one of {0}"
-                .format(allowed_values)
-            )
+            server_type = 'UNKNOWN_ENUM_VALUE'
         self._server_type = server_type
 
     def __repr__(self):

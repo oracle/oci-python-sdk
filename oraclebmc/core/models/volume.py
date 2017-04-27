@@ -143,6 +143,9 @@ class Volume(object):
         Gets the lifecycle_state of this Volume.
         The current state of a volume.
 
+        Allowed values for this property are: "PROVISIONING", "RESTORING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAULTY", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        
 
         :return: The lifecycle_state of this Volume.
         :rtype: str
@@ -161,10 +164,7 @@ class Volume(object):
         """
         allowed_values = ["PROVISIONING", "RESTORING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAULTY"]
         if lifecycle_state not in allowed_values:
-            raise ValueError(
-                "Invalid value for `lifecycle_state`, must be one of {0}"
-                .format(allowed_values)
-            )
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
 
     @property
