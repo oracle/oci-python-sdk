@@ -12,7 +12,7 @@ The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
  Changed
 -------
 
-* No longer throwing exceptions for unrecognized enum values returned by services.  Any unrecognized enum value returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'
+* No longer throwing exceptions for unrecognized enum values returned by services.  Any unrecognized enum value returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 ====================
  1.3.0 - 2017-04-06
