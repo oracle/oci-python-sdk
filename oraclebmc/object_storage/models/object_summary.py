@@ -80,7 +80,7 @@ class ObjectSummary(object):
     def md5(self):
         """
         Gets the md5 of this ObjectSummary.
-        Base64-encoded MD5 hash of the object data.
+        Base64 encoded MD5 hash of the object data.
 
 
         :return: The md5 of this ObjectSummary.
@@ -92,7 +92,7 @@ class ObjectSummary(object):
     def md5(self, md5):
         """
         Sets the md5 of this ObjectSummary.
-        Base64-encoded MD5 hash of the object data.
+        Base64 encoded MD5 hash of the object data.
 
 
         :param md5: The md5 of this ObjectSummary.

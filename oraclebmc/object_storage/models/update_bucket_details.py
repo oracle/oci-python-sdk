@@ -77,7 +77,7 @@ class UpdateBucketDetails(object):
     def metadata(self):
         """
         Gets the metadata of this UpdateBucketDetails.
-        Arbitrary string, up to 4KB, of keys and values for user-defined metadata.
+        Arbitrary string keys and values for the user-defined metadata.
 
 
         :return: The metadata of this UpdateBucketDetails.
@@ -89,7 +89,7 @@ class UpdateBucketDetails(object):
     def metadata(self, metadata):
         """
         Sets the metadata of this UpdateBucketDetails.
-        Arbitrary string, up to 4KB, of keys and values for user-defined metadata.
+        Arbitrary string keys and values for the user-defined metadata.
 
 
         :param metadata: The metadata of this UpdateBucketDetails.
