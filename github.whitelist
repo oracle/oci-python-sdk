@@ -12,6 +12,7 @@
 
 
 ^tests/[^/]*\.py$
+^tests/integ/__init__.py$
 ^tests/integ/test_large_file_transfer.py$
 ^tests/integ/test_launch_instance_tutorial.py$
 
