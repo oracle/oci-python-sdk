@@ -12,7 +12,8 @@
 
 
 ^tests/[^/]*\.py$
-^tests/integ/.*\.py$
+^tests/integ/test_large_file_transfer.py$
+^tests/integ/test_launch_instance_tutorial.py$
 
 
 ^\.gitignore$
