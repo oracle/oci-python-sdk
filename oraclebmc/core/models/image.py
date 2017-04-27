@@ -179,6 +179,9 @@ class Image(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this Image.
+        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "DISABLED", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
 
         :return: The lifecycle_state of this Image.
         :rtype: str
@@ -195,10 +198,7 @@ class Image(object):
         """
         allowed_values = ["PROVISIONING", "AVAILABLE", "DISABLED", "DELETED"]
         if lifecycle_state not in allowed_values:
-            raise ValueError(
-                "Invalid value for `lifecycle_state`, must be one of {0}"
-                .format(allowed_values)
-            )
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
 
     @property

@@ -173,6 +173,9 @@ class VnicAttachment(object):
         Gets the lifecycle_state of this VnicAttachment.
         The current state of the VNIC attachment.
 
+        Allowed values for this property are: "ATTACHING", "ATTACHED", "DETACHING", "DETACHED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
 
         :return: The lifecycle_state of this VnicAttachment.
         :rtype: str
@@ -191,10 +194,7 @@ class VnicAttachment(object):
         """
         allowed_values = ["ATTACHING", "ATTACHED", "DETACHING", "DETACHED"]
         if lifecycle_state not in allowed_values:
-            raise ValueError(
-                "Invalid value for `lifecycle_state`, must be one of {0}"
-                .format(allowed_values)
-            )
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
 
     @property
