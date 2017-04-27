@@ -172,7 +172,7 @@ class Compartment(object):
 
         Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
-        
+
 
         :return: The lifecycle_state of this Compartment.
         :rtype: str

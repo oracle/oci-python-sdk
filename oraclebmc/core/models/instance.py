@@ -255,7 +255,7 @@ class Instance(object):
 
         Allowed values for this property are: "PROVISIONING", "RUNNING", "STARTING", "STOPPING", "STOPPED", "CREATING_IMAGE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
-        
+
 
         :return: The lifecycle_state of this Instance.
         :rtype: str

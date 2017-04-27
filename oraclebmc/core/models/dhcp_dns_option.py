@@ -75,7 +75,7 @@ class DhcpDnsOption(DhcpOption):
 
         Allowed values for this property are: "VcnLocal", "VcnLocalPlusInternet", "CustomDnsServer", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
-        
+
 
         :return: The server_type of this DhcpDnsOption.
         :rtype: str

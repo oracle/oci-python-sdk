@@ -143,7 +143,7 @@ class InternetGateway(object):
 
         Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
-        
+
 
         :return: The lifecycle_state of this InternetGateway.
         :rtype: str

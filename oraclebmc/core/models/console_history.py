@@ -173,7 +173,7 @@ class ConsoleHistory(object):
 
         Allowed values for this property are: "REQUESTED", "GETTING-HISTORY", "SUCCEEDED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
-        
+
 
         :return: The lifecycle_state of this ConsoleHistory.
         :rtype: str

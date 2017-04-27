@@ -181,7 +181,7 @@ class Image(object):
         Gets the lifecycle_state of this Image.
         Allowed values for this property are: "PROVISIONING", "AVAILABLE", "DISABLED", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
-        
+
 
         :return: The lifecycle_state of this Image.
         :rtype: str

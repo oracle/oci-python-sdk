@@ -64,7 +64,7 @@ class TunnelStatus(object):
 
         Allowed values for this property are: "UP", "DOWN", "DOWN_FOR_MAINTENANCE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
-        
+
 
         :return: The lifecycle_state of this TunnelStatus.
         :rtype: str
