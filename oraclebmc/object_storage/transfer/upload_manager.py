@@ -47,11 +47,12 @@ class UploadManager:
             else:
                 response = object_storage_client.put_object(namespace_name, bucket_name, object_name, file_object, **kwargs)
         else:
+            kwargs['part_size'] = part_size
             ma = MultipartObjectAssembler(object_storage_client,
                                           namespace_name,
                                           bucket_name,
                                           object_name,
-                                          part_size)
+                                          **kwargs)
             ma.new_upload()
             # file_object is a buffered reader when coming from CLI, so we need access to the underlying file.
             # TODO: make this more generic for non-CLI uses.

@@ -1,8 +1,6 @@
 # coding: utf-8
 # Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
-from __future__ import print_function
-import sys
 import io
 import hashlib
 import base64
@@ -24,29 +22,35 @@ class MultipartObjectAssembler:
                  namespace_name,
                  bucket_name,
                  object_name,
-                 part_size=None,
-                 if_match=None,
-                 if_none_match=None,
-                 opc_client_request_id=None,
-                 content_type=None,
-                 content_language=None,
-                 content_encoding=None,
-                 metadata=None
+                 **kwargs
                  ):
         self.object_storage_client = object_storage_client
 
-        if part_size:
-            self.part_size = part_size
-        else:
-            self.part_size = DEFAULT_PART_SIZE
+        self.part_size = DEFAULT_PART_SIZE
+        if 'part_size' in kwargs:
+            self.part_size = kwargs['part_size']
 
-        self.if_match = if_match
-        self.if_none_match = if_none_match
-        self.opc_client_request_id = opc_client_request_id
-        self.content_type = content_type
-        self.content_language = content_language
-        self.content_encoding = content_encoding
-        self.metadata = metadata
+        self.if_match = None
+        if 'if_match' in kwargs:
+            self.if_match = kwargs['if_match']
+        self.in_non_match = None
+        if 'in_non_match' in kwargs:
+            self.if_none_match = kwargs['if_none_match']
+        self.opc_client_request_id = None
+        if 'opc_client_request_id' in kwargs:
+            self.opc_client_request_id = kwargs['opc_client_request_id']
+        self.content_type = None
+        if 'content_type' in kwargs:
+            self.content_type = kwargs['content_type']
+        self.content_language = None
+        if 'content_language' in kwargs:
+            self.content_language = kwargs['content_language']
+        self.content_encoding = None
+        if 'content_encoding' in kwargs:
+            self.content_encoding = kwargs['content_encoding']
+        self.metadata = None
+        if 'metadata' in kwargs:
+            self.metadata = kwargs['metadata']
 
         self.manifest = {"uploadId": None,
                          "namespace": namespace_name,
@@ -54,6 +58,7 @@ class MultipartObjectAssembler:
                          "objectName": object_name,
                          "parts": []}
 
+    @staticmethod
     def calculate_md5(self, file, offset, chunk):
         m = hashlib.md5()
         with io.open(file, mode='rb') as f:
@@ -159,11 +164,11 @@ class MultipartObjectAssembler:
         self.manifest["uploadId"] = response.data.upload_id
 
         # TODO: provide a better way to notify the CLI user of the upload id
-        print("Upload ID: {}".format(self.manifest["uploadId"]), file=sys.stderr)
+        # print("Upload ID: {}".format(self.manifest["uploadId"]), file=sys.stderr)
 
     def upload_part(self, part, part_num):
         # TODO: Determine how to provide this information to a CLI user, without printing
-        print("uploading part: {}".format(part_num), file=sys.stderr)
+        # print("uploading part: {}".format(part_num), file=sys.stderr)
 
         kwargs = {'content_md5': part["hash"]}
         if self.opc_client_request_id:
@@ -184,7 +189,7 @@ class MultipartObjectAssembler:
             part["opc_md5"] = str(response.headers['opc-content-md5'])
 
         # TODO: Determine how to provide this information to a CLI user, without printing
-        print("Part {} uploaded successfully".format(part_num), file=sys.stderr)
+        # print("Part {} uploaded successfully".format(part_num), file=sys.stderr)
 
     def upload(self):
         # TODO: Determine correct action if there is no uploadId in the manifest.
