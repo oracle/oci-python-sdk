@@ -170,6 +170,9 @@ class User(object):
         The user's current state. After creating a user, make sure its `lifecycleState` changes from CREATING to
         ACTIVE before using it.
 
+        Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
 
         :return: The lifecycle_state of this User.
         :rtype: str
@@ -189,10 +192,7 @@ class User(object):
         """
         allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED"]
         if lifecycle_state not in allowed_values:
-            raise ValueError(
-                "Invalid value for `lifecycle_state`, must be one of {0}"
-                .format(allowed_values)
-            )
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
 
     @property
