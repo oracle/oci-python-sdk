@@ -59,7 +59,7 @@ class MultipartObjectAssembler:
                          "parts": []}
 
     @staticmethod
-    def calculate_md5(self, file, offset, chunk):
+    def calculate_md5(file, offset, chunk):
         m = hashlib.md5()
         with io.open(file, mode='rb') as f:
             f.seek(offset, io.SEEK_SET)
@@ -117,28 +117,31 @@ class MultipartObjectAssembler:
             kwargs['opc_client_request_id'] = self.opc_client_request_id
 
         # Get parts details from object storage to see which parts didn't complete
-        # TODO: page through results as there may be multiple pages of parts.
-        try:
-            response = self.object_storage_client.list_multipart_upload_parts(self.manifest["namespace"],
-                                                                              self.manifest["bucketName"],
-                                                                              self.manifest["objectName"],
-                                                                              self.manifest["uploadId"],
-                                                                              **kwargs)
-        except ServiceError as e:
-            raise e
-        else:
-            # Update manifest with information from object storage
-            parts = self.manifest["parts"]
-            for part in response.data:
-                part_index = part.part_number - 1
-                if -1 < part_index < len(parts):
-                    manifest_part = parts[part_index]
-                    manifest_part["etag"] = part.etag
-                    manifest_part["opc_md5"] = part.md5
+        has_next_page = True
+        while has_next_page:
+            try:
+                response = self.object_storage_client.list_multipart_upload_parts(self.manifest["namespace"],
+                                                                                  self.manifest["bucketName"],
+                                                                                  self.manifest["objectName"],
+                                                                                  self.manifest["uploadId"],
+                                                                                  **kwargs)
+            except ServiceError as e:
+                raise e
+            else:
+                # Update manifest with information from object storage
+                parts = self.manifest["parts"]
+                for part in response.data:
+                    part_index = part.part_number - 1
+                    if -1 < part_index < len(parts):
+                        manifest_part = parts[part_index]
+                        manifest_part["etag"] = part.etag
+                        manifest_part["opc_md5"] = part.md5
+                has_next_page = response.has_next_page
+                kwargs['page'] = response.next_page
 
-            # Upload parts that are missing or incomplete
-            # print("Resuming upload for upload id: {}".format(self.manifest["uploadId"]))
-            self.upload()
+        # Upload parts that are missing or incomplete
+        # print("Resuming upload for upload id: {}".format(self.manifest["uploadId"]))
+        self.upload()
 
     def new_upload(self):
         request = models.CreateMultipartUploadDetails()
