@@ -32,8 +32,8 @@ class MultipartObjectAssembler:
         self.if_match = None
         if 'if_match' in kwargs:
             self.if_match = kwargs['if_match']
-        self.in_none_match = None
-        if 'in_none_match' in kwargs:
+        self.if_none_match = None
+        if 'if_none_match' in kwargs:
             self.if_none_match = kwargs['if_none_match']
         self.opc_client_request_id = None
         if 'opc_client_request_id' in kwargs:

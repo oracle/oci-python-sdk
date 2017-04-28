@@ -36,6 +36,10 @@ class UploadManager:
 
         file_size = os.fstat(file_object.fileno()).st_size
         if file_size < part_size or no_multipart:
+            # put_object expects 'opc_meta' not metadata
+            if 'metadata' in kwargs:
+                kwargs['opc_meta'] = kwargs['metadata']
+                kwargs.pop('metadata')
             if progress_bar:
                 with progress_bar(total_bytes=file_size, label='Uploading object') as bar:
                     wrapped_file = FileReadCallbackStream(file_object, lambda bytes_read: bar.update(bytes_read))
@@ -48,11 +52,6 @@ class UploadManager:
                 response = object_storage_client.put_object(namespace_name, bucket_name, object_name, file_object, **kwargs)
         else:
             kwargs['part_size'] = part_size
-
-            # CLI passes in 'opc_meta', but multipart uses 'metadata'
-            if 'opc_meta' in kwargs and 'metadata' not in kwargs:
-                kwargs['metadata'] = kwargs['opc_meta']
-                kwargs.pop('opc_meta')
 
             ma = MultipartObjectAssembler(object_storage_client,
                                           namespace_name,
