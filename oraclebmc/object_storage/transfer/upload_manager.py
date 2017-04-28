@@ -48,6 +48,12 @@ class UploadManager:
                 response = object_storage_client.put_object(namespace_name, bucket_name, object_name, file_object, **kwargs)
         else:
             kwargs['part_size'] = part_size
+
+            # CLI passes in 'opc_meta', but multipart uses 'metadata'
+            if 'opc_meta' in kwargs and 'metadata' not in kwargs:
+                kwargs['metadata'] = kwargs['opc_meta']
+                kwargs.pop('opc_meta')
+
             ma = MultipartObjectAssembler(object_storage_client,
                                           namespace_name,
                                           bucket_name,

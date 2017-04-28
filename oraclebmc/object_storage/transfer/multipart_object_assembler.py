@@ -7,7 +7,6 @@ import base64
 from os import stat
 from .constants import DEFAULT_PART_SIZE
 from .. import models
-from ...exceptions import ServiceError
 
 # TODO: Add docstrings to everything.
 # TODO: Calculate and verify mulitpart hash.  Currently only checking parts.
@@ -33,8 +32,8 @@ class MultipartObjectAssembler:
         self.if_match = None
         if 'if_match' in kwargs:
             self.if_match = kwargs['if_match']
-        self.in_non_match = None
-        if 'in_non_match' in kwargs:
+        self.in_none_match = None
+        if 'in_none_match' in kwargs:
             self.if_none_match = kwargs['if_none_match']
         self.opc_client_request_id = None
         if 'opc_client_request_id' in kwargs:
@@ -119,25 +118,21 @@ class MultipartObjectAssembler:
         # Get parts details from object storage to see which parts didn't complete
         has_next_page = True
         while has_next_page:
-            try:
-                response = self.object_storage_client.list_multipart_upload_parts(self.manifest["namespace"],
-                                                                                  self.manifest["bucketName"],
-                                                                                  self.manifest["objectName"],
-                                                                                  self.manifest["uploadId"],
-                                                                                  **kwargs)
-            except ServiceError as e:
-                raise e
-            else:
-                # Update manifest with information from object storage
-                parts = self.manifest["parts"]
-                for part in response.data:
-                    part_index = part.part_number - 1
-                    if -1 < part_index < len(parts):
-                        manifest_part = parts[part_index]
-                        manifest_part["etag"] = part.etag
-                        manifest_part["opc_md5"] = part.md5
-                has_next_page = response.has_next_page
-                kwargs['page'] = response.next_page
+            response = self.object_storage_client.list_multipart_upload_parts(self.manifest["namespace"],
+                                                                              self.manifest["bucketName"],
+                                                                              self.manifest["objectName"],
+                                                                              self.manifest["uploadId"],
+                                                                              **kwargs)
+            # Update manifest with information from object storage
+            parts = self.manifest["parts"]
+            for part in response.data:
+                part_index = part.part_number - 1
+                if -1 < part_index < len(parts):
+                    manifest_part = parts[part_index]
+                    manifest_part["etag"] = part.etag
+                    manifest_part["opc_md5"] = part.md5
+            has_next_page = response.has_next_page
+            kwargs['page'] = response.next_page
 
         # Upload parts that are missing or incomplete
         # print("Resuming upload for upload id: {}".format(self.manifest["uploadId"]))
