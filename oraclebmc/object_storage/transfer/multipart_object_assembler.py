@@ -1,17 +1,18 @@
 # coding: utf-8
 # Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
+from __future__ import print_function
 import io
 import hashlib
 import base64
 from os import stat
 from .constants import DEFAULT_PART_SIZE
 from .. import models
+from ...exceptions import ServiceError
 
 # TODO: Add docstrings to everything.
 # TODO: Calculate and verify mulitpart hash.  Currently only checking parts.
 # TODO: Add parallel uploads of multipart parts.
-# TODO: Automatic retries for failed parts.
 
 
 class MultipartObjectAssembler:
@@ -50,7 +51,11 @@ class MultipartObjectAssembler:
         self.metadata = None
         if 'metadata' in kwargs:
             self.metadata = kwargs['metadata']
+        self.progress = None
+        if 'progress' in kwargs:
+            self.progress = kwargs['progress']
 
+        self.retries = 3
         self.manifest = {"uploadId": None,
                          "namespace": namespace_name,
                          "bucketName": bucket_name,
@@ -135,7 +140,7 @@ class MultipartObjectAssembler:
             kwargs['page'] = response.next_page
 
         # Upload parts that are missing or incomplete
-        # print("Resuming upload for upload id: {}".format(self.manifest["uploadId"]))
+        # print("Resuming upload for upload id: {}".format(self.manifest["uploadId"]), file=sys.stderr)
         self.upload()
 
     def new_upload(self):
@@ -172,15 +177,26 @@ class MultipartObjectAssembler:
         if self.opc_client_request_id:
             kwargs['opc_client_request_id'] = self.opc_client_request_id
 
-        with io.open(part["file"], mode='rb') as file:
-            file.seek(part["offset"], io.SEEK_SET)
-            response = self.object_storage_client.upload_part(self.manifest["namespace"],
-                                                              self.manifest["bucketName"],
-                                                              self.manifest["objectName"],
-                                                              self.manifest["uploadId"],
-                                                              part_num,
-                                                              file.read(part["size"]),
-                                                              **kwargs)
+        remaining_tries = self.retries
+        while remaining_tries > 0:
+            with io.open(part["file"], mode='rb') as file:
+                file.seek(part["offset"], io.SEEK_SET)
+                try:
+                    response = self.object_storage_client.upload_part(self.manifest["namespace"],
+                                                                      self.manifest["bucketName"],
+                                                                      self.manifest["objectName"],
+                                                                      self.manifest["uploadId"],
+                                                                      part_num,
+                                                                      file.read(part["size"]),
+                                                                      **kwargs)
+                except ServiceError as e:
+                    # TODO: Java implementation also checks for timeout and unknown client exception
+                    if remaining_tries > 1 and (e.status >= 500 or e.status == 409):
+                        remaining_tries -= 1
+                    else:
+                        raise e
+                else:
+                    break
 
         if response.status == 200:
             part["etag"] = response.headers['etag']
@@ -205,6 +221,9 @@ class MultipartObjectAssembler:
 
             if "opc_md5" not in part:
                 self.upload_part(part, part_num + 1)
+
+            if self.progress:
+                self.progress.update(part["size"])
 
     def commit(self):
         # Prepare to commit the upload

@@ -1,6 +1,7 @@
 # coding: utf-8
 # Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
+from __future__ import print_function
 import os
 from .multipart_object_assembler import MultipartObjectAssembler
 from .constants import DEFAULT_PART_SIZE
@@ -19,10 +20,10 @@ class UploadManager:
                file_object,
                **kwargs):
 
-        progress_bar = None
-        if 'progress_bar' in kwargs:
-            progress_bar = kwargs['progress_bar']
-            kwargs.pop('progress_bar')
+        progress = None
+        if 'progress' in kwargs:
+            progress = kwargs['progress']
+            kwargs.pop('progress')
 
         no_multipart = False
         if 'no_multipart' in kwargs:
@@ -40,18 +41,18 @@ class UploadManager:
             if 'metadata' in kwargs:
                 kwargs['opc_meta'] = kwargs['metadata']
                 kwargs.pop('metadata')
-            if progress_bar:
-                with progress_bar(total_bytes=file_size, label='Uploading object') as bar:
-                    wrapped_file = FileReadCallbackStream(file_object, lambda bytes_read: bar.update(bytes_read))
-                    response = object_storage_client.put_object(namespace_name,
-                                                                bucket_name,
-                                                                object_name,
-                                                                wrapped_file,
-                                                                **kwargs)
+            if progress:
+                wrapped_file = FileReadCallbackStream(file_object, lambda bytes_read: progress.update(bytes_read))
+                response = object_storage_client.put_object(namespace_name,
+                                                            bucket_name,
+                                                            object_name,
+                                                            wrapped_file,
+                                                            **kwargs)
             else:
                 response = object_storage_client.put_object(namespace_name, bucket_name, object_name, file_object, **kwargs)
         else:
             kwargs['part_size'] = part_size
+            kwargs['progress'] = progress
 
             ma = MultipartObjectAssembler(object_storage_client,
                                           namespace_name,
@@ -59,6 +60,9 @@ class UploadManager:
                                           object_name,
                                           **kwargs)
             ma.new_upload()
+            if progress:
+                progress.label = ma.manifest["uploadId"]
+                progress.update(0)
             # file_object is a buffered reader when coming from CLI, so we need access to the underlying file.
             # TODO: make this more generic for non-CLI uses.
             ma.add_parts_from_file(file_object.name)
