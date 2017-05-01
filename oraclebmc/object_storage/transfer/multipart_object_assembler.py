@@ -1,12 +1,12 @@
 # coding: utf-8
 # Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
-from __future__ import print_function
 import io
 import hashlib
 import base64
 from os import stat
 from .constants import DEFAULT_PART_SIZE
+from .constants import MEBIBYTE
 from .. import models
 from ...exceptions import ServiceError
 
@@ -55,7 +55,7 @@ class MultipartObjectAssembler:
         if 'progress' in kwargs:
             self.progress = kwargs['progress']
 
-        self.retries = 3
+        self.max_retries = 3
         self.manifest = {"uploadId": None,
                          "namespace": namespace_name,
                          "bucketName": bucket_name,
@@ -134,8 +134,12 @@ class MultipartObjectAssembler:
                 part_index = part.part_number - 1
                 if -1 < part_index < len(parts):
                     manifest_part = parts[part_index]
+                    if manifest_part["size"] != part.size:
+                        raise RuntimeError('Cannot resume upload with different part size.  Parts were uploaded with with a part size of {} MiB'.format(part.size / MEBIBYTE))
                     manifest_part["etag"] = part.etag
                     manifest_part["opc_md5"] = part.md5
+                elif part_index >= len(parts):
+                    raise RuntimeError('There are more parts parts on the server than parts to resume, please check the upload ID.')
             has_next_page = response.has_next_page
             kwargs['page'] = response.next_page
 
@@ -177,7 +181,7 @@ class MultipartObjectAssembler:
         if self.opc_client_request_id:
             kwargs['opc_client_request_id'] = self.opc_client_request_id
 
-        remaining_tries = self.retries
+        remaining_tries = self.max_retries
         while remaining_tries > 0:
             with io.open(part["file"], mode='rb') as file:
                 file.seek(part["offset"], io.SEEK_SET)
