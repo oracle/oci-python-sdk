@@ -9,6 +9,7 @@ from .constants import DEFAULT_PART_SIZE
 from .constants import MEBIBYTE
 from .. import models
 from ...exceptions import ServiceError
+from requests.exceptions import Timeout
 
 # TODO: Add docstrings to everything.
 # TODO: Calculate and verify mulitpart hash.  Currently only checking parts.
@@ -70,6 +71,31 @@ class MultipartObjectAssembler:
             m.update(f.read(chunk))
         return base64.b64encode(m.digest()).decode("utf-8")
 
+    @staticmethod
+    def _isExceptionRetryable(e):
+
+        """
+        Determines if the service should attempt to retry an opperation based
+         on the type of exception
+
+        retry if
+           timeout
+           unknown client exception: status == -1
+           server exception: status >= 500
+           Potential edge case: status == 409
+
+        :param e: Exception
+        :return: Boolean
+        """
+        retryable = False
+        if isinstance(e, Timeout):
+            retryable = True
+        elif isinstance(e, ServiceError):
+            if e.status >= 500 or e.status == -1 or (e.status == 409 and e.code == "ConcurrentObjectUpdate"):
+                retryable = True
+
+        return retryable
+
     def add_parts_from_file(self, filepath):
         with io.open(filepath, mode='rb') as file_object:
             file_object.seek(0, io.SEEK_END)
@@ -114,7 +140,7 @@ class MultipartObjectAssembler:
 
         # Verify that the upload id is valid
         if self.manifest["uploadId"] is None:
-            raise RuntimeError("Cannot resume without an upload id.")
+            raise ValueError("Cannot resume without an upload id.")
 
         kwargs = {}
         if self.opc_client_request_id:
@@ -135,11 +161,11 @@ class MultipartObjectAssembler:
                 if -1 < part_index < len(parts):
                     manifest_part = parts[part_index]
                     if manifest_part["size"] != part.size:
-                        raise RuntimeError('Cannot resume upload with different part size.  Parts were uploaded with with a part size of {} MiB'.format(part.size / MEBIBYTE))
+                        raise ValueError('Cannot resume upload with different part size. Parts were uploaded with a part size of {} MiB'.format(part.size / MEBIBYTE))
                     manifest_part["etag"] = part.etag
                     manifest_part["opc_md5"] = part.md5
                 elif part_index >= len(parts):
-                    raise RuntimeError('There are more parts parts on the server than parts to resume, please check the upload ID.')
+                    raise ValueError('There are more parts on the server than parts to resume, please check the upload ID.')
             has_next_page = response.has_next_page
             kwargs['page'] = response.next_page
 
@@ -193,12 +219,11 @@ class MultipartObjectAssembler:
                                                                       part_num,
                                                                       file.read(part["size"]),
                                                                       **kwargs)
-                except ServiceError as e:
-                    # TODO: Java implementation also checks for timeout and unknown client exception
-                    if remaining_tries > 1 and (e.status >= 500 or e.status == 409):
+                except Exception as e:
+                    if self._isExceptionRetryable(e) and remaining_tries > 1:
                         remaining_tries -= 1
                     else:
-                        raise e
+                        raise
                 else:
                     break
 
