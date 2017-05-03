@@ -1,7 +1,6 @@
 # coding: utf-8
 # Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
-from __future__ import print_function
 import os
 from .multipart_object_assembler import MultipartObjectAssembler
 from .constants import DEFAULT_PART_SIZE
@@ -61,7 +60,7 @@ class UploadManager:
                                           **kwargs)
             ma.new_upload()
             if progress:
-                progress.label = ma.manifest["uploadId"]
+                progress.label = "Upload ID: {}".format(ma.manifest["uploadId"])
                 progress.update(0)
             # file_object is a buffered reader when coming from CLI, so we need access to the underlying file.
             # TODO: make this more generic for non-CLI uses.
