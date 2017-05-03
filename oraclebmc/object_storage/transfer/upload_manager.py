@@ -3,6 +3,7 @@
 
 from __future__ import print_function
 import os
+import six
 from .multipart_object_assembler import MultipartObjectAssembler
 from .constants import DEFAULT_PART_SIZE
 
@@ -53,6 +54,18 @@ class UploadManager:
         else:
             kwargs['part_size'] = part_size
             kwargs['progress'] = progress
+
+            # TODO: make this more generic and ensure it is done the same way
+            # on raw put and removed on get.
+            # prefix the keys in metadata with 'opc-meta-'
+            if 'metadata' in kwargs:
+                processed_metadata = {}
+                for key, value in six.iteritems(kwargs.get("metadata", {})):
+                    if not key.startswith('opc-meta-'):
+                        processed_metadata["opc-meta-" + key] = value
+                    else:
+                        processed_metadata[key] = value
+                kwargs['metadata'] = processed_metadata
 
             ma = MultipartObjectAssembler(object_storage_client,
                                           namespace_name,
