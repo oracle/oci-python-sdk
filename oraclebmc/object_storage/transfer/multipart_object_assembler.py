@@ -9,7 +9,7 @@ from .constants import DEFAULT_PART_SIZE
 from .constants import MEBIBYTE
 from .. import models
 from ...exceptions import ServiceError
-from requests.exceptions import ReadTimeout
+from requests.exceptions import Timeout
 
 # TODO: Add docstrings to everything.
 # TODO: Calculate and verify mulitpart hash.  Currently only checking parts.
@@ -88,10 +88,10 @@ class MultipartObjectAssembler:
         :return: Boolean
         """
         retryable = False
-        if isinstance(e, ReadTimeout):
+        if isinstance(e, Timeout):
             retryable = True
         elif isinstance(e, ServiceError):
-            if e.status >= 500 or e.status == 409 or e.status == -1:
+            if e.status >= 500 or e.status == -1 or (e.status == 409 and e.code == "ConcurrentObjectUpdate"):
                 retryable = True
 
         return retryable
