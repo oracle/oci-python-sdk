@@ -188,6 +188,10 @@ class MultipartObjectAssembler:
         kwargs = {}
         if self.opc_client_request_id:
             kwargs['opc_client_request_id'] = self.opc_client_request_id
+        if self.if_match:
+            kwargs['if_match'] = self.if_match
+        if self.if_none_match:
+            kwargs['if_none_match'] = self.if_none_match
 
         response = self.object_storage_client.create_multipart_upload(self.manifest["namespace"],
                                                                       self.manifest["bucketName"],
@@ -206,6 +210,10 @@ class MultipartObjectAssembler:
         kwargs = {'content_md5': part["hash"]}
         if self.opc_client_request_id:
             kwargs['opc_client_request_id'] = self.opc_client_request_id
+        if self.if_match:
+            kwargs['if_match'] = self.if_match
+        if self.if_none_match:
+            kwargs['if_none_match'] = self.if_none_match
 
         remaining_tries = self.max_retries
         while remaining_tries > 0:
