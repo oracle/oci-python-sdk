@@ -217,7 +217,7 @@ class MultipartObjectAssembler:
                                                                       self.manifest["objectName"],
                                                                       self.manifest["uploadId"],
                                                                       part_num,
-                                                                      file.read(part["size"]),
+                                                                      io.BytesIO(file.read(part["size"])),
                                                                       **kwargs)
                 except Exception as e:
                     if self._isExceptionRetryable(e) and remaining_tries > 1:
