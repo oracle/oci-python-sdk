@@ -673,8 +673,9 @@ class ComputeClient(object):
         on that resource type, or by viewing the resource in the Console.
 
         When you launch an instance, it is automatically attached to a Virtual
-        Network Interface Card (VNIC) and given both a public and private IP address.
-        To get both addresses, use the :func:`list_vnic_attachments`
+        Network Interface Card (VNIC). The VNIC has a private IP address from
+        the subnet's CIDR, and optionally a public IP address.
+        To get the addresses, use the :func:`list_vnic_attachments`
         operation to get the VNIC ID for the instance, and then call
         :func:`get_vnic` with the VNIC ID.
 

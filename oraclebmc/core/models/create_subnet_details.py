@@ -16,6 +16,7 @@ class CreateSubnetDetails(object):
             'dhcp_options_id': 'str',
             'display_name': 'str',
             'dns_label': 'str',
+            'prohibit_public_ip_on_vnic': 'bool',
             'route_table_id': 'str',
             'security_list_ids': 'list[str]',
             'vcn_id': 'str'
@@ -28,6 +29,7 @@ class CreateSubnetDetails(object):
             'dhcp_options_id': 'dhcpOptionsId',
             'display_name': 'displayName',
             'dns_label': 'dnsLabel',
+            'prohibit_public_ip_on_vnic': 'prohibitPublicIpOnVnic',
             'route_table_id': 'routeTableId',
             'security_list_ids': 'securityListIds',
             'vcn_id': 'vcnId'
@@ -39,6 +41,7 @@ class CreateSubnetDetails(object):
         self._dhcp_options_id = None
         self._display_name = None
         self._dns_label = None
+        self._prohibit_public_ip_on_vnic = None
         self._route_table_id = None
         self._security_list_ids = None
         self._vcn_id = None
@@ -226,6 +229,48 @@ class CreateSubnetDetails(object):
         :type: str
         """
         self._dns_label = dns_label
+
+    @property
+    def prohibit_public_ip_on_vnic(self):
+        """
+        Gets the prohibit_public_ip_on_vnic of this CreateSubnetDetails.
+        Whether VNICs within this subnet can have public IP addresses.
+        Defaults to false, which means VNICs created in this subnet will
+        automatically be assigned public IP addresses unless specified
+        otherwise during instance launch (with the `assignPublicIp` flag in
+        :class:`CreateVnicDetails`).
+        If `prohibitPublicIpOnVnic` is set to true, VNICs created in this
+        subnet cannot have public IP addresses (i.e., it's a private
+        subnet).
+
+        Example: `true`
+
+
+        :return: The prohibit_public_ip_on_vnic of this CreateSubnetDetails.
+        :rtype: bool
+        """
+        return self._prohibit_public_ip_on_vnic
+
+    @prohibit_public_ip_on_vnic.setter
+    def prohibit_public_ip_on_vnic(self, prohibit_public_ip_on_vnic):
+        """
+        Sets the prohibit_public_ip_on_vnic of this CreateSubnetDetails.
+        Whether VNICs within this subnet can have public IP addresses.
+        Defaults to false, which means VNICs created in this subnet will
+        automatically be assigned public IP addresses unless specified
+        otherwise during instance launch (with the `assignPublicIp` flag in
+        :class:`CreateVnicDetails`).
+        If `prohibitPublicIpOnVnic` is set to true, VNICs created in this
+        subnet cannot have public IP addresses (i.e., it's a private
+        subnet).
+
+        Example: `true`
+
+
+        :param prohibit_public_ip_on_vnic: The prohibit_public_ip_on_vnic of this CreateSubnetDetails.
+        :type: bool
+        """
+        self._prohibit_public_ip_on_vnic = prohibit_public_ip_on_vnic
 
     @property
     def route_table_id(self):
