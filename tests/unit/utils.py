@@ -88,3 +88,10 @@ def verify_signature(public_key, headers):
     public_key.verify(signature_bytes, signing_string.encode("utf-8"),
                       padding.PKCS1v15(),
                       hashes.SHA256())
+
+
+def create_large_file(filename, size_in_mebibytes):
+    sample_content = b'a'
+    with open(filename, 'wb') as f:
+        while f.tell < 1024 * 1024 * size_in_mebibytes:
+            f.write(sample_content * 1024 * 1024)

@@ -1,15 +1,19 @@
 # coding: utf-8
 # Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
+from __future__ import print_function
+import sys
 import io
 import hashlib
 import base64
 from os import stat
 from .constants import DEFAULT_PART_SIZE
 from .constants import MEBIBYTE
+from .buffered_part_reader import BufferedPartReader
 from .. import models
 from ...exceptions import ServiceError
 from requests.exceptions import Timeout
+from requests.exceptions import ConnectionError
 
 # TODO: Add docstrings to everything.
 # TODO: Calculate and verify mulitpart hash.  Currently only checking parts.
@@ -67,19 +71,24 @@ class MultipartObjectAssembler:
     def calculate_md5(file, offset, chunk):
         m = hashlib.md5()
         with io.open(file, mode='rb') as f:
-            f.seek(offset, io.SEEK_SET)
-            m.update(f.read(chunk))
+            bpr = BufferedPartReader(f, offset, chunk)
+            while True:
+                part = bpr.read(8 * 1024)
+                if part == b'':
+                    break
+                m.update(part)
         return base64.b64encode(m.digest()).decode("utf-8")
 
     @staticmethod
-    def _isExceptionRetryable(e):
+    def _is_exception_retryable(e):
 
         """
-        Determines if the service should attempt to retry an opperation based
+        Determines if the service should attempt to retry an operation based
          on the type of exception
 
         retry if
            timeout
+           Connection error
            unknown client exception: status == -1
            server exception: status >= 500
            Potential edge case: status == 409
@@ -89,6 +98,8 @@ class MultipartObjectAssembler:
         """
         retryable = False
         if isinstance(e, Timeout):
+            retryable = True
+        elif isinstance(e, ConnectionError):
             retryable = True
         elif isinstance(e, ServiceError):
             if e.status >= 500 or e.status == -1 or (e.status == 409 and e.code == "ConcurrentObjectUpdate"):
@@ -197,12 +208,9 @@ class MultipartObjectAssembler:
         self.manifest["uploadId"] = response.data.upload_id
 
         # TODO: provide a better way to notify the CLI user of the upload id
-        # print("Upload ID: {}".format(self.manifest["uploadId"]), file=sys.stderr)
+        print("Upload ID: {}".format(self.manifest["uploadId"]), file=sys.stderr)
 
     def upload_part(self, part, part_num):
-        # TODO: Determine how to provide this information to a CLI user, without printing
-        # print("uploading part: {}".format(part_num), file=sys.stderr)
-
         kwargs = {'content_md5': part["hash"]}
         if self.opc_client_request_id:
             kwargs['opc_client_request_id'] = self.opc_client_request_id
@@ -210,17 +218,17 @@ class MultipartObjectAssembler:
         remaining_tries = self.max_retries
         while remaining_tries > 0:
             with io.open(part["file"], mode='rb') as file:
-                file.seek(part["offset"], io.SEEK_SET)
+                bpr = BufferedPartReader(file, part["offset"], part["size"])
                 try:
                     response = self.object_storage_client.upload_part(self.manifest["namespace"],
                                                                       self.manifest["bucketName"],
                                                                       self.manifest["objectName"],
                                                                       self.manifest["uploadId"],
                                                                       part_num,
-                                                                      io.BytesIO(file.read(part["size"])),
+                                                                      bpr,
                                                                       **kwargs)
                 except Exception as e:
-                    if self._isExceptionRetryable(e) and remaining_tries > 1:
+                    if self._is_exception_retryable(e) and remaining_tries > 1:
                         remaining_tries -= 1
                     else:
                         raise
@@ -230,9 +238,6 @@ class MultipartObjectAssembler:
         if response.status == 200:
             part["etag"] = response.headers['etag']
             part["opc_md5"] = str(response.headers['opc-content-md5'])
-
-        # TODO: Determine how to provide this information to a CLI user, without printing
-        # print("Part {} uploaded successfully".format(part_num), file=sys.stderr)
 
     def upload(self):
         # TODO: Determine correct action if there is no uploadId in the manifest.
