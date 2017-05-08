@@ -28,19 +28,19 @@ class BufferedPartReader(io.IOBase):
         # Reset the pointer to the start of the part.
         self.file.seek(start, io.SEEK_SET)
 
-    def seek(self, n, whence):
+    def seek(self, offset, whence):
         """
         Seek within the part.  This is similar to the standard seek, except
         that io.SEEK_SET is the start of the part and io.SEEK_END is the
         end of the part.
 
-        :param n: Offset in bytes from location determined by the whence value
+        :param offset: Offset in bytes from location determined by the whence value
         :param whence: io.SEEK_END and io.SEEK_SET are supported.
         """
         if whence == io.SEEK_END:
-            self.file.seek(self.start + self.size + n, io.SEEK_SET)
+            self.file.seek(self.start + self.size + offset, io.SEEK_SET)
         elif whence == io.SEEK_SET:
-            self.file.seek(self.start + n, io.SEEK_SET)
+            self.file.seek(self.start + offset, io.SEEK_SET)
         else:
             raise RuntimeError("Unhandled whence value: {}".format(whence))
 
@@ -65,7 +65,10 @@ class BufferedPartReader(io.IOBase):
         if self.bytes_read < self.size:
             read = self.file.readinto(buf)
             self.bytes_read += read
+            # Check to see if the current buffer contains bytes that come from
+            # the next part.
             if self.bytes_read > self.size:
+                # Subtract the number of excess bytes from the bytes read.
                 read -= self.bytes_read - self.size
 
         # Wrap the bytearray in a memoryview because the Python 2.7 implementation

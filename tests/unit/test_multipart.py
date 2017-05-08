@@ -3,14 +3,12 @@ import utils
 import io
 import hashlib
 import base64
-import oraclebmc
 import pytest
 import os
 from oraclebmc.object_storage import MultipartObjectAssembler
 
 MEBIBYTE = 1024 * 1024
 CHUNK = 128 * MEBIBYTE
-
 LARGE_CONTENT_FILE_SIZE_IN_MEBIBYTES = 150
 
 
@@ -52,23 +50,3 @@ def test_md5_memory_usage(content_input_file):
     print("Memory used: {} MiB".format(str(memory_usage / MEBIBYTE)))
     assert memory_usage < CHUNK
     assert md5_1 == md5_2
-
-
-@pytest.mark.skip("Clean this up and move to integ.")
-def test_multipart_upload_memory_usage():
-    up = oraclebmc.object_storage.UploadManager
-    config = oraclebmc.config.from_file()
-    object_storage = oraclebmc.object_storage.ObjectStorageClient(config)
-    namespace_name = object_storage.get_namespace().data
-    bucket_name = "DEX-836_multipart_uploads"
-
-    up.upload(object_storage,
-              namespace_name,
-              bucket_name,
-              'memory_usage_test',
-              open('/Users/ahalliii/Downloads/pycharm-professional-2017.1.dmg', 'rb'),
-              part_size=CHUNK)
-
-    max_memory = tests.util.max_memory_usage()
-    print("Max memory usage with bufferedpartreader: {} MiB".format(str(max_memory / MEBIBYTE)))
-    assert max_memory < CHUNK
