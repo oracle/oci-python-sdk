@@ -1,8 +1,6 @@
 # coding: utf-8
 # Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
-from __future__ import print_function
-import sys
 import io
 import hashlib
 import base64
@@ -181,7 +179,6 @@ class MultipartObjectAssembler:
             kwargs['page'] = response.next_page
 
         # Upload parts that are missing or incomplete
-        # print("Resuming upload for upload id: {}".format(self.manifest["uploadId"]), file=sys.stderr)
         self.upload()
 
     def new_upload(self):
@@ -206,9 +203,6 @@ class MultipartObjectAssembler:
                                                                       **kwargs)
 
         self.manifest["uploadId"] = response.data.upload_id
-
-        # TODO: provide a better way to notify the CLI user of the upload id
-        print("Upload ID: {}".format(self.manifest["uploadId"]), file=sys.stderr)
 
     def upload_part(self, part, part_num):
         kwargs = {'content_md5': part["hash"]}
@@ -249,7 +243,7 @@ class MultipartObjectAssembler:
             # Calculate the hash before uploading.  The hash will be used
             # to determine if the part needs to be uploaded.  It will also
             # be used to determine if there is a conflict between parts that
-            # parts that have previously been uploaded.
+            # have previously been uploaded.
             if part["hash"] is None:
                 part["hash"] = self.calculate_md5(part["file"], part["offset"], part["size"])
 
