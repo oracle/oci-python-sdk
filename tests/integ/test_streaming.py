@@ -26,7 +26,7 @@ def bucket_name(namespace, object_storage):
 
         for summary in object_list.objects:
             response = object_storage.delete_object(namespace, name, summary.name)
-            assert response.status == 200
+            assert response.status == 204
     except:
         print('TearDown: Could not delete new objects.')
 

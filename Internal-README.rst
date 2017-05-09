@@ -157,3 +157,20 @@ can't use the usual ``python setup.py ... upload`` but instead use a
 maven-based process.
 
 This will hopefully change in the near future.
+
+Running Tests Against IAD
+================
+
+By default the tests will run against PHX.  In order to run the tests against IAD you have to change a few
+parameters as well as some values that are hardcoded in the tests.
+
+To run the tests using the 'IAD' profile in tests/resources/config, you can use the '--config-profile' parameter.
+For example:
+
+    tox -- --config-profile IAD
+
+You must also update the following locations in code where we are using OCIDs that are hardcoded for PHX:
+- tests/integ/util.py, uncomment the lines at the top under 'IAD' to specify the correct compartment ID and AD for IAD
+- tests/integ/test_launch_instance_options.py, update image OCIDs to use valid image OCIDs for IAD
+- tests/integ/test_launch_instance_tutorial.py, update image OCIDs to use valid image OCIDs for IAD
+- tests/integ/test_object_storage.py, update namespace from 'internalbriangustafson' to 'bmcs-dex-us-ashburn-1'

@@ -4,18 +4,21 @@
 from __future__ import print_function
 import functools
 import random
-import pytest
 import time
 import traceback
 import oraclebmc
 
 TEST_DATA_VERSION = '1'
 
-USER_ID = 'ocid1.user.oc1..aaaaaaaals2zarcjikii4cwunpwogjsz4m2dowy3ilmafqpebotnfyntu3ha'
-TENANT_ID = 'ocidv1:tenancy:oc1:phx:1460406592660:aaaaaaaab4faofrfkxecohhjuivjq262pu'
-COMPARTMENT_ID = 'ocid1.compartment.oc1..aaaaaaaan5brzve7w7oyhrfngjfsrf72r67aqdd2sbhlarjas6pwamy4425a'
 COMPARTMENT_NAME = 'PythonSDKTestCompartment'
+
+# PHX
+COMPARTMENT_ID = 'ocid1.compartment.oc1..aaaaaaaan5brzve7w7oyhrfngjfsrf72r67aqdd2sbhlarjas6pwamy4425a'
 AVAILABILITY_DOMAIN = 'kIdk:PHX-AD-2'
+
+# IAD
+# COMPARTMENT_ID = 'ocid1.compartment.oc1..aaaaaaaajisqznb7qthdm27q47fgmclthonu5rrk72r3qczbrbsp6f3xc6ra'
+# AVAILABILITY_DOMAIN = 'IwGV:US-ASHBURN-AD-1'
 
 
 def random_name(prefix, insert_underscore=True):
