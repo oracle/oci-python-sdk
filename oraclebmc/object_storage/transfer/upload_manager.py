@@ -1,14 +1,14 @@
 # coding: utf-8
 # Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
+from __future__ import print_function
+import sys
 import os
 import six
 from .multipart_object_assembler import MultipartObjectAssembler
 from .constants import DEFAULT_PART_SIZE
 
-# TODO: Add docstrings to everything.
-# TODO: Warn if the content_md5 is set and the multipart upload is chosen.
-#       Replicate JavaSDK behavior for the warning.
+# TODO: update docstring for progress, change the value to progress_callback
 
 
 class UploadManager:
@@ -20,6 +20,37 @@ class UploadManager:
                file_object,
                **kwargs):
 
+        """
+        Uploads an object to Object Storage. Depending on the options provided and the
+        size of the object, the object may be uploaded in multiple parts.
+
+        :param object object_storage_client:
+            A configured Object Storage client
+
+        :param str namespace_name:
+            The namespace containing the bucket and multipart upload
+
+        :param str bucket_name:
+            The name of the bucket in which to store the object
+
+        :param str object_name:
+            The name of the object in Object Storage
+
+        :param file_object:
+            A file like object that has a name attribute
+
+        :param boolean no_multipart (optional):
+            Force the object to be uploaded as a single part
+
+        :param int part_size (optional):
+            Override the default part size of 128 MiB.
+
+        :param function progress:
+            Callback function which will receive the number of bytes transferred.
+
+        :return:
+            The response from multipart commit operation or the put operation.
+        """
         progress = None
         if 'progress' in kwargs:
             progress = kwargs['progress']
@@ -66,15 +97,21 @@ class UploadManager:
                         processed_metadata[key] = value
                 kwargs['metadata'] = processed_metadata
 
+            # TODO: Provide a better way to warn about the usage of content-md5
+            #       with multipart.
+            if 'content_md5' in kwargs:
+                print('Warning: The --content-md5 option cannot be used with multipart uploads. It will be ignored.',
+                      file=sys.stderr)
+
             ma = MultipartObjectAssembler(object_storage_client,
                                           namespace_name,
                                           bucket_name,
                                           object_name,
                                           **kwargs)
             ma.new_upload()
-            if progress:
-                progress.label = "Upload ID: {}".format(ma.manifest["uploadId"])
-                progress.update(0)
+            # TODO: provide a better way to notify the CLI user of the upload id
+            print("Upload ID: {}".format(ma.manifest["uploadId"]), file=sys.stderr)
+
             # file_object is a buffered reader when coming from CLI, so we need access to the underlying file.
             # TODO: make this more generic for non-CLI uses.
             ma.add_parts_from_file(file_object.name)
@@ -92,6 +129,39 @@ class UploadManager:
                upload_id,
                **kwargs):
 
+        """
+        Resume a multipart upload.
+
+        :param object object_storage_client:
+            A configured Object Storage client
+
+        :param str namespace_name:
+            The namespace containing the bucket and multipart upload to resume
+
+        :param str bucket_name:
+            The name of the bucket that contains the multipart upload to resume
+
+        :param str object_name:
+            The name of the object in Object Storage
+
+        :param file_object:
+            A file like object that has a name attribute
+
+        :param str upload_id:
+            The upload-id for the multipart upload to resume
+
+        :param int part_size (optional):
+            Part size, in mebibytes, to use when resuming the transfer. The
+            default is 128 mebibytes.  If this value is supplied, it must
+            be the same value as the one used when the original upload
+            was started.
+
+        :param function progress:
+            Callback function which will receive the number of bytes transferred.
+
+        :return:
+            The response from the multipart commit operation
+        """
         ma = MultipartObjectAssembler(object_storage_client,
                                       namespace_name,
                                       bucket_name,
