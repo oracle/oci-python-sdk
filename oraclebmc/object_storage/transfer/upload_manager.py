@@ -8,7 +8,7 @@ import six
 from .multipart_object_assembler import MultipartObjectAssembler
 from .constants import DEFAULT_PART_SIZE
 
-# TODO: update docstring for progress
+# TODO: update docstring for progress, change the value to progress_callback
 
 
 class UploadManager:
@@ -21,11 +21,11 @@ class UploadManager:
                **kwargs):
 
         """
-        Upload an object to object storage.  Depending on the options provided an the
+        Uploads an object to Object Storage. Depending on the options provided and the
         size of the object, the object may be uploaded in multiple parts.
 
         :param object object_storage_client:
-            A configured object storage client
+            A configured Object Storage client
 
         :param str namespace_name:
             The namespace containing the bucket and multipart upload
@@ -34,7 +34,7 @@ class UploadManager:
             The name of the bucket in which to store the object
 
         :param str object_name:
-            The name of the object in object storage
+            The name of the object in Object Storage
 
         :param file_object:
             A file like object that has a name attribute
@@ -49,7 +49,7 @@ class UploadManager:
             Callback function for which will receive the number of bytes transferred.
 
         :return:
-            Server response
+            The response from multipart commit operation or the put operation.
         """
         progress = None
         if 'progress' in kwargs:
@@ -133,16 +133,16 @@ class UploadManager:
         Resume a multipart upload.
 
         :param object object_storage_client:
-            A configured object storage client
+            A configured Object Storage client
 
         :param str namespace_name:
-            The namespace containing the bucket and multipart upload
+            The namespace containing the bucket and multipart upload to resume
 
         :param str bucket_name:
             The name of the bucket that contains the multipart upload to resume
 
         :param str object_name:
-            The name of the object in object storage
+            The name of the object in Object Storage
 
         :param file_object:
             A file like object that has a name attribute
@@ -150,16 +150,17 @@ class UploadManager:
         :param str upload_id:
             The upload-id for the multipart upload to resume
 
-        :param int part_size:
-            Part size, in mebibytes, to use when resuming the transfer.  This
-            must be the same value as the one used when the original upload
+        :param int part_size (optional):
+            Part size, in mebibytes, to use when resuming the transfer. The
+            default is 128 mebibytes.  If this value is supplied, it must
+            be the same value as the one used when the original upload
             was started.
 
         :param function progress:
             Callback function for which will receive the number of bytes transferred.
 
         :return:
-            The server response from the multipart commit operation
+            The response from the multipart commit operation
         """
         ma = MultipartObjectAssembler(object_storage_client,
                                       namespace_name,
