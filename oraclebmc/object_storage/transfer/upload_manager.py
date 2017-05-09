@@ -46,7 +46,7 @@ class UploadManager:
             Override the default part size of 128 MiB.
 
         :param function progress:
-            Callback function for which will receive the number of bytes transferred.
+            Callback function which will receive the number of bytes transferred.
 
         :return:
             The response from multipart commit operation or the put operation.
@@ -157,7 +157,7 @@ class UploadManager:
             was started.
 
         :param function progress:
-            Callback function for which will receive the number of bytes transferred.
+            Callback function which will receive the number of bytes transferred.
 
         :return:
             The response from the multipart commit operation
