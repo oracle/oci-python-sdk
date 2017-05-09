@@ -8,24 +8,24 @@ import oraclebmc
 
 class TestIdentity:
 
-    def test_all_operations(self, identity):
-        self.subtest_availability_domain_operations(identity)
-        self.subtest_compartment_operations(identity)
-        self.subtest_user_operations(identity)
-        self.subtest_group_operations(identity)
-        self.subtest_user_group_membership_operations(identity)
+    def test_all_operations(self, identity, config):
+        self.subtest_availability_domain_operations(identity, config)
+        self.subtest_compartment_operations(identity, config)
+        self.subtest_user_operations(identity, config)
+        self.subtest_group_operations(identity, config)
+        self.subtest_user_group_membership_operations(identity, config)
         self.subtest_api_key_operations(identity)
         self.subtest_ui_password_operations(identity)
         self.subtest_swift_password_operations(identity)
-        self.subtest_policy_operations(identity)
-        self.subtest_cleanup(identity)
+        self.subtest_policy_operations(identity, config)
+        self.subtest_cleanup(identity, config)
 
-    def subtest_availability_domain_operations(self, identity):
-        result = identity.list_availability_domains(util.TENANT_ID)
+    def subtest_availability_domain_operations(self, identity, config):
+        result = identity.list_availability_domains(config['tenancy'])
         self.validate_response(result)
 
-    def subtest_compartment_operations(self, identity):
-        result = identity.list_compartments(util.TENANT_ID, limit=1000)
+    def subtest_compartment_operations(self, identity, config):
+        result = identity.list_compartments(config['tenancy'], limit=1000)
         self.validate_response(result)
 
         result = identity.get_compartment(util.COMPARTMENT_ID)
@@ -39,20 +39,20 @@ class TestIdentity:
         self.validate_response(result, expect_etag=True)
         assert update_description == result.data.description
 
-    def subtest_user_operations(self, identity):
+    def subtest_user_operations(self, identity, config):
         self.user_name = util.random_name('python_sdk_test_user')
         self.user_description = 'Created by Python SDK identity tests.'
 
         create_user_details = oraclebmc.identity.models.CreateUserDetails()
         create_user_details.name = self.user_name
         create_user_details.description = self.user_description
-        create_user_details.compartment_id = util.TENANT_ID
+        create_user_details.compartment_id = config['tenancy']
 
         result = identity.create_user(create_user_details)
         self.user_ocid = result.data.id
         self.validate_response(result, extra_validation=self.validate_user, expect_etag=True)
 
-        result = identity.list_users(util.TENANT_ID, limit=1000)
+        result = identity.list_users(config['tenancy'], limit=1000)
         self.validate_response(result, extra_validation=self.validate_user)
         assert result.headers["opc-next-page"]
 
@@ -70,20 +70,20 @@ class TestIdentity:
         result = identity.get_user(self.user_ocid)
         self.validate_response(result, extra_validation=self.validate_user, expect_etag=True)
 
-    def subtest_group_operations(self, identity):
+    def subtest_group_operations(self, identity, config):
         self.group_name = util.random_name('python_sdk_test_group')
         self.group_description = 'Created by Python SDK identity tests.'
 
         create_group_details = oraclebmc.identity.models.CreateGroupDetails()
         create_group_details.name = self.group_name
         create_group_details.description = self.group_description
-        create_group_details.compartment_id = util.TENANT_ID
+        create_group_details.compartment_id = config['tenancy']
 
         result = identity.create_group(create_group_details)
         self.group_ocid = result.data.id
         self.validate_response(result, extra_validation=self.validate_group, expect_etag=True)
 
-        result = identity.list_groups(util.TENANT_ID, limit=1000)
+        result = identity.list_groups(config['tenancy'], limit=1000)
         self.validate_response(result, extra_validation=self.validate_group)
 
         self.group_description = 'UPDATED ' + self.user_description
@@ -95,14 +95,14 @@ class TestIdentity:
         result = identity.get_group(self.group_ocid)
         self.validate_response(result, extra_validation=self.validate_group, expect_etag=True)
 
-    def subtest_user_group_membership_operations(self, identity):
+    def subtest_user_group_membership_operations(self, identity, config):
         add_user_to_group_details = oraclebmc.identity.models.AddUserToGroupDetails()
         add_user_to_group_details.group_id = self.group_ocid
         add_user_to_group_details.user_id = self.user_ocid
         result = identity.add_user_to_group(add_user_to_group_details)
         self.validate_response(result, expect_etag=True)
 
-        result = identity.list_user_group_memberships(util.TENANT_ID, user_id=self.user_ocid)
+        result = identity.list_user_group_memberships(config['tenancy'], user_id=self.user_ocid)
         self.validate_response(result)
         assert len(result.data) == 1
         membership_ocid = result.data[0].id
@@ -110,7 +110,7 @@ class TestIdentity:
         identity.remove_user_from_group(membership_ocid)
         self.validate_response(result)
 
-        result = identity.list_user_group_memberships(util.TENANT_ID, user_id=self.user_ocid)
+        result = identity.list_user_group_memberships(config['tenancy'], user_id=self.user_ocid)
         self.validate_response(result)
         assert len(result.data) == 0
 
@@ -172,7 +172,7 @@ P8ZM9xRukuJ4bnPTe8olOFB8UCCkAEmkUxtZI4vF90HvDKDOV0KY4OH5YESY6apH
 
         identity.delete_swift_password(self.user_ocid, password_ocid)
 
-    def subtest_policy_operations(self, identity):
+    def subtest_policy_operations(self, identity, config):
         policy_name = util.random_name('python_sdk_test_policy')
         policy_description = 'Created by Python SDK identity tests.'
 
@@ -182,7 +182,7 @@ P8ZM9xRukuJ4bnPTe8olOFB8UCCkAEmkUxtZI4vF90HvDKDOV0KY4OH5YESY6apH
 
         create_policy_details = oraclebmc.identity.models.CreatePolicyDetails()
         create_policy_details.name = policy_name
-        create_policy_details.compartment_id = util.TENANT_ID
+        create_policy_details.compartment_id = config['tenancy']
         create_policy_details.description = policy_description
         create_policy_details.statements = [statement_a]
         result = identity.create_policy(create_policy_details)
@@ -261,7 +261,7 @@ P8ZM9xRukuJ4bnPTe8olOFB8UCCkAEmkUxtZI4vF90HvDKDOV0KY4OH5YESY6apH
         assert not result.data.version_date
 
         # List policies
-        result = identity.list_policies(util.TENANT_ID, limit=1000)
+        result = identity.list_policies(config['tenancy'], limit=1000)
         self.validate_response(result)
         found_policy = False
         for policy in result.data:
@@ -273,17 +273,17 @@ P8ZM9xRukuJ4bnPTe8olOFB8UCCkAEmkUxtZI4vF90HvDKDOV0KY4OH5YESY6apH
 
         assert found_policy, "Expected policy was not found in response for list policies."
 
-        result = identity.list_policies(util.TENANT_ID, limit=1)
+        result = identity.list_policies(config['tenancy'], limit=1)
         self.validate_response(result)
         assert len(result.data) == 1
 
         # Delete policy
         identity.delete_policy(policy_ocid)
 
-    def subtest_cleanup(self, identity):
+    def subtest_cleanup(self, identity, config):
         identity.delete_user(self.user_ocid)
 
-        result = identity.list_users(util.TENANT_ID, limit=1000)
+        result = identity.list_users(config['tenancy'], limit=1000)
         self.validate_response(result)
         for user in result.data:
             assert self.user_ocid != user.id

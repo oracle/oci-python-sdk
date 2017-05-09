@@ -171,6 +171,9 @@ class ConsoleHistory(object):
         Gets the lifecycle_state of this ConsoleHistory.
         The current state of the console history.
 
+        Allowed values for this property are: "REQUESTED", "GETTING-HISTORY", "SUCCEEDED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
 
         :return: The lifecycle_state of this ConsoleHistory.
         :rtype: str
@@ -189,10 +192,7 @@ class ConsoleHistory(object):
         """
         allowed_values = ["REQUESTED", "GETTING-HISTORY", "SUCCEEDED", "FAILED"]
         if lifecycle_state not in allowed_values:
-            raise ValueError(
-                "Invalid value for `lifecycle_state`, must be one of {0}"
-                .format(allowed_values)
-            )
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
 
     @property

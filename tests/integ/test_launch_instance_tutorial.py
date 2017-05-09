@@ -2,10 +2,8 @@ import tests.util
 import oraclebmc
 import time
 import pytest
-from . import util
 
 
-@util.slow
 def test_tutorial(virtual_network, compute, block_storage, config):
     test_id = tests.util.random_number_string()
     print('Running Launching Your First Instance tutorial')
@@ -15,7 +13,7 @@ def test_tutorial(virtual_network, compute, block_storage, config):
     # if you have the private and public key files. We should be
     # getting these dynamically based on a specified environment.
     availability_domain = 'kIdk:PHX-AD-2'
-    compartment = util.COMPARTMENT_ID
+    compartment = config["tenancy"]
 
     with open(tests.util.get_key_file_path("public_ssh_key.pub")) as f:
         public_key = f.read().strip()

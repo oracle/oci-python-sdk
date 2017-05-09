@@ -10,7 +10,6 @@ IPXE_SCRIPT_FILE = 'tests/resources/ipxe_script_example.txt'
 
 class TestLaunchInstanceOptions:
 
-    @util.slow
     def test_main(self, compute, virtual_network):
         try:
             self.subtest_setup(virtual_network)

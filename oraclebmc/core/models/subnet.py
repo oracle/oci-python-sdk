@@ -18,6 +18,7 @@ class Subnet(object):
             'dns_label': 'str',
             'id': 'str',
             'lifecycle_state': 'str',
+            'prohibit_public_ip_on_vnic': 'bool',
             'route_table_id': 'str',
             'security_list_ids': 'list[str]',
             'subnet_domain_name': 'str',
@@ -36,6 +37,7 @@ class Subnet(object):
             'dns_label': 'dnsLabel',
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
+            'prohibit_public_ip_on_vnic': 'prohibitPublicIpOnVnic',
             'route_table_id': 'routeTableId',
             'security_list_ids': 'securityListIds',
             'subnet_domain_name': 'subnetDomainName',
@@ -53,6 +55,7 @@ class Subnet(object):
         self._dns_label = None
         self._id = None
         self._lifecycle_state = None
+        self._prohibit_public_ip_on_vnic = None
         self._route_table_id = None
         self._security_list_ids = None
         self._subnet_domain_name = None
@@ -271,6 +274,9 @@ class Subnet(object):
         Gets the lifecycle_state of this Subnet.
         The subnet's current state.
 
+        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
 
         :return: The lifecycle_state of this Subnet.
         :rtype: str
@@ -289,11 +295,50 @@ class Subnet(object):
         """
         allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"]
         if lifecycle_state not in allowed_values:
-            raise ValueError(
-                "Invalid value for `lifecycle_state`, must be one of {0}"
-                .format(allowed_values)
-            )
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def prohibit_public_ip_on_vnic(self):
+        """
+        Gets the prohibit_public_ip_on_vnic of this Subnet.
+        Whether VNICs within this subnet can have public IP addresses.
+        Defaults to false, which means VNICs created in this subnet will
+        automatically be assigned public IP addresses unless specified
+        otherwise during instance launch (with the `assignPublicIp` flag in
+        :class:`CreateVnicDetails`).
+        If `prohibitPublicIpOnVnic` is set to true, VNICs created in this
+        subnet cannot have public IP addresses (i.e., it's a private
+        subnet).
+
+        Example: `true`
+
+
+        :return: The prohibit_public_ip_on_vnic of this Subnet.
+        :rtype: bool
+        """
+        return self._prohibit_public_ip_on_vnic
+
+    @prohibit_public_ip_on_vnic.setter
+    def prohibit_public_ip_on_vnic(self, prohibit_public_ip_on_vnic):
+        """
+        Sets the prohibit_public_ip_on_vnic of this Subnet.
+        Whether VNICs within this subnet can have public IP addresses.
+        Defaults to false, which means VNICs created in this subnet will
+        automatically be assigned public IP addresses unless specified
+        otherwise during instance launch (with the `assignPublicIp` flag in
+        :class:`CreateVnicDetails`).
+        If `prohibitPublicIpOnVnic` is set to true, VNICs created in this
+        subnet cannot have public IP addresses (i.e., it's a private
+        subnet).
+
+        Example: `true`
+
+
+        :param prohibit_public_ip_on_vnic: The prohibit_public_ip_on_vnic of this Subnet.
+        :type: bool
+        """
+        self._prohibit_public_ip_on_vnic = prohibit_public_ip_on_vnic
 
     @property
     def route_table_id(self):

@@ -8,7 +8,6 @@ import oraclebmc
 
 class TestVirtualNetwork:
 
-    @util.slow
     def test_all_operations(self, virtual_network):
         try:
             self.subtest_vcn_operations(virtual_network)

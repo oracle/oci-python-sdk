@@ -208,6 +208,9 @@ class Vnic(object):
         Gets the lifecycle_state of this Vnic.
         The current state of the VNIC.
 
+        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
 
         :return: The lifecycle_state of this Vnic.
         :rtype: str
@@ -226,10 +229,7 @@ class Vnic(object):
         """
         allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"]
         if lifecycle_state not in allowed_values:
-            raise ValueError(
-                "Invalid value for `lifecycle_state`, must be one of {0}"
-                .format(allowed_values)
-            )
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
 
     @property
@@ -262,7 +262,7 @@ class Vnic(object):
     def public_ip(self):
         """
         Gets the public_ip of this Vnic.
-        The public IP address of the VNIC.
+        The public IP address of the VNIC, if one is assigned.
 
 
         :return: The public_ip of this Vnic.
@@ -274,7 +274,7 @@ class Vnic(object):
     def public_ip(self, public_ip):
         """
         Sets the public_ip of this Vnic.
-        The public IP address of the VNIC.
+        The public IP address of the VNIC, if one is assigned.
 
 
         :param public_ip: The public_ip of this Vnic.
