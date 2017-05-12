@@ -6,7 +6,7 @@ from __future__ import absolute_import
 import six
 
 from ..base_client import BaseClient
-from ..config import validate_config
+from ..config import get_config_value_or_default, validate_config
 from ..signer import Signer
 from ..util import Sentinel
 from .models import identity_type_mapping
@@ -22,7 +22,7 @@ class IdentityClient(object):
             user=config["user"],
             fingerprint=config["fingerprint"],
             private_key_file_location=config["key_file"],
-            pass_phrase=config["pass_phrase"]
+            pass_phrase=get_config_value_or_default(config, "pass_phrase")
         )
         self.base_client = BaseClient("identity", config, signer, identity_type_mapping)
 

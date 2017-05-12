@@ -94,6 +94,10 @@ def validate_config(config):
         raise InvalidConfig(errors)
 
 
+def get_config_value_or_default(config, key):
+    return config.get(key, DEFAULT_CONFIG.get(key))
+
+
 def _as_bool(x):
     if x in [True, False]:
         return x
