@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+ 1.3.2 - 2017-05-18
+====================
+
+-------
+ Added
+-------
+
+* Support for VCN private subnets using the prohibit_public_ip_on_vnic parameter on oraclebmc.core.VirtualNetworkClient.create_subnet.
+* Support for FastConnect
+* Support for list_regions and region subscription operations
+* First class support for new IAD region
+
+-------
+ Fixed
+-------
+
+* For manually created configs (not from a file), use default values for optional fields that are not present (`GitHub issue <https://github.com/oracle/bmcs-python-sdk/issues/13>`_)
+* Updated parsing of 'region' config value to enable better support for unrecognized regions
+
+====================
  1.3.1 - 2017-04-27
 ====================
 
