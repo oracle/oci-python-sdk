@@ -15,7 +15,7 @@ import six
 from dateutil.parser import parse
 
 from . import constants, exceptions, regions
-from .config import validate_config
+from .config import get_config_value_or_default, validate_config
 from .request import Request
 from .response import Response
 from .version import __version__
@@ -66,11 +66,11 @@ class BaseClient(object):
 
         self.type_mappings = merge_type_mappings(self.primitive_type_map, type_mapping)
         self.session = requests.Session()
-        self.user_agent = build_user_agent(config["additional_user_agent"])
+        self.user_agent = build_user_agent(get_config_value_or_default(config, "additional_user_agent"))
 
         self.logger = logging.getLogger("{}.{}".format(__name__, id(self)))
         self.logger.addHandler(logging.NullHandler())
-        if config["log_requests"]:
+        if get_config_value_or_default(config, "log_requests"):
             self.logger.setLevel(logging.DEBUG)
             six.moves.http_client.HTTPConnection.debuglevel = 1
         else:

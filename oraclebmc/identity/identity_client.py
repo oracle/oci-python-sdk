@@ -6,7 +6,7 @@ from __future__ import absolute_import
 import six
 
 from ..base_client import BaseClient
-from ..config import validate_config
+from ..config import get_config_value_or_default, validate_config
 from ..signer import Signer
 from ..util import Sentinel
 from .models import identity_type_mapping
@@ -22,7 +22,7 @@ class IdentityClient(object):
             user=config["user"],
             fingerprint=config["fingerprint"],
             private_key_file_location=config["key_file"],
-            pass_phrase=config["pass_phrase"]
+            pass_phrase=get_config_value_or_default(config, "pass_phrase")
         )
         self.base_client = BaseClient("identity", config, signer, identity_type_mapping)
 
@@ -208,6 +208,126 @@ class IdentityClient(object):
             body=create_group_details,
             response_type="Group")
 
+    def create_identity_provider(self, create_identity_provider_details, **kwargs):
+        """
+        CreateIdentityProvider
+        Creates a new identity provider in your tenancy. For more information, see
+        `Identity Providers and Federation`__.
+
+        You must specify your tenancy's OCID as the compartment ID in the request object.
+        Remember that the tenancy is simply the root compartment. For information about
+        OCIDs, see `Resource Identifiers`__.
+
+        You must also specify a *name* for the `IdentityProvider`, which must be unique
+        across all `IdentityProvider` objects in your tenancy and cannot be changed.
+
+        You must also specify a *description* for the `IdentityProvider` (although
+        it can be an empty string). It does not have to be unique, and you can change
+        it anytime with
+        :func:`update_identity_provider`.
+
+        After you send your request, the new object's `lifecycleState` will temporarily
+        be CREATING. Before using the object, first make sure its `lifecycleState` has
+        changed to ACTIVE.
+
+        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/federation.htm
+        __ {{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm
+
+
+        :param CreateIdentityProviderDetails create_identity_provider_details: (required)
+            Request object for creating a new SAML2 identity provider.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :return: A Response object with data of type IdentityProvider
+        :rtype: IdentityProvider
+        """
+        resource_path = "/identityProviders/"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_identity_provider got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            header_params=header_params,
+            body=create_identity_provider_details,
+            response_type="IdentityProvider")
+
+    def create_idp_group_mapping(self, create_idp_group_mapping_details, identity_provider_id, **kwargs):
+        """
+        CreateIdpGroupMapping
+        Creates a single mapping between an IdP group and an IAM Service
+        :class:`Group`.
+
+
+        :param CreateIdpGroupMappingDetails create_idp_group_mapping_details: (required)
+            Add a mapping from an SAML2.0 identity provider group to a BMC group.
+
+        :param str identity_provider_id: (required)
+            The OCID of the identity provider.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :return: A Response object with data of type IdpGroupMapping
+        :rtype: IdpGroupMapping
+        """
+        resource_path = "/identityProviders/{identityProviderId}/groupMappings/"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_idp_group_mapping got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "identityProviderId": identity_provider_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=create_idp_group_mapping_details,
+            response_type="IdpGroupMapping")
+
     def create_or_reset_ui_password(self, user_id, **kwargs):
         """
         CreateOrResetUIPassword
@@ -334,6 +454,60 @@ class IdentityClient(object):
             header_params=header_params,
             body=create_policy_details,
             response_type="Policy")
+
+    def create_region_subscription(self, create_region_subscription_details, tenancy_id, **kwargs):
+        """
+        CreateRegionSubscription
+        Creates a subscription to a region for a tenancy.
+
+
+        :param CreateRegionSubscriptionDetails create_region_subscription_details: (required)
+            Request object for activate a new region.
+
+        :param str tenancy_id: (required)
+            The OCID of the tenancy.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :return: A Response object with data of type RegionSubscription
+        :rtype: RegionSubscription
+        """
+        resource_path = "/tenancies/{tenancyId}/regionSubscriptions"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_region_subscription got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "tenancyId": tenancy_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=create_region_subscription_details,
+            response_type="RegionSubscription")
 
     def create_swift_password(self, create_swift_password_details, user_id, **kwargs):
         """
@@ -586,6 +760,105 @@ class IdentityClient(object):
             path_params=path_params,
             header_params=header_params)
 
+    def delete_identity_provider(self, identity_provider_id, **kwargs):
+        """
+        DeleteIdentityProvider
+        Deletes the specified identity provider. The identity provider must not have
+        any group mappings (see :class:`IdpGroupMapping`).
+
+
+        :param str identity_provider_id: (required)
+            The OCID of the identity provider.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :return: A Response object with data of type None
+        :rtype: None
+        """
+        resource_path = "/identityProviders/{identityProviderId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_identity_provider got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "identityProviderId": identity_provider_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params)
+
+    def delete_idp_group_mapping(self, identity_provider_id, mapping_id, **kwargs):
+        """
+        DeleteIdpGroupMapping
+        Deletes the specified group mapping.
+
+
+        :param str identity_provider_id: (required)
+            The OCID of the identity provider.
+
+        :param str mapping_id: (required)
+            The OCID of the group mapping.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :return: A Response object with data of type None
+        :rtype: None
+        """
+        resource_path = "/identityProviders/{identityProviderId}/groupMappings/{mappingId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_idp_group_mapping got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "identityProviderId": identity_provider_id,
+            "mappingId": mapping_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params)
+
     def delete_policy(self, policy_id, **kwargs):
         """
         DeletePolicy
@@ -814,6 +1087,82 @@ class IdentityClient(object):
             header_params=header_params,
             response_type="Group")
 
+    def get_identity_provider(self, identity_provider_id, **kwargs):
+        """
+        GetIdentityProvider
+        Gets the specified identity provider's information.
+
+
+        :param str identity_provider_id: (required)
+            The OCID of the identity provider.
+
+        :return: A Response object with data of type IdentityProvider
+        :rtype: IdentityProvider
+        """
+        resource_path = "/identityProviders/{identityProviderId}"
+        method = "GET"
+
+        if kwargs:
+            raise ValueError(
+                "get_identity_provider got unknown kwargs: {!r}".format(kwargs))
+
+        path_params = {
+            "identityProviderId": identity_provider_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="IdentityProvider")
+
+    def get_idp_group_mapping(self, identity_provider_id, mapping_id, **kwargs):
+        """
+        GetIdpGroupMapping
+        Gets the specified group mapping.
+
+
+        :param str identity_provider_id: (required)
+            The OCID of the identity provider.
+
+        :param str mapping_id: (required)
+            The OCID of the group mapping.
+
+        :return: A Response object with data of type IdpGroupMapping
+        :rtype: IdpGroupMapping
+        """
+        resource_path = "/identityProviders/{identityProviderId}/groupMappings/{mappingId}"
+        method = "GET"
+
+        if kwargs:
+            raise ValueError(
+                "get_idp_group_mapping got unknown kwargs: {!r}".format(kwargs))
+
+        path_params = {
+            "identityProviderId": identity_provider_id,
+            "mappingId": mapping_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="IdpGroupMapping")
+
     def get_policy(self, policy_id, **kwargs):
         """
         GetPolicy
@@ -849,6 +1198,42 @@ class IdentityClient(object):
             path_params=path_params,
             header_params=header_params,
             response_type="Policy")
+
+    def get_tenancy(self, tenancy_id, **kwargs):
+        """
+        GetTenancy
+        Get the specified tenancy's information.
+
+
+        :param str tenancy_id: (required)
+            The OCID of the tenancy.
+
+        :return: A Response object with data of type Tenancy
+        :rtype: Tenancy
+        """
+        resource_path = "/tenancies/{tenancyId}"
+        method = "GET"
+
+        if kwargs:
+            raise ValueError(
+                "get_tenancy got unknown kwargs: {!r}".format(kwargs))
+
+        path_params = {
+            "tenancyId": tenancy_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="Tenancy")
 
     def get_user(self, user_id, **kwargs):
         """
@@ -1008,12 +1393,7 @@ class IdentityClient(object):
         for the compartment ID (remember that the tenancy is simply the root compartment).
         See `Where to Get the Tenancy's OCID and User's OCID`__.
 
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        `Getting Started with Policies`__.
-
         __ {{DOC_SERVER_URL}}/Content/API/Concepts/apisigningkey.htm#five
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm
 
 
         :param str compartment_id: (required)
@@ -1114,6 +1494,120 @@ class IdentityClient(object):
             header_params=header_params,
             response_type="list[Group]")
 
+    def list_identity_providers(self, protocol, compartment_id, **kwargs):
+        """
+        ListIdentityProviders
+        Lists all the identity providers in your tenancy. You must specify the identity provider type (e.g., `SAML2` for
+        identity providers using the SAML2.0 protocol). You must specify your tenancy's OCID as the value for the
+        compartment ID (remember that the tenancy is simply the root compartment).
+        See `Where to Get the Tenancy's OCID and User's OCID`__.
+
+        __ {{DOC_SERVER_URL}}/Content/API/Concepts/apisigningkey.htm#five
+
+
+        :param str protocol: (required)
+            The protocol used for federation.
+
+        :param str compartment_id: (required)
+            The OCID of the compartment (remember that the tenancy is simply the root compartment).
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+        :return: A Response object with data of type list[IdentityProvider]
+        :rtype: list[IdentityProvider]
+        """
+        resource_path = "/identityProviders/"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_identity_providers got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "protocol": protocol,
+            "compartmentId": compartment_id,
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[IdentityProvider]")
+
+    def list_idp_group_mappings(self, identity_provider_id, **kwargs):
+        """
+        ListIdpGroupMappings
+        Lists the group mappings for the specified identity provider.
+
+
+        :param str identity_provider_id: (required)
+            The OCID of the identity provider.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+        :return: A Response object with data of type list[IdpGroupMapping]
+        :rtype: list[IdpGroupMapping]
+        """
+        resource_path = "/identityProviders/{identityProviderId}/groupMappings/"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_idp_group_mappings got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "identityProviderId": identity_provider_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        query_params = {
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[IdpGroupMapping]")
+
     def list_policies(self, compartment_id, **kwargs):
         """
         ListPolicies
@@ -1170,6 +1664,69 @@ class IdentityClient(object):
             header_params=header_params,
             response_type="list[Policy]")
 
+    def list_region_subscriptions(self, tenancy_id, **kwargs):
+        """
+        ListRegionSubscriptions
+        Lists the region subscriptions for the specified tenancy.
+
+
+        :param str tenancy_id: (required)
+            The OCID of the tenancy.
+
+        :return: A Response object with data of type list[RegionSubscription]
+        :rtype: list[RegionSubscription]
+        """
+        resource_path = "/tenancies/{tenancyId}/regionSubscriptions"
+        method = "GET"
+
+        if kwargs:
+            raise ValueError(
+                "list_region_subscriptions got unknown kwargs: {!r}".format(kwargs))
+
+        path_params = {
+            "tenancyId": tenancy_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="list[RegionSubscription]")
+
+    def list_regions(self, **kwargs):
+        """
+        ListRegions
+        Lists all the regions offered by Oracle Bare Metal Cloud Services.
+
+
+        :return: A Response object with data of type list[Region]
+        :rtype: list[Region]
+        """
+        resource_path = "/regions"
+        method = "GET"
+
+        if kwargs:
+            raise ValueError(
+                "list_regions got unknown kwargs: {!r}".format(kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            header_params=header_params,
+            response_type="list[Region]")
+
     def list_swift_passwords(self, user_id, **kwargs):
         """
         ListSwiftPasswords
@@ -1220,12 +1777,7 @@ class IdentityClient(object):
         - You can set both the `userId` and `groupId` to determine if the specified user is in the specified group.
         If the answer is no, the response is an empty list.
 
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        `Getting Started with Policies`__.
-
         __ {{DOC_SERVER_URL}}/Content/API/Concepts/apisigningkey.htm#five
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm
 
 
         :param str compartment_id: (required)
@@ -1486,6 +2038,114 @@ class IdentityClient(object):
             header_params=header_params,
             body=update_group_details,
             response_type="Group")
+
+    def update_identity_provider(self, identity_provider_id, update_identity_provider_details, **kwargs):
+        """
+        UpdateIdentityProvider
+        Updates the specified identity provider.
+
+
+        :param str identity_provider_id: (required)
+            The OCID of the identity provider.
+
+        :param UpdateIdentityProviderDetails update_identity_provider_details: (required)
+            Request object for updating a identity provider.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :return: A Response object with data of type IdentityProvider
+        :rtype: IdentityProvider
+        """
+        resource_path = "/identityProviders/{identityProviderId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_identity_provider got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "identityProviderId": identity_provider_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=update_identity_provider_details,
+            response_type="IdentityProvider")
+
+    def update_idp_group_mapping(self, identity_provider_id, mapping_id, update_idp_group_mapping_details, **kwargs):
+        """
+        UpdateIdpGroupMapping
+        Updates the specified group mapping.
+
+
+        :param str identity_provider_id: (required)
+            The OCID of the identity provider.
+
+        :param str mapping_id: (required)
+            The OCID of the group mapping.
+
+        :param UpdateIdpGroupMappingDetails update_idp_group_mapping_details: (required)
+            Request object for updating an identity provider group mapping
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :return: A Response object with data of type IdpGroupMapping
+        :rtype: IdpGroupMapping
+        """
+        resource_path = "/identityProviders/{identityProviderId}/groupMappings/{mappingId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_idp_group_mapping got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "identityProviderId": identity_provider_id,
+            "mappingId": mapping_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=update_idp_group_mapping_details,
+            response_type="IdpGroupMapping")
 
     def update_policy(self, policy_id, update_policy_details, **kwargs):
         """

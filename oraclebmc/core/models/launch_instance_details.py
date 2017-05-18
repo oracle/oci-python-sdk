@@ -12,6 +12,7 @@ class LaunchInstanceDetails(object):
         self.swagger_types = {
             'availability_domain': 'str',
             'compartment_id': 'str',
+            'create_vnic_details': 'CreateVnicDetails',
             'display_name': 'str',
             'hostname_label': 'str',
             'image_id': 'str',
@@ -24,6 +25,7 @@ class LaunchInstanceDetails(object):
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
+            'create_vnic_details': 'createVnicDetails',
             'display_name': 'displayName',
             'hostname_label': 'hostnameLabel',
             'image_id': 'imageId',
@@ -35,6 +37,7 @@ class LaunchInstanceDetails(object):
 
         self._availability_domain = None
         self._compartment_id = None
+        self._create_vnic_details = None
         self._display_name = None
         self._hostname_label = None
         self._image_id = None
@@ -96,6 +99,30 @@ class LaunchInstanceDetails(object):
         self._compartment_id = compartment_id
 
     @property
+    def create_vnic_details(self):
+        """
+        Gets the create_vnic_details of this LaunchInstanceDetails.
+        Details for the VNIC that is automatically created when an instance is launched.
+
+
+        :return: The create_vnic_details of this LaunchInstanceDetails.
+        :rtype: CreateVnicDetails
+        """
+        return self._create_vnic_details
+
+    @create_vnic_details.setter
+    def create_vnic_details(self, create_vnic_details):
+        """
+        Sets the create_vnic_details of this LaunchInstanceDetails.
+        Details for the VNIC that is automatically created when an instance is launched.
+
+
+        :param create_vnic_details: The create_vnic_details of this LaunchInstanceDetails.
+        :type: CreateVnicDetails
+        """
+        self._create_vnic_details = create_vnic_details
+
+    @property
     def display_name(self):
         """
         Gets the display_name of this LaunchInstanceDetails.
@@ -127,24 +154,9 @@ class LaunchInstanceDetails(object):
     def hostname_label(self):
         """
         Gets the hostname_label of this LaunchInstanceDetails.
-        The hostname for the VNIC that is created during instance launch.
-        Used for DNS. The value is the hostname portion of the instance's
-        fully qualified domain name (FQDN) (e.g., `bminstance-1` in FQDN
-        `bminstance-1.subnet123.vcn1.oraclevcn.com`).
-        Must be unique across all VNICs in the subnet and comply with
-        `RFC 952`__ and
-        `RFC 1123`__.
-        The value cannot be changed, and it can be retrieved from the
-        :class:`Vnic`.
-
-        For more information, see
-        `DNS in Your Virtual Cloud Network`__.
-
-        Example: `bminstance-1`
-
-         __ https://tools.ietf.org/html/rfc952
-         __ https://tools.ietf.org/html/rfc1123
-        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
+        Deprecated. Instead use `hostnameLabel` in
+        :class:`CreateVnicDetails`.
+        If you provide both, the values must match.
 
 
         :return: The hostname_label of this LaunchInstanceDetails.
@@ -156,24 +168,9 @@ class LaunchInstanceDetails(object):
     def hostname_label(self, hostname_label):
         """
         Sets the hostname_label of this LaunchInstanceDetails.
-        The hostname for the VNIC that is created during instance launch.
-        Used for DNS. The value is the hostname portion of the instance's
-        fully qualified domain name (FQDN) (e.g., `bminstance-1` in FQDN
-        `bminstance-1.subnet123.vcn1.oraclevcn.com`).
-        Must be unique across all VNICs in the subnet and comply with
-        `RFC 952`__ and
-        `RFC 1123`__.
-        The value cannot be changed, and it can be retrieved from the
-        :class:`Vnic`.
-
-        For more information, see
-        `DNS in Your Virtual Cloud Network`__.
-
-        Example: `bminstance-1`
-
-         __ https://tools.ietf.org/html/rfc952
-         __ https://tools.ietf.org/html/rfc1123
-        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
+        Deprecated. Instead use `hostnameLabel` in
+        :class:`CreateVnicDetails`.
+        If you provide both, the values must match.
 
 
         :param hostname_label: The hostname_label of this LaunchInstanceDetails.
@@ -221,9 +218,9 @@ class LaunchInstanceDetails(object):
         every time an instance boots; not only after the initial
         LaunchInstance call.
 
-        The default iPXE script connects to the instance\u2019s local boot
+        The default iPXE script connects to the instance's local boot
         volume over iSCSI and performs a network boot. If you use a custom iPXE
-        script and want to network-boot from the instance\u2019s local boot volume
+        script and want to network-boot from the instance's local boot volume
         over iSCSI the same way as the default iPXE script, you should use the
         following iSCSI IP address: 169.254.0.2, and boot volume IQN:
         iqn.2015-02.oracle.boot.
@@ -258,9 +255,9 @@ class LaunchInstanceDetails(object):
         every time an instance boots; not only after the initial
         LaunchInstance call.
 
-        The default iPXE script connects to the instance\u2019s local boot
+        The default iPXE script connects to the instance's local boot
         volume over iSCSI and performs a network boot. If you use a custom iPXE
-        script and want to network-boot from the instance\u2019s local boot volume
+        script and want to network-boot from the instance's local boot volume
         over iSCSI the same way as the default iPXE script, you should use the
         following iSCSI IP address: 169.254.0.2, and boot volume IQN:
         iqn.2015-02.oracle.boot.
@@ -457,7 +454,9 @@ class LaunchInstanceDetails(object):
     def subnet_id(self):
         """
         Gets the subnet_id of this LaunchInstanceDetails.
-        The OCID of the subnet.
+        Deprecated. Instead use `subnetId` in
+        :class:`CreateVnicDetails`.
+        At least one of them is required; if you provide both, the values must match.
 
 
         :return: The subnet_id of this LaunchInstanceDetails.
@@ -469,7 +468,9 @@ class LaunchInstanceDetails(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this LaunchInstanceDetails.
-        The OCID of the subnet.
+        Deprecated. Instead use `subnetId` in
+        :class:`CreateVnicDetails`.
+        At least one of them is required; if you provide both, the values must match.
 
 
         :param subnet_id: The subnet_id of this LaunchInstanceDetails.

@@ -29,8 +29,7 @@ class DhcpSearchDomainOption(DhcpOption):
         Gets the search_domain_names of this DhcpSearchDomainOption.
         A single search domain name according to `RFC 952`__
         and `RFC 1123`__. During a DNS query,
-        the OS will append this search domain name to the value being queried, but only if
-        that value is not a fully qualified domain name (FQDN).
+        the OS will append this search domain name to the value being queried.
 
         If you set :class:`DhcpDnsOption` to `VcnLocalPlusInternet`,
         and you assign a DNS label to the VCN during creation, the search domain name in the
@@ -57,8 +56,7 @@ class DhcpSearchDomainOption(DhcpOption):
         Sets the search_domain_names of this DhcpSearchDomainOption.
         A single search domain name according to `RFC 952`__
         and `RFC 1123`__. During a DNS query,
-        the OS will append this search domain name to the value being queried, but only if
-        that value is not a fully qualified domain name (FQDN).
+        the OS will append this search domain name to the value being queried.
 
         If you set :class:`DhcpDnsOption` to `VcnLocalPlusInternet`,
         and you assign a DNS label to the VCN during creation, the search domain name in the

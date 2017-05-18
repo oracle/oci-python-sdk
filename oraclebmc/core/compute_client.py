@@ -6,7 +6,7 @@ from __future__ import absolute_import
 import six
 
 from ..base_client import BaseClient
-from ..config import validate_config
+from ..config import get_config_value_or_default, validate_config
 from ..signer import Signer
 from ..util import Sentinel
 from .models import core_type_mapping
@@ -22,7 +22,7 @@ class ComputeClient(object):
             user=config["user"],
             fingerprint=config["fingerprint"],
             private_key_file_location=config["key_file"],
-            pass_phrase=config["pass_phrase"]
+            pass_phrase=get_config_value_or_default(config, "pass_phrase")
         )
         self.base_client = BaseClient("compute", config, signer, core_type_mapping)
 
@@ -673,8 +673,9 @@ class ComputeClient(object):
         on that resource type, or by viewing the resource in the Console.
 
         When you launch an instance, it is automatically attached to a Virtual
-        Network Interface Card (VNIC) and given both a public and private IP address.
-        To get both addresses, use the :func:`list_vnic_attachments`
+        Network Interface Card (VNIC). The VNIC has a private IP address from
+        the subnet's CIDR, and optionally a public IP address.
+        To get the addresses, use the :func:`list_vnic_attachments`
         operation to get the VNIC ID for the instance, and then call
         :func:`get_vnic` with the VNIC ID.
 

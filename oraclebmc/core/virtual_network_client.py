@@ -6,7 +6,7 @@ from __future__ import absolute_import
 import six
 
 from ..base_client import BaseClient
-from ..config import validate_config
+from ..config import get_config_value_or_default, validate_config
 from ..signer import Signer
 from ..util import Sentinel
 from .models import core_type_mapping
@@ -22,20 +22,20 @@ class VirtualNetworkClient(object):
             user=config["user"],
             fingerprint=config["fingerprint"],
             private_key_file_location=config["key_file"],
-            pass_phrase=config["pass_phrase"]
+            pass_phrase=get_config_value_or_default(config, "pass_phrase")
         )
         self.base_client = BaseClient("virtual_network", config, signer, core_type_mapping)
 
     def create_cpe(self, create_cpe_details, **kwargs):
         """
         CreateCpe
-        Creates a new virtual Customer-Premise Equipment (CPE) object in the specified compartment. For
-        more information, see `Managing Customer-Premise Equipment (CPE)`__.
+        Creates a new virtual Customer-Premises Equipment (CPE) object in the specified compartment. For
+        more information, see `Managing IPSec VPNs`__.
 
         For the purposes of access control, you must provide the OCID of the compartment where you want
         the CPE to reside. Notice that the CPE doesn't have to be in the same compartment as the IPSec
         connection or other Networking Service components. If you're not sure which compartment to
-        use, put the CPE in the same compartment as the IPSec connection. For more information about
+        use, put the CPE in the same compartment as the DRG. For more information about
         compartments and access control, see `Overview of the IAM Service`__.
         For information about OCIDs, see `Resource Identifiers`__.
 
@@ -45,7 +45,7 @@ class VirtualNetworkClient(object):
         You may optionally specify a *display name* for the CPE, otherwise a default is provided. It does not have to
         be unique, and you can change it.
 
-        __ {{DOC_SERVER_URL}}/Content/Network/Tasks/managingCPEs.htm
+        __ {{DOC_SERVER_URL}}/Content/Network/Tasks/managingIPsec.htm
         __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm
         __ {{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm
         __ {{DOC_SERVER_URL}}/Content/Network/Tasks/configuringCPE.htm
@@ -89,6 +89,136 @@ class VirtualNetworkClient(object):
             header_params=header_params,
             body=create_cpe_details,
             response_type="Cpe")
+
+    def create_cross_connect(self, create_cross_connect_details, **kwargs):
+        """
+        CreateCrossConnect
+        Creates a new cross-connect. Oracle recommends you create each cross-connect in a
+        :class:`CrossConnectGroup` so you can use link aggregation
+        with the connection.
+
+        After creating the `CrossConnect` object, you need to go the FastConnect location
+        and request to have the physical cable installed. For more information, see
+        `FastConnect Overview`__.
+
+        For the purposes of access control, you must provide the OCID of the
+        compartment where you want the cross-connect to reside. If you're
+        not sure which compartment to use, put the cross-connect in the
+        same compartment with your VCN. For more information about
+        compartments and access control, see
+        `Overview of the IAM Service`__.
+        For information about OCIDs, see
+        `Resource Identifiers`__.
+
+        You may optionally specify a *display name* for the cross-connect.
+        It does not have to be unique, and you can change it.
+
+        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/fastconnect.htm
+        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm
+        __ {{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm
+
+
+        :param CreateCrossConnectDetails create_cross_connect_details: (required)
+            Details to create a CrossConnect
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :return: A Response object with data of type CrossConnect
+        :rtype: CrossConnect
+        """
+        resource_path = "/crossConnects"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_cross_connect got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            header_params=header_params,
+            body=create_cross_connect_details,
+            response_type="CrossConnect")
+
+    def create_cross_connect_group(self, create_cross_connect_group_details, **kwargs):
+        """
+        CreateCrossConnectGroup
+        Creates a new cross-connect group to use with Oracle Bare Metal Cloud Services
+        FastConnect. For more information, see
+        `FastConnect Overview`__.
+
+        For the purposes of access control, you must provide the OCID of the
+        compartment where you want the cross-connect group to reside. If you're
+        not sure which compartment to use, put the cross-connect group in the
+        same compartment with your VCN. For more information about
+        compartments and access control, see
+        `Overview of the IAM Service`__.
+        For information about OCIDs, see
+        `Resource Identifiers`__.
+
+        You may optionally specify a *display name* for the cross-connect group.
+        It does not have to be unique, and you can change it.
+
+        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/fastconnect.htm
+        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm
+        __ {{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm
+
+
+        :param CreateCrossConnectGroupDetails create_cross_connect_group_details: (required)
+            Details to create a CrossConnectGroup
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :return: A Response object with data of type CrossConnectGroup
+        :rtype: CrossConnectGroup
+        """
+        resource_path = "/crossConnectGroups"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_cross_connect_group got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            header_params=header_params,
+            body=create_cross_connect_group_details,
+            response_type="CrossConnectGroup")
 
     def create_dhcp_options(self, create_dhcp_details, **kwargs):
         """
@@ -212,8 +342,9 @@ class VirtualNetworkClient(object):
     def create_drg_attachment(self, create_drg_attachment_details, **kwargs):
         """
         CreateDrgAttachment
-        Attaches the specified DRG to the specified VCN. A VCN can be attached to only one DRG at a time.
-        The response includes a `DrgAttachment` object with its own OCID. For more information about DRGs, see
+        Attaches the specified DRG to the specified VCN. A VCN can be attached to only one DRG at a time,
+        and vice versa. The response includes a `DrgAttachment` object with its own OCID. For more
+        information about DRGs, see
         `Managing Dynamic Routing Gateways (DRGs)`__.
 
         You may optionally specify a *display name* for the attachment, otherwise a default is provided.
@@ -347,7 +478,7 @@ class VirtualNetworkClient(object):
         For the purposes of access control, you must provide the OCID of the compartment where you want the
         IPSec connection to reside. Notice that the IPSec connection doesn't have to be in the same compartment
         as the DRG, CPE, or other Networking Service components. If you're not sure which compartment to
-        use, put the IPSec connection in the same compartment as the CPE. For more information about
+        use, put the IPSec connection in the same compartment as the DRG. For more information about
         compartments and access control, see
         `Overview of the IAM Service`__.
         For information about OCIDs, see `Resource Identifiers`__.
@@ -649,16 +780,16 @@ class VirtualNetworkClient(object):
         The OCID for each is returned in the response. You can't delete these default objects, but you can change their
         contents (i.e., route rules, etc.)
 
-        The VCN and subnets you create are not accessible until you attach an Internet Gateway or set up a VPN.
-        For more information, see
-        `Typical Networking Service Scenarios`__.
+        The VCN and subnets you create are not accessible until you attach an Internet Gateway or set up an IPSec VPN
+        or FastConnect. For more information, see
+        `Overview of the Networking Service`__.
 
         __ {{DOC_SERVER_URL}}/Content/Network/Tasks/managingVCNs.htm
          __ https://tools.ietf.org/html/rfc1918
         __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm
         __ {{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm
         __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
-        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/overview.htm#three
+        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/overview.htm
 
 
         :param CreateVcnDetails create_vcn_details: (required)
@@ -700,6 +831,76 @@ class VirtualNetworkClient(object):
             body=create_vcn_details,
             response_type="Vcn")
 
+    def create_virtual_circuit(self, create_virtual_circuit_details, **kwargs):
+        """
+        CreateVirtualCircuit
+        Creates a new virtual circuit to use with Oracle Bare Metal Cloud
+        Services FastConnect. For more information, see
+        `FastConnect Overview`__.
+
+        For the purposes of access control, you must provide the OCID of the
+        compartment where you want the virtual circuit to reside. If you're
+        not sure which compartment to use, put the virtual circuit in the
+        same compartment with the DRG it's using. For more information about
+        compartments and access control, see
+        `Overview of the IAM Service`__.
+        For information about OCIDs, see
+        `Resource Identifiers`__.
+
+        You may optionally specify a *display name* for the virtual circuit.
+        It does not have to be unique, and you can change it.
+
+        **Important:** When creating a virtual circuit, you specify a DRG for
+        the traffic to flow through. Make sure you attach the DRG to your
+        VCN and confirm the VCN's routing sends traffic to the DRG. Otherwise
+        traffic will not flow. For more information, see
+        `Managing Route Tables`__.
+
+        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/fastconnect.htm
+        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm
+        __ {{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm
+        __ {{DOC_SERVER_URL}}/Content/Network/Tasks/managingroutetables.htm
+
+
+        :param CreateVirtualCircuitDetails create_virtual_circuit_details: (required)
+            Details to create a VirtualCircuit.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :return: A Response object with data of type VirtualCircuit
+        :rtype: VirtualCircuit
+        """
+        resource_path = "/virtualCircuits"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_virtual_circuit got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            header_params=header_params,
+            body=create_virtual_circuit_details,
+            response_type="VirtualCircuit")
+
     def delete_cpe(self, cpe_id, **kwargs):
         """
         DeleteCpe
@@ -733,6 +934,103 @@ class VirtualNetworkClient(object):
 
         path_params = {
             "cpeId": cpe_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params)
+
+    def delete_cross_connect(self, cross_connect_id, **kwargs):
+        """
+        DeleteCrossConnect
+        Deletes the specified cross-connect. It must not be mapped to a
+        :class:`VirtualCircuit`.
+
+
+        :param str cross_connect_id: (required)
+            The OCID of the cross-connect.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :return: A Response object with data of type None
+        :rtype: None
+        """
+        resource_path = "/crossConnects/{crossConnectId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_cross_connect got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "crossConnectId": cross_connect_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params)
+
+    def delete_cross_connect_group(self, cross_connect_group_id, **kwargs):
+        """
+        DeleteCrossConnectGroup
+        Deletes the specified cross-connect group. It must not contain any
+        cross-connects, and it cannot be mapped to a
+        :class:`VirtualCircuit`.
+
+
+        :param str cross_connect_group_id: (required)
+            The OCID of the cross-connect group.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :return: A Response object with data of type None
+        :rtype: None
+        """
+        resource_path = "/crossConnectGroups/{crossConnectGroupId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_cross_connect_group got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "crossConnectGroupId": cross_connect_group_id
         }
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
@@ -953,9 +1251,9 @@ class VirtualNetworkClient(object):
     def delete_ip_sec_connection(self, ipsc_id, **kwargs):
         """
         DeleteIPSecConnection
-        Deletes the specified IPSec connection. If your goal is to disable the VPN between your VCN and
-        on-premise network, it's easiest to simply detach the DRG but keep all the VPN components intact.
-        If you were to delete all the components and then later need to create a VPN again, you would
+        Deletes the specified IPSec connection. If your goal is to disable the IPSec VPN between your VCN and
+        on-premise network, it's easiest to simply detach the DRG but keep all the IPSec VPN components intact.
+        If you were to delete all the components and then later need to create an IPSec VPN again, you would
         need to configure your on-premise router again with the new information returned from
         :func:`create_ip_sec_connection`.
 
@@ -1204,6 +1502,57 @@ class VirtualNetworkClient(object):
             path_params=path_params,
             header_params=header_params)
 
+    def delete_virtual_circuit(self, virtual_circuit_id, **kwargs):
+        """
+        DeleteVirtualCircuit
+        Deletes the specified virtual circuit.
+
+        **Important:** If you're using FastConnect via a provider,
+        make sure to also terminate the connection with
+        the provider, or else the provider may continue to bill you.
+
+
+        :param str virtual_circuit_id: (required)
+            The OCID of the virtual circuit.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :return: A Response object with data of type None
+        :rtype: None
+        """
+        resource_path = "/virtualCircuits/{virtualCircuitId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_virtual_circuit got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "virtualCircuitId": virtual_circuit_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params)
+
     def get_cpe(self, cpe_id, **kwargs):
         """
         GetCpe
@@ -1239,6 +1588,150 @@ class VirtualNetworkClient(object):
             path_params=path_params,
             header_params=header_params,
             response_type="Cpe")
+
+    def get_cross_connect(self, cross_connect_id, **kwargs):
+        """
+        GetCrossConnect
+        Gets the specified cross-connect's information.
+
+
+        :param str cross_connect_id: (required)
+            The OCID of the cross-connect.
+
+        :return: A Response object with data of type CrossConnect
+        :rtype: CrossConnect
+        """
+        resource_path = "/crossConnects/{crossConnectId}"
+        method = "GET"
+
+        if kwargs:
+            raise ValueError(
+                "get_cross_connect got unknown kwargs: {!r}".format(kwargs))
+
+        path_params = {
+            "crossConnectId": cross_connect_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="CrossConnect")
+
+    def get_cross_connect_group(self, cross_connect_group_id, **kwargs):
+        """
+        GetCrossConnectGroups
+        Gets the specified cross-connect group's information.
+
+
+        :param str cross_connect_group_id: (required)
+            The OCID of the cross-connect group.
+
+        :return: A Response object with data of type CrossConnectGroup
+        :rtype: CrossConnectGroup
+        """
+        resource_path = "/crossConnectGroups/{crossConnectGroupId}"
+        method = "GET"
+
+        if kwargs:
+            raise ValueError(
+                "get_cross_connect_group got unknown kwargs: {!r}".format(kwargs))
+
+        path_params = {
+            "crossConnectGroupId": cross_connect_group_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="CrossConnectGroup")
+
+    def get_cross_connect_letter_of_authority(self, cross_connect_id, **kwargs):
+        """
+        GetCrossConnectLetterOfAuthority
+        Gets the Letter of Authority for the specified cross-connect.
+
+
+        :param str cross_connect_id: (required)
+            The OCID of the cross-connect.
+
+        :return: A Response object with data of type LetterOfAuthority
+        :rtype: LetterOfAuthority
+        """
+        resource_path = "/crossConnects/{crossConnectId}/letterOfAuthority"
+        method = "GET"
+
+        if kwargs:
+            raise ValueError(
+                "get_cross_connect_letter_of_authority got unknown kwargs: {!r}".format(kwargs))
+
+        path_params = {
+            "crossConnectId": cross_connect_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="LetterOfAuthority")
+
+    def get_cross_connect_status(self, cross_connect_id, **kwargs):
+        """
+        GetCrossConnectStatus
+        Gets the status of the specified cross-connect.
+
+
+        :param str cross_connect_id: (required)
+            The OCID of the cross-connect.
+
+        :return: A Response object with data of type CrossConnectStatus
+        :rtype: CrossConnectStatus
+        """
+        resource_path = "/crossConnects/{crossConnectId}/status"
+        method = "GET"
+
+        if kwargs:
+            raise ValueError(
+                "get_cross_connect_status got unknown kwargs: {!r}".format(kwargs))
+
+        path_params = {
+            "crossConnectId": cross_connect_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="CrossConnectStatus")
 
     def get_dhcp_options(self, dhcp_id, **kwargs):
         """
@@ -1639,12 +2132,48 @@ class VirtualNetworkClient(object):
             header_params=header_params,
             response_type="Vcn")
 
+    def get_virtual_circuit(self, virtual_circuit_id, **kwargs):
+        """
+        GetVirtualCircuit
+        Gets the specified virtual circuit's information.
+
+
+        :param str virtual_circuit_id: (required)
+            The OCID of the virtual circuit.
+
+        :return: A Response object with data of type VirtualCircuit
+        :rtype: VirtualCircuit
+        """
+        resource_path = "/virtualCircuits/{virtualCircuitId}"
+        method = "GET"
+
+        if kwargs:
+            raise ValueError(
+                "get_virtual_circuit got unknown kwargs: {!r}".format(kwargs))
+
+        path_params = {
+            "virtualCircuitId": virtual_circuit_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="VirtualCircuit")
+
     def get_vnic(self, vnic_id, **kwargs):
         """
         GetVnic
-        Gets the information for the specified Virtual Network Interface Card (VNIC), including the attached
-        instance's public and private IP addresses. You can get the instance's VNIC OCID from the
-        Cloud Compute Service's :func:`list_vnic_attachments` operation.
+        Gets the information for the specified Virtual Network Interface Card (VNIC), including
+        the IP addresses. You can get the instance's VNIC OCID from the
+        :func:`list_vnic_attachments` operation.
 
 
         :param str vnic_id: (required)
@@ -1680,7 +2209,7 @@ class VirtualNetworkClient(object):
     def list_cpes(self, compartment_id, **kwargs):
         """
         ListCpes
-        Lists the Customer-Premise Equipment objects (CPEs) in the specified compartment.
+        Lists the Customer-Premises Equipment objects (CPEs) in the specified compartment.
 
 
         :param str compartment_id: (required)
@@ -1728,6 +2257,223 @@ class VirtualNetworkClient(object):
             query_params=query_params,
             header_params=header_params,
             response_type="list[Cpe]")
+
+    def list_cross_connect_groups(self, compartment_id, **kwargs):
+        """
+        ListCrossConnectGroups
+        Lists the cross-connect groups in the specified compartment.
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+            Example: `500`
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :return: A Response object with data of type list[CrossConnectGroup]
+        :rtype: list[CrossConnectGroup]
+        """
+        resource_path = "/crossConnectGroups"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_cross_connect_groups got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[CrossConnectGroup]")
+
+    def list_cross_connect_locations(self, compartment_id, **kwargs):
+        """
+        ListCrossConnectLocations
+        Lists the available FastConnect locations for cross-connect installation. You need
+        this information so you can specify your desired location when you create a cross-connect.
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+            Example: `500`
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :return: A Response object with data of type list[CrossConnectLocation]
+        :rtype: list[CrossConnectLocation]
+        """
+        resource_path = "/crossConnectLocations"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_cross_connect_locations got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[CrossConnectLocation]")
+
+    def list_cross_connects(self, compartment_id, **kwargs):
+        """
+        ListCrossConnects
+        Lists the cross-connects in the specified compartment. You can filter the list
+        by specifying the OCID of a cross-connect group.
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment.
+
+        :param str cross_connect_group_id: (optional)
+            The OCID of the cross-connect group.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+            Example: `500`
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :return: A Response object with data of type list[CrossConnect]
+        :rtype: list[CrossConnect]
+        """
+        resource_path = "/crossConnects"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "cross_connect_group_id",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_cross_connects got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "crossConnectGroupId": kwargs.get("cross_connect_group_id", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[CrossConnect]")
+
+    def list_crossconnect_port_speed_shapes(self, compartment_id, **kwargs):
+        """
+        ListCrossConnectPortSpeedShapes
+        Lists the available port speeds for cross-connects. You need this information
+        so you can specify your desired port speed (i.e., shape) when you create a
+        cross-connect.
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+            Example: `500`
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :return: A Response object with data of type list[CrossConnectPortSpeedShape]
+        :rtype: list[CrossConnectPortSpeedShape]
+        """
+        resource_path = "/crossConnectPortSpeedShapes"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_crossconnect_port_speed_shapes got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[CrossConnectPortSpeedShape]")
 
     def list_dhcp_options(self, compartment_id, vcn_id, **kwargs):
         """
@@ -1901,6 +2647,66 @@ class VirtualNetworkClient(object):
             query_params=query_params,
             header_params=header_params,
             response_type="list[Drg]")
+
+    def list_fast_connect_provider_services(self, compartment_id, **kwargs):
+        """
+        ListFastConnectProviderServices
+        Lists the service offerings from supported providers. You need this
+        information so you can specify your desired provider and service
+        offering when you create a virtual circuit.
+
+        For the compartment ID, provide the OCID of your tenancy (the root compartment).
+
+        For more information, see `FastConnect Overview`__.
+
+        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/fastconnect.htm
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+            Example: `500`
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :return: A Response object with data of type list[FastConnectProviderService]
+        :rtype: list[FastConnectProviderService]
+        """
+        resource_path = "/fastConnectProviderServices"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_fast_connect_provider_services got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[FastConnectProviderService]")
 
     def list_internet_gateways(self, compartment_id, vcn_id, **kwargs):
         """
@@ -2243,6 +3049,119 @@ class VirtualNetworkClient(object):
             header_params=header_params,
             response_type="list[Vcn]")
 
+    def list_virtual_circuit_bandwidth_shapes(self, compartment_id, **kwargs):
+        """
+        ListVirtualCircuitBandwidthShapes
+        Lists the available bandwidth levels for virtual circuits. You need this
+        information so you can specify your desired bandwidth level (i.e., shape)
+        when you create a virtual circuit.
+
+        For the compartment ID, provide the OCID of your tenancy (the root compartment).
+
+        For more information about virtual circuits, see
+        `FastConnect Overview`__.
+
+        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/fastconnect.htm
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+            Example: `500`
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :return: A Response object with data of type list[VirtualCircuitBandwidthShape]
+        :rtype: list[VirtualCircuitBandwidthShape]
+        """
+        resource_path = "/virtualCircuitBandwidthShapes"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_virtual_circuit_bandwidth_shapes got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[VirtualCircuitBandwidthShape]")
+
+    def list_virtual_circuits(self, compartment_id, **kwargs):
+        """
+        ListVirtualCircuits
+        Lists the virtual circuits in the specified compartment.
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+            Example: `500`
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :return: A Response object with data of type list[VirtualCircuit]
+        :rtype: list[VirtualCircuit]
+        """
+        resource_path = "/virtualCircuits"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_virtual_circuits got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[VirtualCircuit]")
+
     def update_cpe(self, cpe_id, update_cpe_details, **kwargs):
         """
         UpdateCpe
@@ -2294,6 +3213,110 @@ class VirtualNetworkClient(object):
             header_params=header_params,
             body=update_cpe_details,
             response_type="Cpe")
+
+    def update_cross_connect(self, cross_connect_id, update_cross_connect_details, **kwargs):
+        """
+        UpdateCrossConnect
+        Updates the specified cross-connect.
+
+
+        :param str cross_connect_id: (required)
+            The OCID of the cross-connect.
+
+        :param UpdateCrossConnectDetails update_cross_connect_details: (required)
+            Update CrossConnect fields.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :return: A Response object with data of type CrossConnect
+        :rtype: CrossConnect
+        """
+        resource_path = "/crossConnects/{crossConnectId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_cross_connect got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "crossConnectId": cross_connect_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=update_cross_connect_details,
+            response_type="CrossConnect")
+
+    def update_cross_connect_group(self, cross_connect_group_id, update_cross_connect_group_details, **kwargs):
+        """
+        UpdateCrossConnectGroup
+        Updates the specified cross-connect group's display name.
+
+
+        :param str cross_connect_group_id: (required)
+            The OCID of the cross-connect group.
+
+        :param UpdateCrossConnectGroupDetails update_cross_connect_group_details: (required)
+            Update CrossConnectGroup fields
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :return: A Response object with data of type CrossConnectGroup
+        :rtype: CrossConnectGroup
+        """
+        resource_path = "/crossConnectGroups/{crossConnectGroupId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_cross_connect_group got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "crossConnectGroupId": cross_connect_group_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=update_cross_connect_group_details,
+            response_type="CrossConnectGroup")
 
     def update_dhcp_options(self, dhcp_id, update_dhcp_details, **kwargs):
         """
@@ -2769,3 +3792,72 @@ class VirtualNetworkClient(object):
             header_params=header_params,
             body=update_vcn_details,
             response_type="Vcn")
+
+    def update_virtual_circuit(self, virtual_circuit_id, update_virtual_circuit_details, **kwargs):
+        """
+        UpdateVirtualCircuit
+        Updates the specified virtual circuit. This can be called by
+        either the customer who owns the virtual circuit, or the
+        provider (when provisioning or de-provisioning the virtual
+        circuit from their end). The documentation for
+        :func:`update_virtual_circuit_details`
+        indicates who can update each property of the virtual circuit.
+
+        **Important:** If the virtual circuit is working and in the
+        PROVISIONED state, updating any of the network-related properties
+        (such as the DRG being used, the BGP ASN, etc.) will cause the virtual
+        circuit's state to switch to PROVISIONING and the related BGP
+        session to go down. After Oracle re-provisions the virtual circuit,
+        its state will return to PROVISIONED. Make sure you confirm that
+        the associated BGP session is back up. For more information
+        about the various states and how to test connectivity, see
+        `FastConnect Overview`__.
+
+        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/fastconnect.htm
+
+
+        :param str virtual_circuit_id: (required)
+            The OCID of the virtual circuit.
+
+        :param UpdateVirtualCircuitDetails update_virtual_circuit_details: (required)
+            Update VirtualCircuit fields.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :return: A Response object with data of type VirtualCircuit
+        :rtype: VirtualCircuit
+        """
+        resource_path = "/virtualCircuits/{virtualCircuitId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_virtual_circuit got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "virtualCircuitId": virtual_circuit_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=update_virtual_circuit_details,
+            response_type="VirtualCircuit")

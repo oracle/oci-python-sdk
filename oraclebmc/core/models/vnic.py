@@ -262,7 +262,7 @@ class Vnic(object):
     def public_ip(self):
         """
         Gets the public_ip of this Vnic.
-        The public IP address of the VNIC.
+        The public IP address of the VNIC, if one is assigned.
 
 
         :return: The public_ip of this Vnic.
@@ -274,7 +274,7 @@ class Vnic(object):
     def public_ip(self, public_ip):
         """
         Sets the public_ip of this Vnic.
-        The public IP address of the VNIC.
+        The public IP address of the VNIC, if one is assigned.
 
 
         :param public_ip: The public_ip of this Vnic.
