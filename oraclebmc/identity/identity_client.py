@@ -1494,7 +1494,7 @@ class IdentityClient(object):
             header_params=header_params,
             response_type="list[Group]")
 
-    def list_identity_providers(self, type, compartment_id, **kwargs):
+    def list_identity_providers(self, protocol, compartment_id, **kwargs):
         """
         ListIdentityProviders
         Lists all the identity providers in your tenancy. You must specify the identity provider type (e.g., `SAML2` for
@@ -1505,8 +1505,8 @@ class IdentityClient(object):
         __ {{DOC_SERVER_URL}}/Content/API/Concepts/apisigningkey.htm#five
 
 
-        :param str type: (required)
-            Identity provider type.
+        :param str protocol: (required)
+            The protocol used for federation.
 
         :param str compartment_id: (required)
             The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -1534,7 +1534,7 @@ class IdentityClient(object):
                 "list_identity_providers got unknown kwargs: {!r}".format(extra_kwargs))
 
         query_params = {
-            "type": type,
+            "protocol": protocol,
             "compartmentId": compartment_id,
             "page": kwargs.get("page", missing),
             "limit": kwargs.get("limit", missing)
