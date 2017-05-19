@@ -1,9 +1,10 @@
 # coding: utf-8
 # Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
-REGIONS = {
-    "us-phoenix-1": "us-phoenix-1.oraclecloud.com"
-}
+REGIONS = [
+    "us-phoenix-1",
+    "us-ashburn-1"
+]
 SERVICE_ENDPOINTS = {
     "identity": "https://identity.{domain}/20160918",
     "blockstorage": "https://iaas.{domain}/20160918",
@@ -11,6 +12,8 @@ SERVICE_ENDPOINTS = {
     "virtual_network": "https://iaas.{domain}/20160918",
     "object_storage": "https://objectstorage.{domain}"
 }
+
+DOMAIN_FORMAT = "{region}.oraclecloud.com"
 
 
 def is_region(region_name):
@@ -33,9 +36,13 @@ def endpoint_for(service, region=None, endpoint=None):
     else:
         # no endpoint provided
         region = region.lower()
-        # Provide aliases for known regions, fall back to the literal
-        # value if it's not a known alias.
-        domain = REGIONS.get(region, region)
+
+        # for backwards compatibility, if region already has a '.'
+        # then consider it the full domain and do not append '.oraclecloud.com'
+        if '.' in region:
+            domain = region
+        else:
+            domain = DOMAIN_FORMAT.format(region=region)
 
     url_format = SERVICE_ENDPOINTS[service.lower()]
     return url_format.format(domain=domain)
