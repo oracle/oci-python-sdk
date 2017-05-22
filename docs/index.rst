@@ -33,7 +33,7 @@ To get started, head over to the :ref:`installation instructions <install>` or s
 
     installation
     configuration
-	forward-compatibility
+    forward-compatibility
     quickstart
     parallel-ops
     raw-requests
