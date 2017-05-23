@@ -231,7 +231,7 @@ class LaunchInstanceDetails(object):
 
         For more information about iPXE, see http://ipxe.org.
 
-        __ {{DOC_SERVER_URL}}/Content/Compute/References/bringyourownimage.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/bringyourownimage.htm
 
 
         :return: The ipxe_script of this LaunchInstanceDetails.
@@ -268,7 +268,7 @@ class LaunchInstanceDetails(object):
 
         For more information about iPXE, see http://ipxe.org.
 
-        __ {{DOC_SERVER_URL}}/Content/Compute/References/bringyourownimage.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/bringyourownimage.htm
 
 
         :param ipxe_script: The ipxe_script of this LaunchInstanceDetails.
@@ -339,8 +339,8 @@ class LaunchInstanceDetails(object):
          You'll get back a response that includes all the instance information; only the metadata information; or
          the metadata information for the specified key name, respectively.
 
-         __ https://cloudinit.readthedocs.org/en/latest/
-         __ http://cloudinit.readthedocs.org/en/latest/topics/format.html
+        __ https://cloudinit.readthedocs.org/en/latest/
+        __ http://cloudinit.readthedocs.org/en/latest/topics/format.html
 
 
         :return: The metadata of this LaunchInstanceDetails.
@@ -411,8 +411,8 @@ class LaunchInstanceDetails(object):
          You'll get back a response that includes all the instance information; only the metadata information; or
          the metadata information for the specified key name, respectively.
 
-         __ https://cloudinit.readthedocs.org/en/latest/
-         __ http://cloudinit.readthedocs.org/en/latest/topics/format.html
+        __ https://cloudinit.readthedocs.org/en/latest/
+        __ http://cloudinit.readthedocs.org/en/latest/topics/format.html
 
 
         :param metadata: The metadata of this LaunchInstanceDetails.

@@ -119,9 +119,9 @@ class CreateVnicDetails(object):
 
         Example: `bminstance-1`
 
-         __ https://tools.ietf.org/html/rfc952
-         __ https://tools.ietf.org/html/rfc1123
-        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
+        __ https://tools.ietf.org/html/rfc952
+        __ https://tools.ietf.org/html/rfc1123
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm
 
 
         :return: The hostname_label of this CreateVnicDetails.
@@ -153,9 +153,9 @@ class CreateVnicDetails(object):
 
         Example: `bminstance-1`
 
-         __ https://tools.ietf.org/html/rfc952
-         __ https://tools.ietf.org/html/rfc1123
-        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
+        __ https://tools.ietf.org/html/rfc952
+        __ https://tools.ietf.org/html/rfc1123
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm
 
 
         :param hostname_label: The hostname_label of this CreateVnicDetails.

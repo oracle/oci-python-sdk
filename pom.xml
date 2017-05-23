@@ -150,6 +150,27 @@
                 </executions>
             </plugin>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.8</version>
+                <executions>
+                    <execution>
+                        <id>replace_links</id>
+                        <phase>compile</phase>
+                        <configuration>
+                            <target>
+                                <replace dir='oraclebmc' token="{{DOC_SERVER_URL}}"
+                                         value="https://docs.us-phoenix-1.oraclecloud.com" />
+                            </target>
+                            <failOnError>false</failOnError>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <artifactId>maven-clean-plugin</artifactId>
                 <version>3.0.0</version>
                 <configuration>

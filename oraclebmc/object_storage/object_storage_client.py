@@ -35,7 +35,7 @@ class ObjectStorageClient(object):
         talk to an administrator. If you're an admin who needs to write policies to give users access, see
         `Getting Started with Policies`__.
 
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
 
 
         :param str namespace_name: (required)
@@ -512,7 +512,7 @@ class ObjectStorageClient(object):
         talk to an administrator. If you're an admin who needs to write policies to give users access, see
         `Getting Started with Policies`__.
 
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
 
 
         :param str namespace_name: (required)
@@ -583,7 +583,7 @@ class ObjectStorageClient(object):
         talk to an administrator. If you're an admin who needs to write policies to give users access, see
         `Getting Started with Policies`__.
 
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
 
 
         :param str namespace_name: (required)
@@ -683,7 +683,7 @@ class ObjectStorageClient(object):
         talk to an administrator. If you're an admin who needs to write policies to give users access, see
         `Getting Started with Policies`__.
 
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
 
 
         :param str namespace_name: (required)

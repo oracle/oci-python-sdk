@@ -206,7 +206,7 @@ class Instance(object):
 
         For more information about iPXE, see http://ipxe.org.
 
-        __ {{DOC_SERVER_URL}}/Content/Compute/References/bringyourownimage.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/bringyourownimage.htm
 
 
         :return: The ipxe_script of this Instance.
@@ -241,7 +241,7 @@ class Instance(object):
 
         For more information about iPXE, see http://ipxe.org.
 
-        __ {{DOC_SERVER_URL}}/Content/Compute/References/bringyourownimage.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/bringyourownimage.htm
 
 
         :param ipxe_script: The ipxe_script of this Instance.
