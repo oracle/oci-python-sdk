@@ -26,6 +26,10 @@
             <groupId>com.oracle.pic.casper</groupId>
             <artifactId>casper-api-spec</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.oracle.pic.lb</groupId>
+            <artifactId>oralb-api-spec</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
@@ -89,6 +93,25 @@
                             </artifactItems>
                         </configuration>
                     </execution>
+                    <!-- Unpack oralb yaml spec -->
+                    <execution>
+                        <id>unpack-oralb</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>com.oracle.pic.lb</groupId>
+                                    <artifactId>oralb-api-spec</artifactId>
+                                    <type>jar</type>
+                                    <includes>spec-20170115.yaml</includes>
+                                    <outputDirectory>${spec-temp-dir}</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>
@@ -144,6 +167,24 @@
                             <additionalProperties>
                                 <packageName>oraclebmc</packageName>
                                 <specName>object_storage</specName>
+                            </additionalProperties>
+                        </configuration>
+                    </execution>
+                    <!-- Generate oralb api -->
+                    <execution>
+                        <id>python-public-sdk-oralb</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <language>oracle-python-sdk</language>
+                            <specPath>${spec-temp-dir}/spec-20170115.yaml</specPath>
+                            <outputDir>oraclebmc</outputDir>
+                            <basePackage>OracleBMC</basePackage>
+                            <additionalProperties>
+                                <packageName>oraclebmc</packageName>
+                                <specName>loadbalancer</specName>
                             </additionalProperties>
                         </configuration>
                     </execution>
@@ -215,6 +256,11 @@
                 <groupId>com.oracle.pic.casper</groupId>
                 <artifactId>casper-api-spec</artifactId>
                 <version>1.0.5</version>
+            </dependency>
+            <dependency>
+                <groupId>com.oracle.pic.lb</groupId>
+                <artifactId>oralb-api-spec</artifactId>
+                <version>1.0.2</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
