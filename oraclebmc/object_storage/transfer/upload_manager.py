@@ -2,188 +2,191 @@
 # Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 from __future__ import print_function
-import sys
 import os
-import six
-from .multipart_object_assembler import MultipartObjectAssembler
+from .internal.multipart_object_assembler import MultipartObjectAssembler
 from .constants import DEFAULT_PART_SIZE
-
-# TODO: update docstring for progress, change the value to progress_callback
+from .internal.file_read_callback_stream import FileReadCallbackStream
 
 
 class UploadManager:
-    @staticmethod
-    def upload(object_storage_client,
-               namespace_name,
-               bucket_name,
-               object_name,
-               file_object,
-               **kwargs):
+    def __init__(self, object_storage_client, allow_multipart_uploads=True):
+        self.object_storage_client = object_storage_client
+        self.allow_multipart_uploads = allow_multipart_uploads
 
+    def upload_file(self,
+                    namespace_name,
+                    bucket_name,
+                    object_name,
+                    file_path,
+                    **kwargs):
         """
         Uploads an object to Object Storage. Depending on the options provided and the
         size of the object, the object may be uploaded in multiple parts.
 
-        :param object object_storage_client:
-            A configured Object Storage client
-
         :param str namespace_name:
-            The namespace containing the bucket and multipart upload
+            The namespace containing the bucket in which to store the object.
 
         :param str bucket_name:
-            The name of the bucket in which to store the object
+            The name of the bucket in which to store the object.
 
         :param str object_name:
-            The name of the object in Object Storage
+            The name of the object in Object Storage.
 
-        :param file_object:
-            A file like object that has a name attribute
-
-        :param boolean no_multipart (optional):
-            Force the object to be uploaded as a single part
+        :param file_path:
+            The path to the file to upload.
 
         :param int part_size (optional):
-            Override the default part size of 128 MiB.
+            Override the default part size of 128 MiB, value is in bytes.
 
-        :param function progress:
-            Callback function which will receive the number of bytes transferred.
+        :param function progress_callback (optional):
+            Callback function to receive the number of bytes uploaded since
+            the last call to the callback function.
+
+        :param str if_match (optional):
+            The entity tag of the object to match.
+
+        :param str if_none_match (optional):
+            The entity tag of the object to avoid matching. The only valid value is ‘*’,
+            which indicates that the request should fail if the object
+             already exists.
+
+        :param str content_type (optional):
+            The content type of the object to upload.
+
+        :param str content_language (optional):
+            The content language of the object to upload.
+
+        :param str content_encoding (optional):
+            The content encoding of the object to upload.
+
+        :param dict metadata (optional):
+            A dictionary of string to string values to associate with the object to upload
 
         :return:
-            The response from multipart commit operation or the put operation.
+            The response from multipart commit operation or the put operation.  In both cases this will be a Response object with data of type None. For a multipart upload the Response will contain the opc-multipart-md5 header and for a non-multipart upload it will contain the opc-content-md5 header.
         """
-        progress = None
-        if 'progress' in kwargs:
-            progress = kwargs['progress']
-            kwargs.pop('progress')
-
-        no_multipart = False
-        if 'no_multipart' in kwargs:
-            no_multipart = kwargs['no_multipart']
-            kwargs.pop('no_multipart')
-
         part_size = DEFAULT_PART_SIZE
         if 'part_size' in kwargs:
             part_size = kwargs['part_size']
             kwargs.pop('part_size')
 
-        file_size = os.fstat(file_object.fileno()).st_size
-        if file_size < part_size or no_multipart:
-            # put_object expects 'opc_meta' not metadata
-            if 'metadata' in kwargs:
-                kwargs['opc_meta'] = kwargs['metadata']
-                kwargs.pop('metadata')
-            if progress:
-                wrapped_file = FileReadCallbackStream(file_object, lambda bytes_read: progress.update(bytes_read))
-                response = object_storage_client.put_object(namespace_name,
-                                                            bucket_name,
-                                                            object_name,
-                                                            wrapped_file,
-                                                            **kwargs)
+        with open(file_path, 'rb') as file_object:
+            file_size = os.fstat(file_object.fileno()).st_size
+            if not self.allow_multipart_uploads or not UploadManager._use_multipart(file_size, part_size=part_size):
+                return self._upload_singlepart(namespace_name, bucket_name, object_name, file_path, **kwargs)
             else:
-                response = object_storage_client.put_object(namespace_name, bucket_name, object_name, file_object, **kwargs)
-        else:
-            kwargs['part_size'] = part_size
-            kwargs['progress'] = progress
+                kwargs['part_size'] = part_size
 
-            # TODO: make this more generic and ensure it is done the same way
-            # on raw put and removed on get.
-            # prefix the keys in metadata with 'opc-meta-'
-            if 'metadata' in kwargs:
-                processed_metadata = {}
-                for key, value in six.iteritems(kwargs.get("metadata", {})):
-                    if not key.startswith('opc-meta-'):
-                        processed_metadata["opc-meta-" + key] = value
-                    else:
-                        processed_metadata[key] = value
-                kwargs['metadata'] = processed_metadata
+                ma = MultipartObjectAssembler(self.object_storage_client,
+                                              namespace_name,
+                                              bucket_name,
+                                              object_name,
+                                              **kwargs)
 
-            # TODO: Provide a better way to warn about the usage of content-md5
-            #       with multipart.
-            if 'content_md5' in kwargs:
-                print('Warning: The --content-md5 option cannot be used with multipart uploads. It will be ignored.',
-                      file=sys.stderr)
+                upload_kwargs = {}
+                if 'progress_callback' in kwargs:
+                    upload_kwargs['progress_callback'] = kwargs['progress_callback']
 
-            ma = MultipartObjectAssembler(object_storage_client,
-                                          namespace_name,
-                                          bucket_name,
-                                          object_name,
-                                          **kwargs)
-            ma.new_upload()
-            # TODO: provide a better way to notify the CLI user of the upload id
-            print("Upload ID: {}".format(ma.manifest["uploadId"]), file=sys.stderr)
+                ma.new_upload()
+                ma.add_parts_from_file(file_path)
+                ma.upload(**upload_kwargs)
+                response = ma.commit()
 
-            # file_object is a buffered reader when coming from CLI, so we need access to the underlying file.
-            # TODO: make this more generic for non-CLI uses.
-            ma.add_parts_from_file(file_object.name)
-            ma.upload()
-            response = ma.commit()
+                return response
 
-        return response
-
-    @staticmethod
-    def resume(object_storage_client,
-               namespace_name,
-               bucket_name,
-               object_name,
-               file_object,
-               upload_id,
-               **kwargs):
+    def resume_upload_file(self,
+                           namespace_name,
+                           bucket_name,
+                           object_name,
+                           file_path,
+                           upload_id,
+                           **kwargs):
 
         """
         Resume a multipart upload.
 
-        :param object object_storage_client:
-            A configured Object Storage client
-
         :param str namespace_name:
-            The namespace containing the bucket and multipart upload to resume
+            The namespace containing the bucket and multipart upload to resume.
 
         :param str bucket_name:
-            The name of the bucket that contains the multipart upload to resume
+            The name of the bucket that contains the multipart upload to resume.
 
         :param str object_name:
-            The name of the object in Object Storage
+            The name of the object in Object Storage.
 
-        :param file_object:
-            A file like object that has a name attribute
+        :param file_path:
+            The path to the file to upload.
 
         :param str upload_id:
-            The upload-id for the multipart upload to resume
+            The upload id for the multipart upload to resume.
 
         :param int part_size (optional):
-            Part size, in mebibytes, to use when resuming the transfer. The
+            Part size, in bytes, to use when resuming the transfer. The
             default is 128 mebibytes.  If this value is supplied, it must
             be the same value as the one used when the original upload
             was started.
 
-        :param function progress:
-            Callback function which will receive the number of bytes transferred.
+        :param function progress_callback (optional):
+            Callback function to receive the number of bytes uploaded since
+            the last call to the callback function.
 
         :return:
-            The response from the multipart commit operation
+            The response from the multipart commit operation.
         """
-        ma = MultipartObjectAssembler(object_storage_client,
+        new_kwargs = {}
+        if 'progress_callback' in kwargs:
+            new_kwargs['progress_callback'] = kwargs['progress_callback']
+            kwargs.pop('progress_callback')
+
+        ma = MultipartObjectAssembler(self.object_storage_client,
                                       namespace_name,
                                       bucket_name,
                                       object_name,
                                       **kwargs)
-        ma.add_parts_from_file(filepath=file_object.name)
-        ma.resume(upload_id=upload_id)
+        ma.add_parts_from_file(file_path)
+        ma.resume(upload_id=upload_id, **new_kwargs)
         response = ma.commit()
 
         return response
 
+    def _upload_singlepart(self,
+                           namespace_name,
+                           bucket_name,
+                           object_name,
+                           file_path,
+                           **kwargs):
+        # put_object expects 'opc_meta' not metadata
+        if 'metadata' in kwargs:
+            kwargs['opc_meta'] = kwargs['metadata']
+            kwargs.pop('metadata')
 
-class FileReadCallbackStream:
-    def __init__(self, file, progress_callback):
-        self.progress_callback = progress_callback
-        self.file = file
-        self.mode = file.mode
+        # remove unrecognized kwargs for put_object
+        progress_callback = None
+        if 'progress_callback' in kwargs:
+            progress_callback = kwargs['progress_callback']
+            kwargs.pop('progress_callback')
 
-    # this is used by 'requests' to determine the Content-Length header using fstat
-    def fileno(self):
-        return self.file.fileno()
+        with open(file_path, 'rb') as file_object:
+            # progress_callback is not supported for files of zero bytes
+            # FileReadCallbackStream will not be handled properly by requests in this case
+            file_size = os.fstat(file_object.fileno()).st_size
+            if file_size != 0 and progress_callback:
+                wrapped_file = FileReadCallbackStream(file_object,
+                                                      lambda bytes_read: progress_callback(bytes_read))
 
-    def read(self, n):
-        self.progress_callback(n)
-        return self.file.read(n)
+                response = self.object_storage_client.put_object(namespace_name,
+                                                                 bucket_name,
+                                                                 object_name,
+                                                                 wrapped_file,
+                                                                 **kwargs)
+            else:
+                response = self.object_storage_client.put_object(namespace_name,
+                                                                 bucket_name,
+                                                                 object_name,
+                                                                 file_object,
+                                                                 **kwargs)
+        return response
+
+    @staticmethod
+    def _use_multipart(content_length, part_size=DEFAULT_PART_SIZE):
+        return part_size < content_length

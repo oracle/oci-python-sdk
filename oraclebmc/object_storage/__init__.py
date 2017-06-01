@@ -3,9 +3,9 @@
 
 from __future__ import absolute_import
 
-from .object_storage_client import ObjectStorageClient
+from .transfer.internal.multipart_object_assembler import MultipartObjectAssembler
 from . import models
-from .transfer.multipart_object_assembler import MultipartObjectAssembler
+from .object_storage_client import ObjectStorageClient
 from .transfer.upload_manager import UploadManager
 
 __all__ = ["ObjectStorageClient", "models", "MultipartObjectAssembler",

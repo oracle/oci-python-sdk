@@ -7,6 +7,7 @@ import random
 import time
 import traceback
 import oraclebmc
+from oraclebmc.object_storage.transfer.constants import MEBIBYTE
 
 TEST_DATA_VERSION = '1'
 
@@ -236,3 +237,9 @@ def clear_test_data(api, namespace, compartment):
 
 def show_progress():
     print('.', end='', flush=True)
+
+
+def create_large_file(filename, size_in_mebibytes):
+    sample_content = b'a'
+    with open(filename, 'wb') as f:
+        f.write(sample_content * MEBIBYTE * size_in_mebibytes)
