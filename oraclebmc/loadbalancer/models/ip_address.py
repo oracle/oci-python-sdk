@@ -54,7 +54,11 @@ class IpAddress(object):
     def is_public(self):
         """
         Gets the is_public of this IpAddress.
-        Indicates whether the IP address is public or private.
+        Whether the IP address is public or private.
+
+        If \"true\", the IP address is public and accessible from the internet.
+
+        If \"false\", the IP address is private and accessible only from within the associated VCN.
 
 
         :return: The is_public of this IpAddress.
@@ -66,7 +70,11 @@ class IpAddress(object):
     def is_public(self, is_public):
         """
         Sets the is_public of this IpAddress.
-        Indicates whether the IP address is public or private.
+        Whether the IP address is public or private.
+
+        If \"true\", the IP address is public and accessible from the internet.
+
+        If \"false\", the IP address is private and accessible only from within the associated VCN.
 
 
         :param is_public: The is_public of this IpAddress.

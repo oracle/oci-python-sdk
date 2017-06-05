@@ -5,10 +5,8 @@ from __future__ import absolute_import
 
 from .backend import Backend
 from .backend_details import BackendDetails
-from .backend_health import BackendHealth
 from .backend_set import BackendSet
 from .backend_set_details import BackendSetDetails
-from .backend_set_health import BackendSetHealth
 from .certificate import Certificate
 from .certificate_details import CertificateDetails
 from .create_backend_details import CreateBackendDetails
@@ -40,10 +38,8 @@ from .work_request_error import WorkRequestError
 loadbalancer_type_mapping = {
     "Backend": Backend,
     "BackendDetails": BackendDetails,
-    "BackendHealth": BackendHealth,
     "BackendSet": BackendSet,
     "BackendSetDetails": BackendSetDetails,
-    "BackendSetHealth": BackendSetHealth,
     "Certificate": Certificate,
     "CertificateDetails": CertificateDetails,
     "CreateBackendDetails": CreateBackendDetails,

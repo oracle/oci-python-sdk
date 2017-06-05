@@ -286,8 +286,9 @@ class LoadBalancerClient(object):
 
         You must specify a display name for the load balancer. It does not have to be unique, and you can change it.
 
-        To successfully create a load balancer within your Virtual Cloud Network (VCN), you must specify two
-        subnets. Each subnet must reside in a separate Availability Domain.
+        To successfully create a load balancer within your Virtual Cloud Network (VCN), you must specify two public
+        subnets. Load balancer creation requires public subnets. You cannot specify a private subnet for your load balancer.
+        Each specified subnet must reside in a separate Availability Domain.
 
         For information about Availability Domains, see
         `Regions and Availability Domains`__.
@@ -683,66 +684,6 @@ class LoadBalancerClient(object):
             header_params=header_params,
             response_type="Backend")
 
-    def get_backend_health(self, load_balancer_id, backend_set_name, backend_name, **kwargs):
-        """
-        BackendHealth
-        Gets the current health of the specified backend.
-
-
-        :param str load_balancer_id: (required)
-            The `OCID`__ of the load balancer associated with the backend health status to be retrieved.
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-
-        :param str backend_set_name: (required)
-            The name of the backend set associated with the backend health status to be retrieved.
-
-            Example: `My backend set`
-
-        :param str backend_name: (required)
-            The name of the backend to fetch health status for.
-
-            Example: `My backend server`
-
-        :param str opc_request_id: (optional)
-            The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-            particular request, please provide the request ID.
-
-        :return: A Response object with data of type BackendHealth
-        :rtype: BackendHealth
-        """
-        resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/backends/{backendName}/health"
-        method = "GET"
-
-        # Don't accept unknown kwargs
-        expected_kwargs = [
-            "opc_request_id"
-        ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
-        if extra_kwargs:
-            raise ValueError(
-                "get_backend_health got unknown kwargs: {!r}".format(extra_kwargs))
-
-        path_params = {
-            "loadBalancerId": load_balancer_id,
-            "backendSetName": backend_set_name,
-            "backendName": backend_name
-        }
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
-
-        header_params = {
-            "accept": "application/json",
-            "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
-        }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
-
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="BackendHealth")
-
     def get_backend_set(self, load_balancer_id, backend_set_name, **kwargs):
         """
         GetBackendSet
@@ -797,60 +738,6 @@ class LoadBalancerClient(object):
             header_params=header_params,
             response_type="BackendSet")
 
-    def get_backend_set_health(self, load_balancer_id, backend_set_name, **kwargs):
-        """
-        BackendSetHealth
-        Displays a health summary for the specified backend set.
-
-
-        :param str load_balancer_id: (required)
-            The `OCID`__ of the load balancer associated with the backend set health status to be retrieved.
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-
-        :param str backend_set_name: (required)
-            The name of the backend set associated with the health status to be retrieved.
-
-            Example: `My backend set`
-
-        :param str opc_request_id: (optional)
-            The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-            particular request, please provide the request ID.
-
-        :return: A Response object with data of type BackendSetHealth
-        :rtype: BackendSetHealth
-        """
-        resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/health"
-        method = "GET"
-
-        # Don't accept unknown kwargs
-        expected_kwargs = [
-            "opc_request_id"
-        ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
-        if extra_kwargs:
-            raise ValueError(
-                "get_backend_set_health got unknown kwargs: {!r}".format(extra_kwargs))
-
-        path_params = {
-            "loadBalancerId": load_balancer_id,
-            "backendSetName": backend_set_name
-        }
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
-
-        header_params = {
-            "accept": "application/json",
-            "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
-        }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
-
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="BackendSetHealth")
-
     def get_health_checker(self, load_balancer_id, backend_set_name, **kwargs):
         """
         GetHealthChecker
@@ -862,7 +749,7 @@ class LoadBalancerClient(object):
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
-            The name of the backend set associated with the health check policy to be retrieved.
+            The name of the backend associated with the health check policy to be retrieved.
 
             Example: `My backend set`
 
