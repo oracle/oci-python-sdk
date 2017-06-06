@@ -37,11 +37,11 @@ class CreateVnicDetails(object):
         Gets the assign_public_ip of this CreateVnicDetails.
         Whether the VNIC should be assigned a public IP address. Defaults to whether
         the subnet is public or private. If not set and the VNIC is being created
-        in a private subnet (i.e., where `prohibitPublicIpOnVnic`=true in the
+        in a private subnet (i.e., where `prohibitPublicIpOnVnic` = true in the
         :class:`Subnet`), then no public IP address is assigned.
-        If not set and the subnet is public (`prohibitPublicIpOnVnic`=false), then
+        If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then
         a public IP address is assigned. If set to true and
-        `prohibitPublicIpOnVnic`=true, an error is returned.
+        `prohibitPublicIpOnVnic` = true, an error is returned.
 
         Example: `false`
 
@@ -57,11 +57,11 @@ class CreateVnicDetails(object):
         Sets the assign_public_ip of this CreateVnicDetails.
         Whether the VNIC should be assigned a public IP address. Defaults to whether
         the subnet is public or private. If not set and the VNIC is being created
-        in a private subnet (i.e., where `prohibitPublicIpOnVnic`=true in the
+        in a private subnet (i.e., where `prohibitPublicIpOnVnic` = true in the
         :class:`Subnet`), then no public IP address is assigned.
-        If not set and the subnet is public (`prohibitPublicIpOnVnic`=false), then
+        If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then
         a public IP address is assigned. If set to true and
-        `prohibitPublicIpOnVnic`=true, an error is returned.
+        `prohibitPublicIpOnVnic` = true, an error is returned.
 
         Example: `false`
 
@@ -99,20 +99,19 @@ class CreateVnicDetails(object):
     def hostname_label(self):
         """
         Gets the hostname_label of this CreateVnicDetails.
-        The hostname for the VNIC that is created during instance launch.
-        Used for DNS. The value is the hostname portion of the instance's
-        fully qualified domain name (FQDN) (e.g., `bminstance-1` in FQDN
-        `bminstance-1.subnet123.vcn1.oraclevcn.com`).
+        The hostname for the VNIC. Used for DNS. The value is the hostname
+        portion of the VNIC's fully qualified domain name (FQDN)
+        (e.g., `bminstance-1` in FQDN `bminstance-1.subnet123.vcn1.oraclevcn.com`).
         Must be unique across all VNICs in the subnet and comply with
         `RFC 952`__ and
         `RFC 1123`__.
-        The value cannot be changed, and it can be retrieved from the
+        The value can be retrieved from the
         :class:`Vnic`.
 
         For more information, see
         `DNS in Your Virtual Cloud Network`__.
 
-        Use this `hostnameLabel` instead
+        When launching an instance, use this `hostnameLabel` instead
         of the deprecated `hostnameLabel` in
         :func:`launch_instance_details`.
         If you provide both, the values must match.
@@ -133,20 +132,19 @@ class CreateVnicDetails(object):
     def hostname_label(self, hostname_label):
         """
         Sets the hostname_label of this CreateVnicDetails.
-        The hostname for the VNIC that is created during instance launch.
-        Used for DNS. The value is the hostname portion of the instance's
-        fully qualified domain name (FQDN) (e.g., `bminstance-1` in FQDN
-        `bminstance-1.subnet123.vcn1.oraclevcn.com`).
+        The hostname for the VNIC. Used for DNS. The value is the hostname
+        portion of the VNIC's fully qualified domain name (FQDN)
+        (e.g., `bminstance-1` in FQDN `bminstance-1.subnet123.vcn1.oraclevcn.com`).
         Must be unique across all VNICs in the subnet and comply with
         `RFC 952`__ and
         `RFC 1123`__.
-        The value cannot be changed, and it can be retrieved from the
+        The value can be retrieved from the
         :class:`Vnic`.
 
         For more information, see
         `DNS in Your Virtual Cloud Network`__.
 
-        Use this `hostnameLabel` instead
+        When launching an instance, use this `hostnameLabel` instead
         of the deprecated `hostnameLabel` in
         :func:`launch_instance_details`.
         If you provide both, the values must match.
@@ -199,8 +197,8 @@ class CreateVnicDetails(object):
     def subnet_id(self):
         """
         Gets the subnet_id of this CreateVnicDetails.
-        The OCID of the subnet to create the VNIC in. Use this `subnetId` instead
-        of the deprecated `subnetId` in
+        The OCID of the subnet to create the VNIC in. When launching an instance,
+        use this `subnetId` instead of the deprecated `subnetId` in
         :func:`launch_instance_details`.
         At least one of them is required; if you provide both, the values must match.
 
@@ -214,8 +212,8 @@ class CreateVnicDetails(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this CreateVnicDetails.
-        The OCID of the subnet to create the VNIC in. Use this `subnetId` instead
-        of the deprecated `subnetId` in
+        The OCID of the subnet to create the VNIC in. When launching an instance,
+        use this `subnetId` instead of the deprecated `subnetId` in
         :func:`launch_instance_details`.
         At least one of them is required; if you provide both, the values must match.
 
