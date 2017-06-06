@@ -286,10 +286,6 @@ class LoadBalancerClient(object):
 
         You must specify a display name for the load balancer. It does not have to be unique, and you can change it.
 
-        To successfully create a load balancer within your Virtual Cloud Network (VCN), you must specify two public
-        subnets. Load balancer creation requires public subnets. You cannot specify a private subnet for your load balancer.
-        Each specified subnet must reside in a separate Availability Domain.
-
         For information about Availability Domains, see
         `Regions and Availability Domains`__.
         To get a list of Availability Domains, use the `ListAvailabilityDomains` operation
@@ -304,7 +300,7 @@ class LoadBalancerClient(object):
         After you send your request, the new object's state will temporarily be PROVISIONING. Before using the
         object, first make sure its state has changed to RUNNING.
 
-        When you create a load balancer, the system issues a public IP address.
+        When you create a load balancer, the system assigns an IP address.
         To get the IP address, use the :func:`get_load_balancer` operation.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Concepts/balanceoverview.htm
