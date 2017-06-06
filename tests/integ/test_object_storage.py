@@ -1,8 +1,12 @@
 from tests.util import get_resource_path, random_number_string, unique_name
 import oraclebmc
+from oraclebmc.object_storage.transfer.constants import MEBIBYTE
+import os
 import pytest
 import requests
 from . import util
+
+LARGE_CONTENT_FILE_SIZE_IN_MEBIBYTES = 3
 
 # Static content for get_object tests
 expected_content = "a/b/c/object3"
@@ -40,6 +44,19 @@ def bucket(object_storage, namespace, request):
         object_storage.delete_object(namespace, bucket_name, obj.name)
     response = object_storage.delete_bucket(namespace, bucket_name)
     assert response.status == 204
+
+
+@pytest.fixture(scope='function')
+def content_input_file():
+    filename = 'tests/resources/multipart_content_input.txt'
+
+    # generate large file for multipart testing
+    util.create_large_file(filename, LARGE_CONTENT_FILE_SIZE_IN_MEBIBYTES)
+
+    yield filename
+
+    if os.path.exists(filename):
+        os.remove(filename)
 
 
 class TestObjectStorage:
@@ -459,3 +476,45 @@ class TestObjectStorage:
         with pytest.raises(requests.exceptions.StreamConsumedError):
             for chunk in get_object_response.data.iter_content():
                 response_text += chunk.decode('UTF-8')
+
+    def test_upload_manager_single_part_based_on_file_size(self, object_storage, bucket, content_input_file):
+        object_name = 'test_object_multipart'
+        namespace = object_storage.get_namespace().data
+
+        # explicitly use part-size > file size to trigger single part upload
+        part_size_in_bytes = (LARGE_CONTENT_FILE_SIZE_IN_MEBIBYTES + 1) * MEBIBYTE
+        upload_manager = oraclebmc.object_storage.UploadManager(object_storage, allow_multipart_uploads=True)
+        response = upload_manager.upload_file(
+            namespace, bucket, object_name, content_input_file, part_size=part_size_in_bytes)
+        util.validate_response(response)
+
+        # confirm that the object was actually uploaded with single part
+        assert response.headers['opc-content-md5']
+
+    def test_upload_manager_multipart_part_based_on_file_size(self, object_storage, bucket, content_input_file):
+        object_name = 'test_object_multipart'
+        namespace = object_storage.get_namespace().data
+
+        # explicitly use part_size > file size to trigger multipart
+        part_size_in_bytes = (LARGE_CONTENT_FILE_SIZE_IN_MEBIBYTES - 1) * MEBIBYTE
+        upload_manager = oraclebmc.object_storage.UploadManager(object_storage, allow_multipart_uploads=True)
+        response = upload_manager.upload_file(
+            namespace, bucket, object_name, content_input_file, part_size=part_size_in_bytes)
+        util.validate_response(response)
+
+        # confirm that the object was actually uploaded with multipart
+        assert response.headers['opc-multipart-md5']
+
+    def test_upload_manager_multipart_disabled_with_large_file_uses_single_part(self, object_storage, bucket, content_input_file):
+        object_name = 'test_object_multipart'
+        namespace = object_storage.get_namespace().data
+
+        # explicitly use part_size > file size to trigger multipart
+        part_size_in_bytes = (LARGE_CONTENT_FILE_SIZE_IN_MEBIBYTES - 1) * MEBIBYTE
+        upload_manager = oraclebmc.object_storage.UploadManager(object_storage, allow_multipart_uploads=False)
+        response = upload_manager.upload_file(
+            namespace, bucket, object_name, content_input_file, part_size=part_size_in_bytes)
+        util.validate_response(response)
+
+        # confirm that the object was actually uploaded with multipart
+        assert response.headers['opc-content-md5']

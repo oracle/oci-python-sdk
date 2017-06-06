@@ -29,6 +29,8 @@ class ListObjects(object):
     def objects(self):
         """
         Gets the objects of this ListObjects.
+        An array of object summaries.
+
 
         :return: The objects of this ListObjects.
         :rtype: list[ObjectSummary]
@@ -39,6 +41,8 @@ class ListObjects(object):
     def objects(self, objects):
         """
         Sets the objects of this ListObjects.
+        An array of object summaries.
+
 
         :param objects: The objects of this ListObjects.
         :type: list[ObjectSummary]
@@ -49,6 +53,8 @@ class ListObjects(object):
     def prefixes(self):
         """
         Gets the prefixes of this ListObjects.
+        Prefixes that are common to the results returned by the request if the request specified a delimiter.
+
 
         :return: The prefixes of this ListObjects.
         :rtype: list[str]
@@ -59,6 +65,8 @@ class ListObjects(object):
     def prefixes(self, prefixes):
         """
         Sets the prefixes of this ListObjects.
+        Prefixes that are common to the results returned by the request if the request specified a delimiter.
+
 
         :param prefixes: The prefixes of this ListObjects.
         :type: list[str]
@@ -69,8 +77,8 @@ class ListObjects(object):
     def next_start_with(self):
         """
         Gets the next_start_with of this ListObjects.
-        The name of the object to be used in startWith parameter to obtain next page of
-        a truncated list objects response.
+        The name of the object to use in the 'startWith' parameter to obtain the next page of
+        a truncated ListObjects response.
 
 
         :return: The next_start_with of this ListObjects.
@@ -82,8 +90,8 @@ class ListObjects(object):
     def next_start_with(self, next_start_with):
         """
         Sets the next_start_with of this ListObjects.
-        The name of the object to be used in startWith parameter to obtain next page of
-        a truncated list objects response.
+        The name of the object to use in the 'startWith' parameter to obtain the next page of
+        a truncated ListObjects response.
 
 
         :param next_start_with: The next_start_with of this ListObjects.

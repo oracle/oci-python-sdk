@@ -167,6 +167,7 @@
                             <additionalProperties>
                                 <packageName>oraclebmc</packageName>
                                 <specName>object_storage</specName>
+                                <generateInitFile>false</generateInitFile>
                             </additionalProperties>
                         </configuration>
                     </execution>
@@ -233,6 +234,11 @@
                             <includes>
                                 <include>**/*</include>
                             </includes>
+                            <excludes>
+                                <exclude>transfer</exclude>
+                                <exclude>transfer/*</exclude>
+                                <exclude>__init__.py</exclude>
+                            </excludes>
                         </fileset>
                     </filesets>
                 </configuration>
@@ -255,7 +261,7 @@
             <dependency>
                 <groupId>com.oracle.pic.casper</groupId>
                 <artifactId>casper-api-spec</artifactId>
-                <version>1.0.5</version>
+                <version>1.0.8</version>
             </dependency>
             <dependency>
                 <groupId>com.oracle.pic.lb</groupId>
