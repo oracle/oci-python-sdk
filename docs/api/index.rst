@@ -57,6 +57,27 @@ Virtual Network
 
 .. automodule:: oraclebmc.identity.models
     :members:
+    :undoc-members:
+    :imported-members:
+
+==============
+Load Balancer
+==============
+
+--------
+ Client
+--------
+
+.. autoclass:: oraclebmc.loadbalancer.load_balancer_client.LoadBalancerClient
+    :members:
+
+--------
+ Models
+--------
+
+.. automodule:: oraclebmc.loadbalancer.models
+    :members:
+    :undoc-members:
     :imported-members:
 
 ================
@@ -76,6 +97,7 @@ Virtual Network
 
 .. automodule:: oraclebmc.object_storage.models
     :members:
+    :undoc-members:
     :imported-members:
 
 
