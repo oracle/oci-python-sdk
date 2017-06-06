@@ -16,6 +16,7 @@ class VolumeAttachment(object):
             'display_name': 'str',
             'id': 'str',
             'instance_id': 'str',
+            'is_shareable': 'bool',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'volume_id': 'str'
@@ -28,6 +29,7 @@ class VolumeAttachment(object):
             'display_name': 'displayName',
             'id': 'id',
             'instance_id': 'instanceId',
+            'is_shareable': 'isShareable',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'volume_id': 'volumeId'
@@ -39,6 +41,7 @@ class VolumeAttachment(object):
         self._display_name = None
         self._id = None
         self._instance_id = None
+        self._is_shareable = None
         self._lifecycle_state = None
         self._time_created = None
         self._volume_id = None
@@ -207,6 +210,36 @@ class VolumeAttachment(object):
         :type: str
         """
         self._instance_id = instance_id
+
+    @property
+    def is_shareable(self):
+        """
+        Gets the is_shareable of this VolumeAttachment.
+        Whether the attachment should be created in shareable mode. If an attachment
+        is created in shareable mode, then other instances can attach the same volume, provided
+        that they also create their attachments in shareable mode. Only certain volume types can
+        be attached in shareable mode. Defaults to false if not specified.
+
+
+        :return: The is_shareable of this VolumeAttachment.
+        :rtype: bool
+        """
+        return self._is_shareable
+
+    @is_shareable.setter
+    def is_shareable(self, is_shareable):
+        """
+        Sets the is_shareable of this VolumeAttachment.
+        Whether the attachment should be created in shareable mode. If an attachment
+        is created in shareable mode, then other instances can attach the same volume, provided
+        that they also create their attachments in shareable mode. Only certain volume types can
+        be attached in shareable mode. Defaults to false if not specified.
+
+
+        :param is_shareable: The is_shareable of this VolumeAttachment.
+        :type: bool
+        """
+        self._is_shareable = is_shareable
 
     @property
     def lifecycle_state(self):
