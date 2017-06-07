@@ -9,9 +9,33 @@ from .internal.file_read_callback_stream import FileReadCallbackStream
 
 
 class UploadManager:
-    def __init__(self, object_storage_client, allow_multipart_uploads=True):
+    def __init__(self, object_storage_client, **kwargs):
+        """
+        UploadManager simplifies interaction with the Object Storage service by abstracting away the method used
+        to upload objects.  Depending on the configuration parameters, UploadManager may choose to do a single
+        put_object request, or break up the upload into multiple parts and utilize multi-part uploads.
+
+        An advantage of using multi-part uploads is the ability to retry individual failed parts, as well as being
+        able to upload parts in parallel to reduce upload time.
+
+        :param ObjectStorageClient object_storage_client:
+            A configured object storage client to use for interacting with the Object Storage service.
+
+        :param bool allow_multipart_uploads (optional):
+            Whether or not this UploadManager supports performing mulitpart uploads. Defaults to True.
+
+        :param bool allow_parallel_uploads (optional):
+            Whether or not this UploadManager supports uploading individual parts of a multipart upload in parallel.
+            This setting has no effect on uploads that are performed using a single put_object call. Defaults to True.
+
+        :param int parallel_process_count (optional):
+            The number of worker processes to use in parallel for uploading individual parts of a multipart upload.
+            This setting is only used if allow_parallel_uploads is set to True. Defaults to 3.
+        """
         self.object_storage_client = object_storage_client
-        self.allow_multipart_uploads = allow_multipart_uploads
+        self.allow_multipart_uploads = kwargs['allow_multipart_uploads'] if 'allow_multipart_uploads' in kwargs else True
+        self.allow_parallel_uploads = kwargs['allow_parallel_uploads'] if 'allow_parallel_uploads' in kwargs else True
+        self.parallel_process_count = kwargs['parallel_process_count'] if 'parallel_process_count' in kwargs else None
 
     def upload_file(self,
                     namespace_name,
@@ -76,6 +100,9 @@ class UploadManager:
                 return self._upload_singlepart(namespace_name, bucket_name, object_name, file_path, **kwargs)
             else:
                 kwargs['part_size'] = part_size
+                kwargs['allow_parallel_uploads'] = self.allow_parallel_uploads
+                if self.parallel_process_count is not None:
+                    kwargs['parallel_process_count'] = self.parallel_process_count
 
                 ma = MultipartObjectAssembler(self.object_storage_client,
                                               namespace_name,
@@ -133,10 +160,14 @@ class UploadManager:
         :return:
             The response from the multipart commit operation.
         """
-        new_kwargs = {}
+        resume_kwargs = {}
         if 'progress_callback' in kwargs:
-            new_kwargs['progress_callback'] = kwargs['progress_callback']
+            resume_kwargs['progress_callback'] = kwargs['progress_callback']
             kwargs.pop('progress_callback')
+
+        kwargs['allow_parallel_uploads'] = self.allow_parallel_uploads
+        if self.parallel_process_count is not None:
+            kwargs['parallel_process_count'] = self.parallel_process_count
 
         ma = MultipartObjectAssembler(self.object_storage_client,
                                       namespace_name,
@@ -144,7 +175,7 @@ class UploadManager:
                                       object_name,
                                       **kwargs)
         ma.add_parts_from_file(file_path)
-        ma.resume(upload_id=upload_id, **new_kwargs)
+        ma.resume(upload_id=upload_id, **resume_kwargs)
         response = ma.commit()
 
         return response

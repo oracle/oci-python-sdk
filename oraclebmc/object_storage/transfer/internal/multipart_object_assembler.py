@@ -4,6 +4,7 @@
 import io
 import hashlib
 import base64
+from multiprocessing.dummy import Pool
 from os import stat
 from ..constants import DEFAULT_PART_SIZE
 from ..constants import MEBIBYTE
@@ -14,7 +15,9 @@ from requests.exceptions import Timeout
 from requests.exceptions import ConnectionError
 import six
 
-MD5_CALC_UPDATE_SIZE = 8 * 1024
+READ_BUFFER_SIZE = 8 * 1024
+DEFAULT_PARALLEL_PROCESS_COUNT = 3
+DEFAULT_MAX_RETRIES = 3
 
 
 class MultipartObjectAssembler:
@@ -65,6 +68,12 @@ class MultipartObjectAssembler:
 
         :param dict metadata (optional):
             A dictionary of string to string values to associate with the object to upload
+
+        :param bool allow_parallel_uploads (optional):
+            Whether or not this MultipartObjectAssembler supports uploading parts in parallel. Defaults to True.
+
+        :param int parallel_process_count (optional):
+            The number of worker processes to use in parallel for performing a multipart upload. Default is 3.
         """
         self.object_storage_client = object_storage_client
 
@@ -90,7 +99,18 @@ class MultipartObjectAssembler:
         if 'metadata' in kwargs:
             self.metadata = kwargs['metadata']
 
-        self.max_retries = 3
+        self.parallel_process_count = DEFAULT_PARALLEL_PROCESS_COUNT
+        if 'parallel_process_count' in kwargs:
+            if kwargs['parallel_process_count'] == 0:
+                raise ValueError('parallel_process_count must be at least one.')
+
+            self.parallel_process_count = kwargs['parallel_process_count']
+
+        if 'allow_parallel_uploads' in kwargs and kwargs['allow_parallel_uploads'] is False:
+            # if parallel uploads are disabled, use only a single process
+            self.parallel_process_count = 1
+
+        self.max_retries = DEFAULT_MAX_RETRIES
         self.manifest = {"uploadId": None,
                          "namespace": namespace_name,
                          "bucketName": bucket_name,
@@ -112,7 +132,7 @@ class MultipartObjectAssembler:
         with io.open(file_path, mode='rb') as f:
             bpr = BufferedPartReader(f, offset, chunk)
             while True:
-                part = bpr.read(MD5_CALC_UPDATE_SIZE)
+                part = bpr.read(READ_BUFFER_SIZE)
                 if part == b'':
                     break
                 m.update(part)
@@ -306,47 +326,58 @@ class MultipartObjectAssembler:
 
         self.manifest["uploadId"] = response.data.upload_id
 
-    def _upload_part(self, part, part_num, **kwargs):
+    def _upload_part(self, part_num, part, **kwargs):
         """
         Upload a part to Object Storage
 
-        :param dict part: Part dictionary containing the following keys: "file_path" (str), "hash" (str), "offset" (int), and "size" (int)
         :param int part_num: Sequence number for where this part belongs in the
                              multipart object.
+        :param dict part: Part dictionary containing the following keys: "file_path" (str), "hash" (str), "offset" (int), and "size" (int)
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
+        :param function progress_callback (optional):
+            Callback function to receive the number of bytes uploaded since
+            the last call to the callback function.
         """
-        client_request_id = None
+        new_kwargs = {'content_md5': part["hash"]}
         if 'opc_client_request_id' in kwargs:
-            client_request_id = kwargs['opc_client_request_id']
+            new_kwargs['opc_client_request_id'] = kwargs['opc_client_request_id']
 
-        kwargs = {'content_md5': part["hash"]}
-        if client_request_id:
-            kwargs['opc_client_request_id'] = client_request_id
+        # TODO: Calculate the hash without needing to read the file chunk twice.
+        # Calculate the hash before uploading.  The hash will be used
+        # to determine if the part needs to be uploaded.  It will also
+        # be used to determine if there is a conflict between parts that
+        # have previously been uploaded.
+        if part["hash"] is None:
+            part["hash"] = self.calculate_md5(part["file_path"], part["offset"], part["size"])
 
-        remaining_tries = self.max_retries
-        while remaining_tries > 0:
-            with io.open(part["file_path"], mode='rb') as file_object:
-                bpr = BufferedPartReader(file_object, part["offset"], part["size"])
-                try:
-                    response = self.object_storage_client.upload_part(self.manifest["namespace"],
-                                                                      self.manifest["bucketName"],
-                                                                      self.manifest["objectName"],
-                                                                      self.manifest["uploadId"],
-                                                                      part_num,
-                                                                      bpr,
-                                                                      **kwargs)
-                except Exception as e:
-                    if self._is_exception_retryable(e) and remaining_tries > 1:
-                        remaining_tries -= 1
+        if "opc_md5" not in part:
+            remaining_tries = self.max_retries
+            while remaining_tries > 0:
+                with io.open(part["file_path"], mode='rb') as file_object:
+                    bpr = BufferedPartReader(file_object, part["offset"], part["size"])
+                    try:
+                        response = self.object_storage_client.upload_part(self.manifest["namespace"],
+                                                                          self.manifest["bucketName"],
+                                                                          self.manifest["objectName"],
+                                                                          self.manifest["uploadId"],
+                                                                          part_num,
+                                                                          bpr,
+                                                                          **new_kwargs)
+                    except Exception as e:
+                        if self._is_exception_retryable(e) and remaining_tries > 1:
+                            remaining_tries -= 1
+                        else:
+                            raise
                     else:
-                        raise
-                else:
-                    break
+                        break
 
-        if response.status == 200:
-            part["etag"] = response.headers['etag']
-            part["opc_md5"] = str(response.headers['opc-content-md5'])
+            if response.status == 200:
+                part["etag"] = response.headers['etag']
+                part["opc_md5"] = str(response.headers['opc-content-md5'])
+
+        if 'progress_callback' in kwargs:
+            kwargs['progress_callback'](part["size"])
 
     def upload(self, **kwargs):
         """
@@ -361,34 +392,9 @@ class MultipartObjectAssembler:
         if self.manifest["uploadId"] is None:
             raise RuntimeError('Cannot call upload before initializing an upload using new_upload.')
 
-        client_request_id = None
-        if 'opc_client_request_id' in kwargs:
-            client_request_id = kwargs['opc_client_request_id']
-
-        progress_callback = None
-        if 'progress_callback' in kwargs:
-            progress_callback = kwargs['progress_callback']
-
-        kwargs = {}
-        if client_request_id:
-            kwargs['opc_client_request_id'] = client_request_id
-
-        for part_num, part in enumerate(self.manifest["parts"]):
-            # TODO: Determine how to calculate the hash without needing to read the
-            #       file chunk twice.
-
-            # Calculate the hash before uploading.  The hash will be used
-            # to determine if the part needs to be uploaded.  It will also
-            # be used to determine if there is a conflict between parts that
-            # have previously been uploaded.
-            if part["hash"] is None:
-                part["hash"] = self.calculate_md5(part["file_path"], part["offset"], part["size"])
-
-            if "opc_md5" not in part:
-                self._upload_part(part, part_num + 1)
-
-            if progress_callback:
-                progress_callback(part["size"])
+        pool = Pool(processes=self.parallel_process_count)
+        pool.map(lambda part_tuple: self._upload_part(part_num=part_tuple[0] + 1, part=part_tuple[1], **kwargs),
+                 enumerate(self.manifest["parts"]))
 
     def commit(self, **kwargs):
         """

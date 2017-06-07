@@ -38,7 +38,7 @@ print("Uploading new object {!r}".format(object_name))
 
 # upload manager will automatically use mutlipart uploads if the part size is less than the file size
 part_size = 2 * MEBIBYTE  # part size (in bytes)
-upload_manager = UploadManager(object_storage)
+upload_manager = UploadManager(object_storage, allow_parallel_uploads=True, parallel_process_count=3)
 response = upload_manager.upload_file(
     namespace, bucket_name, object_name, filename, part_size=part_size, progress_callback=progress_callback)
 
