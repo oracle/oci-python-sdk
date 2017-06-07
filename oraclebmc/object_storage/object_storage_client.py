@@ -181,7 +181,7 @@ class ObjectStorageClient(object):
         Creates a bucket in the given namespace with a bucket name and optional user-defined metadata.
 
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an admin who needs to write policies to give users access, see
+        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
         `Getting Started with Policies`__.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
@@ -300,6 +300,62 @@ class ObjectStorageClient(object):
             body=create_multipart_upload_details,
             response_type="MultipartUpload")
 
+    def create_preauthenticated_request(self, namespace_name, bucket_name, create_preauthenticated_request_details, **kwargs):
+        """
+        CreatePreauthenticatedRequest
+        Create a pre-authenticated request specific to the bucket
+
+
+        :param str namespace_name: (required)
+            The top-level namespace used for the request.
+
+        :param str bucket_name: (required)
+            The name of the bucket.
+
+            Example: `my-new-bucket1`
+
+        :param CreatePreauthenticatedRequestDetails create_preauthenticated_request_details: (required)
+            details for creating the pre-authenticated request.
+
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing.
+
+        :return: A Response object with data of type PreauthenticatedRequest
+        :rtype: PreauthenticatedRequest
+        """
+        resource_path = "/n/{namespaceName}/b/{bucketName}/p/"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_preauthenticated_request got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name,
+            "bucketName": bucket_name
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=create_preauthenticated_request_details,
+            response_type="PreauthenticatedRequest")
+
     def delete_bucket(self, namespace_name, bucket_name, **kwargs):
         """
         DeleteBucket
@@ -410,6 +466,62 @@ class ObjectStorageClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "if-match": kwargs.get("if_match", missing),
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params)
+
+    def delete_preauthenticated_request(self, namespace_name, bucket_name, par_id, **kwargs):
+        """
+        DeletePreauthenticatedRequest
+        Deletes the bucket level pre-authenticateted request
+
+
+        :param str namespace_name: (required)
+            The top-level namespace used for the request.
+
+        :param str bucket_name: (required)
+            The name of the bucket.
+
+            Example: `my-new-bucket1`
+
+        :param str par_id: (required)
+            The unique identifier for the pre-authenticated request (PAR). This can be used to manage the PAR
+            such as GET or DELETE the PAR
+
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing.
+
+        :return: A Response object with data of type None
+        :rtype: None
+        """
+        resource_path = "/n/{namespaceName}/b/{bucketName}/p/{parId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_preauthenticated_request got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name,
+            "bucketName": bucket_name,
+            "parId": par_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
             "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
@@ -558,7 +670,7 @@ class ObjectStorageClient(object):
             Optional byte range to fetch, as described in `RFC 7233`__, section 2.1.
             Note, only a single range of bytes is supported.
 
-             __ https://tools.ietf.org/rfc/rfc7233
+            __ https://tools.ietf.org/rfc/rfc7233
 
         :return: A Response object with data of type stream
         :rtype: stream
@@ -601,6 +713,63 @@ class ObjectStorageClient(object):
             path_params=path_params,
             header_params=header_params,
             response_type="stream")
+
+    def get_preauthenticated_request(self, namespace_name, bucket_name, par_id, **kwargs):
+        """
+        GetPreauthenticatedRequest
+        Get the bucket level pre-authenticateted request
+
+
+        :param str namespace_name: (required)
+            The top-level namespace used for the request.
+
+        :param str bucket_name: (required)
+            The name of the bucket.
+
+            Example: `my-new-bucket1`
+
+        :param str par_id: (required)
+            The unique identifier for the pre-authenticated request (PAR). This can be used to manage the PAR
+            such as GET or DELETE the PAR
+
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing.
+
+        :return: A Response object with data of type PreauthenticatedRequestSummary
+        :rtype: PreauthenticatedRequestSummary
+        """
+        resource_path = "/n/{namespaceName}/b/{bucketName}/p/{parId}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_preauthenticated_request got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name,
+            "bucketName": bucket_name,
+            "parId": par_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="PreauthenticatedRequestSummary")
 
     def head_bucket(self, namespace_name, bucket_name, **kwargs):
         """
@@ -743,7 +912,7 @@ class ObjectStorageClient(object):
         and does not contain fields like the user-defined metadata.
 
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an admin who needs to write policies to give users access, see
+        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
         `Getting Started with Policies`__.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
@@ -958,7 +1127,7 @@ class ObjectStorageClient(object):
         Lists the objects in a bucket.
 
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an admin who needs to write policies to give users access, see
+        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
         `Getting Started with Policies`__.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
@@ -1052,13 +1221,85 @@ class ObjectStorageClient(object):
             header_params=header_params,
             response_type="ListObjects")
 
+    def list_preauthenticated_requests(self, namespace_name, bucket_name, **kwargs):
+        """
+        ListPreauthenticatedRequests
+        List pre-authenticated requests for the bucket
+
+
+        :param str namespace_name: (required)
+            The top-level namespace used for the request.
+
+        :param str bucket_name: (required)
+            The name of the bucket.
+
+            Example: `my-new-bucket1`
+
+        :param str object_name_prefix: (optional)
+            Pre-authenticated requests returned by the list must have object names starting with prefix
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str page: (optional)
+            The page at which to start retrieving results.
+
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing.
+
+        :return: A Response object with data of type list[PreauthenticatedRequestSummary]
+        :rtype: list[PreauthenticatedRequestSummary]
+        """
+        resource_path = "/n/{namespaceName}/b/{bucketName}/p/"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "object_name_prefix",
+            "limit",
+            "page",
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_preauthenticated_requests got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name,
+            "bucketName": bucket_name
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        query_params = {
+            "objectNamePrefix": kwargs.get("object_name_prefix", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[PreauthenticatedRequestSummary]")
+
     def put_object(self, namespace_name, bucket_name, object_name, put_object_body, **kwargs):
         """
         PutObject
-        Create a new object or overwrite an existing one.
+        Creates a new object or overwrites an existing one.
 
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an admin who needs to write policies to give users access, see
+        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
         `Getting Started with Policies`__.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
