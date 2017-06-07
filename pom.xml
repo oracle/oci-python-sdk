@@ -266,7 +266,7 @@
             <dependency>
                 <groupId>com.oracle.pic.lb</groupId>
                 <artifactId>oralb-api-spec</artifactId>
-                <version>1.0.2</version>
+                <version>1.0.8</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

@@ -16,7 +16,7 @@ class LoadBalancer(object):
             'display_name': 'str',
             'id': 'str',
             'ip_addresses': 'list[IpAddress]',
-            'is_regional': 'bool',
+            'is_private': 'bool',
             'lifecycle_state': 'str',
             'listeners': 'dict(str, Listener)',
             'shape_name': 'str',
@@ -31,7 +31,7 @@ class LoadBalancer(object):
             'display_name': 'displayName',
             'id': 'id',
             'ip_addresses': 'ipAddresses',
-            'is_regional': 'isRegional',
+            'is_private': 'isPrivate',
             'lifecycle_state': 'lifecycleState',
             'listeners': 'listeners',
             'shape_name': 'shapeName',
@@ -45,7 +45,7 @@ class LoadBalancer(object):
         self._display_name = None
         self._id = None
         self._ip_addresses = None
-        self._is_regional = None
+        self._is_private = None
         self._lifecycle_state = None
         self._listeners = None
         self._shape_name = None
@@ -197,36 +197,56 @@ class LoadBalancer(object):
         self._ip_addresses = ip_addresses
 
     @property
-    def is_regional(self):
+    def is_private(self):
         """
-        Gets the is_regional of this LoadBalancer.
-        Indicates that the load balancer will be available within all the availability domains within the region.
-        The load balancer will be associated with a public IP address.
+        Gets the is_private of this LoadBalancer.
+        Whether the load balancer has a VCN-local (private) IP address.
 
-        A non regional load balancer will be available only within the availability domain associated with the
-        subnet. Such a load balancer will be associated with a private IP address local to the availability domain.
+        If \"true\", the service assigns a private IP address to the load balancer. The load balancer requires only one subnet
+        to host both the primary and secondary load balancers. The private IP address is local to the subnet. The load balancer
+        is accessible only from within the VCN that contains the associated subnet, or as further restricted by your security
+        list rules. The load balancer can route traffic to any backend server that is reachable from the VCN.
+
+        For a private load balancer, both the primary and secondary load balancer hosts are within the same Availability Domain.
+
+        If \"false\", the service assigns a public IP address to the load balancer. A load balancer with a public IP address
+        requires two subnets, each in a different Availability Domain. One subnet hosts the primary load balancer and the other
+        hosts the secondary (stand-by) load balancer. A public load balancer is accessible from the internet, depending on your
+        VCN's `security list rules`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/securitylists.htm
 
 
-        :return: The is_regional of this LoadBalancer.
+        :return: The is_private of this LoadBalancer.
         :rtype: bool
         """
-        return self._is_regional
+        return self._is_private
 
-    @is_regional.setter
-    def is_regional(self, is_regional):
+    @is_private.setter
+    def is_private(self, is_private):
         """
-        Sets the is_regional of this LoadBalancer.
-        Indicates that the load balancer will be available within all the availability domains within the region.
-        The load balancer will be associated with a public IP address.
+        Sets the is_private of this LoadBalancer.
+        Whether the load balancer has a VCN-local (private) IP address.
 
-        A non regional load balancer will be available only within the availability domain associated with the
-        subnet. Such a load balancer will be associated with a private IP address local to the availability domain.
+        If \"true\", the service assigns a private IP address to the load balancer. The load balancer requires only one subnet
+        to host both the primary and secondary load balancers. The private IP address is local to the subnet. The load balancer
+        is accessible only from within the VCN that contains the associated subnet, or as further restricted by your security
+        list rules. The load balancer can route traffic to any backend server that is reachable from the VCN.
+
+        For a private load balancer, both the primary and secondary load balancer hosts are within the same Availability Domain.
+
+        If \"false\", the service assigns a public IP address to the load balancer. A load balancer with a public IP address
+        requires two subnets, each in a different Availability Domain. One subnet hosts the primary load balancer and the other
+        hosts the secondary (stand-by) load balancer. A public load balancer is accessible from the internet, depending on your
+        VCN's `security list rules`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/securitylists.htm
 
 
-        :param is_regional: The is_regional of this LoadBalancer.
+        :param is_private: The is_private of this LoadBalancer.
         :type: bool
         """
-        self._is_regional = is_regional
+        self._is_private = is_private
 
     @property
     def lifecycle_state(self):
