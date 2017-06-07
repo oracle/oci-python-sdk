@@ -14,6 +14,7 @@ class LaunchInstanceDetails(object):
             'compartment_id': 'str',
             'create_vnic_details': 'CreateVnicDetails',
             'display_name': 'str',
+            'extended_metadata': 'dict(str, object)',
             'hostname_label': 'str',
             'image_id': 'str',
             'ipxe_script': 'str',
@@ -27,6 +28,7 @@ class LaunchInstanceDetails(object):
             'compartment_id': 'compartmentId',
             'create_vnic_details': 'createVnicDetails',
             'display_name': 'displayName',
+            'extended_metadata': 'extendedMetadata',
             'hostname_label': 'hostnameLabel',
             'image_id': 'imageId',
             'ipxe_script': 'ipxeScript',
@@ -39,6 +41,7 @@ class LaunchInstanceDetails(object):
         self._compartment_id = None
         self._create_vnic_details = None
         self._display_name = None
+        self._extended_metadata = None
         self._hostname_label = None
         self._image_id = None
         self._ipxe_script = None
@@ -151,6 +154,38 @@ class LaunchInstanceDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def extended_metadata(self):
+        """
+        Gets the extended_metadata of this LaunchInstanceDetails.
+        Additional metadata key/value pairs that you provide.  They serve a similar purpose and functionality from fields in the 'metadata' object.
+
+        They are distinguished from 'metadata' fields in that these can be nested JSON objects (whereas 'metadata' fields are string/string maps only).
+
+        If you don't need nested metadata values, it is strongly advised to avoid using this object and use the Metadata object instead.
+
+
+        :return: The extended_metadata of this LaunchInstanceDetails.
+        :rtype: dict(str, object)
+        """
+        return self._extended_metadata
+
+    @extended_metadata.setter
+    def extended_metadata(self, extended_metadata):
+        """
+        Sets the extended_metadata of this LaunchInstanceDetails.
+        Additional metadata key/value pairs that you provide.  They serve a similar purpose and functionality from fields in the 'metadata' object.
+
+        They are distinguished from 'metadata' fields in that these can be nested JSON objects (whereas 'metadata' fields are string/string maps only).
+
+        If you don't need nested metadata values, it is strongly advised to avoid using this object and use the Metadata object instead.
+
+
+        :param extended_metadata: The extended_metadata of this LaunchInstanceDetails.
+        :type: dict(str, object)
+        """
+        self._extended_metadata = extended_metadata
 
     @property
     def hostname_label(self):

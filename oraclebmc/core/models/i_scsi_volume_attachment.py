@@ -16,7 +16,6 @@ class IScsiVolumeAttachment(VolumeAttachment):
             'display_name': 'str',
             'id': 'str',
             'instance_id': 'str',
-            'is_shareable': 'bool',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'volume_id': 'str',
@@ -34,7 +33,6 @@ class IScsiVolumeAttachment(VolumeAttachment):
             'display_name': 'displayName',
             'id': 'id',
             'instance_id': 'instanceId',
-            'is_shareable': 'isShareable',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'volume_id': 'volumeId',
@@ -51,7 +49,6 @@ class IScsiVolumeAttachment(VolumeAttachment):
         self._display_name = None
         self._id = None
         self._instance_id = None
-        self._is_shareable = None
         self._lifecycle_state = None
         self._time_created = None
         self._volume_id = None

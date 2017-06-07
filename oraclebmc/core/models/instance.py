@@ -13,6 +13,7 @@ class Instance(object):
             'availability_domain': 'str',
             'compartment_id': 'str',
             'display_name': 'str',
+            'extended_metadata': 'dict(str, object)',
             'id': 'str',
             'image_id': 'str',
             'ipxe_script': 'str',
@@ -27,6 +28,7 @@ class Instance(object):
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
+            'extended_metadata': 'extendedMetadata',
             'id': 'id',
             'image_id': 'imageId',
             'ipxe_script': 'ipxeScript',
@@ -40,6 +42,7 @@ class Instance(object):
         self._availability_domain = None
         self._compartment_id = None
         self._display_name = None
+        self._extended_metadata = None
         self._id = None
         self._image_id = None
         self._ipxe_script = None
@@ -128,6 +131,38 @@ class Instance(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def extended_metadata(self):
+        """
+        Gets the extended_metadata of this Instance.
+        Additional metadata key/value pairs that you provide.  They serve a similar purpose and functionality from fields in the 'metadata' object.
+
+        They are distinguished from 'metadata' fields in that these can be nested JSON objects (whereas 'metadata' fields are string/string maps only).
+
+        If you don't need nested metadata values, it is strongly advised to avoid using this object and use the Metadata object instead.
+
+
+        :return: The extended_metadata of this Instance.
+        :rtype: dict(str, object)
+        """
+        return self._extended_metadata
+
+    @extended_metadata.setter
+    def extended_metadata(self, extended_metadata):
+        """
+        Sets the extended_metadata of this Instance.
+        Additional metadata key/value pairs that you provide.  They serve a similar purpose and functionality from fields in the 'metadata' object.
+
+        They are distinguished from 'metadata' fields in that these can be nested JSON objects (whereas 'metadata' fields are string/string maps only).
+
+        If you don't need nested metadata values, it is strongly advised to avoid using this object and use the Metadata object instead.
+
+
+        :param extended_metadata: The extended_metadata of this Instance.
+        :type: dict(str, object)
+        """
+        self._extended_metadata = extended_metadata
 
     @property
     def id(self):
