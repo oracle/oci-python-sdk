@@ -16,7 +16,8 @@ class Bucket(object):
             'metadata': 'dict(str, str)',
             'created_by': 'str',
             'time_created': 'datetime',
-            'etag': 'str'
+            'etag': 'str',
+            'public_access_type': 'str'
         }
 
         self.attribute_map = {
@@ -26,7 +27,8 @@ class Bucket(object):
             'metadata': 'metadata',
             'created_by': 'createdBy',
             'time_created': 'timeCreated',
-            'etag': 'etag'
+            'etag': 'etag',
+            'public_access_type': 'publicAccessType'
         }
 
         self._namespace = None
@@ -36,6 +38,7 @@ class Bucket(object):
         self._created_by = None
         self._time_created = None
         self._etag = None
+        self._public_access_type = None
 
     @property
     def namespace(self):
@@ -204,6 +207,42 @@ class Bucket(object):
         :type: str
         """
         self._etag = etag
+
+    @property
+    def public_access_type(self):
+        """
+        Gets the public_access_type of this Bucket.
+        The type of public access available on this bucket. Allows authenticated caller to access the bucket or
+        contents of this bucket. By default a bucket is set to NoPublicAccess. It is treated as NoPublicAccess
+        when this value is not specified. When the type is NoPublicAccess the bucket does not allow any public access.
+        When the type is ObjectRead the bucket allows public access to the GetObject, HeadObject, ListObjects.
+
+        Allowed values for this property are: "NoPublicAccess", "ObjectRead", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The public_access_type of this Bucket.
+        :rtype: str
+        """
+        return self._public_access_type
+
+    @public_access_type.setter
+    def public_access_type(self, public_access_type):
+        """
+        Sets the public_access_type of this Bucket.
+        The type of public access available on this bucket. Allows authenticated caller to access the bucket or
+        contents of this bucket. By default a bucket is set to NoPublicAccess. It is treated as NoPublicAccess
+        when this value is not specified. When the type is NoPublicAccess the bucket does not allow any public access.
+        When the type is ObjectRead the bucket allows public access to the GetObject, HeadObject, ListObjects.
+
+
+        :param public_access_type: The public_access_type of this Bucket.
+        :type: str
+        """
+        allowed_values = ["NoPublicAccess", "ObjectRead"]
+        if public_access_type not in allowed_values:
+            public_access_type = 'UNKNOWN_ENUM_VALUE'
+        self._public_access_type = public_access_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

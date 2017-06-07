@@ -12,18 +12,21 @@ class UpdateBucketDetails(object):
         self.swagger_types = {
             'namespace': 'str',
             'name': 'str',
-            'metadata': 'dict(str, str)'
+            'metadata': 'dict(str, str)',
+            'public_access_type': 'str'
         }
 
         self.attribute_map = {
             'namespace': 'namespace',
             'name': 'name',
-            'metadata': 'metadata'
+            'metadata': 'metadata',
+            'public_access_type': 'publicAccessType'
         }
 
         self._namespace = None
         self._name = None
         self._metadata = None
+        self._public_access_type = None
 
     @property
     def namespace(self):
@@ -96,6 +99,44 @@ class UpdateBucketDetails(object):
         :type: dict(str, str)
         """
         self._metadata = metadata
+
+    @property
+    def public_access_type(self):
+        """
+        Gets the public_access_type of this UpdateBucketDetails.
+        The type of public access available on this bucket. Allows authenticated caller to access the bucket or
+        contents of this bucket. By default a bucket is set to NoPublicAccess. It is treated as NoPublicAccess
+        when this value is not specified. When the type is NoPublicAccess the bucket does not allow any public access.
+        When the type is ObjectRead the bucket allows public access to the GetObject, HeadObject, ListObjects.
+
+        Allowed values for this property are: "NoPublicAccess", "ObjectRead"
+
+
+        :return: The public_access_type of this UpdateBucketDetails.
+        :rtype: str
+        """
+        return self._public_access_type
+
+    @public_access_type.setter
+    def public_access_type(self, public_access_type):
+        """
+        Sets the public_access_type of this UpdateBucketDetails.
+        The type of public access available on this bucket. Allows authenticated caller to access the bucket or
+        contents of this bucket. By default a bucket is set to NoPublicAccess. It is treated as NoPublicAccess
+        when this value is not specified. When the type is NoPublicAccess the bucket does not allow any public access.
+        When the type is ObjectRead the bucket allows public access to the GetObject, HeadObject, ListObjects.
+
+
+        :param public_access_type: The public_access_type of this UpdateBucketDetails.
+        :type: str
+        """
+        allowed_values = ["NoPublicAccess", "ObjectRead"]
+        if public_access_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `public_access_type`, must be one of {0}"
+                .format(allowed_values)
+            )
+        self._public_access_type = public_access_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

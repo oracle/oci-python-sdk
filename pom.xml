@@ -237,6 +237,7 @@
                             <excludes>
                                 <exclude>transfer</exclude>
                                 <exclude>transfer/*</exclude>
+                                <exclude>transfer/internal/*</exclude>
                                 <exclude>__init__.py</exclude>
                             </excludes>
                         </fileset>
@@ -261,7 +262,7 @@
             <dependency>
                 <groupId>com.oracle.pic.casper</groupId>
                 <artifactId>casper-api-spec</artifactId>
-                <version>1.0.8</version>
+                <version>1.1.0</version>
             </dependency>
             <dependency>
                 <groupId>com.oracle.pic.lb</groupId>
