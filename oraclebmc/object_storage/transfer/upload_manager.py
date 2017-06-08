@@ -74,6 +74,9 @@ class UploadManager:
             which indicates that the request should fail if the object
              already exists.
 
+        :param str content_md5: (optional)
+            The base-64 encoded MD5 hash of the body. This parameter is only used if the object is uploaded in a single part.
+
         :param str content_type (optional):
             The content type of the object to upload.
 
@@ -99,6 +102,9 @@ class UploadManager:
             if not self.allow_multipart_uploads or not UploadManager._use_multipart(file_size, part_size=part_size):
                 return self._upload_singlepart(namespace_name, bucket_name, object_name, file_path, **kwargs)
             else:
+                if 'content_md5' in kwargs:
+                    kwargs.pop('content_md5')
+
                 kwargs['part_size'] = part_size
                 kwargs['allow_parallel_uploads'] = self.allow_parallel_uploads
                 if self.parallel_process_count is not None:
