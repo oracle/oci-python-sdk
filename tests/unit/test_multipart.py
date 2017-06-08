@@ -1,5 +1,5 @@
 import tests.util
-import utils
+from .utils import create_large_file
 import io
 import hashlib
 import base64
@@ -17,7 +17,7 @@ def content_input_file():
     filename = 'tests/resources/multipart_content_input.txt'
 
     # generate large file for multipart testing
-    utils.create_large_file(filename, LARGE_CONTENT_FILE_SIZE_IN_MEBIBYTES)
+    create_large_file(filename, LARGE_CONTENT_FILE_SIZE_IN_MEBIBYTES)
 
     yield filename
 
