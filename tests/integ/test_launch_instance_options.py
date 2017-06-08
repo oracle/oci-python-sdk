@@ -13,8 +13,7 @@ class TestLaunchInstanceOptions:
     def test_main(self, compute, virtual_network):
         try:
             self.subtest_setup(virtual_network)
-            self.subtest_launch_instance_extended_metadata(compute, virtual_network)
-            self.subtest_launch_instance_ipxe_script_file(compute, virtual_network)
+            self.subtest_launch_instance_options(compute, virtual_network)
         finally:
             self.subtest_delete(compute, virtual_network)
 
@@ -56,10 +55,11 @@ class TestLaunchInstanceOptions:
                              'AVAILABLE', max_wait_seconds=300)
 
     @util.log_test
-    def subtest_launch_instance_extended_metadata(self, compute, virtual_network):
-        instance_name = util.random_name('python_sdk_test_extended_metadata')
+    def subtest_launch_instance_options(self, compute, virtual_network):
+        instance_name = util.random_name('python_sdk_test_instance_options')
         image_id = 'ocid1.image.oc1.phx.aaaaaaaamv5wg7ffvaxaba3orhpuya7x7opz24hd6m7epmwfqbeudi6meepq'  # ol6.8-base-0.0.2
-        shape = 'VM.Standard1.1'
+        shape = 'VM.Standard1.2'
+        hostname_label = util.random_name('bminstance', insert_underscore=False)
 
         extended_metadata = {
             'string_key_1': 'string_value_1',
@@ -71,33 +71,6 @@ class TestLaunchInstanceOptions:
                 'empty_map_key': {}
             }
         }
-
-        launch_instance_details = oraclebmc.core.models.LaunchInstanceDetails()
-        launch_instance_details.compartment_id = util.COMPARTMENT_ID
-        launch_instance_details.availability_domain = util.AVAILABILITY_DOMAIN
-        launch_instance_details.display_name = instance_name
-        launch_instance_details.subnet_id = self.subnet_ocid
-        launch_instance_details.image_id = image_id
-        launch_instance_details.shape = shape
-        launch_instance_details.extended_metadata = extended_metadata
-
-        launch_instance_result = compute.launch_instance(launch_instance_details)
-        self.instance_ocid = launch_instance_result.data.id
-
-        util.validate_response(launch_instance_result, expect_etag=True)
-
-        assert launch_instance_result.data.extended_metadata
-        assert 'string_key_1' in launch_instance_result.data.extended_metadata
-        assert 'map_key_1' in launch_instance_result.data.extended_metadata
-        assert 'string_key_2' in launch_instance_result.data.extended_metadata['map_key_1']
-        assert len(launch_instance_result.data.extended_metadata['map_key_1']['empty_map_key']) == 0
-
-    @util.log_test
-    def subtest_launch_instance_ipxe_script_file(self, compute, virtual_network):
-        instance_name = util.random_name('python_sdk_test_instance_options')
-        image_id = 'ocid1.image.oc1.phx.aaaaaaaamv5wg7ffvaxaba3orhpuya7x7opz24hd6m7epmwfqbeudi6meepq'  # ol6.8-base-0.0.2
-        shape = 'VM.Standard1.2'
-        hostname_label = util.random_name('bminstance', insert_underscore=False)
 
         with open(IPXE_SCRIPT_FILE, mode='r') as file:
             ipxe_script_content = file.read()
@@ -111,9 +84,17 @@ class TestLaunchInstanceOptions:
         launch_instance_details.shape = shape
         launch_instance_details.ipxe_script = ipxe_script_content
         launch_instance_details.hostname_label = hostname_label
+        launch_instance_details.extended_metadata = extended_metadata
 
         launch_instance_result = compute.launch_instance(launch_instance_details)
         self.instance_ocid = launch_instance_result.data.id
+
+        # Validate extended metadata
+        assert launch_instance_result.data.extended_metadata
+        assert 'string_key_1' in launch_instance_result.data.extended_metadata
+        assert 'map_key_1' in launch_instance_result.data.extended_metadata
+        assert 'string_key_2' in launch_instance_result.data.extended_metadata['map_key_1']
+        assert len(launch_instance_result.data.extended_metadata['map_key_1']['empty_map_key']) == 0
 
         util.validate_response(launch_instance_result, expect_etag=True)
 
