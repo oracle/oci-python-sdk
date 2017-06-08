@@ -26,55 +26,6 @@ class ComputeClient(object):
         )
         self.base_client = BaseClient("compute", config, signer, core_type_mapping)
 
-    def attach_vnic(self, attach_vnic_details, **kwargs):
-        """
-        AttachVnic
-        Creates a secondary VNIC and attaches it to the specified instance.
-        For more information about secondary VNICs, see
-        `Managing Virtual Network Interface Cards (VNICs)`__.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVNICs.htm
-
-
-        :param AttachVnicDetails attach_vnic_details: (required)
-            Attach VNIC details.
-
-        :param str opc_retry_token: (optional)
-            A token that uniquely identifies a request so it can be retried in case of a timeout or
-            server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
-            has been deleted and purged from the system, then a retry of the original creation request
-            may be rejected).
-
-        :return: A Response object with data of type VnicAttachment
-        :rtype: VnicAttachment
-        """
-        resource_path = "/vnicAttachments/"
-        method = "POST"
-
-        # Don't accept unknown kwargs
-        expected_kwargs = [
-            "opc_retry_token"
-        ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
-        if extra_kwargs:
-            raise ValueError(
-                "attach_vnic got unknown kwargs: {!r}".format(extra_kwargs))
-
-        header_params = {
-            "accept": "application/json",
-            "content-type": "application/json",
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
-        }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
-
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            header_params=header_params,
-            body=attach_vnic_details,
-            response_type="VnicAttachment")
-
     def attach_volume(self, attach_volume_details, **kwargs):
         """
         AttachVolume
@@ -329,56 +280,6 @@ class ComputeClient(object):
             path_params=path_params,
             header_params=header_params)
 
-    def detach_vnic(self, vnic_attachment_id, **kwargs):
-        """
-        DetachVnic
-        Detaches and deletes the specified secondary VNIC.
-        This operation cannot be used on the instance's primary VNIC.
-        When you terminate an instance, all attached VNICs (primary
-        and secondary) are automatically detached and deleted.
-
-
-        :param str vnic_attachment_id: (required)
-            The OCID of the VNIC attachment.
-
-        :param str if_match: (optional)
-            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
-            will be updated or deleted only if the etag you provide matches the resource's current etag value.
-
-        :return: A Response object with data of type None
-        :rtype: None
-        """
-        resource_path = "/vnicAttachments/{vnicAttachmentId}"
-        method = "DELETE"
-
-        # Don't accept unknown kwargs
-        expected_kwargs = [
-            "if_match"
-        ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
-        if extra_kwargs:
-            raise ValueError(
-                "detach_vnic got unknown kwargs: {!r}".format(extra_kwargs))
-
-        path_params = {
-            "vnicAttachmentId": vnic_attachment_id
-        }
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
-
-        header_params = {
-            "accept": "application/json",
-            "content-type": "application/json",
-            "if-match": kwargs.get("if_match", missing)
-        }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
-
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
-
     def detach_volume(self, volume_attachment_id, **kwargs):
         """
         DetachVolume
@@ -596,42 +497,6 @@ class ComputeClient(object):
             header_params=header_params,
             response_type="Instance")
 
-    def get_vnic_attachment(self, vnic_attachment_id, **kwargs):
-        """
-        GetVnicAttachment
-        Gets the information for the specified VNIC attachment.
-
-
-        :param str vnic_attachment_id: (required)
-            The OCID of the VNIC attachment.
-
-        :return: A Response object with data of type VnicAttachment
-        :rtype: VnicAttachment
-        """
-        resource_path = "/vnicAttachments/{vnicAttachmentId}"
-        method = "GET"
-
-        if kwargs:
-            raise ValueError(
-                "get_vnic_attachment got unknown kwargs: {!r}".format(kwargs))
-
-        path_params = {
-            "vnicAttachmentId": vnic_attachment_id
-        }
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
-
-        header_params = {
-            "accept": "application/json",
-            "content-type": "application/json"
-        }
-
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="VnicAttachment")
-
     def get_volume_attachment(self, volume_attachment_id, **kwargs):
         """
         GetVolumeAttachment
@@ -807,22 +672,16 @@ class ComputeClient(object):
         also retrieve a resource's OCID by using a List API operation
         on that resource type, or by viewing the resource in the Console.
 
-        When you launch an instance, it is automatically attached to a virtual
-        network interface card (VNIC), called the *primary VNIC*. The VNIC
-        has a private IP address from the subnet's CIDR. You can either assign a
-        private IP address of your choice or let Oracle automatically assign one.
-        You can choose whether the instance has a public IP address. To retrieve the
-        addresses, use the :func:`list_vnic_attachments`
+        When you launch an instance, it is automatically attached to a Virtual
+        Network Interface Card (VNIC). The VNIC has a private IP address from
+        the subnet's CIDR, and optionally a public IP address.
+        To get the addresses, use the :func:`list_vnic_attachments`
         operation to get the VNIC ID for the instance, and then call
         :func:`get_vnic` with the VNIC ID.
-
-        You can later add secondary VNICs to an instance. For more information, see
-        `Managing Virtual Network Interface Cards (VNICs)`__.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Concepts/computeoverview.htm
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/regions.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVNICs.htm
 
 
         :param LaunchInstanceDetails launch_instance_details: (required)
@@ -1141,9 +1000,8 @@ class ComputeClient(object):
     def list_vnic_attachments(self, compartment_id, **kwargs):
         """
         ListVnicAttachments
-        Lists the VNIC attachments in the specified compartment. A VNIC attachment
-        resides in the same compartment as the attached instance. The list can be
-        filtered by instance, VNIC, or Availability Domain.
+        Lists the VNIC attachments for the specified compartment. The list can be filtered by
+        instance and by VNIC.
 
 
         :param str compartment_id: (required)

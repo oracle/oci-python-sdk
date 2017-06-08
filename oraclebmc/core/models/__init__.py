@@ -4,7 +4,6 @@
 from __future__ import absolute_import
 
 from .attach_i_scsi_volume_details import AttachIScsiVolumeDetails
-from .attach_vnic_details import AttachVnicDetails
 from .attach_volume_details import AttachVolumeDetails
 from .capture_console_history_details import CaptureConsoleHistoryDetails
 from .console_history import ConsoleHistory
@@ -77,7 +76,6 @@ from .update_security_list_details import UpdateSecurityListDetails
 from .update_subnet_details import UpdateSubnetDetails
 from .update_vcn_details import UpdateVcnDetails
 from .update_virtual_circuit_details import UpdateVirtualCircuitDetails
-from .update_vnic_details import UpdateVnicDetails
 from .update_volume_backup_details import UpdateVolumeBackupDetails
 from .update_volume_details import UpdateVolumeDetails
 from .vcn import Vcn
@@ -92,7 +90,6 @@ from .volume_backup import VolumeBackup
 # Maps type names to classes for core services.
 core_type_mapping = {
     "AttachIScsiVolumeDetails": AttachIScsiVolumeDetails,
-    "AttachVnicDetails": AttachVnicDetails,
     "AttachVolumeDetails": AttachVolumeDetails,
     "CaptureConsoleHistoryDetails": CaptureConsoleHistoryDetails,
     "ConsoleHistory": ConsoleHistory,
@@ -165,7 +162,6 @@ core_type_mapping = {
     "UpdateSubnetDetails": UpdateSubnetDetails,
     "UpdateVcnDetails": UpdateVcnDetails,
     "UpdateVirtualCircuitDetails": UpdateVirtualCircuitDetails,
-    "UpdateVnicDetails": UpdateVnicDetails,
     "UpdateVolumeBackupDetails": UpdateVolumeBackupDetails,
     "UpdateVolumeDetails": UpdateVolumeDetails,
     "Vcn": Vcn,

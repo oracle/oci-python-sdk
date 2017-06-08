@@ -12,7 +12,6 @@ class AttachVolumeDetails(object):
         self.swagger_types = {
             'display_name': 'str',
             'instance_id': 'str',
-            'is_shareable': 'bool',
             'type': 'str',
             'volume_id': 'str'
         }
@@ -20,14 +19,12 @@ class AttachVolumeDetails(object):
         self.attribute_map = {
             'display_name': 'displayName',
             'instance_id': 'instanceId',
-            'is_shareable': 'isShareable',
             'type': 'type',
             'volume_id': 'volumeId'
         }
 
         self._display_name = None
         self._instance_id = None
-        self._is_shareable = None
         self._type = None
         self._volume_id = None
 
@@ -91,36 +88,6 @@ class AttachVolumeDetails(object):
         :type: str
         """
         self._instance_id = instance_id
-
-    @property
-    def is_shareable(self):
-        """
-        Gets the is_shareable of this AttachVolumeDetails.
-        Whether the attachment should be created in shareable mode. If an attachment
-        is created in shareable mode, then other instances can attach the same volume, provided
-        that they also create their attachments in shareable mode. Only certain volume types can
-        be attached in shareable mode. Defaults to false if not specified.
-
-
-        :return: The is_shareable of this AttachVolumeDetails.
-        :rtype: bool
-        """
-        return self._is_shareable
-
-    @is_shareable.setter
-    def is_shareable(self, is_shareable):
-        """
-        Sets the is_shareable of this AttachVolumeDetails.
-        Whether the attachment should be created in shareable mode. If an attachment
-        is created in shareable mode, then other instances can attach the same volume, provided
-        that they also create their attachments in shareable mode. Only certain volume types can
-        be attached in shareable mode. Defaults to false if not specified.
-
-
-        :param is_shareable: The is_shareable of this AttachVolumeDetails.
-        :type: bool
-        """
-        self._is_shareable = is_shareable
 
     @property
     def type(self):

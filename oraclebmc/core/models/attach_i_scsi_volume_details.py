@@ -12,7 +12,6 @@ class AttachIScsiVolumeDetails(AttachVolumeDetails):
         self.swagger_types = {
             'display_name': 'str',
             'instance_id': 'str',
-            'is_shareable': 'bool',
             'type': 'str',
             'volume_id': 'str',
             'use_chap': 'bool'
@@ -21,7 +20,6 @@ class AttachIScsiVolumeDetails(AttachVolumeDetails):
         self.attribute_map = {
             'display_name': 'displayName',
             'instance_id': 'instanceId',
-            'is_shareable': 'isShareable',
             'type': 'type',
             'volume_id': 'volumeId',
             'use_chap': 'useChap'
@@ -29,7 +27,6 @@ class AttachIScsiVolumeDetails(AttachVolumeDetails):
 
         self._display_name = None
         self._instance_id = None
-        self._is_shareable = None
         self._type = None
         self._volume_id = None
         self._use_chap = None

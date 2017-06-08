@@ -15,9 +15,7 @@ class Vnic(object):
             'display_name': 'str',
             'hostname_label': 'str',
             'id': 'str',
-            'is_primary': 'bool',
             'lifecycle_state': 'str',
-            'mac_address': 'str',
             'private_ip': 'str',
             'public_ip': 'str',
             'subnet_id': 'str',
@@ -30,9 +28,7 @@ class Vnic(object):
             'display_name': 'displayName',
             'hostname_label': 'hostnameLabel',
             'id': 'id',
-            'is_primary': 'isPrimary',
             'lifecycle_state': 'lifecycleState',
-            'mac_address': 'macAddress',
             'private_ip': 'privateIp',
             'public_ip': 'publicIp',
             'subnet_id': 'subnetId',
@@ -44,9 +40,7 @@ class Vnic(object):
         self._display_name = None
         self._hostname_label = None
         self._id = None
-        self._is_primary = None
         self._lifecycle_state = None
-        self._mac_address = None
         self._private_ip = None
         self._public_ip = None
         self._subnet_id = None
@@ -132,12 +126,14 @@ class Vnic(object):
     def hostname_label(self):
         """
         Gets the hostname_label of this Vnic.
-        The hostname for the VNIC. Used for DNS. The value is the hostname
-        portion of the VNIC's fully qualified domain name (FQDN)
-        (e.g., `bminstance-1` in FQDN `bminstance-1.subnet123.vcn1.oraclevcn.com`).
+        The hostname for the VNIC that is created during instance launch.
+        Used for DNS. The value is the hostname portion of the instance's
+        fully qualified domain name (FQDN) (e.g., `bminstance-1` in FQDN
+        `bminstance-1.subnet123.vcn1.oraclevcn.com`).
         Must be unique across all VNICs in the subnet and comply with
         `RFC 952`__ and
         `RFC 1123`__.
+        The value cannot be changed.
 
         For more information, see
         `DNS in Your Virtual Cloud Network`__.
@@ -158,12 +154,14 @@ class Vnic(object):
     def hostname_label(self, hostname_label):
         """
         Sets the hostname_label of this Vnic.
-        The hostname for the VNIC. Used for DNS. The value is the hostname
-        portion of the VNIC's fully qualified domain name (FQDN)
-        (e.g., `bminstance-1` in FQDN `bminstance-1.subnet123.vcn1.oraclevcn.com`).
+        The hostname for the VNIC that is created during instance launch.
+        Used for DNS. The value is the hostname portion of the instance's
+        fully qualified domain name (FQDN) (e.g., `bminstance-1` in FQDN
+        `bminstance-1.subnet123.vcn1.oraclevcn.com`).
         Must be unique across all VNICs in the subnet and comply with
         `RFC 952`__ and
         `RFC 1123`__.
+        The value cannot be changed.
 
         For more information, see
         `DNS in Your Virtual Cloud Network`__.
@@ -205,32 +203,6 @@ class Vnic(object):
         self._id = id
 
     @property
-    def is_primary(self):
-        """
-        Gets the is_primary of this Vnic.
-        Whether the VNIC is the primary VNIC (the VNIC that is automatically created
-        and attached during instance launch).
-
-
-        :return: The is_primary of this Vnic.
-        :rtype: bool
-        """
-        return self._is_primary
-
-    @is_primary.setter
-    def is_primary(self, is_primary):
-        """
-        Sets the is_primary of this Vnic.
-        Whether the VNIC is the primary VNIC (the VNIC that is automatically created
-        and attached during instance launch).
-
-
-        :param is_primary: The is_primary of this Vnic.
-        :type: bool
-        """
-        self._is_primary = is_primary
-
-    @property
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this Vnic.
@@ -261,39 +233,11 @@ class Vnic(object):
         self._lifecycle_state = lifecycle_state
 
     @property
-    def mac_address(self):
-        """
-        Gets the mac_address of this Vnic.
-        The MAC address of the VNIC.
-
-        Example: `00:00:17:B6:4D:DD`
-
-
-        :return: The mac_address of this Vnic.
-        :rtype: str
-        """
-        return self._mac_address
-
-    @mac_address.setter
-    def mac_address(self, mac_address):
-        """
-        Sets the mac_address of this Vnic.
-        The MAC address of the VNIC.
-
-        Example: `00:00:17:B6:4D:DD`
-
-
-        :param mac_address: The mac_address of this Vnic.
-        :type: str
-        """
-        self._mac_address = mac_address
-
-    @property
     def private_ip(self):
         """
         Gets the private_ip of this Vnic.
-        The private IP address of the VNIC. The address is within the
-        CIDR of the VNIC's subnet.
+        The private IP address of the VNIC. The address is within the subnet's CIDR
+        and is accessible within the VCN.
 
 
         :return: The private_ip of this Vnic.
@@ -305,8 +249,8 @@ class Vnic(object):
     def private_ip(self, private_ip):
         """
         Sets the private_ip of this Vnic.
-        The private IP address of the VNIC. The address is within the
-        CIDR of the VNIC's subnet.
+        The private IP address of the VNIC. The address is within the subnet's CIDR
+        and is accessible within the VCN.
 
 
         :param private_ip: The private_ip of this Vnic.

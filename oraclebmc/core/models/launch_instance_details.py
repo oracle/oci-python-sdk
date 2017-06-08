@@ -105,8 +105,7 @@ class LaunchInstanceDetails(object):
     def create_vnic_details(self):
         """
         Gets the create_vnic_details of this LaunchInstanceDetails.
-        Details for the primary VNIC, which is automatically created and attached when
-        the instance is launched.
+        Details for the VNIC that is automatically created when an instance is launched.
 
 
         :return: The create_vnic_details of this LaunchInstanceDetails.
@@ -118,8 +117,7 @@ class LaunchInstanceDetails(object):
     def create_vnic_details(self, create_vnic_details):
         """
         Sets the create_vnic_details of this LaunchInstanceDetails.
-        Details for the primary VNIC, which is automatically created and attached when
-        the instance is launched.
+        Details for the VNIC that is automatically created when an instance is launched.
 
 
         :param create_vnic_details: The create_vnic_details of this LaunchInstanceDetails.

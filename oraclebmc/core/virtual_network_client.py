@@ -2171,10 +2171,9 @@ class VirtualNetworkClient(object):
     def get_vnic(self, vnic_id, **kwargs):
         """
         GetVnic
-        Gets the information for the specified virtual network interface card (VNIC).
-        You can get the VNIC OCID from the
-        :func:`list_vnic_attachments`
-        operation.
+        Gets the information for the specified Virtual Network Interface Card (VNIC), including
+        the IP addresses. You can get the instance's VNIC OCID from the
+        :func:`list_vnic_attachments` operation.
 
 
         :param str vnic_id: (required)
@@ -3862,55 +3861,3 @@ class VirtualNetworkClient(object):
             header_params=header_params,
             body=update_virtual_circuit_details,
             response_type="VirtualCircuit")
-
-    def update_vnic(self, vnic_id, update_vnic_details, **kwargs):
-        """
-        UpdateVnic
-        Updates the specified VNIC.
-
-
-        :param str vnic_id: (required)
-            The OCID of the VNIC.
-
-        :param UpdateVnicDetails update_vnic_details: (required)
-            Details object for updating a VNIC.
-
-        :param str if_match: (optional)
-            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
-            will be updated or deleted only if the etag you provide matches the resource's current etag value.
-
-        :return: A Response object with data of type Vnic
-        :rtype: Vnic
-        """
-        resource_path = "/vnics/{vnicId}"
-        method = "PUT"
-
-        # Don't accept unknown kwargs
-        expected_kwargs = [
-            "if_match"
-        ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
-        if extra_kwargs:
-            raise ValueError(
-                "update_vnic got unknown kwargs: {!r}".format(extra_kwargs))
-
-        path_params = {
-            "vnicId": vnic_id
-        }
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
-
-        header_params = {
-            "accept": "application/json",
-            "content-type": "application/json",
-            "if-match": kwargs.get("if_match", missing)
-        }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
-
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_vnic_details,
-            response_type="Vnic")

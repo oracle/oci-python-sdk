@@ -18,7 +18,6 @@ class VnicAttachment(object):
             'lifecycle_state': 'str',
             'subnet_id': 'str',
             'time_created': 'datetime',
-            'vlan_tag': 'int',
             'vnic_id': 'str'
         }
 
@@ -31,7 +30,6 @@ class VnicAttachment(object):
             'lifecycle_state': 'lifecycleState',
             'subnet_id': 'subnetId',
             'time_created': 'timeCreated',
-            'vlan_tag': 'vlanTag',
             'vnic_id': 'vnicId'
         }
 
@@ -43,14 +41,13 @@ class VnicAttachment(object):
         self._lifecycle_state = None
         self._subnet_id = None
         self._time_created = None
-        self._vlan_tag = None
         self._vnic_id = None
 
     @property
     def availability_domain(self):
         """
         Gets the availability_domain of this VnicAttachment.
-        The Availability Domain of the instance.
+        The Availability Domain of an instance.
 
         Example: `Uocm:PHX-AD-1`
 
@@ -64,7 +61,7 @@ class VnicAttachment(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this VnicAttachment.
-        The Availability Domain of the instance.
+        The Availability Domain of an instance.
 
         Example: `Uocm:PHX-AD-1`
 
@@ -78,8 +75,7 @@ class VnicAttachment(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this VnicAttachment.
-        The OCID of the compartment the VNIC attachment is in, which is the same
-        compartment the instance is in.
+        The OCID of the compartment.
 
 
         :return: The compartment_id of this VnicAttachment.
@@ -91,8 +87,7 @@ class VnicAttachment(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this VnicAttachment.
-        The OCID of the compartment the VNIC attachment is in, which is the same
-        compartment the instance is in.
+        The OCID of the compartment.
 
 
         :param compartment_id: The compartment_id of this VnicAttachment.
@@ -206,7 +201,7 @@ class VnicAttachment(object):
     def subnet_id(self):
         """
         Gets the subnet_id of this VnicAttachment.
-        The OCID of the VNIC's subnet.
+        The OCID of the subnet of the VNIC.
 
 
         :return: The subnet_id of this VnicAttachment.
@@ -218,7 +213,7 @@ class VnicAttachment(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this VnicAttachment.
-        The OCID of the VNIC's subnet.
+        The OCID of the subnet of the VNIC.
 
 
         :param subnet_id: The subnet_id of this VnicAttachment.
@@ -255,40 +250,10 @@ class VnicAttachment(object):
         self._time_created = time_created
 
     @property
-    def vlan_tag(self):
-        """
-        Gets the vlan_tag of this VnicAttachment.
-        The Oracle-assigned VLAN tag of the attached VNIC. Available after the
-        attachment process is complete.
-
-        Example: `0`
-
-
-        :return: The vlan_tag of this VnicAttachment.
-        :rtype: int
-        """
-        return self._vlan_tag
-
-    @vlan_tag.setter
-    def vlan_tag(self, vlan_tag):
-        """
-        Sets the vlan_tag of this VnicAttachment.
-        The Oracle-assigned VLAN tag of the attached VNIC. Available after the
-        attachment process is complete.
-
-        Example: `0`
-
-
-        :param vlan_tag: The vlan_tag of this VnicAttachment.
-        :type: int
-        """
-        self._vlan_tag = vlan_tag
-
-    @property
     def vnic_id(self):
         """
         Gets the vnic_id of this VnicAttachment.
-        The OCID of the VNIC. Available after the attachment process is complete.
+        The OCID of the VNIC.
 
 
         :return: The vnic_id of this VnicAttachment.
@@ -300,7 +265,7 @@ class VnicAttachment(object):
     def vnic_id(self, vnic_id):
         """
         Sets the vnic_id of this VnicAttachment.
-        The OCID of the VNIC. Available after the attachment process is complete.
+        The OCID of the VNIC.
 
 
         :param vnic_id: The vnic_id of this VnicAttachment.

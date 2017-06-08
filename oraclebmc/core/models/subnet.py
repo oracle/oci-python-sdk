@@ -305,8 +305,7 @@ class Subnet(object):
         Whether VNICs within this subnet can have public IP addresses.
         Defaults to false, which means VNICs created in this subnet will
         automatically be assigned public IP addresses unless specified
-        otherwise during instance launch or VNIC creation (with the
-        `assignPublicIp` flag in
+        otherwise during instance launch (with the `assignPublicIp` flag in
         :class:`CreateVnicDetails`).
         If `prohibitPublicIpOnVnic` is set to true, VNICs created in this
         subnet cannot have public IP addresses (i.e., it's a private
@@ -327,8 +326,7 @@ class Subnet(object):
         Whether VNICs within this subnet can have public IP addresses.
         Defaults to false, which means VNICs created in this subnet will
         automatically be assigned public IP addresses unless specified
-        otherwise during instance launch or VNIC creation (with the
-        `assignPublicIp` flag in
+        otherwise during instance launch (with the `assignPublicIp` flag in
         :class:`CreateVnicDetails`).
         If `prohibitPublicIpOnVnic` is set to true, VNICs created in this
         subnet cannot have public IP addresses (i.e., it's a private
