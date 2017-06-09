@@ -287,7 +287,7 @@ class VirtualCircuit(object):
         the different states, see
         `FastConnect Overview`__.
 
-        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/fastconnect.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm
 
         Allowed values for this property are: "PENDING_PROVIDER", "VERIFYING", "PROVISIONING", "PROVISIONED", "FAILED", "INACTIVE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -306,7 +306,7 @@ class VirtualCircuit(object):
         the different states, see
         `FastConnect Overview`__.
 
-        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/fastconnect.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm
 
 
         :param lifecycle_state: The lifecycle_state of this VirtualCircuit.
@@ -517,7 +517,7 @@ class VirtualCircuit(object):
         `RFC 1918`__ addresses
         (10.0.0.0/8, 172.16/12, and 192.168/16). Only PRIVATE is supported.
 
-         __ https://tools.ietf.org/html/rfc1918
+        __ https://tools.ietf.org/html/rfc1918
 
         Allowed values for this property are: "PUBLIC", "PRIVATE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -536,7 +536,7 @@ class VirtualCircuit(object):
         `RFC 1918`__ addresses
         (10.0.0.0/8, 172.16/12, and 192.168/16). Only PRIVATE is supported.
 
-         __ https://tools.ietf.org/html/rfc1918
+        __ https://tools.ietf.org/html/rfc1918
 
 
         :param type: The type of this VirtualCircuit.

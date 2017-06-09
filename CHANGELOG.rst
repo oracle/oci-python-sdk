@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+ 1.3.3 - 2017-06-09
+====================
+
+-------
+ Added
+-------
+
+* An UploadManager class to better support large object uploads though multipart and parallel operations.
+* Support for object storage pre-authenticated requests and public buckets.
+* Support for load balancing service.
+* Support for nested instance metadata operations.
+
+====================
  1.3.2 - 2017-05-18
 ====================
 

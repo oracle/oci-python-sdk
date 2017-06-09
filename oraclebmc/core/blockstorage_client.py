@@ -43,9 +43,9 @@ class BlockstorageClient(object):
         You may optionally specify a *display name* for the volume, which is simply a friendly name or
         description. It does not have to be unique, and you can change it.
 
-        __ {{DOC_SERVER_URL}}/Content/Block/Concepts/overview.htm
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm
-        __ {{DOC_SERVER_URL}}/Content/General/Concepts/regions.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/overview.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/regions.htm
 
 
         :param CreateVolumeDetails create_volume_details: (required)
@@ -97,7 +97,7 @@ class BlockstorageClient(object):
         When the data is imaged, it goes into a CREATING state.
         After the backup is fully uploaded to the cloud, it goes into an AVAILABLE state.
 
-        __ {{DOC_SERVER_URL}}/Content/Block/Concepts/blockvolumebackups.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/blockvolumebackups.htm
 
 
         :param CreateVolumeBackupDetails create_volume_backup_details: (required)
@@ -147,7 +147,7 @@ class BlockstorageClient(object):
         `Disconnecting From a Volume`__.
         **Warning:** All data on the volume will be permanently lost when the volume is deleted.
 
-        __ {{DOC_SERVER_URL}}/Content/Block/Tasks/disconnectingfromavolume.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Tasks/disconnectingfromavolume.htm
 
 
         :param str volume_id: (required)

@@ -41,8 +41,8 @@ class DhcpSearchDomainOption(DhcpOption):
         of search domain names, or with an empty string as the value for any search
         domain name.
 
-         __ https://tools.ietf.org/html/rfc952
-         __ https://tools.ietf.org/html/rfc1123
+        __ https://tools.ietf.org/html/rfc952
+        __ https://tools.ietf.org/html/rfc1123
 
 
         :return: The search_domain_names of this DhcpSearchDomainOption.
@@ -68,8 +68,8 @@ class DhcpSearchDomainOption(DhcpOption):
         of search domain names, or with an empty string as the value for any search
         domain name.
 
-         __ https://tools.ietf.org/html/rfc952
-         __ https://tools.ietf.org/html/rfc1123
+        __ https://tools.ietf.org/html/rfc952
+        __ https://tools.ietf.org/html/rfc1123
 
 
         :param search_domain_names: The search_domain_names of this DhcpSearchDomainOption.

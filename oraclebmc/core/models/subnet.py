@@ -210,7 +210,7 @@ class Subnet(object):
 
         Example: `subnet123`
 
-        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm
 
 
         :return: The dns_label of this Subnet.
@@ -236,7 +236,7 @@ class Subnet(object):
 
         Example: `subnet123`
 
-        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm
 
 
         :param dns_label: The dns_label of this Subnet.
@@ -400,7 +400,7 @@ class Subnet(object):
 
         Example: `subnet123.vcn1.oraclevcn.com`
 
-        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm
 
 
         :return: The subnet_domain_name of this Subnet.
@@ -420,7 +420,7 @@ class Subnet(object):
 
         Example: `subnet123.vcn1.oraclevcn.com`
 
-        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm
 
 
         :param subnet_domain_name: The subnet_domain_name of this Subnet.

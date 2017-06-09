@@ -73,7 +73,7 @@ class EgressSecurityRule(object):
         Unreachable\") code 4 (\"Fragmentation Needed and Don't Fragment was Set\"). If you need to specify
         multiple codes for a single type, create a separate security list rule for each.
 
-         __ http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml
+        __ http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml
 
 
         :return: The icmp_options of this EgressSecurityRule.
@@ -94,7 +94,7 @@ class EgressSecurityRule(object):
         Unreachable\") code 4 (\"Fragmentation Needed and Don't Fragment was Set\"). If you need to specify
         multiple codes for a single type, create a separate security list rule for each.
 
-         __ http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml
+        __ http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml
 
 
         :param icmp_options: The icmp_options of this EgressSecurityRule.
@@ -143,7 +143,7 @@ class EgressSecurityRule(object):
         `Protocol Numbers`__.
         Options are supported only for ICMP (\"1\"), TCP (\"6\"), and UDP (\"17\").
 
-         __ http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml
+        __ http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml
 
 
         :return: The protocol of this EgressSecurityRule.
@@ -160,7 +160,7 @@ class EgressSecurityRule(object):
         `Protocol Numbers`__.
         Options are supported only for ICMP (\"1\"), TCP (\"6\"), and UDP (\"17\").
 
-         __ http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml
+        __ http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml
 
 
         :param protocol: The protocol of this EgressSecurityRule.

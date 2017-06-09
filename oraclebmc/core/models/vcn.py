@@ -215,7 +215,7 @@ class Vcn(object):
 
         Example: `vcn1`
 
-        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm
 
 
         :return: The dns_label of this Vcn.
@@ -241,7 +241,7 @@ class Vcn(object):
 
         Example: `vcn1`
 
-        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm
 
 
         :param dns_label: The dns_label of this Vcn.
@@ -343,7 +343,7 @@ class Vcn(object):
 
         Example: `vcn1.oraclevcn.com`
 
-        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm
 
 
         :return: The vcn_domain_name of this Vcn.
@@ -363,7 +363,7 @@ class Vcn(object):
 
         Example: `vcn1.oraclevcn.com`
 
-        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm
 
 
         :param vcn_domain_name: The vcn_domain_name of this Vcn.

@@ -14,6 +14,7 @@ class LaunchInstanceDetails(object):
             'compartment_id': 'str',
             'create_vnic_details': 'CreateVnicDetails',
             'display_name': 'str',
+            'extended_metadata': 'dict(str, object)',
             'hostname_label': 'str',
             'image_id': 'str',
             'ipxe_script': 'str',
@@ -27,6 +28,7 @@ class LaunchInstanceDetails(object):
             'compartment_id': 'compartmentId',
             'create_vnic_details': 'createVnicDetails',
             'display_name': 'displayName',
+            'extended_metadata': 'extendedMetadata',
             'hostname_label': 'hostnameLabel',
             'image_id': 'imageId',
             'ipxe_script': 'ipxeScript',
@@ -39,6 +41,7 @@ class LaunchInstanceDetails(object):
         self._compartment_id = None
         self._create_vnic_details = None
         self._display_name = None
+        self._extended_metadata = None
         self._hostname_label = None
         self._image_id = None
         self._ipxe_script = None
@@ -151,6 +154,38 @@ class LaunchInstanceDetails(object):
         self._display_name = display_name
 
     @property
+    def extended_metadata(self):
+        """
+        Gets the extended_metadata of this LaunchInstanceDetails.
+        Additional metadata key/value pairs that you provide.  They serve a similar purpose and functionality from fields in the 'metadata' object.
+
+        They are distinguished from 'metadata' fields in that these can be nested JSON objects (whereas 'metadata' fields are string/string maps only).
+
+        If you don't need nested metadata values, it is strongly advised to avoid using this object and use the Metadata object instead.
+
+
+        :return: The extended_metadata of this LaunchInstanceDetails.
+        :rtype: dict(str, object)
+        """
+        return self._extended_metadata
+
+    @extended_metadata.setter
+    def extended_metadata(self, extended_metadata):
+        """
+        Sets the extended_metadata of this LaunchInstanceDetails.
+        Additional metadata key/value pairs that you provide.  They serve a similar purpose and functionality from fields in the 'metadata' object.
+
+        They are distinguished from 'metadata' fields in that these can be nested JSON objects (whereas 'metadata' fields are string/string maps only).
+
+        If you don't need nested metadata values, it is strongly advised to avoid using this object and use the Metadata object instead.
+
+
+        :param extended_metadata: The extended_metadata of this LaunchInstanceDetails.
+        :type: dict(str, object)
+        """
+        self._extended_metadata = extended_metadata
+
+    @property
     def hostname_label(self):
         """
         Gets the hostname_label of this LaunchInstanceDetails.
@@ -231,7 +266,7 @@ class LaunchInstanceDetails(object):
 
         For more information about iPXE, see http://ipxe.org.
 
-        __ {{DOC_SERVER_URL}}/Content/Compute/References/bringyourownimage.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/bringyourownimage.htm
 
 
         :return: The ipxe_script of this LaunchInstanceDetails.
@@ -268,7 +303,7 @@ class LaunchInstanceDetails(object):
 
         For more information about iPXE, see http://ipxe.org.
 
-        __ {{DOC_SERVER_URL}}/Content/Compute/References/bringyourownimage.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/bringyourownimage.htm
 
 
         :param ipxe_script: The ipxe_script of this LaunchInstanceDetails.
@@ -292,34 +327,34 @@ class LaunchInstanceDetails(object):
         * Get information about the instance, including the custom metadata that you
           provide when you launch the instance.
 
-         __Providing Cloud-Init Metadata__
+         **Providing Cloud-Init Metadata**
 
          You can use the following metadata key names to provide information to
          Cloud-Init:
 
-         __\"ssh_authorized_keys\"__ - Provide one or more public SSH keys to be
+         **\"ssh_authorized_keys\"** - Provide one or more public SSH keys to be
          included in the `~/.ssh/authorized_keys` file for the default user on the
          instance. Use a newline character to separate multiple keys. The SSH
          keys must be in the format necessary for the `authorized_keys` file, as shown
          in the example below.
 
-         __\"user_data\"__ - Provide your own base64-encoded data to be used by
+         **\"user_data\"** - Provide your own base64-encoded data to be used by
          Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For
          information about how to take advantage of user data, see the
          `Cloud-Init Documentation`__.
 
-         __Note:__ Cloud-Init does not pull this data from the `http://169.254.169.254/opc/v1/instance/metadata/`
+         **Note:** Cloud-Init does not pull this data from the `http://169.254.169.254/opc/v1/instance/metadata/`
          path. When the instance launches and either of these keys are provided, the key values are formatted as
          OpenStack metadata and copied to the following locations, which are recognized by Cloud-Init:
 
          `http://169.254.169.254/openstack/latest/meta_data.json` - This JSON blob
          contains, among other things, the SSH keys that you provided for
-          __\"ssh_authorized_keys\"__.
+          **\"ssh_authorized_keys\"**.
 
          `http://169.254.169.254/openstack/latest/user_data` - Contains the
-         base64-decoded data that you provided for __\"user_data\"__.
+         base64-decoded data that you provided for **\"user_data\"**.
 
-         __Metadata Example__
+         **Metadata Example**
 
               \"metadata\" : {
                  \"quake_bot_level\" : \"Severe\",
@@ -327,7 +362,7 @@ class LaunchInstanceDetails(object):
                  ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAzJSAtwEPoB3Jmr58IXrDGzLuDYkWAYg8AsLYlo6JZvKpjY1xednIcfEVQJm4T2DhVmdWhRrwQ8DmayVZvBkLt+zs2LdoAJEVimKwXcJFD/7wtH8Lnk17HiglbbbNXsemjDY0hea4JUE5CfvkIdZBITuMrfqSmA4n3VNoorXYdvtTMoGG8fxMub46RPtuxtqi9bG9Zqenordkg5FJt2mVNfQRqf83CWojcOkklUWq4CjyxaeLf5i9gv1fRoBo4QhiA8I6NCSppO8GnoV/6Ox6TNoh9BiifqGKC9VGYuC89RvUajRBTZSK2TK4DPfaT+2R+slPsFrwiT/oPEhhEK1S5Q== rsa-key-20160227\",
                  \"user_data\" : \"SWYgeW91IGNhbiBzZWUgdGhpcywgdGhlbiBpdCB3b3JrZWQgbWF5YmUuCg==\"
               }
-         __Getting Metadata on the Instance__
+         **Getting Metadata on the Instance**
 
          To get information about your instance, connect to the instance using SSH and issue any of the
          following GET requests:
@@ -339,8 +374,8 @@ class LaunchInstanceDetails(object):
          You'll get back a response that includes all the instance information; only the metadata information; or
          the metadata information for the specified key name, respectively.
 
-         __ https://cloudinit.readthedocs.org/en/latest/
-         __ http://cloudinit.readthedocs.org/en/latest/topics/format.html
+        __ https://cloudinit.readthedocs.org/en/latest/
+        __ http://cloudinit.readthedocs.org/en/latest/topics/format.html
 
 
         :return: The metadata of this LaunchInstanceDetails.
@@ -364,34 +399,34 @@ class LaunchInstanceDetails(object):
         * Get information about the instance, including the custom metadata that you
           provide when you launch the instance.
 
-         __Providing Cloud-Init Metadata__
+         **Providing Cloud-Init Metadata**
 
          You can use the following metadata key names to provide information to
          Cloud-Init:
 
-         __\"ssh_authorized_keys\"__ - Provide one or more public SSH keys to be
+         **\"ssh_authorized_keys\"** - Provide one or more public SSH keys to be
          included in the `~/.ssh/authorized_keys` file for the default user on the
          instance. Use a newline character to separate multiple keys. The SSH
          keys must be in the format necessary for the `authorized_keys` file, as shown
          in the example below.
 
-         __\"user_data\"__ - Provide your own base64-encoded data to be used by
+         **\"user_data\"** - Provide your own base64-encoded data to be used by
          Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For
          information about how to take advantage of user data, see the
          `Cloud-Init Documentation`__.
 
-         __Note:__ Cloud-Init does not pull this data from the `http://169.254.169.254/opc/v1/instance/metadata/`
+         **Note:** Cloud-Init does not pull this data from the `http://169.254.169.254/opc/v1/instance/metadata/`
          path. When the instance launches and either of these keys are provided, the key values are formatted as
          OpenStack metadata and copied to the following locations, which are recognized by Cloud-Init:
 
          `http://169.254.169.254/openstack/latest/meta_data.json` - This JSON blob
          contains, among other things, the SSH keys that you provided for
-          __\"ssh_authorized_keys\"__.
+          **\"ssh_authorized_keys\"**.
 
          `http://169.254.169.254/openstack/latest/user_data` - Contains the
-         base64-decoded data that you provided for __\"user_data\"__.
+         base64-decoded data that you provided for **\"user_data\"**.
 
-         __Metadata Example__
+         **Metadata Example**
 
               \"metadata\" : {
                  \"quake_bot_level\" : \"Severe\",
@@ -399,7 +434,7 @@ class LaunchInstanceDetails(object):
                  ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAzJSAtwEPoB3Jmr58IXrDGzLuDYkWAYg8AsLYlo6JZvKpjY1xednIcfEVQJm4T2DhVmdWhRrwQ8DmayVZvBkLt+zs2LdoAJEVimKwXcJFD/7wtH8Lnk17HiglbbbNXsemjDY0hea4JUE5CfvkIdZBITuMrfqSmA4n3VNoorXYdvtTMoGG8fxMub46RPtuxtqi9bG9Zqenordkg5FJt2mVNfQRqf83CWojcOkklUWq4CjyxaeLf5i9gv1fRoBo4QhiA8I6NCSppO8GnoV/6Ox6TNoh9BiifqGKC9VGYuC89RvUajRBTZSK2TK4DPfaT+2R+slPsFrwiT/oPEhhEK1S5Q== rsa-key-20160227\",
                  \"user_data\" : \"SWYgeW91IGNhbiBzZWUgdGhpcywgdGhlbiBpdCB3b3JrZWQgbWF5YmUuCg==\"
               }
-         __Getting Metadata on the Instance__
+         **Getting Metadata on the Instance**
 
          To get information about your instance, connect to the instance using SSH and issue any of the
          following GET requests:
@@ -411,8 +446,8 @@ class LaunchInstanceDetails(object):
          You'll get back a response that includes all the instance information; only the metadata information; or
          the metadata information for the specified key name, respectively.
 
-         __ https://cloudinit.readthedocs.org/en/latest/
-         __ http://cloudinit.readthedocs.org/en/latest/topics/format.html
+        __ https://cloudinit.readthedocs.org/en/latest/
+        __ http://cloudinit.readthedocs.org/en/latest/topics/format.html
 
 
         :param metadata: The metadata of this LaunchInstanceDetails.

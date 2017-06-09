@@ -89,8 +89,8 @@ class CreatePolicyDetails(object):
         `How Policies Work`__ and
         `Common Policies`__.
 
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/policies.htm
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/commonpolicies.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policies.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/commonpolicies.htm
 
 
         :return: The statements of this CreatePolicyDetails.
@@ -106,8 +106,8 @@ class CreatePolicyDetails(object):
         `How Policies Work`__ and
         `Common Policies`__.
 
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/policies.htm
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/commonpolicies.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policies.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/commonpolicies.htm
 
 
         :param statements: The statements of this CreatePolicyDetails.
