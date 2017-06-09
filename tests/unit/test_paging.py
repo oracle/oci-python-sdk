@@ -15,8 +15,8 @@ def test_manual_paging(identity, config):
         next_page = response.next_page
         request_number += 1
 
-        # Somethings probably wrong if we go past 30 requests.
-        assert(request_number < 30)
+        # Somethings probably wrong if we go past 50 requests.
+        assert(request_number < 50)
         assert response.status == 200
         assert previous_first_ocid != response.data[0].id
 

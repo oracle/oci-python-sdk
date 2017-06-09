@@ -22,6 +22,7 @@ class TestVirtualNetwork:
             self.subtest_ip_sec_connection_operations(virtual_network)
             self.subtest_route_table_operations(virtual_network)
         finally:
+            time.sleep(20)
             self.subtest_delete(virtual_network)
 
     @util.log_test
@@ -110,7 +111,7 @@ class TestVirtualNetwork:
         util.validate_response(result, expect_etag=True)
         assert result.data.egress_security_rules[0].is_stateless
 
-        time.sleep(5)
+        time.sleep(20)
 
         explicit_stateful_egress_rule = self.create_default_egress_security_rule()
         explicit_stateful_egress_rule.is_stateless = False
@@ -119,7 +120,7 @@ class TestVirtualNetwork:
         util.validate_response(result, expect_etag=True)
         assert not result.data.egress_security_rules[0].is_stateless
 
-        time.sleep(5)
+        time.sleep(20)
 
         implicit_stateful_egress_rule = self.create_default_egress_security_rule()
         update_security_list_details.egress_security_rules = [implicit_stateful_egress_rule]
@@ -333,7 +334,7 @@ class TestVirtualNetwork:
         util.validate_response(result, expect_etag=True)
 
         oraclebmc.wait_until(virtual_network, virtual_network.get_ip_sec_connection(self.ipsc_ocid), 'lifecycle_state',
-                             'AVAILABLE', max_wait_seconds=300)
+                             'AVAILABLE', max_wait_seconds=600)
 
         result = virtual_network.list_route_tables(util.COMPARTMENT_ID, self.vcn_ocid)
         util.validate_response(result)
