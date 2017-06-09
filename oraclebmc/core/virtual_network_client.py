@@ -45,10 +45,10 @@ class VirtualNetworkClient(object):
         You may optionally specify a *display name* for the CPE, otherwise a default is provided. It does not have to
         be unique, and you can change it.
 
-        __ {{DOC_SERVER_URL}}/Content/Network/Tasks/managingIPsec.htm
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm
-        __ {{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm
-        __ {{DOC_SERVER_URL}}/Content/Network/Tasks/configuringCPE.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPsec.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/configuringCPE.htm
 
 
         :param CreateCpeDetails create_cpe_details: (required)
@@ -113,9 +113,9 @@ class VirtualNetworkClient(object):
         You may optionally specify a *display name* for the cross-connect.
         It does not have to be unique, and you can change it.
 
-        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/fastconnect.htm
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm
-        __ {{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param CreateCrossConnectDetails create_cross_connect_details: (required)
@@ -176,9 +176,9 @@ class VirtualNetworkClient(object):
         You may optionally specify a *display name* for the cross-connect group.
         It does not have to be unique, and you can change it.
 
-        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/fastconnect.htm
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm
-        __ {{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param CreateCrossConnectGroupDetails create_cross_connect_group_details: (required)
@@ -236,8 +236,8 @@ class VirtualNetworkClient(object):
         You may optionally specify a *display name* for the set of DHCP options, otherwise a default is provided.
         It does not have to be unique, and you can change it.
 
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm
-        __ {{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param CreateDhcpDetails create_dhcp_details: (required)
@@ -295,9 +295,9 @@ class VirtualNetworkClient(object):
         You may optionally specify a *display name* for the DRG, otherwise a default is provided.
         It does not have to be unique, and you can change it.
 
-        __ {{DOC_SERVER_URL}}/Content/Network/Tasks/managingDRGs.htm
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm
-        __ {{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingDRGs.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param CreateDrgDetails create_drg_details: (required)
@@ -354,8 +354,8 @@ class VirtualNetworkClient(object):
         as the VCN. For more information about compartments and access control, see
         `Overview of the IAM Service`__.
 
-        __ {{DOC_SERVER_URL}}/Content/Network/Tasks/managingDRGs.htm
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingDRGs.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
 
 
         :param CreateDrgAttachmentDetails create_drg_attachment_details: (required)
@@ -422,9 +422,9 @@ class VirtualNetworkClient(object):
         use :func:`update_internet_gateway` to easily disable/enable
         the gateway without changing the route rule.
 
-        __ {{DOC_SERVER_URL}}/Content/Network/Tasks/managingIGs.htm
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm
-        __ {{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIGs.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param CreateInternetGatewayDetails create_internet_gateway_details: (required)
@@ -496,10 +496,10 @@ class VirtualNetworkClient(object):
         To get the status of the tunnels (whether they're up or down), use
         :func:`get_ip_sec_connection_device_status`.
 
-        __ {{DOC_SERVER_URL}}/Content/Network/Tasks/managingIPsec.htm
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm
-        __ {{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm
-        __ {{DOC_SERVER_URL}}/Content/Network/Tasks/configuringCPE.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPsec.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/configuringCPE.htm
 
 
         :param CreateIPSecConnectionDetails create_ip_sec_connection_details: (required)
@@ -559,10 +559,10 @@ class VirtualNetworkClient(object):
         You may optionally specify a *display name* for the route table, otherwise a default is provided.
         It does not have to be unique, and you can change it.
 
-        __ {{DOC_SERVER_URL}}/Content/General/Concepts/servicelimits.htm
-        __ {{DOC_SERVER_URL}}/Content/Network/Tasks/managingroutetables.htm
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm
-        __ {{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/servicelimits.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param CreateRouteTableDetails create_route_table_details: (required)
@@ -622,10 +622,10 @@ class VirtualNetworkClient(object):
         You may optionally specify a *display name* for the security list, otherwise a default is provided.
         It does not have to be unique, and you can change it.
 
-        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/securitylists.htm
-        __ {{DOC_SERVER_URL}}/Content/General/Concepts/servicelimits.htm
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm
-        __ {{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/securitylists.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/servicelimits.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param CreateSecurityListDetails create_security_list_details: (required)
@@ -702,14 +702,14 @@ class VirtualNetworkClient(object):
         VCN Resolver to resolve hostnames for instances in the subnet. For more information, see
         `DNS in Your Virtual Cloud Network`__.
 
-        __ {{DOC_SERVER_URL}}/Content/Network/Tasks/managingsubnets.htm
-        __ {{DOC_SERVER_URL}}/Content/General/Concepts/servicelimits.htm
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm
-        __ {{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm
-        __ {{DOC_SERVER_URL}}/Content/Network/Tasks/managingroutetables.htm
-        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/securitylists.htm
-        __ {{DOC_SERVER_URL}}/Content/Network/Tasks/managingDHCP.htm
-        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingsubnets.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/servicelimits.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/securitylists.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingDHCP.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm
 
 
         :param CreateSubnetDetails create_subnet_details: (required)
@@ -784,12 +784,12 @@ class VirtualNetworkClient(object):
         or FastConnect. For more information, see
         `Overview of the Networking Service`__.
 
-        __ {{DOC_SERVER_URL}}/Content/Network/Tasks/managingVCNs.htm
-         __ https://tools.ietf.org/html/rfc1918
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm
-        __ {{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm
-        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm
-        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/overview.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVCNs.htm
+        __ https://tools.ietf.org/html/rfc1918
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm
 
 
         :param CreateVcnDetails create_vcn_details: (required)
@@ -856,10 +856,10 @@ class VirtualNetworkClient(object):
         traffic will not flow. For more information, see
         `Managing Route Tables`__.
 
-        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/fastconnect.htm
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm
-        __ {{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm
-        __ {{DOC_SERVER_URL}}/Content/Network/Tasks/managingroutetables.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm
 
 
         :param CreateVirtualCircuitDetails create_virtual_circuit_details: (required)
@@ -2659,7 +2659,7 @@ class VirtualNetworkClient(object):
 
         For more information, see `FastConnect Overview`__.
 
-        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/fastconnect.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm
 
 
         :param str compartment_id: (required)
@@ -3061,7 +3061,7 @@ class VirtualNetworkClient(object):
         For more information about virtual circuits, see
         `FastConnect Overview`__.
 
-        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/fastconnect.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm
 
 
         :param str compartment_id: (required)
@@ -3813,7 +3813,7 @@ class VirtualNetworkClient(object):
         about the various states and how to test connectivity, see
         `FastConnect Overview`__.
 
-        __ {{DOC_SERVER_URL}}/Content/Network/Concepts/fastconnect.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm
 
 
         :param str virtual_circuit_id: (required)

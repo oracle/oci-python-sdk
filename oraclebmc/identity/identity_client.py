@@ -97,8 +97,8 @@ class IdentityClient(object):
         After you send your request, the new object's `lifecycleState` will temporarily be CREATING. Before using the
         object, first make sure its `lifecycleState` has changed to ACTIVE.
 
-        __ {{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/policies.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policies.htm
 
 
         :param CreateCompartmentDetails create_compartment_details: (required)
@@ -165,8 +165,8 @@ class IdentityClient(object):
         See :func:`add_user_to_group` and
         :func:`create_policy`.
 
-        __ {{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/policies.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policies.htm
 
 
         :param CreateGroupDetails create_group_details: (required)
@@ -230,8 +230,8 @@ class IdentityClient(object):
         be CREATING. Before using the object, first make sure its `lifecycleState` has
         changed to ACTIVE.
 
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/federation.htm
-        __ {{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/federation.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param CreateIdentityProviderDetails create_identity_provider_details: (required)
@@ -343,7 +343,7 @@ class IdentityClient(object):
         **Note:** The user's Console login is the unique name you specified when you created the user
         (see :func:`create_user`).
 
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/usercredentials.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/usercredentials.htm
 
 
         :param str user_id: (required)
@@ -411,9 +411,9 @@ class IdentityClient(object):
 
         New policies take effect typically within 10 seconds.
 
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/policies.htm
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/commonpolicies.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policies.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/commonpolicies.htm
 
 
         :param CreatePolicyDetails create_policy_details: (required)
@@ -523,7 +523,7 @@ class IdentityClient(object):
         does not need to write a policy to give users this ability. To compare, administrators who have permission to the
         tenancy can use this operation to create a Swift password for any user, including themselves.
 
-        __ {{DOC_SERVER_URL}}/Content/Identity/Tasks/managingcredentials.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingcredentials.htm
 
 
         :param CreateSwiftPasswordDetails create_swift_password_details: (required)
@@ -613,9 +613,9 @@ class IdentityClient(object):
 
         **Important:** Make sure to inform the new user which compartment(s) they have access to.
 
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm
-        __ {{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm
-        __ {{DOC_SERVER_URL}}/Content/API/Concepts/apisigningkey.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm
 
 
         :param CreateUserDetails create_user_details: (required)
@@ -1353,7 +1353,7 @@ class IdentityClient(object):
         of your compartments as the value for the compartment ID (remember that the tenancy is simply the root compartment).
         See `Where to Get the Tenancy's OCID and User's OCID`__.
 
-        __ {{DOC_SERVER_URL}}/Content/API/Concepts/apisigningkey.htm#five
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five
 
 
         :param str compartment_id: (required)
@@ -1393,7 +1393,7 @@ class IdentityClient(object):
         for the compartment ID (remember that the tenancy is simply the root compartment).
         See `Where to Get the Tenancy's OCID and User's OCID`__.
 
-        __ {{DOC_SERVER_URL}}/Content/API/Concepts/apisigningkey.htm#five
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five
 
 
         :param str compartment_id: (required)
@@ -1447,7 +1447,7 @@ class IdentityClient(object):
         the compartment ID (remember that the tenancy is simply the root compartment).
         See `Where to Get the Tenancy's OCID and User's OCID`__.
 
-        __ {{DOC_SERVER_URL}}/Content/API/Concepts/apisigningkey.htm#five
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five
 
 
         :param str compartment_id: (required)
@@ -1502,7 +1502,7 @@ class IdentityClient(object):
         compartment ID (remember that the tenancy is simply the root compartment).
         See `Where to Get the Tenancy's OCID and User's OCID`__.
 
-        __ {{DOC_SERVER_URL}}/Content/API/Concepts/apisigningkey.htm#five
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five
 
 
         :param str protocol: (required)
@@ -1617,7 +1617,7 @@ class IdentityClient(object):
         To determine which policies apply to a particular group or compartment, you must view the individual
         statements inside all your policies. There isn't a way to automatically obtain that information via the API.
 
-        __ {{DOC_SERVER_URL}}/Content/API/Concepts/apisigningkey.htm#five
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five
 
 
         :param str compartment_id: (required)
@@ -1777,7 +1777,7 @@ class IdentityClient(object):
         - You can set both the `userId` and `groupId` to determine if the specified user is in the specified group.
         If the answer is no, the response is an empty list.
 
-        __ {{DOC_SERVER_URL}}/Content/API/Concepts/apisigningkey.htm#five
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five
 
 
         :param str compartment_id: (required)
@@ -1841,7 +1841,7 @@ class IdentityClient(object):
         compartment ID (remember that the tenancy is simply the root compartment).
         See `Where to Get the Tenancy's OCID and User's OCID`__.
 
-        __ {{DOC_SERVER_URL}}/Content/API/Concepts/apisigningkey.htm#five
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five
 
 
         :param str compartment_id: (required)

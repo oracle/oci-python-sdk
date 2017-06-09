@@ -300,7 +300,7 @@ class CreateVirtualCircuitDetails(object):
         means `RFC 1918`__ addresses
         (10.0.0.0/8, 172.16/12, and 192.168/16). Only PRIVATE is supported.
 
-         __ https://tools.ietf.org/html/rfc1918
+        __ https://tools.ietf.org/html/rfc1918
 
         Allowed values for this property are: "PUBLIC", "PRIVATE"
 
@@ -318,7 +318,7 @@ class CreateVirtualCircuitDetails(object):
         means `RFC 1918`__ addresses
         (10.0.0.0/8, 172.16/12, and 192.168/16). Only PRIVATE is supported.
 
-         __ https://tools.ietf.org/html/rfc1918
+        __ https://tools.ietf.org/html/rfc1918
 
 
         :param type: The type of this CreateVirtualCircuitDetails.

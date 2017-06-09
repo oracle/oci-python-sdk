@@ -144,7 +144,7 @@ class ComputeClient(object):
         You may optionally specify a *display name* for the image, which is simply a friendly name or description.
         It does not have to be unique, and you can change it. See :func:`update_image`.
 
-        __ {{DOC_SERVER_URL}}/Content/Compute/Tasks/managingcustomimages.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/managingcustomimages.htm
 
 
         :param CreateImageDetails create_image_details: (required)
@@ -679,9 +679,9 @@ class ComputeClient(object):
         operation to get the VNIC ID for the instance, and then call
         :func:`get_vnic` with the VNIC ID.
 
-        __ {{DOC_SERVER_URL}}/Content/Compute/Concepts/computeoverview.htm
-        __ {{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm
-        __ {{DOC_SERVER_URL}}/Content/General/Concepts/regions.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Concepts/computeoverview.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/regions.htm
 
 
         :param LaunchInstanceDetails launch_instance_details: (required)
@@ -794,7 +794,7 @@ class ComputeClient(object):
         information about images, see
         `Managing Custom Images`__.
 
-        __ {{DOC_SERVER_URL}}/Content/Compute/Tasks/managingcustomimages.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/managingcustomimages.htm
 
 
         :param str compartment_id: (required)
