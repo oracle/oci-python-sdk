@@ -12,7 +12,7 @@ The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
  Added
 -------
 
-* An UploadManager class to better support large object uploads though multipart and parallel operations.
+* An UploadManager class to better support large object uploads through multipart and parallel operations.
 * Support for object storage pre-authenticated requests and public buckets.
 * Support for load balancing service.
 * Support for nested instance metadata operations.
