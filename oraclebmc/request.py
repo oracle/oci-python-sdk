@@ -24,9 +24,47 @@ class Request(object):
         """
 
         self.method = method
+        """
+        The HTTP method
+
+        :type: str
+        """
+
         self.url = url
+        """
+        URL that will serve the request
+        :type: str
+        """
+
         self.query_params = query_params
+        """
+        Query parameters in the url
+
+        :type: dict(str, str)
+        """
+
         self.header_params = header_params or {}
+        """
+        Request header params
+
+        :type: dict(str, str)
+        """
+
         self.body = body
+        """
+        Request body
+        """
+
         self.response_type = response_type
+        """
+        Response data type
+
+        :type: str
+        """
+
         self.enforce_content_headers = enforce_content_headers
+        """
+        Whether content headers should be added for PUT and POST requests when not present.  Defaults to True.
+
+        :type: bool
+        """
