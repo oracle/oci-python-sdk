@@ -65,6 +65,7 @@ class WorkRequest(object):
         """
         Gets the id of this WorkRequest.
         The `OCID`__ of the work request.
+
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
@@ -78,6 +79,7 @@ class WorkRequest(object):
         """
         Sets the id of this WorkRequest.
         The `OCID`__ of the work request.
+
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 

@@ -8,6 +8,7 @@
 ^oraclebmc/core/.*\.py$
 ^oraclebmc/identity/.*\.py$
 ^oraclebmc/object_storage/.*\.py$
+^oraclebmc/loadbalancer/.*\.py$
 ^oraclebmc/[^/]*\.py$
 
 

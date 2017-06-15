@@ -37,6 +37,7 @@ class LoadBalancerClient(object):
 
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the backend set and servers.
+
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
@@ -103,6 +104,7 @@ class LoadBalancerClient(object):
 
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer on which to add a backend set.
+
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
@@ -163,6 +165,7 @@ class LoadBalancerClient(object):
 
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer on which to add the certificate.
+
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
@@ -223,6 +226,7 @@ class LoadBalancerClient(object):
 
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer on which to add a listener.
+
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
@@ -361,6 +365,7 @@ class LoadBalancerClient(object):
 
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the backend set and server.
+
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
@@ -422,6 +427,7 @@ class LoadBalancerClient(object):
 
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the backend set.
+
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
@@ -475,6 +481,7 @@ class LoadBalancerClient(object):
 
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the certificate to be deleted.
+
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str certificate_name: (required)
@@ -528,6 +535,7 @@ class LoadBalancerClient(object):
 
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the listener to delete.
+
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str listener_name: (required)
@@ -581,6 +589,7 @@ class LoadBalancerClient(object):
 
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer to delete.
+
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
@@ -628,6 +637,7 @@ class LoadBalancerClient(object):
 
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the backend set and server.
+
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
@@ -688,6 +698,7 @@ class LoadBalancerClient(object):
 
         :param str load_balancer_id: (required)
             The `OCID`__ of the specified load balancer.
+
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
@@ -742,6 +753,7 @@ class LoadBalancerClient(object):
 
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the health check policy to be retrieved.
+
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
@@ -796,6 +808,7 @@ class LoadBalancerClient(object):
 
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer to retrieve.
+
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
@@ -844,6 +857,7 @@ class LoadBalancerClient(object):
 
         :param str work_request_id: (required)
             The `OCID`__ of the work request to retrieve.
+
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
@@ -892,6 +906,7 @@ class LoadBalancerClient(object):
 
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the backend sets to retrieve.
+
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
@@ -940,6 +955,7 @@ class LoadBalancerClient(object):
 
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the backend set and servers.
+
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
@@ -994,6 +1010,7 @@ class LoadBalancerClient(object):
 
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the certificates to be listed.
+
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
@@ -1042,6 +1059,7 @@ class LoadBalancerClient(object):
 
         :param str compartment_id: (required)
             The `OCID`__ of the compartment containing the load balancers to list.
+
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
@@ -1111,6 +1129,7 @@ class LoadBalancerClient(object):
 
         :param str compartment_id: (required)
             The `OCID`__ of the compartment containing the load balancer policies to list.
+
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
@@ -1173,6 +1192,7 @@ class LoadBalancerClient(object):
 
         :param str compartment_id: (required)
             The `OCID`__ of the compartment containing the load balancer protocols to list.
+
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
@@ -1235,6 +1255,7 @@ class LoadBalancerClient(object):
 
         :param str compartment_id: (required)
             The `OCID`__ of the compartment containing the load balancer shapes to list.
+
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
@@ -1297,6 +1318,7 @@ class LoadBalancerClient(object):
 
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the work requests to retrieve.
+
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
@@ -1367,6 +1389,7 @@ class LoadBalancerClient(object):
 
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the backend set and server.
+
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
@@ -1439,6 +1462,7 @@ class LoadBalancerClient(object):
 
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the backend set.
+
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
@@ -1505,6 +1529,7 @@ class LoadBalancerClient(object):
 
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the health check policy to be updated.
+
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
@@ -1571,6 +1596,7 @@ class LoadBalancerClient(object):
 
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the listener to update.
+
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str listener_name: (required)
@@ -1637,6 +1663,7 @@ class LoadBalancerClient(object):
 
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer to update.
+
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)

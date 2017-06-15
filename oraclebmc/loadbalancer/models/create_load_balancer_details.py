@@ -85,6 +85,7 @@ class CreateLoadBalancerDetails(object):
         """
         Gets the compartment_id of this CreateLoadBalancerDetails.
         The `OCID`__ of the compartment in which to create the load balancer.
+
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
@@ -98,6 +99,7 @@ class CreateLoadBalancerDetails(object):
         """
         Sets the compartment_id of this CreateLoadBalancerDetails.
         The `OCID`__ of the compartment in which to create the load balancer.
+
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
@@ -247,6 +249,7 @@ class CreateLoadBalancerDetails(object):
         """
         Gets the subnet_ids of this CreateLoadBalancerDetails.
         An array of subnet `OCIDs`__.
+
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
@@ -260,6 +263,7 @@ class CreateLoadBalancerDetails(object):
         """
         Sets the subnet_ids of this CreateLoadBalancerDetails.
         An array of subnet `OCIDs`__.
+
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 

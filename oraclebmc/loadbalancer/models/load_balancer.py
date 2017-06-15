@@ -97,6 +97,7 @@ class LoadBalancer(object):
         """
         Gets the compartment_id of this LoadBalancer.
         The `OCID`__ of the compartment containing the load balancer.
+
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
@@ -110,6 +111,7 @@ class LoadBalancer(object):
         """
         Sets the compartment_id of this LoadBalancer.
         The `OCID`__ of the compartment containing the load balancer.
+
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
@@ -151,6 +153,7 @@ class LoadBalancer(object):
         """
         Gets the id of this LoadBalancer.
         The `OCID`__ of the load balancer.
+
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
@@ -164,6 +167,7 @@ class LoadBalancer(object):
         """
         Sets the id of this LoadBalancer.
         The `OCID`__ of the load balancer.
+
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
@@ -331,6 +335,7 @@ class LoadBalancer(object):
         """
         Gets the subnet_ids of this LoadBalancer.
         An array of subnet `OCIDs`__.
+
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
@@ -344,6 +349,7 @@ class LoadBalancer(object):
         """
         Sets the subnet_ids of this LoadBalancer.
         An array of subnet `OCIDs`__.
+
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
