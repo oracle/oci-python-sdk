@@ -146,8 +146,6 @@ Load Balancer
 
 .. autoclass:: Signer
 
-.. autoclass:: ObjectUploadSigner
-
 ===========
  Utilities
 ===========
