@@ -16,6 +16,7 @@ COMPARTMENT_NAME = 'PythonSDKTestCompartment'
 # PHX
 COMPARTMENT_ID = 'ocid1.compartment.oc1..aaaaaaaan5brzve7w7oyhrfngjfsrf72r67aqdd2sbhlarjas6pwamy4425a'
 AVAILABILITY_DOMAIN = 'kIdk:PHX-AD-2'
+SECOND_AVAILABILITY_DOMAIN = 'kIdk:PHX-AD-1'
 
 # IAD
 # COMPARTMENT_ID = 'ocid1.compartment.oc1..aaaaaaaajisqznb7qthdm27q47fgmclthonu5rrk72r3qczbrbsp6f3xc6ra'
