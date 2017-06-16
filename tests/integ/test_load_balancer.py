@@ -134,4 +134,3 @@ class TestLoadBalancer:
                     error_count = error_count + 1
 
         assert error_count == 0
-
