@@ -34,8 +34,8 @@ from .update_load_balancer_details import UpdateLoadBalancerDetails
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
 
-# Maps type names to classes for loadbalancer services.
-loadbalancer_type_mapping = {
+# Maps type names to classes for load_balancer services.
+load_balancer_type_mapping = {
     "Backend": Backend,
     "BackendDetails": BackendDetails,
     "BackendSet": BackendSet,

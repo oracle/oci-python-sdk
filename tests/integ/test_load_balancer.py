@@ -70,7 +70,7 @@ class TestLoadBalancer:
         oraclebmc.wait_until(virtual_network, virtual_network.get_subnet(self.subnet_ocid2), 'lifecycle_state',
                              'AVAILABLE', max_wait_seconds=300)
 
-        create_load_balancer_details = oraclebmc.loadbalancer.models.CreateLoadBalancerDetails()
+        create_load_balancer_details = oraclebmc.load_balancer.models.CreateLoadBalancerDetails()
         create_load_balancer_details.compartment_id = util.COMPARTMENT_ID
         create_load_balancer_details.display_name = "My Load Balancer"
         create_load_balancer_details.shape_name = "100Mbps"

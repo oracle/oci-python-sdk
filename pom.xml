@@ -185,7 +185,8 @@
                             <basePackage>OracleBMC</basePackage>
                             <additionalProperties>
                                 <packageName>oraclebmc</packageName>
-                                <specName>loadbalancer</specName>
+                                <specName>load_balancer</specName>
+                                <generateInitFile>true</generateInitFile>
                             </additionalProperties>
                         </configuration>
                     </execution>
@@ -225,6 +226,12 @@
                         </fileset>
                         <fileset>
                             <directory>oraclebmc/identity</directory>
+                            <includes>
+                                <include>**/*</include>
+                            </includes>
+                        </fileset>
+                        <fileset>
+                            <directory>oraclebmc/load_balancer</directory>
                             <includes>
                                 <include>**/*</include>
                             </includes>
