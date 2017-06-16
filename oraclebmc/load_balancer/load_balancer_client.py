@@ -9,7 +9,7 @@ from ..base_client import BaseClient
 from ..config import get_config_value_or_default, validate_config
 from ..signer import Signer
 from ..util import Sentinel
-from .models import loadbalancer_type_mapping
+from .models import load_balancer_type_mapping
 missing = Sentinel("Missing")
 
 
@@ -24,7 +24,7 @@ class LoadBalancerClient(object):
             private_key_file_location=config["key_file"],
             pass_phrase=get_config_value_or_default(config, "pass_phrase")
         )
-        self.base_client = BaseClient("load_balancer", config, signer, loadbalancer_type_mapping)
+        self.base_client = BaseClient("load_balancer", config, signer, load_balancer_type_mapping)
 
     def create_backend(self, create_backend_details, load_balancer_id, backend_set_name, **kwargs):
         """

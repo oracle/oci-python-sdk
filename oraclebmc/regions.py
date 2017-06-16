@@ -10,7 +10,8 @@ SERVICE_ENDPOINTS = {
     "blockstorage": "https://iaas.{domain}/20160918",
     "compute": "https://iaas.{domain}/20160918",
     "virtual_network": "https://iaas.{domain}/20160918",
-    "object_storage": "https://objectstorage.{domain}"
+    "object_storage": "https://objectstorage.{domain}",
+    "load_balancer": "https://iaas.{domain}/20170115"
 }
 
 DOMAIN_FORMAT = "{region}.oraclecloud.com"

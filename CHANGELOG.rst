@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+ 1.3.4 - 2017-06-16
+====================
+
+-------
+ Fixed
+-------
+
+* Fixed bug in support for load balancing service.
+
+====================
  1.3.3 - 2017-06-09
 ====================
 

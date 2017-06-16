@@ -55,3 +55,8 @@ def compute(config):
 @pytest.fixture
 def virtual_network(config):
     return oraclebmc.core.VirtualNetworkClient(config)
+
+
+@pytest.fixture
+def load_balancer_client(config):
+    return oraclebmc.load_balancer.LoadBalancerClient(config)
