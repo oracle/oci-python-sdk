@@ -68,14 +68,14 @@ Load Balancer
  Client
 --------
 
-.. autoclass:: oraclebmc.loadbalancer.load_balancer_client.LoadBalancerClient
+.. autoclass:: oraclebmc.load_balancer.load_balancer_client.LoadBalancerClient
     :members:
 
 --------
  Models
 --------
 
-.. automodule:: oraclebmc.loadbalancer.models
+.. automodule:: oraclebmc.load_balancer.models
     :members:
     :undoc-members:
     :imported-members:
