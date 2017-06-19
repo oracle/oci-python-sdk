@@ -19,7 +19,7 @@ def test_invalid_policy(identity, config):
     with pytest.raises(oraclebmc.exceptions.ServiceError) as excinfo:
         identity.create_policy(request)
 
-    tests.util.validate_service_error(excinfo.value, 400, "InvalidParameter", "The group NotARealGroup specified")
+    tests.util.validate_service_error(excinfo.value, 400, "InvalidParameter", "")
 
 
 def test_invalid_endpoint_host(identity):
