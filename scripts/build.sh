@@ -38,7 +38,7 @@ cp -r docs/_build/html/* dist/oracle-bmcs-python-sdk-docs-$SDK_VERSION/
 
 echo Running Tests
 
-if [ "%env.TEST_ENABLE%" = "false" ]; then
+if [ $TEST_ENABLE = "false" ]; then
   echo "TESTS HAVE BEEN DISABLED."
 else
   pip install tox
