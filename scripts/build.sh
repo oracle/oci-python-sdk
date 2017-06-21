@@ -15,7 +15,7 @@ pip install -e .
 echo Python version
 python --version
 
-SDK_VERSION=$(tail -1 oraclebmc/version.py | cut -d '"' -f2)
+SDK_VERSION=$(tail -1 src/oraclebmc/version.py | cut -d '"' -f2)
 echo SDK Version Number $SDK_VERSION
 
 echo Building Docs
