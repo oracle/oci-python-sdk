@@ -5,11 +5,11 @@
 
 ^examples/
 
-^oraclebmc/core/.*\.py$
-^oraclebmc/identity/.*\.py$
-^oraclebmc/object_storage/.*\.py$
-^oraclebmc/load_balancer/.*\.py$
-^oraclebmc/[^/]*\.py$
+^src/oraclebmc/core/.*\.py$
+^src/oraclebmc/identity/.*\.py$
+^src/oraclebmc/object_storage/.*\.py$
+^src/oraclebmc/load_balancer/.*\.py$
+^src/oraclebmc/[^/]*\.py$
 
 
 ^tests/[^/]*\.py$

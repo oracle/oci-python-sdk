@@ -117,7 +117,7 @@
             <plugin>
                 <groupId>com.oracle.bmc.sdk</groupId>
                 <artifactId>bmc-sdk-swagger-maven-plugin</artifactId>
-                <version>1.3.1-SNAPSHOT</version>
+                <version>1.4.0-SNAPSHOT</version>
                 <executions>
                     <execution>
                         <id>python-public-sdk-identity</id>
@@ -128,7 +128,7 @@
                         <configuration>
                             <language>oracle-python-sdk</language>
                             <specPath>${spec-temp-dir}/identity-control-plane-api-spec-20160918.yaml</specPath>
-                            <outputDir>oraclebmc</outputDir>
+                            <outputDir>src/oraclebmc</outputDir>
                             <basePackage>OracleBMC</basePackage>
                             <additionalProperties>
                                 <packageName>oraclebmc</packageName>
@@ -145,7 +145,7 @@
                         <configuration>
                             <language>oracle-python-sdk</language>
                             <specPath>${spec-temp-dir}/coreservices-api-spec-20160918-external.yaml</specPath>
-                            <outputDir>oraclebmc</outputDir>
+                            <outputDir>src/oraclebmc</outputDir>
                             <basePackage>OracleBMC</basePackage>
                             <additionalProperties>
                                 <packageName>oraclebmc</packageName>
@@ -162,7 +162,7 @@
                         <configuration>
                             <language>oracle-python-sdk</language>
                             <specPath>${spec-temp-dir}/casper-api.yaml</specPath>
-                            <outputDir>oraclebmc</outputDir>
+                            <outputDir>src/oraclebmc</outputDir>
                             <basePackage>OracleBMC</basePackage>
                             <additionalProperties>
                                 <packageName>oraclebmc</packageName>
@@ -181,7 +181,7 @@
                         <configuration>
                             <language>oracle-python-sdk</language>
                             <specPath>${spec-temp-dir}/spec-20170115.yaml</specPath>
-                            <outputDir>oraclebmc</outputDir>
+                            <outputDir>src/oraclebmc</outputDir>
                             <basePackage>OracleBMC</basePackage>
                             <additionalProperties>
                                 <packageName>oraclebmc</packageName>
@@ -202,7 +202,7 @@
                         <phase>compile</phase>
                         <configuration>
                             <target>
-                                <replace dir='oraclebmc' token="{{DOC_SERVER_URL}}"
+                                <replace dir='src' token="{{DOC_SERVER_URL}}"
                                          value="https://docs.us-phoenix-1.oraclecloud.com" />
                             </target>
                             <failOnError>false</failOnError>
@@ -219,25 +219,25 @@
                 <configuration>
                     <filesets>
                         <fileset>
-                            <directory>oraclebmc/core</directory>
+                            <directory>src/oraclebmc/core</directory>
                             <includes>
                                 <include>**/*</include>
                             </includes>
                         </fileset>
                         <fileset>
-                            <directory>oraclebmc/identity</directory>
+                            <directory>src/oraclebmc/identity</directory>
                             <includes>
                                 <include>**/*</include>
                             </includes>
                         </fileset>
                         <fileset>
-                            <directory>oraclebmc/load_balancer</directory>
+                            <directory>src/oraclebmc/load_balancer</directory>
                             <includes>
                                 <include>**/*</include>
                             </includes>
                         </fileset>
                         <fileset>
-                            <directory>oraclebmc/object_storage</directory>
+                            <directory>src/oraclebmc/object_storage</directory>
                             <includes>
                                 <include>**/*</include>
                             </includes>

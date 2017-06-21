@@ -18,7 +18,7 @@ def open_relative(*path):
     return io.open(filename, mode="r", encoding="utf-8")
 
 
-with open_relative("oraclebmc", "version.py") as fd:
+with open_relative("src", "oraclebmc", "version.py") as fd:
     version = re.search(
         r"^__version__\s*=\s*['\"]([^'\"]*)['\"]",
         fd.read(), re.MULTILINE).group(1)
@@ -47,7 +47,8 @@ setup(
     long_description=readme,
     author="Oracle",
     author_email="joe.levy@oracle.com",
-    packages=find_packages(exclude=["docs", "tests*"]),
+    packages=find_packages(where="src"),
+    package_dir={"": "src"},
     include_package_data=True,
     install_requires=requires,
     license="Universal Permissive License 1.0 or Apache License 2.0",
