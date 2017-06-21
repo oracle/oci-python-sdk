@@ -33,6 +33,7 @@ class Request(object):
         self.url = url
         """
         URL that will serve the request
+
         :type: str
         """
 

@@ -2,8 +2,6 @@
 # Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 from .constants import HEADER_NEXT_PAGE, HEADER_REQUEST_ID
-from oraclebmc.request import Request
-from requests.structures import CaseInsensitiveDict
 
 
 class Response(object):
