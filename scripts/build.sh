@@ -51,7 +51,7 @@ make build
 # Create a dev directory that will contain versions of the whl, zip, and docs meant for
 # the dev pypi artifactory. Each artifact includes the build number in the version to avoid
 # conflicts.
-DEV_VERSION=$SDK_VERSION.%env.BUILD_NUMBER%
+DEV_VERSION=$SDK_VERSION.$BUILD_NUMBER
 mkdir -p dist/dev/
 cp dist/oraclebmc-$SDK_VERSION-py2.py3-none-any.whl dist/dev/oraclebmc-$DEV_VERSION-py2.py3-none-any.whl
 cp dist/oracle-bmcs-python-sdk-$SDK_VERSION.zip dist/dev/oracle-bmcs-python-sdk-$DEV_VERSION.zip
