@@ -186,8 +186,8 @@ def launch_instance(compute, compartment, test_id, availability_domain, subnet, 
     request.availability_domain = availability_domain
     request.compartment_id = compartment
     request.display_name = 'pythonsdk_tutorial_instance_' + test_id
-    # ol7.1-base-0.0.1
-    request.image_id = 'ocid1.image.oc1.phx.aaaaaaaa4wdx32cwjdjdasqyzatmvlxbef4673rs5y7cowvc3g3o7iwhmhfa'
+    # Oracle-Linux-7.3-2017.03.03-0
+    request.image_id = 'ocid1.image.oc1.phx.aaaaaaaaevkccuto7ja4yhahz6rguhqbuomimqsig6sgxd55hjomzepyeqda'
     request.shape = 'VM.Standard1.2'
     request.subnet_id = subnet.id
     request.metadata = {'ssh_authorized_keys': public_key}
