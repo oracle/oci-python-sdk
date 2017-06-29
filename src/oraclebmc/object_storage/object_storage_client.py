@@ -51,8 +51,8 @@ class ObjectStorageClient(object):
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
 
-        :return: A Response object with data of type None
-        :rtype: None
+        :return: A :class:`~oraclebmc.response.Response` object with data of type None
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/u/{objectName}"
         method = "DELETE"
@@ -129,8 +129,8 @@ class ObjectStorageClient(object):
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
 
-        :return: A Response object with data of type None
-        :rtype: None
+        :return: A :class:`~oraclebmc.response.Response` object with data of type None
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/u/{objectName}"
         method = "POST"
@@ -196,8 +196,8 @@ class ObjectStorageClient(object):
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
 
-        :return: A Response object with data of type Bucket
-        :rtype: Bucket
+        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.object_storage.models.Bucket`
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/n/{namespaceName}/b/"
         method = "POST"
@@ -260,8 +260,8 @@ class ObjectStorageClient(object):
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
 
-        :return: A Response object with data of type MultipartUpload
-        :rtype: MultipartUpload
+        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.object_storage.models.MultipartUpload`
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/u"
         method = "POST"
@@ -320,8 +320,8 @@ class ObjectStorageClient(object):
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
 
-        :return: A Response object with data of type PreauthenticatedRequest
-        :rtype: PreauthenticatedRequest
+        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.object_storage.models.PreauthenticatedRequest`
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/p/"
         method = "POST"
@@ -377,8 +377,8 @@ class ObjectStorageClient(object):
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
 
-        :return: A Response object with data of type None
-        :rtype: None
+        :return: A :class:`~oraclebmc.response.Response` object with data of type None
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/"
         method = "DELETE"
@@ -439,8 +439,8 @@ class ObjectStorageClient(object):
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
 
-        :return: A Response object with data of type None
-        :rtype: None
+        :return: A :class:`~oraclebmc.response.Response` object with data of type None
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/o/{objectName}"
         method = "DELETE"
@@ -497,8 +497,8 @@ class ObjectStorageClient(object):
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
 
-        :return: A Response object with data of type None
-        :rtype: None
+        :return: A :class:`~oraclebmc.response.Response` object with data of type None
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/p/{parId}"
         method = "DELETE"
@@ -558,8 +558,8 @@ class ObjectStorageClient(object):
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
 
-        :return: A Response object with data of type Bucket
-        :rtype: Bucket
+        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.object_storage.models.Bucket`
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/"
         method = "GET"
@@ -607,8 +607,8 @@ class ObjectStorageClient(object):
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
 
-        :return: A Response object with data of type str
-        :rtype: str
+        :return: A :class:`~oraclebmc.response.Response` object with data of type str
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/n/"
         method = "GET"
@@ -672,8 +672,8 @@ class ObjectStorageClient(object):
 
             __ https://tools.ietf.org/rfc/rfc7233
 
-        :return: A Response object with data of type stream
-        :rtype: stream
+        :return: A :class:`~oraclebmc.response.Response` object with data of type stream
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/o/{objectName}"
         method = "GET"
@@ -735,8 +735,8 @@ class ObjectStorageClient(object):
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
 
-        :return: A Response object with data of type PreauthenticatedRequestSummary
-        :rtype: PreauthenticatedRequestSummary
+        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.object_storage.models.PreauthenticatedRequestSummary`
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/p/{parId}"
         method = "GET"
@@ -797,8 +797,8 @@ class ObjectStorageClient(object):
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
 
-        :return: A Response object with data of type None
-        :rtype: None
+        :return: A :class:`~oraclebmc.response.Response` object with data of type None
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/"
         method = "HEAD"
@@ -866,8 +866,8 @@ class ObjectStorageClient(object):
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
 
-        :return: A Response object with data of type None
-        :rtype: None
+        :return: A :class:`~oraclebmc.response.Response` object with data of type None
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/o/{objectName}"
         method = "HEAD"
@@ -933,8 +933,8 @@ class ObjectStorageClient(object):
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
 
-        :return: A Response object with data of type list[BucketSummary]
-        :rtype: list[BucketSummary]
+        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.object_storage.models.BucketSummary`
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/n/{namespaceName}/b/"
         method = "GET"
@@ -1008,8 +1008,8 @@ class ObjectStorageClient(object):
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
 
-        :return: A Response object with data of type list[MultipartUploadPartSummary]
-        :rtype: list[MultipartUploadPartSummary]
+        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.object_storage.models.MultipartUploadPartSummary`
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/u/{objectName}"
         method = "GET"
@@ -1077,8 +1077,8 @@ class ObjectStorageClient(object):
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
 
-        :return: A Response object with data of type list[MultipartUpload]
-        :rtype: list[MultipartUpload]
+        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.object_storage.models.MultipartUpload`
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/u"
         method = "GET"
@@ -1169,8 +1169,8 @@ class ObjectStorageClient(object):
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
 
-        :return: A Response object with data of type ListObjects
-        :rtype: ListObjects
+        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.object_storage.models.ListObjects`
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/o"
         method = "GET"
@@ -1247,8 +1247,8 @@ class ObjectStorageClient(object):
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
 
-        :return: A Response object with data of type list[PreauthenticatedRequestSummary]
-        :rtype: list[PreauthenticatedRequestSummary]
+        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.object_storage.models.PreauthenticatedRequestSummary`
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/p/"
         method = "GET"
@@ -1354,8 +1354,8 @@ class ObjectStorageClient(object):
         :param dict(str, str) opc_meta: (optional)
             Optional user-defined metadata key and value.
 
-        :return: A Response object with data of type None
-        :rtype: None
+        :return: A :class:`~oraclebmc.response.Response` object with data of type None
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/o/{objectName}"
         method = "PUT"
@@ -1438,8 +1438,8 @@ class ObjectStorageClient(object):
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
 
-        :return: A Response object with data of type Bucket
-        :rtype: Bucket
+        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.object_storage.models.Bucket`
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/"
         method = "POST"
@@ -1525,8 +1525,8 @@ class ObjectStorageClient(object):
         :param str content_md5: (optional)
             The base-64 encoded MD5 hash of the body.
 
-        :return: A Response object with data of type None
-        :rtype: None
+        :return: A :class:`~oraclebmc.response.Response` object with data of type None
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/u/{objectName}"
         method = "PUT"

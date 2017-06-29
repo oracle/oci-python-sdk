@@ -155,3 +155,22 @@ Load Balancer
 .. autofunction:: to_dict
 
 .. autoclass:: Sentinel
+
+=========
+Request
+=========
+.. module:: oraclebmc.request
+
+.. autoclass:: Request
+    :members:
+    :undoc-members:
+
+=========
+Response
+=========
+.. module:: oraclebmc.response
+
+.. autoclass:: Response
+    :members:
+    :undoc-members:
+
