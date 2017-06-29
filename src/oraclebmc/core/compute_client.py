@@ -42,8 +42,8 @@ class ComputeClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A Response object with data of type VolumeAttachment
-        :rtype: VolumeAttachment
+        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.core.models.VolumeAttachment`
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/volumeAttachments/"
         method = "POST"
@@ -103,8 +103,8 @@ class ComputeClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A Response object with data of type ConsoleHistory
-        :rtype: ConsoleHistory
+        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.core.models.ConsoleHistory`
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/instanceConsoleHistories/"
         method = "POST"
@@ -157,8 +157,8 @@ class ComputeClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A Response object with data of type Image
-        :rtype: Image
+        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.core.models.Image`
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/images/"
         method = "POST"
@@ -200,8 +200,8 @@ class ComputeClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
-        :return: A Response object with data of type None
-        :rtype: None
+        :return: A :class:`~oraclebmc.response.Response` object with data of type None
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/instanceConsoleHistories/{instanceConsoleHistoryId}"
         method = "DELETE"
@@ -247,8 +247,8 @@ class ComputeClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
-        :return: A Response object with data of type None
-        :rtype: None
+        :return: A :class:`~oraclebmc.response.Response` object with data of type None
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/images/{imageId}"
         method = "DELETE"
@@ -297,8 +297,8 @@ class ComputeClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
-        :return: A Response object with data of type None
-        :rtype: None
+        :return: A :class:`~oraclebmc.response.Response` object with data of type None
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/volumeAttachments/{volumeAttachmentId}"
         method = "DELETE"
@@ -341,8 +341,8 @@ class ComputeClient(object):
         :param str instance_console_history_id: (required)
             The OCID of the console history.
 
-        :return: A Response object with data of type ConsoleHistory
-        :rtype: ConsoleHistory
+        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.core.models.ConsoleHistory`
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/instanceConsoleHistories/{instanceConsoleHistoryId}"
         method = "GET"
@@ -385,8 +385,8 @@ class ComputeClient(object):
         :param int length: (optional)
             Length of the snapshot data to retrieve.
 
-        :return: A Response object with data of type bytes
-        :rtype: bytes
+        :return: A :class:`~oraclebmc.response.Response` object with data of type bytes
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/instanceConsoleHistories/{instanceConsoleHistoryId}/data"
         method = "GET"
@@ -434,8 +434,8 @@ class ComputeClient(object):
         :param str image_id: (required)
             The OCID of the image.
 
-        :return: A Response object with data of type Image
-        :rtype: Image
+        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.core.models.Image`
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/images/{imageId}"
         method = "GET"
@@ -470,8 +470,8 @@ class ComputeClient(object):
         :param str instance_id: (required)
             The OCID of the instance.
 
-        :return: A Response object with data of type Instance
-        :rtype: Instance
+        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.core.models.Instance`
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/instances/{instanceId}"
         method = "GET"
@@ -506,8 +506,8 @@ class ComputeClient(object):
         :param str volume_attachment_id: (required)
             The OCID of the volume attachment.
 
-        :return: A Response object with data of type VolumeAttachment
-        :rtype: VolumeAttachment
+        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.core.models.VolumeAttachment`
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/volumeAttachments/{volumeAttachmentId}"
         method = "GET"
@@ -543,8 +543,8 @@ class ComputeClient(object):
         :param str instance_id: (required)
             The OCID of the instance.
 
-        :return: A Response object with data of type InstanceCredentials
-        :rtype: InstanceCredentials
+        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.core.models.InstanceCredentials`
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/instances/{instanceId}/initialCredentials"
         method = "GET"
@@ -609,8 +609,8 @@ class ComputeClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
-        :return: A Response object with data of type Instance
-        :rtype: Instance
+        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.core.models.Instance`
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/instances/{instanceId}"
         method = "POST"
@@ -694,8 +694,8 @@ class ComputeClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A Response object with data of type Instance
-        :rtype: Instance
+        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.core.models.Instance`
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/instances/"
         method = "POST"
@@ -748,8 +748,8 @@ class ComputeClient(object):
         :param str instance_id: (optional)
             The OCID of the instance.
 
-        :return: A Response object with data of type list[ConsoleHistory]
-        :rtype: list[ConsoleHistory]
+        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.core.models.ConsoleHistory`
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/instanceConsoleHistories/"
         method = "GET"
@@ -823,8 +823,8 @@ class ComputeClient(object):
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
-        :return: A Response object with data of type list[Image]
-        :rtype: list[Image]
+        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.core.models.Image`
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/images/"
         method = "GET"
@@ -893,8 +893,8 @@ class ComputeClient(object):
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
-        :return: A Response object with data of type list[Instance]
-        :rtype: list[Instance]
+        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.core.models.Instance`
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/instances/"
         method = "GET"
@@ -958,8 +958,8 @@ class ComputeClient(object):
         :param str image_id: (optional)
             The OCID of an image.
 
-        :return: A Response object with data of type list[Shape]
-        :rtype: list[Shape]
+        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.core.models.Shape`
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/shapes"
         method = "GET"
@@ -1026,8 +1026,8 @@ class ComputeClient(object):
         :param str vnic_id: (optional)
             The OCID of the VNIC.
 
-        :return: A Response object with data of type list[VnicAttachment]
-        :rtype: list[VnicAttachment]
+        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.core.models.VnicAttachment`
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/vnicAttachments/"
         method = "GET"
@@ -1098,8 +1098,8 @@ class ComputeClient(object):
         :param str volume_id: (optional)
             The OCID of the volume.
 
-        :return: A Response object with data of type list[VolumeAttachment]
-        :rtype: list[VolumeAttachment]
+        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.core.models.VolumeAttachment`
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/volumeAttachments/"
         method = "GET"
@@ -1157,8 +1157,8 @@ class ComputeClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
-        :return: A Response object with data of type None
-        :rtype: None
+        :return: A :class:`~oraclebmc.response.Response` object with data of type None
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/instances/{instanceId}"
         method = "DELETE"
@@ -1214,8 +1214,8 @@ class ComputeClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
-        :return: A Response object with data of type Image
-        :rtype: Image
+        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.core.models.Image`
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/images/{imageId}"
         method = "PUT"
@@ -1276,8 +1276,8 @@ class ComputeClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
-        :return: A Response object with data of type Instance
-        :rtype: Instance
+        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.core.models.Instance`
+        :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/instances/{instanceId}"
         method = "PUT"
