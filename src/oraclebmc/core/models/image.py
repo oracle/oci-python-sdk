@@ -126,6 +126,7 @@ class Image(object):
         """
         Gets the display_name of this Image.
         A user-friendly name for the image. It does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
         You cannot use an Oracle-provided image name as a custom image name.
 
         Example: `My custom Oracle Linux image`
@@ -141,6 +142,7 @@ class Image(object):
         """
         Sets the display_name of this Image.
         A user-friendly name for the image. It does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
         You cannot use an Oracle-provided image name as a custom image name.
 
         Example: `My custom Oracle Linux image`
@@ -179,7 +181,7 @@ class Image(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this Image.
-        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "DISABLED", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PROVISIONING", "IMPORTING", "AVAILABLE", "EXPORTING", "DISABLED", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -196,7 +198,7 @@ class Image(object):
         :param lifecycle_state: The lifecycle_state of this Image.
         :type: str
         """
-        allowed_values = ["PROVISIONING", "AVAILABLE", "DISABLED", "DELETED"]
+        allowed_values = ["PROVISIONING", "IMPORTING", "AVAILABLE", "EXPORTING", "DISABLED", "DELETED"]
         if lifecycle_state not in allowed_values:
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

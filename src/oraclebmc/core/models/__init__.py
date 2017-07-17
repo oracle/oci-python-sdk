@@ -4,6 +4,7 @@
 from __future__ import absolute_import
 
 from .attach_i_scsi_volume_details import AttachIScsiVolumeDetails
+from .attach_vnic_details import AttachVnicDetails
 from .attach_volume_details import AttachVolumeDetails
 from .capture_console_history_details import CaptureConsoleHistoryDetails
 from .console_history import ConsoleHistory
@@ -17,6 +18,7 @@ from .create_drg_details import CreateDrgDetails
 from .create_ip_sec_connection_details import CreateIPSecConnectionDetails
 from .create_image_details import CreateImageDetails
 from .create_internet_gateway_details import CreateInternetGatewayDetails
+from .create_private_ip_details import CreatePrivateIpDetails
 from .create_route_table_details import CreateRouteTableDetails
 from .create_security_list_details import CreateSecurityListDetails
 from .create_subnet_details import CreateSubnetDetails
@@ -38,6 +40,9 @@ from .dhcp_search_domain_option import DhcpSearchDomainOption
 from .drg import Drg
 from .drg_attachment import DrgAttachment
 from .egress_security_rule import EgressSecurityRule
+from .export_image_details import ExportImageDetails
+from .export_image_via_object_storage_tuple_details import ExportImageViaObjectStorageTupleDetails
+from .export_image_via_object_storage_uri_details import ExportImageViaObjectStorageUriDetails
 from .fast_connect_provider_service import FastConnectProviderService
 from .ip_sec_connection import IPSecConnection
 from .ip_sec_connection_device_config import IPSecConnectionDeviceConfig
@@ -45,6 +50,9 @@ from .ip_sec_connection_device_status import IPSecConnectionDeviceStatus
 from .i_scsi_volume_attachment import IScsiVolumeAttachment
 from .icmp_options import IcmpOptions
 from .image import Image
+from .image_source_details import ImageSourceDetails
+from .image_source_via_object_storage_tuple_details import ImageSourceViaObjectStorageTupleDetails
+from .image_source_via_object_storage_uri_details import ImageSourceViaObjectStorageUriDetails
 from .ingress_security_rule import IngressSecurityRule
 from .instance import Instance
 from .instance_credentials import InstanceCredentials
@@ -52,6 +60,7 @@ from .internet_gateway import InternetGateway
 from .launch_instance_details import LaunchInstanceDetails
 from .letter_of_authority import LetterOfAuthority
 from .port_range import PortRange
+from .private_ip import PrivateIp
 from .route_rule import RouteRule
 from .route_table import RouteTable
 from .security_list import SecurityList
@@ -71,11 +80,13 @@ from .update_ip_sec_connection_details import UpdateIPSecConnectionDetails
 from .update_image_details import UpdateImageDetails
 from .update_instance_details import UpdateInstanceDetails
 from .update_internet_gateway_details import UpdateInternetGatewayDetails
+from .update_private_ip_details import UpdatePrivateIpDetails
 from .update_route_table_details import UpdateRouteTableDetails
 from .update_security_list_details import UpdateSecurityListDetails
 from .update_subnet_details import UpdateSubnetDetails
 from .update_vcn_details import UpdateVcnDetails
 from .update_virtual_circuit_details import UpdateVirtualCircuitDetails
+from .update_vnic_details import UpdateVnicDetails
 from .update_volume_backup_details import UpdateVolumeBackupDetails
 from .update_volume_details import UpdateVolumeDetails
 from .vcn import Vcn
@@ -90,6 +101,7 @@ from .volume_backup import VolumeBackup
 # Maps type names to classes for core services.
 core_type_mapping = {
     "AttachIScsiVolumeDetails": AttachIScsiVolumeDetails,
+    "AttachVnicDetails": AttachVnicDetails,
     "AttachVolumeDetails": AttachVolumeDetails,
     "CaptureConsoleHistoryDetails": CaptureConsoleHistoryDetails,
     "ConsoleHistory": ConsoleHistory,
@@ -103,6 +115,7 @@ core_type_mapping = {
     "CreateIPSecConnectionDetails": CreateIPSecConnectionDetails,
     "CreateImageDetails": CreateImageDetails,
     "CreateInternetGatewayDetails": CreateInternetGatewayDetails,
+    "CreatePrivateIpDetails": CreatePrivateIpDetails,
     "CreateRouteTableDetails": CreateRouteTableDetails,
     "CreateSecurityListDetails": CreateSecurityListDetails,
     "CreateSubnetDetails": CreateSubnetDetails,
@@ -124,6 +137,9 @@ core_type_mapping = {
     "Drg": Drg,
     "DrgAttachment": DrgAttachment,
     "EgressSecurityRule": EgressSecurityRule,
+    "ExportImageDetails": ExportImageDetails,
+    "ExportImageViaObjectStorageTupleDetails": ExportImageViaObjectStorageTupleDetails,
+    "ExportImageViaObjectStorageUriDetails": ExportImageViaObjectStorageUriDetails,
     "FastConnectProviderService": FastConnectProviderService,
     "IPSecConnection": IPSecConnection,
     "IPSecConnectionDeviceConfig": IPSecConnectionDeviceConfig,
@@ -131,6 +147,9 @@ core_type_mapping = {
     "IScsiVolumeAttachment": IScsiVolumeAttachment,
     "IcmpOptions": IcmpOptions,
     "Image": Image,
+    "ImageSourceDetails": ImageSourceDetails,
+    "ImageSourceViaObjectStorageTupleDetails": ImageSourceViaObjectStorageTupleDetails,
+    "ImageSourceViaObjectStorageUriDetails": ImageSourceViaObjectStorageUriDetails,
     "IngressSecurityRule": IngressSecurityRule,
     "Instance": Instance,
     "InstanceCredentials": InstanceCredentials,
@@ -138,6 +157,7 @@ core_type_mapping = {
     "LaunchInstanceDetails": LaunchInstanceDetails,
     "LetterOfAuthority": LetterOfAuthority,
     "PortRange": PortRange,
+    "PrivateIp": PrivateIp,
     "RouteRule": RouteRule,
     "RouteTable": RouteTable,
     "SecurityList": SecurityList,
@@ -157,11 +177,13 @@ core_type_mapping = {
     "UpdateImageDetails": UpdateImageDetails,
     "UpdateInstanceDetails": UpdateInstanceDetails,
     "UpdateInternetGatewayDetails": UpdateInternetGatewayDetails,
+    "UpdatePrivateIpDetails": UpdatePrivateIpDetails,
     "UpdateRouteTableDetails": UpdateRouteTableDetails,
     "UpdateSecurityListDetails": UpdateSecurityListDetails,
     "UpdateSubnetDetails": UpdateSubnetDetails,
     "UpdateVcnDetails": UpdateVcnDetails,
     "UpdateVirtualCircuitDetails": UpdateVirtualCircuitDetails,
+    "UpdateVnicDetails": UpdateVnicDetails,
     "UpdateVolumeBackupDetails": UpdateVolumeBackupDetails,
     "UpdateVolumeDetails": UpdateVolumeDetails,
     "Vcn": Vcn,

@@ -12,17 +12,20 @@ class CreateImageDetails(object):
         self.swagger_types = {
             'compartment_id': 'str',
             'display_name': 'str',
+            'image_source_details': 'ImageSourceDetails',
             'instance_id': 'str'
         }
 
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
+            'image_source_details': 'imageSourceDetails',
             'instance_id': 'instanceId'
         }
 
         self._compartment_id = None
         self._display_name = None
+        self._image_source_details = None
         self._instance_id = None
 
     @property
@@ -53,8 +56,10 @@ class CreateImageDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateImageDetails.
-        A user-friendly name for the image. It does not have to be unique, and it's changeable. You cannot use an
-        Oracle-provided image name as a custom image name.
+        A user-friendly name for the image. It does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
+
+        You cannot use an Oracle-provided image name as a custom image name.
 
         Example: `My Oracle Linux image`
 
@@ -68,8 +73,10 @@ class CreateImageDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateImageDetails.
-        A user-friendly name for the image. It does not have to be unique, and it's changeable. You cannot use an
-        Oracle-provided image name as a custom image name.
+        A user-friendly name for the image. It does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
+
+        You cannot use an Oracle-provided image name as a custom image name.
 
         Example: `My Oracle Linux image`
 
@@ -78,6 +85,30 @@ class CreateImageDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def image_source_details(self):
+        """
+        Gets the image_source_details of this CreateImageDetails.
+        Details for creating an image through import
+
+
+        :return: The image_source_details of this CreateImageDetails.
+        :rtype: ImageSourceDetails
+        """
+        return self._image_source_details
+
+    @image_source_details.setter
+    def image_source_details(self, image_source_details):
+        """
+        Sets the image_source_details of this CreateImageDetails.
+        Details for creating an image through import
+
+
+        :param image_source_details: The image_source_details of this CreateImageDetails.
+        :type: ImageSourceDetails
+        """
+        self._image_source_details = image_source_details
 
     @property
     def instance_id(self):

@@ -37,13 +37,20 @@ class CreateVnicDetails(object):
         Gets the assign_public_ip of this CreateVnicDetails.
         Whether the VNIC should be assigned a public IP address. Defaults to whether
         the subnet is public or private. If not set and the VNIC is being created
-        in a private subnet (i.e., where `prohibitPublicIpOnVnic`=true in the
+        in a private subnet (i.e., where `prohibitPublicIpOnVnic` = true in the
         :class:`Subnet`), then no public IP address is assigned.
-        If not set and the subnet is public (`prohibitPublicIpOnVnic`=false), then
+        If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then
         a public IP address is assigned. If set to true and
-        `prohibitPublicIpOnVnic`=true, an error is returned.
+        `prohibitPublicIpOnVnic` = true, an error is returned.
+
+        **Note:** This public IP address is associated with the primary private IP
+        on the VNIC. Secondary private IPs cannot have public IP
+        addresses associated with them. For more information, see
+        `Managing IP Addresses`__.
 
         Example: `false`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPaddresses.htm
 
 
         :return: The assign_public_ip of this CreateVnicDetails.
@@ -57,13 +64,20 @@ class CreateVnicDetails(object):
         Sets the assign_public_ip of this CreateVnicDetails.
         Whether the VNIC should be assigned a public IP address. Defaults to whether
         the subnet is public or private. If not set and the VNIC is being created
-        in a private subnet (i.e., where `prohibitPublicIpOnVnic`=true in the
+        in a private subnet (i.e., where `prohibitPublicIpOnVnic` = true in the
         :class:`Subnet`), then no public IP address is assigned.
-        If not set and the subnet is public (`prohibitPublicIpOnVnic`=false), then
+        If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then
         a public IP address is assigned. If set to true and
-        `prohibitPublicIpOnVnic`=true, an error is returned.
+        `prohibitPublicIpOnVnic` = true, an error is returned.
+
+        **Note:** This public IP address is associated with the primary private IP
+        on the VNIC. Secondary private IPs cannot have public IP
+        addresses associated with them. For more information, see
+        `Managing IP Addresses`__.
 
         Example: `false`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPaddresses.htm
 
 
         :param assign_public_ip: The assign_public_ip of this CreateVnicDetails.
@@ -76,6 +90,7 @@ class CreateVnicDetails(object):
         """
         Gets the display_name of this CreateVnicDetails.
         A user-friendly name for the VNIC. Does not have to be unique.
+        Avoid entering confidential information.
 
 
         :return: The display_name of this CreateVnicDetails.
@@ -88,6 +103,7 @@ class CreateVnicDetails(object):
         """
         Sets the display_name of this CreateVnicDetails.
         A user-friendly name for the VNIC. Does not have to be unique.
+        Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CreateVnicDetails.
@@ -99,20 +115,21 @@ class CreateVnicDetails(object):
     def hostname_label(self):
         """
         Gets the hostname_label of this CreateVnicDetails.
-        The hostname for the VNIC that is created during instance launch.
-        Used for DNS. The value is the hostname portion of the instance's
-        fully qualified domain name (FQDN) (e.g., `bminstance-1` in FQDN
-        `bminstance-1.subnet123.vcn1.oraclevcn.com`).
+        The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname
+        portion of the primary private IP's fully qualified domain name (FQDN)
+        (for example, `bminstance-1` in FQDN `bminstance-1.subnet123.vcn1.oraclevcn.com`).
         Must be unique across all VNICs in the subnet and comply with
         `RFC 952`__ and
         `RFC 1123`__.
-        The value cannot be changed, and it can be retrieved from the
-        :class:`Vnic`.
+        The value appears in the :class:`Vnic` object and also the
+        :class:`PrivateIp` object returned by
+        :func:`list_private_ips` and
+        :func:`get_private_ip`.
 
         For more information, see
         `DNS in Your Virtual Cloud Network`__.
 
-        Use this `hostnameLabel` instead
+        When launching an instance, use this `hostnameLabel` instead
         of the deprecated `hostnameLabel` in
         :func:`launch_instance_details`.
         If you provide both, the values must match.
@@ -133,20 +150,21 @@ class CreateVnicDetails(object):
     def hostname_label(self, hostname_label):
         """
         Sets the hostname_label of this CreateVnicDetails.
-        The hostname for the VNIC that is created during instance launch.
-        Used for DNS. The value is the hostname portion of the instance's
-        fully qualified domain name (FQDN) (e.g., `bminstance-1` in FQDN
-        `bminstance-1.subnet123.vcn1.oraclevcn.com`).
+        The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname
+        portion of the primary private IP's fully qualified domain name (FQDN)
+        (for example, `bminstance-1` in FQDN `bminstance-1.subnet123.vcn1.oraclevcn.com`).
         Must be unique across all VNICs in the subnet and comply with
         `RFC 952`__ and
         `RFC 1123`__.
-        The value cannot be changed, and it can be retrieved from the
-        :class:`Vnic`.
+        The value appears in the :class:`Vnic` object and also the
+        :class:`PrivateIp` object returned by
+        :func:`list_private_ips` and
+        :func:`get_private_ip`.
 
         For more information, see
         `DNS in Your Virtual Cloud Network`__.
 
-        Use this `hostnameLabel` instead
+        When launching an instance, use this `hostnameLabel` instead
         of the deprecated `hostnameLabel` in
         :func:`launch_instance_details`.
         If you provide both, the values must match.
@@ -168,10 +186,15 @@ class CreateVnicDetails(object):
         """
         Gets the private_ip of this CreateVnicDetails.
         A private IP address of your choice to assign to the VNIC. Must be an
-        available IP address within the subnet's CIDR. If no value is specified,
-        a private IP address from the subnet will be automatically assigned.
+        available IP address within the subnet's CIDR. If you don't specify a
+        value, Oracle automatically assigns a private IP address from the subnet.
+        This is the VNIC's *primary* private IP address. The value appears in
+        the :class:`Vnic` object and also the
+        :class:`PrivateIp` object returned by
+        :func:`list_private_ips` and
+        :func:`get_private_ip`.
 
-        Example: `10.0.3.1`
+        Example: `10.0.3.3`
 
 
         :return: The private_ip of this CreateVnicDetails.
@@ -184,10 +207,15 @@ class CreateVnicDetails(object):
         """
         Sets the private_ip of this CreateVnicDetails.
         A private IP address of your choice to assign to the VNIC. Must be an
-        available IP address within the subnet's CIDR. If no value is specified,
-        a private IP address from the subnet will be automatically assigned.
+        available IP address within the subnet's CIDR. If you don't specify a
+        value, Oracle automatically assigns a private IP address from the subnet.
+        This is the VNIC's *primary* private IP address. The value appears in
+        the :class:`Vnic` object and also the
+        :class:`PrivateIp` object returned by
+        :func:`list_private_ips` and
+        :func:`get_private_ip`.
 
-        Example: `10.0.3.1`
+        Example: `10.0.3.3`
 
 
         :param private_ip: The private_ip of this CreateVnicDetails.
@@ -199,8 +227,8 @@ class CreateVnicDetails(object):
     def subnet_id(self):
         """
         Gets the subnet_id of this CreateVnicDetails.
-        The OCID of the subnet to create the VNIC in. Use this `subnetId` instead
-        of the deprecated `subnetId` in
+        The OCID of the subnet to create the VNIC in. When launching an instance,
+        use this `subnetId` instead of the deprecated `subnetId` in
         :func:`launch_instance_details`.
         At least one of them is required; if you provide both, the values must match.
 
@@ -214,8 +242,8 @@ class CreateVnicDetails(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this CreateVnicDetails.
-        The OCID of the subnet to create the VNIC in. Use this `subnetId` instead
-        of the deprecated `subnetId` in
+        The OCID of the subnet to create the VNIC in. When launching an instance,
+        use this `subnetId` instead of the deprecated `subnetId` in
         :func:`launch_instance_details`.
         At least one of them is required; if you provide both, the values must match.
 

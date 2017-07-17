@@ -109,6 +109,7 @@ class Instance(object):
         """
         Gets the display_name of this Instance.
         A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
         Example: `My bare metal instance`
 
@@ -123,6 +124,7 @@ class Instance(object):
         """
         Sets the display_name of this Instance.
         A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
         Example: `My bare metal instance`
 
