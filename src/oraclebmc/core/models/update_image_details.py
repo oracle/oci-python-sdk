@@ -23,7 +23,8 @@ class UpdateImageDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateImageDetails.
-        The non-unique, changeable name of the image.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
         Example: `My custom Oracle Linux image`
 
@@ -37,7 +38,8 @@ class UpdateImageDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateImageDetails.
-        The non-unique, changeable name of the image.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
         Example: `My custom Oracle Linux image`
 

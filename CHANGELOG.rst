@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+1.3.5 - 2017-07-20
+====================
+
+Added
+-------
+* Support for VCN multi-VNIC operations.
+* Support for VCN secondary IP operations.
+* Support for compute image import/export operations.
+
+====================
  1.3.4 - 2017-06-16
 ====================
 

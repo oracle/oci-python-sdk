@@ -43,7 +43,7 @@ class VirtualNetworkClient(object):
         `Configuring Your On-Premise Router`__.
 
         You may optionally specify a *display name* for the CPE, otherwise a default is provided. It does not have to
-        be unique, and you can change it.
+        be unique, and you can change it. Avoid entering confidential information.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPsec.htm
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
@@ -111,7 +111,7 @@ class VirtualNetworkClient(object):
         `Resource Identifiers`__.
 
         You may optionally specify a *display name* for the cross-connect.
-        It does not have to be unique, and you can change it.
+        It does not have to be unique, and you can change it. Avoid entering confidential information.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
@@ -174,7 +174,7 @@ class VirtualNetworkClient(object):
         `Resource Identifiers`__.
 
         You may optionally specify a *display name* for the cross-connect group.
-        It does not have to be unique, and you can change it.
+        It does not have to be unique, and you can change it. Avoid entering confidential information.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
@@ -234,7 +234,7 @@ class VirtualNetworkClient(object):
         `Resource Identifiers`__.
 
         You may optionally specify a *display name* for the set of DHCP options, otherwise a default is provided.
-        It does not have to be unique, and you can change it.
+        It does not have to be unique, and you can change it. Avoid entering confidential information.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
@@ -293,7 +293,7 @@ class VirtualNetworkClient(object):
         For information about OCIDs, see `Resource Identifiers`__.
 
         You may optionally specify a *display name* for the DRG, otherwise a default is provided.
-        It does not have to be unique, and you can change it.
+        It does not have to be unique, and you can change it. Avoid entering confidential information.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingDRGs.htm
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
@@ -348,7 +348,7 @@ class VirtualNetworkClient(object):
         `Managing Dynamic Routing Gateways (DRGs)`__.
 
         You may optionally specify a *display name* for the attachment, otherwise a default is provided.
-        It does not have to be unique, and you can change it.
+        It does not have to be unique, and you can change it. Avoid entering confidential information.
 
         For the purposes of access control, the DRG attachment is automatically placed into the same compartment
         as the VCN. For more information about compartments and access control, see
@@ -411,7 +411,7 @@ class VirtualNetworkClient(object):
         `Resource Identifiers`__.
 
         You may optionally specify a *display name* for the Internet Gateway, otherwise a default is provided. It
-        does not have to be unique, and you can change it.
+        does not have to be unique, and you can change it. Avoid entering confidential information.
 
         For traffic to flow between a subnet and an Internet Gateway, you must create a route rule accordingly in
         the subnet's route table (e.g., 0.0.0.0/0 > Internet Gateway). See
@@ -484,7 +484,7 @@ class VirtualNetworkClient(object):
         For information about OCIDs, see `Resource Identifiers`__.
 
         You may optionally specify a *display name* for the IPSec connection, otherwise a default is provided.
-        It does not have to be unique, and you can change it.
+        It does not have to be unique, and you can change it. Avoid entering confidential information.
 
         After creating the IPSec connection, you need to configure your on-premise router
         with tunnel-specific information returned by
@@ -541,6 +541,55 @@ class VirtualNetworkClient(object):
             body=create_ip_sec_connection_details,
             response_type="IPSecConnection")
 
+    def create_private_ip(self, create_private_ip_details, **kwargs):
+        """
+        CreatePrivateIp
+        Creates a secondary private IP for the specified VNIC.
+        For more information about secondary private IPs, see
+        `Managing IP Addresses`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPaddresses.htm
+
+
+        :param CreatePrivateIpDetails create_private_ip_details: (required)
+            Create private IP details.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.core.models.PrivateIp`
+        :rtype: :class:`~oraclebmc.response.Response`
+        """
+        resource_path = "/privateIps"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_private_ip got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            header_params=header_params,
+            body=create_private_ip_details,
+            response_type="PrivateIp")
+
     def create_route_table(self, create_route_table_details, **kwargs):
         """
         CreateRouteTable
@@ -557,7 +606,7 @@ class VirtualNetworkClient(object):
         `Resource Identifiers`__.
 
         You may optionally specify a *display name* for the route table, otherwise a default is provided.
-        It does not have to be unique, and you can change it.
+        It does not have to be unique, and you can change it. Avoid entering confidential information.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/servicelimits.htm
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm
@@ -620,7 +669,7 @@ class VirtualNetworkClient(object):
         `Resource Identifiers`__.
 
         You may optionally specify a *display name* for the security list, otherwise a default is provided.
-        It does not have to be unique, and you can change it.
+        It does not have to be unique, and you can change it. Avoid entering confidential information.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/securitylists.htm
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/servicelimits.htm
@@ -696,7 +745,7 @@ class VirtualNetworkClient(object):
         `Managing DHCP Options`__.
 
         You may optionally specify a *display name* for the subnet, otherwise a default is provided.
-        It does not have to be unique, and you can change it.
+        It does not have to be unique, and you can change it. Avoid entering confidential information.
 
         You can also add a DNS label for the subnet, which is required if you want the Internet and
         VCN Resolver to resolve hostnames for instances in the subnet. For more information, see
@@ -757,10 +806,10 @@ class VirtualNetworkClient(object):
         Creates a new Virtual Cloud Network (VCN). For more information, see
         `Managing Virtual Cloud Networks (VCNs)`__.
 
-        For the VCN you must specify a single, contiguous IPv4 CIDR block in the private IP address ranges specified in
-        `RFC 1918`__ (10.0.0.0/8, 172.16/12, and 192.168/16). Example: 172.16.0.0/16.
-        The CIDR block can range from /16 to /30, and it must not overlap with your on-premise network. You can't
-        change the size of the VCN after creation.
+        For the VCN you must specify a single, contiguous IPv4 CIDR block. Oracle recommends using one of the
+        private IP address ranges specified in `RFC 1918`__ (10.0.0.0/8,
+        172.16/12, and 192.168/16). Example: 172.16.0.0/16. The CIDR block can range from /16 to /30, and it
+        must not overlap with your on-premise network. You can't change the size of the VCN after creation.
 
         For the purposes of access control, you must provide the OCID of the compartment where you want the VCN to
         reside. Consult an Oracle Bare Metal Cloud Services administrator in your organization if you're not sure which
@@ -770,7 +819,7 @@ class VirtualNetworkClient(object):
         `Resource Identifiers`__.
 
         You may optionally specify a *display name* for the VCN, otherwise a default is provided. It does not have to
-        be unique, and you can change it.
+        be unique, and you can change it. Avoid entering confidential information.
 
         You can also add a DNS label for the VCN, which is required if you want the instances to use the
         Interent and VCN Resolver option for DNS in the VCN. For more information, see
@@ -848,7 +897,7 @@ class VirtualNetworkClient(object):
         `Resource Identifiers`__.
 
         You may optionally specify a *display name* for the virtual circuit.
-        It does not have to be unique, and you can change it.
+        It does not have to be unique, and you can change it. Avoid entering confidential information.
 
         **Important:** When creating a virtual circuit, you specify a DRG for
         the traffic to flow through. Make sure you attach the DRG to your
@@ -1286,6 +1335,58 @@ class VirtualNetworkClient(object):
 
         path_params = {
             "ipscId": ipsc_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params)
+
+    def delete_private_ip(self, private_ip_id, **kwargs):
+        """
+        DeletePrivateIp
+        Unassigns and deletes the specified private IP. You must
+        specify the object's OCID. The private IP address is returned to
+        the subnet's pool of available addresses.
+
+        This operation cannot be used with primary private IPs, which are
+        automatically unassigned and deleted when the VNIC is terminated.
+
+
+        :param str private_ip_id: (required)
+            The private IP's OCID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :return: A :class:`~oraclebmc.response.Response` object with data of type None
+        :rtype: :class:`~oraclebmc.response.Response`
+        """
+        resource_path = "/privateIps/{privateIpId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_private_ip got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "privateIpId": private_ip_id
         }
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
@@ -1988,6 +2089,45 @@ class VirtualNetworkClient(object):
             header_params=header_params,
             response_type="IPSecConnectionDeviceStatus")
 
+    def get_private_ip(self, private_ip_id, **kwargs):
+        """
+        GetPrivateIp
+        Gets the specified private IP. You must specify the object's OCID.
+        Alternatively, you can get the object by using
+        :func:`list_private_ips`
+        with the private IP address (for example, 10.0.3.3) and subnet OCID.
+
+
+        :param str private_ip_id: (required)
+            The private IP's OCID.
+
+        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.core.models.PrivateIp`
+        :rtype: :class:`~oraclebmc.response.Response`
+        """
+        resource_path = "/privateIps/{privateIpId}"
+        method = "GET"
+
+        if kwargs:
+            raise ValueError(
+                "get_private_ip got unknown kwargs: {!r}".format(kwargs))
+
+        path_params = {
+            "privateIpId": private_ip_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="PrivateIp")
+
     def get_route_table(self, rt_id, **kwargs):
         """
         GetRouteTable
@@ -2171,9 +2311,10 @@ class VirtualNetworkClient(object):
     def get_vnic(self, vnic_id, **kwargs):
         """
         GetVnic
-        Gets the information for the specified Virtual Network Interface Card (VNIC), including
-        the IP addresses. You can get the instance's VNIC OCID from the
-        :func:`list_vnic_attachments` operation.
+        Gets the information for the specified virtual network interface card (VNIC).
+        You can get the VNIC OCID from the
+        :func:`list_vnic_attachments`
+        operation.
 
 
         :param str vnic_id: (required)
@@ -2827,6 +2968,83 @@ class VirtualNetworkClient(object):
             header_params=header_params,
             response_type="list[IPSecConnection]")
 
+    def list_private_ips(self, **kwargs):
+        """
+        ListPrivateIps
+        Lists the :class:`PrivateIp` objects based
+        on one of these filters:
+
+          - Subnet OCID.
+          - VNIC OCID.
+          - Both private IP address and subnet OCID: This lets
+          you get a `privateIP` object based on its private IP
+          address (for example, 10.0.3.3) and not its OCID. For comparison,
+          :func:`get_private_ip`
+          requires the OCID.
+
+        If you're listing all the private IPs associated with a given subnet
+        or VNIC, the response includes both primary and secondary private IPs.
+
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+            Example: `500`
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param str ip_address: (optional)
+            The private IP address of the `privateIp` object.
+
+            Example: `10.0.3.3`
+
+        :param str subnet_id: (optional)
+            The OCID of the subnet.
+
+        :param str vnic_id: (optional)
+            The OCID of the VNIC.
+
+        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.core.models.PrivateIp`
+        :rtype: :class:`~oraclebmc.response.Response`
+        """
+        resource_path = "/privateIps"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "limit",
+            "page",
+            "ip_address",
+            "subnet_id",
+            "vnic_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_private_ips got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "ipAddress": kwargs.get("ip_address", missing),
+            "subnetId": kwargs.get("subnet_id", missing),
+            "vnicId": kwargs.get("vnic_id", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[PrivateIp]")
+
     def list_route_tables(self, compartment_id, vcn_id, **kwargs):
         """
         ListRouteTables
@@ -3166,6 +3384,7 @@ class VirtualNetworkClient(object):
         """
         UpdateCpe
         Updates the specified CPE's display name.
+        Avoid entering confidential information.
 
 
         :param str cpe_id: (required)
@@ -3270,6 +3489,7 @@ class VirtualNetworkClient(object):
         """
         UpdateCrossConnectGroup
         Updates the specified cross-connect group's display name.
+        Avoid entering confidential information.
 
 
         :param str cross_connect_group_id: (required)
@@ -3322,7 +3542,9 @@ class VirtualNetworkClient(object):
         """
         UpdateDhcpOptions
         Updates the specified set of DHCP options. You can update the display name or the options
-        themselves. Note that the `options` object you provide replaces the entire existing set of options.
+        themselves. Avoid entering confidential information.
+
+        Note that the `options` object you provide replaces the entire existing set of options.
 
 
         :param str dhcp_id: (required)
@@ -3374,7 +3596,7 @@ class VirtualNetworkClient(object):
     def update_drg(self, drg_id, update_drg_details, **kwargs):
         """
         UpdateDrg
-        Updates the specified DRG's display name.
+        Updates the specified DRG's display name. Avoid entering confidential information.
 
 
         :param str drg_id: (required)
@@ -3427,6 +3649,7 @@ class VirtualNetworkClient(object):
         """
         UpdateDrgAttachment
         Updates the display name for the specified `DrgAttachment`.
+        Avoid entering confidential information.
 
 
         :param str drg_attachment_id: (required)
@@ -3479,6 +3702,7 @@ class VirtualNetworkClient(object):
         """
         UpdateInternetGateway
         Updates the specified Internet Gateway. You can disable/enable it, or change its display name.
+        Avoid entering confidential information.
 
         If the gateway is disabled, that means no traffic will flow to/from the internet even if there's
         a route rule that enables that traffic.
@@ -3534,6 +3758,7 @@ class VirtualNetworkClient(object):
         """
         UpdateIPSecConnection
         Updates the display name for the specified IPSec connection.
+        Avoid entering confidential information.
 
 
         :param str ipsc_id: (required)
@@ -3582,11 +3807,74 @@ class VirtualNetworkClient(object):
             body=update_ip_sec_connection_details,
             response_type="IPSecConnection")
 
+    def update_private_ip(self, private_ip_id, update_private_ip_details, **kwargs):
+        """
+        UpdatePrivateIp
+        Updates the specified private IP. You must specify the object's OCID.
+        Use this operation if you want to:
+
+          - Move a secondary private IP to a different VNIC in the same subnet.
+          - Change the display name for a secondary private IP.
+          - Change the hostname for a secondary private IP.
+
+        This operation cannot be used with primary private IPs.
+        To update the hostname for the primary IP on a VNIC, use
+        :func:`update_vnic`.
+
+
+        :param str private_ip_id: (required)
+            The private IP's OCID.
+
+        :param UpdatePrivateIpDetails update_private_ip_details: (required)
+            Private IP details.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.core.models.PrivateIp`
+        :rtype: :class:`~oraclebmc.response.Response`
+        """
+        resource_path = "/privateIps/{privateIpId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_private_ip got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "privateIpId": private_ip_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=update_private_ip_details,
+            response_type="PrivateIp")
+
     def update_route_table(self, rt_id, update_route_table_details, **kwargs):
         """
         UpdateRouteTable
-        Updates the specified route table's display name or route rules. Note that the
-        `routeRules` object you provide replaces the entire existing set of rules.
+        Updates the specified route table's display name or route rules.
+        Avoid entering confidential information.
+
+        Note that the `routeRules` object you provide replaces the entire existing set of rules.
 
 
         :param str rt_id: (required)
@@ -3638,8 +3926,10 @@ class VirtualNetworkClient(object):
     def update_security_list(self, security_list_id, update_security_list_details, **kwargs):
         """
         UpdateSecurityList
-        Updates the specified security list's display name or rules. Note that the
-        `egressSecurityRules` or `ingressSecurityRules` objects you provide replace the entire
+        Updates the specified security list's display name or rules.
+        Avoid entering confidential information.
+
+        Note that the `egressSecurityRules` or `ingressSecurityRules` objects you provide replace the entire
         existing objects.
 
 
@@ -3692,7 +3982,7 @@ class VirtualNetworkClient(object):
     def update_subnet(self, subnet_id, update_subnet_details, **kwargs):
         """
         UpdateSubnet
-        Updates the specified subnet's display name.
+        Updates the specified subnet's display name. Avoid entering confidential information.
 
 
         :param str subnet_id: (required)
@@ -3745,6 +4035,7 @@ class VirtualNetworkClient(object):
         """
         UpdateVcn
         Updates the specified VCN's display name.
+        Avoid entering confidential information.
 
 
         :param str vcn_id: (required)
@@ -3861,3 +4152,55 @@ class VirtualNetworkClient(object):
             header_params=header_params,
             body=update_virtual_circuit_details,
             response_type="VirtualCircuit")
+
+    def update_vnic(self, vnic_id, update_vnic_details, **kwargs):
+        """
+        UpdateVnic
+        Updates the specified VNIC.
+
+
+        :param str vnic_id: (required)
+            The OCID of the VNIC.
+
+        :param UpdateVnicDetails update_vnic_details: (required)
+            Details object for updating a VNIC.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.core.models.Vnic`
+        :rtype: :class:`~oraclebmc.response.Response`
+        """
+        resource_path = "/vnics/{vnicId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_vnic got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "vnicId": vnic_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=update_vnic_details,
+            response_type="Vnic")

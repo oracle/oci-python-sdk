@@ -72,6 +72,7 @@ class VolumeBackup(object):
         """
         Gets the display_name of this VolumeBackup.
         A user-friendly name for the volume backup. Does not have to be unique and it's changeable.
+        Avoid entering confidential information.
 
 
         :return: The display_name of this VolumeBackup.
@@ -84,6 +85,7 @@ class VolumeBackup(object):
         """
         Sets the display_name of this VolumeBackup.
         A user-friendly name for the volume backup. Does not have to be unique and it's changeable.
+        Avoid entering confidential information.
 
 
         :param display_name: The display_name of this VolumeBackup.
