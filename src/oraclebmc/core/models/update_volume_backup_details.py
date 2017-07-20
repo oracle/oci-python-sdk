@@ -24,6 +24,7 @@ class UpdateVolumeBackupDetails(object):
         """
         Gets the display_name of this UpdateVolumeBackupDetails.
         A friendly user-specified name for the volume backup.
+        Avoid entering confidential information.
 
 
         :return: The display_name of this UpdateVolumeBackupDetails.
@@ -36,6 +37,7 @@ class UpdateVolumeBackupDetails(object):
         """
         Sets the display_name of this UpdateVolumeBackupDetails.
         A friendly user-specified name for the volume backup.
+        Avoid entering confidential information.
 
 
         :param display_name: The display_name of this UpdateVolumeBackupDetails.

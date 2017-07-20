@@ -29,7 +29,8 @@ class BlockstorageClient(object):
     def create_volume(self, create_volume_details, **kwargs):
         """
         CreateVolume
-        Creates a new volume in the specified compartment. The size of a volume can be either 256 GB or 2 TB.
+        Creates a new volume in the specified compartment. Volumes can be created in sizes ranging from
+        50 GB (51200 MB) to 2 TB (2097152 MB), in 1 GB (1024 MB) increments. By default, volumes are 1 TB (1048576 MB).
         For general information about block volumes, see
         `Overview of Block Volume Service`__.
 
@@ -41,7 +42,7 @@ class BlockstorageClient(object):
         in the Identity and Access Management Service API.
 
         You may optionally specify a *display name* for the volume, which is simply a friendly name or
-        description. It does not have to be unique, and you can change it.
+        description. It does not have to be unique, and you can change it. Avoid entering confidential information.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/overview.htm
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
@@ -430,13 +431,14 @@ class BlockstorageClient(object):
         """
         UpdateVolume
         Updates the specified volume's display name.
+        Avoid entering confidential information.
 
 
         :param str volume_id: (required)
             The OCID of the volume.
 
         :param UpdateVolumeDetails update_volume_details: (required)
-            Update volume's display name.
+            Update volume's display name. Avoid entering confidential information.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -482,6 +484,7 @@ class BlockstorageClient(object):
         """
         UpdateVolumeBackup
         Updates the display name for the specified volume backup.
+        Avoid entering confidential information.
 
 
         :param str volume_backup_id: (required)

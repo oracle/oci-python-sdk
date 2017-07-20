@@ -150,6 +150,7 @@ class UpdateVirtualCircuitDetails(object):
         """
         Gets the display_name of this UpdateVirtualCircuitDetails.
         A user-friendly name. Does not have to be unique.
+        Avoid entering confidential information.
 
         To be updated only by the customer who owns the virtual circuit.
 
@@ -164,6 +165,7 @@ class UpdateVirtualCircuitDetails(object):
         """
         Sets the display_name of this UpdateVirtualCircuitDetails.
         A user-friendly name. Does not have to be unique.
+        Avoid entering confidential information.
 
         To be updated only by the customer who owns the virtual circuit.
 

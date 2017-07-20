@@ -654,7 +654,7 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.loadbalancer.models.Backend`
+        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.load_balancer.models.Backend`
         :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/backends/{backendName}"
@@ -710,7 +710,7 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.loadbalancer.models.BackendSet`
+        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.load_balancer.models.BackendSet`
         :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}"
@@ -765,7 +765,7 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.loadbalancer.models.HealthChecker`
+        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.load_balancer.models.HealthChecker`
         :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/healthChecker"
@@ -815,7 +815,7 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.loadbalancer.models.LoadBalancer`
+        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.load_balancer.models.LoadBalancer`
         :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/loadBalancers/{loadBalancerId}"
@@ -864,7 +864,7 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.loadbalancer.models.WorkRequest`
+        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.load_balancer.models.WorkRequest`
         :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/loadBalancerWorkRequests/{workRequestId}"
@@ -913,7 +913,7 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.loadbalancer.models.BackendSet`
+        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.load_balancer.models.BackendSet`
         :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets"
@@ -967,7 +967,7 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.loadbalancer.models.Backend`
+        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.load_balancer.models.Backend`
         :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/backends"
@@ -1017,7 +1017,7 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.loadbalancer.models.Certificate`
+        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.load_balancer.models.Certificate`
         :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/loadBalancers/{loadBalancerId}/certificates"
@@ -1081,7 +1081,7 @@ class LoadBalancerClient(object):
 
             Example: `full`
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.loadbalancer.models.LoadBalancer`
+        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.load_balancer.models.LoadBalancer`
         :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/loadBalancers"
@@ -1146,7 +1146,7 @@ class LoadBalancerClient(object):
 
             Example: `3`
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.loadbalancer.models.LoadBalancerPolicy`
+        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.load_balancer.models.LoadBalancerPolicy`
         :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/loadBalancerPolicies"
@@ -1209,7 +1209,7 @@ class LoadBalancerClient(object):
 
             Example: `3`
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.loadbalancer.models.LoadBalancerProtocol`
+        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.load_balancer.models.LoadBalancerProtocol`
         :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/loadBalancerProtocols"
@@ -1272,7 +1272,7 @@ class LoadBalancerClient(object):
 
             Example: `3`
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.loadbalancer.models.LoadBalancerShape`
+        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.load_balancer.models.LoadBalancerShape`
         :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/loadBalancerShapes"
@@ -1335,7 +1335,7 @@ class LoadBalancerClient(object):
 
             Example: `3`
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.loadbalancer.models.WorkRequest`
+        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.load_balancer.models.WorkRequest`
         :rtype: :class:`~oraclebmc.response.Response`
         """
         resource_path = "/loadBalancers/{loadBalancerId}/workRequests"

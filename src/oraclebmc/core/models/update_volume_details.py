@@ -24,6 +24,7 @@ class UpdateVolumeDetails(object):
         """
         Gets the display_name of this UpdateVolumeDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :return: The display_name of this UpdateVolumeDetails.
@@ -36,6 +37,7 @@ class UpdateVolumeDetails(object):
         """
         Sets the display_name of this UpdateVolumeDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :param display_name: The display_name of this UpdateVolumeDetails.

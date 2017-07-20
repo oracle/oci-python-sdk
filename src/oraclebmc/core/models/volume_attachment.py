@@ -137,6 +137,7 @@ class VolumeAttachment(object):
         """
         Gets the display_name of this VolumeAttachment.
         A user-friendly name. Does not have to be unique, and it cannot be changed.
+        Avoid entering confidential information.
 
         Example: `My volume attachment`
 
@@ -151,6 +152,7 @@ class VolumeAttachment(object):
         """
         Sets the display_name of this VolumeAttachment.
         A user-friendly name. Does not have to be unique, and it cannot be changed.
+        Avoid entering confidential information.
 
         Example: `My volume attachment`
 
