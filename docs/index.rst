@@ -36,7 +36,7 @@ To get started, head over to the :ref:`installation instructions <install>` or s
     forward-compatibility
     quickstart
     parallel-ops
-    upload_manager
+    upload-manager
     raw-requests
     api/index
     contributions
