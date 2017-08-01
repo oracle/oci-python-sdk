@@ -11,21 +11,44 @@ from oraclebmc.object_storage.transfer.constants import MEBIBYTE
 
 TEST_DATA_VERSION = '1'
 
+COMPARTMENT_ID = 'ocid1.compartment.oc1..aaaaaaaan5brzve7w7oyhrfngjfsrf72r67aqdd2sbhlarjas6pwamy4425a'
 COMPARTMENT_NAME = 'PythonSDKTestCompartment'
 
-# PHX
-COMPARTMENT_ID = 'ocid1.compartment.oc1..aaaaaaaan5brzve7w7oyhrfngjfsrf72r67aqdd2sbhlarjas6pwamy4425a'
-AVAILABILITY_DOMAIN = 'kIdk:PHX-AD-2'
-SECOND_AVAILABILITY_DOMAIN = 'kIdk:PHX-AD-1'
+REGIONAL_CONFIG = {
+    'us-phoenix-1': { 
+        'availability_domain': 'kIdk:PHX-AD-2', 
+        'second_availability_domain': 'kIdk:PHX-AD-1', 
+        'bucket_prefix': '',
+        'windows_vm_image': 'ocid1.image.oc1.phx.aaaaaaaa53cliasgvqmutflwqkafbro2y4ywjebci5szc4eus5byy2e2b7ua',
+        'oracle_linux_image': 'ocid1.image.oc1.phx.aaaaaaaamv5wg7ffvaxaba3orhpuya7x7opz24hd6m7epmwfqbeudi6meepq'},
+    'us-ashburn-1': { 
+        'availability_domain': 'kIdk:US-ASHBURN-AD-2', 
+        'second_availability_domain': 'kIdk:US-ASHBURN-AD-1', 
+        'bucket_prefix': 'iad_',
+        'windows_vm_image': 'ocid1.image.oc1.iad.aaaaaaaatob7wb2ljtvsvjy7olpsyuttodb7ok3osflx3hqd2nt4l6jagxla',
+        'oracle_linux_image': 'ocid1.image.oc1.iad.aaaaaaaay7kt3yikvnm47x7rhb7myj5yxbsl7hfuuxn5fikdpb73y76woiba' }
+}
 
-# IAD
-# COMPARTMENT_ID = 'ocid1.compartment.oc1..aaaaaaaajisqznb7qthdm27q47fgmclthonu5rrk72r3qczbrbsp6f3xc6ra'
-# AVAILABILITY_DOMAIN = 'IwGV:US-ASHBURN-AD-1'
+# This global can be changed to influence what configuration data this module vends. 
+target_region = 'us-phoenix-1'
 
+def availability_domain():
+    return REGIONAL_CONFIG[target_region]['availability_domain']
+
+def second_availability_domain():
+    return REGIONAL_CONFIG[target_region]['second_availability_domain']
+
+def bucket_prefix():
+    return REGIONAL_CONFIG[target_region]['bucket_prefix']
+
+def oracle_linux_image():
+    return REGIONAL_CONFIG[target_region]['oracle_linux_image']
+
+def windows_vm_image():
+    return REGIONAL_CONFIG[target_region]['windows_vm_image']
 
 def random_name(prefix, insert_underscore=True):
     return prefix + ('_' if insert_underscore else '') + str(random.randint(0, 1000000))
-
 
 def validate_response(result, extra_validation=None, includes_debug_data=False, expect_etag=False):
     try:
@@ -145,7 +168,7 @@ def ensure_test_data(api, namespace, compartment, bucket_prefix):
                   objects=['a/b/c/object1', 'a/b/c/object2', 'a/b/c/object3', 'a/b/object4', 'a/b/object5'])
     create_bucket(api, namespace, compartment, bucket_prefix + 'ReadOnlyTestBucket3', objects=['a/b/object1'])
     create_bucket(api, namespace, compartment, bucket_prefix + 'ReadOnlyTestBucket4')
-    create_object(api, namespace, bucket_prefix + 'ReadOnlyTestBucket4', 'reallyLargeFile.dat', file_name='data/reallyLargeFile.dat')
+    create_object(api, namespace, bucket_prefix + 'ReadOnlyTestBucket4', 'hasUserMetadata.json', metadata={'foo1': 'bar1', 'foo2': 'bar2'})
     create_bucket(api, namespace, compartment, bucket_prefix + 'ReadOnlyTestBucket5', {'foo1': 'bar1', 'foo2': 'bar2'})
     create_bucket(api, namespace, compartment, bucket_prefix + 'ReadOnlyTestBucket6')
 
@@ -178,7 +201,7 @@ def create_object(api, namespace, bucket_name, object_name, file_name=None, meta
     args = {}
     if metadata:
         # TODO what is this for?
-        args['opc_meta', metadata]
+        args['opc_meta'] = metadata
     if file_name:
         with open(file_name, 'rb') as file:
             api.put_object(namespace, bucket_name, object_name, file, **args)

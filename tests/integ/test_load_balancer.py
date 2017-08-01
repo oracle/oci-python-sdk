@@ -40,7 +40,7 @@ class TestLoadBalancer:
 
         create_subnet_details = oraclebmc.core.models.CreateSubnetDetails()
         create_subnet_details.compartment_id = util.COMPARTMENT_ID
-        create_subnet_details.availability_domain = util.AVAILABILITY_DOMAIN
+        create_subnet_details.availability_domain = util.availability_domain()
         create_subnet_details.display_name = subnet_name
         create_subnet_details.vcn_id = self.vcn_ocid
         create_subnet_details.cidr_block = subnet_cidr_block1
@@ -58,7 +58,7 @@ class TestLoadBalancer:
 
         create_subnet_details = oraclebmc.core.models.CreateSubnetDetails()
         create_subnet_details.compartment_id = util.COMPARTMENT_ID
-        create_subnet_details.availability_domain = util.SECOND_AVAILABILITY_DOMAIN
+        create_subnet_details.availability_domain = util.second_availability_domain()
         create_subnet_details.display_name = subnet_name
         create_subnet_details.vcn_id = self.vcn_ocid
         create_subnet_details.cidr_block = subnet_cidr_block2
