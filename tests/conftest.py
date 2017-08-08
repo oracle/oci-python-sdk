@@ -26,9 +26,13 @@ def config_profile(request):
 def config(config_file, config_profile):
     config = oraclebmc.config.from_file(file_location=config_file, profile_name=config_profile)
     util.target_region = config['region']
+    
     pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
     if pass_phrase:
         config['pass_phrase'] = pass_phrase
+    
+    util.init_availability_domain_variables(oraclebmc.identity.IdentityClient(config), config['tenancy'])
+    
     return config
 
 @pytest.fixture

@@ -16,14 +16,10 @@ COMPARTMENT_NAME = 'PythonSDKTestCompartment'
 
 REGIONAL_CONFIG = {
     'us-phoenix-1': { 
-        'availability_domain': 'kIdk:PHX-AD-2', 
-        'second_availability_domain': 'kIdk:PHX-AD-1', 
         'bucket_prefix': '',
         'windows_vm_image': 'ocid1.image.oc1.phx.aaaaaaaa53cliasgvqmutflwqkafbro2y4ywjebci5szc4eus5byy2e2b7ua',
         'oracle_linux_image': 'ocid1.image.oc1.phx.aaaaaaaamv5wg7ffvaxaba3orhpuya7x7opz24hd6m7epmwfqbeudi6meepq'},
     'us-ashburn-1': { 
-        'availability_domain': 'kIdk:US-ASHBURN-AD-2', 
-        'second_availability_domain': 'kIdk:US-ASHBURN-AD-1', 
         'bucket_prefix': 'iad_',
         'windows_vm_image': 'ocid1.image.oc1.iad.aaaaaaaatob7wb2ljtvsvjy7olpsyuttodb7ok3osflx3hqd2nt4l6jagxla',
         'oracle_linux_image': 'ocid1.image.oc1.iad.aaaaaaaay7kt3yikvnm47x7rhb7myj5yxbsl7hfuuxn5fikdpb73y76woiba' }
@@ -32,11 +28,32 @@ REGIONAL_CONFIG = {
 # This global can be changed to influence what configuration data this module vends. 
 target_region = 'us-phoenix-1'
 
+# Primary and secondary availability domains used as part of the tests
+first_ad = None
+second_ad = None
+
 def availability_domain():
-    return REGIONAL_CONFIG[target_region]['availability_domain']
+    return first_ad
 
 def second_availability_domain():
-    return REGIONAL_CONFIG[target_region]['second_availability_domain']
+    return second_ad
+
+def init_availability_domain_variables(identity_api, tenant_id):
+    global first_ad, second_ad
+
+    if first_ad is None or second_ad is None:
+        availability_domains = identity_api.list_availability_domains(tenant_id).data
+
+        if len(availability_domains) == 1:
+            first_ad = availability_domains[0].name
+            second_ad = availability_domains[0].name
+        elif len(availability_domains) == 2:
+            first_ad = availability_domains[0].name
+            second_ad = availability_domains[1].name
+        else:
+            chosen_domains = random.sample(availability_domains, 2)
+            first_ad = chosen_domains[0].name
+            second_ad = chosen_domains[1].name
 
 def bucket_prefix():
     return REGIONAL_CONFIG[target_region]['bucket_prefix']
