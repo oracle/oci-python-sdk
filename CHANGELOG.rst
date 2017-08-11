@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+1.3.6 - 2017-08-10
+====================
+
+Added
+-------
+* Documentation for UploadManager.
+
+Changed
+-------
+* Upgraded cryptography dependency to 1.8.2.
+
+====================
 1.3.5 - 2017-07-20
 ====================
 
