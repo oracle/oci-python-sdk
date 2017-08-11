@@ -6,6 +6,7 @@ import pytest
 
 from . import util
 
+
 @pytest.fixture
 def namespace(object_storage):
     return object_storage.get_namespace().data

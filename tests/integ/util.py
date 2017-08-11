@@ -15,28 +15,31 @@ COMPARTMENT_ID = 'ocid1.compartment.oc1..aaaaaaaan5brzve7w7oyhrfngjfsrf72r67aqdd
 COMPARTMENT_NAME = 'PythonSDKTestCompartment'
 
 REGIONAL_CONFIG = {
-    'us-phoenix-1': { 
+    'us-phoenix-1': {
         'bucket_prefix': '',
         'windows_vm_image': 'ocid1.image.oc1.phx.aaaaaaaa53cliasgvqmutflwqkafbro2y4ywjebci5szc4eus5byy2e2b7ua',
         'oracle_linux_image': 'ocid1.image.oc1.phx.aaaaaaaamv5wg7ffvaxaba3orhpuya7x7opz24hd6m7epmwfqbeudi6meepq'},
-    'us-ashburn-1': { 
+    'us-ashburn-1': {
         'bucket_prefix': 'iad_',
         'windows_vm_image': 'ocid1.image.oc1.iad.aaaaaaaatob7wb2ljtvsvjy7olpsyuttodb7ok3osflx3hqd2nt4l6jagxla',
-        'oracle_linux_image': 'ocid1.image.oc1.iad.aaaaaaaay7kt3yikvnm47x7rhb7myj5yxbsl7hfuuxn5fikdpb73y76woiba' }
+        'oracle_linux_image': 'ocid1.image.oc1.iad.aaaaaaaay7kt3yikvnm47x7rhb7myj5yxbsl7hfuuxn5fikdpb73y76woiba'}
 }
 
-# This global can be changed to influence what configuration data this module vends. 
+# This global can be changed to influence what configuration data this module vends.
 target_region = 'us-phoenix-1'
 
 # Primary and secondary availability domains used as part of the tests
 first_ad = None
 second_ad = None
 
+
 def availability_domain():
     return first_ad
 
+
 def second_availability_domain():
     return second_ad
+
 
 def init_availability_domain_variables(identity_api, tenant_id):
     global first_ad, second_ad
@@ -55,17 +58,22 @@ def init_availability_domain_variables(identity_api, tenant_id):
             first_ad = chosen_domains[0].name
             second_ad = chosen_domains[1].name
 
+
 def bucket_prefix():
     return REGIONAL_CONFIG[target_region]['bucket_prefix']
+
 
 def oracle_linux_image():
     return REGIONAL_CONFIG[target_region]['oracle_linux_image']
 
+
 def windows_vm_image():
     return REGIONAL_CONFIG[target_region]['windows_vm_image']
 
+
 def random_name(prefix, insert_underscore=True):
     return prefix + ('_' if insert_underscore else '') + str(random.randint(0, 1000000))
+
 
 def validate_response(result, extra_validation=None, includes_debug_data=False, expect_etag=False):
     try:

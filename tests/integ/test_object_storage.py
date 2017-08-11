@@ -11,9 +11,11 @@ LARGE_CONTENT_FILE_SIZE_IN_MEBIBYTES = 3
 # Static content for get_object tests
 expected_content = "a/b/c/object3"
 
+
 @pytest.fixture(scope="module")
 def set_up_test_data(object_storage, namespace):
     util.ensure_test_data(object_storage, namespace, util.COMPARTMENT_ID, util.bucket_prefix())
+
 
 # Response from GetObject for streaming tests
 @pytest.fixture
