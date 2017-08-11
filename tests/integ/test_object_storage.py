@@ -11,13 +11,16 @@ LARGE_CONTENT_FILE_SIZE_IN_MEBIBYTES = 3
 # Static content for get_object tests
 expected_content = "a/b/c/object3"
 
+@pytest.fixture(scope="module")
+def set_up_test_data(object_storage, namespace):
+    util.ensure_test_data(object_storage, namespace, util.COMPARTMENT_ID, util.bucket_prefix())
 
 # Response from GetObject for streaming tests
 @pytest.fixture
 def get_object_response(object_storage):
     _response = object_storage.get_object(
         namespace_name="internalbriangustafson",
-        bucket_name="ReadOnlyTestBucket2",
+        bucket_name=util.bucket_prefix() + "ReadOnlyTestBucket2",
         object_name=expected_content
     )
     assert _response.status == 200
@@ -60,6 +63,7 @@ def content_input_file():
 
 
 class TestObjectStorage:
+
     def test_get_namespace(self, object_storage):
         response = object_storage.get_namespace()
         assert response.status == 200
@@ -306,7 +310,7 @@ class TestObjectStorage:
 
     def test_get_bucket(self, object_storage):
         namespace = object_storage.get_namespace().data
-        response = object_storage.get_bucket(namespace, 'ReadOnlyTestBucket1')
+        response = object_storage.get_bucket(namespace, util.bucket_prefix() + 'ReadOnlyTestBucket1')
         assert response.status == 200
         assert type(response.data) is oraclebmc.object_storage.models.Bucket
         assert response.data.metadata is not None
@@ -314,7 +318,7 @@ class TestObjectStorage:
 
     def test_get_bucket_with_metadata(self, object_storage):
         namespace = object_storage.get_namespace().data
-        response = object_storage.get_bucket(namespace, 'ReadOnlyTestBucket5')
+        response = object_storage.get_bucket(namespace, util.bucket_prefix() + 'ReadOnlyTestBucket5')
         assert response.status == 200
         assert type(response.data) is oraclebmc.object_storage.models.Bucket
         assert response.data.metadata is not None
@@ -345,13 +349,13 @@ class TestObjectStorage:
 
     def test_get_object(self, object_storage):
         namespace = object_storage.get_namespace().data
-        response = object_storage.get_object(namespace, 'ReadOnlyTestBucket1', 'object1')
+        response = object_storage.get_object(namespace, util.bucket_prefix() + 'ReadOnlyTestBucket1', 'object1')
         assert response.status == 200
         assert isinstance(response.data, requests.Response)
 
     def test_get_object_with_user_metadata(self, object_storage):
         namespace = object_storage.get_namespace().data
-        response = object_storage.get_object(namespace, 'ReadOnlyTestBucket4', 'hasUserMetadata.json')
+        response = object_storage.get_object(namespace, util.bucket_prefix() + 'ReadOnlyTestBucket4', 'hasUserMetadata.json')
         assert response.status == 200
         assert isinstance(response.data, requests.Response)
         assert 'bar1' == response.headers['opc-meta-foo1']
@@ -359,7 +363,7 @@ class TestObjectStorage:
 
     def test_list_objects(self, object_storage):
         namespace = object_storage.get_namespace().data
-        response = object_storage.list_objects(namespace, 'ReadOnlyTestBucket1')
+        response = object_storage.list_objects(namespace, util.bucket_prefix() + 'ReadOnlyTestBucket1')
         assert response.status == 200
         assert type(response.data) is oraclebmc.object_storage.models.ListObjects
         assert 5 == len(response.data.objects)
@@ -367,7 +371,7 @@ class TestObjectStorage:
 
     def test_list_objects_empty_bucket(self, object_storage):
         namespace = object_storage.get_namespace().data
-        response = object_storage.list_objects(namespace, 'ReadOnlyTestBucket5')
+        response = object_storage.list_objects(namespace, util.bucket_prefix() + 'ReadOnlyTestBucket5')
         assert response.status == 200
         assert type(response.data) is oraclebmc.object_storage.models.ListObjects
         assert 0 == len(response.data.objects)
@@ -376,7 +380,7 @@ class TestObjectStorage:
     def test_list_objects_with_prefix_and_delimiter(self, object_storage):
         namespace = object_storage.get_namespace().data
         response = object_storage.list_objects(
-            namespace, 'ReadOnlyTestBucket2', prefix='a/b/', delimiter='/')
+            namespace, util.bucket_prefix() + 'ReadOnlyTestBucket2', prefix='a/b/', delimiter='/')
         assert response.status == 200
         assert type(response.data) is oraclebmc.object_storage.models.ListObjects
         assert 2 == len(response.data.objects)
@@ -385,7 +389,7 @@ class TestObjectStorage:
 
     def test_list_objects_truncated(self, object_storage):
         namespace = object_storage.get_namespace().data
-        response = object_storage.list_objects(namespace, 'ReadOnlyTestBucket1', limit=3)
+        response = object_storage.list_objects(namespace, util.bucket_prefix() + 'ReadOnlyTestBucket1', limit=3)
         assert response.status == 200
         assert type(response.data) is oraclebmc.object_storage.models.ListObjects
         assert len(response.data.objects) == 3
@@ -394,7 +398,7 @@ class TestObjectStorage:
         first_object_name = response.data.objects[0].name
 
         response = object_storage.list_objects(
-            namespace, 'ReadOnlyTestBucket1', start=response.data.next_start_with)
+            namespace, util.bucket_prefix() + 'ReadOnlyTestBucket1', start=response.data.next_start_with)
         assert 2 == len(response.data.objects)
         assert response.data.prefixes is None
         assert response.data.next_start_with is None
@@ -402,7 +406,7 @@ class TestObjectStorage:
 
     def test_head_object(self, object_storage):
         namespace = object_storage.get_namespace().data
-        response = object_storage.head_object(namespace, 'ReadOnlyTestBucket4', 'hasUserMetadata.json')
+        response = object_storage.head_object(namespace, util.bucket_prefix() + 'ReadOnlyTestBucket4', 'hasUserMetadata.json')
         assert response.status == 200
         assert response.data is None
         assert 'bar1' == response.headers['opc-meta-foo1']
@@ -413,7 +417,7 @@ class TestObjectStorage:
         # Bucket exists, unknown key
         with pytest.raises(oraclebmc.exceptions.ServiceError) as excinfo:
             object_storage.head_object(
-                namespace, "ReadOnlyTestBucket4", "unknown-key" + random_number_string())
+                namespace, util.bucket_prefix() + "ReadOnlyTestBucket4", "unknown-key" + random_number_string())
         assert excinfo.value.status == 404
         # Unknown bucket, key exists
         with pytest.raises(oraclebmc.exceptions.ServiceError) as excinfo:

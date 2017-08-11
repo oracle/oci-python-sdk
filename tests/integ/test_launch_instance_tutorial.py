@@ -3,16 +3,15 @@ import oraclebmc
 import time
 import pytest
 
+from . import util
+
 
 def test_tutorial(virtual_network, compute, block_storage, config):
     test_id = tests.util.random_number_string()
     print('Running Launching Your First Instance tutorial')
     print('Objects will have ID ' + test_id)
 
-    # TODO DEX-17: Currently this test only runs against R2 and
-    # if you have the private and public key files. We should be
-    # getting these dynamically based on a specified environment.
-    availability_domain = 'kIdk:PHX-AD-2'
+    availability_domain = util.availability_domain()
     compartment = config["tenancy"]
 
     with open(tests.util.get_key_file_path("public_ssh_key.pub")) as f:
@@ -187,7 +186,7 @@ def launch_instance(compute, compartment, test_id, availability_domain, subnet, 
     request.compartment_id = compartment
     request.display_name = 'pythonsdk_tutorial_instance_' + test_id
     # Oracle-Linux-7.3-2017.03.03-0
-    request.image_id = 'ocid1.image.oc1.phx.aaaaaaaaevkccuto7ja4yhahz6rguhqbuomimqsig6sgxd55hjomzepyeqda'
+    request.image_id = util.oracle_linux_image()
     request.shape = 'VM.Standard1.2'
     request.subnet_id = subnet.id
     request.metadata = {'ssh_authorized_keys': public_key}

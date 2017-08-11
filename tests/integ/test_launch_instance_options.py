@@ -42,7 +42,7 @@ class TestLaunchInstanceOptions:
 
         create_subnet_details = oraclebmc.core.models.CreateSubnetDetails()
         create_subnet_details.compartment_id = util.COMPARTMENT_ID
-        create_subnet_details.availability_domain = util.AVAILABILITY_DOMAIN
+        create_subnet_details.availability_domain = util.availability_domain()
         create_subnet_details.display_name = subnet_name
         create_subnet_details.vcn_id = self.vcn_ocid
         create_subnet_details.dns_label = subnet_dns_label
@@ -57,7 +57,7 @@ class TestLaunchInstanceOptions:
     @util.log_test
     def subtest_launch_instance_options(self, compute, virtual_network):
         instance_name = util.random_name('python_sdk_test_instance_options')
-        image_id = 'ocid1.image.oc1.phx.aaaaaaaamv5wg7ffvaxaba3orhpuya7x7opz24hd6m7epmwfqbeudi6meepq'  # ol6.8-base-0.0.2
+        image_id = util.oracle_linux_image()
         shape = 'VM.Standard1.2'
         hostname_label = util.random_name('bminstance', insert_underscore=False)
 
@@ -77,7 +77,7 @@ class TestLaunchInstanceOptions:
 
         launch_instance_details = oraclebmc.core.models.LaunchInstanceDetails()
         launch_instance_details.compartment_id = util.COMPARTMENT_ID
-        launch_instance_details.availability_domain = util.AVAILABILITY_DOMAIN
+        launch_instance_details.availability_domain = util.availability_domain()
         launch_instance_details.display_name = instance_name
         launch_instance_details.subnet_id = self.subnet_ocid
         launch_instance_details.image_id = image_id

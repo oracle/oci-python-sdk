@@ -6,8 +6,8 @@ key_file = keys/sdk_test_admin_user_key.pem
 region = us-phoenix-1
 
 [IAD]
-tenancy = ocid1.tenancy.oc1..aaaaaaaayqotwvxvy4t433xh3b5ccj4z3w6ke4t4m2sjlib32lyio244pucq
-user = ocid1.user.oc1..aaaaaaaazwljnjkwxu6w5ovchtkbgqhbkgoujmqvuwhkd3qn24milrelezka
+tenancy = ocidv1:tenancy:oc1:phx:1460406592660:aaaaaaaab4faofrfkxecohhjuivjq262pu
+user = ocid1.user.oc1..aaaaaaaakjkdrsqwljdpszrynrcosihxf2uspf7pzt7d4fmqomui2ngzysna
 fingerprint = e1:8d:6a:cb:74:ed:25:51:a2:9f:38:a4:71:42:01:c8
 key_file = keys/sdk_test_admin_user_key.pem
 region = us-ashburn-1

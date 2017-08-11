@@ -18,7 +18,7 @@ class TestBlockStorage:
     def subtest_volume_operations(self, block_storage):
         volume_name = util.random_name('python_sdk_test_volume')
         create_volume_details = oraclebmc.core.models.CreateVolumeDetails()
-        create_volume_details.availability_domain = util.AVAILABILITY_DOMAIN
+        create_volume_details.availability_domain = util.availability_domain()
         create_volume_details.compartment_id = util.COMPARTMENT_ID
         create_volume_details.display_name = volume_name
 

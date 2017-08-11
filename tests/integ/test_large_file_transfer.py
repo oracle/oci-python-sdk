@@ -4,6 +4,7 @@ import io
 import os
 import pytest
 
+from . import util
 
 @pytest.fixture
 def namespace(object_storage):
@@ -14,7 +15,7 @@ def namespace(object_storage):
 def names():
     return {
         "read-object": "reallyLargeFile.dat",
-        "read-bucket": "ReadOnlyTestBucket4",
+        "read-bucket": util.bucket_prefix() + "ReadOnlyTestBucket4",
         "write-object": "file_test",
         "write-bucket": tests.util.unique_name("test_python_streaming"),
         "temp-file": tests.util.get_resource_directory() + "/file_download_test_temp_file.dat"
