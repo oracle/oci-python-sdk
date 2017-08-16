@@ -128,10 +128,9 @@
                         <configuration>
                             <language>oracle-python-sdk</language>
                             <specPath>${spec-temp-dir}/identity-control-plane-api-spec-20160918.yaml</specPath>
-                            <outputDir>src/oraclebmc</outputDir>
-                            <basePackage>OracleBMC</basePackage>
+                            <outputDir>src/oci</outputDir>
+                            <basePackage>OCI</basePackage>
                             <additionalProperties>
-                                <packageName>oraclebmc</packageName>
                                 <specName>identity</specName>
                             </additionalProperties>
                         </configuration>
@@ -145,10 +144,9 @@
                         <configuration>
                             <language>oracle-python-sdk</language>
                             <specPath>${spec-temp-dir}/coreservices-api-spec-20160918-external.yaml</specPath>
-                            <outputDir>src/oraclebmc</outputDir>
-                            <basePackage>OracleBMC</basePackage>
+                            <outputDir>src/oci</outputDir>
+                            <basePackage>OCI</basePackage>
                             <additionalProperties>
-                                <packageName>oraclebmc</packageName>
                                 <specName>core</specName>
                             </additionalProperties>
                         </configuration>
@@ -162,10 +160,9 @@
                         <configuration>
                             <language>oracle-python-sdk</language>
                             <specPath>${spec-temp-dir}/casper-api.yaml</specPath>
-                            <outputDir>src/oraclebmc</outputDir>
-                            <basePackage>OracleBMC</basePackage>
+                            <outputDir>src/oci</outputDir>
+                            <basePackage>OCI</basePackage>
                             <additionalProperties>
-                                <packageName>oraclebmc</packageName>
                                 <specName>object_storage</specName>
                                 <generateInitFile>false</generateInitFile>
                             </additionalProperties>
@@ -181,10 +178,9 @@
                         <configuration>
                             <language>oracle-python-sdk</language>
                             <specPath>${spec-temp-dir}/spec-20170115.yaml</specPath>
-                            <outputDir>src/oraclebmc</outputDir>
-                            <basePackage>OracleBMC</basePackage>
+                            <outputDir>src/oci</outputDir>
+                            <basePackage>OCI</basePackage>
                             <additionalProperties>
-                                <packageName>oraclebmc</packageName>
                                 <specName>load_balancer</specName>
                                 <generateInitFile>true</generateInitFile>
                             </additionalProperties>
@@ -219,25 +215,25 @@
                 <configuration>
                     <filesets>
                         <fileset>
-                            <directory>src/oraclebmc/core</directory>
+                            <directory>src/oci/core</directory>
                             <includes>
                                 <include>**/*</include>
                             </includes>
                         </fileset>
                         <fileset>
-                            <directory>src/oraclebmc/identity</directory>
+                            <directory>src/oci/identity</directory>
                             <includes>
                                 <include>**/*</include>
                             </includes>
                         </fileset>
                         <fileset>
-                            <directory>src/oraclebmc/load_balancer</directory>
+                            <directory>src/oci/load_balancer</directory>
                             <includes>
                                 <include>**/*</include>
                             </includes>
                         </fileset>
                         <fileset>
-                            <directory>src/oraclebmc/object_storage</directory>
+                            <directory>src/oci/object_storage</directory>
                             <includes>
                                 <include>**/*</include>
                             </includes>
