@@ -1,16 +1,16 @@
-Oracle BMCS Python SDK
+Oracle Cloud Infrastructure Python SDK
 ~~~~~~~~~~~~~~~~~~~~~~
 
-This is the public Python SDK for Oracle Bare Metal Cloud Services.  Python 2.7+ and 3.5+ are supported.
+This is the public Python SDK for Oracle Cloud Infrastructure.  Python 2.7+ and 3.5+ are supported.
 
 
 .. code-block:: pycon
 
-    >>> import oraclebmc
-    >>> config = oraclebmc.config.from_file(
-    ...     "~/.oraclebmc/config",
+    >>> import oci
+    >>> config = oci.config.from_file(
+    ...     "~/.oci/config",
     ...     "integ-beta-profile")
-    >>> identity = oraclebmc.identity.IdentityClient(config)
+    >>> identity = oci.identity.IdentityClient(config)
     >>> user = identity.get_user(config["user"]).data
     >>> print(user)
     {
