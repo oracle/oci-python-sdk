@@ -38,7 +38,8 @@ DEFAULT_CONFIG = {
     "additional_user_agent": "",
     "pass_phrase": None
 }
-DEFAULT_LOCATION = os.path.join('~', '.oraclebmc', 'config')
+DEFAULT_LOCATION = '~/.oci/config'
+FALLBACK_DEFAULT_LOCATION = '~/.oraclebmc/config'
 DEFAULT_PROFILE = "DEFAULT"
 PATTERNS = {
     # Tenancy and user have the same shape
@@ -58,18 +59,23 @@ REQUIRED = {
 def from_file(file_location=DEFAULT_LOCATION, profile_name=DEFAULT_PROFILE):
     """Create a config dict from a file.
 
-    :param file_location: Path to the config file.  Defaults to ~/.oraclebmc/config
+    :param file_location: Path to the config file.  Defaults to ~/.oci/config and with a fallback to ~/.oraclebmc/config.
     :param profile_name: The profile to load from the config file.  Defaults to "DEFAULT"
     :return: A config dict that can be used to create clients.
     """
-    file_location = os.path.expanduser(file_location)
+    expanded_file_location = os.path.expanduser(file_location)
+    expanded_fallback_default_file_location = os.path.expanduser(FALLBACK_DEFAULT_LOCATION)
+
+    # if there is no file in the default location (~/.oci/config), and the fallback file does exist, use the fallback (~/.oraclebmc/config)
+    if file_location == DEFAULT_LOCATION and not os.path.isfile(expanded_file_location) and os.path.isfile(expanded_fallback_default_file_location):
+        expanded_file_location = expanded_fallback_default_file_location
 
     parser = configparser.ConfigParser(interpolation=None)
-    if not parser.read(file_location):
-        raise ConfigFileNotFound("Could not find config file at {}".format(file_location))
+    if not parser.read(expanded_file_location):
+        raise ConfigFileNotFound("Could not find config file at {}".format(expanded_file_location))
 
     if profile_name not in parser:
-        raise ProfileNotFound("Profile '{}' not found in config file {}".format(profile_name, file_location))
+        raise ProfileNotFound("Profile '{}' not found in config file {}".format(profile_name, expanded_file_location))
 
     config = dict(DEFAULT_CONFIG)
     config.update(parser[profile_name])
