@@ -56,8 +56,8 @@ class LoadBalancerClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type None
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/backends"
         method = "POST"
@@ -118,8 +118,8 @@ class LoadBalancerClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type None
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets"
         method = "POST"
@@ -179,8 +179,8 @@ class LoadBalancerClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type None
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/loadBalancers/{loadBalancerId}/certificates"
         method = "POST"
@@ -240,8 +240,8 @@ class LoadBalancerClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type None
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/loadBalancers/{loadBalancerId}/listeners"
         method = "POST"
@@ -327,8 +327,8 @@ class LoadBalancerClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type None
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/loadBalancers"
         method = "POST"
@@ -382,8 +382,8 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type None
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/backends/{backendName}"
         method = "DELETE"
@@ -439,8 +439,8 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type None
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}"
         method = "DELETE"
@@ -493,8 +493,8 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type None
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/loadBalancers/{loadBalancerId}/certificates/{certificateName}"
         method = "DELETE"
@@ -547,8 +547,8 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type None
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/loadBalancers/{loadBalancerId}/listeners/{listenerName}"
         method = "DELETE"
@@ -596,8 +596,8 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type None
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/loadBalancers/{loadBalancerId}"
         method = "DELETE"
@@ -654,8 +654,8 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.load_balancer.models.Backend`
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.load_balancer.models.Backend`
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/backends/{backendName}"
         method = "GET"
@@ -710,8 +710,8 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.load_balancer.models.BackendSet`
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.load_balancer.models.BackendSet`
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}"
         method = "GET"
@@ -765,8 +765,8 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.load_balancer.models.HealthChecker`
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.load_balancer.models.HealthChecker`
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/healthChecker"
         method = "GET"
@@ -815,8 +815,8 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.load_balancer.models.LoadBalancer`
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.load_balancer.models.LoadBalancer`
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/loadBalancers/{loadBalancerId}"
         method = "GET"
@@ -864,8 +864,8 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.load_balancer.models.WorkRequest`
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.load_balancer.models.WorkRequest`
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/loadBalancerWorkRequests/{workRequestId}"
         method = "GET"
@@ -913,8 +913,8 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.load_balancer.models.BackendSet`
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.load_balancer.models.BackendSet`
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets"
         method = "GET"
@@ -967,8 +967,8 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.load_balancer.models.Backend`
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.load_balancer.models.Backend`
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/backends"
         method = "GET"
@@ -1017,8 +1017,8 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.load_balancer.models.Certificate`
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.load_balancer.models.Certificate`
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/loadBalancers/{loadBalancerId}/certificates"
         method = "GET"
@@ -1081,8 +1081,8 @@ class LoadBalancerClient(object):
 
             Example: `full`
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.load_balancer.models.LoadBalancer`
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.load_balancer.models.LoadBalancer`
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/loadBalancers"
         method = "GET"
@@ -1146,8 +1146,8 @@ class LoadBalancerClient(object):
 
             Example: `3`
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.load_balancer.models.LoadBalancerPolicy`
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.load_balancer.models.LoadBalancerPolicy`
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/loadBalancerPolicies"
         method = "GET"
@@ -1209,8 +1209,8 @@ class LoadBalancerClient(object):
 
             Example: `3`
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.load_balancer.models.LoadBalancerProtocol`
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.load_balancer.models.LoadBalancerProtocol`
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/loadBalancerProtocols"
         method = "GET"
@@ -1272,8 +1272,8 @@ class LoadBalancerClient(object):
 
             Example: `3`
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.load_balancer.models.LoadBalancerShape`
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.load_balancer.models.LoadBalancerShape`
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/loadBalancerShapes"
         method = "GET"
@@ -1335,8 +1335,8 @@ class LoadBalancerClient(object):
 
             Example: `3`
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.load_balancer.models.WorkRequest`
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.load_balancer.models.WorkRequest`
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/loadBalancers/{loadBalancerId}/workRequests"
         method = "GET"
@@ -1413,8 +1413,8 @@ class LoadBalancerClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type None
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/backends/{backendName}"
         method = "PUT"
@@ -1481,8 +1481,8 @@ class LoadBalancerClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type None
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}"
         method = "PUT"
@@ -1548,8 +1548,8 @@ class LoadBalancerClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type None
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/healthChecker"
         method = "PUT"
@@ -1615,8 +1615,8 @@ class LoadBalancerClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type None
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/loadBalancers/{loadBalancerId}/listeners/{listenerName}"
         method = "PUT"
@@ -1677,8 +1677,8 @@ class LoadBalancerClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type None
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/loadBalancers/{loadBalancerId}"
         method = "PUT"

@@ -59,8 +59,8 @@ class BlockstorageClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.core.models.Volume`
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.Volume`
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/volumes"
         method = "POST"
@@ -111,8 +111,8 @@ class BlockstorageClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.core.models.VolumeBackup`
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.VolumeBackup`
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/volumeBackups"
         method = "POST"
@@ -159,8 +159,8 @@ class BlockstorageClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type None
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/volumes/{volumeId}"
         method = "DELETE"
@@ -206,8 +206,8 @@ class BlockstorageClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type None
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/volumeBackups/{volumeBackupId}"
         method = "DELETE"
@@ -248,8 +248,8 @@ class BlockstorageClient(object):
         :param str volume_id: (required)
             The OCID of the volume.
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.core.models.Volume`
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.Volume`
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/volumes/{volumeId}"
         method = "GET"
@@ -284,8 +284,8 @@ class BlockstorageClient(object):
         :param str volume_backup_id: (required)
             The OCID of the volume backup.
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.core.models.VolumeBackup`
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.VolumeBackup`
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/volumeBackups/{volumeBackupId}"
         method = "GET"
@@ -331,8 +331,8 @@ class BlockstorageClient(object):
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.core.models.VolumeBackup`
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.core.models.VolumeBackup`
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/volumeBackups"
         method = "GET"
@@ -390,8 +390,8 @@ class BlockstorageClient(object):
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type list of :class:`~oraclebmc.core.models.Volume`
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.core.models.Volume`
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/volumes"
         method = "GET"
@@ -445,8 +445,8 @@ class BlockstorageClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.core.models.Volume`
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.Volume`
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/volumes/{volumeId}"
         method = "PUT"
@@ -498,8 +498,8 @@ class BlockstorageClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
-        :return: A :class:`~oraclebmc.response.Response` object with data of type :class:`~oraclebmc.core.models.VolumeBackup`
-        :rtype: :class:`~oraclebmc.response.Response`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.VolumeBackup`
+        :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/volumeBackups/{volumeBackupId}"
         method = "PUT"
