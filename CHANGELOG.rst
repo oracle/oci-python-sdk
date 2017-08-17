@@ -57,7 +57,7 @@ Added
  Added
 -------
 
-* Support for VCN private subnets using the prohibit_public_ip_on_vnic parameter on oraclebmc.core.VirtualNetworkClient.create_subnet.
+* Support for VCN private subnets using the prohibit_public_ip_on_vnic parameter on oci.core.VirtualNetworkClient.create_subnet.
 * Support for FastConnect
 * Support for list_regions and region subscription operations
 * First class support for new IAD region

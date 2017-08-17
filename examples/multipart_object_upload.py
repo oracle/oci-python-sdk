@@ -2,19 +2,19 @@
 
 from __future__ import print_function
 import os
-import oraclebmc
-from oraclebmc.object_storage import UploadManager
-from oraclebmc.object_storage.models import CreateBucketDetails
-from oraclebmc.object_storage.transfer.constants import MEBIBYTE
+import oci
+from oci.object_storage import UploadManager
+from oci.object_storage.models import CreateBucketDetails
+from oci.object_storage.transfer.constants import MEBIBYTE
 
 
 def progress_callback(bytes_uploaded):
     print("{} additional bytes uploaded".format(bytes_uploaded))
 
 
-config = oraclebmc.config.from_file()
+config = oci.config.from_file()
 compartment_id = config["tenancy"]
-object_storage = oraclebmc.object_storage.ObjectStorageClient(config)
+object_storage = oci.object_storage.ObjectStorageClient(config)
 
 namespace = object_storage.get_namespace().data
 bucket_name = "python-sdk-example-bucket"

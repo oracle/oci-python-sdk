@@ -5,8 +5,8 @@ import pytest
 import os
 import tempfile
 from requests import Request
-from oraclebmc.exceptions import InvalidPrivateKey, MissingPrivateKeyPassphrase
-from oraclebmc.signer import load_private_key, load_private_key_from_file, inject_missing_headers, Signer
+from oci.exceptions import InvalidPrivateKey, MissingPrivateKeyPassphrase
+from oci.signer import load_private_key, load_private_key_from_file, inject_missing_headers, Signer
 from .utils import generate_key, serialize_key, verify_signature
 
 

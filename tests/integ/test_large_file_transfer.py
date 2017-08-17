@@ -1,5 +1,5 @@
 import tests.util
-import oraclebmc
+import oci
 import io
 import os
 import pytest
@@ -25,7 +25,7 @@ def names():
 
 @pytest.yield_fixture
 def write_bucket(namespace, object_storage, config, names):
-    request = oraclebmc.object_storage.models.CreateBucketDetails()
+    request = oci.object_storage.models.CreateBucketDetails()
     request.name = names["write-bucket"]
     request.compartment_id = config["tenancy"]
     response = object_storage.create_bucket(namespace, request)

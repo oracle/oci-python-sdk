@@ -1,5 +1,5 @@
 import tests.util
-import oraclebmc
+import oci
 import time
 import pytest
 
@@ -57,7 +57,7 @@ def test_tutorial(virtual_network, compute, block_storage, config):
 
 def create_cloud_network(virtual_network, compartment, test_id):
     print('Creating cloud network')
-    request = oraclebmc.core.models.CreateVcnDetails()
+    request = oci.core.models.CreateVcnDetails()
     request.cidr_block = '10.0.0.0/16'
     request.display_name = 'pythonsdk_test_vcn_' + test_id
     request.compartment_id = compartment
@@ -65,10 +65,10 @@ def create_cloud_network(virtual_network, compartment, test_id):
     response = virtual_network.create_vcn(request)
 
     assert response.status == 200
-    assert type(response.data) is oraclebmc.core.models.Vcn
+    assert type(response.data) is oci.core.models.Vcn
 
     response = virtual_network.get_vcn(response.data.id)
-    vcn = oraclebmc.wait_until(
+    vcn = oci.wait_until(
         virtual_network,
         response,
         'lifecycle_state',
@@ -84,9 +84,9 @@ def delete_cloud_network(virtual_network, vcn):
     response = virtual_network.delete_vcn(vcn.id)
     assert response.status == 204
 
-    with pytest.raises(oraclebmc.exceptions.ServiceError) as excinfo:
+    with pytest.raises(oci.exceptions.ServiceError) as excinfo:
         response = virtual_network.get_vcn(vcn.id)
-        oraclebmc.wait_until(
+        oci.wait_until(
             virtual_network,
             response,
             'lifecycle_state',
@@ -98,7 +98,7 @@ def delete_cloud_network(virtual_network, vcn):
 
 def create_subnet(virtual_network, compartment, test_id, availability_domain, vcn):
     print('Creating subnet')
-    request = oraclebmc.core.models.CreateSubnetDetails()
+    request = oci.core.models.CreateSubnetDetails()
     request.cidr_block = '10.0.0.0/16'
     request.availability_domain = availability_domain
     request.display_name = 'pythonsdk_test_subnet_' + test_id
@@ -108,10 +108,10 @@ def create_subnet(virtual_network, compartment, test_id, availability_domain, vc
     response = virtual_network.create_subnet(request)
 
     assert response.status == 200
-    assert type(response.data) is oraclebmc.core.models.Subnet
+    assert type(response.data) is oci.core.models.Subnet
 
     response = virtual_network.get_subnet(response.data.id)
-    subnet = oraclebmc.wait_until(
+    subnet = oci.wait_until(
         virtual_network,
         response,
         'lifecycle_state',
@@ -125,9 +125,9 @@ def delete_subnet(virtual_network, subnet):
     response = virtual_network.delete_subnet(subnet.id)
     assert response.status == 204
 
-    with pytest.raises(oraclebmc.exceptions.ServiceError) as excinfo:
+    with pytest.raises(oci.exceptions.ServiceError) as excinfo:
         response = virtual_network.get_subnet(subnet.id)
-        oraclebmc.wait_until(
+        oci.wait_until(
             virtual_network,
             response,
             'lifecycle_state',
@@ -138,7 +138,7 @@ def delete_subnet(virtual_network, subnet):
 
 def create_internet_gateway(virtual_network, compartment, test_id, vcn):
     print('Creating internet gateway')
-    request = oraclebmc.core.models.CreateInternetGatewayDetails()
+    request = oci.core.models.CreateInternetGatewayDetails()
     request.display_name = 'pythonsdk_test_ig_' + test_id
     request.compartment_id = compartment
     request.is_enabled = True
@@ -146,10 +146,10 @@ def create_internet_gateway(virtual_network, compartment, test_id, vcn):
     response = virtual_network.create_internet_gateway(request)
 
     assert response.status == 200
-    assert type(response.data) is oraclebmc.core.models.InternetGateway
+    assert type(response.data) is oci.core.models.InternetGateway
 
     response = virtual_network.get_internet_gateway(response.data.id)
-    gateway = oraclebmc.wait_until(
+    gateway = oci.wait_until(
         virtual_network,
         response,
         'lifecycle_state',
@@ -161,27 +161,27 @@ def create_internet_gateway(virtual_network, compartment, test_id, vcn):
 
 def update_route_table(virtual_network, test_id, vcn, gateway):
     print('Updating route table')
-    route_rule = oraclebmc.core.models.RouteRule()
+    route_rule = oci.core.models.RouteRule()
     route_rule.cidr_block = '0.0.0.0/0'
     route_rule.display_name = 'pythonsdk_route_rule_' + test_id
     route_rule.network_entity_id = gateway.id
     route_rule.network_entity_type = 'INTERNET_GATEWAY'
 
-    request = oraclebmc.core.models.UpdateRouteTableDetails()
+    request = oci.core.models.UpdateRouteTableDetails()
     request.route_rules = [route_rule]
     response = virtual_network.update_route_table(vcn.default_route_table_id, request)
 
     assert response.status == 200
-    assert type(response.data) is oraclebmc.core.models.RouteTable
+    assert type(response.data) is oci.core.models.RouteTable
 
     response = virtual_network.get_route_table(vcn.default_route_table_id)
-    oraclebmc.wait_until(virtual_network, response, 'lifecycle_state', 'AVAILABLE')
+    oci.wait_until(virtual_network, response, 'lifecycle_state', 'AVAILABLE')
 
 
 def launch_instance(compute, compartment, test_id, availability_domain, subnet, public_key):
     print('Launching instance')
 
-    request = oraclebmc.core.models.LaunchInstanceDetails()
+    request = oci.core.models.LaunchInstanceDetails()
     request.availability_domain = availability_domain
     request.compartment_id = compartment
     request.display_name = 'pythonsdk_tutorial_instance_' + test_id
@@ -196,7 +196,7 @@ def launch_instance(compute, compartment, test_id, availability_domain, subnet, 
     assert 'PROVISIONING' == response.data.lifecycle_state
 
     response = compute.get_instance(response.data.id)
-    instance = oraclebmc.wait_until(
+    instance = oci.wait_until(
         compute,
         response,
         'lifecycle_state',
@@ -214,12 +214,12 @@ def terminate_instance(compute, instance):
     assert response.status == 204
 
     response = compute.get_instance(instance.id)
-    oraclebmc.wait_until(compute, response, 'lifecycle_state', 'TERMINATED')
+    oci.wait_until(compute, response, 'lifecycle_state', 'TERMINATED')
 
 
 def create_volume(block_storage, compartment, test_id, availability_domain):
     print('Creating volume')
-    request = oraclebmc.core.models.CreateVolumeDetails()
+    request = oci.core.models.CreateVolumeDetails()
     request.display_name = 'pythonsdk_volume_' + test_id
     request.compartment_id = compartment
     request.availability_domain = availability_domain
@@ -227,10 +227,10 @@ def create_volume(block_storage, compartment, test_id, availability_domain):
         request, opc_retry_token='testtoken' + test_id)
 
     assert response.status == 200
-    assert type(response.data) is oraclebmc.core.models.Volume
+    assert type(response.data) is oci.core.models.Volume
 
     response = block_storage.get_volume(response.data.id)
-    volume = oraclebmc.wait_until(
+    volume = oci.wait_until(
         block_storage,
         response,
         'lifecycle_state',
@@ -246,7 +246,7 @@ def delete_volume(block_storage, volume):
     assert response.status == 204
 
     response = block_storage.get_volume(volume.id)
-    oraclebmc.wait_until(
+    oci.wait_until(
         block_storage,
         response,
         'lifecycle_state',
@@ -266,7 +266,7 @@ def log_public_ip_address(compute, virtual_network, compartment, instance):
 
     # Just get the address for the first vnic attachment.
     response = virtual_network.get_vnic(vnic_attachment.vnic_id)
-    response = oraclebmc.wait_until(
+    response = oci.wait_until(
         virtual_network,
         response,
         'lifecycle_state',
@@ -279,17 +279,17 @@ def log_public_ip_address(compute, virtual_network, compartment, instance):
 
 def attach_volume(compute, compartment, instance, volume):
     print('Attaching volume')
-    request = oraclebmc.core.models.AttachIScsiVolumeDetails()
+    request = oci.core.models.AttachIScsiVolumeDetails()
     request.compartment_id = compartment
     request.instance_id = instance.id
     request.volume_id = volume.id
     response = compute.attach_volume(request)
 
     assert response.status == 200
-    assert type(response.data) is oraclebmc.core.models.IScsiVolumeAttachment
+    assert type(response.data) is oci.core.models.IScsiVolumeAttachment
 
     response = compute.get_volume_attachment(response.data.id)
-    attachment = oraclebmc.wait_until(
+    attachment = oci.wait_until(
         compute,
         response,
         'lifecycle_state',
@@ -304,4 +304,4 @@ def detach_volume(compute, attachment):
     assert response.status == 204
 
     response = compute.get_volume_attachment(attachment.id)
-    oraclebmc.wait_until(compute, response, 'lifecycle_state', 'DETACHED')
+    oci.wait_until(compute, response, 'lifecycle_state', 'DETACHED')

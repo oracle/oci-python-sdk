@@ -2,7 +2,7 @@
 # Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 from . import util
-import oraclebmc
+import oci
 
 
 IPXE_SCRIPT_FILE = 'tests/resources/ipxe_script_example.txt'
@@ -24,7 +24,7 @@ class TestLaunchInstanceOptions:
         cidr_block = "10.0.0.0/16"
         vcn_dns_label = util.random_name('vcn', insert_underscore=False)
 
-        create_vcn_details = oraclebmc.core.models.CreateVcnDetails()
+        create_vcn_details = oci.core.models.CreateVcnDetails()
         create_vcn_details.compartment_id = util.COMPARTMENT_ID
         create_vcn_details.display_name = vcn_name
         create_vcn_details.cidr_block = cidr_block
@@ -33,14 +33,13 @@ class TestLaunchInstanceOptions:
         result = virtual_network.create_vcn(create_vcn_details)
         self.vcn_ocid = result.data.id
         util.validate_response(result, expect_etag=True)
-        oraclebmc.wait_until(virtual_network, virtual_network.get_vcn(self.vcn_ocid), 'lifecycle_state', 'AVAILABLE',
-                             max_wait_seconds=300)
+        oci.wait_until(virtual_network, virtual_network.get_vcn(self.vcn_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=300)
 
         # Create a subnet
         subnet_name = util.random_name('python_sdk_test_compute_subnet')
         subnet_dns_label = util.random_name('subnet', insert_underscore=False)
 
-        create_subnet_details = oraclebmc.core.models.CreateSubnetDetails()
+        create_subnet_details = oci.core.models.CreateSubnetDetails()
         create_subnet_details.compartment_id = util.COMPARTMENT_ID
         create_subnet_details.availability_domain = util.availability_domain()
         create_subnet_details.display_name = subnet_name
@@ -51,8 +50,7 @@ class TestLaunchInstanceOptions:
         result = virtual_network.create_subnet(create_subnet_details)
         self.subnet_ocid = result.data.id
         util.validate_response(result, expect_etag=True)
-        oraclebmc.wait_until(virtual_network, virtual_network.get_subnet(self.subnet_ocid), 'lifecycle_state',
-                             'AVAILABLE', max_wait_seconds=300)
+        oci.wait_until(virtual_network, virtual_network.get_subnet(self.subnet_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=300)
 
     @util.log_test
     def subtest_launch_instance_options(self, compute, virtual_network):
@@ -75,7 +73,7 @@ class TestLaunchInstanceOptions:
         with open(IPXE_SCRIPT_FILE, mode='r') as file:
             ipxe_script_content = file.read()
 
-        launch_instance_details = oraclebmc.core.models.LaunchInstanceDetails()
+        launch_instance_details = oci.core.models.LaunchInstanceDetails()
         launch_instance_details.compartment_id = util.COMPARTMENT_ID
         launch_instance_details.availability_domain = util.availability_domain()
         launch_instance_details.display_name = instance_name
@@ -98,8 +96,7 @@ class TestLaunchInstanceOptions:
 
         util.validate_response(launch_instance_result, expect_etag=True)
 
-        util.wait_until(lambda: compute.list_vnic_attachments(util.COMPARTMENT_ID, instance_id=self.instance_ocid),
-                        'ATTACHED', max_wait_seconds=20, item_index_in_list_response=0)
+        util.wait_until(lambda: compute.list_vnic_attachments(util.COMPARTMENT_ID, instance_id=self.instance_ocid), 'ATTACHED', max_wait_seconds=20, item_index_in_list_response=0)
 
         # get vnic attachments for given instance
         result = compute.list_vnic_attachments(util.COMPARTMENT_ID, instance_id=self.instance_ocid)
@@ -123,8 +120,7 @@ class TestLaunchInstanceOptions:
             try:
                 print("Deleting instance")
                 compute.terminate_instance(self.instance_ocid)
-                oraclebmc.wait_until(compute, compute.get_instance(self.instance_ocid), 'lifecycle_state', 'TERMINATED',
-                                     max_wait_seconds=600)
+                oci.wait_until(compute, compute.get_instance(self.instance_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
             except Exception as error:
                 if not hasattr(error, 'status') or error.status != 404:
                     util.print_latest_exception(error)
@@ -134,8 +130,7 @@ class TestLaunchInstanceOptions:
             try:
                 print("Deleting subnet")
                 virtual_network.delete_subnet(self.subnet_ocid)
-                oraclebmc.wait_until(virtual_network, virtual_network.get_subnet(self.subnet_ocid), 'lifecycle_state',
-                                     'TERMINATED', max_wait_seconds=600)
+                oci.wait_until(virtual_network, virtual_network.get_subnet(self.subnet_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
             except Exception as error:
                 if not hasattr(error, 'status') or error.status != 404:
                     util.print_latest_exception(error)
@@ -145,8 +140,7 @@ class TestLaunchInstanceOptions:
             try:
                 print("Deleting vcn")
                 virtual_network.delete_vcn(self.vcn_ocid)
-                oraclebmc.wait_until(virtual_network, virtual_network.get_vcn(self.vcn_ocid), 'lifecycle_state',
-                                     'TERMINATED', max_wait_seconds=600)
+                oci.wait_until(virtual_network, virtual_network.get_vcn(self.vcn_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
             except Exception as error:
                 if not hasattr(error, 'status') or error.status != 404:
                     util.print_latest_exception(error)

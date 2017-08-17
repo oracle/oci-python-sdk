@@ -1,4 +1,4 @@
-import oraclebmc
+import oci
 import tests.util
 import time
 import pytest
@@ -13,7 +13,7 @@ def namespace(object_storage):
 @pytest.yield_fixture
 def bucket_name(namespace, object_storage):
     name = tests.util.unique_name("test_python_streaming")
-    request = oraclebmc.object_storage.models.CreateBucketDetails()
+    request = oci.object_storage.models.CreateBucketDetails()
     request.name = name
     request.compartment_id = util.COMPARTMENT_ID
     assert object_storage.create_bucket(namespace, request).status == 200
@@ -121,9 +121,9 @@ class TestStreaming:
             object_storage.put_object(namespace, bucket_name, 'a_time', time.time())
 
         with pytest.raises(TypeError):
-            object_storage.put_object(namespace, bucket_name, 'a_user', oraclebmc.identity.models.User())
+            object_storage.put_object(namespace, bucket_name, 'a_user', oci.identity.models.User())
 
     def test_object_not_found(self, namespace, bucket_name, object_storage):
-        with pytest.raises(oraclebmc.exceptions.ServiceError) as excinfo:
+        with pytest.raises(oci.exceptions.ServiceError) as excinfo:
             object_storage.get_object(namespace, bucket_name, 'does_not_exist')
         assert excinfo.value.status == 404

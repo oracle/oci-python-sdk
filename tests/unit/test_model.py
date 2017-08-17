@@ -1,5 +1,5 @@
-import oraclebmc
-import oraclebmc.util
+import oci
+import oci.util
 import datetime
 import pytest
 
@@ -7,7 +7,7 @@ import pytest
 @pytest.fixture
 def new_instance():
     def _new_instance(**kwargs):
-        instance = oraclebmc.core.models.Instance()
+        instance = oci.core.models.Instance()
         instance.availability_domain = 'some ad'
         instance.compartment_id = 'some compartment'
         instance.display_name = 'some name'
@@ -66,7 +66,7 @@ def test_to_string(instance):
 
 
 def test_to_dict(instance):
-    instance_dict = oraclebmc.util.to_dict(instance)
+    instance_dict = oci.util.to_dict(instance)
 
     assert 'some ad' == instance_dict['availability_domain']
     assert 'some compartment' == instance_dict['compartment_id']
@@ -81,11 +81,11 @@ def test_to_dict(instance):
 
 
 def test_subclass():
-    volume_attachment = oraclebmc.core.models.IScsiVolumeAttachment()
+    volume_attachment = oci.core.models.IScsiVolumeAttachment()
     assert 'iscsi' == volume_attachment.attachment_type
     assert hasattr(volume_attachment, 'chap_username')
     assert hasattr(volume_attachment, 'availability_domain')
-    assert oraclebmc.core.models.VolumeAttachment.get_subtype(
+    assert oci.core.models.VolumeAttachment.get_subtype(
         {'attachmentType': volume_attachment.attachment_type}) == 'IScsiVolumeAttachment'
 
     volume_attachment.chap_secret = 'foo'
@@ -94,12 +94,12 @@ def test_subclass():
     assert 'foo' == volume_attachment.chap_secret
     assert 'bar' == volume_attachment.compartment_id
 
-    attachment_dict = oraclebmc.util.to_dict(volume_attachment)
+    attachment_dict = oci.util.to_dict(volume_attachment)
 
     assert 'foo' == attachment_dict['chap_secret']
     assert 'bar' == attachment_dict['compartment_id']
 
 
 def test_subclass_for_unknown_subtype_defaults_to_base_type():
-    subtype = oraclebmc.core.models.VolumeAttachment.get_subtype({'attachmentType': 'new_subtype'})
+    subtype = oci.core.models.VolumeAttachment.get_subtype({'attachmentType': 'new_subtype'})
     assert 'VolumeAttachment' == subtype

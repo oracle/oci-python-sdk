@@ -1,5 +1,5 @@
 import tests.util
-import oraclebmc
+import oci
 import time
 import pytest
 
@@ -12,7 +12,7 @@ def test_basic_wait(virtual_network, config):
 
     start_time = time.time()
 
-    request = oraclebmc.core.models.CreateVcnDetails()
+    request = oci.core.models.CreateVcnDetails()
     request.cidr_block = '10.0.0.0/16'
     request.display_name = name
     request.compartment_id = config["tenancy"]
@@ -21,7 +21,7 @@ def test_basic_wait(virtual_network, config):
     vcn = response.data
 
     response = virtual_network.get_vcn(vcn.id)
-    response = oraclebmc.wait_until(virtual_network, response, 'lifecycle_state', 'AVAILABLE')
+    response = oci.wait_until(virtual_network, response, 'lifecycle_state', 'AVAILABLE')
 
     assert 'AVAILABLE' == response.data.lifecycle_state
 
@@ -30,10 +30,10 @@ def test_basic_wait(virtual_network, config):
 
     assert response.status == 204
 
-    with pytest.raises(oraclebmc.exceptions.ServiceError) as excinfo:
+    with pytest.raises(oci.exceptions.ServiceError) as excinfo:
         response = virtual_network.get_vcn(vcn.id)
         assert 'TERMINATING' == response.data.lifecycle_state
-        oraclebmc.wait_until(
+        oci.wait_until(
             virtual_network,
             response,
             'lifecycle_state',
@@ -52,31 +52,31 @@ def test_basic_wait(virtual_network, config):
 
 def test_invalid_operation(identity, config):
     # Create User
-    request = oraclebmc.identity.models.CreateUserDetails()
+    request = oci.identity.models.CreateUserDetails()
     request.compartment_id = config["tenancy"]
     request.name = tests.util.unique_name('python_wait_test_user')
     request.description = 'test user'
     response = identity.create_user(request)
     user_id = response.data.id
 
-    with pytest.raises(oraclebmc.exceptions.WaitUntilNotSupported):
-        oraclebmc.wait_until(identity, response, 'name', 'test')
+    with pytest.raises(oci.exceptions.WaitUntilNotSupported):
+        oci.wait_until(identity, response, 'name', 'test')
 
     with pytest.raises(ValueError):
         response = identity.get_user(user_id)
-        oraclebmc.wait_until(identity, response, 'fake_property', 'test')
+        oci.wait_until(identity, response, 'fake_property', 'test')
 
     # Delete User
     response = identity.delete_user(user_id)
 
-    with pytest.raises(oraclebmc.exceptions.WaitUntilNotSupported):
-        oraclebmc.wait_until(identity, response, 'not a real property', 'test')
+    with pytest.raises(oci.exceptions.WaitUntilNotSupported):
+        oci.wait_until(identity, response, 'not a real property', 'test')
 
 
 def test_already_in_state(identity, config):
 
     description = 'test user'
-    request = oraclebmc.identity.models.CreateUserDetails()
+    request = oci.identity.models.CreateUserDetails()
     request.compartment_id = config["tenancy"]
     request.name = tests.util.unique_name('python_wait_test_user')
     request.description = description
@@ -87,7 +87,7 @@ def test_already_in_state(identity, config):
     assert description == response.data.description
 
     start_time = time.time()
-    oraclebmc.wait_until(identity, response, 'description', description)
+    oci.wait_until(identity, response, 'description', description)
     assert start_time - time.time() < 1
 
     # clean up
@@ -96,7 +96,7 @@ def test_already_in_state(identity, config):
 
 def test_wait_time_exceeded(identity, config):
     description = 'test user'
-    request = oraclebmc.identity.models.CreateUserDetails()
+    request = oci.identity.models.CreateUserDetails()
     request.compartment_id = config["tenancy"]
     request.name = tests.util.unique_name('python_wait_test_user')
     request.description = description
@@ -107,9 +107,9 @@ def test_wait_time_exceeded(identity, config):
     assert description == response.data.description
 
     start_time = time.time()
-    with pytest.raises(oraclebmc.exceptions.MaximumWaitTimeExceeded):
+    with pytest.raises(oci.exceptions.MaximumWaitTimeExceeded):
         # Wait on a property that will not change until we time out.
-        oraclebmc.wait_until(identity, response, 'name', 'test', max_wait_seconds=2)
+        oci.wait_until(identity, response, 'name', 'test', max_wait_seconds=2)
 
     total_time = time.time() - start_time
     assert 1 < total_time < 4

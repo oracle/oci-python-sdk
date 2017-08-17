@@ -45,7 +45,7 @@ class IdentityClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.identity.models.UserGroupMembership`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.UserGroupMembership`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/userGroupMemberships/"
@@ -111,7 +111,7 @@ class IdentityClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.identity.models.Compartment`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.Compartment`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/compartments/"
@@ -179,7 +179,7 @@ class IdentityClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.identity.models.Group`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.Group`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/groups/"
@@ -244,7 +244,7 @@ class IdentityClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.identity.models.IdentityProvider`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.IdentityProvider`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/identityProviders/"
@@ -293,7 +293,7 @@ class IdentityClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.identity.models.IdpGroupMapping`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.IdpGroupMapping`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/identityProviders/{identityProviderId}/groupMappings/"
@@ -356,7 +356,7 @@ class IdentityClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.identity.models.UIPassword`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.UIPassword`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/users/{userId}/uiPassword"
@@ -426,7 +426,7 @@ class IdentityClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.identity.models.Policy`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.Policy`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/policies/"
@@ -474,7 +474,7 @@ class IdentityClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.identity.models.RegionSubscription`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.RegionSubscription`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/tenancies/{tenancyId}/regionSubscriptions"
@@ -539,7 +539,7 @@ class IdentityClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.identity.models.SwiftPassword`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.SwiftPassword`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/users/{userId}/swiftPasswords/"
@@ -628,7 +628,7 @@ class IdentityClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.identity.models.User`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.User`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/users/"
@@ -1020,7 +1020,7 @@ class IdentityClient(object):
         :param str compartment_id: (required)
             The OCID of the compartment.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.identity.models.Compartment`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.Compartment`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/compartments/{compartmentId}"
@@ -1060,7 +1060,7 @@ class IdentityClient(object):
         :param str group_id: (required)
             The OCID of the group.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.identity.models.Group`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.Group`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/groups/{groupId}"
@@ -1096,7 +1096,7 @@ class IdentityClient(object):
         :param str identity_provider_id: (required)
             The OCID of the identity provider.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.identity.models.IdentityProvider`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.IdentityProvider`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/identityProviders/{identityProviderId}"
@@ -1135,7 +1135,7 @@ class IdentityClient(object):
         :param str mapping_id: (required)
             The OCID of the group mapping.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.identity.models.IdpGroupMapping`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.IdpGroupMapping`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/identityProviders/{identityProviderId}/groupMappings/{mappingId}"
@@ -1172,7 +1172,7 @@ class IdentityClient(object):
         :param str policy_id: (required)
             The OCID of the policy.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.identity.models.Policy`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.Policy`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/policies/{policyId}"
@@ -1208,7 +1208,7 @@ class IdentityClient(object):
         :param str tenancy_id: (required)
             The OCID of the tenancy.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.identity.models.Tenancy`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.Tenancy`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/tenancies/{tenancyId}"
@@ -1244,7 +1244,7 @@ class IdentityClient(object):
         :param str user_id: (required)
             The OCID of the user.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.identity.models.User`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.User`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/users/{userId}"
@@ -1280,7 +1280,7 @@ class IdentityClient(object):
         :param str user_group_membership_id: (required)
             The OCID of the userGroupMembership.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.identity.models.UserGroupMembership`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.UserGroupMembership`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/userGroupMemberships/{userGroupMembershipId}"
@@ -1319,7 +1319,7 @@ class IdentityClient(object):
         :param str user_id: (required)
             The OCID of the user.
 
-        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.identity.models.ApiKey`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.ApiKey`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/users/{userId}/apiKeys/"
@@ -1359,7 +1359,7 @@ class IdentityClient(object):
         :param str compartment_id: (required)
             The OCID of the compartment (remember that the tenancy is simply the root compartment).
 
-        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.identity.models.AvailabilityDomain`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.AvailabilityDomain`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/availabilityDomains/"
@@ -1405,7 +1405,7 @@ class IdentityClient(object):
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
 
-        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.identity.models.Compartment`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.Compartment`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/compartments/"
@@ -1459,7 +1459,7 @@ class IdentityClient(object):
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
 
-        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.identity.models.Group`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.Group`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/groups/"
@@ -1517,7 +1517,7 @@ class IdentityClient(object):
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
 
-        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.identity.models.IdentityProvider`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.IdentityProvider`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/identityProviders/"
@@ -1568,7 +1568,7 @@ class IdentityClient(object):
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
 
-        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.identity.models.IdpGroupMapping`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.IdpGroupMapping`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/identityProviders/{identityProviderId}/groupMappings/"
@@ -1629,7 +1629,7 @@ class IdentityClient(object):
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
 
-        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.identity.models.Policy`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.Policy`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/policies/"
@@ -1673,7 +1673,7 @@ class IdentityClient(object):
         :param str tenancy_id: (required)
             The OCID of the tenancy.
 
-        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.identity.models.RegionSubscription`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.RegionSubscription`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/tenancies/{tenancyId}/regionSubscriptions"
@@ -1706,7 +1706,7 @@ class IdentityClient(object):
         Lists all the regions offered by Oracle Bare Metal Cloud Services.
 
 
-        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.identity.models.Region`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.Region`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/regions"
@@ -1737,7 +1737,7 @@ class IdentityClient(object):
         :param str user_id: (required)
             The OCID of the user.
 
-        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.identity.models.SwiftPassword`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.SwiftPassword`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/users/{userId}/swiftPasswords/"
@@ -1795,7 +1795,7 @@ class IdentityClient(object):
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
 
-        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.identity.models.UserGroupMembership`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.UserGroupMembership`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/userGroupMemberships/"
@@ -1853,7 +1853,7 @@ class IdentityClient(object):
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
 
-        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.identity.models.User`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.User`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/users/"
@@ -1952,7 +1952,7 @@ class IdentityClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.identity.models.Compartment`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.Compartment`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/compartments/{compartmentId}"
@@ -2004,7 +2004,7 @@ class IdentityClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.identity.models.Group`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.Group`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/groups/{groupId}"
@@ -2056,7 +2056,7 @@ class IdentityClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.identity.models.IdentityProvider`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.IdentityProvider`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/identityProviders/{identityProviderId}"
@@ -2111,7 +2111,7 @@ class IdentityClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.identity.models.IdpGroupMapping`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.IdpGroupMapping`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/identityProviders/{identityProviderId}/groupMappings/{mappingId}"
@@ -2166,7 +2166,7 @@ class IdentityClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.identity.models.Policy`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.Policy`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/policies/{policyId}"
@@ -2221,7 +2221,7 @@ class IdentityClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.identity.models.SwiftPassword`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.SwiftPassword`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/users/{userId}/swiftPasswords/{swiftPasswordId}"
@@ -2274,7 +2274,7 @@ class IdentityClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.identity.models.User`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.User`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/users/{userId}"
@@ -2326,7 +2326,7 @@ class IdentityClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.identity.models.User`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.User`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/users/{userId}/state/"
@@ -2394,7 +2394,7 @@ class IdentityClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.identity.models.ApiKey`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.ApiKey`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/users/{userId}/apiKeys/"

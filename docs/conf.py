@@ -159,7 +159,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, "oraclebmc.tex", "oraclebmc Documentation",
+    (master_doc, "oci.tex", "oraclebmc Documentation",
      "Oracle", "manual"),
 ]
 

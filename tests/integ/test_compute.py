@@ -3,7 +3,7 @@
 
 import time
 from . import util
-import oraclebmc
+import oci
 
 
 class TestCompute:
@@ -29,7 +29,7 @@ class TestCompute:
         vcn_name = util.random_name('python_sdk_test_compute_vcn')
         cidr_block = "10.0.0.0/16"
 
-        create_vcn_details = oraclebmc.core.models.CreateVcnDetails()
+        create_vcn_details = oci.core.models.CreateVcnDetails()
         create_vcn_details.cidr_block = cidr_block
         create_vcn_details.display_name = vcn_name
         create_vcn_details.compartment_id = util.COMPARTMENT_ID
@@ -39,13 +39,12 @@ class TestCompute:
 
         self.vcn_ocid = result.data.id
 
-        oraclebmc.wait_until(virtual_network, virtual_network.get_vcn(self.vcn_ocid), 'lifecycle_state', 'AVAILABLE',
-                             max_wait_seconds=300)
+        oci.wait_until(virtual_network, virtual_network.get_vcn(self.vcn_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=300)
 
         # Create a subnet
         subnet_name = util.random_name('python_sdk_test_compute_subnet')
 
-        create_subnet_details = oraclebmc.core.models.CreateSubnetDetails()
+        create_subnet_details = oci.core.models.CreateSubnetDetails()
         create_subnet_details.compartment_id = util.COMPARTMENT_ID
         create_subnet_details.availability_domain = util.availability_domain()
         create_subnet_details.display_name = subnet_name
@@ -56,12 +55,11 @@ class TestCompute:
         util.validate_response(result, expect_etag=True)
 
         self.subnet_ocid = result.data.id
-        oraclebmc.wait_until(virtual_network, virtual_network.get_subnet(self.subnet_ocid), 'lifecycle_state',
-                             'AVAILABLE', max_wait_seconds=300)
+        oci.wait_until(virtual_network, virtual_network.get_subnet(self.subnet_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=300)
 
         # Create a volume
         volume_name = util.random_name('python_sdk_test_compute_volume')
-        create_volume_details = oraclebmc.core.models.CreateVolumeDetails()
+        create_volume_details = oci.core.models.CreateVolumeDetails()
         create_volume_details.availability_domain = util.availability_domain()
         create_volume_details.compartment_id = util.COMPARTMENT_ID
         create_volume_details.display_name = volume_name
@@ -70,8 +68,7 @@ class TestCompute:
         util.validate_response(result)
 
         self.volume_ocid = result.data.id
-        oraclebmc.wait_until(block_storage, block_storage.get_volume(self.volume_ocid), 'lifecycle_state',
-                             'AVAILABLE', max_wait_seconds=180)
+        oci.wait_until(block_storage, block_storage.get_volume(self.volume_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=180)
 
     @util.log_test
     def subtest_instance_operations(self, compute):
@@ -79,7 +76,7 @@ class TestCompute:
         image_id = util.oracle_linux_image()
         shape = 'VM.Standard1.2'
 
-        create_instance_details = oraclebmc.core.models.LaunchInstanceDetails()
+        create_instance_details = oci.core.models.LaunchInstanceDetails()
         create_instance_details.compartment_id = util.COMPARTMENT_ID
         create_instance_details.availability_domain = util.availability_domain()
         create_instance_details.display_name = instance_name
@@ -91,14 +88,13 @@ class TestCompute:
 
         self.instance_ocid = result.data.id
 
-        oraclebmc.wait_until(compute, compute.get_instance(self.instance_ocid), 'lifecycle_state', 'RUNNING',
-                             max_wait_seconds=600)
+        oci.wait_until(compute, compute.get_instance(self.instance_ocid), 'lifecycle_state', 'RUNNING', max_wait_seconds=600)
 
         result = compute.list_instances(util.COMPARTMENT_ID)
         util.validate_response(result)
 
         instance_name = instance_name + "_updated"
-        update_instance_details = oraclebmc.core.models.UpdateInstanceDetails()
+        update_instance_details = oci.core.models.UpdateInstanceDetails()
         update_instance_details.display_name = instance_name
 
         result = compute.update_instance(self.instance_ocid, update_instance_details)
@@ -113,7 +109,7 @@ class TestCompute:
         image_id = util.windows_vm_image()
         shape = 'VM.Standard1.2'
 
-        launch_instance_details = oraclebmc.core.models.LaunchInstanceDetails()
+        launch_instance_details = oci.core.models.LaunchInstanceDetails()
         launch_instance_details.compartment_id = util.COMPARTMENT_ID
         launch_instance_details.availability_domain = util.availability_domain()
         launch_instance_details.display_name = instance_name
@@ -125,11 +121,7 @@ class TestCompute:
         util.validate_response(result, expect_etag=True)
         self.windows_instance_ocid = result.data.id
 
-        oraclebmc.wait_until(compute,
-                             compute.get_instance(self.windows_instance_ocid),
-                             'lifecycle_state',
-                             'RUNNING',
-                             max_wait_seconds=600)
+        oci.wait_until(compute, compute.get_instance(self.windows_instance_ocid), 'lifecycle_state', 'RUNNING', max_wait_seconds=600)
 
         result = compute.get_instance(self.windows_instance_ocid)
         util.validate_response(result, expect_etag=True)
@@ -174,7 +166,7 @@ class TestCompute:
     def subtest_volume_attachment_operations(self, compute):
         va_name = util.random_name('python_sdk_test_va')
 
-        attach_volume_details = oraclebmc.core.models.AttachVolumeDetails()
+        attach_volume_details = oci.core.models.AttachVolumeDetails()
         attach_volume_details.display_name = va_name
         attach_volume_details.type = 'iscsi'
         attach_volume_details.instance_id = self.instance_ocid
@@ -183,8 +175,7 @@ class TestCompute:
         result = compute.attach_volume(attach_volume_details)
         self.va_ocid = result.data.id
         util.validate_response(result, expect_etag=True)
-        oraclebmc.wait_until(compute, compute.get_volume_attachment(self.va_ocid), 'lifecycle_state', 'ATTACHED',
-                             max_wait_seconds=300)
+        oci.wait_until(compute, compute.get_volume_attachment(self.va_ocid), 'lifecycle_state', 'ATTACHED', max_wait_seconds=300)
 
         result = compute.list_volume_attachments(util.COMPARTMENT_ID, instance_id=self.instance_ocid)
         util.validate_response(result)
@@ -193,8 +184,7 @@ class TestCompute:
         util.validate_response(result, expect_etag=True)
 
         compute.detach_volume(self.va_ocid)
-        oraclebmc.wait_until(compute, compute.get_volume_attachment(self.va_ocid), 'lifecycle_state', 'DETACHED',
-                             max_wait_seconds=300)
+        oci.wait_until(compute, compute.get_volume_attachment(self.va_ocid), 'lifecycle_state', 'DETACHED', max_wait_seconds=300)
 
     @util.log_test
     def subtest_shape_operations(self, compute):
@@ -203,13 +193,12 @@ class TestCompute:
 
     @util.log_test
     def subtest_console_history_operations(self, compute):
-        capture_console_history_details = oraclebmc.core.models.CaptureConsoleHistoryDetails()
+        capture_console_history_details = oci.core.models.CaptureConsoleHistoryDetails()
         capture_console_history_details.instance_id = self.instance_ocid
         result = compute.capture_console_history(capture_console_history_details)
         self.ch_ocid = result.data.id
         util.validate_response(result, expect_etag=True)
-        oraclebmc.wait_until(compute, compute.get_console_history(self.ch_ocid), 'lifecycle_state', 'SUCCEEDED',
-                             max_wait_seconds=300)
+        oci.wait_until(compute, compute.get_console_history(self.ch_ocid), 'lifecycle_state', 'SUCCEEDED', max_wait_seconds=300)
 
         result = compute.list_console_histories(util.COMPARTMENT_ID, instance_id=self.instance_ocid)
         util.validate_response(result)
@@ -228,15 +217,14 @@ class TestCompute:
         result = compute.instance_action(self.instance_ocid, "RESET")
         util.validate_response(result)
         time.sleep(10)
-        oraclebmc.wait_until(compute, compute.get_instance(self.instance_ocid), 'lifecycle_state', 'RUNNING',
-                             max_wait_seconds=300)
+        oci.wait_until(compute, compute.get_instance(self.instance_ocid), 'lifecycle_state', 'RUNNING', max_wait_seconds=300)
         time.sleep(5)
 
     @util.log_test
     def subtest_image_operations(self, compute):
         image_name = util.random_name('python_sdk_test_image')
 
-        create_image_details = oraclebmc.core.models.CreateImageDetails()
+        create_image_details = oci.core.models.CreateImageDetails()
         create_image_details.display_name = image_name
         create_image_details.instance_id = self.instance_ocid
         create_image_details.compartment_id = util.COMPARTMENT_ID
@@ -247,7 +235,7 @@ class TestCompute:
 
         # Waiting for the image can take 20 or 30 minutes. Instead, we'll just delete the instance
         # while it's still taking the snapshot. Uncomment the wait below to wait for the image to finish.
-        # oraclebmc.wait_until(compute, compute.get_image(self.image_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=2700)
+        # oci.wait_until(compute, compute.get_image(self.image_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=2700)
 
         result = compute.list_images(util.COMPARTMENT_ID)
         util.validate_response(result)
@@ -255,7 +243,7 @@ class TestCompute:
         result = compute.get_image(self.image_ocid)
         util.validate_response(result, expect_etag=True)
 
-        update_image_details = oraclebmc.core.models.UpdateImageDetails()
+        update_image_details = oci.core.models.UpdateImageDetails()
         update_image_details.display_name = image_name + "_updated"
         result = compute.update_image(self.image_ocid, update_image_details)
         util.validate_response(result, expect_etag=True)
@@ -285,8 +273,7 @@ class TestCompute:
             try:
                 print("Deleting instance")
                 compute.terminate_instance(self.instance_ocid)
-                oraclebmc.wait_until(compute, compute.get_instance(self.instance_ocid), 'lifecycle_state', 'TERMINATED',
-                                     max_wait_seconds=600)
+                oci.wait_until(compute, compute.get_instance(self.instance_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
             except Exception as error:
                 # succeed if resource is deleted already
                 if not hasattr(error, 'status') or error.status != 404:
@@ -297,8 +284,7 @@ class TestCompute:
             try:
                 print("Deleting windows instance")
                 compute.terminate_instance(self.windows_instance_ocid)
-                oraclebmc.wait_until(compute, compute.get_instance(self.windows_instance_ocid), 'lifecycle_state',
-                                     'TERMINATED', max_wait_seconds=600)
+                oci.wait_until(compute, compute.get_instance(self.windows_instance_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
             except Exception as error:
                 # succeed if resource is deleted already
                 if not hasattr(error, 'status') or error.status != 404:
@@ -317,8 +303,7 @@ class TestCompute:
             try:
                 print("Deleting subnet")
                 virtual_network.delete_subnet(self.subnet_ocid)
-                oraclebmc.wait_until(virtual_network, virtual_network.get_subnet(self.subnet_ocid), 'lifecycle_state',
-                                     'TERMINATED', max_wait_seconds=600)
+                oci.wait_until(virtual_network, virtual_network.get_subnet(self.subnet_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
             except Exception as error:
                 # succeed if resource is deleted already
                 if not hasattr(error, 'status') or error.status != 404:
@@ -329,8 +314,7 @@ class TestCompute:
             try:
                 print("Deleting vcn")
                 virtual_network.delete_vcn(self.vcn_ocid)
-                oraclebmc.wait_until(virtual_network, virtual_network.get_vcn(self.vcn_ocid), 'lifecycle_state',
-                                     'TERMINATED', max_wait_seconds=600)
+                oci.wait_until(virtual_network, virtual_network.get_vcn(self.vcn_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
             except Exception as error:
                 # succeed if resource is deleted already
                 if not hasattr(error, 'status') or error.status != 404:

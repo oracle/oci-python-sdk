@@ -61,7 +61,7 @@ class VirtualNetworkClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.Cpe`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Cpe`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/cpes"
@@ -128,7 +128,7 @@ class VirtualNetworkClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.CrossConnect`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.CrossConnect`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/crossConnects"
@@ -191,7 +191,7 @@ class VirtualNetworkClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.CrossConnectGroup`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.CrossConnectGroup`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/crossConnectGroups"
@@ -250,7 +250,7 @@ class VirtualNetworkClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.DhcpOptions`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.DhcpOptions`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/dhcps"
@@ -310,7 +310,7 @@ class VirtualNetworkClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.Drg`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Drg`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/drgs"
@@ -368,7 +368,7 @@ class VirtualNetworkClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.DrgAttachment`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.DrgAttachment`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/drgAttachments"
@@ -437,7 +437,7 @@ class VirtualNetworkClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.InternetGateway`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.InternetGateway`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/internetGateways"
@@ -512,7 +512,7 @@ class VirtualNetworkClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.IPSecConnection`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.IPSecConnection`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/ipsecConnections"
@@ -561,7 +561,7 @@ class VirtualNetworkClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.PrivateIp`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.PrivateIp`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/privateIps"
@@ -624,7 +624,7 @@ class VirtualNetworkClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.RouteTable`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.RouteTable`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/routeTables"
@@ -687,7 +687,7 @@ class VirtualNetworkClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.SecurityList`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.SecurityList`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/securityLists"
@@ -771,7 +771,7 @@ class VirtualNetworkClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.Subnet`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Subnet`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/subnets"
@@ -851,7 +851,7 @@ class VirtualNetworkClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.Vcn`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Vcn`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/vcns"
@@ -921,7 +921,7 @@ class VirtualNetworkClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.VirtualCircuit`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VirtualCircuit`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/virtualCircuits"
@@ -1663,7 +1663,7 @@ class VirtualNetworkClient(object):
         :param str cpe_id: (required)
             The OCID of the CPE.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.Cpe`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Cpe`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/cpes/{cpeId}"
@@ -1699,7 +1699,7 @@ class VirtualNetworkClient(object):
         :param str cross_connect_id: (required)
             The OCID of the cross-connect.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.CrossConnect`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.CrossConnect`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/crossConnects/{crossConnectId}"
@@ -1735,7 +1735,7 @@ class VirtualNetworkClient(object):
         :param str cross_connect_group_id: (required)
             The OCID of the cross-connect group.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.CrossConnectGroup`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.CrossConnectGroup`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/crossConnectGroups/{crossConnectGroupId}"
@@ -1771,7 +1771,7 @@ class VirtualNetworkClient(object):
         :param str cross_connect_id: (required)
             The OCID of the cross-connect.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.LetterOfAuthority`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.LetterOfAuthority`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/crossConnects/{crossConnectId}/letterOfAuthority"
@@ -1807,7 +1807,7 @@ class VirtualNetworkClient(object):
         :param str cross_connect_id: (required)
             The OCID of the cross-connect.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.CrossConnectStatus`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.CrossConnectStatus`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/crossConnects/{crossConnectId}/status"
@@ -1843,7 +1843,7 @@ class VirtualNetworkClient(object):
         :param str dhcp_id: (required)
             The OCID for the set of DHCP options.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.DhcpOptions`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.DhcpOptions`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/dhcps/{dhcpId}"
@@ -1879,7 +1879,7 @@ class VirtualNetworkClient(object):
         :param str drg_id: (required)
             The OCID of the DRG.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.Drg`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Drg`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/drgs/{drgId}"
@@ -1915,7 +1915,7 @@ class VirtualNetworkClient(object):
         :param str drg_attachment_id: (required)
             The OCID of the DRG attachment.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.DrgAttachment`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.DrgAttachment`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/drgAttachments/{drgAttachmentId}"
@@ -1951,7 +1951,7 @@ class VirtualNetworkClient(object):
         :param str ig_id: (required)
             The OCID of the Internet Gateway.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.InternetGateway`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.InternetGateway`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/internetGateways/{igId}"
@@ -1989,7 +1989,7 @@ class VirtualNetworkClient(object):
         :param str ipsc_id: (required)
             The OCID of the IPSec connection.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.IPSecConnection`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.IPSecConnection`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/ipsecConnections/{ipscId}"
@@ -2026,7 +2026,7 @@ class VirtualNetworkClient(object):
         :param str ipsc_id: (required)
             The OCID of the IPSec connection.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.IPSecConnectionDeviceConfig`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.IPSecConnectionDeviceConfig`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/ipsecConnections/{ipscId}/deviceConfig"
@@ -2062,7 +2062,7 @@ class VirtualNetworkClient(object):
         :param str ipsc_id: (required)
             The OCID of the IPSec connection.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.IPSecConnectionDeviceStatus`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.IPSecConnectionDeviceStatus`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/ipsecConnections/{ipscId}/deviceStatus"
@@ -2101,7 +2101,7 @@ class VirtualNetworkClient(object):
         :param str private_ip_id: (required)
             The private IP's OCID.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.PrivateIp`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.PrivateIp`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/privateIps/{privateIpId}"
@@ -2137,7 +2137,7 @@ class VirtualNetworkClient(object):
         :param str rt_id: (required)
             The OCID of the route table.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.RouteTable`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.RouteTable`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/routeTables/{rtId}"
@@ -2173,7 +2173,7 @@ class VirtualNetworkClient(object):
         :param str security_list_id: (required)
             The OCID of the security list.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.SecurityList`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.SecurityList`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/securityLists/{securityListId}"
@@ -2209,7 +2209,7 @@ class VirtualNetworkClient(object):
         :param str subnet_id: (required)
             The OCID of the subnet.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.Subnet`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Subnet`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/subnets/{subnetId}"
@@ -2245,7 +2245,7 @@ class VirtualNetworkClient(object):
         :param str vcn_id: (required)
             The OCID of the VCN.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.Vcn`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Vcn`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/vcns/{vcnId}"
@@ -2281,7 +2281,7 @@ class VirtualNetworkClient(object):
         :param str virtual_circuit_id: (required)
             The OCID of the virtual circuit.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.VirtualCircuit`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VirtualCircuit`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/virtualCircuits/{virtualCircuitId}"
@@ -2320,7 +2320,7 @@ class VirtualNetworkClient(object):
         :param str vnic_id: (required)
             The OCID of the VNIC.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.Vnic`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Vnic`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/vnics/{vnicId}"
@@ -2364,7 +2364,7 @@ class VirtualNetworkClient(object):
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
-        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.core.models.Cpe`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.Cpe`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/cpes"
@@ -2416,7 +2416,7 @@ class VirtualNetworkClient(object):
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
-        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.core.models.CrossConnectGroup`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.CrossConnectGroup`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/crossConnectGroups"
@@ -2469,7 +2469,7 @@ class VirtualNetworkClient(object):
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
-        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.core.models.CrossConnectLocation`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.CrossConnectLocation`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/crossConnectLocations"
@@ -2525,7 +2525,7 @@ class VirtualNetworkClient(object):
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
-        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.core.models.CrossConnect`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.CrossConnect`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/crossConnects"
@@ -2581,7 +2581,7 @@ class VirtualNetworkClient(object):
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
-        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.core.models.CrossConnectPortSpeedShape`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.CrossConnectPortSpeedShape`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/crossConnectPortSpeedShapes"
@@ -2638,7 +2638,7 @@ class VirtualNetworkClient(object):
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
-        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.core.models.DhcpOptions`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.DhcpOptions`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/dhcps"
@@ -2698,7 +2698,7 @@ class VirtualNetworkClient(object):
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
-        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.core.models.DrgAttachment`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.DrgAttachment`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/drgAttachments"
@@ -2754,7 +2754,7 @@ class VirtualNetworkClient(object):
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
-        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.core.models.Drg`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.Drg`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/drgs"
@@ -2814,7 +2814,7 @@ class VirtualNetworkClient(object):
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
-        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.core.models.FastConnectProviderService`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.FastConnectProviderService`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/fastConnectProviderServices"
@@ -2869,7 +2869,7 @@ class VirtualNetworkClient(object):
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
-        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.core.models.InternetGateway`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.InternetGateway`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/internetGateways"
@@ -2929,7 +2929,7 @@ class VirtualNetworkClient(object):
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
-        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.core.models.IPSecConnection`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.IPSecConnection`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/ipsecConnections"
@@ -3005,7 +3005,7 @@ class VirtualNetworkClient(object):
         :param str vnic_id: (optional)
             The OCID of the VNIC.
 
-        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.core.models.PrivateIp`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.PrivateIp`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/privateIps"
@@ -3067,7 +3067,7 @@ class VirtualNetworkClient(object):
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
-        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.core.models.RouteTable`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.RouteTable`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/routeTables"
@@ -3123,7 +3123,7 @@ class VirtualNetworkClient(object):
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
-        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.core.models.SecurityList`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.SecurityList`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/securityLists"
@@ -3179,7 +3179,7 @@ class VirtualNetworkClient(object):
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
-        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.core.models.Subnet`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.Subnet`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/subnets"
@@ -3232,7 +3232,7 @@ class VirtualNetworkClient(object):
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
-        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.core.models.Vcn`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.Vcn`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/vcns"
@@ -3293,7 +3293,7 @@ class VirtualNetworkClient(object):
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
-        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.core.models.VirtualCircuitBandwidthShape`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.VirtualCircuitBandwidthShape`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/virtualCircuitBandwidthShapes"
@@ -3345,7 +3345,7 @@ class VirtualNetworkClient(object):
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
-        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.core.models.VirtualCircuit`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.VirtualCircuit`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/virtualCircuits"
@@ -3398,7 +3398,7 @@ class VirtualNetworkClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.Cpe`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Cpe`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/cpes/{cpeId}"
@@ -3450,7 +3450,7 @@ class VirtualNetworkClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.CrossConnect`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.CrossConnect`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/crossConnects/{crossConnectId}"
@@ -3503,7 +3503,7 @@ class VirtualNetworkClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.CrossConnectGroup`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.CrossConnectGroup`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/crossConnectGroups/{crossConnectGroupId}"
@@ -3558,7 +3558,7 @@ class VirtualNetworkClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.DhcpOptions`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.DhcpOptions`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/dhcps/{dhcpId}"
@@ -3610,7 +3610,7 @@ class VirtualNetworkClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.Drg`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Drg`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/drgs/{drgId}"
@@ -3663,7 +3663,7 @@ class VirtualNetworkClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.DrgAttachment`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.DrgAttachment`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/drgAttachments/{drgAttachmentId}"
@@ -3719,7 +3719,7 @@ class VirtualNetworkClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.InternetGateway`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.InternetGateway`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/internetGateways/{igId}"
@@ -3772,7 +3772,7 @@ class VirtualNetworkClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.IPSecConnection`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.IPSecConnection`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/ipsecConnections/{ipscId}"
@@ -3833,7 +3833,7 @@ class VirtualNetworkClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.PrivateIp`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.PrivateIp`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/privateIps/{privateIpId}"
@@ -3888,7 +3888,7 @@ class VirtualNetworkClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.RouteTable`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.RouteTable`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/routeTables/{rtId}"
@@ -3944,7 +3944,7 @@ class VirtualNetworkClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.SecurityList`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.SecurityList`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/securityLists/{securityListId}"
@@ -3996,7 +3996,7 @@ class VirtualNetworkClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.Subnet`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Subnet`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/subnets/{subnetId}"
@@ -4049,7 +4049,7 @@ class VirtualNetworkClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.Vcn`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Vcn`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/vcns/{vcnId}"
@@ -4118,7 +4118,7 @@ class VirtualNetworkClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.VirtualCircuit`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VirtualCircuit`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/virtualCircuits/{virtualCircuitId}"
@@ -4170,7 +4170,7 @@ class VirtualNetworkClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.Vnic`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Vnic`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/vnics/{vnicId}"

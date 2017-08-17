@@ -59,7 +59,7 @@ class BlockstorageClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.Volume`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Volume`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/volumes"
@@ -111,7 +111,7 @@ class BlockstorageClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.VolumeBackup`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VolumeBackup`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/volumeBackups"
@@ -248,7 +248,7 @@ class BlockstorageClient(object):
         :param str volume_id: (required)
             The OCID of the volume.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.Volume`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Volume`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/volumes/{volumeId}"
@@ -284,7 +284,7 @@ class BlockstorageClient(object):
         :param str volume_backup_id: (required)
             The OCID of the volume backup.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.VolumeBackup`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VolumeBackup`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/volumeBackups/{volumeBackupId}"
@@ -331,7 +331,7 @@ class BlockstorageClient(object):
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
-        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.core.models.VolumeBackup`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.VolumeBackup`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/volumeBackups"
@@ -390,7 +390,7 @@ class BlockstorageClient(object):
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
-        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oraclebmc.core.models.Volume`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.Volume`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/volumes"
@@ -445,7 +445,7 @@ class BlockstorageClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.Volume`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Volume`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/volumes/{volumeId}"
@@ -498,7 +498,7 @@ class BlockstorageClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oraclebmc.core.models.VolumeBackup`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VolumeBackup`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/volumeBackups/{volumeBackupId}"

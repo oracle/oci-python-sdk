@@ -6,8 +6,8 @@ import functools
 import random
 import time
 import traceback
-import oraclebmc
-from oraclebmc.object_storage.transfer.constants import MEBIBYTE
+import oci
+from oci.object_storage.transfer.constants import MEBIBYTE
 
 TEST_DATA_VERSION = '1'
 
@@ -99,7 +99,7 @@ def validate_service_error(result, error_message=None, debug=False):
     try:
         assert result.status != 200
         if debug:
-            assert isinstance(result.exception, oraclebmc.exceptions.ServiceError)
+            assert isinstance(result.exception, oci.exceptions.ServiceError)
             if error_message:
                 assert error_message in str(result.exception)
         else:
@@ -210,7 +210,7 @@ def ensure_test_data(api, namespace, compartment, bucket_prefix):
 
 def create_bucket(api, namespace, compartment, bucket_name, metadata=None, objects=None):
     """Deletes all buckets and objects in the given compartment."""
-    request = oraclebmc.object_storage.models.CreateBucketDetails()
+    request = oci.object_storage.models.CreateBucketDetails()
     request.name = bucket_name
     request.compartment_id = compartment
     request.metadata = metadata

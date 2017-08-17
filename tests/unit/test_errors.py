@@ -1,22 +1,22 @@
-import oraclebmc
+import oci
 import pytest
 import tests.util
 
 
 def test_invalid_compartment(identity):
-    with pytest.raises(oraclebmc.exceptions.ServiceError) as excinfo:
+    with pytest.raises(oci.exceptions.ServiceError) as excinfo:
         identity.list_users('invalid_compartment')
     tests.util.validate_service_error(excinfo.value, 404, "NotAuthorizedOrNotFound", "Authorization failed or requested resource not found")
 
 
 def test_invalid_policy(identity, config):
-    request = oraclebmc.identity.models.CreatePolicyDetails()
+    request = oci.identity.models.CreatePolicyDetails()
     request.compartment_id = config["tenancy"]
     request.name = 'invalid_policy'
     request.description = 'create should fail'
     request.statements = ['ALLOW group NotARealGroup inspect all-resources ON TENANCY']
 
-    with pytest.raises(oraclebmc.exceptions.ServiceError) as excinfo:
+    with pytest.raises(oci.exceptions.ServiceError) as excinfo:
         identity.create_policy(request)
 
     tests.util.validate_service_error(excinfo.value, 400, "InvalidParameter", "")

@@ -1,10 +1,10 @@
-import oraclebmc
+import oci
 
 
 def test_client_call_success(capfd, config):
     config["log_requests"] = True
     config["additional_user_agent"] = 'example_extra_user_agent_text'
-    identity = oraclebmc.identity.IdentityClient(config)
+    identity = oci.identity.IdentityClient(config)
     response = identity.list_policies(config["tenancy"])
     assert response.status == 200
 

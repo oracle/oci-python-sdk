@@ -1,4 +1,4 @@
-import oraclebmc
+import oci
 
 import pytest
 
@@ -14,7 +14,7 @@ HARDCODED_REGION = "us-phoenix-1"
 
 
 def test_load_default_profile():
-    config = oraclebmc.config.from_file(file_location=get_resource_path('config'))
+    config = oci.config.from_file(file_location=get_resource_path('config'))
 
     # check some default properties
     assert config["log_requests"] is False
@@ -29,7 +29,7 @@ def test_load_default_profile():
 
 
 def test_child_profile():
-    config = oraclebmc.config.from_file(
+    config = oci.config.from_file(
         file_location=get_resource_path('config'), profile_name='DEBUG')
 
     # check properties inherited from the default profile
@@ -46,30 +46,30 @@ def test_child_profile():
 def test_extra_config_values():
     # Extra config is passed along; this may be customer-specific
     # config for some subclass of the clients.
-    config = oraclebmc.config.from_file(
+    config = oci.config.from_file(
         file_location=get_resource_path('config'), profile_name='INVALID_PARAMETER')
     assert config["foo"] == "bar"
 
 
 def test_file_not_found():
-    with pytest.raises(oraclebmc.exceptions.ConfigFileNotFound) as excinfo:
-        oraclebmc.config.from_file(file_location='does_not_exist')
+    with pytest.raises(oci.exceptions.ConfigFileNotFound) as excinfo:
+        oci.config.from_file(file_location='does_not_exist')
     assert 'does_not_exist' in str(excinfo.value)
 
 
 def test_profile_not_found():
-    with pytest.raises(oraclebmc.exceptions.ProfileNotFound) as excinfo:
-        oraclebmc.config.from_file(file_location=get_resource_path('config'), profile_name='does_not_exist')
+    with pytest.raises(oci.exceptions.ProfileNotFound) as excinfo:
+        oci.config.from_file(file_location=get_resource_path('config'), profile_name='does_not_exist')
     assert 'does_not_exist' in str(excinfo.value)
 
 
 def test_new_region():
-    config = oraclebmc.config.from_file(
+    config = oci.config.from_file(
         get_resource_path('config'),
         profile_name='NEW_REGION')
 
     # Creating the client (which builds an endpoint)
-    client = oraclebmc.identity.IdentityClient(config)
+    client = oci.identity.IdentityClient(config)
     assert config["region"] in client.base_client.endpoint
 
 
@@ -82,8 +82,8 @@ def test_missing_required():
         "fingerprint": "00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00",
         "key_file": "~/.oraclebmc/config"
     }
-    with pytest.raises(oraclebmc.exceptions.InvalidConfig) as excinfo:
-        oraclebmc.config.validate_config(config)
+    with pytest.raises(oci.exceptions.InvalidConfig) as excinfo:
+        oci.config.validate_config(config)
 
     assert excinfo.value.errors == {
         "user": "malformed",
@@ -102,8 +102,8 @@ def test_manual_config_doesnt_require_optional_fields():
     }
 
     # validate that creating client doesn't throw when optional fields are not present in config
-    oraclebmc.identity.IdentityClient(config)
+    oci.identity.IdentityClient(config)
 
 
 def test_config_get_value_or_default():
-    assert oraclebmc.config.get_config_value_or_default({}, "additional_user_agent") == oraclebmc.config.DEFAULT_CONFIG["additional_user_agent"]
+    assert oci.config.get_config_value_or_default({}, "additional_user_agent") == oci.config.DEFAULT_CONFIG["additional_user_agent"]

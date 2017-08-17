@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 
-import oraclebmc
+import oci
 import os
 import shutil
 here = os.path.abspath(os.path.dirname(__file__))
 dist = os.path.join(here, "..", "dist")
 # The name of the folder that the zip unpacks into
-zip_folder = "oracle-bmcs-python-sdk"
+zip_folder = "oci-python-sdk"
 # The name of the zip file itself
-zip_name = "oracle-bmcs-python-sdk-{v}".format(v=oraclebmc.__version__)
+zip_name = "oci-python-sdk-{v}".format(v=oci.__version__)
 
 
 def copy(*src_path):
@@ -29,7 +29,7 @@ os.mkdir(os.path.join(dist, zip_folder))
 copy("..", "LICENSE.txt")
 copy("..", "CHANGELOG.rst")
 copy("..", "examples")
-copy("..", "dist", "oraclebmc-{v}-py2.py3-none-any.whl".format(v=oraclebmc.__version__))
+copy("..", "dist", "oci-{v}-py2.py3-none-any.whl".format(v=oci.__version__))
 
 # 2. zip target folder so that unzipping doesn't dump artifacts in CWD
 shutil.make_archive(

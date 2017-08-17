@@ -1,11 +1,11 @@
-import oraclebmc
+import oci
 
 
 def test_response():
     status = "mystatus"
     headers = {'h1': 'h1val', 'opc-next-page': 'next!', 'opc-request-id': 'myid'}
     data = 'testdata'
-    request = oraclebmc.Request(
+    request = oci.Request(
         'method',
         'url',
         'query_params',
@@ -14,7 +14,7 @@ def test_response():
         'response_type'
     )
 
-    response = oraclebmc.Response(status, headers, data, request)
+    response = oci.Response(status, headers, data, request)
 
     assert status == response.status
     assert 'h1val' == response.headers['h1']
@@ -28,7 +28,7 @@ def test_response_none_headers():
     headers = None
     data = 'testdata'
 
-    response = oraclebmc.Response(status, headers, data, None)
+    response = oci.Response(status, headers, data, None)
 
     assert status == response.status
     assert response.next_page is None
@@ -41,7 +41,7 @@ def test_response_empty_headers():
     headers = {}
     data = 'testdata'
 
-    response = oraclebmc.Response(status, headers, data, None)
+    response = oci.Response(status, headers, data, None)
 
     assert status == response.status
     assert response.next_page is None

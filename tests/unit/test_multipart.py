@@ -5,7 +5,7 @@ import hashlib
 import base64
 import pytest
 import os
-from oraclebmc.object_storage import MultipartObjectAssembler
+from oci.object_storage import MultipartObjectAssembler
 
 MEBIBYTE = 1024 * 1024
 CHUNK = 128 * MEBIBYTE

@@ -3,7 +3,7 @@
 
 import random
 from . import util
-import oraclebmc
+import oci
 
 
 class TestIdentity:
@@ -32,7 +32,7 @@ class TestIdentity:
         self.validate_response(result, expect_etag=True)
 
         update_description = 'Compartment used by Python SDK integration tests. ' + str(random.randint(0, 1000000))
-        update_compartment_details = oraclebmc.identity.models.UpdateCompartmentDetails()
+        update_compartment_details = oci.identity.models.UpdateCompartmentDetails()
         update_compartment_details.description = update_description
         result = identity.update_compartment(util.COMPARTMENT_ID, update_compartment_details)
 
@@ -43,7 +43,7 @@ class TestIdentity:
         self.user_name = util.random_name('python_sdk_test_user')
         self.user_description = 'Created by Python SDK identity tests.'
 
-        create_user_details = oraclebmc.identity.models.CreateUserDetails()
+        create_user_details = oci.identity.models.CreateUserDetails()
         create_user_details.name = self.user_name
         create_user_details.description = self.user_description
         create_user_details.compartment_id = config['tenancy']
@@ -57,12 +57,12 @@ class TestIdentity:
         assert result.headers["opc-next-page"]
 
         self.user_description = 'UPDATED ' + self.user_description
-        update_user_details = oraclebmc.identity.models.UpdateUserDetails()
+        update_user_details = oci.identity.models.UpdateUserDetails()
         update_user_details.description = self.user_description
         result = identity.update_user(self.user_ocid, update_user_details)
         self.validate_response(result, extra_validation=self.validate_user, expect_etag=True)
 
-        update_state_details = oraclebmc.identity.models.UpdateStateDetails()
+        update_state_details = oci.identity.models.UpdateStateDetails()
         update_state_details.blocked = False
         result = identity.update_user_state(self.user_ocid, update_state_details)
         self.validate_response(result, extra_validation=self.validate_user, expect_etag=True)
@@ -74,7 +74,7 @@ class TestIdentity:
         self.group_name = util.random_name('python_sdk_test_group')
         self.group_description = 'Created by Python SDK identity tests.'
 
-        create_group_details = oraclebmc.identity.models.CreateGroupDetails()
+        create_group_details = oci.identity.models.CreateGroupDetails()
         create_group_details.name = self.group_name
         create_group_details.description = self.group_description
         create_group_details.compartment_id = config['tenancy']
@@ -87,7 +87,7 @@ class TestIdentity:
         self.validate_response(result, extra_validation=self.validate_group)
 
         self.group_description = 'UPDATED ' + self.user_description
-        update_group_details = oraclebmc.identity.models.UpdateGroupDetails()
+        update_group_details = oci.identity.models.UpdateGroupDetails()
         update_group_details.description = self.group_description
         result = identity.update_group(self.group_ocid, update_group_details)
         self.validate_response(result, extra_validation=self.validate_group, expect_etag=True)
@@ -96,7 +96,7 @@ class TestIdentity:
         self.validate_response(result, extra_validation=self.validate_group, expect_etag=True)
 
     def subtest_user_group_membership_operations(self, identity, config):
-        add_user_to_group_details = oraclebmc.identity.models.AddUserToGroupDetails()
+        add_user_to_group_details = oci.identity.models.AddUserToGroupDetails()
         add_user_to_group_details.group_id = self.group_ocid
         add_user_to_group_details.user_id = self.user_ocid
         result = identity.add_user_to_group(add_user_to_group_details)
@@ -125,7 +125,7 @@ P8ZM9xRukuJ4bnPTe8olOFB8UCCkAEmkUxtZI4vF90HvDKDOV0KY4OH5YESY6apH
 3QIDAQAB
 -----END PUBLIC KEY-----"""
 
-        create_api_key_details = oraclebmc.identity.models.CreateApiKeyDetails()
+        create_api_key_details = oci.identity.models.CreateApiKeyDetails()
         create_api_key_details.key = public_key
         result = identity.upload_api_key(self.user_ocid, create_api_key_details)
         self.validate_response(result)
@@ -150,7 +150,7 @@ P8ZM9xRukuJ4bnPTe8olOFB8UCCkAEmkUxtZI4vF90HvDKDOV0KY4OH5YESY6apH
 
     def subtest_swift_password_operations(self, identity):
         description = "Password created by Python SDK integration tests."
-        create_swift_password_details = oraclebmc.identity.models.CreateSwiftPasswordDetails()
+        create_swift_password_details = oci.identity.models.CreateSwiftPasswordDetails()
         create_swift_password_details.description = description
         result = identity.create_swift_password(create_swift_password_details, self.user_ocid)
         self.validate_response(result, expect_etag=True)
@@ -160,7 +160,7 @@ P8ZM9xRukuJ4bnPTe8olOFB8UCCkAEmkUxtZI4vF90HvDKDOV0KY4OH5YESY6apH
         assert description == result.data.description
 
         description = description + " UPDATED"
-        update_swift_password_details = oraclebmc.identity.models.UpdateSwiftPasswordDetails()
+        update_swift_password_details = oci.identity.models.UpdateSwiftPasswordDetails()
         update_swift_password_details.description = description
         result = identity.update_swift_password(self.user_ocid, password_ocid, update_swift_password_details)
         self.validate_response(result, expect_etag=True)
@@ -180,7 +180,7 @@ P8ZM9xRukuJ4bnPTe8olOFB8UCCkAEmkUxtZI4vF90HvDKDOV0KY4OH5YESY6apH
         statement_b = "Allow group {group_name} to inspect virtual-network-family in compartment {compartment_name}".format(
             group_name=self.group_name, compartment_name=util.COMPARTMENT_NAME)
 
-        create_policy_details = oraclebmc.identity.models.CreatePolicyDetails()
+        create_policy_details = oci.identity.models.CreatePolicyDetails()
         create_policy_details.name = policy_name
         create_policy_details.compartment_id = config['tenancy']
         create_policy_details.description = policy_description
@@ -192,7 +192,7 @@ P8ZM9xRukuJ4bnPTe8olOFB8UCCkAEmkUxtZI4vF90HvDKDOV0KY4OH5YESY6apH
 
         # Update description only.
         policy_description = policy_description + "UPDATED!"
-        update_policy_details = oraclebmc.identity.models.UpdatePolicyDetails()
+        update_policy_details = oci.identity.models.UpdatePolicyDetails()
         update_policy_details.description = policy_description
         result = identity.update_policy(policy_ocid, update_policy_details)
         self.validate_response(result, expect_etag=True)
@@ -202,7 +202,7 @@ P8ZM9xRukuJ4bnPTe8olOFB8UCCkAEmkUxtZI4vF90HvDKDOV0KY4OH5YESY6apH
         version_date = "2016-01-01"
 
         # Update statements and version_date
-        update_policy_details = oraclebmc.identity.models.UpdatePolicyDetails()
+        update_policy_details = oci.identity.models.UpdatePolicyDetails()
         update_policy_details.statements = statements
         update_policy_details.version_date = version_date
         result = identity.update_policy(policy_ocid, update_policy_details)
@@ -213,7 +213,7 @@ P8ZM9xRukuJ4bnPTe8olOFB8UCCkAEmkUxtZI4vF90HvDKDOV0KY4OH5YESY6apH
 
         etag = result.headers['etag']
         # Set incorrect etag when updating statements
-        update_policy_details = oraclebmc.identity.models.UpdatePolicyDetails()
+        update_policy_details = oci.identity.models.UpdatePolicyDetails()
         update_policy_details.statements = statements
         update_policy_details.version_date = version_date
         try:
@@ -223,7 +223,7 @@ P8ZM9xRukuJ4bnPTe8olOFB8UCCkAEmkUxtZI4vF90HvDKDOV0KY4OH5YESY6apH
 
         # Set incorrect etag when updating description
         policy_description = policy_description + " updated again"
-        update_policy_details = oraclebmc.identity.models.UpdatePolicyDetails()
+        update_policy_details = oci.identity.models.UpdatePolicyDetails()
         update_policy_details.description = policy_description
         try:
             identity.update_policy(policy_ocid, update_policy_details, if_match='incorrect_etag')
@@ -233,7 +233,7 @@ P8ZM9xRukuJ4bnPTe8olOFB8UCCkAEmkUxtZI4vF90HvDKDOV0KY4OH5YESY6apH
         # Set correct etag when updating statements.
         # Remove statement a, clear the version date
         statements = [statement_b]
-        update_policy_details = oraclebmc.identity.models.UpdatePolicyDetails()
+        update_policy_details = oci.identity.models.UpdatePolicyDetails()
         update_policy_details.statements = statements
         result = identity.update_policy(policy_ocid, update_policy_details, if_match=etag)
         self.validate_response(result, expect_etag=True)

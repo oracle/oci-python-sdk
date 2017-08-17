@@ -29,7 +29,7 @@ class Response(object):
         """
         The corresponding request for this response.
 
-        :type: :class:`~oraclebmc.request.Request`
+        :type: :class:`~oci.request.Request`
         """
 
         self.next_page = None
