@@ -138,7 +138,7 @@ class Signer(requests.auth.AuthBase):
     .. code-block:: python
 
         import requests
-        from oraclebmc import Signer
+        from oci import Signer
 
         auth = Signer(...)
         resp = requests.get("https://...", auth=auth)

@@ -9,7 +9,7 @@ clean:
 .PHONY: docs
 docs:
 	@echo Generating HTML docs. Note that this will use the installed
-	@echo version of OracleBMC, so you might want to run gen, build, and
+	@echo version of OCI, so you might want to run gen, build, and
 	@echo install first.
 	cd docs && make html
 	@echo View the docs at docs/_build/html/index.html
@@ -37,9 +37,9 @@ build:
 
 .PHONY: install
 install:
-	@echo Uninstalling then reinstalling OracleBMC whl.
-	pip uninstall -y oraclebmc || true
-	pip install dist/oraclebmc-*.whl
+	@echo Uninstalling then reinstalling OCI whl.
+	pip uninstall -y oci || true
+	pip install dist/oci-*.whl
 
 .PHONY: release-test
 release-test:

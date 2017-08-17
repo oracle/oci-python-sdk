@@ -80,7 +80,7 @@ def test_missing_required():
         # missing "region"
         # valid fingerprint
         "fingerprint": "00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00",
-        "key_file": "~/.oraclebmc/config"
+        "key_file": "~/.oci/config"
     }
     with pytest.raises(oci.exceptions.InvalidConfig) as excinfo:
         oci.config.validate_config(config)

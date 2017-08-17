@@ -101,10 +101,10 @@ def test_load_private_key_missing_password(private_key):
 def test_expand_user_in_private_key_file(api_key, private_key_file, pass_phrase):
     tenancy, user, fingerprint = api_key.split("/")
     with pytest.raises(IOError) as excinfo:
-        Signer(tenancy, user, fingerprint, "~/.oraclebmc/a_key_that_doesnt_exist.pem", pass_phrase)
+        Signer(tenancy, user, fingerprint, "~/.oci/a_key_that_doesnt_exist.pem", pass_phrase)
 
     assert "~" not in str(excinfo.value)
-    assert "/.oraclebmc/a_key_that_doesnt_exist.pem" in str(excinfo.value)
+    assert "/.oci/a_key_that_doesnt_exist.pem" in str(excinfo.value)
 
 
 @pytest.mark.parametrize("encoding", ["pem", "der"])

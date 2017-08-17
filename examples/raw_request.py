@@ -4,7 +4,7 @@ import requests
 from oci.config import from_file
 from oci.signer import Signer
 
-config = from_file('~/.oraclebmc/config')
+config = from_file('~/.oci/config')
 auth = Signer(
     tenancy=config['tenancy'],
     user=config['user'],

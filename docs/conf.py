@@ -19,14 +19,14 @@ extensions = [
 master_doc = "index"
 
 # General information about the project.
-project = "oraclebmc"
+project = "oci"
 copyright = "2016, 2017, Oracle"
 author = "Oracle"
 
 try:
-    release = pkg_resources.get_distribution("oraclebmc").version
+    release = pkg_resources.get_distribution("oci").version
 except pkg_resources.DistributionNotFound:
-    print("To build the documentation, The distribution information of oraclebmc")
+    print("To build the documentation, The distribution information of oci")
     print("Has to be available.  Either install the package into your")
     print("development environment or run 'setup.py develop' to setup the")
     print("metadata.  A virtualenv is recommended!")
@@ -61,7 +61,7 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 # The name for this set of Sphinx documents.
 # "<project> v<release> documentation" by default.
 #
-# html_title = 'oraclebmc vCURRENT_VER'
+# html_title = 'oci vCURRENT_VER'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #
@@ -133,7 +133,7 @@ html_search_language = language
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "oraclebmcdoc"
+htmlhelp_basename = "ocidoc"
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -159,7 +159,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, "oci.tex", "oraclebmc Documentation",
+    (master_doc, "oci.tex", "oci Documentation",
      "Oracle", "manual"),
 ]
 
@@ -201,7 +201,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, "oraclebmc", "oraclebmc Documentation",
+    (master_doc, "oci", "oci Documentation",
      [author], 1)
 ]
 
@@ -216,8 +216,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, "oraclebmc", "oraclebmc Documentation",
-     author, "oraclebmc", "One line description of project.",
+    (master_doc, "oci", "oci Documentation",
+     author, "oci", "One line description of project.",
      "Miscellaneous"),
 ]
 

@@ -15,7 +15,7 @@ pip install -e .
 echo Python version
 python --version
 
-SDK_VERSION=$(tail -1 src/oraclebmc/version.py | cut -d '"' -f2)
+SDK_VERSION=$(tail -1 src/oci/version.py | cut -d '"' -f2)
 echo SDK Version Number $SDK_VERSION
 
 echo Building Docs
@@ -33,8 +33,8 @@ else
     echo "No critical errors found during sphinx build.";
 fi
 
-mkdir -p dist/oracle-bmcs-python-sdk-docs-$SDK_VERSION/
-cp -r docs/_build/html/* dist/oracle-bmcs-python-sdk-docs-$SDK_VERSION/
+mkdir -p dist/oci-python-sdk-docs-$SDK_VERSION/
+cp -r docs/_build/html/* dist/oci-python-sdk-docs-$SDK_VERSION/
 
 echo Running Tests
 
@@ -53,13 +53,13 @@ make build
 # conflicts.
 DEV_VERSION=$SDK_VERSION.$BUILD_NUMBER
 mkdir -p dist/dev/
-cp dist/oraclebmc-$SDK_VERSION-py2.py3-none-any.whl dist/dev/oraclebmc-$DEV_VERSION-py2.py3-none-any.whl
-cp dist/oracle-bmcs-python-sdk-$SDK_VERSION.zip dist/dev/oracle-bmcs-python-sdk-$DEV_VERSION.zip
+cp dist/oci-$SDK_VERSION-py2.py3-none-any.whl dist/dev/oci-$DEV_VERSION-py2.py3-none-any.whl
+cp dist/oci-python-sdk-$SDK_VERSION.zip dist/dev/oci-python-sdk-$DEV_VERSION.zip
 
-pushd dist/oracle-bmcs-python-sdk-docs-$SDK_VERSION
-zip -r ../oracle-bmcs-python-sdk-docs-$SDK_VERSION.zip .
+pushd dist/oci-python-sdk-docs-$SDK_VERSION
+zip -r ../oci-python-sdk-docs-$SDK_VERSION.zip .
 popd
-cp dist/oracle-bmcs-python-sdk-docs-$SDK_VERSION.zip dist/dev/oracle-bmcs-python-sdk-docs-$DEV_VERSION.zip
+cp dist/oci-python-sdk-docs-$SDK_VERSION.zip dist/dev/oci-python-sdk-docs-$DEV_VERSION.zip
 
 
 echo Contents of dist folder

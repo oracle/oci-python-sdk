@@ -21,7 +21,7 @@ virtualenv .sdk-venv
 echo Python version
 python --version
 
-SDK_VERSION=$(tail -1 .python-sdk-github/src/oraclebmc/version.py | cut -d '"' -f2)
+SDK_VERSION=$(tail -1 .python-sdk-github/src/oci/version.py | cut -d '"' -f2)
 echo SDK Version Number $SDK_VERSION
 
 # build wheel to ensure it can be packaged correctly

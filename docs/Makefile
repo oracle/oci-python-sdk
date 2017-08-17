@@ -111,8 +111,8 @@ devhelp:
 	@echo
 	@echo "Build finished."
 	@echo "To view the help file:"
-	@echo "# mkdir -p $$HOME/.local/share/devhelp/oraclebmc"
-	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/oraclebmc"
+	@echo "# mkdir -p $$HOME/.local/share/devhelp/oci"
+	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/oci"
 	@echo "# devhelp"
 
 .PHONY: epub
