@@ -1,4 +1,4 @@
-Contributing to the Oracle Bare Metal Cloud Services Python SDK
+Contributing to the Oracle Cloud Infrastructure Python SDK
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.*

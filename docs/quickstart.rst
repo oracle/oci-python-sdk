@@ -7,7 +7,7 @@ Clients only require a valid config object:
 
 .. code-block:: pycon
 
-    >>> from oraclebmc.identity import IdentityClient
+    >>> from oci.identity import IdentityClient
     >>> identity = IdentityClient(config)
 
 ================================
@@ -23,22 +23,22 @@ Let's create a new user and group, and add the user to the group.  Then we'll li
 finally clean up the user and group we created.
 
 First, we'll need to create a valid config object and service client.  If you haven't set up a config file, head over
-to the :ref:`Configuration <configuration>` section to create one.  We'll use the default location ``~/.oraclebmc/config``
+to the :ref:`Configuration <configuration>` section to create one.  We'll use the default location ``~/.oci/config``
 and default profile name ``DEFAULT`` to create an Identity client.  Since we'll be using the root compartment
 (or tenancy) for most operations, let's also extract that from the config object:
 
 .. code-block:: pycon
 
-    >>> import oraclebmc
-    >>> config = oraclebmc.config.from_file()
-    >>> identity = oraclebmc.identity.IdentityClient(config)
+    >>> import oci
+    >>> config = oci.config.from_file()
+    >>> identity = oci.identity.IdentityClient(config)
     >>> compartment_id = config["tenancy"]
 
 Next we'll need to populate an instance of the ``CreateGroupDetails`` model with our request, and then send it:
 
 .. code-block:: pycon
 
-    >>> from oraclebmc.identity.models import CreateGroupDetails
+    >>> from oci.identity.models import CreateGroupDetails
     >>> request = CreateGroupDetails()
     >>> request.compartment_id = compartment_id
     >>> request.name = "my-test-group"
@@ -53,7 +53,7 @@ Creating a user is very similar:
 
 .. code-block:: pycon
 
-    >>> from oraclebmc.identity.models import CreateUserDetails
+    >>> from oci.identity.models import CreateUserDetails
     >>> request = CreateUserDetails()
     >>> request.compartment_id = compartment_id
     >>> request.name = "my-test-user"
@@ -66,7 +66,7 @@ Using the ids from the ``group`` and ``user`` above, we can add the user to the 
 
 .. code-block:: pycon
 
-    >>> from oraclebmc.identity.models import AddUserToGroupDetails
+    >>> from oci.identity.models import AddUserToGroupDetails
     >>> request = AddUserToGroupDetails()
     >>> request.group_id = group.data.id
     >>> request.user_id = user.data.id
@@ -163,14 +163,14 @@ When using object storage, you'll need to provide a namespace, in addition to yo
 
 .. code-block:: pycon
 
-    >>> object_storage = oraclebmc.object_storage.ObjectStorageClient(config)
+    >>> object_storage = oci.object_storage.ObjectStorageClient(config)
     >>> namespace = object_storage.get_namespace().data
 
 To upload an object, we'll create a bucket:
 
 .. code-block:: pycon
 
-    >>> from oraclebmc.object_storage.models import CreateBucketDetails
+    >>> from oci.object_storage.models import CreateBucketDetails
     >>> request = CreateBucketDetails()
     >>> request.compartment_id = compartment_id
     >>> request.name = "MyTestBucket"
@@ -207,7 +207,7 @@ And to get it back:
 ============
 
 Next, head to the `User Guides`_ or jump right into the :ref:`API Reference <api-reference>`
-to explore the available operations for each service, and their parameters. Additional Python examples can be found on `GitHub <https://github.com/oracle/bmcs-python-sdk/tree/master/examples>`_.
+to explore the available operations for each service, and their parameters. Additional Python examples can be found on `GitHub <https://github.com/oracle/oci-python-sdk/tree/master/examples>`_.
 
 
 .. note::

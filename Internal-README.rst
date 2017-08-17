@@ -133,7 +133,7 @@ at 'tests/resources/config'.  You can change this with the ``--config-file``
 and ``--config-profile`` options::
 
     # Use a different config file, still using the DEFAULT profile
-    tox -- --config-file ~/.oraclebmc/r2config
+    tox -- --config-file ~/.oci/r2config
 
     # Using a different profile in the default config file
     tox -- --config-profile R2Testing

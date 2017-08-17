@@ -2,32 +2,32 @@ Raw Requests
 ~~~~~~~~~~~~
 
 The Python SDK exposes a custom :class:`requests.auth.AuthBase` which you can use to sign non-standard calls.
-This can be helpful if you need to make a BMCS- authenticated request to an alternate endpoint or to a
-BMCS API not yet supported in the SDK.
+This can be helpful if you need to make a OCI- authenticated request to an alternate endpoint or to a
+OCI API not yet supported in the SDK.
 
 ===================
  Creating a Signer
 ===================
 
 Constructing a Signer instance requires a few pieces of information.  By default, the SDK uses the values in
-the config file at ``~/.oraclebmc/config``.  You can manually specify the required fields, or use a config loader
+the config file at ``~/.oci/config``.  You can manually specify the required fields, or use a config loader
 to pull in the values from a file:
 
 .. code-block:: python
 
-    from oraclebmc.signer import Signer
+    from oci.signer import Signer
     auth = Signer(
         tenancy='ocid1.tenancy.oc1..aaaaaaaa[...]',
         user='ocid1.user.oc1..aaaaaaaa[...]',
         fingerprint='20:3b:97:13:55:1c:[...]',
-        private_key_file_location='~/.oraclebmc/bmcs_api_key.pem',
+        private_key_file_location='~/.oci/oci_api_key.pem',
         pass_phrase='hunter2'  # optional
     )
 
 
     # Or load directly from a file
-    from oraclebmc.config import from_file
-    config = from_file('~/.oraclebmc/config')
+    from oci.config import from_file
+    config = from_file('~/.oci/config')
     auth = Signer(
         tenancy=config['tenancy'],
         user=config['user'],
