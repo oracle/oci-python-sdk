@@ -31,7 +31,7 @@ This is the Python SDK for Oracle Cloud Infrastructure. Python 2.7+ and 3.5+ are
 
 The project is open source and maintained by Oracle Corp. The home page for the project is `here`__.
 
-__ https://oracle-bare-metal-cloud-services-python-sdk.readthedocs.io/en/latest/index.html
+__ https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/index.html
 
 ============
 Installation
@@ -44,7 +44,7 @@ Installation
 
 See `the installation guide`__ for installation troubleshooting and alternative install methods.
 
-__ https://oracle-bare-metal-cloud-services-python-sdk.readthedocs.io/en/latest/installation.html
+__ https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/installation.html
 
 ========
 Examples
