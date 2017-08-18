@@ -34,6 +34,7 @@ To get started, head over to the :ref:`installation instructions <install>` or s
     installation
     configuration
     forward-compatibility
+    backward-compatibility
     quickstart
     parallel-ops
     upload-manager
