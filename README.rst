@@ -46,6 +46,66 @@ See `the installation guide`__ for installation troubleshooting and alternative 
 
 __ https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/installation.html
 
+============
+Development
+============
+
+Getting Started
+===============
+Assuming that you have Python and `virtualenv` installed, set up your environment and install the required dependencies like this:
+
+.. code-block:: sh
+
+    git clone https://github.com/oracle/oci-python-sdk.git
+    cd oci-python-sdk
+    virtualenv oci-python-sdk-env
+    . oci-python-sdk-env/bin/activate
+    pip install -r requirements.txt
+    pip install -e .
+
+You should also set up your configuration files as described `here`__
+
+__ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdkconfig.htm 
+
+Running Tests
+=============
+The SDK uses `pytest` as its test framework. You can run tests against Python 2.7 Python 3.5 using the `tox` command. Note that this requires that you have those versions of Python installed, 
+otherwise you must pass `-e` or run tests directly:
+
+.. code-block:: sh
+
+    # This will run tests against all configured Pythons in tox.ini (currently 2.7 and 3.5). You need to have those versions installed
+    tox
+
+    # This will run tests against a specific Python versions
+    tox -e py27
+
+If you wish to run an individual test then you can run:
+
+.. code-block:: sh
+
+    py.test -s tests/integ/test_launch_instance_tutorial.py
+
+Generating Documentation
+========================
+Sphinx is used for documentation. You can generate HTML locally with the following:
+
+.. code-block:: sh
+
+    pip install -r requirements.txt
+    cd docs
+    make html
+
+Generating the wheel
+====================
+The SDK is packaged as a wheel. In order to generate the wheel you can run:
+
+.. code-block:: sh
+
+    python setup.py sdist bdist_wheel
+
+This wheel can then be installed via `pip`.
+
 ========
 Examples
 ========
