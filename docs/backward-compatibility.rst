@@ -1,5 +1,14 @@
 .. _backward-compatibility:
 
+.. raw:: html
+
+    <script type='text/javascript'>
+        var oldDocsHost = 'oracle-bare-metal-cloud-services-python-sdk';
+        if (window.location.href.indexOf(oldDocsHost) != -1) {
+            window.location.href = 'https://oracle-bare-metal-cloud-services-python-sdk.readthedocs.io/en/latest/deprecation-notice.html';
+        }
+    </script>
+
 Backward Compatibility
 ~~~~~~~~~~~~~~~~~~~~~~
 The top level namespace for the Python SDK has been changed from ``oraclebmc`` to ``oci``, so all of the documentation now references ``oci``. If you installed the package using ``pip install oraclebmc`` you can continue to reference ``oraclebmc`` in your code and when interpreting the documentation you can replace ``oci`` with ``oraclebmc`` (i.e. if there is a class defined in the docs as ``oci.base_client.BaseClient`` there will also exist a class ``oraclebmc.base_client.BaseClient``).
