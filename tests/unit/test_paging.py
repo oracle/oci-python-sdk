@@ -1,3 +1,6 @@
+PAGE_SIZE = 10
+APPROX_POLICIES = 150
+
 def test_manual_paging(identity, config):
     request_number = 0
     previous_first_ocid = None
@@ -5,9 +8,9 @@ def test_manual_paging(identity, config):
 
     while True:
         if request_number == 0:
-            response = identity.list_users(config["tenancy"], limit=2)
+            response = identity.list_users(config["tenancy"], limit=PAGE_SIZE)
         else:
-            response = identity.list_users(config["tenancy"], limit=2, page=next_page)
+            response = identity.list_users(config["tenancy"], limit=PAGE_SIZE, page=next_page)
 
         if not response.has_next_page:
             break
@@ -16,7 +19,7 @@ def test_manual_paging(identity, config):
         request_number += 1
 
         # Somethings probably wrong if we go past 50 requests.
-        assert(request_number < 50)
+        assert(request_number <= (APPROX_POLICIES / PAGE_SIZE))
         assert response.status == 200
         assert previous_first_ocid != response.data[0].id
 

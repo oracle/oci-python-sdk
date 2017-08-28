@@ -188,7 +188,7 @@ P8ZM9xRukuJ4bnPTe8olOFB8UCCkAEmkUxtZI4vF90HvDKDOV0KY4OH5YESY6apH
         result = identity.create_policy(create_policy_details)
         policy_ocid = result.data.id
         self.validate_response(result, expect_etag=True)
-        assert statement_a in result.data.statements
+        self.check_policy_statements_case_insensitive(statement_a, result.data.statements)
 
         # Update description only.
         policy_description = policy_description + "UPDATED!"
@@ -196,7 +196,7 @@ P8ZM9xRukuJ4bnPTe8olOFB8UCCkAEmkUxtZI4vF90HvDKDOV0KY4OH5YESY6apH
         update_policy_details.description = policy_description
         result = identity.update_policy(policy_ocid, update_policy_details)
         self.validate_response(result, expect_etag=True)
-        assert statement_a in result.data.statements
+        self.check_policy_statements_case_insensitive(statement_a, result.data.statements)
 
         statements = [statement_a, statement_b]
         version_date = "2016-01-01"
@@ -207,8 +207,8 @@ P8ZM9xRukuJ4bnPTe8olOFB8UCCkAEmkUxtZI4vF90HvDKDOV0KY4OH5YESY6apH
         update_policy_details.version_date = version_date
         result = identity.update_policy(policy_ocid, update_policy_details)
         self.validate_response(result, expect_etag=True)
-        assert statement_a in result.data.statements
-        assert statement_b in result.data.statements
+        self.check_policy_statements_case_insensitive(statement_a, result.data.statements)
+        self.check_policy_statements_case_insensitive(statement_a, result.data.statements)
         assert version_date in result.data.version_date.isoformat()
 
         etag = result.headers['etag']
@@ -237,8 +237,8 @@ P8ZM9xRukuJ4bnPTe8olOFB8UCCkAEmkUxtZI4vF90HvDKDOV0KY4OH5YESY6apH
         update_policy_details.statements = statements
         result = identity.update_policy(policy_ocid, update_policy_details, if_match=etag)
         self.validate_response(result, expect_etag=True)
-        assert statement_a not in result.data.statements
-        assert statement_b in result.data.statements
+        self.check_policy_statements_case_insensitive(statement_a, result.data.statements, check_not_in=True)
+        self.check_policy_statements_case_insensitive(statement_b, result.data.statements)
         assert not result.data.version_date
 
         # Set correct etag when updating description
@@ -248,16 +248,16 @@ P8ZM9xRukuJ4bnPTe8olOFB8UCCkAEmkUxtZI4vF90HvDKDOV0KY4OH5YESY6apH
         result = identity.update_policy(policy_ocid, update_policy_details, if_match=etag)
         self.validate_response(result, expect_etag=True)
         assert policy_description in result.data.description
-        assert statement_a not in result.data.statements
-        assert statement_b in result.data.statements
+        self.check_policy_statements_case_insensitive(statement_a, result.data.statements, check_not_in=True)
+        self.check_policy_statements_case_insensitive(statement_b, result.data.statements)
         assert not result.data.version_date
 
         # Get policy
         result = identity.get_policy(policy_ocid)
         self.validate_response(result, expect_etag=True)
         assert policy_description in result.data.description
-        assert statement_a not in result.data.statements
-        assert statement_b in result.data.statements
+        self.check_policy_statements_case_insensitive(statement_a, result.data.statements, check_not_in=True)
+        self.check_policy_statements_case_insensitive(statement_b, result.data.statements)
         assert not result.data.version_date
 
         # List policies
@@ -268,8 +268,8 @@ P8ZM9xRukuJ4bnPTe8olOFB8UCCkAEmkUxtZI4vF90HvDKDOV0KY4OH5YESY6apH
             if policy.id == policy_ocid:
                 found_policy = True
                 assert policy_description == policy.description
-                assert statement_a not in policy.statements
-                assert statement_b in policy.statements
+                self.check_policy_statements_case_insensitive(statement_a, policy.statements, check_not_in=True)
+                self.check_policy_statements_case_insensitive(statement_b, policy.statements)
 
         assert found_policy, "Expected policy was not found in response for list policies."
 
@@ -331,3 +331,9 @@ P8ZM9xRukuJ4bnPTe8olOFB8UCCkAEmkUxtZI4vF90HvDKDOV0KY4OH5YESY6apH
                 extra_validation(result)
 
         util.validate_response(result, extra_validation=common_validation, ** args)
+
+    def check_policy_statements_case_insensitive(self, policy, statements, check_not_in=False):
+        if check_not_in:
+            assert policy.lower() not in set(map(lambda statement: statement.lower(), statements))
+        else:
+            assert (policy in statements) or policy.lower() in set(map(lambda statement: statement.lower(), statements))
