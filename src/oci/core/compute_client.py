@@ -31,7 +31,7 @@ class ComputeClient(object):
         AttachVnic
         Creates a secondary VNIC and attaches it to the specified instance.
         For more information about secondary VNICs, see
-        `Managing Virtual Network Interface Cards (VNICs)`__.
+        `Virtual Network Interface Cards (VNICs)`__.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVNICs.htm
 
@@ -42,7 +42,7 @@ class ComputeClient(object):
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
             server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
@@ -87,7 +87,7 @@ class ComputeClient(object):
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
             server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
@@ -148,7 +148,7 @@ class ComputeClient(object):
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
             server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
@@ -220,7 +220,7 @@ class ComputeClient(object):
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
             server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
@@ -252,6 +252,51 @@ class ComputeClient(object):
             header_params=header_params,
             body=create_image_details,
             response_type="Image")
+
+    def create_instance_console_connection(self, create_instance_console_connection_details, **kwargs):
+        """
+        CreateInstanceConsoleConnection
+        Create a console connection for an instance.
+
+
+        :param CreateInstanceConsoleConnectionDetails create_instance_console_connection_details: (required)
+            Request object for creating an InstanceConsoleConnection
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.InstanceConsoleConnection`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/instanceConsoleConnections/"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_instance_console_connection got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            header_params=header_params,
+            body=create_instance_console_connection_details,
+            response_type="InstanceConsoleConnection")
 
     def delete_console_history(self, instance_console_history_id, **kwargs):
         """
@@ -347,6 +392,53 @@ class ComputeClient(object):
             path_params=path_params,
             header_params=header_params)
 
+    def delete_instance_console_connection(self, instance_console_connection_id, **kwargs):
+        """
+        DeleteInstanceConsoleConnection
+        Delete the console connection for an instance
+
+
+        :param str instance_console_connection_id: (required)
+            The OCID of the intance console connection
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/instanceConsoleConnections/{instanceConsoleConnectionId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_instance_console_connection got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "instanceConsoleConnectionId": instance_console_connection_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params)
+
     def detach_vnic(self, vnic_attachment_id, **kwargs):
         """
         DetachVnic
@@ -402,7 +494,7 @@ class ComputeClient(object):
         DetachVolume
         Detaches a storage volume from an instance. You must specify the OCID of the volume attachment.
 
-        This is an asynchronous operation; the attachment's `lifecycleState` will change to DETACHING temporarily
+        This is an asynchronous operation. The attachment's `lifecycleState` will change to DETACHING temporarily
         until the attachment is completely removed.
 
 
@@ -476,7 +568,7 @@ class ComputeClient(object):
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
             server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
@@ -689,6 +781,42 @@ class ComputeClient(object):
             header_params=header_params,
             response_type="Instance")
 
+    def get_instance_console_connection(self, instance_console_connection_id, **kwargs):
+        """
+        GetInstanceConsoleConnection
+        Get the details of an instance console connection
+
+
+        :param str instance_console_connection_id: (required)
+            The OCID of the intance console connection
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.InstanceConsoleConnection`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/instanceConsoleConnections/{instanceConsoleConnectionId}"
+        method = "GET"
+
+        if kwargs:
+            raise ValueError(
+                "get_instance_console_connection got unknown kwargs: {!r}".format(kwargs))
+
+        path_params = {
+            "instanceConsoleConnectionId": instance_console_connection_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="InstanceConsoleConnection")
+
     def get_vnic_attachment(self, vnic_attachment_id, **kwargs):
         """
         GetVnicAttachment
@@ -828,7 +956,7 @@ class ComputeClient(object):
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
             server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
@@ -910,7 +1038,7 @@ class ComputeClient(object):
         :func:`get_vnic` with the VNIC ID.
 
         You can later add secondary VNICs to an instance. For more information, see
-        `Managing Virtual Network Interface Cards (VNICs)`__.
+        `Virtual Network Interface Cards (VNICs)`__.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Concepts/computeoverview.htm
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
@@ -924,7 +1052,7 @@ class ComputeClient(object):
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
             server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
@@ -1098,6 +1226,63 @@ class ComputeClient(object):
             query_params=query_params,
             header_params=header_params,
             response_type="list[Image]")
+
+    def list_instance_console_connections(self, compartment_id, **kwargs):
+        """
+        ListInstanceConsoleConnections
+        Lists the console connections for the specified compartment or instance that have not been deleted.
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment.
+
+        :param str instance_id: (optional)
+            The OCID of the instance.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+            Example: `500`
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.InstanceConsoleConnection`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/instanceConsoleConnections/"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "instance_id",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_instance_console_connections got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "instanceId": kwargs.get("instance_id", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[InstanceConsoleConnection]")
 
     def list_instances(self, compartment_id, **kwargs):
         """
@@ -1382,7 +1567,7 @@ class ComputeClient(object):
         Terminates the specified instance. Any attached VNICs and volumes are automatically detached
         when the instance terminates.
 
-        This is an asynchronous operation; the instance's `lifecycleState` will change to TERMINATING temporarily
+        This is an asynchronous operation. The instance's `lifecycleState` will change to TERMINATING temporarily
         until the instance is completely removed.
 
 
@@ -1442,7 +1627,7 @@ class ComputeClient(object):
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
             server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
@@ -1504,7 +1689,7 @@ class ComputeClient(object):
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
             server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 

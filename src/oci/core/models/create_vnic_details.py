@@ -37,7 +37,7 @@ class CreateVnicDetails(object):
         Gets the assign_public_ip of this CreateVnicDetails.
         Whether the VNIC should be assigned a public IP address. Defaults to whether
         the subnet is public or private. If not set and the VNIC is being created
-        in a private subnet (i.e., where `prohibitPublicIpOnVnic` = true in the
+        in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the
         :class:`Subnet`), then no public IP address is assigned.
         If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then
         a public IP address is assigned. If set to true and
@@ -46,7 +46,7 @@ class CreateVnicDetails(object):
         **Note:** This public IP address is associated with the primary private IP
         on the VNIC. Secondary private IPs cannot have public IP
         addresses associated with them. For more information, see
-        `Managing IP Addresses`__.
+        `IP Addresses`__.
 
         Example: `false`
 
@@ -64,7 +64,7 @@ class CreateVnicDetails(object):
         Sets the assign_public_ip of this CreateVnicDetails.
         Whether the VNIC should be assigned a public IP address. Defaults to whether
         the subnet is public or private. If not set and the VNIC is being created
-        in a private subnet (i.e., where `prohibitPublicIpOnVnic` = true in the
+        in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the
         :class:`Subnet`), then no public IP address is assigned.
         If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then
         a public IP address is assigned. If set to true and
@@ -73,7 +73,7 @@ class CreateVnicDetails(object):
         **Note:** This public IP address is associated with the primary private IP
         on the VNIC. Secondary private IPs cannot have public IP
         addresses associated with them. For more information, see
-        `Managing IP Addresses`__.
+        `IP Addresses`__.
 
         Example: `false`
 

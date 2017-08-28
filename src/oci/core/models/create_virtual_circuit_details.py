@@ -51,7 +51,7 @@ class CreateVirtualCircuitDetails(object):
         """
         Gets the bandwidth_shape_name of this CreateVirtualCircuitDetails.
         The provisioned data rate of the connection.  To get a list of the
-        available bandwidth levels (i.e., shapes), see
+        available bandwidth levels (that is, shapes), see
         :func:`list_virtual_circuit_bandwidth_shapes`.
 
         Example: `10 Gbps`
@@ -67,7 +67,7 @@ class CreateVirtualCircuitDetails(object):
         """
         Sets the bandwidth_shape_name of this CreateVirtualCircuitDetails.
         The provisioned data rate of the connection.  To get a list of the
-        available bandwidth levels (i.e., shapes), see
+        available bandwidth levels (that is, shapes), see
         :func:`list_virtual_circuit_bandwidth_shapes`.
 
         Example: `10 Gbps`

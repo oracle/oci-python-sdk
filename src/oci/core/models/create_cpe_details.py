@@ -77,7 +77,7 @@ class CreateCpeDetails(object):
     def ip_address(self):
         """
         Gets the ip_address of this CreateCpeDetails.
-        The public IP address of the on-premise router.
+        The public IP address of the on-premises router.
 
         Example: `143.19.23.16`
 
@@ -91,7 +91,7 @@ class CreateCpeDetails(object):
     def ip_address(self, ip_address):
         """
         Sets the ip_address of this CreateCpeDetails.
-        The public IP address of the on-premise router.
+        The public IP address of the on-premises router.
 
         Example: `143.19.23.16`
 

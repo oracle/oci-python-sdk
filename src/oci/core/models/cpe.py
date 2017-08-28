@@ -109,7 +109,7 @@ class Cpe(object):
     def ip_address(self):
         """
         Gets the ip_address of this Cpe.
-        The public IP address of the on-premise router.
+        The public IP address of the on-premises router.
 
 
         :return: The ip_address of this Cpe.
@@ -121,7 +121,7 @@ class Cpe(object):
     def ip_address(self, ip_address):
         """
         Sets the ip_address of this Cpe.
-        The public IP address of the on-premise router.
+        The public IP address of the on-premises router.
 
 
         :param ip_address: The ip_address of this Cpe.
