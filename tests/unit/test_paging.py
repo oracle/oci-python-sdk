@@ -1,6 +1,7 @@
 PAGE_SIZE = 10
 APPROX_POLICIES = 150
 
+
 def test_manual_paging(identity, config):
     request_number = 0
     previous_first_ocid = None

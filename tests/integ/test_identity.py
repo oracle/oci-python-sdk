@@ -332,6 +332,7 @@ P8ZM9xRukuJ4bnPTe8olOFB8UCCkAEmkUxtZI4vF90HvDKDOV0KY4OH5YESY6apH
 
         util.validate_response(result, extra_validation=common_validation, ** args)
 
+
     def check_policy_statements_case_insensitive(self, policy, statements, check_not_in=False):
         if check_not_in:
             assert policy.lower() not in set(map(lambda statement: statement.lower(), statements))
