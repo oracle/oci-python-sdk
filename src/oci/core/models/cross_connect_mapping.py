@@ -65,7 +65,7 @@ class CrossConnectMapping(object):
         Gets the cross_connect_or_cross_connect_group_id of this CrossConnectMapping.
         The OCID of the cross-connect or cross-connect group for this mapping.
         Specified by the owner of the cross-connect or cross-connect group (the
-        customer if the customer is colocated with Oracle; the provider if the
+        customer if the customer is colocated with Oracle, or the provider if the
         customer is connecting via provider).
 
 
@@ -80,7 +80,7 @@ class CrossConnectMapping(object):
         Sets the cross_connect_or_cross_connect_group_id of this CrossConnectMapping.
         The OCID of the cross-connect or cross-connect group for this mapping.
         Specified by the owner of the cross-connect or cross-connect group (the
-        customer if the customer is colocated with Oracle; the provider if the
+        customer if the customer is colocated with Oracle, or the provider if the
         customer is connecting via provider).
 
 
@@ -129,7 +129,7 @@ class CrossConnectMapping(object):
     def oracle_bgp_peering_ip(self):
         """
         Gets the oracle_bgp_peering_ip of this CrossConnectMapping.
-        The IP address for Oracle's end of the BPG session. Must use a /30 or /31
+        The IP address for Oracle's end of the BGP session. Must use a /30 or /31
         subnet mask. If the session goes from Oracle to a customer's edge router,
         the customer specifies this information. If the session goes from Oracle to
         a provider's edge router, the provider specifies this.
@@ -146,7 +146,7 @@ class CrossConnectMapping(object):
     def oracle_bgp_peering_ip(self, oracle_bgp_peering_ip):
         """
         Sets the oracle_bgp_peering_ip of this CrossConnectMapping.
-        The IP address for Oracle's end of the BPG session. Must use a /30 or /31
+        The IP address for Oracle's end of the BGP session. Must use a /30 or /31
         subnet mask. If the session goes from Oracle to a customer's edge router,
         the customer specifies this information. If the session goes from Oracle to
         a provider's edge router, the provider specifies this.

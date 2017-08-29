@@ -17,6 +17,7 @@ from .create_drg_attachment_details import CreateDrgAttachmentDetails
 from .create_drg_details import CreateDrgDetails
 from .create_ip_sec_connection_details import CreateIPSecConnectionDetails
 from .create_image_details import CreateImageDetails
+from .create_instance_console_connection_details import CreateInstanceConsoleConnectionDetails
 from .create_internet_gateway_details import CreateInternetGatewayDetails
 from .create_private_ip_details import CreatePrivateIpDetails
 from .create_route_table_details import CreateRouteTableDetails
@@ -55,6 +56,7 @@ from .image_source_via_object_storage_tuple_details import ImageSourceViaObjectS
 from .image_source_via_object_storage_uri_details import ImageSourceViaObjectStorageUriDetails
 from .ingress_security_rule import IngressSecurityRule
 from .instance import Instance
+from .instance_console_connection import InstanceConsoleConnection
 from .instance_credentials import InstanceCredentials
 from .internet_gateway import InternetGateway
 from .launch_instance_details import LaunchInstanceDetails
@@ -114,6 +116,7 @@ core_type_mapping = {
     "CreateDrgDetails": CreateDrgDetails,
     "CreateIPSecConnectionDetails": CreateIPSecConnectionDetails,
     "CreateImageDetails": CreateImageDetails,
+    "CreateInstanceConsoleConnectionDetails": CreateInstanceConsoleConnectionDetails,
     "CreateInternetGatewayDetails": CreateInternetGatewayDetails,
     "CreatePrivateIpDetails": CreatePrivateIpDetails,
     "CreateRouteTableDetails": CreateRouteTableDetails,
@@ -152,6 +155,7 @@ core_type_mapping = {
     "ImageSourceViaObjectStorageUriDetails": ImageSourceViaObjectStorageUriDetails,
     "IngressSecurityRule": IngressSecurityRule,
     "Instance": Instance,
+    "InstanceConsoleConnection": InstanceConsoleConnection,
     "InstanceCredentials": InstanceCredentials,
     "InternetGateway": InternetGateway,
     "LaunchInstanceDetails": LaunchInstanceDetails,

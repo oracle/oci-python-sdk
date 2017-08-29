@@ -173,7 +173,7 @@ class Volume(object):
     def size_in_mbs(self):
         """
         Gets the size_in_mbs of this Volume.
-        The size of the volume in MBs.
+        The size of the volume in MBs. The value must be a multiple of 1024.
 
 
         :return: The size_in_mbs of this Volume.
@@ -185,7 +185,7 @@ class Volume(object):
     def size_in_mbs(self, size_in_mbs):
         """
         Sets the size_in_mbs of this Volume.
-        The size of the volume in MBs.
+        The size of the volume in MBs. The value must be a multiple of 1024.
 
 
         :param size_in_mbs: The size_in_mbs of this Volume.

@@ -42,7 +42,7 @@ class UpdateVirtualCircuitDetails(object):
         """
         Gets the bandwidth_shape_name of this UpdateVirtualCircuitDetails.
         The provisioned data rate of the connection. To get a list of the
-        available bandwidth levels (i.e., shapes), see
+        available bandwidth levels (that is, shapes), see
         :func:`list_virtual_circuit_bandwidth_shapes`.
 
         To be updated only by the customer who owns the virtual circuit.
@@ -58,7 +58,7 @@ class UpdateVirtualCircuitDetails(object):
         """
         Sets the bandwidth_shape_name of this UpdateVirtualCircuitDetails.
         The provisioned data rate of the connection. To get a list of the
-        available bandwidth levels (i.e., shapes), see
+        available bandwidth levels (that is, shapes), see
         :func:`list_virtual_circuit_bandwidth_shapes`.
 
         To be updated only by the customer who owns the virtual circuit.
