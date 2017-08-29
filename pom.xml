@@ -30,6 +30,10 @@
             <groupId>com.oracle.pic.lb</groupId>
             <artifactId>oralb-api-spec</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.oracle.pic.dbaas</groupId>
+            <artifactId>dbaas-api-spec</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
@@ -112,6 +116,24 @@
                             </artifactItems>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>unpack-database</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>com.oracle.pic.dbaas</groupId>
+                                    <artifactId>dbaas-api-spec</artifactId>
+                                    <type>jar</type>
+                                    <includes>dbaas-api-spec-20160918.yaml</includes>
+                                    <outputDirectory>${spec-temp-dir}</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>
@@ -186,6 +208,23 @@
                             </additionalProperties>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>python-public-sdk-dbaas</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <language>oracle-python-sdk</language>
+                            <specPath>${spec-temp-dir}/dbaas-api-spec-20160918.yaml</specPath>
+                            <outputDir>src/oci</outputDir>
+                            <basePackage>OCI</basePackage>
+                            <additionalProperties>
+                                <specName>database</specName>
+                                <generateInitFile>true</generateInitFile>
+                            </additionalProperties>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>
@@ -233,6 +272,12 @@
                             </includes>
                         </fileset>
                         <fileset>
+                            <directory>src/oci/database</directory>
+                            <includes>
+                                <include>**/*</include>
+                            </includes>
+                        </fileset>
+                        <fileset>
                             <directory>src/oci/object_storage</directory>
                             <includes>
                                 <include>**/*</include>
@@ -271,6 +316,11 @@
                 <groupId>com.oracle.pic.lb</groupId>
                 <artifactId>oralb-api-spec</artifactId>
                 <version>1.0.8</version>
+            </dependency>
+            <dependency>
+                <groupId>com.oracle.pic.dbaas</groupId>
+                <artifactId>dbaas-api-spec</artifactId>
+                <version>0.0.105</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
