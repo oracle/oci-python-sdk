@@ -36,6 +36,8 @@ This is the public Python SDK for Oracle Cloud Infrastructure.  Python 2.7+ and 
 To get started, head over to the :ref:`installation instructions <install>` or see more examples in the
 :ref:`quickstart <quickstart>` section.
 
+**Note**: The ``oraclebmc`` package is deprecated and will be removed in March 2018. Please check the :ref:`Backward Compatibility <backward-compatibility>` section if you are using ``oraclebmc``.
+
 .. toctree::
     :hidden:
     :maxdepth: 2

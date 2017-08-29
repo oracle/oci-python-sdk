@@ -11,6 +11,6 @@
 
 Backward Compatibility
 ~~~~~~~~~~~~~~~~~~~~~~
-The top level namespace for the Python SDK has been changed from ``oraclebmc`` to ``oci``, so all of the documentation now references ``oci``. If you installed the package using ``pip install oraclebmc`` you can continue to reference ``oraclebmc`` in your code and when interpreting the documentation you can replace ``oci`` with ``oraclebmc`` (i.e. if there is a class defined in the docs as ``oci.base_client.BaseClient`` there will also exist a class ``oraclebmc.base_client.BaseClient``).
+The top level namespace / package name for the Python SDK has been changed from ``oraclebmc`` to ``oci``, so all of the documentation now references ``oci``. If you are using the ``oraclebmc`` package you should continue to reference ``oraclebmc`` in your code and when interpreting the documentation you should replace ``oci`` with ``oraclebmc`` (i.e. if there is a class defined in the docs as ``oci.base_client.BaseClient`` in the oraclebmc package this class will be called ``oraclebmc.base_client.BaseClient``).
 
-Note that the ``oraclebmc`` package is being deprecated and will be removed March 2018 so we encourage users to upgrade to ``oci``.
+**Note**: The ``oraclebmc`` package is deprecated and will be removed in March 2018. Please upgrade to the ``oci`` package to avoid interruption at that time.
