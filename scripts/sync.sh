@@ -17,11 +17,17 @@ mkdir oraclebmc/src/oraclebmc
 rm -rf oraclebmc/examples
 mkdir oraclebmc/examples
 
+rm -rf oraclebmc/tests
+mkdir oraclebmc/tests
+
 # first we copy all of the changes from oci/src/oci/* oraclebmc/src/oraclebmc/*
 cp -r oci/src/oci/* oraclebmc/src/oraclebmc/
 
 # also copy the examples since we include those in the zip
 cp -r oci/examples/* oraclebmc/examples/
+
+# and also copy the tests because we want to make sure we run any new tests against this package
+cp -r oci/tests/* oraclebmc/tests/
 
 # now oraclebmc/src/oraclebmc will have a bunch of files that have oci references so fix those with sed
 grep -rl 'oci' oraclebmc/ | xargs sed -i 's/oci\./oraclebmc\./g'
