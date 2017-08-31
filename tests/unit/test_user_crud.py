@@ -1,9 +1,10 @@
 import oci
+import tests.util
 
 
 def test_user_crud(identity, config):
     compartment = config["tenancy"]
-    user_name = "python_temp_user_1"
+    user_name = tests.util.unique_name("python_temp_user")
     user_description = "Created by python SDK TestUserCrud test."
 
     initial_user_count = count_all_users(identity, config)
