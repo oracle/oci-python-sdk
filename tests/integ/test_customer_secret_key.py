@@ -44,12 +44,12 @@ def test_customer_secret_key_crud(identity, customer_secret_key_user):
     assert update_secret_key_one_response.data.time_created == create_secret_key_one_response.data.time_created
     assert update_secret_key_one_response.data.time_expires is None
     assert update_secret_key_one_response.data.lifecycle_state in ACTIVE_LIFECYCLE_STATES
-    
+
     create_secret_key_two_details = oci.identity.models.CreateCustomerSecretKeyDetails()
     create_secret_key_two_details.display_name = 'Secret Key Two'
 
     create_secret_key_two_response = create_customer_secret_key_with_assertions(identity, customer_secret_key_user, create_secret_key_two_details)
-    
+
     customer_secret_keys = identity.list_customer_secret_keys(customer_secret_key_user.id).data
     assert len(customer_secret_keys) == 2
     if customer_secret_keys[0].id == create_secret_key_one_response.data.id:
@@ -73,6 +73,7 @@ def test_customer_secret_key_crud(identity, customer_secret_key_user):
         for csk in customer_secret_keys:
             assert csk.lifecycle_state in DELETE_LIFECYCLE_STATES
 
+
 def create_customer_secret_key_with_assertions(identity, customer_secret_key_user, create_secret_key_details):
     create_secret_key_response = identity.create_customer_secret_key(create_secret_key_details, customer_secret_key_user.id)
     assert create_secret_key_response.data.key
@@ -93,4 +94,3 @@ def assert_secret_key_from_list_secret_keys(list_secret_key_entry, customer_secr
     assert list_secret_key_entry.time_created == customer_secret_key.time_created
     assert list_secret_key_entry.time_expires is None
     assert list_secret_key_entry.lifecycle_state in valid_lifecycle_states
-
