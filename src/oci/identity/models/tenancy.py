@@ -109,6 +109,7 @@ class Tenancy(object):
         Allowed values are:
         - `IAD`
         - `PHX`
+        - `FRA`
 
 
         :return: The home_region_key of this Tenancy.
@@ -125,6 +126,7 @@ class Tenancy(object):
         Allowed values are:
         - `IAD`
         - `PHX`
+        - `FRA`
 
 
         :param home_region_key: The home_region_key of this Tenancy.

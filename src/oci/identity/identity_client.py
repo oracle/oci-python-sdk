@@ -140,6 +140,72 @@ class IdentityClient(object):
             body=create_compartment_details,
             response_type="Compartment")
 
+    def create_customer_secret_key(self, create_customer_secret_key_details, user_id, **kwargs):
+        """
+        CreateCustomerSecretKey
+        Creates a new secret key for the specified user. Secret keys are used for authentication with the Object Storage Service's Amazon S3
+        compatible API. For information, see
+        `Managing User Credentials`__.
+
+        You must specify a *description* for the secret key (although it can be an empty string). It does not
+        have to be unique, and you can change it anytime with
+        :func:`update_customer_secret_key`.
+
+        Every user has permission to create a secret key for *their own user ID*. An administrator in your organization
+        does not need to write a policy to give users this ability. To compare, administrators who have permission to the
+        tenancy can use this operation to create a secret key for any user, including themselves.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingcredentials.htm
+
+
+        :param CreateCustomerSecretKeyDetails create_customer_secret_key_details: (required)
+            Request object for creating a new secret key.
+
+        :param str user_id: (required)
+            The OCID of the user.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.CustomerSecretKey`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/users/{userId}/customerSecretKeys/"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_customer_secret_key got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "userId": user_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=create_customer_secret_key_details,
+            response_type="CustomerSecretKey")
+
     def create_group(self, create_group_details, **kwargs):
         """
         CreateGroup
@@ -697,6 +763,57 @@ class IdentityClient(object):
         path_params = {
             "userId": user_id,
             "fingerprint": fingerprint
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params)
+
+    def delete_customer_secret_key(self, user_id, customer_secret_key_id, **kwargs):
+        """
+        DeleteCustomerSecretKey
+        Deletes the specified secret key for the specified user.
+
+
+        :param str user_id: (required)
+            The OCID of the user.
+
+        :param str customer_secret_key_id: (required)
+            The OCID of the secret key.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/users/{userId}/customerSecretKeys/{customerSecretKeyId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_customer_secret_key got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "userId": user_id,
+            "customerSecretKeyId": customer_secret_key_id
         }
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
@@ -1440,6 +1557,43 @@ class IdentityClient(object):
             header_params=header_params,
             response_type="list[Compartment]")
 
+    def list_customer_secret_keys(self, user_id, **kwargs):
+        """
+        ListCustomerSecretKeys
+        Lists the secret keys for the specified user. The returned object contains the secret key's OCID, but not
+        the secret key itself. The actual secret key is returned only upon creation.
+
+
+        :param str user_id: (required)
+            The OCID of the user.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.CustomerSecretKeySummary`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/users/{userId}/customerSecretKeys/"
+        method = "GET"
+
+        if kwargs:
+            raise ValueError(
+                "list_customer_secret_keys got unknown kwargs: {!r}".format(kwargs))
+
+        path_params = {
+            "userId": user_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="list[CustomerSecretKeySummary]")
+
     def list_groups(self, compartment_id, **kwargs):
         """
         ListGroups
@@ -1986,6 +2140,62 @@ class IdentityClient(object):
             header_params=header_params,
             body=update_compartment_details,
             response_type="Compartment")
+
+    def update_customer_secret_key(self, user_id, customer_secret_key_id, update_customer_secret_key_details, **kwargs):
+        """
+        UpdateCustomerSecretKey
+        Updates the specified secret key's description.
+
+
+        :param str user_id: (required)
+            The OCID of the user.
+
+        :param str customer_secret_key_id: (required)
+            The OCID of the secret key.
+
+        :param UpdateCustomerSecretKeyDetails update_customer_secret_key_details: (required)
+            Request object for updating a secret key.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.CustomerSecretKeySummary`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/users/{userId}/customerSecretKeys/{customerSecretKeyId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_customer_secret_key got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "userId": user_id,
+            "customerSecretKeyId": customer_secret_key_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=update_customer_secret_key_details,
+            response_type="CustomerSecretKeySummary")
 
     def update_group(self, group_id, update_group_details, **kwargs):
         """

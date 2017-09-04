@@ -166,8 +166,13 @@ class IdentityProvider(object):
     def product_type(self):
         """
         Gets the product_type of this IdentityProvider.
-        The identity provider service or product (e.g., Oracle Identity Cloud Service).
-        Allowed value: `IDCS`.
+        The identity provider service or product.
+        Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft
+        Active Directory Federation Services (ADFS).
+
+        Allowed values are:
+        - `ADFS`
+        - `IDCS`
 
         Example: `IDCS`
 
@@ -181,8 +186,13 @@ class IdentityProvider(object):
     def product_type(self, product_type):
         """
         Sets the product_type of this IdentityProvider.
-        The identity provider service or product (e.g., Oracle Identity Cloud Service).
-        Allowed value: `IDCS`.
+        The identity provider service or product.
+        Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft
+        Active Directory Federation Services (ADFS).
+
+        Allowed values are:
+        - `ADFS`
+        - `IDCS`
 
         Example: `IDCS`
 

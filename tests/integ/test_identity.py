@@ -4,21 +4,27 @@
 import random
 from . import util
 import oci
+import time
 
 
 class TestIdentity:
 
+    RENAME_COMPARTMENT_PREFIX = 'PythonSDKTestCompartment-rename-'
+
     def test_all_operations(self, identity, config):
-        self.subtest_availability_domain_operations(identity, config)
-        self.subtest_compartment_operations(identity, config)
-        self.subtest_user_operations(identity, config)
-        self.subtest_group_operations(identity, config)
-        self.subtest_user_group_membership_operations(identity, config)
-        self.subtest_api_key_operations(identity)
-        self.subtest_ui_password_operations(identity)
-        self.subtest_swift_password_operations(identity)
-        self.subtest_policy_operations(identity, config)
-        self.subtest_cleanup(identity, config)
+        try:
+            self.subtest_availability_domain_operations(identity, config)
+            self.subtest_compartment_operations(identity, config)
+            self.subtest_user_operations(identity, config)
+            self.subtest_group_operations(identity, config)
+            self.subtest_user_group_membership_operations(identity, config)
+            self.subtest_api_key_operations(identity)
+            self.subtest_ui_password_operations(identity)
+            self.subtest_swift_password_operations(identity)
+            self.subtest_policy_operations(identity, config)
+            self.subtest_compartment_rename(identity, config)
+        finally:
+            self.subtest_cleanup(identity, config)
 
     def subtest_availability_domain_operations(self, identity, config):
         result = identity.list_availability_domains(config['tenancy'])
@@ -52,9 +58,9 @@ class TestIdentity:
         self.user_ocid = result.data.id
         self.validate_response(result, extra_validation=self.validate_user, expect_etag=True)
 
-        result = identity.list_users(config['tenancy'], limit=1000)
-        self.validate_response(result, extra_validation=self.validate_user)
-        assert result.headers["opc-next-page"]
+        all_users_args = {'compartment_id': config['tenancy'], 'limit': 1000}
+        all_users = util.get_all_pages(identity.list_users, ** all_users_args)
+        self.validate_user_in_list(all_users)
 
         self.user_description = 'UPDATED ' + self.user_description
         update_user_details = oci.identity.models.UpdateUserDetails()
@@ -280,15 +286,32 @@ P8ZM9xRukuJ4bnPTe8olOFB8UCCkAEmkUxtZI4vF90HvDKDOV0KY4OH5YESY6apH
         # Delete policy
         identity.delete_policy(policy_ocid)
 
+    def subtest_compartment_rename(self, identity, config):
+        compartment_to_rename_id = self.find_compartment_to_rename(identity, config)
+
+        update_compartment_details = oci.identity.models.UpdateCompartmentDetails()
+        update_compartment_details.description = 'Updated compartment {}'.format(int(time.time()))
+        update_compartment_details.name = '{}{}'.format(self.RENAME_COMPARTMENT_PREFIX, int(time.time()))
+
+        update_compartment_response = identity.update_compartment(compartment_to_rename_id, update_compartment_details)
+
+        assert compartment_to_rename_id == update_compartment_response.data.id
+        assert update_compartment_details.name == update_compartment_response.data.name
+        assert update_compartment_details.description == update_compartment_response.data.description
+        assert update_compartment_response.request_id is not None
+        assert update_compartment_response.headers["etag"]
+
     def subtest_cleanup(self, identity, config):
-        identity.delete_user(self.user_ocid)
+        if self.user_ocid:
+            identity.delete_user(self.user_ocid)
 
-        result = identity.list_users(config['tenancy'], limit=1000)
-        self.validate_response(result)
-        for user in result.data:
-            assert self.user_ocid != user.id
+            result = identity.list_users(config['tenancy'], limit=1000)
+            self.validate_response(result)
+            for user in result.data:
+                assert self.user_ocid != user.id
 
-        identity.delete_group(self.group_ocid)
+        if self.group_ocid:
+            identity.delete_group(self.group_ocid)
 
     def validate_group(self, result):
         if hasattr(result.data, '__len__'):
@@ -308,19 +331,21 @@ P8ZM9xRukuJ4bnPTe8olOFB8UCCkAEmkUxtZI4vF90HvDKDOV0KY4OH5YESY6apH
 
     def validate_user(self, result):
         if hasattr(result.data, '__len__'):
-            found_user = False
-            for user in result.data:
-                if self.user_ocid == user.id:
-                    found_user = True
-                    assert self.user_name == user.name
-                    assert self.user_description == user.description
-
-            assert found_user, "Expected user not found in list of users"
-
+            self.validate_user_in_list(result.data)
         else:
             assert self.user_ocid == result.data.id
             assert self.user_name == result.data.name
             assert self.user_description == result.data.description
+
+    def validate_user_in_list(self, user_list):
+        found_user = False
+        for user in user_list:
+            if self.user_ocid == user.id:
+                found_user = True
+                assert self.user_name == user.name
+                assert self.user_description == user.description
+
+        assert found_user, "Expected user not found in list of users"
 
     def validate_response(self, result, extra_validation=None, expect_etag=False, ** args):
         def common_validation(result):
@@ -337,3 +362,28 @@ P8ZM9xRukuJ4bnPTe8olOFB8UCCkAEmkUxtZI4vF90HvDKDOV0KY4OH5YESY6apH
             assert policy.lower() not in set(map(lambda statement: statement.lower(), statements))
         else:
             assert (policy in statements) or policy.lower() in set(map(lambda statement: statement.lower(), statements))
+
+    def find_compartment_to_rename(self, identity, config):
+        keep_paginating = True
+        next_page = None
+        kwargs = {'limit': 1000}
+        while keep_paginating:
+            if next_page is not None:
+                kwargs['page'] = next_page
+            list_compartments_result = identity.list_compartments(config['tenancy'], **kwargs)
+
+            for compartment in list_compartments_result.data:
+                if compartment.name.find(self.RENAME_COMPARTMENT_PREFIX) == 0:
+                    return compartment.id
+
+            next_page = list_compartments_result.next_page
+            keep_paginating = (next_page is not None)
+
+        # Exhausted all pages of compartments without finding the one to rename, so create it
+        create_compartment_details = oci.identity.models.CreateCompartmentDetails()
+        create_compartment_details.compartment_id = config['tenancy']
+        create_compartment_details.description = 'Compartment for Python SDK Rename Compartment Test'
+        create_compartment_details.name = '{}{}'.format(self.RENAME_COMPARTMENT_PREFIX, int(time.time()))
+
+        create_compartment_response = identity.create_compartment(create_compartment_details)
+        return create_compartment_response.data.id

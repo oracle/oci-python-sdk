@@ -10,14 +10,17 @@ class UpdateCompartmentDetails(object):
     def __init__(self):
 
         self.swagger_types = {
-            'description': 'str'
+            'description': 'str',
+            'name': 'str'
         }
 
         self.attribute_map = {
-            'description': 'description'
+            'description': 'description',
+            'name': 'name'
         }
 
         self._description = None
+        self._name = None
 
     @property
     def description(self):
@@ -42,6 +45,30 @@ class UpdateCompartmentDetails(object):
         :type: str
         """
         self._description = description
+
+    @property
+    def name(self):
+        """
+        Gets the name of this UpdateCompartmentDetails.
+        The new name you assign to the compartment. The name must be unique across all compartments in the tenancy.
+
+
+        :return: The name of this UpdateCompartmentDetails.
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """
+        Sets the name of this UpdateCompartmentDetails.
+        The new name you assign to the compartment. The name must be unique across all compartments in the tenancy.
+
+
+        :param name: The name of this UpdateCompartmentDetails.
+        :type: str
+        """
+        self._name = name
 
     def __repr__(self):
         return formatted_flat_dict(self)

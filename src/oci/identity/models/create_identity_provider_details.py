@@ -126,11 +126,13 @@ class CreateIdentityProviderDetails(object):
     def product_type(self):
         """
         Gets the product_type of this CreateIdentityProviderDetails.
-        The identity provider service or product (e.g., Oracle Identity Cloud Service).
+        The identity provider service or product.
+        Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft
+        Active Directory Federation Services (ADFS).
 
         Example: `IDCS`
 
-        Allowed values for this property are: "IDCS"
+        Allowed values for this property are: "IDCS", "ADFS"
 
 
         :return: The product_type of this CreateIdentityProviderDetails.
@@ -142,7 +144,9 @@ class CreateIdentityProviderDetails(object):
     def product_type(self, product_type):
         """
         Sets the product_type of this CreateIdentityProviderDetails.
-        The identity provider service or product (e.g., Oracle Identity Cloud Service).
+        The identity provider service or product.
+        Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft
+        Active Directory Federation Services (ADFS).
 
         Example: `IDCS`
 
@@ -150,7 +154,7 @@ class CreateIdentityProviderDetails(object):
         :param product_type: The product_type of this CreateIdentityProviderDetails.
         :type: str
         """
-        allowed_values = ["IDCS"]
+        allowed_values = ["IDCS", "ADFS"]
         if product_type not in allowed_values:
             raise ValueError(
                 "Invalid value for `product_type`, must be one of {0}"

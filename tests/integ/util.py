@@ -292,3 +292,21 @@ def create_large_file(filename, size_in_mebibytes):
     sample_content = b'a'
     with open(filename, 'wb') as f:
         f.write(sample_content * MEBIBYTE * size_in_mebibytes)
+
+
+def get_all_pages(list_service_function, ** kwargs):
+    result_records = []
+    cloned_kwargs = kwargs.copy()
+
+    keep_paginating = True
+    next_page = None
+    while keep_paginating:
+        if next_page is not None:
+            cloned_kwargs['page'] = next_page
+        response = list_service_function(** cloned_kwargs)
+
+        result_records.extend(response.data)
+        next_page = response.next_page
+        keep_paginating = (next_page is not None)
+
+    return result_records

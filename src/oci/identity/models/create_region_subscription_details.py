@@ -28,6 +28,7 @@ class CreateRegionSubscriptionDetails(object):
         Allowed values are:
         - `PHX`
         - `IAD`
+        - `FRA`
 
         Example: `PHX`
 
@@ -46,6 +47,7 @@ class CreateRegionSubscriptionDetails(object):
         Allowed values are:
         - `PHX`
         - `IAD`
+        - `FRA`
 
         Example: `PHX`
 

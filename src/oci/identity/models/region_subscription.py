@@ -37,6 +37,7 @@ class RegionSubscription(object):
         Allowed values are:
         - `PHX`
         - `IAD`
+        - 'FRA'
 
 
         :return: The region_key of this RegionSubscription.
@@ -53,6 +54,7 @@ class RegionSubscription(object):
         Allowed values are:
         - `PHX`
         - `IAD`
+        - 'FRA'
 
 
         :param region_key: The region_key of this RegionSubscription.
@@ -69,6 +71,7 @@ class RegionSubscription(object):
         Allowed values are:
         - `us-phoenix-1`
         - `us-ashburn-1`
+        - 'de-frankfurt-1'
 
 
         :return: The region_name of this RegionSubscription.
@@ -85,6 +88,7 @@ class RegionSubscription(object):
         Allowed values are:
         - `us-phoenix-1`
         - `us-ashburn-1`
+        - 'de-frankfurt-1'
 
 
         :param region_name: The region_name of this RegionSubscription.
