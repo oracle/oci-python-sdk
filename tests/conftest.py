@@ -68,3 +68,8 @@ def virtual_network(config):
 @pytest.fixture
 def load_balancer_client(config):
     return oci.load_balancer.LoadBalancerClient(config)
+
+
+@pytest.fixture
+def database_client(config):
+    return oci.database.DatabaseClient(config)

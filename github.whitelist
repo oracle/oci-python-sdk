@@ -6,9 +6,10 @@
 ^examples/
 
 ^src/oci/core/.*\.py$
+^src/oci/database/.*\.py$
 ^src/oci/identity/.*\.py$
-^src/oci/object_storage/.*\.py$
 ^src/oci/load_balancer/.*\.py$
+^src/oci/object_storage/.*\.py$
 ^src/oci/[^/]*\.py$
 
 
