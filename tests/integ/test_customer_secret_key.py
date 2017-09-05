@@ -56,8 +56,8 @@ def test_customer_secret_key_crud(identity, customer_secret_key_user):
         assert_secret_key_from_list_secret_keys(customer_secret_keys[0], update_secret_key_one_response.data, ACTIVE_LIFECYCLE_STATES)
         assert_secret_key_from_list_secret_keys(customer_secret_keys[1], create_secret_key_two_response.data, ACTIVE_LIFECYCLE_STATES)
     else:
-        assert_secret_key_from_list_secret_keys(customer_secret_keys[0], update_secret_key_one_response.data, ACTIVE_LIFECYCLE_STATES)
-        assert_secret_key_from_list_secret_keys(customer_secret_keys[1], create_secret_key_one_response.data, ACTIVE_LIFECYCLE_STATES)
+        assert_secret_key_from_list_secret_keys(customer_secret_keys[0], create_secret_key_two_response.data, ACTIVE_LIFECYCLE_STATES)
+        assert_secret_key_from_list_secret_keys(customer_secret_keys[1], update_secret_key_one_response.data, ACTIVE_LIFECYCLE_STATES)
 
     # A user can only have two active secret keys
     create_secret_key_three_details = oci.identity.models.CreateCustomerSecretKeyDetails()

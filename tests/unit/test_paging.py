@@ -1,5 +1,5 @@
 PAGE_SIZE = 10
-APPROX_POLICIES = 150
+APPROX_POLICIES = 200
 
 
 def test_manual_paging(identity, config):
