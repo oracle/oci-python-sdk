@@ -216,7 +216,8 @@ class HealthChecker(object):
     def timeout_in_millis(self):
         """
         Gets the timeout_in_millis of this HealthChecker.
-        The maximum timeout before a retry, in milliseconds. Defaults to 3000 (3 seconds).
+        The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply
+        returns within this timeout period. Defaults to 3000 (3 seconds).
 
         Example: `6000`
 
@@ -230,7 +231,8 @@ class HealthChecker(object):
     def timeout_in_millis(self, timeout_in_millis):
         """
         Sets the timeout_in_millis of this HealthChecker.
-        The maximum timeout before a retry, in milliseconds. Defaults to 3000 (3 seconds).
+        The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply
+        returns within this timeout period. Defaults to 3000 (3 seconds).
 
         Example: `6000`
 

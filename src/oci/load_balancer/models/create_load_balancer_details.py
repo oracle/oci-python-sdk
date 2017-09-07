@@ -113,6 +113,7 @@ class CreateLoadBalancerDetails(object):
         """
         Gets the display_name of this CreateLoadBalancerDetails.
         A user-friendly name. It does not have to be unique, and it is changeable.
+        Avoid entering confidential information.
 
         Example: `My load balancer`
 
@@ -127,6 +128,7 @@ class CreateLoadBalancerDetails(object):
         """
         Sets the display_name of this CreateLoadBalancerDetails.
         A user-friendly name. It does not have to be unique, and it is changeable.
+        Avoid entering confidential information.
 
         Example: `My load balancer`
 

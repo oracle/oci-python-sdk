@@ -5,8 +5,10 @@ from __future__ import absolute_import
 
 from .backend import Backend
 from .backend_details import BackendDetails
+from .backend_health import BackendHealth
 from .backend_set import BackendSet
 from .backend_set_details import BackendSetDetails
+from .backend_set_health import BackendSetHealth
 from .certificate import Certificate
 from .certificate_details import CertificateDetails
 from .create_backend_details import CreateBackendDetails
@@ -14,12 +16,15 @@ from .create_backend_set_details import CreateBackendSetDetails
 from .create_certificate_details import CreateCertificateDetails
 from .create_listener_details import CreateListenerDetails
 from .create_load_balancer_details import CreateLoadBalancerDetails
+from .health_check_result import HealthCheckResult
 from .health_checker import HealthChecker
 from .health_checker_details import HealthCheckerDetails
 from .ip_address import IpAddress
 from .listener import Listener
 from .listener_details import ListenerDetails
 from .load_balancer import LoadBalancer
+from .load_balancer_health import LoadBalancerHealth
+from .load_balancer_health_summary import LoadBalancerHealthSummary
 from .load_balancer_policy import LoadBalancerPolicy
 from .load_balancer_protocol import LoadBalancerProtocol
 from .load_balancer_shape import LoadBalancerShape
@@ -38,8 +43,10 @@ from .work_request_error import WorkRequestError
 load_balancer_type_mapping = {
     "Backend": Backend,
     "BackendDetails": BackendDetails,
+    "BackendHealth": BackendHealth,
     "BackendSet": BackendSet,
     "BackendSetDetails": BackendSetDetails,
+    "BackendSetHealth": BackendSetHealth,
     "Certificate": Certificate,
     "CertificateDetails": CertificateDetails,
     "CreateBackendDetails": CreateBackendDetails,
@@ -47,12 +54,15 @@ load_balancer_type_mapping = {
     "CreateCertificateDetails": CreateCertificateDetails,
     "CreateListenerDetails": CreateListenerDetails,
     "CreateLoadBalancerDetails": CreateLoadBalancerDetails,
+    "HealthCheckResult": HealthCheckResult,
     "HealthChecker": HealthChecker,
     "HealthCheckerDetails": HealthCheckerDetails,
     "IpAddress": IpAddress,
     "Listener": Listener,
     "ListenerDetails": ListenerDetails,
     "LoadBalancer": LoadBalancer,
+    "LoadBalancerHealth": LoadBalancerHealth,
+    "LoadBalancerHealthSummary": LoadBalancerHealthSummary,
     "LoadBalancerPolicy": LoadBalancerPolicy,
     "LoadBalancerProtocol": LoadBalancerProtocol,
     "LoadBalancerShape": LoadBalancerShape,

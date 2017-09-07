@@ -80,7 +80,10 @@ class CreateBackendSetDetails(object):
         Gets the name of this CreateBackendSetDetails.
         A friendly name for the backend set. It must be unique and it cannot be changed.
 
-        Example: `My backend set`
+        Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot
+        contain spaces. Avoid entering confidential information.
+
+        Example: `My_backend_set`
 
 
         :return: The name of this CreateBackendSetDetails.
@@ -94,7 +97,10 @@ class CreateBackendSetDetails(object):
         Sets the name of this CreateBackendSetDetails.
         A friendly name for the backend set. It must be unique and it cannot be changed.
 
-        Example: `My backend set`
+        Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot
+        contain spaces. Avoid entering confidential information.
+
+        Example: `My_backend_set`
 
 
         :param name: The name of this CreateBackendSetDetails.

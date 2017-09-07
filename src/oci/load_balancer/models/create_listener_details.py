@@ -60,6 +60,7 @@ class CreateListenerDetails(object):
         """
         Gets the name of this CreateListenerDetails.
         A friendly name for the listener. It must be unique and it cannot be changed.
+        Avoid entering confidential information.
 
         Example: `My listener`
 
@@ -74,6 +75,7 @@ class CreateListenerDetails(object):
         """
         Sets the name of this CreateListenerDetails.
         A friendly name for the listener. It must be unique and it cannot be changed.
+        Avoid entering confidential information.
 
         Example: `My listener`
 

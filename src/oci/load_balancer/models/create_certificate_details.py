@@ -80,8 +80,10 @@ class CreateCertificateDetails(object):
         """
         Gets the certificate_name of this CreateCertificateDetails.
         A friendly name for the certificate bundle. It must be unique and it cannot be changed.
+        Valid certificate bundle names include only alphanumeric characters, dashes, and underscores.
+        Certificate bundle names cannot contain spaces. Avoid entering confidential information.
 
-        Example: `My certificate bundle`
+        Example: `My_certificate_bundle`
 
 
         :return: The certificate_name of this CreateCertificateDetails.
@@ -94,8 +96,10 @@ class CreateCertificateDetails(object):
         """
         Sets the certificate_name of this CreateCertificateDetails.
         A friendly name for the certificate bundle. It must be unique and it cannot be changed.
+        Valid certificate bundle names include only alphanumeric characters, dashes, and underscores.
+        Certificate bundle names cannot contain spaces. Avoid entering confidential information.
 
-        Example: `My certificate bundle`
+        Example: `My_certificate_bundle`
 
 
         :param certificate_name: The certificate_name of this CreateCertificateDetails.

@@ -129,9 +129,9 @@ class Backend(object):
     def name(self):
         """
         Gets the name of this Backend.
-        A name to uniquely identify this backend server in the backend set.
+        A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.
 
-        Example: `My first backend server`
+        Example: `10.10.10.4:8080`
 
 
         :return: The name of this Backend.
@@ -143,9 +143,9 @@ class Backend(object):
     def name(self, name):
         """
         Sets the name of this Backend.
-        A name to uniquely identify this backend server in the backend set.
+        A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.
 
-        Example: `My first backend server`
+        Example: `10.10.10.4:8080`
 
 
         :param name: The name of this Backend.

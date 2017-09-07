@@ -212,7 +212,8 @@ class UpdateHealthCheckerDetails(object):
     def timeout_in_millis(self):
         """
         Gets the timeout_in_millis of this UpdateHealthCheckerDetails.
-        The maximum timeout in milliseconds before a retry.
+        The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply
+        returns within this timeout period.
 
         Example: `6000`
 
@@ -226,7 +227,8 @@ class UpdateHealthCheckerDetails(object):
     def timeout_in_millis(self, timeout_in_millis):
         """
         Sets the timeout_in_millis of this UpdateHealthCheckerDetails.
-        The maximum timeout in milliseconds before a retry.
+        The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply
+        returns within this timeout period.
 
         Example: `6000`
 
