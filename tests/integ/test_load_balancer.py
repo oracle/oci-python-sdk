@@ -2,7 +2,6 @@
 # Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 import oci
-import pytest
 import time
 from . import util
 
