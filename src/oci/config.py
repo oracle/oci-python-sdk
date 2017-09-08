@@ -38,8 +38,8 @@ DEFAULT_CONFIG = {
     "additional_user_agent": "",
     "pass_phrase": None
 }
-DEFAULT_LOCATION = '~/.oci/config'
-FALLBACK_DEFAULT_LOCATION = '~/.oraclebmc/config'
+DEFAULT_LOCATION = os.path.join('~', '.oci', 'config')
+FALLBACK_DEFAULT_LOCATION = os.path.join('~', '.oraclebmc', 'config')
 DEFAULT_PROFILE = "DEFAULT"
 PATTERNS = {
     # Tenancy and user have the same shape
