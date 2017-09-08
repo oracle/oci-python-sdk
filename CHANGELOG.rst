@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+1.3.7 - 2017-09-11
+====================
+
+Deprecated
+----------
+* The default configuration file location has been changed from ~/.oraclebmc/config to ~/.oci/config. The old location still works if the file at the new location does not exist
+
+Added
+-----
+* Support for the Database service
+* VM Serial Console Access
+* Load Balancer Health Status API
+* Compartment renaming
+* Management of secret keys for use with the Object Storage Service's Amazon S3 compatible API.
+
+Changed
+-------
+* The default configuration file location is now ~/.oci/config
+
+====================
 1.3.6 - 2017-08-10
 ====================
 
