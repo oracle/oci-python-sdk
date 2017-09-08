@@ -10,7 +10,7 @@ The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 Deprecated
 ----------
-* The default configuration file location has been changed from ~/.oraclebmc/config to ~/.oci/config. The old location still works if the file at the new location does not exist
+* The default configuration file location has been changed from ~/.oraclebmc/config to ~/.oci/config. The old location still works if the file at the new location does not exist.
 
 Added
 -----
