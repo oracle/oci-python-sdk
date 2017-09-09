@@ -15,10 +15,10 @@ Deprecated
 Added
 -----
 * Support for the Database service
-* VM Serial Console Access
-* Load Balancer Health Status API
-* Compartment renaming
-* Management of secret keys for use with the Object Storage Service's Amazon S3 compatible API.
+* Support for instance console connections
+* Support for the Load Balancer Health Status API
+* Support for Compartment renaming
+* Support for managing customer secret keys
 
 Changed
 -------
