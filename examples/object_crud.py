@@ -1,12 +1,12 @@
 # Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
-import oraclebmc
-from oraclebmc.object_storage.models import CreateBucketDetails
+import oci
+from oci.object_storage.models import CreateBucketDetails
 
 
-config = oraclebmc.config.from_file()
+config = oci.config.from_file()
 compartment_id = config["tenancy"]
-object_storage = oraclebmc.object_storage.ObjectStorageClient(config)
+object_storage = oci.object_storage.ObjectStorageClient(config)
 
 namespace = object_storage.get_namespace().data
 bucket_name = "python-sdk-example-bucket"

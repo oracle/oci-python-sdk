@@ -1,28 +1,37 @@
 .. _configuration:
 
+.. raw:: html
+
+    <script type='text/javascript'>
+        var oldDocsHost = 'oracle-bare-metal-cloud-services-python-sdk';
+        if (window.location.href.indexOf(oldDocsHost) != -1) {
+            window.location.href = 'https://oracle-bare-metal-cloud-services-python-sdk.readthedocs.io/en/latest/deprecation-notice.html';
+        }
+    </script>
+
 Configuration
 ~~~~~~~~~~~~~
 
-oraclebmc uses a simple dict to build clients and other components.  You can build these manually, or oraclebmc can
+oci uses a simple dict to build clients and other components.  You can build these manually, or oci can
 parse and validate a config file.
 
-Using the default configuration location ``~/.oraclebmc/config`` you can use
-:func:`config.from_file() <oraclebmc.config.from_file>` to load any profile.  By default, the ``DEFAULT`` profile
+Using the default configuration location ``~/.oci/config`` you can use
+:func:`config.from_file() <oci.config.from_file>` to load any profile.  By default, the ``DEFAULT`` profile
 is used:
 
 .. code-block:: pycon
 
-    >>> from oraclebmc.config import from_file
+    >>> from oci.config import from_file
     >>> config = from_file()
 
     # Using a different profile from the default location
     >>> config = from_file(profile_name="integ-beta")
 
     # Using the default profile from a different file
-    >>> config = from_file(file_location="~/.oraclebmc/config.prod")
+    >>> config = from_file(file_location="~/.oci/config.prod")
 
 Since ``config`` is a dict, you can also build it manually and check it with
-:func:`config.validate_config() <oraclebmc.config.validate_config>`:
+:func:`config.validate_config() <oci.config.validate_config>`:
 
 .. code-block:: python
 
@@ -39,7 +48,7 @@ Since ``config`` is a dict, you can also build it manually and check it with
         "region": testrunner.region
     }
 
-    from oraclebmc.config import validate_config
+    from oci.config import validate_config
     validate_config(config)
 
 .. seealso::

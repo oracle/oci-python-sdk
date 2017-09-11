@@ -1,9 +1,18 @@
 .. _install:
 
+.. raw:: html
+
+    <script type='text/javascript'>
+        var oldDocsHost = 'oracle-bare-metal-cloud-services-python-sdk';
+        if (window.location.href.indexOf(oldDocsHost) != -1) {
+            window.location.href = 'https://oracle-bare-metal-cloud-services-python-sdk.readthedocs.io/en/latest/deprecation-notice.html';
+        }
+    </script>
+
 Installation
 ~~~~~~~~~~~~
 
-This topic describes how to install, configure, and use the Oracle Bare Metal Cloud Services Python SDK.
+This topic describes how to install, configure, and use the Oracle Cloud Infrastructure Python SDK.
 The Python SDK supports operations for the following services:
 
 * Identity and Access Management Service
@@ -14,12 +23,12 @@ The Python SDK supports operations for the following services:
  Prerequisites
 ===============
 
-* An Oracle Bare Metal Cloud Services account
+* An Oracle Cloud Infrastructure account
 * A user created in that account, in a group with a policy that grants the desired permissions.
   This can be a user for yourself, or another person/system that needs to call the API.
   For an example of how to set up a new user, group, compartment, and policy, see
   `Adding Users`_ in the Getting Started Guide. For a list of other typical
-  Oracle Bare Metal Cloud Services policies, see `Common Policies`_ in the User Guide.
+  Oracle Cloud Infrastructure policies, see `Common Policies`_ in the User Guide.
 * Python version 2.7.5 or 3.5 or later, running on Mac, Windows, or Linux. 
 * The Python SDK uses the `cryptography.io`_ library, which has its own additional `build requirements`_.
 * A keypair used for signing API requests, with the public key uploaded to Oracle. Only the user calling
@@ -34,22 +43,22 @@ You can install the Python SDK through the Python Package Index (PyPI), or alter
 
 **PyPi**
 
-To install from `PyPI <https://pypi.python.org/pypi/oraclebmc>`_:
+To install from `PyPI <https://pypi.python.org/pypi/oci>`_:
 
   Use the following command::
 
-      pip install oraclebmc
+      pip install oci
 
 **GitHub**
 
 To install from GitHub:
 
-1. Download the SDK from `GitHub <https://github.com/oracle/bmcs-python-sdk/releases>`_. 
+1. Download the SDK from `GitHub <https://github.com/oracle/oci-python-sdk/releases>`_.
    The download is a zip containing a whl file and documentation.
 2. Extract the files from the zip.
 3. Use the following command to install the SDK::
 
-      pip install oraclebmc-*-py2.py3-none-any.whl
+      pip install oci-*-py2.py3-none-any.whl
 
   .. note::
 
@@ -70,8 +79,8 @@ Although optional, Oracle recommends that you run the SDK in a virtual environme
 
     For example::
 
-        virtualenv bmcs_sdk_env
-        . bmcs_sdk_env/bin/activate
+        virtualenv oci_sdk_env
+        . oci_sdk_env/bin/activate
 
 
 
@@ -114,7 +123,7 @@ You might encounter issues when installing Python or the SDK, or using the SDK i
 
 Service Errors
 --------------
-Any operation resulting in a service error will cause an exception of type oraclebmc.exceptions.ServiceError to be thrown by the SDK. For information about common service errors returned by BMCS, see `API Errors <https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm>`_
+Any operation resulting in a service error will cause an exception of type oci.exceptions.ServiceError to be thrown by the SDK. For information about common service errors returned by OCI, see `API Errors <https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm>`_
 .
 
 SSL/TLS or Certificate Issues

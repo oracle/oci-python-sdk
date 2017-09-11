@@ -1,5 +1,5 @@
 import random
-import oraclebmc
+import oci
 import os.path
 import time
 import resource
@@ -46,7 +46,7 @@ def max_memory_usage():
 
 
 def validate_service_error(error, status, code, message):
-    assert isinstance(error, oraclebmc.exceptions.ServiceError)
+    assert isinstance(error, oci.exceptions.ServiceError)
     assert error.status == status
     assert error.code == code
     assert error.message.startswith(message)

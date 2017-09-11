@@ -18,7 +18,7 @@ def open_relative(*path):
     return io.open(filename, mode="r", encoding="utf-8")
 
 
-with open_relative("src", "oraclebmc", "version.py") as fd:
+with open_relative("src", "oci", "version.py") as fd:
     version = re.search(
         r"^__version__\s*=\s*['\"]([^'\"]*)['\"]",
         fd.read(), re.MULTILINE).group(1)
@@ -40,10 +40,10 @@ requires = [
 ]
 
 setup(
-    name="oraclebmc",
-    url="https://oracle-bare-metal-cloud-services-python-sdk.readthedocs.io/en/latest/index.html",
+    name="oci",
+    url="http://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/index.html",
     version=version,
-    description="Oracle Bare Metal Cloud Services Python SDK",
+    description="Oracle Cloud Infrastructure Python SDK",
     long_description=readme,
     author="Oracle",
     author_email="joe.levy@oracle.com",
