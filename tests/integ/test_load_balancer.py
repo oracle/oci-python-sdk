@@ -144,9 +144,15 @@ class TestLoadBalancer:
         assert load_balancer_health_response.data.status == 'UNKNOWN'
 
         list_load_balancer_healths_response = load_balancer_client.list_load_balancer_healths(util.COMPARTMENT_ID)
-        assert len(list_load_balancer_healths_response.data) == 1
-        assert list_load_balancer_healths_response.data[0].load_balancer_id == self.load_balancer_ocid
-        assert list_load_balancer_healths_response.data[0].status == 'UNKNOWN'
+        assert len(list_load_balancer_healths_response.data) >= 1
+
+        found_lb = False
+        for item in list_load_balancer_healths_response.data:
+            if item.load_balancer_id == self.load_balancer_ocid:
+                assert item.status == 'UNKNOWN'
+                found_lb = True
+                break
+        assert found_lb
 
     @util.log_test
     def subtest_delete(self, load_balancer_client, virtual_network):
