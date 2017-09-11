@@ -8,7 +8,7 @@
 #              Loads configuration from default profile in the default config
 #                file
 
-import oraclebmc
+import oci
 import os
 import argparse
 from multiprocessing import Process
@@ -30,7 +30,7 @@ def upload_to_object_storage(config, namespace, bucket, path):
     """
     with open(path, "rb") as in_file:
         name = os.path.basename(path)
-        ostorage = oraclebmc.object_storage.ObjectStorageClient(config)
+        ostorage = oci.object_storage.ObjectStorageClient(config)
         ostorage.put_object(namespace,
                             bucket,
                             name,
@@ -39,8 +39,8 @@ def upload_to_object_storage(config, namespace, bucket, path):
 
 
 if __name__ == "__main__":
-    config = oraclebmc.config.from_file()
-    object_storage = oraclebmc.object_storage.ObjectStorageClient(config)
+    config = oci.config.from_file()
+    object_storage = oci.object_storage.ObjectStorageClient(config)
     namespace = object_storage.get_namespace().data
 
     description = "\n".join(["This is an example to show how multiple files can be uploaded to in",

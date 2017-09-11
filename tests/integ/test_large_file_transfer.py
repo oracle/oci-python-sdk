@@ -1,8 +1,10 @@
 import tests.util
-import oraclebmc
+import oci
 import io
 import os
 import pytest
+
+from . import util
 
 
 @pytest.fixture
@@ -14,7 +16,7 @@ def namespace(object_storage):
 def names():
     return {
         "read-object": "reallyLargeFile.dat",
-        "read-bucket": "ReadOnlyTestBucket4",
+        "read-bucket": util.bucket_prefix() + "ReadOnlyTestBucket4",
         "write-object": "file_test",
         "write-bucket": tests.util.unique_name("test_python_streaming"),
         "temp-file": tests.util.get_resource_directory() + "/file_download_test_temp_file.dat"
@@ -23,7 +25,7 @@ def names():
 
 @pytest.yield_fixture
 def write_bucket(namespace, object_storage, config, names):
-    request = oraclebmc.object_storage.models.CreateBucketDetails()
+    request = oci.object_storage.models.CreateBucketDetails()
     request.name = names["write-bucket"]
     request.compartment_id = config["tenancy"]
     response = object_storage.create_bucket(namespace, request)

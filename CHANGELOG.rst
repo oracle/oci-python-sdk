@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+1.3.7 - 2017-09-11
+====================
+
+Deprecated
+----------
+* The default configuration file location has been changed from ~/.oraclebmc/config to ~/.oci/config. The old location still works if the file at the new location does not exist.
+
+Added
+-----
+* Support for the Database service
+* Support for instance console connections
+* Support for the Load Balancer Health Status API
+* Support for Compartment renaming
+* Support for managing customer secret keys
+
+Changed
+-------
+* The default configuration file location is now ~/.oci/config
+
+====================
 1.3.6 - 2017-08-10
 ====================
 
@@ -57,7 +77,7 @@ Added
  Added
 -------
 
-* Support for VCN private subnets using the prohibit_public_ip_on_vnic parameter on oraclebmc.core.VirtualNetworkClient.create_subnet.
+* Support for VCN private subnets using the prohibit_public_ip_on_vnic parameter on oci.core.VirtualNetworkClient.create_subnet.
 * Support for FastConnect
 * Support for list_regions and region subscription operations
 * First class support for new IAD region

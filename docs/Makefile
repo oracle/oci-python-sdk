@@ -92,9 +92,9 @@ qthelp:
 	@echo
 	@echo "Build finished; now you can run "qcollectiongenerator" with the" \
 	      ".qhcp project file in $(BUILDDIR)/qthelp, like this:"
-	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/oraclebmc.qhcp"
+	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/oci.qhcp"
 	@echo "To view the help file:"
-	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/oraclebmc.qhc"
+	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/oci.qhc"
 
 .PHONY: applehelp
 applehelp:
@@ -111,8 +111,8 @@ devhelp:
 	@echo
 	@echo "Build finished."
 	@echo "To view the help file:"
-	@echo "# mkdir -p $$HOME/.local/share/devhelp/oraclebmc"
-	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/oraclebmc"
+	@echo "# mkdir -p $$HOME/.local/share/devhelp/oci"
+	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/oci"
 	@echo "# devhelp"
 
 .PHONY: epub

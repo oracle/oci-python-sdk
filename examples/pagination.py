@@ -1,11 +1,11 @@
 # Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
-import oraclebmc
+import oci
 
 
-config = oraclebmc.config.from_file()
+config = oci.config.from_file()
 compartment_id = config["tenancy"]
-identity = oraclebmc.identity.IdentityClient(config)
+identity = oci.identity.IdentityClient(config)
 
 
 # operation-independent pagination function

@@ -1,10 +1,10 @@
 # Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 import requests
-from oraclebmc.config import from_file
-from oraclebmc.signer import Signer
+from oci.config import from_file
+from oci.signer import Signer
 
-config = from_file('~/.oraclebmc/config')
+config = from_file()
 auth = Signer(
     tenancy=config['tenancy'],
     user=config['user'],
