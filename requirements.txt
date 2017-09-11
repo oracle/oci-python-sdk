@@ -4,6 +4,7 @@ coverage==4.2
 cryptography==1.8.2
 flake8==3.0.4
 httpsig_cffi==15.0.0
+mock==2.0.0
 pytest==3.0.2
 pytest-catchlog==1.2.2
 python-dateutil==2.5.3
