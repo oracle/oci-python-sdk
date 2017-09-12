@@ -165,10 +165,10 @@ class Signer(requests.auth.AuthBase):
 
     def __call__(self, request, enforce_content_headers=True):
         verb = request.method.lower()
-        if verb not in ["get", "head", "delete", "put", "post"]:
+        if verb not in ["get", "head", "delete", "put", "post", "patch"]:
             raise ValueError("Don't know how to sign request verb {}".format(verb))
 
-        sign_body = verb in ["put", "post"]
+        sign_body = verb in ["put", "post", "patch"]
         if sign_body and enforce_content_headers:
             signer = self._body_signer
         else:

@@ -177,3 +177,13 @@ def test_sign_with_body(signer, public_key, request_body):
     verify_signature(public_key, signed_request.headers)
     assert signed_request.headers["x-content-sha256"] == base64_sha256(request_body)
     assert signed_request.headers["content-length"] == str(len(as_bytes(request_body)))
+
+
+def test_sign_with_patch(signer, public_key, request_body):
+    """Signature includes content-* headers by default"""
+    request = Request(url="https://host.com/some-path", method="patch", data=request_body).prepare()
+    signed_request = signer(request)
+
+    verify_signature(public_key, signed_request.headers)
+    assert signed_request.headers["x-content-sha256"] == base64_sha256(request_body)
+    assert signed_request.headers["content-length"] == str(len(as_bytes(request_body)))
