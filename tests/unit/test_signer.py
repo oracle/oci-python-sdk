@@ -174,7 +174,7 @@ def test_sign_with_body(signer, public_key, request_body):
     request = Request(url="https://host.com/some-path", method="post", data=request_body).prepare()
     signed_request = signer(request)
 
-    verify_signature(public_key, signed_request.headers)
+    verify_signature(public_key, signed_request.headers, 'post')
     assert signed_request.headers["x-content-sha256"] == base64_sha256(request_body)
     assert signed_request.headers["content-length"] == str(len(as_bytes(request_body)))
 
@@ -184,6 +184,6 @@ def test_sign_with_patch(signer, public_key, request_body):
     request = Request(url="https://host.com/some-path", method="patch", data=request_body).prepare()
     signed_request = signer(request)
 
-    verify_signature(public_key, signed_request.headers)
+    verify_signature(public_key, signed_request.headers, 'patch')
     assert signed_request.headers["x-content-sha256"] == base64_sha256(request_body)
     assert signed_request.headers["content-length"] == str(len(as_bytes(request_body)))

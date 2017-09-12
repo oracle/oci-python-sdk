@@ -115,6 +115,7 @@ def test_no_retry_on_400s():
 def create_mock_client(side_effect):
     mock_client = mock.Mock()
     mock_client.mock_method = mock.Mock()
+    mock_client.mock_method.__name__ = "mock_method"
     mock_client.mock_method.side_effect = side_effect
 
     return mock_client

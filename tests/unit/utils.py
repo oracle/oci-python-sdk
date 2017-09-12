@@ -67,7 +67,7 @@ def serialize_key(private_key=None, public_key=None, password=None, encoding="pe
             format=format)
 
 
-def verify_signature(public_key, headers):
+def verify_signature(public_key, headers, method):
     signature_pieces = unpack_authorization_header(headers["authorization"])
     signed_headers = signature_pieces["headers"].split(" ")
 
@@ -78,7 +78,7 @@ def verify_signature(public_key, headers):
     signing_string = []
     for header in signed_headers:
         if header == "(request-target)":
-            value = "post /some-path"
+            value = "{} /some-path".format(method)
         else:
             value = headers[header]
         signing_string.append("{}: {}".format(header, value))
