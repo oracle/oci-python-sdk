@@ -56,7 +56,11 @@ class RouteRule(object):
     def network_entity_id(self):
         """
         Gets the network_entity_id of this RouteRule.
-        The OCID for the route rule's target.
+        The OCID for the route rule's target. For information about the type of
+        targets you can specify, see
+        `Route Tables`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm
 
 
         :return: The network_entity_id of this RouteRule.
@@ -68,7 +72,11 @@ class RouteRule(object):
     def network_entity_id(self, network_entity_id):
         """
         Sets the network_entity_id of this RouteRule.
-        The OCID for the route rule's target.
+        The OCID for the route rule's target. For information about the type of
+        targets you can specify, see
+        `Route Tables`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm
 
 
         :param network_entity_id: The network_entity_id of this RouteRule.

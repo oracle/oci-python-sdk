@@ -447,6 +447,14 @@ class ComputeClient(object):
         When you terminate an instance, all attached VNICs (primary
         and secondary) are automatically detached and deleted.
 
+        **Important:** If the VNIC has a
+        :class:`PrivateIp` that is the
+        `target of a route rule`__,
+        deleting the VNIC causes that route rule to blackhole and the traffic
+        will be dropped.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm#privateip
+
 
         :param str vnic_attachment_id: (required)
             The OCID of the VNIC attachment.

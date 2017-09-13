@@ -11,16 +11,19 @@ class UpdateVnicDetails(object):
 
         self.swagger_types = {
             'display_name': 'str',
-            'hostname_label': 'str'
+            'hostname_label': 'str',
+            'skip_source_dest_check': 'bool'
         }
 
         self.attribute_map = {
             'display_name': 'displayName',
-            'hostname_label': 'hostnameLabel'
+            'hostname_label': 'hostnameLabel',
+            'skip_source_dest_check': 'skipSourceDestCheck'
         }
 
         self._display_name = None
         self._hostname_label = None
+        self._skip_source_dest_check = None
 
     @property
     def display_name(self):
@@ -101,6 +104,44 @@ class UpdateVnicDetails(object):
         :type: str
         """
         self._hostname_label = hostname_label
+
+    @property
+    def skip_source_dest_check(self):
+        """
+        Gets the skip_source_dest_check of this UpdateVnicDetails.
+        Whether the source/destination check is disabled on the VNIC.
+        Defaults to `false`, which means the check is performed. For information
+        about why you would skip the source/destination check, see
+        `Using a Private IP as a Route Target`__.
+
+        Example: `true`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm#privateip
+
+
+        :return: The skip_source_dest_check of this UpdateVnicDetails.
+        :rtype: bool
+        """
+        return self._skip_source_dest_check
+
+    @skip_source_dest_check.setter
+    def skip_source_dest_check(self, skip_source_dest_check):
+        """
+        Sets the skip_source_dest_check of this UpdateVnicDetails.
+        Whether the source/destination check is disabled on the VNIC.
+        Defaults to `false`, which means the check is performed. For information
+        about why you would skip the source/destination check, see
+        `Using a Private IP as a Route Target`__.
+
+        Example: `true`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm#privateip
+
+
+        :param skip_source_dest_check: The skip_source_dest_check of this UpdateVnicDetails.
+        :type: bool
+        """
+        self._skip_source_dest_check = skip_source_dest_check
 
     def __repr__(self):
         return formatted_flat_dict(self)
