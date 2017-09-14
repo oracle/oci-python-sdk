@@ -16,21 +16,27 @@ class DbSystemSummary(object):
             'compartment_id': 'str',
             'cpu_core_count': 'int',
             'data_storage_percentage': 'int',
+            'data_storage_size_in_g_bs': 'int',
             'database_edition': 'str',
             'disk_redundancy': 'str',
             'display_name': 'str',
             'domain': 'str',
             'hostname': 'str',
             'id': 'str',
+            'last_patch_history_entry_id': 'str',
+            'license_model': 'str',
             'lifecycle_details': 'str',
             'lifecycle_state': 'str',
             'listener_port': 'int',
+            'node_count': 'int',
+            'reco_storage_size_in_gb': 'int',
             'scan_dns_record_id': 'str',
             'scan_ip_ids': 'list[str]',
             'shape': 'str',
             'ssh_public_keys': 'list[str]',
             'subnet_id': 'str',
             'time_created': 'datetime',
+            'time_zone': 'str',
             'version': 'str',
             'vip_ids': 'list[str]'
         }
@@ -42,21 +48,27 @@ class DbSystemSummary(object):
             'compartment_id': 'compartmentId',
             'cpu_core_count': 'cpuCoreCount',
             'data_storage_percentage': 'dataStoragePercentage',
+            'data_storage_size_in_g_bs': 'dataStorageSizeInGBs',
             'database_edition': 'databaseEdition',
             'disk_redundancy': 'diskRedundancy',
             'display_name': 'displayName',
             'domain': 'domain',
             'hostname': 'hostname',
             'id': 'id',
+            'last_patch_history_entry_id': 'lastPatchHistoryEntryId',
+            'license_model': 'licenseModel',
             'lifecycle_details': 'lifecycleDetails',
             'lifecycle_state': 'lifecycleState',
             'listener_port': 'listenerPort',
+            'node_count': 'nodeCount',
+            'reco_storage_size_in_gb': 'recoStorageSizeInGB',
             'scan_dns_record_id': 'scanDnsRecordId',
             'scan_ip_ids': 'scanIpIds',
             'shape': 'shape',
             'ssh_public_keys': 'sshPublicKeys',
             'subnet_id': 'subnetId',
             'time_created': 'timeCreated',
+            'time_zone': 'timeZone',
             'version': 'version',
             'vip_ids': 'vipIds'
         }
@@ -67,21 +79,27 @@ class DbSystemSummary(object):
         self._compartment_id = None
         self._cpu_core_count = None
         self._data_storage_percentage = None
+        self._data_storage_size_in_g_bs = None
         self._database_edition = None
         self._disk_redundancy = None
         self._display_name = None
         self._domain = None
         self._hostname = None
         self._id = None
+        self._last_patch_history_entry_id = None
+        self._license_model = None
         self._lifecycle_details = None
         self._lifecycle_state = None
         self._listener_port = None
+        self._node_count = None
+        self._reco_storage_size_in_gb = None
         self._scan_dns_record_id = None
         self._scan_ip_ids = None
         self._shape = None
         self._ssh_public_keys = None
         self._subnet_id = None
         self._time_created = None
+        self._time_zone = None
         self._version = None
         self._vip_ids = None
 
@@ -236,6 +254,30 @@ class DbSystemSummary(object):
         :type: int
         """
         self._data_storage_percentage = data_storage_percentage
+
+    @property
+    def data_storage_size_in_g_bs(self):
+        """
+        Gets the data_storage_size_in_g_bs of this DbSystemSummary.
+        Data storage size, in GBs, that is currently available to the DB system. This is applicable only for VM-based DBs.
+
+
+        :return: The data_storage_size_in_g_bs of this DbSystemSummary.
+        :rtype: int
+        """
+        return self._data_storage_size_in_g_bs
+
+    @data_storage_size_in_g_bs.setter
+    def data_storage_size_in_g_bs(self, data_storage_size_in_g_bs):
+        """
+        Sets the data_storage_size_in_g_bs of this DbSystemSummary.
+        Data storage size, in GBs, that is currently available to the DB system. This is applicable only for VM-based DBs.
+
+
+        :param data_storage_size_in_g_bs: The data_storage_size_in_g_bs of this DbSystemSummary.
+        :type: int
+        """
+        self._data_storage_size_in_g_bs = data_storage_size_in_g_bs
 
     @property
     def database_edition(self):
@@ -398,6 +440,60 @@ class DbSystemSummary(object):
         self._id = id
 
     @property
+    def last_patch_history_entry_id(self):
+        """
+        Gets the last_patch_history_entry_id of this DbSystemSummary.
+        The OCID of the last patch history. This is updated as soon as a patch operation is started.
+
+
+        :return: The last_patch_history_entry_id of this DbSystemSummary.
+        :rtype: str
+        """
+        return self._last_patch_history_entry_id
+
+    @last_patch_history_entry_id.setter
+    def last_patch_history_entry_id(self, last_patch_history_entry_id):
+        """
+        Sets the last_patch_history_entry_id of this DbSystemSummary.
+        The OCID of the last patch history. This is updated as soon as a patch operation is started.
+
+
+        :param last_patch_history_entry_id: The last_patch_history_entry_id of this DbSystemSummary.
+        :type: str
+        """
+        self._last_patch_history_entry_id = last_patch_history_entry_id
+
+    @property
+    def license_model(self):
+        """
+        Gets the license_model of this DbSystemSummary.
+        The Oracle license model that applies to all the databases on the DB System. The default is LICENSE_INCLUDED.
+
+        Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The license_model of this DbSystemSummary.
+        :rtype: str
+        """
+        return self._license_model
+
+    @license_model.setter
+    def license_model(self, license_model):
+        """
+        Sets the license_model of this DbSystemSummary.
+        The Oracle license model that applies to all the databases on the DB System. The default is LICENSE_INCLUDED.
+
+
+        :param license_model: The license_model of this DbSystemSummary.
+        :type: str
+        """
+        allowed_values = ["LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"]
+        if license_model not in allowed_values:
+            license_model = 'UNKNOWN_ENUM_VALUE'
+        self._license_model = license_model
+
+    @property
     def lifecycle_details(self):
         """
         Gets the lifecycle_details of this DbSystemSummary.
@@ -476,6 +572,54 @@ class DbSystemSummary(object):
         self._listener_port = listener_port
 
     @property
+    def node_count(self):
+        """
+        Gets the node_count of this DbSystemSummary.
+        Number of nodes in this DB system. For RAC DBs, this will be greater than 1.
+
+
+        :return: The node_count of this DbSystemSummary.
+        :rtype: int
+        """
+        return self._node_count
+
+    @node_count.setter
+    def node_count(self, node_count):
+        """
+        Sets the node_count of this DbSystemSummary.
+        Number of nodes in this DB system. For RAC DBs, this will be greater than 1.
+
+
+        :param node_count: The node_count of this DbSystemSummary.
+        :type: int
+        """
+        self._node_count = node_count
+
+    @property
+    def reco_storage_size_in_gb(self):
+        """
+        Gets the reco_storage_size_in_gb of this DbSystemSummary.
+        RECO/REDO storage size, in GBs, that is currently allocated to the DB system. This is applicable only for VM-based DBs.
+
+
+        :return: The reco_storage_size_in_gb of this DbSystemSummary.
+        :rtype: int
+        """
+        return self._reco_storage_size_in_gb
+
+    @reco_storage_size_in_gb.setter
+    def reco_storage_size_in_gb(self, reco_storage_size_in_gb):
+        """
+        Sets the reco_storage_size_in_gb of this DbSystemSummary.
+        RECO/REDO storage size, in GBs, that is currently allocated to the DB system. This is applicable only for VM-based DBs.
+
+
+        :param reco_storage_size_in_gb: The reco_storage_size_in_gb of this DbSystemSummary.
+        :type: int
+        """
+        self._reco_storage_size_in_gb = reco_storage_size_in_gb
+
+    @property
     def scan_dns_record_id(self):
         """
         Gets the scan_dns_record_id of this DbSystemSummary.
@@ -535,7 +679,7 @@ class DbSystemSummary(object):
     def shape(self):
         """
         Gets the shape of this DbSystemSummary.
-        The shape of the DB System. The shape determines the CPU cores, storage, and memory allocated to the DB System.
+        The shape of the DB System. The shape determines resources to allocate to the DB system - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes.
 
 
         :return: The shape of this DbSystemSummary.
@@ -547,7 +691,7 @@ class DbSystemSummary(object):
     def shape(self, shape):
         """
         Sets the shape of this DbSystemSummary.
-        The shape of the DB System. The shape determines the CPU cores, storage, and memory allocated to the DB System.
+        The shape of the DB System. The shape determines resources to allocate to the DB system - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes.
 
 
         :param shape: The shape of this DbSystemSummary.
@@ -642,6 +786,30 @@ class DbSystemSummary(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def time_zone(self):
+        """
+        Gets the time_zone of this DbSystemSummary.
+        The timeZone of the DB System.
+
+
+        :return: The time_zone of this DbSystemSummary.
+        :rtype: str
+        """
+        return self._time_zone
+
+    @time_zone.setter
+    def time_zone(self, time_zone):
+        """
+        Sets the time_zone of this DbSystemSummary.
+        The timeZone of the DB System.
+
+
+        :param time_zone: The time_zone of this DbSystemSummary.
+        :type: str
+        """
+        self._time_zone = time_zone
 
     @property
     def version(self):

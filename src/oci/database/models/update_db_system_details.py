@@ -11,22 +11,28 @@ class UpdateDbSystemDetails(object):
 
         self.swagger_types = {
             'cpu_core_count': 'int',
-            'ssh_public_keys': 'list[str]'
+            'data_storage_size_in_g_bs': 'int',
+            'ssh_public_keys': 'list[str]',
+            'version': 'PatchDetails'
         }
 
         self.attribute_map = {
             'cpu_core_count': 'cpuCoreCount',
-            'ssh_public_keys': 'sshPublicKeys'
+            'data_storage_size_in_g_bs': 'dataStorageSizeInGBs',
+            'ssh_public_keys': 'sshPublicKeys',
+            'version': 'version'
         }
 
         self._cpu_core_count = None
+        self._data_storage_size_in_g_bs = None
         self._ssh_public_keys = None
+        self._version = None
 
     @property
     def cpu_core_count(self):
         """
         Gets the cpu_core_count of this UpdateDbSystemDetails.
-        The number of CPU Cores to be set on the DB System
+        The number of CPU Cores to be set on the DB System. Applicable only for non-VM based DB systems.
 
 
         :return: The cpu_core_count of this UpdateDbSystemDetails.
@@ -38,13 +44,37 @@ class UpdateDbSystemDetails(object):
     def cpu_core_count(self, cpu_core_count):
         """
         Sets the cpu_core_count of this UpdateDbSystemDetails.
-        The number of CPU Cores to be set on the DB System
+        The number of CPU Cores to be set on the DB System. Applicable only for non-VM based DB systems.
 
 
         :param cpu_core_count: The cpu_core_count of this UpdateDbSystemDetails.
         :type: int
         """
         self._cpu_core_count = cpu_core_count
+
+    @property
+    def data_storage_size_in_g_bs(self):
+        """
+        Gets the data_storage_size_in_g_bs of this UpdateDbSystemDetails.
+        Size, in GBs, to which the currently attached storage needs to be scaled up to for VM based DB system. This must be greater than current storage size. Note that the total storage size attached will be more than what is requested, to account for REDO/RECO space and software volume.
+
+
+        :return: The data_storage_size_in_g_bs of this UpdateDbSystemDetails.
+        :rtype: int
+        """
+        return self._data_storage_size_in_g_bs
+
+    @data_storage_size_in_g_bs.setter
+    def data_storage_size_in_g_bs(self, data_storage_size_in_g_bs):
+        """
+        Sets the data_storage_size_in_g_bs of this UpdateDbSystemDetails.
+        Size, in GBs, to which the currently attached storage needs to be scaled up to for VM based DB system. This must be greater than current storage size. Note that the total storage size attached will be more than what is requested, to account for REDO/RECO space and software volume.
+
+
+        :param data_storage_size_in_g_bs: The data_storage_size_in_g_bs of this UpdateDbSystemDetails.
+        :type: int
+        """
+        self._data_storage_size_in_g_bs = data_storage_size_in_g_bs
 
     @property
     def ssh_public_keys(self):
@@ -69,6 +99,26 @@ class UpdateDbSystemDetails(object):
         :type: list[str]
         """
         self._ssh_public_keys = ssh_public_keys
+
+    @property
+    def version(self):
+        """
+        Gets the version of this UpdateDbSystemDetails.
+
+        :return: The version of this UpdateDbSystemDetails.
+        :rtype: PatchDetails
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """
+        Sets the version of this UpdateDbSystemDetails.
+
+        :param version: The version of this UpdateDbSystemDetails.
+        :type: PatchDetails
+        """
+        self._version = version
 
     def __repr__(self):
         return formatted_flat_dict(self)
