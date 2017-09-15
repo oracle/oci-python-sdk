@@ -28,7 +28,7 @@ class DatabaseClient(object):
 
     def create_db_home(self, create_db_home_with_db_system_id_details, **kwargs):
         """
-        createDbHome
+        CreateDbHome
         Creates a new DB Home in the specified DB System based on the request parameters you provide.
 
 
