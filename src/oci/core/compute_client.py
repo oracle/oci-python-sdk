@@ -256,7 +256,15 @@ class ComputeClient(object):
     def create_instance_console_connection(self, create_instance_console_connection_details, **kwargs):
         """
         CreateInstanceConsoleConnection
-        Create a console connection for an instance.
+        Creates a new serial console connection to the specified instance.
+        Once the serial console connection has been created and is available,
+        you connect to the serial console using an SSH client.
+
+        The default number of enabled serial console connections per tenancy is 10.
+
+        For more information about serial console access, see `Accessing the Serial Console`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/serialconsole.htm
 
 
         :param CreateInstanceConsoleConnectionDetails create_instance_console_connection_details: (required)
@@ -395,7 +403,7 @@ class ComputeClient(object):
     def delete_instance_console_connection(self, instance_console_connection_id, **kwargs):
         """
         DeleteInstanceConsoleConnection
-        Delete the console connection for an instance
+        Deletes the specified serial console connection.
 
 
         :param str instance_console_connection_id: (required)
@@ -792,7 +800,7 @@ class ComputeClient(object):
     def get_instance_console_connection(self, instance_console_connection_id, **kwargs):
         """
         GetInstanceConsoleConnection
-        Get the details of an instance console connection
+        Gets the specified serial console connection's information.
 
 
         :param str instance_console_connection_id: (required)
@@ -1238,7 +1246,11 @@ class ComputeClient(object):
     def list_instance_console_connections(self, compartment_id, **kwargs):
         """
         ListInstanceConsoleConnections
-        Lists the console connections for the specified compartment or instance that have not been deleted.
+        Lists the serial console connections for the specified compartment or instance.
+
+        For more information about serial console access, see `Accessing the Serial Console`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/serialconsole.htm
 
 
         :param str compartment_id: (required)
