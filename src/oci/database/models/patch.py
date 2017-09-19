@@ -70,7 +70,7 @@ class Patch(object):
         """
         allowed_values = ["PRECHECK", "APPLY", "ROLLBACK"]
         
-        available_actions[:] = ['UNKNOWN_ENUM_VALUE' if x not in allowed_values else x for x in allowed_values]
+        available_actions[:] = ['UNKNOWN_ENUM_VALUE' if x not in allowed_values else x for x in available_actions]
         self._available_actions = available_actions
 
     @property
