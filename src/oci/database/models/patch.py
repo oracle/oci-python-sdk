@@ -49,7 +49,7 @@ class Patch(object):
         Gets the available_actions of this Patch.
         Actions that can possibly be performed using this patch.
 
-        Allowed values for this property are: "PRECHECK", "APPLY", "ROLLBACK", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for items in this list are: "PRECHECK", "APPLY", "ROLLBACK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -69,8 +69,8 @@ class Patch(object):
         :type: list[str]
         """
         allowed_values = ["PRECHECK", "APPLY", "ROLLBACK"]
-        if available_actions not in allowed_values:
-            available_actions = 'UNKNOWN_ENUM_VALUE'
+        
+        available_actions[:] = ['UNKNOWN_ENUM_VALUE' if x not in allowed_values else x for x in allowed_values]
         self._available_actions = available_actions
 
     @property
