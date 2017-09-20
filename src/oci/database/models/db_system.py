@@ -16,7 +16,7 @@ class DbSystem(object):
             'compartment_id': 'str',
             'cpu_core_count': 'int',
             'data_storage_percentage': 'int',
-            'data_storage_size_in_g_bs': 'int',
+            'data_storage_size_in_gbs': 'int',
             'database_edition': 'str',
             'disk_redundancy': 'str',
             'display_name': 'str',
@@ -48,7 +48,7 @@ class DbSystem(object):
             'compartment_id': 'compartmentId',
             'cpu_core_count': 'cpuCoreCount',
             'data_storage_percentage': 'dataStoragePercentage',
-            'data_storage_size_in_g_bs': 'dataStorageSizeInGBs',
+            'data_storage_size_in_gbs': 'dataStorageSizeInGBs',
             'database_edition': 'databaseEdition',
             'disk_redundancy': 'diskRedundancy',
             'display_name': 'displayName',
@@ -79,7 +79,7 @@ class DbSystem(object):
         self._compartment_id = None
         self._cpu_core_count = None
         self._data_storage_percentage = None
-        self._data_storage_size_in_g_bs = None
+        self._data_storage_size_in_gbs = None
         self._database_edition = None
         self._disk_redundancy = None
         self._display_name = None
@@ -256,28 +256,28 @@ class DbSystem(object):
         self._data_storage_percentage = data_storage_percentage
 
     @property
-    def data_storage_size_in_g_bs(self):
+    def data_storage_size_in_gbs(self):
         """
-        Gets the data_storage_size_in_g_bs of this DbSystem.
+        Gets the data_storage_size_in_gbs of this DbSystem.
         Data storage size, in GBs, that is currently available to the DB system. This is applicable only for VM-based DBs.
 
 
-        :return: The data_storage_size_in_g_bs of this DbSystem.
+        :return: The data_storage_size_in_gbs of this DbSystem.
         :rtype: int
         """
-        return self._data_storage_size_in_g_bs
+        return self._data_storage_size_in_gbs
 
-    @data_storage_size_in_g_bs.setter
-    def data_storage_size_in_g_bs(self, data_storage_size_in_g_bs):
+    @data_storage_size_in_gbs.setter
+    def data_storage_size_in_gbs(self, data_storage_size_in_gbs):
         """
-        Sets the data_storage_size_in_g_bs of this DbSystem.
+        Sets the data_storage_size_in_gbs of this DbSystem.
         Data storage size, in GBs, that is currently available to the DB system. This is applicable only for VM-based DBs.
 
 
-        :param data_storage_size_in_g_bs: The data_storage_size_in_g_bs of this DbSystem.
+        :param data_storage_size_in_gbs: The data_storage_size_in_gbs of this DbSystem.
         :type: int
         """
-        self._data_storage_size_in_g_bs = data_storage_size_in_g_bs
+        self._data_storage_size_in_gbs = data_storage_size_in_gbs
 
     @property
     def database_edition(self):
