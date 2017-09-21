@@ -7,12 +7,13 @@ import random
 import time
 import traceback
 import oci
+import os
 from oci.object_storage.transfer.constants import MEBIBYTE
 
 TEST_DATA_VERSION = '1'
 
-COMPARTMENT_ID = 'ocid1.compartment.oc1..aaaaaaaan5brzve7w7oyhrfngjfsrf72r67aqdd2sbhlarjas6pwamy4425a'
-COMPARTMENT_NAME = 'PythonSDKTestCompartment'
+COMPARTMENT_ID = os.environ.get("OCI_PYSDK_COMPARTMENT_ID")
+COMPARTMENT_NAME = os.environ.get("OCI_PYSDK_COMPARTMENT_NAME")
 
 REGIONAL_CONFIG = {
     'us-phoenix-1': {

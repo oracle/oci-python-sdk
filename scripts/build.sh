@@ -6,6 +6,9 @@ set -x ;
 echo Check Directory Contents
 ls -la
 
+echo "Sourcing test_setup.sh to load env vars"
+source internal_resources/test_setup.sh;
+
 echo Creating venv to install sdk locally
 . /opt/odo/tox_sic/venv/bin/activate
 virtualenv .sdk-venv

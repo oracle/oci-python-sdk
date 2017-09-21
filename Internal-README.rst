@@ -108,6 +108,9 @@ Prerequisites::
 
     - Make sure to unset virtual environment using 'pyenv shell --unset'
 
+Some of the tests require environment variables which can be set by running the following command:
+'source internal_resources/test_setup.sh'.
+
 To run the full suite of tests against all tox environments::
 
     tox
