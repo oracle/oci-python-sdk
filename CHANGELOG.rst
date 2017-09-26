@@ -10,6 +10,7 @@ The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 Deprecated
 ----------
+* The top level namespace / package name has been changed from oraclebmc to oci. The oraclebmc package is deprecated and will no longer be maintained starting March 2018. Please upgrade to the oci package to avoid interruption at that time. More info is available `here <http://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/backward-compatibility.html>`_.
 * The default configuration file location has been changed from ~/.oraclebmc/config to ~/.oci/config. The old location still works if the file at the new location does not exist.
 
 Added
@@ -50,8 +51,7 @@ Added
  1.3.4 - 2017-06-16
 ====================
 
--------
- Fixed
+Fixed
 -------
 
 * Fixed bug in support for load balancing service.
@@ -60,8 +60,7 @@ Added
  1.3.3 - 2017-06-09
 ====================
 
--------
- Added
+Added
 -------
 
 * An UploadManager class to better support large object uploads through multipart and parallel operations.
@@ -73,8 +72,7 @@ Added
  1.3.2 - 2017-05-18
 ====================
 
--------
- Added
+Added
 -------
 
 * Support for VCN private subnets using the prohibit_public_ip_on_vnic parameter on oci.core.VirtualNetworkClient.create_subnet.
@@ -82,8 +80,7 @@ Added
 * Support for list_regions and region subscription operations
 * First class support for new IAD region
 
--------
- Fixed
+Fixed
 -------
 
 * For manually created configs (not from a file), use default values for optional fields that are not present (`GitHub issue <https://github.com/oracle/bmcs-python-sdk/issues/13>`_)
@@ -93,8 +90,7 @@ Added
  1.3.1 - 2017-04-27
 ====================
 
--------
- Changed
+Changed
 -------
 
 * No longer throwing exceptions for unrecognized enum values returned by services.  Any unrecognized enum value returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -103,8 +99,7 @@ Added
  1.3.0 - 2017-04-06
 ====================
 
--------
- Added
+Added
 -------
 
 * Support for DHCP Search Domain Option.
@@ -114,14 +109,12 @@ Added
  1.2.0 - 2017-03-28
 ====================
 
--------
- Fixed
+Fixed
 -------
 
 * Allow service responses to deserialize to base classes when unknown subtypes are returned. Previously this would result in an exception.
 
--------
- Added
+Added
 -------
 
 * Support hostnames for instances and DNS labels for VCNs and subnets.
@@ -130,8 +123,7 @@ Added
  1.1.2 - 2017-03-16
 ====================
 
--------
- Changed
+Changed
 -------
 
 * Updated cryptography version to 1.8.1
@@ -140,8 +132,7 @@ Added
  1.1.1 - 2017-02-23
 ====================
 
--------
- Added
+Added
 -------
 
 * Support for iPXE script parameter to launch_instance operation
@@ -151,8 +142,7 @@ Added
  1.1.0 - 2017-02-03
 ====================
 
--------
- Added
+Added
 -------
 
 * Support added for Core Services:
@@ -165,8 +155,8 @@ Added
  1.0.0 - 2017-01-17
 ====================
 
--------
- Added
+
+Added
 -------
 
 * Initial Release
