@@ -5,7 +5,7 @@
 from ...util import formatted_flat_dict
 
 
-class Patch(object):
+class PatchSummary(object):
 
     def __init__(self):
 
@@ -43,14 +43,14 @@ class Patch(object):
     @property
     def available_actions(self):
         """
-        Gets the available_actions of this Patch.
+        Gets the available_actions of this PatchSummary.
         Actions that can possibly be performed using this patch.
 
         Allowed values for items in this list are: "APPLY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
-        :return: The available_actions of this Patch.
+        :return: The available_actions of this PatchSummary.
         :rtype: list[str]
         """
         return self._available_actions
@@ -58,11 +58,11 @@ class Patch(object):
     @available_actions.setter
     def available_actions(self, available_actions):
         """
-        Sets the available_actions of this Patch.
+        Sets the available_actions of this PatchSummary.
         Actions that can possibly be performed using this patch.
 
 
-        :param available_actions: The available_actions of this Patch.
+        :param available_actions: The available_actions of this PatchSummary.
         :type: list[str]
         """
         allowed_values = ["APPLY"]
@@ -73,11 +73,11 @@ class Patch(object):
     @property
     def description(self):
         """
-        Gets the description of this Patch.
+        Gets the description of this PatchSummary.
         The text describing this patch package.
 
 
-        :return: The description of this Patch.
+        :return: The description of this PatchSummary.
         :rtype: str
         """
         return self._description
@@ -85,11 +85,11 @@ class Patch(object):
     @description.setter
     def description(self, description):
         """
-        Sets the description of this Patch.
+        Sets the description of this PatchSummary.
         The text describing this patch package.
 
 
-        :param description: The description of this Patch.
+        :param description: The description of this PatchSummary.
         :type: str
         """
         self._description = description
@@ -97,11 +97,11 @@ class Patch(object):
     @property
     def id(self):
         """
-        Gets the id of this Patch.
+        Gets the id of this PatchSummary.
         The OCID of the patch.
 
 
-        :return: The id of this Patch.
+        :return: The id of this PatchSummary.
         :rtype: str
         """
         return self._id
@@ -109,11 +109,11 @@ class Patch(object):
     @id.setter
     def id(self, id):
         """
-        Sets the id of this Patch.
+        Sets the id of this PatchSummary.
         The OCID of the patch.
 
 
-        :param id: The id of this Patch.
+        :param id: The id of this PatchSummary.
         :type: str
         """
         self._id = id
@@ -121,14 +121,14 @@ class Patch(object):
     @property
     def last_action(self):
         """
-        Gets the last_action of this Patch.
+        Gets the last_action of this PatchSummary.
         Action that is currently being performed or was completed last.
 
         Allowed values for this property are: "APPLY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
-        :return: The last_action of this Patch.
+        :return: The last_action of this PatchSummary.
         :rtype: str
         """
         return self._last_action
@@ -136,11 +136,11 @@ class Patch(object):
     @last_action.setter
     def last_action(self, last_action):
         """
-        Sets the last_action of this Patch.
+        Sets the last_action of this PatchSummary.
         Action that is currently being performed or was completed last.
 
 
-        :param last_action: The last_action of this Patch.
+        :param last_action: The last_action of this PatchSummary.
         :type: str
         """
         allowed_values = ["APPLY"]
@@ -151,12 +151,12 @@ class Patch(object):
     @property
     def lifecycle_details(self):
         """
-        Gets the lifecycle_details of this Patch.
+        Gets the lifecycle_details of this PatchSummary.
         A descriptive text associated with the lifecycleState.
         Typically can contain additional displayable text.
 
 
-        :return: The lifecycle_details of this Patch.
+        :return: The lifecycle_details of this PatchSummary.
         :rtype: str
         """
         return self._lifecycle_details
@@ -164,12 +164,12 @@ class Patch(object):
     @lifecycle_details.setter
     def lifecycle_details(self, lifecycle_details):
         """
-        Sets the lifecycle_details of this Patch.
+        Sets the lifecycle_details of this PatchSummary.
         A descriptive text associated with the lifecycleState.
         Typically can contain additional displayable text.
 
 
-        :param lifecycle_details: The lifecycle_details of this Patch.
+        :param lifecycle_details: The lifecycle_details of this PatchSummary.
         :type: str
         """
         self._lifecycle_details = lifecycle_details
@@ -177,14 +177,14 @@ class Patch(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this Patch.
+        Gets the lifecycle_state of this PatchSummary.
         The current state of the patch as a result of lastAction.
 
         Allowed values for this property are: "AVAILABLE", "SUCCESS", "IN_PROGRESS", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
-        :return: The lifecycle_state of this Patch.
+        :return: The lifecycle_state of this PatchSummary.
         :rtype: str
         """
         return self._lifecycle_state
@@ -192,11 +192,11 @@ class Patch(object):
     @lifecycle_state.setter
     def lifecycle_state(self, lifecycle_state):
         """
-        Sets the lifecycle_state of this Patch.
+        Sets the lifecycle_state of this PatchSummary.
         The current state of the patch as a result of lastAction.
 
 
-        :param lifecycle_state: The lifecycle_state of this Patch.
+        :param lifecycle_state: The lifecycle_state of this PatchSummary.
         :type: str
         """
         allowed_values = ["AVAILABLE", "SUCCESS", "IN_PROGRESS", "FAILED"]
@@ -207,11 +207,11 @@ class Patch(object):
     @property
     def time_released(self):
         """
-        Gets the time_released of this Patch.
+        Gets the time_released of this PatchSummary.
         The date and time that the patch was released.
 
 
-        :return: The time_released of this Patch.
+        :return: The time_released of this PatchSummary.
         :rtype: datetime
         """
         return self._time_released
@@ -219,11 +219,11 @@ class Patch(object):
     @time_released.setter
     def time_released(self, time_released):
         """
-        Sets the time_released of this Patch.
+        Sets the time_released of this PatchSummary.
         The date and time that the patch was released.
 
 
-        :param time_released: The time_released of this Patch.
+        :param time_released: The time_released of this PatchSummary.
         :type: datetime
         """
         self._time_released = time_released
@@ -231,11 +231,11 @@ class Patch(object):
     @property
     def version(self):
         """
-        Gets the version of this Patch.
+        Gets the version of this PatchSummary.
         The version of this patch package.
 
 
-        :return: The version of this Patch.
+        :return: The version of this PatchSummary.
         :rtype: str
         """
         return self._version
@@ -243,11 +243,11 @@ class Patch(object):
     @version.setter
     def version(self, version):
         """
-        Sets the version of this Patch.
+        Sets the version of this PatchSummary.
         The version of this patch package.
 
 
-        :param version: The version of this Patch.
+        :param version: The version of this PatchSummary.
         :type: str
         """
         self._version = version

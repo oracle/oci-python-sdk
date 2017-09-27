@@ -27,8 +27,7 @@ class LaunchDbSystemDetails(object):
             'node_count': 'int',
             'shape': 'str',
             'ssh_public_keys': 'list[str]',
-            'subnet_id': 'str',
-            'time_zone': 'str'
+            'subnet_id': 'str'
         }
 
         self.attribute_map = {
@@ -49,8 +48,7 @@ class LaunchDbSystemDetails(object):
             'node_count': 'nodeCount',
             'shape': 'shape',
             'ssh_public_keys': 'sshPublicKeys',
-            'subnet_id': 'subnetId',
-            'time_zone': 'timeZone'
+            'subnet_id': 'subnetId'
         }
 
         self._availability_domain = None
@@ -71,7 +69,6 @@ class LaunchDbSystemDetails(object):
         self._shape = None
         self._ssh_public_keys = None
         self._subnet_id = None
-        self._time_zone = None
 
     @property
     def availability_domain(self):
@@ -556,8 +553,8 @@ class LaunchDbSystemDetails(object):
         The OCID of the subnet the DB System is associated with.
 
         **Subnet Restrictions:**
-        - For 1- and 2-node RAC DB Systems, do not use a subnet that overlaps with 192.168.16.16/28
-        - For Exadata DB Systems, do not use a subnet that overlaps with 192.168.128.0/20
+        - For single node and 2-node (RAC) DB Systems, do not use a subnet that overlaps with 192.168.16.16/28
+        - For Exadata and VM-based RAC DB Systems, do not use a subnet that overlaps with 192.168.128.0/20
 
         These subnets are used by the Oracle Clusterware private interconnect on the database instance.
         Specifying an overlapping subnet will cause the private interconnect to malfunction.
@@ -576,8 +573,8 @@ class LaunchDbSystemDetails(object):
         The OCID of the subnet the DB System is associated with.
 
         **Subnet Restrictions:**
-        - For 1- and 2-node RAC DB Systems, do not use a subnet that overlaps with 192.168.16.16/28
-        - For Exadata DB Systems, do not use a subnet that overlaps with 192.168.128.0/20
+        - For single node and 2-node (RAC) DB Systems, do not use a subnet that overlaps with 192.168.16.16/28
+        - For Exadata and VM-based RAC DB Systems, do not use a subnet that overlaps with 192.168.128.0/20
 
         These subnets are used by the Oracle Clusterware private interconnect on the database instance.
         Specifying an overlapping subnet will cause the private interconnect to malfunction.
@@ -588,30 +585,6 @@ class LaunchDbSystemDetails(object):
         :type: str
         """
         self._subnet_id = subnet_id
-
-    @property
-    def time_zone(self):
-        """
-        Gets the time_zone of this LaunchDbSystemDetails.
-        The timeZone of the DB System.
-
-
-        :return: The time_zone of this LaunchDbSystemDetails.
-        :rtype: str
-        """
-        return self._time_zone
-
-    @time_zone.setter
-    def time_zone(self, time_zone):
-        """
-        Sets the time_zone of this LaunchDbSystemDetails.
-        The timeZone of the DB System.
-
-
-        :param time_zone: The time_zone of this LaunchDbSystemDetails.
-        :type: str
-        """
-        self._time_zone = time_zone
 
     def __repr__(self):
         return formatted_flat_dict(self)

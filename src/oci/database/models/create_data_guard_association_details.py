@@ -46,7 +46,6 @@ class CreateDataGuardAssociationDetails(object):
         """
         Gets the creation_type of this CreateDataGuardAssociationDetails.
         Specifies where to create the associated database.
-
         \"ExistingDbSystem\" is the only supported `creationType` value.
 
 
@@ -60,7 +59,6 @@ class CreateDataGuardAssociationDetails(object):
         """
         Sets the creation_type of this CreateDataGuardAssociationDetails.
         Specifies where to create the associated database.
-
         \"ExistingDbSystem\" is the only supported `creationType` value.
 
 

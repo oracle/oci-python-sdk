@@ -349,7 +349,7 @@ class DataGuardAssociation(object):
         Gets the peer_role of this DataGuardAssociation.
         The role of the peer database in this Data Guard association.
 
-        Allowed values for this property are: "PRIMARY", "STANDBY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -368,7 +368,7 @@ class DataGuardAssociation(object):
         :param peer_role: The peer_role of this DataGuardAssociation.
         :type: str
         """
-        allowed_values = ["PRIMARY", "STANDBY"]
+        allowed_values = ["PRIMARY", "STANDBY", "DISABLED_STANDBY"]
         if peer_role not in allowed_values:
             peer_role = 'UNKNOWN_ENUM_VALUE'
         self._peer_role = peer_role
@@ -417,7 +417,7 @@ class DataGuardAssociation(object):
         Gets the role of this DataGuardAssociation.
         The role of the reporting database in this Data Guard association.
 
-        Allowed values for this property are: "PRIMARY", "STANDBY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -436,7 +436,7 @@ class DataGuardAssociation(object):
         :param role: The role of this DataGuardAssociation.
         :type: str
         """
-        allowed_values = ["PRIMARY", "STANDBY"]
+        allowed_values = ["PRIMARY", "STANDBY", "DISABLED_STANDBY"]
         if role not in allowed_values:
             role = 'UNKNOWN_ENUM_VALUE'
         self._role = role

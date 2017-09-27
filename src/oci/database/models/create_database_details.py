@@ -12,7 +12,6 @@ class CreateDatabaseDetails(object):
         self.swagger_types = {
             'admin_password': 'str',
             'character_set': 'str',
-            'db_backup_config': 'DbBackupConfig',
             'db_name': 'str',
             'db_workload': 'str',
             'ncharacter_set': 'str',
@@ -22,7 +21,6 @@ class CreateDatabaseDetails(object):
         self.attribute_map = {
             'admin_password': 'adminPassword',
             'character_set': 'characterSet',
-            'db_backup_config': 'dbBackupConfig',
             'db_name': 'dbName',
             'db_workload': 'dbWorkload',
             'ncharacter_set': 'ncharacterSet',
@@ -31,7 +29,6 @@ class CreateDatabaseDetails(object):
 
         self._admin_password = None
         self._character_set = None
-        self._db_backup_config = None
         self._db_name = None
         self._db_workload = None
         self._ncharacter_set = None
@@ -88,26 +85,6 @@ class CreateDatabaseDetails(object):
         :type: str
         """
         self._character_set = character_set
-
-    @property
-    def db_backup_config(self):
-        """
-        Gets the db_backup_config of this CreateDatabaseDetails.
-
-        :return: The db_backup_config of this CreateDatabaseDetails.
-        :rtype: DbBackupConfig
-        """
-        return self._db_backup_config
-
-    @db_backup_config.setter
-    def db_backup_config(self, db_backup_config):
-        """
-        Sets the db_backup_config of this CreateDatabaseDetails.
-
-        :param db_backup_config: The db_backup_config of this CreateDatabaseDetails.
-        :type: DbBackupConfig
-        """
-        self._db_backup_config = db_backup_config
 
     @property
     def db_name(self):

@@ -12,7 +12,6 @@ class Database(object):
         self.swagger_types = {
             'character_set': 'str',
             'compartment_id': 'str',
-            'db_backup_config': 'DbBackupConfig',
             'db_home_id': 'str',
             'db_name': 'str',
             'db_unique_name': 'str',
@@ -28,7 +27,6 @@ class Database(object):
         self.attribute_map = {
             'character_set': 'characterSet',
             'compartment_id': 'compartmentId',
-            'db_backup_config': 'dbBackupConfig',
             'db_home_id': 'dbHomeId',
             'db_name': 'dbName',
             'db_unique_name': 'dbUniqueName',
@@ -43,7 +41,6 @@ class Database(object):
 
         self._character_set = None
         self._compartment_id = None
-        self._db_backup_config = None
         self._db_home_id = None
         self._db_name = None
         self._db_unique_name = None
@@ -102,26 +99,6 @@ class Database(object):
         :type: str
         """
         self._compartment_id = compartment_id
-
-    @property
-    def db_backup_config(self):
-        """
-        Gets the db_backup_config of this Database.
-
-        :return: The db_backup_config of this Database.
-        :rtype: DbBackupConfig
-        """
-        return self._db_backup_config
-
-    @db_backup_config.setter
-    def db_backup_config(self, db_backup_config):
-        """
-        Sets the db_backup_config of this Database.
-
-        :param db_backup_config: The db_backup_config of this Database.
-        :type: DbBackupConfig
-        """
-        self._db_backup_config = db_backup_config
 
     @property
     def db_home_id(self):
@@ -273,7 +250,7 @@ class Database(object):
         Gets the lifecycle_state of this Database.
         The current state of the database.
 
-        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "BACKUP_IN_PROGRESS", "TERMINATING", "TERMINATED", "RESTORE_FAILED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -292,7 +269,7 @@ class Database(object):
         :param lifecycle_state: The lifecycle_state of this Database.
         :type: str
         """
-        allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "BACKUP_IN_PROGRESS", "TERMINATING", "TERMINATED", "RESTORE_FAILED", "FAILED"]
+        allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED"]
         if lifecycle_state not in allowed_values:
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

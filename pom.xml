@@ -320,7 +320,7 @@
             <dependency>
                 <groupId>com.oracle.pic.dbaas</groupId>
                 <artifactId>dbaas-api-spec</artifactId>
-                <version>0.0.124-PREVIEW</version>
+                <version>0.0.112</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

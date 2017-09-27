@@ -16,7 +16,7 @@ class DbSystemSummary(object):
             'compartment_id': 'str',
             'cpu_core_count': 'int',
             'data_storage_percentage': 'int',
-            'data_storage_size_in_gbs': 'int',
+            'data_storage_size_in_gb': 'int',
             'database_edition': 'str',
             'disk_redundancy': 'str',
             'display_name': 'str',
@@ -36,7 +36,6 @@ class DbSystemSummary(object):
             'ssh_public_keys': 'list[str]',
             'subnet_id': 'str',
             'time_created': 'datetime',
-            'time_zone': 'str',
             'version': 'str',
             'vip_ids': 'list[str]'
         }
@@ -48,7 +47,7 @@ class DbSystemSummary(object):
             'compartment_id': 'compartmentId',
             'cpu_core_count': 'cpuCoreCount',
             'data_storage_percentage': 'dataStoragePercentage',
-            'data_storage_size_in_gbs': 'dataStorageSizeInGBs',
+            'data_storage_size_in_gb': 'dataStorageSizeInGB',
             'database_edition': 'databaseEdition',
             'disk_redundancy': 'diskRedundancy',
             'display_name': 'displayName',
@@ -68,7 +67,6 @@ class DbSystemSummary(object):
             'ssh_public_keys': 'sshPublicKeys',
             'subnet_id': 'subnetId',
             'time_created': 'timeCreated',
-            'time_zone': 'timeZone',
             'version': 'version',
             'vip_ids': 'vipIds'
         }
@@ -79,7 +77,7 @@ class DbSystemSummary(object):
         self._compartment_id = None
         self._cpu_core_count = None
         self._data_storage_percentage = None
-        self._data_storage_size_in_gbs = None
+        self._data_storage_size_in_gb = None
         self._database_edition = None
         self._disk_redundancy = None
         self._display_name = None
@@ -99,7 +97,6 @@ class DbSystemSummary(object):
         self._ssh_public_keys = None
         self._subnet_id = None
         self._time_created = None
-        self._time_zone = None
         self._version = None
         self._vip_ids = None
 
@@ -256,28 +253,28 @@ class DbSystemSummary(object):
         self._data_storage_percentage = data_storage_percentage
 
     @property
-    def data_storage_size_in_gbs(self):
+    def data_storage_size_in_gb(self):
         """
-        Gets the data_storage_size_in_gbs of this DbSystemSummary.
+        Gets the data_storage_size_in_gb of this DbSystemSummary.
         Data storage size, in GBs, that is currently available to the DB system. This is applicable only for VM-based DBs.
 
 
-        :return: The data_storage_size_in_gbs of this DbSystemSummary.
+        :return: The data_storage_size_in_gb of this DbSystemSummary.
         :rtype: int
         """
-        return self._data_storage_size_in_gbs
+        return self._data_storage_size_in_gb
 
-    @data_storage_size_in_gbs.setter
-    def data_storage_size_in_gbs(self, data_storage_size_in_gbs):
+    @data_storage_size_in_gb.setter
+    def data_storage_size_in_gb(self, data_storage_size_in_gb):
         """
-        Sets the data_storage_size_in_gbs of this DbSystemSummary.
+        Sets the data_storage_size_in_gb of this DbSystemSummary.
         Data storage size, in GBs, that is currently available to the DB system. This is applicable only for VM-based DBs.
 
 
-        :param data_storage_size_in_gbs: The data_storage_size_in_gbs of this DbSystemSummary.
+        :param data_storage_size_in_gb: The data_storage_size_in_gb of this DbSystemSummary.
         :type: int
         """
-        self._data_storage_size_in_gbs = data_storage_size_in_gbs
+        self._data_storage_size_in_gb = data_storage_size_in_gb
 
     @property
     def database_edition(self):
@@ -730,8 +727,8 @@ class DbSystemSummary(object):
         The OCID of the subnet the DB System is associated with.
 
         **Subnet Restrictions:**
-        - For 1- and 2-node RAC DB Systems, do not use a subnet that overlaps with 192.168.16.16/28
-        - For Exadata DB Systems, do not use a subnet that overlaps with 192.168.128.0/20
+        - For single node and 2-node (RAC) DB Systems, do not use a subnet that overlaps with 192.168.16.16/28
+        - For Exadata and VM-based RAC DB Systems, do not use a subnet that overlaps with 192.168.128.0/20
 
         These subnets are used by the Oracle Clusterware private interconnect on the database instance.
         Specifying an overlapping subnet will cause the private interconnect to malfunction.
@@ -750,8 +747,8 @@ class DbSystemSummary(object):
         The OCID of the subnet the DB System is associated with.
 
         **Subnet Restrictions:**
-        - For 1- and 2-node RAC DB Systems, do not use a subnet that overlaps with 192.168.16.16/28
-        - For Exadata DB Systems, do not use a subnet that overlaps with 192.168.128.0/20
+        - For single node and 2-node (RAC) DB Systems, do not use a subnet that overlaps with 192.168.16.16/28
+        - For Exadata and VM-based RAC DB Systems, do not use a subnet that overlaps with 192.168.128.0/20
 
         These subnets are used by the Oracle Clusterware private interconnect on the database instance.
         Specifying an overlapping subnet will cause the private interconnect to malfunction.
@@ -786,30 +783,6 @@ class DbSystemSummary(object):
         :type: datetime
         """
         self._time_created = time_created
-
-    @property
-    def time_zone(self):
-        """
-        Gets the time_zone of this DbSystemSummary.
-        The timeZone of the DB System.
-
-
-        :return: The time_zone of this DbSystemSummary.
-        :rtype: str
-        """
-        return self._time_zone
-
-    @time_zone.setter
-    def time_zone(self, time_zone):
-        """
-        Sets the time_zone of this DbSystemSummary.
-        The timeZone of the DB System.
-
-
-        :param time_zone: The time_zone of this DbSystemSummary.
-        :type: str
-        """
-        self._time_zone = time_zone
 
     @property
     def version(self):

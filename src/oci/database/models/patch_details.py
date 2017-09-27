@@ -26,9 +26,9 @@ class PatchDetails(object):
     def action(self):
         """
         Gets the action of this PatchDetails.
-        The action to perform on the above patch.
+        The action to perform on the patch.
 
-        Allowed values for this property are: "PRECHECK", "APPLY", "ROLLBACK"
+        Allowed values for this property are: "APPLY"
 
 
         :return: The action of this PatchDetails.
@@ -40,13 +40,13 @@ class PatchDetails(object):
     def action(self, action):
         """
         Sets the action of this PatchDetails.
-        The action to perform on the above patch.
+        The action to perform on the patch.
 
 
         :param action: The action of this PatchDetails.
         :type: str
         """
-        allowed_values = ["PRECHECK", "APPLY", "ROLLBACK"]
+        allowed_values = ["APPLY"]
         if action not in allowed_values:
             raise ValueError(
                 "Invalid value for `action`, must be one of {0}"
@@ -58,7 +58,7 @@ class PatchDetails(object):
     def patch_id(self):
         """
         Gets the patch_id of this PatchDetails.
-        OCID of the patch.
+        The OCID of the patch.
 
 
         :return: The patch_id of this PatchDetails.
@@ -70,7 +70,7 @@ class PatchDetails(object):
     def patch_id(self, patch_id):
         """
         Sets the patch_id of this PatchDetails.
-        OCID of the patch.
+        The OCID of the patch.
 
 
         :param patch_id: The patch_id of this PatchDetails.
