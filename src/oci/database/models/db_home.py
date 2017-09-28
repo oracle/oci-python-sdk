@@ -15,6 +15,7 @@ class DbHome(object):
             'db_version': 'str',
             'display_name': 'str',
             'id': 'str',
+            'last_patch_history_entry_id': 'str',
             'lifecycle_state': 'str',
             'time_created': 'datetime'
         }
@@ -25,6 +26,7 @@ class DbHome(object):
             'db_version': 'dbVersion',
             'display_name': 'displayName',
             'id': 'id',
+            'last_patch_history_entry_id': 'lastPatchHistoryEntryId',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated'
         }
@@ -34,6 +36,7 @@ class DbHome(object):
         self._db_version = None
         self._display_name = None
         self._id = None
+        self._last_patch_history_entry_id = None
         self._lifecycle_state = None
         self._time_created = None
 
@@ -156,6 +159,30 @@ class DbHome(object):
         :type: str
         """
         self._id = id
+
+    @property
+    def last_patch_history_entry_id(self):
+        """
+        Gets the last_patch_history_entry_id of this DbHome.
+        The OCID of the last patch history. This is updated as soon as a patch operation is started.
+
+
+        :return: The last_patch_history_entry_id of this DbHome.
+        :rtype: str
+        """
+        return self._last_patch_history_entry_id
+
+    @last_patch_history_entry_id.setter
+    def last_patch_history_entry_id(self, last_patch_history_entry_id):
+        """
+        Sets the last_patch_history_entry_id of this DbHome.
+        The OCID of the last patch history. This is updated as soon as a patch operation is started.
+
+
+        :param last_patch_history_entry_id: The last_patch_history_entry_id of this DbHome.
+        :type: str
+        """
+        self._last_patch_history_entry_id = last_patch_history_entry_id
 
     @property
     def lifecycle_state(self):

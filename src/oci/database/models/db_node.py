@@ -15,6 +15,7 @@ class DbNode(object):
             'hostname': 'str',
             'id': 'str',
             'lifecycle_state': 'str',
+            'software_storage_size_in_gb': 'int',
             'time_created': 'datetime',
             'vnic_id': 'str'
         }
@@ -25,6 +26,7 @@ class DbNode(object):
             'hostname': 'hostname',
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
+            'software_storage_size_in_gb': 'softwareStorageSizeInGB',
             'time_created': 'timeCreated',
             'vnic_id': 'vnicId'
         }
@@ -34,6 +36,7 @@ class DbNode(object):
         self._hostname = None
         self._id = None
         self._lifecycle_state = None
+        self._software_storage_size_in_gb = None
         self._time_created = None
         self._vnic_id = None
 
@@ -162,6 +165,30 @@ class DbNode(object):
         if lifecycle_state not in allowed_values:
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def software_storage_size_in_gb(self):
+        """
+        Gets the software_storage_size_in_gb of this DbNode.
+        Storage size, in GBs, of the software volume that is allocated to the DB system. This is applicable only for VM-based DBs.
+
+
+        :return: The software_storage_size_in_gb of this DbNode.
+        :rtype: int
+        """
+        return self._software_storage_size_in_gb
+
+    @software_storage_size_in_gb.setter
+    def software_storage_size_in_gb(self, software_storage_size_in_gb):
+        """
+        Sets the software_storage_size_in_gb of this DbNode.
+        Storage size, in GBs, of the software volume that is allocated to the DB system. This is applicable only for VM-based DBs.
+
+
+        :param software_storage_size_in_gb: The software_storage_size_in_gb of this DbNode.
+        :type: int
+        """
+        self._software_storage_size_in_gb = software_storage_size_in_gb
 
     @property
     def time_created(self):
