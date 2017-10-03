@@ -7,6 +7,7 @@ REGIONS = [
     "eu-frankfurt-1"
 ]
 SERVICE_ENDPOINTS = {
+    "audit": "https://audit.{domain}/20160918",
     "blockstorage": "https://iaas.{domain}/20160918",
     "compute": "https://iaas.{domain}/20160918",
     "database": "https://database.{domain}/20160918",

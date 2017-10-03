@@ -40,6 +40,11 @@ def config(config_file, config_profile):
 
 
 @pytest.fixture
+def tenant_id(config):
+    return config['tenancy']
+
+
+@pytest.fixture
 def object_storage(config):
     return oci.object_storage.ObjectStorageClient(config)
 
@@ -49,6 +54,13 @@ def identity(config_file):
     # Identity throws an error if we do things from not our home region (currently PHX). So use the default profile here, regardless
     # of any command line switches, under the tacit assumption that the default profile points to our home region
     client = oci.identity.IdentityClient(config(config_file, oci.config.DEFAULT_PROFILE))
+    add_retries_to_service_operations(client)
+    return client
+
+
+@pytest.fixture
+def audit_client(config):
+    client = oci.audit.audit_client.AuditClient(config)
     add_retries_to_service_operations(client)
     return client
 

@@ -12,6 +12,26 @@
 API Reference
 ~~~~~~~~~~~~~
 
+=======
+ Audit 
+=======
+
+--------
+ Client
+--------
+
+.. autoclass:: oci.audit.audit_client.AuditClient
+    :members:
+
+--------
+ Models
+--------
+
+.. automodule:: oci.audit.models
+    :members:
+    :undoc-members:
+    :imported-members:
+
 ===============
  Core Services
 ===============

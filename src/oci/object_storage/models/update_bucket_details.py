@@ -3,7 +3,6 @@
 
 
 from ...util import formatted_flat_dict
-from ...util import NONE_SENTINEL
 
 
 class UpdateBucketDetails(object):

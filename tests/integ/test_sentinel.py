@@ -51,7 +51,7 @@ def test_none_sentinel_with_bucket_metadata(object_storage):
     assert create_bucket_details.metadata == bucket.metadata
 
     update_bucket_details = oci.object_storage.models.UpdateBucketDetails()
-    
+
     update_bucket_details.metadata = oci.util.NONE_SENTINEL  # should clear it
     object_storage.update_bucket(namespace, create_bucket_details.name, update_bucket_details)
     bucket = object_storage.get_bucket(namespace, create_bucket_details.name).data

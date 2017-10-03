@@ -34,6 +34,10 @@
             <groupId>com.oracle.pic.dbaas</groupId>
             <artifactId>dbaas-api-spec</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.oracle.pic.sherlock</groupId>
+            <artifactId>hemlock-spec</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
@@ -134,6 +138,24 @@
                             </artifactItems>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>unpack-audit</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>com.oracle.pic.sherlock</groupId>
+                                    <artifactId>hemlock-spec</artifactId>
+                                    <type>jar</type>
+                                    <includes>hemlock-api-20160918.yaml</includes>
+                                    <outputDirectory>${spec-temp-dir}</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>
@@ -225,6 +247,23 @@
                             </additionalProperties>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>python-public-sdk-audit</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <language>oracle-python-sdk</language>
+                            <specPath>${spec-temp-dir}/hemlock-api-20160918.yaml</specPath>
+                            <outputDir>src/oci</outputDir>
+                            <basePackage>OCI</basePackage>
+                            <additionalProperties>
+                                <specName>audit</specName>
+                                <generateInitFile>true</generateInitFile>
+                            </additionalProperties>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>
@@ -253,6 +292,12 @@
                 <version>3.0.0</version>
                 <configuration>
                     <filesets>
+                        <fileset>
+                            <directory>src/oci/audit</directory>
+                            <includes>
+                                <include>**/*</include>
+                            </includes>
+                        </fileset>
                         <fileset>
                             <directory>src/oci/core</directory>
                             <includes>
@@ -321,6 +366,11 @@
                 <groupId>com.oracle.pic.dbaas</groupId>
                 <artifactId>dbaas-api-spec</artifactId>
                 <version>0.0.120</version>
+            </dependency>
+            <dependency>
+                <groupId>com.oracle.pic.sherlock</groupId>
+                <artifactId>hemlock-spec</artifactId>
+                <version>0.1.4</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
