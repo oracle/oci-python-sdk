@@ -66,7 +66,6 @@ class Patch(object):
         :type: list[str]
         """
         allowed_values = ["APPLY"]
-        
         available_actions[:] = ['UNKNOWN_ENUM_VALUE' if x not in allowed_values else x for x in available_actions]
         self._available_actions = available_actions
 

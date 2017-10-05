@@ -1632,6 +1632,58 @@ class ComputeClient(object):
             path_params=path_params,
             header_params=header_params)
 
+    def update_console_history(self, instance_console_history_id, update_console_history_details, **kwargs):
+        """
+        UpdateConsoleHistory
+        Updates the specified console history metadata.
+
+
+        :param str instance_console_history_id: (required)
+            The OCID of the console history.
+
+        :param UpdateConsoleHistoryDetails update_console_history_details: (required)
+            Update instance fields
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.ConsoleHistory`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/instanceConsoleHistories/{instanceConsoleHistoryId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_console_history got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "instanceConsoleHistoryId": instance_console_history_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=update_console_history_details,
+            response_type="ConsoleHistory")
+
     def update_image(self, image_id, update_image_details, **kwargs):
         """
         UpdateImage

@@ -10,14 +10,41 @@ class CaptureConsoleHistoryDetails(object):
     def __init__(self):
 
         self.swagger_types = {
+            'display_name': 'str',
             'instance_id': 'str'
         }
 
         self.attribute_map = {
+            'display_name': 'displayName',
             'instance_id': 'instanceId'
         }
 
+        self._display_name = None
         self._instance_id = None
+
+    @property
+    def display_name(self):
+        """
+        Gets the display_name of this CaptureConsoleHistoryDetails.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+
+
+        :return: The display_name of this CaptureConsoleHistoryDetails.
+        :rtype: str
+        """
+        return self._display_name
+
+    @display_name.setter
+    def display_name(self, display_name):
+        """
+        Sets the display_name of this CaptureConsoleHistoryDetails.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+
+
+        :param display_name: The display_name of this CaptureConsoleHistoryDetails.
+        :type: str
+        """
+        self._display_name = display_name
 
     @property
     def instance_id(self):

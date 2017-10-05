@@ -200,6 +200,12 @@ class TestCompute:
         util.validate_response(result, expect_etag=True)
         oci.wait_until(compute, compute.get_console_history(self.ch_ocid), 'lifecycle_state', 'SUCCEEDED', max_wait_seconds=300)
 
+        update_console_history_details = oci.core.models.UpdateConsoleHistoryDetails()
+        update_console_history_details.display_name = "Updated Console Hist"
+        result = compute.update_console_history(self.ch_ocid, update_console_history_details)
+        util.validate_response(result)
+        assert result.data.display_name == update_console_history_details.display_name
+
         result = compute.list_console_histories(util.COMPARTMENT_ID, instance_id=self.instance_ocid)
         util.validate_response(result)
 
