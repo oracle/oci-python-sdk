@@ -557,7 +557,7 @@ class TestObjectStorage:
 
         # In the script we have 10 threads processing stuff in the pool and they should be consuming 10 MiB each by default.
         # As such it should consume a max of 100 MiB, but we'll give it a bit of extra buffer
-        max_size_limit_bytes = 150 * 1024 * 2014
+        max_size_limit_bytes = 160 * 1024 * 1024
         assert max_child_process_memory_utilisation <= max_size_limit_bytes, 'Expected child process utilisation {} to be <= limit {}'.format(max_child_process_memory_utilisation, max_size_limit_bytes)
 
         print('Downloading object {} from {} for verification'.format(object_name, bucket))

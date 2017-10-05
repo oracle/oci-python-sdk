@@ -93,6 +93,10 @@ class UploadManager:
         if 'part_size' not in kwargs:
             kwargs['part_size'] = STREAMING_DEFAULT_PART_SIZE
 
+        kwargs['allow_parallel_uploads'] = self.allow_parallel_uploads
+        if self.parallel_process_count is not None:
+            kwargs['parallel_process_count'] = self.parallel_process_count
+
         ma = MultipartObjectAssembler(
             self.object_storage_client,
             namespace_name,
