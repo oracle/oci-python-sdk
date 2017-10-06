@@ -470,7 +470,11 @@ class MultipartObjectAssembler:
         # We pull data from the stream until there is no more
         keep_reading = True
         while keep_reading:
-            read_bytes = stream_ref.buffer.read(self.part_size)
+            if six.PY3:
+                read_bytes = stream_ref.buffer.read(self.part_size)
+            else:
+                read_bytes = stream_ref.read(self.part_size)
+
             semaphore.acquire()
 
             if len(read_bytes) != 0:

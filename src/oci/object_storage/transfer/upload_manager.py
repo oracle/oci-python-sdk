@@ -119,7 +119,25 @@ class UploadManager:
             ma.abort()
             raise
 
-        response = ma.commit()
+        # It is possible we did not upload any parts (e.g. if the stream was empty). If we did
+        # upload parts then commit the upload, otherwise put an empty object into Object Storage
+        # to reflect what the customer intended
+        if len(ma.manifest['parts']) > 0:
+            response = ma.commit()
+        else:
+            copy_kwargs = kwargs.copy()
+            # put_object expects 'opc_meta' not metadata
+            if 'metadata' in copy_kwargs:
+                copy_kwargs['opc_meta'] = copy_kwargs['metadata']
+                copy_kwargs.pop('metadata')
+
+            # These parameters are not valid for just putting the object, so discard them
+            copy_kwargs.pop('progress_callback', None)
+            copy_kwargs.pop('part_size', None)
+            copy_kwargs.pop('allow_parallel_uploads', None)
+            copy_kwargs.pop('parallel_process_count', None)
+
+            return self.object_storage_client.put_object(namespace_name, bucket_name, object_name, b'', **copy_kwargs)
 
         return response
 
