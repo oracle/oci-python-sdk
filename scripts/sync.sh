@@ -47,6 +47,13 @@ rm oci/setup.py
 # copy files from the root directory
 cp oci/*.* oraclebmc/
 
+# Inject a warning into the oraclebmc init file
+cat << EOF >> src/oraclebmc/__init__.py
+
+import warnings
+warnings.warn("The oraclebmc package is deprecated and will no longer be maintained starting March 2018. Please upgrade to the oci package to avoid interruption at that time. More info is available at https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/backward-compatibility.html", DeprecationWarning, stacklevel=2)
+EOF
+
 # create PR for oraclebmc/ branch to port changes
 cd oraclebmc
 
