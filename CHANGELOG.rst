@@ -10,17 +10,18 @@ The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 Deprecated
 ----------
-* Creating block volumes and specifying the size in MB is deprecated. Instead, the new size_in_gb field should be used to specify the volume size in GB
+* Creating block volumes and specifying the size in MBs is deprecated. Instead, the new size_in_gbs field should be used to specify the volume size in GBs
 
 Added
 -----
-* Support for creating block volumes and specifying the size in GB
+* Support for creating block volumes and specifying the size in GBs
 * Support in UploadManager for handling piped input
 * Support for adding and updating display names for captured instance serial console data
+* Support for the FRA (eu-frankfurt-1) region
 
 Changed
 -------
-* The size of block volumes and volume backups is specified in GB as well as MB 
+* The size of block volumes and volume backups is specified in GBs as well as MBs
 
 ====================
 1.3.7 - 2017-09-11
