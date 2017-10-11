@@ -1,10 +1,17 @@
-from tests.util import get_resource_path, random_number_string, unique_name
-import oci
 from oci.object_storage.transfer.constants import MEBIBYTE
+from tests.util import get_resource_path, random_number_string, unique_name
+from . import util
+import filecmp
+import oci
 import os
+import os.path
 import pytest
 import requests
-from . import util
+import resource
+import six
+import subprocess
+import sys
+import time
 
 LARGE_CONTENT_FILE_SIZE_IN_MEBIBYTES = 3
 
@@ -524,3 +531,95 @@ class TestObjectStorage:
 
         # confirm that the object was actually uploaded with multipart
         assert response.headers['opc-content-md5']
+
+    def test_upload_manager_piped_from_stream(self, object_storage, bucket, config_file, config_profile, config):
+        if sys.platform == 'win32':
+            pytest.skip("Stream piping tests don't run on Windows")
+
+        large_file_path = os.path.join('tests', 'resources', 'large_file.bin')
+        util.create_large_file(large_file_path, 500)  # Make a 500 MiB file
+
+        namespace = object_storage.get_namespace().data
+        object_name = 'test_obj_piped_{}'.format(int(time.time()))
+
+        print('cat-ing file and piping to script')
+        cat_large_file = subprocess.Popen(['cat', large_file_path], stdout=subprocess.PIPE)
+        call_return = subprocess.call(
+            ['python', 'tests/scripts/upload_manager_from_stdin.py', config_file, config_profile, config['pass_phrase'], namespace, bucket, object_name],
+            stdin=cat_large_file.stdout
+        )
+        cat_large_file.wait()
+        assert call_return == 0
+        print('Uploaded {} to Object Storage'.format(object_name))
+
+        # For child processes there is a caveat:
+        #
+        # For RUSAGE_CHILDREN, this is the resident set size of the largest child, not the maximum resident set size of the
+        # process tree.
+        #
+        # But as a rough test the largest child should be OK
+        max_child_process_memory_utilisation = resource.getrusage(resource.RUSAGE_CHILDREN).ru_maxrss
+
+        # In the script we have 10 threads processing stuff in the pool and they should be consuming 10 MiB each by default.
+        # As such it should consume a max of 100 MiB, but we'll give it a bit of extra buffer since there's other stuff going
+        # on besides the threads which are processing the file.
+        #
+        # From testing, the memory usage is higher on Python 2 but it is still less than the total size of the file
+        if six.PY3:
+            # Empirically, Python 3.5 is ~170 MiB memory usage but Python 3.6 is ~160 MiB
+            max_size_limit_bytes = 170 * 1024 * 1024
+        else:
+            max_size_limit_bytes = 260 * 1024 * 2014
+
+        assert max_child_process_memory_utilisation <= max_size_limit_bytes, 'Expected child process utilisation {} to be <= limit {}'.format(max_child_process_memory_utilisation, max_size_limit_bytes)
+
+        print('Downloading object {} from {} for verification'.format(object_name, bucket))
+        response = object_storage.get_object(
+            namespace_name=namespace,
+            bucket_name=bucket,
+            object_name=object_name
+        )
+        downloaded_large_file_path = os.path.join('tests', 'resources', 'downloaded_large_file.bin')
+        with open(downloaded_large_file_path, 'wb') as file:
+            for chunk in response.data.raw.stream(MEBIBYTE, decode_content=False):
+                file.write(chunk)
+        print('Object downloaded')
+
+        assert filecmp.cmp(large_file_path, downloaded_large_file_path, shallow=False)
+
+        os.remove(downloaded_large_file_path)
+        os.remove(large_file_path)
+
+    def test_object_manager_pipe_empty_file_from_stream(self, object_storage, bucket, config_file, config_profile, config):
+        if sys.platform == 'win32':
+            pytest.skip("Stream piping tests don't run on Windows")
+
+        test_file = get_resource_path('empty_file')
+
+        namespace = object_storage.get_namespace().data
+        object_name = 'test_obj_empty_piped_{}'.format(int(time.time()))
+
+        print('cat-ing empty file and piping to script')
+        cat_large_file = subprocess.Popen(['cat', test_file], stdout=subprocess.PIPE)
+        call_return = subprocess.call(
+            ['python', 'tests/scripts/upload_manager_from_stdin.py', config_file, config_profile, config['pass_phrase'], namespace, bucket, object_name],
+            stdin=cat_large_file.stdout
+        )
+        cat_large_file.wait()
+        assert call_return == 0
+        print('Uploaded {} to Object Storage'.format(object_name))
+
+        response = object_storage.get_object(
+            namespace_name=namespace,
+            bucket_name=bucket,
+            object_name=object_name
+        )
+        downloaded_empty_file_path = os.path.join('tests', 'resources', 'downloaded_empty_file.bin')
+        with open(downloaded_empty_file_path, 'wb') as file:
+            for chunk in response.data.raw.stream(MEBIBYTE, decode_content=False):
+                file.write(chunk)
+        print('Object downloaded')
+
+        assert filecmp.cmp(test_file, downloaded_empty_file_path, shallow=False)
+
+        os.remove(downloaded_empty_file_path)

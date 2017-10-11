@@ -68,3 +68,21 @@ class WaitUntilNotSupported(ClientError):
 
 class MaximumWaitTimeExceeded(ClientError):
     """Maximum wait time has been exceeded."""
+
+
+class MultipartUploadError(Exception):
+    """
+    Exception thrown when an error with a multipart upload occurs. As multipart uploads can be
+    parallelised, this error contains a collection of errors which caused individual part uploads
+    to fail
+    """
+    def __init__(self, **kwargs):
+        """
+        :param queue error_causes_queue:
+            A queue containing errors which occured during the multipart upload
+        """
+        self.error_causes = []
+        if 'error_causes_queue' in kwargs:
+            while not kwargs['error_causes_queue'].empty():
+                self.error_causes.append(kwargs['error_causes_queue'].get())
+

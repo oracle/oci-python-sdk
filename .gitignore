@@ -20,4 +20,6 @@ docs/warnings.txt
 docs/_build/
 docs/apidocs/
 tests/resources/test_debug.log
+tests/resources/*.bin
+tests/temp
 .vscode/
