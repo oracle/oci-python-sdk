@@ -85,4 +85,3 @@ class MultipartUploadError(Exception):
         if 'error_causes_queue' in kwargs:
             while not kwargs['error_causes_queue'].empty():
                 self.error_causes.append(kwargs['error_causes_queue'].get())
-
