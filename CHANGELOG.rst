@@ -17,6 +17,7 @@ Added
 * Support for creating block volumes and specifying the size in GBs
 * Support in UploadManager for handling piped input
 * Support for adding and updating display names for captured instance serial console data
+* Support for VNIC source/destination checks
 * Support for the FRA (eu-frankfurt-1) region
 
 Changed
