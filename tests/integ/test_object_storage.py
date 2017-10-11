@@ -10,6 +10,7 @@ import requests
 import resource
 import six
 import subprocess
+import sys
 import time
 
 LARGE_CONTENT_FILE_SIZE_IN_MEBIBYTES = 3
@@ -532,6 +533,9 @@ class TestObjectStorage:
         assert response.headers['opc-content-md5']
 
     def test_upload_manager_piped_from_stream(self, object_storage, bucket, config_file, config_profile, config):
+        if sys.platform == 'win32':
+            pytest.skip("Stream piping tests don't run on Windows")
+
         large_file_path = os.path.join('tests', 'resources', 'large_file.bin')
         util.create_large_file(large_file_path, 500)  # Make a 500 MiB file
 
@@ -562,7 +566,8 @@ class TestObjectStorage:
         #
         # From testing, the memory usage is higher on Python 2 but it is still less than the total size of the file
         if six.PY3:
-            max_size_limit_bytes = 160 * 1024 * 1024
+            # Empirically, Python 3.5 is ~170 MiB memory usage but Python 3.6 is ~160 MiB
+            max_size_limit_bytes = 170 * 1024 * 1024
         else:
             max_size_limit_bytes = 260 * 1024 * 2014
 
@@ -586,6 +591,9 @@ class TestObjectStorage:
         os.remove(large_file_path)
 
     def test_object_manager_pipe_empty_file_from_stream(self, object_storage, bucket, config_file, config_profile, config):
+        if sys.platform == 'win32':
+            pytest.skip("Stream piping tests don't run on Windows")
+
         test_file = get_resource_path('empty_file')
 
         namespace = object_storage.get_namespace().data
