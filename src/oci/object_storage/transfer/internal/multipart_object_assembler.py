@@ -10,9 +10,11 @@ from ..constants import DEFAULT_PART_SIZE
 from ..constants import MEBIBYTE
 from .buffered_part_reader import BufferedPartReader
 from ... import models
-from ....exceptions import ServiceError
+from ....exceptions import ServiceError, MultipartUploadError
 from requests.exceptions import Timeout
 from requests.exceptions import ConnectionError
+from six.moves.queue import Queue
+from threading import Semaphore
 import six
 
 READ_BUFFER_SIZE = 8 * 1024
@@ -379,6 +381,51 @@ class MultipartObjectAssembler:
         if 'progress_callback' in kwargs:
             kwargs['progress_callback'](part["size"])
 
+    def _upload_stream_part(self, part_num, part_bytes, **kwargs):
+        try:
+            m = hashlib.md5()
+            m.update(part_bytes)
+
+            new_kwargs = {'content_md5': base64.b64encode(m.digest()).decode("utf-8")}
+            if 'opc_client_request_id' in kwargs:
+                new_kwargs['opc_client_request_id'] = kwargs['opc_client_request_id']
+
+            remaining_tries = self.max_retries
+            while remaining_tries > 0:
+                try:
+                    response = self.object_storage_client.upload_part(
+                        self.manifest["namespace"],
+                        self.manifest["bucketName"],
+                        self.manifest["objectName"],
+                        self.manifest["uploadId"],
+                        part_num + 1,  # Internally this is 0-based but object storage is 1-based
+                        part_bytes,
+                        **new_kwargs
+                    )
+                except Exception as e:
+                    if self._is_exception_retryable(e) and remaining_tries > 1:
+                        remaining_tries -= 1
+                    else:
+                        if 'shared_dict' in kwargs:
+                            kwargs['shared_dict']['should_continue'] = False
+                            kwargs['shared_dict']['exceptions'].put(e)
+                        raise
+                else:
+                    break
+
+            if response.status == 200:
+                self.manifest['parts'].append({
+                    'etag': response.headers['etag'],
+                    'opc_md5': str(response.headers['opc-content-md5']),
+                    'part_num': part_num
+                })
+
+            if 'progress_callback' in kwargs:
+                kwargs['progress_callback'](len(part_bytes))
+        finally:
+            if 'semaphore' in kwargs:
+                kwargs['semaphore'].release()
+
     def upload(self, **kwargs):
         """
         Upload an object to Object Storage
@@ -395,6 +442,60 @@ class MultipartObjectAssembler:
         pool = Pool(processes=self.parallel_process_count)
         pool.map(lambda part_tuple: self._upload_part(part_num=part_tuple[0] + 1, part=part_tuple[1], **kwargs),
                  enumerate(self.manifest["parts"]))
+
+    def upload_stream(self, stream_ref, **kwargs):
+        if self.manifest["uploadId"] is None:
+            raise RuntimeError('Cannot call upload before initializing an upload using new_upload.')
+
+        # The pool of work we have available, and the sempahore to gate work into the pool (since just submitting
+        # work to the pool doesn't block on the number of processes available to do work in the pool)
+        pool = Pool(processes=self.parallel_process_count)
+        semaphore = Semaphore(self.parallel_process_count)
+
+        # A dict which will be shared between the threads in our pool (this would not work as-is with processes) but
+        # we use threads via multiprocessing.dummy. If we use processes, then a Manager would likely be needed for this.
+        #
+        # should_continue will only ever be set to False by _upload_stream_part so not too worried if we have multiple
+        # writers
+        #
+        # Queue should be thread safe (though for tracking the exceptions, order doesn't strictly matter)
+        shared_dict = {'should_continue': True, 'exceptions': Queue()}
+
+        part_counter = 0
+
+        apply_async_kwargs = kwargs.copy()
+        apply_async_kwargs['semaphore'] = semaphore
+        apply_async_kwargs['shared_dict'] = shared_dict
+
+        # We pull data from the stream until there is no more
+        keep_reading = True
+        while keep_reading:
+            if six.PY3:
+                read_bytes = stream_ref.buffer.read(self.part_size)
+            else:
+                read_bytes = stream_ref.read(self.part_size)
+
+            semaphore.acquire()
+
+            if len(read_bytes) != 0:
+                pool.apply_async(self._upload_stream_part, (part_counter, read_bytes), apply_async_kwargs)
+                part_counter += 1
+
+            keep_reading = (len(read_bytes) == self.part_size) and shared_dict['should_continue']
+
+        # If we're here we've either sent off all the work we needed to (and so are waiting on remaining bits to finish)
+        # or we terminated early because of an exception in one of our uploads. In either case, close off the pool to
+        # any more work and let the remaining work finish gracefully
+        pool.close()
+        pool.join()
+
+        # If we had at least one exception then throw out an error to indicate failure
+        if not shared_dict['exceptions'].empty():
+            raise MultipartUploadError(error_causes_queue=shared_dict['exceptions'])
+
+        # Because we processed in parallel, the parts in the manifest may be out of order. Re-order them based on the part number
+        # because commit assumes that they are ordered
+        self.manifest['parts'].sort(key=lambda part: part['part_num'])
 
     def commit(self, **kwargs):
         """

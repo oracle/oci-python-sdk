@@ -15,6 +15,7 @@ class Volume(object):
             'display_name': 'str',
             'id': 'str',
             'lifecycle_state': 'str',
+            'size_in_gbs': 'int',
             'size_in_mbs': 'int',
             'time_created': 'datetime'
         }
@@ -25,6 +26,7 @@ class Volume(object):
             'display_name': 'displayName',
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
+            'size_in_gbs': 'sizeInGBs',
             'size_in_mbs': 'sizeInMBs',
             'time_created': 'timeCreated'
         }
@@ -34,6 +36,7 @@ class Volume(object):
         self._display_name = None
         self._id = None
         self._lifecycle_state = None
+        self._size_in_gbs = None
         self._size_in_mbs = None
         self._time_created = None
 
@@ -170,10 +173,34 @@ class Volume(object):
         self._lifecycle_state = lifecycle_state
 
     @property
+    def size_in_gbs(self):
+        """
+        Gets the size_in_gbs of this Volume.
+        The size of the volume in GBs.
+
+
+        :return: The size_in_gbs of this Volume.
+        :rtype: int
+        """
+        return self._size_in_gbs
+
+    @size_in_gbs.setter
+    def size_in_gbs(self, size_in_gbs):
+        """
+        Sets the size_in_gbs of this Volume.
+        The size of the volume in GBs.
+
+
+        :param size_in_gbs: The size_in_gbs of this Volume.
+        :type: int
+        """
+        self._size_in_gbs = size_in_gbs
+
+    @property
     def size_in_mbs(self):
         """
         Gets the size_in_mbs of this Volume.
-        The size of the volume in MBs. The value must be a multiple of 1024.
+        The size of the volume in MBs. This field is deprecated. Please use sizeInGBs.
 
 
         :return: The size_in_mbs of this Volume.
@@ -185,7 +212,7 @@ class Volume(object):
     def size_in_mbs(self, size_in_mbs):
         """
         Sets the size_in_mbs of this Volume.
-        The size of the volume in MBs. The value must be a multiple of 1024.
+        The size of the volume in MBs. This field is deprecated. Please use sizeInGBs.
 
 
         :param size_in_mbs: The size_in_mbs of this Volume.

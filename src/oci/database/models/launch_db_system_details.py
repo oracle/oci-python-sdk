@@ -22,6 +22,9 @@ class LaunchDbSystemDetails(object):
             'display_name': 'str',
             'domain': 'str',
             'hostname': 'str',
+            'initial_data_storage_size_in_gb': 'int',
+            'license_model': 'str',
+            'node_count': 'int',
             'shape': 'str',
             'ssh_public_keys': 'list[str]',
             'subnet_id': 'str'
@@ -40,6 +43,9 @@ class LaunchDbSystemDetails(object):
             'display_name': 'displayName',
             'domain': 'domain',
             'hostname': 'hostname',
+            'initial_data_storage_size_in_gb': 'initialDataStorageSizeInGB',
+            'license_model': 'licenseModel',
+            'node_count': 'nodeCount',
             'shape': 'shape',
             'ssh_public_keys': 'sshPublicKeys',
             'subnet_id': 'subnetId'
@@ -57,6 +63,9 @@ class LaunchDbSystemDetails(object):
         self._display_name = None
         self._domain = None
         self._hostname = None
+        self._initial_data_storage_size_in_gb = None
+        self._license_model = None
+        self._node_count = None
         self._shape = None
         self._ssh_public_keys = None
         self._subnet_id = None
@@ -173,6 +182,8 @@ class LaunchDbSystemDetails(object):
         - Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.
         - Exadata.Full1.336 - Specify a multiple of 8, from 88 to 336.
 
+        For VM DB systems, the core count is inferred from the specific VM shape chosen, so this parameter is not used.
+
 
         :return: The cpu_core_count of this LaunchDbSystemDetails.
         :rtype: int
@@ -191,6 +202,8 @@ class LaunchDbSystemDetails(object):
         - Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.
         - Exadata.Full1.336 - Specify a multiple of 8, from 88 to 336.
 
+        For VM DB systems, the core count is inferred from the specific VM shape chosen, so this parameter is not used.
+
 
         :param cpu_core_count: The cpu_core_count of this LaunchDbSystemDetails.
         :type: int
@@ -203,7 +216,7 @@ class LaunchDbSystemDetails(object):
         Gets the data_storage_percentage of this LaunchDbSystemDetails.
         The percentage assigned to DATA storage (user data and database files).
         The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups).
-        Specify 80 or 40. The default is 80 percent assigned to DATA storage.
+        Specify 80 or 40. The default is 80 percent assigned to DATA storage. This is not applicable for VM based DB systems.
 
 
         :return: The data_storage_percentage of this LaunchDbSystemDetails.
@@ -217,7 +230,7 @@ class LaunchDbSystemDetails(object):
         Sets the data_storage_percentage of this LaunchDbSystemDetails.
         The percentage assigned to DATA storage (user data and database files).
         The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups).
-        Specify 80 or 40. The default is 80 percent assigned to DATA storage.
+        Specify 80 or 40. The default is 80 percent assigned to DATA storage. This is not applicable for VM based DB systems.
 
 
         :param data_storage_percentage: The data_storage_percentage of this LaunchDbSystemDetails.
@@ -406,10 +419,90 @@ class LaunchDbSystemDetails(object):
         self._hostname = hostname
 
     @property
+    def initial_data_storage_size_in_gb(self):
+        """
+        Gets the initial_data_storage_size_in_gb of this LaunchDbSystemDetails.
+        Size, in GBs, of the initial data volume that will be created and attached to VM-shape based DB system. This storage can later be scaled up if needed. Note that the total storage size attached will be more than what is requested, to account for REDO/RECO space and software volume.
+
+
+        :return: The initial_data_storage_size_in_gb of this LaunchDbSystemDetails.
+        :rtype: int
+        """
+        return self._initial_data_storage_size_in_gb
+
+    @initial_data_storage_size_in_gb.setter
+    def initial_data_storage_size_in_gb(self, initial_data_storage_size_in_gb):
+        """
+        Sets the initial_data_storage_size_in_gb of this LaunchDbSystemDetails.
+        Size, in GBs, of the initial data volume that will be created and attached to VM-shape based DB system. This storage can later be scaled up if needed. Note that the total storage size attached will be more than what is requested, to account for REDO/RECO space and software volume.
+
+
+        :param initial_data_storage_size_in_gb: The initial_data_storage_size_in_gb of this LaunchDbSystemDetails.
+        :type: int
+        """
+        self._initial_data_storage_size_in_gb = initial_data_storage_size_in_gb
+
+    @property
+    def license_model(self):
+        """
+        Gets the license_model of this LaunchDbSystemDetails.
+        The Oracle license model that applies to all the databases on the DB System. The default is LICENSE_INCLUDED.
+
+        Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
+
+
+        :return: The license_model of this LaunchDbSystemDetails.
+        :rtype: str
+        """
+        return self._license_model
+
+    @license_model.setter
+    def license_model(self, license_model):
+        """
+        Sets the license_model of this LaunchDbSystemDetails.
+        The Oracle license model that applies to all the databases on the DB System. The default is LICENSE_INCLUDED.
+
+
+        :param license_model: The license_model of this LaunchDbSystemDetails.
+        :type: str
+        """
+        allowed_values = ["LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"]
+        if license_model not in allowed_values:
+            raise ValueError(
+                "Invalid value for `license_model`, must be one of {0}"
+                .format(allowed_values)
+            )
+        self._license_model = license_model
+
+    @property
+    def node_count(self):
+        """
+        Gets the node_count of this LaunchDbSystemDetails.
+        Number of nodes to launch for a VM-shape based RAC DB system.
+
+
+        :return: The node_count of this LaunchDbSystemDetails.
+        :rtype: int
+        """
+        return self._node_count
+
+    @node_count.setter
+    def node_count(self, node_count):
+        """
+        Sets the node_count of this LaunchDbSystemDetails.
+        Number of nodes to launch for a VM-shape based RAC DB system.
+
+
+        :param node_count: The node_count of this LaunchDbSystemDetails.
+        :type: int
+        """
+        self._node_count = node_count
+
+    @property
     def shape(self):
         """
         Gets the shape of this LaunchDbSystemDetails.
-        The shape of the DB System. The shape determines the CPU cores, storage, and memory allocated to the DB System. To get a list of shapes, use the :func:`list_db_system_shapes` operation.
+        The shape of the DB System. The shape determines resources allocated to the DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the :func:`list_db_system_shapes` operation.
 
 
         :return: The shape of this LaunchDbSystemDetails.
@@ -421,7 +514,7 @@ class LaunchDbSystemDetails(object):
     def shape(self, shape):
         """
         Sets the shape of this LaunchDbSystemDetails.
-        The shape of the DB System. The shape determines the CPU cores, storage, and memory allocated to the DB System. To get a list of shapes, use the :func:`list_db_system_shapes` operation.
+        The shape of the DB System. The shape determines resources allocated to the DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the :func:`list_db_system_shapes` operation.
 
 
         :param shape: The shape of this LaunchDbSystemDetails.
@@ -460,8 +553,8 @@ class LaunchDbSystemDetails(object):
         The OCID of the subnet the DB System is associated with.
 
         **Subnet Restrictions:**
-        - For 1- and 2-node RAC DB Systems, do not use a subnet that overlaps with 192.168.16.16/28
-        - For Exadata DB Systems, do not use a subnet that overlaps with 192.168.128.0/20
+        - For single node and 2-node (RAC) DB Systems, do not use a subnet that overlaps with 192.168.16.16/28
+        - For Exadata and VM-based RAC DB Systems, do not use a subnet that overlaps with 192.168.128.0/20
 
         These subnets are used by the Oracle Clusterware private interconnect on the database instance.
         Specifying an overlapping subnet will cause the private interconnect to malfunction.
@@ -480,8 +573,8 @@ class LaunchDbSystemDetails(object):
         The OCID of the subnet the DB System is associated with.
 
         **Subnet Restrictions:**
-        - For 1- and 2-node RAC DB Systems, do not use a subnet that overlaps with 192.168.16.16/28
-        - For Exadata DB Systems, do not use a subnet that overlaps with 192.168.128.0/20
+        - For single node and 2-node (RAC) DB Systems, do not use a subnet that overlaps with 192.168.16.16/28
+        - For Exadata and VM-based RAC DB Systems, do not use a subnet that overlaps with 192.168.128.0/20
 
         These subnets are used by the Oracle Clusterware private interconnect on the database instance.
         Specifying an overlapping subnet will cause the private interconnect to malfunction.

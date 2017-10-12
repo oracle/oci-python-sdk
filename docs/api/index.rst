@@ -50,6 +50,26 @@ Virtual Network
     :imported-members:
 
 ==========
+ Database
+==========
+
+--------
+ Client
+--------
+
+.. autoclass:: oci.database.database_client.DatabaseClient
+    :members:
+
+--------
+ Models
+--------
+
+.. automodule:: oci.database.models
+    :members:
+    :undoc-members:
+    :imported-members:
+
+==========
  Identity
 ==========
 

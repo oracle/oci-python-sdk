@@ -256,7 +256,15 @@ class ComputeClient(object):
     def create_instance_console_connection(self, create_instance_console_connection_details, **kwargs):
         """
         CreateInstanceConsoleConnection
-        Create a console connection for an instance.
+        Creates a new serial console connection to the specified instance.
+        Once the serial console connection has been created and is available,
+        you connect to the serial console using an SSH client.
+
+        The default number of enabled serial console connections per tenancy is 10.
+
+        For more information about serial console access, see `Accessing the Serial Console`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/serialconsole.htm
 
 
         :param CreateInstanceConsoleConnectionDetails create_instance_console_connection_details: (required)
@@ -395,7 +403,7 @@ class ComputeClient(object):
     def delete_instance_console_connection(self, instance_console_connection_id, **kwargs):
         """
         DeleteInstanceConsoleConnection
-        Delete the console connection for an instance
+        Deletes the specified serial console connection.
 
 
         :param str instance_console_connection_id: (required)
@@ -446,6 +454,14 @@ class ComputeClient(object):
         This operation cannot be used on the instance's primary VNIC.
         When you terminate an instance, all attached VNICs (primary
         and secondary) are automatically detached and deleted.
+
+        **Important:** If the VNIC has a
+        :class:`PrivateIp` that is the
+        `target of a route rule`__,
+        deleting the VNIC causes that route rule to blackhole and the traffic
+        will be dropped.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm#privateip
 
 
         :param str vnic_attachment_id: (required)
@@ -784,7 +800,7 @@ class ComputeClient(object):
     def get_instance_console_connection(self, instance_console_connection_id, **kwargs):
         """
         GetInstanceConsoleConnection
-        Get the details of an instance console connection
+        Gets the specified serial console connection's information.
 
 
         :param str instance_console_connection_id: (required)
@@ -1230,7 +1246,11 @@ class ComputeClient(object):
     def list_instance_console_connections(self, compartment_id, **kwargs):
         """
         ListInstanceConsoleConnections
-        Lists the console connections for the specified compartment or instance that have not been deleted.
+        Lists the serial console connections for the specified compartment or instance.
+
+        For more information about serial console access, see `Accessing the Serial Console`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/serialconsole.htm
 
 
         :param str compartment_id: (required)
@@ -1611,6 +1631,58 @@ class ComputeClient(object):
             method=method,
             path_params=path_params,
             header_params=header_params)
+
+    def update_console_history(self, instance_console_history_id, update_console_history_details, **kwargs):
+        """
+        UpdateConsoleHistory
+        Updates the specified console history metadata.
+
+
+        :param str instance_console_history_id: (required)
+            The OCID of the console history.
+
+        :param UpdateConsoleHistoryDetails update_console_history_details: (required)
+            Update instance fields
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.ConsoleHistory`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/instanceConsoleHistories/{instanceConsoleHistoryId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_console_history got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "instanceConsoleHistoryId": instance_console_history_id
+        }
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=update_console_history_details,
+            response_type="ConsoleHistory")
 
     def update_image(self, image_id, update_image_details, **kwargs):
         """

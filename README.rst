@@ -86,6 +86,28 @@ If you wish to run an individual test then you can run:
 
     py.test -s tests/integ/test_launch_instance_tutorial.py
 
+Specifying a config file
+------------------------
+
+By default, the tests will look for a config file at 'tests/resources/config'
+and use the ``DEFAULT`` profile.  You can change this with the ``--config-file``
+and ``--config-profile`` options.
+
+.. code-block:: sh
+
+    # Use a different config file, still using the DEFAULT profile
+    tox -- --config-file ~/.oci/config
+
+    # Using a different profile in the default config file
+    tox -- --config-profile IAD_PROFILE
+
+Specifying environment variables
+--------------------------------
+In addition to a valid config file for your tenancy, the tests also require the following environment 
+variables to be set:
+
+    * ``OCI_PYSDK_PUBLIC_SSH_KEY_FILE``: path to a public SSH key (.pub file) that will be given access to the instance launched in ``test_launch_instance_tutorial.py``.
+
 Generating Documentation
 ========================
 Sphinx is used for documentation. You can generate HTML locally with the following:

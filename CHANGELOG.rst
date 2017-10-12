@@ -5,6 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+1.3.8 - 2017-10-12
+====================
+
+Deprecated
+----------
+* Creating block volumes and specifying the size in MBs is deprecated. Instead, the new size_in_gbs field should be used to specify the volume size in GBs.
+
+Added
+-----
+* Support for creating block volumes and specifying the size in GBs.
+* Support in UploadManager for handling piped input.
+* Support for adding and updating display names for captured instance serial console data.
+* Support for VNIC source/destination checks.
+* Support for new Database service features: VM DBs, Bring Your Own License, and Data Guard.
+* Support for the FRA (eu-frankfurt-1) region.
+
+Changed
+-------
+* The size of block volumes and volume backups is specified in GBs as well as MBs.
+
+====================
 1.3.7 - 2017-09-11
 ====================
 

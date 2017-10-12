@@ -14,9 +14,11 @@ class VolumeBackup(object):
             'display_name': 'str',
             'id': 'str',
             'lifecycle_state': 'str',
+            'size_in_gbs': 'int',
             'size_in_mbs': 'int',
             'time_created': 'datetime',
             'time_request_received': 'datetime',
+            'unique_size_in_gbs': 'int',
             'unique_size_in_mbs': 'int',
             'volume_id': 'str'
         }
@@ -26,9 +28,11 @@ class VolumeBackup(object):
             'display_name': 'displayName',
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
+            'size_in_gbs': 'sizeInGBs',
             'size_in_mbs': 'sizeInMBs',
             'time_created': 'timeCreated',
             'time_request_received': 'timeRequestReceived',
+            'unique_size_in_gbs': 'uniqueSizeInGBs',
             'unique_size_in_mbs': 'uniqueSizeInMbs',
             'volume_id': 'volumeId'
         }
@@ -37,9 +41,11 @@ class VolumeBackup(object):
         self._display_name = None
         self._id = None
         self._lifecycle_state = None
+        self._size_in_gbs = None
         self._size_in_mbs = None
         self._time_created = None
         self._time_request_received = None
+        self._unique_size_in_gbs = None
         self._unique_size_in_mbs = None
         self._volume_id = None
 
@@ -148,10 +154,35 @@ class VolumeBackup(object):
         self._lifecycle_state = lifecycle_state
 
     @property
+    def size_in_gbs(self):
+        """
+        Gets the size_in_gbs of this VolumeBackup.
+        The size of the volume, in GBs.
+
+
+        :return: The size_in_gbs of this VolumeBackup.
+        :rtype: int
+        """
+        return self._size_in_gbs
+
+    @size_in_gbs.setter
+    def size_in_gbs(self, size_in_gbs):
+        """
+        Sets the size_in_gbs of this VolumeBackup.
+        The size of the volume, in GBs.
+
+
+        :param size_in_gbs: The size_in_gbs of this VolumeBackup.
+        :type: int
+        """
+        self._size_in_gbs = size_in_gbs
+
+    @property
     def size_in_mbs(self):
         """
         Gets the size_in_mbs of this VolumeBackup.
-        The size of the volume, in MBs. The value must be a multiple of 1024.
+        The size of the volume in MBs. The value must be a multiple of 1024.
+        This field is deprecated. Please use sizeInGBs.
 
 
         :return: The size_in_mbs of this VolumeBackup.
@@ -163,7 +194,8 @@ class VolumeBackup(object):
     def size_in_mbs(self, size_in_mbs):
         """
         Sets the size_in_mbs of this VolumeBackup.
-        The size of the volume, in MBs. The value must be a multiple of 1024.
+        The size of the volume in MBs. The value must be a multiple of 1024.
+        This field is deprecated. Please use sizeInGBs.
 
 
         :param size_in_mbs: The size_in_mbs of this VolumeBackup.
@@ -222,11 +254,38 @@ class VolumeBackup(object):
         self._time_request_received = time_request_received
 
     @property
+    def unique_size_in_gbs(self):
+        """
+        Gets the unique_size_in_gbs of this VolumeBackup.
+        The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space
+        consumed on the volume and whether the backup is full or incremental.
+
+
+        :return: The unique_size_in_gbs of this VolumeBackup.
+        :rtype: int
+        """
+        return self._unique_size_in_gbs
+
+    @unique_size_in_gbs.setter
+    def unique_size_in_gbs(self, unique_size_in_gbs):
+        """
+        Sets the unique_size_in_gbs of this VolumeBackup.
+        The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space
+        consumed on the volume and whether the backup is full or incremental.
+
+
+        :param unique_size_in_gbs: The unique_size_in_gbs of this VolumeBackup.
+        :type: int
+        """
+        self._unique_size_in_gbs = unique_size_in_gbs
+
+    @property
     def unique_size_in_mbs(self):
         """
         Gets the unique_size_in_mbs of this VolumeBackup.
         The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space
         consumed on the volume and whether the backup is full or incremental.
+        This field is deprecated. Please use uniqueSizeInGBs.
 
 
         :return: The unique_size_in_mbs of this VolumeBackup.
@@ -240,6 +299,7 @@ class VolumeBackup(object):
         Sets the unique_size_in_mbs of this VolumeBackup.
         The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space
         consumed on the volume and whether the backup is full or incremental.
+        This field is deprecated. Please use uniqueSizeInGBs.
 
 
         :param unique_size_in_mbs: The unique_size_in_mbs of this VolumeBackup.

@@ -23,6 +23,10 @@ The Python SDK supports operations for the following services:
  Prerequisites
 ===============
 
+.. note::
+    The Python SDK uses the `cryptography.io`_ library, which has its own additional `build requirements`_. Ensure
+    that you satisfy those requirements prior to installing the Python SDK.
+
 * An Oracle Cloud Infrastructure account
 * A user created in that account, in a group with a policy that grants the desired permissions.
   This can be a user for yourself, or another person/system that needs to call the API.
@@ -30,7 +34,6 @@ The Python SDK supports operations for the following services:
   `Adding Users`_ in the Getting Started Guide. For a list of other typical
   Oracle Cloud Infrastructure policies, see `Common Policies`_ in the User Guide.
 * Python version 2.7.5 or 3.5 or later, running on Mac, Windows, or Linux. 
-* The Python SDK uses the `cryptography.io`_ library, which has its own additional `build requirements`_.
 * A keypair used for signing API requests, with the public key uploaded to Oracle. Only the user calling
   the API should be in possession of the private key. (For more information, see `Configuring the SDK`_.)
 
