@@ -1,2 +1,3 @@
 export OCI_PYSDK_COMPARTMENT_ID=ocid1.compartment.oc1..aaaaaaaan5brzve7w7oyhrfngjfsrf72r67aqdd2sbhlarjas6pwamy4425a
 export OCI_PYSDK_COMPARTMENT_NAME=PythonSDKTestCompartment
+export OCI_PYSDK_PUBLIC_SSH_KEY_FILE=keys/public_ssh_key.pub
