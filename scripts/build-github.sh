@@ -68,6 +68,7 @@ else
 
   # run tests from bitbucket repository because not all tests are copied into github
   cd .python-sdk-bitbucket/
+  source internal_resources/test_setup.sh
   py.test tests/unit tests/integ -s
 fi
 
