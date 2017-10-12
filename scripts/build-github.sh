@@ -64,6 +64,7 @@ else
   # we are using pytest directly so we can run the *bitbucket* tests against the
   # *github* version of the SDK (which was installed above)
   pip install pytest
+  pip install mock
 
   # run tests from bitbucket repository because not all tests are copied into github
   cd .python-sdk-bitbucket/
