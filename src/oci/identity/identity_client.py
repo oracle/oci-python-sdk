@@ -190,6 +190,8 @@ class IdentityClient(object):
             "userId": user_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -381,6 +383,8 @@ class IdentityClient(object):
             "identityProviderId": identity_provider_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -446,6 +450,8 @@ class IdentityClient(object):
         path_params = {
             "userId": user_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -568,6 +574,8 @@ class IdentityClient(object):
             "tenancyId": tenancy_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -635,6 +643,8 @@ class IdentityClient(object):
         path_params = {
             "userId": user_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -780,6 +790,8 @@ class IdentityClient(object):
             "fingerprint": fingerprint
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -834,6 +846,8 @@ class IdentityClient(object):
             "customerSecretKeyId": customer_secret_key_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -883,6 +897,8 @@ class IdentityClient(object):
         path_params = {
             "groupId": group_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -934,6 +950,8 @@ class IdentityClient(object):
         path_params = {
             "identityProviderId": identity_provider_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -989,6 +1007,8 @@ class IdentityClient(object):
             "mappingId": mapping_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -1038,6 +1058,8 @@ class IdentityClient(object):
         path_params = {
             "policyId": policy_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -1093,6 +1115,8 @@ class IdentityClient(object):
             "swiftPasswordId": swift_password_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -1143,6 +1167,8 @@ class IdentityClient(object):
             "userId": user_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -1190,6 +1216,8 @@ class IdentityClient(object):
             "compartmentId": compartment_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -1233,6 +1261,8 @@ class IdentityClient(object):
             "groupId": group_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -1271,6 +1301,8 @@ class IdentityClient(object):
         path_params = {
             "identityProviderId": identity_provider_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -1315,6 +1347,8 @@ class IdentityClient(object):
             "mappingId": mapping_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -1353,6 +1387,8 @@ class IdentityClient(object):
         path_params = {
             "policyId": policy_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -1393,6 +1429,8 @@ class IdentityClient(object):
             "tenancyId": tenancy_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -1432,6 +1470,8 @@ class IdentityClient(object):
             "userId": user_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -1470,6 +1510,8 @@ class IdentityClient(object):
         path_params = {
             "userGroupMembershipId": user_group_membership_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -1512,6 +1554,8 @@ class IdentityClient(object):
         path_params = {
             "userId": user_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -1646,6 +1690,8 @@ class IdentityClient(object):
         path_params = {
             "userId": user_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -1811,6 +1857,8 @@ class IdentityClient(object):
             "identityProviderId": identity_provider_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -1913,6 +1961,8 @@ class IdentityClient(object):
             "tenancyId": tenancy_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -1979,6 +2029,8 @@ class IdentityClient(object):
         path_params = {
             "userId": user_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -2153,6 +2205,8 @@ class IdentityClient(object):
             "userGroupMembershipId": user_group_membership_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -2205,6 +2259,8 @@ class IdentityClient(object):
         path_params = {
             "compartmentId": compartment_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -2265,6 +2321,8 @@ class IdentityClient(object):
             "customerSecretKeyId": customer_secret_key_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -2320,6 +2378,8 @@ class IdentityClient(object):
             "groupId": group_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -2374,6 +2434,8 @@ class IdentityClient(object):
         path_params = {
             "identityProviderId": identity_provider_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -2434,6 +2496,8 @@ class IdentityClient(object):
             "mappingId": mapping_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -2490,6 +2554,8 @@ class IdentityClient(object):
         path_params = {
             "policyId": policy_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -2550,6 +2616,8 @@ class IdentityClient(object):
             "swiftPasswordId": swift_password_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -2605,6 +2673,8 @@ class IdentityClient(object):
             "userId": user_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -2659,6 +2729,8 @@ class IdentityClient(object):
         path_params = {
             "userId": user_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -2730,6 +2802,8 @@ class IdentityClient(object):
         path_params = {
             "userId": user_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):

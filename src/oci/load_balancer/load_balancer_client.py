@@ -77,6 +77,8 @@ class LoadBalancerClient(object):
             "backendSetName": backend_set_name
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -140,6 +142,8 @@ class LoadBalancerClient(object):
         path_params = {
             "loadBalancerId": load_balancer_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -205,6 +209,8 @@ class LoadBalancerClient(object):
             "loadBalancerId": load_balancer_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -268,6 +274,8 @@ class LoadBalancerClient(object):
         path_params = {
             "loadBalancerId": load_balancer_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -415,6 +423,8 @@ class LoadBalancerClient(object):
             "backendName": backend_name
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -474,6 +484,8 @@ class LoadBalancerClient(object):
             "backendSetName": backend_set_name
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -530,6 +542,8 @@ class LoadBalancerClient(object):
             "loadBalancerId": load_balancer_id,
             "certificateName": certificate_name
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -588,6 +602,8 @@ class LoadBalancerClient(object):
             "listenerName": listener_name
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -638,6 +654,8 @@ class LoadBalancerClient(object):
         path_params = {
             "loadBalancerId": load_balancer_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -701,6 +719,8 @@ class LoadBalancerClient(object):
             "backendSetName": backend_set_name,
             "backendName": backend_name
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -766,6 +786,8 @@ class LoadBalancerClient(object):
             "backendName": backend_name
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -823,6 +845,8 @@ class LoadBalancerClient(object):
             "loadBalancerId": load_balancer_id,
             "backendSetName": backend_set_name
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -882,6 +906,8 @@ class LoadBalancerClient(object):
             "backendSetName": backend_set_name
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -940,6 +966,8 @@ class LoadBalancerClient(object):
             "backendSetName": backend_set_name
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -991,6 +1019,8 @@ class LoadBalancerClient(object):
         path_params = {
             "loadBalancerId": load_balancer_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -1044,6 +1074,8 @@ class LoadBalancerClient(object):
             "loadBalancerId": load_balancer_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -1096,6 +1128,8 @@ class LoadBalancerClient(object):
             "workRequestId": work_request_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -1147,6 +1181,8 @@ class LoadBalancerClient(object):
         path_params = {
             "loadBalancerId": load_balancer_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -1206,6 +1242,8 @@ class LoadBalancerClient(object):
             "backendSetName": backend_set_name
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -1257,6 +1295,8 @@ class LoadBalancerClient(object):
         path_params = {
             "loadBalancerId": load_balancer_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -1644,6 +1684,8 @@ class LoadBalancerClient(object):
             "loadBalancerId": load_balancer_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -1726,6 +1768,8 @@ class LoadBalancerClient(object):
             "backendName": backend_name
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -1795,6 +1839,8 @@ class LoadBalancerClient(object):
             "loadBalancerId": load_balancer_id,
             "backendSetName": backend_set_name
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -1866,6 +1912,8 @@ class LoadBalancerClient(object):
             "backendSetName": backend_set_name
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -1936,6 +1984,8 @@ class LoadBalancerClient(object):
             "listenerName": listener_name
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -1999,6 +2049,8 @@ class LoadBalancerClient(object):
         path_params = {
             "loadBalancerId": load_balancer_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):

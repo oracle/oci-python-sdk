@@ -339,6 +339,8 @@ class ComputeClient(object):
             "instanceConsoleHistoryId": instance_console_history_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -389,6 +391,8 @@ class ComputeClient(object):
             "imageId": image_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -438,6 +442,8 @@ class ComputeClient(object):
         path_params = {
             "instanceConsoleConnectionId": instance_console_connection_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -500,6 +506,8 @@ class ComputeClient(object):
             "vnicAttachmentId": vnic_attachment_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -552,6 +560,8 @@ class ComputeClient(object):
         path_params = {
             "volumeAttachmentId": volume_attachment_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -628,6 +638,8 @@ class ComputeClient(object):
             "imageId": image_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -672,6 +684,8 @@ class ComputeClient(object):
         path_params = {
             "instanceConsoleHistoryId": instance_console_history_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -726,6 +740,8 @@ class ComputeClient(object):
             "instanceConsoleHistoryId": instance_console_history_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -772,6 +788,8 @@ class ComputeClient(object):
             "imageId": image_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -810,6 +828,8 @@ class ComputeClient(object):
         path_params = {
             "instanceId": instance_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -850,6 +870,8 @@ class ComputeClient(object):
             "instanceConsoleConnectionId": instance_console_connection_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -888,6 +910,8 @@ class ComputeClient(object):
         path_params = {
             "vnicAttachmentId": vnic_attachment_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -928,6 +952,8 @@ class ComputeClient(object):
             "volumeAttachmentId": volume_attachment_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -967,6 +993,8 @@ class ComputeClient(object):
         path_params = {
             "instanceId": instance_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -1042,6 +1070,8 @@ class ComputeClient(object):
         path_params = {
             "instanceId": instance_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -1663,6 +1693,8 @@ class ComputeClient(object):
             "instanceId": instance_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -1715,6 +1747,8 @@ class ComputeClient(object):
         path_params = {
             "instanceConsoleHistoryId": instance_console_history_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -1778,6 +1812,8 @@ class ComputeClient(object):
         path_params = {
             "imageId": image_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -1843,6 +1879,8 @@ class ComputeClient(object):
         path_params = {
             "instanceId": instance_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):

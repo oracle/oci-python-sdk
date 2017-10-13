@@ -986,6 +986,8 @@ class VirtualNetworkClient(object):
             "cpeId": cpe_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -1036,6 +1038,8 @@ class VirtualNetworkClient(object):
         path_params = {
             "crossConnectId": cross_connect_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -1088,6 +1092,8 @@ class VirtualNetworkClient(object):
         path_params = {
             "crossConnectGroupId": cross_connect_group_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -1143,6 +1149,8 @@ class VirtualNetworkClient(object):
             "dhcpId": dhcp_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -1196,6 +1204,8 @@ class VirtualNetworkClient(object):
             "drgId": drg_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -1247,6 +1257,8 @@ class VirtualNetworkClient(object):
         path_params = {
             "drgAttachmentId": drg_attachment_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -1301,6 +1313,8 @@ class VirtualNetworkClient(object):
         path_params = {
             "igId": ig_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -1358,6 +1372,8 @@ class VirtualNetworkClient(object):
         path_params = {
             "ipscId": ipsc_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -1421,6 +1437,8 @@ class VirtualNetworkClient(object):
             "privateIpId": private_ip_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -1474,6 +1492,8 @@ class VirtualNetworkClient(object):
         path_params = {
             "rtId": rt_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -1529,6 +1549,8 @@ class VirtualNetworkClient(object):
             "securityListId": security_list_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -1581,6 +1603,8 @@ class VirtualNetworkClient(object):
             "subnetId": subnet_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -1632,6 +1656,8 @@ class VirtualNetworkClient(object):
         path_params = {
             "vcnId": vcn_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -1687,6 +1713,8 @@ class VirtualNetworkClient(object):
             "virtualCircuitId": virtual_circuit_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -1727,6 +1755,8 @@ class VirtualNetworkClient(object):
             "cpeId": cpe_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -1765,6 +1795,8 @@ class VirtualNetworkClient(object):
         path_params = {
             "crossConnectId": cross_connect_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -1805,6 +1837,8 @@ class VirtualNetworkClient(object):
             "crossConnectGroupId": cross_connect_group_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -1843,6 +1877,8 @@ class VirtualNetworkClient(object):
         path_params = {
             "crossConnectId": cross_connect_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -1883,6 +1919,8 @@ class VirtualNetworkClient(object):
             "crossConnectId": cross_connect_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -1921,6 +1959,8 @@ class VirtualNetworkClient(object):
         path_params = {
             "dhcpId": dhcp_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -1961,6 +2001,8 @@ class VirtualNetworkClient(object):
             "drgId": drg_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -2000,6 +2042,8 @@ class VirtualNetworkClient(object):
             "drgAttachmentId": drg_attachment_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -2038,6 +2082,8 @@ class VirtualNetworkClient(object):
         path_params = {
             "igId": ig_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -2080,6 +2126,8 @@ class VirtualNetworkClient(object):
             "ipscId": ipsc_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -2120,6 +2168,8 @@ class VirtualNetworkClient(object):
             "ipscId": ipsc_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -2158,6 +2208,8 @@ class VirtualNetworkClient(object):
         path_params = {
             "ipscId": ipsc_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -2201,6 +2253,8 @@ class VirtualNetworkClient(object):
             "privateIpId": private_ip_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -2239,6 +2293,8 @@ class VirtualNetworkClient(object):
         path_params = {
             "rtId": rt_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -2279,6 +2335,8 @@ class VirtualNetworkClient(object):
             "securityListId": security_list_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -2317,6 +2375,8 @@ class VirtualNetworkClient(object):
         path_params = {
             "subnetId": subnet_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -2357,6 +2417,8 @@ class VirtualNetworkClient(object):
             "vcnId": vcn_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -2395,6 +2457,8 @@ class VirtualNetworkClient(object):
         path_params = {
             "virtualCircuitId": virtual_circuit_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -2437,6 +2501,8 @@ class VirtualNetworkClient(object):
         path_params = {
             "vnicId": vnic_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -3524,6 +3590,8 @@ class VirtualNetworkClient(object):
             "cpeId": cpe_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -3578,6 +3646,8 @@ class VirtualNetworkClient(object):
         path_params = {
             "crossConnectId": cross_connect_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -3634,6 +3704,8 @@ class VirtualNetworkClient(object):
         path_params = {
             "crossConnectGroupId": cross_connect_group_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -3693,6 +3765,8 @@ class VirtualNetworkClient(object):
             "dhcpId": dhcp_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -3747,6 +3821,8 @@ class VirtualNetworkClient(object):
         path_params = {
             "drgId": drg_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -3803,6 +3879,8 @@ class VirtualNetworkClient(object):
         path_params = {
             "drgAttachmentId": drg_attachment_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -3863,6 +3941,8 @@ class VirtualNetworkClient(object):
             "igId": ig_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -3918,6 +3998,8 @@ class VirtualNetworkClient(object):
         path_params = {
             "ipscId": ipsc_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -3983,6 +4065,8 @@ class VirtualNetworkClient(object):
             "privateIpId": private_ip_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -4040,6 +4124,8 @@ class VirtualNetworkClient(object):
         path_params = {
             "rtId": rt_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -4100,6 +4186,8 @@ class VirtualNetworkClient(object):
             "securityListId": security_list_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -4154,6 +4242,8 @@ class VirtualNetworkClient(object):
         path_params = {
             "subnetId": subnet_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -4210,6 +4300,8 @@ class VirtualNetworkClient(object):
         path_params = {
             "vcnId": vcn_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -4283,6 +4375,8 @@ class VirtualNetworkClient(object):
             "virtualCircuitId": virtual_circuit_id
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -4337,6 +4431,8 @@ class VirtualNetworkClient(object):
         path_params = {
             "vnicId": vnic_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):

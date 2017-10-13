@@ -72,6 +72,8 @@ class ObjectStorageClient(object):
             "objectName": object_name
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -155,6 +157,8 @@ class ObjectStorageClient(object):
             "objectName": object_name
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -220,6 +224,8 @@ class ObjectStorageClient(object):
         path_params = {
             "namespaceName": namespace_name
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -291,6 +297,8 @@ class ObjectStorageClient(object):
             "bucketName": bucket_name
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -352,6 +360,8 @@ class ObjectStorageClient(object):
             "bucketName": bucket_name
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -412,6 +422,8 @@ class ObjectStorageClient(object):
             "namespaceName": namespace_name,
             "bucketName": bucket_name
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -479,6 +491,8 @@ class ObjectStorageClient(object):
             "objectName": object_name
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -538,6 +552,8 @@ class ObjectStorageClient(object):
             "bucketName": bucket_name,
             "parId": par_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -603,6 +619,8 @@ class ObjectStorageClient(object):
             "namespaceName": namespace_name,
             "bucketName": bucket_name
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -723,6 +741,8 @@ class ObjectStorageClient(object):
             "objectName": object_name
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -785,6 +805,8 @@ class ObjectStorageClient(object):
             "bucketName": bucket_name,
             "parId": par_id
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -851,6 +873,8 @@ class ObjectStorageClient(object):
             "namespaceName": namespace_name,
             "bucketName": bucket_name
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -925,6 +949,8 @@ class ObjectStorageClient(object):
             "objectName": object_name
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -992,6 +1018,8 @@ class ObjectStorageClient(object):
         path_params = {
             "namespaceName": namespace_name
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -1073,6 +1101,8 @@ class ObjectStorageClient(object):
             "objectName": object_name
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -1143,6 +1173,8 @@ class ObjectStorageClient(object):
             "namespaceName": namespace_name,
             "bucketName": bucket_name
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -1243,6 +1275,8 @@ class ObjectStorageClient(object):
             "bucketName": bucket_name
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -1320,6 +1354,8 @@ class ObjectStorageClient(object):
             "namespaceName": namespace_name,
             "bucketName": bucket_name
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -1438,6 +1474,8 @@ class ObjectStorageClient(object):
             "objectName": object_name
         }
 
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
@@ -1515,6 +1553,8 @@ class ObjectStorageClient(object):
             "namespaceName": namespace_name,
             "bucketName": bucket_name
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
@@ -1610,6 +1650,8 @@ class ObjectStorageClient(object):
             "bucketName": bucket_name,
             "objectName": object_name
         }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
