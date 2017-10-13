@@ -4,6 +4,7 @@ import oci
 
 from tests.integ import util
 from tests.util import get_resource_path
+from tests.util import simple_retries_decorator
 
 
 def pytest_addoption(parser):
@@ -47,29 +48,51 @@ def object_storage(config):
 def identity(config_file):
     # Identity throws an error if we do things from not our home region (currently PHX). So use the default profile here, regardless
     # of any command line switches, under the tacit assumption that the default profile points to our home region
-    return oci.identity.IdentityClient(config(config_file, oci.config.DEFAULT_PROFILE))
+    client = oci.identity.IdentityClient(config(config_file, oci.config.DEFAULT_PROFILE))
+    add_retries_to_service_operations(client)
+    return client
 
 
 @pytest.fixture
 def block_storage(config):
-    return oci.core.BlockstorageClient(config)
+    client = oci.core.BlockstorageClient(config)
+    add_retries_to_service_operations(client)
+    return client
 
 
 @pytest.fixture
 def compute(config):
-    return oci.core.ComputeClient(config)
+    client = oci.core.ComputeClient(config)
+    add_retries_to_service_operations(client)
+    return client
 
 
 @pytest.fixture
 def virtual_network(config):
-    return oci.core.VirtualNetworkClient(config)
+    client = oci.core.VirtualNetworkClient(config)
+    add_retries_to_service_operations(client)
+    return client
 
 
 @pytest.fixture
 def load_balancer_client(config):
-    return oci.load_balancer.LoadBalancerClient(config)
+    client = oci.load_balancer.LoadBalancerClient(config)
+    add_retries_to_service_operations(client)
+    return client
 
 
 @pytest.fixture
 def database_client(config):
-    return oci.database.DatabaseClient(config)
+    client = oci.database.DatabaseClient(config)
+    add_retries_to_service_operations(client)
+    return client
+
+
+def add_retries_to_service_operations(client_obj):
+    for name in dir(client_obj):
+        if name.find('__') == 0:
+            continue
+
+        # Replace the method with a decorated version that does retries
+        if callable(getattr(client_obj, name)):
+            setattr(client_obj, name, simple_retries_decorator(getattr(client_obj, name)))

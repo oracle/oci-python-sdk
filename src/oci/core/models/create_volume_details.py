@@ -13,6 +13,7 @@ class CreateVolumeDetails(object):
             'availability_domain': 'str',
             'compartment_id': 'str',
             'display_name': 'str',
+            'size_in_gbs': 'int',
             'size_in_mbs': 'int',
             'volume_backup_id': 'str'
         }
@@ -21,6 +22,7 @@ class CreateVolumeDetails(object):
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
+            'size_in_gbs': 'sizeInGBs',
             'size_in_mbs': 'sizeInMBs',
             'volume_backup_id': 'volumeBackupId'
         }
@@ -28,6 +30,7 @@ class CreateVolumeDetails(object):
         self._availability_domain = None
         self._compartment_id = None
         self._display_name = None
+        self._size_in_gbs = None
         self._size_in_mbs = None
         self._volume_backup_id = None
 
@@ -110,10 +113,35 @@ class CreateVolumeDetails(object):
         self._display_name = display_name
 
     @property
+    def size_in_gbs(self):
+        """
+        Gets the size_in_gbs of this CreateVolumeDetails.
+        The size of the volume in GBs.
+
+
+        :return: The size_in_gbs of this CreateVolumeDetails.
+        :rtype: int
+        """
+        return self._size_in_gbs
+
+    @size_in_gbs.setter
+    def size_in_gbs(self, size_in_gbs):
+        """
+        Sets the size_in_gbs of this CreateVolumeDetails.
+        The size of the volume in GBs.
+
+
+        :param size_in_gbs: The size_in_gbs of this CreateVolumeDetails.
+        :type: int
+        """
+        self._size_in_gbs = size_in_gbs
+
+    @property
     def size_in_mbs(self):
         """
         Gets the size_in_mbs of this CreateVolumeDetails.
         The size of the volume in MBs. The value must be a multiple of 1024.
+        This field is deprecated. Please use sizeInGBs.
 
 
         :return: The size_in_mbs of this CreateVolumeDetails.
@@ -126,6 +154,7 @@ class CreateVolumeDetails(object):
         """
         Sets the size_in_mbs of this CreateVolumeDetails.
         The size of the volume in MBs. The value must be a multiple of 1024.
+        This field is deprecated. Please use sizeInGBs.
 
 
         :param size_in_mbs: The size_in_mbs of this CreateVolumeDetails.

@@ -16,15 +16,20 @@ class DbSystem(object):
             'compartment_id': 'str',
             'cpu_core_count': 'int',
             'data_storage_percentage': 'int',
+            'data_storage_size_in_gb': 'int',
             'database_edition': 'str',
             'disk_redundancy': 'str',
             'display_name': 'str',
             'domain': 'str',
             'hostname': 'str',
             'id': 'str',
+            'last_patch_history_entry_id': 'str',
+            'license_model': 'str',
             'lifecycle_details': 'str',
             'lifecycle_state': 'str',
             'listener_port': 'int',
+            'node_count': 'int',
+            'reco_storage_size_in_gb': 'int',
             'scan_dns_record_id': 'str',
             'scan_ip_ids': 'list[str]',
             'shape': 'str',
@@ -42,15 +47,20 @@ class DbSystem(object):
             'compartment_id': 'compartmentId',
             'cpu_core_count': 'cpuCoreCount',
             'data_storage_percentage': 'dataStoragePercentage',
+            'data_storage_size_in_gb': 'dataStorageSizeInGB',
             'database_edition': 'databaseEdition',
             'disk_redundancy': 'diskRedundancy',
             'display_name': 'displayName',
             'domain': 'domain',
             'hostname': 'hostname',
             'id': 'id',
+            'last_patch_history_entry_id': 'lastPatchHistoryEntryId',
+            'license_model': 'licenseModel',
             'lifecycle_details': 'lifecycleDetails',
             'lifecycle_state': 'lifecycleState',
             'listener_port': 'listenerPort',
+            'node_count': 'nodeCount',
+            'reco_storage_size_in_gb': 'recoStorageSizeInGB',
             'scan_dns_record_id': 'scanDnsRecordId',
             'scan_ip_ids': 'scanIpIds',
             'shape': 'shape',
@@ -67,15 +77,20 @@ class DbSystem(object):
         self._compartment_id = None
         self._cpu_core_count = None
         self._data_storage_percentage = None
+        self._data_storage_size_in_gb = None
         self._database_edition = None
         self._disk_redundancy = None
         self._display_name = None
         self._domain = None
         self._hostname = None
         self._id = None
+        self._last_patch_history_entry_id = None
+        self._license_model = None
         self._lifecycle_details = None
         self._lifecycle_state = None
         self._listener_port = None
+        self._node_count = None
+        self._reco_storage_size_in_gb = None
         self._scan_dns_record_id = None
         self._scan_ip_ids = None
         self._shape = None
@@ -238,6 +253,30 @@ class DbSystem(object):
         self._data_storage_percentage = data_storage_percentage
 
     @property
+    def data_storage_size_in_gb(self):
+        """
+        Gets the data_storage_size_in_gb of this DbSystem.
+        Data storage size, in GBs, that is currently available to the DB system. This is applicable only for VM-based DBs.
+
+
+        :return: The data_storage_size_in_gb of this DbSystem.
+        :rtype: int
+        """
+        return self._data_storage_size_in_gb
+
+    @data_storage_size_in_gb.setter
+    def data_storage_size_in_gb(self, data_storage_size_in_gb):
+        """
+        Sets the data_storage_size_in_gb of this DbSystem.
+        Data storage size, in GBs, that is currently available to the DB system. This is applicable only for VM-based DBs.
+
+
+        :param data_storage_size_in_gb: The data_storage_size_in_gb of this DbSystem.
+        :type: int
+        """
+        self._data_storage_size_in_gb = data_storage_size_in_gb
+
+    @property
     def database_edition(self):
         """
         Gets the database_edition of this DbSystem.
@@ -398,6 +437,60 @@ class DbSystem(object):
         self._id = id
 
     @property
+    def last_patch_history_entry_id(self):
+        """
+        Gets the last_patch_history_entry_id of this DbSystem.
+        The OCID of the last patch history. This is updated as soon as a patch operation is started.
+
+
+        :return: The last_patch_history_entry_id of this DbSystem.
+        :rtype: str
+        """
+        return self._last_patch_history_entry_id
+
+    @last_patch_history_entry_id.setter
+    def last_patch_history_entry_id(self, last_patch_history_entry_id):
+        """
+        Sets the last_patch_history_entry_id of this DbSystem.
+        The OCID of the last patch history. This is updated as soon as a patch operation is started.
+
+
+        :param last_patch_history_entry_id: The last_patch_history_entry_id of this DbSystem.
+        :type: str
+        """
+        self._last_patch_history_entry_id = last_patch_history_entry_id
+
+    @property
+    def license_model(self):
+        """
+        Gets the license_model of this DbSystem.
+        The Oracle license model that applies to all the databases on the DB System. The default is LICENSE_INCLUDED.
+
+        Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The license_model of this DbSystem.
+        :rtype: str
+        """
+        return self._license_model
+
+    @license_model.setter
+    def license_model(self, license_model):
+        """
+        Sets the license_model of this DbSystem.
+        The Oracle license model that applies to all the databases on the DB System. The default is LICENSE_INCLUDED.
+
+
+        :param license_model: The license_model of this DbSystem.
+        :type: str
+        """
+        allowed_values = ["LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"]
+        if license_model not in allowed_values:
+            license_model = 'UNKNOWN_ENUM_VALUE'
+        self._license_model = license_model
+
+    @property
     def lifecycle_details(self):
         """
         Gets the lifecycle_details of this DbSystem.
@@ -476,6 +569,54 @@ class DbSystem(object):
         self._listener_port = listener_port
 
     @property
+    def node_count(self):
+        """
+        Gets the node_count of this DbSystem.
+        Number of nodes in this DB system. For RAC DBs, this will be greater than 1.
+
+
+        :return: The node_count of this DbSystem.
+        :rtype: int
+        """
+        return self._node_count
+
+    @node_count.setter
+    def node_count(self, node_count):
+        """
+        Sets the node_count of this DbSystem.
+        Number of nodes in this DB system. For RAC DBs, this will be greater than 1.
+
+
+        :param node_count: The node_count of this DbSystem.
+        :type: int
+        """
+        self._node_count = node_count
+
+    @property
+    def reco_storage_size_in_gb(self):
+        """
+        Gets the reco_storage_size_in_gb of this DbSystem.
+        RECO/REDO storage size, in GBs, that is currently allocated to the DB system. This is applicable only for VM-based DBs.
+
+
+        :return: The reco_storage_size_in_gb of this DbSystem.
+        :rtype: int
+        """
+        return self._reco_storage_size_in_gb
+
+    @reco_storage_size_in_gb.setter
+    def reco_storage_size_in_gb(self, reco_storage_size_in_gb):
+        """
+        Sets the reco_storage_size_in_gb of this DbSystem.
+        RECO/REDO storage size, in GBs, that is currently allocated to the DB system. This is applicable only for VM-based DBs.
+
+
+        :param reco_storage_size_in_gb: The reco_storage_size_in_gb of this DbSystem.
+        :type: int
+        """
+        self._reco_storage_size_in_gb = reco_storage_size_in_gb
+
+    @property
     def scan_dns_record_id(self):
         """
         Gets the scan_dns_record_id of this DbSystem.
@@ -535,7 +676,7 @@ class DbSystem(object):
     def shape(self):
         """
         Gets the shape of this DbSystem.
-        The shape of the DB System. The shape determines the CPU cores, storage, and memory allocated to the DB System.
+        The shape of the DB System. The shape determines resources to allocate to the DB system - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes.
 
 
         :return: The shape of this DbSystem.
@@ -547,7 +688,7 @@ class DbSystem(object):
     def shape(self, shape):
         """
         Sets the shape of this DbSystem.
-        The shape of the DB System. The shape determines the CPU cores, storage, and memory allocated to the DB System.
+        The shape of the DB System. The shape determines resources to allocate to the DB system - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes.
 
 
         :param shape: The shape of this DbSystem.
@@ -586,8 +727,8 @@ class DbSystem(object):
         The OCID of the subnet the DB System is associated with.
 
         **Subnet Restrictions:**
-        - For 1- and 2-node RAC DB Systems, do not use a subnet that overlaps with 192.168.16.16/28
-        - For Exadata DB Systems, do not use a subnet that overlaps with 192.168.128.0/20
+        - For single node and 2-node (RAC) DB Systems, do not use a subnet that overlaps with 192.168.16.16/28
+        - For Exadata and VM-based RAC DB Systems, do not use a subnet that overlaps with 192.168.128.0/20
 
         These subnets are used by the Oracle Clusterware private interconnect on the database instance.
         Specifying an overlapping subnet will cause the private interconnect to malfunction.
@@ -606,8 +747,8 @@ class DbSystem(object):
         The OCID of the subnet the DB System is associated with.
 
         **Subnet Restrictions:**
-        - For 1- and 2-node RAC DB Systems, do not use a subnet that overlaps with 192.168.16.16/28
-        - For Exadata DB Systems, do not use a subnet that overlaps with 192.168.128.0/20
+        - For single node and 2-node (RAC) DB Systems, do not use a subnet that overlaps with 192.168.16.16/28
+        - For Exadata and VM-based RAC DB Systems, do not use a subnet that overlaps with 192.168.128.0/20
 
         These subnets are used by the Oracle Clusterware private interconnect on the database instance.
         Specifying an overlapping subnet will cause the private interconnect to malfunction.

@@ -1,5 +1,6 @@
 import tests.util
 import oci
+import os
 import time
 import pytest
 
@@ -14,7 +15,8 @@ def test_tutorial(virtual_network, compute, block_storage, config):
     availability_domain = util.availability_domain()
     compartment = config["tenancy"]
 
-    with open(tests.util.get_key_file_path("public_ssh_key.pub")) as f:
+    ssh_file = os.environ['OCI_PYSDK_PUBLIC_SSH_KEY_FILE']
+    with open(ssh_file) as f:
         public_key = f.read().strip()
 
     vcn = None

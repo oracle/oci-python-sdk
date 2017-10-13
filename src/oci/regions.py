@@ -3,7 +3,8 @@
 
 REGIONS = [
     "us-phoenix-1",
-    "us-ashburn-1"
+    "us-ashburn-1",
+    "eu-frankfurt-1"
 ]
 SERVICE_ENDPOINTS = {
     "blockstorage": "https://iaas.{domain}/20160918",

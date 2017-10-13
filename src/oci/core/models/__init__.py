@@ -72,6 +72,7 @@ from .tcp_options import TcpOptions
 from .tunnel_config import TunnelConfig
 from .tunnel_status import TunnelStatus
 from .udp_options import UdpOptions
+from .update_console_history_details import UpdateConsoleHistoryDetails
 from .update_cpe_details import UpdateCpeDetails
 from .update_cross_connect_details import UpdateCrossConnectDetails
 from .update_cross_connect_group_details import UpdateCrossConnectGroupDetails
@@ -171,6 +172,7 @@ core_type_mapping = {
     "TunnelConfig": TunnelConfig,
     "TunnelStatus": TunnelStatus,
     "UdpOptions": UdpOptions,
+    "UpdateConsoleHistoryDetails": UpdateConsoleHistoryDetails,
     "UpdateCpeDetails": UpdateCpeDetails,
     "UpdateCrossConnectDetails": UpdateCrossConnectDetails,
     "UpdateCrossConnectGroupDetails": UpdateCrossConnectGroupDetails,

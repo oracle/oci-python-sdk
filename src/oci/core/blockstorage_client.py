@@ -30,7 +30,7 @@ class BlockstorageClient(object):
         """
         CreateVolume
         Creates a new volume in the specified compartment. Volumes can be created in sizes ranging from
-        50 GB (51200 MB) to 2 TB (2097152 MB), in 1 GB (1024 MB) increments. By default, volumes are 1 TB (1048576 MB).
+        50 GB (51200 MB) to 16 TB (16777216 MB), in 1 GB (1024 MB) increments. By default, volumes are 1 TB (1048576 MB).
         For general information about block volumes, see
         `Overview of Block Volume Service`__.
 

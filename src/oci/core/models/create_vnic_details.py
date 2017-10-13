@@ -14,6 +14,7 @@ class CreateVnicDetails(object):
             'display_name': 'str',
             'hostname_label': 'str',
             'private_ip': 'str',
+            'skip_source_dest_check': 'bool',
             'subnet_id': 'str'
         }
 
@@ -22,6 +23,7 @@ class CreateVnicDetails(object):
             'display_name': 'displayName',
             'hostname_label': 'hostnameLabel',
             'private_ip': 'privateIp',
+            'skip_source_dest_check': 'skipSourceDestCheck',
             'subnet_id': 'subnetId'
         }
 
@@ -29,6 +31,7 @@ class CreateVnicDetails(object):
         self._display_name = None
         self._hostname_label = None
         self._private_ip = None
+        self._skip_source_dest_check = None
         self._subnet_id = None
 
     @property
@@ -222,6 +225,44 @@ class CreateVnicDetails(object):
         :type: str
         """
         self._private_ip = private_ip
+
+    @property
+    def skip_source_dest_check(self):
+        """
+        Gets the skip_source_dest_check of this CreateVnicDetails.
+        Whether the source/destination check is disabled on the VNIC.
+        Defaults to `false`, which means the check is performed. For information
+        about why you would skip the source/destination check, see
+        `Using a Private IP as a Route Target`__.
+
+        Example: `true`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm#privateip
+
+
+        :return: The skip_source_dest_check of this CreateVnicDetails.
+        :rtype: bool
+        """
+        return self._skip_source_dest_check
+
+    @skip_source_dest_check.setter
+    def skip_source_dest_check(self, skip_source_dest_check):
+        """
+        Sets the skip_source_dest_check of this CreateVnicDetails.
+        Whether the source/destination check is disabled on the VNIC.
+        Defaults to `false`, which means the check is performed. For information
+        about why you would skip the source/destination check, see
+        `Using a Private IP as a Route Target`__.
+
+        Example: `true`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm#privateip
+
+
+        :param skip_source_dest_check: The skip_source_dest_check of this CreateVnicDetails.
+        :type: bool
+        """
+        self._skip_source_dest_check = skip_source_dest_check
 
     @property
     def subnet_id(self):

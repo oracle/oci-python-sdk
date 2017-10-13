@@ -4,8 +4,9 @@
 from __future__ import print_function
 import os
 from .internal.multipart_object_assembler import MultipartObjectAssembler
-from .constants import DEFAULT_PART_SIZE
+from .constants import DEFAULT_PART_SIZE, STREAMING_DEFAULT_PART_SIZE
 from .internal.file_read_callback_stream import FileReadCallbackStream
+from ...exceptions import MultipartUploadError
 
 
 class UploadManager:
@@ -36,6 +37,109 @@ class UploadManager:
         self.allow_multipart_uploads = kwargs['allow_multipart_uploads'] if 'allow_multipart_uploads' in kwargs else True
         self.allow_parallel_uploads = kwargs['allow_parallel_uploads'] if 'allow_parallel_uploads' in kwargs else True
         self.parallel_process_count = kwargs['parallel_process_count'] if 'parallel_process_count' in kwargs else None
+
+    def upload_stream(self,
+                      namespace_name,
+                      bucket_name,
+                      object_name,
+                      stream_ref,
+                      **kwargs):
+        """
+        Uploads streaming data to Object Storage. This will always perform a multipart upload, splitting parts based
+        on the part size (10 MiB if none specified). However, stream uploads are not currently resumable.
+
+        :param str namespace_name:
+            The namespace containing the bucket in which to store the object.
+
+        :param str bucket_name:
+            The name of the bucket in which to store the object.
+
+        :param str object_name:
+            The name of the object in Object Storage.
+
+        :param stream_ref:
+            The stream to read data from.
+
+        :param int part_size (optional):
+            Override the default streaming part size of 10 MiB, value is in bytes.
+
+        :param function progress_callback (optional):
+            Callback function to receive the number of bytes uploaded since
+            the last call to the callback function.
+
+        :param str if_match (optional):
+            The entity tag of the object to match.
+
+        :param str if_none_match (optional):
+            The entity tag of the object to avoid matching. The only valid value is ‘*’,
+            which indicates that the request should fail if the object
+             already exists.
+
+        :param str content_type (optional):
+            The content type of the object to upload.
+
+        :param str content_language (optional):
+            The content language of the object to upload.
+
+        :param str content_encoding (optional):
+            The content encoding of the object to upload.
+
+        :param dict metadata (optional):
+            A dictionary of string to string values to associate with the object to upload
+
+        :return:
+            The response from multipart commit operation or the put operation.  In both cases this will be a Response object with data of type None. For a multipart upload the Response will contain the opc-multipart-md5 header and for a non-multipart upload it will contain the opc-content-md5 header.
+        """
+        if 'part_size' not in kwargs:
+            kwargs['part_size'] = STREAMING_DEFAULT_PART_SIZE
+
+        kwargs['allow_parallel_uploads'] = self.allow_parallel_uploads
+        if self.parallel_process_count is not None:
+            kwargs['parallel_process_count'] = self.parallel_process_count
+
+        ma = MultipartObjectAssembler(
+            self.object_storage_client,
+            namespace_name,
+            bucket_name,
+            object_name,
+            **kwargs
+        )
+
+        upload_kwargs = {}
+        if 'progress_callback' in kwargs:
+            upload_kwargs['progress_callback'] = kwargs['progress_callback']
+
+        ma.new_upload()
+
+        try:
+            ma.upload_stream(stream_ref, **upload_kwargs)
+        except MultipartUploadError:
+            # Since the stream upload is not resumable, make an effort to clean up after ourselves before
+            # failing out
+            ma.abort()
+            raise
+
+        # It is possible we did not upload any parts (e.g. if the stream was empty). If we did
+        # upload parts then commit the upload, otherwise put an empty object into Object Storage
+        # to reflect what the customer intended
+        if len(ma.manifest['parts']) > 0:
+            response = ma.commit()
+        else:
+            copy_kwargs = kwargs.copy()
+            # put_object expects 'opc_meta' not metadata
+            if 'metadata' in copy_kwargs:
+                copy_kwargs['opc_meta'] = copy_kwargs['metadata']
+                copy_kwargs.pop('metadata')
+
+            # These parameters are not valid for just putting the object, so discard them
+            copy_kwargs.pop('progress_callback', None)
+            copy_kwargs.pop('part_size', None)
+            copy_kwargs.pop('allow_parallel_uploads', None)
+            copy_kwargs.pop('parallel_process_count', None)
+
+            return self.object_storage_client.put_object(namespace_name, bucket_name, object_name, b'', **copy_kwargs)
+
+        return response
 
     def upload_file(self,
                     namespace_name,
