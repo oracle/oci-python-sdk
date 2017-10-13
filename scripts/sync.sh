@@ -29,6 +29,12 @@ cp -r oci/examples/* oraclebmc/examples/
 # and also copy the tests because we want to make sure we run any new tests against this package
 cp -r oci/tests/* oraclebmc/tests/
 
+# copy internal resources so tests can run
+if [ ! -d "oraclebmc/internal_resources" ]; then
+    mkdir oraclebmc/internal_resources
+fi
+cp -r oci/internal_resources/* oraclebmc/internal_resources/
+
 # now oraclebmc/src/oraclebmc will have a bunch of files that have oci references so fix those with sed
 grep -rl 'oci' oraclebmc/ | xargs sed -i 's/oci\./oraclebmc\./g'
 grep -rl 'import oci' oraclebmc/ | xargs sed -i 's/import oci/import oraclebmc/g'
@@ -54,6 +60,7 @@ import warnings
 warnings.warn("The oraclebmc package is deprecated and will no longer be maintained starting March 2018. Please upgrade to the oci package to avoid interruption at that time. More info is available at https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/backward-compatibility.html", DeprecationWarning, stacklevel=2)
 EOF
 
+# Does renaming like making sure that the user agent string is correct for the oraclebmc package
 python oci/scripts/do_internal_code_renaming.py
 
 # create PR for oraclebmc/ branch to port changes
