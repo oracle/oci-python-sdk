@@ -268,10 +268,18 @@ class TestVirtualNetwork:
         create_drg_details = oci.core.models.CreateDrgDetails()
         create_drg_details.compartment_id = util.COMPARTMENT_ID
         create_drg_details.display_name = drg_name
-        result = virtual_network.create_drg(create_drg_details)
-        self.drg_ocid = result.data.id
-        util.validate_response(result, expect_etag=True)
 
+        try:
+            result = virtual_network.create_drg(create_drg_details)
+            self.drg_ocid = result.data.id
+        except oci.exceptions.ServiceError as e:
+            if e.code == 'LimitExceeded':
+                print('Skipping subtest_drg_operations because of LimitExceeded')
+                return
+            else:
+                raise
+
+        util.validate_response(result, expect_etag=True)
         oci.wait_until(virtual_network, virtual_network.get_drg(self.drg_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=600)
 
         result = virtual_network.list_drgs(util.COMPARTMENT_ID)
@@ -288,6 +296,10 @@ class TestVirtualNetwork:
 
     @util.log_test
     def subtest_drg_attachment_operations(self, virtual_network):
+        if not hasattr(self, 'drg_ocid'):
+            print('Skipping subtest_drg_attachment_operations because of LimitExceeded')
+            return
+
         drg_attachment_name = util.random_name('python_sdk_test_drg_attachment')
 
         create_drg_attachment_details = oci.core.models.CreateDrgAttachmentDetails()
@@ -314,6 +326,10 @@ class TestVirtualNetwork:
 
     @util.log_test
     def subtest_ip_sec_connection_operations(self, virtual_network):
+        if not hasattr(self, 'drg_ocid'):
+            print('Skipping subtest_ip_sec_connection_operations because of LimitExceeded')
+            return
+
         ipsc_name = util.random_name('python_sdk_test_ipsc')
 
         create_ip_sec_details = oci.core.models.CreateIPSecConnectionDetails()
