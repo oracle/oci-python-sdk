@@ -27,3 +27,17 @@ def test_invalid_endpoint_host(identity):
 
     with pytest.raises(Exception):
         identity.list_users('invalid_compartment')
+
+
+def test_empty_path_param(identity):
+    with pytest.raises(ValueError) as exc_info:
+        identity.get_user('')
+
+    assert 'Parameter userId cannot be None' in str(exc_info)
+
+
+def test_none_path_param(identity):
+    with pytest.raises(ValueError) as exc_info:
+        identity.get_user(None)
+
+    assert 'Parameter userId cannot be None' in str(exc_info)
