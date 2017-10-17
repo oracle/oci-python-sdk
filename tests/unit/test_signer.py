@@ -107,6 +107,12 @@ def test_expand_user_in_private_key_file(api_key, private_key_file, pass_phrase)
     assert "/.oci/a_key_that_doesnt_exist.pem" in str(excinfo.value)
 
 
+def test_key_content_precedence_over_key_file(api_key, private_key_file, pass_phrase):
+    tenancy, user, fingerprint = api_key.split("/")
+    with pytest.raises(InvalidPrivateKey) as excinfo:
+        Signer(tenancy, user, fingerprint, private_key_file.name, pass_phrase, 'invalid private key content')
+
+
 @pytest.mark.parametrize("encoding", ["pem", "der"])
 @pytest.mark.parametrize("format", ["spk", "pkcs1"])
 def test_load_fails_for_public_key(public_key, pass_phrase, encoding, format):

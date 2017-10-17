@@ -91,6 +91,23 @@ def test_missing_required():
         "region": "missing"
     }
 
+def test_key_file_not_required_if_key_content_present():
+    config = {
+        "user": HARDCODED_USER,
+        "tenancy": HARDCODED_TENANCY,
+        "region": HARDCODED_REGION,
+        "fingerprint": HARDCODED_FINGERPRINT,
+        "key_content": "KEYCONTENT"
+    }
+    
+    oci.config.validate_config(config)
+
+
+def test_config_from_file_excludes_key_content():
+    config = oci.config.from_file(file_location=get_resource_path('config'), profile_name='KEY_CONTENT')
+    oci.config.validate_config(config)
+    assert 'key_content' not in config
+
 
 def test_manual_config_doesnt_require_optional_fields():
     config = {

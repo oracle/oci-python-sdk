@@ -77,6 +77,18 @@ class TestObjectStorage:
         response = object_storage.get_namespace()
         assert response.status == 200
 
+    def test_get_namespace_using_key_content(self, config):
+        key_file = config['key_file']
+        with open(key_file, 'rb') as f:
+            key_content = f.read()
+
+        del config['key_file']
+        config['key_content'] = key_content
+
+        client = oci.object_storage.ObjectStorageClient(config)
+        response = client.get_namespace()
+        assert response.status == 200
+
     def test_bucket_crud(self, object_storage):
         bucket_name = unique_name('test_bucket')
         namespace = object_storage.get_namespace().data

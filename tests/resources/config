@@ -32,3 +32,6 @@ additional_user_agent = example_extra_user_agent_text
 
 [INVALID_PARAMETER]
 foo = bar
+
+[KEY_CONTENT]
+key_content = some_invalid_key_content
