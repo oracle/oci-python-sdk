@@ -109,7 +109,7 @@ def test_expand_user_in_private_key_file(api_key, private_key_file, pass_phrase)
 
 def test_key_content_precedence_over_key_file(api_key, private_key_file, pass_phrase):
     tenancy, user, fingerprint = api_key.split("/")
-    with pytest.raises(InvalidPrivateKey) as excinfo:
+    with pytest.raises(InvalidPrivateKey):
         Signer(tenancy, user, fingerprint, private_key_file.name, pass_phrase, 'invalid private key content')
 
 

@@ -89,7 +89,7 @@ def from_file(file_location=DEFAULT_LOCATION, profile_name=DEFAULT_PROFILE):
 
     for key in CONFIG_FILE_BLACKLISTED_KEYS:
         if key in config:
-            del config[key]
+            raise ValueError("'{}' cannot be specified in a config file for security reasons. To use this key you must add it to the config programmatically.".format(key))
 
     return config
 
