@@ -21,8 +21,9 @@ class LoadBalancerClient(object):
             tenancy=config["tenancy"],
             user=config["user"],
             fingerprint=config["fingerprint"],
-            private_key_file_location=config["key_file"],
-            pass_phrase=get_config_value_or_default(config, "pass_phrase")
+            private_key_file_location=config.get("key_file"),
+            pass_phrase=get_config_value_or_default(config, "pass_phrase"),
+            private_key_content=config.get("key_content")
         )
         self.base_client = BaseClient("load_balancer", config, signer, load_balancer_type_mapping)
 
