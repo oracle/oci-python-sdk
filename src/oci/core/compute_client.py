@@ -1040,6 +1040,8 @@ class ComputeClient(object):
         :param str action: (required)
             The action to perform on the instance.
 
+            Allowed values are: "STOP", "START", "SOFTRESET", "RESET"
+
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
             server error without risk of executing that same action again. Retry tokens expire after 24
@@ -1077,6 +1079,12 @@ class ComputeClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        action_allowed_values = ["STOP", "START", "SOFTRESET", "RESET"]
+        if action not in action_allowed_values:
+            raise ValueError(
+                "Invalid value for `action`, must be one of {0}".format(action_allowed_values)
+            )
 
         query_params = {
             "action": action
