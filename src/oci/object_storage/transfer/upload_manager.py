@@ -89,8 +89,8 @@ class UploadManager:
             A dictionary of string to string values to associate with the object to upload
 
         :return:
-            The response from multipart commit operation or the put operation.  In both cases this will be a :class:`~oci.response.Response` object with data of type None. 
-            For a multipart upload (non-empty stream data) the :class:`~oci.response.Response` will contain the :code:`opc-multipart-md5` header and for a non-multipart upload 
+            The response from multipart commit operation or the put operation.  In both cases this will be a :class:`~oci.response.Response` object with data of type None.
+            For a multipart upload (non-empty stream data) the :class:`~oci.response.Response` will contain the :code:`opc-multipart-md5` header and for a non-multipart upload
             (empty stream data) it will contain the :code:`opc-content-md5 header`.
         :rtype: :class:`~oci.response.Response`
         """
@@ -197,8 +197,8 @@ class UploadManager:
             A dictionary of string to string values to associate with the object to upload
 
         :return:
-            The response from multipart commit operation or the put operation.  In both cases this will be a :class:`~oci.response.Response` object with data of type None. 
-            For a multipart upload the :class:`~oci.response.Response` will contain the :code:`opc-multipart-md5` header and for a non-multipart upload 
+            The response from multipart commit operation or the put operation.  In both cases this will be a :class:`~oci.response.Response` object with data of type None.
+            For a multipart upload the :class:`~oci.response.Response` will contain the :code:`opc-multipart-md5` header and for a non-multipart upload
             it will contain the :code:`opc-content-md5 header`.
         :rtype: :class:`~oci.response.Response`
         """
