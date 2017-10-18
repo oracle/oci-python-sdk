@@ -46,7 +46,7 @@ class PatchSummary(object):
         Gets the available_actions of this PatchSummary.
         Actions that can possibly be performed using this patch.
 
-        Allowed values for items in this list are: "APPLY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for items in this list are: "APPLY", "PRECHECK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -65,7 +65,7 @@ class PatchSummary(object):
         :param available_actions: The available_actions of this PatchSummary.
         :type: list[str]
         """
-        allowed_values = ["APPLY"]
+        allowed_values = ["APPLY", "PRECHECK"]
         available_actions[:] = ['UNKNOWN_ENUM_VALUE' if x not in allowed_values else x for x in available_actions]
         self._available_actions = available_actions
 
@@ -123,7 +123,7 @@ class PatchSummary(object):
         Gets the last_action of this PatchSummary.
         Action that is currently being performed or was completed last.
 
-        Allowed values for this property are: "APPLY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "APPLY", "PRECHECK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -142,7 +142,7 @@ class PatchSummary(object):
         :param last_action: The last_action of this PatchSummary.
         :type: str
         """
-        allowed_values = ["APPLY"]
+        allowed_values = ["APPLY", "PRECHECK"]
         if last_action not in allowed_values:
             last_action = 'UNKNOWN_ENUM_VALUE'
         self._last_action = last_action
