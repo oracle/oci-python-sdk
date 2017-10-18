@@ -1247,6 +1247,8 @@ class ObjectStorageClient(object):
             Value of this parameter should be a comma-separated, case-insensitive list of those field names.
             For example 'name,timeCreated,md5'.
 
+            Allowed values are: "name", "size", "timeCreated", "md5"
+
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
 
@@ -1281,6 +1283,13 @@ class ObjectStorageClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'fields' in kwargs:
+            fields_allowed_values = ["name", "size", "timeCreated", "md5"]
+            if kwargs['fields'] not in fields_allowed_values:
+                raise ValueError(
+                    "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                )
 
         query_params = {
             "prefix": kwargs.get("prefix", missing),

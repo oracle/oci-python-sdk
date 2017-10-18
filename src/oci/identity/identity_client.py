@@ -1778,6 +1778,8 @@ class IdentityClient(object):
         :param str protocol: (required)
             The protocol used for federation.
 
+            Allowed values are: "SAML2"
+
         :param str compartment_id: (required)
             The OCID of the compartment (remember that the tenancy is simply the root compartment).
 
@@ -1802,6 +1804,12 @@ class IdentityClient(object):
         if extra_kwargs:
             raise ValueError(
                 "list_identity_providers got unknown kwargs: {!r}".format(extra_kwargs))
+
+        protocol_allowed_values = ["SAML2"]
+        if protocol not in protocol_allowed_values:
+            raise ValueError(
+                "Invalid value for `protocol`, must be one of {0}".format(protocol_allowed_values)
+            )
 
         query_params = {
             "protocol": protocol,
