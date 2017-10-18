@@ -99,7 +99,7 @@ def validate_config(config):
     errors = {}
     for required_key in REQUIRED:
         fallback_key = REQUIRED_FALLBACKS.get(required_key)
-        if required_key not in config and fallback_key and fallback_key not in config:
+        if required_key not in config and fallback_key not in config:
             errors[required_key] = "missing"
 
     for key, pattern in six.iteritems(PATTERNS):
