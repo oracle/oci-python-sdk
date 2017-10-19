@@ -1805,12 +1805,6 @@ class IdentityClient(object):
             raise ValueError(
                 "list_identity_providers got unknown kwargs: {!r}".format(extra_kwargs))
 
-        protocol_allowed_values = ["SAML2"]
-        if protocol not in protocol_allowed_values:
-            raise ValueError(
-                "Invalid value for `protocol`, must be one of {0}".format(protocol_allowed_values)
-            )
-
         query_params = {
             "protocol": protocol,
             "compartmentId": compartment_id,

@@ -1080,12 +1080,6 @@ class ComputeClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
-        action_allowed_values = ["STOP", "START", "SOFTRESET", "RESET"]
-        if action not in action_allowed_values:
-            raise ValueError(
-                "Invalid value for `action`, must be one of {0}".format(action_allowed_values)
-            )
-
         query_params = {
             "action": action
         }
