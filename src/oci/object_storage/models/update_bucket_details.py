@@ -3,6 +3,7 @@
 
 
 from ...util import formatted_flat_dict
+from ...util import NONE_SENTINEL
 
 
 class UpdateBucketDetails(object):
@@ -98,7 +99,10 @@ class UpdateBucketDetails(object):
         :param metadata: The metadata of this UpdateBucketDetails.
         :type: dict(str, str)
         """
-        self._metadata = metadata
+        if metadata is None:
+            self._metadata = NONE_SENTINEL
+        else:
+            self._metadata = metadata
 
     @property
     def public_access_type(self):

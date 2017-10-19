@@ -26,6 +26,8 @@ def to_dict(obj):
     # Shortcut strings so they don't count as Iterables
     if isinstance(obj, six.string_types):
         return obj
+    elif obj is NONE_SENTINEL:
+        return None
     elif isinstance(obj, (datetime.datetime, datetime.time)):
         # always use UTC
         if not obj.tzinfo:
@@ -99,3 +101,6 @@ class Sentinel(object):
         return self.truthy
     # PY2 Compatibility
     __nonzero__ = __bool__
+
+
+NONE_SENTINEL = Sentinel(name='None', truthy=False)
