@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+1.3.9 - 2017-11-02
+====================
+
+Changed
+-------
+* Upgraded cryptography dependency to 1.9.
+* Minimum version of Mac OS supported is now 10.8
+
+====================
 1.3.8 - 2017-10-12
 ====================
 
