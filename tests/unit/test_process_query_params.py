@@ -1,6 +1,7 @@
 import oci
 import pytest
 
+
 @pytest.fixture
 def base_client(config):
     return oci.BaseClient(
@@ -9,6 +10,7 @@ def base_client(config):
         signer=None,
         type_mapping={}
     )
+
 
 def test_process_query_params(base_client):
     raw_query_params = {
