@@ -27,13 +27,13 @@ def test_none_sentinel_falsey():
     assert not oci.util.NONE_SENTINEL
 
 
-def test_assign_none_results_in_serialized_null(object_storage):
+def test_assign_none_results_in_field_not_serialized(object_storage):
     update_bucket_details = oci.object_storage.models.UpdateBucketDetails()
     update_bucket_details.name = 'Some name'
     update_bucket_details.metadata = None
 
     serialized = object_storage.base_client.sanitize_for_serialization(update_bucket_details)
-    assert {'name': 'Some name', 'metadata': None} == serialized
+    assert {'name': 'Some name'} == serialized
 
 
 def test_none_sentinel_with_bucket_metadata(object_storage):
@@ -52,21 +52,9 @@ def test_none_sentinel_with_bucket_metadata(object_storage):
 
     update_bucket_details = oci.object_storage.models.UpdateBucketDetails()
     
-    update_bucket_details.metadata = None  # should clear it
+    update_bucket_details.metadata = oci.util.NONE_SENTINEL  # should clear it
     object_storage.update_bucket(namespace, create_bucket_details.name, update_bucket_details)
     bucket = object_storage.get_bucket(namespace, create_bucket_details.name).data
-    assert {} == bucket.metadata
-
-    update_bucket_details.metadata = {'key3': 'val3', 'key4': 'val4'}
-    object_storage.update_bucket(namespace, create_bucket_details.name, update_bucket_details)
-    bucket = object_storage.get_bucket(namespace, create_bucket_details.name).data
-    assert create_bucket_details.name == bucket.name
-    assert update_bucket_details.metadata == bucket.metadata
-
-    update_bucket_details.metadata = oci.util.NONE_SENTINEL
-    object_storage.update_bucket(namespace, create_bucket_details.name, update_bucket_details)
-    bucket = object_storage.get_bucket(namespace, create_bucket_details.name).data
-    assert create_bucket_details.name == bucket.name
     assert {} == bucket.metadata
 
     update_bucket_details.metadata = {'key5': 'val5', 'key6': 'val6'}
