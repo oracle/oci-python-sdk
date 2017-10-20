@@ -1040,6 +1040,8 @@ class ComputeClient(object):
         :param str action: (required)
             The action to perform on the instance.
 
+            Allowed values are: "STOP", "START", "SOFTRESET", "RESET"
+
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
             server error without risk of executing that same action again. Retry tokens expire after 24

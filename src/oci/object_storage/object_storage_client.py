@@ -1247,6 +1247,8 @@ class ObjectStorageClient(object):
             Value of this parameter should be a comma-separated, case-insensitive list of those field names.
             For example 'name,timeCreated,md5'.
 
+            Allowed values are: "name", "size", "timeCreated", "md5"
+
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
 

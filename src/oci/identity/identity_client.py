@@ -1778,6 +1778,8 @@ class IdentityClient(object):
         :param str protocol: (required)
             The protocol used for federation.
 
+            Allowed values are: "SAML2"
+
         :param str compartment_id: (required)
             The OCID of the compartment (remember that the tenancy is simply the root compartment).
 
