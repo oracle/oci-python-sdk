@@ -27,13 +27,13 @@ def bucket_name(namespace, object_storage):
         for summary in object_list.objects:
             response = object_storage.delete_object(namespace, name, summary.name)
             assert response.status == 204
-    except:
-        print('TearDown: Could not delete new objects.')
+    except Exception as e:
+        print('TearDown: Could not delete new objects. Error: {}'.format(str(e)))
 
     try:
         object_storage.delete_bucket(namespace, name)
-    except:
-        print('TearDown: Could not delete new bucket.')
+    except Exception as e:
+        print('TearDown: Could not delete new bucket. Error: {}'.format(str(e)))
 
 
 class TestStreaming:

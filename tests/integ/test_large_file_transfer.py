@@ -42,18 +42,18 @@ def write_bucket(namespace, object_storage, config, names):
         for summary in object_list.objects:
             response = object_storage.delete_object(namespace, bucket.name, summary.name)
             assert response.status == 200
-    except:
-        print('TearDown: Could not delete new object.')
+    except Exception as e:
+        print('TearDown: Could not delete new object. Error: {}'.format(str(e)))
 
     try:
         object_storage.delete_bucket(namespace, bucket.name)
-    except:
-        print('TearDown: Could not delete new bucket.')
+    except Exception as e:
+        print('TearDown: Could not delete new bucket. Error: {}'.format(str(e)))
 
     try:
         os.remove(names["temp-file"])
-    except:
-        print('TearDown: Could not delete temporary local file.')
+    except Exception as e:
+        print('TearDown: Could not delete temporary local file. Error: {}'.format(str(e)))
 
 
 def test_large_file_transfer(namespace, object_storage, write_bucket, names):
