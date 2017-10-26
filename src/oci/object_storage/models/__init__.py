@@ -13,10 +13,14 @@ from .create_preauthenticated_request_details import CreatePreauthenticatedReque
 from .list_objects import ListObjects
 from .multipart_upload import MultipartUpload
 from .multipart_upload_part_summary import MultipartUploadPartSummary
+from .namespace_metadata import NamespaceMetadata
 from .object_summary import ObjectSummary
 from .preauthenticated_request import PreauthenticatedRequest
 from .preauthenticated_request_summary import PreauthenticatedRequestSummary
+from .rename_object_details import RenameObjectDetails
+from .restore_objects_details import RestoreObjectsDetails
 from .update_bucket_details import UpdateBucketDetails
+from .update_namespace_metadata_details import UpdateNamespaceMetadataDetails
 
 # Maps type names to classes for object_storage services.
 object_storage_type_mapping = {
@@ -30,8 +34,12 @@ object_storage_type_mapping = {
     "ListObjects": ListObjects,
     "MultipartUpload": MultipartUpload,
     "MultipartUploadPartSummary": MultipartUploadPartSummary,
+    "NamespaceMetadata": NamespaceMetadata,
     "ObjectSummary": ObjectSummary,
     "PreauthenticatedRequest": PreauthenticatedRequest,
     "PreauthenticatedRequestSummary": PreauthenticatedRequestSummary,
-    "UpdateBucketDetails": UpdateBucketDetails
+    "RenameObjectDetails": RenameObjectDetails,
+    "RestoreObjectsDetails": RestoreObjectsDetails,
+    "UpdateBucketDetails": UpdateBucketDetails,
+    "UpdateNamespaceMetadataDetails": UpdateNamespaceMetadataDetails
 }

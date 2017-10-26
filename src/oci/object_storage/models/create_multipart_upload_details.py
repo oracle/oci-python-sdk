@@ -35,7 +35,8 @@ class CreateMultipartUploadDetails(object):
     def object(self):
         """
         Gets the object of this CreateMultipartUploadDetails.
-        the name of the object to which this multi-part upload is targetted.
+        The name of the object to which this multi-part upload is targeted. Avoid entering confidential information.
+        Example: test/object1.log
 
 
         :return: The object of this CreateMultipartUploadDetails.
@@ -47,7 +48,8 @@ class CreateMultipartUploadDetails(object):
     def object(self, object):
         """
         Sets the object of this CreateMultipartUploadDetails.
-        the name of the object to which this multi-part upload is targetted.
+        The name of the object to which this multi-part upload is targeted. Avoid entering confidential information.
+        Example: test/object1.log
 
 
         :param object: The object of this CreateMultipartUploadDetails.
@@ -59,7 +61,7 @@ class CreateMultipartUploadDetails(object):
     def content_type(self):
         """
         Gets the content_type of this CreateMultipartUploadDetails.
-        the content type of the object to upload.
+        The content type of the object to upload.
 
 
         :return: The content_type of this CreateMultipartUploadDetails.
@@ -71,7 +73,7 @@ class CreateMultipartUploadDetails(object):
     def content_type(self, content_type):
         """
         Sets the content_type of this CreateMultipartUploadDetails.
-        the content type of the object to upload.
+        The content type of the object to upload.
 
 
         :param content_type: The content_type of this CreateMultipartUploadDetails.
@@ -83,7 +85,7 @@ class CreateMultipartUploadDetails(object):
     def content_language(self):
         """
         Gets the content_language of this CreateMultipartUploadDetails.
-        the content language of the object to upload.
+        The content language of the object to upload.
 
 
         :return: The content_language of this CreateMultipartUploadDetails.
@@ -95,7 +97,7 @@ class CreateMultipartUploadDetails(object):
     def content_language(self, content_language):
         """
         Sets the content_language of this CreateMultipartUploadDetails.
-        the content language of the object to upload.
+        The content language of the object to upload.
 
 
         :param content_language: The content_language of this CreateMultipartUploadDetails.
@@ -107,7 +109,7 @@ class CreateMultipartUploadDetails(object):
     def content_encoding(self):
         """
         Gets the content_encoding of this CreateMultipartUploadDetails.
-        the content encoding of the object to upload.
+        The content encoding of the object to upload.
 
 
         :return: The content_encoding of this CreateMultipartUploadDetails.
@@ -119,7 +121,7 @@ class CreateMultipartUploadDetails(object):
     def content_encoding(self, content_encoding):
         """
         Sets the content_encoding of this CreateMultipartUploadDetails.
-        the content encoding of the object to upload.
+        The content encoding of the object to upload.
 
 
         :param content_encoding: The content_encoding of this CreateMultipartUploadDetails.
@@ -132,7 +134,7 @@ class CreateMultipartUploadDetails(object):
         """
         Gets the metadata of this CreateMultipartUploadDetails.
         Arbitrary string keys and values for the user-defined metadata for the object.
-        Keys must be in \"opc-meta-*\" format.
+        Keys must be in \"opc-meta-*\" format. Avoid entering confidential information.
 
 
         :return: The metadata of this CreateMultipartUploadDetails.
@@ -145,7 +147,7 @@ class CreateMultipartUploadDetails(object):
         """
         Sets the metadata of this CreateMultipartUploadDetails.
         Arbitrary string keys and values for the user-defined metadata for the object.
-        Keys must be in \"opc-meta-*\" format.
+        Keys must be in \"opc-meta-*\" format. Avoid entering confidential information.
 
 
         :param metadata: The metadata of this CreateMultipartUploadDetails.

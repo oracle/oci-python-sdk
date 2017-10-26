@@ -32,7 +32,7 @@ class MultipartUploadPartSummary(object):
     def etag(self):
         """
         Gets the etag of this MultipartUploadPartSummary.
-        the current entity tag for the part.
+        The current entity tag for the part.
 
 
         :return: The etag of this MultipartUploadPartSummary.
@@ -44,7 +44,7 @@ class MultipartUploadPartSummary(object):
     def etag(self, etag):
         """
         Sets the etag of this MultipartUploadPartSummary.
-        the current entity tag for the part.
+        The current entity tag for the part.
 
 
         :param etag: The etag of this MultipartUploadPartSummary.
@@ -56,7 +56,7 @@ class MultipartUploadPartSummary(object):
     def md5(self):
         """
         Gets the md5 of this MultipartUploadPartSummary.
-        the MD5 hash of the bytes of the part.
+        The MD5 hash of the bytes of the part.
 
 
         :return: The md5 of this MultipartUploadPartSummary.
@@ -68,7 +68,7 @@ class MultipartUploadPartSummary(object):
     def md5(self, md5):
         """
         Sets the md5 of this MultipartUploadPartSummary.
-        the MD5 hash of the bytes of the part.
+        The MD5 hash of the bytes of the part.
 
 
         :param md5: The md5 of this MultipartUploadPartSummary.
@@ -80,7 +80,7 @@ class MultipartUploadPartSummary(object):
     def size(self):
         """
         Gets the size of this MultipartUploadPartSummary.
-        the size of the part in bytes.
+        The size of the part in bytes.
 
 
         :return: The size of this MultipartUploadPartSummary.
@@ -92,7 +92,7 @@ class MultipartUploadPartSummary(object):
     def size(self, size):
         """
         Sets the size of this MultipartUploadPartSummary.
-        the size of the part in bytes.
+        The size of the part in bytes.
 
 
         :param size: The size of this MultipartUploadPartSummary.
@@ -104,7 +104,7 @@ class MultipartUploadPartSummary(object):
     def part_number(self):
         """
         Gets the part_number of this MultipartUploadPartSummary.
-        the part number for this part.
+        The part number for this part.
 
 
         :return: The part_number of this MultipartUploadPartSummary.
@@ -116,7 +116,7 @@ class MultipartUploadPartSummary(object):
     def part_number(self, part_number):
         """
         Sets the part_number of this MultipartUploadPartSummary.
-        the part number for this part.
+        The part number for this part.
 
 
         :param part_number: The part_number of this MultipartUploadPartSummary.

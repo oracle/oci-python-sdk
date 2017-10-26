@@ -32,7 +32,7 @@ class CreatePreauthenticatedRequestDetails(object):
     def name(self):
         """
         Gets the name of this CreatePreauthenticatedRequestDetails.
-        user specified name for pre-authenticated request. Helpful for management purposes.
+        A user-specified name for the pre-authenticated request. Helpful for management purposes.
 
 
         :return: The name of this CreatePreauthenticatedRequestDetails.
@@ -44,7 +44,7 @@ class CreatePreauthenticatedRequestDetails(object):
     def name(self, name):
         """
         Sets the name of this CreatePreauthenticatedRequestDetails.
-        user specified name for pre-authenticated request. Helpful for management purposes.
+        A user-specified name for the pre-authenticated request. Helpful for management purposes.
 
 
         :param name: The name of this CreatePreauthenticatedRequestDetails.
@@ -56,7 +56,7 @@ class CreatePreauthenticatedRequestDetails(object):
     def object_name(self):
         """
         Gets the object_name of this CreatePreauthenticatedRequestDetails.
-        Name of object that is being granted access to by the pre-authenticated request. This can be null and that would mean that the pre-authenticated request is granting access to the entire bucket
+        The name of object that is being granted access to by the pre-authenticated request. This can be null and if it is, the pre-authenticated request grants access to the entire bucket.
 
 
         :return: The object_name of this CreatePreauthenticatedRequestDetails.
@@ -68,7 +68,7 @@ class CreatePreauthenticatedRequestDetails(object):
     def object_name(self, object_name):
         """
         Sets the object_name of this CreatePreauthenticatedRequestDetails.
-        Name of object that is being granted access to by the pre-authenticated request. This can be null and that would mean that the pre-authenticated request is granting access to the entire bucket
+        The name of object that is being granted access to by the pre-authenticated request. This can be null and if it is, the pre-authenticated request grants access to the entire bucket.
 
 
         :param object_name: The object_name of this CreatePreauthenticatedRequestDetails.
@@ -80,7 +80,7 @@ class CreatePreauthenticatedRequestDetails(object):
     def access_type(self):
         """
         Gets the access_type of this CreatePreauthenticatedRequestDetails.
-        the operation that can be performed on this resource e.g PUT or GET.
+        The operation that can be performed on this resource.
 
         Allowed values for this property are: "ObjectRead", "ObjectWrite", "ObjectReadWrite", "AnyObjectWrite"
 
@@ -94,7 +94,7 @@ class CreatePreauthenticatedRequestDetails(object):
     def access_type(self, access_type):
         """
         Sets the access_type of this CreatePreauthenticatedRequestDetails.
-        the operation that can be performed on this resource e.g PUT or GET.
+        The operation that can be performed on this resource.
 
 
         :param access_type: The access_type of this CreatePreauthenticatedRequestDetails.
@@ -112,8 +112,7 @@ class CreatePreauthenticatedRequestDetails(object):
     def time_expires(self):
         """
         Gets the time_expires of this CreatePreauthenticatedRequestDetails.
-        The expiration date after which the pre-authenticated request will no longer be valid per spec
-        `RFC 3339`__
+        The expiration date for the pre-authenticated request as per `RFC 3339`__. After this date the pre-authenticated request will no longer be valid.
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -127,8 +126,7 @@ class CreatePreauthenticatedRequestDetails(object):
     def time_expires(self, time_expires):
         """
         Sets the time_expires of this CreatePreauthenticatedRequestDetails.
-        The expiration date after which the pre-authenticated request will no longer be valid per spec
-        `RFC 3339`__
+        The expiration date for the pre-authenticated request as per `RFC 3339`__. After this date the pre-authenticated request will no longer be valid.
 
         __ https://tools.ietf.org/rfc/rfc3339
 
