@@ -69,12 +69,7 @@ def from_file(file_location=DEFAULT_LOCATION, profile_name=DEFAULT_PROFILE):
     :param profile_name: The profile to load from the config file.  Defaults to "DEFAULT"
     :return: A config dict that can be used to create clients.
     """
-    expanded_file_location = os.path.expanduser(file_location)
-    expanded_fallback_default_file_location = os.path.expanduser(FALLBACK_DEFAULT_LOCATION)
-
-    # if there is no file in the default location (~/.oci/config), and the fallback file does exist, use the fallback (~/.oraclebmc/config)
-    if file_location == DEFAULT_LOCATION and not os.path.isfile(expanded_file_location) and os.path.isfile(expanded_fallback_default_file_location):
-        expanded_file_location = expanded_fallback_default_file_location
+    expanded_file_location = _get_config_path_with_fallback(file_location)
 
     parser = configparser.ConfigParser(interpolation=None)
     if not parser.read(expanded_file_location):
@@ -133,3 +128,14 @@ def _raise_on_errors(errors):
         raise ValueError("Error in config: {}".format(errors[0]))
     elif errors:
         raise ValueError("Found the following config errors: {!r}".format(errors))
+
+
+def _get_config_path_with_fallback(file_location):
+    expanded_file_location = os.path.expanduser(file_location)
+    expanded_fallback_default_file_location = os.path.expanduser(FALLBACK_DEFAULT_LOCATION)
+
+    # if there is no file in the default location (~/.oci/config), and the fallback file does exist, use the fallback (~/.oraclebmc/config)
+    if file_location == DEFAULT_LOCATION and not os.path.isfile(expanded_file_location) and os.path.isfile(expanded_fallback_default_file_location):
+        expanded_file_location = expanded_fallback_default_file_location
+
+    return expanded_file_location
