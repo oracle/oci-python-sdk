@@ -32,7 +32,8 @@ class ObjectSummary(object):
     def name(self):
         """
         Gets the name of this ObjectSummary.
-        The name of the object.
+        The name of the object. Avoid entering confidential information.
+        Example: test/object1.log
 
 
         :return: The name of this ObjectSummary.
@@ -44,7 +45,8 @@ class ObjectSummary(object):
     def name(self, name):
         """
         Sets the name of this ObjectSummary.
-        The name of the object.
+        The name of the object. Avoid entering confidential information.
+        Example: test/object1.log
 
 
         :param name: The name of this ObjectSummary.
@@ -104,7 +106,9 @@ class ObjectSummary(object):
     def time_created(self):
         """
         Gets the time_created of this ObjectSummary.
-        Date and time of object creation.
+        The date and time the object was created, as described in `RFC 2616`__, section 14.29.
+
+        __ https://tools.ietf.org/rfc/rfc2616
 
 
         :return: The time_created of this ObjectSummary.
@@ -116,7 +120,9 @@ class ObjectSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this ObjectSummary.
-        Date and time of object creation.
+        The date and time the object was created, as described in `RFC 2616`__, section 14.29.
+
+        __ https://tools.ietf.org/rfc/rfc2616
 
 
         :param time_created: The time_created of this ObjectSummary.

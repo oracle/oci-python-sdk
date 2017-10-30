@@ -41,7 +41,7 @@ class PreauthenticatedRequest(object):
     def id(self):
         """
         Gets the id of this PreauthenticatedRequest.
-        the unique identifier to use when directly addressing the pre-authenticated request
+        The unique identifier to use when directly addressing the pre-authenticated request.
 
 
         :return: The id of this PreauthenticatedRequest.
@@ -53,7 +53,7 @@ class PreauthenticatedRequest(object):
     def id(self, id):
         """
         Sets the id of this PreauthenticatedRequest.
-        the unique identifier to use when directly addressing the pre-authenticated request
+        The unique identifier to use when directly addressing the pre-authenticated request.
 
 
         :param id: The id of this PreauthenticatedRequest.
@@ -65,7 +65,7 @@ class PreauthenticatedRequest(object):
     def name(self):
         """
         Gets the name of this PreauthenticatedRequest.
-        the user supplied name of the pre-authenticated request.
+        The user-provided name of the pre-authenticated request.
 
 
         :return: The name of this PreauthenticatedRequest.
@@ -77,7 +77,7 @@ class PreauthenticatedRequest(object):
     def name(self, name):
         """
         Sets the name of this PreauthenticatedRequest.
-        the user supplied name of the pre-authenticated request.
+        The user-provided name of the pre-authenticated request.
 
 
         :param name: The name of this PreauthenticatedRequest.
@@ -89,7 +89,7 @@ class PreauthenticatedRequest(object):
     def access_uri(self):
         """
         Gets the access_uri of this PreauthenticatedRequest.
-        the uri to embed in the url when using the pre-authenticated request.
+        The URI to embed in the URL when using the pre-authenticated request.
 
 
         :return: The access_uri of this PreauthenticatedRequest.
@@ -101,7 +101,7 @@ class PreauthenticatedRequest(object):
     def access_uri(self, access_uri):
         """
         Sets the access_uri of this PreauthenticatedRequest.
-        the uri to embed in the url when using the pre-authenticated request.
+        The URI to embed in the URL when using the pre-authenticated request.
 
 
         :param access_uri: The access_uri of this PreauthenticatedRequest.
@@ -113,7 +113,9 @@ class PreauthenticatedRequest(object):
     def object_name(self):
         """
         Gets the object_name of this PreauthenticatedRequest.
-        Name of object that is being granted access to by the pre-authenticated request. This can be null and that would mean that the pre-authenticated request is granting access to the entire bucket
+        The name of the object that is being granted access to by the pre-authenticated request. This can be null and
+        if so, the pre-authenticated request grants access to the entire bucket. Avoid entering confidential information.
+        Example: test/object1.log
 
 
         :return: The object_name of this PreauthenticatedRequest.
@@ -125,7 +127,9 @@ class PreauthenticatedRequest(object):
     def object_name(self, object_name):
         """
         Sets the object_name of this PreauthenticatedRequest.
-        Name of object that is being granted access to by the pre-authenticated request. This can be null and that would mean that the pre-authenticated request is granting access to the entire bucket
+        The name of the object that is being granted access to by the pre-authenticated request. This can be null and
+        if so, the pre-authenticated request grants access to the entire bucket. Avoid entering confidential information.
+        Example: test/object1.log
 
 
         :param object_name: The object_name of this PreauthenticatedRequest.
@@ -137,7 +141,7 @@ class PreauthenticatedRequest(object):
     def access_type(self):
         """
         Gets the access_type of this PreauthenticatedRequest.
-        the operation that can be performed on this resource e.g PUT or GET.
+        The operation that can be performed on this resource.
 
         Allowed values for this property are: "ObjectRead", "ObjectWrite", "ObjectReadWrite", "AnyObjectWrite", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -152,7 +156,7 @@ class PreauthenticatedRequest(object):
     def access_type(self, access_type):
         """
         Sets the access_type of this PreauthenticatedRequest.
-        the operation that can be performed on this resource e.g PUT or GET.
+        The operation that can be performed on this resource.
 
 
         :param access_type: The access_type of this PreauthenticatedRequest.
@@ -167,8 +171,7 @@ class PreauthenticatedRequest(object):
     def time_expires(self):
         """
         Gets the time_expires of this PreauthenticatedRequest.
-        the expiration date after which the pre authenticated request will no longer be valid as per spec
-        `RFC 3339`__
+        The expiration date for the pre-authenticated request as per `RFC 3339`__. After this date the pre-authenticated request will no longer be valid.
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -182,8 +185,7 @@ class PreauthenticatedRequest(object):
     def time_expires(self, time_expires):
         """
         Sets the time_expires of this PreauthenticatedRequest.
-        the expiration date after which the pre authenticated request will no longer be valid as per spec
-        `RFC 3339`__
+        The expiration date for the pre-authenticated request as per `RFC 3339`__. After this date the pre-authenticated request will no longer be valid.
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -197,8 +199,8 @@ class PreauthenticatedRequest(object):
     def time_created(self):
         """
         Gets the time_created of this PreauthenticatedRequest.
-        the date when the pre-authenticated request was created as per spec
-        `RFC 3339`__
+        The date when the pre-authenticated request was created as per specification
+        `RFC 3339`__.
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -212,8 +214,8 @@ class PreauthenticatedRequest(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this PreauthenticatedRequest.
-        the date when the pre-authenticated request was created as per spec
-        `RFC 3339`__
+        The date when the pre-authenticated request was created as per specification
+        `RFC 3339`__.
 
         __ https://tools.ietf.org/rfc/rfc3339
 

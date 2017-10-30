@@ -89,6 +89,44 @@ class TestObjectStorage:
         response = client.get_namespace()
         assert response.status == 200
 
+    def test_bucket_archive_crud(self, object_storage):
+        bucket_name = unique_name('test_bucket_archive')
+        namespace = object_storage.get_namespace().data
+        bucket_count = len(object_storage.list_buckets(namespace, util.COMPARTMENT_ID, limit=500).data)
+
+        # Create
+        request = oci.object_storage.models.CreateBucketDetails()
+        request.name = bucket_name
+        request.compartment_id = util.COMPARTMENT_ID
+        request.storage_tier = 'Archive'
+        response = object_storage.create_bucket(namespace, request)
+        assert response.status == 200
+
+        bucket = response.data
+        assert bucket_name == bucket.name
+        assert util.COMPARTMENT_ID == bucket.compartment_id
+        assert 'Archive' == bucket.storage_tier
+
+        # Get
+        response = object_storage.get_bucket(namespace, bucket_name)
+        assert response.status == 200
+        assert bucket_name == response.data.name
+        assert 'Archive' == response.data.storage_tier
+
+        # Update
+        request = oci.object_storage.models.UpdateBucketDetails()
+        request.name = bucket_name
+        request.metadata = {'new key': 'updated!', 'key2': 'another value'}
+        response = object_storage.update_bucket(namespace, bucket_name, request)
+        bucket = response.data
+        assert response.status == 200
+        assert 'updated!' == bucket.metadata['new key']
+        assert 'another value' == bucket.metadata['key2']
+
+        # Delete
+        response = object_storage.delete_bucket(namespace, bucket_name)
+        assert response.status == 204
+
     def test_bucket_crud(self, object_storage):
         bucket_name = unique_name('test_bucket')
         namespace = object_storage.get_namespace().data
@@ -181,6 +219,98 @@ class TestObjectStorage:
         for summary in object_list.objects:
             response = object_storage.delete_object(namespace, bucket_name, summary.name)
             assert response.status == 204
+
+        # Clean up
+        response = object_storage.delete_bucket(namespace, bucket_name)
+        assert response.status == 204
+
+    def test_object_rename(self, object_storage):
+        # Setup a bucket to use.
+        object_name_a = 'object_A'
+        object_name_b = 'object_B'
+        bucket_name = unique_name('test_object_rename')
+        test_data = 'This is a test ' + random_number_string() + '!/n/r/\/~%s;"/,{}><+=:.*)('''
+        namespace = object_storage.get_namespace().data
+
+        request = oci.object_storage.models.CreateBucketDetails()
+        request.name = bucket_name
+        request.compartment_id = util.COMPARTMENT_ID
+        response = object_storage.create_bucket(namespace, request)
+        assert response.status == 200
+
+        # Put an object
+        response = object_storage.put_object(namespace, bucket_name, object_name_a, test_data, opc_meta={'foo1': 'bar1', 'foo2': 'bar2'})
+        assert response.status == 200
+
+        request = oci.object_storage.models.RenameObjectDetails()
+        request.source_name = object_name_a
+        request.new_name = object_name_b
+        response = object_storage.rename_object(namespace, bucket_name, request)
+
+        # Get it back by new name
+        response = object_storage.get_object(namespace, bucket_name, object_name_b)
+        assert response.status == 200
+        response_text = response.data.content.decode('UTF-8')
+        assert test_data == response_text
+        assert 'bar1' == response.headers['opc-meta-foo1']
+        assert 'bar2' == response.headers['opc-meta-foo2']
+
+        # Head by new name
+        response = object_storage.head_object(namespace, bucket_name, object_name_b)
+        assert response.status == 200
+        assert 'bar1' == response.headers['opc-meta-foo1']
+        assert 'bar2' == response.headers['opc-meta-foo2']
+
+        # Delete
+        response = object_storage.delete_object(namespace, bucket_name, object_name_b)
+        assert response.status == 204
+
+        # Clean up
+        response = object_storage.delete_bucket(namespace, bucket_name)
+        assert response.status == 204
+
+    def test_object_restore(self, object_storage):
+        # Setup an archive bucket to use.
+        object_name_a = 'object_A'
+        bucket_name = unique_name('test_object_restore')
+        test_data = 'This is a test ' + random_number_string() + '!/n/r/\/~%s;"/,{}><+=:.*)('''
+        namespace = object_storage.get_namespace().data
+
+        request = oci.object_storage.models.CreateBucketDetails()
+        request.name = bucket_name
+        request.compartment_id = util.COMPARTMENT_ID
+        request.storage_tier = 'Archive'
+        response = object_storage.create_bucket(namespace, request)
+        assert response.status == 200
+
+        # Put an object
+        response = object_storage.put_object(namespace, bucket_name, object_name_a, test_data)
+        assert response.status == 200
+
+        # Head
+        response = object_storage.head_object(namespace, bucket_name, object_name_a)
+        assert response.status == 200
+        assert 'Archived' == response.headers['archival-state']
+
+        # Cannot get object back when it's in archived state
+        with pytest.raises(oci.exceptions.ServiceError) as excinfo:
+            object_storage.get_object(namespace, bucket_name, object_name_a)
+        assert excinfo.value.status == 409
+
+        # Restore the object, it takes 24 hours
+        request = oci.object_storage.models.RestoreObjectsDetails()
+        request.object_name = object_name_a
+        response = object_storage.restore_objects(namespace, bucket_name, request)
+        assert response.status == 200
+
+        # Head again and verify archival state
+        response = object_storage.head_object(namespace, bucket_name, object_name_a)
+        assert response.status == 200
+        assert 'Restoring' == response.headers['archival-state']
+
+        # Delete
+        response = object_storage.delete_object(namespace, bucket_name, object_name_a)
+        assert response.status == 204
 
         # Clean up
         response = object_storage.delete_bucket(namespace, bucket_name)

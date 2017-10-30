@@ -29,7 +29,7 @@ class ObjectStorageClient(object):
 
     def abort_multipart_upload(self, namespace_name, bucket_name, object_name, upload_id, **kwargs):
         """
-        AbortMultipartUpload
+        Abort Multipart Upload
         Aborts an in-progress multipart upload and deletes all parts that have been uploaded.
 
 
@@ -37,13 +37,11 @@ class ObjectStorageClient(object):
             The top-level namespace used for the request.
 
         :param str bucket_name: (required)
-            The name of the bucket.
-
+            The name of the bucket. Avoid entering confidential information.
             Example: `my-new-bucket1`
 
         :param str object_name: (required)
-            The name of the object.
-
+            The name of the object. Avoid entering confidential information.
             Example: `test/object1.log`
 
         :param str upload_id: (required)
@@ -100,7 +98,7 @@ class ObjectStorageClient(object):
 
     def commit_multipart_upload(self, namespace_name, bucket_name, object_name, upload_id, commit_multipart_upload_details, **kwargs):
         """
-        CommitMultipartUpload
+        Commit Multipart Upload
         Commits a multipart upload, which involves checking part numbers and ETags of the parts, to create an aggregate object.
 
 
@@ -108,13 +106,11 @@ class ObjectStorageClient(object):
             The top-level namespace used for the request.
 
         :param str bucket_name: (required)
-            The name of the bucket.
-
+            The name of the bucket. Avoid entering confidential information.
             Example: `my-new-bucket1`
 
         :param str object_name: (required)
-            The name of the object.
-
+            The name of the object. Avoid entering confidential information.
             Example: `test/object1.log`
 
         :param str upload_id: (required)
@@ -129,8 +125,7 @@ class ObjectStorageClient(object):
 
         :param str if_none_match: (optional)
             The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
-            For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag
-            of the target part.
+            For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag of the target part.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -188,14 +183,8 @@ class ObjectStorageClient(object):
 
     def create_bucket(self, namespace_name, create_bucket_details, **kwargs):
         """
-        CreateBucket
+        Create Bucket
         Creates a bucket in the given namespace with a bucket name and optional user-defined metadata.
-
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        `Getting Started with Policies`__.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
 
 
         :param str namespace_name: (required)
@@ -249,7 +238,7 @@ class ObjectStorageClient(object):
 
     def create_multipart_upload(self, namespace_name, bucket_name, create_multipart_upload_details, **kwargs):
         """
-        CreateMultipartUpload
+        Create Multipart Upload
         Starts a new multipart upload to a specific object in the given bucket in the given namespace.
 
 
@@ -257,8 +246,7 @@ class ObjectStorageClient(object):
             The top-level namespace used for the request.
 
         :param str bucket_name: (required)
-            The name of the bucket.
-
+            The name of the bucket. Avoid entering confidential information.
             Example: `my-new-bucket1`
 
         :param CreateMultipartUploadDetails create_multipart_upload_details: (required)
@@ -270,8 +258,7 @@ class ObjectStorageClient(object):
 
         :param str if_none_match: (optional)
             The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
-            For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag
-            of the target part.
+            For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag of the target part.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -323,20 +310,19 @@ class ObjectStorageClient(object):
 
     def create_preauthenticated_request(self, namespace_name, bucket_name, create_preauthenticated_request_details, **kwargs):
         """
-        CreatePreauthenticatedRequest
-        Create a pre-authenticated request specific to the bucket
+        Create Preauthenticated Request
+        Creates a pre-authenticated request specific to the bucket.
 
 
         :param str namespace_name: (required)
             The top-level namespace used for the request.
 
         :param str bucket_name: (required)
-            The name of the bucket.
-
+            The name of the bucket. Avoid entering confidential information.
             Example: `my-new-bucket1`
 
         :param CreatePreauthenticatedRequestDetails create_preauthenticated_request_details: (required)
-            details for creating the pre-authenticated request.
+            Information needed to create the pre-authenticated request.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -384,7 +370,7 @@ class ObjectStorageClient(object):
 
     def delete_bucket(self, namespace_name, bucket_name, **kwargs):
         """
-        DeleteBucket
+        DELETE Bucket
         Deletes a bucket if it is already empty. If the bucket is not empty, use :func:`delete_object` first.
 
 
@@ -392,8 +378,7 @@ class ObjectStorageClient(object):
             The top-level namespace used for the request.
 
         :param str bucket_name: (required)
-            The name of the bucket.
-
+            The name of the bucket. Avoid entering confidential information.
             Example: `my-new-bucket1`
 
         :param str if_match: (optional)
@@ -446,7 +431,7 @@ class ObjectStorageClient(object):
 
     def delete_object(self, namespace_name, bucket_name, object_name, **kwargs):
         """
-        DeleteObject
+        DELETE Object
         Deletes an object.
 
 
@@ -454,13 +439,11 @@ class ObjectStorageClient(object):
             The top-level namespace used for the request.
 
         :param str bucket_name: (required)
-            The name of the bucket.
-
+            The name of the bucket. Avoid entering confidential information.
             Example: `my-new-bucket1`
 
         :param str object_name: (required)
-            The name of the object.
-
+            The name of the object. Avoid entering confidential information.
             Example: `test/object1.log`
 
         :param str if_match: (optional)
@@ -514,21 +497,20 @@ class ObjectStorageClient(object):
 
     def delete_preauthenticated_request(self, namespace_name, bucket_name, par_id, **kwargs):
         """
-        DeletePreauthenticatedRequest
-        Deletes the bucket level pre-authenticateted request
+        DELETE Preauthenticated Request
+        Deletes the pre-authenticated request for the bucket.
 
 
         :param str namespace_name: (required)
             The top-level namespace used for the request.
 
         :param str bucket_name: (required)
-            The name of the bucket.
-
+            The name of the bucket. Avoid entering confidential information.
             Example: `my-new-bucket1`
 
         :param str par_id: (required)
-            The unique identifier for the pre-authenticated request (PAR). This can be used to manage the PAR
-            such as GET or DELETE the PAR
+            The unique identifier for the pre-authenticated request. This can be used to manage operations against
+            the pre-authenticated request, such as GET or DELETE.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -575,7 +557,7 @@ class ObjectStorageClient(object):
 
     def get_bucket(self, namespace_name, bucket_name, **kwargs):
         """
-        GetBucket
+        GET Bucket
         Gets the current representation of the given bucket in the given namespace.
 
 
@@ -583,8 +565,7 @@ class ObjectStorageClient(object):
             The top-level namespace used for the request.
 
         :param str bucket_name: (required)
-            The name of the bucket.
-
+            The name of the bucket. Avoid entering confidential information.
             Example: `my-new-bucket1`
 
         :param str if_match: (optional)
@@ -593,8 +574,7 @@ class ObjectStorageClient(object):
 
         :param str if_none_match: (optional)
             The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
-            For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag
-            of the target part.
+            For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag of the target part.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -645,7 +625,7 @@ class ObjectStorageClient(object):
 
     def get_namespace(self, **kwargs):
         """
-        GetNamespace
+        GET Namespace Name
         Gets the name of the namespace for the user making the request. An account name must be unique, must start with a
         letter, and can have up to 15 lowercase letters and numbers. You cannot use spaces or special characters.
 
@@ -681,9 +661,65 @@ class ObjectStorageClient(object):
             header_params=header_params,
             response_type="str")
 
+    def get_namespace_metadata(self, namespace_name, **kwargs):
+        """
+        GetNamespaceMetadata
+        Get the metadata for the namespace, which contains defaultS3CompartmentId and defaultSwiftCompartmentId.
+        Any user with the NAMESPACE_READ permission will be able to see the current metadata. If you're not authorized,
+        talk to an administrator. If you're an administrator who needs to write
+        policies to give users access, see `Getting Started with Policies`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
+
+
+        :param str namespace_name: (required)
+            The top-level namespace used for the request.
+
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.object_storage.models.NamespaceMetadata`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/n/{namespaceName}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_namespace_metadata got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="NamespaceMetadata")
+
     def get_object(self, namespace_name, bucket_name, object_name, **kwargs):
         """
-        GetObject
+        GET Object
         Gets the metadata and body of an object.
 
 
@@ -691,13 +727,11 @@ class ObjectStorageClient(object):
             The top-level namespace used for the request.
 
         :param str bucket_name: (required)
-            The name of the bucket.
-
+            The name of the bucket. Avoid entering confidential information.
             Example: `my-new-bucket1`
 
         :param str object_name: (required)
-            The name of the object.
-
+            The name of the object. Avoid entering confidential information.
             Example: `test/object1.log`
 
         :param str if_match: (optional)
@@ -706,15 +740,14 @@ class ObjectStorageClient(object):
 
         :param str if_none_match: (optional)
             The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
-            For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag
-            of the target part.
+            For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag of the target part.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
 
         :param str range: (optional)
             Optional byte range to fetch, as described in `RFC 7233`__, section 2.1.
-            Note, only a single range of bytes is supported.
+            Note that only a single range of bytes is supported.
 
             __ https://tools.ietf.org/rfc/rfc7233
 
@@ -767,21 +800,20 @@ class ObjectStorageClient(object):
 
     def get_preauthenticated_request(self, namespace_name, bucket_name, par_id, **kwargs):
         """
-        GetPreauthenticatedRequest
-        Get the bucket level pre-authenticateted request
+        GET Preauthenticated Request
+        Gets the pre-authenticated request for the bucket.
 
 
         :param str namespace_name: (required)
             The top-level namespace used for the request.
 
         :param str bucket_name: (required)
-            The name of the bucket.
-
+            The name of the bucket. Avoid entering confidential information.
             Example: `my-new-bucket1`
 
         :param str par_id: (required)
-            The unique identifier for the pre-authenticated request (PAR). This can be used to manage the PAR
-            such as GET or DELETE the PAR
+            The unique identifier for the pre-authenticated request. This can be used to manage operations against
+            the pre-authenticated request, such as GET or DELETE.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -829,16 +861,15 @@ class ObjectStorageClient(object):
 
     def head_bucket(self, namespace_name, bucket_name, **kwargs):
         """
-        HeadBucket
-        Efficiently checks if a bucket exists and gets the current ETag for the bucket.
+        HEAD Bucket
+        Efficiently checks to see if a bucket exists and gets the current ETag for the bucket.
 
 
         :param str namespace_name: (required)
             The top-level namespace used for the request.
 
         :param str bucket_name: (required)
-            The name of the bucket.
-
+            The name of the bucket. Avoid entering confidential information.
             Example: `my-new-bucket1`
 
         :param str if_match: (optional)
@@ -847,8 +878,7 @@ class ObjectStorageClient(object):
 
         :param str if_none_match: (optional)
             The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
-            For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag
-            of the target part.
+            For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag of the target part.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -898,7 +928,7 @@ class ObjectStorageClient(object):
 
     def head_object(self, namespace_name, bucket_name, object_name, **kwargs):
         """
-        HeadObject
+        HEAD Object
         Gets the user-defined metadata and entity tag for an object.
 
 
@@ -906,13 +936,11 @@ class ObjectStorageClient(object):
             The top-level namespace used for the request.
 
         :param str bucket_name: (required)
-            The name of the bucket.
-
+            The name of the bucket. Avoid entering confidential information.
             Example: `my-new-bucket1`
 
         :param str object_name: (required)
-            The name of the object.
-
+            The name of the object. Avoid entering confidential information.
             Example: `test/object1.log`
 
         :param str if_match: (optional)
@@ -921,8 +949,7 @@ class ObjectStorageClient(object):
 
         :param str if_none_match: (optional)
             The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
-            For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag
-            of the target part.
+            For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag of the target part.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -973,7 +1000,7 @@ class ObjectStorageClient(object):
 
     def list_buckets(self, namespace_name, compartment_id, **kwargs):
         """
-        ListBuckets
+        List Buckets
         Gets a list of all `BucketSummary`s in a compartment. A `BucketSummary` contains only summary fields for the bucket
         and does not contain fields like the user-defined metadata.
 
@@ -1050,7 +1077,7 @@ class ObjectStorageClient(object):
 
     def list_multipart_upload_parts(self, namespace_name, bucket_name, object_name, upload_id, **kwargs):
         """
-        ListMultipartUploadParts
+        List Multipart Upload Parts
         Lists the parts of an in-progress multipart upload.
 
 
@@ -1058,13 +1085,11 @@ class ObjectStorageClient(object):
             The top-level namespace used for the request.
 
         :param str bucket_name: (required)
-            The name of the bucket.
-
+            The name of the bucket. Avoid entering confidential information.
             Example: `my-new-bucket1`
 
         :param str object_name: (required)
-            The name of the object.
-
+            The name of the object. Avoid entering confidential information.
             Example: `test/object1.log`
 
         :param str upload_id: (required)
@@ -1132,7 +1157,7 @@ class ObjectStorageClient(object):
 
     def list_multipart_uploads(self, namespace_name, bucket_name, **kwargs):
         """
-        ListMultipartUploads
+        List Multipart Uploads
         Lists all in-progress multipart uploads for the given bucket in the given namespace.
 
 
@@ -1140,8 +1165,7 @@ class ObjectStorageClient(object):
             The top-level namespace used for the request.
 
         :param str bucket_name: (required)
-            The name of the bucket.
-
+            The name of the bucket. Avoid entering confidential information.
             Example: `my-new-bucket1`
 
         :param int limit: (optional)
@@ -1204,7 +1228,7 @@ class ObjectStorageClient(object):
 
     def list_objects(self, namespace_name, bucket_name, **kwargs):
         """
-        ListObjects
+        List Objects
         Lists the objects in a bucket.
 
         To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
@@ -1218,8 +1242,7 @@ class ObjectStorageClient(object):
             The top-level namespace used for the request.
 
         :param str bucket_name: (required)
-            The name of the bucket.
-
+            The name of the bucket. Avoid entering confidential information.
             Example: `my-new-bucket1`
 
         :param str prefix: (optional)
@@ -1311,20 +1334,19 @@ class ObjectStorageClient(object):
 
     def list_preauthenticated_requests(self, namespace_name, bucket_name, **kwargs):
         """
-        ListPreauthenticatedRequests
-        List pre-authenticated requests for the bucket
+        List Preauthenticated Requests
+        Lists pre-authenticated requests for the bucket.
 
 
         :param str namespace_name: (required)
             The top-level namespace used for the request.
 
         :param str bucket_name: (required)
-            The name of the bucket.
-
+            The name of the bucket. Avoid entering confidential information.
             Example: `my-new-bucket1`
 
         :param str object_name_prefix: (optional)
-            Pre-authenticated requests returned by the list must have object names starting with prefix
+            User-specified object name prefixes can be used to query and return a list of pre-authenticated requests.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -1388,27 +1410,19 @@ class ObjectStorageClient(object):
 
     def put_object(self, namespace_name, bucket_name, object_name, put_object_body, **kwargs):
         """
-        PutObject
+        PUT Object
         Creates a new object or overwrites an existing one.
-
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-        `Getting Started with Policies`__.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
 
 
         :param str namespace_name: (required)
             The top-level namespace used for the request.
 
         :param str bucket_name: (required)
-            The name of the bucket.
-
+            The name of the bucket. Avoid entering confidential information.
             Example: `my-new-bucket1`
 
         :param str object_name: (required)
-            The name of the object.
-
+            The name of the object. Avoid entering confidential information.
             Example: `test/object1.log`
 
         :param stream put_object_body: (required)
@@ -1423,8 +1437,7 @@ class ObjectStorageClient(object):
 
         :param str if_none_match: (optional)
             The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
-            For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag
-            of the target part.
+            For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag of the target part.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -1512,9 +1525,127 @@ class ObjectStorageClient(object):
             body=put_object_body,
             enforce_content_headers=False)
 
+    def rename_object(self, namespace_name, bucket_name, rename_object_details, **kwargs):
+        """
+        RenameObject
+        Rename an object from source key to target key in the given namespace.
+
+
+        :param str namespace_name: (required)
+            The top-level namespace used for the request.
+
+        :param str bucket_name: (required)
+            The name of the bucket. Avoid entering confidential information.
+            Example: `my-new-bucket1`
+
+        :param RenameObjectDetails rename_object_details: (required)
+            The sourceName and newName of rename operation.
+
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/n/{namespaceName}/b/{bucketName}/actions/renameObject"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "rename_object got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name,
+            "bucketName": bucket_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=rename_object_details)
+
+    def restore_objects(self, namespace_name, bucket_name, restore_objects_details, **kwargs):
+        """
+        RestoreObjects
+        Restore one or more objects specified by objectName parameter.
+
+
+        :param str namespace_name: (required)
+            The top-level namespace used for the request.
+
+        :param str bucket_name: (required)
+            The name of the bucket. Avoid entering confidential information.
+            Example: `my-new-bucket1`
+
+        :param RestoreObjectsDetails restore_objects_details: (required)
+            Request to restore objects.
+
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/n/{namespaceName}/b/{bucketName}/actions/restoreObjects"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "restore_objects got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name,
+            "bucketName": bucket_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=restore_objects_details)
+
     def update_bucket(self, namespace_name, bucket_name, update_bucket_details, **kwargs):
         """
-        UpdateBucket
+        POST Bucket
         Performs a partial or full update of a bucket's user-defined metadata.
 
 
@@ -1522,8 +1653,7 @@ class ObjectStorageClient(object):
             The top-level namespace used for the request.
 
         :param str bucket_name: (required)
-            The name of the bucket.
-
+            The name of the bucket. Avoid entering confidential information.
             Example: `my-new-bucket1`
 
         :param UpdateBucketDetails update_bucket_details: (required)
@@ -1579,9 +1709,67 @@ class ObjectStorageClient(object):
             body=update_bucket_details,
             response_type="Bucket")
 
+    def update_namespace_metadata(self, namespace_name, update_namespace_metadata_details, **kwargs):
+        """
+        UpdateNamespaceMetadata
+        Change the default Swift/S3 compartmentId of user's namespace into the user-defined compartmentId. Upon doing
+        this, all subsequent bucket creations will use the new default compartment, but no previously created
+        buckets will be modified. A user must have the NAMESPACE_UPDATE permission to make changes to the default
+        compartments for S3 and Swift.
+
+
+        :param str namespace_name: (required)
+            The top-level namespace used for the request.
+
+        :param UpdateNamespaceMetadataDetails update_namespace_metadata_details: (required)
+            Request object for update NamespaceMetadata.
+
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.object_storage.models.NamespaceMetadata`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/n/{namespaceName}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_namespace_metadata got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=update_namespace_metadata_details,
+            response_type="NamespaceMetadata")
+
     def upload_part(self, namespace_name, bucket_name, object_name, upload_id, upload_part_num, upload_part_body, **kwargs):
         """
-        UploadPart
+        Upload Multipart Object Part
         Uploads a single part of a multipart upload.
 
 
@@ -1589,13 +1777,11 @@ class ObjectStorageClient(object):
             The top-level namespace used for the request.
 
         :param str bucket_name: (required)
-            The name of the bucket.
-
+            The name of the bucket. Avoid entering confidential information.
             Example: `my-new-bucket1`
 
         :param str object_name: (required)
-            The name of the object.
-
+            The name of the object. Avoid entering confidential information.
             Example: `test/object1.log`
 
         :param str upload_id: (required)
@@ -1619,8 +1805,7 @@ class ObjectStorageClient(object):
 
         :param str if_none_match: (optional)
             The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
-            For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag
-            of the target part.
+            For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag of the target part.
 
         :param str expect: (optional)
             100-continue
