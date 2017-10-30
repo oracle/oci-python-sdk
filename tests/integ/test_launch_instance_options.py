@@ -112,6 +112,8 @@ class TestLaunchInstanceOptions:
         # Just look at the first few characters. Once we hit a line break the formatting will differ.
         assert ipxe_script_content[:5] in launch_instance_result.data.ipxe_script
 
+        oci.wait_until(compute, compute.get_instance(self.instance_ocid), 'lifecycle_state', 'RUNNING', max_wait_seconds=600)
+
     @util.log_test
     def subtest_delete(self, compute, virtual_network):
         error_count = 0
