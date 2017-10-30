@@ -31,7 +31,7 @@ class Region(object):
         Allowed values are:
         - `PHX`
         - `IAD`
-        - 'FRA'
+        - `FRA`
 
 
         :return: The key of this Region.
@@ -48,7 +48,7 @@ class Region(object):
         Allowed values are:
         - `PHX`
         - `IAD`
-        - 'FRA'
+        - `FRA`
 
 
         :param key: The key of this Region.
@@ -65,7 +65,7 @@ class Region(object):
         Allowed values are:
         - `us-phoenix-1`
         - `us-ashburn-1`
-        - 'de-frankfurt-1'
+        - `eu-frankfurt-1`
 
 
         :return: The name of this Region.
@@ -82,7 +82,7 @@ class Region(object):
         Allowed values are:
         - `us-phoenix-1`
         - `us-ashburn-1`
-        - 'de-frankfurt-1'
+        - `eu-frankfurt-1`
 
 
         :param name: The name of this Region.

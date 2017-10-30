@@ -220,7 +220,7 @@ class Instance(object):
     def ipxe_script(self):
         """
         Gets the ipxe_script of this Instance.
-        When an Oracle Bare Metal Cloud Services or virtual machine
+        When a bare metal or virtual machine
         instance boots, the iPXE firmware that runs on the instance is
         configured to run an iPXE script to continue the boot process.
 
@@ -238,7 +238,7 @@ class Instance(object):
         iqn.2015-02.oracle.boot.
 
         For more information about the Bring Your Own Image feature of
-        Oracle Bare Metal Cloud Services, see
+        Oracle Cloud Infrastructure, see
         `Bring Your Own Image`__.
 
         For more information about iPXE, see http://ipxe.org.
@@ -255,7 +255,7 @@ class Instance(object):
     def ipxe_script(self, ipxe_script):
         """
         Sets the ipxe_script of this Instance.
-        When an Oracle Bare Metal Cloud Services or virtual machine
+        When a bare metal or virtual machine
         instance boots, the iPXE firmware that runs on the instance is
         configured to run an iPXE script to continue the boot process.
 
@@ -273,7 +273,7 @@ class Instance(object):
         iqn.2015-02.oracle.boot.
 
         For more information about the Bring Your Own Image feature of
-        Oracle Bare Metal Cloud Services, see
+        Oracle Cloud Infrastructure, see
         `Bring Your Own Image`__.
 
         For more information about iPXE, see http://ipxe.org.

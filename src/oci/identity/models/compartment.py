@@ -90,7 +90,7 @@ class Compartment(object):
         """
         Gets the name of this Compartment.
         The name you assign to the compartment during creation. The name must be unique across all
-        compartments in the tenancy and cannot be changed.
+        compartments in the tenancy.
 
 
         :return: The name of this Compartment.
@@ -103,7 +103,7 @@ class Compartment(object):
         """
         Sets the name of this Compartment.
         The name you assign to the compartment during creation. The name must be unique across all
-        compartments in the tenancy and cannot be changed.
+        compartments in the tenancy.
 
 
         :param name: The name of this Compartment.

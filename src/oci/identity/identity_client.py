@@ -80,14 +80,14 @@ class IdentityClient(object):
         CreateCompartment
         Creates a new compartment in your tenancy.
 
-        **Important:** Compartments cannot be renamed or deleted.
+        **Important:** Compartments cannot be deleted.
 
         You must specify your tenancy's OCID as the compartment ID in the request object. Remember that the tenancy
         is simply the root compartment. For information about OCIDs, see
         `Resource Identifiers`__.
 
         You must also specify a *name* for the compartment, which must be unique across all compartments in
-        your tenancy and cannot be changed. You can use this name or the OCID when writing policies that apply
+        your tenancy. You can use this name or the OCID when writing policies that apply
         to the compartment. For more information about policies, see
         `How Policies Work`__.
 
@@ -698,7 +698,7 @@ class IdentityClient(object):
         :func:`add_user_to_group`). If the user needs to
         access the Console, you need to provide the user a password (see
         :func:`create_or_reset_ui_password`).
-        If the user needs to access the Oracle Bare Metal Cloud Services REST API, you need to upload a
+        If the user needs to access the Oracle Cloud Infrastructure REST API, you need to upload a
         public API signing key for that user (see
         `Required Keys and OCIDs`__ and also
         :func:`upload_api_key`).
@@ -1985,7 +1985,7 @@ class IdentityClient(object):
     def list_regions(self, **kwargs):
         """
         ListRegions
-        Lists all the regions offered by Oracle Bare Metal Cloud Services.
+        Lists all the regions offered by Oracle Cloud Infrastructure.
 
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.Region`
@@ -2230,7 +2230,7 @@ class IdentityClient(object):
     def update_compartment(self, compartment_id, update_compartment_details, **kwargs):
         """
         UpdateCompartment
-        Updates the specified compartment's description.
+        Updates the specified compartment's description or name. You can't update the root compartment.
 
 
         :param str compartment_id: (required)

@@ -40,7 +40,7 @@ class ExportImageDetails(object):
         """
         Gets the destination_type of this ExportImageDetails.
         The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name.
-        Use `objectStorageUri` when specifying the Object Storage Service URL.
+        Use `objectStorageUri` when specifying the Object Storage URL.
 
 
         :return: The destination_type of this ExportImageDetails.
@@ -53,7 +53,7 @@ class ExportImageDetails(object):
         """
         Sets the destination_type of this ExportImageDetails.
         The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name.
-        Use `objectStorageUri` when specifying the Object Storage Service URL.
+        Use `objectStorageUri` when specifying the Object Storage URL.
 
 
         :param destination_type: The destination_type of this ExportImageDetails.

@@ -15,6 +15,7 @@ class CreateVolumeDetails(object):
             'display_name': 'str',
             'size_in_gbs': 'int',
             'size_in_mbs': 'int',
+            'source_details': 'VolumeSourceDetails',
             'volume_backup_id': 'str'
         }
 
@@ -24,6 +25,7 @@ class CreateVolumeDetails(object):
             'display_name': 'displayName',
             'size_in_gbs': 'sizeInGBs',
             'size_in_mbs': 'sizeInMBs',
+            'source_details': 'sourceDetails',
             'volume_backup_id': 'volumeBackupId'
         }
 
@@ -32,6 +34,7 @@ class CreateVolumeDetails(object):
         self._display_name = None
         self._size_in_gbs = None
         self._size_in_mbs = None
+        self._source_details = None
         self._volume_backup_id = None
 
     @property
@@ -141,7 +144,7 @@ class CreateVolumeDetails(object):
         """
         Gets the size_in_mbs of this CreateVolumeDetails.
         The size of the volume in MBs. The value must be a multiple of 1024.
-        This field is deprecated. Please use sizeInGBs.
+        This field is deprecated. Use sizeInGBs instead.
 
 
         :return: The size_in_mbs of this CreateVolumeDetails.
@@ -154,7 +157,7 @@ class CreateVolumeDetails(object):
         """
         Sets the size_in_mbs of this CreateVolumeDetails.
         The size of the volume in MBs. The value must be a multiple of 1024.
-        This field is deprecated. Please use sizeInGBs.
+        This field is deprecated. Use sizeInGBs instead.
 
 
         :param size_in_mbs: The size_in_mbs of this CreateVolumeDetails.
@@ -163,10 +166,40 @@ class CreateVolumeDetails(object):
         self._size_in_mbs = size_in_mbs
 
     @property
+    def source_details(self):
+        """
+        Gets the source_details of this CreateVolumeDetails.
+        Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup.
+        This is an optional field. If not specified or set to null, the new Block volume will be empty.
+        When specified, the new Block volume will contain data from the source volume or backup.
+
+
+        :return: The source_details of this CreateVolumeDetails.
+        :rtype: VolumeSourceDetails
+        """
+        return self._source_details
+
+    @source_details.setter
+    def source_details(self, source_details):
+        """
+        Sets the source_details of this CreateVolumeDetails.
+        Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup.
+        This is an optional field. If not specified or set to null, the new Block volume will be empty.
+        When specified, the new Block volume will contain data from the source volume or backup.
+
+
+        :param source_details: The source_details of this CreateVolumeDetails.
+        :type: VolumeSourceDetails
+        """
+        self._source_details = source_details
+
+    @property
     def volume_backup_id(self):
         """
         Gets the volume_backup_id of this CreateVolumeDetails.
         The OCID of the volume backup from which the data should be restored on the newly created volume.
+        This field is deprecated. Use the sourceDetails field instead to specify the
+        backup for the volume.
 
 
         :return: The volume_backup_id of this CreateVolumeDetails.
@@ -179,6 +212,8 @@ class CreateVolumeDetails(object):
         """
         Sets the volume_backup_id of this CreateVolumeDetails.
         The OCID of the volume backup from which the data should be restored on the newly created volume.
+        This field is deprecated. Use the sourceDetails field instead to specify the
+        backup for the volume.
 
 
         :param volume_backup_id: The volume_backup_id of this CreateVolumeDetails.

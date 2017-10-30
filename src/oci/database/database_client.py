@@ -1042,7 +1042,7 @@ class DatabaseClient(object):
         :param str page: (optional)
             The pagination token to continue listing from.
 
-        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.DataGuardAssociation`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.DataGuardAssociationSummary`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/databases/{databaseId}/dataGuardAssociations"
@@ -1085,7 +1085,7 @@ class DatabaseClient(object):
             path_params=path_params,
             query_params=query_params,
             header_params=header_params,
-            response_type="list[DataGuardAssociation]")
+            response_type="list[DataGuardAssociationSummary]")
 
     def list_databases(self, compartment_id, db_home_id, **kwargs):
         """

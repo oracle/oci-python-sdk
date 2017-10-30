@@ -33,7 +33,7 @@ class ExportImageViaObjectStorageTupleDetails(ExportImageDetails):
     def bucket_name(self):
         """
         Gets the bucket_name of this ExportImageViaObjectStorageTupleDetails.
-        The Object Storage Service bucket to export the image to.
+        The Object Storage bucket to export the image to.
 
 
         :return: The bucket_name of this ExportImageViaObjectStorageTupleDetails.
@@ -45,7 +45,7 @@ class ExportImageViaObjectStorageTupleDetails(ExportImageDetails):
     def bucket_name(self, bucket_name):
         """
         Sets the bucket_name of this ExportImageViaObjectStorageTupleDetails.
-        The Object Storage Service bucket to export the image to.
+        The Object Storage bucket to export the image to.
 
 
         :param bucket_name: The bucket_name of this ExportImageViaObjectStorageTupleDetails.
@@ -57,7 +57,7 @@ class ExportImageViaObjectStorageTupleDetails(ExportImageDetails):
     def namespace_name(self):
         """
         Gets the namespace_name of this ExportImageViaObjectStorageTupleDetails.
-        The Object Storage Service namespace to export the image to.
+        The Object Storage namespace to export the image to.
 
 
         :return: The namespace_name of this ExportImageViaObjectStorageTupleDetails.
@@ -69,7 +69,7 @@ class ExportImageViaObjectStorageTupleDetails(ExportImageDetails):
     def namespace_name(self, namespace_name):
         """
         Sets the namespace_name of this ExportImageViaObjectStorageTupleDetails.
-        The Object Storage Service namespace to export the image to.
+        The Object Storage namespace to export the image to.
 
 
         :param namespace_name: The namespace_name of this ExportImageViaObjectStorageTupleDetails.
@@ -81,7 +81,7 @@ class ExportImageViaObjectStorageTupleDetails(ExportImageDetails):
     def object_name(self):
         """
         Gets the object_name of this ExportImageViaObjectStorageTupleDetails.
-        The Object Storage Service object name for the exported image.
+        The Object Storage object name for the exported image.
 
 
         :return: The object_name of this ExportImageViaObjectStorageTupleDetails.
@@ -93,7 +93,7 @@ class ExportImageViaObjectStorageTupleDetails(ExportImageDetails):
     def object_name(self, object_name):
         """
         Sets the object_name of this ExportImageViaObjectStorageTupleDetails.
-        The Object Storage Service object name for the exported image.
+        The Object Storage object name for the exported image.
 
 
         :param object_name: The object_name of this ExportImageViaObjectStorageTupleDetails.

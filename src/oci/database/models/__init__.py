@@ -12,6 +12,7 @@ from .create_database_details import CreateDatabaseDetails
 from .create_db_home_details import CreateDbHomeDetails
 from .create_db_home_with_db_system_id_details import CreateDbHomeWithDbSystemIdDetails
 from .data_guard_association import DataGuardAssociation
+from .data_guard_association_summary import DataGuardAssociationSummary
 from .database import Database
 from .database_summary import DatabaseSummary
 from .db_backup_config import DbBackupConfig
@@ -48,6 +49,7 @@ database_type_mapping = {
     "CreateDbHomeDetails": CreateDbHomeDetails,
     "CreateDbHomeWithDbSystemIdDetails": CreateDbHomeWithDbSystemIdDetails,
     "DataGuardAssociation": DataGuardAssociation,
+    "DataGuardAssociationSummary": DataGuardAssociationSummary,
     "Database": Database,
     "DatabaseSummary": DatabaseSummary,
     "DbBackupConfig": DbBackupConfig,
