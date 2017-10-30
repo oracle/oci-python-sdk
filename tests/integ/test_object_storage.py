@@ -92,7 +92,6 @@ class TestObjectStorage:
     def test_bucket_archive_crud(self, object_storage):
         bucket_name = unique_name('test_bucket_archive')
         namespace = object_storage.get_namespace().data
-        bucket_count = len(object_storage.list_buckets(namespace, util.COMPARTMENT_ID, limit=500).data)
 
         # Create
         request = oci.object_storage.models.CreateBucketDetails()
