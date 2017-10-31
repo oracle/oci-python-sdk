@@ -2591,16 +2591,23 @@ class VirtualNetworkClient(object):
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
         :param str display_name: (optional)
-            A filter to only return resources that match the given display name exactly.
+            A filter to return only resources that match the given display name exactly.
 
         :param str sort_by: (optional)
-            The field to sort by.  Only one sort order may be provided.  Time created is default ordered as descending.
-            Display name is default ordered as ascending.
+            The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+            TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+            sort order is case sensitive.
+
+            **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+            optionally filter by Availability Domain if the scope of the resource type is within a
+            single Availability Domain. If you call one of these \"List\" operations without specifying
+            an Availability Domain, the resources are grouped by Availability Domain, then sorted.
 
             Allowed values are: "TIMECREATED", "DISPLAYNAME"
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
+            is case sensitive.
 
             Allowed values are: "ASC", "DESC"
 
@@ -2748,16 +2755,23 @@ class VirtualNetworkClient(object):
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
         :param str display_name: (optional)
-            A filter to only return resources that match the given display name exactly.
+            A filter to return only resources that match the given display name exactly.
 
         :param str sort_by: (optional)
-            The field to sort by.  Only one sort order may be provided.  Time created is default ordered as descending.
-            Display name is default ordered as ascending.
+            The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+            TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+            sort order is case sensitive.
+
+            **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+            optionally filter by Availability Domain if the scope of the resource type is within a
+            single Availability Domain. If you call one of these \"List\" operations without specifying
+            an Availability Domain, the resources are grouped by Availability Domain, then sorted.
 
             Allowed values are: "TIMECREATED", "DISPLAYNAME"
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
+            is case sensitive.
 
             Allowed values are: "ASC", "DESC"
 
@@ -2909,16 +2923,23 @@ class VirtualNetworkClient(object):
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
         :param str display_name: (optional)
-            A filter to only return resources that match the given display name exactly.
+            A filter to return only resources that match the given display name exactly.
 
         :param str sort_by: (optional)
-            The field to sort by.  Only one sort order may be provided.  Time created is default ordered as descending.
-            Display name is default ordered as ascending.
+            The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+            TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+            sort order is case sensitive.
+
+            **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+            optionally filter by Availability Domain if the scope of the resource type is within a
+            single Availability Domain. If you call one of these \"List\" operations without specifying
+            an Availability Domain, the resources are grouped by Availability Domain, then sorted.
 
             Allowed values are: "TIMECREATED", "DISPLAYNAME"
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
+            is case sensitive.
 
             Allowed values are: "ASC", "DESC"
 
@@ -3188,16 +3209,23 @@ class VirtualNetworkClient(object):
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
         :param str display_name: (optional)
-            A filter to only return resources that match the given display name exactly.
+            A filter to return only resources that match the given display name exactly.
 
         :param str sort_by: (optional)
-            The field to sort by.  Only one sort order may be provided.  Time created is default ordered as descending.
-            Display name is default ordered as ascending.
+            The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+            TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+            sort order is case sensitive.
+
+            **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+            optionally filter by Availability Domain if the scope of the resource type is within a
+            single Availability Domain. If you call one of these \"List\" operations without specifying
+            an Availability Domain, the resources are grouped by Availability Domain, then sorted.
 
             Allowed values are: "TIMECREATED", "DISPLAYNAME"
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
+            is case sensitive.
 
             Allowed values are: "ASC", "DESC"
 
@@ -3434,16 +3462,23 @@ class VirtualNetworkClient(object):
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
         :param str display_name: (optional)
-            A filter to only return resources that match the given display name exactly.
+            A filter to return only resources that match the given display name exactly.
 
         :param str sort_by: (optional)
-            The field to sort by.  Only one sort order may be provided.  Time created is default ordered as descending.
-            Display name is default ordered as ascending.
+            The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+            TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+            sort order is case sensitive.
+
+            **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+            optionally filter by Availability Domain if the scope of the resource type is within a
+            single Availability Domain. If you call one of these \"List\" operations without specifying
+            an Availability Domain, the resources are grouped by Availability Domain, then sorted.
 
             Allowed values are: "TIMECREATED", "DISPLAYNAME"
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
+            is case sensitive.
 
             Allowed values are: "ASC", "DESC"
 
@@ -3538,16 +3573,23 @@ class VirtualNetworkClient(object):
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
         :param str display_name: (optional)
-            A filter to only return resources that match the given display name exactly.
+            A filter to return only resources that match the given display name exactly.
 
         :param str sort_by: (optional)
-            The field to sort by.  Only one sort order may be provided.  Time created is default ordered as descending.
-            Display name is default ordered as ascending.
+            The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+            TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+            sort order is case sensitive.
+
+            **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+            optionally filter by Availability Domain if the scope of the resource type is within a
+            single Availability Domain. If you call one of these \"List\" operations without specifying
+            an Availability Domain, the resources are grouped by Availability Domain, then sorted.
 
             Allowed values are: "TIMECREATED", "DISPLAYNAME"
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
+            is case sensitive.
 
             Allowed values are: "ASC", "DESC"
 
@@ -3642,16 +3684,23 @@ class VirtualNetworkClient(object):
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
         :param str display_name: (optional)
-            A filter to only return resources that match the given display name exactly.
+            A filter to return only resources that match the given display name exactly.
 
         :param str sort_by: (optional)
-            The field to sort by.  Only one sort order may be provided.  Time created is default ordered as descending.
-            Display name is default ordered as ascending.
+            The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+            TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+            sort order is case sensitive.
+
+            **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+            optionally filter by Availability Domain if the scope of the resource type is within a
+            single Availability Domain. If you call one of these \"List\" operations without specifying
+            an Availability Domain, the resources are grouped by Availability Domain, then sorted.
 
             Allowed values are: "TIMECREATED", "DISPLAYNAME"
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
+            is case sensitive.
 
             Allowed values are: "ASC", "DESC"
 
@@ -3743,16 +3792,23 @@ class VirtualNetworkClient(object):
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
         :param str display_name: (optional)
-            A filter to only return resources that match the given display name exactly.
+            A filter to return only resources that match the given display name exactly.
 
         :param str sort_by: (optional)
-            The field to sort by.  Only one sort order may be provided.  Time created is default ordered as descending.
-            Display name is default ordered as ascending.
+            The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+            TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+            sort order is case sensitive.
+
+            **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+            optionally filter by Availability Domain if the scope of the resource type is within a
+            single Availability Domain. If you call one of these \"List\" operations without specifying
+            an Availability Domain, the resources are grouped by Availability Domain, then sorted.
 
             Allowed values are: "TIMECREATED", "DISPLAYNAME"
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
+            is case sensitive.
 
             Allowed values are: "ASC", "DESC"
 
@@ -3898,16 +3954,23 @@ class VirtualNetworkClient(object):
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
         :param str display_name: (optional)
-            A filter to only return resources that match the given display name exactly.
+            A filter to return only resources that match the given display name exactly.
 
         :param str sort_by: (optional)
-            The field to sort by.  Only one sort order may be provided.  Time created is default ordered as descending.
-            Display name is default ordered as ascending.
+            The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+            TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+            sort order is case sensitive.
+
+            **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+            optionally filter by Availability Domain if the scope of the resource type is within a
+            single Availability Domain. If you call one of these \"List\" operations without specifying
+            an Availability Domain, the resources are grouped by Availability Domain, then sorted.
 
             Allowed values are: "TIMECREATED", "DISPLAYNAME"
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
+            is case sensitive.
 
             Allowed values are: "ASC", "DESC"
 
