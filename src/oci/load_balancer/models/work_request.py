@@ -92,8 +92,6 @@ class WorkRequest(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this WorkRequest.
-        The current state of the work request.
-
         Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
@@ -107,8 +105,6 @@ class WorkRequest(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this WorkRequest.
-        The current state of the work request.
-
 
         :param lifecycle_state: The lifecycle_state of this WorkRequest.
         :type: str

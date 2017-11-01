@@ -316,7 +316,7 @@ class LoadBalancerClient(object):
         To get a list of Availability Domains, use the `ListAvailabilityDomains` operation
         in the Identity and Access Management Service API.
 
-        All Oracle Cloud Infrastructure resources, including load balancers, get an Oracle-assigned,
+        All Oracle Bare Metal Cloud Services resources, including load balancers, get an Oracle-assigned,
         unique ID called an Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID
         in the response. You can also retrieve a resource's OCID by using a List API operation on that resource type,
         or by viewing the resource in the Console. Fore more information, see
@@ -1410,25 +1410,6 @@ class LoadBalancerClient(object):
 
             Example: `full`
 
-        :param str sort_by: (optional)
-            The field to sort by.  You can provide one sort order (`sortOrder`). Default order for TIMECREATED is descending.
-            Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
-
-            Allowed values are: "TIMECREATED", "DISPLAYNAME"
-
-        :param str sort_order: (optional)
-            The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order is case sensitive.
-
-            Allowed values are: "ASC", "DESC"
-
-        :param str display_name: (optional)
-            A filter to return only resources that match the given display name exactly.
-
-        :param str lifecycle_state: (optional)
-            A filter to return only resources that match the given lifecycle state.
-
-            Allowed values are: "CREATING", "FAILED", "ACTIVE", "DELETING", "DELETED"
-
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.load_balancer.models.LoadBalancer`
         :rtype: :class:`~oci.response.Response`
         """
@@ -1440,47 +1421,18 @@ class LoadBalancerClient(object):
             "opc_request_id",
             "limit",
             "page",
-            "detail",
-            "sort_by",
-            "sort_order",
-            "display_name",
-            "lifecycle_state"
+            "detail"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_load_balancers got unknown kwargs: {!r}".format(extra_kwargs))
 
-        if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
-            if kwargs['sort_by'] not in sort_by_allowed_values:
-                raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
-                )
-
-        if 'sort_order' in kwargs:
-            sort_order_allowed_values = ["ASC", "DESC"]
-            if kwargs['sort_order'] not in sort_order_allowed_values:
-                raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
-                )
-
-        if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["CREATING", "FAILED", "ACTIVE", "DELETING", "DELETED"]
-            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
-                raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
-                )
-
         query_params = {
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "compartmentId": compartment_id,
-            "detail": kwargs.get("detail", missing),
-            "sortBy": kwargs.get("sort_by", missing),
-            "sortOrder": kwargs.get("sort_order", missing),
-            "displayName": kwargs.get("display_name", missing),
-            "lifecycleState": kwargs.get("lifecycle_state", missing)
+            "detail": kwargs.get("detail", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
 

@@ -215,7 +215,7 @@ class LoadBalancer(object):
 
         If \"false\", the service assigns a public IP address to the load balancer. A load balancer with a public IP address
         requires two subnets, each in a different Availability Domain. One subnet hosts the primary load balancer and the other
-        hosts the secondary (standby) load balancer. A public load balancer is accessible from the internet, depending on your
+        hosts the secondary (stand-by) load balancer. A public load balancer is accessible from the internet, depending on your
         VCN's `security list rules`__.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/securitylists.htm
@@ -241,7 +241,7 @@ class LoadBalancer(object):
 
         If \"false\", the service assigns a public IP address to the load balancer. A load balancer with a public IP address
         requires two subnets, each in a different Availability Domain. One subnet hosts the primary load balancer and the other
-        hosts the secondary (standby) load balancer. A public load balancer is accessible from the internet, depending on your
+        hosts the secondary (stand-by) load balancer. A public load balancer is accessible from the internet, depending on your
         VCN's `security list rules`__.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/securitylists.htm
@@ -256,8 +256,6 @@ class LoadBalancer(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this LoadBalancer.
-        The current state of the load balancer.
-
         Allowed values for this property are: "CREATING", "FAILED", "ACTIVE", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
@@ -271,8 +269,6 @@ class LoadBalancer(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this LoadBalancer.
-        The current state of the load balancer.
-
 
         :param lifecycle_state: The lifecycle_state of this LoadBalancer.
         :type: str
