@@ -8,6 +8,14 @@ The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 1.3.9 - 2017-11-02
 ====================
 
+Added
+-----
+* Support for updating audit retention policy and listing events in Audit service
+* Support for archive storage tier in Object Storage service
+* Support for fast clones of volumes in Block Storage service
+* Support for backup and restore in Database service
+* Support for sorting and filtering in list APIs in Core Services
+
 Changed
 -------
 * Upgraded cryptography dependency to 1.9.
