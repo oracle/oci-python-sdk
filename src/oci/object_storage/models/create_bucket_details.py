@@ -13,27 +13,31 @@ class CreateBucketDetails(object):
             'name': 'str',
             'compartment_id': 'str',
             'metadata': 'dict(str, str)',
-            'public_access_type': 'str'
+            'public_access_type': 'str',
+            'storage_tier': 'str'
         }
 
         self.attribute_map = {
             'name': 'name',
             'compartment_id': 'compartmentId',
             'metadata': 'metadata',
-            'public_access_type': 'publicAccessType'
+            'public_access_type': 'publicAccessType',
+            'storage_tier': 'storageTier'
         }
 
         self._name = None
         self._compartment_id = None
         self._metadata = None
         self._public_access_type = None
+        self._storage_tier = None
 
     @property
     def name(self):
         """
         Gets the name of this CreateBucketDetails.
         The name of the bucket. Valid characters are uppercase or lowercase letters,
-        numbers, and dashes. Bucket names must be unique within the namespace.
+        numbers, and dashes. Bucket names must be unique within the namespace. Avoid entering confidential information.
+        example: Example: my-new-bucket1
 
 
         :return: The name of this CreateBucketDetails.
@@ -46,7 +50,8 @@ class CreateBucketDetails(object):
         """
         Sets the name of this CreateBucketDetails.
         The name of the bucket. Valid characters are uppercase or lowercase letters,
-        numbers, and dashes. Bucket names must be unique within the namespace.
+        numbers, and dashes. Bucket names must be unique within the namespace. Avoid entering confidential information.
+        example: Example: my-new-bucket1
 
 
         :param name: The name of this CreateBucketDetails.
@@ -106,10 +111,10 @@ class CreateBucketDetails(object):
     def public_access_type(self):
         """
         Gets the public_access_type of this CreateBucketDetails.
-        The type of public access available on this bucket. Allows authenticated caller to access the bucket or
-        contents of this bucket. By default a bucket is set to NoPublicAccess. It is treated as NoPublicAccess
-        when this value is not specified. When the type is NoPublicAccess the bucket does not allow any public access.
-        When the type is ObjectRead the bucket allows public access to the GetObject, HeadObject, ListObjects.
+        The type of public access enabled on this bucket.
+        A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the
+        bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the
+        `GetObject`, `HeadObject`, and `ListObjects` operations.
 
         Allowed values for this property are: "NoPublicAccess", "ObjectRead"
 
@@ -123,10 +128,10 @@ class CreateBucketDetails(object):
     def public_access_type(self, public_access_type):
         """
         Sets the public_access_type of this CreateBucketDetails.
-        The type of public access available on this bucket. Allows authenticated caller to access the bucket or
-        contents of this bucket. By default a bucket is set to NoPublicAccess. It is treated as NoPublicAccess
-        when this value is not specified. When the type is NoPublicAccess the bucket does not allow any public access.
-        When the type is ObjectRead the bucket allows public access to the GetObject, HeadObject, ListObjects.
+        The type of public access enabled on this bucket.
+        A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the
+        bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the
+        `GetObject`, `HeadObject`, and `ListObjects` operations.
 
 
         :param public_access_type: The public_access_type of this CreateBucketDetails.
@@ -139,6 +144,44 @@ class CreateBucketDetails(object):
                 .format(allowed_values)
             )
         self._public_access_type = public_access_type
+
+    @property
+    def storage_tier(self):
+        """
+        Gets the storage_tier of this CreateBucketDetails.
+        The type of storage tier of this bucket.
+        A bucket is set to 'Standard' tier by default, which means the bucket will be put in the standard storage tier.
+        When 'Archive' tier type is set explicitly, the bucket is put in the Archive Storage tier. The 'storageTier'
+        property is immutable after bucket is created.
+
+        Allowed values for this property are: "Standard", "Archive"
+
+
+        :return: The storage_tier of this CreateBucketDetails.
+        :rtype: str
+        """
+        return self._storage_tier
+
+    @storage_tier.setter
+    def storage_tier(self, storage_tier):
+        """
+        Sets the storage_tier of this CreateBucketDetails.
+        The type of storage tier of this bucket.
+        A bucket is set to 'Standard' tier by default, which means the bucket will be put in the standard storage tier.
+        When 'Archive' tier type is set explicitly, the bucket is put in the Archive Storage tier. The 'storageTier'
+        property is immutable after bucket is created.
+
+
+        :param storage_tier: The storage_tier of this CreateBucketDetails.
+        :type: str
+        """
+        allowed_values = ["Standard", "Archive"]
+        if storage_tier not in allowed_values:
+            raise ValueError(
+                "Invalid value for `storage_tier`, must be one of {0}"
+                .format(allowed_values)
+            )
+        self._storage_tier = storage_tier
 
     def __repr__(self):
         return formatted_flat_dict(self)

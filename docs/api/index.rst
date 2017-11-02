@@ -12,6 +12,26 @@
 API Reference
 ~~~~~~~~~~~~~
 
+=======
+ Audit 
+=======
+
+--------
+ Client
+--------
+
+.. autoclass:: oci.audit.audit_client.AuditClient
+    :members:
+
+--------
+ Models
+--------
+
+.. automodule:: oci.audit.models
+    :members:
+    :undoc-members:
+    :imported-members:
+
 ===============
  Core Services
 ===============
@@ -129,6 +149,15 @@ Load Balancer
     :undoc-members:
     :imported-members:
 
+================
+ Upload Manager
+================
+
+.. module:: oci.object_storage
+
+.. autoclass:: UploadManager
+      :special-members: __init__
+      :members:
 
 =============
  Base Client

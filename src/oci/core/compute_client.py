@@ -21,8 +21,9 @@ class ComputeClient(object):
             tenancy=config["tenancy"],
             user=config["user"],
             fingerprint=config["fingerprint"],
-            private_key_file_location=config["key_file"],
-            pass_phrase=get_config_value_or_default(config, "pass_phrase")
+            private_key_file_location=config.get("key_file"),
+            pass_phrase=get_config_value_or_default(config, "pass_phrase"),
+            private_key_content=config.get("key_content")
         )
         self.base_client = BaseClient("compute", config, signer, core_type_mapping)
 
@@ -184,19 +185,19 @@ class ComputeClient(object):
     def create_image(self, create_image_details, **kwargs):
         """
         CreateImage
-        Creates a boot disk image for the specified instance or imports an exported image from the Oracle Bare Metal Cloud Object Storage Service.
+        Creates a boot disk image for the specified instance or imports an exported image from the Oracle Cloud Infrastructure Object Storage service.
 
         When creating a new image, you must provide the OCID of the instance you want to use as the basis for the image, and
         the OCID of the compartment containing that instance. For more information about images,
         see `Managing Custom Images`__.
 
-        When importing an exported image from the Object Storage Service, you specify the source information
+        When importing an exported image from Object Storage, you specify the source information
         in :func:`image_source_details`.
 
         When importing an image based on the namespace, bucket name, and object name,
         use :func:`image_source_via_object_storage_tuple_details`.
 
-        When importing an image based on the Object Storage Service URL, use
+        When importing an image based on the Object Storage URL, use
         :func:`image_source_via_object_storage_uri_details`.
         See `Object Storage URLs`__ and `pre-authenticated requests`__
         for constructing URLs for image import/export.
@@ -338,7 +339,12 @@ class ComputeClient(object):
         path_params = {
             "instanceConsoleHistoryId": instance_console_history_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -385,7 +391,12 @@ class ComputeClient(object):
         path_params = {
             "imageId": image_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -432,7 +443,12 @@ class ComputeClient(object):
         path_params = {
             "instanceConsoleConnectionId": instance_console_connection_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -490,7 +506,12 @@ class ComputeClient(object):
         path_params = {
             "vnicAttachmentId": vnic_attachment_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -540,7 +561,12 @@ class ComputeClient(object):
         path_params = {
             "volumeAttachmentId": volume_attachment_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -558,12 +584,12 @@ class ComputeClient(object):
     def export_image(self, image_id, export_image_details, **kwargs):
         """
         ExportImage
-        Exports the specified image to the Oracle Bare Metal Cloud Object Storage Service. You can use the Object Storage Service URL,
+        Exports the specified image to the Oracle Cloud Infrastructure Object Storage service. You can use the Object Storage URL,
         or the namespace, bucket name, and object name when specifying the location to export to.
 
         For more information about exporting images, see `Image Import/Export`__.
 
-        To perform an image export, you need write access to the Object Storage Service bucket for the image,
+        To perform an image export, you need write access to the Object Storage bucket for the image,
         see `Let Users Write Objects to Object Storage Buckets`__.
 
         See `Object Storage URLs`__ and `pre-authenticated requests`__
@@ -612,7 +638,12 @@ class ComputeClient(object):
         path_params = {
             "imageId": image_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -654,7 +685,12 @@ class ComputeClient(object):
         path_params = {
             "instanceConsoleHistoryId": instance_console_history_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -704,7 +740,12 @@ class ComputeClient(object):
         path_params = {
             "instanceConsoleHistoryId": instance_console_history_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         query_params = {
             "offset": kwargs.get("offset", missing),
@@ -747,7 +788,12 @@ class ComputeClient(object):
         path_params = {
             "imageId": image_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -783,7 +829,12 @@ class ComputeClient(object):
         path_params = {
             "instanceId": instance_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -819,7 +870,12 @@ class ComputeClient(object):
         path_params = {
             "instanceConsoleConnectionId": instance_console_connection_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -855,7 +911,12 @@ class ComputeClient(object):
         path_params = {
             "vnicAttachmentId": vnic_attachment_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -891,7 +952,12 @@ class ComputeClient(object):
         path_params = {
             "volumeAttachmentId": volume_attachment_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -928,7 +994,12 @@ class ComputeClient(object):
         path_params = {
             "instanceId": instance_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -969,6 +1040,8 @@ class ComputeClient(object):
         :param str action: (required)
             The action to perform on the instance.
 
+            Allowed values are: "STOP", "START", "SOFTRESET", "RESET"
+
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
             server error without risk of executing that same action again. Retry tokens expire after 24
@@ -1000,7 +1073,12 @@ class ComputeClient(object):
         path_params = {
             "instanceId": instance_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         query_params = {
             "action": action
@@ -1038,7 +1116,7 @@ class ComputeClient(object):
         To get a list of Availability Domains, use the `ListAvailabilityDomains` operation
         in the Identity and Access Management Service API.
 
-        All Oracle Bare Metal Cloud Services resources, including instances, get an Oracle-assigned,
+        All Oracle Cloud Infrastructure resources, including instances, get an Oracle-assigned,
         unique ID called an Oracle Cloud Identifier (OCID).
         When you create a resource, you can find its OCID in the response. You can
         also retrieve a resource's OCID by using a List API operation
@@ -1126,6 +1204,29 @@ class ComputeClient(object):
         :param str instance_id: (optional)
             The OCID of the instance.
 
+        :param str sort_by: (optional)
+            The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+            TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+            sort order is case sensitive.
+
+            **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+            optionally filter by Availability Domain if the scope of the resource type is within a
+            single Availability Domain. If you call one of these \"List\" operations without specifying
+            an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+
+            Allowed values are: "TIMECREATED", "DISPLAYNAME"
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
+            is case sensitive.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str lifecycle_state: (optional)
+            A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+
+            Allowed values are: "REQUESTED", "GETTING-HISTORY", "SUCCEEDED", "FAILED"
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.ConsoleHistory`
         :rtype: :class:`~oci.response.Response`
         """
@@ -1137,19 +1238,46 @@ class ComputeClient(object):
             "availability_domain",
             "limit",
             "page",
-            "instance_id"
+            "instance_id",
+            "sort_by",
+            "sort_order",
+            "lifecycle_state"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_console_histories got unknown kwargs: {!r}".format(extra_kwargs))
 
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["REQUESTED", "GETTING-HISTORY", "SUCCEEDED", "FAILED"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
         query_params = {
             "availabilityDomain": kwargs.get("availability_domain", missing),
             "compartmentId": compartment_id,
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
-            "instanceId": kwargs.get("instance_id", missing)
+            "instanceId": kwargs.get("instance_id", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
 
@@ -1168,7 +1296,9 @@ class ComputeClient(object):
     def list_images(self, compartment_id, **kwargs):
         """
         ListImages
-        Lists the available images in the specified compartment. For more
+        Lists the available images in the specified compartment.
+        If you specify a value for the `sortBy` parameter, Oracle-provided images appear first in the list, followed by custom images.
+        For more
         information about images, see
         `Managing Custom Images`__.
 
@@ -1179,10 +1309,7 @@ class ComputeClient(object):
             The OCID of the compartment.
 
         :param str display_name: (optional)
-            A user-friendly name. Does not have to be unique, and it's changeable.
-            Avoid entering confidential information.
-
-            Example: `My new resource`
+            A filter to return only resources that match the given display name exactly.
 
         :param str operating_system: (optional)
             The image's operating system.
@@ -1202,6 +1329,29 @@ class ComputeClient(object):
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
+        :param str sort_by: (optional)
+            The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+            TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+            sort order is case sensitive.
+
+            **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+            optionally filter by Availability Domain if the scope of the resource type is within a
+            single Availability Domain. If you call one of these \"List\" operations without specifying
+            an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+
+            Allowed values are: "TIMECREATED", "DISPLAYNAME"
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
+            is case sensitive.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str lifecycle_state: (optional)
+            A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+
+            Allowed values are: "PROVISIONING", "IMPORTING", "AVAILABLE", "EXPORTING", "DISABLED", "DELETED"
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.Image`
         :rtype: :class:`~oci.response.Response`
         """
@@ -1214,12 +1364,36 @@ class ComputeClient(object):
             "operating_system",
             "operating_system_version",
             "limit",
-            "page"
+            "page",
+            "sort_by",
+            "sort_order",
+            "lifecycle_state"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_images got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["PROVISIONING", "IMPORTING", "AVAILABLE", "EXPORTING", "DISABLED", "DELETED"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
 
         query_params = {
             "compartmentId": compartment_id,
@@ -1227,7 +1401,10 @@ class ComputeClient(object):
             "operatingSystem": kwargs.get("operating_system", missing),
             "operatingSystemVersion": kwargs.get("operating_system_version", missing),
             "limit": kwargs.get("limit", missing),
-            "page": kwargs.get("page", missing)
+            "page": kwargs.get("page", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
 
@@ -1321,10 +1498,7 @@ class ComputeClient(object):
             Example: `Uocm:PHX-AD-1`
 
         :param str display_name: (optional)
-            A user-friendly name. Does not have to be unique, and it's changeable.
-            Avoid entering confidential information.
-
-            Example: `My new resource`
+            A filter to return only resources that match the given display name exactly.
 
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
@@ -1333,6 +1507,29 @@ class ComputeClient(object):
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param str sort_by: (optional)
+            The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+            TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+            sort order is case sensitive.
+
+            **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+            optionally filter by Availability Domain if the scope of the resource type is within a
+            single Availability Domain. If you call one of these \"List\" operations without specifying
+            an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+
+            Allowed values are: "TIMECREATED", "DISPLAYNAME"
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
+            is case sensitive.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str lifecycle_state: (optional)
+            A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+
+            Allowed values are: "PROVISIONING", "RUNNING", "STARTING", "STOPPING", "STOPPED", "CREATING_IMAGE", "TERMINATING", "TERMINATED"
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.Instance`
         :rtype: :class:`~oci.response.Response`
@@ -1345,19 +1542,46 @@ class ComputeClient(object):
             "availability_domain",
             "display_name",
             "limit",
-            "page"
+            "page",
+            "sort_by",
+            "sort_order",
+            "lifecycle_state"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_instances got unknown kwargs: {!r}".format(extra_kwargs))
 
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["PROVISIONING", "RUNNING", "STARTING", "STOPPING", "STOPPED", "CREATING_IMAGE", "TERMINATING", "TERMINATED"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
         query_params = {
             "availabilityDomain": kwargs.get("availability_domain", missing),
             "compartmentId": compartment_id,
             "displayName": kwargs.get("display_name", missing),
             "limit": kwargs.get("limit", missing),
-            "page": kwargs.get("page", missing)
+            "page": kwargs.get("page", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
 
@@ -1617,7 +1841,12 @@ class ComputeClient(object):
         path_params = {
             "instanceId": instance_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -1667,7 +1896,12 @@ class ComputeClient(object):
         path_params = {
             "instanceConsoleHistoryId": instance_console_history_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -1727,7 +1961,12 @@ class ComputeClient(object):
         path_params = {
             "imageId": image_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -1789,7 +2028,12 @@ class ComputeClient(object):
         path_params = {
             "instanceId": instance_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",

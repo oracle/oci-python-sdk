@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+1.3.9 - 2017-11-02
+====================
+
+Added
+-----
+* Support for the Audit service
+* Support for archive storage tier, object rename and namespace metadata in Object Storage service
+* Support for fast clones of volumes in Block Storage service
+* Support for backup and restore in Database service
+* Support for sorting and filtering in list APIs in Core Services
+* Support for passing explicit None values to service operations. Consult the *Passing explicit Null/None values* section of the `docs <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io>`_ for more information.
+* Support for supplying private key contents through the 'key_content' config field
+
+Changed
+-------
+* Upgraded cryptography dependency to 1.9.
+* Minimum version of Mac OS supported is now 10.8
+
+====================
 1.3.8 - 2017-10-12
 ====================
 

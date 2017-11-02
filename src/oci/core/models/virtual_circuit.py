@@ -347,7 +347,7 @@ class VirtualCircuit(object):
     def provider_name(self):
         """
         Gets the provider_name of this VirtualCircuit.
-        The name of the provider (if the customer is connecting via a provider).
+        The name of the provider (if you're connecting via a provider).
 
 
         :return: The provider_name of this VirtualCircuit.
@@ -359,7 +359,7 @@ class VirtualCircuit(object):
     def provider_name(self, provider_name):
         """
         Sets the provider_name of this VirtualCircuit.
-        The name of the provider (if the customer is connecting via a provider).
+        The name of the provider (if you're connecting via a provider).
 
 
         :param provider_name: The provider_name of this VirtualCircuit.
@@ -371,7 +371,7 @@ class VirtualCircuit(object):
     def provider_service_name(self):
         """
         Gets the provider_service_name of this VirtualCircuit.
-        The name of the service offered by the provider (if the customer is connecting via a provider).
+        The name of the service offered by the provider.
 
 
         :return: The provider_service_name of this VirtualCircuit.
@@ -383,7 +383,7 @@ class VirtualCircuit(object):
     def provider_service_name(self, provider_service_name):
         """
         Sets the provider_service_name of this VirtualCircuit.
-        The name of the service offered by the provider (if the customer is connecting via a provider).
+        The name of the service offered by the provider.
 
 
         :param provider_service_name: The provider_service_name of this VirtualCircuit.
@@ -459,7 +459,7 @@ class VirtualCircuit(object):
     def region(self):
         """
         Gets the region of this VirtualCircuit.
-        The Oracle Bare Metal Cloud Services region where this virtual
+        The Oracle Cloud Infrastructure region where this virtual
         circuit is located.
 
 
@@ -472,7 +472,7 @@ class VirtualCircuit(object):
     def region(self, region):
         """
         Sets the region of this VirtualCircuit.
-        The Oracle Bare Metal Cloud Services region where this virtual
+        The Oracle Cloud Infrastructure region where this virtual
         circuit is located.
 
 

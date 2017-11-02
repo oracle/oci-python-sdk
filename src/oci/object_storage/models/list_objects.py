@@ -78,7 +78,8 @@ class ListObjects(object):
         """
         Gets the next_start_with of this ListObjects.
         The name of the object to use in the 'startWith' parameter to obtain the next page of
-        a truncated ListObjects response.
+        a truncated ListObjects response. Avoid entering confidential information.
+        Example: test/object1.log
 
 
         :return: The next_start_with of this ListObjects.
@@ -91,7 +92,8 @@ class ListObjects(object):
         """
         Sets the next_start_with of this ListObjects.
         The name of the object to use in the 'startWith' parameter to obtain the next page of
-        a truncated ListObjects response.
+        a truncated ListObjects response. Avoid entering confidential information.
+        Example: test/object1.log
 
 
         :param next_start_with: The next_start_with of this ListObjects.

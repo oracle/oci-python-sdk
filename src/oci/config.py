@@ -54,6 +54,12 @@ REQUIRED = {
     "key_file",
     "region"
 }
+REQUIRED_FALLBACKS = {
+    "key_file": "key_content"
+}
+CONFIG_FILE_BLACKLISTED_KEYS = {
+    "key_content"
+}
 
 
 def from_file(file_location=DEFAULT_LOCATION, profile_name=DEFAULT_PROFILE):
@@ -63,12 +69,7 @@ def from_file(file_location=DEFAULT_LOCATION, profile_name=DEFAULT_PROFILE):
     :param profile_name: The profile to load from the config file.  Defaults to "DEFAULT"
     :return: A config dict that can be used to create clients.
     """
-    expanded_file_location = os.path.expanduser(file_location)
-    expanded_fallback_default_file_location = os.path.expanduser(FALLBACK_DEFAULT_LOCATION)
-
-    # if there is no file in the default location (~/.oci/config), and the fallback file does exist, use the fallback (~/.oraclebmc/config)
-    if file_location == DEFAULT_LOCATION and not os.path.isfile(expanded_file_location) and os.path.isfile(expanded_fallback_default_file_location):
-        expanded_file_location = expanded_fallback_default_file_location
+    expanded_file_location = _get_config_path_with_fallback(file_location)
 
     parser = configparser.ConfigParser(interpolation=None)
     if not parser.read(expanded_file_location):
@@ -80,6 +81,11 @@ def from_file(file_location=DEFAULT_LOCATION, profile_name=DEFAULT_PROFILE):
     config = dict(DEFAULT_CONFIG)
     config.update(parser[profile_name])
     config["log_requests"] = _as_bool(config["log_requests"])
+
+    for key in CONFIG_FILE_BLACKLISTED_KEYS:
+        if key in config:
+            raise ValueError("'{}' cannot be specified in a config file for security reasons. To use this key you must add it to the config programmatically.".format(key))
+
     return config
 
 
@@ -87,7 +93,8 @@ def validate_config(config):
     """Raises ValueError if required fields are missing or malformed."""
     errors = {}
     for required_key in REQUIRED:
-        if required_key not in config:
+        fallback_key = REQUIRED_FALLBACKS.get(required_key)
+        if required_key not in config and fallback_key not in config:
             errors[required_key] = "missing"
 
     for key, pattern in six.iteritems(PATTERNS):
@@ -121,3 +128,14 @@ def _raise_on_errors(errors):
         raise ValueError("Error in config: {}".format(errors[0]))
     elif errors:
         raise ValueError("Found the following config errors: {!r}".format(errors))
+
+
+def _get_config_path_with_fallback(file_location):
+    expanded_file_location = os.path.expanduser(file_location)
+    expanded_fallback_default_file_location = os.path.expanduser(FALLBACK_DEFAULT_LOCATION)
+
+    # if there is no file in the default location (~/.oci/config), and the fallback file does exist, use the fallback (~/.oraclebmc/config)
+    if file_location == DEFAULT_LOCATION and not os.path.isfile(expanded_file_location) and os.path.isfile(expanded_fallback_default_file_location):
+        expanded_file_location = expanded_fallback_default_file_location
+
+    return expanded_file_location

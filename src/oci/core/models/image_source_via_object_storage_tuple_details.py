@@ -33,7 +33,7 @@ class ImageSourceViaObjectStorageTupleDetails(ImageSourceDetails):
     def bucket_name(self):
         """
         Gets the bucket_name of this ImageSourceViaObjectStorageTupleDetails.
-        The Object Storage Service bucket for the image.
+        The Object Storage bucket for the image.
 
 
         :return: The bucket_name of this ImageSourceViaObjectStorageTupleDetails.
@@ -45,7 +45,7 @@ class ImageSourceViaObjectStorageTupleDetails(ImageSourceDetails):
     def bucket_name(self, bucket_name):
         """
         Sets the bucket_name of this ImageSourceViaObjectStorageTupleDetails.
-        The Object Storage Service bucket for the image.
+        The Object Storage bucket for the image.
 
 
         :param bucket_name: The bucket_name of this ImageSourceViaObjectStorageTupleDetails.
@@ -57,7 +57,7 @@ class ImageSourceViaObjectStorageTupleDetails(ImageSourceDetails):
     def namespace_name(self):
         """
         Gets the namespace_name of this ImageSourceViaObjectStorageTupleDetails.
-        The Object Storage Service namespace for the image.
+        The Object Storage namespace for the image.
 
 
         :return: The namespace_name of this ImageSourceViaObjectStorageTupleDetails.
@@ -69,7 +69,7 @@ class ImageSourceViaObjectStorageTupleDetails(ImageSourceDetails):
     def namespace_name(self, namespace_name):
         """
         Sets the namespace_name of this ImageSourceViaObjectStorageTupleDetails.
-        The Object Storage Service namespace for the image.
+        The Object Storage namespace for the image.
 
 
         :param namespace_name: The namespace_name of this ImageSourceViaObjectStorageTupleDetails.
@@ -81,7 +81,7 @@ class ImageSourceViaObjectStorageTupleDetails(ImageSourceDetails):
     def object_name(self):
         """
         Gets the object_name of this ImageSourceViaObjectStorageTupleDetails.
-        The Object Storage Service name for the image.
+        The Object Storage name for the image.
 
 
         :return: The object_name of this ImageSourceViaObjectStorageTupleDetails.
@@ -93,7 +93,7 @@ class ImageSourceViaObjectStorageTupleDetails(ImageSourceDetails):
     def object_name(self, object_name):
         """
         Sets the object_name of this ImageSourceViaObjectStorageTupleDetails.
-        The Object Storage Service name for the image.
+        The Object Storage name for the image.
 
 
         :param object_name: The object_name of this ImageSourceViaObjectStorageTupleDetails.
