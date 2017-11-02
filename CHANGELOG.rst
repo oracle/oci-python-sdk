@@ -10,8 +10,8 @@ The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 Added
 -----
-* Support for updating audit retention policy and listing events in Audit service
-* Support for archive storage tier in Object Storage service
+* Support for the Audit service
+* Support for archive storage tier, object rename and namespace metadata in Object Storage service
 * Support for fast clones of volumes in Block Storage service
 * Support for backup and restore in Database service
 * Support for sorting and filtering in list APIs in Core Services
