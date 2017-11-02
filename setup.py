@@ -31,17 +31,17 @@ with open_relative("README.rst") as f:
 requires = [
     "certifi",
     "configparser==3.5.0",
-    "cryptography==1.8.2",
+    "cryptography==1.9",
     "httpsig_cffi==15.0.0",
     "python-dateutil==2.5.3",
-    "pytz==2016.7",
+    "pytz==2016.10",
     "requests==2.11.1",
     "six==1.10.0",
 ]
 
 setup(
     name="oci",
-    url="http://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/index.html",
+    url="https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/index.html",
     version=version,
     description="Oracle Cloud Infrastructure Python SDK",
     long_description=readme,

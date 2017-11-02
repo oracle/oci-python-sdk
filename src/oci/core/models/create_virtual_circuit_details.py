@@ -238,8 +238,8 @@ class CreateVirtualCircuitDetails(object):
     def provider_service_name(self):
         """
         Gets the provider_service_name of this CreateVirtualCircuitDetails.
-        The name of the service offered by the provider (if you're connecting
-        via a provider). To get a list of the available service offerings, see
+        The name of the provider (if you're connecting via a provider).
+        To get a list of the provider names, see
         :func:`list_fast_connect_provider_services`.
 
 
@@ -252,8 +252,8 @@ class CreateVirtualCircuitDetails(object):
     def provider_service_name(self, provider_service_name):
         """
         Sets the provider_service_name of this CreateVirtualCircuitDetails.
-        The name of the service offered by the provider (if you're connecting
-        via a provider). To get a list of the available service offerings, see
+        The name of the provider (if you're connecting via a provider).
+        To get a list of the provider names, see
         :func:`list_fast_connect_provider_services`.
 
 
@@ -266,9 +266,8 @@ class CreateVirtualCircuitDetails(object):
     def region(self):
         """
         Gets the region of this CreateVirtualCircuitDetails.
-        The Oracle Bare Metal Cloud Services region where this virtual
+        The Oracle Cloud Infrastructure region where this virtual
         circuit is located.
-
         Example: `phx`
 
 
@@ -281,9 +280,8 @@ class CreateVirtualCircuitDetails(object):
     def region(self, region):
         """
         Sets the region of this CreateVirtualCircuitDetails.
-        The Oracle Bare Metal Cloud Services region where this virtual
+        The Oracle Cloud Infrastructure region where this virtual
         circuit is located.
-
         Example: `phx`
 
 

@@ -45,8 +45,10 @@ class UploadManager:
                       stream_ref,
                       **kwargs):
         """
-        Uploads streaming data to Object Storage. This will always perform a multipart upload, splitting parts based
-        on the part size (10 MiB if none specified). However, stream uploads are not currently resumable.
+        Uploads streaming data to Object Storage. If the stream is non-empty, this will always perform a multipart upload, splitting parts based
+        on the part size (10 MiB if none specified). If the stream is empty, this will upload a single empty object to Object Storage.
+
+        Stream uploads are not currently resumable.
 
         :param str namespace_name:
             The namespace containing the bucket in which to store the object.
@@ -72,8 +74,7 @@ class UploadManager:
 
         :param str if_none_match (optional):
             The entity tag of the object to avoid matching. The only valid value is ‘*’,
-            which indicates that the request should fail if the object
-             already exists.
+            which indicates that the request should fail if the object already exists.
 
         :param str content_type (optional):
             The content type of the object to upload.
@@ -88,7 +89,10 @@ class UploadManager:
             A dictionary of string to string values to associate with the object to upload
 
         :return:
-            The response from multipart commit operation or the put operation.  In both cases this will be a Response object with data of type None. For a multipart upload the Response will contain the opc-multipart-md5 header and for a non-multipart upload it will contain the opc-content-md5 header.
+            The response from multipart commit operation or the put operation.  In both cases this will be a :class:`~oci.response.Response` object with data of type None.
+            For a multipart upload (non-empty stream data) the :class:`~oci.response.Response` will contain the :code:`opc-multipart-md5` header and for a non-multipart upload
+            (empty stream data) it will contain the :code:`opc-content-md5 header`.
+        :rtype: :class:`~oci.response.Response`
         """
         if 'part_size' not in kwargs:
             kwargs['part_size'] = STREAMING_DEFAULT_PART_SIZE
@@ -175,8 +179,7 @@ class UploadManager:
 
         :param str if_none_match (optional):
             The entity tag of the object to avoid matching. The only valid value is ‘*’,
-            which indicates that the request should fail if the object
-             already exists.
+            which indicates that the request should fail if the object already exists.
 
         :param str content_md5: (optional)
             The base-64 encoded MD5 hash of the body. This parameter is only used if the object is uploaded in a single part.
@@ -194,7 +197,10 @@ class UploadManager:
             A dictionary of string to string values to associate with the object to upload
 
         :return:
-            The response from multipart commit operation or the put operation.  In both cases this will be a Response object with data of type None. For a multipart upload the Response will contain the opc-multipart-md5 header and for a non-multipart upload it will contain the opc-content-md5 header.
+            The response from multipart commit operation or the put operation.  In both cases this will be a :class:`~oci.response.Response` object with data of type None.
+            For a multipart upload the :class:`~oci.response.Response` will contain the :code:`opc-multipart-md5` header and for a non-multipart upload
+            it will contain the :code:`opc-content-md5 header`.
+        :rtype: :class:`~oci.response.Response`
         """
         part_size = DEFAULT_PART_SIZE
         if 'part_size' in kwargs:
@@ -268,7 +274,8 @@ class UploadManager:
             the last call to the callback function.
 
         :return:
-            The response from the multipart commit operation.
+            The response from the multipart commit operation. This will be a :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
         """
         resume_kwargs = {}
         if 'progress_callback' in kwargs:

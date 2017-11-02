@@ -21,8 +21,9 @@ class BlockstorageClient(object):
             tenancy=config["tenancy"],
             user=config["user"],
             fingerprint=config["fingerprint"],
-            private_key_file_location=config["key_file"],
-            pass_phrase=get_config_value_or_default(config, "pass_phrase")
+            private_key_file_location=config.get("key_file"),
+            pass_phrase=get_config_value_or_default(config, "pass_phrase"),
+            private_key_content=config.get("key_content")
         )
         self.base_client = BaseClient("blockstorage", config, signer, core_type_mapping)
 
@@ -177,7 +178,12 @@ class BlockstorageClient(object):
         path_params = {
             "volumeId": volume_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -224,7 +230,12 @@ class BlockstorageClient(object):
         path_params = {
             "volumeBackupId": volume_backup_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -261,7 +272,12 @@ class BlockstorageClient(object):
         path_params = {
             "volumeId": volume_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -297,7 +313,12 @@ class BlockstorageClient(object):
         path_params = {
             "volumeBackupId": volume_backup_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -331,6 +352,32 @@ class BlockstorageClient(object):
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
+        :param str display_name: (optional)
+            A filter to return only resources that match the given display name exactly.
+
+        :param str sort_by: (optional)
+            The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+            TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+            sort order is case sensitive.
+
+            **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+            optionally filter by Availability Domain if the scope of the resource type is within a
+            single Availability Domain. If you call one of these \"List\" operations without specifying
+            an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+
+            Allowed values are: "TIMECREATED", "DISPLAYNAME"
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
+            is case sensitive.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str lifecycle_state: (optional)
+            A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+
+            Allowed values are: "CREATING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAULTY", "REQUEST_RECEIVED"
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.VolumeBackup`
         :rtype: :class:`~oci.response.Response`
         """
@@ -341,18 +388,47 @@ class BlockstorageClient(object):
         expected_kwargs = [
             "volume_id",
             "limit",
-            "page"
+            "page",
+            "display_name",
+            "sort_by",
+            "sort_order",
+            "lifecycle_state"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_volume_backups got unknown kwargs: {!r}".format(extra_kwargs))
 
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAULTY", "REQUEST_RECEIVED"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
         query_params = {
             "compartmentId": compartment_id,
             "volumeId": kwargs.get("volume_id", missing),
             "limit": kwargs.get("limit", missing),
-            "page": kwargs.get("page", missing)
+            "page": kwargs.get("page", missing),
+            "displayName": kwargs.get("display_name", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
 
@@ -390,6 +466,32 @@ class BlockstorageClient(object):
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
+        :param str display_name: (optional)
+            A filter to return only resources that match the given display name exactly.
+
+        :param str sort_by: (optional)
+            The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+            TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+            sort order is case sensitive.
+
+            **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+            optionally filter by Availability Domain if the scope of the resource type is within a
+            single Availability Domain. If you call one of these \"List\" operations without specifying
+            an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+
+            Allowed values are: "TIMECREATED", "DISPLAYNAME"
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
+            is case sensitive.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str lifecycle_state: (optional)
+            A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+
+            Allowed values are: "PROVISIONING", "RESTORING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAULTY"
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.Volume`
         :rtype: :class:`~oci.response.Response`
         """
@@ -400,18 +502,47 @@ class BlockstorageClient(object):
         expected_kwargs = [
             "availability_domain",
             "limit",
-            "page"
+            "page",
+            "display_name",
+            "sort_by",
+            "sort_order",
+            "lifecycle_state"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_volumes got unknown kwargs: {!r}".format(extra_kwargs))
 
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["PROVISIONING", "RESTORING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAULTY"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
         query_params = {
             "availabilityDomain": kwargs.get("availability_domain", missing),
             "compartmentId": compartment_id,
             "limit": kwargs.get("limit", missing),
-            "page": kwargs.get("page", missing)
+            "page": kwargs.get("page", missing),
+            "displayName": kwargs.get("display_name", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
 
@@ -463,7 +594,12 @@ class BlockstorageClient(object):
         path_params = {
             "volumeId": volume_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -516,7 +652,12 @@ class BlockstorageClient(object):
         path_params = {
             "volumeBackupId": volume_backup_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",

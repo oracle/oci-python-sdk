@@ -17,7 +17,8 @@ class Bucket(object):
             'created_by': 'str',
             'time_created': 'datetime',
             'etag': 'str',
-            'public_access_type': 'str'
+            'public_access_type': 'str',
+            'storage_tier': 'str'
         }
 
         self.attribute_map = {
@@ -28,7 +29,8 @@ class Bucket(object):
             'created_by': 'createdBy',
             'time_created': 'timeCreated',
             'etag': 'etag',
-            'public_access_type': 'publicAccessType'
+            'public_access_type': 'publicAccessType',
+            'storage_tier': 'storageTier'
         }
 
         self._namespace = None
@@ -39,6 +41,7 @@ class Bucket(object):
         self._time_created = None
         self._etag = None
         self._public_access_type = None
+        self._storage_tier = None
 
     @property
     def namespace(self):
@@ -68,7 +71,8 @@ class Bucket(object):
     def name(self):
         """
         Gets the name of this Bucket.
-        The name of the bucket.
+        The name of the bucket. Avoid entering confidential information.
+        Example: my-new-bucket1
 
 
         :return: The name of this Bucket.
@@ -80,7 +84,8 @@ class Bucket(object):
     def name(self, name):
         """
         Sets the name of this Bucket.
-        The name of the bucket.
+        The name of the bucket. Avoid entering confidential information.
+        Example: my-new-bucket1
 
 
         :param name: The name of this Bucket.
@@ -164,7 +169,9 @@ class Bucket(object):
     def time_created(self):
         """
         Gets the time_created of this Bucket.
-        The date and time at which the bucket was created.
+        The date and time the bucket was created, as described in `RFC 2616`__, section 14.29.
+
+        __ https://tools.ietf.org/rfc/rfc2616
 
 
         :return: The time_created of this Bucket.
@@ -176,7 +183,9 @@ class Bucket(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Bucket.
-        The date and time at which the bucket was created.
+        The date and time the bucket was created, as described in `RFC 2616`__, section 14.29.
+
+        __ https://tools.ietf.org/rfc/rfc2616
 
 
         :param time_created: The time_created of this Bucket.
@@ -212,10 +221,10 @@ class Bucket(object):
     def public_access_type(self):
         """
         Gets the public_access_type of this Bucket.
-        The type of public access available on this bucket. Allows authenticated caller to access the bucket or
-        contents of this bucket. By default a bucket is set to NoPublicAccess. It is treated as NoPublicAccess
-        when this value is not specified. When the type is NoPublicAccess the bucket does not allow any public access.
-        When the type is ObjectRead the bucket allows public access to the GetObject, HeadObject, ListObjects.
+        The type of public access enabled on this bucket.
+        A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the
+        bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the
+        `GetObject`, `HeadObject`, and `ListObjects` operations.
 
         Allowed values for this property are: "NoPublicAccess", "ObjectRead", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -230,10 +239,10 @@ class Bucket(object):
     def public_access_type(self, public_access_type):
         """
         Sets the public_access_type of this Bucket.
-        The type of public access available on this bucket. Allows authenticated caller to access the bucket or
-        contents of this bucket. By default a bucket is set to NoPublicAccess. It is treated as NoPublicAccess
-        when this value is not specified. When the type is NoPublicAccess the bucket does not allow any public access.
-        When the type is ObjectRead the bucket allows public access to the GetObject, HeadObject, ListObjects.
+        The type of public access enabled on this bucket.
+        A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the
+        bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the
+        `GetObject`, `HeadObject`, and `ListObjects` operations.
 
 
         :param public_access_type: The public_access_type of this Bucket.
@@ -243,6 +252,42 @@ class Bucket(object):
         if public_access_type not in allowed_values:
             public_access_type = 'UNKNOWN_ENUM_VALUE'
         self._public_access_type = public_access_type
+
+    @property
+    def storage_tier(self):
+        """
+        Gets the storage_tier of this Bucket.
+        The type of storage tier of this bucket.
+        A bucket is set to 'Standard' tier by default, which means the bucket will be put in the standard storage tier.
+        When 'Archive' tier type is set explicitly, the bucket is put in the Archive Storage tier. The 'storageTier'
+        property is immutable once the bucket is created.
+
+        Allowed values for this property are: "Standard", "Archive", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The storage_tier of this Bucket.
+        :rtype: str
+        """
+        return self._storage_tier
+
+    @storage_tier.setter
+    def storage_tier(self, storage_tier):
+        """
+        Sets the storage_tier of this Bucket.
+        The type of storage tier of this bucket.
+        A bucket is set to 'Standard' tier by default, which means the bucket will be put in the standard storage tier.
+        When 'Archive' tier type is set explicitly, the bucket is put in the Archive Storage tier. The 'storageTier'
+        property is immutable once the bucket is created.
+
+
+        :param storage_tier: The storage_tier of this Bucket.
+        :type: str
+        """
+        allowed_values = ["Standard", "Archive"]
+        if storage_tier not in allowed_values:
+            storage_tier = 'UNKNOWN_ENUM_VALUE'
+        self._storage_tier = storage_tier
 
     def __repr__(self):
         return formatted_flat_dict(self)

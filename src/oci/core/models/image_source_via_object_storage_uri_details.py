@@ -27,7 +27,7 @@ class ImageSourceViaObjectStorageUriDetails(ImageSourceDetails):
     def source_uri(self):
         """
         Gets the source_uri of this ImageSourceViaObjectStorageUriDetails.
-        The Object Storage Service URL for the image.
+        The Object Storage URL for the image.
 
 
         :return: The source_uri of this ImageSourceViaObjectStorageUriDetails.
@@ -39,7 +39,7 @@ class ImageSourceViaObjectStorageUriDetails(ImageSourceDetails):
     def source_uri(self, source_uri):
         """
         Sets the source_uri of this ImageSourceViaObjectStorageUriDetails.
-        The Object Storage Service URL for the image.
+        The Object Storage URL for the image.
 
 
         :param source_uri: The source_uri of this ImageSourceViaObjectStorageUriDetails.

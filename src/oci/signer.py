@@ -146,9 +146,13 @@ class Signer(requests.auth.AuthBase):
 
     """
 
-    def __init__(self, tenancy, user, fingerprint, private_key_file_location, pass_phrase=None):
+    def __init__(self, tenancy, user, fingerprint, private_key_file_location, pass_phrase=None, private_key_content=None):
         self.api_key = tenancy + "/" + user + "/" + fingerprint
-        self.private_key = load_private_key_from_file(private_key_file_location, pass_phrase)
+
+        if private_key_content:
+            self.private_key = load_private_key(private_key_content, pass_phrase)
+        else:
+            self.private_key = load_private_key_from_file(private_key_file_location, pass_phrase)
 
         generic_headers = ["date", "(request-target)", "host"]
         body_headers = ["content-length", "content-type", "x-content-sha256"]

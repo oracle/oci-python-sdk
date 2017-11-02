@@ -21,8 +21,9 @@ class IdentityClient(object):
             tenancy=config["tenancy"],
             user=config["user"],
             fingerprint=config["fingerprint"],
-            private_key_file_location=config["key_file"],
-            pass_phrase=get_config_value_or_default(config, "pass_phrase")
+            private_key_file_location=config.get("key_file"),
+            pass_phrase=get_config_value_or_default(config, "pass_phrase"),
+            private_key_content=config.get("key_content")
         )
         self.base_client = BaseClient("identity", config, signer, identity_type_mapping)
 
@@ -79,14 +80,14 @@ class IdentityClient(object):
         CreateCompartment
         Creates a new compartment in your tenancy.
 
-        **Important:** Compartments cannot be renamed or deleted.
+        **Important:** Compartments cannot be deleted.
 
         You must specify your tenancy's OCID as the compartment ID in the request object. Remember that the tenancy
         is simply the root compartment. For information about OCIDs, see
         `Resource Identifiers`__.
 
         You must also specify a *name* for the compartment, which must be unique across all compartments in
-        your tenancy and cannot be changed. You can use this name or the OCID when writing policies that apply
+        your tenancy. You can use this name or the OCID when writing policies that apply
         to the compartment. For more information about policies, see
         `How Policies Work`__.
 
@@ -189,7 +190,12 @@ class IdentityClient(object):
         path_params = {
             "userId": user_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -377,7 +383,12 @@ class IdentityClient(object):
         path_params = {
             "identityProviderId": identity_provider_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -440,7 +451,12 @@ class IdentityClient(object):
         path_params = {
             "userId": user_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -558,7 +574,12 @@ class IdentityClient(object):
         path_params = {
             "tenancyId": tenancy_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -623,7 +644,12 @@ class IdentityClient(object):
         path_params = {
             "userId": user_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -672,7 +698,7 @@ class IdentityClient(object):
         :func:`add_user_to_group`). If the user needs to
         access the Console, you need to provide the user a password (see
         :func:`create_or_reset_ui_password`).
-        If the user needs to access the Oracle Bare Metal Cloud Services REST API, you need to upload a
+        If the user needs to access the Oracle Cloud Infrastructure REST API, you need to upload a
         public API signing key for that user (see
         `Required Keys and OCIDs`__ and also
         :func:`upload_api_key`).
@@ -764,7 +790,12 @@ class IdentityClient(object):
             "userId": user_id,
             "fingerprint": fingerprint
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -815,7 +846,12 @@ class IdentityClient(object):
             "userId": user_id,
             "customerSecretKeyId": customer_secret_key_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -862,7 +898,12 @@ class IdentityClient(object):
         path_params = {
             "groupId": group_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -910,7 +951,12 @@ class IdentityClient(object):
         path_params = {
             "identityProviderId": identity_provider_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -961,7 +1007,12 @@ class IdentityClient(object):
             "identityProviderId": identity_provider_id,
             "mappingId": mapping_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -1008,7 +1059,12 @@ class IdentityClient(object):
         path_params = {
             "policyId": policy_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -1059,7 +1115,12 @@ class IdentityClient(object):
             "userId": user_id,
             "swiftPasswordId": swift_password_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -1106,7 +1167,12 @@ class IdentityClient(object):
         path_params = {
             "userId": user_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -1150,7 +1216,12 @@ class IdentityClient(object):
         path_params = {
             "compartmentId": compartment_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -1190,7 +1261,12 @@ class IdentityClient(object):
         path_params = {
             "groupId": group_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -1226,7 +1302,12 @@ class IdentityClient(object):
         path_params = {
             "identityProviderId": identity_provider_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -1266,7 +1347,12 @@ class IdentityClient(object):
             "identityProviderId": identity_provider_id,
             "mappingId": mapping_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -1302,7 +1388,12 @@ class IdentityClient(object):
         path_params = {
             "policyId": policy_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -1338,7 +1429,12 @@ class IdentityClient(object):
         path_params = {
             "tenancyId": tenancy_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -1374,7 +1470,12 @@ class IdentityClient(object):
         path_params = {
             "userId": user_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -1410,7 +1511,12 @@ class IdentityClient(object):
         path_params = {
             "userGroupMembershipId": user_group_membership_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -1449,7 +1555,12 @@ class IdentityClient(object):
         path_params = {
             "userId": user_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -1580,7 +1691,12 @@ class IdentityClient(object):
         path_params = {
             "userId": user_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -1662,6 +1778,8 @@ class IdentityClient(object):
         :param str protocol: (required)
             The protocol used for federation.
 
+            Allowed values are: "SAML2"
+
         :param str compartment_id: (required)
             The OCID of the compartment (remember that the tenancy is simply the root compartment).
 
@@ -1741,7 +1859,12 @@ class IdentityClient(object):
         path_params = {
             "identityProviderId": identity_provider_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -1840,7 +1963,12 @@ class IdentityClient(object):
         path_params = {
             "tenancyId": tenancy_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -1857,7 +1985,7 @@ class IdentityClient(object):
     def list_regions(self, **kwargs):
         """
         ListRegions
-        Lists all the regions offered by Oracle Bare Metal Cloud Services.
+        Lists all the regions offered by Oracle Cloud Infrastructure.
 
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.Region`
@@ -1904,7 +2032,12 @@ class IdentityClient(object):
         path_params = {
             "userId": user_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -2074,7 +2207,12 @@ class IdentityClient(object):
         path_params = {
             "userGroupMembershipId": user_group_membership_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -2092,7 +2230,7 @@ class IdentityClient(object):
     def update_compartment(self, compartment_id, update_compartment_details, **kwargs):
         """
         UpdateCompartment
-        Updates the specified compartment's description.
+        Updates the specified compartment's description or name. You can't update the root compartment.
 
 
         :param str compartment_id: (required)
@@ -2124,7 +2262,12 @@ class IdentityClient(object):
         path_params = {
             "compartmentId": compartment_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -2180,7 +2323,12 @@ class IdentityClient(object):
             "userId": user_id,
             "customerSecretKeyId": customer_secret_key_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -2232,7 +2380,12 @@ class IdentityClient(object):
         path_params = {
             "groupId": group_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -2284,7 +2437,12 @@ class IdentityClient(object):
         path_params = {
             "identityProviderId": identity_provider_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -2340,7 +2498,12 @@ class IdentityClient(object):
             "identityProviderId": identity_provider_id,
             "mappingId": mapping_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -2394,7 +2557,12 @@ class IdentityClient(object):
         path_params = {
             "policyId": policy_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -2450,7 +2618,12 @@ class IdentityClient(object):
             "userId": user_id,
             "swiftPasswordId": swift_password_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -2502,7 +2675,12 @@ class IdentityClient(object):
         path_params = {
             "userId": user_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -2554,7 +2732,12 @@ class IdentityClient(object):
         path_params = {
             "userId": user_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -2622,7 +2805,12 @@ class IdentityClient(object):
         path_params = {
             "userId": user_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",

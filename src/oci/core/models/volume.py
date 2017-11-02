@@ -14,9 +14,11 @@ class Volume(object):
             'compartment_id': 'str',
             'display_name': 'str',
             'id': 'str',
+            'is_hydrated': 'bool',
             'lifecycle_state': 'str',
             'size_in_gbs': 'int',
             'size_in_mbs': 'int',
+            'source_details': 'VolumeSourceDetails',
             'time_created': 'datetime'
         }
 
@@ -25,9 +27,11 @@ class Volume(object):
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'id': 'id',
+            'is_hydrated': 'isHydrated',
             'lifecycle_state': 'lifecycleState',
             'size_in_gbs': 'sizeInGBs',
             'size_in_mbs': 'sizeInMBs',
+            'source_details': 'sourceDetails',
             'time_created': 'timeCreated'
         }
 
@@ -35,9 +39,11 @@ class Volume(object):
         self._compartment_id = None
         self._display_name = None
         self._id = None
+        self._is_hydrated = None
         self._lifecycle_state = None
         self._size_in_gbs = None
         self._size_in_mbs = None
+        self._source_details = None
         self._time_created = None
 
     @property
@@ -122,7 +128,7 @@ class Volume(object):
     def id(self):
         """
         Gets the id of this Volume.
-        The volume's Oracle ID (OCID).
+        The OCID of the volume.
 
 
         :return: The id of this Volume.
@@ -134,13 +140,37 @@ class Volume(object):
     def id(self, id):
         """
         Sets the id of this Volume.
-        The volume's Oracle ID (OCID).
+        The OCID of the volume.
 
 
         :param id: The id of this Volume.
         :type: str
         """
         self._id = id
+
+    @property
+    def is_hydrated(self):
+        """
+        Gets the is_hydrated of this Volume.
+        Specifies whether the cloned volume's data has finished copying from the source volume or backup.
+
+
+        :return: The is_hydrated of this Volume.
+        :rtype: bool
+        """
+        return self._is_hydrated
+
+    @is_hydrated.setter
+    def is_hydrated(self, is_hydrated):
+        """
+        Sets the is_hydrated of this Volume.
+        Specifies whether the cloned volume's data has finished copying from the source volume or backup.
+
+
+        :param is_hydrated: The is_hydrated of this Volume.
+        :type: bool
+        """
+        self._is_hydrated = is_hydrated
 
     @property
     def lifecycle_state(self):
@@ -200,7 +230,7 @@ class Volume(object):
     def size_in_mbs(self):
         """
         Gets the size_in_mbs of this Volume.
-        The size of the volume in MBs. This field is deprecated. Please use sizeInGBs.
+        The size of the volume in MBs. This field is deprecated. Use sizeInGBs instead.
 
 
         :return: The size_in_mbs of this Volume.
@@ -212,13 +242,39 @@ class Volume(object):
     def size_in_mbs(self, size_in_mbs):
         """
         Sets the size_in_mbs of this Volume.
-        The size of the volume in MBs. This field is deprecated. Please use sizeInGBs.
+        The size of the volume in MBs. This field is deprecated. Use sizeInGBs instead.
 
 
         :param size_in_mbs: The size_in_mbs of this Volume.
         :type: int
         """
         self._size_in_mbs = size_in_mbs
+
+    @property
+    def source_details(self):
+        """
+        Gets the source_details of this Volume.
+        The volume source, either an existing volume in the same Availability Domain or a volume backup.
+        If null, an empty volume is created.
+
+
+        :return: The source_details of this Volume.
+        :rtype: VolumeSourceDetails
+        """
+        return self._source_details
+
+    @source_details.setter
+    def source_details(self, source_details):
+        """
+        Sets the source_details of this Volume.
+        The volume source, either an existing volume in the same Availability Domain or a volume backup.
+        If null, an empty volume is created.
+
+
+        :param source_details: The source_details of this Volume.
+        :type: VolumeSourceDetails
+        """
+        self._source_details = source_details
 
     @property
     def time_created(self):

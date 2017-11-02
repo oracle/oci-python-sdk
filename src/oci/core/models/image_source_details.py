@@ -40,7 +40,7 @@ class ImageSourceDetails(object):
         """
         Gets the source_type of this ImageSourceDetails.
         The source type for the image. Use `objectStorageTuple` when specifying the namespace,
-        bucket name, and object name. Use `objectStorageUri` when specifying the Object Storage Service URL.
+        bucket name, and object name. Use `objectStorageUri` when specifying the Object Storage URL.
 
 
         :return: The source_type of this ImageSourceDetails.
@@ -53,7 +53,7 @@ class ImageSourceDetails(object):
         """
         Sets the source_type of this ImageSourceDetails.
         The source type for the image. Use `objectStorageTuple` when specifying the namespace,
-        bucket name, and object name. Use `objectStorageUri` when specifying the Object Storage Service URL.
+        bucket name, and object name. Use `objectStorageUri` when specifying the Object Storage URL.
 
 
         :param source_type: The source_type of this ImageSourceDetails.

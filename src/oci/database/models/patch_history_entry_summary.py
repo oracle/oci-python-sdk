@@ -43,7 +43,7 @@ class PatchHistoryEntrySummary(object):
         Gets the action of this PatchHistoryEntrySummary.
         The action being performed or was completed.
 
-        Allowed values for this property are: "APPLY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "APPLY", "PRECHECK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -62,7 +62,7 @@ class PatchHistoryEntrySummary(object):
         :param action: The action of this PatchHistoryEntrySummary.
         :type: str
         """
-        allowed_values = ["APPLY"]
+        allowed_values = ["APPLY", "PRECHECK"]
         if action not in allowed_values:
             action = 'UNKNOWN_ENUM_VALUE'
         self._action = action

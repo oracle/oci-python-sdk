@@ -21,8 +21,9 @@ class LoadBalancerClient(object):
             tenancy=config["tenancy"],
             user=config["user"],
             fingerprint=config["fingerprint"],
-            private_key_file_location=config["key_file"],
-            pass_phrase=get_config_value_or_default(config, "pass_phrase")
+            private_key_file_location=config.get("key_file"),
+            pass_phrase=get_config_value_or_default(config, "pass_phrase"),
+            private_key_content=config.get("key_content")
         )
         self.base_client = BaseClient("load_balancer", config, signer, load_balancer_type_mapping)
 
@@ -76,7 +77,12 @@ class LoadBalancerClient(object):
             "loadBalancerId": load_balancer_id,
             "backendSetName": backend_set_name
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -137,7 +143,12 @@ class LoadBalancerClient(object):
         path_params = {
             "loadBalancerId": load_balancer_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -198,7 +209,12 @@ class LoadBalancerClient(object):
         path_params = {
             "loadBalancerId": load_balancer_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -259,7 +275,12 @@ class LoadBalancerClient(object):
         path_params = {
             "loadBalancerId": load_balancer_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -402,7 +423,12 @@ class LoadBalancerClient(object):
             "backendSetName": backend_set_name,
             "backendName": backend_name
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -458,7 +484,12 @@ class LoadBalancerClient(object):
             "loadBalancerId": load_balancer_id,
             "backendSetName": backend_set_name
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -512,7 +543,12 @@ class LoadBalancerClient(object):
             "loadBalancerId": load_balancer_id,
             "certificateName": certificate_name
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -566,7 +602,12 @@ class LoadBalancerClient(object):
             "loadBalancerId": load_balancer_id,
             "listenerName": listener_name
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -614,7 +655,12 @@ class LoadBalancerClient(object):
         path_params = {
             "loadBalancerId": load_balancer_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -674,7 +720,12 @@ class LoadBalancerClient(object):
             "backendSetName": backend_set_name,
             "backendName": backend_name
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -735,7 +786,12 @@ class LoadBalancerClient(object):
             "backendSetName": backend_set_name,
             "backendName": backend_name
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -790,7 +846,12 @@ class LoadBalancerClient(object):
             "loadBalancerId": load_balancer_id,
             "backendSetName": backend_set_name
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -845,7 +906,12 @@ class LoadBalancerClient(object):
             "loadBalancerId": load_balancer_id,
             "backendSetName": backend_set_name
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -900,7 +966,12 @@ class LoadBalancerClient(object):
             "loadBalancerId": load_balancer_id,
             "backendSetName": backend_set_name
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -949,7 +1020,12 @@ class LoadBalancerClient(object):
         path_params = {
             "loadBalancerId": load_balancer_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -998,7 +1074,12 @@ class LoadBalancerClient(object):
         path_params = {
             "loadBalancerId": load_balancer_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -1047,7 +1128,12 @@ class LoadBalancerClient(object):
         path_params = {
             "workRequestId": work_request_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -1096,7 +1182,12 @@ class LoadBalancerClient(object):
         path_params = {
             "loadBalancerId": load_balancer_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -1151,7 +1242,12 @@ class LoadBalancerClient(object):
             "loadBalancerId": load_balancer_id,
             "backendSetName": backend_set_name
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -1200,7 +1296,12 @@ class LoadBalancerClient(object):
         path_params = {
             "loadBalancerId": load_balancer_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -1583,7 +1684,12 @@ class LoadBalancerClient(object):
         path_params = {
             "loadBalancerId": load_balancer_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -1662,7 +1768,12 @@ class LoadBalancerClient(object):
             "backendSetName": backend_set_name,
             "backendName": backend_name
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -1729,7 +1840,12 @@ class LoadBalancerClient(object):
             "loadBalancerId": load_balancer_id,
             "backendSetName": backend_set_name
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -1796,7 +1912,12 @@ class LoadBalancerClient(object):
             "loadBalancerId": load_balancer_id,
             "backendSetName": backend_set_name
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -1863,7 +1984,12 @@ class LoadBalancerClient(object):
             "loadBalancerId": load_balancer_id,
             "listenerName": listener_name
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",
@@ -1924,7 +2050,12 @@ class LoadBalancerClient(object):
         path_params = {
             "loadBalancerId": load_balancer_id
         }
+
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
             "accept": "application/json",

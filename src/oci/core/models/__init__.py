@@ -100,6 +100,9 @@ from .vnic_attachment import VnicAttachment
 from .volume import Volume
 from .volume_attachment import VolumeAttachment
 from .volume_backup import VolumeBackup
+from .volume_source_details import VolumeSourceDetails
+from .volume_source_from_volume_backup_details import VolumeSourceFromVolumeBackupDetails
+from .volume_source_from_volume_details import VolumeSourceFromVolumeDetails
 
 # Maps type names to classes for core services.
 core_type_mapping = {
@@ -199,5 +202,8 @@ core_type_mapping = {
     "VnicAttachment": VnicAttachment,
     "Volume": Volume,
     "VolumeAttachment": VolumeAttachment,
-    "VolumeBackup": VolumeBackup
+    "VolumeBackup": VolumeBackup,
+    "VolumeSourceDetails": VolumeSourceDetails,
+    "VolumeSourceFromVolumeBackupDetails": VolumeSourceFromVolumeBackupDetails,
+    "VolumeSourceFromVolumeDetails": VolumeSourceFromVolumeDetails
 }

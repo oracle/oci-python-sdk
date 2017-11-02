@@ -28,7 +28,7 @@ class PatchDetails(object):
         Gets the action of this PatchDetails.
         The action to perform on the patch.
 
-        Allowed values for this property are: "APPLY"
+        Allowed values for this property are: "APPLY", "PRECHECK"
 
 
         :return: The action of this PatchDetails.
@@ -46,7 +46,7 @@ class PatchDetails(object):
         :param action: The action of this PatchDetails.
         :type: str
         """
-        allowed_values = ["APPLY"]
+        allowed_values = ["APPLY", "PRECHECK"]
         if action not in allowed_values:
             raise ValueError(
                 "Invalid value for `action`, must be one of {0}"

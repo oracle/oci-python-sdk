@@ -19,6 +19,7 @@ from .config import get_config_value_or_default, validate_config
 from .request import Request
 from .response import Response
 from .version import __version__
+from .util import NONE_SENTINEL
 
 USER_INFO = "Oracle-PythonSDK/{}".format(__version__)
 
@@ -213,6 +214,8 @@ class BaseClient(object):
 
         if isinstance(obj, types):
             return obj
+        elif obj is NONE_SENTINEL:
+            return None
         elif isinstance(obj, list):
             return [self.sanitize_for_serialization(sub_obj)
                     for sub_obj in obj]

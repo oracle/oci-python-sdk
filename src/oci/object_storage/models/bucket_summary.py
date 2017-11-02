@@ -62,7 +62,8 @@ class BucketSummary(object):
     def name(self):
         """
         Gets the name of this BucketSummary.
-        The name of the bucket.
+        The name of the bucket. Avoid entering confidential information.
+        Example: my-new-bucket1
 
 
         :return: The name of this BucketSummary.
@@ -74,7 +75,8 @@ class BucketSummary(object):
     def name(self, name):
         """
         Sets the name of this BucketSummary.
-        The name of the bucket.
+        The name of the bucket. Avoid entering confidential information.
+        Example: my-new-bucket1
 
 
         :param name: The name of this BucketSummary.
@@ -134,7 +136,9 @@ class BucketSummary(object):
     def time_created(self):
         """
         Gets the time_created of this BucketSummary.
-        The date and time at which the bucket was created.
+        The date and time the bucket was created, as described in `RFC 2616`__, section 14.29.
+
+        __ https://tools.ietf.org/rfc/rfc2616
 
 
         :return: The time_created of this BucketSummary.
@@ -146,7 +150,9 @@ class BucketSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this BucketSummary.
-        The date and time at which the bucket was created.
+        The date and time the bucket was created, as described in `RFC 2616`__, section 14.29.
+
+        __ https://tools.ietf.org/rfc/rfc2616
 
 
         :param time_created: The time_created of this BucketSummary.

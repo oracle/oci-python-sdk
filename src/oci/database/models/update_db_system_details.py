@@ -11,20 +11,20 @@ class UpdateDbSystemDetails(object):
 
         self.swagger_types = {
             'cpu_core_count': 'int',
-            'data_storage_size_in_gb': 'int',
+            'data_storage_size_in_gbs': 'int',
             'ssh_public_keys': 'list[str]',
             'version': 'PatchDetails'
         }
 
         self.attribute_map = {
             'cpu_core_count': 'cpuCoreCount',
-            'data_storage_size_in_gb': 'dataStorageSizeInGB',
+            'data_storage_size_in_gbs': 'dataStorageSizeInGBs',
             'ssh_public_keys': 'sshPublicKeys',
             'version': 'version'
         }
 
         self._cpu_core_count = None
-        self._data_storage_size_in_gb = None
+        self._data_storage_size_in_gbs = None
         self._ssh_public_keys = None
         self._version = None
 
@@ -53,28 +53,28 @@ class UpdateDbSystemDetails(object):
         self._cpu_core_count = cpu_core_count
 
     @property
-    def data_storage_size_in_gb(self):
+    def data_storage_size_in_gbs(self):
         """
-        Gets the data_storage_size_in_gb of this UpdateDbSystemDetails.
+        Gets the data_storage_size_in_gbs of this UpdateDbSystemDetails.
         Size, in GBs, to which the currently attached storage needs to be scaled up to for VM based DB system. This must be greater than current storage size. Note that the total storage size attached will be more than what is requested, to account for REDO/RECO space and software volume.
 
 
-        :return: The data_storage_size_in_gb of this UpdateDbSystemDetails.
+        :return: The data_storage_size_in_gbs of this UpdateDbSystemDetails.
         :rtype: int
         """
-        return self._data_storage_size_in_gb
+        return self._data_storage_size_in_gbs
 
-    @data_storage_size_in_gb.setter
-    def data_storage_size_in_gb(self, data_storage_size_in_gb):
+    @data_storage_size_in_gbs.setter
+    def data_storage_size_in_gbs(self, data_storage_size_in_gbs):
         """
-        Sets the data_storage_size_in_gb of this UpdateDbSystemDetails.
+        Sets the data_storage_size_in_gbs of this UpdateDbSystemDetails.
         Size, in GBs, to which the currently attached storage needs to be scaled up to for VM based DB system. This must be greater than current storage size. Note that the total storage size attached will be more than what is requested, to account for REDO/RECO space and software volume.
 
 
-        :param data_storage_size_in_gb: The data_storage_size_in_gb of this UpdateDbSystemDetails.
+        :param data_storage_size_in_gbs: The data_storage_size_in_gbs of this UpdateDbSystemDetails.
         :type: int
         """
-        self._data_storage_size_in_gb = data_storage_size_in_gb
+        self._data_storage_size_in_gbs = data_storage_size_in_gbs
 
     @property
     def ssh_public_keys(self):
