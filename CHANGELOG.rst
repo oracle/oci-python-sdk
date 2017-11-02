@@ -16,6 +16,7 @@ Added
 * Support for backup and restore in Database service
 * Support for sorting and filtering in list APIs in Core Services
 * Support for passing explicit None values to service operations. Consult the *Passing explicit Null/None values* section of the `docs <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io>`_ for more information.
+* Support for supplying private key contents through the 'key_content' config field
 
 Changed
 -------
