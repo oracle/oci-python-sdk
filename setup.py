@@ -26,7 +26,10 @@ with open_relative("src", "oci", "version.py") as fd:
         raise RuntimeError("Cannot find version information")
 
 with open_relative("README.rst") as f:
-    readme = f.read()
+    raw_readme = f.read()
+pattern = re.compile("([\S\s]*)(============\nDevelopment\n============\n\n[\S\s]*\n\n)(========\nExamples\n========\n\n[\S\s]*)")
+search_results = pattern.search(raw_readme)
+readme = search_results.groups()[0] + search_results.groups()[2]
 
 requires = [
     "certifi",
