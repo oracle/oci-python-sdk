@@ -31,6 +31,7 @@
 ^LICENSE\.txt$
 ^MANIFEST\.in$
 ^README\.rst$
+^README-development\.rst$
 ^requirements\.txt$
 ^setup\.cfg$
 ^setup\.py$
