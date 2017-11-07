@@ -11,7 +11,7 @@ import six
 missing = Sentinel("Missing")
 
 
-def wrapped_init(init_fn):
+def wrap_init_to_set_state_from_kwargs(init_fn):
     @functools.wraps(init_fn)
     def init(self, **kwargs):
         init_fn(self)
@@ -35,5 +35,5 @@ def wrapped_init(init_fn):
 # Additionally, providing unrecognized keyword arguments (i.e. they do not match any swagger_type defined attribute) will result in
 # a TypeError being thrown.
 def init_model_state_from_kwargs(original_cls):
-    original_cls.__init__ = wrapped_init(original_cls.__init__)
+    original_cls.__init__ = wrap_init_to_set_state_from_kwargs(original_cls.__init__)
     return original_cls
