@@ -4,10 +4,26 @@
 
 from .util import Sentinel
 
+import functools
 import six
 
 
 missing = Sentinel("Missing")
+
+
+def wrapped_init(init_fn):
+    @functools.wraps(init_fn)
+    def init(self, **kwargs):
+        init_fn(self)
+        for attr_name in six.iterkeys(self.swagger_types):
+            value = kwargs.pop(attr_name, missing)
+            if value is not missing:
+                setattr(self, attr_name, value)
+
+        if kwargs:
+            raise TypeError('Unrecognized keyword arguments: {}'.format(', '.join(six.iterkeys(kwargs))))
+
+    return init
 
 
 # This decorator is intended to be applied at the class level on model classes so that their state can be instantiated
@@ -19,16 +35,5 @@ missing = Sentinel("Missing")
 # Additionally, providing unrecognized keyword arguments (i.e. they do not match any swagger_type defined attribute) will result in
 # a TypeError being thrown.
 def init_model_state_from_kwargs(original_cls):
-    class InitModelStateFromKwargsWrappedClass(original_cls):
-        def __init__(self, **kwargs):
-            super(InitModelStateFromKwargsWrappedClass, self).__init__()
-
-            for attr_name in six.iterkeys(self.swagger_types):
-                value = kwargs.pop(attr_name, missing)
-                if value is not missing:
-                    setattr(self, attr_name, value)
-
-            if kwargs:
-                raise TypeError('Unrecognized keyword arguments: {}'.format(', '.join(six.iterkeys(kwargs))))
-
-    return InitModelStateFromKwargsWrappedClass
+    original_cls.__init__ = wrapped_init(original_cls.__init__)
+    return original_cls
