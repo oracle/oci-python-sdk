@@ -7,6 +7,7 @@ from .attach_i_scsi_volume_details import AttachIScsiVolumeDetails
 from .attach_vnic_details import AttachVnicDetails
 from .attach_volume_details import AttachVolumeDetails
 from .capture_console_history_details import CaptureConsoleHistoryDetails
+from .connect_local_peering_gateways_details import ConnectLocalPeeringGatewaysDetails
 from .console_history import ConsoleHistory
 from .cpe import Cpe
 from .create_cpe_details import CreateCpeDetails
@@ -19,6 +20,7 @@ from .create_ip_sec_connection_details import CreateIPSecConnectionDetails
 from .create_image_details import CreateImageDetails
 from .create_instance_console_connection_details import CreateInstanceConsoleConnectionDetails
 from .create_internet_gateway_details import CreateInternetGatewayDetails
+from .create_local_peering_gateway_details import CreateLocalPeeringGatewayDetails
 from .create_private_ip_details import CreatePrivateIpDetails
 from .create_route_table_details import CreateRouteTableDetails
 from .create_security_list_details import CreateSecurityListDetails
@@ -61,6 +63,7 @@ from .instance_credentials import InstanceCredentials
 from .internet_gateway import InternetGateway
 from .launch_instance_details import LaunchInstanceDetails
 from .letter_of_authority import LetterOfAuthority
+from .local_peering_gateway import LocalPeeringGateway
 from .port_range import PortRange
 from .private_ip import PrivateIp
 from .route_rule import RouteRule
@@ -83,6 +86,7 @@ from .update_ip_sec_connection_details import UpdateIPSecConnectionDetails
 from .update_image_details import UpdateImageDetails
 from .update_instance_details import UpdateInstanceDetails
 from .update_internet_gateway_details import UpdateInternetGatewayDetails
+from .update_local_peering_gateway_details import UpdateLocalPeeringGatewayDetails
 from .update_private_ip_details import UpdatePrivateIpDetails
 from .update_route_table_details import UpdateRouteTableDetails
 from .update_security_list_details import UpdateSecurityListDetails
@@ -110,6 +114,7 @@ core_type_mapping = {
     "AttachVnicDetails": AttachVnicDetails,
     "AttachVolumeDetails": AttachVolumeDetails,
     "CaptureConsoleHistoryDetails": CaptureConsoleHistoryDetails,
+    "ConnectLocalPeeringGatewaysDetails": ConnectLocalPeeringGatewaysDetails,
     "ConsoleHistory": ConsoleHistory,
     "Cpe": Cpe,
     "CreateCpeDetails": CreateCpeDetails,
@@ -122,6 +127,7 @@ core_type_mapping = {
     "CreateImageDetails": CreateImageDetails,
     "CreateInstanceConsoleConnectionDetails": CreateInstanceConsoleConnectionDetails,
     "CreateInternetGatewayDetails": CreateInternetGatewayDetails,
+    "CreateLocalPeeringGatewayDetails": CreateLocalPeeringGatewayDetails,
     "CreatePrivateIpDetails": CreatePrivateIpDetails,
     "CreateRouteTableDetails": CreateRouteTableDetails,
     "CreateSecurityListDetails": CreateSecurityListDetails,
@@ -164,6 +170,7 @@ core_type_mapping = {
     "InternetGateway": InternetGateway,
     "LaunchInstanceDetails": LaunchInstanceDetails,
     "LetterOfAuthority": LetterOfAuthority,
+    "LocalPeeringGateway": LocalPeeringGateway,
     "PortRange": PortRange,
     "PrivateIp": PrivateIp,
     "RouteRule": RouteRule,
@@ -186,6 +193,7 @@ core_type_mapping = {
     "UpdateImageDetails": UpdateImageDetails,
     "UpdateInstanceDetails": UpdateInstanceDetails,
     "UpdateInternetGatewayDetails": UpdateInternetGatewayDetails,
+    "UpdateLocalPeeringGatewayDetails": UpdateLocalPeeringGatewayDetails,
     "UpdatePrivateIpDetails": UpdatePrivateIpDetails,
     "UpdateRouteTableDetails": UpdateRouteTableDetails,
     "UpdateSecurityListDetails": UpdateSecurityListDetails,
