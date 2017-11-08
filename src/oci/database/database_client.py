@@ -149,7 +149,7 @@ class DatabaseClient(object):
         Creates a new DB Home in the specified DB System based on the request parameters you provide.
 
 
-        :param CreateDbHomeWithDbSystemIdDetails create_db_home_with_db_system_id_details: (required)
+        :param CreateDbHomeWithDbSystemIdBase create_db_home_with_db_system_id_details: (required)
             Request to create a new DB Home.
 
         :param str opc_retry_token: (optional)
