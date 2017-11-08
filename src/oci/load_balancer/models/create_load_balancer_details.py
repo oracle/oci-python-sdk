@@ -153,7 +153,7 @@ class CreateLoadBalancerDetails(object):
 
         If \"false\", the service assigns a public IP address to the load balancer. A load balancer with a public IP address
         requires two subnets, each in a different Availability Domain. One subnet hosts the primary load balancer and the other
-        hosts the secondary (stand-by) load balancer. A public load balancer is accessible from the internet, depending on your
+        hosts the secondary (standby) load balancer. A public load balancer is accessible from the internet, depending on your
         VCN's `security list rules`__.
 
         Example: `false`
@@ -181,7 +181,7 @@ class CreateLoadBalancerDetails(object):
 
         If \"false\", the service assigns a public IP address to the load balancer. A load balancer with a public IP address
         requires two subnets, each in a different Availability Domain. One subnet hosts the primary load balancer and the other
-        hosts the secondary (stand-by) load balancer. A public load balancer is accessible from the internet, depending on your
+        hosts the secondary (standby) load balancer. A public load balancer is accessible from the internet, depending on your
         VCN's `security list rules`__.
 
         Example: `false`
