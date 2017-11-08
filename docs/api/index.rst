@@ -28,6 +28,7 @@ API Reference
 --------
 
 .. automodule:: oci.audit.models
+    :special-members: __init__
     :members:
     :undoc-members:
     :imported-members:
@@ -65,6 +66,7 @@ Virtual Network
 --------
 
 .. automodule:: oci.core.models
+    :special-members: __init__
     :members:
     :undoc-members:
     :imported-members:
@@ -85,6 +87,7 @@ Virtual Network
 --------
 
 .. automodule:: oci.database.models
+    :special-members: __init__
     :members:
     :undoc-members:
     :imported-members:
@@ -105,6 +108,7 @@ Virtual Network
 --------
 
 .. automodule:: oci.identity.models
+    :special-members: __init__
     :members:
     :undoc-members:
     :imported-members:
@@ -125,6 +129,7 @@ Load Balancer
 --------
 
 .. automodule:: oci.load_balancer.models
+    :special-members: __init__
     :members:
     :undoc-members:
     :imported-members:
@@ -145,6 +150,7 @@ Load Balancer
 --------
 
 .. automodule:: oci.object_storage.models
+    :special-members: __init__
     :members:
     :undoc-members:
     :imported-members:

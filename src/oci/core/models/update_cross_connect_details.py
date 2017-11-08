@@ -3,12 +3,26 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class UpdateCrossConnectDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new UpdateCrossConnectDetails object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param display_name:
+            The value to assign to the display_name property of this UpdateCrossConnectDetails.
+        :type display_name: str
+
+        :param is_active:
+            The value to assign to the is_active property of this UpdateCrossConnectDetails.
+        :type is_active: bool
+
+        """
         self.swagger_types = {
             'display_name': 'str',
             'is_active': 'bool'

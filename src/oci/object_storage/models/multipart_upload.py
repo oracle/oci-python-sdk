@@ -3,12 +3,38 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class MultipartUpload(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new MultipartUpload object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param namespace:
+            The value to assign to the namespace property of this MultipartUpload.
+        :type namespace: str
+
+        :param bucket:
+            The value to assign to the bucket property of this MultipartUpload.
+        :type bucket: str
+
+        :param object:
+            The value to assign to the object property of this MultipartUpload.
+        :type object: str
+
+        :param upload_id:
+            The value to assign to the upload_id property of this MultipartUpload.
+        :type upload_id: str
+
+        :param time_created:
+            The value to assign to the time_created property of this MultipartUpload.
+        :type time_created: datetime
+
+        """
         self.swagger_types = {
             'namespace': 'str',
             'bucket': 'str',

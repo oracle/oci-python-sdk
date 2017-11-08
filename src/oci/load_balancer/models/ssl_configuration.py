@@ -3,12 +3,30 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class SSLConfiguration(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new SSLConfiguration object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param certificate_name:
+            The value to assign to the certificate_name property of this SSLConfiguration.
+        :type certificate_name: str
+
+        :param verify_depth:
+            The value to assign to the verify_depth property of this SSLConfiguration.
+        :type verify_depth: int
+
+        :param verify_peer_certificate:
+            The value to assign to the verify_peer_certificate property of this SSLConfiguration.
+        :type verify_peer_certificate: bool
+
+        """
         self.swagger_types = {
             'certificate_name': 'str',
             'verify_depth': 'int',

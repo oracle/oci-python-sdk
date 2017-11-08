@@ -3,12 +3,30 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class UpdatePolicyDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new UpdatePolicyDetails object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param description:
+            The value to assign to the description property of this UpdatePolicyDetails.
+        :type description: str
+
+        :param statements:
+            The value to assign to the statements property of this UpdatePolicyDetails.
+        :type statements: list[str]
+
+        :param version_date:
+            The value to assign to the version_date property of this UpdatePolicyDetails.
+        :type version_date: datetime
+
+        """
         self.swagger_types = {
             'description': 'str',
             'statements': 'list[str]',

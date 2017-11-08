@@ -3,12 +3,38 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class Cpe(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new Cpe object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this Cpe.
+        :type compartment_id: str
+
+        :param display_name:
+            The value to assign to the display_name property of this Cpe.
+        :type display_name: str
+
+        :param id:
+            The value to assign to the id property of this Cpe.
+        :type id: str
+
+        :param ip_address:
+            The value to assign to the ip_address property of this Cpe.
+        :type ip_address: str
+
+        :param time_created:
+            The value to assign to the time_created property of this Cpe.
+        :type time_created: datetime
+
+        """
         self.swagger_types = {
             'compartment_id': 'str',
             'display_name': 'str',

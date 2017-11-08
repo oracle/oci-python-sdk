@@ -3,12 +3,26 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class UpdateNamespaceMetadataDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new UpdateNamespaceMetadataDetails object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param default_s3_compartment_id:
+            The value to assign to the default_s3_compartment_id property of this UpdateNamespaceMetadataDetails.
+        :type default_s3_compartment_id: str
+
+        :param default_swift_compartment_id:
+            The value to assign to the default_swift_compartment_id property of this UpdateNamespaceMetadataDetails.
+        :type default_swift_compartment_id: str
+
+        """
         self.swagger_types = {
             'default_s3_compartment_id': 'str',
             'default_swift_compartment_id': 'str'

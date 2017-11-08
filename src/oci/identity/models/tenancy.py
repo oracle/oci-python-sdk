@@ -3,12 +3,34 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class Tenancy(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new Tenancy object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param id:
+            The value to assign to the id property of this Tenancy.
+        :type id: str
+
+        :param name:
+            The value to assign to the name property of this Tenancy.
+        :type name: str
+
+        :param description:
+            The value to assign to the description property of this Tenancy.
+        :type description: str
+
+        :param home_region_key:
+            The value to assign to the home_region_key property of this Tenancy.
+        :type home_region_key: str
+
+        """
         self.swagger_types = {
             'id': 'str',
             'name': 'str',

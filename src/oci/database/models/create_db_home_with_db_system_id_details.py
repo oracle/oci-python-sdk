@@ -3,12 +3,34 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class CreateDbHomeWithDbSystemIdDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new CreateDbHomeWithDbSystemIdDetails object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param database:
+            The value to assign to the database property of this CreateDbHomeWithDbSystemIdDetails.
+        :type database: CreateDatabaseDetails
+
+        :param db_system_id:
+            The value to assign to the db_system_id property of this CreateDbHomeWithDbSystemIdDetails.
+        :type db_system_id: str
+
+        :param db_version:
+            The value to assign to the db_version property of this CreateDbHomeWithDbSystemIdDetails.
+        :type db_version: str
+
+        :param display_name:
+            The value to assign to the display_name property of this CreateDbHomeWithDbSystemIdDetails.
+        :type display_name: str
+
+        """
         self.swagger_types = {
             'database': 'CreateDatabaseDetails',
             'db_system_id': 'str',

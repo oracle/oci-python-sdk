@@ -3,12 +3,30 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class UpdatePrivateIpDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new UpdatePrivateIpDetails object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param display_name:
+            The value to assign to the display_name property of this UpdatePrivateIpDetails.
+        :type display_name: str
+
+        :param hostname_label:
+            The value to assign to the hostname_label property of this UpdatePrivateIpDetails.
+        :type hostname_label: str
+
+        :param vnic_id:
+            The value to assign to the vnic_id property of this UpdatePrivateIpDetails.
+        :type vnic_id: str
+
+        """
         self.swagger_types = {
             'display_name': 'str',
             'hostname_label': 'str',

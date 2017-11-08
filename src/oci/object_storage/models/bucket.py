@@ -3,12 +3,58 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class Bucket(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new Bucket object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param namespace:
+            The value to assign to the namespace property of this Bucket.
+        :type namespace: str
+
+        :param name:
+            The value to assign to the name property of this Bucket.
+        :type name: str
+
+        :param compartment_id:
+            The value to assign to the compartment_id property of this Bucket.
+        :type compartment_id: str
+
+        :param metadata:
+            The value to assign to the metadata property of this Bucket.
+        :type metadata: dict(str, str)
+
+        :param created_by:
+            The value to assign to the created_by property of this Bucket.
+        :type created_by: str
+
+        :param time_created:
+            The value to assign to the time_created property of this Bucket.
+        :type time_created: datetime
+
+        :param etag:
+            The value to assign to the etag property of this Bucket.
+        :type etag: str
+
+        :param public_access_type:
+            The value to assign to the public_access_type property of this Bucket.
+            Allowed values for this property are: "NoPublicAccess", "ObjectRead", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type public_access_type: str
+
+        :param storage_tier:
+            The value to assign to the storage_tier property of this Bucket.
+            Allowed values for this property are: "Standard", "Archive", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type storage_tier: str
+
+        """
         self.swagger_types = {
             'namespace': 'str',
             'name': 'str',

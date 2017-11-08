@@ -3,12 +3,48 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class DrgAttachment(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new DrgAttachment object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this DrgAttachment.
+        :type compartment_id: str
+
+        :param display_name:
+            The value to assign to the display_name property of this DrgAttachment.
+        :type display_name: str
+
+        :param drg_id:
+            The value to assign to the drg_id property of this DrgAttachment.
+        :type drg_id: str
+
+        :param id:
+            The value to assign to the id property of this DrgAttachment.
+        :type id: str
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this DrgAttachment.
+            Allowed values for this property are: "ATTACHING", "ATTACHED", "DETACHING", "DETACHED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        :param time_created:
+            The value to assign to the time_created property of this DrgAttachment.
+        :type time_created: datetime
+
+        :param vcn_id:
+            The value to assign to the vcn_id property of this DrgAttachment.
+        :type vcn_id: str
+
+        """
         self.swagger_types = {
             'compartment_id': 'str',
             'display_name': 'str',

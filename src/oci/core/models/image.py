@@ -3,12 +3,56 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class Image(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new Image object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param base_image_id:
+            The value to assign to the base_image_id property of this Image.
+        :type base_image_id: str
+
+        :param compartment_id:
+            The value to assign to the compartment_id property of this Image.
+        :type compartment_id: str
+
+        :param create_image_allowed:
+            The value to assign to the create_image_allowed property of this Image.
+        :type create_image_allowed: bool
+
+        :param display_name:
+            The value to assign to the display_name property of this Image.
+        :type display_name: str
+
+        :param id:
+            The value to assign to the id property of this Image.
+        :type id: str
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this Image.
+            Allowed values for this property are: "PROVISIONING", "IMPORTING", "AVAILABLE", "EXPORTING", "DISABLED", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        :param operating_system:
+            The value to assign to the operating_system property of this Image.
+        :type operating_system: str
+
+        :param operating_system_version:
+            The value to assign to the operating_system_version property of this Image.
+        :type operating_system_version: str
+
+        :param time_created:
+            The value to assign to the time_created property of this Image.
+        :type time_created: datetime
+
+        """
         self.swagger_types = {
             'base_image_id': 'str',
             'compartment_id': 'str',

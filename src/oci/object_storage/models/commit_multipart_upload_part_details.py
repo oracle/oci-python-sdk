@@ -3,12 +3,26 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class CommitMultipartUploadPartDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new CommitMultipartUploadPartDetails object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param part_num:
+            The value to assign to the part_num property of this CommitMultipartUploadPartDetails.
+        :type part_num: int
+
+        :param etag:
+            The value to assign to the etag property of this CommitMultipartUploadPartDetails.
+        :type etag: str
+
+        """
         self.swagger_types = {
             'part_num': 'int',
             'etag': 'str'

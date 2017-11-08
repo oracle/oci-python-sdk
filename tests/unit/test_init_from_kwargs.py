@@ -1,7 +1,76 @@
 from datetime import datetime
 
+from datetime import datetime
 import oci
 import pytest
+import six
+
+
+ENUM_ATTR_TO_VALUE = {
+    'CreateVirtualCircuitDetails': {'type': 'PRIVATE'},
+    'UpdateVirtualCircuitDetails': {'provider_state': 'ACTIVE'},
+    'PatchDetails': {'action': 'APPLY'},
+    'LaunchDbSystemDetails': {'license_model': 'LICENSE_INCLUDED', 'disk_redundancy': 'NORMAL', 'database_edition': 'STANDARD_EDITION'},
+    'CreateDatabaseDetails': {'db_workload': 'OLTP'},
+    'CreateDataGuardAssociationDetails': {'protection_mode': 'MAXIMUM_AVAILABILITY', 'transport_type': 'SYNC'},
+    'CreateDataGuardAssociationToExistingDbSystemDetails': {'protection_mode': 'MAXIMUM_AVAILABILITY', 'transport_type': 'SYNC'},
+    'CreateSaml2IdentityProviderDetails': {'protocol': 'SAML2', 'product_type': 'ADFS'},
+    'UpdateSaml2IdentityProviderDetails': {'protocol': 'SAML2', 'product_type': 'ADFS'},
+    'CreateIdentityProviderDetails': {'protocol': 'SAML2', 'product_type': 'ADFS'},
+    'UpdateIdentityProviderDetails': {'protocol': 'SAML2', 'product_type': 'ADFS'},
+    'CreateBucketDetails': {'public_access_type': 'NoPublicAccess', 'storage_tier': 'Standard'},
+    'UpdateBucketDetails': {'public_access_type': 'NoPublicAccess'},
+    'CreatePreauthenticatedRequestDetails': {'access_type': 'ObjectRead'},
+}
+
+
+def test_all_model_classes_can_be_init_from_kwargs():
+    model_mappings = [
+        oci.audit.models.audit_type_mapping,
+        oci.core.models.core_type_mapping,
+        oci.database.models.database_type_mapping,
+        oci.identity.models.identity_type_mapping,
+        oci.load_balancer.models.load_balancer_type_mapping,
+        oci.object_storage.models.object_storage_type_mapping
+    ]
+
+    for mapping in model_mappings:
+        for model_name, model_ref in six.iteritems(mapping):
+            base_model = model_ref()
+            
+            kwargs = {}
+            for attr_name, attr_type in six.iteritems(base_model.swagger_types):
+                if attr_type == 'str':
+                    if model_name in ENUM_ATTR_TO_VALUE and attr_name in ENUM_ATTR_TO_VALUE[model_name]:
+                        kwargs[attr_name] = ENUM_ATTR_TO_VALUE[model_name][attr_name]
+                    else:
+                        kwargs[attr_name] = attr_type
+                elif attr_type == 'int':
+                    kwargs[attr_name] = 55
+                elif attr_type == 'datetime':
+                    kwargs[attr_name] = datetime.utcnow()
+                elif attr_type.startswith('list['):
+                    kwargs[attr_name] = []
+                elif attr_type == 'dict(str, str)':
+                    kwargs[attr_name] = {'a': 'b', 'c': 'd'}
+                elif attr_type == 'dict(str, list[str])':
+                    kwargs[attr_name] = {'f': ['cat', 'hat', 'mat']}
+                elif attr_type == 'dict(str, object)':
+                    kwargs[attr_name] = {'g': {'h': 'i'}}
+                elif attr_type.startswith('dict('):
+                    kwargs[attr_name] = {}
+                else:
+                    if attr_name in mapping:
+                        kwargs[attr_name] = mapping[attr_name]()
+                    else:
+                        kwargs[attr_name] = attr_name
+
+            model_with_kwargs = model_ref(**kwargs)
+            for attr_name, attr_value in six.iteritems(kwargs):
+                value_from_model = getattr(model_with_kwargs, attr_name)
+                if value_from_model == 'UNKNOWN_ENUM_VALUE':
+                    continue
+                assert attr_value == value_from_model
 
 
 def test_decorated_model_class_init_no_kwargs():

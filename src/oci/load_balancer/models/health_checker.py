@@ -3,12 +3,50 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class HealthChecker(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new HealthChecker object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param interval_in_millis:
+            The value to assign to the interval_in_millis property of this HealthChecker.
+        :type interval_in_millis: int
+
+        :param port:
+            The value to assign to the port property of this HealthChecker.
+        :type port: int
+
+        :param protocol:
+            The value to assign to the protocol property of this HealthChecker.
+        :type protocol: str
+
+        :param response_body_regex:
+            The value to assign to the response_body_regex property of this HealthChecker.
+        :type response_body_regex: str
+
+        :param retries:
+            The value to assign to the retries property of this HealthChecker.
+        :type retries: int
+
+        :param return_code:
+            The value to assign to the return_code property of this HealthChecker.
+        :type return_code: int
+
+        :param timeout_in_millis:
+            The value to assign to the timeout_in_millis property of this HealthChecker.
+        :type timeout_in_millis: int
+
+        :param url_path:
+            The value to assign to the url_path property of this HealthChecker.
+        :type url_path: str
+
+        """
         self.swagger_types = {
             'interval_in_millis': 'int',
             'port': 'int',

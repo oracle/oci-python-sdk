@@ -3,12 +3,58 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class CreateSubnetDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new CreateSubnetDetails object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param availability_domain:
+            The value to assign to the availability_domain property of this CreateSubnetDetails.
+        :type availability_domain: str
+
+        :param cidr_block:
+            The value to assign to the cidr_block property of this CreateSubnetDetails.
+        :type cidr_block: str
+
+        :param compartment_id:
+            The value to assign to the compartment_id property of this CreateSubnetDetails.
+        :type compartment_id: str
+
+        :param dhcp_options_id:
+            The value to assign to the dhcp_options_id property of this CreateSubnetDetails.
+        :type dhcp_options_id: str
+
+        :param display_name:
+            The value to assign to the display_name property of this CreateSubnetDetails.
+        :type display_name: str
+
+        :param dns_label:
+            The value to assign to the dns_label property of this CreateSubnetDetails.
+        :type dns_label: str
+
+        :param prohibit_public_ip_on_vnic:
+            The value to assign to the prohibit_public_ip_on_vnic property of this CreateSubnetDetails.
+        :type prohibit_public_ip_on_vnic: bool
+
+        :param route_table_id:
+            The value to assign to the route_table_id property of this CreateSubnetDetails.
+        :type route_table_id: str
+
+        :param security_list_ids:
+            The value to assign to the security_list_ids property of this CreateSubnetDetails.
+        :type security_list_ids: list[str]
+
+        :param vcn_id:
+            The value to assign to the vcn_id property of this CreateSubnetDetails.
+        :type vcn_id: str
+
+        """
         self.swagger_types = {
             'availability_domain': 'str',
             'cidr_block': 'str',

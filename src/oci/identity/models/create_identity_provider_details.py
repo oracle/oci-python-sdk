@@ -3,12 +3,40 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class CreateIdentityProviderDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new CreateIdentityProviderDetails object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this CreateIdentityProviderDetails.
+        :type compartment_id: str
+
+        :param name:
+            The value to assign to the name property of this CreateIdentityProviderDetails.
+        :type name: str
+
+        :param description:
+            The value to assign to the description property of this CreateIdentityProviderDetails.
+        :type description: str
+
+        :param product_type:
+            The value to assign to the product_type property of this CreateIdentityProviderDetails.
+            Allowed values for this property are: "IDCS", "ADFS"
+        :type product_type: str
+
+        :param protocol:
+            The value to assign to the protocol property of this CreateIdentityProviderDetails.
+            Allowed values for this property are: "SAML2"
+        :type protocol: str
+
+        """
         self.swagger_types = {
             'compartment_id': 'str',
             'name': 'str',

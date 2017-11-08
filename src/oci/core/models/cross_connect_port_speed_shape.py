@@ -3,12 +3,26 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class CrossConnectPortSpeedShape(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new CrossConnectPortSpeedShape object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param name:
+            The value to assign to the name property of this CrossConnectPortSpeedShape.
+        :type name: str
+
+        :param port_speed_in_gbps:
+            The value to assign to the port_speed_in_gbps property of this CrossConnectPortSpeedShape.
+        :type port_speed_in_gbps: int
+
+        """
         self.swagger_types = {
             'name': 'str',
             'port_speed_in_gbps': 'int'

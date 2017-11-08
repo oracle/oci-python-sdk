@@ -3,12 +3,93 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class LaunchDbSystemDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new LaunchDbSystemDetails object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param availability_domain:
+            The value to assign to the availability_domain property of this LaunchDbSystemDetails.
+        :type availability_domain: str
+
+        :param backup_subnet_id:
+            The value to assign to the backup_subnet_id property of this LaunchDbSystemDetails.
+        :type backup_subnet_id: str
+
+        :param cluster_name:
+            The value to assign to the cluster_name property of this LaunchDbSystemDetails.
+        :type cluster_name: str
+
+        :param compartment_id:
+            The value to assign to the compartment_id property of this LaunchDbSystemDetails.
+        :type compartment_id: str
+
+        :param cpu_core_count:
+            The value to assign to the cpu_core_count property of this LaunchDbSystemDetails.
+        :type cpu_core_count: int
+
+        :param data_storage_percentage:
+            The value to assign to the data_storage_percentage property of this LaunchDbSystemDetails.
+        :type data_storage_percentage: int
+
+        :param database_edition:
+            The value to assign to the database_edition property of this LaunchDbSystemDetails.
+            Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE", "ENTERPRISE_EDITION_HIGH_PERFORMANCE"
+        :type database_edition: str
+
+        :param db_home:
+            The value to assign to the db_home property of this LaunchDbSystemDetails.
+        :type db_home: CreateDbHomeDetails
+
+        :param disk_redundancy:
+            The value to assign to the disk_redundancy property of this LaunchDbSystemDetails.
+            Allowed values for this property are: "HIGH", "NORMAL"
+        :type disk_redundancy: str
+
+        :param display_name:
+            The value to assign to the display_name property of this LaunchDbSystemDetails.
+        :type display_name: str
+
+        :param domain:
+            The value to assign to the domain property of this LaunchDbSystemDetails.
+        :type domain: str
+
+        :param hostname:
+            The value to assign to the hostname property of this LaunchDbSystemDetails.
+        :type hostname: str
+
+        :param initial_data_storage_size_in_gb:
+            The value to assign to the initial_data_storage_size_in_gb property of this LaunchDbSystemDetails.
+        :type initial_data_storage_size_in_gb: int
+
+        :param license_model:
+            The value to assign to the license_model property of this LaunchDbSystemDetails.
+            Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
+        :type license_model: str
+
+        :param node_count:
+            The value to assign to the node_count property of this LaunchDbSystemDetails.
+        :type node_count: int
+
+        :param shape:
+            The value to assign to the shape property of this LaunchDbSystemDetails.
+        :type shape: str
+
+        :param ssh_public_keys:
+            The value to assign to the ssh_public_keys property of this LaunchDbSystemDetails.
+        :type ssh_public_keys: list[str]
+
+        :param subnet_id:
+            The value to assign to the subnet_id property of this LaunchDbSystemDetails.
+        :type subnet_id: str
+
+        """
         self.swagger_types = {
             'availability_domain': 'str',
             'backup_subnet_id': 'str',

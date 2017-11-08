@@ -3,12 +3,38 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class CrossConnectStatus(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new CrossConnectStatus object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param cross_connect_id:
+            The value to assign to the cross_connect_id property of this CrossConnectStatus.
+        :type cross_connect_id: str
+
+        :param interface_state:
+            The value to assign to the interface_state property of this CrossConnectStatus.
+            Allowed values for this property are: "UP", "DOWN", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type interface_state: str
+
+        :param light_level_ind_bm:
+            The value to assign to the light_level_ind_bm property of this CrossConnectStatus.
+        :type light_level_ind_bm: float
+
+        :param light_level_indicator:
+            The value to assign to the light_level_indicator property of this CrossConnectStatus.
+            Allowed values for this property are: "NO_LIGHT", "LOW_WARN", "HIGH_WARN", "BAD", "GOOD", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type light_level_indicator: str
+
+        """
         self.swagger_types = {
             'cross_connect_id': 'str',
             'interface_state': 'str',

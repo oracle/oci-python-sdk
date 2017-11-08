@@ -3,12 +3,58 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class PrivateIp(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new PrivateIp object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param availability_domain:
+            The value to assign to the availability_domain property of this PrivateIp.
+        :type availability_domain: str
+
+        :param compartment_id:
+            The value to assign to the compartment_id property of this PrivateIp.
+        :type compartment_id: str
+
+        :param display_name:
+            The value to assign to the display_name property of this PrivateIp.
+        :type display_name: str
+
+        :param hostname_label:
+            The value to assign to the hostname_label property of this PrivateIp.
+        :type hostname_label: str
+
+        :param id:
+            The value to assign to the id property of this PrivateIp.
+        :type id: str
+
+        :param ip_address:
+            The value to assign to the ip_address property of this PrivateIp.
+        :type ip_address: str
+
+        :param is_primary:
+            The value to assign to the is_primary property of this PrivateIp.
+        :type is_primary: bool
+
+        :param subnet_id:
+            The value to assign to the subnet_id property of this PrivateIp.
+        :type subnet_id: str
+
+        :param time_created:
+            The value to assign to the time_created property of this PrivateIp.
+        :type time_created: datetime
+
+        :param vnic_id:
+            The value to assign to the vnic_id property of this PrivateIp.
+        :type vnic_id: str
+
+        """
         self.swagger_types = {
             'availability_domain': 'str',
             'compartment_id': 'str',

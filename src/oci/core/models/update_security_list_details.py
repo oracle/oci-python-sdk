@@ -3,12 +3,30 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class UpdateSecurityListDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new UpdateSecurityListDetails object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param display_name:
+            The value to assign to the display_name property of this UpdateSecurityListDetails.
+        :type display_name: str
+
+        :param egress_security_rules:
+            The value to assign to the egress_security_rules property of this UpdateSecurityListDetails.
+        :type egress_security_rules: list[EgressSecurityRule]
+
+        :param ingress_security_rules:
+            The value to assign to the ingress_security_rules property of this UpdateSecurityListDetails.
+        :type ingress_security_rules: list[IngressSecurityRule]
+
+        """
         self.swagger_types = {
             'display_name': 'str',
             'egress_security_rules': 'list[EgressSecurityRule]',

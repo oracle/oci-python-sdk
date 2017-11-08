@@ -3,12 +3,22 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class RestoreObjectsDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new RestoreObjectsDetails object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param object_name:
+            The value to assign to the object_name property of this RestoreObjectsDetails.
+        :type object_name: str
+
+        """
         self.swagger_types = {
             'object_name': 'str'
         }

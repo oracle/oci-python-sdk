@@ -3,12 +3,94 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class VirtualCircuit(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new VirtualCircuit object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param bandwidth_shape_name:
+            The value to assign to the bandwidth_shape_name property of this VirtualCircuit.
+        :type bandwidth_shape_name: str
+
+        :param bgp_session_state:
+            The value to assign to the bgp_session_state property of this VirtualCircuit.
+            Allowed values for this property are: "UP", "DOWN", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type bgp_session_state: str
+
+        :param compartment_id:
+            The value to assign to the compartment_id property of this VirtualCircuit.
+        :type compartment_id: str
+
+        :param cross_connect_mappings:
+            The value to assign to the cross_connect_mappings property of this VirtualCircuit.
+        :type cross_connect_mappings: list[CrossConnectMapping]
+
+        :param customer_bgp_asn:
+            The value to assign to the customer_bgp_asn property of this VirtualCircuit.
+        :type customer_bgp_asn: int
+
+        :param display_name:
+            The value to assign to the display_name property of this VirtualCircuit.
+        :type display_name: str
+
+        :param gateway_id:
+            The value to assign to the gateway_id property of this VirtualCircuit.
+        :type gateway_id: str
+
+        :param id:
+            The value to assign to the id property of this VirtualCircuit.
+        :type id: str
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this VirtualCircuit.
+            Allowed values for this property are: "PENDING_PROVIDER", "VERIFYING", "PROVISIONING", "PROVISIONED", "FAILED", "INACTIVE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        :param oracle_bgp_asn:
+            The value to assign to the oracle_bgp_asn property of this VirtualCircuit.
+        :type oracle_bgp_asn: int
+
+        :param provider_name:
+            The value to assign to the provider_name property of this VirtualCircuit.
+        :type provider_name: str
+
+        :param provider_service_name:
+            The value to assign to the provider_service_name property of this VirtualCircuit.
+        :type provider_service_name: str
+
+        :param provider_state:
+            The value to assign to the provider_state property of this VirtualCircuit.
+            Allowed values for this property are: "ACTIVE", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type provider_state: str
+
+        :param reference_comment:
+            The value to assign to the reference_comment property of this VirtualCircuit.
+        :type reference_comment: str
+
+        :param region:
+            The value to assign to the region property of this VirtualCircuit.
+        :type region: str
+
+        :param time_created:
+            The value to assign to the time_created property of this VirtualCircuit.
+        :type time_created: datetime
+
+        :param type:
+            The value to assign to the type property of this VirtualCircuit.
+            Allowed values for this property are: "PUBLIC", "PRIVATE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type type: str
+
+        """
         self.swagger_types = {
             'bandwidth_shape_name': 'str',
             'bgp_session_state': 'str',

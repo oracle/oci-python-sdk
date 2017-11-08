@@ -3,12 +3,26 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class CreateVolumeBackupDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new CreateVolumeBackupDetails object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param display_name:
+            The value to assign to the display_name property of this CreateVolumeBackupDetails.
+        :type display_name: str
+
+        :param volume_id:
+            The value to assign to the volume_id property of this CreateVolumeBackupDetails.
+        :type volume_id: str
+
+        """
         self.swagger_types = {
             'display_name': 'str',
             'volume_id': 'str'

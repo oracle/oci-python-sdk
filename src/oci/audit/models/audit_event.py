@@ -3,12 +3,90 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class AuditEvent(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new AuditEvent object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param tenant_id:
+            The value to assign to the tenant_id property of this AuditEvent.
+        :type tenant_id: str
+
+        :param compartment_id:
+            The value to assign to the compartment_id property of this AuditEvent.
+        :type compartment_id: str
+
+        :param event_id:
+            The value to assign to the event_id property of this AuditEvent.
+        :type event_id: str
+
+        :param event_source:
+            The value to assign to the event_source property of this AuditEvent.
+        :type event_source: str
+
+        :param event_type:
+            The value to assign to the event_type property of this AuditEvent.
+        :type event_type: str
+
+        :param event_time:
+            The value to assign to the event_time property of this AuditEvent.
+        :type event_time: datetime
+
+        :param principal_id:
+            The value to assign to the principal_id property of this AuditEvent.
+        :type principal_id: str
+
+        :param credential_id:
+            The value to assign to the credential_id property of this AuditEvent.
+        :type credential_id: str
+
+        :param request_action:
+            The value to assign to the request_action property of this AuditEvent.
+        :type request_action: str
+
+        :param request_id:
+            The value to assign to the request_id property of this AuditEvent.
+        :type request_id: str
+
+        :param request_agent:
+            The value to assign to the request_agent property of this AuditEvent.
+        :type request_agent: str
+
+        :param request_headers:
+            The value to assign to the request_headers property of this AuditEvent.
+        :type request_headers: dict(str, list[str])
+
+        :param request_origin:
+            The value to assign to the request_origin property of this AuditEvent.
+        :type request_origin: str
+
+        :param request_parameters:
+            The value to assign to the request_parameters property of this AuditEvent.
+        :type request_parameters: dict(str, list[str])
+
+        :param request_resource:
+            The value to assign to the request_resource property of this AuditEvent.
+        :type request_resource: str
+
+        :param response_headers:
+            The value to assign to the response_headers property of this AuditEvent.
+        :type response_headers: dict(str, list[str])
+
+        :param response_status:
+            The value to assign to the response_status property of this AuditEvent.
+        :type response_status: str
+
+        :param response_time:
+            The value to assign to the response_time property of this AuditEvent.
+        :type response_time: datetime
+
+        """
         self.swagger_types = {
             'tenant_id': 'str',
             'compartment_id': 'str',

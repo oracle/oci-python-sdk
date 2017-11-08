@@ -3,12 +3,22 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class UpdateDatabaseDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new UpdateDatabaseDetails object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param db_backup_config:
+            The value to assign to the db_backup_config property of this UpdateDatabaseDetails.
+        :type db_backup_config: DbBackupConfig
+
+        """
         self.swagger_types = {
             'db_backup_config': 'DbBackupConfig'
         }

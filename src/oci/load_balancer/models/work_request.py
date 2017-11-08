@@ -3,12 +3,52 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class WorkRequest(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new WorkRequest object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param error_details:
+            The value to assign to the error_details property of this WorkRequest.
+        :type error_details: list[WorkRequestError]
+
+        :param id:
+            The value to assign to the id property of this WorkRequest.
+        :type id: str
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this WorkRequest.
+            Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        :param load_balancer_id:
+            The value to assign to the load_balancer_id property of this WorkRequest.
+        :type load_balancer_id: str
+
+        :param message:
+            The value to assign to the message property of this WorkRequest.
+        :type message: str
+
+        :param time_accepted:
+            The value to assign to the time_accepted property of this WorkRequest.
+        :type time_accepted: datetime
+
+        :param time_finished:
+            The value to assign to the time_finished property of this WorkRequest.
+        :type time_finished: datetime
+
+        :param type:
+            The value to assign to the type property of this WorkRequest.
+        :type type: str
+
+        """
         self.swagger_types = {
             'error_details': 'list[WorkRequestError]',
             'id': 'str',

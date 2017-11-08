@@ -3,12 +3,36 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class HealthCheckResult(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new HealthCheckResult object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param health_check_status:
+            The value to assign to the health_check_status property of this HealthCheckResult.
+            Allowed values for this property are: "OK", "INVALID_STATUS_CODE", "TIMED_OUT", "REGEX_MISMATCH", "CONNECT_FAILED", "IO_ERROR", "OFFLINE", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type health_check_status: str
+
+        :param source_ip_address:
+            The value to assign to the source_ip_address property of this HealthCheckResult.
+        :type source_ip_address: str
+
+        :param subnet_id:
+            The value to assign to the subnet_id property of this HealthCheckResult.
+        :type subnet_id: str
+
+        :param timestamp:
+            The value to assign to the timestamp property of this HealthCheckResult.
+        :type timestamp: datetime
+
+        """
         self.swagger_types = {
             'health_check_status': 'str',
             'source_ip_address': 'str',

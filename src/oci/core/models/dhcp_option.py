@@ -3,12 +3,22 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class DhcpOption(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new DhcpOption object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param type:
+            The value to assign to the type property of this DhcpOption.
+        :type type: str
+
+        """
         self.swagger_types = {
             'type': 'str'
         }

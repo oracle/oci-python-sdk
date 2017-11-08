@@ -3,12 +3,42 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class BackendSet(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new BackendSet object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param backends:
+            The value to assign to the backends property of this BackendSet.
+        :type backends: list[Backend]
+
+        :param health_checker:
+            The value to assign to the health_checker property of this BackendSet.
+        :type health_checker: HealthChecker
+
+        :param name:
+            The value to assign to the name property of this BackendSet.
+        :type name: str
+
+        :param policy:
+            The value to assign to the policy property of this BackendSet.
+        :type policy: str
+
+        :param session_persistence_configuration:
+            The value to assign to the session_persistence_configuration property of this BackendSet.
+        :type session_persistence_configuration: SessionPersistenceConfigurationDetails
+
+        :param ssl_configuration:
+            The value to assign to the ssl_configuration property of this BackendSet.
+        :type ssl_configuration: SSLConfiguration
+
+        """
         self.swagger_types = {
             'backends': 'list[Backend]',
             'health_checker': 'HealthChecker',

@@ -3,12 +3,22 @@
 
 from .attach_volume_details import AttachVolumeDetails
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class AttachIScsiVolumeDetails(AttachVolumeDetails):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new AttachIScsiVolumeDetails object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param use_chap:
+            The value to assign to the use_chap property of this AttachIScsiVolumeDetails.
+        :type use_chap: bool
+
+        """
         self.swagger_types = {
             'display_name': 'str',
             'instance_id': 'str',

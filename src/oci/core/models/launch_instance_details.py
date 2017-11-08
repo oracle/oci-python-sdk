@@ -3,12 +3,62 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class LaunchInstanceDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new LaunchInstanceDetails object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param availability_domain:
+            The value to assign to the availability_domain property of this LaunchInstanceDetails.
+        :type availability_domain: str
+
+        :param compartment_id:
+            The value to assign to the compartment_id property of this LaunchInstanceDetails.
+        :type compartment_id: str
+
+        :param create_vnic_details:
+            The value to assign to the create_vnic_details property of this LaunchInstanceDetails.
+        :type create_vnic_details: CreateVnicDetails
+
+        :param display_name:
+            The value to assign to the display_name property of this LaunchInstanceDetails.
+        :type display_name: str
+
+        :param extended_metadata:
+            The value to assign to the extended_metadata property of this LaunchInstanceDetails.
+        :type extended_metadata: dict(str, object)
+
+        :param hostname_label:
+            The value to assign to the hostname_label property of this LaunchInstanceDetails.
+        :type hostname_label: str
+
+        :param image_id:
+            The value to assign to the image_id property of this LaunchInstanceDetails.
+        :type image_id: str
+
+        :param ipxe_script:
+            The value to assign to the ipxe_script property of this LaunchInstanceDetails.
+        :type ipxe_script: str
+
+        :param metadata:
+            The value to assign to the metadata property of this LaunchInstanceDetails.
+        :type metadata: dict(str, str)
+
+        :param shape:
+            The value to assign to the shape property of this LaunchInstanceDetails.
+        :type shape: str
+
+        :param subnet_id:
+            The value to assign to the subnet_id property of this LaunchInstanceDetails.
+        :type subnet_id: str
+
+        """
         self.swagger_types = {
             'availability_domain': 'str',
             'compartment_id': 'str',

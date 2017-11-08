@@ -3,12 +3,30 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class ListObjects(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new ListObjects object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param objects:
+            The value to assign to the objects property of this ListObjects.
+        :type objects: list[ObjectSummary]
+
+        :param prefixes:
+            The value to assign to the prefixes property of this ListObjects.
+        :type prefixes: list[str]
+
+        :param next_start_with:
+            The value to assign to the next_start_with property of this ListObjects.
+        :type next_start_with: str
+
+        """
         self.swagger_types = {
             'objects': 'list[ObjectSummary]',
             'prefixes': 'list[str]',

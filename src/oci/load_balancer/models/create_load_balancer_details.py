@@ -3,12 +3,50 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class CreateLoadBalancerDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new CreateLoadBalancerDetails object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param backend_sets:
+            The value to assign to the backend_sets property of this CreateLoadBalancerDetails.
+        :type backend_sets: dict(str, BackendSetDetails)
+
+        :param certificates:
+            The value to assign to the certificates property of this CreateLoadBalancerDetails.
+        :type certificates: dict(str, CertificateDetails)
+
+        :param compartment_id:
+            The value to assign to the compartment_id property of this CreateLoadBalancerDetails.
+        :type compartment_id: str
+
+        :param display_name:
+            The value to assign to the display_name property of this CreateLoadBalancerDetails.
+        :type display_name: str
+
+        :param is_private:
+            The value to assign to the is_private property of this CreateLoadBalancerDetails.
+        :type is_private: bool
+
+        :param listeners:
+            The value to assign to the listeners property of this CreateLoadBalancerDetails.
+        :type listeners: dict(str, ListenerDetails)
+
+        :param shape_name:
+            The value to assign to the shape_name property of this CreateLoadBalancerDetails.
+        :type shape_name: str
+
+        :param subnet_ids:
+            The value to assign to the subnet_ids property of this CreateLoadBalancerDetails.
+        :type subnet_ids: list[str]
+
+        """
         self.swagger_types = {
             'backend_sets': 'dict(str, BackendSetDetails)',
             'certificates': 'dict(str, CertificateDetails)',

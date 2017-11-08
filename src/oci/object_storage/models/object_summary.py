@@ -3,12 +3,34 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class ObjectSummary(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new ObjectSummary object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param name:
+            The value to assign to the name property of this ObjectSummary.
+        :type name: str
+
+        :param size:
+            The value to assign to the size property of this ObjectSummary.
+        :type size: int
+
+        :param md5:
+            The value to assign to the md5 property of this ObjectSummary.
+        :type md5: str
+
+        :param time_created:
+            The value to assign to the time_created property of this ObjectSummary.
+        :type time_created: datetime
+
+        """
         self.swagger_types = {
             'name': 'str',
             'size': 'int',

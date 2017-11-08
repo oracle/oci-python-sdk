@@ -3,12 +3,26 @@
 
 from .create_identity_provider_details import CreateIdentityProviderDetails
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class CreateSaml2IdentityProviderDetails(CreateIdentityProviderDetails):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new CreateSaml2IdentityProviderDetails object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param metadata_url:
+            The value to assign to the metadata_url property of this CreateSaml2IdentityProviderDetails.
+        :type metadata_url: str
+
+        :param metadata:
+            The value to assign to the metadata property of this CreateSaml2IdentityProviderDetails.
+        :type metadata: str
+
+        """
         self.swagger_types = {
             'compartment_id': 'str',
             'name': 'str',

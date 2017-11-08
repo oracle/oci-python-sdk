@@ -3,12 +3,28 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class BackendHealth(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new BackendHealth object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param health_check_results:
+            The value to assign to the health_check_results property of this BackendHealth.
+        :type health_check_results: list[HealthCheckResult]
+
+        :param status:
+            The value to assign to the status property of this BackendHealth.
+            Allowed values for this property are: "OK", "WARNING", "CRITICAL", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type status: str
+
+        """
         self.swagger_types = {
             'health_check_results': 'list[HealthCheckResult]',
             'status': 'str'

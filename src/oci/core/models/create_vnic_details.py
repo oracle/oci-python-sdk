@@ -3,12 +3,42 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class CreateVnicDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new CreateVnicDetails object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param assign_public_ip:
+            The value to assign to the assign_public_ip property of this CreateVnicDetails.
+        :type assign_public_ip: bool
+
+        :param display_name:
+            The value to assign to the display_name property of this CreateVnicDetails.
+        :type display_name: str
+
+        :param hostname_label:
+            The value to assign to the hostname_label property of this CreateVnicDetails.
+        :type hostname_label: str
+
+        :param private_ip:
+            The value to assign to the private_ip property of this CreateVnicDetails.
+        :type private_ip: str
+
+        :param skip_source_dest_check:
+            The value to assign to the skip_source_dest_check property of this CreateVnicDetails.
+        :type skip_source_dest_check: bool
+
+        :param subnet_id:
+            The value to assign to the subnet_id property of this CreateVnicDetails.
+        :type subnet_id: str
+
+        """
         self.swagger_types = {
             'assign_public_ip': 'bool',
             'display_name': 'str',

@@ -3,12 +3,22 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class ImageSourceDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new ImageSourceDetails object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param source_type:
+            The value to assign to the source_type property of this ImageSourceDetails.
+        :type source_type: str
+
+        """
         self.swagger_types = {
             'source_type': 'str'
         }

@@ -3,12 +3,26 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class AvailabilityDomain(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new AvailabilityDomain object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param name:
+            The value to assign to the name property of this AvailabilityDomain.
+        :type name: str
+
+        :param compartment_id:
+            The value to assign to the compartment_id property of this AvailabilityDomain.
+        :type compartment_id: str
+
+        """
         self.swagger_types = {
             'name': 'str',
             'compartment_id': 'str'

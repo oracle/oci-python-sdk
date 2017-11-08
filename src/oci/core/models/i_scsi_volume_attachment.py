@@ -3,12 +3,38 @@
 
 from .volume_attachment import VolumeAttachment
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class IScsiVolumeAttachment(VolumeAttachment):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new IScsiVolumeAttachment object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param chap_secret:
+            The value to assign to the chap_secret property of this IScsiVolumeAttachment.
+        :type chap_secret: str
+
+        :param chap_username:
+            The value to assign to the chap_username property of this IScsiVolumeAttachment.
+        :type chap_username: str
+
+        :param ipv4:
+            The value to assign to the ipv4 property of this IScsiVolumeAttachment.
+        :type ipv4: str
+
+        :param iqn:
+            The value to assign to the iqn property of this IScsiVolumeAttachment.
+        :type iqn: str
+
+        :param port:
+            The value to assign to the port property of this IScsiVolumeAttachment.
+        :type port: int
+
+        """
         self.swagger_types = {
             'attachment_type': 'str',
             'availability_domain': 'str',

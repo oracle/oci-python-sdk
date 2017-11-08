@@ -3,12 +3,56 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class CrossConnect(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new CrossConnect object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this CrossConnect.
+        :type compartment_id: str
+
+        :param cross_connect_group_id:
+            The value to assign to the cross_connect_group_id property of this CrossConnect.
+        :type cross_connect_group_id: str
+
+        :param display_name:
+            The value to assign to the display_name property of this CrossConnect.
+        :type display_name: str
+
+        :param id:
+            The value to assign to the id property of this CrossConnect.
+        :type id: str
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this CrossConnect.
+            Allowed values for this property are: "PENDING_CUSTOMER", "PROVISIONING", "PROVISIONED", "INACTIVE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        :param location_name:
+            The value to assign to the location_name property of this CrossConnect.
+        :type location_name: str
+
+        :param port_name:
+            The value to assign to the port_name property of this CrossConnect.
+        :type port_name: str
+
+        :param port_speed_shape_name:
+            The value to assign to the port_speed_shape_name property of this CrossConnect.
+        :type port_speed_shape_name: str
+
+        :param time_created:
+            The value to assign to the time_created property of this CrossConnect.
+        :type time_created: datetime
+
+        """
         self.swagger_types = {
             'compartment_id': 'str',
             'cross_connect_group_id': 'str',

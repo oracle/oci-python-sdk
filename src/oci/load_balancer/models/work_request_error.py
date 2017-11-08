@@ -3,12 +3,28 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class WorkRequestError(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new WorkRequestError object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param error_code:
+            The value to assign to the error_code property of this WorkRequestError.
+            Allowed values for this property are: "BAD_INPUT", "INTERNAL_ERROR", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type error_code: str
+
+        :param message:
+            The value to assign to the message property of this WorkRequestError.
+        :type message: str
+
+        """
         self.swagger_types = {
             'error_code': 'str',
             'message': 'str'

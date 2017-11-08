@@ -3,12 +3,38 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class UpdateBackendSetDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new UpdateBackendSetDetails object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param backends:
+            The value to assign to the backends property of this UpdateBackendSetDetails.
+        :type backends: list[BackendDetails]
+
+        :param health_checker:
+            The value to assign to the health_checker property of this UpdateBackendSetDetails.
+        :type health_checker: HealthCheckerDetails
+
+        :param policy:
+            The value to assign to the policy property of this UpdateBackendSetDetails.
+        :type policy: str
+
+        :param session_persistence_configuration:
+            The value to assign to the session_persistence_configuration property of this UpdateBackendSetDetails.
+        :type session_persistence_configuration: SessionPersistenceConfigurationDetails
+
+        :param ssl_configuration:
+            The value to assign to the ssl_configuration property of this UpdateBackendSetDetails.
+        :type ssl_configuration: SSLConfigurationDetails
+
+        """
         self.swagger_types = {
             'backends': 'list[BackendDetails]',
             'health_checker': 'HealthCheckerDetails',

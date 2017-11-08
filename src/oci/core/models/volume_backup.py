@@ -3,12 +3,64 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class VolumeBackup(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new VolumeBackup object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this VolumeBackup.
+        :type compartment_id: str
+
+        :param display_name:
+            The value to assign to the display_name property of this VolumeBackup.
+        :type display_name: str
+
+        :param id:
+            The value to assign to the id property of this VolumeBackup.
+        :type id: str
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this VolumeBackup.
+            Allowed values for this property are: "CREATING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAULTY", "REQUEST_RECEIVED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        :param size_in_gbs:
+            The value to assign to the size_in_gbs property of this VolumeBackup.
+        :type size_in_gbs: int
+
+        :param size_in_mbs:
+            The value to assign to the size_in_mbs property of this VolumeBackup.
+        :type size_in_mbs: int
+
+        :param time_created:
+            The value to assign to the time_created property of this VolumeBackup.
+        :type time_created: datetime
+
+        :param time_request_received:
+            The value to assign to the time_request_received property of this VolumeBackup.
+        :type time_request_received: datetime
+
+        :param unique_size_in_gbs:
+            The value to assign to the unique_size_in_gbs property of this VolumeBackup.
+        :type unique_size_in_gbs: int
+
+        :param unique_size_in_mbs:
+            The value to assign to the unique_size_in_mbs property of this VolumeBackup.
+        :type unique_size_in_mbs: int
+
+        :param volume_id:
+            The value to assign to the volume_id property of this VolumeBackup.
+        :type volume_id: str
+
+        """
         self.swagger_types = {
             'compartment_id': 'str',
             'display_name': 'str',

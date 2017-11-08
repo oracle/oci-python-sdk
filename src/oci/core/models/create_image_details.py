@@ -3,12 +3,34 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class CreateImageDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new CreateImageDetails object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this CreateImageDetails.
+        :type compartment_id: str
+
+        :param display_name:
+            The value to assign to the display_name property of this CreateImageDetails.
+        :type display_name: str
+
+        :param image_source_details:
+            The value to assign to the image_source_details property of this CreateImageDetails.
+        :type image_source_details: ImageSourceDetails
+
+        :param instance_id:
+            The value to assign to the instance_id property of this CreateImageDetails.
+        :type instance_id: str
+
+        """
         self.swagger_types = {
             'compartment_id': 'str',
             'display_name': 'str',

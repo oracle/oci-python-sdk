@@ -3,12 +3,47 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class CreateDatabaseDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new CreateDatabaseDetails object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param admin_password:
+            The value to assign to the admin_password property of this CreateDatabaseDetails.
+        :type admin_password: str
+
+        :param character_set:
+            The value to assign to the character_set property of this CreateDatabaseDetails.
+        :type character_set: str
+
+        :param db_backup_config:
+            The value to assign to the db_backup_config property of this CreateDatabaseDetails.
+        :type db_backup_config: DbBackupConfig
+
+        :param db_name:
+            The value to assign to the db_name property of this CreateDatabaseDetails.
+        :type db_name: str
+
+        :param db_workload:
+            The value to assign to the db_workload property of this CreateDatabaseDetails.
+            Allowed values for this property are: "OLTP", "DSS"
+        :type db_workload: str
+
+        :param ncharacter_set:
+            The value to assign to the ncharacter_set property of this CreateDatabaseDetails.
+        :type ncharacter_set: str
+
+        :param pdb_name:
+            The value to assign to the pdb_name property of this CreateDatabaseDetails.
+        :type pdb_name: str
+
+        """
         self.swagger_types = {
             'admin_password': 'str',
             'character_set': 'str',

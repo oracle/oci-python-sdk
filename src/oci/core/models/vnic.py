@@ -3,12 +3,72 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class Vnic(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new Vnic object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param availability_domain:
+            The value to assign to the availability_domain property of this Vnic.
+        :type availability_domain: str
+
+        :param compartment_id:
+            The value to assign to the compartment_id property of this Vnic.
+        :type compartment_id: str
+
+        :param display_name:
+            The value to assign to the display_name property of this Vnic.
+        :type display_name: str
+
+        :param hostname_label:
+            The value to assign to the hostname_label property of this Vnic.
+        :type hostname_label: str
+
+        :param id:
+            The value to assign to the id property of this Vnic.
+        :type id: str
+
+        :param is_primary:
+            The value to assign to the is_primary property of this Vnic.
+        :type is_primary: bool
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this Vnic.
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        :param mac_address:
+            The value to assign to the mac_address property of this Vnic.
+        :type mac_address: str
+
+        :param private_ip:
+            The value to assign to the private_ip property of this Vnic.
+        :type private_ip: str
+
+        :param public_ip:
+            The value to assign to the public_ip property of this Vnic.
+        :type public_ip: str
+
+        :param skip_source_dest_check:
+            The value to assign to the skip_source_dest_check property of this Vnic.
+        :type skip_source_dest_check: bool
+
+        :param subnet_id:
+            The value to assign to the subnet_id property of this Vnic.
+        :type subnet_id: str
+
+        :param time_created:
+            The value to assign to the time_created property of this Vnic.
+        :type time_created: datetime
+
+        """
         self.swagger_types = {
             'availability_domain': 'str',
             'compartment_id': 'str',

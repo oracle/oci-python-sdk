@@ -3,12 +3,68 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class Instance(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new Instance object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param availability_domain:
+            The value to assign to the availability_domain property of this Instance.
+        :type availability_domain: str
+
+        :param compartment_id:
+            The value to assign to the compartment_id property of this Instance.
+        :type compartment_id: str
+
+        :param display_name:
+            The value to assign to the display_name property of this Instance.
+        :type display_name: str
+
+        :param extended_metadata:
+            The value to assign to the extended_metadata property of this Instance.
+        :type extended_metadata: dict(str, object)
+
+        :param id:
+            The value to assign to the id property of this Instance.
+        :type id: str
+
+        :param image_id:
+            The value to assign to the image_id property of this Instance.
+        :type image_id: str
+
+        :param ipxe_script:
+            The value to assign to the ipxe_script property of this Instance.
+        :type ipxe_script: str
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this Instance.
+            Allowed values for this property are: "PROVISIONING", "RUNNING", "STARTING", "STOPPING", "STOPPED", "CREATING_IMAGE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        :param metadata:
+            The value to assign to the metadata property of this Instance.
+        :type metadata: dict(str, str)
+
+        :param region:
+            The value to assign to the region property of this Instance.
+        :type region: str
+
+        :param shape:
+            The value to assign to the shape property of this Instance.
+        :type shape: str
+
+        :param time_created:
+            The value to assign to the time_created property of this Instance.
+        :type time_created: datetime
+
+        """
         self.swagger_types = {
             'availability_domain': 'str',
             'compartment_id': 'str',

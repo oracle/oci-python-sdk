@@ -3,12 +3,27 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class UpdateIdentityProviderDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new UpdateIdentityProviderDetails object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param protocol:
+            The value to assign to the protocol property of this UpdateIdentityProviderDetails.
+            Allowed values for this property are: "SAML2"
+        :type protocol: str
+
+        :param description:
+            The value to assign to the description property of this UpdateIdentityProviderDetails.
+        :type description: str
+
+        """
         self.swagger_types = {
             'protocol': 'str',
             'description': 'str'

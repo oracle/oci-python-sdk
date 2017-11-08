@@ -3,12 +3,46 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class Backend(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new Backend object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param backup:
+            The value to assign to the backup property of this Backend.
+        :type backup: bool
+
+        :param drain:
+            The value to assign to the drain property of this Backend.
+        :type drain: bool
+
+        :param ip_address:
+            The value to assign to the ip_address property of this Backend.
+        :type ip_address: str
+
+        :param name:
+            The value to assign to the name property of this Backend.
+        :type name: str
+
+        :param offline:
+            The value to assign to the offline property of this Backend.
+        :type offline: bool
+
+        :param port:
+            The value to assign to the port property of this Backend.
+        :type port: int
+
+        :param weight:
+            The value to assign to the weight property of this Backend.
+        :type weight: int
+
+        """
         self.swagger_types = {
             'backup': 'bool',
             'drain': 'bool',

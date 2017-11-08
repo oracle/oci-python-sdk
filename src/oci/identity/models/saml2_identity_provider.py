@@ -3,12 +3,30 @@
 
 from .identity_provider import IdentityProvider
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class Saml2IdentityProvider(IdentityProvider):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new Saml2IdentityProvider object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param metadata_url:
+            The value to assign to the metadata_url property of this Saml2IdentityProvider.
+        :type metadata_url: str
+
+        :param signing_certificate:
+            The value to assign to the signing_certificate property of this Saml2IdentityProvider.
+        :type signing_certificate: str
+
+        :param redirect_url:
+            The value to assign to the redirect_url property of this Saml2IdentityProvider.
+        :type redirect_url: str
+
+        """
         self.swagger_types = {
             'id': 'str',
             'compartment_id': 'str',

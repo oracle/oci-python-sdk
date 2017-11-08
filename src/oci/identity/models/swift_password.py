@@ -3,12 +3,52 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class SwiftPassword(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new SwiftPassword object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param password:
+            The value to assign to the password property of this SwiftPassword.
+        :type password: str
+
+        :param id:
+            The value to assign to the id property of this SwiftPassword.
+        :type id: str
+
+        :param user_id:
+            The value to assign to the user_id property of this SwiftPassword.
+        :type user_id: str
+
+        :param description:
+            The value to assign to the description property of this SwiftPassword.
+        :type description: str
+
+        :param time_created:
+            The value to assign to the time_created property of this SwiftPassword.
+        :type time_created: datetime
+
+        :param expires_on:
+            The value to assign to the expires_on property of this SwiftPassword.
+        :type expires_on: datetime
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this SwiftPassword.
+            Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        :param inactive_status:
+            The value to assign to the inactive_status property of this SwiftPassword.
+        :type inactive_status: int
+
+        """
         self.swagger_types = {
             'password': 'str',
             'id': 'str',

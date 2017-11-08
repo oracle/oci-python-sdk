@@ -3,12 +3,64 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class Vcn(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new Vcn object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param cidr_block:
+            The value to assign to the cidr_block property of this Vcn.
+        :type cidr_block: str
+
+        :param compartment_id:
+            The value to assign to the compartment_id property of this Vcn.
+        :type compartment_id: str
+
+        :param default_dhcp_options_id:
+            The value to assign to the default_dhcp_options_id property of this Vcn.
+        :type default_dhcp_options_id: str
+
+        :param default_route_table_id:
+            The value to assign to the default_route_table_id property of this Vcn.
+        :type default_route_table_id: str
+
+        :param default_security_list_id:
+            The value to assign to the default_security_list_id property of this Vcn.
+        :type default_security_list_id: str
+
+        :param display_name:
+            The value to assign to the display_name property of this Vcn.
+        :type display_name: str
+
+        :param dns_label:
+            The value to assign to the dns_label property of this Vcn.
+        :type dns_label: str
+
+        :param id:
+            The value to assign to the id property of this Vcn.
+        :type id: str
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this Vcn.
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        :param time_created:
+            The value to assign to the time_created property of this Vcn.
+        :type time_created: datetime
+
+        :param vcn_domain_name:
+            The value to assign to the vcn_domain_name property of this Vcn.
+        :type vcn_domain_name: str
+
+        """
         self.swagger_types = {
             'cidr_block': 'str',
             'compartment_id': 'str',

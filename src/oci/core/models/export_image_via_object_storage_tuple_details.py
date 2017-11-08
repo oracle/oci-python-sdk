@@ -3,12 +3,30 @@
 
 from .export_image_details import ExportImageDetails
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class ExportImageViaObjectStorageTupleDetails(ExportImageDetails):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new ExportImageViaObjectStorageTupleDetails object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param bucket_name:
+            The value to assign to the bucket_name property of this ExportImageViaObjectStorageTupleDetails.
+        :type bucket_name: str
+
+        :param namespace_name:
+            The value to assign to the namespace_name property of this ExportImageViaObjectStorageTupleDetails.
+        :type namespace_name: str
+
+        :param object_name:
+            The value to assign to the object_name property of this ExportImageViaObjectStorageTupleDetails.
+        :type object_name: str
+
+        """
         self.swagger_types = {
             'destination_type': 'str',
             'bucket_name': 'str',

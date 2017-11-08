@@ -3,12 +3,26 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class SessionPersistenceConfigurationDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new SessionPersistenceConfigurationDetails object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param cookie_name:
+            The value to assign to the cookie_name property of this SessionPersistenceConfigurationDetails.
+        :type cookie_name: str
+
+        :param disable_fallback:
+            The value to assign to the disable_fallback property of this SessionPersistenceConfigurationDetails.
+        :type disable_fallback: bool
+
+        """
         self.swagger_types = {
             'cookie_name': 'str',
             'disable_fallback': 'bool'

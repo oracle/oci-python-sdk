@@ -3,12 +3,42 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class IngressSecurityRule(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new IngressSecurityRule object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param icmp_options:
+            The value to assign to the icmp_options property of this IngressSecurityRule.
+        :type icmp_options: IcmpOptions
+
+        :param is_stateless:
+            The value to assign to the is_stateless property of this IngressSecurityRule.
+        :type is_stateless: bool
+
+        :param protocol:
+            The value to assign to the protocol property of this IngressSecurityRule.
+        :type protocol: str
+
+        :param source:
+            The value to assign to the source property of this IngressSecurityRule.
+        :type source: str
+
+        :param tcp_options:
+            The value to assign to the tcp_options property of this IngressSecurityRule.
+        :type tcp_options: TcpOptions
+
+        :param udp_options:
+            The value to assign to the udp_options property of this IngressSecurityRule.
+        :type udp_options: UdpOptions
+
+        """
         self.swagger_types = {
             'icmp_options': 'IcmpOptions',
             'is_stateless': 'bool',

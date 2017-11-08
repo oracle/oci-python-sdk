@@ -3,12 +3,26 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class VirtualCircuitBandwidthShape(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new VirtualCircuitBandwidthShape object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param bandwidth_in_mbps:
+            The value to assign to the bandwidth_in_mbps property of this VirtualCircuitBandwidthShape.
+        :type bandwidth_in_mbps: int
+
+        :param name:
+            The value to assign to the name property of this VirtualCircuitBandwidthShape.
+        :type name: str
+
+        """
         self.swagger_types = {
             'bandwidth_in_mbps': 'int',
             'name': 'str'

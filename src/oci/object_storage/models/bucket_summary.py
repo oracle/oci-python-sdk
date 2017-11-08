@@ -3,12 +3,42 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class BucketSummary(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new BucketSummary object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param namespace:
+            The value to assign to the namespace property of this BucketSummary.
+        :type namespace: str
+
+        :param name:
+            The value to assign to the name property of this BucketSummary.
+        :type name: str
+
+        :param compartment_id:
+            The value to assign to the compartment_id property of this BucketSummary.
+        :type compartment_id: str
+
+        :param created_by:
+            The value to assign to the created_by property of this BucketSummary.
+        :type created_by: str
+
+        :param time_created:
+            The value to assign to the time_created property of this BucketSummary.
+        :type time_created: datetime
+
+        :param etag:
+            The value to assign to the etag property of this BucketSummary.
+        :type etag: str
+
+        """
         self.swagger_types = {
             'namespace': 'str',
             'name': 'str',

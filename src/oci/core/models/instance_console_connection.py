@@ -3,12 +3,44 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class InstanceConsoleConnection(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new InstanceConsoleConnection object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this InstanceConsoleConnection.
+        :type compartment_id: str
+
+        :param connection_string:
+            The value to assign to the connection_string property of this InstanceConsoleConnection.
+        :type connection_string: str
+
+        :param fingerprint:
+            The value to assign to the fingerprint property of this InstanceConsoleConnection.
+        :type fingerprint: str
+
+        :param id:
+            The value to assign to the id property of this InstanceConsoleConnection.
+        :type id: str
+
+        :param instance_id:
+            The value to assign to the instance_id property of this InstanceConsoleConnection.
+        :type instance_id: str
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this InstanceConsoleConnection.
+            Allowed values for this property are: "ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        """
         self.swagger_types = {
             'compartment_id': 'str',
             'connection_string': 'str',

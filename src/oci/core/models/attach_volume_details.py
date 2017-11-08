@@ -3,12 +3,34 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class AttachVolumeDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new AttachVolumeDetails object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param display_name:
+            The value to assign to the display_name property of this AttachVolumeDetails.
+        :type display_name: str
+
+        :param instance_id:
+            The value to assign to the instance_id property of this AttachVolumeDetails.
+        :type instance_id: str
+
+        :param type:
+            The value to assign to the type property of this AttachVolumeDetails.
+        :type type: str
+
+        :param volume_id:
+            The value to assign to the volume_id property of this AttachVolumeDetails.
+        :type volume_id: str
+
+        """
         self.swagger_types = {
             'display_name': 'str',
             'instance_id': 'str',

@@ -3,12 +3,62 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class Backup(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new Backup object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param availability_domain:
+            The value to assign to the availability_domain property of this Backup.
+        :type availability_domain: str
+
+        :param compartment_id:
+            The value to assign to the compartment_id property of this Backup.
+        :type compartment_id: str
+
+        :param database_id:
+            The value to assign to the database_id property of this Backup.
+        :type database_id: str
+
+        :param display_name:
+            The value to assign to the display_name property of this Backup.
+        :type display_name: str
+
+        :param id:
+            The value to assign to the id property of this Backup.
+        :type id: str
+
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this Backup.
+        :type lifecycle_details: str
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this Backup.
+            Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "RESTORING", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        :param time_ended:
+            The value to assign to the time_ended property of this Backup.
+        :type time_ended: datetime
+
+        :param time_started:
+            The value to assign to the time_started property of this Backup.
+        :type time_started: datetime
+
+        :param type:
+            The value to assign to the type property of this Backup.
+            Allowed values for this property are: "INCREMENTAL", "FULL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type type: str
+
+        """
         self.swagger_types = {
             'availability_domain': 'str',
             'compartment_id': 'str',

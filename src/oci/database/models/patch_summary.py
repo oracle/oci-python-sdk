@@ -3,12 +3,56 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class PatchSummary(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new PatchSummary object with values from values from keyword arguments. The
+        following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param available_actions:
+            The value to assign to the available_actions property of this PatchSummary.
+            Allowed values for items in this list are: "APPLY", "PRECHECK", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type available_actions: list[str]
+
+        :param description:
+            The value to assign to the description property of this PatchSummary.
+        :type description: str
+
+        :param id:
+            The value to assign to the id property of this PatchSummary.
+        :type id: str
+
+        :param last_action:
+            The value to assign to the last_action property of this PatchSummary.
+            Allowed values for this property are: "APPLY", "PRECHECK", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type last_action: str
+
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this PatchSummary.
+        :type lifecycle_details: str
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this PatchSummary.
+            Allowed values for this property are: "AVAILABLE", "SUCCESS", "IN_PROGRESS", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        :param time_released:
+            The value to assign to the time_released property of this PatchSummary.
+        :type time_released: datetime
+
+        :param version:
+            The value to assign to the version property of this PatchSummary.
+        :type version: str
+
+        """
         self.swagger_types = {
             'available_actions': 'list[str]',
             'description': 'str',
