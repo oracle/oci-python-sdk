@@ -9,8 +9,11 @@ from .create_backup_details import CreateBackupDetails
 from .create_data_guard_association_details import CreateDataGuardAssociationDetails
 from .create_data_guard_association_to_existing_db_system_details import CreateDataGuardAssociationToExistingDbSystemDetails
 from .create_database_details import CreateDatabaseDetails
+from .create_database_from_backup_details import CreateDatabaseFromBackupDetails
 from .create_db_home_details import CreateDbHomeDetails
+from .create_db_home_with_db_system_id_base import CreateDbHomeWithDbSystemIdBase
 from .create_db_home_with_db_system_id_details import CreateDbHomeWithDbSystemIdDetails
+from .create_db_home_with_db_system_id_from_backup_details import CreateDbHomeWithDbSystemIdFromBackupDetails
 from .data_guard_association import DataGuardAssociation
 from .data_guard_association_summary import DataGuardAssociationSummary
 from .database import Database
@@ -46,8 +49,11 @@ database_type_mapping = {
     "CreateDataGuardAssociationDetails": CreateDataGuardAssociationDetails,
     "CreateDataGuardAssociationToExistingDbSystemDetails": CreateDataGuardAssociationToExistingDbSystemDetails,
     "CreateDatabaseDetails": CreateDatabaseDetails,
+    "CreateDatabaseFromBackupDetails": CreateDatabaseFromBackupDetails,
     "CreateDbHomeDetails": CreateDbHomeDetails,
+    "CreateDbHomeWithDbSystemIdBase": CreateDbHomeWithDbSystemIdBase,
     "CreateDbHomeWithDbSystemIdDetails": CreateDbHomeWithDbSystemIdDetails,
+    "CreateDbHomeWithDbSystemIdFromBackupDetails": CreateDbHomeWithDbSystemIdFromBackupDetails,
     "DataGuardAssociation": DataGuardAssociation,
     "DataGuardAssociationSummary": DataGuardAssociationSummary,
     "Database": Database,
