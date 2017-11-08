@@ -16,6 +16,7 @@ class VnicAttachment(object):
             'id': 'str',
             'instance_id': 'str',
             'lifecycle_state': 'str',
+            'nic_index': 'int',
             'subnet_id': 'str',
             'time_created': 'datetime',
             'vlan_tag': 'int',
@@ -29,6 +30,7 @@ class VnicAttachment(object):
             'id': 'id',
             'instance_id': 'instanceId',
             'lifecycle_state': 'lifecycleState',
+            'nic_index': 'nicIndex',
             'subnet_id': 'subnetId',
             'time_created': 'timeCreated',
             'vlan_tag': 'vlanTag',
@@ -41,6 +43,7 @@ class VnicAttachment(object):
         self._id = None
         self._instance_id = None
         self._lifecycle_state = None
+        self._nic_index = None
         self._subnet_id = None
         self._time_created = None
         self._vlan_tag = None
@@ -203,6 +206,42 @@ class VnicAttachment(object):
         if lifecycle_state not in allowed_values:
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def nic_index(self):
+        """
+        Gets the nic_index of this VnicAttachment.
+        Which physical network interface card (NIC) the VNIC uses.
+        Certain bare metal instance shapes have two active physical NICs (0 and 1). If
+        you add a secondary VNIC to one of these instances, you can specify which NIC
+        the VNIC will use. For more information, see
+        `Virtual Network Interface Cards (VNICs)`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVNICs.htm
+
+
+        :return: The nic_index of this VnicAttachment.
+        :rtype: int
+        """
+        return self._nic_index
+
+    @nic_index.setter
+    def nic_index(self, nic_index):
+        """
+        Sets the nic_index of this VnicAttachment.
+        Which physical network interface card (NIC) the VNIC uses.
+        Certain bare metal instance shapes have two active physical NICs (0 and 1). If
+        you add a secondary VNIC to one of these instances, you can specify which NIC
+        the VNIC will use. For more information, see
+        `Virtual Network Interface Cards (VNICs)`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVNICs.htm
+
+
+        :param nic_index: The nic_index of this VnicAttachment.
+        :type: int
+        """
+        self._nic_index = nic_index
 
     @property
     def subnet_id(self):
