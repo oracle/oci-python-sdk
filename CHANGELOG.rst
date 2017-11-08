@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+1.3.10 - 2017-11-27
+====================
+
+Added
+-----
+* Support for sorting and filtering in list APIs in Load Balancing service
+
+====================
 1.3.9 - 2017-11-02
 ====================
 
