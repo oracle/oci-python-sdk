@@ -7,8 +7,6 @@ def test_user_crud(identity, config):
     user_name = tests.util.unique_name("python_temp_user")
     user_description = "Created by python SDK TestUserCrud test."
 
-    initial_user_count = count_all_users(identity, config)
-
     # Create User
     request = oci.identity.models.CreateUserDetails()
     request.compartment_id = compartment
