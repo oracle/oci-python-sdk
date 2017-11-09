@@ -23,7 +23,8 @@ def test_user_crud(identity, config):
     assert compartment == response.data.compartment_id
     user_id = response.data.id
 
-    assert initial_user_count + 1 == count_all_users(identity, config)
+    all_users = list_all_users(identity, config)
+    assert search_non_deleted_user_in_list(user_id=user_id, user_list=all_users, should_find=True)
 
     # Get User
     response = identity.get_user(user_id)
@@ -45,7 +46,31 @@ def test_user_crud(identity, config):
 
     # Delete User
     identity.delete_user(user_id)
-    assert initial_user_count == count_all_users(identity, config)
+    all_users = list_all_users(identity, config)
+    assert search_non_deleted_user_in_list(user_id=user_id, user_list=all_users, should_find=False)
+
+
+def search_non_deleted_user_in_list(user_id, user_list, should_find=True):
+    for user in user_list:
+        if user.id == user_id and user.lifecycle_state in ['CREATING', 'ACTIVE', 'INACTIVE']:  # Non-deleted state
+            return should_find
+
+    return not should_find
+
+
+def list_all_users(identity, config):
+    compartment = config["tenancy"]
+
+    response = identity.list_users(compartment, limit=500)
+    user_list = response.data
+    page = response.next_page
+
+    while page is not None:
+        response = identity.list_users(compartment, limit=500, page=page)
+        page = response.next_page
+        user_list.extend(response.data)
+
+    return user_list
 
 
 def count_all_users(identity, config):
