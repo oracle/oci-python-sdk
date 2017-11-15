@@ -244,30 +244,32 @@ class BaseClient(object):
     def sanitize_for_serialization(self, obj, declared_type=None, field_name=None):
         """
         Builds a JSON POST object.
+
         If obj is str, int, float, bool, None, return directly.
         If obj is datetime.datetime, datetime.date
             convert to string in iso8601 format.
         If obj is list, sanitize each element in the list.
         If obj is dict, return the dict.
         If obj is swagger model, return the properties dict.
+
         :param obj: The data to serialize.
         :return: The serialized form of data.
         """
         types = (six.string_types, int, float, bool, type(None))
- 
+
         declared_swagger_type_to_acceptable_python_types = {
             'str': six.string_types,
             'bool': bool,
-            'int': (float,int),
-            'float': (float,int)
+            'int': (float, int),
+            'float': (float, int)
         }
 
         # if there is a declared type for this obj, then validate that obj is of that type
         if declared_type:
             if declared_type.startswith('dict') and not isinstance(obj, dict):
-                    self.raise_type_error_serializing_model(field_name, obj, declared_type)
+                self.raise_type_error_serializing_model(field_name, obj, declared_type)
             elif declared_type.startswith('list') and not isinstance(obj, list):
-                    self.raise_type_error_serializing_model(field_name, obj, declared_type)
+                self.raise_type_error_serializing_model(field_name, obj, declared_type)
             elif declared_type in self.complex_type_mappings:
                 # if its supposed to be one of our models, it can either be an instance of that model OR a dict
                 if not isinstance(obj, dict) and not isinstance(obj, self.complex_type_mappings[declared_type]):
@@ -285,7 +287,7 @@ class BaseClient(object):
                 sub_obj,
                 self.extract_list_item_type_from_swagger_type(declared_type) if declared_type else None,
                 field_name + '[*]')
-                    for sub_obj in obj]
+                for sub_obj in obj]
         elif isinstance(obj, (datetime, date)):
             return obj.isoformat()
         else:
@@ -311,15 +313,15 @@ class BaseClient(object):
 
             sanitized_dict = {}
             for key, val in obj_dict.items():
-                inner_field_name = key
                 value_declared_type = None
+                inner_field_name = key
                 if keys_to_types_and_field_name:
                     value_declared_type = keys_to_types_and_field_name[key][0]
                     inner_field_name = keys_to_types_and_field_name[key][1]
 
                 inner_field_name = '{}.{}'.format(field_name, inner_field_name) if field_name else inner_field_name
                 sanitized_dict[key] = self.sanitize_for_serialization(val, value_declared_type, inner_field_name)
-            
+
             return sanitized_dict
 
     def raise_type_error_serializing_model(self, field_name, obj, declared_type):
@@ -327,21 +329,20 @@ class BaseClient(object):
 
     def extract_dict_value_type_from_swagger_type(self, swagger_type):
         m = re.search('dict\(str, (.+?)\)', swagger_type)
-        
+
         result = None
         if m:
             result = m.group(1)
-        
+
         return result
 
     def extract_list_item_type_from_swagger_type(self, swagger_type):
-        # TODO: do we need to support keys other than strings?
         m = re.search('list\[(.+?)\]', swagger_type)
-        
+
         result = None
         if m:
             result = m.group(1)
-        
+
         return result
 
     def raise_service_error(self, response):
