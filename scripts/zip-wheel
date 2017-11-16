@@ -25,12 +25,12 @@ def copy(*src_path):
 shutil.rmtree(os.path.join(dist, zip_folder), ignore_errors=True)
 os.mkdir(os.path.join(dist, zip_folder))
 
-# 1. copy files
+# 1. copy files and docs
 copy("..", "LICENSE.txt")
 copy("..", "CHANGELOG.rst")
 copy("..", "examples")
-copy("..", "docs/_build/html")
 copy("..", "dist", "oci-{v}-py2.py3-none-any.whl".format(v=oci.__version__))
+shutil.copytree("docs/_build/html", os.path.join(dist, zip_folder, "docs"))
 
 # 2. zip target folder so that unzipping doesn't dump artifacts in CWD
 shutil.make_archive(
