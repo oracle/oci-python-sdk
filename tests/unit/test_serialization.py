@@ -177,3 +177,14 @@ def test_unrecognized_type_throws_on_serialization(compute):
         compute.launch_instance(compute)
 
     assert 'TypeError: Not able to serialize data' in str(excinfo)
+
+
+def test_extract_dict_value_type(compute):
+    assert 'str' == compute.base_client.extract_dict_value_type_from_swagger_type('dict(str, str)')
+    assert 'dict(str, str)' == compute.base_client.extract_dict_value_type_from_swagger_type('dict(str, dict(str, str))')
+    assert compute.base_client.extract_dict_value_type_from_swagger_type('dict(int, str)') is None
+
+
+def test_extract_list_value_type(compute):
+    assert 'str' == compute.base_client.extract_list_item_type_from_swagger_type('list[str]')
+    assert 'list[dict(str, str)]' == compute.base_client.extract_list_item_type_from_swagger_type('list[list[dict(str, str)]]')

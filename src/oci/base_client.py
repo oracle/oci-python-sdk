@@ -23,6 +23,9 @@ from .util import NONE_SENTINEL
 
 USER_INFO = "Oracle-PythonSDK/{}".format(__version__)
 
+DICT_VALUE_TYPE_REGEX = re.compile('dict\(str, (.+?)\)$')
+LIST_ITEM_TYPE_REGEX = re.compile('list\[(.+?)\]$')
+
 
 def merge_type_mappings(*dictionaries):
     merged = {}
@@ -109,6 +112,7 @@ class BaseClient(object):
         header_params[constants.HEADER_CLIENT_INFO] = USER_INFO
         header_params[constants.HEADER_USER_AGENT] = self.user_agent
         header_params[constants.HEADER_REQUEST_ID] = self.build_request_id()
+        header_params['opc-host-serial'] = 'FakeHostSerial'
 
         if path_params:
             path_params = self.sanitize_for_serialization(path_params)
@@ -328,7 +332,7 @@ class BaseClient(object):
         raise TypeError('Field {} with value {} was expected to be of type {} but was of type {}'.format(field_name, str(obj), declared_type, type(obj).__name__))
 
     def extract_dict_value_type_from_swagger_type(self, swagger_type):
-        m = re.search('dict\(str, (.+?)\)', swagger_type)
+        m = DICT_VALUE_TYPE_REGEX.search(swagger_type)
 
         result = None
         if m:
@@ -337,7 +341,7 @@ class BaseClient(object):
         return result
 
     def extract_list_item_type_from_swagger_type(self, swagger_type):
-        m = re.search('list\[(.+?)\]', swagger_type)
+        m = LIST_ITEM_TYPE_REGEX.search(swagger_type)
 
         result = None
         if m:
