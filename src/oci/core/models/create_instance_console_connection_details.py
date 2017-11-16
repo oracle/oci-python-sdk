@@ -26,7 +26,7 @@ class CreateInstanceConsoleConnectionDetails(object):
     def instance_id(self):
         """
         Gets the instance_id of this CreateInstanceConsoleConnectionDetails.
-        The OCID of the instance to create the serial console connection to.
+        The OCID of the instance to create the console connection to.
 
 
         :return: The instance_id of this CreateInstanceConsoleConnectionDetails.
@@ -38,7 +38,7 @@ class CreateInstanceConsoleConnectionDetails(object):
     def instance_id(self, instance_id):
         """
         Sets the instance_id of this CreateInstanceConsoleConnectionDetails.
-        The OCID of the instance to create the serial console connection to.
+        The OCID of the instance to create the console connection to.
 
 
         :param instance_id: The instance_id of this CreateInstanceConsoleConnectionDetails.
@@ -50,7 +50,7 @@ class CreateInstanceConsoleConnectionDetails(object):
     def public_key(self):
         """
         Gets the public_key of this CreateInstanceConsoleConnectionDetails.
-        The SSH public key used to authenticate the serial console connection.
+        The SSH public key used to authenticate the console connection.
 
 
         :return: The public_key of this CreateInstanceConsoleConnectionDetails.
@@ -62,7 +62,7 @@ class CreateInstanceConsoleConnectionDetails(object):
     def public_key(self, public_key):
         """
         Sets the public_key of this CreateInstanceConsoleConnectionDetails.
-        The SSH public key used to authenticate the serial console connection.
+        The SSH public key used to authenticate the console connection.
 
 
         :param public_key: The public_key of this CreateInstanceConsoleConnectionDetails.

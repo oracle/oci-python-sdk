@@ -21,6 +21,7 @@ class Instance(object):
             'metadata': 'dict(str, str)',
             'region': 'str',
             'shape': 'str',
+            'source_details': 'InstanceSourceDetails',
             'time_created': 'datetime'
         }
 
@@ -36,6 +37,7 @@ class Instance(object):
             'metadata': 'metadata',
             'region': 'region',
             'shape': 'shape',
+            'source_details': 'sourceDetails',
             'time_created': 'timeCreated'
         }
 
@@ -50,6 +52,7 @@ class Instance(object):
         self._metadata = None
         self._region = None
         self._shape = None
+        self._source_details = None
         self._time_created = None
 
     @property
@@ -194,8 +197,7 @@ class Instance(object):
     def image_id(self):
         """
         Gets the image_id of this Instance.
-        The image used to boot the instance. You can enumerate all available images by calling
-        :func:`list_images`.
+        Deprecated. Use `sourceDetails` instead.
 
 
         :return: The image_id of this Instance.
@@ -207,8 +209,7 @@ class Instance(object):
     def image_id(self, image_id):
         """
         Sets the image_id of this Instance.
-        The image used to boot the instance. You can enumerate all available images by calling
-        :func:`list_images`.
+        Deprecated. Use `sourceDetails` instead.
 
 
         :param image_id: The image_id of this Instance.
@@ -395,6 +396,30 @@ class Instance(object):
         :type: str
         """
         self._shape = shape
+
+    @property
+    def source_details(self):
+        """
+        Gets the source_details of this Instance.
+        Details for creating an instance
+
+
+        :return: The source_details of this Instance.
+        :rtype: InstanceSourceDetails
+        """
+        return self._source_details
+
+    @source_details.setter
+    def source_details(self, source_details):
+        """
+        Sets the source_details of this Instance.
+        Details for creating an instance
+
+
+        :param source_details: The source_details of this Instance.
+        :type: InstanceSourceDetails
+        """
+        self._source_details = source_details
 
     @property
     def time_created(self):
