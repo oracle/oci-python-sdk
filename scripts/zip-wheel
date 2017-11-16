@@ -29,6 +29,7 @@ os.mkdir(os.path.join(dist, zip_folder))
 copy("..", "LICENSE.txt")
 copy("..", "CHANGELOG.rst")
 copy("..", "examples")
+copy("..", "docs/_build/html")
 copy("..", "dist", "oci-{v}-py2.py3-none-any.whl".format(v=oci.__version__))
 
 # 2. zip target folder so that unzipping doesn't dump artifacts in CWD
