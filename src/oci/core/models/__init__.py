@@ -3,9 +3,12 @@
 
 from __future__ import absolute_import
 
+from .attach_boot_volume_details import AttachBootVolumeDetails
 from .attach_i_scsi_volume_details import AttachIScsiVolumeDetails
 from .attach_vnic_details import AttachVnicDetails
 from .attach_volume_details import AttachVolumeDetails
+from .boot_volume import BootVolume
+from .boot_volume_attachment import BootVolumeAttachment
 from .capture_console_history_details import CaptureConsoleHistoryDetails
 from .connect_local_peering_gateways_details import ConnectLocalPeeringGatewaysDetails
 from .console_history import ConsoleHistory
@@ -60,6 +63,9 @@ from .ingress_security_rule import IngressSecurityRule
 from .instance import Instance
 from .instance_console_connection import InstanceConsoleConnection
 from .instance_credentials import InstanceCredentials
+from .instance_source_details import InstanceSourceDetails
+from .instance_source_via_boot_volume_details import InstanceSourceViaBootVolumeDetails
+from .instance_source_via_image_details import InstanceSourceViaImageDetails
 from .internet_gateway import InternetGateway
 from .launch_instance_details import LaunchInstanceDetails
 from .letter_of_authority import LetterOfAuthority
@@ -75,6 +81,7 @@ from .tcp_options import TcpOptions
 from .tunnel_config import TunnelConfig
 from .tunnel_status import TunnelStatus
 from .udp_options import UdpOptions
+from .update_boot_volume_details import UpdateBootVolumeDetails
 from .update_console_history_details import UpdateConsoleHistoryDetails
 from .update_cpe_details import UpdateCpeDetails
 from .update_cross_connect_details import UpdateCrossConnectDetails
@@ -110,9 +117,12 @@ from .volume_source_from_volume_details import VolumeSourceFromVolumeDetails
 
 # Maps type names to classes for core services.
 core_type_mapping = {
+    "AttachBootVolumeDetails": AttachBootVolumeDetails,
     "AttachIScsiVolumeDetails": AttachIScsiVolumeDetails,
     "AttachVnicDetails": AttachVnicDetails,
     "AttachVolumeDetails": AttachVolumeDetails,
+    "BootVolume": BootVolume,
+    "BootVolumeAttachment": BootVolumeAttachment,
     "CaptureConsoleHistoryDetails": CaptureConsoleHistoryDetails,
     "ConnectLocalPeeringGatewaysDetails": ConnectLocalPeeringGatewaysDetails,
     "ConsoleHistory": ConsoleHistory,
@@ -167,6 +177,9 @@ core_type_mapping = {
     "Instance": Instance,
     "InstanceConsoleConnection": InstanceConsoleConnection,
     "InstanceCredentials": InstanceCredentials,
+    "InstanceSourceDetails": InstanceSourceDetails,
+    "InstanceSourceViaBootVolumeDetails": InstanceSourceViaBootVolumeDetails,
+    "InstanceSourceViaImageDetails": InstanceSourceViaImageDetails,
     "InternetGateway": InternetGateway,
     "LaunchInstanceDetails": LaunchInstanceDetails,
     "LetterOfAuthority": LetterOfAuthority,
@@ -182,6 +195,7 @@ core_type_mapping = {
     "TunnelConfig": TunnelConfig,
     "TunnelStatus": TunnelStatus,
     "UdpOptions": UdpOptions,
+    "UpdateBootVolumeDetails": UpdateBootVolumeDetails,
     "UpdateConsoleHistoryDetails": UpdateConsoleHistoryDetails,
     "UpdateCpeDetails": UpdateCpeDetails,
     "UpdateCrossConnectDetails": UpdateCrossConnectDetails,

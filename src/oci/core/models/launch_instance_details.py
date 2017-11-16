@@ -20,6 +20,7 @@ class LaunchInstanceDetails(object):
             'ipxe_script': 'str',
             'metadata': 'dict(str, str)',
             'shape': 'str',
+            'source_details': 'InstanceSourceDetails',
             'subnet_id': 'str'
         }
 
@@ -34,6 +35,7 @@ class LaunchInstanceDetails(object):
             'ipxe_script': 'ipxeScript',
             'metadata': 'metadata',
             'shape': 'shape',
+            'source_details': 'sourceDetails',
             'subnet_id': 'subnetId'
         }
 
@@ -47,6 +49,7 @@ class LaunchInstanceDetails(object):
         self._ipxe_script = None
         self._metadata = None
         self._shape = None
+        self._source_details = None
         self._subnet_id = None
 
     @property
@@ -193,7 +196,7 @@ class LaunchInstanceDetails(object):
     def hostname_label(self):
         """
         Gets the hostname_label of this LaunchInstanceDetails.
-        Deprecated. Instead use `hostnameLabel` in
+        Deprecated. Instead Use `hostnameLabel` in
         :class:`CreateVnicDetails`.
         If you provide both, the values must match.
 
@@ -207,7 +210,7 @@ class LaunchInstanceDetails(object):
     def hostname_label(self, hostname_label):
         """
         Sets the hostname_label of this LaunchInstanceDetails.
-        Deprecated. Instead use `hostnameLabel` in
+        Deprecated. Instead Use `hostnameLabel` in
         :class:`CreateVnicDetails`.
         If you provide both, the values must match.
 
@@ -221,7 +224,8 @@ class LaunchInstanceDetails(object):
     def image_id(self):
         """
         Gets the image_id of this LaunchInstanceDetails.
-        The OCID of the image used to boot the instance.
+        Deprecated. Use `sourceDetails` with :func:`instance_source_via_image_details`
+        source type instead. If you specify values for both, the values must match.
 
 
         :return: The image_id of this LaunchInstanceDetails.
@@ -233,7 +237,8 @@ class LaunchInstanceDetails(object):
     def image_id(self, image_id):
         """
         Sets the image_id of this LaunchInstanceDetails.
-        The OCID of the image used to boot the instance.
+        Deprecated. Use `sourceDetails` with :func:`instance_source_via_image_details`
+        source type instead. If you specify values for both, the values must match.
 
 
         :param image_id: The image_id of this LaunchInstanceDetails.
@@ -488,6 +493,30 @@ class LaunchInstanceDetails(object):
         :type: str
         """
         self._shape = shape
+
+    @property
+    def source_details(self):
+        """
+        Gets the source_details of this LaunchInstanceDetails.
+        Details for creating an instance.
+
+
+        :return: The source_details of this LaunchInstanceDetails.
+        :rtype: InstanceSourceDetails
+        """
+        return self._source_details
+
+    @source_details.setter
+    def source_details(self, source_details):
+        """
+        Sets the source_details of this LaunchInstanceDetails.
+        Details for creating an instance.
+
+
+        :param source_details: The source_details of this LaunchInstanceDetails.
+        :type: InstanceSourceDetails
+        """
+        self._source_details = source_details
 
     @property
     def subnet_id(self):

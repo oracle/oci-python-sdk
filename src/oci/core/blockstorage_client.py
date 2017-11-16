@@ -141,6 +141,63 @@ class BlockstorageClient(object):
             body=create_volume_backup_details,
             response_type="VolumeBackup")
 
+    def delete_boot_volume(self, boot_volume_id, **kwargs):
+        """
+        DeleteBootVolume
+        Deletes the specified boot volume. The volume cannot have an active connection to an instance.
+        To disconnect the boot volume from a connected instance, see
+        `Disconnecting From a Boot Volume`__.
+        **Warning:** All data on the boot volume will be permanently lost when the boot volume is deleted.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Tasks/deletingbootvolume.htm
+
+
+        :param str boot_volume_id: (required)
+            The OCID of the boot volume.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/bootVolumes/{bootVolumeId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_boot_volume got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "bootVolumeId": boot_volume_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params)
+
     def delete_volume(self, volume_id, **kwargs):
         """
         DeleteVolume
@@ -250,6 +307,47 @@ class BlockstorageClient(object):
             path_params=path_params,
             header_params=header_params)
 
+    def get_boot_volume(self, boot_volume_id, **kwargs):
+        """
+        GetBootVolume
+        Gets information for the specified boot volume.
+
+
+        :param str boot_volume_id: (required)
+            The OCID of the boot volume.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.BootVolume`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/bootVolumes/{bootVolumeId}"
+        method = "GET"
+
+        if kwargs:
+            raise ValueError(
+                "get_boot_volume got unknown kwargs: {!r}".format(kwargs))
+
+        path_params = {
+            "bootVolumeId": boot_volume_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="BootVolume")
+
     def get_volume(self, volume_id, **kwargs):
         """
         GetVolume
@@ -331,6 +429,64 @@ class BlockstorageClient(object):
             path_params=path_params,
             header_params=header_params,
             response_type="VolumeBackup")
+
+    def list_boot_volumes(self, availability_domain, compartment_id, **kwargs):
+        """
+        ListBootVolumes
+        Lists the boot volumes in the specified compartment and Availability Domain.
+
+
+        :param str availability_domain: (required)
+            The name of the Availability Domain.
+
+            Example: `Uocm:PHX-AD-1`
+
+        :param str compartment_id: (required)
+            The OCID of the compartment.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+            Example: `500`
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.BootVolume`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/bootVolumes"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_boot_volumes got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "availabilityDomain": availability_domain,
+            "compartmentId": compartment_id,
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[BootVolume]")
 
     def list_volume_backups(self, compartment_id, **kwargs):
         """
@@ -557,6 +713,63 @@ class BlockstorageClient(object):
             query_params=query_params,
             header_params=header_params,
             response_type="list[Volume]")
+
+    def update_boot_volume(self, boot_volume_id, update_boot_volume_details, **kwargs):
+        """
+        UpdateBootVolume
+        Updates the specified boot volume's display name.
+
+
+        :param str boot_volume_id: (required)
+            The OCID of the boot volume.
+
+        :param UpdateBootVolumeDetails update_boot_volume_details: (required)
+            Update boot volume's display name.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.BootVolume`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/bootVolumes/{bootVolumeId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_boot_volume got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "bootVolumeId": boot_volume_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=update_boot_volume_details,
+            response_type="BootVolume")
 
     def update_volume(self, volume_id, update_volume_details, **kwargs):
         """
