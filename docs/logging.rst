@@ -12,11 +12,11 @@ Logging
 
 The Python SDK uses Python's `logging <https://docs.python.org/3.6/library/logging.html>`_ module. 
 
-Loggers for the Python SDK are ordered hierarchically, with the top level being ``oci`` (or ``oraclebmc`` if you are using the legacy OracleBMC pacakge).
+Loggers for the Python SDK are ordered hierarchically, with the top level being ``oci`` (or ``oraclebmc`` if you are using the legacy OracleBMC package).
 
 Logger names are of the form ``<hierarchy>.<id>`` where the ``<hierarchy>`` is similar to ``oci.base_client`` and ``<id>`` is the result of Python's built-in ``id()`` function. The implication of this is that different instances of the same class have different loggers.
 
-Request logging
+Request Logging
 ================
 Logging of the requests which the Python SDK sends to OCI services can be enabled by setting the ``log_requests`` attribute to ``True`` in your configuration. This could be done in your configuration file, for example:
 
@@ -27,7 +27,7 @@ Logging of the requests which the Python SDK sends to OCI services can be enable
     fingerprint = <fingerprint>
     key_file = <key file>
     tenancy = <tenancy OCID>
-    region = us-phoenix-1
+    region = us-ashburn-1
     log_requests = True
 
 Or programmatically, for example:
