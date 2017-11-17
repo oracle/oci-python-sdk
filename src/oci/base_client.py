@@ -112,7 +112,6 @@ class BaseClient(object):
         header_params[constants.HEADER_CLIENT_INFO] = USER_INFO
         header_params[constants.HEADER_USER_AGENT] = self.user_agent
         header_params[constants.HEADER_REQUEST_ID] = self.build_request_id()
-        header_params['opc-host-serial'] = 'FakeHostSerial'
 
         if path_params:
             path_params = self.sanitize_for_serialization(path_params)
@@ -270,9 +269,9 @@ class BaseClient(object):
 
         # if there is a declared type for this obj, then validate that obj is of that type
         if declared_type:
-            if declared_type.startswith('dict') and not isinstance(obj, dict):
+            if declared_type.startswith('dict(') and not isinstance(obj, dict):
                 self.raise_type_error_serializing_model(field_name, obj, declared_type)
-            elif declared_type.startswith('list') and not isinstance(obj, list):
+            elif declared_type.startswith('list[') and not isinstance(obj, list):
                 self.raise_type_error_serializing_model(field_name, obj, declared_type)
             elif declared_type in self.complex_type_mappings:
                 # if its supposed to be one of our models, it can either be an instance of that model OR a dict
@@ -313,10 +312,10 @@ class BaseClient(object):
                             for attr, _ in obj.swagger_types.items()
                             if getattr(obj, attr) is not None}
 
-                keys_to_types_and_field_name = {obj.attribute_map[attr]: (swagger_type, attr) for attr, swagger_type in obj.swagger_types.items()}
+                keys_to_types_and_field_name = {obj.attribute_map[attr]: (swagger_type, attr) for attr, swagger_type in six.iteritems(obj.swagger_types)}
 
             sanitized_dict = {}
-            for key, val in obj_dict.items():
+            for key, val in six.iteritems(obj_dict):
                 value_declared_type = None
                 inner_field_name = key
                 if keys_to_types_and_field_name:
