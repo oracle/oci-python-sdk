@@ -19,7 +19,8 @@ from .config import get_config_value_or_default, validate_config
 from .request import Request
 from .response import Response
 from .version import __version__
-from .util import NONE_SENTINEL
+from .util import NONE_SENTINEL, Sentinel
+missing = Sentinel("Missing")
 
 USER_INFO = "Oracle-PythonSDK/{}".format(__version__)
 
@@ -111,7 +112,9 @@ class BaseClient(object):
 
         header_params[constants.HEADER_CLIENT_INFO] = USER_INFO
         header_params[constants.HEADER_USER_AGENT] = self.user_agent
-        header_params[constants.HEADER_REQUEST_ID] = self.build_request_id()
+
+        if header_params.get(constants.HEADER_REQUEST_ID, missing) is missing:
+            header_params[constants.HEADER_REQUEST_ID] = self.build_request_id()
 
         if path_params:
             path_params = self.sanitize_for_serialization(path_params)
