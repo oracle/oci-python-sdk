@@ -14,6 +14,10 @@ class VolumeSourceFromVolumeBackupDetails(VolumeSourceDetails):
         Initializes a new VolumeSourceFromVolumeBackupDetails object with values from values from keyword arguments. The
         following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param type:
+            The value to assign to the type property of this VolumeSourceFromVolumeBackupDetails.
+        :type type: str
+
         :param id:
             The value to assign to the id property of this VolumeSourceFromVolumeBackupDetails.
         :type id: str

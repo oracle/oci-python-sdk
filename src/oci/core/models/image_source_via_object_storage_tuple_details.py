@@ -14,6 +14,10 @@ class ImageSourceViaObjectStorageTupleDetails(ImageSourceDetails):
         Initializes a new ImageSourceViaObjectStorageTupleDetails object with values from values from keyword arguments. The
         following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param source_type:
+            The value to assign to the source_type property of this ImageSourceViaObjectStorageTupleDetails.
+        :type source_type: str
+
         :param bucket_name:
             The value to assign to the bucket_name property of this ImageSourceViaObjectStorageTupleDetails.
         :type bucket_name: str

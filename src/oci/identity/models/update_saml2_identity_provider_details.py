@@ -14,6 +14,15 @@ class UpdateSaml2IdentityProviderDetails(UpdateIdentityProviderDetails):
         Initializes a new UpdateSaml2IdentityProviderDetails object with values from values from keyword arguments. The
         following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param protocol:
+            The value to assign to the protocol property of this UpdateSaml2IdentityProviderDetails.
+            Allowed values for this property are: "SAML2"
+        :type protocol: str
+
+        :param description:
+            The value to assign to the description property of this UpdateSaml2IdentityProviderDetails.
+        :type description: str
+
         :param metadata_url:
             The value to assign to the metadata_url property of this UpdateSaml2IdentityProviderDetails.
         :type metadata_url: str

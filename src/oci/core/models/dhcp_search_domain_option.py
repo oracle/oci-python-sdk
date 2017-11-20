@@ -14,6 +14,10 @@ class DhcpSearchDomainOption(DhcpOption):
         Initializes a new DhcpSearchDomainOption object with values from values from keyword arguments. The
         following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param type:
+            The value to assign to the type property of this DhcpSearchDomainOption.
+        :type type: str
+
         :param search_domain_names:
             The value to assign to the search_domain_names property of this DhcpSearchDomainOption.
         :type search_domain_names: list[str]

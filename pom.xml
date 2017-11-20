@@ -345,7 +345,7 @@
             <dependency>
                 <groupId>com.oracle.pic.commons</groupId>
                 <artifactId>coreservices-api-spec</artifactId>
-                <version>0.1.37</version>
+                <version>0.1.41</version>
             </dependency>
             <dependency>
                 <groupId>com.oracle.pic.identity</groupId>
@@ -360,12 +360,12 @@
             <dependency>
                 <groupId>com.oracle.pic.lb</groupId>
                 <artifactId>oralb-api-spec</artifactId>
-                <version>1.0.9</version>
+                <version>1.0.12</version>
             </dependency>
             <dependency>
                 <groupId>com.oracle.pic.dbaas</groupId>
                 <artifactId>dbaas-api-spec</artifactId>
-                <version>0.0.127</version>
+                <version>0.0.129</version>
             </dependency>
             <dependency>
                 <groupId>com.oracle.pic.sherlock</groupId>

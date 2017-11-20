@@ -6,6 +6,16 @@ def test_core_automatic_request_id(virtual_network, config):
     assert len(response.request_id) == 98
 
 
+def test_supplied_request_id(load_balancer_client, config):
+    my_request_id = load_balancer_client.base_client.build_request_id()
+    response = load_balancer_client.list_load_balancers(config['tenancy'], opc_request_id=my_request_id)
+    assert response.status == 200
+    assert response.request_id is not None
+    assert len(response.request_id.split('/')) == 3
+
+    assert my_request_id.lower() in response.request_id.lower()
+
+
 '''
 # Commenting this out until Object Storage updates support for request ID.
 

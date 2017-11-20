@@ -14,6 +14,24 @@ class CreateDataGuardAssociationToExistingDbSystemDetails(CreateDataGuardAssocia
         Initializes a new CreateDataGuardAssociationToExistingDbSystemDetails object with values from values from keyword arguments. The
         following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param creation_type:
+            The value to assign to the creation_type property of this CreateDataGuardAssociationToExistingDbSystemDetails.
+        :type creation_type: str
+
+        :param database_admin_password:
+            The value to assign to the database_admin_password property of this CreateDataGuardAssociationToExistingDbSystemDetails.
+        :type database_admin_password: str
+
+        :param protection_mode:
+            The value to assign to the protection_mode property of this CreateDataGuardAssociationToExistingDbSystemDetails.
+            Allowed values for this property are: "MAXIMUM_AVAILABILITY", "MAXIMUM_PERFORMANCE", "MAXIMUM_PROTECTION"
+        :type protection_mode: str
+
+        :param transport_type:
+            The value to assign to the transport_type property of this CreateDataGuardAssociationToExistingDbSystemDetails.
+            Allowed values for this property are: "SYNC", "ASYNC", "FASTSYNC"
+        :type transport_type: str
+
         :param peer_db_system_id:
             The value to assign to the peer_db_system_id property of this CreateDataGuardAssociationToExistingDbSystemDetails.
         :type peer_db_system_id: str

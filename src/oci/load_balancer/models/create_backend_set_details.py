@@ -142,8 +142,8 @@ class CreateBackendSetDetails(object):
     def policy(self):
         """
         Gets the policy of this CreateBackendSetDetails.
-        The load balancer policy for the backend set. The default load balancing policy is 'ROUND_ROBIN'
-        To get a list of available policies, use the :func:`list_policies` operation.
+        The load balancer policy for the backend set. To get a list of available policies, use the
+        :func:`list_policies` operation.
 
         Example: `LEAST_CONNECTIONS`
 
@@ -157,8 +157,8 @@ class CreateBackendSetDetails(object):
     def policy(self, policy):
         """
         Sets the policy of this CreateBackendSetDetails.
-        The load balancer policy for the backend set. The default load balancing policy is 'ROUND_ROBIN'
-        To get a list of available policies, use the :func:`list_policies` operation.
+        The load balancer policy for the backend set. To get a list of available policies, use the
+        :func:`list_policies` operation.
 
         Example: `LEAST_CONNECTIONS`
 

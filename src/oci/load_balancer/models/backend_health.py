@@ -66,7 +66,7 @@ class BackendHealth(object):
     def status(self):
         """
         Gets the status of this BackendHealth.
-        The general health status of the specified backend server as reported by the primary and stand-by load balancers.
+        The general health status of the specified backend server as reported by the primary and standby load balancers.
 
         *   **OK:** Both health checks returned `OK`.
 
@@ -89,7 +89,7 @@ class BackendHealth(object):
     def status(self, status):
         """
         Sets the status of this BackendHealth.
-        The general health status of the specified backend server as reported by the primary and stand-by load balancers.
+        The general health status of the specified backend server as reported by the primary and standby load balancers.
 
         *   **OK:** Both health checks returned `OK`.
 

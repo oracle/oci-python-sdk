@@ -14,6 +14,10 @@ class DhcpDnsOption(DhcpOption):
         Initializes a new DhcpDnsOption object with values from values from keyword arguments. The
         following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param type:
+            The value to assign to the type property of this DhcpDnsOption.
+        :type type: str
+
         :param custom_dns_servers:
             The value to assign to the custom_dns_servers property of this DhcpDnsOption.
         :type custom_dns_servers: list[str]

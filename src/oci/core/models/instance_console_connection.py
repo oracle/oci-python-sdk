@@ -70,7 +70,7 @@ class InstanceConsoleConnection(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this InstanceConsoleConnection.
-        The OCID of the compartment to contain the serial console connection.
+        The OCID of the compartment to contain the console connection.
 
 
         :return: The compartment_id of this InstanceConsoleConnection.
@@ -82,7 +82,7 @@ class InstanceConsoleConnection(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this InstanceConsoleConnection.
-        The OCID of the compartment to contain the serial console connection.
+        The OCID of the compartment to contain the console connection.
 
 
         :param compartment_id: The compartment_id of this InstanceConsoleConnection.
@@ -94,7 +94,7 @@ class InstanceConsoleConnection(object):
     def connection_string(self):
         """
         Gets the connection_string of this InstanceConsoleConnection.
-        The SSH connection string for the serial console connection.
+        The SSH connection string for the console connection.
 
 
         :return: The connection_string of this InstanceConsoleConnection.
@@ -106,7 +106,7 @@ class InstanceConsoleConnection(object):
     def connection_string(self, connection_string):
         """
         Sets the connection_string of this InstanceConsoleConnection.
-        The SSH connection string for the serial console connection.
+        The SSH connection string for the console connection.
 
 
         :param connection_string: The connection_string of this InstanceConsoleConnection.
@@ -118,7 +118,7 @@ class InstanceConsoleConnection(object):
     def fingerprint(self):
         """
         Gets the fingerprint of this InstanceConsoleConnection.
-        The SSH public key fingerprint for the serial console connection.
+        The SSH public key fingerprint for the console connection.
 
 
         :return: The fingerprint of this InstanceConsoleConnection.
@@ -130,7 +130,7 @@ class InstanceConsoleConnection(object):
     def fingerprint(self, fingerprint):
         """
         Sets the fingerprint of this InstanceConsoleConnection.
-        The SSH public key fingerprint for the serial console connection.
+        The SSH public key fingerprint for the console connection.
 
 
         :param fingerprint: The fingerprint of this InstanceConsoleConnection.
@@ -142,7 +142,7 @@ class InstanceConsoleConnection(object):
     def id(self):
         """
         Gets the id of this InstanceConsoleConnection.
-        The OCID of the serial console connection.
+        The OCID of the console connection.
 
 
         :return: The id of this InstanceConsoleConnection.
@@ -154,7 +154,7 @@ class InstanceConsoleConnection(object):
     def id(self, id):
         """
         Sets the id of this InstanceConsoleConnection.
-        The OCID of the serial console connection.
+        The OCID of the console connection.
 
 
         :param id: The id of this InstanceConsoleConnection.
@@ -166,7 +166,7 @@ class InstanceConsoleConnection(object):
     def instance_id(self):
         """
         Gets the instance_id of this InstanceConsoleConnection.
-        The OCID of the instance the serial console connection connects to.
+        The OCID of the instance the console connection connects to.
 
 
         :return: The instance_id of this InstanceConsoleConnection.
@@ -178,7 +178,7 @@ class InstanceConsoleConnection(object):
     def instance_id(self, instance_id):
         """
         Sets the instance_id of this InstanceConsoleConnection.
-        The OCID of the instance the serial console connection connects to.
+        The OCID of the instance the console connection connects to.
 
 
         :param instance_id: The instance_id of this InstanceConsoleConnection.
@@ -190,7 +190,7 @@ class InstanceConsoleConnection(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this InstanceConsoleConnection.
-        The current state of the serial console connection.
+        The current state of the console connection.
 
         Allowed values for this property are: "ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -205,7 +205,7 @@ class InstanceConsoleConnection(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this InstanceConsoleConnection.
-        The current state of the serial console connection.
+        The current state of the console connection.
 
 
         :param lifecycle_state: The lifecycle_state of this InstanceConsoleConnection.

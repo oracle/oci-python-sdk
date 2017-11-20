@@ -12,6 +12,7 @@ Added
 -----
 * Support for initializing model objects from keyword arguments
 * Support for VCN to VCN peering within the same region
+* Support for sorting and filtering in list APIs in Load Balancing service
 
 ====================
 1.3.9 - 2017-11-02

@@ -14,6 +14,22 @@ class AttachIScsiVolumeDetails(AttachVolumeDetails):
         Initializes a new AttachIScsiVolumeDetails object with values from values from keyword arguments. The
         following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param display_name:
+            The value to assign to the display_name property of this AttachIScsiVolumeDetails.
+        :type display_name: str
+
+        :param instance_id:
+            The value to assign to the instance_id property of this AttachIScsiVolumeDetails.
+        :type instance_id: str
+
+        :param type:
+            The value to assign to the type property of this AttachIScsiVolumeDetails.
+        :type type: str
+
+        :param volume_id:
+            The value to assign to the volume_id property of this AttachIScsiVolumeDetails.
+        :type volume_id: str
+
         :param use_chap:
             The value to assign to the use_chap property of this AttachIScsiVolumeDetails.
         :type use_chap: bool

@@ -14,6 +14,28 @@ class CreateSaml2IdentityProviderDetails(CreateIdentityProviderDetails):
         Initializes a new CreateSaml2IdentityProviderDetails object with values from values from keyword arguments. The
         following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this CreateSaml2IdentityProviderDetails.
+        :type compartment_id: str
+
+        :param name:
+            The value to assign to the name property of this CreateSaml2IdentityProviderDetails.
+        :type name: str
+
+        :param description:
+            The value to assign to the description property of this CreateSaml2IdentityProviderDetails.
+        :type description: str
+
+        :param product_type:
+            The value to assign to the product_type property of this CreateSaml2IdentityProviderDetails.
+            Allowed values for this property are: "IDCS", "ADFS"
+        :type product_type: str
+
+        :param protocol:
+            The value to assign to the protocol property of this CreateSaml2IdentityProviderDetails.
+            Allowed values for this property are: "SAML2"
+        :type protocol: str
+
         :param metadata_url:
             The value to assign to the metadata_url property of this CreateSaml2IdentityProviderDetails.
         :type metadata_url: str

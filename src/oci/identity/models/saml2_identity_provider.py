@@ -14,6 +14,43 @@ class Saml2IdentityProvider(IdentityProvider):
         Initializes a new Saml2IdentityProvider object with values from values from keyword arguments. The
         following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param id:
+            The value to assign to the id property of this Saml2IdentityProvider.
+        :type id: str
+
+        :param compartment_id:
+            The value to assign to the compartment_id property of this Saml2IdentityProvider.
+        :type compartment_id: str
+
+        :param name:
+            The value to assign to the name property of this Saml2IdentityProvider.
+        :type name: str
+
+        :param description:
+            The value to assign to the description property of this Saml2IdentityProvider.
+        :type description: str
+
+        :param product_type:
+            The value to assign to the product_type property of this Saml2IdentityProvider.
+        :type product_type: str
+
+        :param time_created:
+            The value to assign to the time_created property of this Saml2IdentityProvider.
+        :type time_created: datetime
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this Saml2IdentityProvider.
+            Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED"
+        :type lifecycle_state: str
+
+        :param inactive_status:
+            The value to assign to the inactive_status property of this Saml2IdentityProvider.
+        :type inactive_status: int
+
+        :param protocol:
+            The value to assign to the protocol property of this Saml2IdentityProvider.
+        :type protocol: str
+
         :param metadata_url:
             The value to assign to the metadata_url property of this Saml2IdentityProvider.
         :type metadata_url: str

@@ -14,6 +14,10 @@ class ExportImageViaObjectStorageTupleDetails(ExportImageDetails):
         Initializes a new ExportImageViaObjectStorageTupleDetails object with values from values from keyword arguments. The
         following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param destination_type:
+            The value to assign to the destination_type property of this ExportImageViaObjectStorageTupleDetails.
+        :type destination_type: str
+
         :param bucket_name:
             The value to assign to the bucket_name property of this ExportImageViaObjectStorageTupleDetails.
         :type bucket_name: str

@@ -27,6 +27,59 @@ class VirtualNetworkClient(object):
         )
         self.base_client = BaseClient("virtual_network", config, signer, core_type_mapping)
 
+    def connect_local_peering_gateways(self, local_peering_gateway_id, connect_local_peering_gateways_details, **kwargs):
+        """
+        ConnectLocalPeeringGateways
+        Connects this local peering gateway (LPG) to another one in the same region.
+
+        This operation must be called by the VCN administrator who is designated as
+        the *requestor* in the peering relationship. The *acceptor* must implement
+        an Identity and Access Management (IAM) policy that gives the requestor permission
+        to connect to LPGs in the acceptor's compartment. Without that permission, this
+        operation will fail. For more information, see
+        `VCN Peering`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/VCNpeering.htm
+
+
+        :param str local_peering_gateway_id: (required)
+            The OCID of the local peering gateway.
+
+        :param ConnectLocalPeeringGatewaysDetails connect_local_peering_gateways_details: (required)
+            Details regarding the local peering gateway to connect.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/localPeeringGateways/{localPeeringGatewayId}/actions/connect"
+        method = "POST"
+
+        if kwargs:
+            raise ValueError(
+                "connect_local_peering_gateways got unknown kwargs: {!r}".format(kwargs))
+
+        path_params = {
+            "localPeeringGatewayId": local_peering_gateway_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=connect_local_peering_gateways_details)
+
     def create_cpe(self, create_cpe_details, **kwargs):
         """
         CreateCpe
@@ -541,6 +594,51 @@ class VirtualNetworkClient(object):
             header_params=header_params,
             body=create_ip_sec_connection_details,
             response_type="IPSecConnection")
+
+    def create_local_peering_gateway(self, create_local_peering_gateway_details, **kwargs):
+        """
+        CreateLocalPeeringGateway
+        Creates a new local peering gateway (LPG) for the specified VCN.
+
+
+        :param CreateLocalPeeringGatewayDetails create_local_peering_gateway_details: (required)
+            Details for creating a new local peering gateway.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.LocalPeeringGateway`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/localPeeringGateways"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_local_peering_gateway got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            header_params=header_params,
+            body=create_local_peering_gateway_details,
+            response_type="LocalPeeringGateway")
 
     def create_private_ip(self, create_private_ip_details, **kwargs):
         """
@@ -1372,6 +1470,61 @@ class VirtualNetworkClient(object):
 
         path_params = {
             "ipscId": ipsc_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params)
+
+    def delete_local_peering_gateway(self, local_peering_gateway_id, **kwargs):
+        """
+        DeleteLocalPeeringGateway
+        Deletes the specified local peering gateway (LPG).
+
+        This is an asynchronous operation; the local peering gateway's `lifecycleState` changes to TERMINATING temporarily
+        until the local peering gateway is completely removed.
+
+
+        :param str local_peering_gateway_id: (required)
+            The OCID of the local peering gateway.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/localPeeringGateways/{localPeeringGatewayId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_local_peering_gateway got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "localPeeringGatewayId": local_peering_gateway_id
         }
 
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
@@ -2227,6 +2380,47 @@ class VirtualNetworkClient(object):
             path_params=path_params,
             header_params=header_params,
             response_type="IPSecConnectionDeviceStatus")
+
+    def get_local_peering_gateway(self, local_peering_gateway_id, **kwargs):
+        """
+        GetLocalPeeringGateway
+        Gets the specified local peering gateway's information.
+
+
+        :param str local_peering_gateway_id: (required)
+            The OCID of the local peering gateway.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.LocalPeeringGateway`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/localPeeringGateways/{localPeeringGatewayId}"
+        method = "GET"
+
+        if kwargs:
+            raise ValueError(
+                "get_local_peering_gateway got unknown kwargs: {!r}".format(kwargs))
+
+        path_params = {
+            "localPeeringGatewayId": local_peering_gateway_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="LocalPeeringGateway")
 
     def get_private_ip(self, private_ip_id, **kwargs):
         """
@@ -3361,6 +3555,63 @@ class VirtualNetworkClient(object):
             query_params=query_params,
             header_params=header_params,
             response_type="list[IPSecConnection]")
+
+    def list_local_peering_gateways(self, compartment_id, vcn_id, **kwargs):
+        """
+        ListLocalPeeringGateways
+        Lists the local peering gateways (LPGs) for the specified VCN and compartment
+        (the LPG's compartment).
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment.
+
+        :param str vcn_id: (required)
+            The OCID of the VCN.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+            Example: `500`
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.LocalPeeringGateway`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/localPeeringGateways"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_local_peering_gateways got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "vcnId": vcn_id
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[LocalPeeringGateway]")
 
     def list_private_ips(self, **kwargs):
         """
@@ -4509,6 +4760,63 @@ class VirtualNetworkClient(object):
             header_params=header_params,
             body=update_ip_sec_connection_details,
             response_type="IPSecConnection")
+
+    def update_local_peering_gateway(self, local_peering_gateway_id, update_local_peering_gateway_details, **kwargs):
+        """
+        UpdateLocalPeeringGateway
+        Updates the specified local peering gateway (LPG).
+
+
+        :param str local_peering_gateway_id: (required)
+            The OCID of the local peering gateway.
+
+        :param UpdateLocalPeeringGatewayDetails update_local_peering_gateway_details: (required)
+            Details object for updating a local peering gateway.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.LocalPeeringGateway`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/localPeeringGateways/{localPeeringGatewayId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_local_peering_gateway got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "localPeeringGatewayId": local_peering_gateway_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=update_local_peering_gateway_details,
+            response_type="LocalPeeringGateway")
 
     def update_private_ip(self, private_ip_id, update_private_ip_details, **kwargs):
         """
