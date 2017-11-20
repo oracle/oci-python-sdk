@@ -29,16 +29,22 @@ def test_declared_type_str(identity, compute):
     assert 'TypeError: Field name with value 1 was expected to be of type str but was of type int' in str(excinfo)
 
     # validate better exception for when bytes object is passed
+    bytes_content = open('tests/resources/config', 'rb').read()
     launch_instance_details = oci.core.models.LaunchInstanceDetails()
     launch_instance_details.metadata = {
-        'ssh_authorized_keys': open('tests/resources/config', 'rb').read()
+        'ssh_authorized_keys': bytes_content
     }
 
-    with pytest.raises(TypeError) as excinfo:
-        compute.launch_instance(launch_instance_details)
+    # if bytes_content is already a str (Python 2) then we dont expect a type error
+    if isinstance(bytes_content, str):
+        with pytest.raises(ServiceError) as excinfo:
+            compute.launch_instance(launch_instance_details)
+    else:
+        with pytest.raises(TypeError) as excinfo:
+            compute.launch_instance(launch_instance_details)
 
-    assert 'Field metadata.ssh_authorized_keys with value' in str(excinfo)
-    assert 'was expected to be of type str but was of type bytes' in str(excinfo)
+        assert 'Field metadata.ssh_authorized_keys with value' in str(excinfo)
+        assert 'was expected to be of type str but was of type bytes' in str(excinfo)
 
 
 def test_declared_type_bool(compute):
