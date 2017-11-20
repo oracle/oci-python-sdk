@@ -270,8 +270,9 @@ class BaseClient(object):
             'float': (float, int)
         }
 
-        # if there is a declared type for this obj, then validate that obj is of that type
-        if declared_type:
+        # if there is a declared type for this obj, then validate that obj is of that type. None types (either None or the NONE_SENTINEL) are not validated but
+        # instead passed through
+        if declared_type and not self.is_none_or_none_sentinel(obj):
             if declared_type.startswith('dict(') and not isinstance(obj, dict):
                 self.raise_type_error_serializing_model(field_name, obj, declared_type)
             elif declared_type.startswith('list[') and not isinstance(obj, list):
@@ -329,6 +330,9 @@ class BaseClient(object):
                 sanitized_dict[key] = self.sanitize_for_serialization(val, value_declared_type, inner_field_name)
 
             return sanitized_dict
+
+    def is_none_or_none_sentinel(self, obj):
+        return (obj is None) or (obj is NONE_SENTINEL)
 
     def raise_type_error_serializing_model(self, field_name, obj, declared_type):
         raise TypeError('Field {} with value {} was expected to be of type {} but was of type {}'.format(field_name, str(obj), declared_type, type(obj).__name__))
