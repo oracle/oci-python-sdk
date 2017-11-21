@@ -4,6 +4,7 @@
 import time
 from . import util
 import oci
+import pytest
 
 
 class TestCompute:
@@ -20,6 +21,11 @@ class TestCompute:
             self.subtest_console_history_operations(compute)
             self.subtest_instance_action_operations(compute)
             self.subtest_image_operations(compute)
+        except oci.exceptions.ServiceError as e:
+            if e.code == 'LimitExceeded':
+                pytest.skip('Skipping tests as compute limits have been exceeded')
+            else:
+                raise
         finally:
             self.subtest_delete(block_storage, compute, virtual_network)
 

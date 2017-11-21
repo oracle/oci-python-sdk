@@ -2,6 +2,7 @@
 # Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 import oci
+import pytest
 import time
 from . import util
 
@@ -92,7 +93,13 @@ class TestLoadBalancer:
         create_load_balancer_details.subnet_ids = [self.subnet_ocid1, self.subnet_ocid2]
         create_load_balancer_details.backend_sets = {self.backend_set_name: backend_set_details}
 
-        response = load_balancer_client.create_load_balancer(create_load_balancer_details)
+        try:
+            response = load_balancer_client.create_load_balancer(create_load_balancer_details)
+        except oci.exceptions.ServiceError as e:
+            if e.code == 'LimitExceeded':
+                pytest.skip('Skipping tests as load balancer limits have been exceeded')
+            else:
+                raise
         util.validate_response(response)
 
         work_request_id = response.headers['opc-work-request-id']

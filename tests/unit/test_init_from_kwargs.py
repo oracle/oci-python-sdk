@@ -20,6 +20,9 @@ ENUM_ATTR_TO_VALUE = {
     'CreateBucketDetails': {'public_access_type': 'NoPublicAccess', 'storage_tier': 'Standard'},
     'UpdateBucketDetails': {'public_access_type': 'NoPublicAccess'},
     'CreatePreauthenticatedRequestDetails': {'access_type': 'ObjectRead'},
+    'CreateDbHomeWithDbSystemIdBase': {'source': 'DB_BACKUP'},
+    'CreateDbHomeWithDbSystemIdFromBackupDetails': {'source': 'DB_BACKUP'},
+    'CreateDbHomeWithDbSystemIdDetails': {'source': 'NONE'}
 }
 
 
@@ -36,7 +39,6 @@ def test_all_model_classes_can_be_init_from_kwargs():
     for mapping in model_mappings:
         for model_name, model_ref in six.iteritems(mapping):
             base_model = model_ref()
-
             kwargs = {}
             for attr_name, attr_type in six.iteritems(base_model.swagger_types):
                 if attr_type == 'str':

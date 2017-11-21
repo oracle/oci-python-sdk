@@ -11,7 +11,8 @@ import pytz
 class TestAudit:
 
     def test_list_events(self, audit_client):
-        end_time = datetime.datetime.utcnow()
+        utc_now = datetime.datetime.utcnow()
+        end_time = datetime.datetime(year=utc_now.year, month=utc_now.month, day=utc_now.day, hour=utc_now.hour, minute=0, second=0, microsecond=0, tzinfo=pytz.utc)
         start_time = end_time + datetime.timedelta(days=-90)
         response = audit_client.list_events(
             util.COMPARTMENT_ID, start_time, end_time)
@@ -79,4 +80,4 @@ class TestAudit:
         assert event.tenant_id is not None
         # verify event time in the range
         event_time = event.event_time
-        assert event_time >= pytz.utc.localize(start_time) and event_time <= pytz.utc.localize(end_time)
+        assert event_time.astimezone(pytz.utc) >= start_time and event_time.astimezone(pytz.utc) <= end_time
