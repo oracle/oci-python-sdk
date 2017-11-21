@@ -11,8 +11,8 @@ class DataGuardAssociationSummary(object):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new DataGuardAssociationSummary object with values from values from keyword arguments. The
-        following keyword arguments are supported (corresponding to the getters/setters of this class):
+        Initializes a new DataGuardAssociationSummary object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param apply_lag:
             The value to assign to the apply_lag property of this DataGuardAssociationSummary.

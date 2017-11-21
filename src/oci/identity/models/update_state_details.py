@@ -11,8 +11,8 @@ class UpdateStateDetails(object):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new UpdateStateDetails object with values from values from keyword arguments. The
-        following keyword arguments are supported (corresponding to the getters/setters of this class):
+        Initializes a new UpdateStateDetails object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param blocked:
             The value to assign to the blocked property of this UpdateStateDetails.

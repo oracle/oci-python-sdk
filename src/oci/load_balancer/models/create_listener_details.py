@@ -11,8 +11,8 @@ class CreateListenerDetails(object):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new CreateListenerDetails object with values from values from keyword arguments. The
-        following keyword arguments are supported (corresponding to the getters/setters of this class):
+        Initializes a new CreateListenerDetails object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param default_backend_set_name:
             The value to assign to the default_backend_set_name property of this CreateListenerDetails.

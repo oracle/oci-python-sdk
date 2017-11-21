@@ -11,8 +11,8 @@ class DbBackupConfig(object):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new DbBackupConfig object with values from values from keyword arguments. The
-        following keyword arguments are supported (corresponding to the getters/setters of this class):
+        Initializes a new DbBackupConfig object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param auto_backup_enabled:
             The value to assign to the auto_backup_enabled property of this DbBackupConfig.

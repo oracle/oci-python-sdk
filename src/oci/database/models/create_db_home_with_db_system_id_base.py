@@ -11,8 +11,13 @@ class CreateDbHomeWithDbSystemIdBase(object):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new CreateDbHomeWithDbSystemIdBase object with values from values from keyword arguments. The
-        following keyword arguments are supported (corresponding to the getters/setters of this class):
+        Initializes a new CreateDbHomeWithDbSystemIdBase object with values from values from keyword arguments. This class has the following subclasses and if you are using this class as input
+        to a service operations then you should favor using a subclass over the base class:
+
+        * :class:`~oci.database.models.CreateDbHomeWithDbSystemIdFromBackupDetails`
+        * :class:`~oci.database.models.CreateDbHomeWithDbSystemIdDetails`
+
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param db_system_id:
             The value to assign to the db_system_id property of this CreateDbHomeWithDbSystemIdBase.

@@ -11,8 +11,8 @@ class SSLConfigurationDetails(object):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new SSLConfigurationDetails object with values from values from keyword arguments. The
-        following keyword arguments are supported (corresponding to the getters/setters of this class):
+        Initializes a new SSLConfigurationDetails object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param certificate_name:
             The value to assign to the certificate_name property of this SSLConfigurationDetails.

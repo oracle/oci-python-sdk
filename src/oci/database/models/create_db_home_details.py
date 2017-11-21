@@ -11,8 +11,8 @@ class CreateDbHomeDetails(object):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new CreateDbHomeDetails object with values from values from keyword arguments. The
-        following keyword arguments are supported (corresponding to the getters/setters of this class):
+        Initializes a new CreateDbHomeDetails object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param database:
             The value to assign to the database property of this CreateDbHomeDetails.

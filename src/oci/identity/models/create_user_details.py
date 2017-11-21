@@ -11,8 +11,8 @@ class CreateUserDetails(object):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new CreateUserDetails object with values from values from keyword arguments. The
-        following keyword arguments are supported (corresponding to the getters/setters of this class):
+        Initializes a new CreateUserDetails object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param compartment_id:
             The value to assign to the compartment_id property of this CreateUserDetails.

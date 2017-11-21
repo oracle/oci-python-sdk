@@ -11,8 +11,8 @@ class Backend(object):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new Backend object with values from values from keyword arguments. The
-        following keyword arguments are supported (corresponding to the getters/setters of this class):
+        Initializes a new Backend object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param backup:
             The value to assign to the backup property of this Backend.

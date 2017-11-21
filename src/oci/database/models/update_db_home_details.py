@@ -11,8 +11,8 @@ class UpdateDbHomeDetails(object):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new UpdateDbHomeDetails object with values from values from keyword arguments. The
-        following keyword arguments are supported (corresponding to the getters/setters of this class):
+        Initializes a new UpdateDbHomeDetails object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param db_version:
             The value to assign to the db_version property of this UpdateDbHomeDetails.

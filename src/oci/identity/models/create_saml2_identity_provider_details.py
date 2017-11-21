@@ -11,8 +11,9 @@ class CreateSaml2IdentityProviderDetails(CreateIdentityProviderDetails):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new CreateSaml2IdentityProviderDetails object with values from values from keyword arguments. The
-        following keyword arguments are supported (corresponding to the getters/setters of this class):
+        Initializes a new CreateSaml2IdentityProviderDetails object with values from values from keyword arguments. The default value of the :py:attr:`~oci.identity.models.CreateSaml2IdentityProviderDetails.protocol` attribute
+        of this class is ``SAML2`` and it should not be changed.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param compartment_id:
             The value to assign to the compartment_id property of this CreateSaml2IdentityProviderDetails.

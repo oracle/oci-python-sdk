@@ -11,8 +11,8 @@ class IdpGroupMapping(object):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new IdpGroupMapping object with values from values from keyword arguments. The
-        following keyword arguments are supported (corresponding to the getters/setters of this class):
+        Initializes a new IdpGroupMapping object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param id:
             The value to assign to the id property of this IdpGroupMapping.

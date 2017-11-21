@@ -11,8 +11,9 @@ class UpdateSaml2IdentityProviderDetails(UpdateIdentityProviderDetails):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new UpdateSaml2IdentityProviderDetails object with values from values from keyword arguments. The
-        following keyword arguments are supported (corresponding to the getters/setters of this class):
+        Initializes a new UpdateSaml2IdentityProviderDetails object with values from values from keyword arguments. The default value of the :py:attr:`~oci.identity.models.UpdateSaml2IdentityProviderDetails.protocol` attribute
+        of this class is ``SAML2`` and it should not be changed.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param protocol:
             The value to assign to the protocol property of this UpdateSaml2IdentityProviderDetails.

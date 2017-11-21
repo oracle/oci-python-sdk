@@ -11,8 +11,8 @@ class CreateVcnDetails(object):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new CreateVcnDetails object with values from values from keyword arguments. The
-        following keyword arguments are supported (corresponding to the getters/setters of this class):
+        Initializes a new CreateVcnDetails object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param cidr_block:
             The value to assign to the cidr_block property of this CreateVcnDetails.

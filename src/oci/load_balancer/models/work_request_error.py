@@ -11,8 +11,8 @@ class WorkRequestError(object):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new WorkRequestError object with values from values from keyword arguments. The
-        following keyword arguments are supported (corresponding to the getters/setters of this class):
+        Initializes a new WorkRequestError object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param error_code:
             The value to assign to the error_code property of this WorkRequestError.

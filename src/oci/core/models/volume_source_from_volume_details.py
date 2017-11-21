@@ -11,8 +11,9 @@ class VolumeSourceFromVolumeDetails(VolumeSourceDetails):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new VolumeSourceFromVolumeDetails object with values from values from keyword arguments. The
-        following keyword arguments are supported (corresponding to the getters/setters of this class):
+        Initializes a new VolumeSourceFromVolumeDetails object with values from values from keyword arguments. The default value of the :py:attr:`~oci.core.models.VolumeSourceFromVolumeDetails.type` attribute
+        of this class is ``volume`` and it should not be changed.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param type:
             The value to assign to the type property of this VolumeSourceFromVolumeDetails.

@@ -11,8 +11,8 @@ class DbVersionSummary(object):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new DbVersionSummary object with values from values from keyword arguments. The
-        following keyword arguments are supported (corresponding to the getters/setters of this class):
+        Initializes a new DbVersionSummary object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param supports_pdb:
             The value to assign to the supports_pdb property of this DbVersionSummary.

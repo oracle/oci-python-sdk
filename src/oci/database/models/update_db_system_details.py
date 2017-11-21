@@ -11,8 +11,8 @@ class UpdateDbSystemDetails(object):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new UpdateDbSystemDetails object with values from values from keyword arguments. The
-        following keyword arguments are supported (corresponding to the getters/setters of this class):
+        Initializes a new UpdateDbSystemDetails object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param cpu_core_count:
             The value to assign to the cpu_core_count property of this UpdateDbSystemDetails.

@@ -11,8 +11,8 @@ class ConnectLocalPeeringGatewaysDetails(object):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new ConnectLocalPeeringGatewaysDetails object with values from values from keyword arguments. The
-        following keyword arguments are supported (corresponding to the getters/setters of this class):
+        Initializes a new ConnectLocalPeeringGatewaysDetails object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param peer_id:
             The value to assign to the peer_id property of this ConnectLocalPeeringGatewaysDetails.

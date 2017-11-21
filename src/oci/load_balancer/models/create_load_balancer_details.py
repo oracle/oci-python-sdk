@@ -11,8 +11,8 @@ class CreateLoadBalancerDetails(object):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new CreateLoadBalancerDetails object with values from values from keyword arguments. The
-        following keyword arguments are supported (corresponding to the getters/setters of this class):
+        Initializes a new CreateLoadBalancerDetails object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param backend_sets:
             The value to assign to the backend_sets property of this CreateLoadBalancerDetails.

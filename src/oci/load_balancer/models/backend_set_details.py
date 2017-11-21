@@ -11,8 +11,8 @@ class BackendSetDetails(object):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new BackendSetDetails object with values from values from keyword arguments. The
-        following keyword arguments are supported (corresponding to the getters/setters of this class):
+        Initializes a new BackendSetDetails object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param backends:
             The value to assign to the backends property of this BackendSetDetails.

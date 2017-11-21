@@ -11,8 +11,8 @@ class CreateDatabaseDetails(object):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new CreateDatabaseDetails object with values from values from keyword arguments. The
-        following keyword arguments are supported (corresponding to the getters/setters of this class):
+        Initializes a new CreateDatabaseDetails object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param admin_password:
             The value to assign to the admin_password property of this CreateDatabaseDetails.

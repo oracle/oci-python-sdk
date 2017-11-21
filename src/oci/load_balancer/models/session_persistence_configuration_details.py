@@ -11,8 +11,8 @@ class SessionPersistenceConfigurationDetails(object):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new SessionPersistenceConfigurationDetails object with values from values from keyword arguments. The
-        following keyword arguments are supported (corresponding to the getters/setters of this class):
+        Initializes a new SessionPersistenceConfigurationDetails object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param cookie_name:
             The value to assign to the cookie_name property of this SessionPersistenceConfigurationDetails.

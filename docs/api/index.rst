@@ -32,6 +32,7 @@ API Reference
     :members:
     :undoc-members:
     :imported-members:
+    :inherited-members:
 
 ===============
  Core Services
@@ -70,6 +71,7 @@ Virtual Network
     :members:
     :undoc-members:
     :imported-members:
+    :inherited-members:
 
 ==========
  Database
@@ -91,6 +93,7 @@ Virtual Network
     :members:
     :undoc-members:
     :imported-members:
+    :inherited-members:
 
 ==========
  Identity
@@ -112,6 +115,7 @@ Virtual Network
     :members:
     :undoc-members:
     :imported-members:
+    :inherited-members:
 
 ==============
 Load Balancer
@@ -133,6 +137,7 @@ Load Balancer
     :members:
     :undoc-members:
     :imported-members:
+    :inherited-members:
 
 ================
  Object Storage
@@ -154,6 +159,7 @@ Load Balancer
     :members:
     :undoc-members:
     :imported-members:
+    :inherited-members:
 
 ================
  Upload Manager

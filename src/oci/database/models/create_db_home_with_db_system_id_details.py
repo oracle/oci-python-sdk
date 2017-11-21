@@ -11,8 +11,9 @@ class CreateDbHomeWithDbSystemIdDetails(CreateDbHomeWithDbSystemIdBase):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new CreateDbHomeWithDbSystemIdDetails object with values from values from keyword arguments. The
-        following keyword arguments are supported (corresponding to the getters/setters of this class):
+        Initializes a new CreateDbHomeWithDbSystemIdDetails object with values from values from keyword arguments. The default value of the :py:attr:`~oci.database.models.CreateDbHomeWithDbSystemIdDetails.source` attribute
+        of this class is ``NONE`` and it should not be changed.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param db_system_id:
             The value to assign to the db_system_id property of this CreateDbHomeWithDbSystemIdDetails.

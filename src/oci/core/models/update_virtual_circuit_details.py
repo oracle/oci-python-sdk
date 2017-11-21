@@ -11,8 +11,8 @@ class UpdateVirtualCircuitDetails(object):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new UpdateVirtualCircuitDetails object with values from values from keyword arguments. The
-        following keyword arguments are supported (corresponding to the getters/setters of this class):
+        Initializes a new UpdateVirtualCircuitDetails object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param bandwidth_shape_name:
             The value to assign to the bandwidth_shape_name property of this UpdateVirtualCircuitDetails.

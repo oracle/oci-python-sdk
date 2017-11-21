@@ -11,8 +11,8 @@ class CommitMultipartUploadPartDetails(object):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new CommitMultipartUploadPartDetails object with values from values from keyword arguments. The
-        following keyword arguments are supported (corresponding to the getters/setters of this class):
+        Initializes a new CommitMultipartUploadPartDetails object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param part_num:
             The value to assign to the part_num property of this CommitMultipartUploadPartDetails.

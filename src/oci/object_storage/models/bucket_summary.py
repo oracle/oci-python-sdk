@@ -11,8 +11,8 @@ class BucketSummary(object):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new BucketSummary object with values from values from keyword arguments. The
-        following keyword arguments are supported (corresponding to the getters/setters of this class):
+        Initializes a new BucketSummary object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param namespace:
             The value to assign to the namespace property of this BucketSummary.

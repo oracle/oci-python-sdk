@@ -11,8 +11,9 @@ class Saml2IdentityProvider(IdentityProvider):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new Saml2IdentityProvider object with values from values from keyword arguments. The
-        following keyword arguments are supported (corresponding to the getters/setters of this class):
+        Initializes a new Saml2IdentityProvider object with values from values from keyword arguments. The default value of the :py:attr:`~oci.identity.models.Saml2IdentityProvider.protocol` attribute
+        of this class is ``SAML2`` and it should not be changed.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param id:
             The value to assign to the id property of this Saml2IdentityProvider.

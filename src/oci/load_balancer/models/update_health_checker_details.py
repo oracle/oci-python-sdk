@@ -11,8 +11,8 @@ class UpdateHealthCheckerDetails(object):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new UpdateHealthCheckerDetails object with values from values from keyword arguments. The
-        following keyword arguments are supported (corresponding to the getters/setters of this class):
+        Initializes a new UpdateHealthCheckerDetails object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param interval_in_millis:
             The value to assign to the interval_in_millis property of this UpdateHealthCheckerDetails.
