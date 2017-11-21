@@ -13,6 +13,13 @@ Added
 * Support for initializing model objects from keyword arguments
 * Support for VCN to VCN peering within the same region
 * Support for sorting and filtering in list APIs in Load Balancing service
+* Support for user managed boot volumes
+* Support for using a second physical NIC when attaching VNICs on X7 Bare Metal instances
+
+Fixed
+-----
+* Model types now check the data types of their attributes prior to data being serialized and sent to the service
+* When opc_request_id is specified as a parameter, it is no longer overwritten with a SDK-generated value
 
 ====================
 1.3.9 - 2017-11-02
