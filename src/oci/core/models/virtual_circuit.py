@@ -2,7 +2,7 @@
 # Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
-from ...util import formatted_flat_dict
+from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
 from ...decorators import init_model_state_from_kwargs
 
 
@@ -199,7 +199,7 @@ class VirtualCircuit(object):
         :type: str
         """
         allowed_values = ["UP", "DOWN"]
-        if bgp_session_state not in allowed_values:
+        if not value_allowed_none_or_none_sentinel(bgp_session_state, allowed_values):
             bgp_session_state = 'UNKNOWN_ENUM_VALUE'
         self._bgp_session_state = bgp_session_state
 
@@ -397,7 +397,7 @@ class VirtualCircuit(object):
         :type: str
         """
         allowed_values = ["PENDING_PROVIDER", "VERIFYING", "PROVISIONING", "PROVISIONED", "FAILED", "INACTIVE", "TERMINATING", "TERMINATED"]
-        if lifecycle_state not in allowed_values:
+        if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
 
@@ -507,7 +507,7 @@ class VirtualCircuit(object):
         :type: str
         """
         allowed_values = ["ACTIVE", "INACTIVE"]
-        if provider_state not in allowed_values:
+        if not value_allowed_none_or_none_sentinel(provider_state, allowed_values):
             provider_state = 'UNKNOWN_ENUM_VALUE'
         self._provider_state = provider_state
 
@@ -627,7 +627,7 @@ class VirtualCircuit(object):
         :type: str
         """
         allowed_values = ["PUBLIC", "PRIVATE"]
-        if type not in allowed_values:
+        if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type
 

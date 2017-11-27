@@ -2,7 +2,7 @@
 # Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
-from ...util import formatted_flat_dict
+from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
 from ...decorators import init_model_state_from_kwargs
 
 
@@ -110,7 +110,7 @@ class PatchSummary(object):
         :type: list[str]
         """
         allowed_values = ["APPLY", "PRECHECK"]
-        available_actions[:] = ['UNKNOWN_ENUM_VALUE' if x not in allowed_values else x for x in available_actions]
+        available_actions[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in available_actions]
         self._available_actions = available_actions
 
     @property
@@ -187,7 +187,7 @@ class PatchSummary(object):
         :type: str
         """
         allowed_values = ["APPLY", "PRECHECK"]
-        if last_action not in allowed_values:
+        if not value_allowed_none_or_none_sentinel(last_action, allowed_values):
             last_action = 'UNKNOWN_ENUM_VALUE'
         self._last_action = last_action
 
@@ -243,7 +243,7 @@ class PatchSummary(object):
         :type: str
         """
         allowed_values = ["AVAILABLE", "SUCCESS", "IN_PROGRESS", "FAILED"]
-        if lifecycle_state not in allowed_values:
+        if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
 
