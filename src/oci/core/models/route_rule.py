@@ -3,12 +3,26 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class RouteRule(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new RouteRule object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param cidr_block:
+            The value to assign to the cidr_block property of this RouteRule.
+        :type cidr_block: str
+
+        :param network_entity_id:
+            The value to assign to the network_entity_id property of this RouteRule.
+        :type network_entity_id: str
+
+        """
         self.swagger_types = {
             'cidr_block': 'str',
             'network_entity_id': 'str'

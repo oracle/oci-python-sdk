@@ -3,12 +3,38 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class CrossConnectMapping(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new CrossConnectMapping object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param bgp_md5_auth_key:
+            The value to assign to the bgp_md5_auth_key property of this CrossConnectMapping.
+        :type bgp_md5_auth_key: str
+
+        :param cross_connect_or_cross_connect_group_id:
+            The value to assign to the cross_connect_or_cross_connect_group_id property of this CrossConnectMapping.
+        :type cross_connect_or_cross_connect_group_id: str
+
+        :param customer_bgp_peering_ip:
+            The value to assign to the customer_bgp_peering_ip property of this CrossConnectMapping.
+        :type customer_bgp_peering_ip: str
+
+        :param oracle_bgp_peering_ip:
+            The value to assign to the oracle_bgp_peering_ip property of this CrossConnectMapping.
+        :type oracle_bgp_peering_ip: str
+
+        :param vlan:
+            The value to assign to the vlan property of this CrossConnectMapping.
+        :type vlan: int
+
+        """
         self.swagger_types = {
             'bgp_md5_auth_key': 'str',
             'cross_connect_or_cross_connect_group_id': 'str',

@@ -3,12 +3,52 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class DbNode(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new DbNode object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param backup_vnic_id:
+            The value to assign to the backup_vnic_id property of this DbNode.
+        :type backup_vnic_id: str
+
+        :param db_system_id:
+            The value to assign to the db_system_id property of this DbNode.
+        :type db_system_id: str
+
+        :param hostname:
+            The value to assign to the hostname property of this DbNode.
+        :type hostname: str
+
+        :param id:
+            The value to assign to the id property of this DbNode.
+        :type id: str
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this DbNode.
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        :param software_storage_size_in_gb:
+            The value to assign to the software_storage_size_in_gb property of this DbNode.
+        :type software_storage_size_in_gb: int
+
+        :param time_created:
+            The value to assign to the time_created property of this DbNode.
+        :type time_created: datetime
+
+        :param vnic_id:
+            The value to assign to the vnic_id property of this DbNode.
+        :type vnic_id: str
+
+        """
         self.swagger_types = {
             'backup_vnic_id': 'str',
             'db_system_id': 'str',

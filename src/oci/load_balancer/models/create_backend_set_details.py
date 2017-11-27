@@ -3,12 +3,42 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class CreateBackendSetDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new CreateBackendSetDetails object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param backends:
+            The value to assign to the backends property of this CreateBackendSetDetails.
+        :type backends: list[BackendDetails]
+
+        :param health_checker:
+            The value to assign to the health_checker property of this CreateBackendSetDetails.
+        :type health_checker: HealthCheckerDetails
+
+        :param name:
+            The value to assign to the name property of this CreateBackendSetDetails.
+        :type name: str
+
+        :param policy:
+            The value to assign to the policy property of this CreateBackendSetDetails.
+        :type policy: str
+
+        :param session_persistence_configuration:
+            The value to assign to the session_persistence_configuration property of this CreateBackendSetDetails.
+        :type session_persistence_configuration: SessionPersistenceConfigurationDetails
+
+        :param ssl_configuration:
+            The value to assign to the ssl_configuration property of this CreateBackendSetDetails.
+        :type ssl_configuration: SSLConfigurationDetails
+
+        """
         self.swagger_types = {
             'backends': 'list[BackendDetails]',
             'health_checker': 'HealthCheckerDetails',
@@ -112,8 +142,8 @@ class CreateBackendSetDetails(object):
     def policy(self):
         """
         Gets the policy of this CreateBackendSetDetails.
-        The load balancer policy for the backend set. The default load balancing policy is 'ROUND_ROBIN'
-        To get a list of available policies, use the :func:`list_policies` operation.
+        The load balancer policy for the backend set. To get a list of available policies, use the
+        :func:`list_policies` operation.
 
         Example: `LEAST_CONNECTIONS`
 
@@ -127,8 +157,8 @@ class CreateBackendSetDetails(object):
     def policy(self, policy):
         """
         Sets the policy of this CreateBackendSetDetails.
-        The load balancer policy for the backend set. The default load balancing policy is 'ROUND_ROBIN'
-        To get a list of available policies, use the :func:`list_policies` operation.
+        The load balancer policy for the backend set. To get a list of available policies, use the
+        :func:`list_policies` operation.
 
         Example: `LEAST_CONNECTIONS`
 

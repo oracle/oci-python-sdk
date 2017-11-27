@@ -3,12 +3,52 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class DbHomeSummary(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new DbHomeSummary object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this DbHomeSummary.
+        :type compartment_id: str
+
+        :param db_system_id:
+            The value to assign to the db_system_id property of this DbHomeSummary.
+        :type db_system_id: str
+
+        :param db_version:
+            The value to assign to the db_version property of this DbHomeSummary.
+        :type db_version: str
+
+        :param display_name:
+            The value to assign to the display_name property of this DbHomeSummary.
+        :type display_name: str
+
+        :param id:
+            The value to assign to the id property of this DbHomeSummary.
+        :type id: str
+
+        :param last_patch_history_entry_id:
+            The value to assign to the last_patch_history_entry_id property of this DbHomeSummary.
+        :type last_patch_history_entry_id: str
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this DbHomeSummary.
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        :param time_created:
+            The value to assign to the time_created property of this DbHomeSummary.
+        :type time_created: datetime
+
+        """
         self.swagger_types = {
             'compartment_id': 'str',
             'db_system_id': 'str',

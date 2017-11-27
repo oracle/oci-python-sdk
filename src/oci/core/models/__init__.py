@@ -3,10 +3,14 @@
 
 from __future__ import absolute_import
 
+from .attach_boot_volume_details import AttachBootVolumeDetails
 from .attach_i_scsi_volume_details import AttachIScsiVolumeDetails
 from .attach_vnic_details import AttachVnicDetails
 from .attach_volume_details import AttachVolumeDetails
+from .boot_volume import BootVolume
+from .boot_volume_attachment import BootVolumeAttachment
 from .capture_console_history_details import CaptureConsoleHistoryDetails
+from .connect_local_peering_gateways_details import ConnectLocalPeeringGatewaysDetails
 from .console_history import ConsoleHistory
 from .cpe import Cpe
 from .create_cpe_details import CreateCpeDetails
@@ -19,6 +23,7 @@ from .create_ip_sec_connection_details import CreateIPSecConnectionDetails
 from .create_image_details import CreateImageDetails
 from .create_instance_console_connection_details import CreateInstanceConsoleConnectionDetails
 from .create_internet_gateway_details import CreateInternetGatewayDetails
+from .create_local_peering_gateway_details import CreateLocalPeeringGatewayDetails
 from .create_private_ip_details import CreatePrivateIpDetails
 from .create_route_table_details import CreateRouteTableDetails
 from .create_security_list_details import CreateSecurityListDetails
@@ -58,9 +63,13 @@ from .ingress_security_rule import IngressSecurityRule
 from .instance import Instance
 from .instance_console_connection import InstanceConsoleConnection
 from .instance_credentials import InstanceCredentials
+from .instance_source_details import InstanceSourceDetails
+from .instance_source_via_boot_volume_details import InstanceSourceViaBootVolumeDetails
+from .instance_source_via_image_details import InstanceSourceViaImageDetails
 from .internet_gateway import InternetGateway
 from .launch_instance_details import LaunchInstanceDetails
 from .letter_of_authority import LetterOfAuthority
+from .local_peering_gateway import LocalPeeringGateway
 from .port_range import PortRange
 from .private_ip import PrivateIp
 from .route_rule import RouteRule
@@ -72,6 +81,7 @@ from .tcp_options import TcpOptions
 from .tunnel_config import TunnelConfig
 from .tunnel_status import TunnelStatus
 from .udp_options import UdpOptions
+from .update_boot_volume_details import UpdateBootVolumeDetails
 from .update_console_history_details import UpdateConsoleHistoryDetails
 from .update_cpe_details import UpdateCpeDetails
 from .update_cross_connect_details import UpdateCrossConnectDetails
@@ -83,6 +93,7 @@ from .update_ip_sec_connection_details import UpdateIPSecConnectionDetails
 from .update_image_details import UpdateImageDetails
 from .update_instance_details import UpdateInstanceDetails
 from .update_internet_gateway_details import UpdateInternetGatewayDetails
+from .update_local_peering_gateway_details import UpdateLocalPeeringGatewayDetails
 from .update_private_ip_details import UpdatePrivateIpDetails
 from .update_route_table_details import UpdateRouteTableDetails
 from .update_security_list_details import UpdateSecurityListDetails
@@ -106,10 +117,14 @@ from .volume_source_from_volume_details import VolumeSourceFromVolumeDetails
 
 # Maps type names to classes for core services.
 core_type_mapping = {
+    "AttachBootVolumeDetails": AttachBootVolumeDetails,
     "AttachIScsiVolumeDetails": AttachIScsiVolumeDetails,
     "AttachVnicDetails": AttachVnicDetails,
     "AttachVolumeDetails": AttachVolumeDetails,
+    "BootVolume": BootVolume,
+    "BootVolumeAttachment": BootVolumeAttachment,
     "CaptureConsoleHistoryDetails": CaptureConsoleHistoryDetails,
+    "ConnectLocalPeeringGatewaysDetails": ConnectLocalPeeringGatewaysDetails,
     "ConsoleHistory": ConsoleHistory,
     "Cpe": Cpe,
     "CreateCpeDetails": CreateCpeDetails,
@@ -122,6 +137,7 @@ core_type_mapping = {
     "CreateImageDetails": CreateImageDetails,
     "CreateInstanceConsoleConnectionDetails": CreateInstanceConsoleConnectionDetails,
     "CreateInternetGatewayDetails": CreateInternetGatewayDetails,
+    "CreateLocalPeeringGatewayDetails": CreateLocalPeeringGatewayDetails,
     "CreatePrivateIpDetails": CreatePrivateIpDetails,
     "CreateRouteTableDetails": CreateRouteTableDetails,
     "CreateSecurityListDetails": CreateSecurityListDetails,
@@ -161,9 +177,13 @@ core_type_mapping = {
     "Instance": Instance,
     "InstanceConsoleConnection": InstanceConsoleConnection,
     "InstanceCredentials": InstanceCredentials,
+    "InstanceSourceDetails": InstanceSourceDetails,
+    "InstanceSourceViaBootVolumeDetails": InstanceSourceViaBootVolumeDetails,
+    "InstanceSourceViaImageDetails": InstanceSourceViaImageDetails,
     "InternetGateway": InternetGateway,
     "LaunchInstanceDetails": LaunchInstanceDetails,
     "LetterOfAuthority": LetterOfAuthority,
+    "LocalPeeringGateway": LocalPeeringGateway,
     "PortRange": PortRange,
     "PrivateIp": PrivateIp,
     "RouteRule": RouteRule,
@@ -175,6 +195,7 @@ core_type_mapping = {
     "TunnelConfig": TunnelConfig,
     "TunnelStatus": TunnelStatus,
     "UdpOptions": UdpOptions,
+    "UpdateBootVolumeDetails": UpdateBootVolumeDetails,
     "UpdateConsoleHistoryDetails": UpdateConsoleHistoryDetails,
     "UpdateCpeDetails": UpdateCpeDetails,
     "UpdateCrossConnectDetails": UpdateCrossConnectDetails,
@@ -186,6 +207,7 @@ core_type_mapping = {
     "UpdateImageDetails": UpdateImageDetails,
     "UpdateInstanceDetails": UpdateInstanceDetails,
     "UpdateInternetGatewayDetails": UpdateInternetGatewayDetails,
+    "UpdateLocalPeeringGatewayDetails": UpdateLocalPeeringGatewayDetails,
     "UpdatePrivateIpDetails": UpdatePrivateIpDetails,
     "UpdateRouteTableDetails": UpdateRouteTableDetails,
     "UpdateSecurityListDetails": UpdateSecurityListDetails,

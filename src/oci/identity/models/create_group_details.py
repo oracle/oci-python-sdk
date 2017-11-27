@@ -3,12 +3,30 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class CreateGroupDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new CreateGroupDetails object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this CreateGroupDetails.
+        :type compartment_id: str
+
+        :param name:
+            The value to assign to the name property of this CreateGroupDetails.
+        :type name: str
+
+        :param description:
+            The value to assign to the description property of this CreateGroupDetails.
+        :type description: str
+
+        """
         self.swagger_types = {
             'compartment_id': 'str',
             'name': 'str',

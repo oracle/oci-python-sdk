@@ -3,12 +3,26 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class UpdateIdpGroupMappingDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new UpdateIdpGroupMappingDetails object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param idp_group_name:
+            The value to assign to the idp_group_name property of this UpdateIdpGroupMappingDetails.
+        :type idp_group_name: str
+
+        :param group_id:
+            The value to assign to the group_id property of this UpdateIdpGroupMappingDetails.
+        :type group_id: str
+
+        """
         self.swagger_types = {
             'idp_group_name': 'str',
             'group_id': 'str'

@@ -3,12 +3,36 @@
 
 from .update_identity_provider_details import UpdateIdentityProviderDetails
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class UpdateSaml2IdentityProviderDetails(UpdateIdentityProviderDetails):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new UpdateSaml2IdentityProviderDetails object with values from values from keyword arguments. The default value of the :py:attr:`~oci.identity.models.UpdateSaml2IdentityProviderDetails.protocol` attribute
+        of this class is ``SAML2`` and it should not be changed.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param protocol:
+            The value to assign to the protocol property of this UpdateSaml2IdentityProviderDetails.
+            Allowed values for this property are: "SAML2"
+        :type protocol: str
+
+        :param description:
+            The value to assign to the description property of this UpdateSaml2IdentityProviderDetails.
+        :type description: str
+
+        :param metadata_url:
+            The value to assign to the metadata_url property of this UpdateSaml2IdentityProviderDetails.
+        :type metadata_url: str
+
+        :param metadata:
+            The value to assign to the metadata property of this UpdateSaml2IdentityProviderDetails.
+        :type metadata: str
+
+        """
         self.swagger_types = {
             'protocol': 'str',
             'description': 'str',

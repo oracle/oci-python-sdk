@@ -3,12 +3,26 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class IpAddress(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new IpAddress object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param ip_address:
+            The value to assign to the ip_address property of this IpAddress.
+        :type ip_address: str
+
+        :param is_public:
+            The value to assign to the is_public property of this IpAddress.
+        :type is_public: bool
+
+        """
         self.swagger_types = {
             'ip_address': 'str',
             'is_public': 'bool'

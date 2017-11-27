@@ -3,12 +3,76 @@
 
 from .volume_attachment import VolumeAttachment
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class IScsiVolumeAttachment(VolumeAttachment):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new IScsiVolumeAttachment object with values from values from keyword arguments. The default value of the :py:attr:`~oci.core.models.IScsiVolumeAttachment.attachment_type` attribute
+        of this class is ``iscsi`` and it should not be changed.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param attachment_type:
+            The value to assign to the attachment_type property of this IScsiVolumeAttachment.
+        :type attachment_type: str
+
+        :param availability_domain:
+            The value to assign to the availability_domain property of this IScsiVolumeAttachment.
+        :type availability_domain: str
+
+        :param compartment_id:
+            The value to assign to the compartment_id property of this IScsiVolumeAttachment.
+        :type compartment_id: str
+
+        :param display_name:
+            The value to assign to the display_name property of this IScsiVolumeAttachment.
+        :type display_name: str
+
+        :param id:
+            The value to assign to the id property of this IScsiVolumeAttachment.
+        :type id: str
+
+        :param instance_id:
+            The value to assign to the instance_id property of this IScsiVolumeAttachment.
+        :type instance_id: str
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this IScsiVolumeAttachment.
+            Allowed values for this property are: "ATTACHING", "ATTACHED", "DETACHING", "DETACHED"
+        :type lifecycle_state: str
+
+        :param time_created:
+            The value to assign to the time_created property of this IScsiVolumeAttachment.
+        :type time_created: datetime
+
+        :param volume_id:
+            The value to assign to the volume_id property of this IScsiVolumeAttachment.
+        :type volume_id: str
+
+        :param chap_secret:
+            The value to assign to the chap_secret property of this IScsiVolumeAttachment.
+        :type chap_secret: str
+
+        :param chap_username:
+            The value to assign to the chap_username property of this IScsiVolumeAttachment.
+        :type chap_username: str
+
+        :param ipv4:
+            The value to assign to the ipv4 property of this IScsiVolumeAttachment.
+        :type ipv4: str
+
+        :param iqn:
+            The value to assign to the iqn property of this IScsiVolumeAttachment.
+        :type iqn: str
+
+        :param port:
+            The value to assign to the port property of this IScsiVolumeAttachment.
+        :type port: int
+
+        """
         self.swagger_types = {
             'attachment_type': 'str',
             'availability_domain': 'str',

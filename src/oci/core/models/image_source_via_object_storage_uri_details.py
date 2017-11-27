@@ -3,12 +3,27 @@
 
 from .image_source_details import ImageSourceDetails
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class ImageSourceViaObjectStorageUriDetails(ImageSourceDetails):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new ImageSourceViaObjectStorageUriDetails object with values from values from keyword arguments. The default value of the :py:attr:`~oci.core.models.ImageSourceViaObjectStorageUriDetails.source_type` attribute
+        of this class is ``objectStorageUri`` and it should not be changed.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param source_type:
+            The value to assign to the source_type property of this ImageSourceViaObjectStorageUriDetails.
+        :type source_type: str
+
+        :param source_uri:
+            The value to assign to the source_uri property of this ImageSourceViaObjectStorageUriDetails.
+        :type source_uri: str
+
+        """
         self.swagger_types = {
             'source_type': 'str',
             'source_uri': 'str'

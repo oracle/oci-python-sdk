@@ -3,12 +3,30 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class UpdateVnicDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new UpdateVnicDetails object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param display_name:
+            The value to assign to the display_name property of this UpdateVnicDetails.
+        :type display_name: str
+
+        :param hostname_label:
+            The value to assign to the hostname_label property of this UpdateVnicDetails.
+        :type hostname_label: str
+
+        :param skip_source_dest_check:
+            The value to assign to the skip_source_dest_check property of this UpdateVnicDetails.
+        :type skip_source_dest_check: bool
+
+        """
         self.swagger_types = {
             'display_name': 'str',
             'hostname_label': 'str',

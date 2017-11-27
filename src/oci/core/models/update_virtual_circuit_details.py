@@ -3,12 +3,47 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class UpdateVirtualCircuitDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new UpdateVirtualCircuitDetails object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param bandwidth_shape_name:
+            The value to assign to the bandwidth_shape_name property of this UpdateVirtualCircuitDetails.
+        :type bandwidth_shape_name: str
+
+        :param cross_connect_mappings:
+            The value to assign to the cross_connect_mappings property of this UpdateVirtualCircuitDetails.
+        :type cross_connect_mappings: list[CrossConnectMapping]
+
+        :param customer_bgp_asn:
+            The value to assign to the customer_bgp_asn property of this UpdateVirtualCircuitDetails.
+        :type customer_bgp_asn: int
+
+        :param display_name:
+            The value to assign to the display_name property of this UpdateVirtualCircuitDetails.
+        :type display_name: str
+
+        :param gateway_id:
+            The value to assign to the gateway_id property of this UpdateVirtualCircuitDetails.
+        :type gateway_id: str
+
+        :param provider_state:
+            The value to assign to the provider_state property of this UpdateVirtualCircuitDetails.
+            Allowed values for this property are: "ACTIVE", "INACTIVE"
+        :type provider_state: str
+
+        :param reference_comment:
+            The value to assign to the reference_comment property of this UpdateVirtualCircuitDetails.
+        :type reference_comment: str
+
+        """
         self.swagger_types = {
             'bandwidth_shape_name': 'str',
             'cross_connect_mappings': 'list[CrossConnectMapping]',

@@ -3,12 +3,52 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class CustomerSecretKey(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new CustomerSecretKey object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param key:
+            The value to assign to the key property of this CustomerSecretKey.
+        :type key: str
+
+        :param id:
+            The value to assign to the id property of this CustomerSecretKey.
+        :type id: str
+
+        :param user_id:
+            The value to assign to the user_id property of this CustomerSecretKey.
+        :type user_id: str
+
+        :param display_name:
+            The value to assign to the display_name property of this CustomerSecretKey.
+        :type display_name: str
+
+        :param time_created:
+            The value to assign to the time_created property of this CustomerSecretKey.
+        :type time_created: datetime
+
+        :param time_expires:
+            The value to assign to the time_expires property of this CustomerSecretKey.
+        :type time_expires: datetime
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this CustomerSecretKey.
+            Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        :param inactive_status:
+            The value to assign to the inactive_status property of this CustomerSecretKey.
+        :type inactive_status: int
+
+        """
         self.swagger_types = {
             'key': 'str',
             'id': 'str',

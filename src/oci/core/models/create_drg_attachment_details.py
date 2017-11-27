@@ -3,12 +3,30 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class CreateDrgAttachmentDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new CreateDrgAttachmentDetails object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param display_name:
+            The value to assign to the display_name property of this CreateDrgAttachmentDetails.
+        :type display_name: str
+
+        :param drg_id:
+            The value to assign to the drg_id property of this CreateDrgAttachmentDetails.
+        :type drg_id: str
+
+        :param vcn_id:
+            The value to assign to the vcn_id property of this CreateDrgAttachmentDetails.
+        :type vcn_id: str
+
+        """
         self.swagger_types = {
             'display_name': 'str',
             'drg_id': 'str',

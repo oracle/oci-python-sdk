@@ -28,9 +28,11 @@ API Reference
 --------
 
 .. automodule:: oci.audit.models
+    :special-members: __init__
     :members:
     :undoc-members:
     :imported-members:
+    :inherited-members:
 
 ===============
  Core Services
@@ -65,9 +67,11 @@ Virtual Network
 --------
 
 .. automodule:: oci.core.models
+    :special-members: __init__
     :members:
     :undoc-members:
     :imported-members:
+    :inherited-members:
 
 ==========
  Database
@@ -85,9 +89,11 @@ Virtual Network
 --------
 
 .. automodule:: oci.database.models
+    :special-members: __init__
     :members:
     :undoc-members:
     :imported-members:
+    :inherited-members:
 
 ==========
  Identity
@@ -105,9 +111,11 @@ Virtual Network
 --------
 
 .. automodule:: oci.identity.models
+    :special-members: __init__
     :members:
     :undoc-members:
     :imported-members:
+    :inherited-members:
 
 ==============
 Load Balancer
@@ -125,9 +133,11 @@ Load Balancer
 --------
 
 .. automodule:: oci.load_balancer.models
+    :special-members: __init__
     :members:
     :undoc-members:
     :imported-members:
+    :inherited-members:
 
 ================
  Object Storage
@@ -145,9 +155,11 @@ Load Balancer
 --------
 
 .. automodule:: oci.object_storage.models
+    :special-members: __init__
     :members:
     :undoc-members:
     :imported-members:
+    :inherited-members:
 
 ================
  Upload Manager

@@ -3,12 +3,38 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class CreateMultipartUploadDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new CreateMultipartUploadDetails object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param object:
+            The value to assign to the object property of this CreateMultipartUploadDetails.
+        :type object: str
+
+        :param content_type:
+            The value to assign to the content_type property of this CreateMultipartUploadDetails.
+        :type content_type: str
+
+        :param content_language:
+            The value to assign to the content_language property of this CreateMultipartUploadDetails.
+        :type content_language: str
+
+        :param content_encoding:
+            The value to assign to the content_encoding property of this CreateMultipartUploadDetails.
+        :type content_encoding: str
+
+        :param metadata:
+            The value to assign to the metadata property of this CreateMultipartUploadDetails.
+        :type metadata: dict(str, str)
+
+        """
         self.swagger_types = {
             'object': 'str',
             'content_type': 'str',

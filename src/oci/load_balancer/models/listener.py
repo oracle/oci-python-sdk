@@ -3,12 +3,38 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class Listener(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new Listener object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param default_backend_set_name:
+            The value to assign to the default_backend_set_name property of this Listener.
+        :type default_backend_set_name: str
+
+        :param name:
+            The value to assign to the name property of this Listener.
+        :type name: str
+
+        :param port:
+            The value to assign to the port property of this Listener.
+        :type port: int
+
+        :param protocol:
+            The value to assign to the protocol property of this Listener.
+        :type protocol: str
+
+        :param ssl_configuration:
+            The value to assign to the ssl_configuration property of this Listener.
+        :type ssl_configuration: SSLConfiguration
+
+        """
         self.swagger_types = {
             'default_backend_set_name': 'str',
             'name': 'str',

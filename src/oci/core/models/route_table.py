@@ -3,12 +3,48 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class RouteTable(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new RouteTable object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this RouteTable.
+        :type compartment_id: str
+
+        :param display_name:
+            The value to assign to the display_name property of this RouteTable.
+        :type display_name: str
+
+        :param id:
+            The value to assign to the id property of this RouteTable.
+        :type id: str
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this RouteTable.
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        :param route_rules:
+            The value to assign to the route_rules property of this RouteTable.
+        :type route_rules: list[RouteRule]
+
+        :param time_created:
+            The value to assign to the time_created property of this RouteTable.
+        :type time_created: datetime
+
+        :param vcn_id:
+            The value to assign to the vcn_id property of this RouteTable.
+        :type vcn_id: str
+
+        """
         self.swagger_types = {
             'compartment_id': 'str',
             'display_name': 'str',

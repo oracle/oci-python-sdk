@@ -3,12 +3,46 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class CreateCrossConnectDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new CreateCrossConnectDetails object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this CreateCrossConnectDetails.
+        :type compartment_id: str
+
+        :param cross_connect_group_id:
+            The value to assign to the cross_connect_group_id property of this CreateCrossConnectDetails.
+        :type cross_connect_group_id: str
+
+        :param display_name:
+            The value to assign to the display_name property of this CreateCrossConnectDetails.
+        :type display_name: str
+
+        :param far_cross_connect_or_cross_connect_group_id:
+            The value to assign to the far_cross_connect_or_cross_connect_group_id property of this CreateCrossConnectDetails.
+        :type far_cross_connect_or_cross_connect_group_id: str
+
+        :param location_name:
+            The value to assign to the location_name property of this CreateCrossConnectDetails.
+        :type location_name: str
+
+        :param near_cross_connect_or_cross_connect_group_id:
+            The value to assign to the near_cross_connect_or_cross_connect_group_id property of this CreateCrossConnectDetails.
+        :type near_cross_connect_or_cross_connect_group_id: str
+
+        :param port_speed_shape_name:
+            The value to assign to the port_speed_shape_name property of this CreateCrossConnectDetails.
+        :type port_speed_shape_name: str
+
+        """
         self.swagger_types = {
             'compartment_id': 'str',
             'cross_connect_group_id': 'str',

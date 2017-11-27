@@ -3,12 +3,38 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class CreateIPSecConnectionDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new CreateIPSecConnectionDetails object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this CreateIPSecConnectionDetails.
+        :type compartment_id: str
+
+        :param cpe_id:
+            The value to assign to the cpe_id property of this CreateIPSecConnectionDetails.
+        :type cpe_id: str
+
+        :param display_name:
+            The value to assign to the display_name property of this CreateIPSecConnectionDetails.
+        :type display_name: str
+
+        :param drg_id:
+            The value to assign to the drg_id property of this CreateIPSecConnectionDetails.
+        :type drg_id: str
+
+        :param static_routes:
+            The value to assign to the static_routes property of this CreateIPSecConnectionDetails.
+        :type static_routes: list[str]
+
+        """
         self.swagger_types = {
             'compartment_id': 'str',
             'cpe_id': 'str',

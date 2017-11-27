@@ -3,12 +3,44 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class LetterOfAuthority(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new LetterOfAuthority object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param circuit_type:
+            The value to assign to the circuit_type property of this LetterOfAuthority.
+            Allowed values for this property are: "Single_mode_LC", "Single_mode_SC", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type circuit_type: str
+
+        :param cross_connect_id:
+            The value to assign to the cross_connect_id property of this LetterOfAuthority.
+        :type cross_connect_id: str
+
+        :param facility_location:
+            The value to assign to the facility_location property of this LetterOfAuthority.
+        :type facility_location: str
+
+        :param port_name:
+            The value to assign to the port_name property of this LetterOfAuthority.
+        :type port_name: str
+
+        :param time_expires:
+            The value to assign to the time_expires property of this LetterOfAuthority.
+        :type time_expires: datetime
+
+        :param time_issued:
+            The value to assign to the time_issued property of this LetterOfAuthority.
+        :type time_issued: datetime
+
+        """
         self.swagger_types = {
             'circuit_type': 'str',
             'cross_connect_id': 'str',

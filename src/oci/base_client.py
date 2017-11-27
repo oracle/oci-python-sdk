@@ -19,9 +19,13 @@ from .config import get_config_value_or_default, validate_config
 from .request import Request
 from .response import Response
 from .version import __version__
-from .util import NONE_SENTINEL
+from .util import NONE_SENTINEL, Sentinel
+missing = Sentinel("Missing")
 
 USER_INFO = "Oracle-PythonSDK/{}".format(__version__)
+
+DICT_VALUE_TYPE_REGEX = re.compile('dict\(str, (.+?)\)$')
+LIST_ITEM_TYPE_REGEX = re.compile('list\[(.+?)\]$')
 
 
 def merge_type_mappings(*dictionaries):
@@ -65,6 +69,7 @@ class BaseClient(object):
             region=config.get("region"),
             endpoint=config.get("endpoint"))
 
+        self.complex_type_mappings = type_mapping
         self.type_mappings = merge_type_mappings(self.primitive_type_map, type_mapping)
         self.session = requests.Session()
         self.user_agent = build_user_agent(get_config_value_or_default(config, "additional_user_agent"))
@@ -107,7 +112,9 @@ class BaseClient(object):
 
         header_params[constants.HEADER_CLIENT_INFO] = USER_INFO
         header_params[constants.HEADER_USER_AGENT] = self.user_agent
-        header_params[constants.HEADER_REQUEST_ID] = self.build_request_id()
+
+        if header_params.get(constants.HEADER_REQUEST_ID, missing) is missing:
+            header_params[constants.HEADER_REQUEST_ID] = self.build_request_id()
 
         if path_params:
             path_params = self.sanitize_for_serialization(path_params)
@@ -117,9 +124,7 @@ class BaseClient(object):
                     replace('{' + k + '}', replacement)
 
         if query_params:
-            query_params = self.sanitize_for_serialization(query_params)
-            query_params = {k: self.to_path_value(v)
-                            for k, v in query_params.items()}
+            query_params = self.process_query_params(query_params)
 
         if body and header_params.get('content-type') == 'application/json':
             body = self.sanitize_for_serialization(body)
@@ -138,6 +143,52 @@ class BaseClient(object):
         )
 
         return self.request(request)
+
+    def process_query_params(self, query_params):
+        query_params = self.sanitize_for_serialization(query_params)
+
+        processed_query_params = {}
+        for k, v in query_params.items():
+            # First divide our query params into ones where the param value is and isn't a dict. Since we're executing after sanitize_for_serialization has been called
+            # it's dicts, lists or primitives all the way down. The params where the value is a dict are, for example, tags we need to handle differently for inclusion
+            # in the query string. An example query_params is:
+            #
+            #   {
+            #       "stuff": "things",
+            #       "definedTags": { "tag1": ["val1", "val2", "val3"], "tag2": ["val1"] },
+            #       "definedTagsExists": { "tag3": True, "tag4": True }
+            #   }
+            #
+            # And we can categorize the params as:
+            #
+            #   Non-Dict: "stuff":"things"
+            #   Dict: "definedTags": { "tag1": ["val1", "val2", "val3"], "tag2": ["val1"] }, "definedTagsExists": { "tag3": True, "tag4": True }
+            if not isinstance(v, dict):
+                processed_query_params[k] = self.to_path_value(v)
+            else:
+                # If we are here then we either have:
+                #
+                #   1) a dict where the value is an array. The requests library supports lists to represent multivalued params
+                #      natively (http://docs.python-requests.org/en/master/api/#requests.Session.params) so we just have to
+                #      manipulate things into the right key. In the case of something like:
+                #
+                #           "definedTags": { "tag1": ["val1", "val2", "val3"], "tag2": ["val1"] }
+                #
+                #      What we want is to end up with:
+                #
+                #           "definedTags.tag1": ["val1", "val2", "val3"], "definedTags.tag2": ["val1"]
+                #
+                #   2) a dict where the value is not an array and in this case we just explode out the content. For example if we have:
+                #
+                #           "definedTagsExists": { "tag3": True, "tag4": True }
+                #
+                #       What we'll end up with is:
+                #
+                #           "definedTagsExists.tag3": True, "definedTagsExists.tag4": True
+                for inner_key, inner_val in v.items():
+                    processed_query_params['{}.{}'.format(k, inner_key)] = inner_val
+
+        return processed_query_params
 
     def request(self, request):
         self.logger.info("Request: %s %s" % (str(request.method), request.url))
@@ -196,7 +247,7 @@ class BaseClient(object):
         else:
             return str(obj)
 
-    def sanitize_for_serialization(self, obj):
+    def sanitize_for_serialization(self, obj, declared_type=None, field_name=None):
         """
         Builds a JSON POST object.
 
@@ -212,25 +263,97 @@ class BaseClient(object):
         """
         types = (six.string_types, int, float, bool, type(None))
 
+        declared_swagger_type_to_acceptable_python_types = {
+            'str': six.string_types,
+            'bool': bool,
+            'int': (float, int),
+            'float': (float, int)
+        }
+
+        # if there is a declared type for this obj, then validate that obj is of that type. None types (either None or the NONE_SENTINEL) are not validated but
+        # instead passed through
+        if declared_type and not self.is_none_or_none_sentinel(obj):
+            if declared_type.startswith('dict(') and not isinstance(obj, dict):
+                self.raise_type_error_serializing_model(field_name, obj, declared_type)
+            elif declared_type.startswith('list[') and not isinstance(obj, list):
+                self.raise_type_error_serializing_model(field_name, obj, declared_type)
+            elif declared_type in self.complex_type_mappings:
+                # if its supposed to be one of our models, it can either be an instance of that model OR a dict
+                if not isinstance(obj, dict) and not isinstance(obj, self.complex_type_mappings[declared_type]):
+                    self.raise_type_error_serializing_model(field_name, obj, declared_type)
+            elif declared_type in declared_swagger_type_to_acceptable_python_types and not isinstance(obj, declared_swagger_type_to_acceptable_python_types[declared_type]):
+                # if its a primitive with corresponding acceptable python types, validate that obj is an instance of one of those acceptable types
+                self.raise_type_error_serializing_model(field_name, obj, declared_type)
+
         if isinstance(obj, types):
             return obj
         elif obj is NONE_SENTINEL:
             return None
         elif isinstance(obj, list):
-            return [self.sanitize_for_serialization(sub_obj)
-                    for sub_obj in obj]
+            return [self.sanitize_for_serialization(
+                sub_obj,
+                self.extract_list_item_type_from_swagger_type(declared_type) if declared_type else None,
+                field_name + '[*]')
+                for sub_obj in obj]
         elif isinstance(obj, (datetime, date)):
             return obj.isoformat()
         else:
             if isinstance(obj, dict):
                 obj_dict = obj
+
+                keys_to_types_and_field_name = None
+
+                # if there is a declared type, then we can use that to validate the types of values in the dict
+                if declared_type:
+                    dict_value_type = self.extract_dict_value_type_from_swagger_type(declared_type)
+                    keys_to_types_and_field_name = {k: (dict_value_type, k) for k in obj_dict}
             else:
+                # at this point we are assuming it is one of our models with swagger_types so explicitly throw if its not to give a better error
+                if not hasattr(obj, 'swagger_types'):
+                    raise TypeError('Not able to serialize data: {} of type: {} in field: {}'.format(str(obj), type(obj).__name__, field_name))
+
                 obj_dict = {obj.attribute_map[attr]: getattr(obj, attr)
                             for attr, _ in obj.swagger_types.items()
                             if getattr(obj, attr) is not None}
 
-            return {key: self.sanitize_for_serialization(val)
-                    for key, val in obj_dict.items()}
+                keys_to_types_and_field_name = {obj.attribute_map[attr]: (swagger_type, attr) for attr, swagger_type in six.iteritems(obj.swagger_types)}
+
+            sanitized_dict = {}
+            for key, val in six.iteritems(obj_dict):
+                value_declared_type = None
+                inner_field_name = key
+                if keys_to_types_and_field_name:
+                    value_declared_type = keys_to_types_and_field_name[key][0]
+                    inner_field_name = keys_to_types_and_field_name[key][1]
+
+                inner_field_name = '{}.{}'.format(field_name, inner_field_name) if field_name else inner_field_name
+                sanitized_dict[key] = self.sanitize_for_serialization(val, value_declared_type, inner_field_name)
+
+            return sanitized_dict
+
+    def is_none_or_none_sentinel(self, obj):
+        return (obj is None) or (obj is NONE_SENTINEL)
+
+    def raise_type_error_serializing_model(self, field_name, obj, declared_type):
+        raise TypeError('Field {} with value {} was expected to be of type {} but was of type {}'.format(field_name, str(obj), declared_type, type(obj).__name__))
+
+    def extract_dict_value_type_from_swagger_type(self, swagger_type):
+        m = DICT_VALUE_TYPE_REGEX.search(swagger_type)
+
+        result = None
+        if m:
+            result = m.group(1)
+
+        return result
+
+    def extract_list_item_type_from_swagger_type(self, swagger_type):
+        m = LIST_ITEM_TYPE_REGEX.search(swagger_type)
+
+        result = None
+        if m:
+            result = m.group(1)
+
+        return result
 
     def raise_service_error(self, response):
         deserialized_data = self.deserialize_response_data(response.content, 'object')

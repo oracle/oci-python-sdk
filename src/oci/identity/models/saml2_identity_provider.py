@@ -3,12 +3,68 @@
 
 from .identity_provider import IdentityProvider
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class Saml2IdentityProvider(IdentityProvider):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new Saml2IdentityProvider object with values from values from keyword arguments. The default value of the :py:attr:`~oci.identity.models.Saml2IdentityProvider.protocol` attribute
+        of this class is ``SAML2`` and it should not be changed.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param id:
+            The value to assign to the id property of this Saml2IdentityProvider.
+        :type id: str
+
+        :param compartment_id:
+            The value to assign to the compartment_id property of this Saml2IdentityProvider.
+        :type compartment_id: str
+
+        :param name:
+            The value to assign to the name property of this Saml2IdentityProvider.
+        :type name: str
+
+        :param description:
+            The value to assign to the description property of this Saml2IdentityProvider.
+        :type description: str
+
+        :param product_type:
+            The value to assign to the product_type property of this Saml2IdentityProvider.
+        :type product_type: str
+
+        :param time_created:
+            The value to assign to the time_created property of this Saml2IdentityProvider.
+        :type time_created: datetime
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this Saml2IdentityProvider.
+            Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED"
+        :type lifecycle_state: str
+
+        :param inactive_status:
+            The value to assign to the inactive_status property of this Saml2IdentityProvider.
+        :type inactive_status: int
+
+        :param protocol:
+            The value to assign to the protocol property of this Saml2IdentityProvider.
+        :type protocol: str
+
+        :param metadata_url:
+            The value to assign to the metadata_url property of this Saml2IdentityProvider.
+        :type metadata_url: str
+
+        :param signing_certificate:
+            The value to assign to the signing_certificate property of this Saml2IdentityProvider.
+        :type signing_certificate: str
+
+        :param redirect_url:
+            The value to assign to the redirect_url property of this Saml2IdentityProvider.
+        :type redirect_url: str
+
+        """
         self.swagger_types = {
             'id': 'str',
             'compartment_id': 'str',

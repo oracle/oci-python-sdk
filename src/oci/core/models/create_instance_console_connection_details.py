@@ -3,12 +3,26 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class CreateInstanceConsoleConnectionDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new CreateInstanceConsoleConnectionDetails object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param instance_id:
+            The value to assign to the instance_id property of this CreateInstanceConsoleConnectionDetails.
+        :type instance_id: str
+
+        :param public_key:
+            The value to assign to the public_key property of this CreateInstanceConsoleConnectionDetails.
+        :type public_key: str
+
+        """
         self.swagger_types = {
             'instance_id': 'str',
             'public_key': 'str'
@@ -26,7 +40,7 @@ class CreateInstanceConsoleConnectionDetails(object):
     def instance_id(self):
         """
         Gets the instance_id of this CreateInstanceConsoleConnectionDetails.
-        The OCID of the instance to create the serial console connection to.
+        The OCID of the instance to create the console connection to.
 
 
         :return: The instance_id of this CreateInstanceConsoleConnectionDetails.
@@ -38,7 +52,7 @@ class CreateInstanceConsoleConnectionDetails(object):
     def instance_id(self, instance_id):
         """
         Sets the instance_id of this CreateInstanceConsoleConnectionDetails.
-        The OCID of the instance to create the serial console connection to.
+        The OCID of the instance to create the console connection to.
 
 
         :param instance_id: The instance_id of this CreateInstanceConsoleConnectionDetails.
@@ -50,7 +64,7 @@ class CreateInstanceConsoleConnectionDetails(object):
     def public_key(self):
         """
         Gets the public_key of this CreateInstanceConsoleConnectionDetails.
-        The SSH public key used to authenticate the serial console connection.
+        The SSH public key used to authenticate the console connection.
 
 
         :return: The public_key of this CreateInstanceConsoleConnectionDetails.
@@ -62,7 +76,7 @@ class CreateInstanceConsoleConnectionDetails(object):
     def public_key(self, public_key):
         """
         Sets the public_key of this CreateInstanceConsoleConnectionDetails.
-        The SSH public key used to authenticate the serial console connection.
+        The SSH public key used to authenticate the console connection.
 
 
         :param public_key: The public_key of this CreateInstanceConsoleConnectionDetails.

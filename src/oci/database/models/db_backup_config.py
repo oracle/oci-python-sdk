@@ -3,12 +3,22 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class DbBackupConfig(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new DbBackupConfig object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param auto_backup_enabled:
+            The value to assign to the auto_backup_enabled property of this DbBackupConfig.
+        :type auto_backup_enabled: bool
+
+        """
         self.swagger_types = {
             'auto_backup_enabled': 'bool'
         }

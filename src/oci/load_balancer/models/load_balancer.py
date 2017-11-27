@@ -3,12 +3,68 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class LoadBalancer(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new LoadBalancer object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param backend_sets:
+            The value to assign to the backend_sets property of this LoadBalancer.
+        :type backend_sets: dict(str, BackendSet)
+
+        :param certificates:
+            The value to assign to the certificates property of this LoadBalancer.
+        :type certificates: dict(str, Certificate)
+
+        :param compartment_id:
+            The value to assign to the compartment_id property of this LoadBalancer.
+        :type compartment_id: str
+
+        :param display_name:
+            The value to assign to the display_name property of this LoadBalancer.
+        :type display_name: str
+
+        :param id:
+            The value to assign to the id property of this LoadBalancer.
+        :type id: str
+
+        :param ip_addresses:
+            The value to assign to the ip_addresses property of this LoadBalancer.
+        :type ip_addresses: list[IpAddress]
+
+        :param is_private:
+            The value to assign to the is_private property of this LoadBalancer.
+        :type is_private: bool
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this LoadBalancer.
+            Allowed values for this property are: "CREATING", "FAILED", "ACTIVE", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        :param listeners:
+            The value to assign to the listeners property of this LoadBalancer.
+        :type listeners: dict(str, Listener)
+
+        :param shape_name:
+            The value to assign to the shape_name property of this LoadBalancer.
+        :type shape_name: str
+
+        :param subnet_ids:
+            The value to assign to the subnet_ids property of this LoadBalancer.
+        :type subnet_ids: list[str]
+
+        :param time_created:
+            The value to assign to the time_created property of this LoadBalancer.
+        :type time_created: datetime
+
+        """
         self.swagger_types = {
             'backend_sets': 'dict(str, BackendSet)',
             'certificates': 'dict(str, Certificate)',
@@ -215,7 +271,7 @@ class LoadBalancer(object):
 
         If \"false\", the service assigns a public IP address to the load balancer. A load balancer with a public IP address
         requires two subnets, each in a different Availability Domain. One subnet hosts the primary load balancer and the other
-        hosts the secondary (stand-by) load balancer. A public load balancer is accessible from the internet, depending on your
+        hosts the secondary (standby) load balancer. A public load balancer is accessible from the internet, depending on your
         VCN's `security list rules`__.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/securitylists.htm
@@ -241,7 +297,7 @@ class LoadBalancer(object):
 
         If \"false\", the service assigns a public IP address to the load balancer. A load balancer with a public IP address
         requires two subnets, each in a different Availability Domain. One subnet hosts the primary load balancer and the other
-        hosts the secondary (stand-by) load balancer. A public load balancer is accessible from the internet, depending on your
+        hosts the secondary (standby) load balancer. A public load balancer is accessible from the internet, depending on your
         VCN's `security list rules`__.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/securitylists.htm
@@ -256,6 +312,8 @@ class LoadBalancer(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this LoadBalancer.
+        The current state of the load balancer.
+
         Allowed values for this property are: "CREATING", "FAILED", "ACTIVE", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
@@ -269,6 +327,8 @@ class LoadBalancer(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this LoadBalancer.
+        The current state of the load balancer.
+
 
         :param lifecycle_state: The lifecycle_state of this LoadBalancer.
         :type: str

@@ -3,12 +3,36 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class RegionSubscription(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new RegionSubscription object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param region_key:
+            The value to assign to the region_key property of this RegionSubscription.
+        :type region_key: str
+
+        :param region_name:
+            The value to assign to the region_name property of this RegionSubscription.
+        :type region_name: str
+
+        :param status:
+            The value to assign to the status property of this RegionSubscription.
+            Allowed values for this property are: "READY", "IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type status: str
+
+        :param is_home_region:
+            The value to assign to the is_home_region property of this RegionSubscription.
+        :type is_home_region: bool
+
+        """
         self.swagger_types = {
             'region_key': 'str',
             'region_name': 'str',

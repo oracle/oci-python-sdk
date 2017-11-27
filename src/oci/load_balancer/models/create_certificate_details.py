@@ -3,12 +3,38 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class CreateCertificateDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new CreateCertificateDetails object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param ca_certificate:
+            The value to assign to the ca_certificate property of this CreateCertificateDetails.
+        :type ca_certificate: str
+
+        :param certificate_name:
+            The value to assign to the certificate_name property of this CreateCertificateDetails.
+        :type certificate_name: str
+
+        :param passphrase:
+            The value to assign to the passphrase property of this CreateCertificateDetails.
+        :type passphrase: str
+
+        :param private_key:
+            The value to assign to the private_key property of this CreateCertificateDetails.
+        :type private_key: str
+
+        :param public_certificate:
+            The value to assign to the public_certificate property of this CreateCertificateDetails.
+        :type public_certificate: str
+
+        """
         self.swagger_types = {
             'ca_certificate': 'str',
             'certificate_name': 'str',

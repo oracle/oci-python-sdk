@@ -3,12 +3,35 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class CreatePreauthenticatedRequestDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new CreatePreauthenticatedRequestDetails object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param name:
+            The value to assign to the name property of this CreatePreauthenticatedRequestDetails.
+        :type name: str
+
+        :param object_name:
+            The value to assign to the object_name property of this CreatePreauthenticatedRequestDetails.
+        :type object_name: str
+
+        :param access_type:
+            The value to assign to the access_type property of this CreatePreauthenticatedRequestDetails.
+            Allowed values for this property are: "ObjectRead", "ObjectWrite", "ObjectReadWrite", "AnyObjectWrite"
+        :type access_type: str
+
+        :param time_expires:
+            The value to assign to the time_expires property of this CreatePreauthenticatedRequestDetails.
+        :type time_expires: datetime
+
+        """
         self.swagger_types = {
             'name': 'str',
             'object_name': 'str',

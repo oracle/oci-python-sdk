@@ -3,12 +3,138 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class DbSystemSummary(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new DbSystemSummary object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param availability_domain:
+            The value to assign to the availability_domain property of this DbSystemSummary.
+        :type availability_domain: str
+
+        :param backup_subnet_id:
+            The value to assign to the backup_subnet_id property of this DbSystemSummary.
+        :type backup_subnet_id: str
+
+        :param cluster_name:
+            The value to assign to the cluster_name property of this DbSystemSummary.
+        :type cluster_name: str
+
+        :param compartment_id:
+            The value to assign to the compartment_id property of this DbSystemSummary.
+        :type compartment_id: str
+
+        :param cpu_core_count:
+            The value to assign to the cpu_core_count property of this DbSystemSummary.
+        :type cpu_core_count: int
+
+        :param data_storage_percentage:
+            The value to assign to the data_storage_percentage property of this DbSystemSummary.
+        :type data_storage_percentage: int
+
+        :param data_storage_size_in_gbs:
+            The value to assign to the data_storage_size_in_gbs property of this DbSystemSummary.
+        :type data_storage_size_in_gbs: int
+
+        :param database_edition:
+            The value to assign to the database_edition property of this DbSystemSummary.
+            Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type database_edition: str
+
+        :param disk_redundancy:
+            The value to assign to the disk_redundancy property of this DbSystemSummary.
+            Allowed values for this property are: "HIGH", "NORMAL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type disk_redundancy: str
+
+        :param display_name:
+            The value to assign to the display_name property of this DbSystemSummary.
+        :type display_name: str
+
+        :param domain:
+            The value to assign to the domain property of this DbSystemSummary.
+        :type domain: str
+
+        :param hostname:
+            The value to assign to the hostname property of this DbSystemSummary.
+        :type hostname: str
+
+        :param id:
+            The value to assign to the id property of this DbSystemSummary.
+        :type id: str
+
+        :param last_patch_history_entry_id:
+            The value to assign to the last_patch_history_entry_id property of this DbSystemSummary.
+        :type last_patch_history_entry_id: str
+
+        :param license_model:
+            The value to assign to the license_model property of this DbSystemSummary.
+            Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type license_model: str
+
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this DbSystemSummary.
+        :type lifecycle_details: str
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this DbSystemSummary.
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        :param listener_port:
+            The value to assign to the listener_port property of this DbSystemSummary.
+        :type listener_port: int
+
+        :param node_count:
+            The value to assign to the node_count property of this DbSystemSummary.
+        :type node_count: int
+
+        :param reco_storage_size_in_gb:
+            The value to assign to the reco_storage_size_in_gb property of this DbSystemSummary.
+        :type reco_storage_size_in_gb: int
+
+        :param scan_dns_record_id:
+            The value to assign to the scan_dns_record_id property of this DbSystemSummary.
+        :type scan_dns_record_id: str
+
+        :param scan_ip_ids:
+            The value to assign to the scan_ip_ids property of this DbSystemSummary.
+        :type scan_ip_ids: list[str]
+
+        :param shape:
+            The value to assign to the shape property of this DbSystemSummary.
+        :type shape: str
+
+        :param ssh_public_keys:
+            The value to assign to the ssh_public_keys property of this DbSystemSummary.
+        :type ssh_public_keys: list[str]
+
+        :param subnet_id:
+            The value to assign to the subnet_id property of this DbSystemSummary.
+        :type subnet_id: str
+
+        :param time_created:
+            The value to assign to the time_created property of this DbSystemSummary.
+        :type time_created: datetime
+
+        :param version:
+            The value to assign to the version property of this DbSystemSummary.
+        :type version: str
+
+        :param vip_ids:
+            The value to assign to the vip_ids property of this DbSystemSummary.
+        :type vip_ids: list[str]
+
+        """
         self.swagger_types = {
             'availability_domain': 'str',
             'backup_subnet_id': 'str',
