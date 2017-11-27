@@ -103,3 +103,19 @@ def test_subclass():
 def test_subclass_for_unknown_subtype_defaults_to_base_type():
     subtype = oci.core.models.VolumeAttachment.get_subtype({'attachmentType': 'new_subtype'})
     assert 'VolumeAttachment' == subtype
+
+
+def test_value_allowed_none_or_none_sentinel_val_is_none():
+    assert oci.util.value_allowed_none_or_none_sentinel(None, ['hello', 'world'])
+
+
+def test_value_allowed_none_or_none_sentinel_val_is_none_sentinel():
+    assert oci.util.value_allowed_none_or_none_sentinel(oci.util.NONE_SENTINEL, ['hello', 'world'])
+
+
+def test_value_allowed_none_or_none_sentinel_val_is_allowed():
+    assert oci.util.value_allowed_none_or_none_sentinel('hello', ['hello', 'world'])
+
+
+def test_value_allowed_none_or_none_sentinel_val_is_not_allowed():
+    assert not oci.util.value_allowed_none_or_none_sentinel('bad value', ['hello', 'world'])
