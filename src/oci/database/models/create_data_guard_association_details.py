@@ -3,12 +3,40 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class CreateDataGuardAssociationDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new CreateDataGuardAssociationDetails object with values from values from keyword arguments. This class has the following subclasses and if you are using this class as input
+        to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.database.models.CreateDataGuardAssociationToExistingDbSystemDetails`
+
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
+
+        :param creation_type:
+            The value to assign to the creation_type property of this CreateDataGuardAssociationDetails.
+        :type creation_type: str
+
+        :param database_admin_password:
+            The value to assign to the database_admin_password property of this CreateDataGuardAssociationDetails.
+        :type database_admin_password: str
+
+        :param protection_mode:
+            The value to assign to the protection_mode property of this CreateDataGuardAssociationDetails.
+            Allowed values for this property are: "MAXIMUM_AVAILABILITY", "MAXIMUM_PERFORMANCE", "MAXIMUM_PROTECTION"
+        :type protection_mode: str
+
+        :param transport_type:
+            The value to assign to the transport_type property of this CreateDataGuardAssociationDetails.
+            Allowed values for this property are: "SYNC", "ASYNC", "FASTSYNC"
+        :type transport_type: str
+
+        """
         self.swagger_types = {
             'creation_type': 'str',
             'database_admin_password': 'str',

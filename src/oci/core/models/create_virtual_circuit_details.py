@@ -3,12 +3,59 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class CreateVirtualCircuitDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new CreateVirtualCircuitDetails object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param bandwidth_shape_name:
+            The value to assign to the bandwidth_shape_name property of this CreateVirtualCircuitDetails.
+        :type bandwidth_shape_name: str
+
+        :param compartment_id:
+            The value to assign to the compartment_id property of this CreateVirtualCircuitDetails.
+        :type compartment_id: str
+
+        :param cross_connect_mappings:
+            The value to assign to the cross_connect_mappings property of this CreateVirtualCircuitDetails.
+        :type cross_connect_mappings: list[CrossConnectMapping]
+
+        :param customer_bgp_asn:
+            The value to assign to the customer_bgp_asn property of this CreateVirtualCircuitDetails.
+        :type customer_bgp_asn: int
+
+        :param display_name:
+            The value to assign to the display_name property of this CreateVirtualCircuitDetails.
+        :type display_name: str
+
+        :param gateway_id:
+            The value to assign to the gateway_id property of this CreateVirtualCircuitDetails.
+        :type gateway_id: str
+
+        :param provider_name:
+            The value to assign to the provider_name property of this CreateVirtualCircuitDetails.
+        :type provider_name: str
+
+        :param provider_service_name:
+            The value to assign to the provider_service_name property of this CreateVirtualCircuitDetails.
+        :type provider_service_name: str
+
+        :param region:
+            The value to assign to the region property of this CreateVirtualCircuitDetails.
+        :type region: str
+
+        :param type:
+            The value to assign to the type property of this CreateVirtualCircuitDetails.
+            Allowed values for this property are: "PUBLIC", "PRIVATE"
+        :type type: str
+
+        """
         self.swagger_types = {
             'bandwidth_shape_name': 'str',
             'compartment_id': 'str',

@@ -3,12 +3,39 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class UpdateBucketDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new UpdateBucketDetails object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param namespace:
+            The value to assign to the namespace property of this UpdateBucketDetails.
+        :type namespace: str
+
+        :param compartment_id:
+            The value to assign to the compartment_id property of this UpdateBucketDetails.
+        :type compartment_id: str
+
+        :param name:
+            The value to assign to the name property of this UpdateBucketDetails.
+        :type name: str
+
+        :param metadata:
+            The value to assign to the metadata property of this UpdateBucketDetails.
+        :type metadata: dict(str, str)
+
+        :param public_access_type:
+            The value to assign to the public_access_type property of this UpdateBucketDetails.
+            Allowed values for this property are: "NoPublicAccess", "ObjectRead"
+        :type public_access_type: str
+
+        """
         self.swagger_types = {
             'namespace': 'str',
             'compartment_id': 'str',

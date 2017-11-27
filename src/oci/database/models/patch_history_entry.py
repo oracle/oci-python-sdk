@@ -3,12 +3,50 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class PatchHistoryEntry(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new PatchHistoryEntry object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param action:
+            The value to assign to the action property of this PatchHistoryEntry.
+            Allowed values for this property are: "APPLY", "PRECHECK", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type action: str
+
+        :param id:
+            The value to assign to the id property of this PatchHistoryEntry.
+        :type id: str
+
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this PatchHistoryEntry.
+        :type lifecycle_details: str
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this PatchHistoryEntry.
+            Allowed values for this property are: "IN_PROGRESS", "SUCCEEDED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        :param patch_id:
+            The value to assign to the patch_id property of this PatchHistoryEntry.
+        :type patch_id: str
+
+        :param time_ended:
+            The value to assign to the time_ended property of this PatchHistoryEntry.
+        :type time_ended: datetime
+
+        :param time_started:
+            The value to assign to the time_started property of this PatchHistoryEntry.
+        :type time_started: datetime
+
+        """
         self.swagger_types = {
             'action': 'str',
             'id': 'str',

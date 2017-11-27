@@ -27,6 +27,51 @@ class ComputeClient(object):
         )
         self.base_client = BaseClient("compute", config, signer, core_type_mapping)
 
+    def attach_boot_volume(self, attach_boot_volume_details, **kwargs):
+        """
+        AttachBootVolume
+        Attaches the specified boot volume to the specified instance.
+
+
+        :param AttachBootVolumeDetails attach_boot_volume_details: (required)
+            Attach boot volume request
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.BootVolumeAttachment`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/bootVolumeAttachments/"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "attach_boot_volume got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            header_params=header_params,
+            body=attach_boot_volume_details,
+            response_type="BootVolumeAttachment")
+
     def attach_vnic(self, attach_vnic_details, **kwargs):
         """
         AttachVnic
@@ -257,13 +302,11 @@ class ComputeClient(object):
     def create_instance_console_connection(self, create_instance_console_connection_details, **kwargs):
         """
         CreateInstanceConsoleConnection
-        Creates a new serial console connection to the specified instance.
-        Once the serial console connection has been created and is available,
-        you connect to the serial console using an SSH client.
+        Creates a new console connection to the specified instance.
+        Once the console connection has been created and is available,
+        you connect to the console using SSH.
 
-        The default number of enabled serial console connections per tenancy is 10.
-
-        For more information about serial console access, see `Accessing the Serial Console`__.
+        For more information about console access, see `Accessing the Console`__.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/serialconsole.htm
 
@@ -281,7 +324,7 @@ class ComputeClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.InstanceConsoleConnection`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/instanceConsoleConnections/"
+        resource_path = "/instanceConsoleConnections"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -414,7 +457,7 @@ class ComputeClient(object):
     def delete_instance_console_connection(self, instance_console_connection_id, **kwargs):
         """
         DeleteInstanceConsoleConnection
-        Deletes the specified serial console connection.
+        Deletes the specified instance console connection.
 
 
         :param str instance_console_connection_id: (required)
@@ -442,6 +485,61 @@ class ComputeClient(object):
 
         path_params = {
             "instanceConsoleConnectionId": instance_console_connection_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params)
+
+    def detach_boot_volume(self, boot_volume_attachment_id, **kwargs):
+        """
+        DetachBootVolume
+        Detaches a boot volume from an instance. You must specify the OCID of the boot volume attachment.
+
+        This is an asynchronous operation. The attachment's `lifecycleState` will change to DETACHING temporarily
+        until the attachment is completely removed.
+
+
+        :param str boot_volume_attachment_id: (required)
+            The OCID of the boot volume attachment.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/bootVolumeAttachments/{bootVolumeAttachmentId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "detach_boot_volume got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "bootVolumeAttachmentId": boot_volume_attachment_id
         }
 
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
@@ -661,6 +759,47 @@ class ComputeClient(object):
             body=export_image_details,
             response_type="Image")
 
+    def get_boot_volume_attachment(self, boot_volume_attachment_id, **kwargs):
+        """
+        GetBootVolumeAttachment
+        Gets information about the specified boot volume attachment.
+
+
+        :param str boot_volume_attachment_id: (required)
+            The OCID of the boot volume attachment.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.BootVolumeAttachment`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/bootVolumeAttachments/{bootVolumeAttachmentId}"
+        method = "GET"
+
+        if kwargs:
+            raise ValueError(
+                "get_boot_volume_attachment got unknown kwargs: {!r}".format(kwargs))
+
+        path_params = {
+            "bootVolumeAttachmentId": boot_volume_attachment_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="BootVolumeAttachment")
+
     def get_console_history(self, instance_console_history_id, **kwargs):
         """
         GetConsoleHistory
@@ -851,7 +990,7 @@ class ComputeClient(object):
     def get_instance_console_connection(self, instance_console_connection_id, **kwargs):
         """
         GetInstanceConsoleConnection
-        Gets the specified serial console connection's information.
+        Gets the specified instance console connection's information.
 
 
         :param str instance_console_connection_id: (required)
@@ -1179,6 +1318,75 @@ class ComputeClient(object):
             body=launch_instance_details,
             response_type="Instance")
 
+    def list_boot_volume_attachments(self, availability_domain, compartment_id, **kwargs):
+        """
+        ListBootVolumeAttachments
+        Lists the boot volume attachments in the specified compartment. You can filter the
+        list by specifying an instance OCID, boot volume OCID, or both.
+
+
+        :param str availability_domain: (required)
+            The name of the Availability Domain.
+
+            Example: `Uocm:PHX-AD-1`
+
+        :param str compartment_id: (required)
+            The OCID of the compartment.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+            Example: `500`
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param str instance_id: (optional)
+            The OCID of the instance.
+
+        :param str boot_volume_id: (optional)
+            The OCID of the boot volume.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.BootVolumeAttachment`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/bootVolumeAttachments/"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "limit",
+            "page",
+            "instance_id",
+            "boot_volume_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_boot_volume_attachments got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "availabilityDomain": availability_domain,
+            "compartmentId": compartment_id,
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "instanceId": kwargs.get("instance_id", missing),
+            "bootVolumeId": kwargs.get("boot_volume_id", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[BootVolumeAttachment]")
+
     def list_console_histories(self, compartment_id, **kwargs):
         """
         ListConsoleHistories
@@ -1423,9 +1631,9 @@ class ComputeClient(object):
     def list_instance_console_connections(self, compartment_id, **kwargs):
         """
         ListInstanceConsoleConnections
-        Lists the serial console connections for the specified compartment or instance.
+        Lists the console connections for the specified compartment or instance.
 
-        For more information about serial console access, see `Accessing the Serial Console`__.
+        For more information about console access, see `Accessing the Instance Console`__.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/serialconsole.htm
 
@@ -1447,7 +1655,7 @@ class ComputeClient(object):
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.InstanceConsoleConnection`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/instanceConsoleConnections/"
+        resource_path = "/instanceConsoleConnections"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -1811,6 +2019,9 @@ class ComputeClient(object):
         Terminates the specified instance. Any attached VNICs and volumes are automatically detached
         when the instance terminates.
 
+        To preserve the boot volume associated with the instance, specify `true` for `PreserveBootVolumeQueryParam`.
+        To delete the boot volume when the instance is deleted, specify `false` or do not specify a value for `PreserveBootVolumeQueryParam`.
+
         This is an asynchronous operation. The instance's `lifecycleState` will change to TERMINATING temporarily
         until the instance is completely removed.
 
@@ -1823,6 +2034,9 @@ class ComputeClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
+        :param bool preserve_boot_volume: (optional)
+            Specifies whether to delete or preserve the boot volume when terminating an instance.
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
         """
@@ -1831,7 +2045,8 @@ class ComputeClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
-            "if_match"
+            "if_match",
+            "preserve_boot_volume"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
         if extra_kwargs:
@@ -1848,6 +2063,11 @@ class ComputeClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
+        query_params = {
+            "preserveBootVolume": kwargs.get("preserve_boot_volume", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
+
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
@@ -1859,6 +2079,7 @@ class ComputeClient(object):
             resource_path=resource_path,
             method=method,
             path_params=path_params,
+            query_params=query_params,
             header_params=header_params)
 
     def update_console_history(self, instance_console_history_id, update_console_history_details, **kwargs):

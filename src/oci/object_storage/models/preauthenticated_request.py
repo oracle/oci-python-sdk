@@ -3,12 +3,48 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class PreauthenticatedRequest(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new PreauthenticatedRequest object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param id:
+            The value to assign to the id property of this PreauthenticatedRequest.
+        :type id: str
+
+        :param name:
+            The value to assign to the name property of this PreauthenticatedRequest.
+        :type name: str
+
+        :param access_uri:
+            The value to assign to the access_uri property of this PreauthenticatedRequest.
+        :type access_uri: str
+
+        :param object_name:
+            The value to assign to the object_name property of this PreauthenticatedRequest.
+        :type object_name: str
+
+        :param access_type:
+            The value to assign to the access_type property of this PreauthenticatedRequest.
+            Allowed values for this property are: "ObjectRead", "ObjectWrite", "ObjectReadWrite", "AnyObjectWrite", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type access_type: str
+
+        :param time_expires:
+            The value to assign to the time_expires property of this PreauthenticatedRequest.
+        :type time_expires: datetime
+
+        :param time_created:
+            The value to assign to the time_created property of this PreauthenticatedRequest.
+        :type time_created: datetime
+
+        """
         self.swagger_types = {
             'id': 'str',
             'name': 'str',

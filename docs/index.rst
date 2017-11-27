@@ -47,6 +47,7 @@ To get started, head over to the :ref:`installation instructions <install>` or s
     forward-compatibility
     backward-compatibility
     quickstart
+    logging
     parallel-ops
     pass-explicit-null
     upload-manager

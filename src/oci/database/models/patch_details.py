@@ -3,12 +3,27 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class PatchDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new PatchDetails object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param action:
+            The value to assign to the action property of this PatchDetails.
+            Allowed values for this property are: "APPLY", "PRECHECK"
+        :type action: str
+
+        :param patch_id:
+            The value to assign to the patch_id property of this PatchDetails.
+        :type patch_id: str
+
+        """
         self.swagger_types = {
             'action': 'str',
             'patch_id': 'str'

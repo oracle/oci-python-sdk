@@ -3,12 +3,27 @@
 
 from .export_image_details import ExportImageDetails
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class ExportImageViaObjectStorageUriDetails(ExportImageDetails):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new ExportImageViaObjectStorageUriDetails object with values from values from keyword arguments. The default value of the :py:attr:`~oci.core.models.ExportImageViaObjectStorageUriDetails.destination_type` attribute
+        of this class is ``objectStorageUri`` and it should not be changed.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param destination_type:
+            The value to assign to the destination_type property of this ExportImageViaObjectStorageUriDetails.
+        :type destination_type: str
+
+        :param destination_uri:
+            The value to assign to the destination_uri property of this ExportImageViaObjectStorageUriDetails.
+        :type destination_uri: str
+
+        """
         self.swagger_types = {
             'destination_type': 'str',
             'destination_uri': 'str'

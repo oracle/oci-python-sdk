@@ -3,12 +3,27 @@
 
 from .volume_source_details import VolumeSourceDetails
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class VolumeSourceFromVolumeBackupDetails(VolumeSourceDetails):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new VolumeSourceFromVolumeBackupDetails object with values from values from keyword arguments. The default value of the :py:attr:`~oci.core.models.VolumeSourceFromVolumeBackupDetails.type` attribute
+        of this class is ``volumeBackup`` and it should not be changed.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param type:
+            The value to assign to the type property of this VolumeSourceFromVolumeBackupDetails.
+        :type type: str
+
+        :param id:
+            The value to assign to the id property of this VolumeSourceFromVolumeBackupDetails.
+        :type id: str
+
+        """
         self.swagger_types = {
             'type': 'str',
             'id': 'str'

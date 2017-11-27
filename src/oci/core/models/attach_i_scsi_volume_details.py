@@ -3,12 +3,39 @@
 
 from .attach_volume_details import AttachVolumeDetails
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class AttachIScsiVolumeDetails(AttachVolumeDetails):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new AttachIScsiVolumeDetails object with values from values from keyword arguments. The default value of the :py:attr:`~oci.core.models.AttachIScsiVolumeDetails.type` attribute
+        of this class is ``iscsi`` and it should not be changed.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param display_name:
+            The value to assign to the display_name property of this AttachIScsiVolumeDetails.
+        :type display_name: str
+
+        :param instance_id:
+            The value to assign to the instance_id property of this AttachIScsiVolumeDetails.
+        :type instance_id: str
+
+        :param type:
+            The value to assign to the type property of this AttachIScsiVolumeDetails.
+        :type type: str
+
+        :param volume_id:
+            The value to assign to the volume_id property of this AttachIScsiVolumeDetails.
+        :type volume_id: str
+
+        :param use_chap:
+            The value to assign to the use_chap property of this AttachIScsiVolumeDetails.
+        :type use_chap: bool
+
+        """
         self.swagger_types = {
             'display_name': 'str',
             'instance_id': 'str',

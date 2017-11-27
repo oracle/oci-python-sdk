@@ -3,12 +3,64 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class VnicAttachment(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new VnicAttachment object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param availability_domain:
+            The value to assign to the availability_domain property of this VnicAttachment.
+        :type availability_domain: str
+
+        :param compartment_id:
+            The value to assign to the compartment_id property of this VnicAttachment.
+        :type compartment_id: str
+
+        :param display_name:
+            The value to assign to the display_name property of this VnicAttachment.
+        :type display_name: str
+
+        :param id:
+            The value to assign to the id property of this VnicAttachment.
+        :type id: str
+
+        :param instance_id:
+            The value to assign to the instance_id property of this VnicAttachment.
+        :type instance_id: str
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this VnicAttachment.
+            Allowed values for this property are: "ATTACHING", "ATTACHED", "DETACHING", "DETACHED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        :param nic_index:
+            The value to assign to the nic_index property of this VnicAttachment.
+        :type nic_index: int
+
+        :param subnet_id:
+            The value to assign to the subnet_id property of this VnicAttachment.
+        :type subnet_id: str
+
+        :param time_created:
+            The value to assign to the time_created property of this VnicAttachment.
+        :type time_created: datetime
+
+        :param vlan_tag:
+            The value to assign to the vlan_tag property of this VnicAttachment.
+        :type vlan_tag: int
+
+        :param vnic_id:
+            The value to assign to the vnic_id property of this VnicAttachment.
+        :type vnic_id: str
+
+        """
         self.swagger_types = {
             'availability_domain': 'str',
             'compartment_id': 'str',
@@ -16,6 +68,7 @@ class VnicAttachment(object):
             'id': 'str',
             'instance_id': 'str',
             'lifecycle_state': 'str',
+            'nic_index': 'int',
             'subnet_id': 'str',
             'time_created': 'datetime',
             'vlan_tag': 'int',
@@ -29,6 +82,7 @@ class VnicAttachment(object):
             'id': 'id',
             'instance_id': 'instanceId',
             'lifecycle_state': 'lifecycleState',
+            'nic_index': 'nicIndex',
             'subnet_id': 'subnetId',
             'time_created': 'timeCreated',
             'vlan_tag': 'vlanTag',
@@ -41,6 +95,7 @@ class VnicAttachment(object):
         self._id = None
         self._instance_id = None
         self._lifecycle_state = None
+        self._nic_index = None
         self._subnet_id = None
         self._time_created = None
         self._vlan_tag = None
@@ -203,6 +258,42 @@ class VnicAttachment(object):
         if lifecycle_state not in allowed_values:
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def nic_index(self):
+        """
+        Gets the nic_index of this VnicAttachment.
+        Which physical network interface card (NIC) the VNIC uses.
+        Certain bare metal instance shapes have two active physical NICs (0 and 1). If
+        you add a secondary VNIC to one of these instances, you can specify which NIC
+        the VNIC will use. For more information, see
+        `Virtual Network Interface Cards (VNICs)`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVNICs.htm
+
+
+        :return: The nic_index of this VnicAttachment.
+        :rtype: int
+        """
+        return self._nic_index
+
+    @nic_index.setter
+    def nic_index(self, nic_index):
+        """
+        Sets the nic_index of this VnicAttachment.
+        Which physical network interface card (NIC) the VNIC uses.
+        Certain bare metal instance shapes have two active physical NICs (0 and 1). If
+        you add a secondary VNIC to one of these instances, you can specify which NIC
+        the VNIC will use. For more information, see
+        `Virtual Network Interface Cards (VNICs)`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVNICs.htm
+
+
+        :param nic_index: The nic_index of this VnicAttachment.
+        :type: int
+        """
+        self._nic_index = nic_index
 
     @property
     def subnet_id(self):

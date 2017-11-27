@@ -3,12 +3,38 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class RenameObjectDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new RenameObjectDetails object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param source_name:
+            The value to assign to the source_name property of this RenameObjectDetails.
+        :type source_name: str
+
+        :param new_name:
+            The value to assign to the new_name property of this RenameObjectDetails.
+        :type new_name: str
+
+        :param src_obj_if_match_e_tag:
+            The value to assign to the src_obj_if_match_e_tag property of this RenameObjectDetails.
+        :type src_obj_if_match_e_tag: str
+
+        :param new_obj_if_match_e_tag:
+            The value to assign to the new_obj_if_match_e_tag property of this RenameObjectDetails.
+        :type new_obj_if_match_e_tag: str
+
+        :param new_obj_if_none_match_e_tag:
+            The value to assign to the new_obj_if_none_match_e_tag property of this RenameObjectDetails.
+        :type new_obj_if_none_match_e_tag: str
+
+        """
         self.swagger_types = {
             'source_name': 'str',
             'new_name': 'str',

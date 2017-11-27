@@ -3,12 +3,52 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class IPSecConnection(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new IPSecConnection object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this IPSecConnection.
+        :type compartment_id: str
+
+        :param cpe_id:
+            The value to assign to the cpe_id property of this IPSecConnection.
+        :type cpe_id: str
+
+        :param display_name:
+            The value to assign to the display_name property of this IPSecConnection.
+        :type display_name: str
+
+        :param drg_id:
+            The value to assign to the drg_id property of this IPSecConnection.
+        :type drg_id: str
+
+        :param id:
+            The value to assign to the id property of this IPSecConnection.
+        :type id: str
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this IPSecConnection.
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        :param static_routes:
+            The value to assign to the static_routes property of this IPSecConnection.
+        :type static_routes: list[str]
+
+        :param time_created:
+            The value to assign to the time_created property of this IPSecConnection.
+        :type time_created: datetime
+
+        """
         self.swagger_types = {
             'compartment_id': 'str',
             'cpe_id': 'str',

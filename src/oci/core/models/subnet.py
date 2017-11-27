@@ -3,12 +3,84 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class Subnet(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new Subnet object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param availability_domain:
+            The value to assign to the availability_domain property of this Subnet.
+        :type availability_domain: str
+
+        :param cidr_block:
+            The value to assign to the cidr_block property of this Subnet.
+        :type cidr_block: str
+
+        :param compartment_id:
+            The value to assign to the compartment_id property of this Subnet.
+        :type compartment_id: str
+
+        :param dhcp_options_id:
+            The value to assign to the dhcp_options_id property of this Subnet.
+        :type dhcp_options_id: str
+
+        :param display_name:
+            The value to assign to the display_name property of this Subnet.
+        :type display_name: str
+
+        :param dns_label:
+            The value to assign to the dns_label property of this Subnet.
+        :type dns_label: str
+
+        :param id:
+            The value to assign to the id property of this Subnet.
+        :type id: str
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this Subnet.
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        :param prohibit_public_ip_on_vnic:
+            The value to assign to the prohibit_public_ip_on_vnic property of this Subnet.
+        :type prohibit_public_ip_on_vnic: bool
+
+        :param route_table_id:
+            The value to assign to the route_table_id property of this Subnet.
+        :type route_table_id: str
+
+        :param security_list_ids:
+            The value to assign to the security_list_ids property of this Subnet.
+        :type security_list_ids: list[str]
+
+        :param subnet_domain_name:
+            The value to assign to the subnet_domain_name property of this Subnet.
+        :type subnet_domain_name: str
+
+        :param time_created:
+            The value to assign to the time_created property of this Subnet.
+        :type time_created: datetime
+
+        :param vcn_id:
+            The value to assign to the vcn_id property of this Subnet.
+        :type vcn_id: str
+
+        :param virtual_router_ip:
+            The value to assign to the virtual_router_ip property of this Subnet.
+        :type virtual_router_ip: str
+
+        :param virtual_router_mac:
+            The value to assign to the virtual_router_mac property of this Subnet.
+        :type virtual_router_mac: str
+
+        """
         self.swagger_types = {
             'availability_domain': 'str',
             'cidr_block': 'str',

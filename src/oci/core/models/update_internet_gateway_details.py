@@ -3,12 +3,26 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class UpdateInternetGatewayDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new UpdateInternetGatewayDetails object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param display_name:
+            The value to assign to the display_name property of this UpdateInternetGatewayDetails.
+        :type display_name: str
+
+        :param is_enabled:
+            The value to assign to the is_enabled property of this UpdateInternetGatewayDetails.
+        :type is_enabled: bool
+
+        """
         self.swagger_types = {
             'display_name': 'str',
             'is_enabled': 'bool'

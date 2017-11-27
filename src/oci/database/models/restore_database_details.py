@@ -3,12 +3,30 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class RestoreDatabaseDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new RestoreDatabaseDetails object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param database_scn:
+            The value to assign to the database_scn property of this RestoreDatabaseDetails.
+        :type database_scn: str
+
+        :param latest:
+            The value to assign to the latest property of this RestoreDatabaseDetails.
+        :type latest: bool
+
+        :param timestamp:
+            The value to assign to the timestamp property of this RestoreDatabaseDetails.
+        :type timestamp: datetime
+
+        """
         self.swagger_types = {
             'database_scn': 'str',
             'latest': 'bool',

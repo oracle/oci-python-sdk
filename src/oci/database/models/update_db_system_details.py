@@ -3,12 +3,34 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class UpdateDbSystemDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new UpdateDbSystemDetails object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param cpu_core_count:
+            The value to assign to the cpu_core_count property of this UpdateDbSystemDetails.
+        :type cpu_core_count: int
+
+        :param data_storage_size_in_gbs:
+            The value to assign to the data_storage_size_in_gbs property of this UpdateDbSystemDetails.
+        :type data_storage_size_in_gbs: int
+
+        :param ssh_public_keys:
+            The value to assign to the ssh_public_keys property of this UpdateDbSystemDetails.
+        :type ssh_public_keys: list[str]
+
+        :param version:
+            The value to assign to the version property of this UpdateDbSystemDetails.
+        :type version: PatchDetails
+
+        """
         self.swagger_types = {
             'cpu_core_count': 'int',
             'data_storage_size_in_gbs': 'int',

@@ -3,12 +3,40 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class CrossConnectGroup(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new CrossConnectGroup object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this CrossConnectGroup.
+        :type compartment_id: str
+
+        :param display_name:
+            The value to assign to the display_name property of this CrossConnectGroup.
+        :type display_name: str
+
+        :param id:
+            The value to assign to the id property of this CrossConnectGroup.
+        :type id: str
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this CrossConnectGroup.
+            Allowed values for this property are: "PROVISIONING", "PROVISIONED", "INACTIVE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        :param time_created:
+            The value to assign to the time_created property of this CrossConnectGroup.
+        :type time_created: datetime
+
+        """
         self.swagger_types = {
             'compartment_id': 'str',
             'display_name': 'str',

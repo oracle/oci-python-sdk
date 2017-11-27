@@ -3,12 +3,35 @@
 
 from .image_source_details import ImageSourceDetails
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class ImageSourceViaObjectStorageTupleDetails(ImageSourceDetails):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new ImageSourceViaObjectStorageTupleDetails object with values from values from keyword arguments. The default value of the :py:attr:`~oci.core.models.ImageSourceViaObjectStorageTupleDetails.source_type` attribute
+        of this class is ``objectStorageTuple`` and it should not be changed.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param source_type:
+            The value to assign to the source_type property of this ImageSourceViaObjectStorageTupleDetails.
+        :type source_type: str
+
+        :param bucket_name:
+            The value to assign to the bucket_name property of this ImageSourceViaObjectStorageTupleDetails.
+        :type bucket_name: str
+
+        :param namespace_name:
+            The value to assign to the namespace_name property of this ImageSourceViaObjectStorageTupleDetails.
+        :type namespace_name: str
+
+        :param object_name:
+            The value to assign to the object_name property of this ImageSourceViaObjectStorageTupleDetails.
+        :type object_name: str
+
+        """
         self.swagger_types = {
             'source_type': 'str',
             'bucket_name': 'str',

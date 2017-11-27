@@ -3,12 +3,49 @@
 
 from .create_identity_provider_details import CreateIdentityProviderDetails
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class CreateSaml2IdentityProviderDetails(CreateIdentityProviderDetails):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new CreateSaml2IdentityProviderDetails object with values from values from keyword arguments. The default value of the :py:attr:`~oci.identity.models.CreateSaml2IdentityProviderDetails.protocol` attribute
+        of this class is ``SAML2`` and it should not be changed.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this CreateSaml2IdentityProviderDetails.
+        :type compartment_id: str
+
+        :param name:
+            The value to assign to the name property of this CreateSaml2IdentityProviderDetails.
+        :type name: str
+
+        :param description:
+            The value to assign to the description property of this CreateSaml2IdentityProviderDetails.
+        :type description: str
+
+        :param product_type:
+            The value to assign to the product_type property of this CreateSaml2IdentityProviderDetails.
+            Allowed values for this property are: "IDCS", "ADFS"
+        :type product_type: str
+
+        :param protocol:
+            The value to assign to the protocol property of this CreateSaml2IdentityProviderDetails.
+            Allowed values for this property are: "SAML2"
+        :type protocol: str
+
+        :param metadata_url:
+            The value to assign to the metadata_url property of this CreateSaml2IdentityProviderDetails.
+        :type metadata_url: str
+
+        :param metadata:
+            The value to assign to the metadata property of this CreateSaml2IdentityProviderDetails.
+        :type metadata: str
+
+        """
         self.swagger_types = {
             'compartment_id': 'str',
             'name': 'str',

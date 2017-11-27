@@ -3,12 +3,60 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class VolumeAttachment(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new VolumeAttachment object with values from values from keyword arguments. This class has the following subclasses and if you are using this class as input
+        to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.core.models.IScsiVolumeAttachment`
+
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
+
+        :param attachment_type:
+            The value to assign to the attachment_type property of this VolumeAttachment.
+        :type attachment_type: str
+
+        :param availability_domain:
+            The value to assign to the availability_domain property of this VolumeAttachment.
+        :type availability_domain: str
+
+        :param compartment_id:
+            The value to assign to the compartment_id property of this VolumeAttachment.
+        :type compartment_id: str
+
+        :param display_name:
+            The value to assign to the display_name property of this VolumeAttachment.
+        :type display_name: str
+
+        :param id:
+            The value to assign to the id property of this VolumeAttachment.
+        :type id: str
+
+        :param instance_id:
+            The value to assign to the instance_id property of this VolumeAttachment.
+        :type instance_id: str
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this VolumeAttachment.
+            Allowed values for this property are: "ATTACHING", "ATTACHED", "DETACHING", "DETACHED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        :param time_created:
+            The value to assign to the time_created property of this VolumeAttachment.
+        :type time_created: datetime
+
+        :param volume_id:
+            The value to assign to the volume_id property of this VolumeAttachment.
+        :type volume_id: str
+
+        """
         self.swagger_types = {
             'attachment_type': 'str',
             'availability_domain': 'str',

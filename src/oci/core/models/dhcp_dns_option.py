@@ -3,12 +3,33 @@
 
 from .dhcp_option import DhcpOption
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class DhcpDnsOption(DhcpOption):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new DhcpDnsOption object with values from values from keyword arguments. The default value of the :py:attr:`~oci.core.models.DhcpDnsOption.type` attribute
+        of this class is ``DomainNameServer`` and it should not be changed.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param type:
+            The value to assign to the type property of this DhcpDnsOption.
+        :type type: str
+
+        :param custom_dns_servers:
+            The value to assign to the custom_dns_servers property of this DhcpDnsOption.
+        :type custom_dns_servers: list[str]
+
+        :param server_type:
+            The value to assign to the server_type property of this DhcpDnsOption.
+            Allowed values for this property are: "VcnLocal", "VcnLocalPlusInternet", "CustomDnsServer", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type server_type: str
+
+        """
         self.swagger_types = {
             'type': 'str',
             'custom_dns_servers': 'list[str]',

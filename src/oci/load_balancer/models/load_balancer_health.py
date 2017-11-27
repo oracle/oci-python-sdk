@@ -3,12 +3,40 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class LoadBalancerHealth(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new LoadBalancerHealth object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param critical_state_backend_set_names:
+            The value to assign to the critical_state_backend_set_names property of this LoadBalancerHealth.
+        :type critical_state_backend_set_names: list[str]
+
+        :param status:
+            The value to assign to the status property of this LoadBalancerHealth.
+            Allowed values for this property are: "OK", "WARNING", "CRITICAL", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type status: str
+
+        :param total_backend_set_count:
+            The value to assign to the total_backend_set_count property of this LoadBalancerHealth.
+        :type total_backend_set_count: int
+
+        :param unknown_state_backend_set_names:
+            The value to assign to the unknown_state_backend_set_names property of this LoadBalancerHealth.
+        :type unknown_state_backend_set_names: list[str]
+
+        :param warning_state_backend_set_names:
+            The value to assign to the warning_state_backend_set_names property of this LoadBalancerHealth.
+        :type warning_state_backend_set_names: list[str]
+
+        """
         self.swagger_types = {
             'critical_state_backend_set_names': 'list[str]',
             'status': 'str',
@@ -162,7 +190,7 @@ class LoadBalancerHealth(object):
         A list of backend sets that are currently in the `UNKNOWN` health state. The list identifies each backend set by the
         friendly name you assigned when you created it.
 
-        Example: `Backend set2`
+        Example: `Backend_set2`
 
 
         :return: The unknown_state_backend_set_names of this LoadBalancerHealth.
@@ -177,7 +205,7 @@ class LoadBalancerHealth(object):
         A list of backend sets that are currently in the `UNKNOWN` health state. The list identifies each backend set by the
         friendly name you assigned when you created it.
 
-        Example: `Backend set2`
+        Example: `Backend_set2`
 
 
         :param unknown_state_backend_set_names: The unknown_state_backend_set_names of this LoadBalancerHealth.
@@ -192,7 +220,7 @@ class LoadBalancerHealth(object):
         A list of backend sets that are currently in the `WARNING` health state. The list identifies each backend set by the
         friendly name you assigned when you created it.
 
-        Example: `Backend set3`
+        Example: `Backend_set3`
 
 
         :return: The warning_state_backend_set_names of this LoadBalancerHealth.
@@ -207,7 +235,7 @@ class LoadBalancerHealth(object):
         A list of backend sets that are currently in the `WARNING` health state. The list identifies each backend set by the
         friendly name you assigned when you created it.
 
-        Example: `Backend set3`
+        Example: `Backend_set3`
 
 
         :param warning_state_backend_set_names: The warning_state_backend_set_names of this LoadBalancerHealth.

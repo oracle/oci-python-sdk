@@ -3,12 +3,34 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class IPSecConnectionDeviceStatus(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new IPSecConnectionDeviceStatus object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this IPSecConnectionDeviceStatus.
+        :type compartment_id: str
+
+        :param id:
+            The value to assign to the id property of this IPSecConnectionDeviceStatus.
+        :type id: str
+
+        :param time_created:
+            The value to assign to the time_created property of this IPSecConnectionDeviceStatus.
+        :type time_created: datetime
+
+        :param tunnels:
+            The value to assign to the tunnels property of this IPSecConnectionDeviceStatus.
+        :type tunnels: list[TunnelStatus]
+
+        """
         self.swagger_types = {
             'compartment_id': 'str',
             'id': 'str',

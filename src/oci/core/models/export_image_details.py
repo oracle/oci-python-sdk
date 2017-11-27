@@ -3,12 +3,27 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class ExportImageDetails(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new ExportImageDetails object with values from values from keyword arguments. This class has the following subclasses and if you are using this class as input
+        to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.core.models.ExportImageViaObjectStorageUriDetails`
+        * :class:`~oci.core.models.ExportImageViaObjectStorageTupleDetails`
+
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
+
+        :param destination_type:
+            The value to assign to the destination_type property of this ExportImageDetails.
+        :type destination_type: str
+
+        """
         self.swagger_types = {
             'destination_type': 'str'
         }

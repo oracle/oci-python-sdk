@@ -3,12 +3,88 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class DataGuardAssociation(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new DataGuardAssociation object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param apply_lag:
+            The value to assign to the apply_lag property of this DataGuardAssociation.
+        :type apply_lag: str
+
+        :param apply_rate:
+            The value to assign to the apply_rate property of this DataGuardAssociation.
+        :type apply_rate: str
+
+        :param database_id:
+            The value to assign to the database_id property of this DataGuardAssociation.
+        :type database_id: str
+
+        :param id:
+            The value to assign to the id property of this DataGuardAssociation.
+        :type id: str
+
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this DataGuardAssociation.
+        :type lifecycle_details: str
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this DataGuardAssociation.
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        :param peer_data_guard_association_id:
+            The value to assign to the peer_data_guard_association_id property of this DataGuardAssociation.
+        :type peer_data_guard_association_id: str
+
+        :param peer_database_id:
+            The value to assign to the peer_database_id property of this DataGuardAssociation.
+        :type peer_database_id: str
+
+        :param peer_db_home_id:
+            The value to assign to the peer_db_home_id property of this DataGuardAssociation.
+        :type peer_db_home_id: str
+
+        :param peer_db_system_id:
+            The value to assign to the peer_db_system_id property of this DataGuardAssociation.
+        :type peer_db_system_id: str
+
+        :param peer_role:
+            The value to assign to the peer_role property of this DataGuardAssociation.
+            Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type peer_role: str
+
+        :param protection_mode:
+            The value to assign to the protection_mode property of this DataGuardAssociation.
+            Allowed values for this property are: "MAXIMUM_AVAILABILITY", "MAXIMUM_PERFORMANCE", "MAXIMUM_PROTECTION", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type protection_mode: str
+
+        :param role:
+            The value to assign to the role property of this DataGuardAssociation.
+            Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type role: str
+
+        :param time_created:
+            The value to assign to the time_created property of this DataGuardAssociation.
+        :type time_created: datetime
+
+        :param transport_type:
+            The value to assign to the transport_type property of this DataGuardAssociation.
+            Allowed values for this property are: "SYNC", "ASYNC", "FASTSYNC", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type transport_type: str
+
+        """
         self.swagger_types = {
             'apply_lag': 'str',
             'apply_rate': 'str',

@@ -3,12 +3,36 @@
 
 
 from ...util import formatted_flat_dict
+from ...decorators import init_model_state_from_kwargs
 
 
+@init_model_state_from_kwargs
 class TunnelStatus(object):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        """
+        Initializes a new TunnelStatus object with values from values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param ip_address:
+            The value to assign to the ip_address property of this TunnelStatus.
+        :type ip_address: str
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this TunnelStatus.
+            Allowed values for this property are: "UP", "DOWN", "DOWN_FOR_MAINTENANCE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        :param time_created:
+            The value to assign to the time_created property of this TunnelStatus.
+        :type time_created: datetime
+
+        :param time_state_modified:
+            The value to assign to the time_state_modified property of this TunnelStatus.
+        :type time_state_modified: datetime
+
+        """
         self.swagger_types = {
             'ip_address': 'str',
             'lifecycle_state': 'str',
