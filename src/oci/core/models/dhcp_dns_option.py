@@ -2,7 +2,7 @@
 # Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 from .dhcp_option import DhcpOption
-from ...util import formatted_flat_dict
+from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
 from ...decorators import init_model_state_from_kwargs
 
 
@@ -129,7 +129,7 @@ class DhcpDnsOption(DhcpOption):
         :type: str
         """
         allowed_values = ["VcnLocal", "VcnLocalPlusInternet", "CustomDnsServer"]
-        if server_type not in allowed_values:
+        if not value_allowed_none_or_none_sentinel(server_type, allowed_values):
             server_type = 'UNKNOWN_ENUM_VALUE'
         self._server_type = server_type
 

@@ -2,7 +2,7 @@
 # Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
-from ...util import formatted_flat_dict
+from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
 from ...decorators import init_model_state_from_kwargs
 
 
@@ -185,9 +185,9 @@ class UpdateBucketDetails(object):
         :type: str
         """
         allowed_values = ["NoPublicAccess", "ObjectRead"]
-        if public_access_type not in allowed_values:
+        if not value_allowed_none_or_none_sentinel(public_access_type, allowed_values):
             raise ValueError(
-                "Invalid value for `public_access_type`, must be one of {0}"
+                "Invalid value for `public_access_type`, must be None or one of {0}"
                 .format(allowed_values)
             )
         self._public_access_type = public_access_type

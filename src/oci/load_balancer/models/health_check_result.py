@@ -2,7 +2,7 @@
 # Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
-from ...util import formatted_flat_dict
+from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
 from ...decorators import init_model_state_from_kwargs
 
 
@@ -78,7 +78,7 @@ class HealthCheckResult(object):
         :type: str
         """
         allowed_values = ["OK", "INVALID_STATUS_CODE", "TIMED_OUT", "REGEX_MISMATCH", "CONNECT_FAILED", "IO_ERROR", "OFFLINE", "UNKNOWN"]
-        if health_check_status not in allowed_values:
+        if not value_allowed_none_or_none_sentinel(health_check_status, allowed_values):
             health_check_status = 'UNKNOWN_ENUM_VALUE'
         self._health_check_status = health_check_status
 

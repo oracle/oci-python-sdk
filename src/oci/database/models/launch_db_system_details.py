@@ -2,7 +2,7 @@
 # Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
-from ...util import formatted_flat_dict
+from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
 from ...decorators import init_model_state_from_kwargs
 
 
@@ -348,9 +348,9 @@ class LaunchDbSystemDetails(object):
         :type: str
         """
         allowed_values = ["STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE", "ENTERPRISE_EDITION_HIGH_PERFORMANCE"]
-        if database_edition not in allowed_values:
+        if not value_allowed_none_or_none_sentinel(database_edition, allowed_values):
             raise ValueError(
-                "Invalid value for `database_edition`, must be one of {0}"
+                "Invalid value for `database_edition`, must be None or one of {0}"
                 .format(allowed_values)
             )
         self._database_edition = database_edition
@@ -404,9 +404,9 @@ class LaunchDbSystemDetails(object):
         :type: str
         """
         allowed_values = ["HIGH", "NORMAL"]
-        if disk_redundancy not in allowed_values:
+        if not value_allowed_none_or_none_sentinel(disk_redundancy, allowed_values):
             raise ValueError(
-                "Invalid value for `disk_redundancy`, must be one of {0}"
+                "Invalid value for `disk_redundancy`, must be None or one of {0}"
                 .format(allowed_values)
             )
         self._disk_redundancy = disk_redundancy
@@ -548,9 +548,9 @@ class LaunchDbSystemDetails(object):
         :type: str
         """
         allowed_values = ["LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"]
-        if license_model not in allowed_values:
+        if not value_allowed_none_or_none_sentinel(license_model, allowed_values):
             raise ValueError(
-                "Invalid value for `license_model`, must be one of {0}"
+                "Invalid value for `license_model`, must be None or one of {0}"
                 .format(allowed_values)
             )
         self._license_model = license_model

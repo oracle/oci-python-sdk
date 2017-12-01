@@ -103,3 +103,45 @@ def test_subclass():
 def test_subclass_for_unknown_subtype_defaults_to_base_type():
     subtype = oci.core.models.VolumeAttachment.get_subtype({'attachmentType': 'new_subtype'})
     assert 'VolumeAttachment' == subtype
+
+
+def test_value_allowed_none_or_none_sentinel_val_is_none():
+    assert oci.util.value_allowed_none_or_none_sentinel(None, ['hello', 'world'])
+
+
+def test_value_allowed_none_or_none_sentinel_val_is_none_sentinel():
+    assert oci.util.value_allowed_none_or_none_sentinel(oci.util.NONE_SENTINEL, ['hello', 'world'])
+
+
+def test_value_allowed_none_or_none_sentinel_val_is_allowed():
+    assert oci.util.value_allowed_none_or_none_sentinel('hello', ['hello', 'world'])
+
+
+def test_value_allowed_none_or_none_sentinel_val_is_not_allowed():
+    assert not oci.util.value_allowed_none_or_none_sentinel('bad value', ['hello', 'world'])
+
+
+def test_enum_none_value_ok(instance):
+    instance.lifecycle_state = None
+    assert instance.lifecycle_state is None
+
+
+def test_enum_none_sentinel_value_ok(instance):
+    instance.lifecycle_state = oci.util.NONE_SENTINEL
+    assert instance.lifecycle_state is oci.util.NONE_SENTINEL
+
+
+def test_enum_allowed_value_ok(instance):
+    instance.lifecycle_state = 'PROVISIONING'
+    assert instance.lifecycle_state == 'PROVISIONING'
+
+
+def test_enum_not_allowed_value_translates_to_unknown_value(instance):
+    instance.lifecycle_state = 'superman'
+    assert instance.lifecycle_state == 'UNKNOWN_ENUM_VALUE'
+
+
+def test_enum_not_allowed_value_throws_exception():
+    model = oci.object_storage.models.CreateBucketDetails()
+    with pytest.raises(ValueError):
+        model.public_access_type = 'superman'
