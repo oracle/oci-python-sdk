@@ -43,6 +43,9 @@ def test_basic_wait(virtual_network, config):
 
     assert excinfo.value.status == 404
 
+    result = oci.wait_until(virtual_network, response, 'lifecycle_state', 'TERMINATED', max_wait_seconds=180, succeed_on_not_found=True)
+    assert result == oci.waiter.WAIT_RESOURCE_NOT_FOUND
+
     total_time = time.time() - start_time
 
     # This should always be between 1 second and 5 minutes.

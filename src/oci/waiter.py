@@ -3,10 +3,12 @@
 
 import time
 
-from .exceptions import MaximumWaitTimeExceeded, WaitUntilNotSupported
+from .exceptions import MaximumWaitTimeExceeded, WaitUntilNotSupported, ServiceError
+from .util import Sentinel
 
+WAIT_RESOURCE_NOT_FOUND = Sentinel(name='WaitResourceNotFound', truthy=False)
 
-def wait_until(client, response, property, state, max_interval_seconds=30, max_wait_seconds=1200):
+def wait_until(client, response, property, state, max_interval_seconds=30, max_wait_seconds=1200, succeed_on_not_found=False):
     """Wait until the value of the given property in the response data has the given value.
 
     This will block the current thread until either the
@@ -28,7 +30,7 @@ def wait_until(client, response, property, state, max_interval_seconds=30, max_w
     If any responses result in an error, then the error will be thrown as normal
     resulting in the wait being aborted.
 
-    :param client: A Response object resulting from a GET operation.
+    :param client: A client we can use to call the service to periodically retrieve data.
     :param response: A Response object resulting from a GET operation.
     :param property: A string with the name of the property from the response data to evaluate.
         For example, 'state'.
@@ -38,7 +40,14 @@ def wait_until(client, response, property, state, max_interval_seconds=30, max_w
         Defaults to 30 seconds.
     :param max_wait_seconds: (optional) The maximum time to wait, in seconds.
         Defaults to 1200 seconds.
-    :return: The final response, which will contain the property in the specified state.
+    :param succeed_on_not_found: (optional) A boolean determining whether or not the waiter should return successfully
+        if the data we're waiting on is not found (e.g. a 404 is returned from the service). This defaults to 
+        False and so a 404 would cause an exception to be thrown by this function. Setting it to True may be useful
+        in scenarios when waiting for a resource to be terminated/deleted since it is possible that the resource would not
+        be returned by the a GET call anymore.
+    :return: The final response, which will contain the property in the specified state. 
+    
+        If the ``succeed_on_not_found`` parameter is set to True and the data was not then ``oci.waiter.WAIT_RESOURCE_NOT_FOUND`` will be returned. This is a :py:class:`~oci.util.Sentinel` which is not truthy and holds an internal name of ``WaitResourceNotFound``.
     """
 
     if response.request.method.lower() != 'get':
@@ -64,4 +73,17 @@ def wait_until(client, response, property, state, max_interval_seconds=30, max_w
         # Double the sleep each time up to the maximum.
         sleep_interval_seconds = min(sleep_interval_seconds * 2, max_interval_seconds)
 
-        response = client.base_client.request(response.request)
+        try:
+            response = client.base_client.request(response.request)
+        except ServiceError as se:
+            if se.status == 404:
+                if not succeed_on_not_found:
+                    raise
+                else:
+                    # Returning the last good response may be disingenuous so instead return
+                    # a sentinel flagging that the resource we tried to wait on was not
+                    # found
+                    return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise
+
