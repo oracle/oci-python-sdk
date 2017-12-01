@@ -8,6 +8,7 @@ from .util import Sentinel
 
 WAIT_RESOURCE_NOT_FOUND = Sentinel(name='WaitResourceNotFound', truthy=False)
 
+
 def wait_until(client, response, property, state, max_interval_seconds=30, max_wait_seconds=1200, succeed_on_not_found=False):
     """Wait until the value of the given property in the response data has the given value.
 
@@ -41,12 +42,12 @@ def wait_until(client, response, property, state, max_interval_seconds=30, max_w
     :param max_wait_seconds: (optional) The maximum time to wait, in seconds.
         Defaults to 1200 seconds.
     :param succeed_on_not_found: (optional) A boolean determining whether or not the waiter should return successfully
-        if the data we're waiting on is not found (e.g. a 404 is returned from the service). This defaults to 
+        if the data we're waiting on is not found (e.g. a 404 is returned from the service). This defaults to
         False and so a 404 would cause an exception to be thrown by this function. Setting it to True may be useful
         in scenarios when waiting for a resource to be terminated/deleted since it is possible that the resource would not
         be returned by the a GET call anymore.
-    :return: The final response, which will contain the property in the specified state. 
-    
+    :return: The final response, which will contain the property in the specified state.
+
         If the ``succeed_on_not_found`` parameter is set to True and the data was not then ``oci.waiter.WAIT_RESOURCE_NOT_FOUND`` will be returned. This is a :py:class:`~oci.util.Sentinel` which is not truthy and holds an internal name of ``WaitResourceNotFound``.
     """
 
@@ -86,4 +87,3 @@ def wait_until(client, response, property, state, max_interval_seconds=30, max_w
                     return WAIT_RESOURCE_NOT_FOUND
             else:
                 raise
-

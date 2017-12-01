@@ -85,7 +85,7 @@ get_work_request_response = oci.wait_until(load_balancer_client, load_balancer_c
 print(get_work_request_response.data)
 load_balancer_ocid = get_work_request_response.data.load_balancer_id
 
-# Here we delete the load balancer. Note that on the waiter we use the optional succeed_on_not_found and set it to True. This meants that if we get a 
+# Here we delete the load balancer. Note that on the waiter we use the optional succeed_on_not_found and set it to True. This meants that if we get a
 # 404 back from the service when checking the load balancer's state, instead of throwing an exception we will return successfully. This flag will typically
 # only be useful for delete/terminate scenarios and its normal default is False.
 print('Deleting Load Balancer')
