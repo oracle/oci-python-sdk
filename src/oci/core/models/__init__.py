@@ -9,6 +9,8 @@ from .attach_vnic_details import AttachVnicDetails
 from .attach_volume_details import AttachVolumeDetails
 from .boot_volume import BootVolume
 from .boot_volume_attachment import BootVolumeAttachment
+from .bulk_add_virtual_circuit_public_prefixes_details import BulkAddVirtualCircuitPublicPrefixesDetails
+from .bulk_delete_virtual_circuit_public_prefixes_details import BulkDeleteVirtualCircuitPublicPrefixesDetails
 from .capture_console_history_details import CaptureConsoleHistoryDetails
 from .connect_local_peering_gateways_details import ConnectLocalPeeringGatewaysDetails
 from .console_history import ConsoleHistory
@@ -30,6 +32,7 @@ from .create_security_list_details import CreateSecurityListDetails
 from .create_subnet_details import CreateSubnetDetails
 from .create_vcn_details import CreateVcnDetails
 from .create_virtual_circuit_details import CreateVirtualCircuitDetails
+from .create_virtual_circuit_public_prefix_details import CreateVirtualCircuitPublicPrefixDetails
 from .create_vnic_details import CreateVnicDetails
 from .create_volume_backup_details import CreateVolumeBackupDetails
 from .create_volume_details import CreateVolumeDetails
@@ -39,6 +42,7 @@ from .cross_connect_location import CrossConnectLocation
 from .cross_connect_mapping import CrossConnectMapping
 from .cross_connect_port_speed_shape import CrossConnectPortSpeedShape
 from .cross_connect_status import CrossConnectStatus
+from .delete_virtual_circuit_public_prefix_details import DeleteVirtualCircuitPublicPrefixDetails
 from .dhcp_dns_option import DhcpDnsOption
 from .dhcp_option import DhcpOption
 from .dhcp_options import DhcpOptions
@@ -106,6 +110,7 @@ from .update_volume_details import UpdateVolumeDetails
 from .vcn import Vcn
 from .virtual_circuit import VirtualCircuit
 from .virtual_circuit_bandwidth_shape import VirtualCircuitBandwidthShape
+from .virtual_circuit_public_prefix import VirtualCircuitPublicPrefix
 from .vnic import Vnic
 from .vnic_attachment import VnicAttachment
 from .volume import Volume
@@ -123,6 +128,8 @@ core_type_mapping = {
     "AttachVolumeDetails": AttachVolumeDetails,
     "BootVolume": BootVolume,
     "BootVolumeAttachment": BootVolumeAttachment,
+    "BulkAddVirtualCircuitPublicPrefixesDetails": BulkAddVirtualCircuitPublicPrefixesDetails,
+    "BulkDeleteVirtualCircuitPublicPrefixesDetails": BulkDeleteVirtualCircuitPublicPrefixesDetails,
     "CaptureConsoleHistoryDetails": CaptureConsoleHistoryDetails,
     "ConnectLocalPeeringGatewaysDetails": ConnectLocalPeeringGatewaysDetails,
     "ConsoleHistory": ConsoleHistory,
@@ -144,6 +151,7 @@ core_type_mapping = {
     "CreateSubnetDetails": CreateSubnetDetails,
     "CreateVcnDetails": CreateVcnDetails,
     "CreateVirtualCircuitDetails": CreateVirtualCircuitDetails,
+    "CreateVirtualCircuitPublicPrefixDetails": CreateVirtualCircuitPublicPrefixDetails,
     "CreateVnicDetails": CreateVnicDetails,
     "CreateVolumeBackupDetails": CreateVolumeBackupDetails,
     "CreateVolumeDetails": CreateVolumeDetails,
@@ -153,6 +161,7 @@ core_type_mapping = {
     "CrossConnectMapping": CrossConnectMapping,
     "CrossConnectPortSpeedShape": CrossConnectPortSpeedShape,
     "CrossConnectStatus": CrossConnectStatus,
+    "DeleteVirtualCircuitPublicPrefixDetails": DeleteVirtualCircuitPublicPrefixDetails,
     "DhcpDnsOption": DhcpDnsOption,
     "DhcpOption": DhcpOption,
     "DhcpOptions": DhcpOptions,
@@ -220,6 +229,7 @@ core_type_mapping = {
     "Vcn": Vcn,
     "VirtualCircuit": VirtualCircuit,
     "VirtualCircuitBandwidthShape": VirtualCircuitBandwidthShape,
+    "VirtualCircuitPublicPrefix": VirtualCircuitPublicPrefix,
     "Vnic": Vnic,
     "VnicAttachment": VnicAttachment,
     "Volume": Volume,

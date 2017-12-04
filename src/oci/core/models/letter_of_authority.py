@@ -14,6 +14,10 @@ class LetterOfAuthority(object):
         Initializes a new LetterOfAuthority object with values from values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param authorized_entity_name:
+            The value to assign to the authorized_entity_name property of this LetterOfAuthority.
+        :type authorized_entity_name: str
+
         :param circuit_type:
             The value to assign to the circuit_type property of this LetterOfAuthority.
             Allowed values for this property are: "Single_mode_LC", "Single_mode_SC", 'UNKNOWN_ENUM_VALUE'.
@@ -42,6 +46,7 @@ class LetterOfAuthority(object):
 
         """
         self.swagger_types = {
+            'authorized_entity_name': 'str',
             'circuit_type': 'str',
             'cross_connect_id': 'str',
             'facility_location': 'str',
@@ -51,6 +56,7 @@ class LetterOfAuthority(object):
         }
 
         self.attribute_map = {
+            'authorized_entity_name': 'authorizedEntityName',
             'circuit_type': 'circuitType',
             'cross_connect_id': 'crossConnectId',
             'facility_location': 'facilityLocation',
@@ -59,12 +65,37 @@ class LetterOfAuthority(object):
             'time_issued': 'timeIssued'
         }
 
+        self._authorized_entity_name = None
         self._circuit_type = None
         self._cross_connect_id = None
         self._facility_location = None
         self._port_name = None
         self._time_expires = None
         self._time_issued = None
+
+    @property
+    def authorized_entity_name(self):
+        """
+        Gets the authorized_entity_name of this LetterOfAuthority.
+        The name of the entity authorized by this Letter of Authority.
+
+
+        :return: The authorized_entity_name of this LetterOfAuthority.
+        :rtype: str
+        """
+        return self._authorized_entity_name
+
+    @authorized_entity_name.setter
+    def authorized_entity_name(self, authorized_entity_name):
+        """
+        Sets the authorized_entity_name of this LetterOfAuthority.
+        The name of the entity authorized by this Letter of Authority.
+
+
+        :param authorized_entity_name: The authorized_entity_name of this LetterOfAuthority.
+        :type: str
+        """
+        self._authorized_entity_name = authorized_entity_name
 
     @property
     def circuit_type(self):

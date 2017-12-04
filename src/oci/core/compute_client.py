@@ -2036,6 +2036,7 @@ class ComputeClient(object):
 
         :param bool preserve_boot_volume: (optional)
             Specifies whether to delete or preserve the boot volume when terminating an instance.
+            The default value is false.
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
