@@ -77,7 +77,6 @@ def test_invalid_operation(identity, config):
 
 
 def test_already_in_state(identity, config):
-
     description = 'test user'
     request = oci.identity.models.CreateUserDetails()
     request.compartment_id = config["tenancy"]
@@ -119,3 +118,74 @@ def test_wait_time_exceeded(identity, config):
 
     # clean up
     identity.delete_user(user_id)
+
+
+def test_property_and_eval_function_provided(virtual_network):
+    with pytest.raises(ValueError) as ve:
+        oci.wait_until(virtual_network, oci.Response(200, {}, None, oci.Request('GET', 'https://blah.example.org')), 'unit-test-prop', 'val', evaluate_response=lambda x: isinstance(x, object))
+
+    assert str(ve.value) == 'If an evaluate_response function is provided, then the property argument cannot also be provided'
+
+
+def test_eval_function_lambda(identity, config):
+    user_id = None
+    try:
+        description = 'test user'
+        request = oci.identity.models.CreateUserDetails()
+        request.compartment_id = config["tenancy"]
+        request.name = tests.util.unique_name('python_wait_test_user')
+        request.description = description
+        response = identity.create_user(request)
+        user_id = response.data.id
+
+        response = identity.get_user(user_id)
+        assert description == response.data.description
+
+        response = oci.wait_until(identity, response, evaluate_response=lambda x: x.description == description and x.name == request.name and x.lifecycle_state == 'ACTIVE')
+        assert response.data.id == user_id
+        assert response.data.description == description
+        assert response.data.name == request.name
+        assert response.data.lifecycle_state == 'ACTIVE'
+    finally:
+        if user_id:
+            identity.delete_user(user_id)
+
+
+def test_eval_function_func_ref(identity, config):
+    user_id = None
+    try:
+        description = 'test user'
+        request = oci.identity.models.CreateUserDetails()
+        request.compartment_id = config["tenancy"]
+        request.name = tests.util.unique_name('python_wait_test_user')
+        request.description = description
+        response = identity.create_user(request)
+        user_id = response.data.id
+
+        response = identity.get_user(user_id)
+        assert description == response.data.description
+
+        def test_user_response(user):
+            print('Invoked function reference in test_user_response')
+            return user.description == description and user.name == request.name and user.lifecycle_state == 'ACTIVE'
+
+        response = oci.wait_until(identity, response, evaluate_response=test_user_response)
+        assert response.data.id == user_id
+        assert response.data.description == description
+        assert response.data.name == request.name
+        assert response.data.lifecycle_state == 'ACTIVE'
+
+        times_called = {'counter': 0}
+
+        def test_user_response_for_timeout(user):
+            print('Invoked function reference in test_user_response_for_timeout')
+            times_called['counter'] += 1
+            return user.description == description and user.name == request.name and user.lifecycle_state == 'superman'
+
+        with pytest.raises(oci.exceptions.MaximumWaitTimeExceeded):
+            response = oci.wait_until(identity, response, evaluate_response=test_user_response_for_timeout, max_wait_seconds=45, max_interval_seconds=10)
+
+        assert times_called['counter'] >= 2
+    finally:
+        if user_id:
+            identity.delete_user(user_id)

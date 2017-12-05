@@ -9,7 +9,7 @@ from .util import Sentinel
 WAIT_RESOURCE_NOT_FOUND = Sentinel(name='WaitResourceNotFound', truthy=False)
 
 
-def wait_until(client, response, property, state, max_interval_seconds=30, max_wait_seconds=1200, succeed_on_not_found=False):
+def wait_until(client, response, property=None, state=None, max_interval_seconds=30, max_wait_seconds=1200, succeed_on_not_found=False, **kwargs):
     """Wait until the value of the given property in the response data has the given value.
 
     This will block the current thread until either the
@@ -46,22 +46,35 @@ def wait_until(client, response, property, state, max_interval_seconds=30, max_w
         False and so a 404 would cause an exception to be thrown by this function. Setting it to True may be useful
         in scenarios when waiting for a resource to be terminated/deleted since it is possible that the resource would not
         be returned by the a GET call anymore.
+    :param evaluate_response: (optional) A function which can be used to evaluate the response from the GET operation. This is
+        a single argument function which takes in the 'data' attribute of the response from the GET operation. If this function
+        is supplied, then the 'property' argument cannot be supplied. It is expected that this function return a truthy value
+        to signify that a condition has passed and the wait_until function should return, and a falsey value otherwise.
     :return: The final response, which will contain the property in the specified state.
 
         If the ``succeed_on_not_found`` parameter is set to True and the data was not then ``oci.waiter.WAIT_RESOURCE_NOT_FOUND`` will be returned. This is a :py:class:`~oci.util.Sentinel` which is not truthy and holds an internal name of ``WaitResourceNotFound``.
     """
 
+    if kwargs.get('evaluate_response') and (property):
+        raise ValueError('If an evaluate_response function is provided, then the property argument cannot also be provided')
+
     if response.request.method.lower() != 'get':
         raise WaitUntilNotSupported('wait_until is only supported for get operations.')
-    if not hasattr(response.data, property):
+    if property and not hasattr(response.data, property):
         raise ValueError('Response data does not contain the given property.')
 
     sleep_interval_seconds = 1
     start_time = time.time()
 
     while True:
-        if getattr(response.data, property) == state:
-            return response
+        if property:
+            if getattr(response.data, property) == state:
+                return response
+        elif kwargs.get('evaluate_response'):
+            if kwargs.get('evaluate_response')(response.data):
+                return response
+        else:
+            raise RuntimeError('Invalid wait_until configuration - neither a property, nor an evaluate_response function, have been specified')
 
         elapsed_seconds = (time.time() - start_time)
 
