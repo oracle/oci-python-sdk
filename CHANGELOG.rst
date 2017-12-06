@@ -14,6 +14,10 @@ Added
 * Support for specifying an authorized entity name in a Letter of Authority
 * Support for showing a list of bandwidth shapes for a specific provider (the ``list_fast_connect_provider_virtual_circuit_bandwidth_shapes`` in ``VirtualNetworkClient``)
 
+Changed
+-------
+* Audit events now have a ``response_payload`` attribute which contains metadata of interest. For example, the OCID of a resource
+
 Deprecated
 -----------
 * The ``list_virtual_circuit_bandwidth_shapes`` operation in ``VirtualNetworkClient`` has been deprecated. Use the ``list_fast_connect_provider_virtual_circuit_bandwidth_shapes`` operation instead
