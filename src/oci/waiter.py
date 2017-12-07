@@ -47,7 +47,7 @@ def wait_until(client, response, property=None, state=None, max_interval_seconds
         in scenarios when waiting for a resource to be terminated/deleted since it is possible that the resource would not
         be returned by the a GET call anymore.
     :param evaluate_response: (optional) A function which can be used to evaluate the response from the GET operation. This is
-        a single argument function which takes in the 'data' attribute of the response from the GET operation. If this function
+        a single argument function which takes in the response from the GET operation. If this function
         is supplied, then the 'property' argument cannot be supplied. It is expected that this function return a truthy value
         to signify that a condition has passed and the wait_until function should return, and a falsey value otherwise.
     :param wait_callback: (optional) A function which will be called each time that we have to do an initial wait (i.e. because the
@@ -79,7 +79,7 @@ def wait_until(client, response, property=None, state=None, max_interval_seconds
             if getattr(response.data, property) == state:
                 return response
         elif kwargs.get('evaluate_response'):
-            if kwargs.get('evaluate_response')(response.data):
+            if kwargs.get('evaluate_response')(response):
                 return response
         else:
             raise RuntimeError('Invalid wait_until configuration - neither a property, nor an evaluate_response function, have been specified')
