@@ -189,3 +189,34 @@ def test_eval_function_func_ref(identity, config):
     finally:
         if user_id:
             identity.delete_user(user_id)
+
+
+def test_callback_func(virtual_network, config):
+    name = "pythonsdk_waiter_" + tests.util.random_number_string()
+
+    counters = {'create': 0, 'delete': 0}
+    def create_vcn_callback(times_called, response):
+        counters['create'] = times_called
+    def delete_vcn_callback(times_called, response):
+        counters['delete'] = times_called
+
+    request = oci.core.models.CreateVcnDetails()
+    request.cidr_block = '10.0.0.0/16'
+    request.display_name = name
+    request.compartment_id = config["tenancy"]
+
+    response = virtual_network.create_vcn(request)
+    vcn = response.data
+    response = virtual_network.get_vcn(vcn.id)
+    response.data.lifecycle_state = 'DUMMY'  # This will force at least one service call
+    response = oci.wait_until(virtual_network, response, 'lifecycle_state', 'AVAILABLE', wait_callback=create_vcn_callback)
+    assert 'AVAILABLE' == response.data.lifecycle_state
+    assert counters['create'] > 0
+
+    print('Deleting vcn')
+    response = virtual_network.delete_vcn(vcn.id)
+    response = virtual_network.get_vcn(vcn.id)
+    response.data.lifecycle_state = 'DUMMY'
+    result = oci.wait_until(virtual_network, response, 'lifecycle_state', 'TERMINATED', max_wait_seconds=180, succeed_on_not_found=True, wait_callback=delete_vcn_callback)
+    assert result == oci.waiter.WAIT_RESOURCE_NOT_FOUND
+    assert counters['delete'] > 0

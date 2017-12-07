@@ -50,6 +50,10 @@ def wait_until(client, response, property=None, state=None, max_interval_seconds
         a single argument function which takes in the 'data' attribute of the response from the GET operation. If this function
         is supplied, then the 'property' argument cannot be supplied. It is expected that this function return a truthy value
         to signify that a condition has passed and the wait_until function should return, and a falsey value otherwise.
+    :param wait_callback: (optional) A function which will be called each time that we have to do an initial wait (i.e. because the
+        property of the resource was not in the correct state, or the ``evaluate_response`` function returned False). This function
+        should take two arguments - the first argument is the number of times we have checked the resource, and the second argument
+        is the result of the most recent check.
     :return: The final response, which will contain the property in the specified state.
 
         If the ``succeed_on_not_found`` parameter is set to True and the data was not then ``oci.waiter.WAIT_RESOURCE_NOT_FOUND`` will be returned. This is a :py:class:`~oci.util.Sentinel` which is not truthy and holds an internal name of ``WaitResourceNotFound``.
@@ -66,7 +70,11 @@ def wait_until(client, response, property=None, state=None, max_interval_seconds
     sleep_interval_seconds = 1
     start_time = time.time()
 
+    times_checked = 0
     while True:
+        if kwargs.get('wait_callback') and times_checked > 0:
+            kwargs['wait_callback'](times_checked, response)
+
         if property:
             if getattr(response.data, property) == state:
                 return response
@@ -89,6 +97,7 @@ def wait_until(client, response, property=None, state=None, max_interval_seconds
 
         try:
             response = client.base_client.request(response.request)
+            times_checked += 1
         except ServiceError as se:
             if se.status == 404:
                 if not succeed_on_not_found:
