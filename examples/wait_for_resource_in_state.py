@@ -6,16 +6,10 @@
 import oci
 
 # Default config file and profile
-# config = oci.config.from_file()
-# compartment_id = '<Your compartment OCID here>'
-# availability_domain = '<An availability domain, e.g. crmS:IAD-AD-1, here>'
-# second_availability_domain = '<An availability domain, e.g. crmS:IAD-AD-1, here. This should be different to availability_domain>'
-
-config = oci.config.from_file('tests/resources/config')
-compartment_id = 'ocid1.compartment.oc1..aaaaaaaan5brzve7w7oyhrfngjfsrf72r67aqdd2sbhlarjas6pwamy4425a'
-availability_domain = 'kIdk:PHX-AD-2'
-second_availability_domain = 'kIdk:PHX-AD-3'
-config['pass_phrase'] = 'PythonIsFun'
+config = oci.config.from_file()
+compartment_id = '<Your compartment OCID here>'
+availability_domain = '<An availability domain, e.g. crmS:IAD-AD-1, here>'
+second_availability_domain = '<An availability domain, e.g. crmS:IAD-AD-2, here. This should be different to availability_domain>'
 
 virtual_network_client = oci.core.VirtualNetworkClient(config)
 load_balancer_client = oci.load_balancer.LoadBalancerClient(config)
