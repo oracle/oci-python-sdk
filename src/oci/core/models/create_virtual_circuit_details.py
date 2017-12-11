@@ -2,7 +2,7 @@
 # Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
-from ...util import formatted_flat_dict
+from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
 from ...decorators import init_model_state_from_kwargs
 
 
@@ -42,9 +42,17 @@ class CreateVirtualCircuitDetails(object):
             The value to assign to the provider_name property of this CreateVirtualCircuitDetails.
         :type provider_name: str
 
+        :param provider_service_id:
+            The value to assign to the provider_service_id property of this CreateVirtualCircuitDetails.
+        :type provider_service_id: str
+
         :param provider_service_name:
             The value to assign to the provider_service_name property of this CreateVirtualCircuitDetails.
         :type provider_service_name: str
+
+        :param public_prefixes:
+            The value to assign to the public_prefixes property of this CreateVirtualCircuitDetails.
+        :type public_prefixes: list[CreateVirtualCircuitPublicPrefixDetails]
 
         :param region:
             The value to assign to the region property of this CreateVirtualCircuitDetails.
@@ -64,7 +72,9 @@ class CreateVirtualCircuitDetails(object):
             'display_name': 'str',
             'gateway_id': 'str',
             'provider_name': 'str',
+            'provider_service_id': 'str',
             'provider_service_name': 'str',
+            'public_prefixes': 'list[CreateVirtualCircuitPublicPrefixDetails]',
             'region': 'str',
             'type': 'str'
         }
@@ -77,7 +87,9 @@ class CreateVirtualCircuitDetails(object):
             'display_name': 'displayName',
             'gateway_id': 'gatewayId',
             'provider_name': 'providerName',
+            'provider_service_id': 'providerServiceId',
             'provider_service_name': 'providerServiceName',
+            'public_prefixes': 'publicPrefixes',
             'region': 'region',
             'type': 'type'
         }
@@ -89,7 +101,9 @@ class CreateVirtualCircuitDetails(object):
         self._display_name = None
         self._gateway_id = None
         self._provider_name = None
+        self._provider_service_id = None
         self._provider_service_name = None
+        self._public_prefixes = None
         self._region = None
         self._type = None
 
@@ -99,7 +113,7 @@ class CreateVirtualCircuitDetails(object):
         Gets the bandwidth_shape_name of this CreateVirtualCircuitDetails.
         The provisioned data rate of the connection.  To get a list of the
         available bandwidth levels (that is, shapes), see
-        :func:`list_virtual_circuit_bandwidth_shapes`.
+        :func:`list_fast_connect_provider_virtual_circuit_bandwidth_shapes`.
 
         Example: `10 Gbps`
 
@@ -115,7 +129,7 @@ class CreateVirtualCircuitDetails(object):
         Sets the bandwidth_shape_name of this CreateVirtualCircuitDetails.
         The provisioned data rate of the connection.  To get a list of the
         available bandwidth levels (that is, shapes), see
-        :func:`list_virtual_circuit_bandwidth_shapes`.
+        :func:`list_fast_connect_provider_virtual_circuit_bandwidth_shapes`.
 
         Example: `10 Gbps`
 
@@ -231,7 +245,7 @@ class CreateVirtualCircuitDetails(object):
     def gateway_id(self):
         """
         Gets the gateway_id of this CreateVirtualCircuitDetails.
-        The OCID of the :class:`Drg`
+        For private virtual circuits only. The OCID of the :class:`Drg`
         that this virtual circuit uses.
 
 
@@ -244,7 +258,7 @@ class CreateVirtualCircuitDetails(object):
     def gateway_id(self, gateway_id):
         """
         Sets the gateway_id of this CreateVirtualCircuitDetails.
-        The OCID of the :class:`Drg`
+        For private virtual circuits only. The OCID of the :class:`Drg`
         that this virtual circuit uses.
 
 
@@ -257,7 +271,7 @@ class CreateVirtualCircuitDetails(object):
     def provider_name(self):
         """
         Gets the provider_name of this CreateVirtualCircuitDetails.
-        The name of the provider (if you're connecting via a provider).
+        Deprecated. Instead use `providerServiceId`.
         To get a list of the provider names, see
         :func:`list_fast_connect_provider_services`.
 
@@ -271,7 +285,7 @@ class CreateVirtualCircuitDetails(object):
     def provider_name(self, provider_name):
         """
         Sets the provider_name of this CreateVirtualCircuitDetails.
-        The name of the provider (if you're connecting via a provider).
+        Deprecated. Instead use `providerServiceId`.
         To get a list of the provider names, see
         :func:`list_fast_connect_provider_services`.
 
@@ -282,10 +296,38 @@ class CreateVirtualCircuitDetails(object):
         self._provider_name = provider_name
 
     @property
+    def provider_service_id(self):
+        """
+        Gets the provider_service_id of this CreateVirtualCircuitDetails.
+        The OCID of the service offered by the provider (if you're connecting
+        via a provider). To get a list of the available service offerings, see
+        :func:`list_fast_connect_provider_services`.
+
+
+        :return: The provider_service_id of this CreateVirtualCircuitDetails.
+        :rtype: str
+        """
+        return self._provider_service_id
+
+    @provider_service_id.setter
+    def provider_service_id(self, provider_service_id):
+        """
+        Sets the provider_service_id of this CreateVirtualCircuitDetails.
+        The OCID of the service offered by the provider (if you're connecting
+        via a provider). To get a list of the available service offerings, see
+        :func:`list_fast_connect_provider_services`.
+
+
+        :param provider_service_id: The provider_service_id of this CreateVirtualCircuitDetails.
+        :type: str
+        """
+        self._provider_service_id = provider_service_id
+
+    @property
     def provider_service_name(self):
         """
         Gets the provider_service_name of this CreateVirtualCircuitDetails.
-        The name of the provider (if you're connecting via a provider).
+        Deprecated. Instead use `providerServiceId`.
         To get a list of the provider names, see
         :func:`list_fast_connect_provider_services`.
 
@@ -299,7 +341,7 @@ class CreateVirtualCircuitDetails(object):
     def provider_service_name(self, provider_service_name):
         """
         Sets the provider_service_name of this CreateVirtualCircuitDetails.
-        The name of the provider (if you're connecting via a provider).
+        Deprecated. Instead use `providerServiceId`.
         To get a list of the provider names, see
         :func:`list_fast_connect_provider_services`.
 
@@ -308,6 +350,32 @@ class CreateVirtualCircuitDetails(object):
         :type: str
         """
         self._provider_service_name = provider_service_name
+
+    @property
+    def public_prefixes(self):
+        """
+        Gets the public_prefixes of this CreateVirtualCircuitDetails.
+        For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to
+        advertise across the connection.
+
+
+        :return: The public_prefixes of this CreateVirtualCircuitDetails.
+        :rtype: list[CreateVirtualCircuitPublicPrefixDetails]
+        """
+        return self._public_prefixes
+
+    @public_prefixes.setter
+    def public_prefixes(self, public_prefixes):
+        """
+        Sets the public_prefixes of this CreateVirtualCircuitDetails.
+        For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to
+        advertise across the connection.
+
+
+        :param public_prefixes: The public_prefixes of this CreateVirtualCircuitDetails.
+        :type: list[CreateVirtualCircuitPublicPrefixDetails]
+        """
+        self._public_prefixes = public_prefixes
 
     @property
     def region(self):
@@ -370,9 +438,9 @@ class CreateVirtualCircuitDetails(object):
         :type: str
         """
         allowed_values = ["PUBLIC", "PRIVATE"]
-        if type not in allowed_values:
+        if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
-                "Invalid value for `type`, must be one of {0}"
+                "Invalid value for `type`, must be None or one of {0}"
                 .format(allowed_values)
             )
         self._type = type

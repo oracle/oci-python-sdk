@@ -2,7 +2,7 @@
 # Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
-from ...util import formatted_flat_dict
+from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
 from ...decorators import init_model_state_from_kwargs
 
 
@@ -86,6 +86,10 @@ class AuditEvent(object):
             The value to assign to the response_time property of this AuditEvent.
         :type response_time: datetime
 
+        :param response_payload:
+            The value to assign to the response_payload property of this AuditEvent.
+        :type response_payload: dict(str, object)
+
         """
         self.swagger_types = {
             'tenant_id': 'str',
@@ -105,7 +109,8 @@ class AuditEvent(object):
             'request_resource': 'str',
             'response_headers': 'dict(str, list[str])',
             'response_status': 'str',
-            'response_time': 'datetime'
+            'response_time': 'datetime',
+            'response_payload': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -126,7 +131,8 @@ class AuditEvent(object):
             'request_resource': 'requestResource',
             'response_headers': 'responseHeaders',
             'response_status': 'responseStatus',
-            'response_time': 'responseTime'
+            'response_time': 'responseTime',
+            'response_payload': 'responsePayload'
         }
 
         self._tenant_id = None
@@ -147,6 +153,7 @@ class AuditEvent(object):
         self._response_headers = None
         self._response_status = None
         self._response_time = None
+        self._response_payload = None
 
     @property
     def tenant_id(self):
@@ -587,6 +594,30 @@ class AuditEvent(object):
         :type: datetime
         """
         self._response_time = response_time
+
+    @property
+    def response_payload(self):
+        """
+        Gets the response_payload of this AuditEvent.
+        Metadata of interest from the response payload. For example, the OCID of a resource.
+
+
+        :return: The response_payload of this AuditEvent.
+        :rtype: dict(str, object)
+        """
+        return self._response_payload
+
+    @response_payload.setter
+    def response_payload(self, response_payload):
+        """
+        Sets the response_payload of this AuditEvent.
+        Metadata of interest from the response payload. For example, the OCID of a resource.
+
+
+        :param response_payload: The response_payload of this AuditEvent.
+        :type: dict(str, object)
+        """
+        self._response_payload = response_payload
 
     def __repr__(self):
         return formatted_flat_dict(self)

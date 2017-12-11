@@ -2,7 +2,7 @@
 # Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
-from ...util import formatted_flat_dict
+from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
 from ...decorators import init_model_state_from_kwargs
 
 
@@ -17,6 +17,12 @@ class VirtualCircuit(object):
         :param bandwidth_shape_name:
             The value to assign to the bandwidth_shape_name property of this VirtualCircuit.
         :type bandwidth_shape_name: str
+
+        :param bgp_management:
+            The value to assign to the bgp_management property of this VirtualCircuit.
+            Allowed values for this property are: "CUSTOMER_MANAGED", "PROVIDER_MANAGED", "ORACLE_MANAGED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type bgp_management: str
 
         :param bgp_session_state:
             The value to assign to the bgp_session_state property of this VirtualCircuit.
@@ -62,6 +68,10 @@ class VirtualCircuit(object):
             The value to assign to the provider_name property of this VirtualCircuit.
         :type provider_name: str
 
+        :param provider_service_id:
+            The value to assign to the provider_service_id property of this VirtualCircuit.
+        :type provider_service_id: str
+
         :param provider_service_name:
             The value to assign to the provider_service_name property of this VirtualCircuit.
         :type provider_service_name: str
@@ -72,6 +82,10 @@ class VirtualCircuit(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type provider_state: str
 
+        :param public_prefixes:
+            The value to assign to the public_prefixes property of this VirtualCircuit.
+        :type public_prefixes: list[str]
+
         :param reference_comment:
             The value to assign to the reference_comment property of this VirtualCircuit.
         :type reference_comment: str
@@ -79,6 +93,12 @@ class VirtualCircuit(object):
         :param region:
             The value to assign to the region property of this VirtualCircuit.
         :type region: str
+
+        :param service_type:
+            The value to assign to the service_type property of this VirtualCircuit.
+            Allowed values for this property are: "COLOCATED", "LAYER2", "LAYER3", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type service_type: str
 
         :param time_created:
             The value to assign to the time_created property of this VirtualCircuit.
@@ -93,6 +113,7 @@ class VirtualCircuit(object):
         """
         self.swagger_types = {
             'bandwidth_shape_name': 'str',
+            'bgp_management': 'str',
             'bgp_session_state': 'str',
             'compartment_id': 'str',
             'cross_connect_mappings': 'list[CrossConnectMapping]',
@@ -103,16 +124,20 @@ class VirtualCircuit(object):
             'lifecycle_state': 'str',
             'oracle_bgp_asn': 'int',
             'provider_name': 'str',
+            'provider_service_id': 'str',
             'provider_service_name': 'str',
             'provider_state': 'str',
+            'public_prefixes': 'list[str]',
             'reference_comment': 'str',
             'region': 'str',
+            'service_type': 'str',
             'time_created': 'datetime',
             'type': 'str'
         }
 
         self.attribute_map = {
             'bandwidth_shape_name': 'bandwidthShapeName',
+            'bgp_management': 'bgpManagement',
             'bgp_session_state': 'bgpSessionState',
             'compartment_id': 'compartmentId',
             'cross_connect_mappings': 'crossConnectMappings',
@@ -123,15 +148,19 @@ class VirtualCircuit(object):
             'lifecycle_state': 'lifecycleState',
             'oracle_bgp_asn': 'oracleBgpAsn',
             'provider_name': 'providerName',
+            'provider_service_id': 'providerServiceId',
             'provider_service_name': 'providerServiceName',
             'provider_state': 'providerState',
+            'public_prefixes': 'publicPrefixes',
             'reference_comment': 'referenceComment',
             'region': 'region',
+            'service_type': 'serviceType',
             'time_created': 'timeCreated',
             'type': 'type'
         }
 
         self._bandwidth_shape_name = None
+        self._bgp_management = None
         self._bgp_session_state = None
         self._compartment_id = None
         self._cross_connect_mappings = None
@@ -142,10 +171,13 @@ class VirtualCircuit(object):
         self._lifecycle_state = None
         self._oracle_bgp_asn = None
         self._provider_name = None
+        self._provider_service_id = None
         self._provider_service_name = None
         self._provider_state = None
+        self._public_prefixes = None
         self._reference_comment = None
         self._region = None
+        self._service_type = None
         self._time_created = None
         self._type = None
 
@@ -174,6 +206,36 @@ class VirtualCircuit(object):
         self._bandwidth_shape_name = bandwidth_shape_name
 
     @property
+    def bgp_management(self):
+        """
+        Gets the bgp_management of this VirtualCircuit.
+        BGP management option.
+
+        Allowed values for this property are: "CUSTOMER_MANAGED", "PROVIDER_MANAGED", "ORACLE_MANAGED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The bgp_management of this VirtualCircuit.
+        :rtype: str
+        """
+        return self._bgp_management
+
+    @bgp_management.setter
+    def bgp_management(self, bgp_management):
+        """
+        Sets the bgp_management of this VirtualCircuit.
+        BGP management option.
+
+
+        :param bgp_management: The bgp_management of this VirtualCircuit.
+        :type: str
+        """
+        allowed_values = ["CUSTOMER_MANAGED", "PROVIDER_MANAGED", "ORACLE_MANAGED"]
+        if not value_allowed_none_or_none_sentinel(bgp_management, allowed_values):
+            bgp_management = 'UNKNOWN_ENUM_VALUE'
+        self._bgp_management = bgp_management
+
+    @property
     def bgp_session_state(self):
         """
         Gets the bgp_session_state of this VirtualCircuit.
@@ -199,7 +261,7 @@ class VirtualCircuit(object):
         :type: str
         """
         allowed_values = ["UP", "DOWN"]
-        if bgp_session_state not in allowed_values:
+        if not value_allowed_none_or_none_sentinel(bgp_session_state, allowed_values):
             bgp_session_state = 'UNKNOWN_ENUM_VALUE'
         self._bgp_session_state = bgp_session_state
 
@@ -318,7 +380,7 @@ class VirtualCircuit(object):
         """
         Gets the gateway_id of this VirtualCircuit.
         The OCID of the customer's :class:`Drg`
-        that this virtual circuit uses.
+        that this virtual circuit uses. Applicable only to private virtual circuits.
 
 
         :return: The gateway_id of this VirtualCircuit.
@@ -331,7 +393,7 @@ class VirtualCircuit(object):
         """
         Sets the gateway_id of this VirtualCircuit.
         The OCID of the customer's :class:`Drg`
-        that this virtual circuit uses.
+        that this virtual circuit uses. Applicable only to private virtual circuits.
 
 
         :param gateway_id: The gateway_id of this VirtualCircuit.
@@ -397,7 +459,7 @@ class VirtualCircuit(object):
         :type: str
         """
         allowed_values = ["PENDING_PROVIDER", "VERIFYING", "PROVISIONING", "PROVISIONED", "FAILED", "INACTIVE", "TERMINATING", "TERMINATED"]
-        if lifecycle_state not in allowed_values:
+        if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
 
@@ -429,7 +491,7 @@ class VirtualCircuit(object):
     def provider_name(self):
         """
         Gets the provider_name of this VirtualCircuit.
-        The name of the provider (if you're connecting via a provider).
+        Deprecated. Instead use `providerServiceId`.
 
 
         :return: The provider_name of this VirtualCircuit.
@@ -441,7 +503,7 @@ class VirtualCircuit(object):
     def provider_name(self, provider_name):
         """
         Sets the provider_name of this VirtualCircuit.
-        The name of the provider (if you're connecting via a provider).
+        Deprecated. Instead use `providerServiceId`.
 
 
         :param provider_name: The provider_name of this VirtualCircuit.
@@ -450,10 +512,34 @@ class VirtualCircuit(object):
         self._provider_name = provider_name
 
     @property
+    def provider_service_id(self):
+        """
+        Gets the provider_service_id of this VirtualCircuit.
+        The OCID of the service offered by the provider (if the customer is connecting via a provider).
+
+
+        :return: The provider_service_id of this VirtualCircuit.
+        :rtype: str
+        """
+        return self._provider_service_id
+
+    @provider_service_id.setter
+    def provider_service_id(self, provider_service_id):
+        """
+        Sets the provider_service_id of this VirtualCircuit.
+        The OCID of the service offered by the provider (if the customer is connecting via a provider).
+
+
+        :param provider_service_id: The provider_service_id of this VirtualCircuit.
+        :type: str
+        """
+        self._provider_service_id = provider_service_id
+
+    @property
     def provider_service_name(self):
         """
         Gets the provider_service_name of this VirtualCircuit.
-        The name of the service offered by the provider.
+        Deprecated. Instead use `providerServiceId`.
 
 
         :return: The provider_service_name of this VirtualCircuit.
@@ -465,7 +551,7 @@ class VirtualCircuit(object):
     def provider_service_name(self, provider_service_name):
         """
         Sets the provider_service_name of this VirtualCircuit.
-        The name of the service offered by the provider.
+        Deprecated. Instead use `providerServiceId`.
 
 
         :param provider_service_name: The provider_service_name of this VirtualCircuit.
@@ -507,9 +593,35 @@ class VirtualCircuit(object):
         :type: str
         """
         allowed_values = ["ACTIVE", "INACTIVE"]
-        if provider_state not in allowed_values:
+        if not value_allowed_none_or_none_sentinel(provider_state, allowed_values):
             provider_state = 'UNKNOWN_ENUM_VALUE'
         self._provider_state = provider_state
+
+    @property
+    def public_prefixes(self):
+        """
+        Gets the public_prefixes of this VirtualCircuit.
+        For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to
+        advertise across the connection. Each prefix must be /24 or less specific.
+
+
+        :return: The public_prefixes of this VirtualCircuit.
+        :rtype: list[str]
+        """
+        return self._public_prefixes
+
+    @public_prefixes.setter
+    def public_prefixes(self, public_prefixes):
+        """
+        Sets the public_prefixes of this VirtualCircuit.
+        For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to
+        advertise across the connection. Each prefix must be /24 or less specific.
+
+
+        :param public_prefixes: The public_prefixes of this VirtualCircuit.
+        :type: list[str]
+        """
+        self._public_prefixes = public_prefixes
 
     @property
     def reference_comment(self):
@@ -564,6 +676,36 @@ class VirtualCircuit(object):
         self._region = region
 
     @property
+    def service_type(self):
+        """
+        Gets the service_type of this VirtualCircuit.
+        Provider service type.
+
+        Allowed values for this property are: "COLOCATED", "LAYER2", "LAYER3", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The service_type of this VirtualCircuit.
+        :rtype: str
+        """
+        return self._service_type
+
+    @service_type.setter
+    def service_type(self, service_type):
+        """
+        Sets the service_type of this VirtualCircuit.
+        Provider service type.
+
+
+        :param service_type: The service_type of this VirtualCircuit.
+        :type: str
+        """
+        allowed_values = ["COLOCATED", "LAYER2", "LAYER3"]
+        if not value_allowed_none_or_none_sentinel(service_type, allowed_values):
+            service_type = 'UNKNOWN_ENUM_VALUE'
+        self._service_type = service_type
+
+    @property
     def time_created(self):
         """
         Gets the time_created of this VirtualCircuit.
@@ -597,11 +739,10 @@ class VirtualCircuit(object):
     def type(self):
         """
         Gets the type of this VirtualCircuit.
-        The type of IP addresses used in this virtual circuit. PRIVATE means
-        `RFC 1918`__ addresses
-        (10.0.0.0/8, 172.16/12, and 192.168/16). Only PRIVATE is supported.
+        Whether the virtual circuit supports private or public peering. For more information,
+        see `FastConnect Overview`__.
 
-        __ https://tools.ietf.org/html/rfc1918
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm
 
         Allowed values for this property are: "PUBLIC", "PRIVATE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -616,18 +757,17 @@ class VirtualCircuit(object):
     def type(self, type):
         """
         Sets the type of this VirtualCircuit.
-        The type of IP addresses used in this virtual circuit. PRIVATE means
-        `RFC 1918`__ addresses
-        (10.0.0.0/8, 172.16/12, and 192.168/16). Only PRIVATE is supported.
+        Whether the virtual circuit supports private or public peering. For more information,
+        see `FastConnect Overview`__.
 
-        __ https://tools.ietf.org/html/rfc1918
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm
 
 
         :param type: The type of this VirtualCircuit.
         :type: str
         """
         allowed_values = ["PUBLIC", "PRIVATE"]
-        if type not in allowed_values:
+        if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type
 

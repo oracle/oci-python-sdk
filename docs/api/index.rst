@@ -226,6 +226,14 @@ Load Balancer
 
 .. autoclass:: Sentinel
 
+===========
+ Waiters
+===========
+
+.. module:: oci
+
+.. autofunction:: wait_until
+
 =========
 Request
 =========

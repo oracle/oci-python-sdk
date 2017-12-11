@@ -66,6 +66,10 @@ def formatted_flat_dict(model):
     )
 
 
+def value_allowed_none_or_none_sentinel(value_to_test, allowed_values):
+    return value_to_test is None or value_to_test is NONE_SENTINEL or value_to_test in allowed_values
+
+
 class Sentinel(object):
     """Named singletons for clear docstrings.
     Also used to differentiate an explicit param of None from a lack of argument.

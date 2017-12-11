@@ -52,6 +52,7 @@ To get started, head over to the :ref:`installation instructions <install>` or s
     pass-explicit-null
     upload-manager
     raw-requests
+    waiters
     api/index
     contributions
     notifications

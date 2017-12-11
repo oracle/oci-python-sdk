@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+1.3.11 - 2017-12-11
+====================
+
+Added
+-----
+* Support for public peering for FastConnect
+* Support for specifying an authorized entity name in a Letter of Authority
+* Support for showing a list of bandwidth shapes for a specific provider (the ``list_fast_connect_provider_virtual_circuit_bandwidth_shapes`` in ``VirtualNetworkClient``)
+
+Changed
+-------
+* Audit events now have a ``response_payload`` attribute which contains metadata of interest. For example, the OCID of a resource
+
+Deprecated
+-----------
+* The ``list_virtual_circuit_bandwidth_shapes`` operation in ``VirtualNetworkClient`` has been deprecated. Use the ``list_fast_connect_provider_virtual_circuit_bandwidth_shapes`` operation instead
+* When using ``CreateVirtualCircuitDetails``, supplying a ``provider_name`` is deprecated and ``provider_service_id`` should be used instead
+
+====================
 1.3.10 - 2017-11-27
 ====================
 
