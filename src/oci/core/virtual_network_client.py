@@ -27,6 +27,100 @@ class VirtualNetworkClient(object):
         )
         self.base_client = BaseClient("virtual_network", config, signer, core_type_mapping)
 
+    def bulk_add_virtual_circuit_public_prefixes(self, virtual_circuit_id, bulk_add_virtual_circuit_public_prefixes_details, **kwargs):
+        """
+        BulkAddVirtualCircuitPublicPrefixes
+        Adds one or more customer public IP prefixes to the specified public virtual circuit.
+        Use this operation (and not :func:`update_virtual_circuit`)
+        to add prefixes to the virtual circuit. Oracle must verify the customer's ownership
+        of each prefix before traffic for that prefix will flow across the virtual circuit.
+
+
+        :param str virtual_circuit_id: (required)
+            The OCID of the virtual circuit.
+
+        :param BulkAddVirtualCircuitPublicPrefixesDetails bulk_add_virtual_circuit_public_prefixes_details: (required)
+            Request with publix prefixes to be added to the virtual circuit
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/virtualCircuits/{virtualCircuitId}/actions/bulkAddPublicPrefixes"
+        method = "POST"
+
+        if kwargs:
+            raise ValueError(
+                "bulk_add_virtual_circuit_public_prefixes got unknown kwargs: {!r}".format(kwargs))
+
+        path_params = {
+            "virtualCircuitId": virtual_circuit_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=bulk_add_virtual_circuit_public_prefixes_details)
+
+    def bulk_delete_virtual_circuit_public_prefixes(self, virtual_circuit_id, bulk_delete_virtual_circuit_public_prefixes_details, **kwargs):
+        """
+        BulkDeleteVirtualCircuitPublicPrefixes
+        Removes one or more customer public IP prefixes from the specified public virtual circuit.
+        Use this operation (and not :func:`update_virtual_circuit`)
+        to remove prefixes from the virtual circuit. When the virtual circuit's state switches
+        back to PROVISIONED, Oracle stops advertising the specified prefixes across the connection.
+
+
+        :param str virtual_circuit_id: (required)
+            The OCID of the virtual circuit.
+
+        :param BulkDeleteVirtualCircuitPublicPrefixesDetails bulk_delete_virtual_circuit_public_prefixes_details: (required)
+            Request with publix prefixes to be deleted from the virtual circuit
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/virtualCircuits/{virtualCircuitId}/actions/bulkDeletePublicPrefixes"
+        method = "POST"
+
+        if kwargs:
+            raise ValueError(
+                "bulk_delete_virtual_circuit_public_prefixes got unknown kwargs: {!r}".format(kwargs))
+
+        path_params = {
+            "virtualCircuitId": virtual_circuit_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=bulk_delete_virtual_circuit_public_prefixes_details)
+
     def connect_local_peering_gateways(self, local_peering_gateway_id, connect_local_peering_gateways_details, **kwargs):
         """
         ConnectLocalPeeringGateways
@@ -2214,6 +2308,50 @@ class VirtualNetworkClient(object):
             header_params=header_params,
             response_type="DrgAttachment")
 
+    def get_fast_connect_provider_service(self, provider_service_id, **kwargs):
+        """
+        GetFastConnectProviderService
+        Gets the specified provider service.
+        For more information, see `FastConnect Overview`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm
+
+
+        :param str provider_service_id: (required)
+            The OCID of the provider service.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.FastConnectProviderService`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/fastConnectProviderServices/{providerServiceId}"
+        method = "GET"
+
+        if kwargs:
+            raise ValueError(
+                "get_fast_connect_provider_service got unknown kwargs: {!r}".format(kwargs))
+
+        path_params = {
+            "providerServiceId": provider_service_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="FastConnectProviderService")
+
     def get_internet_gateway(self, ig_id, **kwargs):
         """
         GetInternetGateway
@@ -3382,6 +3520,73 @@ class VirtualNetworkClient(object):
             header_params=header_params,
             response_type="list[FastConnectProviderService]")
 
+    def list_fast_connect_provider_virtual_circuit_bandwidth_shapes(self, provider_service_id, **kwargs):
+        """
+        ListFastConnectProviderVirtualCircuitBandwidthShapes
+        Gets the list of available virtual circuit bandwidth levels for a provider.
+        You need this information so you can specify your desired bandwidth level (shape) when you create a virtual circuit.
+
+        For more information about virtual circuits, see `FastConnect Overview`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm
+
+
+        :param str provider_service_id: (required)
+            The OCID of the provider service.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+            Example: `500`
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.VirtualCircuitBandwidthShape`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/fastConnectProviderServices/{providerServiceId}/virtualCircuitBandwidthShapes"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_fast_connect_provider_virtual_circuit_bandwidth_shapes got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "providerServiceId": provider_service_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[VirtualCircuitBandwidthShape]")
+
     def list_internet_gateways(self, compartment_id, vcn_id, **kwargs):
         """
         ListInternetGateways
@@ -4135,10 +4340,7 @@ class VirtualNetworkClient(object):
     def list_virtual_circuit_bandwidth_shapes(self, compartment_id, **kwargs):
         """
         ListVirtualCircuitBandwidthShapes
-        Lists the available bandwidth levels for virtual circuits. You need this
-        information so you can specify your desired bandwidth level (that is, shape)
-        when you create a virtual circuit.
-        For the compartment ID, provide the OCID of your tenancy (the root compartment).
+        The deprecated operation lists available bandwidth levels for virtual circuits. For the compartment ID, provide the OCID of your tenancy (the root compartment).
 
 
         :param str compartment_id: (required)
@@ -4186,6 +4388,72 @@ class VirtualNetworkClient(object):
             query_params=query_params,
             header_params=header_params,
             response_type="list[VirtualCircuitBandwidthShape]")
+
+    def list_virtual_circuit_public_prefixes(self, virtual_circuit_id, **kwargs):
+        """
+        ListVirtualCircuitPublicPrefixes
+        Lists the public IP prefixes and their details for the specified
+        public virtual circuit.
+
+
+        :param str virtual_circuit_id: (required)
+            The OCID of the virtual circuit.
+
+        :param str verification_state: (optional)
+            A filter to only return resources that match the given verification state.
+            The state value is case-insensitive.
+
+            Allowed values are: "IN_PROGRESS", "COMPLETED", "FAILED"
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.VirtualCircuitPublicPrefix`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/virtualCircuits/{virtualCircuitId}/publicPrefixes"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "verification_state"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_virtual_circuit_public_prefixes got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "virtualCircuitId": virtual_circuit_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'verification_state' in kwargs:
+            verification_state_allowed_values = ["IN_PROGRESS", "COMPLETED", "FAILED"]
+            if kwargs['verification_state'] not in verification_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `verification_state`, must be one of {0}".format(verification_state_allowed_values)
+                )
+
+        query_params = {
+            "verificationState": kwargs.get("verification_state", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[VirtualCircuitPublicPrefix]")
 
     def list_virtual_circuits(self, compartment_id, **kwargs):
         """
@@ -5139,6 +5407,14 @@ class VirtualNetworkClient(object):
         the associated BGP session is back up. For more information
         about the various states and how to test connectivity, see
         `FastConnect Overview`__.
+
+        To change the list of public IP prefixes for a public virtual circuit,
+        use :func:`bulk_add_virtual_circuit_public_prefixes`
+        and
+        :func:`bulk_delete_virtual_circuit_public_prefixes`.
+        Updating the list of prefixes does NOT cause the BGP session to go down. However,
+        Oracle must verify the customer's ownership of each added prefix before
+        traffic for that prefix will flow across the virtual circuit.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm
 

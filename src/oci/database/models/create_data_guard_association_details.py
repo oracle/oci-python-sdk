@@ -2,7 +2,7 @@
 # Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
-from ...util import formatted_flat_dict
+from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
 from ...decorators import init_model_state_from_kwargs
 
 
@@ -180,9 +180,9 @@ class CreateDataGuardAssociationDetails(object):
         :type: str
         """
         allowed_values = ["MAXIMUM_AVAILABILITY", "MAXIMUM_PERFORMANCE", "MAXIMUM_PROTECTION"]
-        if protection_mode not in allowed_values:
+        if not value_allowed_none_or_none_sentinel(protection_mode, allowed_values):
             raise ValueError(
-                "Invalid value for `protection_mode`, must be one of {0}"
+                "Invalid value for `protection_mode`, must be None or one of {0}"
                 .format(allowed_values)
             )
         self._protection_mode = protection_mode
@@ -236,9 +236,9 @@ class CreateDataGuardAssociationDetails(object):
         :type: str
         """
         allowed_values = ["SYNC", "ASYNC", "FASTSYNC"]
-        if transport_type not in allowed_values:
+        if not value_allowed_none_or_none_sentinel(transport_type, allowed_values):
             raise ValueError(
-                "Invalid value for `transport_type`, must be one of {0}"
+                "Invalid value for `transport_type`, must be None or one of {0}"
                 .format(allowed_values)
             )
         self._transport_type = transport_type

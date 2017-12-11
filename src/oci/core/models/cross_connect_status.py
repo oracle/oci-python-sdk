@@ -2,7 +2,7 @@
 # Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
-from ...util import formatted_flat_dict
+from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
 from ...decorators import init_model_state_from_kwargs
 
 
@@ -104,7 +104,7 @@ class CrossConnectStatus(object):
         :type: str
         """
         allowed_values = ["UP", "DOWN"]
-        if interface_state not in allowed_values:
+        if not value_allowed_none_or_none_sentinel(interface_state, allowed_values):
             interface_state = 'UNKNOWN_ENUM_VALUE'
         self._interface_state = interface_state
 
@@ -182,7 +182,7 @@ class CrossConnectStatus(object):
         :type: str
         """
         allowed_values = ["NO_LIGHT", "LOW_WARN", "HIGH_WARN", "BAD", "GOOD"]
-        if light_level_indicator not in allowed_values:
+        if not value_allowed_none_or_none_sentinel(light_level_indicator, allowed_values):
             light_level_indicator = 'UNKNOWN_ENUM_VALUE'
         self._light_level_indicator = light_level_indicator
 

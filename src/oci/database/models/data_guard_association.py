@@ -2,7 +2,7 @@
 # Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 
-from ...util import formatted_flat_dict
+from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
 from ...decorators import init_model_state_from_kwargs
 
 
@@ -301,7 +301,7 @@ class DataGuardAssociation(object):
         :type: str
         """
         allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED"]
-        if lifecycle_state not in allowed_values:
+        if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
 
@@ -445,7 +445,7 @@ class DataGuardAssociation(object):
         :type: str
         """
         allowed_values = ["PRIMARY", "STANDBY", "DISABLED_STANDBY"]
-        if peer_role not in allowed_values:
+        if not value_allowed_none_or_none_sentinel(peer_role, allowed_values):
             peer_role = 'UNKNOWN_ENUM_VALUE'
         self._peer_role = peer_role
 
@@ -483,7 +483,7 @@ class DataGuardAssociation(object):
         :type: str
         """
         allowed_values = ["MAXIMUM_AVAILABILITY", "MAXIMUM_PERFORMANCE", "MAXIMUM_PROTECTION"]
-        if protection_mode not in allowed_values:
+        if not value_allowed_none_or_none_sentinel(protection_mode, allowed_values):
             protection_mode = 'UNKNOWN_ENUM_VALUE'
         self._protection_mode = protection_mode
 
@@ -513,7 +513,7 @@ class DataGuardAssociation(object):
         :type: str
         """
         allowed_values = ["PRIMARY", "STANDBY", "DISABLED_STANDBY"]
-        if role not in allowed_values:
+        if not value_allowed_none_or_none_sentinel(role, allowed_values):
             role = 'UNKNOWN_ENUM_VALUE'
         self._role = role
 
@@ -575,7 +575,7 @@ class DataGuardAssociation(object):
         :type: str
         """
         allowed_values = ["SYNC", "ASYNC", "FASTSYNC"]
-        if transport_type not in allowed_values:
+        if not value_allowed_none_or_none_sentinel(transport_type, allowed_values):
             transport_type = 'UNKNOWN_ENUM_VALUE'
         self._transport_type = transport_type
 
