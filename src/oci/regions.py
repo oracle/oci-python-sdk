@@ -1,21 +1,14 @@
 # coding: utf-8
 # Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
+from .service_endpoints import SERVICE_ENDPOINTS
+
 REGIONS = [
     "us-phoenix-1",
     "us-ashburn-1",
     "eu-frankfurt-1"
 ]
-SERVICE_ENDPOINTS = {
-    "audit": "https://audit.{domain}/20160918",
-    "blockstorage": "https://iaas.{domain}/20160918",
-    "compute": "https://iaas.{domain}/20160918",
-    "database": "https://database.{domain}/20160918",
-    "identity": "https://identity.{domain}/20160918",
-    "load_balancer": "https://iaas.{domain}/20170115",
-    "object_storage": "https://objectstorage.{domain}",
-    "virtual_network": "https://iaas.{domain}/20160918"
-}
+SERVICE_ENDPOINTS = SERVICE_ENDPOINTS
 
 DOMAIN_FORMAT = "{region}.oraclecloud.com"
 

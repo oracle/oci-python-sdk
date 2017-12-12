@@ -161,7 +161,7 @@
             <plugin>
                 <groupId>com.oracle.bmc.sdk</groupId>
                 <artifactId>bmc-sdk-swagger-maven-plugin</artifactId>
-                <version>1.11.0-SNAPSHOT</version>
+                <version>1.11.1-SNAPSHOT</version>
                 <executions>
                     <execution>
                         <id>python-public-sdk-identity</id>
@@ -263,6 +263,22 @@
                                 <generateInitFile>true</generateInitFile>
                             </additionalProperties>
                         </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>exec-maven-plugin</artifactId>
+                <groupId>org.codehaus.mojo</groupId>
+                <executions>
+                    <execution>
+                    <id>python-public-sdk-common-generation</id>
+                    <phase>compile</phase>
+                    <goals>
+                        <goal>exec</goal>
+                    </goals>
+                    <configuration>
+                        <executable>${basedir}/scripts/generate.py</executable>
+                    </configuration>
                     </execution>
                 </executions>
             </plugin>
