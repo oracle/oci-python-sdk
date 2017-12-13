@@ -176,6 +176,7 @@
                             <basePackage>OCI</basePackage>
                             <additionalProperties>
                                 <specName>identity</specName>
+                                <endpoint>https://identity.{domain}/20160918</endpoint>
                             </additionalProperties>
                         </configuration>
                     </execution>
@@ -192,6 +193,7 @@
                             <basePackage>OCI</basePackage>
                             <additionalProperties>
                                 <specName>core</specName>
+                                <endpoint>https://iaas.{domain}/20160918</endpoint>
                             </additionalProperties>
                         </configuration>
                     </execution>
@@ -209,6 +211,7 @@
                             <additionalProperties>
                                 <specName>object_storage</specName>
                                 <generateInitFile>false</generateInitFile>
+                                <endpoint>https://objectstorage.{domain}</endpoint>
                             </additionalProperties>
                         </configuration>
                     </execution>
@@ -227,6 +230,7 @@
                             <additionalProperties>
                                 <specName>load_balancer</specName>
                                 <generateInitFile>true</generateInitFile>
+                                <endpoint>https://iaas.{domain}/20170115</endpoint>
                             </additionalProperties>
                         </configuration>
                     </execution>
@@ -244,6 +248,7 @@
                             <additionalProperties>
                                 <specName>database</specName>
                                 <generateInitFile>true</generateInitFile>
+                                <endpoint>https://database.{domain}/20160918</endpoint>
                             </additionalProperties>
                         </configuration>
                     </execution>
@@ -261,6 +266,7 @@
                             <additionalProperties>
                                 <specName>audit</specName>
                                 <generateInitFile>true</generateInitFile>
+                                <endpoint>https://audit.{domain}/20160918</endpoint>
                             </additionalProperties>
                         </configuration>
                     </execution>
