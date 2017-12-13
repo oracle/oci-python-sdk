@@ -11,7 +11,7 @@ python-dateutil==2.5.3
 pytz==2016.10
 requests==2.11.1
 sphinx-rtd-theme==0.1.9
-six==1.10.0
+six==1.11.0
 sphinx==1.6.4
 tox==2.3.1
 wheel==0.29.0
