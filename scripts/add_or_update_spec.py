@@ -48,6 +48,7 @@ GENERATE_EXECUTION_TEMPLATE = """
             <additionalProperties>
                 <specName>{spec_name}</specName>
                 <generateInitFile>true</generateInitFile>
+                <endpoint>{endpoint}</endpoint>
             </additionalProperties>
         </configuration>
     </execution>
@@ -79,7 +80,7 @@ def parse_pom():
     return ET.parse(POM_LOCATION)
 
 
-def generate_and_add_unpack_element(spec_name, group_id, artifact_id, spec_path_relative_to_jar):
+def generate_and_add_unpack_element(pom, spec_name, group_id, artifact_id, spec_path_relative_to_jar):
     content = UNPACK_EXECUTION_TEMPLATE.format(
         spec_name=spec_name,
         group_id=group_id,
@@ -93,10 +94,11 @@ def generate_and_add_unpack_element(spec_name, group_id, artifact_id, spec_path_
     unpack_plugin_executions.append(unpack_element)
 
 
-def generate_and_add_generate_section(spec_name, spec_path_relative_to_jar):
+def generate_and_add_generate_section(pom, spec_name, spec_path_relative_to_jar, endpoint):
     content = GENERATE_EXECUTION_TEMPLATE.format(
         spec_name=spec_name,
-        spec_path_relative_to_jar=spec_path_relative_to_jar)
+        spec_path_relative_to_jar=spec_path_relative_to_jar,
+        endpoint=endpoint)
 
     generate_element = ET.fromstring(content)
 
@@ -105,7 +107,7 @@ def generate_and_add_generate_section(spec_name, spec_path_relative_to_jar):
     generate_plugin_executions.append(generate_element)
 
 
-def generate_and_add_clean_section(spec_name):
+def generate_and_add_clean_section(pom, spec_name):
     content = CLEAN_ELEMENT_TEMPLATE.format(
         spec_name=spec_name)
 
@@ -116,7 +118,7 @@ def generate_and_add_clean_section(spec_name):
     filesets.append(clean_element)
 
 
-def generate_and_add_dependency_management_section(group_id, artifact_id, version):
+def generate_and_add_dependency_management_section(pom, group_id, artifact_id, version):
     content = DEPENDENCY_MANAGEMENT_TEMPLATE.format(
         group_id=group_id,
         artifact_id=artifact_id,
@@ -129,7 +131,7 @@ def generate_and_add_dependency_management_section(group_id, artifact_id, versio
     dependencies.append(dep_mgt_element)
 
 
-def generate_and_add_initial_dependency_section(group_id, artifact_id):
+def generate_and_add_initial_dependency_section(pom, group_id, artifact_id):
     content = INITIAL_DEPENDENCY_TEMPLATE.format(
         group_id=group_id,
         artifact_id=artifact_id)
@@ -141,12 +143,19 @@ def generate_and_add_initial_dependency_section(group_id, artifact_id):
     dependencies.append(dependency_element)
 
 
+def update_version_of_existing_spec(pom, artifact_id, version):
+    xpath = ".//ns:dependencyManagement//ns:dependency[ns:artifactId='{artifact_id}']".format(artifact_id=artifact_id)
+    dependency = pom.findall(xpath, ns)[0]
+    dependency.find('./ns:version', ns).text = version
+
+
 # params that we will ask user for
 group_id = "com.oracle.pic.orchestration"
 artifact_id = "maestro-spec"
 version = "0.0.1-SNAPSHOT"
-spec_name = "maestro"
+spec_name = "orchestration"
 spec_path_relative_to_jar = "api.yaml"
+endpoint = "https://orchestration.{domain}/20170630"
 
 pom = parse_pom()
 
@@ -154,16 +163,16 @@ pom = parse_pom()
 xpath_for_spec_dependency_declaration = ".//ns:dependency[ns:artifactId='{artifact_id}']".format(artifact_id=artifact_id)
 if (pom.findall(xpath_for_spec_dependency_declaration, ns)):
     print('Artifact {} already exists in pom.xml. Updating version...'.format(spec_name))
-    pass
+    update_version_of_existing_spec(pom, artifact_id, version)
 else:
     print('Artifact {} does not exist in pom.xml. Adding it...'.format(spec_name))
-    generate_and_add_unpack_element(spec_name, group_id, artifact_id, spec_path_relative_to_jar)
-    generate_and_add_generate_section(spec_name, spec_path_relative_to_jar)
-    generate_and_add_clean_section(spec_name)
-    generate_and_add_dependency_management_section(group_id, artifact_id, version)
-    generate_and_add_initial_dependency_section(group_id, artifact_id)
+    generate_and_add_unpack_element(pom, spec_name, group_id, artifact_id, spec_path_relative_to_jar)
+    generate_and_add_generate_section(pom, spec_name, spec_path_relative_to_jar, endpoint)
+    generate_and_add_clean_section(pom, spec_name)
+    generate_and_add_dependency_management_section(pom, group_id, artifact_id, version)
+    generate_and_add_initial_dependency_section(pom, group_id, artifact_id)
 
 # write out pom
-pom.write(POM_LOCATION, xml_declaration = True, encoding='UTF-8')
+pom.write(POM_LOCATION, xml_declaration=True, encoding='UTF-8')
 
 print('Success!')
