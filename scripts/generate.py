@@ -13,17 +13,9 @@ POM_LOCATION = "pom.xml"
 ROOT_INIT_LOCATION = "src/oci/__init__.py"
 SERVICE_ENDPOINTS_FILE_LOCATION = "src/oci/service_endpoints.py"
 
-endpoints = {
-    "ambassador": "https://orchestration.{domain}/20170630",
-    "audit": "https://audit.{domain}/20160918",
-    "blockstorage": "https://iaas.{domain}/20160918",
-    "compute": "https://iaas.{domain}/20160918",
-    "database": "https://database.{domain}/20160918",
-    "identity": "https://identity.{domain}/20160918",
-    "load_balancer": "https://iaas.{domain}/20170115",
-    "orchestration": "https://orchestration.{domain}/20170630",
-    "object_storage": "https://objectstorage.{domain}",
-    "virtual_network": "https://iaas.{domain}/20160918"
+# this is to support specs that contain multiple services
+SPECS_TO_SERVICES = {
+    "core": ["blockstorage", "compute", "virtual_network"]
 }
 
 ROOT_INIT_FILE_TEMPLATE = """
@@ -63,31 +55,38 @@ def parse_pom():
     return ET.fromstring(xmlstring) 
 
 
-def get_spec_names(pom):
+def get_spec_to_endpoint_map(pom):
     # read specName from each execution of bmc-sdk-swagger-maven-plugin
-    spec_names = []
-    for execution in pom.iter('execution'):
-        # in each execution find the specName
-        for spec_name in execution.iter('specName'):
-            spec_names.append(spec_name.text)
-        
-    spec_names.sort()
-    return spec_names
+    specs = {}
+    generate_plugin_executions = pom.findall(".//plugin[artifactId='bmc-sdk-swagger-maven-plugin']/executions")[0]
+    # specName and endpoint will be in the same additionalProperties node
+    for additional_properties in generate_plugin_executions.iter('additionalProperties'):
+        spec_name = additional_properties.find('specName').text
+        endpoint = additional_properties.find('endpoint').text
+        specs[spec_name] = endpoint
+
+    return specs
 
 
-def write_root_init_file(spec_names):
+def write_root_init_file(spec_to_endpoint):
+    spec_names = sorted(spec_to_endpoint)
     spec_names_csv = ', '.join(spec_names)
     with open(ROOT_INIT_LOCATION, 'w+') as f:
         content = ROOT_INIT_FILE_TEMPLATE.format(spec_names=spec_names_csv)
         f.write(content)
 
 
-def write_regions_file(endpoints):
+def write_regions_file(spec_to_endpoint):
     entries = []
     entry_format = '"{spec_name}": "{endpoint}"'
-    services = sorted(endpoints, key=endpoints.get)
-    for service in services:
-        entries.append(entry_format.format(spec_name=service, endpoint=endpoints[service]))
+    spec_names = sorted(spec_to_endpoint)
+    for spec_name in spec_names:
+        if spec_name in SPECS_TO_SERVICES:
+            for service in SPECS_TO_SERVICES[spec_name]:
+                # the endpoint is specified per spec, so give all serices in that spec the same endpoint
+                entries.append(entry_format.format(spec_name=service, endpoint=spec_to_endpoint[spec_name]))
+        else:
+            entries.append(entry_format.format(spec_name=spec_name, endpoint=spec_to_endpoint[spec_name]))
     
     content = ",\n    ".join(entries)
 
@@ -97,6 +96,6 @@ def write_regions_file(endpoints):
 
 
 pom = parse_pom()
-spec_names = get_spec_names(pom)
-write_root_init_file(spec_names)
-write_regions_file(endpoints)
+spec_to_endpoint = get_spec_to_endpoint_map(pom)
+write_root_init_file(spec_to_endpoint)
+write_regions_file(spec_to_endpoint)
