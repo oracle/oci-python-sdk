@@ -55,7 +55,6 @@ make build
 # the dev pypi artifactory. Each artifact includes the build number in the version to avoid
 # conflicts.
 DEV_VERSION=$SDK_VERSION+$BUILD_NUMBER
-export DEV_VERSION
 mkdir -p dist/dev/
 cp dist/oci-$SDK_VERSION-py2.py3-none-any.whl dist/dev/oci-$DEV_VERSION-py2.py3-none-any.whl
 cp dist/oci-python-sdk-$SDK_VERSION.zip dist/dev/oci-python-sdk-$DEV_VERSION.zip
