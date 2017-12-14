@@ -1,14 +1,14 @@
 # coding: utf-8
 # Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
-from .service_endpoints import SERVICE_ENDPOINTS
+from . import service_endpoints
 
 REGIONS = [
     "us-phoenix-1",
     "us-ashburn-1",
     "eu-frankfurt-1"
 ]
-SERVICE_ENDPOINTS = SERVICE_ENDPOINTS
+SERVICE_ENDPOINTS = service_endpoints.SERVICE_ENDPOINTS
 
 DOMAIN_FORMAT = "{region}.oraclecloud.com"
 

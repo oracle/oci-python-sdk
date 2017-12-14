@@ -1,3 +1,5 @@
+# coding: utf-8
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 from . import audit, core, database, identity, load_balancer, object_storage
 from . import config, constants, decorators, exceptions, regions
@@ -11,5 +13,5 @@ from .waiter import wait_until
 
 __all__ = [
     "BaseClient", "Error", "Request", "Response", "Signer", "config", "constants", "decorators", "exceptions", "regions", "wait_until",
-    audit, core, database, identity, load_balancer, object_storage
+    "audit", "core", "database", "identity", "load_balancer", "object_storage"
 ]

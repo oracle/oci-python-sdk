@@ -18,7 +18,9 @@ SPECS_TO_SERVICES = {
     "core": ["blockstorage", "compute", "virtual_network"]
 }
 
-ROOT_INIT_FILE_TEMPLATE = """
+ROOT_INIT_FILE_TEMPLATE = """# coding: utf-8
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+
 from . import {spec_names}
 from . import config, constants, decorators, exceptions, regions
 from .base_client import BaseClient
@@ -31,12 +33,11 @@ from .waiter import wait_until
 
 __all__ = [
     "BaseClient", "Error", "Request", "Response", "Signer", "config", "constants", "decorators", "exceptions", "regions", "wait_until",
-    {spec_names}
+    {quoted_spec_names}
 ]
 """
 
-SERVICE_ENDPOINTS_TEMPLATE = """
-# coding: utf-8
+SERVICE_ENDPOINTS_TEMPLATE = """# coding: utf-8
 # Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
 
 SERVICE_ENDPOINTS = {{
@@ -69,10 +70,12 @@ def get_spec_to_endpoint_map(pom):
 
 
 def write_root_init_file(spec_to_endpoint):
-    spec_names = sorted(spec_to_endpoint)
-    spec_names_csv = ', '.join(spec_names)
+    sorted_spec_names = sorted(spec_to_endpoint)
+    quoted_spec_names = ['"{}"'.format(spec_name) for spec_name in sorted_spec_names]
+    spec_names_csv = ', '.join(sorted_spec_names)
+    quoted_spec_names_csv = ', '.join(quoted_spec_names)
     with open(ROOT_INIT_LOCATION, 'w+') as f:
-        content = ROOT_INIT_FILE_TEMPLATE.format(spec_names=spec_names_csv)
+        content = ROOT_INIT_FILE_TEMPLATE.format(spec_names=spec_names_csv, quoted_spec_names=quoted_spec_names_csv)
         f.write(content)
 
 
