@@ -1,5 +1,4 @@
 certifi
-click==6.7
 configparser==3.5.0
 coverage==4.2
 cryptography==1.9
