@@ -67,5 +67,3 @@ cp dist/oci-python-sdk-docs-$SDK_VERSION.zip dist/dev/oci-python-sdk-docs-$DEV_V
 
 echo Contents of dist folder
 ls -la dist
-
-exit
