@@ -1,18 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>com.oracle.bmc.sdk</groupId>
     <artifactId>python-sdk</artifactId>
     <version>0.2.0-SNAPSHOT</version>
-
     <name>Public Python SDK</name>
-
     <properties>
         <spec-temp-dir>${project.build.directory}/swagger</spec-temp-dir>
     </properties>
-
     <dependencies>
         <dependency>
             <groupId>com.oracle.pic.commons</groupId>
@@ -39,7 +34,6 @@
             <artifactId>hemlock-spec</artifactId>
         </dependency>
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
@@ -101,7 +95,6 @@
                             </artifactItems>
                         </configuration>
                     </execution>
-                    <!-- Unpack oralb yaml spec -->
                     <execution>
                         <id>unpack-oralb</id>
                         <phase>initialize</phase>
@@ -161,7 +154,7 @@
             <plugin>
                 <groupId>com.oracle.bmc.sdk</groupId>
                 <artifactId>bmc-sdk-swagger-maven-plugin</artifactId>
-                <version>1.11.0-SNAPSHOT</version>
+                <version>1.11.1-SNAPSHOT</version>
                 <executions>
                     <execution>
                         <id>python-public-sdk-identity</id>
@@ -176,6 +169,7 @@
                             <basePackage>OCI</basePackage>
                             <additionalProperties>
                                 <specName>identity</specName>
+                                <endpoint>https://identity.{domain}/20160918</endpoint>
                             </additionalProperties>
                         </configuration>
                     </execution>
@@ -192,6 +186,7 @@
                             <basePackage>OCI</basePackage>
                             <additionalProperties>
                                 <specName>core</specName>
+                                <endpoint>https://iaas.{domain}/20160918</endpoint>
                             </additionalProperties>
                         </configuration>
                     </execution>
@@ -209,10 +204,10 @@
                             <additionalProperties>
                                 <specName>object_storage</specName>
                                 <generateInitFile>false</generateInitFile>
+                                <endpoint>https://objectstorage.{domain}</endpoint>
                             </additionalProperties>
                         </configuration>
                     </execution>
-                    <!-- Generate oralb api -->
                     <execution>
                         <id>python-public-sdk-oralb</id>
                         <phase>compile</phase>
@@ -227,6 +222,7 @@
                             <additionalProperties>
                                 <specName>load_balancer</specName>
                                 <generateInitFile>true</generateInitFile>
+                                <endpoint>https://iaas.{domain}/20170115</endpoint>
                             </additionalProperties>
                         </configuration>
                     </execution>
@@ -244,6 +240,7 @@
                             <additionalProperties>
                                 <specName>database</specName>
                                 <generateInitFile>true</generateInitFile>
+                                <endpoint>https://database.{domain}/20160918</endpoint>
                             </additionalProperties>
                         </configuration>
                     </execution>
@@ -261,7 +258,25 @@
                             <additionalProperties>
                                 <specName>audit</specName>
                                 <generateInitFile>true</generateInitFile>
+                                <endpoint>https://audit.{domain}/20160918</endpoint>
                             </additionalProperties>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>exec-maven-plugin</artifactId>
+                <groupId>org.codehaus.mojo</groupId>
+                <version>1.6.0</version>
+                <executions>
+                    <execution>
+                        <id>python-public-sdk-common-generation</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>${basedir}/scripts/generate.py</executable>
                         </configuration>
                     </execution>
                 </executions>
@@ -276,8 +291,7 @@
                         <phase>compile</phase>
                         <configuration>
                             <target>
-                                <replace dir='src' token="{{DOC_SERVER_URL}}"
-                                         value="https://docs.us-phoenix-1.oraclecloud.com" />
+                                <replace dir="src" token="{{DOC_SERVER_URL}}" value="https://docs.us-phoenix-1.oraclecloud.com" />
                             </target>
                             <failOnError>false</failOnError>
                         </configuration>
@@ -339,7 +353,6 @@
             </plugin>
         </plugins>
     </build>
-
     <dependencyManagement>
         <dependencies>
             <dependency>
