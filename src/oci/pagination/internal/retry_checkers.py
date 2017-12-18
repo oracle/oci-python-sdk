@@ -1,0 +1,150 @@
+# coding: utf-8
+# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+#
+# Contains helper classes that can say whether a retry should occur based on various criteria, such as a maximum number of retries being
+# hit or the exception received from a service call (or the response from the service call if it didn't exception out).
+
+from ...exceptions import ServiceError
+from requests.exceptions import Timeout
+from requests.exceptions import ConnectionError
+
+
+class RetryCheckerContainer(object):
+    """
+    A container which holds at least one retry checker. This lets us chain together different retry checkers into an overall
+    evaluation of whether we should retry a request.
+
+    Checkers are evaluated in the order they appear in the provided list of checkers, and if one checker reports failure we
+    consider this to be an overall failure and no more retries should happen.
+    """
+
+    def __init__(self, checkers, **kwargs):
+        if not checkers:
+            raise ValueError('At least one retry checker needs to be provided')
+        self.checkers = checkers
+
+    def add_checker(self, checker):
+        self.checkers.append(checker)
+
+    def should_retry(self, exception=None, response=None, **kwargs):
+        """
+        Determines if a retry should be performed based on either an exception or a response. We will
+        retry if all the checkers held in this container indicate that they should retry; if any checker
+        indicates that the call should not be retried then we will not retry.
+
+        :param Exception exception:
+            An exception received from the service
+
+        :param Response response:
+            The :class:`~oci.response.Response` received from a service call
+
+        :return: True if we should retry, and False otherwise
+        :rtype: Boolean
+        """
+        for c in self.checkers:
+            if not c.should_retry(exception, response, **kwargs):
+                return False
+
+        return True
+
+
+class BaseRetryChecker(object):
+    """
+    The base class from which all retry checkers should derive. This has no implementation but just defines the contract
+    for a checker.
+    """
+
+    def __init__(self, **kwargs):
+        pass
+
+    def should_retry(self, exception=None, response=None, **kwargs):
+        """
+        Determines if a retry should be performed based on either an exception or a response.
+
+        :param Exception exception:
+            An exception received from the service
+
+        :param Response response:
+            The :class:`~oci.response.Response` received from a service call
+
+        :return: True if we should retry, and False otherwise
+        :rtype: Boolean
+        """
+        raise NotImplementedError('Subclasses should implement this')
+
+
+class LimitBasedRetryChecker(BaseRetryChecker):
+    """
+    A retry checker which can retry as long as some threshold (# of attempts/tries) has not been breached.
+    It is the repsonsibility of the caller to track how many attempts/tries it has done - objects of this
+    class will not track this.
+
+    If not specified, the default number of tries allowed is 5. Tries are also assumed to be one-based (i.e. the
+    first attempt/try is 1, the second is 2 etc)
+    """
+
+    def __init__(self, max_attempts=5, **kwargs):
+        if max_attempts < 1:
+            raise ValueError('The max number of attempts must be >= 1, with 1 indicating no retries')
+
+        super(LimitBasedRetryChecker, self).__init__(**kwargs)
+        self.max_attempts = max_attempts
+
+    def should_retry(self, exception=None, response=None, **kwargs):
+        return self.max_attempts > kwargs.get('current_attempt', 0)
+
+
+class TimeoutConnectionAndServiceErrorRetryChecker(BaseRetryChecker):
+    RETRYABLE_STATUSES_AND_CODES = {
+        -1: [],
+        429: []
+    }
+
+    """
+    A checker which will retry on certain exceptions. Retries are enabled for the following exception types:
+
+        - Timeouts from the requests library (we will always retry on these)
+        - ConnectionErrors from the requests library (we will always retry on these)
+        - Service errors where the status is 500 or above (i.e. a server-side error)
+        - Service errors where a status (e.g. 429) and, optionally, the code meet a given criteria
+
+    The last item is configurable via dictionary where the key is some numeric status representing a HTTP status and the value
+    is a list of strings with each string representing a textual error code (such as those error codes documented at
+    https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm). If an empty list is provided, then
+    only the numeric status is checked for retry purposes. For a populated array, we are looking for where the numeric status matches
+    and the code from the exception appears in the array. As an example:
+
+    .. code-block:: python
+
+        {
+            400: ['QuotaExceeded'],
+            500: []
+        }
+
+    If no configuration is provided, then the default for service errors is to retry on HTTP 429's and 5xx's without any code checks. If a
+    specific 5xx code (e.g. 500, 502) is provided in the dictionary then it takes precedence over the option to retry on any 500. For example
+    it is possible to retry on only 502s (either by status or by status and matching some code ) by disabling the general "retry on any 5xx"
+    configuration and placing an entry for 502 in the dictionary
+    """
+
+    def __init__(self, service_error_retry_config=RETRYABLE_STATUSES_AND_CODES, retry_any_5xx=True, **kwargs):
+        super(TimeoutConnectionAndServiceErrorRetryChecker, self).__init__(**kwargs)
+        self.retry_any_5xx = retry_any_5xx
+        self.service_error_retry_config = service_error_retry_config
+
+    def should_retry(self, exception=None, response=None, **kwargs):
+        if isinstance(exception, Timeout):
+            return True
+        elif isinstance(exception, ConnectionError):
+            return True
+        elif isinstance(exception, ServiceError):
+            if exception.status in self.service_error_retry_config:
+                codes = self.service_error_retry_config[exception.status]
+                if not codes:
+                    return True
+                else:
+                    return exception.code in codes
+            elif self.retry_any_5xx and exception.status >= 500:
+                return True
+
+        return False
