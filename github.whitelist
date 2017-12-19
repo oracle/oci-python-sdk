@@ -13,6 +13,7 @@
 ^src/oci/object_storage/.*\.py$
 ^src/oci/[^/]*\.py$
 
+^scripts/wercker_validate\.py$
 
 ^tests/[^/]*\.py$
 ^tests/integ/__init__.py$
@@ -36,3 +37,4 @@
 ^setup\.cfg$
 ^setup\.py$
 ^tox\.ini$
+^wercker\.yml$
