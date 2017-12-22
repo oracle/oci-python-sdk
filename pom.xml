@@ -358,12 +358,12 @@
             <dependency>
                 <groupId>com.oracle.pic.commons</groupId>
                 <artifactId>coreservices-api-spec</artifactId>
-                <version>0.1.45</version>
+                <version>0.1.48</version>
             </dependency>
             <dependency>
                 <groupId>com.oracle.pic.identity</groupId>
                 <artifactId>identity-control-plane-api-spec</artifactId>
-                <version>0.2.21</version>
+                <version>0.2.22-TAG-GA</version>
             </dependency>
             <dependency>
                 <groupId>com.oracle.pic.casper</groupId>

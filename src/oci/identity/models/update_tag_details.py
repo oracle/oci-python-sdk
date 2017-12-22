@@ -7,57 +7,57 @@ from ...decorators import init_model_state_from_kwargs
 
 
 @init_model_state_from_kwargs
-class UpdateCompartmentDetails(object):
+class UpdateTagDetails(object):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new UpdateCompartmentDetails object with values from values from keyword arguments.
+        Initializes a new UpdateTagDetails object with values from values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param description:
-            The value to assign to the description property of this UpdateCompartmentDetails.
+            The value to assign to the description property of this UpdateTagDetails.
         :type description: str
 
-        :param name:
-            The value to assign to the name property of this UpdateCompartmentDetails.
-        :type name: str
+        :param is_retired:
+            The value to assign to the is_retired property of this UpdateTagDetails.
+        :type is_retired: bool
 
         :param freeform_tags:
-            The value to assign to the freeform_tags property of this UpdateCompartmentDetails.
+            The value to assign to the freeform_tags property of this UpdateTagDetails.
         :type freeform_tags: dict(str, str)
 
         :param defined_tags:
-            The value to assign to the defined_tags property of this UpdateCompartmentDetails.
+            The value to assign to the defined_tags property of this UpdateTagDetails.
         :type defined_tags: dict(str, dict(str, object))
 
         """
         self.swagger_types = {
             'description': 'str',
-            'name': 'str',
+            'is_retired': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
             'description': 'description',
-            'name': 'name',
+            'is_retired': 'isRetired',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
         self._description = None
-        self._name = None
+        self._is_retired = None
         self._freeform_tags = None
         self._defined_tags = None
 
     @property
     def description(self):
         """
-        Gets the description of this UpdateCompartmentDetails.
-        The description you assign to the compartment. Does not have to be unique, and it's changeable.
+        Gets the description of this UpdateTagDetails.
+        The description of the tag.
 
 
-        :return: The description of this UpdateCompartmentDetails.
+        :return: The description of this UpdateTagDetails.
         :rtype: str
         """
         return self._description
@@ -65,48 +65,48 @@ class UpdateCompartmentDetails(object):
     @description.setter
     def description(self, description):
         """
-        Sets the description of this UpdateCompartmentDetails.
-        The description you assign to the compartment. Does not have to be unique, and it's changeable.
+        Sets the description of this UpdateTagDetails.
+        The description of the tag.
 
 
-        :param description: The description of this UpdateCompartmentDetails.
+        :param description: The description of this UpdateTagDetails.
         :type: str
         """
         self._description = description
 
     @property
-    def name(self):
+    def is_retired(self):
         """
-        Gets the name of this UpdateCompartmentDetails.
-        The new name you assign to the compartment. The name must be unique across all compartments in the tenancy.
+        Gets the is_retired of this UpdateTagDetails.
+        whether or not the tag is retired
 
 
-        :return: The name of this UpdateCompartmentDetails.
-        :rtype: str
+        :return: The is_retired of this UpdateTagDetails.
+        :rtype: bool
         """
-        return self._name
+        return self._is_retired
 
-    @name.setter
-    def name(self, name):
+    @is_retired.setter
+    def is_retired(self, is_retired):
         """
-        Sets the name of this UpdateCompartmentDetails.
-        The new name you assign to the compartment. The name must be unique across all compartments in the tenancy.
+        Sets the is_retired of this UpdateTagDetails.
+        whether or not the tag is retired
 
 
-        :param name: The name of this UpdateCompartmentDetails.
-        :type: str
+        :param is_retired: The is_retired of this UpdateTagDetails.
+        :type: bool
         """
-        self._name = name
+        self._is_retired = is_retired
 
     @property
     def freeform_tags(self):
         """
-        Gets the freeform_tags of this UpdateCompartmentDetails.
+        Gets the freeform_tags of this UpdateTagDetails.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
 
 
-        :return: The freeform_tags of this UpdateCompartmentDetails.
+        :return: The freeform_tags of this UpdateTagDetails.
         :rtype: dict(str, str)
         """
         return self._freeform_tags
@@ -114,12 +114,12 @@ class UpdateCompartmentDetails(object):
     @freeform_tags.setter
     def freeform_tags(self, freeform_tags):
         """
-        Sets the freeform_tags of this UpdateCompartmentDetails.
+        Sets the freeform_tags of this UpdateTagDetails.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
 
 
-        :param freeform_tags: The freeform_tags of this UpdateCompartmentDetails.
+        :param freeform_tags: The freeform_tags of this UpdateTagDetails.
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
@@ -127,12 +127,12 @@ class UpdateCompartmentDetails(object):
     @property
     def defined_tags(self):
         """
-        Gets the defined_tags of this UpdateCompartmentDetails.
+        Gets the defined_tags of this UpdateTagDetails.
         Usage of predefined tag keys. These predefined keys are scoped to namespaces.
         Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
 
 
-        :return: The defined_tags of this UpdateCompartmentDetails.
+        :return: The defined_tags of this UpdateTagDetails.
         :rtype: dict(str, dict(str, object))
         """
         return self._defined_tags
@@ -140,12 +140,12 @@ class UpdateCompartmentDetails(object):
     @defined_tags.setter
     def defined_tags(self, defined_tags):
         """
-        Sets the defined_tags of this UpdateCompartmentDetails.
+        Sets the defined_tags of this UpdateTagDetails.
         Usage of predefined tag keys. These predefined keys are scoped to namespaces.
         Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
 
 
-        :param defined_tags: The defined_tags of this UpdateCompartmentDetails.
+        :param defined_tags: The defined_tags of this UpdateTagDetails.
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags

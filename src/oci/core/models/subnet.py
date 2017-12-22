@@ -26,6 +26,10 @@ class Subnet(object):
             The value to assign to the compartment_id property of this Subnet.
         :type compartment_id: str
 
+        :param defined_tags:
+            The value to assign to the defined_tags property of this Subnet.
+        :type defined_tags: dict(str, dict(str, object))
+
         :param dhcp_options_id:
             The value to assign to the dhcp_options_id property of this Subnet.
         :type dhcp_options_id: str
@@ -37,6 +41,10 @@ class Subnet(object):
         :param dns_label:
             The value to assign to the dns_label property of this Subnet.
         :type dns_label: str
+
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this Subnet.
+        :type freeform_tags: dict(str, str)
 
         :param id:
             The value to assign to the id property of this Subnet.
@@ -85,9 +93,11 @@ class Subnet(object):
             'availability_domain': 'str',
             'cidr_block': 'str',
             'compartment_id': 'str',
+            'defined_tags': 'dict(str, dict(str, object))',
             'dhcp_options_id': 'str',
             'display_name': 'str',
             'dns_label': 'str',
+            'freeform_tags': 'dict(str, str)',
             'id': 'str',
             'lifecycle_state': 'str',
             'prohibit_public_ip_on_vnic': 'bool',
@@ -104,9 +114,11 @@ class Subnet(object):
             'availability_domain': 'availabilityDomain',
             'cidr_block': 'cidrBlock',
             'compartment_id': 'compartmentId',
+            'defined_tags': 'definedTags',
             'dhcp_options_id': 'dhcpOptionsId',
             'display_name': 'displayName',
             'dns_label': 'dnsLabel',
+            'freeform_tags': 'freeformTags',
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
             'prohibit_public_ip_on_vnic': 'prohibitPublicIpOnVnic',
@@ -122,9 +134,11 @@ class Subnet(object):
         self._availability_domain = None
         self._cidr_block = None
         self._compartment_id = None
+        self._defined_tags = None
         self._dhcp_options_id = None
         self._display_name = None
         self._dns_label = None
+        self._freeform_tags = None
         self._id = None
         self._lifecycle_state = None
         self._prohibit_public_ip_on_vnic = None
@@ -215,6 +229,40 @@ class Subnet(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this Subnet.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this Subnet.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this Subnet.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this Subnet.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     @property
     def dhcp_options_id(self):
@@ -317,6 +365,42 @@ class Subnet(object):
         :type: str
         """
         self._dns_label = dns_label
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this Subnet.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see
+        `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this Subnet.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this Subnet.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see
+        `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this Subnet.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
 
     @property
     def id(self):

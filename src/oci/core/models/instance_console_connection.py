@@ -22,9 +22,17 @@ class InstanceConsoleConnection(object):
             The value to assign to the connection_string property of this InstanceConsoleConnection.
         :type connection_string: str
 
+        :param defined_tags:
+            The value to assign to the defined_tags property of this InstanceConsoleConnection.
+        :type defined_tags: dict(str, dict(str, object))
+
         :param fingerprint:
             The value to assign to the fingerprint property of this InstanceConsoleConnection.
         :type fingerprint: str
+
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this InstanceConsoleConnection.
+        :type freeform_tags: dict(str, str)
 
         :param id:
             The value to assign to the id property of this InstanceConsoleConnection.
@@ -40,31 +48,44 @@ class InstanceConsoleConnection(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param vnc_connection_string:
+            The value to assign to the vnc_connection_string property of this InstanceConsoleConnection.
+        :type vnc_connection_string: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
             'connection_string': 'str',
+            'defined_tags': 'dict(str, dict(str, object))',
             'fingerprint': 'str',
+            'freeform_tags': 'dict(str, str)',
             'id': 'str',
             'instance_id': 'str',
-            'lifecycle_state': 'str'
+            'lifecycle_state': 'str',
+            'vnc_connection_string': 'str'
         }
 
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'connection_string': 'connectionString',
+            'defined_tags': 'definedTags',
             'fingerprint': 'fingerprint',
+            'freeform_tags': 'freeformTags',
             'id': 'id',
             'instance_id': 'instanceId',
-            'lifecycle_state': 'lifecycleState'
+            'lifecycle_state': 'lifecycleState',
+            'vnc_connection_string': 'vncConnectionString'
         }
 
         self._compartment_id = None
         self._connection_string = None
+        self._defined_tags = None
         self._fingerprint = None
+        self._freeform_tags = None
         self._id = None
         self._instance_id = None
         self._lifecycle_state = None
+        self._vnc_connection_string = None
 
     @property
     def compartment_id(self):
@@ -115,6 +136,40 @@ class InstanceConsoleConnection(object):
         self._connection_string = connection_string
 
     @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this InstanceConsoleConnection.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this InstanceConsoleConnection.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this InstanceConsoleConnection.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this InstanceConsoleConnection.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
+
+    @property
     def fingerprint(self):
         """
         Gets the fingerprint of this InstanceConsoleConnection.
@@ -137,6 +192,42 @@ class InstanceConsoleConnection(object):
         :type: str
         """
         self._fingerprint = fingerprint
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this InstanceConsoleConnection.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see
+        `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this InstanceConsoleConnection.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this InstanceConsoleConnection.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see
+        `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this InstanceConsoleConnection.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
 
     @property
     def id(self):
@@ -215,6 +306,32 @@ class InstanceConsoleConnection(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def vnc_connection_string(self):
+        """
+        Gets the vnc_connection_string of this InstanceConsoleConnection.
+        The SSH connection string for the SSH tunnel used to
+        connect to the console connection over VNC.
+
+
+        :return: The vnc_connection_string of this InstanceConsoleConnection.
+        :rtype: str
+        """
+        return self._vnc_connection_string
+
+    @vnc_connection_string.setter
+    def vnc_connection_string(self, vnc_connection_string):
+        """
+        Sets the vnc_connection_string of this InstanceConsoleConnection.
+        The SSH connection string for the SSH tunnel used to
+        connect to the console connection over VNC.
+
+
+        :param vnc_connection_string: The vnc_connection_string of this InstanceConsoleConnection.
+        :type: str
+        """
+        self._vnc_connection_string = vnc_connection_string
 
     def __repr__(self):
         return formatted_flat_dict(self)

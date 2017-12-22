@@ -1261,6 +1261,8 @@ class ComputeClient(object):
         also retrieve a resource's OCID by using a List API operation
         on that resource type, or by viewing the resource in the Console.
 
+        To launch an instance using an image or a boot volume use the `sourceDetails` parameter in :class:`LaunchInstanceDetails`.
+
         When you launch an instance, it is automatically attached to a virtual
         network interface card (VNIC), called the *primary VNIC*. The VNIC
         has a private IP address from the subnet's CIDR. You can either assign a

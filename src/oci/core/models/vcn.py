@@ -34,6 +34,10 @@ class Vcn(object):
             The value to assign to the default_security_list_id property of this Vcn.
         :type default_security_list_id: str
 
+        :param defined_tags:
+            The value to assign to the defined_tags property of this Vcn.
+        :type defined_tags: dict(str, dict(str, object))
+
         :param display_name:
             The value to assign to the display_name property of this Vcn.
         :type display_name: str
@@ -41,6 +45,10 @@ class Vcn(object):
         :param dns_label:
             The value to assign to the dns_label property of this Vcn.
         :type dns_label: str
+
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this Vcn.
+        :type freeform_tags: dict(str, str)
 
         :param id:
             The value to assign to the id property of this Vcn.
@@ -67,8 +75,10 @@ class Vcn(object):
             'default_dhcp_options_id': 'str',
             'default_route_table_id': 'str',
             'default_security_list_id': 'str',
+            'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'dns_label': 'str',
+            'freeform_tags': 'dict(str, str)',
             'id': 'str',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
@@ -81,8 +91,10 @@ class Vcn(object):
             'default_dhcp_options_id': 'defaultDhcpOptionsId',
             'default_route_table_id': 'defaultRouteTableId',
             'default_security_list_id': 'defaultSecurityListId',
+            'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'dns_label': 'dnsLabel',
+            'freeform_tags': 'freeformTags',
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
@@ -94,8 +106,10 @@ class Vcn(object):
         self._default_dhcp_options_id = None
         self._default_route_table_id = None
         self._default_security_list_id = None
+        self._defined_tags = None
         self._display_name = None
         self._dns_label = None
+        self._freeform_tags = None
         self._id = None
         self._lifecycle_state = None
         self._time_created = None
@@ -226,6 +240,40 @@ class Vcn(object):
         self._default_security_list_id = default_security_list_id
 
     @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this Vcn.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this Vcn.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this Vcn.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this Vcn.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
+
+    @property
     def display_name(self):
         """
         Gets the display_name of this Vcn.
@@ -302,6 +350,42 @@ class Vcn(object):
         :type: str
         """
         self._dns_label = dns_label
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this Vcn.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see
+        `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this Vcn.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this Vcn.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see
+        `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this Vcn.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
 
     @property
     def id(self):

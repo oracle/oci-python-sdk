@@ -7,31 +7,31 @@ from ...decorators import init_model_state_from_kwargs
 
 
 @init_model_state_from_kwargs
-class CreateUserDetails(object):
+class CreateTagNamespaceDetails(object):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new CreateUserDetails object with values from values from keyword arguments.
+        Initializes a new CreateTagNamespaceDetails object with values from values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param compartment_id:
-            The value to assign to the compartment_id property of this CreateUserDetails.
+            The value to assign to the compartment_id property of this CreateTagNamespaceDetails.
         :type compartment_id: str
 
         :param name:
-            The value to assign to the name property of this CreateUserDetails.
+            The value to assign to the name property of this CreateTagNamespaceDetails.
         :type name: str
 
         :param description:
-            The value to assign to the description property of this CreateUserDetails.
+            The value to assign to the description property of this CreateTagNamespaceDetails.
         :type description: str
 
         :param freeform_tags:
-            The value to assign to the freeform_tags property of this CreateUserDetails.
+            The value to assign to the freeform_tags property of this CreateTagNamespaceDetails.
         :type freeform_tags: dict(str, str)
 
         :param defined_tags:
-            The value to assign to the defined_tags property of this CreateUserDetails.
+            The value to assign to the defined_tags property of this CreateTagNamespaceDetails.
         :type defined_tags: dict(str, dict(str, object))
 
         """
@@ -60,11 +60,11 @@ class CreateUserDetails(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this CreateUserDetails.
+        Gets the compartment_id of this CreateTagNamespaceDetails.
         The OCID of the tenancy containing the user.
 
 
-        :return: The compartment_id of this CreateUserDetails.
+        :return: The compartment_id of this CreateTagNamespaceDetails.
         :rtype: str
         """
         return self._compartment_id
@@ -72,11 +72,11 @@ class CreateUserDetails(object):
     @compartment_id.setter
     def compartment_id(self, compartment_id):
         """
-        Sets the compartment_id of this CreateUserDetails.
+        Sets the compartment_id of this CreateTagNamespaceDetails.
         The OCID of the tenancy containing the user.
 
 
-        :param compartment_id: The compartment_id of this CreateUserDetails.
+        :param compartment_id: The compartment_id of this CreateTagNamespaceDetails.
         :type: str
         """
         self._compartment_id = compartment_id
@@ -84,12 +84,11 @@ class CreateUserDetails(object):
     @property
     def name(self):
         """
-        Gets the name of this CreateUserDetails.
-        The name you assign to the user during creation. This is the user's login for the Console.
-        The name must be unique across all users in the tenancy and cannot be changed.
+        Gets the name of this CreateTagNamespaceDetails.
+        The name of the tagNamespace. It must be unique across all tagNamespaces in the tenancy and cannot be changed.
 
 
-        :return: The name of this CreateUserDetails.
+        :return: The name of this CreateTagNamespaceDetails.
         :rtype: str
         """
         return self._name
@@ -97,12 +96,11 @@ class CreateUserDetails(object):
     @name.setter
     def name(self, name):
         """
-        Sets the name of this CreateUserDetails.
-        The name you assign to the user during creation. This is the user's login for the Console.
-        The name must be unique across all users in the tenancy and cannot be changed.
+        Sets the name of this CreateTagNamespaceDetails.
+        The name of the tagNamespace. It must be unique across all tagNamespaces in the tenancy and cannot be changed.
 
 
-        :param name: The name of this CreateUserDetails.
+        :param name: The name of this CreateTagNamespaceDetails.
         :type: str
         """
         self._name = name
@@ -110,11 +108,11 @@ class CreateUserDetails(object):
     @property
     def description(self):
         """
-        Gets the description of this CreateUserDetails.
-        The description you assign to the user during creation. Does not have to be unique, and it's changeable.
+        Gets the description of this CreateTagNamespaceDetails.
+        The description of the tagNamespace.
 
 
-        :return: The description of this CreateUserDetails.
+        :return: The description of this CreateTagNamespaceDetails.
         :rtype: str
         """
         return self._description
@@ -122,11 +120,11 @@ class CreateUserDetails(object):
     @description.setter
     def description(self, description):
         """
-        Sets the description of this CreateUserDetails.
-        The description you assign to the user during creation. Does not have to be unique, and it's changeable.
+        Sets the description of this CreateTagNamespaceDetails.
+        The description of the tagNamespace.
 
 
-        :param description: The description of this CreateUserDetails.
+        :param description: The description of this CreateTagNamespaceDetails.
         :type: str
         """
         self._description = description
@@ -134,12 +132,12 @@ class CreateUserDetails(object):
     @property
     def freeform_tags(self):
         """
-        Gets the freeform_tags of this CreateUserDetails.
+        Gets the freeform_tags of this CreateTagNamespaceDetails.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
 
 
-        :return: The freeform_tags of this CreateUserDetails.
+        :return: The freeform_tags of this CreateTagNamespaceDetails.
         :rtype: dict(str, str)
         """
         return self._freeform_tags
@@ -147,12 +145,12 @@ class CreateUserDetails(object):
     @freeform_tags.setter
     def freeform_tags(self, freeform_tags):
         """
-        Sets the freeform_tags of this CreateUserDetails.
+        Sets the freeform_tags of this CreateTagNamespaceDetails.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
 
 
-        :param freeform_tags: The freeform_tags of this CreateUserDetails.
+        :param freeform_tags: The freeform_tags of this CreateTagNamespaceDetails.
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
@@ -160,12 +158,12 @@ class CreateUserDetails(object):
     @property
     def defined_tags(self):
         """
-        Gets the defined_tags of this CreateUserDetails.
+        Gets the defined_tags of this CreateTagNamespaceDetails.
         Usage of predefined tag keys. These predefined keys are scoped to namespaces.
         Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
 
 
-        :return: The defined_tags of this CreateUserDetails.
+        :return: The defined_tags of this CreateTagNamespaceDetails.
         :rtype: dict(str, dict(str, object))
         """
         return self._defined_tags
@@ -173,12 +171,12 @@ class CreateUserDetails(object):
     @defined_tags.setter
     def defined_tags(self, defined_tags):
         """
-        Sets the defined_tags of this CreateUserDetails.
+        Sets the defined_tags of this CreateTagNamespaceDetails.
         Usage of predefined tag keys. These predefined keys are scoped to namespaces.
         Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
 
 
-        :param defined_tags: The defined_tags of this CreateUserDetails.
+        :param defined_tags: The defined_tags of this CreateTagNamespaceDetails.
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags

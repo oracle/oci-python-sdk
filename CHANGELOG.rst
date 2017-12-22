@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+1.3.12 - 2018-01-11
+====================
+
+Added
+-----
+* Support for tagging:
+
+  * Support for creating, updating, retrieving and listing tags and tag namespaces (these operations can be found in Identity Service)
+  * Support for adding freeform and defined tags to resources in Core Services (Networking, Compute, and Block Volume) and Identity Service
+
+====================
 1.3.11 - 2017-12-11
 ====================
 

@@ -26,6 +26,10 @@ class LaunchInstanceDetails(object):
             The value to assign to the create_vnic_details property of this LaunchInstanceDetails.
         :type create_vnic_details: CreateVnicDetails
 
+        :param defined_tags:
+            The value to assign to the defined_tags property of this LaunchInstanceDetails.
+        :type defined_tags: dict(str, dict(str, object))
+
         :param display_name:
             The value to assign to the display_name property of this LaunchInstanceDetails.
         :type display_name: str
@@ -33,6 +37,10 @@ class LaunchInstanceDetails(object):
         :param extended_metadata:
             The value to assign to the extended_metadata property of this LaunchInstanceDetails.
         :type extended_metadata: dict(str, object)
+
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this LaunchInstanceDetails.
+        :type freeform_tags: dict(str, str)
 
         :param hostname_label:
             The value to assign to the hostname_label property of this LaunchInstanceDetails.
@@ -67,8 +75,10 @@ class LaunchInstanceDetails(object):
             'availability_domain': 'str',
             'compartment_id': 'str',
             'create_vnic_details': 'CreateVnicDetails',
+            'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'extended_metadata': 'dict(str, object)',
+            'freeform_tags': 'dict(str, str)',
             'hostname_label': 'str',
             'image_id': 'str',
             'ipxe_script': 'str',
@@ -82,8 +92,10 @@ class LaunchInstanceDetails(object):
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
             'create_vnic_details': 'createVnicDetails',
+            'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'extended_metadata': 'extendedMetadata',
+            'freeform_tags': 'freeformTags',
             'hostname_label': 'hostnameLabel',
             'image_id': 'imageId',
             'ipxe_script': 'ipxeScript',
@@ -96,8 +108,10 @@ class LaunchInstanceDetails(object):
         self._availability_domain = None
         self._compartment_id = None
         self._create_vnic_details = None
+        self._defined_tags = None
         self._display_name = None
         self._extended_metadata = None
+        self._freeform_tags = None
         self._hostname_label = None
         self._image_id = None
         self._ipxe_script = None
@@ -185,6 +199,40 @@ class LaunchInstanceDetails(object):
         self._create_vnic_details = create_vnic_details
 
     @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this LaunchInstanceDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this LaunchInstanceDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this LaunchInstanceDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this LaunchInstanceDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
+
+    @property
     def display_name(self):
         """
         Gets the display_name of this LaunchInstanceDetails.
@@ -247,10 +295,46 @@ class LaunchInstanceDetails(object):
         self._extended_metadata = extended_metadata
 
     @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this LaunchInstanceDetails.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see
+        `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this LaunchInstanceDetails.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this LaunchInstanceDetails.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see
+        `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this LaunchInstanceDetails.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
     def hostname_label(self):
         """
         Gets the hostname_label of this LaunchInstanceDetails.
-        Deprecated. Instead Use `hostnameLabel` in
+        Deprecated. Instead use `hostnameLabel` in
         :class:`CreateVnicDetails`.
         If you provide both, the values must match.
 
@@ -264,7 +348,7 @@ class LaunchInstanceDetails(object):
     def hostname_label(self, hostname_label):
         """
         Sets the hostname_label of this LaunchInstanceDetails.
-        Deprecated. Instead Use `hostnameLabel` in
+        Deprecated. Instead use `hostnameLabel` in
         :class:`CreateVnicDetails`.
         If you provide both, the values must match.
 
@@ -553,6 +637,7 @@ class LaunchInstanceDetails(object):
         """
         Gets the source_details of this LaunchInstanceDetails.
         Details for creating an instance.
+        Use this parameter to specify whether a boot volume or an image should be used to launch a new instance.
 
 
         :return: The source_details of this LaunchInstanceDetails.
@@ -565,6 +650,7 @@ class LaunchInstanceDetails(object):
         """
         Sets the source_details of this LaunchInstanceDetails.
         Details for creating an instance.
+        Use this parameter to specify whether a boot volume or an image should be used to launch a new instance.
 
 
         :param source_details: The source_details of this LaunchInstanceDetails.

@@ -44,6 +44,14 @@ class User(object):
             The value to assign to the inactive_status property of this User.
         :type inactive_status: int
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this User.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this User.
+        :type defined_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -52,7 +60,9 @@ class User(object):
             'description': 'str',
             'time_created': 'datetime',
             'lifecycle_state': 'str',
-            'inactive_status': 'int'
+            'inactive_status': 'int',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -62,7 +72,9 @@ class User(object):
             'description': 'description',
             'time_created': 'timeCreated',
             'lifecycle_state': 'lifecycleState',
-            'inactive_status': 'inactiveStatus'
+            'inactive_status': 'inactiveStatus',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags'
         }
 
         self._id = None
@@ -72,6 +84,8 @@ class User(object):
         self._time_created = None
         self._lifecycle_state = None
         self._inactive_status = None
+        self._freeform_tags = None
+        self._defined_tags = None
 
     @property
     def id(self):
@@ -264,6 +278,60 @@ class User(object):
         :type: int
         """
         self._inactive_status = inactive_status
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this User.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists solely for
+        compatibility with other cloud provider tagging schemes.
+        Example: `{\"bar-key\": \"value\"}`
+
+
+        :return: The freeform_tags of this User.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this User.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists solely for
+        compatibility with other cloud provider tagging schemes.
+        Example: `{\"bar-key\": \"value\"}`
+
+
+        :param freeform_tags: The freeform_tags of this User.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this User.
+        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+
+
+        :return: The defined_tags of this User.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this User.
+        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+
+
+        :param defined_tags: The defined_tags of this User.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

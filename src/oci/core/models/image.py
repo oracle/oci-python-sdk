@@ -26,9 +26,17 @@ class Image(object):
             The value to assign to the create_image_allowed property of this Image.
         :type create_image_allowed: bool
 
+        :param defined_tags:
+            The value to assign to the defined_tags property of this Image.
+        :type defined_tags: dict(str, dict(str, object))
+
         :param display_name:
             The value to assign to the display_name property of this Image.
         :type display_name: str
+
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this Image.
+        :type freeform_tags: dict(str, str)
 
         :param id:
             The value to assign to the id property of this Image.
@@ -57,7 +65,9 @@ class Image(object):
             'base_image_id': 'str',
             'compartment_id': 'str',
             'create_image_allowed': 'bool',
+            'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
+            'freeform_tags': 'dict(str, str)',
             'id': 'str',
             'lifecycle_state': 'str',
             'operating_system': 'str',
@@ -69,7 +79,9 @@ class Image(object):
             'base_image_id': 'baseImageId',
             'compartment_id': 'compartmentId',
             'create_image_allowed': 'createImageAllowed',
+            'defined_tags': 'definedTags',
             'display_name': 'displayName',
+            'freeform_tags': 'freeformTags',
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
             'operating_system': 'operatingSystem',
@@ -80,7 +92,9 @@ class Image(object):
         self._base_image_id = None
         self._compartment_id = None
         self._create_image_allowed = None
+        self._defined_tags = None
         self._display_name = None
+        self._freeform_tags = None
         self._id = None
         self._lifecycle_state = None
         self._operating_system = None
@@ -141,7 +155,6 @@ class Image(object):
         Gets the create_image_allowed of this Image.
         Whether instances launched with this image can be used to create new images.
         For example, you cannot create an image of an Oracle Database instance.
-
         Example: `true`
 
 
@@ -156,7 +169,6 @@ class Image(object):
         Sets the create_image_allowed of this Image.
         Whether instances launched with this image can be used to create new images.
         For example, you cannot create an image of an Oracle Database instance.
-
         Example: `true`
 
 
@@ -164,6 +176,40 @@ class Image(object):
         :type: bool
         """
         self._create_image_allowed = create_image_allowed
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this Image.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this Image.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this Image.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this Image.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     @property
     def display_name(self):
@@ -196,6 +242,42 @@ class Image(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this Image.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see
+        `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this Image.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this Image.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see
+        `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this Image.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
 
     @property
     def id(self):

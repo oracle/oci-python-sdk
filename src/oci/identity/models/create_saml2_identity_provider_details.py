@@ -37,6 +37,14 @@ class CreateSaml2IdentityProviderDetails(CreateIdentityProviderDetails):
             Allowed values for this property are: "SAML2"
         :type protocol: str
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this CreateSaml2IdentityProviderDetails.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this CreateSaml2IdentityProviderDetails.
+        :type defined_tags: dict(str, dict(str, object))
+
         :param metadata_url:
             The value to assign to the metadata_url property of this CreateSaml2IdentityProviderDetails.
         :type metadata_url: str
@@ -52,6 +60,8 @@ class CreateSaml2IdentityProviderDetails(CreateIdentityProviderDetails):
             'description': 'str',
             'product_type': 'str',
             'protocol': 'str',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))',
             'metadata_url': 'str',
             'metadata': 'str'
         }
@@ -62,6 +72,8 @@ class CreateSaml2IdentityProviderDetails(CreateIdentityProviderDetails):
             'description': 'description',
             'product_type': 'productType',
             'protocol': 'protocol',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags',
             'metadata_url': 'metadataUrl',
             'metadata': 'metadata'
         }
@@ -71,6 +83,8 @@ class CreateSaml2IdentityProviderDetails(CreateIdentityProviderDetails):
         self._description = None
         self._product_type = None
         self._protocol = None
+        self._freeform_tags = None
+        self._defined_tags = None
         self._metadata_url = None
         self._metadata = None
         self._protocol = 'SAML2'

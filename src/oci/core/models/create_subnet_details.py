@@ -26,6 +26,10 @@ class CreateSubnetDetails(object):
             The value to assign to the compartment_id property of this CreateSubnetDetails.
         :type compartment_id: str
 
+        :param defined_tags:
+            The value to assign to the defined_tags property of this CreateSubnetDetails.
+        :type defined_tags: dict(str, dict(str, object))
+
         :param dhcp_options_id:
             The value to assign to the dhcp_options_id property of this CreateSubnetDetails.
         :type dhcp_options_id: str
@@ -37,6 +41,10 @@ class CreateSubnetDetails(object):
         :param dns_label:
             The value to assign to the dns_label property of this CreateSubnetDetails.
         :type dns_label: str
+
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this CreateSubnetDetails.
+        :type freeform_tags: dict(str, str)
 
         :param prohibit_public_ip_on_vnic:
             The value to assign to the prohibit_public_ip_on_vnic property of this CreateSubnetDetails.
@@ -59,9 +67,11 @@ class CreateSubnetDetails(object):
             'availability_domain': 'str',
             'cidr_block': 'str',
             'compartment_id': 'str',
+            'defined_tags': 'dict(str, dict(str, object))',
             'dhcp_options_id': 'str',
             'display_name': 'str',
             'dns_label': 'str',
+            'freeform_tags': 'dict(str, str)',
             'prohibit_public_ip_on_vnic': 'bool',
             'route_table_id': 'str',
             'security_list_ids': 'list[str]',
@@ -72,9 +82,11 @@ class CreateSubnetDetails(object):
             'availability_domain': 'availabilityDomain',
             'cidr_block': 'cidrBlock',
             'compartment_id': 'compartmentId',
+            'defined_tags': 'definedTags',
             'dhcp_options_id': 'dhcpOptionsId',
             'display_name': 'displayName',
             'dns_label': 'dnsLabel',
+            'freeform_tags': 'freeformTags',
             'prohibit_public_ip_on_vnic': 'prohibitPublicIpOnVnic',
             'route_table_id': 'routeTableId',
             'security_list_ids': 'securityListIds',
@@ -84,9 +96,11 @@ class CreateSubnetDetails(object):
         self._availability_domain = None
         self._cidr_block = None
         self._compartment_id = None
+        self._defined_tags = None
         self._dhcp_options_id = None
         self._display_name = None
         self._dns_label = None
+        self._freeform_tags = None
         self._prohibit_public_ip_on_vnic = None
         self._route_table_id = None
         self._security_list_ids = None
@@ -171,6 +185,40 @@ class CreateSubnetDetails(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this CreateSubnetDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this CreateSubnetDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this CreateSubnetDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this CreateSubnetDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     @property
     def dhcp_options_id(self):
@@ -275,6 +323,42 @@ class CreateSubnetDetails(object):
         :type: str
         """
         self._dns_label = dns_label
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this CreateSubnetDetails.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see
+        `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this CreateSubnetDetails.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this CreateSubnetDetails.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see
+        `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this CreateSubnetDetails.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
 
     @property
     def prohibit_public_ip_on_vnic(self):
