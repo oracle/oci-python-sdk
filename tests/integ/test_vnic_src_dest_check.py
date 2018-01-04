@@ -134,7 +134,7 @@ class TestVnicSourceDestCheck:
 
         instance_name = util.random_name('python_sdk_test_instance')
         image_id = 'ocid1.image.oc1.phx.aaaaaaaamv5wg7ffvaxaba3orhpuya7x7opz24hd6m7epmwfqbeudi6meepq'  # ol6.8-base-0.0.2
-        shape = 'VM.Standard1.2'
+        shape = 'VM.Standard1.1'
 
         create_vnic_details = oci.core.models.CreateVnicDetails()
         create_vnic_details.subnet_id = self.subnet_ocid

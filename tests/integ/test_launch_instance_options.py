@@ -56,7 +56,7 @@ class TestLaunchInstanceOptions:
     def subtest_launch_instance_options(self, compute, virtual_network):
         instance_name = util.random_name('python_sdk_test_instance_options')
         image_id = util.oracle_linux_image()
-        shape = 'VM.Standard1.2'
+        shape = 'VM.Standard1.1'
         hostname_label = util.random_name('bminstance', insert_underscore=False)
 
         extended_metadata = {

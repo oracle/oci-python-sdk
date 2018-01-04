@@ -80,7 +80,7 @@ class TestCompute:
     def subtest_instance_operations(self, compute):
         instance_name = util.random_name('python_sdk_test_instance')
         image_id = util.oracle_linux_image()
-        shape = 'VM.Standard1.2'
+        shape = 'VM.Standard1.1'
 
         create_instance_details = oci.core.models.LaunchInstanceDetails()
         create_instance_details.compartment_id = util.COMPARTMENT_ID
@@ -113,7 +113,7 @@ class TestCompute:
     def subtest_windows_instance_operations(self, compute):
         instance_name = util.random_name('python_sdk_test_instance')
         image_id = util.windows_vm_image()
-        shape = 'VM.Standard1.2'
+        shape = 'VM.Standard1.1'
 
         launch_instance_details = oci.core.models.LaunchInstanceDetails()
         launch_instance_details.compartment_id = util.COMPARTMENT_ID
