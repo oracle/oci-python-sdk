@@ -177,3 +177,28 @@ You must also update the following locations in code where we are using OCIDs th
 - tests/integ/test_launch_instance_options.py, update image OCIDs to use valid image OCIDs for IAD
 - tests/integ/test_launch_instance_tutorial.py, update image OCIDs to use valid image OCIDs for IAD
 - tests/integ/test_object_storage.py, update namespace from 'internalbriangustafson' to 'bmcs-dex-us-ashburn-1'
+
+Running the Code Generator
+================
+
+You run the code generator by executing
+
+    mvn clean install
+
+Note that at this time, it will execute the ``merge_and_validate_spec.py`` script, which is part of the ``coreservices-api-spec`` artifact, and execute it. That script only works with Python 2.x, and not with Python 3.x. That means when you want to run the code generator, ``python`` on the command line has to run the Python 2.x interpreter.
+
+    $ python --version
+    Python 2.7.10
+
+If it returns something that is 3.x, you can use ``virtualenv`` to create a virtual environment that runs Python 2.x (of course, you have to have Python 2.x installed somewhere):
+
+    # Install the virtual environment in the current directory
+    virtualenv --python=<path to Python 2.x executable> temp/python2
+    # Activate virtual environment
+    source temp/python2/bin/activate
+    # Install packages
+    pip install PyYAML
+    pip install six
+    
+    # Now you can run the code generator
+    mvn clean install
