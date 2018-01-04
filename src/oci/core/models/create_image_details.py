@@ -38,6 +38,11 @@ class CreateImageDetails(object):
             The value to assign to the instance_id property of this CreateImageDetails.
         :type instance_id: str
 
+        :param launch_mode:
+            The value to assign to the launch_mode property of this CreateImageDetails.
+            Allowed values for this property are: "NATIVE", "EMULATED", "CUSTOM"
+        :type launch_mode: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -45,7 +50,8 @@ class CreateImageDetails(object):
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'image_source_details': 'ImageSourceDetails',
-            'instance_id': 'str'
+            'instance_id': 'str',
+            'launch_mode': 'str'
         }
 
         self.attribute_map = {
@@ -54,7 +60,8 @@ class CreateImageDetails(object):
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'image_source_details': 'imageSourceDetails',
-            'instance_id': 'instanceId'
+            'instance_id': 'instanceId',
+            'launch_mode': 'launchMode'
         }
 
         self._compartment_id = None
@@ -63,6 +70,7 @@ class CreateImageDetails(object):
         self._freeform_tags = None
         self._image_source_details = None
         self._instance_id = None
+        self._launch_mode = None
 
     @property
     def compartment_id(self):
@@ -239,6 +247,48 @@ class CreateImageDetails(object):
         :type: str
         """
         self._instance_id = instance_id
+
+    @property
+    def launch_mode(self):
+        """
+        Gets the launch_mode of this CreateImageDetails.
+        VM configuration modes.
+        * `NATIVE` - VMs launch with iSCSI boot and VFIO devices. Most modern OSes support these devices, but
+        may need to be specially configured to boot properly.  This is the default for Oracle provided images.
+        * `EMULATED` - VMs launch with emulated devices, such as E1000 network driver and emulated SCSI disk
+        controller. Works for modern OS as well as older OS such as RHEL4.
+        * `CUSTOM` - VMs launch with custom configuration specified by the launchOptions parameter.
+
+        Allowed values for this property are: "NATIVE", "EMULATED", "CUSTOM"
+
+
+        :return: The launch_mode of this CreateImageDetails.
+        :rtype: str
+        """
+        return self._launch_mode
+
+    @launch_mode.setter
+    def launch_mode(self, launch_mode):
+        """
+        Sets the launch_mode of this CreateImageDetails.
+        VM configuration modes.
+        * `NATIVE` - VMs launch with iSCSI boot and VFIO devices. Most modern OSes support these devices, but
+        may need to be specially configured to boot properly.  This is the default for Oracle provided images.
+        * `EMULATED` - VMs launch with emulated devices, such as E1000 network driver and emulated SCSI disk
+        controller. Works for modern OS as well as older OS such as RHEL4.
+        * `CUSTOM` - VMs launch with custom configuration specified by the launchOptions parameter.
+
+
+        :param launch_mode: The launch_mode of this CreateImageDetails.
+        :type: str
+        """
+        allowed_values = ["NATIVE", "EMULATED", "CUSTOM"]
+        if not value_allowed_none_or_none_sentinel(launch_mode, allowed_values):
+            raise ValueError(
+                "Invalid value for `launch_mode`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._launch_mode = launch_mode
 
     def __repr__(self):
         return formatted_flat_dict(self)

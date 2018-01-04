@@ -15,6 +15,11 @@ class ImageSourceViaObjectStorageTupleDetails(ImageSourceDetails):
         of this class is ``objectStorageTuple`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param source_image_type:
+            The value to assign to the source_image_type property of this ImageSourceViaObjectStorageTupleDetails.
+            Allowed values for this property are: "QCOW2", "VMDK"
+        :type source_image_type: str
+
         :param source_type:
             The value to assign to the source_type property of this ImageSourceViaObjectStorageTupleDetails.
         :type source_type: str
@@ -33,6 +38,7 @@ class ImageSourceViaObjectStorageTupleDetails(ImageSourceDetails):
 
         """
         self.swagger_types = {
+            'source_image_type': 'str',
             'source_type': 'str',
             'bucket_name': 'str',
             'namespace_name': 'str',
@@ -40,12 +46,14 @@ class ImageSourceViaObjectStorageTupleDetails(ImageSourceDetails):
         }
 
         self.attribute_map = {
+            'source_image_type': 'sourceImageType',
             'source_type': 'sourceType',
             'bucket_name': 'bucketName',
             'namespace_name': 'namespaceName',
             'object_name': 'objectName'
         }
 
+        self._source_image_type = None
         self._source_type = None
         self._bucket_name = None
         self._namespace_name = None

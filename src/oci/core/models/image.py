@@ -42,6 +42,16 @@ class Image(object):
             The value to assign to the id property of this Image.
         :type id: str
 
+        :param launch_mode:
+            The value to assign to the launch_mode property of this Image.
+            Allowed values for this property are: "NATIVE", "EMULATED", "CUSTOM", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type launch_mode: str
+
+        :param launch_options:
+            The value to assign to the launch_options property of this Image.
+        :type launch_options: LaunchOptions
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Image.
             Allowed values for this property are: "PROVISIONING", "IMPORTING", "AVAILABLE", "EXPORTING", "DISABLED", "DELETED", 'UNKNOWN_ENUM_VALUE'.
@@ -69,6 +79,8 @@ class Image(object):
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'id': 'str',
+            'launch_mode': 'str',
+            'launch_options': 'LaunchOptions',
             'lifecycle_state': 'str',
             'operating_system': 'str',
             'operating_system_version': 'str',
@@ -83,6 +95,8 @@ class Image(object):
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'id': 'id',
+            'launch_mode': 'launchMode',
+            'launch_options': 'launchOptions',
             'lifecycle_state': 'lifecycleState',
             'operating_system': 'operatingSystem',
             'operating_system_version': 'operatingSystemVersion',
@@ -96,6 +110,8 @@ class Image(object):
         self._display_name = None
         self._freeform_tags = None
         self._id = None
+        self._launch_mode = None
+        self._launch_options = None
         self._lifecycle_state = None
         self._operating_system = None
         self._operating_system_version = None
@@ -302,6 +318,66 @@ class Image(object):
         :type: str
         """
         self._id = id
+
+    @property
+    def launch_mode(self):
+        """
+        Gets the launch_mode of this Image.
+        VM configuration modes.
+        * `NATIVE` - VMs launch with iSCSI boot and VFIO devices. Most modern OSes support these devices, but
+        may need to be specially configured to boot properly.  This is the default for Oracle provided images.
+        * `EMULATED` - VMs launch with emulated devices, such as E1000 network driver and emulated SCSI disk
+        controller. Works for modern OS as well as older OS such as RHEL4.
+        * `CUSTOM` - VMs launch with custom configuration specified by the launchOptions parameter.
+
+        Allowed values for this property are: "NATIVE", "EMULATED", "CUSTOM", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The launch_mode of this Image.
+        :rtype: str
+        """
+        return self._launch_mode
+
+    @launch_mode.setter
+    def launch_mode(self, launch_mode):
+        """
+        Sets the launch_mode of this Image.
+        VM configuration modes.
+        * `NATIVE` - VMs launch with iSCSI boot and VFIO devices. Most modern OSes support these devices, but
+        may need to be specially configured to boot properly.  This is the default for Oracle provided images.
+        * `EMULATED` - VMs launch with emulated devices, such as E1000 network driver and emulated SCSI disk
+        controller. Works for modern OS as well as older OS such as RHEL4.
+        * `CUSTOM` - VMs launch with custom configuration specified by the launchOptions parameter.
+
+
+        :param launch_mode: The launch_mode of this Image.
+        :type: str
+        """
+        allowed_values = ["NATIVE", "EMULATED", "CUSTOM"]
+        if not value_allowed_none_or_none_sentinel(launch_mode, allowed_values):
+            launch_mode = 'UNKNOWN_ENUM_VALUE'
+        self._launch_mode = launch_mode
+
+    @property
+    def launch_options(self):
+        """
+        Gets the launch_options of this Image.
+
+        :return: The launch_options of this Image.
+        :rtype: LaunchOptions
+        """
+        return self._launch_options
+
+    @launch_options.setter
+    def launch_options(self, launch_options):
+        """
+        Sets the launch_options of this Image.
+
+        :param launch_options: The launch_options of this Image.
+        :type: LaunchOptions
+        """
+        self._launch_options = launch_options
 
     @property
     def lifecycle_state(self):

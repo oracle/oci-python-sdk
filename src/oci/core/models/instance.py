@@ -50,6 +50,16 @@ class Instance(object):
             The value to assign to the ipxe_script property of this Instance.
         :type ipxe_script: str
 
+        :param launch_mode:
+            The value to assign to the launch_mode property of this Instance.
+            Allowed values for this property are: "NATIVE", "EMULATED", "CUSTOM", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type launch_mode: str
+
+        :param launch_options:
+            The value to assign to the launch_options property of this Instance.
+        :type launch_options: LaunchOptions
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Instance.
             Allowed values for this property are: "PROVISIONING", "RUNNING", "STARTING", "STOPPING", "STOPPED", "CREATING_IMAGE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
@@ -87,6 +97,8 @@ class Instance(object):
             'id': 'str',
             'image_id': 'str',
             'ipxe_script': 'str',
+            'launch_mode': 'str',
+            'launch_options': 'LaunchOptions',
             'lifecycle_state': 'str',
             'metadata': 'dict(str, str)',
             'region': 'str',
@@ -105,6 +117,8 @@ class Instance(object):
             'id': 'id',
             'image_id': 'imageId',
             'ipxe_script': 'ipxeScript',
+            'launch_mode': 'launchMode',
+            'launch_options': 'launchOptions',
             'lifecycle_state': 'lifecycleState',
             'metadata': 'metadata',
             'region': 'region',
@@ -122,6 +136,8 @@ class Instance(object):
         self._id = None
         self._image_id = None
         self._ipxe_script = None
+        self._launch_mode = None
+        self._launch_options = None
         self._lifecycle_state = None
         self._metadata = None
         self._region = None
@@ -430,6 +446,66 @@ class Instance(object):
         :type: str
         """
         self._ipxe_script = ipxe_script
+
+    @property
+    def launch_mode(self):
+        """
+        Gets the launch_mode of this Instance.
+        VM configuration modes.
+        * `NATIVE` - VMs launch with iSCSI boot and VFIO devices. Most modern OSes support these devices, but
+        may need to be specially configured to boot properly.  This is the default for Oracle provided images.
+        * `EMULATED` - VMs launch with emulated devices, such as E1000 network driver and emulated SCSI disk
+        controller. Works for modern OS as well as older OS such as RHEL4.
+        * `CUSTOM` - VMs launch with custom configuration specified by the launchOptions parameter.
+
+        Allowed values for this property are: "NATIVE", "EMULATED", "CUSTOM", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The launch_mode of this Instance.
+        :rtype: str
+        """
+        return self._launch_mode
+
+    @launch_mode.setter
+    def launch_mode(self, launch_mode):
+        """
+        Sets the launch_mode of this Instance.
+        VM configuration modes.
+        * `NATIVE` - VMs launch with iSCSI boot and VFIO devices. Most modern OSes support these devices, but
+        may need to be specially configured to boot properly.  This is the default for Oracle provided images.
+        * `EMULATED` - VMs launch with emulated devices, such as E1000 network driver and emulated SCSI disk
+        controller. Works for modern OS as well as older OS such as RHEL4.
+        * `CUSTOM` - VMs launch with custom configuration specified by the launchOptions parameter.
+
+
+        :param launch_mode: The launch_mode of this Instance.
+        :type: str
+        """
+        allowed_values = ["NATIVE", "EMULATED", "CUSTOM"]
+        if not value_allowed_none_or_none_sentinel(launch_mode, allowed_values):
+            launch_mode = 'UNKNOWN_ENUM_VALUE'
+        self._launch_mode = launch_mode
+
+    @property
+    def launch_options(self):
+        """
+        Gets the launch_options of this Instance.
+
+        :return: The launch_options of this Instance.
+        :rtype: LaunchOptions
+        """
+        return self._launch_options
+
+    @launch_options.setter
+    def launch_options(self, launch_options):
+        """
+        Sets the launch_options of this Instance.
+
+        :param launch_options: The launch_options of this Instance.
+        :type: LaunchOptions
+        """
+        self._launch_options = launch_options
 
     @property
     def lifecycle_state(self):
