@@ -22,7 +22,11 @@ ENUM_ATTR_TO_VALUE = {
     'CreatePreauthenticatedRequestDetails': {'access_type': 'ObjectRead'},
     'CreateDbHomeWithDbSystemIdBase': {'source': 'DB_BACKUP'},
     'CreateDbHomeWithDbSystemIdFromBackupDetails': {'source': 'DB_BACKUP'},
-    'CreateDbHomeWithDbSystemIdDetails': {'source': 'NONE'}
+    'CreateDbHomeWithDbSystemIdDetails': {'source': 'NONE'},
+    'CreateImageDetails': {'launch_mode': 'NATIVE'},
+    'ImageSourceDetails': {'source_image_type': 'QCOW2'},
+    'ImageSourceViaObjectStorageUriDetails': {'source_image_type': 'QCOW2'},
+    'ImageSourceViaObjectStorageTupleDetails': {'source_image_type': 'QCOW2'}
 }
 
 
