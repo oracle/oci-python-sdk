@@ -1,3 +1,6 @@
+# coding: utf-8
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+
 # A very basic script that can be run at the end of a wercker build to ensure that the SDK can be imported
 # and used to make a call. This uses dummy values so the intended behaviour is that the call will fail
 # with a ServiceError (i.e. we did actually hit the service and it came back with an error response).

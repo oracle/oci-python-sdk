@@ -23,6 +23,7 @@
         <audit-spec-file>hemlock-api-20160918.yaml</audit-spec-file>
 
         <enabled-groups-file>${project.basedir}/release-sdk.txt</enabled-groups-file>
+        <inceptionYear>2016</inceptionYear>
     </properties>
     <dependencies>
         <dependency>
@@ -52,6 +53,23 @@
     </dependencies>
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <executions>
+                <execution>
+                    <id>timestamp-property</id>
+                    <goals>
+                        <goal>timestamp-property</goal>
+                    </goals>
+                    <phase>validate</phase>
+                        <configuration>
+                            <name>current.year</name>
+                            <pattern>yyyy</pattern>
+                        </configuration>
+                </execution>
+                </executions>
+            </plugin>
             <!--
                  Unpack all the spec artifacts into ${spec-temp-dir}/<service>
             -->
@@ -624,6 +642,50 @@
                         <goals>
                             <goal>run</goal>
                         </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.mycila</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+                <version>3.0</version>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>format</goal>
+                        </goals>
+                        <configuration>
+                            <!--  
+                                This definition file overrides the standard script_style/SCRIPT_STYLE header written by the plugin. We
+                                need this because otherwise the plugin will write the header with a leading and trailing empty comment, for
+                                example:
+
+                                #
+                                # header line
+                                # header line
+                                #
+
+                                Whereas we just want:
+
+                                # header line
+                                # header line
+                            -->
+                            <headerDefinitions>
+                                <headerDefinition>${project.basedir}/license_header_definition.xml</headerDefinition>
+                            </headerDefinitions>
+                            <aggregate>true</aggregate>
+                            <header>${project.basedir}/licenseheader.txt</header>
+                            <includes>
+                                <include>src/oci/**/*.py</include>
+                                <include>tests/**/*.py</include>
+                                <include>examples/*.py</include>
+                                <include>scripts/wercker_validate.py</include>
+                            </includes>
+                            <properties>
+                                <current.year>${current.year}</current.year>
+                            </properties>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>

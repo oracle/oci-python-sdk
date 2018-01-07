@@ -1,3 +1,6 @@
+# coding: utf-8
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+
 from oci.object_storage.transfer.constants import MEBIBYTE
 from tests.util import get_resource_path, random_number_string, unique_name
 from . import util
