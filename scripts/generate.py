@@ -18,10 +18,7 @@ SPECS_TO_SERVICES = {
     "core": ["blockstorage", "compute", "virtual_network"]
 }
 
-ROOT_INIT_FILE_TEMPLATE = """# coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
-
-from . import {spec_names}
+ROOT_INIT_FILE_TEMPLATE = """from . import {spec_names}
 from . import config, constants, decorators, exceptions, regions
 from .base_client import BaseClient
 from .request import Request
@@ -37,10 +34,7 @@ __all__ = [
 ]
 """
 
-SERVICE_ENDPOINTS_TEMPLATE = """# coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
-
-SERVICE_ENDPOINTS = {{
+SERVICE_ENDPOINTS_TEMPLATE = """SERVICE_ENDPOINTS = {{
     {endpoints}
 }}
 """

@@ -252,12 +252,10 @@ class CreateImageDetails(object):
     def launch_mode(self):
         """
         Gets the launch_mode of this CreateImageDetails.
-        VM configuration modes.
-        * `NATIVE` - VMs launch with iSCSI boot and VFIO devices. Most modern OSes support these devices, but
-        may need to be specially configured to boot properly.  This is the default for Oracle provided images.
-        * `EMULATED` - VMs launch with emulated devices, such as E1000 network driver and emulated SCSI disk
-        controller. Works for modern OS as well as older OS such as RHEL4.
-        * `CUSTOM` - VMs launch with custom configuration specified by the launchOptions parameter.
+        Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for Oracle-provided images.
+        * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+        * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
 
         Allowed values for this property are: "NATIVE", "EMULATED", "CUSTOM"
 
@@ -271,12 +269,10 @@ class CreateImageDetails(object):
     def launch_mode(self, launch_mode):
         """
         Sets the launch_mode of this CreateImageDetails.
-        VM configuration modes.
-        * `NATIVE` - VMs launch with iSCSI boot and VFIO devices. Most modern OSes support these devices, but
-        may need to be specially configured to boot properly.  This is the default for Oracle provided images.
-        * `EMULATED` - VMs launch with emulated devices, such as E1000 network driver and emulated SCSI disk
-        controller. Works for modern OS as well as older OS such as RHEL4.
-        * `CUSTOM` - VMs launch with custom configuration specified by the launchOptions parameter.
+        Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for Oracle-provided images.
+        * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+        * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
 
 
         :param launch_mode: The launch_mode of this CreateImageDetails.
