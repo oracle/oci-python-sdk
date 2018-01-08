@@ -53,7 +53,7 @@ class UpdateListenerDetails(object):
     @property
     def default_backend_set_name(self):
         """
-        Gets the default_backend_set_name of this UpdateListenerDetails.
+        **[Required]** Gets the default_backend_set_name of this UpdateListenerDetails.
         The name of the associated backend set.
 
 
@@ -77,7 +77,7 @@ class UpdateListenerDetails(object):
     @property
     def port(self):
         """
-        Gets the port of this UpdateListenerDetails.
+        **[Required]** Gets the port of this UpdateListenerDetails.
         The communication port for the listener.
 
         Example: `80`
@@ -105,7 +105,7 @@ class UpdateListenerDetails(object):
     @property
     def protocol(self):
         """
-        Gets the protocol of this UpdateListenerDetails.
+        **[Required]** Gets the protocol of this UpdateListenerDetails.
         The protocol on which the listener accepts connection requests.
         To get a list of valid protocols, use the :func:`list_protocols`
         operation.

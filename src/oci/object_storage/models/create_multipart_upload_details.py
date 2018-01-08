@@ -60,7 +60,7 @@ class CreateMultipartUploadDetails(object):
     @property
     def object(self):
         """
-        Gets the object of this CreateMultipartUploadDetails.
+        **[Required]** Gets the object of this CreateMultipartUploadDetails.
         The name of the object to which this multi-part upload is targeted. Avoid entering confidential information.
         Example: test/object1.log
 

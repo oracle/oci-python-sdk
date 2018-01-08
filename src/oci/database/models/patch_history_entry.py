@@ -108,7 +108,7 @@ class PatchHistoryEntry(object):
     @property
     def id(self):
         """
-        Gets the id of this PatchHistoryEntry.
+        **[Required]** Gets the id of this PatchHistoryEntry.
         The OCID of the patch history entry.
 
 
@@ -158,7 +158,7 @@ class PatchHistoryEntry(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this PatchHistoryEntry.
+        **[Required]** Gets the lifecycle_state of this PatchHistoryEntry.
         The current state of the action.
 
         Allowed values for this property are: "IN_PROGRESS", "SUCCEEDED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -188,7 +188,7 @@ class PatchHistoryEntry(object):
     @property
     def patch_id(self):
         """
-        Gets the patch_id of this PatchHistoryEntry.
+        **[Required]** Gets the patch_id of this PatchHistoryEntry.
         The OCID of the patch.
 
 
@@ -236,7 +236,7 @@ class PatchHistoryEntry(object):
     @property
     def time_started(self):
         """
-        Gets the time_started of this PatchHistoryEntry.
+        **[Required]** Gets the time_started of this PatchHistoryEntry.
         The date and time when the patch action started.
 
 

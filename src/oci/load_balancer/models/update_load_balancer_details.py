@@ -32,7 +32,7 @@ class UpdateLoadBalancerDetails(object):
     @property
     def display_name(self):
         """
-        Gets the display_name of this UpdateLoadBalancerDetails.
+        **[Required]** Gets the display_name of this UpdateLoadBalancerDetails.
         The user-friendly display name for the load balancer. It does not have to be unique, and it is changeable.
         Avoid entering confidential information.
 

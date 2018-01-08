@@ -184,7 +184,7 @@ class IScsiVolumeAttachment(VolumeAttachment):
     @property
     def ipv4(self):
         """
-        Gets the ipv4 of this IScsiVolumeAttachment.
+        **[Required]** Gets the ipv4 of this IScsiVolumeAttachment.
         The volume's iSCSI IP address.
 
         Example: `169.254.0.2`
@@ -212,7 +212,7 @@ class IScsiVolumeAttachment(VolumeAttachment):
     @property
     def iqn(self):
         """
-        Gets the iqn of this IScsiVolumeAttachment.
+        **[Required]** Gets the iqn of this IScsiVolumeAttachment.
         The target volume's iSCSI Qualified Name in the format defined by RFC 3720.
 
         Example: `iqn.2015-12.us.oracle.com:456b0391-17b8-4122-bbf1-f85fc0bb97d9`
@@ -240,7 +240,7 @@ class IScsiVolumeAttachment(VolumeAttachment):
     @property
     def port(self):
         """
-        Gets the port of this IScsiVolumeAttachment.
+        **[Required]** Gets the port of this IScsiVolumeAttachment.
         The volume's iSCSI port.
 
         Example: `3260`

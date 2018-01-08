@@ -94,7 +94,7 @@ class AttachVolumeDetails(object):
     @property
     def instance_id(self):
         """
-        Gets the instance_id of this AttachVolumeDetails.
+        **[Required]** Gets the instance_id of this AttachVolumeDetails.
         The OCID of the instance.
 
 
@@ -118,7 +118,7 @@ class AttachVolumeDetails(object):
     @property
     def type(self):
         """
-        Gets the type of this AttachVolumeDetails.
+        **[Required]** Gets the type of this AttachVolumeDetails.
         The type of volume. The only supported value is \"iscsi\".
 
 
@@ -142,7 +142,7 @@ class AttachVolumeDetails(object):
     @property
     def volume_id(self):
         """
-        Gets the volume_id of this AttachVolumeDetails.
+        **[Required]** Gets the volume_id of this AttachVolumeDetails.
         The OCID of the volume.
 
 

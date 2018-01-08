@@ -39,7 +39,7 @@ class CreateCrossConnectGroupDetails(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this CreateCrossConnectGroupDetails.
+        **[Required]** Gets the compartment_id of this CreateCrossConnectGroupDetails.
         The OCID of the compartment to contain the cross-connect group.
 
 

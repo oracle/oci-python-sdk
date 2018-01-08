@@ -118,7 +118,7 @@ class Vnic(object):
     @property
     def availability_domain(self):
         """
-        Gets the availability_domain of this Vnic.
+        **[Required]** Gets the availability_domain of this Vnic.
         The VNIC's Availability Domain.
 
         Example: `Uocm:PHX-AD-1`
@@ -146,7 +146,7 @@ class Vnic(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this Vnic.
+        **[Required]** Gets the compartment_id of this Vnic.
         The OCID of the compartment containing the VNIC.
 
 
@@ -248,7 +248,7 @@ class Vnic(object):
     @property
     def id(self):
         """
-        Gets the id of this Vnic.
+        **[Required]** Gets the id of this Vnic.
         The OCID of the VNIC.
 
 
@@ -298,7 +298,7 @@ class Vnic(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this Vnic.
+        **[Required]** Gets the lifecycle_state of this Vnic.
         The current state of the VNIC.
 
         Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
@@ -356,7 +356,7 @@ class Vnic(object):
     @property
     def private_ip(self):
         """
-        Gets the private_ip of this Vnic.
+        **[Required]** Gets the private_ip of this Vnic.
         The private IP address of the primary `privateIp` object on the VNIC.
         The address is within the CIDR of the VNIC's subnet.
 
@@ -448,7 +448,7 @@ class Vnic(object):
     @property
     def subnet_id(self):
         """
-        Gets the subnet_id of this Vnic.
+        **[Required]** Gets the subnet_id of this Vnic.
         The OCID of the subnet the VNIC is in.
 
 
@@ -472,7 +472,7 @@ class Vnic(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this Vnic.
+        **[Required]** Gets the time_created of this Vnic.
         The date and time the VNIC was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`

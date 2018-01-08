@@ -67,7 +67,7 @@ class VirtualCircuitBandwidthShape(object):
     @property
     def name(self):
         """
-        Gets the name of this VirtualCircuitBandwidthShape.
+        **[Required]** Gets the name of this VirtualCircuitBandwidthShape.
         The name of the bandwidth shape.
 
         Example: `10 Gbps`

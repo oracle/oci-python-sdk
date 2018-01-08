@@ -53,7 +53,7 @@ class ExportImageDetails(object):
     @property
     def destination_type(self):
         """
-        Gets the destination_type of this ExportImageDetails.
+        **[Required]** Gets the destination_type of this ExportImageDetails.
         The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name.
         Use `objectStorageUri` when specifying the Object Storage URL.
 

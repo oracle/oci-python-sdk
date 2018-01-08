@@ -107,7 +107,7 @@ class VolumeAttachment(object):
     @property
     def attachment_type(self):
         """
-        Gets the attachment_type of this VolumeAttachment.
+        **[Required]** Gets the attachment_type of this VolumeAttachment.
         The type of volume attachment.
 
 
@@ -131,7 +131,7 @@ class VolumeAttachment(object):
     @property
     def availability_domain(self):
         """
-        Gets the availability_domain of this VolumeAttachment.
+        **[Required]** Gets the availability_domain of this VolumeAttachment.
         The Availability Domain of an instance.
 
         Example: `Uocm:PHX-AD-1`
@@ -159,7 +159,7 @@ class VolumeAttachment(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this VolumeAttachment.
+        **[Required]** Gets the compartment_id of this VolumeAttachment.
         The OCID of the compartment.
 
 
@@ -213,7 +213,7 @@ class VolumeAttachment(object):
     @property
     def id(self):
         """
-        Gets the id of this VolumeAttachment.
+        **[Required]** Gets the id of this VolumeAttachment.
         The OCID of the volume attachment.
 
 
@@ -237,7 +237,7 @@ class VolumeAttachment(object):
     @property
     def instance_id(self):
         """
-        Gets the instance_id of this VolumeAttachment.
+        **[Required]** Gets the instance_id of this VolumeAttachment.
         The OCID of the instance the volume is attached to.
 
 
@@ -261,7 +261,7 @@ class VolumeAttachment(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this VolumeAttachment.
+        **[Required]** Gets the lifecycle_state of this VolumeAttachment.
         The current state of the volume attachment.
 
         Allowed values for this property are: "ATTACHING", "ATTACHED", "DETACHING", "DETACHED", 'UNKNOWN_ENUM_VALUE'.
@@ -291,7 +291,7 @@ class VolumeAttachment(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this VolumeAttachment.
+        **[Required]** Gets the time_created of this VolumeAttachment.
         The date and time the volume was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
@@ -319,7 +319,7 @@ class VolumeAttachment(object):
     @property
     def volume_id(self):
         """
-        Gets the volume_id of this VolumeAttachment.
+        **[Required]** Gets the volume_id of this VolumeAttachment.
         The OCID of the volume.
 
 

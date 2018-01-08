@@ -154,7 +154,7 @@ class LaunchDbSystemDetails(object):
     @property
     def availability_domain(self):
         """
-        Gets the availability_domain of this LaunchDbSystemDetails.
+        **[Required]** Gets the availability_domain of this LaunchDbSystemDetails.
         The Availability Domain where the DB System is located.
 
 
@@ -230,7 +230,7 @@ class LaunchDbSystemDetails(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this LaunchDbSystemDetails.
+        **[Required]** Gets the compartment_id of this LaunchDbSystemDetails.
         The Oracle Cloud ID (OCID) of the compartment the DB System  belongs in.
 
 
@@ -254,7 +254,7 @@ class LaunchDbSystemDetails(object):
     @property
     def cpu_core_count(self):
         """
-        Gets the cpu_core_count of this LaunchDbSystemDetails.
+        **[Required]** Gets the cpu_core_count of this LaunchDbSystemDetails.
         The number of CPU cores to enable. The valid values depend on the specified shape:
 
         - BM.DenseIO1.36 and BM.HighIO1.36 - Specify a multiple of 2, from 2 to 36.
@@ -322,7 +322,7 @@ class LaunchDbSystemDetails(object):
     @property
     def database_edition(self):
         """
-        Gets the database_edition of this LaunchDbSystemDetails.
+        **[Required]** Gets the database_edition of this LaunchDbSystemDetails.
         The Oracle Database Edition that applies to all the databases on the DB System.
 
         Exadata DB Systems and 2-node RAC DB Systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
@@ -358,7 +358,7 @@ class LaunchDbSystemDetails(object):
     @property
     def db_home(self):
         """
-        Gets the db_home of this LaunchDbSystemDetails.
+        **[Required]** Gets the db_home of this LaunchDbSystemDetails.
 
         :return: The db_home of this LaunchDbSystemDetails.
         :rtype: CreateDbHomeDetails
@@ -466,7 +466,7 @@ class LaunchDbSystemDetails(object):
     @property
     def hostname(self):
         """
-        Gets the hostname of this LaunchDbSystemDetails.
+        **[Required]** Gets the hostname of this LaunchDbSystemDetails.
         The host name for the DB System. The host name must begin with an alphabetic character and
         can contain a maximum of 30 alphanumeric characters, including hyphens (-).
 
@@ -582,7 +582,7 @@ class LaunchDbSystemDetails(object):
     @property
     def shape(self):
         """
-        Gets the shape of this LaunchDbSystemDetails.
+        **[Required]** Gets the shape of this LaunchDbSystemDetails.
         The shape of the DB System. The shape determines resources allocated to the DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the :func:`list_db_system_shapes` operation.
 
 
@@ -606,7 +606,7 @@ class LaunchDbSystemDetails(object):
     @property
     def ssh_public_keys(self):
         """
-        Gets the ssh_public_keys of this LaunchDbSystemDetails.
+        **[Required]** Gets the ssh_public_keys of this LaunchDbSystemDetails.
         The public key portion of the key pair to use for SSH access to the DB System. Multiple public keys can be provided. The length of the combined keys cannot exceed 10,000 characters.
 
 
@@ -630,7 +630,7 @@ class LaunchDbSystemDetails(object):
     @property
     def subnet_id(self):
         """
-        Gets the subnet_id of this LaunchDbSystemDetails.
+        **[Required]** Gets the subnet_id of this LaunchDbSystemDetails.
         The OCID of the subnet the DB System is associated with.
 
         **Subnet Restrictions:**

@@ -46,7 +46,7 @@ class Certificate(object):
     @property
     def ca_certificate(self):
         """
-        Gets the ca_certificate of this Certificate.
+        **[Required]** Gets the ca_certificate of this Certificate.
         The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
 
         Example:
@@ -90,7 +90,7 @@ class Certificate(object):
     @property
     def certificate_name(self):
         """
-        Gets the certificate_name of this Certificate.
+        **[Required]** Gets the certificate_name of this Certificate.
         A friendly name for the certificate bundle. It must be unique and it cannot be changed.
         Valid certificate bundle names include only alphanumeric characters, dashes, and underscores.
         Certificate bundle names cannot contain spaces. Avoid entering confidential information.
@@ -122,7 +122,7 @@ class Certificate(object):
     @property
     def public_certificate(self):
         """
-        Gets the public_certificate of this Certificate.
+        **[Required]** Gets the public_certificate of this Certificate.
         The public certificate, in PEM format, that you received from your SSL certificate provider.
 
         Example:

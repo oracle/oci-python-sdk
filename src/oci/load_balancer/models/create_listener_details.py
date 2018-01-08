@@ -60,7 +60,7 @@ class CreateListenerDetails(object):
     @property
     def default_backend_set_name(self):
         """
-        Gets the default_backend_set_name of this CreateListenerDetails.
+        **[Required]** Gets the default_backend_set_name of this CreateListenerDetails.
         The name of the associated backend set.
 
 
@@ -84,7 +84,7 @@ class CreateListenerDetails(object):
     @property
     def name(self):
         """
-        Gets the name of this CreateListenerDetails.
+        **[Required]** Gets the name of this CreateListenerDetails.
         A friendly name for the listener. It must be unique and it cannot be changed.
         Avoid entering confidential information.
 
@@ -114,7 +114,7 @@ class CreateListenerDetails(object):
     @property
     def port(self):
         """
-        Gets the port of this CreateListenerDetails.
+        **[Required]** Gets the port of this CreateListenerDetails.
         The communication port for the listener.
 
         Example: `80`
@@ -142,7 +142,7 @@ class CreateListenerDetails(object):
     @property
     def protocol(self):
         """
-        Gets the protocol of this CreateListenerDetails.
+        **[Required]** Gets the protocol of this CreateListenerDetails.
         The protocol on which the listener accepts connection requests.
         To get a list of valid protocols, use the :func:`list_protocols`
         operation.

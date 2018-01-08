@@ -46,7 +46,7 @@ class CreateDbHomeDetails(object):
     @property
     def database(self):
         """
-        Gets the database of this CreateDbHomeDetails.
+        **[Required]** Gets the database of this CreateDbHomeDetails.
 
         :return: The database of this CreateDbHomeDetails.
         :rtype: CreateDatabaseDetails
@@ -66,7 +66,7 @@ class CreateDbHomeDetails(object):
     @property
     def db_version(self):
         """
-        Gets the db_version of this CreateDbHomeDetails.
+        **[Required]** Gets the db_version of this CreateDbHomeDetails.
         A valid Oracle database version. To get a list of supported versions, use the :func:`list_db_versions` operation.
 
 

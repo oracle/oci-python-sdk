@@ -60,7 +60,7 @@ class MultipartUpload(object):
     @property
     def namespace(self):
         """
-        Gets the namespace of this MultipartUpload.
+        **[Required]** Gets the namespace of this MultipartUpload.
         The namespace in which the in-progress multipart upload is stored.
 
 
@@ -84,7 +84,7 @@ class MultipartUpload(object):
     @property
     def bucket(self):
         """
-        Gets the bucket of this MultipartUpload.
+        **[Required]** Gets the bucket of this MultipartUpload.
         The bucket in which the in-progress multipart upload is stored.
 
 
@@ -108,7 +108,7 @@ class MultipartUpload(object):
     @property
     def object(self):
         """
-        Gets the object of this MultipartUpload.
+        **[Required]** Gets the object of this MultipartUpload.
         The object name of the in-progress multipart upload.
 
 
@@ -132,7 +132,7 @@ class MultipartUpload(object):
     @property
     def upload_id(self):
         """
-        Gets the upload_id of this MultipartUpload.
+        **[Required]** Gets the upload_id of this MultipartUpload.
         The unique identifier for the in-progress multipart upload.
 
 
@@ -156,7 +156,7 @@ class MultipartUpload(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this MultipartUpload.
+        **[Required]** Gets the time_created of this MultipartUpload.
         The date and time the upload was created, as described in `RFC 2616`__, section 14.29.
 
         __ https://tools.ietf.org/rfc/rfc2616

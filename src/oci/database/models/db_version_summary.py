@@ -63,7 +63,7 @@ class DbVersionSummary(object):
     @property
     def version(self):
         """
-        Gets the version of this DbVersionSummary.
+        **[Required]** Gets the version of this DbVersionSummary.
         A valid Oracle database version.
 
 

@@ -62,7 +62,7 @@ class LoadBalancerHealth(object):
     @property
     def critical_state_backend_set_names(self):
         """
-        Gets the critical_state_backend_set_names of this LoadBalancerHealth.
+        **[Required]** Gets the critical_state_backend_set_names of this LoadBalancerHealth.
         A list of backend sets that are currently in the `CRITICAL` health state. The list identifies each backend set by the
         friendly name you assigned when you created it.
 
@@ -92,7 +92,7 @@ class LoadBalancerHealth(object):
     @property
     def status(self):
         """
-        Gets the status of this LoadBalancerHealth.
+        **[Required]** Gets the status of this LoadBalancerHealth.
         The overall health status of the load balancer.
 
         *  **OK:** All backend sets associated with the load balancer return a status of `OK`.
@@ -158,7 +158,7 @@ class LoadBalancerHealth(object):
     @property
     def total_backend_set_count(self):
         """
-        Gets the total_backend_set_count of this LoadBalancerHealth.
+        **[Required]** Gets the total_backend_set_count of this LoadBalancerHealth.
         The total number of backend sets associated with this load balancer.
 
         Example: `4`
@@ -186,7 +186,7 @@ class LoadBalancerHealth(object):
     @property
     def unknown_state_backend_set_names(self):
         """
-        Gets the unknown_state_backend_set_names of this LoadBalancerHealth.
+        **[Required]** Gets the unknown_state_backend_set_names of this LoadBalancerHealth.
         A list of backend sets that are currently in the `UNKNOWN` health state. The list identifies each backend set by the
         friendly name you assigned when you created it.
 
@@ -216,7 +216,7 @@ class LoadBalancerHealth(object):
     @property
     def warning_state_backend_set_names(self):
         """
-        Gets the warning_state_backend_set_names of this LoadBalancerHealth.
+        **[Required]** Gets the warning_state_backend_set_names of this LoadBalancerHealth.
         A list of backend sets that are currently in the `WARNING` health state. The list identifies each backend set by the
         friendly name you assigned when you created it.
 

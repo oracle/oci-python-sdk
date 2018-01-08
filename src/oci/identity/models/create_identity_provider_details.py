@@ -93,7 +93,7 @@ class CreateIdentityProviderDetails(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this CreateIdentityProviderDetails.
+        **[Required]** Gets the compartment_id of this CreateIdentityProviderDetails.
         The OCID of your tenancy.
 
 
@@ -117,7 +117,7 @@ class CreateIdentityProviderDetails(object):
     @property
     def name(self):
         """
-        Gets the name of this CreateIdentityProviderDetails.
+        **[Required]** Gets the name of this CreateIdentityProviderDetails.
         The name you assign to the `IdentityProvider` during creation.
         The name must be unique across all `IdentityProvider` objects in the
         tenancy and cannot be changed.
@@ -145,7 +145,7 @@ class CreateIdentityProviderDetails(object):
     @property
     def description(self):
         """
-        Gets the description of this CreateIdentityProviderDetails.
+        **[Required]** Gets the description of this CreateIdentityProviderDetails.
         The description you assign to the `IdentityProvider` during creation.
         Does not have to be unique, and it's changeable.
 
@@ -171,7 +171,7 @@ class CreateIdentityProviderDetails(object):
     @property
     def product_type(self):
         """
-        Gets the product_type of this CreateIdentityProviderDetails.
+        **[Required]** Gets the product_type of this CreateIdentityProviderDetails.
         The identity provider service or product.
         Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft
         Active Directory Federation Services (ADFS).
@@ -211,7 +211,7 @@ class CreateIdentityProviderDetails(object):
     @property
     def protocol(self):
         """
-        Gets the protocol of this CreateIdentityProviderDetails.
+        **[Required]** Gets the protocol of this CreateIdentityProviderDetails.
         The protocol used for federation.
 
         Example: `SAML2`

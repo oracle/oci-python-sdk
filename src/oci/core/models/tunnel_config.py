@@ -46,7 +46,7 @@ class TunnelConfig(object):
     @property
     def ip_address(self):
         """
-        Gets the ip_address of this TunnelConfig.
+        **[Required]** Gets the ip_address of this TunnelConfig.
         The IP address of Oracle's VPN headend.
 
         Example: `129.146.17.50`
@@ -74,7 +74,7 @@ class TunnelConfig(object):
     @property
     def shared_secret(self):
         """
-        Gets the shared_secret of this TunnelConfig.
+        **[Required]** Gets the shared_secret of this TunnelConfig.
         The shared secret of the IPSec tunnel.
 
         Example: `vFG2IF6TWq4UToUiLSRDoJEUs6j1c.p8G.dVQxiMfMO0yXMLi.lZTbYIWhGu4V8o`

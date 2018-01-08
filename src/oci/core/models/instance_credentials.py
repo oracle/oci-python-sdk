@@ -39,7 +39,7 @@ class InstanceCredentials(object):
     @property
     def password(self):
         """
-        Gets the password of this InstanceCredentials.
+        **[Required]** Gets the password of this InstanceCredentials.
         The password for the username.
 
 
@@ -63,7 +63,7 @@ class InstanceCredentials(object):
     @property
     def username(self):
         """
-        Gets the username of this InstanceCredentials.
+        **[Required]** Gets the username of this InstanceCredentials.
         The username.
 
 

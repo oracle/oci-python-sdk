@@ -113,7 +113,7 @@ class FastConnectProviderService(object):
     @property
     def id(self):
         """
-        Gets the id of this FastConnectProviderService.
+        **[Required]** Gets the id of this FastConnectProviderService.
         The OCID of the service offered by the provider.
 
 
@@ -137,7 +137,7 @@ class FastConnectProviderService(object):
     @property
     def private_peering_bgp_management(self):
         """
-        Gets the private_peering_bgp_management of this FastConnectProviderService.
+        **[Required]** Gets the private_peering_bgp_management of this FastConnectProviderService.
         Private peering BGP management.
 
         Allowed values for this property are: "CUSTOMER_MANAGED", "PROVIDER_MANAGED", "ORACLE_MANAGED", 'UNKNOWN_ENUM_VALUE'.
@@ -167,7 +167,7 @@ class FastConnectProviderService(object):
     @property
     def provider_name(self):
         """
-        Gets the provider_name of this FastConnectProviderService.
+        **[Required]** Gets the provider_name of this FastConnectProviderService.
         The name of the provider.
 
 
@@ -191,7 +191,7 @@ class FastConnectProviderService(object):
     @property
     def provider_service_name(self):
         """
-        Gets the provider_service_name of this FastConnectProviderService.
+        **[Required]** Gets the provider_service_name of this FastConnectProviderService.
         The name of the service offered by the provider.
 
 
@@ -215,7 +215,7 @@ class FastConnectProviderService(object):
     @property
     def public_peering_bgp_management(self):
         """
-        Gets the public_peering_bgp_management of this FastConnectProviderService.
+        **[Required]** Gets the public_peering_bgp_management of this FastConnectProviderService.
         Public peering BGP management.
 
         Allowed values for this property are: "CUSTOMER_MANAGED", "PROVIDER_MANAGED", "ORACLE_MANAGED", 'UNKNOWN_ENUM_VALUE'.
@@ -274,7 +274,7 @@ class FastConnectProviderService(object):
     @property
     def type(self):
         """
-        Gets the type of this FastConnectProviderService.
+        **[Required]** Gets the type of this FastConnectProviderService.
         Provider service type.
 
         Allowed values for this property are: "LAYER2", "LAYER3", 'UNKNOWN_ENUM_VALUE'.

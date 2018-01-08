@@ -39,7 +39,7 @@ class CreateBackupDetails(object):
     @property
     def database_id(self):
         """
-        Gets the database_id of this CreateBackupDetails.
+        **[Required]** Gets the database_id of this CreateBackupDetails.
         The OCID of the database.
 
 
@@ -63,7 +63,7 @@ class CreateBackupDetails(object):
     @property
     def display_name(self):
         """
-        Gets the display_name of this CreateBackupDetails.
+        **[Required]** Gets the display_name of this CreateBackupDetails.
         The user-friendly name for the backup. It does not have to be unique.
 
 

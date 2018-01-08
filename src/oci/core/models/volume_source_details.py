@@ -53,7 +53,7 @@ class VolumeSourceDetails(object):
     @property
     def type(self):
         """
-        Gets the type of this VolumeSourceDetails.
+        **[Required]** Gets the type of this VolumeSourceDetails.
 
         :return: The type of this VolumeSourceDetails.
         :rtype: str

@@ -75,7 +75,7 @@ class CreateDatabaseDetails(object):
     @property
     def admin_password(self):
         """
-        Gets the admin_password of this CreateDatabaseDetails.
+        **[Required]** Gets the admin_password of this CreateDatabaseDetails.
         A strong password for SYS, SYSTEM, and PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
 
 
@@ -147,7 +147,7 @@ class CreateDatabaseDetails(object):
     @property
     def db_name(self):
         """
-        Gets the db_name of this CreateDatabaseDetails.
+        **[Required]** Gets the db_name of this CreateDatabaseDetails.
         The database name. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
 
 

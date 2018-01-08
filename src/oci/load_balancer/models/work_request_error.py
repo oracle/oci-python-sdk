@@ -41,7 +41,7 @@ class WorkRequestError(object):
     @property
     def error_code(self):
         """
-        Gets the error_code of this WorkRequestError.
+        **[Required]** Gets the error_code of this WorkRequestError.
         Allowed values for this property are: "BAD_INPUT", "INTERNAL_ERROR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
@@ -67,7 +67,7 @@ class WorkRequestError(object):
     @property
     def message(self):
         """
-        Gets the message of this WorkRequestError.
+        **[Required]** Gets the message of this WorkRequestError.
         A human-readable error string.
 
 

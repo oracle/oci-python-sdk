@@ -41,7 +41,7 @@ class VolumeSourceFromVolumeDetails(VolumeSourceDetails):
     @property
     def id(self):
         """
-        Gets the id of this VolumeSourceFromVolumeDetails.
+        **[Required]** Gets the id of this VolumeSourceFromVolumeDetails.
         The OCID of the volume.
 
 

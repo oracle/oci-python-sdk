@@ -149,7 +149,7 @@ class CreateVolumeBackupDetails(object):
     @property
     def volume_id(self):
         """
-        Gets the volume_id of this CreateVolumeBackupDetails.
+        **[Required]** Gets the volume_id of this CreateVolumeBackupDetails.
         The OCID of the volume that needs to be backed up.
 
 

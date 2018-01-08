@@ -109,7 +109,7 @@ class CreateSubnetDetails(object):
     @property
     def availability_domain(self):
         """
-        Gets the availability_domain of this CreateSubnetDetails.
+        **[Required]** Gets the availability_domain of this CreateSubnetDetails.
         The Availability Domain to contain the subnet.
 
         Example: `Uocm:PHX-AD-1`
@@ -137,7 +137,7 @@ class CreateSubnetDetails(object):
     @property
     def cidr_block(self):
         """
-        Gets the cidr_block of this CreateSubnetDetails.
+        **[Required]** Gets the cidr_block of this CreateSubnetDetails.
         The CIDR IP address range of the subnet.
 
         Example: `172.16.1.0/24`
@@ -165,7 +165,7 @@ class CreateSubnetDetails(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this CreateSubnetDetails.
+        **[Required]** Gets the compartment_id of this CreateSubnetDetails.
         The OCID of the compartment to contain the subnet.
 
 
@@ -461,7 +461,7 @@ class CreateSubnetDetails(object):
     @property
     def vcn_id(self):
         """
-        Gets the vcn_id of this CreateSubnetDetails.
+        **[Required]** Gets the vcn_id of this CreateSubnetDetails.
         The OCID of the VCN to contain the subnet.
 
 

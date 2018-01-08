@@ -104,7 +104,7 @@ class CreateCertificateDetails(object):
     @property
     def certificate_name(self):
         """
-        Gets the certificate_name of this CreateCertificateDetails.
+        **[Required]** Gets the certificate_name of this CreateCertificateDetails.
         A friendly name for the certificate bundle. It must be unique and it cannot be changed.
         Valid certificate bundle names include only alphanumeric characters, dashes, and underscores.
         Certificate bundle names cannot contain spaces. Avoid entering confidential information.

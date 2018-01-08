@@ -90,7 +90,7 @@ class RouteTable(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this RouteTable.
+        **[Required]** Gets the compartment_id of this RouteTable.
         The OCID of the compartment containing the route table.
 
 
@@ -210,7 +210,7 @@ class RouteTable(object):
     @property
     def id(self):
         """
-        Gets the id of this RouteTable.
+        **[Required]** Gets the id of this RouteTable.
         The route table's Oracle ID (OCID).
 
 
@@ -234,7 +234,7 @@ class RouteTable(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this RouteTable.
+        **[Required]** Gets the lifecycle_state of this RouteTable.
         The route table's current state.
 
         Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
@@ -264,7 +264,7 @@ class RouteTable(object):
     @property
     def route_rules(self):
         """
-        Gets the route_rules of this RouteTable.
+        **[Required]** Gets the route_rules of this RouteTable.
         The collection of rules for routing destination IPs to network devices.
 
 
@@ -316,7 +316,7 @@ class RouteTable(object):
     @property
     def vcn_id(self):
         """
-        Gets the vcn_id of this RouteTable.
+        **[Required]** Gets the vcn_id of this RouteTable.
         The OCID of the VCN the route table list belongs to.
 
 

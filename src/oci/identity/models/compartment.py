@@ -90,7 +90,7 @@ class Compartment(object):
     @property
     def id(self):
         """
-        Gets the id of this Compartment.
+        **[Required]** Gets the id of this Compartment.
         The OCID of the compartment.
 
 
@@ -114,7 +114,7 @@ class Compartment(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this Compartment.
+        **[Required]** Gets the compartment_id of this Compartment.
         The OCID of the tenancy containing the compartment.
 
 
@@ -138,7 +138,7 @@ class Compartment(object):
     @property
     def name(self):
         """
-        Gets the name of this Compartment.
+        **[Required]** Gets the name of this Compartment.
         The name you assign to the compartment during creation. The name must be unique across all
         compartments in the tenancy.
 
@@ -164,7 +164,7 @@ class Compartment(object):
     @property
     def description(self):
         """
-        Gets the description of this Compartment.
+        **[Required]** Gets the description of this Compartment.
         The description you assign to the compartment. Does not have to be unique, and it's changeable.
 
 
@@ -188,7 +188,7 @@ class Compartment(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this Compartment.
+        **[Required]** Gets the time_created of this Compartment.
         Date and time the compartment was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
@@ -216,7 +216,7 @@ class Compartment(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this Compartment.
+        **[Required]** Gets the lifecycle_state of this Compartment.
         The compartment's current state. After creating a compartment, make sure its `lifecycleState` changes from
         CREATING to ACTIVE before using it.
 

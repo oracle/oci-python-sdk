@@ -32,7 +32,7 @@ class CreateVirtualCircuitPublicPrefixDetails(object):
     @property
     def cidr_block(self):
         """
-        Gets the cidr_block of this CreateVirtualCircuitPublicPrefixDetails.
+        **[Required]** Gets the cidr_block of this CreateVirtualCircuitPublicPrefixDetails.
         An individual public IP prefix (CIDR) to add to the public virtual circuit.
         Must be /24 or less specific.
 

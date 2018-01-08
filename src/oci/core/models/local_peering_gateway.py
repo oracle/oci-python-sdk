@@ -99,7 +99,7 @@ class LocalPeeringGateway(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this LocalPeeringGateway.
+        **[Required]** Gets the compartment_id of this LocalPeeringGateway.
         The OCID of the compartment containing the LPG.
 
 
@@ -123,7 +123,7 @@ class LocalPeeringGateway(object):
     @property
     def display_name(self):
         """
-        Gets the display_name of this LocalPeeringGateway.
+        **[Required]** Gets the display_name of this LocalPeeringGateway.
         A user-friendly name. Does not have to be unique, and it's changeable. Avoid
         entering confidential information.
 
@@ -149,7 +149,7 @@ class LocalPeeringGateway(object):
     @property
     def id(self):
         """
-        Gets the id of this LocalPeeringGateway.
+        **[Required]** Gets the id of this LocalPeeringGateway.
         The LPG's Oracle ID (OCID).
 
 
@@ -173,7 +173,7 @@ class LocalPeeringGateway(object):
     @property
     def is_cross_tenancy_peering(self):
         """
-        Gets the is_cross_tenancy_peering of this LocalPeeringGateway.
+        **[Required]** Gets the is_cross_tenancy_peering of this LocalPeeringGateway.
         Whether the VCN at the other end of the peering is in a different tenancy.
 
         Example: `false`
@@ -201,7 +201,7 @@ class LocalPeeringGateway(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this LocalPeeringGateway.
+        **[Required]** Gets the lifecycle_state of this LocalPeeringGateway.
         The LPG's current lifecycle state.
 
         Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
@@ -265,7 +265,7 @@ class LocalPeeringGateway(object):
     @property
     def peering_status(self):
         """
-        Gets the peering_status of this LocalPeeringGateway.
+        **[Required]** Gets the peering_status of this LocalPeeringGateway.
         Whether the LPG is peered with another LPG. `NEW` means the LPG has not yet been
         peered. `PENDING` means the peering is being established. `REVOKED` means the
         LPG at the other end of the peering has been deleted.
@@ -323,7 +323,7 @@ class LocalPeeringGateway(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this LocalPeeringGateway.
+        **[Required]** Gets the time_created of this LocalPeeringGateway.
         The date and time the LPG was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
@@ -351,7 +351,7 @@ class LocalPeeringGateway(object):
     @property
     def vcn_id(self):
         """
-        Gets the vcn_id of this LocalPeeringGateway.
+        **[Required]** Gets the vcn_id of this LocalPeeringGateway.
         The OCID of the VCN the LPG belongs to.
 
 

@@ -53,7 +53,7 @@ class ObjectSummary(object):
     @property
     def name(self):
         """
-        Gets the name of this ObjectSummary.
+        **[Required]** Gets the name of this ObjectSummary.
         The name of the object. Avoid entering confidential information.
         Example: test/object1.log
 

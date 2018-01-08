@@ -74,7 +74,7 @@ class CreatePolicyDetails(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this CreatePolicyDetails.
+        **[Required]** Gets the compartment_id of this CreatePolicyDetails.
         The OCID of the compartment containing the policy (either the tenancy or another compartment).
 
 
@@ -98,7 +98,7 @@ class CreatePolicyDetails(object):
     @property
     def name(self):
         """
-        Gets the name of this CreatePolicyDetails.
+        **[Required]** Gets the name of this CreatePolicyDetails.
         The name you assign to the policy during creation. The name must be unique across all policies
         in the tenancy and cannot be changed.
 
@@ -124,7 +124,7 @@ class CreatePolicyDetails(object):
     @property
     def statements(self):
         """
-        Gets the statements of this CreatePolicyDetails.
+        **[Required]** Gets the statements of this CreatePolicyDetails.
         An array of policy statements written in the policy language. See
         `How Policies Work`__ and
         `Common Policies`__.
@@ -158,7 +158,7 @@ class CreatePolicyDetails(object):
     @property
     def description(self):
         """
-        Gets the description of this CreatePolicyDetails.
+        **[Required]** Gets the description of this CreatePolicyDetails.
         The description you assign to the policy during creation. Does not have to be unique, and it's changeable.
 
 

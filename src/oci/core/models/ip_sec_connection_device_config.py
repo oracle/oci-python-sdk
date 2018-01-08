@@ -53,7 +53,7 @@ class IPSecConnectionDeviceConfig(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this IPSecConnectionDeviceConfig.
+        **[Required]** Gets the compartment_id of this IPSecConnectionDeviceConfig.
         The OCID of the compartment containing the IPSec connection.
 
 
@@ -77,7 +77,7 @@ class IPSecConnectionDeviceConfig(object):
     @property
     def id(self):
         """
-        Gets the id of this IPSecConnectionDeviceConfig.
+        **[Required]** Gets the id of this IPSecConnectionDeviceConfig.
         The IPSec connection's Oracle ID (OCID).
 
 

@@ -60,7 +60,7 @@ class CreateTagNamespaceDetails(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this CreateTagNamespaceDetails.
+        **[Required]** Gets the compartment_id of this CreateTagNamespaceDetails.
         The OCID of the tenancy containing the user.
 
 
@@ -84,7 +84,7 @@ class CreateTagNamespaceDetails(object):
     @property
     def name(self):
         """
-        Gets the name of this CreateTagNamespaceDetails.
+        **[Required]** Gets the name of this CreateTagNamespaceDetails.
         The name of the tagNamespace. It must be unique across all tagNamespaces in the tenancy and cannot be changed.
 
 
@@ -108,7 +108,7 @@ class CreateTagNamespaceDetails(object):
     @property
     def description(self):
         """
-        Gets the description of this CreateTagNamespaceDetails.
+        **[Required]** Gets the description of this CreateTagNamespaceDetails.
         The description of the tagNamespace.
 
 

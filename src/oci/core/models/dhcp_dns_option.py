@@ -76,7 +76,7 @@ class DhcpDnsOption(DhcpOption):
     @property
     def server_type(self):
         """
-        Gets the server_type of this DhcpDnsOption.
+        **[Required]** Gets the server_type of this DhcpDnsOption.
         - **VcnLocal:** Reserved for future use.
 
         - **VcnLocalPlusInternet:** Also referred to as \"Internet and VCN Resolver\".

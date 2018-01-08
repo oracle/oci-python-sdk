@@ -121,7 +121,7 @@ class IdentityProvider(object):
     @property
     def id(self):
         """
-        Gets the id of this IdentityProvider.
+        **[Required]** Gets the id of this IdentityProvider.
         The OCID of the `IdentityProvider`.
 
 
@@ -145,7 +145,7 @@ class IdentityProvider(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this IdentityProvider.
+        **[Required]** Gets the compartment_id of this IdentityProvider.
         The OCID of the tenancy containing the `IdentityProvider`.
 
 
@@ -169,7 +169,7 @@ class IdentityProvider(object):
     @property
     def name(self):
         """
-        Gets the name of this IdentityProvider.
+        **[Required]** Gets the name of this IdentityProvider.
         The name you assign to the `IdentityProvider` during creation. The name
         must be unique across all `IdentityProvider` objects in the tenancy and
         cannot be changed. This is the name federated users see when choosing
@@ -201,7 +201,7 @@ class IdentityProvider(object):
     @property
     def description(self):
         """
-        Gets the description of this IdentityProvider.
+        **[Required]** Gets the description of this IdentityProvider.
         The description you assign to the `IdentityProvider` during creation. Does
         not have to be unique, and it's changeable.
 
@@ -227,7 +227,7 @@ class IdentityProvider(object):
     @property
     def product_type(self):
         """
-        Gets the product_type of this IdentityProvider.
+        **[Required]** Gets the product_type of this IdentityProvider.
         The identity provider service or product.
         Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft
         Active Directory Federation Services (ADFS).
@@ -267,7 +267,7 @@ class IdentityProvider(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this IdentityProvider.
+        **[Required]** Gets the time_created of this IdentityProvider.
         Date and time the `IdentityProvider` was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
@@ -295,7 +295,7 @@ class IdentityProvider(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this IdentityProvider.
+        **[Required]** Gets the lifecycle_state of this IdentityProvider.
         The current state. After creating an `IdentityProvider`, make sure its
         `lifecycleState` changes from CREATING to ACTIVE before using it.
 
@@ -351,7 +351,7 @@ class IdentityProvider(object):
     @property
     def protocol(self):
         """
-        Gets the protocol of this IdentityProvider.
+        **[Required]** Gets the protocol of this IdentityProvider.
         The protocol used for federation. Allowed value: `SAML2`.
 
         Example: `SAML2`

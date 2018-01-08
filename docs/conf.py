@@ -4,6 +4,8 @@ import sys
 import pkg_resources
 import sphinx_rtd_theme
 
+from sphinx.domains.python import PythonDomain
+
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
@@ -236,3 +238,20 @@ texinfo_documents = [
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 #
 # texinfo_no_detailmenu = False
+
+class PatchedPythonDomain(PythonDomain):
+    def resolve_xref(self, env, fromdocname, builder, typ, target, node, contnode):
+        if 'refspecific' in node and fromdocname == 'api/index':
+            # This for api/index.rst and defined tags. These have a data type of dict(str, dict(str, object)) but if
+            # Sphinx auto-linking tries to link "object" to the "object" property in CreateMultipartUploadDetails (which is
+            # incorrect).
+            #
+            # This prevents any non-explicit link (e.g. just plain "object") from being linked across, but if I was
+            # explicit like "oci.object_storage.models.CreateMultipartUploadDetails.object" that **should** still produce
+            # a link
+            if node['reftarget'] == 'object' and not node['refexplicit']:
+                del node['refspecific']
+        return super(PatchedPythonDomain, self).resolve_xref(env, fromdocname, builder, typ, target, node, contnode)
+    
+def setup(sphinx):
+    sphinx.override_domain(PatchedPythonDomain)

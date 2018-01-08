@@ -41,7 +41,7 @@ class VolumeSourceFromVolumeBackupDetails(VolumeSourceDetails):
     @property
     def id(self):
         """
-        Gets the id of this VolumeSourceFromVolumeBackupDetails.
+        **[Required]** Gets the id of this VolumeSourceFromVolumeBackupDetails.
         The OCID of the volume backup.
 
 

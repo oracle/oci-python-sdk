@@ -32,7 +32,7 @@ class DeleteVirtualCircuitPublicPrefixDetails(object):
     @property
     def cidr_block(self):
         """
-        Gets the cidr_block of this DeleteVirtualCircuitPublicPrefixDetails.
+        **[Required]** Gets the cidr_block of this DeleteVirtualCircuitPublicPrefixDetails.
         An individual public IP prefix (CIDR) to remove from the public virtual circuit.
 
 

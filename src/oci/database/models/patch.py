@@ -116,7 +116,7 @@ class Patch(object):
     @property
     def description(self):
         """
-        Gets the description of this Patch.
+        **[Required]** Gets the description of this Patch.
         The text describing this patch package.
 
 
@@ -140,7 +140,7 @@ class Patch(object):
     @property
     def id(self):
         """
-        Gets the id of this Patch.
+        **[Required]** Gets the id of this Patch.
         The OCID of the patch.
 
 
@@ -250,7 +250,7 @@ class Patch(object):
     @property
     def time_released(self):
         """
-        Gets the time_released of this Patch.
+        **[Required]** Gets the time_released of this Patch.
         The date and time that the patch was released.
 
 
@@ -274,7 +274,7 @@ class Patch(object):
     @property
     def version(self):
         """
-        Gets the version of this Patch.
+        **[Required]** Gets the version of this Patch.
         The version of this patch package.
 
 

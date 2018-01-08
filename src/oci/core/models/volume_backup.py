@@ -118,7 +118,7 @@ class VolumeBackup(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this VolumeBackup.
+        **[Required]** Gets the compartment_id of this VolumeBackup.
         The OCID of the compartment that contains the volume backup.
 
 
@@ -176,7 +176,7 @@ class VolumeBackup(object):
     @property
     def display_name(self):
         """
-        Gets the display_name of this VolumeBackup.
+        **[Required]** Gets the display_name of this VolumeBackup.
         A user-friendly name for the volume backup. Does not have to be unique and it's changeable.
         Avoid entering confidential information.
 
@@ -238,7 +238,7 @@ class VolumeBackup(object):
     @property
     def id(self):
         """
-        Gets the id of this VolumeBackup.
+        **[Required]** Gets the id of this VolumeBackup.
         The OCID of the volume backup.
 
 
@@ -262,7 +262,7 @@ class VolumeBackup(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this VolumeBackup.
+        **[Required]** Gets the lifecycle_state of this VolumeBackup.
         The current state of a volume backup.
 
         Allowed values for this property are: "CREATING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAULTY", "REQUEST_RECEIVED", 'UNKNOWN_ENUM_VALUE'.
@@ -342,7 +342,7 @@ class VolumeBackup(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this VolumeBackup.
+        **[Required]** Gets the time_created of this VolumeBackup.
         The date and time the volume backup was created. This is the time the actual point-in-time image
         of the volume data was taken. Format defined by RFC3339.
 

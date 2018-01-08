@@ -67,7 +67,7 @@ class CreateRouteTableDetails(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this CreateRouteTableDetails.
+        **[Required]** Gets the compartment_id of this CreateRouteTableDetails.
         The OCID of the compartment to contain the route table.
 
 
@@ -185,7 +185,7 @@ class CreateRouteTableDetails(object):
     @property
     def route_rules(self):
         """
-        Gets the route_rules of this CreateRouteTableDetails.
+        **[Required]** Gets the route_rules of this CreateRouteTableDetails.
         The collection of rules used for routing destination IPs to network devices.
 
 
@@ -209,7 +209,7 @@ class CreateRouteTableDetails(object):
     @property
     def vcn_id(self):
         """
-        Gets the vcn_id of this CreateRouteTableDetails.
+        **[Required]** Gets the vcn_id of this CreateRouteTableDetails.
         The OCID of the VCN the route table belongs to.
 
 

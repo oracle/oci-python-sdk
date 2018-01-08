@@ -60,7 +60,7 @@ class CreateIPSecConnectionDetails(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this CreateIPSecConnectionDetails.
+        **[Required]** Gets the compartment_id of this CreateIPSecConnectionDetails.
         The OCID of the compartment to contain the IPSec connection.
 
 
@@ -84,7 +84,7 @@ class CreateIPSecConnectionDetails(object):
     @property
     def cpe_id(self):
         """
-        Gets the cpe_id of this CreateIPSecConnectionDetails.
+        **[Required]** Gets the cpe_id of this CreateIPSecConnectionDetails.
         The OCID of the CPE.
 
 
@@ -132,7 +132,7 @@ class CreateIPSecConnectionDetails(object):
     @property
     def drg_id(self):
         """
-        Gets the drg_id of this CreateIPSecConnectionDetails.
+        **[Required]** Gets the drg_id of this CreateIPSecConnectionDetails.
         The OCID of the DRG.
 
 
@@ -156,7 +156,7 @@ class CreateIPSecConnectionDetails(object):
     @property
     def static_routes(self):
         """
-        Gets the static_routes of this CreateIPSecConnectionDetails.
+        **[Required]** Gets the static_routes of this CreateIPSecConnectionDetails.
         Static routes to the CPE. At least one route must be included. The CIDR must not be a
         multicast address or class E address.
 

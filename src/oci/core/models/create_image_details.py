@@ -75,7 +75,7 @@ class CreateImageDetails(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this CreateImageDetails.
+        **[Required]** Gets the compartment_id of this CreateImageDetails.
         The OCID of the compartment containing the instance you want to use as the basis for the image.
 
 

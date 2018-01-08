@@ -46,7 +46,7 @@ class DbSystemShapeSummary(object):
     @property
     def available_core_count(self):
         """
-        Gets the available_core_count of this DbSystemShapeSummary.
+        **[Required]** Gets the available_core_count of this DbSystemShapeSummary.
         The maximum number of CPU cores that can be enabled on the DB System.
 
 
@@ -70,7 +70,7 @@ class DbSystemShapeSummary(object):
     @property
     def name(self):
         """
-        Gets the name of this DbSystemShapeSummary.
+        **[Required]** Gets the name of this DbSystemShapeSummary.
         The name of the shape used for the DB System.
 
 

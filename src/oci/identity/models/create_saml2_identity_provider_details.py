@@ -92,7 +92,7 @@ class CreateSaml2IdentityProviderDetails(CreateIdentityProviderDetails):
     @property
     def metadata_url(self):
         """
-        Gets the metadata_url of this CreateSaml2IdentityProviderDetails.
+        **[Required]** Gets the metadata_url of this CreateSaml2IdentityProviderDetails.
         The URL for retrieving the identity provider's metadata,
         which contains information required for federating.
 
@@ -118,7 +118,7 @@ class CreateSaml2IdentityProviderDetails(CreateIdentityProviderDetails):
     @property
     def metadata(self):
         """
-        Gets the metadata of this CreateSaml2IdentityProviderDetails.
+        **[Required]** Gets the metadata of this CreateSaml2IdentityProviderDetails.
         The XML that contains the information required for federating.
 
 

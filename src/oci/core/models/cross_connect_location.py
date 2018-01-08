@@ -39,7 +39,7 @@ class CrossConnectLocation(object):
     @property
     def description(self):
         """
-        Gets the description of this CrossConnectLocation.
+        **[Required]** Gets the description of this CrossConnectLocation.
         A description of the location.
 
 
@@ -63,7 +63,7 @@ class CrossConnectLocation(object):
     @property
     def name(self):
         """
-        Gets the name of this CrossConnectLocation.
+        **[Required]** Gets the name of this CrossConnectLocation.
         The name of the location.
 
         Example: `CyrusOne, Chandler, AZ`

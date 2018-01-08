@@ -62,7 +62,7 @@ class CreateBucketDetails(object):
     @property
     def name(self):
         """
-        Gets the name of this CreateBucketDetails.
+        **[Required]** Gets the name of this CreateBucketDetails.
         The name of the bucket. Valid characters are uppercase or lowercase letters,
         numbers, and dashes. Bucket names must be unique within the namespace. Avoid entering confidential information.
         example: Example: my-new-bucket1
@@ -90,7 +90,7 @@ class CreateBucketDetails(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this CreateBucketDetails.
+        **[Required]** Gets the compartment_id of this CreateBucketDetails.
         The ID of the compartment in which to create the bucket.
 
 

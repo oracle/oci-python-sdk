@@ -67,7 +67,7 @@ class CreateVcnDetails(object):
     @property
     def cidr_block(self):
         """
-        Gets the cidr_block of this CreateVcnDetails.
+        **[Required]** Gets the cidr_block of this CreateVcnDetails.
         The CIDR IP address block of the VCN.
 
         Example: `172.16.0.0/16`
@@ -95,7 +95,7 @@ class CreateVcnDetails(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this CreateVcnDetails.
+        **[Required]** Gets the compartment_id of this CreateVcnDetails.
         The OCID of the compartment to contain the VCN.
 
 

@@ -74,7 +74,7 @@ class CreateCrossConnectDetails(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this CreateCrossConnectDetails.
+        **[Required]** Gets the compartment_id of this CreateCrossConnectDetails.
         The OCID of the compartment to contain the cross-connect.
 
 
@@ -178,7 +178,7 @@ class CreateCrossConnectDetails(object):
     @property
     def location_name(self):
         """
-        Gets the location_name of this CreateCrossConnectDetails.
+        **[Required]** Gets the location_name of this CreateCrossConnectDetails.
         The name of the FastConnect location where this cross-connect will be installed.
         To get a list of the available locations, see
         :func:`list_cross_connect_locations`.
@@ -238,7 +238,7 @@ class CreateCrossConnectDetails(object):
     @property
     def port_speed_shape_name(self):
         """
-        Gets the port_speed_shape_name of this CreateCrossConnectDetails.
+        **[Required]** Gets the port_speed_shape_name of this CreateCrossConnectDetails.
         The port speed for this cross-connect. To get a list of the available port speeds, see
         :func:`list_crossconnect_port_speed_shapes`.
 

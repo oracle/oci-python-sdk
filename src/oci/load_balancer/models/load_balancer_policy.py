@@ -32,7 +32,7 @@ class LoadBalancerPolicy(object):
     @property
     def name(self):
         """
-        Gets the name of this LoadBalancerPolicy.
+        **[Required]** Gets the name of this LoadBalancerPolicy.
         The name of the load balancing policy.
 
 

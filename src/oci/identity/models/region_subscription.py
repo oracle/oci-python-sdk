@@ -55,7 +55,7 @@ class RegionSubscription(object):
     @property
     def region_key(self):
         """
-        Gets the region_key of this RegionSubscription.
+        **[Required]** Gets the region_key of this RegionSubscription.
         The region's key.
 
         Allowed values are:
@@ -89,7 +89,7 @@ class RegionSubscription(object):
     @property
     def region_name(self):
         """
-        Gets the region_name of this RegionSubscription.
+        **[Required]** Gets the region_name of this RegionSubscription.
         The region's name.
 
         Allowed values are:
@@ -123,7 +123,7 @@ class RegionSubscription(object):
     @property
     def status(self):
         """
-        Gets the status of this RegionSubscription.
+        **[Required]** Gets the status of this RegionSubscription.
         The region subscription status.
 
         Allowed values for this property are: "READY", "IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
@@ -153,7 +153,7 @@ class RegionSubscription(object):
     @property
     def is_home_region(self):
         """
-        Gets the is_home_region of this RegionSubscription.
+        **[Required]** Gets the is_home_region of this RegionSubscription.
         Indicates if the region is the home region or not.
 
 

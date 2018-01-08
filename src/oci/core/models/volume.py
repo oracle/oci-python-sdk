@@ -111,7 +111,7 @@ class Volume(object):
     @property
     def availability_domain(self):
         """
-        Gets the availability_domain of this Volume.
+        **[Required]** Gets the availability_domain of this Volume.
         The Availability Domain of the volume.
 
         Example: `Uocm:PHX-AD-1`
@@ -139,7 +139,7 @@ class Volume(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this Volume.
+        **[Required]** Gets the compartment_id of this Volume.
         The OCID of the compartment that contains the volume.
 
 
@@ -197,7 +197,7 @@ class Volume(object):
     @property
     def display_name(self):
         """
-        Gets the display_name of this Volume.
+        **[Required]** Gets the display_name of this Volume.
         A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
 
@@ -259,7 +259,7 @@ class Volume(object):
     @property
     def id(self):
         """
-        Gets the id of this Volume.
+        **[Required]** Gets the id of this Volume.
         The OCID of the volume.
 
 
@@ -307,7 +307,7 @@ class Volume(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this Volume.
+        **[Required]** Gets the lifecycle_state of this Volume.
         The current state of a volume.
 
         Allowed values for this property are: "PROVISIONING", "RESTORING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAULTY", 'UNKNOWN_ENUM_VALUE'.
@@ -361,7 +361,7 @@ class Volume(object):
     @property
     def size_in_mbs(self):
         """
-        Gets the size_in_mbs of this Volume.
+        **[Required]** Gets the size_in_mbs of this Volume.
         The size of the volume in MBs. This field is deprecated. Use sizeInGBs instead.
 
 
@@ -411,7 +411,7 @@ class Volume(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this Volume.
+        **[Required]** Gets the time_created of this Volume.
         The date and time the volume was created. Format defined by RFC3339.
 
 

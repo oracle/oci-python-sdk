@@ -247,7 +247,7 @@ class CreatePrivateIpDetails(object):
     @property
     def vnic_id(self):
         """
-        Gets the vnic_id of this CreatePrivateIpDetails.
+        **[Required]** Gets the vnic_id of this CreatePrivateIpDetails.
         The OCID of the VNIC to assign the private IP to. The VNIC and private IP
         must be in the same subnet.
 

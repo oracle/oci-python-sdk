@@ -41,7 +41,7 @@ class InstanceSourceViaImageDetails(InstanceSourceDetails):
     @property
     def image_id(self):
         """
-        Gets the image_id of this InstanceSourceViaImageDetails.
+        **[Required]** Gets the image_id of this InstanceSourceViaImageDetails.
         The OCID of the image used to boot the instance.
 
 

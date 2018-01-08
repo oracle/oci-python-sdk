@@ -153,7 +153,7 @@ class Subnet(object):
     @property
     def availability_domain(self):
         """
-        Gets the availability_domain of this Subnet.
+        **[Required]** Gets the availability_domain of this Subnet.
         The subnet's Availability Domain.
 
         Example: `Uocm:PHX-AD-1`
@@ -181,7 +181,7 @@ class Subnet(object):
     @property
     def cidr_block(self):
         """
-        Gets the cidr_block of this Subnet.
+        **[Required]** Gets the cidr_block of this Subnet.
         The subnet's CIDR block.
 
         Example: `172.16.1.0/24`
@@ -209,7 +209,7 @@ class Subnet(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this Subnet.
+        **[Required]** Gets the compartment_id of this Subnet.
         The OCID of the compartment containing the subnet.
 
 
@@ -405,7 +405,7 @@ class Subnet(object):
     @property
     def id(self):
         """
-        Gets the id of this Subnet.
+        **[Required]** Gets the id of this Subnet.
         The subnet's Oracle ID (OCID).
 
 
@@ -429,7 +429,7 @@ class Subnet(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this Subnet.
+        **[Required]** Gets the lifecycle_state of this Subnet.
         The subnet's current state.
 
         Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
@@ -503,7 +503,7 @@ class Subnet(object):
     @property
     def route_table_id(self):
         """
-        Gets the route_table_id of this Subnet.
+        **[Required]** Gets the route_table_id of this Subnet.
         The OCID of the route table the subnet is using.
 
 
@@ -619,7 +619,7 @@ class Subnet(object):
     @property
     def vcn_id(self):
         """
-        Gets the vcn_id of this Subnet.
+        **[Required]** Gets the vcn_id of this Subnet.
         The OCID of the VCN the subnet is in.
 
 
@@ -643,7 +643,7 @@ class Subnet(object):
     @property
     def virtual_router_ip(self):
         """
-        Gets the virtual_router_ip of this Subnet.
+        **[Required]** Gets the virtual_router_ip of this Subnet.
         The IP address of the virtual router.
 
         Example: `10.0.14.1`
@@ -671,7 +671,7 @@ class Subnet(object):
     @property
     def virtual_router_mac(self):
         """
-        Gets the virtual_router_mac of this Subnet.
+        **[Required]** Gets the virtual_router_mac of this Subnet.
         The MAC address of the virtual router.
 
         Example: `00:00:17:B6:4D:DD`

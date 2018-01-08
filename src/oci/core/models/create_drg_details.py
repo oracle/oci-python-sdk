@@ -39,7 +39,7 @@ class CreateDrgDetails(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this CreateDrgDetails.
+        **[Required]** Gets the compartment_id of this CreateDrgDetails.
         The OCID of the compartment to contain the DRG.
 
 

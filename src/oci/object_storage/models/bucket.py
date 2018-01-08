@@ -92,7 +92,7 @@ class Bucket(object):
     @property
     def namespace(self):
         """
-        Gets the namespace of this Bucket.
+        **[Required]** Gets the namespace of this Bucket.
         The namespace in which the bucket lives.
 
 
@@ -116,7 +116,7 @@ class Bucket(object):
     @property
     def name(self):
         """
-        Gets the name of this Bucket.
+        **[Required]** Gets the name of this Bucket.
         The name of the bucket. Avoid entering confidential information.
         Example: my-new-bucket1
 
@@ -142,7 +142,7 @@ class Bucket(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this Bucket.
+        **[Required]** Gets the compartment_id of this Bucket.
         The compartment ID in which the bucket is authorized.
 
 
@@ -166,7 +166,7 @@ class Bucket(object):
     @property
     def metadata(self):
         """
-        Gets the metadata of this Bucket.
+        **[Required]** Gets the metadata of this Bucket.
         Arbitrary string keys and values for user-defined metadata.
 
 
@@ -190,7 +190,7 @@ class Bucket(object):
     @property
     def created_by(self):
         """
-        Gets the created_by of this Bucket.
+        **[Required]** Gets the created_by of this Bucket.
         The OCID of the user who created the bucket.
 
 
@@ -214,7 +214,7 @@ class Bucket(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this Bucket.
+        **[Required]** Gets the time_created of this Bucket.
         The date and time the bucket was created, as described in `RFC 2616`__, section 14.29.
 
         __ https://tools.ietf.org/rfc/rfc2616
@@ -242,7 +242,7 @@ class Bucket(object):
     @property
     def etag(self):
         """
-        Gets the etag of this Bucket.
+        **[Required]** Gets the etag of this Bucket.
         The entity tag for the bucket.
 
 

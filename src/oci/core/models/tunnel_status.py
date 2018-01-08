@@ -55,7 +55,7 @@ class TunnelStatus(object):
     @property
     def ip_address(self):
         """
-        Gets the ip_address of this TunnelStatus.
+        **[Required]** Gets the ip_address of this TunnelStatus.
         The IP address of Oracle's VPN headend.
 
         Example: `129.146.17.50`

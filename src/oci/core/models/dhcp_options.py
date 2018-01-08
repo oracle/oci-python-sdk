@@ -90,7 +90,7 @@ class DhcpOptions(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this DhcpOptions.
+        **[Required]** Gets the compartment_id of this DhcpOptions.
         The OCID of the compartment containing the set of DHCP options.
 
 
@@ -210,7 +210,7 @@ class DhcpOptions(object):
     @property
     def id(self):
         """
-        Gets the id of this DhcpOptions.
+        **[Required]** Gets the id of this DhcpOptions.
         Oracle ID (OCID) for the set of DHCP options.
 
 
@@ -234,7 +234,7 @@ class DhcpOptions(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this DhcpOptions.
+        **[Required]** Gets the lifecycle_state of this DhcpOptions.
         The current state of the set of DHCP options.
 
         Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
@@ -264,7 +264,7 @@ class DhcpOptions(object):
     @property
     def options(self):
         """
-        Gets the options of this DhcpOptions.
+        **[Required]** Gets the options of this DhcpOptions.
         The collection of individual DHCP options.
 
 
@@ -288,7 +288,7 @@ class DhcpOptions(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this DhcpOptions.
+        **[Required]** Gets the time_created of this DhcpOptions.
         Date and time the set of DHCP options was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
@@ -316,7 +316,7 @@ class DhcpOptions(object):
     @property
     def vcn_id(self):
         """
-        Gets the vcn_id of this DhcpOptions.
+        **[Required]** Gets the vcn_id of this DhcpOptions.
         The OCID of the VCN the set of DHCP options belongs to.
 
 

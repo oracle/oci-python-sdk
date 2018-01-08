@@ -81,7 +81,7 @@ class TagNamespace(object):
     @property
     def id(self):
         """
-        Gets the id of this TagNamespace.
+        **[Required]** Gets the id of this TagNamespace.
         The OCID of the tagNamespace.
 
 
@@ -105,7 +105,7 @@ class TagNamespace(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this TagNamespace.
+        **[Required]** Gets the compartment_id of this TagNamespace.
         The OCID of the compartment which the namespace is attached to.
 
 
@@ -129,7 +129,7 @@ class TagNamespace(object):
     @property
     def name(self):
         """
-        Gets the name of this TagNamespace.
+        **[Required]** Gets the name of this TagNamespace.
         The name of the tagNamespace. It must be unique across all tagNamespaces in the tenancy and cannot be changed.
 
 
@@ -153,7 +153,7 @@ class TagNamespace(object):
     @property
     def description(self):
         """
-        Gets the description of this TagNamespace.
+        **[Required]** Gets the description of this TagNamespace.
         The description you assign to the tagNamespace.
 
 
@@ -229,7 +229,7 @@ class TagNamespace(object):
     @property
     def is_retired(self):
         """
-        Gets the is_retired of this TagNamespace.
+        **[Required]** Gets the is_retired of this TagNamespace.
         Indicated whether or not the tagNamespace is retired
 
 
@@ -253,7 +253,7 @@ class TagNamespace(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this TagNamespace.
+        **[Required]** Gets the time_created of this TagNamespace.
         Date and time the tagNamespace was created, in the format defined by RFC3339.
         Example: `2016-08-25T21:10:29.600Z`
 

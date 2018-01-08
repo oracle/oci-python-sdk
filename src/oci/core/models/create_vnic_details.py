@@ -297,7 +297,7 @@ class CreateVnicDetails(object):
     @property
     def subnet_id(self):
         """
-        Gets the subnet_id of this CreateVnicDetails.
+        **[Required]** Gets the subnet_id of this CreateVnicDetails.
         The OCID of the subnet to create the VNIC in. When launching an instance,
         use this `subnetId` instead of the deprecated `subnetId` in
         :func:`launch_instance_details`.

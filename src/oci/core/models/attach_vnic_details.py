@@ -53,7 +53,7 @@ class AttachVnicDetails(object):
     @property
     def create_vnic_details(self):
         """
-        Gets the create_vnic_details of this AttachVnicDetails.
+        **[Required]** Gets the create_vnic_details of this AttachVnicDetails.
         Details for creating a new VNIC.
 
 
@@ -101,7 +101,7 @@ class AttachVnicDetails(object):
     @property
     def instance_id(self):
         """
-        Gets the instance_id of this AttachVnicDetails.
+        **[Required]** Gets the instance_id of this AttachVnicDetails.
         The OCID of the instance.
 
 

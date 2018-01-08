@@ -46,7 +46,7 @@ class CreateLocalPeeringGatewayDetails(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this CreateLocalPeeringGatewayDetails.
+        **[Required]** Gets the compartment_id of this CreateLocalPeeringGatewayDetails.
         The OCID of the compartment containing the local peering gateway (LPG).
 
 
@@ -96,7 +96,7 @@ class CreateLocalPeeringGatewayDetails(object):
     @property
     def vcn_id(self):
         """
-        Gets the vcn_id of this CreateLocalPeeringGatewayDetails.
+        **[Required]** Gets the vcn_id of this CreateLocalPeeringGatewayDetails.
         The OCID of the VCN the LPG belongs to.
 
 

@@ -76,7 +76,7 @@ class InternetGateway(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this InternetGateway.
+        **[Required]** Gets the compartment_id of this InternetGateway.
         The OCID of the compartment containing the Internet Gateway.
 
 
@@ -126,7 +126,7 @@ class InternetGateway(object):
     @property
     def id(self):
         """
-        Gets the id of this InternetGateway.
+        **[Required]** Gets the id of this InternetGateway.
         The Internet Gateway's Oracle ID (OCID).
 
 
@@ -176,7 +176,7 @@ class InternetGateway(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this InternetGateway.
+        **[Required]** Gets the lifecycle_state of this InternetGateway.
         The Internet Gateway's current state.
 
         Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
@@ -234,7 +234,7 @@ class InternetGateway(object):
     @property
     def vcn_id(self):
         """
-        Gets the vcn_id of this InternetGateway.
+        **[Required]** Gets the vcn_id of this InternetGateway.
         The OCID of the VCN the Internet Gateway belongs to.
 
 

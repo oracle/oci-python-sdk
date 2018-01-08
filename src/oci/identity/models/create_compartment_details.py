@@ -60,7 +60,7 @@ class CreateCompartmentDetails(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this CreateCompartmentDetails.
+        **[Required]** Gets the compartment_id of this CreateCompartmentDetails.
         The OCID of the tenancy containing the compartment.
 
 
@@ -84,7 +84,7 @@ class CreateCompartmentDetails(object):
     @property
     def name(self):
         """
-        Gets the name of this CreateCompartmentDetails.
+        **[Required]** Gets the name of this CreateCompartmentDetails.
         The name you assign to the compartment during creation. The name must be unique across all compartments
         in the tenancy.
 
@@ -110,7 +110,7 @@ class CreateCompartmentDetails(object):
     @property
     def description(self):
         """
-        Gets the description of this CreateCompartmentDetails.
+        **[Required]** Gets the description of this CreateCompartmentDetails.
         The description you assign to the compartment during creation. Does not have to be unique, and it's changeable.
 
 

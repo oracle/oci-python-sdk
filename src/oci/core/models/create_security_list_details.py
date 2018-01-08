@@ -74,7 +74,7 @@ class CreateSecurityListDetails(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this CreateSecurityListDetails.
+        **[Required]** Gets the compartment_id of this CreateSecurityListDetails.
         The OCID of the compartment to contain the security list.
 
 
@@ -156,7 +156,7 @@ class CreateSecurityListDetails(object):
     @property
     def egress_security_rules(self):
         """
-        Gets the egress_security_rules of this CreateSecurityListDetails.
+        **[Required]** Gets the egress_security_rules of this CreateSecurityListDetails.
         Rules for allowing egress IP packets.
 
 
@@ -216,7 +216,7 @@ class CreateSecurityListDetails(object):
     @property
     def ingress_security_rules(self):
         """
-        Gets the ingress_security_rules of this CreateSecurityListDetails.
+        **[Required]** Gets the ingress_security_rules of this CreateSecurityListDetails.
         Rules for allowing ingress IP packets.
 
 
@@ -240,7 +240,7 @@ class CreateSecurityListDetails(object):
     @property
     def vcn_id(self):
         """
-        Gets the vcn_id of this CreateSecurityListDetails.
+        **[Required]** Gets the vcn_id of this CreateSecurityListDetails.
         The OCID of the VCN the security list belongs to.
 
 

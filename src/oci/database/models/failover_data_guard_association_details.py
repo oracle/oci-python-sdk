@@ -32,7 +32,7 @@ class FailoverDataGuardAssociationDetails(object):
     @property
     def database_admin_password(self):
         """
-        Gets the database_admin_password of this FailoverDataGuardAssociationDetails.
+        **[Required]** Gets the database_admin_password of this FailoverDataGuardAssociationDetails.
         The DB System administrator password.
 
 

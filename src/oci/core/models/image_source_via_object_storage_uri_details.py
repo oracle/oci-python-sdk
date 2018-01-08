@@ -49,7 +49,7 @@ class ImageSourceViaObjectStorageUriDetails(ImageSourceDetails):
     @property
     def source_uri(self):
         """
-        Gets the source_uri of this ImageSourceViaObjectStorageUriDetails.
+        **[Required]** Gets the source_uri of this ImageSourceViaObjectStorageUriDetails.
         The Object Storage URL for the image.
 
 

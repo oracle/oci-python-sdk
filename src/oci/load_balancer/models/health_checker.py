@@ -109,7 +109,7 @@ class HealthChecker(object):
     @property
     def port(self):
         """
-        Gets the port of this HealthChecker.
+        **[Required]** Gets the port of this HealthChecker.
         The backend server port against which to run the health check. If the port is not specified, the load balancer uses the
         port information from the `Backend` object.
 
@@ -139,7 +139,7 @@ class HealthChecker(object):
     @property
     def protocol(self):
         """
-        Gets the protocol of this HealthChecker.
+        **[Required]** Gets the protocol of this HealthChecker.
         The protocol the health check must use; either HTTP or TCP.
 
         Example: `HTTP`
@@ -167,7 +167,7 @@ class HealthChecker(object):
     @property
     def response_body_regex(self):
         """
-        Gets the response_body_regex of this HealthChecker.
+        **[Required]** Gets the response_body_regex of this HealthChecker.
         A regular expression for parsing the response body from the backend server.
 
         Example: `^(500|40[1348])$`
@@ -223,7 +223,7 @@ class HealthChecker(object):
     @property
     def return_code(self):
         """
-        Gets the return_code of this HealthChecker.
+        **[Required]** Gets the return_code of this HealthChecker.
         The status code a healthy backend server should return. If you configure the health check policy to use the HTTP protocol,
         you can use common HTTP status codes such as \"200\".
 

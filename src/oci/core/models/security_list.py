@@ -97,7 +97,7 @@ class SecurityList(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this SecurityList.
+        **[Required]** Gets the compartment_id of this SecurityList.
         The OCID of the compartment containing the security list.
 
 
@@ -155,7 +155,7 @@ class SecurityList(object):
     @property
     def display_name(self):
         """
-        Gets the display_name of this SecurityList.
+        **[Required]** Gets the display_name of this SecurityList.
         A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
 
@@ -181,7 +181,7 @@ class SecurityList(object):
     @property
     def egress_security_rules(self):
         """
-        Gets the egress_security_rules of this SecurityList.
+        **[Required]** Gets the egress_security_rules of this SecurityList.
         Rules for allowing egress IP packets.
 
 
@@ -241,7 +241,7 @@ class SecurityList(object):
     @property
     def id(self):
         """
-        Gets the id of this SecurityList.
+        **[Required]** Gets the id of this SecurityList.
         The security list's Oracle Cloud ID (OCID).
 
 
@@ -265,7 +265,7 @@ class SecurityList(object):
     @property
     def ingress_security_rules(self):
         """
-        Gets the ingress_security_rules of this SecurityList.
+        **[Required]** Gets the ingress_security_rules of this SecurityList.
         Rules for allowing ingress IP packets.
 
 
@@ -289,7 +289,7 @@ class SecurityList(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this SecurityList.
+        **[Required]** Gets the lifecycle_state of this SecurityList.
         The security list's current state.
 
         Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
@@ -319,7 +319,7 @@ class SecurityList(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this SecurityList.
+        **[Required]** Gets the time_created of this SecurityList.
         The date and time the security list was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
@@ -347,7 +347,7 @@ class SecurityList(object):
     @property
     def vcn_id(self):
         """
-        Gets the vcn_id of this SecurityList.
+        **[Required]** Gets the vcn_id of this SecurityList.
         The OCID of the VCN the security list belongs to.
 
 

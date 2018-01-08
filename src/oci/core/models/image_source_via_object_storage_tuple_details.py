@@ -63,7 +63,7 @@ class ImageSourceViaObjectStorageTupleDetails(ImageSourceDetails):
     @property
     def bucket_name(self):
         """
-        Gets the bucket_name of this ImageSourceViaObjectStorageTupleDetails.
+        **[Required]** Gets the bucket_name of this ImageSourceViaObjectStorageTupleDetails.
         The Object Storage bucket for the image.
 
 
@@ -87,7 +87,7 @@ class ImageSourceViaObjectStorageTupleDetails(ImageSourceDetails):
     @property
     def namespace_name(self):
         """
-        Gets the namespace_name of this ImageSourceViaObjectStorageTupleDetails.
+        **[Required]** Gets the namespace_name of this ImageSourceViaObjectStorageTupleDetails.
         The Object Storage namespace for the image.
 
 
@@ -111,7 +111,7 @@ class ImageSourceViaObjectStorageTupleDetails(ImageSourceDetails):
     @property
     def object_name(self):
         """
-        Gets the object_name of this ImageSourceViaObjectStorageTupleDetails.
+        **[Required]** Gets the object_name of this ImageSourceViaObjectStorageTupleDetails.
         The Object Storage name for the image.
 
 

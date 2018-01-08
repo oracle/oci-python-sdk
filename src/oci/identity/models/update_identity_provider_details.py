@@ -71,7 +71,7 @@ class UpdateIdentityProviderDetails(object):
     @property
     def protocol(self):
         """
-        Gets the protocol of this UpdateIdentityProviderDetails.
+        **[Required]** Gets the protocol of this UpdateIdentityProviderDetails.
         The protocol used for federation.
 
         Example: `SAML2`

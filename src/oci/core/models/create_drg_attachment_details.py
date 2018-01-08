@@ -70,7 +70,7 @@ class CreateDrgAttachmentDetails(object):
     @property
     def drg_id(self):
         """
-        Gets the drg_id of this CreateDrgAttachmentDetails.
+        **[Required]** Gets the drg_id of this CreateDrgAttachmentDetails.
         The OCID of the DRG.
 
 
@@ -94,7 +94,7 @@ class CreateDrgAttachmentDetails(object):
     @property
     def vcn_id(self):
         """
-        Gets the vcn_id of this CreateDrgAttachmentDetails.
+        **[Required]** Gets the vcn_id of this CreateDrgAttachmentDetails.
         The OCID of the VCN.
 
 

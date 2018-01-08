@@ -126,7 +126,7 @@ class Saml2IdentityProvider(IdentityProvider):
     @property
     def metadata_url(self):
         """
-        Gets the metadata_url of this Saml2IdentityProvider.
+        **[Required]** Gets the metadata_url of this Saml2IdentityProvider.
         The URL for retrieving the identity provider's metadata, which
         contains information required for federating.
 
@@ -152,7 +152,7 @@ class Saml2IdentityProvider(IdentityProvider):
     @property
     def signing_certificate(self):
         """
-        Gets the signing_certificate of this Saml2IdentityProvider.
+        **[Required]** Gets the signing_certificate of this Saml2IdentityProvider.
         The identity provider's signing certificate used by the IAM Service
         to validate the SAML2 token.
 
@@ -178,7 +178,7 @@ class Saml2IdentityProvider(IdentityProvider):
     @property
     def redirect_url(self):
         """
-        Gets the redirect_url of this Saml2IdentityProvider.
+        **[Required]** Gets the redirect_url of this Saml2IdentityProvider.
         The URL to redirect federated users to for authentication with the
         identity provider.
 

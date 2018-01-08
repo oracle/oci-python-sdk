@@ -54,7 +54,7 @@ class CreatePreauthenticatedRequestDetails(object):
     @property
     def name(self):
         """
-        Gets the name of this CreatePreauthenticatedRequestDetails.
+        **[Required]** Gets the name of this CreatePreauthenticatedRequestDetails.
         A user-specified name for the pre-authenticated request. Helpful for management purposes.
 
 
@@ -102,7 +102,7 @@ class CreatePreauthenticatedRequestDetails(object):
     @property
     def access_type(self):
         """
-        Gets the access_type of this CreatePreauthenticatedRequestDetails.
+        **[Required]** Gets the access_type of this CreatePreauthenticatedRequestDetails.
         The operation that can be performed on this resource.
 
         Allowed values for this property are: "ObjectRead", "ObjectWrite", "ObjectReadWrite", "AnyObjectWrite"
@@ -134,7 +134,7 @@ class CreatePreauthenticatedRequestDetails(object):
     @property
     def time_expires(self):
         """
-        Gets the time_expires of this CreatePreauthenticatedRequestDetails.
+        **[Required]** Gets the time_expires of this CreatePreauthenticatedRequestDetails.
         The expiration date for the pre-authenticated request as per `RFC 3339`__. After this date the pre-authenticated request will no longer be valid.
 
         __ https://tools.ietf.org/rfc/rfc3339

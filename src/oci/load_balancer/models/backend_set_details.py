@@ -80,7 +80,7 @@ class BackendSetDetails(object):
     @property
     def health_checker(self):
         """
-        Gets the health_checker of this BackendSetDetails.
+        **[Required]** Gets the health_checker of this BackendSetDetails.
 
         :return: The health_checker of this BackendSetDetails.
         :rtype: HealthCheckerDetails
@@ -100,7 +100,7 @@ class BackendSetDetails(object):
     @property
     def policy(self):
         """
-        Gets the policy of this BackendSetDetails.
+        **[Required]** Gets the policy of this BackendSetDetails.
         The load balancer policy for the backend set. To get a list of available policies, use the
         :func:`list_policies` operation.
 

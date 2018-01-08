@@ -95,7 +95,7 @@ class Tag(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this Tag.
+        **[Required]** Gets the compartment_id of this Tag.
         The OCID of the compartment which the tagRule belongs to.
 
 
@@ -119,7 +119,7 @@ class Tag(object):
     @property
     def tag_namespace_id(self):
         """
-        Gets the tag_namespace_id of this Tag.
+        **[Required]** Gets the tag_namespace_id of this Tag.
         The OCID of the containing tagNamespace.
 
 
@@ -143,7 +143,7 @@ class Tag(object):
     @property
     def tag_namespace_name(self):
         """
-        Gets the tag_namespace_name of this Tag.
+        **[Required]** Gets the tag_namespace_name of this Tag.
         The name of the tag namespace to which this tag belongs.
 
 
@@ -167,7 +167,7 @@ class Tag(object):
     @property
     def id(self):
         """
-        Gets the id of this Tag.
+        **[Required]** Gets the id of this Tag.
         The OCID of the tag definition.
 
 
@@ -191,7 +191,7 @@ class Tag(object):
     @property
     def name(self):
         """
-        Gets the name of this Tag.
+        **[Required]** Gets the name of this Tag.
         The name of the tag which must be unique across all tags in the tagNamespace and cannot be changed.
 
 
@@ -215,7 +215,7 @@ class Tag(object):
     @property
     def description(self):
         """
-        Gets the description of this Tag.
+        **[Required]** Gets the description of this Tag.
         The description you assign to the tag.
 
 
@@ -291,7 +291,7 @@ class Tag(object):
     @property
     def is_retired(self):
         """
-        Gets the is_retired of this Tag.
+        **[Required]** Gets the is_retired of this Tag.
         Indicated whether the tagNamespace is retired or not
 
 
@@ -315,7 +315,7 @@ class Tag(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this Tag.
+        **[Required]** Gets the time_created of this Tag.
         Date and time the tag was created, in the format defined by RFC3339.
         Example: `2016-08-25T21:10:29.600Z`
 

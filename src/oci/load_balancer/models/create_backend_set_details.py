@@ -87,7 +87,7 @@ class CreateBackendSetDetails(object):
     @property
     def health_checker(self):
         """
-        Gets the health_checker of this CreateBackendSetDetails.
+        **[Required]** Gets the health_checker of this CreateBackendSetDetails.
 
         :return: The health_checker of this CreateBackendSetDetails.
         :rtype: HealthCheckerDetails
@@ -107,7 +107,7 @@ class CreateBackendSetDetails(object):
     @property
     def name(self):
         """
-        Gets the name of this CreateBackendSetDetails.
+        **[Required]** Gets the name of this CreateBackendSetDetails.
         A friendly name for the backend set. It must be unique and it cannot be changed.
 
         Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot
@@ -141,7 +141,7 @@ class CreateBackendSetDetails(object):
     @property
     def policy(self):
         """
-        Gets the policy of this CreateBackendSetDetails.
+        **[Required]** Gets the policy of this CreateBackendSetDetails.
         The load balancer policy for the backend set. To get a list of available policies, use the
         :func:`list_policies` operation.
 

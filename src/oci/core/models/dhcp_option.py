@@ -53,7 +53,7 @@ class DhcpOption(object):
     @property
     def type(self):
         """
-        Gets the type of this DhcpOption.
+        **[Required]** Gets the type of this DhcpOption.
         The specific DHCP option. Either `DomainNameServer`
         (for :class:`DhcpDnsOption`) or
         `SearchDomain` (for :class:`DhcpSearchDomainOption`).

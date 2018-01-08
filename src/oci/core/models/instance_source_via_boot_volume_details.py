@@ -41,7 +41,7 @@ class InstanceSourceViaBootVolumeDetails(InstanceSourceDetails):
     @property
     def boot_volume_id(self):
         """
-        Gets the boot_volume_id of this InstanceSourceViaBootVolumeDetails.
+        **[Required]** Gets the boot_volume_id of this InstanceSourceViaBootVolumeDetails.
         The OCID of the boot volume used to boot the instance.
 
 

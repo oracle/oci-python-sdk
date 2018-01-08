@@ -53,7 +53,7 @@ class CreateInternetGatewayDetails(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this CreateInternetGatewayDetails.
+        **[Required]** Gets the compartment_id of this CreateInternetGatewayDetails.
         The OCID of the compartment to contain the Internet Gateway.
 
 
@@ -101,7 +101,7 @@ class CreateInternetGatewayDetails(object):
     @property
     def is_enabled(self):
         """
-        Gets the is_enabled of this CreateInternetGatewayDetails.
+        **[Required]** Gets the is_enabled of this CreateInternetGatewayDetails.
         Whether the gateway is enabled upon creation.
 
 
@@ -125,7 +125,7 @@ class CreateInternetGatewayDetails(object):
     @property
     def vcn_id(self):
         """
-        Gets the vcn_id of this CreateInternetGatewayDetails.
+        **[Required]** Gets the vcn_id of this CreateInternetGatewayDetails.
         The OCID of the VCN the Internet Gateway is attached to.
 
 

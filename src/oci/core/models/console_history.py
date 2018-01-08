@@ -90,7 +90,7 @@ class ConsoleHistory(object):
     @property
     def availability_domain(self):
         """
-        Gets the availability_domain of this ConsoleHistory.
+        **[Required]** Gets the availability_domain of this ConsoleHistory.
         The Availability Domain of an instance.
 
         Example: `Uocm:PHX-AD-1`
@@ -118,7 +118,7 @@ class ConsoleHistory(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this ConsoleHistory.
+        **[Required]** Gets the compartment_id of this ConsoleHistory.
         The OCID of the compartment.
 
 
@@ -242,7 +242,7 @@ class ConsoleHistory(object):
     @property
     def id(self):
         """
-        Gets the id of this ConsoleHistory.
+        **[Required]** Gets the id of this ConsoleHistory.
         The OCID of the console history metadata object.
 
 
@@ -266,7 +266,7 @@ class ConsoleHistory(object):
     @property
     def instance_id(self):
         """
-        Gets the instance_id of this ConsoleHistory.
+        **[Required]** Gets the instance_id of this ConsoleHistory.
         The OCID of the instance this console history was fetched from.
 
 
@@ -290,7 +290,7 @@ class ConsoleHistory(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this ConsoleHistory.
+        **[Required]** Gets the lifecycle_state of this ConsoleHistory.
         The current state of the console history.
 
         Allowed values for this property are: "REQUESTED", "GETTING-HISTORY", "SUCCEEDED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -320,7 +320,7 @@ class ConsoleHistory(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this ConsoleHistory.
+        **[Required]** Gets the time_created of this ConsoleHistory.
         The date and time the history was created, in the format defined by RFC3339.
         Example: `2016-08-25T21:10:29.600Z`
 

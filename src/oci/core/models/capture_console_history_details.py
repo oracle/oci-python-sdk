@@ -147,7 +147,7 @@ class CaptureConsoleHistoryDetails(object):
     @property
     def instance_id(self):
         """
-        Gets the instance_id of this CaptureConsoleHistoryDetails.
+        **[Required]** Gets the instance_id of this CaptureConsoleHistoryDetails.
         The OCID of the instance to get the console history from.
 
 

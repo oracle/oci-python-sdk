@@ -39,7 +39,7 @@ class PortRange(object):
     @property
     def max(self):
         """
-        Gets the max of this PortRange.
+        **[Required]** Gets the max of this PortRange.
         The maximum port number. Must not be lower than the minimum port number. To specify
         a single port number, set both the min and max to the same value.
 
@@ -65,7 +65,7 @@ class PortRange(object):
     @property
     def min(self):
         """
-        Gets the min of this PortRange.
+        **[Required]** Gets the min of this PortRange.
         The minimum port number. Must not be greater than the maximum port number.
 
 

@@ -83,7 +83,7 @@ class WorkRequest(object):
     @property
     def error_details(self):
         """
-        Gets the error_details of this WorkRequest.
+        **[Required]** Gets the error_details of this WorkRequest.
 
         :return: The error_details of this WorkRequest.
         :rtype: list[WorkRequestError]
@@ -103,7 +103,7 @@ class WorkRequest(object):
     @property
     def id(self):
         """
-        Gets the id of this WorkRequest.
+        **[Required]** Gets the id of this WorkRequest.
         The `OCID`__ of the work request.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
@@ -131,7 +131,7 @@ class WorkRequest(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this WorkRequest.
+        **[Required]** Gets the lifecycle_state of this WorkRequest.
         The current state of the work request.
 
         Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", 'UNKNOWN_ENUM_VALUE'.
@@ -161,7 +161,7 @@ class WorkRequest(object):
     @property
     def load_balancer_id(self):
         """
-        Gets the load_balancer_id of this WorkRequest.
+        **[Required]** Gets the load_balancer_id of this WorkRequest.
         The `OCID`__ of the load balancer with which the work request
         is associated.
 
@@ -191,7 +191,7 @@ class WorkRequest(object):
     @property
     def message(self):
         """
-        Gets the message of this WorkRequest.
+        **[Required]** Gets the message of this WorkRequest.
         A collection of data, related to the load balancer provisioning process, that helps with debugging in the event of failure.
         Possible data elements include:
 
@@ -229,7 +229,7 @@ class WorkRequest(object):
     @property
     def time_accepted(self):
         """
-        Gets the time_accepted of this WorkRequest.
+        **[Required]** Gets the time_accepted of this WorkRequest.
         The date and time the work request was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
@@ -285,7 +285,7 @@ class WorkRequest(object):
     @property
     def type(self):
         """
-        Gets the type of this WorkRequest.
+        **[Required]** Gets the type of this WorkRequest.
         The type of action the work request represents.
 
 

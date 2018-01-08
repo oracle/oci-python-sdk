@@ -104,7 +104,7 @@ class Policy(object):
     @property
     def id(self):
         """
-        Gets the id of this Policy.
+        **[Required]** Gets the id of this Policy.
         The OCID of the policy.
 
 
@@ -128,7 +128,7 @@ class Policy(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this Policy.
+        **[Required]** Gets the compartment_id of this Policy.
         The OCID of the compartment containing the policy (either the tenancy or another compartment).
 
 
@@ -152,7 +152,7 @@ class Policy(object):
     @property
     def name(self):
         """
-        Gets the name of this Policy.
+        **[Required]** Gets the name of this Policy.
         The name you assign to the policy during creation. The name must be unique across all policies
         in the tenancy and cannot be changed.
 
@@ -178,7 +178,7 @@ class Policy(object):
     @property
     def statements(self):
         """
-        Gets the statements of this Policy.
+        **[Required]** Gets the statements of this Policy.
         An array of one or more policy statements written in the policy language.
 
 
@@ -202,7 +202,7 @@ class Policy(object):
     @property
     def description(self):
         """
-        Gets the description of this Policy.
+        **[Required]** Gets the description of this Policy.
         The description you assign to the policy. Does not have to be unique, and it's changeable.
 
 
@@ -226,7 +226,7 @@ class Policy(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this Policy.
+        **[Required]** Gets the time_created of this Policy.
         Date and time the policy was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
@@ -254,7 +254,7 @@ class Policy(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this Policy.
+        **[Required]** Gets the lifecycle_state of this Policy.
         The policy's current state. After creating a policy, make sure its `lifecycleState` changes from CREATING to
         ACTIVE before using it.
 

@@ -32,7 +32,7 @@ class LoadBalancerProtocol(object):
     @property
     def name(self):
         """
-        Gets the name of this LoadBalancerProtocol.
+        **[Required]** Gets the name of this LoadBalancerProtocol.
         The name of the protocol.
 
 

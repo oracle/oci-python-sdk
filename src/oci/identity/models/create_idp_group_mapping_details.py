@@ -39,7 +39,7 @@ class CreateIdpGroupMappingDetails(object):
     @property
     def idp_group_name(self):
         """
-        Gets the idp_group_name of this CreateIdpGroupMappingDetails.
+        **[Required]** Gets the idp_group_name of this CreateIdpGroupMappingDetails.
         The name of the IdP group you want to map.
 
 
@@ -63,7 +63,7 @@ class CreateIdpGroupMappingDetails(object):
     @property
     def group_id(self):
         """
-        Gets the group_id of this CreateIdpGroupMappingDetails.
+        **[Required]** Gets the group_id of this CreateIdpGroupMappingDetails.
         The OCID of the IAM Service :class:`Group`
         you want to map to the IdP group.
 

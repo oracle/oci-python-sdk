@@ -60,7 +60,7 @@ class CreateUserDetails(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this CreateUserDetails.
+        **[Required]** Gets the compartment_id of this CreateUserDetails.
         The OCID of the tenancy containing the user.
 
 
@@ -84,7 +84,7 @@ class CreateUserDetails(object):
     @property
     def name(self):
         """
-        Gets the name of this CreateUserDetails.
+        **[Required]** Gets the name of this CreateUserDetails.
         The name you assign to the user during creation. This is the user's login for the Console.
         The name must be unique across all users in the tenancy and cannot be changed.
 
@@ -110,7 +110,7 @@ class CreateUserDetails(object):
     @property
     def description(self):
         """
-        Gets the description of this CreateUserDetails.
+        **[Required]** Gets the description of this CreateUserDetails.
         The description you assign to the user during creation. Does not have to be unique, and it's changeable.
 
 

@@ -139,7 +139,7 @@ class HealthCheckerDetails(object):
     @property
     def protocol(self):
         """
-        Gets the protocol of this HealthCheckerDetails.
+        **[Required]** Gets the protocol of this HealthCheckerDetails.
         The protocol the health check must use; either HTTP or TCP.
 
         Example: `HTTP`

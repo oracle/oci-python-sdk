@@ -74,7 +74,7 @@ class Backend(object):
     @property
     def backup(self):
         """
-        Gets the backup of this Backend.
+        **[Required]** Gets the backup of this Backend.
         Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress
         traffic to this backend server unless all other backend servers not marked as \"backup\" fail the health check policy.
 
@@ -104,7 +104,7 @@ class Backend(object):
     @property
     def drain(self):
         """
-        Gets the drain of this Backend.
+        **[Required]** Gets the drain of this Backend.
         Whether the load balancer should drain this server. Servers marked \"drain\" receive no new
         incoming traffic.
 
@@ -134,7 +134,7 @@ class Backend(object):
     @property
     def ip_address(self):
         """
-        Gets the ip_address of this Backend.
+        **[Required]** Gets the ip_address of this Backend.
         The IP address of the backend server.
 
         Example: `10.10.10.4`
@@ -162,7 +162,7 @@ class Backend(object):
     @property
     def name(self):
         """
-        Gets the name of this Backend.
+        **[Required]** Gets the name of this Backend.
         A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.
 
         Example: `10.10.10.4:8080`
@@ -190,7 +190,7 @@ class Backend(object):
     @property
     def offline(self):
         """
-        Gets the offline of this Backend.
+        **[Required]** Gets the offline of this Backend.
         Whether the load balancer should treat this server as offline. Offline servers receive no incoming
         traffic.
 
@@ -220,7 +220,7 @@ class Backend(object):
     @property
     def port(self):
         """
-        Gets the port of this Backend.
+        **[Required]** Gets the port of this Backend.
         The communication port for the backend server.
 
         Example: `8080`
@@ -248,7 +248,7 @@ class Backend(object):
     @property
     def weight(self):
         """
-        Gets the weight of this Backend.
+        **[Required]** Gets the weight of this Backend.
         The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger
         proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections
         as a server weighted '1'.

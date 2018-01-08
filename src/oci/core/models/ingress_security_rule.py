@@ -141,7 +141,7 @@ class IngressSecurityRule(object):
     @property
     def protocol(self):
         """
-        Gets the protocol of this IngressSecurityRule.
+        **[Required]** Gets the protocol of this IngressSecurityRule.
         The transport protocol. Specify either `all` or an IPv4 protocol number as
         defined in
         `Protocol Numbers`__.
@@ -175,7 +175,7 @@ class IngressSecurityRule(object):
     @property
     def source(self):
         """
-        Gets the source of this IngressSecurityRule.
+        **[Required]** Gets the source of this IngressSecurityRule.
         The source CIDR block for the ingress rule. This is the range of IP addresses that a
         packet coming into the instance can come from.
 

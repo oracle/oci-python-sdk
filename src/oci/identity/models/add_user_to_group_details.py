@@ -39,7 +39,7 @@ class AddUserToGroupDetails(object):
     @property
     def user_id(self):
         """
-        Gets the user_id of this AddUserToGroupDetails.
+        **[Required]** Gets the user_id of this AddUserToGroupDetails.
         The OCID of the user.
 
 
@@ -63,7 +63,7 @@ class AddUserToGroupDetails(object):
     @property
     def group_id(self):
         """
-        Gets the group_id of this AddUserToGroupDetails.
+        **[Required]** Gets the group_id of this AddUserToGroupDetails.
         The OCID of the group.
 
 

@@ -32,7 +32,7 @@ class CreateRegionSubscriptionDetails(object):
     @property
     def region_key(self):
         """
-        Gets the region_key of this CreateRegionSubscriptionDetails.
+        **[Required]** Gets the region_key of this CreateRegionSubscriptionDetails.
         The regions's key.
 
         Allowed values are:

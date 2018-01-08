@@ -46,7 +46,7 @@ class NamespaceMetadata(object):
     @property
     def namespace(self):
         """
-        Gets the namespace of this NamespaceMetadata.
+        **[Required]** Gets the namespace of this NamespaceMetadata.
         The namespace to which the metadata belongs.
 
 
@@ -70,7 +70,7 @@ class NamespaceMetadata(object):
     @property
     def default_s3_compartment_id(self):
         """
-        Gets the default_s3_compartment_id of this NamespaceMetadata.
+        **[Required]** Gets the default_s3_compartment_id of this NamespaceMetadata.
         The default compartment ID for an S3 client.
 
 
@@ -94,7 +94,7 @@ class NamespaceMetadata(object):
     @property
     def default_swift_compartment_id(self):
         """
-        Gets the default_swift_compartment_id of this NamespaceMetadata.
+        **[Required]** Gets the default_swift_compartment_id of this NamespaceMetadata.
         The default compartment ID for a Swift client.
 
 

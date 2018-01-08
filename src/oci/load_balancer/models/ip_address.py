@@ -39,7 +39,7 @@ class IpAddress(object):
     @property
     def ip_address(self):
         """
-        Gets the ip_address of this IpAddress.
+        **[Required]** Gets the ip_address of this IpAddress.
         An IP address.
 
         Example: `128.148.10.20`

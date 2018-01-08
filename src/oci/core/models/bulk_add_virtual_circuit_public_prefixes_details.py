@@ -32,7 +32,7 @@ class BulkAddVirtualCircuitPublicPrefixesDetails(object):
     @property
     def public_prefixes(self):
         """
-        Gets the public_prefixes of this BulkAddVirtualCircuitPublicPrefixesDetails.
+        **[Required]** Gets the public_prefixes of this BulkAddVirtualCircuitPublicPrefixesDetails.
         The public IP prefixes (CIDRs) to add to the public virtual circuit.
 
 

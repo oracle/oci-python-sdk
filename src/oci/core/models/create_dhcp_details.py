@@ -67,7 +67,7 @@ class CreateDhcpDetails(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this CreateDhcpDetails.
+        **[Required]** Gets the compartment_id of this CreateDhcpDetails.
         The OCID of the compartment to contain the set of DHCP options.
 
 
@@ -185,7 +185,7 @@ class CreateDhcpDetails(object):
     @property
     def options(self):
         """
-        Gets the options of this CreateDhcpDetails.
+        **[Required]** Gets the options of this CreateDhcpDetails.
         A set of DHCP options.
 
 
@@ -209,7 +209,7 @@ class CreateDhcpDetails(object):
     @property
     def vcn_id(self):
         """
-        Gets the vcn_id of this CreateDhcpDetails.
+        **[Required]** Gets the vcn_id of this CreateDhcpDetails.
         The OCID of the VCN the set of DHCP options belongs to.
 
 

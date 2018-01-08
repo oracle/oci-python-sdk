@@ -107,7 +107,7 @@ class DbNodeSummary(object):
     @property
     def db_system_id(self):
         """
-        Gets the db_system_id of this DbNodeSummary.
+        **[Required]** Gets the db_system_id of this DbNodeSummary.
         The OCID of the DB System.
 
 
@@ -155,7 +155,7 @@ class DbNodeSummary(object):
     @property
     def id(self):
         """
-        Gets the id of this DbNodeSummary.
+        **[Required]** Gets the id of this DbNodeSummary.
         The OCID of the DB Node.
 
 
@@ -179,7 +179,7 @@ class DbNodeSummary(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this DbNodeSummary.
+        **[Required]** Gets the lifecycle_state of this DbNodeSummary.
         The current state of the database node.
 
         Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -233,7 +233,7 @@ class DbNodeSummary(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this DbNodeSummary.
+        **[Required]** Gets the time_created of this DbNodeSummary.
         The date and time that the DB Node was created.
 
 
@@ -257,7 +257,7 @@ class DbNodeSummary(object):
     @property
     def vnic_id(self):
         """
-        Gets the vnic_id of this DbNodeSummary.
+        **[Required]** Gets the vnic_id of this DbNodeSummary.
         The OCID of the VNIC.
 
 

@@ -32,7 +32,7 @@ class CreateSwiftPasswordDetails(object):
     @property
     def description(self):
         """
-        Gets the description of this CreateSwiftPasswordDetails.
+        **[Required]** Gets the description of this CreateSwiftPasswordDetails.
         The description you assign to the Swift password during creation. Does not have to be unique, and it's changeable.
 
 

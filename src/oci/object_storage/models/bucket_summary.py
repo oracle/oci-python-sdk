@@ -67,7 +67,7 @@ class BucketSummary(object):
     @property
     def namespace(self):
         """
-        Gets the namespace of this BucketSummary.
+        **[Required]** Gets the namespace of this BucketSummary.
         The namespace in which the bucket lives.
 
 
@@ -91,7 +91,7 @@ class BucketSummary(object):
     @property
     def name(self):
         """
-        Gets the name of this BucketSummary.
+        **[Required]** Gets the name of this BucketSummary.
         The name of the bucket. Avoid entering confidential information.
         Example: my-new-bucket1
 
@@ -117,7 +117,7 @@ class BucketSummary(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this BucketSummary.
+        **[Required]** Gets the compartment_id of this BucketSummary.
         The compartment ID in which the bucket is authorized.
 
 
@@ -141,7 +141,7 @@ class BucketSummary(object):
     @property
     def created_by(self):
         """
-        Gets the created_by of this BucketSummary.
+        **[Required]** Gets the created_by of this BucketSummary.
         The OCID of the user who created the bucket.
 
 
@@ -165,7 +165,7 @@ class BucketSummary(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this BucketSummary.
+        **[Required]** Gets the time_created of this BucketSummary.
         The date and time the bucket was created, as described in `RFC 2616`__, section 14.29.
 
         __ https://tools.ietf.org/rfc/rfc2616
@@ -193,7 +193,7 @@ class BucketSummary(object):
     @property
     def etag(self):
         """
-        Gets the etag of this BucketSummary.
+        **[Required]** Gets the etag of this BucketSummary.
         The entity tag for the bucket.
 
 

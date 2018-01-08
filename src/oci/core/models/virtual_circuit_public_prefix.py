@@ -41,7 +41,7 @@ class VirtualCircuitPublicPrefix(object):
     @property
     def cidr_block(self):
         """
-        Gets the cidr_block of this VirtualCircuitPublicPrefix.
+        **[Required]** Gets the cidr_block of this VirtualCircuitPublicPrefix.
         Publix IP prefix (CIDR) that the customer specified.
 
 
@@ -65,7 +65,7 @@ class VirtualCircuitPublicPrefix(object):
     @property
     def verification_state(self):
         """
-        Gets the verification_state of this VirtualCircuitPublicPrefix.
+        **[Required]** Gets the verification_state of this VirtualCircuitPublicPrefix.
         Oracle must verify that the customer owns the public IP prefix before traffic
         for that prefix can flow across the virtual circuit. Verification can take a
         few business days. `IN_PROGRESS` means Oracle is verifying the prefix. `COMPLETED`

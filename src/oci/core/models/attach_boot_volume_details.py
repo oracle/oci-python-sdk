@@ -46,7 +46,7 @@ class AttachBootVolumeDetails(object):
     @property
     def boot_volume_id(self):
         """
-        Gets the boot_volume_id of this AttachBootVolumeDetails.
+        **[Required]** Gets the boot_volume_id of this AttachBootVolumeDetails.
         The OCID of the  boot volume.
 
 
@@ -94,7 +94,7 @@ class AttachBootVolumeDetails(object):
     @property
     def instance_id(self):
         """
-        Gets the instance_id of this AttachBootVolumeDetails.
+        **[Required]** Gets the instance_id of this AttachBootVolumeDetails.
         The OCID of the instance.
 
 

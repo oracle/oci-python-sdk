@@ -32,7 +32,7 @@ class Shape(object):
     @property
     def shape(self):
         """
-        Gets the shape of this Shape.
+        **[Required]** Gets the shape of this Shape.
         The name of the shape. You can enumerate all available shapes by calling
         :func:`list_shapes`.
 

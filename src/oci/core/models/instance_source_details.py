@@ -53,7 +53,7 @@ class InstanceSourceDetails(object):
     @property
     def source_type(self):
         """
-        Gets the source_type of this InstanceSourceDetails.
+        **[Required]** Gets the source_type of this InstanceSourceDetails.
         The source type for the instance.
         Use `image` when specifying the image OCID. Use `bootVolume` when specifying
         the boot volume OCID.

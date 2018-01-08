@@ -118,7 +118,7 @@ class Vcn(object):
     @property
     def cidr_block(self):
         """
-        Gets the cidr_block of this Vcn.
+        **[Required]** Gets the cidr_block of this Vcn.
         The CIDR IP address block of the VCN.
 
         Example: `172.16.0.0/16`
@@ -146,7 +146,7 @@ class Vcn(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this Vcn.
+        **[Required]** Gets the compartment_id of this Vcn.
         The OCID of the compartment containing the VCN.
 
 
@@ -390,7 +390,7 @@ class Vcn(object):
     @property
     def id(self):
         """
-        Gets the id of this Vcn.
+        **[Required]** Gets the id of this Vcn.
         The VCN's Oracle ID (OCID).
 
 
@@ -414,7 +414,7 @@ class Vcn(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this Vcn.
+        **[Required]** Gets the lifecycle_state of this Vcn.
         The VCN's current state.
 
         Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.

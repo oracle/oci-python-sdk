@@ -46,7 +46,7 @@ class ListObjects(object):
     @property
     def objects(self):
         """
-        Gets the objects of this ListObjects.
+        **[Required]** Gets the objects of this ListObjects.
         An array of object summaries.
 
 

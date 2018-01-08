@@ -39,7 +39,7 @@ class SessionPersistenceConfigurationDetails(object):
     @property
     def cookie_name(self):
         """
-        Gets the cookie_name of this SessionPersistenceConfigurationDetails.
+        **[Required]** Gets the cookie_name of this SessionPersistenceConfigurationDetails.
         The name of the cookie used to detect a session initiated by the backend server. Use '*' to specify
         that any cookie set by the backend causes the session to persist.
 

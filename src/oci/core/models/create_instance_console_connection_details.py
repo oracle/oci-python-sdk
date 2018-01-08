@@ -123,7 +123,7 @@ class CreateInstanceConsoleConnectionDetails(object):
     @property
     def instance_id(self):
         """
-        Gets the instance_id of this CreateInstanceConsoleConnectionDetails.
+        **[Required]** Gets the instance_id of this CreateInstanceConsoleConnectionDetails.
         The OCID of the instance to create the console connection to.
 
 
@@ -147,7 +147,7 @@ class CreateInstanceConsoleConnectionDetails(object):
     @property
     def public_key(self):
         """
-        Gets the public_key of this CreateInstanceConsoleConnectionDetails.
+        **[Required]** Gets the public_key of this CreateInstanceConsoleConnectionDetails.
         The SSH public key used to authenticate the console connection.
 
 

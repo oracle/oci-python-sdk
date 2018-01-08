@@ -76,7 +76,7 @@ class PreauthenticatedRequest(object):
     @property
     def id(self):
         """
-        Gets the id of this PreauthenticatedRequest.
+        **[Required]** Gets the id of this PreauthenticatedRequest.
         The unique identifier to use when directly addressing the pre-authenticated request.
 
 
@@ -100,7 +100,7 @@ class PreauthenticatedRequest(object):
     @property
     def name(self):
         """
-        Gets the name of this PreauthenticatedRequest.
+        **[Required]** Gets the name of this PreauthenticatedRequest.
         The user-provided name of the pre-authenticated request.
 
 
@@ -124,7 +124,7 @@ class PreauthenticatedRequest(object):
     @property
     def access_uri(self):
         """
-        Gets the access_uri of this PreauthenticatedRequest.
+        **[Required]** Gets the access_uri of this PreauthenticatedRequest.
         The URI to embed in the URL when using the pre-authenticated request.
 
 
@@ -176,7 +176,7 @@ class PreauthenticatedRequest(object):
     @property
     def access_type(self):
         """
-        Gets the access_type of this PreauthenticatedRequest.
+        **[Required]** Gets the access_type of this PreauthenticatedRequest.
         The operation that can be performed on this resource.
 
         Allowed values for this property are: "ObjectRead", "ObjectWrite", "ObjectReadWrite", "AnyObjectWrite", 'UNKNOWN_ENUM_VALUE'.
@@ -206,7 +206,7 @@ class PreauthenticatedRequest(object):
     @property
     def time_expires(self):
         """
-        Gets the time_expires of this PreauthenticatedRequest.
+        **[Required]** Gets the time_expires of this PreauthenticatedRequest.
         The expiration date for the pre-authenticated request as per `RFC 3339`__. After this date the pre-authenticated request will no longer be valid.
 
         __ https://tools.ietf.org/rfc/rfc3339
@@ -234,7 +234,7 @@ class PreauthenticatedRequest(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this PreauthenticatedRequest.
+        **[Required]** Gets the time_created of this PreauthenticatedRequest.
         The date when the pre-authenticated request was created as per specification
         `RFC 3339`__.
 

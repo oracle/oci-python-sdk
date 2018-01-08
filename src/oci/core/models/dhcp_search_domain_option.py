@@ -41,7 +41,7 @@ class DhcpSearchDomainOption(DhcpOption):
     @property
     def search_domain_names(self):
         """
-        Gets the search_domain_names of this DhcpSearchDomainOption.
+        **[Required]** Gets the search_domain_names of this DhcpSearchDomainOption.
         A single search domain name according to `RFC 952`__
         and `RFC 1123`__. During a DNS query,
         the OS will append this search domain name to the value being queried.

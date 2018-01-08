@@ -41,7 +41,7 @@ class ExportImageViaObjectStorageUriDetails(ExportImageDetails):
     @property
     def destination_uri(self):
         """
-        Gets the destination_uri of this ExportImageViaObjectStorageUriDetails.
+        **[Required]** Gets the destination_uri of this ExportImageViaObjectStorageUriDetails.
         The Object Storage URL to export the image to. See `Object Storage URLs`__
         and `pre-authenticated requests`__ for constructing URLs for image import/export.
 

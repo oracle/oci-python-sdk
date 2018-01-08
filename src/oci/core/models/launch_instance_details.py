@@ -123,7 +123,7 @@ class LaunchInstanceDetails(object):
     @property
     def availability_domain(self):
         """
-        Gets the availability_domain of this LaunchInstanceDetails.
+        **[Required]** Gets the availability_domain of this LaunchInstanceDetails.
         The Availability Domain of the instance.
 
         Example: `Uocm:PHX-AD-1`
@@ -151,7 +151,7 @@ class LaunchInstanceDetails(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this LaunchInstanceDetails.
+        **[Required]** Gets the compartment_id of this LaunchInstanceDetails.
         The OCID of the compartment.
 
 
@@ -361,7 +361,7 @@ class LaunchInstanceDetails(object):
     @property
     def image_id(self):
         """
-        Gets the image_id of this LaunchInstanceDetails.
+        **[Required]** Gets the image_id of this LaunchInstanceDetails.
         Deprecated. Use `sourceDetails` with :func:`instance_source_via_image_details`
         source type instead. If you specify values for both, the values must match.
 
@@ -605,7 +605,7 @@ class LaunchInstanceDetails(object):
     @property
     def shape(self):
         """
-        Gets the shape of this LaunchInstanceDetails.
+        **[Required]** Gets the shape of this LaunchInstanceDetails.
         The shape of an instance. The shape determines the number of CPUs, amount of memory,
         and other resources allocated to the instance.
 

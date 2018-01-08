@@ -90,7 +90,7 @@ class Group(object):
     @property
     def id(self):
         """
-        Gets the id of this Group.
+        **[Required]** Gets the id of this Group.
         The OCID of the group.
 
 
@@ -114,7 +114,7 @@ class Group(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this Group.
+        **[Required]** Gets the compartment_id of this Group.
         The OCID of the tenancy containing the group.
 
 
@@ -138,7 +138,7 @@ class Group(object):
     @property
     def name(self):
         """
-        Gets the name of this Group.
+        **[Required]** Gets the name of this Group.
         The name you assign to the group during creation. The name must be unique across all groups in
         the tenancy and cannot be changed.
 
@@ -164,7 +164,7 @@ class Group(object):
     @property
     def description(self):
         """
-        Gets the description of this Group.
+        **[Required]** Gets the description of this Group.
         The description you assign to the group. Does not have to be unique, and it's changeable.
 
 
@@ -188,7 +188,7 @@ class Group(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this Group.
+        **[Required]** Gets the time_created of this Group.
         Date and time the group was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
@@ -216,7 +216,7 @@ class Group(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this Group.
+        **[Required]** Gets the lifecycle_state of this Group.
         The group's current state. After creating a group, make sure its `lifecycleState` changes from CREATING to
         ACTIVE before using it.
 

@@ -39,7 +39,7 @@ class CommitMultipartUploadDetails(object):
     @property
     def parts_to_commit(self):
         """
-        Gets the parts_to_commit of this CommitMultipartUploadDetails.
+        **[Required]** Gets the parts_to_commit of this CommitMultipartUploadDetails.
         The part numbers and ETags for the parts to be committed.
 
 

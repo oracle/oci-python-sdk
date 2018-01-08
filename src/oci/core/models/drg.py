@@ -62,7 +62,7 @@ class Drg(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this Drg.
+        **[Required]** Gets the compartment_id of this Drg.
         The OCID of the compartment containing the DRG.
 
 
@@ -112,7 +112,7 @@ class Drg(object):
     @property
     def id(self):
         """
-        Gets the id of this Drg.
+        **[Required]** Gets the id of this Drg.
         The DRG's Oracle ID (OCID).
 
 
@@ -136,7 +136,7 @@ class Drg(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this Drg.
+        **[Required]** Gets the lifecycle_state of this Drg.
         The DRG's current state.
 
         Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.

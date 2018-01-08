@@ -83,7 +83,7 @@ class DbHomeSummary(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this DbHomeSummary.
+        **[Required]** Gets the compartment_id of this DbHomeSummary.
         The OCID of the compartment.
 
 
@@ -131,7 +131,7 @@ class DbHomeSummary(object):
     @property
     def db_version(self):
         """
-        Gets the db_version of this DbHomeSummary.
+        **[Required]** Gets the db_version of this DbHomeSummary.
         The Oracle database version.
 
 
@@ -155,7 +155,7 @@ class DbHomeSummary(object):
     @property
     def display_name(self):
         """
-        Gets the display_name of this DbHomeSummary.
+        **[Required]** Gets the display_name of this DbHomeSummary.
         The user-provided name for the database home. It does not need to be unique.
 
 
@@ -179,7 +179,7 @@ class DbHomeSummary(object):
     @property
     def id(self):
         """
-        Gets the id of this DbHomeSummary.
+        **[Required]** Gets the id of this DbHomeSummary.
         The OCID of the database home.
 
 
@@ -227,7 +227,7 @@ class DbHomeSummary(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this DbHomeSummary.
+        **[Required]** Gets the lifecycle_state of this DbHomeSummary.
         The current state of the database home.
 
         Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.

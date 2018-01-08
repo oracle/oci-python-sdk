@@ -67,7 +67,7 @@ class EgressSecurityRule(object):
     @property
     def destination(self):
         """
-        Gets the destination of this EgressSecurityRule.
+        **[Required]** Gets the destination of this EgressSecurityRule.
         The destination CIDR block for the egress rule. This is the range of IP addresses that a
         packet originating from the instance can go to.
 
@@ -167,7 +167,7 @@ class EgressSecurityRule(object):
     @property
     def protocol(self):
         """
-        Gets the protocol of this EgressSecurityRule.
+        **[Required]** Gets the protocol of this EgressSecurityRule.
         The transport protocol. Specify either `all` or an IPv4 protocol number as
         defined in
         `Protocol Numbers`__.

@@ -72,7 +72,7 @@ class CreateDataGuardAssociationDetails(object):
     @property
     def creation_type(self):
         """
-        Gets the creation_type of this CreateDataGuardAssociationDetails.
+        **[Required]** Gets the creation_type of this CreateDataGuardAssociationDetails.
         Specifies where to create the associated database.
         \"ExistingDbSystem\" is the only supported `creationType` value.
 
@@ -98,7 +98,7 @@ class CreateDataGuardAssociationDetails(object):
     @property
     def database_admin_password(self):
         """
-        Gets the database_admin_password of this CreateDataGuardAssociationDetails.
+        **[Required]** Gets the database_admin_password of this CreateDataGuardAssociationDetails.
         A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
 
         The password must contain no fewer than nine characters and include:
@@ -146,7 +146,7 @@ class CreateDataGuardAssociationDetails(object):
     @property
     def protection_mode(self):
         """
-        Gets the protection_mode of this CreateDataGuardAssociationDetails.
+        **[Required]** Gets the protection_mode of this CreateDataGuardAssociationDetails.
         The protection mode to set up between the primary and standby databases. For more information, see
         `Oracle Data Guard Protection Modes`__
         in the Oracle Data Guard documentation.
@@ -190,7 +190,7 @@ class CreateDataGuardAssociationDetails(object):
     @property
     def transport_type(self):
         """
-        Gets the transport_type of this CreateDataGuardAssociationDetails.
+        **[Required]** Gets the transport_type of this CreateDataGuardAssociationDetails.
         The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
 
         * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC

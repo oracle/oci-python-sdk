@@ -151,7 +151,7 @@ class LoadBalancer(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this LoadBalancer.
+        **[Required]** Gets the compartment_id of this LoadBalancer.
         The `OCID`__ of the compartment containing the load balancer.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
@@ -179,7 +179,7 @@ class LoadBalancer(object):
     @property
     def display_name(self):
         """
-        Gets the display_name of this LoadBalancer.
+        **[Required]** Gets the display_name of this LoadBalancer.
         A user-friendly name. It does not have to be unique, and it is changeable.
 
         Example: `My load balancer`
@@ -207,7 +207,7 @@ class LoadBalancer(object):
     @property
     def id(self):
         """
-        Gets the id of this LoadBalancer.
+        **[Required]** Gets the id of this LoadBalancer.
         The `OCID`__ of the load balancer.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
@@ -311,7 +311,7 @@ class LoadBalancer(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this LoadBalancer.
+        **[Required]** Gets the lifecycle_state of this LoadBalancer.
         The current state of the load balancer.
 
         Allowed values for this property are: "CREATING", "FAILED", "ACTIVE", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
@@ -361,7 +361,7 @@ class LoadBalancer(object):
     @property
     def shape_name(self):
         """
-        Gets the shape_name of this LoadBalancer.
+        **[Required]** Gets the shape_name of this LoadBalancer.
         A template that determines the total pre-provisioned bandwidth (ingress plus egress).
         To get a list of available shapes, use the :func:`list_shapes`
         operation.
@@ -421,7 +421,7 @@ class LoadBalancer(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this LoadBalancer.
+        **[Required]** Gets the time_created of this LoadBalancer.
         The date and time the load balancer was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`

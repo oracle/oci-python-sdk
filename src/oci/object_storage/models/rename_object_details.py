@@ -60,7 +60,7 @@ class RenameObjectDetails(object):
     @property
     def source_name(self):
         """
-        Gets the source_name of this RenameObjectDetails.
+        **[Required]** Gets the source_name of this RenameObjectDetails.
         The name of the source object to be renamed.
 
 
@@ -84,7 +84,7 @@ class RenameObjectDetails(object):
     @property
     def new_name(self):
         """
-        Gets the new_name of this RenameObjectDetails.
+        **[Required]** Gets the new_name of this RenameObjectDetails.
         The new name of the source object.
 
 

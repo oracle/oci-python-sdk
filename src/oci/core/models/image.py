@@ -144,7 +144,7 @@ class Image(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this Image.
+        **[Required]** Gets the compartment_id of this Image.
         The OCID of the compartment containing the instance you want to use as the basis for the image.
 
 
@@ -168,7 +168,7 @@ class Image(object):
     @property
     def create_image_allowed(self):
         """
-        Gets the create_image_allowed of this Image.
+        **[Required]** Gets the create_image_allowed of this Image.
         Whether instances launched with this image can be used to create new images.
         For example, you cannot create an image of an Oracle Database instance.
         Example: `true`
@@ -298,7 +298,7 @@ class Image(object):
     @property
     def id(self):
         """
-        Gets the id of this Image.
+        **[Required]** Gets the id of this Image.
         The OCID of the image.
 
 
@@ -382,7 +382,7 @@ class Image(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this Image.
+        **[Required]** Gets the lifecycle_state of this Image.
         Allowed values for this property are: "PROVISIONING", "IMPORTING", "AVAILABLE", "EXPORTING", "DISABLED", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
@@ -408,7 +408,7 @@ class Image(object):
     @property
     def operating_system(self):
         """
-        Gets the operating_system of this Image.
+        **[Required]** Gets the operating_system of this Image.
         The image's operating system.
 
         Example: `Oracle Linux`
@@ -436,7 +436,7 @@ class Image(object):
     @property
     def operating_system_version(self):
         """
-        Gets the operating_system_version of this Image.
+        **[Required]** Gets the operating_system_version of this Image.
         The image's operating system version.
 
         Example: `7.2`
@@ -464,7 +464,7 @@ class Image(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this Image.
+        **[Required]** Gets the time_created of this Image.
         The date and time the image was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`

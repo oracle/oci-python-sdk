@@ -95,7 +95,7 @@ class ImageSourceDetails(object):
     @property
     def source_type(self):
         """
-        Gets the source_type of this ImageSourceDetails.
+        **[Required]** Gets the source_type of this ImageSourceDetails.
         The source type for the image. Use `objectStorageTuple` when specifying the namespace,
         bucket name, and object name. Use `objectStorageUri` when specifying the Object Storage URL.
 

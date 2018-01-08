@@ -148,7 +148,7 @@ class Instance(object):
     @property
     def availability_domain(self):
         """
-        Gets the availability_domain of this Instance.
+        **[Required]** Gets the availability_domain of this Instance.
         The Availability Domain the instance is running in.
 
         Example: `Uocm:PHX-AD-1`
@@ -176,7 +176,7 @@ class Instance(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this Instance.
+        **[Required]** Gets the compartment_id of this Instance.
         The OCID of the compartment that contains the instance.
 
 
@@ -332,7 +332,7 @@ class Instance(object):
     @property
     def id(self):
         """
-        Gets the id of this Instance.
+        **[Required]** Gets the id of this Instance.
         The OCID of the instance.
 
 
@@ -510,7 +510,7 @@ class Instance(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this Instance.
+        **[Required]** Gets the lifecycle_state of this Instance.
         The current state of the instance.
 
         Allowed values for this property are: "PROVISIONING", "RUNNING", "STARTING", "STOPPING", "STOPPED", "CREATING_IMAGE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
@@ -564,7 +564,7 @@ class Instance(object):
     @property
     def region(self):
         """
-        Gets the region of this Instance.
+        **[Required]** Gets the region of this Instance.
         The region that contains the Availability Domain the instance is running in.
 
         Example: `phx`
@@ -592,7 +592,7 @@ class Instance(object):
     @property
     def shape(self):
         """
-        Gets the shape of this Instance.
+        **[Required]** Gets the shape of this Instance.
         The shape of the instance. The shape determines the number of CPUs and the amount of memory
         allocated to the instance. You can enumerate all available shapes by calling
         :func:`list_shapes`.
@@ -644,7 +644,7 @@ class Instance(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this Instance.
+        **[Required]** Gets the time_created of this Instance.
         The date and time the instance was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`

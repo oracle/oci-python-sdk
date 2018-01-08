@@ -32,7 +32,7 @@ class RestoreObjectsDetails(object):
     @property
     def object_name(self):
         """
-        Gets the object_name of this RestoreObjectsDetails.
+        **[Required]** Gets the object_name of this RestoreObjectsDetails.
         A object which was in an archived state and need to be restored.
 
 

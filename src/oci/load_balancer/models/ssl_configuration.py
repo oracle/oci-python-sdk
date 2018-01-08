@@ -46,7 +46,7 @@ class SSLConfiguration(object):
     @property
     def certificate_name(self):
         """
-        Gets the certificate_name of this SSLConfiguration.
+        **[Required]** Gets the certificate_name of this SSLConfiguration.
         A friendly name for the certificate bundle. It must be unique and it cannot be changed.
         Valid certificate bundle names include only alphanumeric characters, dashes, and underscores.
         Certificate bundle names cannot contain spaces. Avoid entering confidential information.
@@ -78,7 +78,7 @@ class SSLConfiguration(object):
     @property
     def verify_depth(self):
         """
-        Gets the verify_depth of this SSLConfiguration.
+        **[Required]** Gets the verify_depth of this SSLConfiguration.
         The maximum depth for peer certificate chain verification.
 
         Example: `3`
@@ -106,7 +106,7 @@ class SSLConfiguration(object):
     @property
     def verify_peer_certificate(self):
         """
-        Gets the verify_peer_certificate of this SSLConfiguration.
+        **[Required]** Gets the verify_peer_certificate of this SSLConfiguration.
         Whether the load balancer listener should verify peer certificates.
 
         Example: `true`

@@ -32,7 +32,7 @@ class BulkDeleteVirtualCircuitPublicPrefixesDetails(object):
     @property
     def public_prefixes(self):
         """
-        Gets the public_prefixes of this BulkDeleteVirtualCircuitPublicPrefixesDetails.
+        **[Required]** Gets the public_prefixes of this BulkDeleteVirtualCircuitPublicPrefixesDetails.
         The public IP prefixes (CIDRs) to remove from the public virtual circuit.
 
 

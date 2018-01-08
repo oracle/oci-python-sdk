@@ -32,7 +32,7 @@ class CreateCustomerSecretKeyDetails(object):
     @property
     def display_name(self):
         """
-        Gets the display_name of this CreateCustomerSecretKeyDetails.
+        **[Required]** Gets the display_name of this CreateCustomerSecretKeyDetails.
         The name you assign to the secret key during creation. Does not have to be unique, and it's changeable.
 
 

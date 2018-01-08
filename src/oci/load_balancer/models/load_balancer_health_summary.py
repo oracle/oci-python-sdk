@@ -41,7 +41,7 @@ class LoadBalancerHealthSummary(object):
     @property
     def load_balancer_id(self):
         """
-        Gets the load_balancer_id of this LoadBalancerHealthSummary.
+        **[Required]** Gets the load_balancer_id of this LoadBalancerHealthSummary.
         The `OCID`__ of the load balancer the health status is associated with.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
@@ -69,7 +69,7 @@ class LoadBalancerHealthSummary(object):
     @property
     def status(self):
         """
-        Gets the status of this LoadBalancerHealthSummary.
+        **[Required]** Gets the status of this LoadBalancerHealthSummary.
         The overall health status of the load balancer.
 
         *  **OK:** All backend sets associated with the load balancer return a status of `OK`.

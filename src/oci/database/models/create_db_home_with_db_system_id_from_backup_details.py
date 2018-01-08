@@ -56,7 +56,7 @@ class CreateDbHomeWithDbSystemIdFromBackupDetails(CreateDbHomeWithDbSystemIdBase
     @property
     def database(self):
         """
-        Gets the database of this CreateDbHomeWithDbSystemIdFromBackupDetails.
+        **[Required]** Gets the database of this CreateDbHomeWithDbSystemIdFromBackupDetails.
 
         :return: The database of this CreateDbHomeWithDbSystemIdFromBackupDetails.
         :rtype: CreateDatabaseFromBackupDetails

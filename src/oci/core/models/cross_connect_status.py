@@ -57,7 +57,7 @@ class CrossConnectStatus(object):
     @property
     def cross_connect_id(self):
         """
-        Gets the cross_connect_id of this CrossConnectStatus.
+        **[Required]** Gets the cross_connect_id of this CrossConnectStatus.
         The OCID of the cross-connect.
 
 

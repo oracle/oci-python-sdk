@@ -32,7 +32,7 @@ class SwitchoverDataGuardAssociationDetails(object):
     @property
     def database_admin_password(self):
         """
-        Gets the database_admin_password of this SwitchoverDataGuardAssociationDetails.
+        **[Required]** Gets the database_admin_password of this SwitchoverDataGuardAssociationDetails.
         The DB System administrator password.
 
 

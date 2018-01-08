@@ -32,7 +32,7 @@ class ConnectLocalPeeringGatewaysDetails(object):
     @property
     def peer_id(self):
         """
-        Gets the peer_id of this ConnectLocalPeeringGatewaysDetails.
+        **[Required]** Gets the peer_id of this ConnectLocalPeeringGatewaysDetails.
         The OCID of the LPG you want to peer with.
 
 

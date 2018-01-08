@@ -32,7 +32,7 @@ class ReinstateDataGuardAssociationDetails(object):
     @property
     def database_admin_password(self):
         """
-        Gets the database_admin_password of this ReinstateDataGuardAssociationDetails.
+        **[Required]** Gets the database_admin_password of this ReinstateDataGuardAssociationDetails.
         The DB System administrator password.
 
 

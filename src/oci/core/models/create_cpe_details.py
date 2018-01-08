@@ -46,7 +46,7 @@ class CreateCpeDetails(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this CreateCpeDetails.
+        **[Required]** Gets the compartment_id of this CreateCpeDetails.
         The OCID of the compartment to contain the CPE.
 
 
@@ -94,7 +94,7 @@ class CreateCpeDetails(object):
     @property
     def ip_address(self):
         """
-        Gets the ip_address of this CreateCpeDetails.
+        **[Required]** Gets the ip_address of this CreateCpeDetails.
         The public IP address of the on-premises router.
 
         Example: `143.19.23.16`

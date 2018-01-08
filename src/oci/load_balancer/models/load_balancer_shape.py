@@ -32,7 +32,7 @@ class LoadBalancerShape(object):
     @property
     def name(self):
         """
-        Gets the name of this LoadBalancerShape.
+        **[Required]** Gets the name of this LoadBalancerShape.
         The name of the shape.
 
 

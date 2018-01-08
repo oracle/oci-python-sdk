@@ -32,7 +32,7 @@ class CreateApiKeyDetails(object):
     @property
     def key(self):
         """
-        Gets the key of this CreateApiKeyDetails.
+        **[Required]** Gets the key of this CreateApiKeyDetails.
         The public key.  Must be an RSA key in PEM format.
 
 

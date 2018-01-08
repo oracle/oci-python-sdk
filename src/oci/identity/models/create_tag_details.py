@@ -53,7 +53,7 @@ class CreateTagDetails(object):
     @property
     def name(self):
         """
-        Gets the name of this CreateTagDetails.
+        **[Required]** Gets the name of this CreateTagDetails.
         The name of the tag which must be unique across all tags in the tagNamespace and cannot be changed.
 
 
@@ -77,7 +77,7 @@ class CreateTagDetails(object):
     @property
     def description(self):
         """
-        Gets the description of this CreateTagDetails.
+        **[Required]** Gets the description of this CreateTagDetails.
         The description of the tag.
 
 

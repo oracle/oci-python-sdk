@@ -90,7 +90,7 @@ class User(object):
     @property
     def id(self):
         """
-        Gets the id of this User.
+        **[Required]** Gets the id of this User.
         The OCID of the user.
 
 
@@ -114,7 +114,7 @@ class User(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this User.
+        **[Required]** Gets the compartment_id of this User.
         The OCID of the tenancy containing the user.
 
 
@@ -138,7 +138,7 @@ class User(object):
     @property
     def name(self):
         """
-        Gets the name of this User.
+        **[Required]** Gets the name of this User.
         The name you assign to the user during creation. This is the user's login for the Console.
         The name must be unique across all users in the tenancy and cannot be changed.
 
@@ -164,7 +164,7 @@ class User(object):
     @property
     def description(self):
         """
-        Gets the description of this User.
+        **[Required]** Gets the description of this User.
         The description you assign to the user. Does not have to be unique, and it's changeable.
 
 
@@ -188,7 +188,7 @@ class User(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this User.
+        **[Required]** Gets the time_created of this User.
         Date and time the user was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
@@ -216,7 +216,7 @@ class User(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this User.
+        **[Required]** Gets the lifecycle_state of this User.
         The user's current state. After creating a user, make sure its `lifecycleState` changes from CREATING to
         ACTIVE before using it.
 

@@ -76,7 +76,7 @@ class DrgAttachment(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this DrgAttachment.
+        **[Required]** Gets the compartment_id of this DrgAttachment.
         The OCID of the compartment containing the DRG attachment.
 
 
@@ -126,7 +126,7 @@ class DrgAttachment(object):
     @property
     def drg_id(self):
         """
-        Gets the drg_id of this DrgAttachment.
+        **[Required]** Gets the drg_id of this DrgAttachment.
         The OCID of the DRG.
 
 
@@ -150,7 +150,7 @@ class DrgAttachment(object):
     @property
     def id(self):
         """
-        Gets the id of this DrgAttachment.
+        **[Required]** Gets the id of this DrgAttachment.
         The DRG attachment's Oracle ID (OCID).
 
 
@@ -174,7 +174,7 @@ class DrgAttachment(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this DrgAttachment.
+        **[Required]** Gets the lifecycle_state of this DrgAttachment.
         The DRG attachment's current state.
 
         Allowed values for this property are: "ATTACHING", "ATTACHED", "DETACHING", "DETACHED", 'UNKNOWN_ENUM_VALUE'.
@@ -232,7 +232,7 @@ class DrgAttachment(object):
     @property
     def vcn_id(self):
         """
-        Gets the vcn_id of this DrgAttachment.
+        **[Required]** Gets the vcn_id of this DrgAttachment.
         The OCID of the VCN.
 
 

@@ -39,7 +39,7 @@ class CrossConnectPortSpeedShape(object):
     @property
     def name(self):
         """
-        Gets the name of this CrossConnectPortSpeedShape.
+        **[Required]** Gets the name of this CrossConnectPortSpeedShape.
         The name of the port speed shape.
 
         Example: `10 Gbps`
@@ -67,7 +67,7 @@ class CrossConnectPortSpeedShape(object):
     @property
     def port_speed_in_gbps(self):
         """
-        Gets the port_speed_in_gbps of this CrossConnectPortSpeedShape.
+        **[Required]** Gets the port_speed_in_gbps of this CrossConnectPortSpeedShape.
         The port speed in Gbps.
 
         Example: `10`

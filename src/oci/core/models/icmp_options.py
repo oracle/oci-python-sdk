@@ -63,7 +63,7 @@ class IcmpOptions(object):
     @property
     def type(self):
         """
-        Gets the type of this IcmpOptions.
+        **[Required]** Gets the type of this IcmpOptions.
         The ICMP type.
 
 

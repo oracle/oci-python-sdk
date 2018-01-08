@@ -88,7 +88,7 @@ class CreateVolumeDetails(object):
     @property
     def availability_domain(self):
         """
-        Gets the availability_domain of this CreateVolumeDetails.
+        **[Required]** Gets the availability_domain of this CreateVolumeDetails.
         The Availability Domain of the volume.
 
         Example: `Uocm:PHX-AD-1`
@@ -116,7 +116,7 @@ class CreateVolumeDetails(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this CreateVolumeDetails.
+        **[Required]** Gets the compartment_id of this CreateVolumeDetails.
         The OCID of the compartment that contains the volume.
 
 
