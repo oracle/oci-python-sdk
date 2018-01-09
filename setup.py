@@ -31,12 +31,12 @@ with open_relative("README.rst") as f:
 requires = [
     "certifi",
     "configparser==3.5.0",
-    "cryptography==1.9",
+    "cryptography==2.1.3",
     "httpsig_cffi==15.0.0",
     "python-dateutil==2.5.3",
     "pytz==2016.10",
-    "requests==2.11.1",
-    "six==1.10.0",
+    "requests==2.18.4",
+    "six==1.11.0",
 ]
 
 setup(

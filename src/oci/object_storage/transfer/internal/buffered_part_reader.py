@@ -28,7 +28,7 @@ class BufferedPartReader(io.IOBase):
         # Reset the pointer to the start of the part.
         self.file.seek(start, io.SEEK_SET)
 
-    def seek(self, offset, whence):
+    def seek(self, offset, whence=io.SEEK_SET):
         """
         Seek within the part.  This is similar to the standard seek, except
         that io.SEEK_SET is the start of the part and io.SEEK_END is the
