@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -39,7 +39,7 @@ class AddUserToGroupDetails(object):
     @property
     def user_id(self):
         """
-        Gets the user_id of this AddUserToGroupDetails.
+        **[Required]** Gets the user_id of this AddUserToGroupDetails.
         The OCID of the user.
 
 
@@ -63,7 +63,7 @@ class AddUserToGroupDetails(object):
     @property
     def group_id(self):
         """
-        Gets the group_id of this AddUserToGroupDetails.
+        **[Required]** Gets the group_id of this AddUserToGroupDetails.
         The OCID of the group.
 
 

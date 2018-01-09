@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -121,7 +121,7 @@ class CreateLoadBalancerDetails(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this CreateLoadBalancerDetails.
+        **[Required]** Gets the compartment_id of this CreateLoadBalancerDetails.
         The `OCID`__ of the compartment in which to create the load balancer.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
@@ -149,7 +149,7 @@ class CreateLoadBalancerDetails(object):
     @property
     def display_name(self):
         """
-        Gets the display_name of this CreateLoadBalancerDetails.
+        **[Required]** Gets the display_name of this CreateLoadBalancerDetails.
         A user-friendly name. It does not have to be unique, and it is changeable.
         Avoid entering confidential information.
 
@@ -255,7 +255,7 @@ class CreateLoadBalancerDetails(object):
     @property
     def shape_name(self):
         """
-        Gets the shape_name of this CreateLoadBalancerDetails.
+        **[Required]** Gets the shape_name of this CreateLoadBalancerDetails.
         A template that determines the total pre-provisioned bandwidth (ingress plus egress).
         To get a list of available shapes, use the :func:`list_shapes`
         operation.
@@ -287,7 +287,7 @@ class CreateLoadBalancerDetails(object):
     @property
     def subnet_ids(self):
         """
-        Gets the subnet_ids of this CreateLoadBalancerDetails.
+        **[Required]** Gets the subnet_ids of this CreateLoadBalancerDetails.
         An array of subnet `OCIDs`__.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm

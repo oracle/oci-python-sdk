@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -69,7 +69,7 @@ class PreauthenticatedRequestSummary(object):
     @property
     def id(self):
         """
-        Gets the id of this PreauthenticatedRequestSummary.
+        **[Required]** Gets the id of this PreauthenticatedRequestSummary.
         The unique identifier to use when directly addressing the pre-authenticated request.
 
 
@@ -93,7 +93,7 @@ class PreauthenticatedRequestSummary(object):
     @property
     def name(self):
         """
-        Gets the name of this PreauthenticatedRequestSummary.
+        **[Required]** Gets the name of this PreauthenticatedRequestSummary.
         The user-provided name of the pre-authenticated request.
 
 
@@ -141,7 +141,7 @@ class PreauthenticatedRequestSummary(object):
     @property
     def access_type(self):
         """
-        Gets the access_type of this PreauthenticatedRequestSummary.
+        **[Required]** Gets the access_type of this PreauthenticatedRequestSummary.
         The operation that can be performed on this resource.
 
         Allowed values for this property are: "ObjectRead", "ObjectWrite", "ObjectReadWrite", "AnyObjectWrite", 'UNKNOWN_ENUM_VALUE'.
@@ -171,7 +171,7 @@ class PreauthenticatedRequestSummary(object):
     @property
     def time_expires(self):
         """
-        Gets the time_expires of this PreauthenticatedRequestSummary.
+        **[Required]** Gets the time_expires of this PreauthenticatedRequestSummary.
         The expiration date for the pre-authenticated request as per `RFC 3339`__. After this date the pre-authenticated request will no longer be valid.
 
         __ https://tools.ietf.org/rfc/rfc3339
@@ -199,7 +199,7 @@ class PreauthenticatedRequestSummary(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this PreauthenticatedRequestSummary.
+        **[Required]** Gets the time_created of this PreauthenticatedRequestSummary.
         The date when the pre-authenticated request was created as per `RFC 3339`__.
 
         __ https://tools.ietf.org/rfc/rfc3339

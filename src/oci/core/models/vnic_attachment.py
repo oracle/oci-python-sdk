@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -104,7 +104,7 @@ class VnicAttachment(object):
     @property
     def availability_domain(self):
         """
-        Gets the availability_domain of this VnicAttachment.
+        **[Required]** Gets the availability_domain of this VnicAttachment.
         The Availability Domain of the instance.
 
         Example: `Uocm:PHX-AD-1`
@@ -132,7 +132,7 @@ class VnicAttachment(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this VnicAttachment.
+        **[Required]** Gets the compartment_id of this VnicAttachment.
         The OCID of the compartment the VNIC attachment is in, which is the same
         compartment the instance is in.
 
@@ -184,7 +184,7 @@ class VnicAttachment(object):
     @property
     def id(self):
         """
-        Gets the id of this VnicAttachment.
+        **[Required]** Gets the id of this VnicAttachment.
         The OCID of the VNIC attachment.
 
 
@@ -208,7 +208,7 @@ class VnicAttachment(object):
     @property
     def instance_id(self):
         """
-        Gets the instance_id of this VnicAttachment.
+        **[Required]** Gets the instance_id of this VnicAttachment.
         The OCID of the instance.
 
 
@@ -232,7 +232,7 @@ class VnicAttachment(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this VnicAttachment.
+        **[Required]** Gets the lifecycle_state of this VnicAttachment.
         The current state of the VNIC attachment.
 
         Allowed values for this property are: "ATTACHING", "ATTACHED", "DETACHING", "DETACHED", 'UNKNOWN_ENUM_VALUE'.
@@ -298,7 +298,7 @@ class VnicAttachment(object):
     @property
     def subnet_id(self):
         """
-        Gets the subnet_id of this VnicAttachment.
+        **[Required]** Gets the subnet_id of this VnicAttachment.
         The OCID of the VNIC's subnet.
 
 
@@ -322,7 +322,7 @@ class VnicAttachment(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this VnicAttachment.
+        **[Required]** Gets the time_created of this VnicAttachment.
         The date and time the VNIC attachment was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`

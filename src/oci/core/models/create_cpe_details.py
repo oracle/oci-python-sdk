@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -46,7 +46,7 @@ class CreateCpeDetails(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this CreateCpeDetails.
+        **[Required]** Gets the compartment_id of this CreateCpeDetails.
         The OCID of the compartment to contain the CPE.
 
 
@@ -94,7 +94,7 @@ class CreateCpeDetails(object):
     @property
     def ip_address(self):
         """
-        Gets the ip_address of this CreateCpeDetails.
+        **[Required]** Gets the ip_address of this CreateCpeDetails.
         The public IP address of the on-premises router.
 
         Example: `143.19.23.16`

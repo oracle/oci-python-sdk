@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -53,7 +53,7 @@ class AttachVnicDetails(object):
     @property
     def create_vnic_details(self):
         """
-        Gets the create_vnic_details of this AttachVnicDetails.
+        **[Required]** Gets the create_vnic_details of this AttachVnicDetails.
         Details for creating a new VNIC.
 
 
@@ -101,7 +101,7 @@ class AttachVnicDetails(object):
     @property
     def instance_id(self):
         """
-        Gets the instance_id of this AttachVnicDetails.
+        **[Required]** Gets the instance_id of this AttachVnicDetails.
         The OCID of the instance.
 
 

@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -32,7 +32,7 @@ class BulkAddVirtualCircuitPublicPrefixesDetails(object):
     @property
     def public_prefixes(self):
         """
-        Gets the public_prefixes of this BulkAddVirtualCircuitPublicPrefixesDetails.
+        **[Required]** Gets the public_prefixes of this BulkAddVirtualCircuitPublicPrefixesDetails.
         The public IP prefixes (CIDRs) to add to the public virtual circuit.
 
 

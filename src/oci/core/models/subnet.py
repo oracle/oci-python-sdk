@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -26,6 +26,10 @@ class Subnet(object):
             The value to assign to the compartment_id property of this Subnet.
         :type compartment_id: str
 
+        :param defined_tags:
+            The value to assign to the defined_tags property of this Subnet.
+        :type defined_tags: dict(str, dict(str, object))
+
         :param dhcp_options_id:
             The value to assign to the dhcp_options_id property of this Subnet.
         :type dhcp_options_id: str
@@ -37,6 +41,10 @@ class Subnet(object):
         :param dns_label:
             The value to assign to the dns_label property of this Subnet.
         :type dns_label: str
+
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this Subnet.
+        :type freeform_tags: dict(str, str)
 
         :param id:
             The value to assign to the id property of this Subnet.
@@ -85,9 +93,11 @@ class Subnet(object):
             'availability_domain': 'str',
             'cidr_block': 'str',
             'compartment_id': 'str',
+            'defined_tags': 'dict(str, dict(str, object))',
             'dhcp_options_id': 'str',
             'display_name': 'str',
             'dns_label': 'str',
+            'freeform_tags': 'dict(str, str)',
             'id': 'str',
             'lifecycle_state': 'str',
             'prohibit_public_ip_on_vnic': 'bool',
@@ -104,9 +114,11 @@ class Subnet(object):
             'availability_domain': 'availabilityDomain',
             'cidr_block': 'cidrBlock',
             'compartment_id': 'compartmentId',
+            'defined_tags': 'definedTags',
             'dhcp_options_id': 'dhcpOptionsId',
             'display_name': 'displayName',
             'dns_label': 'dnsLabel',
+            'freeform_tags': 'freeformTags',
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
             'prohibit_public_ip_on_vnic': 'prohibitPublicIpOnVnic',
@@ -122,9 +134,11 @@ class Subnet(object):
         self._availability_domain = None
         self._cidr_block = None
         self._compartment_id = None
+        self._defined_tags = None
         self._dhcp_options_id = None
         self._display_name = None
         self._dns_label = None
+        self._freeform_tags = None
         self._id = None
         self._lifecycle_state = None
         self._prohibit_public_ip_on_vnic = None
@@ -139,7 +153,7 @@ class Subnet(object):
     @property
     def availability_domain(self):
         """
-        Gets the availability_domain of this Subnet.
+        **[Required]** Gets the availability_domain of this Subnet.
         The subnet's Availability Domain.
 
         Example: `Uocm:PHX-AD-1`
@@ -167,7 +181,7 @@ class Subnet(object):
     @property
     def cidr_block(self):
         """
-        Gets the cidr_block of this Subnet.
+        **[Required]** Gets the cidr_block of this Subnet.
         The subnet's CIDR block.
 
         Example: `172.16.1.0/24`
@@ -195,7 +209,7 @@ class Subnet(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this Subnet.
+        **[Required]** Gets the compartment_id of this Subnet.
         The OCID of the compartment containing the subnet.
 
 
@@ -215,6 +229,40 @@ class Subnet(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this Subnet.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this Subnet.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this Subnet.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this Subnet.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     @property
     def dhcp_options_id(self):
@@ -319,9 +367,45 @@ class Subnet(object):
         self._dns_label = dns_label
 
     @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this Subnet.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see
+        `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this Subnet.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this Subnet.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see
+        `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this Subnet.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
     def id(self):
         """
-        Gets the id of this Subnet.
+        **[Required]** Gets the id of this Subnet.
         The subnet's Oracle ID (OCID).
 
 
@@ -345,7 +429,7 @@ class Subnet(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this Subnet.
+        **[Required]** Gets the lifecycle_state of this Subnet.
         The subnet's current state.
 
         Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
@@ -419,7 +503,7 @@ class Subnet(object):
     @property
     def route_table_id(self):
         """
-        Gets the route_table_id of this Subnet.
+        **[Required]** Gets the route_table_id of this Subnet.
         The OCID of the route table the subnet is using.
 
 
@@ -535,7 +619,7 @@ class Subnet(object):
     @property
     def vcn_id(self):
         """
-        Gets the vcn_id of this Subnet.
+        **[Required]** Gets the vcn_id of this Subnet.
         The OCID of the VCN the subnet is in.
 
 
@@ -559,7 +643,7 @@ class Subnet(object):
     @property
     def virtual_router_ip(self):
         """
-        Gets the virtual_router_ip of this Subnet.
+        **[Required]** Gets the virtual_router_ip of this Subnet.
         The IP address of the virtual router.
 
         Example: `10.0.14.1`
@@ -587,7 +671,7 @@ class Subnet(object):
     @property
     def virtual_router_mac(self):
         """
-        Gets the virtual_router_mac of this Subnet.
+        **[Required]** Gets the virtual_router_mac of this Subnet.
         The MAC address of the virtual router.
 
         Example: `00:00:17:B6:4D:DD`

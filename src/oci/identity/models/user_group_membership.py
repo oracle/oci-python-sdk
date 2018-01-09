@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -76,7 +76,7 @@ class UserGroupMembership(object):
     @property
     def id(self):
         """
-        Gets the id of this UserGroupMembership.
+        **[Required]** Gets the id of this UserGroupMembership.
         The OCID of the membership.
 
 
@@ -100,7 +100,7 @@ class UserGroupMembership(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this UserGroupMembership.
+        **[Required]** Gets the compartment_id of this UserGroupMembership.
         The OCID of the tenancy containing the user, group, and membership object.
 
 
@@ -124,7 +124,7 @@ class UserGroupMembership(object):
     @property
     def group_id(self):
         """
-        Gets the group_id of this UserGroupMembership.
+        **[Required]** Gets the group_id of this UserGroupMembership.
         The OCID of the group.
 
 
@@ -148,7 +148,7 @@ class UserGroupMembership(object):
     @property
     def user_id(self):
         """
-        Gets the user_id of this UserGroupMembership.
+        **[Required]** Gets the user_id of this UserGroupMembership.
         The OCID of the user.
 
 
@@ -172,7 +172,7 @@ class UserGroupMembership(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this UserGroupMembership.
+        **[Required]** Gets the time_created of this UserGroupMembership.
         Date and time the membership was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
@@ -200,7 +200,7 @@ class UserGroupMembership(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this UserGroupMembership.
+        **[Required]** Gets the lifecycle_state of this UserGroupMembership.
         The membership's current state.  After creating a membership object, make sure its `lifecycleState` changes
         from CREATING to ACTIVE before using it.
 

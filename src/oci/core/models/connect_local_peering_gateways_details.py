@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -32,7 +32,7 @@ class ConnectLocalPeeringGatewaysDetails(object):
     @property
     def peer_id(self):
         """
-        Gets the peer_id of this ConnectLocalPeeringGatewaysDetails.
+        **[Required]** Gets the peer_id of this ConnectLocalPeeringGatewaysDetails.
         The OCID of the LPG you want to peer with.
 
 

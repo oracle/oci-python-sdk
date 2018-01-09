@@ -1,3 +1,7 @@
+# coding: utf-8
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+
+
 def test_core_automatic_request_id(virtual_network, config):
     response = virtual_network.list_vcns(config["tenancy"])
     assert response.status == 200

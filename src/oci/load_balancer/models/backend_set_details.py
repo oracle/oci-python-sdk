@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -80,7 +80,7 @@ class BackendSetDetails(object):
     @property
     def health_checker(self):
         """
-        Gets the health_checker of this BackendSetDetails.
+        **[Required]** Gets the health_checker of this BackendSetDetails.
 
         :return: The health_checker of this BackendSetDetails.
         :rtype: HealthCheckerDetails
@@ -100,7 +100,7 @@ class BackendSetDetails(object):
     @property
     def policy(self):
         """
-        Gets the policy of this BackendSetDetails.
+        **[Required]** Gets the policy of this BackendSetDetails.
         The load balancer policy for the backend set. To get a list of available policies, use the
         :func:`list_policies` operation.
 

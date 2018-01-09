@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -142,7 +142,7 @@ class CreateVirtualCircuitDetails(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this CreateVirtualCircuitDetails.
+        **[Required]** Gets the compartment_id of this CreateVirtualCircuitDetails.
         The OCID of the compartment to contain the virtual circuit.
 
 
@@ -408,7 +408,7 @@ class CreateVirtualCircuitDetails(object):
     @property
     def type(self):
         """
-        Gets the type of this CreateVirtualCircuitDetails.
+        **[Required]** Gets the type of this CreateVirtualCircuitDetails.
         The type of IP addresses used in this virtual circuit. PRIVATE
         means `RFC 1918`__ addresses
         (10.0.0.0/8, 172.16/12, and 192.168/16). Only PRIVATE is supported.

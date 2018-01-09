@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -39,7 +39,7 @@ class CreateBackupDetails(object):
     @property
     def database_id(self):
         """
-        Gets the database_id of this CreateBackupDetails.
+        **[Required]** Gets the database_id of this CreateBackupDetails.
         The OCID of the database.
 
 
@@ -63,7 +63,7 @@ class CreateBackupDetails(object):
     @property
     def display_name(self):
         """
-        Gets the display_name of this CreateBackupDetails.
+        **[Required]** Gets the display_name of this CreateBackupDetails.
         The user-friendly name for the backup. It does not have to be unique.
 
 

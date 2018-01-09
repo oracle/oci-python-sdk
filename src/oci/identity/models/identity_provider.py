@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -56,6 +56,14 @@ class IdentityProvider(object):
             The value to assign to the protocol property of this IdentityProvider.
         :type protocol: str
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this IdentityProvider.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this IdentityProvider.
+        :type defined_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -66,7 +74,9 @@ class IdentityProvider(object):
             'time_created': 'datetime',
             'lifecycle_state': 'str',
             'inactive_status': 'int',
-            'protocol': 'str'
+            'protocol': 'str',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -78,7 +88,9 @@ class IdentityProvider(object):
             'time_created': 'timeCreated',
             'lifecycle_state': 'lifecycleState',
             'inactive_status': 'inactiveStatus',
-            'protocol': 'protocol'
+            'protocol': 'protocol',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags'
         }
 
         self._id = None
@@ -90,6 +102,8 @@ class IdentityProvider(object):
         self._lifecycle_state = None
         self._inactive_status = None
         self._protocol = None
+        self._freeform_tags = None
+        self._defined_tags = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -107,7 +121,7 @@ class IdentityProvider(object):
     @property
     def id(self):
         """
-        Gets the id of this IdentityProvider.
+        **[Required]** Gets the id of this IdentityProvider.
         The OCID of the `IdentityProvider`.
 
 
@@ -131,7 +145,7 @@ class IdentityProvider(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this IdentityProvider.
+        **[Required]** Gets the compartment_id of this IdentityProvider.
         The OCID of the tenancy containing the `IdentityProvider`.
 
 
@@ -155,7 +169,7 @@ class IdentityProvider(object):
     @property
     def name(self):
         """
-        Gets the name of this IdentityProvider.
+        **[Required]** Gets the name of this IdentityProvider.
         The name you assign to the `IdentityProvider` during creation. The name
         must be unique across all `IdentityProvider` objects in the tenancy and
         cannot be changed. This is the name federated users see when choosing
@@ -187,7 +201,7 @@ class IdentityProvider(object):
     @property
     def description(self):
         """
-        Gets the description of this IdentityProvider.
+        **[Required]** Gets the description of this IdentityProvider.
         The description you assign to the `IdentityProvider` during creation. Does
         not have to be unique, and it's changeable.
 
@@ -213,7 +227,7 @@ class IdentityProvider(object):
     @property
     def product_type(self):
         """
-        Gets the product_type of this IdentityProvider.
+        **[Required]** Gets the product_type of this IdentityProvider.
         The identity provider service or product.
         Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft
         Active Directory Federation Services (ADFS).
@@ -253,7 +267,7 @@ class IdentityProvider(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this IdentityProvider.
+        **[Required]** Gets the time_created of this IdentityProvider.
         Date and time the `IdentityProvider` was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
@@ -281,7 +295,7 @@ class IdentityProvider(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this IdentityProvider.
+        **[Required]** Gets the lifecycle_state of this IdentityProvider.
         The current state. After creating an `IdentityProvider`, make sure its
         `lifecycleState` changes from CREATING to ACTIVE before using it.
 
@@ -337,7 +351,7 @@ class IdentityProvider(object):
     @property
     def protocol(self):
         """
-        Gets the protocol of this IdentityProvider.
+        **[Required]** Gets the protocol of this IdentityProvider.
         The protocol used for federation. Allowed value: `SAML2`.
 
         Example: `SAML2`
@@ -361,6 +375,58 @@ class IdentityProvider(object):
         :type: str
         """
         self._protocol = protocol
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this IdentityProvider.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Example: `{\"bar-key\": \"value\"}`
+
+
+        :return: The freeform_tags of this IdentityProvider.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this IdentityProvider.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Example: `{\"bar-key\": \"value\"}`
+
+
+        :param freeform_tags: The freeform_tags of this IdentityProvider.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this IdentityProvider.
+        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+
+
+        :return: The defined_tags of this IdentityProvider.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this IdentityProvider.
+        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+
+
+        :param defined_tags: The defined_tags of this IdentityProvider.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

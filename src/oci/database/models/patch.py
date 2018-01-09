@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -116,7 +116,7 @@ class Patch(object):
     @property
     def description(self):
         """
-        Gets the description of this Patch.
+        **[Required]** Gets the description of this Patch.
         The text describing this patch package.
 
 
@@ -140,7 +140,7 @@ class Patch(object):
     @property
     def id(self):
         """
-        Gets the id of this Patch.
+        **[Required]** Gets the id of this Patch.
         The OCID of the patch.
 
 
@@ -250,7 +250,7 @@ class Patch(object):
     @property
     def time_released(self):
         """
-        Gets the time_released of this Patch.
+        **[Required]** Gets the time_released of this Patch.
         The date and time that the patch was released.
 
 
@@ -274,7 +274,7 @@ class Patch(object):
     @property
     def version(self):
         """
-        Gets the version of this Patch.
+        **[Required]** Gets the version of this Patch.
         The version of this patch package.
 
 

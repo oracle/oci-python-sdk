@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<additionalHeaders>
+    <script_style>
+        <beforeEachLine># </beforeEachLine>
+        <endLine>EOL</endLine>
+        <skipLinePattern>^#!.*$</skipLinePattern>
+        <firstLineDetectionPattern>#.*$</firstLineDetectionPattern>
+        <lastLineDetectionPattern>#.*$</lastLineDetectionPattern>
+        <allowBlankLines>false</allowBlankLines>
+        <isMultiline>false</isMultiline>
+        <padLines>false</padLines>
+    </script_style>
+</additionalHeaders>

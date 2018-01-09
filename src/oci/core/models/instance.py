@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -22,6 +22,10 @@ class Instance(object):
             The value to assign to the compartment_id property of this Instance.
         :type compartment_id: str
 
+        :param defined_tags:
+            The value to assign to the defined_tags property of this Instance.
+        :type defined_tags: dict(str, dict(str, object))
+
         :param display_name:
             The value to assign to the display_name property of this Instance.
         :type display_name: str
@@ -29,6 +33,10 @@ class Instance(object):
         :param extended_metadata:
             The value to assign to the extended_metadata property of this Instance.
         :type extended_metadata: dict(str, object)
+
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this Instance.
+        :type freeform_tags: dict(str, str)
 
         :param id:
             The value to assign to the id property of this Instance.
@@ -41,6 +49,16 @@ class Instance(object):
         :param ipxe_script:
             The value to assign to the ipxe_script property of this Instance.
         :type ipxe_script: str
+
+        :param launch_mode:
+            The value to assign to the launch_mode property of this Instance.
+            Allowed values for this property are: "NATIVE", "EMULATED", "CUSTOM", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type launch_mode: str
+
+        :param launch_options:
+            The value to assign to the launch_options property of this Instance.
+        :type launch_options: LaunchOptions
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Instance.
@@ -72,11 +90,15 @@ class Instance(object):
         self.swagger_types = {
             'availability_domain': 'str',
             'compartment_id': 'str',
+            'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'extended_metadata': 'dict(str, object)',
+            'freeform_tags': 'dict(str, str)',
             'id': 'str',
             'image_id': 'str',
             'ipxe_script': 'str',
+            'launch_mode': 'str',
+            'launch_options': 'LaunchOptions',
             'lifecycle_state': 'str',
             'metadata': 'dict(str, str)',
             'region': 'str',
@@ -88,11 +110,15 @@ class Instance(object):
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
+            'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'extended_metadata': 'extendedMetadata',
+            'freeform_tags': 'freeformTags',
             'id': 'id',
             'image_id': 'imageId',
             'ipxe_script': 'ipxeScript',
+            'launch_mode': 'launchMode',
+            'launch_options': 'launchOptions',
             'lifecycle_state': 'lifecycleState',
             'metadata': 'metadata',
             'region': 'region',
@@ -103,11 +129,15 @@ class Instance(object):
 
         self._availability_domain = None
         self._compartment_id = None
+        self._defined_tags = None
         self._display_name = None
         self._extended_metadata = None
+        self._freeform_tags = None
         self._id = None
         self._image_id = None
         self._ipxe_script = None
+        self._launch_mode = None
+        self._launch_options = None
         self._lifecycle_state = None
         self._metadata = None
         self._region = None
@@ -118,7 +148,7 @@ class Instance(object):
     @property
     def availability_domain(self):
         """
-        Gets the availability_domain of this Instance.
+        **[Required]** Gets the availability_domain of this Instance.
         The Availability Domain the instance is running in.
 
         Example: `Uocm:PHX-AD-1`
@@ -146,7 +176,7 @@ class Instance(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this Instance.
+        **[Required]** Gets the compartment_id of this Instance.
         The OCID of the compartment that contains the instance.
 
 
@@ -166,6 +196,40 @@ class Instance(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this Instance.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this Instance.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this Instance.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this Instance.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     @property
     def display_name(self):
@@ -230,9 +294,45 @@ class Instance(object):
         self._extended_metadata = extended_metadata
 
     @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this Instance.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see
+        `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this Instance.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this Instance.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see
+        `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this Instance.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
     def id(self):
         """
-        Gets the id of this Instance.
+        **[Required]** Gets the id of this Instance.
         The OCID of the instance.
 
 
@@ -348,9 +448,65 @@ class Instance(object):
         self._ipxe_script = ipxe_script
 
     @property
+    def launch_mode(self):
+        """
+        Gets the launch_mode of this Instance.
+        Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for Oracle-provided images.
+        * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+        * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
+
+        Allowed values for this property are: "NATIVE", "EMULATED", "CUSTOM", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The launch_mode of this Instance.
+        :rtype: str
+        """
+        return self._launch_mode
+
+    @launch_mode.setter
+    def launch_mode(self, launch_mode):
+        """
+        Sets the launch_mode of this Instance.
+        Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for Oracle-provided images.
+        * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+        * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
+
+
+        :param launch_mode: The launch_mode of this Instance.
+        :type: str
+        """
+        allowed_values = ["NATIVE", "EMULATED", "CUSTOM"]
+        if not value_allowed_none_or_none_sentinel(launch_mode, allowed_values):
+            launch_mode = 'UNKNOWN_ENUM_VALUE'
+        self._launch_mode = launch_mode
+
+    @property
+    def launch_options(self):
+        """
+        Gets the launch_options of this Instance.
+
+        :return: The launch_options of this Instance.
+        :rtype: LaunchOptions
+        """
+        return self._launch_options
+
+    @launch_options.setter
+    def launch_options(self, launch_options):
+        """
+        Sets the launch_options of this Instance.
+
+        :param launch_options: The launch_options of this Instance.
+        :type: LaunchOptions
+        """
+        self._launch_options = launch_options
+
+    @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this Instance.
+        **[Required]** Gets the lifecycle_state of this Instance.
         The current state of the instance.
 
         Allowed values for this property are: "PROVISIONING", "RUNNING", "STARTING", "STOPPING", "STOPPED", "CREATING_IMAGE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
@@ -404,7 +560,7 @@ class Instance(object):
     @property
     def region(self):
         """
-        Gets the region of this Instance.
+        **[Required]** Gets the region of this Instance.
         The region that contains the Availability Domain the instance is running in.
 
         Example: `phx`
@@ -432,7 +588,7 @@ class Instance(object):
     @property
     def shape(self):
         """
-        Gets the shape of this Instance.
+        **[Required]** Gets the shape of this Instance.
         The shape of the instance. The shape determines the number of CPUs and the amount of memory
         allocated to the instance. You can enumerate all available shapes by calling
         :func:`list_shapes`.
@@ -484,7 +640,7 @@ class Instance(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this Instance.
+        **[Required]** Gets the time_created of this Instance.
         The date and time the instance was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`

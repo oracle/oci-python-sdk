@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -53,7 +53,7 @@ class MultipartUploadPartSummary(object):
     @property
     def etag(self):
         """
-        Gets the etag of this MultipartUploadPartSummary.
+        **[Required]** Gets the etag of this MultipartUploadPartSummary.
         The current entity tag for the part.
 
 
@@ -77,7 +77,7 @@ class MultipartUploadPartSummary(object):
     @property
     def md5(self):
         """
-        Gets the md5 of this MultipartUploadPartSummary.
+        **[Required]** Gets the md5 of this MultipartUploadPartSummary.
         The MD5 hash of the bytes of the part.
 
 
@@ -101,7 +101,7 @@ class MultipartUploadPartSummary(object):
     @property
     def size(self):
         """
-        Gets the size of this MultipartUploadPartSummary.
+        **[Required]** Gets the size of this MultipartUploadPartSummary.
         The size of the part in bytes.
 
 
@@ -125,7 +125,7 @@ class MultipartUploadPartSummary(object):
     @property
     def part_number(self):
         """
-        Gets the part_number of this MultipartUploadPartSummary.
+        **[Required]** Gets the part_number of this MultipartUploadPartSummary.
         The part number for this part.
 
 

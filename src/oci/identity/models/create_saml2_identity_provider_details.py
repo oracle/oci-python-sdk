@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 from .create_identity_provider_details import CreateIdentityProviderDetails
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -37,6 +37,14 @@ class CreateSaml2IdentityProviderDetails(CreateIdentityProviderDetails):
             Allowed values for this property are: "SAML2"
         :type protocol: str
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this CreateSaml2IdentityProviderDetails.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this CreateSaml2IdentityProviderDetails.
+        :type defined_tags: dict(str, dict(str, object))
+
         :param metadata_url:
             The value to assign to the metadata_url property of this CreateSaml2IdentityProviderDetails.
         :type metadata_url: str
@@ -52,6 +60,8 @@ class CreateSaml2IdentityProviderDetails(CreateIdentityProviderDetails):
             'description': 'str',
             'product_type': 'str',
             'protocol': 'str',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))',
             'metadata_url': 'str',
             'metadata': 'str'
         }
@@ -62,6 +72,8 @@ class CreateSaml2IdentityProviderDetails(CreateIdentityProviderDetails):
             'description': 'description',
             'product_type': 'productType',
             'protocol': 'protocol',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags',
             'metadata_url': 'metadataUrl',
             'metadata': 'metadata'
         }
@@ -71,6 +83,8 @@ class CreateSaml2IdentityProviderDetails(CreateIdentityProviderDetails):
         self._description = None
         self._product_type = None
         self._protocol = None
+        self._freeform_tags = None
+        self._defined_tags = None
         self._metadata_url = None
         self._metadata = None
         self._protocol = 'SAML2'
@@ -78,7 +92,7 @@ class CreateSaml2IdentityProviderDetails(CreateIdentityProviderDetails):
     @property
     def metadata_url(self):
         """
-        Gets the metadata_url of this CreateSaml2IdentityProviderDetails.
+        **[Required]** Gets the metadata_url of this CreateSaml2IdentityProviderDetails.
         The URL for retrieving the identity provider's metadata,
         which contains information required for federating.
 
@@ -104,7 +118,7 @@ class CreateSaml2IdentityProviderDetails(CreateIdentityProviderDetails):
     @property
     def metadata(self):
         """
-        Gets the metadata of this CreateSaml2IdentityProviderDetails.
+        **[Required]** Gets the metadata of this CreateSaml2IdentityProviderDetails.
         The XML that contains the information required for federating.
 
 

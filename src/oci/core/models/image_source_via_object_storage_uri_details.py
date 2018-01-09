@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 from .image_source_details import ImageSourceDetails
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -15,6 +15,11 @@ class ImageSourceViaObjectStorageUriDetails(ImageSourceDetails):
         of this class is ``objectStorageUri`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param source_image_type:
+            The value to assign to the source_image_type property of this ImageSourceViaObjectStorageUriDetails.
+            Allowed values for this property are: "QCOW2", "VMDK"
+        :type source_image_type: str
+
         :param source_type:
             The value to assign to the source_type property of this ImageSourceViaObjectStorageUriDetails.
         :type source_type: str
@@ -25,15 +30,18 @@ class ImageSourceViaObjectStorageUriDetails(ImageSourceDetails):
 
         """
         self.swagger_types = {
+            'source_image_type': 'str',
             'source_type': 'str',
             'source_uri': 'str'
         }
 
         self.attribute_map = {
+            'source_image_type': 'sourceImageType',
             'source_type': 'sourceType',
             'source_uri': 'sourceUri'
         }
 
+        self._source_image_type = None
         self._source_type = None
         self._source_uri = None
         self._source_type = 'objectStorageUri'
@@ -41,7 +49,7 @@ class ImageSourceViaObjectStorageUriDetails(ImageSourceDetails):
     @property
     def source_uri(self):
         """
-        Gets the source_uri of this ImageSourceViaObjectStorageUriDetails.
+        **[Required]** Gets the source_uri of this ImageSourceViaObjectStorageUriDetails.
         The Object Storage URL for the image.
 
 

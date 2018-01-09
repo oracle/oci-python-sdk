@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 from __future__ import absolute_import
 
@@ -17,6 +17,8 @@ from .create_policy_details import CreatePolicyDetails
 from .create_region_subscription_details import CreateRegionSubscriptionDetails
 from .create_saml2_identity_provider_details import CreateSaml2IdentityProviderDetails
 from .create_swift_password_details import CreateSwiftPasswordDetails
+from .create_tag_details import CreateTagDetails
+from .create_tag_namespace_details import CreateTagNamespaceDetails
 from .create_user_details import CreateUserDetails
 from .customer_secret_key import CustomerSecretKey
 from .customer_secret_key_summary import CustomerSecretKeySummary
@@ -28,6 +30,10 @@ from .region import Region
 from .region_subscription import RegionSubscription
 from .saml2_identity_provider import Saml2IdentityProvider
 from .swift_password import SwiftPassword
+from .tag import Tag
+from .tag_namespace import TagNamespace
+from .tag_namespace_summary import TagNamespaceSummary
+from .tag_summary import TagSummary
 from .tenancy import Tenancy
 from .ui_password import UIPassword
 from .update_compartment_details import UpdateCompartmentDetails
@@ -39,6 +45,8 @@ from .update_policy_details import UpdatePolicyDetails
 from .update_saml2_identity_provider_details import UpdateSaml2IdentityProviderDetails
 from .update_state_details import UpdateStateDetails
 from .update_swift_password_details import UpdateSwiftPasswordDetails
+from .update_tag_details import UpdateTagDetails
+from .update_tag_namespace_details import UpdateTagNamespaceDetails
 from .update_user_details import UpdateUserDetails
 from .user import User
 from .user_group_membership import UserGroupMembership
@@ -59,6 +67,8 @@ identity_type_mapping = {
     "CreateRegionSubscriptionDetails": CreateRegionSubscriptionDetails,
     "CreateSaml2IdentityProviderDetails": CreateSaml2IdentityProviderDetails,
     "CreateSwiftPasswordDetails": CreateSwiftPasswordDetails,
+    "CreateTagDetails": CreateTagDetails,
+    "CreateTagNamespaceDetails": CreateTagNamespaceDetails,
     "CreateUserDetails": CreateUserDetails,
     "CustomerSecretKey": CustomerSecretKey,
     "CustomerSecretKeySummary": CustomerSecretKeySummary,
@@ -70,6 +80,10 @@ identity_type_mapping = {
     "RegionSubscription": RegionSubscription,
     "Saml2IdentityProvider": Saml2IdentityProvider,
     "SwiftPassword": SwiftPassword,
+    "Tag": Tag,
+    "TagNamespace": TagNamespace,
+    "TagNamespaceSummary": TagNamespaceSummary,
+    "TagSummary": TagSummary,
     "Tenancy": Tenancy,
     "UIPassword": UIPassword,
     "UpdateCompartmentDetails": UpdateCompartmentDetails,
@@ -81,6 +95,8 @@ identity_type_mapping = {
     "UpdateSaml2IdentityProviderDetails": UpdateSaml2IdentityProviderDetails,
     "UpdateStateDetails": UpdateStateDetails,
     "UpdateSwiftPasswordDetails": UpdateSwiftPasswordDetails,
+    "UpdateTagDetails": UpdateTagDetails,
+    "UpdateTagNamespaceDetails": UpdateTagNamespaceDetails,
     "UpdateUserDetails": UpdateUserDetails,
     "User": User,
     "UserGroupMembership": UserGroupMembership

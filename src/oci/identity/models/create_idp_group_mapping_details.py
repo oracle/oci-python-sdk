@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -39,7 +39,7 @@ class CreateIdpGroupMappingDetails(object):
     @property
     def idp_group_name(self):
         """
-        Gets the idp_group_name of this CreateIdpGroupMappingDetails.
+        **[Required]** Gets the idp_group_name of this CreateIdpGroupMappingDetails.
         The name of the IdP group you want to map.
 
 
@@ -63,7 +63,7 @@ class CreateIdpGroupMappingDetails(object):
     @property
     def group_id(self):
         """
-        Gets the group_id of this CreateIdpGroupMappingDetails.
+        **[Required]** Gets the group_id of this CreateIdpGroupMappingDetails.
         The OCID of the IAM Service :class:`Group`
         you want to map to the IdP group.
 

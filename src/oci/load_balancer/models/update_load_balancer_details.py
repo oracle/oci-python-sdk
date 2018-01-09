@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -32,7 +32,7 @@ class UpdateLoadBalancerDetails(object):
     @property
     def display_name(self):
         """
-        Gets the display_name of this UpdateLoadBalancerDetails.
+        **[Required]** Gets the display_name of this UpdateLoadBalancerDetails.
         The user-friendly display name for the load balancer. It does not have to be unique, and it is changeable.
         Avoid entering confidential information.
 

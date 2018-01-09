@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -83,7 +83,7 @@ class IdpGroupMapping(object):
     @property
     def id(self):
         """
-        Gets the id of this IdpGroupMapping.
+        **[Required]** Gets the id of this IdpGroupMapping.
         The OCID of the `IdpGroupMapping`.
 
 
@@ -107,7 +107,7 @@ class IdpGroupMapping(object):
     @property
     def idp_id(self):
         """
-        Gets the idp_id of this IdpGroupMapping.
+        **[Required]** Gets the idp_id of this IdpGroupMapping.
         The OCID of the `IdentityProvider` this mapping belongs to.
 
 
@@ -131,7 +131,7 @@ class IdpGroupMapping(object):
     @property
     def idp_group_name(self):
         """
-        Gets the idp_group_name of this IdpGroupMapping.
+        **[Required]** Gets the idp_group_name of this IdpGroupMapping.
         The name of the IdP group that is mapped to the IAM Service group.
 
 
@@ -155,7 +155,7 @@ class IdpGroupMapping(object):
     @property
     def group_id(self):
         """
-        Gets the group_id of this IdpGroupMapping.
+        **[Required]** Gets the group_id of this IdpGroupMapping.
         The OCID of the IAM Service group that is mapped to the IdP group.
 
 
@@ -179,7 +179,7 @@ class IdpGroupMapping(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this IdpGroupMapping.
+        **[Required]** Gets the compartment_id of this IdpGroupMapping.
         The OCID of the tenancy containing the `IdentityProvider`.
 
 
@@ -203,7 +203,7 @@ class IdpGroupMapping(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this IdpGroupMapping.
+        **[Required]** Gets the time_created of this IdpGroupMapping.
         Date and time the mapping was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
@@ -231,7 +231,7 @@ class IdpGroupMapping(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this IdpGroupMapping.
+        **[Required]** Gets the lifecycle_state of this IdpGroupMapping.
         The mapping's current state.  After creating a mapping object, make sure its `lifecycleState` changes
         from CREATING to ACTIVE before using it.
 

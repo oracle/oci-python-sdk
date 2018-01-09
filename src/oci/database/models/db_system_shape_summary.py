@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -46,7 +46,7 @@ class DbSystemShapeSummary(object):
     @property
     def available_core_count(self):
         """
-        Gets the available_core_count of this DbSystemShapeSummary.
+        **[Required]** Gets the available_core_count of this DbSystemShapeSummary.
         The maximum number of CPU cores that can be enabled on the DB System.
 
 
@@ -70,7 +70,7 @@ class DbSystemShapeSummary(object):
     @property
     def name(self):
         """
-        Gets the name of this DbSystemShapeSummary.
+        **[Required]** Gets the name of this DbSystemShapeSummary.
         The name of the shape used for the DB System.
 
 

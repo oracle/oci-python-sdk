@@ -1,3 +1,6 @@
+# coding: utf-8
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+
 from datetime import datetime
 
 import oci
@@ -22,7 +25,11 @@ ENUM_ATTR_TO_VALUE = {
     'CreatePreauthenticatedRequestDetails': {'access_type': 'ObjectRead'},
     'CreateDbHomeWithDbSystemIdBase': {'source': 'DB_BACKUP'},
     'CreateDbHomeWithDbSystemIdFromBackupDetails': {'source': 'DB_BACKUP'},
-    'CreateDbHomeWithDbSystemIdDetails': {'source': 'NONE'}
+    'CreateDbHomeWithDbSystemIdDetails': {'source': 'NONE'},
+    'CreateImageDetails': {'launch_mode': 'NATIVE'},
+    'ImageSourceDetails': {'source_image_type': 'QCOW2'},
+    'ImageSourceViaObjectStorageUriDetails': {'source_image_type': 'QCOW2'},
+    'ImageSourceViaObjectStorageTupleDetails': {'source_image_type': 'QCOW2'}
 }
 
 

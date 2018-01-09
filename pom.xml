@@ -7,6 +7,23 @@
     <name>Public Python SDK</name>
     <properties>
         <spec-temp-dir>${project.build.directory}/swagger</spec-temp-dir>
+        <preferred-temp-dir>${project.build.directory}/preferred</preferred-temp-dir>
+        <preprocessed-temp-dir>${project.build.directory}/preprocessed</preprocessed-temp-dir>
+        
+        <core-spec-file>coreservices-api-spec-20160918-external.yaml</core-spec-file>
+        <base-proto-file>base.proto.yaml</base-proto-file>
+        <blockstorage-proto-file>blockstorage.proto.yaml</blockstorage-proto-file>
+        <compute-proto-file>compute.proto.yaml</compute-proto-file>
+        <vcn-proto-file>vcn.proto.yaml</vcn-proto-file>
+
+        <identity-spec-file>identity-control-plane-api-spec-20160918.yaml</identity-spec-file>
+        <casper-spec-file>casper-api.yaml</casper-spec-file>
+        <oralb-spec-file>spec-20170115.yaml</oralb-spec-file>
+        <dbaas-spec-file>dbaas-api-spec-20160918.yaml</dbaas-spec-file>
+        <audit-spec-file>hemlock-api-20160918.yaml</audit-spec-file>
+
+        <enabled-groups-file>${project.basedir}/release-sdk.txt</enabled-groups-file>
+        <inceptionYear>2016</inceptionYear>
     </properties>
     <dependencies>
         <dependency>
@@ -37,6 +54,26 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <executions>
+                <execution>
+                    <id>timestamp-property</id>
+                    <goals>
+                        <goal>timestamp-property</goal>
+                    </goals>
+                    <phase>validate</phase>
+                        <configuration>
+                            <name>current.year</name>
+                            <pattern>yyyy</pattern>
+                        </configuration>
+                </execution>
+                </executions>
+            </plugin>
+            <!--
+                 Unpack all the spec artifacts into ${spec-temp-dir}/<service>
+            -->
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
                 <version>2.10</version>
@@ -53,8 +90,8 @@
                                     <groupId>com.oracle.pic.commons</groupId>
                                     <artifactId>coreservices-api-spec</artifactId>
                                     <type>jar</type>
-                                    <includes>coreservices-api-spec-20160918-external.yaml</includes>
-                                    <outputDirectory>${spec-temp-dir}</outputDirectory>
+                                    <includes>**/*</includes>
+                                    <outputDirectory>${spec-temp-dir}/core</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
@@ -71,8 +108,8 @@
                                     <groupId>com.oracle.pic.identity</groupId>
                                     <artifactId>identity-control-plane-api-spec</artifactId>
                                     <type>jar</type>
-                                    <includes>identity-control-plane-api-spec-20160918.yaml</includes>
-                                    <outputDirectory>${spec-temp-dir}</outputDirectory>
+                                    <includes>**/*</includes>
+                                    <outputDirectory>${spec-temp-dir}/identity</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
@@ -89,8 +126,8 @@
                                     <groupId>com.oracle.pic.casper</groupId>
                                     <artifactId>casper-api-spec</artifactId>
                                     <type>jar</type>
-                                    <includes>casper-api.yaml</includes>
-                                    <outputDirectory>${spec-temp-dir}</outputDirectory>
+                                    <includes>**/*</includes>
+                                    <outputDirectory>${spec-temp-dir}/casper</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
@@ -107,8 +144,8 @@
                                     <groupId>com.oracle.pic.lb</groupId>
                                     <artifactId>oralb-api-spec</artifactId>
                                     <type>jar</type>
-                                    <includes>spec-20170115.yaml</includes>
-                                    <outputDirectory>${spec-temp-dir}</outputDirectory>
+                                    <includes>**/*</includes>
+                                    <outputDirectory>${spec-temp-dir}/oralb</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
@@ -125,8 +162,8 @@
                                     <groupId>com.oracle.pic.dbaas</groupId>
                                     <artifactId>dbaas-api-spec</artifactId>
                                     <type>jar</type>
-                                    <includes>dbaas-api-spec-20160918.yaml</includes>
-                                    <outputDirectory>${spec-temp-dir}</outputDirectory>
+                                    <includes>**/*</includes>
+                                    <outputDirectory>${spec-temp-dir}/dbaas</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
@@ -143,18 +180,325 @@
                                     <groupId>com.oracle.pic.sherlock</groupId>
                                     <artifactId>hemlock-spec</artifactId>
                                     <type>jar</type>
-                                    <includes>hemlock-api-20160918.yaml</includes>
-                                    <outputDirectory>${spec-temp-dir}</outputDirectory>
+                                    <includes>**/*</includes>
+                                    <outputDirectory>${spec-temp-dir}/audit</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
+
+            <!--
+                 Preprocess all the specs in ${spec-temp-dir}/<service> and write to ${preprocessed-temp-dir}
+            -->
+            <plugin>
+                <groupId>com.oracle.oci.sdk.utilities</groupId>
+                <artifactId>spec-conditionals-preprocessor-plugin</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+                <executions>
+                    <!-- Core, four separate proto specs to ${preprocessed-temp-dir}/core -->
+                    <execution>
+                        <id>spec-conditionals-prefer-core-base</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>prefer</goal>
+                        </goals>
+                        <configuration>
+                            <inputFiles>
+                                <!-- New layout: source/<spec.proto.yaml> -->
+                                <inputFile>${spec-temp-dir}/core/source/${base-proto-file}</inputFile>
+                                <!-- Old layout: 20160918/<spec.proto.yaml> -->
+                                <inputFile>${spec-temp-dir}/core/20160918/${base-proto-file}</inputFile>
+                            </inputFiles>
+                            <outputFile>${preferred-temp-dir}/${base-proto-file}</outputFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>spec-conditionals-preprocess-core-base</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>preprocess</goal>
+                        </goals>
+                        <configuration>
+                            <inputFile>${preferred-temp-dir}/${base-proto-file}</inputFile>
+                            <outputFile>${preprocessed-temp-dir}/core/${base-proto-file}</outputFile>
+                            <groupFile>${enabled-groups-file}</groupFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>spec-conditionals-prefer-core-blockstorage</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>prefer</goal>
+                        </goals>
+                        <configuration>
+                            <inputFiles>
+                                <!-- New layout: source/<spec.proto.yaml> -->
+                                <inputFile>${spec-temp-dir}/core/source/${blockstorage-proto-file}</inputFile>
+                                <!-- Old layout: 20160918/<spec.proto.yaml> -->
+                                <inputFile>${spec-temp-dir}/core/20160918/${blockstorage-proto-file}</inputFile>
+                            </inputFiles>
+                            <outputFile>${preferred-temp-dir}/${blockstorage-proto-file}</outputFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>spec-conditionals-preprocess-core-blockstorage</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>preprocess</goal>
+                        </goals>
+                        <configuration>
+                            <inputFile>${preferred-temp-dir}/${blockstorage-proto-file}</inputFile>
+                            <outputFile>${preprocessed-temp-dir}/core/${blockstorage-proto-file}</outputFile>
+                            <groupFile>${enabled-groups-file}</groupFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>spec-conditionals-prefer-core-compute</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>prefer</goal>
+                        </goals>
+                        <configuration>
+                            <inputFiles>
+                                <!-- New layout: source/<spec.proto.yaml> -->
+                                <inputFile>${spec-temp-dir}/core/source/${compute-proto-file}</inputFile>
+                                <!-- Old layout: 20160918/<spec.proto.yaml> -->
+                                <inputFile>${spec-temp-dir}/core/20160918/${compute-proto-file}</inputFile>
+                            </inputFiles>
+                            <outputFile>${preferred-temp-dir}/${compute-proto-file}</outputFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>spec-conditionals-preprocess-core-compute</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>preprocess</goal>
+                        </goals>
+                        <configuration>
+                            <inputFile>${preferred-temp-dir}/${compute-proto-file}</inputFile>
+                            <outputFile>${preprocessed-temp-dir}/core/${compute-proto-file}</outputFile>
+                            <groupFile>${enabled-groups-file}</groupFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>spec-conditionals-prefer-core-vcn</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>prefer</goal>
+                        </goals>
+                        <configuration>
+                            <inputFiles>
+                                <!-- New layout: source/<spec.proto.yaml> -->
+                                <inputFile>${spec-temp-dir}/core/source/${vcn-proto-file}</inputFile>
+                                <!-- Old layout: 20160918/<spec.proto.yaml> -->
+                                <inputFile>${spec-temp-dir}/core/20160918/${vcn-proto-file}</inputFile>
+                            </inputFiles>
+                            <outputFile>${preferred-temp-dir}/${vcn-proto-file}</outputFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>spec-conditionals-preprocess-core-vcn</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>preprocess</goal>
+                        </goals>
+                        <configuration>
+                            <inputFile>${preferred-temp-dir}/${vcn-proto-file}</inputFile>
+                            <outputFile>${preprocessed-temp-dir}/core/${vcn-proto-file}</outputFile>
+                            <groupFile>${enabled-groups-file}</groupFile>
+                        </configuration>
+                    </execution>
+
+                    <!-- Identity -->
+                    <execution>
+                        <id>spec-conditionals-prefer-identity</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>prefer</goal>
+                        </goals>
+                        <configuration>
+                            <inputFiles>
+                                <!-- New layout: source/<spec.proto.yaml> -->
+                                <inputFile>${spec-temp-dir}/identity/source/${identity-spec-file}</inputFile>
+                                <!-- Old layout: ./<spec.proto.yaml> -->
+                                <inputFile>${spec-temp-dir}/identity/${identity-spec-file}</inputFile>
+                            </inputFiles>
+                            <outputFile>${preferred-temp-dir}/${identity-spec-file}</outputFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>spec-conditionals-preprocess-identity</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>preprocess</goal>
+                        </goals>
+                        <configuration>
+                            <inputFile>${preferred-temp-dir}/${identity-spec-file}</inputFile>
+                            <outputFile>${preprocessed-temp-dir}/${identity-spec-file}</outputFile>
+                            <groupFile>${enabled-groups-file}</groupFile>
+                        </configuration>
+                    </execution>
+
+                    <!-- Casper -->
+                    <execution>
+                        <id>spec-conditionals-prefer-casper</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>prefer</goal>
+                        </goals>
+                        <configuration>
+                            <inputFiles>
+                                <!-- New layout: source/<spec.proto.yaml> -->
+                                <inputFile>${spec-temp-dir}/casper/source/${casper-spec-file}</inputFile>
+                                <!-- Old layout: ./<spec.proto.yaml> -->
+                                <inputFile>${spec-temp-dir}/casper/${casper-spec-file}</inputFile>
+                            </inputFiles>
+                            <outputFile>${preferred-temp-dir}/${casper-spec-file}</outputFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>spec-conditionals-preprocess-casper</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>preprocess</goal>
+                        </goals>
+                        <configuration>
+                            <inputFile>${preferred-temp-dir}/${casper-spec-file}</inputFile>
+                            <outputFile>${preprocessed-temp-dir}/${casper-spec-file}</outputFile>
+                            <groupFile>${enabled-groups-file}</groupFile>
+                        </configuration>
+                    </execution>
+
+                    <!-- OraLB -->
+                    <execution>
+                        <id>spec-conditionals-prefer-oralb</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>prefer</goal>
+                        </goals>
+                        <configuration>
+                            <inputFiles>
+                                <!-- New layout: source/<spec.proto.yaml> -->
+                                <inputFile>${spec-temp-dir}/oralb/source/${oralb-spec-file}</inputFile>
+                                <!-- Old layout: ./<spec.proto.yaml> -->
+                                <inputFile>${spec-temp-dir}/oralb/${oralb-spec-file}</inputFile>
+                            </inputFiles>
+                            <outputFile>${preferred-temp-dir}/${oralb-spec-file}</outputFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>spec-conditionals-preprocess-oralb</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>preprocess</goal>
+                        </goals>
+                        <configuration>
+                            <inputFile>${preferred-temp-dir}/${oralb-spec-file}</inputFile>
+                            <outputFile>${preprocessed-temp-dir}/${oralb-spec-file}</outputFile>
+                            <groupFile>${enabled-groups-file}</groupFile>
+                        </configuration>
+                    </execution>
+
+                    <!-- DBaaS -->
+                    <execution>
+                        <id>spec-conditionals-prefer-dbaas</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>prefer</goal>
+                        </goals>
+                        <configuration>
+                            <inputFiles>
+                                <!-- New layout: source/<spec.proto.yaml> -->
+                                <inputFile>${spec-temp-dir}/dbaas/source/${dbaas-spec-file}</inputFile>
+                                <!-- Old layout: ./<spec.proto.yaml> -->
+                                <inputFile>${spec-temp-dir}/dbaas/${dbaas-spec-file}</inputFile>
+                            </inputFiles>
+                            <outputFile>${preferred-temp-dir}/${dbaas-spec-file}</outputFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>spec-conditionals-preprocess-dbaas</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>preprocess</goal>
+                        </goals>
+                        <configuration>
+                            <inputFile>${preferred-temp-dir}/${dbaas-spec-file}</inputFile>
+                            <outputFile>${preprocessed-temp-dir}/${dbaas-spec-file}</outputFile>
+                            <groupFile>${enabled-groups-file}</groupFile>
+                        </configuration>
+                    </execution>
+
+                    <!-- Audit -->
+                    <execution>
+                        <id>spec-conditionals-prefer-audit</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>prefer</goal>
+                        </goals>
+                        <configuration>
+                            <inputFiles>
+                                <!-- New layout: source/<spec.proto.yaml> -->
+                                <inputFile>${spec-temp-dir}/audit/source/${audit-spec-file}</inputFile>
+                                <!-- Old layout: ./<spec.proto.yaml> -->
+                                <inputFile>${spec-temp-dir}/audit/${audit-spec-file}</inputFile>
+                            </inputFiles>
+                            <outputFile>${preferred-temp-dir}/${audit-spec-file}</outputFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>spec-conditionals-preprocess-audit</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>preprocess</goal>
+                        </goals>
+                        <configuration>
+                            <inputFile>${preferred-temp-dir}/${audit-spec-file}</inputFile>
+                            <outputFile>${preprocessed-temp-dir}/${audit-spec-file}</outputFile>
+                            <groupFile>${enabled-groups-file}</groupFile>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Then run the core spec tools, on the preprocessed files. -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.4.0</version>
+                <executions>
+                    <execution>
+                        <id>generate-external-coreservices-spec</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>python</executable>
+                            <workingDirectory>${spec-temp-dir}/core</workingDirectory>
+                            <arguments>
+                                <argument>merge_and_validate_spec.py</argument>
+                                <argument>--input_directory</argument>
+                                <argument>${preprocessed-temp-dir}/core</argument>
+                                <argument>--output_file</argument>
+                                <!-- Can't be in the preprocessed directory, or the core spec tool will crash. -->
+                                <argument>${preprocessed-temp-dir}/${core-spec-file}</argument>
+                                <argument>--external</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!--
+                 Generate the SDK from the preprocessed specs in ${preprocessed-temp-dir}
+            -->
             <plugin>
                 <groupId>com.oracle.bmc.sdk</groupId>
                 <artifactId>bmc-sdk-swagger-maven-plugin</artifactId>
-                <version>1.11.1-SNAPSHOT</version>
+                <version>1.12.0-SNAPSHOT</version>
                 <executions>
                     <execution>
                         <id>python-public-sdk-identity</id>
@@ -164,7 +508,7 @@
                         </goals>
                         <configuration>
                             <language>oracle-python-sdk</language>
-                            <specPath>${spec-temp-dir}/identity-control-plane-api-spec-20160918.yaml</specPath>
+                            <specPath>${preprocessed-temp-dir}/${identity-spec-file}</specPath>
                             <outputDir>src/oci</outputDir>
                             <basePackage>OCI</basePackage>
                             <additionalProperties>
@@ -181,7 +525,7 @@
                         </goals>
                         <configuration>
                             <language>oracle-python-sdk</language>
-                            <specPath>${spec-temp-dir}/coreservices-api-spec-20160918-external.yaml</specPath>
+                            <specPath>${preprocessed-temp-dir}/${core-spec-file}</specPath>
                             <outputDir>src/oci</outputDir>
                             <basePackage>OCI</basePackage>
                             <additionalProperties>
@@ -198,7 +542,7 @@
                         </goals>
                         <configuration>
                             <language>oracle-python-sdk</language>
-                            <specPath>${spec-temp-dir}/casper-api.yaml</specPath>
+                            <specPath>${preprocessed-temp-dir}/${casper-spec-file}</specPath>
                             <outputDir>src/oci</outputDir>
                             <basePackage>OCI</basePackage>
                             <additionalProperties>
@@ -216,7 +560,7 @@
                         </goals>
                         <configuration>
                             <language>oracle-python-sdk</language>
-                            <specPath>${spec-temp-dir}/spec-20170115.yaml</specPath>
+                            <specPath>${preprocessed-temp-dir}/${oralb-spec-file}</specPath>
                             <outputDir>src/oci</outputDir>
                             <basePackage>OCI</basePackage>
                             <additionalProperties>
@@ -234,7 +578,7 @@
                         </goals>
                         <configuration>
                             <language>oracle-python-sdk</language>
-                            <specPath>${spec-temp-dir}/dbaas-api-spec-20160918.yaml</specPath>
+                            <specPath>${preprocessed-temp-dir}/${dbaas-spec-file}</specPath>
                             <outputDir>src/oci</outputDir>
                             <basePackage>OCI</basePackage>
                             <additionalProperties>
@@ -252,7 +596,7 @@
                         </goals>
                         <configuration>
                             <language>oracle-python-sdk</language>
-                            <specPath>${spec-temp-dir}/hemlock-api-20160918.yaml</specPath>
+                            <specPath>${preprocessed-temp-dir}/${audit-spec-file}</specPath>
                             <outputDir>src/oci</outputDir>
                             <basePackage>OCI</basePackage>
                             <additionalProperties>
@@ -298,6 +642,50 @@
                         <goals>
                             <goal>run</goal>
                         </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.mycila</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+                <version>3.0</version>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>format</goal>
+                        </goals>
+                        <configuration>
+                            <!--  
+                                This definition file overrides the standard script_style/SCRIPT_STYLE header written by the plugin. We
+                                need this because otherwise the plugin will write the header with a leading and trailing empty comment, for
+                                example:
+
+                                #
+                                # header line
+                                # header line
+                                #
+
+                                Whereas we just want:
+
+                                # header line
+                                # header line
+                            -->
+                            <headerDefinitions>
+                                <headerDefinition>${project.basedir}/license_header_definition.xml</headerDefinition>
+                            </headerDefinitions>
+                            <aggregate>true</aggregate>
+                            <header>${project.basedir}/licenseheader.txt</header>
+                            <includes>
+                                <include>src/oci/**/*.py</include>
+                                <include>tests/**/*.py</include>
+                                <include>examples/*.py</include>
+                                <include>scripts/wercker_validate.py</include>
+                            </includes>
+                            <properties>
+                                <current.year>${current.year}</current.year>
+                            </properties>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
@@ -358,12 +746,12 @@
             <dependency>
                 <groupId>com.oracle.pic.commons</groupId>
                 <artifactId>coreservices-api-spec</artifactId>
-                <version>0.1.45</version>
+                <version>0.1.53</version>
             </dependency>
             <dependency>
                 <groupId>com.oracle.pic.identity</groupId>
                 <artifactId>identity-control-plane-api-spec</artifactId>
-                <version>0.2.21</version>
+                <version>0.2.22-TAG-GA</version>
             </dependency>
             <dependency>
                 <groupId>com.oracle.pic.casper</groupId>

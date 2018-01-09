@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 from __future__ import absolute_import
 
@@ -72,6 +72,7 @@ from .instance_source_via_boot_volume_details import InstanceSourceViaBootVolume
 from .instance_source_via_image_details import InstanceSourceViaImageDetails
 from .internet_gateway import InternetGateway
 from .launch_instance_details import LaunchInstanceDetails
+from .launch_options import LaunchOptions
 from .letter_of_authority import LetterOfAuthority
 from .local_peering_gateway import LocalPeeringGateway
 from .port_range import PortRange
@@ -191,6 +192,7 @@ core_type_mapping = {
     "InstanceSourceViaImageDetails": InstanceSourceViaImageDetails,
     "InternetGateway": InternetGateway,
     "LaunchInstanceDetails": LaunchInstanceDetails,
+    "LaunchOptions": LaunchOptions,
     "LetterOfAuthority": LetterOfAuthority,
     "LocalPeeringGateway": LocalPeeringGateway,
     "PortRange": PortRange,

@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -18,9 +18,17 @@ class VolumeBackup(object):
             The value to assign to the compartment_id property of this VolumeBackup.
         :type compartment_id: str
 
+        :param defined_tags:
+            The value to assign to the defined_tags property of this VolumeBackup.
+        :type defined_tags: dict(str, dict(str, object))
+
         :param display_name:
             The value to assign to the display_name property of this VolumeBackup.
         :type display_name: str
+
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this VolumeBackup.
+        :type freeform_tags: dict(str, str)
 
         :param id:
             The value to assign to the id property of this VolumeBackup.
@@ -63,7 +71,9 @@ class VolumeBackup(object):
         """
         self.swagger_types = {
             'compartment_id': 'str',
+            'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
+            'freeform_tags': 'dict(str, str)',
             'id': 'str',
             'lifecycle_state': 'str',
             'size_in_gbs': 'int',
@@ -77,7 +87,9 @@ class VolumeBackup(object):
 
         self.attribute_map = {
             'compartment_id': 'compartmentId',
+            'defined_tags': 'definedTags',
             'display_name': 'displayName',
+            'freeform_tags': 'freeformTags',
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
             'size_in_gbs': 'sizeInGBs',
@@ -90,7 +102,9 @@ class VolumeBackup(object):
         }
 
         self._compartment_id = None
+        self._defined_tags = None
         self._display_name = None
+        self._freeform_tags = None
         self._id = None
         self._lifecycle_state = None
         self._size_in_gbs = None
@@ -104,7 +118,7 @@ class VolumeBackup(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this VolumeBackup.
+        **[Required]** Gets the compartment_id of this VolumeBackup.
         The OCID of the compartment that contains the volume backup.
 
 
@@ -126,9 +140,43 @@ class VolumeBackup(object):
         self._compartment_id = compartment_id
 
     @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this VolumeBackup.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this VolumeBackup.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this VolumeBackup.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this VolumeBackup.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
+
+    @property
     def display_name(self):
         """
-        Gets the display_name of this VolumeBackup.
+        **[Required]** Gets the display_name of this VolumeBackup.
         A user-friendly name for the volume backup. Does not have to be unique and it's changeable.
         Avoid entering confidential information.
 
@@ -152,9 +200,45 @@ class VolumeBackup(object):
         self._display_name = display_name
 
     @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this VolumeBackup.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see
+        `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this VolumeBackup.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this VolumeBackup.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see
+        `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this VolumeBackup.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
     def id(self):
         """
-        Gets the id of this VolumeBackup.
+        **[Required]** Gets the id of this VolumeBackup.
         The OCID of the volume backup.
 
 
@@ -178,7 +262,7 @@ class VolumeBackup(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this VolumeBackup.
+        **[Required]** Gets the lifecycle_state of this VolumeBackup.
         The current state of a volume backup.
 
         Allowed values for this property are: "CREATING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAULTY", "REQUEST_RECEIVED", 'UNKNOWN_ENUM_VALUE'.
@@ -258,7 +342,7 @@ class VolumeBackup(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this VolumeBackup.
+        **[Required]** Gets the time_created of this VolumeBackup.
         The date and time the volume backup was created. This is the time the actual point-in-time image
         of the volume data was taken. Format defined by RFC3339.
 

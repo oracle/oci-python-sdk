@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 from .dhcp_option import DhcpOption
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -76,7 +76,7 @@ class DhcpDnsOption(DhcpOption):
     @property
     def server_type(self):
         """
-        Gets the server_type of this DhcpDnsOption.
+        **[Required]** Gets the server_type of this DhcpDnsOption.
         - **VcnLocal:** Reserved for future use.
 
         - **VcnLocalPlusInternet:** Also referred to as \"Internet and VCN Resolver\".

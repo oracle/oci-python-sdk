@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 from __future__ import absolute_import
 
@@ -1260,6 +1260,8 @@ class ComputeClient(object):
         When you create a resource, you can find its OCID in the response. You can
         also retrieve a resource's OCID by using a List API operation
         on that resource type, or by viewing the resource in the Console.
+
+        To launch an instance using an image or a boot volume use the `sourceDetails` parameter in :class:`LaunchInstanceDetails`.
 
         When you launch an instance, it is automatically attached to a virtual
         network interface card (VNIC), called the *primary VNIC*. The VNIC
