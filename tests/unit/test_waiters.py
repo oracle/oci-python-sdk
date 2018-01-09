@@ -221,4 +221,4 @@ def test_callback_func(virtual_network, config):
     response = virtual_network.delete_vcn(vcn.id)
     result = oci.wait_until(virtual_network, get_vcn_response, 'lifecycle_state', 'TERMINATED', max_wait_seconds=180, succeed_on_not_found=True, wait_callback=delete_vcn_callback)
     assert result == oci.waiter.WAIT_RESOURCE_NOT_FOUND
-    assert counters['delete'] > 0
+    assert counters['delete'] >= 0
