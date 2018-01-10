@@ -89,6 +89,7 @@ GENERATE_EXECUTION_TEMPLATE = """
         <specPath>${{preprocessed-temp-dir}}/${{{spec_name}-spec-file}}</specPath>
         <outputDir>src/oci</outputDir>
         <basePackage>OCI</basePackage>
+        <specGenerationType>{spec_generation_type}</specGenerationType>
         <additionalProperties>
             <specName>{spec_name}</specName>
             <generateInitFile>true</generateInitFile>
@@ -178,11 +179,12 @@ def generate_and_add_preprocess_element(pom, spec_name, group_id, artifact_id, s
     unpack_plugin_executions.append(unpack_element)
 
 
-def generate_and_add_generate_section(pom, spec_name, spec_path_relative_to_jar, endpoint):
+def generate_and_add_generate_section(pom, spec_name, spec_path_relative_to_jar, endpoint, spec_generation_type):
     content = GENERATE_EXECUTION_TEMPLATE.format(
         spec_name=spec_name,
         spec_path_relative_to_jar=spec_path_relative_to_jar,
-        endpoint=endpoint)
+        endpoint=endpoint,
+        spec_generation_type=spec_generation_type)
 
     generate_element = ET.fromstring(content)
 
@@ -257,7 +259,8 @@ def indent(elem, level=0):
 @click.option('--relative-spec-path', help='The relative path of the spec within the artifact (e.g. coreservices-api-spec-20160918-external.yaml)')
 @click.option('--endpoint', help='The base endpoint for the service (e.g. https://iaas.{domain}/20160918)')
 @click.option('--version', required=True, help='The version of the spec artifact (e.g. 0.0.1-SNAPSHOT')
-def add_or_update_spec(artifact_id, group_id, spec_name, relative_spec_path, endpoint, version):
+@click.option('--spec-generation-type', help='The generation type: PUBLIC or PREVIEW')
+def add_or_update_spec(artifact_id, group_id, spec_name, relative_spec_path, endpoint, version, spec_generation_type):
     pom = parse_pom()
 
     # determine if this artifact is already in the spec
@@ -277,13 +280,16 @@ def add_or_update_spec(artifact_id, group_id, spec_name, relative_spec_path, end
 
         if not endpoint:
             raise UsageError('Must specify --endpoint for new spec')
+        
+        if not spec_generation_type:
+            spec_generation_type = 'PUBLIC'
 
         print('Artifact {} does not exist in pom.xml. Adding it...'.format(spec_name))
         generate_and_add_property_element(pom, spec_name, relative_spec_path)
         generate_and_add_unpack_element(pom, spec_name, group_id, artifact_id, relative_spec_path)
         generate_and_add_prefer_element(pom, spec_name, group_id, artifact_id, relative_spec_path)
         generate_and_add_preprocess_element(pom, spec_name, group_id, artifact_id, relative_spec_path)
-        generate_and_add_generate_section(pom, spec_name, relative_spec_path, endpoint)
+        generate_and_add_generate_section(pom, spec_name, relative_spec_path, endpoint, spec_generation_type)
         generate_and_add_clean_section(pom, spec_name)
         generate_and_add_dependency_management_section(pom, group_id, artifact_id, version)
         generate_and_add_initial_dependency_section(pom, group_id, artifact_id)
