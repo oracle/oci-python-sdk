@@ -53,6 +53,7 @@ To get started, head over to the :ref:`installation instructions <install>` or s
     upload-manager
     raw-requests
     waiters
+    pagination
     api/index
     contributions
     notifications

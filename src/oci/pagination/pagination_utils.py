@@ -15,7 +15,7 @@ def list_call_get_up_to_limit(list_func_ref, record_limit, page_size, *list_func
     Calls a list operation and automatically fetches more data from the service (automatically following pagination tokens) until
     the desired number of records is reached (or there are no more records left, if the total number of records is less than
     the desired number of records). Apart from the formally listed parameters for this function, any additional
-    positional (*list_func_args) and keyword (**list_func_kwargs) arguments will be passed to the list operation.
+    positional (``*list_func_args``) and keyword (``**list_func_kwargs``) arguments will be passed to the list operation.
 
     Results are eagerly loaded and the response returned by this function will contain all the data up to the desired
     number of records (or there are no more records left, whichever is first). If you wish to lazy load results, then use
@@ -51,7 +51,7 @@ def list_call_get_up_to_limit_generator(list_func_ref, record_limit, page_size, 
     Calls a list operation and automatically fetches more data from the service (automatically following pagination tokens) until
     the desired number of records is reached (or there are no more records left, if the total number of records is less than
     the desired number of records). Apart from the formally listed parameters for this function, any additional
-    positional (*list_func_args) and keyword (**list_func_kwargs) arguments will be passed to the list operation.
+    positional (``*list_func_args``) and keyword (``**list_func_kwargs``) arguments will be passed to the list operation.
 
     This function produces a generator and lazily loads results. That is, service calls will only be made to fetch more data
     when needed as we iterate through results produced by the generator; this contrasts with the eagarily loaded
@@ -124,7 +124,7 @@ def list_call_get_all_results(list_func_ref, *list_func_args, **list_func_kwargs
     """
     Calls a list operation and automatically fetches more data from the service (automatically following pagination tokens) until
     the no more records are available. Apart from the formally listed parameters for this function, any additional
-    positional (*list_func_args) and keyword (**list_func_kwargs) arguments will be passed to the list operation.
+    positional (``*list_func_args``) and keyword (``**list_func_kwargs``) arguments will be passed to the list operation.
 
     Results are eagerly loaded and the response returned by this function will contain all the available data. If you wish
     to lazy load results, then use the version of this method which produces a generator:
@@ -153,7 +153,7 @@ def list_call_get_all_results_generator(list_func_ref, yield_mode, *list_func_ar
     """
     Calls a list operation and automatically fetches more data from the service (automatically following pagination tokens) until
     the no more records are available. Apart from the formally listed parameters for this function, any additional
-    positional (*list_func_args) and keyword (**list_func_kwargs) arguments will be passed to the list operation.
+    positional (``*list_func_args``) and keyword (``**list_func_kwargs``) arguments will be passed to the list operation.
 
     This function produces a generator and lazily loads results. That is, service calls will only be made to fetch more data
     when needed as we iterate through results produced by the generator; this contrasts with the eagarily loaded

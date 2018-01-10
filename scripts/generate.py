@@ -19,7 +19,7 @@ SPECS_TO_SERVICES = {
 }
 
 ROOT_INIT_FILE_TEMPLATE = """from . import {spec_names}
-from . import config, constants, decorators, exceptions, regions
+from . import config, constants, decorators, exceptions, regions, pagination
 from .base_client import BaseClient
 from .request import Request
 from .response import Response
@@ -29,7 +29,7 @@ from .waiter import wait_until
 
 
 __all__ = [
-    "BaseClient", "Error", "Request", "Response", "Signer", "config", "constants", "decorators", "exceptions", "regions", "wait_until",
+    "BaseClient", "Error", "Request", "Response", "Signer", "config", "constants", "decorators", "exceptions", "regions", "wait_until", "pagination",
     {quoted_spec_names}
 ]
 """

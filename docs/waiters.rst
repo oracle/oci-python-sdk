@@ -34,6 +34,24 @@ Sometimes you may need to wait until an attribute of a resource, such as an inst
     #   - The fourth parameter is the desired value. An equality (==) comparison is done
     get_instance_response = oci.wait_until(client, client.get_instance(instance_ocid), 'lifecycle_state', 'RUNNING')
 
+Instead of waiting for a single attribute to equal a given value, you can also provide a function reference (either a lambda or a reference to an already defined function) that
+can be used to evaluate the response received from the service call. This function should return a truthy value if the waiter should stop waiting, and a falsey value if the waiter
+should continue waiting. 
+
+For example, to wait until a volume backup reaches either the "AVAILABLE" or "FAULTY" state :
+
+.. code-block:: python
+
+    oci.wait_until(client, client.get_volume_backup(vol_backup_id), evaluate_response=lambda r: r.data.lifecycle_state in ['AVAILABLE', 'FAULTY'])
+
+Instead of using a lambda, an already defined function can be used:
+
+.. code-block:: python
+
+    def should_stop_waiting_volume_backup(response):
+        return response.data.lifecycle_state in ['AVAILABLE', 'FAULTY']
+
+    oci.wait_until(client, client.get_volume_backup(vol_backup_id), evaluate_response=should_stop_waiting_volume_backup)
 
 In addition to the base parameters shown above, the function can accept optional attributes to control the maximum amount of time it will wait for and the time between calls to the service. For more information on the optional parameters, see the documentation on the :py:func:`~oci.wait_until` function. 
 
