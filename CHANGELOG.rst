@@ -14,6 +14,19 @@ Added
 
   * Support for creating, updating, retrieving and listing tags and tag namespaces (these operations can be found in Identity Service)
   * Support for adding freeform and defined tags to resources in Core Services (Networking, Compute, and Block Volume) and Identity Service
+  * An example on using tagging can be found on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/tagging.py>`_.
+
+* Support for bringing your own custom image for emulation mode virtual machines in Compute Service
+* Added the ``oci.pagination`` module, which contains convenience functions so that you don't have to manually deal with page tokens when using list operations. See the `documentation <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/pagination.html>`_ for more information
+
+Changed
+-------
+* Upgraded cryptography dependency to 2.1.3
+
+  * Added dependency on pyOpenSSL <= 17.4.0 as the minimum cryptography version for pyOpenSSL 17.5.0 is 2.1.4
+
+* Upgraded six dependency to 1.11.0
+* Ugraded requests dependency to 2.18.4
 
 ====================
 1.3.11 - 2017-12-11
