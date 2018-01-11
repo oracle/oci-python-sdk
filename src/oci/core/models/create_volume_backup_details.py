@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -14,9 +14,17 @@ class CreateVolumeBackupDetails(object):
         Initializes a new CreateVolumeBackupDetails object with values from values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param defined_tags:
+            The value to assign to the defined_tags property of this CreateVolumeBackupDetails.
+        :type defined_tags: dict(str, dict(str, object))
+
         :param display_name:
             The value to assign to the display_name property of this CreateVolumeBackupDetails.
         :type display_name: str
+
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this CreateVolumeBackupDetails.
+        :type freeform_tags: dict(str, str)
 
         :param volume_id:
             The value to assign to the volume_id property of this CreateVolumeBackupDetails.
@@ -24,17 +32,57 @@ class CreateVolumeBackupDetails(object):
 
         """
         self.swagger_types = {
+            'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
+            'freeform_tags': 'dict(str, str)',
             'volume_id': 'str'
         }
 
         self.attribute_map = {
+            'defined_tags': 'definedTags',
             'display_name': 'displayName',
+            'freeform_tags': 'freeformTags',
             'volume_id': 'volumeId'
         }
 
+        self._defined_tags = None
         self._display_name = None
+        self._freeform_tags = None
         self._volume_id = None
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this CreateVolumeBackupDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this CreateVolumeBackupDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this CreateVolumeBackupDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this CreateVolumeBackupDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     @property
     def display_name(self):
@@ -63,9 +111,45 @@ class CreateVolumeBackupDetails(object):
         self._display_name = display_name
 
     @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this CreateVolumeBackupDetails.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see
+        `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this CreateVolumeBackupDetails.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this CreateVolumeBackupDetails.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see
+        `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this CreateVolumeBackupDetails.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
     def volume_id(self):
         """
-        Gets the volume_id of this CreateVolumeBackupDetails.
+        **[Required]** Gets the volume_id of this CreateVolumeBackupDetails.
         The OCID of the volume that needs to be backed up.
 
 

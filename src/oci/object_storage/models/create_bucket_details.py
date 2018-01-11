@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -62,7 +62,7 @@ class CreateBucketDetails(object):
     @property
     def name(self):
         """
-        Gets the name of this CreateBucketDetails.
+        **[Required]** Gets the name of this CreateBucketDetails.
         The name of the bucket. Valid characters are uppercase or lowercase letters,
         numbers, and dashes. Bucket names must be unique within the namespace. Avoid entering confidential information.
         example: Example: my-new-bucket1
@@ -90,7 +90,7 @@ class CreateBucketDetails(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this CreateBucketDetails.
+        **[Required]** Gets the compartment_id of this CreateBucketDetails.
         The ID of the compartment in which to create the bucket.
 
 

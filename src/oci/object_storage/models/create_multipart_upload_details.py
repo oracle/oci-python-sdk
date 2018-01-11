@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -60,7 +60,7 @@ class CreateMultipartUploadDetails(object):
     @property
     def object(self):
         """
-        Gets the object of this CreateMultipartUploadDetails.
+        **[Required]** Gets the object of this CreateMultipartUploadDetails.
         The name of the object to which this multi-part upload is targeted. Avoid entering confidential information.
         Example: test/object1.log
 

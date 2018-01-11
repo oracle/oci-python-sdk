@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -39,7 +39,7 @@ class RouteRule(object):
     @property
     def cidr_block(self):
         """
-        Gets the cidr_block of this RouteRule.
+        **[Required]** Gets the cidr_block of this RouteRule.
         A destination IP address range in CIDR notation. Matching packets will
         be routed to the indicated network entity (the target).
 
@@ -69,7 +69,7 @@ class RouteRule(object):
     @property
     def network_entity_id(self):
         """
-        Gets the network_entity_id of this RouteRule.
+        **[Required]** Gets the network_entity_id of this RouteRule.
         The OCID for the route rule's target. For information about the type of
         targets you can specify, see
         `Route Tables`__.

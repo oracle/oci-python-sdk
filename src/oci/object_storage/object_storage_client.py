@@ -1,8 +1,9 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 from __future__ import absolute_import
 
+import requests
 import six
 
 from ..base_client import BaseClient
@@ -1517,6 +1518,10 @@ class ObjectStorageClient(object):
                 not hasattr(put_object_body, "read")):
             raise TypeError('The body must be a string, bytes, or provide a read() method.')
 
+        if hasattr(put_object_body, 'fileno') and hasattr(put_object_body, 'name') and put_object_body.name != '<stdin>':
+            if requests.utils.super_len(put_object_body) == 0:
+                header_params['Content-Length'] = '0'
+
         return self.base_client.call_api(
             resource_path=resource_path,
             method=method,
@@ -1865,6 +1870,10 @@ class ObjectStorageClient(object):
         if (not isinstance(upload_part_body, (six.binary_type, six.string_types)) and
                 not hasattr(upload_part_body, "read")):
             raise TypeError('The body must be a string, bytes, or provide a read() method.')
+
+        if hasattr(upload_part_body, 'fileno') and hasattr(upload_part_body, 'name') and upload_part_body.name != '<stdin>':
+            if requests.utils.super_len(upload_part_body) == 0:
+                header_params['Content-Length'] = '0'
 
         return self.base_client.call_api(
             resource_path=resource_path,

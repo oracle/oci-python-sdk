@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -32,7 +32,7 @@ class RestoreObjectsDetails(object):
     @property
     def object_name(self):
         """
-        Gets the object_name of this RestoreObjectsDetails.
+        **[Required]** Gets the object_name of this RestoreObjectsDetails.
         A object which was in an archived state and need to be restored.
 
 

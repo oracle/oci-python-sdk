@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -41,7 +41,7 @@ class WorkRequestError(object):
     @property
     def error_code(self):
         """
-        Gets the error_code of this WorkRequestError.
+        **[Required]** Gets the error_code of this WorkRequestError.
         Allowed values for this property are: "BAD_INPUT", "INTERNAL_ERROR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
@@ -67,7 +67,7 @@ class WorkRequestError(object):
     @property
     def message(self):
         """
-        Gets the message of this WorkRequestError.
+        **[Required]** Gets the message of this WorkRequestError.
         A human-readable error string.
 
 

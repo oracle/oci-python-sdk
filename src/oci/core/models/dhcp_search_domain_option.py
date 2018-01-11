@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 from .dhcp_option import DhcpOption
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -41,7 +41,7 @@ class DhcpSearchDomainOption(DhcpOption):
     @property
     def search_domain_names(self):
         """
-        Gets the search_domain_names of this DhcpSearchDomainOption.
+        **[Required]** Gets the search_domain_names of this DhcpSearchDomainOption.
         A single search domain name according to `RFC 952`__
         and `RFC 1123`__. During a DNS query,
         the OS will append this search domain name to the value being queried.

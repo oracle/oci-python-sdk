@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -40,13 +40,23 @@ class CreateIdentityProviderDetails(object):
             Allowed values for this property are: "SAML2"
         :type protocol: str
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this CreateIdentityProviderDetails.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this CreateIdentityProviderDetails.
+        :type defined_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
             'name': 'str',
             'description': 'str',
             'product_type': 'str',
-            'protocol': 'str'
+            'protocol': 'str',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -54,7 +64,9 @@ class CreateIdentityProviderDetails(object):
             'name': 'name',
             'description': 'description',
             'product_type': 'productType',
-            'protocol': 'protocol'
+            'protocol': 'protocol',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags'
         }
 
         self._compartment_id = None
@@ -62,6 +74,8 @@ class CreateIdentityProviderDetails(object):
         self._description = None
         self._product_type = None
         self._protocol = None
+        self._freeform_tags = None
+        self._defined_tags = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -79,7 +93,7 @@ class CreateIdentityProviderDetails(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this CreateIdentityProviderDetails.
+        **[Required]** Gets the compartment_id of this CreateIdentityProviderDetails.
         The OCID of your tenancy.
 
 
@@ -103,7 +117,7 @@ class CreateIdentityProviderDetails(object):
     @property
     def name(self):
         """
-        Gets the name of this CreateIdentityProviderDetails.
+        **[Required]** Gets the name of this CreateIdentityProviderDetails.
         The name you assign to the `IdentityProvider` during creation.
         The name must be unique across all `IdentityProvider` objects in the
         tenancy and cannot be changed.
@@ -131,7 +145,7 @@ class CreateIdentityProviderDetails(object):
     @property
     def description(self):
         """
-        Gets the description of this CreateIdentityProviderDetails.
+        **[Required]** Gets the description of this CreateIdentityProviderDetails.
         The description you assign to the `IdentityProvider` during creation.
         Does not have to be unique, and it's changeable.
 
@@ -157,7 +171,7 @@ class CreateIdentityProviderDetails(object):
     @property
     def product_type(self):
         """
-        Gets the product_type of this CreateIdentityProviderDetails.
+        **[Required]** Gets the product_type of this CreateIdentityProviderDetails.
         The identity provider service or product.
         Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft
         Active Directory Federation Services (ADFS).
@@ -197,7 +211,7 @@ class CreateIdentityProviderDetails(object):
     @property
     def protocol(self):
         """
-        Gets the protocol of this CreateIdentityProviderDetails.
+        **[Required]** Gets the protocol of this CreateIdentityProviderDetails.
         The protocol used for federation.
 
         Example: `SAML2`
@@ -229,6 +243,58 @@ class CreateIdentityProviderDetails(object):
                 .format(allowed_values)
             )
         self._protocol = protocol
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this CreateIdentityProviderDetails.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Example: `{\"bar-key\": \"value\"}`
+
+
+        :return: The freeform_tags of this CreateIdentityProviderDetails.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this CreateIdentityProviderDetails.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Example: `{\"bar-key\": \"value\"}`
+
+
+        :param freeform_tags: The freeform_tags of this CreateIdentityProviderDetails.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this CreateIdentityProviderDetails.
+        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+
+
+        :return: The defined_tags of this CreateIdentityProviderDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this CreateIdentityProviderDetails.
+        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+
+
+        :param defined_tags: The defined_tags of this CreateIdentityProviderDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 from .update_identity_provider_details import UpdateIdentityProviderDetails
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -24,6 +24,14 @@ class UpdateSaml2IdentityProviderDetails(UpdateIdentityProviderDetails):
             The value to assign to the description property of this UpdateSaml2IdentityProviderDetails.
         :type description: str
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this UpdateSaml2IdentityProviderDetails.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this UpdateSaml2IdentityProviderDetails.
+        :type defined_tags: dict(str, dict(str, object))
+
         :param metadata_url:
             The value to assign to the metadata_url property of this UpdateSaml2IdentityProviderDetails.
         :type metadata_url: str
@@ -36,6 +44,8 @@ class UpdateSaml2IdentityProviderDetails(UpdateIdentityProviderDetails):
         self.swagger_types = {
             'protocol': 'str',
             'description': 'str',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))',
             'metadata_url': 'str',
             'metadata': 'str'
         }
@@ -43,12 +53,16 @@ class UpdateSaml2IdentityProviderDetails(UpdateIdentityProviderDetails):
         self.attribute_map = {
             'protocol': 'protocol',
             'description': 'description',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags',
             'metadata_url': 'metadataUrl',
             'metadata': 'metadata'
         }
 
         self._protocol = None
         self._description = None
+        self._freeform_tags = None
+        self._defined_tags = None
         self._metadata_url = None
         self._metadata = None
         self._protocol = 'SAML2'

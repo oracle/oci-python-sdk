@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -41,7 +41,7 @@ class BackendHealth(object):
     @property
     def health_check_results(self):
         """
-        Gets the health_check_results of this BackendHealth.
+        **[Required]** Gets the health_check_results of this BackendHealth.
         A list of the most recent health check results returned for the specified backend server.
 
 
@@ -65,7 +65,7 @@ class BackendHealth(object):
     @property
     def status(self):
         """
-        Gets the status of this BackendHealth.
+        **[Required]** Gets the status of this BackendHealth.
         The general health status of the specified backend server as reported by the primary and standby load balancers.
 
         *   **OK:** Both health checks returned `OK`.

@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -116,7 +116,7 @@ class PatchSummary(object):
     @property
     def description(self):
         """
-        Gets the description of this PatchSummary.
+        **[Required]** Gets the description of this PatchSummary.
         The text describing this patch package.
 
 
@@ -140,7 +140,7 @@ class PatchSummary(object):
     @property
     def id(self):
         """
-        Gets the id of this PatchSummary.
+        **[Required]** Gets the id of this PatchSummary.
         The OCID of the patch.
 
 
@@ -250,7 +250,7 @@ class PatchSummary(object):
     @property
     def time_released(self):
         """
-        Gets the time_released of this PatchSummary.
+        **[Required]** Gets the time_released of this PatchSummary.
         The date and time that the patch was released.
 
 
@@ -274,7 +274,7 @@ class PatchSummary(object):
     @property
     def version(self):
         """
-        Gets the version of this PatchSummary.
+        **[Required]** Gets the version of this PatchSummary.
         The version of this patch package.
 
 

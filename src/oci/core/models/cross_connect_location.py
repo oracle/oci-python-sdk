@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -39,7 +39,7 @@ class CrossConnectLocation(object):
     @property
     def description(self):
         """
-        Gets the description of this CrossConnectLocation.
+        **[Required]** Gets the description of this CrossConnectLocation.
         A description of the location.
 
 
@@ -63,7 +63,7 @@ class CrossConnectLocation(object):
     @property
     def name(self):
         """
-        Gets the name of this CrossConnectLocation.
+        **[Required]** Gets the name of this CrossConnectLocation.
         The name of the location.
 
         Example: `CyrusOne, Chandler, AZ`

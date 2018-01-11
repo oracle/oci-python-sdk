@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 from .export_image_details import ExportImageDetails
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -41,7 +41,7 @@ class ExportImageViaObjectStorageUriDetails(ExportImageDetails):
     @property
     def destination_uri(self):
         """
-        Gets the destination_uri of this ExportImageViaObjectStorageUriDetails.
+        **[Required]** Gets the destination_uri of this ExportImageViaObjectStorageUriDetails.
         The Object Storage URL to export the image to. See `Object Storage URLs`__
         and `pre-authenticated requests`__ for constructing URLs for image import/export.
 

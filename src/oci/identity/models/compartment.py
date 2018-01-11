@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -44,6 +44,14 @@ class Compartment(object):
             The value to assign to the inactive_status property of this Compartment.
         :type inactive_status: int
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this Compartment.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this Compartment.
+        :type defined_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -52,7 +60,9 @@ class Compartment(object):
             'description': 'str',
             'time_created': 'datetime',
             'lifecycle_state': 'str',
-            'inactive_status': 'int'
+            'inactive_status': 'int',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -62,7 +72,9 @@ class Compartment(object):
             'description': 'description',
             'time_created': 'timeCreated',
             'lifecycle_state': 'lifecycleState',
-            'inactive_status': 'inactiveStatus'
+            'inactive_status': 'inactiveStatus',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags'
         }
 
         self._id = None
@@ -72,11 +84,13 @@ class Compartment(object):
         self._time_created = None
         self._lifecycle_state = None
         self._inactive_status = None
+        self._freeform_tags = None
+        self._defined_tags = None
 
     @property
     def id(self):
         """
-        Gets the id of this Compartment.
+        **[Required]** Gets the id of this Compartment.
         The OCID of the compartment.
 
 
@@ -100,7 +114,7 @@ class Compartment(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this Compartment.
+        **[Required]** Gets the compartment_id of this Compartment.
         The OCID of the tenancy containing the compartment.
 
 
@@ -124,7 +138,7 @@ class Compartment(object):
     @property
     def name(self):
         """
-        Gets the name of this Compartment.
+        **[Required]** Gets the name of this Compartment.
         The name you assign to the compartment during creation. The name must be unique across all
         compartments in the tenancy.
 
@@ -150,7 +164,7 @@ class Compartment(object):
     @property
     def description(self):
         """
-        Gets the description of this Compartment.
+        **[Required]** Gets the description of this Compartment.
         The description you assign to the compartment. Does not have to be unique, and it's changeable.
 
 
@@ -174,7 +188,7 @@ class Compartment(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this Compartment.
+        **[Required]** Gets the time_created of this Compartment.
         Date and time the compartment was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
@@ -202,7 +216,7 @@ class Compartment(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this Compartment.
+        **[Required]** Gets the lifecycle_state of this Compartment.
         The compartment's current state. After creating a compartment, make sure its `lifecycleState` changes from
         CREATING to ACTIVE before using it.
 
@@ -254,6 +268,58 @@ class Compartment(object):
         :type: int
         """
         self._inactive_status = inactive_status
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this Compartment.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Example: `{\"bar-key\": \"value\"}`
+
+
+        :return: The freeform_tags of this Compartment.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this Compartment.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Example: `{\"bar-key\": \"value\"}`
+
+
+        :param freeform_tags: The freeform_tags of this Compartment.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this Compartment.
+        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+
+
+        :return: The defined_tags of this Compartment.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this Compartment.
+        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+
+
+        :param defined_tags: The defined_tags of this Compartment.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

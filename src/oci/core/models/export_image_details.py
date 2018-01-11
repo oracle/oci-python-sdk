@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -53,7 +53,7 @@ class ExportImageDetails(object):
     @property
     def destination_type(self):
         """
-        Gets the destination_type of this ExportImageDetails.
+        **[Required]** Gets the destination_type of this ExportImageDetails.
         The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name.
         Use `objectStorageUri` when specifying the Object Storage URL.
 

@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -198,7 +198,7 @@ class DataGuardAssociation(object):
     @property
     def database_id(self):
         """
-        Gets the database_id of this DataGuardAssociation.
+        **[Required]** Gets the database_id of this DataGuardAssociation.
         The `OCID`__ of the reporting database.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
@@ -226,7 +226,7 @@ class DataGuardAssociation(object):
     @property
     def id(self):
         """
-        Gets the id of this DataGuardAssociation.
+        **[Required]** Gets the id of this DataGuardAssociation.
         The `OCID`__ of the Data Guard association.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
@@ -278,7 +278,7 @@ class DataGuardAssociation(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this DataGuardAssociation.
+        **[Required]** Gets the lifecycle_state of this DataGuardAssociation.
         The current state of the Data Guard association.
 
         Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -392,7 +392,7 @@ class DataGuardAssociation(object):
     @property
     def peer_db_system_id(self):
         """
-        Gets the peer_db_system_id of this DataGuardAssociation.
+        **[Required]** Gets the peer_db_system_id of this DataGuardAssociation.
         The `OCID`__ of the DB System containing the associated
         peer database.
 
@@ -422,7 +422,7 @@ class DataGuardAssociation(object):
     @property
     def peer_role(self):
         """
-        Gets the peer_role of this DataGuardAssociation.
+        **[Required]** Gets the peer_role of this DataGuardAssociation.
         The role of the peer database in this Data Guard association.
 
         Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", 'UNKNOWN_ENUM_VALUE'.
@@ -452,7 +452,7 @@ class DataGuardAssociation(object):
     @property
     def protection_mode(self):
         """
-        Gets the protection_mode of this DataGuardAssociation.
+        **[Required]** Gets the protection_mode of this DataGuardAssociation.
         The protection mode of this Data Guard association. For more information, see
         `Oracle Data Guard Protection Modes`__
         in the Oracle Data Guard documentation.
@@ -490,7 +490,7 @@ class DataGuardAssociation(object):
     @property
     def role(self):
         """
-        Gets the role of this DataGuardAssociation.
+        **[Required]** Gets the role of this DataGuardAssociation.
         The role of the reporting database in this Data Guard association.
 
         Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", 'UNKNOWN_ENUM_VALUE'.

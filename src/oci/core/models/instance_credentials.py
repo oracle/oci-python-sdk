@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -39,7 +39,7 @@ class InstanceCredentials(object):
     @property
     def password(self):
         """
-        Gets the password of this InstanceCredentials.
+        **[Required]** Gets the password of this InstanceCredentials.
         The password for the username.
 
 
@@ -63,7 +63,7 @@ class InstanceCredentials(object):
     @property
     def username(self):
         """
-        Gets the username of this InstanceCredentials.
+        **[Required]** Gets the username of this InstanceCredentials.
         The username.
 
 

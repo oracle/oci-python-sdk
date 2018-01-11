@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -75,7 +75,7 @@ class CreateDatabaseDetails(object):
     @property
     def admin_password(self):
         """
-        Gets the admin_password of this CreateDatabaseDetails.
+        **[Required]** Gets the admin_password of this CreateDatabaseDetails.
         A strong password for SYS, SYSTEM, and PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
 
 
@@ -147,7 +147,7 @@ class CreateDatabaseDetails(object):
     @property
     def db_name(self):
         """
-        Gets the db_name of this CreateDatabaseDetails.
+        **[Required]** Gets the db_name of this CreateDatabaseDetails.
         The database name. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
 
 

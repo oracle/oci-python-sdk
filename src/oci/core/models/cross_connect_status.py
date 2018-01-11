@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -57,7 +57,7 @@ class CrossConnectStatus(object):
     @property
     def cross_connect_id(self):
         """
-        Gets the cross_connect_id of this CrossConnectStatus.
+        **[Required]** Gets the cross_connect_id of this CrossConnectStatus.
         The OCID of the cross-connect.
 
 

@@ -1,3 +1,6 @@
+# coding: utf-8
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+
 import tests.util
 import oci
 import os
@@ -189,7 +192,7 @@ def launch_instance(compute, compartment, test_id, availability_domain, subnet, 
     request.display_name = 'pythonsdk_tutorial_instance_' + test_id
     # Oracle-Linux-7.3-2017.03.03-0
     request.image_id = util.oracle_linux_image()
-    request.shape = 'VM.Standard1.2'
+    request.shape = 'VM.Standard1.1'
     request.subnet_id = subnet.id
     request.metadata = {'ssh_authorized_keys': public_key}
     response = compute.launch_instance(request)

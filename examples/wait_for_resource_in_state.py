@@ -1,5 +1,6 @@
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
-#
+# coding: utf-8
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+
 # This script provides an example on how to use waiters in the Python SDK to block/wait until a resource (e.g. an instance, a VCN)
 # reaches a certain state.
 
@@ -36,6 +37,12 @@ subnet_ocid = result.data.id
 get_subnet_response = oci.wait_until(virtual_network_client, virtual_network_client.get_subnet(subnet_ocid), 'lifecycle_state', 'AVAILABLE')
 print(get_subnet_response.data)
 
+# Here we use a variation of the wait_until function where instead of specifying the property and state we can pass in a function reference (either
+# a reference to a defined function or a lambda) that returns a truthy value if the waiter should stop waiting and a falsey value if the waiter
+# should continue waiting. This function will receive a single argument, which is the response received from calling the GET service operation.
+#
+# Using a function reference may be useful if you need logic other than a straight equality check on an attribute (e.g. checking that an attribute is
+# in one of a possible number of states)
 print('Creating Subnet 2')
 result = virtual_network_client.create_subnet(
     oci.core.models.CreateSubnetDetails(
@@ -47,7 +54,7 @@ result = virtual_network_client.create_subnet(
     )
 )
 subnet_two_ocid = result.data.id
-get_subnet_response = oci.wait_until(virtual_network_client, virtual_network_client.get_subnet(subnet_two_ocid), 'lifecycle_state', 'AVAILABLE')
+get_subnet_response = oci.wait_until(virtual_network_client, virtual_network_client.get_subnet(subnet_two_ocid), evaluate_response=lambda r: r.data.lifecycle_state == 'AVAILABLE')
 print(get_subnet_response.data)
 
 # Now we create a load balancer and wait until it has been created. Load balancers work slightly differently in that the create_load_balancer call

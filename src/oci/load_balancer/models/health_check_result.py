@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -55,7 +55,7 @@ class HealthCheckResult(object):
     @property
     def health_check_status(self):
         """
-        Gets the health_check_status of this HealthCheckResult.
+        **[Required]** Gets the health_check_status of this HealthCheckResult.
         The result of the most recent health check.
 
         Allowed values for this property are: "OK", "INVALID_STATUS_CODE", "TIMED_OUT", "REGEX_MISMATCH", "CONNECT_FAILED", "IO_ERROR", "OFFLINE", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
@@ -85,7 +85,7 @@ class HealthCheckResult(object):
     @property
     def source_ip_address(self):
         """
-        Gets the source_ip_address of this HealthCheckResult.
+        **[Required]** Gets the source_ip_address of this HealthCheckResult.
         The IP address of the health check status report provider. This identifier helps you differentiate same-subnet
         (private) load balancers that report health check status.
 
@@ -115,7 +115,7 @@ class HealthCheckResult(object):
     @property
     def subnet_id(self):
         """
-        Gets the subnet_id of this HealthCheckResult.
+        **[Required]** Gets the subnet_id of this HealthCheckResult.
         The OCID of the subnet hosting the load balancer that reported this health check status.
 
 
@@ -139,7 +139,7 @@ class HealthCheckResult(object):
     @property
     def timestamp(self):
         """
-        Gets the timestamp of this HealthCheckResult.
+        **[Required]** Gets the timestamp of this HealthCheckResult.
         The date and time the data was retrieved, in the format defined by RFC3339.
 
         Example: `2017-06-02T18:28:11+00:00`

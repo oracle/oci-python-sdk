@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -32,7 +32,7 @@ class CreateCustomerSecretKeyDetails(object):
     @property
     def display_name(self):
         """
-        Gets the display_name of this CreateCustomerSecretKeyDetails.
+        **[Required]** Gets the display_name of this CreateCustomerSecretKeyDetails.
         The name you assign to the secret key during creation. Does not have to be unique, and it's changeable.
 
 

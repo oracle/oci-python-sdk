@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -67,7 +67,7 @@ class EgressSecurityRule(object):
     @property
     def destination(self):
         """
-        Gets the destination of this EgressSecurityRule.
+        **[Required]** Gets the destination of this EgressSecurityRule.
         The destination CIDR block for the egress rule. This is the range of IP addresses that a
         packet originating from the instance can go to.
 
@@ -167,7 +167,7 @@ class EgressSecurityRule(object):
     @property
     def protocol(self):
         """
-        Gets the protocol of this EgressSecurityRule.
+        **[Required]** Gets the protocol of this EgressSecurityRule.
         The transport protocol. Specify either `all` or an IPv4 protocol number as
         defined in
         `Protocol Numbers`__.
