@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -46,7 +46,7 @@ class NamespaceMetadata(object):
     @property
     def namespace(self):
         """
-        Gets the namespace of this NamespaceMetadata.
+        **[Required]** Gets the namespace of this NamespaceMetadata.
         The namespace to which the metadata belongs.
 
 
@@ -70,7 +70,7 @@ class NamespaceMetadata(object):
     @property
     def default_s3_compartment_id(self):
         """
-        Gets the default_s3_compartment_id of this NamespaceMetadata.
+        **[Required]** Gets the default_s3_compartment_id of this NamespaceMetadata.
         The default compartment ID for an S3 client.
 
 
@@ -94,7 +94,7 @@ class NamespaceMetadata(object):
     @property
     def default_swift_compartment_id(self):
         """
-        Gets the default_swift_compartment_id of this NamespaceMetadata.
+        **[Required]** Gets the default_swift_compartment_id of this NamespaceMetadata.
         The default compartment ID for a Swift client.
 
 

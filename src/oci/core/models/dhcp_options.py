@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -18,9 +18,17 @@ class DhcpOptions(object):
             The value to assign to the compartment_id property of this DhcpOptions.
         :type compartment_id: str
 
+        :param defined_tags:
+            The value to assign to the defined_tags property of this DhcpOptions.
+        :type defined_tags: dict(str, dict(str, object))
+
         :param display_name:
             The value to assign to the display_name property of this DhcpOptions.
         :type display_name: str
+
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this DhcpOptions.
+        :type freeform_tags: dict(str, str)
 
         :param id:
             The value to assign to the id property of this DhcpOptions.
@@ -47,7 +55,9 @@ class DhcpOptions(object):
         """
         self.swagger_types = {
             'compartment_id': 'str',
+            'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
+            'freeform_tags': 'dict(str, str)',
             'id': 'str',
             'lifecycle_state': 'str',
             'options': 'list[DhcpOption]',
@@ -57,7 +67,9 @@ class DhcpOptions(object):
 
         self.attribute_map = {
             'compartment_id': 'compartmentId',
+            'defined_tags': 'definedTags',
             'display_name': 'displayName',
+            'freeform_tags': 'freeformTags',
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
             'options': 'options',
@@ -66,7 +78,9 @@ class DhcpOptions(object):
         }
 
         self._compartment_id = None
+        self._defined_tags = None
         self._display_name = None
+        self._freeform_tags = None
         self._id = None
         self._lifecycle_state = None
         self._options = None
@@ -76,7 +90,7 @@ class DhcpOptions(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this DhcpOptions.
+        **[Required]** Gets the compartment_id of this DhcpOptions.
         The OCID of the compartment containing the set of DHCP options.
 
 
@@ -96,6 +110,40 @@ class DhcpOptions(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this DhcpOptions.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this DhcpOptions.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this DhcpOptions.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this DhcpOptions.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     @property
     def display_name(self):
@@ -124,9 +172,45 @@ class DhcpOptions(object):
         self._display_name = display_name
 
     @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this DhcpOptions.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see
+        `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this DhcpOptions.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this DhcpOptions.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see
+        `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this DhcpOptions.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
     def id(self):
         """
-        Gets the id of this DhcpOptions.
+        **[Required]** Gets the id of this DhcpOptions.
         Oracle ID (OCID) for the set of DHCP options.
 
 
@@ -150,7 +234,7 @@ class DhcpOptions(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this DhcpOptions.
+        **[Required]** Gets the lifecycle_state of this DhcpOptions.
         The current state of the set of DHCP options.
 
         Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
@@ -180,7 +264,7 @@ class DhcpOptions(object):
     @property
     def options(self):
         """
-        Gets the options of this DhcpOptions.
+        **[Required]** Gets the options of this DhcpOptions.
         The collection of individual DHCP options.
 
 
@@ -204,7 +288,7 @@ class DhcpOptions(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this DhcpOptions.
+        **[Required]** Gets the time_created of this DhcpOptions.
         Date and time the set of DHCP options was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
@@ -232,7 +316,7 @@ class DhcpOptions(object):
     @property
     def vcn_id(self):
         """
-        Gets the vcn_id of this DhcpOptions.
+        **[Required]** Gets the vcn_id of this DhcpOptions.
         The OCID of the VCN the set of DHCP options belongs to.
 
 

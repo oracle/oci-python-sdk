@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -30,25 +30,39 @@ class Tenancy(object):
             The value to assign to the home_region_key property of this Tenancy.
         :type home_region_key: str
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this Tenancy.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this Tenancy.
+        :type defined_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
             'description': 'str',
-            'home_region_key': 'str'
+            'home_region_key': 'str',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
             'description': 'description',
-            'home_region_key': 'homeRegionKey'
+            'home_region_key': 'homeRegionKey',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags'
         }
 
         self._id = None
         self._name = None
         self._description = None
         self._home_region_key = None
+        self._freeform_tags = None
+        self._defined_tags = None
 
     @property
     def id(self):
@@ -155,6 +169,58 @@ class Tenancy(object):
         :type: str
         """
         self._home_region_key = home_region_key
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this Tenancy.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Example: `{\"bar-key\": \"value\"}`
+
+
+        :return: The freeform_tags of this Tenancy.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this Tenancy.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Example: `{\"bar-key\": \"value\"}`
+
+
+        :param freeform_tags: The freeform_tags of this Tenancy.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this Tenancy.
+        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+
+
+        :return: The defined_tags of this Tenancy.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this Tenancy.
+        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+
+
+        :param defined_tags: The defined_tags of this Tenancy.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

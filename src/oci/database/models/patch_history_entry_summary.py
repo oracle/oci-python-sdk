@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -108,7 +108,7 @@ class PatchHistoryEntrySummary(object):
     @property
     def id(self):
         """
-        Gets the id of this PatchHistoryEntrySummary.
+        **[Required]** Gets the id of this PatchHistoryEntrySummary.
         The OCID of the patch history entry.
 
 
@@ -158,7 +158,7 @@ class PatchHistoryEntrySummary(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this PatchHistoryEntrySummary.
+        **[Required]** Gets the lifecycle_state of this PatchHistoryEntrySummary.
         The current state of the action.
 
         Allowed values for this property are: "IN_PROGRESS", "SUCCEEDED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -188,7 +188,7 @@ class PatchHistoryEntrySummary(object):
     @property
     def patch_id(self):
         """
-        Gets the patch_id of this PatchHistoryEntrySummary.
+        **[Required]** Gets the patch_id of this PatchHistoryEntrySummary.
         The OCID of the patch.
 
 
@@ -236,7 +236,7 @@ class PatchHistoryEntrySummary(object):
     @property
     def time_started(self):
         """
-        Gets the time_started of this PatchHistoryEntrySummary.
+        **[Required]** Gets the time_started of this PatchHistoryEntrySummary.
         The date and time when the patch action started.
 
 

@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 from .instance_source_details import InstanceSourceDetails
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -41,7 +41,7 @@ class InstanceSourceViaImageDetails(InstanceSourceDetails):
     @property
     def image_id(self):
         """
-        Gets the image_id of this InstanceSourceViaImageDetails.
+        **[Required]** Gets the image_id of this InstanceSourceViaImageDetails.
         The OCID of the image used to boot the instance.
 
 

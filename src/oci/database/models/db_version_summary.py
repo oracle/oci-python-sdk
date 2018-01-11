@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -63,7 +63,7 @@ class DbVersionSummary(object):
     @property
     def version(self):
         """
-        Gets the version of this DbVersionSummary.
+        **[Required]** Gets the version of this DbVersionSummary.
         A valid Oracle database version.
 
 

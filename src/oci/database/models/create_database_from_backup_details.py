@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -46,7 +46,7 @@ class CreateDatabaseFromBackupDetails(object):
     @property
     def admin_password(self):
         """
-        Gets the admin_password of this CreateDatabaseFromBackupDetails.
+        **[Required]** Gets the admin_password of this CreateDatabaseFromBackupDetails.
         A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
 
 
@@ -70,7 +70,7 @@ class CreateDatabaseFromBackupDetails(object):
     @property
     def backup_id(self):
         """
-        Gets the backup_id of this CreateDatabaseFromBackupDetails.
+        **[Required]** Gets the backup_id of this CreateDatabaseFromBackupDetails.
         The backup OCID.
 
 
@@ -94,7 +94,7 @@ class CreateDatabaseFromBackupDetails(object):
     @property
     def backup_tde_password(self):
         """
-        Gets the backup_tde_password of this CreateDatabaseFromBackupDetails.
+        **[Required]** Gets the backup_tde_password of this CreateDatabaseFromBackupDetails.
         The password to open the TDE wallet.
 
 

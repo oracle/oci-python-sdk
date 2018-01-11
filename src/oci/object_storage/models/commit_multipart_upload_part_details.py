@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -39,7 +39,7 @@ class CommitMultipartUploadPartDetails(object):
     @property
     def part_num(self):
         """
-        Gets the part_num of this CommitMultipartUploadPartDetails.
+        **[Required]** Gets the part_num of this CommitMultipartUploadPartDetails.
         The part number for this part.
 
 
@@ -63,7 +63,7 @@ class CommitMultipartUploadPartDetails(object):
     @property
     def etag(self):
         """
-        Gets the etag of this CommitMultipartUploadPartDetails.
+        **[Required]** Gets the etag of this CommitMultipartUploadPartDetails.
         The ETag returned when this part was uploaded.
 
 

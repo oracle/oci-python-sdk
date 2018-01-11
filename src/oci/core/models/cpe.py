@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -60,7 +60,7 @@ class Cpe(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this Cpe.
+        **[Required]** Gets the compartment_id of this Cpe.
         The OCID of the compartment containing the CPE.
 
 
@@ -110,7 +110,7 @@ class Cpe(object):
     @property
     def id(self):
         """
-        Gets the id of this Cpe.
+        **[Required]** Gets the id of this Cpe.
         The CPE's Oracle ID (OCID).
 
 
@@ -134,7 +134,7 @@ class Cpe(object):
     @property
     def ip_address(self):
         """
-        Gets the ip_address of this Cpe.
+        **[Required]** Gets the ip_address of this Cpe.
         The public IP address of the on-premises router.
 
 

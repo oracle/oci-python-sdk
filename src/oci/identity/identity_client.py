@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 from __future__ import absolute_import
 
@@ -665,6 +665,136 @@ class IdentityClient(object):
             header_params=header_params,
             body=create_swift_password_details,
             response_type="SwiftPassword")
+
+    def create_tag(self, tag_namespace_id, create_tag_details, **kwargs):
+        """
+        CreateTag
+        Creates a new tag in a given tagNamespace.
+
+        You have to specify either the id or the name of the tagNamespace that will contain this tag definition.
+
+        You must also specify a *name* for the tag, which must be unique across all tags in the tagNamespace
+        and cannot be changed. All ascii characters are allowed except spaces and dots. Note that names are case
+        insenstive, that means you can not have two different tags with same name but with different casing in
+        one tagNamespace.
+        If you specify a name that's already in use in the tagNamespace, you'll get a 409 error.
+
+        You must also specify a *description* for the tag.
+        It does not have to be unique, and you can change it anytime with
+        :func:`update_tag`.
+
+
+        :param str tag_namespace_id: (required)
+            The OCID of the tagNamespace
+
+        :param CreateTagDetails create_tag_details: (required)
+            Request object for creating a new tag in a given tagNamespace.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.Tag`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/tagNamespaces/{tagNamespaceId}/tags"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_tag got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "tagNamespaceId": tag_namespace_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=create_tag_details,
+            response_type="Tag")
+
+    def create_tag_namespace(self, create_tag_namespace_details, **kwargs):
+        """
+        CreateTagNamespace
+        Creates a new tagNamespace in a given compartment.
+
+        You must specify the compartment ID in the request object (remember that the tenancy is simply the root
+        compartment).
+
+        You must also specify a *name* for the namespace, which must be unique across all namespaces in your tenancy
+        and cannot be changed. All ascii characters are allowed except spaces and dots.
+        Note that names are case insenstive, that means you can not have two different namespaces with same name
+        but with different casing in one tenancy.
+        Once you created a namespace, you can not change the name
+        If you specify a name that's already in use in the tennacy, you'll get a 409 error.
+
+        You must also specify a *description* for the namespace.
+        It does not have to be unique, and you can change it anytime with
+        :func:`update_tag_namespace`.
+
+
+        :param CreateTagNamespaceDetails create_tag_namespace_details: (required)
+            Request object for creating a new tagNamespace.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.TagNamespace`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/tagNamespaces"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_tag_namespace got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            header_params=header_params,
+            body=create_tag_namespace_details,
+            response_type="TagNamespace")
 
     def create_user(self, create_user_details, **kwargs):
         """
@@ -1407,6 +1537,92 @@ class IdentityClient(object):
             header_params=header_params,
             response_type="Policy")
 
+    def get_tag(self, tag_namespace_id, tag_name, **kwargs):
+        """
+        GetTag
+        Gets the specified tag's information.
+
+
+        :param str tag_namespace_id: (required)
+            The OCID of the tagNamespace
+
+        :param str tag_name: (required)
+            The name of the tag
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.Tag`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/tagNamespaces/{tagNamespaceId}/tags/{tagName}"
+        method = "GET"
+
+        if kwargs:
+            raise ValueError(
+                "get_tag got unknown kwargs: {!r}".format(kwargs))
+
+        path_params = {
+            "tagNamespaceId": tag_namespace_id,
+            "tagName": tag_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="Tag")
+
+    def get_tag_namespace(self, tag_namespace_id, **kwargs):
+        """
+        GetTagNamespace
+        Gets the specified tagNamespace's information.
+
+
+        :param str tag_namespace_id: (required)
+            The OCID of the tagNamespace
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.TagNamespace`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/tagNamespaces/{tagNamespaceId}"
+        method = "GET"
+
+        if kwargs:
+            raise ValueError(
+                "get_tag_namespace got unknown kwargs: {!r}".format(kwargs))
+
+        path_params = {
+            "tagNamespaceId": tag_namespace_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="TagNamespace")
+
     def get_tenancy(self, tenancy_id, **kwargs):
         """
         GetTenancy
@@ -2051,6 +2267,122 @@ class IdentityClient(object):
             header_params=header_params,
             response_type="list[SwiftPassword]")
 
+    def list_tag_namespaces(self, compartment_id, **kwargs):
+        """
+        ListTagNamespaces
+        List the tagNamespaces in a given compartment.
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment (remember that the tenancy is simply the root compartment).
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+        :param bool include_subcompartments: (optional)
+            An optional boolean parameter for whether or not to retrieve all tagNamespaces in sub compartments. In case
+            of absence of this parameter, only tagNamespaces that exist directly in this compartment will be retrieved.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.TagNamespaceSummary`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/tagNamespaces"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "page",
+            "limit",
+            "include_subcompartments"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_tag_namespaces got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "includeSubcompartments": kwargs.get("include_subcompartments", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[TagNamespaceSummary]")
+
+    def list_tags(self, tag_namespace_id, **kwargs):
+        """
+        ListTags
+        List the tags that are defined in a given tagNamespace.
+
+
+        :param str tag_namespace_id: (required)
+            The OCID of the tagNamespace
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.TagSummary`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/tagNamespaces/{tagNamespaceId}/tags"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_tags got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "tagNamespaceId": tag_namespace_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[TagSummary]")
+
     def list_user_group_memberships(self, compartment_id, **kwargs):
         """
         ListUserGroupMemberships
@@ -2639,6 +2971,107 @@ class IdentityClient(object):
             header_params=header_params,
             body=update_swift_password_details,
             response_type="SwiftPassword")
+
+    def update_tag(self, tag_namespace_id, tag_name, update_tag_details, **kwargs):
+        """
+        UpdateTag
+        Updates the the specified tag. Only description and isRetired can be updated. Retiring a tag will also retire
+        the related rules. You can not a tag with the same name as a retired tag. Tags must be unique within their tag
+        namespace but can be repeated across namespaces. You cannot add a tag with the same name as a retired tag in
+        the same tag namespace.
+
+
+        :param str tag_namespace_id: (required)
+            The OCID of the tagNamespace
+
+        :param str tag_name: (required)
+            The name of the tag
+
+        :param UpdateTagDetails update_tag_details: (required)
+            Request object for updating a tag.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.Tag`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/tagNamespaces/{tagNamespaceId}/tags/{tagName}"
+        method = "PUT"
+
+        if kwargs:
+            raise ValueError(
+                "update_tag got unknown kwargs: {!r}".format(kwargs))
+
+        path_params = {
+            "tagNamespaceId": tag_namespace_id,
+            "tagName": tag_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=update_tag_details,
+            response_type="Tag")
+
+    def update_tag_namespace(self, tag_namespace_id, update_tag_namespace_details, **kwargs):
+        """
+        UpdateTagNamespace
+        Updates the the specified tagNamespace. Only description, isRetired and assigned tags can be updated. Updating
+        isRetired to be true will retire the namespace, all the contained tags and the related rules. Reactivating a
+        namespace  will not reactivate any tag definition that was retired when the namespace was retired. They will
+        have to be individually reactivated *after* the namespace is reactivated. You can't add a namespace with the
+        same name as a retired namespace in the same tenant.
+
+
+        :param str tag_namespace_id: (required)
+            The OCID of the tagNamespace
+
+        :param UpdateTagNamespaceDetails update_tag_namespace_details: (required)
+            Request object for updating a namespace.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.TagNamespace`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/tagNamespaces/{tagNamespaceId}"
+        method = "PUT"
+
+        if kwargs:
+            raise ValueError(
+                "update_tag_namespace got unknown kwargs: {!r}".format(kwargs))
+
+        path_params = {
+            "tagNamespaceId": tag_namespace_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=update_tag_namespace_details,
+            response_type="TagNamespace")
 
     def update_user(self, user_id, update_user_details, **kwargs):
         """

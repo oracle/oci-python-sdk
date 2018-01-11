@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -94,7 +94,7 @@ class AttachVolumeDetails(object):
     @property
     def instance_id(self):
         """
-        Gets the instance_id of this AttachVolumeDetails.
+        **[Required]** Gets the instance_id of this AttachVolumeDetails.
         The OCID of the instance.
 
 
@@ -118,7 +118,7 @@ class AttachVolumeDetails(object):
     @property
     def type(self):
         """
-        Gets the type of this AttachVolumeDetails.
+        **[Required]** Gets the type of this AttachVolumeDetails.
         The type of volume. The only supported value is \"iscsi\".
 
 
@@ -142,7 +142,7 @@ class AttachVolumeDetails(object):
     @property
     def volume_id(self):
         """
-        Gets the volume_id of this AttachVolumeDetails.
+        **[Required]** Gets the volume_id of this AttachVolumeDetails.
         The OCID of the volume.
 
 

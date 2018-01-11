@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 from .volume_attachment import VolumeAttachment
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -184,7 +184,7 @@ class IScsiVolumeAttachment(VolumeAttachment):
     @property
     def ipv4(self):
         """
-        Gets the ipv4 of this IScsiVolumeAttachment.
+        **[Required]** Gets the ipv4 of this IScsiVolumeAttachment.
         The volume's iSCSI IP address.
 
         Example: `169.254.0.2`
@@ -212,7 +212,7 @@ class IScsiVolumeAttachment(VolumeAttachment):
     @property
     def iqn(self):
         """
-        Gets the iqn of this IScsiVolumeAttachment.
+        **[Required]** Gets the iqn of this IScsiVolumeAttachment.
         The target volume's iSCSI Qualified Name in the format defined by RFC 3720.
 
         Example: `iqn.2015-12.us.oracle.com:456b0391-17b8-4122-bbf1-f85fc0bb97d9`
@@ -240,7 +240,7 @@ class IScsiVolumeAttachment(VolumeAttachment):
     @property
     def port(self):
         """
-        Gets the port of this IScsiVolumeAttachment.
+        **[Required]** Gets the port of this IScsiVolumeAttachment.
         The volume's iSCSI port.
 
         Example: `3260`

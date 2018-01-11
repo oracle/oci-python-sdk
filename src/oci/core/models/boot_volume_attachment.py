@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -83,7 +83,7 @@ class BootVolumeAttachment(object):
     @property
     def availability_domain(self):
         """
-        Gets the availability_domain of this BootVolumeAttachment.
+        **[Required]** Gets the availability_domain of this BootVolumeAttachment.
         The Availability Domain of an instance.
 
         Example: `Uocm:PHX-AD-1`
@@ -111,7 +111,7 @@ class BootVolumeAttachment(object):
     @property
     def boot_volume_id(self):
         """
-        Gets the boot_volume_id of this BootVolumeAttachment.
+        **[Required]** Gets the boot_volume_id of this BootVolumeAttachment.
         The OCID of the boot volume.
 
 
@@ -135,7 +135,7 @@ class BootVolumeAttachment(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this BootVolumeAttachment.
+        **[Required]** Gets the compartment_id of this BootVolumeAttachment.
         The OCID of the compartment.
 
 
@@ -189,7 +189,7 @@ class BootVolumeAttachment(object):
     @property
     def id(self):
         """
-        Gets the id of this BootVolumeAttachment.
+        **[Required]** Gets the id of this BootVolumeAttachment.
         The OCID of the boot volume attachment.
 
 
@@ -213,7 +213,7 @@ class BootVolumeAttachment(object):
     @property
     def instance_id(self):
         """
-        Gets the instance_id of this BootVolumeAttachment.
+        **[Required]** Gets the instance_id of this BootVolumeAttachment.
         The OCID of the instance the boot volume is attached to.
 
 
@@ -237,7 +237,7 @@ class BootVolumeAttachment(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this BootVolumeAttachment.
+        **[Required]** Gets the lifecycle_state of this BootVolumeAttachment.
         The current state of the boot volume attachment.
 
         Allowed values for this property are: "ATTACHING", "ATTACHED", "DETACHING", "DETACHED", 'UNKNOWN_ENUM_VALUE'.
@@ -267,7 +267,7 @@ class BootVolumeAttachment(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this BootVolumeAttachment.
+        **[Required]** Gets the time_created of this BootVolumeAttachment.
         The date and time the boot volume was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`

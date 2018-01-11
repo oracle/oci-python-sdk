@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 from .identity_provider import IdentityProvider
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -52,6 +52,14 @@ class Saml2IdentityProvider(IdentityProvider):
             The value to assign to the protocol property of this Saml2IdentityProvider.
         :type protocol: str
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this Saml2IdentityProvider.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this Saml2IdentityProvider.
+        :type defined_tags: dict(str, dict(str, object))
+
         :param metadata_url:
             The value to assign to the metadata_url property of this Saml2IdentityProvider.
         :type metadata_url: str
@@ -75,6 +83,8 @@ class Saml2IdentityProvider(IdentityProvider):
             'lifecycle_state': 'str',
             'inactive_status': 'int',
             'protocol': 'str',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))',
             'metadata_url': 'str',
             'signing_certificate': 'str',
             'redirect_url': 'str'
@@ -90,6 +100,8 @@ class Saml2IdentityProvider(IdentityProvider):
             'lifecycle_state': 'lifecycleState',
             'inactive_status': 'inactiveStatus',
             'protocol': 'protocol',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags',
             'metadata_url': 'metadataUrl',
             'signing_certificate': 'signingCertificate',
             'redirect_url': 'redirectUrl'
@@ -104,6 +116,8 @@ class Saml2IdentityProvider(IdentityProvider):
         self._lifecycle_state = None
         self._inactive_status = None
         self._protocol = None
+        self._freeform_tags = None
+        self._defined_tags = None
         self._metadata_url = None
         self._signing_certificate = None
         self._redirect_url = None
@@ -112,7 +126,7 @@ class Saml2IdentityProvider(IdentityProvider):
     @property
     def metadata_url(self):
         """
-        Gets the metadata_url of this Saml2IdentityProvider.
+        **[Required]** Gets the metadata_url of this Saml2IdentityProvider.
         The URL for retrieving the identity provider's metadata, which
         contains information required for federating.
 
@@ -138,7 +152,7 @@ class Saml2IdentityProvider(IdentityProvider):
     @property
     def signing_certificate(self):
         """
-        Gets the signing_certificate of this Saml2IdentityProvider.
+        **[Required]** Gets the signing_certificate of this Saml2IdentityProvider.
         The identity provider's signing certificate used by the IAM Service
         to validate the SAML2 token.
 
@@ -164,7 +178,7 @@ class Saml2IdentityProvider(IdentityProvider):
     @property
     def redirect_url(self):
         """
-        Gets the redirect_url of this Saml2IdentityProvider.
+        **[Required]** Gets the redirect_url of this Saml2IdentityProvider.
         The URL to redirect federated users to for authentication with the
         identity provider.
 

@@ -105,7 +105,7 @@ The supported version of OpenSSL for the Python SDK is version 1.0.1 or newer.  
 
 If the version is lower than ``1.0.1``, run the following command to bypass the version issue::
 
-    pip install requests[security]==2.11.1
+    pip install requests[security]==2.18.4
 
 This command instructs the `requests <https://pypi.python.org/pypi/requests>`_
 library used by the Python SDK to use the version of OpenSSL that is bundled with the `cryptography <https://pypi.python.org/pypi/cryptography>`_

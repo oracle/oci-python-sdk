@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -81,7 +81,7 @@ class UpdateHealthCheckerDetails(object):
     @property
     def interval_in_millis(self):
         """
-        Gets the interval_in_millis of this UpdateHealthCheckerDetails.
+        **[Required]** Gets the interval_in_millis of this UpdateHealthCheckerDetails.
         The interval between health checks, in milliseconds.
 
         Example: `30000`
@@ -109,7 +109,7 @@ class UpdateHealthCheckerDetails(object):
     @property
     def port(self):
         """
-        Gets the port of this UpdateHealthCheckerDetails.
+        **[Required]** Gets the port of this UpdateHealthCheckerDetails.
         The backend server port against which to run the health check.
 
         Example: `8080`
@@ -137,7 +137,7 @@ class UpdateHealthCheckerDetails(object):
     @property
     def protocol(self):
         """
-        Gets the protocol of this UpdateHealthCheckerDetails.
+        **[Required]** Gets the protocol of this UpdateHealthCheckerDetails.
         The protocol the health check must use; either HTTP or TCP.
 
         Example: `HTTP`
@@ -165,7 +165,7 @@ class UpdateHealthCheckerDetails(object):
     @property
     def response_body_regex(self):
         """
-        Gets the response_body_regex of this UpdateHealthCheckerDetails.
+        **[Required]** Gets the response_body_regex of this UpdateHealthCheckerDetails.
         A regular expression for parsing the response body from the backend server.
 
         Example: `^(500|40[1348])$`
@@ -193,7 +193,7 @@ class UpdateHealthCheckerDetails(object):
     @property
     def retries(self):
         """
-        Gets the retries of this UpdateHealthCheckerDetails.
+        **[Required]** Gets the retries of this UpdateHealthCheckerDetails.
         The number of retries to attempt before a backend server is considered \"unhealthy\".
 
         Example: `3`
@@ -221,7 +221,7 @@ class UpdateHealthCheckerDetails(object):
     @property
     def return_code(self):
         """
-        Gets the return_code of this UpdateHealthCheckerDetails.
+        **[Required]** Gets the return_code of this UpdateHealthCheckerDetails.
         The status code a healthy backend server should return.
 
         Example: `200`
@@ -249,7 +249,7 @@ class UpdateHealthCheckerDetails(object):
     @property
     def timeout_in_millis(self):
         """
-        Gets the timeout_in_millis of this UpdateHealthCheckerDetails.
+        **[Required]** Gets the timeout_in_millis of this UpdateHealthCheckerDetails.
         The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply
         returns within this timeout period.
 

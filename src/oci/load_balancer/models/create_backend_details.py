@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -127,7 +127,7 @@ class CreateBackendDetails(object):
     @property
     def ip_address(self):
         """
-        Gets the ip_address of this CreateBackendDetails.
+        **[Required]** Gets the ip_address of this CreateBackendDetails.
         The IP address of the backend server.
 
         Example: `10.10.10.4`
@@ -185,7 +185,7 @@ class CreateBackendDetails(object):
     @property
     def port(self):
         """
-        Gets the port of this CreateBackendDetails.
+        **[Required]** Gets the port of this CreateBackendDetails.
         The communication port for the backend server.
 
         Example: `8080`

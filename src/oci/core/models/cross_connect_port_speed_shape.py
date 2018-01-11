@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -39,7 +39,7 @@ class CrossConnectPortSpeedShape(object):
     @property
     def name(self):
         """
-        Gets the name of this CrossConnectPortSpeedShape.
+        **[Required]** Gets the name of this CrossConnectPortSpeedShape.
         The name of the port speed shape.
 
         Example: `10 Gbps`
@@ -67,7 +67,7 @@ class CrossConnectPortSpeedShape(object):
     @property
     def port_speed_in_gbps(self):
         """
-        Gets the port_speed_in_gbps of this CrossConnectPortSpeedShape.
+        **[Required]** Gets the port_speed_in_gbps of this CrossConnectPortSpeedShape.
         The port speed in Gbps.
 
         Example: `10`

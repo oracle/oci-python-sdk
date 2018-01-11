@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -53,7 +53,7 @@ class ObjectSummary(object):
     @property
     def name(self):
         """
-        Gets the name of this ObjectSummary.
+        **[Required]** Gets the name of this ObjectSummary.
         The name of the object. Avoid entering confidential information.
         Example: test/object1.log
 

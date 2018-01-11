@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -90,7 +90,7 @@ class BootVolume(object):
     @property
     def availability_domain(self):
         """
-        Gets the availability_domain of this BootVolume.
+        **[Required]** Gets the availability_domain of this BootVolume.
         The Availability Domain of the boot volume.
 
         Example: `Uocm:PHX-AD-1`
@@ -118,7 +118,7 @@ class BootVolume(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this BootVolume.
+        **[Required]** Gets the compartment_id of this BootVolume.
         The OCID of the compartment that contains the boot volume.
 
 
@@ -168,7 +168,7 @@ class BootVolume(object):
     @property
     def id(self):
         """
-        Gets the id of this BootVolume.
+        **[Required]** Gets the id of this BootVolume.
         The boot volume's Oracle ID (OCID).
 
 
@@ -216,7 +216,7 @@ class BootVolume(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this BootVolume.
+        **[Required]** Gets the lifecycle_state of this BootVolume.
         The current state of a boot volume.
 
         Allowed values for this property are: "PROVISIONING", "RESTORING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAULTY", 'UNKNOWN_ENUM_VALUE'.
@@ -270,7 +270,7 @@ class BootVolume(object):
     @property
     def size_in_mbs(self):
         """
-        Gets the size_in_mbs of this BootVolume.
+        **[Required]** Gets the size_in_mbs of this BootVolume.
         The size of the volume in MBs. The value must be a multiple of 1024.
         This field is deprecated. Please use sizeInGBs.
 
@@ -296,7 +296,7 @@ class BootVolume(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this BootVolume.
+        **[Required]** Gets the time_created of this BootVolume.
         The date and time the boot volume was created. Format defined by RFC3339.
 
 

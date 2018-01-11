@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -104,7 +104,7 @@ class CertificateDetails(object):
     @property
     def certificate_name(self):
         """
-        Gets the certificate_name of this CertificateDetails.
+        **[Required]** Gets the certificate_name of this CertificateDetails.
         A friendly name for the certificate bundle. It must be unique and it cannot be changed.
         Valid certificate bundle names include only alphanumeric characters, dashes, and underscores.
         Certificate bundle names cannot contain spaces. Avoid entering confidential information.

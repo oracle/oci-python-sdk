@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -26,13 +26,31 @@ class Image(object):
             The value to assign to the create_image_allowed property of this Image.
         :type create_image_allowed: bool
 
+        :param defined_tags:
+            The value to assign to the defined_tags property of this Image.
+        :type defined_tags: dict(str, dict(str, object))
+
         :param display_name:
             The value to assign to the display_name property of this Image.
         :type display_name: str
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this Image.
+        :type freeform_tags: dict(str, str)
+
         :param id:
             The value to assign to the id property of this Image.
         :type id: str
+
+        :param launch_mode:
+            The value to assign to the launch_mode property of this Image.
+            Allowed values for this property are: "NATIVE", "EMULATED", "CUSTOM", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type launch_mode: str
+
+        :param launch_options:
+            The value to assign to the launch_options property of this Image.
+        :type launch_options: LaunchOptions
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Image.
@@ -57,8 +75,12 @@ class Image(object):
             'base_image_id': 'str',
             'compartment_id': 'str',
             'create_image_allowed': 'bool',
+            'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
+            'freeform_tags': 'dict(str, str)',
             'id': 'str',
+            'launch_mode': 'str',
+            'launch_options': 'LaunchOptions',
             'lifecycle_state': 'str',
             'operating_system': 'str',
             'operating_system_version': 'str',
@@ -69,8 +91,12 @@ class Image(object):
             'base_image_id': 'baseImageId',
             'compartment_id': 'compartmentId',
             'create_image_allowed': 'createImageAllowed',
+            'defined_tags': 'definedTags',
             'display_name': 'displayName',
+            'freeform_tags': 'freeformTags',
             'id': 'id',
+            'launch_mode': 'launchMode',
+            'launch_options': 'launchOptions',
             'lifecycle_state': 'lifecycleState',
             'operating_system': 'operatingSystem',
             'operating_system_version': 'operatingSystemVersion',
@@ -80,8 +106,12 @@ class Image(object):
         self._base_image_id = None
         self._compartment_id = None
         self._create_image_allowed = None
+        self._defined_tags = None
         self._display_name = None
+        self._freeform_tags = None
         self._id = None
+        self._launch_mode = None
+        self._launch_options = None
         self._lifecycle_state = None
         self._operating_system = None
         self._operating_system_version = None
@@ -114,7 +144,7 @@ class Image(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this Image.
+        **[Required]** Gets the compartment_id of this Image.
         The OCID of the compartment containing the instance you want to use as the basis for the image.
 
 
@@ -138,10 +168,9 @@ class Image(object):
     @property
     def create_image_allowed(self):
         """
-        Gets the create_image_allowed of this Image.
+        **[Required]** Gets the create_image_allowed of this Image.
         Whether instances launched with this image can be used to create new images.
         For example, you cannot create an image of an Oracle Database instance.
-
         Example: `true`
 
 
@@ -156,7 +185,6 @@ class Image(object):
         Sets the create_image_allowed of this Image.
         Whether instances launched with this image can be used to create new images.
         For example, you cannot create an image of an Oracle Database instance.
-
         Example: `true`
 
 
@@ -164,6 +192,40 @@ class Image(object):
         :type: bool
         """
         self._create_image_allowed = create_image_allowed
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this Image.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this Image.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this Image.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this Image.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     @property
     def display_name(self):
@@ -198,9 +260,45 @@ class Image(object):
         self._display_name = display_name
 
     @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this Image.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see
+        `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this Image.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this Image.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see
+        `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this Image.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
     def id(self):
         """
-        Gets the id of this Image.
+        **[Required]** Gets the id of this Image.
         The OCID of the image.
 
 
@@ -222,9 +320,65 @@ class Image(object):
         self._id = id
 
     @property
+    def launch_mode(self):
+        """
+        Gets the launch_mode of this Image.
+        Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for Oracle-provided images.
+        * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+        * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
+
+        Allowed values for this property are: "NATIVE", "EMULATED", "CUSTOM", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The launch_mode of this Image.
+        :rtype: str
+        """
+        return self._launch_mode
+
+    @launch_mode.setter
+    def launch_mode(self, launch_mode):
+        """
+        Sets the launch_mode of this Image.
+        Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for Oracle-provided images.
+        * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+        * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
+
+
+        :param launch_mode: The launch_mode of this Image.
+        :type: str
+        """
+        allowed_values = ["NATIVE", "EMULATED", "CUSTOM"]
+        if not value_allowed_none_or_none_sentinel(launch_mode, allowed_values):
+            launch_mode = 'UNKNOWN_ENUM_VALUE'
+        self._launch_mode = launch_mode
+
+    @property
+    def launch_options(self):
+        """
+        Gets the launch_options of this Image.
+
+        :return: The launch_options of this Image.
+        :rtype: LaunchOptions
+        """
+        return self._launch_options
+
+    @launch_options.setter
+    def launch_options(self, launch_options):
+        """
+        Sets the launch_options of this Image.
+
+        :param launch_options: The launch_options of this Image.
+        :type: LaunchOptions
+        """
+        self._launch_options = launch_options
+
+    @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this Image.
+        **[Required]** Gets the lifecycle_state of this Image.
         Allowed values for this property are: "PROVISIONING", "IMPORTING", "AVAILABLE", "EXPORTING", "DISABLED", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
@@ -250,7 +404,7 @@ class Image(object):
     @property
     def operating_system(self):
         """
-        Gets the operating_system of this Image.
+        **[Required]** Gets the operating_system of this Image.
         The image's operating system.
 
         Example: `Oracle Linux`
@@ -278,7 +432,7 @@ class Image(object):
     @property
     def operating_system_version(self):
         """
-        Gets the operating_system_version of this Image.
+        **[Required]** Gets the operating_system_version of this Image.
         The image's operating system version.
 
         Example: `7.2`
@@ -306,7 +460,7 @@ class Image(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this Image.
+        **[Required]** Gets the time_created of this Image.
         The date and time the image was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`

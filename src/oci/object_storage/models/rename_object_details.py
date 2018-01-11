@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -60,7 +60,7 @@ class RenameObjectDetails(object):
     @property
     def source_name(self):
         """
-        Gets the source_name of this RenameObjectDetails.
+        **[Required]** Gets the source_name of this RenameObjectDetails.
         The name of the source object to be renamed.
 
 
@@ -84,7 +84,7 @@ class RenameObjectDetails(object):
     @property
     def new_name(self):
         """
-        Gets the new_name of this RenameObjectDetails.
+        **[Required]** Gets the new_name of this RenameObjectDetails.
         The new name of the source object.
 
 

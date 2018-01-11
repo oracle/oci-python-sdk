@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -62,7 +62,7 @@ class BackendSetHealth(object):
     @property
     def critical_state_backend_names(self):
         """
-        Gets the critical_state_backend_names of this BackendSetHealth.
+        **[Required]** Gets the critical_state_backend_names of this BackendSetHealth.
         A list of backend servers that are currently in the `CRITICAL` health state. The list identifies each backend server by
         IP address and port.
 
@@ -92,7 +92,7 @@ class BackendSetHealth(object):
     @property
     def status(self):
         """
-        Gets the status of this BackendSetHealth.
+        **[Required]** Gets the status of this BackendSetHealth.
         Overall health status of the backend set.
 
         *  **OK:** All backend servers in the backend set return a status of `OK`.
@@ -142,7 +142,7 @@ class BackendSetHealth(object):
     @property
     def total_backend_count(self):
         """
-        Gets the total_backend_count of this BackendSetHealth.
+        **[Required]** Gets the total_backend_count of this BackendSetHealth.
         The total number of backend servers in this backend set.
 
         Example: `5`
@@ -170,7 +170,7 @@ class BackendSetHealth(object):
     @property
     def unknown_state_backend_names(self):
         """
-        Gets the unknown_state_backend_names of this BackendSetHealth.
+        **[Required]** Gets the unknown_state_backend_names of this BackendSetHealth.
         A list of backend servers that are currently in the `UNKNOWN` health state. The list identifies each backend server by
         IP address and port.
 
@@ -200,7 +200,7 @@ class BackendSetHealth(object):
     @property
     def warning_state_backend_names(self):
         """
-        Gets the warning_state_backend_names of this BackendSetHealth.
+        **[Required]** Gets the warning_state_backend_names of this BackendSetHealth.
         A list of backend servers that are currently in the `WARNING` health state. The list identifies each backend server by
         IP address and port.
 

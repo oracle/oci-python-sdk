@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -46,7 +46,7 @@ class TunnelConfig(object):
     @property
     def ip_address(self):
         """
-        Gets the ip_address of this TunnelConfig.
+        **[Required]** Gets the ip_address of this TunnelConfig.
         The IP address of Oracle's VPN headend.
 
         Example: `129.146.17.50`
@@ -74,7 +74,7 @@ class TunnelConfig(object):
     @property
     def shared_secret(self):
         """
-        Gets the shared_secret of this TunnelConfig.
+        **[Required]** Gets the shared_secret of this TunnelConfig.
         The shared secret of the IPSec tunnel.
 
         Example: `vFG2IF6TWq4UToUiLSRDoJEUs6j1c.p8G.dVQxiMfMO0yXMLi.lZTbYIWhGu4V8o`

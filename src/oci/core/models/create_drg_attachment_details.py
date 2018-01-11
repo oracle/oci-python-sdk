@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -70,7 +70,7 @@ class CreateDrgAttachmentDetails(object):
     @property
     def drg_id(self):
         """
-        Gets the drg_id of this CreateDrgAttachmentDetails.
+        **[Required]** Gets the drg_id of this CreateDrgAttachmentDetails.
         The OCID of the DRG.
 
 
@@ -94,7 +94,7 @@ class CreateDrgAttachmentDetails(object):
     @property
     def vcn_id(self):
         """
-        Gets the vcn_id of this CreateDrgAttachmentDetails.
+        **[Required]** Gets the vcn_id of this CreateDrgAttachmentDetails.
         The OCID of the VCN.
 
 

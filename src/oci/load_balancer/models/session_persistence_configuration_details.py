@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -39,7 +39,7 @@ class SessionPersistenceConfigurationDetails(object):
     @property
     def cookie_name(self):
         """
-        Gets the cookie_name of this SessionPersistenceConfigurationDetails.
+        **[Required]** Gets the cookie_name of this SessionPersistenceConfigurationDetails.
         The name of the cookie used to detect a session initiated by the backend server. Use '*' to specify
         that any cookie set by the backend causes the session to persist.
 

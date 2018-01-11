@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -229,7 +229,7 @@ class DbSystem(object):
     @property
     def availability_domain(self):
         """
-        Gets the availability_domain of this DbSystem.
+        **[Required]** Gets the availability_domain of this DbSystem.
         The name of the Availability Domain that the DB System is located in.
 
 
@@ -307,7 +307,7 @@ class DbSystem(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this DbSystem.
+        **[Required]** Gets the compartment_id of this DbSystem.
         The OCID of the compartment.
 
 
@@ -331,7 +331,7 @@ class DbSystem(object):
     @property
     def cpu_core_count(self):
         """
-        Gets the cpu_core_count of this DbSystem.
+        **[Required]** Gets the cpu_core_count of this DbSystem.
         The number of CPU cores enabled on the DB System.
 
 
@@ -405,7 +405,7 @@ class DbSystem(object):
     @property
     def database_edition(self):
         """
-        Gets the database_edition of this DbSystem.
+        **[Required]** Gets the database_edition of this DbSystem.
         The Oracle Database Edition that applies to all the databases on the DB System.
 
         Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", 'UNKNOWN_ENUM_VALUE'.
@@ -469,7 +469,7 @@ class DbSystem(object):
     @property
     def display_name(self):
         """
-        Gets the display_name of this DbSystem.
+        **[Required]** Gets the display_name of this DbSystem.
         The user-friendly name for the DB System. It does not have to be unique.
 
 
@@ -493,7 +493,7 @@ class DbSystem(object):
     @property
     def domain(self):
         """
-        Gets the domain of this DbSystem.
+        **[Required]** Gets the domain of this DbSystem.
         The domain name for the DB System.
 
 
@@ -517,7 +517,7 @@ class DbSystem(object):
     @property
     def hostname(self):
         """
-        Gets the hostname of this DbSystem.
+        **[Required]** Gets the hostname of this DbSystem.
         The host name for the DB Node.
 
 
@@ -541,7 +541,7 @@ class DbSystem(object):
     @property
     def id(self):
         """
-        Gets the id of this DbSystem.
+        **[Required]** Gets the id of this DbSystem.
         The OCID of the DB System.
 
 
@@ -643,7 +643,7 @@ class DbSystem(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this DbSystem.
+        **[Required]** Gets the lifecycle_state of this DbSystem.
         The current state of the DB System.
 
         Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -801,7 +801,7 @@ class DbSystem(object):
     @property
     def shape(self):
         """
-        Gets the shape of this DbSystem.
+        **[Required]** Gets the shape of this DbSystem.
         The shape of the DB System. The shape determines resources to allocate to the DB system - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes.
 
 
@@ -825,7 +825,7 @@ class DbSystem(object):
     @property
     def ssh_public_keys(self):
         """
-        Gets the ssh_public_keys of this DbSystem.
+        **[Required]** Gets the ssh_public_keys of this DbSystem.
         The public key portion of one or more key pairs used for SSH access to the DB System.
 
 
@@ -849,7 +849,7 @@ class DbSystem(object):
     @property
     def subnet_id(self):
         """
-        Gets the subnet_id of this DbSystem.
+        **[Required]** Gets the subnet_id of this DbSystem.
         The OCID of the subnet the DB System is associated with.
 
         **Subnet Restrictions:**

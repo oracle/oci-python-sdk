@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
 from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -67,7 +67,7 @@ class BackendSet(object):
     @property
     def backends(self):
         """
-        Gets the backends of this BackendSet.
+        **[Required]** Gets the backends of this BackendSet.
 
         :return: The backends of this BackendSet.
         :rtype: list[Backend]
@@ -87,7 +87,7 @@ class BackendSet(object):
     @property
     def health_checker(self):
         """
-        Gets the health_checker of this BackendSet.
+        **[Required]** Gets the health_checker of this BackendSet.
 
         :return: The health_checker of this BackendSet.
         :rtype: HealthChecker
@@ -107,7 +107,7 @@ class BackendSet(object):
     @property
     def name(self):
         """
-        Gets the name of this BackendSet.
+        **[Required]** Gets the name of this BackendSet.
         A friendly name for the backend set. It must be unique and it cannot be changed.
 
         Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot
@@ -141,7 +141,7 @@ class BackendSet(object):
     @property
     def policy(self):
         """
-        Gets the policy of this BackendSet.
+        **[Required]** Gets the policy of this BackendSet.
         The load balancer policy for the backend set. To get a list of available policies, use the
         :func:`list_policies` operation.
 

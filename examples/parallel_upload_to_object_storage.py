@@ -1,5 +1,6 @@
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
-#
+# coding: utf-8
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+
 # Uploads all files from a local directory to an object storage bucket
 # using multiple processes so that the uploads are done in parallel.
 #
