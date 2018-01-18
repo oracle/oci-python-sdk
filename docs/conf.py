@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+import datetime
 import sys
 import pkg_resources
 import sphinx_rtd_theme
@@ -22,7 +23,7 @@ master_doc = "index"
 
 # General information about the project.
 project = "oci"
-copyright = "2016, 2017, Oracle"
+copyright = "2016, {}, Oracle".format(datetime.datetime.now().year)
 author = "Oracle"
 
 try:
