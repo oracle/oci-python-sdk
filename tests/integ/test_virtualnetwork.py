@@ -3,27 +3,29 @@
 
 import time
 from . import util
+from .. import test_config_container
 import oci
 
 
 class TestVirtualNetwork:
 
     def test_all_operations(self, virtual_network):
-        try:
-            self.subtest_vcn_operations(virtual_network)
-            self.subtest_security_list_operations(virtual_network)
-            self.subtest_security_list_stateless_rules(virtual_network)
-            self.subtest_subnet_operations(virtual_network)
-            self.subtest_internet_gateway_operations(virtual_network)
-            self.subtest_cpe_operations(virtual_network)
-            self.subtest_dhcp_option_operations(virtual_network)
-            self.subtest_drg_operations(virtual_network)
-            self.subtest_drg_attachment_operations(virtual_network)
-            self.subtest_ip_sec_connection_operations(virtual_network)
-            self.subtest_route_table_operations(virtual_network)
-        finally:
-            time.sleep(20)
-            self.subtest_delete(virtual_network)
+        with test_config_container.create_vcr().use_cassette('test_virtual_network_all_operations.yml'):
+            try:
+                self.subtest_vcn_operations(virtual_network)
+                self.subtest_security_list_operations(virtual_network)
+                self.subtest_security_list_stateless_rules(virtual_network)
+                self.subtest_subnet_operations(virtual_network)
+                self.subtest_internet_gateway_operations(virtual_network)
+                self.subtest_cpe_operations(virtual_network)
+                self.subtest_dhcp_option_operations(virtual_network)
+                self.subtest_drg_operations(virtual_network)
+                self.subtest_drg_attachment_operations(virtual_network)
+                self.subtest_ip_sec_connection_operations(virtual_network)
+                self.subtest_route_table_operations(virtual_network)
+            finally:
+                time.sleep(20)
+                self.subtest_delete(virtual_network)
 
     @util.log_test
     def subtest_vcn_operations(self, virtual_network):
@@ -41,7 +43,7 @@ class TestVirtualNetwork:
         self.vcn_ocid = result.data.id
         util.validate_response(result, expect_etag=True)
 
-        oci.wait_until(virtual_network, virtual_network.get_vcn(self.vcn_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=300)
+        test_config_container.do_wait(virtual_network, virtual_network.get_vcn(self.vcn_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=300)
 
         result = virtual_network.list_vcns(util.COMPARTMENT_ID)
         util.validate_response(result)
@@ -74,7 +76,7 @@ class TestVirtualNetwork:
         self.sl_ocid = result.data.id
         util.validate_response(result, expect_etag=True)
 
-        oci.wait_until(virtual_network, virtual_network.get_security_list(self.sl_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=300)
+        test_config_container.do_wait(virtual_network, virtual_network.get_security_list(self.sl_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=300)
 
         result = virtual_network.list_security_lists(util.COMPARTMENT_ID, self.vcn_ocid)
         util.validate_response(result)
@@ -145,7 +147,7 @@ class TestVirtualNetwork:
         self.subnet_ocid = result.data.id
         util.validate_response(result, expect_etag=True)
 
-        oci.wait_until(virtual_network, virtual_network.get_subnet(self.subnet_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=300)
+        test_config_container.do_wait(virtual_network, virtual_network.get_subnet(self.subnet_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=300)
 
         result = virtual_network.list_subnets(util.COMPARTMENT_ID, self.vcn_ocid)
         util.validate_response(result)
@@ -174,7 +176,7 @@ class TestVirtualNetwork:
         self.ig_ocid = result.data.id
         util.validate_response(result, expect_etag=True)
 
-        oci.wait_until(virtual_network, virtual_network.get_internet_gateway(self.ig_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=300)
+        test_config_container.do_wait(virtual_network, virtual_network.get_internet_gateway(self.ig_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=300)
 
         result = virtual_network.list_internet_gateways(util.COMPARTMENT_ID, self.vcn_ocid)
         util.validate_response(result)
@@ -234,7 +236,7 @@ class TestVirtualNetwork:
         result = virtual_network.create_dhcp_options(create_dhcp_details)
         util.validate_response(result, expect_etag=True)
         self.dhcp_options_ocid = result.data.id
-        oci.wait_until(virtual_network, virtual_network.get_dhcp_options(self.dhcp_options_ocid), 'lifecycle_state', 'AVAILABLE')
+        test_config_container.do_wait(virtual_network, virtual_network.get_dhcp_options(self.dhcp_options_ocid), 'lifecycle_state', 'AVAILABLE')
 
         result = virtual_network.list_dhcp_options(util.COMPARTMENT_ID, self.vcn_ocid)
         util.validate_response(result)
@@ -280,7 +282,7 @@ class TestVirtualNetwork:
                 raise
 
         util.validate_response(result, expect_etag=True)
-        oci.wait_until(virtual_network, virtual_network.get_drg(self.drg_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=600)
+        test_config_container.do_wait(virtual_network, virtual_network.get_drg(self.drg_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=600)
 
         result = virtual_network.list_drgs(util.COMPARTMENT_ID)
         util.validate_response(result)
@@ -310,7 +312,7 @@ class TestVirtualNetwork:
         self.drg_attachment_ocid = result.data.id
         util.validate_response(result, expect_etag=True)
 
-        oci.wait_until(virtual_network, virtual_network.get_drg_attachment(self.drg_attachment_ocid), 'lifecycle_state', 'ATTACHED')
+        test_config_container.do_wait(virtual_network, virtual_network.get_drg_attachment(self.drg_attachment_ocid), 'lifecycle_state', 'ATTACHED')
 
         result = virtual_network.list_drg_attachments(util.COMPARTMENT_ID)
         util.validate_response(result)
@@ -342,7 +344,7 @@ class TestVirtualNetwork:
         self.ipsc_ocid = result.data.id
         util.validate_response(result, expect_etag=True)
 
-        oci.wait_until(virtual_network, virtual_network.get_ip_sec_connection(self.ipsc_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=600)
+        test_config_container.do_wait(virtual_network, virtual_network.get_ip_sec_connection(self.ipsc_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=600)
 
         result = virtual_network.list_route_tables(util.COMPARTMENT_ID, self.vcn_ocid)
         util.validate_response(result)
@@ -380,7 +382,7 @@ class TestVirtualNetwork:
         self.rt_ocid = result.data.id
         util.validate_response(result, expect_etag=True)
 
-        oci.wait_until(virtual_network, virtual_network.get_route_table(self.rt_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=300)
+        test_config_container.do_wait(virtual_network, virtual_network.get_route_table(self.rt_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=300)
 
         result = virtual_network.list_route_tables(util.COMPARTMENT_ID, self.vcn_ocid)
         util.validate_response(result)
@@ -408,7 +410,7 @@ class TestVirtualNetwork:
         if hasattr(self, 'rt_ocid'):
             try:
                 virtual_network.delete_route_table(self.rt_ocid)
-                oci.wait_until(virtual_network, virtual_network.get_route_table(self.rt_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=300)
+                test_config_container.do_wait(virtual_network, virtual_network.get_route_table(self.rt_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=300)
             except Exception as error:
                 if not hasattr(error, 'status') or error.status != 404:
                     util.print_latest_exception(error)
@@ -417,7 +419,7 @@ class TestVirtualNetwork:
         if hasattr(self, 'ipsc_ocid'):
             try:
                 virtual_network.delete_ip_sec_connection(self.ipsc_ocid)
-                oci.wait_until(virtual_network, virtual_network.get_ip_sec_connection(self.ipsc_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=300)
+                test_config_container.do_wait(virtual_network, virtual_network.get_ip_sec_connection(self.ipsc_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=300)
             except Exception as error:
                 if not hasattr(error, 'status') or error.status != 404:
                     util.print_latest_exception(error)
@@ -426,7 +428,7 @@ class TestVirtualNetwork:
         if hasattr(self, 'drg_attachment_ocid'):
             try:
                 virtual_network.delete_drg_attachment(self.drg_attachment_ocid)
-                oci.wait_until(virtual_network, virtual_network.get_drg_attachment(self.drg_attachment_ocid), 'lifecycle_state', 'DETACHED', max_wait_seconds=600)
+                test_config_container.do_wait(virtual_network, virtual_network.get_drg_attachment(self.drg_attachment_ocid), 'lifecycle_state', 'DETACHED', max_wait_seconds=600)
             except Exception as error:
                 if not hasattr(error, 'status') or error.status != 404:
                     util.print_latest_exception(error)
@@ -435,7 +437,7 @@ class TestVirtualNetwork:
         if hasattr(self, 'drg_ocid'):
             try:
                 virtual_network.delete_drg(self.drg_ocid)
-                oci.wait_until(virtual_network, virtual_network.get_drg(self.drg_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
+                test_config_container.do_wait(virtual_network, virtual_network.get_drg(self.drg_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
             except Exception as error:
                 if not hasattr(error, 'status') or error.status != 404:
                     util.print_latest_exception(error)
@@ -444,7 +446,7 @@ class TestVirtualNetwork:
         if hasattr(self, 'dhcp_options_ocid'):
             try:
                 virtual_network.delete_dhcp_options(self.dhcp_options_ocid)
-                oci.wait_until(virtual_network, virtual_network.get_dhcp_options(self.dhcp_options_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
+                test_config_container.do_wait(virtual_network, virtual_network.get_dhcp_options(self.dhcp_options_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
             except Exception as error:
                 if not hasattr(error, 'status') or error.status != 404:
                     util.print_latest_exception(error)
@@ -462,7 +464,7 @@ class TestVirtualNetwork:
         if hasattr(self, 'ig_ocid'):
             try:
                 virtual_network.delete_internet_gateway(self.ig_ocid)
-                oci.wait_until(virtual_network, virtual_network.get_internet_gateway(self.ig_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
+                test_config_container.do_wait(virtual_network, virtual_network.get_internet_gateway(self.ig_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
             except Exception as error:
                 if not hasattr(error, 'status') or error.status != 404:
                     util.print_latest_exception(error)
@@ -471,7 +473,7 @@ class TestVirtualNetwork:
         if hasattr(self, 'subnet_ocid'):
             try:
                 virtual_network.delete_subnet(self.subnet_ocid)
-                oci.wait_until(virtual_network, virtual_network.get_subnet(self.subnet_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
+                test_config_container.do_wait(virtual_network, virtual_network.get_subnet(self.subnet_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
             except Exception as error:
                 if not hasattr(error, 'status') or error.status != 404:
                     util.print_latest_exception(error)
@@ -480,7 +482,7 @@ class TestVirtualNetwork:
         if hasattr(self, 'sl_ocid'):
             try:
                 virtual_network.delete_security_list(self.sl_ocid)
-                oci.wait_until(virtual_network, virtual_network.get_security_list(self.sl_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=300)
+                test_config_container.do_wait(virtual_network, virtual_network.get_security_list(self.sl_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=300)
             except Exception as error:
                 if not hasattr(error, 'status') or error.status != 404:
                     util.print_latest_exception(error)

@@ -9,6 +9,8 @@ from tests.integ import util
 from tests.util import get_resource_path
 from tests.util import simple_retries_decorator
 
+from . import test_config_container
+
 
 def pytest_addoption(parser):
     parser.addoption("--config-file", action="store", help="location of the config file",
@@ -16,6 +18,11 @@ def pytest_addoption(parser):
     parser.addoption("--config-profile", action="store",
                      help="profile to use from the config file",
                      default=oci.config.DEFAULT_PROFILE)
+    parser.addoption("--vcr-record-mode", action="store", default='once', help="Record mode option for VCRpy library.")
+
+
+def pytest_configure(config):
+    test_config_container.vcr_mode = config.getoption("--vcr-record-mode")
 
 
 @pytest.fixture

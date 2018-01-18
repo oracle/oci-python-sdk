@@ -3,6 +3,7 @@
 
 import time
 from . import util
+from .. import test_config_container
 import oci
 import pytest
 
@@ -10,24 +11,25 @@ import pytest
 class TestCompute:
 
     def test_all_operations(self, block_storage, compute, virtual_network):
-        try:
-            self.subtest_setup(block_storage, virtual_network)
-            self.subtest_instance_operations(compute)
-            self.subtest_windows_instance_operations(compute)
-            self.subtest_vnic_operations(compute, virtual_network)
-            self.subtest_list_vnics(compute)
-            self.subtest_volume_attachment_operations(compute)
-            self.subtest_shape_operations(compute)
-            self.subtest_console_history_operations(compute)
-            self.subtest_instance_action_operations(compute)
-            self.subtest_image_operations(compute)
-        except oci.exceptions.ServiceError as e:
-            if e.code == 'LimitExceeded':
-                pytest.skip('Skipping tests as compute limits have been exceeded')
-            else:
-                raise
-        finally:
-            self.subtest_delete(block_storage, compute, virtual_network)
+        with test_config_container.create_vcr().use_cassette('test_compute_all_operations.yml'):
+            try:
+                self.subtest_setup(block_storage, virtual_network)
+                self.subtest_instance_operations(compute)
+                self.subtest_windows_instance_operations(compute)
+                self.subtest_vnic_operations(compute, virtual_network)
+                self.subtest_list_vnics(compute)
+                self.subtest_volume_attachment_operations(compute)
+                self.subtest_shape_operations(compute)
+                self.subtest_console_history_operations(compute)
+                self.subtest_instance_action_operations(compute)
+                self.subtest_image_operations(compute)
+            except oci.exceptions.ServiceError as e:
+                if e.code == 'LimitExceeded':
+                    pytest.skip('Skipping tests as compute limits have been exceeded')
+                else:
+                    raise
+            finally:
+                self.subtest_delete(block_storage, compute, virtual_network)
 
     @util.log_test
     def subtest_setup(self, block_storage, virtual_network):
@@ -45,7 +47,7 @@ class TestCompute:
 
         self.vcn_ocid = result.data.id
 
-        oci.wait_until(virtual_network, virtual_network.get_vcn(self.vcn_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=300)
+        test_config_container.do_wait(virtual_network, virtual_network.get_vcn(self.vcn_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=300)
 
         # Create a subnet
         subnet_name = util.random_name('python_sdk_test_compute_subnet')
@@ -61,7 +63,7 @@ class TestCompute:
         util.validate_response(result, expect_etag=True)
 
         self.subnet_ocid = result.data.id
-        oci.wait_until(virtual_network, virtual_network.get_subnet(self.subnet_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=300)
+        test_config_container.do_wait(virtual_network, virtual_network.get_subnet(self.subnet_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=300)
 
         # Create a volume
         volume_name = util.random_name('python_sdk_test_compute_volume')
@@ -74,7 +76,7 @@ class TestCompute:
         util.validate_response(result)
 
         self.volume_ocid = result.data.id
-        oci.wait_until(block_storage, block_storage.get_volume(self.volume_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=180)
+        test_config_container.do_wait(block_storage, block_storage.get_volume(self.volume_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=180)
 
     @util.log_test
     def subtest_instance_operations(self, compute):
@@ -94,7 +96,7 @@ class TestCompute:
 
         self.instance_ocid = result.data.id
 
-        oci.wait_until(compute, compute.get_instance(self.instance_ocid), 'lifecycle_state', 'RUNNING', max_wait_seconds=600)
+        test_config_container.do_wait(compute, compute.get_instance(self.instance_ocid), 'lifecycle_state', 'RUNNING', max_wait_seconds=600)
 
         result = compute.list_instances(util.COMPARTMENT_ID)
         util.validate_response(result)
@@ -127,7 +129,7 @@ class TestCompute:
         util.validate_response(result, expect_etag=True)
         self.windows_instance_ocid = result.data.id
 
-        oci.wait_until(compute, compute.get_instance(self.windows_instance_ocid), 'lifecycle_state', 'RUNNING', max_wait_seconds=600)
+        test_config_container.do_wait(compute, compute.get_instance(self.windows_instance_ocid), 'lifecycle_state', 'RUNNING', max_wait_seconds=600)
 
         result = compute.get_instance(self.windows_instance_ocid)
         util.validate_response(result, expect_etag=True)
@@ -181,7 +183,7 @@ class TestCompute:
         result = compute.attach_volume(attach_volume_details)
         self.va_ocid = result.data.id
         util.validate_response(result, expect_etag=True)
-        oci.wait_until(compute, compute.get_volume_attachment(self.va_ocid), 'lifecycle_state', 'ATTACHED', max_wait_seconds=300)
+        test_config_container.do_wait(compute, compute.get_volume_attachment(self.va_ocid), 'lifecycle_state', 'ATTACHED', max_wait_seconds=300)
 
         result = compute.list_volume_attachments(util.COMPARTMENT_ID, instance_id=self.instance_ocid)
         util.validate_response(result)
@@ -190,7 +192,7 @@ class TestCompute:
         util.validate_response(result, expect_etag=True)
 
         compute.detach_volume(self.va_ocid)
-        oci.wait_until(compute, compute.get_volume_attachment(self.va_ocid), 'lifecycle_state', 'DETACHED', max_wait_seconds=300)
+        test_config_container.do_wait(compute, compute.get_volume_attachment(self.va_ocid), 'lifecycle_state', 'DETACHED', max_wait_seconds=300)
 
     @util.log_test
     def subtest_shape_operations(self, compute):
@@ -204,7 +206,7 @@ class TestCompute:
         result = compute.capture_console_history(capture_console_history_details)
         self.ch_ocid = result.data.id
         util.validate_response(result, expect_etag=True)
-        oci.wait_until(compute, compute.get_console_history(self.ch_ocid), 'lifecycle_state', 'SUCCEEDED', max_wait_seconds=300)
+        test_config_container.do_wait(compute, compute.get_console_history(self.ch_ocid), 'lifecycle_state', 'SUCCEEDED', max_wait_seconds=300)
 
         update_console_history_details = oci.core.models.UpdateConsoleHistoryDetails()
         update_console_history_details.display_name = "Updated Console Hist"
@@ -229,7 +231,7 @@ class TestCompute:
         result = compute.instance_action(self.instance_ocid, "RESET")
         util.validate_response(result)
         time.sleep(10)
-        oci.wait_until(compute, compute.get_instance(self.instance_ocid), 'lifecycle_state', 'RUNNING', max_wait_seconds=300)
+        test_config_container.do_wait(compute, compute.get_instance(self.instance_ocid), 'lifecycle_state', 'RUNNING', max_wait_seconds=300)
         time.sleep(5)
 
     @util.log_test
@@ -247,7 +249,7 @@ class TestCompute:
 
         # Waiting for the image can take 20 or 30 minutes. Instead, we'll just delete the instance
         # while it's still taking the snapshot. Uncomment the wait below to wait for the image to finish.
-        # oci.wait_until(compute, compute.get_image(self.image_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=2700)
+        # test_config_container.do_wait(compute, compute.get_image(self.image_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=2700)
 
         result = compute.list_images(util.COMPARTMENT_ID)
         util.validate_response(result)
@@ -285,7 +287,7 @@ class TestCompute:
             try:
                 print("Deleting instance")
                 compute.terminate_instance(self.instance_ocid)
-                oci.wait_until(compute, compute.get_instance(self.instance_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
+                test_config_container.do_wait(compute, compute.get_instance(self.instance_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
             except Exception as error:
                 # succeed if resource is deleted already
                 if not hasattr(error, 'status') or error.status != 404:
@@ -296,7 +298,7 @@ class TestCompute:
             try:
                 print("Deleting windows instance")
                 compute.terminate_instance(self.windows_instance_ocid)
-                oci.wait_until(compute, compute.get_instance(self.windows_instance_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
+                test_config_container.do_wait(compute, compute.get_instance(self.windows_instance_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
             except Exception as error:
                 # succeed if resource is deleted already
                 if not hasattr(error, 'status') or error.status != 404:
@@ -315,7 +317,7 @@ class TestCompute:
             try:
                 print("Deleting subnet")
                 virtual_network.delete_subnet(self.subnet_ocid)
-                oci.wait_until(virtual_network, virtual_network.get_subnet(self.subnet_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
+                test_config_container.do_wait(virtual_network, virtual_network.get_subnet(self.subnet_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
             except Exception as error:
                 # succeed if resource is deleted already
                 if not hasattr(error, 'status') or error.status != 404:
@@ -326,7 +328,7 @@ class TestCompute:
             try:
                 print("Deleting vcn")
                 virtual_network.delete_vcn(self.vcn_ocid)
-                oci.wait_until(virtual_network, virtual_network.get_vcn(self.vcn_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
+                test_config_container.do_wait(virtual_network, virtual_network.get_vcn(self.vcn_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
             except Exception as error:
                 # succeed if resource is deleted already
                 if not hasattr(error, 'status') or error.status != 404:

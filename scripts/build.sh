@@ -45,7 +45,7 @@ if [ $TEST_ENABLE = "false" ]; then
   echo "TESTS HAVE BEEN DISABLED."
 else
   pip install tox
-  tox -e flake8,py27,py35
+  tox -e flake8,py27,py35 -- --vcr-record-mode=none
 fi
 
 echo Building Wheel

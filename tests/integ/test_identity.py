@@ -1,10 +1,12 @@
 # coding: utf-8
 # Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
-import random
 from . import util
+from .. import test_config_container
 import oci
 import time
+
+from .. import util as top_level_utils
 
 
 class TestIdentity:
@@ -12,19 +14,20 @@ class TestIdentity:
     RENAME_COMPARTMENT_PREFIX = 'PythonSDKTestCompartment-rename-'
 
     def test_all_operations(self, identity, config):
-        try:
-            self.subtest_availability_domain_operations(identity, config)
-            self.subtest_compartment_operations(identity, config)
-            self.subtest_user_operations(identity, config)
-            self.subtest_group_operations(identity, config)
-            self.subtest_user_group_membership_operations(identity, config)
-            self.subtest_api_key_operations(identity)
-            self.subtest_ui_password_operations(identity)
-            self.subtest_swift_password_operations(identity)
-            self.subtest_policy_operations(identity, config)
-            self.subtest_compartment_rename(identity, config)
-        finally:
-            self.subtest_cleanup(identity, config)
+        with test_config_container.create_vcr().use_cassette('test_identity_all_operations.yml'):
+            try:
+                self.subtest_availability_domain_operations(identity, config)
+                self.subtest_compartment_operations(identity, config)
+                self.subtest_user_operations(identity, config)
+                self.subtest_group_operations(identity, config)
+                self.subtest_user_group_membership_operations(identity, config)
+                self.subtest_api_key_operations(identity)
+                self.subtest_ui_password_operations(identity)
+                self.subtest_swift_password_operations(identity)
+                self.subtest_policy_operations(identity, config)
+                self.subtest_compartment_rename(identity, config)
+            finally:
+                self.subtest_cleanup(identity, config)
 
     def subtest_availability_domain_operations(self, identity, config):
         result = identity.list_availability_domains(config['tenancy'])
@@ -37,7 +40,7 @@ class TestIdentity:
         result = identity.get_compartment(util.COMPARTMENT_ID)
         self.validate_response(result, expect_etag=True)
 
-        update_description = 'Compartment used by Python SDK integration tests. ' + str(random.randint(0, 1000000))
+        update_description = 'Compartment used by Python SDK integration tests. {}'.format(top_level_utils.random_number_string())
         update_compartment_details = oci.identity.models.UpdateCompartmentDetails()
         update_compartment_details.description = update_description
         result = identity.update_compartment(util.COMPARTMENT_ID, update_compartment_details)
@@ -292,8 +295,8 @@ P8ZM9xRukuJ4bnPTe8olOFB8UCCkAEmkUxtZI4vF90HvDKDOV0KY4OH5YESY6apH
         compartment_to_rename_id = self.find_compartment_to_rename(identity, config)
 
         update_compartment_details = oci.identity.models.UpdateCompartmentDetails()
-        update_compartment_details.description = 'Updated compartment {}'.format(int(time.time()))
-        update_compartment_details.name = '{}{}'.format(self.RENAME_COMPARTMENT_PREFIX, int(time.time()))
+        update_compartment_details.description = 'Updated compartment {}'.format(top_level_utils.random_number_string())
+        update_compartment_details.name = '{}{}'.format(self.RENAME_COMPARTMENT_PREFIX, top_level_utils.random_number_string())
 
         update_compartment_response = identity.update_compartment(compartment_to_rename_id, update_compartment_details)
 

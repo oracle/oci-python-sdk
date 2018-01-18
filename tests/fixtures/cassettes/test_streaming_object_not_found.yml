@@ -1,0 +1,32 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocidv1:tenancy:oc1:phx:1460406592660:aaaaaaaab4faofrfkxecohhjuivjq262pu/ocid1.user.oc1..aaaaaaaakjkdrsqwljdpszrynrcosihxf2uspf7pzt7d4fmqomui2ngzysna/e1:8d:6a:cb:74:ed:25:51:a2:9f:38:a4:71:42:01:c8",signature="L4332i6NGCZEti4sGd0UMmIMm4Hdvl8cuRJfsxp8rRK/RXuNjvvPUpIzR5IGWXq9kn/jlC3eJcUrKsKOOZQhoyVAeb62+HQhTxoh/SsWjxbb4KwAlPfHBTdeRYR6i+/nuzHCpmgL1AVyJhVIA3jc6wJ4aJGz13MrytJiV+FDhFUz35PYImGayPeSVHY41fsgQAELBG5v/XRfDNSuSAlWYSj8ANKo5grKCOk5EBhfOICNZUNzfqN7xOue7xMkQlvbrYfPGPjhRN52E8SOhP8r7oHJp/asOYC+absEzCIm5x9mGqGwhoIBGhJkI+EzE+/OUJJs+MPpEQYRUUnU8nw8Mw==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Sat, 13 Jan 2018 01:52:13 GMT']
+      host: [objectstorage.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/1.3.12]
+      opc-request-id: [57D64BA88A914673977A0B4229753516]
+      user-agent: [Oracle-PythonSDK/1.3.12 (python 3.6.2; x86_64-Darwin)]
+    method: GET
+    uri: https://objectstorage.us-phoenix-1.oraclecloud.com/n/internalbriangustafson/b/test_python_streaming_vcr/o/does_not_exist
+  response:
+    body: {string: '{"code":"ObjectNotFound","message":"The object ''does_not_exist''
+        was not found in the bucket ''test_python_streaming_vcr''"}'}
+    headers:
+      Access-Control-Allow-Credentials: ['true']
+      Access-Control-Allow-Methods: ['POST,PUT,GET,HEAD,DELETE,OPTIONS']
+      Access-Control-Allow-Origin: ['*']
+      Access-Control-Expose-Headers: ['Access-Control-Allow-Credentials,Access-Control-Allow-Methods,Access-Control-Allow-Origin,Content-Length,Content-Type,opc-client-info,opc-request-id']
+      Connection: [keep-alive]
+      Content-Length: ['121']
+      Content-Type: [application/json]
+      Date: ['Sat, 13 Jan 2018 01:52:14 GMT']
+      opc-request-id: [113914cb-14d5-75b1-9ba1-83e1cdb43751]
+    status: {code: 404, message: Not Found}
+version: 1

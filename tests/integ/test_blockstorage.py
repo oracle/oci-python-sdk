@@ -2,6 +2,7 @@
 # Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 from . import util
+from .. import test_config_container
 import oci
 import pytest
 
@@ -9,12 +10,13 @@ import pytest
 class TestBlockStorage:
 
     def test_all_operations(self, block_storage):
-        try:
-            self.subtest_volume_operations(block_storage)
-            self.subtest_create_volume_both_mb_and_gb_given(block_storage)
-            self.subtest_volume_backup_operations(block_storage)
-        finally:
-            self.subtest_delete(block_storage)
+        with test_config_container.create_vcr().use_cassette('test_blockstorage_all_operations.yml'):
+            try:
+                self.subtest_volume_operations(block_storage)
+                self.subtest_create_volume_both_mb_and_gb_given(block_storage)
+                self.subtest_volume_backup_operations(block_storage)
+            finally:
+                self.subtest_delete(block_storage)
 
     @util.log_test
     def subtest_volume_operations(self, block_storage):
@@ -38,7 +40,7 @@ class TestBlockStorage:
         result = block_storage.create_volume(create_volume_details)
         util.validate_response(result)
         volume_id = result.data.id
-        oci.wait_until(block_storage, block_storage.get_volume(volume_id), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=180)
+        test_config_container.do_wait(block_storage, block_storage.get_volume(volume_id), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=180)
 
         if create_volume_details.size_in_mbs is not None:
             assert result.data.size_in_mbs == create_volume_details.size_in_mbs
@@ -56,7 +58,7 @@ class TestBlockStorage:
         update_volume_details.display_name = volume_name
         result = block_storage.update_volume(volume_id, update_volume_details)
         util.validate_response(result)
-        oci.wait_until(block_storage, block_storage.get_volume(volume_id), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=180)
+        test_config_container.do_wait(block_storage, block_storage.get_volume(volume_id), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=180)
 
         return volume_id
 
@@ -83,7 +85,7 @@ class TestBlockStorage:
         util.validate_response(result)
         self.backup_id = result.data.id
 
-        oci.wait_until(block_storage, block_storage.get_volume_backup(self.backup_id), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=600)
+        test_config_container.do_wait(block_storage, block_storage.get_volume_backup(self.backup_id), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=600)
 
         result = block_storage.get_volume_backup(self.backup_id)
         util.validate_response(result)
@@ -107,7 +109,7 @@ class TestBlockStorage:
         util.validate_response(result)
 
         # Make sure we're still in a good state before deleting.
-        oci.wait_until(block_storage, block_storage.get_volume_backup(self.backup_id), 'lifecycle_state', 'AVAILABLE', max_interval_seconds=180)
+        test_config_container.do_wait(block_storage, block_storage.get_volume_backup(self.backup_id), 'lifecycle_state', 'AVAILABLE', max_interval_seconds=180)
 
     @util.log_test
     def subtest_delete(self, block_storage):
@@ -116,7 +118,7 @@ class TestBlockStorage:
         if hasattr(self, 'backup_id'):
             try:
                 block_storage.delete_volume_backup(self.backup_id)
-                oci.wait_until(block_storage, block_storage.get_volume_backup(self.backup_id), 'lifecycle_state', 'TERMINATED', max_interval_seconds=180)
+                test_config_container.do_wait(block_storage, block_storage.get_volume_backup(self.backup_id), 'lifecycle_state', 'TERMINATED', max_interval_seconds=180)
             except Exception as error:
                 if not hasattr(error, 'status') or error.status != 404:
                     util.print_latest_exception(error)
@@ -125,7 +127,7 @@ class TestBlockStorage:
         if hasattr(self, 'volume_id'):
             try:
                 block_storage.delete_volume(self.volume_id)
-                oci.wait_until(block_storage, block_storage.get_volume(self.volume_id), 'lifecycle_state', 'TERMINATED', max_interval_seconds=180)
+                test_config_container.do_wait(block_storage, block_storage.get_volume(self.volume_id), 'lifecycle_state', 'TERMINATED', max_interval_seconds=180)
             except Exception as error:
                 if not hasattr(error, 'status') or error.status != 404:
                     util.print_latest_exception(error)
@@ -134,7 +136,7 @@ class TestBlockStorage:
         if hasattr(self, 'volume_id_two'):
             try:
                 block_storage.delete_volume(self.volume_id_two)
-                oci.wait_until(block_storage, block_storage.get_volume(self.volume_id_two), 'lifecycle_state', 'TERMINATED', max_interval_seconds=180)
+                test_config_container.do_wait(block_storage, block_storage.get_volume(self.volume_id_two), 'lifecycle_state', 'TERMINATED', max_interval_seconds=180)
             except Exception as error:
                 if not hasattr(error, 'status') or error.status != 404:
                     util.print_latest_exception(error)

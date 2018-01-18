@@ -5,6 +5,8 @@ import oci
 import pytest
 import time
 from . import util
+from .. import test_config_container
+from .. import util as top_level_utils
 
 
 class TestLoadBalancer:
@@ -12,12 +14,13 @@ class TestLoadBalancer:
     BACKEND_PORT = 80
 
     def test_operations(self, load_balancer_client, virtual_network):
-        try:
-            self.subtest_basic_operations(load_balancer_client, virtual_network)
-            self.subtest_health_check_operations(load_balancer_client, virtual_network)
-        finally:
-            time.sleep(20)
-            self.subtest_delete(load_balancer_client, virtual_network)
+        with test_config_container.create_vcr().use_cassette('test_load_balancer_operations.yml'):
+            try:
+                self.subtest_basic_operations(load_balancer_client, virtual_network)
+                self.subtest_health_check_operations(load_balancer_client, virtual_network)
+            finally:
+                time.sleep(20)
+                self.subtest_delete(load_balancer_client, virtual_network)
 
     @util.log_test
     def subtest_basic_operations(self, load_balancer_client, virtual_network):
@@ -35,7 +38,7 @@ class TestLoadBalancer:
 
         self.vcn_ocid = result.data.id
 
-        oci.wait_until(virtual_network, virtual_network.get_vcn(self.vcn_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=300)
+        test_config_container.do_wait(virtual_network, virtual_network.get_vcn(self.vcn_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=300)
 
         # Create a subnet
         subnet_name = util.random_name('python_sdk_test_lb_subnet')
@@ -53,7 +56,7 @@ class TestLoadBalancer:
         util.validate_response(result, expect_etag=True)
 
         self.subnet_ocid1 = result.data.id
-        oci.wait_until(virtual_network, virtual_network.get_subnet(self.subnet_ocid1), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=300)
+        test_config_container.do_wait(virtual_network, virtual_network.get_subnet(self.subnet_ocid1), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=300)
 
         # Create a subnet
         subnet_name = util.random_name('python_sdk_test_lb_subnet')
@@ -70,9 +73,9 @@ class TestLoadBalancer:
         util.validate_response(result, expect_etag=True)
 
         self.subnet_ocid2 = result.data.id
-        oci.wait_until(virtual_network, virtual_network.get_subnet(self.subnet_ocid2), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=300)
+        test_config_container.do_wait(virtual_network, virtual_network.get_subnet(self.subnet_ocid2), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=300)
 
-        self.backend_set_name = 'BackSet-{}'.format(int(time.time()))
+        self.backend_set_name = 'BackSet-{}'.format(top_level_utils.random_number_string())
         backend_set_details = oci.load_balancer.models.BackendSetDetails()
         backend_set_details.policy = 'ROUND_ROBIN'
         backend_set_details.health_checker = oci.load_balancer.models.HealthCheckerDetails()
@@ -103,7 +106,7 @@ class TestLoadBalancer:
         util.validate_response(response)
 
         work_request_id = response.headers['opc-work-request-id']
-        oci.wait_until(load_balancer_client, load_balancer_client.get_work_request(work_request_id), 'lifecycle_state', 'SUCCEEDED', max_wait_seconds=300)
+        test_config_container.do_wait(load_balancer_client, load_balancer_client.get_work_request(work_request_id), 'lifecycle_state', 'SUCCEEDED', max_wait_seconds=300)
 
         response = load_balancer_client.get_work_request(work_request_id)
         self.load_balancer_ocid = response.data.load_balancer_id
@@ -118,7 +121,7 @@ class TestLoadBalancer:
 
         response = load_balancer_client.create_backend(create_backend_details, self.load_balancer_ocid, self.backend_set_name)
         work_request_id = response.headers['opc-work-request-id']
-        oci.wait_until(load_balancer_client, load_balancer_client.get_work_request(work_request_id), 'lifecycle_state', 'SUCCEEDED', max_wait_seconds=300)
+        test_config_container.do_wait(load_balancer_client, load_balancer_client.get_work_request(work_request_id), 'lifecycle_state', 'SUCCEEDED', max_wait_seconds=300)
 
     # In this test we use a fake backend so the status we get back at each level of health check
     # is UNKNOWN since we can't check something which doesn't exist
@@ -187,7 +190,7 @@ class TestLoadBalancer:
 
             try:
                 load_balancer_client.delete_load_balancer(self.load_balancer_ocid)
-                oci.wait_until(load_balancer_client, load_balancer_client.get_load_balancer(self.load_balancer_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=300)
+                test_config_container.do_wait(load_balancer_client, load_balancer_client.get_load_balancer(self.load_balancer_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=300)
             except Exception as error:
                 if not hasattr(error, 'status') or error.status != 404:
                     util.print_latest_exception(error)
@@ -196,7 +199,7 @@ class TestLoadBalancer:
         if hasattr(self, 'subnet_ocid1'):
             try:
                 virtual_network.delete_subnet(self.subnet_ocid1)
-                oci.wait_until(virtual_network, virtual_network.get_subnet(self.subnet_ocid1), 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
+                test_config_container.do_wait(virtual_network, virtual_network.get_subnet(self.subnet_ocid1), 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
             except Exception as error:
                 if not hasattr(error, 'status') or error.status != 404:
                     util.print_latest_exception(error)
@@ -205,7 +208,7 @@ class TestLoadBalancer:
         if hasattr(self, 'subnet_ocid2'):
             try:
                 virtual_network.delete_subnet(self.subnet_ocid2)
-                oci.wait_until(virtual_network, virtual_network.get_subnet(self.subnet_ocid2), 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
+                test_config_container.do_wait(virtual_network, virtual_network.get_subnet(self.subnet_ocid2), 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
             except Exception as error:
                 if not hasattr(error, 'status') or error.status != 404:
                     util.print_latest_exception(error)

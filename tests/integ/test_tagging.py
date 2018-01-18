@@ -2,6 +2,7 @@
 # Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 from . import util
+from .. import test_config_container
 
 import oci
 import os
@@ -40,229 +41,232 @@ def tagging_block_storage_client(request):
 
 @pytest.fixture(scope="module")
 def tag_namespace(tagging_identity_client):
-    tag_namespace = None
+    with test_config_container.create_vcr().use_cassette('test_tagging_tag_namespace_fixture.yml'):
+        tag_namespace = None
 
-    # Support reuse of a tag namespace instead of just creating them all the time (note that this could
-    # have parallelism issues if the same test suite is run multiple times simultaneously since the checking
-    # that we do could encounter unexpected results)
-    if not os.environ.get('OCI_PYSDK_TAG_NAMESPACE_ID'):
-        tag_namespace_name = util.random_name('tagns')
+        # Support reuse of a tag namespace instead of just creating them all the time (note that this could
+        # have parallelism issues if the same test suite is run multiple times simultaneously since the checking
+        # that we do could encounter unexpected results)
+        if not os.environ.get('OCI_PYSDK_TAG_NAMESPACE_ID'):
+            tag_namespace_name = util.random_name('tagns')
 
-        create_tag_namespace_response = tagging_identity_client.create_tag_namespace(
-            oci.identity.models.CreateTagNamespaceDetails(
-                compartment_id=util.COMPARTMENT_ID,
-                name=tag_namespace_name,
-                description='Python SDK integ test namespace'
+            create_tag_namespace_response = tagging_identity_client.create_tag_namespace(
+                oci.identity.models.CreateTagNamespaceDetails(
+                    compartment_id=util.COMPARTMENT_ID,
+                    name=tag_namespace_name,
+                    description='Python SDK integ test namespace'
+                )
             )
-        )
-        util.validate_response(create_tag_namespace_response)
-        assert tag_namespace_name == create_tag_namespace_response.data.name
-        assert 'Python SDK integ test namespace' == create_tag_namespace_response.data.description
-        assert util.COMPARTMENT_ID == create_tag_namespace_response.data.compartment_id
-        assert not create_tag_namespace_response.data.is_retired
-        assert create_tag_namespace_response.data.time_created is not None
-        assert create_tag_namespace_response.data.id is not None
+            util.validate_response(create_tag_namespace_response)
+            assert tag_namespace_name == create_tag_namespace_response.data.name
+            assert 'Python SDK integ test namespace' == create_tag_namespace_response.data.description
+            assert util.COMPARTMENT_ID == create_tag_namespace_response.data.compartment_id
+            assert not create_tag_namespace_response.data.is_retired
+            assert create_tag_namespace_response.data.time_created is not None
+            assert create_tag_namespace_response.data.id is not None
 
-        tag_namespace = create_tag_namespace_response.data
-    else:
-        get_tag_namespace_response = tagging_identity_client.get_tag_namespace(os.environ.get('OCI_PYSDK_TAG_NAMESPACE_ID'))
-
-        if get_tag_namespace_response.data.is_retired:
-            update_tag_namespace_response = tagging_identity_client.update_tag_namespace(
-                get_tag_namespace_response.data.id,
-                oci.identity.models.UpdateTagNamespaceDetails(is_retired=False)
-            )
-            util.validate_response(update_tag_namespace_response)
-            tag_namespace = update_tag_namespace_response.data
+            tag_namespace = create_tag_namespace_response.data
         else:
-            tag_namespace = get_tag_namespace_response.data
+            get_tag_namespace_response = tagging_identity_client.get_tag_namespace(os.environ.get('OCI_PYSDK_TAG_NAMESPACE_ID'))
 
-    yield tag_namespace
+            if get_tag_namespace_response.data.is_retired:
+                update_tag_namespace_response = tagging_identity_client.update_tag_namespace(
+                    get_tag_namespace_response.data.id,
+                    oci.identity.models.UpdateTagNamespaceDetails(is_retired=False)
+                )
+                util.validate_response(update_tag_namespace_response)
+                tag_namespace = update_tag_namespace_response.data
+            else:
+                tag_namespace = get_tag_namespace_response.data
+
+        yield tag_namespace
 
 
 def test_manage_tags_and_namespace(tagging_identity_client, tag_namespace):
-    # List all namespaces and make sure that our namespace appears
-    tag_namespaces = []
-    page = None
-    while True:
-        if page:
-            list_namespaces_response = tagging_identity_client.list_tag_namespaces(
-                compartment_id=util.COMPARTMENT_ID,
-                page=page
-            )
-        else:
-            list_namespaces_response = tagging_identity_client.list_tag_namespaces(compartment_id=util.COMPARTMENT_ID)
+    with test_config_container.create_vcr().use_cassette('test_tagging_manage_tags_and_namespace.yml'):
+        # List all namespaces and make sure that our namespace appears
+        tag_namespaces = []
+        page = None
+        while True:
+            if page:
+                list_namespaces_response = tagging_identity_client.list_tag_namespaces(
+                    compartment_id=util.COMPARTMENT_ID,
+                    page=page
+                )
+            else:
+                list_namespaces_response = tagging_identity_client.list_tag_namespaces(compartment_id=util.COMPARTMENT_ID)
 
-        tag_namespaces.extend(list_namespaces_response.data)
+            tag_namespaces.extend(list_namespaces_response.data)
 
-        page = list_namespaces_response.next_page
-        if not page:
-            break
+            page = list_namespaces_response.next_page
+            if not page:
+                break
 
-    found_namespace = False
-    for tn in tag_namespaces:
-        if tn.id == tag_namespace.id:
-            found_namespace = True
-            assert tag_namespace.name == tn.name
-            assert not tn.is_retired
-    assert found_namespace
+        found_namespace = False
+        for tn in tag_namespaces:
+            if tn.id == tag_namespace.id:
+                found_namespace = True
+                assert tag_namespace.name == tn.name
+                assert not tn.is_retired
+        assert found_namespace
 
-    get_tag_namespace_response = tagging_identity_client.get_tag_namespace(tag_namespace.id)
-    assert tag_namespace.compartment_id == get_tag_namespace_response.data.compartment_id
-    assert tag_namespace.id == get_tag_namespace_response.data.id
-    assert tag_namespace.name == get_tag_namespace_response.data.name
-    assert not get_tag_namespace_response.data.is_retired
+        get_tag_namespace_response = tagging_identity_client.get_tag_namespace(tag_namespace.id)
+        assert tag_namespace.compartment_id == get_tag_namespace_response.data.compartment_id
+        assert tag_namespace.id == get_tag_namespace_response.data.id
+        assert tag_namespace.name == get_tag_namespace_response.data.name
+        assert not get_tag_namespace_response.data.is_retired
 
-    tag_one_name = util.random_name('tagone')
-    tag_one = create_tag(tagging_identity_client, tag_namespace, tag_one_name)
-    tag_one = update_and_retire_tag(tagging_identity_client, tag_one)
+        tag_one_name = util.random_name('tagone')
+        tag_one = create_tag(tagging_identity_client, tag_namespace, tag_one_name)
+        tag_one = update_and_retire_tag(tagging_identity_client, tag_one)
 
-    tag_two_name = util.random_name('tagtwo')
-    tag_two = create_tag(tagging_identity_client, tag_namespace, tag_two_name)
+        tag_two_name = util.random_name('tagtwo')
+        tag_two = create_tag(tagging_identity_client, tag_namespace, tag_two_name)
 
-    update_tag_namespace_response = tagging_identity_client.update_tag_namespace(
-        tag_namespace.id,
-        oci.identity.models.UpdateTagNamespaceDetails(description='updated tag ns', is_retired=True)
-    )
-    util.validate_response(update_tag_namespace_response)
-    assert 'updated tag ns' == update_tag_namespace_response.data.description
-    assert update_tag_namespace_response.data.is_retired
+        update_tag_namespace_response = tagging_identity_client.update_tag_namespace(
+            tag_namespace.id,
+            oci.identity.models.UpdateTagNamespaceDetails(description='updated tag ns', is_retired=True)
+        )
+        util.validate_response(update_tag_namespace_response)
+        assert 'updated tag ns' == update_tag_namespace_response.data.description
+        assert update_tag_namespace_response.data.is_retired
 
-    # List the tags in the namespace and make sure that the ones we created appear
-    tags = []
-    page = None
-    while True:
-        if page:
-            list_tags_response = tagging_identity_client.list_tags(
-                tag_namespace_id=tag_namespace.id,
-                page=page
-            )
-        else:
-            list_tags_response = tagging_identity_client.list_tags(tag_namespace_id=tag_namespace.id)
+        # List the tags in the namespace and make sure that the ones we created appear
+        tags = []
+        page = None
+        while True:
+            if page:
+                list_tags_response = tagging_identity_client.list_tags(
+                    tag_namespace_id=tag_namespace.id,
+                    page=page
+                )
+            else:
+                list_tags_response = tagging_identity_client.list_tags(tag_namespace_id=tag_namespace.id)
 
-        tags.extend(list_tags_response.data)
+            tags.extend(list_tags_response.data)
 
-        page = list_tags_response.next_page
-        if not page:
-            break
+            page = list_tags_response.next_page
+            if not page:
+                break
 
-    found_tag_one = False
-    found_tag_two = True
-    for t in tags:
-        if t.id == tag_one.id:
-            found_tag_one = True
-            assert t.name == tag_one.name
-            assert t.description == tag_one.description
-            assert t.is_retired
-        elif t.id == tag_two.id:
-            found_tag_two = True
-            assert t.name == tag_two.name
-            assert t.description == tag_two.description
-            assert not t.is_retired
+        found_tag_one = False
+        found_tag_two = True
+        for t in tags:
+            if t.id == tag_one.id:
+                found_tag_one = True
+                assert t.name == tag_one.name
+                assert t.description == tag_one.description
+                assert t.is_retired
+            elif t.id == tag_two.id:
+                found_tag_two = True
+                assert t.name == tag_two.name
+                assert t.description == tag_two.description
+                assert not t.is_retired
 
-        if found_tag_one and found_tag_two:
-            break
-    assert found_tag_one and found_tag_two
+            if found_tag_one and found_tag_two:
+                break
+        assert found_tag_one and found_tag_two
 
-    # Retiring the namespace should also retire the tags under the namespace. tag_one was already retired,
-    # but tag_two wasn't so check it is now retired.
-    get_tag_response = tagging_identity_client.get_tag(tag_two.tag_namespace_id, tag_two.name)
-    util.validate_response(get_tag_response)
-    assert get_tag_response.data.is_retired
+        # Retiring the namespace should also retire the tags under the namespace. tag_one was already retired,
+        # but tag_two wasn't so check it is now retired.
+        get_tag_response = tagging_identity_client.get_tag(tag_two.tag_namespace_id, tag_two.name)
+        util.validate_response(get_tag_response)
+        assert get_tag_response.data.is_retired
 
-    get_tag_namespace_response = tagging_identity_client.get_tag_namespace(tag_namespace.id)
-    util.validate_response(get_tag_namespace_response)
-    assert 'updated tag ns' == get_tag_namespace_response.data.description
-    assert get_tag_namespace_response.data.is_retired
+        get_tag_namespace_response = tagging_identity_client.get_tag_namespace(tag_namespace.id)
+        util.validate_response(get_tag_namespace_response)
+        assert 'updated tag ns' == get_tag_namespace_response.data.description
+        assert get_tag_namespace_response.data.is_retired
 
 
 # Sanity test tagging by applying it to a resource
 def test_tag_resource(tagging_identity_client, tagging_block_storage_client, tag_namespace):
-    # Make sure that the namespace is not retired (so we can create tags in it) before we start
-    update_tag_namespace_response = tagging_identity_client.update_tag_namespace(
-        tag_namespace.id,
-        oci.identity.models.UpdateTagNamespaceDetails(is_retired=False)
-    )
+    with test_config_container.create_vcr().use_cassette('test_tagging_tag_resource.yml'):
+        # Make sure that the namespace is not retired (so we can create tags in it) before we start
+        update_tag_namespace_response = tagging_identity_client.update_tag_namespace(
+            tag_namespace.id,
+            oci.identity.models.UpdateTagNamespaceDetails(is_retired=False)
+        )
 
-    tag_one_name = util.random_name('tagresone')
-    create_tag(tagging_identity_client, tag_namespace, tag_one_name)
+        tag_one_name = util.random_name('tagresone')
+        create_tag(tagging_identity_client, tag_namespace, tag_one_name)
 
-    tag_two_name = util.random_name('tagrestwo')
-    create_tag(tagging_identity_client, tag_namespace, tag_two_name)
+        tag_two_name = util.random_name('tagrestwo')
+        create_tag(tagging_identity_client, tag_namespace, tag_two_name)
 
-    # There seems to be some eventual consistency thing with tags where sometimes we can't
-    # use a tag we created straight away. This manifests as a 404, so retry in this case
+        # There seems to be some eventual consistency thing with tags where sometimes we can't
+        # use a tag we created straight away. This manifests as a 404, so retry in this case
 
-    num_tries = 0
-    while True:
-        try:
-            # Create a thing with tags
-            create_volume_response = tagging_block_storage_client.create_volume(
-                oci.core.models.CreateVolumeDetails(
-                    availability_domain=util.availability_domain(),
-                    compartment_id=util.COMPARTMENT_ID,
-                    size_in_gbs=50,
-                    display_name=util.random_name('py_sdk_tag_test'),
-                    freeform_tags={'free': 'form', 'bat': 'man'},
-                    defined_tags={tag_namespace.name: {tag_one_name: 'hello', tag_two_name: 'world'}}
+        num_tries = 0
+        while True:
+            try:
+                # Create a thing with tags
+                create_volume_response = tagging_block_storage_client.create_volume(
+                    oci.core.models.CreateVolumeDetails(
+                        availability_domain=util.availability_domain(),
+                        compartment_id=util.COMPARTMENT_ID,
+                        size_in_gbs=50,
+                        display_name=util.random_name('py_sdk_tag_test'),
+                        freeform_tags={'free': 'form', 'bat': 'man'},
+                        defined_tags={tag_namespace.name: {tag_one_name: 'hello', tag_two_name: 'world'}}
+                    )
                 )
-            )
-            break
-        except oci.exceptions.ServiceError as e:
-            if e.status == 404:
-                num_tries += 1
+                break
+            except oci.exceptions.ServiceError as e:
+                if e.status == 404:
+                    num_tries += 1
 
-                if num_tries >= 3:  # If we can't get it in 3 tries, something is probably wrong...
-                    raise
+                    if num_tries >= 3:  # If we can't get it in 3 tries, something is probably wrong...
+                        raise
+                    else:
+                        time.sleep(2)
                 else:
-                    time.sleep(2)
-            else:
-                raise
+                    raise
 
-    volume_id = create_volume_response.data.id
-    volume = oci.wait_until(tagging_block_storage_client, tagging_block_storage_client.get_volume(volume_id), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=180).data
-    assert {'free': 'form', 'bat': 'man'} == volume.freeform_tags
-    assert {tag_namespace.name: {tag_one_name: 'hello', tag_two_name: 'world'}} == volume.defined_tags
+        volume_id = create_volume_response.data.id
+        volume = oci.wait_until(tagging_block_storage_client, tagging_block_storage_client.get_volume(volume_id), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=180).data
+        assert {'free': 'form', 'bat': 'man'} == volume.freeform_tags
+        assert {tag_namespace.name: {tag_one_name: 'hello', tag_two_name: 'world'}} == volume.defined_tags
 
-    # Replace tags on the thing
-    update_volume_response = tagging_block_storage_client.update_volume(
-        volume_id,
-        oci.core.models.UpdateVolumeDetails(
-            freeform_tags={'other': 'tag'},
-            defined_tags={tag_namespace.name: {tag_two_name: 'newval'}}
+        # Replace tags on the thing
+        update_volume_response = tagging_block_storage_client.update_volume(
+            volume_id,
+            oci.core.models.UpdateVolumeDetails(
+                freeform_tags={'other': 'tag'},
+                defined_tags={tag_namespace.name: {tag_two_name: 'newval'}}
+            )
         )
-    )
-    assert {'other': 'tag'} == update_volume_response.data.freeform_tags
-    assert {tag_namespace.name: {tag_two_name: 'newval'}} == update_volume_response.data.defined_tags
+        assert {'other': 'tag'} == update_volume_response.data.freeform_tags
+        assert {tag_namespace.name: {tag_two_name: 'newval'}} == update_volume_response.data.defined_tags
 
-    volume = tagging_block_storage_client.get_volume(volume_id).data
-    assert {'other': 'tag'} == volume.freeform_tags
-    assert {tag_namespace.name: {tag_two_name: 'newval'}} == volume.defined_tags
+        volume = tagging_block_storage_client.get_volume(volume_id).data
+        assert {'other': 'tag'} == volume.freeform_tags
+        assert {tag_namespace.name: {tag_two_name: 'newval'}} == volume.defined_tags
 
-    # Nuke tags on the thing
-    update_volume_response = tagging_block_storage_client.update_volume(
-        volume_id,
-        oci.core.models.UpdateVolumeDetails(
-            freeform_tags={},
-            defined_tags={}
+        # Nuke tags on the thing
+        update_volume_response = tagging_block_storage_client.update_volume(
+            volume_id,
+            oci.core.models.UpdateVolumeDetails(
+                freeform_tags={},
+                defined_tags={}
+            )
         )
-    )
-    assert {} == update_volume_response.data.freeform_tags
-    assert {} == update_volume_response.data.defined_tags
+        assert {} == update_volume_response.data.freeform_tags
+        assert {} == update_volume_response.data.defined_tags
 
-    volume = tagging_block_storage_client.get_volume(volume_id).data
-    assert {} == volume.freeform_tags
-    assert {} == volume.defined_tags
+        volume = tagging_block_storage_client.get_volume(volume_id).data
+        assert {} == volume.freeform_tags
+        assert {} == volume.defined_tags
 
-    tagging_block_storage_client.delete_volume(volume_id)
+        tagging_block_storage_client.delete_volume(volume_id)
 
-    # Retire the tag namespace at the end of our tests
-    update_tag_namespace_response = tagging_identity_client.update_tag_namespace(
-        tag_namespace.id,
-        oci.identity.models.UpdateTagNamespaceDetails(is_retired=True)
-    )
-    util.validate_response(update_tag_namespace_response)
-    assert update_tag_namespace_response.data.is_retired
+        # Retire the tag namespace at the end of our tests
+        update_tag_namespace_response = tagging_identity_client.update_tag_namespace(
+            tag_namespace.id,
+            oci.identity.models.UpdateTagNamespaceDetails(is_retired=True)
+        )
+        util.validate_response(update_tag_namespace_response)
+        assert update_tag_namespace_response.data.is_retired
 
 
 def create_tag(tagging_identity_client, tag_namespace, tag_name):

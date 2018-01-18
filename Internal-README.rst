@@ -144,6 +144,34 @@ and ``--config-profile`` options::
 These are dynamically added by py.test when it collects tests; you can
 view them with ``py.test --help`` or ``tox -- --help``.
 
+
+Recording test traffic
+----------------------------
+The tests are intended to record traffic for later replay, so that subsequent test runs use the pre-recorded traffic
+rather than hitting services each time. We use `VCR.py <http://vcrpy.readthedocs.io/en/latest/index.html>`_ in order to
+do this.
+
+Of the `recording modes <http://vcrpy.readthedocs.io/en/latest/usage.html#record-modes>`_ offered by VCR, we use ``once``
+by default. 
+
+When doing builds, since we assume the previously recorded traffic to be good, we use the ``none`` record mode.
+
+If you need to re-record traffic then you can do that via the ``all`` mode. You should be re-record traffic when:
+
+* You add new tests
+* You modify an existing test to make additional service calls
+* An existing model changes (e.g. new fields are added to the Instance model) since this impacts the data which can get sent over the wire and how we serialise/deserialise it
+
+**Note:** In the future, we'll have a Team City job which will re-record tests and update the pre-recorded traffic in source control so that you don't have to do this manually.
+
+If you need to pass a record mode when running py.test, use the ``--vcr-record-mode`` option. For example::
+
+    py.test -s --vcr-record-mode=all
+
+If you need to do it under tox, then this becomes::
+
+    tox -e py35 -- --vcr-record-mode=all
+
 Building the SDK
 ================
 

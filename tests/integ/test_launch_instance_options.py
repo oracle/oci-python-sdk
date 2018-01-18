@@ -2,6 +2,7 @@
 # Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 from . import util
+from .. import test_config_container
 import oci
 
 
@@ -11,11 +12,12 @@ IPXE_SCRIPT_FILE = 'tests/resources/ipxe_script_example.txt'
 class TestLaunchInstanceOptions:
 
     def test_main(self, compute, virtual_network):
-        try:
-            self.subtest_setup(virtual_network)
-            self.subtest_launch_instance_options(compute, virtual_network)
-        finally:
-            self.subtest_delete(compute, virtual_network)
+        with test_config_container.create_vcr().use_cassette('launch_instance_options.yml'):
+            try:
+                self.subtest_setup(virtual_network)
+                self.subtest_launch_instance_options(compute, virtual_network)
+            finally:
+                self.subtest_delete(compute, virtual_network)
 
     @util.log_test
     def subtest_setup(self, virtual_network):
@@ -33,7 +35,7 @@ class TestLaunchInstanceOptions:
         result = virtual_network.create_vcn(create_vcn_details)
         self.vcn_ocid = result.data.id
         util.validate_response(result, expect_etag=True)
-        oci.wait_until(virtual_network, virtual_network.get_vcn(self.vcn_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=300)
+        test_config_container.do_wait(virtual_network, virtual_network.get_vcn(self.vcn_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=300)
 
         # Create a subnet
         subnet_name = util.random_name('python_sdk_test_compute_subnet')
@@ -50,7 +52,7 @@ class TestLaunchInstanceOptions:
         result = virtual_network.create_subnet(create_subnet_details)
         self.subnet_ocid = result.data.id
         util.validate_response(result, expect_etag=True)
-        oci.wait_until(virtual_network, virtual_network.get_subnet(self.subnet_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=300)
+        test_config_container.do_wait(virtual_network, virtual_network.get_subnet(self.subnet_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=300)
 
     @util.log_test
     def subtest_launch_instance_options(self, compute, virtual_network):
@@ -112,7 +114,7 @@ class TestLaunchInstanceOptions:
         # Just look at the first few characters. Once we hit a line break the formatting will differ.
         assert ipxe_script_content[:5] in launch_instance_result.data.ipxe_script
 
-        oci.wait_until(compute, compute.get_instance(self.instance_ocid), 'lifecycle_state', 'RUNNING', max_wait_seconds=600)
+        test_config_container.do_wait(compute, compute.get_instance(self.instance_ocid), 'lifecycle_state', 'RUNNING', max_wait_seconds=600)
 
     @util.log_test
     def subtest_delete(self, compute, virtual_network):
@@ -122,7 +124,7 @@ class TestLaunchInstanceOptions:
             try:
                 print("Deleting instance")
                 compute.terminate_instance(self.instance_ocid)
-                oci.wait_until(compute, compute.get_instance(self.instance_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
+                test_config_container.do_wait(compute, compute.get_instance(self.instance_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
             except Exception as error:
                 if not hasattr(error, 'status') or error.status != 404:
                     util.print_latest_exception(error)
@@ -132,7 +134,7 @@ class TestLaunchInstanceOptions:
             try:
                 print("Deleting subnet")
                 virtual_network.delete_subnet(self.subnet_ocid)
-                oci.wait_until(virtual_network, virtual_network.get_subnet(self.subnet_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
+                test_config_container.do_wait(virtual_network, virtual_network.get_subnet(self.subnet_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
             except Exception as error:
                 if not hasattr(error, 'status') or error.status != 404:
                     util.print_latest_exception(error)
@@ -142,7 +144,7 @@ class TestLaunchInstanceOptions:
             try:
                 print("Deleting vcn")
                 virtual_network.delete_vcn(self.vcn_ocid)
-                oci.wait_until(virtual_network, virtual_network.get_vcn(self.vcn_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
+                test_config_container.do_wait(virtual_network, virtual_network.get_vcn(self.vcn_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
             except Exception as error:
                 if not hasattr(error, 'status') or error.status != 404:
                     util.print_latest_exception(error)
