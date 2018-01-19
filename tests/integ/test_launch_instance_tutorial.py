@@ -8,6 +8,7 @@ import time
 import pytest
 
 from . import util
+from .. import test_config_container
 
 
 def test_tutorial(virtual_network, compute, block_storage, config):
@@ -28,36 +29,37 @@ def test_tutorial(virtual_network, compute, block_storage, config):
     volume = None
     attachment = None
 
-    try:
-        vcn = create_cloud_network(virtual_network, compartment, test_id)
-        subnet = create_subnet(virtual_network, compartment, test_id, availability_domain, vcn)
-        gateway = create_internet_gateway(virtual_network, compartment, test_id, vcn)
-        update_route_table(virtual_network, test_id, vcn, gateway)
+    with test_config_container.create_vcr().use_cassette('launch_instance_tutorial.yml'):
+        try:
+            vcn = create_cloud_network(virtual_network, compartment, test_id)
+            subnet = create_subnet(virtual_network, compartment, test_id, availability_domain, vcn)
+            gateway = create_internet_gateway(virtual_network, compartment, test_id, vcn)
+            update_route_table(virtual_network, test_id, vcn, gateway)
 
-        # There's a bug where the instance will immediately terminate if we
-        # don't add some extra wait time before launching. (COM-79)
-        time.sleep(15)
+            # There's a bug where the instance will immediately terminate if we
+            # don't add some extra wait time before launching. (COM-79)
+            time.sleep(15)
 
-        instance = launch_instance(
-            compute, compartment, test_id, availability_domain, subnet, public_key)
-        log_public_ip_address(compute, virtual_network, compartment, instance)
+            instance = launch_instance(
+                compute, compartment, test_id, availability_domain, subnet, public_key)
+            log_public_ip_address(compute, virtual_network, compartment, instance)
 
-        volume = create_volume(block_storage, compartment, test_id, availability_domain)
-        attachment = attach_volume(compute, compartment, instance, volume)
-    except Exception as e:
-        print('Exception during creation phase: ' + str(e))
-        raise
-    finally:
-        if volume:
-            if attachment:
-                detach_volume(compute, attachment)
-            delete_volume(block_storage, volume)
-        if instance:
-            terminate_instance(compute, instance)
-        if subnet:
-            delete_subnet(virtual_network, subnet)
-        if vcn:
-            delete_cloud_network(virtual_network, vcn)
+            volume = create_volume(block_storage, compartment, test_id, availability_domain)
+            attachment = attach_volume(compute, compartment, instance, volume)
+        except Exception as e:
+            print('Exception during creation phase: ' + str(e))
+            raise
+        finally:
+            if volume:
+                if attachment:
+                    detach_volume(compute, attachment)
+                delete_volume(block_storage, volume)
+            if instance:
+                terminate_instance(compute, instance)
+            if subnet:
+                delete_subnet(virtual_network, subnet)
+            if vcn:
+                delete_cloud_network(virtual_network, vcn)
 
 
 def create_cloud_network(virtual_network, compartment, test_id):
@@ -73,12 +75,7 @@ def create_cloud_network(virtual_network, compartment, test_id):
     assert type(response.data) is oci.core.models.Vcn
 
     response = virtual_network.get_vcn(response.data.id)
-    vcn = oci.wait_until(
-        virtual_network,
-        response,
-        'lifecycle_state',
-        'AVAILABLE'
-    ).data
+    vcn = test_config_container.do_wait(virtual_network, response, 'lifecycle_state', 'AVAILABLE').data
 
     assert 'AVAILABLE' == vcn.lifecycle_state
     return vcn
@@ -91,7 +88,7 @@ def delete_cloud_network(virtual_network, vcn):
 
     with pytest.raises(oci.exceptions.ServiceError) as excinfo:
         response = virtual_network.get_vcn(vcn.id)
-        oci.wait_until(
+        test_config_container.do_wait(
             virtual_network,
             response,
             'lifecycle_state',
@@ -116,7 +113,7 @@ def create_subnet(virtual_network, compartment, test_id, availability_domain, vc
     assert type(response.data) is oci.core.models.Subnet
 
     response = virtual_network.get_subnet(response.data.id)
-    subnet = oci.wait_until(
+    subnet = test_config_container.do_wait(
         virtual_network,
         response,
         'lifecycle_state',
@@ -132,7 +129,7 @@ def delete_subnet(virtual_network, subnet):
 
     with pytest.raises(oci.exceptions.ServiceError) as excinfo:
         response = virtual_network.get_subnet(subnet.id)
-        oci.wait_until(
+        test_config_container.do_wait(
             virtual_network,
             response,
             'lifecycle_state',
@@ -154,7 +151,7 @@ def create_internet_gateway(virtual_network, compartment, test_id, vcn):
     assert type(response.data) is oci.core.models.InternetGateway
 
     response = virtual_network.get_internet_gateway(response.data.id)
-    gateway = oci.wait_until(
+    gateway = test_config_container.do_wait(
         virtual_network,
         response,
         'lifecycle_state',
@@ -180,7 +177,7 @@ def update_route_table(virtual_network, test_id, vcn, gateway):
     assert type(response.data) is oci.core.models.RouteTable
 
     response = virtual_network.get_route_table(vcn.default_route_table_id)
-    oci.wait_until(virtual_network, response, 'lifecycle_state', 'AVAILABLE')
+    test_config_container.do_wait(virtual_network, response, 'lifecycle_state', 'AVAILABLE')
 
 
 def launch_instance(compute, compartment, test_id, availability_domain, subnet, public_key):
@@ -201,7 +198,7 @@ def launch_instance(compute, compartment, test_id, availability_domain, subnet, 
     assert 'PROVISIONING' == response.data.lifecycle_state
 
     response = compute.get_instance(response.data.id)
-    instance = oci.wait_until(
+    instance = test_config_container.do_wait(
         compute,
         response,
         'lifecycle_state',
@@ -219,7 +216,7 @@ def terminate_instance(compute, instance):
     assert response.status == 204
 
     response = compute.get_instance(instance.id)
-    oci.wait_until(compute, response, 'lifecycle_state', 'TERMINATED')
+    test_config_container.do_wait(compute, response, 'lifecycle_state', 'TERMINATED')
 
 
 def create_volume(block_storage, compartment, test_id, availability_domain):
@@ -229,13 +226,13 @@ def create_volume(block_storage, compartment, test_id, availability_domain):
     request.compartment_id = compartment
     request.availability_domain = availability_domain
     response = block_storage.create_volume(
-        request, opc_retry_token='testtoken' + test_id)
+        request, opc_retry_token='testtoken{}'.format(int(time.time())))
 
     assert response.status == 200
     assert type(response.data) is oci.core.models.Volume
 
     response = block_storage.get_volume(response.data.id)
-    volume = oci.wait_until(
+    volume = test_config_container.do_wait(
         block_storage,
         response,
         'lifecycle_state',
@@ -251,7 +248,7 @@ def delete_volume(block_storage, volume):
     assert response.status == 204
 
     response = block_storage.get_volume(volume.id)
-    oci.wait_until(
+    test_config_container.do_wait(
         block_storage,
         response,
         'lifecycle_state',
@@ -271,7 +268,7 @@ def log_public_ip_address(compute, virtual_network, compartment, instance):
 
     # Just get the address for the first vnic attachment.
     response = virtual_network.get_vnic(vnic_attachment.vnic_id)
-    response = oci.wait_until(
+    response = test_config_container.do_wait(
         virtual_network,
         response,
         'lifecycle_state',
@@ -294,7 +291,7 @@ def attach_volume(compute, compartment, instance, volume):
     assert type(response.data) is oci.core.models.IScsiVolumeAttachment
 
     response = compute.get_volume_attachment(response.data.id)
-    attachment = oci.wait_until(
+    attachment = test_config_container.do_wait(
         compute,
         response,
         'lifecycle_state',
@@ -309,4 +306,4 @@ def detach_volume(compute, attachment):
     assert response.status == 204
 
     response = compute.get_volume_attachment(attachment.id)
-    oci.wait_until(compute, response, 'lifecycle_state', 'DETACHED')
+    test_config_container.do_wait(compute, response, 'lifecycle_state', 'DETACHED')

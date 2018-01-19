@@ -34,4 +34,4 @@ def do_wait(client, *args, **kwargs):
     if vcr_mode == 'none':
         kwargs['max_interval_seconds'] = 0
 
-    oci.wait_until(client, *args, **kwargs)
+    return oci.wait_until(client, *args, **kwargs)
