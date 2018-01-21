@@ -12,12 +12,12 @@
 Using the SDK with a proxy server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The Python SDK uses the `Requests <http://docs.python-requests.org/en/master/>`_ library to make calls to OCI services. If your environment requires you to use a proxy server for outgoing HTTP requests 
-then you can set this up the following ways:
+then you can set this up in the following ways:
 
 * Configuring environment variable as described `here <http://docs.python-requests.org/en/master/user/advanced/#proxies>`_
 * Modifying the underlying Requests `Session <http://docs.python-requests.org/en/master/api/#request-sessions>`_ object for a service client
 
-In order to modify the underlying Session object, you can do something similiar to:
+In order to modify the underlying Session object, you can do something similar to:
 
 .. code-block:: python
 
@@ -29,4 +29,4 @@ In order to modify the underlying Session object, you can do something similiar 
     compute.base_client.session.proxies = { 'https': 'proxy.example.org:80' }
 
 The key parts are that the underlying Session object can be accessed via ``base_client.session`` and we can then modify the `proxies <http://docs.python-requests.org/en/master/api/#requests.Session.proxies>`_
-dictionary to add our required proxies.
+dictionary to add any required proxies.
