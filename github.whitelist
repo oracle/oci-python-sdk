@@ -11,6 +11,7 @@
 ^src/oci/identity/.*\.py$
 ^src/oci/load_balancer/.*\.py$
 ^src/oci/object_storage/.*\.py$
+^src/oci/retry/.*\.py$
 ^src/oci/pagination/.*\.py$
 ^src/oci/[^/]*\.py$
 

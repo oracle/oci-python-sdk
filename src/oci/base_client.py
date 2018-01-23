@@ -5,8 +5,10 @@ from __future__ import absolute_import
 import json
 import logging
 import platform
+import random
 import re
 import six.moves
+import string
 import uuid
 from datetime import date, datetime
 
@@ -232,6 +234,10 @@ class BaseClient(object):
     # Builds the client info string to be sent with each request.
     def build_request_id(self):
         return str(uuid.uuid4()).replace('-', '').upper()
+
+    def add_opc_retry_token_if_needed(self, header_params, retry_token_length=30):
+        if 'opc-retry-token' not in header_params:
+            header_params['opc-retry-token'] = ''.join(random.SystemRandom().choice(string.ascii_letters + string.digits) for _ in range(retry_token_length))
 
     def to_path_value(self, obj):
         """
