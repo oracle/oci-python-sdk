@@ -634,45 +634,17 @@
                 <configuration>
                     <filesets>
                         <fileset>
-                            <directory>src/oci/audit</directory>
+                            <directory>src/oci</directory>
                             <includes>
-                                <include>**/*</include>
-                            </includes>
-                        </fileset>
-                        <fileset>
-                            <directory>src/oci/core</directory>
-                            <includes>
-                                <include>**/*</include>
-                            </includes>
-                        </fileset>
-                        <fileset>
-                            <directory>src/oci/identity</directory>
-                            <includes>
-                                <include>**/*</include>
-                            </includes>
-                        </fileset>
-                        <fileset>
-                            <directory>src/oci/load_balancer</directory>
-                            <includes>
-                                <include>**/*</include>
-                            </includes>
-                        </fileset>
-                        <fileset>
-                            <directory>src/oci/database</directory>
-                            <includes>
-                                <include>**/*</include>
-                            </includes>
-                        </fileset>
-                        <fileset>
-                            <directory>src/oci/object_storage</directory>
-                            <includes>
-                                <include>**/*</include>
+                                <include>*/**/*</include>
                             </includes>
                             <excludes>
-                                <exclude>transfer</exclude>
-                                <exclude>transfer/*</exclude>
-                                <exclude>transfer/internal/*</exclude>
-                                <exclude>__init__.py</exclude>
+                                <exclude>auth/**/*</exclude>
+                                <exclude>pagination/**/*</exclude>
+                                <exclude>object_storage/transfer</exclude>
+                                <exclude>object_storage/transfer/*</exclude>
+                                <exclude>object_storage/transfer/internal/*</exclude>
+                                <exclude>object_storage/__init__.py</exclude>
                             </excludes>
                         </fileset>
                     </filesets>
