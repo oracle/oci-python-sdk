@@ -641,6 +641,7 @@
                             <excludes>
                                 <exclude>auth/**/*</exclude>
                                 <exclude>pagination/**/*</exclude>
+                                <exclude>retry/**/*</exclude>
                                 <exclude>object_storage/transfer</exclude>
                                 <exclude>object_storage/transfer/*</exclude>
                                 <exclude>object_storage/transfer/internal/*</exclude>
