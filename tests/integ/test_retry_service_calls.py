@@ -1,16 +1,14 @@
 # coding: utf-8
 # Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
-# Sanity test that we can pass a retry strategy to a service call and it can succeed
+# Basic sanity tests that we can pass a retry strategy to a service call and it can succeed
 
 import oci
-import pytest
 
 from . import util
 from .. import test_config_container
 
 
-@pytest.mark.skip(reason='Waiting for codegen change')
 def test_create_volume(block_storage):
     volume_id = None
 
@@ -31,3 +29,28 @@ def test_create_volume(block_storage):
         if volume_id:
             block_storage.delete_volume(volume_id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY)
             test_config_container.do_wait(block_storage, block_storage.get_volume(volume_id), 'lifecycle_state', 'TERMINATED', max_interval_seconds=180, succeed_on_not_found=True)
+
+
+def test_list_buckets(object_storage):
+    namespace = object_storage.get_namespace(retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
+    buckets = object_storage.list_buckets(namespace, util.COMPARTMENT_ID, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY)
+    assert len(buckets.data) > 0  # util.ensure_test_data ensures there's at least one bucket
+
+
+def test_list_images_and_instances(compute):
+    images = compute.list_images(util.COMPARTMENT_ID, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY)
+    assert len(images.data) > 0  # We'll always get at least Oracle-offered images
+
+    instances = compute.list_instances(util.COMPARTMENT_ID, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY)
+    assert instances.data is not None  # Can't guarantee we'll have an instance, but the returned data should not be None
+
+
+def test_list_get_users(identity, config):
+    users = identity.list_users(config['tenancy'], retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY)
+    assert len(users.data) > 0  # Always at least one user
+
+    user_ocid = users.data[0].id
+
+    user_no_retry = identity.get_user(user_ocid)
+    user_with_retries = identity.get_user(user_ocid, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY)
+    assert user_no_retry.data == user_with_retries.data

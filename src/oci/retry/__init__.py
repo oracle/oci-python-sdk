@@ -15,5 +15,6 @@ __all__ = [
     "retry_checkers", "RetryStrategyBuilder", "NoneRetryStrategy", "ExponentialBackoffRetryStrategyBase",
     "ExponentialBackoffWithFullJitterRetryStrategy", "ExponentialBackoffWithEqualJitterRetryStrategy",
     "ExponentialBackoffWithFullJitterEqualForThrottlesRetryStrategy",
+    "DEFAULT_RETRY_STRATEGY",
     "BACKOFF_FULL_JITTER_VALUE", "BACKOFF_EQUAL_JITTER_VALUE", "BACKOFF_FULL_JITTER_EQUAL_ON_THROTTLE_VALUE"
 ]

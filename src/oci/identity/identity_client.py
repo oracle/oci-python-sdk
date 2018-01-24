@@ -6,6 +6,7 @@ from __future__ import absolute_import
 import requests  # noqa: F401
 import six
 
+from .. import retry  # noqa: F401
 from ..base_client import BaseClient
 from ..config import get_config_value_or_default, validate_config
 from ..signer import Signer
@@ -58,6 +59,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -72,12 +74,23 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            header_params=header_params,
-            body=add_user_to_group_details,
-            response_type="UserGroupMembership")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=add_user_to_group_details,
+                response_type="UserGroupMembership")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=add_user_to_group_details,
+                response_type="UserGroupMembership")
 
     def create_compartment(self, create_compartment_details, **kwargs):
         """
@@ -124,6 +137,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -138,12 +152,23 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            header_params=header_params,
-            body=create_compartment_details,
-            response_type="Compartment")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_compartment_details,
+                response_type="Compartment")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_compartment_details,
+                response_type="Compartment")
 
     def create_customer_secret_key(self, create_customer_secret_key_details, user_id, **kwargs):
         """
@@ -184,6 +209,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -208,13 +234,25 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=create_customer_secret_key_details,
-            response_type="CustomerSecretKey")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_customer_secret_key_details,
+                response_type="CustomerSecretKey")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_customer_secret_key_details,
+                response_type="CustomerSecretKey")
 
     def create_dynamic_group(self, create_dynamic_group_details, **kwargs):
         """
@@ -260,6 +298,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -274,12 +313,23 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            header_params=header_params,
-            body=create_dynamic_group_details,
-            response_type="DynamicGroup")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_dynamic_group_details,
+                response_type="DynamicGroup")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_dynamic_group_details,
+                response_type="DynamicGroup")
 
     def create_group(self, create_group_details, **kwargs):
         """
@@ -328,6 +378,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -342,12 +393,23 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            header_params=header_params,
-            body=create_group_details,
-            response_type="Group")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_group_details,
+                response_type="Group")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_group_details,
+                response_type="Group")
 
     def create_identity_provider(self, create_identity_provider_details, **kwargs):
         """
@@ -393,6 +455,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -407,12 +470,23 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            header_params=header_params,
-            body=create_identity_provider_details,
-            response_type="IdentityProvider")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_identity_provider_details,
+                response_type="IdentityProvider")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_identity_provider_details,
+                response_type="IdentityProvider")
 
     def create_idp_group_mapping(self, create_idp_group_mapping_details, identity_provider_id, **kwargs):
         """
@@ -442,6 +516,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -466,13 +541,25 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=create_idp_group_mapping_details,
-            response_type="IdpGroupMapping")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_idp_group_mapping_details,
+                response_type="IdpGroupMapping")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_idp_group_mapping_details,
+                response_type="IdpGroupMapping")
 
     def create_or_reset_ui_password(self, user_id, **kwargs):
         """
@@ -510,6 +597,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -534,12 +622,23 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="UIPassword")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="UIPassword")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="UIPassword")
 
     def create_policy(self, create_policy_details, **kwargs):
         """
@@ -585,6 +684,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -599,12 +699,23 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            header_params=header_params,
-            body=create_policy_details,
-            response_type="Policy")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_policy_details,
+                response_type="Policy")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_policy_details,
+                response_type="Policy")
 
     def create_region_subscription(self, create_region_subscription_details, tenancy_id, **kwargs):
         """
@@ -633,6 +744,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -657,13 +769,25 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=create_region_subscription_details,
-            response_type="RegionSubscription")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_region_subscription_details,
+                response_type="RegionSubscription")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_region_subscription_details,
+                response_type="RegionSubscription")
 
     def create_swift_password(self, create_swift_password_details, user_id, **kwargs):
         """
@@ -703,6 +827,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -727,13 +852,25 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=create_swift_password_details,
-            response_type="SwiftPassword")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_swift_password_details,
+                response_type="SwiftPassword")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_swift_password_details,
+                response_type="SwiftPassword")
 
     def create_tag(self, tag_namespace_id, create_tag_details, **kwargs):
         """
@@ -773,6 +910,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -797,13 +935,25 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=create_tag_details,
-            response_type="Tag")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_tag_details,
+                response_type="Tag")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_tag_details,
+                response_type="Tag")
 
     def create_tag_namespace(self, create_tag_namespace_details, **kwargs):
         """
@@ -847,6 +997,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -861,12 +1012,23 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            header_params=header_params,
-            body=create_tag_namespace_details,
-            response_type="TagNamespace")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_tag_namespace_details,
+                response_type="TagNamespace")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_tag_namespace_details,
+                response_type="TagNamespace")
 
     def create_user(self, create_user_details, **kwargs):
         """
@@ -930,6 +1092,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -944,12 +1107,23 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            header_params=header_params,
-            body=create_user_details,
-            response_type="User")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_user_details,
+                response_type="User")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_user_details,
+                response_type="User")
 
     def delete_api_key(self, user_id, fingerprint, **kwargs):
         """
@@ -981,6 +1155,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1006,11 +1181,19 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def delete_customer_secret_key(self, user_id, customer_secret_key_id, **kwargs):
         """
@@ -1037,6 +1220,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1062,11 +1246,19 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def delete_dynamic_group(self, dynamic_group_id, **kwargs):
         """
@@ -1090,6 +1282,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1114,11 +1307,19 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def delete_group(self, group_id, **kwargs):
         """
@@ -1142,6 +1343,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1166,11 +1368,19 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def delete_identity_provider(self, identity_provider_id, **kwargs):
         """
@@ -1195,6 +1405,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1219,11 +1430,19 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def delete_idp_group_mapping(self, identity_provider_id, mapping_id, **kwargs):
         """
@@ -1250,6 +1469,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1275,11 +1495,19 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def delete_policy(self, policy_id, **kwargs):
         """
@@ -1303,6 +1531,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1327,11 +1556,19 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def delete_swift_password(self, user_id, swift_password_id, **kwargs):
         """
@@ -1358,6 +1595,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1383,11 +1621,19 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def delete_user(self, user_id, **kwargs):
         """
@@ -1411,6 +1657,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1435,11 +1682,19 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def get_compartment(self, compartment_id, **kwargs):
         """
@@ -1463,9 +1718,11 @@ class IdentityClient(object):
         resource_path = "/compartments/{compartmentId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_compartment got unknown kwargs: {!r}".format(kwargs))
+                "get_compartment got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "compartmentId": compartment_id
@@ -1482,12 +1739,21 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="Compartment")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Compartment")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Compartment")
 
     def get_dynamic_group(self, dynamic_group_id, **kwargs):
         """
@@ -1504,9 +1770,11 @@ class IdentityClient(object):
         resource_path = "/dynamicGroups/{dynamicGroupId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_dynamic_group got unknown kwargs: {!r}".format(kwargs))
+                "get_dynamic_group got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "dynamicGroupId": dynamic_group_id
@@ -1523,12 +1791,21 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="DynamicGroup")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="DynamicGroup")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="DynamicGroup")
 
     def get_group(self, group_id, **kwargs):
         """
@@ -1549,9 +1826,11 @@ class IdentityClient(object):
         resource_path = "/groups/{groupId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_group got unknown kwargs: {!r}".format(kwargs))
+                "get_group got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "groupId": group_id
@@ -1568,12 +1847,21 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="Group")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Group")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Group")
 
     def get_identity_provider(self, identity_provider_id, **kwargs):
         """
@@ -1590,9 +1878,11 @@ class IdentityClient(object):
         resource_path = "/identityProviders/{identityProviderId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_identity_provider got unknown kwargs: {!r}".format(kwargs))
+                "get_identity_provider got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "identityProviderId": identity_provider_id
@@ -1609,12 +1899,21 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="IdentityProvider")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="IdentityProvider")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="IdentityProvider")
 
     def get_idp_group_mapping(self, identity_provider_id, mapping_id, **kwargs):
         """
@@ -1634,9 +1933,11 @@ class IdentityClient(object):
         resource_path = "/identityProviders/{identityProviderId}/groupMappings/{mappingId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_idp_group_mapping got unknown kwargs: {!r}".format(kwargs))
+                "get_idp_group_mapping got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "identityProviderId": identity_provider_id,
@@ -1654,12 +1955,21 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="IdpGroupMapping")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="IdpGroupMapping")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="IdpGroupMapping")
 
     def get_policy(self, policy_id, **kwargs):
         """
@@ -1676,9 +1986,11 @@ class IdentityClient(object):
         resource_path = "/policies/{policyId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_policy got unknown kwargs: {!r}".format(kwargs))
+                "get_policy got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "policyId": policy_id
@@ -1695,12 +2007,21 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="Policy")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Policy")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Policy")
 
     def get_tag(self, tag_namespace_id, tag_name, **kwargs):
         """
@@ -1720,9 +2041,11 @@ class IdentityClient(object):
         resource_path = "/tagNamespaces/{tagNamespaceId}/tags/{tagName}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_tag got unknown kwargs: {!r}".format(kwargs))
+                "get_tag got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "tagNamespaceId": tag_namespace_id,
@@ -1740,12 +2063,21 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="Tag")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Tag")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Tag")
 
     def get_tag_namespace(self, tag_namespace_id, **kwargs):
         """
@@ -1762,9 +2094,11 @@ class IdentityClient(object):
         resource_path = "/tagNamespaces/{tagNamespaceId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_tag_namespace got unknown kwargs: {!r}".format(kwargs))
+                "get_tag_namespace got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "tagNamespaceId": tag_namespace_id
@@ -1781,12 +2115,21 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="TagNamespace")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="TagNamespace")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="TagNamespace")
 
     def get_tenancy(self, tenancy_id, **kwargs):
         """
@@ -1803,9 +2146,11 @@ class IdentityClient(object):
         resource_path = "/tenancies/{tenancyId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_tenancy got unknown kwargs: {!r}".format(kwargs))
+                "get_tenancy got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "tenancyId": tenancy_id
@@ -1822,12 +2167,21 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="Tenancy")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Tenancy")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Tenancy")
 
     def get_user(self, user_id, **kwargs):
         """
@@ -1844,9 +2198,11 @@ class IdentityClient(object):
         resource_path = "/users/{userId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_user got unknown kwargs: {!r}".format(kwargs))
+                "get_user got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "userId": user_id
@@ -1863,12 +2219,21 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="User")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="User")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="User")
 
     def get_user_group_membership(self, user_group_membership_id, **kwargs):
         """
@@ -1885,9 +2250,11 @@ class IdentityClient(object):
         resource_path = "/userGroupMemberships/{userGroupMembershipId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_user_group_membership got unknown kwargs: {!r}".format(kwargs))
+                "get_user_group_membership got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "userGroupMembershipId": user_group_membership_id
@@ -1904,12 +2271,21 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="UserGroupMembership")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="UserGroupMembership")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="UserGroupMembership")
 
     def list_api_keys(self, user_id, **kwargs):
         """
@@ -1929,9 +2305,11 @@ class IdentityClient(object):
         resource_path = "/users/{userId}/apiKeys/"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "list_api_keys got unknown kwargs: {!r}".format(kwargs))
+                "list_api_keys got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "userId": user_id
@@ -1948,12 +2326,21 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="list[ApiKey]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="list[ApiKey]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="list[ApiKey]")
 
     def list_availability_domains(self, compartment_id, **kwargs):
         """
@@ -1974,9 +2361,11 @@ class IdentityClient(object):
         resource_path = "/availabilityDomains/"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "list_availability_domains got unknown kwargs: {!r}".format(kwargs))
+                "list_availability_domains got unknown kwargs: {!r}".format(extra_kwargs))
 
         query_params = {
             "compartmentId": compartment_id
@@ -1988,12 +2377,21 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[AvailabilityDomain]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[AvailabilityDomain]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[AvailabilityDomain]")
 
     def list_compartments(self, compartment_id, **kwargs):
         """
@@ -2022,6 +2420,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "page",
             "limit"
         ]
@@ -2042,12 +2441,21 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[Compartment]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[Compartment]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[Compartment]")
 
     def list_customer_secret_keys(self, user_id, **kwargs):
         """
@@ -2065,9 +2473,11 @@ class IdentityClient(object):
         resource_path = "/users/{userId}/customerSecretKeys/"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "list_customer_secret_keys got unknown kwargs: {!r}".format(kwargs))
+                "list_customer_secret_keys got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "userId": user_id
@@ -2084,12 +2494,21 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="list[CustomerSecretKeySummary]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="list[CustomerSecretKeySummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="list[CustomerSecretKeySummary]")
 
     def list_dynamic_groups(self, compartment_id, **kwargs):
         """
@@ -2118,6 +2537,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "page",
             "limit"
         ]
@@ -2138,12 +2558,21 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[DynamicGroup]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[DynamicGroup]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[DynamicGroup]")
 
     def list_groups(self, compartment_id, **kwargs):
         """
@@ -2172,6 +2601,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "page",
             "limit"
         ]
@@ -2192,12 +2622,21 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[Group]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[Group]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[Group]")
 
     def list_identity_providers(self, protocol, compartment_id, **kwargs):
         """
@@ -2232,6 +2671,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "page",
             "limit"
         ]
@@ -2253,12 +2693,21 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[IdentityProvider]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[IdentityProvider]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[IdentityProvider]")
 
     def list_idp_group_mappings(self, identity_provider_id, **kwargs):
         """
@@ -2283,6 +2732,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "page",
             "limit"
         ]
@@ -2312,13 +2762,23 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[IdpGroupMapping]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[IdpGroupMapping]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[IdpGroupMapping]")
 
     def list_policies(self, compartment_id, **kwargs):
         """
@@ -2349,6 +2809,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "page",
             "limit"
         ]
@@ -2369,12 +2830,21 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[Policy]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[Policy]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[Policy]")
 
     def list_region_subscriptions(self, tenancy_id, **kwargs):
         """
@@ -2391,9 +2861,11 @@ class IdentityClient(object):
         resource_path = "/tenancies/{tenancyId}/regionSubscriptions"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "list_region_subscriptions got unknown kwargs: {!r}".format(kwargs))
+                "list_region_subscriptions got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "tenancyId": tenancy_id
@@ -2410,12 +2882,21 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="list[RegionSubscription]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="list[RegionSubscription]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="list[RegionSubscription]")
 
     def list_regions(self, **kwargs):
         """
@@ -2429,20 +2910,30 @@ class IdentityClient(object):
         resource_path = "/regions"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "list_regions got unknown kwargs: {!r}".format(kwargs))
+                "list_regions got unknown kwargs: {!r}".format(extra_kwargs))
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            header_params=header_params,
-            response_type="list[Region]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                response_type="list[Region]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                response_type="list[Region]")
 
     def list_swift_passwords(self, user_id, **kwargs):
         """
@@ -2460,9 +2951,11 @@ class IdentityClient(object):
         resource_path = "/users/{userId}/swiftPasswords/"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "list_swift_passwords got unknown kwargs: {!r}".format(kwargs))
+                "list_swift_passwords got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "userId": user_id
@@ -2479,12 +2972,21 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="list[SwiftPassword]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="list[SwiftPassword]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="list[SwiftPassword]")
 
     def list_tag_namespaces(self, compartment_id, **kwargs):
         """
@@ -2513,6 +3015,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "page",
             "limit",
             "include_subcompartments"
@@ -2535,12 +3038,21 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[TagNamespaceSummary]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[TagNamespaceSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[TagNamespaceSummary]")
 
     def list_tags(self, tag_namespace_id, **kwargs):
         """
@@ -2565,6 +3077,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "page",
             "limit"
         ]
@@ -2594,13 +3107,23 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[TagSummary]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[TagSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[TagSummary]")
 
     def list_user_group_memberships(self, compartment_id, **kwargs):
         """
@@ -2641,6 +3164,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "user_id",
             "group_id",
             "page",
@@ -2665,12 +3189,21 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[UserGroupMembership]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[UserGroupMembership]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[UserGroupMembership]")
 
     def list_users(self, compartment_id, **kwargs):
         """
@@ -2699,6 +3232,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "page",
             "limit"
         ]
@@ -2719,12 +3253,21 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[User]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[User]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[User]")
 
     def remove_user_from_group(self, user_group_membership_id, **kwargs):
         """
@@ -2748,6 +3291,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -2772,11 +3316,19 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def update_compartment(self, compartment_id, update_compartment_details, **kwargs):
         """
@@ -2803,6 +3355,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -2827,13 +3380,23 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_compartment_details,
-            response_type="Compartment")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_compartment_details,
+                response_type="Compartment")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_compartment_details,
+                response_type="Compartment")
 
     def update_customer_secret_key(self, user_id, customer_secret_key_id, update_customer_secret_key_details, **kwargs):
         """
@@ -2863,6 +3426,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -2888,13 +3452,23 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_customer_secret_key_details,
-            response_type="CustomerSecretKeySummary")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_customer_secret_key_details,
+                response_type="CustomerSecretKeySummary")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_customer_secret_key_details,
+                response_type="CustomerSecretKeySummary")
 
     def update_dynamic_group(self, dynamic_group_id, update_dynamic_group_details, **kwargs):
         """
@@ -2921,6 +3495,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -2945,13 +3520,23 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_dynamic_group_details,
-            response_type="DynamicGroup")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_dynamic_group_details,
+                response_type="DynamicGroup")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_dynamic_group_details,
+                response_type="DynamicGroup")
 
     def update_group(self, group_id, update_group_details, **kwargs):
         """
@@ -2978,6 +3563,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -3002,13 +3588,23 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_group_details,
-            response_type="Group")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_group_details,
+                response_type="Group")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_group_details,
+                response_type="Group")
 
     def update_identity_provider(self, identity_provider_id, update_identity_provider_details, **kwargs):
         """
@@ -3035,6 +3631,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -3059,13 +3656,23 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_identity_provider_details,
-            response_type="IdentityProvider")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_identity_provider_details,
+                response_type="IdentityProvider")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_identity_provider_details,
+                response_type="IdentityProvider")
 
     def update_idp_group_mapping(self, identity_provider_id, mapping_id, update_idp_group_mapping_details, **kwargs):
         """
@@ -3095,6 +3702,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -3120,13 +3728,23 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_idp_group_mapping_details,
-            response_type="IdpGroupMapping")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_idp_group_mapping_details,
+                response_type="IdpGroupMapping")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_idp_group_mapping_details,
+                response_type="IdpGroupMapping")
 
     def update_policy(self, policy_id, update_policy_details, **kwargs):
         """
@@ -3155,6 +3773,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -3179,13 +3798,23 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_policy_details,
-            response_type="Policy")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_policy_details,
+                response_type="Policy")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_policy_details,
+                response_type="Policy")
 
     def update_swift_password(self, user_id, swift_password_id, update_swift_password_details, **kwargs):
         """
@@ -3215,6 +3844,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -3240,13 +3870,23 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_swift_password_details,
-            response_type="SwiftPassword")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_swift_password_details,
+                response_type="SwiftPassword")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_swift_password_details,
+                response_type="SwiftPassword")
 
     def update_tag(self, tag_namespace_id, tag_name, update_tag_details, **kwargs):
         """
@@ -3269,9 +3909,11 @@ class IdentityClient(object):
         resource_path = "/tagNamespaces/{tagNamespaceId}/tags/{tagName}"
         method = "PUT"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "update_tag got unknown kwargs: {!r}".format(kwargs))
+                "update_tag got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "tagNamespaceId": tag_namespace_id,
@@ -3289,13 +3931,23 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_tag_details,
-            response_type="Tag")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_tag_details,
+                response_type="Tag")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_tag_details,
+                response_type="Tag")
 
     def update_tag_namespace(self, tag_namespace_id, update_tag_namespace_details, **kwargs):
         """
@@ -3325,9 +3977,11 @@ class IdentityClient(object):
         resource_path = "/tagNamespaces/{tagNamespaceId}"
         method = "PUT"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "update_tag_namespace got unknown kwargs: {!r}".format(kwargs))
+                "update_tag_namespace got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "tagNamespaceId": tag_namespace_id
@@ -3344,13 +3998,23 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_tag_namespace_details,
-            response_type="TagNamespace")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_tag_namespace_details,
+                response_type="TagNamespace")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_tag_namespace_details,
+                response_type="TagNamespace")
 
     def update_user(self, user_id, update_user_details, **kwargs):
         """
@@ -3377,6 +4041,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -3401,13 +4066,23 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_user_details,
-            response_type="User")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_user_details,
+                response_type="User")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_user_details,
+                response_type="User")
 
     def update_user_state(self, user_id, update_state_details, **kwargs):
         """
@@ -3434,6 +4109,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -3458,13 +4134,23 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_state_details,
-            response_type="User")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_state_details,
+                response_type="User")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_state_details,
+                response_type="User")
 
     def upload_api_key(self, user_id, create_api_key_details, **kwargs):
         """
@@ -3507,6 +4193,7 @@ class IdentityClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -3531,10 +4218,22 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=create_api_key_details,
-            response_type="ApiKey")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_api_key_details,
+                response_type="ApiKey")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_api_key_details,
+                response_type="ApiKey")

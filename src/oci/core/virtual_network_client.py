@@ -6,6 +6,7 @@ from __future__ import absolute_import
 import requests  # noqa: F401
 import six
 
+from .. import retry  # noqa: F401
 from ..base_client import BaseClient
 from ..config import get_config_value_or_default, validate_config
 from ..signer import Signer
@@ -52,9 +53,11 @@ class VirtualNetworkClient(object):
         resource_path = "/virtualCircuits/{virtualCircuitId}/actions/bulkAddPublicPrefixes"
         method = "POST"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "bulk_add_virtual_circuit_public_prefixes got unknown kwargs: {!r}".format(kwargs))
+                "bulk_add_virtual_circuit_public_prefixes got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "virtualCircuitId": virtual_circuit_id
@@ -71,12 +74,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=bulk_add_virtual_circuit_public_prefixes_details)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=bulk_add_virtual_circuit_public_prefixes_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=bulk_add_virtual_circuit_public_prefixes_details)
 
     def bulk_delete_virtual_circuit_public_prefixes(self, virtual_circuit_id, bulk_delete_virtual_circuit_public_prefixes_details, **kwargs):
         """
@@ -99,9 +111,11 @@ class VirtualNetworkClient(object):
         resource_path = "/virtualCircuits/{virtualCircuitId}/actions/bulkDeletePublicPrefixes"
         method = "POST"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "bulk_delete_virtual_circuit_public_prefixes got unknown kwargs: {!r}".format(kwargs))
+                "bulk_delete_virtual_circuit_public_prefixes got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "virtualCircuitId": virtual_circuit_id
@@ -118,12 +132,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=bulk_delete_virtual_circuit_public_prefixes_details)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=bulk_delete_virtual_circuit_public_prefixes_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=bulk_delete_virtual_circuit_public_prefixes_details)
 
     def connect_local_peering_gateways(self, local_peering_gateway_id, connect_local_peering_gateways_details, **kwargs):
         """
@@ -152,9 +175,11 @@ class VirtualNetworkClient(object):
         resource_path = "/localPeeringGateways/{localPeeringGatewayId}/actions/connect"
         method = "POST"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "connect_local_peering_gateways got unknown kwargs: {!r}".format(kwargs))
+                "connect_local_peering_gateways got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "localPeeringGatewayId": local_peering_gateway_id
@@ -171,12 +196,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=connect_local_peering_gateways_details)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=connect_local_peering_gateways_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=connect_local_peering_gateways_details)
 
     def create_cpe(self, create_cpe_details, **kwargs):
         """
@@ -221,6 +255,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -235,12 +270,23 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            header_params=header_params,
-            body=create_cpe_details,
-            response_type="Cpe")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_cpe_details,
+                response_type="Cpe")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_cpe_details,
+                response_type="Cpe")
 
     def create_cross_connect(self, create_cross_connect_details, **kwargs):
         """
@@ -288,6 +334,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -302,12 +349,23 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            header_params=header_params,
-            body=create_cross_connect_details,
-            response_type="CrossConnect")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_cross_connect_details,
+                response_type="CrossConnect")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_cross_connect_details,
+                response_type="CrossConnect")
 
     def create_cross_connect_group(self, create_cross_connect_group_details, **kwargs):
         """
@@ -351,6 +409,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -365,12 +424,23 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            header_params=header_params,
-            body=create_cross_connect_group_details,
-            response_type="CrossConnectGroup")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_cross_connect_group_details,
+                response_type="CrossConnectGroup")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_cross_connect_group_details,
+                response_type="CrossConnectGroup")
 
     def create_dhcp_options(self, create_dhcp_details, **kwargs):
         """
@@ -410,6 +480,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -424,12 +495,23 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            header_params=header_params,
-            body=create_dhcp_details,
-            response_type="DhcpOptions")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_dhcp_details,
+                response_type="DhcpOptions")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_dhcp_details,
+                response_type="DhcpOptions")
 
     def create_drg(self, create_drg_details, **kwargs):
         """
@@ -470,6 +552,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -484,12 +567,23 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            header_params=header_params,
-            body=create_drg_details,
-            response_type="Drg")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_drg_details,
+                response_type="Drg")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_drg_details,
+                response_type="Drg")
 
     def create_drg_attachment(self, create_drg_attachment_details, **kwargs):
         """
@@ -528,6 +622,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -542,12 +637,23 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            header_params=header_params,
-            body=create_drg_attachment_details,
-            response_type="DrgAttachment")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_drg_attachment_details,
+                response_type="DrgAttachment")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_drg_attachment_details,
+                response_type="DrgAttachment")
 
     def create_internet_gateway(self, create_internet_gateway_details, **kwargs):
         """
@@ -597,6 +703,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -611,12 +718,23 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            header_params=header_params,
-            body=create_internet_gateway_details,
-            response_type="InternetGateway")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_internet_gateway_details,
+                response_type="InternetGateway")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_internet_gateway_details,
+                response_type="InternetGateway")
 
     def create_ip_sec_connection(self, create_ip_sec_connection_details, **kwargs):
         """
@@ -672,6 +790,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -686,12 +805,23 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            header_params=header_params,
-            body=create_ip_sec_connection_details,
-            response_type="IPSecConnection")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_ip_sec_connection_details,
+                response_type="IPSecConnection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_ip_sec_connection_details,
+                response_type="IPSecConnection")
 
     def create_local_peering_gateway(self, create_local_peering_gateway_details, **kwargs):
         """
@@ -717,6 +847,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -731,12 +862,23 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            header_params=header_params,
-            body=create_local_peering_gateway_details,
-            response_type="LocalPeeringGateway")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_local_peering_gateway_details,
+                response_type="LocalPeeringGateway")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_local_peering_gateway_details,
+                response_type="LocalPeeringGateway")
 
     def create_private_ip(self, create_private_ip_details, **kwargs):
         """
@@ -766,6 +908,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -780,12 +923,23 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            header_params=header_params,
-            body=create_private_ip_details,
-            response_type="PrivateIp")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_private_ip_details,
+                response_type="PrivateIp")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_private_ip_details,
+                response_type="PrivateIp")
 
     def create_route_table(self, create_route_table_details, **kwargs):
         """
@@ -830,6 +984,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -844,12 +999,23 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            header_params=header_params,
-            body=create_route_table_details,
-            response_type="RouteTable")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_route_table_details,
+                response_type="RouteTable")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_route_table_details,
+                response_type="RouteTable")
 
     def create_security_list(self, create_security_list_details, **kwargs):
         """
@@ -893,6 +1059,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -907,12 +1074,23 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            header_params=header_params,
-            body=create_security_list_details,
-            response_type="SecurityList")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_security_list_details,
+                response_type="SecurityList")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_security_list_details,
+                response_type="SecurityList")
 
     def create_subnet(self, create_subnet_details, **kwargs):
         """
@@ -977,6 +1155,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -991,12 +1170,23 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            header_params=header_params,
-            body=create_subnet_details,
-            response_type="Subnet")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_subnet_details,
+                response_type="Subnet")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_subnet_details,
+                response_type="Subnet")
 
     def create_vcn(self, create_vcn_details, **kwargs):
         """
@@ -1057,6 +1247,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1071,12 +1262,23 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            header_params=header_params,
-            body=create_vcn_details,
-            response_type="Vcn")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_vcn_details,
+                response_type="Vcn")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_vcn_details,
+                response_type="Vcn")
 
     def create_virtual_circuit(self, create_virtual_circuit_details, **kwargs):
         """
@@ -1127,6 +1329,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1141,12 +1344,23 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            header_params=header_params,
-            body=create_virtual_circuit_details,
-            response_type="VirtualCircuit")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_virtual_circuit_details,
+                response_type="VirtualCircuit")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_virtual_circuit_details,
+                response_type="VirtualCircuit")
 
     def delete_cpe(self, cpe_id, **kwargs):
         """
@@ -1172,6 +1386,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1196,11 +1411,19 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def delete_cross_connect(self, cross_connect_id, **kwargs):
         """
@@ -1225,6 +1448,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1249,11 +1473,19 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def delete_cross_connect_group(self, cross_connect_group_id, **kwargs):
         """
@@ -1279,6 +1511,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1303,11 +1536,19 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def delete_dhcp_options(self, dhcp_id, **kwargs):
         """
@@ -1335,6 +1576,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1359,11 +1601,19 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def delete_drg(self, drg_id, **kwargs):
         """
@@ -1390,6 +1640,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1414,11 +1665,19 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def delete_drg_attachment(self, drg_attachment_id, **kwargs):
         """
@@ -1444,6 +1703,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1468,11 +1728,19 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def delete_internet_gateway(self, ig_id, **kwargs):
         """
@@ -1500,6 +1768,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1524,11 +1793,19 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def delete_ip_sec_connection(self, ipsc_id, **kwargs):
         """
@@ -1559,6 +1836,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1583,11 +1861,19 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def delete_local_peering_gateway(self, local_peering_gateway_id, **kwargs):
         """
@@ -1614,6 +1900,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1638,11 +1925,19 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def delete_private_ip(self, private_ip_id, **kwargs):
         """
@@ -1678,6 +1973,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1702,11 +1998,19 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def delete_route_table(self, rt_id, **kwargs):
         """
@@ -1734,6 +2038,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1758,11 +2063,19 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def delete_security_list(self, security_list_id, **kwargs):
         """
@@ -1790,6 +2103,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1814,11 +2128,19 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def delete_subnet(self, subnet_id, **kwargs):
         """
@@ -1844,6 +2166,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1868,11 +2191,19 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def delete_vcn(self, vcn_id, **kwargs):
         """
@@ -1898,6 +2229,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1922,11 +2254,19 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def delete_virtual_circuit(self, virtual_circuit_id, **kwargs):
         """
@@ -1954,6 +2294,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1978,11 +2319,19 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def get_cpe(self, cpe_id, **kwargs):
         """
@@ -1999,9 +2348,11 @@ class VirtualNetworkClient(object):
         resource_path = "/cpes/{cpeId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_cpe got unknown kwargs: {!r}".format(kwargs))
+                "get_cpe got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "cpeId": cpe_id
@@ -2018,12 +2369,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="Cpe")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Cpe")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Cpe")
 
     def get_cross_connect(self, cross_connect_id, **kwargs):
         """
@@ -2040,9 +2400,11 @@ class VirtualNetworkClient(object):
         resource_path = "/crossConnects/{crossConnectId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_cross_connect got unknown kwargs: {!r}".format(kwargs))
+                "get_cross_connect got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "crossConnectId": cross_connect_id
@@ -2059,12 +2421,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="CrossConnect")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="CrossConnect")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="CrossConnect")
 
     def get_cross_connect_group(self, cross_connect_group_id, **kwargs):
         """
@@ -2081,9 +2452,11 @@ class VirtualNetworkClient(object):
         resource_path = "/crossConnectGroups/{crossConnectGroupId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_cross_connect_group got unknown kwargs: {!r}".format(kwargs))
+                "get_cross_connect_group got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "crossConnectGroupId": cross_connect_group_id
@@ -2100,12 +2473,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="CrossConnectGroup")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="CrossConnectGroup")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="CrossConnectGroup")
 
     def get_cross_connect_letter_of_authority(self, cross_connect_id, **kwargs):
         """
@@ -2122,9 +2504,11 @@ class VirtualNetworkClient(object):
         resource_path = "/crossConnects/{crossConnectId}/letterOfAuthority"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_cross_connect_letter_of_authority got unknown kwargs: {!r}".format(kwargs))
+                "get_cross_connect_letter_of_authority got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "crossConnectId": cross_connect_id
@@ -2141,12 +2525,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="LetterOfAuthority")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="LetterOfAuthority")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="LetterOfAuthority")
 
     def get_cross_connect_status(self, cross_connect_id, **kwargs):
         """
@@ -2163,9 +2556,11 @@ class VirtualNetworkClient(object):
         resource_path = "/crossConnects/{crossConnectId}/status"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_cross_connect_status got unknown kwargs: {!r}".format(kwargs))
+                "get_cross_connect_status got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "crossConnectId": cross_connect_id
@@ -2182,12 +2577,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="CrossConnectStatus")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="CrossConnectStatus")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="CrossConnectStatus")
 
     def get_dhcp_options(self, dhcp_id, **kwargs):
         """
@@ -2204,9 +2608,11 @@ class VirtualNetworkClient(object):
         resource_path = "/dhcps/{dhcpId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_dhcp_options got unknown kwargs: {!r}".format(kwargs))
+                "get_dhcp_options got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "dhcpId": dhcp_id
@@ -2223,12 +2629,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="DhcpOptions")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="DhcpOptions")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="DhcpOptions")
 
     def get_drg(self, drg_id, **kwargs):
         """
@@ -2245,9 +2660,11 @@ class VirtualNetworkClient(object):
         resource_path = "/drgs/{drgId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_drg got unknown kwargs: {!r}".format(kwargs))
+                "get_drg got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "drgId": drg_id
@@ -2264,12 +2681,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="Drg")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Drg")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Drg")
 
     def get_drg_attachment(self, drg_attachment_id, **kwargs):
         """
@@ -2286,9 +2712,11 @@ class VirtualNetworkClient(object):
         resource_path = "/drgAttachments/{drgAttachmentId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_drg_attachment got unknown kwargs: {!r}".format(kwargs))
+                "get_drg_attachment got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "drgAttachmentId": drg_attachment_id
@@ -2305,12 +2733,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="DrgAttachment")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="DrgAttachment")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="DrgAttachment")
 
     def get_fast_connect_provider_service(self, provider_service_id, **kwargs):
         """
@@ -2330,9 +2767,11 @@ class VirtualNetworkClient(object):
         resource_path = "/fastConnectProviderServices/{providerServiceId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_fast_connect_provider_service got unknown kwargs: {!r}".format(kwargs))
+                "get_fast_connect_provider_service got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "providerServiceId": provider_service_id
@@ -2349,12 +2788,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="FastConnectProviderService")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="FastConnectProviderService")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="FastConnectProviderService")
 
     def get_internet_gateway(self, ig_id, **kwargs):
         """
@@ -2371,9 +2819,11 @@ class VirtualNetworkClient(object):
         resource_path = "/internetGateways/{igId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_internet_gateway got unknown kwargs: {!r}".format(kwargs))
+                "get_internet_gateway got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "igId": ig_id
@@ -2390,12 +2840,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="InternetGateway")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="InternetGateway")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="InternetGateway")
 
     def get_ip_sec_connection(self, ipsc_id, **kwargs):
         """
@@ -2414,9 +2873,11 @@ class VirtualNetworkClient(object):
         resource_path = "/ipsecConnections/{ipscId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_ip_sec_connection got unknown kwargs: {!r}".format(kwargs))
+                "get_ip_sec_connection got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "ipscId": ipsc_id
@@ -2433,12 +2894,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="IPSecConnection")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="IPSecConnection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="IPSecConnection")
 
     def get_ip_sec_connection_device_config(self, ipsc_id, **kwargs):
         """
@@ -2456,9 +2926,11 @@ class VirtualNetworkClient(object):
         resource_path = "/ipsecConnections/{ipscId}/deviceConfig"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_ip_sec_connection_device_config got unknown kwargs: {!r}".format(kwargs))
+                "get_ip_sec_connection_device_config got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "ipscId": ipsc_id
@@ -2475,12 +2947,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="IPSecConnectionDeviceConfig")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="IPSecConnectionDeviceConfig")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="IPSecConnectionDeviceConfig")
 
     def get_ip_sec_connection_device_status(self, ipsc_id, **kwargs):
         """
@@ -2497,9 +2978,11 @@ class VirtualNetworkClient(object):
         resource_path = "/ipsecConnections/{ipscId}/deviceStatus"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_ip_sec_connection_device_status got unknown kwargs: {!r}".format(kwargs))
+                "get_ip_sec_connection_device_status got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "ipscId": ipsc_id
@@ -2516,12 +2999,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="IPSecConnectionDeviceStatus")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="IPSecConnectionDeviceStatus")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="IPSecConnectionDeviceStatus")
 
     def get_local_peering_gateway(self, local_peering_gateway_id, **kwargs):
         """
@@ -2538,9 +3030,11 @@ class VirtualNetworkClient(object):
         resource_path = "/localPeeringGateways/{localPeeringGatewayId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_local_peering_gateway got unknown kwargs: {!r}".format(kwargs))
+                "get_local_peering_gateway got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "localPeeringGatewayId": local_peering_gateway_id
@@ -2557,12 +3051,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="LocalPeeringGateway")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="LocalPeeringGateway")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="LocalPeeringGateway")
 
     def get_private_ip(self, private_ip_id, **kwargs):
         """
@@ -2582,9 +3085,11 @@ class VirtualNetworkClient(object):
         resource_path = "/privateIps/{privateIpId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_private_ip got unknown kwargs: {!r}".format(kwargs))
+                "get_private_ip got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "privateIpId": private_ip_id
@@ -2601,12 +3106,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="PrivateIp")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="PrivateIp")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="PrivateIp")
 
     def get_route_table(self, rt_id, **kwargs):
         """
@@ -2623,9 +3137,11 @@ class VirtualNetworkClient(object):
         resource_path = "/routeTables/{rtId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_route_table got unknown kwargs: {!r}".format(kwargs))
+                "get_route_table got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "rtId": rt_id
@@ -2642,12 +3158,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="RouteTable")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="RouteTable")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="RouteTable")
 
     def get_security_list(self, security_list_id, **kwargs):
         """
@@ -2664,9 +3189,11 @@ class VirtualNetworkClient(object):
         resource_path = "/securityLists/{securityListId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_security_list got unknown kwargs: {!r}".format(kwargs))
+                "get_security_list got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "securityListId": security_list_id
@@ -2683,12 +3210,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="SecurityList")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="SecurityList")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="SecurityList")
 
     def get_subnet(self, subnet_id, **kwargs):
         """
@@ -2705,9 +3241,11 @@ class VirtualNetworkClient(object):
         resource_path = "/subnets/{subnetId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_subnet got unknown kwargs: {!r}".format(kwargs))
+                "get_subnet got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "subnetId": subnet_id
@@ -2724,12 +3262,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="Subnet")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Subnet")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Subnet")
 
     def get_vcn(self, vcn_id, **kwargs):
         """
@@ -2746,9 +3293,11 @@ class VirtualNetworkClient(object):
         resource_path = "/vcns/{vcnId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_vcn got unknown kwargs: {!r}".format(kwargs))
+                "get_vcn got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "vcnId": vcn_id
@@ -2765,12 +3314,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="Vcn")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Vcn")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Vcn")
 
     def get_virtual_circuit(self, virtual_circuit_id, **kwargs):
         """
@@ -2787,9 +3345,11 @@ class VirtualNetworkClient(object):
         resource_path = "/virtualCircuits/{virtualCircuitId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_virtual_circuit got unknown kwargs: {!r}".format(kwargs))
+                "get_virtual_circuit got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "virtualCircuitId": virtual_circuit_id
@@ -2806,12 +3366,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="VirtualCircuit")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="VirtualCircuit")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="VirtualCircuit")
 
     def get_vnic(self, vnic_id, **kwargs):
         """
@@ -2831,9 +3400,11 @@ class VirtualNetworkClient(object):
         resource_path = "/vnics/{vnicId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_vnic got unknown kwargs: {!r}".format(kwargs))
+                "get_vnic got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "vnicId": vnic_id
@@ -2850,12 +3421,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="Vnic")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Vnic")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Vnic")
 
     def list_cpes(self, compartment_id, **kwargs):
         """
@@ -2882,6 +3462,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "limit",
             "page"
         ]
@@ -2902,12 +3483,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[Cpe]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[Cpe]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[Cpe]")
 
     def list_cross_connect_groups(self, compartment_id, **kwargs):
         """
@@ -2960,6 +3550,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "limit",
             "page",
             "display_name",
@@ -3009,12 +3600,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[CrossConnectGroup]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[CrossConnectGroup]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[CrossConnectGroup]")
 
     def list_cross_connect_locations(self, compartment_id, **kwargs):
         """
@@ -3042,6 +3642,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "limit",
             "page"
         ]
@@ -3062,12 +3663,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[CrossConnectLocation]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[CrossConnectLocation]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[CrossConnectLocation]")
 
     def list_cross_connects(self, compartment_id, **kwargs):
         """
@@ -3124,6 +3734,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "cross_connect_group_id",
             "limit",
             "page",
@@ -3175,12 +3786,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[CrossConnect]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[CrossConnect]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[CrossConnect]")
 
     def list_crossconnect_port_speed_shapes(self, compartment_id, **kwargs):
         """
@@ -3209,6 +3829,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "limit",
             "page"
         ]
@@ -3229,12 +3850,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[CrossConnectPortSpeedShape]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[CrossConnectPortSpeedShape]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[CrossConnectPortSpeedShape]")
 
     def list_dhcp_options(self, compartment_id, vcn_id, **kwargs):
         """
@@ -3292,6 +3922,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "limit",
             "page",
             "display_name",
@@ -3342,12 +3973,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[DhcpOptions]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[DhcpOptions]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[DhcpOptions]")
 
     def list_drg_attachments(self, compartment_id, **kwargs):
         """
@@ -3381,6 +4021,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "vcn_id",
             "drg_id",
             "limit",
@@ -3405,12 +4046,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[DrgAttachment]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[DrgAttachment]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[DrgAttachment]")
 
     def list_drgs(self, compartment_id, **kwargs):
         """
@@ -3437,6 +4087,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "limit",
             "page"
         ]
@@ -3457,12 +4108,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[Drg]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[Drg]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[Drg]")
 
     def list_fast_connect_provider_services(self, compartment_id, **kwargs):
         """
@@ -3497,6 +4157,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "limit",
             "page"
         ]
@@ -3517,12 +4178,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[FastConnectProviderService]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[FastConnectProviderService]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[FastConnectProviderService]")
 
     def list_fast_connect_provider_virtual_circuit_bandwidth_shapes(self, provider_service_id, **kwargs):
         """
@@ -3554,6 +4224,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "limit",
             "page"
         ]
@@ -3583,13 +4254,23 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[VirtualCircuitBandwidthShape]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[VirtualCircuitBandwidthShape]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[VirtualCircuitBandwidthShape]")
 
     def list_internet_gateways(self, compartment_id, vcn_id, **kwargs):
         """
@@ -3645,6 +4326,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "limit",
             "page",
             "display_name",
@@ -3695,12 +4377,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[InternetGateway]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[InternetGateway]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[InternetGateway]")
 
     def list_ip_sec_connections(self, compartment_id, **kwargs):
         """
@@ -3734,6 +4425,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "drg_id",
             "cpe_id",
             "limit",
@@ -3758,12 +4450,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[IPSecConnection]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[IPSecConnection]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[IPSecConnection]")
 
     def list_local_peering_gateways(self, compartment_id, vcn_id, **kwargs):
         """
@@ -3794,6 +4495,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "limit",
             "page"
         ]
@@ -3815,12 +4517,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[LocalPeeringGateway]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[LocalPeeringGateway]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[LocalPeeringGateway]")
 
     def list_private_ips(self, **kwargs):
         """
@@ -3867,6 +4578,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "limit",
             "page",
             "ip_address",
@@ -3892,12 +4604,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[PrivateIp]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[PrivateIp]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[PrivateIp]")
 
     def list_route_tables(self, compartment_id, vcn_id, **kwargs):
         """
@@ -3955,6 +4676,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "limit",
             "page",
             "display_name",
@@ -4005,12 +4727,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[RouteTable]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[RouteTable]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[RouteTable]")
 
     def list_security_lists(self, compartment_id, vcn_id, **kwargs):
         """
@@ -4066,6 +4797,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "limit",
             "page",
             "display_name",
@@ -4116,12 +4848,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[SecurityList]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[SecurityList]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[SecurityList]")
 
     def list_subnets(self, compartment_id, vcn_id, **kwargs):
         """
@@ -4177,6 +4918,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "limit",
             "page",
             "display_name",
@@ -4227,12 +4969,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[Subnet]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[Subnet]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[Subnet]")
 
     def list_vcns(self, compartment_id, **kwargs):
         """
@@ -4285,6 +5036,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "limit",
             "page",
             "display_name",
@@ -4334,12 +5086,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[Vcn]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[Vcn]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[Vcn]")
 
     def list_virtual_circuit_bandwidth_shapes(self, compartment_id, **kwargs):
         """
@@ -4366,6 +5127,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "limit",
             "page"
         ]
@@ -4386,12 +5148,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[VirtualCircuitBandwidthShape]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[VirtualCircuitBandwidthShape]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[VirtualCircuitBandwidthShape]")
 
     def list_virtual_circuit_public_prefixes(self, virtual_circuit_id, **kwargs):
         """
@@ -4417,6 +5188,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "verification_state"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -4451,13 +5223,23 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[VirtualCircuitPublicPrefix]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[VirtualCircuitPublicPrefix]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[VirtualCircuitPublicPrefix]")
 
     def list_virtual_circuits(self, compartment_id, **kwargs):
         """
@@ -4510,6 +5292,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "limit",
             "page",
             "display_name",
@@ -4559,12 +5342,21 @@ class VirtualNetworkClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[VirtualCircuit]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[VirtualCircuit]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[VirtualCircuit]")
 
     def update_cpe(self, cpe_id, update_cpe_details, **kwargs):
         """
@@ -4592,6 +5384,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -4616,13 +5409,23 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_cpe_details,
-            response_type="Cpe")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_cpe_details,
+                response_type="Cpe")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_cpe_details,
+                response_type="Cpe")
 
     def update_cross_connect(self, cross_connect_id, update_cross_connect_details, **kwargs):
         """
@@ -4649,6 +5452,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -4673,13 +5477,23 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_cross_connect_details,
-            response_type="CrossConnect")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_cross_connect_details,
+                response_type="CrossConnect")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_cross_connect_details,
+                response_type="CrossConnect")
 
     def update_cross_connect_group(self, cross_connect_group_id, update_cross_connect_group_details, **kwargs):
         """
@@ -4707,6 +5521,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -4731,13 +5546,23 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_cross_connect_group_details,
-            response_type="CrossConnectGroup")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_cross_connect_group_details,
+                response_type="CrossConnectGroup")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_cross_connect_group_details,
+                response_type="CrossConnectGroup")
 
     def update_dhcp_options(self, dhcp_id, update_dhcp_details, **kwargs):
         """
@@ -4767,6 +5592,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -4791,13 +5617,23 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_dhcp_details,
-            response_type="DhcpOptions")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_dhcp_details,
+                response_type="DhcpOptions")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_dhcp_details,
+                response_type="DhcpOptions")
 
     def update_drg(self, drg_id, update_drg_details, **kwargs):
         """
@@ -4824,6 +5660,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -4848,13 +5685,23 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_drg_details,
-            response_type="Drg")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_drg_details,
+                response_type="Drg")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_drg_details,
+                response_type="Drg")
 
     def update_drg_attachment(self, drg_attachment_id, update_drg_attachment_details, **kwargs):
         """
@@ -4882,6 +5729,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -4906,13 +5754,23 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_drg_attachment_details,
-            response_type="DrgAttachment")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_drg_attachment_details,
+                response_type="DrgAttachment")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_drg_attachment_details,
+                response_type="DrgAttachment")
 
     def update_internet_gateway(self, ig_id, update_internet_gateway_details, **kwargs):
         """
@@ -4943,6 +5801,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -4967,13 +5826,23 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_internet_gateway_details,
-            response_type="InternetGateway")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_internet_gateway_details,
+                response_type="InternetGateway")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_internet_gateway_details,
+                response_type="InternetGateway")
 
     def update_ip_sec_connection(self, ipsc_id, update_ip_sec_connection_details, **kwargs):
         """
@@ -5001,6 +5870,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -5025,13 +5895,23 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_ip_sec_connection_details,
-            response_type="IPSecConnection")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_ip_sec_connection_details,
+                response_type="IPSecConnection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_ip_sec_connection_details,
+                response_type="IPSecConnection")
 
     def update_local_peering_gateway(self, local_peering_gateway_id, update_local_peering_gateway_details, **kwargs):
         """
@@ -5058,6 +5938,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -5082,13 +5963,23 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_local_peering_gateway_details,
-            response_type="LocalPeeringGateway")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_local_peering_gateway_details,
+                response_type="LocalPeeringGateway")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_local_peering_gateway_details,
+                response_type="LocalPeeringGateway")
 
     def update_private_ip(self, private_ip_id, update_private_ip_details, **kwargs):
         """
@@ -5124,6 +6015,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -5148,13 +6040,23 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_private_ip_details,
-            response_type="PrivateIp")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_private_ip_details,
+                response_type="PrivateIp")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_private_ip_details,
+                response_type="PrivateIp")
 
     def update_route_table(self, rt_id, update_route_table_details, **kwargs):
         """
@@ -5184,6 +6086,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -5208,13 +6111,23 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_route_table_details,
-            response_type="RouteTable")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_route_table_details,
+                response_type="RouteTable")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_route_table_details,
+                response_type="RouteTable")
 
     def update_security_list(self, security_list_id, update_security_list_details, **kwargs):
         """
@@ -5245,6 +6158,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -5269,13 +6183,23 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_security_list_details,
-            response_type="SecurityList")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_security_list_details,
+                response_type="SecurityList")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_security_list_details,
+                response_type="SecurityList")
 
     def update_subnet(self, subnet_id, update_subnet_details, **kwargs):
         """
@@ -5302,6 +6226,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -5326,13 +6251,23 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_subnet_details,
-            response_type="Subnet")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_subnet_details,
+                response_type="Subnet")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_subnet_details,
+                response_type="Subnet")
 
     def update_vcn(self, vcn_id, update_vcn_details, **kwargs):
         """
@@ -5360,6 +6295,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -5384,13 +6320,23 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_vcn_details,
-            response_type="Vcn")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_vcn_details,
+                response_type="Vcn")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_vcn_details,
+                response_type="Vcn")
 
     def update_virtual_circuit(self, virtual_circuit_id, update_virtual_circuit_details, **kwargs):
         """
@@ -5442,6 +6388,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -5466,13 +6413,23 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_virtual_circuit_details,
-            response_type="VirtualCircuit")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_virtual_circuit_details,
+                response_type="VirtualCircuit")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_virtual_circuit_details,
+                response_type="VirtualCircuit")
 
     def update_vnic(self, vnic_id, update_vnic_details, **kwargs):
         """
@@ -5499,6 +6456,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -5523,10 +6481,20 @@ class VirtualNetworkClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_vnic_details,
-            response_type="Vnic")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_vnic_details,
+                response_type="Vnic")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_vnic_details,
+                response_type="Vnic")
