@@ -3,7 +3,7 @@
 
 from __future__ import absolute_import
 
-import requests
+import requests  # noqa: F401
 import six
 
 from ..base_client import BaseClient
@@ -627,8 +627,8 @@ class ObjectStorageClient(object):
     def get_namespace(self, **kwargs):
         """
         GET Namespace Name
-        Gets the name of the namespace for the user making the request. An account name must be unique, must start with a
-        letter, and can have up to 15 lowercase letters and numbers. You cannot use spaces or special characters.
+        Namespaces are unique. Namespaces are either the tenancy name or a random string automatically generated during
+        account creation. You cannot edit a namespace.
 
 
         :param str opc_client_request_id: (optional)
@@ -1016,7 +1016,7 @@ class ObjectStorageClient(object):
             The top-level namespace used for the request.
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to create the bucket.
+            The ID of the compartment in which to list buckets.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -1260,10 +1260,10 @@ class ObjectStorageClient(object):
 
         :param str delimiter: (optional)
             When this parameter is set, only objects whose names do not contain the delimiter character
-            (after an optionally specified prefix) are returned. Scanned objects whose names contain the
-            delimiter have part of their name up to the last occurrence of the delimiter (after the optional
-            prefix) returned as a set of prefixes. Note that only '/' is a supported delimiter character at
-            this time.
+            (after an optionally specified prefix) are returned in the objects key of the response body.
+            Scanned objects whose names contain the delimiter have the part of their name up to the first
+            occurrence of the delimiter (including the optional prefix) returned as a set of prefixes.
+            Note that only '/' is a supported delimiter character at this time.
 
         :param str fields: (optional)
             Object summary in list of objects includes the 'name' field. This parameter can also include 'size'

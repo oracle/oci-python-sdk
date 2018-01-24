@@ -82,7 +82,7 @@ class TagSummary(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this TagSummary.
-        The OCID of the compartment which the tag definition is attached to.
+        The OCID of the compartment that contains the tag definition.
 
 
         :return: The compartment_id of this TagSummary.
@@ -94,7 +94,7 @@ class TagSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this TagSummary.
-        The OCID of the compartment which the tag definition is attached to.
+        The OCID of the compartment that contains the tag definition.
 
 
         :param compartment_id: The compartment_id of this TagSummary.
@@ -130,7 +130,7 @@ class TagSummary(object):
     def name(self):
         """
         Gets the name of this TagSummary.
-        The name of the tag which must be unique across all tags in the tagNamespace and cannot be changed.
+        The name of the tag. The name must be unique across all tags in the tag namespace and can't be changed.
 
 
         :return: The name of this TagSummary.
@@ -142,7 +142,7 @@ class TagSummary(object):
     def name(self, name):
         """
         Sets the name of this TagSummary.
-        The name of the tag which must be unique across all tags in the tagNamespace and cannot be changed.
+        The name of the tag. The name must be unique across all tags in the tag namespace and can't be changed.
 
 
         :param name: The name of this TagSummary.
@@ -178,8 +178,11 @@ class TagSummary(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this TagSummary.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this TagSummary.
@@ -191,8 +194,11 @@ class TagSummary(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this TagSummary.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this TagSummary.
@@ -204,8 +210,11 @@ class TagSummary(object):
     def defined_tags(self):
         """
         Gets the defined_tags of this TagSummary.
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this TagSummary.
@@ -217,8 +226,11 @@ class TagSummary(object):
     def defined_tags(self, defined_tags):
         """
         Sets the defined_tags of this TagSummary.
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this TagSummary.
@@ -230,7 +242,10 @@ class TagSummary(object):
     def is_retired(self):
         """
         Gets the is_retired of this TagSummary.
-        Indicated whether or not the tag is retired
+        Whether the tag is retired.
+        See `Retiring Key Definitions and Namespace Definitions`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring
 
 
         :return: The is_retired of this TagSummary.
@@ -242,7 +257,10 @@ class TagSummary(object):
     def is_retired(self, is_retired):
         """
         Sets the is_retired of this TagSummary.
-        Indicated whether or not the tag is retired
+        Whether the tag is retired.
+        See `Retiring Key Definitions and Namespace Definitions`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring
 
 
         :param is_retired: The is_retired of this TagSummary.

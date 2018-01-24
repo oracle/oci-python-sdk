@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+1.3.13 - 2018-01-25
+====================
+
+Added
+-----
+* Support for using the ``ObjectReadWithoutList`` public access type when creating and updating buckets
+* Support for dynamic groups in Identity and Access Management Service
+
+====================
 1.3.12 - 2018-01-11
 ====================
 

@@ -3,6 +3,7 @@
 
 from __future__ import absolute_import
 
+import requests  # noqa: F401
 import six
 
 from ..base_client import BaseClient
@@ -1411,20 +1412,21 @@ class LoadBalancerClient(object):
             Example: `full`
 
         :param str sort_by: (optional)
-            The field to sort by.  Only one sort order may be provided.  Time created is default ordered as descending.  Display name is default ordered as ascending.
+            The field to sort by.  You can provide one sort order (`sortOrder`). Default order for TIMECREATED is descending.
+            Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
 
             Allowed values are: "TIMECREATED", "DISPLAYNAME"
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order is case sensitive.
 
             Allowed values are: "ASC", "DESC"
 
         :param str display_name: (optional)
-            A filter to only return resources that match the given display name exactly.
+            A filter to return only resources that match the given display name exactly.
 
         :param str lifecycle_state: (optional)
-            A filter to only return resources that match the given lifecycle state.
+            A filter to return only resources that match the given lifecycle state.
 
             Allowed values are: "CREATING", "FAILED", "ACTIVE", "DELETING", "DELETED"
 

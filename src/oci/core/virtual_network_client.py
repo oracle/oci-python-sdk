@@ -3,6 +3,7 @@
 
 from __future__ import absolute_import
 
+import requests  # noqa: F401
 import six
 
 from ..base_client import BaseClient

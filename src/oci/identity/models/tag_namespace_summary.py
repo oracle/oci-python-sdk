@@ -82,7 +82,7 @@ class TagNamespaceSummary(object):
     def id(self):
         """
         Gets the id of this TagNamespaceSummary.
-        The OCID of the tagNamespace.
+        The OCID of the tag namespace.
 
 
         :return: The id of this TagNamespaceSummary.
@@ -94,7 +94,7 @@ class TagNamespaceSummary(object):
     def id(self, id):
         """
         Sets the id of this TagNamespaceSummary.
-        The OCID of the tagNamespace.
+        The OCID of the tag namespace.
 
 
         :param id: The id of this TagNamespaceSummary.
@@ -106,7 +106,7 @@ class TagNamespaceSummary(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this TagNamespaceSummary.
-        The OCID of the compartment to which the namespace is attached.
+        The OCID of the compartment that contains the tag namespace.
 
 
         :return: The compartment_id of this TagNamespaceSummary.
@@ -118,7 +118,7 @@ class TagNamespaceSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this TagNamespaceSummary.
-        The OCID of the compartment to which the namespace is attached.
+        The OCID of the compartment that contains the tag namespace.
 
 
         :param compartment_id: The compartment_id of this TagNamespaceSummary.
@@ -130,7 +130,7 @@ class TagNamespaceSummary(object):
     def name(self):
         """
         Gets the name of this TagNamespaceSummary.
-        The name of the tagNamespace. It must be unique across all tagNamespaces in the tenancy and cannot be changed.
+        The name of the tag namespace. It must be unique across all tag namespaces in the tenancy and cannot be changed.
 
 
         :return: The name of this TagNamespaceSummary.
@@ -142,7 +142,7 @@ class TagNamespaceSummary(object):
     def name(self, name):
         """
         Sets the name of this TagNamespaceSummary.
-        The name of the tagNamespace. It must be unique across all tagNamespaces in the tenancy and cannot be changed.
+        The name of the tag namespace. It must be unique across all tag namespaces in the tenancy and cannot be changed.
 
 
         :param name: The name of this TagNamespaceSummary.
@@ -154,7 +154,7 @@ class TagNamespaceSummary(object):
     def description(self):
         """
         Gets the description of this TagNamespaceSummary.
-        The description you assign to the tagNamespace.
+        The description you assign to the tag namespace.
 
 
         :return: The description of this TagNamespaceSummary.
@@ -166,7 +166,7 @@ class TagNamespaceSummary(object):
     def description(self, description):
         """
         Sets the description of this TagNamespaceSummary.
-        The description you assign to the tagNamespace.
+        The description you assign to the tag namespace.
 
 
         :param description: The description of this TagNamespaceSummary.
@@ -178,8 +178,11 @@ class TagNamespaceSummary(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this TagNamespaceSummary.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this TagNamespaceSummary.
@@ -191,8 +194,11 @@ class TagNamespaceSummary(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this TagNamespaceSummary.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this TagNamespaceSummary.
@@ -204,8 +210,11 @@ class TagNamespaceSummary(object):
     def defined_tags(self):
         """
         Gets the defined_tags of this TagNamespaceSummary.
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this TagNamespaceSummary.
@@ -217,8 +226,11 @@ class TagNamespaceSummary(object):
     def defined_tags(self, defined_tags):
         """
         Sets the defined_tags of this TagNamespaceSummary.
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this TagNamespaceSummary.
@@ -230,7 +242,10 @@ class TagNamespaceSummary(object):
     def is_retired(self):
         """
         Gets the is_retired of this TagNamespaceSummary.
-        Indicated whether or not the tagNamespace is retired
+        Whether the tag namespace is retired.
+        For more information, see `Retiring Key Definitions and Namespace Definitions`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring
 
 
         :return: The is_retired of this TagNamespaceSummary.
@@ -242,7 +257,10 @@ class TagNamespaceSummary(object):
     def is_retired(self, is_retired):
         """
         Sets the is_retired of this TagNamespaceSummary.
-        Indicated whether or not the tagNamespace is retired
+        Whether the tag namespace is retired.
+        For more information, see `Retiring Key Definitions and Namespace Definitions`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring
 
 
         :param is_retired: The is_retired of this TagNamespaceSummary.

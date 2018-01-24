@@ -20,6 +20,7 @@ class TestIdentity:
                 self.subtest_compartment_operations(identity, config)
                 self.subtest_user_operations(identity, config)
                 self.subtest_group_operations(identity, config)
+                self.subtest_dynamic_group_operations(identity, config)
                 self.subtest_user_group_membership_operations(identity, config)
                 self.subtest_api_key_operations(identity)
                 self.subtest_ui_password_operations(identity)
@@ -103,6 +104,55 @@ class TestIdentity:
 
         result = identity.get_group(self.group_ocid)
         self.validate_response(result, extra_validation=self.validate_group, expect_etag=True)
+
+    def subtest_dynamic_group_operations(self, identity, config):
+        dynamic_group_name = util.random_name('py_sdk_dynamic_group')
+        dynamic_group_description = 'Created by Python SDK identity tests'
+
+        create_group_details = oci.identity.models.CreateDynamicGroupDetails(
+            compartment_id=config['tenancy'],
+            name=dynamic_group_name,
+            description=dynamic_group_description,
+            matching_rule='ANY{{instance.compartment.id=\'{}\'}}'.format(util.COMPARTMENT_ID)
+        )
+
+        result = identity.create_dynamic_group(create_group_details)
+        self.validate_response(result, expect_etag=True)
+        assert result.data.id is not None
+        self.dynamic_group_id = result.data.id
+        assert create_group_details.name == result.data.name
+        assert create_group_details.description == result.data.description
+        assert create_group_details.matching_rule == result.data.matching_rule
+        assert create_group_details.compartment_id == result.data.compartment_id
+
+        update_group_details = oci.identity.models.UpdateDynamicGroupDetails(
+            description='An updated description',
+            matching_rule='ANY{{instance.compartment.id=\'{}\'}}'.format(config['tenancy'])
+        )
+
+        result = identity.update_dynamic_group(self.dynamic_group_id, update_group_details)
+        self.validate_response(result, expect_etag=True)
+        assert create_group_details.name == result.data.name
+        assert update_group_details.description == result.data.description
+        assert update_group_details.matching_rule == result.data.matching_rule
+
+        result = identity.get_dynamic_group(self.dynamic_group_id)
+        assert create_group_details.name == result.data.name
+        assert update_group_details.description == result.data.description
+        assert update_group_details.matching_rule == result.data.matching_rule
+        assert create_group_details.compartment_id == result.data.compartment_id
+
+        all_dynamic_groups_response = oci.pagination.list_call_get_all_results(identity.list_dynamic_groups, config['tenancy'])
+        found_group = False
+        for dg in all_dynamic_groups_response.data:
+            if dg.id == self.dynamic_group_id:
+                assert create_group_details.name == dg.name
+                assert update_group_details.description == dg.description
+                assert update_group_details.matching_rule == dg.matching_rule
+                assert create_group_details.compartment_id == dg.compartment_id
+                found_group = True
+                break
+        assert found_group
 
     def subtest_user_group_membership_operations(self, identity, config):
         add_user_to_group_details = oci.identity.models.AddUserToGroupDetails()
@@ -317,6 +367,9 @@ P8ZM9xRukuJ4bnPTe8olOFB8UCCkAEmkUxtZI4vF90HvDKDOV0KY4OH5YESY6apH
 
         if self.group_ocid:
             identity.delete_group(self.group_ocid)
+
+        if hasattr(self, 'dynamic_group_id'):
+            identity.delete_dynamic_group(self.dynamic_group_id)
 
     def validate_group(self, result):
         if hasattr(result.data, '__len__'):

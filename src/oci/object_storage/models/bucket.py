@@ -44,7 +44,7 @@ class Bucket(object):
 
         :param public_access_type:
             The value to assign to the public_access_type property of this Bucket.
-            Allowed values for this property are: "NoPublicAccess", "ObjectRead", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "NoPublicAccess", "ObjectRead", "ObjectReadWithoutList", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type public_access_type: str
 
@@ -270,9 +270,10 @@ class Bucket(object):
         The type of public access enabled on this bucket.
         A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the
         bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the
-        `GetObject`, `HeadObject`, and `ListObjects` operations.
+        `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled on the
+        bucket, public access is allowed for the `GetObject` and `HeadObject` operations.
 
-        Allowed values for this property are: "NoPublicAccess", "ObjectRead", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "NoPublicAccess", "ObjectRead", "ObjectReadWithoutList", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -288,13 +289,14 @@ class Bucket(object):
         The type of public access enabled on this bucket.
         A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the
         bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the
-        `GetObject`, `HeadObject`, and `ListObjects` operations.
+        `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled on the
+        bucket, public access is allowed for the `GetObject` and `HeadObject` operations.
 
 
         :param public_access_type: The public_access_type of this Bucket.
         :type: str
         """
-        allowed_values = ["NoPublicAccess", "ObjectRead"]
+        allowed_values = ["NoPublicAccess", "ObjectRead", "ObjectReadWithoutList"]
         if not value_allowed_none_or_none_sentinel(public_access_type, allowed_values):
             public_access_type = 'UNKNOWN_ENUM_VALUE'
         self._public_access_type = public_access_type

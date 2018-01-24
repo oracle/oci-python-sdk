@@ -28,7 +28,7 @@ class CreateBucketDetails(object):
 
         :param public_access_type:
             The value to assign to the public_access_type property of this CreateBucketDetails.
-            Allowed values for this property are: "NoPublicAccess", "ObjectRead"
+            Allowed values for this property are: "NoPublicAccess", "ObjectRead", "ObjectReadWithoutList"
         :type public_access_type: str
 
         :param storage_tier:
@@ -142,9 +142,10 @@ class CreateBucketDetails(object):
         The type of public access enabled on this bucket.
         A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the
         bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the
-        `GetObject`, `HeadObject`, and `ListObjects` operations.
+        `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled on the bucket,
+        public access is allowed for the `GetObject` and `HeadObject` operations.
 
-        Allowed values for this property are: "NoPublicAccess", "ObjectRead"
+        Allowed values for this property are: "NoPublicAccess", "ObjectRead", "ObjectReadWithoutList"
 
 
         :return: The public_access_type of this CreateBucketDetails.
@@ -159,13 +160,14 @@ class CreateBucketDetails(object):
         The type of public access enabled on this bucket.
         A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the
         bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the
-        `GetObject`, `HeadObject`, and `ListObjects` operations.
+        `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled on the bucket,
+        public access is allowed for the `GetObject` and `HeadObject` operations.
 
 
         :param public_access_type: The public_access_type of this CreateBucketDetails.
         :type: str
         """
-        allowed_values = ["NoPublicAccess", "ObjectRead"]
+        allowed_values = ["NoPublicAccess", "ObjectRead", "ObjectReadWithoutList"]
         if not value_allowed_none_or_none_sentinel(public_access_type, allowed_values):
             raise ValueError(
                 "Invalid value for `public_access_type`, must be None or one of {0}"

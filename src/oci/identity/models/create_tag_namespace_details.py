@@ -61,7 +61,7 @@ class CreateTagNamespaceDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateTagNamespaceDetails.
-        The OCID of the tenancy containing the user.
+        The OCID of the tenancy containing the tag namespace.
 
 
         :return: The compartment_id of this CreateTagNamespaceDetails.
@@ -73,7 +73,7 @@ class CreateTagNamespaceDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateTagNamespaceDetails.
-        The OCID of the tenancy containing the user.
+        The OCID of the tenancy containing the tag namespace.
 
 
         :param compartment_id: The compartment_id of this CreateTagNamespaceDetails.
@@ -85,7 +85,7 @@ class CreateTagNamespaceDetails(object):
     def name(self):
         """
         **[Required]** Gets the name of this CreateTagNamespaceDetails.
-        The name of the tagNamespace. It must be unique across all tagNamespaces in the tenancy and cannot be changed.
+        The name you assign to the tag namespace during creation. It must be unique across all tag namespaces in the tenancy and cannot be changed.
 
 
         :return: The name of this CreateTagNamespaceDetails.
@@ -97,7 +97,7 @@ class CreateTagNamespaceDetails(object):
     def name(self, name):
         """
         Sets the name of this CreateTagNamespaceDetails.
-        The name of the tagNamespace. It must be unique across all tagNamespaces in the tenancy and cannot be changed.
+        The name you assign to the tag namespace during creation. It must be unique across all tag namespaces in the tenancy and cannot be changed.
 
 
         :param name: The name of this CreateTagNamespaceDetails.
@@ -109,7 +109,7 @@ class CreateTagNamespaceDetails(object):
     def description(self):
         """
         **[Required]** Gets the description of this CreateTagNamespaceDetails.
-        The description of the tagNamespace.
+        The description you assign to the tag namespace during creation.
 
 
         :return: The description of this CreateTagNamespaceDetails.
@@ -121,7 +121,7 @@ class CreateTagNamespaceDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateTagNamespaceDetails.
-        The description of the tagNamespace.
+        The description you assign to the tag namespace during creation.
 
 
         :param description: The description of this CreateTagNamespaceDetails.
@@ -133,8 +133,11 @@ class CreateTagNamespaceDetails(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this CreateTagNamespaceDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateTagNamespaceDetails.
@@ -146,8 +149,11 @@ class CreateTagNamespaceDetails(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this CreateTagNamespaceDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateTagNamespaceDetails.
@@ -159,8 +165,11 @@ class CreateTagNamespaceDetails(object):
     def defined_tags(self):
         """
         Gets the defined_tags of this CreateTagNamespaceDetails.
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateTagNamespaceDetails.
@@ -172,8 +181,11 @@ class CreateTagNamespaceDetails(object):
     def defined_tags(self, defined_tags):
         """
         Sets the defined_tags of this CreateTagNamespaceDetails.
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateTagNamespaceDetails.

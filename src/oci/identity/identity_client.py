@@ -3,6 +3,7 @@
 
 from __future__ import absolute_import
 
+import requests  # noqa: F401
 import six
 
 from ..base_client import BaseClient
@@ -211,6 +212,71 @@ class IdentityClient(object):
             header_params=header_params,
             body=create_customer_secret_key_details,
             response_type="CustomerSecretKey")
+
+    def create_dynamic_group(self, create_dynamic_group_details, **kwargs):
+        """
+        CreateDynamicGroup
+        Creates a new dynamic group in your tenancy.
+
+        You must specify your tenancy's OCID as the compartment ID in the request object (remember that the tenancy
+        is simply the root compartment). Notice that IAM resources (users, groups, compartments, and some policies)
+        reside within the tenancy itself, unlike cloud resources such as compute instances, which typically
+        reside within compartments inside the tenancy. For information about OCIDs, see
+        `Resource Identifiers`__.
+
+        You must also specify a *name* for the dynamic group, which must be unique across all dynamic groups in your
+        tenancy, and cannot be changed. Note that this name has to be also unique accross all groups in your tenancy.
+        You can use this name or the OCID when writing policies that apply to the dynamic group. For more information
+        about policies, see `How Policies Work`__.
+
+        You must also specify a *description* for the dynamic group (although it can be an empty string). It does not
+        have to be unique, and you can change it anytime with :func:`update_dynamic_group`.
+
+        After you send your request, the new object's `lifecycleState` will temporarily be CREATING. Before using the
+        object, first make sure its `lifecycleState` has changed to ACTIVE.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policies.htm
+
+
+        :param CreateDynamicGroupDetails create_dynamic_group_details: (required)
+            Request object for creating a new dynamic group.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.DynamicGroup`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/dynamicGroups/"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_dynamic_group got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            header_params=header_params,
+            body=create_dynamic_group_details,
+            response_type="DynamicGroup")
 
     def create_group(self, create_group_details, **kwargs):
         """
@@ -669,26 +735,25 @@ class IdentityClient(object):
     def create_tag(self, tag_namespace_id, create_tag_details, **kwargs):
         """
         CreateTag
-        Creates a new tag in a given tagNamespace.
+        Creates a new tag in the specified tag namespace.
 
-        You have to specify either the id or the name of the tagNamespace that will contain this tag definition.
+        You must specify either the OCID or the name of the tag namespace that will contain this tag definition.
 
-        You must also specify a *name* for the tag, which must be unique across all tags in the tagNamespace
-        and cannot be changed. All ascii characters are allowed except spaces and dots. Note that names are case
-        insenstive, that means you can not have two different tags with same name but with different casing in
-        one tagNamespace.
-        If you specify a name that's already in use in the tagNamespace, you'll get a 409 error.
+        You must also specify a *name* for the tag, which must be unique across all tags in the tag namespace
+        and cannot be changed. The name can contain any ASCII character except the space (_) or period (.) characters.
+        Names are case insensitive. That means, for example, \"myTag\" and \"mytag\" are not allowed in the same namespace.
+        If you specify a name that's already in use in the tag namespace, a 409 error is returned.
 
         You must also specify a *description* for the tag.
-        It does not have to be unique, and you can change it anytime with
+        It does not have to be unique, and you can change it with
         :func:`update_tag`.
 
 
         :param str tag_namespace_id: (required)
-            The OCID of the tagNamespace
+            The OCID of the tag namespace.
 
         :param CreateTagDetails create_tag_details: (required)
-            Request object for creating a new tag in a given tagNamespace.
+            Request object for creating a new tag in the specified tag namespace.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -740,25 +805,29 @@ class IdentityClient(object):
     def create_tag_namespace(self, create_tag_namespace_details, **kwargs):
         """
         CreateTagNamespace
-        Creates a new tagNamespace in a given compartment.
+        Creates a new tag namespace in the specified compartment.
 
         You must specify the compartment ID in the request object (remember that the tenancy is simply the root
         compartment).
 
         You must also specify a *name* for the namespace, which must be unique across all namespaces in your tenancy
-        and cannot be changed. All ascii characters are allowed except spaces and dots.
-        Note that names are case insenstive, that means you can not have two different namespaces with same name
-        but with different casing in one tenancy.
-        Once you created a namespace, you can not change the name
-        If you specify a name that's already in use in the tennacy, you'll get a 409 error.
+        and cannot be changed. The name can contain any ASCII character except the space (_) or period (.).
+        Names are case insensitive. That means, for example, \"myNamespace\" and \"mynamespace\" are not allowed
+        in the same tenancy. Once you created a namespace, you cannot change the name.
+        If you specify a name that's already in use in the tenancy, a 409 error is returned.
 
         You must also specify a *description* for the namespace.
-        It does not have to be unique, and you can change it anytime with
+        It does not have to be unique, and you can change it with
         :func:`update_tag_namespace`.
+
+        Tag namespaces cannot be deleted, but they can be retired.
+        See `Retiring Key Definitions and Namespace Definitions`__ for more information.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring
 
 
         :param CreateTagNamespaceDetails create_tag_namespace_details: (required)
-            Request object for creating a new tagNamespace.
+            Request object for creating a new tag namespace.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -975,6 +1044,58 @@ class IdentityClient(object):
         path_params = {
             "userId": user_id,
             "customerSecretKeyId": customer_secret_key_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params)
+
+    def delete_dynamic_group(self, dynamic_group_id, **kwargs):
+        """
+        DeleteDynamicGroup
+        Deletes the specified dynamic group.
+
+
+        :param str dynamic_group_id: (required)
+            The OCID of the dynamic group.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/dynamicGroups/{dynamicGroupId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_dynamic_group got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "dynamicGroupId": dynamic_group_id
         }
 
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
@@ -1365,6 +1486,47 @@ class IdentityClient(object):
             header_params=header_params,
             response_type="Compartment")
 
+    def get_dynamic_group(self, dynamic_group_id, **kwargs):
+        """
+        GetDynamicGroup
+        Gets the specified dynamic group's information.
+
+
+        :param str dynamic_group_id: (required)
+            The OCID of the dynamic group.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.DynamicGroup`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/dynamicGroups/{dynamicGroupId}"
+        method = "GET"
+
+        if kwargs:
+            raise ValueError(
+                "get_dynamic_group got unknown kwargs: {!r}".format(kwargs))
+
+        path_params = {
+            "dynamicGroupId": dynamic_group_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            response_type="DynamicGroup")
+
     def get_group(self, group_id, **kwargs):
         """
         GetGroup
@@ -1544,10 +1706,10 @@ class IdentityClient(object):
 
 
         :param str tag_namespace_id: (required)
-            The OCID of the tagNamespace
+            The OCID of the tag namespace.
 
         :param str tag_name: (required)
-            The name of the tag
+            The name of the tag.
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.Tag`
         :rtype: :class:`~oci.response.Response`
@@ -1585,11 +1747,11 @@ class IdentityClient(object):
     def get_tag_namespace(self, tag_namespace_id, **kwargs):
         """
         GetTagNamespace
-        Gets the specified tagNamespace's information.
+        Gets the specified tag namespace's information.
 
 
         :param str tag_namespace_id: (required)
-            The OCID of the tagNamespace
+            The OCID of the tag namespace.
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.TagNamespace`
         :rtype: :class:`~oci.response.Response`
@@ -1925,6 +2087,60 @@ class IdentityClient(object):
             path_params=path_params,
             header_params=header_params,
             response_type="list[CustomerSecretKeySummary]")
+
+    def list_dynamic_groups(self, compartment_id, **kwargs):
+        """
+        ListDynamicGroups
+        Lists the dynamic groups in your tenancy. You must specify your tenancy's OCID as the value for
+        the compartment ID (remember that the tenancy is simply the root compartment).
+        See `Where to Get the Tenancy's OCID and User's OCID`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment (remember that the tenancy is simply the root compartment).
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.DynamicGroup`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/dynamicGroups/"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_dynamic_groups got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            query_params=query_params,
+            header_params=header_params,
+            response_type="list[DynamicGroup]")
 
     def list_groups(self, compartment_id, **kwargs):
         """
@@ -2270,7 +2486,7 @@ class IdentityClient(object):
     def list_tag_namespaces(self, compartment_id, **kwargs):
         """
         ListTagNamespaces
-        List the tagNamespaces in a given compartment.
+        Lists the tag namespaces in the specified compartment.
 
 
         :param str compartment_id: (required)
@@ -2283,8 +2499,8 @@ class IdentityClient(object):
             The maximum number of items to return in a paginated \"List\" call.
 
         :param bool include_subcompartments: (optional)
-            An optional boolean parameter for whether or not to retrieve all tagNamespaces in sub compartments. In case
-            of absence of this parameter, only tagNamespaces that exist directly in this compartment will be retrieved.
+            An optional boolean parameter indicating whether to retrieve all tag namespaces in subcompartments. If this
+            parameter is not specified, only the tag namespaces defined in the specified compartment are retrieved.
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.TagNamespaceSummary`
         :rtype: :class:`~oci.response.Response`
@@ -2326,11 +2542,11 @@ class IdentityClient(object):
     def list_tags(self, tag_namespace_id, **kwargs):
         """
         ListTags
-        List the tags that are defined in a given tagNamespace.
+        Lists the tag definitions in the specified tag namespace.
 
 
         :param str tag_namespace_id: (required)
-            The OCID of the tagNamespace
+            The OCID of the tag namespace.
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -2677,6 +2893,63 @@ class IdentityClient(object):
             body=update_customer_secret_key_details,
             response_type="CustomerSecretKeySummary")
 
+    def update_dynamic_group(self, dynamic_group_id, update_dynamic_group_details, **kwargs):
+        """
+        UpdateDynamicGroup
+        Updates the specified dynamic group.
+
+
+        :param str dynamic_group_id: (required)
+            The OCID of the dynamic group.
+
+        :param UpdateDynamicGroupDetails update_dynamic_group_details: (required)
+            Request object for updating an dynamic group.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.DynamicGroup`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/dynamicGroups/{dynamicGroupId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_dynamic_group got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "dynamicGroupId": dynamic_group_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        return self.base_client.call_api(
+            resource_path=resource_path,
+            method=method,
+            path_params=path_params,
+            header_params=header_params,
+            body=update_dynamic_group_details,
+            response_type="DynamicGroup")
+
     def update_group(self, group_id, update_group_details, **kwargs):
         """
         UpdateGroup
@@ -2975,17 +3248,14 @@ class IdentityClient(object):
     def update_tag(self, tag_namespace_id, tag_name, update_tag_details, **kwargs):
         """
         UpdateTag
-        Updates the the specified tag. Only description and isRetired can be updated. Retiring a tag will also retire
-        the related rules. You can not a tag with the same name as a retired tag. Tags must be unique within their tag
-        namespace but can be repeated across namespaces. You cannot add a tag with the same name as a retired tag in
-        the same tag namespace.
+        Updates the the specified tag definition. You can update `description`, and `isRetired`.
 
 
         :param str tag_namespace_id: (required)
-            The OCID of the tagNamespace
+            The OCID of the tag namespace.
 
         :param str tag_name: (required)
-            The name of the tag
+            The name of the tag.
 
         :param UpdateTagDetails update_tag_details: (required)
             Request object for updating a tag.
@@ -3027,15 +3297,21 @@ class IdentityClient(object):
     def update_tag_namespace(self, tag_namespace_id, update_tag_namespace_details, **kwargs):
         """
         UpdateTagNamespace
-        Updates the the specified tagNamespace. Only description, isRetired and assigned tags can be updated. Updating
-        isRetired to be true will retire the namespace, all the contained tags and the related rules. Reactivating a
-        namespace  will not reactivate any tag definition that was retired when the namespace was retired. They will
-        have to be individually reactivated *after* the namespace is reactivated. You can't add a namespace with the
-        same name as a retired namespace in the same tenant.
+        Updates the the specified tag namespace. You can't update the namespace name.
+
+        Updating `isRetired` to 'true' retires the namespace and all the tag definitions in the namespace. Reactivating a
+        namespace (changing `isRetired` from 'true' to 'false') does not reactivate tag definitions.
+        To reactivate the tag definitions, you must reactivate each one indvidually *after* you reactivate the namespace,
+        using :func:`update_tag`. For more information about retiring tag namespaces, see
+        `Retiring Key Definitions and Namespace Definitions`__.
+
+        You can't add a namespace with the same name as a retired namespace in the same tenancy.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring
 
 
         :param str tag_namespace_id: (required)
-            The OCID of the tagNamespace
+            The OCID of the tag namespace.
 
         :param UpdateTagNamespaceDetails update_tag_namespace_details: (required)
             Request object for updating a namespace.

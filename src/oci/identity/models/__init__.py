@@ -10,6 +10,7 @@ from .compartment import Compartment
 from .create_api_key_details import CreateApiKeyDetails
 from .create_compartment_details import CreateCompartmentDetails
 from .create_customer_secret_key_details import CreateCustomerSecretKeyDetails
+from .create_dynamic_group_details import CreateDynamicGroupDetails
 from .create_group_details import CreateGroupDetails
 from .create_identity_provider_details import CreateIdentityProviderDetails
 from .create_idp_group_mapping_details import CreateIdpGroupMappingDetails
@@ -22,6 +23,7 @@ from .create_tag_namespace_details import CreateTagNamespaceDetails
 from .create_user_details import CreateUserDetails
 from .customer_secret_key import CustomerSecretKey
 from .customer_secret_key_summary import CustomerSecretKeySummary
+from .dynamic_group import DynamicGroup
 from .group import Group
 from .identity_provider import IdentityProvider
 from .idp_group_mapping import IdpGroupMapping
@@ -38,6 +40,7 @@ from .tenancy import Tenancy
 from .ui_password import UIPassword
 from .update_compartment_details import UpdateCompartmentDetails
 from .update_customer_secret_key_details import UpdateCustomerSecretKeyDetails
+from .update_dynamic_group_details import UpdateDynamicGroupDetails
 from .update_group_details import UpdateGroupDetails
 from .update_identity_provider_details import UpdateIdentityProviderDetails
 from .update_idp_group_mapping_details import UpdateIdpGroupMappingDetails
@@ -60,6 +63,7 @@ identity_type_mapping = {
     "CreateApiKeyDetails": CreateApiKeyDetails,
     "CreateCompartmentDetails": CreateCompartmentDetails,
     "CreateCustomerSecretKeyDetails": CreateCustomerSecretKeyDetails,
+    "CreateDynamicGroupDetails": CreateDynamicGroupDetails,
     "CreateGroupDetails": CreateGroupDetails,
     "CreateIdentityProviderDetails": CreateIdentityProviderDetails,
     "CreateIdpGroupMappingDetails": CreateIdpGroupMappingDetails,
@@ -72,6 +76,7 @@ identity_type_mapping = {
     "CreateUserDetails": CreateUserDetails,
     "CustomerSecretKey": CustomerSecretKey,
     "CustomerSecretKeySummary": CustomerSecretKeySummary,
+    "DynamicGroup": DynamicGroup,
     "Group": Group,
     "IdentityProvider": IdentityProvider,
     "IdpGroupMapping": IdpGroupMapping,
@@ -88,6 +93,7 @@ identity_type_mapping = {
     "UIPassword": UIPassword,
     "UpdateCompartmentDetails": UpdateCompartmentDetails,
     "UpdateCustomerSecretKeyDetails": UpdateCustomerSecretKeyDetails,
+    "UpdateDynamicGroupDetails": UpdateDynamicGroupDetails,
     "UpdateGroupDetails": UpdateGroupDetails,
     "UpdateIdentityProviderDetails": UpdateIdentityProviderDetails,
     "UpdateIdpGroupMappingDetails": UpdateIdpGroupMappingDetails,

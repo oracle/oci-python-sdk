@@ -361,7 +361,7 @@ class LaunchInstanceDetails(object):
     @property
     def image_id(self):
         """
-        **[Required]** Gets the image_id of this LaunchInstanceDetails.
+        Gets the image_id of this LaunchInstanceDetails.
         Deprecated. Use `sourceDetails` with :func:`instance_source_via_image_details`
         source type instead. If you specify values for both, the values must match.
 
