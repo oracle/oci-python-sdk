@@ -68,6 +68,7 @@ class BaseClient(object):
         validate_config(config, signer=signer)
         self.signer = signer
 
+        region_to_use = None
         if 'region' in config and config['region']:
             region_to_use = config.get('region')
         elif hasattr(signer, 'region'):
