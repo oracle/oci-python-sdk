@@ -17,6 +17,7 @@ import six
 from dateutil.parser import parse
 
 from . import constants, exceptions, regions
+from .auth import signers
 from .config import get_config_value_or_default, validate_config
 from .request import Request
 from .response import Response
@@ -64,13 +65,19 @@ class BaseClient(object):
     }
 
     def __init__(self, service, config, signer, type_mapping):
-        validate_config(config)
+        validate_config(config, signer=signer)
         self.signer = signer
+
+        if 'region' in config and config['region']:
+            region_to_use = config.get('region')
+        elif hasattr(signer, 'region'):
+            region_to_use = signer.region
         self.endpoint = regions.endpoint_for(
             service,
-            region=config.get("region"),
+            region=region_to_use,
             endpoint=config.get("endpoint"))
 
+        self.service = service
         self.complex_type_mappings = type_mapping
         self.type_mappings = merge_type_mappings(self.primitive_type_map, type_mapping)
         self.session = requests.Session()
@@ -83,6 +90,9 @@ class BaseClient(object):
             six.moves.http_client.HTTPConnection.debuglevel = 1
         else:
             six.moves.http_client.HTTPConnection.debuglevel = 0
+
+    def set_region(self, region):
+        self.endpoint = regions.endpoint_for(self.service, region=region)
 
     def call_api(self, resource_path, method,
                  path_params=None,
@@ -144,7 +154,19 @@ class BaseClient(object):
             enforce_content_headers=enforce_content_headers
         )
 
-        return self.request(request)
+        if not isinstance(self.signer, signers.InstancePrincipalsSecurityTokenSigner):
+            return self.request(request)
+        else:
+            call_attempts = 0
+            while call_attempts < 2:
+                try:
+                    return self.request(request)
+                except exceptions.ServiceError as e:
+                    call_attempts += 1
+                    if e.status == 401 and call_attempts < 2:
+                        self.signer.refresh_security_token()
+                    else:
+                        raise
 
     def process_query_params(self, query_params):
         query_params = self.sanitize_for_serialization(query_params)

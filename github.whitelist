@@ -6,6 +6,7 @@
 ^examples/
 
 ^src/oci/audit/.*\.py$
+^src/oci/auth/.*\.py$
 ^src/oci/core/.*\.py$
 ^src/oci/database/.*\.py$
 ^src/oci/identity/.*\.py$

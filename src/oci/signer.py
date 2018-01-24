@@ -1,6 +1,8 @@
 # coding: utf-8
 # Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
+from __future__ import absolute_import
+
 import base64
 import email.utils
 import hashlib
@@ -111,6 +113,8 @@ def inject_missing_headers(request, sign_body, enforce_content_headers):
 # HeaderSigner doesn't support private keys with passwords.
 # Patched since the constructor parses the key in __init__
 class _PatchedHeaderSigner(httpsig_cffi.sign.HeaderSigner):
+    HEADER_SIGNER_TEMPLATE = 'Signature algorithm="rsa-sha256",headers="{}",keyId="{}",signature="%s",version="{}"'
+
     """Internal.  If you need to construct a Signer, use :class:`~.Signer` instead."""
     def __init__(self, key_id, private_key, headers):
         # Dropped general support for the specific signing/hash the SDK uses.
@@ -124,13 +128,82 @@ class _PatchedHeaderSigner(httpsig_cffi.sign.HeaderSigner):
         self._rsa_public = self._rsa_private.public_key()
 
         self.headers = headers
-        # Base template doesn't include version
-        template = 'Signature algorithm="rsa-sha256",headers="{}",keyId="{}",signature="%s",version="{}"'
-        self.signature_template = template.format(" ".join(headers), key_id, SIGNATURE_VERSION)
+        self.signature_template = self.HEADER_SIGNER_TEMPLATE.format(" ".join(headers), key_id, SIGNATURE_VERSION)
+
+    def reset_signer(self, key_id, private_key):
+        self._hash = None
+        self._rsa_private = private_key
+        self._rsa_public = self._rsa_private.public_key()
+        self.signature_template = self.HEADER_SIGNER_TEMPLATE.format(" ".join(self.headers), key_id, SIGNATURE_VERSION)
 
 
-class Signer(requests.auth.AuthBase):
-    """A requests auth instance that can be reused across requests.
+# An abstract class whose subclasses can sign requests. This contains the core logic for creating a signer and signing
+# requests, but does not source the required information:
+#
+#   - api key
+#   - private key
+#   - headers
+#
+# As concrete implementations are expected to provide these and have their ways of sourcing/constructing them.
+class AbstractBaseSigner(requests.auth.AuthBase):
+    def create_signers(self, api_key, private_key, generic_headers, body_headers):
+        self._basic_signer = _PatchedHeaderSigner(
+            key_id=api_key,
+            private_key=private_key,
+            headers=generic_headers)
+
+        self._body_signer = _PatchedHeaderSigner(
+            key_id=api_key,
+            private_key=private_key,
+            headers=generic_headers + body_headers)
+
+    def validate_request(self, request):
+        verb = request.method.lower()
+        if verb not in ["get", "head", "delete", "put", "post", "patch"]:
+            raise ValueError("Don't know how to sign request verb {}".format(verb))
+
+    def do_request_sign(self, request, enforce_content_headers=True):
+        verb = request.method.lower()
+        sign_body = verb in ["put", "post", "patch"]
+        if sign_body and enforce_content_headers:
+            signer = self._body_signer
+        else:
+            signer = self._basic_signer
+            # The requests library sets the Transfer-Encoding header to 'chunked' if the
+            # body is a stream with 0 length. Object storage does not currently support this option,
+            # and the request will fail if it is not removed. This is the only hook available where we
+            # can do this after the header is added and before the request is sent.
+            request.headers.pop('Transfer-Encoding', None)
+
+        inject_missing_headers(request, sign_body, enforce_content_headers)
+        signed_headers = signer.sign(
+            request.headers,
+            host=six.moves.urllib.parse.urlparse(request.url).netloc,
+            method=request.method,
+            path=request.path_url)
+        request.headers.update(signed_headers)
+
+        return request
+
+    def __call__(self, request, enforce_content_headers=True):
+        self.validate_request(request)
+        return self.do_request_sign(request, enforce_content_headers)
+
+    @property
+    def without_content_headers(self):
+        return functools.partial(self, enforce_content_headers=False)
+
+
+class Signer(AbstractBaseSigner):
+    """
+    A requests auth instance that can be reused across requests. This signer is intended to be used
+    when signing requests for a given user and it requires that user's ID, their private key
+    and cerificate fingerprint.
+
+    The private key can be sourced from a file (private_key_file_location) or the PEM string can be
+    provided directly (private_key_content).
+
+    The headers to be signed by this signer are not customizable.
 
     You can manually sign calls by creating an instance of the signer, and
     providing it as the ``auth`` argument to Requests functions:
@@ -156,43 +229,4 @@ class Signer(requests.auth.AuthBase):
 
         generic_headers = ["date", "(request-target)", "host"]
         body_headers = ["content-length", "content-type", "x-content-sha256"]
-
-        self._basic_signer = _PatchedHeaderSigner(
-            key_id=self.api_key,
-            private_key=self.private_key,
-            headers=generic_headers)
-
-        self._body_signer = _PatchedHeaderSigner(
-            key_id=self.api_key,
-            private_key=self.private_key,
-            headers=generic_headers + body_headers)
-
-    def __call__(self, request, enforce_content_headers=True):
-        verb = request.method.lower()
-        if verb not in ["get", "head", "delete", "put", "post", "patch"]:
-            raise ValueError("Don't know how to sign request verb {}".format(verb))
-
-        sign_body = verb in ["put", "post", "patch"]
-        if sign_body and enforce_content_headers:
-            signer = self._body_signer
-        else:
-            signer = self._basic_signer
-            # The requests library sets the Transfer-Encoding header to 'chunked' if the
-            # body is a stream with 0 length. Object storage does not currently support this option,
-            # and the request will fail if it is not removed. This is the only hook available where we
-            # can do this after the header is added and before the request is sent.
-            request.headers.pop('Transfer-Encoding', None)
-
-        inject_missing_headers(request, sign_body, enforce_content_headers)
-        signed_headers = signer.sign(
-            request.headers,
-            host=six.moves.urllib.parse.urlparse(request.url).netloc,
-            method=request.method,
-            path=request.path_url)
-        request.headers.update(signed_headers)
-
-        return request
-
-    @property
-    def without_content_headers(self):
-        return functools.partial(self, enforce_content_headers=False)
+        self.create_signers(self.api_key, self.private_key, generic_headers, body_headers)

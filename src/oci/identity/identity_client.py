@@ -16,16 +16,19 @@ missing = Sentinel("Missing")
 
 class IdentityClient(object):
 
-    def __init__(self, config):
-        validate_config(config)
-        signer = Signer(
-            tenancy=config["tenancy"],
-            user=config["user"],
-            fingerprint=config["fingerprint"],
-            private_key_file_location=config.get("key_file"),
-            pass_phrase=get_config_value_or_default(config, "pass_phrase"),
-            private_key_content=config.get("key_content")
-        )
+    def __init__(self, config, **kwargs):
+        validate_config(config, signer=kwargs.get('signer'))
+        if 'signer' in kwargs:
+            signer = kwargs['signer']
+        else:
+            signer = Signer(
+                tenancy=config["tenancy"],
+                user=config["user"],
+                fingerprint=config["fingerprint"],
+                private_key_file_location=config.get("key_file"),
+                pass_phrase=get_config_value_or_default(config, "pass_phrase"),
+                private_key_content=config.get("key_content")
+            )
         self.base_client = BaseClient("identity", config, signer, identity_type_mapping)
 
     def add_user_to_group(self, add_user_to_group_details, **kwargs):
