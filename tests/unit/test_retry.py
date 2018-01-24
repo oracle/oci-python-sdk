@@ -136,7 +136,7 @@ def test_retry_strategy_builder_with_total_elapsed_time():
     elapsed = time.time() - start
     assert e.value.status == 429
     assert retrying_call.current_calls < 50
-    assert elapsed < 25
+    assert elapsed < 60
 
 
 def test_retry_strategy_builder_different_types():
