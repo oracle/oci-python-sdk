@@ -94,7 +94,8 @@ class TestIdentity:
         self.validate_response(result, extra_validation=self.validate_group, expect_etag=True)
 
         result = identity.list_groups(config['tenancy'], limit=1000)
-        self.validate_response(result, extra_validation=self.validate_group)
+        assert len(result.data) > 0
+        self.validate_response(result)
 
         self.group_description = 'UPDATED ' + self.user_description
         update_group_details = oci.identity.models.UpdateGroupDetails()
