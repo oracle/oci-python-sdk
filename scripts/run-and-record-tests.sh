@@ -30,13 +30,13 @@ else
   pip install tox
 
   echo "Removing mocked responses before Python 2.7 test run"
-  rm tests/fictures/cassettes/*.yml
+  rm tests/fixtures/cassettes/*.yml
 
   echo "Running Python 2.7 tests"
   tox -e py27 -- --vcr-record-mode=once
 
   echo "Removing mocked responses before Python 3.5 test run"
-  rm tests/fictures/cassettes/*.yml
+  rm tests/fixtures/cassettes/*.yml
 
   echo "Running Python 3.5 tests"
   tox -e py35 -- --vcr-record-mode=once
