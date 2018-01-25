@@ -65,7 +65,7 @@ else
   # *github* version of the SDK (which was installed above)
   pip install pytest
   pip install mock
-  pip install vcr
+  pip install vcrpy
 
   # run tests from bitbucket repository because not all tests are copied into github
   cd .python-sdk-bitbucket/
