@@ -3,8 +3,10 @@
 
 from __future__ import absolute_import
 
+import requests  # noqa: F401
 import six
 
+from .. import retry  # noqa: F401
 from ..base_client import BaseClient
 from ..config import get_config_value_or_default, validate_config
 from ..signer import Signer
@@ -15,16 +17,19 @@ missing = Sentinel("Missing")
 
 class AuditClient(object):
 
-    def __init__(self, config):
-        validate_config(config)
-        signer = Signer(
-            tenancy=config["tenancy"],
-            user=config["user"],
-            fingerprint=config["fingerprint"],
-            private_key_file_location=config.get("key_file"),
-            pass_phrase=get_config_value_or_default(config, "pass_phrase"),
-            private_key_content=config.get("key_content")
-        )
+    def __init__(self, config, **kwargs):
+        validate_config(config, signer=kwargs.get('signer'))
+        if 'signer' in kwargs:
+            signer = kwargs['signer']
+        else:
+            signer = Signer(
+                tenancy=config["tenancy"],
+                user=config["user"],
+                fingerprint=config["fingerprint"],
+                private_key_file_location=config.get("key_file"),
+                pass_phrase=get_config_value_or_default(config, "pass_phrase"),
+                private_key_content=config.get("key_content")
+            )
         self.base_client = BaseClient("audit", config, signer, audit_type_mapping)
 
     def get_configuration(self, compartment_id, **kwargs):
@@ -42,9 +47,11 @@ class AuditClient(object):
         resource_path = "/configuration"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_configuration got unknown kwargs: {!r}".format(kwargs))
+                "get_configuration got unknown kwargs: {!r}".format(extra_kwargs))
 
         query_params = {
             "compartmentId": compartment_id
@@ -56,12 +63,21 @@ class AuditClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="Configuration")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="Configuration")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="Configuration")
 
     def list_events(self, compartment_id, start_time, end_time, **kwargs):
         """
@@ -101,6 +117,7 @@ class AuditClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "page",
             "opc_request_id"
         ]
@@ -124,12 +141,21 @@ class AuditClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[AuditEvent]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[AuditEvent]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[AuditEvent]")
 
     def update_configuration(self, compartment_id, update_configuration_details, **kwargs):
         """
@@ -149,9 +175,11 @@ class AuditClient(object):
         resource_path = "/configuration"
         method = "PUT"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "update_configuration got unknown kwargs: {!r}".format(kwargs))
+                "update_configuration got unknown kwargs: {!r}".format(extra_kwargs))
 
         query_params = {
             "compartmentId": compartment_id
@@ -163,9 +191,18 @@ class AuditClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            body=update_configuration_details)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=update_configuration_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=update_configuration_details)

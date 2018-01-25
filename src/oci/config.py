@@ -30,6 +30,7 @@ import re
 import six
 
 from .exceptions import ConfigFileNotFound, ProfileNotFound, InvalidConfig
+from .auth import signers
 
 __all__ = ["DEFAULT_CONFIG", "from_file", "validate_config"]
 
@@ -89,7 +90,13 @@ def from_file(file_location=DEFAULT_LOCATION, profile_name=DEFAULT_PROFILE):
     return config
 
 
-def validate_config(config):
+def validate_config(config, **kwargs):
+    if 'signer' in kwargs:
+        # The InstancePrincipalsSecurityTokenSigner is self-sufficient and doesn't need to read
+        # the normally-required keys in the config
+        if isinstance(kwargs['signer'], signers.InstancePrincipalsSecurityTokenSigner):
+            return
+
     """Raises ValueError if required fields are missing or malformed."""
     errors = {}
     for required_key in REQUIRED:

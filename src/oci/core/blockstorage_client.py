@@ -3,8 +3,10 @@
 
 from __future__ import absolute_import
 
+import requests  # noqa: F401
 import six
 
+from .. import retry  # noqa: F401
 from ..base_client import BaseClient
 from ..config import get_config_value_or_default, validate_config
 from ..signer import Signer
@@ -15,16 +17,19 @@ missing = Sentinel("Missing")
 
 class BlockstorageClient(object):
 
-    def __init__(self, config):
-        validate_config(config)
-        signer = Signer(
-            tenancy=config["tenancy"],
-            user=config["user"],
-            fingerprint=config["fingerprint"],
-            private_key_file_location=config.get("key_file"),
-            pass_phrase=get_config_value_or_default(config, "pass_phrase"),
-            private_key_content=config.get("key_content")
-        )
+    def __init__(self, config, **kwargs):
+        validate_config(config, signer=kwargs.get('signer'))
+        if 'signer' in kwargs:
+            signer = kwargs['signer']
+        else:
+            signer = Signer(
+                tenancy=config["tenancy"],
+                user=config["user"],
+                fingerprint=config["fingerprint"],
+                private_key_file_location=config.get("key_file"),
+                pass_phrase=get_config_value_or_default(config, "pass_phrase"),
+                private_key_content=config.get("key_content")
+            )
         self.base_client = BaseClient("blockstorage", config, signer, core_type_mapping)
 
     def create_volume(self, create_volume_details, **kwargs):
@@ -68,6 +73,7 @@ class BlockstorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -82,12 +88,23 @@ class BlockstorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            header_params=header_params,
-            body=create_volume_details,
-            response_type="Volume")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_volume_details,
+                response_type="Volume")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_volume_details,
+                response_type="Volume")
 
     def create_volume_backup(self, create_volume_backup_details, **kwargs):
         """
@@ -120,6 +137,7 @@ class BlockstorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -134,12 +152,23 @@ class BlockstorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            header_params=header_params,
-            body=create_volume_backup_details,
-            response_type="VolumeBackup")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_volume_backup_details,
+                response_type="VolumeBackup")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_volume_backup_details,
+                response_type="VolumeBackup")
 
     def delete_boot_volume(self, boot_volume_id, **kwargs):
         """
@@ -168,6 +197,7 @@ class BlockstorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -192,11 +222,19 @@ class BlockstorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def delete_volume(self, volume_id, **kwargs):
         """
@@ -225,6 +263,7 @@ class BlockstorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -249,11 +288,19 @@ class BlockstorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def delete_volume_backup(self, volume_backup_id, **kwargs):
         """
@@ -277,6 +324,7 @@ class BlockstorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -301,11 +349,19 @@ class BlockstorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def get_boot_volume(self, boot_volume_id, **kwargs):
         """
@@ -322,9 +378,11 @@ class BlockstorageClient(object):
         resource_path = "/bootVolumes/{bootVolumeId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_boot_volume got unknown kwargs: {!r}".format(kwargs))
+                "get_boot_volume got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "bootVolumeId": boot_volume_id
@@ -341,12 +399,21 @@ class BlockstorageClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="BootVolume")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="BootVolume")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="BootVolume")
 
     def get_volume(self, volume_id, **kwargs):
         """
@@ -363,9 +430,11 @@ class BlockstorageClient(object):
         resource_path = "/volumes/{volumeId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_volume got unknown kwargs: {!r}".format(kwargs))
+                "get_volume got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "volumeId": volume_id
@@ -382,12 +451,21 @@ class BlockstorageClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="Volume")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Volume")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Volume")
 
     def get_volume_backup(self, volume_backup_id, **kwargs):
         """
@@ -404,9 +482,11 @@ class BlockstorageClient(object):
         resource_path = "/volumeBackups/{volumeBackupId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_volume_backup got unknown kwargs: {!r}".format(kwargs))
+                "get_volume_backup got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "volumeBackupId": volume_backup_id
@@ -423,12 +503,21 @@ class BlockstorageClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="VolumeBackup")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="VolumeBackup")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="VolumeBackup")
 
     def list_boot_volumes(self, availability_domain, compartment_id, **kwargs):
         """
@@ -460,6 +549,7 @@ class BlockstorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "limit",
             "page"
         ]
@@ -481,12 +571,21 @@ class BlockstorageClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[BootVolume]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[BootVolume]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[BootVolume]")
 
     def list_volume_backups(self, compartment_id, **kwargs):
         """
@@ -542,6 +641,7 @@ class BlockstorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "volume_id",
             "limit",
             "page",
@@ -593,12 +693,21 @@ class BlockstorageClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[VolumeBackup]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[VolumeBackup]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[VolumeBackup]")
 
     def list_volumes(self, compartment_id, **kwargs):
         """
@@ -656,6 +765,7 @@ class BlockstorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "availability_domain",
             "limit",
             "page",
@@ -707,12 +817,21 @@ class BlockstorageClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[Volume]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[Volume]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[Volume]")
 
     def update_boot_volume(self, boot_volume_id, update_boot_volume_details, **kwargs):
         """
@@ -739,6 +858,7 @@ class BlockstorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -763,13 +883,23 @@ class BlockstorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_boot_volume_details,
-            response_type="BootVolume")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_boot_volume_details,
+                response_type="BootVolume")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_boot_volume_details,
+                response_type="BootVolume")
 
     def update_volume(self, volume_id, update_volume_details, **kwargs):
         """
@@ -797,6 +927,7 @@ class BlockstorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -821,13 +952,23 @@ class BlockstorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_volume_details,
-            response_type="Volume")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_volume_details,
+                response_type="Volume")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_volume_details,
+                response_type="Volume")
 
     def update_volume_backup(self, volume_backup_id, update_volume_backup_details, **kwargs):
         """
@@ -855,6 +996,7 @@ class BlockstorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -879,10 +1021,20 @@ class BlockstorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_volume_backup_details,
-            response_type="VolumeBackup")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_volume_backup_details,
+                response_type="VolumeBackup")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_volume_backup_details,
+                response_type="VolumeBackup")

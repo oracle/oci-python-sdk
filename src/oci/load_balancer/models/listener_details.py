@@ -14,6 +14,10 @@ class ListenerDetails(object):
         Initializes a new ListenerDetails object with values from values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param connection_configuration:
+            The value to assign to the connection_configuration property of this ListenerDetails.
+        :type connection_configuration: ConnectionConfiguration
+
         :param default_backend_set_name:
             The value to assign to the default_backend_set_name property of this ListenerDetails.
         :type default_backend_set_name: str
@@ -32,6 +36,7 @@ class ListenerDetails(object):
 
         """
         self.swagger_types = {
+            'connection_configuration': 'ConnectionConfiguration',
             'default_backend_set_name': 'str',
             'port': 'int',
             'protocol': 'str',
@@ -39,22 +44,46 @@ class ListenerDetails(object):
         }
 
         self.attribute_map = {
+            'connection_configuration': 'connectionConfiguration',
             'default_backend_set_name': 'defaultBackendSetName',
             'port': 'port',
             'protocol': 'protocol',
             'ssl_configuration': 'sslConfiguration'
         }
 
+        self._connection_configuration = None
         self._default_backend_set_name = None
         self._port = None
         self._protocol = None
         self._ssl_configuration = None
 
     @property
+    def connection_configuration(self):
+        """
+        Gets the connection_configuration of this ListenerDetails.
+
+        :return: The connection_configuration of this ListenerDetails.
+        :rtype: ConnectionConfiguration
+        """
+        return self._connection_configuration
+
+    @connection_configuration.setter
+    def connection_configuration(self, connection_configuration):
+        """
+        Sets the connection_configuration of this ListenerDetails.
+
+        :param connection_configuration: The connection_configuration of this ListenerDetails.
+        :type: ConnectionConfiguration
+        """
+        self._connection_configuration = connection_configuration
+
+    @property
     def default_backend_set_name(self):
         """
         **[Required]** Gets the default_backend_set_name of this ListenerDetails.
         The name of the associated backend set.
+
+        Example: `My_backend_set`
 
 
         :return: The default_backend_set_name of this ListenerDetails.
@@ -67,6 +96,8 @@ class ListenerDetails(object):
         """
         Sets the default_backend_set_name of this ListenerDetails.
         The name of the associated backend set.
+
+        Example: `My_backend_set`
 
 
         :param default_backend_set_name: The default_backend_set_name of this ListenerDetails.

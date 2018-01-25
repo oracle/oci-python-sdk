@@ -9,6 +9,7 @@ import traceback
 import oci
 import os
 from oci.object_storage.transfer.constants import MEBIBYTE
+from .. import test_config_container
 
 TEST_DATA_VERSION = '1'
 
@@ -73,7 +74,10 @@ def windows_vm_image():
 
 
 def random_name(prefix, insert_underscore=True):
-    return prefix + ('_' if insert_underscore else '') + str(random.randint(0, 1000000))
+    if test_config_container.using_vcr_with_mock_responses():
+        return prefix + ('_' if insert_underscore else '') + 'vcr'
+    else:
+        return prefix + ('_' if insert_underscore else '') + str(random.randint(0, 1000000))
 
 
 def validate_response(result, extra_validation=None, includes_debug_data=False, expect_etag=False):
@@ -135,7 +139,8 @@ def wait_until(get_command, state, max_wait_seconds=30, max_interval_seconds=15,
             elif result.data.lifecycle_state == state:
                 break
 
-        time.sleep(sleep_interval_seconds)
+        if not test_config_container.using_vcr_with_mock_responses():
+            time.sleep(sleep_interval_seconds)
 
         # Double the sleep each time up to the maximum.
         sleep_interval_seconds = min(sleep_interval_seconds * 2, max_interval_seconds)

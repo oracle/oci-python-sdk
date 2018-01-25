@@ -1,13 +1,8 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
-from .internal import retry
+from .. import retry
 from ..response import Response
-
-BASIC_RETRY_STRATEGY = retry.RetryStrategyBuilder() \
-                            .add_max_attempts() \
-                            .add_service_error_check() \
-                            .get_retry_strategy()
 
 
 def list_call_get_up_to_limit(list_func_ref, record_limit, page_size, *list_func_args, **list_func_kwargs):
@@ -88,7 +83,7 @@ def list_call_get_up_to_limit_generator(list_func_ref, record_limit, page_size, 
     # If no limit was provided, make a single call
     if record_limit is None:
         list_func_kwargs['limit'] = page_size
-        single_call_result = BASIC_RETRY_STRATEGY.make_retrying_call(list_func_ref, *list_func_args, **list_func_kwargs)
+        single_call_result = retry.DEFAULT_RETRY_STRATEGY.make_retrying_call(list_func_ref, *list_func_args, **list_func_kwargs)
 
         if yield_mode == 'response':
             yield single_call_result
@@ -105,7 +100,7 @@ def list_call_get_up_to_limit_generator(list_func_ref, record_limit, page_size, 
     while keep_paginating and remaining_items_to_fetch > 0:
         list_func_kwargs['limit'] = min(page_size, remaining_items_to_fetch)
 
-        call_result = BASIC_RETRY_STRATEGY.make_retrying_call(list_func_ref, *list_func_args, **list_func_kwargs)
+        call_result = retry.DEFAULT_RETRY_STRATEGY.make_retrying_call(list_func_ref, *list_func_args, **list_func_kwargs)
         if yield_mode == 'response':
             yield call_result
         else:
@@ -181,7 +176,7 @@ def list_call_get_all_results_generator(list_func_ref, yield_mode, *list_func_ar
     call_result = None
 
     while keep_paginating:
-        call_result = BASIC_RETRY_STRATEGY.make_retrying_call(list_func_ref, *list_func_args, **list_func_kwargs)
+        call_result = retry.DEFAULT_RETRY_STRATEGY.make_retrying_call(list_func_ref, *list_func_args, **list_func_kwargs)
         if yield_mode == 'response':
             yield call_result
         else:

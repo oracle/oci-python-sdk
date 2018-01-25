@@ -1,10 +1,10 @@
 # coding: utf-8
-# Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
-#
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+
 # Contains helper classes that can say whether a retry should occur based on various criteria, such as a maximum number of retries being
 # hit or the exception received from a service call (or the response from the service call if it didn't exception out).
 
-from ...exceptions import ServiceError
+from ..exceptions import ServiceError
 from requests.exceptions import Timeout
 from requests.exceptions import ConnectionError
 
@@ -51,7 +51,7 @@ class RetryCheckerContainer(object):
 class BaseRetryChecker(object):
     """
     The base class from which all retry checkers should derive. This has no implementation but just defines the contract
-    for a checker.
+    for a checker. Implementors can extend this class to define their own checking logic.
     """
 
     def __init__(self, **kwargs):
@@ -73,10 +73,27 @@ class BaseRetryChecker(object):
         raise NotImplementedError('Subclasses should implement this')
 
 
+class TotalTimeExceededRetryChecker(BaseRetryChecker):
+    """
+    A retry checker which can retry as long as some upper time limit (in seconds) has not been breached. This is intended
+    for scenarios such as "keep retrying for 5 minutes". It is the responsiblity of the caller to track the total time
+    elapsed - objects of this class will not track this.
+
+    If not specified, the default time limit is 300 seconds (5 minutes).
+    """
+
+    def __init__(self, time_limit_seconds=300, **kwargs):
+        super(TotalTimeExceededRetryChecker, self).__init__(**kwargs)
+        self.time_limit_seconds = time_limit_seconds
+
+    def should_retry(self, exception=None, response=None, **kwargs):
+        return self.time_limit_seconds > kwargs.get('total_time_elapsed', 0)
+
+
 class LimitBasedRetryChecker(BaseRetryChecker):
     """
     A retry checker which can retry as long as some threshold (# of attempts/tries) has not been breached.
-    It is the repsonsibility of the caller to track how many attempts/tries it has done - objects of this
+    It is the responsiblity of the caller to track how many attempts/tries it has done - objects of this
     class will not track this.
 
     If not specified, the default number of tries allowed is 5. Tries are also assumed to be one-based (i.e. the
