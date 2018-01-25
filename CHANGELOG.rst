@@ -11,7 +11,10 @@ The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 Added
 -----
 * Support for using the ``ObjectReadWithoutList`` public access type when creating and updating buckets
-* Support for dynamic groups in Identity and Access Management Service
+* Support for dynamic groups in Identity Service
+* Support for instance principals authentication when calling OCI services. An example of how to use instance principals authentication can be found on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/instance_principals_examples.py>`_.
+* Support for configuring idle timeout for listeners in Load Balancer Service 
+* Support for VNC console connections in Compute Service
 
 ====================
 1.3.12 - 2018-01-11
