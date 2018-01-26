@@ -3,8 +3,10 @@
 
 from __future__ import absolute_import
 
+import requests  # noqa: F401
 import six
 
+from .. import retry  # noqa: F401
 from ..base_client import BaseClient
 from ..config import get_config_value_or_default, validate_config
 from ..signer import Signer
@@ -15,16 +17,19 @@ missing = Sentinel("Missing")
 
 class ComputeClient(object):
 
-    def __init__(self, config):
-        validate_config(config)
-        signer = Signer(
-            tenancy=config["tenancy"],
-            user=config["user"],
-            fingerprint=config["fingerprint"],
-            private_key_file_location=config.get("key_file"),
-            pass_phrase=get_config_value_or_default(config, "pass_phrase"),
-            private_key_content=config.get("key_content")
-        )
+    def __init__(self, config, **kwargs):
+        validate_config(config, signer=kwargs.get('signer'))
+        if 'signer' in kwargs:
+            signer = kwargs['signer']
+        else:
+            signer = Signer(
+                tenancy=config["tenancy"],
+                user=config["user"],
+                fingerprint=config["fingerprint"],
+                private_key_file_location=config.get("key_file"),
+                pass_phrase=get_config_value_or_default(config, "pass_phrase"),
+                private_key_content=config.get("key_content")
+            )
         self.base_client = BaseClient("compute", config, signer, core_type_mapping)
 
     def attach_boot_volume(self, attach_boot_volume_details, **kwargs):
@@ -51,6 +56,7 @@ class ComputeClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -65,12 +71,23 @@ class ComputeClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            header_params=header_params,
-            body=attach_boot_volume_details,
-            response_type="BootVolumeAttachment")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=attach_boot_volume_details,
+                response_type="BootVolumeAttachment")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=attach_boot_volume_details,
+                response_type="BootVolumeAttachment")
 
     def attach_vnic(self, attach_vnic_details, **kwargs):
         """
@@ -100,6 +117,7 @@ class ComputeClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -114,12 +132,23 @@ class ComputeClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            header_params=header_params,
-            body=attach_vnic_details,
-            response_type="VnicAttachment")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=attach_vnic_details,
+                response_type="VnicAttachment")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=attach_vnic_details,
+                response_type="VnicAttachment")
 
     def attach_volume(self, attach_volume_details, **kwargs):
         """
@@ -145,6 +174,7 @@ class ComputeClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -159,12 +189,23 @@ class ComputeClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            header_params=header_params,
-            body=attach_volume_details,
-            response_type="VolumeAttachment")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=attach_volume_details,
+                response_type="VolumeAttachment")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=attach_volume_details,
+                response_type="VolumeAttachment")
 
     def capture_console_history(self, capture_console_history_details, **kwargs):
         """
@@ -206,6 +247,7 @@ class ComputeClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -220,12 +262,23 @@ class ComputeClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            header_params=header_params,
-            body=capture_console_history_details,
-            response_type="ConsoleHistory")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=capture_console_history_details,
+                response_type="ConsoleHistory")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=capture_console_history_details,
+                response_type="ConsoleHistory")
 
     def create_image(self, create_image_details, **kwargs):
         """
@@ -278,6 +331,7 @@ class ComputeClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -292,12 +346,23 @@ class ComputeClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            header_params=header_params,
-            body=create_image_details,
-            response_type="Image")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_image_details,
+                response_type="Image")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_image_details,
+                response_type="Image")
 
     def create_instance_console_connection(self, create_instance_console_connection_details, **kwargs):
         """
@@ -329,6 +394,7 @@ class ComputeClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -343,12 +409,23 @@ class ComputeClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            header_params=header_params,
-            body=create_instance_console_connection_details,
-            response_type="InstanceConsoleConnection")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_instance_console_connection_details,
+                response_type="InstanceConsoleConnection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_instance_console_connection_details,
+                response_type="InstanceConsoleConnection")
 
     def delete_console_history(self, instance_console_history_id, **kwargs):
         """
@@ -372,6 +449,7 @@ class ComputeClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -396,11 +474,19 @@ class ComputeClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def delete_image(self, image_id, **kwargs):
         """
@@ -424,6 +510,7 @@ class ComputeClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -448,11 +535,19 @@ class ComputeClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def delete_instance_console_connection(self, instance_console_connection_id, **kwargs):
         """
@@ -476,6 +571,7 @@ class ComputeClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -500,11 +596,19 @@ class ComputeClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def detach_boot_volume(self, boot_volume_attachment_id, **kwargs):
         """
@@ -531,6 +635,7 @@ class ComputeClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -555,11 +660,19 @@ class ComputeClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def detach_vnic(self, vnic_attachment_id, **kwargs):
         """
@@ -594,6 +707,7 @@ class ComputeClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -618,11 +732,19 @@ class ComputeClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def detach_volume(self, volume_attachment_id, **kwargs):
         """
@@ -649,6 +771,7 @@ class ComputeClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -673,11 +796,19 @@ class ComputeClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def export_image(self, image_id, export_image_details, **kwargs):
         """
@@ -725,6 +856,7 @@ class ComputeClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token",
             "if_match"
         ]
@@ -751,13 +883,25 @@ class ComputeClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=export_image_details,
-            response_type="Image")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=export_image_details,
+                response_type="Image")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=export_image_details,
+                response_type="Image")
 
     def get_boot_volume_attachment(self, boot_volume_attachment_id, **kwargs):
         """
@@ -774,9 +918,11 @@ class ComputeClient(object):
         resource_path = "/bootVolumeAttachments/{bootVolumeAttachmentId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_boot_volume_attachment got unknown kwargs: {!r}".format(kwargs))
+                "get_boot_volume_attachment got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "bootVolumeAttachmentId": boot_volume_attachment_id
@@ -793,12 +939,21 @@ class ComputeClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="BootVolumeAttachment")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="BootVolumeAttachment")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="BootVolumeAttachment")
 
     def get_console_history(self, instance_console_history_id, **kwargs):
         """
@@ -817,9 +972,11 @@ class ComputeClient(object):
         resource_path = "/instanceConsoleHistories/{instanceConsoleHistoryId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_console_history got unknown kwargs: {!r}".format(kwargs))
+                "get_console_history got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "instanceConsoleHistoryId": instance_console_history_id
@@ -836,12 +993,21 @@ class ComputeClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="ConsoleHistory")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ConsoleHistory")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ConsoleHistory")
 
     def get_console_history_content(self, instance_console_history_id, **kwargs):
         """
@@ -868,6 +1034,7 @@ class ComputeClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "offset",
             "length"
         ]
@@ -897,13 +1064,23 @@ class ComputeClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="bytes")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="bytes")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="bytes")
 
     def get_image(self, image_id, **kwargs):
         """
@@ -920,9 +1097,11 @@ class ComputeClient(object):
         resource_path = "/images/{imageId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_image got unknown kwargs: {!r}".format(kwargs))
+                "get_image got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "imageId": image_id
@@ -939,12 +1118,21 @@ class ComputeClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="Image")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Image")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Image")
 
     def get_instance(self, instance_id, **kwargs):
         """
@@ -961,9 +1149,11 @@ class ComputeClient(object):
         resource_path = "/instances/{instanceId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_instance got unknown kwargs: {!r}".format(kwargs))
+                "get_instance got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "instanceId": instance_id
@@ -980,12 +1170,21 @@ class ComputeClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="Instance")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Instance")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Instance")
 
     def get_instance_console_connection(self, instance_console_connection_id, **kwargs):
         """
@@ -1002,9 +1201,11 @@ class ComputeClient(object):
         resource_path = "/instanceConsoleConnections/{instanceConsoleConnectionId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_instance_console_connection got unknown kwargs: {!r}".format(kwargs))
+                "get_instance_console_connection got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "instanceConsoleConnectionId": instance_console_connection_id
@@ -1021,12 +1222,21 @@ class ComputeClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="InstanceConsoleConnection")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="InstanceConsoleConnection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="InstanceConsoleConnection")
 
     def get_vnic_attachment(self, vnic_attachment_id, **kwargs):
         """
@@ -1043,9 +1253,11 @@ class ComputeClient(object):
         resource_path = "/vnicAttachments/{vnicAttachmentId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_vnic_attachment got unknown kwargs: {!r}".format(kwargs))
+                "get_vnic_attachment got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "vnicAttachmentId": vnic_attachment_id
@@ -1062,12 +1274,21 @@ class ComputeClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="VnicAttachment")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="VnicAttachment")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="VnicAttachment")
 
     def get_volume_attachment(self, volume_attachment_id, **kwargs):
         """
@@ -1084,9 +1305,11 @@ class ComputeClient(object):
         resource_path = "/volumeAttachments/{volumeAttachmentId}"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_volume_attachment got unknown kwargs: {!r}".format(kwargs))
+                "get_volume_attachment got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "volumeAttachmentId": volume_attachment_id
@@ -1103,12 +1326,21 @@ class ComputeClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="VolumeAttachment")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="VolumeAttachment")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="VolumeAttachment")
 
     def get_windows_instance_initial_credentials(self, instance_id, **kwargs):
         """
@@ -1126,9 +1358,11 @@ class ComputeClient(object):
         resource_path = "/instances/{instanceId}/initialCredentials"
         method = "GET"
 
-        if kwargs:
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
             raise ValueError(
-                "get_windows_instance_initial_credentials got unknown kwargs: {!r}".format(kwargs))
+                "get_windows_instance_initial_credentials got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "instanceId": instance_id
@@ -1145,12 +1379,21 @@ class ComputeClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="InstanceCredentials")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="InstanceCredentials")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="InstanceCredentials")
 
     def instance_action(self, instance_id, action, **kwargs):
         """
@@ -1201,6 +1444,7 @@ class ComputeClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token",
             "if_match"
         ]
@@ -1232,13 +1476,25 @@ class ComputeClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="Instance")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="Instance")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="Instance")
 
     def launch_instance(self, launch_instance_details, **kwargs):
         """
@@ -1299,6 +1555,7 @@ class ComputeClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1313,12 +1570,23 @@ class ComputeClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            header_params=header_params,
-            body=launch_instance_details,
-            response_type="Instance")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=launch_instance_details,
+                response_type="Instance")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=launch_instance_details,
+                response_type="Instance")
 
     def list_boot_volume_attachments(self, availability_domain, compartment_id, **kwargs):
         """
@@ -1357,6 +1625,7 @@ class ComputeClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "limit",
             "page",
             "instance_id",
@@ -1382,12 +1651,21 @@ class ComputeClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[BootVolumeAttachment]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[BootVolumeAttachment]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[BootVolumeAttachment]")
 
     def list_console_histories(self, compartment_id, **kwargs):
         """
@@ -1445,6 +1723,7 @@ class ComputeClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "availability_domain",
             "limit",
             "page",
@@ -1496,12 +1775,21 @@ class ComputeClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[ConsoleHistory]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[ConsoleHistory]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[ConsoleHistory]")
 
     def list_images(self, compartment_id, **kwargs):
         """
@@ -1570,6 +1858,7 @@ class ComputeClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "display_name",
             "operating_system",
             "operating_system_version",
@@ -1623,12 +1912,21 @@ class ComputeClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[Image]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[Image]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[Image]")
 
     def list_instance_console_connections(self, compartment_id, **kwargs):
         """
@@ -1662,6 +1960,7 @@ class ComputeClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "instance_id",
             "limit",
             "page"
@@ -1684,12 +1983,21 @@ class ComputeClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[InstanceConsoleConnection]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[InstanceConsoleConnection]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[InstanceConsoleConnection]")
 
     def list_instances(self, compartment_id, **kwargs):
         """
@@ -1749,6 +2057,7 @@ class ComputeClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "availability_domain",
             "display_name",
             "limit",
@@ -1800,12 +2109,21 @@ class ComputeClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[Instance]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[Instance]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[Instance]")
 
     def list_shapes(self, compartment_id, **kwargs):
         """
@@ -1841,6 +2159,7 @@ class ComputeClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "availability_domain",
             "limit",
             "page",
@@ -1865,12 +2184,21 @@ class ComputeClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[Shape]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[Shape]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[Shape]")
 
     def list_vnic_attachments(self, compartment_id, **kwargs):
         """
@@ -1910,6 +2238,7 @@ class ComputeClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "availability_domain",
             "instance_id",
             "limit",
@@ -1936,12 +2265,21 @@ class ComputeClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[VnicAttachment]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[VnicAttachment]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[VnicAttachment]")
 
     def list_volume_attachments(self, compartment_id, **kwargs):
         """
@@ -1982,6 +2320,7 @@ class ComputeClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "availability_domain",
             "limit",
             "page",
@@ -2008,12 +2347,21 @@ class ComputeClient(object):
             "content-type": "application/json"
         }
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[VolumeAttachment]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[VolumeAttachment]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[VolumeAttachment]")
 
     def terminate_instance(self, instance_id, **kwargs):
         """
@@ -2048,6 +2396,7 @@ class ComputeClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match",
             "preserve_boot_volume"
         ]
@@ -2078,12 +2427,21 @@ class ComputeClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            query_params=query_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params)
 
     def update_console_history(self, instance_console_history_id, update_console_history_details, **kwargs):
         """
@@ -2110,6 +2468,7 @@ class ComputeClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -2134,13 +2493,23 @@ class ComputeClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_console_history_details,
-            response_type="ConsoleHistory")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_console_history_details,
+                response_type="ConsoleHistory")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_console_history_details,
+                response_type="ConsoleHistory")
 
     def update_image(self, image_id, update_image_details, **kwargs):
         """
@@ -2174,6 +2543,7 @@ class ComputeClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token",
             "if_match"
         ]
@@ -2200,13 +2570,25 @@ class ComputeClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_image_details,
-            response_type="Image")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_image_details,
+                response_type="Image")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_image_details,
+                response_type="Image")
 
     def update_instance(self, instance_id, update_instance_details, **kwargs):
         """
@@ -2241,6 +2623,7 @@ class ComputeClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_retry_token",
             "if_match"
         ]
@@ -2267,10 +2650,22 @@ class ComputeClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_instance_details,
-            response_type="Instance")
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_instance_details,
+                response_type="Instance")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_instance_details,
+                response_type="Instance")

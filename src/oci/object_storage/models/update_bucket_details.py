@@ -32,7 +32,7 @@ class UpdateBucketDetails(object):
 
         :param public_access_type:
             The value to assign to the public_access_type property of this UpdateBucketDetails.
-            Allowed values for this property are: "NoPublicAccess", "ObjectRead"
+            Allowed values for this property are: "NoPublicAccess", "ObjectRead", "ObjectReadWithoutList"
         :type public_access_type: str
 
         """
@@ -162,9 +162,10 @@ class UpdateBucketDetails(object):
         Gets the public_access_type of this UpdateBucketDetails.
         The type of public access enabled on this bucket. A bucket is set to `NoPublicAccess` by default, which only allows an
         authenticated caller to access the bucket and its contents. When `ObjectRead` is enabled on the bucket, public access
-        is allowed for the `GetObject`, `HeadObject`, and `ListObjects` operations.
+        is allowed for the `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled
+        on the bucket, public access is allowed for the `GetObject` and `HeadObject` operations.
 
-        Allowed values for this property are: "NoPublicAccess", "ObjectRead"
+        Allowed values for this property are: "NoPublicAccess", "ObjectRead", "ObjectReadWithoutList"
 
 
         :return: The public_access_type of this UpdateBucketDetails.
@@ -178,13 +179,14 @@ class UpdateBucketDetails(object):
         Sets the public_access_type of this UpdateBucketDetails.
         The type of public access enabled on this bucket. A bucket is set to `NoPublicAccess` by default, which only allows an
         authenticated caller to access the bucket and its contents. When `ObjectRead` is enabled on the bucket, public access
-        is allowed for the `GetObject`, `HeadObject`, and `ListObjects` operations.
+        is allowed for the `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled
+        on the bucket, public access is allowed for the `GetObject` and `HeadObject` operations.
 
 
         :param public_access_type: The public_access_type of this UpdateBucketDetails.
         :type: str
         """
-        allowed_values = ["NoPublicAccess", "ObjectRead"]
+        allowed_values = ["NoPublicAccess", "ObjectRead", "ObjectReadWithoutList"]
         if not value_allowed_none_or_none_sentinel(public_access_type, allowed_values):
             raise ValueError(
                 "Invalid value for `public_access_type`, must be None or one of {0}"

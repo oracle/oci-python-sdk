@@ -3,8 +3,10 @@
 
 from __future__ import absolute_import
 
+import requests  # noqa: F401
 import six
 
+from .. import retry  # noqa: F401
 from ..base_client import BaseClient
 from ..config import get_config_value_or_default, validate_config
 from ..signer import Signer
@@ -15,16 +17,19 @@ missing = Sentinel("Missing")
 
 class LoadBalancerClient(object):
 
-    def __init__(self, config):
-        validate_config(config)
-        signer = Signer(
-            tenancy=config["tenancy"],
-            user=config["user"],
-            fingerprint=config["fingerprint"],
-            private_key_file_location=config.get("key_file"),
-            pass_phrase=get_config_value_or_default(config, "pass_phrase"),
-            private_key_content=config.get("key_content")
-        )
+    def __init__(self, config, **kwargs):
+        validate_config(config, signer=kwargs.get('signer'))
+        if 'signer' in kwargs:
+            signer = kwargs['signer']
+        else:
+            signer = Signer(
+                tenancy=config["tenancy"],
+                user=config["user"],
+                fingerprint=config["fingerprint"],
+                private_key_file_location=config.get("key_file"),
+                pass_phrase=get_config_value_or_default(config, "pass_phrase"),
+                private_key_content=config.get("key_content")
+            )
         self.base_client = BaseClient("load_balancer", config, signer, load_balancer_type_mapping)
 
     def create_backend(self, create_backend_details, load_balancer_id, backend_set_name, **kwargs):
@@ -65,6 +70,7 @@ class LoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
         ]
@@ -92,12 +98,23 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=create_backend_details)
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_backend_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_backend_details)
 
     def create_backend_set(self, create_backend_set_details, load_balancer_id, **kwargs):
         """
@@ -132,6 +149,7 @@ class LoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
         ]
@@ -158,12 +176,23 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=create_backend_set_details)
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_backend_set_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_backend_set_details)
 
     def create_certificate(self, create_certificate_details, load_balancer_id, **kwargs):
         """
@@ -198,6 +227,7 @@ class LoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
         ]
@@ -224,12 +254,23 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=create_certificate_details)
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_certificate_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_certificate_details)
 
     def create_listener(self, create_listener_details, load_balancer_id, **kwargs):
         """
@@ -264,6 +305,7 @@ class LoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
         ]
@@ -290,12 +332,23 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=create_listener_details)
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_listener_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_listener_details)
 
     def create_load_balancer(self, create_load_balancer_details, **kwargs):
         """
@@ -356,6 +409,7 @@ class LoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
         ]
@@ -372,11 +426,21 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            header_params=header_params,
-            body=create_load_balancer_details)
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_load_balancer_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_load_balancer_details)
 
     def delete_backend(self, load_balancer_id, backend_set_name, backend_name, **kwargs):
         """
@@ -411,6 +475,7 @@ class LoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_request_id"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -437,11 +502,19 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def delete_backend_set(self, load_balancer_id, backend_set_name, **kwargs):
         """
@@ -473,6 +546,7 @@ class LoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_request_id"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -498,11 +572,19 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def delete_certificate(self, load_balancer_id, certificate_name, **kwargs):
         """
@@ -532,6 +614,7 @@ class LoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_request_id"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -557,11 +640,19 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def delete_listener(self, load_balancer_id, listener_name, **kwargs):
         """
@@ -591,6 +682,7 @@ class LoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_request_id"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -616,11 +708,19 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def delete_load_balancer(self, load_balancer_id, **kwargs):
         """
@@ -645,6 +745,7 @@ class LoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_request_id"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -669,11 +770,19 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def get_backend(self, load_balancer_id, backend_set_name, backend_name, **kwargs):
         """
@@ -708,6 +817,7 @@ class LoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_request_id"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -734,12 +844,21 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="Backend")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Backend")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Backend")
 
     def get_backend_health(self, load_balancer_id, backend_set_name, backend_name, **kwargs):
         """
@@ -774,6 +893,7 @@ class LoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_request_id"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -800,12 +920,21 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="BackendHealth")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="BackendHealth")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="BackendHealth")
 
     def get_backend_set(self, load_balancer_id, backend_set_name, **kwargs):
         """
@@ -835,6 +964,7 @@ class LoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_request_id"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -860,12 +990,21 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="BackendSet")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="BackendSet")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="BackendSet")
 
     def get_backend_set_health(self, load_balancer_id, backend_set_name, **kwargs):
         """
@@ -895,6 +1034,7 @@ class LoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_request_id"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -920,12 +1060,21 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="BackendSetHealth")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="BackendSetHealth")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="BackendSetHealth")
 
     def get_health_checker(self, load_balancer_id, backend_set_name, **kwargs):
         """
@@ -955,6 +1104,7 @@ class LoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_request_id"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -980,12 +1130,21 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="HealthChecker")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="HealthChecker")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="HealthChecker")
 
     def get_load_balancer(self, load_balancer_id, **kwargs):
         """
@@ -1010,6 +1169,7 @@ class LoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_request_id"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1034,12 +1194,21 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="LoadBalancer")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="LoadBalancer")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="LoadBalancer")
 
     def get_load_balancer_health(self, load_balancer_id, **kwargs):
         """
@@ -1064,6 +1233,7 @@ class LoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_request_id"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1088,12 +1258,21 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="LoadBalancerHealth")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="LoadBalancerHealth")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="LoadBalancerHealth")
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -1118,6 +1297,7 @@ class LoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_request_id"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1142,12 +1322,21 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="WorkRequest")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="WorkRequest")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="WorkRequest")
 
     def list_backend_sets(self, load_balancer_id, **kwargs):
         """
@@ -1172,6 +1361,7 @@ class LoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_request_id"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1196,12 +1386,21 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="list[BackendSet]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="list[BackendSet]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="list[BackendSet]")
 
     def list_backends(self, load_balancer_id, backend_set_name, **kwargs):
         """
@@ -1231,6 +1430,7 @@ class LoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_request_id"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1256,12 +1456,21 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="list[Backend]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="list[Backend]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="list[Backend]")
 
     def list_certificates(self, load_balancer_id, **kwargs):
         """
@@ -1286,6 +1495,7 @@ class LoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_request_id"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1310,12 +1520,21 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="list[Certificate]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="list[Certificate]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="list[Certificate]")
 
     def list_load_balancer_healths(self, compartment_id, **kwargs):
         """
@@ -1350,6 +1569,7 @@ class LoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_request_id",
             "limit",
             "page"
@@ -1373,12 +1593,21 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[LoadBalancerHealthSummary]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[LoadBalancerHealthSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[LoadBalancerHealthSummary]")
 
     def list_load_balancers(self, compartment_id, **kwargs):
         """
@@ -1411,20 +1640,21 @@ class LoadBalancerClient(object):
             Example: `full`
 
         :param str sort_by: (optional)
-            The field to sort by.  Only one sort order may be provided.  Time created is default ordered as descending.  Display name is default ordered as ascending.
+            The field to sort by.  You can provide one sort order (`sortOrder`). Default order for TIMECREATED is descending.
+            Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
 
             Allowed values are: "TIMECREATED", "DISPLAYNAME"
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order is case sensitive.
 
             Allowed values are: "ASC", "DESC"
 
         :param str display_name: (optional)
-            A filter to only return resources that match the given display name exactly.
+            A filter to return only resources that match the given display name exactly.
 
         :param str lifecycle_state: (optional)
-            A filter to only return resources that match the given lifecycle state.
+            A filter to return only resources that match the given lifecycle state.
 
             Allowed values are: "CREATING", "FAILED", "ACTIVE", "DELETING", "DELETED"
 
@@ -1436,6 +1666,7 @@ class LoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_request_id",
             "limit",
             "page",
@@ -1490,12 +1721,21 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[LoadBalancer]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[LoadBalancer]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[LoadBalancer]")
 
     def list_policies(self, compartment_id, **kwargs):
         """
@@ -1530,6 +1770,7 @@ class LoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_request_id",
             "limit",
             "page"
@@ -1553,12 +1794,21 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[LoadBalancerPolicy]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[LoadBalancerPolicy]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[LoadBalancerPolicy]")
 
     def list_protocols(self, compartment_id, **kwargs):
         """
@@ -1593,6 +1843,7 @@ class LoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_request_id",
             "limit",
             "page"
@@ -1616,12 +1867,21 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[LoadBalancerProtocol]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[LoadBalancerProtocol]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[LoadBalancerProtocol]")
 
     def list_shapes(self, compartment_id, **kwargs):
         """
@@ -1656,6 +1916,7 @@ class LoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_request_id",
             "limit",
             "page"
@@ -1679,12 +1940,21 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[LoadBalancerShape]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[LoadBalancerShape]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[LoadBalancerShape]")
 
     def list_work_requests(self, load_balancer_id, **kwargs):
         """
@@ -1719,6 +1989,7 @@ class LoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_request_id",
             "limit",
             "page"
@@ -1751,13 +2022,23 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[WorkRequest]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[WorkRequest]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[WorkRequest]")
 
     def update_backend(self, update_backend_details, load_balancer_id, backend_set_name, backend_name, **kwargs):
         """
@@ -1802,6 +2083,7 @@ class LoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
         ]
@@ -1830,12 +2112,23 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_backend_details)
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_backend_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_backend_details)
 
     def update_backend_set(self, update_backend_set_details, load_balancer_id, backend_set_name, **kwargs):
         """
@@ -1875,6 +2168,7 @@ class LoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
         ]
@@ -1902,12 +2196,23 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_backend_set_details)
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_backend_set_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_backend_set_details)
 
     def update_health_checker(self, health_checker, load_balancer_id, backend_set_name, **kwargs):
         """
@@ -1947,6 +2252,7 @@ class LoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
         ]
@@ -1974,12 +2280,23 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=health_checker)
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=health_checker)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=health_checker)
 
     def update_listener(self, update_listener_details, load_balancer_id, listener_name, **kwargs):
         """
@@ -2019,6 +2336,7 @@ class LoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
         ]
@@ -2046,12 +2364,23 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_listener_details)
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_listener_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_listener_details)
 
     def update_load_balancer(self, update_load_balancer_details, load_balancer_id, **kwargs):
         """
@@ -2086,6 +2415,7 @@ class LoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
         ]
@@ -2112,9 +2442,20 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_load_balancer_details)
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_load_balancer_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_load_balancer_details)

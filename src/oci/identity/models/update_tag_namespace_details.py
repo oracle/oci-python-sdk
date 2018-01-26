@@ -54,7 +54,7 @@ class UpdateTagNamespaceDetails(object):
     def description(self):
         """
         Gets the description of this UpdateTagNamespaceDetails.
-        The description of the tagNamespace.
+        The description you assign to the tag namespace.
 
 
         :return: The description of this UpdateTagNamespaceDetails.
@@ -66,7 +66,7 @@ class UpdateTagNamespaceDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateTagNamespaceDetails.
-        The description of the tagNamespace.
+        The description you assign to the tag namespace.
 
 
         :param description: The description of this UpdateTagNamespaceDetails.
@@ -78,7 +78,10 @@ class UpdateTagNamespaceDetails(object):
     def is_retired(self):
         """
         Gets the is_retired of this UpdateTagNamespaceDetails.
-        whether or not the tagNamespace is retired
+        Whether the tag namespace is retired.
+        See `Retiring Key Definitions and Namespace Definitions`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring
 
 
         :return: The is_retired of this UpdateTagNamespaceDetails.
@@ -90,7 +93,10 @@ class UpdateTagNamespaceDetails(object):
     def is_retired(self, is_retired):
         """
         Sets the is_retired of this UpdateTagNamespaceDetails.
-        whether or not the tagNamespace is retired
+        Whether the tag namespace is retired.
+        See `Retiring Key Definitions and Namespace Definitions`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring
 
 
         :param is_retired: The is_retired of this UpdateTagNamespaceDetails.
@@ -102,8 +108,11 @@ class UpdateTagNamespaceDetails(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this UpdateTagNamespaceDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this UpdateTagNamespaceDetails.
@@ -115,8 +124,11 @@ class UpdateTagNamespaceDetails(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this UpdateTagNamespaceDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this UpdateTagNamespaceDetails.
@@ -128,8 +140,11 @@ class UpdateTagNamespaceDetails(object):
     def defined_tags(self):
         """
         Gets the defined_tags of this UpdateTagNamespaceDetails.
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this UpdateTagNamespaceDetails.
@@ -141,8 +156,11 @@ class UpdateTagNamespaceDetails(object):
     def defined_tags(self, defined_tags):
         """
         Sets the defined_tags of this UpdateTagNamespaceDetails.
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this UpdateTagNamespaceDetails.

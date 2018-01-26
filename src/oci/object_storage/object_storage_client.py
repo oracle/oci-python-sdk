@@ -3,9 +3,10 @@
 
 from __future__ import absolute_import
 
-import requests
+import requests  # noqa: F401
 import six
 
+from .. import retry  # noqa: F401
 from ..base_client import BaseClient
 from ..config import get_config_value_or_default, validate_config
 from ..signer import Signer
@@ -16,16 +17,19 @@ missing = Sentinel("Missing")
 
 class ObjectStorageClient(object):
 
-    def __init__(self, config):
-        validate_config(config)
-        signer = Signer(
-            tenancy=config["tenancy"],
-            user=config["user"],
-            fingerprint=config["fingerprint"],
-            private_key_file_location=config.get("key_file"),
-            pass_phrase=get_config_value_or_default(config, "pass_phrase"),
-            private_key_content=config.get("key_content")
-        )
+    def __init__(self, config, **kwargs):
+        validate_config(config, signer=kwargs.get('signer'))
+        if 'signer' in kwargs:
+            signer = kwargs['signer']
+        else:
+            signer = Signer(
+                tenancy=config["tenancy"],
+                user=config["user"],
+                fingerprint=config["fingerprint"],
+                private_key_file_location=config.get("key_file"),
+                pass_phrase=get_config_value_or_default(config, "pass_phrase"),
+                private_key_content=config.get("key_content")
+            )
         self.base_client = BaseClient("object_storage", config, signer, object_storage_type_mapping)
 
     def abort_multipart_upload(self, namespace_name, bucket_name, object_name, upload_id, **kwargs):
@@ -59,6 +63,7 @@ class ObjectStorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_client_request_id"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -90,12 +95,21 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            query_params=query_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params)
 
     def commit_multipart_upload(self, namespace_name, bucket_name, object_name, upload_id, commit_multipart_upload_details, **kwargs):
         """
@@ -139,6 +153,7 @@ class ObjectStorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match",
             "if_none_match",
             "opc_client_request_id"
@@ -174,13 +189,23 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            query_params=query_params,
-            header_params=header_params,
-            body=commit_multipart_upload_details)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=commit_multipart_upload_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=commit_multipart_upload_details)
 
     def create_bucket(self, namespace_name, create_bucket_details, **kwargs):
         """
@@ -205,6 +230,7 @@ class ObjectStorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_client_request_id"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -229,13 +255,23 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=create_bucket_details,
-            response_type="Bucket")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_bucket_details,
+                response_type="Bucket")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_bucket_details,
+                response_type="Bucket")
 
     def create_multipart_upload(self, namespace_name, bucket_name, create_multipart_upload_details, **kwargs):
         """
@@ -272,6 +308,7 @@ class ObjectStorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match",
             "if_none_match",
             "opc_client_request_id"
@@ -301,13 +338,23 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=create_multipart_upload_details,
-            response_type="MultipartUpload")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_multipart_upload_details,
+                response_type="MultipartUpload")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_multipart_upload_details,
+                response_type="MultipartUpload")
 
     def create_preauthenticated_request(self, namespace_name, bucket_name, create_preauthenticated_request_details, **kwargs):
         """
@@ -336,6 +383,7 @@ class ObjectStorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_client_request_id"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -361,13 +409,23 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=create_preauthenticated_request_details,
-            response_type="PreauthenticatedRequest")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_preauthenticated_request_details,
+                response_type="PreauthenticatedRequest")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_preauthenticated_request_details,
+                response_type="PreauthenticatedRequest")
 
     def delete_bucket(self, namespace_name, bucket_name, **kwargs):
         """
@@ -397,6 +455,7 @@ class ObjectStorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match",
             "opc_client_request_id"
         ]
@@ -424,11 +483,19 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def delete_object(self, namespace_name, bucket_name, object_name, **kwargs):
         """
@@ -462,6 +529,7 @@ class ObjectStorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match",
             "opc_client_request_id"
         ]
@@ -490,11 +558,19 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def delete_preauthenticated_request(self, namespace_name, bucket_name, par_id, **kwargs):
         """
@@ -524,6 +600,7 @@ class ObjectStorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_client_request_id"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -550,11 +627,19 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def get_bucket(self, namespace_name, bucket_name, **kwargs):
         """
@@ -588,6 +673,7 @@ class ObjectStorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match",
             "if_none_match",
             "opc_client_request_id"
@@ -617,18 +703,27 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="Bucket")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Bucket")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Bucket")
 
     def get_namespace(self, **kwargs):
         """
         GET Namespace Name
-        Gets the name of the namespace for the user making the request. An account name must be unique, must start with a
-        letter, and can have up to 15 lowercase letters and numbers. You cannot use spaces or special characters.
+        Namespaces are unique. Namespaces are either the tenancy name or a random string automatically generated during
+        account creation. You cannot edit a namespace.
 
 
         :param str opc_client_request_id: (optional)
@@ -642,6 +737,7 @@ class ObjectStorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_client_request_id"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -656,11 +752,19 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            header_params=header_params,
-            response_type="str")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                response_type="str")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                response_type="str")
 
     def get_namespace_metadata(self, namespace_name, **kwargs):
         """
@@ -687,6 +791,7 @@ class ObjectStorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_client_request_id"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -711,12 +816,21 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="NamespaceMetadata")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="NamespaceMetadata")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="NamespaceMetadata")
 
     def get_object(self, namespace_name, bucket_name, object_name, **kwargs):
         """
@@ -760,6 +874,7 @@ class ObjectStorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match",
             "if_none_match",
             "opc_client_request_id",
@@ -792,12 +907,21 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="stream")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="stream")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="stream")
 
     def get_preauthenticated_request(self, namespace_name, bucket_name, par_id, **kwargs):
         """
@@ -827,6 +951,7 @@ class ObjectStorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_client_request_id"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -853,12 +978,21 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            response_type="PreauthenticatedRequestSummary")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="PreauthenticatedRequestSummary")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="PreauthenticatedRequestSummary")
 
     def head_bucket(self, namespace_name, bucket_name, **kwargs):
         """
@@ -892,6 +1026,7 @@ class ObjectStorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match",
             "if_none_match",
             "opc_client_request_id"
@@ -921,11 +1056,19 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def head_object(self, namespace_name, bucket_name, object_name, **kwargs):
         """
@@ -963,6 +1106,7 @@ class ObjectStorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match",
             "if_none_match",
             "opc_client_request_id"
@@ -993,11 +1137,19 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def list_buckets(self, namespace_name, compartment_id, **kwargs):
         """
@@ -1016,7 +1168,7 @@ class ObjectStorageClient(object):
             The top-level namespace used for the request.
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to create the bucket.
+            The ID of the compartment in which to list buckets.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -1035,6 +1187,7 @@ class ObjectStorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "limit",
             "page",
             "opc_client_request_id"
@@ -1068,13 +1221,23 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[BucketSummary]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[BucketSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[BucketSummary]")
 
     def list_multipart_upload_parts(self, namespace_name, bucket_name, object_name, upload_id, **kwargs):
         """
@@ -1113,6 +1276,7 @@ class ObjectStorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "limit",
             "page",
             "opc_client_request_id"
@@ -1148,13 +1312,23 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[MultipartUploadPartSummary]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[MultipartUploadPartSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[MultipartUploadPartSummary]")
 
     def list_multipart_uploads(self, namespace_name, bucket_name, **kwargs):
         """
@@ -1186,6 +1360,7 @@ class ObjectStorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "limit",
             "page",
             "opc_client_request_id"
@@ -1219,13 +1394,23 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[MultipartUpload]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[MultipartUpload]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[MultipartUpload]")
 
     def list_objects(self, namespace_name, bucket_name, **kwargs):
         """
@@ -1260,10 +1445,10 @@ class ObjectStorageClient(object):
 
         :param str delimiter: (optional)
             When this parameter is set, only objects whose names do not contain the delimiter character
-            (after an optionally specified prefix) are returned. Scanned objects whose names contain the
-            delimiter have part of their name up to the last occurrence of the delimiter (after the optional
-            prefix) returned as a set of prefixes. Note that only '/' is a supported delimiter character at
-            this time.
+            (after an optionally specified prefix) are returned in the objects key of the response body.
+            Scanned objects whose names contain the delimiter have the part of their name up to the first
+            occurrence of the delimiter (including the optional prefix) returned as a set of prefixes.
+            Note that only '/' is a supported delimiter character at this time.
 
         :param str fields: (optional)
             Object summary in list of objects includes the 'name' field. This parameter can also include 'size'
@@ -1284,6 +1469,7 @@ class ObjectStorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "prefix",
             "start",
             "end",
@@ -1325,13 +1511,23 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="ListObjects")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ListObjects")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ListObjects")
 
     def list_preauthenticated_requests(self, namespace_name, bucket_name, **kwargs):
         """
@@ -1366,6 +1562,7 @@ class ObjectStorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "object_name_prefix",
             "limit",
             "page",
@@ -1401,13 +1598,23 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            query_params=query_params,
-            header_params=header_params,
-            response_type="list[PreauthenticatedRequestSummary]")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[PreauthenticatedRequestSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[PreauthenticatedRequestSummary]")
 
     def put_object(self, namespace_name, bucket_name, object_name, put_object_body, **kwargs):
         """
@@ -1469,6 +1676,7 @@ class ObjectStorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "content_length",
             "if_match",
             "if_none_match",
@@ -1522,13 +1730,23 @@ class ObjectStorageClient(object):
             if requests.utils.super_len(put_object_body) == 0:
                 header_params['Content-Length'] = '0'
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=put_object_body,
-            enforce_content_headers=False)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=put_object_body,
+                enforce_content_headers=False)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=put_object_body,
+                enforce_content_headers=False)
 
     def rename_object(self, namespace_name, bucket_name, rename_object_details, **kwargs):
         """
@@ -1557,6 +1775,7 @@ class ObjectStorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_client_request_id"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1582,12 +1801,21 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=rename_object_details)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=rename_object_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=rename_object_details)
 
     def restore_objects(self, namespace_name, bucket_name, restore_objects_details, **kwargs):
         """
@@ -1616,6 +1844,7 @@ class ObjectStorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_client_request_id"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1641,12 +1870,21 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=restore_objects_details)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=restore_objects_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=restore_objects_details)
 
     def update_bucket(self, namespace_name, bucket_name, update_bucket_details, **kwargs):
         """
@@ -1679,6 +1917,7 @@ class ObjectStorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "if_match",
             "opc_client_request_id"
         ]
@@ -1706,13 +1945,23 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_bucket_details,
-            response_type="Bucket")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_bucket_details,
+                response_type="Bucket")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_bucket_details,
+                response_type="Bucket")
 
     def update_namespace_metadata(self, namespace_name, update_namespace_metadata_details, **kwargs):
         """
@@ -1740,6 +1989,7 @@ class ObjectStorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "opc_client_request_id"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1764,13 +2014,23 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            header_params=header_params,
-            body=update_namespace_metadata_details,
-            response_type="NamespaceMetadata")
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_namespace_metadata_details,
+                response_type="NamespaceMetadata")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_namespace_metadata_details,
+                response_type="NamespaceMetadata")
 
     def upload_part(self, namespace_name, bucket_name, object_name, upload_id, upload_part_num, upload_part_body, **kwargs):
         """
@@ -1826,6 +2086,7 @@ class ObjectStorageClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "retry_strategy",
             "content_length",
             "opc_client_request_id",
             "if_match",
@@ -1875,11 +2136,22 @@ class ObjectStorageClient(object):
             if requests.utils.super_len(upload_part_body) == 0:
                 header_params['Content-Length'] = '0'
 
-        return self.base_client.call_api(
-            resource_path=resource_path,
-            method=method,
-            path_params=path_params,
-            query_params=query_params,
-            header_params=header_params,
-            body=upload_part_body,
-            enforce_content_headers=False)
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=upload_part_body,
+                enforce_content_headers=False)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=upload_part_body,
+                enforce_content_headers=False)

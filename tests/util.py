@@ -10,14 +10,21 @@ import resource
 from contextlib import contextmanager
 from requests.exceptions import Timeout
 from requests.exceptions import ConnectionError
+from . import test_config_container
 
 
 def random_number_string():
-    return str(random.randint(0, 10000))
+    if test_config_container.using_vcr_with_mock_responses():
+        return '10000'
+    else:
+        return str(random.randint(0, 10000))
 
 
 def unique_name(base_name):
-    return base_name + '_' + random_number_string()
+    if test_config_container.using_vcr_with_mock_responses():
+        return '{}_vcr'.format(base_name)
+    else:
+        return base_name + '_' + random_number_string()
 
 
 def get_resource_directory():
