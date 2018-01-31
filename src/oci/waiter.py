@@ -5,6 +5,7 @@ import time
 
 from .exceptions import MaximumWaitTimeExceeded, WaitUntilNotSupported, ServiceError
 from .util import Sentinel
+from . import retry
 
 WAIT_RESOURCE_NOT_FOUND = Sentinel(name='WaitResourceNotFound', truthy=False)
 
@@ -96,7 +97,7 @@ def wait_until(client, response, property=None, state=None, max_interval_seconds
         sleep_interval_seconds = min(sleep_interval_seconds * 2, max_interval_seconds)
 
         try:
-            response = client.base_client.request(response.request)
+            response = retry.DEFAULT_RETRY_STRATEGY.make_retrying_call(client.base_client.request, response.request)
             times_checked += 1
         except ServiceError as se:
             if se.status == 404:
