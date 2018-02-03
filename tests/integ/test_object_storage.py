@@ -313,7 +313,7 @@ class TestObjectStorage:
             request = oci.object_storage.models.RestoreObjectsDetails()
             request.object_name = object_name_a
             response = object_storage.restore_objects(namespace, bucket_name, request)
-            assert response.status == 200
+            assert response.status >= 200 and response.status <= 299
 
             # Head again and verify archival state
             response = object_storage.head_object(namespace, bucket_name, object_name_a)
