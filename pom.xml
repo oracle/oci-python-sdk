@@ -21,6 +21,7 @@
         <audit-spec-file>hemlock-api-20160918.yaml</audit-spec-file>
         <enabled-groups-file>${project.basedir}/release-sdk.txt</enabled-groups-file>
         <inceptionYear>2016</inceptionYear>
+        <dns-spec-file>public-dns-api-spec.yaml</dns-spec-file>
     </properties>
     <dependencies>
         <dependency>
@@ -46,6 +47,10 @@
         <dependency>
             <groupId>com.oracle.pic.sherlock</groupId>
             <artifactId>hemlock-spec</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.oracle.pic.dns.pub</groupId>
+            <artifactId>public-dns-api-spec</artifactId>
         </dependency>
     </dependencies>
     <build>
@@ -176,6 +181,24 @@
                                     <type>jar</type>
                                     <includes>**/*</includes>
                                     <outputDirectory>${spec-temp-dir}/audit</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>unpack-dns</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>com.oracle.pic.dns.pub</groupId>
+                                    <artifactId>public-dns-api-spec</artifactId>
+                                    <type>jar</type>
+                                    <includes>**/*</includes>
+                                    <outputDirectory>${spec-temp-dir}/dns</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
@@ -421,6 +444,32 @@
                             <groupFile>${enabled-groups-file}</groupFile>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>spec-conditionals-prefer-dns</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>prefer</goal>
+                        </goals>
+                        <configuration>
+                            <inputFiles>
+                                <inputFile>${spec-temp-dir}/dns/source/${dns-spec-file}</inputFile>
+                                <inputFile>${spec-temp-dir}/dns/${dns-spec-file}</inputFile>
+                            </inputFiles>
+                            <outputFile>${preferred-temp-dir}/${dns-spec-file}</outputFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>spec-conditionals-preprocess-dns</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>preprocess</goal>
+                        </goals>
+                        <configuration>
+                            <inputFile>${preferred-temp-dir}/${dns-spec-file}</inputFile>
+                            <outputFile>${preprocessed-temp-dir}/${dns-spec-file}</outputFile>
+                            <groupFile>${project.basedir}/release-sdk.txt</groupFile>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>
@@ -452,7 +501,7 @@
             <plugin>
                 <groupId>com.oracle.bmc.sdk</groupId>
                 <artifactId>bmc-sdk-swagger-maven-plugin</artifactId>
-                <version>1.12.1-SNAPSHOT</version>
+                <version>1.14-SNAPSHOT</version>
                 <executions>
                     <execution>
                         <id>python-public-sdk-identity</id>
@@ -566,6 +615,26 @@
                             <featureIdConfigFile>${project.basedir}/featureId.yaml</featureIdConfigFile>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>python-public-sdk-dns</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <language>oracle-python-sdk</language>
+                            <specPath>${preprocessed-temp-dir}/${dns-spec-file}</specPath>
+                            <outputDir>src/oci</outputDir>
+                            <basePackage>OCI</basePackage>
+                            <specGenerationType>PUBLIC</specGenerationType>
+                            <additionalProperties>
+                                <specName>dns</specName>
+                                <generateInitFile>true</generateInitFile>
+                                <endpoint>https://dns.{domain}/20180115</endpoint>
+                            </additionalProperties>
+                            <featureIdConfigFile>${project.basedir}/featureId.yaml</featureIdConfigFile>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>
@@ -654,6 +723,12 @@
                                 <exclude>object_storage/__init__.py</exclude>
                             </excludes>
                         </fileset>
+                        <fileset>
+                            <directory>src/oci/dns</directory>
+                            <includes>
+                                <include>**/*</include>
+                            </includes>
+                        </fileset>
                     </filesets>
                 </configuration>
             </plugin>
@@ -669,7 +744,7 @@
             <dependency>
                 <groupId>com.oracle.pic.identity</groupId>
                 <artifactId>identity-control-plane-api-spec</artifactId>
-                <version>0.2.85</version>
+                <version>0.2.88</version>
             </dependency>
             <dependency>
                 <groupId>com.oracle.pic.casper</groupId>
@@ -690,6 +765,11 @@
                 <groupId>com.oracle.pic.sherlock</groupId>
                 <artifactId>hemlock-spec</artifactId>
                 <version>0.1.7</version>
+            </dependency>
+            <dependency>
+                <groupId>com.oracle.pic.dns.pub</groupId>
+                <artifactId>public-dns-api-spec</artifactId>
+                <version>1.0.0-15</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
