@@ -95,6 +95,7 @@ GENERATE_EXECUTION_TEMPLATE = """
             <generateInitFile>true</generateInitFile>
             <endpoint>{endpoint}</endpoint>
         </additionalProperties>
+        <featureIdConfigFile>${{project.basedir}}/featureId.yaml</featureIdConfigFile>
     </configuration>
 </execution>
 """

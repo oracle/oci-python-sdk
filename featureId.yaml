@@ -1,0 +1,34 @@
+# Add whitelisted feature ids here. Please include a comment describing what the feature is.
+# Example:
+# whitelisted:
+#   # comment
+#   - udx-123
+#   # comment
+#   - udx-456
+whitelisted:
+  # VNIC routes and Cavium Source Destination check
+  # Request by darryn.lavery@
+  - udx-174
+  # VCN to VCN Peering within region
+  # Request by darryn.lavery@
+  - udx-141
+  # Support option for second NIC on X7 BM
+  # Request by darryn.lavery@
+  - udx-473
+  # Block Storage:User-Managed Boot Volumes
+  # Request by darryn.lavery@ and 
+  # Aaron / Block Storage ok for this to go out 11/27
+  - udx-117
+  # C3 support
+  - udx-26
+  - udx-507
+  - udx-520
+  - udx-645
+  # Support public IP operations
+  # As of 1/17 this is still preview only but needs to be whitelisted to go into preview SDK / CLI
+  - udx-136
+  # Make https://jira.aka.lgl.grungy.us/browse/DEX-2437 work
+  - udx-637
+  - udx-123
+  - udx-643
+  - udx-729

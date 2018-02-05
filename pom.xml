@@ -469,6 +469,7 @@
                                 <specName>identity</specName>
                                 <endpoint>https://identity.{domain}/20160918</endpoint>
                             </additionalProperties>
+                            <featureIdConfigFile>${project.basedir}/featureId.yaml</featureIdConfigFile>
                         </configuration>
                     </execution>
                     <execution>
@@ -486,6 +487,7 @@
                                 <specName>core</specName>
                                 <endpoint>https://iaas.{domain}/20160918</endpoint>
                             </additionalProperties>
+                            <featureIdConfigFile>${project.basedir}/featureId.yaml</featureIdConfigFile>
                         </configuration>
                     </execution>
                     <execution>
@@ -504,6 +506,7 @@
                                 <generateInitFile>false</generateInitFile>
                                 <endpoint>https://objectstorage.{domain}</endpoint>
                             </additionalProperties>
+                            <featureIdConfigFile>${project.basedir}/featureId.yaml</featureIdConfigFile>
                         </configuration>
                     </execution>
                     <execution>
@@ -522,6 +525,7 @@
                                 <generateInitFile>true</generateInitFile>
                                 <endpoint>https://iaas.{domain}/20170115</endpoint>
                             </additionalProperties>
+                            <featureIdConfigFile>${project.basedir}/featureId.yaml</featureIdConfigFile>
                         </configuration>
                     </execution>
                     <execution>
@@ -540,6 +544,7 @@
                                 <generateInitFile>true</generateInitFile>
                                 <endpoint>https://database.{domain}/20160918</endpoint>
                             </additionalProperties>
+                            <featureIdConfigFile>${project.basedir}/featureId.yaml</featureIdConfigFile>
                         </configuration>
                     </execution>
                     <execution>
@@ -558,6 +563,7 @@
                                 <generateInitFile>true</generateInitFile>
                                 <endpoint>https://audit.{domain}/20160918</endpoint>
                             </additionalProperties>
+                            <featureIdConfigFile>${project.basedir}/featureId.yaml</featureIdConfigFile>
                         </configuration>
                     </execution>
                 </executions>
