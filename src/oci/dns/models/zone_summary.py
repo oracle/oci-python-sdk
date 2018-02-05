@@ -28,9 +28,9 @@ class ZoneSummary(object):
             The value to assign to the compartment_id property of this ZoneSummary.
         :type compartment_id: str
 
-        :param _self:
-            The value to assign to the _self property of this ZoneSummary.
-        :type _self: str
+        :param self_uri:
+            The value to assign to the self_uri property of this ZoneSummary.
+        :type self_uri: str
 
         :param id:
             The value to assign to the id property of this ZoneSummary.
@@ -53,7 +53,7 @@ class ZoneSummary(object):
             'name': 'str',
             'zone_type': 'str',
             'compartment_id': 'str',
-            '_self': 'str',
+            'self_uri': 'str',
             'id': 'str',
             'time_created': 'datetime',
             'version': 'str',
@@ -64,7 +64,7 @@ class ZoneSummary(object):
             'name': 'name',
             'zone_type': 'zoneType',
             'compartment_id': 'compartmentId',
-            '_self': 'self',
+            'self_uri': 'self',
             'id': 'id',
             'time_created': 'timeCreated',
             'version': 'version',
@@ -74,7 +74,7 @@ class ZoneSummary(object):
         self._name = None
         self._zone_type = None
         self._compartment_id = None
-        self.__self = None
+        self._self_uri = None
         self._id = None
         self._time_created = None
         self._version = None
@@ -159,28 +159,28 @@ class ZoneSummary(object):
         self._compartment_id = compartment_id
 
     @property
-    def _self(self):
+    def self_uri(self):
         """
-        Gets the _self of this ZoneSummary.
+        Gets the self_uri of this ZoneSummary.
         The canonical absolute URL of the resource.
 
 
-        :return: The _self of this ZoneSummary.
+        :return: The self_uri of this ZoneSummary.
         :rtype: str
         """
-        return self.__self
+        return self._self_uri
 
-    @_self.setter
-    def _self(self, _self):
+    @self_uri.setter
+    def self_uri(self, self_uri):
         """
-        Sets the _self of this ZoneSummary.
+        Sets the self_uri of this ZoneSummary.
         The canonical absolute URL of the resource.
 
 
-        :param _self: The _self of this ZoneSummary.
+        :param self_uri: The self_uri of this ZoneSummary.
         :type: str
         """
-        self.__self = _self
+        self._self_uri = self_uri
 
     @property
     def id(self):
