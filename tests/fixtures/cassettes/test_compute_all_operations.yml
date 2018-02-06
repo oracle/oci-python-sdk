@@ -2045,7 +2045,7 @@ interactions:
       opc-request-id: [64D0FBE30E194B309B6C67EC2E71BF6D]
       user-agent: [Oracle-PythonSDK/1.3.12 (python 3.6.2; x86_64-Darwin)]
     method: GET
-    uri: https://iaas.us-phoenix-1.oraclecloud.com/20160918/images/?compartmentId=ocid1.compartment.oc1..aaaaaaaan5brzve7w7oyhrfngjfsrf72r67aqdd2sbhlarjas6pwamy4425a
+    uri: https://iaas.us-phoenix-1.oraclecloud.com/20160918/images?compartmentId=ocid1.compartment.oc1..aaaaaaaan5brzve7w7oyhrfngjfsrf72r67aqdd2sbhlarjas6pwamy4425a
   response:
     body: {string: '[{"baseImageId":null,"compartmentId":null,"createImageAllowed":true,"definedTags":{},"displayName":"Windows-Server-2012-R2-Standard-Edition-VM-Gen2-2018.01.12-0","freeformTags":{},"id":"ocid1.image.oc1.phx.aaaaaaaam3rbuegojxzdomvbp6qa2fb45ex24ng7c5ykawuqmomerfblveaq","launchMode":"NATIVE","launchOptions":{"bootVolumeType":"ISCSI","firmware":"UEFI_64","networkType":"VFIO","remoteDataVolumeType":"ISCSI"},"lifecycleState":"AVAILABLE","operatingSystem":"Windows","operatingSystemVersion":"Server
         2012 R2 Standard","timeCreated":"2018-01-10T15:05:16.246Z"},{"baseImageId":null,"compartmentId":null,"createImageAllowed":true,"definedTags":{},"displayName":"Windows-Server-2012-R2-Standard-Edition-VM-Gen2-2017.10.31-0","freeformTags":{},"id":"ocid1.image.oc1.phx.aaaaaaaae5cbnhdfyd75lzxypq2vk4n7w7rj6uj7rqvquoghn6n67omy5lqq","launchMode":"NATIVE","launchOptions":{"bootVolumeType":"ISCSI","firmware":"UEFI_64","networkType":"VFIO","remoteDataVolumeType":"ISCSI"},"lifecycleState":"AVAILABLE","operatingSystem":"Windows","operatingSystemVersion":"Server
@@ -2590,7 +2590,7 @@ interactions:
       user-agent: [Oracle-PythonSDK/1.3.12 (python 3.6.2; x86_64-Darwin)]
       x-content-sha256: [2o9YkyJiQVIGmoaXmtxN4aiZjqFV3x9leXMggDwTTB4=]
     method: POST
-    uri: https://iaas.us-phoenix-1.oraclecloud.com/20160918/images/
+    uri: https://iaas.us-phoenix-1.oraclecloud.com/20160918/images
   response:
     body: {string: "{\n  \"baseImageId\" : \"ocid1.image.oc1.phx.aaaaaaaamv5wg7ffvaxaba3orhpuya7x7opz24hd6m7epmwfqbeudi6meepq\",\n
         \ \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaan5brzve7w7oyhrfngjfsrf72r67aqdd2sbhlarjas6pwamy4425a\",\n
@@ -2624,7 +2624,7 @@ interactions:
       opc-request-id: [AE5F351E821A44B4B18E99A5636C70B6]
       user-agent: [Oracle-PythonSDK/1.3.12 (python 3.6.2; x86_64-Darwin)]
     method: GET
-    uri: https://iaas.us-phoenix-1.oraclecloud.com/20160918/images/?compartmentId=ocid1.compartment.oc1..aaaaaaaan5brzve7w7oyhrfngjfsrf72r67aqdd2sbhlarjas6pwamy4425a
+    uri: https://iaas.us-phoenix-1.oraclecloud.com/20160918/images?compartmentId=ocid1.compartment.oc1..aaaaaaaan5brzve7w7oyhrfngjfsrf72r67aqdd2sbhlarjas6pwamy4425a
   response:
     body: {string: '[{"baseImageId":null,"compartmentId":null,"createImageAllowed":true,"definedTags":{},"displayName":"Windows-Server-2012-R2-Standard-Edition-VM-Gen2-2018.01.12-0","freeformTags":{},"id":"ocid1.image.oc1.phx.aaaaaaaam3rbuegojxzdomvbp6qa2fb45ex24ng7c5ykawuqmomerfblveaq","launchMode":"NATIVE","launchOptions":{"bootVolumeType":"ISCSI","firmware":"UEFI_64","networkType":"VFIO","remoteDataVolumeType":"ISCSI"},"lifecycleState":"AVAILABLE","operatingSystem":"Windows","operatingSystemVersion":"Server
         2012 R2 Standard","timeCreated":"2018-01-10T15:05:16.246Z"},{"baseImageId":null,"compartmentId":null,"createImageAllowed":true,"definedTags":{},"displayName":"Windows-Server-2012-R2-Standard-Edition-VM-Gen2-2017.10.31-0","freeformTags":{},"id":"ocid1.image.oc1.phx.aaaaaaaae5cbnhdfyd75lzxypq2vk4n7w7rj6uj7rqvquoghn6n67omy5lqq","launchMode":"NATIVE","launchOptions":{"bootVolumeType":"ISCSI","firmware":"UEFI_64","networkType":"VFIO","remoteDataVolumeType":"ISCSI"},"lifecycleState":"AVAILABLE","operatingSystem":"Windows","operatingSystemVersion":"Server

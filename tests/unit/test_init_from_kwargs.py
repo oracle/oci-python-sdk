@@ -29,7 +29,8 @@ ENUM_ATTR_TO_VALUE = {
     'CreateImageDetails': {'launch_mode': 'NATIVE'},
     'ImageSourceDetails': {'source_image_type': 'QCOW2'},
     'ImageSourceViaObjectStorageUriDetails': {'source_image_type': 'QCOW2'},
-    'ImageSourceViaObjectStorageTupleDetails': {'source_image_type': 'QCOW2'}
+    'ImageSourceViaObjectStorageTupleDetails': {'source_image_type': 'QCOW2'},
+    'CreatePublicIpDetails': {'lifetime': 'RESERVED'}
 }
 
 
