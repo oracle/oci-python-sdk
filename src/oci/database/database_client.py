@@ -1880,7 +1880,7 @@ class DatabaseClient(object):
     def list_db_systems(self, compartment_id, **kwargs):
         """
         ListDbSystems
-        Gets a list of the DB Systems in the specified compartment.
+        Gets a list of the DB Systems in the specified compartment. You can specify a backupId to list only the DB Systems that support creating a database using this backup in this compartment.
 
 
         :param str compartment_id: (required)
@@ -1894,6 +1894,9 @@ class DatabaseClient(object):
         :param str page: (optional)
             The pagination token to continue listing from.
 
+        :param str backup_id: (optional)
+            The OCID of the backup. Specify a backupId to list only the DB Systems that support creating a database using this backup in this compartment.
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.DbSystemSummary`
         :rtype: :class:`~oci.response.Response`
         """
@@ -1904,7 +1907,8 @@ class DatabaseClient(object):
         expected_kwargs = [
             "retry_strategy",
             "limit",
-            "page"
+            "page",
+            "backup_id"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
         if extra_kwargs:
@@ -1914,7 +1918,8 @@ class DatabaseClient(object):
         query_params = {
             "compartmentId": compartment_id,
             "limit": kwargs.get("limit", missing),
-            "page": kwargs.get("page", missing)
+            "page": kwargs.get("page", missing),
+            "backupId": kwargs.get("backup_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
 

@@ -26,6 +26,10 @@ class Listener(object):
             The value to assign to the name property of this Listener.
         :type name: str
 
+        :param path_route_set_name:
+            The value to assign to the path_route_set_name property of this Listener.
+        :type path_route_set_name: str
+
         :param port:
             The value to assign to the port property of this Listener.
         :type port: int
@@ -43,6 +47,7 @@ class Listener(object):
             'connection_configuration': 'ConnectionConfiguration',
             'default_backend_set_name': 'str',
             'name': 'str',
+            'path_route_set_name': 'str',
             'port': 'int',
             'protocol': 'str',
             'ssl_configuration': 'SSLConfiguration'
@@ -52,6 +57,7 @@ class Listener(object):
             'connection_configuration': 'connectionConfiguration',
             'default_backend_set_name': 'defaultBackendSetName',
             'name': 'name',
+            'path_route_set_name': 'pathRouteSetName',
             'port': 'port',
             'protocol': 'protocol',
             'ssl_configuration': 'sslConfiguration'
@@ -60,6 +66,7 @@ class Listener(object):
         self._connection_configuration = None
         self._default_backend_set_name = None
         self._name = None
+        self._path_route_set_name = None
         self._port = None
         self._protocol = None
         self._ssl_configuration = None
@@ -139,6 +146,36 @@ class Listener(object):
         :type: str
         """
         self._name = name
+
+    @property
+    def path_route_set_name(self):
+        """
+        Gets the path_route_set_name of this Listener.
+        The name of the set of path-based routing rules, :class:`PathRouteSet`,
+        applied to this listener's traffic.
+
+        Example: `path-route-set-001`
+
+
+        :return: The path_route_set_name of this Listener.
+        :rtype: str
+        """
+        return self._path_route_set_name
+
+    @path_route_set_name.setter
+    def path_route_set_name(self, path_route_set_name):
+        """
+        Sets the path_route_set_name of this Listener.
+        The name of the set of path-based routing rules, :class:`PathRouteSet`,
+        applied to this listener's traffic.
+
+        Example: `path-route-set-001`
+
+
+        :param path_route_set_name: The path_route_set_name of this Listener.
+        :type: str
+        """
+        self._path_route_set_name = path_route_set_name
 
     @property
     def port(self):

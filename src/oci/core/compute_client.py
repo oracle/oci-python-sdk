@@ -326,7 +326,7 @@ class ComputeClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Image`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/images/"
+        resource_path = "/images"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -1819,6 +1819,9 @@ class ComputeClient(object):
 
             Example: `7.2`
 
+        :param str shape: (optional)
+            Shape name.
+
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
 
@@ -1853,7 +1856,7 @@ class ComputeClient(object):
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.Image`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/images/"
+        resource_path = "/images"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -1862,6 +1865,7 @@ class ComputeClient(object):
             "display_name",
             "operating_system",
             "operating_system_version",
+            "shape",
             "limit",
             "page",
             "sort_by",
@@ -1899,6 +1903,7 @@ class ComputeClient(object):
             "displayName": kwargs.get("display_name", missing),
             "operatingSystem": kwargs.get("operating_system", missing),
             "operatingSystemVersion": kwargs.get("operating_system_version", missing),
+            "shape": kwargs.get("shape", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortBy": kwargs.get("sort_by", missing),

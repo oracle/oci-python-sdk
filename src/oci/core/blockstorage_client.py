@@ -170,6 +170,50 @@ class BlockstorageClient(object):
                 body=create_volume_backup_details,
                 response_type="VolumeBackup")
 
+    def create_volume_backup_policy_assignment(self, create_volume_backup_policy_assignment_details, **kwargs):
+        """
+        CreateVolumeBackupPolicyAssignment
+        Assigns a policy to the specified asset, such as a volume. Note that a given asset can
+        only have one policy assigned to it; if this method is called for an asset that previously
+        has a different policy assigned, the prior assignment will be silently deleted.
+
+
+        :param CreateVolumeBackupPolicyAssignmentDetails create_volume_backup_policy_assignment_details: (required)
+            Request to assign a specified policy to a particular asset.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VolumeBackupPolicyAssignment`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/volumeBackupPolicyAssignments"
+        method = "POST"
+
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_volume_backup_policy_assignment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_volume_backup_policy_assignment_details,
+                response_type="VolumeBackupPolicyAssignment")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_volume_backup_policy_assignment_details,
+                response_type="VolumeBackupPolicyAssignment")
+
     def delete_boot_volume(self, boot_volume_id, **kwargs):
         """
         DeleteBootVolume
@@ -363,6 +407,67 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params)
 
+    def delete_volume_backup_policy_assignment(self, policy_assignment_id, **kwargs):
+        """
+        DeleteVolumeBackupPolicyAssignment
+        Deletes a volume backup policy assignment (i.e. unassigns the policy from an asset).
+
+
+        :param str policy_assignment_id: (required)
+            The OCID of the volume backup policy assignment.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/volumeBackupPolicyAssignments/{policyAssignmentId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_volume_backup_policy_assignment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "policyAssignmentId": policy_assignment_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
     def get_boot_volume(self, boot_volume_id, **kwargs):
         """
         GetBootVolume
@@ -519,6 +624,174 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="VolumeBackup")
 
+    def get_volume_backup_policy(self, policy_id, **kwargs):
+        """
+        GetVolumeBackupPolicy
+        Gets information for the specified volume backup policy.
+
+
+        :param str policy_id: (required)
+            The OCID of the volume backup policy.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VolumeBackupPolicy`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/volumeBackupPolicies/{policyId}"
+        method = "GET"
+
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_volume_backup_policy got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "policyId": policy_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="VolumeBackupPolicy")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="VolumeBackupPolicy")
+
+    def get_volume_backup_policy_asset_assignment(self, asset_id, **kwargs):
+        """
+        GetVolumeBackupPolicyAssetAssignment
+        Gets the volume backup policy assignment for the specified asset. Note that the
+        assetId query parameter is required, and that the returned list will contain at most
+        one item (since any given asset can only have one policy assigned to it).
+
+
+        :param str asset_id: (required)
+            The OCID of an asset (e.g. a volume).
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+            Example: `500`
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.VolumeBackupPolicyAssignment`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/volumeBackupPolicyAssignments"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_volume_backup_policy_asset_assignment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "assetId": asset_id,
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[VolumeBackupPolicyAssignment]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[VolumeBackupPolicyAssignment]")
+
+    def get_volume_backup_policy_assignment(self, policy_assignment_id, **kwargs):
+        """
+        GetVolumeBackupPolicyAssignment
+        Gets information for the specified volume backup policy assignment.
+
+
+        :param str policy_assignment_id: (required)
+            The OCID of the volume backup policy assignment.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VolumeBackupPolicyAssignment`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/volumeBackupPolicyAssignments/{policyAssignmentId}"
+        method = "GET"
+
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_volume_backup_policy_assignment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "policyAssignmentId": policy_assignment_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="VolumeBackupPolicyAssignment")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="VolumeBackupPolicyAssignment")
+
     def list_boot_volumes(self, availability_domain, compartment_id, **kwargs):
         """
         ListBootVolumes
@@ -586,6 +859,64 @@ class BlockstorageClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="list[BootVolume]")
+
+    def list_volume_backup_policies(self, **kwargs):
+        """
+        ListVolumeBackupPolicies
+        Lists all volume backup policies available to the caller.
+
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+            Example: `500`
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.VolumeBackupPolicy`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/volumeBackupPolicies"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_volume_backup_policies got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[VolumeBackupPolicy]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[VolumeBackupPolicy]")
 
     def list_volume_backups(self, compartment_id, **kwargs):
         """

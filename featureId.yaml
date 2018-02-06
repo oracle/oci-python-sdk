@@ -26,9 +26,18 @@ whitelisted:
   - udx-645
   # Support public IP operations
   # As of 1/17 this is still preview only but needs to be whitelisted to go into preview SDK / CLI
+  # As of 6 Feb 2018 this if now public: https://jira.aka.lgl.grungy.us/browse/DEX-2467
   - udx-136
   # Make https://jira.aka.lgl.grungy.us/browse/DEX-2437 work
   - udx-637
   - udx-123
   - udx-643
   - udx-729
+  # LBaaS path route sets: https://jira.aka.lgl.grungy.us/browse/DEX-2467
+  - udx-491
+  # DBaaS backup ID in ListDbSystems: https://jira.aka.lgl.grungy.us/browse/DEX-2467
+  - udx-667
+  # Block storage changes: https://jira.aka.lgl.grungy.us/browse/DEX-2467 (doesn't look like these have feature IDs in the spec, but here for reference)
+  - udx-157
+  - udx-475
+  - udx-498

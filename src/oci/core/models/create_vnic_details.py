@@ -77,13 +77,20 @@ class CreateVnicDetails(object):
         `prohibitPublicIpOnVnic` = true, an error is returned.
 
         **Note:** This public IP address is associated with the primary private IP
-        on the VNIC. Secondary private IPs cannot have public IP
-        addresses associated with them. For more information, see
+        on the VNIC. For more information, see
         `IP Addresses`__.
+
+        **Note:** There's a limit to the number of :class:`PublicIp`
+        a VNIC or instance can have. If you try to create a secondary VNIC
+        with an assigned public IP for an instance that has already
+        reached its public IP limit, an error is returned. For information
+        about the public IP limits, see
+        `Public IP Addresses`__.
 
         Example: `false`
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPaddresses.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingpublicIPs.htm
 
 
         :return: The assign_public_ip of this CreateVnicDetails.
@@ -104,13 +111,20 @@ class CreateVnicDetails(object):
         `prohibitPublicIpOnVnic` = true, an error is returned.
 
         **Note:** This public IP address is associated with the primary private IP
-        on the VNIC. Secondary private IPs cannot have public IP
-        addresses associated with them. For more information, see
+        on the VNIC. For more information, see
         `IP Addresses`__.
+
+        **Note:** There's a limit to the number of :class:`PublicIp`
+        a VNIC or instance can have. If you try to create a secondary VNIC
+        with an assigned public IP for an instance that has already
+        reached its public IP limit, an error is returned. For information
+        about the public IP limits, see
+        `Public IP Addresses`__.
 
         Example: `false`
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPaddresses.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingpublicIPs.htm
 
 
         :param assign_public_ip: The assign_public_ip of this CreateVnicDetails.
