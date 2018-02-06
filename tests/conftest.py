@@ -110,6 +110,13 @@ def database_client(config):
     return client
 
 
+@pytest.fixture
+def dns_client(config):
+    client = oci.dns.DnsClient(config)
+    add_retries_to_service_operations(client)
+    return client
+
+
 def add_retries_to_service_operations(client_obj):
     for name in dir(client_obj):
         if name.find('__') == 0:
