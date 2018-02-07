@@ -15,6 +15,7 @@ class TestBlockStorage:
                 self.subtest_volume_operations(block_storage)
                 self.subtest_create_volume_both_mb_and_gb_given(block_storage)
                 self.subtest_volume_backup_operations(block_storage)
+                self.subtest_volume_backup_policies(block_storage)
             finally:
                 self.subtest_delete(block_storage)
 
@@ -110,6 +111,86 @@ class TestBlockStorage:
 
         # Make sure we're still in a good state before deleting.
         test_config_container.do_wait(block_storage, block_storage.get_volume_backup(self.backup_id), 'lifecycle_state', 'AVAILABLE', max_interval_seconds=180)
+
+    @util.log_test
+    def subtest_volume_backup_policies(self, block_storage):
+        volume_backup_policies = oci.pagination.list_call_get_all_results(block_storage.list_volume_backup_policies)
+        assert len(volume_backup_policies.data) > 0
+        for policy in volume_backup_policies.data:
+            assert policy.display_name
+            assert policy.id
+            assert policy.time_created
+            assert len(policy.schedules) > 0
+            for schedule in policy.schedules:
+                assert schedule.backup_type
+                assert schedule.period
+                assert schedule.retention_seconds
+                assert schedule.offset_seconds is not None
+
+        policy_from_list = volume_backup_policies.data[0]
+        volume_backup_policy = block_storage.get_volume_backup_policy(policy_from_list.id).data
+        assert policy_from_list.display_name == volume_backup_policy.display_name
+        assert policy_from_list.id == volume_backup_policy.id
+        assert policy_from_list.time_created == volume_backup_policy.time_created
+        assert len(volume_backup_policy.schedules) > 0
+        for schedule in volume_backup_policy.schedules:
+            assert schedule.backup_type
+            assert schedule.period
+            assert schedule.retention_seconds
+            assert schedule.offset_seconds is not None
+
+        create_response = block_storage.create_volume_backup_policy_assignment(
+            oci.core.models.CreateVolumeBackupPolicyAssignmentDetails(
+                asset_id=self.volume_id,
+                policy_id=volume_backup_policy.id
+            )
+        )
+        assert create_response.request_id
+        assert create_response.headers.get('etag')
+        assert create_response.data.asset_id == self.volume_id
+        assert create_response.data.policy_id == volume_backup_policy.id
+        assert create_response.data.time_created
+        assert create_response.data.id
+
+        get_policy_assignment = block_storage.get_volume_backup_policy_assignment(create_response.data.id)
+        assert get_policy_assignment.data.asset_id == self.volume_id
+        assert get_policy_assignment.data.policy_id == volume_backup_policy.id
+        assert get_policy_assignment.data.time_created == create_response.data.time_created
+
+        get_policy_asset_assignment = block_storage.get_volume_backup_policy_asset_assignment(self.volume_id)
+        assert len(get_policy_asset_assignment.data) == 1
+        assert get_policy_asset_assignment.data[0].id == get_policy_assignment.data.id
+        assert get_policy_asset_assignment.data[0].asset_id == get_policy_assignment.data.asset_id
+        assert get_policy_asset_assignment.data[0].policy_id == get_policy_assignment.data.policy_id
+        assert get_policy_asset_assignment.data[0].time_created == get_policy_assignment.data.time_created
+
+        block_storage.delete_volume_backup_policy_assignment(get_policy_assignment.data.id)
+        get_policy_asset_assignment = block_storage.get_volume_backup_policy_asset_assignment(self.volume_id)
+        assert len(get_policy_asset_assignment.data) == 0
+
+        # Create a volume and assign a policy at create time
+        result = block_storage.create_volume(
+            oci.core.models.CreateVolumeDetails(
+                display_name=util.random_name('python_sdk_pol_at_create'),
+                size_in_gbs=50,
+                availability_domain=util.availability_domain(),
+                compartment_id=util.COMPARTMENT_ID,
+                backup_policy_id=volume_backup_policy.id
+            )
+        )
+        volume_id = result.data.id
+        test_config_container.do_wait(block_storage, block_storage.get_volume(volume_id), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=180)
+        get_policy_asset_assignment = block_storage.get_volume_backup_policy_asset_assignment(volume_id)
+        assert len(get_policy_asset_assignment.data) == 1
+        assert get_policy_asset_assignment.data[0].id
+        assert get_policy_asset_assignment.data[0].asset_id == volume_id
+        assert get_policy_asset_assignment.data[0].policy_id == volume_backup_policy.id
+        assert get_policy_asset_assignment.data[0].time_created
+        
+        block_storage.delete_volume_backup_policy_assignment(get_policy_asset_assignment.data[0].id)
+
+        block_storage.delete_volume(volume_id)
+        test_config_container.do_wait(block_storage, block_storage.get_volume(volume_id), 'lifecycle_state', 'TERMINATED', max_interval_seconds=180, succeed_on_not_found=True)
 
     @util.log_test
     def subtest_delete(self, block_storage):
