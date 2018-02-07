@@ -415,7 +415,7 @@ patch_rr_set_operations = [
         domain=subdomain,
         rtype='TXT',
         record_hash=all_rr_set_records[1].record_hash,
-        # Currently (as of 6 Feb 2018) for a TXT record, if you want to send it in then it should be quoted. For example:
+        # Currently (as of 6 Feb 2018) for a TXT record, if you want to send in rdata for an EXISTING record then it should be quoted. For example:
         #   - '"Hello" "World"' instead of 'Hello World'
         #   - '"rec3"' instead of 'rec3'
         rdata=all_rr_set_records[1].rdata,
@@ -425,7 +425,7 @@ patch_rr_set_operations = [
         domain=subdomain,
         rtype='TXT',
         ttl=101,
-        rdata='rec3',
+        rdata='rec3',  # For new TXT records, we don't need to quote it
         operation='ADD'
     )
 ]
