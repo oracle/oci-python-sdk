@@ -26,6 +26,11 @@ class CreateVolumeBackupDetails(object):
             The value to assign to the freeform_tags property of this CreateVolumeBackupDetails.
         :type freeform_tags: dict(str, str)
 
+        :param type:
+            The value to assign to the type property of this CreateVolumeBackupDetails.
+            Allowed values for this property are: "FULL", "INCREMENTAL"
+        :type type: str
+
         :param volume_id:
             The value to assign to the volume_id property of this CreateVolumeBackupDetails.
         :type volume_id: str
@@ -35,6 +40,7 @@ class CreateVolumeBackupDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
+            'type': 'str',
             'volume_id': 'str'
         }
 
@@ -42,12 +48,14 @@ class CreateVolumeBackupDetails(object):
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
+            'type': 'type',
             'volume_id': 'volumeId'
         }
 
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
+        self._type = None
         self._volume_id = None
 
     @property
@@ -145,6 +153,38 @@ class CreateVolumeBackupDetails(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def type(self):
+        """
+        Gets the type of this CreateVolumeBackupDetails.
+        The type of backup to create. If omitted, defaults to INCREMENTAL.
+
+        Allowed values for this property are: "FULL", "INCREMENTAL"
+
+
+        :return: The type of this CreateVolumeBackupDetails.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """
+        Sets the type of this CreateVolumeBackupDetails.
+        The type of backup to create. If omitted, defaults to INCREMENTAL.
+
+
+        :param type: The type of this CreateVolumeBackupDetails.
+        :type: str
+        """
+        allowed_values = ["FULL", "INCREMENTAL"]
+        if not value_allowed_none_or_none_sentinel(type, allowed_values):
+            raise ValueError(
+                "Invalid value for `type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._type = type
 
     @property
     def volume_id(self):

@@ -479,7 +479,7 @@ class VolumeBackup(object):
     @property
     def type(self):
         """
-        Gets the type of this VolumeBackup.
+        **[Required]** Gets the type of this VolumeBackup.
         The type of a volume backup.
 
         Allowed values for this property are: "FULL", "INCREMENTAL", 'UNKNOWN_ENUM_VALUE'.
