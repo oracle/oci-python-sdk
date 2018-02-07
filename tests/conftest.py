@@ -116,6 +116,7 @@ def file_storage_client(config):
     return client
 
 
+@pytest.fixture
 def dns_client(config):
     client = oci.dns.DnsClient(config)
     add_retries_to_service_operations(client)
