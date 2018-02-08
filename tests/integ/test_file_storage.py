@@ -43,7 +43,7 @@ def file_system(file_storage_client):
     with test_config_container.create_vcr().use_cassette('test_file_storage_file_system_fixture_delete.yml'):
         try:
             file_storage_client.delete_file_system(file_system.id)
-        except oci.exceptions.ServiceError as e:
+        except oci.exceptions.ServiceError:
             pass
         test_config_container.do_wait(
             file_storage_client,

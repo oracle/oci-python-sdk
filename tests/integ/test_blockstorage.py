@@ -186,7 +186,7 @@ class TestBlockStorage:
         assert get_policy_asset_assignment.data[0].asset_id == volume_id
         assert get_policy_asset_assignment.data[0].policy_id == volume_backup_policy.id
         assert get_policy_asset_assignment.data[0].time_created
-        
+
         block_storage.delete_volume_backup_policy_assignment(get_policy_asset_assignment.data[0].id)
 
         block_storage.delete_volume(volume_id)
