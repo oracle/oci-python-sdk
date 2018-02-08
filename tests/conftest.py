@@ -111,12 +111,6 @@ def database_client(config):
 
 
 @pytest.fixture
-def file_storage_client(config):
-    client = oci.file_storage.FileStorageClient(config)
-    return client
-
-
-@pytest.fixture
 def dns_client(config):
     client = oci.dns.DnsClient(config)
     add_retries_to_service_operations(client)

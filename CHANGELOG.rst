@@ -12,7 +12,7 @@ Added
 -----
 * Support for Domain Name System Service
 
-  * An example on using the File Storage Service can be found on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/dns_service_example.py>`_.
+  * An example on using the Domain Name System Service can be found on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/dns_service_example.py>`_.
 
 * Support for reserved public IPs in Virtual Networking Service
 
