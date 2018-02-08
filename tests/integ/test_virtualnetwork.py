@@ -498,6 +498,208 @@ class TestVirtualNetwork:
 
         assert error_count == 0
 
+    def test_reserved_public_ip_operations(self, virtual_network, compute):
+        with test_config_container.create_vcr().use_cassette('test_virtual_network_reserved_public_ip.yml'):
+            public_ip_id = None
+            vcn_and_subnet = None
+            instance = None
+            try:
+                create_public_ip_response = virtual_network.create_public_ip(
+                    oci.core.models.CreatePublicIpDetails(
+                        compartment_id=util.COMPARTMENT_ID,
+                        display_name=util.random_name('reserved_pub_ip'),
+                        lifetime='RESERVED'
+                    )
+                )
+                assert create_public_ip_response.request_id
+                assert create_public_ip_response.headers.get('etag')
+
+                public_ip = self.get_and_list_public_ip(virtual_network, create_public_ip_response.data)
+                public_ip_id = public_ip.id
+
+                vcn_and_subnet = self.create_vcn_with_one_subnet(virtual_network)
+                instance = self.launch_instance(compute, vcn_and_subnet)
+
+                vnic_attachments = compute.list_vnic_attachments(util.COMPARTMENT_ID, instance_id=instance.id).data
+                vnic_id = vnic_attachments[0].vnic_id
+                private_ip_id = virtual_network.list_private_ips(vnic_id=vnic_id).data[0].id
+
+                self.update_public_ip(virtual_network, public_ip, private_ip_id)
+                self.update_public_ip(virtual_network, public_ip, '')
+            finally:
+                if public_ip_id:
+                    try:
+                        virtual_network.delete_public_ip(public_ip.id)
+                        test_config_container.do_wait(
+                            virtual_network,
+                            virtual_network.get_public_ip(public_ip.id),
+                            'lifecycle_state',
+                            'TERMINATED',
+                            succeed_on_not_found=True
+                        )
+                    except Exception as e:
+                        print('Could not delete public IP {}. Error: {}'.format(public_ip_id, e))
+
+                if instance:
+                    try:
+                        compute.terminate_instance(instance.id)
+                        test_config_container.do_wait(
+                            compute,
+                            compute.get_instance(instance.id),
+                            'lifecycle_state',
+                            'TERMINATED',
+                            max_wait_seconds=600,
+                            succeed_on_not_found=True
+                        )
+                    except Exception as e:
+                        print('Could not delete instance {}. Error: {}'.format(instance, e))
+
+                if vcn_and_subnet:
+                    try:
+                        self.delete_vcn_and_subnet(virtual_network, vcn_and_subnet)
+                    except Exception as e:
+                        print('Could not delete VCN and subnet {}. Error: {}'.format(vcn_and_subnet, e))
+
+    def test_ephemeral_public_ip_operations(self, virtual_network, compute):
+        with test_config_container.create_vcr().use_cassette('test_virtual_network_ephemeral_public_ip.yml'):
+            public_ip_id = None
+            vcn_and_subnet = None
+            instance = None
+            try:
+                vcn_and_subnet = self.create_vcn_with_one_subnet(virtual_network)
+                instance = self.launch_instance(compute, vcn_and_subnet)
+
+                vnic_attachments = compute.list_vnic_attachments(util.COMPARTMENT_ID, instance_id=instance.id).data
+                vnic_id = vnic_attachments[0].vnic_id
+                private_ip_id = virtual_network.list_private_ips(vnic_id=vnic_id).data[0].id
+
+                create_public_ip_response = virtual_network.create_public_ip(
+                    oci.core.models.CreatePublicIpDetails(
+                        compartment_id=util.COMPARTMENT_ID,
+                        display_name=util.random_name('reserved_pub_ip'),
+                        lifetime='EPHEMERAL',
+                        private_ip_id=private_ip_id
+                    )
+                )
+                assert create_public_ip_response.request_id
+                assert create_public_ip_response.headers.get('etag')
+
+                public_ip = self.get_and_list_public_ip(virtual_network, create_public_ip_response.data)
+                public_ip_id = public_ip.id
+                assert public_ip.private_ip_id == private_ip_id
+                assert public_ip.availability_domain == util.availability_domain()
+
+                try:
+                    compute.terminate_instance(instance.id)
+                    test_config_container.do_wait(
+                        compute,
+                        compute.get_instance(instance.id),
+                        'lifecycle_state',
+                        'TERMINATED',
+                        max_wait_seconds=600,
+                        succeed_on_not_found=True
+                    )
+                except Exception as e:
+                    print('Could not delete instance {}. Error: {}'.format(instance, e))
+            finally:
+                if public_ip_id:
+                    try:
+                        test_config_container.do_wait(
+                            virtual_network,
+                            virtual_network.get_public_ip(public_ip.id),
+                            'lifecycle_state',
+                            'TERMINATED',
+                            succeed_on_not_found=True
+                        )
+                    except Exception as e:
+                        print('Could not wait until public IP {} deleted. Error: {}'.format(public_ip_id, e))
+
+                if vcn_and_subnet:
+                    try:
+                        self.delete_vcn_and_subnet(virtual_network, vcn_and_subnet)
+                    except Exception as e:
+                        print('Could not delete VCN and subnet {}. Error: {}'.format(vcn_and_subnet, e))
+
+    def get_and_list_public_ip(self, virtual_network, created_public_ip):
+        get_public_ip_response = test_config_container.do_wait(
+            virtual_network,
+            virtual_network.get_public_ip(created_public_ip.id),
+            evaluate_response=lambda r: r.data.lifecycle_state in ['AVAILABLE', 'ASSIGNED']
+        )
+        public_ip = get_public_ip_response.data
+        assert public_ip.id
+        assert public_ip.display_name == created_public_ip.display_name
+        assert public_ip.time_created
+        assert public_ip.ip_address
+        if created_public_ip.lifetime == 'RESERVED':
+            assert public_ip.scope == 'REGION'
+        else:
+            assert public_ip.scope == 'AVAILABILITY_DOMAIN'
+
+        all_region_scoped_public_ips = oci.pagination.list_call_get_all_results(
+            virtual_network.list_public_ips,
+            'REGION',
+            util.COMPARTMENT_ID
+        )
+        if created_public_ip.lifetime == 'RESERVED':
+            assert len(all_region_scoped_public_ips.data) > 0
+        found_public_ip = False
+        for pi in all_region_scoped_public_ips.data:
+            if pi.id == public_ip.id:
+                found_public_ip = True
+                break
+        if created_public_ip.lifetime == 'RESERVED':
+            assert found_public_ip
+        else:
+            assert not found_public_ip
+
+        all_ad_scoped_public_ips = oci.pagination.list_call_get_all_results(
+            virtual_network.list_public_ips,
+            'AVAILABILITY_DOMAIN',
+            util.COMPARTMENT_ID,
+            availability_domain=util.availability_domain()
+        )
+        if created_public_ip.lifetime == 'EPHEMERAL':
+            assert len(all_ad_scoped_public_ips.data) > 0
+        found_public_ip = False
+        for pi in all_ad_scoped_public_ips.data:
+            if pi.id == public_ip.id:
+                found_public_ip = True
+                break
+        if created_public_ip.lifetime == 'EPHEMERAL':
+            assert found_public_ip
+        else:
+            assert not found_public_ip
+
+        return public_ip
+
+    def update_public_ip(self, virtual_network, public_ip, private_ip_id):
+        update_response = virtual_network.update_public_ip(
+            public_ip.id,
+            oci.core.models.UpdatePublicIpDetails(
+                private_ip_id=private_ip_id,
+                display_name='updated_pub_ip'
+            )
+        )
+        assert update_response.request_id
+        assert update_response.headers.get('etag')
+        assert 'updated_pub_ip' == update_response.data.display_name
+
+        if private_ip_id == '':
+            assert update_response.data.lifecycle_state == 'UNASSIGNING'
+            test_config_container.do_wait(
+                virtual_network,
+                virtual_network.get_public_ip(public_ip.id),
+                evaluate_response=lambda r: r.data.lifecycle_state in ['AVAILABLE', 'UNASSIGNED']
+            )
+        else:
+            assert private_ip_id == update_response.data.private_ip_id
+            test_config_container.do_wait(
+                virtual_network,
+                virtual_network.get_public_ip(public_ip.id),
+                evaluate_response=lambda r: r.data.lifecycle_state in ['AVAILABLE', 'ASSIGNED']
+            )
+
     def create_default_egress_security_rule(self):
         port_range = oci.core.models.PortRange()
         port_range.min = 1522
@@ -529,3 +731,101 @@ class TestVirtualNetwork:
         ingress_rule.tcp_options = tcp_options
 
         return ingress_rule
+
+    def create_vcn_with_one_subnet(self, virtual_network):
+        vcn_name = util.random_name('python_sdk_test_vcn')
+        cidr_block = "10.0.0.0/16"
+        vcn_dns_label = util.random_name('vcn', insert_underscore=False)
+
+        create_vcn_details = oci.core.models.CreateVcnDetails()
+        create_vcn_details.cidr_block = cidr_block
+        create_vcn_details.display_name = vcn_name
+        create_vcn_details.compartment_id = util.COMPARTMENT_ID
+        create_vcn_details.dns_label = vcn_dns_label
+
+        result = virtual_network.create_vcn(create_vcn_details)
+        vcn_ocid = result.data.id
+        util.validate_response(result, expect_etag=True)
+
+        vcn = test_config_container.do_wait(
+            virtual_network,
+            virtual_network.get_vcn(vcn_ocid),
+            'lifecycle_state',
+            'AVAILABLE',
+            max_wait_seconds=300
+        ).data
+
+        subnet_name = util.random_name('python_sdk_test_compute_subnet')
+
+        create_subnet_details = oci.core.models.CreateSubnetDetails()
+        create_subnet_details.compartment_id = util.COMPARTMENT_ID
+        create_subnet_details.availability_domain = util.availability_domain()
+        create_subnet_details.display_name = subnet_name
+        create_subnet_details.vcn_id = vcn_ocid
+        create_subnet_details.cidr_block = cidr_block
+
+        result = virtual_network.create_subnet(create_subnet_details)
+        util.validate_response(result, expect_etag=True)
+
+        subnet_ocid = result.data.id
+        subnet = test_config_container.do_wait(
+            virtual_network,
+            virtual_network.get_subnet(subnet_ocid),
+            'lifecycle_state',
+            'AVAILABLE',
+            max_wait_seconds=300
+        ).data
+
+        return {'vcn': vcn, 'subnet': subnet}
+
+    def delete_vcn_and_subnet(self, virtual_network, vcn_and_subnet):
+        subnet_ocid = vcn_and_subnet['subnet'].id
+        virtual_network.delete_subnet(subnet_ocid)
+        test_config_container.do_wait(
+            virtual_network,
+            virtual_network.get_subnet(subnet_ocid),
+            'lifecycle_state',
+            'TERMINATED',
+            max_wait_seconds=600,
+            succeed_on_not_found=True
+        )
+
+        vcn_ocid = vcn_and_subnet['vcn'].id
+        virtual_network.delete_vcn(vcn_ocid)
+        test_config_container.do_wait(
+            virtual_network,
+            virtual_network.get_vcn(vcn_ocid),
+            'lifecycle_state',
+            'TERMINATED',
+            max_wait_seconds=600,
+            succeed_on_not_found=True
+        )
+
+    def launch_instance(self, compute, vcn_and_subnet):
+        instance_name = util.random_name('python_sdk_test_instance')
+        image_id = util.oracle_linux_image()
+        shape = 'VM.Standard1.1'
+
+        create_instance_details = oci.core.models.LaunchInstanceDetails()
+        create_instance_details.compartment_id = util.COMPARTMENT_ID
+        create_instance_details.availability_domain = util.availability_domain()
+        create_instance_details.display_name = instance_name
+        create_instance_details.create_vnic_details = oci.core.models.CreateVnicDetails(
+            subnet_id=vcn_and_subnet['subnet'].id,
+            assign_public_ip=False
+        )
+        create_instance_details.image_id = image_id
+        create_instance_details.shape = shape
+
+        result = compute.launch_instance(create_instance_details)
+        instance_ocid = result.data.id
+
+        get_instance_response = test_config_container.do_wait(
+            compute,
+            compute.get_instance(instance_ocid),
+            'lifecycle_state',
+            'RUNNING',
+            max_wait_seconds=600
+        )
+
+        return get_instance_response.data

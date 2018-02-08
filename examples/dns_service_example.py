@@ -212,7 +212,10 @@ print('Zone records after patch:\n{}'.format(records_after_patch))
 print('\n=========================\n')
 
 # As part of patch operations, we can also specify preconditions (REQUIRE - data must be present, and
-# PROHIBIT - data must not be present) which must be met for the operation to succeed
+# PROHIBIT - data must not be present) which must be met for the operation to succeed.
+#
+# As of the time of writing (6 February 2018), these preconditions cannot contain rdata or record_hash
+# fields
 
 a_record = None
 for record in records_after_update:
