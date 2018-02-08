@@ -8,7 +8,6 @@ SERVICE_ENDPOINTS = {
     "virtual_network": "https://iaas.{domain}/20160918",
     "database": "https://database.{domain}/20160918",
     "dns": "https://dns.{domain}/20180115",
-    "file_storage": "https://filestorage.{domain}/20171215",
     "identity": "https://identity.{domain}/20160918",
     "load_balancer": "https://iaas.{domain}/20170115",
     "object_storage": "https://objectstorage.{domain}"
