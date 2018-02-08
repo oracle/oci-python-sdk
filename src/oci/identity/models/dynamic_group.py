@@ -183,6 +183,9 @@ class DynamicGroup(object):
         """
         **[Required]** Gets the matching_rule of this DynamicGroup.
         A rule string that defines which instance certificates will be matched.
+        For syntax, see `Managing Dynamic Groups`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingdynamicgroups.htm
 
 
         :return: The matching_rule of this DynamicGroup.
@@ -195,6 +198,9 @@ class DynamicGroup(object):
         """
         Sets the matching_rule of this DynamicGroup.
         A rule string that defines which instance certificates will be matched.
+        For syntax, see `Managing Dynamic Groups`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingdynamicgroups.htm
 
 
         :param matching_rule: The matching_rule of this DynamicGroup.

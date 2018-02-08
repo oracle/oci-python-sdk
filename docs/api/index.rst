@@ -96,6 +96,28 @@ Virtual Network
     :inherited-members:
 
 ==========
+ DNS
+==========
+
+--------
+ Client
+--------
+
+.. autoclass:: oci.dns.dns_client.DnsClient
+    :members:
+
+--------
+ Models
+--------
+
+.. automodule:: oci.dns.models
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :imported-members:
+    :inherited-members:
+
+==========
  Identity
 ==========
 

@@ -64,7 +64,7 @@ class BaseClient(object):
         "object": object
     }
 
-    def __init__(self, service, config, signer, type_mapping):
+    def __init__(self, service, config, signer, type_mapping, **kwargs):
         validate_config(config, signer=signer)
         self.signer = signer
 
@@ -82,6 +82,7 @@ class BaseClient(object):
         self.complex_type_mappings = type_mapping
         self.type_mappings = merge_type_mappings(self.primitive_type_map, type_mapping)
         self.session = requests.Session()
+        self.timeout = kwargs.get('timeout')
         self.user_agent = build_user_agent(get_config_value_or_default(config, "additional_user_agent"))
 
         self.logger = logging.getLogger("{}.{}".format(__name__, id(self)))
@@ -233,7 +234,8 @@ class BaseClient(object):
             params=request.query_params,
             headers=request.header_params,
             data=request.body,
-            stream=stream)
+            stream=stream,
+            timeout=self.timeout)
 
         response_type = request.response_type
         self.logger.debug("Response status: %s" % str(response.status_code))

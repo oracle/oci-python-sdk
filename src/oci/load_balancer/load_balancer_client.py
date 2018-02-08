@@ -442,6 +442,87 @@ class LoadBalancerClient(object):
                 header_params=header_params,
                 body=create_load_balancer_details)
 
+    def create_path_route_set(self, create_path_route_set_details, load_balancer_id, **kwargs):
+        """
+        CreatePathRouteSet
+        Adds a path route set to a load balancer. For more information, see
+        `Managing Request Routing`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managingrequest.htm
+
+
+        :param CreatePathRouteSetDetails create_path_route_set_details: (required)
+            The details of the path route set to add.
+
+        :param str load_balancer_id: (required)
+            The `OCID`__ of the load balancer to add the path route set to.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/loadBalancers/{loadBalancerId}/pathRouteSets"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_path_route_set got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "loadBalancerId": load_balancer_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_path_route_set_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_path_route_set_details)
+
     def delete_backend(self, load_balancer_id, backend_set_name, backend_name, **kwargs):
         """
         DeleteBackend
@@ -755,6 +836,77 @@ class LoadBalancerClient(object):
 
         path_params = {
             "loadBalancerId": load_balancer_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
+    def delete_path_route_set(self, load_balancer_id, path_route_set_name, **kwargs):
+        """
+        DeletePathRouteSet
+        Deletes a path route set from the specified load balancer.
+
+        To delete a path route rule from a path route set, use the
+        :func:`update_path_route_set` operation.
+
+
+        :param str load_balancer_id: (required)
+            The `OCID`__ of the load balancer associated with the path route set to delete.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+        :param str path_route_set_name: (required)
+            The name of the path route set to delete.
+
+            Example: `path-route-set-001`
+
+        :param str opc_request_id: (optional)
+            The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/loadBalancers/{loadBalancerId}/pathRouteSets/{pathRouteSetName}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_path_route_set got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "loadBalancerId": load_balancer_id,
+            "pathRouteSetName": path_route_set_name
         }
 
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
@@ -1274,6 +1426,76 @@ class LoadBalancerClient(object):
                 header_params=header_params,
                 response_type="LoadBalancerHealth")
 
+    def get_path_route_set(self, load_balancer_id, path_route_set_name, **kwargs):
+        """
+        GetPathRouteSet
+        Gets the specified path route set's configuration information.
+
+
+        :param str load_balancer_id: (required)
+            The `OCID`__ of the specified load balancer.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+        :param str path_route_set_name: (required)
+            The name of the path route set to retrieve.
+
+            Example: `path-route-set-001`
+
+        :param str opc_request_id: (optional)
+            The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.load_balancer.models.PathRouteSet`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/loadBalancers/{loadBalancerId}/pathRouteSets/{pathRouteSetName}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_path_route_set got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "loadBalancerId": load_balancer_id,
+            "pathRouteSetName": path_route_set_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="PathRouteSet")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="PathRouteSet")
+
     def get_work_request(self, work_request_id, **kwargs):
         """
         GetWorkRequest
@@ -1736,6 +1958,71 @@ class LoadBalancerClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="list[LoadBalancer]")
+
+    def list_path_route_sets(self, load_balancer_id, **kwargs):
+        """
+        ListPathRouteSets
+        Lists all path route sets associated with the specified load balancer.
+
+
+        :param str load_balancer_id: (required)
+            The `OCID`__ of the load balancer associated with the path route sets
+            to retrieve.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.load_balancer.models.PathRouteSet`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/loadBalancers/{loadBalancerId}/pathRouteSets"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_path_route_sets got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "loadBalancerId": load_balancer_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="list[PathRouteSet]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="list[PathRouteSet]")
 
     def list_policies(self, compartment_id, **kwargs):
         """
@@ -2459,3 +2746,92 @@ class LoadBalancerClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_load_balancer_details)
+
+    def update_path_route_set(self, update_path_route_set_details, load_balancer_id, path_route_set_name, **kwargs):
+        """
+        UpdatePathRouteSet
+        Overwrites an existing path route set on the specified load balancer. Use this operation to add, delete, or alter
+        path route rules in a path route set.
+
+        To add a new path route rule to a path route set, the `pathRoutes` in the
+        :func:`update_path_route_set_details` object must include
+        both the new path route rule to add and the existing path route rules to retain.
+
+
+        :param UpdatePathRouteSetDetails update_path_route_set_details: (required)
+            The configuration details to update a path route set.
+
+        :param str load_balancer_id: (required)
+            The `OCID`__ of the load balancer associated with the path route set to update.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+        :param str path_route_set_name: (required)
+            The name of the path route set to update.
+
+            Example: `path-route-set-001`
+
+        :param str opc_request_id: (optional)
+            The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/loadBalancers/{loadBalancerId}/pathRouteSets/{pathRouteSetName}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_path_route_set got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "loadBalancerId": load_balancer_id,
+            "pathRouteSetName": path_route_set_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_path_route_set_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_path_route_set_details)

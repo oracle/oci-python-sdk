@@ -5,6 +5,30 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+1.3.14 - 2018-02-08
+====================
+
+Added
+-----
+* Support for Domain Name System Service
+
+  * An example on using the Domain Name System Service can be found on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/dns_service_example.py>`_.
+
+* Support for reserved public IPs in Virtual Networking Service
+
+  * An example on using this functionality can be found on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/reserved_public_ip_example.py>`_.
+
+* Support for path route sets in Load Balancing Service
+
+  * An example on using this functionality can be found on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/load_balancer_path_route_sets_example.py>`_.
+
+* Support for automated and policy-based backups, read-only volume attachments, and incremental backups in Block Storage Service
+
+  * An example on using policy-based backups can be found on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/volume_backup_policy_example.py>`_.
+
+* Support for filtering by ``backupId`` in ``ListDbSystems`` operation in Database Service
+
+====================
 1.3.13 - 2018-01-25
 ====================
 

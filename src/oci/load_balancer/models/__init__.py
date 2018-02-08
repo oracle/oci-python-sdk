@@ -17,6 +17,7 @@ from .create_backend_set_details import CreateBackendSetDetails
 from .create_certificate_details import CreateCertificateDetails
 from .create_listener_details import CreateListenerDetails
 from .create_load_balancer_details import CreateLoadBalancerDetails
+from .create_path_route_set_details import CreatePathRouteSetDetails
 from .health_check_result import HealthCheckResult
 from .health_checker import HealthChecker
 from .health_checker_details import HealthCheckerDetails
@@ -29,6 +30,10 @@ from .load_balancer_health_summary import LoadBalancerHealthSummary
 from .load_balancer_policy import LoadBalancerPolicy
 from .load_balancer_protocol import LoadBalancerProtocol
 from .load_balancer_shape import LoadBalancerShape
+from .path_match_type import PathMatchType
+from .path_route import PathRoute
+from .path_route_set import PathRouteSet
+from .path_route_set_details import PathRouteSetDetails
 from .ssl_configuration import SSLConfiguration
 from .ssl_configuration_details import SSLConfigurationDetails
 from .session_persistence_configuration_details import SessionPersistenceConfigurationDetails
@@ -37,6 +42,7 @@ from .update_backend_set_details import UpdateBackendSetDetails
 from .update_health_checker_details import UpdateHealthCheckerDetails
 from .update_listener_details import UpdateListenerDetails
 from .update_load_balancer_details import UpdateLoadBalancerDetails
+from .update_path_route_set_details import UpdatePathRouteSetDetails
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
 
@@ -56,6 +62,7 @@ load_balancer_type_mapping = {
     "CreateCertificateDetails": CreateCertificateDetails,
     "CreateListenerDetails": CreateListenerDetails,
     "CreateLoadBalancerDetails": CreateLoadBalancerDetails,
+    "CreatePathRouteSetDetails": CreatePathRouteSetDetails,
     "HealthCheckResult": HealthCheckResult,
     "HealthChecker": HealthChecker,
     "HealthCheckerDetails": HealthCheckerDetails,
@@ -68,6 +75,10 @@ load_balancer_type_mapping = {
     "LoadBalancerPolicy": LoadBalancerPolicy,
     "LoadBalancerProtocol": LoadBalancerProtocol,
     "LoadBalancerShape": LoadBalancerShape,
+    "PathMatchType": PathMatchType,
+    "PathRoute": PathRoute,
+    "PathRouteSet": PathRouteSet,
+    "PathRouteSetDetails": PathRouteSetDetails,
     "SSLConfiguration": SSLConfiguration,
     "SSLConfigurationDetails": SSLConfigurationDetails,
     "SessionPersistenceConfigurationDetails": SessionPersistenceConfigurationDetails,
@@ -76,6 +87,7 @@ load_balancer_type_mapping = {
     "UpdateHealthCheckerDetails": UpdateHealthCheckerDetails,
     "UpdateListenerDetails": UpdateListenerDetails,
     "UpdateLoadBalancerDetails": UpdateLoadBalancerDetails,
+    "UpdatePathRouteSetDetails": UpdatePathRouteSetDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError
 }

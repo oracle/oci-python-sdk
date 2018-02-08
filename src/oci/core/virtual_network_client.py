@@ -941,6 +941,84 @@ class VirtualNetworkClient(object):
                 body=create_private_ip_details,
                 response_type="PrivateIp")
 
+    def create_public_ip(self, create_public_ip_details, **kwargs):
+        """
+        CreatePublicIp
+        Creates a public IP. Use the `lifetime` property to specify whether it's an ephemeral or
+        reserved public IP. For information about limits on how many you can create, see
+        `Public IP Addresses`__.
+
+        * **For an ephemeral public IP:** You must also specify a `privateIpId` with the OCID of
+        the primary private IP you want to assign the public IP to. The public IP is created in
+        the same Availability Domain as the private IP. An ephemeral public IP must always be
+        assigned to a private IP, and only to the *primary* private IP on a VNIC, not a secondary
+        private IP.
+
+        * **For a reserved public IP:** You may also optionally assign the public IP to a private
+        IP by specifying `privateIpId`. Or you can later assign the public IP with
+        :func:`update_public_ip`.
+
+        **Note:** When assigning a public IP to a private IP, the private IP must not already have
+        a public IP with `lifecycleState` = ASSIGNING or ASSIGNED. If it does, an error is returned.
+
+        Also, for reserved public IPs, the optional assignment part of this operation is
+        asynchronous. Poll the public IP's `lifecycleState` to determine if the assignment
+        succeeded.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingpublicIPs.htm
+
+
+        :param CreatePublicIpDetails create_public_ip_details: (required)
+            Create public IP details.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.PublicIp`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/publicIps"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_public_ip got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        if 'retry_strategy' in kwargs:
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_public_ip_details,
+                response_type="PublicIp")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_public_ip_details,
+                response_type="PublicIp")
+
     def create_route_table(self, create_route_table_details, **kwargs):
         """
         CreateRouteTable
@@ -1958,7 +2036,7 @@ class VirtualNetworkClient(object):
 
 
         :param str private_ip_id: (required)
-            The private IP's OCID.
+            The OCID of the private IP.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -1983,6 +2061,77 @@ class VirtualNetworkClient(object):
 
         path_params = {
             "privateIpId": private_ip_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
+    def delete_public_ip(self, public_ip_id, **kwargs):
+        """
+        DeletePublicIp
+        Unassigns and deletes the specified public IP (either ephemeral or reserved).
+        You must specify the object's OCID. The public IP address is returned to the
+        Oracle Cloud Infrastructure public IP pool.
+
+        For an assigned reserved public IP, the initial unassignment portion of this operation
+        is asynchronous. Poll the public IP's `lifecycleState` to determine
+        if the operation succeeded.
+
+        If you want to simply unassign a reserved public IP and return it to your pool
+        of reserved public IPs, instead use
+        :func:`update_public_ip`.
+
+
+        :param str public_ip_id: (required)
+            The OCID of the public IP.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/publicIps/{publicIpId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_public_ip got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "publicIpId": public_ip_id
         }
 
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
@@ -3077,7 +3226,7 @@ class VirtualNetworkClient(object):
 
 
         :param str private_ip_id: (required)
-            The private IP's OCID.
+            The OCID of the private IP.
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.PrivateIp`
         :rtype: :class:`~oci.response.Response`
@@ -3121,6 +3270,166 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 response_type="PrivateIp")
+
+    def get_public_ip(self, public_ip_id, **kwargs):
+        """
+        GetPublicIp
+        Gets the specified public IP. You must specify the object's OCID.
+
+        Alternatively, you can get the object by using :func:`get_public_ip_by_ip_address`
+        with the public IP address (for example, 129.146.2.1).
+
+        Or you can use :func:`get_public_ip_by_private_ip_id`
+        with the OCID of the private IP that the public IP is assigned to.
+
+        **Note:** If you're fetching a reserved public IP that is in the process of being
+        moved to a different private IP, the service returns the public IP object with
+        `lifecycleState` = ASSIGNING and `privateIpId` = OCID of the target private IP.
+
+
+        :param str public_ip_id: (required)
+            The OCID of the public IP.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.PublicIp`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/publicIps/{publicIpId}"
+        method = "GET"
+
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_public_ip got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "publicIpId": public_ip_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="PublicIp")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="PublicIp")
+
+    def get_public_ip_by_ip_address(self, get_public_ip_by_ip_address_details, **kwargs):
+        """
+        GetPublicIpByIpAddress
+        Gets the public IP based on the public IP address (for example, 129.146.2.1).
+
+        **Note:** If you're fetching a reserved public IP that is in the process of being
+        moved to a different private IP, the service returns the public IP object with
+        `lifecycleState` = ASSIGNING and `privateIpId` = OCID of the target private IP.
+
+
+        :param GetPublicIpByIpAddressDetails get_public_ip_by_ip_address_details: (required)
+            IP address details for fetching the public IP.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.PublicIp`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/publicIps/actions/getByIpAddress"
+        method = "POST"
+
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_public_ip_by_ip_address got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=get_public_ip_by_ip_address_details,
+                response_type="PublicIp")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=get_public_ip_by_ip_address_details,
+                response_type="PublicIp")
+
+    def get_public_ip_by_private_ip_id(self, get_public_ip_by_private_ip_id_details, **kwargs):
+        """
+        GetPublicIpByPrivateIpId
+        Gets the public IP assigned to the specified private IP. You must specify the OCID
+        of the private IP. If no public IP is assigned, a 404 is returned.
+
+        **Note:** If you're fetching a reserved public IP that is in the process of being
+        moved to a different private IP, and you provide the OCID of the original private
+        IP, this operation returns a 404. If you instead provide the OCID of the target
+        private IP, or if you instead call
+        :func:`get_public_ip` or
+        :func:`get_public_ip_by_ip_address`, the
+        service returns the public IP object with `lifecycleState` = ASSIGNING and `privateIpId` = OCID
+        of the target private IP.
+
+
+        :param GetPublicIpByPrivateIpIdDetails get_public_ip_by_private_ip_id_details: (required)
+            Private IP details for fetching the public IP.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.PublicIp`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/publicIps/actions/getByPrivateIpId"
+        method = "POST"
+
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_public_ip_by_private_ip_id got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=get_public_ip_by_private_ip_id_details,
+                response_type="PublicIp")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=get_public_ip_by_private_ip_id_details,
+                response_type="PublicIp")
 
     def get_route_table(self, rt_id, **kwargs):
         """
@@ -4560,7 +4869,7 @@ class VirtualNetworkClient(object):
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
         :param str ip_address: (optional)
-            The private IP address of the `privateIp` object.
+            An IP address.
 
             Example: `10.0.3.3`
 
@@ -4619,6 +4928,102 @@ class VirtualNetworkClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="list[PrivateIp]")
+
+    def list_public_ips(self, scope, compartment_id, **kwargs):
+        """
+        ListPublicIps
+        Lists either the ephemeral or reserved :class:`PublicIp` objects
+        in the specified compartment.
+
+        To list your reserved public IPs, set `scope` = `REGION`, and leave the
+        `availabilityDomain` parameter empty.
+
+        To list your ephemeral public IPs, set `scope` = `AVAILABILITY_DOMAIN`, and set the
+        `availabilityDomain` parameter to the desired Availability Domain. An ephemeral public IP
+        is always in the same Availability Domain and compartment as the private IP it's assigned to.
+
+
+        :param str scope: (required)
+            Whether the public IP is regional or specific to a particular Availability Domain.
+
+            * `REGION`: The public IP exists within a region and can be assigned to a private IP
+            in any Availability Domain in the region. Reserved public IPs have `scope` = `REGION`.
+
+            * `AVAILABILITY_DOMAIN`: The public IP exists within the Availability Domain of the private IP
+            it's assigned to, which is specified by the `availabilityDomain` property of the public IP object.
+            Ephemeral public IPs have `scope` = `AVAILABILITY_DOMAIN`.
+
+            Allowed values are: "REGION", "AVAILABILITY_DOMAIN"
+
+        :param str compartment_id: (required)
+            The OCID of the compartment.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+            Example: `500`
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param str availability_domain: (optional)
+            The name of the Availability Domain.
+
+            Example: `Uocm:PHX-AD-1`
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.PublicIp`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/publicIps"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "limit",
+            "page",
+            "availability_domain"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_public_ips got unknown kwargs: {!r}".format(extra_kwargs))
+
+        scope_allowed_values = ["REGION", "AVAILABILITY_DOMAIN"]
+        if scope not in scope_allowed_values:
+            raise ValueError(
+                "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+            )
+
+        query_params = {
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "scope": scope,
+            "availabilityDomain": kwargs.get("availability_domain", missing),
+            "compartmentId": compartment_id
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[PublicIp]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[PublicIp]")
 
     def list_route_tables(self, compartment_id, vcn_id, **kwargs):
         """
@@ -5997,7 +6402,7 @@ class VirtualNetworkClient(object):
 
 
         :param str private_ip_id: (required)
-            The private IP's OCID.
+            The OCID of the private IP.
 
         :param UpdatePrivateIpDetails update_private_ip_details: (required)
             Private IP details.
@@ -6057,6 +6462,114 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 body=update_private_ip_details,
                 response_type="PrivateIp")
+
+    def update_public_ip(self, public_ip_id, update_public_ip_details, **kwargs):
+        """
+        UpdatePublicIp
+        Updates the specified public IP. You must specify the object's OCID. Use this operation if you want to:
+
+        * Assign a reserved public IP in your pool to a private IP.
+        * Move a reserved public IP to a different private IP.
+        * Unassign a reserved public IP from a private IP (which returns it to your pool
+        of reserved public IPs).
+        * Change the display name for a public IP (either ephemeral or reserved).
+
+        Assigning, moving, and unassigning a reserved public IP are asynchronous
+        operations. Poll the public IP's `lifecycleState` to determine if the operation
+        succeeded.
+
+        **Note:** When moving a reserved public IP, the target private IP
+        must not already have a public IP with `lifecycleState` = ASSIGNING or ASSIGNED. If it
+        does, an error is returned. Also, the initial unassignment from the original
+        private IP always succeeds, but the assignment to the target private IP is asynchronous and
+        could fail silently (for example, if the target private IP is deleted or has a different public IP
+        assigned to it in the interim). If that occurs, the public IP remains unassigned and its
+        `lifecycleState` switches to AVAILABLE (it is not reassigned to its original private IP).
+        You must poll the public IP's `lifecycleState` to determine if the move succeeded.
+
+        Regarding ephemeral public IPs:
+
+        * If you want to assign an ephemeral public IP to a primary private IP, use
+        :func:`create_public_ip`.
+        * You can't move an ephemeral public IP to a different private IP.
+        * If you want to unassign an ephemeral public IP from its private IP, use
+        :func:`delete_public_ip`, which
+        unassigns and deletes the ephemeral public IP.
+
+        **Note:** If a public IP (either ephemeral or reserved) is assigned to a secondary private
+        IP (see :class:`PrivateIp`), and you move that secondary
+        private IP to another VNIC, the public IP moves with it.
+
+        **Note:** There's a limit to the number of :class:`PublicIp`
+        a VNIC or instance can have. If you try to move a reserved public IP
+        to a VNIC or instance that has already reached its public IP limit, an error is
+        returned. For information about the public IP limits, see
+        `Public IP Addresses`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingpublicIPs.htm
+
+
+        :param str public_ip_id: (required)
+            The OCID of the public IP.
+
+        :param UpdatePublicIpDetails update_public_ip_details: (required)
+            Public IP details.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.PublicIp`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/publicIps/{publicIpId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_public_ip got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "publicIpId": public_ip_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        if 'retry_strategy' in kwargs:
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_public_ip_details,
+                response_type="PublicIp")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_public_ip_details,
+                response_type="PublicIp")
 
     def update_route_table(self, rt_id, update_route_table_details, **kwargs):
         """
