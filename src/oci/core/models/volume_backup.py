@@ -26,6 +26,10 @@ class VolumeBackup(object):
             The value to assign to the display_name property of this VolumeBackup.
         :type display_name: str
 
+        :param expiration_time:
+            The value to assign to the expiration_time property of this VolumeBackup.
+        :type expiration_time: datetime
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this VolumeBackup.
         :type freeform_tags: dict(str, str)
@@ -48,6 +52,12 @@ class VolumeBackup(object):
             The value to assign to the size_in_mbs property of this VolumeBackup.
         :type size_in_mbs: int
 
+        :param source_type:
+            The value to assign to the source_type property of this VolumeBackup.
+            Allowed values for this property are: "MANUAL", "SCHEDULED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type source_type: str
+
         :param time_created:
             The value to assign to the time_created property of this VolumeBackup.
         :type time_created: datetime
@@ -55,6 +65,12 @@ class VolumeBackup(object):
         :param time_request_received:
             The value to assign to the time_request_received property of this VolumeBackup.
         :type time_request_received: datetime
+
+        :param type:
+            The value to assign to the type property of this VolumeBackup.
+            Allowed values for this property are: "FULL", "INCREMENTAL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type type: str
 
         :param unique_size_in_gbs:
             The value to assign to the unique_size_in_gbs property of this VolumeBackup.
@@ -73,13 +89,16 @@ class VolumeBackup(object):
             'compartment_id': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
+            'expiration_time': 'datetime',
             'freeform_tags': 'dict(str, str)',
             'id': 'str',
             'lifecycle_state': 'str',
             'size_in_gbs': 'int',
             'size_in_mbs': 'int',
+            'source_type': 'str',
             'time_created': 'datetime',
             'time_request_received': 'datetime',
+            'type': 'str',
             'unique_size_in_gbs': 'int',
             'unique_size_in_mbs': 'int',
             'volume_id': 'str'
@@ -89,13 +108,16 @@ class VolumeBackup(object):
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
+            'expiration_time': 'expirationTime',
             'freeform_tags': 'freeformTags',
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
             'size_in_gbs': 'sizeInGBs',
             'size_in_mbs': 'sizeInMBs',
+            'source_type': 'sourceType',
             'time_created': 'timeCreated',
             'time_request_received': 'timeRequestReceived',
+            'type': 'type',
             'unique_size_in_gbs': 'uniqueSizeInGBs',
             'unique_size_in_mbs': 'uniqueSizeInMbs',
             'volume_id': 'volumeId'
@@ -104,13 +126,16 @@ class VolumeBackup(object):
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None
+        self._expiration_time = None
         self._freeform_tags = None
         self._id = None
         self._lifecycle_state = None
         self._size_in_gbs = None
         self._size_in_mbs = None
+        self._source_type = None
         self._time_created = None
         self._time_request_received = None
+        self._type = None
         self._unique_size_in_gbs = None
         self._unique_size_in_mbs = None
         self._volume_id = None
@@ -198,6 +223,38 @@ class VolumeBackup(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def expiration_time(self):
+        """
+        Gets the expiration_time of this VolumeBackup.
+        The date and time the volume backup will expire and be automatically deleted.
+        Format defined by RFC3339. This parameter will always be present for backups that
+        were created automatically by a scheduled-backup policy. For manually created backups,
+        it will be absent, signifying that there is no expiration time and the backup will
+        last forever until manually deleted.
+
+
+        :return: The expiration_time of this VolumeBackup.
+        :rtype: datetime
+        """
+        return self._expiration_time
+
+    @expiration_time.setter
+    def expiration_time(self, expiration_time):
+        """
+        Sets the expiration_time of this VolumeBackup.
+        The date and time the volume backup will expire and be automatically deleted.
+        Format defined by RFC3339. This parameter will always be present for backups that
+        were created automatically by a scheduled-backup policy. For manually created backups,
+        it will be absent, signifying that there is no expiration time and the backup will
+        last forever until manually deleted.
+
+
+        :param expiration_time: The expiration_time of this VolumeBackup.
+        :type: datetime
+        """
+        self._expiration_time = expiration_time
 
     @property
     def freeform_tags(self):
@@ -340,6 +397,36 @@ class VolumeBackup(object):
         self._size_in_mbs = size_in_mbs
 
     @property
+    def source_type(self):
+        """
+        Gets the source_type of this VolumeBackup.
+        Specifies whether the backup was created manually, or via scheduled backup policy.
+
+        Allowed values for this property are: "MANUAL", "SCHEDULED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The source_type of this VolumeBackup.
+        :rtype: str
+        """
+        return self._source_type
+
+    @source_type.setter
+    def source_type(self, source_type):
+        """
+        Sets the source_type of this VolumeBackup.
+        Specifies whether the backup was created manually, or via scheduled backup policy.
+
+
+        :param source_type: The source_type of this VolumeBackup.
+        :type: str
+        """
+        allowed_values = ["MANUAL", "SCHEDULED"]
+        if not value_allowed_none_or_none_sentinel(source_type, allowed_values):
+            source_type = 'UNKNOWN_ENUM_VALUE'
+        self._source_type = source_type
+
+    @property
     def time_created(self):
         """
         **[Required]** Gets the time_created of this VolumeBackup.
@@ -388,6 +475,36 @@ class VolumeBackup(object):
         :type: datetime
         """
         self._time_request_received = time_request_received
+
+    @property
+    def type(self):
+        """
+        **[Required]** Gets the type of this VolumeBackup.
+        The type of a volume backup.
+
+        Allowed values for this property are: "FULL", "INCREMENTAL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The type of this VolumeBackup.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """
+        Sets the type of this VolumeBackup.
+        The type of a volume backup.
+
+
+        :param type: The type of this VolumeBackup.
+        :type: str
+        """
+        allowed_values = ["FULL", "INCREMENTAL"]
+        if not value_allowed_none_or_none_sentinel(type, allowed_values):
+            type = 'UNKNOWN_ENUM_VALUE'
+        self._type = type
 
     @property
     def unique_size_in_gbs(self):

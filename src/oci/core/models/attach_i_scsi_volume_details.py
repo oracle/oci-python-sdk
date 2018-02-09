@@ -23,6 +23,10 @@ class AttachIScsiVolumeDetails(AttachVolumeDetails):
             The value to assign to the instance_id property of this AttachIScsiVolumeDetails.
         :type instance_id: str
 
+        :param is_read_only:
+            The value to assign to the is_read_only property of this AttachIScsiVolumeDetails.
+        :type is_read_only: bool
+
         :param type:
             The value to assign to the type property of this AttachIScsiVolumeDetails.
         :type type: str
@@ -39,6 +43,7 @@ class AttachIScsiVolumeDetails(AttachVolumeDetails):
         self.swagger_types = {
             'display_name': 'str',
             'instance_id': 'str',
+            'is_read_only': 'bool',
             'type': 'str',
             'volume_id': 'str',
             'use_chap': 'bool'
@@ -47,6 +52,7 @@ class AttachIScsiVolumeDetails(AttachVolumeDetails):
         self.attribute_map = {
             'display_name': 'displayName',
             'instance_id': 'instanceId',
+            'is_read_only': 'isReadOnly',
             'type': 'type',
             'volume_id': 'volumeId',
             'use_chap': 'useChap'
@@ -54,6 +60,7 @@ class AttachIScsiVolumeDetails(AttachVolumeDetails):
 
         self._display_name = None
         self._instance_id = None
+        self._is_read_only = None
         self._type = None
         self._volume_id = None
         self._use_chap = None

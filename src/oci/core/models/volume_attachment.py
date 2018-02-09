@@ -42,6 +42,10 @@ class VolumeAttachment(object):
             The value to assign to the instance_id property of this VolumeAttachment.
         :type instance_id: str
 
+        :param is_read_only:
+            The value to assign to the is_read_only property of this VolumeAttachment.
+        :type is_read_only: bool
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this VolumeAttachment.
             Allowed values for this property are: "ATTACHING", "ATTACHED", "DETACHING", "DETACHED", 'UNKNOWN_ENUM_VALUE'.
@@ -64,6 +68,7 @@ class VolumeAttachment(object):
             'display_name': 'str',
             'id': 'str',
             'instance_id': 'str',
+            'is_read_only': 'bool',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'volume_id': 'str'
@@ -76,6 +81,7 @@ class VolumeAttachment(object):
             'display_name': 'displayName',
             'id': 'id',
             'instance_id': 'instanceId',
+            'is_read_only': 'isReadOnly',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'volume_id': 'volumeId'
@@ -87,6 +93,7 @@ class VolumeAttachment(object):
         self._display_name = None
         self._id = None
         self._instance_id = None
+        self._is_read_only = None
         self._lifecycle_state = None
         self._time_created = None
         self._volume_id = None
@@ -257,6 +264,30 @@ class VolumeAttachment(object):
         :type: str
         """
         self._instance_id = instance_id
+
+    @property
+    def is_read_only(self):
+        """
+        Gets the is_read_only of this VolumeAttachment.
+        Whether the attachment was created in read-only mode.
+
+
+        :return: The is_read_only of this VolumeAttachment.
+        :rtype: bool
+        """
+        return self._is_read_only
+
+    @is_read_only.setter
+    def is_read_only(self, is_read_only):
+        """
+        Sets the is_read_only of this VolumeAttachment.
+        Whether the attachment was created in read-only mode.
+
+
+        :param is_read_only: The is_read_only of this VolumeAttachment.
+        :type: bool
+        """
+        self._is_read_only = is_read_only
 
     @property
     def lifecycle_state(self):

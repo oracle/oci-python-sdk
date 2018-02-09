@@ -27,6 +27,7 @@ from .create_instance_console_connection_details import CreateInstanceConsoleCon
 from .create_internet_gateway_details import CreateInternetGatewayDetails
 from .create_local_peering_gateway_details import CreateLocalPeeringGatewayDetails
 from .create_private_ip_details import CreatePrivateIpDetails
+from .create_public_ip_details import CreatePublicIpDetails
 from .create_route_table_details import CreateRouteTableDetails
 from .create_security_list_details import CreateSecurityListDetails
 from .create_subnet_details import CreateSubnetDetails
@@ -35,6 +36,7 @@ from .create_virtual_circuit_details import CreateVirtualCircuitDetails
 from .create_virtual_circuit_public_prefix_details import CreateVirtualCircuitPublicPrefixDetails
 from .create_vnic_details import CreateVnicDetails
 from .create_volume_backup_details import CreateVolumeBackupDetails
+from .create_volume_backup_policy_assignment_details import CreateVolumeBackupPolicyAssignmentDetails
 from .create_volume_details import CreateVolumeDetails
 from .cross_connect import CrossConnect
 from .cross_connect_group import CrossConnectGroup
@@ -54,6 +56,8 @@ from .export_image_details import ExportImageDetails
 from .export_image_via_object_storage_tuple_details import ExportImageViaObjectStorageTupleDetails
 from .export_image_via_object_storage_uri_details import ExportImageViaObjectStorageUriDetails
 from .fast_connect_provider_service import FastConnectProviderService
+from .get_public_ip_by_ip_address_details import GetPublicIpByIpAddressDetails
+from .get_public_ip_by_private_ip_id_details import GetPublicIpByPrivateIpIdDetails
 from .ip_sec_connection import IPSecConnection
 from .ip_sec_connection_device_config import IPSecConnectionDeviceConfig
 from .ip_sec_connection_device_status import IPSecConnectionDeviceStatus
@@ -77,6 +81,7 @@ from .letter_of_authority import LetterOfAuthority
 from .local_peering_gateway import LocalPeeringGateway
 from .port_range import PortRange
 from .private_ip import PrivateIp
+from .public_ip import PublicIp
 from .route_rule import RouteRule
 from .route_table import RouteTable
 from .security_list import SecurityList
@@ -100,6 +105,7 @@ from .update_instance_details import UpdateInstanceDetails
 from .update_internet_gateway_details import UpdateInternetGatewayDetails
 from .update_local_peering_gateway_details import UpdateLocalPeeringGatewayDetails
 from .update_private_ip_details import UpdatePrivateIpDetails
+from .update_public_ip_details import UpdatePublicIpDetails
 from .update_route_table_details import UpdateRouteTableDetails
 from .update_security_list_details import UpdateSecurityListDetails
 from .update_subnet_details import UpdateSubnetDetails
@@ -117,6 +123,9 @@ from .vnic_attachment import VnicAttachment
 from .volume import Volume
 from .volume_attachment import VolumeAttachment
 from .volume_backup import VolumeBackup
+from .volume_backup_policy import VolumeBackupPolicy
+from .volume_backup_policy_assignment import VolumeBackupPolicyAssignment
+from .volume_backup_schedule import VolumeBackupSchedule
 from .volume_source_details import VolumeSourceDetails
 from .volume_source_from_volume_backup_details import VolumeSourceFromVolumeBackupDetails
 from .volume_source_from_volume_details import VolumeSourceFromVolumeDetails
@@ -147,6 +156,7 @@ core_type_mapping = {
     "CreateInternetGatewayDetails": CreateInternetGatewayDetails,
     "CreateLocalPeeringGatewayDetails": CreateLocalPeeringGatewayDetails,
     "CreatePrivateIpDetails": CreatePrivateIpDetails,
+    "CreatePublicIpDetails": CreatePublicIpDetails,
     "CreateRouteTableDetails": CreateRouteTableDetails,
     "CreateSecurityListDetails": CreateSecurityListDetails,
     "CreateSubnetDetails": CreateSubnetDetails,
@@ -155,6 +165,7 @@ core_type_mapping = {
     "CreateVirtualCircuitPublicPrefixDetails": CreateVirtualCircuitPublicPrefixDetails,
     "CreateVnicDetails": CreateVnicDetails,
     "CreateVolumeBackupDetails": CreateVolumeBackupDetails,
+    "CreateVolumeBackupPolicyAssignmentDetails": CreateVolumeBackupPolicyAssignmentDetails,
     "CreateVolumeDetails": CreateVolumeDetails,
     "CrossConnect": CrossConnect,
     "CrossConnectGroup": CrossConnectGroup,
@@ -174,6 +185,8 @@ core_type_mapping = {
     "ExportImageViaObjectStorageTupleDetails": ExportImageViaObjectStorageTupleDetails,
     "ExportImageViaObjectStorageUriDetails": ExportImageViaObjectStorageUriDetails,
     "FastConnectProviderService": FastConnectProviderService,
+    "GetPublicIpByIpAddressDetails": GetPublicIpByIpAddressDetails,
+    "GetPublicIpByPrivateIpIdDetails": GetPublicIpByPrivateIpIdDetails,
     "IPSecConnection": IPSecConnection,
     "IPSecConnectionDeviceConfig": IPSecConnectionDeviceConfig,
     "IPSecConnectionDeviceStatus": IPSecConnectionDeviceStatus,
@@ -197,6 +210,7 @@ core_type_mapping = {
     "LocalPeeringGateway": LocalPeeringGateway,
     "PortRange": PortRange,
     "PrivateIp": PrivateIp,
+    "PublicIp": PublicIp,
     "RouteRule": RouteRule,
     "RouteTable": RouteTable,
     "SecurityList": SecurityList,
@@ -220,6 +234,7 @@ core_type_mapping = {
     "UpdateInternetGatewayDetails": UpdateInternetGatewayDetails,
     "UpdateLocalPeeringGatewayDetails": UpdateLocalPeeringGatewayDetails,
     "UpdatePrivateIpDetails": UpdatePrivateIpDetails,
+    "UpdatePublicIpDetails": UpdatePublicIpDetails,
     "UpdateRouteTableDetails": UpdateRouteTableDetails,
     "UpdateSecurityListDetails": UpdateSecurityListDetails,
     "UpdateSubnetDetails": UpdateSubnetDetails,
@@ -237,6 +252,9 @@ core_type_mapping = {
     "Volume": Volume,
     "VolumeAttachment": VolumeAttachment,
     "VolumeBackup": VolumeBackup,
+    "VolumeBackupPolicy": VolumeBackupPolicy,
+    "VolumeBackupPolicyAssignment": VolumeBackupPolicyAssignment,
+    "VolumeBackupSchedule": VolumeBackupSchedule,
     "VolumeSourceDetails": VolumeSourceDetails,
     "VolumeSourceFromVolumeBackupDetails": VolumeSourceFromVolumeBackupDetails,
     "VolumeSourceFromVolumeDetails": VolumeSourceFromVolumeDetails

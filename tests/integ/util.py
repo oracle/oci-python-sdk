@@ -56,9 +56,14 @@ def init_availability_domain_variables(identity_api, tenant_id):
             first_ad = availability_domains[0].name
             second_ad = availability_domains[1].name
         else:
-            chosen_domains = random.sample(availability_domains, 2)
-            first_ad = chosen_domains[0].name
-            second_ad = chosen_domains[1].name
+            # We need consistency in the vended availability domains if we're mocking, so don't randomize
+            if test_config_container.using_vcr_with_mock_responses():
+                first_ad = availability_domains[0].name
+                second_ad = availability_domains[1].name
+            else:
+                chosen_domains = random.sample(availability_domains, 2)
+                first_ad = chosen_domains[0].name
+                second_ad = chosen_domains[1].name
 
 
 def bucket_prefix():

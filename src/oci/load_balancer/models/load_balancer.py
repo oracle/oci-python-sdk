@@ -52,6 +52,10 @@ class LoadBalancer(object):
             The value to assign to the listeners property of this LoadBalancer.
         :type listeners: dict(str, Listener)
 
+        :param path_route_sets:
+            The value to assign to the path_route_sets property of this LoadBalancer.
+        :type path_route_sets: dict(str, PathRouteSet)
+
         :param shape_name:
             The value to assign to the shape_name property of this LoadBalancer.
         :type shape_name: str
@@ -75,6 +79,7 @@ class LoadBalancer(object):
             'is_private': 'bool',
             'lifecycle_state': 'str',
             'listeners': 'dict(str, Listener)',
+            'path_route_sets': 'dict(str, PathRouteSet)',
             'shape_name': 'str',
             'subnet_ids': 'list[str]',
             'time_created': 'datetime'
@@ -90,6 +95,7 @@ class LoadBalancer(object):
             'is_private': 'isPrivate',
             'lifecycle_state': 'lifecycleState',
             'listeners': 'listeners',
+            'path_route_sets': 'pathRouteSets',
             'shape_name': 'shapeName',
             'subnet_ids': 'subnetIds',
             'time_created': 'timeCreated'
@@ -104,6 +110,7 @@ class LoadBalancer(object):
         self._is_private = None
         self._lifecycle_state = None
         self._listeners = None
+        self._path_route_sets = None
         self._shape_name = None
         self._subnet_ids = None
         self._time_created = None
@@ -357,6 +364,26 @@ class LoadBalancer(object):
         :type: dict(str, Listener)
         """
         self._listeners = listeners
+
+    @property
+    def path_route_sets(self):
+        """
+        Gets the path_route_sets of this LoadBalancer.
+
+        :return: The path_route_sets of this LoadBalancer.
+        :rtype: dict(str, PathRouteSet)
+        """
+        return self._path_route_sets
+
+    @path_route_sets.setter
+    def path_route_sets(self, path_route_sets):
+        """
+        Sets the path_route_sets of this LoadBalancer.
+
+        :param path_route_sets: The path_route_sets of this LoadBalancer.
+        :type: dict(str, PathRouteSet)
+        """
+        self._path_route_sets = path_route_sets
 
     @property
     def shape_name(self):

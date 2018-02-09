@@ -64,7 +64,10 @@ class UpdateDynamicGroupDetails(object):
     def matching_rule(self):
         """
         Gets the matching_rule of this UpdateDynamicGroupDetails.
-        The matching rule to dynamically match an instance certificate to this dynamic group
+        The matching rule to dynamically match an instance certificate to this dynamic group.
+        For rule syntax, see `Managing Dynamic Groups`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingdynamicgroups.htm
 
 
         :return: The matching_rule of this UpdateDynamicGroupDetails.
@@ -76,7 +79,10 @@ class UpdateDynamicGroupDetails(object):
     def matching_rule(self, matching_rule):
         """
         Sets the matching_rule of this UpdateDynamicGroupDetails.
-        The matching rule to dynamically match an instance certificate to this dynamic group
+        The matching rule to dynamically match an instance certificate to this dynamic group.
+        For rule syntax, see `Managing Dynamic Groups`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingdynamicgroups.htm
 
 
         :param matching_rule: The matching_rule of this UpdateDynamicGroupDetails.
