@@ -10,6 +10,7 @@ import click
 from click.exceptions import UsageError
 
 POM_LOCATION = "pom.xml"
+GITHUB_WHITELIST_LOCATION = "github.whitelist"
 
 SPEC_FILE_PROPERTY_TEMPLATE = """
 <{spec_name}-spec-file>{spec_path_relative_to_jar}</{spec_name}-spec-file>
@@ -253,6 +254,11 @@ def indent(elem, level=0):
             elem.tail = i
 
 
+def add_spec_module_to_github_whitelist(spec_name):
+    with open(GITHUB_WHITELIST_LOCATION, 'a') as f:
+        f.write('\n^src/oci/{}/.*\.py$'.format(spec_name))
+
+
 @click.command()
 @click.option('--artifact-id', required=True, help='The artifact id for the spec artifact (e.g. coreservices-api-spec')
 @click.option('--group-id', help='The group id for the spec artifact (e.g. com.oracle.pic.commons)')
@@ -294,6 +300,7 @@ def add_or_update_spec(artifact_id, group_id, spec_name, relative_spec_path, end
         generate_and_add_clean_section(pom, spec_name)
         generate_and_add_dependency_management_section(pom, group_id, artifact_id, version)
         generate_and_add_initial_dependency_section(pom, group_id, artifact_id)
+        add_spec_module_to_github_whitelist(spec_name)
 
     # pretty print pom
     indent(pom.getroot())
