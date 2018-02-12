@@ -1,6 +1,7 @@
 # coding: utf-8
 # Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
+from .. import dns
 from .. import retry
 from ..response import Response
 
@@ -33,11 +34,25 @@ def list_call_get_up_to_limit(list_func_ref, record_limit, page_size, *list_func
     """
     call_result = None
     aggregated_results = []
+    is_dns_record_collection = False
     for response in list_call_get_up_to_limit_generator(list_func_ref, record_limit, page_size, 'response', *list_func_args, **list_func_kwargs):
         call_result = response
-        aggregated_results.extend(call_result.data)
 
-    final_response = Response(call_result.status, call_result.headers, aggregated_results, call_result.request)
+        if isinstance(call_result.data, dns.models.RecordCollection):
+            is_dns_record_collection = True
+            aggregated_results.extend(call_result.data.items)
+        else:
+            aggregated_results.extend(call_result.data)
+
+    if is_dns_record_collection:
+        final_response = Response(
+            call_result.status,
+            call_result.headers,
+            dns.models.RecordCollection(items=aggregated_results),
+            call_result.request
+        )
+    else:
+        final_response = Response(call_result.status, call_result.headers, aggregated_results, call_result.request)
     return final_response
 
 
@@ -88,7 +103,13 @@ def list_call_get_up_to_limit_generator(list_func_ref, record_limit, page_size, 
         if yield_mode == 'response':
             yield single_call_result
         else:
-            for item in single_call_result.data:
+            items_to_yield = []
+            if isinstance(single_call_result.data, dns.models.RecordCollection):
+                items_to_yield = single_call_result.data.items
+            else:
+                items_to_yield = single_call_result.data
+
+            for item in items_to_yield:
                 yield item
 
         return  # This will terminate after we yield everything we can from the single result
@@ -104,10 +125,19 @@ def list_call_get_up_to_limit_generator(list_func_ref, record_limit, page_size, 
         if yield_mode == 'response':
             yield call_result
         else:
-            for item in call_result.data:
+            items_to_yield = []
+            if isinstance(call_result.data, dns.models.RecordCollection):
+                items_to_yield = call_result.data.items
+            else:
+                items_to_yield = call_result.data
+
+            for item in items_to_yield:
                 yield item
 
-        remaining_items_to_fetch -= len(call_result.data)
+        if isinstance(call_result.data, dns.models.RecordCollection):
+            remaining_items_to_fetch -= len(call_result.data.items)
+        else:
+            remaining_items_to_fetch -= len(call_result.data)
 
         if call_result.next_page is not None:
             list_func_kwargs['page'] = call_result.next_page
@@ -136,11 +166,24 @@ def list_call_get_all_results(list_func_ref, *list_func_args, **list_func_kwargs
 
     aggregated_results = []
     call_result = None
+    is_dns_record_collection = False
     for response in list_call_get_all_results_generator(list_func_ref, 'response', *list_func_args, **list_func_kwargs):
         call_result = response
-        aggregated_results.extend(call_result.data)
+        if isinstance(call_result.data, dns.models.RecordCollection):
+            is_dns_record_collection = True
+            aggregated_results.extend(call_result.data.items)
+        else:
+            aggregated_results.extend(call_result.data)
 
-    final_response = Response(call_result.status, call_result.headers, aggregated_results, call_result.request)
+    if is_dns_record_collection:
+        final_response = Response(
+            call_result.status,
+            call_result.headers,
+            dns.models.RecordCollection(items=aggregated_results),
+            call_result.request
+        )
+    else:
+        final_response = Response(call_result.status, call_result.headers, aggregated_results, call_result.request)
     return final_response
 
 
@@ -180,7 +223,13 @@ def list_call_get_all_results_generator(list_func_ref, yield_mode, *list_func_ar
         if yield_mode == 'response':
             yield call_result
         else:
-            for item in call_result.data:
+            items_to_yield = []
+            if isinstance(call_result.data, dns.models.RecordCollection):
+                items_to_yield = call_result.data.items
+            else:
+                items_to_yield = call_result.data
+
+            for item in items_to_yield:
                 yield item
 
         if call_result.next_page is not None:
