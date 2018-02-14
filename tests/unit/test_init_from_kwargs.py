@@ -31,7 +31,9 @@ ENUM_ATTR_TO_VALUE = {
     'ImageSourceViaObjectStorageUriDetails': {'source_image_type': 'QCOW2'},
     'ImageSourceViaObjectStorageTupleDetails': {'source_image_type': 'QCOW2'},
     'CreatePublicIpDetails': {'lifetime': 'RESERVED'},
-    'CreateVolumeBackupDetails': {'type': 'FULL'}
+    'CreateVolumeBackupDetails': {'type': 'FULL'},
+    'RecordOperation': {'operation': 'ADD'},
+    'CreateZoneDetails': {'zone_type': 'PRIMARY'}
 }
 
 
@@ -40,6 +42,7 @@ def test_all_model_classes_can_be_init_from_kwargs():
         oci.audit.models.audit_type_mapping,
         oci.core.models.core_type_mapping,
         oci.database.models.database_type_mapping,
+        oci.dns.models.dns_type_mapping,
         oci.identity.models.identity_type_mapping,
         oci.load_balancer.models.load_balancer_type_mapping,
         oci.object_storage.models.object_storage_type_mapping
