@@ -9,9 +9,7 @@
 
 
 import oci
-from datetime import date
 import datetime
-from dateutil.relativedelta import relativedelta
 
 
 def get_regions(identity):
@@ -56,11 +54,7 @@ def get_audit_events(audit, compartment_ocids, start_time, end_time):
 
         #  Results for a compartment 'c' for a region defined
         #  in 'audit' object.
-        #  Events can be filtered here based on some constraints.
-        #  For example, to filter write events make use of
-        #  the following condition
-        #  list_events_response.data.request_action != 'GET'
-        list_of_audit_events.append(list_events_response)
+        list_of_audit_events.extend(list_events_response)
         return list_of_audit_events
 
 
