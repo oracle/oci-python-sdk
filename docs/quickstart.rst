@@ -104,30 +104,24 @@ compartment:
 Even though a response includes a next page, there may not be more results.  The last page will return an empty list,
 and will not have a ``next_page`` token.
 
-Here's a very simple way to paginate a call:
+You can manually iterate through responses, providing the page from the previous response to the next request. For example:
 
 .. code-block:: python
 
-    def paginate(operation, *args, **kwargs):
-        while True:
-            response = operation(*args, **kwargs)
-            for value in response.data:
-                yield value
-            kwargs["page"] = response.next_page
-            if not response.has_next_page:
-                break
+    response = identity.list_users(compartment_id)
+    users = response.data
+    while response.has_next_page:
+        response = identity.list_users(compartment_id, page=response.next_page)
+        users.extend(response.data)
 
-To iterate over all users, the call is now:
 
-.. code-block:: pycon
+As a convenience over manually writing pagination code, you can make use of the functions in the :py:mod:`~oci.pagination` module to:
 
-    >>> for user in paginate(
-    ...         identity.list_users,
-    ...         compartment_id=compartment_id):
-    ...     print(user)
+* Eagerly load all possible results from a list call
+* Eagerly load all results from a list call up to a given limit
+* Lazily load results (either all results, or up to a given limit) from a list call via a generator. These generators can yield either values/models or the raw response from calling the list operation
 
-This ``paginate`` function will work for any list call, but will not include the response metadata, such as headers,
-HTTP status code, or request id.
+For examples on pagination, please check `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/pagination.py>`_.
 
 
 -------------------
