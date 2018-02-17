@@ -18,16 +18,23 @@ class RestoreObjectsDetails(object):
             The value to assign to the object_name property of this RestoreObjectsDetails.
         :type object_name: str
 
+        :param hours:
+            The value to assign to the hours property of this RestoreObjectsDetails.
+        :type hours: int
+
         """
         self.swagger_types = {
-            'object_name': 'str'
+            'object_name': 'str',
+            'hours': 'int'
         }
 
         self.attribute_map = {
-            'object_name': 'objectName'
+            'object_name': 'objectName',
+            'hours': 'hours'
         }
 
         self._object_name = None
+        self._hours = None
 
     @property
     def object_name(self):
@@ -52,6 +59,32 @@ class RestoreObjectsDetails(object):
         :type: str
         """
         self._object_name = object_name
+
+    @property
+    def hours(self):
+        """
+        Gets the hours of this RestoreObjectsDetails.
+        The number of hours for which this object will be restored.
+        By default object will be restored for 24 hours.It can be configured using hours parameter.
+
+
+        :return: The hours of this RestoreObjectsDetails.
+        :rtype: int
+        """
+        return self._hours
+
+    @hours.setter
+    def hours(self, hours):
+        """
+        Sets the hours of this RestoreObjectsDetails.
+        The number of hours for which this object will be restored.
+        By default object will be restored for 24 hours.It can be configured using hours parameter.
+
+
+        :param hours: The hours of this RestoreObjectsDetails.
+        :type: int
+        """
+        self._hours = hours
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -35,13 +35,23 @@ class UpdateBucketDetails(object):
             Allowed values for this property are: "NoPublicAccess", "ObjectRead", "ObjectReadWithoutList"
         :type public_access_type: str
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this UpdateBucketDetails.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this UpdateBucketDetails.
+        :type defined_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'namespace': 'str',
             'compartment_id': 'str',
             'name': 'str',
             'metadata': 'dict(str, str)',
-            'public_access_type': 'str'
+            'public_access_type': 'str',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -49,7 +59,9 @@ class UpdateBucketDetails(object):
             'compartment_id': 'compartmentId',
             'name': 'name',
             'metadata': 'metadata',
-            'public_access_type': 'publicAccessType'
+            'public_access_type': 'publicAccessType',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags'
         }
 
         self._namespace = None
@@ -57,6 +69,8 @@ class UpdateBucketDetails(object):
         self._name = None
         self._metadata = None
         self._public_access_type = None
+        self._freeform_tags = None
+        self._defined_tags = None
 
     @property
     def namespace(self):
@@ -193,6 +207,70 @@ class UpdateBucketDetails(object):
                 .format(allowed_values)
             )
         self._public_access_type = public_access_type
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this UpdateBucketDetails.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this UpdateBucketDetails.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this UpdateBucketDetails.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this UpdateBucketDetails.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this UpdateBucketDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this UpdateBucketDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this UpdateBucketDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this UpdateBucketDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

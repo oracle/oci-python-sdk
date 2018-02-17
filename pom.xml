@@ -755,7 +755,7 @@
             <dependency>
                 <groupId>com.oracle.pic.casper</groupId>
                 <artifactId>casper-api-spec</artifactId>
-                <version>1.1.10</version>
+                <version>1.1.15</version>
             </dependency>
             <dependency>
                 <groupId>com.oracle.pic.lb</groupId>
@@ -765,7 +765,7 @@
             <dependency>
                 <groupId>com.oracle.pic.dbaas</groupId>
                 <artifactId>dbaas-api-spec</artifactId>
-                <version>0.0.130</version>
+                <version>0.0.133</version>
             </dependency>
             <dependency>
                 <groupId>com.oracle.pic.sherlock</groupId>
