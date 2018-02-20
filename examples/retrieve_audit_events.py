@@ -7,9 +7,8 @@
 #  This sample script retrieves Audit events for last 5 days.
 #  This script will work at a tenancy level only.
 
-
-import oci
 import datetime
+import oci
 
 
 def get_regions(identity):
