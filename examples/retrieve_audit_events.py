@@ -40,12 +40,15 @@ def get_compartments(identity, tenancy_id):
 
 def get_audit_events(audit, compartment_ocids, start_time, end_time):
     '''
-    Get events iteratively for each compartment defined in 'compartments' array
-    for the region defined in "config['region']".
+    Get events iteratively for each compartment defined in 'compartments_ocids'
+    for the region defined in 'audit'.
+    This method eagerly loads all audit records in the time range and it does
+    have performance implications of lot of audit records.
+    Ideally, the generator method in oci.pagination should be used to lazily
+    load results.
     '''
     list_of_audit_events = []
     for c in compartment_ocids:
-        #  To separate results by compartments use print here.
         list_events_response = oci.pagination.list_call_get_all_results(
             audit.list_events,
             compartment_id=c,
@@ -58,7 +61,6 @@ def get_audit_events(audit, compartment_ocids, start_time, end_time):
         return list_of_audit_events
 
 
-'''Here's the code that retrives audits across the tenancy'''
 #  Setting configuration
 #  Default path for configuration file is "~/.oci/config"
 config = oci.config.from_file()
