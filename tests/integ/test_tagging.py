@@ -79,7 +79,7 @@ def tag_namespace(tagging_identity_client):
             else:
                 tag_namespace = get_tag_namespace_response.data
 
-        yield tag_namespace
+    yield tag_namespace
 
 
 def test_manage_tags_and_namespace(tagging_identity_client, tag_namespace):
@@ -117,11 +117,11 @@ def test_manage_tags_and_namespace(tagging_identity_client, tag_namespace):
         assert not get_tag_namespace_response.data.is_retired
 
         tag_one_name = util.random_name('tagone')
-        tag_one = create_tag(tagging_identity_client, tag_namespace, tag_one_name)
+        tag_one = create_or_reactivate_tag(tagging_identity_client, tag_namespace, tag_one_name)
         tag_one = update_and_retire_tag(tagging_identity_client, tag_one)
 
         tag_two_name = util.random_name('tagtwo')
-        tag_two = create_tag(tagging_identity_client, tag_namespace, tag_two_name)
+        tag_two = create_or_reactivate_tag(tagging_identity_client, tag_namespace, tag_two_name)
 
         update_tag_namespace_response = tagging_identity_client.update_tag_namespace(
             tag_namespace.id,
@@ -189,10 +189,10 @@ def test_tag_resource(tagging_identity_client, tagging_block_storage_client, tag
         )
 
         tag_one_name = util.random_name('tagresone')
-        create_tag(tagging_identity_client, tag_namespace, tag_one_name)
+        create_or_reactivate_tag(tagging_identity_client, tag_namespace, tag_one_name)
 
         tag_two_name = util.random_name('tagrestwo')
-        create_tag(tagging_identity_client, tag_namespace, tag_two_name)
+        create_or_reactivate_tag(tagging_identity_client, tag_namespace, tag_two_name)
 
         # There seems to be some eventual consistency thing with tags where sometimes we can't
         # use a tag we created straight away. This manifests as a 404, so retry in this case
@@ -219,7 +219,7 @@ def test_tag_resource(tagging_identity_client, tagging_block_storage_client, tag
                     if num_tries >= 3:  # If we can't get it in 3 tries, something is probably wrong...
                         raise
                     else:
-                        time.sleep(2)
+                        time.sleep(5)
                 else:
                     raise
 
@@ -269,20 +269,42 @@ def test_tag_resource(tagging_identity_client, tagging_block_storage_client, tag
         assert update_tag_namespace_response.data.is_retired
 
 
-def create_tag(tagging_identity_client, tag_namespace, tag_name):
-    create_tag_response = tagging_identity_client.create_tag(
-        tag_namespace.id,
-        oci.identity.models.CreateTagDetails(name=tag_name, description='integ test tag {}'.format(tag_name))
-    )
-    util.validate_response(create_tag_response)
-    assert tag_namespace.id == create_tag_response.data.tag_namespace_id
-    assert tag_name == create_tag_response.data.name
-    assert 'integ test tag {}'.format(tag_name) == create_tag_response.data.description
-    assert create_tag_response.data.id is not None
-    assert create_tag_response.data.time_created is not None
-    assert not create_tag_response.data.is_retired
+def create_or_reactivate_tag(tagging_identity_client, tag_namespace, tag_name):
+    # It is possible that the tag already exists, if so we will reactivate it rather than creating it
+    tag_exists = False
+    try:
+        # This should 404 if the tag does not exist
+        tagging_identity_client.get_tag(tag_namespace.id, tag_name)
+        tag_exists = True
+    except oci.exceptions.ServiceError as e:
+        print(e)
+        if e.status == 404:
+            pass
+        else:
+            raise
 
-    return create_tag_response.data
+    if not tag_exists:
+        create_tag_response = tagging_identity_client.create_tag(
+            tag_namespace.id,
+            oci.identity.models.CreateTagDetails(name=tag_name, description='integ test tag {}'.format(tag_name))
+        )
+        util.validate_response(create_tag_response)
+        assert tag_namespace.id == create_tag_response.data.tag_namespace_id
+        assert tag_name == create_tag_response.data.name
+        assert 'integ test tag {}'.format(tag_name) == create_tag_response.data.description
+        assert create_tag_response.data.id is not None
+        assert create_tag_response.data.time_created is not None
+        assert not create_tag_response.data.is_retired
+
+        return create_tag_response.data
+    else:
+        # Make sure that the tag is active
+        update_tag_response = tagging_identity_client.update_tag(
+            tag_namespace.id,
+            tag_name,
+            oci.identity.models.UpdateTagDetails(description='reactivated tag', is_retired=False)
+        )
+        return update_tag_response.data
 
 
 def update_and_retire_tag(tagging_identity_client, tag):

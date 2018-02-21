@@ -159,6 +159,8 @@ class TestObjectStorage:
             assert response.status == 200
             assert type(response.data) is oci.object_storage.models.Bucket
             assert bucket_name == response.data.name
+            assert response.data.freeform_tags == {}
+            assert response.data.defined_tags == {}
 
             # List
             response = object_storage.list_buckets(namespace, util.COMPARTMENT_ID, limit=500)
@@ -179,6 +181,78 @@ class TestObjectStorage:
             # Delete
             response = object_storage.delete_bucket(namespace, bucket_name)
             assert response.status == 204
+
+    def test_bucket_tagging(self, object_storage, identity):
+        with test_config_container.create_vcr().use_cassette('test_object_storage_test_bucket_tagging.yml'):
+            tag_ns = os.environ.get('OCI_PYSDK_APPLY_TAGS_TAG_NAMESPACE')
+            tag_one = os.environ.get('OCI_PYSDK_APPLY_TAGS_TAG_ONE')
+            tag_two = os.environ.get('OCI_PYSDK_APPLY_TAGS_TAG_TWO')
+            bucket_name = unique_name('test_bucket_with_tags')
+            namespace = object_storage.get_namespace().data
+
+            # Create a bucket with tags
+            response = object_storage.create_bucket(
+                namespace,
+                oci.object_storage.models.CreateBucketDetails(
+                    name=bucket_name,
+                    compartment_id=util.COMPARTMENT_ID,
+                    freeform_tags={'one': '2', 'three': 'fourty_four'},
+                    defined_tags={tag_ns: {tag_one: 'val one', tag_two: 'value 2'}}
+                )
+            )
+
+            try:
+                assert response.data.freeform_tags == {'one': '2', 'three': 'fourty_four'}
+                assert response.data.defined_tags == {tag_ns: {tag_one: 'val one', tag_two: 'value 2'}}
+
+                # The tags come back when getting the bucket
+                get_bucket_response = object_storage.get_bucket(namespace, bucket_name)
+                assert get_bucket_response.data.freeform_tags == {'one': '2', 'three': 'fourty_four'}
+                assert get_bucket_response.data.defined_tags == {tag_ns: {tag_one: 'val one', tag_two: 'value 2'}}
+
+                # I can update the tags with different values (these overwrite the existing values)
+                update_bucket_response = object_storage.update_bucket(
+                    namespace,
+                    bucket_name,
+                    oci.object_storage.models.UpdateBucketDetails(
+                        name=bucket_name,
+                        freeform_tags={'1': 'one'},
+                        defined_tags={tag_ns: {tag_one: 'replaced'}}
+                    )
+                )
+                assert update_bucket_response.data.freeform_tags == {'1': 'one'}
+                assert update_bucket_response.data.defined_tags == {tag_ns: {tag_one: 'replaced'}}
+
+                # An update with null tags preserves
+                update_bucket_response = object_storage.update_bucket(
+                    namespace,
+                    bucket_name,
+                    oci.object_storage.models.UpdateBucketDetails(
+                        name=bucket_name,
+                        public_access_type='ObjectReadWithoutList'
+                    )
+                )
+                assert update_bucket_response.data.freeform_tags == {'1': 'one'}
+                assert update_bucket_response.data.defined_tags == {tag_ns: {tag_one: 'replaced'}}
+
+                # I can clear tags by passing an empty dict
+                update_bucket_response = object_storage.update_bucket(
+                    namespace,
+                    bucket_name,
+                    oci.object_storage.models.UpdateBucketDetails(
+                        name=bucket_name,
+                        freeform_tags={},
+                        defined_tags={}
+                    )
+                )
+                assert update_bucket_response.data.freeform_tags == {}
+                assert update_bucket_response.data.defined_tags == {}
+
+                get_bucket_response = object_storage.get_bucket(namespace, bucket_name)
+                assert get_bucket_response.data.freeform_tags == {}
+                assert get_bucket_response.data.defined_tags == {}
+            finally:
+                object_storage.delete_bucket(namespace, bucket_name)
 
     def test_object_crud(self, object_storage):
         with test_config_container.create_vcr().use_cassette('test_object_storage_test_object_crud.yml'):
@@ -283,9 +357,7 @@ class TestObjectStorage:
     def test_object_restore(self, object_storage):
         with test_config_container.create_vcr().use_cassette('test_object_storage_test_object_restore.yml'):
             # Setup an archive bucket to use.
-            object_name_a = 'object_A'
             bucket_name = unique_name('test_object_restore')
-            test_data = 'This is a test ' + random_number_string() + '!/n/r/\/~%s;"/,{}><+=:.*)('''
             namespace = object_storage.get_namespace().data
 
             request = oci.object_storage.models.CreateBucketDetails()
@@ -295,34 +367,8 @@ class TestObjectStorage:
             response = object_storage.create_bucket(namespace, request)
             assert response.status == 200
 
-            # Put an object
-            response = object_storage.put_object(namespace, bucket_name, object_name_a, test_data)
-            assert response.status == 200
-
-            # Head
-            response = object_storage.head_object(namespace, bucket_name, object_name_a)
-            assert response.status == 200
-            assert 'Archived' == response.headers['archival-state']
-
-            # Cannot get object back when it's in archived state
-            with pytest.raises(oci.exceptions.ServiceError) as excinfo:
-                object_storage.get_object(namespace, bucket_name, object_name_a)
-            assert excinfo.value.status == 409
-
-            # Restore the object, it takes 24 hours
-            request = oci.object_storage.models.RestoreObjectsDetails()
-            request.object_name = object_name_a
-            response = object_storage.restore_objects(namespace, bucket_name, request)
-            assert response.status >= 200 and response.status <= 299
-
-            # Head again and verify archival state
-            response = object_storage.head_object(namespace, bucket_name, object_name_a)
-            assert response.status == 200
-            assert 'Restoring' == response.headers['archival-state']
-
-            # Delete
-            response = object_storage.delete_object(namespace, bucket_name, object_name_a)
-            assert response.status == 204
+            self.restore_object_internal(object_storage, namespace, bucket_name, 'object_A')
+            self.restore_object_internal(object_storage, namespace, bucket_name, 'object_A', 100)
 
             # Clean up
             response = object_storage.delete_bucket(namespace, bucket_name)
@@ -501,6 +547,18 @@ class TestObjectStorage:
             assert response.status == 200
             assert len(response.data) > 0
             assert type(response.data[0]) is oci.object_storage.models.BucketSummary
+            for bucket_summary in response.data:
+                # These should be None as we did not ask for them in the request
+                assert bucket_summary.defined_tags is None
+                assert bucket_summary.freeform_tags is None
+
+            response_with_tags = object_storage.list_buckets(namespace, util.COMPARTMENT_ID, fields=['tags'])
+            assert response.status == 200
+            assert len(response.data) > 0
+            for bucket_summary in response_with_tags.data:
+                # We've explicitly asked for tags, so should not get None back
+                assert bucket_summary.defined_tags is not None
+                assert bucket_summary.freeform_tags is not None
 
     def test_list_buckets_truncated(self, object_storage):
         with test_config_container.create_vcr().use_cassette('test_object_storage_test_list_buckets_truncated.yml'):
@@ -795,3 +853,37 @@ class TestObjectStorage:
         assert filecmp.cmp(test_file, downloaded_empty_file_path, shallow=False)
 
         os.remove(downloaded_empty_file_path)
+
+    def restore_object_internal(self, object_storage, namespace, bucket_name, object_name, restore_hours=None):
+        test_data = 'This is a test ' + random_number_string() + '!/n/r/\/~%s;"/,{}><+=:.*)('''
+
+        # Put an object
+        response = object_storage.put_object(namespace, bucket_name, object_name, test_data)
+        assert response.status == 200
+
+        # Head
+        response = object_storage.head_object(namespace, bucket_name, object_name)
+        assert response.status == 200
+        assert 'Archived' == response.headers['archival-state']
+
+        # Cannot get object back when it's in archived state
+        with pytest.raises(oci.exceptions.ServiceError) as excinfo:
+            object_storage.get_object(namespace, bucket_name, object_name)
+        assert excinfo.value.status == 409
+
+        # Restore the object, it takes 24 hours
+        request = oci.object_storage.models.RestoreObjectsDetails()
+        request.object_name = object_name
+        if restore_hours:
+            request.hours = restore_hours
+        response = object_storage.restore_objects(namespace, bucket_name, request)
+        assert response.status >= 200 and response.status <= 299
+
+        # Head again and verify archival state
+        response = object_storage.head_object(namespace, bucket_name, object_name)
+        assert response.status == 200
+        assert 'Restoring' == response.headers['archival-state']
+
+        # Delete
+        response = object_storage.delete_object(namespace, bucket_name, object_name)
+        assert response.status == 204
