@@ -5,15 +5,29 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
-1.3.14 - 2018-02-08
+1.3.15 - 2018-02-22
 ====================
 
 Added
 -----
 * Support for File Storage Service
   
-  * An example on using the File Storage Service can be found on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/file_storage_example.py>`_.
+  * An example on using the File Storage Service can be found on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/file_storage_example.py>`__.
 
+* Added support for tagging Bucket resources in the Object Storage Service
+
+  * An example on tagging buckets can be found on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/object_storage_bucket_tagging_example.py>`__.
+
+* Added support  for specifying a restore period for archived objects in the ``RestoreObjects`` operation of the Object Storage service.
+
+  * An example on using archive storage can be found on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/object_storage_archive_example.py>`__.
+
+====================
+1.3.14 - 2018-02-08
+====================
+
+Added
+-----
 * Support for Domain Name System Service
 
   * An example on using the Domain Name System Service can be found on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/dns_service_example.py>`_.
