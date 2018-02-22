@@ -140,6 +140,7 @@ file_system = oci.wait_until(
     'ACTIVE'
 ).data
 print('Created file system:\n{}'.format(file_system))
+print('=============================\n')
 
 # We can update the display name of the file system
 update_response = file_storage_client.update_file_system(
@@ -147,6 +148,7 @@ update_response = file_storage_client.update_file_system(
     oci.file_storage.models.UpdateFileSystemDetails(display_name='updated_py_sdk_example_fs')
 )
 print('Updated file system:\n{}'.format(update_response.data))
+print('=============================\n')
 
 # Listing file systems is a paginated operation, so we can use the functionality in the oci.pagination
 # module to get all the results
@@ -156,6 +158,7 @@ all_file_systems = oci.pagination.list_call_get_all_results(
     availability_domain
 )
 print('All file systems:\n{}'.format(all_file_systems.data))
+print('=============================\n')
 
 # To create a mount target, first we need a VCN and subnet
 vcn_and_subnet = create_vcn_and_subnet(virtual_network_client, compartment_id, availability_domain)
@@ -169,6 +172,13 @@ subnet = vcn_and_subnet['subnet']
 #
 # The opc-retry-token should uniquely identify the request. The token generation shown here is just an example, but
 # in Production code you should have a better way of generating these
+#
+# Some other items to note about mount target creation:
+#   - This creates a mount target WITHOUT specifying a hostname. This means that the mount target will only be accessible
+#     via its private IP address. A hostname can be specified by using the "hostname" attribute of CreateMountTargetDetails
+#   - A private IP address can be specified by using the "ip_address" attribute of CreateMountTargetDetails. If no explicit
+#     private IP address is specified then one will be selected from the available pool of free private IPs in the subnet. If
+#     a private IP address is specified, then it must not already be used
 mount_target_retry_token = 'example_token_{}'.format(int(time.time()))
 create_response = file_storage_client.create_mount_target(
     oci.file_storage.models.CreateMountTargetDetails(
@@ -189,6 +199,7 @@ mount_target = oci.wait_until(
     'ACTIVE'
 ).data
 print('Created mount target:\n{}'.format(mount_target))
+print('=============================\n')
 
 # If we submit the request to create the mount target with the same retry token then this won't result in a new resource
 # but instead the response will contain the same resource which has already been created
@@ -203,6 +214,14 @@ create_response_with_retry_token = file_storage_client.create_mount_target(
 )
 print('Created mount target with same request and retry token:\n{}'.format(create_response_with_retry_token.data))
 print('Same mount target returned? {}'.format(mount_target.id == create_response_with_retry_token.data.id))
+print('=============================\n')
+
+# Note that the MountTarget contains an array of private IP OCIDs. In order to get the
+# IP address of the MountTarget, we can use VirtualNetworkClient's get_private_ip function
+mount_target_private_ip_id = mount_target.private_ip_ids[0]
+get_private_ip_response = virtual_network_client.get_private_ip(mount_target_private_ip_id)
+print('Mount target private IP: {}'.format(get_private_ip_response.data.ip_address))
+print('=============================\n')
 
 # Listing mount targets is a paginated operation, so we can use the functionality in the oci.pagination
 # module to get all the results
@@ -212,6 +231,7 @@ all_mount_targets = oci.pagination.list_call_get_all_results(
     availability_domain
 )
 print('All mount targets:\n{}'.format(all_mount_targets.data))
+print('=============================\n')
 
 # A mount target contains an export set, which we can use to link the mount target to the file system. We do this
 # by creating an export that links the export set and the file system. Once we have an export, we can access the
@@ -237,16 +257,19 @@ all_exports_by_file_system = oci.pagination.list_call_get_all_results(
     file_system_id=file_system.id
 )
 print('All exports by file system:\n{}'.format(all_exports_by_file_system.data))
+print('=============================\n')
 all_exports_by_export_set = oci.pagination.list_call_get_all_results(
     file_storage_client.list_exports,
     compartment_id,
     export_set_id=mount_target.export_set_id
 )
 print('All exports by export set:\n{}'.format(all_exports_by_export_set.data))
+print('=============================\n')
 
 # We can also retrieve information on an export set itself
 get_export_set_response = file_storage_client.get_export_set(mount_target.export_set_id)
 print('Export set on mount target:\n{}'.format(get_export_set_response.data))
+print('=============================\n')
 
 # Exports have a lifecycle state, so we can wait on it to become available. Also, if we no longer need an export
 # then we can delete it.
@@ -269,6 +292,7 @@ oci.wait_until(
     succeed_on_not_found=True
 )
 print('Deleted export: {}'.format(export.id))
+print('=============================\n')
 
 # We can create a point-in-time snapshot of a file system. Snapshots also have a lifecycle state, so we can wait on it
 # to become available
@@ -291,6 +315,7 @@ get_snapshot_response = oci.wait_until(
 )
 snapshot = get_snapshot_response.data
 print('Created snapshot:\n{}'.format(snapshot))
+print('=============================\n')
 
 # We can list snapshots for a given file system. This is a paginated operation, so we can use the functions in
 # oci.pagination
@@ -299,6 +324,7 @@ all_snapshots = oci.pagination.list_call_get_all_results(
     file_system.id
 )
 print('All snapshots for file system:\n{}'.format(all_snapshots.data))
+print('=============================\n')
 
 # We can also delete a snapshot and then wait for it to be deleted. The snapshot may already be deleted
 # by the time we call wait_until, so pass the get_snapshot_response to the waiter. It is recommended that
@@ -313,6 +339,7 @@ oci.wait_until(
     'DELETED',
     succeed_on_not_found=True
 )
+print('Deleted snapshot')
 
 # Once we are done with the mount target, we can delete it and then wait for it to be deleted. The mount target
 # may already be deleted by the time we call wait_until, so do a get before the delete in order to have a response
