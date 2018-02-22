@@ -117,6 +117,28 @@ Virtual Network
     :imported-members:
     :inherited-members:
 
+==============
+ File Storage
+==============
+
+--------
+ Client
+--------
+
+.. autoclass:: oci.file_storage.file_storage_client.FileStorageClient
+    :members:
+
+--------
+ Models
+--------
+
+.. automodule:: oci.file_storage.models
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :imported-members:
+    :inherited-members:
+
 ==========
  Identity
 ==========

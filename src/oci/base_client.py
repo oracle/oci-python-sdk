@@ -52,6 +52,20 @@ def build_user_agent(extra=""):
 STREAM_RESPONSE_TYPE = 'stream'
 BYTES_RESPONSE_TYPE = 'bytes'
 
+# The keys here correspond to the Swagger collection format values described here: https://swagger.io/docs/specification/2-0/describing-parameters/
+# and the values represent delimiters we'll use between values of the collection when placing those values in the query string.
+#
+# Note that the 'multi' type has no delimiter since in the query string we'll want to repeat the same query string param key but
+# with different values each time (e.g. myKey=val1&myKey=val2), whereas for the other types we will only pass in a single
+# key=value in the query string, where the "value" is the members of the collecction with a given delimiter.
+VALID_COLLECTION_FORMAT_TYPES = {
+    'multi': None,
+    'csv': ',',
+    'tsv': '\t',
+    'ssv': ' ',
+    'pipes': '|'
+}
+
 
 class BaseClient(object):
     primitive_type_map = {
@@ -170,27 +184,52 @@ class BaseClient(object):
                     else:
                         raise
 
+    def generate_collection_format_param(self, param_value, collection_format_type):
+        if param_value is missing:
+            return missing
+
+        if collection_format_type not in VALID_COLLECTION_FORMAT_TYPES:
+            raise ValueError('Invalid collection format type {}. Valid types are: {}'.format(collection_format_type, list(VALID_COLLECTION_FORMAT_TYPES.keys())))
+
+        if collection_format_type == 'multi':
+            return param_value
+        else:
+            return VALID_COLLECTION_FORMAT_TYPES[collection_format_type].join(param_value)
+
     def process_query_params(self, query_params):
         query_params = self.sanitize_for_serialization(query_params)
 
         processed_query_params = {}
         for k, v in query_params.items():
-            # First divide our query params into ones where the param value is and isn't a dict. Since we're executing after sanitize_for_serialization has been called
-            # it's dicts, lists or primitives all the way down. The params where the value is a dict are, for example, tags we need to handle differently for inclusion
-            # in the query string. An example query_params is:
+            # First divide our query params into ones where the param value is "simple" (not a dict or list), a list or a dict. Since we're
+            # executing after sanitize_for_serialization has been called it's dicts, lists or primitives all the way down.
+            #
+            # The params where the value is a dict are, for example, tags we need to handle differently for inclusion
+            # in the query string.
+            #
+            # The params where the value is a list are multivalued parameters in the query string.
+            #
+            # An example query_params is:
             #
             #   {
             #       "stuff": "things",
+            #       "collectionFormat": ["val1", "val2", "val3"]
             #       "definedTags": { "tag1": ["val1", "val2", "val3"], "tag2": ["val1"] },
             #       "definedTagsExists": { "tag3": True, "tag4": True }
             #   }
             #
             # And we can categorize the params as:
             #
-            #   Non-Dict: "stuff":"things"
+            #   Simple: "stuff":"things"
+            #   List: "collectionFormat": ["val1", "val2", "val3"]
             #   Dict: "definedTags": { "tag1": ["val1", "val2", "val3"], "tag2": ["val1"] }, "definedTagsExists": { "tag3": True, "tag4": True }
-            if not isinstance(v, dict):
+            if not isinstance(v, dict) and not isinstance(v, list):
                 processed_query_params[k] = self.to_path_value(v)
+            elif isinstance(v, list):
+                # The requests library supports lists to represent multivalued params natively
+                # (http://docs.python-requests.org/en/master/api/#requests.Session.params) so we just have to assign
+                # the list to the key (where the key is the query string param key)
+                processed_query_params[k] = v
             else:
                 # If we are here then we either have:
                 #

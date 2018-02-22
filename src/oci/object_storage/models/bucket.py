@@ -54,6 +54,14 @@ class Bucket(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type storage_tier: str
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this Bucket.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this Bucket.
+        :type defined_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'namespace': 'str',
@@ -64,7 +72,9 @@ class Bucket(object):
             'time_created': 'datetime',
             'etag': 'str',
             'public_access_type': 'str',
-            'storage_tier': 'str'
+            'storage_tier': 'str',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -76,7 +86,9 @@ class Bucket(object):
             'time_created': 'timeCreated',
             'etag': 'etag',
             'public_access_type': 'publicAccessType',
-            'storage_tier': 'storageTier'
+            'storage_tier': 'storageTier',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags'
         }
 
         self._namespace = None
@@ -88,6 +100,8 @@ class Bucket(object):
         self._etag = None
         self._public_access_type = None
         self._storage_tier = None
+        self._freeform_tags = None
+        self._defined_tags = None
 
     @property
     def namespace(self):
@@ -307,8 +321,8 @@ class Bucket(object):
         Gets the storage_tier of this Bucket.
         The type of storage tier of this bucket.
         A bucket is set to 'Standard' tier by default, which means the bucket will be put in the standard storage tier.
-        When 'Archive' tier type is set explicitly, the bucket is put in the Archive Storage tier. The 'storageTier'
-        property is immutable once the bucket is created.
+        When 'Archive' tier type is set explicitly, the bucket is put in the archive storage tier. The 'storageTier'
+        property is immutable after bucket is created.
 
         Allowed values for this property are: "Standard", "Archive", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -325,8 +339,8 @@ class Bucket(object):
         Sets the storage_tier of this Bucket.
         The type of storage tier of this bucket.
         A bucket is set to 'Standard' tier by default, which means the bucket will be put in the standard storage tier.
-        When 'Archive' tier type is set explicitly, the bucket is put in the Archive Storage tier. The 'storageTier'
-        property is immutable once the bucket is created.
+        When 'Archive' tier type is set explicitly, the bucket is put in the archive storage tier. The 'storageTier'
+        property is immutable after bucket is created.
 
 
         :param storage_tier: The storage_tier of this Bucket.
@@ -336,6 +350,70 @@ class Bucket(object):
         if not value_allowed_none_or_none_sentinel(storage_tier, allowed_values):
             storage_tier = 'UNKNOWN_ENUM_VALUE'
         self._storage_tier = storage_tier
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this Bucket.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this Bucket.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this Bucket.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this Bucket.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this Bucket.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this Bucket.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this Bucket.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this Bucket.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)
