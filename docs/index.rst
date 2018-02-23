@@ -54,8 +54,8 @@ To get started, head over to the :ref:`installation instructions <install>` or s
     raw-requests
     waiters
     pagination
-    sdk-with-proxy
     api/index
+    customize_service_client/index
     contributions
     notifications
     license

@@ -7,6 +7,7 @@
 #   - Eagerly loading all results from a list call up to a given limit
 #   - Generators that can be used to lazily iterate over results from a list call. These generators can yield either values/models
 #     or the raw responses of the call
+#   - Pagination using raw responses instead of the oci.pagination module
 
 import oci
 
@@ -78,3 +79,14 @@ for response in oci.pagination.list_call_get_up_to_limit_generator(identity.list
         total_results += 1
         print('Response: {}, User: {}'.format(response_num, user.name))
 print('Total results: {}'.format(total_results))
+
+print('--------------------------------------------')
+print('Pagination using raw responses')
+print('--------------------------------------------')
+response = identity.list_users(compartment_id)
+users = response.data
+while response.has_next_page:
+    response = identity.list_users(compartment_id, page=response.next_page)
+    users.extend(response.data)
+for u in users:
+    print('User: {}'.format(u.name))

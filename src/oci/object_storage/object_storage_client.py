@@ -1176,6 +1176,13 @@ class ObjectStorageClient(object):
         :param str page: (optional)
             The page at which to start retrieving results.
 
+        :param list[str] fields: (optional)
+            Bucket summary in list of buckets includes the 'namespace', 'name', 'compartmentId', 'createdBy', 'timeCreated',
+            and 'etag' fields. This parameter can also include 'tags' (freeformTags and definedTags). The only supported value
+            of this parameter is 'tags' for now. Example 'tags'.
+
+            Allowed values are: "tags"
+
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
 
@@ -1190,6 +1197,7 @@ class ObjectStorageClient(object):
             "retry_strategy",
             "limit",
             "page",
+            "fields",
             "opc_client_request_id"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -1207,10 +1215,19 @@ class ObjectStorageClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
+        if 'fields' in kwargs:
+            fields_allowed_values = ["tags"]
+            for fields_item in kwargs['fields']:
+                if fields_item not in fields_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                    )
+
         query_params = {
             "compartmentId": compartment_id,
             "limit": kwargs.get("limit", missing),
-            "page": kwargs.get("page", missing)
+            "page": kwargs.get("page", missing),
+            "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'csv')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
 
@@ -1821,6 +1838,7 @@ class ObjectStorageClient(object):
         """
         RestoreObjects
         Restore one or more objects specified by objectName parameter.
+        By default object will be restored for 24 hours.Duration can be configured using hours parameter.
 
 
         :param str namespace_name: (required)
