@@ -74,6 +74,80 @@ def test_record_collection_pagination(dns_client):
                 break
 
 
+# We want to paginate on RRSets, but these use a different type than GetZoneRecords and GetDomainRecords, so have a
+# different test case for that
+def test_rrset_pagination(dns_client):
+    zone_name = '{}.com'.format(util.random_name('python-sdk-testing-', insert_underscore=False))
+
+    with test_config_container.create_vcr().use_cassette('test_dns_rrset_pagination.yml'):
+        try:
+            create_zone_details = oci.dns.models.CreateZoneDetails(
+                name=zone_name,
+                zone_type='PRIMARY',
+                compartment_id=util.COMPARTMENT_ID
+            )
+            dns_client.create_zone(create_zone_details)
+
+            # At the zone level, there are multiple NS records so we can paginate through
+            # those as a sanity test that iterating over a RecordCollection works
+            all_rrset_records = oci.pagination.list_call_get_all_results(
+                dns_client.get_rr_set,
+                zone_name,  # zone
+                zone_name,  # domain
+                'NS',
+                limit=1  # 1 record at a time
+            )
+            assert len(all_rrset_records.data.items) > 0
+
+            rrset_records_to_limit = oci.pagination.list_call_get_up_to_limit(
+                dns_client.get_rr_set,
+                2,
+                1,
+                zone_name,
+                zone_name,
+                'NS'
+            )
+            assert len(rrset_records_to_limit.data.items) == 2
+
+            # Try the generator variants where we yield individual records. The list_call_get_all_results
+            # and list_call_get_up_to_limit leverage the generator variants where we yield responses, so we
+            # have already tested them via inference
+            all_records_generator = oci.pagination.list_call_get_all_results_generator(
+                dns_client.get_rr_set,
+                'record',
+                zone_name,
+                zone_name,
+                'NS',
+                limit=1
+            )
+            num_records = 0
+            for record in all_records_generator:
+                num_records += 1
+                assert isinstance(record, oci.dns.models.Record)
+            assert num_records > 0
+
+            records_to_limit_generator = oci.pagination.list_call_get_up_to_limit_generator(
+                dns_client.get_rr_set,
+                2,
+                1,
+                'record',
+                zone_name,
+                zone_name,
+                'NS'
+            )
+            num_records = 0
+            for record in records_to_limit_generator:
+                num_records += 1
+                assert isinstance(record, oci.dns.models.Record)
+            assert num_records == 2
+        finally:
+            zones = get_zones(dns_client, name=zone_name)
+            for z in zones.data:
+                delete_zone(dns_client, z.name)
+                break
+
+
+
 def test_crud_zone(dns_client):
     zone_name = '{}.com'.format(util.random_name('python-sdk-testing-', insert_underscore=False))
 

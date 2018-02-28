@@ -35,11 +35,13 @@ def list_call_get_up_to_limit(list_func_ref, record_limit, page_size, *list_func
     call_result = None
     aggregated_results = []
     is_dns_record_collection = False
+    dns_record_collection_class = None
     for response in list_call_get_up_to_limit_generator(list_func_ref, record_limit, page_size, 'response', *list_func_args, **list_func_kwargs):
         call_result = response
 
-        if isinstance(call_result.data, dns.models.RecordCollection):
+        if isinstance(call_result.data, dns.models.RecordCollection) or isinstance(call_result.data, dns.models.RRSet):
             is_dns_record_collection = True
+            dns_record_collection_class = call_result.data.__class__
             aggregated_results.extend(call_result.data.items)
         else:
             aggregated_results.extend(call_result.data)
@@ -48,7 +50,7 @@ def list_call_get_up_to_limit(list_func_ref, record_limit, page_size, *list_func
         final_response = Response(
             call_result.status,
             call_result.headers,
-            dns.models.RecordCollection(items=aggregated_results),
+            dns_record_collection_class(items=aggregated_results),
             call_result.request
         )
     else:
@@ -104,7 +106,7 @@ def list_call_get_up_to_limit_generator(list_func_ref, record_limit, page_size, 
             yield single_call_result
         else:
             items_to_yield = []
-            if isinstance(single_call_result.data, dns.models.RecordCollection):
+            if isinstance(single_call_result.data, dns.models.RecordCollection) or isinstance(single_call_result.data, dns.models.RRSet):
                 items_to_yield = single_call_result.data.items
             else:
                 items_to_yield = single_call_result.data
@@ -126,7 +128,7 @@ def list_call_get_up_to_limit_generator(list_func_ref, record_limit, page_size, 
             yield call_result
         else:
             items_to_yield = []
-            if isinstance(call_result.data, dns.models.RecordCollection):
+            if isinstance(call_result.data, dns.models.RecordCollection) or isinstance(call_result.data, dns.models.RRSet):
                 items_to_yield = call_result.data.items
             else:
                 items_to_yield = call_result.data
@@ -134,7 +136,7 @@ def list_call_get_up_to_limit_generator(list_func_ref, record_limit, page_size, 
             for item in items_to_yield:
                 yield item
 
-        if isinstance(call_result.data, dns.models.RecordCollection):
+        if isinstance(call_result.data, dns.models.RecordCollection) or isinstance(call_result.data, dns.models.RRSet):
             remaining_items_to_fetch -= len(call_result.data.items)
         else:
             remaining_items_to_fetch -= len(call_result.data)
@@ -167,10 +169,12 @@ def list_call_get_all_results(list_func_ref, *list_func_args, **list_func_kwargs
     aggregated_results = []
     call_result = None
     is_dns_record_collection = False
+    dns_record_collection_class = None
     for response in list_call_get_all_results_generator(list_func_ref, 'response', *list_func_args, **list_func_kwargs):
         call_result = response
-        if isinstance(call_result.data, dns.models.RecordCollection):
+        if isinstance(call_result.data, dns.models.RecordCollection) or isinstance(call_result.data, dns.models.RRSet):
             is_dns_record_collection = True
+            dns_record_collection_class = call_result.data.__class__
             aggregated_results.extend(call_result.data.items)
         else:
             aggregated_results.extend(call_result.data)
@@ -179,7 +183,7 @@ def list_call_get_all_results(list_func_ref, *list_func_args, **list_func_kwargs
         final_response = Response(
             call_result.status,
             call_result.headers,
-            dns.models.RecordCollection(items=aggregated_results),
+            dns_record_collection_class(items=aggregated_results),
             call_result.request
         )
     else:
@@ -224,7 +228,7 @@ def list_call_get_all_results_generator(list_func_ref, yield_mode, *list_func_ar
             yield call_result
         else:
             items_to_yield = []
-            if isinstance(call_result.data, dns.models.RecordCollection):
+            if isinstance(call_result.data, dns.models.RecordCollection) or isinstance(call_result.data, dns.models.RRSet):
                 items_to_yield = call_result.data.items
             else:
                 items_to_yield = call_result.data

@@ -95,4 +95,4 @@ for r in regions:
 
     #  Results for a region 'r' for each compartment.
     if audit_events:
-        print audit_events
+        print(audit_events)
