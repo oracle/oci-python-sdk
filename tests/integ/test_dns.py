@@ -147,7 +147,6 @@ def test_rrset_pagination(dns_client):
                 break
 
 
-
 def test_crud_zone(dns_client):
     zone_name = '{}.com'.format(util.random_name('python-sdk-testing-', insert_underscore=False))
 
