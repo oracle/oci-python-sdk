@@ -854,6 +854,105 @@ class TestObjectStorage:
 
         os.remove(downloaded_empty_file_path)
 
+    def test_paging_list_objects(self, object_storage):
+        with test_config_container.create_vcr().use_cassette('test_object_storage_test_paging_list_objects.yml'):
+            created_bucket = None
+            namespace = object_storage.get_namespace().data
+            try:
+                bucket_name = unique_name('PySdkPagingListObjects')
+                create_bucket_response = object_storage.create_bucket(
+                    namespace,
+                    oci.object_storage.models.CreateBucketDetails(
+                        compartment_id=util.COMPARTMENT_ID,
+                        name=bucket_name
+                    )
+                )
+                created_bucket = create_bucket_response.data
+
+                for r in range(100):
+                    object_storage.put_object(namespace, bucket_name, 'TestObj_{}'.format(r), 'Content for TestObj_{}'.format(r))
+
+                all_objects_response = oci.pagination.list_call_get_all_results(
+                    object_storage.list_objects,
+                    namespace,
+                    bucket_name
+                )
+                all_object_names = set([obj.name for obj in all_objects_response.data.objects])
+                assert len(all_objects_response.data.objects) == 100
+                assert len(all_object_names) == 100
+                for r in range(100):
+                    assert 'TestObj_{}'.format(r) in all_object_names
+
+                objects_up_to_limit_response = oci.pagination.list_call_get_up_to_limit(
+                    object_storage.list_objects,
+                    50,
+                    5,
+                    namespace,
+                    bucket_name
+                )
+                object_names = set([obj.name for obj in objects_up_to_limit_response.data.objects])
+                assert len(objects_up_to_limit_response.data.objects) == 50
+                assert len(object_names) == 50
+                for obj_name in object_names:
+                    assert 'TestObj_' in obj_name
+
+                # Test the record generators explicitly. The response generators are already invoked via
+                # list_call_get_all_results and list_call_get_up_to_limit
+                all_objects_record_generator = oci.pagination.list_call_get_all_results_generator(
+                    object_storage.list_objects,
+                    'record',
+                    namespace,
+                    bucket_name
+                )
+                num_objects = 0
+                for object_summary in all_objects_record_generator:
+                    assert isinstance(object_summary, oci.object_storage.models.ObjectSummary)
+                    assert 'TestObj_' in object_summary.name
+                    num_objects += 1
+                assert num_objects == 100
+
+                objects_to_limit_generator = oci.pagination.list_call_get_up_to_limit_generator(
+                    object_storage.list_objects,
+                    90,
+                    5,
+                    'record',
+                    namespace,
+                    bucket_name
+                )
+                num_objects = 0
+                for object_summary in objects_to_limit_generator:
+                    assert isinstance(object_summary, oci.object_storage.models.ObjectSummary)
+                    assert 'TestObj_' in object_summary.name
+                    num_objects += 1
+                assert num_objects == 90
+
+                # There are only 100 objects, so sanity test we don't keep making requests over that limit
+                objects_to_limit_generator = oci.pagination.list_call_get_up_to_limit_generator(
+                    object_storage.list_objects,
+                    200,
+                    5,
+                    'record',
+                    namespace,
+                    bucket_name
+                )
+                num_objects = 0
+                for object_summary in objects_to_limit_generator:
+                    assert isinstance(object_summary, oci.object_storage.models.ObjectSummary)
+                    assert 'TestObj_' in object_summary.name
+                    num_objects += 1
+                assert num_objects == 100
+            finally:
+                if created_bucket:
+                    all_objects_response = oci.pagination.list_call_get_all_results(
+                        object_storage.list_objects,
+                        namespace,
+                        bucket_name
+                    )
+                    for obj in all_objects_response.data.objects:
+                        object_storage.delete_object(created_bucket.namespace, created_bucket.name, obj.name)
+
+                object_storage.delete_bucket(created_bucket.namespace, created_bucket.name)
+
     def restore_object_internal(self, object_storage, namespace, bucket_name, object_name, restore_hours=None):
         test_data = 'This is a test ' + random_number_string() + '!/n/r/\/~%s;"/,{}><+=:.*)('''
 

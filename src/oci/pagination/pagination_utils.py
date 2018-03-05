@@ -1,7 +1,7 @@
 # coding: utf-8
 # Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
-from .. import dns
+from .. import dns, object_storage
 from .. import retry
 from ..response import Response
 
@@ -36,6 +36,8 @@ def list_call_get_up_to_limit(list_func_ref, record_limit, page_size, *list_func
     aggregated_results = []
     is_dns_record_collection = False
     dns_record_collection_class = None
+    is_list_objects_response = False
+    list_objects_prefixes = set()
     for response in list_call_get_up_to_limit_generator(list_func_ref, record_limit, page_size, 'response', *list_func_args, **list_func_kwargs):
         call_result = response
 
@@ -43,6 +45,11 @@ def list_call_get_up_to_limit(list_func_ref, record_limit, page_size, *list_func
             is_dns_record_collection = True
             dns_record_collection_class = call_result.data.__class__
             aggregated_results.extend(call_result.data.items)
+        elif isinstance(call_result.data, object_storage.models.ListObjects):
+            is_list_objects_response = True
+            aggregated_results.extend(call_result.data.objects)
+            if call_result.data.prefixes:
+                list_objects_prefixes.update(call_result.data.prefixes)
         else:
             aggregated_results.extend(call_result.data)
 
@@ -51,6 +58,16 @@ def list_call_get_up_to_limit(list_func_ref, record_limit, page_size, *list_func
             call_result.status,
             call_result.headers,
             dns_record_collection_class(items=aggregated_results),
+            call_result.request
+        )
+    elif is_list_objects_response:
+        final_response = Response(
+            call_result.status,
+            call_result.headers,
+            object_storage.models.ListObjects(
+                objects=aggregated_results,
+                prefixes=list(list_objects_prefixes)
+            ),
             call_result.request
         )
     else:
@@ -108,6 +125,8 @@ def list_call_get_up_to_limit_generator(list_func_ref, record_limit, page_size, 
             items_to_yield = []
             if isinstance(single_call_result.data, dns.models.RecordCollection) or isinstance(single_call_result.data, dns.models.RRSet):
                 items_to_yield = single_call_result.data.items
+            elif isinstance(single_call_result.data, object_storage.models.ListObjects):
+                items_to_yield = single_call_result.data.objects
             else:
                 items_to_yield = single_call_result.data
 
@@ -130,6 +149,8 @@ def list_call_get_up_to_limit_generator(list_func_ref, record_limit, page_size, 
             items_to_yield = []
             if isinstance(call_result.data, dns.models.RecordCollection) or isinstance(call_result.data, dns.models.RRSet):
                 items_to_yield = call_result.data.items
+            elif isinstance(call_result.data, object_storage.models.ListObjects):
+                items_to_yield = call_result.data.objects
             else:
                 items_to_yield = call_result.data
 
@@ -138,13 +159,20 @@ def list_call_get_up_to_limit_generator(list_func_ref, record_limit, page_size, 
 
         if isinstance(call_result.data, dns.models.RecordCollection) or isinstance(call_result.data, dns.models.RRSet):
             remaining_items_to_fetch -= len(call_result.data.items)
+        elif isinstance(call_result.data, object_storage.models.ListObjects):
+            remaining_items_to_fetch -= len(call_result.data.objects)
         else:
             remaining_items_to_fetch -= len(call_result.data)
 
-        if call_result.next_page is not None:
-            list_func_kwargs['page'] = call_result.next_page
+        if isinstance(call_result.data, object_storage.models.ListObjects):
+            if call_result.data.next_start_with is not None:
+                list_func_kwargs['start'] = call_result.data.next_start_with
+            keep_paginating = (call_result.data.next_start_with is not None)
+        else:
+            if call_result.next_page is not None:
+                list_func_kwargs['page'] = call_result.next_page
 
-        keep_paginating = call_result.has_next_page
+            keep_paginating = call_result.has_next_page
 
 
 def list_call_get_all_results(list_func_ref, *list_func_args, **list_func_kwargs):
@@ -170,12 +198,19 @@ def list_call_get_all_results(list_func_ref, *list_func_args, **list_func_kwargs
     call_result = None
     is_dns_record_collection = False
     dns_record_collection_class = None
+    is_list_objects_response = False
+    list_objects_prefixes = set()
     for response in list_call_get_all_results_generator(list_func_ref, 'response', *list_func_args, **list_func_kwargs):
         call_result = response
         if isinstance(call_result.data, dns.models.RecordCollection) or isinstance(call_result.data, dns.models.RRSet):
             is_dns_record_collection = True
             dns_record_collection_class = call_result.data.__class__
             aggregated_results.extend(call_result.data.items)
+        elif isinstance(call_result.data, object_storage.models.ListObjects):
+            is_list_objects_response = True
+            aggregated_results.extend(call_result.data.objects)
+            if call_result.data.prefixes:
+                list_objects_prefixes.update(call_result.data.prefixes)
         else:
             aggregated_results.extend(call_result.data)
 
@@ -184,6 +219,16 @@ def list_call_get_all_results(list_func_ref, *list_func_args, **list_func_kwargs
             call_result.status,
             call_result.headers,
             dns_record_collection_class(items=aggregated_results),
+            call_result.request
+        )
+    elif is_list_objects_response:
+        final_response = Response(
+            call_result.status,
+            call_result.headers,
+            object_storage.models.ListObjects(
+                objects=aggregated_results,
+                prefixes=list(list_objects_prefixes)
+            ),
             call_result.request
         )
     else:
@@ -230,13 +275,20 @@ def list_call_get_all_results_generator(list_func_ref, yield_mode, *list_func_ar
             items_to_yield = []
             if isinstance(call_result.data, dns.models.RecordCollection) or isinstance(call_result.data, dns.models.RRSet):
                 items_to_yield = call_result.data.items
+            elif isinstance(call_result.data, object_storage.models.ListObjects):
+                items_to_yield = call_result.data.objects
             else:
                 items_to_yield = call_result.data
 
             for item in items_to_yield:
                 yield item
 
-        if call_result.next_page is not None:
-            list_func_kwargs['page'] = call_result.next_page
+        if isinstance(call_result.data, object_storage.models.ListObjects):
+            if call_result.data.next_start_with is not None:
+                list_func_kwargs['start'] = call_result.data.next_start_with
+            keep_paginating = (call_result.data.next_start_with is not None)
+        else:
+            if call_result.next_page is not None:
+                list_func_kwargs['page'] = call_result.next_page
 
-        keep_paginating = call_result.has_next_page
+            keep_paginating = call_result.has_next_page
