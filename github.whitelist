@@ -10,6 +10,7 @@
 ^src/oci/core/.*\.py$
 ^src/oci/database/.*\.py$
 ^src/oci/dns/.*\.py$
+^src/oci/email/.*\.py$
 ^src/oci/file_storage/.*\.py$
 ^src/oci/identity/.*\.py$
 ^src/oci/load_balancer/.*\.py$

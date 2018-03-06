@@ -27,6 +27,7 @@ class TestIdentity:
                 self.subtest_swift_password_operations(identity)
                 self.subtest_policy_operations(identity, config)
                 self.subtest_compartment_rename(identity, config)
+                self.subtest_smtp_credential_crud(identity, config)
             finally:
                 self.subtest_cleanup(identity, config)
 
@@ -356,6 +357,44 @@ P8ZM9xRukuJ4bnPTe8olOFB8UCCkAEmkUxtZI4vF90HvDKDOV0KY4OH5YESY6apH
         assert update_compartment_details.description == update_compartment_response.data.description
         assert update_compartment_response.request_id is not None
         assert update_compartment_response.headers["etag"]
+
+    def subtest_smtp_credential_crud(self, identity, config):
+        create_smtp_credential_response = identity.create_smtp_credential(
+            oci.identity.models.CreateSmtpCredentialDetails(
+                description='new credential'
+            ),
+            user_id=self.user_ocid
+        )
+        assert create_smtp_credential_response.request_id
+        assert create_smtp_credential_response.data.id
+        assert create_smtp_credential_response.data.username
+        assert create_smtp_credential_response.data.password
+        assert create_smtp_credential_response.data.user_id == self.user_ocid
+        assert create_smtp_credential_response.data.description == 'new credential'
+        assert create_smtp_credential_response.data.time_created
+        assert create_smtp_credential_response.data.lifecycle_state
+
+        update_smtp_credential_response = identity.update_smtp_credential(
+            self.user_ocid,
+            create_smtp_credential_response.data.id,
+            oci.identity.models.UpdateSmtpCredentialDetails(
+                description='updated credential description'
+            )
+        )
+        assert update_smtp_credential_response.request_id
+        assert update_smtp_credential_response.data.username == create_smtp_credential_response.data.username
+        assert update_smtp_credential_response.data.user_id == self.user_ocid
+        assert update_smtp_credential_response.data.description == 'updated credential description'
+        assert update_smtp_credential_response.data.time_created == create_smtp_credential_response.data.time_created
+        assert update_smtp_credential_response.data.lifecycle_state
+
+        list_response = identity.list_smtp_credentials(self.user_ocid)
+        assert list_response.request_id
+        assert len(list_response.data) == 1
+        assert list_response.data[0] == update_smtp_credential_response.data
+
+        delete_response = identity.delete_smtp_credential(self.user_ocid, create_smtp_credential_response.data.id)
+        assert delete_response.request_id
 
     def subtest_cleanup(self, identity, config):
         if self.user_ocid:

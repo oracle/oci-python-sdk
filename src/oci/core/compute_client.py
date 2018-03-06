@@ -2292,7 +2292,8 @@ class ComputeClient(object):
         Lists the volume attachments in the specified compartment. You can filter the
         list by specifying an instance OCID, volume OCID, or both.
 
-        Currently, the only supported volume attachment type is :class:`IScsiVolumeAttachment`.
+        Currently, the only supported volume attachment type are :class:`IScsiVolumeAttachment` and
+        :class:`ParavirtualizedVolumeAttachment`.
 
 
         :param str compartment_id: (required)

@@ -41,3 +41,5 @@ whitelisted:
   - udx-157
   - udx-475
   - udx-498
+  # https://jira.aka.lgl.grungy.us/browse/DEX-2678
+  - udx-766

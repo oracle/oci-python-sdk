@@ -15,6 +15,7 @@ class VolumeAttachment(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.core.models.IScsiVolumeAttachment`
+        * :class:`~oci.core.models.ParavirtualizedVolumeAttachment`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -108,6 +109,9 @@ class VolumeAttachment(object):
 
         if type == 'iscsi':
             return 'IScsiVolumeAttachment'
+
+        if type == 'paravirtualized':
+            return 'ParavirtualizedVolumeAttachment'
         else:
             return 'VolumeAttachment'
 

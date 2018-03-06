@@ -17,6 +17,7 @@ from .create_idp_group_mapping_details import CreateIdpGroupMappingDetails
 from .create_policy_details import CreatePolicyDetails
 from .create_region_subscription_details import CreateRegionSubscriptionDetails
 from .create_saml2_identity_provider_details import CreateSaml2IdentityProviderDetails
+from .create_smtp_credential_details import CreateSmtpCredentialDetails
 from .create_swift_password_details import CreateSwiftPasswordDetails
 from .create_tag_details import CreateTagDetails
 from .create_tag_namespace_details import CreateTagNamespaceDetails
@@ -31,6 +32,8 @@ from .policy import Policy
 from .region import Region
 from .region_subscription import RegionSubscription
 from .saml2_identity_provider import Saml2IdentityProvider
+from .smtp_credential import SmtpCredential
+from .smtp_credential_summary import SmtpCredentialSummary
 from .swift_password import SwiftPassword
 from .tag import Tag
 from .tag_namespace import TagNamespace
@@ -46,6 +49,7 @@ from .update_identity_provider_details import UpdateIdentityProviderDetails
 from .update_idp_group_mapping_details import UpdateIdpGroupMappingDetails
 from .update_policy_details import UpdatePolicyDetails
 from .update_saml2_identity_provider_details import UpdateSaml2IdentityProviderDetails
+from .update_smtp_credential_details import UpdateSmtpCredentialDetails
 from .update_state_details import UpdateStateDetails
 from .update_swift_password_details import UpdateSwiftPasswordDetails
 from .update_tag_details import UpdateTagDetails
@@ -70,6 +74,7 @@ identity_type_mapping = {
     "CreatePolicyDetails": CreatePolicyDetails,
     "CreateRegionSubscriptionDetails": CreateRegionSubscriptionDetails,
     "CreateSaml2IdentityProviderDetails": CreateSaml2IdentityProviderDetails,
+    "CreateSmtpCredentialDetails": CreateSmtpCredentialDetails,
     "CreateSwiftPasswordDetails": CreateSwiftPasswordDetails,
     "CreateTagDetails": CreateTagDetails,
     "CreateTagNamespaceDetails": CreateTagNamespaceDetails,
@@ -84,6 +89,8 @@ identity_type_mapping = {
     "Region": Region,
     "RegionSubscription": RegionSubscription,
     "Saml2IdentityProvider": Saml2IdentityProvider,
+    "SmtpCredential": SmtpCredential,
+    "SmtpCredentialSummary": SmtpCredentialSummary,
     "SwiftPassword": SwiftPassword,
     "Tag": Tag,
     "TagNamespace": TagNamespace,
@@ -99,6 +106,7 @@ identity_type_mapping = {
     "UpdateIdpGroupMappingDetails": UpdateIdpGroupMappingDetails,
     "UpdatePolicyDetails": UpdatePolicyDetails,
     "UpdateSaml2IdentityProviderDetails": UpdateSaml2IdentityProviderDetails,
+    "UpdateSmtpCredentialDetails": UpdateSmtpCredentialDetails,
     "UpdateStateDetails": UpdateStateDetails,
     "UpdateSwiftPasswordDetails": UpdateSwiftPasswordDetails,
     "UpdateTagDetails": UpdateTagDetails,
