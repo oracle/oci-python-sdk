@@ -98,7 +98,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
                 self.base_client.add_opc_retry_token_if_needed(header_params)
             return kwargs['retry_strategy'].make_retrying_call(
@@ -176,7 +176,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
                 self.base_client.add_opc_retry_token_if_needed(header_params)
             return kwargs['retry_strategy'].make_retrying_call(
@@ -254,7 +254,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
                 self.base_client.add_opc_retry_token_if_needed(header_params)
             return kwargs['retry_strategy'].make_retrying_call(
@@ -332,7 +332,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
                 self.base_client.add_opc_retry_token_if_needed(header_params)
             return kwargs['retry_strategy'].make_retrying_call(
@@ -426,7 +426,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
                 self.base_client.add_opc_retry_token_if_needed(header_params)
             return kwargs['retry_strategy'].make_retrying_call(
@@ -505,7 +505,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
                 self.base_client.add_opc_retry_token_if_needed(header_params)
             return kwargs['retry_strategy'].make_retrying_call(
@@ -583,7 +583,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -653,7 +653,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -721,7 +721,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -789,7 +789,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -851,7 +851,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -922,7 +922,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -996,7 +996,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1072,7 +1072,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1142,7 +1142,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1212,7 +1212,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1282,7 +1282,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1346,7 +1346,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1410,7 +1410,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1480,7 +1480,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1544,7 +1544,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1608,7 +1608,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1678,7 +1678,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1742,7 +1742,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1815,7 +1815,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1943,7 +1943,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -2008,7 +2008,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -2081,7 +2081,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -2154,7 +2154,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -2227,7 +2227,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -2309,7 +2309,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -2399,7 +2399,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
                 self.base_client.add_opc_retry_token_if_needed(header_params)
             return kwargs['retry_strategy'].make_retrying_call(
@@ -2483,7 +2483,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
                 self.base_client.add_opc_retry_token_if_needed(header_params)
             return kwargs['retry_strategy'].make_retrying_call(
@@ -2567,7 +2567,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
                 self.base_client.add_opc_retry_token_if_needed(header_params)
             return kwargs['retry_strategy'].make_retrying_call(
@@ -2651,7 +2651,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
                 self.base_client.add_opc_retry_token_if_needed(header_params)
             return kwargs['retry_strategy'].make_retrying_call(
@@ -2729,7 +2729,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
                 self.base_client.add_opc_retry_token_if_needed(header_params)
             return kwargs['retry_strategy'].make_retrying_call(
@@ -2818,7 +2818,7 @@ class LoadBalancerClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
                 self.base_client.add_opc_retry_token_if_needed(header_params)
             return kwargs['retry_strategy'].make_retrying_call(

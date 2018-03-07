@@ -58,7 +58,7 @@ class EmailClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -100,7 +100,7 @@ class EmailClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -153,7 +153,7 @@ class EmailClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -204,7 +204,7 @@ class EmailClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -254,7 +254,7 @@ class EmailClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -307,7 +307,7 @@ class EmailClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -418,7 +418,7 @@ class EmailClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -541,7 +541,7 @@ class EmailClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
