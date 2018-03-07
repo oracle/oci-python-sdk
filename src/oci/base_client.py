@@ -155,7 +155,7 @@ class BaseClient(object):
         if query_params:
             query_params = self.process_query_params(query_params)
 
-        if body and header_params.get('content-type') == 'application/json':
+        if body is not None and header_params.get('content-type') == 'application/json':
             body = self.sanitize_for_serialization(body)
             body = json.dumps(body)
 
