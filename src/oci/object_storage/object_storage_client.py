@@ -95,7 +95,7 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -189,7 +189,7 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -255,7 +255,7 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -338,7 +338,7 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -409,7 +409,7 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -483,7 +483,7 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -558,7 +558,7 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -627,7 +627,7 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -703,7 +703,7 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -752,7 +752,7 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -816,7 +816,7 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -907,7 +907,7 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -978,7 +978,7 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1056,7 +1056,7 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1137,7 +1137,7 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1238,7 +1238,7 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1329,7 +1329,7 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1411,7 +1411,7 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1528,7 +1528,7 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1615,7 +1615,7 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1747,7 +1747,7 @@ class ObjectStorageClient(object):
             if requests.utils.super_len(put_object_body) == 0:
                 header_params['Content-Length'] = '0'
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1818,7 +1818,7 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1888,7 +1888,7 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1963,7 +1963,7 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -2032,7 +2032,7 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -2154,7 +2154,7 @@ class ObjectStorageClient(object):
             if requests.utils.super_len(upload_part_body) == 0:
                 header_params['Content-Length'] = '0'
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,

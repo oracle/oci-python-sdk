@@ -66,6 +66,10 @@ class Image(object):
             The value to assign to the operating_system_version property of this Image.
         :type operating_system_version: str
 
+        :param size_in_mbs:
+            The value to assign to the size_in_mbs property of this Image.
+        :type size_in_mbs: int
+
         :param time_created:
             The value to assign to the time_created property of this Image.
         :type time_created: datetime
@@ -84,6 +88,7 @@ class Image(object):
             'lifecycle_state': 'str',
             'operating_system': 'str',
             'operating_system_version': 'str',
+            'size_in_mbs': 'int',
             'time_created': 'datetime'
         }
 
@@ -100,6 +105,7 @@ class Image(object):
             'lifecycle_state': 'lifecycleState',
             'operating_system': 'operatingSystem',
             'operating_system_version': 'operatingSystemVersion',
+            'size_in_mbs': 'sizeInMBs',
             'time_created': 'timeCreated'
         }
 
@@ -115,6 +121,7 @@ class Image(object):
         self._lifecycle_state = None
         self._operating_system = None
         self._operating_system_version = None
+        self._size_in_mbs = None
         self._time_created = None
 
     @property
@@ -456,6 +463,34 @@ class Image(object):
         :type: str
         """
         self._operating_system_version = operating_system_version
+
+    @property
+    def size_in_mbs(self):
+        """
+        Gets the size_in_mbs of this Image.
+        Image size (1 MB = 1048576 bytes)
+
+        Example: `47694`
+
+
+        :return: The size_in_mbs of this Image.
+        :rtype: int
+        """
+        return self._size_in_mbs
+
+    @size_in_mbs.setter
+    def size_in_mbs(self, size_in_mbs):
+        """
+        Sets the size_in_mbs of this Image.
+        Image size (1 MB = 1048576 bytes)
+
+        Example: `47694`
+
+
+        :param size_in_mbs: The size_in_mbs of this Image.
+        :type: int
+        """
+        self._size_in_mbs = size_in_mbs
 
     @property
     def time_created(self):

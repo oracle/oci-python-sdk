@@ -63,7 +63,7 @@ class AuditClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -141,7 +141,7 @@ class AuditClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -191,7 +191,7 @@ class AuditClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,

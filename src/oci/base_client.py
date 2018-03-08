@@ -5,6 +5,7 @@ from __future__ import absolute_import
 import json
 import logging
 import platform
+import pytz
 import random
 import re
 import six.moves
@@ -154,7 +155,7 @@ class BaseClient(object):
         if query_params:
             query_params = self.process_query_params(query_params)
 
-        if body and header_params.get('content-type') == 'application/json':
+        if body is not None and header_params.get('content-type') == 'application/json':
             body = self.sanitize_for_serialization(body)
             body = json.dumps(body)
 
@@ -365,7 +366,11 @@ class BaseClient(object):
                 self.extract_list_item_type_from_swagger_type(declared_type) if declared_type else None,
                 field_name + '[*]')
                 for sub_obj in obj]
-        elif isinstance(obj, (datetime, date)):
+        elif isinstance(obj, datetime):
+            if not obj.tzinfo:
+                obj = pytz.utc.localize(obj)
+            return obj.astimezone(pytz.utc).isoformat().replace('+00:00', 'Z')
+        elif isinstance(obj, date):
             return obj.isoformat()
         else:
             if isinstance(obj, dict):

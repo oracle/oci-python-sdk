@@ -74,7 +74,7 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
                 self.base_client.add_opc_retry_token_if_needed(header_params)
             return kwargs['retry_strategy'].make_retrying_call(
@@ -152,7 +152,7 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
                 self.base_client.add_opc_retry_token_if_needed(header_params)
             return kwargs['retry_strategy'].make_retrying_call(
@@ -234,7 +234,7 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
                 self.base_client.add_opc_retry_token_if_needed(header_params)
             return kwargs['retry_strategy'].make_retrying_call(
@@ -313,7 +313,7 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
                 self.base_client.add_opc_retry_token_if_needed(header_params)
             return kwargs['retry_strategy'].make_retrying_call(
@@ -393,7 +393,7 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
                 self.base_client.add_opc_retry_token_if_needed(header_params)
             return kwargs['retry_strategy'].make_retrying_call(
@@ -470,7 +470,7 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
                 self.base_client.add_opc_retry_token_if_needed(header_params)
             return kwargs['retry_strategy'].make_retrying_call(
@@ -541,7 +541,7 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
                 self.base_client.add_opc_retry_token_if_needed(header_params)
             return kwargs['retry_strategy'].make_retrying_call(
@@ -622,7 +622,7 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
                 self.base_client.add_opc_retry_token_if_needed(header_params)
             return kwargs['retry_strategy'].make_retrying_call(
@@ -699,7 +699,7 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
                 self.base_client.add_opc_retry_token_if_needed(header_params)
             return kwargs['retry_strategy'].make_retrying_call(
@@ -769,7 +769,7 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
                 self.base_client.add_opc_retry_token_if_needed(header_params)
             return kwargs['retry_strategy'].make_retrying_call(
@@ -788,6 +788,81 @@ class IdentityClient(object):
                 header_params=header_params,
                 body=create_region_subscription_details,
                 response_type="RegionSubscription")
+
+    def create_smtp_credential(self, create_smtp_credential_details, user_id, **kwargs):
+        """
+        CreateSmtpCredential
+        Creates a new SMTP credential for the specified user. An SMTP credential has an SMTP user name and an SMTP password.
+        You must specify a *description* for the SMTP credential (although it can be an empty string). It does not
+        have to be unique, and you can change it anytime with
+        :func:`update_smtp_credential`.
+
+
+        :param CreateSmtpCredentialDetails create_smtp_credential_details: (required)
+            Request object for creating a new SMTP credential with the user.
+
+        :param str user_id: (required)
+            The OCID of the user.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.SmtpCredential`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/users/{userId}/smtpCredentials/"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_smtp_credential got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "userId": user_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        if kwargs.get('retry_strategy'):
+            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_smtp_credential_details,
+                response_type="SmtpCredential")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_smtp_credential_details,
+                response_type="SmtpCredential")
 
     def create_swift_password(self, create_swift_password_details, user_id, **kwargs):
         """
@@ -852,7 +927,7 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
                 self.base_client.add_opc_retry_token_if_needed(header_params)
             return kwargs['retry_strategy'].make_retrying_call(
@@ -935,7 +1010,7 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
                 self.base_client.add_opc_retry_token_if_needed(header_params)
             return kwargs['retry_strategy'].make_retrying_call(
@@ -1012,7 +1087,7 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
                 self.base_client.add_opc_retry_token_if_needed(header_params)
             return kwargs['retry_strategy'].make_retrying_call(
@@ -1107,7 +1182,7 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
                 self.base_client.add_opc_retry_token_if_needed(header_params)
             return kwargs['retry_strategy'].make_retrying_call(
@@ -1181,7 +1256,7 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1246,7 +1321,7 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1307,7 +1382,7 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1368,7 +1443,7 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1430,7 +1505,7 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1495,7 +1570,7 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1556,7 +1631,72 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
+    def delete_smtp_credential(self, user_id, smtp_credential_id, **kwargs):
+        """
+        DeleteSmtpCredential
+        Deletes the specified SMTP credential for the specified user.
+
+
+        :param str user_id: (required)
+            The OCID of the user.
+
+        :param str smtp_credential_id: (required)
+            The OCID of the SMTP credential.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/users/{userId}/smtpCredentials/{smtpCredentialId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_smtp_credential got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "userId": user_id,
+            "smtpCredentialId": smtp_credential_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1621,7 +1761,7 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1682,7 +1822,7 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1739,7 +1879,7 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1791,7 +1931,7 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1847,7 +1987,7 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1899,7 +2039,7 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1955,7 +2095,7 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -2007,7 +2147,7 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -2063,7 +2203,7 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -2115,7 +2255,7 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -2167,7 +2307,7 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -2219,7 +2359,7 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -2271,7 +2411,7 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -2326,7 +2466,7 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -2377,7 +2517,7 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -2441,7 +2581,7 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -2494,7 +2634,7 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -2558,7 +2698,7 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -2622,7 +2762,7 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -2693,7 +2833,7 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -2762,7 +2902,7 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -2830,7 +2970,7 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -2882,7 +3022,7 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -2921,7 +3061,7 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -2934,6 +3074,59 @@ class IdentityClient(object):
                 method=method,
                 header_params=header_params,
                 response_type="list[Region]")
+
+    def list_smtp_credentials(self, user_id, **kwargs):
+        """
+        ListSmtpCredentials
+        Lists the SMTP credentials for the specified user. The returned object contains the credential's OCID,
+        the SMTP user name but not the SMTP password. The SMTP password is returned only upon creation.
+
+
+        :param str user_id: (required)
+            The OCID of the user.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.SmtpCredentialSummary`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/users/{userId}/smtpCredentials/"
+        method = "GET"
+
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_smtp_credentials got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "userId": user_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        if kwargs.get('retry_strategy'):
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="list[SmtpCredentialSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="list[SmtpCredentialSummary]")
 
     def list_swift_passwords(self, user_id, **kwargs):
         """
@@ -2972,7 +3165,7 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -3038,7 +3231,7 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -3107,7 +3300,7 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -3190,7 +3383,7 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -3254,7 +3447,7 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -3317,7 +3510,7 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -3381,7 +3574,7 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -3453,7 +3646,7 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -3521,7 +3714,7 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -3589,7 +3782,7 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -3657,7 +3850,7 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -3729,7 +3922,7 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -3799,7 +3992,7 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -3816,6 +4009,78 @@ class IdentityClient(object):
                 header_params=header_params,
                 body=update_policy_details,
                 response_type="Policy")
+
+    def update_smtp_credential(self, user_id, smtp_credential_id, update_smtp_credential_details, **kwargs):
+        """
+        UpdateSmtpCredential
+        Updates the specified SMTP credential's description.
+
+
+        :param str user_id: (required)
+            The OCID of the user.
+
+        :param str smtp_credential_id: (required)
+            The OCID of the SMTP credential.
+
+        :param UpdateSmtpCredentialDetails update_smtp_credential_details: (required)
+            Request object for updating a SMTP credential.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.SmtpCredentialSummary`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/users/{userId}/smtpCredentials/{smtpCredentialId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_smtp_credential got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "userId": user_id,
+            "smtpCredentialId": smtp_credential_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        if kwargs.get('retry_strategy'):
+            return kwargs['retry_strategy'].make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_smtp_credential_details,
+                response_type="SmtpCredentialSummary")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_smtp_credential_details,
+                response_type="SmtpCredentialSummary")
 
     def update_swift_password(self, user_id, swift_password_id, update_swift_password_details, **kwargs):
         """
@@ -3871,7 +4136,7 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -3932,7 +4197,7 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -3999,7 +4264,7 @@ class IdentityClient(object):
             "content-type": "application/json"
         }
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -4067,7 +4332,7 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -4135,7 +4400,7 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             return kwargs['retry_strategy'].make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -4219,7 +4484,7 @@ class IdentityClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
-        if 'retry_strategy' in kwargs:
+        if kwargs.get('retry_strategy'):
             if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
                 self.base_client.add_opc_retry_token_if_needed(header_params)
             return kwargs['retry_strategy'].make_retrying_call(
