@@ -5,6 +5,7 @@ from __future__ import absolute_import
 
 from .attach_boot_volume_details import AttachBootVolumeDetails
 from .attach_i_scsi_volume_details import AttachIScsiVolumeDetails
+from .attach_paravirtualized_volume_details import AttachParavirtualizedVolumeDetails
 from .attach_vnic_details import AttachVnicDetails
 from .attach_volume_details import AttachVolumeDetails
 from .boot_volume import BootVolume
@@ -79,6 +80,7 @@ from .launch_instance_details import LaunchInstanceDetails
 from .launch_options import LaunchOptions
 from .letter_of_authority import LetterOfAuthority
 from .local_peering_gateway import LocalPeeringGateway
+from .paravirtualized_volume_attachment import ParavirtualizedVolumeAttachment
 from .port_range import PortRange
 from .private_ip import PrivateIp
 from .public_ip import PublicIp
@@ -134,6 +136,7 @@ from .volume_source_from_volume_details import VolumeSourceFromVolumeDetails
 core_type_mapping = {
     "AttachBootVolumeDetails": AttachBootVolumeDetails,
     "AttachIScsiVolumeDetails": AttachIScsiVolumeDetails,
+    "AttachParavirtualizedVolumeDetails": AttachParavirtualizedVolumeDetails,
     "AttachVnicDetails": AttachVnicDetails,
     "AttachVolumeDetails": AttachVolumeDetails,
     "BootVolume": BootVolume,
@@ -208,6 +211,7 @@ core_type_mapping = {
     "LaunchOptions": LaunchOptions,
     "LetterOfAuthority": LetterOfAuthority,
     "LocalPeeringGateway": LocalPeeringGateway,
+    "ParavirtualizedVolumeAttachment": ParavirtualizedVolumeAttachment,
     "PortRange": PortRange,
     "PrivateIp": PrivateIp,
     "PublicIp": PublicIp,

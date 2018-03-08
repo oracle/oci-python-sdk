@@ -117,6 +117,28 @@ Virtual Network
     :imported-members:
     :inherited-members:
 
+==========
+ Email
+==========
+
+--------
+ Client
+--------
+
+.. autoclass:: oci.email.email_client.EmailClient
+    :members:
+
+--------
+ Models
+--------
+
+.. automodule:: oci.email.models
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :imported-members:
+    :inherited-members:
+
 ==============
  File Storage
 ==============

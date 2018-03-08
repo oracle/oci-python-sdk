@@ -48,14 +48,13 @@ To get started, head over to the :ref:`installation instructions <install>` or s
     backward-compatibility
     quickstart
     logging
-    parallel-ops
-    pass-explicit-null
     upload-manager
     raw-requests
     waiters
     pagination
     api/index
     customize_service_client/index
+    sdk_behaviors/index
     contributions
     notifications
     license

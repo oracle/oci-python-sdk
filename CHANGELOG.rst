@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+1.3.16 - 2018-03-08
+====================
+
+Added
+-----
+* Added support for the Email Service
+  
+  * An example on using the Email Service can be found on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/email_service_example.py>`__.
+
+* Added support for SMTP credentials in the Identity Service
+
+  * An example on managing SMTP credentials can be found on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/email_service_example.py>`__.
+
+* Added support for paravirtualized volume attachments in Core Services
+
+  * An example on using volume attachments can be found on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/volume_attachment_example.py>`__.
+
+* Added support for variable size boot volumes in Core Services
+
+====================
 1.3.15 - 2018-02-22
 ====================
 

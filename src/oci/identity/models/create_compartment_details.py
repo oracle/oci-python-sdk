@@ -86,7 +86,7 @@ class CreateCompartmentDetails(object):
         """
         **[Required]** Gets the name of this CreateCompartmentDetails.
         The name you assign to the compartment during creation. The name must be unique across all compartments
-        in the tenancy.
+        in the tenancy. Avoid entering confidential information.
 
 
         :return: The name of this CreateCompartmentDetails.
@@ -99,7 +99,7 @@ class CreateCompartmentDetails(object):
         """
         Sets the name of this CreateCompartmentDetails.
         The name you assign to the compartment during creation. The name must be unique across all compartments
-        in the tenancy.
+        in the tenancy. Avoid entering confidential information.
 
 
         :param name: The name of this CreateCompartmentDetails.

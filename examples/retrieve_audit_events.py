@@ -1,6 +1,5 @@
-#!/usr/bin/env python
-#  coding: utf-8
-#  Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+# coding: utf-8
+# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 #  This script retrieves all audit logs across an OCI Tenancy.
 #  for a timespan defined by start_time and end_time.
@@ -95,4 +94,4 @@ for r in regions:
 
     #  Results for a region 'r' for each compartment.
     if audit_events:
-        print audit_events
+        print(audit_events)
