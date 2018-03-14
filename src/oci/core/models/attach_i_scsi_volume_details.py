@@ -11,7 +11,7 @@ class AttachIScsiVolumeDetails(AttachVolumeDetails):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new AttachIScsiVolumeDetails object with values from values from keyword arguments. The default value of the :py:attr:`~oci.core.models.AttachIScsiVolumeDetails.type` attribute
+        Initializes a new AttachIScsiVolumeDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.core.models.AttachIScsiVolumeDetails.type` attribute
         of this class is ``iscsi`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 

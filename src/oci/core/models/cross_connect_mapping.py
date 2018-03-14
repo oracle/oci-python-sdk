@@ -11,7 +11,7 @@ class CrossConnectMapping(object):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new CrossConnectMapping object with values from values from keyword arguments.
+        Initializes a new CrossConnectMapping object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param bgp_md5_auth_key:
