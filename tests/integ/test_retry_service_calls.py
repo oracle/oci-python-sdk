@@ -4,6 +4,8 @@
 # Basic sanity tests that we can pass a retry strategy to a service call and it can succeed
 
 import oci
+import pytest
+import requests
 
 from . import util
 from .. import test_config_container
@@ -54,3 +56,29 @@ def test_list_get_users(identity, config):
     user_no_retry = identity.get_user(user_ocid)
     user_with_retries = identity.get_user(user_ocid, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY)
     assert user_no_retry.data == user_with_retries.data
+
+
+def test_client_level_retry_strategy(config):
+    class ThrowRetryStrategy:
+        def make_retrying_call(self, func_ref, *func_args, **func_kwargs):
+            raise RuntimeError('Used ThrowRetryStrategy')
+
+    client = oci.identity.IdentityClient(config, retry_strategy=ThrowRetryStrategy())
+    client.base_client.endpoint = 'https://fakeendpoint.oracle'
+
+    with pytest.raises(RuntimeError) as exc_info:
+        client.list_users(config['tenancy'])
+
+    assert str(exc_info.value) == 'Used ThrowRetryStrategy'
+
+
+def test_method_level_retry_strategy_overrides_client_retry_strategy(config):
+    class ThrowRetryStrategy:
+        def make_retrying_call(self, func_ref, *func_args, **func_kwargs):
+            raise RuntimeError('Used ThrowRetryStrategy')
+
+    client = oci.identity.IdentityClient(config, retry_strategy=ThrowRetryStrategy())
+    client.base_client.endpoint = 'https://fakeendpoint.oracle'
+
+    with pytest.raises(requests.exceptions.ConnectionError) as exc_info:
+        client.list_users(config['tenancy'], retry_strategy=oci.retry.NoneRetryStrategy())
