@@ -80,5 +80,5 @@ def test_method_level_retry_strategy_overrides_client_retry_strategy(config):
     client = oci.identity.IdentityClient(config, retry_strategy=ThrowRetryStrategy())
     client.base_client.endpoint = 'https://fakeendpoint.oracle'
 
-    with pytest.raises(requests.exceptions.ConnectionError) as exc_info:
+    with pytest.raises(requests.exceptions.ConnectionError):
         client.list_users(config['tenancy'], retry_strategy=oci.retry.NoneRetryStrategy())
