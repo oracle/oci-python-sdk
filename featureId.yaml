@@ -43,3 +43,7 @@ whitelisted:
   - udx-498
   # https://jira.aka.lgl.grungy.us/browse/DEX-2678
   - udx-766
+  # VCN cross-region peering (https://jira.aka.lgl.grungy.us/browse/DEX-2711)
+  - udx-176
+  # DBaaS list db system shape extended data (https://jira.aka.lgl.grungy.us/browse/DEX-2711)
+  - udx-787

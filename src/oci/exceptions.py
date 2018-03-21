@@ -5,21 +5,31 @@
 class ServiceError(Exception):
     """The service returned an error response."""
 
-    def __init__(self, status, code, headers, message):
+    def __init__(self, status, code, headers, message, **kwargs):
         self.status = status
         self.code = code
         self.headers = headers
         self.message = message
+        self.original_request = kwargs.get('original_request')
+        self.request_id = self._get_opc_request_id()
 
         if not message:
             message = "The service returned error code %s" % self.status
 
         super(ServiceError, self).__init__({
-            "opc-request-id": headers.get("opc-request-id"),
+            "opc-request-id": self.request_id,
             "code": code,
             "message": message,
             "status": status
         })
+
+    def _get_opc_request_id(self):
+        if self.headers.get("opc-request-id"):
+            return self.headers.get("opc-request-id")
+        elif self.original_request and self.original_request.header_params:
+            return self.original_request.header_params.get("opc-request-id")
+        else:
+            return None
 
 
 class ClientError(Exception):

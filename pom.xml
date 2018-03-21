@@ -889,7 +889,7 @@
             <dependency>
                 <groupId>com.oracle.pic.commons</groupId>
                 <artifactId>coreservices-api-spec</artifactId>
-                <version>0.1.107</version>
+                <version>0.1.108</version>
             </dependency>
             <dependency>
                 <groupId>com.oracle.pic.identity</groupId>
@@ -909,7 +909,7 @@
             <dependency>
                 <groupId>com.oracle.pic.dbaas</groupId>
                 <artifactId>dbaas-api-spec</artifactId>
-                <version>0.0.130</version>
+                <version>0.0.135</version>
             </dependency>
             <dependency>
                 <groupId>com.oracle.pic.sherlock</groupId>
@@ -924,7 +924,7 @@
             <dependency>
                 <groupId>com.oracle.pic.ffsw</groupId>
                 <artifactId>fss-api-spec</artifactId>
-                <version>0.0.9</version>
+                <version>0.0.10</version>
             </dependency>
             <dependency>
                 <groupId>com.oracle.pic.email</groupId>

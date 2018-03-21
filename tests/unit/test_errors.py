@@ -3,6 +3,7 @@
 
 import oci
 import pytest
+import requests
 import tests.util
 
 
@@ -44,3 +45,22 @@ def test_none_path_param(identity):
         identity.get_user(None)
 
     assert 'Parameter userId cannot be None' in str(exc_info)
+
+
+def test_request_id_comes_from_request_when_nothing_in_response_header():
+    dummy_response = requests.Response()
+    dummy_response.headers = requests.structures.CaseInsensitiveDict()
+    req = oci.request.Request('GET', 'http://httpbin.org/get', header_params={'opc-request-id': 'my-fake-id'})
+
+    service_error = oci.exceptions.ServiceError(404, 'UnitTestCode', dummy_response.headers, 'Unit Test', original_request=req)
+    assert service_error.request_id == 'my-fake-id'
+
+
+def test_request_id_comes_from_response_when_in_response_header():
+    dummy_response = requests.Response()
+    dummy_response.headers = requests.structures.CaseInsensitiveDict()
+    dummy_response.headers['opc-request-id'] = 'response-header-request-id'
+    req = oci.request.Request('GET', 'http://httpbin.org/get', header_params={'opc-request-id': 'my-fake-id'})
+
+    service_error = oci.exceptions.ServiceError(412, 'UnitTestCode', dummy_response.headers, 'Unit Test', original_request=req)
+    assert service_error.request_id == 'response-header-request-id'
