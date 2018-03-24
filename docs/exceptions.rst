@@ -23,3 +23,25 @@ When using the Python SDK, you should be prepared to handle the following except
 * If you use the :py:class:`~oci.object_storage.UploadManager` then you should also catch :py:class:`~oci.exceptions.MultipartUploadError`
 
 * The Python SDK uses the `Requests <http://docs.python-requests.org/en/master/>`_ library to make calls to OCI services but it does not mask or wrap any of the errors originating from this library, so you should also account for these in your code. The exception reference for Requests can be found `here <http://docs.python-requests.org/en/master/_modules/requests/exceptions/>`__ and `here <http://docs.python-requests.org/en/master/api/#exceptions>`__
+
+Handling HTTP 3xx responses
+============================
+As a result of the SDK treating responses with a non-2xx HTTP status as a :py:class:`~oci.exceptions.ServiceError` the SDK will throw a :py:class:`~oci.exceptions.ServiceError` on 3xx responses. This can impact operations which support conditional GETs, such as :py:meth:`~oci.object_storage.object_storage_client.ObjectStorageClient.get_object` and :py:meth:`~oci.object_storage.object_storage_client.ObjectStorageClient.head_object` methods as these can return responses with a HTTP status code of 304 if passed an ``if_none_match`` which corresponds to the curent etag of the object or bucket.
+
+In order to account for this, you should catch :py:class:`~oci.exceptions.ServiceError` and check its ``status`` attribute for the HTTP status code. For example: 
+
+.. code-block:: python
+
+    import oci
+    
+    config = oci.config.from_file()
+    client = oci.object_storage.ObjectStorageClient(config)
+
+    try:
+        get_object_response = client.get_object('my_namespace', 'my_bucket', 'my_object', if_none_match='some_etag_value')
+    except oci.exceptions.ServiceError as e:
+        if e.status == 304:
+            # Object exists but has not been modified (based on the etag value)
+            pass
+        else:
+            raise
