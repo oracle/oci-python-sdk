@@ -11,7 +11,7 @@ class VolumeSourceFromVolumeBackupDetails(VolumeSourceDetails):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new VolumeSourceFromVolumeBackupDetails object with values from values from keyword arguments. The default value of the :py:attr:`~oci.core.models.VolumeSourceFromVolumeBackupDetails.type` attribute
+        Initializes a new VolumeSourceFromVolumeBackupDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.core.models.VolumeSourceFromVolumeBackupDetails.type` attribute
         of this class is ``volumeBackup`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 

@@ -64,8 +64,12 @@ def validate_service_error(error, status, code, message):
     assert error.code == code
     assert error.message.startswith(message)
     assert error.headers is not None
-    assert error.headers.get('opc-request-id') is not None
-    assert len(error.headers.get('opc-request-id')) == 98
+    assert error.request_id.strip()
+
+    if error.headers.get('opc-request-id'):
+        assert len(error.headers.get('opc-request-id')) == 98
+    else:
+        assert len(error.request_id) == 32
 
     # Check to string
     for info in [str(status), code, "opc-request-id", message]:

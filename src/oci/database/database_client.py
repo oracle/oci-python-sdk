@@ -31,6 +31,7 @@ class DatabaseClient(object):
                 private_key_content=config.get("key_content")
             )
         self.base_client = BaseClient("database", config, signer, database_type_mapping)
+        self.retry_strategy = kwargs.get('retry_strategy')
 
     def create_backup(self, create_backup_details, **kwargs):
         """
@@ -71,10 +72,14 @@ class DatabaseClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
                 self.base_client.add_opc_retry_token_if_needed(header_params)
-            return kwargs['retry_strategy'].make_retrying_call(
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
@@ -153,10 +158,14 @@ class DatabaseClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
                 self.base_client.add_opc_retry_token_if_needed(header_params)
-            return kwargs['retry_strategy'].make_retrying_call(
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
@@ -212,10 +221,14 @@ class DatabaseClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
                 self.base_client.add_opc_retry_token_if_needed(header_params)
-            return kwargs['retry_strategy'].make_retrying_call(
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
@@ -312,10 +325,14 @@ class DatabaseClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
                 self.base_client.add_opc_retry_token_if_needed(header_params)
-            return kwargs['retry_strategy'].make_retrying_call(
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
@@ -379,8 +396,12 @@ class DatabaseClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            return kwargs['retry_strategy'].make_retrying_call(
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
@@ -451,8 +472,12 @@ class DatabaseClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            return kwargs['retry_strategy'].make_retrying_call(
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
@@ -529,8 +554,12 @@ class DatabaseClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            return kwargs['retry_strategy'].make_retrying_call(
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
@@ -583,8 +612,12 @@ class DatabaseClient(object):
             "content-type": "application/json"
         }
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            return kwargs['retry_strategy'].make_retrying_call(
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
@@ -643,8 +676,12 @@ class DatabaseClient(object):
             "content-type": "application/json"
         }
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            return kwargs['retry_strategy'].make_retrying_call(
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
@@ -697,8 +734,12 @@ class DatabaseClient(object):
             "content-type": "application/json"
         }
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            return kwargs['retry_strategy'].make_retrying_call(
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
@@ -751,8 +792,12 @@ class DatabaseClient(object):
             "content-type": "application/json"
         }
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            return kwargs['retry_strategy'].make_retrying_call(
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
@@ -809,8 +854,12 @@ class DatabaseClient(object):
             "content-type": "application/json"
         }
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            return kwargs['retry_strategy'].make_retrying_call(
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
@@ -867,8 +916,12 @@ class DatabaseClient(object):
             "content-type": "application/json"
         }
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            return kwargs['retry_strategy'].make_retrying_call(
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
@@ -921,8 +974,12 @@ class DatabaseClient(object):
             "content-type": "application/json"
         }
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            return kwargs['retry_strategy'].make_retrying_call(
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
@@ -975,8 +1032,12 @@ class DatabaseClient(object):
             "content-type": "application/json"
         }
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            return kwargs['retry_strategy'].make_retrying_call(
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
@@ -1033,8 +1094,12 @@ class DatabaseClient(object):
             "content-type": "application/json"
         }
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            return kwargs['retry_strategy'].make_retrying_call(
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
@@ -1091,8 +1156,12 @@ class DatabaseClient(object):
             "content-type": "application/json"
         }
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            return kwargs['retry_strategy'].make_retrying_call(
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
@@ -1158,10 +1227,14 @@ class DatabaseClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            if not isinstance(kwargs['retry_strategy'], retry.NoneRetryStrategy):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
                 self.base_client.add_opc_retry_token_if_needed(header_params)
-            return kwargs['retry_strategy'].make_retrying_call(
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
@@ -1226,8 +1299,12 @@ class DatabaseClient(object):
             "content-type": "application/json"
         }
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            return kwargs['retry_strategy'].make_retrying_call(
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
@@ -1297,8 +1374,12 @@ class DatabaseClient(object):
             "content-type": "application/json"
         }
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            return kwargs['retry_strategy'].make_retrying_call(
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
@@ -1367,8 +1448,12 @@ class DatabaseClient(object):
             "content-type": "application/json"
         }
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            return kwargs['retry_strategy'].make_retrying_call(
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
@@ -1438,8 +1523,12 @@ class DatabaseClient(object):
             "content-type": "application/json"
         }
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            return kwargs['retry_strategy'].make_retrying_call(
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
@@ -1511,8 +1600,12 @@ class DatabaseClient(object):
             "content-type": "application/json"
         }
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            return kwargs['retry_strategy'].make_retrying_call(
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
@@ -1581,8 +1674,12 @@ class DatabaseClient(object):
             "content-type": "application/json"
         }
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            return kwargs['retry_strategy'].make_retrying_call(
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
@@ -1649,8 +1746,12 @@ class DatabaseClient(object):
             "content-type": "application/json"
         }
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            return kwargs['retry_strategy'].make_retrying_call(
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
@@ -1720,8 +1821,12 @@ class DatabaseClient(object):
             "content-type": "application/json"
         }
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            return kwargs['retry_strategy'].make_retrying_call(
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
@@ -1793,8 +1898,12 @@ class DatabaseClient(object):
             "content-type": "application/json"
         }
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            return kwargs['retry_strategy'].make_retrying_call(
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
@@ -1861,8 +1970,12 @@ class DatabaseClient(object):
             "content-type": "application/json"
         }
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            return kwargs['retry_strategy'].make_retrying_call(
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
@@ -1928,8 +2041,12 @@ class DatabaseClient(object):
             "content-type": "application/json"
         }
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            return kwargs['retry_strategy'].make_retrying_call(
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
@@ -1995,8 +2112,12 @@ class DatabaseClient(object):
             "content-type": "application/json"
         }
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            return kwargs['retry_strategy'].make_retrying_call(
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
@@ -2069,8 +2190,12 @@ class DatabaseClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            return kwargs['retry_strategy'].make_retrying_call(
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
@@ -2139,8 +2264,12 @@ class DatabaseClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            return kwargs['retry_strategy'].make_retrying_call(
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
@@ -2218,8 +2347,12 @@ class DatabaseClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            return kwargs['retry_strategy'].make_retrying_call(
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
@@ -2285,8 +2418,12 @@ class DatabaseClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            return kwargs['retry_strategy'].make_retrying_call(
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
@@ -2351,8 +2488,12 @@ class DatabaseClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            return kwargs['retry_strategy'].make_retrying_call(
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
@@ -2421,8 +2562,12 @@ class DatabaseClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            return kwargs['retry_strategy'].make_retrying_call(
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
@@ -2491,8 +2636,12 @@ class DatabaseClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
+        retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
-            return kwargs['retry_strategy'].make_retrying_call(
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,

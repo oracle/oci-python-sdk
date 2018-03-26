@@ -11,7 +11,7 @@ class InstanceSourceViaImageDetails(InstanceSourceDetails):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new InstanceSourceViaImageDetails object with values from values from keyword arguments. The default value of the :py:attr:`~oci.core.models.InstanceSourceViaImageDetails.source_type` attribute
+        Initializes a new InstanceSourceViaImageDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.core.models.InstanceSourceViaImageDetails.source_type` attribute
         of this class is ``image`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 

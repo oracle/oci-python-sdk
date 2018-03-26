@@ -11,7 +11,7 @@ class Tenancy(object):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new Tenancy object with values from values from keyword arguments.
+        Initializes a new Tenancy object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param id:
@@ -140,12 +140,16 @@ class Tenancy(object):
     def home_region_key(self):
         """
         Gets the home_region_key of this Tenancy.
-        The region key for the tenancy's home region.
+        The region key for the tenancy's home region. For more information about regions, see
+        `Regions and Availability Domains`__.
 
         Allowed values are:
         - `IAD`
         - `PHX`
         - `FRA`
+        - `LHR`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/regions.htm
 
 
         :return: The home_region_key of this Tenancy.
@@ -157,12 +161,16 @@ class Tenancy(object):
     def home_region_key(self, home_region_key):
         """
         Sets the home_region_key of this Tenancy.
-        The region key for the tenancy's home region.
+        The region key for the tenancy's home region. For more information about regions, see
+        `Regions and Availability Domains`__.
 
         Allowed values are:
         - `IAD`
         - `PHX`
         - `FRA`
+        - `LHR`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/regions.htm
 
 
         :param home_region_key: The home_region_key of this Tenancy.

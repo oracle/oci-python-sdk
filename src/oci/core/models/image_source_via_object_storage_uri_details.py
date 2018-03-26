@@ -11,7 +11,7 @@ class ImageSourceViaObjectStorageUriDetails(ImageSourceDetails):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new ImageSourceViaObjectStorageUriDetails object with values from values from keyword arguments. The default value of the :py:attr:`~oci.core.models.ImageSourceViaObjectStorageUriDetails.source_type` attribute
+        Initializes a new ImageSourceViaObjectStorageUriDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.core.models.ImageSourceViaObjectStorageUriDetails.source_type` attribute
         of this class is ``objectStorageUri`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 

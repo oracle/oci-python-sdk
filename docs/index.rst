@@ -48,6 +48,7 @@ To get started, head over to the :ref:`installation instructions <install>` or s
     backward-compatibility
     quickstart
     logging
+    exceptions
     upload-manager
     raw-requests
     waiters

@@ -281,7 +281,7 @@ class BaseClient(object):
         self.logger.debug("Response status: %s" % str(response.status_code))
 
         if not 200 <= response.status_code <= 299:
-            self.raise_service_error(response)
+            self.raise_service_error(request, response)
 
         if stream:
             # Don't unpack a streaming response body
@@ -430,7 +430,7 @@ class BaseClient(object):
 
         return result
 
-    def raise_service_error(self, response):
+    def raise_service_error(self, request, response):
         deserialized_data = self.deserialize_response_data(response.content, 'object')
         service_code = None
         message = None
@@ -438,12 +438,18 @@ class BaseClient(object):
         if isinstance(deserialized_data, dict):
             service_code = deserialized_data.get('code')
             message = deserialized_data.get('message')
+        else:
+            # Deserialized data should be a string if we couldn't deserialize into a dict (i.e. it failed
+            # json.loads()). There could still be error information of value to the customer, so instead
+            # of black holing the message, just put it in the error
+            message = deserialized_data
 
         raise exceptions.ServiceError(
             response.status_code,
             service_code,
             response.headers,
-            message)
+            message,
+            original_request=request)
 
     def deserialize_response_data(self, response_data, response_type):
         """

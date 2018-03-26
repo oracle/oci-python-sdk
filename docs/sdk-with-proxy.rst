@@ -30,3 +30,9 @@ In order to modify the underlying Session object, you can do something similar t
 
 The key parts are that the underlying Session object can be accessed via ``base_client.session`` and we can then modify the `proxies <http://docs.python-requests.org/en/master/api/#requests.Session.proxies>`_
 dictionary to add any required proxies.
+
+If your proxy uses HTTP Basic Auth, then when setting ``base_client.session.proxies`` you can use the *http://user:password@host/* syntax to provide the username and password. For example:
+
+.. code-block:: python
+
+    compute.base_client.session.proxies = { 'https': 'http://myuser:mypassword@proxy.example.org:80' }

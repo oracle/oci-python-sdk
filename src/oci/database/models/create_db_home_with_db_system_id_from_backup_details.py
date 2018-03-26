@@ -11,7 +11,7 @@ class CreateDbHomeWithDbSystemIdFromBackupDetails(CreateDbHomeWithDbSystemIdBase
 
     def __init__(self, **kwargs):
         """
-        Initializes a new CreateDbHomeWithDbSystemIdFromBackupDetails object with values from values from keyword arguments. The default value of the :py:attr:`~oci.database.models.CreateDbHomeWithDbSystemIdFromBackupDetails.source` attribute
+        Initializes a new CreateDbHomeWithDbSystemIdFromBackupDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.database.models.CreateDbHomeWithDbSystemIdFromBackupDetails.source` attribute
         of this class is ``DB_BACKUP`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
