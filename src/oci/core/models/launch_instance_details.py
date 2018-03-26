@@ -11,7 +11,7 @@ class LaunchInstanceDetails(object):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new LaunchInstanceDetails object with values from values from keyword arguments.
+        Initializes a new LaunchInstanceDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param availability_domain:

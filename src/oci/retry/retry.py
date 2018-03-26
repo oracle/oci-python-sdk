@@ -202,7 +202,7 @@ class RetryStrategyBuilder(object):
                 checker_container=checker_container
             )
         else:
-            raise RuntimeError('Unrecognized backup type: {}. Expected one of: {}'.format(self.backoff_type, VALID_BACKOFF_TYPES))
+            raise ValueError('Unrecognized backoff type: {}. Expected one of: {}'.format(self.backoff_type, VALID_BACKOFF_TYPES))
 
 
 class NoneRetryStrategy(object):

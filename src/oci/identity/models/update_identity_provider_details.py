@@ -11,7 +11,7 @@ class UpdateIdentityProviderDetails(object):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new UpdateIdentityProviderDetails object with values from values from keyword arguments. This class has the following subclasses and if you are using this class as input
+        Initializes a new UpdateIdentityProviderDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.identity.models.UpdateSaml2IdentityProviderDetails`

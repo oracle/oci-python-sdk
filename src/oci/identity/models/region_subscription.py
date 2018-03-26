@@ -11,7 +11,7 @@ class RegionSubscription(object):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new RegionSubscription object with values from values from keyword arguments.
+        Initializes a new RegionSubscription object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param region_key:
@@ -62,6 +62,7 @@ class RegionSubscription(object):
         - `PHX`
         - `IAD`
         - `FRA`
+        - `LHR`
 
 
         :return: The region_key of this RegionSubscription.
@@ -79,6 +80,7 @@ class RegionSubscription(object):
         - `PHX`
         - `IAD`
         - `FRA`
+        - `LHR`
 
 
         :param region_key: The region_key of this RegionSubscription.
@@ -96,6 +98,7 @@ class RegionSubscription(object):
         - `us-phoenix-1`
         - `us-ashburn-1`
         - `eu-frankurt-1`
+        - `uk-london-1`
 
 
         :return: The region_name of this RegionSubscription.
@@ -113,6 +116,7 @@ class RegionSubscription(object):
         - `us-phoenix-1`
         - `us-ashburn-1`
         - `eu-frankurt-1`
+        - `uk-london-1`
 
 
         :param region_name: The region_name of this RegionSubscription.

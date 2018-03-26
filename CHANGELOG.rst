@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+1.3.17 - 2018-03-26
+====================
+
+Added
+------
+* Added support for remote VCN peering across regions
+
+  * An example on how to perform these operations can be found on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/remote_peering_connection_example.py>`__.
+
+* Added support for calling Oracle Cloud Infrastructure services in the uk-london-1 (LHR) region
+
+
+====================
 1.3.16 - 2018-03-08
 ====================
 

@@ -11,7 +11,7 @@ class ParavirtualizedVolumeAttachment(VolumeAttachment):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new ParavirtualizedVolumeAttachment object with values from values from keyword arguments. The default value of the :py:attr:`~oci.core.models.ParavirtualizedVolumeAttachment.attachment_type` attribute
+        Initializes a new ParavirtualizedVolumeAttachment object with values from keyword arguments. The default value of the :py:attr:`~oci.core.models.ParavirtualizedVolumeAttachment.attachment_type` attribute
         of this class is ``paravirtualized`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 

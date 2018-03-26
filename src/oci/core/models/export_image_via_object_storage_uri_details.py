@@ -11,7 +11,7 @@ class ExportImageViaObjectStorageUriDetails(ExportImageDetails):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new ExportImageViaObjectStorageUriDetails object with values from values from keyword arguments. The default value of the :py:attr:`~oci.core.models.ExportImageViaObjectStorageUriDetails.destination_type` attribute
+        Initializes a new ExportImageViaObjectStorageUriDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.core.models.ExportImageViaObjectStorageUriDetails.destination_type` attribute
         of this class is ``objectStorageUri`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 

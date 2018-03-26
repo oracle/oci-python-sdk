@@ -11,7 +11,7 @@ class Region(object):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new Region object with values from values from keyword arguments.
+        Initializes a new Region object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param key:
@@ -46,6 +46,7 @@ class Region(object):
         - `PHX`
         - `IAD`
         - `FRA`
+        - `LHR`
 
 
         :return: The key of this Region.
@@ -63,6 +64,7 @@ class Region(object):
         - `PHX`
         - `IAD`
         - `FRA`
+        - `LHR`
 
 
         :param key: The key of this Region.
@@ -80,6 +82,7 @@ class Region(object):
         - `us-phoenix-1`
         - `us-ashburn-1`
         - `eu-frankfurt-1`
+        - `uk-london-1`
 
 
         :return: The name of this Region.
@@ -97,6 +100,7 @@ class Region(object):
         - `us-phoenix-1`
         - `us-ashburn-1`
         - `eu-frankfurt-1`
+        - `uk-london-1`
 
 
         :param name: The name of this Region.
