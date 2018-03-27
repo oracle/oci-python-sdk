@@ -356,12 +356,12 @@ class UploadManager:
 
         target_pool_size = self.REQUESTS_POOL_SIZE_FACTOR * parallel_processes
         adapter = requests.adapters.HTTPAdapter(pool_maxsize=target_pool_size)
-        
+
         if mount_protocol in self.object_storage_client.base_client.session.adapters:
             # If someone has already mounted and it's large enough, don't mount over the top
             if self.object_storage_client.base_client.session.adapters[mount_protocol]._pool_maxsize >= target_pool_size:
                 return
-        
+
         self.object_storage_client.base_client.session.mount(mount_protocol, adapter)
 
     @staticmethod
