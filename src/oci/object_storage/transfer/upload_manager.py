@@ -3,13 +3,16 @@
 
 from __future__ import print_function
 import os
-from .internal.multipart_object_assembler import MultipartObjectAssembler
+import requests
+from .internal.multipart_object_assembler import MultipartObjectAssembler, DEFAULT_PARALLEL_PROCESS_COUNT
 from .constants import DEFAULT_PART_SIZE, STREAMING_DEFAULT_PART_SIZE
 from .internal.file_read_callback_stream import FileReadCallbackStream
 from ...exceptions import MultipartUploadError
 
 
 class UploadManager:
+    REQUESTS_POOL_SIZE_FACTOR = 4
+
     def __init__(self, object_storage_client, **kwargs):
         """
         UploadManager simplifies interaction with the Object Storage service by abstracting away the method used
@@ -37,6 +40,8 @@ class UploadManager:
         self.allow_multipart_uploads = kwargs['allow_multipart_uploads'] if 'allow_multipart_uploads' in kwargs else True
         self.allow_parallel_uploads = kwargs['allow_parallel_uploads'] if 'allow_parallel_uploads' in kwargs else True
         self.parallel_process_count = kwargs['parallel_process_count'] if 'parallel_process_count' in kwargs else None
+
+        self._add_adapter_to_service_client()
 
     def upload_stream(self,
                       namespace_name,
@@ -334,6 +339,30 @@ class UploadManager:
                                                                  file_object,
                                                                  **kwargs)
         return response
+
+    def _add_adapter_to_service_client(self):
+        # No need to mount with a larger pool size if we are not running multiple threads
+        if not self.allow_parallel_uploads or not self.parallel_process_count:
+            return
+
+        endpoint = self.object_storage_client.base_client.endpoint
+        mount_protocol = 'https://'
+        if endpoint.startswith('http://'):
+            mount_protocol = 'http://'
+
+        parallel_processes = DEFAULT_PARALLEL_PROCESS_COUNT
+        if self.parallel_process_count is not None:
+            parallel_processes = self.parallel_process_count
+
+        target_pool_size = self.REQUESTS_POOL_SIZE_FACTOR * parallel_processes
+        adapter = requests.adapters.HTTPAdapter(pool_maxsize=target_pool_size)
+        
+        if mount_protocol in self.object_storage_client.base_client.session.adapters:
+            # If someone has already mounted and it's large enough, don't mount over the top
+            if self.object_storage_client.base_client.session.adapters[mount_protocol]._pool_maxsize >= target_pool_size:
+                return
+        
+        self.object_storage_client.base_client.session.mount(mount_protocol, adapter)
 
     @staticmethod
     def _use_multipart(content_length, part_size=DEFAULT_PART_SIZE):

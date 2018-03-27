@@ -737,7 +737,7 @@ class TestObjectStorage:
         object_name = 'test_object_multipart'
         namespace = object_storage.get_namespace().data
 
-        # explicitly use part_size > file size to trigger multipart
+        # explicitly use part_size < file size to trigger multipart
         part_size_in_bytes = (LARGE_CONTENT_FILE_SIZE_IN_MEBIBYTES - 1) * MEBIBYTE
         upload_manager = oci.object_storage.UploadManager(object_storage, allow_multipart_uploads=True)
         response = upload_manager.upload_file(
@@ -746,6 +746,51 @@ class TestObjectStorage:
 
         # confirm that the object was actually uploaded with multipart
         assert response.headers['opc-multipart-md5']
+
+        print('Downloading object {} from {} for verification'.format(object_name, bucket))
+        response = object_storage.get_object(
+            namespace_name=namespace,
+            bucket_name=bucket,
+            object_name=object_name
+        )
+        downloaded_file_path = os.path.join('tests', 'resources', 'downloaded_multipart_verify.bin')
+        with open(downloaded_file_path, 'wb') as file:
+            for chunk in response.data.raw.stream(MEBIBYTE, decode_content=False):
+                file.write(chunk)
+        print('Object downloaded')
+
+        assert filecmp.cmp(content_input_file, downloaded_file_path, shallow=False)
+
+        os.remove(downloaded_file_path)
+
+    def test_upload_manager_multipart_custom_parallel_process_count(self, object_storage, bucket, content_input_file):
+        object_name = 'test_object_multipart'
+        namespace = object_storage.get_namespace().data
+
+        part_size_in_bytes = (LARGE_CONTENT_FILE_SIZE_IN_MEBIBYTES - 1) * MEBIBYTE
+        upload_manager = oci.object_storage.UploadManager(object_storage, allow_multipart_uploads=True, parallel_process_count=10)
+        response = upload_manager.upload_file(
+            namespace, bucket, object_name, content_input_file, part_size=part_size_in_bytes)
+        util.validate_response(response)
+
+        # confirm that the object was actually uploaded with multipart
+        assert response.headers['opc-multipart-md5']
+
+        print('Downloading object {} from {} for verification'.format(object_name, bucket))
+        response = object_storage.get_object(
+            namespace_name=namespace,
+            bucket_name=bucket,
+            object_name=object_name
+        )
+        downloaded_file_path = os.path.join('tests', 'resources', 'downloaded_multipart_verify.bin')
+        with open(downloaded_file_path, 'wb') as file:
+            for chunk in response.data.raw.stream(MEBIBYTE, decode_content=False):
+                file.write(chunk)
+        print('Object downloaded')
+
+        assert filecmp.cmp(content_input_file, downloaded_file_path, shallow=False)
+
+        os.remove(downloaded_file_path)
 
     def test_upload_manager_multipart_disabled_with_large_file_uses_single_part(self, object_storage, bucket, content_input_file):
         with test_config_container.create_vcr().use_cassette('test_object_storage_test_upload_manager_multipart_disabled_with_large_file_uses_single_part.yml'):

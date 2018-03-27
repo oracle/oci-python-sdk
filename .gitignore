@@ -8,6 +8,7 @@ abandoned/
 .idea/
 *.iml
 *.pyc
+*.swp
 *.egg-info/
 .tox/
 .cache/
