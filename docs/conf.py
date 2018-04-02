@@ -12,11 +12,15 @@ from sphinx.domains.python import PythonDomain
 # ones.
 extensions = [
     "sphinx.ext.autodoc",
+    "sphinx.ext.autosummary",
     "sphinx.ext.intersphinx",
 ]
 
+# Automatically generate stub pages for the .. autosummary:: directive when combined with :toctree:
+autosummary_generate = True
+
 # Add any paths that contain templates here, relative to this directory.
-# templates_path = ['_templates']
+templates_path = ['_templates']
 
 # The master toctree document.
 master_doc = "index"
@@ -242,8 +246,8 @@ texinfo_documents = [
 
 class PatchedPythonDomain(PythonDomain):
     def resolve_xref(self, env, fromdocname, builder, typ, target, node, contnode):
-        if 'refspecific' in node and fromdocname == 'api/index':
-            # This for api/index.rst and defined tags. These have a data type of dict(str, dict(str, object)) but if
+        if 'refspecific' in node and fromdocname.startswith('api/'):
+            # This for api/* and defined tags. These have a data type of dict(str, dict(str, object)) but if
             # Sphinx auto-linking tries to link "object" to the "object" property in CreateMultipartUploadDetails (which is
             # incorrect).
             #

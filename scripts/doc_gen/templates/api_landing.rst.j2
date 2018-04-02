@@ -1,0 +1,40 @@
+API Reference
+~~~~~~~~~~~~~~~~
+
+.. rubric:: Service Clients
+
+{% for service in flattened_services %}
+* :doc:`{{service[1]}} <{{service[0]}}>`
+{% endfor %}
+
+.. rubric:: Other Modules
+
+* :doc:`Config <config>`
+* :doc:`Exceptions <exceptions>`
+* :doc:`Pagination <pagination>`
+* :doc:`Request and Response <request_and_response>`
+* :doc:`Signing <signing>`
+* :doc:`Upload Manager <upload_manager>`
+* :doc:`Utilities <utilities>`
+* :doc:`Waiters <waiters>`
+
+.. rubric:: Single Page Reference
+
+* :doc:`Single Page Reference <index>`
+
+.. toctree::
+    :hidden:
+    :maxdepth: 5
+
+{% for service in services_for_doc_gen %}
+    {{service['module_name']}}
+{% endfor %}
+    config
+    exceptions
+    pagination
+    request_and_response
+    signing
+    upload_manager
+    utilities
+    waiters
+    index

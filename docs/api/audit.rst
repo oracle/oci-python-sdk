@@ -1,0 +1,22 @@
+Audit 
+=====
+
+.. autosummary::
+    :toctree: audit/client
+    :nosignatures:
+    :template: autosummary/service_client.rst
+
+    oci.audit.AuditClient
+
+--------
+ Models
+--------
+
+.. autosummary::
+    :toctree: audit/models
+    :nosignatures:
+    :template: autosummary/model_class.rst
+
+    oci.audit.models.AuditEvent
+    oci.audit.models.Configuration
+    oci.audit.models.UpdateConfigurationDetails

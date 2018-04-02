@@ -1,0 +1,24 @@
+{{ service_root_header }} 
+{{ service_root_header|get_rst_header('=') }}
+
+.. autosummary::
+    :toctree: {{module_name}}/client
+    :nosignatures:
+    :template: autosummary/service_client.rst
+
+    {% for service_client in service_client_classes %}
+    {{ service_client }}
+    {% endfor %}
+
+--------
+ Models
+--------
+
+.. autosummary::
+    :toctree: {{module_name}}/models
+    :nosignatures:
+    :template: autosummary/model_class.rst
+
+    {% for model in models %}
+    {{ model }}
+    {% endfor %}

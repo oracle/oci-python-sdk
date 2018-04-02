@@ -12,95 +12,42 @@
 Single Page Reference
 ~~~~~~~~~~~~~~~~~~~~~~
 
+{% for service_group in service_groups %}
 
-=====
-Audit
-=====
+{{service_group.group_header|get_rst_header('=')}}
+{{service_group.group_header}}
+{{service_group.group_header|get_rst_header('=')}}
 
---------
- Client
---------
-
-.. autoclass:: oci.audit.audit_client.AuditClient
-    :members:
-    :noindex:
-
---------
- Models
---------
-
-.. automodule:: oci.audit.models
-    :special-members: __init__
-    :members:
-    :undoc-members:
-    :imported-members:
-    :inherited-members:
-    :noindex:
-
-
-=============
-Core Services
-=============
-
+{% if service_group.multiple_services %}
 ---------
  Clients
 ---------
 
+{% for service in service_group.services %}
 
-Block Storage
-=============
+{{service|humanize}}
+{{service|humanize|get_rst_header('=')}}
 
-.. autoclass:: oci.core.blockstorage_client.BlockstorageClient
+.. autoclass:: oci.{{service_group.module_name}}.{{service}}_client.{{service|camelize}}Client
     :members:
     :noindex:
 
-
-Compute 
-========
-
-.. autoclass:: oci.core.compute_client.ComputeClient
-    :members:
-    :noindex:
-
-
-Virtual Network 
-================
-
-.. autoclass:: oci.core.virtual_network_client.VirtualNetworkClient
-    :members:
-    :noindex:
-
-
---------
- Models
---------
-
-.. automodule:: oci.core.models
-    :special-members: __init__
-    :members:
-    :undoc-members:
-    :imported-members:
-    :inherited-members:
-    :noindex:
-
-
-========
-Database
-========
-
+{% endfor %}
+{% else %}
 --------
  Client
 --------
 
-.. autoclass:: oci.database.database_client.DatabaseClient
+.. autoclass:: oci.{{service_group.module_name}}.{{service_group.first_service}}_client.{{service_group.first_service|camelize}}Client
     :members:
     :noindex:
+{% endif %}
 
 --------
  Models
 --------
 
-.. automodule:: oci.database.models
+.. automodule:: oci.{{service_group.module_name}}.models
     :special-members: __init__
     :members:
     :undoc-members:
@@ -108,156 +55,7 @@ Database
     :inherited-members:
     :noindex:
 
-
-===
-DNS
-===
-
---------
- Client
---------
-
-.. autoclass:: oci.dns.dns_client.DnsClient
-    :members:
-    :noindex:
-
---------
- Models
---------
-
-.. automodule:: oci.dns.models
-    :special-members: __init__
-    :members:
-    :undoc-members:
-    :imported-members:
-    :inherited-members:
-    :noindex:
-
-
-=====
-Email
-=====
-
---------
- Client
---------
-
-.. autoclass:: oci.email.email_client.EmailClient
-    :members:
-    :noindex:
-
---------
- Models
---------
-
-.. automodule:: oci.email.models
-    :special-members: __init__
-    :members:
-    :undoc-members:
-    :imported-members:
-    :inherited-members:
-    :noindex:
-
-
-============
-File Storage
-============
-
---------
- Client
---------
-
-.. autoclass:: oci.file_storage.file_storage_client.FileStorageClient
-    :members:
-    :noindex:
-
---------
- Models
---------
-
-.. automodule:: oci.file_storage.models
-    :special-members: __init__
-    :members:
-    :undoc-members:
-    :imported-members:
-    :inherited-members:
-    :noindex:
-
-
-========
-Identity
-========
-
---------
- Client
---------
-
-.. autoclass:: oci.identity.identity_client.IdentityClient
-    :members:
-    :noindex:
-
---------
- Models
---------
-
-.. automodule:: oci.identity.models
-    :special-members: __init__
-    :members:
-    :undoc-members:
-    :imported-members:
-    :inherited-members:
-    :noindex:
-
-
-=============
-Load Balancer
-=============
-
---------
- Client
---------
-
-.. autoclass:: oci.load_balancer.load_balancer_client.LoadBalancerClient
-    :members:
-    :noindex:
-
---------
- Models
---------
-
-.. automodule:: oci.load_balancer.models
-    :special-members: __init__
-    :members:
-    :undoc-members:
-    :imported-members:
-    :inherited-members:
-    :noindex:
-
-
-==============
-Object Storage
-==============
-
---------
- Client
---------
-
-.. autoclass:: oci.object_storage.object_storage_client.ObjectStorageClient
-    :members:
-    :noindex:
-
---------
- Models
---------
-
-.. automodule:: oci.object_storage.models
-    :special-members: __init__
-    :members:
-    :undoc-members:
-    :imported-members:
-    :inherited-members:
-    :noindex:
-
+{% endfor %}
 
 ================
  Upload Manager

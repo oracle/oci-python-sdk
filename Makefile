@@ -11,6 +11,7 @@ docs:
 	@echo Generating HTML docs. Note that this will use the installed
 	@echo version of OCI, so you might want to run gen, build, and
 	@echo install first.
+	python scripts/doc_gen/generate_service_rst_files.py
 	cd docs && make html
 	@echo View the docs at docs/_build/html/index.html
 
