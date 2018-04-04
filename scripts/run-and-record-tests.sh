@@ -43,7 +43,4 @@ else
 
   echo "Removing mocked responses before Python 3.6 test run"
   rm tests/fixtures/cassettes/*.yml
-
-  echo "Running Python 3.6 tests"
-  tox -e py36 -- --vcr-record-mode=all
 fi
