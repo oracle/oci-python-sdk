@@ -21,12 +21,12 @@ __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdkconfig.htm
 
 Running Tests
 =============
-The SDK uses `pytest` as its test framework. You can run tests against Python 2.7 Python 3.5 using the `tox` command. Note that this requires that you have those versions of Python installed, 
+The SDK uses `pytest` as its test framework. You can run tests against Python 2.7, Python 3.5 and Python 3.6 using the `tox` command. Note that this requires that you have those versions of Python installed, 
 otherwise you must pass `-e` or run tests directly:
 
 .. code-block:: sh
 
-    # This will run tests against all configured Pythons in tox.ini (currently 2.7 and 3.5). You need to have those versions installed
+    # This will run tests against all configured Pythons in tox.ini (currently 2.7, 3.5 and 3.6). You need to have those versions installed
     tox
 
     # This will run tests against a specific Python versions

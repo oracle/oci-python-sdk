@@ -35,6 +35,7 @@ Make sure to set up auto completion for both pyenv and pyenv-virtualenv.
     # Run once to install the python versions we test against
     pyenv install 2.7.12
     pyenv install 3.5.1
+    pyenv install 3.6.5
 
     # Ensure you're using a newer virtualenv, packaged with
     # recent versions of python, pip (3.5+, 9.0+)
@@ -42,6 +43,7 @@ Make sure to set up auto completion for both pyenv and pyenv-virtualenv.
     pip install -U pip
 
     # Create new virtual environments for sdk-specific work:
+    pyenv virtualenv --copies 3.6.5 sdk-36
     pyenv virtualenv --copies 3.5.1 sdk-3
     pyenv virtualenv --always-copy 2.7.12 sdk-2
 
@@ -58,9 +60,9 @@ Make sure to set up auto completion for both pyenv and pyenv-virtualenv.
 
     # Set pyenv to use these virtualenvs when you're running commands from
     # the project or any subdirectory
-    pyenv local sdk-3 sdk-2
+    pyenv local sdk-36 sdk-3 sdk-2
 
-    # Update pip if necessary, in both pythons
+    # Update pip if necessary, in all pythons
     pip3 install -U pip
     pip2 install -U pip
 
@@ -68,9 +70,9 @@ Make sure to set up auto completion for both pyenv and pyenv-virtualenv.
     tox -e flake8
 
 
-Using ``pyenv local`` told pyenv that within this directory and subdirectories, only the sdk-2
-and sdk-3 venvs should be exposed.  This will keep you from accidentally installing or mucking
-around with the system-wide 2.7.12 and 3.5.1 environments.
+Using ``pyenv local`` told pyenv that within this directory and subdirectories, only the sdk-2, sdk-3
+and sdk-36 venvs should be exposed.  This will keep you from accidentally installing or mucking
+around with the system-wide 2.7.x, 3.5.x and 3.6.x environments.
 
 To run commands with specifically the py2 or py3 venv, use ``pyenv shell`` as such::
 
@@ -82,11 +84,11 @@ Now any script, such as ``py.test``, will pull from ``sdk-2``, even though
 Dependencies
 ------------
 
-You'll need to do this with both venvs.  Set the shell venv and run the
+You'll need to do this with all venvs.  Set the shell venv and run the
 following commands, then swap the shell venv and run them again.  For
 the venvs defined above, this would mean first using ``pyenv shell sdk-2``
-and then after setting up dependencies, running ``pyenv shell sdk-3`` and
-repeating those steps.
+and then after setting up dependencies, repeating those steps in other venvs
+(e.g. ``pyenv shell sdk-3`` and ``pyenv shell sdk-36``)
 
 Tell pip that this is an editable package::
 
