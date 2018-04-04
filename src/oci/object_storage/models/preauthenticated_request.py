@@ -8,6 +8,33 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class PreauthenticatedRequest(object):
+    """
+    Pre-authenticated requests provide a way to let users access a bucket or an object without having their own credentials.
+    When you create a pre-authenticated request, a unique URL is generated. Users in your organization, partners, or third
+    parties can use this URL to access the targets identified in the pre-authenticated request. See `Managing Access to Buckets and Objects`__.
+
+    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator.
+    If you're an administrator who needs to write policies to give users access, see `Getting Started with Policies`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Object/Tasks/managingaccess.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
+    """
+
+    #: A constant which can be used with the access_type property of a PreauthenticatedRequest.
+    #: This constant has a value of "ObjectRead"
+    ACCESS_TYPE_OBJECT_READ = "ObjectRead"
+
+    #: A constant which can be used with the access_type property of a PreauthenticatedRequest.
+    #: This constant has a value of "ObjectWrite"
+    ACCESS_TYPE_OBJECT_WRITE = "ObjectWrite"
+
+    #: A constant which can be used with the access_type property of a PreauthenticatedRequest.
+    #: This constant has a value of "ObjectReadWrite"
+    ACCESS_TYPE_OBJECT_READ_WRITE = "ObjectReadWrite"
+
+    #: A constant which can be used with the access_type property of a PreauthenticatedRequest.
+    #: This constant has a value of "AnyObjectWrite"
+    ACCESS_TYPE_ANY_OBJECT_WRITE = "AnyObjectWrite"
 
     def __init__(self, **kwargs):
         """

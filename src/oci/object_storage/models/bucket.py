@@ -8,6 +8,38 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class Bucket(object):
+    """
+    A bucket is a container for storing objects in a compartment within a namespace. A bucket is associated with a single compartment.
+    The compartment has policies that indicate what actions a user can perform on a bucket and all the objects in the bucket. For more
+    information, see `Managing Buckets`__.
+
+    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
+    talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+    `Getting Started with Policies`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Object/Tasks/managingbuckets.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
+    """
+
+    #: A constant which can be used with the public_access_type property of a Bucket.
+    #: This constant has a value of "NoPublicAccess"
+    PUBLIC_ACCESS_TYPE_NO_PUBLIC_ACCESS = "NoPublicAccess"
+
+    #: A constant which can be used with the public_access_type property of a Bucket.
+    #: This constant has a value of "ObjectRead"
+    PUBLIC_ACCESS_TYPE_OBJECT_READ = "ObjectRead"
+
+    #: A constant which can be used with the public_access_type property of a Bucket.
+    #: This constant has a value of "ObjectReadWithoutList"
+    PUBLIC_ACCESS_TYPE_OBJECT_READ_WITHOUT_LIST = "ObjectReadWithoutList"
+
+    #: A constant which can be used with the storage_tier property of a Bucket.
+    #: This constant has a value of "Standard"
+    STORAGE_TIER_STANDARD = "Standard"
+
+    #: A constant which can be used with the storage_tier property of a Bucket.
+    #: This constant has a value of "Archive"
+    STORAGE_TIER_ARCHIVE = "Archive"
 
     def __init__(self, **kwargs):
         """

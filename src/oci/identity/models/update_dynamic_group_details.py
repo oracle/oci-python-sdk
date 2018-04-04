@@ -8,6 +8,9 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class UpdateDynamicGroupDetails(object):
+    """
+    Properties for updating a dynamic group.
+    """
 
     def __init__(self, **kwargs):
         """

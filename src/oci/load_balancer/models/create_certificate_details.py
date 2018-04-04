@@ -8,6 +8,13 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class CreateCertificateDetails(object):
+    """
+    The configuration details for adding a certificate bundle to a listener.
+    For more information on SSL certficate configuration, see
+    `Managing SSL Certificates`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managingcertificates.htm
+    """
 
     def __init__(self, **kwargs):
         """

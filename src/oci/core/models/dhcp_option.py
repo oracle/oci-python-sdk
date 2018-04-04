@@ -8,6 +8,17 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class DhcpOption(object):
+    """
+    A single DHCP option according to `RFC 1533`__.
+    The two options available to use are :class:`DhcpDnsOption`
+    and :class:`DhcpSearchDomainOption`. For more
+    information, see `DNS in Your Virtual Cloud Network`__
+    and `DHCP Options`__.
+
+    __ https://tools.ietf.org/html/rfc1533
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingDHCP.htm
+    """
 
     def __init__(self, **kwargs):
         """

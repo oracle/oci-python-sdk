@@ -8,6 +8,93 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class DataGuardAssociationSummary(object):
+    """
+    The properties that define a Data Guard association.
+
+    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an
+    administrator. If you're an administrator who needs to write policies to give users access, see
+    `Getting Started with Policies`__.
+
+    For information about endpoints and signing API requests, see
+    `About the API`__. For information about available SDKs and tools, see
+    `SDKS and Other Tools`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/usingapi.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdks.htm
+    """
+
+    #: A constant which can be used with the lifecycle_state property of a DataGuardAssociationSummary.
+    #: This constant has a value of "PROVISIONING"
+    LIFECYCLE_STATE_PROVISIONING = "PROVISIONING"
+
+    #: A constant which can be used with the lifecycle_state property of a DataGuardAssociationSummary.
+    #: This constant has a value of "AVAILABLE"
+    LIFECYCLE_STATE_AVAILABLE = "AVAILABLE"
+
+    #: A constant which can be used with the lifecycle_state property of a DataGuardAssociationSummary.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
+
+    #: A constant which can be used with the lifecycle_state property of a DataGuardAssociationSummary.
+    #: This constant has a value of "TERMINATING"
+    LIFECYCLE_STATE_TERMINATING = "TERMINATING"
+
+    #: A constant which can be used with the lifecycle_state property of a DataGuardAssociationSummary.
+    #: This constant has a value of "TERMINATED"
+    LIFECYCLE_STATE_TERMINATED = "TERMINATED"
+
+    #: A constant which can be used with the lifecycle_state property of a DataGuardAssociationSummary.
+    #: This constant has a value of "FAILED"
+    LIFECYCLE_STATE_FAILED = "FAILED"
+
+    #: A constant which can be used with the peer_role property of a DataGuardAssociationSummary.
+    #: This constant has a value of "PRIMARY"
+    PEER_ROLE_PRIMARY = "PRIMARY"
+
+    #: A constant which can be used with the peer_role property of a DataGuardAssociationSummary.
+    #: This constant has a value of "STANDBY"
+    PEER_ROLE_STANDBY = "STANDBY"
+
+    #: A constant which can be used with the peer_role property of a DataGuardAssociationSummary.
+    #: This constant has a value of "DISABLED_STANDBY"
+    PEER_ROLE_DISABLED_STANDBY = "DISABLED_STANDBY"
+
+    #: A constant which can be used with the protection_mode property of a DataGuardAssociationSummary.
+    #: This constant has a value of "MAXIMUM_AVAILABILITY"
+    PROTECTION_MODE_MAXIMUM_AVAILABILITY = "MAXIMUM_AVAILABILITY"
+
+    #: A constant which can be used with the protection_mode property of a DataGuardAssociationSummary.
+    #: This constant has a value of "MAXIMUM_PERFORMANCE"
+    PROTECTION_MODE_MAXIMUM_PERFORMANCE = "MAXIMUM_PERFORMANCE"
+
+    #: A constant which can be used with the protection_mode property of a DataGuardAssociationSummary.
+    #: This constant has a value of "MAXIMUM_PROTECTION"
+    PROTECTION_MODE_MAXIMUM_PROTECTION = "MAXIMUM_PROTECTION"
+
+    #: A constant which can be used with the role property of a DataGuardAssociationSummary.
+    #: This constant has a value of "PRIMARY"
+    ROLE_PRIMARY = "PRIMARY"
+
+    #: A constant which can be used with the role property of a DataGuardAssociationSummary.
+    #: This constant has a value of "STANDBY"
+    ROLE_STANDBY = "STANDBY"
+
+    #: A constant which can be used with the role property of a DataGuardAssociationSummary.
+    #: This constant has a value of "DISABLED_STANDBY"
+    ROLE_DISABLED_STANDBY = "DISABLED_STANDBY"
+
+    #: A constant which can be used with the transport_type property of a DataGuardAssociationSummary.
+    #: This constant has a value of "SYNC"
+    TRANSPORT_TYPE_SYNC = "SYNC"
+
+    #: A constant which can be used with the transport_type property of a DataGuardAssociationSummary.
+    #: This constant has a value of "ASYNC"
+    TRANSPORT_TYPE_ASYNC = "ASYNC"
+
+    #: A constant which can be used with the transport_type property of a DataGuardAssociationSummary.
+    #: This constant has a value of "FASTSYNC"
+    TRANSPORT_TYPE_FASTSYNC = "FASTSYNC"
 
     def __init__(self, **kwargs):
         """

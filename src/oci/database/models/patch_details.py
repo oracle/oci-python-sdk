@@ -8,6 +8,19 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class PatchDetails(object):
+    """
+    The details about what actions to perform and using what patch to the specified target.
+    This is part of an update request that is applied to a version field on the target such
+    as DB System, database home, etc.
+    """
+
+    #: A constant which can be used with the action property of a PatchDetails.
+    #: This constant has a value of "APPLY"
+    ACTION_APPLY = "APPLY"
+
+    #: A constant which can be used with the action property of a PatchDetails.
+    #: This constant has a value of "PRECHECK"
+    ACTION_PRECHECK = "PRECHECK"
 
     def __init__(self, **kwargs):
         """

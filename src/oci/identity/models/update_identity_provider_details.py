@@ -8,6 +8,13 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class UpdateIdentityProviderDetails(object):
+    """
+    UpdateIdentityProviderDetails model.
+    """
+
+    #: A constant which can be used with the protocol property of a UpdateIdentityProviderDetails.
+    #: This constant has a value of "SAML2"
+    PROTOCOL_SAML2 = "SAML2"
 
     def __init__(self, **kwargs):
         """

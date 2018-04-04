@@ -8,6 +8,9 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class GetPublicIpByPrivateIpIdDetails(object):
+    """
+    Details of the private IP that the public IP is assigned to.
+    """
 
     def __init__(self, **kwargs):
         """

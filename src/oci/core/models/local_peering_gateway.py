@@ -8,6 +8,56 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class LocalPeeringGateway(object):
+    """
+    A local peering gateway (LPG) is an object on a VCN that lets that VCN peer
+    with another VCN in the same region. *Peering* means that the two VCNs can
+    communicate using private IP addresses, but without the traffic traversing the
+    internet or routing through your on-premises network. For more information,
+    see `VCN Peering`__.
+
+    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
+    talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+    `Getting Started with Policies`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/VCNpeering.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
+    """
+
+    #: A constant which can be used with the lifecycle_state property of a LocalPeeringGateway.
+    #: This constant has a value of "PROVISIONING"
+    LIFECYCLE_STATE_PROVISIONING = "PROVISIONING"
+
+    #: A constant which can be used with the lifecycle_state property of a LocalPeeringGateway.
+    #: This constant has a value of "AVAILABLE"
+    LIFECYCLE_STATE_AVAILABLE = "AVAILABLE"
+
+    #: A constant which can be used with the lifecycle_state property of a LocalPeeringGateway.
+    #: This constant has a value of "TERMINATING"
+    LIFECYCLE_STATE_TERMINATING = "TERMINATING"
+
+    #: A constant which can be used with the lifecycle_state property of a LocalPeeringGateway.
+    #: This constant has a value of "TERMINATED"
+    LIFECYCLE_STATE_TERMINATED = "TERMINATED"
+
+    #: A constant which can be used with the peering_status property of a LocalPeeringGateway.
+    #: This constant has a value of "INVALID"
+    PEERING_STATUS_INVALID = "INVALID"
+
+    #: A constant which can be used with the peering_status property of a LocalPeeringGateway.
+    #: This constant has a value of "NEW"
+    PEERING_STATUS_NEW = "NEW"
+
+    #: A constant which can be used with the peering_status property of a LocalPeeringGateway.
+    #: This constant has a value of "PEERED"
+    PEERING_STATUS_PEERED = "PEERED"
+
+    #: A constant which can be used with the peering_status property of a LocalPeeringGateway.
+    #: This constant has a value of "PENDING"
+    PEERING_STATUS_PENDING = "PENDING"
+
+    #: A constant which can be used with the peering_status property of a LocalPeeringGateway.
+    #: This constant has a value of "REVOKED"
+    PEERING_STATUS_REVOKED = "REVOKED"
 
     def __init__(self, **kwargs):
         """

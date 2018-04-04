@@ -8,6 +8,10 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class UpdateNamespaceMetadataDetails(object):
+    """
+    An UpdateNamespaceMetadataDetails is used for update NamespaceMetadata. To be able to upate the NamespaceMetadata, a user
+    must have NAMESPACE_UPDATE permission.
+    """
 
     def __init__(self, **kwargs):
         """

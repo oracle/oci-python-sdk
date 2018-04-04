@@ -8,6 +8,30 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class WorkRequest(object):
+    """
+    Many of the API requests you use to create and configure load balancing do not take effect immediately.
+    In these cases, the request spawns an asynchronous work flow to fulfill the request. WorkRequest objects provide visibility
+    for in-progress work flows.
+    For more information about work requests, see `Viewing the State of a Work Request`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/viewingworkrequest.htm
+    """
+
+    #: A constant which can be used with the lifecycle_state property of a WorkRequest.
+    #: This constant has a value of "ACCEPTED"
+    LIFECYCLE_STATE_ACCEPTED = "ACCEPTED"
+
+    #: A constant which can be used with the lifecycle_state property of a WorkRequest.
+    #: This constant has a value of "IN_PROGRESS"
+    LIFECYCLE_STATE_IN_PROGRESS = "IN_PROGRESS"
+
+    #: A constant which can be used with the lifecycle_state property of a WorkRequest.
+    #: This constant has a value of "FAILED"
+    LIFECYCLE_STATE_FAILED = "FAILED"
+
+    #: A constant which can be used with the lifecycle_state property of a WorkRequest.
+    #: This constant has a value of "SUCCEEDED"
+    LIFECYCLE_STATE_SUCCEEDED = "SUCCEEDED"
 
     def __init__(self, **kwargs):
         """

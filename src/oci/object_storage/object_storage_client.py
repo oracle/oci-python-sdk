@@ -16,6 +16,9 @@ missing = Sentinel("Missing")
 
 
 class ObjectStorageClient(object):
+    """
+    Common set of Object and Archive Storage APIs for managing buckets and objects.
+    """
 
     def __init__(self, config, **kwargs):
         validate_config(config, signer=kwargs.get('signer'))
@@ -30,7 +33,14 @@ class ObjectStorageClient(object):
                 pass_phrase=get_config_value_or_default(config, "pass_phrase"),
                 private_key_content=config.get("key_content")
             )
-        self.base_client = BaseClient("object_storage", config, signer, object_storage_type_mapping)
+
+        base_client_init_kwargs = {
+            'regional_client': True,
+            'service_endpoint': kwargs.get('service_endpoint'),
+            'timeout': kwargs.get('timeout'),
+            'base_path': '/'
+        }
+        self.base_client = BaseClient("object_storage", config, signer, object_storage_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
 
     def abort_multipart_upload(self, namespace_name, bucket_name, object_name, upload_id, **kwargs):
@@ -1765,6 +1775,8 @@ class ObjectStorageClient(object):
 
         :param dict(str, str) opc_meta: (optional)
             Optional user-defined metadata key and value.
+
+            "opc-meta-" will be appended to each dict key before it is sent to the server.
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`

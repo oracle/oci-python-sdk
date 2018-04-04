@@ -8,6 +8,12 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class RRSet(object):
+    """
+    A collection of DNS records of the same domain and type. For more
+    information about record types, see `Resource Record (RR) TYPEs`__.
+
+    __ https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4
+    """
 
     def __init__(self, **kwargs):
         """

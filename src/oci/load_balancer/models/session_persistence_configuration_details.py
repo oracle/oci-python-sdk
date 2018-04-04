@@ -8,6 +8,19 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class SessionPersistenceConfigurationDetails(object):
+    """
+    The configuration details for implementing session persistence. Session persistence enables the Load Balancing
+    Service to direct any number of requests that originate from a single logical client to a single backend web server.
+    For more information, see `Session Persistence`__.
+
+    To disable session persistence on a running load balancer, use the
+    :func:`update_backend_set` operation and specify \"null\" for the
+    `SessionPersistenceConfigurationDetails` object.
+
+    Example: `SessionPersistenceConfigurationDetails: null`
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Reference/sessionpersistence.htm
+    """
 
     def __init__(self, **kwargs):
         """

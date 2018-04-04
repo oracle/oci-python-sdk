@@ -8,6 +8,48 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class Compartment(object):
+    """
+    A collection of related resources. Compartments are a fundamental component of Oracle Cloud Infrastructure
+    for organizing and isolating your cloud resources. You use them to clearly separate resources for the purposes
+    of measuring usage and billing, access (through the use of IAM Service policies), and isolation (separating the
+    resources for one project or business unit from another). A common approach is to create a compartment for each
+    major part of your organization. For more information, see
+    `Overview of the IAM Service`__ and also
+    `Setting Up Your Tenancy`__.
+
+    To place a resource in a compartment, simply specify the compartment ID in the \"Create\" request object when
+    initially creating the resource. For example, to launch an instance into a particular compartment, specify
+    that compartment's OCID in the `LaunchInstance` request. You can't move an existing resource from one
+    compartment to another.
+
+    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
+    talk to an administrator. If you're an administrator who needs to write policies to give users access,
+    see `Getting Started with Policies`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/settinguptenancy.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
+    """
+
+    #: A constant which can be used with the lifecycle_state property of a Compartment.
+    #: This constant has a value of "CREATING"
+    LIFECYCLE_STATE_CREATING = "CREATING"
+
+    #: A constant which can be used with the lifecycle_state property of a Compartment.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a Compartment.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a Compartment.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a Compartment.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_STATE_DELETED = "DELETED"
 
     def __init__(self, **kwargs):
         """

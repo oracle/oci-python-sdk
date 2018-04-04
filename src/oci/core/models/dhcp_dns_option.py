@@ -8,6 +8,25 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class DhcpDnsOption(DhcpOption):
+    """
+    DHCP option for specifying how DNS (hostname resolution) is handled in the subnets in the VCN.
+    For more information, see
+    `DNS in Your Virtual Cloud Network`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm
+    """
+
+    #: A constant which can be used with the server_type property of a DhcpDnsOption.
+    #: This constant has a value of "VcnLocal"
+    SERVER_TYPE_VCN_LOCAL = "VcnLocal"
+
+    #: A constant which can be used with the server_type property of a DhcpDnsOption.
+    #: This constant has a value of "VcnLocalPlusInternet"
+    SERVER_TYPE_VCN_LOCAL_PLUS_INTERNET = "VcnLocalPlusInternet"
+
+    #: A constant which can be used with the server_type property of a DhcpDnsOption.
+    #: This constant has a value of "CustomDnsServer"
+    SERVER_TYPE_CUSTOM_DNS_SERVER = "CustomDnsServer"
 
     def __init__(self, **kwargs):
         """

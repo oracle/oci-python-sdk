@@ -8,6 +8,43 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class DbHomeSummary(object):
+    """
+    A directory where Oracle database software is installed. Each DB System can have multiple database homes,
+    and each database home can have multiple databases within it. All the databases within a single database home
+    must be the same database version, but different database homes can run different versions. For more information,
+    see `Managing Oracle Databases`__.
+
+    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an
+    administrator. If you're an administrator who needs to write policies to give users access,
+    see `Getting Started with Policies`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Concepts/overview.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
+    """
+
+    #: A constant which can be used with the lifecycle_state property of a DbHomeSummary.
+    #: This constant has a value of "PROVISIONING"
+    LIFECYCLE_STATE_PROVISIONING = "PROVISIONING"
+
+    #: A constant which can be used with the lifecycle_state property of a DbHomeSummary.
+    #: This constant has a value of "AVAILABLE"
+    LIFECYCLE_STATE_AVAILABLE = "AVAILABLE"
+
+    #: A constant which can be used with the lifecycle_state property of a DbHomeSummary.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
+
+    #: A constant which can be used with the lifecycle_state property of a DbHomeSummary.
+    #: This constant has a value of "TERMINATING"
+    LIFECYCLE_STATE_TERMINATING = "TERMINATING"
+
+    #: A constant which can be used with the lifecycle_state property of a DbHomeSummary.
+    #: This constant has a value of "TERMINATED"
+    LIFECYCLE_STATE_TERMINATED = "TERMINATED"
+
+    #: A constant which can be used with the lifecycle_state property of a DbHomeSummary.
+    #: This constant has a value of "FAILED"
+    LIFECYCLE_STATE_FAILED = "FAILED"
 
     def __init__(self, **kwargs):
         """

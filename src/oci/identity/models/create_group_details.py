@@ -8,6 +8,9 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class CreateGroupDetails(object):
+    """
+    CreateGroupDetails model.
+    """
 
     def __init__(self, **kwargs):
         """

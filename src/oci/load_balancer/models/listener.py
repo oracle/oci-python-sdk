@@ -8,6 +8,13 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class Listener(object):
+    """
+    The listener's configuration.
+    For more information on backend set configuration, see
+    `Managing Load Balancer Listeners`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/tasks/managinglisteners.htm
+    """
 
     def __init__(self, **kwargs):
         """

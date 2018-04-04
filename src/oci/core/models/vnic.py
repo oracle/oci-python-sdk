@@ -8,6 +8,43 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class Vnic(object):
+    """
+    A virtual network interface card. Each VNIC resides in a subnet in a VCN.
+    An instance attaches to a VNIC to obtain a network connection into the VCN
+    through that subnet. Each instance has a *primary VNIC* that is automatically
+    created and attached during launch. You can add *secondary VNICs* to an
+    instance after it's launched. For more information, see
+    `Virtual Network Interface Cards (VNICs)`__.
+
+    Each VNIC has a *primary private IP* that is automatically assigned during launch.
+    You can add *secondary private IPs* to a VNIC after it's created. For more
+    information, see :func:`create_private_ip` and
+    `IP Addresses`__.
+
+    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
+    talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+    `Getting Started with Policies`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVNICs.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPaddresses.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
+    """
+
+    #: A constant which can be used with the lifecycle_state property of a Vnic.
+    #: This constant has a value of "PROVISIONING"
+    LIFECYCLE_STATE_PROVISIONING = "PROVISIONING"
+
+    #: A constant which can be used with the lifecycle_state property of a Vnic.
+    #: This constant has a value of "AVAILABLE"
+    LIFECYCLE_STATE_AVAILABLE = "AVAILABLE"
+
+    #: A constant which can be used with the lifecycle_state property of a Vnic.
+    #: This constant has a value of "TERMINATING"
+    LIFECYCLE_STATE_TERMINATING = "TERMINATING"
+
+    #: A constant which can be used with the lifecycle_state property of a Vnic.
+    #: This constant has a value of "TERMINATED"
+    LIFECYCLE_STATE_TERMINATED = "TERMINATED"
 
     def __init__(self, **kwargs):
         """

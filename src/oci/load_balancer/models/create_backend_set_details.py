@@ -8,6 +8,13 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class CreateBackendSetDetails(object):
+    """
+    The configuration details for creating a backend set in a load balancer.
+    For more information on backend set configuration, see
+    `Managing Backend Sets`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/tasks/managingbackendsets.htm
+    """
 
     def __init__(self, **kwargs):
         """

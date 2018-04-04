@@ -8,6 +8,17 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class CreateDatabaseDetails(object):
+    """
+    CreateDatabaseDetails model.
+    """
+
+    #: A constant which can be used with the db_workload property of a CreateDatabaseDetails.
+    #: This constant has a value of "OLTP"
+    DB_WORKLOAD_OLTP = "OLTP"
+
+    #: A constant which can be used with the db_workload property of a CreateDatabaseDetails.
+    #: This constant has a value of "DSS"
+    DB_WORKLOAD_DSS = "DSS"
 
     def __init__(self, **kwargs):
         """

@@ -8,6 +8,39 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class DynamicGroup(object):
+    """
+    A dynamic group defines a matching rule. Every bare metal or virtual machine instance is deployed with an instance certificate.
+    The certificate contains metadata about the instance. This includes the instance OCID and the compartment OCID, along
+    with a few other optional properties. When an API call is made using this instance certificate as the authenticator,
+    the certificate can be matched to one or multiple dynamic groups. The instance can then get access to the API
+    based on the permissions granted in policies written for the dynamic groups.
+
+    This works like regular user/group membership. But in that case, the membership is a static relationship, whereas
+    in a dynamic group, the membership of an instance certificate to a dynamic group is determined during runtime.
+    For more information, see `Managing Dynamic Groups`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingdynamicgroups.htm
+    """
+
+    #: A constant which can be used with the lifecycle_state property of a DynamicGroup.
+    #: This constant has a value of "CREATING"
+    LIFECYCLE_STATE_CREATING = "CREATING"
+
+    #: A constant which can be used with the lifecycle_state property of a DynamicGroup.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a DynamicGroup.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a DynamicGroup.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a DynamicGroup.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_STATE_DELETED = "DELETED"
 
     def __init__(self, **kwargs):
         """

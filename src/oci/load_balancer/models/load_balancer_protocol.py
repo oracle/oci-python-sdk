@@ -8,6 +8,9 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class LoadBalancerProtocol(object):
+    """
+    The protocol that defines the type of traffic accepted by a listener.
+    """
 
     def __init__(self, **kwargs):
         """

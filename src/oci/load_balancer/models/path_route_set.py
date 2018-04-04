@@ -8,6 +8,12 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class PathRouteSet(object):
+    """
+    A named set of path route rules. For more information, see
+    `Managing Request Routing`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managingrequest.htm
+    """
 
     def __init__(self, **kwargs):
         """

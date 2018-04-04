@@ -8,6 +8,49 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class User(object):
+    """
+    An individual employee or system that needs to manage or use your company's Oracle Cloud Infrastructure
+    resources. Users might need to launch instances, manage remote disks, work with your cloud network, etc. Users
+    have one or more IAM Service credentials (:class:`ApiKey`,
+    :class:`UIPassword`, and :class:`SwiftPassword`).
+    For more information, see `User Credentials`__). End users of your
+    application are not typically IAM Service users. For conceptual information about users and other IAM Service
+    components, see `Overview of the IAM Service`__.
+
+    These users are created directly within the Oracle Cloud Infrastructure system, via the IAM service.
+    They are different from *federated users*, who authenticate themselves to the Oracle Cloud Infrastructure
+    Console via an identity provider. For more information, see
+    `Identity Providers and Federation`__.
+
+    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
+    talk to an administrator. If you're an administrator who needs to write policies to give users access,
+    see `Getting Started with Policies`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/usercredentials.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/federation.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
+    """
+
+    #: A constant which can be used with the lifecycle_state property of a User.
+    #: This constant has a value of "CREATING"
+    LIFECYCLE_STATE_CREATING = "CREATING"
+
+    #: A constant which can be used with the lifecycle_state property of a User.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a User.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a User.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a User.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_STATE_DELETED = "DELETED"
 
     def __init__(self, **kwargs):
         """

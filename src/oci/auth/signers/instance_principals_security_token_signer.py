@@ -76,7 +76,7 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
             return self.region
 
         response = requests.get(self.GET_REGION_URL)
-        region_raw = response.text.strip()
+        region_raw = response.text.strip().lower()
 
         # The region can be something like "phx" but internally we expect "us-phoenix-1", "us-ashburn-1" etc.
         if region_raw in oci.regions.REGIONS_SHORT_NAMES:

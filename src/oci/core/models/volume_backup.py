@@ -8,6 +8,58 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class VolumeBackup(object):
+    """
+    A point-in-time copy of a volume that can then be used to create a new block volume
+    or recover a block volume. For more information, see
+    `Overview of Cloud Volume Storage`__.
+
+    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
+    talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+    `Getting Started with Policies`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/overview.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
+    """
+
+    #: A constant which can be used with the lifecycle_state property of a VolumeBackup.
+    #: This constant has a value of "CREATING"
+    LIFECYCLE_STATE_CREATING = "CREATING"
+
+    #: A constant which can be used with the lifecycle_state property of a VolumeBackup.
+    #: This constant has a value of "AVAILABLE"
+    LIFECYCLE_STATE_AVAILABLE = "AVAILABLE"
+
+    #: A constant which can be used with the lifecycle_state property of a VolumeBackup.
+    #: This constant has a value of "TERMINATING"
+    LIFECYCLE_STATE_TERMINATING = "TERMINATING"
+
+    #: A constant which can be used with the lifecycle_state property of a VolumeBackup.
+    #: This constant has a value of "TERMINATED"
+    LIFECYCLE_STATE_TERMINATED = "TERMINATED"
+
+    #: A constant which can be used with the lifecycle_state property of a VolumeBackup.
+    #: This constant has a value of "FAULTY"
+    LIFECYCLE_STATE_FAULTY = "FAULTY"
+
+    #: A constant which can be used with the lifecycle_state property of a VolumeBackup.
+    #: This constant has a value of "REQUEST_RECEIVED"
+    LIFECYCLE_STATE_REQUEST_RECEIVED = "REQUEST_RECEIVED"
+
+    #: A constant which can be used with the source_type property of a VolumeBackup.
+    #: This constant has a value of "MANUAL"
+    SOURCE_TYPE_MANUAL = "MANUAL"
+
+    #: A constant which can be used with the source_type property of a VolumeBackup.
+    #: This constant has a value of "SCHEDULED"
+    SOURCE_TYPE_SCHEDULED = "SCHEDULED"
+
+    #: A constant which can be used with the type property of a VolumeBackup.
+    #: This constant has a value of "FULL"
+    TYPE_FULL = "FULL"
+
+    #: A constant which can be used with the type property of a VolumeBackup.
+    #: This constant has a value of "INCREMENTAL"
+    TYPE_INCREMENTAL = "INCREMENTAL"
 
     def __init__(self, **kwargs):
         """

@@ -8,6 +8,67 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class PublicIp(object):
+    """
+    A *public IP* is a conceptual term that refers to a public IP address and related properties.
+    The `publicIp` object is the API representation of a public IP.
+
+    There are two types of public IPs:
+    1. Ephemeral
+    2. Reserved
+
+    For more information and comparison of the two types,
+    see `Public IP Addresses`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingpublicIPs.htm
+    """
+
+    #: A constant which can be used with the lifecycle_state property of a PublicIp.
+    #: This constant has a value of "PROVISIONING"
+    LIFECYCLE_STATE_PROVISIONING = "PROVISIONING"
+
+    #: A constant which can be used with the lifecycle_state property of a PublicIp.
+    #: This constant has a value of "AVAILABLE"
+    LIFECYCLE_STATE_AVAILABLE = "AVAILABLE"
+
+    #: A constant which can be used with the lifecycle_state property of a PublicIp.
+    #: This constant has a value of "ASSIGNING"
+    LIFECYCLE_STATE_ASSIGNING = "ASSIGNING"
+
+    #: A constant which can be used with the lifecycle_state property of a PublicIp.
+    #: This constant has a value of "ASSIGNED"
+    LIFECYCLE_STATE_ASSIGNED = "ASSIGNED"
+
+    #: A constant which can be used with the lifecycle_state property of a PublicIp.
+    #: This constant has a value of "UNASSIGNING"
+    LIFECYCLE_STATE_UNASSIGNING = "UNASSIGNING"
+
+    #: A constant which can be used with the lifecycle_state property of a PublicIp.
+    #: This constant has a value of "UNASSIGNED"
+    LIFECYCLE_STATE_UNASSIGNED = "UNASSIGNED"
+
+    #: A constant which can be used with the lifecycle_state property of a PublicIp.
+    #: This constant has a value of "TERMINATING"
+    LIFECYCLE_STATE_TERMINATING = "TERMINATING"
+
+    #: A constant which can be used with the lifecycle_state property of a PublicIp.
+    #: This constant has a value of "TERMINATED"
+    LIFECYCLE_STATE_TERMINATED = "TERMINATED"
+
+    #: A constant which can be used with the lifetime property of a PublicIp.
+    #: This constant has a value of "EPHEMERAL"
+    LIFETIME_EPHEMERAL = "EPHEMERAL"
+
+    #: A constant which can be used with the lifetime property of a PublicIp.
+    #: This constant has a value of "RESERVED"
+    LIFETIME_RESERVED = "RESERVED"
+
+    #: A constant which can be used with the scope property of a PublicIp.
+    #: This constant has a value of "REGION"
+    SCOPE_REGION = "REGION"
+
+    #: A constant which can be used with the scope property of a PublicIp.
+    #: This constant has a value of "AVAILABILITY_DOMAIN"
+    SCOPE_AVAILABILITY_DOMAIN = "AVAILABILITY_DOMAIN"
 
     def __init__(self, **kwargs):
         """

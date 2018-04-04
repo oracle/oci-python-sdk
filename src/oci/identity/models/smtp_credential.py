@@ -8,6 +8,38 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class SmtpCredential(object):
+    """
+    Simple Mail Transfer Protocol (SMTP) credentials are needed to send email through Email Delivery.
+    The SMTP credentials are used for SMTP authentication with the service. The credentials never expire.
+    A user can have up to 2 SMTP credentials at a time.
+
+    **Note:** The credential set is always an Oracle-generated SMTP user name and password pair;
+    you cannot designate the SMTP user name or the SMTP password.
+
+    For more information, see `Managing User Credentials`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingcredentials.htm#SMTP
+    """
+
+    #: A constant which can be used with the lifecycle_state property of a SmtpCredential.
+    #: This constant has a value of "CREATING"
+    LIFECYCLE_STATE_CREATING = "CREATING"
+
+    #: A constant which can be used with the lifecycle_state property of a SmtpCredential.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a SmtpCredential.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a SmtpCredential.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a SmtpCredential.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_STATE_DELETED = "DELETED"
 
     def __init__(self, **kwargs):
         """

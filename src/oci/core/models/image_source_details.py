@@ -8,6 +8,17 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class ImageSourceDetails(object):
+    """
+    ImageSourceDetails model.
+    """
+
+    #: A constant which can be used with the source_image_type property of a ImageSourceDetails.
+    #: This constant has a value of "QCOW2"
+    SOURCE_IMAGE_TYPE_QCOW2 = "QCOW2"
+
+    #: A constant which can be used with the source_image_type property of a ImageSourceDetails.
+    #: This constant has a value of "VMDK"
+    SOURCE_IMAGE_TYPE_VMDK = "VMDK"
 
     def __init__(self, **kwargs):
         """

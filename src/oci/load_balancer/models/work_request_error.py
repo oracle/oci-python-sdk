@@ -8,6 +8,17 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class WorkRequestError(object):
+    """
+    An object returned in the event of a work request error.
+    """
+
+    #: A constant which can be used with the error_code property of a WorkRequestError.
+    #: This constant has a value of "BAD_INPUT"
+    ERROR_CODE_BAD_INPUT = "BAD_INPUT"
+
+    #: A constant which can be used with the error_code property of a WorkRequestError.
+    #: This constant has a value of "INTERNAL_ERROR"
+    ERROR_CODE_INTERNAL_ERROR = "INTERNAL_ERROR"
 
     def __init__(self, **kwargs):
         """

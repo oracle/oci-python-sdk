@@ -8,6 +8,17 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class ExportImageDetails(object):
+    """
+    The destination details for the image export.
+
+    Set `destinationType` to `objectStorageTuple`
+    and use :func:`export_image_via_object_storage_tuple_details`
+    when specifying the namespace, bucket name, and object name.
+
+    Set `destinationType` to `objectStorageUri` and
+    use :func:`export_image_via_object_storage_uri_details`
+    when specifying the Object Storage URL.
+    """
 
     def __init__(self, **kwargs):
         """

@@ -8,6 +8,36 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class FileSystem(object):
+    """
+    An NFS file system. To allow access to a file system, add it
+    to an export set and associate the export set with a mount
+    target. The same file system can be in multiple export sets and
+    associated with multiple mount targets.
+
+    To use any of the API operations, you must be authorized in an
+    IAM policy. If you're not authorized, talk to an
+    administrator. If you're an administrator who needs to write
+    policies to give users access, see `Getting Started with
+    Policies`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
+    """
+
+    #: A constant which can be used with the lifecycle_state property of a FileSystem.
+    #: This constant has a value of "CREATING"
+    LIFECYCLE_STATE_CREATING = "CREATING"
+
+    #: A constant which can be used with the lifecycle_state property of a FileSystem.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a FileSystem.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a FileSystem.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_STATE_DELETED = "DELETED"
 
     def __init__(self, **kwargs):
         """

@@ -8,6 +8,25 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class SnapshotSummary(object):
+    """
+    Summary information for a snapshot.
+    """
+
+    #: A constant which can be used with the lifecycle_state property of a SnapshotSummary.
+    #: This constant has a value of "CREATING"
+    LIFECYCLE_STATE_CREATING = "CREATING"
+
+    #: A constant which can be used with the lifecycle_state property of a SnapshotSummary.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a SnapshotSummary.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a SnapshotSummary.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_STATE_DELETED = "DELETED"
 
     def __init__(self, **kwargs):
         """

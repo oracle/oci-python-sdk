@@ -8,6 +8,110 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class VirtualCircuit(object):
+    """
+    For use with Oracle Cloud Infrastructure FastConnect.
+
+    A virtual circuit is an isolated network path that runs over one or more physical
+    network connections to provide a single, logical connection between the edge router
+    on the customer's existing network and Oracle Cloud Infrastructure. *Private*
+    virtual circuits support private peering, and *public* virtual circuits support
+    public peering. For more information, see `FastConnect Overview`__.
+
+    Each virtual circuit is made up of information shared between a customer, Oracle,
+    and a provider (if the customer is using FastConnect via a provider). Who fills in
+    a given property of a virtual circuit depends on whether the BGP session related to
+    that virtual circuit goes from the customer's edge router to Oracle, or from the provider's
+    edge router to Oracle. Also, in the case where the customer is using a provider, values
+    for some of the properties may not be present immediately, but may get filled in as the
+    provider and Oracle each do their part to provision the virtual circuit.
+
+    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
+    talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+    `Getting Started with Policies`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
+    """
+
+    #: A constant which can be used with the bgp_management property of a VirtualCircuit.
+    #: This constant has a value of "CUSTOMER_MANAGED"
+    BGP_MANAGEMENT_CUSTOMER_MANAGED = "CUSTOMER_MANAGED"
+
+    #: A constant which can be used with the bgp_management property of a VirtualCircuit.
+    #: This constant has a value of "PROVIDER_MANAGED"
+    BGP_MANAGEMENT_PROVIDER_MANAGED = "PROVIDER_MANAGED"
+
+    #: A constant which can be used with the bgp_management property of a VirtualCircuit.
+    #: This constant has a value of "ORACLE_MANAGED"
+    BGP_MANAGEMENT_ORACLE_MANAGED = "ORACLE_MANAGED"
+
+    #: A constant which can be used with the bgp_session_state property of a VirtualCircuit.
+    #: This constant has a value of "UP"
+    BGP_SESSION_STATE_UP = "UP"
+
+    #: A constant which can be used with the bgp_session_state property of a VirtualCircuit.
+    #: This constant has a value of "DOWN"
+    BGP_SESSION_STATE_DOWN = "DOWN"
+
+    #: A constant which can be used with the lifecycle_state property of a VirtualCircuit.
+    #: This constant has a value of "PENDING_PROVIDER"
+    LIFECYCLE_STATE_PENDING_PROVIDER = "PENDING_PROVIDER"
+
+    #: A constant which can be used with the lifecycle_state property of a VirtualCircuit.
+    #: This constant has a value of "VERIFYING"
+    LIFECYCLE_STATE_VERIFYING = "VERIFYING"
+
+    #: A constant which can be used with the lifecycle_state property of a VirtualCircuit.
+    #: This constant has a value of "PROVISIONING"
+    LIFECYCLE_STATE_PROVISIONING = "PROVISIONING"
+
+    #: A constant which can be used with the lifecycle_state property of a VirtualCircuit.
+    #: This constant has a value of "PROVISIONED"
+    LIFECYCLE_STATE_PROVISIONED = "PROVISIONED"
+
+    #: A constant which can be used with the lifecycle_state property of a VirtualCircuit.
+    #: This constant has a value of "FAILED"
+    LIFECYCLE_STATE_FAILED = "FAILED"
+
+    #: A constant which can be used with the lifecycle_state property of a VirtualCircuit.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a VirtualCircuit.
+    #: This constant has a value of "TERMINATING"
+    LIFECYCLE_STATE_TERMINATING = "TERMINATING"
+
+    #: A constant which can be used with the lifecycle_state property of a VirtualCircuit.
+    #: This constant has a value of "TERMINATED"
+    LIFECYCLE_STATE_TERMINATED = "TERMINATED"
+
+    #: A constant which can be used with the provider_state property of a VirtualCircuit.
+    #: This constant has a value of "ACTIVE"
+    PROVIDER_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the provider_state property of a VirtualCircuit.
+    #: This constant has a value of "INACTIVE"
+    PROVIDER_STATE_INACTIVE = "INACTIVE"
+
+    #: A constant which can be used with the service_type property of a VirtualCircuit.
+    #: This constant has a value of "COLOCATED"
+    SERVICE_TYPE_COLOCATED = "COLOCATED"
+
+    #: A constant which can be used with the service_type property of a VirtualCircuit.
+    #: This constant has a value of "LAYER2"
+    SERVICE_TYPE_LAYER2 = "LAYER2"
+
+    #: A constant which can be used with the service_type property of a VirtualCircuit.
+    #: This constant has a value of "LAYER3"
+    SERVICE_TYPE_LAYER3 = "LAYER3"
+
+    #: A constant which can be used with the type property of a VirtualCircuit.
+    #: This constant has a value of "PUBLIC"
+    TYPE_PUBLIC = "PUBLIC"
+
+    #: A constant which can be used with the type property of a VirtualCircuit.
+    #: This constant has a value of "PRIVATE"
+    TYPE_PRIVATE = "PRIVATE"
 
     def __init__(self, **kwargs):
         """

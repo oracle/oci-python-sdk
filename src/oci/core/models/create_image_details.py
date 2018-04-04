@@ -8,6 +8,21 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class CreateImageDetails(object):
+    """
+    Either instanceId or imageSourceDetails must be provided in addition to other required parameters.
+    """
+
+    #: A constant which can be used with the launch_mode property of a CreateImageDetails.
+    #: This constant has a value of "NATIVE"
+    LAUNCH_MODE_NATIVE = "NATIVE"
+
+    #: A constant which can be used with the launch_mode property of a CreateImageDetails.
+    #: This constant has a value of "EMULATED"
+    LAUNCH_MODE_EMULATED = "EMULATED"
+
+    #: A constant which can be used with the launch_mode property of a CreateImageDetails.
+    #: This constant has a value of "CUSTOM"
+    LAUNCH_MODE_CUSTOM = "CUSTOM"
 
     def __init__(self, **kwargs):
         """

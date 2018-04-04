@@ -8,6 +8,32 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class VolumeAttachment(object):
+    """
+    A base object for all types of attachments between a storage volume and an instance.
+    For specific details about iSCSI attachments, see
+    :class:`IScsiVolumeAttachment`.
+
+    For general information about volume attachments, see
+    `Overview of Block Volume Storage`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/overview.htm
+    """
+
+    #: A constant which can be used with the lifecycle_state property of a VolumeAttachment.
+    #: This constant has a value of "ATTACHING"
+    LIFECYCLE_STATE_ATTACHING = "ATTACHING"
+
+    #: A constant which can be used with the lifecycle_state property of a VolumeAttachment.
+    #: This constant has a value of "ATTACHED"
+    LIFECYCLE_STATE_ATTACHED = "ATTACHED"
+
+    #: A constant which can be used with the lifecycle_state property of a VolumeAttachment.
+    #: This constant has a value of "DETACHING"
+    LIFECYCLE_STATE_DETACHING = "DETACHING"
+
+    #: A constant which can be used with the lifecycle_state property of a VolumeAttachment.
+    #: This constant has a value of "DETACHED"
+    LIFECYCLE_STATE_DETACHED = "DETACHED"
 
     def __init__(self, **kwargs):
         """

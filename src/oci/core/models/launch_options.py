@@ -8,6 +8,57 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class LaunchOptions(object):
+    """
+    Options for tuning compatibility and performance of VM shapes.
+    """
+
+    #: A constant which can be used with the boot_volume_type property of a LaunchOptions.
+    #: This constant has a value of "ISCSI"
+    BOOT_VOLUME_TYPE_ISCSI = "ISCSI"
+
+    #: A constant which can be used with the boot_volume_type property of a LaunchOptions.
+    #: This constant has a value of "SCSI"
+    BOOT_VOLUME_TYPE_SCSI = "SCSI"
+
+    #: A constant which can be used with the boot_volume_type property of a LaunchOptions.
+    #: This constant has a value of "IDE"
+    BOOT_VOLUME_TYPE_IDE = "IDE"
+
+    #: A constant which can be used with the boot_volume_type property of a LaunchOptions.
+    #: This constant has a value of "VFIO"
+    BOOT_VOLUME_TYPE_VFIO = "VFIO"
+
+    #: A constant which can be used with the firmware property of a LaunchOptions.
+    #: This constant has a value of "BIOS"
+    FIRMWARE_BIOS = "BIOS"
+
+    #: A constant which can be used with the firmware property of a LaunchOptions.
+    #: This constant has a value of "UEFI_64"
+    FIRMWARE_UEFI_64 = "UEFI_64"
+
+    #: A constant which can be used with the network_type property of a LaunchOptions.
+    #: This constant has a value of "E1000"
+    NETWORK_TYPE_E1000 = "E1000"
+
+    #: A constant which can be used with the network_type property of a LaunchOptions.
+    #: This constant has a value of "VFIO"
+    NETWORK_TYPE_VFIO = "VFIO"
+
+    #: A constant which can be used with the remote_data_volume_type property of a LaunchOptions.
+    #: This constant has a value of "ISCSI"
+    REMOTE_DATA_VOLUME_TYPE_ISCSI = "ISCSI"
+
+    #: A constant which can be used with the remote_data_volume_type property of a LaunchOptions.
+    #: This constant has a value of "SCSI"
+    REMOTE_DATA_VOLUME_TYPE_SCSI = "SCSI"
+
+    #: A constant which can be used with the remote_data_volume_type property of a LaunchOptions.
+    #: This constant has a value of "IDE"
+    REMOTE_DATA_VOLUME_TYPE_IDE = "IDE"
+
+    #: A constant which can be used with the remote_data_volume_type property of a LaunchOptions.
+    #: This constant has a value of "VFIO"
+    REMOTE_DATA_VOLUME_TYPE_VFIO = "VFIO"
 
     def __init__(self, **kwargs):
         """

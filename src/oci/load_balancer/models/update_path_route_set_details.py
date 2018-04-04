@@ -8,6 +8,9 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class UpdatePathRouteSetDetails(object):
+    """
+    An updated set of path route rules that overwrites the existing set of rules.
+    """
 
     def __init__(self, **kwargs):
         """

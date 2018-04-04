@@ -15,7 +15,8 @@ SERVICE_ENDPOINTS_FILE_LOCATION = "src/oci/service_endpoints.py"
 
 # this is to support specs that contain multiple services
 SPECS_TO_SERVICES = {
-    "core": ["blockstorage", "compute", "virtual_network"]
+    "core": ["blockstorage", "compute", "virtual_network"],
+    "key_management": ["kms_crypto", "kms_provisioning", "kms_vault"]
 }
 
 ROOT_INIT_FILE_TEMPLATE = """from . import {spec_names}

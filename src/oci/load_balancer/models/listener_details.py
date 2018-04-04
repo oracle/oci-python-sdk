@@ -8,6 +8,9 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class ListenerDetails(object):
+    """
+    The listener's configuration details.
+    """
 
     def __init__(self, **kwargs):
         """
