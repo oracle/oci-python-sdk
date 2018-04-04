@@ -95,6 +95,7 @@ GENERATE_EXECUTION_TEMPLATE = """
             <specName>{spec_name}</specName>
             <generateInitFile>true</generateInitFile>
             <endpoint>{endpoint}</endpoint>
+            {regional_non_regional_service_overrides}
         </additionalProperties>
         <featureIdConfigFile>${{project.basedir}}/featureId.yaml</featureIdConfigFile>
     </configuration>
@@ -131,7 +132,7 @@ def generate_and_add_property_element(pom, spec_name, spec_path_relative_to_jar)
     content = SPEC_FILE_PROPERTY_TEMPLATE.format(
         spec_name=spec_name,
         spec_path_relative_to_jar=spec_path_relative_to_jar)
-    
+
     property_element = ET.fromstring(content)
 
     xpath = ".//ns:properties"
@@ -145,7 +146,7 @@ def generate_and_add_unpack_element(pom, spec_name, group_id, artifact_id, spec_
         group_id=group_id,
         artifact_id=artifact_id,
         spec_path_relative_to_jar=spec_path_relative_to_jar)
-    
+
     unpack_element = ET.fromstring(content)
 
     # find maven-dependency-plugin where unpacking happens
@@ -159,7 +160,7 @@ def generate_and_add_prefer_element(pom, spec_name, group_id, artifact_id, spec_
         group_id=group_id,
         artifact_id=artifact_id,
         spec_path_relative_to_jar=spec_path_relative_to_jar)
-    
+
     unpack_element = ET.fromstring(content)
 
     # find maven-dependency-plugin where unpacking happens
@@ -173,7 +174,7 @@ def generate_and_add_preprocess_element(pom, spec_name, group_id, artifact_id, s
         group_id=group_id,
         artifact_id=artifact_id,
         spec_path_relative_to_jar=spec_path_relative_to_jar)
-    
+
     unpack_element = ET.fromstring(content)
 
     # find maven-dependency-plugin where unpacking happens
@@ -181,12 +182,23 @@ def generate_and_add_preprocess_element(pom, spec_name, group_id, artifact_id, s
     unpack_plugin_executions.append(unpack_element)
 
 
-def generate_and_add_generate_section(pom, spec_name, spec_path_relative_to_jar, endpoint, spec_generation_type):
+def generate_and_add_generate_section(pom, spec_name, spec_path_relative_to_jar, endpoint, spec_generation_type, regional_sub_service_overrides, non_regional_sub_service_overrides):
+    regional_non_regional_service_overrides_content = ''
+    if regional_sub_service_overrides or non_regional_sub_service_overrides:
+        if regional_sub_service_overrides:
+            for override in regional_sub_service_overrides:
+                regional_non_regional_service_overrides_content += '<isRegionalClient.{service_name}>true</isRegionalClient.{service_name}>\n'.format(service_name=override)
+
+        if non_regional_sub_service_overrides:
+            for override in non_regional_sub_service_overrides:
+                regional_non_regional_service_overrides_content += '<isRegionalClient.{service_name}>false</isRegionalClient.{service_name}>\n'.format(service_name=override)
+
     content = GENERATE_EXECUTION_TEMPLATE.format(
         spec_name=spec_name,
         spec_path_relative_to_jar=spec_path_relative_to_jar,
         endpoint=endpoint,
-        spec_generation_type=spec_generation_type)
+        spec_generation_type=spec_generation_type,
+        regional_non_regional_service_overrides=regional_non_regional_service_overrides_content)
 
     generate_element = ET.fromstring(content)
 
@@ -267,7 +279,20 @@ def add_spec_module_to_github_whitelist(spec_name):
 @click.option('--endpoint', help='The base endpoint for the service (e.g. https://iaas.{domain}/20160918)')
 @click.option('--version', required=True, help='The version of the spec artifact (e.g. 0.0.1-SNAPSHOT')
 @click.option('--spec-generation-type', help='The generation type: PUBLIC or PREVIEW')
-def add_or_update_spec(artifact_id, group_id, spec_name, relative_spec_path, endpoint, version, spec_generation_type):
+@click.option('--regional-sub-service-overrides', multiple=True, help="""For specs that contain multiple services
+(because there are operations with different tags in the spec), which of those services should be considered regional.
+Services are considered as regional by default.
+
+This should be the snake_cased name of the tag/service. For example kms_provisioning instead of kmsProvisioning.
+
+This parameter can be provided multiple times""")
+@click.option('--non-regional-sub-service-overrides', multiple=True, help="""For specs that contain multiple services
+(because there are operations with different tags in the spec), which of those services should be considered non-regional.
+
+This should be the snake_cased name of the tag/service. For example kms_provisioning instead of kmsProvisioning.
+
+This parameter can be provided multiple times""")
+def add_or_update_spec(artifact_id, group_id, spec_name, relative_spec_path, endpoint, version, spec_generation_type, regional_sub_service_overrides, non_regional_sub_service_overrides):
     pom = parse_pom()
 
     # determine if this artifact is already in the spec
@@ -287,7 +312,7 @@ def add_or_update_spec(artifact_id, group_id, spec_name, relative_spec_path, end
 
         if not endpoint:
             raise UsageError('Must specify --endpoint for new spec')
-        
+
         if not spec_generation_type:
             spec_generation_type = 'PUBLIC'
 
@@ -296,7 +321,7 @@ def add_or_update_spec(artifact_id, group_id, spec_name, relative_spec_path, end
         generate_and_add_unpack_element(pom, spec_name, group_id, artifact_id, relative_spec_path)
         generate_and_add_prefer_element(pom, spec_name, group_id, artifact_id, relative_spec_path)
         generate_and_add_preprocess_element(pom, spec_name, group_id, artifact_id, relative_spec_path)
-        generate_and_add_generate_section(pom, spec_name, relative_spec_path, endpoint, spec_generation_type)
+        generate_and_add_generate_section(pom, spec_name, relative_spec_path, endpoint, spec_generation_type, regional_sub_service_overrides, non_regional_sub_service_overrides)
         generate_and_add_clean_section(pom, spec_name)
         generate_and_add_dependency_management_section(pom, group_id, artifact_id, version)
         generate_and_add_initial_dependency_section(pom, group_id, artifact_id)
@@ -304,7 +329,7 @@ def add_or_update_spec(artifact_id, group_id, spec_name, relative_spec_path, end
 
     # pretty print pom
     indent(pom.getroot())
-    pom.write(POM_LOCATION, encoding="UTF-8", xml_declaration=True) 
+    pom.write(POM_LOCATION, encoding="UTF-8", xml_declaration=True)
 
     print('Success!')
 

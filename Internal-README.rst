@@ -123,7 +123,7 @@ whatever environment is used by your interpreter, and not a tox env)::
 Some tests are marked as slow. These will be run by default, but can
 be skipped by specifying '--fast' when running py.test. Also,
 it is recommended to run tests with the '-s' option so that stdout
-from the tests is shown. Example run:
+from the tests is shown. Example run::
 
     py.test --fast -s
 
@@ -190,7 +190,7 @@ maven-based process.
 This will hopefully change in the near future.
 
 Running Tests Against IAD
-================
+==========================
 
 By default the tests will run against PHX.  In order to run the tests against IAD you have to change a few
 parameters as well as some values that are hardcoded in the tests.
@@ -198,35 +198,65 @@ parameters as well as some values that are hardcoded in the tests.
 To run the tests using the 'IAD' profile in tests/resources/config, you can use the '--config-profile' parameter.
 For example:
 
+::
+
     tox -- --config-profile IAD
 
+
 You must also update the following locations in code where we are using OCIDs that are hardcoded for PHX:
-- tests/integ/util.py, uncomment the lines at the top under 'IAD' to specify the correct compartment ID and AD for IAD
-- tests/integ/test_launch_instance_options.py, update image OCIDs to use valid image OCIDs for IAD
-- tests/integ/test_launch_instance_tutorial.py, update image OCIDs to use valid image OCIDs for IAD
-- tests/integ/test_object_storage.py, update namespace from 'internalbriangustafson' to 'bmcs-dex-us-ashburn-1'
+
+* tests/integ/util.py, uncomment the lines at the top under 'IAD' to specify the correct compartment ID and AD for IAD
+* tests/integ/test_launch_instance_options.py, update image OCIDs to use valid image OCIDs for IAD
+* tests/integ/test_launch_instance_tutorial.py, update image OCIDs to use valid image OCIDs for IAD
+* tests/integ/test_object_storage.py, update namespace from 'internalbriangustafson' to 'bmcs-dex-us-ashburn-1'
 
 Running the Code Generator
-================
+===========================
 
-You run the code generator by executing
+You run the code generator by executing::
 
     mvn clean install
 
-Note that at this time, it will execute the ``merge_and_validate_spec.py`` script, which is part of the ``coreservices-api-spec`` artifact, and execute it. That script only works with Python 2.x, and not with Python 3.x. That means when you want to run the code generator, ``python`` on the command line has to run the Python 2.x interpreter.
 
-    $ python --version
-    Python 2.7.10
+Note that at this time, it will execute the ``merge_and_validate_spec.py`` script, which is part of the ``coreservices-api-spec`` artifact, and execute it. As long as you are running in a virtual environment which was previously set up for the SDK you should be fine, but you may need to install the following dependencies: 
 
-If it returns something that is 3.x, you can use ``virtualenv`` to create a virtual environment that runs Python 2.x (of course, you have to have Python 2.x installed somewhere):
+::
 
-    # Install the virtual environment in the current directory
-    virtualenv --python=<path to Python 2.x executable> temp/python2
-    # Activate virtual environment
-    source temp/python2/bin/activate
-    # Install packages
     pip install PyYAML
     pip install six
     
     # Now you can run the code generator
     mvn clean install
+
+
+Adding support for new services
+================================
+The ``scripts/add_or_update_spec.py`` script can be used to add a new service to the SDK. An example of running this script is: 
+
+::
+
+  python scripts/add_or_update_spec.py --artifact-id kms-api-spec \
+    --group-id com.oracle.pic.kms \
+    --spec-name key_management \
+    --relative-spec-path kms-api-spec-20180201.yaml \
+    --endpoint https://keymanagement.{domain}/20180201 \
+    --version 0.0.40 \
+    --spec-generation-type PREVIEW \
+    --non-regional-client \
+    --regional-sub-service-overrides kms_provisioning
+
+
+The script can be run as ``python scripts/add_or_update_spec.py --help`` to see a description of each option.
+
+After you've added the service, you can run the code generator using the steps from the "Running the Code Generator" section of this readme.
+
+Updating existing service spec versions
+=========================================
+The ``scripts/add_or_update_spec.py`` script can be used to update the spec version of an existing service. An example of running this script is:
+
+::
+
+  python scripts/add_or_update_spec.py --artifact-id coreservices-api-spec --version 0.1.137
+
+
+Note that we just need to provide the ``--artifact-id`` and the ``--version``
