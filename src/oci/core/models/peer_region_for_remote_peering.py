@@ -8,6 +8,11 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class PeerRegionForRemotePeering(object):
+    """
+    Details about a region that supports remote VCN peering. For more information, see `VCN Peering`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/VCNpeering.htm
+    """
 
     def __init__(self, **kwargs):
         """

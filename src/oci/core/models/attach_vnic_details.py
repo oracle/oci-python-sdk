@@ -8,6 +8,9 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class AttachVnicDetails(object):
+    """
+    AttachVnicDetails model.
+    """
 
     def __init__(self, **kwargs):
         """

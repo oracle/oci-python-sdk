@@ -8,6 +8,44 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class Backup(object):
+    """
+    A database backup
+    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see `Getting Started with Policies`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
+    """
+
+    #: A constant which can be used with the lifecycle_state property of a Backup.
+    #: This constant has a value of "CREATING"
+    LIFECYCLE_STATE_CREATING = "CREATING"
+
+    #: A constant which can be used with the lifecycle_state property of a Backup.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a Backup.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a Backup.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_STATE_DELETED = "DELETED"
+
+    #: A constant which can be used with the lifecycle_state property of a Backup.
+    #: This constant has a value of "FAILED"
+    LIFECYCLE_STATE_FAILED = "FAILED"
+
+    #: A constant which can be used with the lifecycle_state property of a Backup.
+    #: This constant has a value of "RESTORING"
+    LIFECYCLE_STATE_RESTORING = "RESTORING"
+
+    #: A constant which can be used with the type property of a Backup.
+    #: This constant has a value of "INCREMENTAL"
+    TYPE_INCREMENTAL = "INCREMENTAL"
+
+    #: A constant which can be used with the type property of a Backup.
+    #: This constant has a value of "FULL"
+    TYPE_FULL = "FULL"
 
     def __init__(self, **kwargs):
         """

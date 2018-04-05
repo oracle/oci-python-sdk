@@ -8,6 +8,10 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class UdpOptions(object):
+    """
+    Optional object to specify ports for a UDP rule. If you specify UDP as the
+    protocol but omit this object, then all ports are allowed.
+    """
 
     def __init__(self, **kwargs):
         """

@@ -8,6 +8,51 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class CrossConnect(object):
+    """
+    For use with Oracle Cloud Infrastructure FastConnect. A cross-connect represents a
+    physical connection between an existing network and Oracle. Customers who are colocated
+    with Oracle in a FastConnect location create and use cross-connects. For more
+    information, see `FastConnect Overview`__.
+
+    Oracle recommends you create each cross-connect in a
+    :class:`CrossConnectGroup` so you can use link aggregation
+    with the connection.
+
+    **Note:** If you're a provider who is setting up a physical connection to Oracle so customers
+    can use FastConnect over the connection, be aware that your connection is modeled the
+    same way as a colocated customer's (with `CrossConnect` and `CrossConnectGroup` objects, and so on).
+
+    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
+    talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+    `Getting Started with Policies`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
+    """
+
+    #: A constant which can be used with the lifecycle_state property of a CrossConnect.
+    #: This constant has a value of "PENDING_CUSTOMER"
+    LIFECYCLE_STATE_PENDING_CUSTOMER = "PENDING_CUSTOMER"
+
+    #: A constant which can be used with the lifecycle_state property of a CrossConnect.
+    #: This constant has a value of "PROVISIONING"
+    LIFECYCLE_STATE_PROVISIONING = "PROVISIONING"
+
+    #: A constant which can be used with the lifecycle_state property of a CrossConnect.
+    #: This constant has a value of "PROVISIONED"
+    LIFECYCLE_STATE_PROVISIONED = "PROVISIONED"
+
+    #: A constant which can be used with the lifecycle_state property of a CrossConnect.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a CrossConnect.
+    #: This constant has a value of "TERMINATING"
+    LIFECYCLE_STATE_TERMINATING = "TERMINATING"
+
+    #: A constant which can be used with the lifecycle_state property of a CrossConnect.
+    #: This constant has a value of "TERMINATED"
+    LIFECYCLE_STATE_TERMINATED = "TERMINATED"
 
     def __init__(self, **kwargs):
         """

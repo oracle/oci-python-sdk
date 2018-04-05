@@ -8,6 +8,12 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class Backend(object):
+    """
+    The configuration of a backend server that is a member of a load balancer backend set.
+    For more information, see `Managing Backend Servers`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managingbackendservers.htm
+    """
 
     def __init__(self, **kwargs):
         """

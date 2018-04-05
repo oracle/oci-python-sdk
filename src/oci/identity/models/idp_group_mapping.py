@@ -8,6 +8,41 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class IdpGroupMapping(object):
+    """
+    A mapping between a single group defined by the identity provider (IdP) you're federating with
+    and a single IAM Service :class:`Group` in Oracle Cloud Infrastructure.
+    For more information about group mappings and what they're for, see
+    `Identity Providers and Federation`__.
+
+    A given IdP group can be mapped to zero, one, or multiple IAM Service groups, and vice versa.
+    But each `IdPGroupMapping` object is between only a single IdP group and IAM Service group.
+    Each `IdPGroupMapping` object has its own OCID.
+
+    **Note:** Any users who are in more than 50 IdP groups cannot be authenticated to use the Oracle
+    Cloud Infrastructure Console.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/federation.htm
+    """
+
+    #: A constant which can be used with the lifecycle_state property of a IdpGroupMapping.
+    #: This constant has a value of "CREATING"
+    LIFECYCLE_STATE_CREATING = "CREATING"
+
+    #: A constant which can be used with the lifecycle_state property of a IdpGroupMapping.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a IdpGroupMapping.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a IdpGroupMapping.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a IdpGroupMapping.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_STATE_DELETED = "DELETED"
 
     def __init__(self, **kwargs):
         """

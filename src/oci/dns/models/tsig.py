@@ -8,6 +8,11 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class TSIG(object):
+    """
+    A `TSIG`__ key.
+
+    __ https://tools.ietf.org/html/rfc2845
+    """
 
     def __init__(self, **kwargs):
         """

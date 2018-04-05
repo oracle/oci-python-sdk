@@ -8,6 +8,9 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class SSLConfigurationDetails(object):
+    """
+    The load balancer's SSL handling configuration details.
+    """
 
     def __init__(self, **kwargs):
         """

@@ -8,6 +8,17 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class CreateVirtualCircuitDetails(object):
+    """
+    CreateVirtualCircuitDetails model.
+    """
+
+    #: A constant which can be used with the type property of a CreateVirtualCircuitDetails.
+    #: This constant has a value of "PUBLIC"
+    TYPE_PUBLIC = "PUBLIC"
+
+    #: A constant which can be used with the type property of a CreateVirtualCircuitDetails.
+    #: This constant has a value of "PRIVATE"
+    TYPE_PRIVATE = "PRIVATE"
 
     def __init__(self, **kwargs):
         """

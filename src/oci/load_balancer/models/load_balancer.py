@@ -8,6 +8,43 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class LoadBalancer(object):
+    """
+    The properties that define a load balancer. For more information, see
+    `Managing a Load Balancer`__.
+
+    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
+    talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+    `Getting Started with Policies`__.
+
+    For information about endpoints and signing API requests, see
+    `About the API`__. For information about available SDKs and tools, see
+    `SDKS and Other Tools`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managingloadbalancer.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/usingapi.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdks.htm
+    """
+
+    #: A constant which can be used with the lifecycle_state property of a LoadBalancer.
+    #: This constant has a value of "CREATING"
+    LIFECYCLE_STATE_CREATING = "CREATING"
+
+    #: A constant which can be used with the lifecycle_state property of a LoadBalancer.
+    #: This constant has a value of "FAILED"
+    LIFECYCLE_STATE_FAILED = "FAILED"
+
+    #: A constant which can be used with the lifecycle_state property of a LoadBalancer.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a LoadBalancer.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a LoadBalancer.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_STATE_DELETED = "DELETED"
 
     def __init__(self, **kwargs):
         """

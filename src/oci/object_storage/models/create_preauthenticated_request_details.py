@@ -8,6 +8,25 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class CreatePreauthenticatedRequestDetails(object):
+    """
+    CreatePreauthenticatedRequestDetails model.
+    """
+
+    #: A constant which can be used with the access_type property of a CreatePreauthenticatedRequestDetails.
+    #: This constant has a value of "ObjectRead"
+    ACCESS_TYPE_OBJECT_READ = "ObjectRead"
+
+    #: A constant which can be used with the access_type property of a CreatePreauthenticatedRequestDetails.
+    #: This constant has a value of "ObjectWrite"
+    ACCESS_TYPE_OBJECT_WRITE = "ObjectWrite"
+
+    #: A constant which can be used with the access_type property of a CreatePreauthenticatedRequestDetails.
+    #: This constant has a value of "ObjectReadWrite"
+    ACCESS_TYPE_OBJECT_READ_WRITE = "ObjectReadWrite"
+
+    #: A constant which can be used with the access_type property of a CreatePreauthenticatedRequestDetails.
+    #: This constant has a value of "AnyObjectWrite"
+    ACCESS_TYPE_ANY_OBJECT_WRITE = "AnyObjectWrite"
 
     def __init__(self, **kwargs):
         """

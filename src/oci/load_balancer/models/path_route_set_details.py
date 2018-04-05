@@ -8,6 +8,9 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class PathRouteSetDetails(object):
+    """
+    A set of path route rules.
+    """
 
     def __init__(self, **kwargs):
         """

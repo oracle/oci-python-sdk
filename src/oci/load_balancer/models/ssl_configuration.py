@@ -8,6 +8,11 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class SSLConfiguration(object):
+    """
+    A listener's SSL handling configuration.
+
+    To use SSL, a listener must be associated with a :class:`Certificate`.
+    """
 
     def __init__(self, **kwargs):
         """

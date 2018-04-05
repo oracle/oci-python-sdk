@@ -8,6 +8,29 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class PatchHistoryEntry(object):
+    """
+    The record of a patch action on a specified target.
+    """
+
+    #: A constant which can be used with the action property of a PatchHistoryEntry.
+    #: This constant has a value of "APPLY"
+    ACTION_APPLY = "APPLY"
+
+    #: A constant which can be used with the action property of a PatchHistoryEntry.
+    #: This constant has a value of "PRECHECK"
+    ACTION_PRECHECK = "PRECHECK"
+
+    #: A constant which can be used with the lifecycle_state property of a PatchHistoryEntry.
+    #: This constant has a value of "IN_PROGRESS"
+    LIFECYCLE_STATE_IN_PROGRESS = "IN_PROGRESS"
+
+    #: A constant which can be used with the lifecycle_state property of a PatchHistoryEntry.
+    #: This constant has a value of "SUCCEEDED"
+    LIFECYCLE_STATE_SUCCEEDED = "SUCCEEDED"
+
+    #: A constant which can be used with the lifecycle_state property of a PatchHistoryEntry.
+    #: This constant has a value of "FAILED"
+    LIFECYCLE_STATE_FAILED = "FAILED"
 
     def __init__(self, **kwargs):
         """

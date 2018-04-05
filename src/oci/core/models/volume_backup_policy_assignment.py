@@ -8,6 +8,9 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class VolumeBackupPolicyAssignment(object):
+    """
+    Specifies that a particular volume backup policy is assigned to an asset such as a volume.
+    """
 
     def __init__(self, **kwargs):
         """

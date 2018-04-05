@@ -16,6 +16,9 @@ missing = Sentinel("Missing")
 
 
 class LoadBalancerClient(object):
+    """
+    API for the Load Balancing Service
+    """
 
     def __init__(self, config, **kwargs):
         validate_config(config, signer=kwargs.get('signer'))
@@ -30,7 +33,14 @@ class LoadBalancerClient(object):
                 pass_phrase=get_config_value_or_default(config, "pass_phrase"),
                 private_key_content=config.get("key_content")
             )
-        self.base_client = BaseClient("load_balancer", config, signer, load_balancer_type_mapping)
+
+        base_client_init_kwargs = {
+            'regional_client': True,
+            'service_endpoint': kwargs.get('service_endpoint'),
+            'timeout': kwargs.get('timeout'),
+            'base_path': '/20170115'
+        }
+        self.base_client = BaseClient("load_balancer", config, signer, load_balancer_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
 
     def create_backend(self, create_backend_details, load_balancer_id, backend_set_name, **kwargs):

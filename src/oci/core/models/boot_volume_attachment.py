@@ -8,6 +8,25 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class BootVolumeAttachment(object):
+    """
+    Represents an attachment between a boot volume and an instance.
+    """
+
+    #: A constant which can be used with the lifecycle_state property of a BootVolumeAttachment.
+    #: This constant has a value of "ATTACHING"
+    LIFECYCLE_STATE_ATTACHING = "ATTACHING"
+
+    #: A constant which can be used with the lifecycle_state property of a BootVolumeAttachment.
+    #: This constant has a value of "ATTACHED"
+    LIFECYCLE_STATE_ATTACHED = "ATTACHED"
+
+    #: A constant which can be used with the lifecycle_state property of a BootVolumeAttachment.
+    #: This constant has a value of "DETACHING"
+    LIFECYCLE_STATE_DETACHING = "DETACHING"
+
+    #: A constant which can be used with the lifecycle_state property of a BootVolumeAttachment.
+    #: This constant has a value of "DETACHED"
+    LIFECYCLE_STATE_DETACHED = "DETACHED"
 
     def __init__(self, **kwargs):
         """

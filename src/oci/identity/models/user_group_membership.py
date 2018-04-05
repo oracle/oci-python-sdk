@@ -8,6 +8,30 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class UserGroupMembership(object):
+    """
+    An object that represents the membership of a user in a group. When you add a user to a group, the result is a
+    `UserGroupMembership` with its own OCID. To remove a user from a group, you delete the `UserGroupMembership` object.
+    """
+
+    #: A constant which can be used with the lifecycle_state property of a UserGroupMembership.
+    #: This constant has a value of "CREATING"
+    LIFECYCLE_STATE_CREATING = "CREATING"
+
+    #: A constant which can be used with the lifecycle_state property of a UserGroupMembership.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a UserGroupMembership.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a UserGroupMembership.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a UserGroupMembership.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_STATE_DELETED = "DELETED"
 
     def __init__(self, **kwargs):
         """

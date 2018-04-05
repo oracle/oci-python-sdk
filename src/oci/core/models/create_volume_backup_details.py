@@ -8,6 +8,17 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class CreateVolumeBackupDetails(object):
+    """
+    CreateVolumeBackupDetails model.
+    """
+
+    #: A constant which can be used with the type property of a CreateVolumeBackupDetails.
+    #: This constant has a value of "FULL"
+    TYPE_FULL = "FULL"
+
+    #: A constant which can be used with the type property of a CreateVolumeBackupDetails.
+    #: This constant has a value of "INCREMENTAL"
+    TYPE_INCREMENTAL = "INCREMENTAL"
 
     def __init__(self, **kwargs):
         """

@@ -8,6 +8,9 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class ConnectionConfiguration(object):
+    """
+    Configuration details for the connection between the client and backend servers.
+    """
 
     def __init__(self, **kwargs):
         """

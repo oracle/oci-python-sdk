@@ -8,6 +8,53 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class Export(object):
+    """
+    A file system and the path that you can use to mount it. Each export
+    resource belongs to exactly one export set.
+
+    The export's path attribute is not a path in the
+    referenced file system, but the value used by clients for the path
+    component of the remotetarget argument when mounting the file
+    system.
+
+    The path must start with a slash (/) followed by a sequence of zero or more
+    slash-separated path elements. For any two export resources associated with
+    the same export set, except those in a 'DELETED' state, the path element
+    sequence for the first export resource can't contain the
+    complete path element sequence of the second export resource.
+
+    For example, the following are acceptable:
+
+    * /foo and /bar
+    * /foo1 and /foo2
+    * /foo and /foo1
+
+    The following examples are not acceptable:
+    * /foo and /foo/bar
+    * / and /foo
+
+    Paths may not end in a slash (/). No path element can be a period (.)
+    or two periods in sequence (..). All path elements must be 255 bytes or less.
+
+    No two non-'DELETED' export resources in the same export set can
+    reference the same file system.
+    """
+
+    #: A constant which can be used with the lifecycle_state property of a Export.
+    #: This constant has a value of "CREATING"
+    LIFECYCLE_STATE_CREATING = "CREATING"
+
+    #: A constant which can be used with the lifecycle_state property of a Export.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a Export.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a Export.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_STATE_DELETED = "DELETED"
 
     def __init__(self, **kwargs):
         """

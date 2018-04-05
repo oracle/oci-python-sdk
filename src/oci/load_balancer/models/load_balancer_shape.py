@@ -8,6 +8,13 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class LoadBalancerShape(object):
+    """
+    A shape is a template that determines the total pre-provisioned bandwidth (ingress plus egress) for the
+    load balancer.
+
+    Note that the pre-provisioned maximum capacity applies to aggregated connections, not to a single client
+    attempting to use the full bandwidth.
+    """
 
     def __init__(self, **kwargs):
         """

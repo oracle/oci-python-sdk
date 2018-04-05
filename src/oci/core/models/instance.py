@@ -8,6 +8,63 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class Instance(object):
+    """
+    A compute host. The image used to launch the instance determines its operating system and other
+    software. The shape specified during the launch process determines the number of CPUs and memory
+    allocated to the instance. For more information, see
+    `Overview of the Compute Service`__.
+
+    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
+    talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+    `Getting Started with Policies`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Concepts/computeoverview.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
+    """
+
+    #: A constant which can be used with the launch_mode property of a Instance.
+    #: This constant has a value of "NATIVE"
+    LAUNCH_MODE_NATIVE = "NATIVE"
+
+    #: A constant which can be used with the launch_mode property of a Instance.
+    #: This constant has a value of "EMULATED"
+    LAUNCH_MODE_EMULATED = "EMULATED"
+
+    #: A constant which can be used with the launch_mode property of a Instance.
+    #: This constant has a value of "CUSTOM"
+    LAUNCH_MODE_CUSTOM = "CUSTOM"
+
+    #: A constant which can be used with the lifecycle_state property of a Instance.
+    #: This constant has a value of "PROVISIONING"
+    LIFECYCLE_STATE_PROVISIONING = "PROVISIONING"
+
+    #: A constant which can be used with the lifecycle_state property of a Instance.
+    #: This constant has a value of "RUNNING"
+    LIFECYCLE_STATE_RUNNING = "RUNNING"
+
+    #: A constant which can be used with the lifecycle_state property of a Instance.
+    #: This constant has a value of "STARTING"
+    LIFECYCLE_STATE_STARTING = "STARTING"
+
+    #: A constant which can be used with the lifecycle_state property of a Instance.
+    #: This constant has a value of "STOPPING"
+    LIFECYCLE_STATE_STOPPING = "STOPPING"
+
+    #: A constant which can be used with the lifecycle_state property of a Instance.
+    #: This constant has a value of "STOPPED"
+    LIFECYCLE_STATE_STOPPED = "STOPPED"
+
+    #: A constant which can be used with the lifecycle_state property of a Instance.
+    #: This constant has a value of "CREATING_IMAGE"
+    LIFECYCLE_STATE_CREATING_IMAGE = "CREATING_IMAGE"
+
+    #: A constant which can be used with the lifecycle_state property of a Instance.
+    #: This constant has a value of "TERMINATING"
+    LIFECYCLE_STATE_TERMINATING = "TERMINATING"
+
+    #: A constant which can be used with the lifecycle_state property of a Instance.
+    #: This constant has a value of "TERMINATED"
+    LIFECYCLE_STATE_TERMINATED = "TERMINATED"
 
     def __init__(self, **kwargs):
         """

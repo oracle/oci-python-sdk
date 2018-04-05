@@ -8,6 +8,25 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class LoadBalancerHealthSummary(object):
+    """
+    A health status summary for the specified load balancer.
+    """
+
+    #: A constant which can be used with the status property of a LoadBalancerHealthSummary.
+    #: This constant has a value of "OK"
+    STATUS_OK = "OK"
+
+    #: A constant which can be used with the status property of a LoadBalancerHealthSummary.
+    #: This constant has a value of "WARNING"
+    STATUS_WARNING = "WARNING"
+
+    #: A constant which can be used with the status property of a LoadBalancerHealthSummary.
+    #: This constant has a value of "CRITICAL"
+    STATUS_CRITICAL = "CRITICAL"
+
+    #: A constant which can be used with the status property of a LoadBalancerHealthSummary.
+    #: This constant has a value of "UNKNOWN"
+    STATUS_UNKNOWN = "UNKNOWN"
 
     def __init__(self, **kwargs):
         """

@@ -8,6 +8,37 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class VolumeBackupSchedule(object):
+    """
+    Defines a chronological recurrence pattern for creating scheduled backups at a particular periodicity.
+    """
+
+    #: A constant which can be used with the backup_type property of a VolumeBackupSchedule.
+    #: This constant has a value of "FULL"
+    BACKUP_TYPE_FULL = "FULL"
+
+    #: A constant which can be used with the backup_type property of a VolumeBackupSchedule.
+    #: This constant has a value of "INCREMENTAL"
+    BACKUP_TYPE_INCREMENTAL = "INCREMENTAL"
+
+    #: A constant which can be used with the period property of a VolumeBackupSchedule.
+    #: This constant has a value of "ONE_HOUR"
+    PERIOD_ONE_HOUR = "ONE_HOUR"
+
+    #: A constant which can be used with the period property of a VolumeBackupSchedule.
+    #: This constant has a value of "ONE_DAY"
+    PERIOD_ONE_DAY = "ONE_DAY"
+
+    #: A constant which can be used with the period property of a VolumeBackupSchedule.
+    #: This constant has a value of "ONE_WEEK"
+    PERIOD_ONE_WEEK = "ONE_WEEK"
+
+    #: A constant which can be used with the period property of a VolumeBackupSchedule.
+    #: This constant has a value of "ONE_MONTH"
+    PERIOD_ONE_MONTH = "ONE_MONTH"
+
+    #: A constant which can be used with the period property of a VolumeBackupSchedule.
+    #: This constant has a value of "ONE_YEAR"
+    PERIOD_ONE_YEAR = "ONE_YEAR"
 
     def __init__(self, **kwargs):
         """

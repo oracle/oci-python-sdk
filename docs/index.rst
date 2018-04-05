@@ -40,7 +40,7 @@ To get started, head over to the :ref:`installation instructions <install>` or s
 
 .. toctree::
     :hidden:
-    :maxdepth: 2
+    :maxdepth: 5
 
     installation
     configuration
@@ -53,7 +53,7 @@ To get started, head over to the :ref:`installation instructions <install>` or s
     raw-requests
     waiters
     pagination
-    api/index
+    api/landing
     customize_service_client/index
     sdk_behaviors/index
     contributions

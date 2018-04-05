@@ -8,6 +8,9 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class ConnectRemotePeeringConnectionsDetails(object):
+    """
+    Information about the other remote peering connection (RPC).
+    """
 
     def __init__(self, **kwargs):
         """

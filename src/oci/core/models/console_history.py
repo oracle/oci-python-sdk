@@ -8,6 +8,27 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class ConsoleHistory(object):
+    """
+    An instance's serial console data. It includes configuration messages that occur when the
+    instance boots, such as kernel and BIOS messages, and is useful for checking the status of
+    the instance or diagnosing problems. The console data is minimally formatted ASCII text.
+    """
+
+    #: A constant which can be used with the lifecycle_state property of a ConsoleHistory.
+    #: This constant has a value of "REQUESTED"
+    LIFECYCLE_STATE_REQUESTED = "REQUESTED"
+
+    #: A constant which can be used with the lifecycle_state property of a ConsoleHistory.
+    #: This constant has a value of "GETTING-HISTORY"
+    LIFECYCLE_STATE_GETTING_HISTORY = "GETTING-HISTORY"
+
+    #: A constant which can be used with the lifecycle_state property of a ConsoleHistory.
+    #: This constant has a value of "SUCCEEDED"
+    LIFECYCLE_STATE_SUCCEEDED = "SUCCEEDED"
+
+    #: A constant which can be used with the lifecycle_state property of a ConsoleHistory.
+    #: This constant has a value of "FAILED"
+    LIFECYCLE_STATE_FAILED = "FAILED"
 
     def __init__(self, **kwargs):
         """

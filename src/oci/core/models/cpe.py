@@ -8,6 +8,20 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class Cpe(object):
+    """
+    An object you create when setting up an IPSec VPN between your on-premises network
+    and VCN. The `Cpe` is a virtual representation of your Customer-Premises Equipment,
+    which is the actual router on-premises at your site at your end of the IPSec VPN connection.
+    For more information,
+    see `Overview of the Networking Service`__.
+
+    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
+    talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+    `Getting Started with Policies`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
+    """
 
     def __init__(self, **kwargs):
         """

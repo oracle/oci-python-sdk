@@ -8,6 +8,35 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class InstanceConsoleConnection(object):
+    """
+    The `InstanceConsoleConnection` API provides you with console access to virtual machine (VM) instances,
+    enabling you to troubleshoot malfunctioning instances remotely.
+
+    For more information about console access, see
+    `Accessing the Console`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/serialconsole.htm
+    """
+
+    #: A constant which can be used with the lifecycle_state property of a InstanceConsoleConnection.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a InstanceConsoleConnection.
+    #: This constant has a value of "CREATING"
+    LIFECYCLE_STATE_CREATING = "CREATING"
+
+    #: A constant which can be used with the lifecycle_state property of a InstanceConsoleConnection.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_STATE_DELETED = "DELETED"
+
+    #: A constant which can be used with the lifecycle_state property of a InstanceConsoleConnection.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a InstanceConsoleConnection.
+    #: This constant has a value of "FAILED"
+    LIFECYCLE_STATE_FAILED = "FAILED"
 
     def __init__(self, **kwargs):
         """

@@ -8,6 +8,47 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class Patch(object):
+    """
+    A Patch for a DB System or DB Home.
+
+    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
+    talk to an administrator. If you're an administrator who needs to write policies to give users access,
+    see `Getting Started with Policies`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
+    """
+
+    #: A constant which can be used with the available_actions property of a Patch.
+    #: This constant has a value of "APPLY"
+    AVAILABLE_ACTIONS_APPLY = "APPLY"
+
+    #: A constant which can be used with the available_actions property of a Patch.
+    #: This constant has a value of "PRECHECK"
+    AVAILABLE_ACTIONS_PRECHECK = "PRECHECK"
+
+    #: A constant which can be used with the last_action property of a Patch.
+    #: This constant has a value of "APPLY"
+    LAST_ACTION_APPLY = "APPLY"
+
+    #: A constant which can be used with the last_action property of a Patch.
+    #: This constant has a value of "PRECHECK"
+    LAST_ACTION_PRECHECK = "PRECHECK"
+
+    #: A constant which can be used with the lifecycle_state property of a Patch.
+    #: This constant has a value of "AVAILABLE"
+    LIFECYCLE_STATE_AVAILABLE = "AVAILABLE"
+
+    #: A constant which can be used with the lifecycle_state property of a Patch.
+    #: This constant has a value of "SUCCESS"
+    LIFECYCLE_STATE_SUCCESS = "SUCCESS"
+
+    #: A constant which can be used with the lifecycle_state property of a Patch.
+    #: This constant has a value of "IN_PROGRESS"
+    LIFECYCLE_STATE_IN_PROGRESS = "IN_PROGRESS"
+
+    #: A constant which can be used with the lifecycle_state property of a Patch.
+    #: This constant has a value of "FAILED"
+    LIFECYCLE_STATE_FAILED = "FAILED"
 
     def __init__(self, **kwargs):
         """

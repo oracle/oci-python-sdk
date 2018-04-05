@@ -8,6 +8,17 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class UpdateVirtualCircuitDetails(object):
+    """
+    UpdateVirtualCircuitDetails model.
+    """
+
+    #: A constant which can be used with the provider_state property of a UpdateVirtualCircuitDetails.
+    #: This constant has a value of "ACTIVE"
+    PROVIDER_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the provider_state property of a UpdateVirtualCircuitDetails.
+    #: This constant has a value of "INACTIVE"
+    PROVIDER_STATE_INACTIVE = "INACTIVE"
 
     def __init__(self, **kwargs):
         """

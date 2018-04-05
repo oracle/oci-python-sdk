@@ -8,6 +8,11 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class PathRoute(object):
+    """
+    A \"path route rule\" to evaluate an incoming URI path, and then route a matching request to the specified backend set.
+
+    Path route rules apply only to HTTP and HTTPS requests. They have no effect on TCP requests.
+    """
 
     def __init__(self, **kwargs):
         """

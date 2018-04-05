@@ -8,6 +8,9 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class CrossConnectPortSpeedShape(object):
+    """
+    An individual port speed level for cross-connects.
+    """
 
     def __init__(self, **kwargs):
         """

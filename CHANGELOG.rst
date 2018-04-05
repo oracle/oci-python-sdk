@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+1.3.18 - 2018-04-05
+====================
+
+Added
+-----
+* Added Python 3.6 as a supported Python version
+
+Fixed
+------
+* Python API reference documentation improvements
+
+
+====================
 1.3.17 - 2018-03-26
 ====================
 

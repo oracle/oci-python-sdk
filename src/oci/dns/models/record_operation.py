@@ -8,6 +8,27 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class RecordOperation(object):
+    """
+    An extension of the existing record resource, describing either a
+    precondition, an add, or a remove. Preconditions check all fields,
+    including read-only data like `recordHash` and `rrsetVersion`.
+    """
+
+    #: A constant which can be used with the operation property of a RecordOperation.
+    #: This constant has a value of "REQUIRE"
+    OPERATION_REQUIRE = "REQUIRE"
+
+    #: A constant which can be used with the operation property of a RecordOperation.
+    #: This constant has a value of "PROHIBIT"
+    OPERATION_PROHIBIT = "PROHIBIT"
+
+    #: A constant which can be used with the operation property of a RecordOperation.
+    #: This constant has a value of "ADD"
+    OPERATION_ADD = "ADD"
+
+    #: A constant which can be used with the operation property of a RecordOperation.
+    #: This constant has a value of "REMOVE"
+    OPERATION_REMOVE = "REMOVE"
 
     def __init__(self, **kwargs):
         """

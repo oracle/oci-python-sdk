@@ -8,6 +8,85 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class DbSystem(object):
+    """
+    The Database Service supports several types of DB Systems, ranging in size, price, and performance. For details about each type of system, see:
+
+    - `Exadata DB Systems`__
+    - `Bare Metal and Virtual Machine DB Systems`__
+
+    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see `Getting Started with Policies`__.
+
+    For information about access control and compartments, see
+    `Overview of the Identity Service`__.
+
+    For information about Availability Domains, see
+    `Regions and Availability Domains`__.
+
+    To get a list of Availability Domains, use the `ListAvailabilityDomains` operation
+    in the Identity Service API.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Concepts/exaoverview.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Concepts/overview.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/regions.htm
+    """
+
+    #: A constant which can be used with the database_edition property of a DbSystem.
+    #: This constant has a value of "STANDARD_EDITION"
+    DATABASE_EDITION_STANDARD_EDITION = "STANDARD_EDITION"
+
+    #: A constant which can be used with the database_edition property of a DbSystem.
+    #: This constant has a value of "ENTERPRISE_EDITION"
+    DATABASE_EDITION_ENTERPRISE_EDITION = "ENTERPRISE_EDITION"
+
+    #: A constant which can be used with the database_edition property of a DbSystem.
+    #: This constant has a value of "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
+    DATABASE_EDITION_ENTERPRISE_EDITION_EXTREME_PERFORMANCE = "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
+
+    #: A constant which can be used with the database_edition property of a DbSystem.
+    #: This constant has a value of "ENTERPRISE_EDITION_HIGH_PERFORMANCE"
+    DATABASE_EDITION_ENTERPRISE_EDITION_HIGH_PERFORMANCE = "ENTERPRISE_EDITION_HIGH_PERFORMANCE"
+
+    #: A constant which can be used with the disk_redundancy property of a DbSystem.
+    #: This constant has a value of "HIGH"
+    DISK_REDUNDANCY_HIGH = "HIGH"
+
+    #: A constant which can be used with the disk_redundancy property of a DbSystem.
+    #: This constant has a value of "NORMAL"
+    DISK_REDUNDANCY_NORMAL = "NORMAL"
+
+    #: A constant which can be used with the license_model property of a DbSystem.
+    #: This constant has a value of "LICENSE_INCLUDED"
+    LICENSE_MODEL_LICENSE_INCLUDED = "LICENSE_INCLUDED"
+
+    #: A constant which can be used with the license_model property of a DbSystem.
+    #: This constant has a value of "BRING_YOUR_OWN_LICENSE"
+    LICENSE_MODEL_BRING_YOUR_OWN_LICENSE = "BRING_YOUR_OWN_LICENSE"
+
+    #: A constant which can be used with the lifecycle_state property of a DbSystem.
+    #: This constant has a value of "PROVISIONING"
+    LIFECYCLE_STATE_PROVISIONING = "PROVISIONING"
+
+    #: A constant which can be used with the lifecycle_state property of a DbSystem.
+    #: This constant has a value of "AVAILABLE"
+    LIFECYCLE_STATE_AVAILABLE = "AVAILABLE"
+
+    #: A constant which can be used with the lifecycle_state property of a DbSystem.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
+
+    #: A constant which can be used with the lifecycle_state property of a DbSystem.
+    #: This constant has a value of "TERMINATING"
+    LIFECYCLE_STATE_TERMINATING = "TERMINATING"
+
+    #: A constant which can be used with the lifecycle_state property of a DbSystem.
+    #: This constant has a value of "TERMINATED"
+    LIFECYCLE_STATE_TERMINATED = "TERMINATED"
+
+    #: A constant which can be used with the lifecycle_state property of a DbSystem.
+    #: This constant has a value of "FAILED"
+    LIFECYCLE_STATE_FAILED = "FAILED"
 
     def __init__(self, **kwargs):
         """

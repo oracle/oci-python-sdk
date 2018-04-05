@@ -8,6 +8,9 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class FailoverDataGuardAssociationDetails(object):
+    """
+    The Data Guard association failover parameters.
+    """
 
     def __init__(self, **kwargs):
         """

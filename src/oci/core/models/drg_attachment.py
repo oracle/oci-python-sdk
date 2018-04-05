@@ -8,6 +8,28 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class DrgAttachment(object):
+    """
+    A link between a DRG and VCN. For more information, see
+    `Overview of the Networking Service`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm
+    """
+
+    #: A constant which can be used with the lifecycle_state property of a DrgAttachment.
+    #: This constant has a value of "ATTACHING"
+    LIFECYCLE_STATE_ATTACHING = "ATTACHING"
+
+    #: A constant which can be used with the lifecycle_state property of a DrgAttachment.
+    #: This constant has a value of "ATTACHED"
+    LIFECYCLE_STATE_ATTACHED = "ATTACHED"
+
+    #: A constant which can be used with the lifecycle_state property of a DrgAttachment.
+    #: This constant has a value of "DETACHING"
+    LIFECYCLE_STATE_DETACHING = "DETACHING"
+
+    #: A constant which can be used with the lifecycle_state property of a DrgAttachment.
+    #: This constant has a value of "DETACHED"
+    LIFECYCLE_STATE_DETACHED = "DETACHED"
 
     def __init__(self, **kwargs):
         """

@@ -8,6 +8,9 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class CreateDataGuardAssociationToExistingDbSystemDetails(CreateDataGuardAssociationDetails):
+    """
+    The configuration details for creating a Data Guard association to an existing database.
+    """
 
     def __init__(self, **kwargs):
         """

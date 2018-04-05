@@ -8,6 +8,9 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class CreatePathRouteSetDetails(object):
+    """
+    A named set of path route rules to add to the load balancer.
+    """
 
     def __init__(self, **kwargs):
         """

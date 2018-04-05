@@ -8,6 +8,25 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class VirtualCircuitPublicPrefix(object):
+    """
+    A public IP prefix and its details. With a public virtual circuit, the customer
+    specifies the customer-owned public IP prefixes to advertise across the connection.
+    For more information, see `FastConnect Overview`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm
+    """
+
+    #: A constant which can be used with the verification_state property of a VirtualCircuitPublicPrefix.
+    #: This constant has a value of "IN_PROGRESS"
+    VERIFICATION_STATE_IN_PROGRESS = "IN_PROGRESS"
+
+    #: A constant which can be used with the verification_state property of a VirtualCircuitPublicPrefix.
+    #: This constant has a value of "COMPLETED"
+    VERIFICATION_STATE_COMPLETED = "COMPLETED"
+
+    #: A constant which can be used with the verification_state property of a VirtualCircuitPublicPrefix.
+    #: This constant has a value of "FAILED"
+    VERIFICATION_STATE_FAILED = "FAILED"
 
     def __init__(self, **kwargs):
         """

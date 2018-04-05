@@ -8,6 +8,9 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class UpdateHealthCheckerDetails(object):
+    """
+    The health checker's configuration details.
+    """
 
     def __init__(self, **kwargs):
         """

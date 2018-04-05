@@ -8,6 +8,41 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class LaunchDbSystemDetails(object):
+    """
+    LaunchDbSystemDetails model.
+    """
+
+    #: A constant which can be used with the database_edition property of a LaunchDbSystemDetails.
+    #: This constant has a value of "STANDARD_EDITION"
+    DATABASE_EDITION_STANDARD_EDITION = "STANDARD_EDITION"
+
+    #: A constant which can be used with the database_edition property of a LaunchDbSystemDetails.
+    #: This constant has a value of "ENTERPRISE_EDITION"
+    DATABASE_EDITION_ENTERPRISE_EDITION = "ENTERPRISE_EDITION"
+
+    #: A constant which can be used with the database_edition property of a LaunchDbSystemDetails.
+    #: This constant has a value of "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
+    DATABASE_EDITION_ENTERPRISE_EDITION_EXTREME_PERFORMANCE = "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
+
+    #: A constant which can be used with the database_edition property of a LaunchDbSystemDetails.
+    #: This constant has a value of "ENTERPRISE_EDITION_HIGH_PERFORMANCE"
+    DATABASE_EDITION_ENTERPRISE_EDITION_HIGH_PERFORMANCE = "ENTERPRISE_EDITION_HIGH_PERFORMANCE"
+
+    #: A constant which can be used with the disk_redundancy property of a LaunchDbSystemDetails.
+    #: This constant has a value of "HIGH"
+    DISK_REDUNDANCY_HIGH = "HIGH"
+
+    #: A constant which can be used with the disk_redundancy property of a LaunchDbSystemDetails.
+    #: This constant has a value of "NORMAL"
+    DISK_REDUNDANCY_NORMAL = "NORMAL"
+
+    #: A constant which can be used with the license_model property of a LaunchDbSystemDetails.
+    #: This constant has a value of "LICENSE_INCLUDED"
+    LICENSE_MODEL_LICENSE_INCLUDED = "LICENSE_INCLUDED"
+
+    #: A constant which can be used with the license_model property of a LaunchDbSystemDetails.
+    #: This constant has a value of "BRING_YOUR_OWN_LICENSE"
+    LICENSE_MODEL_BRING_YOUR_OWN_LICENSE = "BRING_YOUR_OWN_LICENSE"
 
     def __init__(self, **kwargs):
         """

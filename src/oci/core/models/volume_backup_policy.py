@@ -8,6 +8,9 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class VolumeBackupPolicy(object):
+    """
+    A policy for automatically creating volume backups according to a recurring schedule. Has a set of one or more schedules that control when and how backups are created.
+    """
 
     def __init__(self, **kwargs):
         """

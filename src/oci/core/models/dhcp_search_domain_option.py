@@ -8,6 +8,12 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class DhcpSearchDomainOption(DhcpOption):
+    """
+    DHCP option for specifying a search domain name for DNS queries. For more information, see
+    `DNS in Your Virtual Cloud Network`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm
+    """
 
     def __init__(self, **kwargs):
         """

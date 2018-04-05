@@ -8,6 +8,53 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class Image(object):
+    """
+    A boot disk image for launching an instance. For more information, see
+    `Overview of the Compute Service`__.
+
+    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
+    talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+    `Getting Started with Policies`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Concepts/computeoverview.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
+    """
+
+    #: A constant which can be used with the launch_mode property of a Image.
+    #: This constant has a value of "NATIVE"
+    LAUNCH_MODE_NATIVE = "NATIVE"
+
+    #: A constant which can be used with the launch_mode property of a Image.
+    #: This constant has a value of "EMULATED"
+    LAUNCH_MODE_EMULATED = "EMULATED"
+
+    #: A constant which can be used with the launch_mode property of a Image.
+    #: This constant has a value of "CUSTOM"
+    LAUNCH_MODE_CUSTOM = "CUSTOM"
+
+    #: A constant which can be used with the lifecycle_state property of a Image.
+    #: This constant has a value of "PROVISIONING"
+    LIFECYCLE_STATE_PROVISIONING = "PROVISIONING"
+
+    #: A constant which can be used with the lifecycle_state property of a Image.
+    #: This constant has a value of "IMPORTING"
+    LIFECYCLE_STATE_IMPORTING = "IMPORTING"
+
+    #: A constant which can be used with the lifecycle_state property of a Image.
+    #: This constant has a value of "AVAILABLE"
+    LIFECYCLE_STATE_AVAILABLE = "AVAILABLE"
+
+    #: A constant which can be used with the lifecycle_state property of a Image.
+    #: This constant has a value of "EXPORTING"
+    LIFECYCLE_STATE_EXPORTING = "EXPORTING"
+
+    #: A constant which can be used with the lifecycle_state property of a Image.
+    #: This constant has a value of "DISABLED"
+    LIFECYCLE_STATE_DISABLED = "DISABLED"
+
+    #: A constant which can be used with the lifecycle_state property of a Image.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_STATE_DELETED = "DELETED"
 
     def __init__(self, **kwargs):
         """

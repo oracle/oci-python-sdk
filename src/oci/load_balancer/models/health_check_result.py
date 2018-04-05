@@ -8,6 +8,41 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class HealthCheckResult(object):
+    """
+    Information about a single backend server health check result reported by a load balancer.
+    """
+
+    #: A constant which can be used with the health_check_status property of a HealthCheckResult.
+    #: This constant has a value of "OK"
+    HEALTH_CHECK_STATUS_OK = "OK"
+
+    #: A constant which can be used with the health_check_status property of a HealthCheckResult.
+    #: This constant has a value of "INVALID_STATUS_CODE"
+    HEALTH_CHECK_STATUS_INVALID_STATUS_CODE = "INVALID_STATUS_CODE"
+
+    #: A constant which can be used with the health_check_status property of a HealthCheckResult.
+    #: This constant has a value of "TIMED_OUT"
+    HEALTH_CHECK_STATUS_TIMED_OUT = "TIMED_OUT"
+
+    #: A constant which can be used with the health_check_status property of a HealthCheckResult.
+    #: This constant has a value of "REGEX_MISMATCH"
+    HEALTH_CHECK_STATUS_REGEX_MISMATCH = "REGEX_MISMATCH"
+
+    #: A constant which can be used with the health_check_status property of a HealthCheckResult.
+    #: This constant has a value of "CONNECT_FAILED"
+    HEALTH_CHECK_STATUS_CONNECT_FAILED = "CONNECT_FAILED"
+
+    #: A constant which can be used with the health_check_status property of a HealthCheckResult.
+    #: This constant has a value of "IO_ERROR"
+    HEALTH_CHECK_STATUS_IO_ERROR = "IO_ERROR"
+
+    #: A constant which can be used with the health_check_status property of a HealthCheckResult.
+    #: This constant has a value of "OFFLINE"
+    HEALTH_CHECK_STATUS_OFFLINE = "OFFLINE"
+
+    #: A constant which can be used with the health_check_status property of a HealthCheckResult.
+    #: This constant has a value of "UNKNOWN"
+    HEALTH_CHECK_STATUS_UNKNOWN = "UNKNOWN"
 
     def __init__(self, **kwargs):
         """
