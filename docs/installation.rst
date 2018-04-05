@@ -15,9 +15,16 @@ Installation
 This topic describes how to install, configure, and use the Oracle Cloud Infrastructure Python SDK.
 The Python SDK supports operations for the following services:
 
-* Identity and Access Management Service
+* Audit Service
 * Core Services (Networking Service, Compute Service, and Block Volume Service)
+* Database Service
+* DNS Service
+* Email Service
+* File Storage Service
+* Identity and Access Management Service
+* Load Balancing Service
 * Object Storage Service
+
 
 ===============
  Prerequisites

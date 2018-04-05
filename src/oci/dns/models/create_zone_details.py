@@ -8,6 +8,17 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class CreateZoneDetails(object):
+    """
+    The body for defining a new zone.
+    """
+
+    #: A constant which can be used with the zone_type property of a CreateZoneDetails.
+    #: This constant has a value of "PRIMARY"
+    ZONE_TYPE_PRIMARY = "PRIMARY"
+
+    #: A constant which can be used with the zone_type property of a CreateZoneDetails.
+    #: This constant has a value of "SECONDARY"
+    ZONE_TYPE_SECONDARY = "SECONDARY"
 
     def __init__(self, **kwargs):
         """

@@ -8,6 +8,13 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class CreateBackendDetails(object):
+    """
+    The configuration details for creating a backend server in a backend set.
+    For more information on backend server configuration, see
+    `Managing Backend Servers`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/tasks/managingbackendservers.htm
+    """
 
     def __init__(self, **kwargs):
         """

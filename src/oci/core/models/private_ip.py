@@ -8,6 +8,38 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class PrivateIp(object):
+    """
+    A *private IP* is a conceptual term that refers to a private IP address and related properties.
+    The `privateIp` object is the API representation of a private IP.
+
+    Each instance has a *primary private IP* that is automatically created and
+    assigned to the primary VNIC during instance launch. If you add a secondary
+    VNIC to the instance, it also automatically gets a primary private IP. You
+    can't remove a primary private IP from its VNIC. The primary private IP is
+    automatically deleted when the VNIC is terminated.
+
+    You can add *secondary private IPs* to a VNIC after it's created. For more
+    information, see the `privateIp` operations and also
+    `IP Addresses`__.
+
+    **Note:** Only
+    :func:`list_private_ips` and
+    :func:`get_private_ip` work with
+    *primary* private IPs. To create and update primary private IPs, you instead
+    work with instance and VNIC operations. For example, a primary private IP's
+    properties come from the values you specify in
+    :class:`CreateVnicDetails` when calling either
+    :func:`launch_instance` or
+    :func:`attach_vnic`. To update the hostname
+    for a primary private IP, you use :func:`update_vnic`.
+
+    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
+    talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+    `Getting Started with Policies`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPaddresses.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
+    """
 
     def __init__(self, **kwargs):
         """

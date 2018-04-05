@@ -8,6 +8,17 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class CreateDbHomeWithDbSystemIdBase(object):
+    """
+    CreateDbHomeWithDbSystemIdBase model.
+    """
+
+    #: A constant which can be used with the source property of a CreateDbHomeWithDbSystemIdBase.
+    #: This constant has a value of "NONE"
+    SOURCE_NONE = "NONE"
+
+    #: A constant which can be used with the source property of a CreateDbHomeWithDbSystemIdBase.
+    #: This constant has a value of "DB_BACKUP"
+    SOURCE_DB_BACKUP = "DB_BACKUP"
 
     def __init__(self, **kwargs):
         """

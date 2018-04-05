@@ -8,6 +8,18 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class LetterOfAuthority(object):
+    """
+    The Letter of Authority for the cross-connect. You must submit this letter when
+    requesting cabling for the cross-connect at the FastConnect location.
+    """
+
+    #: A constant which can be used with the circuit_type property of a LetterOfAuthority.
+    #: This constant has a value of "Single_mode_LC"
+    CIRCUIT_TYPE_SINGLE_MODE_LC = "Single_mode_LC"
+
+    #: A constant which can be used with the circuit_type property of a LetterOfAuthority.
+    #: This constant has a value of "Single_mode_SC"
+    CIRCUIT_TYPE_SINGLE_MODE_SC = "Single_mode_SC"
 
     def __init__(self, **kwargs):
         """

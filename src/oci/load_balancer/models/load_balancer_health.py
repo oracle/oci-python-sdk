@@ -8,6 +8,28 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class LoadBalancerHealth(object):
+    """
+    The health status details for the specified load balancer.
+
+    This object does not explicitly enumerate backend sets with a status of `OK`. However, they are included in the
+    `totalBackendSetCount` sum.
+    """
+
+    #: A constant which can be used with the status property of a LoadBalancerHealth.
+    #: This constant has a value of "OK"
+    STATUS_OK = "OK"
+
+    #: A constant which can be used with the status property of a LoadBalancerHealth.
+    #: This constant has a value of "WARNING"
+    STATUS_WARNING = "WARNING"
+
+    #: A constant which can be used with the status property of a LoadBalancerHealth.
+    #: This constant has a value of "CRITICAL"
+    STATUS_CRITICAL = "CRITICAL"
+
+    #: A constant which can be used with the status property of a LoadBalancerHealth.
+    #: This constant has a value of "UNKNOWN"
+    STATUS_UNKNOWN = "UNKNOWN"
 
     def __init__(self, **kwargs):
         """

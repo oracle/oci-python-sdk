@@ -8,6 +8,11 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class Record(object):
+    """
+    A DNS resource record. For more information about DNS records, see `RFC 1034`__.
+
+    __ https://tools.ietf.org/html/rfc1034#section-3.6
+    """
 
     def __init__(self, **kwargs):
         """

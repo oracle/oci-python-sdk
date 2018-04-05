@@ -8,6 +8,40 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class CreateDataGuardAssociationDetails(object):
+    """
+    The configuration details for creating a Data Guard association between databases.
+
+    **NOTE:**
+    \"ExistingDbSystem\" is the only supported `creationType` value. Therefore, all
+    :func:`create_data_guard_association`
+    requests must include the `peerDbSystemId` parameter found in the
+    :func:`create_data_guard_association_to_existing_db_system_details`
+    object.
+    """
+
+    #: A constant which can be used with the protection_mode property of a CreateDataGuardAssociationDetails.
+    #: This constant has a value of "MAXIMUM_AVAILABILITY"
+    PROTECTION_MODE_MAXIMUM_AVAILABILITY = "MAXIMUM_AVAILABILITY"
+
+    #: A constant which can be used with the protection_mode property of a CreateDataGuardAssociationDetails.
+    #: This constant has a value of "MAXIMUM_PERFORMANCE"
+    PROTECTION_MODE_MAXIMUM_PERFORMANCE = "MAXIMUM_PERFORMANCE"
+
+    #: A constant which can be used with the protection_mode property of a CreateDataGuardAssociationDetails.
+    #: This constant has a value of "MAXIMUM_PROTECTION"
+    PROTECTION_MODE_MAXIMUM_PROTECTION = "MAXIMUM_PROTECTION"
+
+    #: A constant which can be used with the transport_type property of a CreateDataGuardAssociationDetails.
+    #: This constant has a value of "SYNC"
+    TRANSPORT_TYPE_SYNC = "SYNC"
+
+    #: A constant which can be used with the transport_type property of a CreateDataGuardAssociationDetails.
+    #: This constant has a value of "ASYNC"
+    TRANSPORT_TYPE_ASYNC = "ASYNC"
+
+    #: A constant which can be used with the transport_type property of a CreateDataGuardAssociationDetails.
+    #: This constant has a value of "FASTSYNC"
+    TRANSPORT_TYPE_FASTSYNC = "FASTSYNC"
 
     def __init__(self, **kwargs):
         """

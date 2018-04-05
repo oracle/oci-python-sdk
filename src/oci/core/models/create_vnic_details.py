@@ -8,6 +8,14 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class CreateVnicDetails(object):
+    """
+    Contains properties for a VNIC. You use this object when creating the
+    primary VNIC during instance launch or when creating a secondary VNIC.
+    For more information about VNICs, see
+    `Virtual Network Interface Cards (VNICs)`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVNICs.htm
+    """
 
     def __init__(self, **kwargs):
         """

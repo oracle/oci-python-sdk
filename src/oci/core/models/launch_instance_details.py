@@ -8,6 +8,10 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class LaunchInstanceDetails(object):
+    """
+    Instance launch details.
+    Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
+    """
 
     def __init__(self, **kwargs):
         """

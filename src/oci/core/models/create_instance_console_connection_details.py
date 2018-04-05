@@ -8,6 +8,10 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class CreateInstanceConsoleConnectionDetails(object):
+    """
+    The details for creating a instance console connection.
+    The instance console connection is created in the same compartment as the instance.
+    """
 
     def __init__(self, **kwargs):
         """

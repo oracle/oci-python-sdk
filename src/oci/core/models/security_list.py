@@ -8,6 +8,40 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class SecurityList(object):
+    """
+    A set of virtual firewall rules for your VCN. Security lists are configured at the subnet
+    level, but the rules are applied to the ingress and egress traffic for the individual instances
+    in the subnet. The rules can be stateful or stateless. For more information, see
+    `Security Lists`__.
+
+    **Important:** Oracle Cloud Infrastructure Compute service images automatically include firewall rules (for example,
+    Linux iptables, Windows firewall). If there are issues with some type of access to an instance,
+    make sure both the security lists associated with the instance's subnet and the instance's
+    firewall rules are set correctly.
+
+    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
+    talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+    `Getting Started with Policies`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/securitylists.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
+    """
+
+    #: A constant which can be used with the lifecycle_state property of a SecurityList.
+    #: This constant has a value of "PROVISIONING"
+    LIFECYCLE_STATE_PROVISIONING = "PROVISIONING"
+
+    #: A constant which can be used with the lifecycle_state property of a SecurityList.
+    #: This constant has a value of "AVAILABLE"
+    LIFECYCLE_STATE_AVAILABLE = "AVAILABLE"
+
+    #: A constant which can be used with the lifecycle_state property of a SecurityList.
+    #: This constant has a value of "TERMINATING"
+    LIFECYCLE_STATE_TERMINATING = "TERMINATING"
+
+    #: A constant which can be used with the lifecycle_state property of a SecurityList.
+    #: This constant has a value of "TERMINATED"
+    LIFECYCLE_STATE_TERMINATED = "TERMINATED"
 
     def __init__(self, **kwargs):
         """

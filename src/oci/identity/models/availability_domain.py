@@ -8,6 +8,13 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class AvailabilityDomain(object):
+    """
+    One or more isolated, fault-tolerant Oracle data centers that host cloud resources such as instances, volumes,
+    and subnets. A region contains several Availability Domains. For more information, see
+    `Regions and Availability Domains`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/regions.htm
+    """
 
     def __init__(self, **kwargs):
         """

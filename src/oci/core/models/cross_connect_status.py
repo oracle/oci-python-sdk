@@ -8,6 +8,37 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class CrossConnectStatus(object):
+    """
+    The status of the cross-connect.
+    """
+
+    #: A constant which can be used with the interface_state property of a CrossConnectStatus.
+    #: This constant has a value of "UP"
+    INTERFACE_STATE_UP = "UP"
+
+    #: A constant which can be used with the interface_state property of a CrossConnectStatus.
+    #: This constant has a value of "DOWN"
+    INTERFACE_STATE_DOWN = "DOWN"
+
+    #: A constant which can be used with the light_level_indicator property of a CrossConnectStatus.
+    #: This constant has a value of "NO_LIGHT"
+    LIGHT_LEVEL_INDICATOR_NO_LIGHT = "NO_LIGHT"
+
+    #: A constant which can be used with the light_level_indicator property of a CrossConnectStatus.
+    #: This constant has a value of "LOW_WARN"
+    LIGHT_LEVEL_INDICATOR_LOW_WARN = "LOW_WARN"
+
+    #: A constant which can be used with the light_level_indicator property of a CrossConnectStatus.
+    #: This constant has a value of "HIGH_WARN"
+    LIGHT_LEVEL_INDICATOR_HIGH_WARN = "HIGH_WARN"
+
+    #: A constant which can be used with the light_level_indicator property of a CrossConnectStatus.
+    #: This constant has a value of "BAD"
+    LIGHT_LEVEL_INDICATOR_BAD = "BAD"
+
+    #: A constant which can be used with the light_level_indicator property of a CrossConnectStatus.
+    #: This constant has a value of "GOOD"
+    LIGHT_LEVEL_INDICATOR_GOOD = "GOOD"
 
     def __init__(self, **kwargs):
         """

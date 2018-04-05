@@ -16,6 +16,10 @@ missing = Sentinel("Missing")
 
 
 class FileStorageClient(object):
+    """
+    The API for the File Storage Service.
+
+    """
 
     def __init__(self, config, **kwargs):
         validate_config(config, signer=kwargs.get('signer'))
@@ -30,7 +34,14 @@ class FileStorageClient(object):
                 pass_phrase=get_config_value_or_default(config, "pass_phrase"),
                 private_key_content=config.get("key_content")
             )
-        self.base_client = BaseClient("file_storage", config, signer, file_storage_type_mapping)
+
+        base_client_init_kwargs = {
+            'regional_client': True,
+            'service_endpoint': kwargs.get('service_endpoint'),
+            'timeout': kwargs.get('timeout'),
+            'base_path': '/20171215'
+        }
+        self.base_client = BaseClient("file_storage", config, signer, file_storage_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
 
     def create_export(self, create_export_details, **kwargs):

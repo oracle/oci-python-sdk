@@ -8,6 +8,43 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class DhcpOptions(object):
+    """
+    A set of DHCP options. Used by the VCN to automatically provide configuration
+    information to the instances when they boot up. There are two options you can set:
+
+    - :class:`DhcpDnsOption`: Lets you specify how DNS (hostname resolution) is
+    handled in the subnets in your VCN.
+
+    - :class:`DhcpSearchDomainOption`: Lets you specify
+    a search domain name to use for DNS queries.
+
+    For more information, see  `DNS in Your Virtual Cloud Network`__
+    and `DHCP Options`__.
+
+    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
+    talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+    `Getting Started with Policies`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingDHCP.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
+    """
+
+    #: A constant which can be used with the lifecycle_state property of a DhcpOptions.
+    #: This constant has a value of "PROVISIONING"
+    LIFECYCLE_STATE_PROVISIONING = "PROVISIONING"
+
+    #: A constant which can be used with the lifecycle_state property of a DhcpOptions.
+    #: This constant has a value of "AVAILABLE"
+    LIFECYCLE_STATE_AVAILABLE = "AVAILABLE"
+
+    #: A constant which can be used with the lifecycle_state property of a DhcpOptions.
+    #: This constant has a value of "TERMINATING"
+    LIFECYCLE_STATE_TERMINATING = "TERMINATING"
+
+    #: A constant which can be used with the lifecycle_state property of a DhcpOptions.
+    #: This constant has a value of "TERMINATED"
+    LIFECYCLE_STATE_TERMINATED = "TERMINATED"
 
     def __init__(self, **kwargs):
         """

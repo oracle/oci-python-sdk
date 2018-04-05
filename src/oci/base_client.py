@@ -83,15 +83,32 @@ class BaseClient(object):
         validate_config(config, signer=signer)
         self.signer = signer
 
-        region_to_use = None
-        if 'region' in config and config['region']:
-            region_to_use = config.get('region')
-        elif hasattr(signer, 'region'):
-            region_to_use = signer.region
-        self.endpoint = regions.endpoint_for(
-            service,
-            region=region_to_use,
-            endpoint=config.get("endpoint"))
+        # Default to true (is a regional client) if there is nothing explicitly set. Regional
+        # clients allow us to call set_region and that'll also set the endpoint. For non-regional
+        # clients we require an endpoint
+        self.regional_client = kwargs.get('regional_client', True)
+
+        self._endpoint = None
+        self._base_path = kwargs.get('base_path')
+
+        if self.regional_client:
+            if kwargs.get('service_endpoint'):
+                self.endpoint = kwargs.get('service_endpoint')
+            else:
+                region_to_use = None
+                if 'region' in config and config['region']:
+                    region_to_use = config.get('region')
+                elif hasattr(signer, 'region'):
+                    region_to_use = signer.region
+
+                self.endpoint = regions.endpoint_for(
+                    service,
+                    region=region_to_use,
+                    endpoint=config.get('endpoint'))
+        else:
+            if not kwargs.get('service_endpoint'):
+                raise ValueError('An endpoint must be provided for a non-regional service client')
+            self.endpoint = kwargs.get('service_endpoint')
 
         self.service = service
         self.complex_type_mappings = type_mapping
@@ -108,8 +125,27 @@ class BaseClient(object):
         else:
             six.moves.http_client.HTTPConnection.debuglevel = 0
 
+    @property
+    def endpoint(self):
+        return self._endpoint
+
+    @endpoint.setter
+    def endpoint(self, endpoint):
+        if self._base_path == '/':
+            # If it's just the root path then use the endpoint as-is
+            self._endpoint = endpoint
+        elif self._base_path and not (endpoint.endswith(self._base_path) or endpoint.endswith('{}/'.format(self._base_path))):
+            # Account for formats like https://iaas.us-phoenix-1.oraclecloud.com/20160918 and
+            # https://iaas.us-phoenix-1.oraclecloud.com/20160918/ as they should both be fine
+            self._endpoint = '{}{}'.format(endpoint, self._base_path)
+        else:
+            self._endpoint = endpoint
+
     def set_region(self, region):
-        self.endpoint = regions.endpoint_for(self.service, region=region)
+        if self.regional_client:
+            self.endpoint = regions.endpoint_for(self.service, region=region)
+        else:
+            raise TypeError('Setting the region is not allowed for non-regional service clients. You must instead set the endpoint')
 
     def call_api(self, resource_path, method,
                  path_params=None,

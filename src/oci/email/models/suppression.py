@@ -8,6 +8,33 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class Suppression(object):
+    """
+    The full information representing an email suppression.
+    """
+
+    #: A constant which can be used with the reason property of a Suppression.
+    #: This constant has a value of "UNKNOWN"
+    REASON_UNKNOWN = "UNKNOWN"
+
+    #: A constant which can be used with the reason property of a Suppression.
+    #: This constant has a value of "HARDBOUNCE"
+    REASON_HARDBOUNCE = "HARDBOUNCE"
+
+    #: A constant which can be used with the reason property of a Suppression.
+    #: This constant has a value of "COMPLAINT"
+    REASON_COMPLAINT = "COMPLAINT"
+
+    #: A constant which can be used with the reason property of a Suppression.
+    #: This constant has a value of "MANUAL"
+    REASON_MANUAL = "MANUAL"
+
+    #: A constant which can be used with the reason property of a Suppression.
+    #: This constant has a value of "SOFTBOUNCE"
+    REASON_SOFTBOUNCE = "SOFTBOUNCE"
+
+    #: A constant which can be used with the reason property of a Suppression.
+    #: This constant has a value of "UNSUBSCRIBE"
+    REASON_UNSUBSCRIBE = "UNSUBSCRIBE"
 
     def __init__(self, **kwargs):
         """

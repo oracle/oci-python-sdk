@@ -8,6 +8,52 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class FastConnectProviderService(object):
+    """
+    A service offering from a supported provider. For more information,
+    see `FastConnect Overview`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm
+    """
+
+    #: A constant which can be used with the private_peering_bgp_management property of a FastConnectProviderService.
+    #: This constant has a value of "CUSTOMER_MANAGED"
+    PRIVATE_PEERING_BGP_MANAGEMENT_CUSTOMER_MANAGED = "CUSTOMER_MANAGED"
+
+    #: A constant which can be used with the private_peering_bgp_management property of a FastConnectProviderService.
+    #: This constant has a value of "PROVIDER_MANAGED"
+    PRIVATE_PEERING_BGP_MANAGEMENT_PROVIDER_MANAGED = "PROVIDER_MANAGED"
+
+    #: A constant which can be used with the private_peering_bgp_management property of a FastConnectProviderService.
+    #: This constant has a value of "ORACLE_MANAGED"
+    PRIVATE_PEERING_BGP_MANAGEMENT_ORACLE_MANAGED = "ORACLE_MANAGED"
+
+    #: A constant which can be used with the public_peering_bgp_management property of a FastConnectProviderService.
+    #: This constant has a value of "CUSTOMER_MANAGED"
+    PUBLIC_PEERING_BGP_MANAGEMENT_CUSTOMER_MANAGED = "CUSTOMER_MANAGED"
+
+    #: A constant which can be used with the public_peering_bgp_management property of a FastConnectProviderService.
+    #: This constant has a value of "PROVIDER_MANAGED"
+    PUBLIC_PEERING_BGP_MANAGEMENT_PROVIDER_MANAGED = "PROVIDER_MANAGED"
+
+    #: A constant which can be used with the public_peering_bgp_management property of a FastConnectProviderService.
+    #: This constant has a value of "ORACLE_MANAGED"
+    PUBLIC_PEERING_BGP_MANAGEMENT_ORACLE_MANAGED = "ORACLE_MANAGED"
+
+    #: A constant which can be used with the supported_virtual_circuit_types property of a FastConnectProviderService.
+    #: This constant has a value of "PUBLIC"
+    SUPPORTED_VIRTUAL_CIRCUIT_TYPES_PUBLIC = "PUBLIC"
+
+    #: A constant which can be used with the supported_virtual_circuit_types property of a FastConnectProviderService.
+    #: This constant has a value of "PRIVATE"
+    SUPPORTED_VIRTUAL_CIRCUIT_TYPES_PRIVATE = "PRIVATE"
+
+    #: A constant which can be used with the type property of a FastConnectProviderService.
+    #: This constant has a value of "LAYER2"
+    TYPE_LAYER2 = "LAYER2"
+
+    #: A constant which can be used with the type property of a FastConnectProviderService.
+    #: This constant has a value of "LAYER3"
+    TYPE_LAYER3 = "LAYER3"
 
     def __init__(self, **kwargs):
         """

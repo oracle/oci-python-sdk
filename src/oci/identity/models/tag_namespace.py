@@ -8,6 +8,12 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class TagNamespace(object):
+    """
+    A managed container for defined tags. A tag namespace is unique in a tenancy. A tag namespace can't be deleted.
+    For more information, see `Managing Tags and Tag Namespaces`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm
+    """
 
     def __init__(self, **kwargs):
         """

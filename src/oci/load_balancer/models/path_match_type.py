@@ -8,6 +8,25 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class PathMatchType(object):
+    """
+    The type of matching to apply to incoming URIs.
+    """
+
+    #: A constant which can be used with the match_type property of a PathMatchType.
+    #: This constant has a value of "EXACT_MATCH"
+    MATCH_TYPE_EXACT_MATCH = "EXACT_MATCH"
+
+    #: A constant which can be used with the match_type property of a PathMatchType.
+    #: This constant has a value of "FORCE_LONGEST_PREFIX_MATCH"
+    MATCH_TYPE_FORCE_LONGEST_PREFIX_MATCH = "FORCE_LONGEST_PREFIX_MATCH"
+
+    #: A constant which can be used with the match_type property of a PathMatchType.
+    #: This constant has a value of "PREFIX_MATCH"
+    MATCH_TYPE_PREFIX_MATCH = "PREFIX_MATCH"
+
+    #: A constant which can be used with the match_type property of a PathMatchType.
+    #: This constant has a value of "SUFFIX_MATCH"
+    MATCH_TYPE_SUFFIX_MATCH = "SUFFIX_MATCH"
 
     def __init__(self, **kwargs):
         """

@@ -8,6 +8,17 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class CreatePublicIpDetails(object):
+    """
+    CreatePublicIpDetails model.
+    """
+
+    #: A constant which can be used with the lifetime property of a CreatePublicIpDetails.
+    #: This constant has a value of "EPHEMERAL"
+    LIFETIME_EPHEMERAL = "EPHEMERAL"
+
+    #: A constant which can be used with the lifetime property of a CreatePublicIpDetails.
+    #: This constant has a value of "RESERVED"
+    LIFETIME_RESERVED = "RESERVED"
 
     def __init__(self, **kwargs):
         """

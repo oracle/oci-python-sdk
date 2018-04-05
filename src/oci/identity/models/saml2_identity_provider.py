@@ -8,6 +8,13 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class Saml2IdentityProvider(IdentityProvider):
+    """
+    A special type of :class:`IdentityProvider` that
+    supports the SAML 2.0 protocol. For more information, see
+    `Identity Providers and Federation`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/federation.htm
+    """
 
     def __init__(self, **kwargs):
         """

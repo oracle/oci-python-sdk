@@ -16,6 +16,9 @@ missing = Sentinel("Missing")
 
 
 class DnsClient(object):
+    """
+    API for managing DNS zones, records, and policies.
+    """
 
     def __init__(self, config, **kwargs):
         validate_config(config, signer=kwargs.get('signer'))
@@ -30,7 +33,14 @@ class DnsClient(object):
                 pass_phrase=get_config_value_or_default(config, "pass_phrase"),
                 private_key_content=config.get("key_content")
             )
-        self.base_client = BaseClient("dns", config, signer, dns_type_mapping)
+
+        base_client_init_kwargs = {
+            'regional_client': True,
+            'service_endpoint': kwargs.get('service_endpoint'),
+            'timeout': kwargs.get('timeout'),
+            'base_path': '/20180115'
+        }
+        self.base_client = BaseClient("dns", config, signer, dns_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
 
     def create_zone(self, create_zone_details, **kwargs):

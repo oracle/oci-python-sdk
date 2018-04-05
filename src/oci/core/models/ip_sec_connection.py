@@ -8,6 +8,35 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class IPSecConnection(object):
+    """
+    A connection between a DRG and CPE. This connection consists of multiple IPSec
+    tunnels. Creating this connection is one of the steps required when setting up
+    an IPSec VPN. For more information, see
+    `Overview of the Networking Service`__.
+
+    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
+    talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+    `Getting Started with Policies`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
+    """
+
+    #: A constant which can be used with the lifecycle_state property of a IPSecConnection.
+    #: This constant has a value of "PROVISIONING"
+    LIFECYCLE_STATE_PROVISIONING = "PROVISIONING"
+
+    #: A constant which can be used with the lifecycle_state property of a IPSecConnection.
+    #: This constant has a value of "AVAILABLE"
+    LIFECYCLE_STATE_AVAILABLE = "AVAILABLE"
+
+    #: A constant which can be used with the lifecycle_state property of a IPSecConnection.
+    #: This constant has a value of "TERMINATING"
+    LIFECYCLE_STATE_TERMINATING = "TERMINATING"
+
+    #: A constant which can be used with the lifecycle_state property of a IPSecConnection.
+    #: This constant has a value of "TERMINATED"
+    LIFECYCLE_STATE_TERMINATED = "TERMINATED"
 
     def __init__(self, **kwargs):
         """

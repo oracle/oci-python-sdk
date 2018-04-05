@@ -8,6 +8,41 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class ApiKey(object):
+    """
+    A PEM-format RSA credential for securing requests to the Oracle Cloud Infrastructure REST API. Also known
+    as an *API signing key*. Specifically, this is the public key from the key pair. The private key remains with
+    the user calling the API. For information about generating a key pair
+    in the required PEM format, see `Required Keys and OCIDs`__.
+
+    **Important:** This is **not** the SSH key for accessing compute instances.
+
+    Each user can have a maximum of three API signing keys.
+
+    For more information about user credentials, see `User Credentials`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/usercredentials.htm
+    """
+
+    #: A constant which can be used with the lifecycle_state property of a ApiKey.
+    #: This constant has a value of "CREATING"
+    LIFECYCLE_STATE_CREATING = "CREATING"
+
+    #: A constant which can be used with the lifecycle_state property of a ApiKey.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a ApiKey.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a ApiKey.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a ApiKey.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_STATE_DELETED = "DELETED"
 
     def __init__(self, **kwargs):
         """

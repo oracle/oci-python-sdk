@@ -8,6 +8,21 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class CreateIdentityProviderDetails(object):
+    """
+    CreateIdentityProviderDetails model.
+    """
+
+    #: A constant which can be used with the product_type property of a CreateIdentityProviderDetails.
+    #: This constant has a value of "IDCS"
+    PRODUCT_TYPE_IDCS = "IDCS"
+
+    #: A constant which can be used with the product_type property of a CreateIdentityProviderDetails.
+    #: This constant has a value of "ADFS"
+    PRODUCT_TYPE_ADFS = "ADFS"
+
+    #: A constant which can be used with the protocol property of a CreateIdentityProviderDetails.
+    #: This constant has a value of "SAML2"
+    PROTOCOL_SAML2 = "SAML2"
 
     def __init__(self, **kwargs):
         """

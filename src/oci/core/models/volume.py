@@ -8,6 +8,42 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class Volume(object):
+    """
+    A detachable block volume device that allows you to dynamically expand
+    the storage capacity of an instance. For more information, see
+    `Overview of Cloud Volume Storage`__.
+
+    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
+    talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+    `Getting Started with Policies`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/overview.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
+    """
+
+    #: A constant which can be used with the lifecycle_state property of a Volume.
+    #: This constant has a value of "PROVISIONING"
+    LIFECYCLE_STATE_PROVISIONING = "PROVISIONING"
+
+    #: A constant which can be used with the lifecycle_state property of a Volume.
+    #: This constant has a value of "RESTORING"
+    LIFECYCLE_STATE_RESTORING = "RESTORING"
+
+    #: A constant which can be used with the lifecycle_state property of a Volume.
+    #: This constant has a value of "AVAILABLE"
+    LIFECYCLE_STATE_AVAILABLE = "AVAILABLE"
+
+    #: A constant which can be used with the lifecycle_state property of a Volume.
+    #: This constant has a value of "TERMINATING"
+    LIFECYCLE_STATE_TERMINATING = "TERMINATING"
+
+    #: A constant which can be used with the lifecycle_state property of a Volume.
+    #: This constant has a value of "TERMINATED"
+    LIFECYCLE_STATE_TERMINATED = "TERMINATED"
+
+    #: A constant which can be used with the lifecycle_state property of a Volume.
+    #: This constant has a value of "FAULTY"
+    LIFECYCLE_STATE_FAULTY = "FAULTY"
 
     def __init__(self, **kwargs):
         """

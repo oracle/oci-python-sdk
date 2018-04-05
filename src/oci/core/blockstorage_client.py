@@ -16,6 +16,9 @@ missing = Sentinel("Missing")
 
 
 class BlockstorageClient(object):
+    """
+    APIs for Networking Service, Compute Service, and Block Volume Service.
+    """
 
     def __init__(self, config, **kwargs):
         validate_config(config, signer=kwargs.get('signer'))
@@ -30,7 +33,14 @@ class BlockstorageClient(object):
                 pass_phrase=get_config_value_or_default(config, "pass_phrase"),
                 private_key_content=config.get("key_content")
             )
-        self.base_client = BaseClient("blockstorage", config, signer, core_type_mapping)
+
+        base_client_init_kwargs = {
+            'regional_client': True,
+            'service_endpoint': kwargs.get('service_endpoint'),
+            'timeout': kwargs.get('timeout'),
+            'base_path': '/20160918'
+        }
+        self.base_client = BaseClient("blockstorage", config, signer, core_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
 
     def create_volume(self, create_volume_details, **kwargs):

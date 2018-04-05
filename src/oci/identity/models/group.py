@@ -8,6 +8,45 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class Group(object):
+    """
+    A collection of users who all need the same type of access to a particular set of resources or compartment.
+    For conceptual information about groups and other IAM Service components, see
+    `Overview of the IAM Service`__.
+
+    If you're federating with an identity provider (IdP), you need to create mappings between the groups
+    defined in the IdP and groups you define in the IAM service. For more information, see
+    `Identity Providers and Federation`__. Also see
+    :class:`IdentityProvider` and
+    :class:`IdpGroupMapping`.
+
+    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
+    talk to an administrator. If you're an administrator who needs to write policies to give users access,
+    see `Getting Started with Policies`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/federation.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
+    """
+
+    #: A constant which can be used with the lifecycle_state property of a Group.
+    #: This constant has a value of "CREATING"
+    LIFECYCLE_STATE_CREATING = "CREATING"
+
+    #: A constant which can be used with the lifecycle_state property of a Group.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a Group.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a Group.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a Group.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_STATE_DELETED = "DELETED"
 
     def __init__(self, **kwargs):
         """

@@ -8,6 +8,9 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class TagSummary(object):
+    """
+    A tag definition that belongs to a specific tag namespace.
+    """
 
     def __init__(self, **kwargs):
         """

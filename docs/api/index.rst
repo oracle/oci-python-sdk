@@ -9,12 +9,13 @@
         }
     </script>
 
-API Reference
-~~~~~~~~~~~~~
+Single Page Reference
+~~~~~~~~~~~~~~~~~~~~~~
 
-=======
- Audit 
-=======
+
+=====
+Audit
+=====
 
 --------
  Client
@@ -22,6 +23,7 @@ API Reference
 
 .. autoclass:: oci.audit.audit_client.AuditClient
     :members:
+    :noindex:
 
 --------
  Models
@@ -33,10 +35,12 @@ API Reference
     :undoc-members:
     :imported-members:
     :inherited-members:
+    :noindex:
 
-===============
- Core Services
-===============
+
+=============
+Core Services
+=============
 
 ---------
  Clients
@@ -48,19 +52,24 @@ Block Storage
 
 .. autoclass:: oci.core.blockstorage_client.BlockstorageClient
     :members:
+    :noindex:
 
-Compute
-=======
+
+Compute 
+========
 
 .. autoclass:: oci.core.compute_client.ComputeClient
     :members:
+    :noindex:
 
 
-Virtual Network
-===============
+Virtual Network 
+================
 
 .. autoclass:: oci.core.virtual_network_client.VirtualNetworkClient
     :members:
+    :noindex:
+
 
 --------
  Models
@@ -72,10 +81,12 @@ Virtual Network
     :undoc-members:
     :imported-members:
     :inherited-members:
+    :noindex:
 
-==========
- Database
-==========
+
+========
+Database
+========
 
 --------
  Client
@@ -83,6 +94,7 @@ Virtual Network
 
 .. autoclass:: oci.database.database_client.DatabaseClient
     :members:
+    :noindex:
 
 --------
  Models
@@ -94,10 +106,12 @@ Virtual Network
     :undoc-members:
     :imported-members:
     :inherited-members:
+    :noindex:
 
-==========
- DNS
-==========
+
+===
+DNS
+===
 
 --------
  Client
@@ -105,6 +119,7 @@ Virtual Network
 
 .. autoclass:: oci.dns.dns_client.DnsClient
     :members:
+    :noindex:
 
 --------
  Models
@@ -116,10 +131,12 @@ Virtual Network
     :undoc-members:
     :imported-members:
     :inherited-members:
+    :noindex:
 
-==========
- Email
-==========
+
+=====
+Email
+=====
 
 --------
  Client
@@ -127,6 +144,7 @@ Virtual Network
 
 .. autoclass:: oci.email.email_client.EmailClient
     :members:
+    :noindex:
 
 --------
  Models
@@ -138,10 +156,12 @@ Virtual Network
     :undoc-members:
     :imported-members:
     :inherited-members:
+    :noindex:
 
-==============
- File Storage
-==============
+
+============
+File Storage
+============
 
 --------
  Client
@@ -149,6 +169,7 @@ Virtual Network
 
 .. autoclass:: oci.file_storage.file_storage_client.FileStorageClient
     :members:
+    :noindex:
 
 --------
  Models
@@ -160,10 +181,12 @@ Virtual Network
     :undoc-members:
     :imported-members:
     :inherited-members:
+    :noindex:
 
-==========
- Identity
-==========
+
+========
+Identity
+========
 
 --------
  Client
@@ -171,6 +194,7 @@ Virtual Network
 
 .. autoclass:: oci.identity.identity_client.IdentityClient
     :members:
+    :noindex:
 
 --------
  Models
@@ -182,10 +206,12 @@ Virtual Network
     :undoc-members:
     :imported-members:
     :inherited-members:
+    :noindex:
 
-==============
+
+=============
 Load Balancer
-==============
+=============
 
 --------
  Client
@@ -193,6 +219,7 @@ Load Balancer
 
 .. autoclass:: oci.load_balancer.load_balancer_client.LoadBalancerClient
     :members:
+    :noindex:
 
 --------
  Models
@@ -204,10 +231,12 @@ Load Balancer
     :undoc-members:
     :imported-members:
     :inherited-members:
+    :noindex:
 
-================
- Object Storage
-================
+
+==============
+Object Storage
+==============
 
 --------
  Client
@@ -215,6 +244,7 @@ Load Balancer
 
 .. autoclass:: oci.object_storage.object_storage_client.ObjectStorageClient
     :members:
+    :noindex:
 
 --------
  Models
@@ -226,16 +256,20 @@ Load Balancer
     :undoc-members:
     :imported-members:
     :inherited-members:
+    :noindex:
+
 
 ================
  Upload Manager
 ================
 
 .. module:: oci.object_storage
+      :noindex:
 
 .. autoclass:: UploadManager
       :special-members: __init__
       :members:
+      :noindex:
 
 =============
  Base Client
@@ -251,16 +285,22 @@ Load Balancer
 ========
 
 .. module:: oci.config
+    :noindex:
 
 .. autofunction:: from_file
+    :noindex:
 
 .. autofunction:: validate_config
+    :noindex:
 
 .. module:: oci.regions
+    :noindex:
 
 .. autofunction:: is_region
+    :noindex:
 
 .. autofunction:: endpoint_for
+    :noindex:
 
 
 ============
@@ -269,115 +309,148 @@ Load Balancer
 
 .. automodule:: oci.exceptions
     :members:
+    :noindex:
 
 =========
  Signing
 =========
 
 .. module:: oci.signer
+    :noindex:
 
 .. autofunction:: load_private_key_from_file
+    :noindex:
 
 .. autofunction:: load_private_key
+    :noindex:
 
 .. autoclass:: Signer
+    :noindex:
 
 =====================
  Additional Signers
 =====================
 
 .. module:: oci.auth.signers
+      :noindex:
 
 .. autoclass:: SecurityTokenSigner
       :special-members: __init__
       :members:
+      :noindex:
 
 .. autoclass:: X509FederationClientBasedSecurityTokenSigner
       :special-members: __init__
       :members:
+      :noindex:
 
 .. autoclass:: InstancePrincipalsSecurityTokenSigner
       :special-members: __init__
       :members:
+      :noindex:
 
 ============================
 X509 Certificate Retrievers
 ============================
 
 .. module:: oci.auth.certificate_retriever
+      :noindex:
 
 .. autoclass:: UrlBasedCertificateRetriever
       :special-members: __init__
       :members:
+      :noindex:
 
 .. autoclass:: PEMStringCertificateRetriever
       :special-members: __init__
       :members:
+      :noindex:
 
 .. autoclass:: FileBasedCertificateRetriever
       :special-members: __init__
       :members:
+      :noindex:
 
 ====================================
 X509 Certificate Federation Client
 ====================================
 
 .. module:: oci.auth.federation_client
+      :noindex:
 
 .. autoclass:: X509FederationClient
       :special-members: __init__
       :members:
+      :noindex:
 
 .. module:: oci.auth.session_key_supplier
+      :noindex:
 
 .. autoclass:: SessionKeySupplier
       :special-members: __init__
       :members:
+      :noindex:
 
 ===========
  Utilities
 ===========
 
 .. module:: oci.util
+    :noindex:
 
 .. autofunction:: to_dict
+    :noindex:
 
 .. autoclass:: Sentinel
+    :noindex:
 
 ===========
  Waiters
 ===========
 
 .. module:: oci
+    :noindex:
 
 .. autofunction:: wait_until
+    :noindex:
 
 ===========
  Pagination
 ===========
 
 .. module:: oci.pagination
+    :noindex:
 
 .. autofunction:: list_call_get_all_results
+    :noindex:
+
 .. autofunction:: list_call_get_up_to_limit
+    :noindex:
+
 .. autofunction:: list_call_get_all_results_generator
+    :noindex:
+
 .. autofunction:: list_call_get_up_to_limit_generator
+    :noindex:
 
 =========
 Request
 =========
 .. module:: oci.request
+    :noindex:
 
 .. autoclass:: Request
     :members:
     :undoc-members:
+    :noindex:
 
 =========
 Response
 =========
 .. module:: oci.response
+    :noindex:
 
 .. autoclass:: Response
     :members:
     :undoc-members:
-
+    :noindex:

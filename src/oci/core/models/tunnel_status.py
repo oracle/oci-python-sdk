@@ -8,6 +8,21 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class TunnelStatus(object):
+    """
+    Specific connection details for an IPSec tunnel.
+    """
+
+    #: A constant which can be used with the lifecycle_state property of a TunnelStatus.
+    #: This constant has a value of "UP"
+    LIFECYCLE_STATE_UP = "UP"
+
+    #: A constant which can be used with the lifecycle_state property of a TunnelStatus.
+    #: This constant has a value of "DOWN"
+    LIFECYCLE_STATE_DOWN = "DOWN"
+
+    #: A constant which can be used with the lifecycle_state property of a TunnelStatus.
+    #: This constant has a value of "DOWN_FOR_MAINTENANCE"
+    LIFECYCLE_STATE_DOWN_FOR_MAINTENANCE = "DOWN_FOR_MAINTENANCE"
 
     def __init__(self, **kwargs):
         """

@@ -8,6 +8,10 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class RouteRule(object):
+    """
+    A mapping between a destination IP address range and a virtual device to route matching
+    packets to (a target).
+    """
 
     def __init__(self, **kwargs):
         """

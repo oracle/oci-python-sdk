@@ -8,6 +8,28 @@ from ...decorators import init_model_state_from_kwargs
 
 @init_model_state_from_kwargs
 class VnicAttachment(object):
+    """
+    Represents an attachment between a VNIC and an instance. For more information, see
+    `Virtual Network Interface Cards (VNICs)`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVNICs.htm
+    """
+
+    #: A constant which can be used with the lifecycle_state property of a VnicAttachment.
+    #: This constant has a value of "ATTACHING"
+    LIFECYCLE_STATE_ATTACHING = "ATTACHING"
+
+    #: A constant which can be used with the lifecycle_state property of a VnicAttachment.
+    #: This constant has a value of "ATTACHED"
+    LIFECYCLE_STATE_ATTACHED = "ATTACHED"
+
+    #: A constant which can be used with the lifecycle_state property of a VnicAttachment.
+    #: This constant has a value of "DETACHING"
+    LIFECYCLE_STATE_DETACHING = "DETACHING"
+
+    #: A constant which can be used with the lifecycle_state property of a VnicAttachment.
+    #: This constant has a value of "DETACHED"
+    LIFECYCLE_STATE_DETACHED = "DETACHED"
 
     def __init__(self, **kwargs):
         """
