@@ -6,11 +6,11 @@ from __future__ import absolute_import
 import requests  # noqa: F401
 import six
 
-from .. import retry  # noqa: F401
-from ..base_client import BaseClient
-from ..config import get_config_value_or_default, validate_config
-from ..signer import Signer
-from ..util import Sentinel
+from oci import retry  # noqa: F401
+from oci.base_client import BaseClient
+from oci.config import get_config_value_or_default, validate_config
+from oci.signer import Signer
+from oci.util import Sentinel
 from .models import identity_type_mapping
 missing = Sentinel("Missing")
 

@@ -2,8 +2,8 @@
 # Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
-from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
-from ...decorators import init_model_state_from_kwargs
+from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
+from oci.decorators import init_model_state_from_kwargs
 
 
 @init_model_state_from_kwargs
@@ -314,7 +314,8 @@ class FastConnectProviderService(object):
         :type: list[str]
         """
         allowed_values = ["PUBLIC", "PRIVATE"]
-        supported_virtual_circuit_types[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in supported_virtual_circuit_types]
+        if supported_virtual_circuit_types:
+            supported_virtual_circuit_types[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in supported_virtual_circuit_types]
         self._supported_virtual_circuit_types = supported_virtual_circuit_types
 
     @property
