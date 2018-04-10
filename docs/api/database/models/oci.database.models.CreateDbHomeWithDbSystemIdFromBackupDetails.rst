@@ -1,0 +1,11 @@
+CreateDbHomeWithDbSystemIdFromBackupDetails
+===========================================
+
+.. currentmodule:: oci.database.models
+
+.. autoclass:: CreateDbHomeWithDbSystemIdFromBackupDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

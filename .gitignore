@@ -20,15 +20,6 @@ env/
 docs/warnings.txt
 docs/_build/
 docs/apidocs/
-docs/api/audit/
-docs/api/core/
-docs/api/database/
-docs/api/dns/
-docs/api/email/
-docs/api/file_storage/
-docs/api/identity/
-docs/api/load_balancer/
-docs/api/object_storage/
 tests/resources/test_debug.log
 tests/resources/*.bin
 tests/temp
