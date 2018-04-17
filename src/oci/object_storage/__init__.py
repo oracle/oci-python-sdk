@@ -6,7 +6,8 @@ from __future__ import absolute_import
 from .transfer.internal.multipart_object_assembler import MultipartObjectAssembler
 from . import models
 from .object_storage_client import ObjectStorageClient
+from .object_storage_client_composite_operations import ObjectStorageClientCompositeOperations
 from .transfer.upload_manager import UploadManager
 
-__all__ = ["ObjectStorageClient", "models", "MultipartObjectAssembler",
+__all__ = ["ObjectStorageClient", "ObjectStorageClientCompositeOperations", "models", "MultipartObjectAssembler",
            "UploadManager"]

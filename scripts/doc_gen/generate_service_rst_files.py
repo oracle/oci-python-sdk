@@ -128,6 +128,7 @@ def landing_page_linkify(service_name):
 def generate_rst(module_name, service_root_header, target_file_name, service_names, jinja_environment):
     target_file = os.path.join(API_DOC_DIRECTORY, '{}.rst'.format(target_file_name))
     service_client_classes = ['oci.{}.{}Client'.format(module_name, camelize(s)) for s in service_names]
+    service_client_classes.extend(['oci.{}.{}ClientCompositeOperations'.format(module_name, camelize(s)) for s in service_names])
 
     models = []
     for model_info in inspect.getmembers(sys.modules['oci.{}.models'.format(module_name)], inspect.isclass):

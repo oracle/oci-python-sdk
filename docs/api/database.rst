@@ -7,6 +7,7 @@ Database
     :template: autosummary/service_client.rst
 
     oci.database.DatabaseClient
+    oci.database.DatabaseClientCompositeOperations
 
 --------
  Models

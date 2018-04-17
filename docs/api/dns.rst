@@ -7,6 +7,7 @@ DNS
     :template: autosummary/service_client.rst
 
     oci.dns.DnsClient
+    oci.dns.DnsClientCompositeOperations
 
 --------
  Models
