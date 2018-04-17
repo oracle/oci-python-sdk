@@ -51,8 +51,10 @@ Make sure to set up auto completion for both pyenv and pyenv-virtualenv.
     # You should  something like this:
     #    2.7.12/envs/sdk-2 (created from ~/.pyenv/versions/2.7.12)
     #    3.5.1/envs/sdk-3 (created from ~/.pyenv/versions/3.5.1)
+    #    3.6.5/envs/sdk-36 (created from ~/.pyenv/versions/3.6.5)
     #    sdk-2 (created from ~/.pyenv/versions/2.7.12)
     #    sdk-3 (created from ~/.pyenv/versions/3.5.1)
+    #    sdk-36 (created from ~/.pyenv/versions/3.6.5)
     pyenv virtualenvs
 
     # Drop the shell venv
