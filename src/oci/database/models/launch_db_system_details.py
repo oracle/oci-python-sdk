@@ -82,6 +82,10 @@ class LaunchDbSystemDetails(object):
             The value to assign to the db_home property of this LaunchDbSystemDetails.
         :type db_home: CreateDbHomeDetails
 
+        :param defined_tags:
+            The value to assign to the defined_tags property of this LaunchDbSystemDetails.
+        :type defined_tags: dict(str, dict(str, object))
+
         :param disk_redundancy:
             The value to assign to the disk_redundancy property of this LaunchDbSystemDetails.
             Allowed values for this property are: "HIGH", "NORMAL"
@@ -94,6 +98,10 @@ class LaunchDbSystemDetails(object):
         :param domain:
             The value to assign to the domain property of this LaunchDbSystemDetails.
         :type domain: str
+
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this LaunchDbSystemDetails.
+        :type freeform_tags: dict(str, str)
 
         :param hostname:
             The value to assign to the hostname property of this LaunchDbSystemDetails.
@@ -134,9 +142,11 @@ class LaunchDbSystemDetails(object):
             'data_storage_percentage': 'int',
             'database_edition': 'str',
             'db_home': 'CreateDbHomeDetails',
+            'defined_tags': 'dict(str, dict(str, object))',
             'disk_redundancy': 'str',
             'display_name': 'str',
             'domain': 'str',
+            'freeform_tags': 'dict(str, str)',
             'hostname': 'str',
             'initial_data_storage_size_in_gb': 'int',
             'license_model': 'str',
@@ -155,9 +165,11 @@ class LaunchDbSystemDetails(object):
             'data_storage_percentage': 'dataStoragePercentage',
             'database_edition': 'databaseEdition',
             'db_home': 'dbHome',
+            'defined_tags': 'definedTags',
             'disk_redundancy': 'diskRedundancy',
             'display_name': 'displayName',
             'domain': 'domain',
+            'freeform_tags': 'freeformTags',
             'hostname': 'hostname',
             'initial_data_storage_size_in_gb': 'initialDataStorageSizeInGB',
             'license_model': 'licenseModel',
@@ -175,9 +187,11 @@ class LaunchDbSystemDetails(object):
         self._data_storage_percentage = None
         self._database_edition = None
         self._db_home = None
+        self._defined_tags = None
         self._disk_redundancy = None
         self._display_name = None
         self._domain = None
+        self._freeform_tags = None
         self._hostname = None
         self._initial_data_storage_size_in_gb = None
         self._license_model = None
@@ -411,6 +425,40 @@ class LaunchDbSystemDetails(object):
         self._db_home = db_home
 
     @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this LaunchDbSystemDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this LaunchDbSystemDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this LaunchDbSystemDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this LaunchDbSystemDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
+
+    @property
     def disk_redundancy(self):
         """
         Gets the disk_redundancy of this LaunchDbSystemDetails.
@@ -497,6 +545,40 @@ class LaunchDbSystemDetails(object):
         :type: str
         """
         self._domain = domain
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this LaunchDbSystemDetails.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this LaunchDbSystemDetails.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this LaunchDbSystemDetails.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this LaunchDbSystemDetails.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
 
     @property
     def hostname(self):

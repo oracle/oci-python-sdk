@@ -51,8 +51,10 @@ Make sure to set up auto completion for both pyenv and pyenv-virtualenv.
     # You should  something like this:
     #    2.7.12/envs/sdk-2 (created from ~/.pyenv/versions/2.7.12)
     #    3.5.1/envs/sdk-3 (created from ~/.pyenv/versions/3.5.1)
+    #    3.6.5/envs/sdk-36 (created from ~/.pyenv/versions/3.6.5)
     #    sdk-2 (created from ~/.pyenv/versions/2.7.12)
     #    sdk-3 (created from ~/.pyenv/versions/3.5.1)
+    #    sdk-36 (created from ~/.pyenv/versions/3.6.5)
     pyenv virtualenvs
 
     # Drop the shell venv
@@ -110,8 +112,9 @@ Prerequisites::
 
     - Make sure to unset virtual environment using 'pyenv shell --unset'
 
-Some of the tests require environment variables which can be set by running the following command:
-'source internal_resources/test_setup.sh'.
+Some of the tests require environment variables which can be set by running the following command::
+
+    'source internal_resources/test_setup.sh'
 
 To run the full suite of tests against all tox environments::
 
@@ -254,6 +257,10 @@ After you've added the service, you can run the code generator using the steps f
 
 Updating existing service spec versions
 =========================================
+Click must be installed to run add_or_update_spec.py.::
+
+    pip install click
+
 The ``scripts/add_or_update_spec.py`` script can be used to update the spec version of an existing service. An example of running this script is:
 
 ::
