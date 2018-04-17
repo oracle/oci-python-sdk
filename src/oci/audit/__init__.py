@@ -5,6 +5,7 @@ from __future__ import absolute_import
 
 
 from .audit_client import AuditClient
+from .audit_client_composite_operations import AuditClientCompositeOperations
 from . import models
 
-__all__ = ["AuditClient", "models"]
+__all__ = ["AuditClient", "AuditClientCompositeOperations", "models"]

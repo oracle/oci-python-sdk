@@ -2091,6 +2091,9 @@ class DatabaseClient(object):
         :param str db_system_shape: (optional)
             If provided, filters the results to the set of database versions which are supported for the given shape.
 
+        :param str db_system_id: (optional)
+            The DB system OCID. If provided, filters the results to the set of database versions which are supported for the DB system.
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.DbVersionSummary`
         :rtype: :class:`~oci.response.Response`
         """
@@ -2102,7 +2105,8 @@ class DatabaseClient(object):
             "retry_strategy",
             "limit",
             "page",
-            "db_system_shape"
+            "db_system_shape",
+            "db_system_id"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
         if extra_kwargs:
@@ -2113,7 +2117,8 @@ class DatabaseClient(object):
             "compartmentId": compartment_id,
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
-            "dbSystemShape": kwargs.get("db_system_shape", missing)
+            "dbSystemShape": kwargs.get("db_system_shape", missing),
+            "dbSystemId": kwargs.get("db_system_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
 

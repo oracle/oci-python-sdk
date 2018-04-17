@@ -5,6 +5,7 @@ from __future__ import absolute_import
 
 
 from .file_storage_client import FileStorageClient
+from .file_storage_client_composite_operations import FileStorageClientCompositeOperations
 from . import models
 
-__all__ = ["FileStorageClient", "models"]
+__all__ = ["FileStorageClient", "FileStorageClientCompositeOperations", "models"]

@@ -18,7 +18,6 @@ missing = Sentinel("Missing")
 class FileStorageClient(object):
     """
     The API for the File Storage Service.
-
     """
 
     def __init__(self, config, **kwargs):

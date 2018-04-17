@@ -82,6 +82,14 @@ class DatabaseSummary(object):
             The value to assign to the db_workload property of this DatabaseSummary.
         :type db_workload: str
 
+        :param defined_tags:
+            The value to assign to the defined_tags property of this DatabaseSummary.
+        :type defined_tags: dict(str, dict(str, object))
+
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this DatabaseSummary.
+        :type freeform_tags: dict(str, str)
+
         :param id:
             The value to assign to the id property of this DatabaseSummary.
         :type id: str
@@ -117,6 +125,8 @@ class DatabaseSummary(object):
             'db_name': 'str',
             'db_unique_name': 'str',
             'db_workload': 'str',
+            'defined_tags': 'dict(str, dict(str, object))',
+            'freeform_tags': 'dict(str, str)',
             'id': 'str',
             'lifecycle_details': 'str',
             'lifecycle_state': 'str',
@@ -133,6 +143,8 @@ class DatabaseSummary(object):
             'db_name': 'dbName',
             'db_unique_name': 'dbUniqueName',
             'db_workload': 'dbWorkload',
+            'defined_tags': 'definedTags',
+            'freeform_tags': 'freeformTags',
             'id': 'id',
             'lifecycle_details': 'lifecycleDetails',
             'lifecycle_state': 'lifecycleState',
@@ -148,6 +160,8 @@ class DatabaseSummary(object):
         self._db_name = None
         self._db_unique_name = None
         self._db_workload = None
+        self._defined_tags = None
+        self._freeform_tags = None
         self._id = None
         self._lifecycle_details = None
         self._lifecycle_state = None
@@ -318,6 +332,74 @@ class DatabaseSummary(object):
         :type: str
         """
         self._db_workload = db_workload
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this DatabaseSummary.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this DatabaseSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this DatabaseSummary.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this DatabaseSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this DatabaseSummary.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this DatabaseSummary.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this DatabaseSummary.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this DatabaseSummary.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
 
     @property
     def id(self):
