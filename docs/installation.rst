@@ -146,7 +146,7 @@ If you are attempting to install the SDK in your system-wide Python using pip 10
 
 Resolve by using a virtual environment
 ***************************************
-Installing the SDK in a virtual environment instead of the system-wide Python. See the *Downloading and Installing the SDK* for more information
+Installing the SDK in a virtual environment instead of the system-wide Python. See the *Downloading and Installing the SDK* section for more information
 
 Resolve by using the system-wide Python
 ****************************************
@@ -163,7 +163,7 @@ Or you will have to uninstall the distutils installed packages manually. To do t
 
 1. Make a note of what packages cannot be uninstalled. In the example error message, the package is **requests**
 2. Find the install location for these packages. You can find this by looking in the directories returned by ``python -m site``
-3. One of the directories should contain a sub-directory the same name as the package (e.g. in the case of the example error message the folder should be called **requests**) and a ``.egg-info`` file which contains the package name and a version
+3. One of the directories should contain a sub-directory with the same name as the package (e.g. in the case of the example error message the folder should be called **requests**) and a ``.egg-info`` file which contains the package name and a version
 4. Delete the folder and the ``.egg-info`` file
 5. Try and re-install the SDK::
 
