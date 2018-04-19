@@ -9,7 +9,7 @@ By default, operations exposed in the SDK do not retry, but retries can be set i
 * The :py:class:`~oci.retry.NoneRetryStrategy`. This will result in no retries being performed for the operation
 * A custom strategy produced via the :py:class:`~oci.retry.RetryStrategyBuilder`
 
-A sample on using retries, including the default strategy and a custom strategy, can be found on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/retries.py>`
+A sample on using retries, including the default strategy and a custom strategy, can be found on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/retries.py>`__
 
 Default Retry Strategy
 ------------------------

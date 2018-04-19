@@ -2,8 +2,8 @@
 # Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
-from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
-from ...decorators import init_model_state_from_kwargs
+from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
+from oci.decorators import init_model_state_from_kwargs
 
 
 @init_model_state_from_kwargs
@@ -127,6 +127,10 @@ class DbSystem(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type database_edition: str
 
+        :param defined_tags:
+            The value to assign to the defined_tags property of this DbSystem.
+        :type defined_tags: dict(str, dict(str, object))
+
         :param disk_redundancy:
             The value to assign to the disk_redundancy property of this DbSystem.
             Allowed values for this property are: "HIGH", "NORMAL", 'UNKNOWN_ENUM_VALUE'.
@@ -140,6 +144,10 @@ class DbSystem(object):
         :param domain:
             The value to assign to the domain property of this DbSystem.
         :type domain: str
+
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this DbSystem.
+        :type freeform_tags: dict(str, str)
 
         :param hostname:
             The value to assign to the hostname property of this DbSystem.
@@ -223,9 +231,11 @@ class DbSystem(object):
             'data_storage_percentage': 'int',
             'data_storage_size_in_gbs': 'int',
             'database_edition': 'str',
+            'defined_tags': 'dict(str, dict(str, object))',
             'disk_redundancy': 'str',
             'display_name': 'str',
             'domain': 'str',
+            'freeform_tags': 'dict(str, str)',
             'hostname': 'str',
             'id': 'str',
             'last_patch_history_entry_id': 'str',
@@ -254,9 +264,11 @@ class DbSystem(object):
             'data_storage_percentage': 'dataStoragePercentage',
             'data_storage_size_in_gbs': 'dataStorageSizeInGBs',
             'database_edition': 'databaseEdition',
+            'defined_tags': 'definedTags',
             'disk_redundancy': 'diskRedundancy',
             'display_name': 'displayName',
             'domain': 'domain',
+            'freeform_tags': 'freeformTags',
             'hostname': 'hostname',
             'id': 'id',
             'last_patch_history_entry_id': 'lastPatchHistoryEntryId',
@@ -284,9 +296,11 @@ class DbSystem(object):
         self._data_storage_percentage = None
         self._data_storage_size_in_gbs = None
         self._database_edition = None
+        self._defined_tags = None
         self._disk_redundancy = None
         self._display_name = None
         self._domain = None
+        self._freeform_tags = None
         self._hostname = None
         self._id = None
         self._last_patch_history_entry_id = None
@@ -512,6 +526,40 @@ class DbSystem(object):
         self._database_edition = database_edition
 
     @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this DbSystem.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this DbSystem.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this DbSystem.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this DbSystem.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
+
+    @property
     def disk_redundancy(self):
         """
         Gets the disk_redundancy of this DbSystem.
@@ -592,6 +640,40 @@ class DbSystem(object):
         :type: str
         """
         self._domain = domain
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this DbSystem.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this DbSystem.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this DbSystem.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this DbSystem.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
 
     @property
     def hostname(self):

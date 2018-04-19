@@ -19,7 +19,7 @@ VALID_BACKOFF_TYPES = [BACKOFF_FULL_JITTER_VALUE, BACKOFF_EQUAL_JITTER_VALUE, BA
 class RetryStrategyBuilder(object):
     """
     A class which can build a retry strategy based on provided criteria. Criteria can be provided at construction time or
-    afterwards via using the add_* (to add/enable criteria) and no_* (to disable/remove criteria) methods.
+    afterwards via using the ``add_*`` (to add/enable criteria) and ``no_*`` (to disable/remove criteria) methods.
 
     Trying to build a strategy when there are no enabled checks will result in a :py:class:`oci.retry.NoneRetryStrategy`
     being produced.
@@ -211,6 +211,15 @@ class NoneRetryStrategy(object):
     """
 
     def make_retrying_call(self, func_ref, *func_args, **func_kwargs):
+        """
+        Calls the function given by func_ref. Any positional (``*func_args``) and keyword (``**func_kwargs``)
+        arguments are passed as-is to func_ref.
+
+        :param function func_ref:
+            The function that we should call with retries
+
+        :return: the result of calling func_ref
+        """
         func_ref(*func_args, **func_kwargs)
 
 
@@ -246,7 +255,7 @@ class ExponentialBackoffRetryStrategyBase(object):
 
     def make_retrying_call(self, func_ref, *func_args, **func_kwargs):
         """
-        Calls the function given by func_ref. Any positional (*func_args) and keyword (**func_kwargs)
+        Calls the function given by func_ref. Any positional (``*func_args``) and keyword (``**func_kwargs``)
         arguments are passed as-is to func_ref.
 
         :param function func_ref:

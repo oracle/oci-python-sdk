@@ -7,6 +7,7 @@ File Storage
     :template: autosummary/service_client.rst
 
     oci.file_storage.FileStorageClient
+    oci.file_storage.FileStorageClientCompositeOperations
 
 --------
  Models

@@ -2,8 +2,8 @@
 # Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
-from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
-from ...decorators import init_model_state_from_kwargs
+from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
+from oci.decorators import init_model_state_from_kwargs
 
 
 @init_model_state_from_kwargs
@@ -25,6 +25,14 @@ class UpdateDbSystemDetails(object):
             The value to assign to the data_storage_size_in_gbs property of this UpdateDbSystemDetails.
         :type data_storage_size_in_gbs: int
 
+        :param defined_tags:
+            The value to assign to the defined_tags property of this UpdateDbSystemDetails.
+        :type defined_tags: dict(str, dict(str, object))
+
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this UpdateDbSystemDetails.
+        :type freeform_tags: dict(str, str)
+
         :param ssh_public_keys:
             The value to assign to the ssh_public_keys property of this UpdateDbSystemDetails.
         :type ssh_public_keys: list[str]
@@ -37,6 +45,8 @@ class UpdateDbSystemDetails(object):
         self.swagger_types = {
             'cpu_core_count': 'int',
             'data_storage_size_in_gbs': 'int',
+            'defined_tags': 'dict(str, dict(str, object))',
+            'freeform_tags': 'dict(str, str)',
             'ssh_public_keys': 'list[str]',
             'version': 'PatchDetails'
         }
@@ -44,12 +54,16 @@ class UpdateDbSystemDetails(object):
         self.attribute_map = {
             'cpu_core_count': 'cpuCoreCount',
             'data_storage_size_in_gbs': 'dataStorageSizeInGBs',
+            'defined_tags': 'definedTags',
+            'freeform_tags': 'freeformTags',
             'ssh_public_keys': 'sshPublicKeys',
             'version': 'version'
         }
 
         self._cpu_core_count = None
         self._data_storage_size_in_gbs = None
+        self._defined_tags = None
+        self._freeform_tags = None
         self._ssh_public_keys = None
         self._version = None
 
@@ -100,6 +114,74 @@ class UpdateDbSystemDetails(object):
         :type: int
         """
         self._data_storage_size_in_gbs = data_storage_size_in_gbs
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this UpdateDbSystemDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this UpdateDbSystemDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this UpdateDbSystemDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this UpdateDbSystemDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this UpdateDbSystemDetails.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this UpdateDbSystemDetails.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this UpdateDbSystemDetails.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this UpdateDbSystemDetails.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
 
     @property
     def ssh_public_keys(self):

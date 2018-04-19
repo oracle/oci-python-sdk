@@ -7,6 +7,7 @@ Object Storage
     :template: autosummary/service_client.rst
 
     oci.object_storage.ObjectStorageClient
+    oci.object_storage.ObjectStorageClientCompositeOperations
 
 --------
  Models

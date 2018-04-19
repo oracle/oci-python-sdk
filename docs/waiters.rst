@@ -56,3 +56,11 @@ Instead of using a lambda, an already defined function can be used:
 In addition to the base parameters shown above, the function can accept optional attributes to control the maximum amount of time it will wait for and the time between calls to the service. For more information on the optional parameters, see the documentation on the :py:func:`~oci.wait_until` function. 
 
 For a more comprehensive sample, please see our `examples <https://github.com/oracle/oci-python-sdk/blob/master/examples/wait_for_resource_in_state.py>`_ on GitHub.
+
+Composite Operations
+---------------------
+In addition to using waiters, you can use the ``CompositeOperation`` classes in the SDK (e.g. :py:class:`~oci.core.ComputeClientCompositeOperations`) 
+to perform an action on a resource and wait for it to enter a particular state (or states). The ``CompositeOperation`` classes provide 
+convenience methods so that you yourself do not have to invoke an operation and then separately invoke a waiter. 
+
+An example of using ``CompositeOperation`` classes can be found on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/composite_operations_example.py>`__.

@@ -2,8 +2,8 @@
 # Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 from .image_source_details import ImageSourceDetails
-from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
-from ...decorators import init_model_state_from_kwargs
+from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
+from oci.decorators import init_model_state_from_kwargs
 
 
 @init_model_state_from_kwargs

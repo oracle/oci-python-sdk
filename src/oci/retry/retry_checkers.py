@@ -112,11 +112,6 @@ class LimitBasedRetryChecker(BaseRetryChecker):
 
 
 class TimeoutConnectionAndServiceErrorRetryChecker(BaseRetryChecker):
-    RETRYABLE_STATUSES_AND_CODES = {
-        -1: [],
-        429: []
-    }
-
     """
     A checker which will retry on certain exceptions. Retries are enabled for the following exception types:
 
@@ -143,6 +138,11 @@ class TimeoutConnectionAndServiceErrorRetryChecker(BaseRetryChecker):
     it is possible to retry on only 502s (either by status or by status and matching some code ) by disabling the general "retry on any 5xx"
     configuration and placing an entry for 502 in the dictionary
     """
+
+    RETRYABLE_STATUSES_AND_CODES = {
+        -1: [],
+        429: []
+    }
 
     def __init__(self, service_error_retry_config=RETRYABLE_STATUSES_AND_CODES, retry_any_5xx=True, **kwargs):
         super(TimeoutConnectionAndServiceErrorRetryChecker, self).__init__(**kwargs)

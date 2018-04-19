@@ -7,6 +7,7 @@ Email
     :template: autosummary/service_client.rst
 
     oci.email.EmailClient
+    oci.email.EmailClientCompositeOperations
 
 --------
  Models
