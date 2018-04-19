@@ -7,6 +7,7 @@ Load Balancer
     :template: autosummary/service_client.rst
 
     oci.load_balancer.LoadBalancerClient
+    oci.load_balancer.LoadBalancerClientCompositeOperations
 
 --------
  Models

@@ -21,6 +21,7 @@ API Reference
 * :doc:`Exceptions <exceptions>`
 * :doc:`Pagination <pagination>`
 * :doc:`Request and Response <request_and_response>`
+* :doc:`Retry <retry>`
 * :doc:`Signing <signing>`
 * :doc:`Upload Manager <upload_manager>`
 * :doc:`Utilities <utilities>`
@@ -47,6 +48,7 @@ API Reference
     exceptions
     pagination
     request_and_response
+    retry
     signing
     upload_manager
     utilities

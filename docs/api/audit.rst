@@ -7,6 +7,7 @@ Audit
     :template: autosummary/service_client.rst
 
     oci.audit.AuditClient
+    oci.audit.AuditClientCompositeOperations
 
 --------
  Models

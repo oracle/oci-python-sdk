@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+1.3.19 - 2018-04-19
+====================
+
+Added
+-----
+* Support for tagging ``DbSystem`` and ``Database`` resources in the Database Service
+* Support for filtering by ``DbSystemId`` in ``ListDbVersions`` operation in Database Service
+* Support for composite operations that provide convenience methods for operations that can be chained together (e.g. launching an instance and waiting for it to enter the RUNNING state)
+
+  * An example on how to perform these operations can be found on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/composite_operations_example.py>`__.
+
+
+====================
 1.3.18 - 2018-04-05
 ====================
 

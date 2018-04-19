@@ -7,6 +7,7 @@ Identity
     :template: autosummary/service_client.rst
 
     oci.identity.IdentityClient
+    oci.identity.IdentityClientCompositeOperations
 
 --------
  Models

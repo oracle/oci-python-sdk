@@ -1,0 +1,11 @@
+CrossConnectMapping
+===================
+
+.. currentmodule:: oci.core.models
+
+.. autoclass:: CrossConnectMapping
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

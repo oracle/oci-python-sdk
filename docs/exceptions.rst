@@ -22,6 +22,8 @@ When using the Python SDK, you should be prepared to handle the following except
 
 * If you use the :py:class:`~oci.object_storage.UploadManager` then you should also catch :py:class:`~oci.exceptions.MultipartUploadError`
 
+* If you use any of the ``CompositeOperation`` classes in the SDK (e.g. :py:class:`~oci.core.ComputeClientCompositeOperations`) then you should also catch :py:class:`~oci.exceptions.CompositeOperationError`
+
 * The Python SDK uses the `Requests <http://docs.python-requests.org/en/master/>`_ library to make calls to OCI services but it does not mask or wrap any of the errors originating from this library, so you should also account for these in your code. The exception reference for Requests can be found `here <http://docs.python-requests.org/en/master/_modules/requests/exceptions/>`__ and `here <http://docs.python-requests.org/en/master/api/#exceptions>`__
 
 Handling HTTP 3xx responses

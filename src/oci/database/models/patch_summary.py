@@ -2,8 +2,8 @@
 # Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 
-from ...util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
-from ...decorators import init_model_state_from_kwargs
+from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
+from oci.decorators import init_model_state_from_kwargs
 
 
 @init_model_state_from_kwargs
@@ -151,7 +151,8 @@ class PatchSummary(object):
         :type: list[str]
         """
         allowed_values = ["APPLY", "PRECHECK"]
-        available_actions[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in available_actions]
+        if available_actions:
+            available_actions[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in available_actions]
         self._available_actions = available_actions
 
     @property

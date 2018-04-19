@@ -53,11 +53,9 @@ You can install the Python SDK through the Python Package Index (PyPI), or alter
 
 **PyPi**
 
-To install from `PyPI <https://pypi.python.org/pypi/oci>`_:
+To install from `PyPI <https://pypi.python.org/pypi/oci>`_ use the following command::
 
-  Use the following command::
-
-      pip install oci
+    pip install oci
 
 **GitHub**
 
@@ -68,7 +66,7 @@ To install from GitHub:
 2. Extract the files from the zip.
 3. Use the following command to install the SDK::
 
-      pip install oci-*-py2.py3-none-any.whl
+    pip install oci-*-py2.py3-none-any.whl
 
   .. note::
 
@@ -80,18 +78,17 @@ To install from GitHub:
 
 Although optional, Oracle recommends that you run the SDK in a virtual environment with virtualenv.
 
-    With Linux, it's usually in a separate package from the main Python package.
-    If you need to install virtualenv, use pip install virtualenv.
-    To create and activate a virtual environment::
+With Linux, it's usually in a separate package from the main Python package.
+If you need to install virtualenv, use pip install virtualenv.
+To create and activate a virtual environment::
 
-        virtualenv <environment name>
-        . <environment name>/bin/activate
+    virtualenv <environment name>
+    source <environment name>/bin/activate
 
-    For example::
+For example::
 
-        virtualenv oci_sdk_env
-        . oci_sdk_env/bin/activate
-
+    virtualenv oci_sdk_env
+    source oci_sdk_env/bin/activate
 
 
 =====================
@@ -133,8 +130,44 @@ You might encounter issues when installing Python or the SDK, or using the SDK i
 
 Service Errors
 --------------
-Any operation resulting in a service error will cause an exception of type oci.exceptions.ServiceError to be thrown by the SDK. For information about common service errors returned by OCI, see `API Errors <https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm>`_
-.
+Any operation resulting in a service error will cause an exception of type oci.exceptions.ServiceError to be thrown by the SDK. For information about common service errors returned by OCI, see `API Errors <https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm>`_.
+
+
+pip 10 Installation Errors
+---------------------------
+If you are attempting to install the SDK in your system-wide Python using pip 10 then you may encounter conflicts with ``distutils`` installed packages. An example error message is:
+
+.. code-block:: none
+
+    sudo pip install oci
+    ...
+    ...
+    Cannot uninstall 'requests'. It is a distutils installed project and thus we cannot accurately determine which files belong to it which would lead to only a partial uninstall.
+
+Resolve by using a virtual environment
+***************************************
+Installing the SDK in a virtual environment instead of the system-wide Python. See the *Downloading and Installing the SDK* section for more information
+
+Resolve by using the system-wide Python
+****************************************
+If you wish to still use the system-wide Python, you can resolve this issue by downgrading the version of ``pip`` you are using and then trying to re-install the SDK. ::
+
+    sudo pip install pip==9.0.3
+    sudo pip install oci
+
+If you wish to stick with ``pip`` version 10, then you will either have to install the SDK using the ``--user`` switch::
+
+    pip install oci --user
+
+Or you will have to uninstall the distutils installed packages manually. To do this, you will have to:
+
+1. Make a note of what packages cannot be uninstalled. In the example error message, the package is **requests**
+2. Find the install location for these packages. You can find this by looking in the directories returned by ``python -m site``
+3. One of the directories should contain a sub-directory with the same name as the package (e.g. in the case of the example error message the folder should be called **requests**) and a ``.egg-info`` file which contains the package name and a version
+4. Delete the folder and the ``.egg-info`` file
+5. Try and re-install the SDK::
+
+    sudo pip install oci
 
 SSL/TLS or Certificate Issues
 -----------------------------
