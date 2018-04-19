@@ -31,9 +31,9 @@ python setup.py sdist bdist_wheel
 
 # install github version of the SDK from whl using PyPi production index for dependencies
 # (by default in TC it will use artifactory)
-pip install pyOpenSSL --upgrade
-pip install -i https://pypi.python.org/simple --trusted-host pypi.python.org dist/*.whl
-# pip install dist/*.whl
+# pip install pyOpenSSL --upgrade
+# pip install -i https://pypi.python.org/simple --trusted-host pypi.python.org dist/*.whl
+pip install dist/*.whl
 
 # cd to build docs
 cd docs/
