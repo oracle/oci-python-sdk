@@ -95,3 +95,17 @@ class MultipartUploadError(Exception):
         if 'error_causes_queue' in kwargs:
             while not kwargs['error_causes_queue'].empty():
                 self.error_causes.append(kwargs['error_causes_queue'].get())
+
+
+class CompositeOperationError(Exception):
+    """
+    An exception occurred during a composite operation (e.g. launching an instance and waiting for state)
+    but part of the composite operation succeeded. This exception has the following attributes:
+
+    :var list partial_results: Any partial results which are available (e.g. if the :py:meth:`~oci.core.ComputeClient.launch_instance` succeeded and the waiting for state failed then this will contain the :py:meth:`~oci.core.ComputeClient.launch_instance` result)
+    :var Exception cause: The exception which caused the composite operation to fail
+    """
+
+    def __init__(self, partial_results=[], cause=None):
+        self.partial_results = partial_results
+        self.cause = cause
