@@ -23,6 +23,21 @@ LARGE_CONTENT_FILE_SIZE_IN_MEBIBYTES = 3
 expected_content = "a/b/c/object3"
 
 
+def delete_objects_in_bucket(object_storage, namespace, bucket_name):
+    for obj in oci.pagination.list_call_get_all_results(object_storage.list_objects, namespace, bucket_name).data.objects:
+        object_storage.delete_object(namespace, bucket_name, obj.name)
+
+
+def create_bucket(object_storage, namespace, bucket_name):
+    request = oci.object_storage.models.CreateBucketDetails()
+    request.name = bucket_name
+    request.compartment_id = util.COMPARTMENT_ID
+    response = object_storage.create_bucket(namespace, request)
+    assert response.status == 200
+
+    return response
+
+
 @pytest.fixture(scope="module")
 def set_up_test_data(object_storage, namespace):
     with test_config_container.create_vcr().use_cassette('test_object_storage_setup_test_data.yml'):
@@ -47,19 +62,28 @@ def namespace(object_storage):
     return object_storage.get_namespace().data
 
 
-@pytest.yield_fixture
+@pytest.fixture
 def bucket(object_storage, namespace, request):
     bucket_name = unique_name(request.node.name)
-    request = oci.object_storage.models.CreateBucketDetails()
-    request.name = bucket_name
-    request.compartment_id = util.COMPARTMENT_ID
-    response = object_storage.create_bucket(namespace, request)
+    response = create_bucket(object_storage, namespace, bucket_name)
     assert response.status == 200
 
     yield bucket_name
 
-    for obj in object_storage.list_objects(namespace, bucket_name).data.objects:
-        object_storage.delete_object(namespace, bucket_name, obj.name)
+    delete_objects_in_bucket(object_storage, namespace, bucket_name)
+    response = object_storage.delete_bucket(namespace, bucket_name)
+    assert response.status == 204
+
+
+@pytest.fixture
+def non_vcr_bucket(object_storage, namespace, request):
+    bucket_name = unique_name(request.node.name, ignore_vcr=True)
+    response = create_bucket(object_storage, namespace, bucket_name)
+    assert response.status == 200
+
+    yield bucket_name
+
+    delete_objects_in_bucket(object_storage, namespace, bucket_name)
     response = object_storage.delete_bucket(namespace, bucket_name)
     assert response.status == 204
 
@@ -733,7 +757,8 @@ class TestObjectStorage:
             # confirm that the object was actually uploaded with single part
             assert response.headers['opc-content-md5']
 
-    def test_upload_manager_multipart_part_based_on_file_size(self, object_storage, bucket, content_input_file):
+    def test_upload_manager_multipart_part_based_on_file_size(self, object_storage, non_vcr_bucket, content_input_file):
+        bucket = non_vcr_bucket
         object_name = 'test_object_multipart'
         namespace = object_storage.get_namespace().data
 
@@ -763,7 +788,8 @@ class TestObjectStorage:
 
         os.remove(downloaded_file_path)
 
-    def test_upload_manager_multipart_custom_parallel_process_count(self, object_storage, bucket, content_input_file):
+    def test_upload_manager_multipart_custom_parallel_process_count(self, object_storage, non_vcr_bucket, content_input_file):
+        bucket = non_vcr_bucket
         object_name = 'test_object_multipart'
         namespace = object_storage.get_namespace().data
 
@@ -807,10 +833,11 @@ class TestObjectStorage:
             # confirm that the object was actually uploaded with multipart
             assert response.headers['opc-content-md5']
 
-    def test_upload_manager_piped_from_stream(self, object_storage, bucket, config_file, config_profile, config):
+    def test_upload_manager_piped_from_stream(self, object_storage, non_vcr_bucket, config_file, config_profile, config):
         if sys.platform == 'win32':
             pytest.skip("Stream piping tests don't run on Windows")
 
+        bucket = non_vcr_bucket
         large_file_path = os.path.join('tests', 'resources', 'large_file.bin')
         util.create_large_file(large_file_path, 500)  # Make a 500 MiB file
 
@@ -865,10 +892,11 @@ class TestObjectStorage:
         os.remove(downloaded_large_file_path)
         os.remove(large_file_path)
 
-    def test_object_manager_pipe_empty_file_from_stream(self, object_storage, bucket, config_file, config_profile, config):
+    def test_object_manager_pipe_empty_file_from_stream(self, object_storage, non_vcr_bucket, config_file, config_profile, config):
         if sys.platform == 'win32':
             pytest.skip("Stream piping tests don't run on Windows")
 
+        bucket = non_vcr_bucket
         test_file = get_resource_path('empty_file')
 
         namespace = object_storage.get_namespace().data
