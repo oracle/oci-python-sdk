@@ -23,7 +23,7 @@ def random_number_string():
 def unique_name(base_name, ignore_vcr=False):
     if test_config_container.using_vcr_with_mock_responses():
         if ignore_vcr:
-            return base_name + '_' + random_number_string()
+            return base_name + '_' + str(random.randint(0, 10000))
         else:
             return '{}_vcr'.format(base_name)
     else:
