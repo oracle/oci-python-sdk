@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BootVolume(object):
     """
-    A detachable boot volume device that contains the image used to boot an Compute instance. For more information, see
+    A detachable boot volume device that contains the image used to boot a Compute instance. For more information, see
     `Overview of Boot Volumes`__.
 
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,

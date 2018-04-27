@@ -1643,8 +1643,8 @@ class ComputeClient(object):
     def get_windows_instance_initial_credentials(self, instance_id, **kwargs):
         """
         GetWindowsInstanceInitialCredentials
-        Gets the generated credentials for the instance. Only works for Windows instances. The returned credentials
-        are only valid for the initial login.
+        Gets the generated credentials for the instance. Only works for instances that require password to log in (E.g. Windows).
+        For certain OS'es, users will be forced to change the initial credentials.
 
 
         :param str instance_id: (required)
@@ -2308,7 +2308,7 @@ class ComputeClient(object):
         ListInstanceConsoleConnections
         Lists the console connections for the specified compartment or instance.
 
-        For more information about console access, see `Accessing the Instance Console`__.
+        For more information about console access, see `Accessing the Console`__.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/serialconsole.htm
 
