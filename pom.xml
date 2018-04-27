@@ -818,6 +818,7 @@
                 <version>3.0</version>
                 <executions>
                     <execution>
+                        <id>oci-src-no-vendor</id>
                         <phase>compile</phase>
                         <goals>
                             <goal>format</goal>
@@ -826,13 +827,36 @@
                             <headerDefinitions>
                                 <headerDefinition>${project.basedir}/license_header_definition.xml</headerDefinition>
                             </headerDefinitions>
-                            <aggregate>true</aggregate>
+                            <!-- <aggregate>true</aggregate> -->
                             <header>${project.basedir}/licenseheader.txt</header>
                             <includes>
                                 <include>src/oci/**/*.py</include>
                                 <include>tests/**/*.py</include>
                                 <include>examples/*.py</include>
                                 <include>scripts/wercker_validate.py</include>
+                            </includes>
+                            <excludes>
+                                <exclude>src/oci/_vendor/httpsig_cffi/*.py</exclude>
+                            </excludes>
+                            <properties>
+                                <current.year>${current.year}</current.year>
+                            </properties>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>oci-src-vendor</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>format</goal>
+                        </goals>
+                        <configuration>
+                            <headerDefinitions>
+                                <headerDefinition>${project.basedir}/license_header_definition.xml</headerDefinition>
+                            </headerDefinitions>
+                            <!-- <aggregate>true</aggregate> -->
+                            <header>${project.basedir}/licenseheader_httpsig_cffi.txt</header>
+                            <includes>
+                                <include>src/oci/_vendor/httpsig_cffi/*.py</include>
                             </includes>
                             <properties>
                                 <current.year>${current.year}</current.year>
@@ -852,6 +876,7 @@
                                 <include>*/**/*</include>
                             </includes>
                             <excludes>
+                                <exclude>_vendor/**/*</exclude>
                                 <exclude>auth/**/*</exclude>
                                 <exclude>pagination/**/*</exclude>
                                 <exclude>retry/**/*</exclude>

@@ -42,5 +42,6 @@
 ^requirements\.txt$
 ^setup\.cfg$
 ^setup\.py$
+^Thirdpartyreadme\.txt$
 ^tox\.ini$
 ^wercker\.yml$
