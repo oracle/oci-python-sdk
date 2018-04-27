@@ -179,7 +179,8 @@ class MultipartObjectAssembler:
             file_object.seek(0, io.SEEK_SET)
             offset = 0
             while file_object.tell() < end:
-                self.add_part_from_file(file_path, offset=offset, size=self.part_size)
+                remaining = end - offset
+                self.add_part_from_file(file_path, offset=offset, size=self.part_size if remaining > self.part_size else remaining)
                 offset += self.part_size
                 file_object.seek(offset, io.SEEK_SET)
 
