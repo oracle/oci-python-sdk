@@ -45,13 +45,13 @@ class Signer(object):
                     backend=default_backend()
                 )
                 self._rsa_public = self._rsa_private.public_key()
-            except ValueError as e:
+            except ValueError as e:  # noqa: F841
                 try:
                     self._rsa_public = serialization.load_pem_public_key(
                         secret,
                         backend=default_backend()
                     )
-                except ValueError as e:
+                except ValueError as e:  # noqa: F841
                     raise HttpSigException("Invalid key.")  # noqa: 405
         elif self.sign_algorithm == 'hmac':
             self._hash = hmac.HMAC(
