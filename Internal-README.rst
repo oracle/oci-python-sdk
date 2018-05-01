@@ -99,6 +99,7 @@ Tell pip that this is an editable package::
 Install development-only dependencies::
 
     pip install -r requirements.txt
+    pip install -r requirements-internal.txt
 
 
 Running the tests
@@ -227,12 +228,7 @@ Note that at this time, it will execute the ``merge_and_validate_spec.py`` scrip
 
 ::
 
-    pip install PyYAML
-    pip install six
-    
-    # Now you can run the code generator
-    mvn clean install
-
+    pip install -r requirments-internal.txt
 
 Adding support for new services
 ================================
@@ -257,9 +253,9 @@ After you've added the service, you can run the code generator using the steps f
 
 Updating existing service spec versions
 =========================================
-Click must be installed to run add_or_update_spec.py.::
+Click must be installed to run add_or_update_spec.py.  Click is part of the requirements-internal.txt and will be installed with::
 
-    pip install click
+    pip install -r requirements-internal.txt
 
 The ``scripts/add_or_update_spec.py`` script can be used to update the spec version of an existing service. An example of running this script is:
 
