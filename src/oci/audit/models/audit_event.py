@@ -29,6 +29,10 @@ class AuditEvent(object):
             The value to assign to the event_id property of this AuditEvent.
         :type event_id: str
 
+        :param event_name:
+            The value to assign to the event_name property of this AuditEvent.
+        :type event_name: str
+
         :param event_source:
             The value to assign to the event_source property of this AuditEvent.
         :type event_source: str
@@ -98,6 +102,7 @@ class AuditEvent(object):
             'tenant_id': 'str',
             'compartment_id': 'str',
             'event_id': 'str',
+            'event_name': 'str',
             'event_source': 'str',
             'event_type': 'str',
             'event_time': 'datetime',
@@ -120,6 +125,7 @@ class AuditEvent(object):
             'tenant_id': 'tenantId',
             'compartment_id': 'compartmentId',
             'event_id': 'eventId',
+            'event_name': 'eventName',
             'event_source': 'eventSource',
             'event_type': 'eventType',
             'event_time': 'eventTime',
@@ -141,6 +147,7 @@ class AuditEvent(object):
         self._tenant_id = None
         self._compartment_id = None
         self._event_id = None
+        self._event_name = None
         self._event_source = None
         self._event_type = None
         self._event_time = None
@@ -229,6 +236,32 @@ class AuditEvent(object):
         :type: str
         """
         self._event_id = event_id
+
+    @property
+    def event_name(self):
+        """
+        Gets the event_name of this AuditEvent.
+        The name of the event.
+        Example: `LaunchInstance`
+
+
+        :return: The event_name of this AuditEvent.
+        :rtype: str
+        """
+        return self._event_name
+
+    @event_name.setter
+    def event_name(self, event_name):
+        """
+        Sets the event_name of this AuditEvent.
+        The name of the event.
+        Example: `LaunchInstance`
+
+
+        :param event_name: The event_name of this AuditEvent.
+        :type: str
+        """
+        self._event_name = event_name
 
     @property
     def event_source(self):

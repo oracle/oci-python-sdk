@@ -491,7 +491,7 @@
             <plugin>
                 <groupId>com.oracle.bmc.sdk</groupId>
                 <artifactId>bmc-sdk-swagger-maven-plugin</artifactId>
-                <version>1.23-SNAPSHOT</version>
+                <version>1.25-SNAPSHOT</version>
                 <executions>
                     <execution>
                         <id>python-public-sdk-identity</id>
@@ -719,7 +719,6 @@
                             <headerDefinitions>
                                 <headerDefinition>${project.basedir}/license_header_definition.xml</headerDefinition>
                             </headerDefinitions>
-                            <!-- <aggregate>true</aggregate> -->
                             <header>${project.basedir}/licenseheader.txt</header>
                             <includes>
                                 <include>src/oci/**/*.py</include>
@@ -745,7 +744,6 @@
                             <headerDefinitions>
                                 <headerDefinition>${project.basedir}/license_header_definition.xml</headerDefinition>
                             </headerDefinitions>
-                            <!-- <aggregate>true</aggregate> -->
                             <header>${project.basedir}/licenseheader_httpsig_cffi.txt</header>
                             <includes>
                                 <include>src/oci/_vendor/httpsig_cffi/*.py</include>
@@ -821,7 +819,7 @@
             <dependency>
                 <groupId>com.oracle.pic.lb</groupId>
                 <artifactId>oralb-api-spec</artifactId>
-                <version>1.0.15</version>
+                <version>1.0.16</version>
             </dependency>
             <dependency>
                 <groupId>com.oracle.pic.dbaas</groupId>
@@ -831,7 +829,7 @@
             <dependency>
                 <groupId>com.oracle.pic.sherlock</groupId>
                 <artifactId>hemlock-spec</artifactId>
-                <version>0.1.7</version>
+                <version>0.1.8</version>
             </dependency>
             <dependency>
                 <groupId>com.oracle.pic.dns.pub</groupId>

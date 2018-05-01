@@ -47,3 +47,5 @@ whitelisted:
   - udx-176
   # DBaaS list db system shape extended data (https://jira.aka.lgl.grungy.us/browse/DEX-2711)
   - udx-787
+  # Loadbalancer vHost support multiple serverNames (https://jira.aka.lgl.grungy.us/browse/UDX-784)
+  - udx-784

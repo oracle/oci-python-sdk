@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Certificate(object):
     """
-    The configuration details of a listener certificate bundle.
+    The configuration details of a certificate bundle.
     For more information on SSL certficate configuration, see
     `Managing SSL Certificates`__.
 
@@ -102,7 +102,7 @@ class Certificate(object):
         Valid certificate bundle names include only alphanumeric characters, dashes, and underscores.
         Certificate bundle names cannot contain spaces. Avoid entering confidential information.
 
-        Example: `My_certificate_bundle`
+        Example: `example_certificate_bundle`
 
 
         :return: The certificate_name of this Certificate.
@@ -118,7 +118,7 @@ class Certificate(object):
         Valid certificate bundle names include only alphanumeric characters, dashes, and underscores.
         Certificate bundle names cannot contain spaces. Avoid entering confidential information.
 
-        Example: `My_certificate_bundle`
+        Example: `example_certificate_bundle`
 
 
         :param certificate_name: The certificate_name of this Certificate.

@@ -48,7 +48,7 @@ class PathRouteSet(object):
         **[Required]** Gets the name of this PathRouteSet.
         The unique name for this set of path route rules. Avoid entering confidential information.
 
-        Example: `path-route-set-001`
+        Example: `example_path_route_set`
 
 
         :return: The name of this PathRouteSet.
@@ -62,7 +62,7 @@ class PathRouteSet(object):
         Sets the name of this PathRouteSet.
         The unique name for this set of path route rules. Avoid entering confidential information.
 
-        Example: `path-route-set-001`
+        Example: `example_path_route_set`
 
 
         :param name: The name of this PathRouteSet.

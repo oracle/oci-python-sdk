@@ -120,7 +120,7 @@ class BackendSet(object):
         Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot
         contain spaces. Avoid entering confidential information.
 
-        Example: `My_backend_set`
+        Example: `example_backend_set`
 
 
         :return: The name of this BackendSet.
@@ -137,7 +137,7 @@ class BackendSet(object):
         Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot
         contain spaces. Avoid entering confidential information.
 
-        Example: `My_backend_set`
+        Example: `example_backend_set`
 
 
         :param name: The name of this BackendSet.

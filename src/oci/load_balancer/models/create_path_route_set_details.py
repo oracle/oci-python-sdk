@@ -46,7 +46,7 @@ class CreatePathRouteSetDetails(object):
         The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering
         confidential information.
 
-        Example: `path-route-set-001`
+        Example: `example_path_route_set`
 
 
         :return: The name of this CreatePathRouteSetDetails.
@@ -61,7 +61,7 @@ class CreatePathRouteSetDetails(object):
         The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering
         confidential information.
 
-        Example: `path-route-set-001`
+        Example: `example_path_route_set`
 
 
         :param name: The name of this CreatePathRouteSetDetails.

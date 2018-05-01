@@ -45,7 +45,7 @@ class IpAddress(object):
         **[Required]** Gets the ip_address of this IpAddress.
         An IP address.
 
-        Example: `128.148.10.20`
+        Example: `192.168.0.3`
 
 
         :return: The ip_address of this IpAddress.
@@ -59,7 +59,7 @@ class IpAddress(object):
         Sets the ip_address of this IpAddress.
         An IP address.
 
-        Example: `128.148.10.20`
+        Example: `192.168.0.3`
 
 
         :param ip_address: The ip_address of this IpAddress.

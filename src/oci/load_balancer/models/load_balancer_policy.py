@@ -40,7 +40,9 @@ class LoadBalancerPolicy(object):
     def name(self):
         """
         **[Required]** Gets the name of this LoadBalancerPolicy.
-        The name of the load balancing policy.
+        The name of a load balancing policy.
+
+        Example: 'LEAST_CONNECTIONS'
 
 
         :return: The name of this LoadBalancerPolicy.
@@ -52,7 +54,9 @@ class LoadBalancerPolicy(object):
     def name(self, name):
         """
         Sets the name of this LoadBalancerPolicy.
-        The name of the load balancing policy.
+        The name of a load balancing policy.
+
+        Example: 'LEAST_CONNECTIONS'
 
 
         :param name: The name of this LoadBalancerPolicy.

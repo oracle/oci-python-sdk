@@ -90,7 +90,7 @@ class HealthChecker(object):
         Gets the interval_in_millis of this HealthChecker.
         The interval between health checks, in milliseconds. The default is 10000 (10 seconds).
 
-        Example: `30000`
+        Example: `10000`
 
 
         :return: The interval_in_millis of this HealthChecker.
@@ -104,7 +104,7 @@ class HealthChecker(object):
         Sets the interval_in_millis of this HealthChecker.
         The interval between health checks, in milliseconds. The default is 10000 (10 seconds).
 
-        Example: `30000`
+        Example: `10000`
 
 
         :param interval_in_millis: The interval_in_millis of this HealthChecker.
@@ -176,7 +176,7 @@ class HealthChecker(object):
         **[Required]** Gets the response_body_regex of this HealthChecker.
         A regular expression for parsing the response body from the backend server.
 
-        Example: `^(500|40[1348])$`
+        Example: `^((?!false).|\\s)*$`
 
 
         :return: The response_body_regex of this HealthChecker.
@@ -190,7 +190,7 @@ class HealthChecker(object):
         Sets the response_body_regex of this HealthChecker.
         A regular expression for parsing the response body from the backend server.
 
-        Example: `^(500|40[1348])$`
+        Example: `^((?!false).|\\s)*$`
 
 
         :param response_body_regex: The response_body_regex of this HealthChecker.
@@ -263,7 +263,7 @@ class HealthChecker(object):
         The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply
         returns within this timeout period. Defaults to 3000 (3 seconds).
 
-        Example: `6000`
+        Example: `3000`
 
 
         :return: The timeout_in_millis of this HealthChecker.
@@ -278,7 +278,7 @@ class HealthChecker(object):
         The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply
         returns within this timeout period. Defaults to 3000 (3 seconds).
 
-        Example: `6000`
+        Example: `3000`
 
 
         :param timeout_in_millis: The timeout_in_millis of this HealthChecker.
