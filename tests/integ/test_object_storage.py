@@ -2,6 +2,7 @@
 # Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 from oci.object_storage.transfer.constants import MEBIBYTE
+from oci.object_storage import MultipartObjectAssembler
 from tests.util import get_resource_path, random_number_string, unique_name
 from . import util
 from .. import test_config_container
@@ -832,6 +833,61 @@ class TestObjectStorage:
 
             # confirm that the object was actually uploaded with multipart
             assert response.headers['opc-content-md5']
+
+    def test_upload_manager_multipart_resume_put(self, object_storage, bucket, content_input_file):
+        # Tests that the resume works in the case of a multipart upload with last part < part_size
+        UPLOAD_LAST_PART = [-1]
+
+        # *** Case 1: part_size = 2 MB, file_size = 3 MB, last_part = 1 MB ***
+        # File split into 2 parts (1st part of 2 MB, 2nd part of 1 MB)
+        # Hence last_part < part_size
+        part_size_in_bytes = 2 * MEBIBYTE
+        self.multipart_resume_put(part_size_in_bytes, object_storage, bucket, content_input_file, UPLOAD_LAST_PART)
+
+        # *** Case 2: part_size = 1 MB, file_size = 3 MB, last_part = 1 MB ***
+        # File split into 3 parts (1st part of 1 MB, 2nd part of 1 MB, 3rd part of 1 MB)
+        # Hence last_part = part_size
+        part_size_in_bytes = 1 * MEBIBYTE
+        self.multipart_resume_put(part_size_in_bytes, object_storage, bucket, content_input_file, UPLOAD_LAST_PART)
+
+    def multipart_resume_put(self, part_size_in_bytes, object_storage, bucket, content_input_file, upload_part_nums):
+
+        object_name = 'test_object_multipart_resume_put'
+        namespace = object_storage.get_namespace().data
+
+        kwargs = {'part_size': part_size_in_bytes}
+        ma = MultipartObjectAssembler(object_storage, namespace, bucket, object_name, **kwargs)
+        ma.new_upload()
+        ma.add_parts_from_file(content_input_file)
+        parts = list(enumerate(ma.manifest['parts']))
+
+        # Upload the last part of the file
+        for part_to_upload_num in upload_part_nums:
+            ma._upload_part(part_num=parts[part_to_upload_num][0] + 1, part=parts[part_to_upload_num][1])
+
+        upload_id = ma.manifest['uploadId']
+
+        # Resume upload
+        upload_manager = oci.object_storage.UploadManager(object_storage, allow_multipart_uploads=True)
+        response = upload_manager.resume_upload_file(namespace, bucket, object_name, content_input_file,
+                                                     upload_id, **kwargs)
+        util.validate_response(response)
+
+        # confirm that the object was actually uploaded with multipart
+        assert response.headers['opc-multipart-md5']
+
+        response = object_storage.get_object(
+            namespace_name=namespace,
+            bucket_name=bucket,
+            object_name=object_name
+        )
+        downloaded_file_path = os.path.join('tests', 'resources', 'downloaded_file.bin')
+        with open(downloaded_file_path, 'wb') as file:
+            for chunk in response.data.raw.stream(MEBIBYTE, decode_content=False):
+                file.write(chunk)
+
+        assert filecmp.cmp(content_input_file, downloaded_file_path, shallow=False)
+        os.remove(downloaded_file_path)
 
     def test_upload_manager_piped_from_stream(self, object_storage, non_vcr_bucket, config_file, config_profile, config):
         if sys.platform == 'win32':
