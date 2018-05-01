@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+1.3.20 - 2018-05-03
+====================
+
+Added
+-----
+* Support for ``event_name`` in Audit Service
+* Support for multiple ``hostnames`` for loadbalancer listener in LoadBalance service
+* Helper function for Base64-ing scripts for user_data in launch instance options
+
+Changed
+-------
+* Add httpsig_cffi as a vendored package
+
+Fixed
+-----
+* Multipart object put resume to account when final part is less than part size
+
+====================
 1.3.19 - 2018-04-19
 ====================
 
