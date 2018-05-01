@@ -7,6 +7,7 @@ import oci
 
 
 IPXE_SCRIPT_FILE = 'tests/resources/ipxe_script_example.txt'
+USER_DATA_FILE = 'tests/resources/user_data.sh'
 
 
 class TestLaunchInstanceOptions:
@@ -75,6 +76,10 @@ class TestLaunchInstanceOptions:
         with open(IPXE_SCRIPT_FILE, mode='r') as file:
             ipxe_script_content = file.read()
 
+        metadata = {
+            'user_data': oci.util.file_content_as_launch_instance_user_data(USER_DATA_FILE)
+        }
+
         launch_instance_details = oci.core.models.LaunchInstanceDetails()
         launch_instance_details.compartment_id = util.COMPARTMENT_ID
         launch_instance_details.availability_domain = util.availability_domain()
@@ -85,6 +90,7 @@ class TestLaunchInstanceOptions:
         launch_instance_details.ipxe_script = ipxe_script_content
         launch_instance_details.hostname_label = hostname_label
         launch_instance_details.extended_metadata = extended_metadata
+        launch_instance_details.metadata = metadata
 
         launch_instance_result = compute.launch_instance(launch_instance_details)
         self.instance_ocid = launch_instance_result.data.id
@@ -95,6 +101,9 @@ class TestLaunchInstanceOptions:
         assert 'map_key_1' in launch_instance_result.data.extended_metadata
         assert 'string_key_2' in launch_instance_result.data.extended_metadata['map_key_1']
         assert len(launch_instance_result.data.extended_metadata['map_key_1']['empty_map_key']) == 0
+
+        # Validate metadata
+        assert oci.util.file_content_as_launch_instance_user_data(USER_DATA_FILE) == launch_instance_result.data.metadata['user_data']
 
         util.validate_response(launch_instance_result, expect_etag=True)
 
