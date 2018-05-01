@@ -51,13 +51,34 @@ The Python SDK supports operations for the following services:
 
 You can install the Python SDK through the Python Package Index (PyPI), or alternatively through GitHub. 
 
-**PyPi**
+Set up a virtual environment
+-----------------------------
+
+Oracle recommends that you run the SDK in a virtual environment with virtualenv. This allows
+you to isolate the dependencies for the SDK and avoids any potential conflicts with other Python packages 
+which may already be installed (e.g. in your system-wide Python).
+
+With Linux, virtualenv is usually in a separate package from the main Python package.
+If you need to install virtualenv, use ``pip install virtualenv``.
+To create and activate a virtual environment::
+
+    virtualenv <environment name>
+    source <environment name>/bin/activate
+
+For example::
+
+    virtualenv oci_sdk_env
+    source oci_sdk_env/bin/activate
+
+PyPi
+-----
 
 To install from `PyPI <https://pypi.python.org/pypi/oci>`_ use the following command::
 
     pip install oci
 
-**GitHub**
+GitHub
+-------
 
 To install from GitHub:
 
@@ -72,23 +93,6 @@ To install from GitHub:
 
       If you're unable to install the whl file, make sure pip is up to date.
       Use ``pip install -U pip`` and then try to install the whl file again.
-
-
-**Virtual environment (Optional)** 
-
-Although optional, Oracle recommends that you run the SDK in a virtual environment with virtualenv.
-
-With Linux, it's usually in a separate package from the main Python package.
-If you need to install virtualenv, use pip install virtualenv.
-To create and activate a virtual environment::
-
-    virtualenv <environment name>
-    source <environment name>/bin/activate
-
-For example::
-
-    virtualenv oci_sdk_env
-    source oci_sdk_env/bin/activate
 
 
 =====================

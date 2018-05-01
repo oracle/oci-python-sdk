@@ -75,7 +75,7 @@ def value_allowed_none_or_none_sentinel(value_to_test, allowed_values):
 def file_content_as_launch_instance_user_data(file_path):
     """
     Takes a file path and returns a Base64-encoded string which can be provided as the value of the ``user_data`` key
-    in the ``metadata`` dictionary when launching an instance(see :py:class`~oci.core.models.LaunchInstanceDetails`
+    in the ``metadata`` dictionary when launching an instance(see :py:class:`~oci.core.models.LaunchInstanceDetails`
     for more information).
 
     :param str file_path:
