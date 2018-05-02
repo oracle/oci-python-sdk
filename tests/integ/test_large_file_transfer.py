@@ -44,7 +44,7 @@ def write_bucket(namespace, object_storage, config, names):
 
         for summary in object_list.objects:
             response = object_storage.delete_object(namespace, bucket.name, summary.name)
-            assert response.status == 200
+            assert response.status == 204
     except Exception as e:
         print('TearDown: Could not delete new object. Error: {}'.format(str(e)))
 
@@ -126,6 +126,6 @@ def test_large_file_transfer(namespace, object_storage, write_bucket, names):
     uploaded_content_length = int(response.headers['content-length'])
     assert uploaded_content_length == file_size
 
-    max_memory = tests.util.max_memory_usage()
+    max_memory = tests.util.max_memory_usage() - initial_max_memory_usage
     print("Final max memory usage: {} bytes".format(str(max_memory)))
     assert max_memory < file_size
