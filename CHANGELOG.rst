@@ -10,8 +10,8 @@ The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 Added
 -----
-* Support for ``event_name`` in Audit Service
-* Support for multiple ``hostnames`` for loadbalancer listener in LoadBalance service
+* Support for returning names for events in the Audit service
+* Support for multiple hostnames per listener in the Load Balancing service
 * Helper function for Base64-ing scripts for user_data in launch instance options
 
 Changed
