@@ -14,6 +14,8 @@ Added
 * Support for multiple hostnames per listener in the Load Balancing service
 * Helper function for Base64-ing scripts for user_data in launch instance options
 
+  * An example of Base64-ing scripts for user_data can be found on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/launch_instance_example.py>`__.
+
 Changed
 -------
 * Add httpsig_cffi as a vendored package
