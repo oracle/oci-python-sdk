@@ -18,6 +18,7 @@
 ^src/oci/retry/.*\.py$
 ^src/oci/pagination/.*\.py$
 ^src/oci/[^/]*\.py$
+^src/_vendor/.*\.py$
 
 ^scripts/wercker_validate\.py$
 
