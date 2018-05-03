@@ -382,7 +382,7 @@ class BaseClient(object):
         if declared_type and not self.is_none_or_none_sentinel(obj):
             if declared_type.startswith('dict(') and not isinstance(obj, dict):
                 self.raise_type_error_serializing_model(field_name, obj, declared_type)
-            elif declared_type.startswith('list[') and not isinstance(obj, list):
+            elif declared_type.startswith('list[') and not (isinstance(obj, list) or isinstance(obj, tuple)):
                 self.raise_type_error_serializing_model(field_name, obj, declared_type)
             elif declared_type in self.complex_type_mappings:
                 # if its supposed to be one of our models, it can either be an instance of that model OR a dict
@@ -396,7 +396,7 @@ class BaseClient(object):
             return obj
         elif obj is NONE_SENTINEL:
             return None
-        elif isinstance(obj, list):
+        elif isinstance(obj, list) or isinstance(obj, tuple):
             return [self.sanitize_for_serialization(
                 sub_obj,
                 self.extract_list_item_type_from_swagger_type(declared_type) if declared_type else None,

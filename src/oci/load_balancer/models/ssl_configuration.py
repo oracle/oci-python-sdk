@@ -56,7 +56,7 @@ class SSLConfiguration(object):
         Valid certificate bundle names include only alphanumeric characters, dashes, and underscores.
         Certificate bundle names cannot contain spaces. Avoid entering confidential information.
 
-        Example: `My_certificate_bundle`
+        Example: `example_certificate_bundle`
 
 
         :return: The certificate_name of this SSLConfiguration.
@@ -72,7 +72,7 @@ class SSLConfiguration(object):
         Valid certificate bundle names include only alphanumeric characters, dashes, and underscores.
         Certificate bundle names cannot contain spaces. Avoid entering confidential information.
 
-        Example: `My_certificate_bundle`
+        Example: `example_certificate_bundle`
 
 
         :param certificate_name: The certificate_name of this SSLConfiguration.

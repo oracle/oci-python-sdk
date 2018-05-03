@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class LoadBalancerProtocol(object):
     """
-    The protocol that defines the type of traffic accepted by a listener.
+    A protocol that defines the type of traffic accepted by a listener.
     """
 
     def __init__(self, **kwargs):
@@ -36,7 +36,9 @@ class LoadBalancerProtocol(object):
     def name(self):
         """
         **[Required]** Gets the name of this LoadBalancerProtocol.
-        The name of the protocol.
+        The name of a protocol.
+
+        Example: 'HTTP'
 
 
         :return: The name of this LoadBalancerProtocol.
@@ -48,7 +50,9 @@ class LoadBalancerProtocol(object):
     def name(self, name):
         """
         Sets the name of this LoadBalancerProtocol.
-        The name of the protocol.
+        The name of a protocol.
+
+        Example: 'HTTP'
 
 
         :param name: The name of this LoadBalancerProtocol.

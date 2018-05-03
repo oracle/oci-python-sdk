@@ -78,7 +78,7 @@ class CreateBackendDetails(object):
         Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress
         traffic to this backend server unless all other backend servers not marked as \"backup\" fail the health check policy.
 
-        Example: `true`
+        Example: `false`
 
 
         :return: The backup of this CreateBackendDetails.
@@ -93,7 +93,7 @@ class CreateBackendDetails(object):
         Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress
         traffic to this backend server unless all other backend servers not marked as \"backup\" fail the health check policy.
 
-        Example: `true`
+        Example: `false`
 
 
         :param backup: The backup of this CreateBackendDetails.
@@ -108,7 +108,7 @@ class CreateBackendDetails(object):
         Whether the load balancer should drain this server. Servers marked \"drain\" receive no new
         incoming traffic.
 
-        Example: `true`
+        Example: `false`
 
 
         :return: The drain of this CreateBackendDetails.
@@ -123,7 +123,7 @@ class CreateBackendDetails(object):
         Whether the load balancer should drain this server. Servers marked \"drain\" receive no new
         incoming traffic.
 
-        Example: `true`
+        Example: `false`
 
 
         :param drain: The drain of this CreateBackendDetails.
@@ -137,7 +137,7 @@ class CreateBackendDetails(object):
         **[Required]** Gets the ip_address of this CreateBackendDetails.
         The IP address of the backend server.
 
-        Example: `10.10.10.4`
+        Example: `10.0.0.3`
 
 
         :return: The ip_address of this CreateBackendDetails.
@@ -151,7 +151,7 @@ class CreateBackendDetails(object):
         Sets the ip_address of this CreateBackendDetails.
         The IP address of the backend server.
 
-        Example: `10.10.10.4`
+        Example: `10.0.0.3`
 
 
         :param ip_address: The ip_address of this CreateBackendDetails.
@@ -166,7 +166,7 @@ class CreateBackendDetails(object):
         Whether the load balancer should treat this server as offline. Offline servers receive no incoming
         traffic.
 
-        Example: `true`
+        Example: `false`
 
 
         :return: The offline of this CreateBackendDetails.
@@ -181,7 +181,7 @@ class CreateBackendDetails(object):
         Whether the load balancer should treat this server as offline. Offline servers receive no incoming
         traffic.
 
-        Example: `true`
+        Example: `false`
 
 
         :param offline: The offline of this CreateBackendDetails.

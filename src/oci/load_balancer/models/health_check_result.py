@@ -124,7 +124,7 @@ class HealthCheckResult(object):
         The IP address of the health check status report provider. This identifier helps you differentiate same-subnet
         (private) load balancers that report health check status.
 
-        Example: `10.2.0.1`
+        Example: `10.0.0.7`
 
 
         :return: The source_ip_address of this HealthCheckResult.
@@ -139,7 +139,7 @@ class HealthCheckResult(object):
         The IP address of the health check status report provider. This identifier helps you differentiate same-subnet
         (private) load balancers that report health check status.
 
-        Example: `10.2.0.1`
+        Example: `10.0.0.7`
 
 
         :param source_ip_address: The source_ip_address of this HealthCheckResult.
@@ -151,7 +151,9 @@ class HealthCheckResult(object):
     def subnet_id(self):
         """
         **[Required]** Gets the subnet_id of this HealthCheckResult.
-        The OCID of the subnet hosting the load balancer that reported this health check status.
+        The `OCID`__ of the subnet hosting the load balancer that reported this health check status.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this HealthCheckResult.
@@ -163,7 +165,9 @@ class HealthCheckResult(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this HealthCheckResult.
-        The OCID of the subnet hosting the load balancer that reported this health check status.
+        The `OCID`__ of the subnet hosting the load balancer that reported this health check status.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this HealthCheckResult.

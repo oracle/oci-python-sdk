@@ -87,7 +87,7 @@ class HealthCheckerDetails(object):
         Gets the interval_in_millis of this HealthCheckerDetails.
         The interval between health checks, in milliseconds.
 
-        Example: `30000`
+        Example: `10000`
 
 
         :return: The interval_in_millis of this HealthCheckerDetails.
@@ -101,7 +101,7 @@ class HealthCheckerDetails(object):
         Sets the interval_in_millis of this HealthCheckerDetails.
         The interval between health checks, in milliseconds.
 
-        Example: `30000`
+        Example: `10000`
 
 
         :param interval_in_millis: The interval_in_millis of this HealthCheckerDetails.
@@ -173,7 +173,7 @@ class HealthCheckerDetails(object):
         Gets the response_body_regex of this HealthCheckerDetails.
         A regular expression for parsing the response body from the backend server.
 
-        Example: `^(500|40[1348])$`
+        Example: `^((?!false).|\\s)*$`
 
 
         :return: The response_body_regex of this HealthCheckerDetails.
@@ -187,7 +187,7 @@ class HealthCheckerDetails(object):
         Sets the response_body_regex of this HealthCheckerDetails.
         A regular expression for parsing the response body from the backend server.
 
-        Example: `^(500|40[1348])$`
+        Example: `^((?!false).|\\s)*$`
 
 
         :param response_body_regex: The response_body_regex of this HealthCheckerDetails.
@@ -258,7 +258,7 @@ class HealthCheckerDetails(object):
         The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply
         returns within this timeout period.
 
-        Example: `6000`
+        Example: `3000`
 
 
         :return: The timeout_in_millis of this HealthCheckerDetails.
@@ -273,7 +273,7 @@ class HealthCheckerDetails(object):
         The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply
         returns within this timeout period.
 
-        Example: `6000`
+        Example: `3000`
 
 
         :param timeout_in_millis: The timeout_in_millis of this HealthCheckerDetails.
