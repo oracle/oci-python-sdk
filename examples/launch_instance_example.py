@@ -247,6 +247,17 @@ try:
         'some_metadata_item': 'some item value'
     }
 
+    # We can also provide a user_data key in the metadata that will be used by Cloud-Init
+    # to run custom scripts or provide custom Cloud-Init configuration. The contents of this
+    # key should be Base64-encoded data and the SDK offers a convenience function to transform
+    # a file at a given path to that encoded data
+    #
+    # See: https://docs.us-phoenix-1.oraclecloud.com/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails
+    # for more information
+    instance_metadata['user_data'] = oci.util.file_content_as_launch_instance_user_data(
+        'examples/launch_instance/user_data.sh'
+    )
+
     # Extended metadata differs from normal metadata in that it can support nested maps/dicts. If you are providing
     # these, you should consider whether defined and freeform tags on an instance would better meet your use case.
     instance_extended_metadata = {

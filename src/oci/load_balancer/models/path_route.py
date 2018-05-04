@@ -54,7 +54,7 @@ class PathRoute(object):
         **[Required]** Gets the backend_set_name of this PathRoute.
         The name of the target backend set for requests where the incoming URI matches the specified path.
 
-        Example: `My_backend_set`
+        Example: `example_backend_set`
 
 
         :return: The backend_set_name of this PathRoute.
@@ -68,7 +68,7 @@ class PathRoute(object):
         Sets the backend_set_name of this PathRoute.
         The name of the target backend set for requests where the incoming URI matches the specified path.
 
-        Example: `My_backend_set`
+        Example: `example_backend_set`
 
 
         :param backend_set_name: The backend_set_name of this PathRoute.

@@ -30,12 +30,15 @@ Load Balancer
     oci.load_balancer.models.CreateBackendDetails
     oci.load_balancer.models.CreateBackendSetDetails
     oci.load_balancer.models.CreateCertificateDetails
+    oci.load_balancer.models.CreateHostnameDetails
     oci.load_balancer.models.CreateListenerDetails
     oci.load_balancer.models.CreateLoadBalancerDetails
     oci.load_balancer.models.CreatePathRouteSetDetails
     oci.load_balancer.models.HealthCheckResult
     oci.load_balancer.models.HealthChecker
     oci.load_balancer.models.HealthCheckerDetails
+    oci.load_balancer.models.Hostname
+    oci.load_balancer.models.HostnameDetails
     oci.load_balancer.models.IpAddress
     oci.load_balancer.models.Listener
     oci.load_balancer.models.ListenerDetails
@@ -55,6 +58,7 @@ Load Balancer
     oci.load_balancer.models.UpdateBackendDetails
     oci.load_balancer.models.UpdateBackendSetDetails
     oci.load_balancer.models.UpdateHealthCheckerDetails
+    oci.load_balancer.models.UpdateHostnameDetails
     oci.load_balancer.models.UpdateListenerDetails
     oci.load_balancer.models.UpdateLoadBalancerDetails
     oci.load_balancer.models.UpdatePathRouteSetDetails

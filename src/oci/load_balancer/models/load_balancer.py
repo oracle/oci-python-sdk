@@ -67,6 +67,10 @@ class LoadBalancer(object):
             The value to assign to the display_name property of this LoadBalancer.
         :type display_name: str
 
+        :param hostnames:
+            The value to assign to the hostnames property of this LoadBalancer.
+        :type hostnames: dict(str, Hostname)
+
         :param id:
             The value to assign to the id property of this LoadBalancer.
         :type id: str
@@ -111,6 +115,7 @@ class LoadBalancer(object):
             'certificates': 'dict(str, Certificate)',
             'compartment_id': 'str',
             'display_name': 'str',
+            'hostnames': 'dict(str, Hostname)',
             'id': 'str',
             'ip_addresses': 'list[IpAddress]',
             'is_private': 'bool',
@@ -127,6 +132,7 @@ class LoadBalancer(object):
             'certificates': 'certificates',
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
+            'hostnames': 'hostnames',
             'id': 'id',
             'ip_addresses': 'ipAddresses',
             'is_private': 'isPrivate',
@@ -142,6 +148,7 @@ class LoadBalancer(object):
         self._certificates = None
         self._compartment_id = None
         self._display_name = None
+        self._hostnames = None
         self._id = None
         self._ip_addresses = None
         self._is_private = None
@@ -226,7 +233,7 @@ class LoadBalancer(object):
         **[Required]** Gets the display_name of this LoadBalancer.
         A user-friendly name. It does not have to be unique, and it is changeable.
 
-        Example: `My load balancer`
+        Example: `example_load_balancer`
 
 
         :return: The display_name of this LoadBalancer.
@@ -240,13 +247,33 @@ class LoadBalancer(object):
         Sets the display_name of this LoadBalancer.
         A user-friendly name. It does not have to be unique, and it is changeable.
 
-        Example: `My load balancer`
+        Example: `example_load_balancer`
 
 
         :param display_name: The display_name of this LoadBalancer.
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def hostnames(self):
+        """
+        Gets the hostnames of this LoadBalancer.
+
+        :return: The hostnames of this LoadBalancer.
+        :rtype: dict(str, Hostname)
+        """
+        return self._hostnames
+
+    @hostnames.setter
+    def hostnames(self, hostnames):
+        """
+        Sets the hostnames of this LoadBalancer.
+
+        :param hostnames: The hostnames of this LoadBalancer.
+        :type: dict(str, Hostname)
+        """
+        self._hostnames = hostnames
 
     @property
     def id(self):
@@ -318,6 +345,8 @@ class LoadBalancer(object):
         hosts the secondary (standby) load balancer. A public load balancer is accessible from the internet, depending on your
         VCN's `security list rules`__.
 
+        Example: `true`
+
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/securitylists.htm
 
 
@@ -343,6 +372,8 @@ class LoadBalancer(object):
         requires two subnets, each in a different Availability Domain. One subnet hosts the primary load balancer and the other
         hosts the secondary (standby) load balancer. A public load balancer is accessible from the internet, depending on your
         VCN's `security list rules`__.
+
+        Example: `true`
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/securitylists.htm
 

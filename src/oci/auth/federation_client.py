@@ -129,7 +129,25 @@ class X509FederationClient(object):
             response = requests.post(self.federation_endpoint, json=request_payload, auth=signer, verify=self.cert_bundle_verify)
         else:
             response = requests.post(self.federation_endpoint, json=request_payload, auth=signer)
-        self.security_token = SecurityTokenContainer(self.session_key_supplier, response.json()['token'])
+
+        parsed_response = None
+        try:
+            parsed_response = response.json()
+        except ValueError:
+            raise RuntimeError('Unable to parse response from auth service ({}): {}'.format(self.federation_endpoint, response.text))
+
+        if not response.ok:
+            raise oci.exceptions.ServiceError(
+                response.status_code,
+                parsed_response.get('code'),
+                response.headers,
+                parsed_response.get('message')
+            )
+        else:
+            if 'token' in parsed_response:
+                self.security_token = SecurityTokenContainer(self.session_key_supplier, response.json()['token'])
+            else:
+                raise RuntimeError('Could not find token in response from auth service ({}): {}'.format(self.federation_endpoint, parsed_response))
 
 
 class AuthTokenRequestSigner(oci.signer.AbstractBaseSigner):

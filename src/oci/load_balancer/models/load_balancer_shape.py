@@ -42,6 +42,8 @@ class LoadBalancerShape(object):
         **[Required]** Gets the name of this LoadBalancerShape.
         The name of the shape.
 
+        Example: `100Mbps`
+
 
         :return: The name of this LoadBalancerShape.
         :rtype: str
@@ -53,6 +55,8 @@ class LoadBalancerShape(object):
         """
         Sets the name of this LoadBalancerShape.
         The name of the shape.
+
+        Example: `100Mbps`
 
 
         :param name: The name of this LoadBalancerShape.

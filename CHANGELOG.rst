@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+1.3.20 - 2018-05-03
+====================
+
+Added
+-----
+* Support for returning names for events in the Audit service
+* Support for multiple hostnames per listener in the Load Balancing service
+* Helper function for Base64-ing scripts for user_data in launch instance options
+
+  * An example of Base64-ing scripts for user_data can be found on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/launch_instance_example.py>`__.
+
+Changed
+-------
+* Add httpsig_cffi as a vendored package
+
+Fixed
+-----
+* Multipart object put resume to account when final part is less than part size
+
+====================
 1.3.19 - 2018-04-19
 ====================
 

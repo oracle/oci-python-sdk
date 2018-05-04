@@ -13,7 +13,7 @@ class Listener(object):
     For more information on backend set configuration, see
     `Managing Load Balancer Listeners`__.
 
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/tasks/managinglisteners.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managinglisteners.htm
     """
 
     def __init__(self, **kwargs):
@@ -28,6 +28,10 @@ class Listener(object):
         :param default_backend_set_name:
             The value to assign to the default_backend_set_name property of this Listener.
         :type default_backend_set_name: str
+
+        :param hostname_names:
+            The value to assign to the hostname_names property of this Listener.
+        :type hostname_names: list[str]
 
         :param name:
             The value to assign to the name property of this Listener.
@@ -53,6 +57,7 @@ class Listener(object):
         self.swagger_types = {
             'connection_configuration': 'ConnectionConfiguration',
             'default_backend_set_name': 'str',
+            'hostname_names': 'list[str]',
             'name': 'str',
             'path_route_set_name': 'str',
             'port': 'int',
@@ -63,6 +68,7 @@ class Listener(object):
         self.attribute_map = {
             'connection_configuration': 'connectionConfiguration',
             'default_backend_set_name': 'defaultBackendSetName',
+            'hostname_names': 'hostnameNames',
             'name': 'name',
             'path_route_set_name': 'pathRouteSetName',
             'port': 'port',
@@ -72,6 +78,7 @@ class Listener(object):
 
         self._connection_configuration = None
         self._default_backend_set_name = None
+        self._hostname_names = None
         self._name = None
         self._path_route_set_name = None
         self._port = None
@@ -104,7 +111,7 @@ class Listener(object):
         **[Required]** Gets the default_backend_set_name of this Listener.
         The name of the associated backend set.
 
-        Example: `My_backend_set`
+        Example: `example_backend_set`
 
 
         :return: The default_backend_set_name of this Listener.
@@ -118,7 +125,7 @@ class Listener(object):
         Sets the default_backend_set_name of this Listener.
         The name of the associated backend set.
 
-        Example: `My_backend_set`
+        Example: `example_backend_set`
 
 
         :param default_backend_set_name: The default_backend_set_name of this Listener.
@@ -127,12 +134,36 @@ class Listener(object):
         self._default_backend_set_name = default_backend_set_name
 
     @property
+    def hostname_names(self):
+        """
+        Gets the hostname_names of this Listener.
+        An array of hostname resource names.
+
+
+        :return: The hostname_names of this Listener.
+        :rtype: list[str]
+        """
+        return self._hostname_names
+
+    @hostname_names.setter
+    def hostname_names(self, hostname_names):
+        """
+        Sets the hostname_names of this Listener.
+        An array of hostname resource names.
+
+
+        :param hostname_names: The hostname_names of this Listener.
+        :type: list[str]
+        """
+        self._hostname_names = hostname_names
+
+    @property
     def name(self):
         """
         **[Required]** Gets the name of this Listener.
         A friendly name for the listener. It must be unique and it cannot be changed.
 
-        Example: `My listener`
+        Example: `example_listener`
 
 
         :return: The name of this Listener.
@@ -146,7 +177,7 @@ class Listener(object):
         Sets the name of this Listener.
         A friendly name for the listener. It must be unique and it cannot be changed.
 
-        Example: `My listener`
+        Example: `example_listener`
 
 
         :param name: The name of this Listener.
@@ -161,7 +192,7 @@ class Listener(object):
         The name of the set of path-based routing rules, :class:`PathRouteSet`,
         applied to this listener's traffic.
 
-        Example: `path-route-set-001`
+        Example: `example_path_route_set`
 
 
         :return: The path_route_set_name of this Listener.
@@ -176,7 +207,7 @@ class Listener(object):
         The name of the set of path-based routing rules, :class:`PathRouteSet`,
         applied to this listener's traffic.
 
-        Example: `path-route-set-001`
+        Example: `example_path_route_set`
 
 
         :param path_route_set_name: The path_route_set_name of this Listener.

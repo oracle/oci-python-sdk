@@ -1,8 +1,10 @@
 # coding: utf-8
 # Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
+import base64
 import datetime
 import json
+import os.path
 import pytz
 import six
 try:
@@ -68,6 +70,26 @@ def formatted_flat_dict(model):
 
 def value_allowed_none_or_none_sentinel(value_to_test, allowed_values):
     return value_to_test is None or value_to_test is NONE_SENTINEL or value_to_test in allowed_values
+
+
+def file_content_as_launch_instance_user_data(file_path):
+    """
+    Takes a file path and returns a Base64-encoded string which can be provided as the value of the ``user_data`` key
+    in the ``metadata`` dictionary when launching an instance(see :py:class:`~oci.core.models.LaunchInstanceDetails`
+    for more information).
+
+    :param str file_path:
+      The path to the file whose contents will be Base64-encoded
+
+    :return: The Base64-encoded string
+    :rtype: str
+    """
+
+    full_path = os.path.expandvars(os.path.expanduser(file_path))
+    with open(full_path, 'rb') as f:
+        file_contents = f.read()
+
+    return base64.b64encode(file_contents).decode('utf-8')
 
 
 class Sentinel(object):

@@ -312,6 +312,8 @@ class WorkRequest(object):
         **[Required]** Gets the type of this WorkRequest.
         The type of action the work request represents.
 
+        Example: `CreateListener`
+
 
         :return: The type of this WorkRequest.
         :rtype: str
@@ -323,6 +325,8 @@ class WorkRequest(object):
         """
         Sets the type of this WorkRequest.
         The type of action the work request represents.
+
+        Example: `CreateListener`
 
 
         :param type: The type of this WorkRequest.

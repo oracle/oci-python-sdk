@@ -10,11 +10,10 @@ import io
 import functools
 import os
 
-import httpsig_cffi.sign
-import httpsig_cffi.utils
 import requests.auth
 import six
 
+from ._vendor import httpsig_cffi
 from .exceptions import InvalidPrivateKey, MissingPrivateKeyPassphrase
 
 from cryptography.exceptions import UnsupportedAlgorithm

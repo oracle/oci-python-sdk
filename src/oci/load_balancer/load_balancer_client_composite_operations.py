@@ -37,7 +37,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str backend_set_name: (required)
             The name of the backend set to add the backend server to.
 
-            Example: `My_backend_set`
+            Example: `example_backend_set`
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.load_balancer.models.WorkRequest.lifecycle_state`
@@ -118,10 +118,10 @@ class LoadBalancerClientCompositeOperations(object):
         to enter the given state(s).
 
         :param CreateCertificateDetails create_certificate_details: (required)
-            The details of the certificate to add.
+            The details of the certificate bundle to add.
 
         :param str load_balancer_id: (required)
-            The `OCID`__ of the load balancer on which to add the certificate.
+            The `OCID`__ of the load balancer on which to add the certificate bundle.
 
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
@@ -136,6 +136,49 @@ class LoadBalancerClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         operation_result = self.client.create_certificate(create_certificate_details, load_balancer_id, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def create_hostname_and_wait_for_state(self, create_hostname_details, load_balancer_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.load_balancer.LoadBalancerClient.create_hostname` and waits for the :py:class:`~oci.load_balancer.models.WorkRequest`
+        to enter the given state(s).
+
+        :param CreateHostnameDetails create_hostname_details: (required)
+            The details of the hostname resource to add to the specified load balancer.
+
+        :param str load_balancer_id: (required)
+            The `OCID`__ of the load balancer to add the hostname to.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.load_balancer.models.WorkRequest.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.load_balancer.LoadBalancerClient.create_hostname`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_hostname(create_hostname_details, load_balancer_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
 
@@ -292,12 +335,12 @@ class LoadBalancerClientCompositeOperations(object):
         :param str backend_set_name: (required)
             The name of the backend set associated with the backend server.
 
-            Example: `My_backend_set`
+            Example: `example_backend_set`
 
         :param str backend_name: (required)
             The IP address and port of the backend server to remove.
 
-            Example: `1.1.1.7:42`
+            Example: `10.0.0.3:8080`
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.load_balancer.models.WorkRequest.lifecycle_state`
@@ -342,7 +385,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str backend_set_name: (required)
             The name of the backend set to delete.
 
-            Example: `My_backend_set`
+            Example: `example_backend_set`
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.load_balancer.models.WorkRequest.lifecycle_state`
@@ -380,14 +423,15 @@ class LoadBalancerClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str load_balancer_id: (required)
-            The `OCID`__ of the load balancer associated with the certificate to be deleted.
+            The `OCID`__ of the load balancer associated with the certificate bundle
+            to be deleted.
 
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str certificate_name: (required)
-            The name of the certificate to delete.
+            The name of the certificate bundle to delete.
 
-            Example: `My_certificate_bundle`
+            Example: `example_certificate_bundle`
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.load_balancer.models.WorkRequest.lifecycle_state`
@@ -400,6 +444,51 @@ class LoadBalancerClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         operation_result = self.client.delete_certificate(load_balancer_id, certificate_name, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def delete_hostname_and_wait_for_state(self, load_balancer_id, name, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.load_balancer.LoadBalancerClient.delete_hostname` and waits for the :py:class:`~oci.load_balancer.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str load_balancer_id: (required)
+            The `OCID`__ of the load balancer associated with the hostname to delete.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+        :param str name: (required)
+            The name of the hostname resource to delete.
+
+            Example: `example_hostname_001`
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.load_balancer.models.WorkRequest.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.load_balancer.LoadBalancerClient.delete_hostname`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.delete_hostname(load_balancer_id, name, **operation_kwargs)
         if not wait_for_states:
             return operation_result
 
@@ -432,7 +521,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str listener_name: (required)
             The name of the listener to delete.
 
-            Example: `My listener`
+            Example: `example_listener`
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.load_balancer.models.WorkRequest.lifecycle_state`
@@ -517,7 +606,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str path_route_set_name: (required)
             The name of the path route set to delete.
 
-            Example: `path-route-set-001`
+            Example: `example_path_route_set`
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.load_balancer.models.WorkRequest.lifecycle_state`
@@ -565,12 +654,12 @@ class LoadBalancerClientCompositeOperations(object):
         :param str backend_set_name: (required)
             The name of the backend set associated with the backend server.
 
-            Example: `My_backend_set`
+            Example: `example_backend_set`
 
         :param str backend_name: (required)
             The IP address and port of the backend server to update.
 
-            Example: `1.1.1.7:42`
+            Example: `10.0.0.3:8080`
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.load_balancer.models.WorkRequest.lifecycle_state`
@@ -618,7 +707,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str backend_set_name: (required)
             The name of the backend set to update.
 
-            Example: `My_backend_set`
+            Example: `example_backend_set`
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.load_balancer.models.WorkRequest.lifecycle_state`
@@ -666,7 +755,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str backend_set_name: (required)
             The name of the backend set associated with the health check policy to be retrieved.
 
-            Example: `My_backend_set`
+            Example: `example_backend_set`
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.load_balancer.models.WorkRequest.lifecycle_state`
@@ -679,6 +768,55 @@ class LoadBalancerClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         operation_result = self.client.update_health_checker(health_checker, load_balancer_id, backend_set_name, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_hostname_and_wait_for_state(self, update_hostname_details, load_balancer_id, name, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.load_balancer.LoadBalancerClient.update_hostname` and waits for the :py:class:`~oci.load_balancer.models.WorkRequest`
+        to enter the given state(s).
+
+        :param UpdateHostnameDetails update_hostname_details: (required)
+            The configuration details to update a virtual hostname.
+
+        :param str load_balancer_id: (required)
+            The `OCID`__ of the load balancer associated with the virtual hostname
+            to update.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+        :param str name: (required)
+            The name of the hostname resource to update.
+
+            Example: `example_hostname_001`
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.load_balancer.models.WorkRequest.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.load_balancer.LoadBalancerClient.update_hostname`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_hostname(update_hostname_details, load_balancer_id, name, **operation_kwargs)
         if not wait_for_states:
             return operation_result
 
@@ -714,7 +852,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str listener_name: (required)
             The name of the listener to update.
 
-            Example: `My listener`
+            Example: `example_listener`
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.load_balancer.models.WorkRequest.lifecycle_state`
@@ -805,7 +943,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str path_route_set_name: (required)
             The name of the path route set to update.
 
-            Example: `path-route-set-001`
+            Example: `example_path_route_set`
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.load_balancer.models.WorkRequest.lifecycle_state`

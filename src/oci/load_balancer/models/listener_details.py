@@ -25,6 +25,10 @@ class ListenerDetails(object):
             The value to assign to the default_backend_set_name property of this ListenerDetails.
         :type default_backend_set_name: str
 
+        :param hostname_names:
+            The value to assign to the hostname_names property of this ListenerDetails.
+        :type hostname_names: list[str]
+
         :param path_route_set_name:
             The value to assign to the path_route_set_name property of this ListenerDetails.
         :type path_route_set_name: str
@@ -45,6 +49,7 @@ class ListenerDetails(object):
         self.swagger_types = {
             'connection_configuration': 'ConnectionConfiguration',
             'default_backend_set_name': 'str',
+            'hostname_names': 'list[str]',
             'path_route_set_name': 'str',
             'port': 'int',
             'protocol': 'str',
@@ -54,6 +59,7 @@ class ListenerDetails(object):
         self.attribute_map = {
             'connection_configuration': 'connectionConfiguration',
             'default_backend_set_name': 'defaultBackendSetName',
+            'hostname_names': 'hostnameNames',
             'path_route_set_name': 'pathRouteSetName',
             'port': 'port',
             'protocol': 'protocol',
@@ -62,6 +68,7 @@ class ListenerDetails(object):
 
         self._connection_configuration = None
         self._default_backend_set_name = None
+        self._hostname_names = None
         self._path_route_set_name = None
         self._port = None
         self._protocol = None
@@ -93,7 +100,7 @@ class ListenerDetails(object):
         **[Required]** Gets the default_backend_set_name of this ListenerDetails.
         The name of the associated backend set.
 
-        Example: `My_backend_set`
+        Example: `example_backend_set`
 
 
         :return: The default_backend_set_name of this ListenerDetails.
@@ -107,7 +114,7 @@ class ListenerDetails(object):
         Sets the default_backend_set_name of this ListenerDetails.
         The name of the associated backend set.
 
-        Example: `My_backend_set`
+        Example: `example_backend_set`
 
 
         :param default_backend_set_name: The default_backend_set_name of this ListenerDetails.
@@ -116,13 +123,37 @@ class ListenerDetails(object):
         self._default_backend_set_name = default_backend_set_name
 
     @property
+    def hostname_names(self):
+        """
+        Gets the hostname_names of this ListenerDetails.
+        An array of hostname resource names.
+
+
+        :return: The hostname_names of this ListenerDetails.
+        :rtype: list[str]
+        """
+        return self._hostname_names
+
+    @hostname_names.setter
+    def hostname_names(self, hostname_names):
+        """
+        Sets the hostname_names of this ListenerDetails.
+        An array of hostname resource names.
+
+
+        :param hostname_names: The hostname_names of this ListenerDetails.
+        :type: list[str]
+        """
+        self._hostname_names = hostname_names
+
+    @property
     def path_route_set_name(self):
         """
         Gets the path_route_set_name of this ListenerDetails.
         The name of the set of path-based routing rules, :class:`PathRouteSet`,
         applied to this listener's traffic.
 
-        Example: `path-route-set-001`
+        Example: `example_path_route_set`
 
 
         :return: The path_route_set_name of this ListenerDetails.
@@ -137,7 +168,7 @@ class ListenerDetails(object):
         The name of the set of path-based routing rules, :class:`PathRouteSet`,
         applied to this listener's traffic.
 
-        Example: `path-route-set-001`
+        Example: `example_path_route_set`
 
 
         :param path_route_set_name: The path_route_set_name of this ListenerDetails.

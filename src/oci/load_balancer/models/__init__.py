@@ -15,12 +15,15 @@ from .connection_configuration import ConnectionConfiguration
 from .create_backend_details import CreateBackendDetails
 from .create_backend_set_details import CreateBackendSetDetails
 from .create_certificate_details import CreateCertificateDetails
+from .create_hostname_details import CreateHostnameDetails
 from .create_listener_details import CreateListenerDetails
 from .create_load_balancer_details import CreateLoadBalancerDetails
 from .create_path_route_set_details import CreatePathRouteSetDetails
 from .health_check_result import HealthCheckResult
 from .health_checker import HealthChecker
 from .health_checker_details import HealthCheckerDetails
+from .hostname import Hostname
+from .hostname_details import HostnameDetails
 from .ip_address import IpAddress
 from .listener import Listener
 from .listener_details import ListenerDetails
@@ -40,6 +43,7 @@ from .session_persistence_configuration_details import SessionPersistenceConfigu
 from .update_backend_details import UpdateBackendDetails
 from .update_backend_set_details import UpdateBackendSetDetails
 from .update_health_checker_details import UpdateHealthCheckerDetails
+from .update_hostname_details import UpdateHostnameDetails
 from .update_listener_details import UpdateListenerDetails
 from .update_load_balancer_details import UpdateLoadBalancerDetails
 from .update_path_route_set_details import UpdatePathRouteSetDetails
@@ -60,12 +64,15 @@ load_balancer_type_mapping = {
     "CreateBackendDetails": CreateBackendDetails,
     "CreateBackendSetDetails": CreateBackendSetDetails,
     "CreateCertificateDetails": CreateCertificateDetails,
+    "CreateHostnameDetails": CreateHostnameDetails,
     "CreateListenerDetails": CreateListenerDetails,
     "CreateLoadBalancerDetails": CreateLoadBalancerDetails,
     "CreatePathRouteSetDetails": CreatePathRouteSetDetails,
     "HealthCheckResult": HealthCheckResult,
     "HealthChecker": HealthChecker,
     "HealthCheckerDetails": HealthCheckerDetails,
+    "Hostname": Hostname,
+    "HostnameDetails": HostnameDetails,
     "IpAddress": IpAddress,
     "Listener": Listener,
     "ListenerDetails": ListenerDetails,
@@ -85,6 +92,7 @@ load_balancer_type_mapping = {
     "UpdateBackendDetails": UpdateBackendDetails,
     "UpdateBackendSetDetails": UpdateBackendSetDetails,
     "UpdateHealthCheckerDetails": UpdateHealthCheckerDetails,
+    "UpdateHostnameDetails": UpdateHostnameDetails,
     "UpdateListenerDetails": UpdateListenerDetails,
     "UpdateLoadBalancerDetails": UpdateLoadBalancerDetails,
     "UpdatePathRouteSetDetails": UpdatePathRouteSetDetails,

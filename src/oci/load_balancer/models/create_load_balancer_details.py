@@ -33,6 +33,10 @@ class CreateLoadBalancerDetails(object):
             The value to assign to the display_name property of this CreateLoadBalancerDetails.
         :type display_name: str
 
+        :param hostnames:
+            The value to assign to the hostnames property of this CreateLoadBalancerDetails.
+        :type hostnames: dict(str, HostnameDetails)
+
         :param is_private:
             The value to assign to the is_private property of this CreateLoadBalancerDetails.
         :type is_private: bool
@@ -59,6 +63,7 @@ class CreateLoadBalancerDetails(object):
             'certificates': 'dict(str, CertificateDetails)',
             'compartment_id': 'str',
             'display_name': 'str',
+            'hostnames': 'dict(str, HostnameDetails)',
             'is_private': 'bool',
             'listeners': 'dict(str, ListenerDetails)',
             'path_route_sets': 'dict(str, PathRouteSetDetails)',
@@ -71,6 +76,7 @@ class CreateLoadBalancerDetails(object):
             'certificates': 'certificates',
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
+            'hostnames': 'hostnames',
             'is_private': 'isPrivate',
             'listeners': 'listeners',
             'path_route_sets': 'pathRouteSets',
@@ -82,6 +88,7 @@ class CreateLoadBalancerDetails(object):
         self._certificates = None
         self._compartment_id = None
         self._display_name = None
+        self._hostnames = None
         self._is_private = None
         self._listeners = None
         self._path_route_sets = None
@@ -163,7 +170,7 @@ class CreateLoadBalancerDetails(object):
         A user-friendly name. It does not have to be unique, and it is changeable.
         Avoid entering confidential information.
 
-        Example: `My load balancer`
+        Example: `example_load_balancer`
 
 
         :return: The display_name of this CreateLoadBalancerDetails.
@@ -178,13 +185,33 @@ class CreateLoadBalancerDetails(object):
         A user-friendly name. It does not have to be unique, and it is changeable.
         Avoid entering confidential information.
 
-        Example: `My load balancer`
+        Example: `example_load_balancer`
 
 
         :param display_name: The display_name of this CreateLoadBalancerDetails.
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def hostnames(self):
+        """
+        Gets the hostnames of this CreateLoadBalancerDetails.
+
+        :return: The hostnames of this CreateLoadBalancerDetails.
+        :rtype: dict(str, HostnameDetails)
+        """
+        return self._hostnames
+
+    @hostnames.setter
+    def hostnames(self, hostnames):
+        """
+        Sets the hostnames of this CreateLoadBalancerDetails.
+
+        :param hostnames: The hostnames of this CreateLoadBalancerDetails.
+        :type: dict(str, HostnameDetails)
+        """
+        self._hostnames = hostnames
 
     @property
     def is_private(self):
@@ -204,7 +231,7 @@ class CreateLoadBalancerDetails(object):
         hosts the secondary (standby) load balancer. A public load balancer is accessible from the internet, depending on your
         VCN's `security list rules`__.
 
-        Example: `false`
+        Example: `true`
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/securitylists.htm
 
@@ -232,7 +259,7 @@ class CreateLoadBalancerDetails(object):
         hosts the secondary (standby) load balancer. A public load balancer is accessible from the internet, depending on your
         VCN's `security list rules`__.
 
-        Example: `false`
+        Example: `true`
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/securitylists.htm
 

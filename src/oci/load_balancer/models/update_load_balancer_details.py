@@ -39,7 +39,7 @@ class UpdateLoadBalancerDetails(object):
         The user-friendly display name for the load balancer. It does not have to be unique, and it is changeable.
         Avoid entering confidential information.
 
-        Example: `My load balancer`
+        Example: `example_load_balancer`
 
 
         :return: The display_name of this UpdateLoadBalancerDetails.
@@ -54,7 +54,7 @@ class UpdateLoadBalancerDetails(object):
         The user-friendly display name for the load balancer. It does not have to be unique, and it is changeable.
         Avoid entering confidential information.
 
-        Example: `My load balancer`
+        Example: `example_load_balancer`
 
 
         :param display_name: The display_name of this UpdateLoadBalancerDetails.
