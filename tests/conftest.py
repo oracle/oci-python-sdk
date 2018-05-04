@@ -7,7 +7,6 @@ import oci
 
 from tests.integ import util
 from tests.util import get_resource_path
-from tests.util import simple_retries_decorator
 
 from . import test_config_container
 
@@ -56,7 +55,9 @@ def tenant_id(config):
 
 @pytest.fixture
 def object_storage(config):
-    return oci.object_storage.ObjectStorageClient(config)
+    client = oci.object_storage.ObjectStorageClient(config)
+    add_retries_to_service_operations(client)
+    return client
 
 
 @pytest.fixture
@@ -131,10 +132,4 @@ def email_client(config):
 
 
 def add_retries_to_service_operations(client_obj):
-    for name in dir(client_obj):
-        if name.find('__') == 0:
-            continue
-
-        # Replace the method with a decorated version that does retries
-        if callable(getattr(client_obj, name)):
-            setattr(client_obj, name, simple_retries_decorator(getattr(client_obj, name)))
+    client_obj.retry_strategy = oci.retry.DEFAULT_RETRY_STRATEGY

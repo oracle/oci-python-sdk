@@ -834,7 +834,7 @@ class TestObjectStorage:
             # confirm that the object was actually uploaded with multipart
             assert response.headers['opc-content-md5']
 
-    def test_upload_manager_multipart_resume_put(self, object_storage, bucket, content_input_file):
+    def test_upload_manager_multipart_resume_put(self, object_storage, non_vcr_bucket, content_input_file):
         # Tests that the resume works in the case of a multipart upload with last part < part_size
         UPLOAD_LAST_PART = [-1]
 
@@ -842,16 +842,15 @@ class TestObjectStorage:
         # File split into 2 parts (1st part of 2 MB, 2nd part of 1 MB)
         # Hence last_part < part_size
         part_size_in_bytes = 2 * MEBIBYTE
-        self.multipart_resume_put(part_size_in_bytes, object_storage, bucket, content_input_file, UPLOAD_LAST_PART)
+        self.multipart_resume_put(part_size_in_bytes, object_storage, non_vcr_bucket, content_input_file, UPLOAD_LAST_PART)
 
         # *** Case 2: part_size = 1 MB, file_size = 3 MB, last_part = 1 MB ***
         # File split into 3 parts (1st part of 1 MB, 2nd part of 1 MB, 3rd part of 1 MB)
         # Hence last_part = part_size
         part_size_in_bytes = 1 * MEBIBYTE
-        self.multipart_resume_put(part_size_in_bytes, object_storage, bucket, content_input_file, UPLOAD_LAST_PART)
+        self.multipart_resume_put(part_size_in_bytes, object_storage, non_vcr_bucket, content_input_file, UPLOAD_LAST_PART)
 
     def multipart_resume_put(self, part_size_in_bytes, object_storage, bucket, content_input_file, upload_part_nums):
-
         object_name = 'test_object_multipart_resume_put'
         namespace = object_storage.get_namespace().data
 

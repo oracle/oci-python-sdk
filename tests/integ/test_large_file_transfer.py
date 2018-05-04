@@ -21,7 +21,7 @@ def names():
         "read-object": "reallyLargeFile.dat",
         "read-bucket": util.bucket_prefix() + "ReadOnlyTestBucket4",
         "write-object": "file_test",
-        "write-bucket": tests.util.unique_name("test_python_streaming"),
+        "write-bucket": tests.util.unique_name("test_python_streaming", ignore_vcr=True),
         "temp-file": tests.util.get_resource_directory() + "/file_download_test_temp_file.dat"
     }
 

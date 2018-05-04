@@ -6,7 +6,6 @@ import tests.util
 import time
 import pytest
 from . import util
-from .. import test_config_container
 
 
 @pytest.fixture
@@ -16,7 +15,7 @@ def namespace(object_storage):
 
 @pytest.fixture
 def bucket_name(namespace, object_storage):
-    name = tests.util.unique_name("test_python_streaming")
+    name = tests.util.unique_name("test_python_streaming", ignore_vcr=True)
     request = oci.object_storage.models.CreateBucketDetails()
     request.name = name
     request.compartment_id = util.COMPARTMENT_ID
@@ -42,83 +41,80 @@ def bucket_name(namespace, object_storage):
 
 class TestStreaming:
     def test_string_object(self, namespace, bucket_name, object_storage):
-        with test_config_container.create_vcr().use_cassette('test_streaming_string_object.yml'):
-            name = 'string_1'
-            body = 'This is a test string.'
-            response = object_storage.put_object(namespace, bucket_name, name, body)
-            assert response.status == 200
+        name = 'string_1'
+        body = 'This is a test string.'
+        response = object_storage.put_object(namespace, bucket_name, name, body)
+        assert response.status == 200
 
-            response = object_storage.get_object(namespace, bucket_name, name)
-            assert response.status == 200
-            assert body == response.data.content.decode('UTF-8')
+        response = object_storage.get_object(namespace, bucket_name, name)
+        assert response.status == 200
+        assert body == response.data.content.decode('UTF-8')
 
     def test_text_file_streaming(self, namespace, bucket_name, object_storage):
-        with test_config_container.create_vcr().use_cassette('test_streaming_text_file.yml'):
-            name = 'text_file'
-            test_file = tests.util.get_resource_path('config')
+        name = 'text_file'
+        test_file = tests.util.get_resource_path('config')
 
-            # Put an object
-            with open(test_file, 'r') as file:
-                response = object_storage.put_object(namespace, bucket_name, name, file)
-            assert response.status == 200
+        # Put an object
+        with open(test_file, 'r') as file:
+            response = object_storage.put_object(namespace, bucket_name, name, file)
+        assert response.status == 200
 
-            # Get it back
-            response = object_storage.get_object(namespace, bucket_name, name)
-            assert response.status == 200
+        # Get it back
+        response = object_storage.get_object(namespace, bucket_name, name)
+        assert response.status == 200
 
-            # Stream the file into memory
-            response_text = ''
-            chunk_count = 0
-            for chunk in response.data.iter_content(chunk_size=5):
-                text = chunk.decode('UTF-8')
-                response_text += text
-                chunk_count += 1
+        # Stream the file into memory
+        response_text = ''
+        chunk_count = 0
+        for chunk in response.data.iter_content(chunk_size=5):
+            text = chunk.decode('UTF-8')
+            response_text += text
+            chunk_count += 1
 
-            assert (chunk_count > 1)
+        assert (chunk_count > 1)
 
-            # Check content against the original file
-            with open(test_file, 'r') as file:
-                file_content = file.read()
-                assert file_content == response_text
+        # Check content against the original file
+        with open(test_file, 'r') as file:
+            file_content = file.read()
+            assert file_content == response_text
 
-            # Head
-            response = object_storage.head_object(namespace, bucket_name, name)
-            assert response.status == 200
-            assert len(file_content) == int(response.headers['content-length'])
+        # Head
+        response = object_storage.head_object(namespace, bucket_name, name)
+        assert response.status == 200
+        assert len(file_content) == int(response.headers['content-length'])
 
     def test_binary_file_streaming(self, namespace, bucket_name, object_storage):
-        with test_config_container.create_vcr().use_cassette('test_streaming_binary_file.yml'):
-            name = 'image_file'
-            test_file = tests.util.get_resource_path('test_image.png')
+        name = 'image_file'
+        test_file = tests.util.get_resource_path('test_image.png')
 
-            # Put an object
-            with open(test_file, 'rb') as file:
-                response = object_storage.put_object(namespace, bucket_name, name, file)
-            assert response.status == 200
+        # Put an object
+        with open(test_file, 'rb') as file:
+            response = object_storage.put_object(namespace, bucket_name, name, file)
+        assert response.status == 200
 
-            # Get it back
-            response = object_storage.get_object(namespace, bucket_name, name)
-            assert response.status == 200
+        # Get it back
+        response = object_storage.get_object(namespace, bucket_name, name)
+        assert response.status == 200
 
-            # Stream the file into memory
-            response_data = b''
-            chunk_count = 0
-            for chunk in response.data.iter_content(chunk_size=10):
-                text = chunk
-                response_data += text
-                chunk_count += 1
+        # Stream the file into memory
+        response_data = b''
+        chunk_count = 0
+        for chunk in response.data.iter_content(chunk_size=10):
+            text = chunk
+            response_data += text
+            chunk_count += 1
 
-            assert (chunk_count > 1)
+        assert (chunk_count > 1)
 
-            # Check content against the original file
-            with open(test_file, 'rb') as file:
-                file_content = file.read()
-                assert file_content == response_data
+        # Check content against the original file
+        with open(test_file, 'rb') as file:
+            file_content = file.read()
+            assert file_content == response_data
 
-            # Head
-            response = object_storage.head_object(namespace, bucket_name, name)
-            assert response.status == 200
-            assert len(file_content) == int(response.headers['content-length'])
+        # Head
+        response = object_storage.head_object(namespace, bucket_name, name)
+        assert response.status == 200
+        assert len(file_content) == int(response.headers['content-length'])
 
     def test_invalid_object_types(self, namespace, bucket_name, object_storage):
         with pytest.raises(TypeError):
@@ -131,7 +127,6 @@ class TestStreaming:
             object_storage.put_object(namespace, bucket_name, 'a_user', oci.identity.models.User())
 
     def test_object_not_found(self, namespace, bucket_name, object_storage):
-        with test_config_container.create_vcr().use_cassette('test_streaming_object_not_found.yml'):
-            with pytest.raises(oci.exceptions.ServiceError) as excinfo:
-                object_storage.get_object(namespace, bucket_name, 'does_not_exist')
-            assert excinfo.value.status == 404
+        with pytest.raises(oci.exceptions.ServiceError) as excinfo:
+            object_storage.get_object(namespace, bucket_name, 'does_not_exist')
+        assert excinfo.value.status == 404
