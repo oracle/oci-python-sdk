@@ -8,8 +8,8 @@ import pytest
 from tests.util import get_resource_path
 
 DEFAULT_REGION = "us-phoenix-1"
-HARDCODED_TENANCY = "ocidv1:tenancy:oc1:phx:1460406592660:aaaaaaaab4faofrfkxecohhjuivjq262pu"
-HARDCODED_USER = "ocid1.user.oc1..aaaaaaaakjkdrsqwljdpszrynrcosihxf2uspf7pzt7d4fmqomui2ngzysna"
+HARDCODED_TENANCY = "ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq"
+HARDCODED_USER = "ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq"
 HARDCODED_FINGERPRINT = "e1:8d:6a:cb:74:ed:25:51:a2:9f:38:a4:71:42:01:c8"
 HARDCODED_KEYFILE = "keys/sdk_test_admin_user_key.pem"
 HARDCODED_KEYFILE_NO_PASSPHRASE = 'keys/no_permissions_unencrypted_key.pem'

@@ -4,11 +4,30 @@
 from . import util
 from .. import test_config_container
 import oci
+import os
 import pytest
 import time
 
 
-@pytest.fixture
+@pytest.fixture(scope="module")
+def file_storage_client(request):
+    config = oci.config.from_file(
+        file_location=request.config.getoption("--config-file"),
+        profile_name=request.config.getoption("--config-profile")
+    )
+    pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
+    if pass_phrase:
+        config['pass_phrase'] = pass_phrase
+
+    identity_client = oci.identity.IdentityClient(config)
+    util.init_availability_domain_variables(identity_client, config['tenancy'])
+
+    client = oci.file_storage.FileStorageClient(config)
+
+    return client
+
+
+@pytest.fixture(scope="module")
 def file_system(file_storage_client):
     with test_config_container.create_vcr().use_cassette('test_file_storage_file_system_fixture.yml'):
         file_system_name = util.random_name('pysdk_test_fs')

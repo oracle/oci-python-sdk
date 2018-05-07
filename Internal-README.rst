@@ -162,21 +162,22 @@ by default.
 
 When doing builds, since we assume the previously recorded traffic to be good, we use the ``none`` record mode.
 
-If you need to re-record traffic then you can do that via the ``all`` mode. You should be re-record traffic when:
+If you need to re-record traffic then you can do by deleting the cassettes and using the ``once`` mode. You should
+re-record traffic when:
 
 * You add new tests
 * You modify an existing test to make additional service calls
 * An existing model changes (e.g. new fields are added to the Instance model) since this impacts the data which can get sent over the wire and how we serialise/deserialise it
 
-**Note:** In the future, we'll have a Team City job which will re-record tests and update the pre-recorded traffic in source control so that you don't have to do this manually.
+**Note:** We have a Team City job which re-records tests.  It doesn't update the pre-recorded traffic in source control yet so that has to be done manually.
 
 If you need to pass a record mode when running py.test, use the ``--vcr-record-mode`` option. For example::
 
-    py.test -s --vcr-record-mode=all
+    py.test -s --vcr-record-mode=once
 
 If you need to do it under tox, then this becomes::
 
-    tox -e py35 -- --vcr-record-mode=all
+    tox -e py35 -- --vcr-record-mode=once
 
 Building the SDK
 ================
@@ -209,12 +210,10 @@ For example:
     tox -- --config-profile IAD
 
 
-You must also update the following locations in code where we are using OCIDs that are hardcoded for PHX:
+You must also update the following locations in code where we are hardcoded for PHX:
 
-* tests/integ/util.py, uncomment the lines at the top under 'IAD' to specify the correct compartment ID and AD for IAD
-* tests/integ/test_launch_instance_options.py, update image OCIDs to use valid image OCIDs for IAD
-* tests/integ/test_launch_instance_tutorial.py, update image OCIDs to use valid image OCIDs for IAD
-* tests/integ/test_object_storage.py, update namespace from 'internalbriangustafson' to 'bmcs-dex-us-ashburn-1'
+* tests/integ/util.py, change the target_region to 'us-ashburn-1'
+* tests/integ/test_object_storage.py, update namespace_name from 'dex-us-phoenix-1' to 'bmcs-dex-us-ashburn-1'
 
 Running the Code Generator
 ===========================

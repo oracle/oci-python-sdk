@@ -75,7 +75,7 @@ class TestAudit:
         assert event.request_action is not None
         assert event.request_agent is not None
         assert event.request_headers is not None
-        assert event.request_parameters is not None  # may be empty though
+        # assert event.request_parameters is not None  # may be empty though
         assert event.response_headers is not None
         assert event.response_status is not None
         assert event.response_time is not None

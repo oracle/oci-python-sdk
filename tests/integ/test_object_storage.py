@@ -50,7 +50,7 @@ def set_up_test_data(object_storage, namespace):
 def get_object_response(object_storage):
     with test_config_container.create_vcr().use_cassette('test_object_storage_get_object_response.yml'):
         _response = object_storage.get_object(
-            namespace_name="internalbriangustafson",
+            namespace_name="dex-us-phoenix-1", #PythonSDKTestCompartment",
             bucket_name=util.bucket_prefix() + "ReadOnlyTestBucket2",
             object_name=expected_content
         )
@@ -924,7 +924,7 @@ class TestObjectStorage:
         # From testing, the memory usage is higher on Python 2 but it is still less than the total size of the file
         if six.PY3:
             # Empirically, Python 3.5 is ~170 MiB memory usage but Python 3.6 is ~160 MiB
-            max_size_limit_bytes = 170 * 1024 * 1024
+            max_size_limit_bytes = 171 * 1024 * 1024
         else:
             max_size_limit_bytes = 260 * 1024 * 2014
 
