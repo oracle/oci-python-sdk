@@ -50,7 +50,7 @@ def set_up_test_data(object_storage, namespace):
 def get_object_response(object_storage):
     with test_config_container.create_vcr().use_cassette('test_object_storage_get_object_response.yml'):
         _response = object_storage.get_object(
-            namespace_name="dex-us-phoenix-1", #PythonSDKTestCompartment",
+            namespace_name=namespace(object_storage),
             bucket_name=util.bucket_prefix() + "ReadOnlyTestBucket2",
             object_name=expected_content
         )

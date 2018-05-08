@@ -117,6 +117,11 @@ Some of the tests require environment variables which can be set by running the 
 
     'source internal_resources/test_setup.sh'
 
+If you need the environment variables for the internalbriangustafson tenant, then can can be set
+by running the following command::
+
+    `source internal_resources/test_setup_internalbriangustafson.sh`.
+
 To run the full suite of tests against all tox environments::
 
     tox
