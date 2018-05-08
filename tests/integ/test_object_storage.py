@@ -923,12 +923,12 @@ class TestObjectStorage:
         #
         # From testing, the memory usage is higher on Python 2 but it is still less than the total size of the file
         if six.PY3:
-            # Empirically, Python 3.5 is ~170 MiB memory usage but Python 3.6 is ~160 MiB
-            max_size_limit_bytes = 171 * 1024 * 1024
+            # Empirically, Python 3.5 is ~180 MiB memory usage but Python 3.6 is ~160 MiB
+            max_size_limit_bytes = 180 * 1024 * 1024
         else:
             max_size_limit_bytes = 260 * 1024 * 2014
 
-        assert max_child_process_memory_utilisation <= max_size_limit_bytes, 'Expected child process utilisation {} to be <= limit {}'.format(max_child_process_memory_utilisation, max_size_limit_bytes)
+        assert max_child_process_memory_utilisation <= max_size_limit_bytes, 'Expected child process utilization {} to be <= limit {}'.format(max_child_process_memory_utilisation, max_size_limit_bytes)
 
         print('Downloading object {} from {} for verification'.format(object_name, bucket))
         response = object_storage.get_object(
