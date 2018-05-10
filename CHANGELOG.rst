@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+1.3.XX - 2018-05-XX
+====================
+
+Added
+-----
+
+Changed
+-------
+* Added retrieving and setting the home region to the user_crud.py example.
+
+====================
 1.3.20 - 2018-05-03
 ====================
 
