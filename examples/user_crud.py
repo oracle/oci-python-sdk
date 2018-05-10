@@ -10,10 +10,16 @@ compartment_id = config["tenancy"]
 # Service client
 identity = oci.identity.IdentityClient(config)
 
+# Get and set the home region for the compartment. User crud operations need
+# to be performed in the home region.
+response = identity.list_region_subscriptions(compartment_id)
+for region in response.data:
+    if region.is_home_region:
+        identity.base_client.set_region(region.region_name)
+        break
 
 user_name = "python-sdk-example-user"
 group_name = "python-sdk-example-group"
-
 
 print("Creating a new user {!r} in compartment {!r}".format(
     user_name, compartment_id))
@@ -24,7 +30,6 @@ request.name = user_name
 request.description = "Created by a Python SDK example"
 user = identity.create_user(request)
 print(user.data)
-
 
 print("Creating a new group {!r} in compartment {!r}".format(
     group_name, compartment_id))
