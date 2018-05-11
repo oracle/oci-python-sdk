@@ -283,7 +283,7 @@ def test_crud_export(file_storage_client, file_system, mount_target):
     with test_config_container.create_vcr().use_cassette('test_file_storage_crud_export.yml'):
         all_exports = oci.pagination.list_call_get_all_results(
             file_storage_client.list_exports,
-            util.COMPARTMENT_ID,
+            compartment_id=util.COMPARTMENT_ID,
             file_system_id=file_system.id
         )
         assert len(all_exports.data) == 0
@@ -299,7 +299,7 @@ def test_crud_export(file_storage_client, file_system, mount_target):
 
         all_exports = oci.pagination.list_call_get_all_results(
             file_storage_client.list_exports,
-            util.COMPARTMENT_ID,
+            compartment_id=util.COMPARTMENT_ID,
             file_system_id=file_system.id
         )
         assert len(all_exports.data) == 1
@@ -311,7 +311,7 @@ def test_crud_export(file_storage_client, file_system, mount_target):
 
         all_exports_by_export_set = oci.pagination.list_call_get_all_results(
             file_storage_client.list_exports,
-            util.COMPARTMENT_ID,
+            compartment_id=util.COMPARTMENT_ID,
             export_set_id=mount_target.export_set_id
         )
         assert len(all_exports_by_export_set.data) == 1
@@ -336,14 +336,14 @@ def test_crud_export(file_storage_client, file_system, mount_target):
 
         all_exports = oci.pagination.list_call_get_all_results(
             file_storage_client.list_exports,
-            util.COMPARTMENT_ID,
+            compartment_id=util.COMPARTMENT_ID,
             file_system_id=file_system.id
         )
         _validate_export_deleted_or_not_present(all_exports.data, export.id)
 
         all_exports_by_export_set = oci.pagination.list_call_get_all_results(
             file_storage_client.list_exports,
-            util.COMPARTMENT_ID,
+            compartment_id=util.COMPARTMENT_ID,
             export_set_id=mount_target.export_set_id
         )
         _validate_export_deleted_or_not_present(all_exports_by_export_set.data, export.id)

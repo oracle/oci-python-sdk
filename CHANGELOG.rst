@@ -14,6 +14,7 @@ Added
 Changed
 -------
 * Added retrieving and setting the home region to the user_crud.py example.
+* Breaking change: list_exports does not have any required parameters
 
 ====================
 1.3.20 - 2018-05-03
