@@ -1375,7 +1375,7 @@ class DatabaseClient(object):
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Database/References/odacli.htm#Oracle_Database_CLI_Reference
 
 
-        :param LaunchDbSystemDetails launch_db_system_details: (required)
+        :param LaunchDbSystemBase launch_db_system_details: (required)
             Request to launch a DB System.
 
         :param str opc_retry_token: (optional)
