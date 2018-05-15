@@ -269,3 +269,8 @@ The ``scripts/add_or_update_spec.py`` script can be used to update the spec vers
 
 
 Note that we just need to provide the ``--artifact-id`` and the ``--version``
+
+Releasing Whitelisted Features
+==============================
+
+When releasing a feature that is wrapped in a conditional in the spec, you need to update release-sdk.txt and then run the code generator.
