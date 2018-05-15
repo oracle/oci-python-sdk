@@ -1719,11 +1719,9 @@ class ComputeClient(object):
 
         **reset** - power off and power on
 
-        Note that the **stop** state has no effect on the resources you consume.
-        Billing continues for instances that you stop, and related resources continue
-        to apply against any relevant quotas. You must terminate an instance
-        (:func:`terminate_instance`)
-        to remove its resources from billing and quotas.
+        For more information see `Stopping and Starting an Instance`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/restartinginstance.htm
 
 
         :param str instance_id: (required)

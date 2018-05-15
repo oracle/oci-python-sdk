@@ -28,6 +28,10 @@ class LaunchOptions(object):
     #: This constant has a value of "VFIO"
     BOOT_VOLUME_TYPE_VFIO = "VFIO"
 
+    #: A constant which can be used with the boot_volume_type property of a LaunchOptions.
+    #: This constant has a value of "PARAVIRTUALIZED"
+    BOOT_VOLUME_TYPE_PARAVIRTUALIZED = "PARAVIRTUALIZED"
+
     #: A constant which can be used with the firmware property of a LaunchOptions.
     #: This constant has a value of "BIOS"
     FIRMWARE_BIOS = "BIOS"
@@ -60,6 +64,10 @@ class LaunchOptions(object):
     #: This constant has a value of "VFIO"
     REMOTE_DATA_VOLUME_TYPE_VFIO = "VFIO"
 
+    #: A constant which can be used with the remote_data_volume_type property of a LaunchOptions.
+    #: This constant has a value of "PARAVIRTUALIZED"
+    REMOTE_DATA_VOLUME_TYPE_PARAVIRTUALIZED = "PARAVIRTUALIZED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new LaunchOptions object with values from keyword arguments.
@@ -67,7 +75,7 @@ class LaunchOptions(object):
 
         :param boot_volume_type:
             The value to assign to the boot_volume_type property of this LaunchOptions.
-            Allowed values for this property are: "ISCSI", "SCSI", "IDE", "VFIO", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ISCSI", "SCSI", "IDE", "VFIO", "PARAVIRTUALIZED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type boot_volume_type: str
 
@@ -85,7 +93,7 @@ class LaunchOptions(object):
 
         :param remote_data_volume_type:
             The value to assign to the remote_data_volume_type property of this LaunchOptions.
-            Allowed values for this property are: "ISCSI", "SCSI", "IDE", "VFIO", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ISCSI", "SCSI", "IDE", "VFIO", "PARAVIRTUALIZED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type remote_data_volume_type: str
 
@@ -120,8 +128,9 @@ class LaunchOptions(object):
         * `IDE` - Emulated IDE disk.
         * `VFIO` - Direct attached Virtual Function storage.  This is the default option for Local data
         volumes on Oracle provided images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk.
 
-        Allowed values for this property are: "ISCSI", "SCSI", "IDE", "VFIO", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ISCSI", "SCSI", "IDE", "VFIO", "PARAVIRTUALIZED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -141,12 +150,13 @@ class LaunchOptions(object):
         * `IDE` - Emulated IDE disk.
         * `VFIO` - Direct attached Virtual Function storage.  This is the default option for Local data
         volumes on Oracle provided images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk.
 
 
         :param boot_volume_type: The boot_volume_type of this LaunchOptions.
         :type: str
         """
-        allowed_values = ["ISCSI", "SCSI", "IDE", "VFIO"]
+        allowed_values = ["ISCSI", "SCSI", "IDE", "VFIO", "PARAVIRTUALIZED"]
         if not value_allowed_none_or_none_sentinel(boot_volume_type, allowed_values):
             boot_volume_type = 'UNKNOWN_ENUM_VALUE'
         self._boot_volume_type = boot_volume_type
@@ -234,8 +244,9 @@ class LaunchOptions(object):
         * `IDE` - Emulated IDE disk.
         * `VFIO` - Direct attached Virtual Function storage.  This is the default option for Local data
         volumes on Oracle provided images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk.
 
-        Allowed values for this property are: "ISCSI", "SCSI", "IDE", "VFIO", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ISCSI", "SCSI", "IDE", "VFIO", "PARAVIRTUALIZED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -255,12 +266,13 @@ class LaunchOptions(object):
         * `IDE` - Emulated IDE disk.
         * `VFIO` - Direct attached Virtual Function storage.  This is the default option for Local data
         volumes on Oracle provided images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk.
 
 
         :param remote_data_volume_type: The remote_data_volume_type of this LaunchOptions.
         :type: str
         """
-        allowed_values = ["ISCSI", "SCSI", "IDE", "VFIO"]
+        allowed_values = ["ISCSI", "SCSI", "IDE", "VFIO", "PARAVIRTUALIZED"]
         if not value_allowed_none_or_none_sentinel(remote_data_volume_type, allowed_values):
             remote_data_volume_type = 'UNKNOWN_ENUM_VALUE'
         self._remote_data_volume_type = remote_data_volume_type
