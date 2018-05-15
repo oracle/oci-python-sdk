@@ -29,9 +29,17 @@ class CreatePublicIpDetails(object):
             The value to assign to the compartment_id property of this CreatePublicIpDetails.
         :type compartment_id: str
 
+        :param defined_tags:
+            The value to assign to the defined_tags property of this CreatePublicIpDetails.
+        :type defined_tags: dict(str, dict(str, object))
+
         :param display_name:
             The value to assign to the display_name property of this CreatePublicIpDetails.
         :type display_name: str
+
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this CreatePublicIpDetails.
+        :type freeform_tags: dict(str, str)
 
         :param lifetime:
             The value to assign to the lifetime property of this CreatePublicIpDetails.
@@ -45,20 +53,26 @@ class CreatePublicIpDetails(object):
         """
         self.swagger_types = {
             'compartment_id': 'str',
+            'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
+            'freeform_tags': 'dict(str, str)',
             'lifetime': 'str',
             'private_ip_id': 'str'
         }
 
         self.attribute_map = {
             'compartment_id': 'compartmentId',
+            'defined_tags': 'definedTags',
             'display_name': 'displayName',
+            'freeform_tags': 'freeformTags',
             'lifetime': 'lifetime',
             'private_ip_id': 'privateIpId'
         }
 
         self._compartment_id = None
+        self._defined_tags = None
         self._display_name = None
+        self._freeform_tags = None
         self._lifetime = None
         self._private_ip_id = None
 
@@ -89,6 +103,40 @@ class CreatePublicIpDetails(object):
         self._compartment_id = compartment_id
 
     @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this CreatePublicIpDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this CreatePublicIpDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this CreatePublicIpDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this CreatePublicIpDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
+
+    @property
     def display_name(self):
         """
         Gets the display_name of this CreatePublicIpDetails.
@@ -113,6 +161,42 @@ class CreatePublicIpDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this CreatePublicIpDetails.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see
+        `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this CreatePublicIpDetails.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this CreatePublicIpDetails.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see
+        `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this CreatePublicIpDetails.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
 
     @property
     def lifetime(self):

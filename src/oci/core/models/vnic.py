@@ -59,9 +59,17 @@ class Vnic(object):
             The value to assign to the compartment_id property of this Vnic.
         :type compartment_id: str
 
+        :param defined_tags:
+            The value to assign to the defined_tags property of this Vnic.
+        :type defined_tags: dict(str, dict(str, object))
+
         :param display_name:
             The value to assign to the display_name property of this Vnic.
         :type display_name: str
+
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this Vnic.
+        :type freeform_tags: dict(str, str)
 
         :param hostname_label:
             The value to assign to the hostname_label property of this Vnic.
@@ -109,7 +117,9 @@ class Vnic(object):
         self.swagger_types = {
             'availability_domain': 'str',
             'compartment_id': 'str',
+            'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
+            'freeform_tags': 'dict(str, str)',
             'hostname_label': 'str',
             'id': 'str',
             'is_primary': 'bool',
@@ -125,7 +135,9 @@ class Vnic(object):
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
+            'defined_tags': 'definedTags',
             'display_name': 'displayName',
+            'freeform_tags': 'freeformTags',
             'hostname_label': 'hostnameLabel',
             'id': 'id',
             'is_primary': 'isPrimary',
@@ -140,7 +152,9 @@ class Vnic(object):
 
         self._availability_domain = None
         self._compartment_id = None
+        self._defined_tags = None
         self._display_name = None
+        self._freeform_tags = None
         self._hostname_label = None
         self._id = None
         self._is_primary = None
@@ -205,6 +219,40 @@ class Vnic(object):
         self._compartment_id = compartment_id
 
     @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this Vnic.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this Vnic.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this Vnic.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this Vnic.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
+
+    @property
     def display_name(self):
         """
         Gets the display_name of this Vnic.
@@ -229,6 +277,42 @@ class Vnic(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this Vnic.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see
+        `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this Vnic.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this Vnic.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see
+        `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this Vnic.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
 
     @property
     def hostname_label(self):
