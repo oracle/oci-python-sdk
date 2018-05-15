@@ -233,6 +233,30 @@ P8ZM9xRukuJ4bnPTe8olOFB8UCCkAEmkUxtZI4vF90HvDKDOV0KY4OH5YESY6apH
 
         identity.delete_swift_password(self.user_ocid, password_ocid)
 
+    def subtest_auth_token_operations(self, identity):
+        description = "Password created by Python SDK integration tests."
+        create_auth_token_details = oci.identity.models.CreateAuthTokenDetails()
+        create_auth_token_details.description = description
+        result = identity.create_auth_token(create_auth_token_details, self.user_ocid)
+        self.validate_response(result, expect_etag=True)
+        password_ocid = result.data.id
+        password = result.data.password
+        assert len(password) > 5
+        assert description == result.data.description
+
+        description = description + " UPDATED"
+        update_auth_token_details = oci.identity.models.UpdateAuthTokenDetails()
+        update_auth_token_details.description = description
+        result = identity.update_auth_token(self.user_ocid, password_ocid, update_auth_token_details)
+        self.validate_response(result, expect_etag=True)
+        assert description == result.data.description
+
+        result = identity.list_auth_tokens(self.user_ocid)
+        self.validate_response(result)
+        assert 1 == len(result.data)
+
+        identity.delete_auth_token(self.user_ocid, password_ocid)
+
     def subtest_policy_operations(self, identity, config):
         policy_name = util.random_name('python_sdk_test_policy')
         policy_description = 'Created by Python SDK identity tests.'
