@@ -491,7 +491,7 @@
             <plugin>
                 <groupId>com.oracle.bmc.sdk</groupId>
                 <artifactId>bmc-sdk-swagger-maven-plugin</artifactId>
-                <version>1.25-SNAPSHOT</version>
+                <version>1.26-SNAPSHOT</version>
                 <executions>
                     <execution>
                         <id>python-public-sdk-identity</id>
@@ -824,7 +824,7 @@
             <dependency>
                 <groupId>com.oracle.pic.dbaas</groupId>
                 <artifactId>dbaas-api-spec</artifactId>
-                <version>0.0.137</version>
+                <version>0.0.139</version>
             </dependency>
             <dependency>
                 <groupId>com.oracle.pic.sherlock</groupId>
