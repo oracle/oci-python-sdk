@@ -34,6 +34,7 @@ ENUM_ATTR_TO_VALUE = {
     'ImageSourceViaObjectStorageTupleDetails': {'source_image_type': 'QCOW2'},
     'CreatePublicIpDetails': {'lifetime': 'RESERVED'},
     'CreateVolumeBackupDetails': {'type': 'FULL'},
+    'CreateVolumeGroupBackupDetails': {'type': 'FULL'},
     'RecordOperation': {'operation': 'ADD'},
     'CreateZoneDetails': {'zone_type': 'PRIMARY'}
 }
