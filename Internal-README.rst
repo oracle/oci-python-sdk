@@ -187,7 +187,7 @@ If you need to do it under tox, then this becomes::
 Building the SDK
 ================
 
-Because we are (will be) using a shared codebase for 2.7 and 3.5+, you
+Because we are using a shared codebase for 2.7 and 3.5+, you
 can generate the wheel with either venv and ``setup.cfg`` ensures the
 resulting wheel is marked as 2.7 and 3.5 compatible.
 
@@ -273,4 +273,10 @@ Note that we just need to provide the ``--artifact-id`` and the ``--version``
 Releasing Whitelisted Features
 ==============================
 
-When releasing a feature that is wrapped in a conditional in the spec, you need to update release-sdk.txt and then run the code generator.
+When releasing a feature that is wrapped in a conditional in the spec, you need to update release-sdk.txt and then run the code generator.  This might not be necessary
+if the codegenerator.
+
+There are also features that have x-obmcs-feature-id properties.  This is the old way of whitelisting features and they will not result in generated code
+until the feature id is added to featureId.yaml.
+
+Note: There are also blacklisted features which will not generate until they are removed from release-sdk.txt.
