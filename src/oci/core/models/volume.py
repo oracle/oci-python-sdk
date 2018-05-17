@@ -100,6 +100,10 @@ class Volume(object):
             The value to assign to the time_created property of this Volume.
         :type time_created: datetime
 
+        :param volume_group_id:
+            The value to assign to the volume_group_id property of this Volume.
+        :type volume_group_id: str
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -113,7 +117,8 @@ class Volume(object):
             'size_in_gbs': 'int',
             'size_in_mbs': 'int',
             'source_details': 'VolumeSourceDetails',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'volume_group_id': 'str'
         }
 
         self.attribute_map = {
@@ -128,7 +133,8 @@ class Volume(object):
             'size_in_gbs': 'sizeInGBs',
             'size_in_mbs': 'sizeInMBs',
             'source_details': 'sourceDetails',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'volume_group_id': 'volumeGroupId'
         }
 
         self._availability_domain = None
@@ -143,6 +149,7 @@ class Volume(object):
         self._size_in_mbs = None
         self._source_details = None
         self._time_created = None
+        self._volume_group_id = None
 
     @property
     def availability_domain(self):
@@ -467,6 +474,30 @@ class Volume(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def volume_group_id(self):
+        """
+        Gets the volume_group_id of this Volume.
+        The OCID of the source volume group.
+
+
+        :return: The volume_group_id of this Volume.
+        :rtype: str
+        """
+        return self._volume_group_id
+
+    @volume_group_id.setter
+    def volume_group_id(self, volume_group_id):
+        """
+        Sets the volume_group_id of this Volume.
+        The OCID of the source volume group.
+
+
+        :param volume_group_id: The volume_group_id of this Volume.
+        :type: str
+        """
+        self._volume_group_id = volume_group_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

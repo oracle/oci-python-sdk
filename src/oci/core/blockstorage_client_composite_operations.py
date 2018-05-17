@@ -97,6 +97,82 @@ class BlockstorageClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def create_volume_group_and_wait_for_state(self, create_volume_group_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.core.BlockstorageClient.create_volume_group` and waits for the :py:class:`~oci.core.models.VolumeGroup` acted upon
+        to enter the given state(s).
+
+        :param CreateVolumeGroupDetails create_volume_group_details: (required)
+            Request to create a new volume group.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.VolumeGroup.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.core.BlockstorageClient.create_volume_group`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_volume_group(create_volume_group_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_volume_group(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def create_volume_group_backup_and_wait_for_state(self, create_volume_group_backup_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.core.BlockstorageClient.create_volume_group_backup` and waits for the :py:class:`~oci.core.models.VolumeGroupBackup` acted upon
+        to enter the given state(s).
+
+        :param CreateVolumeGroupBackupDetails create_volume_group_backup_details: (required)
+            Request to create a new backup group of given volume group.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.VolumeGroupBackup.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.core.BlockstorageClient.create_volume_group_backup`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_volume_group_backup(create_volume_group_backup_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_volume_group_backup(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def delete_boot_volume_and_wait_for_state(self, boot_volume_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.core.BlockstorageClient.delete_boot_volume` and waits for the :py:class:`~oci.core.models.BootVolume` acted upon
@@ -195,6 +271,84 @@ class BlockstorageClientCompositeOperations(object):
         """
         initial_get_result = self.client.get_volume_backup(volume_backup_id)
         operation_result = self.client.delete_volume_backup(volume_backup_id, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                initial_get_result,
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                succeed_on_not_found=True,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def delete_volume_group_and_wait_for_state(self, volume_group_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.core.BlockstorageClient.delete_volume_group` and waits for the :py:class:`~oci.core.models.VolumeGroup` acted upon
+        to enter the given state(s).
+
+        :param str volume_group_id: (required)
+            The Oracle Cloud ID (OCID) that uniquely identifies the volume group.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.VolumeGroup.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.core.BlockstorageClient.delete_volume_group`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        initial_get_result = self.client.get_volume_group(volume_group_id)
+        operation_result = self.client.delete_volume_group(volume_group_id, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                initial_get_result,
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                succeed_on_not_found=True,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def delete_volume_group_backup_and_wait_for_state(self, volume_group_backup_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.core.BlockstorageClient.delete_volume_group_backup` and waits for the :py:class:`~oci.core.models.VolumeGroupBackup` acted upon
+        to enter the given state(s).
+
+        :param str volume_group_backup_id: (required)
+            The Oracle Cloud ID (OCID) that uniquely identifies the volume group backup.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.VolumeGroupBackup.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.core.BlockstorageClient.delete_volume_group_backup`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        initial_get_result = self.client.get_volume_group_backup(volume_group_backup_id)
+        operation_result = self.client.delete_volume_group_backup(volume_group_backup_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
 
@@ -328,6 +482,88 @@ class BlockstorageClientCompositeOperations(object):
             waiter_result = oci.wait_until(
                 self.client,
                 self.client.get_volume_backup(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_volume_group_and_wait_for_state(self, volume_group_id, update_volume_group_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.core.BlockstorageClient.update_volume_group` and waits for the :py:class:`~oci.core.models.VolumeGroup` acted upon
+        to enter the given state(s).
+
+        :param str volume_group_id: (required)
+            The Oracle Cloud ID (OCID) that uniquely identifies the volume group.
+
+        :param UpdateVolumeGroupDetails update_volume_group_details: (required)
+            Update volume group's set of volumes and/or display name
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.VolumeGroup.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.core.BlockstorageClient.update_volume_group`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_volume_group(volume_group_id, update_volume_group_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_volume_group(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_volume_group_backup_and_wait_for_state(self, volume_group_backup_id, update_volume_group_backup_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.core.BlockstorageClient.update_volume_group_backup` and waits for the :py:class:`~oci.core.models.VolumeGroupBackup` acted upon
+        to enter the given state(s).
+
+        :param str volume_group_backup_id: (required)
+            The Oracle Cloud ID (OCID) that uniquely identifies the volume group backup.
+
+        :param UpdateVolumeGroupBackupDetails update_volume_group_backup_details: (required)
+            Update volume group backup fields
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.VolumeGroupBackup.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.core.BlockstorageClient.update_volume_group_backup`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_volume_group_backup(volume_group_backup_id, update_volume_group_backup_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_volume_group_backup(wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )

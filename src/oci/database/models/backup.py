@@ -60,9 +60,17 @@ class Backup(object):
             The value to assign to the compartment_id property of this Backup.
         :type compartment_id: str
 
+        :param database_edition:
+            The value to assign to the database_edition property of this Backup.
+        :type database_edition: str
+
         :param database_id:
             The value to assign to the database_id property of this Backup.
         :type database_id: str
+
+        :param db_data_size_in_mbs:
+            The value to assign to the db_data_size_in_mbs property of this Backup.
+        :type db_data_size_in_mbs: int
 
         :param display_name:
             The value to assign to the display_name property of this Backup.
@@ -100,7 +108,9 @@ class Backup(object):
         self.swagger_types = {
             'availability_domain': 'str',
             'compartment_id': 'str',
+            'database_edition': 'str',
             'database_id': 'str',
+            'db_data_size_in_mbs': 'int',
             'display_name': 'str',
             'id': 'str',
             'lifecycle_details': 'str',
@@ -113,7 +123,9 @@ class Backup(object):
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
+            'database_edition': 'databaseEdition',
             'database_id': 'databaseId',
+            'db_data_size_in_mbs': 'dbDataSizeInMBs',
             'display_name': 'displayName',
             'id': 'id',
             'lifecycle_details': 'lifecycleDetails',
@@ -125,7 +137,9 @@ class Backup(object):
 
         self._availability_domain = None
         self._compartment_id = None
+        self._database_edition = None
         self._database_id = None
+        self._db_data_size_in_mbs = None
         self._display_name = None
         self._id = None
         self._lifecycle_details = None
@@ -183,6 +197,30 @@ class Backup(object):
         self._compartment_id = compartment_id
 
     @property
+    def database_edition(self):
+        """
+        Gets the database_edition of this Backup.
+        The Oracle Database Edition of the DbSystem on which the backup was taken.
+
+
+        :return: The database_edition of this Backup.
+        :rtype: str
+        """
+        return self._database_edition
+
+    @database_edition.setter
+    def database_edition(self, database_edition):
+        """
+        Sets the database_edition of this Backup.
+        The Oracle Database Edition of the DbSystem on which the backup was taken.
+
+
+        :param database_edition: The database_edition of this Backup.
+        :type: str
+        """
+        self._database_edition = database_edition
+
+    @property
     def database_id(self):
         """
         Gets the database_id of this Backup.
@@ -205,6 +243,30 @@ class Backup(object):
         :type: str
         """
         self._database_id = database_id
+
+    @property
+    def db_data_size_in_mbs(self):
+        """
+        Gets the db_data_size_in_mbs of this Backup.
+        Size of the database in mega-bytes at the time the backup was taken.
+
+
+        :return: The db_data_size_in_mbs of this Backup.
+        :rtype: int
+        """
+        return self._db_data_size_in_mbs
+
+    @db_data_size_in_mbs.setter
+    def db_data_size_in_mbs(self, db_data_size_in_mbs):
+        """
+        Sets the db_data_size_in_mbs of this Backup.
+        Size of the database in mega-bytes at the time the backup was taken.
+
+
+        :param db_data_size_in_mbs: The db_data_size_in_mbs of this Backup.
+        :type: int
+        """
+        self._db_data_size_in_mbs = db_data_size_in_mbs
 
     @property
     def display_name(self):

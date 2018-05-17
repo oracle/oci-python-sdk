@@ -11,6 +11,7 @@ from .create_data_guard_association_to_existing_db_system_details import CreateD
 from .create_database_details import CreateDatabaseDetails
 from .create_database_from_backup_details import CreateDatabaseFromBackupDetails
 from .create_db_home_details import CreateDbHomeDetails
+from .create_db_home_from_backup_details import CreateDbHomeFromBackupDetails
 from .create_db_home_with_db_system_id_base import CreateDbHomeWithDbSystemIdBase
 from .create_db_home_with_db_system_id_details import CreateDbHomeWithDbSystemIdDetails
 from .create_db_home_with_db_system_id_from_backup_details import CreateDbHomeWithDbSystemIdFromBackupDetails
@@ -28,7 +29,9 @@ from .db_system_shape_summary import DbSystemShapeSummary
 from .db_system_summary import DbSystemSummary
 from .db_version_summary import DbVersionSummary
 from .failover_data_guard_association_details import FailoverDataGuardAssociationDetails
+from .launch_db_system_base import LaunchDbSystemBase
 from .launch_db_system_details import LaunchDbSystemDetails
+from .launch_db_system_from_backup_details import LaunchDbSystemFromBackupDetails
 from .patch import Patch
 from .patch_details import PatchDetails
 from .patch_history_entry import PatchHistoryEntry
@@ -51,6 +54,7 @@ database_type_mapping = {
     "CreateDatabaseDetails": CreateDatabaseDetails,
     "CreateDatabaseFromBackupDetails": CreateDatabaseFromBackupDetails,
     "CreateDbHomeDetails": CreateDbHomeDetails,
+    "CreateDbHomeFromBackupDetails": CreateDbHomeFromBackupDetails,
     "CreateDbHomeWithDbSystemIdBase": CreateDbHomeWithDbSystemIdBase,
     "CreateDbHomeWithDbSystemIdDetails": CreateDbHomeWithDbSystemIdDetails,
     "CreateDbHomeWithDbSystemIdFromBackupDetails": CreateDbHomeWithDbSystemIdFromBackupDetails,
@@ -68,7 +72,9 @@ database_type_mapping = {
     "DbSystemSummary": DbSystemSummary,
     "DbVersionSummary": DbVersionSummary,
     "FailoverDataGuardAssociationDetails": FailoverDataGuardAssociationDetails,
+    "LaunchDbSystemBase": LaunchDbSystemBase,
     "LaunchDbSystemDetails": LaunchDbSystemDetails,
+    "LaunchDbSystemFromBackupDetails": LaunchDbSystemFromBackupDetails,
     "Patch": Patch,
     "PatchDetails": PatchDetails,
     "PatchHistoryEntry": PatchHistoryEntry,

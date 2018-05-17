@@ -270,7 +270,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.launch_db_system` and waits for the :py:class:`~oci.database.models.DbSystem` acted upon
         to enter the given state(s).
 
-        :param LaunchDbSystemDetails launch_db_system_details: (required)
+        :param LaunchDbSystemBase launch_db_system_details: (required)
             Request to launch a DB System.
 
         :param list[str] wait_for_states:
