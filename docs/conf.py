@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 import datetime
+import oci
 import sys
 import pkg_resources
 import sphinx_rtd_theme
@@ -260,3 +261,7 @@ class PatchedPythonDomain(PythonDomain):
     
 def setup(sphinx):
     sphinx.override_domain(PatchedPythonDomain)
+
+rst_epilog = """
+.. |OciSdkVersion| replace:: {version}
+""".format(version=oci.__version__)

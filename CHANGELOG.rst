@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+1.4.0 - 2018-05-17
+====================
+
+Added
+-----
+* Support for launching a database system from a backup in the Database service
+* Support for backup or clone of multiple volumes at once using volume groups in the Block Storage service
+* Support for tagging virtual cloud network resources in the Networking service
+* Support for specifying the PARAVIRTUALIZED remote volume type when creating a virtual image or launching a new instance in the Compute service
+* Example to retrieve network information for an instance which can be found on `Github <https://github.com/oracle/oci-python-sdk/blob/master/examples/get_all_instance_ip_addresses_and_dns_info.py>`__.
+
+Changed
+-------
+* Added retrieving and setting the home region to the user_crud.py example which can be found on `Github <https://github.com/oracle/oci-python-sdk/blob/master/examples/user_crud.py>`__.
+
+Breaking
+--------
+* In ``FileStorageClient.list_exports`` the ``compartment_id`` parameter has moved from a positional to a keyword argument.  This requires a code change as a v1.3.x call would look like: ``file_storage_client.list_exports('ocid1....')`` but in v1.4.x+ it would look like ``file_storage_client.list_exports(compartment_id='ocid1....')``
+
+====================
 1.3.20 - 2018-05-03
 ====================
 

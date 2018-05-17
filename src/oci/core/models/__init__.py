@@ -41,6 +41,8 @@ from .create_vnic_details import CreateVnicDetails
 from .create_volume_backup_details import CreateVolumeBackupDetails
 from .create_volume_backup_policy_assignment_details import CreateVolumeBackupPolicyAssignmentDetails
 from .create_volume_details import CreateVolumeDetails
+from .create_volume_group_backup_details import CreateVolumeGroupBackupDetails
+from .create_volume_group_details import CreateVolumeGroupDetails
 from .cross_connect import CrossConnect
 from .cross_connect_group import CrossConnectGroup
 from .cross_connect_location import CrossConnectLocation
@@ -121,6 +123,8 @@ from .update_virtual_circuit_details import UpdateVirtualCircuitDetails
 from .update_vnic_details import UpdateVnicDetails
 from .update_volume_backup_details import UpdateVolumeBackupDetails
 from .update_volume_details import UpdateVolumeDetails
+from .update_volume_group_backup_details import UpdateVolumeGroupBackupDetails
+from .update_volume_group_details import UpdateVolumeGroupDetails
 from .vcn import Vcn
 from .virtual_circuit import VirtualCircuit
 from .virtual_circuit_bandwidth_shape import VirtualCircuitBandwidthShape
@@ -133,6 +137,12 @@ from .volume_backup import VolumeBackup
 from .volume_backup_policy import VolumeBackupPolicy
 from .volume_backup_policy_assignment import VolumeBackupPolicyAssignment
 from .volume_backup_schedule import VolumeBackupSchedule
+from .volume_group import VolumeGroup
+from .volume_group_backup import VolumeGroupBackup
+from .volume_group_source_details import VolumeGroupSourceDetails
+from .volume_group_source_from_volume_group_backup_details import VolumeGroupSourceFromVolumeGroupBackupDetails
+from .volume_group_source_from_volume_group_details import VolumeGroupSourceFromVolumeGroupDetails
+from .volume_group_source_from_volumes_details import VolumeGroupSourceFromVolumesDetails
 from .volume_source_details import VolumeSourceDetails
 from .volume_source_from_volume_backup_details import VolumeSourceFromVolumeBackupDetails
 from .volume_source_from_volume_details import VolumeSourceFromVolumeDetails
@@ -177,6 +187,8 @@ core_type_mapping = {
     "CreateVolumeBackupDetails": CreateVolumeBackupDetails,
     "CreateVolumeBackupPolicyAssignmentDetails": CreateVolumeBackupPolicyAssignmentDetails,
     "CreateVolumeDetails": CreateVolumeDetails,
+    "CreateVolumeGroupBackupDetails": CreateVolumeGroupBackupDetails,
+    "CreateVolumeGroupDetails": CreateVolumeGroupDetails,
     "CrossConnect": CrossConnect,
     "CrossConnectGroup": CrossConnectGroup,
     "CrossConnectLocation": CrossConnectLocation,
@@ -257,6 +269,8 @@ core_type_mapping = {
     "UpdateVnicDetails": UpdateVnicDetails,
     "UpdateVolumeBackupDetails": UpdateVolumeBackupDetails,
     "UpdateVolumeDetails": UpdateVolumeDetails,
+    "UpdateVolumeGroupBackupDetails": UpdateVolumeGroupBackupDetails,
+    "UpdateVolumeGroupDetails": UpdateVolumeGroupDetails,
     "Vcn": Vcn,
     "VirtualCircuit": VirtualCircuit,
     "VirtualCircuitBandwidthShape": VirtualCircuitBandwidthShape,
@@ -269,6 +283,12 @@ core_type_mapping = {
     "VolumeBackupPolicy": VolumeBackupPolicy,
     "VolumeBackupPolicyAssignment": VolumeBackupPolicyAssignment,
     "VolumeBackupSchedule": VolumeBackupSchedule,
+    "VolumeGroup": VolumeGroup,
+    "VolumeGroupBackup": VolumeGroupBackup,
+    "VolumeGroupSourceDetails": VolumeGroupSourceDetails,
+    "VolumeGroupSourceFromVolumeGroupBackupDetails": VolumeGroupSourceFromVolumeGroupBackupDetails,
+    "VolumeGroupSourceFromVolumeGroupDetails": VolumeGroupSourceFromVolumeGroupDetails,
+    "VolumeGroupSourceFromVolumesDetails": VolumeGroupSourceFromVolumesDetails,
     "VolumeSourceDetails": VolumeSourceDetails,
     "VolumeSourceFromVolumeBackupDetails": VolumeSourceFromVolumeBackupDetails,
     "VolumeSourceFromVolumeDetails": VolumeSourceFromVolumeDetails

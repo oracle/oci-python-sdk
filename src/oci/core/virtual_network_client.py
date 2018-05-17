@@ -7201,7 +7201,7 @@ class VirtualNetworkClient(object):
     def update_cpe(self, cpe_id, update_cpe_details, **kwargs):
         """
         UpdateCpe
-        Updates the specified CPE's display name.
+        Updates the specified CPE's display name or tags.
         Avoid entering confidential information.
 
 
@@ -7526,7 +7526,7 @@ class VirtualNetworkClient(object):
     def update_drg(self, drg_id, update_drg_details, **kwargs):
         """
         UpdateDrg
-        Updates the specified DRG's display name. Avoid entering confidential information.
+        Updates the specified DRG's display name or tags. Avoid entering confidential information.
 
 
         :param str drg_id: (required)
@@ -7687,8 +7687,8 @@ class VirtualNetworkClient(object):
     def update_internet_gateway(self, ig_id, update_internet_gateway_details, **kwargs):
         """
         UpdateInternetGateway
-        Updates the specified Internet Gateway. You can disable/enable it, or change its display name.
-        Avoid entering confidential information.
+        Updates the specified Internet Gateway. You can disable/enable it, or change its display name
+        or tags. Avoid entering confidential information.
 
         If the gateway is disabled, that means no traffic will flow to/from the internet even if there's
         a route rule that enables that traffic.
@@ -7771,7 +7771,7 @@ class VirtualNetworkClient(object):
     def update_ip_sec_connection(self, ipsc_id, update_ip_sec_connection_details, **kwargs):
         """
         UpdateIPSecConnection
-        Updates the display name for the specified IPSec connection.
+        Updates the display name or tags for the specified IPSec connection.
         Avoid entering confidential information.
 
 
@@ -8027,7 +8027,7 @@ class VirtualNetworkClient(object):
         * Move a reserved public IP to a different private IP.
         * Unassign a reserved public IP from a private IP (which returns it to your pool
         of reserved public IPs).
-        * Change the display name for a public IP.
+        * Change the display name or tags for a public IP.
 
         Assigning, moving, and unassigning a reserved public IP are asynchronous
         operations. Poll the public IP's `lifecycleState` to determine if the operation

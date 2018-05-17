@@ -1181,14 +1181,15 @@ class FileStorageClient(object):
                 header_params=header_params,
                 response_type="list[ExportSetSummary]")
 
-    def list_exports(self, compartment_id, **kwargs):
+    def list_exports(self, **kwargs):
         """
         ListExports
-        Lists the export resources in the specified compartment. You must
-        also specify an export set, a file system, or both.
+        Lists export resources by compartment, file system, or export
+        set. You must specify an export set ID, a file system ID, and
+        / or a compartment ID.
 
 
-        :param str compartment_id: (required)
+        :param str compartment_id: (optional)
             The OCID of the compartment.
 
         :param int limit: (optional)
@@ -1246,6 +1247,7 @@ class FileStorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
+            "compartment_id",
             "limit",
             "page",
             "export_set_id",
@@ -1282,7 +1284,7 @@ class FileStorageClient(object):
                 )
 
         query_params = {
-            "compartmentId": compartment_id,
+            "compartmentId": kwargs.get("compartment_id", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "exportSetId": kwargs.get("export_set_id", missing),

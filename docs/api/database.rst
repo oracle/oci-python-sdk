@@ -26,6 +26,7 @@ Database
     oci.database.models.CreateDatabaseDetails
     oci.database.models.CreateDatabaseFromBackupDetails
     oci.database.models.CreateDbHomeDetails
+    oci.database.models.CreateDbHomeFromBackupDetails
     oci.database.models.CreateDbHomeWithDbSystemIdBase
     oci.database.models.CreateDbHomeWithDbSystemIdDetails
     oci.database.models.CreateDbHomeWithDbSystemIdFromBackupDetails
@@ -43,7 +44,9 @@ Database
     oci.database.models.DbSystemSummary
     oci.database.models.DbVersionSummary
     oci.database.models.FailoverDataGuardAssociationDetails
+    oci.database.models.LaunchDbSystemBase
     oci.database.models.LaunchDbSystemDetails
+    oci.database.models.LaunchDbSystemFromBackupDetails
     oci.database.models.Patch
     oci.database.models.PatchDetails
     oci.database.models.PatchHistoryEntry

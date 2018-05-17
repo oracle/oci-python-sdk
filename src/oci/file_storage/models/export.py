@@ -23,15 +23,16 @@ class Export(object):
     sequence for the first export resource can't contain the
     complete path element sequence of the second export resource.
 
+
     For example, the following are acceptable:
 
-    * /foo and /bar
-    * /foo1 and /foo2
-    * /foo and /foo1
+    * /example and /path
+    * /example1 and /example2
+    * /example and /example1
 
     The following examples are not acceptable:
-    * /foo and /foo/bar
-    * / and /foo
+    * /example and /example/path
+    * / and /example
 
     Paths may not end in a slash (/). No path element can be a period (.)
     or two periods in sequence (..). All path elements must be 255 bytes or less.

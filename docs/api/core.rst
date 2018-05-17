@@ -60,6 +60,8 @@ Core Services
     oci.core.models.CreateVolumeBackupDetails
     oci.core.models.CreateVolumeBackupPolicyAssignmentDetails
     oci.core.models.CreateVolumeDetails
+    oci.core.models.CreateVolumeGroupBackupDetails
+    oci.core.models.CreateVolumeGroupDetails
     oci.core.models.CrossConnect
     oci.core.models.CrossConnectGroup
     oci.core.models.CrossConnectLocation
@@ -140,6 +142,8 @@ Core Services
     oci.core.models.UpdateVnicDetails
     oci.core.models.UpdateVolumeBackupDetails
     oci.core.models.UpdateVolumeDetails
+    oci.core.models.UpdateVolumeGroupBackupDetails
+    oci.core.models.UpdateVolumeGroupDetails
     oci.core.models.Vcn
     oci.core.models.VirtualCircuit
     oci.core.models.VirtualCircuitBandwidthShape
@@ -152,6 +156,12 @@ Core Services
     oci.core.models.VolumeBackupPolicy
     oci.core.models.VolumeBackupPolicyAssignment
     oci.core.models.VolumeBackupSchedule
+    oci.core.models.VolumeGroup
+    oci.core.models.VolumeGroupBackup
+    oci.core.models.VolumeGroupSourceDetails
+    oci.core.models.VolumeGroupSourceFromVolumeGroupBackupDetails
+    oci.core.models.VolumeGroupSourceFromVolumeGroupDetails
+    oci.core.models.VolumeGroupSourceFromVolumesDetails
     oci.core.models.VolumeSourceDetails
     oci.core.models.VolumeSourceFromVolumeBackupDetails
     oci.core.models.VolumeSourceFromVolumeDetails
