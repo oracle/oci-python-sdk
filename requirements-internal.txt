@@ -1,3 +1,4 @@
 click==6.7
 PyYAML==3.12
 six==1.11.0
+vendorize==0.1.0

@@ -9,9 +9,7 @@ pytest==3.2.3
 pytest-catchlog==1.2.2
 python-dateutil>=2.5.3,<=2.7.3
 pytz>=2016.10
-requests==2.18.4
 sphinx-rtd-theme==0.2.5b2
-six==1.11.0
 sphinx==1.6.4
 tox==2.9.1
 vcrpy==1.11.1
