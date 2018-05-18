@@ -1,8 +1,8 @@
 # coding: utf-8
 # Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
-from requests.exceptions import Timeout
-from requests.exceptions import ConnectionError
+from oci._vendor.requests.exceptions import Timeout
+from oci._vendor.requests.exceptions import ConnectionError
 
 import oci
 import oci.retry

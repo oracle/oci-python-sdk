@@ -3,7 +3,7 @@
 
 import base64
 import re
-import six
+from oci._vendor import six
 from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives.asymmetric import rsa, padding
 from cryptography.hazmat.primitives import serialization, hashes

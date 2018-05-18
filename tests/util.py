@@ -7,6 +7,8 @@ import os.path
 import time
 import resource
 from contextlib import contextmanager
+from oci._vendor.requests.exceptions import Timeout
+from oci._vendor.requests.exceptions import ConnectionError
 from . import test_config_container
 
 

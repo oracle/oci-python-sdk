@@ -3,7 +3,7 @@
 
 import oci
 import pytest
-import requests
+from oci._vendor import requests
 
 
 def test_identity_list_users(identity, config):

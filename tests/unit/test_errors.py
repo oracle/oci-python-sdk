@@ -3,7 +3,7 @@
 
 import oci
 import pytest
-import requests
+from oci._vendor import requests
 import tests.util
 
 

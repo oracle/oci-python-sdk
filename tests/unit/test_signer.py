@@ -1,14 +1,14 @@
 # coding: utf-8
 # Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
-import six
+from oci._vendor import six
 import base64
 import hashlib
 import pytest
 import os
 import tempfile
-from requests import Request
-from oci.exceptions import InvalidPrivateKey, MissingPrivateKeyPassphrase
+from oci._vendor.requests import Request
+from oci.exceptions import InvalidConfig, InvalidPrivateKey, MissingPrivateKeyPassphrase
 from oci.signer import load_private_key, load_private_key_from_file, inject_missing_headers, Signer
 from .utils import generate_key, serialize_key, verify_signature
 

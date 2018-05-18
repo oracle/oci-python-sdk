@@ -3,7 +3,7 @@
 
 import oci
 import pytest
-import six
+from oci._vendor import six
 
 
 @pytest.fixture

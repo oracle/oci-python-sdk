@@ -2,7 +2,7 @@
 # Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 from . import util
-import six
+from oci._vendor import six
 
 
 # basic smoke tests that db service is working, more in depth testing is covered in the CLI

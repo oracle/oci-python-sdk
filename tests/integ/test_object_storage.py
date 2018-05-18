@@ -11,9 +11,9 @@ import oci
 import os
 import os.path
 import pytest
-import requests
+from oci._vendor import requests
 import resource
-import six
+from oci._vendor import six
 import subprocess
 import sys
 import time

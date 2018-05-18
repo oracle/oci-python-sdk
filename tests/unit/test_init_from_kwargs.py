@@ -5,7 +5,7 @@ from datetime import datetime
 
 import oci
 import pytest
-import six
+from oci._vendor import six
 
 
 ENUM_ATTR_TO_VALUE = {
