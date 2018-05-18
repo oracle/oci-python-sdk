@@ -5,10 +5,10 @@ from . import auth_utils
 from .security_token_container import SecurityTokenContainer
 from cryptography.hazmat.primitives.serialization import Encoding, PublicFormat
 from OpenSSL import crypto
+from oci._vendor import requests
 
 import oci.retry
 import oci.signer
-import requests
 import threading
 
 

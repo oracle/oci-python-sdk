@@ -5,8 +5,8 @@
 # hit or the exception received from a service call (or the response from the service call if it didn't exception out).
 
 from ..exceptions import ServiceError
-from requests.exceptions import Timeout
-from requests.exceptions import ConnectionError
+from oci._vendor.requests.exceptions import Timeout
+from oci._vendor.requests.exceptions import ConnectionError
 
 
 class RetryCheckerContainer(object):

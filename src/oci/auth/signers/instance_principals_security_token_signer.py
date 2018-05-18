@@ -6,9 +6,10 @@ from ..certificate_retriever import UrlBasedCertificateRetriever, INSTANCE_METAD
 from ..session_key_supplier import SessionKeySupplier
 from ..federation_client import X509FederationClient
 from .. import auth_utils
+from oci._vendor import requests
 
 import oci.regions
-import requests
+
 
 
 class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTokenSigner):

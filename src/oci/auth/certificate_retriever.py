@@ -3,11 +3,11 @@
 
 from cryptography import x509
 from cryptography.hazmat.backends import default_backend
+from oci._vendor import requests
 
 import oci.retry
 import os.path
-import requests
-import six
+from oci._vendor import six
 import threading
 
 # A retry strategy for use when calling the metadata endpoint on an instance to retrieve certificates. This retry strategy

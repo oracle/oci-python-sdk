@@ -5,7 +5,7 @@
 from .util import Sentinel
 
 import functools
-import six
+from oci._vendor import six
 
 
 missing = Sentinel("Missing")

@@ -8,13 +8,11 @@ import platform
 import pytz
 import random
 import re
-import six.moves
 import string
 import uuid
 from datetime import date, datetime
 
-import requests
-import six
+from oci._vendor import requests, six
 from dateutil.parser import parse
 
 from . import constants, exceptions, regions
