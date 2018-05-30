@@ -17,3 +17,5 @@ sdk_team_hide_CreateImageDetails_launchOptions
 sdk_team_hide_Shape_availabilityDomain
 # Block Storage: Coordinated multi-volume snapshot for backup and clone
 udx-190
+# Compute "Soft Shutdown" instance power action
+udx-1071
