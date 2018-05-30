@@ -150,6 +150,101 @@ class IdentityClient(object):
                 body=add_user_to_group_details,
                 response_type="UserGroupMembership")
 
+    def create_auth_token(self, create_auth_token_details, user_id, **kwargs):
+        """
+        CreateAuthToken
+        Creates a new auth token for the specified user. For information about what auth tokens are for, see
+        `Managing User Credentials`__.
+
+        You must specify a *description* for the auth token (although it can be an empty string). It does not
+        have to be unique, and you can change it anytime with
+        :func:`update_auth_token`.
+
+        Every user has permission to create an auth token for *their own user ID*. An administrator in your organization
+        does not need to write a policy to give users this ability. To compare, administrators who have permission to the
+        tenancy can use this operation to create an auth token for any user, including themselves.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingcredentials.htm
+
+
+        :param CreateAuthTokenDetails create_auth_token_details: (required)
+            Request object for creating a new auth token.
+
+        :param str user_id: (required)
+            The OCID of the user.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.AuthToken`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/users/{userId}/authTokens/"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_auth_token got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "userId": user_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_auth_token_details,
+                response_type="AuthToken")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_auth_token_details,
+                response_type="AuthToken")
+
     def create_compartment(self, create_compartment_details, **kwargs):
         """
         CreateCompartment
@@ -1045,6 +1140,8 @@ class IdentityClient(object):
     def create_swift_password(self, create_swift_password_details, user_id, **kwargs):
         """
         CreateSwiftPassword
+        **Deprecated. Use :func:`create_auth_token` instead.**
+
         Creates a new Swift password for the specified user. For information about what Swift passwords are for, see
         `Managing User Credentials`__.
 
@@ -1489,6 +1586,83 @@ class IdentityClient(object):
             "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
+    def delete_auth_token(self, user_id, auth_token_id, **kwargs):
+        """
+        DeleteAuthToken
+        Deletes the specified auth token for the specified user.
+
+
+        :param str user_id: (required)
+            The OCID of the user.
+
+        :param str auth_token_id: (required)
+            The OCID of the auth token.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/users/{userId}/authTokens/{AuthTokenId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_auth_token got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "userId": user_id,
+            "authTokenId": auth_token_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -2035,6 +2209,8 @@ class IdentityClient(object):
     def delete_swift_password(self, user_id, swift_password_id, **kwargs):
         """
         DeleteSwiftPassword
+        **Deprecated. Use :func:`delete_auth_token` instead.**
+
         Deletes the specified Swift password for the specified user.
 
 
@@ -2972,6 +3148,71 @@ class IdentityClient(object):
                 header_params=header_params,
                 response_type="list[ApiKey]")
 
+    def list_auth_tokens(self, user_id, **kwargs):
+        """
+        ListAuthTokens
+        Lists the auth tokens for the specified user. The returned object contains the token's OCID, but not
+        the token itself. The actual token is returned only upon creation.
+
+
+        :param str user_id: (required)
+            The OCID of the user.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.AuthToken`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/users/{userId}/authTokens/"
+        method = "GET"
+
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_auth_tokens got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "userId": user_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="list[AuthToken]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="list[AuthToken]")
+
     def list_availability_domains(self, compartment_id, **kwargs):
         """
         ListAvailabilityDomains
@@ -3753,6 +3994,8 @@ class IdentityClient(object):
     def list_swift_passwords(self, user_id, **kwargs):
         """
         ListSwiftPasswords
+        **Deprecated. Use :func:`list_auth_tokens` instead.**
+
         Lists the Swift passwords for the specified user. The returned object contains the password's OCID, but not
         the password itself. The actual password is returned only upon creation.
 
@@ -4217,6 +4460,90 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params)
+
+    def update_auth_token(self, user_id, auth_token_id, update_auth_token_details, **kwargs):
+        """
+        UpdateAuthToken
+        Updates the specified auth token's description.
+
+
+        :param str user_id: (required)
+            The OCID of the user.
+
+        :param str auth_token_id: (required)
+            The OCID of the auth token.
+
+        :param UpdateAuthTokenDetails update_auth_token_details: (required)
+            Request object for updating an auth token.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.AuthToken`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/users/{userId}/authTokens/{AuthTokenId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_auth_token got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "userId": user_id,
+            "authTokenId": auth_token_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_auth_token_details,
+                response_type="AuthToken")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_auth_token_details,
+                response_type="AuthToken")
 
     def update_compartment(self, compartment_id, update_compartment_details, **kwargs):
         """
@@ -4875,6 +5202,8 @@ class IdentityClient(object):
     def update_swift_password(self, user_id, swift_password_id, update_swift_password_details, **kwargs):
         """
         UpdateSwiftPassword
+        **Deprecated. Use :func:`update_auth_token` instead.**
+
         Updates the specified Swift password's description.
 
 
