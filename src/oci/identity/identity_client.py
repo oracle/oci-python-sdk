@@ -1633,7 +1633,7 @@ class IdentityClient(object):
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/users/{userId}/authTokens/{AuthTokenId}"
+        resource_path = "/users/{userId}/authTokens/{authTokenId}"
         method = "DELETE"
 
         # Don't accept unknown kwargs
@@ -4492,7 +4492,7 @@ class IdentityClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.AuthToken`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/users/{userId}/authTokens/{AuthTokenId}"
+        resource_path = "/users/{userId}/authTokens/{authTokenId}"
         method = "PUT"
 
         # Don't accept unknown kwargs
