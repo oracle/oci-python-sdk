@@ -15,7 +15,7 @@ Added
 
 Changed
 -------
-Bumped required version of python-dateutil to 2.7.3
+* Bumped required version of python-dateutil to 2.7.3
 
 ====================
 1.4.0 - 2018-05-17
