@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+1.4.1 - 2018-05-31
+====================
+
+Added
+-----
+* Support for the "soft shutdown" instance action in the Compute service
+* Support for Auth Token management in the Identity service
+
+Changed
+-------
+Bumped required version of python-dateutil to 2.7.3
+
+====================
 1.4.0 - 2018-05-17
 ====================
 
