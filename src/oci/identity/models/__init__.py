@@ -5,9 +5,11 @@ from __future__ import absolute_import
 
 from .add_user_to_group_details import AddUserToGroupDetails
 from .api_key import ApiKey
+from .auth_token import AuthToken
 from .availability_domain import AvailabilityDomain
 from .compartment import Compartment
 from .create_api_key_details import CreateApiKeyDetails
+from .create_auth_token_details import CreateAuthTokenDetails
 from .create_compartment_details import CreateCompartmentDetails
 from .create_customer_secret_key_details import CreateCustomerSecretKeyDetails
 from .create_dynamic_group_details import CreateDynamicGroupDetails
@@ -41,6 +43,7 @@ from .tag_namespace_summary import TagNamespaceSummary
 from .tag_summary import TagSummary
 from .tenancy import Tenancy
 from .ui_password import UIPassword
+from .update_auth_token_details import UpdateAuthTokenDetails
 from .update_compartment_details import UpdateCompartmentDetails
 from .update_customer_secret_key_details import UpdateCustomerSecretKeyDetails
 from .update_dynamic_group_details import UpdateDynamicGroupDetails
@@ -62,9 +65,11 @@ from .user_group_membership import UserGroupMembership
 identity_type_mapping = {
     "AddUserToGroupDetails": AddUserToGroupDetails,
     "ApiKey": ApiKey,
+    "AuthToken": AuthToken,
     "AvailabilityDomain": AvailabilityDomain,
     "Compartment": Compartment,
     "CreateApiKeyDetails": CreateApiKeyDetails,
+    "CreateAuthTokenDetails": CreateAuthTokenDetails,
     "CreateCompartmentDetails": CreateCompartmentDetails,
     "CreateCustomerSecretKeyDetails": CreateCustomerSecretKeyDetails,
     "CreateDynamicGroupDetails": CreateDynamicGroupDetails,
@@ -98,6 +103,7 @@ identity_type_mapping = {
     "TagSummary": TagSummary,
     "Tenancy": Tenancy,
     "UIPassword": UIPassword,
+    "UpdateAuthTokenDetails": UpdateAuthTokenDetails,
     "UpdateCompartmentDetails": UpdateCompartmentDetails,
     "UpdateCustomerSecretKeyDetails": UpdateCustomerSecretKeyDetails,
     "UpdateDynamicGroupDetails": UpdateDynamicGroupDetails,

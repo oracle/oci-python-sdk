@@ -12,7 +12,8 @@ class User(object):
     An individual employee or system that needs to manage or use your company's Oracle Cloud Infrastructure
     resources. Users might need to launch instances, manage remote disks, work with your cloud network, etc. Users
     have one or more IAM Service credentials (:class:`ApiKey`,
-    :class:`UIPassword`, and :class:`SwiftPassword`).
+    :class:`UIPassword`, :class:`SwiftPassword` and
+    :class:`AuthToken`).
     For more information, see `User Credentials`__). End users of your
     application are not typically IAM Service users. For conceptual information about users and other IAM Service
     components, see `Overview of the IAM Service`__.
