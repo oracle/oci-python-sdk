@@ -20,9 +20,11 @@ Identity
 
     oci.identity.models.AddUserToGroupDetails
     oci.identity.models.ApiKey
+    oci.identity.models.AuthToken
     oci.identity.models.AvailabilityDomain
     oci.identity.models.Compartment
     oci.identity.models.CreateApiKeyDetails
+    oci.identity.models.CreateAuthTokenDetails
     oci.identity.models.CreateCompartmentDetails
     oci.identity.models.CreateCustomerSecretKeyDetails
     oci.identity.models.CreateDynamicGroupDetails
@@ -56,6 +58,7 @@ Identity
     oci.identity.models.TagSummary
     oci.identity.models.Tenancy
     oci.identity.models.UIPassword
+    oci.identity.models.UpdateAuthTokenDetails
     oci.identity.models.UpdateCompartmentDetails
     oci.identity.models.UpdateCustomerSecretKeyDetails
     oci.identity.models.UpdateDynamicGroupDetails

@@ -140,14 +140,14 @@ class ObjectStorageClient(object):
         query_params = {
             "uploadId": upload_id
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -244,7 +244,7 @@ class ObjectStorageClient(object):
         query_params = {
             "uploadId": upload_id
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -253,7 +253,7 @@ class ObjectStorageClient(object):
             "if-none-match": kwargs.get("if_none_match", missing),
             "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -331,7 +331,7 @@ class ObjectStorageClient(object):
             "content-type": "application/json",
             "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -426,7 +426,7 @@ class ObjectStorageClient(object):
             "if-none-match": kwargs.get("if_none_match", missing),
             "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -509,7 +509,7 @@ class ObjectStorageClient(object):
             "content-type": "application/json",
             "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -595,7 +595,7 @@ class ObjectStorageClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -682,7 +682,7 @@ class ObjectStorageClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -763,7 +763,7 @@ class ObjectStorageClient(object):
             "content-type": "application/json",
             "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -851,7 +851,7 @@ class ObjectStorageClient(object):
             "if-none-match": kwargs.get("if_none_match", missing),
             "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -912,7 +912,7 @@ class ObjectStorageClient(object):
             "content-type": "application/json",
             "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -988,7 +988,7 @@ class ObjectStorageClient(object):
             "content-type": "application/json",
             "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -1091,7 +1091,7 @@ class ObjectStorageClient(object):
             "opc-client-request-id": kwargs.get("opc_client_request_id", missing),
             "range": kwargs.get("range", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -1174,7 +1174,7 @@ class ObjectStorageClient(object):
             "content-type": "application/json",
             "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -1264,7 +1264,7 @@ class ObjectStorageClient(object):
             "if-none-match": kwargs.get("if_none_match", missing),
             "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -1357,7 +1357,7 @@ class ObjectStorageClient(object):
             "if-none-match": kwargs.get("if_none_match", missing),
             "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -1463,14 +1463,14 @@ class ObjectStorageClient(object):
             "page": kwargs.get("page", missing),
             "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'csv')
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -1566,14 +1566,14 @@ class ObjectStorageClient(object):
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -1660,14 +1660,14 @@ class ObjectStorageClient(object):
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -1789,14 +1789,14 @@ class ObjectStorageClient(object):
             "delimiter": kwargs.get("delimiter", missing),
             "fields": kwargs.get("fields", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -1888,14 +1888,14 @@ class ObjectStorageClient(object):
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -2033,7 +2033,7 @@ class ObjectStorageClient(object):
         }
         for key, value in six.iteritems(kwargs.get("opc_meta", {})):
             header_params["opc-meta-" + key] = value
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         if (not isinstance(put_object_body, (six.binary_type, six.string_types)) and
                 not hasattr(put_object_body, "read")):
@@ -2124,7 +2124,7 @@ class ObjectStorageClient(object):
             "content-type": "application/json",
             "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -2206,7 +2206,7 @@ class ObjectStorageClient(object):
             "content-type": "application/json",
             "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -2293,7 +2293,7 @@ class ObjectStorageClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -2374,7 +2374,7 @@ class ObjectStorageClient(object):
             "content-type": "application/json",
             "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -2489,7 +2489,7 @@ class ObjectStorageClient(object):
             "uploadId": upload_id,
             "uploadPartNum": upload_part_num
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing}
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -2500,7 +2500,7 @@ class ObjectStorageClient(object):
             "Content-Length": kwargs.get("content_length", missing),
             "Content-MD5": kwargs.get("content_md5", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing}
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         if (not isinstance(upload_part_body, (six.binary_type, six.string_types)) and
                 not hasattr(upload_part_body, "read")):
