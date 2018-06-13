@@ -6,7 +6,7 @@ import oci
 
 
 # This script demonstrates some of the Container Engine operations.
-# Please review the documentation for more information about 
+# Please review the documentation for more information about
 # how Container Engine works, including permissions needed.
 #
 # https://docs.us-phoenix-1.oraclecloud.com/Content/ContEng/Concepts/contengoverview.htm
@@ -26,6 +26,7 @@ print("Compartment id: {}".format(compartment_id))
 #############################
 # Container Engine operations
 #############################
+
 
 def create_cluster(ce_client, vcn):
     """
@@ -63,7 +64,7 @@ def create_cluster(ce_client, vcn):
 
     # If the workrequest failed, get the work request errors.
     if response.data.status == oci.container_engine.models.WorkRequest.STATUS_FAILED:
-        get_work_request_errors(ce_client, ompartment_id, response.data.id)
+        get_work_request_errors(ce_client, compartment_id, response.data.id)
         success = False
     else:
         print("Create cluster succeed")
@@ -94,13 +95,12 @@ def update_cluster(ce_client, cluster_id):
                                                                   wait_for_states=[oci.container_engine.models.WorkRequest.STATUS_SUCCEEDED,
                                                                                    oci.container_engine.models.WorkRequest.STATUS_FAILED])
 
-    
     # If the workrequest failed, get the work request errors.
     if response.data.status == oci.container_engine.models.WorkRequest.STATUS_FAILED:
-        get_work_request_errors(ce_client, ompartment_id, response.data.id)
+        get_work_request_errors(ce_client, compartment_id, response.data.id)
     else:
         print("Update cluster succeeded")
-    
+
     return
 
 
@@ -131,12 +131,12 @@ def get_kubeconfig(ce_client, cluster_id):
     """
 
     response = ce_client.create_kubeconfig(cluster_id)
-    
+
     # response.data.text contains the contents of the kubeconfig file which
     # can be writen to a file using code like the following snippet.
     """
-    with open('kubconfig.txt', 'w') as f: 
-        f.write(response.data.text) 
+    with open('kubconfig.txt', 'w') as f:
+        f.write(response.data.text)
     """
     if response.data.text:
         print("kubeconfig retrieved")
@@ -153,16 +153,15 @@ def create_node_pool(ce_client, cluster_id, subnets):
     Creates a node pool inside of a cluser
     """
     success = True
-    node_pool_create_details = oci.container_engine.models.CreateNodePoolDetails(
-                                    compartment_id=compartment_id,
-                                    cluster_id=cluster_id,
-                                    name="PythonSDK_nodepool1",
-                                    kubernetes_version=get_kubernetes_version(ce_client),
-                                    node_image_name="Oracle-Linux-7.4",
-                                    node_shape="VM.Standard1.1",
-                                    initial_node_labels=[{"nodes": "Example Nodes"}],
-                                    quantity_per_subnet=1,
-                                    subnet_ids=subnets)
+    node_pool_create_details = oci.container_engine.models.CreateNodePoolDetails(compartment_id=compartment_id,
+                                                                                 cluster_id=cluster_id,
+                                                                                 name="PythonSDK_nodepool1",
+                                                                                 kubernetes_version=get_kubernetes_version(ce_client),
+                                                                                 node_image_name="Oracle-Linux-7.4",
+                                                                                 node_shape="VM.Standard1.1",
+                                                                                 initial_node_labels=[{"nodes": "Example Nodes"}],
+                                                                                 quantity_per_subnet=1,
+                                                                                 subnet_ids=subnets)
 
     ce_composite_ops = oci.container_engine.ContainerEngineClientCompositeOperations(ce_client)
 
@@ -177,7 +176,7 @@ def create_node_pool(ce_client, cluster_id, subnets):
 
     # If the workrequest failed, get the work request errors.
     if response.data.status == oci.container_engine.models.WorkRequest.STATUS_FAILED:
-        get_work_request_errors(ce_client, ompartment_id, response.data.id)
+        get_work_request_errors(ce_client, compartment_id, response.data.id)
         success = False
     else:
         print("Create node pool succeeded")
@@ -190,7 +189,7 @@ def update_node_pool(ce_client, node_pool_id):
     update_node_pool
 
     Currently there are a number of features that can be updated in the node pool.
-    This example will only update the name.  Please see the documentation for 
+    This example will only update the name.  Please see the documentation for
     the other features which can be updated
     """
 
@@ -202,13 +201,12 @@ def update_node_pool(ce_client, node_pool_id):
                                                                     update_node_pool_details,
                                                                     wait_for_states=[oci.container_engine.models.WorkRequest.STATUS_SUCCEEDED,
                                                                                      oci.container_engine.models.WorkRequest.STATUS_FAILED])
-    
+
     if response.data.status == oci.container_engine.models.WorkRequest.STATUS_FAILED:
-        get_work_request_errors(ce_client, ompartment_id, response.data.id)
-        success = False
+        get_work_request_errors(ce_client, compartment_id, response.data.id)
     else:
         print("Update node pool succeeded")
-    
+
     return
 
 
@@ -234,13 +232,13 @@ def delete_node_pool(ca_client, node_pool_id):
 def get_kubernetes_version(ce_client):
     """
     get_kubernetes_version
-    
+
     Get the supported kubernetes versions from the service.  There are multiple
     versions supported but for the example we will just use the last one in the
     list.
     """
     response = ce_client.get_cluster_options(cluster_option_id="all")
-    
+
     versions = response.data.kubernetes_versions
     if len(versions) > 0:
         kubernetes_version = versions[-1]
@@ -253,19 +251,20 @@ def get_kubernetes_version(ce_client):
 # VCN operations
 ################
 
+
 def create_vcn(vn_client, ads, number_of_worker_subnets=3, number_of_lb_subnets=2):
-    """ 
+    """
     create_vcn
 
-    See https://docs.us-phoenix-1.oraclecloud.com/Content/ContEng/Concepts/contengnetworkconfig.htm#VCN 
+    See https://docs.us-phoenix-1.oraclecloud.com/Content/ContEng/Concepts/contengnetworkconfig.htm#VCN
     for details on how the VCN should be configured for container engine.
-     
-    This function will build a Virtual Cloud Network based on the example network resource configuration: 
+
+    This function will build a Virtual Cloud Network based on the example network resource configuration:
     https://docs.us-phoenix-1.oraclecloud.com/Content/ContEng/Concepts/contengnetworkconfigexample.htm
-    
+
     The function returns a dictionary containing the id of the VCN created, a list of worker subnets and
     a list of load balancer subnets
-    """ 
+    """
 
     vcn = {'id': None,
            'worker_subnets': [],
@@ -274,7 +273,7 @@ def create_vcn(vn_client, ads, number_of_worker_subnets=3, number_of_lb_subnets=
     subnet_template = "10.0.{}.0/24"
 
     vn_composite_ops = oci.core.VirtualNetworkClientCompositeOperations(vn_client)
-    
+
     vcn_details = oci.core.models.CreateVcnDetails(cidr_block='10.0.0.0/16',
                                                    display_name='PythonSDKContainerEngineExampleVcn',
                                                    dns_label='cevcn',
@@ -299,7 +298,6 @@ def create_vcn(vn_client, ads, number_of_worker_subnets=3, number_of_lb_subnets=
     gateway_id = result.data.id
     print('Gateway Id: {}'.format(gateway_id))
 
-
     # Setup the route table
     route_table_rule = oci.core.models.RouteRule(cidr_block='0.0.0.0/0',
                                                  network_entity_id=gateway_id)
@@ -321,7 +319,7 @@ def create_vcn(vn_client, ads, number_of_worker_subnets=3, number_of_lb_subnets=
     # https://docs.us-phoenix-1.oraclecloud.com/Content/ContEng/Concepts/contengnetworkconfig.htm#securitylistconfig
     ################
 
-    #Load balancer security rules
+    # Load balancer security rules
     load_balancer_egress_rule = oci.core.models.EgressSecurityRule(destination='0.0.0.0/0',
                                                                    destination_type=oci.core.models.EgressSecurityRule.DESTINATION_TYPE_CIDR_BLOCK,
                                                                    is_stateless=True,
@@ -365,9 +363,9 @@ def create_vcn(vn_client, ads, number_of_worker_subnets=3, number_of_lb_subnets=
     for i in range(number_of_worker_subnets):
         source = subnet_template.format(10 + i)
         worker_ingress_rules.append(oci.core.models.IngressSecurityRule(source=source,
-                                                                       source_type=oci.core.models.IngressSecurityRule.SOURCE_TYPE_CIDR_BLOCK,
-                                                                       is_stateless=True,
-                                                                       protocol='all'))
+                                                                        source_type=oci.core.models.IngressSecurityRule.SOURCE_TYPE_CIDR_BLOCK,
+                                                                        is_stateless=True,
+                                                                        protocol='all'))
 
     worker_ingress_rules.append(oci.core.models.IngressSecurityRule(source='0.0.0.0/0',
                                                                     source_type=oci.core.models.IngressSecurityRule.SOURCE_TYPE_CIDR_BLOCK,
@@ -404,7 +402,6 @@ def create_vcn(vn_client, ads, number_of_worker_subnets=3, number_of_lb_subnets=
 
     worker_security_list_id = result.data.id
     print('Worker Security List Id: {}'.format(worker_security_list_id))
-    
 
     ################
     # Subnets
@@ -421,15 +418,15 @@ def create_vcn(vn_client, ads, number_of_worker_subnets=3, number_of_lb_subnets=
         dns_label = dns_label_template.format(1 + i)
 
         subnet_details = oci.core.models.CreateSubnetDetails(availability_domain=ads[i],
-                                                            compartment_id=compartment_id,
-                                                            cidr_block=cidr_block,
-                                                            display_name=display_name,
-                                                            dns_label=dns_label,
-                                                            vcn_id=vcn['id'],
-                                                            route_table_id=route_table_id,
-                                                            security_list_ids=[worker_security_list_id])
+                                                             compartment_id=compartment_id,
+                                                             cidr_block=cidr_block,
+                                                             display_name=display_name,
+                                                             dns_label=dns_label,
+                                                             vcn_id=vcn['id'],
+                                                             route_table_id=route_table_id,
+                                                             security_list_ids=[worker_security_list_id])
 
-        result = vn_composite_ops.create_subnet_and_wait_for_state(subnet_details, 
+        result = vn_composite_ops.create_subnet_and_wait_for_state(subnet_details,
                                                                    wait_for_states=[oci.core.models.Subnet.LIFECYCLE_STATE_AVAILABLE])
         vcn['worker_subnets'].append(result.data.id)
 
@@ -451,7 +448,7 @@ def create_vcn(vn_client, ads, number_of_worker_subnets=3, number_of_lb_subnets=
                                                              route_table_id=route_table_id,
                                                              security_list_ids=[load_balancer_security_list_id])
 
-        result = vn_composite_ops.create_subnet_and_wait_for_state(subnet_details, 
+        result = vn_composite_ops.create_subnet_and_wait_for_state(subnet_details,
                                                                    wait_for_states=[oci.core.models.Subnet.LIFECYCLE_STATE_AVAILABLE])
         vcn['lb_subnets'].append(result.data.id)
 
@@ -461,10 +458,10 @@ def create_vcn(vn_client, ads, number_of_worker_subnets=3, number_of_lb_subnets=
 
 
 def delete_vcn(vn_client, vcn_resources):
-    """ 
+    """
     delete_vcn
-    
-    Deletes the example VCN.  There are more resources associated 
+
+    Deletes the example VCN.  There are more resources associated
     with the VCN than passed in with the vcn_resources dictionary.  Those
     resources will be discovered and deleted.
     """
@@ -480,7 +477,7 @@ def delete_vcn(vn_client, vcn_resources):
     # Delete the worker subnets
     print("Deleting worker subnets...")
     for subnet in vcn_resources['worker_subnets']:
-        vn_composite_ops.delete_subnet_and_wait_for_state(subnet, 
+        vn_composite_ops.delete_subnet_and_wait_for_state(subnet,
                                                           wait_for_states=[oci.core.models.Subnet.LIFECYCLE_STATE_TERMINATED])
 
     # VCNs have default security lists, route tables which cannot be deleted.
@@ -493,26 +490,26 @@ def delete_vcn(vn_client, vcn_resources):
     # Retrieve and delete the security lists
     print("Deleting security lists...")
     # We could just retrieve all of the security lists, but there may be cases where not all of them
-    # would come back in a single page.  Here is another example of using the pagaination to 
+    # would come back in a single page.  Here is another example of using the pagaination to
     # retrieve items from a list call.  More examples are in pagination.py
-    for security_list in oci.pagination.list_call_get_all_results_generator(vn_client.list_security_lists, 
-                                                                            'record', 
-                                                                            compartment_id, 
-                                                                            vcn_resources['id'], 
+    for security_list in oci.pagination.list_call_get_all_results_generator(vn_client.list_security_lists,
+                                                                            'record',
+                                                                            compartment_id,
+                                                                            vcn_resources['id'],
                                                                             lifecycle_state=oci.core.models.SecurityList.LIFECYCLE_STATE_AVAILABLE):
         if security_list.id != default_security_list_id:
-            vn_composite_ops.delete_security_list_and_wait_for_state(security_list.id, 
+            vn_composite_ops.delete_security_list_and_wait_for_state(security_list.id,
                                                                      wait_for_states=[oci.core.models.SecurityList.LIFECYCLE_STATE_TERMINATED])
 
     # Retrieve and delete the route tables
     print("Deleting route tables...")
     for route_table in oci.pagination.list_call_get_all_results_generator(vn_client.list_route_tables,
                                                                           'record',
-                                                                          compartment_id, 
-                                                                          vcn_resources['id'], 
+                                                                          compartment_id,
+                                                                          vcn_resources['id'],
                                                                           lifecycle_state=oci.core.models.RouteTable.LIFECYCLE_STATE_AVAILABLE):
         if route_table.id != default_route_table_id:
-            vn_composite_ops.delete_route_table_and_wait_for_state(route_table.id, 
+            vn_composite_ops.delete_route_table_and_wait_for_state(route_table.id,
                                                                    wait_for_states=[oci.core.models.RouteTable.LIFECYCLE_STATE_TERMINATED])
 
     # Retrieve and delete the gateway
@@ -520,13 +517,13 @@ def delete_vcn(vn_client, vcn_resources):
     for gateway in oci.pagination.list_call_get_all_results_generator(vn_client.list_internet_gateways,
                                                                       'record',
                                                                       compartment_id,
-                                                                      vcn_resources['id'], 
+                                                                      vcn_resources['id'],
                                                                       lifecycle_state=oci.core.models.InternetGateway.LIFECYCLE_STATE_AVAILABLE):
         vn_composite_ops.delete_internet_gateway_and_wait_for_state(gateway.id, wait_for_states=[oci.core.models.InternetGateway.LIFECYCLE_STATE_TERMINATED])
 
     print("Deleting virtual cloud network...")
     response = vn_composite_ops.delete_vcn_and_wait_for_state(vcn_resources['id'],
-                                                            wait_for_states=[oci.core.models.Vcn.LIFECYCLE_STATE_TERMINATED])
+                                                              wait_for_states=[oci.core.models.Vcn.LIFECYCLE_STATE_TERMINATED])
 
     print("VCN {} has been deleted".format(vcn_resources['id']))
 
@@ -575,7 +572,7 @@ if __name__ == "__main__":
         print_header("Create the Virtual Cloud Network")
         vcn_resources = create_vcn(vn_client, ads)
         print("VNC resources: {}".format(vcn_resources))
-        
+
         print_header("Create the Cluster")
         cluster_success, cluster_resources = create_cluster(ce_client, vcn_resources)
         print("Cluster resourse: {}".format(cluster_resources))
@@ -583,8 +580,8 @@ if __name__ == "__main__":
         if cluster_success:
             print_header('Create a node pool')
             node_pool_success, node_pool_resources = create_node_pool(ce_client,
-                                                                    cluster_resources['cluster'],
-                                                                    vcn_resources['worker_subnets'])
+                                                                      cluster_resources['cluster'],
+                                                                      vcn_resources['worker_subnets'])
             print("Node pool resources: {}".format(node_pool_resources))
 
         if cluster_success:
@@ -597,7 +594,7 @@ if __name__ == "__main__":
 
         if cluster_success:
             print_header("Update the Cluster")
-            update_cluster(ce_client, cluster_resources['cluster']) 
+            update_cluster(ce_client, cluster_resources['cluster'])
 
         if cluster_success and node_pool_success:
             print_header('Update the node pool')
@@ -609,7 +606,7 @@ if __name__ == "__main__":
         ####################
 
         # Note: Any exceptions caught while trying to clean up resources are printed, but not
-        #       handled.  
+        #       handled.
         if node_pool_resources:
             print_header('Delete the node pool')
             try:
