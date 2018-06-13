@@ -227,6 +227,10 @@ You run the code generator by executing::
 
     mvn clean install
 
+or by executing:
+
+    make gen
+
 
 Note that at this time, it will execute the ``merge_and_validate_spec.py`` script, which is part of the ``coreservices-api-spec`` artifact, and execute it. As long as you are running in a virtual environment which was previously set up for the SDK you should be fine, but you may need to install the following dependencies: 
 
@@ -254,6 +258,9 @@ The ``scripts/add_or_update_spec.py`` script can be used to add a new service to
 The script can be run as ``python scripts/add_or_update_spec.py --help`` to see a description of each option.
 
 After you've added the service, you can run the code generator using the steps from the "Running the Code Generator" section of this readme.
+
+Note: This script updates ``pom.xml`` and adds an entry to ``github.whitelist``.  To generate the docs for the new service 
+``scripts\doc_gen\generate_service_rst_files.py`` will need to be updated manually.
 
 Updating existing service spec versions
 =========================================

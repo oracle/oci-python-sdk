@@ -1,0 +1,35 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/e1:8d:6a:cb:74:ed:25:51:a2:9f:38:a4:71:42:01:c8",signature="E3xc8iH3PBk0OKyE9XumguJu7XLIKEgPtjOE5kU6hoePtljVT7QcCGob5QbKGBC256PfXT5+qGqqCgMrA07BW2rs+3bDpOi3bu6bg10XxxrsYfPO2vKWkBOfaq7M0auNun5KDuZGBsi8AE1bY8NJ5YSJ7roRYiIXEaOxu+mBnL8KtxyvGLtlbbXv7QrOpIzBpdhBEFNJmEjLC2SdJYiYBJ2Zi2siTgJ8yE52+AmGG4XrGk5KW7w4OGkbX9ME/hD8oG1dV9erJSzhrJakpy3avOSuoP7LwkNKhD22glm3U92r/ZZDMwfw0LDmKCuA8kzaHr4mPUjxX6XKlhPsBXQNlw==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Tue, 12 Jun 2018 20:30:33 GMT']
+      host: [containerengine.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/1.4.2]
+      opc-request-id: [C15E6005BFC34F29B404E968E9E60054]
+      user-agent: [Oracle-PythonSDK/1.4.2 (python 3.5.1; x86_64-Darwin)]
+    method: GET
+    uri: https://containerengine.us-phoenix-1.oraclecloud.com/20180222/nodePools?compartmentId=ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq
+  response:
+    body: {string: '[]'}
+    headers:
+      Access-Control-Allow-Methods: ['DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT']
+      Access-Control-Allow-Origin: ['*']
+      Access-Control-Expose-Headers: [opc-work-request-id]
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      Date: ['Tue, 12 Jun 2018 20:30:18 GMT']
+      Opc-Request-Id: [C15E6005BFC34F29B404E968E9E60054/8EC2CEB4041C4ACCB613878B7D7323BE/3F87D00A4C054594828B9A5D58AA8A29]
+      Uri: [/20180222/nodePools]
+      Vary: [Accept-Encoding]
+      X-Rate-Limit-Duration: ['1']
+      X-Rate-Limit-Limit: ['16.70']
+      X-Rate-Limit-Request-Forwarded-For: ['10.237.8.0, 10.237.33.34']
+      X-Rate-Limit-Request-Remote-Addr: ['10.237.33.34:33805']
+    status: {code: 200, message: OK}
+version: 1

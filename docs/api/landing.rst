@@ -4,6 +4,7 @@ API Reference
 .. rubric:: Service Clients
 
 * :doc:`Audit  <audit>`
+* :doc:`Container Engine  <container_engine>`
 * :doc:`Block Storage <core/client/oci.core.BlockstorageClient>`
 * :doc:`Compute  <core/client/oci.core.ComputeClient>`
 * :doc:`Virtual Network  <core/client/oci.core.VirtualNetworkClient>`
@@ -36,6 +37,7 @@ API Reference
     :maxdepth: 5
 
     audit
+    container_engine
     core
     database
     dns

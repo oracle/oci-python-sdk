@@ -46,3 +46,4 @@
 ^Thirdpartyreadme\.txt$
 ^tox\.ini$
 ^wercker\.yml$
+^src/oci/container_engine/.*\.py$

@@ -15,6 +15,12 @@ SERVICES_FOR_DOC_GEN = [
         'service_names': ['audit']
     },
     {
+        'module_name': 'container_engine',
+        'service_root_header': 'Container Engine',
+        'target_file_name': 'container_engine',
+        'service_names': ['container_engine']
+    },
+    {
         'module_name': 'core',
         'service_root_header': 'Core Services',
         'target_file_name': 'core',

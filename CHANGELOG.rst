@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+1.4.2 - 2018-06-14
+====================
+
+Added
+-----
+* Support for the Container Engine service
+
+  * A sample showing how to use this service from the SDK is available on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/container_engine.py>`__.
+
+
+====================
 1.4.1 - 2018-05-31
 ====================
 
