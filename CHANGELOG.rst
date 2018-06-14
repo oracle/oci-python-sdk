@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
-1.4.2 - 2018-06-14
+1.4.3 - 2018-06-14
 ====================
 
 Added
@@ -14,6 +14,19 @@ Added
 
   * A sample showing how to use this service from the SDK is available on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/container_engine.py>`__.
 
+Fixed
+-------
+* Add dependency to idna >=2.5,<2.7 since cryptography and requests both have a dependency on the library and pip can install a version that is incompatable with requests.
+
+====================
+1.4.2 - 2018-06-14
+====================
+
+This version was removed from PyPi due to a potential dependency conflict between cryptography and requests.
+
+* Support for the Container Engine service
+
+  * A sample showing how to use this service from the SDK is available on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/container_engine.py>`__.
 
 ====================
 1.4.1 - 2018-05-31
@@ -114,7 +127,7 @@ Added
 Added
 -----
 * Added support for the Email Service
-  
+
   * An example on using the Email Service can be found on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/email_service_example.py>`__.
 
 * Added support for SMTP credentials in the Identity Service
@@ -134,7 +147,7 @@ Added
 Added
 -----
 * Support for File Storage Service
-  
+
   * An example on using the File Storage Service can be found on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/file_storage_example.py>`__.
 
 * Added support for tagging Bucket resources in the Object Storage Service
@@ -178,7 +191,7 @@ Added
 * Support for using the ``ObjectReadWithoutList`` public access type when creating and updating buckets
 * Support for dynamic groups in Identity Service
 * Support for instance principals authentication when calling OCI services. An example of how to use instance principals authentication can be found on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/instance_principals_examples.py>`_.
-* Support for configuring idle timeout for listeners in Load Balancer Service 
+* Support for configuring idle timeout for listeners in Load Balancer Service
 * Support for VNC console connections in Compute Service
 
 ====================
