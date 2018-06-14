@@ -37,14 +37,22 @@ __ https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/index
 Installation
 ============
 
-::
+It is highly recommended that a Python virtual environment be used when installing oci.
 
-    pip install oci
+Please consult the `Installing packages using pip and virtualenv`__ guide from the Python Software Foundation for more information about virtual environments.
 
+__ https://packaging.python.org/guides/installing-using-pip-and-virtualenv/
 
 See `the installation guide`__ for installation troubleshooting and alternative install methods.
 
 __ https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/installation.html
+
+Once your virtual environment is active, oci can be installed using pip.
+
+::
+
+    pip install oci
+
 
 ============
 Development

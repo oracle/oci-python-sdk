@@ -38,6 +38,31 @@ Audit
     :noindex:
 
 
+================
+Container Engine
+================
+
+--------
+ Client
+--------
+
+.. autoclass:: oci.container_engine.container_engine_client.ContainerEngineClient
+    :members:
+    :noindex:
+
+--------
+ Models
+--------
+
+.. automodule:: oci.container_engine.models
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :imported-members:
+    :inherited-members:
+    :noindex:
+
+
 =============
 Core Services
 =============

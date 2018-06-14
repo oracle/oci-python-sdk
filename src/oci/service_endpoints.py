@@ -3,6 +3,7 @@
 
 SERVICE_ENDPOINTS = {
     "audit": "https://audit.{domain}/20160918",
+    "container_engine": "https://containerengine.{domain}",
     "blockstorage": "https://iaas.{domain}/20160918",
     "compute": "https://iaas.{domain}/20160918",
     "virtual_network": "https://iaas.{domain}/20160918",
