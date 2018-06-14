@@ -91,6 +91,13 @@ def compute(config):
 
 
 @pytest.fixture
+def container_engine(config):
+    client = oci.container_engine.ContainerEngineClient(config)
+    add_retries_to_service_operations(client)
+    return client
+
+
+@pytest.fixture
 def virtual_network(config):
     client = oci.core.VirtualNetworkClient(config)
     add_retries_to_service_operations(client)
