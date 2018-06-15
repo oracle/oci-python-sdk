@@ -1,0 +1,11 @@
+# Read The Docs config
+# - http://docs.readthedocs.io/en/latest/yaml-config.html
+
+# python version
+python:
+    version: 3.5
+    setup_py_install: true
+   
+# Just the HTML and indexing
+formats:
+    - none
