@@ -35,7 +35,7 @@ requires = [
     "idna>=2.5,<2.7",
     "PyJWT==1.5.3",
     "pyOpenSSL<=17.4.0",
-    "python-dateutil==2.7.2",
+    "python-dateutil==2.7.1",
     "pytz>=2016.10",
     "requests==2.18.4",
     "six==1.11.0",
