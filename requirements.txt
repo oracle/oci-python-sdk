@@ -9,7 +9,7 @@ pyOpenSSL==17.4.0
 pytest==3.2.3
 pytest-catchlog==1.2.2
 python-dateutil==2.7.3
-pytz==2016.10
+pytz>=2016.10
 requests==2.18.4
 sphinx-rtd-theme==0.2.5b2
 six==1.11.0
