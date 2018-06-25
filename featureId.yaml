@@ -53,3 +53,7 @@ whitelisted:
   - udx-919
   # VCN Tagging: DRG, IG, LPG, IPSec Connections, CPEs, VNICs
   - udx-920
+  # Boot Volume Backup & Clone
+  - udx-775
+  # Service Gateway Launch
+  - udx-677

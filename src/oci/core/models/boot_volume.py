@@ -57,9 +57,17 @@ class BootVolume(object):
             The value to assign to the compartment_id property of this BootVolume.
         :type compartment_id: str
 
+        :param defined_tags:
+            The value to assign to the defined_tags property of this BootVolume.
+        :type defined_tags: dict(str, dict(str, object))
+
         :param display_name:
             The value to assign to the display_name property of this BootVolume.
         :type display_name: str
+
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this BootVolume.
+        :type freeform_tags: dict(str, str)
 
         :param id:
             The value to assign to the id property of this BootVolume.
@@ -68,6 +76,10 @@ class BootVolume(object):
         :param image_id:
             The value to assign to the image_id property of this BootVolume.
         :type image_id: str
+
+        :param is_hydrated:
+            The value to assign to the is_hydrated property of this BootVolume.
+        :type is_hydrated: bool
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this BootVolume.
@@ -83,6 +95,10 @@ class BootVolume(object):
             The value to assign to the size_in_mbs property of this BootVolume.
         :type size_in_mbs: int
 
+        :param source_details:
+            The value to assign to the source_details property of this BootVolume.
+        :type source_details: BootVolumeSourceDetails
+
         :param time_created:
             The value to assign to the time_created property of this BootVolume.
         :type time_created: datetime
@@ -95,12 +111,16 @@ class BootVolume(object):
         self.swagger_types = {
             'availability_domain': 'str',
             'compartment_id': 'str',
+            'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
+            'freeform_tags': 'dict(str, str)',
             'id': 'str',
             'image_id': 'str',
+            'is_hydrated': 'bool',
             'lifecycle_state': 'str',
             'size_in_gbs': 'int',
             'size_in_mbs': 'int',
+            'source_details': 'BootVolumeSourceDetails',
             'time_created': 'datetime',
             'volume_group_id': 'str'
         }
@@ -108,24 +128,32 @@ class BootVolume(object):
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
+            'defined_tags': 'definedTags',
             'display_name': 'displayName',
+            'freeform_tags': 'freeformTags',
             'id': 'id',
             'image_id': 'imageId',
+            'is_hydrated': 'isHydrated',
             'lifecycle_state': 'lifecycleState',
             'size_in_gbs': 'sizeInGBs',
             'size_in_mbs': 'sizeInMBs',
+            'source_details': 'sourceDetails',
             'time_created': 'timeCreated',
             'volume_group_id': 'volumeGroupId'
         }
 
         self._availability_domain = None
         self._compartment_id = None
+        self._defined_tags = None
         self._display_name = None
+        self._freeform_tags = None
         self._id = None
         self._image_id = None
+        self._is_hydrated = None
         self._lifecycle_state = None
         self._size_in_gbs = None
         self._size_in_mbs = None
+        self._source_details = None
         self._time_created = None
         self._volume_group_id = None
 
@@ -182,6 +210,40 @@ class BootVolume(object):
         self._compartment_id = compartment_id
 
     @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this BootVolume.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this BootVolume.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this BootVolume.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this BootVolume.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
+
+    @property
     def display_name(self):
         """
         Gets the display_name of this BootVolume.
@@ -206,6 +268,42 @@ class BootVolume(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this BootVolume.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see
+        `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this BootVolume.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this BootVolume.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see
+        `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this BootVolume.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
 
     @property
     def id(self):
@@ -254,6 +352,30 @@ class BootVolume(object):
         :type: str
         """
         self._image_id = image_id
+
+    @property
+    def is_hydrated(self):
+        """
+        Gets the is_hydrated of this BootVolume.
+        Specifies whether the boot volume's data has finished copying from the source boot volume or boot volume backup.
+
+
+        :return: The is_hydrated of this BootVolume.
+        :rtype: bool
+        """
+        return self._is_hydrated
+
+    @is_hydrated.setter
+    def is_hydrated(self, is_hydrated):
+        """
+        Sets the is_hydrated of this BootVolume.
+        Specifies whether the boot volume's data has finished copying from the source boot volume or boot volume backup.
+
+
+        :param is_hydrated: The is_hydrated of this BootVolume.
+        :type: bool
+        """
+        self._is_hydrated = is_hydrated
 
     @property
     def lifecycle_state(self):
@@ -334,6 +456,32 @@ class BootVolume(object):
         :type: int
         """
         self._size_in_mbs = size_in_mbs
+
+    @property
+    def source_details(self):
+        """
+        Gets the source_details of this BootVolume.
+        The boot volume source, either an existing boot volume in the same Availability Domain or a boot volume backup.
+        If null, this means that the boot volume was created from an image.
+
+
+        :return: The source_details of this BootVolume.
+        :rtype: BootVolumeSourceDetails
+        """
+        return self._source_details
+
+    @source_details.setter
+    def source_details(self, source_details):
+        """
+        Sets the source_details of this BootVolume.
+        The boot volume source, either an existing boot volume in the same Availability Domain or a boot volume backup.
+        If null, this means that the boot volume was created from an image.
+
+
+        :param source_details: The source_details of this BootVolume.
+        :type: BootVolumeSourceDetails
+        """
+        self._source_details = source_details
 
     @property
     def time_created(self):

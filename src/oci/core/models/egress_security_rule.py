@@ -12,6 +12,14 @@ class EgressSecurityRule(object):
     A rule for allowing outbound IP packets.
     """
 
+    #: A constant which can be used with the destination_type property of a EgressSecurityRule.
+    #: This constant has a value of "CIDR_BLOCK"
+    DESTINATION_TYPE_CIDR_BLOCK = "CIDR_BLOCK"
+
+    #: A constant which can be used with the destination_type property of a EgressSecurityRule.
+    #: This constant has a value of "SERVICE_CIDR_BLOCK"
+    DESTINATION_TYPE_SERVICE_CIDR_BLOCK = "SERVICE_CIDR_BLOCK"
+
     def __init__(self, **kwargs):
         """
         Initializes a new EgressSecurityRule object with values from keyword arguments.
@@ -20,6 +28,12 @@ class EgressSecurityRule(object):
         :param destination:
             The value to assign to the destination property of this EgressSecurityRule.
         :type destination: str
+
+        :param destination_type:
+            The value to assign to the destination_type property of this EgressSecurityRule.
+            Allowed values for this property are: "CIDR_BLOCK", "SERVICE_CIDR_BLOCK", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type destination_type: str
 
         :param icmp_options:
             The value to assign to the icmp_options property of this EgressSecurityRule.
@@ -44,6 +58,7 @@ class EgressSecurityRule(object):
         """
         self.swagger_types = {
             'destination': 'str',
+            'destination_type': 'str',
             'icmp_options': 'IcmpOptions',
             'is_stateless': 'bool',
             'protocol': 'str',
@@ -53,6 +68,7 @@ class EgressSecurityRule(object):
 
         self.attribute_map = {
             'destination': 'destination',
+            'destination_type': 'destinationType',
             'icmp_options': 'icmpOptions',
             'is_stateless': 'isStateless',
             'protocol': 'protocol',
@@ -61,6 +77,7 @@ class EgressSecurityRule(object):
         }
 
         self._destination = None
+        self._destination_type = None
         self._icmp_options = None
         self._is_stateless = None
         self._protocol = None
@@ -71,8 +88,8 @@ class EgressSecurityRule(object):
     def destination(self):
         """
         **[Required]** Gets the destination of this EgressSecurityRule.
-        The destination CIDR block for the egress rule. This is the range of IP addresses that a
-        packet originating from the instance can go to.
+        The destination service cidrBlock or destination IP address range in CIDR notation for the egress rule.
+        This is the range of IP addresses that a packet originating from the instance can go to.
 
 
         :return: The destination of this EgressSecurityRule.
@@ -84,14 +101,48 @@ class EgressSecurityRule(object):
     def destination(self, destination):
         """
         Sets the destination of this EgressSecurityRule.
-        The destination CIDR block for the egress rule. This is the range of IP addresses that a
-        packet originating from the instance can go to.
+        The destination service cidrBlock or destination IP address range in CIDR notation for the egress rule.
+        This is the range of IP addresses that a packet originating from the instance can go to.
 
 
         :param destination: The destination of this EgressSecurityRule.
         :type: str
         """
         self._destination = destination
+
+    @property
+    def destination_type(self):
+        """
+        Gets the destination_type of this EgressSecurityRule.
+        Type of destination for EgressSecurityRule. SERVICE_CIDR_BLOCK should be used if destination is a service
+        cidrBlock. CIDR_BLOCK should be used if destination is IP address range in CIDR notation.
+        It defaults to CIDR_BLOCK, if not specified.
+
+        Allowed values for this property are: "CIDR_BLOCK", "SERVICE_CIDR_BLOCK", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The destination_type of this EgressSecurityRule.
+        :rtype: str
+        """
+        return self._destination_type
+
+    @destination_type.setter
+    def destination_type(self, destination_type):
+        """
+        Sets the destination_type of this EgressSecurityRule.
+        Type of destination for EgressSecurityRule. SERVICE_CIDR_BLOCK should be used if destination is a service
+        cidrBlock. CIDR_BLOCK should be used if destination is IP address range in CIDR notation.
+        It defaults to CIDR_BLOCK, if not specified.
+
+
+        :param destination_type: The destination_type of this EgressSecurityRule.
+        :type: str
+        """
+        allowed_values = ["CIDR_BLOCK", "SERVICE_CIDR_BLOCK"]
+        if not value_allowed_none_or_none_sentinel(destination_type, allowed_values):
+            destination_type = 'UNKNOWN_ENUM_VALUE'
+        self._destination_type = destination_type
 
     @property
     def icmp_options(self):

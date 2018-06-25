@@ -12,6 +12,14 @@ class IngressSecurityRule(object):
     A rule for allowing inbound IP packets.
     """
 
+    #: A constant which can be used with the source_type property of a IngressSecurityRule.
+    #: This constant has a value of "CIDR_BLOCK"
+    SOURCE_TYPE_CIDR_BLOCK = "CIDR_BLOCK"
+
+    #: A constant which can be used with the source_type property of a IngressSecurityRule.
+    #: This constant has a value of "SERVICE_CIDR_BLOCK"
+    SOURCE_TYPE_SERVICE_CIDR_BLOCK = "SERVICE_CIDR_BLOCK"
+
     def __init__(self, **kwargs):
         """
         Initializes a new IngressSecurityRule object with values from keyword arguments.
@@ -33,6 +41,12 @@ class IngressSecurityRule(object):
             The value to assign to the source property of this IngressSecurityRule.
         :type source: str
 
+        :param source_type:
+            The value to assign to the source_type property of this IngressSecurityRule.
+            Allowed values for this property are: "CIDR_BLOCK", "SERVICE_CIDR_BLOCK", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type source_type: str
+
         :param tcp_options:
             The value to assign to the tcp_options property of this IngressSecurityRule.
         :type tcp_options: TcpOptions
@@ -47,6 +61,7 @@ class IngressSecurityRule(object):
             'is_stateless': 'bool',
             'protocol': 'str',
             'source': 'str',
+            'source_type': 'str',
             'tcp_options': 'TcpOptions',
             'udp_options': 'UdpOptions'
         }
@@ -56,6 +71,7 @@ class IngressSecurityRule(object):
             'is_stateless': 'isStateless',
             'protocol': 'protocol',
             'source': 'source',
+            'source_type': 'sourceType',
             'tcp_options': 'tcpOptions',
             'udp_options': 'udpOptions'
         }
@@ -64,6 +80,7 @@ class IngressSecurityRule(object):
         self._is_stateless = None
         self._protocol = None
         self._source = None
+        self._source_type = None
         self._tcp_options = None
         self._udp_options = None
 
@@ -179,8 +196,11 @@ class IngressSecurityRule(object):
     def source(self):
         """
         **[Required]** Gets the source of this IngressSecurityRule.
-        The source CIDR block for the ingress rule. This is the range of IP addresses that a
-        packet coming into the instance can come from.
+        The source service cidrBlock or source IP address range in CIDR notation for the ingress rule. This is the
+        range of IP addresses that a packet coming into the instance can come from.
+
+        Examples: `10.12.0.0/16`
+                  `oci-phx-objectstorage`
 
 
         :return: The source of this IngressSecurityRule.
@@ -192,14 +212,51 @@ class IngressSecurityRule(object):
     def source(self, source):
         """
         Sets the source of this IngressSecurityRule.
-        The source CIDR block for the ingress rule. This is the range of IP addresses that a
-        packet coming into the instance can come from.
+        The source service cidrBlock or source IP address range in CIDR notation for the ingress rule. This is the
+        range of IP addresses that a packet coming into the instance can come from.
+
+        Examples: `10.12.0.0/16`
+                  `oci-phx-objectstorage`
 
 
         :param source: The source of this IngressSecurityRule.
         :type: str
         """
         self._source = source
+
+    @property
+    def source_type(self):
+        """
+        Gets the source_type of this IngressSecurityRule.
+        Type of source for IngressSecurityRule. SERVICE_CIDR_BLOCK should be used if source is a service cidrBlock.
+        CIDR_BLOCK should be used if source is IP address range in CIDR notation. It defaults to CIDR_BLOCK, if
+        not specified.
+
+        Allowed values for this property are: "CIDR_BLOCK", "SERVICE_CIDR_BLOCK", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The source_type of this IngressSecurityRule.
+        :rtype: str
+        """
+        return self._source_type
+
+    @source_type.setter
+    def source_type(self, source_type):
+        """
+        Sets the source_type of this IngressSecurityRule.
+        Type of source for IngressSecurityRule. SERVICE_CIDR_BLOCK should be used if source is a service cidrBlock.
+        CIDR_BLOCK should be used if source is IP address range in CIDR notation. It defaults to CIDR_BLOCK, if
+        not specified.
+
+
+        :param source_type: The source_type of this IngressSecurityRule.
+        :type: str
+        """
+        allowed_values = ["CIDR_BLOCK", "SERVICE_CIDR_BLOCK"]
+        if not value_allowed_none_or_none_sentinel(source_type, allowed_values):
+            source_type = 'UNKNOWN_ENUM_VALUE'
+        self._source_type = source_type
 
     @property
     def tcp_options(self):

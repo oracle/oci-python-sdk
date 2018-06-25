@@ -9,13 +9,14 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class VolumeGroupBackup(object):
     """
-    A point-in-time copy of a volume group that can then be used to create a new block volume group
-    or recover a block volume group.
+    A point-in-time copy of a volume group that can then be used to create a new volume group
+    or restore a volume group. For more information, see `Volume Groups`__.
 
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
     talk to an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm
     __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
     """
 
@@ -90,6 +91,10 @@ class VolumeGroupBackup(object):
             The value to assign to the size_in_mbs property of this VolumeGroupBackup.
         :type size_in_mbs: int
 
+        :param size_in_gbs:
+            The value to assign to the size_in_gbs property of this VolumeGroupBackup.
+        :type size_in_gbs: int
+
         :param time_created:
             The value to assign to the time_created property of this VolumeGroupBackup.
         :type time_created: datetime
@@ -108,6 +113,10 @@ class VolumeGroupBackup(object):
             The value to assign to the unique_size_in_mbs property of this VolumeGroupBackup.
         :type unique_size_in_mbs: int
 
+        :param unique_size_in_gbs:
+            The value to assign to the unique_size_in_gbs property of this VolumeGroupBackup.
+        :type unique_size_in_gbs: int
+
         :param volume_backup_ids:
             The value to assign to the volume_backup_ids property of this VolumeGroupBackup.
         :type volume_backup_ids: list[str]
@@ -125,10 +134,12 @@ class VolumeGroupBackup(object):
             'id': 'str',
             'lifecycle_state': 'str',
             'size_in_mbs': 'int',
+            'size_in_gbs': 'int',
             'time_created': 'datetime',
             'time_request_received': 'datetime',
             'type': 'str',
             'unique_size_in_mbs': 'int',
+            'unique_size_in_gbs': 'int',
             'volume_backup_ids': 'list[str]',
             'volume_group_id': 'str'
         }
@@ -141,10 +152,12 @@ class VolumeGroupBackup(object):
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
             'size_in_mbs': 'sizeInMBs',
+            'size_in_gbs': 'sizeInGBs',
             'time_created': 'timeCreated',
             'time_request_received': 'timeRequestReceived',
             'type': 'type',
             'unique_size_in_mbs': 'uniqueSizeInMbs',
+            'unique_size_in_gbs': 'uniqueSizeInGbs',
             'volume_backup_ids': 'volumeBackupIds',
             'volume_group_id': 'volumeGroupId'
         }
@@ -156,10 +169,12 @@ class VolumeGroupBackup(object):
         self._id = None
         self._lifecycle_state = None
         self._size_in_mbs = None
+        self._size_in_gbs = None
         self._time_created = None
         self._time_request_received = None
         self._type = None
         self._unique_size_in_mbs = None
+        self._unique_size_in_gbs = None
         self._volume_backup_ids = None
         self._volume_group_id = None
 
@@ -225,7 +240,7 @@ class VolumeGroupBackup(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this VolumeGroupBackup.
-        A user-friendly name for the volume group backup. Does not have to be unique and it's changeable.
+        A user-friendly name for the volume group backup. Does not have to be unique and it's changeable. Avoid entering confidential information.
 
 
         :return: The display_name of this VolumeGroupBackup.
@@ -237,7 +252,7 @@ class VolumeGroupBackup(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this VolumeGroupBackup.
-        A user-friendly name for the volume group backup. Does not have to be unique and it's changeable.
+        A user-friendly name for the volume group backup. Does not have to be unique and it's changeable. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this VolumeGroupBackup.
@@ -285,7 +300,7 @@ class VolumeGroupBackup(object):
     def id(self):
         """
         **[Required]** Gets the id of this VolumeGroupBackup.
-        The OCID of the volume group backup (unique).
+        The OCID of the volume group backup.
 
 
         :return: The id of this VolumeGroupBackup.
@@ -297,7 +312,7 @@ class VolumeGroupBackup(object):
     def id(self, id):
         """
         Sets the id of this VolumeGroupBackup.
-        The OCID of the volume group backup (unique).
+        The OCID of the volume group backup.
 
 
         :param id: The id of this VolumeGroupBackup.
@@ -358,6 +373,30 @@ class VolumeGroupBackup(object):
         :type: int
         """
         self._size_in_mbs = size_in_mbs
+
+    @property
+    def size_in_gbs(self):
+        """
+        Gets the size_in_gbs of this VolumeGroupBackup.
+        The aggregate size of the volume group backup, in GBs.
+
+
+        :return: The size_in_gbs of this VolumeGroupBackup.
+        :rtype: int
+        """
+        return self._size_in_gbs
+
+    @size_in_gbs.setter
+    def size_in_gbs(self, size_in_gbs):
+        """
+        Sets the size_in_gbs of this VolumeGroupBackup.
+        The aggregate size of the volume group backup, in GBs.
+
+
+        :param size_in_gbs: The size_in_gbs of this VolumeGroupBackup.
+        :type: int
+        """
+        self._size_in_gbs = size_in_gbs
 
     @property
     def time_created(self):
@@ -445,7 +484,7 @@ class VolumeGroupBackup(object):
         Gets the unique_size_in_mbs of this VolumeGroupBackup.
         The aggregate size used by the volume group backup, in MBs.
         It is typically smaller than sizeInMBs, depending on the space
-        consumed on the volume group and whether the backup is full or incremental.
+        consumed on the volume group and whether the volume backup is full or incremental.
 
 
         :return: The unique_size_in_mbs of this VolumeGroupBackup.
@@ -459,7 +498,7 @@ class VolumeGroupBackup(object):
         Sets the unique_size_in_mbs of this VolumeGroupBackup.
         The aggregate size used by the volume group backup, in MBs.
         It is typically smaller than sizeInMBs, depending on the space
-        consumed on the volume group and whether the backup is full or incremental.
+        consumed on the volume group and whether the volume backup is full or incremental.
 
 
         :param unique_size_in_mbs: The unique_size_in_mbs of this VolumeGroupBackup.
@@ -468,10 +507,38 @@ class VolumeGroupBackup(object):
         self._unique_size_in_mbs = unique_size_in_mbs
 
     @property
+    def unique_size_in_gbs(self):
+        """
+        Gets the unique_size_in_gbs of this VolumeGroupBackup.
+        The aggregate size used by the volume group backup, in GBs.
+        It is typically smaller than sizeInGBs, depending on the space
+        consumed on the volume group and whether the volume backup is full or incremental.
+
+
+        :return: The unique_size_in_gbs of this VolumeGroupBackup.
+        :rtype: int
+        """
+        return self._unique_size_in_gbs
+
+    @unique_size_in_gbs.setter
+    def unique_size_in_gbs(self, unique_size_in_gbs):
+        """
+        Sets the unique_size_in_gbs of this VolumeGroupBackup.
+        The aggregate size used by the volume group backup, in GBs.
+        It is typically smaller than sizeInGBs, depending on the space
+        consumed on the volume group and whether the volume backup is full or incremental.
+
+
+        :param unique_size_in_gbs: The unique_size_in_gbs of this VolumeGroupBackup.
+        :type: int
+        """
+        self._unique_size_in_gbs = unique_size_in_gbs
+
+    @property
     def volume_backup_ids(self):
         """
         **[Required]** Gets the volume_backup_ids of this VolumeGroupBackup.
-        OCIDs for the backups in this volume group backup.
+        OCIDs for the volume backups in this volume group backup.
 
 
         :return: The volume_backup_ids of this VolumeGroupBackup.
@@ -483,7 +550,7 @@ class VolumeGroupBackup(object):
     def volume_backup_ids(self, volume_backup_ids):
         """
         Sets the volume_backup_ids of this VolumeGroupBackup.
-        OCIDs for the backups in this volume group backup.
+        OCIDs for the volume backups in this volume group backup.
 
 
         :param volume_backup_ids: The volume_backup_ids of this VolumeGroupBackup.

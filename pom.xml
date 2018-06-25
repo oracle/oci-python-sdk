@@ -540,7 +540,7 @@
             <plugin>
                 <groupId>com.oracle.bmc.sdk</groupId>
                 <artifactId>bmc-sdk-swagger-maven-plugin</artifactId>
-                <version>1.27-SNAPSHOT</version>
+                <version>1.29-SNAPSHOT</version>
                 <executions>
                     <execution>
                         <id>python-public-sdk-identity</id>
@@ -729,7 +729,7 @@
                             <additionalProperties>
                                 <specName>container_engine</specName>
                                 <generateInitFile>true</generateInitFile>
-                                <endpoint>http://containerengine.{domain}</endpoint>
+                                <endpoint>https://containerengine.{domain}</endpoint>
                             </additionalProperties>
                             <featureIdConfigFile>${project.basedir}/featureId.yaml</featureIdConfigFile>
                         </configuration>
@@ -879,7 +879,7 @@
             <dependency>
                 <groupId>com.oracle.pic.commons</groupId>
                 <artifactId>coreservices-api-spec</artifactId>
-                <version>0.2.64</version>
+                <version>0.2.180</version>
             </dependency>
             <dependency>
                 <groupId>com.oracle.pic.identity</groupId>

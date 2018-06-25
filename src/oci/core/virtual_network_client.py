@@ -78,6 +78,97 @@ class VirtualNetworkClient(object):
         self.base_client = BaseClient("virtual_network", config, signer, core_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
 
+    def attach_service_id(self, service_gateway_id, attach_service_details, **kwargs):
+        """
+        AttachService
+        Enables the specified service on the specified gateway. In other words, enables the service
+        gateway to send traffic to the specified service. You must also set up a route rule with the
+        service's `cidrBlock` as the rule's destination CIDR and the gateway as the rule's target.
+        See :class:`RouteTable`.
+
+        **Note:** The `AttachServiceId` operation is an easy way to enable an individual service on
+        the service gateway. Compare it with
+        :func:`update_service_gateway`, which also
+        lets you enable an individual service. However, with `UpdateServiceGateway`, you must specify
+        the *entire* list of services you want enabled on the service gateway.
+
+
+        :param str service_gateway_id: (required)
+            The service gateway's `OCID`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+        :param ServiceIdRequestDetails attach_service_details: (required)
+            ServiceId of Service to be attached to a Service Gateway.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.ServiceGateway`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/serviceGateways/{serviceGatewayId}/actions/attachService"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "attach_service_id got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "serviceGatewayId": service_gateway_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=attach_service_details,
+                response_type="ServiceGateway")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=attach_service_details,
+                response_type="ServiceGateway")
+
     def bulk_add_virtual_circuit_public_prefixes(self, virtual_circuit_id, bulk_add_virtual_circuit_public_prefixes_details, **kwargs):
         """
         BulkAddVirtualCircuitPublicPrefixes
@@ -889,7 +980,7 @@ class VirtualNetworkClient(object):
         """
         CreateInternetGateway
         Creates a new Internet Gateway for the specified VCN. For more information, see
-        `Connectivity to the Internet`__.
+        `Access to the Internet`__.
 
         For the purposes of access control, you must provide the OCID of the compartment where you want the Internet
         Gateway to reside. Notice that the Internet Gateway doesn't have to be in the same compartment as the VCN or
@@ -1552,6 +1643,86 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 body=create_security_list_details,
                 response_type="SecurityList")
+
+    def create_service_gateway(self, create_service_gateway_details, **kwargs):
+        """
+        CreateServiceGateway
+        Creates a new service gateway in the specified compartment.
+
+        For the purposes of access control, you must provide the OCID of the compartment where you want
+        the service gateway to reside. For more information about compartments and access control, see
+        `Overview of the IAM Service`__.
+        For information about OCIDs, see `Resource Identifiers`__.
+
+        You may optionally specify a *display name* for the service gateway, otherwise a default is provided.
+        It does not have to be unique, and you can change it. Avoid entering confidential information.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+
+        :param CreateServiceGatewayDetails create_service_gateway_details: (required)
+            Details for creating a service gateway.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.ServiceGateway`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/serviceGateways"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_service_gateway got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_service_gateway_details,
+                response_type="ServiceGateway")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_service_gateway_details,
+                response_type="ServiceGateway")
 
     def create_subnet(self, create_subnet_details, **kwargs):
         """
@@ -2942,6 +3113,82 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params)
 
+    def delete_service_gateway(self, service_gateway_id, **kwargs):
+        """
+        DeleteServiceGateway
+        Deletes the specified service gateway. There must not be a route table that lists the service
+        gateway as a target.
+
+
+        :param str service_gateway_id: (required)
+            The service gateway's `OCID`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/serviceGateways/{serviceGatewayId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_service_gateway got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "serviceGatewayId": service_gateway_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
     def delete_subnet(self, subnet_id, **kwargs):
         """
         DeleteSubnet
@@ -3168,6 +3415,100 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params)
+
+    def detach_service_id(self, service_gateway_id, detach_service_details, **kwargs):
+        """
+        DetachService
+        Disables the specified service on the specified gateway. In other words, stops the service
+        gateway from sending traffic to the specified service. You do not need to remove any route
+        rules that specify this service's `cidrBlock` as the destination CIDR. However, consider
+        removing the rules if your intent is to permanently disable use of the service through this
+        service gateway.
+
+        **Note:** The `DetachServiceId` operation is an easy way to disable an individual service on
+        the service gateway. Compare it with
+        :func:`update_service_gateway`, which also
+        lets you disable an individual service. However, with `UpdateServiceGateway`, you must specify
+        the *entire* list of services you want enabled on the service gateway. `UpdateServiceGateway`
+        also lets you block all traffic through the service gateway without having to disable each of
+        the individual services.
+
+
+        :param str service_gateway_id: (required)
+            The service gateway's `OCID`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+        :param ServiceIdRequestDetails detach_service_details: (required)
+            ServiceId of Service to be detached from a Service Gateway.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.ServiceGateway`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/serviceGateways/{serviceGatewayId}/actions/detachService"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "detach_service_id got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "serviceGatewayId": service_gateway_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=detach_service_details,
+                response_type="ServiceGateway")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=detach_service_details,
+                response_type="ServiceGateway")
 
     def get_cpe(self, cpe_id, **kwargs):
         """
@@ -4525,6 +4866,138 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 response_type="SecurityList")
+
+    def get_service(self, service_id, **kwargs):
+        """
+        GetService
+        Gets the specified service's information.
+
+
+        :param str service_id: (required)
+            The service's `OCID`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Service`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/services/{serviceId}"
+        method = "GET"
+
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_service got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "serviceId": service_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Service")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Service")
+
+    def get_service_gateway(self, service_gateway_id, **kwargs):
+        """
+        GetServiceGateway
+        Gets the specified service gateway's information.
+
+
+        :param str service_gateway_id: (required)
+            The service gateway's `OCID`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.ServiceGateway`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/serviceGateways/{serviceGatewayId}"
+        method = "GET"
+
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_service_gateway got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "serviceGatewayId": service_gateway_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ServiceGateway")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ServiceGateway")
 
     def get_subnet(self, subnet_id, **kwargs):
         """
@@ -6644,6 +7117,206 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 response_type="list[SecurityList]")
 
+    def list_service_gateways(self, compartment_id, **kwargs):
+        """
+        ListServiceGateways
+        Lists the service gateways in the specified compartment. You may optionally specify a VCN OCID
+        to filter the results by VCN.
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment.
+
+        :param str vcn_id: (optional)
+            The OCID of the VCN.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+            Example: `500`
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param str sort_by: (optional)
+            The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+            TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+            sort order is case sensitive.
+
+            **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+            optionally filter by Availability Domain if the scope of the resource type is within a
+            single Availability Domain. If you call one of these \"List\" operations without specifying
+            an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+
+            Allowed values are: "TIMECREATED", "DISPLAYNAME"
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
+            is case sensitive.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str lifecycle_state: (optional)
+            A filter to return only resources that match the given lifecycle state.  The state value is case-insensitive.
+
+            Allowed values are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.ServiceGateway`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/serviceGateways"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "vcn_id",
+            "limit",
+            "page",
+            "sort_by",
+            "sort_order",
+            "lifecycle_state"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_service_gateways got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "vcnId": kwargs.get("vcn_id", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[ServiceGateway]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[ServiceGateway]")
+
+    def list_services(self, **kwargs):
+        """
+        ListServices
+        Lists the available services that you can access through a service gateway in this region.
+
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+            Example: `500`
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.Service`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/services"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_services got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[Service]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[Service]")
+
     def list_subnets(self, compartment_id, vcn_id, **kwargs):
         """
         ListSubnets
@@ -8384,6 +9057,89 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 body=update_security_list_details,
                 response_type="SecurityList")
+
+    def update_service_gateway(self, service_gateway_id, update_service_gateway_details, **kwargs):
+        """
+        UpdateServiceGateway
+        Updates the specified service gateway. The information you provide overwrites the existing
+        attributes of the gateway.
+
+
+        :param str service_gateway_id: (required)
+            The service gateway's `OCID`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+        :param UpdateServiceGatewayDetails update_service_gateway_details: (required)
+            Details object for updating a service gateway.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.ServiceGateway`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/serviceGateways/{serviceGatewayId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_service_gateway got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "serviceGatewayId": service_gateway_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_service_gateway_details,
+                response_type="ServiceGateway")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_service_gateway_details,
+                response_type="ServiceGateway")
 
     def update_subnet(self, subnet_id, update_subnet_details, **kwargs):
         """
