@@ -86,6 +86,8 @@ def test_large_file_transfer(namespace, object_storage, write_bucket, names):
         assert response.status == 200
         with io.open(names["temp-file"], 'wb') as file:
             for chunk in response.data.iter_content(chunk_size=chunk_size):
+                if len(chunk) < chunk_size:
+                    print("Recieved {}, expected {}".format(len(chunk), chunk_size))
                 total_size += len(chunk)
                 chunk_count += 1
                 file.write(chunk)
@@ -99,9 +101,12 @@ def test_large_file_transfer(namespace, object_storage, write_bucket, names):
 
         print('Download complete')
 
+    print("Chunk count: {}".format(chunk_count))
+    file_size = os.path.getsize(names["temp-file"])
+    print("File size: {}".format(file_size))
+    print("Total size: {}".format(total_size))
     assert chunk_count >= (total_size / chunk_size)
     assert total_size == int(response.headers['content-length'])
-    file_size = os.path.getsize(names["temp-file"])
     assert total_size == file_size
 
     upload_msg = 'Uploading to bucket {} with name {}....'
