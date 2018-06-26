@@ -35,6 +35,7 @@ ENUM_ATTR_TO_VALUE = {
     'CreatePublicIpDetails': {'lifetime': 'RESERVED'},
     'CreateVolumeBackupDetails': {'type': 'FULL'},
     'CreateVolumeGroupBackupDetails': {'type': 'FULL'},
+    'CreateBootVolumeBackupDetails': {'type': 'FULL'},
     'RecordOperation': {'operation': 'ADD'},
     'CreateZoneDetails': {'zone_type': 'PRIMARY'}
 }
