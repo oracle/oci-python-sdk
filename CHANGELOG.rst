@@ -13,6 +13,10 @@ Added
 * Support for service gateway management in the Networking service
 * Support for backup and clone of boot volumes in the Block Storage service
 
+Changed
+-------
+* Setup.py changed to allow more versions of pytz and python-dateutil packages when installing to an existing environment
+
 ====================
 1.4.3 - 2018-06-14
 ====================
