@@ -10,7 +10,8 @@ The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 Added
 -----
-* TODO
+* Support for service gateway management in the Networking service
+* Support for backup and clone of boot volumes in the Block Storage service
 
 ====================
 1.4.3 - 2018-06-14
