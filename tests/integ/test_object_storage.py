@@ -445,40 +445,40 @@ class TestObjectStorage:
             assert response.status == 204
 
     def test_put_empty_file(self, object_storage):
-        with test_config_container.create_vcr().use_cassette('test_object_storage_test_put_empty_file.yml'):
-            # Setup a bucket to use.
-            object_name = 'empty_object'
-            bucket_name = unique_name('test_object_CRUD')
-            namespace = object_storage.get_namespace().data
-            test_file = get_resource_path('empty_file')
+        # with test_config_container.create_vcr().use_cassette('test_object_storage_test_put_empty_file.yml'):
+        # Setup a bucket to use.
+        object_name = 'empty_object'
+        bucket_name = unique_name('test_object_CRUD', ignore_vcr=True)
+        namespace = object_storage.get_namespace().data
+        test_file = get_resource_path('empty_file')
 
-            request = oci.object_storage.models.CreateBucketDetails()
-            request.name = bucket_name
-            request.compartment_id = util.COMPARTMENT_ID
-            response = object_storage.create_bucket(namespace, request)
+        request = oci.object_storage.models.CreateBucketDetails()
+        request.name = bucket_name
+        request.compartment_id = util.COMPARTMENT_ID
+        response = object_storage.create_bucket(namespace, request)
+        assert response.status == 200
+
+        # Put empty file
+        with open(test_file, 'rb') as file:
+            response = object_storage.put_object(namespace, bucket_name, object_name, file)
             assert response.status == 200
 
-            # Put empty file
-            with open(test_file, 'rb') as file:
-                response = object_storage.put_object(namespace, bucket_name, object_name, file)
-                assert response.status == 200
+        # Get it back
+        response = object_storage.get_object(namespace, bucket_name, object_name)
+        assert response.status == 200
+        response_text = response.data.content.decode('UTF-8')
+        assert 0 == len(response_text)
 
-            # Get it back
-            response = object_storage.get_object(namespace, bucket_name, object_name)
-            assert response.status == 200
-            response_text = response.data.content.decode('UTF-8')
-            assert 0 == len(response_text)
+        # Head
+        response = object_storage.head_object(namespace, bucket_name, object_name)
+        assert response.status == 200
+        assert 0 == int(response.headers['content-length'])
 
-            # Head
-            response = object_storage.head_object(namespace, bucket_name, object_name)
-            assert response.status == 200
-            assert 0 == int(response.headers['content-length'])
-
-            # Clean up
-            response = object_storage.delete_object(namespace, bucket_name, object_name)
-            assert response.status == 204
-            response = object_storage.delete_bucket(namespace, bucket_name)
-            assert response.status == 204
+        # Clean up
+        response = object_storage.delete_object(namespace, bucket_name, object_name)
+        assert response.status == 204
+        response = object_storage.delete_bucket(namespace, bucket_name)
+        assert response.status == 204
 
     def test_put_empty_string(self, object_storage):
         with test_config_container.create_vcr().use_cassette('test_object_storage_test_put_empty_string.yml'):
@@ -743,20 +743,20 @@ class TestObjectStorage:
             for chunk in get_object_response.data.iter_content():
                 response_text += chunk.decode('UTF-8')
 
-    def test_upload_manager_single_part_based_on_file_size(self, object_storage, bucket, content_input_file):
-        with test_config_container.create_vcr().use_cassette('test_object_storage_test_upload_manager_single_part_based_on_file_size.yml'):
-            object_name = 'test_object_multipart'
-            namespace = object_storage.get_namespace().data
+    def test_upload_manager_single_part_based_on_file_size(self, object_storage, non_vcr_bucket, content_input_file):
+        # with test_config_container.create_vcr().use_cassette('test_object_storage_test_upload_manager_single_part_based_on_file_size.yml'):
+        object_name = 'test_object_multipart'
+        namespace = object_storage.get_namespace().data
 
-            # explicitly use part-size > file size to trigger single part upload
-            part_size_in_bytes = (LARGE_CONTENT_FILE_SIZE_IN_MEBIBYTES + 1) * MEBIBYTE
-            upload_manager = oci.object_storage.UploadManager(object_storage, allow_multipart_uploads=True)
-            response = upload_manager.upload_file(
-                namespace, bucket, object_name, content_input_file, part_size=part_size_in_bytes)
-            util.validate_response(response)
+        # explicitly use part-size > file size to trigger single part upload
+        part_size_in_bytes = (LARGE_CONTENT_FILE_SIZE_IN_MEBIBYTES + 1) * MEBIBYTE
+        upload_manager = oci.object_storage.UploadManager(object_storage, allow_multipart_uploads=True)
+        response = upload_manager.upload_file(
+            namespace, non_vcr_bucket, object_name, content_input_file, part_size=part_size_in_bytes)
+        util.validate_response(response)
 
-            # confirm that the object was actually uploaded with single part
-            assert response.headers['opc-content-md5']
+        # confirm that the object was actually uploaded with single part
+        assert response.headers['opc-content-md5']
 
     def test_upload_manager_multipart_part_based_on_file_size(self, object_storage, non_vcr_bucket, content_input_file):
         bucket = non_vcr_bucket
@@ -819,20 +819,20 @@ class TestObjectStorage:
 
         os.remove(downloaded_file_path)
 
-    def test_upload_manager_multipart_disabled_with_large_file_uses_single_part(self, object_storage, bucket, content_input_file):
-        with test_config_container.create_vcr().use_cassette('test_object_storage_test_upload_manager_multipart_disabled_with_large_file_uses_single_part.yml'):
-            object_name = 'test_object_multipart'
-            namespace = object_storage.get_namespace().data
+    def test_upload_manager_multipart_disabled_with_large_file_uses_single_part(self, object_storage, non_vcr_bucket, content_input_file):
+        # with test_config_container.create_vcr().use_cassette('test_object_storage_test_upload_manager_multipart_disabled_with_large_file_uses_single_part.yml'):
+        object_name = 'test_object_multipart'
+        namespace = object_storage.get_namespace().data
 
-            # explicitly use part_size > file size to trigger multipart
-            part_size_in_bytes = (LARGE_CONTENT_FILE_SIZE_IN_MEBIBYTES - 1) * MEBIBYTE
-            upload_manager = oci.object_storage.UploadManager(object_storage, allow_multipart_uploads=False)
-            response = upload_manager.upload_file(
-                namespace, bucket, object_name, content_input_file, part_size=part_size_in_bytes)
-            util.validate_response(response)
+        # explicitly use part_size > file size to trigger multipart
+        part_size_in_bytes = (LARGE_CONTENT_FILE_SIZE_IN_MEBIBYTES - 1) * MEBIBYTE
+        upload_manager = oci.object_storage.UploadManager(object_storage, allow_multipart_uploads=False)
+        response = upload_manager.upload_file(
+            namespace, non_vcr_bucket, object_name, content_input_file, part_size=part_size_in_bytes)
+        util.validate_response(response)
 
-            # confirm that the object was actually uploaded with multipart
-            assert response.headers['opc-content-md5']
+        # confirm that the object was actually uploaded with multipart
+        assert response.headers['opc-content-md5']
 
     def test_upload_manager_multipart_resume_put(self, object_storage, non_vcr_bucket, content_input_file):
         # Tests that the resume works in the case of a multipart upload with last part < part_size
