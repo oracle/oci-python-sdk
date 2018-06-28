@@ -9,3 +9,6 @@ python:
 # Just the HTML and indexing
 formats:
     - none
+
+# Limit the requirements to building the docs
+requirements_file: docs/requirements.txt
