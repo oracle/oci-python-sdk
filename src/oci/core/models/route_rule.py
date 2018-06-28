@@ -13,6 +13,14 @@ class RouteRule(object):
     packets to (a target).
     """
 
+    #: A constant which can be used with the destination_type property of a RouteRule.
+    #: This constant has a value of "CIDR_BLOCK"
+    DESTINATION_TYPE_CIDR_BLOCK = "CIDR_BLOCK"
+
+    #: A constant which can be used with the destination_type property of a RouteRule.
+    #: This constant has a value of "SERVICE_CIDR_BLOCK"
+    DESTINATION_TYPE_SERVICE_CIDR_BLOCK = "SERVICE_CIDR_BLOCK"
+
     def __init__(self, **kwargs):
         """
         Initializes a new RouteRule object with values from keyword arguments.
@@ -22,6 +30,16 @@ class RouteRule(object):
             The value to assign to the cidr_block property of this RouteRule.
         :type cidr_block: str
 
+        :param destination:
+            The value to assign to the destination property of this RouteRule.
+        :type destination: str
+
+        :param destination_type:
+            The value to assign to the destination_type property of this RouteRule.
+            Allowed values for this property are: "CIDR_BLOCK", "SERVICE_CIDR_BLOCK", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type destination_type: str
+
         :param network_entity_id:
             The value to assign to the network_entity_id property of this RouteRule.
         :type network_entity_id: str
@@ -29,21 +47,28 @@ class RouteRule(object):
         """
         self.swagger_types = {
             'cidr_block': 'str',
+            'destination': 'str',
+            'destination_type': 'str',
             'network_entity_id': 'str'
         }
 
         self.attribute_map = {
             'cidr_block': 'cidrBlock',
+            'destination': 'destination',
+            'destination_type': 'destinationType',
             'network_entity_id': 'networkEntityId'
         }
 
         self._cidr_block = None
+        self._destination = None
+        self._destination_type = None
         self._network_entity_id = None
 
     @property
     def cidr_block(self):
         """
         **[Required]** Gets the cidr_block of this RouteRule.
+        Deprecated, Destination and DestinationType should be used instead; request including both fields will be rejected.
         A destination IP address range in CIDR notation. Matching packets will
         be routed to the indicated network entity (the target).
 
@@ -59,6 +84,7 @@ class RouteRule(object):
     def cidr_block(self, cidr_block):
         """
         Sets the cidr_block of this RouteRule.
+        Deprecated, Destination and DestinationType should be used instead; request including both fields will be rejected.
         A destination IP address range in CIDR notation. Matching packets will
         be routed to the indicated network entity (the target).
 
@@ -69,6 +95,72 @@ class RouteRule(object):
         :type: str
         """
         self._cidr_block = cidr_block
+
+    @property
+    def destination(self):
+        """
+        Gets the destination of this RouteRule.
+        The destination service cidrBlock or destination IP address range in CIDR notation. Matching packets will
+        be routed to the indicated network entity (the target).
+
+        Examples: `10.12.0.0/16`
+                  `oci-phx-objectstorage`
+
+
+        :return: The destination of this RouteRule.
+        :rtype: str
+        """
+        return self._destination
+
+    @destination.setter
+    def destination(self, destination):
+        """
+        Sets the destination of this RouteRule.
+        The destination service cidrBlock or destination IP address range in CIDR notation. Matching packets will
+        be routed to the indicated network entity (the target).
+
+        Examples: `10.12.0.0/16`
+                  `oci-phx-objectstorage`
+
+
+        :param destination: The destination of this RouteRule.
+        :type: str
+        """
+        self._destination = destination
+
+    @property
+    def destination_type(self):
+        """
+        Gets the destination_type of this RouteRule.
+        Type of destination for the route rule. SERVICE_CIDR_BLOCK should be used if destination is a service
+        cidrBlock. CIDR_BLOCK should be used if destination is IP address range in CIDR notation. It must be provided
+        along with `destination`.
+
+        Allowed values for this property are: "CIDR_BLOCK", "SERVICE_CIDR_BLOCK", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The destination_type of this RouteRule.
+        :rtype: str
+        """
+        return self._destination_type
+
+    @destination_type.setter
+    def destination_type(self, destination_type):
+        """
+        Sets the destination_type of this RouteRule.
+        Type of destination for the route rule. SERVICE_CIDR_BLOCK should be used if destination is a service
+        cidrBlock. CIDR_BLOCK should be used if destination is IP address range in CIDR notation. It must be provided
+        along with `destination`.
+
+
+        :param destination_type: The destination_type of this RouteRule.
+        :type: str
+        """
+        allowed_values = ["CIDR_BLOCK", "SERVICE_CIDR_BLOCK"]
+        if not value_allowed_none_or_none_sentinel(destination_type, allowed_values):
+            destination_type = 'UNKNOWN_ENUM_VALUE'
+        self._destination_type = destination_type
 
     @property
     def network_entity_id(self):

@@ -9,7 +9,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class VolumeGroup(object):
     """
-    Specifies a volume group. A volume group is a collection of block volumes.
+    Specifies a volume group which is a collection of volumes. For more information, see `Volume Groups`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a VolumeGroup.
@@ -71,6 +73,10 @@ class VolumeGroup(object):
             The value to assign to the size_in_mbs property of this VolumeGroup.
         :type size_in_mbs: int
 
+        :param size_in_gbs:
+            The value to assign to the size_in_gbs property of this VolumeGroup.
+        :type size_in_gbs: int
+
         :param source_details:
             The value to assign to the source_details property of this VolumeGroup.
         :type source_details: VolumeGroupSourceDetails
@@ -93,6 +99,7 @@ class VolumeGroup(object):
             'id': 'str',
             'lifecycle_state': 'str',
             'size_in_mbs': 'int',
+            'size_in_gbs': 'int',
             'source_details': 'VolumeGroupSourceDetails',
             'time_created': 'datetime',
             'volume_ids': 'list[str]'
@@ -107,6 +114,7 @@ class VolumeGroup(object):
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
             'size_in_mbs': 'sizeInMBs',
+            'size_in_gbs': 'sizeInGBs',
             'source_details': 'sourceDetails',
             'time_created': 'timeCreated',
             'volume_ids': 'volumeIds'
@@ -120,6 +128,7 @@ class VolumeGroup(object):
         self._id = None
         self._lifecycle_state = None
         self._size_in_mbs = None
+        self._size_in_gbs = None
         self._source_details = None
         self._time_created = None
         self._volume_ids = None
@@ -128,7 +137,7 @@ class VolumeGroup(object):
     def availability_domain(self):
         """
         **[Required]** Gets the availability_domain of this VolumeGroup.
-        The Availability Domain of the volume group.
+        The availability domain of the volume group.
 
 
         :return: The availability_domain of this VolumeGroup.
@@ -140,7 +149,7 @@ class VolumeGroup(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this VolumeGroup.
-        The Availability Domain of the volume group.
+        The availability domain of the volume group.
 
 
         :param availability_domain: The availability_domain of this VolumeGroup.
@@ -210,7 +219,7 @@ class VolumeGroup(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this VolumeGroup.
-        A user-friendly name for the volume group. Does not have to be unique, and it's changeable.
+        A user-friendly name for the volume group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :return: The display_name of this VolumeGroup.
@@ -222,7 +231,7 @@ class VolumeGroup(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this VolumeGroup.
-        A user-friendly name for the volume group. Does not have to be unique, and it's changeable.
+        A user-friendly name for the volume group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this VolumeGroup.
@@ -270,7 +279,7 @@ class VolumeGroup(object):
     def id(self):
         """
         **[Required]** Gets the id of this VolumeGroup.
-        The Oracle Cloud ID (OCID) that uniquely identifies the volume group.
+        The OCID for the volume group.
 
 
         :return: The id of this VolumeGroup.
@@ -282,7 +291,7 @@ class VolumeGroup(object):
     def id(self, id):
         """
         Sets the id of this VolumeGroup.
-        The Oracle Cloud ID (OCID) that uniquely identifies the volume group.
+        The OCID for the volume group.
 
 
         :param id: The id of this VolumeGroup.
@@ -345,11 +354,35 @@ class VolumeGroup(object):
         self._size_in_mbs = size_in_mbs
 
     @property
+    def size_in_gbs(self):
+        """
+        Gets the size_in_gbs of this VolumeGroup.
+        The aggregate size of the volume group in GBs.
+
+
+        :return: The size_in_gbs of this VolumeGroup.
+        :rtype: int
+        """
+        return self._size_in_gbs
+
+    @size_in_gbs.setter
+    def size_in_gbs(self, size_in_gbs):
+        """
+        Sets the size_in_gbs of this VolumeGroup.
+        The aggregate size of the volume group in GBs.
+
+
+        :param size_in_gbs: The size_in_gbs of this VolumeGroup.
+        :type: int
+        """
+        self._size_in_gbs = size_in_gbs
+
+    @property
     def source_details(self):
         """
         Gets the source_details of this VolumeGroup.
-        The volume group source. The volume source is either another a list of
-        volume ids in the same Availability Domain, another volume group or a volume group backup.
+        The volume group source. The source is either another a list of
+        volume IDs in the same availability domain, another volume group, or a volume group backup.
 
 
         :return: The source_details of this VolumeGroup.
@@ -361,8 +394,8 @@ class VolumeGroup(object):
     def source_details(self, source_details):
         """
         Sets the source_details of this VolumeGroup.
-        The volume group source. The volume source is either another a list of
-        volume ids in the same Availability Domain, another volume group or a volume group backup.
+        The volume group source. The source is either another a list of
+        volume IDs in the same availability domain, another volume group, or a volume group backup.
 
 
         :param source_details: The source_details of this VolumeGroup.

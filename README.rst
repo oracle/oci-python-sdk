@@ -81,6 +81,10 @@ API reference can be found `here`__.
 __ https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/index.html
 __ https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/api/index.html
 
+A downloadable version of the documentation is include with in the release zip, which can be found `here`__.
+
+__ https://github.com/oracle/oci-python-sdk/releases
+
 ====
 Help
 ====
