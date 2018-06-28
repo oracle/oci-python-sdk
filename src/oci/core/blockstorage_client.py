@@ -78,11 +78,161 @@ class BlockstorageClient(object):
         self.base_client = BaseClient("blockstorage", config, signer, core_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
 
+    def create_boot_volume(self, create_boot_volume_details, **kwargs):
+        """
+        CreateBootVolume
+        Creates a new boot volume in the specified compartment from an existing boot volume or a boot volume backup.
+        For general information about boot volumes, see `Boot Volumes`__.
+        You may optionally specify a *display name* for the volume, which is simply a friendly name or
+        description. It does not have to be unique, and you can change it. Avoid entering confidential information.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/bootvolumes.htm
+
+
+        :param CreateBootVolumeDetails create_boot_volume_details: (required)
+            Request to create a new boot volume.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.BootVolume`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/bootVolumes"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_boot_volume got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_boot_volume_details,
+                response_type="BootVolume")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_boot_volume_details,
+                response_type="BootVolume")
+
+    def create_boot_volume_backup(self, create_boot_volume_backup_details, **kwargs):
+        """
+        CreateBootVolumeBackup
+        Creates a new boot volume backup of the specified boot volume. For general information about boot volume backups,
+        see `Overview of Boot Volume Backups`__
+
+        When the request is received, the backup object is in a REQUEST_RECEIVED state.
+        When the data is imaged, it goes into a CREATING state.
+        After the backup is fully uploaded to the cloud, it goes into an AVAILABLE state.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/bootvolumebackups.htm
+
+
+        :param CreateBootVolumeBackupDetails create_boot_volume_backup_details: (required)
+            Request to create a new backup of given boot volume.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.BootVolumeBackup`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/bootVolumeBackups"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_boot_volume_backup got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_boot_volume_backup_details,
+                response_type="BootVolumeBackup")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_boot_volume_backup_details,
+                response_type="BootVolumeBackup")
+
     def create_volume(self, create_volume_details, **kwargs):
         """
         CreateVolume
         Creates a new volume in the specified compartment. Volumes can be created in sizes ranging from
-        50 GB (51200 MB) to 16 TB (16777216 MB), in 1 GB (1024 MB) increments. By default, volumes are 1 TB (1048576 MB).
+        50 GB (51200 MB) to 32 TB (33554432 MB), in 1 GB (1024 MB) increments. By default, volumes are 1 TB (1048576 MB).
         For general information about block volumes, see
         `Overview of Block Volume Service`__.
 
@@ -299,11 +449,15 @@ class BlockstorageClient(object):
     def create_volume_group(self, create_volume_group_details, **kwargs):
         """
         CreateVolumeGroup
-        Creates a new volume group in the specified compartment. A volume group can have at most 20 block volumes.
+        Creates a new volume group in the specified compartment.
         A volume group is a collection of volumes and may be created from a list of volumes, cloning an existing
-        volume group or by restoring a volume group backup.
+        volume group, or by restoring a volume group backup. A volume group can contain up to 64 volumes.
         You may optionally specify a *display name* for the volume group, which is simply a friendly name or
         description. It does not have to be unique, and you can change it. Avoid entering confidential information.
+
+        For more information, see `Volume Groups`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm
 
 
         :param CreateVolumeGroupDetails create_volume_group_details: (required)
@@ -372,7 +526,10 @@ class BlockstorageClient(object):
     def create_volume_group_backup(self, create_volume_group_backup_details, **kwargs):
         """
         CreateVolumeGroupBackup
-        Creates a new group backup of the specified volume group.
+        Creates a new backup volume group of the specified volume group.
+        For more information, see `Volume Groups`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm
 
 
         :param CreateVolumeGroupBackupDetails create_volume_group_backup_details: (required)
@@ -483,6 +640,79 @@ class BlockstorageClient(object):
 
         path_params = {
             "bootVolumeId": boot_volume_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
+    def delete_boot_volume_backup(self, boot_volume_backup_id, **kwargs):
+        """
+        DeleteBootVolumeBackup
+        Deletes a boot volume backup.
+
+
+        :param str boot_volume_backup_id: (required)
+            The OCID of the boot volume backup.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/bootVolumeBackups/{bootVolumeBackupId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_boot_volume_backup got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "bootVolumeBackupId": boot_volume_backup_id
         }
 
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
@@ -743,7 +973,10 @@ class BlockstorageClient(object):
     def delete_volume_group(self, volume_group_id, **kwargs):
         """
         DeleteVolumeGroup
-        Deletes the specified volume group. This will NOT delete data volumes.
+        Deletes the specified volume group. Individual volumes are not deleted, only the volume group is deleted.
+        For more information, see `Volume Groups`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm
 
 
         :param str volume_group_id: (required)
@@ -816,7 +1049,9 @@ class BlockstorageClient(object):
     def delete_volume_group_backup(self, volume_group_backup_id, **kwargs):
         """
         DeleteVolumeGroupBackup
-        Deletes a volume group backup. This will NOT delete backups within the volume group backup.
+        Deletes a volume group backup. This operation deletes all the backups in the volume group. For more information, see `Volume Groups`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm
 
 
         :param str volume_group_backup_id: (required)
@@ -949,6 +1184,70 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 response_type="BootVolume")
+
+    def get_boot_volume_backup(self, boot_volume_backup_id, **kwargs):
+        """
+        GetBootVolumeBackup
+        Gets information for the specified boot volume backup.
+
+
+        :param str boot_volume_backup_id: (required)
+            The OCID of the boot volume backup.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.BootVolumeBackup`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/bootVolumeBackups/{bootVolumeBackupId}"
+        method = "GET"
+
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_boot_volume_backup got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "bootVolumeBackupId": boot_volume_backup_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="BootVolumeBackup")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="BootVolumeBackup")
 
     def get_volume(self, volume_id, **kwargs):
         """
@@ -1285,7 +1584,9 @@ class BlockstorageClient(object):
     def get_volume_group(self, volume_group_id, **kwargs):
         """
         GetVolumeGroup
-        Gets information for the specified volume group.
+        Gets information for the specified volume group. For more information, see `Volume Groups`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm
 
 
         :param str volume_group_id: (required)
@@ -1349,7 +1650,9 @@ class BlockstorageClient(object):
     def get_volume_group_backup(self, volume_group_backup_id, **kwargs):
         """
         GetVolumeGroupBackup
-        Gets information for the specified volume group backup.
+        Gets information for the specified volume group backup. For more information, see `Volume Groups`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm
 
 
         :param str volume_group_backup_id: (required)
@@ -1409,6 +1712,140 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 response_type="VolumeGroupBackup")
+
+    def list_boot_volume_backups(self, compartment_id, **kwargs):
+        """
+        ListBootVolumeBackups
+        Lists the boot volume backups in the specified compartment. You can filter the results by boot volume.
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment.
+
+        :param str boot_volume_id: (optional)
+            The OCID of the boot volume.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+            Example: `500`
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param str display_name: (optional)
+            A filter to return only resources that match the given display name exactly.
+
+        :param str sort_by: (optional)
+            The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+            TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+            sort order is case sensitive.
+
+            **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+            optionally filter by Availability Domain if the scope of the resource type is within a
+            single Availability Domain. If you call one of these \"List\" operations without specifying
+            an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+
+            Allowed values are: "TIMECREATED", "DISPLAYNAME"
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
+            is case sensitive.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str lifecycle_state: (optional)
+            A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+
+            Allowed values are: "CREATING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAULTY", "REQUEST_RECEIVED"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.BootVolumeBackup`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/bootVolumeBackups"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "boot_volume_id",
+            "limit",
+            "page",
+            "display_name",
+            "sort_by",
+            "sort_order",
+            "lifecycle_state"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_boot_volume_backups got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAULTY", "REQUEST_RECEIVED"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "bootVolumeId": kwargs.get("boot_volume_id", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "displayName": kwargs.get("display_name", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[BootVolumeBackup]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[BootVolumeBackup]")
 
     def list_boot_volumes(self, availability_domain, compartment_id, **kwargs):
         """
@@ -1702,7 +2139,10 @@ class BlockstorageClient(object):
     def list_volume_group_backups(self, compartment_id, **kwargs):
         """
         ListVolumeGroupBackups
-        Lists the backups for volume groups in the specified compartment. You can filter the results by volume group.
+        Lists the volume group backups in the specified compartment. You can filter the results by volume group.
+        For more information, see `Volume Groups`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm
 
 
         :param str compartment_id: (required)
@@ -1822,7 +2262,10 @@ class BlockstorageClient(object):
     def list_volume_groups(self, compartment_id, **kwargs):
         """
         ListVolumeGroups
-        Lists the volume groups in the specified compartment and Availability Domain.
+        Lists the volume groups in the specified compartment and availability domain.
+        For more information, see `Volume Groups`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm
 
 
         :param str compartment_id: (required)
@@ -2176,6 +2619,87 @@ class BlockstorageClient(object):
                 body=update_boot_volume_details,
                 response_type="BootVolume")
 
+    def update_boot_volume_backup(self, boot_volume_backup_id, update_boot_volume_backup_details, **kwargs):
+        """
+        UpdateBootVolumeBackup
+        Updates the display name for the specified boot volume backup.
+        Avoid entering confidential information.
+
+
+        :param str boot_volume_backup_id: (required)
+            The OCID of the boot volume backup.
+
+        :param UpdateBootVolumeBackupDetails update_boot_volume_backup_details: (required)
+            Update boot volume backup fields
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.BootVolumeBackup`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/bootVolumeBackups/{bootVolumeBackupId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_boot_volume_backup got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "bootVolumeBackupId": boot_volume_backup_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_boot_volume_backup_details,
+                response_type="BootVolumeBackup")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_boot_volume_backup_details,
+                response_type="BootVolumeBackup")
+
     def update_volume(self, volume_id, update_volume_details, **kwargs):
         """
         UpdateVolume
@@ -2341,9 +2865,14 @@ class BlockstorageClient(object):
     def update_volume_group(self, volume_group_id, update_volume_group_details, **kwargs):
         """
         UpdateVolumeGroup
-        Updates the set of volumes in a volume group along with (optionally) it's display name. This call can be used
-        to add or remove volumes in a volume group. The entire list of volume ids must be specified.
+        Updates the set of volumes in a volume group along with the display name. Use this operation
+        to add or remove volumes in a volume group. Specify the full list of volume IDs to include in the
+        volume group. If the volume ID is not specified in the call, it will be removed from the volume group.
         Avoid entering confidential information.
+
+        For more information, see `Volume Groups`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm
 
 
         :param str volume_group_id: (required)
@@ -2423,7 +2952,9 @@ class BlockstorageClient(object):
     def update_volume_group_backup(self, volume_group_backup_id, update_volume_group_backup_details, **kwargs):
         """
         UpdateVolumeGroupBackup
-        Updates the display name for the specified volume group backup.
+        Updates the display name for the specified volume group backup. For more information, see `Volume Groups`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm
 
 
         :param str volume_group_backup_id: (required)

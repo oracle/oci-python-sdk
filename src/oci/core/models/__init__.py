@@ -10,6 +10,10 @@ from .attach_vnic_details import AttachVnicDetails
 from .attach_volume_details import AttachVolumeDetails
 from .boot_volume import BootVolume
 from .boot_volume_attachment import BootVolumeAttachment
+from .boot_volume_backup import BootVolumeBackup
+from .boot_volume_source_details import BootVolumeSourceDetails
+from .boot_volume_source_from_boot_volume_backup_details import BootVolumeSourceFromBootVolumeBackupDetails
+from .boot_volume_source_from_boot_volume_details import BootVolumeSourceFromBootVolumeDetails
 from .bulk_add_virtual_circuit_public_prefixes_details import BulkAddVirtualCircuitPublicPrefixesDetails
 from .bulk_delete_virtual_circuit_public_prefixes_details import BulkDeleteVirtualCircuitPublicPrefixesDetails
 from .capture_console_history_details import CaptureConsoleHistoryDetails
@@ -17,6 +21,8 @@ from .connect_local_peering_gateways_details import ConnectLocalPeeringGatewaysD
 from .connect_remote_peering_connections_details import ConnectRemotePeeringConnectionsDetails
 from .console_history import ConsoleHistory
 from .cpe import Cpe
+from .create_boot_volume_backup_details import CreateBootVolumeBackupDetails
+from .create_boot_volume_details import CreateBootVolumeDetails
 from .create_cpe_details import CreateCpeDetails
 from .create_cross_connect_details import CreateCrossConnectDetails
 from .create_cross_connect_group_details import CreateCrossConnectGroupDetails
@@ -33,6 +39,7 @@ from .create_public_ip_details import CreatePublicIpDetails
 from .create_remote_peering_connection_details import CreateRemotePeeringConnectionDetails
 from .create_route_table_details import CreateRouteTableDetails
 from .create_security_list_details import CreateSecurityListDetails
+from .create_service_gateway_details import CreateServiceGatewayDetails
 from .create_subnet_details import CreateSubnetDetails
 from .create_vcn_details import CreateVcnDetails
 from .create_virtual_circuit_details import CreateVirtualCircuitDetails
@@ -93,12 +100,17 @@ from .remote_peering_connection import RemotePeeringConnection
 from .route_rule import RouteRule
 from .route_table import RouteTable
 from .security_list import SecurityList
+from .service import Service
+from .service_gateway import ServiceGateway
+from .service_id_request_details import ServiceIdRequestDetails
+from .service_id_response_details import ServiceIdResponseDetails
 from .shape import Shape
 from .subnet import Subnet
 from .tcp_options import TcpOptions
 from .tunnel_config import TunnelConfig
 from .tunnel_status import TunnelStatus
 from .udp_options import UdpOptions
+from .update_boot_volume_backup_details import UpdateBootVolumeBackupDetails
 from .update_boot_volume_details import UpdateBootVolumeDetails
 from .update_console_history_details import UpdateConsoleHistoryDetails
 from .update_cpe_details import UpdateCpeDetails
@@ -117,6 +129,7 @@ from .update_public_ip_details import UpdatePublicIpDetails
 from .update_remote_peering_connection_details import UpdateRemotePeeringConnectionDetails
 from .update_route_table_details import UpdateRouteTableDetails
 from .update_security_list_details import UpdateSecurityListDetails
+from .update_service_gateway_details import UpdateServiceGatewayDetails
 from .update_subnet_details import UpdateSubnetDetails
 from .update_vcn_details import UpdateVcnDetails
 from .update_virtual_circuit_details import UpdateVirtualCircuitDetails
@@ -156,6 +169,10 @@ core_type_mapping = {
     "AttachVolumeDetails": AttachVolumeDetails,
     "BootVolume": BootVolume,
     "BootVolumeAttachment": BootVolumeAttachment,
+    "BootVolumeBackup": BootVolumeBackup,
+    "BootVolumeSourceDetails": BootVolumeSourceDetails,
+    "BootVolumeSourceFromBootVolumeBackupDetails": BootVolumeSourceFromBootVolumeBackupDetails,
+    "BootVolumeSourceFromBootVolumeDetails": BootVolumeSourceFromBootVolumeDetails,
     "BulkAddVirtualCircuitPublicPrefixesDetails": BulkAddVirtualCircuitPublicPrefixesDetails,
     "BulkDeleteVirtualCircuitPublicPrefixesDetails": BulkDeleteVirtualCircuitPublicPrefixesDetails,
     "CaptureConsoleHistoryDetails": CaptureConsoleHistoryDetails,
@@ -163,6 +180,8 @@ core_type_mapping = {
     "ConnectRemotePeeringConnectionsDetails": ConnectRemotePeeringConnectionsDetails,
     "ConsoleHistory": ConsoleHistory,
     "Cpe": Cpe,
+    "CreateBootVolumeBackupDetails": CreateBootVolumeBackupDetails,
+    "CreateBootVolumeDetails": CreateBootVolumeDetails,
     "CreateCpeDetails": CreateCpeDetails,
     "CreateCrossConnectDetails": CreateCrossConnectDetails,
     "CreateCrossConnectGroupDetails": CreateCrossConnectGroupDetails,
@@ -179,6 +198,7 @@ core_type_mapping = {
     "CreateRemotePeeringConnectionDetails": CreateRemotePeeringConnectionDetails,
     "CreateRouteTableDetails": CreateRouteTableDetails,
     "CreateSecurityListDetails": CreateSecurityListDetails,
+    "CreateServiceGatewayDetails": CreateServiceGatewayDetails,
     "CreateSubnetDetails": CreateSubnetDetails,
     "CreateVcnDetails": CreateVcnDetails,
     "CreateVirtualCircuitDetails": CreateVirtualCircuitDetails,
@@ -239,12 +259,17 @@ core_type_mapping = {
     "RouteRule": RouteRule,
     "RouteTable": RouteTable,
     "SecurityList": SecurityList,
+    "Service": Service,
+    "ServiceGateway": ServiceGateway,
+    "ServiceIdRequestDetails": ServiceIdRequestDetails,
+    "ServiceIdResponseDetails": ServiceIdResponseDetails,
     "Shape": Shape,
     "Subnet": Subnet,
     "TcpOptions": TcpOptions,
     "TunnelConfig": TunnelConfig,
     "TunnelStatus": TunnelStatus,
     "UdpOptions": UdpOptions,
+    "UpdateBootVolumeBackupDetails": UpdateBootVolumeBackupDetails,
     "UpdateBootVolumeDetails": UpdateBootVolumeDetails,
     "UpdateConsoleHistoryDetails": UpdateConsoleHistoryDetails,
     "UpdateCpeDetails": UpdateCpeDetails,
@@ -263,6 +288,7 @@ core_type_mapping = {
     "UpdateRemotePeeringConnectionDetails": UpdateRemotePeeringConnectionDetails,
     "UpdateRouteTableDetails": UpdateRouteTableDetails,
     "UpdateSecurityListDetails": UpdateSecurityListDetails,
+    "UpdateServiceGatewayDetails": UpdateServiceGatewayDetails,
     "UpdateSubnetDetails": UpdateSubnetDetails,
     "UpdateVcnDetails": UpdateVcnDetails,
     "UpdateVirtualCircuitDetails": UpdateVirtualCircuitDetails,
