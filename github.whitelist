@@ -2,6 +2,7 @@
 ^docs/conf\.py$
 ^docs/.*\.rst$
 ^docs/Makefile$
+^docs/requirements.txt$
 
 ^examples/
 
