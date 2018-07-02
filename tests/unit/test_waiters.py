@@ -53,9 +53,8 @@ def test_basic_wait(virtual_network, config):
 
     total_time = time.time() - start_time
 
-    # This should always be between 1 second and 5 minutes.
+    # This should always be under 5 minutes.
     assert total_time < 60 * 5
-    assert total_time > 1
 
 
 def test_invalid_operation(identity, config):
