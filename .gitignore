@@ -10,6 +10,7 @@ abandoned/
 *.pyc
 *.swp
 *.egg-info/
+*.dist-info/
 .tox/
 .cache/
 build/
@@ -26,3 +27,4 @@ tests/temp
 .vscode/
 .wercker/
 temp
+src/oci/_vendor/bin/
