@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+1.4.5 - TBD
+====================
+
+Added
+-----
+TBD
+
+Changed
+-------
+* Setup.py updated to allow more version of cryptography when installing to an existing environment
+* Add PyJWT as a vendored package
+
+
+====================
 1.4.4 - 2018-06-28
 ====================
 
