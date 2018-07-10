@@ -3,6 +3,7 @@
 
 from __future__ import absolute_import
 
+from .client_options import ClientOptions
 from .create_export_details import CreateExportDetails
 from .create_file_system_details import CreateFileSystemDetails
 from .create_mount_target_details import CreateMountTargetDetails
@@ -17,12 +18,14 @@ from .mount_target import MountTarget
 from .mount_target_summary import MountTargetSummary
 from .snapshot import Snapshot
 from .snapshot_summary import SnapshotSummary
+from .update_export_details import UpdateExportDetails
 from .update_export_set_details import UpdateExportSetDetails
 from .update_file_system_details import UpdateFileSystemDetails
 from .update_mount_target_details import UpdateMountTargetDetails
 
 # Maps type names to classes for file_storage services.
 file_storage_type_mapping = {
+    "ClientOptions": ClientOptions,
     "CreateExportDetails": CreateExportDetails,
     "CreateFileSystemDetails": CreateFileSystemDetails,
     "CreateMountTargetDetails": CreateMountTargetDetails,
@@ -37,6 +40,7 @@ file_storage_type_mapping = {
     "MountTargetSummary": MountTargetSummary,
     "Snapshot": Snapshot,
     "SnapshotSummary": SnapshotSummary,
+    "UpdateExportDetails": UpdateExportDetails,
     "UpdateExportSetDetails": UpdateExportSetDetails,
     "UpdateFileSystemDetails": UpdateFileSystemDetails,
     "UpdateMountTargetDetails": UpdateMountTargetDetails

@@ -25,6 +25,10 @@ class AuditEvent(object):
             The value to assign to the compartment_id property of this AuditEvent.
         :type compartment_id: str
 
+        :param compartment_name:
+            The value to assign to the compartment_name property of this AuditEvent.
+        :type compartment_name: str
+
         :param event_id:
             The value to assign to the event_id property of this AuditEvent.
         :type event_id: str
@@ -97,10 +101,15 @@ class AuditEvent(object):
             The value to assign to the response_payload property of this AuditEvent.
         :type response_payload: dict(str, object)
 
+        :param user_name:
+            The value to assign to the user_name property of this AuditEvent.
+        :type user_name: str
+
         """
         self.swagger_types = {
             'tenant_id': 'str',
             'compartment_id': 'str',
+            'compartment_name': 'str',
             'event_id': 'str',
             'event_name': 'str',
             'event_source': 'str',
@@ -118,12 +127,14 @@ class AuditEvent(object):
             'response_headers': 'dict(str, list[str])',
             'response_status': 'str',
             'response_time': 'datetime',
-            'response_payload': 'dict(str, object)'
+            'response_payload': 'dict(str, object)',
+            'user_name': 'str'
         }
 
         self.attribute_map = {
             'tenant_id': 'tenantId',
             'compartment_id': 'compartmentId',
+            'compartment_name': 'compartmentName',
             'event_id': 'eventId',
             'event_name': 'eventName',
             'event_source': 'eventSource',
@@ -141,11 +152,13 @@ class AuditEvent(object):
             'response_headers': 'responseHeaders',
             'response_status': 'responseStatus',
             'response_time': 'responseTime',
-            'response_payload': 'responsePayload'
+            'response_payload': 'responsePayload',
+            'user_name': 'userName'
         }
 
         self._tenant_id = None
         self._compartment_id = None
+        self._compartment_name = None
         self._event_id = None
         self._event_name = None
         self._event_source = None
@@ -164,6 +177,7 @@ class AuditEvent(object):
         self._response_status = None
         self._response_time = None
         self._response_payload = None
+        self._user_name = None
 
     @property
     def tenant_id(self):
@@ -212,6 +226,32 @@ class AuditEvent(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def compartment_name(self):
+        """
+        Gets the compartment_name of this AuditEvent.
+        The name of the compartment. This value is the friendly name associated with compartmentId.
+        This value can change, but the service logs the value that appeared at the time of the audit event.
+
+
+        :return: The compartment_name of this AuditEvent.
+        :rtype: str
+        """
+        return self._compartment_name
+
+    @compartment_name.setter
+    def compartment_name(self, compartment_name):
+        """
+        Sets the compartment_name of this AuditEvent.
+        The name of the compartment. This value is the friendly name associated with compartmentId.
+        This value can change, but the service logs the value that appeared at the time of the audit event.
+
+
+        :param compartment_name: The compartment_name of this AuditEvent.
+        :type: str
+        """
+        self._compartment_name = compartment_name
 
     @property
     def event_id(self):
@@ -654,6 +694,30 @@ class AuditEvent(object):
         :type: dict(str, object)
         """
         self._response_payload = response_payload
+
+    @property
+    def user_name(self):
+        """
+        Gets the user_name of this AuditEvent.
+        The name of the user or service. This value is the friendly name associated with principalId.
+
+
+        :return: The user_name of this AuditEvent.
+        :rtype: str
+        """
+        return self._user_name
+
+    @user_name.setter
+    def user_name(self, user_name):
+        """
+        Sets the user_name of this AuditEvent.
+        The name of the user or service. This value is the friendly name associated with principalId.
+
+
+        :param user_name: The user_name of this AuditEvent.
+        :type: str
+        """
+        self._user_name = user_name
 
     def __repr__(self):
         return formatted_flat_dict(self)

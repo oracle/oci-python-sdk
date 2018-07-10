@@ -540,7 +540,7 @@
             <plugin>
                 <groupId>com.oracle.bmc.sdk</groupId>
                 <artifactId>bmc-sdk-swagger-maven-plugin</artifactId>
-                <version>1.29-SNAPSHOT</version>
+                <version>1.30-SNAPSHOT</version>
                 <executions>
                     <execution>
                         <id>python-public-sdk-identity</id>
@@ -913,7 +913,7 @@
             <dependency>
                 <groupId>com.oracle.pic.lb</groupId>
                 <artifactId>oralb-api-spec</artifactId>
-                <version>1.0.16</version>
+                <version>1.0.17</version>
             </dependency>
             <dependency>
                 <groupId>com.oracle.pic.dbaas</groupId>
@@ -923,7 +923,7 @@
             <dependency>
                 <groupId>com.oracle.pic.sherlock</groupId>
                 <artifactId>hemlock-spec</artifactId>
-                <version>0.1.8</version>
+                <version>0.1.9</version>
             </dependency>
             <dependency>
                 <groupId>com.oracle.pic.dns.pub</groupId>
@@ -933,7 +933,7 @@
             <dependency>
                 <groupId>com.oracle.pic.ffsw</groupId>
                 <artifactId>fss-api-spec</artifactId>
-                <version>0.0.11</version>
+                <version>0.0.13</version>
             </dependency>
             <dependency>
                 <groupId>com.oracle.pic.email</groupId>

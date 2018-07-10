@@ -57,3 +57,9 @@ whitelisted:
   - udx-775
   # Service Gateway Launch
   - udx-677
+  # Tagging: LBaaS 1 Resource
+  - udx-921
+  # FSS Customer needs improved access controls
+  - udx-1017
+  # Audit Events CASB Control Deliverable
+  - udx-1181
