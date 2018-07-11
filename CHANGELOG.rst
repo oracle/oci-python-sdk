@@ -5,12 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
-1.4.5 - TBD
+1.4.5 - 2018-07-12
 ====================
 
 Added
 -----
-TBD
+* Support for tagging Load Balancers in the Load Balancing service
+* Support for export options in the File Storage service
+* Support for retrieving compartment name and user name as part of events in the Audit service
 
 Changed
 -------
