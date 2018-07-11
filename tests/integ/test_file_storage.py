@@ -135,19 +135,27 @@ def vcn_and_subnet(virtual_network):
                 attempts += 1
                 if e.status == 409 and attempts < 5:
                     time.sleep(5)
+                elif e.status == 404:
+                    print('subnet already been deleted')
+                    break
                 else:
                     raise
 
-        virtual_network.delete_vcn(vcn.id)
-        test_config_container.do_wait(
-            virtual_network,
-            virtual_network.get_vcn(vcn.id),
-            'lifecycle_state',
-            'TERMINATED',
-            max_wait_seconds=600,
-            succeed_on_not_found=True
-        )
-
+        try:
+            virtual_network.delete_vcn(vcn.id)
+            test_config_container.do_wait(
+                virtual_network,
+                virtual_network.get_vcn(vcn.id),
+                'lifecycle_state',
+                'TERMINATED',
+                max_wait_seconds=600,
+                succeed_on_not_found=True
+            )
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                print ('vcn already been deleted')
+            else:
+                raise
 
 @pytest.fixture
 def mount_target(file_storage_client, vcn_and_subnet):
