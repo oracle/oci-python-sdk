@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+1.4.5 - 2018-07-12
+====================
+
+Added
+-----
+* Support for tagging Load Balancers in the Load Balancing service
+* Support for export options in the File Storage service
+* Support for retrieving compartment name and user name as part of events in the Audit service
+
+Changed
+-------
+* Setup.py updated to allow more version of cryptography when installing to an existing environment
+* Add PyJWT as a vendored package
+
+
+====================
 1.4.4 - 2018-06-28
 ====================
 

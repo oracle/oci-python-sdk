@@ -33,12 +33,13 @@ def test_basic_wait(virtual_network, config):
 
     assert response.status == 204
 
+    get_response = None
     with pytest.raises(oci.exceptions.ServiceError) as excinfo:
-        response = virtual_network.get_vcn(vcn.id)
-        assert 'TERMINATING' == response.data.lifecycle_state
+        get_response = virtual_network.get_vcn(vcn.id)
+        assert 'TERMINATING' == get_response.data.lifecycle_state
         oci.wait_until(
             virtual_network,
-            response,
+            get_response,
             'lifecycle_state',
             'TERMINATED',
             max_wait_seconds=180
@@ -46,14 +47,14 @@ def test_basic_wait(virtual_network, config):
 
     assert excinfo.value.status == 404
 
-    result = oci.wait_until(virtual_network, response, 'lifecycle_state', 'TERMINATED', max_wait_seconds=180, succeed_on_not_found=True)
-    assert result == oci.waiter.WAIT_RESOURCE_NOT_FOUND
+    if get_response is not None:
+        result = oci.wait_until(virtual_network, get_response, 'lifecycle_state', 'TERMINATED', max_wait_seconds=180, succeed_on_not_found=True)
+        assert result == oci.waiter.WAIT_RESOURCE_NOT_FOUND
 
     total_time = time.time() - start_time
 
-    # This should always be between 1 second and 5 minutes.
+    # This should always be under 5 minutes.
     assert total_time < 60 * 5
-    assert total_time > 1
 
 
 def test_invalid_operation(identity, config):

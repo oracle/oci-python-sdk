@@ -29,9 +29,17 @@ class CreateLoadBalancerDetails(object):
             The value to assign to the compartment_id property of this CreateLoadBalancerDetails.
         :type compartment_id: str
 
+        :param defined_tags:
+            The value to assign to the defined_tags property of this CreateLoadBalancerDetails.
+        :type defined_tags: dict(str, dict(str, object))
+
         :param display_name:
             The value to assign to the display_name property of this CreateLoadBalancerDetails.
         :type display_name: str
+
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this CreateLoadBalancerDetails.
+        :type freeform_tags: dict(str, str)
 
         :param hostnames:
             The value to assign to the hostnames property of this CreateLoadBalancerDetails.
@@ -62,7 +70,9 @@ class CreateLoadBalancerDetails(object):
             'backend_sets': 'dict(str, BackendSetDetails)',
             'certificates': 'dict(str, CertificateDetails)',
             'compartment_id': 'str',
+            'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
+            'freeform_tags': 'dict(str, str)',
             'hostnames': 'dict(str, HostnameDetails)',
             'is_private': 'bool',
             'listeners': 'dict(str, ListenerDetails)',
@@ -75,7 +85,9 @@ class CreateLoadBalancerDetails(object):
             'backend_sets': 'backendSets',
             'certificates': 'certificates',
             'compartment_id': 'compartmentId',
+            'defined_tags': 'definedTags',
             'display_name': 'displayName',
+            'freeform_tags': 'freeformTags',
             'hostnames': 'hostnames',
             'is_private': 'isPrivate',
             'listeners': 'listeners',
@@ -87,7 +99,9 @@ class CreateLoadBalancerDetails(object):
         self._backend_sets = None
         self._certificates = None
         self._compartment_id = None
+        self._defined_tags = None
         self._display_name = None
+        self._freeform_tags = None
         self._hostnames = None
         self._is_private = None
         self._listeners = None
@@ -164,6 +178,40 @@ class CreateLoadBalancerDetails(object):
         self._compartment_id = compartment_id
 
     @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this CreateLoadBalancerDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this CreateLoadBalancerDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this CreateLoadBalancerDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this CreateLoadBalancerDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
+
+    @property
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateLoadBalancerDetails.
@@ -192,6 +240,40 @@ class CreateLoadBalancerDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this CreateLoadBalancerDetails.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this CreateLoadBalancerDetails.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this CreateLoadBalancerDetails.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this CreateLoadBalancerDetails.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
 
     @property
     def hostnames(self):

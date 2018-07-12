@@ -17,6 +17,10 @@ class CreateExportDetails(object):
         Initializes a new CreateExportDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param export_options:
+            The value to assign to the export_options property of this CreateExportDetails.
+        :type export_options: list[ClientOptions]
+
         :param export_set_id:
             The value to assign to the export_set_id property of this CreateExportDetails.
         :type export_set_id: str
@@ -31,20 +35,89 @@ class CreateExportDetails(object):
 
         """
         self.swagger_types = {
+            'export_options': 'list[ClientOptions]',
             'export_set_id': 'str',
             'file_system_id': 'str',
             'path': 'str'
         }
 
         self.attribute_map = {
+            'export_options': 'exportOptions',
             'export_set_id': 'exportSetId',
             'file_system_id': 'fileSystemId',
             'path': 'path'
         }
 
+        self._export_options = None
         self._export_set_id = None
         self._file_system_id = None
         self._path = None
+
+    @property
+    def export_options(self):
+        """
+        Gets the export_options of this CreateExportDetails.
+        Export options for the new export. If left unspecified,
+        defaults to:
+
+               [
+                 {
+                    \"source\" : \"0.0.0.0/0\",
+                    \"requirePrivilegedSourcePort\" : false,
+                    \"access\" : \"READ_WRITE\",
+                    \"identitySquash\" : \"NONE\"
+                  }
+               ]
+
+          **Note:** Mount targets do not have Internet-routable IP
+          addresses.  Therefore they will not be reachable from the
+          Internet, even if an associated `ClientOptions` item has
+          a source of `0.0.0.0/0`.
+
+          **If set to the empty array then the export will not be
+          visible to any clients.**
+
+          The export's `exportOptions` can be changed after creation
+          using the `UpdateExport` operation.
+
+
+        :return: The export_options of this CreateExportDetails.
+        :rtype: list[ClientOptions]
+        """
+        return self._export_options
+
+    @export_options.setter
+    def export_options(self, export_options):
+        """
+        Sets the export_options of this CreateExportDetails.
+        Export options for the new export. If left unspecified,
+        defaults to:
+
+               [
+                 {
+                    \"source\" : \"0.0.0.0/0\",
+                    \"requirePrivilegedSourcePort\" : false,
+                    \"access\" : \"READ_WRITE\",
+                    \"identitySquash\" : \"NONE\"
+                  }
+               ]
+
+          **Note:** Mount targets do not have Internet-routable IP
+          addresses.  Therefore they will not be reachable from the
+          Internet, even if an associated `ClientOptions` item has
+          a source of `0.0.0.0/0`.
+
+          **If set to the empty array then the export will not be
+          visible to any clients.**
+
+          The export's `exportOptions` can be changed after creation
+          using the `UpdateExport` operation.
+
+
+        :param export_options: The export_options of this CreateExportDetails.
+        :type: list[ClientOptions]
+        """
+        self._export_options = export_options
 
     @property
     def export_set_id(self):

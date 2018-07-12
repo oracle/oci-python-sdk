@@ -39,6 +39,11 @@ class Export(object):
 
     No two non-'DELETED' export resources in the same export set can
     reference the same file system.
+
+    Use `exportOptions` to control access to an export. For more information, see
+    `Export Options`__.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/File/Tasks/exportoptions.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a Export.
@@ -61,6 +66,10 @@ class Export(object):
         """
         Initializes a new Export object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
+
+        :param export_options:
+            The value to assign to the export_options property of this Export.
+        :type export_options: list[ClientOptions]
 
         :param export_set_id:
             The value to assign to the export_set_id property of this Export.
@@ -90,6 +99,7 @@ class Export(object):
 
         """
         self.swagger_types = {
+            'export_options': 'list[ClientOptions]',
             'export_set_id': 'str',
             'file_system_id': 'str',
             'id': 'str',
@@ -99,6 +109,7 @@ class Export(object):
         }
 
         self.attribute_map = {
+            'export_options': 'exportOptions',
             'export_set_id': 'exportSetId',
             'file_system_id': 'fileSystemId',
             'id': 'id',
@@ -107,12 +118,85 @@ class Export(object):
             'time_created': 'timeCreated'
         }
 
+        self._export_options = None
         self._export_set_id = None
         self._file_system_id = None
         self._id = None
         self._lifecycle_state = None
         self._path = None
         self._time_created = None
+
+    @property
+    def export_options(self):
+        """
+        **[Required]** Gets the export_options of this Export.
+        Policies that apply to NFS requests made through this
+        export. `exportOptions` contains a sequential list of
+        `ClientOptions`. Each `ClientOptions` item defines the
+        export options that are applied to a specified
+        set of clients.
+
+        For each NFS request, the first `ClientOptions` option
+        in the list whose `source` attribute matches the source
+        IP address of the request is applied.
+
+        If a client source IP address does not match the `source`
+        property of any `ClientOptions` in the list, then the
+        export will be invisible to that client. This export will
+        not be returned by `MOUNTPROC_EXPORT` calls made by the client
+        and any attempt to mount or access the file system through
+        this export will result in an error.
+
+        **Exports without defined `ClientOptions` are invisible to all clients.**
+
+        If one export is invisible to a particular client, associated file
+        systems may still be accessible through other exports on the same
+        or different mount targets.
+        To completely deny client access to a file system, be sure that the client
+        source IP address is not included in any export for any mount target
+        associated with the file system.
+
+
+        :return: The export_options of this Export.
+        :rtype: list[ClientOptions]
+        """
+        return self._export_options
+
+    @export_options.setter
+    def export_options(self, export_options):
+        """
+        Sets the export_options of this Export.
+        Policies that apply to NFS requests made through this
+        export. `exportOptions` contains a sequential list of
+        `ClientOptions`. Each `ClientOptions` item defines the
+        export options that are applied to a specified
+        set of clients.
+
+        For each NFS request, the first `ClientOptions` option
+        in the list whose `source` attribute matches the source
+        IP address of the request is applied.
+
+        If a client source IP address does not match the `source`
+        property of any `ClientOptions` in the list, then the
+        export will be invisible to that client. This export will
+        not be returned by `MOUNTPROC_EXPORT` calls made by the client
+        and any attempt to mount or access the file system through
+        this export will result in an error.
+
+        **Exports without defined `ClientOptions` are invisible to all clients.**
+
+        If one export is invisible to a particular client, associated file
+        systems may still be accessible through other exports on the same
+        or different mount targets.
+        To completely deny client access to a file system, be sure that the client
+        source IP address is not included in any export for any mount target
+        associated with the file system.
+
+
+        :param export_options: The export_options of this Export.
+        :type: list[ClientOptions]
+        """
+        self._export_options = export_options
 
     @property
     def export_set_id(self):
