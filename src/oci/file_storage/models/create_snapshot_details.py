@@ -43,7 +43,7 @@ class CreateSnapshotDetails(object):
     def file_system_id(self):
         """
         **[Required]** Gets the file_system_id of this CreateSnapshotDetails.
-        The OCID of this export's file system.
+        The OCID of the file system to take a snapshot of.
 
 
         :return: The file_system_id of this CreateSnapshotDetails.
@@ -55,7 +55,7 @@ class CreateSnapshotDetails(object):
     def file_system_id(self, file_system_id):
         """
         Sets the file_system_id of this CreateSnapshotDetails.
-        The OCID of this export's file system.
+        The OCID of the file system to take a snapshot of.
 
 
         :param file_system_id: The file_system_id of this CreateSnapshotDetails.

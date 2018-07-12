@@ -289,7 +289,7 @@ class ExportSet(object):
     def max_fs_stat_files(self):
         """
         Gets the max_fs_stat_files of this ExportSet.
-        Controls the maximum `ffiles`, `ffiles`, and `afiles`
+        Controls the maximum `tfiles`, `ffiles`, and `afiles`
         values reported by `NFS FSSTAT` calls through any associated
         mount targets. This is an advanced feature. For most
         applications, use the default value. The
@@ -309,7 +309,7 @@ class ExportSet(object):
     def max_fs_stat_files(self, max_fs_stat_files):
         """
         Sets the max_fs_stat_files of this ExportSet.
-        Controls the maximum `ffiles`, `ffiles`, and `afiles`
+        Controls the maximum `tfiles`, `ffiles`, and `afiles`
         values reported by `NFS FSSTAT` calls through any associated
         mount targets. This is an advanced feature. For most
         applications, use the default value. The
