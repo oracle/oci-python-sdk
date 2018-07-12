@@ -153,9 +153,10 @@ def vcn_and_subnet(virtual_network):
             )
         except oci.exceptions.ServiceError as e:
             if e.status == 404:
-                print ('vcn already been deleted')
+                print('vcn already been deleted')
             else:
                 raise
+
 
 @pytest.fixture
 def mount_target(file_storage_client, vcn_and_subnet):
