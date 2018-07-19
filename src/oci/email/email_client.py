@@ -3,8 +3,8 @@
 
 from __future__ import absolute_import
 
-import requests  # noqa: F401
-import six
+from oci._vendor import requests  # noqa: F401
+from oci._vendor import six
 
 from oci import retry  # noqa: F401
 from oci.base_client import BaseClient
@@ -698,3 +698,4 @@ class EmailClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="list[SuppressionSummary]")
+

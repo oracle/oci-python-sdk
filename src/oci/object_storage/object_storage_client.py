@@ -3,8 +3,8 @@
 
 from __future__ import absolute_import
 
-import requests  # noqa: F401
-import six
+from oci._vendor import requests  # noqa: F401
+from oci._vendor import six
 
 from oci import retry  # noqa: F401
 from oci.base_client import BaseClient
@@ -2533,3 +2533,4 @@ class ObjectStorageClient(object):
                 header_params=header_params,
                 body=upload_part_body,
                 enforce_content_headers=False)
+
