@@ -2533,4 +2533,3 @@ class ObjectStorageClient(object):
                 header_params=header_params,
                 body=upload_part_body,
                 enforce_content_headers=False)
-

@@ -3030,4 +3030,3 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 body=update_volume_group_backup_details,
                 response_type="VolumeGroupBackup")
-

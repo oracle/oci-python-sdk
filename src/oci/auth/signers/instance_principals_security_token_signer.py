@@ -11,7 +11,6 @@ from oci._vendor import requests
 import oci.regions
 
 
-
 class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTokenSigner):
     """
     A SecurityTokenSigner which uses a security token for an instance principal.  This signer can also

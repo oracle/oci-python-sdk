@@ -3155,4 +3155,3 @@ class ComputeClient(object):
                 header_params=header_params,
                 body=update_instance_details,
                 response_type="Instance")
-

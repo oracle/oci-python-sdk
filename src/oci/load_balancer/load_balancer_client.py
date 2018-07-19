@@ -3750,4 +3750,3 @@ class LoadBalancerClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_path_route_set_details)
-

@@ -2044,4 +2044,3 @@ class FileStorageClient(object):
                 header_params=header_params,
                 body=update_mount_target_details,
                 response_type="MountTarget")
-
