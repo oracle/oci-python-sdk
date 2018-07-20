@@ -26,18 +26,21 @@ from __future__ import absolute_import
 try:
     import socks
 except ImportError:
-    import warnings
-    from ..exceptions import DependencyWarning
+    # import warnings
+    # from ..exceptions import DependencyWarning
 
-    warnings.warn((
-        'SOCKS support in urllib3 requires the installation of optional '
-        'dependencies: specifically, PySocks.  For more information, see '
-        'https://urllib3.readthedocs.io/en/latest/contrib.html#socks-proxies'
-        ),
-        DependencyWarning
-    )
-    raise
+    # warnings.warn((
+    #     'SOCKS support in urllib3 requires the installation of optional '
+    #     'dependencies: specifically, PySocks.  For more information, see '
+    #     'https://urllib3.readthedocs.io/en/latest/contrib.html#socks-proxies'
+    #     ),
+    #     DependencyWarning
+    # )
+    # raise
 
+    # Socks is not needed for OCI Python SDK so there is no need to
+    # warn the end user of the vendored package.
+    pass
 from socket import error as SocketError, timeout as SocketTimeout
 
 from ..connection import (
