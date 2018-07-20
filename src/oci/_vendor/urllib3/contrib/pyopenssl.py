@@ -1,3 +1,7 @@
+# coding: utf-8
+# Modified Work: Copyright (c) 2018, 2018, Oracle and/or its affiliates. All rights reserved.
+# Copyright 2008-2016 Andrey Petrov and contributors
+
 """
 SSL with SNI_-support for Python 2. Follow these instructions if you would
 like to verify SSL certificates in Python 2. Note, the default libraries do

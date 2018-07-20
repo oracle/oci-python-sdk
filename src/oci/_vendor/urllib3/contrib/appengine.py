@@ -1,3 +1,7 @@
+# coding: utf-8
+# Modified Work: Copyright (c) 2018, 2018, Oracle and/or its affiliates. All rights reserved.
+# Copyright 2008-2016 Andrey Petrov and contributors
+
 """
 This module provides a pool manager that uses Google App Engine's
 `URLFetch Service <https://cloud.google.com/appengine/docs/python/urlfetch>`_.

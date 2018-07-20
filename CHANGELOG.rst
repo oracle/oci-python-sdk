@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+1.5.0 - 2018-07-26
+====================
+
+Added
+-----
+* TBD
+
+Changed
+-------
+* Add six, requests, urllib3, idna, and chardet as vendored packages.
+
+Fixed
+-----
+* Downloading an object from Object Storage could fail without an exception if the connection was closed while the object was being transmitted.
+
+Breaking
+--------
+* Imports for `requests.exceptions` will need to be changed to `oci._vendor.requests.exceptions`
+
+====================
 1.4.5 - 2018-07-12
 ====================
 

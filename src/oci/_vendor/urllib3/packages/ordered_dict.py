@@ -1,7 +1,7 @@
-# Backport of OrderedDict() class that runs on Python 2.4, 2.5, 2.6, 2.7 and pypy.
-# Passes Python2.7's test suite and incorporates all the latest updates.
-# Copyright 2009 Raymond Hettinger, released under the MIT License.
-# http://code.activestate.com/recipes/576693/
+# coding: utf-8
+# Modified Work: Copyright (c) 2018, 2018, Oracle and/or its affiliates. All rights reserved.
+# Copyright 2008-2016 Andrey Petrov and contributors
+
 try:
     from thread import get_ident as _get_ident
 except ImportError:

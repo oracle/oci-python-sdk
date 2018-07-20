@@ -910,6 +910,25 @@
                             </properties>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>oci-src-vendor-urllib3</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>format</goal>
+                        </goals>
+                        <configuration>
+                            <headerDefinitions>
+                                <headerDefinition>${project.basedir}/license_header_definition.xml</headerDefinition>
+                            </headerDefinitions>
+                            <header>${project.basedir}/licenseheader_urllib3.txt</header>
+                            <includes>
+                                <include>src/oci/_vendor/urllib3/**/*.py</include>
+                            </includes>
+                            <properties>
+                                <current.year>${current.year}</current.year>
+                            </properties>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>
