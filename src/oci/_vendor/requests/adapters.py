@@ -437,7 +437,8 @@ class HTTPAdapter(BaseAdapter):
                     preload_content=False,
                     decode_content=False,
                     retries=self.max_retries,
-                    timeout=timeout
+                    timeout=timeout,
+                    enforce_content_length=True
                 )
 
             # Send the request.
