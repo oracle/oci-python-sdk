@@ -1,3 +1,7 @@
+# coding: utf-8
+# Modified Work: Copyright (c) 2018, 2018, Oracle and/or its affiliates. All rights reserved.
+# Original Work: Copyright (c) 2018 Character Encoding Detector contributors.  https://github.com/chardet
+
 """
 All of the Enums that are used throughout the chardet package.
 

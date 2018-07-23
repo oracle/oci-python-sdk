@@ -589,7 +589,7 @@
             <plugin>
                 <groupId>com.oracle.bmc.sdk</groupId>
                 <artifactId>bmc-sdk-swagger-maven-plugin</artifactId>
-                <version>1.31-SNAPSHOT</version>
+                <version>1.32-SNAPSHOT</version>
                 <executions>
                     <execution>
                         <id>python-public-sdk-identity</id>
@@ -867,6 +867,25 @@
                             <excludes>
                                 <exclude>src/oci/_vendor/**/*.py</exclude>
                             </excludes>
+                            <properties>
+                                <current.year>${current.year}</current.year>
+                            </properties>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>oci-src-vendor-chardet</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>format</goal>
+                        </goals>
+                        <configuration>
+                            <headerDefinitions>
+                                <headerDefinition>${project.basedir}/license_header_definition.xml</headerDefinition>
+                            </headerDefinitions>
+                            <header>${project.basedir}/licenseheader_chardet.txt</header>
+                            <includes>
+                                <include>src/oci/_vendor/chardet/**/*.py</include>
+                            </includes>
                             <properties>
                                 <current.year>${current.year}</current.year>
                             </properties>
