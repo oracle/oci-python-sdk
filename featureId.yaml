@@ -16,7 +16,7 @@ whitelisted:
   # Request by darryn.lavery@
   - udx-473
   # Block Storage:User-Managed Boot Volumes
-  # Request by darryn.lavery@ and 
+  # Request by darryn.lavery@ and
   # Aaron / Block Storage ok for this to go out 11/27
   - udx-117
   # C3 support
@@ -57,3 +57,5 @@ whitelisted:
   - udx-775
   # Service Gateway Launch
   - udx-677
+  # Block Storage: Set Schedule Backup policy on Boot Volume creation
+  - udx-1192

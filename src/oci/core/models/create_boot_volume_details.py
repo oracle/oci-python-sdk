@@ -21,6 +21,10 @@ class CreateBootVolumeDetails(object):
             The value to assign to the availability_domain property of this CreateBootVolumeDetails.
         :type availability_domain: str
 
+        :param backup_policy_id:
+            The value to assign to the backup_policy_id property of this CreateBootVolumeDetails.
+        :type backup_policy_id: str
+
         :param compartment_id:
             The value to assign to the compartment_id property of this CreateBootVolumeDetails.
         :type compartment_id: str
@@ -48,6 +52,7 @@ class CreateBootVolumeDetails(object):
         """
         self.swagger_types = {
             'availability_domain': 'str',
+            'backup_policy_id': 'str',
             'compartment_id': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
@@ -58,6 +63,7 @@ class CreateBootVolumeDetails(object):
 
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
+            'backup_policy_id': 'backupPolicyId',
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
@@ -67,6 +73,7 @@ class CreateBootVolumeDetails(object):
         }
 
         self._availability_domain = None
+        self._backup_policy_id = None
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None
@@ -101,6 +108,32 @@ class CreateBootVolumeDetails(object):
         :type: str
         """
         self._availability_domain = availability_domain
+
+    @property
+    def backup_policy_id(self):
+        """
+        Gets the backup_policy_id of this CreateBootVolumeDetails.
+        If provided, specifies the ID of the boot volume backup policy to assign to the newly
+        created boot volume. If omitted, no policy will be assigned.
+
+
+        :return: The backup_policy_id of this CreateBootVolumeDetails.
+        :rtype: str
+        """
+        return self._backup_policy_id
+
+    @backup_policy_id.setter
+    def backup_policy_id(self, backup_policy_id):
+        """
+        Sets the backup_policy_id of this CreateBootVolumeDetails.
+        If provided, specifies the ID of the boot volume backup policy to assign to the newly
+        created boot volume. If omitted, no policy will be assigned.
+
+
+        :param backup_policy_id: The backup_policy_id of this CreateBootVolumeDetails.
+        :type: str
+        """
+        self._backup_policy_id = backup_policy_id
 
     @property
     def compartment_id(self):
