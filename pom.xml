@@ -589,7 +589,7 @@
             <plugin>
                 <groupId>com.oracle.bmc.sdk</groupId>
                 <artifactId>bmc-sdk-swagger-maven-plugin</artifactId>
-                <version>1.30-SNAPSHOT</version>
+                <version>1.31-SNAPSHOT</version>
                 <executions>
                     <execution>
                         <id>python-public-sdk-identity</id>
@@ -892,6 +892,25 @@
                         </configuration>
                     </execution>
                     <execution>
+                        <id>oci-src-vendor-idna</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>format</goal>
+                        </goals>
+                        <configuration>
+                            <headerDefinitions>
+                                <headerDefinition>${project.basedir}/license_header_definition.xml</headerDefinition>
+                            </headerDefinitions>
+                            <header>${project.basedir}/licenseheader_idna.txt</header>
+                            <includes>
+                                <include>src/oci/_vendor/idna/**/*.py</include>
+                            </includes>
+                            <properties>
+                                <current.year>${current.year}</current.year>
+                            </properties>
+                        </configuration>
+                    </execution>
+                    <execution>
                         <id>oci-src-vendor-pyjwt</id>
                         <phase>compile</phase>
                         <goals>
@@ -904,6 +923,25 @@
                             <header>${project.basedir}/licenseheader_pyjwt.txt</header>
                             <includes>
                                 <include>src/oci/_vendor/jwt/*.py</include>
+                            </includes>
+                            <properties>
+                                <current.year>${current.year}</current.year>
+                            </properties>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>oci-src-vendor-requests</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>format</goal>
+                        </goals>
+                        <configuration>
+                            <headerDefinitions>
+                                <headerDefinition>${project.basedir}/license_header_definition.xml</headerDefinition>
+                            </headerDefinitions>
+                            <header>${project.basedir}/licenseheader_requests.txt</header>
+                            <includes>
+                                <include>src/oci/_vendor/requests/**/*.py</include>
                             </includes>
                             <properties>
                                 <current.year>${current.year}</current.year>

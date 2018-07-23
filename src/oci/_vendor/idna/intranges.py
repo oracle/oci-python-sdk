@@ -1,3 +1,7 @@
+# coding: utf-8
+# Modified Work: Copyright (c) 2018, 2018, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2013-2018, Kim Davies. All rights reserved.
+
 """
 Given a list of integers, made up of (hopefully) a small number of long runs
 of consecutive integers, compute a representation of the form

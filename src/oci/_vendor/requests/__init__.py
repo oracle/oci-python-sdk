@@ -1,3 +1,7 @@
+# coding: utf-8
+# Modified Work: Copyright (c) 2018, 2018, Oracle and/or its affiliates. All rights reserved.
+# Copyright 2018 Kenneth Reitz
+
 # -*- coding: utf-8 -*-
 
 #   __
