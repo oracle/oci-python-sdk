@@ -13,5 +13,6 @@ SERVICE_ENDPOINTS = {
     "file_storage": "https://filestorage.{domain}/20171215",
     "identity": "https://identity.{domain}/20160918",
     "load_balancer": "https://iaas.{domain}/20170115",
-    "object_storage": "https://objectstorage.{domain}"
+    "object_storage": "https://objectstorage.{domain}",
+    "resource_search": "https://query.{domain}/20180409"
 }

@@ -67,6 +67,12 @@ SERVICES_FOR_DOC_GEN = [
         'service_root_header': 'Object Storage',
         'target_file_name': 'object_storage',
         'service_names': ['object_storage']
+    },
+    {
+        'module_name': 'resource_search',
+        'service_root_header': 'Resource Search',
+        'target_file_name': 'resource_search',
+        'service_names': ['resource_search']
     }
 ]
 
@@ -177,7 +183,7 @@ for service_for_doc_gen in SERVICES_FOR_DOC_GEN:
 
     # We can also create our SinglePageReferenceServiceGroup here for use when generating the single page reference
     service_group = SinglePageReferenceServiceGroup(
-        service_for_doc_gen['service_root_header'], 
+        service_for_doc_gen['service_root_header'],
         service_for_doc_gen['module_name'],
         service_for_doc_gen['service_names']
     )
