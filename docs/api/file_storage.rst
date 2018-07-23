@@ -18,6 +18,7 @@ File Storage
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.file_storage.models.ClientOptions
     oci.file_storage.models.CreateExportDetails
     oci.file_storage.models.CreateFileSystemDetails
     oci.file_storage.models.CreateMountTargetDetails
@@ -32,6 +33,7 @@ File Storage
     oci.file_storage.models.MountTargetSummary
     oci.file_storage.models.Snapshot
     oci.file_storage.models.SnapshotSummary
+    oci.file_storage.models.UpdateExportDetails
     oci.file_storage.models.UpdateExportSetDetails
     oci.file_storage.models.UpdateFileSystemDetails
     oci.file_storage.models.UpdateMountTargetDetails
