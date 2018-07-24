@@ -4,7 +4,7 @@
 # Contains helper classes that can say whether a retry should occur based on various criteria, such as a maximum number of retries being
 # hit or the exception received from a service call (or the response from the service call if it didn't exception out).
 
-from ..exceptions import ServiceError
+from ..exceptions import ServiceError, RequestException, ConnectTimeout
 from oci._vendor.requests.exceptions import Timeout
 from oci._vendor.requests.exceptions import ConnectionError
 
@@ -153,6 +153,10 @@ class TimeoutConnectionAndServiceErrorRetryChecker(BaseRetryChecker):
         if isinstance(exception, Timeout):
             return True
         elif isinstance(exception, ConnectionError):
+            return True
+        elif isinstance(exception, RequestException):
+            return True
+        elif isinstance(exception, ConnectTimeout):
             return True
         elif isinstance(exception, ServiceError):
             if exception.status in self.service_error_retry_config:

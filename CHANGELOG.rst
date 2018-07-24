@@ -11,6 +11,7 @@ The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 Added
 -----
 * TBD
+* Added retries to the InstancePrincipalsSecurityTokenSigner when trying to refresh security tokens
 
 Changed
 -------

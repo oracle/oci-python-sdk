@@ -311,6 +311,8 @@ class BaseClient(object):
                 data=request.body,
                 stream=stream,
                 timeout=self.timeout)
+        except requests.exceptions.ConnectTimeout as e:
+            raise exceptions.ConnectTimeout(e)
         except requests.exceptions.RequestException as e:
             raise exceptions.RequestException(e)
 

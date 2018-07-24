@@ -30,6 +30,8 @@ def test_service_error_checker_timeouts():
 
     assert checker.should_retry(exception=Timeout())
     assert checker.should_retry(exception=ConnectionError())
+    assert checker.should_retry(exception=oci.exceptions.RequestException())
+    assert checker.should_retry(exception=oci.exceptions.ConnectTimeout())
     assert not checker.should_retry(exception=RuntimeError())
 
     service_error_429 = oci.exceptions.ServiceError(429, 'TooManyRequests', {}, None)
