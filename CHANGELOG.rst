@@ -22,7 +22,7 @@ Fixed
 
 Breaking
 --------
-* Imports for `requests.exceptions` will need to be changed to `oci._vendor.requests.exceptions`
+* `requests.exceptions` have been wrapped in oci.exceptions.RequestExceptions
 
 ====================
 1.4.5 - 2018-07-12
