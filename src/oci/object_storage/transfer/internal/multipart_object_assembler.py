@@ -11,11 +11,10 @@ from ..constants import MEBIBYTE
 from .buffered_part_reader import BufferedPartReader
 from ... import models
 from ....exceptions import ServiceError, MultipartUploadError
-from requests.exceptions import Timeout
-from requests.exceptions import ConnectionError
-from six.moves.queue import Queue
+from oci.exceptions import RequestException
+from oci._vendor.six.moves.queue import Queue
 from threading import Semaphore
-import six
+from oci._vendor import six
 
 READ_BUFFER_SIZE = 8 * 1024
 DEFAULT_PARALLEL_PROCESS_COUNT = 3
@@ -157,9 +156,7 @@ class MultipartObjectAssembler:
         :return: Boolean
         """
         retryable = False
-        if isinstance(e, Timeout):
-            retryable = True
-        elif isinstance(e, ConnectionError):
+        if isinstance(e, RequestException):
             retryable = True
         elif isinstance(e, ServiceError):
             if e.status >= 500 or e.status == -1 or (e.status == 409 and e.code == "ConcurrentObjectUpdate"):
