@@ -10,7 +10,8 @@ The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 Added
 -----
-* TBD
+* Support for the OCI Search service
+* Support for specifying a backup policy when creating a boot volume in the Block Storage service
 * Added retries to the InstancePrincipalsSecurityTokenSigner when trying to refresh security tokens
 
 Changed
@@ -23,7 +24,8 @@ Fixed
 
 Breaking
 --------
-* `requests.exceptions` have been wrapped in oci.exceptions.RequestExceptions
+* The base exception from requests, `requests.exceptions.RequestException`, has been wrapped in oci.exceptions.RequestExceptions
+* `requests.exceptions.ConnectTimeout` has been wrapped in oci.exceptions.ConnectTimeout
 
 ====================
 1.4.5 - 2018-07-12
