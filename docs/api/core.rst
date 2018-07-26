@@ -29,6 +29,10 @@ Core Services
     oci.core.models.AttachVolumeDetails
     oci.core.models.BootVolume
     oci.core.models.BootVolumeAttachment
+    oci.core.models.BootVolumeBackup
+    oci.core.models.BootVolumeSourceDetails
+    oci.core.models.BootVolumeSourceFromBootVolumeBackupDetails
+    oci.core.models.BootVolumeSourceFromBootVolumeDetails
     oci.core.models.BulkAddVirtualCircuitPublicPrefixesDetails
     oci.core.models.BulkDeleteVirtualCircuitPublicPrefixesDetails
     oci.core.models.CaptureConsoleHistoryDetails
@@ -36,6 +40,8 @@ Core Services
     oci.core.models.ConnectRemotePeeringConnectionsDetails
     oci.core.models.ConsoleHistory
     oci.core.models.Cpe
+    oci.core.models.CreateBootVolumeBackupDetails
+    oci.core.models.CreateBootVolumeDetails
     oci.core.models.CreateCpeDetails
     oci.core.models.CreateCrossConnectDetails
     oci.core.models.CreateCrossConnectGroupDetails
@@ -52,6 +58,7 @@ Core Services
     oci.core.models.CreateRemotePeeringConnectionDetails
     oci.core.models.CreateRouteTableDetails
     oci.core.models.CreateSecurityListDetails
+    oci.core.models.CreateServiceGatewayDetails
     oci.core.models.CreateSubnetDetails
     oci.core.models.CreateVcnDetails
     oci.core.models.CreateVirtualCircuitDetails
@@ -112,12 +119,17 @@ Core Services
     oci.core.models.RouteRule
     oci.core.models.RouteTable
     oci.core.models.SecurityList
+    oci.core.models.Service
+    oci.core.models.ServiceGateway
+    oci.core.models.ServiceIdRequestDetails
+    oci.core.models.ServiceIdResponseDetails
     oci.core.models.Shape
     oci.core.models.Subnet
     oci.core.models.TcpOptions
     oci.core.models.TunnelConfig
     oci.core.models.TunnelStatus
     oci.core.models.UdpOptions
+    oci.core.models.UpdateBootVolumeBackupDetails
     oci.core.models.UpdateBootVolumeDetails
     oci.core.models.UpdateConsoleHistoryDetails
     oci.core.models.UpdateCpeDetails
@@ -136,6 +148,7 @@ Core Services
     oci.core.models.UpdateRemotePeeringConnectionDetails
     oci.core.models.UpdateRouteTableDetails
     oci.core.models.UpdateSecurityListDetails
+    oci.core.models.UpdateServiceGatewayDetails
     oci.core.models.UpdateSubnetDetails
     oci.core.models.UpdateVcnDetails
     oci.core.models.UpdateVirtualCircuitDetails

@@ -4,7 +4,7 @@
 # Original Work: Copyright (c) 2012 Adam T. Lindsay (original author)
 
 import base64
-import six
+from oci._vendor import six
 
 from cryptography.hazmat.backends import default_backend  # noqa: F401
 from cryptography.hazmat.primitives import hashes, hmac, serialization  # noqa: F401

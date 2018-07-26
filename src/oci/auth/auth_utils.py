@@ -1,7 +1,7 @@
 # coding: utf-8
 # Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
-import six
+from oci._vendor import six
 
 
 def get_tenancy_id_from_certificate(cert):

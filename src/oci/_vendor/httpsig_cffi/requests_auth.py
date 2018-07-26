@@ -3,7 +3,7 @@
 # Original Work: Copyright (c) 2014 Adam Knight
 # Original Work: Copyright (c) 2012 Adam T. Lindsay (original author)
 
-from requests.auth import AuthBase
+from oci._vendor.requests.auth import AuthBase
 try:
     # Python 3
     from urllib.parse import urlparse

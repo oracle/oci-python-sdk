@@ -7,7 +7,7 @@ import re
 import struct
 import hashlib
 import base64
-import six
+from oci._vendor import six
 
 try:
     # Python 3

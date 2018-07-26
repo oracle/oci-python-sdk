@@ -289,7 +289,11 @@ class VirtualCircuit(object):
     def bandwidth_shape_name(self):
         """
         Gets the bandwidth_shape_name of this VirtualCircuit.
-        The provisioned data rate of the connection.
+        The provisioned data rate of the connection.  To get a list of the
+        available bandwidth levels (that is, shapes), see
+        :func:`list_fast_connect_provider_virtual_circuit_bandwidth_shapes`.
+
+        Example: `10 Gbps`
 
 
         :return: The bandwidth_shape_name of this VirtualCircuit.
@@ -301,7 +305,11 @@ class VirtualCircuit(object):
     def bandwidth_shape_name(self, bandwidth_shape_name):
         """
         Sets the bandwidth_shape_name of this VirtualCircuit.
-        The provisioned data rate of the connection.
+        The provisioned data rate of the connection.  To get a list of the
+        available bandwidth levels (that is, shapes), see
+        :func:`list_fast_connect_provider_virtual_circuit_bandwidth_shapes`.
+
+        Example: `10 Gbps`
 
 
         :param bandwidth_shape_name: The bandwidth_shape_name of this VirtualCircuit.

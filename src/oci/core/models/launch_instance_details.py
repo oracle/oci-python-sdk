@@ -274,8 +274,6 @@ class LaunchInstanceDetails(object):
 
         They are distinguished from 'metadata' fields in that these can be nested JSON objects (whereas 'metadata' fields are string/string maps only).
 
-        If you don't need nested metadata values, it is strongly advised to avoid using this object and use the Metadata object instead.
-
 
         :return: The extended_metadata of this LaunchInstanceDetails.
         :rtype: dict(str, object)
@@ -289,8 +287,6 @@ class LaunchInstanceDetails(object):
         Additional metadata key/value pairs that you provide.  They serve a similar purpose and functionality from fields in the 'metadata' object.
 
         They are distinguished from 'metadata' fields in that these can be nested JSON objects (whereas 'metadata' fields are string/string maps only).
-
-        If you don't need nested metadata values, it is strongly advised to avoid using this object and use the Metadata object instead.
 
 
         :param extended_metadata: The extended_metadata of this LaunchInstanceDetails.

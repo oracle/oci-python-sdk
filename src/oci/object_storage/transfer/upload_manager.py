@@ -3,7 +3,7 @@
 
 from __future__ import print_function
 import os
-import requests
+from oci._vendor import requests
 from .internal.multipart_object_assembler import MultipartObjectAssembler, DEFAULT_PARALLEL_PROCESS_COUNT
 from .constants import DEFAULT_PART_SIZE, STREAMING_DEFAULT_PART_SIZE
 from .internal.file_read_callback_stream import FileReadCallbackStream
