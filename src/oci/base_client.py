@@ -8,13 +8,11 @@ import platform
 import pytz
 import random
 import re
-import six.moves
 import string
 import uuid
 from datetime import date, datetime
 
-import requests
-import six
+from oci._vendor import requests, six
 from dateutil.parser import parse
 
 from . import constants, exceptions, regions
@@ -303,15 +301,20 @@ class BaseClient(object):
         if request.response_type == STREAM_RESPONSE_TYPE:
             stream = True
 
-        response = self.session.request(
-            request.method,
-            request.url,
-            auth=signer,
-            params=request.query_params,
-            headers=request.header_params,
-            data=request.body,
-            stream=stream,
-            timeout=self.timeout)
+        try:
+            response = self.session.request(
+                request.method,
+                request.url,
+                auth=signer,
+                params=request.query_params,
+                headers=request.header_params,
+                data=request.body,
+                stream=stream,
+                timeout=self.timeout)
+        except requests.exceptions.ConnectTimeout as e:
+            raise exceptions.ConnectTimeout(e)
+        except requests.exceptions.RequestException as e:
+            raise exceptions.RequestException(e)
 
         response_type = request.response_type
         self.logger.debug("Response status: %s" % str(response.status_code))

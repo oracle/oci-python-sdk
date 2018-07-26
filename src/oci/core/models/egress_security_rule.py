@@ -88,8 +88,16 @@ class EgressSecurityRule(object):
     def destination(self):
         """
         **[Required]** Gets the destination of this EgressSecurityRule.
-        The destination service cidrBlock or destination IP address range in CIDR notation for the egress rule.
-        This is the range of IP addresses that a packet originating from the instance can go to.
+        Conceptually, this is the range of IP addresses that a packet originating from the instance
+        can go to.
+
+        Allowed values:
+
+          * IP address range in CIDR notation. For example: `192.168.1.0/24`
+
+          * The `cidrBlock` value for a :class:`Service`, if you're
+            setting up a security list rule for traffic destined for a particular service through
+            a service gateway. For example: `oci-phx-objectstorage`
 
 
         :return: The destination of this EgressSecurityRule.
@@ -101,8 +109,16 @@ class EgressSecurityRule(object):
     def destination(self, destination):
         """
         Sets the destination of this EgressSecurityRule.
-        The destination service cidrBlock or destination IP address range in CIDR notation for the egress rule.
-        This is the range of IP addresses that a packet originating from the instance can go to.
+        Conceptually, this is the range of IP addresses that a packet originating from the instance
+        can go to.
+
+        Allowed values:
+
+          * IP address range in CIDR notation. For example: `192.168.1.0/24`
+
+          * The `cidrBlock` value for a :class:`Service`, if you're
+            setting up a security list rule for traffic destined for a particular service through
+            a service gateway. For example: `oci-phx-objectstorage`
 
 
         :param destination: The destination of this EgressSecurityRule.
@@ -114,9 +130,15 @@ class EgressSecurityRule(object):
     def destination_type(self):
         """
         Gets the destination_type of this EgressSecurityRule.
-        Type of destination for EgressSecurityRule. SERVICE_CIDR_BLOCK should be used if destination is a service
-        cidrBlock. CIDR_BLOCK should be used if destination is IP address range in CIDR notation.
-        It defaults to CIDR_BLOCK, if not specified.
+        Type of destination for the rule. The default is `CIDR_BLOCK`.
+
+        Allowed values:
+
+          * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
+
+          * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a
+            :class:`Service` (the rule is for traffic destined for a
+            particular service through a service gateway).
 
         Allowed values for this property are: "CIDR_BLOCK", "SERVICE_CIDR_BLOCK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -131,9 +153,15 @@ class EgressSecurityRule(object):
     def destination_type(self, destination_type):
         """
         Sets the destination_type of this EgressSecurityRule.
-        Type of destination for EgressSecurityRule. SERVICE_CIDR_BLOCK should be used if destination is a service
-        cidrBlock. CIDR_BLOCK should be used if destination is IP address range in CIDR notation.
-        It defaults to CIDR_BLOCK, if not specified.
+        Type of destination for the rule. The default is `CIDR_BLOCK`.
+
+        Allowed values:
+
+          * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
+
+          * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a
+            :class:`Service` (the rule is for traffic destined for a
+            particular service through a service gateway).
 
 
         :param destination_type: The destination_type of this EgressSecurityRule.

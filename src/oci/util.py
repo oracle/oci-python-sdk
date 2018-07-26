@@ -6,7 +6,7 @@ import datetime
 import json
 import os.path
 import pytz
-import six
+from oci._vendor import six
 try:
     # PY3+
     import collections.abc as abc

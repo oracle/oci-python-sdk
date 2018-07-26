@@ -184,7 +184,7 @@ class FastConnectProviderService(object):
     def private_peering_bgp_management(self):
         """
         **[Required]** Gets the private_peering_bgp_management of this FastConnectProviderService.
-        Private peering BGP management.
+        Who is responsible for managing the private peering BGP information.
 
         Allowed values for this property are: "CUSTOMER_MANAGED", "PROVIDER_MANAGED", "ORACLE_MANAGED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -199,7 +199,7 @@ class FastConnectProviderService(object):
     def private_peering_bgp_management(self, private_peering_bgp_management):
         """
         Sets the private_peering_bgp_management of this FastConnectProviderService.
-        Private peering BGP management.
+        Who is responsible for managing the private peering BGP information.
 
 
         :param private_peering_bgp_management: The private_peering_bgp_management of this FastConnectProviderService.
@@ -262,7 +262,7 @@ class FastConnectProviderService(object):
     def public_peering_bgp_management(self):
         """
         **[Required]** Gets the public_peering_bgp_management of this FastConnectProviderService.
-        Public peering BGP management.
+        Who is responsible for managing the public peering BGP information.
 
         Allowed values for this property are: "CUSTOMER_MANAGED", "PROVIDER_MANAGED", "ORACLE_MANAGED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -277,7 +277,7 @@ class FastConnectProviderService(object):
     def public_peering_bgp_management(self, public_peering_bgp_management):
         """
         Sets the public_peering_bgp_management of this FastConnectProviderService.
-        Public peering BGP management.
+        Who is responsible for managing the public peering BGP information.
 
 
         :param public_peering_bgp_management: The public_peering_bgp_management of this FastConnectProviderService.

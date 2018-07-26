@@ -3,8 +3,8 @@
 
 from __future__ import absolute_import
 
-import requests  # noqa: F401
-import six
+from oci._vendor import requests  # noqa: F401
+from oci._vendor import six
 
 from oci import retry  # noqa: F401
 from oci.base_client import BaseClient
@@ -2151,12 +2151,15 @@ class ComputeClient(object):
     def list_images(self, compartment_id, **kwargs):
         """
         ListImages
-        Lists the available images in the specified compartment.
-        If you specify a value for the `sortBy` parameter, Oracle-provided images appear first in the list, followed by custom images.
-        For more
-        information about images, see
-        `Managing Custom Images`__.
+        Lists the available images in the specified compartment, including both
+        `Oracle-provided images`__ and
+        `custom images`__ that have
+        been created. The list of images returned is ordered to first show all
+        Oracle-provided images, then all custom images.
 
+        The order of images returned may change when new images are released.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/images.htm
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/managingcustomimages.htm
 
 

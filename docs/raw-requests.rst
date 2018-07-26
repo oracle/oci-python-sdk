@@ -18,6 +18,11 @@ OCI API not yet supported in the SDK.
  Creating a Signer
 ===================
 
+The Signer used as part of making raw requests can be either an `Instance Principals-based <https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/callingservicesfrominstances.htm>`__ signer or one that uses a user OCID and private key.  
+
+Signer with user OCID and private key 
+--------------------------------------
+
 Constructing a Signer instance requires a few pieces of information.  By default, the SDK uses the values in
 the config file at ``~/.oci/config``.  You can manually specify the required fields, or use a config loader
 to pull in the values from a file:
@@ -45,6 +50,15 @@ to pull in the values from a file:
         pass_phrase=config['pass_phrase']
     )
 
+Instance Principals-based Signer
+---------------------------------
+
+An Instance Principals-based signer can be created as follows:
+
+.. code-block:: python
+
+    import oci
+    signer = oci.auth.signers.InstancePrincipalsSecurityTokenSigner()
 
 ==================
  Using the Signer
@@ -77,3 +91,31 @@ The following creates a new user by talking to the identity endpoint:
 
     response.raise_for_status()
     print(response.json()['id'])
+
+Using an Instance Principals-based Signer
+------------------------------------------
+
+The Instance Principals-based Signer uses a security token to authenticate calls against OCI services. This token has an expiration time and the Signer will automatically handle refreshing the token when it is near expiry. However, it is possible that the security token held by the signer is valid (from an expiration time perspective) but the request fails with a 401 (NotAuthenticated) error because of, for example, changes in the dynamic group that an instance is a part of or the policies applied to that dynamic group.
+
+You can account for this by retrying on a 401. If the request fails with a 401 on a subsequent retry, this may point to other issues and you should not keep retrying in this circumstance. For example:
+
+.. code-block:: python
+
+    import oci
+    import requests
+
+    signer = oci.auth.signers.InstancePrincipalsSecurityTokenSigner()
+    call_attempts = 0
+    while call_attempts < 2:
+        # This call is just an example. Provide your own appropriate method (e.g. get() instead of post()), endpoint and body
+        response = requests.post(endpoint, json=body, auth=signer)
+        if response.ok:
+            return response
+        else:
+            call_attempts += 1
+            if response.status_code == 401 and call_attempts < 2:
+                signer.refresh_security_token()
+            else:
+                response.raise_for_status()
+
+

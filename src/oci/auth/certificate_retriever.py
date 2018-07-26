@@ -3,11 +3,19 @@
 
 from cryptography import x509
 from cryptography.hazmat.backends import default_backend
+from oci._vendor import requests
 
+import oci.retry
 import os.path
-import requests
-import six
+from oci._vendor import six
 import threading
+
+# A retry strategy for use when calling the metadata endpoint on an instance to retrieve certificates. This retry strategy
+# will retry on any exception (the metadata endpoint does not throw errors like an OCI service) up to 5 times or a max
+# of 5 minutes
+INSTANCE_METADATA_URL_CERTIFICATE_RETRIEVER_RETRY_STRATEGY = oci.retry.RetryStrategyBuilder().add_max_attempts() \
+                                                                                             .add_total_elapsed_time() \
+                                                                                             .get_retry_strategy()
 
 
 # An abstract class which defines the interface via which certificates (and their corresponding private key) can be retrieved.
@@ -66,12 +74,16 @@ class UrlBasedCertificateRetriever(AbstractCertificateRetriever):
         The URL from which to retrieve a certificate. It is assumed that what we retrieve is the PEM-formatted string for the certificate.
         This is mandatory
 
-    :param str private_key_url (optional):
+    :param str private_key_url: (optional)
         The URL from which to retrieve the private key corresponding to certificate_url (if any). It is assumed that what we retrieve is the PEM-formatted string for
         the private key.
 
-    :param str passphrase (optional):
+    :param str passphrase: (optional)
         The passphrase of the private key (if any).
+
+    :param obj retry_strategy: (optional)
+        A retry strategy to use when retrieving the certificate and private key from the URLs provided to this class. This should be one of the strategies available in
+        the :py:mod:`~oci.retry` module. By default this retriever will not perform any retries.
     """
 
     READ_CHUNK_BYTES = 1024 * 1024  # A mebibyte
@@ -85,6 +97,7 @@ class UrlBasedCertificateRetriever(AbstractCertificateRetriever):
         self.cert_url = kwargs['certificate_url']
         self.private_key_url = kwargs.get('private_key_url')
         self.passphrase = kwargs.get('passphrase')
+        self.retry_strategy = kwargs.get('retry_strategy')
 
         if self.passphrase and isinstance(self.passphrase, six.text_type):
             self.passphrase = self.passphrase.encode('ascii')
@@ -94,36 +107,12 @@ class UrlBasedCertificateRetriever(AbstractCertificateRetriever):
         self.refresh()
 
     def refresh(self):
-        import oci.signer
-
         self._refresh_lock.acquire()
         try:
-            downloaded_certificate = six.BytesIO()
-            response = requests.get(self.cert_url, stream=True)
-            for chunk in response.raw.stream(self.READ_CHUNK_BYTES, decode_content=False):
-                downloaded_certificate.write(chunk)
-
-            self.certificate_and_private_key['certificate'] = downloaded_certificate.getvalue().strip()
-            downloaded_certificate.close()
-            if isinstance(self.certificate_and_private_key['certificate'], six.text_type):
-                self.certificate_and_private_key['certificate'] = self.certificate_and_private_key['certificate'].encode('ascii')
-
-            if self.private_key_url:
-                downloaded_private_key_raw = six.BytesIO()
-                response = requests.get(self.private_key_url, stream=True)
-                for chunk in response.raw.stream(self.READ_CHUNK_BYTES, decode_content=False):
-                    downloaded_private_key_raw.write(chunk)
-
-                self.certificate_and_private_key['private_key_pem'] = downloaded_private_key_raw.getvalue().strip()
-                downloaded_private_key_raw.close()
-
-                if isinstance(self.certificate_and_private_key['private_key_pem'], six.text_type):
-                    self.certificate_and_private_key['private_key_pem'] = self.certificate_and_private_key['private_key_pem'].encode('ascii')
-
-                self.certificate_and_private_key['private_key'] = oci.signer.load_private_key(
-                    self.certificate_and_private_key['private_key_pem'],
-                    self.passphrase
-                )
+            if self.retry_strategy:
+                self.retry_strategy.make_retrying_call(self._refresh_inner)
+            else:
+                self._refresh_inner()
         finally:
             self._refresh_lock.release()
 
@@ -161,6 +150,79 @@ class UrlBasedCertificateRetriever(AbstractCertificateRetriever):
         self._refresh_lock.release()
 
         return private_key
+
+    def _refresh_inner(self):
+        """
+        Refreshes the certificate and its corresponding private key (if there is one defined for this retriever).
+        This method represents the unit of retrying for the certificate retriever. It is intentionally coarse
+        grained (e.g. if we retrieve the certificate but fail to retrieve the private key then we'll retry and
+        retrieve both the certificate and private key again) to try and best maintain consistency in the data.
+
+        For example, if we had separate retries for the certificate and the private key, in the scenario where
+        a certificate was successfully retrieved but the private key failed, the private key we successfully
+        retrieved upon retry may not relate to the certificate that we retrieved (e.g. because of rotation). This
+        is still a risk in coarse grained retries, but hopefully a smaller one.
+        """
+        import oci.signer
+
+        downloaded_certificate = six.BytesIO()
+        response = requests.get(self.cert_url, stream=True)
+
+        response.raise_for_status()
+
+        for chunk in response.raw.stream(self.READ_CHUNK_BYTES, decode_content=False):
+            downloaded_certificate.write(chunk)
+
+        self.certificate_and_private_key['certificate'] = downloaded_certificate.getvalue().strip()
+        downloaded_certificate.close()
+        if isinstance(self.certificate_and_private_key['certificate'], six.text_type):
+            self.certificate_and_private_key['certificate'] = self.certificate_and_private_key['certificate'].encode('ascii')
+
+        self._check_valid_certificate_string(self.certificate_and_private_key['certificate'])
+
+        if self.private_key_url:
+            downloaded_private_key_raw = six.BytesIO()
+            response = requests.get(self.private_key_url, stream=True)
+
+            response.raise_for_status()
+
+            for chunk in response.raw.stream(self.READ_CHUNK_BYTES, decode_content=False):
+                downloaded_private_key_raw.write(chunk)
+
+            self.certificate_and_private_key['private_key_pem'] = downloaded_private_key_raw.getvalue().strip()
+            downloaded_private_key_raw.close()
+
+            if isinstance(self.certificate_and_private_key['private_key_pem'], six.text_type):
+                self.certificate_and_private_key['private_key_pem'] = self.certificate_and_private_key['private_key_pem'].encode('ascii')
+
+            try:
+                self.certificate_and_private_key['private_key'] = oci.signer.load_private_key(
+                    self.certificate_and_private_key['private_key_pem'],
+                    self.passphrase
+                )
+            except oci.exceptions.InvalidPrivateKey:
+                raise InvalidCertificateFromInstanceMetadataError(
+                    certificate_type='private_key',
+                    certificate_raw=self.certificate_and_private_key['private_key_pem']
+                )
+
+    def _check_valid_certificate_string(self, certificate_string_to_check):
+        """
+        Determines whether a given string is a valid certificate. Valid in this context means that it
+        can be parsed into a cryptography.io X509 certificate object. If the string is not valid then
+        this method will throw an exception.
+
+        :param str certificate_string_to_check:
+            The certificate string to check. If it is valid then it should be a PEM-formatted string
+            and able to be parsed into a cryptography.io X509 certificate object
+        """
+        try:
+            x509.load_pem_x509_certificate(certificate_string_to_check, default_backend())
+        except ValueError:
+            raise InvalidCertificateFromInstanceMetadataError(
+                certificate_type='certificate',
+                certificate_raw=certificate_string_to_check
+            )
 
 
 class PEMStringCertificateRetriever(AbstractCertificateRetriever):
@@ -267,3 +329,14 @@ class FileBasedCertificateRetriever(PEMStringCertificateRetriever):
             cert_data = f.read().strip()
 
         return cert_data
+
+
+class InvalidCertificateFromInstanceMetadataError(Exception):
+    def __init__(self, certificate_type='certificate', certificate_raw=None):
+        self.certificate_raw = certificate_raw
+        self.certificate_type = certificate_type
+        super(InvalidCertificateFromInstanceMetadataError, self).__init__({
+            'message': 'Invalid certificate returned from instance metadata. Expected a PEM-formatted string',
+            'certificate_type': self.certificate_type,
+            'certificate_raw': self.certificate_raw
+        })

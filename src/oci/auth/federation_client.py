@@ -5,9 +5,10 @@ from . import auth_utils
 from .security_token_container import SecurityTokenContainer
 from cryptography.hazmat.primitives.serialization import Encoding, PublicFormat
 from OpenSSL import crypto
+from oci._vendor import requests
 
+import oci.retry
 import oci.signer
-import requests
 import threading
 
 
@@ -47,13 +48,22 @@ class X509FederationClient(object):
         :param CertificateRetriever leaf_certificate_retriever:
             The certificate which will be used to sign requests to Auth Service.
 
-        :param list[CertificateRetriever] intermediate_certificate_retrievers (optional):
+        :param list[CertificateRetriever] intermediate_certificate_retrievers: (optional)
             A list of retrievers which can be used to fetch intermediate certificates which can be sent as part of the Auth Service request. This is an optional parameter
 
-        :param cert_bundle_verify (optional):
+        :param cert_bundle_verify: (optional)
             If we need a specific cert bundle in order to perform verification against the federation endpoint, this parameter is the path to that bundle. Alternatively,
             False can be passed to disable verification.
         :type cert_bundle_verify: str or Boolean
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to calls made by this client. This should be one of the strategies available in
+            the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` is also available and
+            will be used if no explicit retry strategy is specified.
+
+            The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
         """
 
         kwarg_keys = kwargs.keys()
@@ -81,12 +91,18 @@ class X509FederationClient(object):
         self.cert_bundle_verify = kwargs.get('cert_bundle_verify', None)
         self._refresh_lock = threading.Lock()
 
+        retry_strategy = kwargs.get('retry_strategy', None)
+        if retry_strategy:
+            self.retry_strategy = retry_strategy
+        else:
+            self.retry_strategy = oci.retry.DEFAULT_RETRY_STRATEGY
+
     def refresh_security_token(self):
         return self._refresh_security_token_inner()
 
     def get_security_token(self):
         if hasattr(self, 'security_token'):
-            if self.security_token.valid():
+            if self.security_token.valid_with_jitter():
                 return self.security_token.security_token
 
         return self._refresh_security_token_inner()
@@ -104,7 +120,7 @@ class X509FederationClient(object):
             for retriever in self.intermediate_certificate_retrievers:
                 retriever.refresh()
 
-            self._get_security_token_from_auth_service()
+            self.retry_strategy.make_retrying_call(self._get_security_token_from_auth_service)
             return self.security_token.security_token
         finally:
             self._refresh_lock.release()
@@ -134,7 +150,21 @@ class X509FederationClient(object):
         try:
             parsed_response = response.json()
         except ValueError:
-            raise RuntimeError('Unable to parse response from auth service ({}): {}'.format(self.federation_endpoint, response.text))
+            error_text = 'Unable to parse response from auth service ({}): {}'.format(self.federation_endpoint, response.text)
+
+            # If the response was a 2xx but unparseable, raise it straight away because it implies a potential service issue. If
+            # we have a non-2xx but it is not parseable that is a more ambiguous scenario (e.g. could have been an issue with a
+            # proxy or LB and those generally won't emit a JSON response) so throw it out a ServiceError so it can fall into
+            # retry logic (depending on the error code)
+            if response.ok:
+                raise RuntimeError(error_text)
+            else:
+                raise oci.exceptions.ServiceError(
+                    response.status_code,
+                    response.reason,
+                    response.headers,
+                    error_text
+                )
 
         if not response.ok:
             raise oci.exceptions.ServiceError(
@@ -153,8 +183,6 @@ class X509FederationClient(object):
 class AuthTokenRequestSigner(oci.signer.AbstractBaseSigner):
     """
     A signer intended for X509FederationClient's use to request a token from Auth Service. Not intended for general use.
-
-
     """
 
     def __init__(self, tenancy_id, fingerprint, private_key_certificate_retriever):

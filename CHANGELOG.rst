@@ -5,6 +5,29 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.0.0 - 2018-07-26
+====================
+
+Added
+-----
+* Support for the OCI Search service
+* Support for specifying a backup policy when creating a boot volume in the Block Storage service
+* Added retries to the InstancePrincipalsSecurityTokenSigner when trying to refresh security tokens
+
+Changed
+-------
+* Add six, requests, urllib3, idna, and chardet as vendored packages.
+
+Fixed
+-----
+* Downloading an object from Object Storage could fail without an exception if the connection was closed while the object was being transmitted.
+
+Breaking
+--------
+* The base exception from requests, `requests.exceptions.RequestException`, has been wrapped in oci.exceptions.RequestExceptions
+* `requests.exceptions.ConnectTimeout` has been wrapped in oci.exceptions.ConnectTimeout
+
+====================
 1.4.5 - 2018-07-12
 ====================
 

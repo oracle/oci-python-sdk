@@ -27,7 +27,7 @@ from __future__ import absolute_import
 import configparser
 import os.path
 import re
-import six
+from oci._vendor import six
 
 from .exceptions import ConfigFileNotFound, ProfileNotFound, InvalidConfig
 from .auth import signers

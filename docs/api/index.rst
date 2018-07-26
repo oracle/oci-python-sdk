@@ -284,6 +284,31 @@ Object Storage
     :noindex:
 
 
+===============
+Resource Search
+===============
+
+--------
+ Client
+--------
+
+.. autoclass:: oci.resource_search.resource_search_client.ResourceSearchClient
+    :members:
+    :noindex:
+
+--------
+ Models
+--------
+
+.. automodule:: oci.resource_search.models
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :imported-members:
+    :inherited-members:
+    :noindex:
+
+
 ================
  Upload Manager
 ================

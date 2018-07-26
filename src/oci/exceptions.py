@@ -1,6 +1,9 @@
 # coding: utf-8
 # Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
+from oci._vendor.requests.exceptions import RequestException as BaseRequestException
+from oci._vendor.requests.exceptions import ConnectTimeout as BaseConnectTimeout
+
 
 class ServiceError(Exception):
     """The service returned an error response."""
@@ -109,3 +112,14 @@ class CompositeOperationError(Exception):
     def __init__(self, partial_results=[], cause=None):
         self.partial_results = partial_results
         self.cause = cause
+
+
+class RequestException(BaseRequestException):
+    """An exception occurred when making the request"""
+
+
+class ConnectTimeout(BaseConnectTimeout):
+    """The request timed out while trying to connect to the remote server.
+
+    Requests that produced this error are safe to retry.
+    """
