@@ -871,7 +871,7 @@
                                 <include>scripts/wercker_validate.py</include>
                             </includes>
                             <excludes>
-                                <exclude>src/oci/_vendor/httpsig_cffi/*.py</exclude>
+                                <exclude>src/oci/_vendor/**/*.py</exclude>
                             </excludes>
                             <properties>
                                 <current.year>${current.year}</current.year>
