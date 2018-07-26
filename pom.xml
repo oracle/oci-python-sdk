@@ -9,19 +9,19 @@
         <spec-temp-dir>${project.build.directory}/swagger</spec-temp-dir>
         <preferred-temp-dir>${project.build.directory}/preferred</preferred-temp-dir>
         <preprocessed-temp-dir>${project.build.directory}/preprocessed</preprocessed-temp-dir>
-        <core-spec-file>coreservices-api-spec-20160918.cond.yaml</core-spec-file>
-        <identity-spec-file>identity-control-plane-api-spec-20160918.yaml</identity-spec-file>
-        <casper-spec-file>casper-api.yaml</casper-spec-file>
-        <oralb-spec-file>spec-20170115.yaml</oralb-spec-file>
-        <dbaas-spec-file>dbaas-api-spec-20160918.yaml</dbaas-spec-file>
-        <audit-spec-file>hemlock-api-20160918.yaml</audit-spec-file>
+        <coreservices-api-spec-spec-file>source/coreservices-api-spec-20160918.cond.yaml</coreservices-api-spec-spec-file>
+        <identity-control-plane-api-spec-spec-file>identity-control-plane-api-spec-20160918.yaml</identity-control-plane-api-spec-spec-file>
+        <casper-api-spec-spec-file>casper-api.yaml</casper-api-spec-spec-file>
+        <oralb-api-spec-spec-file>spec-20170115.yaml</oralb-api-spec-spec-file>
+        <dbaas-api-spec-spec-file>dbaas-api-spec-20160918.yaml</dbaas-api-spec-spec-file>
+        <fss-api-spec-spec-file>fss-api-spec-20171215.yaml</fss-api-spec-spec-file>
+        <hemlock-spec-spec-file>hemlock-api-20160918.yaml</hemlock-spec-spec-file>
+        <email-api-spec-spec-file>email-api-spec.yaml</email-api-spec-spec-file>
+        <public-dns-api-spec-spec-file>public-dns-api-spec.yaml</public-dns-api-spec-spec-file>
         <enabled-groups-file>${project.basedir}/release-sdk.txt</enabled-groups-file>
         <inceptionYear>2016</inceptionYear>
-        <dns-spec-file>public-dns-api-spec.yaml</dns-spec-file>
-        <file_storage-spec-file>fss-api-spec-20171215.yaml</file_storage-spec-file>
-        <email-spec-file>email-api-spec.yaml</email-spec-file>
-        <container_engine-spec-file>clusters-api-spec.yaml</container_engine-spec-file>
-        <resource_search-spec-file>rqs.yaml</resource_search-spec-file>
+        <resource-query-service-spec-spec-file>rqs.yaml</resource-query-service-spec-spec-file>
+        <clusters-api-spec-spec-file>clusters-api-spec.yaml</clusters-api-spec-spec-file>
     </properties>
     <dependencies>
         <dependency>
@@ -94,7 +94,7 @@
                 <version>2.10</version>
                 <executions>
                     <execution>
-                        <id>unpack-coreservices</id>
+                        <id>unpack-coreservices-api-spec</id>
                         <phase>initialize</phase>
                         <goals>
                             <goal>unpack</goal>
@@ -106,13 +106,13 @@
                                     <artifactId>coreservices-api-spec</artifactId>
                                     <type>jar</type>
                                     <includes>**/*</includes>
-                                    <outputDirectory>${spec-temp-dir}/core</outputDirectory>
+                                    <outputDirectory>${spec-temp-dir}/coreservices-api-spec</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>unpack-identity</id>
+                        <id>unpack-identity-control-plane-api-spec</id>
                         <phase>initialize</phase>
                         <goals>
                             <goal>unpack</goal>
@@ -124,13 +124,13 @@
                                     <artifactId>identity-control-plane-api-spec</artifactId>
                                     <type>jar</type>
                                     <includes>**/*</includes>
-                                    <outputDirectory>${spec-temp-dir}/identity</outputDirectory>
+                                    <outputDirectory>${spec-temp-dir}/identity-control-plane-api-spec</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>unpack-casper</id>
+                        <id>unpack-casper-api-spec</id>
                         <phase>initialize</phase>
                         <goals>
                             <goal>unpack</goal>
@@ -142,13 +142,13 @@
                                     <artifactId>casper-api-spec</artifactId>
                                     <type>jar</type>
                                     <includes>**/*</includes>
-                                    <outputDirectory>${spec-temp-dir}/casper</outputDirectory>
+                                    <outputDirectory>${spec-temp-dir}/casper-api-spec</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>unpack-oralb</id>
+                        <id>unpack-oralb-api-spec</id>
                         <phase>initialize</phase>
                         <goals>
                             <goal>unpack</goal>
@@ -160,13 +160,13 @@
                                     <artifactId>oralb-api-spec</artifactId>
                                     <type>jar</type>
                                     <includes>**/*</includes>
-                                    <outputDirectory>${spec-temp-dir}/oralb</outputDirectory>
+                                    <outputDirectory>${spec-temp-dir}/oralb-api-spec</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>unpack-database</id>
+                        <id>unpack-dbaas-api-spec</id>
                         <phase>initialize</phase>
                         <goals>
                             <goal>unpack</goal>
@@ -178,13 +178,13 @@
                                     <artifactId>dbaas-api-spec</artifactId>
                                     <type>jar</type>
                                     <includes>**/*</includes>
-                                    <outputDirectory>${spec-temp-dir}/dbaas</outputDirectory>
+                                    <outputDirectory>${spec-temp-dir}/dbaas-api-spec</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>unpack-audit</id>
+                        <id>unpack-hemlock-spec</id>
                         <phase>initialize</phase>
                         <goals>
                             <goal>unpack</goal>
@@ -196,13 +196,13 @@
                                     <artifactId>hemlock-spec</artifactId>
                                     <type>jar</type>
                                     <includes>**/*</includes>
-                                    <outputDirectory>${spec-temp-dir}/audit</outputDirectory>
+                                    <outputDirectory>${spec-temp-dir}/hemlock-spec</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>unpack-dns</id>
+                        <id>unpack-public-dns-api-spec</id>
                         <phase>initialize</phase>
                         <goals>
                             <goal>unpack</goal>
@@ -214,13 +214,13 @@
                                     <artifactId>public-dns-api-spec</artifactId>
                                     <type>jar</type>
                                     <includes>**/*</includes>
-                                    <outputDirectory>${spec-temp-dir}/dns</outputDirectory>
+                                    <outputDirectory>${spec-temp-dir}/public-dns-api-spec</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>unpack-file_storage</id>
+                        <id>unpack-fss-api-spec</id>
                         <phase>initialize</phase>
                         <goals>
                             <goal>unpack</goal>
@@ -232,13 +232,13 @@
                                     <artifactId>fss-api-spec</artifactId>
                                     <type>jar</type>
                                     <includes>**/*</includes>
-                                    <outputDirectory>${spec-temp-dir}/file_storage</outputDirectory>
+                                    <outputDirectory>${spec-temp-dir}/fss-api-spec</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>unpack-email</id>
+                        <id>unpack-email-api-spec</id>
                         <phase>initialize</phase>
                         <goals>
                             <goal>unpack</goal>
@@ -250,13 +250,13 @@
                                     <artifactId>email-api-spec</artifactId>
                                     <type>jar</type>
                                     <includes>**/*</includes>
-                                    <outputDirectory>${spec-temp-dir}/email</outputDirectory>
+                                    <outputDirectory>${spec-temp-dir}/email-api-spec</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>unpack-container_engine</id>
+                        <id>unpack-clusters-api-spec</id>
                         <phase>initialize</phase>
                         <goals>
                             <goal>unpack</goal>
@@ -268,13 +268,13 @@
                                     <artifactId>clusters-api-spec</artifactId>
                                     <type>jar</type>
                                     <includes>**/*</includes>
-                                    <outputDirectory>${spec-temp-dir}/container_engine</outputDirectory>
+                                    <outputDirectory>${spec-temp-dir}/clusters-api-spec</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>unpack-resource_search</id>
+                        <id>unpack-resource-query-service-spec</id>
                         <phase>initialize</phase>
                         <goals>
                             <goal>unpack</goal>
@@ -286,7 +286,7 @@
                                     <artifactId>resource-query-service-spec</artifactId>
                                     <type>jar</type>
                                     <includes>**/*</includes>
-                                    <outputDirectory>${spec-temp-dir}/resource_search</outputDirectory>
+                                    <outputDirectory>${spec-temp-dir}/resource-query-service-spec</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
@@ -299,288 +299,288 @@
                 <version>1.0.1-SNAPSHOT</version>
                 <executions>
                     <execution>
-                        <id>spec-conditionals-prefer-core</id>
+                        <id>spec-conditionals-prefer-coreservices-api-spec</id>
                         <phase>initialize</phase>
                         <goals>
                             <goal>prefer</goal>
                         </goals>
                         <configuration>
                             <inputFiles>
-                                <inputFile>${spec-temp-dir}/core/source/${core-spec-file}</inputFile>
-                                <inputFile>${spec-temp-dir}/core/20160918/${core-spec-file}</inputFile>
+                                <inputFile>${spec-temp-dir}/coreservices-api-spec/source/${coreservices-api-spec-spec-file}</inputFile>
+                                <inputFile>${spec-temp-dir}/coreservices-api-spec/${coreservices-api-spec-spec-file}</inputFile>
                             </inputFiles>
-                            <outputFile>${preferred-temp-dir}/${core-spec-file}</outputFile>
+                            <outputFile>${preferred-temp-dir}/${coreservices-api-spec-spec-file}</outputFile>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>spec-conditionals-preprocess-core-base</id>
+                        <id>spec-conditionals-preprocess-coreservices-api-spec</id>
                         <phase>initialize</phase>
                         <goals>
                             <goal>preprocess</goal>
                         </goals>
                         <configuration>
-                            <inputFile>${preferred-temp-dir}/${core-spec-file}</inputFile>
-                            <outputFile>${preprocessed-temp-dir}/${core-spec-file}</outputFile>
-                            <groupFile>${enabled-groups-file}</groupFile>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>spec-conditionals-prefer-identity</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>prefer</goal>
-                        </goals>
-                        <configuration>
-                            <inputFiles>
-                                <inputFile>${spec-temp-dir}/identity/source/${identity-spec-file}</inputFile>
-                                <inputFile>${spec-temp-dir}/identity/${identity-spec-file}</inputFile>
-                            </inputFiles>
-                            <outputFile>${preferred-temp-dir}/${identity-spec-file}</outputFile>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>spec-conditionals-preprocess-identity</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>preprocess</goal>
-                        </goals>
-                        <configuration>
-                            <inputFile>${preferred-temp-dir}/${identity-spec-file}</inputFile>
-                            <outputFile>${preprocessed-temp-dir}/${identity-spec-file}</outputFile>
-                            <groupFile>${enabled-groups-file}</groupFile>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>spec-conditionals-prefer-casper</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>prefer</goal>
-                        </goals>
-                        <configuration>
-                            <inputFiles>
-                                <inputFile>${spec-temp-dir}/casper/source/${casper-spec-file}</inputFile>
-                                <inputFile>${spec-temp-dir}/casper/${casper-spec-file}</inputFile>
-                            </inputFiles>
-                            <outputFile>${preferred-temp-dir}/${casper-spec-file}</outputFile>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>spec-conditionals-preprocess-casper</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>preprocess</goal>
-                        </goals>
-                        <configuration>
-                            <inputFile>${preferred-temp-dir}/${casper-spec-file}</inputFile>
-                            <outputFile>${preprocessed-temp-dir}/${casper-spec-file}</outputFile>
-                            <groupFile>${enabled-groups-file}</groupFile>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>spec-conditionals-prefer-oralb</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>prefer</goal>
-                        </goals>
-                        <configuration>
-                            <inputFiles>
-                                <inputFile>${spec-temp-dir}/oralb/source/${oralb-spec-file}</inputFile>
-                                <inputFile>${spec-temp-dir}/oralb/${oralb-spec-file}</inputFile>
-                            </inputFiles>
-                            <outputFile>${preferred-temp-dir}/${oralb-spec-file}</outputFile>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>spec-conditionals-preprocess-oralb</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>preprocess</goal>
-                        </goals>
-                        <configuration>
-                            <inputFile>${preferred-temp-dir}/${oralb-spec-file}</inputFile>
-                            <outputFile>${preprocessed-temp-dir}/${oralb-spec-file}</outputFile>
-                            <groupFile>${enabled-groups-file}</groupFile>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>spec-conditionals-prefer-dbaas</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>prefer</goal>
-                        </goals>
-                        <configuration>
-                            <inputFiles>
-                                <inputFile>${spec-temp-dir}/dbaas/source/${dbaas-spec-file}</inputFile>
-                                <inputFile>${spec-temp-dir}/dbaas/${dbaas-spec-file}</inputFile>
-                            </inputFiles>
-                            <outputFile>${preferred-temp-dir}/${dbaas-spec-file}</outputFile>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>spec-conditionals-preprocess-dbaas</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>preprocess</goal>
-                        </goals>
-                        <configuration>
-                            <inputFile>${preferred-temp-dir}/${dbaas-spec-file}</inputFile>
-                            <outputFile>${preprocessed-temp-dir}/${dbaas-spec-file}</outputFile>
-                            <groupFile>${enabled-groups-file}</groupFile>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>spec-conditionals-prefer-audit</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>prefer</goal>
-                        </goals>
-                        <configuration>
-                            <inputFiles>
-                                <inputFile>${spec-temp-dir}/audit/source/${audit-spec-file}</inputFile>
-                                <inputFile>${spec-temp-dir}/audit/${audit-spec-file}</inputFile>
-                            </inputFiles>
-                            <outputFile>${preferred-temp-dir}/${audit-spec-file}</outputFile>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>spec-conditionals-preprocess-audit</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>preprocess</goal>
-                        </goals>
-                        <configuration>
-                            <inputFile>${preferred-temp-dir}/${audit-spec-file}</inputFile>
-                            <outputFile>${preprocessed-temp-dir}/${audit-spec-file}</outputFile>
-                            <groupFile>${enabled-groups-file}</groupFile>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>spec-conditionals-prefer-dns</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>prefer</goal>
-                        </goals>
-                        <configuration>
-                            <inputFiles>
-                                <inputFile>${spec-temp-dir}/dns/source/${dns-spec-file}</inputFile>
-                                <inputFile>${spec-temp-dir}/dns/${dns-spec-file}</inputFile>
-                            </inputFiles>
-                            <outputFile>${preferred-temp-dir}/${dns-spec-file}</outputFile>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>spec-conditionals-preprocess-dns</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>preprocess</goal>
-                        </goals>
-                        <configuration>
-                            <inputFile>${preferred-temp-dir}/${dns-spec-file}</inputFile>
-                            <outputFile>${preprocessed-temp-dir}/${dns-spec-file}</outputFile>
+                            <inputFile>${preferred-temp-dir}/${coreservices-api-spec-spec-file}</inputFile>
+                            <outputFile>${preprocessed-temp-dir}/${coreservices-api-spec-spec-file}</outputFile>
                             <groupFile>${project.basedir}/release-sdk.txt</groupFile>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>spec-conditionals-prefer-file_storage</id>
+                        <id>spec-conditionals-prefer-identity-control-plane-api-spec</id>
                         <phase>initialize</phase>
                         <goals>
                             <goal>prefer</goal>
                         </goals>
                         <configuration>
                             <inputFiles>
-                                <inputFile>${spec-temp-dir}/file_storage/source/${file_storage-spec-file}</inputFile>
-                                <inputFile>${spec-temp-dir}/file_storage/${file_storage-spec-file}</inputFile>
+                                <inputFile>${spec-temp-dir}/identity-control-plane-api-spec/source/${identity-control-plane-api-spec-spec-file}</inputFile>
+                                <inputFile>${spec-temp-dir}/identity-control-plane-api-spec/${identity-control-plane-api-spec-spec-file}</inputFile>
                             </inputFiles>
-                            <outputFile>${preferred-temp-dir}/${file_storage-spec-file}</outputFile>
+                            <outputFile>${preferred-temp-dir}/${identity-control-plane-api-spec-spec-file}</outputFile>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>spec-conditionals-preprocess-file_storage</id>
+                        <id>spec-conditionals-preprocess-identity-control-plane-api-spec</id>
                         <phase>initialize</phase>
                         <goals>
                             <goal>preprocess</goal>
                         </goals>
                         <configuration>
-                            <inputFile>${preferred-temp-dir}/${file_storage-spec-file}</inputFile>
-                            <outputFile>${preprocessed-temp-dir}/${file_storage-spec-file}</outputFile>
+                            <inputFile>${preferred-temp-dir}/${identity-control-plane-api-spec-spec-file}</inputFile>
+                            <outputFile>${preprocessed-temp-dir}/${identity-control-plane-api-spec-spec-file}</outputFile>
                             <groupFile>${project.basedir}/release-sdk.txt</groupFile>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>spec-conditionals-prefer-email</id>
+                        <id>spec-conditionals-prefer-casper-api-spec</id>
                         <phase>initialize</phase>
                         <goals>
                             <goal>prefer</goal>
                         </goals>
                         <configuration>
                             <inputFiles>
-                                <inputFile>${spec-temp-dir}/email/source/${email-spec-file}</inputFile>
-                                <inputFile>${spec-temp-dir}/email/${email-spec-file}</inputFile>
+                                <inputFile>${spec-temp-dir}/casper-api-spec/source/${casper-api-spec-spec-file}</inputFile>
+                                <inputFile>${spec-temp-dir}/casper-api-spec/${casper-api-spec-spec-file}</inputFile>
                             </inputFiles>
-                            <outputFile>${preferred-temp-dir}/${email-spec-file}</outputFile>
+                            <outputFile>${preferred-temp-dir}/${casper-api-spec-spec-file}</outputFile>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>spec-conditionals-preprocess-email</id>
+                        <id>spec-conditionals-preprocess-casper-api-spec</id>
                         <phase>initialize</phase>
                         <goals>
                             <goal>preprocess</goal>
                         </goals>
                         <configuration>
-                            <inputFile>${preferred-temp-dir}/${email-spec-file}</inputFile>
-                            <outputFile>${preprocessed-temp-dir}/${email-spec-file}</outputFile>
+                            <inputFile>${preferred-temp-dir}/${casper-api-spec-spec-file}</inputFile>
+                            <outputFile>${preprocessed-temp-dir}/${casper-api-spec-spec-file}</outputFile>
                             <groupFile>${project.basedir}/release-sdk.txt</groupFile>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>spec-conditionals-prefer-container_engine</id>
+                        <id>spec-conditionals-prefer-oralb-api-spec</id>
                         <phase>initialize</phase>
                         <goals>
                             <goal>prefer</goal>
                         </goals>
                         <configuration>
                             <inputFiles>
-                                <inputFile>${spec-temp-dir}/container_engine/source/${container_engine-spec-file}</inputFile>
-                                <inputFile>${spec-temp-dir}/container_engine/${container_engine-spec-file}</inputFile>
+                                <inputFile>${spec-temp-dir}/oralb-api-spec/source/${oralb-api-spec-spec-file}</inputFile>
+                                <inputFile>${spec-temp-dir}/oralb-api-spec/${oralb-api-spec-spec-file}</inputFile>
                             </inputFiles>
-                            <outputFile>${preferred-temp-dir}/${container_engine-spec-file}</outputFile>
+                            <outputFile>${preferred-temp-dir}/${oralb-api-spec-spec-file}</outputFile>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>spec-conditionals-preprocess-container_engine</id>
+                        <id>spec-conditionals-preprocess-oralb-api-spec</id>
                         <phase>initialize</phase>
                         <goals>
                             <goal>preprocess</goal>
                         </goals>
                         <configuration>
-                            <inputFile>${preferred-temp-dir}/${container_engine-spec-file}</inputFile>
-                            <outputFile>${preprocessed-temp-dir}/${container_engine-spec-file}</outputFile>
+                            <inputFile>${preferred-temp-dir}/${oralb-api-spec-spec-file}</inputFile>
+                            <outputFile>${preprocessed-temp-dir}/${oralb-api-spec-spec-file}</outputFile>
                             <groupFile>${project.basedir}/release-sdk.txt</groupFile>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>spec-conditionals-prefer-resource_search</id>
+                        <id>spec-conditionals-prefer-dbaas-api-spec</id>
                         <phase>initialize</phase>
                         <goals>
                             <goal>prefer</goal>
                         </goals>
                         <configuration>
                             <inputFiles>
-                                <inputFile>${spec-temp-dir}/resource_search/source/${resource_search-spec-file}</inputFile>
-                                <inputFile>${spec-temp-dir}/resource_search/${resource_search-spec-file}</inputFile>
+                                <inputFile>${spec-temp-dir}/dbaas-api-spec/source/${dbaas-api-spec-spec-file}</inputFile>
+                                <inputFile>${spec-temp-dir}/dbaas-api-spec/${dbaas-api-spec-spec-file}</inputFile>
                             </inputFiles>
-                            <outputFile>${preferred-temp-dir}/${resource_search-spec-file}</outputFile>
+                            <outputFile>${preferred-temp-dir}/${dbaas-api-spec-spec-file}</outputFile>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>spec-conditionals-preprocess-resource_search</id>
+                        <id>spec-conditionals-preprocess-dbaas-api-spec</id>
                         <phase>initialize</phase>
                         <goals>
                             <goal>preprocess</goal>
                         </goals>
                         <configuration>
-                            <inputFile>${preferred-temp-dir}/${resource_search-spec-file}</inputFile>
-                            <outputFile>${preprocessed-temp-dir}/${resource_search-spec-file}</outputFile>
+                            <inputFile>${preferred-temp-dir}/${dbaas-api-spec-spec-file}</inputFile>
+                            <outputFile>${preprocessed-temp-dir}/${dbaas-api-spec-spec-file}</outputFile>
+                            <groupFile>${project.basedir}/release-sdk.txt</groupFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>spec-conditionals-prefer-fss-api-spec</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>prefer</goal>
+                        </goals>
+                        <configuration>
+                            <inputFiles>
+                                <inputFile>${spec-temp-dir}/fss-api-spec/source/${fss-api-spec-spec-file}</inputFile>
+                                <inputFile>${spec-temp-dir}/fss-api-spec/${fss-api-spec-spec-file}</inputFile>
+                            </inputFiles>
+                            <outputFile>${preferred-temp-dir}/${fss-api-spec-spec-file}</outputFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>spec-conditionals-preprocess-fss-api-spec</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>preprocess</goal>
+                        </goals>
+                        <configuration>
+                            <inputFile>${preferred-temp-dir}/${fss-api-spec-spec-file}</inputFile>
+                            <outputFile>${preprocessed-temp-dir}/${fss-api-spec-spec-file}</outputFile>
+                            <groupFile>${project.basedir}/release-sdk.txt</groupFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>spec-conditionals-prefer-hemlock-spec</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>prefer</goal>
+                        </goals>
+                        <configuration>
+                            <inputFiles>
+                                <inputFile>${spec-temp-dir}/hemlock-spec/source/${hemlock-spec-spec-file}</inputFile>
+                                <inputFile>${spec-temp-dir}/hemlock-spec/${hemlock-spec-spec-file}</inputFile>
+                            </inputFiles>
+                            <outputFile>${preferred-temp-dir}/${hemlock-spec-spec-file}</outputFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>spec-conditionals-preprocess-hemlock-spec</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>preprocess</goal>
+                        </goals>
+                        <configuration>
+                            <inputFile>${preferred-temp-dir}/${hemlock-spec-spec-file}</inputFile>
+                            <outputFile>${preprocessed-temp-dir}/${hemlock-spec-spec-file}</outputFile>
+                            <groupFile>${project.basedir}/release-sdk.txt</groupFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>spec-conditionals-prefer-email-api-spec</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>prefer</goal>
+                        </goals>
+                        <configuration>
+                            <inputFiles>
+                                <inputFile>${spec-temp-dir}/email-api-spec/source/${email-api-spec-spec-file}</inputFile>
+                                <inputFile>${spec-temp-dir}/email-api-spec/${email-api-spec-spec-file}</inputFile>
+                            </inputFiles>
+                            <outputFile>${preferred-temp-dir}/${email-api-spec-spec-file}</outputFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>spec-conditionals-preprocess-email-api-spec</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>preprocess</goal>
+                        </goals>
+                        <configuration>
+                            <inputFile>${preferred-temp-dir}/${email-api-spec-spec-file}</inputFile>
+                            <outputFile>${preprocessed-temp-dir}/${email-api-spec-spec-file}</outputFile>
+                            <groupFile>${project.basedir}/release-sdk.txt</groupFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>spec-conditionals-prefer-public-dns-api-spec</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>prefer</goal>
+                        </goals>
+                        <configuration>
+                            <inputFiles>
+                                <inputFile>${spec-temp-dir}/public-dns-api-spec/source/${public-dns-api-spec-spec-file}</inputFile>
+                                <inputFile>${spec-temp-dir}/public-dns-api-spec/${public-dns-api-spec-spec-file}</inputFile>
+                            </inputFiles>
+                            <outputFile>${preferred-temp-dir}/${public-dns-api-spec-spec-file}</outputFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>spec-conditionals-preprocess-public-dns-api-spec</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>preprocess</goal>
+                        </goals>
+                        <configuration>
+                            <inputFile>${preferred-temp-dir}/${public-dns-api-spec-spec-file}</inputFile>
+                            <outputFile>${preprocessed-temp-dir}/${public-dns-api-spec-spec-file}</outputFile>
+                            <groupFile>${project.basedir}/release-sdk.txt</groupFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>spec-conditionals-prefer-resource-query-service-spec</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>prefer</goal>
+                        </goals>
+                        <configuration>
+                            <inputFiles>
+                                <inputFile>${spec-temp-dir}/resource-query-service-spec/source/${resource-query-service-spec-spec-file}</inputFile>
+                                <inputFile>${spec-temp-dir}/resource-query-service-spec/${resource-query-service-spec-spec-file}</inputFile>
+                            </inputFiles>
+                            <outputFile>${preferred-temp-dir}/${resource-query-service-spec-spec-file}</outputFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>spec-conditionals-preprocess-resource-query-service-spec</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>preprocess</goal>
+                        </goals>
+                        <configuration>
+                            <inputFile>${preferred-temp-dir}/${resource-query-service-spec-spec-file}</inputFile>
+                            <outputFile>${preprocessed-temp-dir}/${resource-query-service-spec-spec-file}</outputFile>
+                            <groupFile>${project.basedir}/release-sdk.txt</groupFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>spec-conditionals-prefer-clusters-api-spec</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>prefer</goal>
+                        </goals>
+                        <configuration>
+                            <inputFiles>
+                                <inputFile>${spec-temp-dir}/clusters-api-spec/source/${clusters-api-spec-spec-file}</inputFile>
+                                <inputFile>${spec-temp-dir}/clusters-api-spec/${clusters-api-spec-spec-file}</inputFile>
+                            </inputFiles>
+                            <outputFile>${preferred-temp-dir}/${clusters-api-spec-spec-file}</outputFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>spec-conditionals-preprocess-clusters-api-spec</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>preprocess</goal>
+                        </goals>
+                        <configuration>
+                            <inputFile>${preferred-temp-dir}/${clusters-api-spec-spec-file}</inputFile>
+                            <outputFile>${preprocessed-temp-dir}/${clusters-api-spec-spec-file}</outputFile>
                             <groupFile>${project.basedir}/release-sdk.txt</groupFile>
                         </configuration>
                     </execution>
@@ -592,16 +592,17 @@
                 <version>1.32-SNAPSHOT</version>
                 <executions>
                     <execution>
-                        <id>python-public-sdk-identity</id>
+                        <id>python-public-sdk-identity-control-plane-api-spec-spec-file</id>
                         <phase>compile</phase>
                         <goals>
                             <goal>generate</goal>
                         </goals>
                         <configuration>
                             <language>oracle-python-sdk</language>
-                            <specPath>${preprocessed-temp-dir}/${identity-spec-file}</specPath>
+                            <specPath>${preprocessed-temp-dir}/${identity-control-plane-api-spec-spec-file}</specPath>
                             <outputDir>src/oci</outputDir>
                             <basePackage>OCI</basePackage>
+                            <specGenerationType>PUBLIC</specGenerationType>
                             <additionalProperties>
                                 <specName>identity</specName>
                                 <endpoint>https://identity.{domain}/20160918</endpoint>
@@ -610,16 +611,17 @@
                         </configuration>
                     </execution>
                     <execution>
-                        <id>python-public-sdk-coreservices</id>
+                        <id>python-public-sdk-coreservices-api-spec</id>
                         <phase>compile</phase>
                         <goals>
                             <goal>generate</goal>
                         </goals>
                         <configuration>
                             <language>oracle-python-sdk</language>
-                            <specPath>${preprocessed-temp-dir}/${core-spec-file}</specPath>
+                            <specPath>${preprocessed-temp-dir}/${coreservices-api-spec-spec-file}</specPath>
                             <outputDir>src/oci</outputDir>
                             <basePackage>OCI</basePackage>
+                            <specGenerationType>PUBLIC</specGenerationType>
                             <additionalProperties>
                                 <specName>core</specName>
                                 <endpoint>https://iaas.{domain}/20160918</endpoint>
@@ -628,16 +630,17 @@
                         </configuration>
                     </execution>
                     <execution>
-                        <id>python-public-sdk-casper</id>
+                        <id>python-public-sdk-casper-api-spec</id>
                         <phase>compile</phase>
                         <goals>
                             <goal>generate</goal>
                         </goals>
                         <configuration>
                             <language>oracle-python-sdk</language>
-                            <specPath>${preprocessed-temp-dir}/${casper-spec-file}</specPath>
+                            <specPath>${preprocessed-temp-dir}/${casper-api-spec-spec-file}</specPath>
                             <outputDir>src/oci</outputDir>
                             <basePackage>OCI</basePackage>
+                            <specGenerationType>PUBLIC</specGenerationType>
                             <additionalProperties>
                                 <specName>object_storage</specName>
                                 <generateInitFile>false</generateInitFile>
@@ -647,16 +650,17 @@
                         </configuration>
                     </execution>
                     <execution>
-                        <id>python-public-sdk-oralb</id>
+                        <id>python-public-sdk-oralb-api-spec</id>
                         <phase>compile</phase>
                         <goals>
                             <goal>generate</goal>
                         </goals>
                         <configuration>
                             <language>oracle-python-sdk</language>
-                            <specPath>${preprocessed-temp-dir}/${oralb-spec-file}</specPath>
+                            <specPath>${preprocessed-temp-dir}/${oralb-api-spec-spec-file}</specPath>
                             <outputDir>src/oci</outputDir>
                             <basePackage>OCI</basePackage>
+                            <specGenerationType>PUBLIC</specGenerationType>
                             <additionalProperties>
                                 <specName>load_balancer</specName>
                                 <generateInitFile>true</generateInitFile>
@@ -666,16 +670,17 @@
                         </configuration>
                     </execution>
                     <execution>
-                        <id>python-public-sdk-dbaas</id>
+                        <id>python-public-sdk-dbaas-api-spec</id>
                         <phase>compile</phase>
                         <goals>
                             <goal>generate</goal>
                         </goals>
                         <configuration>
                             <language>oracle-python-sdk</language>
-                            <specPath>${preprocessed-temp-dir}/${dbaas-spec-file}</specPath>
+                            <specPath>${preprocessed-temp-dir}/${dbaas-api-spec-spec-file}</specPath>
                             <outputDir>src/oci</outputDir>
                             <basePackage>OCI</basePackage>
+                            <specGenerationType>PUBLIC</specGenerationType>
                             <additionalProperties>
                                 <specName>database</specName>
                                 <generateInitFile>true</generateInitFile>
@@ -685,53 +690,14 @@
                         </configuration>
                     </execution>
                     <execution>
-                        <id>python-public-sdk-audit</id>
+                        <id>python-public-sdk-fss-api-spec</id>
                         <phase>compile</phase>
                         <goals>
                             <goal>generate</goal>
                         </goals>
                         <configuration>
                             <language>oracle-python-sdk</language>
-                            <specPath>${preprocessed-temp-dir}/${audit-spec-file}</specPath>
-                            <outputDir>src/oci</outputDir>
-                            <basePackage>OCI</basePackage>
-                            <additionalProperties>
-                                <specName>audit</specName>
-                                <generateInitFile>true</generateInitFile>
-                                <endpoint>https://audit.{domain}/20160918</endpoint>
-                            </additionalProperties>
-                            <featureIdConfigFile>${project.basedir}/featureId.yaml</featureIdConfigFile>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>python-public-sdk-dns</id>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <configuration>
-                            <language>oracle-python-sdk</language>
-                            <specPath>${preprocessed-temp-dir}/${dns-spec-file}</specPath>
-                            <outputDir>src/oci</outputDir>
-                            <basePackage>OCI</basePackage>
-                            <specGenerationType>PUBLIC</specGenerationType>
-                            <additionalProperties>
-                                <specName>dns</specName>
-                                <generateInitFile>true</generateInitFile>
-                                <endpoint>https://dns.{domain}/20180115</endpoint>
-                            </additionalProperties>
-                            <featureIdConfigFile>${project.basedir}/featureId.yaml</featureIdConfigFile>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>python-public-sdk-file_storage</id>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <configuration>
-                            <language>oracle-python-sdk</language>
-                            <specPath>${preprocessed-temp-dir}/${file_storage-spec-file}</specPath>
+                            <specPath>${preprocessed-temp-dir}/${fss-api-spec-spec-file}</specPath>
                             <outputDir>src/oci</outputDir>
                             <basePackage>OCI</basePackage>
                             <specGenerationType>PUBLIC</specGenerationType>
@@ -744,14 +710,34 @@
                         </configuration>
                     </execution>
                     <execution>
-                        <id>python-public-sdk-email</id>
+                        <id>python-public-sdk-hemlock-spec</id>
                         <phase>compile</phase>
                         <goals>
                             <goal>generate</goal>
                         </goals>
                         <configuration>
                             <language>oracle-python-sdk</language>
-                            <specPath>${preprocessed-temp-dir}/${email-spec-file}</specPath>
+                            <specPath>${preprocessed-temp-dir}/${hemlock-spec-spec-file}</specPath>
+                            <outputDir>src/oci</outputDir>
+                            <basePackage>OCI</basePackage>
+                            <specGenerationType>PUBLIC</specGenerationType>
+                            <additionalProperties>
+                                <specName>audit</specName>
+                                <generateInitFile>true</generateInitFile>
+                                <endpoint>https://audit.{domain}/20160918</endpoint>
+                            </additionalProperties>
+                            <featureIdConfigFile>${project.basedir}/featureId.yaml</featureIdConfigFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>python-public-sdk-email-api-spec</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <language>oracle-python-sdk</language>
+                            <specPath>${preprocessed-temp-dir}/${email-api-spec-spec-file}</specPath>
                             <outputDir>src/oci</outputDir>
                             <basePackage>OCI</basePackage>
                             <specGenerationType>PUBLIC</specGenerationType>
@@ -764,14 +750,34 @@
                         </configuration>
                     </execution>
                     <execution>
-                        <id>python-public-sdk-container_engine</id>
+                        <id>python-public-sdk-public-dns-api-spec</id>
                         <phase>compile</phase>
                         <goals>
                             <goal>generate</goal>
                         </goals>
                         <configuration>
                             <language>oracle-python-sdk</language>
-                            <specPath>${preprocessed-temp-dir}/${container_engine-spec-file}</specPath>
+                            <specPath>${preprocessed-temp-dir}/${public-dns-api-spec-spec-file}</specPath>
+                            <outputDir>src/oci</outputDir>
+                            <basePackage>OCI</basePackage>
+                            <specGenerationType>PUBLIC</specGenerationType>
+                            <additionalProperties>
+                                <specName>dns</specName>
+                                <generateInitFile>true</generateInitFile>
+                                <endpoint>https://dns.{domain}/20180115</endpoint>
+                            </additionalProperties>
+                            <featureIdConfigFile>${project.basedir}/featureId.yaml</featureIdConfigFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>python-public-sdk-clusters-api-spec</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <language>oracle-python-sdk</language>
+                            <specPath>${preprocessed-temp-dir}/${clusters-api-spec-spec-file}</specPath>
                             <outputDir>src/oci</outputDir>
                             <basePackage>OCI</basePackage>
                             <specGenerationType>PUBLIC</specGenerationType>
@@ -784,14 +790,14 @@
                         </configuration>
                     </execution>
                     <execution>
-                        <id>python-public-sdk-resource_search</id>
+                        <id>python-public-sdk-resource-query-service-spec</id>
                         <phase>compile</phase>
                         <goals>
                             <goal>generate</goal>
                         </goals>
                         <configuration>
                             <language>oracle-python-sdk</language>
-                            <specPath>${preprocessed-temp-dir}/${resource_search-spec-file}</specPath>
+                            <specPath>${preprocessed-temp-dir}/${resource-query-service-spec-spec-file}</specPath>
                             <outputDir>src/oci</outputDir>
                             <basePackage>OCI</basePackage>
                             <specGenerationType>PUBLIC</specGenerationType>
@@ -1008,36 +1014,6 @@
                                 <exclude>object_storage/transfer/internal/*</exclude>
                                 <exclude>object_storage/__init__.py</exclude>
                             </excludes>
-                        </fileset>
-                        <fileset>
-                            <directory>src/oci/dns</directory>
-                            <includes>
-                                <include>**/*</include>
-                            </includes>
-                        </fileset>
-                        <fileset>
-                            <directory>src/oci/file_storage</directory>
-                            <includes>
-                                <include>**/*</include>
-                            </includes>
-                        </fileset>
-                        <fileset>
-                            <directory>src/oci/email</directory>
-                            <includes>
-                                <include>**/*</include>
-                            </includes>
-                        </fileset>
-                        <fileset>
-                            <directory>src/oci/container_engine</directory>
-                            <includes>
-                                <include>**/*</include>
-                            </includes>
-                        </fileset>
-                        <fileset>
-                            <directory>src/oci/resource_search</directory>
-                            <includes>
-                                <include>**/*</include>
-                            </includes>
                         </fileset>
                     </filesets>
                 </configuration>
