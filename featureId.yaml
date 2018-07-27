@@ -59,3 +59,5 @@ whitelisted:
   - udx-677
   # Block Storage: Set Schedule Backup policy on Boot Volume creation
   - udx-1192
+  # Core: Fault Domains
+  - udx-588

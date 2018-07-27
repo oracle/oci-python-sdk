@@ -91,6 +91,10 @@ class Instance(object):
             The value to assign to the extended_metadata property of this Instance.
         :type extended_metadata: dict(str, object)
 
+        :param fault_domain:
+            The value to assign to the fault_domain property of this Instance.
+        :type fault_domain: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Instance.
         :type freeform_tags: dict(str, str)
@@ -150,6 +154,7 @@ class Instance(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'extended_metadata': 'dict(str, object)',
+            'fault_domain': 'str',
             'freeform_tags': 'dict(str, str)',
             'id': 'str',
             'image_id': 'str',
@@ -170,6 +175,7 @@ class Instance(object):
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'extended_metadata': 'extendedMetadata',
+            'fault_domain': 'faultDomain',
             'freeform_tags': 'freeformTags',
             'id': 'id',
             'image_id': 'imageId',
@@ -189,6 +195,7 @@ class Instance(object):
         self._defined_tags = None
         self._display_name = None
         self._extended_metadata = None
+        self._fault_domain = None
         self._freeform_tags = None
         self._id = None
         self._image_id = None
@@ -345,6 +352,42 @@ class Instance(object):
         :type: dict(str, object)
         """
         self._extended_metadata = extended_metadata
+
+    @property
+    def fault_domain(self):
+        """
+        Gets the fault_domain of this Instance.
+        The name of the Fault Domain the instance is running in.
+
+        A Fault Domain is a logical grouping of hardware and infrastructure within an Availability Domain that can become
+        unavailable in its entirety either due to hardware failure such as Top-of-rack (TOR) switch failure or due to
+        planned software maintenance such as security updates that reboot your instances.
+
+        Example: `FAULT-DOMAIN-1`
+
+
+        :return: The fault_domain of this Instance.
+        :rtype: str
+        """
+        return self._fault_domain
+
+    @fault_domain.setter
+    def fault_domain(self, fault_domain):
+        """
+        Sets the fault_domain of this Instance.
+        The name of the Fault Domain the instance is running in.
+
+        A Fault Domain is a logical grouping of hardware and infrastructure within an Availability Domain that can become
+        unavailable in its entirety either due to hardware failure such as Top-of-rack (TOR) switch failure or due to
+        planned software maintenance such as security updates that reboot your instances.
+
+        Example: `FAULT-DOMAIN-1`
+
+
+        :param fault_domain: The fault_domain of this Instance.
+        :type: str
+        """
+        self._fault_domain = fault_domain
 
     @property
     def freeform_tags(self):

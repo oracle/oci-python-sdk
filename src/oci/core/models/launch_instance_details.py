@@ -42,6 +42,10 @@ class LaunchInstanceDetails(object):
             The value to assign to the extended_metadata property of this LaunchInstanceDetails.
         :type extended_metadata: dict(str, object)
 
+        :param fault_domain:
+            The value to assign to the fault_domain property of this LaunchInstanceDetails.
+        :type fault_domain: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this LaunchInstanceDetails.
         :type freeform_tags: dict(str, str)
@@ -82,6 +86,7 @@ class LaunchInstanceDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'extended_metadata': 'dict(str, object)',
+            'fault_domain': 'str',
             'freeform_tags': 'dict(str, str)',
             'hostname_label': 'str',
             'image_id': 'str',
@@ -99,6 +104,7 @@ class LaunchInstanceDetails(object):
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'extended_metadata': 'extendedMetadata',
+            'fault_domain': 'faultDomain',
             'freeform_tags': 'freeformTags',
             'hostname_label': 'hostnameLabel',
             'image_id': 'imageId',
@@ -115,6 +121,7 @@ class LaunchInstanceDetails(object):
         self._defined_tags = None
         self._display_name = None
         self._extended_metadata = None
+        self._fault_domain = None
         self._freeform_tags = None
         self._hostname_label = None
         self._image_id = None
@@ -293,6 +300,40 @@ class LaunchInstanceDetails(object):
         :type: dict(str, object)
         """
         self._extended_metadata = extended_metadata
+
+    @property
+    def fault_domain(self):
+        """
+        Gets the fault_domain of this LaunchInstanceDetails.
+        The name of the Fault Domain in which to launch an instance.
+
+        To get a list of Fault Domains, use the :func:`list_fault_domains`
+        operation in the Identity and Access Management Service API.
+
+        Example: `FAULT-DOMAIN-1`
+
+
+        :return: The fault_domain of this LaunchInstanceDetails.
+        :rtype: str
+        """
+        return self._fault_domain
+
+    @fault_domain.setter
+    def fault_domain(self, fault_domain):
+        """
+        Sets the fault_domain of this LaunchInstanceDetails.
+        The name of the Fault Domain in which to launch an instance.
+
+        To get a list of Fault Domains, use the :func:`list_fault_domains`
+        operation in the Identity and Access Management Service API.
+
+        Example: `FAULT-DOMAIN-1`
+
+
+        :param fault_domain: The fault_domain of this LaunchInstanceDetails.
+        :type: str
+        """
+        self._fault_domain = fault_domain
 
     @property
     def freeform_tags(self):
