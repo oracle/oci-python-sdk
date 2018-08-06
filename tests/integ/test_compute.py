@@ -188,6 +188,9 @@ class TestCompute:
         result = compute.list_volume_attachments(util.COMPARTMENT_ID, instance_id=self.instance_ocid)
         util.validate_response(result)
 
+        result = compute.list_boot_volume_attachments(util.availability_domain(), util.COMPARTMENT_ID)
+        util.validate_response(result)
+
         result = compute.get_volume_attachment(self.va_ocid)
         util.validate_response(result, expect_etag=True)
 
