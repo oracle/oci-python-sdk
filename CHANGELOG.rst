@@ -5,12 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
-2.0.1 - TBD
+2.0.1 - 2018-08-09
 ====================
 
 Added
 -----
-* TBD
+* Support for fault domains in the Compute service
+* A sample showing how to use Search service from the SDK is available on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/search_example.py>`__.
 
 ====================
 2.0.0 - 2018-07-26
