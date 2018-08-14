@@ -1,0 +1,3 @@
+[submodule "scripts/auto_gen_utils"]
+	path = scripts/auto_gen_utils
+	url = ssh://git@bitbucket.oci.oraclecorp.com:7999/sdk/auto-gen-utils.git
