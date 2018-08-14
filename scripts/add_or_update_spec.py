@@ -153,6 +153,13 @@ def update_relative_spec_path(pom, artifact_id, spec_path_relative_to_jar):
     spec_file_node.text = spec_path_relative_to_jar
 
 
+def update_endpoint(pom, artifact_id, endpoint):
+    xpath = ".//ns:properties/ns:{artifact_id}-spec-file".format(artifact_id=artifact_id)
+    spec_file_node = pom.findall(xpath, ns)[0]
+    endpoint_node = pom.findall(".//ns:plugin[ns:artifactId='bmc-sdk-swagger-maven-plugin']/ns:executions/ns:execution[ns:id='python-public-sdk-{artifact_id}-spec-file']//ns:additionalProperties/ns:endpoint".format(artifact_id=artifact_id), ns)[0]
+    endpoint_node.text = endpoint
+
+
 def generate_and_add_unpack_element(pom, group_id, artifact_id, spec_path_relative_to_jar):
     content = UNPACK_EXECUTION_TEMPLATE.format(
         group_id=group_id,
@@ -315,6 +322,11 @@ def add_or_update_spec(artifact_id=None, group_id=None, spec_name=None, relative
 
         if relative_spec_path:
             update_relative_spec_path(pom, artifact_id, relative_spec_path)
+
+        if endpoint:
+            update_endpoint(pom, artifact_id, endpoint)
+        elif subdomain:
+            update_endpoint(pom, artifact_id, 'https://{}.{{domain}}'.format(subdomain))
 
     else:
         if subdomain and not endpoint:
