@@ -65,7 +65,7 @@ PREFER_EXECUTION_TEMPLATE = """
             <!-- Old layout: ./<spec.proto.yaml> -->
             <inputFile>${{spec-temp-dir}}/{artifact_id}/${{{artifact_id}-spec-file}}</inputFile>
         </inputFiles>
-        <outputFile>${{preferred-temp-dir}}/${{{artifact_id}-spec-file}}</outputFile>
+        <outputFile>${{preferred-temp-dir}}/{artifact_id}/${{{artifact_id}-spec-file}}</outputFile>
     </configuration>
 </execution>
 """
@@ -96,7 +96,7 @@ GENERATE_EXECUTION_TEMPLATE = """
     </goals>
     <configuration>
         <language>oracle-python-sdk</language>
-        <specPath>${{preprocessed-temp-dir}}/${{{artifact_id}-spec-file}}</specPath>
+        <specPath>${{preprocessed-temp-dir}}/{artifact_id}/${{{artifact_id}-spec-file}}</specPath>
         <outputDir>src/oci</outputDir>
         <basePackage>OCI</basePackage>
         <specGenerationType>{spec_generation_type}</specGenerationType>
@@ -304,7 +304,7 @@ def add_spec_module_to_github_whitelist(spec_name, github_whitelist_location):
 def add_or_update_spec(artifact_id=None, group_id=None, spec_name=None, relative_spec_path=None, endpoint=None, subdomain=None, version=None, spec_generation_type=None, regional_sub_service_overrides=None, non_regional_sub_service_overrides=None, pom_location=None, github_whitelist_location=None):
     if not artifact_id:
         raise click.exceptions.MissingParameter(message='Artifact id parameter is required')
-    
+
     pom = parse_pom(pom_location)
 
     # force format of spec_name to (lower) snake case for consistency with standards of python SDK and CLI
