@@ -29,22 +29,29 @@ class UpdateBootVolumeDetails(object):
             The value to assign to the freeform_tags property of this UpdateBootVolumeDetails.
         :type freeform_tags: dict(str, str)
 
+        :param size_in_gbs:
+            The value to assign to the size_in_gbs property of this UpdateBootVolumeDetails.
+        :type size_in_gbs: int
+
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
-            'freeform_tags': 'dict(str, str)'
+            'freeform_tags': 'dict(str, str)',
+            'size_in_gbs': 'int'
         }
 
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
-            'freeform_tags': 'freeformTags'
+            'freeform_tags': 'freeformTags',
+            'size_in_gbs': 'sizeInGBs'
         }
 
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
+        self._size_in_gbs = None
 
     @property
     def defined_tags(self):
@@ -141,6 +148,30 @@ class UpdateBootVolumeDetails(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def size_in_gbs(self):
+        """
+        Gets the size_in_gbs of this UpdateBootVolumeDetails.
+        The size to resize the volume to in GBs. Has to be larger than the current size.
+
+
+        :return: The size_in_gbs of this UpdateBootVolumeDetails.
+        :rtype: int
+        """
+        return self._size_in_gbs
+
+    @size_in_gbs.setter
+    def size_in_gbs(self, size_in_gbs):
+        """
+        Sets the size_in_gbs of this UpdateBootVolumeDetails.
+        The size to resize the volume to in GBs. Has to be larger than the current size.
+
+
+        :param size_in_gbs: The size_in_gbs of this UpdateBootVolumeDetails.
+        :type: int
+        """
+        self._size_in_gbs = size_in_gbs
 
     def __repr__(self):
         return formatted_flat_dict(self)
