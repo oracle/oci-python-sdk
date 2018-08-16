@@ -25,6 +25,10 @@ class AvailabilityDomain(object):
             The value to assign to the name property of this AvailabilityDomain.
         :type name: str
 
+        :param id:
+            The value to assign to the id property of this AvailabilityDomain.
+        :type id: str
+
         :param compartment_id:
             The value to assign to the compartment_id property of this AvailabilityDomain.
         :type compartment_id: str
@@ -32,15 +36,18 @@ class AvailabilityDomain(object):
         """
         self.swagger_types = {
             'name': 'str',
+            'id': 'str',
             'compartment_id': 'str'
         }
 
         self.attribute_map = {
             'name': 'name',
+            'id': 'id',
             'compartment_id': 'compartmentId'
         }
 
         self._name = None
+        self._id = None
         self._compartment_id = None
 
     @property
@@ -66,6 +73,30 @@ class AvailabilityDomain(object):
         :type: str
         """
         self._name = name
+
+    @property
+    def id(self):
+        """
+        Gets the id of this AvailabilityDomain.
+        The OCID of the Availability Domain.
+
+
+        :return: The id of this AvailabilityDomain.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """
+        Sets the id of this AvailabilityDomain.
+        The OCID of the Availability Domain.
+
+
+        :param id: The id of this AvailabilityDomain.
+        :type: str
+        """
+        self._id = id
 
     @property
     def compartment_id(self):
