@@ -1025,7 +1025,7 @@
             <dependency>
                 <groupId>com.oracle.pic.commons</groupId>
                 <artifactId>coreservices-api-spec</artifactId>
-                <version>0.2.202</version>
+                <version>0.2.234</version>
             </dependency>
             <dependency>
                 <groupId>com.oracle.pic.identity</groupId>

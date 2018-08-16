@@ -27,3 +27,4 @@ udx-677
 udx-1192
 # Compute: Fault Domains
 udx-588
+udx-834
