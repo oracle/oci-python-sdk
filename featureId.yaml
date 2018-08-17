@@ -62,3 +62,4 @@ whitelisted:
   # Compute: Fault Domains
   - udx-588
   - udx-834
+  - 1240
