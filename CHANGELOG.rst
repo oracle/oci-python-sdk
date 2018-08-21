@@ -5,12 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
-2.0.2 - TBD
+2.0.2 - 2018-08-23
 ====================
 
 Added
 -----
-* TBD
+* Support for fault domains in the Identity service
+* Support for resizing an offline volume in the Block Storage service
+* Support for Autonomous Data Warehouse and Autonomous Transaction Processing in the Database service
+
+Changed
+-------
+* Opened up the dependency pinning on cryptography due to `CVE-2018-10903 <https://nvd.nist.gov/vuln/detail/CVE-2018-10903>`__.  OCI does not call the affected method in cryptography, but upgrading is recommended.
 
 ====================
 2.0.1 - 2018-08-09
