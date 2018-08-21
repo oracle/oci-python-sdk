@@ -592,7 +592,7 @@
                 <version>1.32-SNAPSHOT</version>
                 <executions>
                     <execution>
-                        <id>python-public-sdk-identity-control-plane-api-spec-spec-file</id>
+                        <id>python-public-sdk-identity-control-plane-api-spec</id>
                         <phase>compile</phase>
                         <goals>
                             <goal>generate</goal>
@@ -605,7 +605,7 @@
                             <specGenerationType>PUBLIC</specGenerationType>
                             <additionalProperties>
                                 <specName>identity</specName>
-                                <endpoint>https://identity.{domain}/20160918</endpoint>
+                                <endpoint>https://identity.{domain}</endpoint>
                             </additionalProperties>
                             <featureIdConfigFile>${project.basedir}/featureId.yaml</featureIdConfigFile>
                         </configuration>
@@ -624,7 +624,7 @@
                             <specGenerationType>PUBLIC</specGenerationType>
                             <additionalProperties>
                                 <specName>core</specName>
-                                <endpoint>https://iaas.{domain}/20160918</endpoint>
+                                <endpoint>https://iaas.{domain}</endpoint>
                             </additionalProperties>
                             <featureIdConfigFile>${project.basedir}/featureId.yaml</featureIdConfigFile>
                         </configuration>
@@ -664,7 +664,7 @@
                             <additionalProperties>
                                 <specName>load_balancer</specName>
                                 <generateInitFile>true</generateInitFile>
-                                <endpoint>https://iaas.{domain}/20170115</endpoint>
+                                <endpoint>https://iaas.{domain}</endpoint>
                             </additionalProperties>
                             <featureIdConfigFile>${project.basedir}/featureId.yaml</featureIdConfigFile>
                         </configuration>
@@ -684,7 +684,7 @@
                             <additionalProperties>
                                 <specName>database</specName>
                                 <generateInitFile>true</generateInitFile>
-                                <endpoint>https://database.{domain}/20160918</endpoint>
+                                <endpoint>https://database.{domain}</endpoint>
                             </additionalProperties>
                             <featureIdConfigFile>${project.basedir}/featureId.yaml</featureIdConfigFile>
                         </configuration>
@@ -704,7 +704,7 @@
                             <additionalProperties>
                                 <specName>file_storage</specName>
                                 <generateInitFile>true</generateInitFile>
-                                <endpoint>https://filestorage.{domain}/20171215</endpoint>
+                                <endpoint>https://filestorage.{domain}</endpoint>
                             </additionalProperties>
                             <featureIdConfigFile>${project.basedir}/featureId.yaml</featureIdConfigFile>
                         </configuration>
@@ -724,7 +724,7 @@
                             <additionalProperties>
                                 <specName>audit</specName>
                                 <generateInitFile>true</generateInitFile>
-                                <endpoint>https://audit.{domain}/20160918</endpoint>
+                                <endpoint>https://audit.{domain}</endpoint>
                             </additionalProperties>
                             <featureIdConfigFile>${project.basedir}/featureId.yaml</featureIdConfigFile>
                         </configuration>
@@ -744,7 +744,7 @@
                             <additionalProperties>
                                 <specName>email</specName>
                                 <generateInitFile>true</generateInitFile>
-                                <endpoint>https://email.{domain}/20170907</endpoint>
+                                <endpoint>https://email.{domain}</endpoint>
                             </additionalProperties>
                             <featureIdConfigFile>${project.basedir}/featureId.yaml</featureIdConfigFile>
                         </configuration>
@@ -764,7 +764,7 @@
                             <additionalProperties>
                                 <specName>dns</specName>
                                 <generateInitFile>true</generateInitFile>
-                                <endpoint>https://dns.{domain}/20180115</endpoint>
+                                <endpoint>https://dns.{domain}</endpoint>
                             </additionalProperties>
                             <featureIdConfigFile>${project.basedir}/featureId.yaml</featureIdConfigFile>
                         </configuration>
@@ -804,7 +804,7 @@
                             <additionalProperties>
                                 <specName>resource_search</specName>
                                 <generateInitFile>true</generateInitFile>
-                                <endpoint>https://query.{domain}/20180409</endpoint>
+                                <endpoint>https://query.{domain}</endpoint>
                             </additionalProperties>
                             <featureIdConfigFile>${project.basedir}/featureId.yaml</featureIdConfigFile>
                         </configuration>

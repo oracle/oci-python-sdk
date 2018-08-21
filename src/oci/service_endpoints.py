@@ -2,17 +2,17 @@
 # Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 SERVICE_ENDPOINTS = {
-    "audit": "https://audit.{domain}/20160918",
+    "audit": "https://audit.{domain}",
     "container_engine": "https://containerengine.{domain}",
-    "blockstorage": "https://iaas.{domain}/20160918",
-    "compute": "https://iaas.{domain}/20160918",
-    "virtual_network": "https://iaas.{domain}/20160918",
-    "database": "https://database.{domain}/20160918",
-    "dns": "https://dns.{domain}/20180115",
-    "email": "https://email.{domain}/20170907",
-    "file_storage": "https://filestorage.{domain}/20171215",
-    "identity": "https://identity.{domain}/20160918",
-    "load_balancer": "https://iaas.{domain}/20170115",
+    "blockstorage": "https://iaas.{domain}",
+    "compute": "https://iaas.{domain}",
+    "virtual_network": "https://iaas.{domain}",
+    "database": "https://database.{domain}",
+    "dns": "https://dns.{domain}",
+    "email": "https://email.{domain}",
+    "file_storage": "https://filestorage.{domain}",
+    "identity": "https://identity.{domain}",
+    "load_balancer": "https://iaas.{domain}",
     "object_storage": "https://objectstorage.{domain}",
-    "resource_search": "https://query.{domain}/20180409"
+    "resource_search": "https://query.{domain}"
 }
