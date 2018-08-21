@@ -751,7 +751,7 @@ class DbSystem(object):
     def license_model(self):
         """
         Gets the license_model of this DbSystem.
-        The Oracle license model that applies to all the databases on the DB System. The default is LICENSE_INCLUDED.
+        The Oracle license model that applies to all the databases on the DB System. The default is BRING_YOUR_OWN_LICENSE.
 
         Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -766,7 +766,7 @@ class DbSystem(object):
     def license_model(self, license_model):
         """
         Sets the license_model of this DbSystem.
-        The Oracle license model that applies to all the databases on the DB System. The default is LICENSE_INCLUDED.
+        The Oracle license model that applies to all the databases on the DB System. The default is BRING_YOUR_OWN_LICENSE.
 
 
         :param license_model: The license_model of this DbSystem.
