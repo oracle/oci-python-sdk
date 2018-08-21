@@ -27,6 +27,7 @@ from .create_user_details import CreateUserDetails
 from .customer_secret_key import CustomerSecretKey
 from .customer_secret_key_summary import CustomerSecretKeySummary
 from .dynamic_group import DynamicGroup
+from .fault_domain import FaultDomain
 from .group import Group
 from .identity_provider import IdentityProvider
 from .idp_group_mapping import IdpGroupMapping
@@ -87,6 +88,7 @@ identity_type_mapping = {
     "CustomerSecretKey": CustomerSecretKey,
     "CustomerSecretKeySummary": CustomerSecretKeySummary,
     "DynamicGroup": DynamicGroup,
+    "FaultDomain": FaultDomain,
     "Group": Group,
     "IdentityProvider": IdentityProvider,
     "IdpGroupMapping": IdpGroupMapping,

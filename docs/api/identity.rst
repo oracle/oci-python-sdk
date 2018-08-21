@@ -42,6 +42,7 @@ Identity
     oci.identity.models.CustomerSecretKey
     oci.identity.models.CustomerSecretKeySummary
     oci.identity.models.DynamicGroup
+    oci.identity.models.FaultDomain
     oci.identity.models.Group
     oci.identity.models.IdentityProvider
     oci.identity.models.IdpGroupMapping
