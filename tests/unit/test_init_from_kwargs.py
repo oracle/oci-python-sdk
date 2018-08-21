@@ -15,6 +15,7 @@ ENUM_ATTR_TO_VALUE = {
     'LaunchDbSystemBase': {'source': 'DB_BACKUP', 'license_model': 'LICENSE_INCLUDED', 'disk_redundancy': 'NORMAL', 'database_edition': 'STANDARD_EDITION'},
     'LaunchDbSystemDetails': {'source': 'DB_BACKUP', 'license_model': 'LICENSE_INCLUDED', 'disk_redundancy': 'NORMAL', 'database_edition': 'STANDARD_EDITION'},
     'LaunchDbSystemFromBackupDetails': {'source': 'DB_BACKUP', 'license_model': 'LICENSE_INCLUDED', 'disk_redundancy': 'NORMAL', 'database_edition': 'STANDARD_EDITION'},
+    'CreateAutonomousDataWarehouseDetails': {'license_model': 'LICENSE_INCLUDED'},
     'CreateDatabaseDetails': {'db_workload': 'OLTP'},
     'CreateDataGuardAssociationDetails': {'protection_mode': 'MAXIMUM_AVAILABILITY', 'transport_type': 'SYNC'},
     'CreateDataGuardAssociationToExistingDbSystemDetails': {'protection_mode': 'MAXIMUM_AVAILABILITY', 'transport_type': 'SYNC'},
