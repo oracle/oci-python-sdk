@@ -477,7 +477,7 @@ class Vnic(object):
     @property
     def private_ip(self):
         """
-        **[Required]** Gets the private_ip of this Vnic.
+        Gets the private_ip of this Vnic.
         The private IP address of the primary `privateIp` object on the VNIC.
         The address is within the CIDR of the VNIC's subnet.
 
