@@ -89,6 +89,10 @@ class VolumeGroup(object):
             The value to assign to the volume_ids property of this VolumeGroup.
         :type volume_ids: list[str]
 
+        :param is_hydrated:
+            The value to assign to the is_hydrated property of this VolumeGroup.
+        :type is_hydrated: bool
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -102,7 +106,8 @@ class VolumeGroup(object):
             'size_in_gbs': 'int',
             'source_details': 'VolumeGroupSourceDetails',
             'time_created': 'datetime',
-            'volume_ids': 'list[str]'
+            'volume_ids': 'list[str]',
+            'is_hydrated': 'bool'
         }
 
         self.attribute_map = {
@@ -117,7 +122,8 @@ class VolumeGroup(object):
             'size_in_gbs': 'sizeInGBs',
             'source_details': 'sourceDetails',
             'time_created': 'timeCreated',
-            'volume_ids': 'volumeIds'
+            'volume_ids': 'volumeIds',
+            'is_hydrated': 'isHydrated'
         }
 
         self._availability_domain = None
@@ -132,6 +138,7 @@ class VolumeGroup(object):
         self._source_details = None
         self._time_created = None
         self._volume_ids = None
+        self._is_hydrated = None
 
     @property
     def availability_domain(self):
@@ -450,6 +457,30 @@ class VolumeGroup(object):
         :type: list[str]
         """
         self._volume_ids = volume_ids
+
+    @property
+    def is_hydrated(self):
+        """
+        Gets the is_hydrated of this VolumeGroup.
+        Specifies whether the newly created cloned volume group's data has finished copying from the source volume group or backup.
+
+
+        :return: The is_hydrated of this VolumeGroup.
+        :rtype: bool
+        """
+        return self._is_hydrated
+
+    @is_hydrated.setter
+    def is_hydrated(self, is_hydrated):
+        """
+        Sets the is_hydrated of this VolumeGroup.
+        Specifies whether the newly created cloned volume group's data has finished copying from the source volume group or backup.
+
+
+        :param is_hydrated: The is_hydrated of this VolumeGroup.
+        :type: bool
+        """
+        self._is_hydrated = is_hydrated
 
     def __repr__(self):
         return formatted_flat_dict(self)

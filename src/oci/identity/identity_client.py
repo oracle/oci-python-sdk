@@ -3216,9 +3216,11 @@ class IdentityClient(object):
     def list_availability_domains(self, compartment_id, **kwargs):
         """
         ListAvailabilityDomains
-        Lists the Availability Domains in your tenancy. Specify the OCID of either the tenancy or another
+        Lists the availability domains in your tenancy. Specify the OCID of either the tenancy or another
         of your compartments as the value for the compartment ID (remember that the tenancy is simply the root compartment).
         See `Where to Get the Tenancy's OCID and User's OCID`__.
+        Note that the order of the results returned can change if availability domains are added or removed; therefore, do not
+        create a dependency on the list order.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five
 
@@ -3492,6 +3494,73 @@ class IdentityClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="list[DynamicGroup]")
+
+    def list_fault_domains(self, compartment_id, availability_domain, **kwargs):
+        """
+        ListFaultDomains
+        Lists the Fault Domains in your tenancy. Specify the OCID of either the tenancy or another
+        of your compartments as the value for the compartment ID (remember that the tenancy is simply the root compartment).
+        See `Where to Get the Tenancy's OCID and User's OCID`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment (remember that the tenancy is simply the root compartment).
+
+        :param str availability_domain: (required)
+            The name of the availibilityDomain.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.FaultDomain`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/faultDomains/"
+        method = "GET"
+
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_fault_domains got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "availabilityDomain": availability_domain
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[FaultDomain]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[FaultDomain]")
 
     def list_groups(self, compartment_id, **kwargs):
         """
