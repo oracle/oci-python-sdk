@@ -296,7 +296,7 @@
             <plugin>
                 <groupId>com.oracle.oci.sdk.utilities</groupId>
                 <artifactId>spec-conditionals-preprocessor-plugin</artifactId>
-                <version>1.0.1-SNAPSHOT</version>
+                <version>1.0.6-SNAPSHOT</version>
                 <executions>
                     <execution>
                         <id>spec-conditionals-prefer-coreservices-api-spec</id>
