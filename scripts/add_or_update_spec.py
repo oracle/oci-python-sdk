@@ -78,9 +78,11 @@ PREPROCESS_EXECUTION_TEMPLATE = """
         <goal>preprocess</goal>
     </goals>
     <configuration>
-        <inputFile>${{preferred-temp-dir}}/${{{artifact_id}-spec-file}}</inputFile>
-        <outputFile>${{preprocessed-temp-dir}}/${{{artifact_id}-spec-file}}</outputFile>
+        <inputFile>${{preferred-temp-dir}}/{artifact_id}/${{{artifact_id}-spec-file}}</inputFile>
+        <outputFile>${{preprocessed-temp-dir}}/{artifact_id}/${{{artifact_id}-spec-file}}</outputFile>
+        <groupFile>${{project.basedir}}/preview-sdk.txt</groupFile>
         <groupFile>${{project.basedir}}/release-sdk.txt</groupFile>
+        <groupFileCollectionDir>${{project.basedir}}/codegenConfig/enabledGroups</groupFileCollectionDir>
     </configuration>
 </execution>
 """
@@ -105,6 +107,7 @@ GENERATE_EXECUTION_TEMPLATE = """
             {regional_non_regional_service_overrides}
         </additionalProperties>
         <featureIdConfigFile>${{project.basedir}}/featureId.yaml</featureIdConfigFile>
+        <featureIdConfigDir>${{project.basedir}}/codegenConfig/featureIds</featureIdConfigDir>
     </configuration>
 </execution>
 """

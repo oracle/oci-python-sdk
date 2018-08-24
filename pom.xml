@@ -322,6 +322,7 @@
                             <inputFile>${preferred-temp-dir}/${coreservices-api-spec-spec-file}</inputFile>
                             <outputFile>${preprocessed-temp-dir}/${coreservices-api-spec-spec-file}</outputFile>
                             <groupFile>${project.basedir}/release-sdk.txt</groupFile>
+                            <groupFileCollectionDir>${project.basedir}/codegenConfig/enabledGroups</groupFileCollectionDir>
                         </configuration>
                     </execution>
                     <execution>
@@ -348,6 +349,7 @@
                             <inputFile>${preferred-temp-dir}/${identity-control-plane-api-spec-spec-file}</inputFile>
                             <outputFile>${preprocessed-temp-dir}/${identity-control-plane-api-spec-spec-file}</outputFile>
                             <groupFile>${project.basedir}/release-sdk.txt</groupFile>
+                            <groupFileCollectionDir>${project.basedir}/codegenConfig/enabledGroups</groupFileCollectionDir>
                         </configuration>
                     </execution>
                     <execution>
@@ -374,6 +376,7 @@
                             <inputFile>${preferred-temp-dir}/${casper-api-spec-spec-file}</inputFile>
                             <outputFile>${preprocessed-temp-dir}/${casper-api-spec-spec-file}</outputFile>
                             <groupFile>${project.basedir}/release-sdk.txt</groupFile>
+                            <groupFileCollectionDir>${project.basedir}/codegenConfig/enabledGroups</groupFileCollectionDir>
                         </configuration>
                     </execution>
                     <execution>
@@ -400,6 +403,7 @@
                             <inputFile>${preferred-temp-dir}/${oralb-api-spec-spec-file}</inputFile>
                             <outputFile>${preprocessed-temp-dir}/${oralb-api-spec-spec-file}</outputFile>
                             <groupFile>${project.basedir}/release-sdk.txt</groupFile>
+                            <groupFileCollectionDir>${project.basedir}/codegenConfig/enabledGroups</groupFileCollectionDir>
                         </configuration>
                     </execution>
                     <execution>
@@ -426,6 +430,7 @@
                             <inputFile>${preferred-temp-dir}/${dbaas-api-spec-spec-file}</inputFile>
                             <outputFile>${preprocessed-temp-dir}/${dbaas-api-spec-spec-file}</outputFile>
                             <groupFile>${project.basedir}/release-sdk.txt</groupFile>
+                            <groupFileCollectionDir>${project.basedir}/codegenConfig/enabledGroups</groupFileCollectionDir>
                         </configuration>
                     </execution>
                     <execution>
@@ -452,6 +457,7 @@
                             <inputFile>${preferred-temp-dir}/${fss-api-spec-spec-file}</inputFile>
                             <outputFile>${preprocessed-temp-dir}/${fss-api-spec-spec-file}</outputFile>
                             <groupFile>${project.basedir}/release-sdk.txt</groupFile>
+                            <groupFileCollectionDir>${project.basedir}/codegenConfig/enabledGroups</groupFileCollectionDir>
                         </configuration>
                     </execution>
                     <execution>
@@ -478,6 +484,7 @@
                             <inputFile>${preferred-temp-dir}/${hemlock-spec-spec-file}</inputFile>
                             <outputFile>${preprocessed-temp-dir}/${hemlock-spec-spec-file}</outputFile>
                             <groupFile>${project.basedir}/release-sdk.txt</groupFile>
+                            <groupFileCollectionDir>${project.basedir}/codegenConfig/enabledGroups</groupFileCollectionDir>
                         </configuration>
                     </execution>
                     <execution>
@@ -504,6 +511,7 @@
                             <inputFile>${preferred-temp-dir}/${email-api-spec-spec-file}</inputFile>
                             <outputFile>${preprocessed-temp-dir}/${email-api-spec-spec-file}</outputFile>
                             <groupFile>${project.basedir}/release-sdk.txt</groupFile>
+                            <groupFileCollectionDir>${project.basedir}/codegenConfig/enabledGroups</groupFileCollectionDir>
                         </configuration>
                     </execution>
                     <execution>
@@ -530,6 +538,7 @@
                             <inputFile>${preferred-temp-dir}/${public-dns-api-spec-spec-file}</inputFile>
                             <outputFile>${preprocessed-temp-dir}/${public-dns-api-spec-spec-file}</outputFile>
                             <groupFile>${project.basedir}/release-sdk.txt</groupFile>
+                            <groupFileCollectionDir>${project.basedir}/codegenConfig/enabledGroups</groupFileCollectionDir>
                         </configuration>
                     </execution>
                     <execution>
@@ -556,6 +565,7 @@
                             <inputFile>${preferred-temp-dir}/${resource-query-service-spec-spec-file}</inputFile>
                             <outputFile>${preprocessed-temp-dir}/${resource-query-service-spec-spec-file}</outputFile>
                             <groupFile>${project.basedir}/release-sdk.txt</groupFile>
+                            <groupFileCollectionDir>${project.basedir}/codegenConfig/enabledGroups</groupFileCollectionDir>
                         </configuration>
                     </execution>
                     <execution>
@@ -582,6 +592,7 @@
                             <inputFile>${preferred-temp-dir}/${clusters-api-spec-spec-file}</inputFile>
                             <outputFile>${preprocessed-temp-dir}/${clusters-api-spec-spec-file}</outputFile>
                             <groupFile>${project.basedir}/release-sdk.txt</groupFile>
+                            <groupFileCollectionDir>${project.basedir}/codegenConfig/enabledGroups</groupFileCollectionDir>
                         </configuration>
                     </execution>
                 </executions>
@@ -608,6 +619,7 @@
                                 <endpoint>https://identity.{domain}</endpoint>
                             </additionalProperties>
                             <featureIdConfigFile>${project.basedir}/featureId.yaml</featureIdConfigFile>
+                            <featureIdConfigDir>${project.basedir}/codegenConfig/featureIds</featureIdConfigDir>
                         </configuration>
                     </execution>
                     <execution>
@@ -627,6 +639,7 @@
                                 <endpoint>https://iaas.{domain}</endpoint>
                             </additionalProperties>
                             <featureIdConfigFile>${project.basedir}/featureId.yaml</featureIdConfigFile>
+                            <featureIdConfigDir>${project.basedir}/codegenConfig/featureIds</featureIdConfigDir>
                         </configuration>
                     </execution>
                     <execution>
@@ -647,6 +660,7 @@
                                 <endpoint>https://objectstorage.{domain}</endpoint>
                             </additionalProperties>
                             <featureIdConfigFile>${project.basedir}/featureId.yaml</featureIdConfigFile>
+                            <featureIdConfigDir>${project.basedir}/codegenConfig/featureIds</featureIdConfigDir>
                         </configuration>
                     </execution>
                     <execution>
@@ -667,6 +681,7 @@
                                 <endpoint>https://iaas.{domain}</endpoint>
                             </additionalProperties>
                             <featureIdConfigFile>${project.basedir}/featureId.yaml</featureIdConfigFile>
+                            <featureIdConfigDir>${project.basedir}/codegenConfig/featureIds</featureIdConfigDir>
                         </configuration>
                     </execution>
                     <execution>
@@ -687,6 +702,7 @@
                                 <endpoint>https://database.{domain}</endpoint>
                             </additionalProperties>
                             <featureIdConfigFile>${project.basedir}/featureId.yaml</featureIdConfigFile>
+                            <featureIdConfigDir>${project.basedir}/codegenConfig/featureIds</featureIdConfigDir>
                         </configuration>
                     </execution>
                     <execution>
@@ -707,6 +723,7 @@
                                 <endpoint>https://filestorage.{domain}</endpoint>
                             </additionalProperties>
                             <featureIdConfigFile>${project.basedir}/featureId.yaml</featureIdConfigFile>
+                            <featureIdConfigDir>${project.basedir}/codegenConfig/featureIds</featureIdConfigDir>
                         </configuration>
                     </execution>
                     <execution>
@@ -727,6 +744,7 @@
                                 <endpoint>https://audit.{domain}</endpoint>
                             </additionalProperties>
                             <featureIdConfigFile>${project.basedir}/featureId.yaml</featureIdConfigFile>
+                            <featureIdConfigDir>${project.basedir}/codegenConfig/featureIds</featureIdConfigDir>
                         </configuration>
                     </execution>
                     <execution>
@@ -747,6 +765,7 @@
                                 <endpoint>https://email.{domain}</endpoint>
                             </additionalProperties>
                             <featureIdConfigFile>${project.basedir}/featureId.yaml</featureIdConfigFile>
+                            <featureIdConfigDir>${project.basedir}/codegenConfig/featureIds</featureIdConfigDir>
                         </configuration>
                     </execution>
                     <execution>
@@ -767,6 +786,7 @@
                                 <endpoint>https://dns.{domain}</endpoint>
                             </additionalProperties>
                             <featureIdConfigFile>${project.basedir}/featureId.yaml</featureIdConfigFile>
+                            <featureIdConfigDir>${project.basedir}/codegenConfig/featureIds</featureIdConfigDir>
                         </configuration>
                     </execution>
                     <execution>
@@ -787,6 +807,7 @@
                                 <endpoint>https://containerengine.{domain}</endpoint>
                             </additionalProperties>
                             <featureIdConfigFile>${project.basedir}/featureId.yaml</featureIdConfigFile>
+                            <featureIdConfigDir>${project.basedir}/codegenConfig/featureIds</featureIdConfigDir>
                         </configuration>
                     </execution>
                     <execution>
@@ -807,6 +828,7 @@
                                 <endpoint>https://query.{domain}</endpoint>
                             </additionalProperties>
                             <featureIdConfigFile>${project.basedir}/featureId.yaml</featureIdConfigFile>
+                            <featureIdConfigDir>${project.basedir}/codegenConfig/featureIds</featureIdConfigDir>
                         </configuration>
                     </execution>
                 </executions>
