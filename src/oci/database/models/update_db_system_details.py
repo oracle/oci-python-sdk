@@ -9,7 +9,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateDbSystemDetails(object):
     """
-    Describes the modification parameters for the DB System.
+    Describes the parameters for updating the DB system.
+
+    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
 
     def __init__(self, **kwargs):
@@ -71,7 +73,7 @@ class UpdateDbSystemDetails(object):
     def cpu_core_count(self):
         """
         Gets the cpu_core_count of this UpdateDbSystemDetails.
-        The number of CPU Cores to be set on the DB System. Applicable only for non-VM based DB systems.
+        The new number of CPU cores to set for the DB system. Not applicable for virtual machine DB systems.
 
 
         :return: The cpu_core_count of this UpdateDbSystemDetails.
@@ -83,7 +85,7 @@ class UpdateDbSystemDetails(object):
     def cpu_core_count(self, cpu_core_count):
         """
         Sets the cpu_core_count of this UpdateDbSystemDetails.
-        The number of CPU Cores to be set on the DB System. Applicable only for non-VM based DB systems.
+        The new number of CPU cores to set for the DB system. Not applicable for virtual machine DB systems.
 
 
         :param cpu_core_count: The cpu_core_count of this UpdateDbSystemDetails.
@@ -95,7 +97,7 @@ class UpdateDbSystemDetails(object):
     def data_storage_size_in_gbs(self):
         """
         Gets the data_storage_size_in_gbs of this UpdateDbSystemDetails.
-        Size, in GBs, to which the currently attached storage needs to be scaled up to for VM based DB system. This must be greater than current storage size. Note that the total storage size attached will be more than what is requested, to account for REDO/RECO space and software volume.
+        The size, in gigabytes, to scale the attached storage up to for this virtual machine DB system. This value must be greater than current storage size. Note that the resulting total storage size attached will be greater than the amount requested to allow for REDO/RECO space and software volume. Applies only to virtual machine DB systems.
 
 
         :return: The data_storage_size_in_gbs of this UpdateDbSystemDetails.
@@ -107,7 +109,7 @@ class UpdateDbSystemDetails(object):
     def data_storage_size_in_gbs(self, data_storage_size_in_gbs):
         """
         Sets the data_storage_size_in_gbs of this UpdateDbSystemDetails.
-        Size, in GBs, to which the currently attached storage needs to be scaled up to for VM based DB system. This must be greater than current storage size. Note that the total storage size attached will be more than what is requested, to account for REDO/RECO space and software volume.
+        The size, in gigabytes, to scale the attached storage up to for this virtual machine DB system. This value must be greater than current storage size. Note that the resulting total storage size attached will be greater than the amount requested to allow for REDO/RECO space and software volume. Applies only to virtual machine DB systems.
 
 
         :param data_storage_size_in_gbs: The data_storage_size_in_gbs of this UpdateDbSystemDetails.
@@ -187,7 +189,7 @@ class UpdateDbSystemDetails(object):
     def ssh_public_keys(self):
         """
         Gets the ssh_public_keys of this UpdateDbSystemDetails.
-        The public key portion of the key pair to use for SSH access to the DB System. Multiple public keys can be provided. The length of the combined keys cannot exceed 10,000 characters.
+        The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 10,000 characters.
 
 
         :return: The ssh_public_keys of this UpdateDbSystemDetails.
@@ -199,7 +201,7 @@ class UpdateDbSystemDetails(object):
     def ssh_public_keys(self, ssh_public_keys):
         """
         Sets the ssh_public_keys of this UpdateDbSystemDetails.
-        The public key portion of the key pair to use for SSH access to the DB System. Multiple public keys can be provided. The length of the combined keys cannot exceed 10,000 characters.
+        The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 10,000 characters.
 
 
         :param ssh_public_keys: The ssh_public_keys of this UpdateDbSystemDetails.

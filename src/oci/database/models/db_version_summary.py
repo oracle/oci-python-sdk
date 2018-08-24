@@ -47,7 +47,7 @@ class DbVersionSummary(object):
     def supports_pdb(self):
         """
         Gets the supports_pdb of this DbVersionSummary.
-        True if this version of the Oracle database software supports pluggable dbs.
+        True if this version of the Oracle Database software supports pluggable databases.
 
 
         :return: The supports_pdb of this DbVersionSummary.
@@ -59,7 +59,7 @@ class DbVersionSummary(object):
     def supports_pdb(self, supports_pdb):
         """
         Sets the supports_pdb of this DbVersionSummary.
-        True if this version of the Oracle database software supports pluggable dbs.
+        True if this version of the Oracle Database software supports pluggable databases.
 
 
         :param supports_pdb: The supports_pdb of this DbVersionSummary.
@@ -71,7 +71,7 @@ class DbVersionSummary(object):
     def version(self):
         """
         **[Required]** Gets the version of this DbVersionSummary.
-        A valid Oracle database version.
+        A valid Oracle Database version.
 
 
         :return: The version of this DbVersionSummary.
@@ -83,7 +83,7 @@ class DbVersionSummary(object):
     def version(self, version):
         """
         Sets the version of this DbVersionSummary.
-        A valid Oracle database version.
+        A valid Oracle Database version.
 
 
         :param version: The version of this DbVersionSummary.

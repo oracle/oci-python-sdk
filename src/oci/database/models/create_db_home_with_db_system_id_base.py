@@ -9,7 +9,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateDbHomeWithDbSystemIdBase(object):
     """
-    CreateDbHomeWithDbSystemIdBase model.
+    Details for creating a database home.
+
+    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
 
     #: A constant which can be used with the source property of a CreateDbHomeWithDbSystemIdBase.
@@ -80,7 +82,9 @@ class CreateDbHomeWithDbSystemIdBase(object):
     def db_system_id(self):
         """
         **[Required]** Gets the db_system_id of this CreateDbHomeWithDbSystemIdBase.
-        The OCID of the DB System.
+        The `OCID`__ of the DB system.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_system_id of this CreateDbHomeWithDbSystemIdBase.
@@ -92,7 +96,9 @@ class CreateDbHomeWithDbSystemIdBase(object):
     def db_system_id(self, db_system_id):
         """
         Sets the db_system_id of this CreateDbHomeWithDbSystemIdBase.
-        The OCID of the DB System.
+        The `OCID`__ of the DB system.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param db_system_id: The db_system_id of this CreateDbHomeWithDbSystemIdBase.
@@ -128,9 +134,7 @@ class CreateDbHomeWithDbSystemIdBase(object):
     def source(self):
         """
         Gets the source of this CreateDbHomeWithDbSystemIdBase.
-        Source of database:
-          NONE for creating a new database
-          DB_BACKUP for creating a new database by restoring a backup
+        The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup.
 
         Allowed values for this property are: "NONE", "DB_BACKUP"
 
@@ -144,9 +148,7 @@ class CreateDbHomeWithDbSystemIdBase(object):
     def source(self, source):
         """
         Sets the source of this CreateDbHomeWithDbSystemIdBase.
-        Source of database:
-          NONE for creating a new database
-          DB_BACKUP for creating a new database by restoring a backup
+        The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup.
 
 
         :param source: The source of this CreateDbHomeWithDbSystemIdBase.

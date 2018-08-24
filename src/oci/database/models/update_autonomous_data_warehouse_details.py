@@ -10,6 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 class UpdateAutonomousDataWarehouseDetails(object):
     """
     Details to update an Oracle Autonomous Data Warehouse.
+
+    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
 
     def __init__(self, **kwargs):
@@ -95,7 +97,7 @@ class UpdateAutonomousDataWarehouseDetails(object):
     def cpu_core_count(self):
         """
         Gets the cpu_core_count of this UpdateAutonomousDataWarehouseDetails.
-        The number of CPU Cores to be made available to the database.
+        The number of CPU cores to be made available to the database.
 
 
         :return: The cpu_core_count of this UpdateAutonomousDataWarehouseDetails.
@@ -107,7 +109,7 @@ class UpdateAutonomousDataWarehouseDetails(object):
     def cpu_core_count(self, cpu_core_count):
         """
         Sets the cpu_core_count of this UpdateAutonomousDataWarehouseDetails.
-        The number of CPU Cores to be made available to the database.
+        The number of CPU cores to be made available to the database.
 
 
         :param cpu_core_count: The cpu_core_count of this UpdateAutonomousDataWarehouseDetails.
@@ -119,7 +121,7 @@ class UpdateAutonomousDataWarehouseDetails(object):
     def data_storage_size_in_tbs(self):
         """
         Gets the data_storage_size_in_tbs of this UpdateAutonomousDataWarehouseDetails.
-        Size, in TBs, of the data volume that will be attached to the database.
+        Size, in terabytes, of the data volume that will be attached to the database.
 
 
         :return: The data_storage_size_in_tbs of this UpdateAutonomousDataWarehouseDetails.
@@ -131,7 +133,7 @@ class UpdateAutonomousDataWarehouseDetails(object):
     def data_storage_size_in_tbs(self, data_storage_size_in_tbs):
         """
         Sets the data_storage_size_in_tbs of this UpdateAutonomousDataWarehouseDetails.
-        Size, in TBs, of the data volume that will be attached to the database.
+        Size, in terabytes, of the data volume that will be attached to the database.
 
 
         :param data_storage_size_in_tbs: The data_storage_size_in_tbs of this UpdateAutonomousDataWarehouseDetails.

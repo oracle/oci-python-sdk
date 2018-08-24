@@ -10,6 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 class AutonomousDataWarehouse(object):
     """
     An Oracle Autonomous Data Warehouse.
+
+    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
 
     #: A constant which can be used with the license_model property of a AutonomousDataWarehouse.
@@ -187,7 +189,9 @@ class AutonomousDataWarehouse(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this AutonomousDataWarehouse.
-        The OCID of the compartment.
+        The `OCID`__ of the compartment.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this AutonomousDataWarehouse.
@@ -199,7 +203,9 @@ class AutonomousDataWarehouse(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this AutonomousDataWarehouse.
-        The OCID of the compartment.
+        The `OCID`__ of the compartment.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this AutonomousDataWarehouse.

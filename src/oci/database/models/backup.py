@@ -9,8 +9,10 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Backup(object):
     """
-    A database backup
+    A database backup.
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see `Getting Started with Policies`__.
+
+    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 
     __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
     """
@@ -152,7 +154,7 @@ class Backup(object):
     def availability_domain(self):
         """
         Gets the availability_domain of this Backup.
-        The name of the Availability Domain that the backup is located in.
+        The name of the availability domain where the database backup is stored.
 
 
         :return: The availability_domain of this Backup.
@@ -164,7 +166,7 @@ class Backup(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this Backup.
-        The name of the Availability Domain that the backup is located in.
+        The name of the availability domain where the database backup is stored.
 
 
         :param availability_domain: The availability_domain of this Backup.
@@ -176,7 +178,9 @@ class Backup(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this Backup.
-        The OCID of the compartment.
+        The `OCID`__ of the compartment.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Backup.
@@ -188,7 +192,9 @@ class Backup(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this Backup.
-        The OCID of the compartment.
+        The `OCID`__ of the compartment.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Backup.
@@ -200,7 +206,7 @@ class Backup(object):
     def database_edition(self):
         """
         Gets the database_edition of this Backup.
-        The Oracle Database Edition of the DbSystem on which the backup was taken.
+        The Oracle Database edition of the DB system from which the database backup was taken.
 
 
         :return: The database_edition of this Backup.
@@ -212,7 +218,7 @@ class Backup(object):
     def database_edition(self, database_edition):
         """
         Sets the database_edition of this Backup.
-        The Oracle Database Edition of the DbSystem on which the backup was taken.
+        The Oracle Database edition of the DB system from which the database backup was taken.
 
 
         :param database_edition: The database_edition of this Backup.
@@ -224,7 +230,9 @@ class Backup(object):
     def database_id(self):
         """
         Gets the database_id of this Backup.
-        The OCID of the database.
+        The `OCID`__ of the database.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The database_id of this Backup.
@@ -236,7 +244,9 @@ class Backup(object):
     def database_id(self, database_id):
         """
         Sets the database_id of this Backup.
-        The OCID of the database.
+        The `OCID`__ of the database.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param database_id: The database_id of this Backup.
@@ -248,7 +258,7 @@ class Backup(object):
     def db_data_size_in_mbs(self):
         """
         Gets the db_data_size_in_mbs of this Backup.
-        Size of the database in mega-bytes at the time the backup was taken.
+        Size of the database in megabytes (MB) at the time the backup was taken.
 
 
         :return: The db_data_size_in_mbs of this Backup.
@@ -260,7 +270,7 @@ class Backup(object):
     def db_data_size_in_mbs(self, db_data_size_in_mbs):
         """
         Sets the db_data_size_in_mbs of this Backup.
-        Size of the database in mega-bytes at the time the backup was taken.
+        Size of the database in megabytes (MB) at the time the backup was taken.
 
 
         :param db_data_size_in_mbs: The db_data_size_in_mbs of this Backup.
@@ -272,7 +282,7 @@ class Backup(object):
     def display_name(self):
         """
         Gets the display_name of this Backup.
-        The user-friendly name for the backup. It does not have to be unique.
+        The user-friendly name for the backup. The name does not have to be unique.
 
 
         :return: The display_name of this Backup.
@@ -284,7 +294,7 @@ class Backup(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Backup.
-        The user-friendly name for the backup. It does not have to be unique.
+        The user-friendly name for the backup. The name does not have to be unique.
 
 
         :param display_name: The display_name of this Backup.
@@ -296,7 +306,9 @@ class Backup(object):
     def id(self):
         """
         Gets the id of this Backup.
-        The OCID of the backup.
+        The `OCID`__ of the backup.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Backup.
@@ -308,7 +320,9 @@ class Backup(object):
     def id(self, id):
         """
         Sets the id of this Backup.
-        The OCID of the backup.
+        The `OCID`__ of the backup.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Backup.
@@ -398,7 +412,7 @@ class Backup(object):
     def time_started(self):
         """
         Gets the time_started of this Backup.
-        The date and time the backup starts.
+        The date and time the backup started.
 
 
         :return: The time_started of this Backup.
@@ -410,7 +424,7 @@ class Backup(object):
     def time_started(self, time_started):
         """
         Sets the time_started of this Backup.
-        The date and time the backup starts.
+        The date and time the backup started.
 
 
         :param time_started: The time_started of this Backup.
