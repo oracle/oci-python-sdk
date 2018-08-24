@@ -154,7 +154,7 @@ def update_relative_spec_path(pom, artifact_id, spec_path_relative_to_jar):
 
 
 def update_endpoint(pom, artifact_id, endpoint):
-    endpoint_node = pom.findall(".//ns:plugin[ns:artifactId='bmc-sdk-swagger-maven-plugin']/ns:executions/ns:execution[ns:id='python-public-sdk-{artifact_id}-spec-file']//ns:additionalProperties/ns:endpoint".format(artifact_id=artifact_id), ns)[0]
+    endpoint_node = pom.findall(".//ns:plugin[ns:artifactId='bmc-sdk-swagger-maven-plugin']/ns:executions/ns:execution[ns:id='python-public-sdk-{artifact_id}']//ns:additionalProperties/ns:endpoint".format(artifact_id=artifact_id), ns)[0]
     endpoint_node.text = endpoint
 
 
