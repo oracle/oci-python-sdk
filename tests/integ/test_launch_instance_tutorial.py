@@ -48,7 +48,7 @@ def test_tutorial(virtual_network, compute, block_storage, config):
             attachment = attach_volume(compute, compartment, instance, volume)
         except Exception as e:
             # print('Exception during creation phase: ' + str(e))
-            raise
+            raise e
         finally:
             if volume:
                 if attachment:
