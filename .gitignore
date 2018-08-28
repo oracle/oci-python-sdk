@@ -1,11 +1,13 @@
 target/
 abandoned/
 .classpath
+.coverage
 .project
 .python-version
 .settings
 .DS_Store
 .idea/
+cov.xml
 *.iml
 *.pyc
 *.swp
@@ -14,6 +16,7 @@ abandoned/
 .tox/
 .cache/
 build/
+cov_html/
 data/
 dist/
 __pycache__/
