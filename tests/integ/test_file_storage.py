@@ -136,7 +136,7 @@ def vcn_and_subnet(virtual_network):
                 if e.status == 409 and attempts < 5:
                     time.sleep(5)
                 elif e.status == 404:
-                    print('subnet already been deleted')
+                    # print('subnet already been deleted')
                     break
                 else:
                     raise
@@ -153,7 +153,8 @@ def vcn_and_subnet(virtual_network):
             )
         except oci.exceptions.ServiceError as e:
             if e.status == 404:
-                print('vcn already been deleted')
+                # print('vcn already been deleted')
+                pass
             else:
                 raise
 

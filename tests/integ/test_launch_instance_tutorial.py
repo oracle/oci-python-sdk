@@ -13,8 +13,8 @@ from .. import test_config_container
 
 def test_tutorial(virtual_network, compute, block_storage, config):
     test_id = tests.util.random_number_string()
-    print('Running Launching Your First Instance tutorial')
-    print('Objects will have ID ' + test_id)
+    # print('Running Launching Your First Instance tutorial')
+    # print('Objects will have ID ' + test_id)
 
     availability_domain = util.availability_domain()
     compartment = config["tenancy"]
@@ -47,7 +47,7 @@ def test_tutorial(virtual_network, compute, block_storage, config):
             volume = create_volume(block_storage, compartment, test_id, availability_domain)
             attachment = attach_volume(compute, compartment, instance, volume)
         except Exception as e:
-            print('Exception during creation phase: ' + str(e))
+            # print('Exception during creation phase: ' + str(e))
             raise
         finally:
             if volume:
@@ -63,7 +63,7 @@ def test_tutorial(virtual_network, compute, block_storage, config):
 
 
 def create_cloud_network(virtual_network, compartment, test_id):
-    print('Creating cloud network')
+    # print('Creating cloud network')
     request = oci.core.models.CreateVcnDetails()
     request.cidr_block = '10.0.0.0/16'
     request.display_name = 'pythonsdk_test_vcn_' + test_id
@@ -82,7 +82,7 @@ def create_cloud_network(virtual_network, compartment, test_id):
 
 
 def delete_cloud_network(virtual_network, vcn):
-    print('Deleting vcn')
+    # print('Deleting vcn')
     response = virtual_network.delete_vcn(vcn.id)
     assert response.status == 204
 
@@ -99,7 +99,7 @@ def delete_cloud_network(virtual_network, vcn):
 
 
 def create_subnet(virtual_network, compartment, test_id, availability_domain, vcn):
-    print('Creating subnet')
+    # print('Creating subnet')
     request = oci.core.models.CreateSubnetDetails()
     request.cidr_block = '10.0.0.0/16'
     request.availability_domain = availability_domain
@@ -123,7 +123,7 @@ def create_subnet(virtual_network, compartment, test_id, availability_domain, vc
 
 
 def delete_subnet(virtual_network, subnet):
-    print('Deleting subnet')
+    # print('Deleting subnet')
     response = virtual_network.delete_subnet(subnet.id)
     assert response.status == 204
 
@@ -139,7 +139,7 @@ def delete_subnet(virtual_network, subnet):
 
 
 def create_internet_gateway(virtual_network, compartment, test_id, vcn):
-    print('Creating internet gateway')
+    # print('Creating internet gateway')
     request = oci.core.models.CreateInternetGatewayDetails()
     request.display_name = 'pythonsdk_test_ig_' + test_id
     request.compartment_id = compartment
@@ -162,7 +162,7 @@ def create_internet_gateway(virtual_network, compartment, test_id, vcn):
 
 
 def update_route_table(virtual_network, test_id, vcn, gateway):
-    print('Updating route table')
+    # print('Updating route table')
     route_rule = oci.core.models.RouteRule()
     route_rule.cidr_block = '0.0.0.0/0'
     route_rule.display_name = 'pythonsdk_route_rule_' + test_id
@@ -181,7 +181,7 @@ def update_route_table(virtual_network, test_id, vcn, gateway):
 
 
 def launch_instance(compute, compartment, test_id, availability_domain, subnet, public_key):
-    print('Launching instance')
+    # print('Launching instance')
 
     request = oci.core.models.LaunchInstanceDetails()
     request.availability_domain = availability_domain
@@ -211,7 +211,7 @@ def launch_instance(compute, compartment, test_id, availability_domain, subnet, 
 
 
 def terminate_instance(compute, instance):
-    print('Terminating instance')
+    # print('Terminating instance')
     response = compute.terminate_instance(instance.id)
     assert response.status == 204
 
@@ -220,7 +220,7 @@ def terminate_instance(compute, instance):
 
 
 def create_volume(block_storage, compartment, test_id, availability_domain):
-    print('Creating volume')
+    # print('Creating volume')
     request = oci.core.models.CreateVolumeDetails()
     request.display_name = 'pythonsdk_volume_' + test_id
     request.compartment_id = compartment
@@ -243,7 +243,7 @@ def create_volume(block_storage, compartment, test_id, availability_domain):
 
 
 def delete_volume(block_storage, volume):
-    print('Deleting volume')
+    # print('Deleting volume')
     response = block_storage.delete_volume(volume.id)
     assert response.status == 204
 
@@ -258,7 +258,7 @@ def delete_volume(block_storage, volume):
 
 
 def log_public_ip_address(compute, virtual_network, compartment, instance):
-    print('Getting public IP address')
+    # print('Getting public IP address')
     response = compute.list_vnic_attachments(
         compartment, instance_id=instance.id)
     assert response.status == 200
@@ -276,11 +276,11 @@ def log_public_ip_address(compute, virtual_network, compartment, instance):
     )
     assert response.status == 200
     assert response.data.public_ip is not None
-    print('Public IP Address: ' + response.data.public_ip)
+    # print('Public IP Address: ' + response.data.public_ip)
 
 
 def attach_volume(compute, compartment, instance, volume):
-    print('Attaching volume')
+    # print('Attaching volume')
     request = oci.core.models.AttachIScsiVolumeDetails()
     request.compartment_id = compartment
     request.instance_id = instance.id
@@ -301,7 +301,7 @@ def attach_volume(compute, compartment, instance, volume):
 
 
 def detach_volume(compute, attachment):
-    print('Detaching volume')
+    # print('Detaching volume')
     response = compute.detach_volume(attachment.id)
     assert response.status == 204
 

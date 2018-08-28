@@ -48,8 +48,8 @@ def test_md5_memory_usage(content_input_file):
 
     ending_memory_usage = tests.util.max_memory_usage()
     memory_usage = ending_memory_usage - starting_memory_usage
-    print("Starting memory: {} MiB".format(starting_memory_usage / MEBIBYTE))
-    print("Ending memory: {} MiB".format(ending_memory_usage / MEBIBYTE))
-    print("Memory used: {} MiB".format(str(memory_usage / MEBIBYTE)))
+    # print("Starting memory: {} MiB".format(starting_memory_usage / MEBIBYTE))
+    # print("Ending memory: {} MiB".format(ending_memory_usage / MEBIBYTE))
+    # print("Memory used: {} MiB".format(str(memory_usage / MEBIBYTE)))
     assert memory_usage < CHUNK
     assert md5_1 == md5_2
