@@ -19,8 +19,9 @@ load_balancer_client = oci.load_balancer.LoadBalancerClient(config)
 print('Creating VCN')
 result = virtual_network_client.create_vcn(oci.core.models.CreateVcnDetails(cidr_block='10.0.0.0/16', display_name='WaitForResourceExampleVcn', compartment_id=compartment_id))
 vcn_ocid = result.data.id
-get_vcn_response = oci.wait_until(virtual_network_client, virtual_network_client.get_vcn(vcn_ocid), 'lifecycle_state', 'AVAILABLE')
-print(get_vcn_response.data)
+get_vcn_response = virtual_network_client.get_vcn(vcn_ocid)
+wait_until_vcn_available_response = oci.wait_until(virtual_network_client, get_vcn_response, 'lifecycle_state', 'AVAILABLE')
+print(wait_until_vcn_available_response.data)
 
 # This creates a subnet in the VCN and waits until the subnet's lifecycle state is AVAILABLE
 print('Creating Subnet 1')
@@ -34,8 +35,9 @@ result = virtual_network_client.create_subnet(
     )
 )
 subnet_ocid = result.data.id
-get_subnet_response = oci.wait_until(virtual_network_client, virtual_network_client.get_subnet(subnet_ocid), 'lifecycle_state', 'AVAILABLE')
-print(get_subnet_response.data)
+get_subnet_response = virtual_network_client.get_subnet(subnet_ocid)
+wait_until_subnet_available_response = oci.wait_until(virtual_network_client, get_subnet_response, 'lifecycle_state', 'AVAILABLE')
+print(wait_until_subnet_available_response.data)
 
 # Here we use a variation of the wait_until function where instead of specifying the property and state we can pass in a function reference (either
 # a reference to a defined function or a lambda) that returns a truthy value if the waiter should stop waiting and a falsey value if the waiter
@@ -54,8 +56,9 @@ result = virtual_network_client.create_subnet(
     )
 )
 subnet_two_ocid = result.data.id
-get_subnet_response = oci.wait_until(virtual_network_client, virtual_network_client.get_subnet(subnet_two_ocid), evaluate_response=lambda r: r.data.lifecycle_state == 'AVAILABLE')
-print(get_subnet_response.data)
+get_subnet_two_response = virtual_network_client.get_subnet(subnet_two_ocid)
+wait_until_subnet_two_available_response = oci.wait_until(virtual_network_client, get_subnet_two_response, evaluate_response=lambda r: r.data.lifecycle_state == 'AVAILABLE')
+print(wait_until_subnet_two_available_response.data)
 
 # Now we create a load balancer and wait until it has been created. Load balancers work slightly differently in that the create_load_balancer call
 # returns a work request and it is the work request whose state we should wait on (we wait until it has succeeded)
@@ -82,26 +85,31 @@ create_load_balancer_details = oci.load_balancer.models.CreateLoadBalancerDetail
 )
 result = load_balancer_client.create_load_balancer(create_load_balancer_details)
 work_request_id = result.headers['opc-work-request-id']
-get_work_request_response = oci.wait_until(load_balancer_client, load_balancer_client.get_work_request(work_request_id), 'lifecycle_state', 'SUCCEEDED')
-print(get_work_request_response.data)
+get_work_request_response = load_balancer_client.get_work_request(work_request_id)
+wait_until_succeeded_response = oci.wait_until(load_balancer_client, get_work_request_response, 'lifecycle_state', 'SUCCEEDED')
+print(wait_until_succeeded_response.data)
 load_balancer_ocid = get_work_request_response.data.load_balancer_id
 
 # Here we delete the load balancer. Note that on the waiter we use the optional succeed_on_not_found and set it to True. This meants that if we get a
 # 404 back from the service when checking the load balancer's state, instead of throwing an exception we will return successfully. This flag will typically
 # only be useful for delete/terminate scenarios and its normal default is False.
 print('Deleting Load Balancer')
+get_load_balancer_response = load_balancer_client.get_load_balancer(load_balancer_ocid)
 load_balancer_client.delete_backend_set(load_balancer_ocid, 'WaitExampleBackSet')
 load_balancer_client.delete_load_balancer(load_balancer_ocid)
-oci.wait_until(load_balancer_client, load_balancer_client.get_load_balancer(load_balancer_ocid), 'lifecycle_state', 'TERMINATED', succeed_on_not_found=True)
+oci.wait_until(load_balancer_client, get_load_balancer_response, 'lifecycle_state', 'TERMINATED', succeed_on_not_found=True)
 
 print('Deleting Subnet 1')
+get_subnet_response = virtual_network_client.get_subnet(subnet_ocid)
 virtual_network_client.delete_subnet(subnet_ocid)
-oci.wait_until(virtual_network_client, virtual_network_client.get_subnet(subnet_ocid), 'lifecycle_state', 'TERMINATED', succeed_on_not_found=True)
+oci.wait_until(virtual_network_client, get_subnet_response, 'lifecycle_state', 'TERMINATED', succeed_on_not_found=True)
 
 print('Deleting Subnet 2')
+get_subnet_two_response = virtual_network_client.get_subnet(subnet_two_ocid)
 virtual_network_client.delete_subnet(subnet_two_ocid)
-oci.wait_until(virtual_network_client, virtual_network_client.get_subnet(subnet_two_ocid), 'lifecycle_state', 'TERMINATED', succeed_on_not_found=True)
+oci.wait_until(virtual_network_client, get_subnet_two_response, 'lifecycle_state', 'TERMINATED', succeed_on_not_found=True)
 
 print('Deleting VCN')
+get_vcn_response = virtual_network_client.get_vcn(vcn_ocid)
 virtual_network_client.delete_vcn(vcn_ocid)
-oci.wait_until(virtual_network_client, virtual_network_client.get_vcn(vcn_ocid), 'lifecycle_state', 'TERMINATED', succeed_on_not_found=True)
+oci.wait_until(virtual_network_client, get_vcn_response, 'lifecycle_state', 'TERMINATED', succeed_on_not_found=True)
