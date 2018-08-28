@@ -1,0 +1,3 @@
+[run]
+omit = */oci/_vendor/*
+       */oci/object_storage/*

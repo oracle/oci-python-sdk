@@ -48,13 +48,25 @@ echo SDK Version Number $SDK_VERSION
 
 echo Running Tests
 
-if [ $TEST_ENABLE = "false" ]; then
+pip install tox
+if [[ $TEST_ENABLE = "false" ]]; then
   echo "Tests Disabled.  Just running flake 8"
-  # tox -e flake8
+  tox -e flake8
 else
   echo "Tests enabled"
-  # pip install tox
-  # tox -e flake8,py35 -- --vcr-record-mode=none
+  tox -e py35 -- \
+      --vcr-record-mode=none \
+      --cov-config .pr_coveragerc \
+      --cov=oci \
+      --cov-report html:cov_html \
+      --cov-report xml:cov.xml \
+      --ignore=tests/integ/test_large_file_transfer.py \
+      --ignore=tests/integ/test_object_storage.py \
+      --ignore=tests/integ/test_composite_operations.py \
+      --ignore=tests/integ/test_virtualnetwork.py \
+      --ignore=tests/unit/test_retry.py \
+      --ignore=tests/unit/test_waiters.py \
+      ./tests
 fi
 
 echo Building Wheel
