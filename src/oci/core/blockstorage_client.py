@@ -236,11 +236,11 @@ class BlockstorageClient(object):
         For general information about block volumes, see
         `Overview of Block Volume Service`__.
 
-        A volume and instance can be in separate compartments but must be in the same Availability Domain.
+        A volume and instance can be in separate compartments but must be in the same availability domain.
         For information about access control and compartments, see
         `Overview of the IAM Service`__. For information about
-        Availability Domains, see `Regions and Availability Domains`__.
-        To get a list of Availability Domains, use the `ListAvailabilityDomains` operation
+        availability domains, see `Regions and Availability Domains`__.
+        To get a list of availability domains, use the `ListAvailabilityDomains` operation
         in the Identity and Access Management Service API.
 
         You may optionally specify a *display name* for the volume, which is simply a friendly name or
@@ -1742,9 +1742,9 @@ class BlockstorageClient(object):
             sort order is case sensitive.
 
             **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
-            optionally filter by Availability Domain if the scope of the resource type is within a
-            single Availability Domain. If you call one of these \"List\" operations without specifying
-            an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+            optionally filter by availability domain if the scope of the resource type is within a
+            single availability domain. If you call one of these \"List\" operations without specifying
+            an availability domain, the resources are grouped by availability domain, then sorted.
 
             Allowed values are: "TIMECREATED", "DISPLAYNAME"
 
@@ -1850,11 +1850,11 @@ class BlockstorageClient(object):
     def list_boot_volumes(self, availability_domain, compartment_id, **kwargs):
         """
         ListBootVolumes
-        Lists the boot volumes in the specified compartment and Availability Domain.
+        Lists the boot volumes in the specified compartment and availability domain.
 
 
         :param str availability_domain: (required)
-            The name of the Availability Domain.
+            The name of the availability domain.
 
             Example: `Uocm:PHX-AD-1`
 
@@ -2031,9 +2031,9 @@ class BlockstorageClient(object):
             sort order is case sensitive.
 
             **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
-            optionally filter by Availability Domain if the scope of the resource type is within a
-            single Availability Domain. If you call one of these \"List\" operations without specifying
-            an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+            optionally filter by availability domain if the scope of the resource type is within a
+            single availability domain. If you call one of these \"List\" operations without specifying
+            an availability domain, the resources are grouped by availability domain, then sorted.
 
             Allowed values are: "TIMECREATED", "DISPLAYNAME"
 
@@ -2168,9 +2168,9 @@ class BlockstorageClient(object):
             sort order is case sensitive.
 
             **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
-            optionally filter by Availability Domain if the scope of the resource type is within a
-            single Availability Domain. If you call one of these \"List\" operations without specifying
-            an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+            optionally filter by availability domain if the scope of the resource type is within a
+            single availability domain. If you call one of these \"List\" operations without specifying
+            an availability domain, the resources are grouped by availability domain, then sorted.
 
             Allowed values are: "TIMECREATED", "DISPLAYNAME"
 
@@ -2272,7 +2272,7 @@ class BlockstorageClient(object):
             The OCID of the compartment.
 
         :param str availability_domain: (optional)
-            The name of the Availability Domain.
+            The name of the availability domain.
 
             Example: `Uocm:PHX-AD-1`
 
@@ -2293,9 +2293,9 @@ class BlockstorageClient(object):
             sort order is case sensitive.
 
             **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
-            optionally filter by Availability Domain if the scope of the resource type is within a
-            single Availability Domain. If you call one of these \"List\" operations without specifying
-            an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+            optionally filter by availability domain if the scope of the resource type is within a
+            single availability domain. If you call one of these \"List\" operations without specifying
+            an availability domain, the resources are grouped by availability domain, then sorted.
 
             Allowed values are: "TIMECREATED", "DISPLAYNAME"
 
@@ -2401,14 +2401,14 @@ class BlockstorageClient(object):
     def list_volumes(self, compartment_id, **kwargs):
         """
         ListVolumes
-        Lists the volumes in the specified compartment and Availability Domain.
+        Lists the volumes in the specified compartment and availability domain.
 
 
         :param str compartment_id: (required)
             The OCID of the compartment.
 
         :param str availability_domain: (optional)
-            The name of the Availability Domain.
+            The name of the availability domain.
 
             Example: `Uocm:PHX-AD-1`
 
@@ -2429,9 +2429,9 @@ class BlockstorageClient(object):
             sort order is case sensitive.
 
             **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
-            optionally filter by Availability Domain if the scope of the resource type is within a
-            single Availability Domain. If you call one of these \"List\" operations without specifying
-            an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+            optionally filter by availability domain if the scope of the resource type is within a
+            single availability domain. If you call one of these \"List\" operations without specifying
+            an availability domain, the resources are grouped by availability domain, then sorted.
 
             Allowed values are: "TIMECREATED", "DISPLAYNAME"
 

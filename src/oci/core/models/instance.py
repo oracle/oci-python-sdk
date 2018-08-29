@@ -18,6 +18,9 @@ class Instance(object):
     talk to an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
+    **Warning:** Oracle recommends that you avoid using any confidential information when you
+    supply string values using the API.
+
     __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Concepts/computeoverview.htm
     __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
     """
@@ -213,7 +216,7 @@ class Instance(object):
     def availability_domain(self):
         """
         **[Required]** Gets the availability_domain of this Instance.
-        The Availability Domain the instance is running in.
+        The availability domain the instance is running in.
 
         Example: `Uocm:PHX-AD-1`
 
@@ -227,7 +230,7 @@ class Instance(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this Instance.
-        The Availability Domain the instance is running in.
+        The availability domain the instance is running in.
 
         Example: `Uocm:PHX-AD-1`
 
@@ -329,7 +332,7 @@ class Instance(object):
     def extended_metadata(self):
         """
         Gets the extended_metadata of this Instance.
-        Additional metadata key/value pairs that you provide.  They serve a similar purpose and functionality from fields in the 'metadata' object.
+        Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the 'metadata' object.
 
         They are distinguished from 'metadata' fields in that these can be nested JSON objects (whereas 'metadata' fields are string/string maps only).
 
@@ -343,7 +346,7 @@ class Instance(object):
     def extended_metadata(self, extended_metadata):
         """
         Sets the extended_metadata of this Instance.
-        Additional metadata key/value pairs that you provide.  They serve a similar purpose and functionality from fields in the 'metadata' object.
+        Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the 'metadata' object.
 
         They are distinguished from 'metadata' fields in that these can be nested JSON objects (whereas 'metadata' fields are string/string maps only).
 
@@ -357,11 +360,16 @@ class Instance(object):
     def fault_domain(self):
         """
         Gets the fault_domain of this Instance.
-        The name of the Fault Domain the instance is running in.
+        The name of the fault domain the instance is running in.
 
-        A Fault Domain is a logical grouping of hardware and infrastructure within an Availability Domain that can become
-        unavailable in its entirety either due to hardware failure such as Top-of-rack (TOR) switch failure or due to
-        planned software maintenance such as security updates that reboot your instances.
+        A fault domain is a grouping of hardware and infrastructure within an availability domain.
+        Each availability domain contains three fault domains. Fault domains let you distribute your
+        instances so that they are not on the same physical hardware within a single availability domain.
+        A hardware failure or Compute hardware maintenance that affects one fault domain does not affect
+        instances in other fault domains.
+
+        If you do not specify the fault domain, the system selects one for you. To change the fault
+        domain for an instance, terminate it and launch a new instance in the preferred fault domain.
 
         Example: `FAULT-DOMAIN-1`
 
@@ -375,11 +383,16 @@ class Instance(object):
     def fault_domain(self, fault_domain):
         """
         Sets the fault_domain of this Instance.
-        The name of the Fault Domain the instance is running in.
+        The name of the fault domain the instance is running in.
 
-        A Fault Domain is a logical grouping of hardware and infrastructure within an Availability Domain that can become
-        unavailable in its entirety either due to hardware failure such as Top-of-rack (TOR) switch failure or due to
-        planned software maintenance such as security updates that reboot your instances.
+        A fault domain is a grouping of hardware and infrastructure within an availability domain.
+        Each availability domain contains three fault domains. Fault domains let you distribute your
+        instances so that they are not on the same physical hardware within a single availability domain.
+        A hardware failure or Compute hardware maintenance that affects one fault domain does not affect
+        instances in other fault domains.
+
+        If you do not specify the fault domain, the system selects one for you. To change the fault
+        domain for an instance, terminate it and launch a new instance in the preferred fault domain.
 
         Example: `FAULT-DOMAIN-1`
 
@@ -657,7 +670,7 @@ class Instance(object):
     def region(self):
         """
         **[Required]** Gets the region of this Instance.
-        The region that contains the Availability Domain the instance is running in.
+        The region that contains the availability domain the instance is running in.
 
         Example: `phx`
 
@@ -671,7 +684,7 @@ class Instance(object):
     def region(self, region):
         """
         Sets the region of this Instance.
-        The region that contains the Availability Domain the instance is running in.
+        The region that contains the availability domain the instance is running in.
 
         Example: `phx`
 

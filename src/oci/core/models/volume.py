@@ -17,6 +17,9 @@ class Volume(object):
     talk to an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
+    **Warning:** Oracle recommends that you avoid using any confidential information when you
+    supply string values using the API.
+
     __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/overview.htm
     __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
     """
@@ -155,7 +158,7 @@ class Volume(object):
     def availability_domain(self):
         """
         **[Required]** Gets the availability_domain of this Volume.
-        The Availability Domain of the volume.
+        The availability domain of the volume.
 
         Example: `Uocm:PHX-AD-1`
 
@@ -169,7 +172,7 @@ class Volume(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this Volume.
-        The Availability Domain of the volume.
+        The availability domain of the volume.
 
         Example: `Uocm:PHX-AD-1`
 
@@ -429,7 +432,7 @@ class Volume(object):
     def source_details(self):
         """
         Gets the source_details of this Volume.
-        The volume source, either an existing volume in the same Availability Domain or a volume backup.
+        The volume source, either an existing volume in the same availability domain or a volume backup.
         If null, an empty volume is created.
 
 
@@ -442,7 +445,7 @@ class Volume(object):
     def source_details(self, source_details):
         """
         Sets the source_details of this Volume.
-        The volume source, either an existing volume in the same Availability Domain or a volume backup.
+        The volume source, either an existing volume in the same availability domain or a volume backup.
         If null, an empty volume is created.
 
 

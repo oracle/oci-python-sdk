@@ -16,6 +16,9 @@ class VolumeAttachment(object):
     For general information about volume attachments, see
     `Overview of Block Volume Storage`__.
 
+    **Warning:** Oracle recommends that you avoid using any confidential information when you
+    supply string values using the API.
+
     __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/overview.htm
     """
 
@@ -169,7 +172,7 @@ class VolumeAttachment(object):
     def availability_domain(self):
         """
         **[Required]** Gets the availability_domain of this VolumeAttachment.
-        The Availability Domain of an instance.
+        The availability domain of an instance.
 
         Example: `Uocm:PHX-AD-1`
 
@@ -183,7 +186,7 @@ class VolumeAttachment(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this VolumeAttachment.
-        The Availability Domain of an instance.
+        The availability domain of an instance.
 
         Example: `Uocm:PHX-AD-1`
 

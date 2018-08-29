@@ -99,7 +99,7 @@ class CreateVolumeDetails(object):
     def availability_domain(self):
         """
         **[Required]** Gets the availability_domain of this CreateVolumeDetails.
-        The Availability Domain of the volume.
+        The availability domain of the volume.
 
         Example: `Uocm:PHX-AD-1`
 
@@ -113,7 +113,7 @@ class CreateVolumeDetails(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this CreateVolumeDetails.
-        The Availability Domain of the volume.
+        The availability domain of the volume.
 
         Example: `Uocm:PHX-AD-1`
 
@@ -323,7 +323,7 @@ class CreateVolumeDetails(object):
     def source_details(self):
         """
         Gets the source_details of this CreateVolumeDetails.
-        Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup.
+        Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same availability domain or a Block volume backup.
         This is an optional field. If not specified or set to null, the new Block volume will be empty.
         When specified, the new Block volume will contain data from the source volume or backup.
 
@@ -337,7 +337,7 @@ class CreateVolumeDetails(object):
     def source_details(self, source_details):
         """
         Sets the source_details of this CreateVolumeDetails.
-        Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup.
+        Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same availability domain or a Block volume backup.
         This is an optional field. If not specified or set to null, the new Block volume will be empty.
         When specified, the new Block volume will contain data from the source volume or backup.
 

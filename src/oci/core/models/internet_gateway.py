@@ -10,12 +10,15 @@ from oci.decorators import init_model_state_from_kwargs
 class InternetGateway(object):
     """
     Represents a router that connects the edge of a VCN with the Internet. For an example scenario
-    that uses an Internet Gateway, see
+    that uses an internet gateway, see
     `Typical Networking Service Scenarios`__.
 
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
     talk to an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
+
+    **Warning:** Oracle recommends that you avoid using any confidential information when you
+    supply string values using the API.
 
     __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm#scenarios
     __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
@@ -119,7 +122,7 @@ class InternetGateway(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this InternetGateway.
-        The OCID of the compartment containing the Internet Gateway.
+        The OCID of the compartment containing the internet gateway.
 
 
         :return: The compartment_id of this InternetGateway.
@@ -131,7 +134,7 @@ class InternetGateway(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this InternetGateway.
-        The OCID of the compartment containing the Internet Gateway.
+        The OCID of the compartment containing the internet gateway.
 
 
         :param compartment_id: The compartment_id of this InternetGateway.
@@ -239,7 +242,7 @@ class InternetGateway(object):
     def id(self):
         """
         **[Required]** Gets the id of this InternetGateway.
-        The Internet Gateway's Oracle ID (OCID).
+        The internet gateway's Oracle ID (OCID).
 
 
         :return: The id of this InternetGateway.
@@ -251,7 +254,7 @@ class InternetGateway(object):
     def id(self, id):
         """
         Sets the id of this InternetGateway.
-        The Internet Gateway's Oracle ID (OCID).
+        The internet gateway's Oracle ID (OCID).
 
 
         :param id: The id of this InternetGateway.
@@ -289,7 +292,7 @@ class InternetGateway(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this InternetGateway.
-        The Internet Gateway's current state.
+        The internet gateway's current state.
 
         Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -304,7 +307,7 @@ class InternetGateway(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this InternetGateway.
-        The Internet Gateway's current state.
+        The internet gateway's current state.
 
 
         :param lifecycle_state: The lifecycle_state of this InternetGateway.
@@ -319,7 +322,7 @@ class InternetGateway(object):
     def time_created(self):
         """
         Gets the time_created of this InternetGateway.
-        The date and time the Internet Gateway was created, in the format defined by RFC3339.
+        The date and time the internet gateway was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -333,7 +336,7 @@ class InternetGateway(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this InternetGateway.
-        The date and time the Internet Gateway was created, in the format defined by RFC3339.
+        The date and time the internet gateway was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -347,7 +350,7 @@ class InternetGateway(object):
     def vcn_id(self):
         """
         **[Required]** Gets the vcn_id of this InternetGateway.
-        The OCID of the VCN the Internet Gateway belongs to.
+        The OCID of the VCN the internet gateway belongs to.
 
 
         :return: The vcn_id of this InternetGateway.
@@ -359,7 +362,7 @@ class InternetGateway(object):
     def vcn_id(self, vcn_id):
         """
         Sets the vcn_id of this InternetGateway.
-        The OCID of the VCN the Internet Gateway belongs to.
+        The OCID of the VCN the internet gateway belongs to.
 
 
         :param vcn_id: The vcn_id of this InternetGateway.

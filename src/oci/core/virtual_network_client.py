@@ -99,7 +99,7 @@ class VirtualNetworkClient(object):
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param ServiceIdRequestDetails attach_service_details: (required)
-            ServiceId of Service to be attached to a Service Gateway.
+            ServiceId of Service to be attached to a service gateway.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -464,7 +464,7 @@ class VirtualNetworkClient(object):
     def create_cpe(self, create_cpe_details, **kwargs):
         """
         CreateCpe
-        Creates a new virtual Customer-Premises Equipment (CPE) object in the specified compartment. For
+        Creates a new virtual customer-premises equipment (CPE) object in the specified compartment. For
         more information, see `IPSec VPNs`__.
 
         For the purposes of access control, you must provide the OCID of the compartment where you want
@@ -813,7 +813,7 @@ class VirtualNetworkClient(object):
     def create_drg(self, create_drg_details, **kwargs):
         """
         CreateDrg
-        Creates a new Dynamic Routing Gateway (DRG) in the specified compartment. For more information,
+        Creates a new dynamic routing gateway (DRG) in the specified compartment. For more information,
         see `Dynamic Routing Gateways (DRGs)`__.
 
         For the purposes of access control, you must provide the OCID of the compartment where you want
@@ -979,24 +979,24 @@ class VirtualNetworkClient(object):
     def create_internet_gateway(self, create_internet_gateway_details, **kwargs):
         """
         CreateInternetGateway
-        Creates a new Internet Gateway for the specified VCN. For more information, see
+        Creates a new internet gateway for the specified VCN. For more information, see
         `Access to the Internet`__.
 
         For the purposes of access control, you must provide the OCID of the compartment where you want the Internet
-        Gateway to reside. Notice that the Internet Gateway doesn't have to be in the same compartment as the VCN or
+        Gateway to reside. Notice that the internet gateway doesn't have to be in the same compartment as the VCN or
         other Networking Service components. If you're not sure which compartment to use, put the Internet
         Gateway in the same compartment with the VCN. For more information about compartments and access control, see
         `Overview of the IAM Service`__. For information about OCIDs, see
         `Resource Identifiers`__.
 
-        You may optionally specify a *display name* for the Internet Gateway, otherwise a default is provided. It
+        You may optionally specify a *display name* for the internet gateway, otherwise a default is provided. It
         does not have to be unique, and you can change it. Avoid entering confidential information.
 
-        For traffic to flow between a subnet and an Internet Gateway, you must create a route rule accordingly in
-        the subnet's route table (for example, 0.0.0.0/0 > Internet Gateway). See
+        For traffic to flow between a subnet and an internet gateway, you must create a route rule accordingly in
+        the subnet's route table (for example, 0.0.0.0/0 > internet gateway). See
         :func:`update_route_table`.
 
-        You must specify whether the Internet Gateway is enabled when you create it. If it's disabled, that means no
+        You must specify whether the internet gateway is enabled when you create it. If it's disabled, that means no
         traffic will flow to/from the internet even if there's a route rule that enables that traffic. You can later
         use :func:`update_internet_gateway` to easily disable/enable
         the gateway without changing the route rule.
@@ -1007,7 +1007,7 @@ class VirtualNetworkClient(object):
 
 
         :param CreateInternetGatewayDetails create_internet_gateway_details: (required)
-            Details for creating a new Internet Gateway.
+            Details for creating a new internet gateway.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -1319,7 +1319,7 @@ class VirtualNetworkClient(object):
 
         * **For an ephemeral public IP:** You must also specify a `privateIpId` with the OCID of
         the primary private IP you want to assign the public IP to. The public IP is created in
-        the same Availability Domain as the private IP. An ephemeral public IP must always be
+        the same availability domain as the private IP. An ephemeral public IP must always be
         assigned to a private IP, and only to the *primary* private IP on a VNIC, not a secondary
         private IP.
 
@@ -1835,7 +1835,7 @@ class VirtualNetworkClient(object):
     def create_vcn(self, create_vcn_details, **kwargs):
         """
         CreateVcn
-        Creates a new Virtual Cloud Network (VCN). For more information, see
+        Creates a new virtual cloud network (VCN). For more information, see
         `VCNs and Subnets`__.
 
         For the VCN you must specify a single, contiguous IPv4 CIDR block. Oracle recommends using one of the
@@ -1861,7 +1861,7 @@ class VirtualNetworkClient(object):
         The OCID for each is returned in the response. You can't delete these default objects, but you can change their
         contents (that is, change the route rules, security list rules, and so on).
 
-        The VCN and subnets you create are not accessible until you attach an Internet Gateway or set up an IPSec VPN
+        The VCN and subnets you create are not accessible until you attach an internet gateway or set up an IPSec VPN
         or FastConnect. For more information, see
         `Overview of the Networking Service`__.
 
@@ -2485,7 +2485,7 @@ class VirtualNetworkClient(object):
     def delete_internet_gateway(self, ig_id, **kwargs):
         """
         DeleteInternetGateway
-        Deletes the specified Internet Gateway. The Internet Gateway does not have to be disabled, but
+        Deletes the specified internet gateway. The internet gateway does not have to be disabled, but
         there must not be a route table that lists it as a target.
 
         This is an asynchronous operation. The gateway's `lifecycleState` will change to TERMINATING temporarily
@@ -2493,7 +2493,7 @@ class VirtualNetworkClient(object):
 
 
         :param str ig_id: (required)
-            The OCID of the Internet Gateway.
+            The OCID of the internet gateway.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -3440,7 +3440,7 @@ class VirtualNetworkClient(object):
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param ServiceIdRequestDetails detach_service_details: (required)
-            ServiceId of Service to be detached from a Service Gateway.
+            ServiceId of Service to be detached from a service gateway.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -4092,11 +4092,11 @@ class VirtualNetworkClient(object):
     def get_internet_gateway(self, ig_id, **kwargs):
         """
         GetInternetGateway
-        Gets the specified Internet Gateway's information.
+        Gets the specified internet gateway's information.
 
 
         :param str ig_id: (required)
-            The OCID of the Internet Gateway.
+            The OCID of the internet gateway.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -5313,7 +5313,7 @@ class VirtualNetworkClient(object):
     def list_cpes(self, compartment_id, **kwargs):
         """
         ListCpes
-        Lists the Customer-Premises Equipment objects (CPEs) in the specified compartment.
+        Lists the customer-premises equipment objects (CPEs) in the specified compartment.
 
 
         :param str compartment_id: (required)
@@ -5410,9 +5410,9 @@ class VirtualNetworkClient(object):
             sort order is case sensitive.
 
             **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
-            optionally filter by Availability Domain if the scope of the resource type is within a
-            single Availability Domain. If you call one of these \"List\" operations without specifying
-            an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+            optionally filter by availability domain if the scope of the resource type is within a
+            single availability domain. If you call one of these \"List\" operations without specifying
+            an availability domain, the resources are grouped by availability domain, then sorted.
 
             Allowed values are: "TIMECREATED", "DISPLAYNAME"
 
@@ -5618,9 +5618,9 @@ class VirtualNetworkClient(object):
             sort order is case sensitive.
 
             **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
-            optionally filter by Availability Domain if the scope of the resource type is within a
-            single Availability Domain. If you call one of these \"List\" operations without specifying
-            an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+            optionally filter by availability domain if the scope of the resource type is within a
+            single availability domain. If you call one of these \"List\" operations without specifying
+            an availability domain, the resources are grouped by availability domain, then sorted.
 
             Allowed values are: "TIMECREATED", "DISPLAYNAME"
 
@@ -5830,9 +5830,9 @@ class VirtualNetworkClient(object):
             sort order is case sensitive.
 
             **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
-            optionally filter by Availability Domain if the scope of the resource type is within a
-            single Availability Domain. If you call one of these \"List\" operations without specifying
-            an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+            optionally filter by availability domain if the scope of the resource type is within a
+            single availability domain. If you call one of these \"List\" operations without specifying
+            an availability domain, the resources are grouped by availability domain, then sorted.
 
             Allowed values are: "TIMECREATED", "DISPLAYNAME"
 
@@ -6268,7 +6268,7 @@ class VirtualNetworkClient(object):
     def list_internet_gateways(self, compartment_id, vcn_id, **kwargs):
         """
         ListInternetGateways
-        Lists the Internet Gateways in the specified VCN and the specified compartment.
+        Lists the internet gateways in the specified VCN and the specified compartment.
 
 
         :param str compartment_id: (required)
@@ -6294,9 +6294,9 @@ class VirtualNetworkClient(object):
             sort order is case sensitive.
 
             **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
-            optionally filter by Availability Domain if the scope of the resource type is within a
-            single Availability Domain. If you call one of these \"List\" operations without specifying
-            an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+            optionally filter by availability domain if the scope of the resource type is within a
+            single availability domain. If you call one of these \"List\" operations without specifying
+            an availability domain, the resources are grouped by availability domain, then sorted.
 
             Allowed values are: "TIMECREATED", "DISPLAYNAME"
 
@@ -6671,17 +6671,17 @@ class VirtualNetworkClient(object):
         `availabilityDomain` parameter empty.
 
         To list your ephemeral public IPs, set `scope` = `AVAILABILITY_DOMAIN`, and set the
-        `availabilityDomain` parameter to the desired Availability Domain. An ephemeral public IP
-        is always in the same Availability Domain and compartment as the private IP it's assigned to.
+        `availabilityDomain` parameter to the desired availability domain. An ephemeral public IP
+        is always in the same availability domain and compartment as the private IP it's assigned to.
 
 
         :param str scope: (required)
-            Whether the public IP is regional or specific to a particular Availability Domain.
+            Whether the public IP is regional or specific to a particular availability domain.
 
             * `REGION`: The public IP exists within a region and can be assigned to a private IP
-            in any Availability Domain in the region. Reserved public IPs have `scope` = `REGION`.
+            in any availability domain in the region. Reserved public IPs have `scope` = `REGION`.
 
-            * `AVAILABILITY_DOMAIN`: The public IP exists within the Availability Domain of the private IP
+            * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the private IP
             it's assigned to, which is specified by the `availabilityDomain` property of the public IP object.
             Ephemeral public IPs have `scope` = `AVAILABILITY_DOMAIN`.
 
@@ -6699,7 +6699,7 @@ class VirtualNetworkClient(object):
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
         :param str availability_domain: (optional)
-            The name of the Availability Domain.
+            The name of the availability domain.
 
             Example: `Uocm:PHX-AD-1`
 
@@ -6880,9 +6880,9 @@ class VirtualNetworkClient(object):
             sort order is case sensitive.
 
             **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
-            optionally filter by Availability Domain if the scope of the resource type is within a
-            single Availability Domain. If you call one of these \"List\" operations without specifying
-            an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+            optionally filter by availability domain if the scope of the resource type is within a
+            single availability domain. If you call one of these \"List\" operations without specifying
+            an availability domain, the resources are grouped by availability domain, then sorted.
 
             Allowed values are: "TIMECREATED", "DISPLAYNAME"
 
@@ -7013,9 +7013,9 @@ class VirtualNetworkClient(object):
             sort order is case sensitive.
 
             **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
-            optionally filter by Availability Domain if the scope of the resource type is within a
-            single Availability Domain. If you call one of these \"List\" operations without specifying
-            an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+            optionally filter by availability domain if the scope of the resource type is within a
+            single availability domain. If you call one of these \"List\" operations without specifying
+            an availability domain, the resources are grouped by availability domain, then sorted.
 
             Allowed values are: "TIMECREATED", "DISPLAYNAME"
 
@@ -7144,9 +7144,9 @@ class VirtualNetworkClient(object):
             sort order is case sensitive.
 
             **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
-            optionally filter by Availability Domain if the scope of the resource type is within a
-            single Availability Domain. If you call one of these \"List\" operations without specifying
-            an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+            optionally filter by availability domain if the scope of the resource type is within a
+            single availability domain. If you call one of these \"List\" operations without specifying
+            an availability domain, the resources are grouped by availability domain, then sorted.
 
             Allowed values are: "TIMECREATED", "DISPLAYNAME"
 
@@ -7346,9 +7346,9 @@ class VirtualNetworkClient(object):
             sort order is case sensitive.
 
             **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
-            optionally filter by Availability Domain if the scope of the resource type is within a
-            single Availability Domain. If you call one of these \"List\" operations without specifying
-            an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+            optionally filter by availability domain if the scope of the resource type is within a
+            single availability domain. If you call one of these \"List\" operations without specifying
+            an availability domain, the resources are grouped by availability domain, then sorted.
 
             Allowed values are: "TIMECREATED", "DISPLAYNAME"
 
@@ -7453,7 +7453,7 @@ class VirtualNetworkClient(object):
     def list_vcns(self, compartment_id, **kwargs):
         """
         ListVcns
-        Lists the Virtual Cloud Networks (VCNs) in the specified compartment.
+        Lists the virtual cloud networks (VCNs) in the specified compartment.
 
 
         :param str compartment_id: (required)
@@ -7476,9 +7476,9 @@ class VirtualNetworkClient(object):
             sort order is case sensitive.
 
             **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
-            optionally filter by Availability Domain if the scope of the resource type is within a
-            single Availability Domain. If you call one of these \"List\" operations without specifying
-            an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+            optionally filter by availability domain if the scope of the resource type is within a
+            single availability domain. If you call one of these \"List\" operations without specifying
+            an availability domain, the resources are grouped by availability domain, then sorted.
 
             Allowed values are: "TIMECREATED", "DISPLAYNAME"
 
@@ -7768,9 +7768,9 @@ class VirtualNetworkClient(object):
             sort order is case sensitive.
 
             **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
-            optionally filter by Availability Domain if the scope of the resource type is within a
-            single Availability Domain. If you call one of these \"List\" operations without specifying
-            an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+            optionally filter by availability domain if the scope of the resource type is within a
+            single availability domain. If you call one of these \"List\" operations without specifying
+            an availability domain, the resources are grouped by availability domain, then sorted.
 
             Allowed values are: "TIMECREATED", "DISPLAYNAME"
 
@@ -8360,7 +8360,7 @@ class VirtualNetworkClient(object):
     def update_internet_gateway(self, ig_id, update_internet_gateway_details, **kwargs):
         """
         UpdateInternetGateway
-        Updates the specified Internet Gateway. You can disable/enable it, or change its display name
+        Updates the specified internet gateway. You can disable/enable it, or change its display name
         or tags. Avoid entering confidential information.
 
         If the gateway is disabled, that means no traffic will flow to/from the internet even if there's
@@ -8368,10 +8368,10 @@ class VirtualNetworkClient(object):
 
 
         :param str ig_id: (required)
-            The OCID of the Internet Gateway.
+            The OCID of the internet gateway.
 
         :param UpdateInternetGatewayDetails update_internet_gateway_details: (required)
-            Details for updating the Internet Gateway.
+            Details for updating the internet gateway.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
