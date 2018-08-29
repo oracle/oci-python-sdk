@@ -78,6 +78,10 @@ class Volume(object):
             The value to assign to the is_hydrated property of this Volume.
         :type is_hydrated: bool
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this Volume.
+        :type kms_key_id: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Volume.
             Allowed values for this property are: "PROVISIONING", "RESTORING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAULTY", 'UNKNOWN_ENUM_VALUE'.
@@ -113,6 +117,7 @@ class Volume(object):
             'freeform_tags': 'dict(str, str)',
             'id': 'str',
             'is_hydrated': 'bool',
+            'kms_key_id': 'str',
             'lifecycle_state': 'str',
             'size_in_gbs': 'int',
             'size_in_mbs': 'int',
@@ -129,6 +134,7 @@ class Volume(object):
             'freeform_tags': 'freeformTags',
             'id': 'id',
             'is_hydrated': 'isHydrated',
+            'kms_key_id': 'kmsKeyId',
             'lifecycle_state': 'lifecycleState',
             'size_in_gbs': 'sizeInGBs',
             'size_in_mbs': 'sizeInMBs',
@@ -144,6 +150,7 @@ class Volume(object):
         self._freeform_tags = None
         self._id = None
         self._is_hydrated = None
+        self._kms_key_id = None
         self._lifecycle_state = None
         self._size_in_gbs = None
         self._size_in_mbs = None
@@ -346,6 +353,30 @@ class Volume(object):
         :type: bool
         """
         self._is_hydrated = is_hydrated
+
+    @property
+    def kms_key_id(self):
+        """
+        Gets the kms_key_id of this Volume.
+        The OCID of the KMS key which is the master encryption key for the volume.
+
+
+        :return: The kms_key_id of this Volume.
+        :rtype: str
+        """
+        return self._kms_key_id
+
+    @kms_key_id.setter
+    def kms_key_id(self, kms_key_id):
+        """
+        Sets the kms_key_id of this Volume.
+        The OCID of the KMS key which is the master encryption key for the volume.
+
+
+        :param kms_key_id: The kms_key_id of this Volume.
+        :type: str
+        """
+        self._kms_key_id = kms_key_id
 
     @property
     def lifecycle_state(self):
