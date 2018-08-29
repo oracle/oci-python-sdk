@@ -17,9 +17,9 @@ if [ -d "/opt/odo/tox_sic/venv/bin" ]; then
   . /opt/odo/tox_sic/venv/bin/activate
   virtualenv .sdk-venv
   . .sdk-venv/bin/activate
+  pip install -U pip
 fi
 
-pip install -U pip
 pip install -e .
 
 echo Python version
@@ -28,23 +28,23 @@ python --version
 SDK_VERSION=$(tail -1 src/oci/version.py | cut -d '"' -f2)
 echo SDK Version Number $SDK_VERSION
 
-# echo Building Docs
-# pip install sphinx --timeout 120
-# pip install sphinx_rtd_theme
+echo Building Docs
+pip install sphinx --timeout 120
+pip install sphinx_rtd_theme
 
-# touch warnings.txt
-# make docs
+touch warnings.txt
+make docs
 
 # a hyperlinks mismatch will cause all of the links on readthedocs to break
-# if cat warnings.txt | grep -q "ERROR: Anonymous hyperlink mismatch";  then
-#     echo "Failing due to error building docs with sphinx.";
-#     exit 1;
-# else
-#     echo "No critical errors found during sphinx build.";
-# fi
+if cat warnings.txt | grep -q "ERROR: Anonymous hyperlink mismatch";  then
+    echo "Failing due to error building docs with sphinx.";
+    exit 1;
+else
+    echo "No critical errors found during sphinx build.";
+fi
 
-# mkdir -p dist/oci-python-sdk-docs-$SDK_VERSION/
-# cp -r docs/_build/html/* dist/oci-python-sdk-docs-$SDK_VERSION/
+mkdir -p dist/oci-python-sdk-docs-$SDK_VERSION/
+cp -r docs/_build/html/* dist/oci-python-sdk-docs-$SDK_VERSION/
 
 echo Running Tests
 
@@ -54,7 +54,7 @@ if [[ $TEST_ENABLE = "false" ]]; then
   tox -e flake8
 else
   echo "Tests enabled"
-  tox -e flake8,py35 -- \
+  tox -e flake8,py27 -- \
       --vcr-record-mode=none \
       --cov-config .pr_coveragerc \
       --cov=oci \
