@@ -101,6 +101,18 @@ Install development-only dependencies::
     pip install -r requirements.txt
     pip install -r requirements-internal.txt
 
+Vendored Dependencies
+---------------------
+
+Vendorize is used to vendor in chardet, idna, jwt, requests, urllib3.
+
+If you need to update requests, please see this commit: https://bitbucket.oci.oraclecorp.com/projects/SDK/repos/python-sdk/commits/52990cc96f7b0b208b529a75d2d49e459420d99d
+If that line is not updated then requests will not raise an error on an incomplete read.
+
+This commit is also important for dealing with older versions of Python: https://bitbucket.oci.oraclecorp.com/projects/SDK/repos/python-sdk/commits/9490e78a47f2a9c95fcfd4df946621b004e61bde
+
+This confluence page gives more details about vendoring: https://confluence.oci.oraclecorp.com/display/~nvu/Python+SDK+Vendoring
+
 
 Running the tests
 =================
@@ -163,7 +175,7 @@ rather than hitting services each time. We use `VCR.py <http://vcrpy.readthedocs
 do this.
 
 Of the `recording modes <http://vcrpy.readthedocs.io/en/latest/usage.html#record-modes>`_ offered by VCR, we use ``once``
-by default. 
+by default.
 
 When doing builds, since we assume the previously recorded traffic to be good, we use the ``none`` record mode.
 
@@ -232,7 +244,7 @@ or by executing:
     make gen
 
 
-Note that at this time, it will execute the ``merge_and_validate_spec.py`` script, which is part of the ``coreservices-api-spec`` artifact, and execute it. As long as you are running in a virtual environment which was previously set up for the SDK you should be fine, but you may need to install the following dependencies: 
+Note that at this time, it will execute the ``merge_and_validate_spec.py`` script, which is part of the ``coreservices-api-spec`` artifact, and execute it. As long as you are running in a virtual environment which was previously set up for the SDK you should be fine, but you may need to install the following dependencies:
 
 ::
 
@@ -240,7 +252,7 @@ Note that at this time, it will execute the ``merge_and_validate_spec.py`` scrip
 
 Adding support for new services
 ================================
-The ``scripts/add_or_update_spec.py`` script can be used to add a new service to the SDK. An example of running this script is: 
+The ``scripts/add_or_update_spec.py`` script can be used to add a new service to the SDK. An example of running this script is:
 
 ::
 
@@ -259,7 +271,7 @@ The script can be run as ``python scripts/add_or_update_spec.py --help`` to see 
 
 After you've added the service, you can run the code generator using the steps from the "Running the Code Generator" section of this readme.
 
-Note: This script updates ``pom.xml`` and adds an entry to ``github.whitelist``.  To generate the docs for the new service 
+Note: This script updates ``pom.xml`` and adds an entry to ``github.whitelist``.  To generate the docs for the new service
 ``scripts\doc_gen\generate_service_rst_files.py`` will need to be updated manually.
 
 Updating existing service spec versions
