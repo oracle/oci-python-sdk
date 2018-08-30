@@ -12,6 +12,9 @@ class VnicAttachment(object):
     Represents an attachment between a VNIC and an instance. For more information, see
     `Virtual Network Interface Cards (VNICs)`__.
 
+    **Warning:** Oracle recommends that you avoid using any confidential information when you
+    supply string values using the API.
+
     __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVNICs.htm
     """
 
@@ -127,7 +130,7 @@ class VnicAttachment(object):
     def availability_domain(self):
         """
         **[Required]** Gets the availability_domain of this VnicAttachment.
-        The Availability Domain of the instance.
+        The availability domain of the instance.
 
         Example: `Uocm:PHX-AD-1`
 
@@ -141,7 +144,7 @@ class VnicAttachment(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this VnicAttachment.
-        The Availability Domain of the instance.
+        The availability domain of the instance.
 
         Example: `Uocm:PHX-AD-1`
 

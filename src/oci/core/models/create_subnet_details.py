@@ -113,7 +113,7 @@ class CreateSubnetDetails(object):
     def availability_domain(self):
         """
         **[Required]** Gets the availability_domain of this CreateSubnetDetails.
-        The Availability Domain to contain the subnet.
+        The availability domain to contain the subnet.
 
         Example: `Uocm:PHX-AD-1`
 
@@ -127,7 +127,7 @@ class CreateSubnetDetails(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this CreateSubnetDetails.
-        The Availability Domain to contain the subnet.
+        The availability domain to contain the subnet.
 
         Example: `Uocm:PHX-AD-1`
 

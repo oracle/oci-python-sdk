@@ -71,7 +71,7 @@ class CreateInternetGatewayDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateInternetGatewayDetails.
-        The OCID of the compartment to contain the Internet Gateway.
+        The OCID of the compartment to contain the internet gateway.
 
 
         :return: The compartment_id of this CreateInternetGatewayDetails.
@@ -83,7 +83,7 @@ class CreateInternetGatewayDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateInternetGatewayDetails.
-        The OCID of the compartment to contain the Internet Gateway.
+        The OCID of the compartment to contain the internet gateway.
 
 
         :param compartment_id: The compartment_id of this CreateInternetGatewayDetails.
@@ -213,7 +213,7 @@ class CreateInternetGatewayDetails(object):
     def vcn_id(self):
         """
         **[Required]** Gets the vcn_id of this CreateInternetGatewayDetails.
-        The OCID of the VCN the Internet Gateway is attached to.
+        The OCID of the VCN the internet gateway is attached to.
 
 
         :return: The vcn_id of this CreateInternetGatewayDetails.
@@ -225,7 +225,7 @@ class CreateInternetGatewayDetails(object):
     def vcn_id(self, vcn_id):
         """
         Sets the vcn_id of this CreateInternetGatewayDetails.
-        The OCID of the VCN the Internet Gateway is attached to.
+        The OCID of the VCN the internet gateway is attached to.
 
 
         :param vcn_id: The vcn_id of this CreateInternetGatewayDetails.

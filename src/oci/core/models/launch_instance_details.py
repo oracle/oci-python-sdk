@@ -135,7 +135,7 @@ class LaunchInstanceDetails(object):
     def availability_domain(self):
         """
         **[Required]** Gets the availability_domain of this LaunchInstanceDetails.
-        The Availability Domain of the instance.
+        The availability domain of the instance.
 
         Example: `Uocm:PHX-AD-1`
 
@@ -149,7 +149,7 @@ class LaunchInstanceDetails(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this LaunchInstanceDetails.
-        The Availability Domain of the instance.
+        The availability domain of the instance.
 
         Example: `Uocm:PHX-AD-1`
 
@@ -277,7 +277,7 @@ class LaunchInstanceDetails(object):
     def extended_metadata(self):
         """
         Gets the extended_metadata of this LaunchInstanceDetails.
-        Additional metadata key/value pairs that you provide.  They serve a similar purpose and functionality from fields in the 'metadata' object.
+        Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the 'metadata' object.
 
         They are distinguished from 'metadata' fields in that these can be nested JSON objects (whereas 'metadata' fields are string/string maps only).
 
@@ -291,7 +291,7 @@ class LaunchInstanceDetails(object):
     def extended_metadata(self, extended_metadata):
         """
         Sets the extended_metadata of this LaunchInstanceDetails.
-        Additional metadata key/value pairs that you provide.  They serve a similar purpose and functionality from fields in the 'metadata' object.
+        Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the 'metadata' object.
 
         They are distinguished from 'metadata' fields in that these can be nested JSON objects (whereas 'metadata' fields are string/string maps only).
 
@@ -305,10 +305,14 @@ class LaunchInstanceDetails(object):
     def fault_domain(self):
         """
         Gets the fault_domain of this LaunchInstanceDetails.
-        The name of the Fault Domain in which to launch an instance.
+        A fault domain is a grouping of hardware and infrastructure within an availability domain.
+        Each availability domain contains three fault domains. Fault domains let you distribute your
+        instances so that they are not on the same physical hardware within a single availability domain.
+        A hardware failure or Compute hardware maintenance that affects one fault domain does not affect
+        instances in other fault domains.
 
-        To get a list of Fault Domains, use the :func:`list_fault_domains`
-        operation in the Identity and Access Management Service API.
+        If you do not specify the fault domain, the system selects one for you. To change the fault
+        domain for an instance, terminate it and launch a new instance in the preferred fault domain.
 
         Example: `FAULT-DOMAIN-1`
 
@@ -322,10 +326,14 @@ class LaunchInstanceDetails(object):
     def fault_domain(self, fault_domain):
         """
         Sets the fault_domain of this LaunchInstanceDetails.
-        The name of the Fault Domain in which to launch an instance.
+        A fault domain is a grouping of hardware and infrastructure within an availability domain.
+        Each availability domain contains three fault domains. Fault domains let you distribute your
+        instances so that they are not on the same physical hardware within a single availability domain.
+        A hardware failure or Compute hardware maintenance that affects one fault domain does not affect
+        instances in other fault domains.
 
-        To get a list of Fault Domains, use the :func:`list_fault_domains`
-        operation in the Identity and Access Management Service API.
+        If you do not specify the fault domain, the system selects one for you. To change the fault
+        domain for an instance, terminate it and launch a new instance in the preferred fault domain.
 
         Example: `FAULT-DOMAIN-1`
 

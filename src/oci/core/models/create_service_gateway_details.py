@@ -71,7 +71,7 @@ class CreateServiceGatewayDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateServiceGatewayDetails.
-        The `OCID]`__  of the compartment to contain the Service Gateway.
+        The `OCID]`__  of the compartment to contain the service gateway.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
@@ -85,7 +85,7 @@ class CreateServiceGatewayDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateServiceGatewayDetails.
-        The `OCID]`__  of the compartment to contain the Service Gateway.
+        The `OCID]`__  of the compartment to contain the service gateway.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
@@ -195,7 +195,7 @@ class CreateServiceGatewayDetails(object):
     def services(self):
         """
         **[Required]** Gets the services of this CreateServiceGatewayDetails.
-        List of the Service OCIDs. These are the Services which will be enabled on the Service Gateway. This list can be empty.
+        List of the service OCIDs. These are the services that will be enabled on the service gateway. This list can be empty.
 
 
         :return: The services of this CreateServiceGatewayDetails.
@@ -207,7 +207,7 @@ class CreateServiceGatewayDetails(object):
     def services(self, services):
         """
         Sets the services of this CreateServiceGatewayDetails.
-        List of the Service OCIDs. These are the Services which will be enabled on the Service Gateway. This list can be empty.
+        List of the service OCIDs. These are the services that will be enabled on the service gateway. This list can be empty.
 
 
         :param services: The services of this CreateServiceGatewayDetails.

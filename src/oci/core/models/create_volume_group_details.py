@@ -71,7 +71,7 @@ class CreateVolumeGroupDetails(object):
     def availability_domain(self):
         """
         **[Required]** Gets the availability_domain of this CreateVolumeGroupDetails.
-        The Availability Domain of the volume group.
+        The availability domain of the volume group.
 
 
         :return: The availability_domain of this CreateVolumeGroupDetails.
@@ -83,7 +83,7 @@ class CreateVolumeGroupDetails(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this CreateVolumeGroupDetails.
-        The Availability Domain of the volume group.
+        The availability domain of the volume group.
 
 
         :param availability_domain: The availability_domain of this CreateVolumeGroupDetails.
@@ -214,7 +214,7 @@ class CreateVolumeGroupDetails(object):
         """
         **[Required]** Gets the source_details of this CreateVolumeGroupDetails.
         Specifies the volume group source details for a new volume group. The volume source is either another a list of
-        volume ids in the same Availability Domain, another volume group or a volume group backup.
+        volume ids in the same availability domain, another volume group or a volume group backup.
 
 
         :return: The source_details of this CreateVolumeGroupDetails.
@@ -227,7 +227,7 @@ class CreateVolumeGroupDetails(object):
         """
         Sets the source_details of this CreateVolumeGroupDetails.
         Specifies the volume group source details for a new volume group. The volume source is either another a list of
-        volume ids in the same Availability Domain, another volume group or a volume group backup.
+        volume ids in the same availability domain, another volume group or a volume group backup.
 
 
         :param source_details: The source_details of this CreateVolumeGroupDetails.
