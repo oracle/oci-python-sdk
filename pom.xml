@@ -898,6 +898,8 @@
                                 <specName>key_management</specName>
                                 <generateInitFile>true</generateInitFile>
                                 <endpoint>https://kms.{domain}</endpoint>
+                                <isRegionalClient.kms_crypto>false</isRegionalClient.kms_crypto>
+                                <isRegionalClient.kms_management>false</isRegionalClient.kms_management>
                             </additionalProperties>
                             <featureIdConfigFile>${project.basedir}/featureId.yaml</featureIdConfigFile>
                             <featureIdConfigDir>${project.basedir}/codegenConfig/featureIds</featureIdConfigDir>
