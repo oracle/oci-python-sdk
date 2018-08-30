@@ -210,7 +210,7 @@ def update_node_pool(ce_client, node_pool_id):
     return
 
 
-def delete_node_pool(ca_client, node_pool_id):
+def delete_node_pool(ce_client, node_pool_id):
     """
     delete_node_pool
 
