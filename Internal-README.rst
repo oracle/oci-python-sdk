@@ -252,11 +252,12 @@ Note that at this time, it will execute the ``merge_and_validate_spec.py`` scrip
 
 Adding support for new services
 ================================
-The ``scripts/add_or_update_spec.py`` script can be used to add a new service to the SDK. An example of running this script is:
+The `python_sdk_add_or_update_spec.py <https://bitbucket.oci.oraclecorp.com/projects/SDK/repos/auto-gen-utils/browse/add_or_update_scripts/python_sdk_add_or_update_spec.py>`_ script can be used to add a new service to the SDK. An example of running this script is: 
 
 ::
 
-  python scripts/add_or_update_spec.py --artifact-id kms-api-spec \
+  python python_sdk_add_or_update_spec.py \
+    --artifact-id kms-api-spec \
     --group-id com.oracle.pic.kms \
     --spec-name key_management \
     --relative-spec-path kms-api-spec-20180201.yaml \
@@ -264,10 +265,12 @@ The ``scripts/add_or_update_spec.py`` script can be used to add a new service to
     --version 0.0.40 \
     --spec-generation-type PREVIEW \
     --non-regional-client \
-    --regional-sub-service-overrides kms_provisioning
+    --regional-sub-service-overrides kms_provisioning \
+    --github-whitelist-location {PATH to github.whitelist}
+    --pom-location {PATH TO pom.xml}
 
 
-The script can be run as ``python scripts/add_or_update_spec.py --help`` to see a description of each option.
+The script can be run as ``python python_sdk_add_or_update_spec.py --help`` to see a description of each option.
 
 After you've added the service, you can run the code generator using the steps from the "Running the Code Generator" section of this readme.
 
@@ -276,15 +279,15 @@ Note: This script updates ``pom.xml`` and adds an entry to ``github.whitelist``.
 
 Updating existing service spec versions
 =========================================
-Click must be installed to run add_or_update_spec.py.  Click is part of the requirements-internal.txt and will be installed with::
+Click must be installed to run `python_sdk_add_or_update_spec.py <https://bitbucket.oci.oraclecorp.com/projects/SDK/repos/auto-gen-utils/browse/add_or_update_scripts/python_sdk_add_or_update_spec.py>`_.  Click is part of the requirements-internal.txt and will be installed with::
 
     pip install -r requirements-internal.txt
 
-The ``scripts/add_or_update_spec.py`` script can be used to update the spec version of an existing service. An example of running this script is:
+The python_sdk_add_or_update_spec.py script can be used to update the spec version of an existing service. An example of running this script is:
 
 ::
 
-  python scripts/add_or_update_spec.py --artifact-id coreservices-api-spec --version 0.1.137
+  python python_sdk_add_or_update_spec.py --artifact-id coreservices-api-spec --version 0.1.137
 
 
 Note that we just need to provide the ``--artifact-id`` and the ``--version``
