@@ -10,6 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 class CreateAutonomousDatabaseBackupDetails(object):
     """
     Details to create an Oracle Autonomous Database backup.
+
+    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
 
     def __init__(self, **kwargs):

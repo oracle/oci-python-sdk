@@ -522,11 +522,11 @@ class DatabaseClient(object):
     def create_db_home(self, create_db_home_with_db_system_id_details, **kwargs):
         """
         CreateDbHome
-        Creates a new DB Home in the specified DB System based on the request parameters you provide.
+        Creates a new database home in the specified DB system based on the request parameters you provide.
 
 
         :param CreateDbHomeWithDbSystemIdBase create_db_home_with_db_system_id_details: (required)
-            Request to create a new DB Home.
+            Request to create a new database home.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -603,7 +603,7 @@ class DatabaseClient(object):
 
         Note that the **stop** state has no effect on the resources you consume.
         Billing continues for DB Nodes that you stop, and related resources continue
-        to apply against any relevant quotas. You must terminate the DB System
+        to apply against any relevant quotas. You must terminate the DB system
         (:func:`terminate_db_system`)
         to remove its resources from billing and quotas.
 
@@ -859,7 +859,9 @@ class DatabaseClient(object):
 
 
         :param str backup_id: (required)
-            The backup OCID.
+            The backup `OCID`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -928,7 +930,7 @@ class DatabaseClient(object):
     def delete_db_home(self, db_home_id, **kwargs):
         """
         DeleteDbHome
-        Deletes a DB Home. The DB Home and its database data are local to the DB System and will be lost when it is deleted. Oracle recommends that you back up any data in the DB System prior to deleting it.
+        Deletes a DB Home. The DB Home and its database data are local to the DB system and will be lost when it is deleted. Oracle recommends that you back up any data in the DB system prior to deleting it.
 
 
         :param str db_home_id: (required)
@@ -1374,7 +1376,9 @@ class DatabaseClient(object):
 
 
         :param str backup_id: (required)
-            The backup OCID.
+            The backup `OCID`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1647,7 +1651,9 @@ class DatabaseClient(object):
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str patch_id: (required)
-            The OCID of the patch.
+            The `OCID`__ of the patch.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1717,7 +1723,9 @@ class DatabaseClient(object):
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str patch_history_entry_id: (required)
-            The OCID of the patch history entry.
+            The `OCID`__ of the patch history entry.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1844,11 +1852,11 @@ class DatabaseClient(object):
     def get_db_system(self, db_system_id, **kwargs):
         """
         GetDbSystem
-        Gets information about the specified DB System.
+        Gets information about the specified DB system.
 
 
         :param str db_system_id: (required)
-            The DB System `OCID`__.
+            The DB system `OCID`__.
 
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
@@ -1914,12 +1922,14 @@ class DatabaseClient(object):
 
 
         :param str db_system_id: (required)
-            The DB System `OCID`__.
+            The DB system `OCID`__.
 
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str patch_id: (required)
-            The OCID of the patch.
+            The `OCID`__ of the patch.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1984,12 +1994,14 @@ class DatabaseClient(object):
 
 
         :param str db_system_id: (required)
-            The DB System `OCID`__.
+            The DB system `OCID`__.
 
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str patch_history_entry_id: (required)
-            The OCID of the patch history entry.
+            The `OCID`__ of the patch history entry.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2050,23 +2062,18 @@ class DatabaseClient(object):
     def launch_db_system(self, launch_db_system_details, **kwargs):
         """
         LaunchDbSystem
-        Launches a new DB System in the specified compartment and Availability Domain. You'll specify a single Oracle
-        Database Edition that applies to all the databases on that DB System. The selected edition cannot be changed.
+        Launches a new DB system in the specified compartment and availability domain. The Oracle
+        Database edition that you specify applies to all the databases on that DB system. The selected edition cannot be changed.
 
-        An initial database is created on the DB System based on the request parameters you provide and some default
+        An initial database is created on the DB system based on the request parameters you provide and some default
         options. For more information,
         see `Default Options for the Initial Database`__.
 
-        The DB System will include a command line interface (CLI) that you can use to create additional databases and
-        manage existing databases. For more information, see the
-        `Oracle Database CLI Reference`__.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Tasks/launchingDB.htm#Default_Options_for_the_Initial_Database
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Database/References/odacli.htm#Oracle_Database_CLI_Reference
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Tasks/launchingDB.htm#DefaultOptionsfortheInitialDatabase
 
 
         :param LaunchDbSystemBase launch_db_system_details: (required)
-            Request to launch a DB System.
+            Request to launch a DB system.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -2140,10 +2147,12 @@ class DatabaseClient(object):
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (optional)
-            The compartment OCID.
+            The compartment `OCID`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return per page.
 
         :param str page: (optional)
             The pagination token to continue listing from.
@@ -2269,7 +2278,7 @@ class DatabaseClient(object):
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return per page.
 
         :param str page: (optional)
             The pagination token to continue listing from.
@@ -2392,10 +2401,12 @@ class DatabaseClient(object):
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (optional)
-            The compartment OCID.
+            The compartment `OCID`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return per page.
 
         :param str page: (optional)
             The pagination token to continue listing from.
@@ -2521,7 +2532,7 @@ class DatabaseClient(object):
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return per page.
 
         :param str page: (optional)
             The pagination token to continue listing from.
@@ -2639,13 +2650,17 @@ class DatabaseClient(object):
 
 
         :param str database_id: (optional)
-            The OCID of the database.
+            The `OCID`__ of the database.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (optional)
-            The compartment OCID.
+            The compartment `OCID`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return per page.
 
         :param str page: (optional)
             The pagination token to continue listing from.
@@ -2722,7 +2737,7 @@ class DatabaseClient(object):
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return per page.
 
         :param str page: (optional)
             The pagination token to continue listing from.
@@ -2812,7 +2827,7 @@ class DatabaseClient(object):
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return per page.
 
         :param str page: (optional)
             The pagination token to continue listing from.
@@ -2887,7 +2902,7 @@ class DatabaseClient(object):
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return per page.
 
         :param str page: (optional)
             The pagination token to continue listing from.
@@ -2972,7 +2987,7 @@ class DatabaseClient(object):
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return per page.
 
         :param str page: (optional)
             The pagination token to continue listing from.
@@ -3048,7 +3063,7 @@ class DatabaseClient(object):
     def list_db_homes(self, compartment_id, db_system_id, **kwargs):
         """
         ListDbHomes
-        Gets a list of database homes in the specified DB System and compartment. A database home is a directory where Oracle database software is installed.
+        Gets a list of database homes in the specified DB system and compartment. A database home is a directory where Oracle database software is installed.
 
 
         :param str compartment_id: (required)
@@ -3057,12 +3072,12 @@ class DatabaseClient(object):
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str db_system_id: (required)
-            The `OCID`__ of the DB System.
+            The `OCID`__ of the DB system.
 
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return per page.
 
         :param str page: (optional)
             The pagination token to continue listing from.
@@ -3128,7 +3143,7 @@ class DatabaseClient(object):
     def list_db_nodes(self, compartment_id, db_system_id, **kwargs):
         """
         ListDbNodes
-        Gets a list of database nodes in the specified DB System and compartment. A database node is a server running database software.
+        Gets a list of database nodes in the specified DB system and compartment. A database node is a server running database software.
 
 
         :param str compartment_id: (required)
@@ -3137,12 +3152,12 @@ class DatabaseClient(object):
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param str db_system_id: (required)
-            The `OCID`__ of the DB System.
+            The `OCID`__ of the DB system.
 
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return per page.
 
         :param str page: (optional)
             The pagination token to continue listing from.
@@ -3208,16 +3223,16 @@ class DatabaseClient(object):
     def list_db_system_patch_history_entries(self, db_system_id, **kwargs):
         """
         ListDbSystemPatchHistoryEntries
-        Gets the history of the patch actions performed on the specified DB System.
+        Gets the history of the patch actions performed on the specified DB system.
 
 
         :param str db_system_id: (required)
-            The DB System `OCID`__.
+            The DB system `OCID`__.
 
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return per page.
 
         :param str page: (optional)
             The pagination token to continue listing from.
@@ -3293,16 +3308,16 @@ class DatabaseClient(object):
     def list_db_system_patches(self, db_system_id, **kwargs):
         """
         ListDbSystemPatches
-        Lists the patches applicable to the requested DB System.
+        Lists the patches applicable to the requested DB system.
 
 
         :param str db_system_id: (required)
-            The DB System `OCID`__.
+            The DB system `OCID`__.
 
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return per page.
 
         :param str page: (optional)
             The pagination token to continue listing from.
@@ -3378,7 +3393,7 @@ class DatabaseClient(object):
     def list_db_system_shapes(self, availability_domain, compartment_id, **kwargs):
         """
         ListDbSystemShapes
-        Gets a list of the shapes that can be used to launch a new DB System. The shape determines resources to allocate to the DB system - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes.
+        Gets a list of the shapes that can be used to launch a new DB system. The shape determines resources to allocate to the DB system - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes.
 
 
         :param str availability_domain: (required)
@@ -3390,7 +3405,7 @@ class DatabaseClient(object):
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return per page.
 
         :param str page: (optional)
             The pagination token to continue listing from.
@@ -3456,7 +3471,7 @@ class DatabaseClient(object):
     def list_db_systems(self, compartment_id, **kwargs):
         """
         ListDbSystems
-        Gets a list of the DB Systems in the specified compartment. You can specify a backupId to list only the DB Systems that support creating a database using this backup in this compartment.
+        Gets a list of the DB systems in the specified compartment. You can specify a backupId to list only the DB systems that support creating a database using this backup in this compartment.
 
 
         :param str compartment_id: (required)
@@ -3465,13 +3480,15 @@ class DatabaseClient(object):
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return per page.
 
         :param str page: (optional)
             The pagination token to continue listing from.
 
         :param str backup_id: (optional)
-            The OCID of the backup. Specify a backupId to list only the DB Systems that support creating a database using this backup in this compartment.
+            The `OCID`__ of the backup. Specify a backupId to list only the DB systems that support creating a database using this backup in this compartment.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3544,7 +3561,7 @@ class DatabaseClient(object):
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return per page.
 
         :param str page: (optional)
             The pagination token to continue listing from.
@@ -3553,7 +3570,9 @@ class DatabaseClient(object):
             If provided, filters the results to the set of database versions which are supported for the given shape.
 
         :param str db_system_id: (optional)
-            The DB system OCID. If provided, filters the results to the set of database versions which are supported for the DB system.
+            The DB system `OCID`__. If provided, filters the results to the set of database versions which are supported for the DB system.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -4352,11 +4371,11 @@ class DatabaseClient(object):
     def terminate_db_system(self, db_system_id, **kwargs):
         """
         TerminateDbSystem
-        Terminates a DB System and permanently deletes it and any databases running on it, and any storage volumes attached to it. The database data is local to the DB System and will be lost when the system is terminated. Oracle recommends that you back up any data in the DB System prior to terminating it.
+        Terminates a DB system and permanently deletes it and any databases running on it, and any storage volumes attached to it. The database data is local to the DB system and will be lost when the system is terminated. Oracle recommends that you back up any data in the DB system prior to terminating it.
 
 
         :param str db_system_id: (required)
-            The DB System `OCID`__.
+            The DB system `OCID`__.
 
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
@@ -4755,16 +4774,16 @@ class DatabaseClient(object):
     def update_db_system(self, db_system_id, update_db_system_details, **kwargs):
         """
         UpdateDbSystem
-        Updates the properties of a DB System, such as the CPU core count.
+        Updates the properties of a DB system, such as the CPU core count.
 
 
         :param str db_system_id: (required)
-            The DB System `OCID`__.
+            The DB system `OCID`__.
 
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param UpdateDbSystemDetails update_db_system_details: (required)
-            Request to update the properties of a DB System.
+            Request to update the properties of a DB system.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`

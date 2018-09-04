@@ -480,7 +480,7 @@ class DataGuardAssociationSummary(object):
     def peer_db_system_id(self):
         """
         **[Required]** Gets the peer_db_system_id of this DataGuardAssociationSummary.
-        The `OCID`__ of the DB System containing the associated
+        The `OCID`__ of the DB system containing the associated
         peer database.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
@@ -495,7 +495,7 @@ class DataGuardAssociationSummary(object):
     def peer_db_system_id(self, peer_db_system_id):
         """
         Sets the peer_db_system_id of this DataGuardAssociationSummary.
-        The `OCID`__ of the DB System containing the associated
+        The `OCID`__ of the DB system containing the associated
         peer database.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm

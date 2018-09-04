@@ -12,6 +12,8 @@ class AutonomousDataWarehouseBackupSummary(object):
     An Autonomous Data Warehouse backup.
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see `Getting Started with Policies`__.
 
+    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+
     __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
     """
 
@@ -162,7 +164,9 @@ class AutonomousDataWarehouseBackupSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this AutonomousDataWarehouseBackupSummary.
-        The OCID of the compartment.
+        The `OCID`__ of the compartment.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this AutonomousDataWarehouseBackupSummary.
@@ -174,7 +178,9 @@ class AutonomousDataWarehouseBackupSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this AutonomousDataWarehouseBackupSummary.
-        The OCID of the compartment.
+        The `OCID`__ of the compartment.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this AutonomousDataWarehouseBackupSummary.

@@ -74,7 +74,9 @@ class CreateDatabaseFromBackupDetails(object):
     def backup_id(self):
         """
         **[Required]** Gets the backup_id of this CreateDatabaseFromBackupDetails.
-        The backup OCID.
+        The backup `OCID`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The backup_id of this CreateDatabaseFromBackupDetails.
@@ -86,7 +88,9 @@ class CreateDatabaseFromBackupDetails(object):
     def backup_id(self, backup_id):
         """
         Sets the backup_id of this CreateDatabaseFromBackupDetails.
-        The backup OCID.
+        The backup `OCID`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param backup_id: The backup_id of this CreateDatabaseFromBackupDetails.

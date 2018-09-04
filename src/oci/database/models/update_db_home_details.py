@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateDbHomeDetails(object):
     """
-    Describes the modification parameters for the DB Home.
+    Describes the modification parameters for the database home.
     """
 
     def __init__(self, **kwargs):

@@ -9,9 +9,11 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DbNodeSummary(object):
     """
-    A server where Oracle database software is running.
+    A server where Oracle Database software is running.
 
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see `Getting Started with Policies`__.
+
+    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 
     __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
     """
@@ -127,7 +129,9 @@ class DbNodeSummary(object):
     def backup_vnic_id(self):
         """
         Gets the backup_vnic_id of this DbNodeSummary.
-        The OCID of the backup VNIC.
+        The `OCID`__ of the backup VNIC.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The backup_vnic_id of this DbNodeSummary.
@@ -139,7 +143,9 @@ class DbNodeSummary(object):
     def backup_vnic_id(self, backup_vnic_id):
         """
         Sets the backup_vnic_id of this DbNodeSummary.
-        The OCID of the backup VNIC.
+        The `OCID`__ of the backup VNIC.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param backup_vnic_id: The backup_vnic_id of this DbNodeSummary.
@@ -151,7 +157,9 @@ class DbNodeSummary(object):
     def db_system_id(self):
         """
         **[Required]** Gets the db_system_id of this DbNodeSummary.
-        The OCID of the DB System.
+        The `OCID`__ of the DB system.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_system_id of this DbNodeSummary.
@@ -163,7 +171,9 @@ class DbNodeSummary(object):
     def db_system_id(self, db_system_id):
         """
         Sets the db_system_id of this DbNodeSummary.
-        The OCID of the DB System.
+        The `OCID`__ of the DB system.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param db_system_id: The db_system_id of this DbNodeSummary.
@@ -175,7 +185,7 @@ class DbNodeSummary(object):
     def hostname(self):
         """
         Gets the hostname of this DbNodeSummary.
-        The host name for the DB Node.
+        The host name for the database node.
 
 
         :return: The hostname of this DbNodeSummary.
@@ -187,7 +197,7 @@ class DbNodeSummary(object):
     def hostname(self, hostname):
         """
         Sets the hostname of this DbNodeSummary.
-        The host name for the DB Node.
+        The host name for the database node.
 
 
         :param hostname: The hostname of this DbNodeSummary.
@@ -199,7 +209,9 @@ class DbNodeSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this DbNodeSummary.
-        The OCID of the DB Node.
+        The `OCID`__ of the database node.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DbNodeSummary.
@@ -211,7 +223,9 @@ class DbNodeSummary(object):
     def id(self, id):
         """
         Sets the id of this DbNodeSummary.
-        The OCID of the DB Node.
+        The `OCID`__ of the database node.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DbNodeSummary.
@@ -253,7 +267,7 @@ class DbNodeSummary(object):
     def software_storage_size_in_gb(self):
         """
         Gets the software_storage_size_in_gb of this DbNodeSummary.
-        Storage size, in GBs, of the software volume that is allocated to the DB system. This is applicable only for VM-based DBs.
+        The size (in GB) of the block storage volume allocation for the DB system. This attribute applies only for virtual machine DB systems.
 
 
         :return: The software_storage_size_in_gb of this DbNodeSummary.
@@ -265,7 +279,7 @@ class DbNodeSummary(object):
     def software_storage_size_in_gb(self, software_storage_size_in_gb):
         """
         Sets the software_storage_size_in_gb of this DbNodeSummary.
-        Storage size, in GBs, of the software volume that is allocated to the DB system. This is applicable only for VM-based DBs.
+        The size (in GB) of the block storage volume allocation for the DB system. This attribute applies only for virtual machine DB systems.
 
 
         :param software_storage_size_in_gb: The software_storage_size_in_gb of this DbNodeSummary.
@@ -277,7 +291,7 @@ class DbNodeSummary(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this DbNodeSummary.
-        The date and time that the DB Node was created.
+        The date and time that the database node was created.
 
 
         :return: The time_created of this DbNodeSummary.
@@ -289,7 +303,7 @@ class DbNodeSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this DbNodeSummary.
-        The date and time that the DB Node was created.
+        The date and time that the database node was created.
 
 
         :param time_created: The time_created of this DbNodeSummary.
@@ -301,7 +315,9 @@ class DbNodeSummary(object):
     def vnic_id(self):
         """
         **[Required]** Gets the vnic_id of this DbNodeSummary.
-        The OCID of the VNIC.
+        The `OCID`__ of the VNIC.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The vnic_id of this DbNodeSummary.
@@ -313,7 +329,9 @@ class DbNodeSummary(object):
     def vnic_id(self, vnic_id):
         """
         Sets the vnic_id of this DbNodeSummary.
-        The OCID of the VNIC.
+        The `OCID`__ of the VNIC.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param vnic_id: The vnic_id of this DbNodeSummary.
