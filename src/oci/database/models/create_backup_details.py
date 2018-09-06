@@ -9,7 +9,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateBackupDetails(object):
     """
-    CreateBackupDetails model.
+    Details for creating a database backup.
+
+    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
 
     def __init__(self, **kwargs):
@@ -43,7 +45,9 @@ class CreateBackupDetails(object):
     def database_id(self):
         """
         **[Required]** Gets the database_id of this CreateBackupDetails.
-        The OCID of the database.
+        The `OCID`__ of the database.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The database_id of this CreateBackupDetails.
@@ -55,7 +59,9 @@ class CreateBackupDetails(object):
     def database_id(self, database_id):
         """
         Sets the database_id of this CreateBackupDetails.
-        The OCID of the database.
+        The `OCID`__ of the database.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param database_id: The database_id of this CreateBackupDetails.
@@ -67,7 +73,7 @@ class CreateBackupDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateBackupDetails.
-        The user-friendly name for the backup. It does not have to be unique.
+        The user-friendly name for the backup. The name does not have to be unique.
 
 
         :return: The display_name of this CreateBackupDetails.
@@ -79,7 +85,7 @@ class CreateBackupDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateBackupDetails.
-        The user-friendly name for the backup. It does not have to be unique.
+        The user-friendly name for the backup. The name does not have to be unique.
 
 
         :param display_name: The display_name of this CreateBackupDetails.

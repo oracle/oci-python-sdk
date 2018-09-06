@@ -61,7 +61,7 @@ def test_invalid_operation(identity, config):
     # Create User
     request = oci.identity.models.CreateUserDetails()
     request.compartment_id = config["tenancy"]
-    request.name = tests.util.unique_name('python_wait_test_user')
+    request.name = tests.util.unique_name('python_wait_test_user', ignore_vcr=True)
     request.description = 'test user'
     response = identity.create_user(request)
     user_id = response.data.id
@@ -84,7 +84,7 @@ def test_already_in_state(identity, config):
     description = 'test user'
     request = oci.identity.models.CreateUserDetails()
     request.compartment_id = config["tenancy"]
-    request.name = tests.util.unique_name('python_wait_test_user')
+    request.name = tests.util.unique_name('python_wait_test_user', ignore_vcr=True)
     request.description = description
     response = identity.create_user(request)
     user_id = response.data.id
@@ -104,7 +104,7 @@ def test_wait_time_exceeded(identity, config):
     description = 'test user'
     request = oci.identity.models.CreateUserDetails()
     request.compartment_id = config["tenancy"]
-    request.name = tests.util.unique_name('python_wait_test_user')
+    request.name = tests.util.unique_name('python_wait_test_user', ignore_vcr=True)
     request.description = description
     response = identity.create_user(request)
     user_id = response.data.id
@@ -137,7 +137,7 @@ def test_eval_function_lambda(identity, config):
         description = 'test user'
         request = oci.identity.models.CreateUserDetails()
         request.compartment_id = config["tenancy"]
-        request.name = tests.util.unique_name('python_wait_test_user')
+        request.name = tests.util.unique_name('python_wait_test_user', ignore_vcr=True)
         request.description = description
         response = identity.create_user(request)
         user_id = response.data.id
@@ -161,7 +161,7 @@ def test_eval_function_func_ref(identity, config):
         description = 'test user'
         request = oci.identity.models.CreateUserDetails()
         request.compartment_id = config["tenancy"]
-        request.name = tests.util.unique_name('python_wait_test_user')
+        request.name = tests.util.unique_name('python_wait_test_user', ignore_vcr=True)
         request.description = description
         response = identity.create_user(request)
         user_id = response.data.id

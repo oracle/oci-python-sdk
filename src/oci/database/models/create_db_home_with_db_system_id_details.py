@@ -87,7 +87,7 @@ class CreateDbHomeWithDbSystemIdDetails(CreateDbHomeWithDbSystemIdBase):
     def db_version(self):
         """
         **[Required]** Gets the db_version of this CreateDbHomeWithDbSystemIdDetails.
-        A valid Oracle database version. To get a list of supported versions, use the :func:`list_db_versions` operation.
+        A valid Oracle Database version. To get a list of supported versions, use the :func:`list_db_versions` operation.
 
 
         :return: The db_version of this CreateDbHomeWithDbSystemIdDetails.
@@ -99,7 +99,7 @@ class CreateDbHomeWithDbSystemIdDetails(CreateDbHomeWithDbSystemIdBase):
     def db_version(self, db_version):
         """
         Sets the db_version of this CreateDbHomeWithDbSystemIdDetails.
-        A valid Oracle database version. To get a list of supported versions, use the :func:`list_db_versions` operation.
+        A valid Oracle Database version. To get a list of supported versions, use the :func:`list_db_versions` operation.
 
 
         :param db_version: The db_version of this CreateDbHomeWithDbSystemIdDetails.

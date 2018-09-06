@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Patch(object):
     """
-    A Patch for a DB System or DB Home.
+    A Patch for a DB system or DB Home.
 
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
     talk to an administrator. If you're an administrator who needs to write policies to give users access,
@@ -183,7 +183,9 @@ class Patch(object):
     def id(self):
         """
         **[Required]** Gets the id of this Patch.
-        The OCID of the patch.
+        The `OCID`__ of the patch.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Patch.
@@ -195,7 +197,9 @@ class Patch(object):
     def id(self, id):
         """
         Sets the id of this Patch.
-        The OCID of the patch.
+        The `OCID`__ of the patch.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Patch.

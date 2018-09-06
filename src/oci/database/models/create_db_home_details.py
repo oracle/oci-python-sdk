@@ -9,7 +9,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateDbHomeDetails(object):
     """
-    CreateDbHomeDetails model.
+    Details for creating a database home.
+
+    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
 
     def __init__(self, **kwargs):
@@ -70,7 +72,7 @@ class CreateDbHomeDetails(object):
     def db_version(self):
         """
         **[Required]** Gets the db_version of this CreateDbHomeDetails.
-        A valid Oracle database version. To get a list of supported versions, use the :func:`list_db_versions` operation.
+        A valid Oracle Database version. To get a list of supported versions, use the :func:`list_db_versions` operation.
 
 
         :return: The db_version of this CreateDbHomeDetails.
@@ -82,7 +84,7 @@ class CreateDbHomeDetails(object):
     def db_version(self, db_version):
         """
         Sets the db_version of this CreateDbHomeDetails.
-        A valid Oracle database version. To get a list of supported versions, use the :func:`list_db_versions` operation.
+        A valid Oracle Database version. To get a list of supported versions, use the :func:`list_db_versions` operation.
 
 
         :param db_version: The db_version of this CreateDbHomeDetails.

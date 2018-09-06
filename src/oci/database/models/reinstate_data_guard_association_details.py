@@ -36,7 +36,7 @@ class ReinstateDataGuardAssociationDetails(object):
     def database_admin_password(self):
         """
         **[Required]** Gets the database_admin_password of this ReinstateDataGuardAssociationDetails.
-        The DB System administrator password.
+        The DB system administrator password.
 
 
         :return: The database_admin_password of this ReinstateDataGuardAssociationDetails.
@@ -48,7 +48,7 @@ class ReinstateDataGuardAssociationDetails(object):
     def database_admin_password(self, database_admin_password):
         """
         Sets the database_admin_password of this ReinstateDataGuardAssociationDetails.
-        The DB System administrator password.
+        The DB system administrator password.
 
 
         :param database_admin_password: The database_admin_password of this ReinstateDataGuardAssociationDetails.

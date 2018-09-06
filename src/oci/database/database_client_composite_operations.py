@@ -260,7 +260,7 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param CreateDbHomeWithDbSystemIdBase create_db_home_with_db_system_id_details: (required)
-            Request to create a new DB Home.
+            Request to create a new database home.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.DbHome.lifecycle_state`
@@ -425,7 +425,9 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str backup_id: (required)
-            The backup OCID.
+            The backup `OCID`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.Backup.lifecycle_state`
@@ -505,7 +507,7 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param LaunchDbSystemBase launch_db_system_details: (required)
-            Request to launch a DB System.
+            Request to launch a DB system.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.DbSystem.lifecycle_state`
@@ -543,7 +545,7 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str db_system_id: (required)
-            The DB System `OCID`__.
+            The DB system `OCID`__.
 
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
@@ -756,12 +758,12 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str db_system_id: (required)
-            The DB System `OCID`__.
+            The DB system `OCID`__.
 
             __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
         :param UpdateDbSystemDetails update_db_system_details: (required)
-            Request to update the properties of a DB System.
+            Request to update the properties of a DB system.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.DbSystem.lifecycle_state`

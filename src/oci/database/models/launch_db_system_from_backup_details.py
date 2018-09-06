@@ -21,12 +21,12 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
     DATABASE_EDITION_ENTERPRISE_EDITION = "ENTERPRISE_EDITION"
 
     #: A constant which can be used with the database_edition property of a LaunchDbSystemFromBackupDetails.
-    #: This constant has a value of "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
-    DATABASE_EDITION_ENTERPRISE_EDITION_EXTREME_PERFORMANCE = "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
-
-    #: A constant which can be used with the database_edition property of a LaunchDbSystemFromBackupDetails.
     #: This constant has a value of "ENTERPRISE_EDITION_HIGH_PERFORMANCE"
     DATABASE_EDITION_ENTERPRISE_EDITION_HIGH_PERFORMANCE = "ENTERPRISE_EDITION_HIGH_PERFORMANCE"
+
+    #: A constant which can be used with the database_edition property of a LaunchDbSystemFromBackupDetails.
+    #: This constant has a value of "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
+    DATABASE_EDITION_ENTERPRISE_EDITION_EXTREME_PERFORMANCE = "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
 
     #: A constant which can be used with the disk_redundancy property of a LaunchDbSystemFromBackupDetails.
     #: This constant has a value of "HIGH"
@@ -121,7 +121,7 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
 
         :param database_edition:
             The value to assign to the database_edition property of this LaunchDbSystemFromBackupDetails.
-            Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE", "ENTERPRISE_EDITION_HIGH_PERFORMANCE"
+            Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
         :type database_edition: str
 
         :param db_home:
@@ -214,10 +214,10 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
     def database_edition(self):
         """
         **[Required]** Gets the database_edition of this LaunchDbSystemFromBackupDetails.
-        The Oracle Database Edition that applies to all the databases on the DB System.
-        Exadata DB Systems and 2-node RAC DB Systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
+        The Oracle Database Edition that applies to all the databases on the DB system.
+        Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
 
-        Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE", "ENTERPRISE_EDITION_HIGH_PERFORMANCE"
+        Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
 
 
         :return: The database_edition of this LaunchDbSystemFromBackupDetails.
@@ -229,14 +229,14 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
     def database_edition(self, database_edition):
         """
         Sets the database_edition of this LaunchDbSystemFromBackupDetails.
-        The Oracle Database Edition that applies to all the databases on the DB System.
-        Exadata DB Systems and 2-node RAC DB Systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
+        The Oracle Database Edition that applies to all the databases on the DB system.
+        Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
 
 
         :param database_edition: The database_edition of this LaunchDbSystemFromBackupDetails.
         :type: str
         """
-        allowed_values = ["STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE", "ENTERPRISE_EDITION_HIGH_PERFORMANCE"]
+        allowed_values = ["STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"]
         if not value_allowed_none_or_none_sentinel(database_edition, allowed_values):
             raise ValueError(
                 "Invalid value for `database_edition`, must be None or one of {0}"
@@ -268,9 +268,9 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
     def disk_redundancy(self):
         """
         Gets the disk_redundancy of this LaunchDbSystemFromBackupDetails.
-        The type of redundancy configured for the DB System.
-        Normal is 2-way redundancy, recommended for test and development systems.
-        High is 3-way redundancy, recommended for production systems.
+        The type of redundancy configured for the DB system.
+        NORMAL 2-way redundancy, recommended for test and development systems.
+        HIGH is 3-way redundancy, recommended for production systems.
 
         Allowed values for this property are: "HIGH", "NORMAL"
 
@@ -284,9 +284,9 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
     def disk_redundancy(self, disk_redundancy):
         """
         Sets the disk_redundancy of this LaunchDbSystemFromBackupDetails.
-        The type of redundancy configured for the DB System.
-        Normal is 2-way redundancy, recommended for test and development systems.
-        High is 3-way redundancy, recommended for production systems.
+        The type of redundancy configured for the DB system.
+        NORMAL 2-way redundancy, recommended for test and development systems.
+        HIGH is 3-way redundancy, recommended for production systems.
 
 
         :param disk_redundancy: The disk_redundancy of this LaunchDbSystemFromBackupDetails.
@@ -304,7 +304,7 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
     def license_model(self):
         """
         Gets the license_model of this LaunchDbSystemFromBackupDetails.
-        The Oracle license model that applies to all the databases on the DB System. The default is BRING_YOUR_OWN_LICENSE.
+        The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
 
         Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
 
@@ -318,7 +318,7 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
     def license_model(self, license_model):
         """
         Sets the license_model of this LaunchDbSystemFromBackupDetails.
-        The Oracle license model that applies to all the databases on the DB System. The default is BRING_YOUR_OWN_LICENSE.
+        The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
 
 
         :param license_model: The license_model of this LaunchDbSystemFromBackupDetails.

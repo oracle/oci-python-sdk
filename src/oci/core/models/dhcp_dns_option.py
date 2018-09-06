@@ -70,8 +70,8 @@ class DhcpDnsOption(DhcpOption):
     def custom_dns_servers(self):
         """
         Gets the custom_dns_servers of this DhcpDnsOption.
-        If you set `serverType` to `CustomDnsServer`, specify the IP address
-        of at least one DNS server of your choice (three maximum).
+        If you set `serverType` to `CustomDnsServer`, specify the
+        IP address of at least one DNS server of your choice (three maximum). gd
 
 
         :return: The custom_dns_servers of this DhcpDnsOption.
@@ -83,8 +83,8 @@ class DhcpDnsOption(DhcpOption):
     def custom_dns_servers(self, custom_dns_servers):
         """
         Sets the custom_dns_servers of this DhcpDnsOption.
-        If you set `serverType` to `CustomDnsServer`, specify the IP address
-        of at least one DNS server of your choice (three maximum).
+        If you set `serverType` to `CustomDnsServer`, specify the
+        IP address of at least one DNS server of your choice (three maximum). gd
 
 
         :param custom_dns_servers: The custom_dns_servers of this DhcpDnsOption.
@@ -96,10 +96,10 @@ class DhcpDnsOption(DhcpOption):
     def server_type(self):
         """
         **[Required]** Gets the server_type of this DhcpDnsOption.
-        - **VcnLocal:** Reserved for future use.
+        * **VcnLocal:** Reserved for future use.
 
-        - **VcnLocalPlusInternet:** Also referred to as \"Internet and VCN Resolver\".
-        Instances can resolve internet hostnames (no Internet Gateway is required),
+        * **VcnLocalPlusInternet:** Also referred to as \"Internet and VCN Resolver\".
+        Instances can resolve internet hostnames (no internet gateway is required),
         and can resolve hostnames of instances in the VCN. This is the default
         value in the default set of DHCP options in the VCN. For the Internet and
         VCN Resolver to work across the VCN, there must also be a DNS label set for
@@ -109,7 +109,8 @@ class DhcpDnsOption(DhcpOption):
         information, see
         `DNS in Your Virtual Cloud Network`__.
 
-        - **CustomDnsServer:** Instances use a DNS server of your choice (three maximum).
+        * **CustomDnsServer:** Instances use a DNS server of your choice (three
+        maximum).
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm
 
@@ -126,10 +127,10 @@ class DhcpDnsOption(DhcpOption):
     def server_type(self, server_type):
         """
         Sets the server_type of this DhcpDnsOption.
-        - **VcnLocal:** Reserved for future use.
+        * **VcnLocal:** Reserved for future use.
 
-        - **VcnLocalPlusInternet:** Also referred to as \"Internet and VCN Resolver\".
-        Instances can resolve internet hostnames (no Internet Gateway is required),
+        * **VcnLocalPlusInternet:** Also referred to as \"Internet and VCN Resolver\".
+        Instances can resolve internet hostnames (no internet gateway is required),
         and can resolve hostnames of instances in the VCN. This is the default
         value in the default set of DHCP options in the VCN. For the Internet and
         VCN Resolver to work across the VCN, there must also be a DNS label set for
@@ -139,7 +140,8 @@ class DhcpDnsOption(DhcpOption):
         information, see
         `DNS in Your Virtual Cloud Network`__.
 
-        - **CustomDnsServer:** Instances use a DNS server of your choice (three maximum).
+        * **CustomDnsServer:** Instances use a DNS server of your choice (three
+        maximum).
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm
 

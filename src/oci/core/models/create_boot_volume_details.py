@@ -85,7 +85,7 @@ class CreateBootVolumeDetails(object):
     def availability_domain(self):
         """
         **[Required]** Gets the availability_domain of this CreateBootVolumeDetails.
-        The Availability Domain of the boot volume.
+        The availability domain of the boot volume.
 
         Example: `Uocm:PHX-AD-1`
 
@@ -99,7 +99,7 @@ class CreateBootVolumeDetails(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this CreateBootVolumeDetails.
-        The Availability Domain of the boot volume.
+        The availability domain of the boot volume.
 
         Example: `Uocm:PHX-AD-1`
 
@@ -283,7 +283,7 @@ class CreateBootVolumeDetails(object):
     def source_details(self):
         """
         **[Required]** Gets the source_details of this CreateBootVolumeDetails.
-        Specifies the boot volume source details for a new boot volume. The volume source is either another boot volume in the same Availability Domain or a boot volume backup.
+        Specifies the boot volume source details for a new boot volume. The volume source is either another boot volume in the same availability domain or a boot volume backup.
         This is a mandatory field for a boot volume.
 
 
@@ -296,7 +296,7 @@ class CreateBootVolumeDetails(object):
     def source_details(self, source_details):
         """
         Sets the source_details of this CreateBootVolumeDetails.
-        Specifies the boot volume source details for a new boot volume. The volume source is either another boot volume in the same Availability Domain or a boot volume backup.
+        Specifies the boot volume source details for a new boot volume. The volume source is either another boot volume in the same availability domain or a boot volume backup.
         This is a mandatory field for a boot volume.
 
 

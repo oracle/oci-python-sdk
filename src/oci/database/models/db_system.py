@@ -9,21 +9,23 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DbSystem(object):
     """
-    The Database Service supports several types of DB Systems, ranging in size, price, and performance. For details about each type of system, see:
+    The Database Service supports several types of DB systems, ranging in size, price, and performance. For details about each type of system, see:
 
     - `Exadata DB Systems`__
     - `Bare Metal and Virtual Machine DB Systems`__
 
-    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see `Getting Started with Policies`__.
+    To use any of the API operations, you must be authorized in an IAM policy. If you are not authorized, talk to an administrator. If you are an administrator who needs to write policies to give users access, see `Getting Started with Policies`__.
 
     For information about access control and compartments, see
     `Overview of the Identity Service`__.
 
-    For information about Availability Domains, see
+    For information about availability domains, see
     `Regions and Availability Domains`__.
 
-    To get a list of Availability Domains, use the `ListAvailabilityDomains` operation
+    To get a list of availability domains, use the `ListAvailabilityDomains` operation
     in the Identity Service API.
+
+    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 
     __ https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Concepts/exaoverview.htm
     __ https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Concepts/overview.htm
@@ -41,12 +43,12 @@ class DbSystem(object):
     DATABASE_EDITION_ENTERPRISE_EDITION = "ENTERPRISE_EDITION"
 
     #: A constant which can be used with the database_edition property of a DbSystem.
-    #: This constant has a value of "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
-    DATABASE_EDITION_ENTERPRISE_EDITION_EXTREME_PERFORMANCE = "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
-
-    #: A constant which can be used with the database_edition property of a DbSystem.
     #: This constant has a value of "ENTERPRISE_EDITION_HIGH_PERFORMANCE"
     DATABASE_EDITION_ENTERPRISE_EDITION_HIGH_PERFORMANCE = "ENTERPRISE_EDITION_HIGH_PERFORMANCE"
+
+    #: A constant which can be used with the database_edition property of a DbSystem.
+    #: This constant has a value of "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
+    DATABASE_EDITION_ENTERPRISE_EDITION_EXTREME_PERFORMANCE = "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
 
     #: A constant which can be used with the disk_redundancy property of a DbSystem.
     #: This constant has a value of "HIGH"
@@ -123,7 +125,7 @@ class DbSystem(object):
 
         :param database_edition:
             The value to assign to the database_edition property of this DbSystem.
-            Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type database_edition: str
 
@@ -323,7 +325,7 @@ class DbSystem(object):
     def availability_domain(self):
         """
         **[Required]** Gets the availability_domain of this DbSystem.
-        The name of the Availability Domain that the DB System is located in.
+        The name of the availability domain that the DB system is located in.
 
 
         :return: The availability_domain of this DbSystem.
@@ -335,7 +337,7 @@ class DbSystem(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this DbSystem.
-        The name of the Availability Domain that the DB System is located in.
+        The name of the availability domain that the DB system is located in.
 
 
         :param availability_domain: The availability_domain of this DbSystem.
@@ -347,10 +349,11 @@ class DbSystem(object):
     def backup_subnet_id(self):
         """
         Gets the backup_subnet_id of this DbSystem.
-        The OCID of the backup network subnet the DB System is associated with. Applicable only to Exadata.
+        The `OCID`__ of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
 
-        **Subnet Restriction:** See above subnetId's 'Subnet Restriction'.
-        to malfunction.
+        **Subnet Restriction:** See the subnet restrictions information for **subnetId**.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The backup_subnet_id of this DbSystem.
@@ -362,10 +365,11 @@ class DbSystem(object):
     def backup_subnet_id(self, backup_subnet_id):
         """
         Sets the backup_subnet_id of this DbSystem.
-        The OCID of the backup network subnet the DB System is associated with. Applicable only to Exadata.
+        The `OCID`__ of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
 
-        **Subnet Restriction:** See above subnetId's 'Subnet Restriction'.
-        to malfunction.
+        **Subnet Restriction:** See the subnet restrictions information for **subnetId**.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param backup_subnet_id: The backup_subnet_id of this DbSystem.
@@ -377,7 +381,7 @@ class DbSystem(object):
     def cluster_name(self):
         """
         Gets the cluster_name of this DbSystem.
-        Cluster name for Exadata and 2-node RAC DB Systems. The cluster name must begin with an an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
+        The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
 
 
         :return: The cluster_name of this DbSystem.
@@ -389,7 +393,7 @@ class DbSystem(object):
     def cluster_name(self, cluster_name):
         """
         Sets the cluster_name of this DbSystem.
-        Cluster name for Exadata and 2-node RAC DB Systems. The cluster name must begin with an an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
+        The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
 
 
         :param cluster_name: The cluster_name of this DbSystem.
@@ -401,7 +405,9 @@ class DbSystem(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this DbSystem.
-        The OCID of the compartment.
+        The `OCID`__ of the compartment.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this DbSystem.
@@ -413,7 +419,9 @@ class DbSystem(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this DbSystem.
-        The OCID of the compartment.
+        The `OCID`__ of the compartment.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this DbSystem.
@@ -425,7 +433,7 @@ class DbSystem(object):
     def cpu_core_count(self):
         """
         **[Required]** Gets the cpu_core_count of this DbSystem.
-        The number of CPU cores enabled on the DB System.
+        The number of CPU cores enabled on the DB system.
 
 
         :return: The cpu_core_count of this DbSystem.
@@ -437,7 +445,7 @@ class DbSystem(object):
     def cpu_core_count(self, cpu_core_count):
         """
         Sets the cpu_core_count of this DbSystem.
-        The number of CPU cores enabled on the DB System.
+        The number of CPU cores enabled on the DB system.
 
 
         :param cpu_core_count: The cpu_core_count of this DbSystem.
@@ -450,7 +458,7 @@ class DbSystem(object):
         """
         Gets the data_storage_percentage of this DbSystem.
         The percentage assigned to DATA storage (user data and database files).
-        The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 40 and 80.
+        The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 40 and 80. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems.
 
 
         :return: The data_storage_percentage of this DbSystem.
@@ -463,7 +471,7 @@ class DbSystem(object):
         """
         Sets the data_storage_percentage of this DbSystem.
         The percentage assigned to DATA storage (user data and database files).
-        The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 40 and 80.
+        The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 40 and 80. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems.
 
 
         :param data_storage_percentage: The data_storage_percentage of this DbSystem.
@@ -475,7 +483,7 @@ class DbSystem(object):
     def data_storage_size_in_gbs(self):
         """
         Gets the data_storage_size_in_gbs of this DbSystem.
-        Data storage size, in GBs, that is currently available to the DB system. This is applicable only for VM-based DBs.
+        The data storage size, in gigabytes, that is currently available to the DB system. Applies only for virtual machine DB systems.
 
 
         :return: The data_storage_size_in_gbs of this DbSystem.
@@ -487,7 +495,7 @@ class DbSystem(object):
     def data_storage_size_in_gbs(self, data_storage_size_in_gbs):
         """
         Sets the data_storage_size_in_gbs of this DbSystem.
-        Data storage size, in GBs, that is currently available to the DB system. This is applicable only for VM-based DBs.
+        The data storage size, in gigabytes, that is currently available to the DB system. Applies only for virtual machine DB systems.
 
 
         :param data_storage_size_in_gbs: The data_storage_size_in_gbs of this DbSystem.
@@ -499,9 +507,9 @@ class DbSystem(object):
     def database_edition(self):
         """
         **[Required]** Gets the database_edition of this DbSystem.
-        The Oracle Database Edition that applies to all the databases on the DB System.
+        The Oracle Database edition that applies to all the databases on the DB system.
 
-        Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -514,13 +522,13 @@ class DbSystem(object):
     def database_edition(self, database_edition):
         """
         Sets the database_edition of this DbSystem.
-        The Oracle Database Edition that applies to all the databases on the DB System.
+        The Oracle Database edition that applies to all the databases on the DB system.
 
 
         :param database_edition: The database_edition of this DbSystem.
         :type: str
         """
-        allowed_values = ["STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE", "ENTERPRISE_EDITION_HIGH_PERFORMANCE"]
+        allowed_values = ["STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"]
         if not value_allowed_none_or_none_sentinel(database_edition, allowed_values):
             database_edition = 'UNKNOWN_ENUM_VALUE'
         self._database_edition = database_edition
@@ -563,9 +571,9 @@ class DbSystem(object):
     def disk_redundancy(self):
         """
         Gets the disk_redundancy of this DbSystem.
-        The type of redundancy configured for the DB System.
-        Normal is 2-way redundancy.
-        High is 3-way redundancy.
+        The type of redundancy configured for the DB system.
+        NORMAL is 2-way redundancy.
+        HIGH is 3-way redundancy.
 
         Allowed values for this property are: "HIGH", "NORMAL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -580,9 +588,9 @@ class DbSystem(object):
     def disk_redundancy(self, disk_redundancy):
         """
         Sets the disk_redundancy of this DbSystem.
-        The type of redundancy configured for the DB System.
-        Normal is 2-way redundancy.
-        High is 3-way redundancy.
+        The type of redundancy configured for the DB system.
+        NORMAL is 2-way redundancy.
+        HIGH is 3-way redundancy.
 
 
         :param disk_redundancy: The disk_redundancy of this DbSystem.
@@ -597,7 +605,7 @@ class DbSystem(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this DbSystem.
-        The user-friendly name for the DB System. It does not have to be unique.
+        The user-friendly name for the DB system. The name does not have to be unique.
 
 
         :return: The display_name of this DbSystem.
@@ -609,7 +617,7 @@ class DbSystem(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this DbSystem.
-        The user-friendly name for the DB System. It does not have to be unique.
+        The user-friendly name for the DB system. The name does not have to be unique.
 
 
         :param display_name: The display_name of this DbSystem.
@@ -621,7 +629,7 @@ class DbSystem(object):
     def domain(self):
         """
         **[Required]** Gets the domain of this DbSystem.
-        The domain name for the DB System.
+        The domain name for the DB system.
 
 
         :return: The domain of this DbSystem.
@@ -633,7 +641,7 @@ class DbSystem(object):
     def domain(self, domain):
         """
         Sets the domain of this DbSystem.
-        The domain name for the DB System.
+        The domain name for the DB system.
 
 
         :param domain: The domain of this DbSystem.
@@ -679,7 +687,7 @@ class DbSystem(object):
     def hostname(self):
         """
         **[Required]** Gets the hostname of this DbSystem.
-        The host name for the DB Node.
+        The hostname for the DB system.
 
 
         :return: The hostname of this DbSystem.
@@ -691,7 +699,7 @@ class DbSystem(object):
     def hostname(self, hostname):
         """
         Sets the hostname of this DbSystem.
-        The host name for the DB Node.
+        The hostname for the DB system.
 
 
         :param hostname: The hostname of this DbSystem.
@@ -703,7 +711,9 @@ class DbSystem(object):
     def id(self):
         """
         **[Required]** Gets the id of this DbSystem.
-        The OCID of the DB System.
+        The `OCID`__ of the DB system.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DbSystem.
@@ -715,7 +725,9 @@ class DbSystem(object):
     def id(self, id):
         """
         Sets the id of this DbSystem.
-        The OCID of the DB System.
+        The `OCID`__ of the DB system.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DbSystem.
@@ -727,7 +739,9 @@ class DbSystem(object):
     def last_patch_history_entry_id(self):
         """
         Gets the last_patch_history_entry_id of this DbSystem.
-        The OCID of the last patch history. This is updated as soon as a patch operation is started.
+        The `OCID`__ of the last patch history. This value is updated as soon as a patch operation starts.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The last_patch_history_entry_id of this DbSystem.
@@ -739,7 +753,9 @@ class DbSystem(object):
     def last_patch_history_entry_id(self, last_patch_history_entry_id):
         """
         Sets the last_patch_history_entry_id of this DbSystem.
-        The OCID of the last patch history. This is updated as soon as a patch operation is started.
+        The `OCID`__ of the last patch history. This value is updated as soon as a patch operation starts.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param last_patch_history_entry_id: The last_patch_history_entry_id of this DbSystem.
@@ -751,7 +767,7 @@ class DbSystem(object):
     def license_model(self):
         """
         Gets the license_model of this DbSystem.
-        The Oracle license model that applies to all the databases on the DB System. The default is BRING_YOUR_OWN_LICENSE.
+        The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
 
         Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -766,7 +782,7 @@ class DbSystem(object):
     def license_model(self, license_model):
         """
         Sets the license_model of this DbSystem.
-        The Oracle license model that applies to all the databases on the DB System. The default is BRING_YOUR_OWN_LICENSE.
+        The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
 
 
         :param license_model: The license_model of this DbSystem.
@@ -805,7 +821,7 @@ class DbSystem(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this DbSystem.
-        The current state of the DB System.
+        The current state of the DB system.
 
         Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -820,7 +836,7 @@ class DbSystem(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this DbSystem.
-        The current state of the DB System.
+        The current state of the DB system.
 
 
         :param lifecycle_state: The lifecycle_state of this DbSystem.
@@ -835,7 +851,7 @@ class DbSystem(object):
     def listener_port(self):
         """
         Gets the listener_port of this DbSystem.
-        The port number configured for the listener on the DB System.
+        The port number configured for the listener on the DB system.
 
 
         :return: The listener_port of this DbSystem.
@@ -847,7 +863,7 @@ class DbSystem(object):
     def listener_port(self, listener_port):
         """
         Sets the listener_port of this DbSystem.
-        The port number configured for the listener on the DB System.
+        The port number configured for the listener on the DB system.
 
 
         :param listener_port: The listener_port of this DbSystem.
@@ -859,7 +875,7 @@ class DbSystem(object):
     def node_count(self):
         """
         Gets the node_count of this DbSystem.
-        Number of nodes in this DB system. For RAC DBs, this will be greater than 1.
+        The number of nodes in the DB system. For RAC DB systems, the value is greater than 1.
 
 
         :return: The node_count of this DbSystem.
@@ -871,7 +887,7 @@ class DbSystem(object):
     def node_count(self, node_count):
         """
         Sets the node_count of this DbSystem.
-        Number of nodes in this DB system. For RAC DBs, this will be greater than 1.
+        The number of nodes in the DB system. For RAC DB systems, the value is greater than 1.
 
 
         :param node_count: The node_count of this DbSystem.
@@ -883,7 +899,7 @@ class DbSystem(object):
     def reco_storage_size_in_gb(self):
         """
         Gets the reco_storage_size_in_gb of this DbSystem.
-        RECO/REDO storage size, in GBs, that is currently allocated to the DB system. This is applicable only for VM-based DBs.
+        The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
 
 
         :return: The reco_storage_size_in_gb of this DbSystem.
@@ -895,7 +911,7 @@ class DbSystem(object):
     def reco_storage_size_in_gb(self, reco_storage_size_in_gb):
         """
         Sets the reco_storage_size_in_gb of this DbSystem.
-        RECO/REDO storage size, in GBs, that is currently allocated to the DB system. This is applicable only for VM-based DBs.
+        The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
 
 
         :param reco_storage_size_in_gb: The reco_storage_size_in_gb of this DbSystem.
@@ -907,7 +923,9 @@ class DbSystem(object):
     def scan_dns_record_id(self):
         """
         Gets the scan_dns_record_id of this DbSystem.
-        The OCID of the DNS record for the SCAN IP addresses that are associated with the DB System.
+        The `OCID`__ of the DNS record for the SCAN IP addresses that are associated with the DB system.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The scan_dns_record_id of this DbSystem.
@@ -919,7 +937,9 @@ class DbSystem(object):
     def scan_dns_record_id(self, scan_dns_record_id):
         """
         Sets the scan_dns_record_id of this DbSystem.
-        The OCID of the DNS record for the SCAN IP addresses that are associated with the DB System.
+        The `OCID`__ of the DNS record for the SCAN IP addresses that are associated with the DB system.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param scan_dns_record_id: The scan_dns_record_id of this DbSystem.
@@ -931,11 +951,13 @@ class DbSystem(object):
     def scan_ip_ids(self):
         """
         Gets the scan_ip_ids of this DbSystem.
-        The OCID of the Single Client Access Name (SCAN) IP addresses associated with the DB System.
+        The `OCID`__ of the Single Client Access Name (SCAN) IP addresses associated with the DB system.
         SCAN IP addresses are typically used for load balancing and are not assigned to any interface.
-        Clusterware directs the requests to the appropriate nodes in the cluster.
+        Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
 
-        - For a single-node DB System, this list is empty.
+        **Note:** For a single-node DB system, this list is empty.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The scan_ip_ids of this DbSystem.
@@ -947,11 +969,13 @@ class DbSystem(object):
     def scan_ip_ids(self, scan_ip_ids):
         """
         Sets the scan_ip_ids of this DbSystem.
-        The OCID of the Single Client Access Name (SCAN) IP addresses associated with the DB System.
+        The `OCID`__ of the Single Client Access Name (SCAN) IP addresses associated with the DB system.
         SCAN IP addresses are typically used for load balancing and are not assigned to any interface.
-        Clusterware directs the requests to the appropriate nodes in the cluster.
+        Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
 
-        - For a single-node DB System, this list is empty.
+        **Note:** For a single-node DB system, this list is empty.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param scan_ip_ids: The scan_ip_ids of this DbSystem.
@@ -963,7 +987,9 @@ class DbSystem(object):
     def shape(self):
         """
         **[Required]** Gets the shape of this DbSystem.
-        The shape of the DB System. The shape determines resources to allocate to the DB system - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes.
+        The shape of the DB system. The shape determines resources to allocate to the DB system.
+        - For virtual machine shapes, the number of CPU cores and memory
+        - For bare metal and Exadata shapes, the number of CPU cores, storage, and memory
 
 
         :return: The shape of this DbSystem.
@@ -975,7 +1001,9 @@ class DbSystem(object):
     def shape(self, shape):
         """
         Sets the shape of this DbSystem.
-        The shape of the DB System. The shape determines resources to allocate to the DB system - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes.
+        The shape of the DB system. The shape determines resources to allocate to the DB system.
+        - For virtual machine shapes, the number of CPU cores and memory
+        - For bare metal and Exadata shapes, the number of CPU cores, storage, and memory
 
 
         :param shape: The shape of this DbSystem.
@@ -987,7 +1015,7 @@ class DbSystem(object):
     def ssh_public_keys(self):
         """
         **[Required]** Gets the ssh_public_keys of this DbSystem.
-        The public key portion of one or more key pairs used for SSH access to the DB System.
+        The public key portion of one or more key pairs used for SSH access to the DB system.
 
 
         :return: The ssh_public_keys of this DbSystem.
@@ -999,7 +1027,7 @@ class DbSystem(object):
     def ssh_public_keys(self, ssh_public_keys):
         """
         Sets the ssh_public_keys of this DbSystem.
-        The public key portion of one or more key pairs used for SSH access to the DB System.
+        The public key portion of one or more key pairs used for SSH access to the DB system.
 
 
         :param ssh_public_keys: The ssh_public_keys of this DbSystem.
@@ -1011,15 +1039,17 @@ class DbSystem(object):
     def subnet_id(self):
         """
         **[Required]** Gets the subnet_id of this DbSystem.
-        The OCID of the subnet the DB System is associated with.
+        The `OCID`__ of the subnet the DB system is associated with.
 
         **Subnet Restrictions:**
-        - For single node and 2-node (RAC) DB Systems, do not use a subnet that overlaps with 192.168.16.16/28
-        - For Exadata and VM-based RAC DB Systems, do not use a subnet that overlaps with 192.168.128.0/20
+        - For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
+        - For Exadata and virtual machine 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.128.0/20.
 
         These subnets are used by the Oracle Clusterware private interconnect on the database instance.
         Specifying an overlapping subnet will cause the private interconnect to malfunction.
         This restriction applies to both the client subnet and backup subnet.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this DbSystem.
@@ -1031,15 +1061,17 @@ class DbSystem(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this DbSystem.
-        The OCID of the subnet the DB System is associated with.
+        The `OCID`__ of the subnet the DB system is associated with.
 
         **Subnet Restrictions:**
-        - For single node and 2-node (RAC) DB Systems, do not use a subnet that overlaps with 192.168.16.16/28
-        - For Exadata and VM-based RAC DB Systems, do not use a subnet that overlaps with 192.168.128.0/20
+        - For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
+        - For Exadata and virtual machine 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.128.0/20.
 
         These subnets are used by the Oracle Clusterware private interconnect on the database instance.
         Specifying an overlapping subnet will cause the private interconnect to malfunction.
         This restriction applies to both the client subnet and backup subnet.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this DbSystem.
@@ -1051,7 +1083,7 @@ class DbSystem(object):
     def time_created(self):
         """
         Gets the time_created of this DbSystem.
-        The date and time the DB System was created.
+        The date and time the DB system was created.
 
 
         :return: The time_created of this DbSystem.
@@ -1063,7 +1095,7 @@ class DbSystem(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this DbSystem.
-        The date and time the DB System was created.
+        The date and time the DB system was created.
 
 
         :param time_created: The time_created of this DbSystem.
@@ -1075,7 +1107,7 @@ class DbSystem(object):
     def version(self):
         """
         Gets the version of this DbSystem.
-        The version of the DB System.
+        The Oracle Database version of the DB system.
 
 
         :return: The version of this DbSystem.
@@ -1087,7 +1119,7 @@ class DbSystem(object):
     def version(self, version):
         """
         Sets the version of this DbSystem.
-        The version of the DB System.
+        The Oracle Database version of the DB system.
 
 
         :param version: The version of this DbSystem.
@@ -1099,11 +1131,13 @@ class DbSystem(object):
     def vip_ids(self):
         """
         Gets the vip_ids of this DbSystem.
-        The OCID of the virtual IP (VIP) addresses associated with the DB System.
-        The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB System to
+        The `OCID`__ of the virtual IP (VIP) addresses associated with the DB system.
+        The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to
         enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
 
-        - For a single-node DB System, this list is empty.
+        **Note:** For a single-node DB system, this list is empty.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The vip_ids of this DbSystem.
@@ -1115,11 +1149,13 @@ class DbSystem(object):
     def vip_ids(self, vip_ids):
         """
         Sets the vip_ids of this DbSystem.
-        The OCID of the virtual IP (VIP) addresses associated with the DB System.
-        The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB System to
+        The `OCID`__ of the virtual IP (VIP) addresses associated with the DB system.
+        The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to
         enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
 
-        - For a single-node DB System, this list is empty.
+        **Note:** For a single-node DB system, this list is empty.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param vip_ids: The vip_ids of this DbSystem.
