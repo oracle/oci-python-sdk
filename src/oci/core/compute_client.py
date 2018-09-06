@@ -1820,16 +1820,16 @@ class ComputeClient(object):
     def launch_instance(self, launch_instance_details, **kwargs):
         """
         LaunchInstance
-        Creates a new instance in the specified compartment and the specified Availability Domain.
+        Creates a new instance in the specified compartment and the specified availability domain.
         For general information about instances, see
         `Overview of the Compute Service`__.
 
         For information about access control and compartments, see
         `Overview of the IAM Service`__.
 
-        For information about Availability Domains, see
+        For information about availability domains, see
         `Regions and Availability Domains`__.
-        To get a list of Availability Domains, use the `ListAvailabilityDomains` operation
+        To get a list of availability domains, use the `ListAvailabilityDomains` operation
         in the Identity and Access Management Service API.
 
         All Oracle Cloud Infrastructure resources, including instances, get an Oracle-assigned,
@@ -1929,7 +1929,7 @@ class ComputeClient(object):
 
 
         :param str availability_domain: (required)
-            The name of the Availability Domain.
+            The name of the availability domain.
 
             Example: `Uocm:PHX-AD-1`
 
@@ -2022,7 +2022,7 @@ class ComputeClient(object):
             The OCID of the compartment.
 
         :param str availability_domain: (optional)
-            The name of the Availability Domain.
+            The name of the availability domain.
 
             Example: `Uocm:PHX-AD-1`
 
@@ -2043,9 +2043,9 @@ class ComputeClient(object):
             sort order is case sensitive.
 
             **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
-            optionally filter by Availability Domain if the scope of the resource type is within a
-            single Availability Domain. If you call one of these \"List\" operations without specifying
-            an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+            optionally filter by availability domain if the scope of the resource type is within a
+            single availability domain. If you call one of these \"List\" operations without specifying
+            an availability domain, the resources are grouped by availability domain, then sorted.
 
             Allowed values are: "TIMECREATED", "DISPLAYNAME"
 
@@ -2196,9 +2196,9 @@ class ComputeClient(object):
             sort order is case sensitive.
 
             **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
-            optionally filter by Availability Domain if the scope of the resource type is within a
-            single Availability Domain. If you call one of these \"List\" operations without specifying
-            an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+            optionally filter by availability domain if the scope of the resource type is within a
+            single availability domain. If you call one of these \"List\" operations without specifying
+            an availability domain, the resources are grouped by availability domain, then sorted.
 
             Allowed values are: "TIMECREATED", "DISPLAYNAME"
 
@@ -2391,7 +2391,7 @@ class ComputeClient(object):
     def list_instances(self, compartment_id, **kwargs):
         """
         ListInstances
-        Lists the instances in the specified compartment and the specified Availability Domain.
+        Lists the instances in the specified compartment and the specified availability domain.
         You can filter the results by specifying an instance name (the list will include all the identically-named
         instances in the compartment).
 
@@ -2400,7 +2400,7 @@ class ComputeClient(object):
             The OCID of the compartment.
 
         :param str availability_domain: (optional)
-            The name of the Availability Domain.
+            The name of the availability domain.
 
             Example: `Uocm:PHX-AD-1`
 
@@ -2421,9 +2421,9 @@ class ComputeClient(object):
             sort order is case sensitive.
 
             **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
-            optionally filter by Availability Domain if the scope of the resource type is within a
-            single Availability Domain. If you call one of these \"List\" operations without specifying
-            an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+            optionally filter by availability domain if the scope of the resource type is within a
+            single availability domain. If you call one of these \"List\" operations without specifying
+            an availability domain, the resources are grouped by availability domain, then sorted.
 
             Allowed values are: "TIMECREATED", "DISPLAYNAME"
 
@@ -2537,7 +2537,7 @@ class ComputeClient(object):
             The OCID of the compartment.
 
         :param str availability_domain: (optional)
-            The name of the Availability Domain.
+            The name of the availability domain.
 
             Example: `Uocm:PHX-AD-1`
 
@@ -2618,14 +2618,14 @@ class ComputeClient(object):
         ListVnicAttachments
         Lists the VNIC attachments in the specified compartment. A VNIC attachment
         resides in the same compartment as the attached instance. The list can be
-        filtered by instance, VNIC, or Availability Domain.
+        filtered by instance, VNIC, or availability domain.
 
 
         :param str compartment_id: (required)
             The OCID of the compartment.
 
         :param str availability_domain: (optional)
-            The name of the Availability Domain.
+            The name of the availability domain.
 
             Example: `Uocm:PHX-AD-1`
 
@@ -2720,7 +2720,7 @@ class ComputeClient(object):
             The OCID of the compartment.
 
         :param str availability_domain: (optional)
-            The name of the Availability Domain.
+            The name of the availability domain.
 
             Example: `Uocm:PHX-AD-1`
 
@@ -3067,7 +3067,12 @@ class ComputeClient(object):
     def update_instance(self, instance_id, update_instance_details, **kwargs):
         """
         UpdateInstance
-        Updates the display name of the specified instance. Avoid entering confidential information.
+        Updates certain fields on the specified instance. Fields that are not provided in the
+        request will not be updated. Avoid entering confidential information.
+
+        Changes to metadata fields will be reflected in the instance metadata service (this may take
+        up to a minute).
+
         The OCID of the instance remains the same.
 
 

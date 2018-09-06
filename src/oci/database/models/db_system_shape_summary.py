@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DbSystemShapeSummary(object):
     """
-    The shape of the DB System. The shape determines resources to allocate to the DB system - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes.
+    The shape of the DB system. The shape determines resources to allocate to the DB system - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes.
     For a description of shapes, see `DB System Launch Options`__.
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator.
     If you're an administrator who needs to write policies to give users access,
@@ -85,7 +85,7 @@ class DbSystemShapeSummary(object):
     def available_core_count(self):
         """
         **[Required]** Gets the available_core_count of this DbSystemShapeSummary.
-        The maximum number of CPU cores that can be enabled on the DB System for this shape.
+        The maximum number of CPU cores that can be enabled on the DB system for this shape.
 
 
         :return: The available_core_count of this DbSystemShapeSummary.
@@ -97,7 +97,7 @@ class DbSystemShapeSummary(object):
     def available_core_count(self, available_core_count):
         """
         Sets the available_core_count of this DbSystemShapeSummary.
-        The maximum number of CPU cores that can be enabled on the DB System for this shape.
+        The maximum number of CPU cores that can be enabled on the DB system for this shape.
 
 
         :param available_core_count: The available_core_count of this DbSystemShapeSummary.
@@ -157,7 +157,7 @@ class DbSystemShapeSummary(object):
     def minimum_core_count(self):
         """
         Gets the minimum_core_count of this DbSystemShapeSummary.
-        The minimum number of CPU cores that can be enabled on the DB System for this shape.
+        The minimum number of CPU cores that can be enabled on the DB system for this shape.
 
 
         :return: The minimum_core_count of this DbSystemShapeSummary.
@@ -169,7 +169,7 @@ class DbSystemShapeSummary(object):
     def minimum_core_count(self, minimum_core_count):
         """
         Sets the minimum_core_count of this DbSystemShapeSummary.
-        The minimum number of CPU cores that can be enabled on the DB System for this shape.
+        The minimum number of CPU cores that can be enabled on the DB system for this shape.
 
 
         :param minimum_core_count: The minimum_core_count of this DbSystemShapeSummary.
@@ -205,7 +205,7 @@ class DbSystemShapeSummary(object):
     def name(self):
         """
         **[Required]** Gets the name of this DbSystemShapeSummary.
-        The name of the shape used for the DB System.
+        The name of the shape used for the DB system.
 
 
         :return: The name of this DbSystemShapeSummary.
@@ -217,7 +217,7 @@ class DbSystemShapeSummary(object):
     def name(self, name):
         """
         Sets the name of this DbSystemShapeSummary.
-        The name of the shape used for the DB System.
+        The name of the shape used for the DB system.
 
 
         :param name: The name of this DbSystemShapeSummary.

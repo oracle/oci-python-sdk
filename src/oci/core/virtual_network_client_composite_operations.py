@@ -217,7 +217,7 @@ class VirtualNetworkClientCompositeOperations(object):
         to enter the given state(s).
 
         :param CreateInternetGatewayDetails create_internet_gateway_details: (required)
-            Details for creating a new Internet Gateway.
+            Details for creating a new internet gateway.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.InternetGateway.lifecycle_state`
@@ -830,7 +830,7 @@ class VirtualNetworkClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str ig_id: (required)
-            The OCID of the Internet Gateway.
+            The OCID of the internet gateway.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.InternetGateway.lifecycle_state`
@@ -1466,10 +1466,10 @@ class VirtualNetworkClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str ig_id: (required)
-            The OCID of the Internet Gateway.
+            The OCID of the internet gateway.
 
         :param UpdateInternetGatewayDetails update_internet_gateway_details: (required)
-            Details for updating the Internet Gateway.
+            Details for updating the internet gateway.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.InternetGateway.lifecycle_state`

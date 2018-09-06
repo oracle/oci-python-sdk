@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Drg(object):
     """
-    A Dynamic Routing Gateway (DRG), which is a virtual router that provides a path for private
+    A dynamic routing gateway (DRG), which is a virtual router that provides a path for private
     network traffic between your VCN and your existing network. You use it with other Networking
     Service components to create an IPSec VPN or a connection that uses
     Oracle Cloud Infrastructure FastConnect. For more information, see
@@ -18,6 +18,9 @@ class Drg(object):
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
     talk to an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
+
+    **Warning:** Oracle recommends that you avoid using any confidential information when you
+    supply string values using the API.
 
     __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm
     __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm

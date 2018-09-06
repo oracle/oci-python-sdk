@@ -43,19 +43,18 @@ def test_limit(identity, config):
 
 def test_api_call_with_explicit_timeout(config):
     client = oci.identity.IdentityClient(config)
-    client.base_client.timeout = 0.01  # 0.01s timeout on connection and read. Should be too short to connect without timing out
 
-    with pytest.raises(oci.exceptions.ConnectTimeout) as e:
+    # Test connection timeout
+    client.base_client.timeout = 0.01  # 0.01s timeout on connection and read. Should be too short to connect without timing out
+    with pytest.raises(oci.exceptions.ConnectTimeout):
         client.list_users(config['tenancy'])
-        assert isinstance(e, oci._vendor.requests.exceptions.ConnectTimeout)
-        assert 'connect timeout=0.01' in str(e)
         assert False
 
-    client.base_client.timeout = (0.05, 25)  # 0.05s timeout on connection, 25s on read. Should be too short to connect without timing out
-    with pytest.raises(oci.exceptions.ConnectTimeout) as e:
+    # Test read timeout
+    client.base_client.timeout = (1, 0.01)  # 1s timeout on connection, 0.01s on read. Should be too short read
+    with pytest.raises(oci.exceptions.RequestException):
         client.list_users(config['tenancy'])
-        assert isinstance(e, oci._vendor.requests.exceptions.ConnectTimeout)
-        assert 'connect timeout=0.05' in str(e)
+        assert False
 
     client.base_client.timeout = 5
     response = client.list_users(config['tenancy'])

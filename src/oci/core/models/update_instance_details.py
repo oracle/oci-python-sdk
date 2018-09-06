@@ -29,22 +29,36 @@ class UpdateInstanceDetails(object):
             The value to assign to the freeform_tags property of this UpdateInstanceDetails.
         :type freeform_tags: dict(str, str)
 
+        :param metadata:
+            The value to assign to the metadata property of this UpdateInstanceDetails.
+        :type metadata: dict(str, str)
+
+        :param extended_metadata:
+            The value to assign to the extended_metadata property of this UpdateInstanceDetails.
+        :type extended_metadata: dict(str, object)
+
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
-            'freeform_tags': 'dict(str, str)'
+            'freeform_tags': 'dict(str, str)',
+            'metadata': 'dict(str, str)',
+            'extended_metadata': 'dict(str, object)'
         }
 
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
-            'freeform_tags': 'freeformTags'
+            'freeform_tags': 'freeformTags',
+            'metadata': 'metadata',
+            'extended_metadata': 'extendedMetadata'
         }
 
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
+        self._metadata = None
+        self._extended_metadata = None
 
     @property
     def defined_tags(self):
@@ -145,6 +159,86 @@ class UpdateInstanceDetails(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def metadata(self):
+        """
+        Gets the metadata of this UpdateInstanceDetails.
+        Custom metadata key/value string pairs that you provide. Any set of key/value pairs
+        provided here will completely replace the current set of key/value pairs in the 'metadata'
+        field on the instance.
+
+        Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance
+        has launched. Any request which updates, removes, or adds either of these fields will be
+        rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that
+        already exist on the instance.
+
+
+        :return: The metadata of this UpdateInstanceDetails.
+        :rtype: dict(str, str)
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """
+        Sets the metadata of this UpdateInstanceDetails.
+        Custom metadata key/value string pairs that you provide. Any set of key/value pairs
+        provided here will completely replace the current set of key/value pairs in the 'metadata'
+        field on the instance.
+
+        Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance
+        has launched. Any request which updates, removes, or adds either of these fields will be
+        rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that
+        already exist on the instance.
+
+
+        :param metadata: The metadata of this UpdateInstanceDetails.
+        :type: dict(str, str)
+        """
+        self._metadata = metadata
+
+    @property
+    def extended_metadata(self):
+        """
+        Gets the extended_metadata of this UpdateInstanceDetails.
+        Additional metadata key/value pairs that you provide. They serve the same purpose and
+        functionality as fields in the 'metadata' object.
+
+        They are distinguished from 'metadata' fields in that these can be nested JSON objects
+        (whereas 'metadata' fields are string/string maps only).
+
+        Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance
+        has launched. Any request which updates, removes, or adds either of these fields will be
+        rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that
+        already exist on the instance.
+
+
+        :return: The extended_metadata of this UpdateInstanceDetails.
+        :rtype: dict(str, object)
+        """
+        return self._extended_metadata
+
+    @extended_metadata.setter
+    def extended_metadata(self, extended_metadata):
+        """
+        Sets the extended_metadata of this UpdateInstanceDetails.
+        Additional metadata key/value pairs that you provide. They serve the same purpose and
+        functionality as fields in the 'metadata' object.
+
+        They are distinguished from 'metadata' fields in that these can be nested JSON objects
+        (whereas 'metadata' fields are string/string maps only).
+
+        Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance
+        has launched. Any request which updates, removes, or adds either of these fields will be
+        rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that
+        already exist on the instance.
+
+
+        :param extended_metadata: The extended_metadata of this UpdateInstanceDetails.
+        :type: dict(str, object)
+        """
+        self._extended_metadata = extended_metadata
 
     def __repr__(self):
         return formatted_flat_dict(self)

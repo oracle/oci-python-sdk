@@ -10,6 +10,9 @@ from oci.decorators import init_model_state_from_kwargs
 class BootVolumeAttachment(object):
     """
     Represents an attachment between a boot volume and an instance.
+
+    **Warning:** Oracle recommends that you avoid using any confidential information when you
+    supply string values using the API.
     """
 
     #: A constant which can be used with the lifecycle_state property of a BootVolumeAttachment.
@@ -103,7 +106,7 @@ class BootVolumeAttachment(object):
     def availability_domain(self):
         """
         **[Required]** Gets the availability_domain of this BootVolumeAttachment.
-        The Availability Domain of an instance.
+        The availability domain of an instance.
 
         Example: `Uocm:PHX-AD-1`
 
@@ -117,7 +120,7 @@ class BootVolumeAttachment(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this BootVolumeAttachment.
-        The Availability Domain of an instance.
+        The availability domain of an instance.
 
         Example: `Uocm:PHX-AD-1`
 

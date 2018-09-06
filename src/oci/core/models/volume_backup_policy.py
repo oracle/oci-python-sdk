@@ -9,7 +9,12 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class VolumeBackupPolicy(object):
     """
-    A policy for automatically creating volume backups according to a recurring schedule. Has a set of one or more schedules that control when and how backups are created.
+    A policy for automatically creating volume backups according to a
+    recurring schedule. Has a set of one or more schedules that control when and
+    how backups are created.
+
+    **Warning:** Oracle recommends that you avoid using any confidential information when you
+    supply string values using the API.
     """
 
     def __init__(self, **kwargs):

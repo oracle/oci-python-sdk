@@ -37,6 +37,9 @@ class PrivateIp(object):
     talk to an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
+    **Warning:** Oracle recommends that you avoid using any confidential information when you
+    supply string values using the API.
+
     __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPaddresses.htm
     __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
     """
@@ -142,7 +145,7 @@ class PrivateIp(object):
     def availability_domain(self):
         """
         Gets the availability_domain of this PrivateIp.
-        The private IP's Availability Domain.
+        The private IP's availability domain.
 
         Example: `Uocm:PHX-AD-1`
 
@@ -156,7 +159,7 @@ class PrivateIp(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this PrivateIp.
-        The private IP's Availability Domain.
+        The private IP's availability domain.
 
         Example: `Uocm:PHX-AD-1`
 

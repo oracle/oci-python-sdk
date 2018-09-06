@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.0.3 -2018-09-06
+====================
+
+Added
+-----
+* Added support for updating metadata fields on an instance in the Compute service
+
+Fixed
+-------
+* Fixed example wait_for_resource_in_state.py to use existing response objects.  The updated example can be found on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/wait_for_resource_in_state.py>`__.
+
+====================
 2.0.2 - 2018-08-23
 ====================
 

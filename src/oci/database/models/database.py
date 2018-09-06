@@ -9,9 +9,11 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Database(object):
     """
-    An Oracle database on a DB System. For more information, see `Managing Oracle Databases`__.
+    An Oracle database on a bare metal or virtual machine DB system. For more information, see `Bare Metal and Virtual Machine DB Systems`__.
 
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see `Getting Started with Policies`__.
+
+    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 
     __ https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Concepts/overview.htm
     __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
@@ -197,7 +199,9 @@ class Database(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this Database.
-        The OCID of the compartment.
+        The `OCID`__ of the compartment.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Database.
@@ -209,7 +213,9 @@ class Database(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this Database.
-        The OCID of the compartment.
+        The `OCID`__ of the compartment.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Database.
@@ -241,7 +247,9 @@ class Database(object):
     def db_home_id(self):
         """
         Gets the db_home_id of this Database.
-        The OCID of the database home.
+        The `OCID`__ of the database home.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_home_id of this Database.
@@ -253,7 +261,9 @@ class Database(object):
     def db_home_id(self, db_home_id):
         """
         Sets the db_home_id of this Database.
-        The OCID of the database home.
+        The `OCID`__ of the database home.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param db_home_id: The db_home_id of this Database.
@@ -313,7 +323,7 @@ class Database(object):
     def db_workload(self):
         """
         Gets the db_workload of this Database.
-        Database workload type.
+        The database workload type.
 
 
         :return: The db_workload of this Database.
@@ -325,7 +335,7 @@ class Database(object):
     def db_workload(self, db_workload):
         """
         Sets the db_workload of this Database.
-        Database workload type.
+        The database workload type.
 
 
         :param db_workload: The db_workload of this Database.
@@ -405,7 +415,9 @@ class Database(object):
     def id(self):
         """
         **[Required]** Gets the id of this Database.
-        The OCID of the database.
+        The `OCID`__ of the database.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Database.
@@ -417,7 +429,9 @@ class Database(object):
     def id(self, id):
         """
         Sets the id of this Database.
-        The OCID of the database.
+        The `OCID`__ of the database.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Database.
@@ -507,7 +521,7 @@ class Database(object):
     def pdb_name(self):
         """
         Gets the pdb_name of this Database.
-        Pluggable database name. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
+        The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
 
 
         :return: The pdb_name of this Database.
@@ -519,7 +533,7 @@ class Database(object):
     def pdb_name(self, pdb_name):
         """
         Sets the pdb_name of this Database.
-        Pluggable database name. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
+        The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
 
 
         :param pdb_name: The pdb_name of this Database.

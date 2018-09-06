@@ -10,6 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 class CreateAutonomousDatabaseDetails(object):
     """
     Details to create an Oracle Autonomous Database.
+
+    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
 
     #: A constant which can be used with the license_model property of a CreateAutonomousDatabaseDetails.
@@ -125,7 +127,9 @@ class CreateAutonomousDatabaseDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateAutonomousDatabaseDetails.
-        The Oracle Cloud ID (OCID) of the compartment of the DB system.
+        The `OCID`__ of the compartment of the autonomous database.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateAutonomousDatabaseDetails.
@@ -137,7 +141,9 @@ class CreateAutonomousDatabaseDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateAutonomousDatabaseDetails.
-        The Oracle Cloud ID (OCID) of the compartment of the DB system.
+        The `OCID`__ of the compartment of the autonomous database.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateAutonomousDatabaseDetails.
@@ -173,7 +179,7 @@ class CreateAutonomousDatabaseDetails(object):
     def data_storage_size_in_tbs(self):
         """
         **[Required]** Gets the data_storage_size_in_tbs of this CreateAutonomousDatabaseDetails.
-        Size, in terabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed.
+        The size, in terabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed.
 
 
         :return: The data_storage_size_in_tbs of this CreateAutonomousDatabaseDetails.
@@ -185,7 +191,7 @@ class CreateAutonomousDatabaseDetails(object):
     def data_storage_size_in_tbs(self, data_storage_size_in_tbs):
         """
         Sets the data_storage_size_in_tbs of this CreateAutonomousDatabaseDetails.
-        Size, in terabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed.
+        The size, in terabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed.
 
 
         :param data_storage_size_in_tbs: The data_storage_size_in_tbs of this CreateAutonomousDatabaseDetails.

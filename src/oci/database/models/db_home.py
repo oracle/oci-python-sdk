@@ -9,14 +9,15 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DbHome(object):
     """
-    A directory where Oracle database software is installed. Each DB System can have multiple database homes,
-    and each database home can have multiple databases within it. All the databases within a single database home
-    must be the same database version, but different database homes can run different versions. For more information,
-    see `Managing Oracle Databases`__.
+    A directory where Oracle Database software is installed. A bare metal DB system can have multiple database homes
+    and each database home can run a different supported version of Oracle Database. A virtual machine DB system can have only one database home.
+    For more information, see `Bare Metal and Virtual Machine DB Systems`__.
 
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an
     administrator. If you're an administrator who needs to write policies to give users access,
     see `Getting Started with Policies`__.
+
+    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 
     __ https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Concepts/overview.htm
     __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
@@ -121,7 +122,9 @@ class DbHome(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this DbHome.
-        The OCID of the compartment.
+        The `OCID`__ of the compartment.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this DbHome.
@@ -133,7 +136,9 @@ class DbHome(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this DbHome.
-        The OCID of the compartment.
+        The `OCID`__ of the compartment.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this DbHome.
@@ -145,7 +150,9 @@ class DbHome(object):
     def db_system_id(self):
         """
         Gets the db_system_id of this DbHome.
-        The OCID of the DB System.
+        The `OCID`__ of the DB system.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_system_id of this DbHome.
@@ -157,7 +164,9 @@ class DbHome(object):
     def db_system_id(self, db_system_id):
         """
         Sets the db_system_id of this DbHome.
-        The OCID of the DB System.
+        The `OCID`__ of the DB system.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param db_system_id: The db_system_id of this DbHome.
@@ -169,7 +178,7 @@ class DbHome(object):
     def db_version(self):
         """
         **[Required]** Gets the db_version of this DbHome.
-        The Oracle database version.
+        The Oracle Database version.
 
 
         :return: The db_version of this DbHome.
@@ -181,7 +190,7 @@ class DbHome(object):
     def db_version(self, db_version):
         """
         Sets the db_version of this DbHome.
-        The Oracle database version.
+        The Oracle Database version.
 
 
         :param db_version: The db_version of this DbHome.
@@ -193,7 +202,7 @@ class DbHome(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this DbHome.
-        The user-provided name for the database home. It does not need to be unique.
+        The user-provided name for the database home. The name does not need to be unique.
 
 
         :return: The display_name of this DbHome.
@@ -205,7 +214,7 @@ class DbHome(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this DbHome.
-        The user-provided name for the database home. It does not need to be unique.
+        The user-provided name for the database home. The name does not need to be unique.
 
 
         :param display_name: The display_name of this DbHome.
@@ -217,7 +226,9 @@ class DbHome(object):
     def id(self):
         """
         **[Required]** Gets the id of this DbHome.
-        The OCID of the database home.
+        The `OCID`__ of the database home.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DbHome.
@@ -229,7 +240,9 @@ class DbHome(object):
     def id(self, id):
         """
         Sets the id of this DbHome.
-        The OCID of the database home.
+        The `OCID`__ of the database home.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DbHome.
@@ -241,7 +254,9 @@ class DbHome(object):
     def last_patch_history_entry_id(self):
         """
         Gets the last_patch_history_entry_id of this DbHome.
-        The OCID of the last patch history. This is updated as soon as a patch operation is started.
+        The `OCID`__ of the last patch history. This value is updated as soon as a patch operation is started.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The last_patch_history_entry_id of this DbHome.
@@ -253,7 +268,9 @@ class DbHome(object):
     def last_patch_history_entry_id(self, last_patch_history_entry_id):
         """
         Sets the last_patch_history_entry_id of this DbHome.
-        The OCID of the last patch history. This is updated as soon as a patch operation is started.
+        The `OCID`__ of the last patch history. This value is updated as soon as a patch operation is started.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param last_patch_history_entry_id: The last_patch_history_entry_id of this DbHome.

@@ -132,7 +132,9 @@ class PatchHistoryEntry(object):
     def id(self):
         """
         **[Required]** Gets the id of this PatchHistoryEntry.
-        The OCID of the patch history entry.
+        The `OCID`__ of the patch history entry.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this PatchHistoryEntry.
@@ -144,7 +146,9 @@ class PatchHistoryEntry(object):
     def id(self, id):
         """
         Sets the id of this PatchHistoryEntry.
-        The OCID of the patch history entry.
+        The `OCID`__ of the patch history entry.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this PatchHistoryEntry.
@@ -212,7 +216,9 @@ class PatchHistoryEntry(object):
     def patch_id(self):
         """
         **[Required]** Gets the patch_id of this PatchHistoryEntry.
-        The OCID of the patch.
+        The `OCID`__ of the patch.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The patch_id of this PatchHistoryEntry.
@@ -224,7 +230,9 @@ class PatchHistoryEntry(object):
     def patch_id(self, patch_id):
         """
         Sets the patch_id of this PatchHistoryEntry.
-        The OCID of the patch.
+        The `OCID`__ of the patch.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
         :param patch_id: The patch_id of this PatchHistoryEntry.
