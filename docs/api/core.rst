@@ -22,6 +22,13 @@ Core Services
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.core.models.AppCatalogListing
+    oci.core.models.AppCatalogListingResourceVersion
+    oci.core.models.AppCatalogListingResourceVersionAgreements
+    oci.core.models.AppCatalogListingResourceVersionSummary
+    oci.core.models.AppCatalogListingSummary
+    oci.core.models.AppCatalogSubscription
+    oci.core.models.AppCatalogSubscriptionSummary
     oci.core.models.AttachBootVolumeDetails
     oci.core.models.AttachIScsiVolumeDetails
     oci.core.models.AttachParavirtualizedVolumeDetails
@@ -41,6 +48,7 @@ Core Services
     oci.core.models.ConnectRemotePeeringConnectionsDetails
     oci.core.models.ConsoleHistory
     oci.core.models.Cpe
+    oci.core.models.CreateAppCatalogSubscriptionDetails
     oci.core.models.CreateBootVolumeBackupDetails
     oci.core.models.CreateBootVolumeDetails
     oci.core.models.CreateCpeDetails

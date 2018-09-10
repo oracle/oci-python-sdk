@@ -3,6 +3,13 @@
 
 from __future__ import absolute_import
 
+from .app_catalog_listing import AppCatalogListing
+from .app_catalog_listing_resource_version import AppCatalogListingResourceVersion
+from .app_catalog_listing_resource_version_agreements import AppCatalogListingResourceVersionAgreements
+from .app_catalog_listing_resource_version_summary import AppCatalogListingResourceVersionSummary
+from .app_catalog_listing_summary import AppCatalogListingSummary
+from .app_catalog_subscription import AppCatalogSubscription
+from .app_catalog_subscription_summary import AppCatalogSubscriptionSummary
 from .attach_boot_volume_details import AttachBootVolumeDetails
 from .attach_i_scsi_volume_details import AttachIScsiVolumeDetails
 from .attach_paravirtualized_volume_details import AttachParavirtualizedVolumeDetails
@@ -22,6 +29,7 @@ from .connect_local_peering_gateways_details import ConnectLocalPeeringGatewaysD
 from .connect_remote_peering_connections_details import ConnectRemotePeeringConnectionsDetails
 from .console_history import ConsoleHistory
 from .cpe import Cpe
+from .create_app_catalog_subscription_details import CreateAppCatalogSubscriptionDetails
 from .create_boot_volume_backup_details import CreateBootVolumeBackupDetails
 from .create_boot_volume_details import CreateBootVolumeDetails
 from .create_cpe_details import CreateCpeDetails
@@ -169,6 +177,13 @@ from .volume_source_from_volume_details import VolumeSourceFromVolumeDetails
 
 # Maps type names to classes for core services.
 core_type_mapping = {
+    "AppCatalogListing": AppCatalogListing,
+    "AppCatalogListingResourceVersion": AppCatalogListingResourceVersion,
+    "AppCatalogListingResourceVersionAgreements": AppCatalogListingResourceVersionAgreements,
+    "AppCatalogListingResourceVersionSummary": AppCatalogListingResourceVersionSummary,
+    "AppCatalogListingSummary": AppCatalogListingSummary,
+    "AppCatalogSubscription": AppCatalogSubscription,
+    "AppCatalogSubscriptionSummary": AppCatalogSubscriptionSummary,
     "AttachBootVolumeDetails": AttachBootVolumeDetails,
     "AttachIScsiVolumeDetails": AttachIScsiVolumeDetails,
     "AttachParavirtualizedVolumeDetails": AttachParavirtualizedVolumeDetails,
@@ -188,6 +203,7 @@ core_type_mapping = {
     "ConnectRemotePeeringConnectionsDetails": ConnectRemotePeeringConnectionsDetails,
     "ConsoleHistory": ConsoleHistory,
     "Cpe": Cpe,
+    "CreateAppCatalogSubscriptionDetails": CreateAppCatalogSubscriptionDetails,
     "CreateBootVolumeBackupDetails": CreateBootVolumeBackupDetails,
     "CreateBootVolumeDetails": CreateBootVolumeDetails,
     "CreateCpeDetails": CreateCpeDetails,
