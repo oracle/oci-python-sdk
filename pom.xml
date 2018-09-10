@@ -25,6 +25,7 @@
     <public-dns-api-spec-spec-file>public-dns-api-spec.yaml</public-dns-api-spec-spec-file>
     <resource-query-service-spec-spec-file>rqs.yaml</resource-query-service-spec-spec-file>
     <clusters-api-spec-spec-file>clusters-api-spec.yaml</clusters-api-spec-spec-file>
+    <kms-api-spec-spec-file>kms-api-spec-20180608.yaml</kms-api-spec-spec-file>
   </properties>
   <dependencies>
     <dependency>
@@ -70,6 +71,10 @@
     <dependency>
       <groupId>com.oracle.pic.clusters</groupId>
       <artifactId>clusters-api-spec</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.pic.kms</groupId>
+      <artifactId>kms-api-spec</artifactId>
     </dependency>
   </dependencies>
   <build>
@@ -291,6 +296,24 @@
                   <type>jar</type>
                   <includes>**/*</includes>
                   <outputDirectory>${spec-temp-dir}/clusters-api-spec</outputDirectory>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+          <execution>
+            <id>unpack-kms-api-spec</id>
+            <phase>initialize</phase>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>com.oracle.pic.kms</groupId>
+                  <artifactId>kms-api-spec</artifactId>
+                  <type>jar</type>
+                  <includes>**/*</includes>
+                  <outputDirectory>${spec-temp-dir}/kms-api-spec</outputDirectory>
                 </artifactItem>
               </artifactItems>
             </configuration>
@@ -599,6 +622,33 @@
               <groupFileCollectionDir>${enabled-groups-dir}</groupFileCollectionDir>
             </configuration>
           </execution>
+          <execution>
+            <id>spec-conditionals-prefer-kms-api-spec</id>
+            <phase>initialize</phase>
+            <goals>
+              <goal>prefer</goal>
+            </goals>
+            <configuration>
+              <inputFiles>
+                <inputFile>${spec-temp-dir}/kms-api-spec/source/${kms-api-spec-spec-file}</inputFile>
+                <inputFile>${spec-temp-dir}/kms-api-spec/${kms-api-spec-spec-file}</inputFile>
+              </inputFiles>
+              <outputFile>${preferred-temp-dir}/kms-api-spec/${kms-api-spec-spec-file}</outputFile>
+            </configuration>
+          </execution>
+          <execution>
+            <id>spec-conditionals-preprocess-kms-api-spec</id>
+            <phase>initialize</phase>
+            <goals>
+              <goal>preprocess</goal>
+            </goals>
+            <configuration>
+              <inputFile>${preferred-temp-dir}/kms-api-spec/${kms-api-spec-spec-file}</inputFile>
+              <outputFile>${preprocessed-temp-dir}/kms-api-spec/${kms-api-spec-spec-file}</outputFile>
+              <groupFile>${enabled-groups-file}</groupFile>
+              <groupFileCollectionDir>${enabled-groups-dir}</groupFileCollectionDir>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
       <plugin>
@@ -838,6 +888,27 @@
               <featureIdConfigDir>${feature-id-dir}</featureIdConfigDir>
             </configuration>
           </execution>
+          <execution>
+            <id>python-public-sdk-kms-api-spec</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <language>oracle-python-sdk</language>
+              <specPath>${preprocessed-temp-dir}/kms-api-spec/${kms-api-spec-spec-file}</specPath>
+              <outputDir>src/oci</outputDir>
+              <basePackage>OCI</basePackage>
+              <specGenerationType>PUBLIC</specGenerationType>
+              <additionalProperties>
+                <specName>key_management</specName>
+                <generateInitFile>true</generateInitFile>
+                <endpoint>https://kms.{domain}</endpoint>
+              </additionalProperties>
+              <featureIdConfigFile>${feature-id-file}</featureIdConfigFile>
+              <featureIdConfigDir>${feature-id-dir}</featureIdConfigDir>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
       <plugin>
@@ -1059,6 +1130,12 @@
                 <include>**/*</include>
               </includes>
             </fileset>
+            <fileset>
+              <directory>src/oci/key_management</directory>
+              <includes>
+                <include>**/*</include>
+              </includes>
+            </fileset>
           </filesets>
         </configuration>
       </plugin>
@@ -1067,59 +1144,64 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-          <groupId>com.oracle.pic.commons</groupId>
-          <artifactId>coreservices-api-spec</artifactId>
-          <version>0.2.269</version>
+        <groupId>com.oracle.pic.commons</groupId>
+        <artifactId>coreservices-api-spec</artifactId>
+        <version>0.2.269</version>
       </dependency>
       <dependency>
-          <groupId>com.oracle.pic.identity</groupId>
-          <artifactId>identity-control-plane-api-spec</artifactId>
-          <version>0.2.103</version>
+        <groupId>com.oracle.pic.identity</groupId>
+        <artifactId>identity-control-plane-api-spec</artifactId>
+        <version>0.2.103</version>
       </dependency>
       <dependency>
-          <groupId>com.oracle.pic.casper</groupId>
-          <artifactId>casper-api-spec</artifactId>
-          <version>1.1.16</version>
+        <groupId>com.oracle.pic.casper</groupId>
+        <artifactId>casper-api-spec</artifactId>
+        <version>1.1.16</version>
       </dependency>
       <dependency>
-          <groupId>com.oracle.pic.lb</groupId>
-          <artifactId>oralb-api-spec</artifactId>
-          <version>1.0.17</version>
+        <groupId>com.oracle.pic.lb</groupId>
+        <artifactId>oralb-api-spec</artifactId>
+        <version>1.0.17</version>
       </dependency>
       <dependency>
-          <groupId>com.oracle.pic.dbaas</groupId>
-          <artifactId>dbaas-api-spec</artifactId>
-          <version>0.0.151</version>
+        <groupId>com.oracle.pic.dbaas</groupId>
+        <artifactId>dbaas-api-spec</artifactId>
+        <version>0.0.151</version>
       </dependency>
       <dependency>
-          <groupId>com.oracle.pic.sherlock</groupId>
-          <artifactId>hemlock-spec</artifactId>
-          <version>0.1.9</version>
+        <groupId>com.oracle.pic.sherlock</groupId>
+        <artifactId>hemlock-spec</artifactId>
+        <version>0.1.9</version>
       </dependency>
       <dependency>
-          <groupId>com.oracle.pic.dns.pub</groupId>
-          <artifactId>public-dns-api-spec</artifactId>
-          <version>1.0.0-15</version>
+        <groupId>com.oracle.pic.dns.pub</groupId>
+        <artifactId>public-dns-api-spec</artifactId>
+        <version>1.0.0-15</version>
       </dependency>
       <dependency>
-          <groupId>com.oracle.pic.ffsw</groupId>
-          <artifactId>fss-api-spec</artifactId>
-          <version>0.0.13</version>
+        <groupId>com.oracle.pic.ffsw</groupId>
+        <artifactId>fss-api-spec</artifactId>
+        <version>0.0.13</version>
       </dependency>
       <dependency>
-          <groupId>com.oracle.pic.email</groupId>
-          <artifactId>email-api-spec</artifactId>
-          <version>1.0.0</version>
+        <groupId>com.oracle.pic.email</groupId>
+        <artifactId>email-api-spec</artifactId>
+        <version>1.0.0</version>
       </dependency>
       <dependency>
-          <groupId>com.oracle.pic.clusters</groupId>
-          <artifactId>clusters-api-spec</artifactId>
-          <version>1.0.11</version>
+        <groupId>com.oracle.pic.clusters</groupId>
+        <artifactId>clusters-api-spec</artifactId>
+        <version>1.0.11</version>
       </dependency>
       <dependency>
-          <groupId>com.oracle.pic.query</groupId>
-          <artifactId>resource-query-service-spec</artifactId>
-          <version>0.0.8</version>
+        <groupId>com.oracle.pic.query</groupId>
+        <artifactId>resource-query-service-spec</artifactId>
+        <version>0.0.8</version>
+      </dependency>
+      <dependency>
+        <groupId>com.oracle.pic.kms</groupId>
+        <artifactId>kms-api-spec</artifactId>
+        <version>0.1.68</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
