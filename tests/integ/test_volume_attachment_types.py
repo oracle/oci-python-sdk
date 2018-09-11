@@ -194,13 +194,18 @@ def delete_vcn_and_subnet(virtual_network, vcn_and_subnet):
     subnet = vcn_and_subnet['subnet']
 
     try:
+        subnet_response = virtual_network.get_subnet(subnet.id)
         virtual_network.delete_subnet(subnet.id)
-        test_config_container.do_wait(virtual_network, virtual_network.get_subnet(subnet.id), 'lifecycle_state', 'TERMINATED', max_wait_seconds=300, succeed_on_not_found=True)
-
-        virtual_network.delete_vcn(vcn.id)
-        test_config_container.do_wait(virtual_network, virtual_network.get_vcn(vcn.id), 'lifecycle_state', 'TERMINATED', max_wait_seconds=300, succeed_on_not_found=True)
+        test_config_container.do_wait(virtual_network, subnet_response, 'lifecycle_state', 'TERMINATED', max_wait_seconds=300, succeed_on_not_found=True)
     except Exception as e:
-        print('Error deleting VCN or Subnet: {}'.format(e))
+        print('Error deleting Subnet: {}'.format(e))
+
+    try:
+        vcn_response = virtual_network.get_vcn(vcn.id)
+        virtual_network.delete_vcn(vcn.id)
+        test_config_container.do_wait(virtual_network, vcn_response, 'lifecycle_state', 'TERMINATED', max_wait_seconds=300, succeed_on_not_found=True)
+    except Exception as e:
+        print('Error deleting VCN: {}'.format(e))
 
 
 def launch_instance(compute, vcn_and_subnet):
@@ -211,7 +216,7 @@ def launch_instance(compute, vcn_and_subnet):
             display_name='VolAttachTypesTestInstance',
             shape='VM.Standard1.1',
             subnet_id=vcn_and_subnet['subnet'].id,
-            image_id=get_image(compute, 'Oracle Linux', '7.4', 'VM.Standard1.1').id
+            image_id=get_image(compute, 'Oracle Linux', '7.5', 'VM.Standard1.1').id
         )
     )
     get_instance_response = test_config_container.do_wait(
@@ -247,6 +252,9 @@ def get_image(compute, operating_system, os_version, target_shape):
         operating_system=operating_system,
         operating_system_version=os_version
     ).data
+
+    if len(images) == 0:
+        raise RuntimeError('No valid images found for {} version {}'.format(operating_system, os_version))
 
     for img in images:
         shapes_for_image = oci.pagination.list_call_get_all_results(
