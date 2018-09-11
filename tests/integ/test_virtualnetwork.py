@@ -529,10 +529,11 @@ class TestVirtualNetwork:
             finally:
                 if public_ip_id:
                     try:
+                        public_ip_response = virtual_network.get_public_ip(public_ip.id)
                         virtual_network.delete_public_ip(public_ip.id)
                         test_config_container.do_wait(
                             virtual_network,
-                            virtual_network.get_public_ip(public_ip.id),
+                            public_ip_response,
                             'lifecycle_state',
                             'TERMINATED',
                             succeed_on_not_found=True
@@ -603,16 +604,23 @@ class TestVirtualNetwork:
                     print('Could not delete instance {}. Error: {}'.format(instance, e))
             finally:
                 if public_ip_id:
+                    public_ip_response = None
                     try:
-                        test_config_container.do_wait(
-                            virtual_network,
-                            virtual_network.get_public_ip(public_ip.id),
-                            'lifecycle_state',
-                            'TERMINATED',
-                            succeed_on_not_found=True
-                        )
+                        public_ip_response = virtual_network.get_public_ip(public_ip.id)
                     except Exception as e:
-                        print('Could not wait until public IP {} deleted. Error: {}'.format(public_ip_id, e))
+                        if e.status != 404:
+                            raise e
+                    if public_ip_response:
+                        try:
+                            test_config_container.do_wait(
+                                virtual_network,
+                                public_ip_response,
+                                'lifecycle_state',
+                                'TERMINATED',
+                                succeed_on_not_found=True
+                            )
+                        except Exception as e:
+                            print('Could not wait until public IP {} deleted. Error: {}'.format(public_ip_id, e))
 
                 if vcn_and_subnet:
                     try:
@@ -686,17 +694,18 @@ class TestVirtualNetwork:
         assert 'updated_pub_ip' == update_response.data.display_name
 
         if private_ip_id == '':
-            assert update_response.data.lifecycle_state == 'UNASSIGNING'
+            public_ip_response = virtual_network.get_public_ip(public_ip.id)
             test_config_container.do_wait(
                 virtual_network,
-                virtual_network.get_public_ip(public_ip.id),
+                public_ip_response,
                 evaluate_response=lambda r: r.data.lifecycle_state in ['AVAILABLE', 'UNASSIGNED']
             )
         else:
             assert private_ip_id == update_response.data.private_ip_id
+            public_ip_response = virtual_network.get_public_ip(public_ip.id)
             test_config_container.do_wait(
                 virtual_network,
-                virtual_network.get_public_ip(public_ip.id),
+                public_ip_response,
                 evaluate_response=lambda r: r.data.lifecycle_state in ['AVAILABLE', 'ASSIGNED']
             )
 
@@ -780,10 +789,11 @@ class TestVirtualNetwork:
 
     def delete_vcn_and_subnet(self, virtual_network, vcn_and_subnet):
         subnet_ocid = vcn_and_subnet['subnet'].id
+        subnet_response = virtual_network.get_subnet(subnet_ocid)
         virtual_network.delete_subnet(subnet_ocid)
         test_config_container.do_wait(
             virtual_network,
-            virtual_network.get_subnet(subnet_ocid),
+            subnet_response,
             'lifecycle_state',
             'TERMINATED',
             max_wait_seconds=600,
@@ -791,10 +801,11 @@ class TestVirtualNetwork:
         )
 
         vcn_ocid = vcn_and_subnet['vcn'].id
+        vcn_response = virtual_network.get_vcn(vcn_ocid)
         virtual_network.delete_vcn(vcn_ocid)
         test_config_container.do_wait(
             virtual_network,
-            virtual_network.get_vcn(vcn_ocid),
+            vcn_response,
             'lifecycle_state',
             'TERMINATED',
             max_wait_seconds=600,
