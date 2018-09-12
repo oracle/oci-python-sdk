@@ -61,7 +61,7 @@ else
       --cov-report html:cov_html \
       --cov-report xml:cov.xml \
       --ignore=tests/integ/test_large_file_transfer.py \
-      --ignore=tests/integ/test_object_storage.py \
+      --ignore=tests/integ/test_upload_manager.py \
       --ignore=tests/integ/test_composite_operations.py \
       --ignore=tests/integ/test_virtualnetwork.py \
       --ignore=tests/unit/test_retry.py \

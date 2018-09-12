@@ -1,24 +1,15 @@
 # coding: utf-8
 # Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
-from oci.object_storage.transfer.constants import MEBIBYTE
-from oci.object_storage import MultipartObjectAssembler
 from tests.util import get_resource_path, random_number_string, unique_name
 from . import util
 from .. import test_config_container
-import filecmp
 import oci
 import os
 import os.path
 import pytest
 from oci._vendor import requests
-import resource
-from oci._vendor import six
-import subprocess
-import sys
-import time
 
-LARGE_CONTENT_FILE_SIZE_IN_MEBIBYTES = 3
 
 # Static content for get_object tests
 expected_content = "a/b/c/object3"
@@ -39,18 +30,25 @@ def create_bucket(object_storage, namespace, bucket_name):
     return response
 
 
-@pytest.fixture(scope="module")
+@pytest.fixture(scope="class")
 def set_up_test_data(object_storage, namespace):
+    """
+    set_up_test_data should only run once and it will ensure the namespace
+    has the correct buckets, objects and meta data for all tests.
+    """
     with test_config_container.create_vcr().use_cassette('test_object_storage_setup_test_data.yml'):
-        util.ensure_test_data(object_storage, namespace, util.COMPARTMENT_ID, util.bucket_prefix())
+        result = util.ensure_test_data(object_storage, namespace, util.COMPARTMENT_ID, util.bucket_prefix())
+
+    return result
 
 
 # Response from GetObject for streaming tests
 @pytest.fixture
-def get_object_response(object_storage):
+def get_object_response(object_storage, namespace, set_up_test_data):
+    assert set_up_test_data
     with test_config_container.create_vcr().use_cassette('test_object_storage_get_object_response.yml'):
         _response = object_storage.get_object(
-            namespace_name=namespace(object_storage),
+            namespace_name=namespace,
             bucket_name=util.bucket_prefix() + "ReadOnlyTestBucket2",
             object_name=expected_content
         )
@@ -58,7 +56,7 @@ def get_object_response(object_storage):
         return _response
 
 
-@pytest.fixture
+@pytest.fixture(scope="class")
 def namespace(object_storage):
     return object_storage.get_namespace().data
 
@@ -74,32 +72,6 @@ def bucket(object_storage, namespace, request):
     delete_objects_in_bucket(object_storage, namespace, bucket_name)
     response = object_storage.delete_bucket(namespace, bucket_name)
     assert response.status == 204
-
-
-@pytest.fixture
-def non_vcr_bucket(object_storage, namespace, request):
-    bucket_name = unique_name(request.node.name, ignore_vcr=True)
-    response = create_bucket(object_storage, namespace, bucket_name)
-    assert response.status == 200
-
-    yield bucket_name
-
-    delete_objects_in_bucket(object_storage, namespace, bucket_name)
-    response = object_storage.delete_bucket(namespace, bucket_name)
-    assert response.status == 204
-
-
-@pytest.fixture(scope='function')
-def content_input_file():
-    filename = 'tests/resources/multipart_content_input.txt'
-
-    # generate large file for multipart testing
-    util.create_large_file(filename, LARGE_CONTENT_FILE_SIZE_IN_MEBIBYTES)
-
-    yield filename
-
-    if os.path.exists(filename):
-        os.remove(filename)
 
 
 class TestObjectStorage:
@@ -445,7 +417,6 @@ class TestObjectStorage:
             assert response.status == 204
 
     def test_put_empty_file(self, object_storage):
-        # with test_config_container.create_vcr().use_cassette('test_object_storage_test_put_empty_file.yml'):
         # Setup a bucket to use.
         object_name = 'empty_object'
         bucket_name = unique_name('test_object_CRUD', ignore_vcr=True)
@@ -546,7 +517,8 @@ class TestObjectStorage:
 
             assert excinfo.value.status == 404
 
-    def test_get_bucket(self, object_storage):
+    def test_get_bucket(self, object_storage, set_up_test_data):
+        assert set_up_test_data
         with test_config_container.create_vcr().use_cassette('test_object_storage_test_get_bucket.yml'):
             namespace = object_storage.get_namespace().data
             response = object_storage.get_bucket(namespace, util.bucket_prefix() + 'ReadOnlyTestBucket1')
@@ -555,7 +527,8 @@ class TestObjectStorage:
             assert response.data.metadata is not None
             assert 0 == len(response.data.metadata)
 
-    def test_get_bucket_with_metadata(self, object_storage):
+    def test_get_bucket_with_metadata(self, object_storage, set_up_test_data):
+        assert set_up_test_data
         with test_config_container.create_vcr().use_cassette('test_object_storage_test_get_bucket_with_metadata.yml'):
             namespace = object_storage.get_namespace().data
             response = object_storage.get_bucket(namespace, util.bucket_prefix() + 'ReadOnlyTestBucket5')
@@ -601,14 +574,16 @@ class TestObjectStorage:
             assert 2 == len(response.data)
             assert first_bucket_name != response.data[0].name
 
-    def test_get_object(self, object_storage):
+    def test_get_object(self, object_storage, set_up_test_data):
+        assert set_up_test_data
         with test_config_container.create_vcr().use_cassette('test_object_storage_test_get_object.yml'):
             namespace = object_storage.get_namespace().data
             response = object_storage.get_object(namespace, util.bucket_prefix() + 'ReadOnlyTestBucket1', 'object1')
             assert response.status == 200
             assert isinstance(response.data, requests.Response)
 
-    def test_get_object_with_user_metadata(self, object_storage):
+    def test_get_object_with_user_metadata(self, object_storage, set_up_test_data):
+        assert set_up_test_data
         with test_config_container.create_vcr().use_cassette('test_object_storage_test_get_object_with_user_metadata.yml'):
             namespace = object_storage.get_namespace().data
             response = object_storage.get_object(namespace, util.bucket_prefix() + 'ReadOnlyTestBucket4', 'hasUserMetadata.json')
@@ -617,7 +592,8 @@ class TestObjectStorage:
             assert 'bar1' == response.headers['opc-meta-foo1']
             assert 'bar2' == response.headers['opc-meta-foo2']
 
-    def test_list_objects(self, object_storage):
+    def test_list_objects(self, object_storage, set_up_test_data):
+        assert set_up_test_data
         with test_config_container.create_vcr().use_cassette('test_object_storage_test_list_objects.yml'):
             namespace = object_storage.get_namespace().data
             response = object_storage.list_objects(namespace, util.bucket_prefix() + 'ReadOnlyTestBucket1')
@@ -626,7 +602,8 @@ class TestObjectStorage:
             assert 5 == len(response.data.objects)
             assert response.data.prefixes is None
 
-    def test_list_objects_empty_bucket(self, object_storage):
+    def test_list_objects_empty_bucket(self, object_storage, set_up_test_data):
+        assert set_up_test_data
         with test_config_container.create_vcr().use_cassette('test_object_storage_test_list_objects_empty_bucket.yml'):
             namespace = object_storage.get_namespace().data
             response = object_storage.list_objects(namespace, util.bucket_prefix() + 'ReadOnlyTestBucket5')
@@ -635,7 +612,8 @@ class TestObjectStorage:
             assert 0 == len(response.data.objects)
             assert response.data.prefixes is None
 
-    def test_list_objects_with_prefix_and_delimiter(self, object_storage):
+    def test_list_objects_with_prefix_and_delimiter(self, object_storage, set_up_test_data):
+        assert set_up_test_data
         with test_config_container.create_vcr().use_cassette('test_object_storage_test_list_objects_with_prefix_and_delimiter.yml'):
             namespace = object_storage.get_namespace().data
             response = object_storage.list_objects(
@@ -646,7 +624,8 @@ class TestObjectStorage:
             assert 1 == len(response.data.prefixes)
             assert response.data.next_start_with is None
 
-    def test_list_objects_truncated(self, object_storage):
+    def test_list_objects_truncated(self, object_storage, set_up_test_data):
+        assert set_up_test_data
         with test_config_container.create_vcr().use_cassette('test_object_storage_test_list_objects_truncated.yml'):
             namespace = object_storage.get_namespace().data
             response = object_storage.list_objects(namespace, util.bucket_prefix() + 'ReadOnlyTestBucket1', limit=3)
@@ -664,7 +643,8 @@ class TestObjectStorage:
             assert response.data.next_start_with is None
             assert first_object_name != response.data.objects[0].name
 
-    def test_head_object(self, object_storage):
+    def test_head_object(self, object_storage, set_up_test_data):
+        assert set_up_test_data
         with test_config_container.create_vcr().use_cassette('test_object_storage_test_head_object.yml'):
             namespace = object_storage.get_namespace().data
             response = object_storage.head_object(namespace, util.bucket_prefix() + 'ReadOnlyTestBucket4', 'hasUserMetadata.json')
@@ -673,7 +653,8 @@ class TestObjectStorage:
             assert 'bar1' == response.headers['opc-meta-foo1']
             assert 'bar2' == response.headers['opc-meta-foo2']
 
-    def test_head_not_found(self, object_storage):
+    def test_head_not_found(self, object_storage, set_up_test_data):
+        assert set_up_test_data
         with test_config_container.create_vcr().use_cassette('test_object_storage_test_head_not_found.yml'):
             namespace = object_storage.get_namespace().data
             # Bucket exists, unknown key
@@ -742,245 +723,6 @@ class TestObjectStorage:
         with pytest.raises(requests.exceptions.StreamConsumedError):
             for chunk in get_object_response.data.iter_content():
                 response_text += chunk.decode('UTF-8')
-
-    def test_upload_manager_single_part_based_on_file_size(self, object_storage, non_vcr_bucket, content_input_file):
-        # with test_config_container.create_vcr().use_cassette('test_object_storage_test_upload_manager_single_part_based_on_file_size.yml'):
-        object_name = 'test_object_multipart'
-        namespace = object_storage.get_namespace().data
-
-        # explicitly use part-size > file size to trigger single part upload
-        part_size_in_bytes = (LARGE_CONTENT_FILE_SIZE_IN_MEBIBYTES + 1) * MEBIBYTE
-        upload_manager = oci.object_storage.UploadManager(object_storage, allow_multipart_uploads=True)
-        response = upload_manager.upload_file(
-            namespace, non_vcr_bucket, object_name, content_input_file, part_size=part_size_in_bytes)
-        util.validate_response(response)
-
-        # confirm that the object was actually uploaded with single part
-        assert response.headers['opc-content-md5']
-
-    def test_upload_manager_multipart_part_based_on_file_size(self, object_storage, non_vcr_bucket, content_input_file):
-        bucket = non_vcr_bucket
-        object_name = 'test_object_multipart'
-        namespace = object_storage.get_namespace().data
-
-        # explicitly use part_size < file size to trigger multipart
-        part_size_in_bytes = (LARGE_CONTENT_FILE_SIZE_IN_MEBIBYTES - 1) * MEBIBYTE
-        upload_manager = oci.object_storage.UploadManager(object_storage, allow_multipart_uploads=True)
-        response = upload_manager.upload_file(
-            namespace, bucket, object_name, content_input_file, part_size=part_size_in_bytes)
-        util.validate_response(response)
-
-        # confirm that the object was actually uploaded with multipart
-        assert response.headers['opc-multipart-md5']
-
-        print('Downloading object {} from {} for verification'.format(object_name, bucket))
-        response = object_storage.get_object(
-            namespace_name=namespace,
-            bucket_name=bucket,
-            object_name=object_name
-        )
-        downloaded_file_path = os.path.join('tests', 'resources', 'downloaded_multipart_verify.bin')
-        with open(downloaded_file_path, 'wb') as file:
-            for chunk in response.data.raw.stream(MEBIBYTE, decode_content=False):
-                file.write(chunk)
-        print('Object downloaded')
-
-        assert filecmp.cmp(content_input_file, downloaded_file_path, shallow=False)
-
-        os.remove(downloaded_file_path)
-
-    def test_upload_manager_multipart_custom_parallel_process_count(self, object_storage, non_vcr_bucket, content_input_file):
-        bucket = non_vcr_bucket
-        object_name = 'test_object_multipart'
-        namespace = object_storage.get_namespace().data
-
-        part_size_in_bytes = (LARGE_CONTENT_FILE_SIZE_IN_MEBIBYTES - 1) * MEBIBYTE
-        upload_manager = oci.object_storage.UploadManager(object_storage, allow_multipart_uploads=True, parallel_process_count=10)
-        response = upload_manager.upload_file(
-            namespace, bucket, object_name, content_input_file, part_size=part_size_in_bytes)
-        util.validate_response(response)
-
-        # confirm that the object was actually uploaded with multipart
-        assert response.headers['opc-multipart-md5']
-
-        print('Downloading object {} from {} for verification'.format(object_name, bucket))
-        response = object_storage.get_object(
-            namespace_name=namespace,
-            bucket_name=bucket,
-            object_name=object_name
-        )
-        downloaded_file_path = os.path.join('tests', 'resources', 'downloaded_multipart_verify.bin')
-        with open(downloaded_file_path, 'wb') as file:
-            for chunk in response.data.raw.stream(MEBIBYTE, decode_content=False):
-                file.write(chunk)
-        print('Object downloaded')
-
-        assert filecmp.cmp(content_input_file, downloaded_file_path, shallow=False)
-
-        os.remove(downloaded_file_path)
-
-    def test_upload_manager_multipart_disabled_with_large_file_uses_single_part(self, object_storage, non_vcr_bucket, content_input_file):
-        # with test_config_container.create_vcr().use_cassette('test_object_storage_test_upload_manager_multipart_disabled_with_large_file_uses_single_part.yml'):
-        object_name = 'test_object_multipart'
-        namespace = object_storage.get_namespace().data
-
-        # explicitly use part_size > file size to trigger multipart
-        part_size_in_bytes = (LARGE_CONTENT_FILE_SIZE_IN_MEBIBYTES - 1) * MEBIBYTE
-        upload_manager = oci.object_storage.UploadManager(object_storage, allow_multipart_uploads=False)
-        response = upload_manager.upload_file(
-            namespace, non_vcr_bucket, object_name, content_input_file, part_size=part_size_in_bytes)
-        util.validate_response(response)
-
-        # confirm that the object was actually uploaded with multipart
-        assert response.headers['opc-content-md5']
-
-    def test_upload_manager_multipart_resume_put(self, object_storage, non_vcr_bucket, content_input_file):
-        # Tests that the resume works in the case of a multipart upload with last part < part_size
-        UPLOAD_LAST_PART = [-1]
-
-        # *** Case 1: part_size = 2 MB, file_size = 3 MB, last_part = 1 MB ***
-        # File split into 2 parts (1st part of 2 MB, 2nd part of 1 MB)
-        # Hence last_part < part_size
-        part_size_in_bytes = 2 * MEBIBYTE
-        self.multipart_resume_put(part_size_in_bytes, object_storage, non_vcr_bucket, content_input_file, UPLOAD_LAST_PART)
-
-        # *** Case 2: part_size = 1 MB, file_size = 3 MB, last_part = 1 MB ***
-        # File split into 3 parts (1st part of 1 MB, 2nd part of 1 MB, 3rd part of 1 MB)
-        # Hence last_part = part_size
-        part_size_in_bytes = 1 * MEBIBYTE
-        self.multipart_resume_put(part_size_in_bytes, object_storage, non_vcr_bucket, content_input_file, UPLOAD_LAST_PART)
-
-    def multipart_resume_put(self, part_size_in_bytes, object_storage, bucket, content_input_file, upload_part_nums):
-        object_name = 'test_object_multipart_resume_put'
-        namespace = object_storage.get_namespace().data
-
-        kwargs = {'part_size': part_size_in_bytes}
-        ma = MultipartObjectAssembler(object_storage, namespace, bucket, object_name, **kwargs)
-        ma.new_upload()
-        ma.add_parts_from_file(content_input_file)
-        parts = list(enumerate(ma.manifest['parts']))
-
-        # Upload the last part of the file
-        for part_to_upload_num in upload_part_nums:
-            ma._upload_part(part_num=parts[part_to_upload_num][0] + 1, part=parts[part_to_upload_num][1])
-
-        upload_id = ma.manifest['uploadId']
-
-        # Resume upload
-        upload_manager = oci.object_storage.UploadManager(object_storage, allow_multipart_uploads=True)
-        response = upload_manager.resume_upload_file(namespace, bucket, object_name, content_input_file,
-                                                     upload_id, **kwargs)
-        util.validate_response(response)
-
-        # confirm that the object was actually uploaded with multipart
-        assert response.headers['opc-multipart-md5']
-
-        response = object_storage.get_object(
-            namespace_name=namespace,
-            bucket_name=bucket,
-            object_name=object_name
-        )
-        downloaded_file_path = os.path.join('tests', 'resources', 'downloaded_file.bin')
-        with open(downloaded_file_path, 'wb') as file:
-            for chunk in response.data.raw.stream(MEBIBYTE, decode_content=False):
-                file.write(chunk)
-
-        assert filecmp.cmp(content_input_file, downloaded_file_path, shallow=False)
-        os.remove(downloaded_file_path)
-
-    def test_upload_manager_piped_from_stream(self, object_storage, non_vcr_bucket, config_file, config_profile, config):
-        if sys.platform == 'win32':
-            pytest.skip("Stream piping tests don't run on Windows")
-
-        bucket = non_vcr_bucket
-        large_file_path = os.path.join('tests', 'resources', 'large_file.bin')
-        util.create_large_file(large_file_path, 500)  # Make a 500 MiB file
-
-        namespace = object_storage.get_namespace().data
-        object_name = 'test_obj_piped_{}'.format(int(time.time()))
-
-        print('cat-ing file and piping to script')
-        cat_large_file = subprocess.Popen(['cat', large_file_path], stdout=subprocess.PIPE)
-        call_return = subprocess.call(
-            ['python', 'tests/scripts/upload_manager_from_stdin.py', config_file, config_profile, config['pass_phrase'], namespace, bucket, object_name],
-            stdin=cat_large_file.stdout
-        )
-        cat_large_file.wait()
-        assert call_return == 0
-        print('Uploaded {} to Object Storage'.format(object_name))
-
-        # For child processes there is a caveat:
-        #
-        # For RUSAGE_CHILDREN, this is the resident set size of the largest child, not the maximum resident set size of the
-        # process tree.
-        #
-        # But as a rough test the largest child should be OK
-        max_child_process_memory_utilisation = resource.getrusage(resource.RUSAGE_CHILDREN).ru_maxrss
-
-        # In the script we have 10 threads processing stuff in the pool and they should be consuming 10 MiB each by default.
-        # As such it should consume a max of 100 MiB, but we'll give it a bit of extra buffer since there's other stuff going
-        # on besides the threads which are processing the file.
-        #
-        # From testing, the memory usage is higher on Python 2 but it is still less than the total size of the file
-        if six.PY3:
-            # Empirically, Python 3.5 is ~180 MiB memory usage but Python 3.6 is ~160 MiB
-            max_size_limit_bytes = 180 * 1024 * 1024
-        else:
-            max_size_limit_bytes = 260 * 1024 * 2014
-
-        assert max_child_process_memory_utilisation <= max_size_limit_bytes, 'Expected child process utilization {} to be <= limit {}'.format(max_child_process_memory_utilisation, max_size_limit_bytes)
-
-        print('Downloading object {} from {} for verification'.format(object_name, bucket))
-        response = object_storage.get_object(
-            namespace_name=namespace,
-            bucket_name=bucket,
-            object_name=object_name
-        )
-        downloaded_large_file_path = os.path.join('tests', 'resources', 'downloaded_large_file.bin')
-        with open(downloaded_large_file_path, 'wb') as file:
-            for chunk in response.data.raw.stream(MEBIBYTE, decode_content=False):
-                file.write(chunk)
-        print('Object downloaded')
-
-        assert filecmp.cmp(large_file_path, downloaded_large_file_path, shallow=False)
-
-        os.remove(downloaded_large_file_path)
-        os.remove(large_file_path)
-
-    def test_object_manager_pipe_empty_file_from_stream(self, object_storage, non_vcr_bucket, config_file, config_profile, config):
-        if sys.platform == 'win32':
-            pytest.skip("Stream piping tests don't run on Windows")
-
-        bucket = non_vcr_bucket
-        test_file = get_resource_path('empty_file')
-
-        namespace = object_storage.get_namespace().data
-        object_name = 'test_obj_empty_piped_{}'.format(int(time.time()))
-
-        print('cat-ing empty file and piping to script')
-        cat_large_file = subprocess.Popen(['cat', test_file], stdout=subprocess.PIPE)
-        call_return = subprocess.call(
-            ['python', 'tests/scripts/upload_manager_from_stdin.py', config_file, config_profile, config['pass_phrase'], namespace, bucket, object_name],
-            stdin=cat_large_file.stdout
-        )
-        cat_large_file.wait()
-        assert call_return == 0
-        print('Uploaded {} to Object Storage'.format(object_name))
-
-        response = object_storage.get_object(
-            namespace_name=namespace,
-            bucket_name=bucket,
-            object_name=object_name
-        )
-        downloaded_empty_file_path = os.path.join('tests', 'resources', 'downloaded_empty_file.bin')
-        with open(downloaded_empty_file_path, 'wb') as file:
-            for chunk in response.data.raw.stream(MEBIBYTE, decode_content=False):
-                file.write(chunk)
-        print('Object downloaded')
-
-        assert filecmp.cmp(test_file, downloaded_empty_file_path, shallow=False)
-
-        os.remove(downloaded_empty_file_path)
 
     def test_paging_list_objects(self, object_storage):
         with test_config_container.create_vcr().use_cassette('test_object_storage_test_paging_list_objects.yml'):
