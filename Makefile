@@ -11,7 +11,7 @@ docs:
 	@echo Generating HTML docs. Note that this will use the installed
 	@echo version of OCI, so you might want to run the following first:
 	@echo make gen
-	@echo pip install e .
+	@echo pip install -e .
 	python scripts/doc_gen/generate_service_rst_files.py
 	cd docs && make html
 	@echo View the docs at docs/_build/html/index.html
@@ -51,7 +51,7 @@ release-test:
 	pip install twine
 	twine register dist/*.whl -r testpypi
 	twine upload dist/* -r testpypi
-	
+
 .PHONY: release
 release:
 	@echo Uploading whl file to PyPI.
