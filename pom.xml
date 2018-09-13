@@ -904,6 +904,8 @@
                 <specName>key_management</specName>
                 <generateInitFile>true</generateInitFile>
                 <endpoint>https://kms.{domain}</endpoint>
+                <isRegionalClient.kms_crypto>false</isRegionalClient.kms_crypto>
+                <isRegionalClient.kms_management>false</isRegionalClient.kms_management>
               </additionalProperties>
               <featureIdConfigFile>${feature-id-file}</featureIdConfigFile>
               <featureIdConfigDir>${feature-id-dir}</featureIdConfigDir>

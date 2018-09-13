@@ -70,7 +70,7 @@ class KmsManagementClient(object):
             )
 
         base_client_init_kwargs = {
-            'regional_client': True,
+            'regional_client': False,
             'service_endpoint': kwargs.get('service_endpoint'),
             'timeout': kwargs.get('timeout'),
             'base_path': '/20180608'
