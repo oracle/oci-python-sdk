@@ -47,3 +47,12 @@ def test_path_path_not_appended_if_in_endpoint_no_explicit_endpoint(identity, co
         assert client.endpoint == oci.regions.endpoint_for('identity', region=config['region'])
     else:
         assert client.endpoint == '{}{}'.format(oci.regions.endpoint_for('identity', region=config['region']), '/20160918')
+
+
+def test_service_endpoint_template(identity, config):
+    service_endpoint_template = 'https://foobar.{region}.oci.oraclecloud.com'
+    client = oci.BaseClient('foobar', config, identity.base_client.signer, {}, service_endpoint_template=service_endpoint_template)
+    assert client.endpoint == service_endpoint_template.format(region=config['region'])
+    region_london = 'uk-london-1'
+    client.set_region(region_london)
+    assert client.endpoint == service_endpoint_template.format(region=region_london)

@@ -25,14 +25,11 @@ def is_region(region_name):
     return region_name.lower() in REGIONS
 
 
-def endpoint_for(service, region=None, endpoint=None):
+def endpoint_for(service, service_endpoint_template=None, region=None, endpoint=None):
     """Returns the base URl for a service, either in the given region or at the specified endpoint.
 
     If endpoint and region are provided, endpoint is used.
     """
-    if service.lower() not in SERVICE_ENDPOINTS:
-        raise ValueError("Unknown service {!r}".format(service))
-
     if not (endpoint or region):
         raise ValueError("Must supply either a region or an endpoint.")
     elif endpoint:
@@ -42,12 +39,19 @@ def endpoint_for(service, region=None, endpoint=None):
         # no endpoint provided
         region = region.lower()
 
+        # use service endpoint template if available
+        if (service_endpoint_template):
+            return service_endpoint_template.format(region=region)
+
         # for backwards compatibility, if region already has a '.'
         # then consider it the full domain and do not append '.oraclecloud.com'
         if '.' in region:
             domain = region
         else:
             domain = DOMAIN_FORMAT.format(region=region)
+
+    if service.lower() not in SERVICE_ENDPOINTS:
+        raise ValueError("Unknown service {!r}".format(service))
 
     url_format = SERVICE_ENDPOINTS[service.lower()]
     return url_format.format(domain=domain)
