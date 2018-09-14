@@ -1,7 +1,6 @@
 # coding: utf-8
 # Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
-import time
 from . import util
 from .. import test_config_container
 import oci
@@ -102,10 +101,9 @@ class TestVnicSourceDestCheck:
         get_vnic_response = virtual_network.get_vnic(vnic_attachment.vnic_id)
         assert not get_vnic_response.data.skip_source_dest_check
 
-        time.sleep(10)
         compute.detach_vnic(self.second_vnic_attachment_id)
         test_config_container.do_wait(compute, compute.get_vnic_attachment(self.second_vnic_attachment_id), 'lifecycle_state', 'DETACHED', max_wait_seconds=300)
-        time.sleep(10)
+        del self.second_vnic_attachment_id
 
     @util.log_test
     def create_resources(self, compute, virtual_network):
@@ -162,10 +160,11 @@ class TestVnicSourceDestCheck:
 
         if (hasattr(self, 'second_vnic_attachment_id')):
             try:
-                time.sleep(10)
-                print("Detaching second VNIC")
-                compute.detach_vnic(self.second_vnic_attachment_id)
-                test_config_container.do_wait(compute, compute.get_vnic_attachment(self.second_vnic_attachment_id), 'lifecycle_state', 'DETACHED', max_wait_seconds=300)
+                vnic_response = compute.get_vnic_attachment(self.second_vnic_attachment_id)
+                if hasattr(vnic_response, 'data') and hasattr(vnic_response.data, 'lifecycle_state'):
+                    if vnic_response.data.lifecycle_state != oci.core.models.VnicAttachment.LIFECYCLE_STATE_DETACHED:
+                        compute.detach_vnic(self.second_vnic_attachment_id)
+                        test_config_container.do_wait(compute, vnic_response, 'lifecycle_state', 'DETACHED', max_wait_seconds=300)
             except Exception as error:
                 # succeed if resource is deleted already
                 if not hasattr(error, 'status') or error.status != 404:
@@ -186,8 +185,9 @@ class TestVnicSourceDestCheck:
         if hasattr(self, 'subnet_ocid'):
             try:
                 print("Deleting subnet")
+                vcn_response = virtual_network.get_subnet(self.subnet_ocid)
                 virtual_network.delete_subnet(self.subnet_ocid)
-                test_config_container.do_wait(virtual_network, virtual_network.get_subnet(self.subnet_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
+                test_config_container.do_wait(virtual_network, vcn_response, 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
             except Exception as error:
                 # succeed if resource is deleted already
                 if not hasattr(error, 'status') or error.status != 404:
@@ -197,8 +197,9 @@ class TestVnicSourceDestCheck:
         if hasattr(self, 'vcn_ocid'):
             try:
                 print("Deleting vcn")
+                vcn_response = virtual_network.get_vcn(self.vcn_ocid)
                 virtual_network.delete_vcn(self.vcn_ocid)
-                test_config_container.do_wait(virtual_network, virtual_network.get_vcn(self.vcn_ocid), 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
+                test_config_container.do_wait(virtual_network, vcn_response, 'lifecycle_state', 'TERMINATED', max_wait_seconds=600)
             except Exception as error:
                 # succeed if resource is deleted already
                 if not hasattr(error, 'status') or error.status != 404:
