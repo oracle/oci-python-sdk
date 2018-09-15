@@ -41,6 +41,10 @@ class CreateBootVolumeDetails(object):
             The value to assign to the freeform_tags property of this CreateBootVolumeDetails.
         :type freeform_tags: dict(str, str)
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this CreateBootVolumeDetails.
+        :type kms_key_id: str
+
         :param size_in_gbs:
             The value to assign to the size_in_gbs property of this CreateBootVolumeDetails.
         :type size_in_gbs: int
@@ -57,6 +61,7 @@ class CreateBootVolumeDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
+            'kms_key_id': 'str',
             'size_in_gbs': 'int',
             'source_details': 'BootVolumeSourceDetails'
         }
@@ -68,6 +73,7 @@ class CreateBootVolumeDetails(object):
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
+            'kms_key_id': 'kmsKeyId',
             'size_in_gbs': 'sizeInGBs',
             'source_details': 'sourceDetails'
         }
@@ -78,6 +84,7 @@ class CreateBootVolumeDetails(object):
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
+        self._kms_key_id = None
         self._size_in_gbs = None
         self._source_details = None
 
@@ -254,6 +261,30 @@ class CreateBootVolumeDetails(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def kms_key_id(self):
+        """
+        Gets the kms_key_id of this CreateBootVolumeDetails.
+        The OCID of the KMS key to be used as the master encryption key for the boot volume.
+
+
+        :return: The kms_key_id of this CreateBootVolumeDetails.
+        :rtype: str
+        """
+        return self._kms_key_id
+
+    @kms_key_id.setter
+    def kms_key_id(self, kms_key_id):
+        """
+        Sets the kms_key_id of this CreateBootVolumeDetails.
+        The OCID of the KMS key to be used as the master encryption key for the boot volume.
+
+
+        :param kms_key_id: The kms_key_id of this CreateBootVolumeDetails.
+        :type: str
+        """
+        self._kms_key_id = kms_key_id
 
     @property
     def size_in_gbs(self):
