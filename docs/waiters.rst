@@ -7,9 +7,22 @@
         }
     </script>
 
+Composite Operations and Waiters
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To wait until an attribute of a resource reaches a certain state, you can use composite operations or waiters. 
+
+Composite Operations
+---------------------
+You can use the ``CompositeOperation`` classes in the SDK (e.g. :py:class:`~oci.core.ComputeClientCompositeOperations`) 
+to perform an action on a resource and wait for it to enter a particular state (or states). The ``CompositeOperation`` classes provide 
+convenience methods so that you do not have to invoke an operation and then separately invoke a waiter. 
+
+An example of using ``CompositeOperation`` classes can be found on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/composite_operations_example.py>`__.
+
 Waiters
-~~~~~~~
-Sometimes you may need to wait until an attribute of a resource, such as an instance or a VCN, reaches a certain state. An example of this would be launching an instance and then waiting for the instance to become available, or waiting until a subnet in a VCN has been terminated. This waiting can be accomplished by using the :py:func:`~oci.wait_until` function. As an example:
+-------
+You can also use the :py:func:`~oci.wait_until` function to wait for a resource to enter a particular state. As an example:
 
 .. code-block:: python
 
@@ -34,9 +47,10 @@ Sometimes you may need to wait until an attribute of a resource, such as an inst
     #   - The fourth parameter is the desired value. An equality (==) comparison is done
     get_instance_response = oci.wait_until(client, client.get_instance(instance_ocid), 'lifecycle_state', 'RUNNING')
 
-Instead of waiting for a single attribute to equal a given value, you can also provide a function reference (either a lambda or a reference to an already defined function) that
-can be used to evaluate the response received from the service call. This function should return a truthy value if the waiter should stop waiting, and a falsey value if the waiter
-should continue waiting. 
+Instead of waiting for a single attribute to equal a given value, you can also provide a function reference (either a lambda or a reference to an already defined function) that can be used to evaluate the response received from the service call. This function should return a truthy value if the waiter should stop waiting, and a falsey value if the waiter should continue waiting. 
+
+.. note::
+    If the function reference fails to evaluate the service call and return a response, ``wait_until()`` returns an error.
 
 For example, to wait until a volume backup reaches either the "AVAILABLE" or "FAULTY" state :
 
@@ -53,14 +67,6 @@ Instead of using a lambda, an already defined function can be used:
 
     oci.wait_until(client, client.get_volume_backup(vol_backup_id), evaluate_response=should_stop_waiting_volume_backup)
 
-In addition to the base parameters shown above, the function can accept optional attributes to control the maximum amount of time it will wait for and the time between calls to the service. For more information on the optional parameters, see the documentation on the :py:func:`~oci.wait_until` function. 
+In addition to these base parameters, ``wait_until()`` can accept optional attributes to control the maximum amount of time it will wait  and the time between calls to the service. For more information on the optional parameters, see the documentation on the :py:func:`~oci.wait_until` function. 
 
 For a more comprehensive sample, please see our `examples <https://github.com/oracle/oci-python-sdk/blob/master/examples/wait_for_resource_in_state.py>`_ on GitHub.
-
-Composite Operations
----------------------
-In addition to using waiters, you can use the ``CompositeOperation`` classes in the SDK (e.g. :py:class:`~oci.core.ComputeClientCompositeOperations`) 
-to perform an action on a resource and wait for it to enter a particular state (or states). The ``CompositeOperation`` classes provide 
-convenience methods so that you yourself do not have to invoke an operation and then separately invoke a waiter. 
-
-An example of using ``CompositeOperation`` classes can be found on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/composite_operations_example.py>`__.
