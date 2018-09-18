@@ -88,6 +88,7 @@ class BaseClient(object):
 
         self._endpoint = None
         self._base_path = kwargs.get('base_path')
+        self.service_endpoint_template = kwargs.get('service_endpoint_template')
 
         if self.regional_client:
             if kwargs.get('service_endpoint'):
@@ -101,6 +102,7 @@ class BaseClient(object):
 
                 self.endpoint = regions.endpoint_for(
                     service,
+                    service_endpoint_template=self.service_endpoint_template,
                     region=region_to_use,
                     endpoint=config.get('endpoint'))
         else:
@@ -141,7 +143,7 @@ class BaseClient(object):
 
     def set_region(self, region):
         if self.regional_client:
-            self.endpoint = regions.endpoint_for(self.service, region=region)
+            self.endpoint = regions.endpoint_for(self.service, service_endpoint_template=self.service_endpoint_template, region=region)
         else:
             raise TypeError('Setting the region is not allowed for non-regional service clients. You must instead set the endpoint')
 
