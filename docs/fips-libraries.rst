@@ -23,7 +23,6 @@ To configure the SDK to use a FIPS-validated libcrypto library, execute the foll
 
     oci.fips.enable_fips_mode('</path/to/libcrypto.x.x.x>')
 
-
 Setting the Environment Variables
 ---------------------------------
 
