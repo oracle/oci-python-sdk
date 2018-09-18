@@ -188,6 +188,15 @@ def list_suppressions_with_sorting(email_client, created_suppressions, config, s
     ).data
     assert len(suppressions) >= len(created_suppressions)
 
+    # The sort order employeed by the server puts '_' after '3' when in accending
+    # order and before it when in descending order.  This is the opposite of
+    # the Python algorithm.  Therefore email addresses with leading '_' characters
+    # are causing the test to fail.  There is no guarentees that other tests
+    # won't have email addresses that will cause this behavior, so remove all
+    # email addresses which were not created for this test.
+    if len(suppressions) > len(created_suppressions):
+        suppressions = [x for x in suppressions if x in created_suppressions]
+
     sorted_suppressions = sorted(suppressions, key=sort_key_lambda, reverse=(sort_order == 'DESC'))
     for idx, val in enumerate(sorted_suppressions):
         assert val.id
