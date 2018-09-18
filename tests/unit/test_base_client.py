@@ -9,7 +9,7 @@ import pytest
 def test_regional_client_does_not_need_explicit_endpoint(identity, config):
     assert 'endpoint' not in config
     client = oci.BaseClient('identity', config, identity.base_client.signer, {})
-    assert client.endpoint == oci.regions.endpoint_for('identity', region=config['region'])
+    assert client.endpoint == oci.regions.endpoint_for('identity', config['region'])
 
 
 def test_regional_client_honours_explicit_endpoint(identity, config):

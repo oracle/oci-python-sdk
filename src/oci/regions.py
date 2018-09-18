@@ -25,7 +25,7 @@ def is_region(region_name):
     return region_name.lower() in REGIONS
 
 
-def endpoint_for(service, service_endpoint_template=None, region=None, endpoint=None):
+def endpoint_for(service, region=None, endpoint=None, service_endpoint_template=None):
     """Returns the base URl for a service, either in the given region or at the specified endpoint.
 
     If endpoint and region are provided, endpoint is used.
