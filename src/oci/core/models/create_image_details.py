@@ -21,6 +21,10 @@ class CreateImageDetails(object):
     LAUNCH_MODE_EMULATED = "EMULATED"
 
     #: A constant which can be used with the launch_mode property of a CreateImageDetails.
+    #: This constant has a value of "PARAVIRTUALIZED"
+    LAUNCH_MODE_PARAVIRTUALIZED = "PARAVIRTUALIZED"
+
+    #: A constant which can be used with the launch_mode property of a CreateImageDetails.
     #: This constant has a value of "CUSTOM"
     LAUNCH_MODE_CUSTOM = "CUSTOM"
 
@@ -55,7 +59,7 @@ class CreateImageDetails(object):
 
         :param launch_mode:
             The value to assign to the launch_mode property of this CreateImageDetails.
-            Allowed values for this property are: "NATIVE", "EMULATED", "CUSTOM"
+            Allowed values for this property are: "NATIVE", "EMULATED", "PARAVIRTUALIZED", "CUSTOM"
         :type launch_mode: str
 
         """
@@ -270,9 +274,10 @@ class CreateImageDetails(object):
         Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
         * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for Oracle-provided images.
         * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using virtio drivers.
         * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
 
-        Allowed values for this property are: "NATIVE", "EMULATED", "CUSTOM"
+        Allowed values for this property are: "NATIVE", "EMULATED", "PARAVIRTUALIZED", "CUSTOM"
 
 
         :return: The launch_mode of this CreateImageDetails.
@@ -287,13 +292,14 @@ class CreateImageDetails(object):
         Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
         * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for Oracle-provided images.
         * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using virtio drivers.
         * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
 
 
         :param launch_mode: The launch_mode of this CreateImageDetails.
         :type: str
         """
-        allowed_values = ["NATIVE", "EMULATED", "CUSTOM"]
+        allowed_values = ["NATIVE", "EMULATED", "PARAVIRTUALIZED", "CUSTOM"]
         if not value_allowed_none_or_none_sentinel(launch_mode, allowed_values):
             raise ValueError(
                 "Invalid value for `launch_mode`, must be None or one of {0}"
