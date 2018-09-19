@@ -43,4 +43,4 @@ To verify that the SDK is using the libcrypto library that you specified, execut
 
     oci.fips.is_fips_mode()
 
-This should return 1, indicating that the SDK is using the library specified by the environment variable.
+This should return True, indicating that the SDK is using the library specified by the environment variable.
