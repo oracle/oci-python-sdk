@@ -30,6 +30,7 @@ Core Services
     oci.core.models.BootVolume
     oci.core.models.BootVolumeAttachment
     oci.core.models.BootVolumeBackup
+    oci.core.models.BootVolumeKmsKey
     oci.core.models.BootVolumeSourceDetails
     oci.core.models.BootVolumeSourceFromBootVolumeBackupDetails
     oci.core.models.BootVolumeSourceFromBootVolumeDetails
@@ -131,6 +132,7 @@ Core Services
     oci.core.models.UdpOptions
     oci.core.models.UpdateBootVolumeBackupDetails
     oci.core.models.UpdateBootVolumeDetails
+    oci.core.models.UpdateBootVolumeKmsKeyDetails
     oci.core.models.UpdateConsoleHistoryDetails
     oci.core.models.UpdateCpeDetails
     oci.core.models.UpdateCrossConnectDetails
@@ -157,6 +159,7 @@ Core Services
     oci.core.models.UpdateVolumeDetails
     oci.core.models.UpdateVolumeGroupBackupDetails
     oci.core.models.UpdateVolumeGroupDetails
+    oci.core.models.UpdateVolumeKmsKeyDetails
     oci.core.models.Vcn
     oci.core.models.VirtualCircuit
     oci.core.models.VirtualCircuitBandwidthShape
@@ -175,6 +178,7 @@ Core Services
     oci.core.models.VolumeGroupSourceFromVolumeGroupBackupDetails
     oci.core.models.VolumeGroupSourceFromVolumeGroupDetails
     oci.core.models.VolumeGroupSourceFromVolumesDetails
+    oci.core.models.VolumeKmsKey
     oci.core.models.VolumeSourceDetails
     oci.core.models.VolumeSourceFromVolumeBackupDetails
     oci.core.models.VolumeSourceFromVolumeDetails
