@@ -110,6 +110,10 @@ class BootVolume(object):
             The value to assign to the volume_group_id property of this BootVolume.
         :type volume_group_id: str
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this BootVolume.
+        :type kms_key_id: str
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -125,7 +129,8 @@ class BootVolume(object):
             'size_in_mbs': 'int',
             'source_details': 'BootVolumeSourceDetails',
             'time_created': 'datetime',
-            'volume_group_id': 'str'
+            'volume_group_id': 'str',
+            'kms_key_id': 'str'
         }
 
         self.attribute_map = {
@@ -142,7 +147,8 @@ class BootVolume(object):
             'size_in_mbs': 'sizeInMBs',
             'source_details': 'sourceDetails',
             'time_created': 'timeCreated',
-            'volume_group_id': 'volumeGroupId'
+            'volume_group_id': 'volumeGroupId',
+            'kms_key_id': 'kmsKeyId'
         }
 
         self._availability_domain = None
@@ -159,6 +165,7 @@ class BootVolume(object):
         self._source_details = None
         self._time_created = None
         self._volume_group_id = None
+        self._kms_key_id = None
 
     @property
     def availability_domain(self):
@@ -533,6 +540,30 @@ class BootVolume(object):
         :type: str
         """
         self._volume_group_id = volume_group_id
+
+    @property
+    def kms_key_id(self):
+        """
+        Gets the kms_key_id of this BootVolume.
+        The OCID of the KMS key which is the master encryption key for the boot volume.
+
+
+        :return: The kms_key_id of this BootVolume.
+        :rtype: str
+        """
+        return self._kms_key_id
+
+    @kms_key_id.setter
+    def kms_key_id(self, kms_key_id):
+        """
+        Sets the kms_key_id of this BootVolume.
+        The OCID of the KMS key which is the master encryption key for the boot volume.
+
+
+        :param kms_key_id: The kms_key_id of this BootVolume.
+        :type: str
+        """
+        self._kms_key_id = kms_key_id
 
     def __repr__(self):
         return formatted_flat_dict(self)
