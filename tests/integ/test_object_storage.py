@@ -485,6 +485,47 @@ class TestObjectStorage:
             response = object_storage.delete_bucket(namespace, bucket_name)
             assert response.status == 204
 
+    def test_put_with_int_content_length(self, object_storage):
+        # Setup test
+        object_name = 'int_content_length'
+        bucket_name = unique_name('test_object_CRUD', ignore_vcr=True)
+        namespace = object_storage.get_namespace().data
+        int_content_length = 9
+        data = b'123456789'
+
+        # Create the bucket
+        request = oci.object_storage.models.CreateBucketDetails()
+        request.name = bucket_name
+        request.compartment_id = util.COMPARTMENT_ID
+        response = object_storage.create_bucket(namespace, request)
+        assert response.status == 200
+
+        # Put the object
+        object_storage.put_object(
+            namespace_name=namespace,
+            bucket_name=bucket_name,
+            object_name=object_name,
+            put_object_body=data,
+            content_length=int_content_length)
+
+        # Get it back
+        response = object_storage.get_object(namespace, bucket_name, object_name)
+        assert response.status == 200
+        response_text = response.data.content
+        assert response_text == data
+        assert int_content_length == len(response_text)
+
+        # Verify object length stored in the head
+        response = object_storage.head_object(namespace, bucket_name, object_name)
+        assert response.status == 200
+        assert int_content_length == int(response.headers['content-length'])
+
+        # Clean up
+        response = object_storage.delete_object(namespace, bucket_name, object_name)
+        assert response.status == 204
+        response = object_storage.delete_bucket(namespace, bucket_name)
+        assert response.status == 204
+
     def test_put_readable_custom_content_length(self, object_storage, namespace, bucket):
         """User-provided content length is used when a readable without a length is provided."""
         class ReadableData(object):
