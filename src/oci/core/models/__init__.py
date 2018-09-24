@@ -35,6 +35,7 @@ from .create_image_details import CreateImageDetails
 from .create_instance_console_connection_details import CreateInstanceConsoleConnectionDetails
 from .create_internet_gateway_details import CreateInternetGatewayDetails
 from .create_local_peering_gateway_details import CreateLocalPeeringGatewayDetails
+from .create_nat_gateway_details import CreateNatGatewayDetails
 from .create_private_ip_details import CreatePrivateIpDetails
 from .create_public_ip_details import CreatePublicIpDetails
 from .create_remote_peering_connection_details import CreateRemotePeeringConnectionDetails
@@ -92,6 +93,7 @@ from .launch_instance_details import LaunchInstanceDetails
 from .launch_options import LaunchOptions
 from .letter_of_authority import LetterOfAuthority
 from .local_peering_gateway import LocalPeeringGateway
+from .nat_gateway import NatGateway
 from .paravirtualized_volume_attachment import ParavirtualizedVolumeAttachment
 from .peer_region_for_remote_peering import PeerRegionForRemotePeering
 from .port_range import PortRange
@@ -126,6 +128,7 @@ from .update_image_details import UpdateImageDetails
 from .update_instance_details import UpdateInstanceDetails
 from .update_internet_gateway_details import UpdateInternetGatewayDetails
 from .update_local_peering_gateway_details import UpdateLocalPeeringGatewayDetails
+from .update_nat_gateway_details import UpdateNatGatewayDetails
 from .update_private_ip_details import UpdatePrivateIpDetails
 from .update_public_ip_details import UpdatePublicIpDetails
 from .update_remote_peering_connection_details import UpdateRemotePeeringConnectionDetails
@@ -198,6 +201,7 @@ core_type_mapping = {
     "CreateInstanceConsoleConnectionDetails": CreateInstanceConsoleConnectionDetails,
     "CreateInternetGatewayDetails": CreateInternetGatewayDetails,
     "CreateLocalPeeringGatewayDetails": CreateLocalPeeringGatewayDetails,
+    "CreateNatGatewayDetails": CreateNatGatewayDetails,
     "CreatePrivateIpDetails": CreatePrivateIpDetails,
     "CreatePublicIpDetails": CreatePublicIpDetails,
     "CreateRemotePeeringConnectionDetails": CreateRemotePeeringConnectionDetails,
@@ -255,6 +259,7 @@ core_type_mapping = {
     "LaunchOptions": LaunchOptions,
     "LetterOfAuthority": LetterOfAuthority,
     "LocalPeeringGateway": LocalPeeringGateway,
+    "NatGateway": NatGateway,
     "ParavirtualizedVolumeAttachment": ParavirtualizedVolumeAttachment,
     "PeerRegionForRemotePeering": PeerRegionForRemotePeering,
     "PortRange": PortRange,
@@ -289,6 +294,7 @@ core_type_mapping = {
     "UpdateInstanceDetails": UpdateInstanceDetails,
     "UpdateInternetGatewayDetails": UpdateInternetGatewayDetails,
     "UpdateLocalPeeringGatewayDetails": UpdateLocalPeeringGatewayDetails,
+    "UpdateNatGatewayDetails": UpdateNatGatewayDetails,
     "UpdatePrivateIpDetails": UpdatePrivateIpDetails,
     "UpdatePublicIpDetails": UpdatePublicIpDetails,
     "UpdateRemotePeeringConnectionDetails": UpdateRemotePeeringConnectionDetails,

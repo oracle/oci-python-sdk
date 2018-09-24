@@ -1237,6 +1237,76 @@ class VirtualNetworkClient(object):
                 body=create_local_peering_gateway_details,
                 response_type="LocalPeeringGateway")
 
+    def create_nat_gateway(self, create_nat_gateway_details, **kwargs):
+        """
+        CreateNatGateway
+        Creates a new NAT gateway for the specified VCN. You must also set up a route rule with the
+        NAT gateway as the rule's target. See :class:`RouteTable`.
+
+
+        :param CreateNatGatewayDetails create_nat_gateway_details: (required)
+            Details for creating a NAT gateway.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.NatGateway`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/natGateways"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_nat_gateway got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_nat_gateway_details,
+                response_type="NatGateway")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_nat_gateway_details,
+                response_type="NatGateway")
+
     def create_private_ip(self, create_private_ip_details, **kwargs):
         """
         CreatePrivateIp
@@ -1317,11 +1387,12 @@ class VirtualNetworkClient(object):
         reserved public IP. For information about limits on how many you can create, see
         `Public IP Addresses`__.
 
-        * **For an ephemeral public IP:** You must also specify a `privateIpId` with the OCID of
-        the primary private IP you want to assign the public IP to. The public IP is created in
-        the same availability domain as the private IP. An ephemeral public IP must always be
+        * **For an ephemeral public IP assigned to a private IP:** You must also specify a `privateIpId`
+        with the OCID of the primary private IP you want to assign the public IP to. The public IP is
+        created in the same availability domain as the private IP. An ephemeral public IP must always be
         assigned to a private IP, and only to the *primary* private IP on a VNIC, not a secondary
-        private IP.
+        private IP. Exception: If you create a :class:`NatGateway`, Oracle
+        automatically assigns the NAT gateway a regional ephemeral public IP that you cannot remove.
 
         * **For a reserved public IP:** You may also optionally assign the public IP to a private
         IP by specifying `privateIpId`. Or you can later assign the public IP with
@@ -2715,6 +2786,85 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params)
 
+    def delete_nat_gateway(self, nat_gateway_id, **kwargs):
+        """
+        DeleteNatGateway
+        Deletes the specified NAT gateway. The NAT gateway does not have to be disabled, but there
+        must not be a route rule that lists the NAT gateway as a target.
+
+        This is an asynchronous operation. The NAT gateway's `lifecycleState` will change to
+        TERMINATING temporarily until the NAT gateway is completely removed.
+
+
+        :param str nat_gateway_id: (required)
+            The NAT gateway's `OCID`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/natGateways/{natGatewayId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_nat_gateway got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "natGatewayId": nat_gateway_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
     def delete_private_ip(self, private_ip_id, **kwargs):
         """
         DeletePrivateIp
@@ -2806,6 +2956,10 @@ class VirtualNetworkClient(object):
         Unassigns and deletes the specified public IP (either ephemeral or reserved).
         You must specify the object's OCID. The public IP address is returned to the
         Oracle Cloud Infrastructure public IP pool.
+
+        **Note:** You cannot update, unassign, or delete the public IP that Oracle automatically
+        assigned to an entity for you (such as a load balancer or NAT gateway). The public IP is
+        automatically deleted if the assigned entity is terminated.
 
         For an assigned reserved public IP, the initial unassignment portion of this operation
         is asynchronous. Poll the public IP's `lifecycleState` to determine
@@ -4412,6 +4566,72 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 response_type="LocalPeeringGateway")
 
+    def get_nat_gateway(self, nat_gateway_id, **kwargs):
+        """
+        GetNatGateway
+        Gets the specified NAT gateway's information.
+
+
+        :param str nat_gateway_id: (required)
+            The NAT gateway's `OCID`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.NatGateway`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/natGateways/{natGatewayId}"
+        method = "GET"
+
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_nat_gateway got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "natGatewayId": nat_gateway_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="NatGateway")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="NatGateway")
+
     def get_private_ip(self, private_ip_id, **kwargs):
         """
         GetPrivateIp
@@ -4492,7 +4712,7 @@ class VirtualNetworkClient(object):
 
         **Note:** If you're fetching a reserved public IP that is in the process of being
         moved to a different private IP, the service returns the public IP object with
-        `lifecycleState` = ASSIGNING and `privateIpId` = OCID of the target private IP.
+        `lifecycleState` = ASSIGNING and `assignedEntityId` = OCID of the target private IP.
 
 
         :param str public_ip_id: (required)
@@ -4560,7 +4780,7 @@ class VirtualNetworkClient(object):
 
         **Note:** If you're fetching a reserved public IP that is in the process of being
         moved to a different private IP, the service returns the public IP object with
-        `lifecycleState` = ASSIGNING and `privateIpId` = OCID of the target private IP.
+        `lifecycleState` = ASSIGNING and `assignedEntityId` = OCID of the target private IP.
 
 
         :param GetPublicIpByIpAddressDetails get_public_ip_by_ip_address_details: (required)
@@ -4623,8 +4843,8 @@ class VirtualNetworkClient(object):
         private IP, or if you instead call
         :func:`get_public_ip` or
         :func:`get_public_ip_by_ip_address`, the
-        service returns the public IP object with `lifecycleState` = ASSIGNING and `privateIpId` = OCID
-        of the target private IP.
+        service returns the public IP object with `lifecycleState` = ASSIGNING and
+        `assignedEntityId` = OCID of the target private IP.
 
 
         :param GetPublicIpByPrivateIpIdDetails get_public_ip_by_private_ip_id_details: (required)
@@ -5320,12 +5540,20 @@ class VirtualNetworkClient(object):
             The OCID of the compartment.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -5394,12 +5622,20 @@ class VirtualNetworkClient(object):
             The OCID of the compartment.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -5524,12 +5760,20 @@ class VirtualNetworkClient(object):
             The OCID of the compartment.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -5602,12 +5846,20 @@ class VirtualNetworkClient(object):
             The OCID of the cross-connect group.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -5735,12 +5987,20 @@ class VirtualNetworkClient(object):
             The OCID of the compartment.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -5814,12 +6074,20 @@ class VirtualNetworkClient(object):
             The OCID of the VCN.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -5951,12 +6219,20 @@ class VirtualNetworkClient(object):
             The OCID of the DRG.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -6029,12 +6305,20 @@ class VirtualNetworkClient(object):
             The OCID of the compartment.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -6111,12 +6395,20 @@ class VirtualNetworkClient(object):
             The OCID of the compartment.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -6190,12 +6482,20 @@ class VirtualNetworkClient(object):
             The OCID of the provider service.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -6278,12 +6578,20 @@ class VirtualNetworkClient(object):
             The OCID of the VCN.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -6415,12 +6723,20 @@ class VirtualNetworkClient(object):
             The OCID of the CPE.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -6497,12 +6813,20 @@ class VirtualNetworkClient(object):
             The OCID of the VCN.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -6562,6 +6886,149 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 response_type="list[LocalPeeringGateway]")
 
+    def list_nat_gateways(self, compartment_id, **kwargs):
+        """
+        ListNatGateways
+        Lists the NAT gateways in the specified compartment. You may optionally specify a VCN OCID
+        to filter the results by VCN.
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment.
+
+        :param str vcn_id: (optional)
+            The OCID of the VCN.
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            Example: `50`
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str display_name: (optional)
+            A filter to return only resources that match the given display name exactly.
+
+        :param str sort_by: (optional)
+            The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+            TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+            sort order is case sensitive.
+
+            **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+            optionally filter by availability domain if the scope of the resource type is within a
+            single availability domain. If you call one of these \"List\" operations without specifying
+            an availability domain, the resources are grouped by availability domain, then sorted.
+
+            Allowed values are: "TIMECREATED", "DISPLAYNAME"
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
+            is case sensitive.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str lifecycle_state: (optional)
+            A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+
+            Allowed values are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.NatGateway`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/natGateways"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "vcn_id",
+            "limit",
+            "page",
+            "display_name",
+            "sort_by",
+            "sort_order",
+            "lifecycle_state"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_nat_gateways got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "vcnId": kwargs.get("vcn_id", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "displayName": kwargs.get("display_name", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[NatGateway]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[NatGateway]")
+
     def list_private_ips(self, **kwargs):
         """
         ListPrivateIps
@@ -6581,12 +7048,20 @@ class VirtualNetworkClient(object):
 
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str ip_address: (optional)
             An IP address.
@@ -6664,26 +7139,39 @@ class VirtualNetworkClient(object):
     def list_public_ips(self, scope, compartment_id, **kwargs):
         """
         ListPublicIps
-        Lists either the ephemeral or reserved :class:`PublicIp` objects
-        in the specified compartment.
+        Lists the :class:`PublicIp` objects
+        in the specified compartment. You can filter the list by using query parameters.
 
-        To list your reserved public IPs, set `scope` = `REGION`, and leave the
-        `availabilityDomain` parameter empty.
+        To list your reserved public IPs:
+          * Set `scope` = `REGION`  (required)
+          * Leave the `availabilityDomain` parameter empty
+          * Set `lifetime` = `RESERVED`
 
-        To list your ephemeral public IPs, set `scope` = `AVAILABILITY_DOMAIN`, and set the
-        `availabilityDomain` parameter to the desired availability domain. An ephemeral public IP
-        is always in the same availability domain and compartment as the private IP it's assigned to.
+        To list the ephemeral public IPs assigned to a regional entity such as a NAT gateway:
+          * Set `scope` = `REGION`  (required)
+          * Leave the `availabilityDomain` parameter empty
+          * Set `lifetime` = `EPHEMERAL`
+
+        To list the ephemeral public IPs assigned to private IPs:
+          * Set `scope` = `AVAILABILITY_DOMAIN` (required)
+          * Set the `availabilityDomain` parameter to the desired availability domain (required)
+          * Set `lifetime` = `EPHEMERAL`
+
+        **Note:** An ephemeral public IP assigned to a private IP
+        is always in the same availability domain and compartment as the private IP.
 
 
         :param str scope: (required)
             Whether the public IP is regional or specific to a particular availability domain.
 
-            * `REGION`: The public IP exists within a region and can be assigned to a private IP
-            in any availability domain in the region. Reserved public IPs have `scope` = `REGION`.
+            * `REGION`: The public IP exists within a region and is assigned to a regional entity
+            (such as a :class:`NatGateway`), or can be assigned to a private IP
+            in any availability domain in the region. Reserved public IPs have `scope` = `REGION`, as do
+            ephemeral public IPs assigned to a regional entity.
 
-            * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the private IP
+            * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the entity
             it's assigned to, which is specified by the `availabilityDomain` property of the public IP object.
-            Ephemeral public IPs have `scope` = `AVAILABILITY_DOMAIN`.
+            Ephemeral public IPs that are assigned to private IPs have `scope` = `AVAILABILITY_DOMAIN`.
 
             Allowed values are: "REGION", "AVAILABILITY_DOMAIN"
 
@@ -6691,17 +7179,30 @@ class VirtualNetworkClient(object):
             The OCID of the compartment.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str availability_domain: (optional)
             The name of the availability domain.
 
             Example: `Uocm:PHX-AD-1`
+
+        :param str lifetime: (optional)
+            A filter to return only public IPs that match given lifetime.
+
+            Allowed values are: "EPHEMERAL", "RESERVED"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -6722,7 +7223,8 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "limit",
             "page",
-            "availability_domain"
+            "availability_domain",
+            "lifetime"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
         if extra_kwargs:
@@ -6735,11 +7237,19 @@ class VirtualNetworkClient(object):
                 "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
             )
 
+        if 'lifetime' in kwargs:
+            lifetime_allowed_values = ["EPHEMERAL", "RESERVED"]
+            if kwargs['lifetime'] not in lifetime_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifetime`, must be one of {0}".format(lifetime_allowed_values)
+                )
+
         query_params = {
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "scope": scope,
             "availabilityDomain": kwargs.get("availability_domain", missing),
+            "lifetime": kwargs.get("lifetime", missing),
             "compartmentId": compartment_id
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
@@ -6783,12 +7293,20 @@ class VirtualNetworkClient(object):
             The OCID of the DRG.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -6864,12 +7382,20 @@ class VirtualNetworkClient(object):
             The OCID of the VCN.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -6997,12 +7523,20 @@ class VirtualNetworkClient(object):
             The OCID of the VCN.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -7131,12 +7665,20 @@ class VirtualNetworkClient(object):
             The OCID of the VCN.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for
@@ -7254,12 +7796,20 @@ class VirtualNetworkClient(object):
 
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -7330,12 +7880,20 @@ class VirtualNetworkClient(object):
             The OCID of the VCN.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -7460,12 +8018,20 @@ class VirtualNetworkClient(object):
             The OCID of the compartment.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -7589,12 +8155,20 @@ class VirtualNetworkClient(object):
             The OCID of the compartment.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -7752,12 +8326,20 @@ class VirtualNetworkClient(object):
             The OCID of the compartment.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -8601,6 +9183,88 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 body=update_local_peering_gateway_details,
                 response_type="LocalPeeringGateway")
+
+    def update_nat_gateway(self, nat_gateway_id, update_nat_gateway_details, **kwargs):
+        """
+        UpdateNatGateway
+        Updates the specified NAT gateway.
+
+
+        :param str nat_gateway_id: (required)
+            The NAT gateway's `OCID`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+        :param UpdateNatGatewayDetails update_nat_gateway_details: (required)
+            Details object for updating a NAT gateway.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.NatGateway`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/natGateways/{natGatewayId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_nat_gateway got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "natGatewayId": nat_gateway_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_nat_gateway_details,
+                response_type="NatGateway")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_nat_gateway_details,
+                response_type="NatGateway")
 
     def update_private_ip(self, private_ip_id, update_private_ip_details, **kwargs):
         """

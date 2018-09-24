@@ -25,6 +25,14 @@ class PublicIp(object):
     __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingpublicIPs.htm
     """
 
+    #: A constant which can be used with the assigned_entity_type property of a PublicIp.
+    #: This constant has a value of "PRIVATE_IP"
+    ASSIGNED_ENTITY_TYPE_PRIVATE_IP = "PRIVATE_IP"
+
+    #: A constant which can be used with the assigned_entity_type property of a PublicIp.
+    #: This constant has a value of "NAT_GATEWAY"
+    ASSIGNED_ENTITY_TYPE_NAT_GATEWAY = "NAT_GATEWAY"
+
     #: A constant which can be used with the lifecycle_state property of a PublicIp.
     #: This constant has a value of "PROVISIONING"
     LIFECYCLE_STATE_PROVISIONING = "PROVISIONING"
@@ -77,6 +85,16 @@ class PublicIp(object):
         """
         Initializes a new PublicIp object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
+
+        :param assigned_entity_id:
+            The value to assign to the assigned_entity_id property of this PublicIp.
+        :type assigned_entity_id: str
+
+        :param assigned_entity_type:
+            The value to assign to the assigned_entity_type property of this PublicIp.
+            Allowed values for this property are: "PRIVATE_IP", "NAT_GATEWAY", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type assigned_entity_type: str
 
         :param availability_domain:
             The value to assign to the availability_domain property of this PublicIp.
@@ -134,6 +152,8 @@ class PublicIp(object):
 
         """
         self.swagger_types = {
+            'assigned_entity_id': 'str',
+            'assigned_entity_type': 'str',
             'availability_domain': 'str',
             'compartment_id': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -149,6 +169,8 @@ class PublicIp(object):
         }
 
         self.attribute_map = {
+            'assigned_entity_id': 'assignedEntityId',
+            'assigned_entity_type': 'assignedEntityType',
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -163,6 +185,8 @@ class PublicIp(object):
             'time_created': 'timeCreated'
         }
 
+        self._assigned_entity_id = None
+        self._assigned_entity_type = None
         self._availability_domain = None
         self._compartment_id = None
         self._defined_tags = None
@@ -177,12 +201,70 @@ class PublicIp(object):
         self._time_created = None
 
     @property
+    def assigned_entity_id(self):
+        """
+        Gets the assigned_entity_id of this PublicIp.
+        The OCID of the entity the public IP is assigned to, or in the process of
+        being assigned to.
+
+
+        :return: The assigned_entity_id of this PublicIp.
+        :rtype: str
+        """
+        return self._assigned_entity_id
+
+    @assigned_entity_id.setter
+    def assigned_entity_id(self, assigned_entity_id):
+        """
+        Sets the assigned_entity_id of this PublicIp.
+        The OCID of the entity the public IP is assigned to, or in the process of
+        being assigned to.
+
+
+        :param assigned_entity_id: The assigned_entity_id of this PublicIp.
+        :type: str
+        """
+        self._assigned_entity_id = assigned_entity_id
+
+    @property
+    def assigned_entity_type(self):
+        """
+        Gets the assigned_entity_type of this PublicIp.
+        The type of entity the public IP is assigned to, or in the process of being
+        assigned to.
+
+        Allowed values for this property are: "PRIVATE_IP", "NAT_GATEWAY", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The assigned_entity_type of this PublicIp.
+        :rtype: str
+        """
+        return self._assigned_entity_type
+
+    @assigned_entity_type.setter
+    def assigned_entity_type(self, assigned_entity_type):
+        """
+        Sets the assigned_entity_type of this PublicIp.
+        The type of entity the public IP is assigned to, or in the process of being
+        assigned to.
+
+
+        :param assigned_entity_type: The assigned_entity_type of this PublicIp.
+        :type: str
+        """
+        allowed_values = ["PRIVATE_IP", "NAT_GATEWAY"]
+        if not value_allowed_none_or_none_sentinel(assigned_entity_type, allowed_values):
+            assigned_entity_type = 'UNKNOWN_ENUM_VALUE'
+        self._assigned_entity_type = assigned_entity_type
+
+    @property
     def availability_domain(self):
         """
         Gets the availability_domain of this PublicIp.
         The public IP's availability domain. This property is set only for ephemeral public IPs
-        (that is, when the `scope` of the public IP is set to AVAILABILITY_DOMAIN). The value
-        is the availability domain of the assigned private IP.
+        that are assigned to a private IP (that is, when the `scope` of the public IP is set to
+        AVAILABILITY_DOMAIN). The value is the availability domain of the assigned private IP.
 
         Example: `Uocm:PHX-AD-1`
 
@@ -197,8 +279,8 @@ class PublicIp(object):
         """
         Sets the availability_domain of this PublicIp.
         The public IP's availability domain. This property is set only for ephemeral public IPs
-        (that is, when the `scope` of the public IP is set to AVAILABILITY_DOMAIN). The value
-        is the availability domain of the assigned private IP.
+        that are assigned to a private IP (that is, when the `scope` of the public IP is set to
+        AVAILABILITY_DOMAIN). The value is the availability domain of the assigned private IP.
 
         Example: `Uocm:PHX-AD-1`
 
@@ -213,8 +295,9 @@ class PublicIp(object):
         """
         Gets the compartment_id of this PublicIp.
         The OCID of the compartment containing the public IP. For an ephemeral public IP, this is
-        the same compartment as the private IP's. For a reserved public IP that is currently assigned,
-        this can be a different compartment than the assigned private IP's.
+        the compartment of its assigned entity (which can be a private IP or a regional entity such
+        as a NAT gateway). For a reserved public IP that is currently assigned,
+        its compartment can be different from the assigned private IP's.
 
 
         :return: The compartment_id of this PublicIp.
@@ -227,8 +310,9 @@ class PublicIp(object):
         """
         Sets the compartment_id of this PublicIp.
         The OCID of the compartment containing the public IP. For an ephemeral public IP, this is
-        the same compartment as the private IP's. For a reserved public IP that is currently assigned,
-        this can be a different compartment than the assigned private IP's.
+        the compartment of its assigned entity (which can be a private IP or a regional entity such
+        as a NAT gateway). For a reserved public IP that is currently assigned,
+        its compartment can be different from the assigned private IP's.
 
 
         :param compartment_id: The compartment_id of this PublicIp.
@@ -420,10 +504,12 @@ class PublicIp(object):
         Gets the lifetime of this PublicIp.
         Defines when the public IP is deleted and released back to Oracle's public IP pool.
 
-        * `EPHEMERAL`: The lifetime is tied to the lifetime of its assigned private IP. The
-        ephemeral public IP is automatically deleted when its private IP is deleted, when
-        the VNIC is terminated, or when the instance is terminated. An ephemeral
-        public IP must always be assigned to a private IP.
+        * `EPHEMERAL`: The lifetime is tied to the lifetime of its assigned entity. An ephemeral
+        public IP must always be assigned to an entity. If the assigned entity is a private IP,
+        the ephemeral public IP is automatically deleted when the private IP is deleted, when
+        the VNIC is terminated, or when the instance is terminated. If the assigned entity is a
+        :class:`NatGateway`, the ephemeral public IP is automatically
+        deleted when the NAT gateway is terminated.
 
         * `RESERVED`: You control the public IP's lifetime. You can delete a reserved public IP
         whenever you like. It does not need to be assigned to a private IP at all times.
@@ -448,10 +534,12 @@ class PublicIp(object):
         Sets the lifetime of this PublicIp.
         Defines when the public IP is deleted and released back to Oracle's public IP pool.
 
-        * `EPHEMERAL`: The lifetime is tied to the lifetime of its assigned private IP. The
-        ephemeral public IP is automatically deleted when its private IP is deleted, when
-        the VNIC is terminated, or when the instance is terminated. An ephemeral
-        public IP must always be assigned to a private IP.
+        * `EPHEMERAL`: The lifetime is tied to the lifetime of its assigned entity. An ephemeral
+        public IP must always be assigned to an entity. If the assigned entity is a private IP,
+        the ephemeral public IP is automatically deleted when the private IP is deleted, when
+        the VNIC is terminated, or when the instance is terminated. If the assigned entity is a
+        :class:`NatGateway`, the ephemeral public IP is automatically
+        deleted when the NAT gateway is terminated.
 
         * `RESERVED`: You control the public IP's lifetime. You can delete a reserved public IP
         whenever you like. It does not need to be assigned to a private IP at all times.
@@ -474,8 +562,13 @@ class PublicIp(object):
     def private_ip_id(self):
         """
         Gets the private_ip_id of this PublicIp.
+        Deprecated. Use `assignedEntityId` instead.
+
         The OCID of the private IP that the public IP is currently assigned to, or in the
         process of being assigned to.
+
+        **Note:** This is `null` if the public IP is not assigned to a private IP, or is
+        in the process of being assigned to one.
 
 
         :return: The private_ip_id of this PublicIp.
@@ -487,8 +580,13 @@ class PublicIp(object):
     def private_ip_id(self, private_ip_id):
         """
         Sets the private_ip_id of this PublicIp.
+        Deprecated. Use `assignedEntityId` instead.
+
         The OCID of the private IP that the public IP is currently assigned to, or in the
         process of being assigned to.
+
+        **Note:** This is `null` if the public IP is not assigned to a private IP, or is
+        in the process of being assigned to one.
 
 
         :param private_ip_id: The private_ip_id of this PublicIp.
@@ -502,12 +600,14 @@ class PublicIp(object):
         Gets the scope of this PublicIp.
         Whether the public IP is regional or specific to a particular availability domain.
 
-        * `REGION`: The public IP exists within a region and can be assigned to a private IP
-        in any availability domain in the region. Reserved public IPs have `scope` = `REGION`.
+        * `REGION`: The public IP exists within a region and is assigned to a regional entity
+        (such as a :class:`NatGateway`), or can be assigned to a private
+        IP in any availability domain in the region. Reserved public IPs and ephemeral public IPs
+        assigned to a regional entity have `scope` = `REGION`.
 
-        * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the private IP
+        * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the entity
         it's assigned to, which is specified by the `availabilityDomain` property of the public IP object.
-        Ephemeral public IPs have `scope` = `AVAILABILITY_DOMAIN`.
+        Ephemeral public IPs that are assigned to private IPs have `scope` = `AVAILABILITY_DOMAIN`.
 
         Allowed values for this property are: "REGION", "AVAILABILITY_DOMAIN", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -524,12 +624,14 @@ class PublicIp(object):
         Sets the scope of this PublicIp.
         Whether the public IP is regional or specific to a particular availability domain.
 
-        * `REGION`: The public IP exists within a region and can be assigned to a private IP
-        in any availability domain in the region. Reserved public IPs have `scope` = `REGION`.
+        * `REGION`: The public IP exists within a region and is assigned to a regional entity
+        (such as a :class:`NatGateway`), or can be assigned to a private
+        IP in any availability domain in the region. Reserved public IPs and ephemeral public IPs
+        assigned to a regional entity have `scope` = `REGION`.
 
-        * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the private IP
+        * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the entity
         it's assigned to, which is specified by the `availabilityDomain` property of the public IP object.
-        Ephemeral public IPs have `scope` = `AVAILABILITY_DOMAIN`.
+        Ephemeral public IPs that are assigned to private IPs have `scope` = `AVAILABILITY_DOMAIN`.
 
 
         :param scope: The scope of this PublicIp.
