@@ -48,31 +48,31 @@ You can also use the :py:func:`~oci.wait_until` function to wait for a resource 
     get_instance_response = oci.wait_until(client, client.get_instance(instance_ocid), 'lifecycle_state', 'RUNNING')
 
 Passing a Function Reference
-````````````````````
+``````````````````````````````
 
-Instead of waiting for a single attribute to equal a given value, you can also provide a function reference (either a lambda or a reference to an already defined function) that can be used to evaluate the response received from the service call. This function should return a truthy value if the waiter should stop waiting, and a falsey value if the waiter should continue waiting. 
+Instead of waiting for a single attribute to reach a given value, you can use a function reference, such as a Lambda expression or a reference to a defined function, to evaluate the response received from the service call. If this function returns a truthy value, the waiter stops waiting.
 
-For example, to wait until a volume backup reaches either the "AVAILABLE" or "FAULTY" state :
+For example, to wait until a volume backup reaches either the AVAILABLE or FAULTY state :
 
-.. code-block:: python
+* Using a Lambda expression:
 
-    oci.wait_until(client, client.get_volume_backup(vol_backup_id), evaluate_response=lambda r: r.data.lifecycle_state in ['AVAILABLE', 'FAULTY'])
+    .. code-block:: python
 
-Instead of using a lambda, an already defined function can be used:
+        oci.wait_until(client, client.get_volume_backup(vol_backup_id), evaluate_response=lambda r: r.data.lifecycle_state in ['AVAILABLE', 'FAULTY'])
 
-.. code-block:: python
+* Using a defined function:
 
-    def should_stop_waiting_volume_backup(response):
-        return response.data.lifecycle_state in ['AVAILABLE', 'FAULTY']
+    .. code-block:: python
 
-    oci.wait_until(client, client.get_volume_backup(vol_backup_id), evaluate_response=should_stop_waiting_volume_backup)
+        def should_stop_waiting_volume_backup(response):
+            return response.data.lifecycle_state in ['AVAILABLE', 'FAULTY']
 
-Care should be used when using a function call which returns a response object when invoking ``wait_until()``. 
+        oci.wait_until(client, client.get_volume_backup(vol_backup_id), evaluate_response=should_stop_waiting_volume_backup)
 
-In the first example, if ``client.get_volume_backup(volume_backup_id)`` raises an exception, ``oci.wait_until()`` will not be called.  This happens even if ``client.get_volume_backup(volume_backup_id)`` raises a Not Found exception and ``succeed_on_not_found=True`` is passed to ``oci.wait_until()``.
+Be aware that if the inner function raises an exception, ``oci.wait_until()`` will not be called. In the preceding example, if ``client.get_volume_backup(volume_backup_id)`` raises an exception, ``oci.wait_until()`` will not be called. This happens even if the inner function raises a Not Found exception and ``succeed_on_not_found=True`` is passed to ``oci.wait_until()``.
 
 Optional Attributes
-````````````````````
+``````````````````````
 
 In addition to these base parameters, ``wait_until()`` can accept optional attributes to control the maximum amount of time it will wait  and the time between calls to the service. For more information on the optional parameters, see the documentation on the :py:func:`~oci.wait_until` function. 
 
