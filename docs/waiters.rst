@@ -47,10 +47,10 @@ You can also use the :py:func:`~oci.wait_until` function to wait for a resource 
     #   - The fourth parameter is the desired value. An equality (==) comparison is done
     get_instance_response = oci.wait_until(client, client.get_instance(instance_ocid), 'lifecycle_state', 'RUNNING')
 
-Instead of waiting for a single attribute to equal a given value, you can also provide a function reference (either a lambda or a reference to an already defined function) that can be used to evaluate the response received from the service call. This function should return a truthy value if the waiter should stop waiting, and a falsey value if the waiter should continue waiting. 
+Passing a Function Reference
+````````````````````
 
-.. note::
-    If the function reference fails to evaluate the service call and return a response, ``wait_until()`` returns an error.
+Instead of waiting for a single attribute to equal a given value, you can also provide a function reference (either a lambda or a reference to an already defined function) that can be used to evaluate the response received from the service call. This function should return a truthy value if the waiter should stop waiting, and a falsey value if the waiter should continue waiting. 
 
 For example, to wait until a volume backup reaches either the "AVAILABLE" or "FAULTY" state :
 
@@ -66,6 +66,13 @@ Instead of using a lambda, an already defined function can be used:
         return response.data.lifecycle_state in ['AVAILABLE', 'FAULTY']
 
     oci.wait_until(client, client.get_volume_backup(vol_backup_id), evaluate_response=should_stop_waiting_volume_backup)
+
+Care should be used when using a function call which returns a response object when invoking ``wait_until()``. 
+
+In the first example, if ``client.get_volume_backup(volume_backup_id)`` raises an exception, ``oci.wait_until()`` will not be called.  This happens even if ``client.get_volume_backup(volume_backup_id)`` raises a Not Found exception and ``succeed_on_not_found=True`` is passed to ``oci.wait_until()``.
+
+Optional Attributes
+````````````````````
 
 In addition to these base parameters, ``wait_until()`` can accept optional attributes to control the maximum amount of time it will wait  and the time between calls to the service. For more information on the optional parameters, see the documentation on the :py:func:`~oci.wait_until` function. 
 
