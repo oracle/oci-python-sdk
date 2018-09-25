@@ -7,6 +7,7 @@ from .bucket import Bucket
 from .bucket_summary import BucketSummary
 from .commit_multipart_upload_details import CommitMultipartUploadDetails
 from .commit_multipart_upload_part_details import CommitMultipartUploadPartDetails
+from .copy_object_details import CopyObjectDetails
 from .create_bucket_details import CreateBucketDetails
 from .create_multipart_upload_details import CreateMultipartUploadDetails
 from .create_preauthenticated_request_details import CreatePreauthenticatedRequestDetails
@@ -25,6 +26,11 @@ from .rename_object_details import RenameObjectDetails
 from .restore_objects_details import RestoreObjectsDetails
 from .update_bucket_details import UpdateBucketDetails
 from .update_namespace_metadata_details import UpdateNamespaceMetadataDetails
+from .work_request import WorkRequest
+from .work_request_error import WorkRequestError
+from .work_request_log_entry import WorkRequestLogEntry
+from .work_request_resource import WorkRequestResource
+from .work_request_summary import WorkRequestSummary
 
 # Maps type names to classes for object_storage services.
 object_storage_type_mapping = {
@@ -32,6 +38,7 @@ object_storage_type_mapping = {
     "BucketSummary": BucketSummary,
     "CommitMultipartUploadDetails": CommitMultipartUploadDetails,
     "CommitMultipartUploadPartDetails": CommitMultipartUploadPartDetails,
+    "CopyObjectDetails": CopyObjectDetails,
     "CreateBucketDetails": CreateBucketDetails,
     "CreateMultipartUploadDetails": CreateMultipartUploadDetails,
     "CreatePreauthenticatedRequestDetails": CreatePreauthenticatedRequestDetails,
@@ -49,5 +56,10 @@ object_storage_type_mapping = {
     "RenameObjectDetails": RenameObjectDetails,
     "RestoreObjectsDetails": RestoreObjectsDetails,
     "UpdateBucketDetails": UpdateBucketDetails,
-    "UpdateNamespaceMetadataDetails": UpdateNamespaceMetadataDetails
+    "UpdateNamespaceMetadataDetails": UpdateNamespaceMetadataDetails,
+    "WorkRequest": WorkRequest,
+    "WorkRequestError": WorkRequestError,
+    "WorkRequestLogEntry": WorkRequestLogEntry,
+    "WorkRequestResource": WorkRequestResource,
+    "WorkRequestSummary": WorkRequestSummary
 }

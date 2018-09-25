@@ -22,6 +22,7 @@ Object Storage
     oci.object_storage.models.BucketSummary
     oci.object_storage.models.CommitMultipartUploadDetails
     oci.object_storage.models.CommitMultipartUploadPartDetails
+    oci.object_storage.models.CopyObjectDetails
     oci.object_storage.models.CreateBucketDetails
     oci.object_storage.models.CreateMultipartUploadDetails
     oci.object_storage.models.CreatePreauthenticatedRequestDetails
@@ -40,3 +41,8 @@ Object Storage
     oci.object_storage.models.RestoreObjectsDetails
     oci.object_storage.models.UpdateBucketDetails
     oci.object_storage.models.UpdateNamespaceMetadataDetails
+    oci.object_storage.models.WorkRequest
+    oci.object_storage.models.WorkRequestError
+    oci.object_storage.models.WorkRequestLogEntry
+    oci.object_storage.models.WorkRequestResource
+    oci.object_storage.models.WorkRequestSummary
