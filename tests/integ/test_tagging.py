@@ -82,6 +82,10 @@ def tag_namespace(tagging_identity_client):
     yield tag_namespace
 
 
+# Tags can only be created and not deleted which causes the limit to be exceeded.
+# Skip the test if we are not using recorded responses.
+@pytest.mark.skipif(not test_config_container.using_vcr_with_mock_responses(),
+                    reason="Only run with recorded responses")
 def test_manage_tags_and_namespace(tagging_identity_client, tag_namespace):
     with test_config_container.create_vcr().use_cassette('test_tagging_manage_tags_and_namespace.yml'):
         # List all namespaces and make sure that our namespace appears
@@ -179,8 +183,12 @@ def test_manage_tags_and_namespace(tagging_identity_client, tag_namespace):
         assert get_tag_namespace_response.data.is_retired
 
 
-# Sanity test tagging by applying it to a resource
+# Tags can only be created and not deleted which causes the limit to be exceeded.
+# Skip the test if we are not using recorded responses.
+@pytest.mark.skipif(not test_config_container.using_vcr_with_mock_responses(),
+                    reason="Only run with recorded responses")
 def test_tag_resource(tagging_identity_client, tagging_block_storage_client, tag_namespace):
+    # Sanity test tagging by applying it to a resource
     with test_config_container.create_vcr().use_cassette('test_tagging_tag_resource.yml'):
         # Make sure that the namespace is not retired (so we can create tags in it) before we start
         update_tag_namespace_response = tagging_identity_client.update_tag_namespace(
