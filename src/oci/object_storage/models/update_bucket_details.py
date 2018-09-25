@@ -62,6 +62,10 @@ class UpdateBucketDetails(object):
             The value to assign to the defined_tags property of this UpdateBucketDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this UpdateBucketDetails.
+        :type kms_key_id: str
+
         """
         self.swagger_types = {
             'namespace': 'str',
@@ -70,7 +74,8 @@ class UpdateBucketDetails(object):
             'metadata': 'dict(str, str)',
             'public_access_type': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'kms_key_id': 'str'
         }
 
         self.attribute_map = {
@@ -80,7 +85,8 @@ class UpdateBucketDetails(object):
             'metadata': 'metadata',
             'public_access_type': 'publicAccessType',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'kms_key_id': 'kmsKeyId'
         }
 
         self._namespace = None
@@ -90,6 +96,7 @@ class UpdateBucketDetails(object):
         self._public_access_type = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._kms_key_id = None
 
     @property
     def namespace(self):
@@ -290,6 +297,36 @@ class UpdateBucketDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def kms_key_id(self):
+        """
+        Gets the kms_key_id of this UpdateBucketDetails.
+        A KMS key OCID that will be associated with the given bucket. If it is empty the Update operation will
+        actually remove the KMS key, if there is one, from the given bucket. Please note, the old kms key should
+        still be enbaled in KMS otherwise all the objects in the bucket encrypted with the old KMS key will no
+        longer accessible.
+
+
+        :return: The kms_key_id of this UpdateBucketDetails.
+        :rtype: str
+        """
+        return self._kms_key_id
+
+    @kms_key_id.setter
+    def kms_key_id(self, kms_key_id):
+        """
+        Sets the kms_key_id of this UpdateBucketDetails.
+        A KMS key OCID that will be associated with the given bucket. If it is empty the Update operation will
+        actually remove the KMS key, if there is one, from the given bucket. Please note, the old kms key should
+        still be enbaled in KMS otherwise all the objects in the bucket encrypted with the old KMS key will no
+        longer accessible.
+
+
+        :param kms_key_id: The kms_key_id of this UpdateBucketDetails.
+        :type: str
+        """
+        self._kms_key_id = kms_key_id
 
     def __repr__(self):
         return formatted_flat_dict(self)
