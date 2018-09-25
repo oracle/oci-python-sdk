@@ -71,6 +71,10 @@ class CreateBucketDetails(object):
             The value to assign to the defined_tags property of this CreateBucketDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this CreateBucketDetails.
+        :type kms_key_id: str
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -79,7 +83,8 @@ class CreateBucketDetails(object):
             'public_access_type': 'str',
             'storage_tier': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'kms_key_id': 'str'
         }
 
         self.attribute_map = {
@@ -89,7 +94,8 @@ class CreateBucketDetails(object):
             'public_access_type': 'publicAccessType',
             'storage_tier': 'storageTier',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'kms_key_id': 'kmsKeyId'
         }
 
         self._name = None
@@ -99,6 +105,7 @@ class CreateBucketDetails(object):
         self._storage_tier = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._kms_key_id = None
 
     @property
     def name(self):
@@ -317,6 +324,30 @@ class CreateBucketDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def kms_key_id(self):
+        """
+        Gets the kms_key_id of this CreateBucketDetails.
+        The OCID of a KMS key id used to call KMS to generate data key, decrypt the encrypted data key
+
+
+        :return: The kms_key_id of this CreateBucketDetails.
+        :rtype: str
+        """
+        return self._kms_key_id
+
+    @kms_key_id.setter
+    def kms_key_id(self, kms_key_id):
+        """
+        Sets the kms_key_id of this CreateBucketDetails.
+        The OCID of a KMS key id used to call KMS to generate data key, decrypt the encrypted data key
+
+
+        :param kms_key_id: The kms_key_id of this CreateBucketDetails.
+        :type: str
+        """
+        self._kms_key_id = kms_key_id
 
     def __repr__(self):
         return formatted_flat_dict(self)
