@@ -107,7 +107,7 @@ class TestLaunchInstanceOptions:
 
         util.validate_response(launch_instance_result, expect_etag=True)
 
-        util.wait_until(lambda: compute.list_vnic_attachments(util.COMPARTMENT_ID, instance_id=self.instance_ocid), 'ATTACHED', max_wait_seconds=20, item_index_in_list_response=0)
+        util.wait_until(lambda: compute.list_vnic_attachments(util.COMPARTMENT_ID, instance_id=self.instance_ocid), 'ATTACHED', max_wait_seconds=200, item_index_in_list_response=0)
 
         # get vnic attachments for given instance
         result = compute.list_vnic_attachments(util.COMPARTMENT_ID, instance_id=self.instance_ocid)
