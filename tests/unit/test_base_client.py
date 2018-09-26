@@ -21,6 +21,8 @@ def test_regional_client_honours_explicit_endpoint(identity, config):
 def test_non_regional_client_no_endpoint(identity, config):
     with pytest.raises(ValueError) as err:
         oci.BaseClient('identity', config, identity.base_client.signer, {}, regional_client=False)
+
+    assert isinstance(err.value, oci.exceptions.MissingEndpointForNonRegionalServiceClientError)
     assert 'An endpoint must be provided for a non-regional service client' == str(err.value)
 
 

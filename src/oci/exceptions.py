@@ -123,3 +123,8 @@ class ConnectTimeout(BaseConnectTimeout):
 
     Requests that produced this error are safe to retry.
     """
+
+
+class MissingEndpointForNonRegionalServiceClientError(ValueError):
+    """No endpoint value was provided when trying to create a non-regional service client.
+    """

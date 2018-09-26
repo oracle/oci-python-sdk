@@ -107,7 +107,7 @@ class BaseClient(object):
                     endpoint=config.get('endpoint'))
         else:
             if not kwargs.get('service_endpoint'):
-                raise ValueError('An endpoint must be provided for a non-regional service client')
+                raise exceptions.MissingEndpointForNonRegionalServiceClientError('An endpoint must be provided for a non-regional service client')
             self.endpoint = kwargs.get('service_endpoint')
 
         self.service = service
