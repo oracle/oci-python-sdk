@@ -5,12 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
-2.0.4 - TBD
+2.0.4 - 2018-09-27
 ====================
 
 Added
 -----
-* TBD
+* Support for paravirtualized launch mode when importing images in the Compute service
+* Support for Key Management service
+* Support for encrypting the contents of an Object Storage bucket using a Key Management service key
+* Support for specifying a Key Management service key when launching a compute instance in the Compute service
+* Support for specifying a Key Management service key when backing up or restoring a block storage volume in the Block Volume service
+
+Fixed
+-----
+* ObjectStorageClient requires int value for content_length keyword agruement to put_object and upload_part, but the SDK was not converting the type for the Requests library.
 
 ====================
 2.0.3 - 2018-09-06
@@ -21,7 +29,7 @@ Added
 * Added support for updating metadata fields on an instance in the Compute service
 
 Fixed
--------
+-----
 * Fixed example wait_for_resource_in_state.py to use existing response objects.  The updated example can be found on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/wait_for_resource_in_state.py>`__.
 
 ====================
