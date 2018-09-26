@@ -1988,7 +1988,7 @@ class ComputeClient(object):
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
-            "accept": "application/json",
+            "accept": "application/json, application/x-json-stream",
             "content-type": "application/json"
         }
 
@@ -2502,7 +2502,7 @@ class ComputeClient(object):
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
-            "accept": "application/json",
+            "accept": "application/json, application/x-json-stream",
             "content-type": "application/json"
         }
 
@@ -2682,7 +2682,7 @@ class ComputeClient(object):
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
-            "accept": "application/json",
+            "accept": "application/json, application/x-json-stream",
             "content-type": "application/json"
         }
 
@@ -2777,7 +2777,7 @@ class ComputeClient(object):
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
-            "accept": "application/json",
+            "accept": "application/json, application/x-json-stream",
             "content-type": "application/json"
         }
 

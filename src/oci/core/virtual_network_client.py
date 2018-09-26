@@ -3742,7 +3742,7 @@ class VirtualNetworkClient(object):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         header_params = {
-            "accept": "application/json",
+            "accept": "application/json, text/html",
             "content-type": "application/json"
         }
 
