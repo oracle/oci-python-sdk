@@ -175,6 +175,12 @@ class BaseClient(object):
 
         header_params = header_params or {}
 
+        # ObjectStorage PutObject and UploadPart require Content-Length as
+        # int, but requests requires it as a string.  All the headers
+        # have been prepared for serialization at this point
+        if header_params.get('Content-Length', missing) is not missing:
+            header_params['Content-Length'] = str(header_params['Content-Length'])
+
         header_params[constants.HEADER_CLIENT_INFO] = USER_INFO
         header_params[constants.HEADER_USER_AGENT] = self.user_agent
 
