@@ -16,7 +16,7 @@
     <inceptionYear>2016</inceptionYear>
     <coreservices-api-spec-spec-file>source/coreservices-api-spec-20160918.cond.yaml</coreservices-api-spec-spec-file>
     <identity-control-plane-api-spec-spec-file>identity-control-plane-api-spec-20160918.yaml</identity-control-plane-api-spec-spec-file>
-    <casper-api-spec-spec-file>casper-api.yaml</casper-api-spec-spec-file>
+    <casper-api-spec-spec-file>source/casper-api.cond.yaml</casper-api-spec-spec-file>
     <oralb-api-spec-spec-file>spec-20170115.yaml</oralb-api-spec-spec-file>
     <dbaas-api-spec-spec-file>dbaas-api-spec-20160918.yaml</dbaas-api-spec-spec-file>
     <fss-api-spec-spec-file>fss-api-spec-20171215.yaml</fss-api-spec-spec-file>
@@ -1158,7 +1158,7 @@
       <dependency>
         <groupId>com.oracle.pic.casper</groupId>
         <artifactId>casper-api-spec</artifactId>
-        <version>1.1.22</version>
+        <version>1.1.42-20180914.200731-6</version>
       </dependency>
       <dependency>
         <groupId>com.oracle.pic.lb</groupId>

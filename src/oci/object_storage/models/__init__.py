@@ -14,9 +14,13 @@ from .list_objects import ListObjects
 from .multipart_upload import MultipartUpload
 from .multipart_upload_part_summary import MultipartUploadPartSummary
 from .namespace_metadata import NamespaceMetadata
+from .object_lifecycle_policy import ObjectLifecyclePolicy
+from .object_lifecycle_rule import ObjectLifecycleRule
+from .object_name_filter import ObjectNameFilter
 from .object_summary import ObjectSummary
 from .preauthenticated_request import PreauthenticatedRequest
 from .preauthenticated_request_summary import PreauthenticatedRequestSummary
+from .put_object_lifecycle_policy_details import PutObjectLifecyclePolicyDetails
 from .rename_object_details import RenameObjectDetails
 from .restore_objects_details import RestoreObjectsDetails
 from .update_bucket_details import UpdateBucketDetails
@@ -35,9 +39,13 @@ object_storage_type_mapping = {
     "MultipartUpload": MultipartUpload,
     "MultipartUploadPartSummary": MultipartUploadPartSummary,
     "NamespaceMetadata": NamespaceMetadata,
+    "ObjectLifecyclePolicy": ObjectLifecyclePolicy,
+    "ObjectLifecycleRule": ObjectLifecycleRule,
+    "ObjectNameFilter": ObjectNameFilter,
     "ObjectSummary": ObjectSummary,
     "PreauthenticatedRequest": PreauthenticatedRequest,
     "PreauthenticatedRequestSummary": PreauthenticatedRequestSummary,
+    "PutObjectLifecyclePolicyDetails": PutObjectLifecyclePolicyDetails,
     "RenameObjectDetails": RenameObjectDetails,
     "RestoreObjectsDetails": RestoreObjectsDetails,
     "UpdateBucketDetails": UpdateBucketDetails,

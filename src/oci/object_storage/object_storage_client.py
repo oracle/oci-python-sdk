@@ -17,7 +17,7 @@ missing = Sentinel("Missing")
 
 class ObjectStorageClient(object):
     """
-    Common set of Object and Archive Storage APIs for managing buckets and objects.
+    The Object and Archive Storage APIs for managing buckets and objects.
     """
 
     def __init__(self, config, **kwargs):
@@ -197,7 +197,7 @@ class ObjectStorageClient(object):
             For uploading a part, this is the entity tag of the target part.
 
         :param str if_none_match: (optional)
-            The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
+            The entity tag to avoid matching. The only valid value is '*', which indicates that the request should fail if the object already exists.
             For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag of the target part.
 
         :param str opc_client_request_id: (optional)
@@ -280,8 +280,7 @@ class ObjectStorageClient(object):
     def create_bucket(self, namespace_name, create_bucket_details, **kwargs):
         """
         Create Bucket
-        Creates a bucket in the given namespace with a bucket name and optional user-defined metadata. Avoid entering confidential
-        information in bucket names.
+        Creates a bucket in the given namespace with a bucket name and optional user-defined metadata.
 
 
         :param str namespace_name: (required)
@@ -377,7 +376,7 @@ class ObjectStorageClient(object):
             For uploading a part, this is the entity tag of the target part.
 
         :param str if_none_match: (optional)
-            The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
+            The entity tag to avoid matching. The only valid value is '*', which indicates that the request should fail if the object already exists.
             For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag of the target part.
 
         :param str opc_client_request_id: (optional)
@@ -703,6 +702,88 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 header_params=header_params)
 
+    def delete_object_lifecycle_policy(self, namespace_name, bucket_name, **kwargs):
+        """
+        Delete object lifecycle policy
+        Deletes the object lifecycle policy for the bucket.
+
+
+        :param str namespace_name: (required)
+            The top-level namespace used for the request.
+
+        :param str bucket_name: (required)
+            The name of the bucket. Avoid entering confidential information.
+            Example: `my-new-bucket1`
+
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            The entity tag to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
+            For uploading a part, this is the entity tag of the target part.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/n/{namespaceName}/b/{bucketName}/l"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_client_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_object_lifecycle_policy got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name,
+            "bucketName": bucket_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
     def delete_preauthenticated_request(self, namespace_name, bucket_name, par_id, **kwargs):
         """
         DELETE Preauthenticated Request
@@ -802,7 +883,7 @@ class ObjectStorageClient(object):
             For uploading a part, this is the entity tag of the target part.
 
         :param str if_none_match: (optional)
-            The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
+            The entity tag to avoid matching. The only valid value is '*', which indicates that the request should fail if the object already exists.
             For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag of the target part.
 
         :param str opc_client_request_id: (optional)
@@ -877,8 +958,7 @@ class ObjectStorageClient(object):
     def get_namespace(self, **kwargs):
         """
         GET Namespace Name
-        Namespaces are unique. Namespaces are either the tenancy name or a random string automatically generated during
-        account creation. You cannot edit a namespace.
+        Gets the name of the namespace for the user making the request.
 
 
         :param str opc_client_request_id: (optional)
@@ -935,7 +1015,7 @@ class ObjectStorageClient(object):
 
     def get_namespace_metadata(self, namespace_name, **kwargs):
         """
-        GetNamespaceMetadata
+        GET Namespace Metadata
         Get the metadata for the namespace, which contains defaultS3CompartmentId and defaultSwiftCompartmentId.
         Any user with the NAMESPACE_READ permission will be able to see the current metadata. If you're not authorized,
         talk to an administrator. If you're an administrator who needs to write
@@ -1033,7 +1113,7 @@ class ObjectStorageClient(object):
             For uploading a part, this is the entity tag of the target part.
 
         :param str if_none_match: (optional)
-            The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
+            The entity tag to avoid matching. The only valid value is '*', which indicates that the request should fail if the object already exists.
             For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag of the target part.
 
         :param str opc_client_request_id: (optional)
@@ -1113,6 +1193,84 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 response_type="stream")
+
+    def get_object_lifecycle_policy(self, namespace_name, bucket_name, **kwargs):
+        """
+        GET object lifecycle policy
+        Gets the object lifecycle policy for the bucket.
+
+
+        :param str namespace_name: (required)
+            The top-level namespace used for the request.
+
+        :param str bucket_name: (required)
+            The name of the bucket. Avoid entering confidential information.
+            Example: `my-new-bucket1`
+
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.object_storage.models.ObjectLifecyclePolicy`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/n/{namespaceName}/b/{bucketName}/l"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_object_lifecycle_policy got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name,
+            "bucketName": bucket_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ObjectLifecyclePolicy")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ObjectLifecyclePolicy")
 
     def get_preauthenticated_request(self, namespace_name, bucket_name, par_id, **kwargs):
         """
@@ -1215,7 +1373,7 @@ class ObjectStorageClient(object):
             For uploading a part, this is the entity tag of the target part.
 
         :param str if_none_match: (optional)
-            The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
+            The entity tag to avoid matching. The only valid value is '*', which indicates that the request should fail if the object already exists.
             For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag of the target part.
 
         :param str opc_client_request_id: (optional)
@@ -1307,7 +1465,7 @@ class ObjectStorageClient(object):
             For uploading a part, this is the entity tag of the target part.
 
         :param str if_none_match: (optional)
-            The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
+            The entity tag to avoid matching. The only valid value is '*', which indicates that the request should fail if the object already exists.
             For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag of the target part.
 
         :param str opc_client_request_id: (optional)
@@ -1923,9 +2081,7 @@ class ObjectStorageClient(object):
     def put_object(self, namespace_name, bucket_name, object_name, put_object_body, **kwargs):
         """
         PUT Object
-        Creates a new object or overwrites an existing one. See `Special Instructions for Object Storage PUT`__ for request signature requirements.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/signingrequests.htm#ObjectStoragePut
+        Creates a new object or overwrites an existing one.
 
 
         :param str namespace_name: (required)
@@ -1950,7 +2106,7 @@ class ObjectStorageClient(object):
             For uploading a part, this is the entity tag of the target part.
 
         :param str if_none_match: (optional)
-            The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
+            The entity tag to avoid matching. The only valid value is '*', which indicates that the request should fail if the object already exists.
             For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag of the target part.
 
         :param str opc_client_request_id: (optional)
@@ -2068,9 +2224,104 @@ class ObjectStorageClient(object):
                 body=put_object_body,
                 enforce_content_headers=False)
 
+    def put_object_lifecycle_policy(self, namespace_name, bucket_name, put_object_lifecycle_policy_details, **kwargs):
+        """
+        Put object lifecycle policy.
+        Creates or replaces the object lifecycle policy for the bucket.
+
+
+        :param str namespace_name: (required)
+            The top-level namespace used for the request.
+
+        :param str bucket_name: (required)
+            The name of the bucket. Avoid entering confidential information.
+            Example: `my-new-bucket1`
+
+        :param PutObjectLifecyclePolicyDetails put_object_lifecycle_policy_details: (required)
+            The lifecycle policy to apply to the bucket.
+
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            The entity tag to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
+            For uploading a part, this is the entity tag of the target part.
+
+        :param str if_none_match: (optional)
+            The entity tag to avoid matching. The only valid value is '*', which indicates that the request should fail if the object already exists.
+            For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag of the target part.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.object_storage.models.ObjectLifecyclePolicy`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/n/{namespaceName}/b/{bucketName}/l"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_client_request_id",
+            "if_match",
+            "if_none_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "put_object_lifecycle_policy got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name,
+            "bucketName": bucket_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "if-none-match": kwargs.get("if_none_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=put_object_lifecycle_policy_details,
+                response_type="ObjectLifecyclePolicy")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=put_object_lifecycle_policy_details,
+                response_type="ObjectLifecyclePolicy")
+
     def rename_object(self, namespace_name, bucket_name, rename_object_details, **kwargs):
         """
-        RenameObject
+        Rename Object
         Rename an object from source key to target key in the given namespace.
 
 
@@ -2151,9 +2402,9 @@ class ObjectStorageClient(object):
 
     def restore_objects(self, namespace_name, bucket_name, restore_objects_details, **kwargs):
         """
-        RestoreObjects
-        Restore one or more objects specified by objectName parameter.
-        By default object will be restored for 24 hours.Duration can be configured using hours parameter.
+        Restore Objects
+        Restore one or more objects specified by the objectName parameter.
+        By default objects will be restored for 24 hours. Duration can be configured using the hours parameter.
 
 
         :param str namespace_name: (required)
@@ -2322,7 +2573,7 @@ class ObjectStorageClient(object):
 
     def update_namespace_metadata(self, namespace_name, update_namespace_metadata_details, **kwargs):
         """
-        UpdateNamespaceMetadata
+        PUT Namespace
         Change the default Swift/S3 compartmentId of user's namespace into the user-defined compartmentId. Upon doing
         this, all subsequent bucket creations will use the new default compartment, but no previously created
         buckets will be modified. A user must have the NAMESPACE_UPDATE permission to make changes to the default
@@ -2404,9 +2655,7 @@ class ObjectStorageClient(object):
     def upload_part(self, namespace_name, bucket_name, object_name, upload_id, upload_part_num, upload_part_body, **kwargs):
         """
         Upload Multipart Object Part
-        Uploads a single part of a multipart upload. See `Special Instructions for Object Storage PUT`__ for request signature requirements.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/signingrequests.htm#ObjectStoragePut
+        Uploads a single part of a multipart upload.
 
 
         :param str namespace_name: (required)
@@ -2440,7 +2689,7 @@ class ObjectStorageClient(object):
             For uploading a part, this is the entity tag of the target part.
 
         :param str if_none_match: (optional)
-            The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
+            The entity tag to avoid matching. The only valid value is '*', which indicates that the request should fail if the object already exists.
             For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag of the target part.
 
         :param str expect: (optional)
