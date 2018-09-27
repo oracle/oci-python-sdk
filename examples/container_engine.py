@@ -482,7 +482,7 @@ def delete_vcn(vn_client, vcn_resources):
 
     # VCNs have default security lists, route tables which cannot be deleted.
     # Get the details of the VCN to get the default security list and default route table ids so
-    # they can be skipped when getting the security lists ans route tables
+    # they can be skipped when getting the security lists and route tables
     response = vn_client.get_vcn(vcn_resources['id'])
     default_security_list_id = response.data.default_security_list_id
     default_route_table_id = response.data.default_route_table_id

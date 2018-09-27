@@ -11,6 +11,7 @@ from .attach_volume_details import AttachVolumeDetails
 from .boot_volume import BootVolume
 from .boot_volume_attachment import BootVolumeAttachment
 from .boot_volume_backup import BootVolumeBackup
+from .boot_volume_kms_key import BootVolumeKmsKey
 from .boot_volume_source_details import BootVolumeSourceDetails
 from .boot_volume_source_from_boot_volume_backup_details import BootVolumeSourceFromBootVolumeBackupDetails
 from .boot_volume_source_from_boot_volume_details import BootVolumeSourceFromBootVolumeDetails
@@ -112,6 +113,7 @@ from .tunnel_status import TunnelStatus
 from .udp_options import UdpOptions
 from .update_boot_volume_backup_details import UpdateBootVolumeBackupDetails
 from .update_boot_volume_details import UpdateBootVolumeDetails
+from .update_boot_volume_kms_key_details import UpdateBootVolumeKmsKeyDetails
 from .update_console_history_details import UpdateConsoleHistoryDetails
 from .update_cpe_details import UpdateCpeDetails
 from .update_cross_connect_details import UpdateCrossConnectDetails
@@ -138,6 +140,7 @@ from .update_volume_backup_details import UpdateVolumeBackupDetails
 from .update_volume_details import UpdateVolumeDetails
 from .update_volume_group_backup_details import UpdateVolumeGroupBackupDetails
 from .update_volume_group_details import UpdateVolumeGroupDetails
+from .update_volume_kms_key_details import UpdateVolumeKmsKeyDetails
 from .vcn import Vcn
 from .virtual_circuit import VirtualCircuit
 from .virtual_circuit_bandwidth_shape import VirtualCircuitBandwidthShape
@@ -156,6 +159,7 @@ from .volume_group_source_details import VolumeGroupSourceDetails
 from .volume_group_source_from_volume_group_backup_details import VolumeGroupSourceFromVolumeGroupBackupDetails
 from .volume_group_source_from_volume_group_details import VolumeGroupSourceFromVolumeGroupDetails
 from .volume_group_source_from_volumes_details import VolumeGroupSourceFromVolumesDetails
+from .volume_kms_key import VolumeKmsKey
 from .volume_source_details import VolumeSourceDetails
 from .volume_source_from_volume_backup_details import VolumeSourceFromVolumeBackupDetails
 from .volume_source_from_volume_details import VolumeSourceFromVolumeDetails
@@ -170,6 +174,7 @@ core_type_mapping = {
     "BootVolume": BootVolume,
     "BootVolumeAttachment": BootVolumeAttachment,
     "BootVolumeBackup": BootVolumeBackup,
+    "BootVolumeKmsKey": BootVolumeKmsKey,
     "BootVolumeSourceDetails": BootVolumeSourceDetails,
     "BootVolumeSourceFromBootVolumeBackupDetails": BootVolumeSourceFromBootVolumeBackupDetails,
     "BootVolumeSourceFromBootVolumeDetails": BootVolumeSourceFromBootVolumeDetails,
@@ -271,6 +276,7 @@ core_type_mapping = {
     "UdpOptions": UdpOptions,
     "UpdateBootVolumeBackupDetails": UpdateBootVolumeBackupDetails,
     "UpdateBootVolumeDetails": UpdateBootVolumeDetails,
+    "UpdateBootVolumeKmsKeyDetails": UpdateBootVolumeKmsKeyDetails,
     "UpdateConsoleHistoryDetails": UpdateConsoleHistoryDetails,
     "UpdateCpeDetails": UpdateCpeDetails,
     "UpdateCrossConnectDetails": UpdateCrossConnectDetails,
@@ -297,6 +303,7 @@ core_type_mapping = {
     "UpdateVolumeDetails": UpdateVolumeDetails,
     "UpdateVolumeGroupBackupDetails": UpdateVolumeGroupBackupDetails,
     "UpdateVolumeGroupDetails": UpdateVolumeGroupDetails,
+    "UpdateVolumeKmsKeyDetails": UpdateVolumeKmsKeyDetails,
     "Vcn": Vcn,
     "VirtualCircuit": VirtualCircuit,
     "VirtualCircuitBandwidthShape": VirtualCircuitBandwidthShape,
@@ -315,6 +322,7 @@ core_type_mapping = {
     "VolumeGroupSourceFromVolumeGroupBackupDetails": VolumeGroupSourceFromVolumeGroupBackupDetails,
     "VolumeGroupSourceFromVolumeGroupDetails": VolumeGroupSourceFromVolumeGroupDetails,
     "VolumeGroupSourceFromVolumesDetails": VolumeGroupSourceFromVolumesDetails,
+    "VolumeKmsKey": VolumeKmsKey,
     "VolumeSourceDetails": VolumeSourceDetails,
     "VolumeSourceFromVolumeBackupDetails": VolumeSourceFromVolumeBackupDetails,
     "VolumeSourceFromVolumeDetails": VolumeSourceFromVolumeDetails

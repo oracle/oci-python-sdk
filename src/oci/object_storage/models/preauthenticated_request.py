@@ -11,12 +11,12 @@ class PreauthenticatedRequest(object):
     """
     Pre-authenticated requests provide a way to let users access a bucket or an object without having their own credentials.
     When you create a pre-authenticated request, a unique URL is generated. Users in your organization, partners, or third
-    parties can use this URL to access the targets identified in the pre-authenticated request. See `Managing Access to Buckets and Objects`__.
+    parties can use this URL to access the targets identified in the pre-authenticated request. See `Using Pre-Authenticated Requests`__.
 
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator.
     If you're an administrator who needs to write policies to give users access, see `Getting Started with Policies`__.
 
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Object/Tasks/managingaccess.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Object/Tasks/usingpreauthenticatedrequests.htm
     __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
     """
 

@@ -24,17 +24,17 @@ def pytest_configure(config):
     test_config_container.vcr_mode = config.getoption("--vcr-record-mode")
 
 
-@pytest.fixture
+@pytest.fixture(scope="session")
 def config_file(request):
     return request.config.getoption("--config-file")
 
 
-@pytest.fixture
+@pytest.fixture(scope="session")
 def config_profile(request):
     return request.config.getoption("--config-profile")
 
 
-@pytest.fixture
+@pytest.fixture(scope="session")
 def config(config_file, config_profile):
     config = oci.config.from_file(file_location=config_file, profile_name=config_profile)
     util.target_region = config['region']
@@ -53,7 +53,7 @@ def tenant_id(config):
     return config['tenancy']
 
 
-@pytest.fixture
+@pytest.fixture(scope="session")
 def object_storage(config):
     client = oci.object_storage.ObjectStorageClient(config)
     add_retries_to_service_operations(client)

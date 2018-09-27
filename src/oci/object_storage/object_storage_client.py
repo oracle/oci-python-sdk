@@ -280,7 +280,8 @@ class ObjectStorageClient(object):
     def create_bucket(self, namespace_name, create_bucket_details, **kwargs):
         """
         Create Bucket
-        Creates a bucket in the given namespace with a bucket name and optional user-defined metadata.
+        Creates a bucket in the given namespace with a bucket name and optional user-defined metadata. Avoid entering confidential
+        information in bucket names.
 
 
         :param str namespace_name: (required)
@@ -1922,7 +1923,9 @@ class ObjectStorageClient(object):
     def put_object(self, namespace_name, bucket_name, object_name, put_object_body, **kwargs):
         """
         PUT Object
-        Creates a new object or overwrites an existing one.
+        Creates a new object or overwrites an existing one. See `Special Instructions for Object Storage PUT`__ for request signature requirements.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/signingrequests.htm#ObjectStoragePut
 
 
         :param str namespace_name: (required)
@@ -2401,7 +2404,9 @@ class ObjectStorageClient(object):
     def upload_part(self, namespace_name, bucket_name, object_name, upload_id, upload_part_num, upload_part_body, **kwargs):
         """
         Upload Multipart Object Part
-        Uploads a single part of a multipart upload.
+        Uploads a single part of a multipart upload. See `Special Instructions for Object Storage PUT`__ for request signature requirements.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/signingrequests.htm#ObjectStoragePut
 
 
         :param str namespace_name: (required)

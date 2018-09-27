@@ -30,22 +30,29 @@ class InstanceSourceViaImageDetails(InstanceSourceDetails):
             The value to assign to the image_id property of this InstanceSourceViaImageDetails.
         :type image_id: str
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this InstanceSourceViaImageDetails.
+        :type kms_key_id: str
+
         """
         self.swagger_types = {
             'source_type': 'str',
             'boot_volume_size_in_gbs': 'int',
-            'image_id': 'str'
+            'image_id': 'str',
+            'kms_key_id': 'str'
         }
 
         self.attribute_map = {
             'source_type': 'sourceType',
             'boot_volume_size_in_gbs': 'bootVolumeSizeInGBs',
-            'image_id': 'imageId'
+            'image_id': 'imageId',
+            'kms_key_id': 'kmsKeyId'
         }
 
         self._source_type = None
         self._boot_volume_size_in_gbs = None
         self._image_id = None
+        self._kms_key_id = None
         self._source_type = 'image'
 
     @property
@@ -95,6 +102,30 @@ class InstanceSourceViaImageDetails(InstanceSourceDetails):
         :type: str
         """
         self._image_id = image_id
+
+    @property
+    def kms_key_id(self):
+        """
+        Gets the kms_key_id of this InstanceSourceViaImageDetails.
+        The OCID of the KMS key to be used as the master encryption key for the boot volume.
+
+
+        :return: The kms_key_id of this InstanceSourceViaImageDetails.
+        :rtype: str
+        """
+        return self._kms_key_id
+
+    @kms_key_id.setter
+    def kms_key_id(self, kms_key_id):
+        """
+        Sets the kms_key_id of this InstanceSourceViaImageDetails.
+        The OCID of the KMS key to be used as the master encryption key for the boot volume.
+
+
+        :param kms_key_id: The kms_key_id of this InstanceSourceViaImageDetails.
+        :type: str
+        """
+        self._kms_key_id = kms_key_id
 
     def __repr__(self):
         return formatted_flat_dict(self)
