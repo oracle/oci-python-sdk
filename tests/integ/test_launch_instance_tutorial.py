@@ -58,6 +58,10 @@ def test_tutorial(virtual_network, compute, block_storage, config):
                 terminate_instance(compute, instance)
             if subnet:
                 delete_subnet(virtual_network, subnet)
+            if gateway:
+                # Clear the route table so it does not have a reference to the internet gateway
+                virtual_network.update_route_table(vcn.default_route_table_id, oci.core.models.UpdateRouteTableDetails(route_rules=[]))
+                delete_internet_gateway(virtual_network, gateway.id)
             if vcn:
                 delete_cloud_network(virtual_network, vcn)
 
@@ -159,6 +163,11 @@ def create_internet_gateway(virtual_network, compartment, test_id, vcn):
     ).data
 
     return gateway
+
+
+def delete_internet_gateway(virtual_network, gateway_id):
+    vcn_composite_ops = oci.core.VirtualNetworkClientCompositeOperations(virtual_network)
+    vcn_composite_ops.delete_internet_gateway_and_wait_for_state(gateway_id, wait_for_states=[oci.core.models.InternetGateway.LIFECYCLE_STATE_TERMINATED])
 
 
 def update_route_table(virtual_network, test_id, vcn, gateway):

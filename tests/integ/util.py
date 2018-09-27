@@ -11,7 +11,7 @@ import os
 from oci.object_storage.transfer.constants import MEBIBYTE
 from .. import test_config_container
 
-TEST_DATA_VERSION = '1'
+TEST_DATA_VERSION = '2'
 
 COMPARTMENT_ID = os.environ.get("OCI_PYSDK_COMPARTMENT_ID")
 COMPARTMENT_NAME = os.environ.get("OCI_PYSDK_COMPARTMENT_NAME")
@@ -185,10 +185,11 @@ def ensure_test_data(api, namespace, compartment, bucket_prefix):
             test_data_version_object).data.content.decode('UTF-8')
 
         if version == TEST_DATA_VERSION:
-            return
+            return True
     except Exception as error:
         # if the bucket has never been created with the test_metadata, then create it
         if error.status == 404:
+            print(error)
             create_bucket(api, namespace, compartment, test_data_metadata_bucket)
             api.put_object(namespace, test_data_metadata_bucket, test_data_version_object, TEST_DATA_VERSION)
         else:
@@ -206,17 +207,12 @@ def ensure_test_data(api, namespace, compartment, bucket_prefix):
     create_bucket(api, namespace, compartment, bucket_prefix + 'ReadOnlyTestBucket4')
     create_object(api, namespace, bucket_prefix + 'ReadOnlyTestBucket4', 'hasUserMetadata.json', metadata={'foo1': 'bar1', 'foo2': 'bar2'})
     create_bucket(api, namespace, compartment, bucket_prefix + 'ReadOnlyTestBucket5', {'foo1': 'bar1', 'foo2': 'bar2'})
-    create_bucket(api, namespace, compartment, bucket_prefix + 'ReadOnlyTestBucket6')
-
-    for num in range(1, 213):
-        create_object(api, namespace, bucket_prefix + 'ReadOnlyTestBucket6', 'ob' + str(num))
-
-    for num in range(7, 209):
-        create_bucket(api, namespace, compartment, bucket_prefix + 'ReadOnlyTestBucket' + str(num))
 
     # Update test data version
     create_bucket(api, namespace, compartment, test_data_metadata_bucket)
     api.put_object(namespace, test_data_metadata_bucket, test_data_version_object, TEST_DATA_VERSION)
+
+    return True
 
 
 def create_bucket(api, namespace, compartment, bucket_name, metadata=None, objects=None):

@@ -88,6 +88,7 @@ class BaseClient(object):
 
         self._endpoint = None
         self._base_path = kwargs.get('base_path')
+        self.service_endpoint_template = kwargs.get('service_endpoint_template')
 
         if self.regional_client:
             if kwargs.get('service_endpoint'):
@@ -101,11 +102,12 @@ class BaseClient(object):
 
                 self.endpoint = regions.endpoint_for(
                     service,
+                    service_endpoint_template=self.service_endpoint_template,
                     region=region_to_use,
                     endpoint=config.get('endpoint'))
         else:
             if not kwargs.get('service_endpoint'):
-                raise ValueError('An endpoint must be provided for a non-regional service client')
+                raise exceptions.MissingEndpointForNonRegionalServiceClientError('An endpoint must be provided for a non-regional service client')
             self.endpoint = kwargs.get('service_endpoint')
 
         self.service = service
@@ -141,7 +143,7 @@ class BaseClient(object):
 
     def set_region(self, region):
         if self.regional_client:
-            self.endpoint = regions.endpoint_for(self.service, region=region)
+            self.endpoint = regions.endpoint_for(self.service, service_endpoint_template=self.service_endpoint_template, region=region)
         else:
             raise TypeError('Setting the region is not allowed for non-regional service clients. You must instead set the endpoint')
 
@@ -172,6 +174,12 @@ class BaseClient(object):
             header_params = self.sanitize_for_serialization(header_params)
 
         header_params = header_params or {}
+
+        # ObjectStorage PutObject and UploadPart require Content-Length as
+        # int, but requests requires it as a string.  All the headers
+        # have been prepared for serialization at this point
+        if header_params.get('Content-Length', missing) is not missing:
+            header_params['Content-Length'] = str(header_params['Content-Length'])
 
         header_params[constants.HEADER_CLIENT_INFO] = USER_INFO
         header_params[constants.HEADER_USER_AGENT] = self.user_agent

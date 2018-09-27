@@ -12,6 +12,9 @@ SERVICE_ENDPOINTS = {
     "email": "https://email.{domain}",
     "file_storage": "https://filestorage.{domain}",
     "identity": "https://identity.{domain}",
+    "kms_crypto": "https://kms.{domain}",
+    "kms_provisioning": "https://kms.{domain}",
+    "kms_vault": "https://kms.{domain}",
     "load_balancer": "https://iaas.{domain}",
     "object_storage": "https://objectstorage.{domain}",
     "resource_search": "https://query.{domain}"
