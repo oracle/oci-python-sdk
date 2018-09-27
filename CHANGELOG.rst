@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.0.5 - TBA
+====================
+
+Added
+-----
+* TBA
+
+====================
 2.0.4 - 2018-09-27
 ====================
 
