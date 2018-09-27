@@ -1,6 +1,6 @@
 import inspect
 import jinja2
-import oci
+import oci  # noqa: F401
 import os
 import os.path
 import sys
@@ -55,6 +55,12 @@ SERVICES_FOR_DOC_GEN = [
         'service_root_header': 'Identity',
         'target_file_name': 'identity',
         'service_names': ['identity']
+    },
+    {
+        'module_name': 'key_management',
+        'service_root_header': 'Key Management',
+        'target_file_name': 'key_management',
+        'service_names': ['key_management']
     },
     {
         'module_name': 'load_balancer',
