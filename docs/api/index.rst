@@ -234,6 +234,31 @@ Identity
     :noindex:
 
 
+==============
+Key Management
+==============
+
+--------
+ Client
+--------
+
+.. autoclass:: oci.key_management.key_management_client.KeyManagementClient
+    :members:
+    :noindex:
+
+--------
+ Models
+--------
+
+.. automodule:: oci.key_management.models
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :imported-members:
+    :inherited-members:
+    :noindex:
+
+
 =============
 Load Balancer
 =============
