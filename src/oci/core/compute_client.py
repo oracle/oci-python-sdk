@@ -2265,12 +2265,20 @@ class ComputeClient(object):
             The OCID of the listing.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
@@ -2362,12 +2370,20 @@ class ComputeClient(object):
 
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
@@ -2465,12 +2481,20 @@ class ComputeClient(object):
             The OCID of the compartment.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for
