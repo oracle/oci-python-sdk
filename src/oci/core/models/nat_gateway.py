@@ -7,169 +7,138 @@ from oci.decorators import init_model_state_from_kwargs
 
 
 @init_model_state_from_kwargs
-class ServiceGateway(object):
+class NatGateway(object):
     """
-    Represents a router that connects the edge of a VCN with public Oracle Cloud Infrastructure
-    services such as Object Storage. Traffic leaving the VCN and destined for a supported public
-    service (see :func:`list_services`) is routed through the
-    service gateway and does not traverse the internet. The instances in the VCN do not need to
-    have public IP addresses nor be in a public subnet. The VCN does not need an internet gateway
-    for this traffic. For more information, see
-    `Access to Object Storage: Service Gateway`__.
+    A NAT (Network Address Translation) gateway, which represents a router that lets instances
+    without public IPs contact the public internet without exposing the instance to inbound
+    internet traffic. For more information, see
+    `NAT Gateway`__.
 
-    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
-    talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-    `Getting Started with Policies`__.
+    To use any of the API operations, you must be authorized in an
+    IAM policy. If you are not authorized, talk to an
+    administrator. If you are an administrator who needs to write
+    policies to give users access, see `Getting Started with
+    Policies`__.
 
     **Warning:** Oracle recommends that you avoid using any confidential information when you
     supply string values using the API.
 
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/servicegateway.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/NATgateway.htm
     __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
     """
 
-    #: A constant which can be used with the lifecycle_state property of a ServiceGateway.
+    #: A constant which can be used with the lifecycle_state property of a NatGateway.
     #: This constant has a value of "PROVISIONING"
     LIFECYCLE_STATE_PROVISIONING = "PROVISIONING"
 
-    #: A constant which can be used with the lifecycle_state property of a ServiceGateway.
+    #: A constant which can be used with the lifecycle_state property of a NatGateway.
     #: This constant has a value of "AVAILABLE"
     LIFECYCLE_STATE_AVAILABLE = "AVAILABLE"
 
-    #: A constant which can be used with the lifecycle_state property of a ServiceGateway.
+    #: A constant which can be used with the lifecycle_state property of a NatGateway.
     #: This constant has a value of "TERMINATING"
     LIFECYCLE_STATE_TERMINATING = "TERMINATING"
 
-    #: A constant which can be used with the lifecycle_state property of a ServiceGateway.
+    #: A constant which can be used with the lifecycle_state property of a NatGateway.
     #: This constant has a value of "TERMINATED"
     LIFECYCLE_STATE_TERMINATED = "TERMINATED"
 
     def __init__(self, **kwargs):
         """
-        Initializes a new ServiceGateway object with values from keyword arguments.
+        Initializes a new NatGateway object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param block_traffic:
-            The value to assign to the block_traffic property of this ServiceGateway.
-        :type block_traffic: bool
-
         :param compartment_id:
-            The value to assign to the compartment_id property of this ServiceGateway.
+            The value to assign to the compartment_id property of this NatGateway.
         :type compartment_id: str
 
         :param defined_tags:
-            The value to assign to the defined_tags property of this ServiceGateway.
+            The value to assign to the defined_tags property of this NatGateway.
         :type defined_tags: dict(str, dict(str, object))
 
         :param display_name:
-            The value to assign to the display_name property of this ServiceGateway.
+            The value to assign to the display_name property of this NatGateway.
         :type display_name: str
 
         :param freeform_tags:
-            The value to assign to the freeform_tags property of this ServiceGateway.
+            The value to assign to the freeform_tags property of this NatGateway.
         :type freeform_tags: dict(str, str)
 
         :param id:
-            The value to assign to the id property of this ServiceGateway.
+            The value to assign to the id property of this NatGateway.
         :type id: str
 
+        :param block_traffic:
+            The value to assign to the block_traffic property of this NatGateway.
+        :type block_traffic: bool
+
         :param lifecycle_state:
-            The value to assign to the lifecycle_state property of this ServiceGateway.
+            The value to assign to the lifecycle_state property of this NatGateway.
             Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
-        :param services:
-            The value to assign to the services property of this ServiceGateway.
-        :type services: list[ServiceIdResponseDetails]
+        :param nat_ip:
+            The value to assign to the nat_ip property of this NatGateway.
+        :type nat_ip: str
 
         :param time_created:
-            The value to assign to the time_created property of this ServiceGateway.
+            The value to assign to the time_created property of this NatGateway.
         :type time_created: datetime
 
         :param vcn_id:
-            The value to assign to the vcn_id property of this ServiceGateway.
+            The value to assign to the vcn_id property of this NatGateway.
         :type vcn_id: str
 
         """
         self.swagger_types = {
-            'block_traffic': 'bool',
             'compartment_id': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'id': 'str',
+            'block_traffic': 'bool',
             'lifecycle_state': 'str',
-            'services': 'list[ServiceIdResponseDetails]',
+            'nat_ip': 'str',
             'time_created': 'datetime',
             'vcn_id': 'str'
         }
 
         self.attribute_map = {
-            'block_traffic': 'blockTraffic',
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'id': 'id',
+            'block_traffic': 'blockTraffic',
             'lifecycle_state': 'lifecycleState',
-            'services': 'services',
+            'nat_ip': 'natIp',
             'time_created': 'timeCreated',
             'vcn_id': 'vcnId'
         }
 
-        self._block_traffic = None
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
         self._id = None
+        self._block_traffic = None
         self._lifecycle_state = None
-        self._services = None
+        self._nat_ip = None
         self._time_created = None
         self._vcn_id = None
 
     @property
-    def block_traffic(self):
-        """
-        **[Required]** Gets the block_traffic of this ServiceGateway.
-        Whether the service gateway blocks all traffic through it. The default is `false`. When
-        this is `true`, traffic is not routed to any services, regardless of route rules.
-
-        Example: `true`
-
-
-        :return: The block_traffic of this ServiceGateway.
-        :rtype: bool
-        """
-        return self._block_traffic
-
-    @block_traffic.setter
-    def block_traffic(self, block_traffic):
-        """
-        Sets the block_traffic of this ServiceGateway.
-        Whether the service gateway blocks all traffic through it. The default is `false`. When
-        this is `true`, traffic is not routed to any services, regardless of route rules.
-
-        Example: `true`
-
-
-        :param block_traffic: The block_traffic of this ServiceGateway.
-        :type: bool
-        """
-        self._block_traffic = block_traffic
-
-    @property
     def compartment_id(self):
         """
-        **[Required]** Gets the compartment_id of this ServiceGateway.
-        The `OCID`__ of the compartment that contains the
-        service gateway.
+        **[Required]** Gets the compartment_id of this NatGateway.
+        The `OCID`__ of the compartment that contains
+        the NAT gateway.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
-        :return: The compartment_id of this ServiceGateway.
+        :return: The compartment_id of this NatGateway.
         :rtype: str
         """
         return self._compartment_id
@@ -177,14 +146,14 @@ class ServiceGateway(object):
     @compartment_id.setter
     def compartment_id(self, compartment_id):
         """
-        Sets the compartment_id of this ServiceGateway.
-        The `OCID`__ of the compartment that contains the
-        service gateway.
+        Sets the compartment_id of this NatGateway.
+        The `OCID`__ of the compartment that contains
+        the NAT gateway.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
-        :param compartment_id: The compartment_id of this ServiceGateway.
+        :param compartment_id: The compartment_id of this NatGateway.
         :type: str
         """
         self._compartment_id = compartment_id
@@ -192,7 +161,7 @@ class ServiceGateway(object):
     @property
     def defined_tags(self):
         """
-        Gets the defined_tags of this ServiceGateway.
+        Gets the defined_tags of this NatGateway.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
@@ -201,7 +170,7 @@ class ServiceGateway(object):
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
 
 
-        :return: The defined_tags of this ServiceGateway.
+        :return: The defined_tags of this NatGateway.
         :rtype: dict(str, dict(str, object))
         """
         return self._defined_tags
@@ -209,7 +178,7 @@ class ServiceGateway(object):
     @defined_tags.setter
     def defined_tags(self, defined_tags):
         """
-        Sets the defined_tags of this ServiceGateway.
+        Sets the defined_tags of this NatGateway.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
@@ -218,7 +187,7 @@ class ServiceGateway(object):
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
 
 
-        :param defined_tags: The defined_tags of this ServiceGateway.
+        :param defined_tags: The defined_tags of this NatGateway.
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
@@ -226,12 +195,12 @@ class ServiceGateway(object):
     @property
     def display_name(self):
         """
-        Gets the display_name of this ServiceGateway.
+        Gets the display_name of this NatGateway.
         A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
 
 
-        :return: The display_name of this ServiceGateway.
+        :return: The display_name of this NatGateway.
         :rtype: str
         """
         return self._display_name
@@ -239,12 +208,12 @@ class ServiceGateway(object):
     @display_name.setter
     def display_name(self, display_name):
         """
-        Sets the display_name of this ServiceGateway.
+        Sets the display_name of this NatGateway.
         A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
 
 
-        :param display_name: The display_name of this ServiceGateway.
+        :param display_name: The display_name of this NatGateway.
         :type: str
         """
         self._display_name = display_name
@@ -252,7 +221,7 @@ class ServiceGateway(object):
     @property
     def freeform_tags(self):
         """
-        Gets the freeform_tags of this ServiceGateway.
+        Gets the freeform_tags of this NatGateway.
         Free-form tags for this resource. Each tag is a simple key-value pair with no
         predefined name, type, or namespace. For more information, see
         `Resource Tags`__.
@@ -262,7 +231,7 @@ class ServiceGateway(object):
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
 
 
-        :return: The freeform_tags of this ServiceGateway.
+        :return: The freeform_tags of this NatGateway.
         :rtype: dict(str, str)
         """
         return self._freeform_tags
@@ -270,7 +239,7 @@ class ServiceGateway(object):
     @freeform_tags.setter
     def freeform_tags(self, freeform_tags):
         """
-        Sets the freeform_tags of this ServiceGateway.
+        Sets the freeform_tags of this NatGateway.
         Free-form tags for this resource. Each tag is a simple key-value pair with no
         predefined name, type, or namespace. For more information, see
         `Resource Tags`__.
@@ -280,7 +249,7 @@ class ServiceGateway(object):
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
 
 
-        :param freeform_tags: The freeform_tags of this ServiceGateway.
+        :param freeform_tags: The freeform_tags of this NatGateway.
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
@@ -288,13 +257,13 @@ class ServiceGateway(object):
     @property
     def id(self):
         """
-        **[Required]** Gets the id of this ServiceGateway.
-        The `OCID`__ of the service gateway.
+        **[Required]** Gets the id of this NatGateway.
+        The `OCID`__ of the NAT gateway.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
-        :return: The id of this ServiceGateway.
+        :return: The id of this NatGateway.
         :rtype: str
         """
         return self._id
@@ -302,28 +271,56 @@ class ServiceGateway(object):
     @id.setter
     def id(self, id):
         """
-        Sets the id of this ServiceGateway.
-        The `OCID`__ of the service gateway.
+        Sets the id of this NatGateway.
+        The `OCID`__ of the NAT gateway.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
-        :param id: The id of this ServiceGateway.
+        :param id: The id of this NatGateway.
         :type: str
         """
         self._id = id
 
     @property
+    def block_traffic(self):
+        """
+        **[Required]** Gets the block_traffic of this NatGateway.
+        Whether the NAT gateway blocks traffic through it. The default is `false`.
+
+        Example: `true`
+
+
+        :return: The block_traffic of this NatGateway.
+        :rtype: bool
+        """
+        return self._block_traffic
+
+    @block_traffic.setter
+    def block_traffic(self, block_traffic):
+        """
+        Sets the block_traffic of this NatGateway.
+        Whether the NAT gateway blocks traffic through it. The default is `false`.
+
+        Example: `true`
+
+
+        :param block_traffic: The block_traffic of this NatGateway.
+        :type: bool
+        """
+        self._block_traffic = block_traffic
+
+    @property
     def lifecycle_state(self):
         """
-        **[Required]** Gets the lifecycle_state of this ServiceGateway.
-        The service gateway's current state.
+        **[Required]** Gets the lifecycle_state of this NatGateway.
+        The NAT gateway's current state.
 
         Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
-        :return: The lifecycle_state of this ServiceGateway.
+        :return: The lifecycle_state of this NatGateway.
         :rtype: str
         """
         return self._lifecycle_state
@@ -331,11 +328,11 @@ class ServiceGateway(object):
     @lifecycle_state.setter
     def lifecycle_state(self, lifecycle_state):
         """
-        Sets the lifecycle_state of this ServiceGateway.
-        The service gateway's current state.
+        Sets the lifecycle_state of this NatGateway.
+        The NAT gateway's current state.
 
 
-        :param lifecycle_state: The lifecycle_state of this ServiceGateway.
+        :param lifecycle_state: The lifecycle_state of this NatGateway.
         :type: str
         """
         allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"]
@@ -344,43 +341,39 @@ class ServiceGateway(object):
         self._lifecycle_state = lifecycle_state
 
     @property
-    def services(self):
+    def nat_ip(self):
         """
-        **[Required]** Gets the services of this ServiceGateway.
-        List of the services enabled on this service gateway. The list can be empty.
-        You can enable a particular service by using
-        :func:`attach_service_id`.
+        **[Required]** Gets the nat_ip of this NatGateway.
+        The IP address associated with the NAT gateway.
 
 
-        :return: The services of this ServiceGateway.
-        :rtype: list[ServiceIdResponseDetails]
+        :return: The nat_ip of this NatGateway.
+        :rtype: str
         """
-        return self._services
+        return self._nat_ip
 
-    @services.setter
-    def services(self, services):
+    @nat_ip.setter
+    def nat_ip(self, nat_ip):
         """
-        Sets the services of this ServiceGateway.
-        List of the services enabled on this service gateway. The list can be empty.
-        You can enable a particular service by using
-        :func:`attach_service_id`.
+        Sets the nat_ip of this NatGateway.
+        The IP address associated with the NAT gateway.
 
 
-        :param services: The services of this ServiceGateway.
-        :type: list[ServiceIdResponseDetails]
+        :param nat_ip: The nat_ip of this NatGateway.
+        :type: str
         """
-        self._services = services
+        self._nat_ip = nat_ip
 
     @property
     def time_created(self):
         """
-        Gets the time_created of this ServiceGateway.
-        The date and time the service gateway was created, in the format defined by RFC3339.
+        **[Required]** Gets the time_created of this NatGateway.
+        The date and time the NAT gateway was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
 
 
-        :return: The time_created of this ServiceGateway.
+        :return: The time_created of this NatGateway.
         :rtype: datetime
         """
         return self._time_created
@@ -388,13 +381,13 @@ class ServiceGateway(object):
     @time_created.setter
     def time_created(self, time_created):
         """
-        Sets the time_created of this ServiceGateway.
-        The date and time the service gateway was created, in the format defined by RFC3339.
+        Sets the time_created of this NatGateway.
+        The date and time the NAT gateway was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
 
 
-        :param time_created: The time_created of this ServiceGateway.
+        :param time_created: The time_created of this NatGateway.
         :type: datetime
         """
         self._time_created = time_created
@@ -402,14 +395,14 @@ class ServiceGateway(object):
     @property
     def vcn_id(self):
         """
-        **[Required]** Gets the vcn_id of this ServiceGateway.
-        The `OCID`__ of the VCN the service gateway
+        **[Required]** Gets the vcn_id of this NatGateway.
+        The `OCID`__ of the VCN the NAT gateway
         belongs to.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
-        :return: The vcn_id of this ServiceGateway.
+        :return: The vcn_id of this NatGateway.
         :rtype: str
         """
         return self._vcn_id
@@ -417,14 +410,14 @@ class ServiceGateway(object):
     @vcn_id.setter
     def vcn_id(self, vcn_id):
         """
-        Sets the vcn_id of this ServiceGateway.
-        The `OCID`__ of the VCN the service gateway
+        Sets the vcn_id of this NatGateway.
+        The `OCID`__ of the VCN the NAT gateway
         belongs to.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
-        :param vcn_id: The vcn_id of this ServiceGateway.
+        :param vcn_id: The vcn_id of this NatGateway.
         :type: str
         """
         self._vcn_id = vcn_id

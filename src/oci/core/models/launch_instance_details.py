@@ -314,6 +314,10 @@ class LaunchInstanceDetails(object):
         If you do not specify the fault domain, the system selects one for you. To change the fault
         domain for an instance, terminate it and launch a new instance in the preferred fault domain.
 
+        To get a list of fault domains, use the
+        :func:`list_fault_domains` operation in the
+        Identity and Access Management Service API.
+
         Example: `FAULT-DOMAIN-1`
 
 
@@ -334,6 +338,10 @@ class LaunchInstanceDetails(object):
 
         If you do not specify the fault domain, the system selects one for you. To change the fault
         domain for an instance, terminate it and launch a new instance in the preferred fault domain.
+
+        To get a list of fault domains, use the
+        :func:`list_fault_domains` operation in the
+        Identity and Access Management Service API.
 
         Example: `FAULT-DOMAIN-1`
 
