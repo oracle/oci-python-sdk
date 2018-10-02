@@ -13,7 +13,6 @@ API Reference
 * :doc:`Email  <email>`
 * :doc:`File Storage  <file_storage>`
 * :doc:`Identity  <identity>`
-* :doc:`Key Management  <key_management>`
 * :doc:`Load Balancer  <load_balancer>`
 * :doc:`Object Storage  <object_storage>`
 * :doc:`Resource Search  <resource_search>`
@@ -46,7 +45,6 @@ API Reference
     email
     file_storage
     identity
-    key_management
     load_balancer
     object_storage
     resource_search
