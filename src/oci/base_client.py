@@ -602,11 +602,16 @@ class BaseClient(object):
         :return: datetime.
         """
         try:
-            return parse(string)
+            return datetime.strptime(string, "%Y-%m-%dT%H:%M:%S.%fZ")
+        except ValueError:
+            try:
+                return parse(string)
+            except ImportError:
+                return string
+            except ValueError:
+                raise Exception("Failed to parse `{0}` into a datetime object".format(string))
         except ImportError:
             return string
-        except ValueError:
-            raise Exception("Failed to parse `{0}` into a datetime object".format(string))
 
     def __deserialize_model(self, data, cls):
         """
