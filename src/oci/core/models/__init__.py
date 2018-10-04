@@ -29,6 +29,7 @@ from .compute_instance_details import ComputeInstanceDetails
 from .connect_local_peering_gateways_details import ConnectLocalPeeringGatewaysDetails
 from .connect_remote_peering_connections_details import ConnectRemotePeeringConnectionsDetails
 from .console_history import ConsoleHistory
+from .copy_volume_backup_details import CopyVolumeBackupDetails
 from .cpe import Cpe
 from .create_app_catalog_subscription_details import CreateAppCatalogSubscriptionDetails
 from .create_boot_volume_backup_details import CreateBootVolumeBackupDetails
@@ -232,6 +233,7 @@ core_type_mapping = {
     "ConnectLocalPeeringGatewaysDetails": ConnectLocalPeeringGatewaysDetails,
     "ConnectRemotePeeringConnectionsDetails": ConnectRemotePeeringConnectionsDetails,
     "ConsoleHistory": ConsoleHistory,
+    "CopyVolumeBackupDetails": CopyVolumeBackupDetails,
     "Cpe": Cpe,
     "CreateAppCatalogSubscriptionDetails": CreateAppCatalogSubscriptionDetails,
     "CreateBootVolumeBackupDetails": CreateBootVolumeBackupDetails,
