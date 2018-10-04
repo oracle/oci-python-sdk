@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.0.5 - 2018-10-04
+====================
+
+Added
+-----
+* Support for trusted partner images through application listings and subscriptions in the Compute service
+* Support for object lifecycle policies in the Object Storage service
+* Support for copying objects across regions in the Object Storage service
+* Support for network address translation (NAT) gateways in the Networking service
+
+====================
 2.0.4 - 2018-09-27
 ====================
 

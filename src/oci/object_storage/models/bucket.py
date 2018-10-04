@@ -98,6 +98,10 @@ class Bucket(object):
             The value to assign to the kms_key_id property of this Bucket.
         :type kms_key_id: str
 
+        :param object_lifecycle_policy_etag:
+            The value to assign to the object_lifecycle_policy_etag property of this Bucket.
+        :type object_lifecycle_policy_etag: str
+
         """
         self.swagger_types = {
             'namespace': 'str',
@@ -111,7 +115,8 @@ class Bucket(object):
             'storage_tier': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'kms_key_id': 'str'
+            'kms_key_id': 'str',
+            'object_lifecycle_policy_etag': 'str'
         }
 
         self.attribute_map = {
@@ -126,7 +131,8 @@ class Bucket(object):
             'storage_tier': 'storageTier',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'kms_key_id': 'kmsKeyId'
+            'kms_key_id': 'kmsKeyId',
+            'object_lifecycle_policy_etag': 'objectLifecyclePolicyEtag'
         }
 
         self._namespace = None
@@ -141,6 +147,7 @@ class Bucket(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._kms_key_id = None
+        self._object_lifecycle_policy_etag = None
 
     @property
     def namespace(self):
@@ -477,6 +484,30 @@ class Bucket(object):
         :type: str
         """
         self._kms_key_id = kms_key_id
+
+    @property
+    def object_lifecycle_policy_etag(self):
+        """
+        Gets the object_lifecycle_policy_etag of this Bucket.
+        The entity tag for the live object lifecycle policy on the bucket.
+
+
+        :return: The object_lifecycle_policy_etag of this Bucket.
+        :rtype: str
+        """
+        return self._object_lifecycle_policy_etag
+
+    @object_lifecycle_policy_etag.setter
+    def object_lifecycle_policy_etag(self, object_lifecycle_policy_etag):
+        """
+        Sets the object_lifecycle_policy_etag of this Bucket.
+        The entity tag for the live object lifecycle policy on the bucket.
+
+
+        :param object_lifecycle_policy_etag: The object_lifecycle_policy_etag of this Bucket.
+        :type: str
+        """
+        self._object_lifecycle_policy_etag = object_lifecycle_policy_etag
 
     def __repr__(self):
         return formatted_flat_dict(self)
