@@ -3,6 +3,13 @@
 
 from __future__ import absolute_import
 
+from .app_catalog_listing import AppCatalogListing
+from .app_catalog_listing_resource_version import AppCatalogListingResourceVersion
+from .app_catalog_listing_resource_version_agreements import AppCatalogListingResourceVersionAgreements
+from .app_catalog_listing_resource_version_summary import AppCatalogListingResourceVersionSummary
+from .app_catalog_listing_summary import AppCatalogListingSummary
+from .app_catalog_subscription import AppCatalogSubscription
+from .app_catalog_subscription_summary import AppCatalogSubscriptionSummary
 from .attach_boot_volume_details import AttachBootVolumeDetails
 from .attach_i_scsi_volume_details import AttachIScsiVolumeDetails
 from .attach_paravirtualized_volume_details import AttachParavirtualizedVolumeDetails
@@ -22,6 +29,7 @@ from .connect_local_peering_gateways_details import ConnectLocalPeeringGatewaysD
 from .connect_remote_peering_connections_details import ConnectRemotePeeringConnectionsDetails
 from .console_history import ConsoleHistory
 from .cpe import Cpe
+from .create_app_catalog_subscription_details import CreateAppCatalogSubscriptionDetails
 from .create_boot_volume_backup_details import CreateBootVolumeBackupDetails
 from .create_boot_volume_details import CreateBootVolumeDetails
 from .create_cpe_details import CreateCpeDetails
@@ -35,6 +43,7 @@ from .create_image_details import CreateImageDetails
 from .create_instance_console_connection_details import CreateInstanceConsoleConnectionDetails
 from .create_internet_gateway_details import CreateInternetGatewayDetails
 from .create_local_peering_gateway_details import CreateLocalPeeringGatewayDetails
+from .create_nat_gateway_details import CreateNatGatewayDetails
 from .create_private_ip_details import CreatePrivateIpDetails
 from .create_public_ip_details import CreatePublicIpDetails
 from .create_remote_peering_connection_details import CreateRemotePeeringConnectionDetails
@@ -92,6 +101,7 @@ from .launch_instance_details import LaunchInstanceDetails
 from .launch_options import LaunchOptions
 from .letter_of_authority import LetterOfAuthority
 from .local_peering_gateway import LocalPeeringGateway
+from .nat_gateway import NatGateway
 from .paravirtualized_volume_attachment import ParavirtualizedVolumeAttachment
 from .peer_region_for_remote_peering import PeerRegionForRemotePeering
 from .port_range import PortRange
@@ -126,6 +136,7 @@ from .update_image_details import UpdateImageDetails
 from .update_instance_details import UpdateInstanceDetails
 from .update_internet_gateway_details import UpdateInternetGatewayDetails
 from .update_local_peering_gateway_details import UpdateLocalPeeringGatewayDetails
+from .update_nat_gateway_details import UpdateNatGatewayDetails
 from .update_private_ip_details import UpdatePrivateIpDetails
 from .update_public_ip_details import UpdatePublicIpDetails
 from .update_remote_peering_connection_details import UpdateRemotePeeringConnectionDetails
@@ -166,6 +177,13 @@ from .volume_source_from_volume_details import VolumeSourceFromVolumeDetails
 
 # Maps type names to classes for core services.
 core_type_mapping = {
+    "AppCatalogListing": AppCatalogListing,
+    "AppCatalogListingResourceVersion": AppCatalogListingResourceVersion,
+    "AppCatalogListingResourceVersionAgreements": AppCatalogListingResourceVersionAgreements,
+    "AppCatalogListingResourceVersionSummary": AppCatalogListingResourceVersionSummary,
+    "AppCatalogListingSummary": AppCatalogListingSummary,
+    "AppCatalogSubscription": AppCatalogSubscription,
+    "AppCatalogSubscriptionSummary": AppCatalogSubscriptionSummary,
     "AttachBootVolumeDetails": AttachBootVolumeDetails,
     "AttachIScsiVolumeDetails": AttachIScsiVolumeDetails,
     "AttachParavirtualizedVolumeDetails": AttachParavirtualizedVolumeDetails,
@@ -185,6 +203,7 @@ core_type_mapping = {
     "ConnectRemotePeeringConnectionsDetails": ConnectRemotePeeringConnectionsDetails,
     "ConsoleHistory": ConsoleHistory,
     "Cpe": Cpe,
+    "CreateAppCatalogSubscriptionDetails": CreateAppCatalogSubscriptionDetails,
     "CreateBootVolumeBackupDetails": CreateBootVolumeBackupDetails,
     "CreateBootVolumeDetails": CreateBootVolumeDetails,
     "CreateCpeDetails": CreateCpeDetails,
@@ -198,6 +217,7 @@ core_type_mapping = {
     "CreateInstanceConsoleConnectionDetails": CreateInstanceConsoleConnectionDetails,
     "CreateInternetGatewayDetails": CreateInternetGatewayDetails,
     "CreateLocalPeeringGatewayDetails": CreateLocalPeeringGatewayDetails,
+    "CreateNatGatewayDetails": CreateNatGatewayDetails,
     "CreatePrivateIpDetails": CreatePrivateIpDetails,
     "CreatePublicIpDetails": CreatePublicIpDetails,
     "CreateRemotePeeringConnectionDetails": CreateRemotePeeringConnectionDetails,
@@ -255,6 +275,7 @@ core_type_mapping = {
     "LaunchOptions": LaunchOptions,
     "LetterOfAuthority": LetterOfAuthority,
     "LocalPeeringGateway": LocalPeeringGateway,
+    "NatGateway": NatGateway,
     "ParavirtualizedVolumeAttachment": ParavirtualizedVolumeAttachment,
     "PeerRegionForRemotePeering": PeerRegionForRemotePeering,
     "PortRange": PortRange,
@@ -289,6 +310,7 @@ core_type_mapping = {
     "UpdateInstanceDetails": UpdateInstanceDetails,
     "UpdateInternetGatewayDetails": UpdateInternetGatewayDetails,
     "UpdateLocalPeeringGatewayDetails": UpdateLocalPeeringGatewayDetails,
+    "UpdateNatGatewayDetails": UpdateNatGatewayDetails,
     "UpdatePrivateIpDetails": UpdatePrivateIpDetails,
     "UpdatePublicIpDetails": UpdatePublicIpDetails,
     "UpdateRemotePeeringConnectionDetails": UpdateRemotePeeringConnectionDetails,

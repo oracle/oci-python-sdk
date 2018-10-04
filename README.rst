@@ -85,10 +85,6 @@ A downloadable version of the documentation is include with in the release zip, 
 
 __ https://github.com/oracle/oci-python-sdk/releases
 
-The downloadable version of the documentation does not contain the Key Management service API documentation.  This will be fixed with the next release.  For the Key Management service API, please refer to the online API documentation `here`__.
-
-__ https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/api/index.html
-
 ====
 Help
 ====

@@ -22,6 +22,13 @@ Core Services
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.core.models.AppCatalogListing
+    oci.core.models.AppCatalogListingResourceVersion
+    oci.core.models.AppCatalogListingResourceVersionAgreements
+    oci.core.models.AppCatalogListingResourceVersionSummary
+    oci.core.models.AppCatalogListingSummary
+    oci.core.models.AppCatalogSubscription
+    oci.core.models.AppCatalogSubscriptionSummary
     oci.core.models.AttachBootVolumeDetails
     oci.core.models.AttachIScsiVolumeDetails
     oci.core.models.AttachParavirtualizedVolumeDetails
@@ -41,6 +48,7 @@ Core Services
     oci.core.models.ConnectRemotePeeringConnectionsDetails
     oci.core.models.ConsoleHistory
     oci.core.models.Cpe
+    oci.core.models.CreateAppCatalogSubscriptionDetails
     oci.core.models.CreateBootVolumeBackupDetails
     oci.core.models.CreateBootVolumeDetails
     oci.core.models.CreateCpeDetails
@@ -54,6 +62,7 @@ Core Services
     oci.core.models.CreateInstanceConsoleConnectionDetails
     oci.core.models.CreateInternetGatewayDetails
     oci.core.models.CreateLocalPeeringGatewayDetails
+    oci.core.models.CreateNatGatewayDetails
     oci.core.models.CreatePrivateIpDetails
     oci.core.models.CreatePublicIpDetails
     oci.core.models.CreateRemotePeeringConnectionDetails
@@ -111,6 +120,7 @@ Core Services
     oci.core.models.LaunchOptions
     oci.core.models.LetterOfAuthority
     oci.core.models.LocalPeeringGateway
+    oci.core.models.NatGateway
     oci.core.models.ParavirtualizedVolumeAttachment
     oci.core.models.PeerRegionForRemotePeering
     oci.core.models.PortRange
@@ -145,6 +155,7 @@ Core Services
     oci.core.models.UpdateInstanceDetails
     oci.core.models.UpdateInternetGatewayDetails
     oci.core.models.UpdateLocalPeeringGatewayDetails
+    oci.core.models.UpdateNatGatewayDetails
     oci.core.models.UpdatePrivateIpDetails
     oci.core.models.UpdatePublicIpDetails
     oci.core.models.UpdateRemotePeeringConnectionDetails

@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class NamespaceMetadata(object):
     """
-    A NamespaceMetadta is a map for storing namespace and defaultS3CompartmentId, defaultSwiftCompartmentId.
+    A NamespaceMetadata is a map for storing namespace and defaultS3CompartmentId, defaultSwiftCompartmentId.
     """
 
     def __init__(self, **kwargs):
