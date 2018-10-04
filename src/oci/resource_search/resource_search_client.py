@@ -73,7 +73,8 @@ class ResourceSearchClient(object):
             'regional_client': True,
             'service_endpoint': kwargs.get('service_endpoint'),
             'timeout': kwargs.get('timeout'),
-            'base_path': '/20180409'
+            'base_path': '/20180409',
+            'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
         self.base_client = BaseClient("resource_search", config, signer, resource_search_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
