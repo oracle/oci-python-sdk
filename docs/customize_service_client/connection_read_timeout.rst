@@ -11,9 +11,9 @@
 
 Setting connection and read timeouts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The Python SDK uses the `Requests <http://docs.python-requests.org/en/master/>`_ library to make calls to OCI services. The SDK uses the Requests `definition <http://docs.python-requests.org/en/master/user/advanced/#timeouts>`_ for connection and read timeouts.
+The Python SDK uses the `Requests <http://docs.python-requests.org/en/master/>`_ library to make calls to Oracle Cloud Infrastructure services. The SDK uses the Requests `definition <http://docs.python-requests.org/en/master/user/advanced/#timeouts>`_ for connection and read timeouts.
 
-By default, calls made to OCI services have no connection or read timeout associated with them (i.e. it is possible to wait forever for a response). If you wish to override this default behaviour and set a timeout, you can do something similar to:
+By default, calls made to services have no connection or read timeout associated with them (i.e. it is possible to wait forever for a response). If you wish to override this default behaviour and set a timeout, you can do something similar to:
 
 .. code-block:: python
 

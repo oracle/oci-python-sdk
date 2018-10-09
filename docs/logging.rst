@@ -18,7 +18,7 @@ Logger names are of the form ``<hierarchy>.<id>`` where the ``<hierarchy>`` is s
 
 Request Logging
 ================
-Logging of the requests which the Python SDK sends to OCI services can be enabled by setting the ``log_requests`` attribute to ``True`` in your configuration. This could be done in your configuration file, for example:
+Logging of the requests which the Python SDK sends to Oracle Cloud Infrastructure services can be enabled by setting the ``log_requests`` attribute to ``True`` in your configuration. This could be done in your configuration file, for example:
 
 .. code-block:: text
 

@@ -11,7 +11,7 @@
 
 Using the SDK with a proxy server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The Python SDK uses the `Requests <http://docs.python-requests.org/en/master/>`_ library to make calls to OCI services. If your environment requires you to use a proxy server for outgoing HTTP requests 
+The Python SDK uses the `Requests <http://docs.python-requests.org/en/master/>`_ library to make calls to Oracle Cloud Infrastructure services. If your environment requires you to use a proxy server for outgoing HTTP requests 
 then you can set this up in the following ways:
 
 * Configuring environment variable as described `here <http://docs.python-requests.org/en/master/user/advanced/#proxies>`_
