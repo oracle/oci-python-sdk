@@ -1,7 +1,7 @@
 # coding: utf-8
 # Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
-#  This script retrieves all audit logs across an OCI Tenancy.
+#  This script retrieves all audit logs across an Oracle Cloud Infrastructure Tenancy.
 #  for a timespan defined by start_time and end_time.
 #  This sample script retrieves Audit events for last 5 days.
 #  This script will work at a tenancy level only.
