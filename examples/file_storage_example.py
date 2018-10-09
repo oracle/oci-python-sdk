@@ -118,8 +118,8 @@ if len(sys.argv) != 5:
 # The first argument is the name of the script, so start the index at 1
 compartment_id = sys.argv[1]
 availability_domain = sys.argv[2]
-namespace=sys.argv[3]
-defined_key=sys.argv[4]
+namespace = sys.argv[3]
+defined_key = sys.argv[4]
 
 # Here we apply a retry strategy to the call to ride out any throttles, timeouts or intermittent 500s (internal server
 # errors). The retry strategy will also make requests with an opc-retry-token that it generates.
