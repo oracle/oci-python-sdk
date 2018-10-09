@@ -39,7 +39,8 @@ ENUM_ATTR_TO_VALUE = {
     'CreateVolumeGroupBackupDetails': {'type': 'FULL'},
     'CreateBootVolumeBackupDetails': {'type': 'FULL'},
     'RecordOperation': {'operation': 'ADD'},
-    'CreateZoneDetails': {'zone_type': 'PRIMARY'}
+    'CreateZoneDetails': {'zone_type': 'PRIMARY'},
+    'CreateExternalBackupJobDetails': {'database_edition': 'STANDARD_EDITION', 'database_mode': 'SI'}
 }
 
 
