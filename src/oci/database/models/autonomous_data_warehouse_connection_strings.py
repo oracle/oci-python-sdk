@@ -17,6 +17,10 @@ class AutonomousDataWarehouseConnectionStrings(object):
         Initializes a new AutonomousDataWarehouseConnectionStrings object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param all_connection_strings:
+            The value to assign to the all_connection_strings property of this AutonomousDataWarehouseConnectionStrings.
+        :type all_connection_strings: dict(str, str)
+
         :param high:
             The value to assign to the high property of this AutonomousDataWarehouseConnectionStrings.
         :type high: str
@@ -31,20 +35,47 @@ class AutonomousDataWarehouseConnectionStrings(object):
 
         """
         self.swagger_types = {
+            'all_connection_strings': 'dict(str, str)',
             'high': 'str',
             'low': 'str',
             'medium': 'str'
         }
 
         self.attribute_map = {
+            'all_connection_strings': 'allConnectionStrings',
             'high': 'high',
             'low': 'low',
             'medium': 'medium'
         }
 
+        self._all_connection_strings = None
         self._high = None
         self._low = None
         self._medium = None
+
+    @property
+    def all_connection_strings(self):
+        """
+        Gets the all_connection_strings of this AutonomousDataWarehouseConnectionStrings.
+        All connection strings to use to connect to the Data Warehouse.
+
+
+        :return: The all_connection_strings of this AutonomousDataWarehouseConnectionStrings.
+        :rtype: dict(str, str)
+        """
+        return self._all_connection_strings
+
+    @all_connection_strings.setter
+    def all_connection_strings(self, all_connection_strings):
+        """
+        Sets the all_connection_strings of this AutonomousDataWarehouseConnectionStrings.
+        All connection strings to use to connect to the Data Warehouse.
+
+
+        :param all_connection_strings: The all_connection_strings of this AutonomousDataWarehouseConnectionStrings.
+        :type: dict(str, str)
+        """
+        self._all_connection_strings = all_connection_strings
 
     @property
     def high(self):

@@ -95,6 +95,10 @@ class AutonomousDataWarehouse(object):
             The value to assign to the db_name property of this AutonomousDataWarehouse.
         :type db_name: str
 
+        :param db_version:
+            The value to assign to the db_version property of this AutonomousDataWarehouse.
+        :type db_version: str
+
         :param defined_tags:
             The value to assign to the defined_tags property of this AutonomousDataWarehouse.
         :type defined_tags: dict(str, dict(str, object))
@@ -142,6 +146,7 @@ class AutonomousDataWarehouse(object):
             'cpu_core_count': 'int',
             'data_storage_size_in_tbs': 'int',
             'db_name': 'str',
+            'db_version': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -159,6 +164,7 @@ class AutonomousDataWarehouse(object):
             'cpu_core_count': 'cpuCoreCount',
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
             'db_name': 'dbName',
+            'db_version': 'dbVersion',
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
@@ -175,6 +181,7 @@ class AutonomousDataWarehouse(object):
         self._cpu_core_count = None
         self._data_storage_size_in_tbs = None
         self._db_name = None
+        self._db_version = None
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
@@ -308,6 +315,30 @@ class AutonomousDataWarehouse(object):
         :type: str
         """
         self._db_name = db_name
+
+    @property
+    def db_version(self):
+        """
+        Gets the db_version of this AutonomousDataWarehouse.
+        A valid Oracle Database version for Autonomous Data Warehouse.
+
+
+        :return: The db_version of this AutonomousDataWarehouse.
+        :rtype: str
+        """
+        return self._db_version
+
+    @db_version.setter
+    def db_version(self, db_version):
+        """
+        Sets the db_version of this AutonomousDataWarehouse.
+        A valid Oracle Database version for Autonomous Data Warehouse.
+
+
+        :param db_version: The db_version of this AutonomousDataWarehouse.
+        :type: str
+        """
+        self._db_version = db_version
 
     @property
     def defined_tags(self):
@@ -463,7 +494,7 @@ class AutonomousDataWarehouse(object):
     def lifecycle_details(self):
         """
         Gets the lifecycle_details of this AutonomousDataWarehouse.
-        Additional information about the current lifecycle state.
+        Information about the current lifecycle state.
 
 
         :return: The lifecycle_details of this AutonomousDataWarehouse.
@@ -475,7 +506,7 @@ class AutonomousDataWarehouse(object):
     def lifecycle_details(self, lifecycle_details):
         """
         Sets the lifecycle_details of this AutonomousDataWarehouse.
-        Additional information about the current lifecycle state.
+        Information about the current lifecycle state.
 
 
         :param lifecycle_details: The lifecycle_details of this AutonomousDataWarehouse.

@@ -59,6 +59,10 @@ class AutonomousDatabaseSummary(object):
     LIFECYCLE_STATE_RESTORE_IN_PROGRESS = "RESTORE_IN_PROGRESS"
 
     #: A constant which can be used with the lifecycle_state property of a AutonomousDatabaseSummary.
+    #: This constant has a value of "RESTORE_FAILED"
+    LIFECYCLE_STATE_RESTORE_FAILED = "RESTORE_FAILED"
+
+    #: A constant which can be used with the lifecycle_state property of a AutonomousDatabaseSummary.
     #: This constant has a value of "BACKUP_IN_PROGRESS"
     LIFECYCLE_STATE_BACKUP_IN_PROGRESS = "BACKUP_IN_PROGRESS"
 
@@ -95,6 +99,10 @@ class AutonomousDatabaseSummary(object):
             The value to assign to the db_name property of this AutonomousDatabaseSummary.
         :type db_name: str
 
+        :param db_version:
+            The value to assign to the db_version property of this AutonomousDatabaseSummary.
+        :type db_version: str
+
         :param defined_tags:
             The value to assign to the defined_tags property of this AutonomousDatabaseSummary.
         :type defined_tags: dict(str, dict(str, object))
@@ -123,7 +131,7 @@ class AutonomousDatabaseSummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this AutonomousDatabaseSummary.
-            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -142,6 +150,7 @@ class AutonomousDatabaseSummary(object):
             'cpu_core_count': 'int',
             'data_storage_size_in_tbs': 'int',
             'db_name': 'str',
+            'db_version': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -159,6 +168,7 @@ class AutonomousDatabaseSummary(object):
             'cpu_core_count': 'cpuCoreCount',
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
             'db_name': 'dbName',
+            'db_version': 'dbVersion',
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
@@ -175,6 +185,7 @@ class AutonomousDatabaseSummary(object):
         self._cpu_core_count = None
         self._data_storage_size_in_tbs = None
         self._db_name = None
+        self._db_version = None
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
@@ -308,6 +319,30 @@ class AutonomousDatabaseSummary(object):
         :type: str
         """
         self._db_name = db_name
+
+    @property
+    def db_version(self):
+        """
+        Gets the db_version of this AutonomousDatabaseSummary.
+        A valid Oracle Database version for Autonomous Database.
+
+
+        :return: The db_version of this AutonomousDatabaseSummary.
+        :rtype: str
+        """
+        return self._db_version
+
+    @db_version.setter
+    def db_version(self, db_version):
+        """
+        Sets the db_version of this AutonomousDatabaseSummary.
+        A valid Oracle Database version for Autonomous Database.
+
+
+        :param db_version: The db_version of this AutonomousDatabaseSummary.
+        :type: str
+        """
+        self._db_version = db_version
 
     @property
     def defined_tags(self):
@@ -463,7 +498,7 @@ class AutonomousDatabaseSummary(object):
     def lifecycle_details(self):
         """
         Gets the lifecycle_details of this AutonomousDatabaseSummary.
-        Additional information about the current lifecycle state.
+        Information about the current lifecycle state.
 
 
         :return: The lifecycle_details of this AutonomousDatabaseSummary.
@@ -475,7 +510,7 @@ class AutonomousDatabaseSummary(object):
     def lifecycle_details(self, lifecycle_details):
         """
         Sets the lifecycle_details of this AutonomousDatabaseSummary.
-        Additional information about the current lifecycle state.
+        Information about the current lifecycle state.
 
 
         :param lifecycle_details: The lifecycle_details of this AutonomousDatabaseSummary.
@@ -489,7 +524,7 @@ class AutonomousDatabaseSummary(object):
         **[Required]** Gets the lifecycle_state of this AutonomousDatabaseSummary.
         The current state of the database.
 
-        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -508,7 +543,7 @@ class AutonomousDatabaseSummary(object):
         :param lifecycle_state: The lifecycle_state of this AutonomousDatabaseSummary.
         :type: str
         """
-        allowed_values = ["PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION"]
+        allowed_values = ["PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
