@@ -30,6 +30,7 @@ Database
     oci.database.models.AutonomousDatabaseSummary
     oci.database.models.Backup
     oci.database.models.BackupSummary
+    oci.database.models.CompleteExternalBackupJobDetails
     oci.database.models.CreateAutonomousDataWarehouseBackupDetails
     oci.database.models.CreateAutonomousDataWarehouseDetails
     oci.database.models.CreateAutonomousDatabaseBackupDetails
@@ -44,6 +45,7 @@ Database
     oci.database.models.CreateDbHomeWithDbSystemIdBase
     oci.database.models.CreateDbHomeWithDbSystemIdDetails
     oci.database.models.CreateDbHomeWithDbSystemIdFromBackupDetails
+    oci.database.models.CreateExternalBackupJobDetails
     oci.database.models.DataGuardAssociation
     oci.database.models.DataGuardAssociationSummary
     oci.database.models.Database
@@ -57,7 +59,10 @@ Database
     oci.database.models.DbSystemShapeSummary
     oci.database.models.DbSystemSummary
     oci.database.models.DbVersionSummary
+    oci.database.models.ExternalBackupJob
     oci.database.models.FailoverDataGuardAssociationDetails
+    oci.database.models.GenerateAutonomousDataWarehouseWalletDetails
+    oci.database.models.GenerateAutonomousDatabaseWalletDetails
     oci.database.models.LaunchDbSystemBase
     oci.database.models.LaunchDbSystemDetails
     oci.database.models.LaunchDbSystemFromBackupDetails

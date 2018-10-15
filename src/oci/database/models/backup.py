@@ -17,6 +17,22 @@ class Backup(object):
     __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
     """
 
+    #: A constant which can be used with the database_edition property of a Backup.
+    #: This constant has a value of "STANDARD_EDITION"
+    DATABASE_EDITION_STANDARD_EDITION = "STANDARD_EDITION"
+
+    #: A constant which can be used with the database_edition property of a Backup.
+    #: This constant has a value of "ENTERPRISE_EDITION"
+    DATABASE_EDITION_ENTERPRISE_EDITION = "ENTERPRISE_EDITION"
+
+    #: A constant which can be used with the database_edition property of a Backup.
+    #: This constant has a value of "ENTERPRISE_EDITION_HIGH_PERFORMANCE"
+    DATABASE_EDITION_ENTERPRISE_EDITION_HIGH_PERFORMANCE = "ENTERPRISE_EDITION_HIGH_PERFORMANCE"
+
+    #: A constant which can be used with the database_edition property of a Backup.
+    #: This constant has a value of "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
+    DATABASE_EDITION_ENTERPRISE_EDITION_EXTREME_PERFORMANCE = "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
+
     #: A constant which can be used with the lifecycle_state property of a Backup.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -64,15 +80,17 @@ class Backup(object):
 
         :param database_edition:
             The value to assign to the database_edition property of this Backup.
+            Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type database_edition: str
 
         :param database_id:
             The value to assign to the database_id property of this Backup.
         :type database_id: str
 
-        :param db_data_size_in_mbs:
-            The value to assign to the db_data_size_in_mbs property of this Backup.
-        :type db_data_size_in_mbs: int
+        :param database_size_in_g_bs:
+            The value to assign to the database_size_in_g_bs property of this Backup.
+        :type database_size_in_g_bs: float
 
         :param display_name:
             The value to assign to the display_name property of this Backup.
@@ -112,7 +130,7 @@ class Backup(object):
             'compartment_id': 'str',
             'database_edition': 'str',
             'database_id': 'str',
-            'db_data_size_in_mbs': 'int',
+            'database_size_in_g_bs': 'float',
             'display_name': 'str',
             'id': 'str',
             'lifecycle_details': 'str',
@@ -127,7 +145,7 @@ class Backup(object):
             'compartment_id': 'compartmentId',
             'database_edition': 'databaseEdition',
             'database_id': 'databaseId',
-            'db_data_size_in_mbs': 'dbDataSizeInMBs',
+            'database_size_in_g_bs': 'databaseSizeInGBs',
             'display_name': 'displayName',
             'id': 'id',
             'lifecycle_details': 'lifecycleDetails',
@@ -141,7 +159,7 @@ class Backup(object):
         self._compartment_id = None
         self._database_edition = None
         self._database_id = None
-        self._db_data_size_in_mbs = None
+        self._database_size_in_g_bs = None
         self._display_name = None
         self._id = None
         self._lifecycle_details = None
@@ -208,6 +226,9 @@ class Backup(object):
         Gets the database_edition of this Backup.
         The Oracle Database edition of the DB system from which the database backup was taken.
 
+        Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
 
         :return: The database_edition of this Backup.
         :rtype: str
@@ -224,6 +245,9 @@ class Backup(object):
         :param database_edition: The database_edition of this Backup.
         :type: str
         """
+        allowed_values = ["STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"]
+        if not value_allowed_none_or_none_sentinel(database_edition, allowed_values):
+            database_edition = 'UNKNOWN_ENUM_VALUE'
         self._database_edition = database_edition
 
     @property
@@ -255,28 +279,28 @@ class Backup(object):
         self._database_id = database_id
 
     @property
-    def db_data_size_in_mbs(self):
+    def database_size_in_g_bs(self):
         """
-        Gets the db_data_size_in_mbs of this Backup.
-        Size of the database in megabytes (MB) at the time the backup was taken.
+        Gets the database_size_in_g_bs of this Backup.
+        The size of the database in gigabytes at the time the backup was taken.
 
 
-        :return: The db_data_size_in_mbs of this Backup.
-        :rtype: int
+        :return: The database_size_in_g_bs of this Backup.
+        :rtype: float
         """
-        return self._db_data_size_in_mbs
+        return self._database_size_in_g_bs
 
-    @db_data_size_in_mbs.setter
-    def db_data_size_in_mbs(self, db_data_size_in_mbs):
+    @database_size_in_g_bs.setter
+    def database_size_in_g_bs(self, database_size_in_g_bs):
         """
-        Sets the db_data_size_in_mbs of this Backup.
-        Size of the database in megabytes (MB) at the time the backup was taken.
+        Sets the database_size_in_g_bs of this Backup.
+        The size of the database in gigabytes at the time the backup was taken.
 
 
-        :param db_data_size_in_mbs: The db_data_size_in_mbs of this Backup.
-        :type: int
+        :param database_size_in_g_bs: The database_size_in_g_bs of this Backup.
+        :type: float
         """
-        self._db_data_size_in_mbs = db_data_size_in_mbs
+        self._database_size_in_g_bs = database_size_in_g_bs
 
     @property
     def display_name(self):
