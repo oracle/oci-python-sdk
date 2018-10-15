@@ -14,5 +14,6 @@ whitelisted:
   - udx-788
   - udx-1178
   - udx-198
-
   - udx-1036-rebootmigration
+  - udx-802
+  - udx-810

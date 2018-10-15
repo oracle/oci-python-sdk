@@ -9809,7 +9809,7 @@ class VirtualNetworkClient(object):
     def update_subnet(self, subnet_id, update_subnet_details, **kwargs):
         """
         UpdateSubnet
-        Updates the specified subnet's display name. Avoid entering confidential information.
+        Updates the specified subnet.
 
 
         :param str subnet_id: (required)
@@ -9889,8 +9889,7 @@ class VirtualNetworkClient(object):
     def update_vcn(self, vcn_id, update_vcn_details, **kwargs):
         """
         UpdateVcn
-        Updates the specified VCN's display name.
-        Avoid entering confidential information.
+        Updates the specified VCN.
 
 
         :param str vcn_id: (required)

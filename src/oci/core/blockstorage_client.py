@@ -2903,7 +2903,7 @@ class BlockstorageClient(object):
     def update_boot_volume(self, boot_volume_id, update_boot_volume_details, **kwargs):
         """
         UpdateBootVolume
-        Updates the specified boot volume's display name.
+        Updates the specified boot volume's display name, defined tags, and free-form tags.
 
 
         :param str boot_volume_id: (required)
