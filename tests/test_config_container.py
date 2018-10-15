@@ -8,6 +8,7 @@
 from . import vcr_mods  # noqa: F401
 
 import oci
+import time
 import vcr
 
 vcr_mode = None
@@ -37,3 +38,12 @@ def do_wait(client, *args, **kwargs):
         kwargs['max_interval_seconds'] = 0
 
     return oci.wait_until(client, *args, **kwargs)
+
+
+# If we are mocking responses, then we don't need to sleep while waiting
+# for a service to get to a particular state
+def vcr_sleep(duration):
+    if vcr_mode == 'none':
+        duration = 0
+
+    time.sleep(duration)

@@ -1,7 +1,6 @@
 # coding: utf-8
 # Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
-import time
 from . import util
 from .. import test_config_container
 import oci
@@ -24,7 +23,7 @@ class TestVirtualNetwork:
                 self.subtest_ip_sec_connection_operations(virtual_network)
                 self.subtest_route_table_operations(virtual_network)
             finally:
-                time.sleep(20)
+                test_config_container.vcr_sleep(20)
                 self.subtest_delete(virtual_network)
 
     @util.log_test
@@ -111,7 +110,7 @@ class TestVirtualNetwork:
         util.validate_response(result, expect_etag=True)
         assert result.data.egress_security_rules[0].is_stateless
 
-        time.sleep(20)
+        test_config_container.vcr_sleep(20)
 
         explicit_stateful_egress_rule = self.create_default_egress_security_rule()
         explicit_stateful_egress_rule.is_stateless = False
@@ -120,7 +119,7 @@ class TestVirtualNetwork:
         util.validate_response(result, expect_etag=True)
         assert not result.data.egress_security_rules[0].is_stateless
 
-        time.sleep(20)
+        test_config_container.vcr_sleep(20)
 
         implicit_stateful_egress_rule = self.create_default_egress_security_rule()
         update_security_list_details.egress_security_rules = [implicit_stateful_egress_rule]
