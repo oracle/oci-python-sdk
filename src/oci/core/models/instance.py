@@ -154,6 +154,10 @@ class Instance(object):
             The value to assign to the time_created property of this Instance.
         :type time_created: datetime
 
+        :param time_maintenance_reboot_due:
+            The value to assign to the time_maintenance_reboot_due property of this Instance.
+        :type time_maintenance_reboot_due: datetime
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -173,7 +177,8 @@ class Instance(object):
             'region': 'str',
             'shape': 'str',
             'source_details': 'InstanceSourceDetails',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'time_maintenance_reboot_due': 'datetime'
         }
 
         self.attribute_map = {
@@ -194,7 +199,8 @@ class Instance(object):
             'region': 'region',
             'shape': 'shape',
             'source_details': 'sourceDetails',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'time_maintenance_reboot_due': 'timeMaintenanceRebootDue'
         }
 
         self._availability_domain = None
@@ -215,6 +221,7 @@ class Instance(object):
         self._shape = None
         self._source_details = None
         self._time_created = None
+        self._time_maintenance_reboot_due = None
 
     @property
     def availability_domain(self):
@@ -779,6 +786,36 @@ class Instance(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def time_maintenance_reboot_due(self):
+        """
+        Gets the time_maintenance_reboot_due of this Instance.
+        The date and time the instance is expected to be stopped / started,  in the format defined by RFC3339.
+        After that time if instance hasn't been rebooted, Oracle will reboot the instance within 24 hours of the due time.
+        Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state.
+        Example: `2018-05-25T21:10:29.600Z`
+
+
+        :return: The time_maintenance_reboot_due of this Instance.
+        :rtype: datetime
+        """
+        return self._time_maintenance_reboot_due
+
+    @time_maintenance_reboot_due.setter
+    def time_maintenance_reboot_due(self, time_maintenance_reboot_due):
+        """
+        Sets the time_maintenance_reboot_due of this Instance.
+        The date and time the instance is expected to be stopped / started,  in the format defined by RFC3339.
+        After that time if instance hasn't been rebooted, Oracle will reboot the instance within 24 hours of the due time.
+        Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state.
+        Example: `2018-05-25T21:10:29.600Z`
+
+
+        :param time_maintenance_reboot_due: The time_maintenance_reboot_due of this Instance.
+        :type: datetime
+        """
+        self._time_maintenance_reboot_due = time_maintenance_reboot_due
 
     def __repr__(self):
         return formatted_flat_dict(self)
