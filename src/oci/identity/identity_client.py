@@ -249,11 +249,11 @@ class IdentityClient(object):
     def create_compartment(self, create_compartment_details, **kwargs):
         """
         CreateCompartment
-        Creates a new compartment in your tenancy.
+        Creates a new compartment in the specified compartment.
 
         **Important:** Compartments cannot be deleted.
 
-        You must specify your tenancy's OCID as the compartment ID in the request object. Remember that the tenancy
+        Specify the parent compartment's OCID as the compartment ID in the request object. Remember that the tenancy
         is simply the root compartment. For information about OCIDs, see
         `Resource Identifiers`__.
 
@@ -1650,6 +1650,79 @@ class IdentityClient(object):
         path_params = {
             "userId": user_id,
             "authTokenId": auth_token_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
+    def delete_compartment(self, compartment_id, **kwargs):
+        """
+        DeleteCompartment
+        Deletes the specified compartment. The compartment must be empty.
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/compartments/{compartmentId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "compartmentId": compartment_id
         }
 
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
@@ -3082,6 +3155,71 @@ class IdentityClient(object):
                 header_params=header_params,
                 response_type="UserGroupMembership")
 
+    def get_work_request(self, work_request_id, **kwargs):
+        """
+        GetWorkRequest
+        Gets details on a specified work request. The workRequestID is returned in the opc-workrequest-id header
+        for any asynchronous operation in the Identity and Access Management service.
+
+
+        :param str work_request_id: (required)
+            The OCID of the work request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.WorkRequest`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/workRequests/{workRequestId}"
+        method = "GET"
+
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workRequestId": work_request_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="WorkRequest")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="WorkRequest")
+
     def list_api_keys(self, user_id, **kwargs):
         """
         ListApiKeys
@@ -3227,7 +3365,7 @@ class IdentityClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment (remember that the tenancy is simply the root compartment).
+            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3282,21 +3420,54 @@ class IdentityClient(object):
     def list_compartments(self, compartment_id, **kwargs):
         """
         ListCompartments
-        Lists the compartments in your tenancy. You must specify your tenancy's OCID as the value
-        for the compartment ID (remember that the tenancy is simply the root compartment).
+        Lists the compartments in a specified compartment. The members of the list
+        returned depends on the values set for several parameters.
+
+        With the exception of the tenancy (root compartment), the ListCompartments operation
+        returns only the first-level child compartments in the parent compartment specified in
+        `compartmentId`. The list does not include any subcompartments of the child
+        compartments (grandchildren).
+
+        The parameter `accessLevel` specifies whether to return only those compartments for which the
+        requestor has INSPECT permissions on at least one resource directly
+        or indirectly (the resource can be in a subcompartment).
+
+        The parameter `compartmentIdInSubtree` applies only when you perform ListCompartments on the
+        tenancy (root compartment). When set to true, the entire hierarchy of compartments can be returned.
+        To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+        set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ANY.
+
         See `Where to Get the Tenancy's OCID and User's OCID`__.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment (remember that the tenancy is simply the root compartment).
+            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
+
+        :param str access_level: (optional)
+            Valid values are `ANY` and `ACCESSIBLE`. Default is `ANY`.
+            Setting this to `ACCESSIBLE` returns only those compartments for which the
+            user has INSPECT permissions directly or indirectly (permissions can be on a
+            resource in a subcompartment). For the compartments on which the user indirectly has
+            INSPECT permissions, a restricted set of fields is returned.
+
+            When set to `ANY` permissions are not checked.
+
+            Allowed values are: "ANY", "ACCESSIBLE"
+
+        :param bool compartment_id_in_subtree: (optional)
+            Default is false. Can only be set to true when performing
+            ListCompartments on the tenancy (root compartment).
+            When set to true, the hierarchy of compartments is traversed
+            and all compartments and subcompartments in the tenancy are
+            returned depending on the the setting of `accessLevel`.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3316,17 +3487,28 @@ class IdentityClient(object):
         expected_kwargs = [
             "retry_strategy",
             "page",
-            "limit"
+            "limit",
+            "access_level",
+            "compartment_id_in_subtree"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_compartments got unknown kwargs: {!r}".format(extra_kwargs))
 
+        if 'access_level' in kwargs:
+            access_level_allowed_values = ["ANY", "ACCESSIBLE"]
+            if kwargs['access_level'] not in access_level_allowed_values:
+                raise ValueError(
+                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                )
+
         query_params = {
             "compartmentId": compartment_id,
             "page": kwargs.get("page", missing),
-            "limit": kwargs.get("limit", missing)
+            "limit": kwargs.get("limit", missing),
+            "accessLevel": kwargs.get("access_level", missing),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -3354,6 +3536,81 @@ class IdentityClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="list[Compartment]")
+
+    def list_cost_tracking_tags(self, compartment_id, **kwargs):
+        """
+        ListCostTrackingTags
+        Lists all the tags enabled for cost-tracking in the specified tenancy. For information about
+        cost-tracking tags, see `Using Cost-tracking Tags`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#costs
+
+
+        :param str compartment_id: (required)
+            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.Tag`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/tagNamespaces/actions/listCostTrackingTags"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_cost_tracking_tags got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[Tag]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[Tag]")
 
     def list_customer_secret_keys(self, user_id, **kwargs):
         """
@@ -3431,7 +3688,7 @@ class IdentityClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment (remember that the tenancy is simply the root compartment).
+            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -3507,7 +3764,7 @@ class IdentityClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment (remember that the tenancy is simply the root compartment).
+            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
 
         :param str availability_domain: (required)
             The name of the availibilityDomain.
@@ -3574,7 +3831,7 @@ class IdentityClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment (remember that the tenancy is simply the root compartment).
+            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -3656,7 +3913,7 @@ class IdentityClient(object):
             Allowed values are: "SAML2"
 
         :param str compartment_id: (required)
-            The OCID of the compartment (remember that the tenancy is simply the root compartment).
+            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -3818,7 +4075,7 @@ class IdentityClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment (remember that the tenancy is simply the root compartment).
+            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -4135,7 +4392,7 @@ class IdentityClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment (remember that the tenancy is simply the root compartment).
+            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -4307,7 +4564,7 @@ class IdentityClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment (remember that the tenancy is simply the root compartment).
+            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
 
         :param str user_id: (optional)
             The OCID of the user.
@@ -4393,7 +4650,7 @@ class IdentityClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment (remember that the tenancy is simply the root compartment).
+            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -4457,6 +4714,83 @@ class IdentityClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="list[User]")
+
+    def list_work_requests(self, compartment_id, **kwargs):
+        """
+        ListWorkRequests
+        Lists the work requests in compartment.
+
+
+        :param str compartment_id: (required)
+            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+        :param str resource_identifier: (optional)
+            The identifier of the resource the work request affects.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.WorkRequestSummary`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/workRequests/"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "page",
+            "limit",
+            "resource_identifier"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "resourceIdentifier": kwargs.get("resource_identifier", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[WorkRequestSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[WorkRequestSummary]")
 
     def remove_user_from_group(self, user_group_membership_id, **kwargs):
         """

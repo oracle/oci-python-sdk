@@ -64,7 +64,7 @@ class CreateCompartmentDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateCompartmentDetails.
-        The OCID of the tenancy containing the compartment.
+        The OCID of the parent compartment containing the compartment.
 
 
         :return: The compartment_id of this CreateCompartmentDetails.
@@ -76,7 +76,7 @@ class CreateCompartmentDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateCompartmentDetails.
-        The OCID of the tenancy containing the compartment.
+        The OCID of the parent compartment containing the compartment.
 
 
         :param compartment_id: The compartment_id of this CreateCompartmentDetails.
@@ -89,7 +89,7 @@ class CreateCompartmentDetails(object):
         """
         **[Required]** Gets the name of this CreateCompartmentDetails.
         The name you assign to the compartment during creation. The name must be unique across all compartments
-        in the tenancy. Avoid entering confidential information.
+        in the parent compartment. Avoid entering confidential information.
 
 
         :return: The name of this CreateCompartmentDetails.
@@ -102,7 +102,7 @@ class CreateCompartmentDetails(object):
         """
         Sets the name of this CreateCompartmentDetails.
         The name you assign to the compartment during creation. The name must be unique across all compartments
-        in the tenancy. Avoid entering confidential information.
+        in the parent compartment. Avoid entering confidential information.
 
 
         :param name: The name of this CreateCompartmentDetails.

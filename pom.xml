@@ -1153,7 +1153,7 @@
       <dependency>
         <groupId>com.oracle.pic.identity</groupId>
         <artifactId>identity-control-plane-api-spec</artifactId>
-        <version>0.2.103</version>
+        <version>0.2.436</version>
       </dependency>
       <dependency>
         <groupId>com.oracle.pic.casper</groupId>
