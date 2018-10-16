@@ -11,13 +11,6 @@ import six
 
 POM_LOCATION = "pom.xml"
 ROOT_INIT_LOCATION = "src/oci/__init__.py"
-SERVICE_ENDPOINTS_FILE_LOCATION = "src/oci/service_endpoints.py"
-
-# this is to support specs that contain multiple services
-SPECS_TO_SERVICES = {
-    "core": ["blockstorage", "compute", "virtual_network"],
-    "key_management": ["kms_crypto", "kms_provisioning", "kms_vault"]
-}
 
 ROOT_INIT_FILE_TEMPLATE = """from . import {spec_names}
 from . import auth, config, constants, decorators, exceptions, regions, pagination, retry
@@ -74,26 +67,6 @@ def write_root_init_file(spec_to_endpoint):
         f.write(content)
 
 
-def write_regions_file(spec_to_endpoint):
-    entries = []
-    entry_format = '"{spec_name}": "{endpoint}"'
-    spec_names = sorted(spec_to_endpoint)
-    for spec_name in spec_names:
-        if spec_name in SPECS_TO_SERVICES:
-            for service in SPECS_TO_SERVICES[spec_name]:
-                # the endpoint is specified per spec, so give all serices in that spec the same endpoint
-                entries.append(entry_format.format(spec_name=service, endpoint=spec_to_endpoint[spec_name]))
-        else:
-            entries.append(entry_format.format(spec_name=spec_name, endpoint=spec_to_endpoint[spec_name]))
-    
-    content = ",\n    ".join(entries)
-
-    with open(SERVICE_ENDPOINTS_FILE_LOCATION, 'w+') as f:
-        content = SERVICE_ENDPOINTS_TEMPLATE.format(endpoints=content)
-        f.write(content)
-
-
 pom = parse_pom()
 spec_to_endpoint = get_spec_to_endpoint_map(pom)
 write_root_init_file(spec_to_endpoint)
-write_regions_file(spec_to_endpoint)
