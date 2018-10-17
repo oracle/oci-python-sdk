@@ -386,13 +386,13 @@ class BaseClient(object):
         :param obj: The data to serialize.
         :return: The serialized form of data.
         """
-        types = (six.string_types, int, float, bool, type(None))
+        types = (six.string_types, six.integer_types, float, bool, type(None))
 
         declared_swagger_type_to_acceptable_python_types = {
             'str': six.string_types,
             'bool': bool,
-            'int': (float, int),
-            'float': (float, int)
+            'int': (float, six.integer_types),
+            'float': (float, six.integer_types)
         }
 
         # if there is a declared type for this obj, then validate that obj is of that type. None types (either None or the NONE_SENTINEL) are not validated but
