@@ -5,12 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
-2.0.6 - TBD
+2.0.6 - 2018-10-18
 ====================
 
 Added
 -----
-* TBD
+* Support for cost tracking tags in the Identity service
+* Support for generating and downloading wallets in the Database service
+* Support for creating a standalone backup from an on-premises database in the Database service
+* Support for db version and additional connection strings in the Autonomous Transaction Processing and Autonomous Data Warehouse resources of the Database service
+* Support for copying volume backups across regions in the Block Storage service
+* Support for deleting compartments in the Identity service
+* Support for reboot migration for virtual machines in the Compute service
+* Support for Instance Pools and Instance Configurations in the Compute service
 
 ====================
 2.0.5 - 2018-10-04
