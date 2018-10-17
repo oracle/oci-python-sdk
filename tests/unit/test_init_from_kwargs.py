@@ -8,52 +8,21 @@ import pytest
 from oci._vendor import six
 
 
-ENUM_ATTR_TO_VALUE = {
-    'CreateVirtualCircuitDetails': {'type': 'PRIVATE'},
-    'UpdateVirtualCircuitDetails': {'provider_state': 'ACTIVE'},
-    'PatchDetails': {'action': 'APPLY'},
-    'LaunchDbSystemBase': {'source': 'DB_BACKUP', 'license_model': 'LICENSE_INCLUDED', 'disk_redundancy': 'NORMAL', 'database_edition': 'STANDARD_EDITION'},
-    'LaunchDbSystemDetails': {'source': 'DB_BACKUP', 'license_model': 'LICENSE_INCLUDED', 'disk_redundancy': 'NORMAL', 'database_edition': 'STANDARD_EDITION'},
-    'LaunchDbSystemFromBackupDetails': {'source': 'DB_BACKUP', 'license_model': 'LICENSE_INCLUDED', 'disk_redundancy': 'NORMAL', 'database_edition': 'STANDARD_EDITION'},
-    'CreateAutonomousDataWarehouseDetails': {'license_model': 'LICENSE_INCLUDED'},
-    'CreateAutonomousDatabaseDetails': {'license_model': 'LICENSE_INCLUDED'},
-    'CreateDatabaseDetails': {'db_workload': 'OLTP'},
-    'CreateDataGuardAssociationDetails': {'protection_mode': 'MAXIMUM_AVAILABILITY', 'transport_type': 'SYNC'},
-    'CreateDataGuardAssociationToExistingDbSystemDetails': {'protection_mode': 'MAXIMUM_AVAILABILITY', 'transport_type': 'SYNC'},
-    'CreateSaml2IdentityProviderDetails': {'protocol': 'SAML2', 'product_type': 'ADFS'},
-    'UpdateSaml2IdentityProviderDetails': {'protocol': 'SAML2', 'product_type': 'ADFS'},
-    'CreateIdentityProviderDetails': {'protocol': 'SAML2', 'product_type': 'ADFS'},
-    'UpdateIdentityProviderDetails': {'protocol': 'SAML2', 'product_type': 'ADFS'},
-    'CreateBucketDetails': {'public_access_type': 'NoPublicAccess', 'storage_tier': 'Standard'},
-    'UpdateBucketDetails': {'public_access_type': 'NoPublicAccess'},
-    'CreatePreauthenticatedRequestDetails': {'access_type': 'ObjectRead'},
-    'CreateDbHomeWithDbSystemIdBase': {'source': 'DB_BACKUP'},
-    'CreateDbHomeWithDbSystemIdFromBackupDetails': {'source': 'DB_BACKUP'},
-    'CreateDbHomeWithDbSystemIdDetails': {'source': 'NONE'},
-    'CreateImageDetails': {'launch_mode': 'NATIVE'},
-    'ImageSourceDetails': {'source_image_type': 'QCOW2'},
-    'ImageSourceViaObjectStorageUriDetails': {'source_image_type': 'QCOW2'},
-    'ImageSourceViaObjectStorageTupleDetails': {'source_image_type': 'QCOW2'},
-    'CreatePublicIpDetails': {'lifetime': 'RESERVED'},
-    'CreateVolumeBackupDetails': {'type': 'FULL'},
-    'CreateVolumeGroupBackupDetails': {'type': 'FULL'},
-    'CreateBootVolumeBackupDetails': {'type': 'FULL'},
-    'RecordOperation': {'operation': 'ADD'},
-    'CreateZoneDetails': {'zone_type': 'PRIMARY'},
-    'CreateExternalBackupJobDetails': {'database_edition': 'STANDARD_EDITION', 'database_mode': 'SI'}
-}
-
-
 def test_all_model_classes_can_be_init_from_kwargs():
-    model_mappings = [
-        oci.audit.models.audit_type_mapping,
-        oci.core.models.core_type_mapping,
-        oci.database.models.database_type_mapping,
-        oci.dns.models.dns_type_mapping,
-        oci.identity.models.identity_type_mapping,
-        oci.load_balancer.models.load_balancer_type_mapping,
-        oci.object_storage.models.object_storage_type_mapping
-    ]
+
+    # Programmitically get all the model mappings by inspecting all of the modules
+    # in oci.  This assumes that the model has a dictionary with a name that
+    # fits the pattern "<module>_type_mapping".  Example, audit_type_mapping.
+    # This list used to be maintained by hand and sometimes new new services were
+    # not added.
+    model_mappings = []
+    for x in dir(oci):
+        # oci.version is a module and we want to find all the other modules
+        instance_x = eval("oci.{}".format(x))
+        if isinstance(instance_x, type(oci.version)) and hasattr(instance_x, 'models'):
+            for attribute in dir((instance_x).models):
+                if attribute.endswith("_type_mapping"):
+                    model_mappings.append(eval("{}.models.{}".format(instance_x.__name__, attribute)))
 
     for mapping in model_mappings:
         for model_name, model_ref in six.iteritems(mapping):
@@ -61,8 +30,12 @@ def test_all_model_classes_can_be_init_from_kwargs():
             kwargs = {}
             for attr_name, attr_type in six.iteritems(base_model.swagger_types):
                 if attr_type == 'str':
-                    if model_name in ENUM_ATTR_TO_VALUE and attr_name in ENUM_ATTR_TO_VALUE[model_name]:
-                        kwargs[attr_name] = ENUM_ATTR_TO_VALUE[model_name][attr_name]
+                    values = []
+                    for prop in dir(base_model):
+                        if prop.startswith(attr_name.upper()):
+                            values.append(getattr(base_model, prop))
+                    if values:
+                        kwargs[attr_name] = values[0]
                     else:
                         kwargs[attr_name] = attr_type
                 elif attr_type == 'int':
