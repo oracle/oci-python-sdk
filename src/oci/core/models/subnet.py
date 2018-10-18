@@ -302,7 +302,7 @@ class Subnet(object):
     def dhcp_options_id(self):
         """
         Gets the dhcp_options_id of this Subnet.
-        The OCID of the set of DHCP options associated with the subnet.
+        The OCID of the set of DHCP options that the subnet uses.
 
 
         :return: The dhcp_options_id of this Subnet.
@@ -314,7 +314,7 @@ class Subnet(object):
     def dhcp_options_id(self, dhcp_options_id):
         """
         Sets the dhcp_options_id of this Subnet.
-        The OCID of the set of DHCP options associated with the subnet.
+        The OCID of the set of DHCP options that the subnet uses.
 
 
         :param dhcp_options_id: The dhcp_options_id of this Subnet.
@@ -538,7 +538,7 @@ class Subnet(object):
     def route_table_id(self):
         """
         **[Required]** Gets the route_table_id of this Subnet.
-        The OCID of the route table the subnet is using.
+        The OCID of the route table that the subnet uses.
 
 
         :return: The route_table_id of this Subnet.
@@ -550,7 +550,7 @@ class Subnet(object):
     def route_table_id(self, route_table_id):
         """
         Sets the route_table_id of this Subnet.
-        The OCID of the route table the subnet is using.
+        The OCID of the route table that the subnet uses.
 
 
         :param route_table_id: The route_table_id of this Subnet.
@@ -562,7 +562,9 @@ class Subnet(object):
     def security_list_ids(self):
         """
         Gets the security_list_ids of this Subnet.
-        OCIDs for the security lists to use for VNICs in this subnet.
+        The OCIDs of the security list or lists that the subnet uses. Remember
+        that security lists are associated *with the subnet*, but the
+        rules are applied to the individual VNICs in the subnet.
 
 
         :return: The security_list_ids of this Subnet.
@@ -574,7 +576,9 @@ class Subnet(object):
     def security_list_ids(self, security_list_ids):
         """
         Sets the security_list_ids of this Subnet.
-        OCIDs for the security lists to use for VNICs in this subnet.
+        The OCIDs of the security list or lists that the subnet uses. Remember
+        that security lists are associated *with the subnet*, but the
+        rules are applied to the individual VNICs in the subnet.
 
 
         :param security_list_ids: The security_list_ids of this Subnet.

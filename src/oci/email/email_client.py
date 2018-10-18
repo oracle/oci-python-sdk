@@ -73,7 +73,8 @@ class EmailClient(object):
             'regional_client': True,
             'service_endpoint': kwargs.get('service_endpoint'),
             'timeout': kwargs.get('timeout'),
-            'base_path': '/20170907'
+            'base_path': '/20170907',
+            'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
         self.base_client = BaseClient("email", config, signer, email_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')

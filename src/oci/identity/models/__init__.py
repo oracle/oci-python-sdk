@@ -61,6 +61,11 @@ from .update_tag_namespace_details import UpdateTagNamespaceDetails
 from .update_user_details import UpdateUserDetails
 from .user import User
 from .user_group_membership import UserGroupMembership
+from .work_request import WorkRequest
+from .work_request_error import WorkRequestError
+from .work_request_log_entry import WorkRequestLogEntry
+from .work_request_resource import WorkRequestResource
+from .work_request_summary import WorkRequestSummary
 
 # Maps type names to classes for identity services.
 identity_type_mapping = {
@@ -121,5 +126,10 @@ identity_type_mapping = {
     "UpdateTagNamespaceDetails": UpdateTagNamespaceDetails,
     "UpdateUserDetails": UpdateUserDetails,
     "User": User,
-    "UserGroupMembership": UserGroupMembership
+    "UserGroupMembership": UserGroupMembership,
+    "WorkRequest": WorkRequest,
+    "WorkRequestError": WorkRequestError,
+    "WorkRequestLogEntry": WorkRequestLogEntry,
+    "WorkRequestResource": WorkRequestResource,
+    "WorkRequestSummary": WorkRequestSummary
 }

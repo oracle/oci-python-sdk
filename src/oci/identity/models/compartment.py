@@ -86,6 +86,10 @@ class Compartment(object):
             The value to assign to the inactive_status property of this Compartment.
         :type inactive_status: int
 
+        :param is_accessible:
+            The value to assign to the is_accessible property of this Compartment.
+        :type is_accessible: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Compartment.
         :type freeform_tags: dict(str, str)
@@ -103,6 +107,7 @@ class Compartment(object):
             'time_created': 'datetime',
             'lifecycle_state': 'str',
             'inactive_status': 'int',
+            'is_accessible': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -115,6 +120,7 @@ class Compartment(object):
             'time_created': 'timeCreated',
             'lifecycle_state': 'lifecycleState',
             'inactive_status': 'inactiveStatus',
+            'is_accessible': 'isAccessible',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -126,6 +132,7 @@ class Compartment(object):
         self._time_created = None
         self._lifecycle_state = None
         self._inactive_status = None
+        self._is_accessible = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -157,7 +164,7 @@ class Compartment(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this Compartment.
-        The OCID of the tenancy containing the compartment.
+        The OCID of the parent compartment containing the compartment.
 
 
         :return: The compartment_id of this Compartment.
@@ -169,7 +176,7 @@ class Compartment(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this Compartment.
-        The OCID of the tenancy containing the compartment.
+        The OCID of the parent compartment containing the compartment.
 
 
         :param compartment_id: The compartment_id of this Compartment.
@@ -182,7 +189,7 @@ class Compartment(object):
         """
         **[Required]** Gets the name of this Compartment.
         The name you assign to the compartment during creation. The name must be unique across all
-        compartments in the tenancy. Avoid entering confidential information.
+        compartments in the parent. Avoid entering confidential information.
 
 
         :return: The name of this Compartment.
@@ -195,7 +202,7 @@ class Compartment(object):
         """
         Sets the name of this Compartment.
         The name you assign to the compartment during creation. The name must be unique across all
-        compartments in the tenancy. Avoid entering confidential information.
+        compartments in the parent. Avoid entering confidential information.
 
 
         :param name: The name of this Compartment.
@@ -310,6 +317,34 @@ class Compartment(object):
         :type: int
         """
         self._inactive_status = inactive_status
+
+    @property
+    def is_accessible(self):
+        """
+        Gets the is_accessible of this Compartment.
+        Indicates whether or not the compartment is accessible for the user making the request.
+        Returns true when the user has INSPECT permissions directly on a resource in the
+        compartment or indirectly (permissions can be on a resource in a subcompartment).
+
+
+        :return: The is_accessible of this Compartment.
+        :rtype: bool
+        """
+        return self._is_accessible
+
+    @is_accessible.setter
+    def is_accessible(self, is_accessible):
+        """
+        Sets the is_accessible of this Compartment.
+        Indicates whether or not the compartment is accessible for the user making the request.
+        Returns true when the user has INSPECT permissions directly on a resource in the
+        compartment or indirectly (permissions can be on a resource in a subcompartment).
+
+
+        :param is_accessible: The is_accessible of this Compartment.
+        :type: bool
+        """
+        self._is_accessible = is_accessible
 
     @property
     def freeform_tags(self):
