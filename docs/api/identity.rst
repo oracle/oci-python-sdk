@@ -76,3 +76,8 @@ Identity
     oci.identity.models.UpdateUserDetails
     oci.identity.models.User
     oci.identity.models.UserGroupMembership
+    oci.identity.models.WorkRequest
+    oci.identity.models.WorkRequestError
+    oci.identity.models.WorkRequestLogEntry
+    oci.identity.models.WorkRequestResource
+    oci.identity.models.WorkRequestSummary

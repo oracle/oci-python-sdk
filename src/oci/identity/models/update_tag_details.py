@@ -33,25 +33,32 @@ class UpdateTagDetails(object):
             The value to assign to the defined_tags property of this UpdateTagDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param is_cost_tracking:
+            The value to assign to the is_cost_tracking property of this UpdateTagDetails.
+        :type is_cost_tracking: bool
+
         """
         self.swagger_types = {
             'description': 'str',
             'is_retired': 'bool',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'is_cost_tracking': 'bool'
         }
 
         self.attribute_map = {
             'description': 'description',
             'is_retired': 'isRetired',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'is_cost_tracking': 'isCostTracking'
         }
 
         self._description = None
         self._is_retired = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._is_cost_tracking = None
 
     @property
     def description(self):
@@ -170,6 +177,30 @@ class UpdateTagDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def is_cost_tracking(self):
+        """
+        Gets the is_cost_tracking of this UpdateTagDetails.
+        Indicates whether the tag is enabled for cost tracking.
+
+
+        :return: The is_cost_tracking of this UpdateTagDetails.
+        :rtype: bool
+        """
+        return self._is_cost_tracking
+
+    @is_cost_tracking.setter
+    def is_cost_tracking(self, is_cost_tracking):
+        """
+        Sets the is_cost_tracking of this UpdateTagDetails.
+        Indicates whether the tag is enabled for cost tracking.
+
+
+        :param is_cost_tracking: The is_cost_tracking of this UpdateTagDetails.
+        :type: bool
+        """
+        self._is_cost_tracking = is_cost_tracking
 
     def __repr__(self):
         return formatted_flat_dict(self)

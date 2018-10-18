@@ -81,7 +81,7 @@ class UpdateCompartmentDetails(object):
     def name(self):
         """
         Gets the name of this UpdateCompartmentDetails.
-        The new name you assign to the compartment. The name must be unique across all compartments in the tenancy.
+        The new name you assign to the compartment. The name must be unique across all compartments in the parent compartment.
         Avoid entering confidential information.
 
 
@@ -94,7 +94,7 @@ class UpdateCompartmentDetails(object):
     def name(self, name):
         """
         Sets the name of this UpdateCompartmentDetails.
-        The new name you assign to the compartment. The name must be unique across all compartments in the tenancy.
+        The new name you assign to the compartment. The name must be unique across all compartments in the parent compartment.
         Avoid entering confidential information.
 
 

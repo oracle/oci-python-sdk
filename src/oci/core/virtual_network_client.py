@@ -73,7 +73,8 @@ class VirtualNetworkClient(object):
             'regional_client': True,
             'service_endpoint': kwargs.get('service_endpoint'),
             'timeout': kwargs.get('timeout'),
-            'base_path': '/20160918'
+            'base_path': '/20160918',
+            'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
         self.base_client = BaseClient("virtual_network", config, signer, core_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
@@ -9808,7 +9809,7 @@ class VirtualNetworkClient(object):
     def update_subnet(self, subnet_id, update_subnet_details, **kwargs):
         """
         UpdateSubnet
-        Updates the specified subnet's display name. Avoid entering confidential information.
+        Updates the specified subnet.
 
 
         :param str subnet_id: (required)
@@ -9888,8 +9889,7 @@ class VirtualNetworkClient(object):
     def update_vcn(self, vcn_id, update_vcn_details, **kwargs):
         """
         UpdateVcn
-        Updates the specified VCN's display name.
-        Avoid entering confidential information.
+        Updates the specified VCN.
 
 
         :param str vcn_id: (required)

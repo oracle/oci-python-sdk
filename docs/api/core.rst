@@ -44,9 +44,11 @@ Core Services
     oci.core.models.BulkAddVirtualCircuitPublicPrefixesDetails
     oci.core.models.BulkDeleteVirtualCircuitPublicPrefixesDetails
     oci.core.models.CaptureConsoleHistoryDetails
+    oci.core.models.ComputeInstanceDetails
     oci.core.models.ConnectLocalPeeringGatewaysDetails
     oci.core.models.ConnectRemotePeeringConnectionsDetails
     oci.core.models.ConsoleHistory
+    oci.core.models.CopyVolumeBackupDetails
     oci.core.models.Cpe
     oci.core.models.CreateAppCatalogSubscriptionDetails
     oci.core.models.CreateBootVolumeBackupDetails
@@ -59,7 +61,10 @@ Core Services
     oci.core.models.CreateDrgDetails
     oci.core.models.CreateIPSecConnectionDetails
     oci.core.models.CreateImageDetails
+    oci.core.models.CreateInstanceConfigurationDetails
     oci.core.models.CreateInstanceConsoleConnectionDetails
+    oci.core.models.CreateInstancePoolDetails
+    oci.core.models.CreateInstancePoolPlacementConfigurationDetails
     oci.core.models.CreateInternetGatewayDetails
     oci.core.models.CreateLocalPeeringGatewayDetails
     oci.core.models.CreateNatGatewayDetails
@@ -110,11 +115,33 @@ Core Services
     oci.core.models.ImageSourceViaObjectStorageUriDetails
     oci.core.models.IngressSecurityRule
     oci.core.models.Instance
+    oci.core.models.InstanceConfiguration
+    oci.core.models.InstanceConfigurationAttachVnicDetails
+    oci.core.models.InstanceConfigurationAttachVolumeDetails
+    oci.core.models.InstanceConfigurationBlockVolumeDetails
+    oci.core.models.InstanceConfigurationCreateVnicDetails
+    oci.core.models.InstanceConfigurationCreateVolumeDetails
+    oci.core.models.InstanceConfigurationInstanceDetails
+    oci.core.models.InstanceConfigurationInstanceSourceDetails
+    oci.core.models.InstanceConfigurationInstanceSourceViaBootVolumeDetails
+    oci.core.models.InstanceConfigurationInstanceSourceViaImageDetails
+    oci.core.models.InstanceConfigurationIscsiAttachVolumeDetails
+    oci.core.models.InstanceConfigurationLaunchInstanceDetails
+    oci.core.models.InstanceConfigurationParavirtualizedAttachVolumeDetails
+    oci.core.models.InstanceConfigurationSummary
+    oci.core.models.InstanceConfigurationVolumeSourceDetails
+    oci.core.models.InstanceConfigurationVolumeSourceFromVolumeBackupDetails
+    oci.core.models.InstanceConfigurationVolumeSourceFromVolumeDetails
     oci.core.models.InstanceConsoleConnection
     oci.core.models.InstanceCredentials
+    oci.core.models.InstancePool
+    oci.core.models.InstancePoolPlacementConfiguration
+    oci.core.models.InstancePoolPlacementSecondaryVnicSubnet
+    oci.core.models.InstancePoolSummary
     oci.core.models.InstanceSourceDetails
     oci.core.models.InstanceSourceViaBootVolumeDetails
     oci.core.models.InstanceSourceViaImageDetails
+    oci.core.models.InstanceSummary
     oci.core.models.InternetGateway
     oci.core.models.LaunchInstanceDetails
     oci.core.models.LaunchOptions
@@ -152,7 +179,10 @@ Core Services
     oci.core.models.UpdateDrgDetails
     oci.core.models.UpdateIPSecConnectionDetails
     oci.core.models.UpdateImageDetails
+    oci.core.models.UpdateInstanceConfigurationDetails
     oci.core.models.UpdateInstanceDetails
+    oci.core.models.UpdateInstancePoolDetails
+    oci.core.models.UpdateInstancePoolPlacementConfigurationDetails
     oci.core.models.UpdateInternetGatewayDetails
     oci.core.models.UpdateLocalPeeringGatewayDetails
     oci.core.models.UpdateNatGatewayDetails

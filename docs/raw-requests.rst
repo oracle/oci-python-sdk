@@ -11,8 +11,8 @@ Raw Requests
 ~~~~~~~~~~~~
 
 The Python SDK exposes a custom :class:`requests.auth.AuthBase` which you can use to sign non-standard calls.
-This can be helpful if you need to make a OCI- authenticated request to an alternate endpoint or to a
-OCI API not yet supported in the SDK.
+This can be helpful if you need to make an authenticated request to an alternate endpoint or to an
+Oracle Cloud Infrastructure API not yet supported in the SDK.
 
 ===================
  Creating a Signer
@@ -95,7 +95,7 @@ The following creates a new user by talking to the identity endpoint:
 Using an Instance Principals-based Signer
 ------------------------------------------
 
-The Instance Principals-based Signer uses a security token to authenticate calls against OCI services. This token has an expiration time and the Signer will automatically handle refreshing the token when it is near expiry. However, it is possible that the security token held by the signer is valid (from an expiration time perspective) but the request fails with a 401 (NotAuthenticated) error because of, for example, changes in the dynamic group that an instance is a part of or the policies applied to that dynamic group.
+The Instance Principals-based Signer uses a security token to authenticate calls against Oracle Cloud Infrastructure services. This token has an expiration time and the Signer will automatically handle refreshing the token when it is near expiry. However, it is possible that the security token held by the signer is valid (from an expiration time perspective) but the request fails with a 401 (NotAuthenticated) error because of, for example, changes in the dynamic group that an instance is a part of or the policies applied to that dynamic group.
 
 You can account for this by retrying on a 401. If the request fails with a 401 on a subsequent retry, this may point to other issues and you should not keep retrying in this circumstance. For example:
 

@@ -11,7 +11,7 @@
 
 Setting custom headers
 ~~~~~~~~~~~~~~~~~~~~~~~
-The Python SDK uses the `Requests <http://docs.python-requests.org/en/master/>`_ library to make calls to OCI services. If you need to add custom headers to your calls, you can do so via modifying the underlying Requests `Session <http://docs.python-requests.org/en/master/api/#request-sessions>`_ object
+The Python SDK uses the `Requests <http://docs.python-requests.org/en/master/>`_ library to make calls to Oracle Cloud Infrastructure services. If you need to add custom headers to your calls, you can do so via modifying the underlying Requests `Session <http://docs.python-requests.org/en/master/api/#request-sessions>`_ object
 
 .. code-block:: python
 

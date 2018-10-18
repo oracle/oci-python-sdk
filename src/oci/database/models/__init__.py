@@ -15,6 +15,7 @@ from .autonomous_database_connection_strings import AutonomousDatabaseConnection
 from .autonomous_database_summary import AutonomousDatabaseSummary
 from .backup import Backup
 from .backup_summary import BackupSummary
+from .complete_external_backup_job_details import CompleteExternalBackupJobDetails
 from .create_autonomous_data_warehouse_backup_details import CreateAutonomousDataWarehouseBackupDetails
 from .create_autonomous_data_warehouse_details import CreateAutonomousDataWarehouseDetails
 from .create_autonomous_database_backup_details import CreateAutonomousDatabaseBackupDetails
@@ -29,6 +30,7 @@ from .create_db_home_from_backup_details import CreateDbHomeFromBackupDetails
 from .create_db_home_with_db_system_id_base import CreateDbHomeWithDbSystemIdBase
 from .create_db_home_with_db_system_id_details import CreateDbHomeWithDbSystemIdDetails
 from .create_db_home_with_db_system_id_from_backup_details import CreateDbHomeWithDbSystemIdFromBackupDetails
+from .create_external_backup_job_details import CreateExternalBackupJobDetails
 from .data_guard_association import DataGuardAssociation
 from .data_guard_association_summary import DataGuardAssociationSummary
 from .database import Database
@@ -42,7 +44,10 @@ from .db_system import DbSystem
 from .db_system_shape_summary import DbSystemShapeSummary
 from .db_system_summary import DbSystemSummary
 from .db_version_summary import DbVersionSummary
+from .external_backup_job import ExternalBackupJob
 from .failover_data_guard_association_details import FailoverDataGuardAssociationDetails
+from .generate_autonomous_data_warehouse_wallet_details import GenerateAutonomousDataWarehouseWalletDetails
+from .generate_autonomous_database_wallet_details import GenerateAutonomousDatabaseWalletDetails
 from .launch_db_system_base import LaunchDbSystemBase
 from .launch_db_system_details import LaunchDbSystemDetails
 from .launch_db_system_from_backup_details import LaunchDbSystemFromBackupDetails
@@ -76,6 +81,7 @@ database_type_mapping = {
     "AutonomousDatabaseSummary": AutonomousDatabaseSummary,
     "Backup": Backup,
     "BackupSummary": BackupSummary,
+    "CompleteExternalBackupJobDetails": CompleteExternalBackupJobDetails,
     "CreateAutonomousDataWarehouseBackupDetails": CreateAutonomousDataWarehouseBackupDetails,
     "CreateAutonomousDataWarehouseDetails": CreateAutonomousDataWarehouseDetails,
     "CreateAutonomousDatabaseBackupDetails": CreateAutonomousDatabaseBackupDetails,
@@ -90,6 +96,7 @@ database_type_mapping = {
     "CreateDbHomeWithDbSystemIdBase": CreateDbHomeWithDbSystemIdBase,
     "CreateDbHomeWithDbSystemIdDetails": CreateDbHomeWithDbSystemIdDetails,
     "CreateDbHomeWithDbSystemIdFromBackupDetails": CreateDbHomeWithDbSystemIdFromBackupDetails,
+    "CreateExternalBackupJobDetails": CreateExternalBackupJobDetails,
     "DataGuardAssociation": DataGuardAssociation,
     "DataGuardAssociationSummary": DataGuardAssociationSummary,
     "Database": Database,
@@ -103,7 +110,10 @@ database_type_mapping = {
     "DbSystemShapeSummary": DbSystemShapeSummary,
     "DbSystemSummary": DbSystemSummary,
     "DbVersionSummary": DbVersionSummary,
+    "ExternalBackupJob": ExternalBackupJob,
     "FailoverDataGuardAssociationDetails": FailoverDataGuardAssociationDetails,
+    "GenerateAutonomousDataWarehouseWalletDetails": GenerateAutonomousDataWarehouseWalletDetails,
+    "GenerateAutonomousDatabaseWalletDetails": GenerateAutonomousDatabaseWalletDetails,
     "LaunchDbSystemBase": LaunchDbSystemBase,
     "LaunchDbSystemDetails": LaunchDbSystemDetails,
     "LaunchDbSystemFromBackupDetails": LaunchDbSystemFromBackupDetails,

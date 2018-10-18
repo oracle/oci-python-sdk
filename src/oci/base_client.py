@@ -11,6 +11,7 @@ import re
 import string
 import uuid
 from datetime import date, datetime
+from timeit import default_timer as timer
 
 from oci._vendor import requests, six
 from dateutil.parser import parse
@@ -125,6 +126,8 @@ class BaseClient(object):
         else:
             six.moves.http_client.HTTPConnection.debuglevel = 0
 
+        self.skip_deserialization = kwargs.get('skip_deserialization')
+
     @property
     def endpoint(self):
         return self._endpoint
@@ -214,7 +217,11 @@ class BaseClient(object):
         )
 
         if not isinstance(self.signer, signers.InstancePrincipalsSecurityTokenSigner):
-            return self.request(request)
+            start = timer()
+            response = self.request(request)
+            end = timer()
+            self.logger.debug('time elapsed for request: {}'.format(str(end - start)))
+            return response
         else:
             call_attempts = 0
             while call_attempts < 2:
@@ -379,13 +386,13 @@ class BaseClient(object):
         :param obj: The data to serialize.
         :return: The serialized form of data.
         """
-        types = (six.string_types, int, float, bool, type(None))
+        types = (six.string_types, six.integer_types, float, bool, type(None))
 
         declared_swagger_type_to_acceptable_python_types = {
             'str': six.string_types,
             'bool': bool,
-            'int': (float, int),
-            'float': (float, int)
+            'int': (float, six.integer_types),
+            'float': (float, six.integer_types)
         }
 
         # if there is a declared type for this obj, then validate that obj is of that type. None types (either None or the NONE_SENTINEL) are not validated but
@@ -508,7 +515,6 @@ class BaseClient(object):
 
         :return: deserialized object.
         """
-
         # response.content is always bytes
         response_data = response_data.decode('utf8')
 
@@ -519,7 +525,14 @@ class BaseClient(object):
         except ValueError:
             pass
 
-        return self.__deserialize(response_data, response_type)
+        if self.skip_deserialization:
+            return response_data
+        else:
+            start = timer()
+            res = self.__deserialize(response_data, response_type)
+            end = timer()
+            self.logger.debug('python SDK time elapsed for deserializing: {}'.format(str(end - start)))
+            return res
 
     def __deserialize(self, data, cls):
         """
@@ -602,11 +615,16 @@ class BaseClient(object):
         :return: datetime.
         """
         try:
-            return parse(string)
+            return datetime.strptime(string, "%Y-%m-%dT%H:%M:%S.%fZ")
+        except ValueError:
+            try:
+                return parse(string)
+            except ImportError:
+                return string
+            except ValueError:
+                raise Exception("Failed to parse `{0}` into a datetime object".format(string))
         except ImportError:
             return string
-        except ValueError:
-            raise Exception("Failed to parse `{0}` into a datetime object".format(string))
 
     def __deserialize_model(self, data, cls):
         """
