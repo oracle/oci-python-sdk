@@ -27,6 +27,18 @@ Added
 * Support for reboot migration for virtual machines in the Compute service
 * Support for Instance Pools and Instance Configurations in the Compute service
 
+Changed
+-------
+* database_edition field in Backup model changed from a free format string to a validated string. It will only accept one of the following: “STANDARD_EDITION”, “ENTERPRISE_EDITION”, “ENTERPRISE_EDITION_HIGH_PERFORMANCE”, “ENTERPRISE_EDITION_EXTREME_PERFORMANCE”
+
+Known issue
+-----------
+* Block Storage service for copying volume backups across regions is not enabled
+
+Breaking
+--------
+* db_data_size_in_mbs field in Backup model is renamed to database_size_in_g_bs. The type changed from int to float.
+
 ====================
 2.0.5 - 2018-10-04
 ====================
