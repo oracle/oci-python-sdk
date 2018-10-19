@@ -3,6 +3,13 @@
 
 from __future__ import absolute_import
 
+from .app_catalog_listing import AppCatalogListing
+from .app_catalog_listing_resource_version import AppCatalogListingResourceVersion
+from .app_catalog_listing_resource_version_agreements import AppCatalogListingResourceVersionAgreements
+from .app_catalog_listing_resource_version_summary import AppCatalogListingResourceVersionSummary
+from .app_catalog_listing_summary import AppCatalogListingSummary
+from .app_catalog_subscription import AppCatalogSubscription
+from .app_catalog_subscription_summary import AppCatalogSubscriptionSummary
 from .attach_boot_volume_details import AttachBootVolumeDetails
 from .attach_i_scsi_volume_details import AttachIScsiVolumeDetails
 from .attach_paravirtualized_volume_details import AttachParavirtualizedVolumeDetails
@@ -18,10 +25,13 @@ from .boot_volume_source_from_boot_volume_details import BootVolumeSourceFromBoo
 from .bulk_add_virtual_circuit_public_prefixes_details import BulkAddVirtualCircuitPublicPrefixesDetails
 from .bulk_delete_virtual_circuit_public_prefixes_details import BulkDeleteVirtualCircuitPublicPrefixesDetails
 from .capture_console_history_details import CaptureConsoleHistoryDetails
+from .compute_instance_details import ComputeInstanceDetails
 from .connect_local_peering_gateways_details import ConnectLocalPeeringGatewaysDetails
 from .connect_remote_peering_connections_details import ConnectRemotePeeringConnectionsDetails
 from .console_history import ConsoleHistory
+from .copy_volume_backup_details import CopyVolumeBackupDetails
 from .cpe import Cpe
+from .create_app_catalog_subscription_details import CreateAppCatalogSubscriptionDetails
 from .create_boot_volume_backup_details import CreateBootVolumeBackupDetails
 from .create_boot_volume_details import CreateBootVolumeDetails
 from .create_cpe_details import CreateCpeDetails
@@ -32,9 +42,13 @@ from .create_drg_attachment_details import CreateDrgAttachmentDetails
 from .create_drg_details import CreateDrgDetails
 from .create_ip_sec_connection_details import CreateIPSecConnectionDetails
 from .create_image_details import CreateImageDetails
+from .create_instance_configuration_details import CreateInstanceConfigurationDetails
 from .create_instance_console_connection_details import CreateInstanceConsoleConnectionDetails
+from .create_instance_pool_details import CreateInstancePoolDetails
+from .create_instance_pool_placement_configuration_details import CreateInstancePoolPlacementConfigurationDetails
 from .create_internet_gateway_details import CreateInternetGatewayDetails
 from .create_local_peering_gateway_details import CreateLocalPeeringGatewayDetails
+from .create_nat_gateway_details import CreateNatGatewayDetails
 from .create_private_ip_details import CreatePrivateIpDetails
 from .create_public_ip_details import CreatePublicIpDetails
 from .create_remote_peering_connection_details import CreateRemotePeeringConnectionDetails
@@ -82,16 +96,39 @@ from .image_source_via_object_storage_tuple_details import ImageSourceViaObjectS
 from .image_source_via_object_storage_uri_details import ImageSourceViaObjectStorageUriDetails
 from .ingress_security_rule import IngressSecurityRule
 from .instance import Instance
+from .instance_configuration import InstanceConfiguration
+from .instance_configuration_attach_vnic_details import InstanceConfigurationAttachVnicDetails
+from .instance_configuration_attach_volume_details import InstanceConfigurationAttachVolumeDetails
+from .instance_configuration_block_volume_details import InstanceConfigurationBlockVolumeDetails
+from .instance_configuration_create_vnic_details import InstanceConfigurationCreateVnicDetails
+from .instance_configuration_create_volume_details import InstanceConfigurationCreateVolumeDetails
+from .instance_configuration_instance_details import InstanceConfigurationInstanceDetails
+from .instance_configuration_instance_source_details import InstanceConfigurationInstanceSourceDetails
+from .instance_configuration_instance_source_via_boot_volume_details import InstanceConfigurationInstanceSourceViaBootVolumeDetails
+from .instance_configuration_instance_source_via_image_details import InstanceConfigurationInstanceSourceViaImageDetails
+from .instance_configuration_iscsi_attach_volume_details import InstanceConfigurationIscsiAttachVolumeDetails
+from .instance_configuration_launch_instance_details import InstanceConfigurationLaunchInstanceDetails
+from .instance_configuration_paravirtualized_attach_volume_details import InstanceConfigurationParavirtualizedAttachVolumeDetails
+from .instance_configuration_summary import InstanceConfigurationSummary
+from .instance_configuration_volume_source_details import InstanceConfigurationVolumeSourceDetails
+from .instance_configuration_volume_source_from_volume_backup_details import InstanceConfigurationVolumeSourceFromVolumeBackupDetails
+from .instance_configuration_volume_source_from_volume_details import InstanceConfigurationVolumeSourceFromVolumeDetails
 from .instance_console_connection import InstanceConsoleConnection
 from .instance_credentials import InstanceCredentials
+from .instance_pool import InstancePool
+from .instance_pool_placement_configuration import InstancePoolPlacementConfiguration
+from .instance_pool_placement_secondary_vnic_subnet import InstancePoolPlacementSecondaryVnicSubnet
+from .instance_pool_summary import InstancePoolSummary
 from .instance_source_details import InstanceSourceDetails
 from .instance_source_via_boot_volume_details import InstanceSourceViaBootVolumeDetails
 from .instance_source_via_image_details import InstanceSourceViaImageDetails
+from .instance_summary import InstanceSummary
 from .internet_gateway import InternetGateway
 from .launch_instance_details import LaunchInstanceDetails
 from .launch_options import LaunchOptions
 from .letter_of_authority import LetterOfAuthority
 from .local_peering_gateway import LocalPeeringGateway
+from .nat_gateway import NatGateway
 from .paravirtualized_volume_attachment import ParavirtualizedVolumeAttachment
 from .peer_region_for_remote_peering import PeerRegionForRemotePeering
 from .port_range import PortRange
@@ -123,9 +160,13 @@ from .update_drg_attachment_details import UpdateDrgAttachmentDetails
 from .update_drg_details import UpdateDrgDetails
 from .update_ip_sec_connection_details import UpdateIPSecConnectionDetails
 from .update_image_details import UpdateImageDetails
+from .update_instance_configuration_details import UpdateInstanceConfigurationDetails
 from .update_instance_details import UpdateInstanceDetails
+from .update_instance_pool_details import UpdateInstancePoolDetails
+from .update_instance_pool_placement_configuration_details import UpdateInstancePoolPlacementConfigurationDetails
 from .update_internet_gateway_details import UpdateInternetGatewayDetails
 from .update_local_peering_gateway_details import UpdateLocalPeeringGatewayDetails
+from .update_nat_gateway_details import UpdateNatGatewayDetails
 from .update_private_ip_details import UpdatePrivateIpDetails
 from .update_public_ip_details import UpdatePublicIpDetails
 from .update_remote_peering_connection_details import UpdateRemotePeeringConnectionDetails
@@ -166,6 +207,13 @@ from .volume_source_from_volume_details import VolumeSourceFromVolumeDetails
 
 # Maps type names to classes for core services.
 core_type_mapping = {
+    "AppCatalogListing": AppCatalogListing,
+    "AppCatalogListingResourceVersion": AppCatalogListingResourceVersion,
+    "AppCatalogListingResourceVersionAgreements": AppCatalogListingResourceVersionAgreements,
+    "AppCatalogListingResourceVersionSummary": AppCatalogListingResourceVersionSummary,
+    "AppCatalogListingSummary": AppCatalogListingSummary,
+    "AppCatalogSubscription": AppCatalogSubscription,
+    "AppCatalogSubscriptionSummary": AppCatalogSubscriptionSummary,
     "AttachBootVolumeDetails": AttachBootVolumeDetails,
     "AttachIScsiVolumeDetails": AttachIScsiVolumeDetails,
     "AttachParavirtualizedVolumeDetails": AttachParavirtualizedVolumeDetails,
@@ -181,10 +229,13 @@ core_type_mapping = {
     "BulkAddVirtualCircuitPublicPrefixesDetails": BulkAddVirtualCircuitPublicPrefixesDetails,
     "BulkDeleteVirtualCircuitPublicPrefixesDetails": BulkDeleteVirtualCircuitPublicPrefixesDetails,
     "CaptureConsoleHistoryDetails": CaptureConsoleHistoryDetails,
+    "ComputeInstanceDetails": ComputeInstanceDetails,
     "ConnectLocalPeeringGatewaysDetails": ConnectLocalPeeringGatewaysDetails,
     "ConnectRemotePeeringConnectionsDetails": ConnectRemotePeeringConnectionsDetails,
     "ConsoleHistory": ConsoleHistory,
+    "CopyVolumeBackupDetails": CopyVolumeBackupDetails,
     "Cpe": Cpe,
+    "CreateAppCatalogSubscriptionDetails": CreateAppCatalogSubscriptionDetails,
     "CreateBootVolumeBackupDetails": CreateBootVolumeBackupDetails,
     "CreateBootVolumeDetails": CreateBootVolumeDetails,
     "CreateCpeDetails": CreateCpeDetails,
@@ -195,9 +246,13 @@ core_type_mapping = {
     "CreateDrgDetails": CreateDrgDetails,
     "CreateIPSecConnectionDetails": CreateIPSecConnectionDetails,
     "CreateImageDetails": CreateImageDetails,
+    "CreateInstanceConfigurationDetails": CreateInstanceConfigurationDetails,
     "CreateInstanceConsoleConnectionDetails": CreateInstanceConsoleConnectionDetails,
+    "CreateInstancePoolDetails": CreateInstancePoolDetails,
+    "CreateInstancePoolPlacementConfigurationDetails": CreateInstancePoolPlacementConfigurationDetails,
     "CreateInternetGatewayDetails": CreateInternetGatewayDetails,
     "CreateLocalPeeringGatewayDetails": CreateLocalPeeringGatewayDetails,
+    "CreateNatGatewayDetails": CreateNatGatewayDetails,
     "CreatePrivateIpDetails": CreatePrivateIpDetails,
     "CreatePublicIpDetails": CreatePublicIpDetails,
     "CreateRemotePeeringConnectionDetails": CreateRemotePeeringConnectionDetails,
@@ -245,16 +300,39 @@ core_type_mapping = {
     "ImageSourceViaObjectStorageUriDetails": ImageSourceViaObjectStorageUriDetails,
     "IngressSecurityRule": IngressSecurityRule,
     "Instance": Instance,
+    "InstanceConfiguration": InstanceConfiguration,
+    "InstanceConfigurationAttachVnicDetails": InstanceConfigurationAttachVnicDetails,
+    "InstanceConfigurationAttachVolumeDetails": InstanceConfigurationAttachVolumeDetails,
+    "InstanceConfigurationBlockVolumeDetails": InstanceConfigurationBlockVolumeDetails,
+    "InstanceConfigurationCreateVnicDetails": InstanceConfigurationCreateVnicDetails,
+    "InstanceConfigurationCreateVolumeDetails": InstanceConfigurationCreateVolumeDetails,
+    "InstanceConfigurationInstanceDetails": InstanceConfigurationInstanceDetails,
+    "InstanceConfigurationInstanceSourceDetails": InstanceConfigurationInstanceSourceDetails,
+    "InstanceConfigurationInstanceSourceViaBootVolumeDetails": InstanceConfigurationInstanceSourceViaBootVolumeDetails,
+    "InstanceConfigurationInstanceSourceViaImageDetails": InstanceConfigurationInstanceSourceViaImageDetails,
+    "InstanceConfigurationIscsiAttachVolumeDetails": InstanceConfigurationIscsiAttachVolumeDetails,
+    "InstanceConfigurationLaunchInstanceDetails": InstanceConfigurationLaunchInstanceDetails,
+    "InstanceConfigurationParavirtualizedAttachVolumeDetails": InstanceConfigurationParavirtualizedAttachVolumeDetails,
+    "InstanceConfigurationSummary": InstanceConfigurationSummary,
+    "InstanceConfigurationVolumeSourceDetails": InstanceConfigurationVolumeSourceDetails,
+    "InstanceConfigurationVolumeSourceFromVolumeBackupDetails": InstanceConfigurationVolumeSourceFromVolumeBackupDetails,
+    "InstanceConfigurationVolumeSourceFromVolumeDetails": InstanceConfigurationVolumeSourceFromVolumeDetails,
     "InstanceConsoleConnection": InstanceConsoleConnection,
     "InstanceCredentials": InstanceCredentials,
+    "InstancePool": InstancePool,
+    "InstancePoolPlacementConfiguration": InstancePoolPlacementConfiguration,
+    "InstancePoolPlacementSecondaryVnicSubnet": InstancePoolPlacementSecondaryVnicSubnet,
+    "InstancePoolSummary": InstancePoolSummary,
     "InstanceSourceDetails": InstanceSourceDetails,
     "InstanceSourceViaBootVolumeDetails": InstanceSourceViaBootVolumeDetails,
     "InstanceSourceViaImageDetails": InstanceSourceViaImageDetails,
+    "InstanceSummary": InstanceSummary,
     "InternetGateway": InternetGateway,
     "LaunchInstanceDetails": LaunchInstanceDetails,
     "LaunchOptions": LaunchOptions,
     "LetterOfAuthority": LetterOfAuthority,
     "LocalPeeringGateway": LocalPeeringGateway,
+    "NatGateway": NatGateway,
     "ParavirtualizedVolumeAttachment": ParavirtualizedVolumeAttachment,
     "PeerRegionForRemotePeering": PeerRegionForRemotePeering,
     "PortRange": PortRange,
@@ -286,9 +364,13 @@ core_type_mapping = {
     "UpdateDrgDetails": UpdateDrgDetails,
     "UpdateIPSecConnectionDetails": UpdateIPSecConnectionDetails,
     "UpdateImageDetails": UpdateImageDetails,
+    "UpdateInstanceConfigurationDetails": UpdateInstanceConfigurationDetails,
     "UpdateInstanceDetails": UpdateInstanceDetails,
+    "UpdateInstancePoolDetails": UpdateInstancePoolDetails,
+    "UpdateInstancePoolPlacementConfigurationDetails": UpdateInstancePoolPlacementConfigurationDetails,
     "UpdateInternetGatewayDetails": UpdateInternetGatewayDetails,
     "UpdateLocalPeeringGatewayDetails": UpdateLocalPeeringGatewayDetails,
+    "UpdateNatGatewayDetails": UpdateNatGatewayDetails,
     "UpdatePrivateIpDetails": UpdatePrivateIpDetails,
     "UpdatePublicIpDetails": UpdatePublicIpDetails,
     "UpdateRemotePeeringConnectionDetails": UpdateRemotePeeringConnectionDetails,

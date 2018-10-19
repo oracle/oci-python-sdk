@@ -73,7 +73,8 @@ class ContainerEngineClient(object):
             'regional_client': True,
             'service_endpoint': kwargs.get('service_endpoint'),
             'timeout': kwargs.get('timeout'),
-            'base_path': '/20180222'
+            'base_path': '/20180222',
+            'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
         self.base_client = BaseClient("container_engine", config, signer, container_engine_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')

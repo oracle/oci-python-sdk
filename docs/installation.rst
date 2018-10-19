@@ -134,7 +134,7 @@ You might encounter issues when installing Python or the SDK, or using the SDK i
 
 Service Errors
 --------------
-Any operation resulting in a service error will cause an exception of type oci.exceptions.ServiceError to be thrown by the SDK. For information about common service errors returned by OCI, see `API Errors <https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm>`_.
+Any operation resulting in a service error will cause an exception of type oci.exceptions.ServiceError to be thrown by the SDK. For information about common service errors, see `API Errors <https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm>`_.
 
 
 pip 10 Installation Errors

@@ -73,10 +73,104 @@ class BlockstorageClient(object):
             'regional_client': True,
             'service_endpoint': kwargs.get('service_endpoint'),
             'timeout': kwargs.get('timeout'),
-            'base_path': '/20160918'
+            'base_path': '/20160918',
+            'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
         self.base_client = BaseClient("blockstorage", config, signer, core_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
+
+    def copy_volume_backup(self, volume_backup_id, copy_volume_backup_details, **kwargs):
+        """
+        CreateVolumeBackupCopy
+        Creates a volume backup copy in specified region. For general information about volume backups,
+        see `Overview of Block Volume Service Backups`__
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/blockvolumebackups.htm
+
+
+        :param str volume_backup_id: (required)
+            The OCID of the volume backup.
+
+        :param CopyVolumeBackupDetails copy_volume_backup_details: (required)
+            Request to create a cross-region copy of given backup.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VolumeBackup`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/volumeBackups/{volumeBackupId}/actions/copy"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "copy_volume_backup got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "volumeBackupId": volume_backup_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=copy_volume_backup_details,
+                response_type="VolumeBackup")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=copy_volume_backup_details,
+                response_type="VolumeBackup")
 
     def create_boot_volume(self, create_boot_volume_details, **kwargs):
         """
@@ -1674,12 +1768,20 @@ class BlockstorageClient(object):
             The OCID of an asset (e.g. a volume).
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2022,12 +2124,20 @@ class BlockstorageClient(object):
             The OCID of the boot volume.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -2158,12 +2268,20 @@ class BlockstorageClient(object):
             The OCID of the compartment.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str volume_group_id: (optional)
             The OCID of the volume group.
@@ -2235,12 +2353,20 @@ class BlockstorageClient(object):
 
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2311,15 +2437,26 @@ class BlockstorageClient(object):
             The OCID of the volume.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
+
+        :param str source_volume_backup_id: (optional)
+            A filter to return only resources that originated from the given source volume backup.
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for
@@ -2365,6 +2502,7 @@ class BlockstorageClient(object):
             "limit",
             "page",
             "display_name",
+            "source_volume_backup_id",
             "sort_by",
             "sort_order",
             "lifecycle_state"
@@ -2401,6 +2539,7 @@ class BlockstorageClient(object):
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "displayName": kwargs.get("display_name", missing),
+            "sourceVolumeBackupId": kwargs.get("source_volume_backup_id", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing)
@@ -2448,12 +2587,20 @@ class BlockstorageClient(object):
             The OCID of the volume group.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -2573,12 +2720,20 @@ class BlockstorageClient(object):
             Example: `Uocm:PHX-AD-1`
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -2709,12 +2864,20 @@ class BlockstorageClient(object):
             Example: `Uocm:PHX-AD-1`
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -2838,7 +3001,7 @@ class BlockstorageClient(object):
     def update_boot_volume(self, boot_volume_id, update_boot_volume_details, **kwargs):
         """
         UpdateBootVolume
-        Updates the specified boot volume's display name.
+        Updates the specified boot volume's display name, defined tags, and free-form tags.
 
 
         :param str boot_volume_id: (required)

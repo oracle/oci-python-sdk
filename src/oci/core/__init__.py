@@ -8,8 +8,10 @@ from .blockstorage_client import BlockstorageClient
 from .blockstorage_client_composite_operations import BlockstorageClientCompositeOperations
 from .compute_client import ComputeClient
 from .compute_client_composite_operations import ComputeClientCompositeOperations
+from .compute_management_client import ComputeManagementClient
+from .compute_management_client_composite_operations import ComputeManagementClientCompositeOperations
 from .virtual_network_client import VirtualNetworkClient
 from .virtual_network_client_composite_operations import VirtualNetworkClientCompositeOperations
 from . import models
 
-__all__ = ["BlockstorageClient", "BlockstorageClientCompositeOperations", "ComputeClient", "ComputeClientCompositeOperations", "VirtualNetworkClient", "VirtualNetworkClientCompositeOperations", "models"]
+__all__ = ["BlockstorageClient", "BlockstorageClientCompositeOperations", "ComputeClient", "ComputeClientCompositeOperations", "ComputeManagementClient", "ComputeManagementClientCompositeOperations", "VirtualNetworkClient", "VirtualNetworkClientCompositeOperations", "models"]

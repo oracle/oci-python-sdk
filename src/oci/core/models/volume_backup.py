@@ -113,6 +113,10 @@ class VolumeBackup(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type source_type: str
 
+        :param source_volume_backup_id:
+            The value to assign to the source_volume_backup_id property of this VolumeBackup.
+        :type source_volume_backup_id: str
+
         :param time_created:
             The value to assign to the time_created property of this VolumeBackup.
         :type time_created: datetime
@@ -151,6 +155,7 @@ class VolumeBackup(object):
             'size_in_gbs': 'int',
             'size_in_mbs': 'int',
             'source_type': 'str',
+            'source_volume_backup_id': 'str',
             'time_created': 'datetime',
             'time_request_received': 'datetime',
             'type': 'str',
@@ -170,6 +175,7 @@ class VolumeBackup(object):
             'size_in_gbs': 'sizeInGBs',
             'size_in_mbs': 'sizeInMBs',
             'source_type': 'sourceType',
+            'source_volume_backup_id': 'sourceVolumeBackupId',
             'time_created': 'timeCreated',
             'time_request_received': 'timeRequestReceived',
             'type': 'type',
@@ -188,6 +194,7 @@ class VolumeBackup(object):
         self._size_in_gbs = None
         self._size_in_mbs = None
         self._source_type = None
+        self._source_volume_backup_id = None
         self._time_created = None
         self._time_request_received = None
         self._type = None
@@ -480,6 +487,30 @@ class VolumeBackup(object):
         if not value_allowed_none_or_none_sentinel(source_type, allowed_values):
             source_type = 'UNKNOWN_ENUM_VALUE'
         self._source_type = source_type
+
+    @property
+    def source_volume_backup_id(self):
+        """
+        Gets the source_volume_backup_id of this VolumeBackup.
+        The OCID of the source volume backup.
+
+
+        :return: The source_volume_backup_id of this VolumeBackup.
+        :rtype: str
+        """
+        return self._source_volume_backup_id
+
+    @source_volume_backup_id.setter
+    def source_volume_backup_id(self, source_volume_backup_id):
+        """
+        Sets the source_volume_backup_id of this VolumeBackup.
+        The OCID of the source volume backup.
+
+
+        :param source_volume_backup_id: The source_volume_backup_id of this VolumeBackup.
+        :type: str
+        """
+        self._source_volume_backup_id = source_volume_backup_id
 
     @property
     def time_created(self):

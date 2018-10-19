@@ -126,11 +126,11 @@ def get_instance_ip_addresses_and_dns_info(compute_client, virtual_network_clien
             #        get_public_ip_by_private_ip_id
             #
             # Each has drawbacks and benefits, but the one you choose will vary by use case and how you have set up your
-            # OCI resources. For example, if you have many secondary private IPs then (F2) may result in substantially more
-            # service calls than (F1); however for (F1) your user needs permissions to list these resources across multiple
-            # compartments and you may also be retrieving redundant data. Depending on how many "things" you are looking for,
-            # there is also the potential under (F1) for the data to have become stale, whereas there is no such issue for
-            # (F2) because you're always getting that data at the current point in time (however, even in that case under
+            # Oracle Cloud Infrastructure resources. For example, if you have many secondary private IPs then (F2) may result
+            # in substantially more service calls than (F1); however for (F1) your user needs permissions to list these resources
+            # across multiple compartments and you may also be retrieving redundant data. Depending on how many "things" you
+            # are looking for, there is also the potential under (F1) for the data to have become stale, whereas there is no such
+            # issue for (F2) because you're always getting that data at the current point in time (however, even in that case under
             # (F1) the more up-to-date data would likely be captured in a subsequent run of this script/example).
             #
             # For illustration purposes, we will demonstrate both (F1) and (F2)
