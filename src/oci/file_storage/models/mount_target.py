@@ -12,6 +12,8 @@ class MountTarget(object):
     Provides access to a collection of file systems through one or more VNICs on a
     specified subnet. The set of file systems is controlled through the
     referenced export set.
+
+    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
 
     #: A constant which can be used with the lifecycle_state property of a MountTarget.
@@ -81,6 +83,14 @@ class MountTarget(object):
             The value to assign to the time_created property of this MountTarget.
         :type time_created: datetime
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this MountTarget.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this MountTarget.
+        :type defined_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -92,7 +102,9 @@ class MountTarget(object):
             'lifecycle_state': 'str',
             'private_ip_ids': 'list[str]',
             'subnet_id': 'str',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -105,7 +117,9 @@ class MountTarget(object):
             'lifecycle_state': 'lifecycleState',
             'private_ip_ids': 'privateIpIds',
             'subnet_id': 'subnetId',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags'
         }
 
         self._availability_domain = None
@@ -118,6 +132,8 @@ class MountTarget(object):
         self._private_ip_ids = None
         self._subnet_id = None
         self._time_created = None
+        self._freeform_tags = None
+        self._defined_tags = None
 
     @property
     def availability_domain(self):
@@ -390,6 +406,72 @@ class MountTarget(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this MountTarget.
+        Free-form tags for this resource. Each tag is a simple key-value pair
+         with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this MountTarget.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this MountTarget.
+        Free-form tags for this resource. Each tag is a simple key-value pair
+         with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this MountTarget.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this MountTarget.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this MountTarget.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this MountTarget.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this MountTarget.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

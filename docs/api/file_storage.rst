@@ -37,3 +37,4 @@ File Storage
     oci.file_storage.models.UpdateExportSetDetails
     oci.file_storage.models.UpdateFileSystemDetails
     oci.file_storage.models.UpdateMountTargetDetails
+    oci.file_storage.models.UpdateSnapshotDetails

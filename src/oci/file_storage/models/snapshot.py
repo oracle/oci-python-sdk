@@ -10,6 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 class Snapshot(object):
     """
     A point-in-time snapshot of a specified file system.
+
+    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
 
     #: A constant which can be used with the lifecycle_state property of a Snapshot.
@@ -55,13 +57,23 @@ class Snapshot(object):
             The value to assign to the time_created property of this Snapshot.
         :type time_created: datetime
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this Snapshot.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this Snapshot.
+        :type defined_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'file_system_id': 'str',
             'id': 'str',
             'lifecycle_state': 'str',
             'name': 'str',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -69,7 +81,9 @@ class Snapshot(object):
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
             'name': 'name',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags'
         }
 
         self._file_system_id = None
@@ -77,6 +91,8 @@ class Snapshot(object):
         self._lifecycle_state = None
         self._name = None
         self._time_created = None
+        self._freeform_tags = None
+        self._defined_tags = None
 
     @property
     def file_system_id(self):
@@ -223,6 +239,72 @@ class Snapshot(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this Snapshot.
+        Free-form tags for this resource. Each tag is a simple key-value pair
+         with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this Snapshot.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this Snapshot.
+        Free-form tags for this resource. Each tag is a simple key-value pair
+         with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this Snapshot.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this Snapshot.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this Snapshot.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this Snapshot.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this Snapshot.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

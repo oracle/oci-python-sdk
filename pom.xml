@@ -1183,7 +1183,7 @@
       <dependency>
         <groupId>com.oracle.pic.ffsw</groupId>
         <artifactId>fss-api-spec</artifactId>
-        <version>0.0.13</version>
+        <version>0.0.14</version>
       </dependency>
       <dependency>
         <groupId>com.oracle.pic.email</groupId>
