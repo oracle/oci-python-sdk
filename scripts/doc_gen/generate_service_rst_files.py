@@ -24,7 +24,7 @@ SERVICES_FOR_DOC_GEN = [
         'module_name': 'core',
         'service_root_header': 'Core Services',
         'target_file_name': 'core',
-        'service_names': ['blockstorage', 'compute', 'virtual_network']
+        'service_names': ['blockstorage', 'compute', 'compute_management', 'virtual_network']
     },
     {
         'module_name': 'database',
@@ -60,7 +60,7 @@ SERVICES_FOR_DOC_GEN = [
         'module_name': 'key_management',
         'service_root_header': 'Key Management',
         'target_file_name': 'key_management',
-        'service_names': ['key_management']
+        'service_names': ['kms_crypto', 'kms_management', 'kms_vault']
     },
     {
         'module_name': 'load_balancer',
@@ -139,6 +139,14 @@ def landing_page_linkify(service_name):
         return 'core/client/oci.core.ComputeClient'
     elif service_name == 'virtual_network':
         return 'core/client/oci.core.VirtualNetworkClient'
+    elif service_name == 'compute_management':
+        return 'core/client/oci.core.ComputeManagementClient'
+    elif service_name == 'kms_crypto':
+        return 'key_management/client/oci.key_management.KmsCryptoClient'
+    elif service_name == 'kms_management':
+        return 'key_management/client/oci.key_management.KmsManagementClient'
+    elif service_name == 'kms_vault':
+        return 'key_management/client/oci.key_management.KmsVaultClient'
     else:
         return service_name
 

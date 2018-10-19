@@ -7,7 +7,6 @@
 
 import xml.etree.ElementTree as ET
 import re
-import six
 
 POM_LOCATION = "pom.xml"
 ROOT_INIT_LOCATION = "src/oci/__init__.py"
@@ -33,6 +32,7 @@ SERVICE_ENDPOINTS_TEMPLATE = """SERVICE_ENDPOINTS = {{
 }}
 """
 
+
 def parse_pom():
     with open(POM_LOCATION) as f:
         xmlstring = f.read()
@@ -41,7 +41,7 @@ def parse_pom():
     # Otherwise for every 'iter' or 'find' we need to specify namespace
     xmlstring = re.sub(r'\sxmlns="[^"]+"', '', xmlstring, count=1)
 
-    return ET.fromstring(xmlstring) 
+    return ET.fromstring(xmlstring)
 
 
 def get_spec_to_endpoint_map(pom):

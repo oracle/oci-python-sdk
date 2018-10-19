@@ -7,13 +7,16 @@ API Reference
 * :doc:`Container Engine  <container_engine>`
 * :doc:`Block Storage <core/client/oci.core.BlockstorageClient>`
 * :doc:`Compute  <core/client/oci.core.ComputeClient>`
+* :doc:`Compute Management  <core/client/oci.core.ComputeManagementClient>`
 * :doc:`Virtual Network  <core/client/oci.core.VirtualNetworkClient>`
 * :doc:`Database  <database>`
 * :doc:`DNS <dns>`
 * :doc:`Email  <email>`
 * :doc:`File Storage  <file_storage>`
 * :doc:`Identity  <identity>`
-* :doc:`Key Management  <key_management>`
+* :doc:`Kms Crypto  <key_management/client/oci.key_management.KmsCryptoClient>`
+* :doc:`Kms Management  <key_management/client/oci.key_management.KmsManagementClient>`
+* :doc:`Kms Vault  <key_management/client/oci.key_management.KmsVaultClient>`
 * :doc:`Load Balancer  <load_balancer>`
 * :doc:`Object Storage  <object_storage>`
 * :doc:`Resource Search  <resource_search>`
