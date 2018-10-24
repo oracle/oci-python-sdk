@@ -106,15 +106,20 @@ def delete_vcn_and_subnet(virtual_network, vcn_and_subnet):
 
 
 config = oci.config.from_file()
+iam_client = oci.identity.IdentityClient(config)
 file_storage_client = oci.file_storage.FileStorageClient(config)
 virtual_network_client = oci.core.VirtualNetworkClient(config)
 
-if len(sys.argv) != 3:
-    raise RuntimeError('This script expects an argument of the compartment OCID and availability domain where the file system will be created')
+if len(sys.argv) != 5:
+    raise RuntimeError('This script expects an argument of the compartment OCID '
+                       'and availability domain where the file system will be created. '
+                       'It also expects defined tag namespace/key.')
 
 # The first argument is the name of the script, so start the index at 1
 compartment_id = sys.argv[1]
 availability_domain = sys.argv[2]
+namespace = sys.argv[3]
+defined_key = sys.argv[4]
 
 # Here we apply a retry strategy to the call to ride out any throttles, timeouts or intermittent 500s (internal server
 # errors). The retry strategy will also make requests with an opc-retry-token that it generates.
@@ -126,7 +131,9 @@ create_response = file_storage_client.create_file_system(
     oci.file_storage.models.CreateFileSystemDetails(
         display_name='py_sdk_example_fs',
         compartment_id=compartment_id,
-        availability_domain=availability_domain
+        availability_domain=availability_domain,
+        freeform_tags={"foo": "value"},
+        defined_tags={namespace: {defined_key: "value"}}
     ),
     retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
 )
@@ -185,7 +192,9 @@ create_response = file_storage_client.create_mount_target(
         availability_domain=subnet.availability_domain,
         subnet_id=subnet.id,
         compartment_id=compartment_id,
-        display_name=mount_target_name
+        display_name=mount_target_name,
+        freeform_tags={"foo": "value"},
+        defined_tags={namespace: {defined_key: "value"}}
     ),
     opc_retry_token=mount_target_retry_token
 )
@@ -208,7 +217,9 @@ create_response_with_retry_token = file_storage_client.create_mount_target(
         availability_domain=subnet.availability_domain,
         subnet_id=subnet.id,
         compartment_id=compartment_id,
-        display_name=mount_target_name
+        display_name=mount_target_name,
+        freeform_tags={"foo": "value"},
+        defined_tags={namespace: {defined_key: "value"}}
     ),
     opc_retry_token=mount_target_retry_token
 )
@@ -301,7 +312,9 @@ print('=============================\n')
 create_snapshot_response = file_storage_client.create_snapshot(
     oci.file_storage.models.CreateSnapshotDetails(
         file_system_id=file_system.id,
-        name='my_snapshot_1'
+        name='my_snapshot_1',
+        freeform_tags={"foo": "value"},
+        defined_tags={namespace: {defined_key: "value"}}
     ),
     retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
 )
