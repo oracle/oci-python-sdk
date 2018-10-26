@@ -256,7 +256,7 @@ class TestObjectStorage:
             # Setup a bucket to use.
             object_name_a = 'object_A'
             bucket_name = unique_name('test_object_CRUD')
-            test_data = 'This is a test ' + random_number_string() + '!/n/r/\/~%s;"/,{}><+=:.*)('''
+            test_data = 'This is a test ' + random_number_string() + '!/n/r/\/~%s;"/,{}><+=:.*)('''  # noqa: W605
             namespace = object_storage.get_namespace().data
 
             request = oci.object_storage.models.CreateBucketDetails()
@@ -311,7 +311,7 @@ class TestObjectStorage:
             object_name_a = 'object_A'
             object_name_b = 'object_B'
             bucket_name = unique_name('test_object_rename')
-            test_data = 'This is a test ' + random_number_string() + '!/n/r/\/~%s;"/,{}><+=:.*)('''
+            test_data = 'This is a test ' + random_number_string() + '!/n/r/\/~%s;"/,{}><+=:.*)('''  # noqa: W605
             namespace = object_storage.get_namespace().data
 
             request = oci.object_storage.models.CreateBucketDetails()
@@ -376,7 +376,7 @@ class TestObjectStorage:
             # Setup a bucket to use.
             object_name_a = 'object_A'
             bucket_name = unique_name('test_object_CRUD_with_metadata')
-            test_data = 'This is a test ' + random_number_string() + '!/n/r/\/~%s;"/,{}><+=:.*)('''
+            test_data = 'This is a test ' + random_number_string() + '!/n/r/\/~%s;"/,{}><+=:.*)('''  # noqa: W605
             namespace = object_storage.get_namespace().data
 
             request = oci.object_storage.models.CreateBucketDetails()
@@ -865,7 +865,7 @@ class TestObjectStorage:
                 object_storage.delete_bucket(created_bucket.namespace, created_bucket.name)
 
     def restore_object_internal(self, object_storage, namespace, bucket_name, object_name, restore_hours=None):
-        test_data = 'This is a test ' + random_number_string() + '!/n/r/\/~%s;"/,{}><+=:.*)('''
+        test_data = 'This is a test ' + random_number_string() + '!/n/r/\/~%s;"/,{}><+=:.*)('''  # noqa: W605
 
         # Put an object
         response = object_storage.put_object(namespace, bucket_name, object_name, test_data)
