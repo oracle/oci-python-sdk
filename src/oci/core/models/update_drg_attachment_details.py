@@ -21,16 +21,23 @@ class UpdateDrgAttachmentDetails(object):
             The value to assign to the display_name property of this UpdateDrgAttachmentDetails.
         :type display_name: str
 
+        :param route_table_id:
+            The value to assign to the route_table_id property of this UpdateDrgAttachmentDetails.
+        :type route_table_id: str
+
         """
         self.swagger_types = {
-            'display_name': 'str'
+            'display_name': 'str',
+            'route_table_id': 'str'
         }
 
         self.attribute_map = {
-            'display_name': 'displayName'
+            'display_name': 'displayName',
+            'route_table_id': 'routeTableId'
         }
 
         self._display_name = None
+        self._route_table_id = None
 
     @property
     def display_name(self):
@@ -57,6 +64,30 @@ class UpdateDrgAttachmentDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def route_table_id(self):
+        """
+        Gets the route_table_id of this UpdateDrgAttachmentDetails.
+        The OCID of the route table the DRG attachment will use.
+
+
+        :return: The route_table_id of this UpdateDrgAttachmentDetails.
+        :rtype: str
+        """
+        return self._route_table_id
+
+    @route_table_id.setter
+    def route_table_id(self, route_table_id):
+        """
+        Sets the route_table_id of this UpdateDrgAttachmentDetails.
+        The OCID of the route table the DRG attachment will use.
+
+
+        :param route_table_id: The route_table_id of this UpdateDrgAttachmentDetails.
+        :type: str
+        """
+        self._route_table_id = route_table_id
 
     def __repr__(self):
         return formatted_flat_dict(self)
