@@ -12,8 +12,12 @@ Added
 -----
 * TBD
 
+Changed
+-------
+* pyOpenSSL pinning was changed to pyOpenSSL>=17.5.0 and cryptography pinning to cryptography>=2.1.4 to address a vulnerability identified on GitHub as CVE-2018-1000808.
+
 ====================
-2.1.2 - 2018-11-29 
+2.1.2 - 2018-11-29
 ====================
 
 Added
@@ -24,7 +28,6 @@ Added
 Fixed
 -----
 * Block Storage service for copying volume backups across regions is now enabled
- 
 
 ====================
 2.1.1 - 2018-11-15
