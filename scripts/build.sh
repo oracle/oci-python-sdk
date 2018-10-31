@@ -44,6 +44,7 @@ echo Running Tests
 if [ $TEST_ENABLE = "false" ]; then
   echo "TESTS HAVE BEEN DISABLED."
 else
+  pip install virtualenv==16.0.0
   pip install tox
   tox -e flake8,py27,py35 -- --vcr-record-mode=none
 fi
