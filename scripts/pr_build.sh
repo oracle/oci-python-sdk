@@ -48,6 +48,7 @@ cp -r docs/_build/html/* dist/oci-python-sdk-docs-$SDK_VERSION/
 
 echo Running Tests
 
+pip install virtualenv==16.0.0
 pip install tox
 if [[ $TEST_ENABLE = "false" ]]; then
   echo "Tests Disabled.  Just running flake 8"
