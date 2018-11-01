@@ -8,9 +8,11 @@ Core Services
 
     oci.core.BlockstorageClient
     oci.core.ComputeClient
+    oci.core.ComputeManagementClient
     oci.core.VirtualNetworkClient
     oci.core.BlockstorageClientCompositeOperations
     oci.core.ComputeClientCompositeOperations
+    oci.core.ComputeManagementClientCompositeOperations
     oci.core.VirtualNetworkClientCompositeOperations
 
 --------

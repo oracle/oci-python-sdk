@@ -22,6 +22,7 @@ from .update_export_details import UpdateExportDetails
 from .update_export_set_details import UpdateExportSetDetails
 from .update_file_system_details import UpdateFileSystemDetails
 from .update_mount_target_details import UpdateMountTargetDetails
+from .update_snapshot_details import UpdateSnapshotDetails
 
 # Maps type names to classes for file_storage services.
 file_storage_type_mapping = {
@@ -43,5 +44,6 @@ file_storage_type_mapping = {
     "UpdateExportDetails": UpdateExportDetails,
     "UpdateExportSetDetails": UpdateExportSetDetails,
     "UpdateFileSystemDetails": UpdateFileSystemDetails,
-    "UpdateMountTargetDetails": UpdateMountTargetDetails
+    "UpdateMountTargetDetails": UpdateMountTargetDetails,
+    "UpdateSnapshotDetails": UpdateSnapshotDetails
 }

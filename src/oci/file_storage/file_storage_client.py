@@ -1057,12 +1057,25 @@ class FileStorageClient(object):
             Example: `Uocm:PHX-AD-1`
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page,
+            or items to return in a paginated \"List\" call.
+            1 is the minimum, 1000 is the maximum.
+
+            For important details about how pagination works,
+            see `List Pagination`__.
 
             Example: `500`
 
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response
+            header from the previous \"List\" call.
+
+            For important details about how pagination works,
+            see `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A user-friendly name. It does not have to be unique, and it is changeable.
@@ -1194,12 +1207,25 @@ class FileStorageClient(object):
             The OCID of the compartment.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page,
+            or items to return in a paginated \"List\" call.
+            1 is the minimum, 1000 is the maximum.
+
+            For important details about how pagination works,
+            see `List Pagination`__.
 
             Example: `500`
 
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response
+            header from the previous \"List\" call.
+
+            For important details about how pagination works,
+            see `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str export_set_id: (optional)
             The OCID of the export set.
@@ -1337,12 +1363,25 @@ class FileStorageClient(object):
             Example: `Uocm:PHX-AD-1`
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page,
+            or items to return in a paginated \"List\" call.
+            1 is the minimum, 1000 is the maximum.
+
+            For important details about how pagination works,
+            see `List Pagination`__.
 
             Example: `500`
 
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response
+            header from the previous \"List\" call.
+
+            For important details about how pagination works,
+            see `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A user-friendly name. It does not have to be unique, and it is changeable.
@@ -1477,12 +1516,25 @@ class FileStorageClient(object):
             Example: `Uocm:PHX-AD-1`
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page,
+            or items to return in a paginated \"List\" call.
+            1 is the minimum, 1000 is the maximum.
+
+            For important details about how pagination works,
+            see `List Pagination`__.
 
             Example: `500`
 
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response
+            header from the previous \"List\" call.
+
+            For important details about how pagination works,
+            see `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A user-friendly name. It does not have to be unique, and it is changeable.
@@ -1617,12 +1669,25 @@ class FileStorageClient(object):
             The OCID of the file system.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page,
+            or items to return in a paginated \"List\" call.
+            1 is the minimum, 1000 is the maximum.
+
+            For important details about how pagination works,
+            see `List Pagination`__.
 
             Example: `500`
 
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response
+            header from the previous \"List\" call.
+
+            For important details about how pagination works,
+            see `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str lifecycle_state: (optional)
             Filter results by the specified lifecycle state. Must be a valid
@@ -2045,3 +2110,85 @@ class FileStorageClient(object):
                 header_params=header_params,
                 body=update_mount_target_details,
                 response_type="MountTarget")
+
+    def update_snapshot(self, snapshot_id, update_snapshot_details, **kwargs):
+        """
+        UpdateSnapshot
+        Updates the specified snapshot's information.
+
+
+        :param str snapshot_id: (required)
+            The OCID of the snapshot.
+
+        :param UpdateSnapshotDetails update_snapshot_details: (required)
+            Details object for updating a snapshot.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.file_storage.models.Snapshot`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/snapshots/{snapshotId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_snapshot got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "snapshotId": snapshot_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_snapshot_details,
+                response_type="Snapshot")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_snapshot_details,
+                response_type="Snapshot")

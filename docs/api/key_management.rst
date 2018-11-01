@@ -6,8 +6,12 @@ Key Management
     :nosignatures:
     :template: autosummary/service_client.rst
 
-    oci.key_management.KeyManagementClient
-    oci.key_management.KeyManagementClientCompositeOperations
+    oci.key_management.KmsCryptoClient
+    oci.key_management.KmsManagementClient
+    oci.key_management.KmsVaultClient
+    oci.key_management.KmsCryptoClientCompositeOperations
+    oci.key_management.KmsManagementClientCompositeOperations
+    oci.key_management.KmsVaultClientCompositeOperations
 
 --------
  Models

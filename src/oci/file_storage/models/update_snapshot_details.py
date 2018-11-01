@@ -7,116 +7,42 @@ from oci.decorators import init_model_state_from_kwargs
 
 
 @init_model_state_from_kwargs
-class CreateSnapshotDetails(object):
+class UpdateSnapshotDetails(object):
     """
-    CreateSnapshotDetails model.
+    UpdateSnapshotDetails model.
     """
 
     def __init__(self, **kwargs):
         """
-        Initializes a new CreateSnapshotDetails object with values from keyword arguments.
+        Initializes a new UpdateSnapshotDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param file_system_id:
-            The value to assign to the file_system_id property of this CreateSnapshotDetails.
-        :type file_system_id: str
-
-        :param name:
-            The value to assign to the name property of this CreateSnapshotDetails.
-        :type name: str
-
         :param freeform_tags:
-            The value to assign to the freeform_tags property of this CreateSnapshotDetails.
+            The value to assign to the freeform_tags property of this UpdateSnapshotDetails.
         :type freeform_tags: dict(str, str)
 
         :param defined_tags:
-            The value to assign to the defined_tags property of this CreateSnapshotDetails.
+            The value to assign to the defined_tags property of this UpdateSnapshotDetails.
         :type defined_tags: dict(str, dict(str, object))
 
         """
         self.swagger_types = {
-            'file_system_id': 'str',
-            'name': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
-            'file_system_id': 'fileSystemId',
-            'name': 'name',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
-        self._file_system_id = None
-        self._name = None
         self._freeform_tags = None
         self._defined_tags = None
 
     @property
-    def file_system_id(self):
-        """
-        **[Required]** Gets the file_system_id of this CreateSnapshotDetails.
-        The OCID of the file system to take a snapshot of.
-
-
-        :return: The file_system_id of this CreateSnapshotDetails.
-        :rtype: str
-        """
-        return self._file_system_id
-
-    @file_system_id.setter
-    def file_system_id(self, file_system_id):
-        """
-        Sets the file_system_id of this CreateSnapshotDetails.
-        The OCID of the file system to take a snapshot of.
-
-
-        :param file_system_id: The file_system_id of this CreateSnapshotDetails.
-        :type: str
-        """
-        self._file_system_id = file_system_id
-
-    @property
-    def name(self):
-        """
-        **[Required]** Gets the name of this CreateSnapshotDetails.
-        Name of the snapshot. This value is immutable. It must also be unique with respect
-        to all other non-DELETED snapshots on the associated file
-        system.
-
-        Avoid entering confidential information.
-
-        Example: `Sunday`
-
-
-        :return: The name of this CreateSnapshotDetails.
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """
-        Sets the name of this CreateSnapshotDetails.
-        Name of the snapshot. This value is immutable. It must also be unique with respect
-        to all other non-DELETED snapshots on the associated file
-        system.
-
-        Avoid entering confidential information.
-
-        Example: `Sunday`
-
-
-        :param name: The name of this CreateSnapshotDetails.
-        :type: str
-        """
-        self._name = name
-
-    @property
     def freeform_tags(self):
         """
-        Gets the freeform_tags of this CreateSnapshotDetails.
+        Gets the freeform_tags of this UpdateSnapshotDetails.
         Free-form tags for this resource. Each tag is a simple key-value pair
          with no predefined name, type, or namespace.
         For more information, see `Resource Tags`__.
@@ -125,7 +51,7 @@ class CreateSnapshotDetails(object):
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
 
 
-        :return: The freeform_tags of this CreateSnapshotDetails.
+        :return: The freeform_tags of this UpdateSnapshotDetails.
         :rtype: dict(str, str)
         """
         return self._freeform_tags
@@ -133,7 +59,7 @@ class CreateSnapshotDetails(object):
     @freeform_tags.setter
     def freeform_tags(self, freeform_tags):
         """
-        Sets the freeform_tags of this CreateSnapshotDetails.
+        Sets the freeform_tags of this UpdateSnapshotDetails.
         Free-form tags for this resource. Each tag is a simple key-value pair
          with no predefined name, type, or namespace.
         For more information, see `Resource Tags`__.
@@ -142,7 +68,7 @@ class CreateSnapshotDetails(object):
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
 
 
-        :param freeform_tags: The freeform_tags of this CreateSnapshotDetails.
+        :param freeform_tags: The freeform_tags of this UpdateSnapshotDetails.
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
@@ -150,7 +76,7 @@ class CreateSnapshotDetails(object):
     @property
     def defined_tags(self):
         """
-        Gets the defined_tags of this CreateSnapshotDetails.
+        Gets the defined_tags of this UpdateSnapshotDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
@@ -158,7 +84,7 @@ class CreateSnapshotDetails(object):
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
 
 
-        :return: The defined_tags of this CreateSnapshotDetails.
+        :return: The defined_tags of this UpdateSnapshotDetails.
         :rtype: dict(str, dict(str, object))
         """
         return self._defined_tags
@@ -166,7 +92,7 @@ class CreateSnapshotDetails(object):
     @defined_tags.setter
     def defined_tags(self, defined_tags):
         """
-        Sets the defined_tags of this CreateSnapshotDetails.
+        Sets the defined_tags of this UpdateSnapshotDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
@@ -174,7 +100,7 @@ class CreateSnapshotDetails(object):
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
 
 
-        :param defined_tags: The defined_tags of this CreateSnapshotDetails.
+        :param defined_tags: The defined_tags of this UpdateSnapshotDetails.
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
