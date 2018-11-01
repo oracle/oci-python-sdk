@@ -88,9 +88,9 @@ class Backup(object):
             The value to assign to the database_id property of this Backup.
         :type database_id: str
 
-        :param database_size_in_g_bs:
-            The value to assign to the database_size_in_g_bs property of this Backup.
-        :type database_size_in_g_bs: float
+        :param database_size_in_gbs:
+            The value to assign to the database_size_in_gbs property of this Backup.
+        :type database_size_in_gbs: float
 
         :param display_name:
             The value to assign to the display_name property of this Backup.
@@ -130,7 +130,7 @@ class Backup(object):
             'compartment_id': 'str',
             'database_edition': 'str',
             'database_id': 'str',
-            'database_size_in_g_bs': 'float',
+            'database_size_in_gbs': 'float',
             'display_name': 'str',
             'id': 'str',
             'lifecycle_details': 'str',
@@ -145,7 +145,7 @@ class Backup(object):
             'compartment_id': 'compartmentId',
             'database_edition': 'databaseEdition',
             'database_id': 'databaseId',
-            'database_size_in_g_bs': 'databaseSizeInGBs',
+            'database_size_in_gbs': 'databaseSizeInGBs',
             'display_name': 'displayName',
             'id': 'id',
             'lifecycle_details': 'lifecycleDetails',
@@ -159,7 +159,7 @@ class Backup(object):
         self._compartment_id = None
         self._database_edition = None
         self._database_id = None
-        self._database_size_in_g_bs = None
+        self._database_size_in_gbs = None
         self._display_name = None
         self._id = None
         self._lifecycle_details = None
@@ -279,28 +279,28 @@ class Backup(object):
         self._database_id = database_id
 
     @property
-    def database_size_in_g_bs(self):
+    def database_size_in_gbs(self):
         """
-        Gets the database_size_in_g_bs of this Backup.
+        Gets the database_size_in_gbs of this Backup.
         The size of the database in gigabytes at the time the backup was taken.
 
 
-        :return: The database_size_in_g_bs of this Backup.
+        :return: The database_size_in_gbs of this Backup.
         :rtype: float
         """
-        return self._database_size_in_g_bs
+        return self._database_size_in_gbs
 
-    @database_size_in_g_bs.setter
-    def database_size_in_g_bs(self, database_size_in_g_bs):
+    @database_size_in_gbs.setter
+    def database_size_in_gbs(self, database_size_in_gbs):
         """
-        Sets the database_size_in_g_bs of this Backup.
+        Sets the database_size_in_gbs of this Backup.
         The size of the database in gigabytes at the time the backup was taken.
 
 
-        :param database_size_in_g_bs: The database_size_in_g_bs of this Backup.
+        :param database_size_in_gbs: The database_size_in_gbs of this Backup.
         :type: float
         """
-        self._database_size_in_g_bs = database_size_in_g_bs
+        self._database_size_in_gbs = database_size_in_gbs
 
     @property
     def display_name(self):

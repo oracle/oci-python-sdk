@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.1.0 - 2018-11-01
+====================
+
+Added
+-----
+* Support for modifying the route table, DHCP options and security lists associated with a subnet in the Networking service.
+* Support for tagging of File Systems, Mount Targets and Snapshots in the File Storage service.
+* Support for nested compartments in the Identity service
+
+Breaking
+--------
+* database_size_in_g_bs field in Backup and BackupSummary models renamed to database_size_in_gbs.
+
+====================
 2.0.6 - 2018-10-18
 ====================
 
@@ -21,7 +35,7 @@ Added
 
 Changed
 -------
-* database_edition field in Backup model changed from a free format string to a validated string. It will only accept one of the following: “STANDARD_EDITION”, “ENTERPRISE_EDITION”, “ENTERPRISE_EDITION_HIGH_PERFORMANCE”, “ENTERPRISE_EDITION_EXTREME_PERFORMANCE”
+* database_edition field in Backup and model changed from a free format string to a validated string. It will only accept one of the following: “STANDARD_EDITION”, “ENTERPRISE_EDITION”, “ENTERPRISE_EDITION_HIGH_PERFORMANCE”, “ENTERPRISE_EDITION_EXTREME_PERFORMANCE”
 
 Known issue
 -----------
@@ -29,7 +43,7 @@ Known issue
 
 Breaking
 --------
-* db_data_size_in_mbs field in Backup model is renamed to database_size_in_g_bs. The type changed from int to float.
+* db_data_size_in_mbs field in Backup and BackupSummary models renamed to database_size_in_g_bs. The type changed from int to float.
 
 ====================
 2.0.5 - 2018-10-04

@@ -88,6 +88,14 @@ Compute
     :noindex:
 
 
+Compute Management 
+===================
+
+.. autoclass:: oci.core.compute_management_client.ComputeManagementClient
+    :members:
+    :noindex:
+
+
 Virtual Network 
 ================
 
@@ -238,13 +246,34 @@ Identity
 Key Management
 ==============
 
---------
- Client
---------
+---------
+ Clients
+---------
 
-.. autoclass:: oci.key_management.key_management_client.KeyManagementClient
+
+Kms Crypto 
+===========
+
+.. autoclass:: oci.key_management.kms_crypto_client.KmsCryptoClient
     :members:
     :noindex:
+
+
+Kms Management 
+===============
+
+.. autoclass:: oci.key_management.kms_management_client.KmsManagementClient
+    :members:
+    :noindex:
+
+
+Kms Vault 
+==========
+
+.. autoclass:: oci.key_management.kms_vault_client.KmsVaultClient
+    :members:
+    :noindex:
+
 
 --------
  Models

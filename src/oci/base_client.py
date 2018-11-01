@@ -27,8 +27,8 @@ missing = Sentinel("Missing")
 
 USER_INFO = "Oracle-PythonSDK/{}".format(__version__)
 
-DICT_VALUE_TYPE_REGEX = re.compile('dict\(str, (.+?)\)$')
-LIST_ITEM_TYPE_REGEX = re.compile('list\[(.+?)\]$')
+DICT_VALUE_TYPE_REGEX = re.compile('dict\(str, (.+?)\)$')  # noqa: W605
+LIST_ITEM_TYPE_REGEX = re.compile('list\[(.+?)\]$')  # noqa: W605
 
 
 def merge_type_mappings(*dictionaries):
@@ -547,12 +547,12 @@ class BaseClient(object):
             return None
 
         if cls.startswith('list['):
-            sub_kls = re.match('list\[(.*)\]', cls).group(1)
+            sub_kls = re.match('list\[(.*)\]', cls).group(1)  # noqa: W605
             return [self.__deserialize(sub_data, sub_kls)
                     for sub_data in data]
 
         if cls.startswith('dict('):
-            sub_kls = re.match('dict\(([^,]*), (.*)\)', cls).group(2)
+            sub_kls = re.match('dict\(([^,]*), (.*)\)', cls).group(2)  # noqa: W605
             return {k: self.__deserialize(v, sub_kls)
                     for k, v in data.items()}
 
