@@ -2,6 +2,7 @@
 # Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 
 import filecmp
+import io
 import os
 import os.path
 import pytest
@@ -13,6 +14,7 @@ import oci
 from oci._vendor import six
 from oci.object_storage.transfer.constants import MEBIBYTE
 from oci.object_storage import MultipartObjectAssembler
+from oci.object_storage import UploadManager
 from tests.util import get_resource_path, unique_name
 from . import util
 
@@ -302,3 +304,32 @@ class TestUploadManager:
         assert filecmp.cmp(test_file, downloaded_empty_file_path, shallow=False)
 
         os.remove(downloaded_empty_file_path)
+
+    def test_upload_stream_from_ioBytes(self, object_storage, namespace, non_vcr_bucket):
+        is_parallel = True
+        num_threads = 8
+        data_size = 4 * 1024 * 1024
+        part_size = 512 * 1024
+        object_name = "ioByteTest"
+        # The data we are uploading
+        b = b'0123456789abcdefg'
+        data = (b * (data_size // len(b))) + (b'x' * (data_size % len(b)))
+        assert len(data) == data_size
+        # Upload
+        s = io.BytesIO(data)
+        print("Bucket: {}".format(non_vcr_bucket))
+        print("Data length: {}".format(len(data)))
+        upload_manager = UploadManager(object_storage,
+                                       allow_parallel_uploads=is_parallel,
+                                       parallel_process_count=num_threads)
+        upload_manager.upload_stream(namespace, non_vcr_bucket, object_name, s, part_size=part_size)
+
+        # Download
+        get_result = object_storage.get_object(
+            namespace_name=namespace,
+            bucket_name=non_vcr_bucket,
+            object_name=object_name,
+            retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY)
+        downloaded = bytearray(len(data))
+        get_result.data.raw.readinto(downloaded)
+        assert data == downloaded

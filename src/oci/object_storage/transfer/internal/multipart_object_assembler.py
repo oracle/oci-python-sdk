@@ -468,7 +468,7 @@ class MultipartObjectAssembler:
         # We pull data from the stream until there is no more
         keep_reading = True
         while keep_reading:
-            if six.PY3:
+            if six.PY3 and hasattr(stream_ref, 'buffer'):
                 read_bytes = stream_ref.buffer.read(self.part_size)
             else:
                 read_bytes = stream_ref.read(self.part_size)
