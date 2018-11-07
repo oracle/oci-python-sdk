@@ -5,12 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
-2.1.1 - TBD
+2.1.1 - 2018-11-15
 ====================
 
 Added
 -----
-* TBD 
+* Support for VCN transit routing in the Networking service
+
+Fixed
+-----
+* Fixed UploadManager to work with unbuffered streams in Python 3
 
 ====================
 2.1.0 - 2018-11-01
