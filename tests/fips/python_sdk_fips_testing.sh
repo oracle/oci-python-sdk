@@ -40,7 +40,7 @@ pip install -r /oci/requirements.txt
 
 echo "Python 2.7.5 - Entering fips mode and importing Python SDK"
 echo $(pwd)
-python /oci/tests/fips/basic_fips_test.py
+python /oci/tests/fips/verify_fips_mode.py
 
 pyenv shell --unset
 
@@ -55,7 +55,7 @@ pip install -e /oci
 pip install -r /oci/requirements.txt
 
 echo "Python 3.6.5 - Entering fips mode and importing Python SDK"
-python /oci/tests/fips/basic_fips_test.py
+python /oci/tests/fips/verify_fips_mode.py
 
 # Run the oci unit tests in FIPS mode to enshure there are no issues.
 echo "Running unit tests"
