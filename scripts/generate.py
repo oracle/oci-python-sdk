@@ -12,7 +12,7 @@ POM_LOCATION = "pom.xml"
 ROOT_INIT_LOCATION = "src/oci/__init__.py"
 
 ROOT_INIT_FILE_TEMPLATE = """from . import {spec_names}
-from . import auth, config, constants, decorators, exceptions, regions, pagination, retry
+from . import auth, config, constants, decorators, exceptions, regions, pagination, retry, fips
 from .base_client import BaseClient
 from .request import Request
 from .response import Response
@@ -20,16 +20,12 @@ from .signer import Signer
 from .version import __version__  # noqa
 from .waiter import wait_until
 
+fips.enable_fips_mode()
 
 __all__ = [
-    "BaseClient", "Error", "Request", "Response", "Signer", "config", "constants", "decorators", "exceptions", "regions", "wait_until", "pagination", "auth", "retry",
+    "BaseClient", "Error", "Request", "Response", "Signer", "config", "constants", "decorators", "exceptions", "regions", "wait_until", "pagination", "auth", "retry", "fips",
     {quoted_spec_names}
 ]
-"""
-
-SERVICE_ENDPOINTS_TEMPLATE = """SERVICE_ENDPOINTS = {{
-    {endpoints}
-}}
 """
 
 

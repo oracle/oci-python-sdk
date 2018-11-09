@@ -1,0 +1,7 @@
+FROM oraclelinux:7.5
+
+COPY setup-ol7.5-python.sh /tmp/
+RUN chmod a+x /tmp/*.sh \
+&& /tmp/setup-ol7.5-python.sh
+
+CMD ["/bin/bash"]
