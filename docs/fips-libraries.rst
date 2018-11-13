@@ -11,13 +11,13 @@
 
 Using FIPS-validated Libraries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- 
+
 The SDK can be configured to use FIPS-validated libcrypto library. You can set it programmatically on a per session basis or persistently across the environment. Both approaches require the path to the libcrypto library on your system.
 
 Enabling FIPS Mode Programmatically
 ------------------------------------
 
-To configure the SDK to use a FIPS-validated libcrypto library, execute the following: 
+To configure the SDK to use a FIPS-validated libcrypto library, execute the following:
 
 .. code-block:: python
 
@@ -28,11 +28,9 @@ Setting the Environment Variables
 
 If you do not want to run ``enable_fips_mode()`` for every session, you can set an environment variable so that the SDK uses the library every time.
 
-Set one of the following environment variables to the path to the libcrypto library:
+Set the following environment variable to the path to the libcrypto library:
 
-- FIPS_LIBCRYPTO_FILE
-- OCI_CLI_FIPS_LIBCRYPTO_FILE
-- OCI_PYTHON_SDK_FIPS_LIBCRYPTO_FILE
+- FIPS_LIBCRYPTO_PATH
 
 Verifying the Configuration
 ---------------------------
