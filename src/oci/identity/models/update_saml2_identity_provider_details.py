@@ -43,6 +43,10 @@ class UpdateSaml2IdentityProviderDetails(UpdateIdentityProviderDetails):
             The value to assign to the metadata property of this UpdateSaml2IdentityProviderDetails.
         :type metadata: str
 
+        :param freeform_attributes:
+            The value to assign to the freeform_attributes property of this UpdateSaml2IdentityProviderDetails.
+        :type freeform_attributes: dict(str, str)
+
         """
         self.swagger_types = {
             'protocol': 'str',
@@ -50,7 +54,8 @@ class UpdateSaml2IdentityProviderDetails(UpdateIdentityProviderDetails):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'metadata_url': 'str',
-            'metadata': 'str'
+            'metadata': 'str',
+            'freeform_attributes': 'dict(str, str)'
         }
 
         self.attribute_map = {
@@ -59,7 +64,8 @@ class UpdateSaml2IdentityProviderDetails(UpdateIdentityProviderDetails):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'metadata_url': 'metadataUrl',
-            'metadata': 'metadata'
+            'metadata': 'metadata',
+            'freeform_attributes': 'freeformAttributes'
         }
 
         self._protocol = None
@@ -68,6 +74,7 @@ class UpdateSaml2IdentityProviderDetails(UpdateIdentityProviderDetails):
         self._defined_tags = None
         self._metadata_url = None
         self._metadata = None
+        self._freeform_attributes = None
         self._protocol = 'SAML2'
 
     @property
@@ -119,6 +126,32 @@ class UpdateSaml2IdentityProviderDetails(UpdateIdentityProviderDetails):
         :type: str
         """
         self._metadata = metadata
+
+    @property
+    def freeform_attributes(self):
+        """
+        Gets the freeform_attributes of this UpdateSaml2IdentityProviderDetails.
+        Extra name value pairs associated with this identity provider.
+        Example: `{\"clientId\": \"app_sf3kdjf3\"}`
+
+
+        :return: The freeform_attributes of this UpdateSaml2IdentityProviderDetails.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_attributes
+
+    @freeform_attributes.setter
+    def freeform_attributes(self, freeform_attributes):
+        """
+        Sets the freeform_attributes of this UpdateSaml2IdentityProviderDetails.
+        Extra name value pairs associated with this identity provider.
+        Example: `{\"clientId\": \"app_sf3kdjf3\"}`
+
+
+        :param freeform_attributes: The freeform_attributes of this UpdateSaml2IdentityProviderDetails.
+        :type: dict(str, str)
+        """
+        self._freeform_attributes = freeform_attributes
 
     def __repr__(self):
         return formatted_flat_dict(self)
