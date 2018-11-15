@@ -61,6 +61,10 @@ class DrgAttachment(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param route_table_id:
+            The value to assign to the route_table_id property of this DrgAttachment.
+        :type route_table_id: str
+
         :param time_created:
             The value to assign to the time_created property of this DrgAttachment.
         :type time_created: datetime
@@ -76,6 +80,7 @@ class DrgAttachment(object):
             'drg_id': 'str',
             'id': 'str',
             'lifecycle_state': 'str',
+            'route_table_id': 'str',
             'time_created': 'datetime',
             'vcn_id': 'str'
         }
@@ -86,6 +91,7 @@ class DrgAttachment(object):
             'drg_id': 'drgId',
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
+            'route_table_id': 'routeTableId',
             'time_created': 'timeCreated',
             'vcn_id': 'vcnId'
         }
@@ -95,6 +101,7 @@ class DrgAttachment(object):
         self._drg_id = None
         self._id = None
         self._lifecycle_state = None
+        self._route_table_id = None
         self._time_created = None
         self._vcn_id = None
 
@@ -225,6 +232,30 @@ class DrgAttachment(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def route_table_id(self):
+        """
+        Gets the route_table_id of this DrgAttachment.
+        The OCID of the route table the DRG attachment is using.
+
+
+        :return: The route_table_id of this DrgAttachment.
+        :rtype: str
+        """
+        return self._route_table_id
+
+    @route_table_id.setter
+    def route_table_id(self, route_table_id):
+        """
+        Sets the route_table_id of this DrgAttachment.
+        The OCID of the route table the DRG attachment is using.
+
+
+        :param route_table_id: The route_table_id of this DrgAttachment.
+        :type: str
+        """
+        self._route_table_id = route_table_id
 
     @property
     def time_created(self):

@@ -101,6 +101,10 @@ class LocalPeeringGateway(object):
             The value to assign to the peer_advertised_cidr property of this LocalPeeringGateway.
         :type peer_advertised_cidr: str
 
+        :param peer_advertised_cidr_details:
+            The value to assign to the peer_advertised_cidr_details property of this LocalPeeringGateway.
+        :type peer_advertised_cidr_details: list[str]
+
         :param peering_status:
             The value to assign to the peering_status property of this LocalPeeringGateway.
             Allowed values for this property are: "INVALID", "NEW", "PEERED", "PENDING", "REVOKED", 'UNKNOWN_ENUM_VALUE'.
@@ -110,6 +114,10 @@ class LocalPeeringGateway(object):
         :param peering_status_details:
             The value to assign to the peering_status_details property of this LocalPeeringGateway.
         :type peering_status_details: str
+
+        :param route_table_id:
+            The value to assign to the route_table_id property of this LocalPeeringGateway.
+        :type route_table_id: str
 
         :param time_created:
             The value to assign to the time_created property of this LocalPeeringGateway.
@@ -129,8 +137,10 @@ class LocalPeeringGateway(object):
             'is_cross_tenancy_peering': 'bool',
             'lifecycle_state': 'str',
             'peer_advertised_cidr': 'str',
+            'peer_advertised_cidr_details': 'list[str]',
             'peering_status': 'str',
             'peering_status_details': 'str',
+            'route_table_id': 'str',
             'time_created': 'datetime',
             'vcn_id': 'str'
         }
@@ -144,8 +154,10 @@ class LocalPeeringGateway(object):
             'is_cross_tenancy_peering': 'isCrossTenancyPeering',
             'lifecycle_state': 'lifecycleState',
             'peer_advertised_cidr': 'peerAdvertisedCidr',
+            'peer_advertised_cidr_details': 'peerAdvertisedCidrDetails',
             'peering_status': 'peeringStatus',
             'peering_status_details': 'peeringStatusDetails',
+            'route_table_id': 'routeTableId',
             'time_created': 'timeCreated',
             'vcn_id': 'vcnId'
         }
@@ -158,8 +170,10 @@ class LocalPeeringGateway(object):
         self._is_cross_tenancy_peering = None
         self._lifecycle_state = None
         self._peer_advertised_cidr = None
+        self._peer_advertised_cidr_details = None
         self._peering_status = None
         self._peering_status_details = None
+        self._route_table_id = None
         self._time_created = None
         self._vcn_id = None
 
@@ -369,12 +383,11 @@ class LocalPeeringGateway(object):
     def peer_advertised_cidr(self):
         """
         Gets the peer_advertised_cidr of this LocalPeeringGateway.
-        The range of IP addresses available on the VCN at the other
-        end of the peering from this LPG. The value is `null` if the LPG is not peered.
-        You can use this as the destination CIDR for a route rule to route a subnet's
-        traffic to this LPG.
+        The smallest aggregate CIDR that contains all the CIDR routes advertised by the VCN
+        at the other end of the peering from this LPG. See `peerAdvertisedCidrDetails` for
+        the individual CIDRs. The value is `null` if the LPG is not peered.
 
-        Example: `192.168.0.0/16`
+        Example: `192.168.0.0/16`, or if aggregated with `172.16.0.0/24` then `128.0.0.0/1`
 
 
         :return: The peer_advertised_cidr of this LocalPeeringGateway.
@@ -386,18 +399,51 @@ class LocalPeeringGateway(object):
     def peer_advertised_cidr(self, peer_advertised_cidr):
         """
         Sets the peer_advertised_cidr of this LocalPeeringGateway.
-        The range of IP addresses available on the VCN at the other
-        end of the peering from this LPG. The value is `null` if the LPG is not peered.
-        You can use this as the destination CIDR for a route rule to route a subnet's
-        traffic to this LPG.
+        The smallest aggregate CIDR that contains all the CIDR routes advertised by the VCN
+        at the other end of the peering from this LPG. See `peerAdvertisedCidrDetails` for
+        the individual CIDRs. The value is `null` if the LPG is not peered.
 
-        Example: `192.168.0.0/16`
+        Example: `192.168.0.0/16`, or if aggregated with `172.16.0.0/24` then `128.0.0.0/1`
 
 
         :param peer_advertised_cidr: The peer_advertised_cidr of this LocalPeeringGateway.
         :type: str
         """
         self._peer_advertised_cidr = peer_advertised_cidr
+
+    @property
+    def peer_advertised_cidr_details(self):
+        """
+        Gets the peer_advertised_cidr_details of this LocalPeeringGateway.
+        The specific ranges of IP addresses available on or via the VCN at the other
+        end of the peering from this LPG. The value is `null` if the LPG is not peered.
+        You can use these as destination CIDRs for route rules to route a subnet's
+        traffic to this LPG.
+
+        Example: [`192.168.0.0/16`, `172.16.0.0/24`]
+
+
+        :return: The peer_advertised_cidr_details of this LocalPeeringGateway.
+        :rtype: list[str]
+        """
+        return self._peer_advertised_cidr_details
+
+    @peer_advertised_cidr_details.setter
+    def peer_advertised_cidr_details(self, peer_advertised_cidr_details):
+        """
+        Sets the peer_advertised_cidr_details of this LocalPeeringGateway.
+        The specific ranges of IP addresses available on or via the VCN at the other
+        end of the peering from this LPG. The value is `null` if the LPG is not peered.
+        You can use these as destination CIDRs for route rules to route a subnet's
+        traffic to this LPG.
+
+        Example: [`192.168.0.0/16`, `172.16.0.0/24`]
+
+
+        :param peer_advertised_cidr_details: The peer_advertised_cidr_details of this LocalPeeringGateway.
+        :type: list[str]
+        """
+        self._peer_advertised_cidr_details = peer_advertised_cidr_details
 
     @property
     def peering_status(self):
@@ -456,6 +502,30 @@ class LocalPeeringGateway(object):
         :type: str
         """
         self._peering_status_details = peering_status_details
+
+    @property
+    def route_table_id(self):
+        """
+        Gets the route_table_id of this LocalPeeringGateway.
+        The OCID of the route table the LPG is using.
+
+
+        :return: The route_table_id of this LocalPeeringGateway.
+        :rtype: str
+        """
+        return self._route_table_id
+
+    @route_table_id.setter
+    def route_table_id(self, route_table_id):
+        """
+        Sets the route_table_id of this LocalPeeringGateway.
+        The OCID of the route table the LPG is using.
+
+
+        :param route_table_id: The route_table_id of this LocalPeeringGateway.
+        :type: str
+        """
+        self._route_table_id = route_table_id
 
     @property
     def time_created(self):
