@@ -29,22 +29,29 @@ class UpdateLocalPeeringGatewayDetails(object):
             The value to assign to the freeform_tags property of this UpdateLocalPeeringGatewayDetails.
         :type freeform_tags: dict(str, str)
 
+        :param route_table_id:
+            The value to assign to the route_table_id property of this UpdateLocalPeeringGatewayDetails.
+        :type route_table_id: str
+
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
-            'freeform_tags': 'dict(str, str)'
+            'freeform_tags': 'dict(str, str)',
+            'route_table_id': 'str'
         }
 
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
-            'freeform_tags': 'freeformTags'
+            'freeform_tags': 'freeformTags',
+            'route_table_id': 'routeTableId'
         }
 
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
+        self._route_table_id = None
 
     @property
     def defined_tags(self):
@@ -141,6 +148,30 @@ class UpdateLocalPeeringGatewayDetails(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def route_table_id(self):
+        """
+        Gets the route_table_id of this UpdateLocalPeeringGatewayDetails.
+        The OCID of the route table the LPG will use.
+
+
+        :return: The route_table_id of this UpdateLocalPeeringGatewayDetails.
+        :rtype: str
+        """
+        return self._route_table_id
+
+    @route_table_id.setter
+    def route_table_id(self, route_table_id):
+        """
+        Sets the route_table_id of this UpdateLocalPeeringGatewayDetails.
+        The OCID of the route table the LPG will use.
+
+
+        :param route_table_id: The route_table_id of this UpdateLocalPeeringGatewayDetails.
+        :type: str
+        """
+        self._route_table_id = route_table_id
 
     def __repr__(self):
         return formatted_flat_dict(self)
