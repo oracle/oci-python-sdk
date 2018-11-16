@@ -9,6 +9,15 @@ REGIONS_SHORT_NAMES = {
     'fra': 'eu-frankfurt-1',
     'lhr': 'uk-london-1'
 }
+REGION_REALMS = {
+    'us-phoenix-1': 'oc1',
+    'us-ashburn-1': 'oc1',
+    'eu-frankfurt-1': 'oc1',
+    'uk-london-1': 'oc1'
+}
+REALMS = {
+    'oc1': 'oraclecloud.com'
+}
 REGIONS = [
     "us-phoenix-1",
     "us-ashburn-1",
@@ -18,7 +27,7 @@ REGIONS = [
 SERVICE_ENDPOINTS = service_endpoints.SERVICE_ENDPOINTS
 SERVICE_ENDPOINTS['auth'] = 'https://auth.{domain}'
 
-DOMAIN_FORMAT = "{region}.oraclecloud.com"
+DOMAIN_FORMAT = "{region}.{secondLevelDomain}"
 
 
 def is_region(region_name):
@@ -34,22 +43,42 @@ def endpoint_for(service, region=None, endpoint=None, service_endpoint_template=
         raise ValueError("Must supply either a region or an endpoint.")
     elif endpoint:
         # endpoint takes priority
-        domain = endpoint
+        return _format_endpoint(service, endpoint)
     else:
         # no endpoint provided
         region = region.lower()
 
-        # use service endpoint template if available
-        if (service_endpoint_template):
-            return service_endpoint_template.format(region=region)
-
         # for backwards compatibility, if region already has a '.'
         # then consider it the full domain and do not append '.oraclecloud.com'
         if '.' in region:
-            domain = region
+            return _format_endpoint(service, region)
         else:
-            domain = DOMAIN_FORMAT.format(region=region)
+            # get endpoint from template
+            return _endpoint(service, region, service_endpoint_template)
 
+
+def _endpoint(service, region, service_endpoint_template=None):
+    if service_endpoint_template:
+        endpoint = service_endpoint_template
+
+        if region:
+            endpoint = endpoint.replace("{region}", region)
+        return endpoint.replace("{secondLevelDomain}", _second_level_domain(region))
+    else:
+        return _format_endpoint(service, DOMAIN_FORMAT.format(region=region, secondLevelDomain=_second_level_domain(region)))
+
+
+def _second_level_domain(region):
+    if region in REGION_REALMS.keys():
+        realm = REGION_REALMS[region]
+    else:
+        # default realm to OC1
+        realm = 'oc1'
+
+    return REALMS[realm]
+
+
+def _format_endpoint(service, domain):
     if service.lower() not in SERVICE_ENDPOINTS:
         raise ValueError("Unknown service {!r}".format(service))
 
