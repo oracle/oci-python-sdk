@@ -90,7 +90,7 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
         if hasattr(self, 'region'):
             return self.region
 
-        response = requests.get(self.GET_REGION_URL)
+        response = requests.get(self.GET_REGION_URL, timeout=(10, 60))
         region_raw = response.text.strip().lower()
 
         # The region can be something like "phx" but internally we expect "us-phoenix-1", "us-ashburn-1" etc.

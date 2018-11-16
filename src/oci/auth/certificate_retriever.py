@@ -103,6 +103,7 @@ class UrlBasedCertificateRetriever(AbstractCertificateRetriever):
             self.passphrase = self.passphrase.encode('ascii')
 
         self._refresh_lock = threading.Lock()
+        self.requests_session = requests.Session()
 
         self.refresh()
 
@@ -166,7 +167,7 @@ class UrlBasedCertificateRetriever(AbstractCertificateRetriever):
         import oci.signer
 
         downloaded_certificate = six.BytesIO()
-        response = requests.get(self.cert_url, stream=True)
+        response = self.requests_session.get(self.cert_url, stream=True, timeout=(10, 60))
 
         response.raise_for_status()
 
@@ -182,7 +183,7 @@ class UrlBasedCertificateRetriever(AbstractCertificateRetriever):
 
         if self.private_key_url:
             downloaded_private_key_raw = six.BytesIO()
-            response = requests.get(self.private_key_url, stream=True)
+            response = self.requests_session.get(self.private_key_url, stream=True, timeout=(10, 60))
 
             response.raise_for_status()
 
