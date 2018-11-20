@@ -9,8 +9,15 @@ import base64
 import pytest
 import os
 from oci.object_storage import MultipartObjectAssembler
-from oci.fips import is_fips_mode
 from oci.object_storage.transfer.internal import md5 as MD5
+
+fips_mode = False
+try:
+    from oci.fips import is_fips_mode
+    fips_mode = is_fips_mode()
+except ImportError:
+    # Nothing to do if there was an ImportError
+    pass
 
 MEBIBYTE = 1024 * 1024
 CHUNK = 128 * MEBIBYTE
@@ -30,7 +37,7 @@ def content_input_file():
         os.remove(filename)
 
 
-@pytest.mark.skipif(is_fips_mode(),
+@pytest.mark.skipif(fips_mode,
                     reason="Cannot run test in FIPS mode")
 def test_md5(content_input_file):
     """
@@ -70,7 +77,7 @@ def test_md5_memory_usage(content_input_file):
 
     # Determine if we can use the hashlib version of md5 or the bundled
     # version of md5
-    if is_fips_mode():
+    if fips_mode:
         md5 = MD5.md5
     else:
         md5 = hashlib.md5
