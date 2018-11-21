@@ -1158,7 +1158,7 @@
       <dependency>
         <groupId>com.oracle.pic.casper</groupId>
         <artifactId>casper-api-spec</artifactId>
-        <version>1.1.42-20180925.202050-7</version>
+        <version>1.1.47-20181011.180124-1</version>
       </dependency>
       <dependency>
         <groupId>com.oracle.pic.lb</groupId>
