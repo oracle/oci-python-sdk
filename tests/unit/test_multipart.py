@@ -9,11 +9,11 @@ import base64
 import pytest
 import os
 from oci.object_storage import MultipartObjectAssembler
-from oci.object_storage.transfer.internal import md5 as MD5
 
 fips_mode = False
 try:
     from oci.fips import is_fips_mode
+    from oci.object_storage.transfer.internal import md5 as MD5
     fips_mode = is_fips_mode()
 except ImportError:
     # Nothing to do if there was an ImportError
