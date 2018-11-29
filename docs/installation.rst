@@ -119,13 +119,15 @@ This command instructs the `requests <https://pypi.python.org/pypi/requests>`_
 library used by the Python SDK to use the version of OpenSSL that is bundled with the `cryptography <https://pypi.python.org/pypi/cryptography>`_
 library used by the SDK.
 
-**Note:**
 If you don't want to use ``requests[security]`` you can update OpenSSL as you normally would. For example, on OS X, use Homebrew to update OpenSSL using the following commands::
 
  brew update
  brew install openssl
  brew install python
 
+.. note::
+    If you need to configure your environment for FIPS-compliance, see :doc:`fips-libraries`
+    
 =================
  Troubleshooting
 =================

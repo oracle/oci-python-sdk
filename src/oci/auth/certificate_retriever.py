@@ -103,6 +103,7 @@ class UrlBasedCertificateRetriever(AbstractCertificateRetriever):
             self.passphrase = self.passphrase.encode('ascii')
 
         self._refresh_lock = threading.Lock()
+        self.requests_session = requests.Session()
 
         self.refresh()
 
@@ -166,7 +167,7 @@ class UrlBasedCertificateRetriever(AbstractCertificateRetriever):
         import oci.signer
 
         downloaded_certificate = six.BytesIO()
-        response = requests.get(self.cert_url, stream=True)
+        response = self.requests_session.get(self.cert_url, stream=True, timeout=(10, 60))
 
         response.raise_for_status()
 
@@ -182,7 +183,7 @@ class UrlBasedCertificateRetriever(AbstractCertificateRetriever):
 
         if self.private_key_url:
             downloaded_private_key_raw = six.BytesIO()
-            response = requests.get(self.private_key_url, stream=True)
+            response = self.requests_session.get(self.private_key_url, stream=True, timeout=(10, 60))
 
             response.raise_for_status()
 
@@ -242,7 +243,7 @@ class PEMStringCertificateRetriever(AbstractCertificateRetriever):
     def __init__(self, **kwargs):
         import oci.signer
 
-        super(UrlBasedCertificateRetriever, self).__init__()
+        super(PEMStringCertificateRetriever, self).__init__()
 
         if 'certificate_pem' not in kwargs:
             raise TypeError('certificate_pem must be supplied as a keyword argument')
@@ -317,7 +318,7 @@ class FileBasedCertificateRetriever(PEMStringCertificateRetriever):
 
         parent_class_kwargs = {
             'certificate_pem': self._load_data_from_file(kwargs['certificate_file_path']),
-            'private_key_pem_file_path': private_key_pem,
+            'private_key_pem': private_key_pem,
             'passphrase': kwargs.get('passphrase')
         }
 

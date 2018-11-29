@@ -1042,6 +1042,13 @@ class ObjectStorageClient(object):
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
 
+        :param list[str] fields: (optional)
+            Bucket summary includes the 'namespace', 'name', 'compartmentId', 'createdBy', 'timeCreated',
+            and 'etag' fields. This parameter can also include 'approximateCount' (Approximate number of objects) and 'approximateSize'
+            (total approximate size in bytes of all objects). For example 'approximateCount,approximateSize'
+
+            Allowed values are: "approximateCount", "approximateSize"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1061,7 +1068,8 @@ class ObjectStorageClient(object):
             "retry_strategy",
             "if_match",
             "if_none_match",
-            "opc_client_request_id"
+            "opc_client_request_id",
+            "fields"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
         if extra_kwargs:
@@ -1078,6 +1086,19 @@ class ObjectStorageClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'fields' in kwargs:
+            fields_allowed_values = ["approximateCount", "approximateSize"]
+            for fields_item in kwargs['fields']:
+                if fields_item not in fields_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                    )
+
+        query_params = {
+            "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'csv')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -1098,6 +1119,7 @@ class ObjectStorageClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="Bucket")
         else:
@@ -1105,6 +1127,7 @@ class ObjectStorageClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="Bucket")
 

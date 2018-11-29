@@ -12,6 +12,8 @@ def get_tenancy_id_from_certificate(cert):
         val = name_attribute.value
         if val.startswith('opc-tenant:'):
             return val[len('opc-tenant:'):]
+        if val.startswith('opc-identity:'):
+            return val[len('opc-identity:'):]
 
     raise RuntimeError('The certificate does not contain a tenancy OCID')
 
