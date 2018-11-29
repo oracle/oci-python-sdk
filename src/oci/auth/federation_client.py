@@ -97,6 +97,8 @@ class X509FederationClient(object):
         else:
             self.retry_strategy = oci.retry.DEFAULT_RETRY_STRATEGY
 
+        self.requests_session = requests.Session()
+
     def refresh_security_token(self):
         return self._refresh_security_token_inner()
 
@@ -142,9 +144,9 @@ class X509FederationClient(object):
         signer = AuthTokenRequestSigner(self.tenancy_id, fingerprint, self.leaf_certificate_retriever)
 
         if self.cert_bundle_verify:
-            response = requests.post(self.federation_endpoint, json=request_payload, auth=signer, verify=self.cert_bundle_verify)
+            response = self.requests_session.post(self.federation_endpoint, json=request_payload, auth=signer, verify=self.cert_bundle_verify, timeout=(10, 60))
         else:
-            response = requests.post(self.federation_endpoint, json=request_payload, auth=signer)
+            response = self.requests_session.post(self.federation_endpoint, json=request_payload, auth=signer, timeout=(10, 60))
 
         parsed_response = None
         try:

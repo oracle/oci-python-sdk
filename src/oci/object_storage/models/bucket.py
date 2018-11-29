@@ -102,6 +102,14 @@ class Bucket(object):
             The value to assign to the object_lifecycle_policy_etag property of this Bucket.
         :type object_lifecycle_policy_etag: str
 
+        :param approximate_count:
+            The value to assign to the approximate_count property of this Bucket.
+        :type approximate_count: int
+
+        :param approximate_size:
+            The value to assign to the approximate_size property of this Bucket.
+        :type approximate_size: int
+
         """
         self.swagger_types = {
             'namespace': 'str',
@@ -116,7 +124,9 @@ class Bucket(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'kms_key_id': 'str',
-            'object_lifecycle_policy_etag': 'str'
+            'object_lifecycle_policy_etag': 'str',
+            'approximate_count': 'int',
+            'approximate_size': 'int'
         }
 
         self.attribute_map = {
@@ -132,7 +142,9 @@ class Bucket(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'kms_key_id': 'kmsKeyId',
-            'object_lifecycle_policy_etag': 'objectLifecyclePolicyEtag'
+            'object_lifecycle_policy_etag': 'objectLifecyclePolicyEtag',
+            'approximate_count': 'approximateCount',
+            'approximate_size': 'approximateSize'
         }
 
         self._namespace = None
@@ -148,6 +160,8 @@ class Bucket(object):
         self._defined_tags = None
         self._kms_key_id = None
         self._object_lifecycle_policy_etag = None
+        self._approximate_count = None
+        self._approximate_size = None
 
     @property
     def namespace(self):
@@ -508,6 +522,58 @@ class Bucket(object):
         :type: str
         """
         self._object_lifecycle_policy_etag = object_lifecycle_policy_etag
+
+    @property
+    def approximate_count(self):
+        """
+        Gets the approximate_count of this Bucket.
+        The approximate number of objects in the bucket. Count statistics are reported periodically. You will see a
+        lag between what is displayed and the actual object count.
+
+
+        :return: The approximate_count of this Bucket.
+        :rtype: int
+        """
+        return self._approximate_count
+
+    @approximate_count.setter
+    def approximate_count(self, approximate_count):
+        """
+        Sets the approximate_count of this Bucket.
+        The approximate number of objects in the bucket. Count statistics are reported periodically. You will see a
+        lag between what is displayed and the actual object count.
+
+
+        :param approximate_count: The approximate_count of this Bucket.
+        :type: int
+        """
+        self._approximate_count = approximate_count
+
+    @property
+    def approximate_size(self):
+        """
+        Gets the approximate_size of this Bucket.
+        The approximate total size of all objects in the bucket. Size statistics are reported periodically. You will
+        see a lag between what is displayed and the actual size of the bucket.
+
+
+        :return: The approximate_size of this Bucket.
+        :rtype: int
+        """
+        return self._approximate_size
+
+    @approximate_size.setter
+    def approximate_size(self, approximate_size):
+        """
+        Sets the approximate_size of this Bucket.
+        The approximate total size of all objects in the bucket. Size statistics are reported periodically. You will
+        see a lag between what is displayed and the actual size of the bucket.
+
+
+        :param approximate_size: The approximate_size of this Bucket.
+        :type: int
+        """
+        self._approximate_size = approximate_size
 
     def __repr__(self):
         return formatted_flat_dict(self)

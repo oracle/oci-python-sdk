@@ -44,6 +44,7 @@ To get started, head over to the :ref:`installation instructions <install>` or s
 
     installation
     configuration
+    fips-libraries
     forward-compatibility
     backward-compatibility
     quickstart
