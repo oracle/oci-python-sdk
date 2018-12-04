@@ -5,12 +5,29 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
-2.1.2 - TBD
+2.1.3 - TBD
 ====================
 
 Added
 -----
-* TBD 
+* TBD
+
+Changed
+-------
+* pyOpenSSL pinning was changed to pyOpenSSL>=17.5.0 and cryptography pinning to cryptography>=2.1.4 to address a vulnerability identified on GitHub as CVE-2018-1000808.
+
+====================
+2.1.2 - 2018-11-29
+====================
+
+Added
+-----
+* Support for getting bucket statistics in the Object Storage service
+* Support for using FIPS compliant libcrypto library
+
+Fixed
+-----
+* Block Storage service for copying volume backups across regions is now enabled
 
 ====================
 2.1.1 - 2018-11-15
@@ -56,10 +73,6 @@ Added
 Changed
 -------
 * database_edition field in Backup and model changed from a free format string to a validated string. It will only accept one of the following: “STANDARD_EDITION”, “ENTERPRISE_EDITION”, “ENTERPRISE_EDITION_HIGH_PERFORMANCE”, “ENTERPRISE_EDITION_EXTREME_PERFORMANCE”
-
-Known issue
------------
-* Block Storage service for copying volume backups across regions is not enabled
 
 Breaking
 --------
