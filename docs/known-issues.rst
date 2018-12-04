@@ -4,8 +4,25 @@ Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~
 These are the current known issues for the Python SDK.
 
-UploadManager generates ssl3_write_pending error
-================================================
-**Details:** Using :py:meth:`~oci.object_storage.UploadManager.upload_file` method to upload files larger than X generates a ``ssl3_write_pending`` error.
+UploadManager generates ssl3_write_pending error when a read timeout is set for the Object Storage client
+=========================================================================================================
+**Details:** UploadManager generates the following error when a read timeout is set for the Object Storage client.
 
-**Workaround:** If uploading files larger than X, do not use a timeout with the :py:class:`~oci.object_storage.UploadManager` class.
+.. code-block:: python
+
+    OpenSSL.SSL.Error: [('SSL routines', 'ssl3_write_pending', 'bad write retry')]
+
+**Workaround:** Do not set the read timeout for the Object Storage client. There are a two ways to do so:
+
+- Create an Object Storage client without setting a timeout. 
+- Clear the timeout on an already initialized Object Storage client by setting the timeout of the base_client to ``None``.
+
+.. code-block:: python
+
+    client.base_client.timeout = None
+
+NOTE: If you need to maintain the connection timeout while clearing the read timeout on an already initialized Object Storage client, you can do so by setting the timeout to a tuple. In the following example, the connection timeout is set to 90.0 seconds and the read timeout is set to infinite, or no timeout.
+
+.. code-block:: python
+
+    client.base_client.timeout = (90.0, None)
