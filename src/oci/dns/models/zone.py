@@ -10,6 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 class Zone(object):
     """
     A DNS zone.
+
+    *Warning:* Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
 
     #: A constant which can be used with the zone_type property of a Zone.
@@ -59,6 +61,14 @@ class Zone(object):
             The value to assign to the compartment_id property of this Zone.
         :type compartment_id: str
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this Zone.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this Zone.
+        :type defined_tags: dict(str, dict(str, object))
+
         :param external_masters:
             The value to assign to the external_masters property of this Zone.
         :type external_masters: list[ExternalMaster]
@@ -89,36 +99,48 @@ class Zone(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param nameservers:
+            The value to assign to the nameservers property of this Zone.
+        :type nameservers: list[Nameserver]
+
         """
         self.swagger_types = {
             'name': 'str',
             'zone_type': 'str',
             'compartment_id': 'str',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))',
             'external_masters': 'list[ExternalMaster]',
             'self_uri': 'str',
             'id': 'str',
             'time_created': 'datetime',
             'version': 'str',
             'serial': 'int',
-            'lifecycle_state': 'str'
+            'lifecycle_state': 'str',
+            'nameservers': 'list[Nameserver]'
         }
 
         self.attribute_map = {
             'name': 'name',
             'zone_type': 'zoneType',
             'compartment_id': 'compartmentId',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags',
             'external_masters': 'externalMasters',
             'self_uri': 'self',
             'id': 'id',
             'time_created': 'timeCreated',
             'version': 'version',
             'serial': 'serial',
-            'lifecycle_state': 'lifecycleState'
+            'lifecycle_state': 'lifecycleState',
+            'nameservers': 'nameservers'
         }
 
         self._name = None
         self._zone_type = None
         self._compartment_id = None
+        self._freeform_tags = None
+        self._defined_tags = None
         self._external_masters = None
         self._self_uri = None
         self._id = None
@@ -126,6 +148,7 @@ class Zone(object):
         self._version = None
         self._serial = None
         self._lifecycle_state = None
+        self._nameservers = None
 
     @property
     def name(self):
@@ -206,10 +229,69 @@ class Zone(object):
         self._compartment_id = compartment_id
 
     @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this Zone.
+        Simple key-value pair that is applied without any predefined name, type, or scope.
+        For more information, see `Resource Tags`__.
+        Example: `{\"bar-key\": \"value\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this Zone.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this Zone.
+        Simple key-value pair that is applied without any predefined name, type, or scope.
+        For more information, see `Resource Tags`__.
+        Example: `{\"bar-key\": \"value\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this Zone.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this Zone.
+        Usage of predefined tag keys. These predefined keys are scoped to a namespace.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+
+
+        :return: The defined_tags of this Zone.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this Zone.
+        Usage of predefined tag keys. These predefined keys are scoped to a namespace.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+
+
+        :param defined_tags: The defined_tags of this Zone.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
+
+    @property
     def external_masters(self):
         """
         Gets the external_masters of this Zone.
-        External master servers for the zone.
+        External master servers for the zone. `externalMasters` becomes a
+        required parameter when the `zoneType` value is `SECONDARY`.
 
 
         :return: The external_masters of this Zone.
@@ -221,7 +303,8 @@ class Zone(object):
     def external_masters(self, external_masters):
         """
         Sets the external_masters of this Zone.
-        External master servers for the zone.
+        External master servers for the zone. `externalMasters` becomes a
+        required parameter when the `zoneType` value is `SECONDARY`.
 
 
         :param external_masters: The external_masters of this Zone.
@@ -281,7 +364,7 @@ class Zone(object):
     def time_created(self):
         """
         Gets the time_created of this Zone.
-        The date and time the image was created in \"YYYY-MM-ddThh:mmZ\" format
+        The date and time the resource was created in \"YYYY-MM-ddThh:mmZ\" format
         with a Z offset, as defined by RFC 3339.
 
         **Example:** `2016-07-22T17:23:59:60Z`
@@ -296,7 +379,7 @@ class Zone(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Zone.
-        The date and time the image was created in \"YYYY-MM-ddThh:mmZ\" format
+        The date and time the resource was created in \"YYYY-MM-ddThh:mmZ\" format
         with a Z offset, as defined by RFC 3339.
 
         **Example:** `2016-07-22T17:23:59:60Z`
@@ -388,6 +471,30 @@ class Zone(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def nameservers(self):
+        """
+        Gets the nameservers of this Zone.
+        The authoritative nameservers for the zone.
+
+
+        :return: The nameservers of this Zone.
+        :rtype: list[Nameserver]
+        """
+        return self._nameservers
+
+    @nameservers.setter
+    def nameservers(self, nameservers):
+        """
+        Sets the nameservers of this Zone.
+        The authoritative nameservers for the zone.
+
+
+        :param nameservers: The nameservers of this Zone.
+        :type: list[Nameserver]
+        """
+        self._nameservers = nameservers
 
     def __repr__(self):
         return formatted_flat_dict(self)
