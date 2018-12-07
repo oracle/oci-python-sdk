@@ -35,8 +35,8 @@ The Python SDK supports operations for the following services:
 
 The Python SDK requires:
 
-* Python version 2.7.5 or 3.5 or later, running on Mac, Windows, or Linux.
-* The Python SDK uses the `Cryptography.io`_ library which requires `openssl`_. For details on all Cryptography.io prerequisites, see `Cryptography.io Installation`_.
+* Python version 2.7.5 or 3.5 or later, running on MacOS, Windows, or Linux.
+* `OpenSSL`_ version 1.0.1 or later. The Python SDK uses the `Cryptography.io`_ library which requires `OpenSSL`_. For details on all Cryptography.io prerequisites, see `Cryptography.io Installation`_.
 
 In addition, all Oracle Cloud Infrastructure SDKs require:
 
@@ -194,6 +194,6 @@ When trying to use the SDK, if you get an exception related to SSL/TLS or certif
 .. _Cryptography.io Installation: https://cryptography.io/en/latest/installation/
 .. _TLS 1.2: https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdks.htm
 .. _PyPI link: https://pypi.python.org/pypi
-.. _openssl: https://www.openssl.org/
+.. _OpenSSL: https://www.openssl.org/
 .. _ConfiguringSDK: Configuring the SDK
 .. _OSXUsers: Verify OpenSSL Version
