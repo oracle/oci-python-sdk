@@ -15,24 +15,30 @@ Installation
 This topic describes how to install, configure, and use the Oracle Cloud Infrastructure Python SDK.
 The Python SDK supports operations for the following services:
 
-* Audit Service
-* Core Services (Networking Service, Compute Service, and Block Volume Service)
-* Database Service
-* DNS Service
-* Email Service
-* File Storage Service
-* Identity and Access Management Service
-* Load Balancing Service
-* Object Storage Service
+* Audit
+* Container Engine for Kubernetes
+* Core Services (Networking, Compute, and Block Volume)
+* Database
+* DNS
+* Email
+* File Storage
+* IAM
+* Load Balancing
+* Object Storage
+* Search
+* Key Management
 
 
 ===============
  Prerequisites
 ===============
 
-.. note::
-    The Python SDK uses the `cryptography.io`_ library, which has its own additional `build requirements`_. Ensure
-    that you satisfy those requirements prior to installing the Python SDK.
+The Python SDK requires:
+
+* Python version 2.7.5 or 3.5 or later
+* `OpenSSL`_ version 1.0.1 or later. The Python SDK uses the `Cryptography.io`_ library which requires `OpenSSL`_. For details on all Cryptography.io prerequisites, see `Cryptography.io Installation`_.
+
+In addition, all Oracle Cloud Infrastructure SDKs require:
 
 * An Oracle Cloud Infrastructure account
 * A user created in that account, in a group with a policy that grants the desired permissions.
@@ -40,9 +46,10 @@ The Python SDK supports operations for the following services:
   For an example of how to set up a new user, group, compartment, and policy, see
   `Adding Users`_ in the Getting Started Guide. For a list of other typical
   Oracle Cloud Infrastructure policies, see `Common Policies`_ in the User Guide.
-* Python version 2.7.5 or 3.5 or later, running on Mac, Windows, or Linux. 
 * A keypair used for signing API requests, with the public key uploaded to Oracle. Only the user calling
   the API should be in possession of the private key. (For more information, see `Configuring the SDK`_.)
+
+
 
 
 ====================================
@@ -183,10 +190,10 @@ When trying to use the SDK, if you get an exception related to SSL/TLS or certif
 
 .. _Adding Users: https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Tasks/addingusers.htm
 .. _Common Policies: https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/commonpolicies.htm
-.. _cryptography.io: https://cryptography.io/en/latest/
-.. _build requirements: https://cryptography.io/en/latest/installation/
+.. _Cryptography.io: https://cryptography.io/en/latest/
+.. _Cryptography.io Installation: https://cryptography.io/en/latest/installation/
 .. _TLS 1.2: https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdks.htm
 .. _PyPI link: https://pypi.python.org/pypi
-.. _openssl: https://www.openssl.org/
+.. _OpenSSL: https://www.openssl.org/
 .. _ConfiguringSDK: Configuring the SDK
 .. _OSXUsers: Verify OpenSSL Version
