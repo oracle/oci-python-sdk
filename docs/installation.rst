@@ -17,7 +17,7 @@ The Python SDK supports operations for the following services:
 
 * Audit
 * Container Engine for Kubernetes
-* Core Services (Networking , Compute , and Block Volume)
+* Core Services (Networking, Compute, and Block Volume)
 * Database
 * DNS
 * Email
@@ -35,7 +35,7 @@ The Python SDK supports operations for the following services:
 
 The Python SDK requires:
 
-* Python version 2.7.5 or 3.5 or later, running on MacOS, Windows, or Linux.
+* Python version 2.7.5 or 3.5 or later
 * `OpenSSL`_ version 1.0.1 or later. The Python SDK uses the `Cryptography.io`_ library which requires `OpenSSL`_. For details on all Cryptography.io prerequisites, see `Cryptography.io Installation`_.
 
 In addition, all Oracle Cloud Infrastructure SDKs require:
