@@ -21,21 +21,17 @@ class ExternalBackupJob(object):
             The value to assign to the backup_id property of this ExternalBackupJob.
         :type backup_id: str
 
-        :param bucket_name:
-            The value to assign to the bucket_name property of this ExternalBackupJob.
-        :type bucket_name: str
-
         :param provisioning:
             The value to assign to the provisioning property of this ExternalBackupJob.
         :type provisioning: bool
 
-        :param swift_password:
-            The value to assign to the swift_password property of this ExternalBackupJob.
-        :type swift_password: str
-
         :param swift_path:
             The value to assign to the swift_path property of this ExternalBackupJob.
         :type swift_path: str
+
+        :param bucket_name:
+            The value to assign to the bucket_name property of this ExternalBackupJob.
+        :type bucket_name: str
 
         :param tag:
             The value to assign to the tag property of this ExternalBackupJob.
@@ -45,34 +41,38 @@ class ExternalBackupJob(object):
             The value to assign to the user_name property of this ExternalBackupJob.
         :type user_name: str
 
+        :param swift_password:
+            The value to assign to the swift_password property of this ExternalBackupJob.
+        :type swift_password: str
+
         """
         self.swagger_types = {
             'backup_id': 'str',
-            'bucket_name': 'str',
             'provisioning': 'bool',
-            'swift_password': 'str',
             'swift_path': 'str',
+            'bucket_name': 'str',
             'tag': 'str',
-            'user_name': 'str'
+            'user_name': 'str',
+            'swift_password': 'str'
         }
 
         self.attribute_map = {
             'backup_id': 'backupId',
-            'bucket_name': 'bucketName',
             'provisioning': 'provisioning',
-            'swift_password': 'swiftPassword',
             'swift_path': 'swiftPath',
+            'bucket_name': 'bucketName',
             'tag': 'tag',
-            'user_name': 'userName'
+            'user_name': 'userName',
+            'swift_password': 'swiftPassword'
         }
 
         self._backup_id = None
-        self._bucket_name = None
         self._provisioning = None
-        self._swift_password = None
         self._swift_path = None
+        self._bucket_name = None
         self._tag = None
         self._user_name = None
+        self._swift_password = None
 
     @property
     def backup_id(self):
@@ -103,30 +103,6 @@ class ExternalBackupJob(object):
         self._backup_id = backup_id
 
     @property
-    def bucket_name(self):
-        """
-        **[Required]** Gets the bucket_name of this ExternalBackupJob.
-        The name of the Swift compartment bucket where the backup should be stored.
-
-
-        :return: The bucket_name of this ExternalBackupJob.
-        :rtype: str
-        """
-        return self._bucket_name
-
-    @bucket_name.setter
-    def bucket_name(self, bucket_name):
-        """
-        Sets the bucket_name of this ExternalBackupJob.
-        The name of the Swift compartment bucket where the backup should be stored.
-
-
-        :param bucket_name: The bucket_name of this ExternalBackupJob.
-        :type: str
-        """
-        self._bucket_name = bucket_name
-
-    @property
     def provisioning(self):
         """
         **[Required]** Gets the provisioning of this ExternalBackupJob.
@@ -151,36 +127,6 @@ class ExternalBackupJob(object):
         self._provisioning = provisioning
 
     @property
-    def swift_password(self):
-        """
-        Gets the swift_password of this ExternalBackupJob.
-        The auth token to use for access to the Swift compartment bucket that will store the standalone backup.
-        For information about auth tokens, see `Working with Auth Tokens`__.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingcredentials.htm#two
-
-
-        :return: The swift_password of this ExternalBackupJob.
-        :rtype: str
-        """
-        return self._swift_password
-
-    @swift_password.setter
-    def swift_password(self, swift_password):
-        """
-        Sets the swift_password of this ExternalBackupJob.
-        The auth token to use for access to the Swift compartment bucket that will store the standalone backup.
-        For information about auth tokens, see `Working with Auth Tokens`__.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingcredentials.htm#two
-
-
-        :param swift_password: The swift_password of this ExternalBackupJob.
-        :type: str
-        """
-        self._swift_password = swift_password
-
-    @property
     def swift_path(self):
         """
         **[Required]** Gets the swift_path of this ExternalBackupJob.
@@ -203,6 +149,30 @@ class ExternalBackupJob(object):
         :type: str
         """
         self._swift_path = swift_path
+
+    @property
+    def bucket_name(self):
+        """
+        **[Required]** Gets the bucket_name of this ExternalBackupJob.
+        The name of the Swift compartment bucket where the backup should be stored.
+
+
+        :return: The bucket_name of this ExternalBackupJob.
+        :rtype: str
+        """
+        return self._bucket_name
+
+    @bucket_name.setter
+    def bucket_name(self, bucket_name):
+        """
+        Sets the bucket_name of this ExternalBackupJob.
+        The name of the Swift compartment bucket where the backup should be stored.
+
+
+        :param bucket_name: The bucket_name of this ExternalBackupJob.
+        :type: str
+        """
+        self._bucket_name = bucket_name
 
     @property
     def tag(self):
@@ -251,6 +221,36 @@ class ExternalBackupJob(object):
         :type: str
         """
         self._user_name = user_name
+
+    @property
+    def swift_password(self):
+        """
+        Gets the swift_password of this ExternalBackupJob.
+        The auth token to use for access to the Swift compartment bucket that will store the standalone backup.
+        For information about auth tokens, see `Working with Auth Tokens`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingcredentials.htm#two
+
+
+        :return: The swift_password of this ExternalBackupJob.
+        :rtype: str
+        """
+        return self._swift_password
+
+    @swift_password.setter
+    def swift_password(self, swift_password):
+        """
+        Sets the swift_password of this ExternalBackupJob.
+        The auth token to use for access to the Swift compartment bucket that will store the standalone backup.
+        For information about auth tokens, see `Working with Auth Tokens`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingcredentials.htm#two
+
+
+        :param swift_password: The swift_password of this ExternalBackupJob.
+        :type: str
+        """
+        self._swift_password = swift_password
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -19,47 +19,27 @@ class CreateDbHomeFromBackupDetails(object):
         Initializes a new CreateDbHomeFromBackupDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param database:
-            The value to assign to the database property of this CreateDbHomeFromBackupDetails.
-        :type database: CreateDatabaseFromBackupDetails
-
         :param display_name:
             The value to assign to the display_name property of this CreateDbHomeFromBackupDetails.
         :type display_name: str
 
+        :param database:
+            The value to assign to the database property of this CreateDbHomeFromBackupDetails.
+        :type database: CreateDatabaseFromBackupDetails
+
         """
         self.swagger_types = {
-            'database': 'CreateDatabaseFromBackupDetails',
-            'display_name': 'str'
+            'display_name': 'str',
+            'database': 'CreateDatabaseFromBackupDetails'
         }
 
         self.attribute_map = {
-            'database': 'database',
-            'display_name': 'displayName'
+            'display_name': 'displayName',
+            'database': 'database'
         }
 
-        self._database = None
         self._display_name = None
-
-    @property
-    def database(self):
-        """
-        **[Required]** Gets the database of this CreateDbHomeFromBackupDetails.
-
-        :return: The database of this CreateDbHomeFromBackupDetails.
-        :rtype: CreateDatabaseFromBackupDetails
-        """
-        return self._database
-
-    @database.setter
-    def database(self, database):
-        """
-        Sets the database of this CreateDbHomeFromBackupDetails.
-
-        :param database: The database of this CreateDbHomeFromBackupDetails.
-        :type: CreateDatabaseFromBackupDetails
-        """
-        self._database = database
+        self._database = None
 
     @property
     def display_name(self):
@@ -84,6 +64,26 @@ class CreateDbHomeFromBackupDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def database(self):
+        """
+        **[Required]** Gets the database of this CreateDbHomeFromBackupDetails.
+
+        :return: The database of this CreateDbHomeFromBackupDetails.
+        :rtype: CreateDatabaseFromBackupDetails
+        """
+        return self._database
+
+    @database.setter
+    def database(self, database):
+        """
+        Sets the database of this CreateDbHomeFromBackupDetails.
+
+        :param database: The database of this CreateDbHomeFromBackupDetails.
+        :type: CreateDatabaseFromBackupDetails
+        """
+        self._database = database
 
     def __repr__(self):
         return formatted_flat_dict(self)

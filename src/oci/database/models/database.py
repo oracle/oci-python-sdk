@@ -9,14 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Database(object):
     """
-    An Oracle database on a bare metal or virtual machine DB system. For more information, see `Bare Metal and Virtual Machine DB Systems`__.
-
-    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see `Getting Started with Policies`__.
-
-    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
-
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Concepts/overview.htm
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
+    Database model.
     """
 
     #: A constant which can be used with the lifecycle_state property of a Database.
@@ -56,17 +49,21 @@ class Database(object):
         Initializes a new Database object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param character_set:
-            The value to assign to the character_set property of this Database.
-        :type character_set: str
+        :param id:
+            The value to assign to the id property of this Database.
+        :type id: str
 
         :param compartment_id:
             The value to assign to the compartment_id property of this Database.
         :type compartment_id: str
 
-        :param db_backup_config:
-            The value to assign to the db_backup_config property of this Database.
-        :type db_backup_config: DbBackupConfig
+        :param character_set:
+            The value to assign to the character_set property of this Database.
+        :type character_set: str
+
+        :param ncharacter_set:
+            The value to assign to the ncharacter_set property of this Database.
+        :type ncharacter_set: str
 
         :param db_home_id:
             The value to assign to the db_home_id property of this Database.
@@ -76,25 +73,17 @@ class Database(object):
             The value to assign to the db_name property of this Database.
         :type db_name: str
 
-        :param db_unique_name:
-            The value to assign to the db_unique_name property of this Database.
-        :type db_unique_name: str
+        :param pdb_name:
+            The value to assign to the pdb_name property of this Database.
+        :type pdb_name: str
 
         :param db_workload:
             The value to assign to the db_workload property of this Database.
         :type db_workload: str
 
-        :param defined_tags:
-            The value to assign to the defined_tags property of this Database.
-        :type defined_tags: dict(str, dict(str, object))
-
-        :param freeform_tags:
-            The value to assign to the freeform_tags property of this Database.
-        :type freeform_tags: dict(str, str)
-
-        :param id:
-            The value to assign to the id property of this Database.
-        :type id: str
+        :param db_unique_name:
+            The value to assign to the db_unique_name property of this Database.
+        :type db_unique_name: str
 
         :param lifecycle_details:
             The value to assign to the lifecycle_details property of this Database.
@@ -106,94 +95,102 @@ class Database(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
-        :param ncharacter_set:
-            The value to assign to the ncharacter_set property of this Database.
-        :type ncharacter_set: str
-
-        :param pdb_name:
-            The value to assign to the pdb_name property of this Database.
-        :type pdb_name: str
-
         :param time_created:
             The value to assign to the time_created property of this Database.
         :type time_created: datetime
 
+        :param db_backup_config:
+            The value to assign to the db_backup_config property of this Database.
+        :type db_backup_config: DbBackupConfig
+
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this Database.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this Database.
+        :type defined_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
-            'character_set': 'str',
+            'id': 'str',
             'compartment_id': 'str',
-            'db_backup_config': 'DbBackupConfig',
+            'character_set': 'str',
+            'ncharacter_set': 'str',
             'db_home_id': 'str',
             'db_name': 'str',
-            'db_unique_name': 'str',
+            'pdb_name': 'str',
             'db_workload': 'str',
-            'defined_tags': 'dict(str, dict(str, object))',
-            'freeform_tags': 'dict(str, str)',
-            'id': 'str',
+            'db_unique_name': 'str',
             'lifecycle_details': 'str',
             'lifecycle_state': 'str',
-            'ncharacter_set': 'str',
-            'pdb_name': 'str',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'db_backup_config': 'DbBackupConfig',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
-            'character_set': 'characterSet',
+            'id': 'id',
             'compartment_id': 'compartmentId',
-            'db_backup_config': 'dbBackupConfig',
+            'character_set': 'characterSet',
+            'ncharacter_set': 'ncharacterSet',
             'db_home_id': 'dbHomeId',
             'db_name': 'dbName',
-            'db_unique_name': 'dbUniqueName',
+            'pdb_name': 'pdbName',
             'db_workload': 'dbWorkload',
-            'defined_tags': 'definedTags',
-            'freeform_tags': 'freeformTags',
-            'id': 'id',
+            'db_unique_name': 'dbUniqueName',
             'lifecycle_details': 'lifecycleDetails',
             'lifecycle_state': 'lifecycleState',
-            'ncharacter_set': 'ncharacterSet',
-            'pdb_name': 'pdbName',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'db_backup_config': 'dbBackupConfig',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags'
         }
 
-        self._character_set = None
+        self._id = None
         self._compartment_id = None
-        self._db_backup_config = None
+        self._character_set = None
+        self._ncharacter_set = None
         self._db_home_id = None
         self._db_name = None
-        self._db_unique_name = None
+        self._pdb_name = None
         self._db_workload = None
-        self._defined_tags = None
-        self._freeform_tags = None
-        self._id = None
+        self._db_unique_name = None
         self._lifecycle_details = None
         self._lifecycle_state = None
-        self._ncharacter_set = None
-        self._pdb_name = None
         self._time_created = None
+        self._db_backup_config = None
+        self._freeform_tags = None
+        self._defined_tags = None
 
     @property
-    def character_set(self):
+    def id(self):
         """
-        Gets the character_set of this Database.
-        The character set for the database.
+        **[Required]** Gets the id of this Database.
+        The `OCID`__ of the database.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
-        :return: The character_set of this Database.
+        :return: The id of this Database.
         :rtype: str
         """
-        return self._character_set
+        return self._id
 
-    @character_set.setter
-    def character_set(self, character_set):
+    @id.setter
+    def id(self, id):
         """
-        Sets the character_set of this Database.
-        The character set for the database.
+        Sets the id of this Database.
+        The `OCID`__ of the database.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
-        :param character_set: The character_set of this Database.
+        :param id: The id of this Database.
         :type: str
         """
-        self._character_set = character_set
+        self._id = id
 
     @property
     def compartment_id(self):
@@ -224,24 +221,52 @@ class Database(object):
         self._compartment_id = compartment_id
 
     @property
-    def db_backup_config(self):
+    def character_set(self):
         """
-        Gets the db_backup_config of this Database.
+        Gets the character_set of this Database.
+        The character set for the database.
 
-        :return: The db_backup_config of this Database.
-        :rtype: DbBackupConfig
-        """
-        return self._db_backup_config
 
-    @db_backup_config.setter
-    def db_backup_config(self, db_backup_config):
+        :return: The character_set of this Database.
+        :rtype: str
         """
-        Sets the db_backup_config of this Database.
+        return self._character_set
 
-        :param db_backup_config: The db_backup_config of this Database.
-        :type: DbBackupConfig
+    @character_set.setter
+    def character_set(self, character_set):
         """
-        self._db_backup_config = db_backup_config
+        Sets the character_set of this Database.
+        The character set for the database.
+
+
+        :param character_set: The character_set of this Database.
+        :type: str
+        """
+        self._character_set = character_set
+
+    @property
+    def ncharacter_set(self):
+        """
+        Gets the ncharacter_set of this Database.
+        The national character set for the database.
+
+
+        :return: The ncharacter_set of this Database.
+        :rtype: str
+        """
+        return self._ncharacter_set
+
+    @ncharacter_set.setter
+    def ncharacter_set(self, ncharacter_set):
+        """
+        Sets the ncharacter_set of this Database.
+        The national character set for the database.
+
+
+        :param ncharacter_set: The ncharacter_set of this Database.
+        :type: str
+        """
+        self._ncharacter_set = ncharacter_set
 
     @property
     def db_home_id(self):
@@ -296,28 +321,28 @@ class Database(object):
         self._db_name = db_name
 
     @property
-    def db_unique_name(self):
+    def pdb_name(self):
         """
-        **[Required]** Gets the db_unique_name of this Database.
-        A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
+        Gets the pdb_name of this Database.
+        The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
 
 
-        :return: The db_unique_name of this Database.
+        :return: The pdb_name of this Database.
         :rtype: str
         """
-        return self._db_unique_name
+        return self._pdb_name
 
-    @db_unique_name.setter
-    def db_unique_name(self, db_unique_name):
+    @pdb_name.setter
+    def pdb_name(self, pdb_name):
         """
-        Sets the db_unique_name of this Database.
-        A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
+        Sets the pdb_name of this Database.
+        The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
 
 
-        :param db_unique_name: The db_unique_name of this Database.
+        :param pdb_name: The pdb_name of this Database.
         :type: str
         """
-        self._db_unique_name = db_unique_name
+        self._pdb_name = pdb_name
 
     @property
     def db_workload(self):
@@ -344,100 +369,28 @@ class Database(object):
         self._db_workload = db_workload
 
     @property
-    def defined_tags(self):
+    def db_unique_name(self):
         """
-        Gets the defined_tags of this Database.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        For more information, see `Resource Tags`__.
-
-        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        **[Required]** Gets the db_unique_name of this Database.
+        A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
 
 
-        :return: The defined_tags of this Database.
-        :rtype: dict(str, dict(str, object))
-        """
-        return self._defined_tags
-
-    @defined_tags.setter
-    def defined_tags(self, defined_tags):
-        """
-        Sets the defined_tags of this Database.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        For more information, see `Resource Tags`__.
-
-        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
-
-
-        :param defined_tags: The defined_tags of this Database.
-        :type: dict(str, dict(str, object))
-        """
-        self._defined_tags = defined_tags
-
-    @property
-    def freeform_tags(self):
-        """
-        Gets the freeform_tags of this Database.
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-        For more information, see `Resource Tags`__.
-
-        Example: `{\"Department\": \"Finance\"}`
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
-
-
-        :return: The freeform_tags of this Database.
-        :rtype: dict(str, str)
-        """
-        return self._freeform_tags
-
-    @freeform_tags.setter
-    def freeform_tags(self, freeform_tags):
-        """
-        Sets the freeform_tags of this Database.
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-        For more information, see `Resource Tags`__.
-
-        Example: `{\"Department\": \"Finance\"}`
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
-
-
-        :param freeform_tags: The freeform_tags of this Database.
-        :type: dict(str, str)
-        """
-        self._freeform_tags = freeform_tags
-
-    @property
-    def id(self):
-        """
-        **[Required]** Gets the id of this Database.
-        The `OCID`__ of the database.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-
-
-        :return: The id of this Database.
+        :return: The db_unique_name of this Database.
         :rtype: str
         """
-        return self._id
+        return self._db_unique_name
 
-    @id.setter
-    def id(self, id):
+    @db_unique_name.setter
+    def db_unique_name(self, db_unique_name):
         """
-        Sets the id of this Database.
-        The `OCID`__ of the database.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        Sets the db_unique_name of this Database.
+        A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
 
 
-        :param id: The id of this Database.
+        :param db_unique_name: The db_unique_name of this Database.
         :type: str
         """
-        self._id = id
+        self._db_unique_name = db_unique_name
 
     @property
     def lifecycle_details(self):
@@ -494,54 +447,6 @@ class Database(object):
         self._lifecycle_state = lifecycle_state
 
     @property
-    def ncharacter_set(self):
-        """
-        Gets the ncharacter_set of this Database.
-        The national character set for the database.
-
-
-        :return: The ncharacter_set of this Database.
-        :rtype: str
-        """
-        return self._ncharacter_set
-
-    @ncharacter_set.setter
-    def ncharacter_set(self, ncharacter_set):
-        """
-        Sets the ncharacter_set of this Database.
-        The national character set for the database.
-
-
-        :param ncharacter_set: The ncharacter_set of this Database.
-        :type: str
-        """
-        self._ncharacter_set = ncharacter_set
-
-    @property
-    def pdb_name(self):
-        """
-        Gets the pdb_name of this Database.
-        The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-
-
-        :return: The pdb_name of this Database.
-        :rtype: str
-        """
-        return self._pdb_name
-
-    @pdb_name.setter
-    def pdb_name(self, pdb_name):
-        """
-        Sets the pdb_name of this Database.
-        The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-
-
-        :param pdb_name: The pdb_name of this Database.
-        :type: str
-        """
-        self._pdb_name = pdb_name
-
-    @property
     def time_created(self):
         """
         Gets the time_created of this Database.
@@ -564,6 +469,94 @@ class Database(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def db_backup_config(self):
+        """
+        Gets the db_backup_config of this Database.
+
+        :return: The db_backup_config of this Database.
+        :rtype: DbBackupConfig
+        """
+        return self._db_backup_config
+
+    @db_backup_config.setter
+    def db_backup_config(self, db_backup_config):
+        """
+        Sets the db_backup_config of this Database.
+
+        :param db_backup_config: The db_backup_config of this Database.
+        :type: DbBackupConfig
+        """
+        self._db_backup_config = db_backup_config
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this Database.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this Database.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this Database.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this Database.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this Database.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this Database.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this Database.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this Database.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

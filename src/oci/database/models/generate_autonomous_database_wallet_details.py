@@ -36,7 +36,7 @@ class GenerateAutonomousDatabaseWalletDetails(object):
     def password(self):
         """
         **[Required]** Gets the password of this GenerateAutonomousDatabaseWalletDetails.
-        The password to encrypt the keys inside the wallet.
+        The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
 
 
         :return: The password of this GenerateAutonomousDatabaseWalletDetails.
@@ -48,7 +48,7 @@ class GenerateAutonomousDatabaseWalletDetails(object):
     def password(self, password):
         """
         Sets the password of this GenerateAutonomousDatabaseWalletDetails.
-        The password to encrypt the keys inside the wallet.
+        The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
 
 
         :param password: The password of this GenerateAutonomousDatabaseWalletDetails.

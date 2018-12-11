@@ -1384,7 +1384,7 @@ class DatabaseClient(object):
 
     def generate_autonomous_database_wallet(self, autonomous_database_id, generate_autonomous_database_wallet_details, **kwargs):
         """
-        Creates and downloads a wallet for the specified Autonomous Data Warehouse.
+        Creates and downloads a wallet for the specified Autonomous Transaction Processing database.
         Creates and downloads a wallet for the specified Autonomous Transaction Processing database.
 
 

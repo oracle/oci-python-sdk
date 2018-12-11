@@ -23,6 +23,7 @@ from .create_autonomous_database_details import CreateAutonomousDatabaseDetails
 from .create_backup_details import CreateBackupDetails
 from .create_data_guard_association_details import CreateDataGuardAssociationDetails
 from .create_data_guard_association_to_existing_db_system_details import CreateDataGuardAssociationToExistingDbSystemDetails
+from .create_data_guard_association_with_new_db_system_details import CreateDataGuardAssociationWithNewDbSystemDetails
 from .create_database_details import CreateDatabaseDetails
 from .create_database_from_backup_details import CreateDatabaseFromBackupDetails
 from .create_db_home_details import CreateDbHomeDetails
@@ -89,6 +90,7 @@ database_type_mapping = {
     "CreateBackupDetails": CreateBackupDetails,
     "CreateDataGuardAssociationDetails": CreateDataGuardAssociationDetails,
     "CreateDataGuardAssociationToExistingDbSystemDetails": CreateDataGuardAssociationToExistingDbSystemDetails,
+    "CreateDataGuardAssociationWithNewDbSystemDetails": CreateDataGuardAssociationWithNewDbSystemDetails,
     "CreateDatabaseDetails": CreateDatabaseDetails,
     "CreateDatabaseFromBackupDetails": CreateDatabaseFromBackupDetails,
     "CreateDbHomeDetails": CreateDbHomeDetails,

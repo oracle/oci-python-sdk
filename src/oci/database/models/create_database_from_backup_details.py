@@ -17,10 +17,6 @@ class CreateDatabaseFromBackupDetails(object):
         Initializes a new CreateDatabaseFromBackupDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param admin_password:
-            The value to assign to the admin_password property of this CreateDatabaseFromBackupDetails.
-        :type admin_password: str
-
         :param backup_id:
             The value to assign to the backup_id property of this CreateDatabaseFromBackupDetails.
         :type backup_id: str
@@ -29,46 +25,26 @@ class CreateDatabaseFromBackupDetails(object):
             The value to assign to the backup_tde_password property of this CreateDatabaseFromBackupDetails.
         :type backup_tde_password: str
 
+        :param admin_password:
+            The value to assign to the admin_password property of this CreateDatabaseFromBackupDetails.
+        :type admin_password: str
+
         """
         self.swagger_types = {
-            'admin_password': 'str',
             'backup_id': 'str',
-            'backup_tde_password': 'str'
+            'backup_tde_password': 'str',
+            'admin_password': 'str'
         }
 
         self.attribute_map = {
-            'admin_password': 'adminPassword',
             'backup_id': 'backupId',
-            'backup_tde_password': 'backupTDEPassword'
+            'backup_tde_password': 'backupTDEPassword',
+            'admin_password': 'adminPassword'
         }
 
-        self._admin_password = None
         self._backup_id = None
         self._backup_tde_password = None
-
-    @property
-    def admin_password(self):
-        """
-        **[Required]** Gets the admin_password of this CreateDatabaseFromBackupDetails.
-        A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
-
-
-        :return: The admin_password of this CreateDatabaseFromBackupDetails.
-        :rtype: str
-        """
-        return self._admin_password
-
-    @admin_password.setter
-    def admin_password(self, admin_password):
-        """
-        Sets the admin_password of this CreateDatabaseFromBackupDetails.
-        A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
-
-
-        :param admin_password: The admin_password of this CreateDatabaseFromBackupDetails.
-        :type: str
-        """
-        self._admin_password = admin_password
+        self._admin_password = None
 
     @property
     def backup_id(self):
@@ -121,6 +97,30 @@ class CreateDatabaseFromBackupDetails(object):
         :type: str
         """
         self._backup_tde_password = backup_tde_password
+
+    @property
+    def admin_password(self):
+        """
+        **[Required]** Gets the admin_password of this CreateDatabaseFromBackupDetails.
+        A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
+
+
+        :return: The admin_password of this CreateDatabaseFromBackupDetails.
+        :rtype: str
+        """
+        return self._admin_password
+
+    @admin_password.setter
+    def admin_password(self, admin_password):
+        """
+        Sets the admin_password of this CreateDatabaseFromBackupDetails.
+        A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
+
+
+        :param admin_password: The admin_password of this CreateDatabaseFromBackupDetails.
+        :type: str
+        """
+        self._admin_password = admin_password
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -17,17 +17,13 @@ class CompleteExternalBackupJobDetails(object):
         Initializes a new CompleteExternalBackupJobDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param tde_wallet_path:
+            The value to assign to the tde_wallet_path property of this CompleteExternalBackupJobDetails.
+        :type tde_wallet_path: str
+
         :param cf_backup_handle:
             The value to assign to the cf_backup_handle property of this CompleteExternalBackupJobDetails.
         :type cf_backup_handle: str
-
-        :param data_size:
-            The value to assign to the data_size property of this CompleteExternalBackupJobDetails.
-        :type data_size: int
-
-        :param redo_size:
-            The value to assign to the redo_size property of this CompleteExternalBackupJobDetails.
-        :type redo_size: int
 
         :param spf_backup_handle:
             The value to assign to the spf_backup_handle property of this CompleteExternalBackupJobDetails.
@@ -37,35 +33,63 @@ class CompleteExternalBackupJobDetails(object):
             The value to assign to the sql_patches property of this CompleteExternalBackupJobDetails.
         :type sql_patches: list[str]
 
-        :param tde_wallet_path:
-            The value to assign to the tde_wallet_path property of this CompleteExternalBackupJobDetails.
-        :type tde_wallet_path: str
+        :param data_size:
+            The value to assign to the data_size property of this CompleteExternalBackupJobDetails.
+        :type data_size: int
+
+        :param redo_size:
+            The value to assign to the redo_size property of this CompleteExternalBackupJobDetails.
+        :type redo_size: int
 
         """
         self.swagger_types = {
+            'tde_wallet_path': 'str',
             'cf_backup_handle': 'str',
-            'data_size': 'int',
-            'redo_size': 'int',
             'spf_backup_handle': 'str',
             'sql_patches': 'list[str]',
-            'tde_wallet_path': 'str'
+            'data_size': 'int',
+            'redo_size': 'int'
         }
 
         self.attribute_map = {
+            'tde_wallet_path': 'tdeWalletPath',
             'cf_backup_handle': 'cfBackupHandle',
-            'data_size': 'dataSize',
-            'redo_size': 'redoSize',
             'spf_backup_handle': 'spfBackupHandle',
             'sql_patches': 'sqlPatches',
-            'tde_wallet_path': 'tdeWalletPath'
+            'data_size': 'dataSize',
+            'redo_size': 'redoSize'
         }
 
+        self._tde_wallet_path = None
         self._cf_backup_handle = None
-        self._data_size = None
-        self._redo_size = None
         self._spf_backup_handle = None
         self._sql_patches = None
-        self._tde_wallet_path = None
+        self._data_size = None
+        self._redo_size = None
+
+    @property
+    def tde_wallet_path(self):
+        """
+        Gets the tde_wallet_path of this CompleteExternalBackupJobDetails.
+        If the database being backed up is TDE enabled, this will be the path to the associated TDE wallet in Object Storage.
+
+
+        :return: The tde_wallet_path of this CompleteExternalBackupJobDetails.
+        :rtype: str
+        """
+        return self._tde_wallet_path
+
+    @tde_wallet_path.setter
+    def tde_wallet_path(self, tde_wallet_path):
+        """
+        Sets the tde_wallet_path of this CompleteExternalBackupJobDetails.
+        If the database being backed up is TDE enabled, this will be the path to the associated TDE wallet in Object Storage.
+
+
+        :param tde_wallet_path: The tde_wallet_path of this CompleteExternalBackupJobDetails.
+        :type: str
+        """
+        self._tde_wallet_path = tde_wallet_path
 
     @property
     def cf_backup_handle(self):
@@ -90,54 +114,6 @@ class CompleteExternalBackupJobDetails(object):
         :type: str
         """
         self._cf_backup_handle = cf_backup_handle
-
-    @property
-    def data_size(self):
-        """
-        Gets the data_size of this CompleteExternalBackupJobDetails.
-        The size of the data in the database, in megabytes.
-
-
-        :return: The data_size of this CompleteExternalBackupJobDetails.
-        :rtype: int
-        """
-        return self._data_size
-
-    @data_size.setter
-    def data_size(self, data_size):
-        """
-        Sets the data_size of this CompleteExternalBackupJobDetails.
-        The size of the data in the database, in megabytes.
-
-
-        :param data_size: The data_size of this CompleteExternalBackupJobDetails.
-        :type: int
-        """
-        self._data_size = data_size
-
-    @property
-    def redo_size(self):
-        """
-        Gets the redo_size of this CompleteExternalBackupJobDetails.
-        The size of the redo in the database, in megabytes.
-
-
-        :return: The redo_size of this CompleteExternalBackupJobDetails.
-        :rtype: int
-        """
-        return self._redo_size
-
-    @redo_size.setter
-    def redo_size(self, redo_size):
-        """
-        Sets the redo_size of this CompleteExternalBackupJobDetails.
-        The size of the redo in the database, in megabytes.
-
-
-        :param redo_size: The redo_size of this CompleteExternalBackupJobDetails.
-        :type: int
-        """
-        self._redo_size = redo_size
 
     @property
     def spf_backup_handle(self):
@@ -188,28 +164,52 @@ class CompleteExternalBackupJobDetails(object):
         self._sql_patches = sql_patches
 
     @property
-    def tde_wallet_path(self):
+    def data_size(self):
         """
-        Gets the tde_wallet_path of this CompleteExternalBackupJobDetails.
-        If the database being backed up is TDE enabled, this will be the path to the associated TDE wallet in Object Storage.
+        Gets the data_size of this CompleteExternalBackupJobDetails.
+        The size of the data in the database, in megabytes.
 
 
-        :return: The tde_wallet_path of this CompleteExternalBackupJobDetails.
-        :rtype: str
+        :return: The data_size of this CompleteExternalBackupJobDetails.
+        :rtype: int
         """
-        return self._tde_wallet_path
+        return self._data_size
 
-    @tde_wallet_path.setter
-    def tde_wallet_path(self, tde_wallet_path):
+    @data_size.setter
+    def data_size(self, data_size):
         """
-        Sets the tde_wallet_path of this CompleteExternalBackupJobDetails.
-        If the database being backed up is TDE enabled, this will be the path to the associated TDE wallet in Object Storage.
+        Sets the data_size of this CompleteExternalBackupJobDetails.
+        The size of the data in the database, in megabytes.
 
 
-        :param tde_wallet_path: The tde_wallet_path of this CompleteExternalBackupJobDetails.
-        :type: str
+        :param data_size: The data_size of this CompleteExternalBackupJobDetails.
+        :type: int
         """
-        self._tde_wallet_path = tde_wallet_path
+        self._data_size = data_size
+
+    @property
+    def redo_size(self):
+        """
+        Gets the redo_size of this CompleteExternalBackupJobDetails.
+        The size of the redo in the database, in megabytes.
+
+
+        :return: The redo_size of this CompleteExternalBackupJobDetails.
+        :rtype: int
+        """
+        return self._redo_size
+
+    @redo_size.setter
+    def redo_size(self, redo_size):
+        """
+        Sets the redo_size of this CompleteExternalBackupJobDetails.
+        The size of the redo in the database, in megabytes.
+
+
+        :param redo_size: The redo_size of this CompleteExternalBackupJobDetails.
+        :type: int
+        """
+        self._redo_size = redo_size
 
     def __repr__(self):
         return formatted_flat_dict(self)

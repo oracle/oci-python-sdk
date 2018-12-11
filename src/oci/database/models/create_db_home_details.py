@@ -19,54 +19,58 @@ class CreateDbHomeDetails(object):
         Initializes a new CreateDbHomeDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param database:
-            The value to assign to the database property of this CreateDbHomeDetails.
-        :type database: CreateDatabaseDetails
+        :param display_name:
+            The value to assign to the display_name property of this CreateDbHomeDetails.
+        :type display_name: str
 
         :param db_version:
             The value to assign to the db_version property of this CreateDbHomeDetails.
         :type db_version: str
 
-        :param display_name:
-            The value to assign to the display_name property of this CreateDbHomeDetails.
-        :type display_name: str
+        :param database:
+            The value to assign to the database property of this CreateDbHomeDetails.
+        :type database: CreateDatabaseDetails
 
         """
         self.swagger_types = {
-            'database': 'CreateDatabaseDetails',
+            'display_name': 'str',
             'db_version': 'str',
-            'display_name': 'str'
+            'database': 'CreateDatabaseDetails'
         }
 
         self.attribute_map = {
-            'database': 'database',
+            'display_name': 'displayName',
             'db_version': 'dbVersion',
-            'display_name': 'displayName'
+            'database': 'database'
         }
 
-        self._database = None
-        self._db_version = None
         self._display_name = None
+        self._db_version = None
+        self._database = None
 
     @property
-    def database(self):
+    def display_name(self):
         """
-        **[Required]** Gets the database of this CreateDbHomeDetails.
+        Gets the display_name of this CreateDbHomeDetails.
+        The user-provided name of the database home.
 
-        :return: The database of this CreateDbHomeDetails.
-        :rtype: CreateDatabaseDetails
-        """
-        return self._database
 
-    @database.setter
-    def database(self, database):
+        :return: The display_name of this CreateDbHomeDetails.
+        :rtype: str
         """
-        Sets the database of this CreateDbHomeDetails.
+        return self._display_name
 
-        :param database: The database of this CreateDbHomeDetails.
-        :type: CreateDatabaseDetails
+    @display_name.setter
+    def display_name(self, display_name):
         """
-        self._database = database
+        Sets the display_name of this CreateDbHomeDetails.
+        The user-provided name of the database home.
+
+
+        :param display_name: The display_name of this CreateDbHomeDetails.
+        :type: str
+        """
+        self._display_name = display_name
 
     @property
     def db_version(self):
@@ -93,28 +97,24 @@ class CreateDbHomeDetails(object):
         self._db_version = db_version
 
     @property
-    def display_name(self):
+    def database(self):
         """
-        Gets the display_name of this CreateDbHomeDetails.
-        The user-provided name of the database home.
+        **[Required]** Gets the database of this CreateDbHomeDetails.
 
-
-        :return: The display_name of this CreateDbHomeDetails.
-        :rtype: str
+        :return: The database of this CreateDbHomeDetails.
+        :rtype: CreateDatabaseDetails
         """
-        return self._display_name
+        return self._database
 
-    @display_name.setter
-    def display_name(self, display_name):
+    @database.setter
+    def database(self, database):
         """
-        Sets the display_name of this CreateDbHomeDetails.
-        The user-provided name of the database home.
+        Sets the database of this CreateDbHomeDetails.
 
-
-        :param display_name: The display_name of this CreateDbHomeDetails.
-        :type: str
+        :param database: The database of this CreateDbHomeDetails.
+        :type: CreateDatabaseDetails
         """
-        self._display_name = display_name
+        self._database = database
 
     def __repr__(self):
         return formatted_flat_dict(self)

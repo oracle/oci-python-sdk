@@ -19,27 +19,51 @@ class CreateAutonomousDataWarehouseBackupDetails(object):
         Initializes a new CreateAutonomousDataWarehouseBackupDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param autonomous_data_warehouse_id:
-            The value to assign to the autonomous_data_warehouse_id property of this CreateAutonomousDataWarehouseBackupDetails.
-        :type autonomous_data_warehouse_id: str
-
         :param display_name:
             The value to assign to the display_name property of this CreateAutonomousDataWarehouseBackupDetails.
         :type display_name: str
 
+        :param autonomous_data_warehouse_id:
+            The value to assign to the autonomous_data_warehouse_id property of this CreateAutonomousDataWarehouseBackupDetails.
+        :type autonomous_data_warehouse_id: str
+
         """
         self.swagger_types = {
-            'autonomous_data_warehouse_id': 'str',
-            'display_name': 'str'
+            'display_name': 'str',
+            'autonomous_data_warehouse_id': 'str'
         }
 
         self.attribute_map = {
-            'autonomous_data_warehouse_id': 'autonomousDataWarehouseId',
-            'display_name': 'displayName'
+            'display_name': 'displayName',
+            'autonomous_data_warehouse_id': 'autonomousDataWarehouseId'
         }
 
-        self._autonomous_data_warehouse_id = None
         self._display_name = None
+        self._autonomous_data_warehouse_id = None
+
+    @property
+    def display_name(self):
+        """
+        **[Required]** Gets the display_name of this CreateAutonomousDataWarehouseBackupDetails.
+        The user-friendly name for the backup. The name does not have to be unique.
+
+
+        :return: The display_name of this CreateAutonomousDataWarehouseBackupDetails.
+        :rtype: str
+        """
+        return self._display_name
+
+    @display_name.setter
+    def display_name(self, display_name):
+        """
+        Sets the display_name of this CreateAutonomousDataWarehouseBackupDetails.
+        The user-friendly name for the backup. The name does not have to be unique.
+
+
+        :param display_name: The display_name of this CreateAutonomousDataWarehouseBackupDetails.
+        :type: str
+        """
+        self._display_name = display_name
 
     @property
     def autonomous_data_warehouse_id(self):
@@ -68,30 +92,6 @@ class CreateAutonomousDataWarehouseBackupDetails(object):
         :type: str
         """
         self._autonomous_data_warehouse_id = autonomous_data_warehouse_id
-
-    @property
-    def display_name(self):
-        """
-        **[Required]** Gets the display_name of this CreateAutonomousDataWarehouseBackupDetails.
-        The user-friendly name for the backup. The name does not have to be unique.
-
-
-        :return: The display_name of this CreateAutonomousDataWarehouseBackupDetails.
-        :rtype: str
-        """
-        return self._display_name
-
-    @display_name.setter
-    def display_name(self, display_name):
-        """
-        Sets the display_name of this CreateAutonomousDataWarehouseBackupDetails.
-        The user-friendly name for the backup. The name does not have to be unique.
-
-
-        :param display_name: The display_name of this CreateAutonomousDataWarehouseBackupDetails.
-        :type: str
-        """
-        self._display_name = display_name
 
     def __repr__(self):
         return formatted_flat_dict(self)
