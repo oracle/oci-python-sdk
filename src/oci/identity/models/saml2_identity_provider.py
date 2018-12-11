@@ -79,6 +79,10 @@ class Saml2IdentityProvider(IdentityProvider):
             The value to assign to the redirect_url property of this Saml2IdentityProvider.
         :type redirect_url: str
 
+        :param freeform_attributes:
+            The value to assign to the freeform_attributes property of this Saml2IdentityProvider.
+        :type freeform_attributes: dict(str, str)
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -94,7 +98,8 @@ class Saml2IdentityProvider(IdentityProvider):
             'defined_tags': 'dict(str, dict(str, object))',
             'metadata_url': 'str',
             'signing_certificate': 'str',
-            'redirect_url': 'str'
+            'redirect_url': 'str',
+            'freeform_attributes': 'dict(str, str)'
         }
 
         self.attribute_map = {
@@ -111,7 +116,8 @@ class Saml2IdentityProvider(IdentityProvider):
             'defined_tags': 'definedTags',
             'metadata_url': 'metadataUrl',
             'signing_certificate': 'signingCertificate',
-            'redirect_url': 'redirectUrl'
+            'redirect_url': 'redirectUrl',
+            'freeform_attributes': 'freeformAttributes'
         }
 
         self._id = None
@@ -128,6 +134,7 @@ class Saml2IdentityProvider(IdentityProvider):
         self._metadata_url = None
         self._signing_certificate = None
         self._redirect_url = None
+        self._freeform_attributes = None
         self._protocol = 'SAML2'
 
     @property
@@ -207,6 +214,32 @@ class Saml2IdentityProvider(IdentityProvider):
         :type: str
         """
         self._redirect_url = redirect_url
+
+    @property
+    def freeform_attributes(self):
+        """
+        Gets the freeform_attributes of this Saml2IdentityProvider.
+        Extra name value pairs associated with this identity provider.
+        Example: `{\"clientId\": \"app_sf3kdjf3\"}`
+
+
+        :return: The freeform_attributes of this Saml2IdentityProvider.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_attributes
+
+    @freeform_attributes.setter
+    def freeform_attributes(self, freeform_attributes):
+        """
+        Sets the freeform_attributes of this Saml2IdentityProvider.
+        Extra name value pairs associated with this identity provider.
+        Example: `{\"clientId\": \"app_sf3kdjf3\"}`
+
+
+        :param freeform_attributes: The freeform_attributes of this Saml2IdentityProvider.
+        :type: dict(str, str)
+        """
+        self._freeform_attributes = freeform_attributes
 
     def __repr__(self):
         return formatted_flat_dict(self)

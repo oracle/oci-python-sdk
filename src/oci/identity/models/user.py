@@ -74,6 +74,14 @@ class User(object):
             The value to assign to the description property of this User.
         :type description: str
 
+        :param identity_provider_id:
+            The value to assign to the identity_provider_id property of this User.
+        :type identity_provider_id: str
+
+        :param external_identifier:
+            The value to assign to the external_identifier property of this User.
+        :type external_identifier: str
+
         :param time_created:
             The value to assign to the time_created property of this User.
         :type time_created: datetime
@@ -96,17 +104,24 @@ class User(object):
             The value to assign to the defined_tags property of this User.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param capabilities:
+            The value to assign to the capabilities property of this User.
+        :type capabilities: UserCapabilities
+
         """
         self.swagger_types = {
             'id': 'str',
             'compartment_id': 'str',
             'name': 'str',
             'description': 'str',
+            'identity_provider_id': 'str',
+            'external_identifier': 'str',
             'time_created': 'datetime',
             'lifecycle_state': 'str',
             'inactive_status': 'int',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'capabilities': 'UserCapabilities'
         }
 
         self.attribute_map = {
@@ -114,22 +129,28 @@ class User(object):
             'compartment_id': 'compartmentId',
             'name': 'name',
             'description': 'description',
+            'identity_provider_id': 'identityProviderId',
+            'external_identifier': 'externalIdentifier',
             'time_created': 'timeCreated',
             'lifecycle_state': 'lifecycleState',
             'inactive_status': 'inactiveStatus',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'capabilities': 'capabilities'
         }
 
         self._id = None
         self._compartment_id = None
         self._name = None
         self._description = None
+        self._identity_provider_id = None
+        self._external_identifier = None
         self._time_created = None
         self._lifecycle_state = None
         self._inactive_status = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._capabilities = None
 
     @property
     def id(self):
@@ -228,6 +249,54 @@ class User(object):
         :type: str
         """
         self._description = description
+
+    @property
+    def identity_provider_id(self):
+        """
+        Gets the identity_provider_id of this User.
+        The OCID of the `IdentityProvider` this user belongs to.
+
+
+        :return: The identity_provider_id of this User.
+        :rtype: str
+        """
+        return self._identity_provider_id
+
+    @identity_provider_id.setter
+    def identity_provider_id(self, identity_provider_id):
+        """
+        Sets the identity_provider_id of this User.
+        The OCID of the `IdentityProvider` this user belongs to.
+
+
+        :param identity_provider_id: The identity_provider_id of this User.
+        :type: str
+        """
+        self._identity_provider_id = identity_provider_id
+
+    @property
+    def external_identifier(self):
+        """
+        Gets the external_identifier of this User.
+        Identifier of the user in the identity provider
+
+
+        :return: The external_identifier of this User.
+        :rtype: str
+        """
+        return self._external_identifier
+
+    @external_identifier.setter
+    def external_identifier(self, external_identifier):
+        """
+        Sets the external_identifier of this User.
+        Identifier of the user in the identity provider
+
+
+        :param external_identifier: The external_identifier of this User.
+        :type: str
+        """
+        self._external_identifier = external_identifier
 
     @property
     def time_created(self):
@@ -386,6 +455,30 @@ class User(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def capabilities(self):
+        """
+        Gets the capabilities of this User.
+        Properties indicating how the user is allowed to authenticate.
+
+
+        :return: The capabilities of this User.
+        :rtype: UserCapabilities
+        """
+        return self._capabilities
+
+    @capabilities.setter
+    def capabilities(self, capabilities):
+        """
+        Sets the capabilities of this User.
+        Properties indicating how the user is allowed to authenticate.
+
+
+        :param capabilities: The capabilities of this User.
+        :type: UserCapabilities
+        """
+        self._capabilities = capabilities
 
     def __repr__(self):
         return formatted_flat_dict(self)
