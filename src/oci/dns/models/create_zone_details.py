@@ -10,6 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 class CreateZoneDetails(object):
     """
     The body for defining a new zone.
+
+    *Warning:* Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
 
     #: A constant which can be used with the zone_type property of a CreateZoneDetails.
@@ -38,6 +40,14 @@ class CreateZoneDetails(object):
             The value to assign to the compartment_id property of this CreateZoneDetails.
         :type compartment_id: str
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this CreateZoneDetails.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this CreateZoneDetails.
+        :type defined_tags: dict(str, dict(str, object))
+
         :param external_masters:
             The value to assign to the external_masters property of this CreateZoneDetails.
         :type external_masters: list[ExternalMaster]
@@ -47,6 +57,8 @@ class CreateZoneDetails(object):
             'name': 'str',
             'zone_type': 'str',
             'compartment_id': 'str',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))',
             'external_masters': 'list[ExternalMaster]'
         }
 
@@ -54,12 +66,16 @@ class CreateZoneDetails(object):
             'name': 'name',
             'zone_type': 'zoneType',
             'compartment_id': 'compartmentId',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags',
             'external_masters': 'externalMasters'
         }
 
         self._name = None
         self._zone_type = None
         self._compartment_id = None
+        self._freeform_tags = None
+        self._defined_tags = None
         self._external_masters = None
 
     @property
@@ -143,10 +159,69 @@ class CreateZoneDetails(object):
         self._compartment_id = compartment_id
 
     @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this CreateZoneDetails.
+        Simple key-value pair that is applied without any predefined name, type, or scope.
+        For more information, see `Resource Tags`__.
+        Example: `{\"bar-key\": \"value\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this CreateZoneDetails.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this CreateZoneDetails.
+        Simple key-value pair that is applied without any predefined name, type, or scope.
+        For more information, see `Resource Tags`__.
+        Example: `{\"bar-key\": \"value\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this CreateZoneDetails.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this CreateZoneDetails.
+        Usage of predefined tag keys. These predefined keys are scoped to a namespace.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+
+
+        :return: The defined_tags of this CreateZoneDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this CreateZoneDetails.
+        Usage of predefined tag keys. These predefined keys are scoped to a namespace.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+
+
+        :param defined_tags: The defined_tags of this CreateZoneDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
+
+    @property
     def external_masters(self):
         """
         Gets the external_masters of this CreateZoneDetails.
-        External master servers for the zone.
+        External master servers for the zone. `externalMasters` becomes a
+        required parameter when the `zoneType` value is `SECONDARY`.
 
 
         :return: The external_masters of this CreateZoneDetails.
@@ -158,7 +233,8 @@ class CreateZoneDetails(object):
     def external_masters(self, external_masters):
         """
         Sets the external_masters of this CreateZoneDetails.
-        External master servers for the zone.
+        External master servers for the zone. `externalMasters` becomes a
+        required parameter when the `zoneType` value is `SECONDARY`.
 
 
         :param external_masters: The external_masters of this CreateZoneDetails.
