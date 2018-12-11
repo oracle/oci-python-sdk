@@ -197,6 +197,11 @@ class CreateLocalPeeringGatewayDetails(object):
         table. The Networking service does NOT automatically associate the attached VCN's default route table
         with the LPG.
 
+        For information about why you would associate a route table with an LPG, see
+        `Advanced Scenario: Transit Routing`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/transitrouting.htm
+
 
         :return: The route_table_id of this CreateLocalPeeringGatewayDetails.
         :rtype: str
@@ -212,6 +217,11 @@ class CreateLocalPeeringGatewayDetails(object):
         If you don't specify a route table here, the LPG is created without an associated route
         table. The Networking service does NOT automatically associate the attached VCN's default route table
         with the LPG.
+
+        For information about why you would associate a route table with an LPG, see
+        `Advanced Scenario: Transit Routing`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/transitrouting.htm
 
 
         :param route_table_id: The route_table_id of this CreateLocalPeeringGatewayDetails.

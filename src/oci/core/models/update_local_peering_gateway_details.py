@@ -153,7 +153,11 @@ class UpdateLocalPeeringGatewayDetails(object):
     def route_table_id(self):
         """
         Gets the route_table_id of this UpdateLocalPeeringGatewayDetails.
-        The OCID of the route table the LPG will use.
+        The OCID of the route table the LPG will use. For information about why you
+        would associate a route table with an LPG, see
+        `Advanced Scenario: Transit Routing`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/transitrouting.htm
 
 
         :return: The route_table_id of this UpdateLocalPeeringGatewayDetails.
@@ -165,7 +169,11 @@ class UpdateLocalPeeringGatewayDetails(object):
     def route_table_id(self, route_table_id):
         """
         Sets the route_table_id of this UpdateLocalPeeringGatewayDetails.
-        The OCID of the route table the LPG will use.
+        The OCID of the route table the LPG will use. For information about why you
+        would associate a route table with an LPG, see
+        `Advanced Scenario: Transit Routing`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/transitrouting.htm
 
 
         :param route_table_id: The route_table_id of this UpdateLocalPeeringGatewayDetails.

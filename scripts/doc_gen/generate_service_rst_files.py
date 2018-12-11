@@ -7,80 +7,51 @@ import sys
 
 API_DOC_DIRECTORY = 'docs/api'
 
-SERVICES_FOR_DOC_GEN = [
-    {
-        'module_name': 'audit',
-        'service_root_header': 'Audit',
-        'target_file_name': 'audit',
-        'service_names': ['audit']
-    },
-    {
-        'module_name': 'container_engine',
-        'service_root_header': 'Container Engine',
-        'target_file_name': 'container_engine',
-        'service_names': ['container_engine']
-    },
-    {
-        'module_name': 'core',
-        'service_root_header': 'Core Services',
-        'target_file_name': 'core',
-        'service_names': ['blockstorage', 'compute', 'compute_management', 'virtual_network']
-    },
-    {
-        'module_name': 'database',
-        'service_root_header': 'Database',
-        'target_file_name': 'database',
-        'service_names': ['database']
-    },
-    {
-        'module_name': 'dns',
-        'service_root_header': 'DNS',
-        'target_file_name': 'dns',
-        'service_names': ['dns']
-    },
-    {
-        'module_name': 'email',
-        'service_root_header': 'Email',
-        'target_file_name': 'email',
-        'service_names': ['email']
-    },
-    {
-        'module_name': 'file_storage',
-        'service_root_header': 'File Storage',
-        'target_file_name': 'file_storage',
-        'service_names': ['file_storage']
-    },
-    {
-        'module_name': 'identity',
-        'service_root_header': 'Identity',
-        'target_file_name': 'identity',
-        'service_names': ['identity']
-    },
-    {
-        'module_name': 'key_management',
-        'service_root_header': 'Key Management',
-        'target_file_name': 'key_management',
-        'service_names': ['kms_crypto', 'kms_management', 'kms_vault']
-    },
-    {
-        'module_name': 'load_balancer',
-        'service_root_header': 'Load Balancer',
-        'target_file_name': 'load_balancer',
-        'service_names': ['load_balancer']
-    },
-    {
-        'module_name': 'object_storage',
-        'service_root_header': 'Object Storage',
-        'target_file_name': 'object_storage',
-        'service_names': ['object_storage']
-    },
-    {
-        'module_name': 'resource_search',
-        'service_root_header': 'Resource Search',
-        'target_file_name': 'resource_search',
-        'service_names': ['resource_search']
-    }
-]
+
+class Services:
+    """
+    Find all the swagger spec files for the services.
+
+    services_for_doc_gen is a list of dictionaries with the following keys.
+    module_name         --> module_name in oci package
+    service_root_header --> human readable modulename
+    target_file_name    --> same as module_name
+    service_names       --> List of clients in module
+
+    service_name_to_path --> lookup from service name to path for rst file.
+    """
+    def __init__(self):
+
+        # SOURCE_DIRECTORY = "src/oci"
+        service_name_to_path = {}
+        services = {}
+
+        for item in dir(oci):
+            for subitem in dir(eval("oci.{}".format(item))):
+                if subitem.endswith('Client'):
+                    if subitem == "BaseClient":
+                        continue
+                    import_name = "oci.{}.{}".format(item, subitem)
+                    full_path = inspect.getfile(eval(import_name))
+                    client_file = os.path.basename(full_path)
+                    service_name = client_file[:-10]
+                    service_name_to_path[service_name] = "{}/client/{}".format(item, import_name)
+                    if item not in services:
+                        services[item] = {'module_name': item,
+                                          'service_root_header': humanize(item),
+                                          'target_file_name': item,
+                                          'service_names': [service_name]}
+                    else:
+                        services[item]['service_names'].append(service_name)
+
+        services_for_doc_gen = []
+        keys = list(services.keys())
+        keys.sort()
+        for service in keys:
+            services_for_doc_gen.append(services[service])
+
+        self.services_name_to_path = service_name_to_path
+        self.services_for_doc_gen = services_for_doc_gen
 
 
 # A data bag so that we can pass it to single_page_reference.rst.j2 to render
@@ -116,6 +87,8 @@ def humanize(source_string):
         return 'Block Storage'
     elif source_string == 'dns':
         return 'DNS'
+    elif source_string == 'core':
+        return 'Core Services'
 
     split_by_underscore = source_string.split('_')
     full_string = ''
@@ -126,29 +99,17 @@ def humanize(source_string):
         full_string += s[0].upper()
         full_string += '{} '.format(s[1:])
 
-    return full_string
+    return full_string.strip()
 
 
 # Produces the right link for the api/landing.rst page - for most services it's just the name but for services
 # which are bundled together into a single spec (e.g. Core has Block Storage, Compute and Virtual Networking)
 # the links are nested a bit deeper
 def landing_page_linkify(service_name):
-    if service_name == 'blockstorage':
-        return 'core/client/oci.core.BlockstorageClient'
-    elif service_name == 'compute':
-        return 'core/client/oci.core.ComputeClient'
-    elif service_name == 'virtual_network':
-        return 'core/client/oci.core.VirtualNetworkClient'
-    elif service_name == 'compute_management':
-        return 'core/client/oci.core.ComputeManagementClient'
-    elif service_name == 'kms_crypto':
-        return 'key_management/client/oci.key_management.KmsCryptoClient'
-    elif service_name == 'kms_management':
-        return 'key_management/client/oci.key_management.KmsManagementClient'
-    elif service_name == 'kms_vault':
-        return 'key_management/client/oci.key_management.KmsVaultClient'
-    else:
-        return service_name
+    if service_name in services.services_name_to_path:
+        return services.services_name_to_path[service_name]
+
+    return service_name
 
 
 def generate_rst(module_name, service_root_header, target_file_name, service_names, jinja_environment):
@@ -184,8 +145,9 @@ environment.filters['humanize'] = humanize
 
 service_groups = []
 flattened_services = []
+services = Services()
 
-for service_for_doc_gen in SERVICES_FOR_DOC_GEN:
+for service_for_doc_gen in services.services_for_doc_gen:
     print('Generating RST files for: {}'.format(service_for_doc_gen['module_name']))
     generate_rst(
         service_for_doc_gen['module_name'],
@@ -214,6 +176,6 @@ with open(os.path.join(API_DOC_DIRECTORY, 'index.rst'), 'w') as f:
 print('Generating API landing page')
 template = environment.get_template('api_landing.rst.j2')
 with open(os.path.join(API_DOC_DIRECTORY, 'landing.rst'), 'w') as f:
-    f.write(template.render(flattened_services=flattened_services, services_for_doc_gen=SERVICES_FOR_DOC_GEN))
+    f.write(template.render(flattened_services=flattened_services, services_for_doc_gen=services.services_for_doc_gen))
 
 print('Finished generating RST files')

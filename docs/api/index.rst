@@ -80,24 +80,24 @@ Block Storage
     :noindex:
 
 
-Compute 
-========
+Compute
+=======
 
 .. autoclass:: oci.core.compute_client.ComputeClient
     :members:
     :noindex:
 
 
-Compute Management 
-===================
+Compute Management
+==================
 
 .. autoclass:: oci.core.compute_management_client.ComputeManagementClient
     :members:
     :noindex:
 
 
-Virtual Network 
-================
+Virtual Network
+===============
 
 .. autoclass:: oci.core.virtual_network_client.VirtualNetworkClient
     :members:
@@ -251,24 +251,24 @@ Key Management
 ---------
 
 
-Kms Crypto 
-===========
+Kms Crypto
+==========
 
 .. autoclass:: oci.key_management.kms_crypto_client.KmsCryptoClient
     :members:
     :noindex:
 
 
-Kms Management 
-===============
+Kms Management
+==============
 
 .. autoclass:: oci.key_management.kms_management_client.KmsManagementClient
     :members:
     :noindex:
 
 
-Kms Vault 
-==========
+Kms Vault
+=========
 
 .. autoclass:: oci.key_management.kms_vault_client.KmsVaultClient
     :members:
