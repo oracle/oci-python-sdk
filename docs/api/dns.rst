@@ -20,6 +20,7 @@ DNS
 
     oci.dns.models.CreateZoneDetails
     oci.dns.models.ExternalMaster
+    oci.dns.models.Nameserver
     oci.dns.models.PatchDomainRecordsDetails
     oci.dns.models.PatchRRSetDetails
     oci.dns.models.PatchZoneRecordsDetails

@@ -17,7 +17,8 @@ missing = Sentinel("Missing")
 
 class DnsClient(object):
     """
-    API for managing DNS zones, records, and policies.
+    API for the DNS service. Use this API to manage DNS zones, records, and other DNS resources.
+    For more information, see [Overview of the DNS Service](/iaas/Content/DNS/Concepts/dnszonemanagement.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -350,8 +351,8 @@ class DnsClient(object):
 
     def delete_zone(self, zone_name_or_id, **kwargs):
         """
-        Deletes the specified zone. A `204` response indicates that zone has been
-        successfully deleted.
+        Deletes the specified zone. A `204` response indicates that zone has been successfully
+        deleted.
 
 
         :param str zone_name_or_id: (required)
@@ -811,7 +812,7 @@ class DnsClient(object):
         """
         Gets all records in the specified zone. The results are
         sorted by `domain` in alphabetical order by default. For more
-        information about records, please see `Resource Record (RR) TYPEs`__.
+        information about records, see `Resource Record (RR) TYPEs`__.
 
         __ https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4
 
@@ -1009,6 +1010,11 @@ class DnsClient(object):
 
             __ https://www.ietf.org/rfc/rfc3339.txt
 
+        :param str lifecycle_state: (optional)
+            The state of a resource.
+
+            Allowed values are: "ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED"
+
         :param str sort_by: (optional)
             The field by which to sort zones.
 
@@ -1018,11 +1024,6 @@ class DnsClient(object):
             The order to sort the resources.
 
             Allowed values are: "ASC", "DESC"
-
-        :param str lifecycle_state: (optional)
-            The state of a resource.
-
-            Allowed values are: "ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1048,9 +1049,9 @@ class DnsClient(object):
             "zone_type",
             "time_created_greater_than_or_equal_to",
             "time_created_less_than",
+            "lifecycle_state",
             "sort_by",
-            "sort_order",
-            "lifecycle_state"
+            "sort_order"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
         if extra_kwargs:
@@ -1062,6 +1063,13 @@ class DnsClient(object):
             if kwargs['zone_type'] not in zone_type_allowed_values:
                 raise ValueError(
                     "Invalid value for `zone_type`, must be one of {0}".format(zone_type_allowed_values)
+                )
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
                 )
 
         if 'sort_by' in kwargs:
@@ -1078,13 +1086,6 @@ class DnsClient(object):
                     "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
                 )
 
-        if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED"]
-            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
-                raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
-                )
-
         query_params = {
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
@@ -1094,9 +1095,9 @@ class DnsClient(object):
             "zoneType": kwargs.get("zone_type", missing),
             "timeCreatedGreaterThanOrEqualTo": kwargs.get("time_created_greater_than_or_equal_to", missing),
             "timeCreatedLessThan": kwargs.get("time_created_less_than", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
             "sortBy": kwargs.get("sort_by", missing),
-            "sortOrder": kwargs.get("sort_order", missing),
-            "lifecycleState": kwargs.get("lifecycle_state", missing)
+            "sortOrder": kwargs.get("sort_order", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -1127,7 +1128,7 @@ class DnsClient(object):
 
     def patch_domain_records(self, zone_name_or_id, domain, patch_domain_records_details, **kwargs):
         """
-        Replaces records in the specified zone at a domain. You can update one record or all records for the specified zone depending on the changes provided in the request body. You can also add or remove records using this function.
+        Updates records in the specified zone at a domain. You can update one record or all records for the specified zone depending on the changes provided in the request body. You can also add or remove records using this function.
 
 
         :param str zone_name_or_id: (required)
@@ -1668,7 +1669,7 @@ class DnsClient(object):
         server information. For more information about secondary zone, see
         `Manage DNS Service Zone`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/DNS/Tasks/managingdnszones.htm
+        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/DNS/Tasks/managingdnszones.htm
 
 
         :param str zone_name_or_id: (required)

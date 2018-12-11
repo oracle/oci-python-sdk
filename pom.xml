@@ -22,7 +22,7 @@
     <fss-api-spec-spec-file>fss-api-spec-20171215.yaml</fss-api-spec-spec-file>
     <hemlock-spec-spec-file>hemlock-api-20160918.yaml</hemlock-spec-spec-file>
     <email-api-spec-spec-file>email-api-spec.yaml</email-api-spec-spec-file>
-    <public-dns-api-spec-spec-file>public-dns-api-spec.yaml</public-dns-api-spec-spec-file>
+    <public-dns-api-spec-spec-file>source/public-dns-api-spec.cond.yaml</public-dns-api-spec-spec-file>
     <resource-query-service-spec-spec-file>rqs.yaml</resource-query-service-spec-spec-file>
     <clusters-api-spec-spec-file>clusters-api-spec.yaml</clusters-api-spec-spec-file>
     <kms-api-spec-spec-file>kms-api-spec-20180608.yaml</kms-api-spec-spec-file>
@@ -1178,7 +1178,7 @@
       <dependency>
         <groupId>com.oracle.pic.dns.pub</groupId>
         <artifactId>public-dns-api-spec</artifactId>
-        <version>1.0.0-15</version>
+        <version>2.0.11</version>
       </dependency>
       <dependency>
         <groupId>com.oracle.pic.ffsw</groupId>
