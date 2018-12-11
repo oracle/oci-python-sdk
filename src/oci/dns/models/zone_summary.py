@@ -10,6 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 class ZoneSummary(object):
     """
     A DNS zone.
+
+    *Warning:* Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
 
     #: A constant which can be used with the zone_type property of a ZoneSummary.
@@ -19,6 +21,26 @@ class ZoneSummary(object):
     #: A constant which can be used with the zone_type property of a ZoneSummary.
     #: This constant has a value of "SECONDARY"
     ZONE_TYPE_SECONDARY = "SECONDARY"
+
+    #: A constant which can be used with the lifecycle_state property of a ZoneSummary.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a ZoneSummary.
+    #: This constant has a value of "CREATING"
+    LIFECYCLE_STATE_CREATING = "CREATING"
+
+    #: A constant which can be used with the lifecycle_state property of a ZoneSummary.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_STATE_DELETED = "DELETED"
+
+    #: A constant which can be used with the lifecycle_state property of a ZoneSummary.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a ZoneSummary.
+    #: This constant has a value of "FAILED"
+    LIFECYCLE_STATE_FAILED = "FAILED"
 
     def __init__(self, **kwargs):
         """
@@ -38,6 +60,14 @@ class ZoneSummary(object):
         :param compartment_id:
             The value to assign to the compartment_id property of this ZoneSummary.
         :type compartment_id: str
+
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this ZoneSummary.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this ZoneSummary.
+        :type defined_tags: dict(str, dict(str, object))
 
         :param self_uri:
             The value to assign to the self_uri property of this ZoneSummary.
@@ -59,37 +89,52 @@ class ZoneSummary(object):
             The value to assign to the serial property of this ZoneSummary.
         :type serial: int
 
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this ZoneSummary.
+            Allowed values for this property are: "ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
         """
         self.swagger_types = {
             'name': 'str',
             'zone_type': 'str',
             'compartment_id': 'str',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))',
             'self_uri': 'str',
             'id': 'str',
             'time_created': 'datetime',
             'version': 'str',
-            'serial': 'int'
+            'serial': 'int',
+            'lifecycle_state': 'str'
         }
 
         self.attribute_map = {
             'name': 'name',
             'zone_type': 'zoneType',
             'compartment_id': 'compartmentId',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags',
             'self_uri': 'self',
             'id': 'id',
             'time_created': 'timeCreated',
             'version': 'version',
-            'serial': 'serial'
+            'serial': 'serial',
+            'lifecycle_state': 'lifecycleState'
         }
 
         self._name = None
         self._zone_type = None
         self._compartment_id = None
+        self._freeform_tags = None
+        self._defined_tags = None
         self._self_uri = None
         self._id = None
         self._time_created = None
         self._version = None
         self._serial = None
+        self._lifecycle_state = None
 
     @property
     def name(self):
@@ -170,6 +215,64 @@ class ZoneSummary(object):
         self._compartment_id = compartment_id
 
     @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this ZoneSummary.
+        Simple key-value pair that is applied without any predefined name, type, or scope.
+        For more information, see `Resource Tags`__.
+        Example: `{\"bar-key\": \"value\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this ZoneSummary.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this ZoneSummary.
+        Simple key-value pair that is applied without any predefined name, type, or scope.
+        For more information, see `Resource Tags`__.
+        Example: `{\"bar-key\": \"value\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this ZoneSummary.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this ZoneSummary.
+        Usage of predefined tag keys. These predefined keys are scoped to a namespace.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+
+
+        :return: The defined_tags of this ZoneSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this ZoneSummary.
+        Usage of predefined tag keys. These predefined keys are scoped to a namespace.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+
+
+        :param defined_tags: The defined_tags of this ZoneSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
+
+    @property
     def self_uri(self):
         """
         Gets the self_uri of this ZoneSummary.
@@ -221,7 +324,7 @@ class ZoneSummary(object):
     def time_created(self):
         """
         Gets the time_created of this ZoneSummary.
-        The date and time the image was created in \"YYYY-MM-ddThh:mmZ\" format
+        The date and time the resource was created in \"YYYY-MM-ddThh:mmZ\" format
         with a Z offset, as defined by RFC 3339.
 
         **Example:** `2016-07-22T17:23:59:60Z`
@@ -236,7 +339,7 @@ class ZoneSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this ZoneSummary.
-        The date and time the image was created in \"YYYY-MM-ddThh:mmZ\" format
+        The date and time the resource was created in \"YYYY-MM-ddThh:mmZ\" format
         with a Z offset, as defined by RFC 3339.
 
         **Example:** `2016-07-22T17:23:59:60Z`
@@ -298,6 +401,36 @@ class ZoneSummary(object):
         :type: int
         """
         self._serial = serial
+
+    @property
+    def lifecycle_state(self):
+        """
+        Gets the lifecycle_state of this ZoneSummary.
+        The current state of the zone resource.
+
+        Allowed values for this property are: "ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The lifecycle_state of this ZoneSummary.
+        :rtype: str
+        """
+        return self._lifecycle_state
+
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
+        """
+        Sets the lifecycle_state of this ZoneSummary.
+        The current state of the zone resource.
+
+
+        :param lifecycle_state: The lifecycle_state of this ZoneSummary.
+        :type: str
+        """
+        allowed_values = ["ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED"]
+        if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
+        self._lifecycle_state = lifecycle_state
 
     def __repr__(self):
         return formatted_flat_dict(self)

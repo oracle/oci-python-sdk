@@ -74,7 +74,8 @@ class ExternalMaster(object):
     def port(self):
         """
         Gets the port of this ExternalMaster.
-        The server's port.
+        The server's port. Port value must be a value of 53, otherwise omit
+        the port value.
 
 
         :return: The port of this ExternalMaster.
@@ -86,7 +87,8 @@ class ExternalMaster(object):
     def port(self, port):
         """
         Sets the port of this ExternalMaster.
-        The server's port.
+        The server's port. Port value must be a value of 53, otherwise omit
+        the port value.
 
 
         :param port: The port of this ExternalMaster.
