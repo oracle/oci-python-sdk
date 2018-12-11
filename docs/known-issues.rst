@@ -21,7 +21,7 @@ UploadManager generates ssl3_write_pending error when a read timeout is set for 
 
     client.base_client.timeout = None
 
-NOTE: If you need to maintain the connection timeout while clearing the read timeout on an already initialized Object Storage client, you can do so by setting the timeout to a tuple. In the following example, the connection timeout is set to 90.0 seconds and the read timeout is set to infinite, or no timeout.
+If you need to retain the connection timeout while clearing the read timeout, you can do so by setting the timeout to a tuple. The first item in the tuple is the connection timeout and the second is the read timeout. In the following example, the connection timeout is set to 90.0 seconds and the read timeout is set to infinite, or no timeout.
 
 .. code-block:: python
 
