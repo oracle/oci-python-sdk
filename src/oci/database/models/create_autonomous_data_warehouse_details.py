@@ -27,13 +27,13 @@ class CreateAutonomousDataWarehouseDetails(object):
         Initializes a new CreateAutonomousDataWarehouseDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param admin_password:
-            The value to assign to the admin_password property of this CreateAutonomousDataWarehouseDetails.
-        :type admin_password: str
-
         :param compartment_id:
             The value to assign to the compartment_id property of this CreateAutonomousDataWarehouseDetails.
         :type compartment_id: str
+
+        :param db_name:
+            The value to assign to the db_name property of this CreateAutonomousDataWarehouseDetails.
+        :type db_name: str
 
         :param cpu_core_count:
             The value to assign to the cpu_core_count property of this CreateAutonomousDataWarehouseDetails.
@@ -43,85 +43,61 @@ class CreateAutonomousDataWarehouseDetails(object):
             The value to assign to the data_storage_size_in_tbs property of this CreateAutonomousDataWarehouseDetails.
         :type data_storage_size_in_tbs: int
 
-        :param db_name:
-            The value to assign to the db_name property of this CreateAutonomousDataWarehouseDetails.
-        :type db_name: str
-
-        :param defined_tags:
-            The value to assign to the defined_tags property of this CreateAutonomousDataWarehouseDetails.
-        :type defined_tags: dict(str, dict(str, object))
+        :param admin_password:
+            The value to assign to the admin_password property of this CreateAutonomousDataWarehouseDetails.
+        :type admin_password: str
 
         :param display_name:
             The value to assign to the display_name property of this CreateAutonomousDataWarehouseDetails.
         :type display_name: str
-
-        :param freeform_tags:
-            The value to assign to the freeform_tags property of this CreateAutonomousDataWarehouseDetails.
-        :type freeform_tags: dict(str, str)
 
         :param license_model:
             The value to assign to the license_model property of this CreateAutonomousDataWarehouseDetails.
             Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
         :type license_model: str
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this CreateAutonomousDataWarehouseDetails.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this CreateAutonomousDataWarehouseDetails.
+        :type defined_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
-            'admin_password': 'str',
             'compartment_id': 'str',
+            'db_name': 'str',
             'cpu_core_count': 'int',
             'data_storage_size_in_tbs': 'int',
-            'db_name': 'str',
-            'defined_tags': 'dict(str, dict(str, object))',
+            'admin_password': 'str',
             'display_name': 'str',
+            'license_model': 'str',
             'freeform_tags': 'dict(str, str)',
-            'license_model': 'str'
+            'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
-            'admin_password': 'adminPassword',
             'compartment_id': 'compartmentId',
+            'db_name': 'dbName',
             'cpu_core_count': 'cpuCoreCount',
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
-            'db_name': 'dbName',
-            'defined_tags': 'definedTags',
+            'admin_password': 'adminPassword',
             'display_name': 'displayName',
+            'license_model': 'licenseModel',
             'freeform_tags': 'freeformTags',
-            'license_model': 'licenseModel'
+            'defined_tags': 'definedTags'
         }
 
-        self._admin_password = None
         self._compartment_id = None
+        self._db_name = None
         self._cpu_core_count = None
         self._data_storage_size_in_tbs = None
-        self._db_name = None
-        self._defined_tags = None
+        self._admin_password = None
         self._display_name = None
-        self._freeform_tags = None
         self._license_model = None
-
-    @property
-    def admin_password(self):
-        """
-        **[Required]** Gets the admin_password of this CreateAutonomousDataWarehouseDetails.
-        A strong password for Admin. The password must be between 12 and 60 characters long, and must contain at least 1 uppercase, 1 lowercase and 2 numeric characters. It cannot contain the double quote symbol (\"). It must be different than the last 4 passwords.
-
-
-        :return: The admin_password of this CreateAutonomousDataWarehouseDetails.
-        :rtype: str
-        """
-        return self._admin_password
-
-    @admin_password.setter
-    def admin_password(self, admin_password):
-        """
-        Sets the admin_password of this CreateAutonomousDataWarehouseDetails.
-        A strong password for Admin. The password must be between 12 and 60 characters long, and must contain at least 1 uppercase, 1 lowercase and 2 numeric characters. It cannot contain the double quote symbol (\"). It must be different than the last 4 passwords.
-
-
-        :param admin_password: The admin_password of this CreateAutonomousDataWarehouseDetails.
-        :type: str
-        """
-        self._admin_password = admin_password
+        self._freeform_tags = None
+        self._defined_tags = None
 
     @property
     def compartment_id(self):
@@ -150,6 +126,30 @@ class CreateAutonomousDataWarehouseDetails(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def db_name(self):
+        """
+        **[Required]** Gets the db_name of this CreateAutonomousDataWarehouseDetails.
+        The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
+
+
+        :return: The db_name of this CreateAutonomousDataWarehouseDetails.
+        :rtype: str
+        """
+        return self._db_name
+
+    @db_name.setter
+    def db_name(self, db_name):
+        """
+        Sets the db_name of this CreateAutonomousDataWarehouseDetails.
+        The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
+
+
+        :param db_name: The db_name of this CreateAutonomousDataWarehouseDetails.
+        :type: str
+        """
+        self._db_name = db_name
 
     @property
     def cpu_core_count(self):
@@ -200,62 +200,28 @@ class CreateAutonomousDataWarehouseDetails(object):
         self._data_storage_size_in_tbs = data_storage_size_in_tbs
 
     @property
-    def db_name(self):
+    def admin_password(self):
         """
-        **[Required]** Gets the db_name of this CreateAutonomousDataWarehouseDetails.
-        The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
+        **[Required]** Gets the admin_password of this CreateAutonomousDataWarehouseDetails.
+        The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (\") or the username \"admin\", regardless of casing.
 
 
-        :return: The db_name of this CreateAutonomousDataWarehouseDetails.
+        :return: The admin_password of this CreateAutonomousDataWarehouseDetails.
         :rtype: str
         """
-        return self._db_name
+        return self._admin_password
 
-    @db_name.setter
-    def db_name(self, db_name):
+    @admin_password.setter
+    def admin_password(self, admin_password):
         """
-        Sets the db_name of this CreateAutonomousDataWarehouseDetails.
-        The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
+        Sets the admin_password of this CreateAutonomousDataWarehouseDetails.
+        The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (\") or the username \"admin\", regardless of casing.
 
 
-        :param db_name: The db_name of this CreateAutonomousDataWarehouseDetails.
+        :param admin_password: The admin_password of this CreateAutonomousDataWarehouseDetails.
         :type: str
         """
-        self._db_name = db_name
-
-    @property
-    def defined_tags(self):
-        """
-        Gets the defined_tags of this CreateAutonomousDataWarehouseDetails.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        For more information, see `Resource Tags`__.
-
-        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
-
-
-        :return: The defined_tags of this CreateAutonomousDataWarehouseDetails.
-        :rtype: dict(str, dict(str, object))
-        """
-        return self._defined_tags
-
-    @defined_tags.setter
-    def defined_tags(self, defined_tags):
-        """
-        Sets the defined_tags of this CreateAutonomousDataWarehouseDetails.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        For more information, see `Resource Tags`__.
-
-        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
-
-
-        :param defined_tags: The defined_tags of this CreateAutonomousDataWarehouseDetails.
-        :type: dict(str, dict(str, object))
-        """
-        self._defined_tags = defined_tags
+        self._admin_password = admin_password
 
     @property
     def display_name(self):
@@ -280,6 +246,38 @@ class CreateAutonomousDataWarehouseDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def license_model(self):
+        """
+        Gets the license_model of this CreateAutonomousDataWarehouseDetails.
+        The Oracle license model that applies to the Oracle Autonomous Data Warehouse. The default is BRING_YOUR_OWN_LICENSE.
+
+        Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
+
+
+        :return: The license_model of this CreateAutonomousDataWarehouseDetails.
+        :rtype: str
+        """
+        return self._license_model
+
+    @license_model.setter
+    def license_model(self, license_model):
+        """
+        Sets the license_model of this CreateAutonomousDataWarehouseDetails.
+        The Oracle license model that applies to the Oracle Autonomous Data Warehouse. The default is BRING_YOUR_OWN_LICENSE.
+
+
+        :param license_model: The license_model of this CreateAutonomousDataWarehouseDetails.
+        :type: str
+        """
+        allowed_values = ["LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"]
+        if not value_allowed_none_or_none_sentinel(license_model, allowed_values):
+            raise ValueError(
+                "Invalid value for `license_model`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._license_model = license_model
 
     @property
     def freeform_tags(self):
@@ -316,36 +314,38 @@ class CreateAutonomousDataWarehouseDetails(object):
         self._freeform_tags = freeform_tags
 
     @property
-    def license_model(self):
+    def defined_tags(self):
         """
-        Gets the license_model of this CreateAutonomousDataWarehouseDetails.
-        The Oracle license model that applies to the Oracle Autonomous Data Warehouse. The default is BRING_YOUR_OWN_LICENSE.
+        Gets the defined_tags of this CreateAutonomousDataWarehouseDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
 
-        Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
 
 
-        :return: The license_model of this CreateAutonomousDataWarehouseDetails.
-        :rtype: str
+        :return: The defined_tags of this CreateAutonomousDataWarehouseDetails.
+        :rtype: dict(str, dict(str, object))
         """
-        return self._license_model
+        return self._defined_tags
 
-    @license_model.setter
-    def license_model(self, license_model):
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
         """
-        Sets the license_model of this CreateAutonomousDataWarehouseDetails.
-        The Oracle license model that applies to the Oracle Autonomous Data Warehouse. The default is BRING_YOUR_OWN_LICENSE.
+        Sets the defined_tags of this CreateAutonomousDataWarehouseDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
 
 
-        :param license_model: The license_model of this CreateAutonomousDataWarehouseDetails.
-        :type: str
+        :param defined_tags: The defined_tags of this CreateAutonomousDataWarehouseDetails.
+        :type: dict(str, dict(str, object))
         """
-        allowed_values = ["LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"]
-        if not value_allowed_none_or_none_sentinel(license_model, allowed_values):
-            raise ValueError(
-                "Invalid value for `license_model`, must be None or one of {0}"
-                .format(allowed_values)
-            )
-        self._license_model = license_model
+        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

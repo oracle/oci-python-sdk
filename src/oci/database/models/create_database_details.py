@@ -27,6 +27,14 @@ class CreateDatabaseDetails(object):
         Initializes a new CreateDatabaseDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param db_name:
+            The value to assign to the db_name property of this CreateDatabaseDetails.
+        :type db_name: str
+
+        :param pdb_name:
+            The value to assign to the pdb_name property of this CreateDatabaseDetails.
+        :type pdb_name: str
+
         :param admin_password:
             The value to assign to the admin_password property of this CreateDatabaseDetails.
         :type admin_password: str
@@ -35,69 +43,109 @@ class CreateDatabaseDetails(object):
             The value to assign to the character_set property of this CreateDatabaseDetails.
         :type character_set: str
 
-        :param db_backup_config:
-            The value to assign to the db_backup_config property of this CreateDatabaseDetails.
-        :type db_backup_config: DbBackupConfig
-
-        :param db_name:
-            The value to assign to the db_name property of this CreateDatabaseDetails.
-        :type db_name: str
+        :param ncharacter_set:
+            The value to assign to the ncharacter_set property of this CreateDatabaseDetails.
+        :type ncharacter_set: str
 
         :param db_workload:
             The value to assign to the db_workload property of this CreateDatabaseDetails.
             Allowed values for this property are: "OLTP", "DSS"
         :type db_workload: str
 
-        :param defined_tags:
-            The value to assign to the defined_tags property of this CreateDatabaseDetails.
-        :type defined_tags: dict(str, dict(str, object))
+        :param db_backup_config:
+            The value to assign to the db_backup_config property of this CreateDatabaseDetails.
+        :type db_backup_config: DbBackupConfig
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateDatabaseDetails.
         :type freeform_tags: dict(str, str)
 
-        :param ncharacter_set:
-            The value to assign to the ncharacter_set property of this CreateDatabaseDetails.
-        :type ncharacter_set: str
-
-        :param pdb_name:
-            The value to assign to the pdb_name property of this CreateDatabaseDetails.
-        :type pdb_name: str
+        :param defined_tags:
+            The value to assign to the defined_tags property of this CreateDatabaseDetails.
+        :type defined_tags: dict(str, dict(str, object))
 
         """
         self.swagger_types = {
+            'db_name': 'str',
+            'pdb_name': 'str',
             'admin_password': 'str',
             'character_set': 'str',
-            'db_backup_config': 'DbBackupConfig',
-            'db_name': 'str',
-            'db_workload': 'str',
-            'defined_tags': 'dict(str, dict(str, object))',
-            'freeform_tags': 'dict(str, str)',
             'ncharacter_set': 'str',
-            'pdb_name': 'str'
+            'db_workload': 'str',
+            'db_backup_config': 'DbBackupConfig',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
+            'db_name': 'dbName',
+            'pdb_name': 'pdbName',
             'admin_password': 'adminPassword',
             'character_set': 'characterSet',
-            'db_backup_config': 'dbBackupConfig',
-            'db_name': 'dbName',
-            'db_workload': 'dbWorkload',
-            'defined_tags': 'definedTags',
-            'freeform_tags': 'freeformTags',
             'ncharacter_set': 'ncharacterSet',
-            'pdb_name': 'pdbName'
+            'db_workload': 'dbWorkload',
+            'db_backup_config': 'dbBackupConfig',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags'
         }
 
+        self._db_name = None
+        self._pdb_name = None
         self._admin_password = None
         self._character_set = None
-        self._db_backup_config = None
-        self._db_name = None
-        self._db_workload = None
-        self._defined_tags = None
-        self._freeform_tags = None
         self._ncharacter_set = None
-        self._pdb_name = None
+        self._db_workload = None
+        self._db_backup_config = None
+        self._freeform_tags = None
+        self._defined_tags = None
+
+    @property
+    def db_name(self):
+        """
+        **[Required]** Gets the db_name of this CreateDatabaseDetails.
+        The database name. The name must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+
+
+        :return: The db_name of this CreateDatabaseDetails.
+        :rtype: str
+        """
+        return self._db_name
+
+    @db_name.setter
+    def db_name(self, db_name):
+        """
+        Sets the db_name of this CreateDatabaseDetails.
+        The database name. The name must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+
+
+        :param db_name: The db_name of this CreateDatabaseDetails.
+        :type: str
+        """
+        self._db_name = db_name
+
+    @property
+    def pdb_name(self):
+        """
+        Gets the pdb_name of this CreateDatabaseDetails.
+        The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
+
+
+        :return: The pdb_name of this CreateDatabaseDetails.
+        :rtype: str
+        """
+        return self._pdb_name
+
+    @pdb_name.setter
+    def pdb_name(self, pdb_name):
+        """
+        Sets the pdb_name of this CreateDatabaseDetails.
+        The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
+
+
+        :param pdb_name: The pdb_name of this CreateDatabaseDetails.
+        :type: str
+        """
+        self._pdb_name = pdb_name
 
     @property
     def admin_password(self):
@@ -152,48 +200,30 @@ class CreateDatabaseDetails(object):
         self._character_set = character_set
 
     @property
-    def db_backup_config(self):
+    def ncharacter_set(self):
         """
-        Gets the db_backup_config of this CreateDatabaseDetails.
-
-        :return: The db_backup_config of this CreateDatabaseDetails.
-        :rtype: DbBackupConfig
-        """
-        return self._db_backup_config
-
-    @db_backup_config.setter
-    def db_backup_config(self, db_backup_config):
-        """
-        Sets the db_backup_config of this CreateDatabaseDetails.
-
-        :param db_backup_config: The db_backup_config of this CreateDatabaseDetails.
-        :type: DbBackupConfig
-        """
-        self._db_backup_config = db_backup_config
-
-    @property
-    def db_name(self):
-        """
-        **[Required]** Gets the db_name of this CreateDatabaseDetails.
-        The database name. The name must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+        Gets the ncharacter_set of this CreateDatabaseDetails.
+        The national character set for the database.  The default is AL16UTF16. Allowed values are:
+        AL16UTF16 or UTF8.
 
 
-        :return: The db_name of this CreateDatabaseDetails.
+        :return: The ncharacter_set of this CreateDatabaseDetails.
         :rtype: str
         """
-        return self._db_name
+        return self._ncharacter_set
 
-    @db_name.setter
-    def db_name(self, db_name):
+    @ncharacter_set.setter
+    def ncharacter_set(self, ncharacter_set):
         """
-        Sets the db_name of this CreateDatabaseDetails.
-        The database name. The name must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+        Sets the ncharacter_set of this CreateDatabaseDetails.
+        The national character set for the database.  The default is AL16UTF16. Allowed values are:
+        AL16UTF16 or UTF8.
 
 
-        :param db_name: The db_name of this CreateDatabaseDetails.
+        :param ncharacter_set: The ncharacter_set of this CreateDatabaseDetails.
         :type: str
         """
-        self._db_name = db_name
+        self._ncharacter_set = ncharacter_set
 
     @property
     def db_workload(self):
@@ -228,38 +258,24 @@ class CreateDatabaseDetails(object):
         self._db_workload = db_workload
 
     @property
-    def defined_tags(self):
+    def db_backup_config(self):
         """
-        Gets the defined_tags of this CreateDatabaseDetails.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        For more information, see `Resource Tags`__.
+        Gets the db_backup_config of this CreateDatabaseDetails.
 
-        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
-
-
-        :return: The defined_tags of this CreateDatabaseDetails.
-        :rtype: dict(str, dict(str, object))
+        :return: The db_backup_config of this CreateDatabaseDetails.
+        :rtype: DbBackupConfig
         """
-        return self._defined_tags
+        return self._db_backup_config
 
-    @defined_tags.setter
-    def defined_tags(self, defined_tags):
+    @db_backup_config.setter
+    def db_backup_config(self, db_backup_config):
         """
-        Sets the defined_tags of this CreateDatabaseDetails.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        For more information, see `Resource Tags`__.
+        Sets the db_backup_config of this CreateDatabaseDetails.
 
-        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
-
-
-        :param defined_tags: The defined_tags of this CreateDatabaseDetails.
-        :type: dict(str, dict(str, object))
+        :param db_backup_config: The db_backup_config of this CreateDatabaseDetails.
+        :type: DbBackupConfig
         """
-        self._defined_tags = defined_tags
+        self._db_backup_config = db_backup_config
 
     @property
     def freeform_tags(self):
@@ -296,54 +312,38 @@ class CreateDatabaseDetails(object):
         self._freeform_tags = freeform_tags
 
     @property
-    def ncharacter_set(self):
+    def defined_tags(self):
         """
-        Gets the ncharacter_set of this CreateDatabaseDetails.
-        The national character set for the database.  The default is AL16UTF16. Allowed values are:
-        AL16UTF16 or UTF8.
+        Gets the defined_tags of this CreateDatabaseDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
 
 
-        :return: The ncharacter_set of this CreateDatabaseDetails.
-        :rtype: str
+        :return: The defined_tags of this CreateDatabaseDetails.
+        :rtype: dict(str, dict(str, object))
         """
-        return self._ncharacter_set
+        return self._defined_tags
 
-    @ncharacter_set.setter
-    def ncharacter_set(self, ncharacter_set):
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
         """
-        Sets the ncharacter_set of this CreateDatabaseDetails.
-        The national character set for the database.  The default is AL16UTF16. Allowed values are:
-        AL16UTF16 or UTF8.
+        Sets the defined_tags of this CreateDatabaseDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
 
 
-        :param ncharacter_set: The ncharacter_set of this CreateDatabaseDetails.
-        :type: str
+        :param defined_tags: The defined_tags of this CreateDatabaseDetails.
+        :type: dict(str, dict(str, object))
         """
-        self._ncharacter_set = ncharacter_set
-
-    @property
-    def pdb_name(self):
-        """
-        Gets the pdb_name of this CreateDatabaseDetails.
-        The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-
-
-        :return: The pdb_name of this CreateDatabaseDetails.
-        :rtype: str
-        """
-        return self._pdb_name
-
-    @pdb_name.setter
-    def pdb_name(self, pdb_name):
-        """
-        Sets the pdb_name of this CreateDatabaseDetails.
-        The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-
-
-        :param pdb_name: The pdb_name of this CreateDatabaseDetails.
-        :type: str
-        """
-        self._pdb_name = pdb_name
+        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

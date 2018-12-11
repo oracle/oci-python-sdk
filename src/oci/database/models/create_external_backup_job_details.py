@@ -12,6 +12,14 @@ class CreateExternalBackupJobDetails(object):
     CreateExternalBackupJobDetails model.
     """
 
+    #: A constant which can be used with the database_mode property of a CreateExternalBackupJobDetails.
+    #: This constant has a value of "SI"
+    DATABASE_MODE_SI = "SI"
+
+    #: A constant which can be used with the database_mode property of a CreateExternalBackupJobDetails.
+    #: This constant has a value of "RAC"
+    DATABASE_MODE_RAC = "RAC"
+
     #: A constant which can be used with the database_edition property of a CreateExternalBackupJobDetails.
     #: This constant has a value of "STANDARD_EDITION"
     DATABASE_EDITION_STANDARD_EDITION = "STANDARD_EDITION"
@@ -28,14 +36,6 @@ class CreateExternalBackupJobDetails(object):
     #: This constant has a value of "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
     DATABASE_EDITION_ENTERPRISE_EDITION_EXTREME_PERFORMANCE = "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
 
-    #: A constant which can be used with the database_mode property of a CreateExternalBackupJobDetails.
-    #: This constant has a value of "SI"
-    DATABASE_MODE_SI = "SI"
-
-    #: A constant which can be used with the database_mode property of a CreateExternalBackupJobDetails.
-    #: This constant has a value of "RAC"
-    DATABASE_MODE_RAC = "RAC"
-
     def __init__(self, **kwargs):
         """
         Initializes a new CreateExternalBackupJobDetails object with values from keyword arguments.
@@ -45,23 +45,17 @@ class CreateExternalBackupJobDetails(object):
             The value to assign to the availability_domain property of this CreateExternalBackupJobDetails.
         :type availability_domain: str
 
-        :param character_set:
-            The value to assign to the character_set property of this CreateExternalBackupJobDetails.
-        :type character_set: str
-
         :param compartment_id:
             The value to assign to the compartment_id property of this CreateExternalBackupJobDetails.
         :type compartment_id: str
 
-        :param database_edition:
-            The value to assign to the database_edition property of this CreateExternalBackupJobDetails.
-            Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
-        :type database_edition: str
+        :param display_name:
+            The value to assign to the display_name property of this CreateExternalBackupJobDetails.
+        :type display_name: str
 
-        :param database_mode:
-            The value to assign to the database_mode property of this CreateExternalBackupJobDetails.
-            Allowed values for this property are: "SI", "RAC"
-        :type database_mode: str
+        :param db_version:
+            The value to assign to the db_version property of this CreateExternalBackupJobDetails.
+        :type db_version: str
 
         :param db_name:
             The value to assign to the db_name property of this CreateExternalBackupJobDetails.
@@ -71,69 +65,75 @@ class CreateExternalBackupJobDetails(object):
             The value to assign to the db_unique_name property of this CreateExternalBackupJobDetails.
         :type db_unique_name: str
 
-        :param db_version:
-            The value to assign to the db_version property of this CreateExternalBackupJobDetails.
-        :type db_version: str
-
-        :param display_name:
-            The value to assign to the display_name property of this CreateExternalBackupJobDetails.
-        :type display_name: str
+        :param pdb_name:
+            The value to assign to the pdb_name property of this CreateExternalBackupJobDetails.
+        :type pdb_name: str
 
         :param external_database_identifier:
             The value to assign to the external_database_identifier property of this CreateExternalBackupJobDetails.
         :type external_database_identifier: int
 
+        :param character_set:
+            The value to assign to the character_set property of this CreateExternalBackupJobDetails.
+        :type character_set: str
+
         :param ncharacter_set:
             The value to assign to the ncharacter_set property of this CreateExternalBackupJobDetails.
         :type ncharacter_set: str
 
-        :param pdb_name:
-            The value to assign to the pdb_name property of this CreateExternalBackupJobDetails.
-        :type pdb_name: str
+        :param database_mode:
+            The value to assign to the database_mode property of this CreateExternalBackupJobDetails.
+            Allowed values for this property are: "SI", "RAC"
+        :type database_mode: str
+
+        :param database_edition:
+            The value to assign to the database_edition property of this CreateExternalBackupJobDetails.
+            Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
+        :type database_edition: str
 
         """
         self.swagger_types = {
             'availability_domain': 'str',
-            'character_set': 'str',
             'compartment_id': 'str',
-            'database_edition': 'str',
-            'database_mode': 'str',
+            'display_name': 'str',
+            'db_version': 'str',
             'db_name': 'str',
             'db_unique_name': 'str',
-            'db_version': 'str',
-            'display_name': 'str',
+            'pdb_name': 'str',
             'external_database_identifier': 'int',
+            'character_set': 'str',
             'ncharacter_set': 'str',
-            'pdb_name': 'str'
+            'database_mode': 'str',
+            'database_edition': 'str'
         }
 
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
-            'character_set': 'characterSet',
             'compartment_id': 'compartmentId',
-            'database_edition': 'databaseEdition',
-            'database_mode': 'databaseMode',
+            'display_name': 'displayName',
+            'db_version': 'dbVersion',
             'db_name': 'dbName',
             'db_unique_name': 'dbUniqueName',
-            'db_version': 'dbVersion',
-            'display_name': 'displayName',
+            'pdb_name': 'pdbName',
             'external_database_identifier': 'externalDatabaseIdentifier',
+            'character_set': 'characterSet',
             'ncharacter_set': 'ncharacterSet',
-            'pdb_name': 'pdbName'
+            'database_mode': 'databaseMode',
+            'database_edition': 'databaseEdition'
         }
 
         self._availability_domain = None
-        self._character_set = None
         self._compartment_id = None
-        self._database_edition = None
-        self._database_mode = None
+        self._display_name = None
+        self._db_version = None
         self._db_name = None
         self._db_unique_name = None
-        self._db_version = None
-        self._display_name = None
-        self._external_database_identifier = None
-        self._ncharacter_set = None
         self._pdb_name = None
+        self._external_database_identifier = None
+        self._character_set = None
+        self._ncharacter_set = None
+        self._database_mode = None
+        self._database_edition = None
 
     @property
     def availability_domain(self):
@@ -158,30 +158,6 @@ class CreateExternalBackupJobDetails(object):
         :type: str
         """
         self._availability_domain = availability_domain
-
-    @property
-    def character_set(self):
-        """
-        **[Required]** Gets the character_set of this CreateExternalBackupJobDetails.
-        The character set for the database.
-
-
-        :return: The character_set of this CreateExternalBackupJobDetails.
-        :rtype: str
-        """
-        return self._character_set
-
-    @character_set.setter
-    def character_set(self, character_set):
-        """
-        Sets the character_set of this CreateExternalBackupJobDetails.
-        The character set for the database.
-
-
-        :param character_set: The character_set of this CreateExternalBackupJobDetails.
-        :type: str
-        """
-        self._character_set = character_set
 
     @property
     def compartment_id(self):
@@ -212,70 +188,52 @@ class CreateExternalBackupJobDetails(object):
         self._compartment_id = compartment_id
 
     @property
-    def database_edition(self):
+    def display_name(self):
         """
-        **[Required]** Gets the database_edition of this CreateExternalBackupJobDetails.
-        The Oracle Database edition to use for creating a database from this standalone backup.
-        Note that 2-node RAC DB systems require Enterprise Edition - Extreme Performance.
-
-        Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
+        **[Required]** Gets the display_name of this CreateExternalBackupJobDetails.
+        A user-friendly name for the backup. This name does not have to be unique.
 
 
-        :return: The database_edition of this CreateExternalBackupJobDetails.
+        :return: The display_name of this CreateExternalBackupJobDetails.
         :rtype: str
         """
-        return self._database_edition
+        return self._display_name
 
-    @database_edition.setter
-    def database_edition(self, database_edition):
+    @display_name.setter
+    def display_name(self, display_name):
         """
-        Sets the database_edition of this CreateExternalBackupJobDetails.
-        The Oracle Database edition to use for creating a database from this standalone backup.
-        Note that 2-node RAC DB systems require Enterprise Edition - Extreme Performance.
+        Sets the display_name of this CreateExternalBackupJobDetails.
+        A user-friendly name for the backup. This name does not have to be unique.
 
 
-        :param database_edition: The database_edition of this CreateExternalBackupJobDetails.
+        :param display_name: The display_name of this CreateExternalBackupJobDetails.
         :type: str
         """
-        allowed_values = ["STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"]
-        if not value_allowed_none_or_none_sentinel(database_edition, allowed_values):
-            raise ValueError(
-                "Invalid value for `database_edition`, must be None or one of {0}"
-                .format(allowed_values)
-            )
-        self._database_edition = database_edition
+        self._display_name = display_name
 
     @property
-    def database_mode(self):
+    def db_version(self):
         """
-        **[Required]** Gets the database_mode of this CreateExternalBackupJobDetails.
-        The mode (single instance or RAC) of the database being backed up.
-
-        Allowed values for this property are: "SI", "RAC"
+        **[Required]** Gets the db_version of this CreateExternalBackupJobDetails.
+        A valid Oracle Database version.
 
 
-        :return: The database_mode of this CreateExternalBackupJobDetails.
+        :return: The db_version of this CreateExternalBackupJobDetails.
         :rtype: str
         """
-        return self._database_mode
+        return self._db_version
 
-    @database_mode.setter
-    def database_mode(self, database_mode):
+    @db_version.setter
+    def db_version(self, db_version):
         """
-        Sets the database_mode of this CreateExternalBackupJobDetails.
-        The mode (single instance or RAC) of the database being backed up.
+        Sets the db_version of this CreateExternalBackupJobDetails.
+        A valid Oracle Database version.
 
 
-        :param database_mode: The database_mode of this CreateExternalBackupJobDetails.
+        :param db_version: The db_version of this CreateExternalBackupJobDetails.
         :type: str
         """
-        allowed_values = ["SI", "RAC"]
-        if not value_allowed_none_or_none_sentinel(database_mode, allowed_values):
-            raise ValueError(
-                "Invalid value for `database_mode`, must be None or one of {0}"
-                .format(allowed_values)
-            )
-        self._database_mode = database_mode
+        self._db_version = db_version
 
     @property
     def db_name(self):
@@ -326,52 +284,28 @@ class CreateExternalBackupJobDetails(object):
         self._db_unique_name = db_unique_name
 
     @property
-    def db_version(self):
+    def pdb_name(self):
         """
-        **[Required]** Gets the db_version of this CreateExternalBackupJobDetails.
-        A valid Oracle Database version.
+        Gets the pdb_name of this CreateExternalBackupJobDetails.
+        The pluggable database name.
 
 
-        :return: The db_version of this CreateExternalBackupJobDetails.
+        :return: The pdb_name of this CreateExternalBackupJobDetails.
         :rtype: str
         """
-        return self._db_version
+        return self._pdb_name
 
-    @db_version.setter
-    def db_version(self, db_version):
+    @pdb_name.setter
+    def pdb_name(self, pdb_name):
         """
-        Sets the db_version of this CreateExternalBackupJobDetails.
-        A valid Oracle Database version.
+        Sets the pdb_name of this CreateExternalBackupJobDetails.
+        The pluggable database name.
 
 
-        :param db_version: The db_version of this CreateExternalBackupJobDetails.
+        :param pdb_name: The pdb_name of this CreateExternalBackupJobDetails.
         :type: str
         """
-        self._db_version = db_version
-
-    @property
-    def display_name(self):
-        """
-        **[Required]** Gets the display_name of this CreateExternalBackupJobDetails.
-        A user-friendly name for the backup. This name does not have to be unique.
-
-
-        :return: The display_name of this CreateExternalBackupJobDetails.
-        :rtype: str
-        """
-        return self._display_name
-
-    @display_name.setter
-    def display_name(self, display_name):
-        """
-        Sets the display_name of this CreateExternalBackupJobDetails.
-        A user-friendly name for the backup. This name does not have to be unique.
-
-
-        :param display_name: The display_name of this CreateExternalBackupJobDetails.
-        :type: str
-        """
-        self._display_name = display_name
+        self._pdb_name = pdb_name
 
     @property
     def external_database_identifier(self):
@@ -398,6 +332,30 @@ class CreateExternalBackupJobDetails(object):
         self._external_database_identifier = external_database_identifier
 
     @property
+    def character_set(self):
+        """
+        **[Required]** Gets the character_set of this CreateExternalBackupJobDetails.
+        The character set for the database.
+
+
+        :return: The character_set of this CreateExternalBackupJobDetails.
+        :rtype: str
+        """
+        return self._character_set
+
+    @character_set.setter
+    def character_set(self, character_set):
+        """
+        Sets the character_set of this CreateExternalBackupJobDetails.
+        The character set for the database.
+
+
+        :param character_set: The character_set of this CreateExternalBackupJobDetails.
+        :type: str
+        """
+        self._character_set = character_set
+
+    @property
     def ncharacter_set(self):
         """
         **[Required]** Gets the ncharacter_set of this CreateExternalBackupJobDetails.
@@ -422,28 +380,70 @@ class CreateExternalBackupJobDetails(object):
         self._ncharacter_set = ncharacter_set
 
     @property
-    def pdb_name(self):
+    def database_mode(self):
         """
-        Gets the pdb_name of this CreateExternalBackupJobDetails.
-        The pluggable database name.
+        **[Required]** Gets the database_mode of this CreateExternalBackupJobDetails.
+        The mode (single instance or RAC) of the database being backed up.
+
+        Allowed values for this property are: "SI", "RAC"
 
 
-        :return: The pdb_name of this CreateExternalBackupJobDetails.
+        :return: The database_mode of this CreateExternalBackupJobDetails.
         :rtype: str
         """
-        return self._pdb_name
+        return self._database_mode
 
-    @pdb_name.setter
-    def pdb_name(self, pdb_name):
+    @database_mode.setter
+    def database_mode(self, database_mode):
         """
-        Sets the pdb_name of this CreateExternalBackupJobDetails.
-        The pluggable database name.
+        Sets the database_mode of this CreateExternalBackupJobDetails.
+        The mode (single instance or RAC) of the database being backed up.
 
 
-        :param pdb_name: The pdb_name of this CreateExternalBackupJobDetails.
+        :param database_mode: The database_mode of this CreateExternalBackupJobDetails.
         :type: str
         """
-        self._pdb_name = pdb_name
+        allowed_values = ["SI", "RAC"]
+        if not value_allowed_none_or_none_sentinel(database_mode, allowed_values):
+            raise ValueError(
+                "Invalid value for `database_mode`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._database_mode = database_mode
+
+    @property
+    def database_edition(self):
+        """
+        **[Required]** Gets the database_edition of this CreateExternalBackupJobDetails.
+        The Oracle Database edition to use for creating a database from this standalone backup.
+        Note that 2-node RAC DB systems require Enterprise Edition - Extreme Performance.
+
+        Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
+
+
+        :return: The database_edition of this CreateExternalBackupJobDetails.
+        :rtype: str
+        """
+        return self._database_edition
+
+    @database_edition.setter
+    def database_edition(self, database_edition):
+        """
+        Sets the database_edition of this CreateExternalBackupJobDetails.
+        The Oracle Database edition to use for creating a database from this standalone backup.
+        Note that 2-node RAC DB systems require Enterprise Edition - Extreme Performance.
+
+
+        :param database_edition: The database_edition of this CreateExternalBackupJobDetails.
+        :type: str
+        """
+        allowed_values = ["STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"]
+        if not value_allowed_none_or_none_sentinel(database_edition, allowed_values):
+            raise ValueError(
+                "Invalid value for `database_edition`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._database_edition = database_edition
 
     def __repr__(self):
         return formatted_flat_dict(self)
