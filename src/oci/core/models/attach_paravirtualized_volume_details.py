@@ -38,13 +38,18 @@ class AttachParavirtualizedVolumeDetails(AttachVolumeDetails):
             The value to assign to the volume_id property of this AttachParavirtualizedVolumeDetails.
         :type volume_id: str
 
+        :param is_pv_encryption_in_transit_enabled:
+            The value to assign to the is_pv_encryption_in_transit_enabled property of this AttachParavirtualizedVolumeDetails.
+        :type is_pv_encryption_in_transit_enabled: bool
+
         """
         self.swagger_types = {
             'display_name': 'str',
             'instance_id': 'str',
             'is_read_only': 'bool',
             'type': 'str',
-            'volume_id': 'str'
+            'volume_id': 'str',
+            'is_pv_encryption_in_transit_enabled': 'bool'
         }
 
         self.attribute_map = {
@@ -52,7 +57,8 @@ class AttachParavirtualizedVolumeDetails(AttachVolumeDetails):
             'instance_id': 'instanceId',
             'is_read_only': 'isReadOnly',
             'type': 'type',
-            'volume_id': 'volumeId'
+            'volume_id': 'volumeId',
+            'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled'
         }
 
         self._display_name = None
@@ -60,7 +66,32 @@ class AttachParavirtualizedVolumeDetails(AttachVolumeDetails):
         self._is_read_only = None
         self._type = None
         self._volume_id = None
+        self._is_pv_encryption_in_transit_enabled = None
         self._type = 'paravirtualized'
+
+    @property
+    def is_pv_encryption_in_transit_enabled(self):
+        """
+        Gets the is_pv_encryption_in_transit_enabled of this AttachParavirtualizedVolumeDetails.
+        Whether to enable encryption in transit for the PV data volume attachment. Defaults to false.
+
+
+        :return: The is_pv_encryption_in_transit_enabled of this AttachParavirtualizedVolumeDetails.
+        :rtype: bool
+        """
+        return self._is_pv_encryption_in_transit_enabled
+
+    @is_pv_encryption_in_transit_enabled.setter
+    def is_pv_encryption_in_transit_enabled(self, is_pv_encryption_in_transit_enabled):
+        """
+        Sets the is_pv_encryption_in_transit_enabled of this AttachParavirtualizedVolumeDetails.
+        Whether to enable encryption in transit for the PV data volume attachment. Defaults to false.
+
+
+        :param is_pv_encryption_in_transit_enabled: The is_pv_encryption_in_transit_enabled of this AttachParavirtualizedVolumeDetails.
+        :type: bool
+        """
+        self._is_pv_encryption_in_transit_enabled = is_pv_encryption_in_transit_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)
