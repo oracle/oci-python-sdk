@@ -137,7 +137,7 @@ class Service(object):
     def name(self):
         """
         **[Required]** Gets the name of this Service.
-        Name of the service.
+        Name of the service. This name can change and is not guaranteed to be unique.
 
 
         :return: The name of this Service.
@@ -149,7 +149,7 @@ class Service(object):
     def name(self, name):
         """
         Sets the name of this Service.
-        Name of the service.
+        Name of the service. This name can change and is not guaranteed to be unique.
 
 
         :param name: The name of this Service.

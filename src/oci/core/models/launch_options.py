@@ -101,25 +101,32 @@ class LaunchOptions(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type remote_data_volume_type: str
 
+        :param is_pv_encryption_in_transit_enabled:
+            The value to assign to the is_pv_encryption_in_transit_enabled property of this LaunchOptions.
+        :type is_pv_encryption_in_transit_enabled: bool
+
         """
         self.swagger_types = {
             'boot_volume_type': 'str',
             'firmware': 'str',
             'network_type': 'str',
-            'remote_data_volume_type': 'str'
+            'remote_data_volume_type': 'str',
+            'is_pv_encryption_in_transit_enabled': 'bool'
         }
 
         self.attribute_map = {
             'boot_volume_type': 'bootVolumeType',
             'firmware': 'firmware',
             'network_type': 'networkType',
-            'remote_data_volume_type': 'remoteDataVolumeType'
+            'remote_data_volume_type': 'remoteDataVolumeType',
+            'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled'
         }
 
         self._boot_volume_type = None
         self._firmware = None
         self._network_type = None
         self._remote_data_volume_type = None
+        self._is_pv_encryption_in_transit_enabled = None
 
     @property
     def boot_volume_type(self):
@@ -282,6 +289,30 @@ class LaunchOptions(object):
         if not value_allowed_none_or_none_sentinel(remote_data_volume_type, allowed_values):
             remote_data_volume_type = 'UNKNOWN_ENUM_VALUE'
         self._remote_data_volume_type = remote_data_volume_type
+
+    @property
+    def is_pv_encryption_in_transit_enabled(self):
+        """
+        Gets the is_pv_encryption_in_transit_enabled of this LaunchOptions.
+        Whether to enable encryption in transit for the PV boot volume attachment. Defaults to false.
+
+
+        :return: The is_pv_encryption_in_transit_enabled of this LaunchOptions.
+        :rtype: bool
+        """
+        return self._is_pv_encryption_in_transit_enabled
+
+    @is_pv_encryption_in_transit_enabled.setter
+    def is_pv_encryption_in_transit_enabled(self, is_pv_encryption_in_transit_enabled):
+        """
+        Sets the is_pv_encryption_in_transit_enabled of this LaunchOptions.
+        Whether to enable encryption in transit for the PV boot volume attachment. Defaults to false.
+
+
+        :param is_pv_encryption_in_transit_enabled: The is_pv_encryption_in_transit_enabled of this LaunchOptions.
+        :type: bool
+        """
+        self._is_pv_encryption_in_transit_enabled = is_pv_encryption_in_transit_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

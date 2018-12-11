@@ -78,6 +78,10 @@ class LaunchInstanceDetails(object):
             The value to assign to the subnet_id property of this LaunchInstanceDetails.
         :type subnet_id: str
 
+        :param is_pv_encryption_in_transit_enabled:
+            The value to assign to the is_pv_encryption_in_transit_enabled property of this LaunchInstanceDetails.
+        :type is_pv_encryption_in_transit_enabled: bool
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -94,7 +98,8 @@ class LaunchInstanceDetails(object):
             'metadata': 'dict(str, str)',
             'shape': 'str',
             'source_details': 'InstanceSourceDetails',
-            'subnet_id': 'str'
+            'subnet_id': 'str',
+            'is_pv_encryption_in_transit_enabled': 'bool'
         }
 
         self.attribute_map = {
@@ -112,7 +117,8 @@ class LaunchInstanceDetails(object):
             'metadata': 'metadata',
             'shape': 'shape',
             'source_details': 'sourceDetails',
-            'subnet_id': 'subnetId'
+            'subnet_id': 'subnetId',
+            'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled'
         }
 
         self._availability_domain = None
@@ -130,6 +136,7 @@ class LaunchInstanceDetails(object):
         self._shape = None
         self._source_details = None
         self._subnet_id = None
+        self._is_pv_encryption_in_transit_enabled = None
 
     @property
     def availability_domain(self):
@@ -742,6 +749,30 @@ class LaunchInstanceDetails(object):
         :type: str
         """
         self._subnet_id = subnet_id
+
+    @property
+    def is_pv_encryption_in_transit_enabled(self):
+        """
+        Gets the is_pv_encryption_in_transit_enabled of this LaunchInstanceDetails.
+        Whether to enable encryption in transit for the PV boot volume attachment. Defaults to false.
+
+
+        :return: The is_pv_encryption_in_transit_enabled of this LaunchInstanceDetails.
+        :rtype: bool
+        """
+        return self._is_pv_encryption_in_transit_enabled
+
+    @is_pv_encryption_in_transit_enabled.setter
+    def is_pv_encryption_in_transit_enabled(self, is_pv_encryption_in_transit_enabled):
+        """
+        Sets the is_pv_encryption_in_transit_enabled of this LaunchInstanceDetails.
+        Whether to enable encryption in transit for the PV boot volume attachment. Defaults to false.
+
+
+        :param is_pv_encryption_in_transit_enabled: The is_pv_encryption_in_transit_enabled of this LaunchInstanceDetails.
+        :type: bool
+        """
+        self._is_pv_encryption_in_transit_enabled = is_pv_encryption_in_transit_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)
