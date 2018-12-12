@@ -68,7 +68,7 @@ class CreateDataGuardAssociationToExistingDbSystemDetails(CreateDataGuardAssocia
     def peer_db_system_id(self):
         """
         Gets the peer_db_system_id of this CreateDataGuardAssociationToExistingDbSystemDetails.
-        The `OCID`__ of the DB system to create the standby database on.
+        The `OCID`__ of the DB system in which to create the standby database.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
@@ -82,7 +82,7 @@ class CreateDataGuardAssociationToExistingDbSystemDetails(CreateDataGuardAssocia
     def peer_db_system_id(self, peer_db_system_id):
         """
         Sets the peer_db_system_id of this CreateDataGuardAssociationToExistingDbSystemDetails.
-        The `OCID`__ of the DB system to create the standby database on.
+        The `OCID`__ of the DB system in which to create the standby database.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 

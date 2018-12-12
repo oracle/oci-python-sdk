@@ -25,6 +25,10 @@ class DbVersionSummary(object):
             The value to assign to the version property of this DbVersionSummary.
         :type version: str
 
+        :param is_latest_for_major_version:
+            The value to assign to the is_latest_for_major_version property of this DbVersionSummary.
+        :type is_latest_for_major_version: bool
+
         :param supports_pdb:
             The value to assign to the supports_pdb property of this DbVersionSummary.
         :type supports_pdb: bool
@@ -32,15 +36,18 @@ class DbVersionSummary(object):
         """
         self.swagger_types = {
             'version': 'str',
+            'is_latest_for_major_version': 'bool',
             'supports_pdb': 'bool'
         }
 
         self.attribute_map = {
             'version': 'version',
+            'is_latest_for_major_version': 'isLatestForMajorVersion',
             'supports_pdb': 'supportsPdb'
         }
 
         self._version = None
+        self._is_latest_for_major_version = None
         self._supports_pdb = None
 
     @property
@@ -66,6 +73,30 @@ class DbVersionSummary(object):
         :type: str
         """
         self._version = version
+
+    @property
+    def is_latest_for_major_version(self):
+        """
+        Gets the is_latest_for_major_version of this DbVersionSummary.
+        True if this version of the Oracle Database software is the latest version for a release.
+
+
+        :return: The is_latest_for_major_version of this DbVersionSummary.
+        :rtype: bool
+        """
+        return self._is_latest_for_major_version
+
+    @is_latest_for_major_version.setter
+    def is_latest_for_major_version(self, is_latest_for_major_version):
+        """
+        Sets the is_latest_for_major_version of this DbVersionSummary.
+        True if this version of the Oracle Database software is the latest version for a release.
+
+
+        :param is_latest_for_major_version: The is_latest_for_major_version of this DbVersionSummary.
+        :type: bool
+        """
+        self._is_latest_for_major_version = is_latest_for_major_version
 
     @property
     def supports_pdb(self):

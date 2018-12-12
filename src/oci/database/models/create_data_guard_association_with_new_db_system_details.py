@@ -89,7 +89,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
     def display_name(self):
         """
         Gets the display_name of this CreateDataGuardAssociationWithNewDbSystemDetails.
-        The user-friendly name for the DB System to create the standby database on. It does not have to be unique.
+        The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
 
 
         :return: The display_name of this CreateDataGuardAssociationWithNewDbSystemDetails.
@@ -101,7 +101,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateDataGuardAssociationWithNewDbSystemDetails.
-        The user-friendly name for the DB System to create the standby database on. It does not have to be unique.
+        The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
 
 
         :param display_name: The display_name of this CreateDataGuardAssociationWithNewDbSystemDetails.
@@ -113,7 +113,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
     def availability_domain(self):
         """
         Gets the availability_domain of this CreateDataGuardAssociationWithNewDbSystemDetails.
-        The name of the Availability Domain that the standby database DB System will be located in.
+        The name of the availability domain that the standby database DB system will be located in. For example- \"Uocm:PHX-AD-1\".
 
 
         :return: The availability_domain of this CreateDataGuardAssociationWithNewDbSystemDetails.
@@ -125,7 +125,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this CreateDataGuardAssociationWithNewDbSystemDetails.
-        The name of the Availability Domain that the standby database DB System will be located in.
+        The name of the availability domain that the standby database DB system will be located in. For example- \"Uocm:PHX-AD-1\".
 
 
         :param availability_domain: The availability_domain of this CreateDataGuardAssociationWithNewDbSystemDetails.
@@ -137,9 +137,9 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
     def subnet_id(self):
         """
         Gets the subnet_id of this CreateDataGuardAssociationWithNewDbSystemDetails.
-        The OCID of the subnet the DB System is associated with.
+        The OCID of the subnet the DB system is associated with.
         **Subnet Restrictions:**
-        - For 1- and 2-node RAC DB Systems, do not use a subnet that overlaps with 192.168.16.16/28
+        - For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
 
         These subnets are used by the Oracle Clusterware private interconnect on the database instance.
         Specifying an overlapping subnet will cause the private interconnect to malfunction.
@@ -155,9 +155,9 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this CreateDataGuardAssociationWithNewDbSystemDetails.
-        The OCID of the subnet the DB System is associated with.
+        The OCID of the subnet the DB system is associated with.
         **Subnet Restrictions:**
-        - For 1- and 2-node RAC DB Systems, do not use a subnet that overlaps with 192.168.16.16/28
+        - For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
 
         These subnets are used by the Oracle Clusterware private interconnect on the database instance.
         Specifying an overlapping subnet will cause the private interconnect to malfunction.

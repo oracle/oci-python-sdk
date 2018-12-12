@@ -74,6 +74,10 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
             The value to assign to the shape property of this LaunchDbSystemFromBackupDetails.
         :type shape: str
 
+        :param sparse_diskgroup:
+            The value to assign to the sparse_diskgroup property of this LaunchDbSystemFromBackupDetails.
+        :type sparse_diskgroup: bool
+
         :param ssh_public_keys:
             The value to assign to the ssh_public_keys property of this LaunchDbSystemFromBackupDetails.
         :type ssh_public_keys: list[str]
@@ -146,6 +150,7 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
             'subnet_id': 'str',
             'backup_subnet_id': 'str',
             'shape': 'str',
+            'sparse_diskgroup': 'bool',
             'ssh_public_keys': 'list[str]',
             'hostname': 'str',
             'domain': 'str',
@@ -170,6 +175,7 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
             'subnet_id': 'subnetId',
             'backup_subnet_id': 'backupSubnetId',
             'shape': 'shape',
+            'sparse_diskgroup': 'sparseDiskgroup',
             'ssh_public_keys': 'sshPublicKeys',
             'hostname': 'hostname',
             'domain': 'domain',
@@ -193,6 +199,7 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
         self._subnet_id = None
         self._backup_subnet_id = None
         self._shape = None
+        self._sparse_diskgroup = None
         self._ssh_public_keys = None
         self._hostname = None
         self._domain = None

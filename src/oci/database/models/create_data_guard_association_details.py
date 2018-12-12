@@ -163,7 +163,7 @@ class CreateDataGuardAssociationDetails(object):
         `Oracle Data Guard Protection Modes`__
         in the Oracle Data Guard documentation.
 
-        **IMPORTANT** - The only protection mode currently supported by the Database Service is MAXIMUM_PERFORMANCE.
+        **IMPORTANT** - The only protection mode currently supported by the Database service is MAXIMUM_PERFORMANCE.
 
         __ http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000
 
@@ -183,7 +183,7 @@ class CreateDataGuardAssociationDetails(object):
         `Oracle Data Guard Protection Modes`__
         in the Oracle Data Guard documentation.
 
-        **IMPORTANT** - The only protection mode currently supported by the Database Service is MAXIMUM_PERFORMANCE.
+        **IMPORTANT** - The only protection mode currently supported by the Database service is MAXIMUM_PERFORMANCE.
 
         __ http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000
 
@@ -213,7 +213,7 @@ class CreateDataGuardAssociationDetails(object):
         `Redo Transport Services`__
         in the Oracle Data Guard documentation.
 
-        **IMPORTANT** - The only transport type currently supported by the Database Service is ASYNC.
+        **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
 
         __ http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400
 
@@ -239,7 +239,7 @@ class CreateDataGuardAssociationDetails(object):
         `Redo Transport Services`__
         in the Oracle Data Guard documentation.
 
-        **IMPORTANT** - The only transport type currently supported by the Database Service is ASYNC.
+        **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
 
         __ http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400
 

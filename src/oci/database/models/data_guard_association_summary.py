@@ -646,7 +646,7 @@ class DataGuardAssociationSummary(object):
     def time_created(self):
         """
         Gets the time_created of this DataGuardAssociationSummary.
-        The date and time the Data Guard Association was created.
+        The date and time the Data Guard association was created.
 
 
         :return: The time_created of this DataGuardAssociationSummary.
@@ -658,7 +658,7 @@ class DataGuardAssociationSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this DataGuardAssociationSummary.
-        The date and time the Data Guard Association was created.
+        The date and time the Data Guard association was created.
 
 
         :param time_created: The time_created of this DataGuardAssociationSummary.

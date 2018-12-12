@@ -56,6 +56,10 @@ class LaunchDbSystemBase(object):
             The value to assign to the shape property of this LaunchDbSystemBase.
         :type shape: str
 
+        :param sparse_diskgroup:
+            The value to assign to the sparse_diskgroup property of this LaunchDbSystemBase.
+        :type sparse_diskgroup: bool
+
         :param ssh_public_keys:
             The value to assign to the ssh_public_keys property of this LaunchDbSystemBase.
         :type ssh_public_keys: list[str]
@@ -109,6 +113,7 @@ class LaunchDbSystemBase(object):
             'subnet_id': 'str',
             'backup_subnet_id': 'str',
             'shape': 'str',
+            'sparse_diskgroup': 'bool',
             'ssh_public_keys': 'list[str]',
             'hostname': 'str',
             'domain': 'str',
@@ -129,6 +134,7 @@ class LaunchDbSystemBase(object):
             'subnet_id': 'subnetId',
             'backup_subnet_id': 'backupSubnetId',
             'shape': 'shape',
+            'sparse_diskgroup': 'sparseDiskgroup',
             'ssh_public_keys': 'sshPublicKeys',
             'hostname': 'hostname',
             'domain': 'domain',
@@ -148,6 +154,7 @@ class LaunchDbSystemBase(object):
         self._subnet_id = None
         self._backup_subnet_id = None
         self._shape = None
+        self._sparse_diskgroup = None
         self._ssh_public_keys = None
         self._hostname = None
         self._domain = None
@@ -359,6 +366,30 @@ class LaunchDbSystemBase(object):
         :type: str
         """
         self._shape = shape
+
+    @property
+    def sparse_diskgroup(self):
+        """
+        Gets the sparse_diskgroup of this LaunchDbSystemBase.
+        If true, Sparse Diskgroup is configured for Exadata dbsystem. If False, Sparse diskgroup is not configured.
+
+
+        :return: The sparse_diskgroup of this LaunchDbSystemBase.
+        :rtype: bool
+        """
+        return self._sparse_diskgroup
+
+    @sparse_diskgroup.setter
+    def sparse_diskgroup(self, sparse_diskgroup):
+        """
+        Sets the sparse_diskgroup of this LaunchDbSystemBase.
+        If true, Sparse Diskgroup is configured for Exadata dbsystem. If False, Sparse diskgroup is not configured.
+
+
+        :param sparse_diskgroup: The sparse_diskgroup of this LaunchDbSystemBase.
+        :type: bool
+        """
+        self._sparse_diskgroup = sparse_diskgroup
 
     @property
     def ssh_public_keys(self):

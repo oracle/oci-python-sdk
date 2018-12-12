@@ -163,6 +163,10 @@ class DbSystem(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type disk_redundancy: str
 
+        :param sparse_diskgroup:
+            The value to assign to the sparse_diskgroup property of this DbSystem.
+        :type sparse_diskgroup: bool
+
         :param scan_ip_ids:
             The value to assign to the scan_ip_ids property of this DbSystem.
         :type scan_ip_ids: list[str]
@@ -224,6 +228,7 @@ class DbSystem(object):
             'time_created': 'datetime',
             'lifecycle_details': 'str',
             'disk_redundancy': 'str',
+            'sparse_diskgroup': 'bool',
             'scan_ip_ids': 'list[str]',
             'vip_ids': 'list[str]',
             'scan_dns_record_id': 'str',
@@ -257,6 +262,7 @@ class DbSystem(object):
             'time_created': 'timeCreated',
             'lifecycle_details': 'lifecycleDetails',
             'disk_redundancy': 'diskRedundancy',
+            'sparse_diskgroup': 'sparseDiskgroup',
             'scan_ip_ids': 'scanIpIds',
             'vip_ids': 'vipIds',
             'scan_dns_record_id': 'scanDnsRecordId',
@@ -289,6 +295,7 @@ class DbSystem(object):
         self._time_created = None
         self._lifecycle_details = None
         self._disk_redundancy = None
+        self._sparse_diskgroup = None
         self._scan_ip_ids = None
         self._vip_ids = None
         self._scan_dns_record_id = None
@@ -870,6 +877,30 @@ class DbSystem(object):
         if not value_allowed_none_or_none_sentinel(disk_redundancy, allowed_values):
             disk_redundancy = 'UNKNOWN_ENUM_VALUE'
         self._disk_redundancy = disk_redundancy
+
+    @property
+    def sparse_diskgroup(self):
+        """
+        Gets the sparse_diskgroup of this DbSystem.
+        True, if Sparse Diskgroup is configured for Exadata dbsystem, False, if Sparse diskgroup was not configured.
+
+
+        :return: The sparse_diskgroup of this DbSystem.
+        :rtype: bool
+        """
+        return self._sparse_diskgroup
+
+    @sparse_diskgroup.setter
+    def sparse_diskgroup(self, sparse_diskgroup):
+        """
+        Sets the sparse_diskgroup of this DbSystem.
+        True, if Sparse Diskgroup is configured for Exadata dbsystem, False, if Sparse diskgroup was not configured.
+
+
+        :param sparse_diskgroup: The sparse_diskgroup of this DbSystem.
+        :type: bool
+        """
+        self._sparse_diskgroup = sparse_diskgroup
 
     @property
     def scan_ip_ids(self):
