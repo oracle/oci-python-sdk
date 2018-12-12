@@ -34,7 +34,11 @@ class Services:
                     import_name = "oci.{}.{}".format(item, subitem)
                     full_path = inspect.getfile(eval(import_name))
                     client_file = os.path.basename(full_path)
-                    service_name = client_file[:-10]
+                    service_name = client_file
+                    if client_file.endswith("_client.pyc"):
+                        service_name = client_file[:-1 * len("_client.pyc")]
+                    elif client_file.endswith("_client.py"):
+                        service_name = client_file[:-1 * len("_client.py")]
                     service_name_to_path[service_name] = "{}/client/{}".format(item, import_name)
                     if item not in services:
                         services[item] = {'module_name': item,
