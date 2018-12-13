@@ -19,27 +19,51 @@ class CreateAutonomousDatabaseBackupDetails(object):
         Initializes a new CreateAutonomousDatabaseBackupDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param autonomous_database_id:
-            The value to assign to the autonomous_database_id property of this CreateAutonomousDatabaseBackupDetails.
-        :type autonomous_database_id: str
-
         :param display_name:
             The value to assign to the display_name property of this CreateAutonomousDatabaseBackupDetails.
         :type display_name: str
 
+        :param autonomous_database_id:
+            The value to assign to the autonomous_database_id property of this CreateAutonomousDatabaseBackupDetails.
+        :type autonomous_database_id: str
+
         """
         self.swagger_types = {
-            'autonomous_database_id': 'str',
-            'display_name': 'str'
+            'display_name': 'str',
+            'autonomous_database_id': 'str'
         }
 
         self.attribute_map = {
-            'autonomous_database_id': 'autonomousDatabaseId',
-            'display_name': 'displayName'
+            'display_name': 'displayName',
+            'autonomous_database_id': 'autonomousDatabaseId'
         }
 
-        self._autonomous_database_id = None
         self._display_name = None
+        self._autonomous_database_id = None
+
+    @property
+    def display_name(self):
+        """
+        **[Required]** Gets the display_name of this CreateAutonomousDatabaseBackupDetails.
+        The user-friendly name for the backup. The name does not have to be unique.
+
+
+        :return: The display_name of this CreateAutonomousDatabaseBackupDetails.
+        :rtype: str
+        """
+        return self._display_name
+
+    @display_name.setter
+    def display_name(self, display_name):
+        """
+        Sets the display_name of this CreateAutonomousDatabaseBackupDetails.
+        The user-friendly name for the backup. The name does not have to be unique.
+
+
+        :param display_name: The display_name of this CreateAutonomousDatabaseBackupDetails.
+        :type: str
+        """
+        self._display_name = display_name
 
     @property
     def autonomous_database_id(self):
@@ -68,30 +92,6 @@ class CreateAutonomousDatabaseBackupDetails(object):
         :type: str
         """
         self._autonomous_database_id = autonomous_database_id
-
-    @property
-    def display_name(self):
-        """
-        **[Required]** Gets the display_name of this CreateAutonomousDatabaseBackupDetails.
-        The user-friendly name for the backup. The name does not have to be unique.
-
-
-        :return: The display_name of this CreateAutonomousDatabaseBackupDetails.
-        :rtype: str
-        """
-        return self._display_name
-
-    @display_name.setter
-    def display_name(self, display_name):
-        """
-        Sets the display_name of this CreateAutonomousDatabaseBackupDetails.
-        The user-friendly name for the backup. The name does not have to be unique.
-
-
-        :param display_name: The display_name of this CreateAutonomousDatabaseBackupDetails.
-        :type: str
-        """
-        self._display_name = display_name
 
     def __repr__(self):
         return formatted_flat_dict(self)

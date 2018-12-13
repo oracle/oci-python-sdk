@@ -21,51 +21,34 @@ class DbVersionSummary(object):
         Initializes a new DbVersionSummary object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param supports_pdb:
-            The value to assign to the supports_pdb property of this DbVersionSummary.
-        :type supports_pdb: bool
-
         :param version:
             The value to assign to the version property of this DbVersionSummary.
         :type version: str
 
+        :param is_latest_for_major_version:
+            The value to assign to the is_latest_for_major_version property of this DbVersionSummary.
+        :type is_latest_for_major_version: bool
+
+        :param supports_pdb:
+            The value to assign to the supports_pdb property of this DbVersionSummary.
+        :type supports_pdb: bool
+
         """
         self.swagger_types = {
-            'supports_pdb': 'bool',
-            'version': 'str'
+            'version': 'str',
+            'is_latest_for_major_version': 'bool',
+            'supports_pdb': 'bool'
         }
 
         self.attribute_map = {
-            'supports_pdb': 'supportsPdb',
-            'version': 'version'
+            'version': 'version',
+            'is_latest_for_major_version': 'isLatestForMajorVersion',
+            'supports_pdb': 'supportsPdb'
         }
 
-        self._supports_pdb = None
         self._version = None
-
-    @property
-    def supports_pdb(self):
-        """
-        Gets the supports_pdb of this DbVersionSummary.
-        True if this version of the Oracle Database software supports pluggable databases.
-
-
-        :return: The supports_pdb of this DbVersionSummary.
-        :rtype: bool
-        """
-        return self._supports_pdb
-
-    @supports_pdb.setter
-    def supports_pdb(self, supports_pdb):
-        """
-        Sets the supports_pdb of this DbVersionSummary.
-        True if this version of the Oracle Database software supports pluggable databases.
-
-
-        :param supports_pdb: The supports_pdb of this DbVersionSummary.
-        :type: bool
-        """
-        self._supports_pdb = supports_pdb
+        self._is_latest_for_major_version = None
+        self._supports_pdb = None
 
     @property
     def version(self):
@@ -90,6 +73,54 @@ class DbVersionSummary(object):
         :type: str
         """
         self._version = version
+
+    @property
+    def is_latest_for_major_version(self):
+        """
+        Gets the is_latest_for_major_version of this DbVersionSummary.
+        True if this version of the Oracle Database software is the latest version for a release.
+
+
+        :return: The is_latest_for_major_version of this DbVersionSummary.
+        :rtype: bool
+        """
+        return self._is_latest_for_major_version
+
+    @is_latest_for_major_version.setter
+    def is_latest_for_major_version(self, is_latest_for_major_version):
+        """
+        Sets the is_latest_for_major_version of this DbVersionSummary.
+        True if this version of the Oracle Database software is the latest version for a release.
+
+
+        :param is_latest_for_major_version: The is_latest_for_major_version of this DbVersionSummary.
+        :type: bool
+        """
+        self._is_latest_for_major_version = is_latest_for_major_version
+
+    @property
+    def supports_pdb(self):
+        """
+        Gets the supports_pdb of this DbVersionSummary.
+        True if this version of the Oracle Database software supports pluggable databases.
+
+
+        :return: The supports_pdb of this DbVersionSummary.
+        :rtype: bool
+        """
+        return self._supports_pdb
+
+    @supports_pdb.setter
+    def supports_pdb(self, supports_pdb):
+        """
+        Sets the supports_pdb of this DbVersionSummary.
+        True if this version of the Oracle Database software supports pluggable databases.
+
+
+        :param supports_pdb: The supports_pdb of this DbVersionSummary.
+        :type: bool
+        """
+        self._supports_pdb = supports_pdb
 
     def __repr__(self):
         return formatted_flat_dict(self)

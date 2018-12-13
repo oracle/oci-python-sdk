@@ -21,30 +21,30 @@ class RestoreDatabaseDetails(object):
             The value to assign to the database_scn property of this RestoreDatabaseDetails.
         :type database_scn: str
 
-        :param latest:
-            The value to assign to the latest property of this RestoreDatabaseDetails.
-        :type latest: bool
-
         :param timestamp:
             The value to assign to the timestamp property of this RestoreDatabaseDetails.
         :type timestamp: datetime
 
+        :param latest:
+            The value to assign to the latest property of this RestoreDatabaseDetails.
+        :type latest: bool
+
         """
         self.swagger_types = {
             'database_scn': 'str',
-            'latest': 'bool',
-            'timestamp': 'datetime'
+            'timestamp': 'datetime',
+            'latest': 'bool'
         }
 
         self.attribute_map = {
             'database_scn': 'databaseSCN',
-            'latest': 'latest',
-            'timestamp': 'timestamp'
+            'timestamp': 'timestamp',
+            'latest': 'latest'
         }
 
         self._database_scn = None
-        self._latest = None
         self._timestamp = None
+        self._latest = None
 
     @property
     def database_scn(self):
@@ -71,30 +71,6 @@ class RestoreDatabaseDetails(object):
         self._database_scn = database_scn
 
     @property
-    def latest(self):
-        """
-        Gets the latest of this RestoreDatabaseDetails.
-        Restores to the last known good state with the least possible data loss.
-
-
-        :return: The latest of this RestoreDatabaseDetails.
-        :rtype: bool
-        """
-        return self._latest
-
-    @latest.setter
-    def latest(self, latest):
-        """
-        Sets the latest of this RestoreDatabaseDetails.
-        Restores to the last known good state with the least possible data loss.
-
-
-        :param latest: The latest of this RestoreDatabaseDetails.
-        :type: bool
-        """
-        self._latest = latest
-
-    @property
     def timestamp(self):
         """
         Gets the timestamp of this RestoreDatabaseDetails.
@@ -117,6 +93,30 @@ class RestoreDatabaseDetails(object):
         :type: datetime
         """
         self._timestamp = timestamp
+
+    @property
+    def latest(self):
+        """
+        Gets the latest of this RestoreDatabaseDetails.
+        Restores to the last known good state with the least possible data loss.
+
+
+        :return: The latest of this RestoreDatabaseDetails.
+        :rtype: bool
+        """
+        return self._latest
+
+    @latest.setter
+    def latest(self, latest):
+        """
+        Sets the latest of this RestoreDatabaseDetails.
+        Restores to the last known good state with the least possible data loss.
+
+
+        :param latest: The latest of this RestoreDatabaseDetails.
+        :type: bool
+        """
+        self._latest = latest
 
     def __repr__(self):
         return formatted_flat_dict(self)

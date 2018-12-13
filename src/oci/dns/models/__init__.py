@@ -5,6 +5,7 @@ from __future__ import absolute_import
 
 from .create_zone_details import CreateZoneDetails
 from .external_master import ExternalMaster
+from .nameserver import Nameserver
 from .patch_domain_records_details import PatchDomainRecordsDetails
 from .patch_rr_set_details import PatchRRSetDetails
 from .patch_zone_records_details import PatchZoneRecordsDetails
@@ -25,6 +26,7 @@ from .zone_summary import ZoneSummary
 dns_type_mapping = {
     "CreateZoneDetails": CreateZoneDetails,
     "ExternalMaster": ExternalMaster,
+    "Nameserver": Nameserver,
     "PatchDomainRecordsDetails": PatchDomainRecordsDetails,
     "PatchRRSetDetails": PatchRRSetDetails,
     "PatchZoneRecordsDetails": PatchZoneRecordsDetails,

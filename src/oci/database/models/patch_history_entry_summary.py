@@ -37,19 +37,19 @@ class PatchHistoryEntrySummary(object):
         Initializes a new PatchHistoryEntrySummary object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param id:
+            The value to assign to the id property of this PatchHistoryEntrySummary.
+        :type id: str
+
+        :param patch_id:
+            The value to assign to the patch_id property of this PatchHistoryEntrySummary.
+        :type patch_id: str
+
         :param action:
             The value to assign to the action property of this PatchHistoryEntrySummary.
             Allowed values for this property are: "APPLY", "PRECHECK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type action: str
-
-        :param id:
-            The value to assign to the id property of this PatchHistoryEntrySummary.
-        :type id: str
-
-        :param lifecycle_details:
-            The value to assign to the lifecycle_details property of this PatchHistoryEntrySummary.
-        :type lifecycle_details: str
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this PatchHistoryEntrySummary.
@@ -57,46 +57,102 @@ class PatchHistoryEntrySummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
-        :param patch_id:
-            The value to assign to the patch_id property of this PatchHistoryEntrySummary.
-        :type patch_id: str
-
-        :param time_ended:
-            The value to assign to the time_ended property of this PatchHistoryEntrySummary.
-        :type time_ended: datetime
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this PatchHistoryEntrySummary.
+        :type lifecycle_details: str
 
         :param time_started:
             The value to assign to the time_started property of this PatchHistoryEntrySummary.
         :type time_started: datetime
 
+        :param time_ended:
+            The value to assign to the time_ended property of this PatchHistoryEntrySummary.
+        :type time_ended: datetime
+
         """
         self.swagger_types = {
-            'action': 'str',
             'id': 'str',
-            'lifecycle_details': 'str',
-            'lifecycle_state': 'str',
             'patch_id': 'str',
-            'time_ended': 'datetime',
-            'time_started': 'datetime'
+            'action': 'str',
+            'lifecycle_state': 'str',
+            'lifecycle_details': 'str',
+            'time_started': 'datetime',
+            'time_ended': 'datetime'
         }
 
         self.attribute_map = {
-            'action': 'action',
             'id': 'id',
-            'lifecycle_details': 'lifecycleDetails',
-            'lifecycle_state': 'lifecycleState',
             'patch_id': 'patchId',
-            'time_ended': 'timeEnded',
-            'time_started': 'timeStarted'
+            'action': 'action',
+            'lifecycle_state': 'lifecycleState',
+            'lifecycle_details': 'lifecycleDetails',
+            'time_started': 'timeStarted',
+            'time_ended': 'timeEnded'
         }
 
-        self._action = None
         self._id = None
-        self._lifecycle_details = None
-        self._lifecycle_state = None
         self._patch_id = None
-        self._time_ended = None
+        self._action = None
+        self._lifecycle_state = None
+        self._lifecycle_details = None
         self._time_started = None
+        self._time_ended = None
+
+    @property
+    def id(self):
+        """
+        **[Required]** Gets the id of this PatchHistoryEntrySummary.
+        The `OCID`__ of the patch history entry.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The id of this PatchHistoryEntrySummary.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """
+        Sets the id of this PatchHistoryEntrySummary.
+        The `OCID`__ of the patch history entry.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+
+        :param id: The id of this PatchHistoryEntrySummary.
+        :type: str
+        """
+        self._id = id
+
+    @property
+    def patch_id(self):
+        """
+        **[Required]** Gets the patch_id of this PatchHistoryEntrySummary.
+        The `OCID`__ of the patch.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The patch_id of this PatchHistoryEntrySummary.
+        :rtype: str
+        """
+        return self._patch_id
+
+    @patch_id.setter
+    def patch_id(self, patch_id):
+        """
+        Sets the patch_id of this PatchHistoryEntrySummary.
+        The `OCID`__ of the patch.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+
+        :param patch_id: The patch_id of this PatchHistoryEntrySummary.
+        :type: str
+        """
+        self._patch_id = patch_id
 
     @property
     def action(self):
@@ -129,60 +185,6 @@ class PatchHistoryEntrySummary(object):
         self._action = action
 
     @property
-    def id(self):
-        """
-        **[Required]** Gets the id of this PatchHistoryEntrySummary.
-        The `OCID`__ of the patch history entry.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-
-
-        :return: The id of this PatchHistoryEntrySummary.
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """
-        Sets the id of this PatchHistoryEntrySummary.
-        The `OCID`__ of the patch history entry.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-
-
-        :param id: The id of this PatchHistoryEntrySummary.
-        :type: str
-        """
-        self._id = id
-
-    @property
-    def lifecycle_details(self):
-        """
-        Gets the lifecycle_details of this PatchHistoryEntrySummary.
-        A descriptive text associated with the lifecycleState.
-        Typically contains additional displayable text.
-
-
-        :return: The lifecycle_details of this PatchHistoryEntrySummary.
-        :rtype: str
-        """
-        return self._lifecycle_details
-
-    @lifecycle_details.setter
-    def lifecycle_details(self, lifecycle_details):
-        """
-        Sets the lifecycle_details of this PatchHistoryEntrySummary.
-        A descriptive text associated with the lifecycleState.
-        Typically contains additional displayable text.
-
-
-        :param lifecycle_details: The lifecycle_details of this PatchHistoryEntrySummary.
-        :type: str
-        """
-        self._lifecycle_details = lifecycle_details
-
-    @property
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this PatchHistoryEntrySummary.
@@ -213,56 +215,30 @@ class PatchHistoryEntrySummary(object):
         self._lifecycle_state = lifecycle_state
 
     @property
-    def patch_id(self):
+    def lifecycle_details(self):
         """
-        **[Required]** Gets the patch_id of this PatchHistoryEntrySummary.
-        The `OCID`__ of the patch.
+        Gets the lifecycle_details of this PatchHistoryEntrySummary.
+        A descriptive text associated with the lifecycleState.
+        Typically contains additional displayable text.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
-
-        :return: The patch_id of this PatchHistoryEntrySummary.
+        :return: The lifecycle_details of this PatchHistoryEntrySummary.
         :rtype: str
         """
-        return self._patch_id
+        return self._lifecycle_details
 
-    @patch_id.setter
-    def patch_id(self, patch_id):
+    @lifecycle_details.setter
+    def lifecycle_details(self, lifecycle_details):
         """
-        Sets the patch_id of this PatchHistoryEntrySummary.
-        The `OCID`__ of the patch.
+        Sets the lifecycle_details of this PatchHistoryEntrySummary.
+        A descriptive text associated with the lifecycleState.
+        Typically contains additional displayable text.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
-
-        :param patch_id: The patch_id of this PatchHistoryEntrySummary.
+        :param lifecycle_details: The lifecycle_details of this PatchHistoryEntrySummary.
         :type: str
         """
-        self._patch_id = patch_id
-
-    @property
-    def time_ended(self):
-        """
-        Gets the time_ended of this PatchHistoryEntrySummary.
-        The date and time when the patch action completed.
-
-
-        :return: The time_ended of this PatchHistoryEntrySummary.
-        :rtype: datetime
-        """
-        return self._time_ended
-
-    @time_ended.setter
-    def time_ended(self, time_ended):
-        """
-        Sets the time_ended of this PatchHistoryEntrySummary.
-        The date and time when the patch action completed.
-
-
-        :param time_ended: The time_ended of this PatchHistoryEntrySummary.
-        :type: datetime
-        """
-        self._time_ended = time_ended
+        self._lifecycle_details = lifecycle_details
 
     @property
     def time_started(self):
@@ -287,6 +263,30 @@ class PatchHistoryEntrySummary(object):
         :type: datetime
         """
         self._time_started = time_started
+
+    @property
+    def time_ended(self):
+        """
+        Gets the time_ended of this PatchHistoryEntrySummary.
+        The date and time when the patch action completed.
+
+
+        :return: The time_ended of this PatchHistoryEntrySummary.
+        :rtype: datetime
+        """
+        return self._time_ended
+
+    @time_ended.setter
+    def time_ended(self, time_ended):
+        """
+        Sets the time_ended of this PatchHistoryEntrySummary.
+        The date and time when the patch action completed.
+
+
+        :param time_ended: The time_ended of this PatchHistoryEntrySummary.
+        :type: datetime
+        """
+        self._time_ended = time_ended
 
     def __repr__(self):
         return formatted_flat_dict(self)

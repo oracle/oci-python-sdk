@@ -1,10 +1,10 @@
 certifi
 configparser==3.5.0
 coverage==4.4.1
-cryptography==2.3.1
+cryptography==2.1.4
 flake8==3.5.0
 mock==2.0.0
-pyOpenSSL==17.4.0
+pyOpenSSL==17.5.0
 pytest==3.2.3
 pytest-catchlog==1.2.2
 pytest-cov==2.5.1

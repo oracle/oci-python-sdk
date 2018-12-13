@@ -30,11 +30,13 @@ from .dynamic_group import DynamicGroup
 from .fault_domain import FaultDomain
 from .group import Group
 from .identity_provider import IdentityProvider
+from .identity_provider_group_summary import IdentityProviderGroupSummary
 from .idp_group_mapping import IdpGroupMapping
 from .policy import Policy
 from .region import Region
 from .region_subscription import RegionSubscription
 from .saml2_identity_provider import Saml2IdentityProvider
+from .scim_client_credentials import ScimClientCredentials
 from .smtp_credential import SmtpCredential
 from .smtp_credential_summary import SmtpCredentialSummary
 from .swift_password import SwiftPassword
@@ -58,8 +60,10 @@ from .update_state_details import UpdateStateDetails
 from .update_swift_password_details import UpdateSwiftPasswordDetails
 from .update_tag_details import UpdateTagDetails
 from .update_tag_namespace_details import UpdateTagNamespaceDetails
+from .update_user_capabilities_details import UpdateUserCapabilitiesDetails
 from .update_user_details import UpdateUserDetails
 from .user import User
+from .user_capabilities import UserCapabilities
 from .user_group_membership import UserGroupMembership
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
@@ -96,11 +100,13 @@ identity_type_mapping = {
     "FaultDomain": FaultDomain,
     "Group": Group,
     "IdentityProvider": IdentityProvider,
+    "IdentityProviderGroupSummary": IdentityProviderGroupSummary,
     "IdpGroupMapping": IdpGroupMapping,
     "Policy": Policy,
     "Region": Region,
     "RegionSubscription": RegionSubscription,
     "Saml2IdentityProvider": Saml2IdentityProvider,
+    "ScimClientCredentials": ScimClientCredentials,
     "SmtpCredential": SmtpCredential,
     "SmtpCredentialSummary": SmtpCredentialSummary,
     "SwiftPassword": SwiftPassword,
@@ -124,8 +130,10 @@ identity_type_mapping = {
     "UpdateSwiftPasswordDetails": UpdateSwiftPasswordDetails,
     "UpdateTagDetails": UpdateTagDetails,
     "UpdateTagNamespaceDetails": UpdateTagNamespaceDetails,
+    "UpdateUserCapabilitiesDetails": UpdateUserCapabilitiesDetails,
     "UpdateUserDetails": UpdateUserDetails,
     "User": User,
+    "UserCapabilities": UserCapabilities,
     "UserGroupMembership": UserGroupMembership,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,

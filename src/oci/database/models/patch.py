@@ -9,22 +9,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Patch(object):
     """
-    A Patch for a DB system or DB Home.
-
-    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
-    talk to an administrator. If you're an administrator who needs to write policies to give users access,
-    see `Getting Started with Policies`__.
-
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
+    Patch model.
     """
-
-    #: A constant which can be used with the available_actions property of a Patch.
-    #: This constant has a value of "APPLY"
-    AVAILABLE_ACTIONS_APPLY = "APPLY"
-
-    #: A constant which can be used with the available_actions property of a Patch.
-    #: This constant has a value of "PRECHECK"
-    AVAILABLE_ACTIONS_PRECHECK = "PRECHECK"
 
     #: A constant which can be used with the last_action property of a Patch.
     #: This constant has a value of "APPLY"
@@ -33,6 +19,14 @@ class Patch(object):
     #: A constant which can be used with the last_action property of a Patch.
     #: This constant has a value of "PRECHECK"
     LAST_ACTION_PRECHECK = "PRECHECK"
+
+    #: A constant which can be used with the available_actions property of a Patch.
+    #: This constant has a value of "APPLY"
+    AVAILABLE_ACTIONS_APPLY = "APPLY"
+
+    #: A constant which can be used with the available_actions property of a Patch.
+    #: This constant has a value of "PRECHECK"
+    AVAILABLE_ACTIONS_PRECHECK = "PRECHECK"
 
     #: A constant which can be used with the lifecycle_state property of a Patch.
     #: This constant has a value of "AVAILABLE"
@@ -55,25 +49,25 @@ class Patch(object):
         Initializes a new Patch object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param available_actions:
-            The value to assign to the available_actions property of this Patch.
-            Allowed values for items in this list are: "APPLY", "PRECHECK", 'UNKNOWN_ENUM_VALUE'.
-            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
-        :type available_actions: list[str]
+        :param id:
+            The value to assign to the id property of this Patch.
+        :type id: str
 
         :param description:
             The value to assign to the description property of this Patch.
         :type description: str
-
-        :param id:
-            The value to assign to the id property of this Patch.
-        :type id: str
 
         :param last_action:
             The value to assign to the last_action property of this Patch.
             Allowed values for this property are: "APPLY", "PRECHECK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type last_action: str
+
+        :param available_actions:
+            The value to assign to the available_actions property of this Patch.
+            Allowed values for items in this list are: "APPLY", "PRECHECK", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type available_actions: list[str]
 
         :param lifecycle_details:
             The value to assign to the lifecycle_details property of this Patch.
@@ -95,10 +89,10 @@ class Patch(object):
 
         """
         self.swagger_types = {
-            'available_actions': 'list[str]',
-            'description': 'str',
             'id': 'str',
+            'description': 'str',
             'last_action': 'str',
+            'available_actions': 'list[str]',
             'lifecycle_details': 'str',
             'lifecycle_state': 'str',
             'time_released': 'datetime',
@@ -106,78 +100,24 @@ class Patch(object):
         }
 
         self.attribute_map = {
-            'available_actions': 'availableActions',
-            'description': 'description',
             'id': 'id',
+            'description': 'description',
             'last_action': 'lastAction',
+            'available_actions': 'availableActions',
             'lifecycle_details': 'lifecycleDetails',
             'lifecycle_state': 'lifecycleState',
             'time_released': 'timeReleased',
             'version': 'version'
         }
 
-        self._available_actions = None
-        self._description = None
         self._id = None
+        self._description = None
         self._last_action = None
+        self._available_actions = None
         self._lifecycle_details = None
         self._lifecycle_state = None
         self._time_released = None
         self._version = None
-
-    @property
-    def available_actions(self):
-        """
-        Gets the available_actions of this Patch.
-        Actions that can possibly be performed using this patch.
-
-        Allowed values for items in this list are: "APPLY", "PRECHECK", 'UNKNOWN_ENUM_VALUE'.
-        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
-
-
-        :return: The available_actions of this Patch.
-        :rtype: list[str]
-        """
-        return self._available_actions
-
-    @available_actions.setter
-    def available_actions(self, available_actions):
-        """
-        Sets the available_actions of this Patch.
-        Actions that can possibly be performed using this patch.
-
-
-        :param available_actions: The available_actions of this Patch.
-        :type: list[str]
-        """
-        allowed_values = ["APPLY", "PRECHECK"]
-        if available_actions:
-            available_actions[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in available_actions]
-        self._available_actions = available_actions
-
-    @property
-    def description(self):
-        """
-        **[Required]** Gets the description of this Patch.
-        The text describing this patch package.
-
-
-        :return: The description of this Patch.
-        :rtype: str
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description):
-        """
-        Sets the description of this Patch.
-        The text describing this patch package.
-
-
-        :param description: The description of this Patch.
-        :type: str
-        """
-        self._description = description
 
     @property
     def id(self):
@@ -208,6 +148,30 @@ class Patch(object):
         self._id = id
 
     @property
+    def description(self):
+        """
+        **[Required]** Gets the description of this Patch.
+        The text describing this patch package.
+
+
+        :return: The description of this Patch.
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """
+        Sets the description of this Patch.
+        The text describing this patch package.
+
+
+        :param description: The description of this Patch.
+        :type: str
+        """
+        self._description = description
+
+    @property
     def last_action(self):
         """
         Gets the last_action of this Patch.
@@ -236,6 +200,36 @@ class Patch(object):
         if not value_allowed_none_or_none_sentinel(last_action, allowed_values):
             last_action = 'UNKNOWN_ENUM_VALUE'
         self._last_action = last_action
+
+    @property
+    def available_actions(self):
+        """
+        Gets the available_actions of this Patch.
+        Actions that can possibly be performed using this patch.
+
+        Allowed values for items in this list are: "APPLY", "PRECHECK", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The available_actions of this Patch.
+        :rtype: list[str]
+        """
+        return self._available_actions
+
+    @available_actions.setter
+    def available_actions(self, available_actions):
+        """
+        Sets the available_actions of this Patch.
+        Actions that can possibly be performed using this patch.
+
+
+        :param available_actions: The available_actions of this Patch.
+        :type: list[str]
+        """
+        allowed_values = ["APPLY", "PRECHECK"]
+        if available_actions:
+            available_actions[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in available_actions]
+        self._available_actions = available_actions
 
     @property
     def lifecycle_details(self):

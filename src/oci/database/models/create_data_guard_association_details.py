@@ -48,13 +48,10 @@ class CreateDataGuardAssociationDetails(object):
         Initializes a new CreateDataGuardAssociationDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.database.models.CreateDataGuardAssociationWithNewDbSystemDetails`
         * :class:`~oci.database.models.CreateDataGuardAssociationToExistingDbSystemDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
-
-        :param creation_type:
-            The value to assign to the creation_type property of this CreateDataGuardAssociationDetails.
-        :type creation_type: str
 
         :param database_admin_password:
             The value to assign to the database_admin_password property of this CreateDataGuardAssociationDetails.
@@ -70,25 +67,29 @@ class CreateDataGuardAssociationDetails(object):
             Allowed values for this property are: "SYNC", "ASYNC", "FASTSYNC"
         :type transport_type: str
 
+        :param creation_type:
+            The value to assign to the creation_type property of this CreateDataGuardAssociationDetails.
+        :type creation_type: str
+
         """
         self.swagger_types = {
-            'creation_type': 'str',
             'database_admin_password': 'str',
             'protection_mode': 'str',
-            'transport_type': 'str'
+            'transport_type': 'str',
+            'creation_type': 'str'
         }
 
         self.attribute_map = {
-            'creation_type': 'creationType',
             'database_admin_password': 'databaseAdminPassword',
             'protection_mode': 'protectionMode',
-            'transport_type': 'transportType'
+            'transport_type': 'transportType',
+            'creation_type': 'creationType'
         }
 
-        self._creation_type = None
         self._database_admin_password = None
         self._protection_mode = None
         self._transport_type = None
+        self._creation_type = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -98,36 +99,13 @@ class CreateDataGuardAssociationDetails(object):
         """
         type = object_dictionary['creationType']
 
+        if type == 'NewDbSystem':
+            return 'CreateDataGuardAssociationWithNewDbSystemDetails'
+
         if type == 'ExistingDbSystem':
             return 'CreateDataGuardAssociationToExistingDbSystemDetails'
         else:
             return 'CreateDataGuardAssociationDetails'
-
-    @property
-    def creation_type(self):
-        """
-        **[Required]** Gets the creation_type of this CreateDataGuardAssociationDetails.
-        Specifies where to create the associated database.
-        \"ExistingDbSystem\" is the only supported `creationType` value.
-
-
-        :return: The creation_type of this CreateDataGuardAssociationDetails.
-        :rtype: str
-        """
-        return self._creation_type
-
-    @creation_type.setter
-    def creation_type(self, creation_type):
-        """
-        Sets the creation_type of this CreateDataGuardAssociationDetails.
-        Specifies where to create the associated database.
-        \"ExistingDbSystem\" is the only supported `creationType` value.
-
-
-        :param creation_type: The creation_type of this CreateDataGuardAssociationDetails.
-        :type: str
-        """
-        self._creation_type = creation_type
 
     @property
     def database_admin_password(self):
@@ -185,7 +163,7 @@ class CreateDataGuardAssociationDetails(object):
         `Oracle Data Guard Protection Modes`__
         in the Oracle Data Guard documentation.
 
-        **IMPORTANT** - The only protection mode currently supported by the Database Service is MAXIMUM_PERFORMANCE.
+        **IMPORTANT** - The only protection mode currently supported by the Database service is MAXIMUM_PERFORMANCE.
 
         __ http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000
 
@@ -205,7 +183,7 @@ class CreateDataGuardAssociationDetails(object):
         `Oracle Data Guard Protection Modes`__
         in the Oracle Data Guard documentation.
 
-        **IMPORTANT** - The only protection mode currently supported by the Database Service is MAXIMUM_PERFORMANCE.
+        **IMPORTANT** - The only protection mode currently supported by the Database service is MAXIMUM_PERFORMANCE.
 
         __ http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000
 
@@ -235,7 +213,7 @@ class CreateDataGuardAssociationDetails(object):
         `Redo Transport Services`__
         in the Oracle Data Guard documentation.
 
-        **IMPORTANT** - The only transport type currently supported by the Database Service is ASYNC.
+        **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
 
         __ http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400
 
@@ -261,7 +239,7 @@ class CreateDataGuardAssociationDetails(object):
         `Redo Transport Services`__
         in the Oracle Data Guard documentation.
 
-        **IMPORTANT** - The only transport type currently supported by the Database Service is ASYNC.
+        **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
 
         __ http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400
 
@@ -276,6 +254,30 @@ class CreateDataGuardAssociationDetails(object):
                 .format(allowed_values)
             )
         self._transport_type = transport_type
+
+    @property
+    def creation_type(self):
+        """
+        **[Required]** Gets the creation_type of this CreateDataGuardAssociationDetails.
+        Specifies whether to create the peer database in an existing DB system or in a new DB system. Use either \"ExistingDbSystem\" or \"NewDbSystem.\"
+
+
+        :return: The creation_type of this CreateDataGuardAssociationDetails.
+        :rtype: str
+        """
+        return self._creation_type
+
+    @creation_type.setter
+    def creation_type(self, creation_type):
+        """
+        Sets the creation_type of this CreateDataGuardAssociationDetails.
+        Specifies whether to create the peer database in an existing DB system or in a new DB system. Use either \"ExistingDbSystem\" or \"NewDbSystem.\"
+
+
+        :param creation_type: The creation_type of this CreateDataGuardAssociationDetails.
+        :type: str
+        """
+        self._creation_type = creation_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

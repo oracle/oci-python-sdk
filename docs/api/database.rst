@@ -38,6 +38,7 @@ Database
     oci.database.models.CreateBackupDetails
     oci.database.models.CreateDataGuardAssociationDetails
     oci.database.models.CreateDataGuardAssociationToExistingDbSystemDetails
+    oci.database.models.CreateDataGuardAssociationWithNewDbSystemDetails
     oci.database.models.CreateDatabaseDetails
     oci.database.models.CreateDatabaseFromBackupDetails
     oci.database.models.CreateDbHomeDetails
