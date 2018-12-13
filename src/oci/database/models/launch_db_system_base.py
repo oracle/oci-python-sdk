@@ -32,49 +32,57 @@ class LaunchDbSystemBase(object):
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param availability_domain:
-            The value to assign to the availability_domain property of this LaunchDbSystemBase.
-        :type availability_domain: str
-
-        :param backup_subnet_id:
-            The value to assign to the backup_subnet_id property of this LaunchDbSystemBase.
-        :type backup_subnet_id: str
-
-        :param cluster_name:
-            The value to assign to the cluster_name property of this LaunchDbSystemBase.
-        :type cluster_name: str
-
         :param compartment_id:
             The value to assign to the compartment_id property of this LaunchDbSystemBase.
         :type compartment_id: str
-
-        :param cpu_core_count:
-            The value to assign to the cpu_core_count property of this LaunchDbSystemBase.
-        :type cpu_core_count: int
-
-        :param data_storage_percentage:
-            The value to assign to the data_storage_percentage property of this LaunchDbSystemBase.
-        :type data_storage_percentage: int
-
-        :param defined_tags:
-            The value to assign to the defined_tags property of this LaunchDbSystemBase.
-        :type defined_tags: dict(str, dict(str, object))
 
         :param display_name:
             The value to assign to the display_name property of this LaunchDbSystemBase.
         :type display_name: str
 
-        :param domain:
-            The value to assign to the domain property of this LaunchDbSystemBase.
-        :type domain: str
+        :param availability_domain:
+            The value to assign to the availability_domain property of this LaunchDbSystemBase.
+        :type availability_domain: str
 
-        :param freeform_tags:
-            The value to assign to the freeform_tags property of this LaunchDbSystemBase.
-        :type freeform_tags: dict(str, str)
+        :param subnet_id:
+            The value to assign to the subnet_id property of this LaunchDbSystemBase.
+        :type subnet_id: str
+
+        :param backup_subnet_id:
+            The value to assign to the backup_subnet_id property of this LaunchDbSystemBase.
+        :type backup_subnet_id: str
+
+        :param shape:
+            The value to assign to the shape property of this LaunchDbSystemBase.
+        :type shape: str
+
+        :param sparse_diskgroup:
+            The value to assign to the sparse_diskgroup property of this LaunchDbSystemBase.
+        :type sparse_diskgroup: bool
+
+        :param ssh_public_keys:
+            The value to assign to the ssh_public_keys property of this LaunchDbSystemBase.
+        :type ssh_public_keys: list[str]
 
         :param hostname:
             The value to assign to the hostname property of this LaunchDbSystemBase.
         :type hostname: str
+
+        :param domain:
+            The value to assign to the domain property of this LaunchDbSystemBase.
+        :type domain: str
+
+        :param cpu_core_count:
+            The value to assign to the cpu_core_count property of this LaunchDbSystemBase.
+        :type cpu_core_count: int
+
+        :param cluster_name:
+            The value to assign to the cluster_name property of this LaunchDbSystemBase.
+        :type cluster_name: str
+
+        :param data_storage_percentage:
+            The value to assign to the data_storage_percentage property of this LaunchDbSystemBase.
+        :type data_storage_percentage: int
 
         :param initial_data_storage_size_in_gb:
             The value to assign to the initial_data_storage_size_in_gb property of this LaunchDbSystemBase.
@@ -84,81 +92,80 @@ class LaunchDbSystemBase(object):
             The value to assign to the node_count property of this LaunchDbSystemBase.
         :type node_count: int
 
-        :param shape:
-            The value to assign to the shape property of this LaunchDbSystemBase.
-        :type shape: str
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this LaunchDbSystemBase.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this LaunchDbSystemBase.
+        :type defined_tags: dict(str, dict(str, object))
 
         :param source:
             The value to assign to the source property of this LaunchDbSystemBase.
             Allowed values for this property are: "NONE", "DB_BACKUP"
         :type source: str
 
-        :param ssh_public_keys:
-            The value to assign to the ssh_public_keys property of this LaunchDbSystemBase.
-        :type ssh_public_keys: list[str]
-
-        :param subnet_id:
-            The value to assign to the subnet_id property of this LaunchDbSystemBase.
-        :type subnet_id: str
-
         """
         self.swagger_types = {
-            'availability_domain': 'str',
-            'backup_subnet_id': 'str',
-            'cluster_name': 'str',
             'compartment_id': 'str',
-            'cpu_core_count': 'int',
-            'data_storage_percentage': 'int',
-            'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
-            'domain': 'str',
-            'freeform_tags': 'dict(str, str)',
+            'availability_domain': 'str',
+            'subnet_id': 'str',
+            'backup_subnet_id': 'str',
+            'shape': 'str',
+            'sparse_diskgroup': 'bool',
+            'ssh_public_keys': 'list[str]',
             'hostname': 'str',
+            'domain': 'str',
+            'cpu_core_count': 'int',
+            'cluster_name': 'str',
+            'data_storage_percentage': 'int',
             'initial_data_storage_size_in_gb': 'int',
             'node_count': 'int',
-            'shape': 'str',
-            'source': 'str',
-            'ssh_public_keys': 'list[str]',
-            'subnet_id': 'str'
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))',
+            'source': 'str'
         }
 
         self.attribute_map = {
-            'availability_domain': 'availabilityDomain',
-            'backup_subnet_id': 'backupSubnetId',
-            'cluster_name': 'clusterName',
             'compartment_id': 'compartmentId',
-            'cpu_core_count': 'cpuCoreCount',
-            'data_storage_percentage': 'dataStoragePercentage',
-            'defined_tags': 'definedTags',
             'display_name': 'displayName',
-            'domain': 'domain',
-            'freeform_tags': 'freeformTags',
+            'availability_domain': 'availabilityDomain',
+            'subnet_id': 'subnetId',
+            'backup_subnet_id': 'backupSubnetId',
+            'shape': 'shape',
+            'sparse_diskgroup': 'sparseDiskgroup',
+            'ssh_public_keys': 'sshPublicKeys',
             'hostname': 'hostname',
+            'domain': 'domain',
+            'cpu_core_count': 'cpuCoreCount',
+            'cluster_name': 'clusterName',
+            'data_storage_percentage': 'dataStoragePercentage',
             'initial_data_storage_size_in_gb': 'initialDataStorageSizeInGB',
             'node_count': 'nodeCount',
-            'shape': 'shape',
-            'source': 'source',
-            'ssh_public_keys': 'sshPublicKeys',
-            'subnet_id': 'subnetId'
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags',
+            'source': 'source'
         }
 
-        self._availability_domain = None
-        self._backup_subnet_id = None
-        self._cluster_name = None
         self._compartment_id = None
-        self._cpu_core_count = None
-        self._data_storage_percentage = None
-        self._defined_tags = None
         self._display_name = None
-        self._domain = None
-        self._freeform_tags = None
+        self._availability_domain = None
+        self._subnet_id = None
+        self._backup_subnet_id = None
+        self._shape = None
+        self._sparse_diskgroup = None
+        self._ssh_public_keys = None
         self._hostname = None
+        self._domain = None
+        self._cpu_core_count = None
+        self._cluster_name = None
+        self._data_storage_percentage = None
         self._initial_data_storage_size_in_gb = None
         self._node_count = None
-        self._shape = None
+        self._freeform_tags = None
+        self._defined_tags = None
         self._source = None
-        self._ssh_public_keys = None
-        self._subnet_id = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -175,6 +182,58 @@ class LaunchDbSystemBase(object):
             return 'LaunchDbSystemFromBackupDetails'
         else:
             return 'LaunchDbSystemBase'
+
+    @property
+    def compartment_id(self):
+        """
+        **[Required]** Gets the compartment_id of this LaunchDbSystemBase.
+        The `OCID`__ of the compartment the DB system  belongs in.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The compartment_id of this LaunchDbSystemBase.
+        :rtype: str
+        """
+        return self._compartment_id
+
+    @compartment_id.setter
+    def compartment_id(self, compartment_id):
+        """
+        Sets the compartment_id of this LaunchDbSystemBase.
+        The `OCID`__ of the compartment the DB system  belongs in.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+
+        :param compartment_id: The compartment_id of this LaunchDbSystemBase.
+        :type: str
+        """
+        self._compartment_id = compartment_id
+
+    @property
+    def display_name(self):
+        """
+        Gets the display_name of this LaunchDbSystemBase.
+        The user-friendly name for the DB system. The name does not have to be unique.
+
+
+        :return: The display_name of this LaunchDbSystemBase.
+        :rtype: str
+        """
+        return self._display_name
+
+    @display_name.setter
+    def display_name(self, display_name):
+        """
+        Sets the display_name of this LaunchDbSystemBase.
+        The user-friendly name for the DB system. The name does not have to be unique.
+
+
+        :param display_name: The display_name of this LaunchDbSystemBase.
+        :type: str
+        """
+        self._display_name = display_name
 
     @property
     def availability_domain(self):
@@ -199,6 +258,50 @@ class LaunchDbSystemBase(object):
         :type: str
         """
         self._availability_domain = availability_domain
+
+    @property
+    def subnet_id(self):
+        """
+        **[Required]** Gets the subnet_id of this LaunchDbSystemBase.
+        The `OCID`__ of the subnet the DB system is associated with.
+
+        **Subnet Restrictions:**
+        - For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
+        - For Exadata and virtual machine 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.128.0/20.
+
+        These subnets are used by the Oracle Clusterware private interconnect on the database instance.
+        Specifying an overlapping subnet will cause the private interconnect to malfunction.
+        This restriction applies to both the client subnet and the backup subnet.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The subnet_id of this LaunchDbSystemBase.
+        :rtype: str
+        """
+        return self._subnet_id
+
+    @subnet_id.setter
+    def subnet_id(self, subnet_id):
+        """
+        Sets the subnet_id of this LaunchDbSystemBase.
+        The `OCID`__ of the subnet the DB system is associated with.
+
+        **Subnet Restrictions:**
+        - For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
+        - For Exadata and virtual machine 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.128.0/20.
+
+        These subnets are used by the Oracle Clusterware private interconnect on the database instance.
+        Specifying an overlapping subnet will cause the private interconnect to malfunction.
+        This restriction applies to both the client subnet and the backup subnet.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+
+        :param subnet_id: The subnet_id of this LaunchDbSystemBase.
+        :type: str
+        """
+        self._subnet_id = subnet_id
 
     @property
     def backup_subnet_id(self):
@@ -233,56 +336,148 @@ class LaunchDbSystemBase(object):
         self._backup_subnet_id = backup_subnet_id
 
     @property
-    def cluster_name(self):
+    def shape(self):
         """
-        Gets the cluster_name of this LaunchDbSystemBase.
-        The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
+        **[Required]** Gets the shape of this LaunchDbSystemBase.
+        The shape of the DB system. The shape determines resources allocated to the DB system.
+        - For virtual machine shapes, the number of CPU cores and memory
+        - For bare metal and Exadata shapes, the number of CPU cores, memory, and storage
+
+        To get a list of shapes, use the :func:`list_db_system_shapes` operation.
 
 
-        :return: The cluster_name of this LaunchDbSystemBase.
+        :return: The shape of this LaunchDbSystemBase.
         :rtype: str
         """
-        return self._cluster_name
+        return self._shape
 
-    @cluster_name.setter
-    def cluster_name(self, cluster_name):
+    @shape.setter
+    def shape(self, shape):
         """
-        Sets the cluster_name of this LaunchDbSystemBase.
-        The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
+        Sets the shape of this LaunchDbSystemBase.
+        The shape of the DB system. The shape determines resources allocated to the DB system.
+        - For virtual machine shapes, the number of CPU cores and memory
+        - For bare metal and Exadata shapes, the number of CPU cores, memory, and storage
+
+        To get a list of shapes, use the :func:`list_db_system_shapes` operation.
 
 
-        :param cluster_name: The cluster_name of this LaunchDbSystemBase.
+        :param shape: The shape of this LaunchDbSystemBase.
         :type: str
         """
-        self._cluster_name = cluster_name
+        self._shape = shape
 
     @property
-    def compartment_id(self):
+    def sparse_diskgroup(self):
         """
-        **[Required]** Gets the compartment_id of this LaunchDbSystemBase.
-        The `OCID`__ of the compartment the DB system  belongs in.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        Gets the sparse_diskgroup of this LaunchDbSystemBase.
+        If true, Sparse Diskgroup is configured for Exadata dbsystem. If False, Sparse diskgroup is not configured.
 
 
-        :return: The compartment_id of this LaunchDbSystemBase.
+        :return: The sparse_diskgroup of this LaunchDbSystemBase.
+        :rtype: bool
+        """
+        return self._sparse_diskgroup
+
+    @sparse_diskgroup.setter
+    def sparse_diskgroup(self, sparse_diskgroup):
+        """
+        Sets the sparse_diskgroup of this LaunchDbSystemBase.
+        If true, Sparse Diskgroup is configured for Exadata dbsystem. If False, Sparse diskgroup is not configured.
+
+
+        :param sparse_diskgroup: The sparse_diskgroup of this LaunchDbSystemBase.
+        :type: bool
+        """
+        self._sparse_diskgroup = sparse_diskgroup
+
+    @property
+    def ssh_public_keys(self):
+        """
+        **[Required]** Gets the ssh_public_keys of this LaunchDbSystemBase.
+        The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 10,000 characters.
+
+
+        :return: The ssh_public_keys of this LaunchDbSystemBase.
+        :rtype: list[str]
+        """
+        return self._ssh_public_keys
+
+    @ssh_public_keys.setter
+    def ssh_public_keys(self, ssh_public_keys):
+        """
+        Sets the ssh_public_keys of this LaunchDbSystemBase.
+        The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 10,000 characters.
+
+
+        :param ssh_public_keys: The ssh_public_keys of this LaunchDbSystemBase.
+        :type: list[str]
+        """
+        self._ssh_public_keys = ssh_public_keys
+
+    @property
+    def hostname(self):
+        """
+        **[Required]** Gets the hostname of this LaunchDbSystemBase.
+        The hostname for the DB system. The hostname must begin with an alphabetic character and
+        can contain a maximum of 30 alphanumeric characters, including hyphens (-).
+
+        The maximum length of the combined hostname and domain is 63 characters.
+
+        **Note:** The hostname must be unique within the subnet. If it is not unique,
+        the DB system will fail to provision.
+
+
+        :return: The hostname of this LaunchDbSystemBase.
         :rtype: str
         """
-        return self._compartment_id
+        return self._hostname
 
-    @compartment_id.setter
-    def compartment_id(self, compartment_id):
+    @hostname.setter
+    def hostname(self, hostname):
         """
-        Sets the compartment_id of this LaunchDbSystemBase.
-        The `OCID`__ of the compartment the DB system  belongs in.
+        Sets the hostname of this LaunchDbSystemBase.
+        The hostname for the DB system. The hostname must begin with an alphabetic character and
+        can contain a maximum of 30 alphanumeric characters, including hyphens (-).
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        The maximum length of the combined hostname and domain is 63 characters.
+
+        **Note:** The hostname must be unique within the subnet. If it is not unique,
+        the DB system will fail to provision.
 
 
-        :param compartment_id: The compartment_id of this LaunchDbSystemBase.
+        :param hostname: The hostname of this LaunchDbSystemBase.
         :type: str
         """
-        self._compartment_id = compartment_id
+        self._hostname = hostname
+
+    @property
+    def domain(self):
+        """
+        Gets the domain of this LaunchDbSystemBase.
+        A domain name used for the DB system. If the Oracle-provided Internet and VCN
+        Resolver is enabled for the specified subnet, the domain name for the subnet is used
+        (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+
+
+        :return: The domain of this LaunchDbSystemBase.
+        :rtype: str
+        """
+        return self._domain
+
+    @domain.setter
+    def domain(self, domain):
+        """
+        Sets the domain of this LaunchDbSystemBase.
+        A domain name used for the DB system. If the Oracle-provided Internet and VCN
+        Resolver is enabled for the specified subnet, the domain name for the subnet is used
+        (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+
+
+        :param domain: The domain of this LaunchDbSystemBase.
+        :type: str
+        """
+        self._domain = domain
 
     @property
     def cpu_core_count(self):
@@ -337,6 +532,30 @@ class LaunchDbSystemBase(object):
         self._cpu_core_count = cpu_core_count
 
     @property
+    def cluster_name(self):
+        """
+        Gets the cluster_name of this LaunchDbSystemBase.
+        The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
+
+
+        :return: The cluster_name of this LaunchDbSystemBase.
+        :rtype: str
+        """
+        return self._cluster_name
+
+    @cluster_name.setter
+    def cluster_name(self, cluster_name):
+        """
+        Sets the cluster_name of this LaunchDbSystemBase.
+        The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
+
+
+        :param cluster_name: The cluster_name of this LaunchDbSystemBase.
+        :type: str
+        """
+        self._cluster_name = cluster_name
+
+    @property
     def data_storage_percentage(self):
         """
         Gets the data_storage_percentage of this LaunchDbSystemBase.
@@ -363,162 +582,6 @@ class LaunchDbSystemBase(object):
         :type: int
         """
         self._data_storage_percentage = data_storage_percentage
-
-    @property
-    def defined_tags(self):
-        """
-        Gets the defined_tags of this LaunchDbSystemBase.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        For more information, see `Resource Tags`__.
-
-        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
-
-
-        :return: The defined_tags of this LaunchDbSystemBase.
-        :rtype: dict(str, dict(str, object))
-        """
-        return self._defined_tags
-
-    @defined_tags.setter
-    def defined_tags(self, defined_tags):
-        """
-        Sets the defined_tags of this LaunchDbSystemBase.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        For more information, see `Resource Tags`__.
-
-        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
-
-
-        :param defined_tags: The defined_tags of this LaunchDbSystemBase.
-        :type: dict(str, dict(str, object))
-        """
-        self._defined_tags = defined_tags
-
-    @property
-    def display_name(self):
-        """
-        Gets the display_name of this LaunchDbSystemBase.
-        The user-friendly name for the DB system. The name does not have to be unique.
-
-
-        :return: The display_name of this LaunchDbSystemBase.
-        :rtype: str
-        """
-        return self._display_name
-
-    @display_name.setter
-    def display_name(self, display_name):
-        """
-        Sets the display_name of this LaunchDbSystemBase.
-        The user-friendly name for the DB system. The name does not have to be unique.
-
-
-        :param display_name: The display_name of this LaunchDbSystemBase.
-        :type: str
-        """
-        self._display_name = display_name
-
-    @property
-    def domain(self):
-        """
-        Gets the domain of this LaunchDbSystemBase.
-        A domain name used for the DB system. If the Oracle-provided Internet and VCN
-        Resolver is enabled for the specified subnet, the domain name for the subnet is used
-        (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
-
-
-        :return: The domain of this LaunchDbSystemBase.
-        :rtype: str
-        """
-        return self._domain
-
-    @domain.setter
-    def domain(self, domain):
-        """
-        Sets the domain of this LaunchDbSystemBase.
-        A domain name used for the DB system. If the Oracle-provided Internet and VCN
-        Resolver is enabled for the specified subnet, the domain name for the subnet is used
-        (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
-
-
-        :param domain: The domain of this LaunchDbSystemBase.
-        :type: str
-        """
-        self._domain = domain
-
-    @property
-    def freeform_tags(self):
-        """
-        Gets the freeform_tags of this LaunchDbSystemBase.
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-        For more information, see `Resource Tags`__.
-
-        Example: `{\"Department\": \"Finance\"}`
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
-
-
-        :return: The freeform_tags of this LaunchDbSystemBase.
-        :rtype: dict(str, str)
-        """
-        return self._freeform_tags
-
-    @freeform_tags.setter
-    def freeform_tags(self, freeform_tags):
-        """
-        Sets the freeform_tags of this LaunchDbSystemBase.
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-        For more information, see `Resource Tags`__.
-
-        Example: `{\"Department\": \"Finance\"}`
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
-
-
-        :param freeform_tags: The freeform_tags of this LaunchDbSystemBase.
-        :type: dict(str, str)
-        """
-        self._freeform_tags = freeform_tags
-
-    @property
-    def hostname(self):
-        """
-        **[Required]** Gets the hostname of this LaunchDbSystemBase.
-        The hostname for the DB system. The hostname must begin with an alphabetic character and
-        can contain a maximum of 30 alphanumeric characters, including hyphens (-).
-
-        The maximum length of the combined hostname and domain is 63 characters.
-
-        **Note:** The hostname must be unique within the subnet. If it is not unique,
-        the DB system will fail to provision.
-
-
-        :return: The hostname of this LaunchDbSystemBase.
-        :rtype: str
-        """
-        return self._hostname
-
-    @hostname.setter
-    def hostname(self, hostname):
-        """
-        Sets the hostname of this LaunchDbSystemBase.
-        The hostname for the DB system. The hostname must begin with an alphabetic character and
-        can contain a maximum of 30 alphanumeric characters, including hyphens (-).
-
-        The maximum length of the combined hostname and domain is 63 characters.
-
-        **Note:** The hostname must be unique within the subnet. If it is not unique,
-        the DB system will fail to provision.
-
-
-        :param hostname: The hostname of this LaunchDbSystemBase.
-        :type: str
-        """
-        self._hostname = hostname
 
     @property
     def initial_data_storage_size_in_gb(self):
@@ -569,36 +632,72 @@ class LaunchDbSystemBase(object):
         self._node_count = node_count
 
     @property
-    def shape(self):
+    def freeform_tags(self):
         """
-        **[Required]** Gets the shape of this LaunchDbSystemBase.
-        The shape of the DB system. The shape determines resources allocated to the DB system.
-        - For virtual machine shapes, the number of CPU cores and memory
-        - For bare metal and Exadata shapes, the number of CPU cores, memory, and storage
+        Gets the freeform_tags of this LaunchDbSystemBase.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
 
-        To get a list of shapes, use the :func:`list_db_system_shapes` operation.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
 
 
-        :return: The shape of this LaunchDbSystemBase.
-        :rtype: str
+        :return: The freeform_tags of this LaunchDbSystemBase.
+        :rtype: dict(str, str)
         """
-        return self._shape
+        return self._freeform_tags
 
-    @shape.setter
-    def shape(self, shape):
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
         """
-        Sets the shape of this LaunchDbSystemBase.
-        The shape of the DB system. The shape determines resources allocated to the DB system.
-        - For virtual machine shapes, the number of CPU cores and memory
-        - For bare metal and Exadata shapes, the number of CPU cores, memory, and storage
+        Sets the freeform_tags of this LaunchDbSystemBase.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
 
-        To get a list of shapes, use the :func:`list_db_system_shapes` operation.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
 
 
-        :param shape: The shape of this LaunchDbSystemBase.
-        :type: str
+        :param freeform_tags: The freeform_tags of this LaunchDbSystemBase.
+        :type: dict(str, str)
         """
-        self._shape = shape
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this LaunchDbSystemBase.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this LaunchDbSystemBase.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this LaunchDbSystemBase.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this LaunchDbSystemBase.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     @property
     def source(self):
@@ -633,74 +732,6 @@ class LaunchDbSystemBase(object):
                 .format(allowed_values)
             )
         self._source = source
-
-    @property
-    def ssh_public_keys(self):
-        """
-        **[Required]** Gets the ssh_public_keys of this LaunchDbSystemBase.
-        The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 10,000 characters.
-
-
-        :return: The ssh_public_keys of this LaunchDbSystemBase.
-        :rtype: list[str]
-        """
-        return self._ssh_public_keys
-
-    @ssh_public_keys.setter
-    def ssh_public_keys(self, ssh_public_keys):
-        """
-        Sets the ssh_public_keys of this LaunchDbSystemBase.
-        The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 10,000 characters.
-
-
-        :param ssh_public_keys: The ssh_public_keys of this LaunchDbSystemBase.
-        :type: list[str]
-        """
-        self._ssh_public_keys = ssh_public_keys
-
-    @property
-    def subnet_id(self):
-        """
-        **[Required]** Gets the subnet_id of this LaunchDbSystemBase.
-        The `OCID`__ of the subnet the DB system is associated with.
-
-        **Subnet Restrictions:**
-        - For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
-        - For Exadata and virtual machine 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.128.0/20.
-
-        These subnets are used by the Oracle Clusterware private interconnect on the database instance.
-        Specifying an overlapping subnet will cause the private interconnect to malfunction.
-        This restriction applies to both the client subnet and the backup subnet.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-
-
-        :return: The subnet_id of this LaunchDbSystemBase.
-        :rtype: str
-        """
-        return self._subnet_id
-
-    @subnet_id.setter
-    def subnet_id(self, subnet_id):
-        """
-        Sets the subnet_id of this LaunchDbSystemBase.
-        The `OCID`__ of the subnet the DB system is associated with.
-
-        **Subnet Restrictions:**
-        - For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
-        - For Exadata and virtual machine 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.128.0/20.
-
-        These subnets are used by the Oracle Clusterware private interconnect on the database instance.
-        Specifying an overlapping subnet will cause the private interconnect to malfunction.
-        This restriction applies to both the client subnet and the backup subnet.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-
-
-        :param subnet_id: The subnet_id of this LaunchDbSystemBase.
-        :type: str
-        """
-        self._subnet_id = subnet_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

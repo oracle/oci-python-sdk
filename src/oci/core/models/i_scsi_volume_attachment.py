@@ -59,6 +59,10 @@ class IScsiVolumeAttachment(VolumeAttachment):
             The value to assign to the volume_id property of this IScsiVolumeAttachment.
         :type volume_id: str
 
+        :param is_pv_encryption_in_transit_enabled:
+            The value to assign to the is_pv_encryption_in_transit_enabled property of this IScsiVolumeAttachment.
+        :type is_pv_encryption_in_transit_enabled: bool
+
         :param chap_secret:
             The value to assign to the chap_secret property of this IScsiVolumeAttachment.
         :type chap_secret: str
@@ -91,6 +95,7 @@ class IScsiVolumeAttachment(VolumeAttachment):
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'volume_id': 'str',
+            'is_pv_encryption_in_transit_enabled': 'bool',
             'chap_secret': 'str',
             'chap_username': 'str',
             'ipv4': 'str',
@@ -109,6 +114,7 @@ class IScsiVolumeAttachment(VolumeAttachment):
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'volume_id': 'volumeId',
+            'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled',
             'chap_secret': 'chapSecret',
             'chap_username': 'chapUsername',
             'ipv4': 'ipv4',
@@ -126,6 +132,7 @@ class IScsiVolumeAttachment(VolumeAttachment):
         self._lifecycle_state = None
         self._time_created = None
         self._volume_id = None
+        self._is_pv_encryption_in_transit_enabled = None
         self._chap_secret = None
         self._chap_username = None
         self._ipv4 = None

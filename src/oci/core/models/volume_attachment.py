@@ -90,6 +90,10 @@ class VolumeAttachment(object):
             The value to assign to the volume_id property of this VolumeAttachment.
         :type volume_id: str
 
+        :param is_pv_encryption_in_transit_enabled:
+            The value to assign to the is_pv_encryption_in_transit_enabled property of this VolumeAttachment.
+        :type is_pv_encryption_in_transit_enabled: bool
+
         """
         self.swagger_types = {
             'attachment_type': 'str',
@@ -101,7 +105,8 @@ class VolumeAttachment(object):
             'is_read_only': 'bool',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
-            'volume_id': 'str'
+            'volume_id': 'str',
+            'is_pv_encryption_in_transit_enabled': 'bool'
         }
 
         self.attribute_map = {
@@ -114,7 +119,8 @@ class VolumeAttachment(object):
             'is_read_only': 'isReadOnly',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
-            'volume_id': 'volumeId'
+            'volume_id': 'volumeId',
+            'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled'
         }
 
         self._attachment_type = None
@@ -127,6 +133,7 @@ class VolumeAttachment(object):
         self._lifecycle_state = None
         self._time_created = None
         self._volume_id = None
+        self._is_pv_encryption_in_transit_enabled = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -403,6 +410,30 @@ class VolumeAttachment(object):
         :type: str
         """
         self._volume_id = volume_id
+
+    @property
+    def is_pv_encryption_in_transit_enabled(self):
+        """
+        Gets the is_pv_encryption_in_transit_enabled of this VolumeAttachment.
+        Whether the enable encryption in transit for the PV volume attachment is on or not.
+
+
+        :return: The is_pv_encryption_in_transit_enabled of this VolumeAttachment.
+        :rtype: bool
+        """
+        return self._is_pv_encryption_in_transit_enabled
+
+    @is_pv_encryption_in_transit_enabled.setter
+    def is_pv_encryption_in_transit_enabled(self, is_pv_encryption_in_transit_enabled):
+        """
+        Sets the is_pv_encryption_in_transit_enabled of this VolumeAttachment.
+        Whether the enable encryption in transit for the PV volume attachment is on or not.
+
+
+        :param is_pv_encryption_in_transit_enabled: The is_pv_encryption_in_transit_enabled of this VolumeAttachment.
+        :type: bool
+        """
+        self._is_pv_encryption_in_transit_enabled = is_pv_encryption_in_transit_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

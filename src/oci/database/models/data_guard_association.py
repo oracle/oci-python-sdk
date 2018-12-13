@@ -9,20 +9,20 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DataGuardAssociation(object):
     """
-    The properties that define a Data Guard association.
-
-    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an
-    administrator. If you're an administrator who needs to write policies to give users access, see
-    `Getting Started with Policies`__.
-
-    For information about endpoints and signing API requests, see
-    `About the API`__. For information about available SDKs and tools, see
-    `SDKS and Other Tools`__.
-
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/usingapi.htm
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdks.htm
+    DataGuardAssociation model.
     """
+
+    #: A constant which can be used with the role property of a DataGuardAssociation.
+    #: This constant has a value of "PRIMARY"
+    ROLE_PRIMARY = "PRIMARY"
+
+    #: A constant which can be used with the role property of a DataGuardAssociation.
+    #: This constant has a value of "STANDBY"
+    ROLE_STANDBY = "STANDBY"
+
+    #: A constant which can be used with the role property of a DataGuardAssociation.
+    #: This constant has a value of "DISABLED_STANDBY"
+    ROLE_DISABLED_STANDBY = "DISABLED_STANDBY"
 
     #: A constant which can be used with the lifecycle_state property of a DataGuardAssociation.
     #: This constant has a value of "PROVISIONING"
@@ -72,18 +72,6 @@ class DataGuardAssociation(object):
     #: This constant has a value of "MAXIMUM_PROTECTION"
     PROTECTION_MODE_MAXIMUM_PROTECTION = "MAXIMUM_PROTECTION"
 
-    #: A constant which can be used with the role property of a DataGuardAssociation.
-    #: This constant has a value of "PRIMARY"
-    ROLE_PRIMARY = "PRIMARY"
-
-    #: A constant which can be used with the role property of a DataGuardAssociation.
-    #: This constant has a value of "STANDBY"
-    ROLE_STANDBY = "STANDBY"
-
-    #: A constant which can be used with the role property of a DataGuardAssociation.
-    #: This constant has a value of "DISABLED_STANDBY"
-    ROLE_DISABLED_STANDBY = "DISABLED_STANDBY"
-
     #: A constant which can be used with the transport_type property of a DataGuardAssociation.
     #: This constant has a value of "SYNC"
     TRANSPORT_TYPE_SYNC = "SYNC"
@@ -101,6 +89,52 @@ class DataGuardAssociation(object):
         Initializes a new DataGuardAssociation object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param id:
+            The value to assign to the id property of this DataGuardAssociation.
+        :type id: str
+
+        :param database_id:
+            The value to assign to the database_id property of this DataGuardAssociation.
+        :type database_id: str
+
+        :param role:
+            The value to assign to the role property of this DataGuardAssociation.
+            Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type role: str
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this DataGuardAssociation.
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this DataGuardAssociation.
+        :type lifecycle_details: str
+
+        :param peer_db_system_id:
+            The value to assign to the peer_db_system_id property of this DataGuardAssociation.
+        :type peer_db_system_id: str
+
+        :param peer_db_home_id:
+            The value to assign to the peer_db_home_id property of this DataGuardAssociation.
+        :type peer_db_home_id: str
+
+        :param peer_database_id:
+            The value to assign to the peer_database_id property of this DataGuardAssociation.
+        :type peer_database_id: str
+
+        :param peer_data_guard_association_id:
+            The value to assign to the peer_data_guard_association_id property of this DataGuardAssociation.
+        :type peer_data_guard_association_id: str
+
+        :param peer_role:
+            The value to assign to the peer_role property of this DataGuardAssociation.
+            Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type peer_role: str
+
         :param apply_lag:
             The value to assign to the apply_lag property of this DataGuardAssociation.
         :type apply_lag: str
@@ -109,61 +143,11 @@ class DataGuardAssociation(object):
             The value to assign to the apply_rate property of this DataGuardAssociation.
         :type apply_rate: str
 
-        :param database_id:
-            The value to assign to the database_id property of this DataGuardAssociation.
-        :type database_id: str
-
-        :param id:
-            The value to assign to the id property of this DataGuardAssociation.
-        :type id: str
-
-        :param lifecycle_details:
-            The value to assign to the lifecycle_details property of this DataGuardAssociation.
-        :type lifecycle_details: str
-
-        :param lifecycle_state:
-            The value to assign to the lifecycle_state property of this DataGuardAssociation.
-            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
-            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
-        :type lifecycle_state: str
-
-        :param peer_data_guard_association_id:
-            The value to assign to the peer_data_guard_association_id property of this DataGuardAssociation.
-        :type peer_data_guard_association_id: str
-
-        :param peer_database_id:
-            The value to assign to the peer_database_id property of this DataGuardAssociation.
-        :type peer_database_id: str
-
-        :param peer_db_home_id:
-            The value to assign to the peer_db_home_id property of this DataGuardAssociation.
-        :type peer_db_home_id: str
-
-        :param peer_db_system_id:
-            The value to assign to the peer_db_system_id property of this DataGuardAssociation.
-        :type peer_db_system_id: str
-
-        :param peer_role:
-            The value to assign to the peer_role property of this DataGuardAssociation.
-            Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", 'UNKNOWN_ENUM_VALUE'.
-            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
-        :type peer_role: str
-
         :param protection_mode:
             The value to assign to the protection_mode property of this DataGuardAssociation.
             Allowed values for this property are: "MAXIMUM_AVAILABILITY", "MAXIMUM_PERFORMANCE", "MAXIMUM_PROTECTION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type protection_mode: str
-
-        :param role:
-            The value to assign to the role property of this DataGuardAssociation.
-            Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", 'UNKNOWN_ENUM_VALUE'.
-            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
-        :type role: str
-
-        :param time_created:
-            The value to assign to the time_created property of this DataGuardAssociation.
-        :type time_created: datetime
 
         :param transport_type:
             The value to assign to the transport_type property of this DataGuardAssociation.
@@ -171,58 +155,346 @@ class DataGuardAssociation(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type transport_type: str
 
+        :param time_created:
+            The value to assign to the time_created property of this DataGuardAssociation.
+        :type time_created: datetime
+
         """
         self.swagger_types = {
+            'id': 'str',
+            'database_id': 'str',
+            'role': 'str',
+            'lifecycle_state': 'str',
+            'lifecycle_details': 'str',
+            'peer_db_system_id': 'str',
+            'peer_db_home_id': 'str',
+            'peer_database_id': 'str',
+            'peer_data_guard_association_id': 'str',
+            'peer_role': 'str',
             'apply_lag': 'str',
             'apply_rate': 'str',
-            'database_id': 'str',
-            'id': 'str',
-            'lifecycle_details': 'str',
-            'lifecycle_state': 'str',
-            'peer_data_guard_association_id': 'str',
-            'peer_database_id': 'str',
-            'peer_db_home_id': 'str',
-            'peer_db_system_id': 'str',
-            'peer_role': 'str',
             'protection_mode': 'str',
-            'role': 'str',
-            'time_created': 'datetime',
-            'transport_type': 'str'
+            'transport_type': 'str',
+            'time_created': 'datetime'
         }
 
         self.attribute_map = {
+            'id': 'id',
+            'database_id': 'databaseId',
+            'role': 'role',
+            'lifecycle_state': 'lifecycleState',
+            'lifecycle_details': 'lifecycleDetails',
+            'peer_db_system_id': 'peerDbSystemId',
+            'peer_db_home_id': 'peerDbHomeId',
+            'peer_database_id': 'peerDatabaseId',
+            'peer_data_guard_association_id': 'peerDataGuardAssociationId',
+            'peer_role': 'peerRole',
             'apply_lag': 'applyLag',
             'apply_rate': 'applyRate',
-            'database_id': 'databaseId',
-            'id': 'id',
-            'lifecycle_details': 'lifecycleDetails',
-            'lifecycle_state': 'lifecycleState',
-            'peer_data_guard_association_id': 'peerDataGuardAssociationId',
-            'peer_database_id': 'peerDatabaseId',
-            'peer_db_home_id': 'peerDbHomeId',
-            'peer_db_system_id': 'peerDbSystemId',
-            'peer_role': 'peerRole',
             'protection_mode': 'protectionMode',
-            'role': 'role',
-            'time_created': 'timeCreated',
-            'transport_type': 'transportType'
+            'transport_type': 'transportType',
+            'time_created': 'timeCreated'
         }
 
+        self._id = None
+        self._database_id = None
+        self._role = None
+        self._lifecycle_state = None
+        self._lifecycle_details = None
+        self._peer_db_system_id = None
+        self._peer_db_home_id = None
+        self._peer_database_id = None
+        self._peer_data_guard_association_id = None
+        self._peer_role = None
         self._apply_lag = None
         self._apply_rate = None
-        self._database_id = None
-        self._id = None
-        self._lifecycle_details = None
-        self._lifecycle_state = None
-        self._peer_data_guard_association_id = None
-        self._peer_database_id = None
-        self._peer_db_home_id = None
-        self._peer_db_system_id = None
-        self._peer_role = None
         self._protection_mode = None
-        self._role = None
-        self._time_created = None
         self._transport_type = None
+        self._time_created = None
+
+    @property
+    def id(self):
+        """
+        **[Required]** Gets the id of this DataGuardAssociation.
+        The `OCID`__ of the Data Guard association.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The id of this DataGuardAssociation.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """
+        Sets the id of this DataGuardAssociation.
+        The `OCID`__ of the Data Guard association.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+
+        :param id: The id of this DataGuardAssociation.
+        :type: str
+        """
+        self._id = id
+
+    @property
+    def database_id(self):
+        """
+        **[Required]** Gets the database_id of this DataGuardAssociation.
+        The `OCID`__ of the reporting database.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The database_id of this DataGuardAssociation.
+        :rtype: str
+        """
+        return self._database_id
+
+    @database_id.setter
+    def database_id(self, database_id):
+        """
+        Sets the database_id of this DataGuardAssociation.
+        The `OCID`__ of the reporting database.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+
+        :param database_id: The database_id of this DataGuardAssociation.
+        :type: str
+        """
+        self._database_id = database_id
+
+    @property
+    def role(self):
+        """
+        **[Required]** Gets the role of this DataGuardAssociation.
+        The role of the reporting database in this Data Guard association.
+
+        Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The role of this DataGuardAssociation.
+        :rtype: str
+        """
+        return self._role
+
+    @role.setter
+    def role(self, role):
+        """
+        Sets the role of this DataGuardAssociation.
+        The role of the reporting database in this Data Guard association.
+
+
+        :param role: The role of this DataGuardAssociation.
+        :type: str
+        """
+        allowed_values = ["PRIMARY", "STANDBY", "DISABLED_STANDBY"]
+        if not value_allowed_none_or_none_sentinel(role, allowed_values):
+            role = 'UNKNOWN_ENUM_VALUE'
+        self._role = role
+
+    @property
+    def lifecycle_state(self):
+        """
+        **[Required]** Gets the lifecycle_state of this DataGuardAssociation.
+        The current state of the Data Guard association.
+
+        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The lifecycle_state of this DataGuardAssociation.
+        :rtype: str
+        """
+        return self._lifecycle_state
+
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
+        """
+        Sets the lifecycle_state of this DataGuardAssociation.
+        The current state of the Data Guard association.
+
+
+        :param lifecycle_state: The lifecycle_state of this DataGuardAssociation.
+        :type: str
+        """
+        allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED"]
+        if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
+        self._lifecycle_state = lifecycle_state
+
+    @property
+    def lifecycle_details(self):
+        """
+        Gets the lifecycle_details of this DataGuardAssociation.
+        Additional information about the current lifecycleState, if available.
+
+
+        :return: The lifecycle_details of this DataGuardAssociation.
+        :rtype: str
+        """
+        return self._lifecycle_details
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, lifecycle_details):
+        """
+        Sets the lifecycle_details of this DataGuardAssociation.
+        Additional information about the current lifecycleState, if available.
+
+
+        :param lifecycle_details: The lifecycle_details of this DataGuardAssociation.
+        :type: str
+        """
+        self._lifecycle_details = lifecycle_details
+
+    @property
+    def peer_db_system_id(self):
+        """
+        **[Required]** Gets the peer_db_system_id of this DataGuardAssociation.
+        The `OCID`__ of the DB system containing the associated
+        peer database.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The peer_db_system_id of this DataGuardAssociation.
+        :rtype: str
+        """
+        return self._peer_db_system_id
+
+    @peer_db_system_id.setter
+    def peer_db_system_id(self, peer_db_system_id):
+        """
+        Sets the peer_db_system_id of this DataGuardAssociation.
+        The `OCID`__ of the DB system containing the associated
+        peer database.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+
+        :param peer_db_system_id: The peer_db_system_id of this DataGuardAssociation.
+        :type: str
+        """
+        self._peer_db_system_id = peer_db_system_id
+
+    @property
+    def peer_db_home_id(self):
+        """
+        Gets the peer_db_home_id of this DataGuardAssociation.
+        The `OCID`__ of the database home containing the associated peer database.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The peer_db_home_id of this DataGuardAssociation.
+        :rtype: str
+        """
+        return self._peer_db_home_id
+
+    @peer_db_home_id.setter
+    def peer_db_home_id(self, peer_db_home_id):
+        """
+        Sets the peer_db_home_id of this DataGuardAssociation.
+        The `OCID`__ of the database home containing the associated peer database.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+
+        :param peer_db_home_id: The peer_db_home_id of this DataGuardAssociation.
+        :type: str
+        """
+        self._peer_db_home_id = peer_db_home_id
+
+    @property
+    def peer_database_id(self):
+        """
+        Gets the peer_database_id of this DataGuardAssociation.
+        The `OCID`__ of the associated peer database.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The peer_database_id of this DataGuardAssociation.
+        :rtype: str
+        """
+        return self._peer_database_id
+
+    @peer_database_id.setter
+    def peer_database_id(self, peer_database_id):
+        """
+        Sets the peer_database_id of this DataGuardAssociation.
+        The `OCID`__ of the associated peer database.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+
+        :param peer_database_id: The peer_database_id of this DataGuardAssociation.
+        :type: str
+        """
+        self._peer_database_id = peer_database_id
+
+    @property
+    def peer_data_guard_association_id(self):
+        """
+        Gets the peer_data_guard_association_id of this DataGuardAssociation.
+        The `OCID`__ of the peer database's Data Guard association.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The peer_data_guard_association_id of this DataGuardAssociation.
+        :rtype: str
+        """
+        return self._peer_data_guard_association_id
+
+    @peer_data_guard_association_id.setter
+    def peer_data_guard_association_id(self, peer_data_guard_association_id):
+        """
+        Sets the peer_data_guard_association_id of this DataGuardAssociation.
+        The `OCID`__ of the peer database's Data Guard association.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+
+        :param peer_data_guard_association_id: The peer_data_guard_association_id of this DataGuardAssociation.
+        :type: str
+        """
+        self._peer_data_guard_association_id = peer_data_guard_association_id
+
+    @property
+    def peer_role(self):
+        """
+        **[Required]** Gets the peer_role of this DataGuardAssociation.
+        The role of the peer database in this Data Guard association.
+
+        Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The peer_role of this DataGuardAssociation.
+        :rtype: str
+        """
+        return self._peer_role
+
+    @peer_role.setter
+    def peer_role(self, peer_role):
+        """
+        Sets the peer_role of this DataGuardAssociation.
+        The role of the peer database in this Data Guard association.
+
+
+        :param peer_role: The peer_role of this DataGuardAssociation.
+        :type: str
+        """
+        allowed_values = ["PRIMARY", "STANDBY", "DISABLED_STANDBY"]
+        if not value_allowed_none_or_none_sentinel(peer_role, allowed_values):
+            peer_role = 'UNKNOWN_ENUM_VALUE'
+        self._peer_role = peer_role
 
     @property
     def apply_lag(self):
@@ -283,260 +555,6 @@ class DataGuardAssociation(object):
         self._apply_rate = apply_rate
 
     @property
-    def database_id(self):
-        """
-        **[Required]** Gets the database_id of this DataGuardAssociation.
-        The `OCID`__ of the reporting database.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-
-
-        :return: The database_id of this DataGuardAssociation.
-        :rtype: str
-        """
-        return self._database_id
-
-    @database_id.setter
-    def database_id(self, database_id):
-        """
-        Sets the database_id of this DataGuardAssociation.
-        The `OCID`__ of the reporting database.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-
-
-        :param database_id: The database_id of this DataGuardAssociation.
-        :type: str
-        """
-        self._database_id = database_id
-
-    @property
-    def id(self):
-        """
-        **[Required]** Gets the id of this DataGuardAssociation.
-        The `OCID`__ of the Data Guard association.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-
-
-        :return: The id of this DataGuardAssociation.
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """
-        Sets the id of this DataGuardAssociation.
-        The `OCID`__ of the Data Guard association.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-
-
-        :param id: The id of this DataGuardAssociation.
-        :type: str
-        """
-        self._id = id
-
-    @property
-    def lifecycle_details(self):
-        """
-        Gets the lifecycle_details of this DataGuardAssociation.
-        Additional information about the current lifecycleState, if available.
-
-
-        :return: The lifecycle_details of this DataGuardAssociation.
-        :rtype: str
-        """
-        return self._lifecycle_details
-
-    @lifecycle_details.setter
-    def lifecycle_details(self, lifecycle_details):
-        """
-        Sets the lifecycle_details of this DataGuardAssociation.
-        Additional information about the current lifecycleState, if available.
-
-
-        :param lifecycle_details: The lifecycle_details of this DataGuardAssociation.
-        :type: str
-        """
-        self._lifecycle_details = lifecycle_details
-
-    @property
-    def lifecycle_state(self):
-        """
-        **[Required]** Gets the lifecycle_state of this DataGuardAssociation.
-        The current state of the Data Guard association.
-
-        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
-        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
-
-
-        :return: The lifecycle_state of this DataGuardAssociation.
-        :rtype: str
-        """
-        return self._lifecycle_state
-
-    @lifecycle_state.setter
-    def lifecycle_state(self, lifecycle_state):
-        """
-        Sets the lifecycle_state of this DataGuardAssociation.
-        The current state of the Data Guard association.
-
-
-        :param lifecycle_state: The lifecycle_state of this DataGuardAssociation.
-        :type: str
-        """
-        allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED"]
-        if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
-            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
-        self._lifecycle_state = lifecycle_state
-
-    @property
-    def peer_data_guard_association_id(self):
-        """
-        Gets the peer_data_guard_association_id of this DataGuardAssociation.
-        The `OCID`__ of the peer database's Data Guard association.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-
-
-        :return: The peer_data_guard_association_id of this DataGuardAssociation.
-        :rtype: str
-        """
-        return self._peer_data_guard_association_id
-
-    @peer_data_guard_association_id.setter
-    def peer_data_guard_association_id(self, peer_data_guard_association_id):
-        """
-        Sets the peer_data_guard_association_id of this DataGuardAssociation.
-        The `OCID`__ of the peer database's Data Guard association.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-
-
-        :param peer_data_guard_association_id: The peer_data_guard_association_id of this DataGuardAssociation.
-        :type: str
-        """
-        self._peer_data_guard_association_id = peer_data_guard_association_id
-
-    @property
-    def peer_database_id(self):
-        """
-        Gets the peer_database_id of this DataGuardAssociation.
-        The `OCID`__ of the associated peer database.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-
-
-        :return: The peer_database_id of this DataGuardAssociation.
-        :rtype: str
-        """
-        return self._peer_database_id
-
-    @peer_database_id.setter
-    def peer_database_id(self, peer_database_id):
-        """
-        Sets the peer_database_id of this DataGuardAssociation.
-        The `OCID`__ of the associated peer database.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-
-
-        :param peer_database_id: The peer_database_id of this DataGuardAssociation.
-        :type: str
-        """
-        self._peer_database_id = peer_database_id
-
-    @property
-    def peer_db_home_id(self):
-        """
-        Gets the peer_db_home_id of this DataGuardAssociation.
-        The `OCID`__ of the database home containing the associated peer database.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-
-
-        :return: The peer_db_home_id of this DataGuardAssociation.
-        :rtype: str
-        """
-        return self._peer_db_home_id
-
-    @peer_db_home_id.setter
-    def peer_db_home_id(self, peer_db_home_id):
-        """
-        Sets the peer_db_home_id of this DataGuardAssociation.
-        The `OCID`__ of the database home containing the associated peer database.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-
-
-        :param peer_db_home_id: The peer_db_home_id of this DataGuardAssociation.
-        :type: str
-        """
-        self._peer_db_home_id = peer_db_home_id
-
-    @property
-    def peer_db_system_id(self):
-        """
-        **[Required]** Gets the peer_db_system_id of this DataGuardAssociation.
-        The `OCID`__ of the DB system containing the associated
-        peer database.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-
-
-        :return: The peer_db_system_id of this DataGuardAssociation.
-        :rtype: str
-        """
-        return self._peer_db_system_id
-
-    @peer_db_system_id.setter
-    def peer_db_system_id(self, peer_db_system_id):
-        """
-        Sets the peer_db_system_id of this DataGuardAssociation.
-        The `OCID`__ of the DB system containing the associated
-        peer database.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-
-
-        :param peer_db_system_id: The peer_db_system_id of this DataGuardAssociation.
-        :type: str
-        """
-        self._peer_db_system_id = peer_db_system_id
-
-    @property
-    def peer_role(self):
-        """
-        **[Required]** Gets the peer_role of this DataGuardAssociation.
-        The role of the peer database in this Data Guard association.
-
-        Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", 'UNKNOWN_ENUM_VALUE'.
-        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
-
-
-        :return: The peer_role of this DataGuardAssociation.
-        :rtype: str
-        """
-        return self._peer_role
-
-    @peer_role.setter
-    def peer_role(self, peer_role):
-        """
-        Sets the peer_role of this DataGuardAssociation.
-        The role of the peer database in this Data Guard association.
-
-
-        :param peer_role: The peer_role of this DataGuardAssociation.
-        :type: str
-        """
-        allowed_values = ["PRIMARY", "STANDBY", "DISABLED_STANDBY"]
-        if not value_allowed_none_or_none_sentinel(peer_role, allowed_values):
-            peer_role = 'UNKNOWN_ENUM_VALUE'
-        self._peer_role = peer_role
-
-    @property
     def protection_mode(self):
         """
         **[Required]** Gets the protection_mode of this DataGuardAssociation.
@@ -575,60 +593,6 @@ class DataGuardAssociation(object):
         self._protection_mode = protection_mode
 
     @property
-    def role(self):
-        """
-        **[Required]** Gets the role of this DataGuardAssociation.
-        The role of the reporting database in this Data Guard association.
-
-        Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", 'UNKNOWN_ENUM_VALUE'.
-        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
-
-
-        :return: The role of this DataGuardAssociation.
-        :rtype: str
-        """
-        return self._role
-
-    @role.setter
-    def role(self, role):
-        """
-        Sets the role of this DataGuardAssociation.
-        The role of the reporting database in this Data Guard association.
-
-
-        :param role: The role of this DataGuardAssociation.
-        :type: str
-        """
-        allowed_values = ["PRIMARY", "STANDBY", "DISABLED_STANDBY"]
-        if not value_allowed_none_or_none_sentinel(role, allowed_values):
-            role = 'UNKNOWN_ENUM_VALUE'
-        self._role = role
-
-    @property
-    def time_created(self):
-        """
-        Gets the time_created of this DataGuardAssociation.
-        The date and time the Data Guard Association was created.
-
-
-        :return: The time_created of this DataGuardAssociation.
-        :rtype: datetime
-        """
-        return self._time_created
-
-    @time_created.setter
-    def time_created(self, time_created):
-        """
-        Sets the time_created of this DataGuardAssociation.
-        The date and time the Data Guard Association was created.
-
-
-        :param time_created: The time_created of this DataGuardAssociation.
-        :type: datetime
-        """
-        self._time_created = time_created
-
-    @property
     def transport_type(self):
         """
         Gets the transport_type of this DataGuardAssociation.
@@ -665,6 +629,30 @@ class DataGuardAssociation(object):
         if not value_allowed_none_or_none_sentinel(transport_type, allowed_values):
             transport_type = 'UNKNOWN_ENUM_VALUE'
         self._transport_type = transport_type
+
+    @property
+    def time_created(self):
+        """
+        Gets the time_created of this DataGuardAssociation.
+        The date and time the Data Guard association was created.
+
+
+        :return: The time_created of this DataGuardAssociation.
+        :rtype: datetime
+        """
+        return self._time_created
+
+    @time_created.setter
+    def time_created(self, time_created):
+        """
+        Sets the time_created of this DataGuardAssociation.
+        The date and time the Data Guard association was created.
+
+
+        :param time_created: The time_created of this DataGuardAssociation.
+        :type: datetime
+        """
+        self._time_created = time_created
 
     def __repr__(self):
         return formatted_flat_dict(self)

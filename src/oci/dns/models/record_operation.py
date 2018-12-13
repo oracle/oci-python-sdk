@@ -179,7 +179,11 @@ class RecordOperation(object):
         """
         Gets the rdata of this RecordOperation.
         The record's data, as whitespace-delimited tokens in
-        type-specific presentation format.
+        type-specific presentation format. All RDATA is normalized and the
+        returned presentation of your RDATA may differ from its initial input.
+        For more information about RDATA, see `Supported DNS Resource Record Types`__
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/DNS/Reference/supporteddnsresource.htm
 
 
         :return: The rdata of this RecordOperation.
@@ -192,7 +196,11 @@ class RecordOperation(object):
         """
         Sets the rdata of this RecordOperation.
         The record's data, as whitespace-delimited tokens in
-        type-specific presentation format.
+        type-specific presentation format. All RDATA is normalized and the
+        returned presentation of your RDATA may differ from its initial input.
+        For more information about RDATA, see `Supported DNS Resource Record Types`__
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/DNS/Reference/supporteddnsresource.htm
 
 
         :param rdata: The rdata of this RecordOperation.

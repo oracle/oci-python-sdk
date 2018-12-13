@@ -17,21 +17,13 @@ class BackupSummary(object):
     __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
     """
 
-    #: A constant which can be used with the database_edition property of a BackupSummary.
-    #: This constant has a value of "STANDARD_EDITION"
-    DATABASE_EDITION_STANDARD_EDITION = "STANDARD_EDITION"
+    #: A constant which can be used with the type property of a BackupSummary.
+    #: This constant has a value of "INCREMENTAL"
+    TYPE_INCREMENTAL = "INCREMENTAL"
 
-    #: A constant which can be used with the database_edition property of a BackupSummary.
-    #: This constant has a value of "ENTERPRISE_EDITION"
-    DATABASE_EDITION_ENTERPRISE_EDITION = "ENTERPRISE_EDITION"
-
-    #: A constant which can be used with the database_edition property of a BackupSummary.
-    #: This constant has a value of "ENTERPRISE_EDITION_HIGH_PERFORMANCE"
-    DATABASE_EDITION_ENTERPRISE_EDITION_HIGH_PERFORMANCE = "ENTERPRISE_EDITION_HIGH_PERFORMANCE"
-
-    #: A constant which can be used with the database_edition property of a BackupSummary.
-    #: This constant has a value of "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
-    DATABASE_EDITION_ENTERPRISE_EDITION_EXTREME_PERFORMANCE = "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
+    #: A constant which can be used with the type property of a BackupSummary.
+    #: This constant has a value of "FULL"
+    TYPE_FULL = "FULL"
 
     #: A constant which can be used with the lifecycle_state property of a BackupSummary.
     #: This constant has a value of "CREATING"
@@ -57,66 +49,42 @@ class BackupSummary(object):
     #: This constant has a value of "RESTORING"
     LIFECYCLE_STATE_RESTORING = "RESTORING"
 
-    #: A constant which can be used with the type property of a BackupSummary.
-    #: This constant has a value of "INCREMENTAL"
-    TYPE_INCREMENTAL = "INCREMENTAL"
+    #: A constant which can be used with the database_edition property of a BackupSummary.
+    #: This constant has a value of "STANDARD_EDITION"
+    DATABASE_EDITION_STANDARD_EDITION = "STANDARD_EDITION"
 
-    #: A constant which can be used with the type property of a BackupSummary.
-    #: This constant has a value of "FULL"
-    TYPE_FULL = "FULL"
+    #: A constant which can be used with the database_edition property of a BackupSummary.
+    #: This constant has a value of "ENTERPRISE_EDITION"
+    DATABASE_EDITION_ENTERPRISE_EDITION = "ENTERPRISE_EDITION"
+
+    #: A constant which can be used with the database_edition property of a BackupSummary.
+    #: This constant has a value of "ENTERPRISE_EDITION_HIGH_PERFORMANCE"
+    DATABASE_EDITION_ENTERPRISE_EDITION_HIGH_PERFORMANCE = "ENTERPRISE_EDITION_HIGH_PERFORMANCE"
+
+    #: A constant which can be used with the database_edition property of a BackupSummary.
+    #: This constant has a value of "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
+    DATABASE_EDITION_ENTERPRISE_EDITION_EXTREME_PERFORMANCE = "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
 
     def __init__(self, **kwargs):
         """
         Initializes a new BackupSummary object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param availability_domain:
-            The value to assign to the availability_domain property of this BackupSummary.
-        :type availability_domain: str
+        :param id:
+            The value to assign to the id property of this BackupSummary.
+        :type id: str
 
         :param compartment_id:
             The value to assign to the compartment_id property of this BackupSummary.
         :type compartment_id: str
 
-        :param database_edition:
-            The value to assign to the database_edition property of this BackupSummary.
-            Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE", 'UNKNOWN_ENUM_VALUE'.
-            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
-        :type database_edition: str
-
         :param database_id:
             The value to assign to the database_id property of this BackupSummary.
         :type database_id: str
 
-        :param database_size_in_gbs:
-            The value to assign to the database_size_in_gbs property of this BackupSummary.
-        :type database_size_in_gbs: float
-
         :param display_name:
             The value to assign to the display_name property of this BackupSummary.
         :type display_name: str
-
-        :param id:
-            The value to assign to the id property of this BackupSummary.
-        :type id: str
-
-        :param lifecycle_details:
-            The value to assign to the lifecycle_details property of this BackupSummary.
-        :type lifecycle_details: str
-
-        :param lifecycle_state:
-            The value to assign to the lifecycle_state property of this BackupSummary.
-            Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "RESTORING", 'UNKNOWN_ENUM_VALUE'.
-            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
-        :type lifecycle_state: str
-
-        :param time_ended:
-            The value to assign to the time_ended property of this BackupSummary.
-        :type time_ended: datetime
-
-        :param time_started:
-            The value to assign to the time_started property of this BackupSummary.
-        :type time_started: datetime
 
         :param type:
             The value to assign to the type property of this BackupSummary.
@@ -124,207 +92,81 @@ class BackupSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
+        :param time_started:
+            The value to assign to the time_started property of this BackupSummary.
+        :type time_started: datetime
+
+        :param time_ended:
+            The value to assign to the time_ended property of this BackupSummary.
+        :type time_ended: datetime
+
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this BackupSummary.
+        :type lifecycle_details: str
+
+        :param availability_domain:
+            The value to assign to the availability_domain property of this BackupSummary.
+        :type availability_domain: str
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this BackupSummary.
+            Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "RESTORING", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        :param database_edition:
+            The value to assign to the database_edition property of this BackupSummary.
+            Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type database_edition: str
+
+        :param database_size_in_gbs:
+            The value to assign to the database_size_in_gbs property of this BackupSummary.
+        :type database_size_in_gbs: float
+
         """
         self.swagger_types = {
-            'availability_domain': 'str',
-            'compartment_id': 'str',
-            'database_edition': 'str',
-            'database_id': 'str',
-            'database_size_in_gbs': 'float',
-            'display_name': 'str',
             'id': 'str',
-            'lifecycle_details': 'str',
-            'lifecycle_state': 'str',
-            'time_ended': 'datetime',
+            'compartment_id': 'str',
+            'database_id': 'str',
+            'display_name': 'str',
+            'type': 'str',
             'time_started': 'datetime',
-            'type': 'str'
+            'time_ended': 'datetime',
+            'lifecycle_details': 'str',
+            'availability_domain': 'str',
+            'lifecycle_state': 'str',
+            'database_edition': 'str',
+            'database_size_in_gbs': 'float'
         }
 
         self.attribute_map = {
-            'availability_domain': 'availabilityDomain',
-            'compartment_id': 'compartmentId',
-            'database_edition': 'databaseEdition',
-            'database_id': 'databaseId',
-            'database_size_in_gbs': 'databaseSizeInGBs',
-            'display_name': 'displayName',
             'id': 'id',
-            'lifecycle_details': 'lifecycleDetails',
-            'lifecycle_state': 'lifecycleState',
-            'time_ended': 'timeEnded',
+            'compartment_id': 'compartmentId',
+            'database_id': 'databaseId',
+            'display_name': 'displayName',
+            'type': 'type',
             'time_started': 'timeStarted',
-            'type': 'type'
+            'time_ended': 'timeEnded',
+            'lifecycle_details': 'lifecycleDetails',
+            'availability_domain': 'availabilityDomain',
+            'lifecycle_state': 'lifecycleState',
+            'database_edition': 'databaseEdition',
+            'database_size_in_gbs': 'databaseSizeInGBs'
         }
 
-        self._availability_domain = None
-        self._compartment_id = None
-        self._database_edition = None
-        self._database_id = None
-        self._database_size_in_gbs = None
-        self._display_name = None
         self._id = None
-        self._lifecycle_details = None
-        self._lifecycle_state = None
-        self._time_ended = None
-        self._time_started = None
+        self._compartment_id = None
+        self._database_id = None
+        self._display_name = None
         self._type = None
-
-    @property
-    def availability_domain(self):
-        """
-        Gets the availability_domain of this BackupSummary.
-        The name of the availability domain where the database backup is stored.
-
-
-        :return: The availability_domain of this BackupSummary.
-        :rtype: str
-        """
-        return self._availability_domain
-
-    @availability_domain.setter
-    def availability_domain(self, availability_domain):
-        """
-        Sets the availability_domain of this BackupSummary.
-        The name of the availability domain where the database backup is stored.
-
-
-        :param availability_domain: The availability_domain of this BackupSummary.
-        :type: str
-        """
-        self._availability_domain = availability_domain
-
-    @property
-    def compartment_id(self):
-        """
-        Gets the compartment_id of this BackupSummary.
-        The `OCID`__ of the compartment.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-
-
-        :return: The compartment_id of this BackupSummary.
-        :rtype: str
-        """
-        return self._compartment_id
-
-    @compartment_id.setter
-    def compartment_id(self, compartment_id):
-        """
-        Sets the compartment_id of this BackupSummary.
-        The `OCID`__ of the compartment.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-
-
-        :param compartment_id: The compartment_id of this BackupSummary.
-        :type: str
-        """
-        self._compartment_id = compartment_id
-
-    @property
-    def database_edition(self):
-        """
-        Gets the database_edition of this BackupSummary.
-        The Oracle Database edition of the DB system from which the database backup was taken.
-
-        Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE", 'UNKNOWN_ENUM_VALUE'.
-        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
-
-
-        :return: The database_edition of this BackupSummary.
-        :rtype: str
-        """
-        return self._database_edition
-
-    @database_edition.setter
-    def database_edition(self, database_edition):
-        """
-        Sets the database_edition of this BackupSummary.
-        The Oracle Database edition of the DB system from which the database backup was taken.
-
-
-        :param database_edition: The database_edition of this BackupSummary.
-        :type: str
-        """
-        allowed_values = ["STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"]
-        if not value_allowed_none_or_none_sentinel(database_edition, allowed_values):
-            database_edition = 'UNKNOWN_ENUM_VALUE'
-        self._database_edition = database_edition
-
-    @property
-    def database_id(self):
-        """
-        Gets the database_id of this BackupSummary.
-        The `OCID`__ of the database.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-
-
-        :return: The database_id of this BackupSummary.
-        :rtype: str
-        """
-        return self._database_id
-
-    @database_id.setter
-    def database_id(self, database_id):
-        """
-        Sets the database_id of this BackupSummary.
-        The `OCID`__ of the database.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-
-
-        :param database_id: The database_id of this BackupSummary.
-        :type: str
-        """
-        self._database_id = database_id
-
-    @property
-    def database_size_in_gbs(self):
-        """
-        Gets the database_size_in_gbs of this BackupSummary.
-        The size of the database in gigabytes at the time the backup was taken.
-
-
-        :return: The database_size_in_gbs of this BackupSummary.
-        :rtype: float
-        """
-        return self._database_size_in_gbs
-
-    @database_size_in_gbs.setter
-    def database_size_in_gbs(self, database_size_in_gbs):
-        """
-        Sets the database_size_in_gbs of this BackupSummary.
-        The size of the database in gigabytes at the time the backup was taken.
-
-
-        :param database_size_in_gbs: The database_size_in_gbs of this BackupSummary.
-        :type: float
-        """
-        self._database_size_in_gbs = database_size_in_gbs
-
-    @property
-    def display_name(self):
-        """
-        Gets the display_name of this BackupSummary.
-        The user-friendly name for the backup. The name does not have to be unique.
-
-
-        :return: The display_name of this BackupSummary.
-        :rtype: str
-        """
-        return self._display_name
-
-    @display_name.setter
-    def display_name(self, display_name):
-        """
-        Sets the display_name of this BackupSummary.
-        The user-friendly name for the backup. The name does not have to be unique.
-
-
-        :param display_name: The display_name of this BackupSummary.
-        :type: str
-        """
-        self._display_name = display_name
+        self._time_started = None
+        self._time_ended = None
+        self._lifecycle_details = None
+        self._availability_domain = None
+        self._lifecycle_state = None
+        self._database_edition = None
+        self._database_size_in_gbs = None
 
     @property
     def id(self):
@@ -355,6 +197,164 @@ class BackupSummary(object):
         self._id = id
 
     @property
+    def compartment_id(self):
+        """
+        Gets the compartment_id of this BackupSummary.
+        The `OCID`__ of the compartment.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The compartment_id of this BackupSummary.
+        :rtype: str
+        """
+        return self._compartment_id
+
+    @compartment_id.setter
+    def compartment_id(self, compartment_id):
+        """
+        Sets the compartment_id of this BackupSummary.
+        The `OCID`__ of the compartment.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+
+        :param compartment_id: The compartment_id of this BackupSummary.
+        :type: str
+        """
+        self._compartment_id = compartment_id
+
+    @property
+    def database_id(self):
+        """
+        Gets the database_id of this BackupSummary.
+        The `OCID`__ of the database.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The database_id of this BackupSummary.
+        :rtype: str
+        """
+        return self._database_id
+
+    @database_id.setter
+    def database_id(self, database_id):
+        """
+        Sets the database_id of this BackupSummary.
+        The `OCID`__ of the database.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+
+        :param database_id: The database_id of this BackupSummary.
+        :type: str
+        """
+        self._database_id = database_id
+
+    @property
+    def display_name(self):
+        """
+        Gets the display_name of this BackupSummary.
+        The user-friendly name for the backup. The name does not have to be unique.
+
+
+        :return: The display_name of this BackupSummary.
+        :rtype: str
+        """
+        return self._display_name
+
+    @display_name.setter
+    def display_name(self, display_name):
+        """
+        Sets the display_name of this BackupSummary.
+        The user-friendly name for the backup. The name does not have to be unique.
+
+
+        :param display_name: The display_name of this BackupSummary.
+        :type: str
+        """
+        self._display_name = display_name
+
+    @property
+    def type(self):
+        """
+        Gets the type of this BackupSummary.
+        The type of backup.
+
+        Allowed values for this property are: "INCREMENTAL", "FULL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The type of this BackupSummary.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """
+        Sets the type of this BackupSummary.
+        The type of backup.
+
+
+        :param type: The type of this BackupSummary.
+        :type: str
+        """
+        allowed_values = ["INCREMENTAL", "FULL"]
+        if not value_allowed_none_or_none_sentinel(type, allowed_values):
+            type = 'UNKNOWN_ENUM_VALUE'
+        self._type = type
+
+    @property
+    def time_started(self):
+        """
+        Gets the time_started of this BackupSummary.
+        The date and time the backup started.
+
+
+        :return: The time_started of this BackupSummary.
+        :rtype: datetime
+        """
+        return self._time_started
+
+    @time_started.setter
+    def time_started(self, time_started):
+        """
+        Sets the time_started of this BackupSummary.
+        The date and time the backup started.
+
+
+        :param time_started: The time_started of this BackupSummary.
+        :type: datetime
+        """
+        self._time_started = time_started
+
+    @property
+    def time_ended(self):
+        """
+        Gets the time_ended of this BackupSummary.
+        The date and time the backup was completed.
+
+
+        :return: The time_ended of this BackupSummary.
+        :rtype: datetime
+        """
+        return self._time_ended
+
+    @time_ended.setter
+    def time_ended(self, time_ended):
+        """
+        Sets the time_ended of this BackupSummary.
+        The date and time the backup was completed.
+
+
+        :param time_ended: The time_ended of this BackupSummary.
+        :type: datetime
+        """
+        self._time_ended = time_ended
+
+    @property
     def lifecycle_details(self):
         """
         Gets the lifecycle_details of this BackupSummary.
@@ -377,6 +377,30 @@ class BackupSummary(object):
         :type: str
         """
         self._lifecycle_details = lifecycle_details
+
+    @property
+    def availability_domain(self):
+        """
+        Gets the availability_domain of this BackupSummary.
+        The name of the availability domain where the database backup is stored.
+
+
+        :return: The availability_domain of this BackupSummary.
+        :rtype: str
+        """
+        return self._availability_domain
+
+    @availability_domain.setter
+    def availability_domain(self, availability_domain):
+        """
+        Sets the availability_domain of this BackupSummary.
+        The name of the availability domain where the database backup is stored.
+
+
+        :param availability_domain: The availability_domain of this BackupSummary.
+        :type: str
+        """
+        self._availability_domain = availability_domain
 
     @property
     def lifecycle_state(self):
@@ -409,82 +433,58 @@ class BackupSummary(object):
         self._lifecycle_state = lifecycle_state
 
     @property
-    def time_ended(self):
+    def database_edition(self):
         """
-        Gets the time_ended of this BackupSummary.
-        The date and time the backup was completed.
+        Gets the database_edition of this BackupSummary.
+        The Oracle Database edition of the DB system from which the database backup was taken.
 
-
-        :return: The time_ended of this BackupSummary.
-        :rtype: datetime
-        """
-        return self._time_ended
-
-    @time_ended.setter
-    def time_ended(self, time_ended):
-        """
-        Sets the time_ended of this BackupSummary.
-        The date and time the backup was completed.
-
-
-        :param time_ended: The time_ended of this BackupSummary.
-        :type: datetime
-        """
-        self._time_ended = time_ended
-
-    @property
-    def time_started(self):
-        """
-        Gets the time_started of this BackupSummary.
-        The date and time the backup started.
-
-
-        :return: The time_started of this BackupSummary.
-        :rtype: datetime
-        """
-        return self._time_started
-
-    @time_started.setter
-    def time_started(self, time_started):
-        """
-        Sets the time_started of this BackupSummary.
-        The date and time the backup started.
-
-
-        :param time_started: The time_started of this BackupSummary.
-        :type: datetime
-        """
-        self._time_started = time_started
-
-    @property
-    def type(self):
-        """
-        Gets the type of this BackupSummary.
-        The type of backup.
-
-        Allowed values for this property are: "INCREMENTAL", "FULL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
-        :return: The type of this BackupSummary.
+        :return: The database_edition of this BackupSummary.
         :rtype: str
         """
-        return self._type
+        return self._database_edition
 
-    @type.setter
-    def type(self, type):
+    @database_edition.setter
+    def database_edition(self, database_edition):
         """
-        Sets the type of this BackupSummary.
-        The type of backup.
+        Sets the database_edition of this BackupSummary.
+        The Oracle Database edition of the DB system from which the database backup was taken.
 
 
-        :param type: The type of this BackupSummary.
+        :param database_edition: The database_edition of this BackupSummary.
         :type: str
         """
-        allowed_values = ["INCREMENTAL", "FULL"]
-        if not value_allowed_none_or_none_sentinel(type, allowed_values):
-            type = 'UNKNOWN_ENUM_VALUE'
-        self._type = type
+        allowed_values = ["STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"]
+        if not value_allowed_none_or_none_sentinel(database_edition, allowed_values):
+            database_edition = 'UNKNOWN_ENUM_VALUE'
+        self._database_edition = database_edition
+
+    @property
+    def database_size_in_gbs(self):
+        """
+        Gets the database_size_in_gbs of this BackupSummary.
+        The size of the database in gigabytes at the time the backup was taken.
+
+
+        :return: The database_size_in_gbs of this BackupSummary.
+        :rtype: float
+        """
+        return self._database_size_in_gbs
+
+    @database_size_in_gbs.setter
+    def database_size_in_gbs(self, database_size_in_gbs):
+        """
+        Sets the database_size_in_gbs of this BackupSummary.
+        The size of the database in gigabytes at the time the backup was taken.
+
+
+        :param database_size_in_gbs: The database_size_in_gbs of this BackupSummary.
+        :type: float
+        """
+        self._database_size_in_gbs = database_size_in_gbs
 
     def __repr__(self):
         return formatted_flat_dict(self)

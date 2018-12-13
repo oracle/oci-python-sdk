@@ -59,6 +59,10 @@ class ParavirtualizedVolumeAttachment(VolumeAttachment):
             The value to assign to the volume_id property of this ParavirtualizedVolumeAttachment.
         :type volume_id: str
 
+        :param is_pv_encryption_in_transit_enabled:
+            The value to assign to the is_pv_encryption_in_transit_enabled property of this ParavirtualizedVolumeAttachment.
+        :type is_pv_encryption_in_transit_enabled: bool
+
         """
         self.swagger_types = {
             'attachment_type': 'str',
@@ -70,7 +74,8 @@ class ParavirtualizedVolumeAttachment(VolumeAttachment):
             'is_read_only': 'bool',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
-            'volume_id': 'str'
+            'volume_id': 'str',
+            'is_pv_encryption_in_transit_enabled': 'bool'
         }
 
         self.attribute_map = {
@@ -83,7 +88,8 @@ class ParavirtualizedVolumeAttachment(VolumeAttachment):
             'is_read_only': 'isReadOnly',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
-            'volume_id': 'volumeId'
+            'volume_id': 'volumeId',
+            'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled'
         }
 
         self._attachment_type = None
@@ -96,6 +102,7 @@ class ParavirtualizedVolumeAttachment(VolumeAttachment):
         self._lifecycle_state = None
         self._time_created = None
         self._volume_id = None
+        self._is_pv_encryption_in_transit_enabled = None
         self._attachment_type = 'paravirtualized'
 
     def __repr__(self):

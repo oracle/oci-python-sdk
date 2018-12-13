@@ -27,28 +27,56 @@ class PatchDetails(object):
         Initializes a new PatchDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param patch_id:
+            The value to assign to the patch_id property of this PatchDetails.
+        :type patch_id: str
+
         :param action:
             The value to assign to the action property of this PatchDetails.
             Allowed values for this property are: "APPLY", "PRECHECK"
         :type action: str
 
-        :param patch_id:
-            The value to assign to the patch_id property of this PatchDetails.
-        :type patch_id: str
-
         """
         self.swagger_types = {
-            'action': 'str',
-            'patch_id': 'str'
+            'patch_id': 'str',
+            'action': 'str'
         }
 
         self.attribute_map = {
-            'action': 'action',
-            'patch_id': 'patchId'
+            'patch_id': 'patchId',
+            'action': 'action'
         }
 
-        self._action = None
         self._patch_id = None
+        self._action = None
+
+    @property
+    def patch_id(self):
+        """
+        Gets the patch_id of this PatchDetails.
+        The `OCID`__ of the patch.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The patch_id of this PatchDetails.
+        :rtype: str
+        """
+        return self._patch_id
+
+    @patch_id.setter
+    def patch_id(self, patch_id):
+        """
+        Sets the patch_id of this PatchDetails.
+        The `OCID`__ of the patch.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+
+        :param patch_id: The patch_id of this PatchDetails.
+        :type: str
+        """
+        self._patch_id = patch_id
 
     @property
     def action(self):
@@ -81,34 +109,6 @@ class PatchDetails(object):
                 .format(allowed_values)
             )
         self._action = action
-
-    @property
-    def patch_id(self):
-        """
-        Gets the patch_id of this PatchDetails.
-        The `OCID`__ of the patch.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-
-
-        :return: The patch_id of this PatchDetails.
-        :rtype: str
-        """
-        return self._patch_id
-
-    @patch_id.setter
-    def patch_id(self, patch_id):
-        """
-        Sets the patch_id of this PatchDetails.
-        The `OCID`__ of the patch.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-
-
-        :param patch_id: The patch_id of this PatchDetails.
-        :type: str
-        """
-        self._patch_id = patch_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

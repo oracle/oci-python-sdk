@@ -3896,6 +3896,89 @@ class IdentityClient(object):
                 header_params=header_params,
                 response_type="list[Group]")
 
+    def list_identity_provider_groups(self, identity_provider_id, **kwargs):
+        """
+        Gets the identity provider groups.
+        Lists the identity provider groups.
+
+
+        :param str identity_provider_id: (required)
+            The OCID of the identity provider.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.IdentityProviderGroupSummary`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/identityProviders/{identityProviderId}/groups/"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_identity_provider_groups got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "identityProviderId": identity_provider_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[IdentityProviderGroupSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[IdentityProviderGroupSummary]")
+
     def list_identity_providers(self, protocol, compartment_id, **kwargs):
         """
         ListIdentityProviders
@@ -4658,6 +4741,12 @@ class IdentityClient(object):
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
 
+        :param str identity_provider_id: (optional)
+            The id of the identity provider.
+
+        :param str external_identifier: (optional)
+            The id of a user in the identity provider.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -4676,7 +4765,9 @@ class IdentityClient(object):
         expected_kwargs = [
             "retry_strategy",
             "page",
-            "limit"
+            "limit",
+            "identity_provider_id",
+            "external_identifier"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
         if extra_kwargs:
@@ -4686,7 +4777,9 @@ class IdentityClient(object):
         query_params = {
             "compartmentId": compartment_id,
             "page": kwargs.get("page", missing),
-            "limit": kwargs.get("limit", missing)
+            "limit": kwargs.get("limit", missing),
+            "identityProviderId": kwargs.get("identity_provider_id", missing),
+            "externalIdentifier": kwargs.get("external_identifier", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -4864,6 +4957,70 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params)
+
+    def reset_idp_scim_client(self, identity_provider_id, **kwargs):
+        """
+        ResetIdpScimClient
+        Resets the OAuth2 client credentials for the SCIM client associated with this identity provider.
+
+
+        :param str identity_provider_id: (required)
+            The OCID of the identity provider.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.ScimClientCredentials`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/identityProviders/{identityProviderId}/actions/resetScimClient/"
+        method = "POST"
+
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "reset_idp_scim_client got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "identityProviderId": identity_provider_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ScimClientCredentials")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ScimClientCredentials")
 
     def update_auth_token(self, user_id, auth_token_id, update_auth_token_details, **kwargs):
         """
@@ -5919,6 +6076,86 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_user_details,
+                response_type="User")
+
+    def update_user_capabilities(self, user_id, update_user_capabilities_details, **kwargs):
+        """
+        UpdateUserCapabilities
+        Updates the capabilities of the specified user.
+
+
+        :param str user_id: (required)
+            The OCID of the user.
+
+        :param UpdateUserCapabilitiesDetails update_user_capabilities_details: (required)
+            Request object for updating user capabilities.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.User`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/users/{userId}/capabilities/"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_user_capabilities got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "userId": user_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_user_capabilities_details,
+                response_type="User")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_user_capabilities_details,
                 response_type="User")
 
     def update_user_state(self, user_id, update_state_details, **kwargs):

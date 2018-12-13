@@ -507,7 +507,11 @@ class LocalPeeringGateway(object):
     def route_table_id(self):
         """
         Gets the route_table_id of this LocalPeeringGateway.
-        The OCID of the route table the LPG is using.
+        The OCID of the route table the LPG is using. For information about why you
+        would associate a route table with an LPG, see
+        `Advanced Scenario: Transit Routing`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/transitrouting.htm
 
 
         :return: The route_table_id of this LocalPeeringGateway.
@@ -519,7 +523,11 @@ class LocalPeeringGateway(object):
     def route_table_id(self, route_table_id):
         """
         Sets the route_table_id of this LocalPeeringGateway.
-        The OCID of the route table the LPG is using.
+        The OCID of the route table the LPG is using. For information about why you
+        would associate a route table with an LPG, see
+        `Advanced Scenario: Transit Routing`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/transitrouting.htm
 
 
         :param route_table_id: The route_table_id of this LocalPeeringGateway.

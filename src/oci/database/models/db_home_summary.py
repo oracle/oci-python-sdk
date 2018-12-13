@@ -52,25 +52,17 @@ class DbHomeSummary(object):
         Initializes a new DbHomeSummary object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param id:
+            The value to assign to the id property of this DbHomeSummary.
+        :type id: str
+
         :param compartment_id:
             The value to assign to the compartment_id property of this DbHomeSummary.
         :type compartment_id: str
 
-        :param db_system_id:
-            The value to assign to the db_system_id property of this DbHomeSummary.
-        :type db_system_id: str
-
-        :param db_version:
-            The value to assign to the db_version property of this DbHomeSummary.
-        :type db_version: str
-
         :param display_name:
             The value to assign to the display_name property of this DbHomeSummary.
         :type display_name: str
-
-        :param id:
-            The value to assign to the id property of this DbHomeSummary.
-        :type id: str
 
         :param last_patch_history_entry_id:
             The value to assign to the last_patch_history_entry_id property of this DbHomeSummary.
@@ -82,41 +74,77 @@ class DbHomeSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param db_system_id:
+            The value to assign to the db_system_id property of this DbHomeSummary.
+        :type db_system_id: str
+
+        :param db_version:
+            The value to assign to the db_version property of this DbHomeSummary.
+        :type db_version: str
+
         :param time_created:
             The value to assign to the time_created property of this DbHomeSummary.
         :type time_created: datetime
 
         """
         self.swagger_types = {
-            'compartment_id': 'str',
-            'db_system_id': 'str',
-            'db_version': 'str',
-            'display_name': 'str',
             'id': 'str',
+            'compartment_id': 'str',
+            'display_name': 'str',
             'last_patch_history_entry_id': 'str',
             'lifecycle_state': 'str',
+            'db_system_id': 'str',
+            'db_version': 'str',
             'time_created': 'datetime'
         }
 
         self.attribute_map = {
-            'compartment_id': 'compartmentId',
-            'db_system_id': 'dbSystemId',
-            'db_version': 'dbVersion',
-            'display_name': 'displayName',
             'id': 'id',
+            'compartment_id': 'compartmentId',
+            'display_name': 'displayName',
             'last_patch_history_entry_id': 'lastPatchHistoryEntryId',
             'lifecycle_state': 'lifecycleState',
+            'db_system_id': 'dbSystemId',
+            'db_version': 'dbVersion',
             'time_created': 'timeCreated'
         }
 
-        self._compartment_id = None
-        self._db_system_id = None
-        self._db_version = None
-        self._display_name = None
         self._id = None
+        self._compartment_id = None
+        self._display_name = None
         self._last_patch_history_entry_id = None
         self._lifecycle_state = None
+        self._db_system_id = None
+        self._db_version = None
         self._time_created = None
+
+    @property
+    def id(self):
+        """
+        **[Required]** Gets the id of this DbHomeSummary.
+        The `OCID`__ of the database home.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The id of this DbHomeSummary.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """
+        Sets the id of this DbHomeSummary.
+        The `OCID`__ of the database home.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+
+        :param id: The id of this DbHomeSummary.
+        :type: str
+        """
+        self._id = id
 
     @property
     def compartment_id(self):
@@ -147,58 +175,6 @@ class DbHomeSummary(object):
         self._compartment_id = compartment_id
 
     @property
-    def db_system_id(self):
-        """
-        Gets the db_system_id of this DbHomeSummary.
-        The `OCID`__ of the DB system.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-
-
-        :return: The db_system_id of this DbHomeSummary.
-        :rtype: str
-        """
-        return self._db_system_id
-
-    @db_system_id.setter
-    def db_system_id(self, db_system_id):
-        """
-        Sets the db_system_id of this DbHomeSummary.
-        The `OCID`__ of the DB system.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-
-
-        :param db_system_id: The db_system_id of this DbHomeSummary.
-        :type: str
-        """
-        self._db_system_id = db_system_id
-
-    @property
-    def db_version(self):
-        """
-        **[Required]** Gets the db_version of this DbHomeSummary.
-        The Oracle Database version.
-
-
-        :return: The db_version of this DbHomeSummary.
-        :rtype: str
-        """
-        return self._db_version
-
-    @db_version.setter
-    def db_version(self, db_version):
-        """
-        Sets the db_version of this DbHomeSummary.
-        The Oracle Database version.
-
-
-        :param db_version: The db_version of this DbHomeSummary.
-        :type: str
-        """
-        self._db_version = db_version
-
-    @property
     def display_name(self):
         """
         **[Required]** Gets the display_name of this DbHomeSummary.
@@ -221,34 +197,6 @@ class DbHomeSummary(object):
         :type: str
         """
         self._display_name = display_name
-
-    @property
-    def id(self):
-        """
-        **[Required]** Gets the id of this DbHomeSummary.
-        The `OCID`__ of the database home.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-
-
-        :return: The id of this DbHomeSummary.
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """
-        Sets the id of this DbHomeSummary.
-        The `OCID`__ of the database home.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-
-
-        :param id: The id of this DbHomeSummary.
-        :type: str
-        """
-        self._id = id
 
     @property
     def last_patch_history_entry_id(self):
@@ -307,6 +255,58 @@ class DbHomeSummary(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def db_system_id(self):
+        """
+        Gets the db_system_id of this DbHomeSummary.
+        The `OCID`__ of the DB system.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The db_system_id of this DbHomeSummary.
+        :rtype: str
+        """
+        return self._db_system_id
+
+    @db_system_id.setter
+    def db_system_id(self, db_system_id):
+        """
+        Sets the db_system_id of this DbHomeSummary.
+        The `OCID`__ of the DB system.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+
+
+        :param db_system_id: The db_system_id of this DbHomeSummary.
+        :type: str
+        """
+        self._db_system_id = db_system_id
+
+    @property
+    def db_version(self):
+        """
+        **[Required]** Gets the db_version of this DbHomeSummary.
+        The Oracle Database version.
+
+
+        :return: The db_version of this DbHomeSummary.
+        :rtype: str
+        """
+        return self._db_version
+
+    @db_version.setter
+    def db_version(self, db_version):
+        """
+        Sets the db_version of this DbHomeSummary.
+        The Oracle Database version.
+
+
+        :param db_version: The db_version of this DbHomeSummary.
+        :type: str
+        """
+        self._db_version = db_version
 
     @property
     def time_created(self):

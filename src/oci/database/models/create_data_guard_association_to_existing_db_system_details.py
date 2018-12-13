@@ -18,10 +18,6 @@ class CreateDataGuardAssociationToExistingDbSystemDetails(CreateDataGuardAssocia
         of this class is ``ExistingDbSystem`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param creation_type:
-            The value to assign to the creation_type property of this CreateDataGuardAssociationToExistingDbSystemDetails.
-        :type creation_type: str
-
         :param database_admin_password:
             The value to assign to the database_admin_password property of this CreateDataGuardAssociationToExistingDbSystemDetails.
         :type database_admin_password: str
@@ -36,31 +32,35 @@ class CreateDataGuardAssociationToExistingDbSystemDetails(CreateDataGuardAssocia
             Allowed values for this property are: "SYNC", "ASYNC", "FASTSYNC"
         :type transport_type: str
 
+        :param creation_type:
+            The value to assign to the creation_type property of this CreateDataGuardAssociationToExistingDbSystemDetails.
+        :type creation_type: str
+
         :param peer_db_system_id:
             The value to assign to the peer_db_system_id property of this CreateDataGuardAssociationToExistingDbSystemDetails.
         :type peer_db_system_id: str
 
         """
         self.swagger_types = {
-            'creation_type': 'str',
             'database_admin_password': 'str',
             'protection_mode': 'str',
             'transport_type': 'str',
+            'creation_type': 'str',
             'peer_db_system_id': 'str'
         }
 
         self.attribute_map = {
-            'creation_type': 'creationType',
             'database_admin_password': 'databaseAdminPassword',
             'protection_mode': 'protectionMode',
             'transport_type': 'transportType',
+            'creation_type': 'creationType',
             'peer_db_system_id': 'peerDbSystemId'
         }
 
-        self._creation_type = None
         self._database_admin_password = None
         self._protection_mode = None
         self._transport_type = None
+        self._creation_type = None
         self._peer_db_system_id = None
         self._creation_type = 'ExistingDbSystem'
 
@@ -68,7 +68,7 @@ class CreateDataGuardAssociationToExistingDbSystemDetails(CreateDataGuardAssocia
     def peer_db_system_id(self):
         """
         Gets the peer_db_system_id of this CreateDataGuardAssociationToExistingDbSystemDetails.
-        The `OCID`__ of the DB system to create the standby database on.
+        The `OCID`__ of the DB system in which to create the standby database.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
@@ -82,7 +82,7 @@ class CreateDataGuardAssociationToExistingDbSystemDetails(CreateDataGuardAssocia
     def peer_db_system_id(self, peer_db_system_id):
         """
         Sets the peer_db_system_id of this CreateDataGuardAssociationToExistingDbSystemDetails.
-        The `OCID`__ of the DB system to create the standby database on.
+        The `OCID`__ of the DB system in which to create the standby database.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 

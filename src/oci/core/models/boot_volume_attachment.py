@@ -70,6 +70,10 @@ class BootVolumeAttachment(object):
             The value to assign to the time_created property of this BootVolumeAttachment.
         :type time_created: datetime
 
+        :param is_pv_encryption_in_transit_enabled:
+            The value to assign to the is_pv_encryption_in_transit_enabled property of this BootVolumeAttachment.
+        :type is_pv_encryption_in_transit_enabled: bool
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -79,7 +83,8 @@ class BootVolumeAttachment(object):
             'id': 'str',
             'instance_id': 'str',
             'lifecycle_state': 'str',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'is_pv_encryption_in_transit_enabled': 'bool'
         }
 
         self.attribute_map = {
@@ -90,7 +95,8 @@ class BootVolumeAttachment(object):
             'id': 'id',
             'instance_id': 'instanceId',
             'lifecycle_state': 'lifecycleState',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled'
         }
 
         self._availability_domain = None
@@ -101,6 +107,7 @@ class BootVolumeAttachment(object):
         self._instance_id = None
         self._lifecycle_state = None
         self._time_created = None
+        self._is_pv_encryption_in_transit_enabled = None
 
     @property
     def availability_domain(self):
@@ -313,6 +320,30 @@ class BootVolumeAttachment(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def is_pv_encryption_in_transit_enabled(self):
+        """
+        Gets the is_pv_encryption_in_transit_enabled of this BootVolumeAttachment.
+        Whether the enable encryption in transit for the PV volume attachment is on or not.
+
+
+        :return: The is_pv_encryption_in_transit_enabled of this BootVolumeAttachment.
+        :rtype: bool
+        """
+        return self._is_pv_encryption_in_transit_enabled
+
+    @is_pv_encryption_in_transit_enabled.setter
+    def is_pv_encryption_in_transit_enabled(self, is_pv_encryption_in_transit_enabled):
+        """
+        Sets the is_pv_encryption_in_transit_enabled of this BootVolumeAttachment.
+        Whether the enable encryption in transit for the PV volume attachment is on or not.
+
+
+        :param is_pv_encryption_in_transit_enabled: The is_pv_encryption_in_transit_enabled of this BootVolumeAttachment.
+        :type: bool
+        """
+        self._is_pv_encryption_in_transit_enabled = is_pv_encryption_in_transit_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

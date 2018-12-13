@@ -59,21 +59,21 @@ class DbNodeSummary(object):
         Initializes a new DbNodeSummary object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param backup_vnic_id:
-            The value to assign to the backup_vnic_id property of this DbNodeSummary.
-        :type backup_vnic_id: str
+        :param id:
+            The value to assign to the id property of this DbNodeSummary.
+        :type id: str
 
         :param db_system_id:
             The value to assign to the db_system_id property of this DbNodeSummary.
         :type db_system_id: str
 
-        :param hostname:
-            The value to assign to the hostname property of this DbNodeSummary.
-        :type hostname: str
+        :param vnic_id:
+            The value to assign to the vnic_id property of this DbNodeSummary.
+        :type vnic_id: str
 
-        :param id:
-            The value to assign to the id property of this DbNodeSummary.
-        :type id: str
+        :param backup_vnic_id:
+            The value to assign to the backup_vnic_id property of this DbNodeSummary.
+        :type backup_vnic_id: str
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this DbNodeSummary.
@@ -81,77 +81,77 @@ class DbNodeSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
-        :param software_storage_size_in_gb:
-            The value to assign to the software_storage_size_in_gb property of this DbNodeSummary.
-        :type software_storage_size_in_gb: int
+        :param hostname:
+            The value to assign to the hostname property of this DbNodeSummary.
+        :type hostname: str
 
         :param time_created:
             The value to assign to the time_created property of this DbNodeSummary.
         :type time_created: datetime
 
-        :param vnic_id:
-            The value to assign to the vnic_id property of this DbNodeSummary.
-        :type vnic_id: str
+        :param software_storage_size_in_gb:
+            The value to assign to the software_storage_size_in_gb property of this DbNodeSummary.
+        :type software_storage_size_in_gb: int
 
         """
         self.swagger_types = {
-            'backup_vnic_id': 'str',
-            'db_system_id': 'str',
-            'hostname': 'str',
             'id': 'str',
+            'db_system_id': 'str',
+            'vnic_id': 'str',
+            'backup_vnic_id': 'str',
             'lifecycle_state': 'str',
-            'software_storage_size_in_gb': 'int',
+            'hostname': 'str',
             'time_created': 'datetime',
-            'vnic_id': 'str'
+            'software_storage_size_in_gb': 'int'
         }
 
         self.attribute_map = {
-            'backup_vnic_id': 'backupVnicId',
-            'db_system_id': 'dbSystemId',
-            'hostname': 'hostname',
             'id': 'id',
+            'db_system_id': 'dbSystemId',
+            'vnic_id': 'vnicId',
+            'backup_vnic_id': 'backupVnicId',
             'lifecycle_state': 'lifecycleState',
-            'software_storage_size_in_gb': 'softwareStorageSizeInGB',
+            'hostname': 'hostname',
             'time_created': 'timeCreated',
-            'vnic_id': 'vnicId'
+            'software_storage_size_in_gb': 'softwareStorageSizeInGB'
         }
 
-        self._backup_vnic_id = None
-        self._db_system_id = None
-        self._hostname = None
         self._id = None
-        self._lifecycle_state = None
-        self._software_storage_size_in_gb = None
-        self._time_created = None
+        self._db_system_id = None
         self._vnic_id = None
+        self._backup_vnic_id = None
+        self._lifecycle_state = None
+        self._hostname = None
+        self._time_created = None
+        self._software_storage_size_in_gb = None
 
     @property
-    def backup_vnic_id(self):
+    def id(self):
         """
-        Gets the backup_vnic_id of this DbNodeSummary.
-        The `OCID`__ of the backup VNIC.
+        **[Required]** Gets the id of this DbNodeSummary.
+        The `OCID`__ of the database node.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
-        :return: The backup_vnic_id of this DbNodeSummary.
+        :return: The id of this DbNodeSummary.
         :rtype: str
         """
-        return self._backup_vnic_id
+        return self._id
 
-    @backup_vnic_id.setter
-    def backup_vnic_id(self, backup_vnic_id):
+    @id.setter
+    def id(self, id):
         """
-        Sets the backup_vnic_id of this DbNodeSummary.
-        The `OCID`__ of the backup VNIC.
+        Sets the id of this DbNodeSummary.
+        The `OCID`__ of the database node.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
-        :param backup_vnic_id: The backup_vnic_id of this DbNodeSummary.
+        :param id: The id of this DbNodeSummary.
         :type: str
         """
-        self._backup_vnic_id = backup_vnic_id
+        self._id = id
 
     @property
     def db_system_id(self):
@@ -182,56 +182,60 @@ class DbNodeSummary(object):
         self._db_system_id = db_system_id
 
     @property
-    def hostname(self):
+    def vnic_id(self):
         """
-        Gets the hostname of this DbNodeSummary.
-        The host name for the database node.
+        **[Required]** Gets the vnic_id of this DbNodeSummary.
+        The `OCID`__ of the VNIC.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
-        :return: The hostname of this DbNodeSummary.
+        :return: The vnic_id of this DbNodeSummary.
         :rtype: str
         """
-        return self._hostname
+        return self._vnic_id
 
-    @hostname.setter
-    def hostname(self, hostname):
+    @vnic_id.setter
+    def vnic_id(self, vnic_id):
         """
-        Sets the hostname of this DbNodeSummary.
-        The host name for the database node.
+        Sets the vnic_id of this DbNodeSummary.
+        The `OCID`__ of the VNIC.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
-        :param hostname: The hostname of this DbNodeSummary.
+        :param vnic_id: The vnic_id of this DbNodeSummary.
         :type: str
         """
-        self._hostname = hostname
+        self._vnic_id = vnic_id
 
     @property
-    def id(self):
+    def backup_vnic_id(self):
         """
-        **[Required]** Gets the id of this DbNodeSummary.
-        The `OCID`__ of the database node.
+        Gets the backup_vnic_id of this DbNodeSummary.
+        The `OCID`__ of the backup VNIC.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
-        :return: The id of this DbNodeSummary.
+        :return: The backup_vnic_id of this DbNodeSummary.
         :rtype: str
         """
-        return self._id
+        return self._backup_vnic_id
 
-    @id.setter
-    def id(self, id):
+    @backup_vnic_id.setter
+    def backup_vnic_id(self, backup_vnic_id):
         """
-        Sets the id of this DbNodeSummary.
-        The `OCID`__ of the database node.
+        Sets the backup_vnic_id of this DbNodeSummary.
+        The `OCID`__ of the backup VNIC.
 
         __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
-        :param id: The id of this DbNodeSummary.
+        :param backup_vnic_id: The backup_vnic_id of this DbNodeSummary.
         :type: str
         """
-        self._id = id
+        self._backup_vnic_id = backup_vnic_id
 
     @property
     def lifecycle_state(self):
@@ -264,28 +268,28 @@ class DbNodeSummary(object):
         self._lifecycle_state = lifecycle_state
 
     @property
-    def software_storage_size_in_gb(self):
+    def hostname(self):
         """
-        Gets the software_storage_size_in_gb of this DbNodeSummary.
-        The size (in GB) of the block storage volume allocation for the DB system. This attribute applies only for virtual machine DB systems.
+        Gets the hostname of this DbNodeSummary.
+        The host name for the database node.
 
 
-        :return: The software_storage_size_in_gb of this DbNodeSummary.
-        :rtype: int
+        :return: The hostname of this DbNodeSummary.
+        :rtype: str
         """
-        return self._software_storage_size_in_gb
+        return self._hostname
 
-    @software_storage_size_in_gb.setter
-    def software_storage_size_in_gb(self, software_storage_size_in_gb):
+    @hostname.setter
+    def hostname(self, hostname):
         """
-        Sets the software_storage_size_in_gb of this DbNodeSummary.
-        The size (in GB) of the block storage volume allocation for the DB system. This attribute applies only for virtual machine DB systems.
+        Sets the hostname of this DbNodeSummary.
+        The host name for the database node.
 
 
-        :param software_storage_size_in_gb: The software_storage_size_in_gb of this DbNodeSummary.
-        :type: int
+        :param hostname: The hostname of this DbNodeSummary.
+        :type: str
         """
-        self._software_storage_size_in_gb = software_storage_size_in_gb
+        self._hostname = hostname
 
     @property
     def time_created(self):
@@ -312,32 +316,28 @@ class DbNodeSummary(object):
         self._time_created = time_created
 
     @property
-    def vnic_id(self):
+    def software_storage_size_in_gb(self):
         """
-        **[Required]** Gets the vnic_id of this DbNodeSummary.
-        The `OCID`__ of the VNIC.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        Gets the software_storage_size_in_gb of this DbNodeSummary.
+        The size (in GB) of the block storage volume allocation for the DB system. This attribute applies only for virtual machine DB systems.
 
 
-        :return: The vnic_id of this DbNodeSummary.
-        :rtype: str
+        :return: The software_storage_size_in_gb of this DbNodeSummary.
+        :rtype: int
         """
-        return self._vnic_id
+        return self._software_storage_size_in_gb
 
-    @vnic_id.setter
-    def vnic_id(self, vnic_id):
+    @software_storage_size_in_gb.setter
+    def software_storage_size_in_gb(self, software_storage_size_in_gb):
         """
-        Sets the vnic_id of this DbNodeSummary.
-        The `OCID`__ of the VNIC.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        Sets the software_storage_size_in_gb of this DbNodeSummary.
+        The size (in GB) of the block storage volume allocation for the DB system. This attribute applies only for virtual machine DB systems.
 
 
-        :param vnic_id: The vnic_id of this DbNodeSummary.
-        :type: str
+        :param software_storage_size_in_gb: The software_storage_size_in_gb of this DbNodeSummary.
+        :type: int
         """
-        self._vnic_id = vnic_id
+        self._software_storage_size_in_gb = software_storage_size_in_gb
 
     def __repr__(self):
         return formatted_flat_dict(self)

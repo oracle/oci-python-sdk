@@ -237,7 +237,11 @@ class DrgAttachment(object):
     def route_table_id(self):
         """
         Gets the route_table_id of this DrgAttachment.
-        The OCID of the route table the DRG attachment is using.
+        The OCID of the route table the DRG attachment is using. For information about why you
+        would associate a route table with a DRG attachment, see
+        `Advanced Scenario: Transit Routing`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/transitrouting.htm
 
 
         :return: The route_table_id of this DrgAttachment.
@@ -249,7 +253,11 @@ class DrgAttachment(object):
     def route_table_id(self, route_table_id):
         """
         Sets the route_table_id of this DrgAttachment.
-        The OCID of the route table the DRG attachment is using.
+        The OCID of the route table the DRG attachment is using. For information about why you
+        would associate a route table with a DRG attachment, see
+        `Advanced Scenario: Transit Routing`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/transitrouting.htm
 
 
         :param route_table_id: The route_table_id of this DrgAttachment.
