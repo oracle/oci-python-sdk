@@ -30,6 +30,10 @@ class IScsiVolumeAttachment(VolumeAttachment):
             The value to assign to the compartment_id property of this IScsiVolumeAttachment.
         :type compartment_id: str
 
+        :param device:
+            The value to assign to the device property of this IScsiVolumeAttachment.
+        :type device: str
+
         :param display_name:
             The value to assign to the display_name property of this IScsiVolumeAttachment.
         :type display_name: str
@@ -88,6 +92,7 @@ class IScsiVolumeAttachment(VolumeAttachment):
             'attachment_type': 'str',
             'availability_domain': 'str',
             'compartment_id': 'str',
+            'device': 'str',
             'display_name': 'str',
             'id': 'str',
             'instance_id': 'str',
@@ -107,6 +112,7 @@ class IScsiVolumeAttachment(VolumeAttachment):
             'attachment_type': 'attachmentType',
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
+            'device': 'device',
             'display_name': 'displayName',
             'id': 'id',
             'instance_id': 'instanceId',
@@ -125,6 +131,7 @@ class IScsiVolumeAttachment(VolumeAttachment):
         self._attachment_type = None
         self._availability_domain = None
         self._compartment_id = None
+        self._device = None
         self._display_name = None
         self._id = None
         self._instance_id = None

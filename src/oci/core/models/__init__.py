@@ -72,6 +72,7 @@ from .cross_connect_mapping import CrossConnectMapping
 from .cross_connect_port_speed_shape import CrossConnectPortSpeedShape
 from .cross_connect_status import CrossConnectStatus
 from .delete_virtual_circuit_public_prefix_details import DeleteVirtualCircuitPublicPrefixDetails
+from .device import Device
 from .dhcp_dns_option import DhcpDnsOption
 from .dhcp_option import DhcpOption
 from .dhcp_options import DhcpOptions
@@ -276,6 +277,7 @@ core_type_mapping = {
     "CrossConnectPortSpeedShape": CrossConnectPortSpeedShape,
     "CrossConnectStatus": CrossConnectStatus,
     "DeleteVirtualCircuitPublicPrefixDetails": DeleteVirtualCircuitPublicPrefixDetails,
+    "Device": Device,
     "DhcpDnsOption": DhcpDnsOption,
     "DhcpOption": DhcpOption,
     "DhcpOptions": DhcpOptions,

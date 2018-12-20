@@ -18,6 +18,10 @@ class AttachIScsiVolumeDetails(AttachVolumeDetails):
         of this class is ``iscsi`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param device:
+            The value to assign to the device property of this AttachIScsiVolumeDetails.
+        :type device: str
+
         :param display_name:
             The value to assign to the display_name property of this AttachIScsiVolumeDetails.
         :type display_name: str
@@ -44,6 +48,7 @@ class AttachIScsiVolumeDetails(AttachVolumeDetails):
 
         """
         self.swagger_types = {
+            'device': 'str',
             'display_name': 'str',
             'instance_id': 'str',
             'is_read_only': 'bool',
@@ -53,6 +58,7 @@ class AttachIScsiVolumeDetails(AttachVolumeDetails):
         }
 
         self.attribute_map = {
+            'device': 'device',
             'display_name': 'displayName',
             'instance_id': 'instanceId',
             'is_read_only': 'isReadOnly',
@@ -61,6 +67,7 @@ class AttachIScsiVolumeDetails(AttachVolumeDetails):
             'use_chap': 'useChap'
         }
 
+        self._device = None
         self._display_name = None
         self._instance_id = None
         self._is_read_only = None
