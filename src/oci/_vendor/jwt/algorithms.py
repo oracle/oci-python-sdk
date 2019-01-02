@@ -1,5 +1,5 @@
 # coding: utf-8
-# Modified Work: Copyright (c) 2018, 2018, Oracle and/or its affiliates. All rights reserved.
+# Modified Work: Copyright (c) 2018, 2019, Oracle and/or its affiliates. All rights reserved.
 # Original Work: Copyright (c) 2015 José Padilla
 
 import hashlib
