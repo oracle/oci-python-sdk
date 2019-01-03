@@ -12,6 +12,8 @@ class PathRouteSet(object):
     A named set of path route rules. For more information, see
     `Managing Request Routing`__.
 
+    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+
     __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managingrequest.htm
     """
 
