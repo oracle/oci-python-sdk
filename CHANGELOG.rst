@@ -14,7 +14,7 @@ Added
 * Support for custom header rulesets in the Load Balancing service 
 
 ====================
-2.1.3 - 2019-12-13
+2.1.3 - 2018-12-13
 ====================
 
 Added
