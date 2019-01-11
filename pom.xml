@@ -928,6 +928,16 @@
               <executable>${basedir}/scripts/generate.py</executable>
             </configuration>
           </execution>
+          <execution>
+           <id>python-public-sdk-strip-whitespace</id>
+           <phase>package</phase>
+           <goals>
+             <goal>exec</goal>
+           </goals>
+           <configuration>
+             <executable>${basedir}/scripts/strip_trailing_whitespace.py</executable>
+           </configuration>
+         </execution>
         </executions>
       </plugin>
       <plugin>
