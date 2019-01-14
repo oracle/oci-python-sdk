@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -20,97 +20,125 @@ class HealthChecker(object):
         Initializes a new HealthChecker object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param interval_in_millis:
-            The value to assign to the interval_in_millis property of this HealthChecker.
-        :type interval_in_millis: int
-
-        :param port:
-            The value to assign to the port property of this HealthChecker.
-        :type port: int
-
         :param protocol:
             The value to assign to the protocol property of this HealthChecker.
         :type protocol: str
-
-        :param response_body_regex:
-            The value to assign to the response_body_regex property of this HealthChecker.
-        :type response_body_regex: str
-
-        :param retries:
-            The value to assign to the retries property of this HealthChecker.
-        :type retries: int
-
-        :param return_code:
-            The value to assign to the return_code property of this HealthChecker.
-        :type return_code: int
-
-        :param timeout_in_millis:
-            The value to assign to the timeout_in_millis property of this HealthChecker.
-        :type timeout_in_millis: int
 
         :param url_path:
             The value to assign to the url_path property of this HealthChecker.
         :type url_path: str
 
+        :param port:
+            The value to assign to the port property of this HealthChecker.
+        :type port: int
+
+        :param return_code:
+            The value to assign to the return_code property of this HealthChecker.
+        :type return_code: int
+
+        :param retries:
+            The value to assign to the retries property of this HealthChecker.
+        :type retries: int
+
+        :param timeout_in_millis:
+            The value to assign to the timeout_in_millis property of this HealthChecker.
+        :type timeout_in_millis: int
+
+        :param interval_in_millis:
+            The value to assign to the interval_in_millis property of this HealthChecker.
+        :type interval_in_millis: int
+
+        :param response_body_regex:
+            The value to assign to the response_body_regex property of this HealthChecker.
+        :type response_body_regex: str
+
         """
         self.swagger_types = {
-            'interval_in_millis': 'int',
-            'port': 'int',
             'protocol': 'str',
-            'response_body_regex': 'str',
-            'retries': 'int',
+            'url_path': 'str',
+            'port': 'int',
             'return_code': 'int',
+            'retries': 'int',
             'timeout_in_millis': 'int',
-            'url_path': 'str'
+            'interval_in_millis': 'int',
+            'response_body_regex': 'str'
         }
 
         self.attribute_map = {
-            'interval_in_millis': 'intervalInMillis',
-            'port': 'port',
             'protocol': 'protocol',
-            'response_body_regex': 'responseBodyRegex',
-            'retries': 'retries',
+            'url_path': 'urlPath',
+            'port': 'port',
             'return_code': 'returnCode',
+            'retries': 'retries',
             'timeout_in_millis': 'timeoutInMillis',
-            'url_path': 'urlPath'
+            'interval_in_millis': 'intervalInMillis',
+            'response_body_regex': 'responseBodyRegex'
         }
 
-        self._interval_in_millis = None
-        self._port = None
         self._protocol = None
-        self._response_body_regex = None
-        self._retries = None
-        self._return_code = None
-        self._timeout_in_millis = None
         self._url_path = None
+        self._port = None
+        self._return_code = None
+        self._retries = None
+        self._timeout_in_millis = None
+        self._interval_in_millis = None
+        self._response_body_regex = None
 
     @property
-    def interval_in_millis(self):
+    def protocol(self):
         """
-        Gets the interval_in_millis of this HealthChecker.
-        The interval between health checks, in milliseconds. The default is 10000 (10 seconds).
+        **[Required]** Gets the protocol of this HealthChecker.
+        The protocol the health check must use; either HTTP or TCP.
 
-        Example: `10000`
+        Example: `HTTP`
 
 
-        :return: The interval_in_millis of this HealthChecker.
-        :rtype: int
+        :return: The protocol of this HealthChecker.
+        :rtype: str
         """
-        return self._interval_in_millis
+        return self._protocol
 
-    @interval_in_millis.setter
-    def interval_in_millis(self, interval_in_millis):
+    @protocol.setter
+    def protocol(self, protocol):
         """
-        Sets the interval_in_millis of this HealthChecker.
-        The interval between health checks, in milliseconds. The default is 10000 (10 seconds).
+        Sets the protocol of this HealthChecker.
+        The protocol the health check must use; either HTTP or TCP.
 
-        Example: `10000`
+        Example: `HTTP`
 
 
-        :param interval_in_millis: The interval_in_millis of this HealthChecker.
-        :type: int
+        :param protocol: The protocol of this HealthChecker.
+        :type: str
         """
-        self._interval_in_millis = interval_in_millis
+        self._protocol = protocol
+
+    @property
+    def url_path(self):
+        """
+        Gets the url_path of this HealthChecker.
+        The path against which to run the health check.
+
+        Example: `/healthcheck`
+
+
+        :return: The url_path of this HealthChecker.
+        :rtype: str
+        """
+        return self._url_path
+
+    @url_path.setter
+    def url_path(self, url_path):
+        """
+        Sets the url_path of this HealthChecker.
+        The path against which to run the health check.
+
+        Example: `/healthcheck`
+
+
+        :param url_path: The url_path of this HealthChecker.
+        :type: str
+        """
+        self._url_path = url_path
 
     @property
     def port(self):
@@ -143,90 +171,6 @@ class HealthChecker(object):
         self._port = port
 
     @property
-    def protocol(self):
-        """
-        **[Required]** Gets the protocol of this HealthChecker.
-        The protocol the health check must use; either HTTP or TCP.
-
-        Example: `HTTP`
-
-
-        :return: The protocol of this HealthChecker.
-        :rtype: str
-        """
-        return self._protocol
-
-    @protocol.setter
-    def protocol(self, protocol):
-        """
-        Sets the protocol of this HealthChecker.
-        The protocol the health check must use; either HTTP or TCP.
-
-        Example: `HTTP`
-
-
-        :param protocol: The protocol of this HealthChecker.
-        :type: str
-        """
-        self._protocol = protocol
-
-    @property
-    def response_body_regex(self):
-        """
-        **[Required]** Gets the response_body_regex of this HealthChecker.
-        A regular expression for parsing the response body from the backend server.
-
-        Example: `^((?!false).|\\s)*$`
-
-
-        :return: The response_body_regex of this HealthChecker.
-        :rtype: str
-        """
-        return self._response_body_regex
-
-    @response_body_regex.setter
-    def response_body_regex(self, response_body_regex):
-        """
-        Sets the response_body_regex of this HealthChecker.
-        A regular expression for parsing the response body from the backend server.
-
-        Example: `^((?!false).|\\s)*$`
-
-
-        :param response_body_regex: The response_body_regex of this HealthChecker.
-        :type: str
-        """
-        self._response_body_regex = response_body_regex
-
-    @property
-    def retries(self):
-        """
-        Gets the retries of this HealthChecker.
-        The number of retries to attempt before a backend server is considered \"unhealthy\". Defaults to 3.
-
-        Example: `3`
-
-
-        :return: The retries of this HealthChecker.
-        :rtype: int
-        """
-        return self._retries
-
-    @retries.setter
-    def retries(self, retries):
-        """
-        Sets the retries of this HealthChecker.
-        The number of retries to attempt before a backend server is considered \"unhealthy\". Defaults to 3.
-
-        Example: `3`
-
-
-        :param retries: The retries of this HealthChecker.
-        :type: int
-        """
-        self._retries = retries
-
-    @property
     def return_code(self):
         """
         **[Required]** Gets the return_code of this HealthChecker.
@@ -255,6 +199,34 @@ class HealthChecker(object):
         :type: int
         """
         self._return_code = return_code
+
+    @property
+    def retries(self):
+        """
+        Gets the retries of this HealthChecker.
+        The number of retries to attempt before a backend server is considered \"unhealthy\". Defaults to 3.
+
+        Example: `3`
+
+
+        :return: The retries of this HealthChecker.
+        :rtype: int
+        """
+        return self._retries
+
+    @retries.setter
+    def retries(self, retries):
+        """
+        Sets the retries of this HealthChecker.
+        The number of retries to attempt before a backend server is considered \"unhealthy\". Defaults to 3.
+
+        Example: `3`
+
+
+        :param retries: The retries of this HealthChecker.
+        :type: int
+        """
+        self._retries = retries
 
     @property
     def timeout_in_millis(self):
@@ -287,32 +259,60 @@ class HealthChecker(object):
         self._timeout_in_millis = timeout_in_millis
 
     @property
-    def url_path(self):
+    def interval_in_millis(self):
         """
-        Gets the url_path of this HealthChecker.
-        The path against which to run the health check.
+        Gets the interval_in_millis of this HealthChecker.
+        The interval between health checks, in milliseconds. The default is 10000 (10 seconds).
 
-        Example: `/healthcheck`
+        Example: `10000`
 
 
-        :return: The url_path of this HealthChecker.
+        :return: The interval_in_millis of this HealthChecker.
+        :rtype: int
+        """
+        return self._interval_in_millis
+
+    @interval_in_millis.setter
+    def interval_in_millis(self, interval_in_millis):
+        """
+        Sets the interval_in_millis of this HealthChecker.
+        The interval between health checks, in milliseconds. The default is 10000 (10 seconds).
+
+        Example: `10000`
+
+
+        :param interval_in_millis: The interval_in_millis of this HealthChecker.
+        :type: int
+        """
+        self._interval_in_millis = interval_in_millis
+
+    @property
+    def response_body_regex(self):
+        """
+        **[Required]** Gets the response_body_regex of this HealthChecker.
+        A regular expression for parsing the response body from the backend server.
+
+        Example: `^((?!false).|\\s)*$`
+
+
+        :return: The response_body_regex of this HealthChecker.
         :rtype: str
         """
-        return self._url_path
+        return self._response_body_regex
 
-    @url_path.setter
-    def url_path(self, url_path):
+    @response_body_regex.setter
+    def response_body_regex(self, response_body_regex):
         """
-        Sets the url_path of this HealthChecker.
-        The path against which to run the health check.
+        Sets the response_body_regex of this HealthChecker.
+        A regular expression for parsing the response body from the backend server.
 
-        Example: `/healthcheck`
+        Example: `^((?!false).|\\s)*$`
 
 
-        :param url_path: The url_path of this HealthChecker.
+        :param response_body_regex: The response_body_regex of this HealthChecker.
         :type: str
         """
-        self._url_path = url_path
+        self._response_body_regex = response_body_regex
 
     def __repr__(self):
         return formatted_flat_dict(self)

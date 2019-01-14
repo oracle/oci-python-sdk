@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -21,6 +21,10 @@ class AttachVolumeDetails(object):
         * :class:`~oci.core.models.AttachParavirtualizedVolumeDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
+
+        :param device:
+            The value to assign to the device property of this AttachVolumeDetails.
+        :type device: str
 
         :param display_name:
             The value to assign to the display_name property of this AttachVolumeDetails.
@@ -44,6 +48,7 @@ class AttachVolumeDetails(object):
 
         """
         self.swagger_types = {
+            'device': 'str',
             'display_name': 'str',
             'instance_id': 'str',
             'is_read_only': 'bool',
@@ -52,6 +57,7 @@ class AttachVolumeDetails(object):
         }
 
         self.attribute_map = {
+            'device': 'device',
             'display_name': 'displayName',
             'instance_id': 'instanceId',
             'is_read_only': 'isReadOnly',
@@ -59,6 +65,7 @@ class AttachVolumeDetails(object):
             'volume_id': 'volumeId'
         }
 
+        self._device = None
         self._display_name = None
         self._instance_id = None
         self._is_read_only = None
@@ -80,6 +87,30 @@ class AttachVolumeDetails(object):
             return 'AttachParavirtualizedVolumeDetails'
         else:
             return 'AttachVolumeDetails'
+
+    @property
+    def device(self):
+        """
+        Gets the device of this AttachVolumeDetails.
+        The device name.
+
+
+        :return: The device of this AttachVolumeDetails.
+        :rtype: str
+        """
+        return self._device
+
+    @device.setter
+    def device(self, device):
+        """
+        Sets the device of this AttachVolumeDetails.
+        The device name.
+
+
+        :param device: The device of this AttachVolumeDetails.
+        :type: str
+        """
+        self._device = device
 
     @property
     def display_name(self):

@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -13,21 +13,15 @@ class CreateBackendSetDetails(object):
     For more information on backend set configuration, see
     `Managing Backend Sets`__.
 
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/tasks/managingbackendsets.htm
+    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managingbackendsets.htm
     """
 
     def __init__(self, **kwargs):
         """
         Initializes a new CreateBackendSetDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
-
-        :param backends:
-            The value to assign to the backends property of this CreateBackendSetDetails.
-        :type backends: list[BackendDetails]
-
-        :param health_checker:
-            The value to assign to the health_checker property of this CreateBackendSetDetails.
-        :type health_checker: HealthCheckerDetails
 
         :param name:
             The value to assign to the name property of this CreateBackendSetDetails.
@@ -37,79 +31,47 @@ class CreateBackendSetDetails(object):
             The value to assign to the policy property of this CreateBackendSetDetails.
         :type policy: str
 
-        :param session_persistence_configuration:
-            The value to assign to the session_persistence_configuration property of this CreateBackendSetDetails.
-        :type session_persistence_configuration: SessionPersistenceConfigurationDetails
+        :param backends:
+            The value to assign to the backends property of this CreateBackendSetDetails.
+        :type backends: list[BackendDetails]
+
+        :param health_checker:
+            The value to assign to the health_checker property of this CreateBackendSetDetails.
+        :type health_checker: HealthCheckerDetails
 
         :param ssl_configuration:
             The value to assign to the ssl_configuration property of this CreateBackendSetDetails.
         :type ssl_configuration: SSLConfigurationDetails
 
+        :param session_persistence_configuration:
+            The value to assign to the session_persistence_configuration property of this CreateBackendSetDetails.
+        :type session_persistence_configuration: SessionPersistenceConfigurationDetails
+
         """
         self.swagger_types = {
-            'backends': 'list[BackendDetails]',
-            'health_checker': 'HealthCheckerDetails',
             'name': 'str',
             'policy': 'str',
-            'session_persistence_configuration': 'SessionPersistenceConfigurationDetails',
-            'ssl_configuration': 'SSLConfigurationDetails'
+            'backends': 'list[BackendDetails]',
+            'health_checker': 'HealthCheckerDetails',
+            'ssl_configuration': 'SSLConfigurationDetails',
+            'session_persistence_configuration': 'SessionPersistenceConfigurationDetails'
         }
 
         self.attribute_map = {
-            'backends': 'backends',
-            'health_checker': 'healthChecker',
             'name': 'name',
             'policy': 'policy',
-            'session_persistence_configuration': 'sessionPersistenceConfiguration',
-            'ssl_configuration': 'sslConfiguration'
+            'backends': 'backends',
+            'health_checker': 'healthChecker',
+            'ssl_configuration': 'sslConfiguration',
+            'session_persistence_configuration': 'sessionPersistenceConfiguration'
         }
 
-        self._backends = None
-        self._health_checker = None
         self._name = None
         self._policy = None
-        self._session_persistence_configuration = None
+        self._backends = None
+        self._health_checker = None
         self._ssl_configuration = None
-
-    @property
-    def backends(self):
-        """
-        Gets the backends of this CreateBackendSetDetails.
-
-        :return: The backends of this CreateBackendSetDetails.
-        :rtype: list[BackendDetails]
-        """
-        return self._backends
-
-    @backends.setter
-    def backends(self, backends):
-        """
-        Sets the backends of this CreateBackendSetDetails.
-
-        :param backends: The backends of this CreateBackendSetDetails.
-        :type: list[BackendDetails]
-        """
-        self._backends = backends
-
-    @property
-    def health_checker(self):
-        """
-        **[Required]** Gets the health_checker of this CreateBackendSetDetails.
-
-        :return: The health_checker of this CreateBackendSetDetails.
-        :rtype: HealthCheckerDetails
-        """
-        return self._health_checker
-
-    @health_checker.setter
-    def health_checker(self, health_checker):
-        """
-        Sets the health_checker of this CreateBackendSetDetails.
-
-        :param health_checker: The health_checker of this CreateBackendSetDetails.
-        :type: HealthCheckerDetails
-        """
-        self._health_checker = health_checker
+        self._session_persistence_configuration = None
 
     @property
     def name(self):
@@ -176,24 +138,44 @@ class CreateBackendSetDetails(object):
         self._policy = policy
 
     @property
-    def session_persistence_configuration(self):
+    def backends(self):
         """
-        Gets the session_persistence_configuration of this CreateBackendSetDetails.
+        Gets the backends of this CreateBackendSetDetails.
 
-        :return: The session_persistence_configuration of this CreateBackendSetDetails.
-        :rtype: SessionPersistenceConfigurationDetails
+        :return: The backends of this CreateBackendSetDetails.
+        :rtype: list[BackendDetails]
         """
-        return self._session_persistence_configuration
+        return self._backends
 
-    @session_persistence_configuration.setter
-    def session_persistence_configuration(self, session_persistence_configuration):
+    @backends.setter
+    def backends(self, backends):
         """
-        Sets the session_persistence_configuration of this CreateBackendSetDetails.
+        Sets the backends of this CreateBackendSetDetails.
 
-        :param session_persistence_configuration: The session_persistence_configuration of this CreateBackendSetDetails.
-        :type: SessionPersistenceConfigurationDetails
+        :param backends: The backends of this CreateBackendSetDetails.
+        :type: list[BackendDetails]
         """
-        self._session_persistence_configuration = session_persistence_configuration
+        self._backends = backends
+
+    @property
+    def health_checker(self):
+        """
+        **[Required]** Gets the health_checker of this CreateBackendSetDetails.
+
+        :return: The health_checker of this CreateBackendSetDetails.
+        :rtype: HealthCheckerDetails
+        """
+        return self._health_checker
+
+    @health_checker.setter
+    def health_checker(self, health_checker):
+        """
+        Sets the health_checker of this CreateBackendSetDetails.
+
+        :param health_checker: The health_checker of this CreateBackendSetDetails.
+        :type: HealthCheckerDetails
+        """
+        self._health_checker = health_checker
 
     @property
     def ssl_configuration(self):
@@ -214,6 +196,26 @@ class CreateBackendSetDetails(object):
         :type: SSLConfigurationDetails
         """
         self._ssl_configuration = ssl_configuration
+
+    @property
+    def session_persistence_configuration(self):
+        """
+        Gets the session_persistence_configuration of this CreateBackendSetDetails.
+
+        :return: The session_persistence_configuration of this CreateBackendSetDetails.
+        :rtype: SessionPersistenceConfigurationDetails
+        """
+        return self._session_persistence_configuration
+
+    @session_persistence_configuration.setter
+    def session_persistence_configuration(self, session_persistence_configuration):
+        """
+        Sets the session_persistence_configuration of this CreateBackendSetDetails.
+
+        :param session_persistence_configuration: The session_persistence_configuration of this CreateBackendSetDetails.
+        :type: SessionPersistenceConfigurationDetails
+        """
+        self._session_persistence_configuration = session_persistence_configuration
 
     def __repr__(self):
         return formatted_flat_dict(self)

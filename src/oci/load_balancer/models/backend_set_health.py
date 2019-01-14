@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -36,80 +36,50 @@ class BackendSetHealth(object):
         Initializes a new BackendSetHealth object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param critical_state_backend_names:
-            The value to assign to the critical_state_backend_names property of this BackendSetHealth.
-        :type critical_state_backend_names: list[str]
-
         :param status:
             The value to assign to the status property of this BackendSetHealth.
             Allowed values for this property are: "OK", "WARNING", "CRITICAL", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
-        :param total_backend_count:
-            The value to assign to the total_backend_count property of this BackendSetHealth.
-        :type total_backend_count: int
+        :param warning_state_backend_names:
+            The value to assign to the warning_state_backend_names property of this BackendSetHealth.
+        :type warning_state_backend_names: list[str]
+
+        :param critical_state_backend_names:
+            The value to assign to the critical_state_backend_names property of this BackendSetHealth.
+        :type critical_state_backend_names: list[str]
 
         :param unknown_state_backend_names:
             The value to assign to the unknown_state_backend_names property of this BackendSetHealth.
         :type unknown_state_backend_names: list[str]
 
-        :param warning_state_backend_names:
-            The value to assign to the warning_state_backend_names property of this BackendSetHealth.
-        :type warning_state_backend_names: list[str]
+        :param total_backend_count:
+            The value to assign to the total_backend_count property of this BackendSetHealth.
+        :type total_backend_count: int
 
         """
         self.swagger_types = {
-            'critical_state_backend_names': 'list[str]',
             'status': 'str',
-            'total_backend_count': 'int',
+            'warning_state_backend_names': 'list[str]',
+            'critical_state_backend_names': 'list[str]',
             'unknown_state_backend_names': 'list[str]',
-            'warning_state_backend_names': 'list[str]'
+            'total_backend_count': 'int'
         }
 
         self.attribute_map = {
-            'critical_state_backend_names': 'criticalStateBackendNames',
             'status': 'status',
-            'total_backend_count': 'totalBackendCount',
+            'warning_state_backend_names': 'warningStateBackendNames',
+            'critical_state_backend_names': 'criticalStateBackendNames',
             'unknown_state_backend_names': 'unknownStateBackendNames',
-            'warning_state_backend_names': 'warningStateBackendNames'
+            'total_backend_count': 'totalBackendCount'
         }
 
-        self._critical_state_backend_names = None
         self._status = None
-        self._total_backend_count = None
-        self._unknown_state_backend_names = None
         self._warning_state_backend_names = None
-
-    @property
-    def critical_state_backend_names(self):
-        """
-        **[Required]** Gets the critical_state_backend_names of this BackendSetHealth.
-        A list of backend servers that are currently in the `CRITICAL` health state. The list identifies each backend server by
-        IP address and port.
-
-        Example: `10.0.0.4:8080`
-
-
-        :return: The critical_state_backend_names of this BackendSetHealth.
-        :rtype: list[str]
-        """
-        return self._critical_state_backend_names
-
-    @critical_state_backend_names.setter
-    def critical_state_backend_names(self, critical_state_backend_names):
-        """
-        Sets the critical_state_backend_names of this BackendSetHealth.
-        A list of backend servers that are currently in the `CRITICAL` health state. The list identifies each backend server by
-        IP address and port.
-
-        Example: `10.0.0.4:8080`
-
-
-        :param critical_state_backend_names: The critical_state_backend_names of this BackendSetHealth.
-        :type: list[str]
-        """
-        self._critical_state_backend_names = critical_state_backend_names
+        self._critical_state_backend_names = None
+        self._unknown_state_backend_names = None
+        self._total_backend_count = None
 
     @property
     def status(self):
@@ -162,32 +132,64 @@ class BackendSetHealth(object):
         self._status = status
 
     @property
-    def total_backend_count(self):
+    def warning_state_backend_names(self):
         """
-        **[Required]** Gets the total_backend_count of this BackendSetHealth.
-        The total number of backend servers in this backend set.
+        **[Required]** Gets the warning_state_backend_names of this BackendSetHealth.
+        A list of backend servers that are currently in the `WARNING` health state. The list identifies each backend server by
+        IP address and port.
 
-        Example: `7`
+        Example: `10.0.0.3:8080`
 
 
-        :return: The total_backend_count of this BackendSetHealth.
-        :rtype: int
+        :return: The warning_state_backend_names of this BackendSetHealth.
+        :rtype: list[str]
         """
-        return self._total_backend_count
+        return self._warning_state_backend_names
 
-    @total_backend_count.setter
-    def total_backend_count(self, total_backend_count):
+    @warning_state_backend_names.setter
+    def warning_state_backend_names(self, warning_state_backend_names):
         """
-        Sets the total_backend_count of this BackendSetHealth.
-        The total number of backend servers in this backend set.
+        Sets the warning_state_backend_names of this BackendSetHealth.
+        A list of backend servers that are currently in the `WARNING` health state. The list identifies each backend server by
+        IP address and port.
 
-        Example: `7`
+        Example: `10.0.0.3:8080`
 
 
-        :param total_backend_count: The total_backend_count of this BackendSetHealth.
-        :type: int
+        :param warning_state_backend_names: The warning_state_backend_names of this BackendSetHealth.
+        :type: list[str]
         """
-        self._total_backend_count = total_backend_count
+        self._warning_state_backend_names = warning_state_backend_names
+
+    @property
+    def critical_state_backend_names(self):
+        """
+        **[Required]** Gets the critical_state_backend_names of this BackendSetHealth.
+        A list of backend servers that are currently in the `CRITICAL` health state. The list identifies each backend server by
+        IP address and port.
+
+        Example: `10.0.0.4:8080`
+
+
+        :return: The critical_state_backend_names of this BackendSetHealth.
+        :rtype: list[str]
+        """
+        return self._critical_state_backend_names
+
+    @critical_state_backend_names.setter
+    def critical_state_backend_names(self, critical_state_backend_names):
+        """
+        Sets the critical_state_backend_names of this BackendSetHealth.
+        A list of backend servers that are currently in the `CRITICAL` health state. The list identifies each backend server by
+        IP address and port.
+
+        Example: `10.0.0.4:8080`
+
+
+        :param critical_state_backend_names: The critical_state_backend_names of this BackendSetHealth.
+        :type: list[str]
+        """
+        self._critical_state_backend_names = critical_state_backend_names
 
     @property
     def unknown_state_backend_names(self):
@@ -220,34 +222,32 @@ class BackendSetHealth(object):
         self._unknown_state_backend_names = unknown_state_backend_names
 
     @property
-    def warning_state_backend_names(self):
+    def total_backend_count(self):
         """
-        **[Required]** Gets the warning_state_backend_names of this BackendSetHealth.
-        A list of backend servers that are currently in the `WARNING` health state. The list identifies each backend server by
-        IP address and port.
+        **[Required]** Gets the total_backend_count of this BackendSetHealth.
+        The total number of backend servers in this backend set.
 
-        Example: `10.0.0.3:8080`
+        Example: `7`
 
 
-        :return: The warning_state_backend_names of this BackendSetHealth.
-        :rtype: list[str]
+        :return: The total_backend_count of this BackendSetHealth.
+        :rtype: int
         """
-        return self._warning_state_backend_names
+        return self._total_backend_count
 
-    @warning_state_backend_names.setter
-    def warning_state_backend_names(self, warning_state_backend_names):
+    @total_backend_count.setter
+    def total_backend_count(self, total_backend_count):
         """
-        Sets the warning_state_backend_names of this BackendSetHealth.
-        A list of backend servers that are currently in the `WARNING` health state. The list identifies each backend server by
-        IP address and port.
+        Sets the total_backend_count of this BackendSetHealth.
+        The total number of backend servers in this backend set.
 
-        Example: `10.0.0.3:8080`
+        Example: `7`
 
 
-        :param warning_state_backend_names: The warning_state_backend_names of this BackendSetHealth.
-        :type: list[str]
+        :param total_backend_count: The total_backend_count of this BackendSetHealth.
+        :type: int
         """
-        self._warning_state_backend_names = warning_state_backend_names
+        self._total_backend_count = total_backend_count
 
     def __repr__(self):
         return formatted_flat_dict(self)

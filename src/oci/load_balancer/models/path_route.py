@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -19,10 +19,6 @@ class PathRoute(object):
         Initializes a new PathRoute object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param backend_set_name:
-            The value to assign to the backend_set_name property of this PathRoute.
-        :type backend_set_name: str
-
         :param path:
             The value to assign to the path property of this PathRoute.
         :type path: str
@@ -31,50 +27,26 @@ class PathRoute(object):
             The value to assign to the path_match_type property of this PathRoute.
         :type path_match_type: PathMatchType
 
+        :param backend_set_name:
+            The value to assign to the backend_set_name property of this PathRoute.
+        :type backend_set_name: str
+
         """
         self.swagger_types = {
-            'backend_set_name': 'str',
             'path': 'str',
-            'path_match_type': 'PathMatchType'
+            'path_match_type': 'PathMatchType',
+            'backend_set_name': 'str'
         }
 
         self.attribute_map = {
-            'backend_set_name': 'backendSetName',
             'path': 'path',
-            'path_match_type': 'pathMatchType'
+            'path_match_type': 'pathMatchType',
+            'backend_set_name': 'backendSetName'
         }
 
-        self._backend_set_name = None
         self._path = None
         self._path_match_type = None
-
-    @property
-    def backend_set_name(self):
-        """
-        **[Required]** Gets the backend_set_name of this PathRoute.
-        The name of the target backend set for requests where the incoming URI matches the specified path.
-
-        Example: `example_backend_set`
-
-
-        :return: The backend_set_name of this PathRoute.
-        :rtype: str
-        """
-        return self._backend_set_name
-
-    @backend_set_name.setter
-    def backend_set_name(self, backend_set_name):
-        """
-        Sets the backend_set_name of this PathRoute.
-        The name of the target backend set for requests where the incoming URI matches the specified path.
-
-        Example: `example_backend_set`
-
-
-        :param backend_set_name: The backend_set_name of this PathRoute.
-        :type: str
-        """
-        self._backend_set_name = backend_set_name
+        self._backend_set_name = None
 
     @property
     def path(self):
@@ -139,6 +111,34 @@ class PathRoute(object):
         :type: PathMatchType
         """
         self._path_match_type = path_match_type
+
+    @property
+    def backend_set_name(self):
+        """
+        **[Required]** Gets the backend_set_name of this PathRoute.
+        The name of the target backend set for requests where the incoming URI matches the specified path.
+
+        Example: `example_backend_set`
+
+
+        :return: The backend_set_name of this PathRoute.
+        :rtype: str
+        """
+        return self._backend_set_name
+
+    @backend_set_name.setter
+    def backend_set_name(self, backend_set_name):
+        """
+        Sets the backend_set_name of this PathRoute.
+        The name of the target backend set for requests where the incoming URI matches the specified path.
+
+        Example: `example_backend_set`
+
+
+        :param backend_set_name: The backend_set_name of this PathRoute.
+        :type: str
+        """
+        self._backend_set_name = backend_set_name
 
     def __repr__(self):
         return formatted_flat_dict(self)

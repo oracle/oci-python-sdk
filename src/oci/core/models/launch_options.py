@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -105,13 +105,18 @@ class LaunchOptions(object):
             The value to assign to the is_pv_encryption_in_transit_enabled property of this LaunchOptions.
         :type is_pv_encryption_in_transit_enabled: bool
 
+        :param is_consistent_volume_naming_enabled:
+            The value to assign to the is_consistent_volume_naming_enabled property of this LaunchOptions.
+        :type is_consistent_volume_naming_enabled: bool
+
         """
         self.swagger_types = {
             'boot_volume_type': 'str',
             'firmware': 'str',
             'network_type': 'str',
             'remote_data_volume_type': 'str',
-            'is_pv_encryption_in_transit_enabled': 'bool'
+            'is_pv_encryption_in_transit_enabled': 'bool',
+            'is_consistent_volume_naming_enabled': 'bool'
         }
 
         self.attribute_map = {
@@ -119,7 +124,8 @@ class LaunchOptions(object):
             'firmware': 'firmware',
             'network_type': 'networkType',
             'remote_data_volume_type': 'remoteDataVolumeType',
-            'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled'
+            'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled',
+            'is_consistent_volume_naming_enabled': 'isConsistentVolumeNamingEnabled'
         }
 
         self._boot_volume_type = None
@@ -127,6 +133,7 @@ class LaunchOptions(object):
         self._network_type = None
         self._remote_data_volume_type = None
         self._is_pv_encryption_in_transit_enabled = None
+        self._is_consistent_volume_naming_enabled = None
 
     @property
     def boot_volume_type(self):
@@ -313,6 +320,30 @@ class LaunchOptions(object):
         :type: bool
         """
         self._is_pv_encryption_in_transit_enabled = is_pv_encryption_in_transit_enabled
+
+    @property
+    def is_consistent_volume_naming_enabled(self):
+        """
+        Gets the is_consistent_volume_naming_enabled of this LaunchOptions.
+        Whether to enable consistent volume naming feature. Defaults to false.
+
+
+        :return: The is_consistent_volume_naming_enabled of this LaunchOptions.
+        :rtype: bool
+        """
+        return self._is_consistent_volume_naming_enabled
+
+    @is_consistent_volume_naming_enabled.setter
+    def is_consistent_volume_naming_enabled(self, is_consistent_volume_naming_enabled):
+        """
+        Sets the is_consistent_volume_naming_enabled of this LaunchOptions.
+        Whether to enable consistent volume naming feature. Defaults to false.
+
+
+        :param is_consistent_volume_naming_enabled: The is_consistent_volume_naming_enabled of this LaunchOptions.
+        :type: bool
+        """
+        self._is_consistent_volume_naming_enabled = is_consistent_volume_naming_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

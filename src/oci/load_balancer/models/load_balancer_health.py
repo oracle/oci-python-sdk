@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -36,80 +36,50 @@ class LoadBalancerHealth(object):
         Initializes a new LoadBalancerHealth object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param critical_state_backend_set_names:
-            The value to assign to the critical_state_backend_set_names property of this LoadBalancerHealth.
-        :type critical_state_backend_set_names: list[str]
-
         :param status:
             The value to assign to the status property of this LoadBalancerHealth.
             Allowed values for this property are: "OK", "WARNING", "CRITICAL", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
-        :param total_backend_set_count:
-            The value to assign to the total_backend_set_count property of this LoadBalancerHealth.
-        :type total_backend_set_count: int
+        :param warning_state_backend_set_names:
+            The value to assign to the warning_state_backend_set_names property of this LoadBalancerHealth.
+        :type warning_state_backend_set_names: list[str]
+
+        :param critical_state_backend_set_names:
+            The value to assign to the critical_state_backend_set_names property of this LoadBalancerHealth.
+        :type critical_state_backend_set_names: list[str]
 
         :param unknown_state_backend_set_names:
             The value to assign to the unknown_state_backend_set_names property of this LoadBalancerHealth.
         :type unknown_state_backend_set_names: list[str]
 
-        :param warning_state_backend_set_names:
-            The value to assign to the warning_state_backend_set_names property of this LoadBalancerHealth.
-        :type warning_state_backend_set_names: list[str]
+        :param total_backend_set_count:
+            The value to assign to the total_backend_set_count property of this LoadBalancerHealth.
+        :type total_backend_set_count: int
 
         """
         self.swagger_types = {
-            'critical_state_backend_set_names': 'list[str]',
             'status': 'str',
-            'total_backend_set_count': 'int',
+            'warning_state_backend_set_names': 'list[str]',
+            'critical_state_backend_set_names': 'list[str]',
             'unknown_state_backend_set_names': 'list[str]',
-            'warning_state_backend_set_names': 'list[str]'
+            'total_backend_set_count': 'int'
         }
 
         self.attribute_map = {
-            'critical_state_backend_set_names': 'criticalStateBackendSetNames',
             'status': 'status',
-            'total_backend_set_count': 'totalBackendSetCount',
+            'warning_state_backend_set_names': 'warningStateBackendSetNames',
+            'critical_state_backend_set_names': 'criticalStateBackendSetNames',
             'unknown_state_backend_set_names': 'unknownStateBackendSetNames',
-            'warning_state_backend_set_names': 'warningStateBackendSetNames'
+            'total_backend_set_count': 'totalBackendSetCount'
         }
 
-        self._critical_state_backend_set_names = None
         self._status = None
-        self._total_backend_set_count = None
-        self._unknown_state_backend_set_names = None
         self._warning_state_backend_set_names = None
-
-    @property
-    def critical_state_backend_set_names(self):
-        """
-        **[Required]** Gets the critical_state_backend_set_names of this LoadBalancerHealth.
-        A list of backend sets that are currently in the `CRITICAL` health state. The list identifies each backend set by the
-        friendly name you assigned when you created it.
-
-        Example: `example_backend_set`
-
-
-        :return: The critical_state_backend_set_names of this LoadBalancerHealth.
-        :rtype: list[str]
-        """
-        return self._critical_state_backend_set_names
-
-    @critical_state_backend_set_names.setter
-    def critical_state_backend_set_names(self, critical_state_backend_set_names):
-        """
-        Sets the critical_state_backend_set_names of this LoadBalancerHealth.
-        A list of backend sets that are currently in the `CRITICAL` health state. The list identifies each backend set by the
-        friendly name you assigned when you created it.
-
-        Example: `example_backend_set`
-
-
-        :param critical_state_backend_set_names: The critical_state_backend_set_names of this LoadBalancerHealth.
-        :type: list[str]
-        """
-        self._critical_state_backend_set_names = critical_state_backend_set_names
+        self._critical_state_backend_set_names = None
+        self._unknown_state_backend_set_names = None
+        self._total_backend_set_count = None
 
     @property
     def status(self):
@@ -178,32 +148,64 @@ class LoadBalancerHealth(object):
         self._status = status
 
     @property
-    def total_backend_set_count(self):
+    def warning_state_backend_set_names(self):
         """
-        **[Required]** Gets the total_backend_set_count of this LoadBalancerHealth.
-        The total number of backend sets associated with this load balancer.
+        **[Required]** Gets the warning_state_backend_set_names of this LoadBalancerHealth.
+        A list of backend sets that are currently in the `WARNING` health state. The list identifies each backend set by the
+        friendly name you assigned when you created it.
 
-        Example: `4`
+        Example: `example_backend_set3`
 
 
-        :return: The total_backend_set_count of this LoadBalancerHealth.
-        :rtype: int
+        :return: The warning_state_backend_set_names of this LoadBalancerHealth.
+        :rtype: list[str]
         """
-        return self._total_backend_set_count
+        return self._warning_state_backend_set_names
 
-    @total_backend_set_count.setter
-    def total_backend_set_count(self, total_backend_set_count):
+    @warning_state_backend_set_names.setter
+    def warning_state_backend_set_names(self, warning_state_backend_set_names):
         """
-        Sets the total_backend_set_count of this LoadBalancerHealth.
-        The total number of backend sets associated with this load balancer.
+        Sets the warning_state_backend_set_names of this LoadBalancerHealth.
+        A list of backend sets that are currently in the `WARNING` health state. The list identifies each backend set by the
+        friendly name you assigned when you created it.
 
-        Example: `4`
+        Example: `example_backend_set3`
 
 
-        :param total_backend_set_count: The total_backend_set_count of this LoadBalancerHealth.
-        :type: int
+        :param warning_state_backend_set_names: The warning_state_backend_set_names of this LoadBalancerHealth.
+        :type: list[str]
         """
-        self._total_backend_set_count = total_backend_set_count
+        self._warning_state_backend_set_names = warning_state_backend_set_names
+
+    @property
+    def critical_state_backend_set_names(self):
+        """
+        **[Required]** Gets the critical_state_backend_set_names of this LoadBalancerHealth.
+        A list of backend sets that are currently in the `CRITICAL` health state. The list identifies each backend set by the
+        friendly name you assigned when you created it.
+
+        Example: `example_backend_set`
+
+
+        :return: The critical_state_backend_set_names of this LoadBalancerHealth.
+        :rtype: list[str]
+        """
+        return self._critical_state_backend_set_names
+
+    @critical_state_backend_set_names.setter
+    def critical_state_backend_set_names(self, critical_state_backend_set_names):
+        """
+        Sets the critical_state_backend_set_names of this LoadBalancerHealth.
+        A list of backend sets that are currently in the `CRITICAL` health state. The list identifies each backend set by the
+        friendly name you assigned when you created it.
+
+        Example: `example_backend_set`
+
+
+        :param critical_state_backend_set_names: The critical_state_backend_set_names of this LoadBalancerHealth.
+        :type: list[str]
+        """
+        self._critical_state_backend_set_names = critical_state_backend_set_names
 
     @property
     def unknown_state_backend_set_names(self):
@@ -236,34 +238,32 @@ class LoadBalancerHealth(object):
         self._unknown_state_backend_set_names = unknown_state_backend_set_names
 
     @property
-    def warning_state_backend_set_names(self):
+    def total_backend_set_count(self):
         """
-        **[Required]** Gets the warning_state_backend_set_names of this LoadBalancerHealth.
-        A list of backend sets that are currently in the `WARNING` health state. The list identifies each backend set by the
-        friendly name you assigned when you created it.
+        **[Required]** Gets the total_backend_set_count of this LoadBalancerHealth.
+        The total number of backend sets associated with this load balancer.
 
-        Example: `example_backend_set3`
+        Example: `4`
 
 
-        :return: The warning_state_backend_set_names of this LoadBalancerHealth.
-        :rtype: list[str]
+        :return: The total_backend_set_count of this LoadBalancerHealth.
+        :rtype: int
         """
-        return self._warning_state_backend_set_names
+        return self._total_backend_set_count
 
-    @warning_state_backend_set_names.setter
-    def warning_state_backend_set_names(self, warning_state_backend_set_names):
+    @total_backend_set_count.setter
+    def total_backend_set_count(self, total_backend_set_count):
         """
-        Sets the warning_state_backend_set_names of this LoadBalancerHealth.
-        A list of backend sets that are currently in the `WARNING` health state. The list identifies each backend set by the
-        friendly name you assigned when you created it.
+        Sets the total_backend_set_count of this LoadBalancerHealth.
+        The total number of backend sets associated with this load balancer.
 
-        Example: `example_backend_set3`
+        Example: `4`
 
 
-        :param warning_state_backend_set_names: The warning_state_backend_set_names of this LoadBalancerHealth.
-        :type: list[str]
+        :param total_backend_set_count: The total_backend_set_count of this LoadBalancerHealth.
+        :type: int
         """
-        self._warning_state_backend_set_names = warning_state_backend_set_names
+        self._total_backend_set_count = total_backend_set_count
 
     def __repr__(self):
         return formatted_flat_dict(self)

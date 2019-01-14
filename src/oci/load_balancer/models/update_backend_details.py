@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -17,6 +17,10 @@ class UpdateBackendDetails(object):
         Initializes a new UpdateBackendDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param weight:
+            The value to assign to the weight property of this UpdateBackendDetails.
+        :type weight: int
+
         :param backup:
             The value to assign to the backup property of this UpdateBackendDetails.
         :type backup: bool
@@ -29,29 +33,65 @@ class UpdateBackendDetails(object):
             The value to assign to the offline property of this UpdateBackendDetails.
         :type offline: bool
 
-        :param weight:
-            The value to assign to the weight property of this UpdateBackendDetails.
-        :type weight: int
-
         """
         self.swagger_types = {
+            'weight': 'int',
             'backup': 'bool',
             'drain': 'bool',
-            'offline': 'bool',
-            'weight': 'int'
+            'offline': 'bool'
         }
 
         self.attribute_map = {
+            'weight': 'weight',
             'backup': 'backup',
             'drain': 'drain',
-            'offline': 'offline',
-            'weight': 'weight'
+            'offline': 'offline'
         }
 
+        self._weight = None
         self._backup = None
         self._drain = None
         self._offline = None
-        self._weight = None
+
+    @property
+    def weight(self):
+        """
+        **[Required]** Gets the weight of this UpdateBackendDetails.
+        The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger
+        proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections
+        as a server weighted '1'.
+        For more information on load balancing policies, see
+        `How Load Balancing Policies Work`__.
+
+        Example: `3`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Reference/lbpolicies.htm
+
+
+        :return: The weight of this UpdateBackendDetails.
+        :rtype: int
+        """
+        return self._weight
+
+    @weight.setter
+    def weight(self, weight):
+        """
+        Sets the weight of this UpdateBackendDetails.
+        The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger
+        proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections
+        as a server weighted '1'.
+        For more information on load balancing policies, see
+        `How Load Balancing Policies Work`__.
+
+        Example: `3`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Reference/lbpolicies.htm
+
+
+        :param weight: The weight of this UpdateBackendDetails.
+        :type: int
+        """
+        self._weight = weight
 
     @property
     def backup(self):
@@ -142,46 +182,6 @@ class UpdateBackendDetails(object):
         :type: bool
         """
         self._offline = offline
-
-    @property
-    def weight(self):
-        """
-        **[Required]** Gets the weight of this UpdateBackendDetails.
-        The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger
-        proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections
-        as a server weighted '1'.
-        For more information on load balancing policies, see
-        `How Load Balancing Policies Work`__.
-
-        Example: `3`
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Reference/lbpolicies.htm
-
-
-        :return: The weight of this UpdateBackendDetails.
-        :rtype: int
-        """
-        return self._weight
-
-    @weight.setter
-    def weight(self, weight):
-        """
-        Sets the weight of this UpdateBackendDetails.
-        The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger
-        proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections
-        as a server weighted '1'.
-        For more information on load balancing policies, see
-        `How Load Balancing Policies Work`__.
-
-        Example: `3`
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Reference/lbpolicies.htm
-
-
-        :param weight: The weight of this UpdateBackendDetails.
-        :type: int
-        """
-        self._weight = weight
 
     def __repr__(self):
         return formatted_flat_dict(self)

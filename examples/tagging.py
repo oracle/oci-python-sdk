@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
 # This script provides an example on how to use tagging in the Python SDK to manage tags and tag namespaces, as
 # well as how to apply freeform and defined tags to a resource.

@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -33,53 +33,29 @@ class BackendHealth(object):
         Initializes a new BackendHealth object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param health_check_results:
-            The value to assign to the health_check_results property of this BackendHealth.
-        :type health_check_results: list[HealthCheckResult]
-
         :param status:
             The value to assign to the status property of this BackendHealth.
             Allowed values for this property are: "OK", "WARNING", "CRITICAL", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
+        :param health_check_results:
+            The value to assign to the health_check_results property of this BackendHealth.
+        :type health_check_results: list[HealthCheckResult]
+
         """
         self.swagger_types = {
-            'health_check_results': 'list[HealthCheckResult]',
-            'status': 'str'
+            'status': 'str',
+            'health_check_results': 'list[HealthCheckResult]'
         }
 
         self.attribute_map = {
-            'health_check_results': 'healthCheckResults',
-            'status': 'status'
+            'status': 'status',
+            'health_check_results': 'healthCheckResults'
         }
 
-        self._health_check_results = None
         self._status = None
-
-    @property
-    def health_check_results(self):
-        """
-        **[Required]** Gets the health_check_results of this BackendHealth.
-        A list of the most recent health check results returned for the specified backend server.
-
-
-        :return: The health_check_results of this BackendHealth.
-        :rtype: list[HealthCheckResult]
-        """
-        return self._health_check_results
-
-    @health_check_results.setter
-    def health_check_results(self, health_check_results):
-        """
-        Sets the health_check_results of this BackendHealth.
-        A list of the most recent health check results returned for the specified backend server.
-
-
-        :param health_check_results: The health_check_results of this BackendHealth.
-        :type: list[HealthCheckResult]
-        """
-        self._health_check_results = health_check_results
+        self._health_check_results = None
 
     @property
     def status(self):
@@ -126,6 +102,30 @@ class BackendHealth(object):
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             status = 'UNKNOWN_ENUM_VALUE'
         self._status = status
+
+    @property
+    def health_check_results(self):
+        """
+        **[Required]** Gets the health_check_results of this BackendHealth.
+        A list of the most recent health check results returned for the specified backend server.
+
+
+        :return: The health_check_results of this BackendHealth.
+        :rtype: list[HealthCheckResult]
+        """
+        return self._health_check_results
+
+    @health_check_results.setter
+    def health_check_results(self, health_check_results):
+        """
+        Sets the health_check_results of this BackendHealth.
+        A list of the most recent health check results returned for the specified backend server.
+
+
+        :param health_check_results: The health_check_results of this BackendHealth.
+        :type: list[HealthCheckResult]
+        """
+        self._health_check_results = health_check_results
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -1,0 +1,11 @@
+AddHttpResponseHeaderRule
+=========================
+
+.. currentmodule:: oci.load_balancer.models
+
+.. autoclass:: AddHttpResponseHeaderRule
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

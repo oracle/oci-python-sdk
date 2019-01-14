@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -49,73 +49,71 @@ class HealthCheckResult(object):
         Initializes a new HealthCheckResult object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param subnet_id:
+            The value to assign to the subnet_id property of this HealthCheckResult.
+        :type subnet_id: str
+
+        :param source_ip_address:
+            The value to assign to the source_ip_address property of this HealthCheckResult.
+        :type source_ip_address: str
+
+        :param timestamp:
+            The value to assign to the timestamp property of this HealthCheckResult.
+        :type timestamp: datetime
+
         :param health_check_status:
             The value to assign to the health_check_status property of this HealthCheckResult.
             Allowed values for this property are: "OK", "INVALID_STATUS_CODE", "TIMED_OUT", "REGEX_MISMATCH", "CONNECT_FAILED", "IO_ERROR", "OFFLINE", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type health_check_status: str
 
-        :param source_ip_address:
-            The value to assign to the source_ip_address property of this HealthCheckResult.
-        :type source_ip_address: str
-
-        :param subnet_id:
-            The value to assign to the subnet_id property of this HealthCheckResult.
-        :type subnet_id: str
-
-        :param timestamp:
-            The value to assign to the timestamp property of this HealthCheckResult.
-        :type timestamp: datetime
-
         """
         self.swagger_types = {
-            'health_check_status': 'str',
-            'source_ip_address': 'str',
             'subnet_id': 'str',
-            'timestamp': 'datetime'
+            'source_ip_address': 'str',
+            'timestamp': 'datetime',
+            'health_check_status': 'str'
         }
 
         self.attribute_map = {
-            'health_check_status': 'healthCheckStatus',
-            'source_ip_address': 'sourceIpAddress',
             'subnet_id': 'subnetId',
-            'timestamp': 'timestamp'
+            'source_ip_address': 'sourceIpAddress',
+            'timestamp': 'timestamp',
+            'health_check_status': 'healthCheckStatus'
         }
 
-        self._health_check_status = None
-        self._source_ip_address = None
         self._subnet_id = None
+        self._source_ip_address = None
         self._timestamp = None
+        self._health_check_status = None
 
     @property
-    def health_check_status(self):
+    def subnet_id(self):
         """
-        **[Required]** Gets the health_check_status of this HealthCheckResult.
-        The result of the most recent health check.
+        **[Required]** Gets the subnet_id of this HealthCheckResult.
+        The `OCID`__ of the subnet hosting the load balancer that reported this health check status.
 
-        Allowed values for this property are: "OK", "INVALID_STATUS_CODE", "TIMED_OUT", "REGEX_MISMATCH", "CONNECT_FAILED", "IO_ERROR", "OFFLINE", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
-        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
-        :return: The health_check_status of this HealthCheckResult.
+        :return: The subnet_id of this HealthCheckResult.
         :rtype: str
         """
-        return self._health_check_status
+        return self._subnet_id
 
-    @health_check_status.setter
-    def health_check_status(self, health_check_status):
+    @subnet_id.setter
+    def subnet_id(self, subnet_id):
         """
-        Sets the health_check_status of this HealthCheckResult.
-        The result of the most recent health check.
+        Sets the subnet_id of this HealthCheckResult.
+        The `OCID`__ of the subnet hosting the load balancer that reported this health check status.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
 
 
-        :param health_check_status: The health_check_status of this HealthCheckResult.
+        :param subnet_id: The subnet_id of this HealthCheckResult.
         :type: str
         """
-        allowed_values = ["OK", "INVALID_STATUS_CODE", "TIMED_OUT", "REGEX_MISMATCH", "CONNECT_FAILED", "IO_ERROR", "OFFLINE", "UNKNOWN"]
-        if not value_allowed_none_or_none_sentinel(health_check_status, allowed_values):
-            health_check_status = 'UNKNOWN_ENUM_VALUE'
-        self._health_check_status = health_check_status
+        self._subnet_id = subnet_id
 
     @property
     def source_ip_address(self):
@@ -148,34 +146,6 @@ class HealthCheckResult(object):
         self._source_ip_address = source_ip_address
 
     @property
-    def subnet_id(self):
-        """
-        **[Required]** Gets the subnet_id of this HealthCheckResult.
-        The `OCID`__ of the subnet hosting the load balancer that reported this health check status.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-
-
-        :return: The subnet_id of this HealthCheckResult.
-        :rtype: str
-        """
-        return self._subnet_id
-
-    @subnet_id.setter
-    def subnet_id(self, subnet_id):
-        """
-        Sets the subnet_id of this HealthCheckResult.
-        The `OCID`__ of the subnet hosting the load balancer that reported this health check status.
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-
-
-        :param subnet_id: The subnet_id of this HealthCheckResult.
-        :type: str
-        """
-        self._subnet_id = subnet_id
-
-    @property
     def timestamp(self):
         """
         **[Required]** Gets the timestamp of this HealthCheckResult.
@@ -202,6 +172,36 @@ class HealthCheckResult(object):
         :type: datetime
         """
         self._timestamp = timestamp
+
+    @property
+    def health_check_status(self):
+        """
+        **[Required]** Gets the health_check_status of this HealthCheckResult.
+        The result of the most recent health check.
+
+        Allowed values for this property are: "OK", "INVALID_STATUS_CODE", "TIMED_OUT", "REGEX_MISMATCH", "CONNECT_FAILED", "IO_ERROR", "OFFLINE", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The health_check_status of this HealthCheckResult.
+        :rtype: str
+        """
+        return self._health_check_status
+
+    @health_check_status.setter
+    def health_check_status(self, health_check_status):
+        """
+        Sets the health_check_status of this HealthCheckResult.
+        The result of the most recent health check.
+
+
+        :param health_check_status: The health_check_status of this HealthCheckResult.
+        :type: str
+        """
+        allowed_values = ["OK", "INVALID_STATUS_CODE", "TIMED_OUT", "REGEX_MISMATCH", "CONNECT_FAILED", "IO_ERROR", "OFFLINE", "UNKNOWN"]
+        if not value_allowed_none_or_none_sentinel(health_check_status, allowed_values):
+            health_check_status = 'UNKNOWN_ENUM_VALUE'
+        self._health_check_status = health_check_status
 
     def __repr__(self):
         return formatted_flat_dict(self)

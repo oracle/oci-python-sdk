@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -13,6 +13,8 @@ class Certificate(object):
     For more information on SSL certficate configuration, see
     `Managing SSL Certificates`__.
 
+    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+
     __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managingcertificates.htm
     """
 
@@ -20,10 +22,6 @@ class Certificate(object):
         """
         Initializes a new Certificate object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
-
-        :param ca_certificate:
-            The value to assign to the ca_certificate property of this Certificate.
-        :type ca_certificate: str
 
         :param certificate_name:
             The value to assign to the certificate_name property of this Certificate.
@@ -33,66 +31,26 @@ class Certificate(object):
             The value to assign to the public_certificate property of this Certificate.
         :type public_certificate: str
 
+        :param ca_certificate:
+            The value to assign to the ca_certificate property of this Certificate.
+        :type ca_certificate: str
+
         """
         self.swagger_types = {
-            'ca_certificate': 'str',
             'certificate_name': 'str',
-            'public_certificate': 'str'
+            'public_certificate': 'str',
+            'ca_certificate': 'str'
         }
 
         self.attribute_map = {
-            'ca_certificate': 'caCertificate',
             'certificate_name': 'certificateName',
-            'public_certificate': 'publicCertificate'
+            'public_certificate': 'publicCertificate',
+            'ca_certificate': 'caCertificate'
         }
 
-        self._ca_certificate = None
         self._certificate_name = None
         self._public_certificate = None
-
-    @property
-    def ca_certificate(self):
-        """
-        **[Required]** Gets the ca_certificate of this Certificate.
-        The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
-
-        Example:
-
-            -----BEGIN CERTIFICATE-----
-            MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQQFAD..AkGA1UEBhMCR0Ix
-            EzARBgNVBAgTClNvbWUtU3RhdGUxFDASBgNVBAoTC0..0EgTHRkMTcwNQYD
-            VQQLEy5DbGFzcyAxIFB1YmxpYyBQcmltYXJ5IENlcn..XRpb24gQXV0aG9y
-            aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
-            ...
-            -----END CERTIFICATE-----
-
-
-        :return: The ca_certificate of this Certificate.
-        :rtype: str
-        """
-        return self._ca_certificate
-
-    @ca_certificate.setter
-    def ca_certificate(self, ca_certificate):
-        """
-        Sets the ca_certificate of this Certificate.
-        The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
-
-        Example:
-
-            -----BEGIN CERTIFICATE-----
-            MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQQFAD..AkGA1UEBhMCR0Ix
-            EzARBgNVBAgTClNvbWUtU3RhdGUxFDASBgNVBAoTC0..0EgTHRkMTcwNQYD
-            VQQLEy5DbGFzcyAxIFB1YmxpYyBQcmltYXJ5IENlcn..XRpb24gQXV0aG9y
-            aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
-            ...
-            -----END CERTIFICATE-----
-
-
-        :param ca_certificate: The ca_certificate of this Certificate.
-        :type: str
-        """
-        self._ca_certificate = ca_certificate
+        self._ca_certificate = None
 
     @property
     def certificate_name(self):
@@ -169,6 +127,50 @@ class Certificate(object):
         :type: str
         """
         self._public_certificate = public_certificate
+
+    @property
+    def ca_certificate(self):
+        """
+        **[Required]** Gets the ca_certificate of this Certificate.
+        The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
+
+        Example:
+
+            -----BEGIN CERTIFICATE-----
+            MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQQFAD..AkGA1UEBhMCR0Ix
+            EzARBgNVBAgTClNvbWUtU3RhdGUxFDASBgNVBAoTC0..0EgTHRkMTcwNQYD
+            VQQLEy5DbGFzcyAxIFB1YmxpYyBQcmltYXJ5IENlcn..XRpb24gQXV0aG9y
+            aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
+            ...
+            -----END CERTIFICATE-----
+
+
+        :return: The ca_certificate of this Certificate.
+        :rtype: str
+        """
+        return self._ca_certificate
+
+    @ca_certificate.setter
+    def ca_certificate(self, ca_certificate):
+        """
+        Sets the ca_certificate of this Certificate.
+        The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
+
+        Example:
+
+            -----BEGIN CERTIFICATE-----
+            MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQQFAD..AkGA1UEBhMCR0Ix
+            EzARBgNVBAgTClNvbWUtU3RhdGUxFDASBgNVBAoTC0..0EgTHRkMTcwNQYD
+            VQQLEy5DbGFzcyAxIFB1YmxpYyBQcmltYXJ5IENlcn..XRpb24gQXV0aG9y
+            aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
+            ...
+            -----END CERTIFICATE-----
+
+
+        :param ca_certificate: The ca_certificate of this Certificate.
+        :type: str
+        """
+        self._ca_certificate = ca_certificate
 
     def __repr__(self):
         return formatted_flat_dict(self)

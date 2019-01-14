@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -12,6 +12,8 @@ class SSLConfiguration(object):
     A listener's SSL handling configuration.
 
     To use SSL, a listener must be associated with a :class:`Certificate`.
+
+    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
 
     def __init__(self, **kwargs):
@@ -23,30 +25,30 @@ class SSLConfiguration(object):
             The value to assign to the certificate_name property of this SSLConfiguration.
         :type certificate_name: str
 
-        :param verify_depth:
-            The value to assign to the verify_depth property of this SSLConfiguration.
-        :type verify_depth: int
-
         :param verify_peer_certificate:
             The value to assign to the verify_peer_certificate property of this SSLConfiguration.
         :type verify_peer_certificate: bool
 
+        :param verify_depth:
+            The value to assign to the verify_depth property of this SSLConfiguration.
+        :type verify_depth: int
+
         """
         self.swagger_types = {
             'certificate_name': 'str',
-            'verify_depth': 'int',
-            'verify_peer_certificate': 'bool'
+            'verify_peer_certificate': 'bool',
+            'verify_depth': 'int'
         }
 
         self.attribute_map = {
             'certificate_name': 'certificateName',
-            'verify_depth': 'verifyDepth',
-            'verify_peer_certificate': 'verifyPeerCertificate'
+            'verify_peer_certificate': 'verifyPeerCertificate',
+            'verify_depth': 'verifyDepth'
         }
 
         self._certificate_name = None
-        self._verify_depth = None
         self._verify_peer_certificate = None
+        self._verify_depth = None
 
     @property
     def certificate_name(self):
@@ -81,34 +83,6 @@ class SSLConfiguration(object):
         self._certificate_name = certificate_name
 
     @property
-    def verify_depth(self):
-        """
-        **[Required]** Gets the verify_depth of this SSLConfiguration.
-        The maximum depth for peer certificate chain verification.
-
-        Example: `3`
-
-
-        :return: The verify_depth of this SSLConfiguration.
-        :rtype: int
-        """
-        return self._verify_depth
-
-    @verify_depth.setter
-    def verify_depth(self, verify_depth):
-        """
-        Sets the verify_depth of this SSLConfiguration.
-        The maximum depth for peer certificate chain verification.
-
-        Example: `3`
-
-
-        :param verify_depth: The verify_depth of this SSLConfiguration.
-        :type: int
-        """
-        self._verify_depth = verify_depth
-
-    @property
     def verify_peer_certificate(self):
         """
         **[Required]** Gets the verify_peer_certificate of this SSLConfiguration.
@@ -135,6 +109,34 @@ class SSLConfiguration(object):
         :type: bool
         """
         self._verify_peer_certificate = verify_peer_certificate
+
+    @property
+    def verify_depth(self):
+        """
+        **[Required]** Gets the verify_depth of this SSLConfiguration.
+        The maximum depth for peer certificate chain verification.
+
+        Example: `3`
+
+
+        :return: The verify_depth of this SSLConfiguration.
+        :rtype: int
+        """
+        return self._verify_depth
+
+    @verify_depth.setter
+    def verify_depth(self, verify_depth):
+        """
+        Sets the verify_depth of this SSLConfiguration.
+        The maximum depth for peer certificate chain verification.
+
+        Example: `3`
+
+
+        :param verify_depth: The verify_depth of this SSLConfiguration.
+        :type: int
+        """
+        self._verify_depth = verify_depth
 
     def __repr__(self):
         return formatted_flat_dict(self)
