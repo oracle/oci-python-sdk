@@ -93,6 +93,7 @@ Core Services
     oci.core.models.CrossConnectPortSpeedShape
     oci.core.models.CrossConnectStatus
     oci.core.models.DeleteVirtualCircuitPublicPrefixDetails
+    oci.core.models.Device
     oci.core.models.DhcpDnsOption
     oci.core.models.DhcpOption
     oci.core.models.DhcpOptions

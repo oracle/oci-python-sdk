@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
 from .security_token_signer import X509FederationClientBasedSecurityTokenSigner
 from ..certificate_retriever import UrlBasedCertificateRetriever, INSTANCE_METADATA_URL_CERTIFICATE_RETRIEVER_RETRY_STRATEGY

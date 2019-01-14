@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
 from .volume_attachment import VolumeAttachment
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -29,6 +29,10 @@ class IScsiVolumeAttachment(VolumeAttachment):
         :param compartment_id:
             The value to assign to the compartment_id property of this IScsiVolumeAttachment.
         :type compartment_id: str
+
+        :param device:
+            The value to assign to the device property of this IScsiVolumeAttachment.
+        :type device: str
 
         :param display_name:
             The value to assign to the display_name property of this IScsiVolumeAttachment.
@@ -88,6 +92,7 @@ class IScsiVolumeAttachment(VolumeAttachment):
             'attachment_type': 'str',
             'availability_domain': 'str',
             'compartment_id': 'str',
+            'device': 'str',
             'display_name': 'str',
             'id': 'str',
             'instance_id': 'str',
@@ -107,6 +112,7 @@ class IScsiVolumeAttachment(VolumeAttachment):
             'attachment_type': 'attachmentType',
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
+            'device': 'device',
             'display_name': 'displayName',
             'id': 'id',
             'instance_id': 'instanceId',
@@ -125,6 +131,7 @@ class IScsiVolumeAttachment(VolumeAttachment):
         self._attachment_type = None
         self._availability_domain = None
         self._compartment_id = None
+        self._device = None
         self._display_name = None
         self._id = None
         self._instance_id = None

@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -10,16 +10,14 @@ from oci.decorators import init_model_state_from_kwargs
 class UpdateLoadBalancerDetails(object):
     """
     Configuration details to update a load balancer.
+
+    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
 
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateLoadBalancerDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
-
-        :param defined_tags:
-            The value to assign to the defined_tags property of this UpdateLoadBalancerDetails.
-        :type defined_tags: dict(str, dict(str, object))
 
         :param display_name:
             The value to assign to the display_name property of this UpdateLoadBalancerDetails.
@@ -29,56 +27,26 @@ class UpdateLoadBalancerDetails(object):
             The value to assign to the freeform_tags property of this UpdateLoadBalancerDetails.
         :type freeform_tags: dict(str, str)
 
+        :param defined_tags:
+            The value to assign to the defined_tags property of this UpdateLoadBalancerDetails.
+        :type defined_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
-            'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
-            'freeform_tags': 'dict(str, str)'
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
-            'defined_tags': 'definedTags',
             'display_name': 'displayName',
-            'freeform_tags': 'freeformTags'
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags'
         }
 
-        self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
-
-    @property
-    def defined_tags(self):
-        """
-        Gets the defined_tags of this UpdateLoadBalancerDetails.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        For more information, see `Resource Tags`__.
-
-        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
-
-
-        :return: The defined_tags of this UpdateLoadBalancerDetails.
-        :rtype: dict(str, dict(str, object))
-        """
-        return self._defined_tags
-
-    @defined_tags.setter
-    def defined_tags(self, defined_tags):
-        """
-        Sets the defined_tags of this UpdateLoadBalancerDetails.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        For more information, see `Resource Tags`__.
-
-        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
-
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
-
-
-        :param defined_tags: The defined_tags of this UpdateLoadBalancerDetails.
-        :type: dict(str, dict(str, object))
-        """
-        self._defined_tags = defined_tags
+        self._defined_tags = None
 
     @property
     def display_name(self):
@@ -143,6 +111,40 @@ class UpdateLoadBalancerDetails(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this UpdateLoadBalancerDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this UpdateLoadBalancerDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this UpdateLoadBalancerDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this UpdateLoadBalancerDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

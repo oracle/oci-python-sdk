@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -17,125 +17,69 @@ class UpdateHealthCheckerDetails(object):
         Initializes a new UpdateHealthCheckerDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param interval_in_millis:
-            The value to assign to the interval_in_millis property of this UpdateHealthCheckerDetails.
-        :type interval_in_millis: int
-
-        :param port:
-            The value to assign to the port property of this UpdateHealthCheckerDetails.
-        :type port: int
-
         :param protocol:
             The value to assign to the protocol property of this UpdateHealthCheckerDetails.
         :type protocol: str
-
-        :param response_body_regex:
-            The value to assign to the response_body_regex property of this UpdateHealthCheckerDetails.
-        :type response_body_regex: str
-
-        :param retries:
-            The value to assign to the retries property of this UpdateHealthCheckerDetails.
-        :type retries: int
-
-        :param return_code:
-            The value to assign to the return_code property of this UpdateHealthCheckerDetails.
-        :type return_code: int
-
-        :param timeout_in_millis:
-            The value to assign to the timeout_in_millis property of this UpdateHealthCheckerDetails.
-        :type timeout_in_millis: int
 
         :param url_path:
             The value to assign to the url_path property of this UpdateHealthCheckerDetails.
         :type url_path: str
 
+        :param port:
+            The value to assign to the port property of this UpdateHealthCheckerDetails.
+        :type port: int
+
+        :param return_code:
+            The value to assign to the return_code property of this UpdateHealthCheckerDetails.
+        :type return_code: int
+
+        :param retries:
+            The value to assign to the retries property of this UpdateHealthCheckerDetails.
+        :type retries: int
+
+        :param timeout_in_millis:
+            The value to assign to the timeout_in_millis property of this UpdateHealthCheckerDetails.
+        :type timeout_in_millis: int
+
+        :param interval_in_millis:
+            The value to assign to the interval_in_millis property of this UpdateHealthCheckerDetails.
+        :type interval_in_millis: int
+
+        :param response_body_regex:
+            The value to assign to the response_body_regex property of this UpdateHealthCheckerDetails.
+        :type response_body_regex: str
+
         """
         self.swagger_types = {
-            'interval_in_millis': 'int',
-            'port': 'int',
             'protocol': 'str',
-            'response_body_regex': 'str',
-            'retries': 'int',
+            'url_path': 'str',
+            'port': 'int',
             'return_code': 'int',
+            'retries': 'int',
             'timeout_in_millis': 'int',
-            'url_path': 'str'
+            'interval_in_millis': 'int',
+            'response_body_regex': 'str'
         }
 
         self.attribute_map = {
-            'interval_in_millis': 'intervalInMillis',
-            'port': 'port',
             'protocol': 'protocol',
-            'response_body_regex': 'responseBodyRegex',
-            'retries': 'retries',
+            'url_path': 'urlPath',
+            'port': 'port',
             'return_code': 'returnCode',
+            'retries': 'retries',
             'timeout_in_millis': 'timeoutInMillis',
-            'url_path': 'urlPath'
+            'interval_in_millis': 'intervalInMillis',
+            'response_body_regex': 'responseBodyRegex'
         }
 
-        self._interval_in_millis = None
-        self._port = None
         self._protocol = None
-        self._response_body_regex = None
-        self._retries = None
-        self._return_code = None
-        self._timeout_in_millis = None
         self._url_path = None
-
-    @property
-    def interval_in_millis(self):
-        """
-        **[Required]** Gets the interval_in_millis of this UpdateHealthCheckerDetails.
-        The interval between health checks, in milliseconds.
-
-        Example: `10000`
-
-
-        :return: The interval_in_millis of this UpdateHealthCheckerDetails.
-        :rtype: int
-        """
-        return self._interval_in_millis
-
-    @interval_in_millis.setter
-    def interval_in_millis(self, interval_in_millis):
-        """
-        Sets the interval_in_millis of this UpdateHealthCheckerDetails.
-        The interval between health checks, in milliseconds.
-
-        Example: `10000`
-
-
-        :param interval_in_millis: The interval_in_millis of this UpdateHealthCheckerDetails.
-        :type: int
-        """
-        self._interval_in_millis = interval_in_millis
-
-    @property
-    def port(self):
-        """
-        **[Required]** Gets the port of this UpdateHealthCheckerDetails.
-        The backend server port against which to run the health check.
-
-        Example: `8080`
-
-
-        :return: The port of this UpdateHealthCheckerDetails.
-        :rtype: int
-        """
-        return self._port
-
-    @port.setter
-    def port(self, port):
-        """
-        Sets the port of this UpdateHealthCheckerDetails.
-        The backend server port against which to run the health check.
-
-        Example: `8080`
-
-
-        :param port: The port of this UpdateHealthCheckerDetails.
-        :type: int
-        """
-        self._port = port
+        self._port = None
+        self._return_code = None
+        self._retries = None
+        self._timeout_in_millis = None
+        self._interval_in_millis = None
+        self._response_body_regex = None
 
     @property
     def protocol(self):
@@ -166,60 +110,60 @@ class UpdateHealthCheckerDetails(object):
         self._protocol = protocol
 
     @property
-    def response_body_regex(self):
+    def url_path(self):
         """
-        **[Required]** Gets the response_body_regex of this UpdateHealthCheckerDetails.
-        A regular expression for parsing the response body from the backend server.
+        Gets the url_path of this UpdateHealthCheckerDetails.
+        The path against which to run the health check.
 
-        Example: `^((?!false).|\\s)*$`
+        Example: `/healthcheck`
 
 
-        :return: The response_body_regex of this UpdateHealthCheckerDetails.
+        :return: The url_path of this UpdateHealthCheckerDetails.
         :rtype: str
         """
-        return self._response_body_regex
+        return self._url_path
 
-    @response_body_regex.setter
-    def response_body_regex(self, response_body_regex):
+    @url_path.setter
+    def url_path(self, url_path):
         """
-        Sets the response_body_regex of this UpdateHealthCheckerDetails.
-        A regular expression for parsing the response body from the backend server.
+        Sets the url_path of this UpdateHealthCheckerDetails.
+        The path against which to run the health check.
 
-        Example: `^((?!false).|\\s)*$`
+        Example: `/healthcheck`
 
 
-        :param response_body_regex: The response_body_regex of this UpdateHealthCheckerDetails.
+        :param url_path: The url_path of this UpdateHealthCheckerDetails.
         :type: str
         """
-        self._response_body_regex = response_body_regex
+        self._url_path = url_path
 
     @property
-    def retries(self):
+    def port(self):
         """
-        **[Required]** Gets the retries of this UpdateHealthCheckerDetails.
-        The number of retries to attempt before a backend server is considered \"unhealthy\".
+        **[Required]** Gets the port of this UpdateHealthCheckerDetails.
+        The backend server port against which to run the health check.
 
-        Example: `3`
+        Example: `8080`
 
 
-        :return: The retries of this UpdateHealthCheckerDetails.
+        :return: The port of this UpdateHealthCheckerDetails.
         :rtype: int
         """
-        return self._retries
+        return self._port
 
-    @retries.setter
-    def retries(self, retries):
+    @port.setter
+    def port(self, port):
         """
-        Sets the retries of this UpdateHealthCheckerDetails.
-        The number of retries to attempt before a backend server is considered \"unhealthy\".
+        Sets the port of this UpdateHealthCheckerDetails.
+        The backend server port against which to run the health check.
 
-        Example: `3`
+        Example: `8080`
 
 
-        :param retries: The retries of this UpdateHealthCheckerDetails.
+        :param port: The port of this UpdateHealthCheckerDetails.
         :type: int
         """
-        self._retries = retries
+        self._port = port
 
     @property
     def return_code(self):
@@ -248,6 +192,34 @@ class UpdateHealthCheckerDetails(object):
         :type: int
         """
         self._return_code = return_code
+
+    @property
+    def retries(self):
+        """
+        **[Required]** Gets the retries of this UpdateHealthCheckerDetails.
+        The number of retries to attempt before a backend server is considered \"unhealthy\".
+
+        Example: `3`
+
+
+        :return: The retries of this UpdateHealthCheckerDetails.
+        :rtype: int
+        """
+        return self._retries
+
+    @retries.setter
+    def retries(self, retries):
+        """
+        Sets the retries of this UpdateHealthCheckerDetails.
+        The number of retries to attempt before a backend server is considered \"unhealthy\".
+
+        Example: `3`
+
+
+        :param retries: The retries of this UpdateHealthCheckerDetails.
+        :type: int
+        """
+        self._retries = retries
 
     @property
     def timeout_in_millis(self):
@@ -280,32 +252,60 @@ class UpdateHealthCheckerDetails(object):
         self._timeout_in_millis = timeout_in_millis
 
     @property
-    def url_path(self):
+    def interval_in_millis(self):
         """
-        Gets the url_path of this UpdateHealthCheckerDetails.
-        The path against which to run the health check.
+        **[Required]** Gets the interval_in_millis of this UpdateHealthCheckerDetails.
+        The interval between health checks, in milliseconds.
 
-        Example: `/healthcheck`
+        Example: `10000`
 
 
-        :return: The url_path of this UpdateHealthCheckerDetails.
+        :return: The interval_in_millis of this UpdateHealthCheckerDetails.
+        :rtype: int
+        """
+        return self._interval_in_millis
+
+    @interval_in_millis.setter
+    def interval_in_millis(self, interval_in_millis):
+        """
+        Sets the interval_in_millis of this UpdateHealthCheckerDetails.
+        The interval between health checks, in milliseconds.
+
+        Example: `10000`
+
+
+        :param interval_in_millis: The interval_in_millis of this UpdateHealthCheckerDetails.
+        :type: int
+        """
+        self._interval_in_millis = interval_in_millis
+
+    @property
+    def response_body_regex(self):
+        """
+        **[Required]** Gets the response_body_regex of this UpdateHealthCheckerDetails.
+        A regular expression for parsing the response body from the backend server.
+
+        Example: `^((?!false).|\\s)*$`
+
+
+        :return: The response_body_regex of this UpdateHealthCheckerDetails.
         :rtype: str
         """
-        return self._url_path
+        return self._response_body_regex
 
-    @url_path.setter
-    def url_path(self, url_path):
+    @response_body_regex.setter
+    def response_body_regex(self, response_body_regex):
         """
-        Sets the url_path of this UpdateHealthCheckerDetails.
-        The path against which to run the health check.
+        Sets the response_body_regex of this UpdateHealthCheckerDetails.
+        A regular expression for parsing the response body from the backend server.
 
-        Example: `/healthcheck`
+        Example: `^((?!false).|\\s)*$`
 
 
-        :param url_path: The url_path of this UpdateHealthCheckerDetails.
+        :param response_body_regex: The response_body_regex of this UpdateHealthCheckerDetails.
         :type: str
         """
-        self._url_path = url_path
+        self._response_body_regex = response_body_regex
 
     def __repr__(self):
         return formatted_flat_dict(self)

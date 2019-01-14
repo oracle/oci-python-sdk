@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
-2.1.3 - 12/13/2018
+2.1.4 - 2019-01-10
+====================
+
+Added
+-----
+* Support for device attributes on volumes in the Block Storage service
+* Support for custom header rulesets in the Load Balancing service 
+
+====================
+2.1.3 - 2018-12-13
 ====================
 
 Added

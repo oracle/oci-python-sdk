@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -38,23 +38,23 @@ class WorkRequest(object):
         Initializes a new WorkRequest object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param error_details:
-            The value to assign to the error_details property of this WorkRequest.
-        :type error_details: list[WorkRequestError]
-
         :param id:
             The value to assign to the id property of this WorkRequest.
         :type id: str
+
+        :param load_balancer_id:
+            The value to assign to the load_balancer_id property of this WorkRequest.
+        :type load_balancer_id: str
+
+        :param type:
+            The value to assign to the type property of this WorkRequest.
+        :type type: str
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this WorkRequest.
             Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
-
-        :param load_balancer_id:
-            The value to assign to the load_balancer_id property of this WorkRequest.
-        :type load_balancer_id: str
 
         :param message:
             The value to assign to the message property of this WorkRequest.
@@ -68,61 +68,41 @@ class WorkRequest(object):
             The value to assign to the time_finished property of this WorkRequest.
         :type time_finished: datetime
 
-        :param type:
-            The value to assign to the type property of this WorkRequest.
-        :type type: str
+        :param error_details:
+            The value to assign to the error_details property of this WorkRequest.
+        :type error_details: list[WorkRequestError]
 
         """
         self.swagger_types = {
-            'error_details': 'list[WorkRequestError]',
             'id': 'str',
-            'lifecycle_state': 'str',
             'load_balancer_id': 'str',
+            'type': 'str',
+            'lifecycle_state': 'str',
             'message': 'str',
             'time_accepted': 'datetime',
             'time_finished': 'datetime',
-            'type': 'str'
+            'error_details': 'list[WorkRequestError]'
         }
 
         self.attribute_map = {
-            'error_details': 'errorDetails',
             'id': 'id',
-            'lifecycle_state': 'lifecycleState',
             'load_balancer_id': 'loadBalancerId',
+            'type': 'type',
+            'lifecycle_state': 'lifecycleState',
             'message': 'message',
             'time_accepted': 'timeAccepted',
             'time_finished': 'timeFinished',
-            'type': 'type'
+            'error_details': 'errorDetails'
         }
 
-        self._error_details = None
         self._id = None
-        self._lifecycle_state = None
         self._load_balancer_id = None
+        self._type = None
+        self._lifecycle_state = None
         self._message = None
         self._time_accepted = None
         self._time_finished = None
-        self._type = None
-
-    @property
-    def error_details(self):
-        """
-        **[Required]** Gets the error_details of this WorkRequest.
-
-        :return: The error_details of this WorkRequest.
-        :rtype: list[WorkRequestError]
-        """
-        return self._error_details
-
-    @error_details.setter
-    def error_details(self, error_details):
-        """
-        Sets the error_details of this WorkRequest.
-
-        :param error_details: The error_details of this WorkRequest.
-        :type: list[WorkRequestError]
-        """
-        self._error_details = error_details
+        self._error_details = None
 
     @property
     def id(self):
@@ -153,36 +133,6 @@ class WorkRequest(object):
         self._id = id
 
     @property
-    def lifecycle_state(self):
-        """
-        **[Required]** Gets the lifecycle_state of this WorkRequest.
-        The current state of the work request.
-
-        Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", 'UNKNOWN_ENUM_VALUE'.
-        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
-
-
-        :return: The lifecycle_state of this WorkRequest.
-        :rtype: str
-        """
-        return self._lifecycle_state
-
-    @lifecycle_state.setter
-    def lifecycle_state(self, lifecycle_state):
-        """
-        Sets the lifecycle_state of this WorkRequest.
-        The current state of the work request.
-
-
-        :param lifecycle_state: The lifecycle_state of this WorkRequest.
-        :type: str
-        """
-        allowed_values = ["ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED"]
-        if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
-            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
-        self._lifecycle_state = lifecycle_state
-
-    @property
     def load_balancer_id(self):
         """
         **[Required]** Gets the load_balancer_id of this WorkRequest.
@@ -211,6 +161,64 @@ class WorkRequest(object):
         :type: str
         """
         self._load_balancer_id = load_balancer_id
+
+    @property
+    def type(self):
+        """
+        **[Required]** Gets the type of this WorkRequest.
+        The type of action the work request represents.
+
+        Example: `CreateListener`
+
+
+        :return: The type of this WorkRequest.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """
+        Sets the type of this WorkRequest.
+        The type of action the work request represents.
+
+        Example: `CreateListener`
+
+
+        :param type: The type of this WorkRequest.
+        :type: str
+        """
+        self._type = type
+
+    @property
+    def lifecycle_state(self):
+        """
+        **[Required]** Gets the lifecycle_state of this WorkRequest.
+        The current state of the work request.
+
+        Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The lifecycle_state of this WorkRequest.
+        :rtype: str
+        """
+        return self._lifecycle_state
+
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
+        """
+        Sets the lifecycle_state of this WorkRequest.
+        The current state of the work request.
+
+
+        :param lifecycle_state: The lifecycle_state of this WorkRequest.
+        :type: str
+        """
+        allowed_values = ["ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED"]
+        if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
+        self._lifecycle_state = lifecycle_state
 
     @property
     def message(self):
@@ -307,32 +315,24 @@ class WorkRequest(object):
         self._time_finished = time_finished
 
     @property
-    def type(self):
+    def error_details(self):
         """
-        **[Required]** Gets the type of this WorkRequest.
-        The type of action the work request represents.
+        **[Required]** Gets the error_details of this WorkRequest.
 
-        Example: `CreateListener`
-
-
-        :return: The type of this WorkRequest.
-        :rtype: str
+        :return: The error_details of this WorkRequest.
+        :rtype: list[WorkRequestError]
         """
-        return self._type
+        return self._error_details
 
-    @type.setter
-    def type(self, type):
+    @error_details.setter
+    def error_details(self, error_details):
         """
-        Sets the type of this WorkRequest.
-        The type of action the work request represents.
+        Sets the error_details of this WorkRequest.
 
-        Example: `CreateListener`
-
-
-        :param type: The type of this WorkRequest.
-        :type: str
+        :param error_details: The error_details of this WorkRequest.
+        :type: list[WorkRequestError]
         """
-        self._type = type
+        self._error_details = error_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

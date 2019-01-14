@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
 from . import audit, container_engine, core, database, dns, email, file_storage, identity, key_management, load_balancer, object_storage, resource_search
 from . import auth, config, constants, decorators, exceptions, regions, pagination, retry, fips

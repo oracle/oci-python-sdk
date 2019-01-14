@@ -1,8 +1,10 @@
 # coding: utf-8
-# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
 from __future__ import absolute_import
 
+from .add_http_request_header_rule import AddHttpRequestHeaderRule
+from .add_http_response_header_rule import AddHttpResponseHeaderRule
 from .backend import Backend
 from .backend_details import BackendDetails
 from .backend_health import BackendHealth
@@ -19,6 +21,9 @@ from .create_hostname_details import CreateHostnameDetails
 from .create_listener_details import CreateListenerDetails
 from .create_load_balancer_details import CreateLoadBalancerDetails
 from .create_path_route_set_details import CreatePathRouteSetDetails
+from .create_rule_set_details import CreateRuleSetDetails
+from .extend_http_request_header_value_rule import ExtendHttpRequestHeaderValueRule
+from .extend_http_response_header_value_rule import ExtendHttpResponseHeaderValueRule
 from .health_check_result import HealthCheckResult
 from .health_checker import HealthChecker
 from .health_checker_details import HealthCheckerDetails
@@ -37,6 +42,11 @@ from .path_match_type import PathMatchType
 from .path_route import PathRoute
 from .path_route_set import PathRouteSet
 from .path_route_set_details import PathRouteSetDetails
+from .remove_http_request_header_rule import RemoveHttpRequestHeaderRule
+from .remove_http_response_header_rule import RemoveHttpResponseHeaderRule
+from .rule import Rule
+from .rule_set import RuleSet
+from .rule_set_details import RuleSetDetails
 from .ssl_configuration import SSLConfiguration
 from .ssl_configuration_details import SSLConfigurationDetails
 from .session_persistence_configuration_details import SessionPersistenceConfigurationDetails
@@ -47,11 +57,14 @@ from .update_hostname_details import UpdateHostnameDetails
 from .update_listener_details import UpdateListenerDetails
 from .update_load_balancer_details import UpdateLoadBalancerDetails
 from .update_path_route_set_details import UpdatePathRouteSetDetails
+from .update_rule_set_details import UpdateRuleSetDetails
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
 
 # Maps type names to classes for load_balancer services.
 load_balancer_type_mapping = {
+    "AddHttpRequestHeaderRule": AddHttpRequestHeaderRule,
+    "AddHttpResponseHeaderRule": AddHttpResponseHeaderRule,
     "Backend": Backend,
     "BackendDetails": BackendDetails,
     "BackendHealth": BackendHealth,
@@ -68,6 +81,9 @@ load_balancer_type_mapping = {
     "CreateListenerDetails": CreateListenerDetails,
     "CreateLoadBalancerDetails": CreateLoadBalancerDetails,
     "CreatePathRouteSetDetails": CreatePathRouteSetDetails,
+    "CreateRuleSetDetails": CreateRuleSetDetails,
+    "ExtendHttpRequestHeaderValueRule": ExtendHttpRequestHeaderValueRule,
+    "ExtendHttpResponseHeaderValueRule": ExtendHttpResponseHeaderValueRule,
     "HealthCheckResult": HealthCheckResult,
     "HealthChecker": HealthChecker,
     "HealthCheckerDetails": HealthCheckerDetails,
@@ -86,6 +102,11 @@ load_balancer_type_mapping = {
     "PathRoute": PathRoute,
     "PathRouteSet": PathRouteSet,
     "PathRouteSetDetails": PathRouteSetDetails,
+    "RemoveHttpRequestHeaderRule": RemoveHttpRequestHeaderRule,
+    "RemoveHttpResponseHeaderRule": RemoveHttpResponseHeaderRule,
+    "Rule": Rule,
+    "RuleSet": RuleSet,
+    "RuleSetDetails": RuleSetDetails,
     "SSLConfiguration": SSLConfiguration,
     "SSLConfigurationDetails": SSLConfigurationDetails,
     "SessionPersistenceConfigurationDetails": SessionPersistenceConfigurationDetails,
@@ -96,6 +117,7 @@ load_balancer_type_mapping = {
     "UpdateListenerDetails": UpdateListenerDetails,
     "UpdateLoadBalancerDetails": UpdateLoadBalancerDetails,
     "UpdatePathRouteSetDetails": UpdatePathRouteSetDetails,
+    "UpdateRuleSetDetails": UpdateRuleSetDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError
 }

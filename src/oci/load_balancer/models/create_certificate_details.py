@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -13,6 +13,8 @@ class CreateCertificateDetails(object):
     For more information on SSL certficate configuration, see
     `Managing SSL Certificates`__.
 
+    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+
     __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managingcertificates.htm
     """
 
@@ -20,14 +22,6 @@ class CreateCertificateDetails(object):
         """
         Initializes a new CreateCertificateDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
-
-        :param ca_certificate:
-            The value to assign to the ca_certificate property of this CreateCertificateDetails.
-        :type ca_certificate: str
-
-        :param certificate_name:
-            The value to assign to the certificate_name property of this CreateCertificateDetails.
-        :type certificate_name: str
 
         :param passphrase:
             The value to assign to the passphrase property of this CreateCertificateDetails.
@@ -41,104 +35,36 @@ class CreateCertificateDetails(object):
             The value to assign to the public_certificate property of this CreateCertificateDetails.
         :type public_certificate: str
 
+        :param ca_certificate:
+            The value to assign to the ca_certificate property of this CreateCertificateDetails.
+        :type ca_certificate: str
+
+        :param certificate_name:
+            The value to assign to the certificate_name property of this CreateCertificateDetails.
+        :type certificate_name: str
+
         """
         self.swagger_types = {
-            'ca_certificate': 'str',
-            'certificate_name': 'str',
             'passphrase': 'str',
             'private_key': 'str',
-            'public_certificate': 'str'
+            'public_certificate': 'str',
+            'ca_certificate': 'str',
+            'certificate_name': 'str'
         }
 
         self.attribute_map = {
-            'ca_certificate': 'caCertificate',
-            'certificate_name': 'certificateName',
             'passphrase': 'passphrase',
             'private_key': 'privateKey',
-            'public_certificate': 'publicCertificate'
+            'public_certificate': 'publicCertificate',
+            'ca_certificate': 'caCertificate',
+            'certificate_name': 'certificateName'
         }
 
-        self._ca_certificate = None
-        self._certificate_name = None
         self._passphrase = None
         self._private_key = None
         self._public_certificate = None
-
-    @property
-    def ca_certificate(self):
-        """
-        Gets the ca_certificate of this CreateCertificateDetails.
-        The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
-
-        Example:
-
-            -----BEGIN CERTIFICATE-----
-            MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQQFAD..AkGA1UEBhMCR0Ix
-            EzARBgNVBAgTClNvbWUtU3RhdGUxFDASBgNVBAoTC0..0EgTHRkMTcwNQYD
-            VQQLEy5DbGFzcyAxIFB1YmxpYyBQcmltYXJ5IENlcn..XRpb24gQXV0aG9y
-            aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
-            ...
-            -----END CERTIFICATE-----
-
-
-        :return: The ca_certificate of this CreateCertificateDetails.
-        :rtype: str
-        """
-        return self._ca_certificate
-
-    @ca_certificate.setter
-    def ca_certificate(self, ca_certificate):
-        """
-        Sets the ca_certificate of this CreateCertificateDetails.
-        The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
-
-        Example:
-
-            -----BEGIN CERTIFICATE-----
-            MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQQFAD..AkGA1UEBhMCR0Ix
-            EzARBgNVBAgTClNvbWUtU3RhdGUxFDASBgNVBAoTC0..0EgTHRkMTcwNQYD
-            VQQLEy5DbGFzcyAxIFB1YmxpYyBQcmltYXJ5IENlcn..XRpb24gQXV0aG9y
-            aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
-            ...
-            -----END CERTIFICATE-----
-
-
-        :param ca_certificate: The ca_certificate of this CreateCertificateDetails.
-        :type: str
-        """
-        self._ca_certificate = ca_certificate
-
-    @property
-    def certificate_name(self):
-        """
-        **[Required]** Gets the certificate_name of this CreateCertificateDetails.
-        A friendly name for the certificate bundle. It must be unique and it cannot be changed.
-        Valid certificate bundle names include only alphanumeric characters, dashes, and underscores.
-        Certificate bundle names cannot contain spaces. Avoid entering confidential information.
-
-        Example: `example_certificate_bundle`
-
-
-        :return: The certificate_name of this CreateCertificateDetails.
-        :rtype: str
-        """
-        return self._certificate_name
-
-    @certificate_name.setter
-    def certificate_name(self, certificate_name):
-        """
-        Sets the certificate_name of this CreateCertificateDetails.
-        A friendly name for the certificate bundle. It must be unique and it cannot be changed.
-        Valid certificate bundle names include only alphanumeric characters, dashes, and underscores.
-        Certificate bundle names cannot contain spaces. Avoid entering confidential information.
-
-        Example: `example_certificate_bundle`
-
-
-        :param certificate_name: The certificate_name of this CreateCertificateDetails.
-        :type: str
-        """
-        self._certificate_name = certificate_name
+        self._ca_certificate = None
+        self._certificate_name = None
 
     @property
     def passphrase(self):
@@ -251,6 +177,82 @@ class CreateCertificateDetails(object):
         :type: str
         """
         self._public_certificate = public_certificate
+
+    @property
+    def ca_certificate(self):
+        """
+        Gets the ca_certificate of this CreateCertificateDetails.
+        The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
+
+        Example:
+
+            -----BEGIN CERTIFICATE-----
+            MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQQFAD..AkGA1UEBhMCR0Ix
+            EzARBgNVBAgTClNvbWUtU3RhdGUxFDASBgNVBAoTC0..0EgTHRkMTcwNQYD
+            VQQLEy5DbGFzcyAxIFB1YmxpYyBQcmltYXJ5IENlcn..XRpb24gQXV0aG9y
+            aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
+            ...
+            -----END CERTIFICATE-----
+
+
+        :return: The ca_certificate of this CreateCertificateDetails.
+        :rtype: str
+        """
+        return self._ca_certificate
+
+    @ca_certificate.setter
+    def ca_certificate(self, ca_certificate):
+        """
+        Sets the ca_certificate of this CreateCertificateDetails.
+        The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
+
+        Example:
+
+            -----BEGIN CERTIFICATE-----
+            MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQQFAD..AkGA1UEBhMCR0Ix
+            EzARBgNVBAgTClNvbWUtU3RhdGUxFDASBgNVBAoTC0..0EgTHRkMTcwNQYD
+            VQQLEy5DbGFzcyAxIFB1YmxpYyBQcmltYXJ5IENlcn..XRpb24gQXV0aG9y
+            aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
+            ...
+            -----END CERTIFICATE-----
+
+
+        :param ca_certificate: The ca_certificate of this CreateCertificateDetails.
+        :type: str
+        """
+        self._ca_certificate = ca_certificate
+
+    @property
+    def certificate_name(self):
+        """
+        **[Required]** Gets the certificate_name of this CreateCertificateDetails.
+        A friendly name for the certificate bundle. It must be unique and it cannot be changed.
+        Valid certificate bundle names include only alphanumeric characters, dashes, and underscores.
+        Certificate bundle names cannot contain spaces. Avoid entering confidential information.
+
+        Example: `example_certificate_bundle`
+
+
+        :return: The certificate_name of this CreateCertificateDetails.
+        :rtype: str
+        """
+        return self._certificate_name
+
+    @certificate_name.setter
+    def certificate_name(self, certificate_name):
+        """
+        Sets the certificate_name of this CreateCertificateDetails.
+        A friendly name for the certificate bundle. It must be unique and it cannot be changed.
+        Valid certificate bundle names include only alphanumeric characters, dashes, and underscores.
+        Certificate bundle names cannot contain spaces. Avoid entering confidential information.
+
+        Example: `example_certificate_bundle`
+
+
+        :param certificate_name: The certificate_name of this CreateCertificateDetails.
+        :type: str
+        """
+        self._certificate_name = certificate_name
 
     def __repr__(self):
         return formatted_flat_dict(self)

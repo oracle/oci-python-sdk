@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
 # This script provides a basic example of how to use the retry functionality in the Python SDK when
 # making calls to Oracle Cloud Infrastructure services. In order to demonstrate this functionality, this script shows

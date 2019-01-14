@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -13,7 +13,7 @@ class CreateBackendDetails(object):
     For more information on backend server configuration, see
     `Managing Backend Servers`__.
 
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/tasks/managingbackendservers.htm
+    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managingbackendservers.htm
     """
 
     def __init__(self, **kwargs):
@@ -21,21 +21,9 @@ class CreateBackendDetails(object):
         Initializes a new CreateBackendDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param backup:
-            The value to assign to the backup property of this CreateBackendDetails.
-        :type backup: bool
-
-        :param drain:
-            The value to assign to the drain property of this CreateBackendDetails.
-        :type drain: bool
-
         :param ip_address:
             The value to assign to the ip_address property of this CreateBackendDetails.
         :type ip_address: str
-
-        :param offline:
-            The value to assign to the offline property of this CreateBackendDetails.
-        :type offline: bool
 
         :param port:
             The value to assign to the port property of this CreateBackendDetails.
@@ -45,91 +33,43 @@ class CreateBackendDetails(object):
             The value to assign to the weight property of this CreateBackendDetails.
         :type weight: int
 
+        :param backup:
+            The value to assign to the backup property of this CreateBackendDetails.
+        :type backup: bool
+
+        :param drain:
+            The value to assign to the drain property of this CreateBackendDetails.
+        :type drain: bool
+
+        :param offline:
+            The value to assign to the offline property of this CreateBackendDetails.
+        :type offline: bool
+
         """
         self.swagger_types = {
+            'ip_address': 'str',
+            'port': 'int',
+            'weight': 'int',
             'backup': 'bool',
             'drain': 'bool',
-            'ip_address': 'str',
-            'offline': 'bool',
-            'port': 'int',
-            'weight': 'int'
+            'offline': 'bool'
         }
 
         self.attribute_map = {
+            'ip_address': 'ipAddress',
+            'port': 'port',
+            'weight': 'weight',
             'backup': 'backup',
             'drain': 'drain',
-            'ip_address': 'ipAddress',
-            'offline': 'offline',
-            'port': 'port',
-            'weight': 'weight'
+            'offline': 'offline'
         }
 
-        self._backup = None
-        self._drain = None
         self._ip_address = None
-        self._offline = None
         self._port = None
         self._weight = None
-
-    @property
-    def backup(self):
-        """
-        Gets the backup of this CreateBackendDetails.
-        Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress
-        traffic to this backend server unless all other backend servers not marked as \"backup\" fail the health check policy.
-
-        Example: `false`
-
-
-        :return: The backup of this CreateBackendDetails.
-        :rtype: bool
-        """
-        return self._backup
-
-    @backup.setter
-    def backup(self, backup):
-        """
-        Sets the backup of this CreateBackendDetails.
-        Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress
-        traffic to this backend server unless all other backend servers not marked as \"backup\" fail the health check policy.
-
-        Example: `false`
-
-
-        :param backup: The backup of this CreateBackendDetails.
-        :type: bool
-        """
-        self._backup = backup
-
-    @property
-    def drain(self):
-        """
-        Gets the drain of this CreateBackendDetails.
-        Whether the load balancer should drain this server. Servers marked \"drain\" receive no new
-        incoming traffic.
-
-        Example: `false`
-
-
-        :return: The drain of this CreateBackendDetails.
-        :rtype: bool
-        """
-        return self._drain
-
-    @drain.setter
-    def drain(self, drain):
-        """
-        Sets the drain of this CreateBackendDetails.
-        Whether the load balancer should drain this server. Servers marked \"drain\" receive no new
-        incoming traffic.
-
-        Example: `false`
-
-
-        :param drain: The drain of this CreateBackendDetails.
-        :type: bool
-        """
-        self._drain = drain
+        self._backup = None
+        self._drain = None
+        self._offline = None
 
     @property
     def ip_address(self):
@@ -158,36 +98,6 @@ class CreateBackendDetails(object):
         :type: str
         """
         self._ip_address = ip_address
-
-    @property
-    def offline(self):
-        """
-        Gets the offline of this CreateBackendDetails.
-        Whether the load balancer should treat this server as offline. Offline servers receive no incoming
-        traffic.
-
-        Example: `false`
-
-
-        :return: The offline of this CreateBackendDetails.
-        :rtype: bool
-        """
-        return self._offline
-
-    @offline.setter
-    def offline(self, offline):
-        """
-        Sets the offline of this CreateBackendDetails.
-        Whether the load balancer should treat this server as offline. Offline servers receive no incoming
-        traffic.
-
-        Example: `false`
-
-
-        :param offline: The offline of this CreateBackendDetails.
-        :type: bool
-        """
-        self._offline = offline
 
     @property
     def port(self):
@@ -256,6 +166,96 @@ class CreateBackendDetails(object):
         :type: int
         """
         self._weight = weight
+
+    @property
+    def backup(self):
+        """
+        Gets the backup of this CreateBackendDetails.
+        Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress
+        traffic to this backend server unless all other backend servers not marked as \"backup\" fail the health check policy.
+
+        Example: `false`
+
+
+        :return: The backup of this CreateBackendDetails.
+        :rtype: bool
+        """
+        return self._backup
+
+    @backup.setter
+    def backup(self, backup):
+        """
+        Sets the backup of this CreateBackendDetails.
+        Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress
+        traffic to this backend server unless all other backend servers not marked as \"backup\" fail the health check policy.
+
+        Example: `false`
+
+
+        :param backup: The backup of this CreateBackendDetails.
+        :type: bool
+        """
+        self._backup = backup
+
+    @property
+    def drain(self):
+        """
+        Gets the drain of this CreateBackendDetails.
+        Whether the load balancer should drain this server. Servers marked \"drain\" receive no new
+        incoming traffic.
+
+        Example: `false`
+
+
+        :return: The drain of this CreateBackendDetails.
+        :rtype: bool
+        """
+        return self._drain
+
+    @drain.setter
+    def drain(self, drain):
+        """
+        Sets the drain of this CreateBackendDetails.
+        Whether the load balancer should drain this server. Servers marked \"drain\" receive no new
+        incoming traffic.
+
+        Example: `false`
+
+
+        :param drain: The drain of this CreateBackendDetails.
+        :type: bool
+        """
+        self._drain = drain
+
+    @property
+    def offline(self):
+        """
+        Gets the offline of this CreateBackendDetails.
+        Whether the load balancer should treat this server as offline. Offline servers receive no incoming
+        traffic.
+
+        Example: `false`
+
+
+        :return: The offline of this CreateBackendDetails.
+        :rtype: bool
+        """
+        return self._offline
+
+    @offline.setter
+    def offline(self, offline):
+        """
+        Sets the offline of this CreateBackendDetails.
+        Whether the load balancer should treat this server as offline. Offline servers receive no incoming
+        traffic.
+
+        Example: `false`
+
+
+        :param offline: The offline of this CreateBackendDetails.
+        :type: bool
+        """
+        self._offline = offline
 
     def __repr__(self):
         return formatted_flat_dict(self)

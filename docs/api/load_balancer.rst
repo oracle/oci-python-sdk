@@ -18,6 +18,8 @@ Load Balancer
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.load_balancer.models.AddHttpRequestHeaderRule
+    oci.load_balancer.models.AddHttpResponseHeaderRule
     oci.load_balancer.models.Backend
     oci.load_balancer.models.BackendDetails
     oci.load_balancer.models.BackendHealth
@@ -34,6 +36,9 @@ Load Balancer
     oci.load_balancer.models.CreateListenerDetails
     oci.load_balancer.models.CreateLoadBalancerDetails
     oci.load_balancer.models.CreatePathRouteSetDetails
+    oci.load_balancer.models.CreateRuleSetDetails
+    oci.load_balancer.models.ExtendHttpRequestHeaderValueRule
+    oci.load_balancer.models.ExtendHttpResponseHeaderValueRule
     oci.load_balancer.models.HealthCheckResult
     oci.load_balancer.models.HealthChecker
     oci.load_balancer.models.HealthCheckerDetails
@@ -52,6 +57,11 @@ Load Balancer
     oci.load_balancer.models.PathRoute
     oci.load_balancer.models.PathRouteSet
     oci.load_balancer.models.PathRouteSetDetails
+    oci.load_balancer.models.RemoveHttpRequestHeaderRule
+    oci.load_balancer.models.RemoveHttpResponseHeaderRule
+    oci.load_balancer.models.Rule
+    oci.load_balancer.models.RuleSet
+    oci.load_balancer.models.RuleSetDetails
     oci.load_balancer.models.SSLConfiguration
     oci.load_balancer.models.SSLConfigurationDetails
     oci.load_balancer.models.SessionPersistenceConfigurationDetails
@@ -62,5 +72,6 @@ Load Balancer
     oci.load_balancer.models.UpdateListenerDetails
     oci.load_balancer.models.UpdateLoadBalancerDetails
     oci.load_balancer.models.UpdatePathRouteSetDetails
+    oci.load_balancer.models.UpdateRuleSetDetails
     oci.load_balancer.models.WorkRequest
     oci.load_balancer.models.WorkRequestError
