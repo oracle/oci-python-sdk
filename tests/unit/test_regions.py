@@ -1,7 +1,8 @@
 # coding: utf-8
 # Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
-from oci.regions import endpoint_for
+from oci.regions import endpoint_for, REGIONS_SHORT_NAMES, REGIONS, REGION_REALMS
+from oci._vendor import six
 
 
 def test_endpoint_for_service_template():
@@ -38,3 +39,13 @@ def test_endpoint_for_region():
 
     endpoint = endpoint_for('compute', 'us-phoenix-1.oraclecloud.com', None, None)
     assert endpoint == 'https://iaas.us-phoenix-1.oraclecloud.com'
+
+
+def test_short_name_to_region():
+    for shortname in six.iterkeys(REGIONS_SHORT_NAMES):
+        assert(REGIONS_SHORT_NAMES[shortname] in REGIONS)
+
+
+def test_short_name_to_realm():
+    for shortname in six.iterkeys(REGIONS_SHORT_NAMES):
+        assert(REGIONS_SHORT_NAMES[shortname] in REGION_REALMS)
