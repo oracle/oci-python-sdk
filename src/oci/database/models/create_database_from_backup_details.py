@@ -29,22 +29,29 @@ class CreateDatabaseFromBackupDetails(object):
             The value to assign to the admin_password property of this CreateDatabaseFromBackupDetails.
         :type admin_password: str
 
+        :param db_name:
+            The value to assign to the db_name property of this CreateDatabaseFromBackupDetails.
+        :type db_name: str
+
         """
         self.swagger_types = {
             'backup_id': 'str',
             'backup_tde_password': 'str',
-            'admin_password': 'str'
+            'admin_password': 'str',
+            'db_name': 'str'
         }
 
         self.attribute_map = {
             'backup_id': 'backupId',
             'backup_tde_password': 'backupTDEPassword',
-            'admin_password': 'adminPassword'
+            'admin_password': 'adminPassword',
+            'db_name': 'dbName'
         }
 
         self._backup_id = None
         self._backup_tde_password = None
         self._admin_password = None
+        self._db_name = None
 
     @property
     def backup_id(self):
@@ -121,6 +128,30 @@ class CreateDatabaseFromBackupDetails(object):
         :type: str
         """
         self._admin_password = admin_password
+
+    @property
+    def db_name(self):
+        """
+        Gets the db_name of this CreateDatabaseFromBackupDetails.
+        The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+
+
+        :return: The db_name of this CreateDatabaseFromBackupDetails.
+        :rtype: str
+        """
+        return self._db_name
+
+    @db_name.setter
+    def db_name(self, db_name):
+        """
+        Sets the db_name of this CreateDatabaseFromBackupDetails.
+        The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+
+
+        :param db_name: The db_name of this CreateDatabaseFromBackupDetails.
+        :type: str
+        """
+        self._db_name = db_name
 
     def __repr__(self):
         return formatted_flat_dict(self)
