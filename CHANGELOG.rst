@@ -18,8 +18,8 @@ Added
 
 Added
 -----
-* Support for device attributes on volumes in the Block Storage service
-* Support for custom header rulesets in the Load Balancing service 
+* Support for device attributes on volume attachments in the Compute service
+* Support for custom header rulesets in the Load Balancing service
 
 ====================
 2.1.3 - 2018-12-13
@@ -34,7 +34,7 @@ Added
 * Support for tagging DNS Zones in the DNS service
 * Support for resetting credentials for SCIM clients associated with an Identity provider and updating user capabilities in the Identity service
 
-Security 
+Security
 -------
 * pyOpenSSL pinning was changed to pyOpenSSL>=17.5.0 and cryptography pinning to cryptography>=2.1.4 to address vulnerability `CVE-2018-1000808 <https://nvd.nist.gov/vuln/detail/CVE-2018-1000808>`__
 
