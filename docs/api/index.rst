@@ -13,6 +13,31 @@ Single Page Reference
 ~~~~~~~~~~~~~~~~~~~~~~
 
 
+=====================
+Announcements Service
+=====================
+
+--------
+ Client
+--------
+
+.. autoclass:: oci.announcements_service.announcement_client.AnnouncementClient
+    :members:
+    :noindex:
+
+--------
+ Models
+--------
+
+.. automodule:: oci.announcements_service.models
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :imported-members:
+    :inherited-members:
+    :noindex:
+
+
 =====
 Audit
 =====

@@ -2,6 +2,7 @@
 # Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
 SERVICE_ENDPOINTS = {
+    "announcement": "https://announcements.{domain}",
     "audit": "https://audit.{domain}",
     "blockstorage": "https://iaas.{domain}",
     "compute": "https://iaas.{domain}",

@@ -50,3 +50,4 @@
 ^src/oci/container_engine/.*\.py$
 ^src/oci/resource_search/.*\.py$
 ^src/oci/key_management/.*\.py$
+^src/oci/announcements_service/.*\.py$

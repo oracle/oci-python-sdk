@@ -26,6 +26,7 @@
     <resource-query-service-spec-spec-file>rqs.yaml</resource-query-service-spec-spec-file>
     <clusters-api-spec-spec-file>clusters-api-spec.yaml</clusters-api-spec-spec-file>
     <kms-api-spec-spec-file>kms-api-spec-20180608.yaml</kms-api-spec-spec-file>
+    <announcements-service-spec-spec-file>source/announcement-service.cond.yaml</announcements-service-spec-spec-file>
   </properties>
   <dependencies>
     <dependency>
@@ -75,6 +76,10 @@
     <dependency>
       <groupId>com.oracle.pic.kms</groupId>
       <artifactId>kms-api-spec</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.pic.announcements</groupId>
+      <artifactId>announcements-service-spec</artifactId>
     </dependency>
   </dependencies>
   <build>
@@ -314,6 +319,24 @@
                   <type>jar</type>
                   <includes>**/*</includes>
                   <outputDirectory>${spec-temp-dir}/kms-api-spec</outputDirectory>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+          <execution>
+            <id>unpack-announcements-service-spec</id>
+            <phase>initialize</phase>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>com.oracle.pic.announcements</groupId>
+                  <artifactId>announcements-service-spec</artifactId>
+                  <type>jar</type>
+                  <includes>**/*</includes>
+                  <outputDirectory>${spec-temp-dir}/announcements-service-spec</outputDirectory>
                 </artifactItem>
               </artifactItems>
             </configuration>
@@ -649,6 +672,33 @@
               <groupFileCollectionDir>${enabled-groups-dir}</groupFileCollectionDir>
             </configuration>
           </execution>
+          <execution>
+            <id>spec-conditionals-prefer-announcements-service-spec</id>
+            <phase>initialize</phase>
+            <goals>
+              <goal>prefer</goal>
+            </goals>
+            <configuration>
+              <inputFiles>
+                <inputFile>${spec-temp-dir}/announcements-service-spec/source/${announcements-service-spec-spec-file}</inputFile>
+                <inputFile>${spec-temp-dir}/announcements-service-spec/${announcements-service-spec-spec-file}</inputFile>
+              </inputFiles>
+              <outputFile>${preferred-temp-dir}/announcements-service-spec/${announcements-service-spec-spec-file}</outputFile>
+            </configuration>
+          </execution>
+          <execution>
+            <id>spec-conditionals-preprocess-announcements-service-spec</id>
+            <phase>initialize</phase>
+            <goals>
+              <goal>preprocess</goal>
+            </goals>
+            <configuration>
+              <inputFile>${preferred-temp-dir}/announcements-service-spec/${announcements-service-spec-spec-file}</inputFile>
+              <outputFile>${preprocessed-temp-dir}/announcements-service-spec/${announcements-service-spec-spec-file}</outputFile>
+              <groupFile>${enabled-groups-file}</groupFile>
+              <groupFileCollectionDir>${enabled-groups-dir}</groupFileCollectionDir>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
       <plugin>
@@ -911,6 +961,28 @@
               <featureIdConfigDir>${feature-id-dir}</featureIdConfigDir>
             </configuration>
           </execution>
+          <execution>
+            <id>python-public-sdk-announcements-service-spec</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <language>oracle-python-sdk</language>
+              <specPath>${preprocessed-temp-dir}/announcements-service-spec/${announcements-service-spec-spec-file}</specPath>
+              <outputDir>src/oci</outputDir>
+              <basePackage>OCI</basePackage>
+              <specGenerationType>PUBLIC</specGenerationType>
+              <additionalProperties>
+                <specName>announcements_service</specName>
+                <generateInitFile>true</generateInitFile>
+                <endpoint>https://announcements.{domain}</endpoint>
+              </additionalProperties>
+              <featureIdConfigFile>${feature-id-file}</featureIdConfigFile>
+              <featureIdConfigDir>${feature-id-dir}</featureIdConfigDir>
+              <isTestGenerationEnabled>true</isTestGenerationEnabled>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
       <plugin>
@@ -929,15 +1001,15 @@
             </configuration>
           </execution>
           <execution>
-           <id>python-public-sdk-strip-whitespace</id>
-           <phase>package</phase>
-           <goals>
-             <goal>exec</goal>
-           </goals>
-           <configuration>
-             <executable>${basedir}/scripts/strip_trailing_whitespace.py</executable>
-           </configuration>
-         </execution>
+            <id>python-public-sdk-strip-whitespace</id>
+            <phase>package</phase>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <configuration>
+              <executable>${basedir}/scripts/strip_trailing_whitespace.py</executable>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
       <plugin>
@@ -1148,6 +1220,12 @@
                 <include>**/*</include>
               </includes>
             </fileset>
+            <fileset>
+              <directory>src/oci/announcements_service</directory>
+              <includes>
+                <include>**/*</include>
+              </includes>
+            </fileset>
           </filesets>
         </configuration>
       </plugin>
@@ -1214,6 +1292,11 @@
         <groupId>com.oracle.pic.kms</groupId>
         <artifactId>kms-api-spec</artifactId>
         <version>0.1.68</version>
+      </dependency>
+      <dependency>
+        <groupId>com.oracle.pic.announcements</groupId>
+        <artifactId>announcements-service-spec</artifactId>
+        <version>1.0.7</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
