@@ -1,8 +1,21 @@
 Change Log
-~~~~~~~~~~
+~~~~~~~~~~ 
 All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
+
+====================
+2.1.5 - 2019-01-24
+====================
+
+Added
+-----
+* Support for renaming databases during restore-from-backup operations in the Database service
+* Support for calling Oracle Cloud Infrastructure services in the ca-toronto-1 region
+
+Fixed
+-----
+* KmsCryptoClient and KmsManagementClient updated to make service_endpoint required
 
 ====================
 2.1.4 - 2019-01-10

@@ -20,7 +20,7 @@ class KmsManagementClient(object):
     API for managing and performing operations with keys and vaults.
     """
 
-    def __init__(self, config, **kwargs):
+    def __init__(self, config, service_endpoint, **kwargs):
         """
         Creates a new service client
 
@@ -29,10 +29,8 @@ class KmsManagementClient(object):
             The :py:meth:`~oci.config.from_file` method can be used to load configuration from a file. Alternatively, a ``dict`` can be passed. You can validate_config
             the dict using :py:meth:`~oci.config.validate_config`
 
-        :param str service_endpoint: (optional)
-            The endpoint of the service to call using this client. For example ``https://iaas.us-ashburn-1.oraclecloud.com``. If this keyword argument is
-            not provided then it will be derived using the region in the config parameter. You should only provide this keyword argument if you have an explicit
-            need to specify a service endpoint.
+        :param str service_endpoint:
+            The endpoint of the service to call using this client. For example ``https://iaas.us-ashburn-1.oraclecloud.com``.
 
         :param timeout: (optional)
             The connection and read timeouts for the client. The default is that the client never times out. This keyword argument can be provided
@@ -71,7 +69,7 @@ class KmsManagementClient(object):
 
         base_client_init_kwargs = {
             'regional_client': False,
-            'service_endpoint': kwargs.get('service_endpoint'),
+            'service_endpoint': service_endpoint,
             'timeout': kwargs.get('timeout'),
             'base_path': '/20180608',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
