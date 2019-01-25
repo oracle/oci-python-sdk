@@ -35,6 +35,7 @@ requires = [
     "pyOpenSSL>=17.5.0",
     "python-dateutil>=2.5.3,<=2.7.3",
     "pytz>=2016.10",
+    "idna>=2.8",
 ]
 
 setup(
