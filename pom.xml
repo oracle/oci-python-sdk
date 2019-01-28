@@ -929,15 +929,15 @@
             </configuration>
           </execution>
           <execution>
-           <id>python-public-sdk-strip-whitespace</id>
-           <phase>package</phase>
-           <goals>
-             <goal>exec</goal>
-           </goals>
-           <configuration>
-             <executable>${basedir}/scripts/strip_trailing_whitespace.py</executable>
-           </configuration>
-         </execution>
+            <id>python-public-sdk-strip-whitespace</id>
+            <phase>package</phase>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <configuration>
+              <executable>${basedir}/scripts/strip_trailing_whitespace.py</executable>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
       <plugin>
@@ -1213,7 +1213,7 @@
       <dependency>
         <groupId>com.oracle.pic.kms</groupId>
         <artifactId>kms-api-spec</artifactId>
-        <version>0.1.68</version>
+        <version>0.1.75</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
