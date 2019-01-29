@@ -22,6 +22,7 @@ API Reference
 * :doc:`Load Balancer <load_balancer/client/oci.load_balancer.LoadBalancerClient>`
 * :doc:`Object Storage <object_storage/client/oci.object_storage.ObjectStorageClient>`
 * :doc:`Resource Search <resource_search/client/oci.resource_search.ResourceSearchClient>`
+* :doc:`Waas <waas/client/oci.waas.WaasClient>`
 
 .. rubric:: Other Modules
 
@@ -57,6 +58,7 @@ API Reference
     load_balancer
     object_storage
     resource_search
+    waas
     config
     exceptions
     pagination

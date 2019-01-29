@@ -413,6 +413,31 @@ Resource Search
     :noindex:
 
 
+====
+Waas
+====
+
+--------
+ Client
+--------
+
+.. autoclass:: oci.waas.waas_client.WaasClient
+    :members:
+    :noindex:
+
+--------
+ Models
+--------
+
+.. automodule:: oci.waas.models
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :imported-members:
+    :inherited-members:
+    :noindex:
+
+
 ================
  Upload Manager
 ================
