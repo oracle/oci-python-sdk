@@ -706,7 +706,6 @@
         <artifactId>bmc-sdk-swagger-maven-plugin</artifactId>
         <version>1.59-SNAPSHOT</version>
         <configuration>
-          <isTestGenerationEnabled>false</isTestGenerationEnabled>
         </configuration>
         <executions>
           <execution>
