@@ -5,12 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
-2.1.6 - TBD
+2.1.6 - 2019-01-31
 ====================
 
 Added
 -----
-* TBD
+* Support for the Announcements service
 
 ====================
 2.1.5 - 2019-01-24
