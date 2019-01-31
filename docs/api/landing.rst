@@ -3,6 +3,7 @@ API Reference
 
 .. rubric:: Service Clients
 
+* :doc:`Announcement <announcements_service/client/oci.announcements_service.AnnouncementClient>`
 * :doc:`Audit <audit/client/oci.audit.AuditClient>`
 * :doc:`Container Engine <container_engine/client/oci.container_engine.ContainerEngineClient>`
 * :doc:`Block Storage <core/client/oci.core.BlockstorageClient>`
@@ -41,6 +42,7 @@ API Reference
     :hidden:
     :maxdepth: 5
 
+    announcements_service
     audit
     container_engine
     core

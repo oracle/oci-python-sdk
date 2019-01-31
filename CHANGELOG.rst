@@ -1,8 +1,16 @@
 Change Log
-~~~~~~~~~~ 
+~~~~~~~~~~
 All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
+
+====================
+2.1.6 - 2019-01-31
+====================
+
+Added
+-----
+* Support for the Announcements service
 
 ====================
 2.1.5 - 2019-01-24
@@ -16,6 +24,7 @@ Added
 Fixed
 -----
 * KmsCryptoClient and KmsManagementClient updated to make service_endpoint required
+* Explicitly imported path to idna. Addresses `GitHub issue 101 <https://github.com/oracle/oci-python-sdk/issues/101>`__
 
 ====================
 2.1.4 - 2019-01-10
