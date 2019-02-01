@@ -421,7 +421,7 @@ class BaseClient(object):
             return [self.sanitize_for_serialization(
                 sub_obj,
                 self.extract_list_item_type_from_swagger_type(declared_type) if declared_type else None,
-                field_name + '[*]')
+                field_name + '[*]' if field_name else None)
                 for sub_obj in obj]
         elif isinstance(obj, datetime):
             if not obj.tzinfo:
