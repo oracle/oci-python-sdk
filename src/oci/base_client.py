@@ -10,6 +10,9 @@ import random
 import re
 import string
 import uuid
+# This was added to address thread safety issues with datetime.strptime
+# See https://bugs.python.org/issue7980.
+import _strptime  # noqa: F401
 from datetime import date, datetime
 from timeit import default_timer as timer
 
