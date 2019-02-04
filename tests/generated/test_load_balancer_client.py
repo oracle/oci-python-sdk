@@ -1922,5 +1922,3 @@ def test_update_rule_set(testing_service_client, config):
             False,
             False
         )
-
-

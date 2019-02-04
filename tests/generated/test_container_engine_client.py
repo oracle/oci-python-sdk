@@ -753,5 +753,3 @@ def test_update_node_pool(testing_service_client, config):
             False,
             False
         )
-
-

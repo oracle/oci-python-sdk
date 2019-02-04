@@ -681,5 +681,3 @@ def test_update_instance_pool(testing_service_client, config):
             False,
             False
         )
-
-

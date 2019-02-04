@@ -163,5 +163,3 @@ def test_update_configuration(testing_service_client, config):
             False,
             False
         )
-
-

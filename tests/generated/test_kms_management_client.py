@@ -399,5 +399,3 @@ def test_update_key(testing_service_client, config):
             False,
             False
         )
-
-

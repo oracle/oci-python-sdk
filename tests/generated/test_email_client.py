@@ -360,5 +360,3 @@ def test_list_suppressions(testing_service_client, config):
             False,
             True
         )
-
-

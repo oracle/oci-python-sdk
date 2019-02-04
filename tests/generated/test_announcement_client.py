@@ -194,5 +194,3 @@ def test_update_announcement_user_status(testing_service_client, config):
             False,
             False
         )
-
-

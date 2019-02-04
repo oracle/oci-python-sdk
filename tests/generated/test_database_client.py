@@ -2725,5 +2725,3 @@ def test_update_db_system(testing_service_client, config):
             False,
             False
         )
-
-

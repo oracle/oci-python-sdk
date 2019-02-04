@@ -4944,5 +4944,3 @@ def test_update_vnic(testing_service_client, config):
             False,
             False
         )
-
-

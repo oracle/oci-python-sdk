@@ -1518,5 +1518,3 @@ def test_upload_part(testing_service_client, config):
             False,
             False
         )
-
-

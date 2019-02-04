@@ -1778,5 +1778,3 @@ def test_update_volume_kms_key(testing_service_client, config):
             False,
             False
         )
-
-

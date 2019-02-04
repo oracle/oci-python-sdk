@@ -172,5 +172,3 @@ def test_search_resources(testing_service_client, config):
             False,
             True
         )
-
-

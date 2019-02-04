@@ -983,5 +983,3 @@ def test_update_snapshot(testing_service_client, config):
             False,
             False
         )
-
-

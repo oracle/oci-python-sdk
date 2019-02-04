@@ -269,5 +269,3 @@ def test_update_vault(testing_service_client, config):
             False,
             False
         )
-
-

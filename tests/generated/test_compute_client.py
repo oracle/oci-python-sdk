@@ -1928,5 +1928,3 @@ def test_update_instance(testing_service_client, config):
             False,
             False
         )
-
-

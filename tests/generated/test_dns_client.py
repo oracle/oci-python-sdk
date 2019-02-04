@@ -719,5 +719,3 @@ def test_update_zone_records(testing_service_client, config):
             False,
             False
         )
-
-

@@ -137,5 +137,3 @@ def test_generate_data_encryption_key(testing_service_client, config):
             False,
             False
         )
-
-
