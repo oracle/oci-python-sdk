@@ -14,6 +14,7 @@ API Reference
 * :doc:`DNS <dns/client/oci.dns.DnsClient>`
 * :doc:`Email <email/client/oci.email.EmailClient>`
 * :doc:`File Storage <file_storage/client/oci.file_storage.FileStorageClient>`
+* :doc:`Health Checks <healthchecks/client/oci.healthchecks.HealthChecksClient>`
 * :doc:`Identity <identity/client/oci.identity.IdentityClient>`
 * :doc:`Kms Crypto <key_management/client/oci.key_management.KmsCryptoClient>`
 * :doc:`Kms Management <key_management/client/oci.key_management.KmsManagementClient>`
@@ -50,6 +51,7 @@ API Reference
     dns
     email
     file_storage
+    healthchecks
     identity
     key_management
     load_balancer

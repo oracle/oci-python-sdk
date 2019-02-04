@@ -242,6 +242,31 @@ File Storage
     :noindex:
 
 
+============
+Healthchecks
+============
+
+--------
+ Client
+--------
+
+.. autoclass:: oci.healthchecks.health_checks_client.HealthChecksClient
+    :members:
+    :noindex:
+
+--------
+ Models
+--------
+
+.. automodule:: oci.healthchecks.models
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :imported-members:
+    :inherited-members:
+    :noindex:
+
+
 ========
 Identity
 ========

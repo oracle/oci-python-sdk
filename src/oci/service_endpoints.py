@@ -12,6 +12,7 @@ SERVICE_ENDPOINTS = {
     "dns": "https://dns.{domain}",
     "email": "https://email.{domain}",
     "file_storage": "https://filestorage.{domain}",
+    "health_checks": "https://healthchecks.{domain}",
     "identity": "https://identity.{domain}",
     "kms_crypto": "https://kms.{domain}",
     "kms_management": "https://kms.{domain}",

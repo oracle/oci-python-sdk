@@ -51,3 +51,4 @@
 ^src/oci/resource_search/.*\.py$
 ^src/oci/key_management/.*\.py$
 ^src/oci/announcements_service/.*\.py$
+^src/oci/healthchecks/.*\.py$
