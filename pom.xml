@@ -1113,7 +1113,6 @@
               </additionalProperties>
               <featureIdConfigFile>${feature-id-file}</featureIdConfigFile>
               <featureIdConfigDir>${feature-id-dir}</featureIdConfigDir>
-              <isTestGenerationEnabled>true</isTestGenerationEnabled>
             </configuration>
           </execution>
           <execution>
