@@ -80,6 +80,146 @@ class DnsClient(object):
         self.base_client = BaseClient("dns", config, signer, dns_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
 
+    def create_steering_policy(self, create_steering_policy_details, **kwargs):
+        """
+        Creates a new steering policy in the specified compartment.
+
+
+        :param CreateSteeringPolicyDetails create_steering_policy_details: (required)
+            Details for creating a new steering policy.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case
+            of a timeout or server error without risk of executing that same action
+            again. Retry tokens expire after 24 hours, but can be invalidated before
+            then due to conflicting operations (for example, if a resource has been
+            deleted and purged from the system, then a retry of the original creation
+            request may be rejected).
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dns.models.SteeringPolicy`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/steeringPolicies"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_steering_policy got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_steering_policy_details,
+                response_type="SteeringPolicy")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_steering_policy_details,
+                response_type="SteeringPolicy")
+
+    def create_steering_policy_attachment(self, create_steering_policy_attachment_details, **kwargs):
+        """
+        Creates a new attachment between a steering policy and a domain.
+        For the purposes of access control, the attachment is automatically placed
+        into the same compartment as the containing zone of the domain.
+
+
+        :param CreateSteeringPolicyAttachmentDetails create_steering_policy_attachment_details: (required)
+            Details for creating a new steering policy attachment.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case
+            of a timeout or server error without risk of executing that same action
+            again. Retry tokens expire after 24 hours, but can be invalidated before
+            then due to conflicting operations (for example, if a resource has been
+            deleted and purged from the system, then a retry of the original creation
+            request may be rejected).
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dns.models.SteeringPolicyAttachment`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/steeringPolicyAttachments"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_steering_policy_attachment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_steering_policy_attachment_details,
+                response_type="SteeringPolicyAttachment")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_steering_policy_attachment_details,
+                response_type="SteeringPolicyAttachment")
+
     def create_zone(self, create_zone_details, **kwargs):
         """
         Creates a new zone in the specified compartment. The `compartmentId`
@@ -349,10 +489,179 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params)
 
+    def delete_steering_policy(self, steering_policy_id, **kwargs):
+        """
+        Deletes the specified steering policy.
+        A `204` response indicates that the delete has been successful.
+        Deletion will fail if the policy is attached to any zones.
+
+
+        :param str steering_policy_id: (required)
+            The OCID of the target steering policy.
+
+        :param str if_match: (optional)
+            The `If-Match` header field makes the request method conditional on the
+            existence of at least one current representation of the target resource,
+            when the field-value is `*`, or having a current representation of the
+            target resource that has an entity-tag matching a member of the list of
+            entity-tags provided in the field-value.
+
+        :param str if_unmodified_since: (optional)
+            The `If-Unmodified-Since` header field makes the request method
+            conditional on the selected representation's last modification date being
+            earlier than or equal to the date provided in the field-value.  This
+            field accomplishes the same purpose as If-Match for cases where the user
+            agent does not have an entity-tag for the representation.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/steeringPolicies/{steeringPolicyId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "if_unmodified_since"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_steering_policy got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "steeringPolicyId": steering_policy_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "If-Match": kwargs.get("if_match", missing),
+            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
+    def delete_steering_policy_attachment(self, steering_policy_attachment_id, **kwargs):
+        """
+        Deletes the specified steering policy attachment.
+        A `204` response indicates that the delete has been successful.
+
+
+        :param str steering_policy_attachment_id: (required)
+            The OCID of the target steering policy attachment.
+
+        :param str if_match: (optional)
+            The `If-Match` header field makes the request method conditional on the
+            existence of at least one current representation of the target resource,
+            when the field-value is `*`, or having a current representation of the
+            target resource that has an entity-tag matching a member of the list of
+            entity-tags provided in the field-value.
+
+        :param str if_unmodified_since: (optional)
+            The `If-Unmodified-Since` header field makes the request method
+            conditional on the selected representation's last modification date being
+            earlier than or equal to the date provided in the field-value.  This
+            field accomplishes the same purpose as If-Match for cases where the user
+            agent does not have an entity-tag for the representation.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/steeringPolicyAttachments/{steeringPolicyAttachmentId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "if_unmodified_since"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_steering_policy_attachment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "steeringPolicyAttachmentId": steering_policy_attachment_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "If-Match": kwargs.get("if_match", missing),
+            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
     def delete_zone(self, zone_name_or_id, **kwargs):
         """
-        Deletes the specified zone. A `204` response indicates that zone has been successfully
-        deleted.
+        Deletes the specified zone and all its steering policy attachments.
+        A `204` response indicates that zone has been successfully deleted.
 
 
         :param str zone_name_or_id: (required)
@@ -713,6 +1022,172 @@ class DnsClient(object):
                 header_params=header_params,
                 response_type="RRSet")
 
+    def get_steering_policy(self, steering_policy_id, **kwargs):
+        """
+        Gets information about the specified steering policy.
+
+
+        :param str steering_policy_id: (required)
+            The OCID of the target steering policy.
+
+        :param str if_none_match: (optional)
+            The `If-None-Match` header field makes the request method conditional on
+            the absence of any current representation of the target resource, when
+            the field-value is `*`, or having a selected representation with an
+            entity-tag that does not match any of those listed in the field-value.
+
+        :param str if_modified_since: (optional)
+            The `If-Modified-Since` header field makes a GET or HEAD request method
+            conditional on the selected representation's modification date being more
+            recent than the date provided in the field-value.  Transfer of the
+            selected representation's data is avoided if that data has not changed.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dns.models.SteeringPolicy`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/steeringPolicies/{steeringPolicyId}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_none_match",
+            "if_modified_since"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_steering_policy got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "steeringPolicyId": steering_policy_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "If-None-Match": kwargs.get("if_none_match", missing),
+            "If-Modified-Since": kwargs.get("if_modified_since", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="SteeringPolicy")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="SteeringPolicy")
+
+    def get_steering_policy_attachment(self, steering_policy_attachment_id, **kwargs):
+        """
+        Gets information about the specified steering policy attachment.
+
+
+        :param str steering_policy_attachment_id: (required)
+            The OCID of the target steering policy attachment.
+
+        :param str if_none_match: (optional)
+            The `If-None-Match` header field makes the request method conditional on
+            the absence of any current representation of the target resource, when
+            the field-value is `*`, or having a selected representation with an
+            entity-tag that does not match any of those listed in the field-value.
+
+        :param str if_modified_since: (optional)
+            The `If-Modified-Since` header field makes a GET or HEAD request method
+            conditional on the selected representation's modification date being more
+            recent than the date provided in the field-value.  Transfer of the
+            selected representation's data is avoided if that data has not changed.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dns.models.SteeringPolicyAttachment`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/steeringPolicyAttachments/{steeringPolicyAttachmentId}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_none_match",
+            "if_modified_since"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_steering_policy_attachment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "steeringPolicyAttachmentId": steering_policy_attachment_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "If-None-Match": kwargs.get("if_none_match", missing),
+            "If-Modified-Since": kwargs.get("if_modified_since", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="SteeringPolicyAttachment")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="SteeringPolicyAttachment")
+
     def get_zone(self, zone_name_or_id, **kwargs):
         """
         Gets information about the specified zone, including its creation date,
@@ -968,6 +1443,326 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="RecordCollection")
+
+    def list_steering_policies(self, compartment_id, **kwargs):
+        """
+        Gets a list of all steering policies in the specified compartment.
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment the resource belongs to.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a page of the collection.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param str id: (optional)
+            The OCID of a resource.
+
+        :param str display_name: (optional)
+            The displayName of a resource.
+
+        :param str display_name_contains: (optional)
+            The partial displayName of a resource. Will match any resource whose name
+            (case-insensitive) contains the provided value.
+
+        :param str health_check_monitor_id: (optional)
+            Search by health check monitor OCID.
+            Will match any resource whose health check monitor id matches the provided value.
+
+        :param datetime time_created_greater_than_or_equal_to: (optional)
+            An `RFC 3339`__ timestamp that states
+            all returned resources were created on or after the indicated time.
+
+            __ https://www.ietf.org/rfc/rfc3339.txt
+
+        :param datetime time_created_less_than: (optional)
+            An `RFC 3339`__ timestamp that states
+            all returned resources were created before the indicated time.
+
+            __ https://www.ietf.org/rfc/rfc3339.txt
+
+        :param str template: (optional)
+            Search by template type.
+            Will match any resource whose template type matches the provided value.
+
+        :param str lifecycle_state: (optional)
+            The state of a resource.
+
+            Allowed values are: "ACTIVE", "CREATING", "DELETED", "DELETING"
+
+        :param str sort_by: (optional)
+            The field by which to sort steering policies.
+
+            Allowed values are: "displayName", "timeCreated", "template"
+
+        :param str sort_order: (optional)
+            The order to sort the resources.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.dns.models.SteeringPolicySummary`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/steeringPolicies"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "limit",
+            "page",
+            "id",
+            "display_name",
+            "display_name_contains",
+            "health_check_monitor_id",
+            "time_created_greater_than_or_equal_to",
+            "time_created_less_than",
+            "template",
+            "lifecycle_state",
+            "sort_by",
+            "sort_order"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_steering_policies got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["ACTIVE", "CREATING", "DELETED", "DELETING"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["displayName", "timeCreated", "template"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "compartmentId": compartment_id,
+            "id": kwargs.get("id", missing),
+            "displayName": kwargs.get("display_name", missing),
+            "displayNameContains": kwargs.get("display_name_contains", missing),
+            "healthCheckMonitorId": kwargs.get("health_check_monitor_id", missing),
+            "timeCreatedGreaterThanOrEqualTo": kwargs.get("time_created_greater_than_or_equal_to", missing),
+            "timeCreatedLessThan": kwargs.get("time_created_less_than", missing),
+            "template": kwargs.get("template", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[SteeringPolicySummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[SteeringPolicySummary]")
+
+    def list_steering_policy_attachments(self, compartment_id, **kwargs):
+        """
+        Lists the steering policy attachments in the specified compartment.
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment the resource belongs to.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a page of the collection.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param str id: (optional)
+            The OCID of a resource.
+
+        :param str display_name: (optional)
+            The displayName of a resource.
+
+        :param str steering_policy_id: (optional)
+            Search by steering policy OCID.
+            Will match any resource whose steering policy id matches the provided value.
+
+        :param str zone_id: (optional)
+            Search by zone OCID.
+            Will match any resource whose zone id matches the provided value.
+
+        :param str domain: (optional)
+            Search by domain.
+            Will match any record whose domain (case-insensitive) equals the provided value.
+
+        :param str domain_contains: (optional)
+            Search by domain.
+            Will match any record whose domain (case-insensitive) contains the provided value.
+
+        :param datetime time_created_greater_than_or_equal_to: (optional)
+            An `RFC 3339`__ timestamp that states
+            all returned resources were created on or after the indicated time.
+
+            __ https://www.ietf.org/rfc/rfc3339.txt
+
+        :param datetime time_created_less_than: (optional)
+            An `RFC 3339`__ timestamp that states
+            all returned resources were created before the indicated time.
+
+            __ https://www.ietf.org/rfc/rfc3339.txt
+
+        :param str lifecycle_state: (optional)
+            The state of a resource.
+
+            Allowed values are: "CREATING", "ACTIVE", "DELETING"
+
+        :param str sort_by: (optional)
+            The field by which to sort steering policy attachments.
+
+            Allowed values are: "displayName", "timeCreated", "domainName"
+
+        :param str sort_order: (optional)
+            The order to sort the resources.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.dns.models.SteeringPolicyAttachmentSummary`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/steeringPolicyAttachments"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "limit",
+            "page",
+            "id",
+            "display_name",
+            "steering_policy_id",
+            "zone_id",
+            "domain",
+            "domain_contains",
+            "time_created_greater_than_or_equal_to",
+            "time_created_less_than",
+            "lifecycle_state",
+            "sort_by",
+            "sort_order"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_steering_policy_attachments got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "DELETING"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["displayName", "timeCreated", "domainName"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "compartmentId": compartment_id,
+            "id": kwargs.get("id", missing),
+            "displayName": kwargs.get("display_name", missing),
+            "steeringPolicyId": kwargs.get("steering_policy_id", missing),
+            "zoneId": kwargs.get("zone_id", missing),
+            "domain": kwargs.get("domain", missing),
+            "domainContains": kwargs.get("domain_contains", missing),
+            "timeCreatedGreaterThanOrEqualTo": kwargs.get("time_created_greater_than_or_equal_to", missing),
+            "timeCreatedLessThan": kwargs.get("time_created_less_than", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[SteeringPolicyAttachmentSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[SteeringPolicyAttachmentSummary]")
 
     def list_zones(self, compartment_id, **kwargs):
         """
@@ -1662,6 +2457,186 @@ class DnsClient(object):
                 header_params=header_params,
                 body=update_rr_set_details,
                 response_type="RecordCollection")
+
+    def update_steering_policy(self, steering_policy_id, update_steering_policy_details, **kwargs):
+        """
+        Updates the specified steering policy with your new information.
+
+
+        :param str steering_policy_id: (required)
+            The OCID of the target steering policy.
+
+        :param UpdateSteeringPolicyDetails update_steering_policy_details: (required)
+            New data for the steering policy.
+
+        :param str if_match: (optional)
+            The `If-Match` header field makes the request method conditional on the
+            existence of at least one current representation of the target resource,
+            when the field-value is `*`, or having a current representation of the
+            target resource that has an entity-tag matching a member of the list of
+            entity-tags provided in the field-value.
+
+        :param str if_unmodified_since: (optional)
+            The `If-Unmodified-Since` header field makes the request method
+            conditional on the selected representation's last modification date being
+            earlier than or equal to the date provided in the field-value.  This
+            field accomplishes the same purpose as If-Match for cases where the user
+            agent does not have an entity-tag for the representation.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dns.models.SteeringPolicy`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/steeringPolicies/{steeringPolicyId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "if_unmodified_since"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_steering_policy got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "steeringPolicyId": steering_policy_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "If-Match": kwargs.get("if_match", missing),
+            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_steering_policy_details,
+                response_type="SteeringPolicy")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_steering_policy_details,
+                response_type="SteeringPolicy")
+
+    def update_steering_policy_attachment(self, steering_policy_attachment_id, update_steering_policy_attachment_details, **kwargs):
+        """
+        Updates the specified steering policy attachment with your new information.
+
+
+        :param str steering_policy_attachment_id: (required)
+            The OCID of the target steering policy attachment.
+
+        :param UpdateSteeringPolicyAttachmentDetails update_steering_policy_attachment_details: (required)
+            New data for the steering policy attachment.
+
+        :param str if_match: (optional)
+            The `If-Match` header field makes the request method conditional on the
+            existence of at least one current representation of the target resource,
+            when the field-value is `*`, or having a current representation of the
+            target resource that has an entity-tag matching a member of the list of
+            entity-tags provided in the field-value.
+
+        :param str if_unmodified_since: (optional)
+            The `If-Unmodified-Since` header field makes the request method
+            conditional on the selected representation's last modification date being
+            earlier than or equal to the date provided in the field-value.  This
+            field accomplishes the same purpose as If-Match for cases where the user
+            agent does not have an entity-tag for the representation.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dns.models.SteeringPolicyAttachment`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/steeringPolicyAttachments/{steeringPolicyAttachmentId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "if_unmodified_since"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_steering_policy_attachment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "steeringPolicyAttachmentId": steering_policy_attachment_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "If-Match": kwargs.get("if_match", missing),
+            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_steering_policy_attachment_details,
+                response_type="SteeringPolicyAttachment")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_steering_policy_attachment_details,
+                response_type="SteeringPolicyAttachment")
 
     def update_zone(self, zone_name_or_id, update_zone_details, **kwargs):
         """
