@@ -140,3 +140,20 @@ def email_client(config):
 
 def add_retries_to_service_operations(client_obj):
     client_obj.retry_strategy = oci.retry.DEFAULT_RETRY_STRATEGY
+
+
+@pytest.fixture(scope='session')
+def testing_service_client():
+    try:
+        from .testing_service_client import TestingServiceClient
+        client = TestingServiceClient()
+
+        with test_config_container.create_vcr().use_cassette('generated/create_test_service_session.yml'):
+            client.create_session()
+
+        yield client
+
+        with test_config_container.create_vcr().use_cassette('generated/close_test_service_session.yml'):
+            client.end_session()
+    except ImportError:
+        yield None
