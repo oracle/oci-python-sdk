@@ -1332,7 +1332,7 @@
       <dependency>
         <groupId>com.oracle.pic.dbaas</groupId>
         <artifactId>dbaas-api-spec</artifactId>
-        <version>0.1.67</version>
+        <version>0.1.71</version>
       </dependency>
       <dependency>
         <groupId>com.oracle.pic.sherlock</groupId>

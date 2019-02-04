@@ -50,6 +50,7 @@ Database
     oci.database.models.DataGuardAssociation
     oci.database.models.DataGuardAssociationSummary
     oci.database.models.Database
+    oci.database.models.DatabaseConnectionStrings
     oci.database.models.DatabaseSummary
     oci.database.models.DbBackupConfig
     oci.database.models.DbHome
