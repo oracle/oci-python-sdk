@@ -31,3 +31,4 @@ tests/temp
 .wercker/
 temp
 src/oci/_vendor/bin/
+venv/

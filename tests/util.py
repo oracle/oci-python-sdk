@@ -6,11 +6,20 @@ import random
 import oci
 import os.path
 import time
+import re
 import resource
 from contextlib import contextmanager
 from oci._vendor.requests.exceptions import Timeout
 from oci._vendor.requests.exceptions import ConnectionError
+from oci._vendor import six
 from . import test_config_container
+
+try:
+    # PY3+
+    import collections.abc as abc
+except ImportError:
+    # PY2
+    import collections as abc
 
 
 def random_number_string():
@@ -122,3 +131,50 @@ def post_process_retry(retry_count, max_retries, error):
 
 def is_retryable_service_error(service_error):
     return service_error.status >= 500 or service_error.status == 429 or (service_error.status == 409 and service_error.code == 'Conflict')
+
+
+def camel_to_snake(name):
+    s1 = re.sub('(.)([A-Z][a-z]+)', r'\1_\2', name)
+    return re.sub('([a-z0-9])([A-Z])', r'\1_\2', s1).lower()
+
+
+def camel_to_snake_keys(dictionary):
+    outdict = {}
+    for k, v in dictionary.items():
+        outdict[camel_to_snake(k)] = v
+    return outdict
+
+
+def camelize(to_camelize, uppercase_first_letter=False):
+    if not to_camelize:
+        return ''
+
+    if uppercase_first_letter:
+        return re.sub(r"(?:^|[_-])(.)", lambda m: m.group(1).upper(), to_camelize)
+    else:
+        return to_camelize[0].lower() + camelize(to_camelize, uppercase_first_letter=True)[1:]
+
+
+def make_dict_keys_camel_case(original_obj):
+    if isinstance(original_obj, six.string_types):
+        return original_obj
+
+    if not isinstance(original_obj, abc.Mapping) and not isinstance(original_obj, abc.Iterable):
+        # Either a primitive or something we don't know how to deal with...given the entry point (from the output of
+        # json.loads, which should be a dict) more likely a primitive
+        return original_obj
+
+    if isinstance(original_obj, abc.Mapping):
+        new_dict = {}
+        for key, value in six.iteritems(original_obj):
+            camelized_key = camelize(key)
+            new_dict[camelized_key] = make_dict_keys_camel_case(value)
+
+        return new_dict
+
+    if isinstance(original_obj, abc.Iterable):
+        new_list = []
+        for obj in original_obj:
+            new_list.append(make_dict_keys_camel_case(obj))
+
+        return new_list
