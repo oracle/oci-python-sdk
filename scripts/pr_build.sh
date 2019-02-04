@@ -66,6 +66,7 @@ else
       --ignore=tests/integ/test_composite_operations.py \
       --ignore=tests/unit/test_retry.py \
       --ignore=tests/unit/test_waiters.py \
+      --ignore=tests/generated \
       ./tests
 fi
 
