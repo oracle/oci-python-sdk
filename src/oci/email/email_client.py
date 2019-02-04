@@ -17,7 +17,8 @@ missing = Sentinel("Missing")
 
 class EmailClient(object):
     """
-    API spec for managing OCI Email Delivery services.
+    API for the Email Delivery service. Use this API to send high-volume, application-generated
+    emails. For more information, see [Overview of the Email Delivery Service](/iaas/Content/Email/Concepts/overview.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -74,6 +75,7 @@ class EmailClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'timeout': kwargs.get('timeout'),
             'base_path': '/20170907',
+            'service_endpoint_template': 'https://email.{region}.{secondLevelDomain}',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
         self.base_client = BaseClient("email", config, signer, email_type_mapping, **base_client_init_kwargs)
@@ -87,6 +89,9 @@ class EmailClient(object):
 
         :param CreateSenderDetails create_sender_details: (required)
             Create a sender.
+
+        :param str opc_request_id: (optional)
+            The request ID for tracing from the system
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -102,7 +107,11 @@ class EmailClient(object):
         resource_path = "/senders"
         method = "POST"
 
-        expected_kwargs = ["retry_strategy"]
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
@@ -110,8 +119,10 @@ class EmailClient(object):
 
         header_params = {
             "accept": "application/json",
-            "content-type": "application/json"
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -137,10 +148,16 @@ class EmailClient(object):
         """
         Creates an email suppression for a tenancy.
         Adds recipient email addresses to the suppression list for a tenancy.
+        Addresses added to the suppression list via the API are denoted as
+        \"MANUAL\" in the `reason` field. *Note:* All email addresses added to the
+        suppression list are normalized to include only lowercase letters.
 
 
         :param CreateSuppressionDetails create_suppression_details: (required)
             Adds a single email address to the suppression list for a compartment's tenancy.
+
+        :param str opc_request_id: (optional)
+            The request ID for tracing from the system
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -156,7 +173,11 @@ class EmailClient(object):
         resource_path = "/suppressions"
         method = "POST"
 
-        expected_kwargs = ["retry_strategy"]
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
@@ -164,8 +185,10 @@ class EmailClient(object):
 
         header_params = {
             "accept": "application/json",
-            "content-type": "application/json"
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -197,6 +220,9 @@ class EmailClient(object):
         :param str sender_id: (required)
             The unique OCID of the sender.
 
+        :param str opc_request_id: (optional)
+            The request ID for tracing from the system
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -211,7 +237,11 @@ class EmailClient(object):
         resource_path = "/senders/{senderId}"
         method = "DELETE"
 
-        expected_kwargs = ["retry_strategy"]
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
@@ -229,8 +259,10 @@ class EmailClient(object):
 
         header_params = {
             "accept": "application/json",
-            "content-type": "application/json"
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -260,6 +292,9 @@ class EmailClient(object):
         :param str suppression_id: (required)
             The unique OCID of the suppression.
 
+        :param str opc_request_id: (optional)
+            The request ID for tracing from the system
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -274,7 +309,11 @@ class EmailClient(object):
         resource_path = "/suppressions/{suppressionId}"
         method = "DELETE"
 
-        expected_kwargs = ["retry_strategy"]
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
@@ -292,8 +331,10 @@ class EmailClient(object):
 
         header_params = {
             "accept": "application/json",
-            "content-type": "application/json"
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -322,6 +363,9 @@ class EmailClient(object):
         :param str sender_id: (required)
             The unique OCID of the sender.
 
+        :param str opc_request_id: (optional)
+            The request ID for tracing from the system
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -336,7 +380,11 @@ class EmailClient(object):
         resource_path = "/senders/{senderId}"
         method = "GET"
 
-        expected_kwargs = ["retry_strategy"]
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
@@ -354,8 +402,10 @@ class EmailClient(object):
 
         header_params = {
             "accept": "application/json",
-            "content-type": "application/json"
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -387,6 +437,9 @@ class EmailClient(object):
         :param str suppression_id: (required)
             The unique OCID of the suppression.
 
+        :param str opc_request_id: (optional)
+            The request ID for tracing from the system
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -401,7 +454,11 @@ class EmailClient(object):
         resource_path = "/suppressions/{suppressionId}"
         method = "GET"
 
-        expected_kwargs = ["retry_strategy"]
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
@@ -419,8 +476,10 @@ class EmailClient(object):
 
         header_params = {
             "accept": "application/json",
-            "content-type": "application/json"
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -451,6 +510,9 @@ class EmailClient(object):
         :param str compartment_id: (required)
             The OCID for the compartment.
 
+        :param str opc_request_id: (optional)
+            The request ID for tracing from the system
+
         :param str lifecycle_state: (optional)
             The current state of a sender.
 
@@ -464,7 +526,11 @@ class EmailClient(object):
             GET request.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated GET request.
+            For list pagination. The maximum number of results per page, or items to return in a
+            paginated \"List\" call. `1` is the minimum, `1000` is the maximum. For important details about
+            how pagination works, see `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. The `TIMECREATED` value returns the list in in
@@ -496,6 +562,7 @@ class EmailClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
+            "opc_request_id",
             "lifecycle_state",
             "email_address",
             "page",
@@ -542,8 +609,10 @@ class EmailClient(object):
 
         header_params = {
             "accept": "application/json",
-            "content-type": "application/json"
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -576,6 +645,9 @@ class EmailClient(object):
         :param str compartment_id: (required)
             The OCID for the compartment.
 
+        :param str opc_request_id: (optional)
+            The request ID for tracing from the system
+
         :param str email_address: (optional)
             The email address of the suppression.
 
@@ -604,7 +676,11 @@ class EmailClient(object):
             GET request.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated GET request.
+            For list pagination. The maximum number of results per page, or items to return in a
+            paginated \"List\" call. `1` is the minimum, `1000` is the maximum. For important details about
+            how pagination works, see `List Pagination`__.
+
+            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. The `TIMECREATED` value returns the list in in
@@ -636,6 +712,7 @@ class EmailClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
+            "opc_request_id",
             "email_address",
             "time_created_greater_than_or_equal_to",
             "time_created_less_than",
@@ -677,8 +754,10 @@ class EmailClient(object):
 
         header_params = {
             "accept": "application/json",
-            "content-type": "application/json"
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -699,3 +778,86 @@ class EmailClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="list[SuppressionSummary]")
+
+    def update_sender(self, sender_id, update_sender_details, **kwargs):
+        """
+        Updates the tags for a given sender.
+        Replaces the set of tags for a sender with the tags provided. If either freeform
+        or defined tags are omitted, the tags for that set remain the same. Each set must
+        include the full set of tags for the sender, partial updates are not permitted.
+        For more information about tagging, see `Resource Tags`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param str sender_id: (required)
+            The unique OCID of the sender.
+
+        :param UpdateSenderDetails update_sender_details: (required)
+            update details for sender.
+
+        :param str opc_request_id: (optional)
+            The request ID for tracing from the system
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.email.models.Sender`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/senders/{senderId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_sender got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "senderId": sender_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_sender_details,
+                response_type="Sender")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_sender_details,
+                response_type="Sender")

@@ -21,7 +21,7 @@
     <dbaas-api-spec-spec-file>source/dbaas-api-spec-20160918.cond.yaml</dbaas-api-spec-spec-file>
     <fss-api-spec-spec-file>fss-api-spec-20171215.yaml</fss-api-spec-spec-file>
     <hemlock-spec-spec-file>hemlock-api-20160918.yaml</hemlock-spec-spec-file>
-    <email-api-spec-spec-file>email-api-spec.yaml</email-api-spec-spec-file>
+    <email-api-spec-spec-file>source/email-api-spec.cond.yaml</email-api-spec-spec-file>
     <public-dns-api-spec-spec-file>source/public-dns-api-spec.cond.yaml</public-dns-api-spec-spec-file>
     <resource-query-service-spec-spec-file>rqs.yaml</resource-query-service-spec-spec-file>
     <clusters-api-spec-spec-file>clusters-api-spec.yaml</clusters-api-spec-spec-file>
@@ -1352,7 +1352,7 @@
       <dependency>
         <groupId>com.oracle.pic.email</groupId>
         <artifactId>email-api-spec</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.3</version>
       </dependency>
       <dependency>
         <groupId>com.oracle.pic.clusters</groupId>
