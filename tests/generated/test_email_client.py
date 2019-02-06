@@ -360,3 +360,41 @@ def test_list_suppressions(testing_service_client, config):
             False,
             True
         )
+
+
+def test_update_sender(testing_service_client, config):
+    if not testing_service_client.is_api_enabled('email', 'UpdateSender'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    request_containers = testing_service_client.get_requests(service_name='email', api_name='UpdateSender')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
+            if pass_phrase:
+                config['pass_phrase'] = pass_phrase
+            client = oci.email.EmailClient(config)
+            response = client.update_sender(
+                sender_id=request.pop(util.camelize('sender_id')),
+                update_sender_details=request.pop(util.camelize('update_sender_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'email',
+            'UpdateSender',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'sender',
+            False,
+            False
+        )

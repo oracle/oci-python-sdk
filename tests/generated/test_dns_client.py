@@ -28,6 +28,80 @@ def vcr_fixture(request):
         yield
 
 
+def test_create_steering_policy(testing_service_client, config):
+    if not testing_service_client.is_api_enabled('dns', 'CreateSteeringPolicy'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    request_containers = testing_service_client.get_requests(service_name='dns', api_name='CreateSteeringPolicy')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
+            if pass_phrase:
+                config['pass_phrase'] = pass_phrase
+            client = oci.dns.DnsClient(config)
+            response = client.create_steering_policy(
+                create_steering_policy_details=request.pop(util.camelize('create_steering_policy_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'dns',
+            'CreateSteeringPolicy',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'steeringPolicy',
+            False,
+            False
+        )
+
+
+def test_create_steering_policy_attachment(testing_service_client, config):
+    if not testing_service_client.is_api_enabled('dns', 'CreateSteeringPolicyAttachment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    request_containers = testing_service_client.get_requests(service_name='dns', api_name='CreateSteeringPolicyAttachment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
+            if pass_phrase:
+                config['pass_phrase'] = pass_phrase
+            client = oci.dns.DnsClient(config)
+            response = client.create_steering_policy_attachment(
+                create_steering_policy_attachment_details=request.pop(util.camelize('create_steering_policy_attachment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'dns',
+            'CreateSteeringPolicyAttachment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'steeringPolicyAttachment',
+            False,
+            False
+        )
+
+
 def test_create_zone(testing_service_client, config):
     if not testing_service_client.is_api_enabled('dns', 'CreateZone'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -137,6 +211,80 @@ def test_delete_rr_set(testing_service_client, config):
             result,
             service_error,
             'delete_rr_set',
+            True,
+            False
+        )
+
+
+def test_delete_steering_policy(testing_service_client, config):
+    if not testing_service_client.is_api_enabled('dns', 'DeleteSteeringPolicy'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    request_containers = testing_service_client.get_requests(service_name='dns', api_name='DeleteSteeringPolicy')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
+            if pass_phrase:
+                config['pass_phrase'] = pass_phrase
+            client = oci.dns.DnsClient(config)
+            response = client.delete_steering_policy(
+                steering_policy_id=request.pop(util.camelize('steering_policy_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'dns',
+            'DeleteSteeringPolicy',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_steering_policy',
+            True,
+            False
+        )
+
+
+def test_delete_steering_policy_attachment(testing_service_client, config):
+    if not testing_service_client.is_api_enabled('dns', 'DeleteSteeringPolicyAttachment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    request_containers = testing_service_client.get_requests(service_name='dns', api_name='DeleteSteeringPolicyAttachment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
+            if pass_phrase:
+                config['pass_phrase'] = pass_phrase
+            client = oci.dns.DnsClient(config)
+            response = client.delete_steering_policy_attachment(
+                steering_policy_attachment_id=request.pop(util.camelize('steering_policy_attachment_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'dns',
+            'DeleteSteeringPolicyAttachment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_steering_policy_attachment',
             True,
             False
         )
@@ -300,6 +448,80 @@ def test_get_rr_set(testing_service_client, config):
         )
 
 
+def test_get_steering_policy(testing_service_client, config):
+    if not testing_service_client.is_api_enabled('dns', 'GetSteeringPolicy'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    request_containers = testing_service_client.get_requests(service_name='dns', api_name='GetSteeringPolicy')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
+            if pass_phrase:
+                config['pass_phrase'] = pass_phrase
+            client = oci.dns.DnsClient(config)
+            response = client.get_steering_policy(
+                steering_policy_id=request.pop(util.camelize('steering_policy_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'dns',
+            'GetSteeringPolicy',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'steeringPolicy',
+            False,
+            False
+        )
+
+
+def test_get_steering_policy_attachment(testing_service_client, config):
+    if not testing_service_client.is_api_enabled('dns', 'GetSteeringPolicyAttachment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    request_containers = testing_service_client.get_requests(service_name='dns', api_name='GetSteeringPolicyAttachment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
+            if pass_phrase:
+                config['pass_phrase'] = pass_phrase
+            client = oci.dns.DnsClient(config)
+            response = client.get_steering_policy_attachment(
+                steering_policy_attachment_id=request.pop(util.camelize('steering_policy_attachment_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'dns',
+            'GetSteeringPolicyAttachment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'steeringPolicyAttachment',
+            False,
+            False
+        )
+
+
 def test_get_zone(testing_service_client, config):
     if not testing_service_client.is_api_enabled('dns', 'GetZone'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -388,6 +610,118 @@ def test_get_zone_records(testing_service_client, config):
             result,
             service_error,
             'recordCollection',
+            False,
+            True
+        )
+
+
+def test_list_steering_policies(testing_service_client, config):
+    if not testing_service_client.is_api_enabled('dns', 'ListSteeringPolicies'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    request_containers = testing_service_client.get_requests(service_name='dns', api_name='ListSteeringPolicies')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
+            if pass_phrase:
+                config['pass_phrase'] = pass_phrase
+            client = oci.dns.DnsClient(config)
+            response = client.list_steering_policies(
+                compartment_id=request.pop(util.camelize('compartment_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_steering_policies(
+                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_steering_policies(
+                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'dns',
+            'ListSteeringPolicies',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'steeringPolicySummary',
+            False,
+            True
+        )
+
+
+def test_list_steering_policy_attachments(testing_service_client, config):
+    if not testing_service_client.is_api_enabled('dns', 'ListSteeringPolicyAttachments'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    request_containers = testing_service_client.get_requests(service_name='dns', api_name='ListSteeringPolicyAttachments')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
+            if pass_phrase:
+                config['pass_phrase'] = pass_phrase
+            client = oci.dns.DnsClient(config)
+            response = client.list_steering_policy_attachments(
+                compartment_id=request.pop(util.camelize('compartment_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_steering_policy_attachments(
+                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_steering_policy_attachments(
+                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'dns',
+            'ListSteeringPolicyAttachments',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'steeringPolicyAttachmentSummary',
             False,
             True
         )
@@ -640,6 +974,82 @@ def test_update_rr_set(testing_service_client, config):
             result,
             service_error,
             'recordCollection',
+            False,
+            False
+        )
+
+
+def test_update_steering_policy(testing_service_client, config):
+    if not testing_service_client.is_api_enabled('dns', 'UpdateSteeringPolicy'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    request_containers = testing_service_client.get_requests(service_name='dns', api_name='UpdateSteeringPolicy')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
+            if pass_phrase:
+                config['pass_phrase'] = pass_phrase
+            client = oci.dns.DnsClient(config)
+            response = client.update_steering_policy(
+                steering_policy_id=request.pop(util.camelize('steering_policy_id')),
+                update_steering_policy_details=request.pop(util.camelize('update_steering_policy_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'dns',
+            'UpdateSteeringPolicy',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'steeringPolicy',
+            False,
+            False
+        )
+
+
+def test_update_steering_policy_attachment(testing_service_client, config):
+    if not testing_service_client.is_api_enabled('dns', 'UpdateSteeringPolicyAttachment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    request_containers = testing_service_client.get_requests(service_name='dns', api_name='UpdateSteeringPolicyAttachment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
+            if pass_phrase:
+                config['pass_phrase'] = pass_phrase
+            client = oci.dns.DnsClient(config)
+            response = client.update_steering_policy_attachment(
+                steering_policy_attachment_id=request.pop(util.camelize('steering_policy_attachment_id')),
+                update_steering_policy_attachment_details=request.pop(util.camelize('update_steering_policy_attachment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'dns',
+            'UpdateSteeringPolicyAttachment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'steeringPolicyAttachment',
             False,
             False
         )
