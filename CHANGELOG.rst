@@ -5,12 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
-2.1.7 - TBD
+2.1.7 - 2019-02-07
 ====================
 
 Added
 -----
-* TBD
+* Support for the Web Application Acceleration and Security (WAAS) service
+* Support for the Health Checks service
+* Support for connection strings on Database resources in the Database service
+* Support for traffic management in the DNS service
+* Support for tagging in the Email service
 
 ====================
 2.1.6 - 2019-01-31
