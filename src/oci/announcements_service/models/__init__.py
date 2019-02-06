@@ -9,7 +9,6 @@ from .announcement_summary import AnnouncementSummary
 from .announcement_user_status_details import AnnouncementUserStatusDetails
 from .announcements_collection import AnnouncementsCollection
 from .base_announcement import BaseAnnouncement
-from .notification_followup_details import NotificationFollowupDetails
 
 # Maps type names to classes for announcements_service services.
 announcements_service_type_mapping = {
@@ -18,6 +17,5 @@ announcements_service_type_mapping = {
     "AnnouncementSummary": AnnouncementSummary,
     "AnnouncementUserStatusDetails": AnnouncementUserStatusDetails,
     "AnnouncementsCollection": AnnouncementsCollection,
-    "BaseAnnouncement": BaseAnnouncement,
-    "NotificationFollowupDetails": NotificationFollowupDetails
+    "BaseAnnouncement": BaseAnnouncement
 }

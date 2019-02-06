@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AnnouncementsCollection(object):
     """
-    Results of annoucements search. Contains both announcements, and user specific status of the announcments
+    A list of announcements that match filter criteria, if any. Results contain both the announcements and the user-specific status of the announcements.
     """
 
     def __init__(self, **kwargs):
@@ -43,7 +43,7 @@ class AnnouncementsCollection(object):
     def items(self):
         """
         Gets the items of this AnnouncementsCollection.
-        collection of announcements
+        A collection of announcements.
 
 
         :return: The items of this AnnouncementsCollection.
@@ -55,7 +55,7 @@ class AnnouncementsCollection(object):
     def items(self, items):
         """
         Sets the items of this AnnouncementsCollection.
-        collection of announcements
+        A collection of announcements.
 
 
         :param items: The items of this AnnouncementsCollection.
@@ -67,7 +67,7 @@ class AnnouncementsCollection(object):
     def user_statuses(self):
         """
         Gets the user_statuses of this AnnouncementsCollection.
-        user specific status of found announcements
+        The user-specific status for found announcements.
 
 
         :return: The user_statuses of this AnnouncementsCollection.
@@ -79,7 +79,7 @@ class AnnouncementsCollection(object):
     def user_statuses(self, user_statuses):
         """
         Sets the user_statuses of this AnnouncementsCollection.
-        user specific status of found announcements
+        The user-specific status for found announcements.
 
 
         :param user_statuses: The user_statuses of this AnnouncementsCollection.
