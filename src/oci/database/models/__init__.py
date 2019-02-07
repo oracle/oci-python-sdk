@@ -35,6 +35,7 @@ from .create_external_backup_job_details import CreateExternalBackupJobDetails
 from .data_guard_association import DataGuardAssociation
 from .data_guard_association_summary import DataGuardAssociationSummary
 from .database import Database
+from .database_connection_strings import DatabaseConnectionStrings
 from .database_summary import DatabaseSummary
 from .db_backup_config import DbBackupConfig
 from .db_home import DbHome
@@ -102,6 +103,7 @@ database_type_mapping = {
     "DataGuardAssociation": DataGuardAssociation,
     "DataGuardAssociationSummary": DataGuardAssociationSummary,
     "Database": Database,
+    "DatabaseConnectionStrings": DatabaseConnectionStrings,
     "DatabaseSummary": DatabaseSummary,
     "DbBackupConfig": DbBackupConfig,
     "DbHome": DbHome,

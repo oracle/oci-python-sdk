@@ -42,7 +42,7 @@ class CreateSuppressionDetails(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this CreateSuppressionDetails.
+        **[Required]** Gets the compartment_id of this CreateSuppressionDetails.
         The OCID of the compartment to contain the suppression. Since
         suppressions are at the customer level, this must be the tenancy
         OCID.
@@ -70,7 +70,7 @@ class CreateSuppressionDetails(object):
     @property
     def email_address(self):
         """
-        Gets the email_address of this CreateSuppressionDetails.
+        **[Required]** Gets the email_address of this CreateSuppressionDetails.
         The recipient email address of the suppression.
 
 

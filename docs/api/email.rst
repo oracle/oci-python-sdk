@@ -24,3 +24,4 @@ Email
     oci.email.models.SenderSummary
     oci.email.models.Suppression
     oci.email.models.SuppressionSummary
+    oci.email.models.UpdateSenderDetails
