@@ -41,7 +41,7 @@ class UploadManager:
         self.allow_parallel_uploads = kwargs['allow_parallel_uploads'] if 'allow_parallel_uploads' in kwargs else True
         self.parallel_process_count = kwargs['parallel_process_count'] if 'parallel_process_count' in kwargs else None
 
-        self._add_adapter_to_service_client()
+        UploadManager._add_adapter_to_service_client(self.object_storage_client, self.allow_parallel_uploads, self.parallel_process_count)
 
     def upload_stream(self,
                       namespace_name,
@@ -340,29 +340,30 @@ class UploadManager:
                                                                  **kwargs)
         return response
 
-    def _add_adapter_to_service_client(self):
+    @staticmethod
+    def _add_adapter_to_service_client(object_storage_client, allow_parallel_uploads, parallel_process_count):
         # No need to mount with a larger pool size if we are not running multiple threads
-        if not self.allow_parallel_uploads or not self.parallel_process_count:
+        if not allow_parallel_uploads or not parallel_process_count:
             return
 
-        endpoint = self.object_storage_client.base_client.endpoint
+        endpoint = object_storage_client.base_client.endpoint
         mount_protocol = 'https://'
         if endpoint.startswith('http://'):
             mount_protocol = 'http://'
 
         parallel_processes = DEFAULT_PARALLEL_PROCESS_COUNT
-        if self.parallel_process_count is not None:
-            parallel_processes = self.parallel_process_count
+        if parallel_process_count is not None:
+            parallel_processes = parallel_process_count
 
-        target_pool_size = self.REQUESTS_POOL_SIZE_FACTOR * parallel_processes
+        target_pool_size = UploadManager.REQUESTS_POOL_SIZE_FACTOR * parallel_processes
         adapter = requests.adapters.HTTPAdapter(pool_maxsize=target_pool_size)
 
-        if mount_protocol in self.object_storage_client.base_client.session.adapters:
+        if mount_protocol in object_storage_client.base_client.session.adapters:
             # If someone has already mounted and it's large enough, don't mount over the top
-            if self.object_storage_client.base_client.session.adapters[mount_protocol]._pool_maxsize >= target_pool_size:
+            if object_storage_client.base_client.session.adapters[mount_protocol]._pool_maxsize >= target_pool_size:
                 return
 
-        self.object_storage_client.base_client.session.mount(mount_protocol, adapter)
+        object_storage_client.base_client.session.mount(mount_protocol, adapter)
 
     @staticmethod
     def _use_multipart(content_length, part_size=DEFAULT_PART_SIZE):

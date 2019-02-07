@@ -14,6 +14,7 @@ API Reference
 * :doc:`DNS <dns/client/oci.dns.DnsClient>`
 * :doc:`Email <email/client/oci.email.EmailClient>`
 * :doc:`File Storage <file_storage/client/oci.file_storage.FileStorageClient>`
+* :doc:`Health Checks <healthchecks/client/oci.healthchecks.HealthChecksClient>`
 * :doc:`Identity <identity/client/oci.identity.IdentityClient>`
 * :doc:`Kms Crypto <key_management/client/oci.key_management.KmsCryptoClient>`
 * :doc:`Kms Management <key_management/client/oci.key_management.KmsManagementClient>`
@@ -21,6 +22,7 @@ API Reference
 * :doc:`Load Balancer <load_balancer/client/oci.load_balancer.LoadBalancerClient>`
 * :doc:`Object Storage <object_storage/client/oci.object_storage.ObjectStorageClient>`
 * :doc:`Resource Search <resource_search/client/oci.resource_search.ResourceSearchClient>`
+* :doc:`Waas <waas/client/oci.waas.WaasClient>`
 
 .. rubric:: Other Modules
 
@@ -50,11 +52,13 @@ API Reference
     dns
     email
     file_storage
+    healthchecks
     identity
     key_management
     load_balancer
     object_storage
     resource_search
+    waas
     config
     exceptions
     pagination

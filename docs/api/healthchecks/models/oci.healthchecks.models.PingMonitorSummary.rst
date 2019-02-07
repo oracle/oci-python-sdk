@@ -1,0 +1,11 @@
+PingMonitorSummary
+==================
+
+.. currentmodule:: oci.healthchecks.models
+
+.. autoclass:: PingMonitorSummary
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

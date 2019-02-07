@@ -9,6 +9,7 @@ from .sender import Sender
 from .sender_summary import SenderSummary
 from .suppression import Suppression
 from .suppression_summary import SuppressionSummary
+from .update_sender_details import UpdateSenderDetails
 
 # Maps type names to classes for email services.
 email_type_mapping = {
@@ -17,5 +18,6 @@ email_type_mapping = {
     "Sender": Sender,
     "SenderSummary": SenderSummary,
     "Suppression": Suppression,
-    "SuppressionSummary": SuppressionSummary
+    "SuppressionSummary": SuppressionSummary,
+    "UpdateSenderDetails": UpdateSenderDetails
 }

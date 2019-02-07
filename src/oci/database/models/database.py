@@ -111,6 +111,10 @@ class Database(object):
             The value to assign to the defined_tags property of this Database.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param connection_strings:
+            The value to assign to the connection_strings property of this Database.
+        :type connection_strings: DatabaseConnectionStrings
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -127,7 +131,8 @@ class Database(object):
             'time_created': 'datetime',
             'db_backup_config': 'DbBackupConfig',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'connection_strings': 'DatabaseConnectionStrings'
         }
 
         self.attribute_map = {
@@ -145,7 +150,8 @@ class Database(object):
             'time_created': 'timeCreated',
             'db_backup_config': 'dbBackupConfig',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'connection_strings': 'connectionStrings'
         }
 
         self._id = None
@@ -163,6 +169,7 @@ class Database(object):
         self._db_backup_config = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._connection_strings = None
 
     @property
     def id(self):
@@ -557,6 +564,30 @@ class Database(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def connection_strings(self):
+        """
+        Gets the connection_strings of this Database.
+        The Connection strings used to connect to the Oracle Database.
+
+
+        :return: The connection_strings of this Database.
+        :rtype: DatabaseConnectionStrings
+        """
+        return self._connection_strings
+
+    @connection_strings.setter
+    def connection_strings(self, connection_strings):
+        """
+        Sets the connection_strings of this Database.
+        The Connection strings used to connect to the Oracle Database.
+
+
+        :param connection_strings: The connection_strings of this Database.
+        :type: DatabaseConnectionStrings
+        """
+        self._connection_strings = connection_strings
 
     def __repr__(self):
         return formatted_flat_dict(self)

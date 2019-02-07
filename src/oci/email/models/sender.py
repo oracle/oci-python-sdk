@@ -33,6 +33,10 @@ class Sender(object):
         Initializes a new Sender object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this Sender.
+        :type compartment_id: str
+
         :param email_address:
             The value to assign to the email_address property of this Sender.
         :type email_address: str
@@ -55,28 +59,69 @@ class Sender(object):
             The value to assign to the time_created property of this Sender.
         :type time_created: datetime
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this Sender.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this Sender.
+        :type defined_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
+            'compartment_id': 'str',
             'email_address': 'str',
             'id': 'str',
             'is_spf': 'bool',
             'lifecycle_state': 'str',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
+            'compartment_id': 'compartmentId',
             'email_address': 'emailAddress',
             'id': 'id',
             'is_spf': 'isSpf',
             'lifecycle_state': 'lifecycleState',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags'
         }
 
+        self._compartment_id = None
         self._email_address = None
         self._id = None
         self._is_spf = None
         self._lifecycle_state = None
         self._time_created = None
+        self._freeform_tags = None
+        self._defined_tags = None
+
+    @property
+    def compartment_id(self):
+        """
+        Gets the compartment_id of this Sender.
+        The OCID for the compartment.
+
+
+        :return: The compartment_id of this Sender.
+        :rtype: str
+        """
+        return self._compartment_id
+
+    @compartment_id.setter
+    def compartment_id(self, compartment_id):
+        """
+        Sets the compartment_id of this Sender.
+        The OCID for the compartment.
+
+
+        :param compartment_id: The compartment_id of this Sender.
+        :type: str
+        """
+        self._compartment_id = compartment_id
 
     @property
     def email_address(self):
@@ -133,7 +178,7 @@ class Sender(object):
         Value of the SPF field. For more information about SPF, please see
         `SPF Authentication`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Email/Concepts/emaildeliveryoverview.htm#spf
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Email/Concepts/overview.htm#components
 
 
         :return: The is_spf of this Sender.
@@ -148,7 +193,7 @@ class Sender(object):
         Value of the SPF field. For more information about SPF, please see
         `SPF Authentication`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Email/Concepts/emaildeliveryoverview.htm#spf
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Email/Concepts/overview.htm#components
 
 
         :param is_spf: The is_spf of this Sender.
@@ -211,6 +256,70 @@ class Sender(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this Sender.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this Sender.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this Sender.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this Sender.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this Sender.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this Sender.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this Sender.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this Sender.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

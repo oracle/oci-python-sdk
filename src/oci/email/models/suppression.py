@@ -41,6 +41,10 @@ class Suppression(object):
         Initializes a new Suppression object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this Suppression.
+        :type compartment_id: str
+
         :param email_address:
             The value to assign to the email_address property of this Suppression.
         :type email_address: str
@@ -61,6 +65,7 @@ class Suppression(object):
 
         """
         self.swagger_types = {
+            'compartment_id': 'str',
             'email_address': 'str',
             'id': 'str',
             'reason': 'str',
@@ -68,16 +73,46 @@ class Suppression(object):
         }
 
         self.attribute_map = {
+            'compartment_id': 'compartmentId',
             'email_address': 'emailAddress',
             'id': 'id',
             'reason': 'reason',
             'time_created': 'timeCreated'
         }
 
+        self._compartment_id = None
         self._email_address = None
         self._id = None
         self._reason = None
         self._time_created = None
+
+    @property
+    def compartment_id(self):
+        """
+        Gets the compartment_id of this Suppression.
+        The OCID of the compartment to contain the suppression. Since
+        suppressions are at the customer level, this must be the tenancy
+        OCID.
+
+
+        :return: The compartment_id of this Suppression.
+        :rtype: str
+        """
+        return self._compartment_id
+
+    @compartment_id.setter
+    def compartment_id(self, compartment_id):
+        """
+        Sets the compartment_id of this Suppression.
+        The OCID of the compartment to contain the suppression. Since
+        suppressions are at the customer level, this must be the tenancy
+        OCID.
+
+
+        :param compartment_id: The compartment_id of this Suppression.
+        :type: str
+        """
+        self._compartment_id = compartment_id
 
     @property
     def email_address(self):
@@ -131,9 +166,9 @@ class Suppression(object):
     def reason(self):
         """
         Gets the reason of this Suppression.
-        The reason that the email address was suppressed. For more information on the types of bounces, see `Suppresion List`__.
+        The reason that the email address was suppressed. For more information on the types of bounces, see `Suppression List`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Email/Concepts/emaildeliveryoverview.htm#suppressionlist
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Email/Concepts/overview.htm#components
 
         Allowed values for this property are: "UNKNOWN", "HARDBOUNCE", "COMPLAINT", "MANUAL", "SOFTBOUNCE", "UNSUBSCRIBE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -148,9 +183,9 @@ class Suppression(object):
     def reason(self, reason):
         """
         Sets the reason of this Suppression.
-        The reason that the email address was suppressed. For more information on the types of bounces, see `Suppresion List`__.
+        The reason that the email address was suppressed. For more information on the types of bounces, see `Suppression List`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Email/Concepts/emaildeliveryoverview.htm#suppressionlist
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Email/Concepts/overview.htm#components
 
 
         :param reason: The reason of this Suppression.
@@ -165,7 +200,7 @@ class Suppression(object):
     def time_created(self):
         """
         Gets the time_created of this Suppression.
-        The date and time the approved sender was added in \"YYYY-MM-ddThh:mmZ\"
+        The date and time the suppression was added in \"YYYY-MM-ddThh:mmZ\"
         format with a Z offset, as defined by RFC 3339.
 
 
@@ -178,7 +213,7 @@ class Suppression(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Suppression.
-        The date and time the approved sender was added in \"YYYY-MM-ddThh:mmZ\"
+        The date and time the suppression was added in \"YYYY-MM-ddThh:mmZ\"
         format with a Z offset, as defined by RFC 3339.
 
 
