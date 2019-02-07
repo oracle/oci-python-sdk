@@ -45,6 +45,7 @@ except ImportError:
     # Socks is not needed for OCI Python SDK so there is no need to
     # warn the end user of the vendored package.
     pass
+
 from socket import error as SocketError, timeout as SocketTimeout
 
 from ..connection import (
@@ -159,6 +160,10 @@ class SOCKSProxyManager(PoolManager):
                  num_pools=10, headers=None, **connection_pool_kw):
         parsed = parse_url(proxy_url)
 
+        if username is None and password is None and parsed.auth is not None:
+            split = parsed.auth.split(':')
+            if len(split) == 2:
+                username, password = split
         if parsed.scheme == 'socks5':
             socks_version = socks.PROXY_TYPE_SOCKS5
             rdns = False

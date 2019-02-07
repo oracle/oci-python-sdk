@@ -3,9 +3,10 @@
 # Copyright 2008-2016 Andrey Petrov and contributors
 
 from __future__ import absolute_import
+import binascii
 import codecs
+import os
 
-from uuid import uuid4
 from io import BytesIO
 
 from .packages import six
@@ -19,7 +20,10 @@ def choose_boundary():
     """
     Our embarrassingly-simple replacement for mimetools.choose_boundary.
     """
-    return uuid4().hex
+    boundary = binascii.hexlify(os.urandom(16))
+    if six.PY3:
+        boundary = boundary.decode('ascii')
+    return boundary
 
 
 def iter_field_objects(fields):
@@ -69,7 +73,7 @@ def encode_multipart_formdata(fields, boundary=None):
 
     :param boundary:
         If not specified, then a random boundary will be generated using
-        :func:`mimetools.choose_boundary`.
+        :func:`urllib3.filepost.choose_boundary`.
     """
     body = BytesIO()
     if boundary is None:
