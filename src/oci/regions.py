@@ -17,12 +17,16 @@ REGION_REALMS = {
     'uk-london-1': 'oc1',
     'ca-toronto-1': 'oc1',
 
+    'us-langley-1': 'oc2',
+    'us-luke-1': 'oc2',
+
     'us-gov-ashburn-1': 'oc3',
     'us-gov-chicago-1': 'oc3',
     'us-gov-phoenix-1': 'oc3'
 }
 REALMS = {
     'oc1': 'oraclecloud.com',
+    'oc2': 'oraclegovcloud.com',
     'oc3': 'oraclegovcloud.com'
 }
 REGIONS = [
@@ -31,6 +35,8 @@ REGIONS = [
     "eu-frankfurt-1",
     "uk-london-1",
     "ca-toronto-1",
+    "us-langley-1",
+    "us-luke-1",
     "us-gov-ashburn-1",
     "us-gov-chicago-1",
     "us-gov-phoenix-1"
