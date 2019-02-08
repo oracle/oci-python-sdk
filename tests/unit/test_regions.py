@@ -14,9 +14,21 @@ def test_endpoint_for_service_template():
     endpoint = endpoint_for('blockstorage', 'us-foo_region-1', None, None)
     assert endpoint == 'https://iaas.us-foo_region-1.oraclecloud.com'
 
-    # second level domain template
+    # second level domain template with unknown region
     endpoint = endpoint_for('blockstorage', 'us-foo_region-1', None, 'https://test.{secondLevelDomain}')
     assert endpoint == 'https://test.oraclecloud.com'
+
+    # second level domain template with oc1 region
+    endpoint = endpoint_for('blockstorage', 'us-phoenix-1', None, 'https://test.{secondLevelDomain}')
+    assert endpoint == 'https://test.oraclecloud.com'
+
+    # second level domain template with oc2 region
+    endpoint = endpoint_for('blockstorage', 'us-langley-1', None, 'https://test.{secondLevelDomain}')
+    assert endpoint == 'https://test.oraclegovcloud.com'
+
+    # second level domain template with oc3 region
+    endpoint = endpoint_for('blockstorage', 'us-gov-ashburn-1', None, 'https://test.{secondLevelDomain}')
+    assert endpoint == 'https://test.oraclegovcloud.com'
 
 
 def test_endpoint_for_endpoint():
@@ -30,8 +42,17 @@ def test_endpoint_for_endpoint():
 
 
 def test_endpoint_for_region():
+    # oc1
     endpoint = endpoint_for('compute', 'us-phoenix-1', None, None)
     assert endpoint == 'https://iaas.us-phoenix-1.oraclecloud.com'
+
+    # oc2
+    endpoint = endpoint_for('compute', 'us-langley-1', None, None)
+    assert endpoint == 'https://iaas.us-langley-1.oraclegovcloud.com'
+
+    # oc3
+    endpoint = endpoint_for('compute', 'us-gov-ashburn-1', None, None)
+    assert endpoint == 'https://iaas.us-gov-ashburn-1.oraclegovcloud.com'
 
     # region contains dot
     endpoint = endpoint_for('compute', '.us-phoenix-1', 'test.com', None)
