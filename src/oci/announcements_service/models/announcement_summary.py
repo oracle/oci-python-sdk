@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AnnouncementSummary(BaseAnnouncement):
     """
-    An announcement summary object which is returned by List API
+    Summary representation of an announcement.
     """
 
     def __init__(self, **kwargs):

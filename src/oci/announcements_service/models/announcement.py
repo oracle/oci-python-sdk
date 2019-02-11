@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Announcement(BaseAnnouncement):
     """
-    An announcement object which represents a message targetted to a specific tenant
+    A message about an impactful operational event.
     """
 
     def __init__(self, **kwargs):
@@ -90,10 +90,6 @@ class Announcement(BaseAnnouncement):
             The value to assign to the additional_information property of this Announcement.
         :type additional_information: str
 
-        :param followups:
-            The value to assign to the followups property of this Announcement.
-        :type followups: list[NotificationFollowupDetails]
-
         :param affected_resources:
             The value to assign to the affected_resources property of this Announcement.
         :type affected_resources: list[AffectedResource]
@@ -117,7 +113,6 @@ class Announcement(BaseAnnouncement):
             'time_updated': 'datetime',
             'description': 'str',
             'additional_information': 'str',
-            'followups': 'list[NotificationFollowupDetails]',
             'affected_resources': 'list[AffectedResource]'
         }
 
@@ -139,7 +134,6 @@ class Announcement(BaseAnnouncement):
             'time_updated': 'timeUpdated',
             'description': 'description',
             'additional_information': 'additionalInformation',
-            'followups': 'followups',
             'affected_resources': 'affectedResources'
         }
 
@@ -160,7 +154,6 @@ class Announcement(BaseAnnouncement):
         self._time_updated = None
         self._description = None
         self._additional_information = None
-        self._followups = None
         self._affected_resources = None
         self._type = 'Announcement'
 
@@ -168,7 +161,8 @@ class Announcement(BaseAnnouncement):
     def description(self):
         """
         Gets the description of this Announcement.
-        A more detailed explanation of the notification. A markdown format input
+        A detailed explanation of the event, expressed by using Markdown language. Avoid entering
+        confidential information.
 
 
         :return: The description of this Announcement.
@@ -180,7 +174,8 @@ class Announcement(BaseAnnouncement):
     def description(self, description):
         """
         Sets the description of this Announcement.
-        A more detailed explanation of the notification. A markdown format input
+        A detailed explanation of the event, expressed by using Markdown language. Avoid entering
+        confidential information.
 
 
         :param description: The description of this Announcement.
@@ -192,7 +187,9 @@ class Announcement(BaseAnnouncement):
     def additional_information(self):
         """
         Gets the additional_information of this Announcement.
-        A markdown format input that forms e.g. the FAQ section of a notification
+        Additional information about the event, expressed by using Markdown language and included in the
+        details view of an announcement. Additional information might include remediation steps or
+        answers to frequently asked questions. Avoid entering confidential information.
 
 
         :return: The additional_information of this Announcement.
@@ -204,7 +201,9 @@ class Announcement(BaseAnnouncement):
     def additional_information(self, additional_information):
         """
         Sets the additional_information of this Announcement.
-        A markdown format input that forms e.g. the FAQ section of a notification
+        Additional information about the event, expressed by using Markdown language and included in the
+        details view of an announcement. Additional information might include remediation steps or
+        answers to frequently asked questions. Avoid entering confidential information.
 
 
         :param additional_information: The additional_information of this Announcement.
@@ -213,30 +212,10 @@ class Announcement(BaseAnnouncement):
         self._additional_information = additional_information
 
     @property
-    def followups(self):
-        """
-        Gets the followups of this Announcement.
-
-        :return: The followups of this Announcement.
-        :rtype: list[NotificationFollowupDetails]
-        """
-        return self._followups
-
-    @followups.setter
-    def followups(self, followups):
-        """
-        Sets the followups of this Announcement.
-
-        :param followups: The followups of this Announcement.
-        :type: list[NotificationFollowupDetails]
-        """
-        self._followups = followups
-
-    @property
     def affected_resources(self):
         """
         Gets the affected_resources of this Announcement.
-        List of resources (possibly empty) affected by this announcement
+        The list of resources, if any, affected by the event described in the announcement.
 
 
         :return: The affected_resources of this Announcement.
@@ -248,7 +227,7 @@ class Announcement(BaseAnnouncement):
     def affected_resources(self, affected_resources):
         """
         Sets the affected_resources of this Announcement.
-        List of resources (possibly empty) affected by this announcement
+        The list of resources, if any, affected by the event described in the announcement.
 
 
         :param affected_resources: The affected_resources of this Announcement.
