@@ -2,11 +2,22 @@
 # Modified Work: Copyright (c) 2018, 2019, Oracle and/or its affiliates. All rights reserved.
 # Original Work: Copyright (c) 2015 José Padilla
 
-class InvalidTokenError(Exception):
+class PyJWTError(Exception):
+    """
+    Base class for all exceptions
+    """
+    pass
+
+
+class InvalidTokenError(PyJWTError):
     pass
 
 
 class DecodeError(InvalidTokenError):
+    pass
+
+
+class InvalidSignatureError(DecodeError):
     pass
 
 
@@ -30,7 +41,7 @@ class ImmatureSignatureError(InvalidTokenError):
     pass
 
 
-class InvalidKeyError(Exception):
+class InvalidKeyError(PyJWTError):
     pass
 
 
