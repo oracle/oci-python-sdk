@@ -22,12 +22,22 @@ A *realm* is a set of regions that share entities. You can identify your realm b
 oraclecloud.com Realm
 =====================
 
-For regions in the oraclecloud.com realm, even if the <Region enum> does not contain the new region, the forward compatibility of the SDK can automatically handle it. You can pass new region names just as you would pass ones that are already defined.
+For regions in the oraclecloud.com realm, even if the Region enum does not contain the new region, the forward compatibility of the SDK can automatically handle it. You can pass new region names just as you would pass ones that are already defined.
 
 ============
 Other Realms
 ============
 
-For regions in realms other than oraclecloud.com, you can use the following workarounds to reach new regions with earlier versions of the SDK:
+For regions in realms other than oraclecloud.com, you can use the following workarounds to reach new regions with earlier versions of the SDK.
 
+You can set the endpoint on an initialized client via the base client::
+    
+    client.base_client.endpoint = 'https://identity.us-gov-phoenix-1.oraclegovcloud.com'
 
+For the InstancePrincipalsSecurityTokenSigner, the federation_endpoint needs to be passed in when initializing the signer::
+    
+    signer = oci.auth.signers.InstancePrincipalsSecurityTokenSigner(federation_endpoint='https://auth.us-gov-phoenix-1.oraclegovcloud.com/v1/x509')
+
+If the federation_endpoint is not passed in, you will see the following error::
+    
+    oci._vendor.requests.exceptions.ConnectionError: HTTPSConnectionPool(host='auth.us-gov-phoenix-1.oraclecloud.com', port=443): Max retries exceeded with url: /v1/x509 (Caused by NewConnectionError('<oci._vendor.urllib3.connection.VerifiedHTTPSConnection object at 0x7f5c91002ba8>: Failed to establish a new connection: [Errno -2] Name or service not known',))
