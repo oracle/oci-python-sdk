@@ -46,6 +46,7 @@ To get started, head over to the :ref:`installation instructions <install>` or s
     configuration
     fips-libraries
     forward-compatibility
+    new-region-support
     backward-compatibility
     quickstart
     known-issues
