@@ -22,7 +22,7 @@ A *realm* is a set of regions that share entities. You can identify your realm b
 oraclecloud.com Realm
 =====================
 
-For regions in the oraclecloud.com realm, even if the Region enum does not contain the new region, the forward compatibility of the SDK can automatically handle it. You can pass new region names just as you would pass ones that are already defined.
+For regions in the oraclecloud.com realm, the forward compatibility of the SDK can automatically handle it. You can pass new region names just as you would pass ones that are already defined.
 
 ============
 Other Realms
