@@ -522,10 +522,19 @@ class BaseClient(object):
         # response.content is always bytes
         response_data = response_data.decode('utf8')
 
-        # TODO: not all valid json strings should be loaded as JSON.
-        # TODO: conditionally load json based on response_type.
         try:
-            response_data = json.loads(response_data)
+            json_response = json.loads(response_data)
+            # Load everything as JSON and then verify that the object returned
+            # is a string (six.text_type) if the response type is a string.
+            # This is matches the previous behavior, which happens to strip
+            # the embedded quotes in the get_namespace response.
+            # There is the potential that an API will declare that it returns
+            # a string and the string will be a valid JSON Object. In that case
+            # we do not update the response_data with the json_response.
+            # If we do later steps will fail because they are expecting the
+            # response_data to be a string.
+            if response_type != "str" or type(json_response) == six.text_type:
+                response_data = json_response
         except ValueError:
             pass
 
