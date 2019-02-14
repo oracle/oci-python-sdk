@@ -129,7 +129,10 @@ class AutonomousDataWarehouseConnectionStrings(object):
     def all_connection_strings(self):
         """
         Gets the all_connection_strings of this AutonomousDataWarehouseConnectionStrings.
-        All connection strings to use to connect to the Data Warehouse.
+        Returns all connection strings that can be used to connect to the Autonomous Data Warehouse.
+        For more information, please see `Predefined Database Service Names for Autonomous Transaction Processing`__
+
+        __ https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE
 
 
         :return: The all_connection_strings of this AutonomousDataWarehouseConnectionStrings.
@@ -141,7 +144,10 @@ class AutonomousDataWarehouseConnectionStrings(object):
     def all_connection_strings(self, all_connection_strings):
         """
         Sets the all_connection_strings of this AutonomousDataWarehouseConnectionStrings.
-        All connection strings to use to connect to the Data Warehouse.
+        Returns all connection strings that can be used to connect to the Autonomous Data Warehouse.
+        For more information, please see `Predefined Database Service Names for Autonomous Transaction Processing`__
+
+        __ https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE
 
 
         :param all_connection_strings: The all_connection_strings of this AutonomousDataWarehouseConnectionStrings.

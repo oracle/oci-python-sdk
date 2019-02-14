@@ -36,6 +36,10 @@ class LaunchDbSystemBase(object):
             The value to assign to the compartment_id property of this LaunchDbSystemBase.
         :type compartment_id: str
 
+        :param fault_domains:
+            The value to assign to the fault_domains property of this LaunchDbSystemBase.
+        :type fault_domains: list[str]
+
         :param display_name:
             The value to assign to the display_name property of this LaunchDbSystemBase.
         :type display_name: str
@@ -108,6 +112,7 @@ class LaunchDbSystemBase(object):
         """
         self.swagger_types = {
             'compartment_id': 'str',
+            'fault_domains': 'list[str]',
             'display_name': 'str',
             'availability_domain': 'str',
             'subnet_id': 'str',
@@ -129,6 +134,7 @@ class LaunchDbSystemBase(object):
 
         self.attribute_map = {
             'compartment_id': 'compartmentId',
+            'fault_domains': 'faultDomains',
             'display_name': 'displayName',
             'availability_domain': 'availabilityDomain',
             'subnet_id': 'subnetId',
@@ -149,6 +155,7 @@ class LaunchDbSystemBase(object):
         }
 
         self._compartment_id = None
+        self._fault_domains = None
         self._display_name = None
         self._availability_domain = None
         self._subnet_id = None
@@ -210,6 +217,62 @@ class LaunchDbSystemBase(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def fault_domains(self):
+        """
+        Gets the fault_domains of this LaunchDbSystemBase.
+        A fault domain is a grouping of hardware and infrastructure within an availability domain.
+        fault domains let you distribute your instances so that they are not on the same physical
+        hardware within a single availability domain. A hardware failure or maintenance
+        that affects one fault domain does not affect DB systems in other fault domains.
+
+        If you do not specify the fault domain, the system selects one for you. To change the fault
+        domain for a DB system, terminate it and launch a new DB system in the preferred fault domain.
+
+        If the node count is greater than 1, you can specify which fault domains these nodes will be distributed into.
+        The system assigns your nodes automatically to the fault domains you specify so that
+        no fault domain contains more than one node.
+
+        To get a list of fault domains, use the
+        :func:`list_fault_domains` operation in the
+        Identity and Access Management Service API.
+
+        Example: `FAULT-DOMAIN-1`
+
+
+        :return: The fault_domains of this LaunchDbSystemBase.
+        :rtype: list[str]
+        """
+        return self._fault_domains
+
+    @fault_domains.setter
+    def fault_domains(self, fault_domains):
+        """
+        Sets the fault_domains of this LaunchDbSystemBase.
+        A fault domain is a grouping of hardware and infrastructure within an availability domain.
+        fault domains let you distribute your instances so that they are not on the same physical
+        hardware within a single availability domain. A hardware failure or maintenance
+        that affects one fault domain does not affect DB systems in other fault domains.
+
+        If you do not specify the fault domain, the system selects one for you. To change the fault
+        domain for a DB system, terminate it and launch a new DB system in the preferred fault domain.
+
+        If the node count is greater than 1, you can specify which fault domains these nodes will be distributed into.
+        The system assigns your nodes automatically to the fault domains you specify so that
+        no fault domain contains more than one node.
+
+        To get a list of fault domains, use the
+        :func:`list_fault_domains` operation in the
+        Identity and Access Management Service API.
+
+        Example: `FAULT-DOMAIN-1`
+
+
+        :param fault_domains: The fault_domains of this LaunchDbSystemBase.
+        :type: list[str]
+        """
+        self._fault_domains = fault_domains
 
     @property
     def display_name(self):
@@ -395,7 +458,7 @@ class LaunchDbSystemBase(object):
     def ssh_public_keys(self):
         """
         **[Required]** Gets the ssh_public_keys of this LaunchDbSystemBase.
-        The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 10,000 characters.
+        The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 40,000 characters.
 
 
         :return: The ssh_public_keys of this LaunchDbSystemBase.
@@ -407,7 +470,7 @@ class LaunchDbSystemBase(object):
     def ssh_public_keys(self, ssh_public_keys):
         """
         Sets the ssh_public_keys of this LaunchDbSystemBase.
-        The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 10,000 characters.
+        The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 40,000 characters.
 
 
         :param ssh_public_keys: The ssh_public_keys of this LaunchDbSystemBase.

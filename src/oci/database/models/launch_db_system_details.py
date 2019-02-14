@@ -54,6 +54,10 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
             The value to assign to the compartment_id property of this LaunchDbSystemDetails.
         :type compartment_id: str
 
+        :param fault_domains:
+            The value to assign to the fault_domains property of this LaunchDbSystemDetails.
+        :type fault_domains: list[str]
+
         :param display_name:
             The value to assign to the display_name property of this LaunchDbSystemDetails.
         :type display_name: str
@@ -145,6 +149,7 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
         """
         self.swagger_types = {
             'compartment_id': 'str',
+            'fault_domains': 'list[str]',
             'display_name': 'str',
             'availability_domain': 'str',
             'subnet_id': 'str',
@@ -170,6 +175,7 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
 
         self.attribute_map = {
             'compartment_id': 'compartmentId',
+            'fault_domains': 'faultDomains',
             'display_name': 'displayName',
             'availability_domain': 'availabilityDomain',
             'subnet_id': 'subnetId',
@@ -194,6 +200,7 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
         }
 
         self._compartment_id = None
+        self._fault_domains = None
         self._display_name = None
         self._availability_domain = None
         self._subnet_id = None

@@ -85,6 +85,10 @@ class DbNodeSummary(object):
             The value to assign to the hostname property of this DbNodeSummary.
         :type hostname: str
 
+        :param fault_domain:
+            The value to assign to the fault_domain property of this DbNodeSummary.
+        :type fault_domain: str
+
         :param time_created:
             The value to assign to the time_created property of this DbNodeSummary.
         :type time_created: datetime
@@ -101,6 +105,7 @@ class DbNodeSummary(object):
             'backup_vnic_id': 'str',
             'lifecycle_state': 'str',
             'hostname': 'str',
+            'fault_domain': 'str',
             'time_created': 'datetime',
             'software_storage_size_in_gb': 'int'
         }
@@ -112,6 +117,7 @@ class DbNodeSummary(object):
             'backup_vnic_id': 'backupVnicId',
             'lifecycle_state': 'lifecycleState',
             'hostname': 'hostname',
+            'fault_domain': 'faultDomain',
             'time_created': 'timeCreated',
             'software_storage_size_in_gb': 'softwareStorageSizeInGB'
         }
@@ -122,6 +128,7 @@ class DbNodeSummary(object):
         self._backup_vnic_id = None
         self._lifecycle_state = None
         self._hostname = None
+        self._fault_domain = None
         self._time_created = None
         self._software_storage_size_in_gb = None
 
@@ -290,6 +297,30 @@ class DbNodeSummary(object):
         :type: str
         """
         self._hostname = hostname
+
+    @property
+    def fault_domain(self):
+        """
+        Gets the fault_domain of this DbNodeSummary.
+        The name of the fault domain the instance is contained in.
+
+
+        :return: The fault_domain of this DbNodeSummary.
+        :rtype: str
+        """
+        return self._fault_domain
+
+    @fault_domain.setter
+    def fault_domain(self, fault_domain):
+        """
+        Sets the fault_domain of this DbNodeSummary.
+        The name of the fault domain the instance is contained in.
+
+
+        :param fault_domain: The fault_domain of this DbNodeSummary.
+        :type: str
+        """
+        self._fault_domain = fault_domain
 
     @property
     def time_created(self):
