@@ -58,3 +58,9 @@ def test_service_endpoint_template(identity, config):
     region_london = 'uk-london-1'
     client.set_region(region_london)
     assert client.endpoint == service_endpoint_template.format(region=region_london)
+
+
+def test_deserialize_datetime(identity, config):
+    client = oci.BaseClient('identity', config, identity.base_client.signer, {})
+    ddt = client._BaseClient__deserialize_datetime('2018-11-30T18:49:58.825Z')
+    assert ddt.tzinfo is not None

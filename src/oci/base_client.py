@@ -18,6 +18,7 @@ from timeit import default_timer as timer
 
 from oci._vendor import requests, six
 from dateutil.parser import parse
+from dateutil import tz
 
 from . import constants, exceptions, regions
 from .auth import signers
@@ -618,7 +619,12 @@ class BaseClient(object):
         :return: datetime.
         """
         try:
-            return datetime.strptime(string, "%Y-%m-%dT%H:%M:%S.%fZ")
+            # If this parser creates a date without raising an exception
+            # then the time zone is utc and needs to be set.
+            naivedatetime = datetime.strptime(string, "%Y-%m-%dT%H:%M:%S.%fZ")
+            awaredatetime = naivedatetime.replace(tzinfo=tz.tzutc())
+            return awaredatetime
+
         except ValueError:
             try:
                 return parse(string)
