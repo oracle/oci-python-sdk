@@ -118,6 +118,8 @@ Core Services
     oci.core.models.ImageSourceViaObjectStorageUriDetails
     oci.core.models.IngressSecurityRule
     oci.core.models.Instance
+    oci.core.models.InstanceAgentConfig
+    oci.core.models.InstanceAgentFeatures
     oci.core.models.InstanceConfiguration
     oci.core.models.InstanceConfigurationAttachVnicDetails
     oci.core.models.InstanceConfigurationAttachVolumeDetails
@@ -146,6 +148,7 @@ Core Services
     oci.core.models.InstanceSourceViaImageDetails
     oci.core.models.InstanceSummary
     oci.core.models.InternetGateway
+    oci.core.models.LaunchInstanceAgentConfigDetails
     oci.core.models.LaunchInstanceDetails
     oci.core.models.LaunchOptions
     oci.core.models.LetterOfAuthority
@@ -182,6 +185,7 @@ Core Services
     oci.core.models.UpdateDrgDetails
     oci.core.models.UpdateIPSecConnectionDetails
     oci.core.models.UpdateImageDetails
+    oci.core.models.UpdateInstanceAgentConfigDetails
     oci.core.models.UpdateInstanceConfigurationDetails
     oci.core.models.UpdateInstanceDetails
     oci.core.models.UpdateInstancePoolDetails
