@@ -20,6 +20,8 @@ SERVICE_ENDPOINTS = {
     "load_balancer": "https://iaas.{domain}",
     "object_storage": "https://objectstorage.{domain}",
     "resource_search": "https://query.{domain}",
+    "stream": "https://streams.{domain}",
+    "stream_admin": "https://streams.{domain}",
     "virtual_network": "https://iaas.{domain}",
     "waas": "https://waas.{domain}"
 }
