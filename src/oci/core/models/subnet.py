@@ -187,7 +187,7 @@ class Subnet(object):
     @property
     def availability_domain(self):
         """
-        **[Required]** Gets the availability_domain of this Subnet.
+        Gets the availability_domain of this Subnet.
         The subnet's availability domain.
 
         Example: `Uocm:PHX-AD-1`
