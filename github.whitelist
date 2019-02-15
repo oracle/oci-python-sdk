@@ -53,3 +53,5 @@
 ^src/oci/announcements_service/.*\.py$
 ^src/oci/healthchecks/.*\.py$
 ^src/oci/waas/.*\.py$
+
+^src/oci/streaming/.*\.py$
