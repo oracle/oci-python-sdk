@@ -548,9 +548,9 @@ class KmsVaultClient(object):
     def update_vault(self, vault_id, update_vault_details, **kwargs):
         """
         UpdateVault
-        Updates the properties of a vault. Specifically, you can
-        only update the `displayName` property. Furthermore, the vault
-        must be in an `ACTIVE` or `CREATING` state.
+        Updates the properties of a vault. Specifically, you can update the
+        `displayName` , `freeformTags`, and `definedTags` properties. Furthermore,
+        the vault must be in an `ACTIVE` or `CREATING` state.
 
 
         :param str vault_id: (required)
