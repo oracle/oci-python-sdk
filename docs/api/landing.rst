@@ -5,6 +5,7 @@ API Reference
 
 * :doc:`Announcement <announcements_service/client/oci.announcements_service.AnnouncementClient>`
 * :doc:`Audit <audit/client/oci.audit.AuditClient>`
+* :doc:`Auto Scaling <autoscaling/client/oci.autoscaling.AutoScalingClient>`
 * :doc:`Container Engine <container_engine/client/oci.container_engine.ContainerEngineClient>`
 * :doc:`Block Storage <core/client/oci.core.BlockstorageClient>`
 * :doc:`Compute <core/client/oci.core.ComputeClient>`
@@ -51,6 +52,7 @@ API Reference
 
     announcements_service
     audit
+    autoscaling
     container_engine
     core
     database

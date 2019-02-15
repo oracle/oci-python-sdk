@@ -63,6 +63,31 @@ Audit
     :noindex:
 
 
+===========
+Autoscaling
+===========
+
+--------
+ Client
+--------
+
+.. autoclass:: oci.autoscaling.auto_scaling_client.AutoScalingClient
+    :members:
+    :noindex:
+
+--------
+ Models
+--------
+
+.. automodule:: oci.autoscaling.models
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :imported-members:
+    :inherited-members:
+    :noindex:
+
+
 ================
 Container Engine
 ================
