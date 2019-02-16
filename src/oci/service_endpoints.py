@@ -18,6 +18,7 @@ SERVICE_ENDPOINTS = {
     "kms_management": "https://kms.{domain}",
     "kms_vault": "https://kms.{domain}",
     "load_balancer": "https://iaas.{domain}",
+    "monitoring": "https://telemetry.{domain}",
     "object_storage": "https://objectstorage.{domain}",
     "resource_search": "https://query.{domain}",
     "stream": "https://streams.{domain}",

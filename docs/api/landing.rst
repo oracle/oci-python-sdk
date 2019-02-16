@@ -20,6 +20,7 @@ API Reference
 * :doc:`Kms Management <key_management/client/oci.key_management.KmsManagementClient>`
 * :doc:`Kms Vault <key_management/client/oci.key_management.KmsVaultClient>`
 * :doc:`Load Balancer <load_balancer/client/oci.load_balancer.LoadBalancerClient>`
+* :doc:`Monitoring <monitoring/client/oci.monitoring.MonitoringClient>`
 * :doc:`Object Storage <object_storage/client/oci.object_storage.ObjectStorageClient>`
 * :doc:`Resource Search <resource_search/client/oci.resource_search.ResourceSearchClient>`
 * :doc:`Stream Admin <streaming/client/oci.streaming.StreamAdminClient>`
@@ -58,6 +59,7 @@ API Reference
     identity
     key_management
     load_balancer
+    monitoring
     object_storage
     resource_search
     streaming
