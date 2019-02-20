@@ -653,7 +653,8 @@ class StreamClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=put_messages_details,
-                response_type="PutMessagesResult")
+                response_type="PutMessagesResult",
+                enforce_content_headers=False)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -661,7 +662,8 @@ class StreamClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=put_messages_details,
-                response_type="PutMessagesResult")
+                response_type="PutMessagesResult",
+                enforce_content_headers=False)
 
     def update_group(self, stream_id, group_name, update_group_details, **kwargs):
         """

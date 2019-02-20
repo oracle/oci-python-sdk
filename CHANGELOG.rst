@@ -12,6 +12,10 @@ Added
 -----
 * TBD
 
+Fixed
+-----
+* No longer sign the body for put_messages in oci.streaming.StreamClient
+
 ====================
 2.2.0 - 2019-02-21
 ====================
