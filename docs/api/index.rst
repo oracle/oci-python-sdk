@@ -476,6 +476,31 @@ Notification Data Plane
     :noindex:
 
 
+================
+Resource Manager
+================
+
+--------
+ Client
+--------
+
+.. autoclass:: oci.resource_manager.resource_manager_client.ResourceManagerClient
+    :members:
+    :noindex:
+
+--------
+ Models
+--------
+
+.. automodule:: oci.resource_manager.models
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :imported-members:
+    :inherited-members:
+    :noindex:
+
+
 ===============
 Resource Search
 ===============

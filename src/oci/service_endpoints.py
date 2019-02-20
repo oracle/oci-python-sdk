@@ -23,6 +23,7 @@ SERVICE_ENDPOINTS = {
     "notification_control_plane": "https://notification.{domain}",
     "notification_data_plane": "https://notification.{domain}",
     "object_storage": "https://objectstorage.{domain}",
+    "resource_manager": "https://resourcemanager.{domain}",
     "resource_search": "https://query.{domain}",
     "stream": "https://streams.{domain}",
     "stream_admin": "https://streams.{domain}",
