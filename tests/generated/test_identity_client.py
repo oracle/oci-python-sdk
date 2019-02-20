@@ -65,6 +65,44 @@ def test_add_user_to_group(testing_service_client, config):
         )
 
 
+def test_change_tag_namespace_compartment(testing_service_client, config):
+    if not testing_service_client.is_api_enabled('identity', 'ChangeTagNamespaceCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='ChangeTagNamespaceCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
+            if pass_phrase:
+                config['pass_phrase'] = pass_phrase
+            client = oci.identity.IdentityClient(config)
+            response = client.change_tag_namespace_compartment(
+                tag_namespace_id=request.pop(util.camelize('tag_namespace_id')),
+                change_tag_namespace_compartment_detail=request.pop(util.camelize('change_tag_namespace_compartment_detail')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'ChangeTagNamespaceCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_tag_namespace_compartment',
+            False,
+            False
+        )
+
+
 def test_create_auth_token(testing_service_client, config):
     if not testing_service_client.is_api_enabled('identity', 'CreateAuthToken'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

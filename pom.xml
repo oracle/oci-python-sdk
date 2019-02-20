@@ -15,7 +15,7 @@
     <feature-id-dir>${project.basedir}/codegenConfig/featureIds</feature-id-dir>
     <inceptionYear>2016</inceptionYear>
     <coreservices-api-spec-spec-file>source/coreservices-api-spec-20160918.cond.yaml</coreservices-api-spec-spec-file>
-    <identity-control-plane-api-spec-spec-file>identity-control-plane-api-spec-20160918.yaml</identity-control-plane-api-spec-spec-file>
+    <identity-control-plane-api-spec-spec-file>source/identity-control-plane-api-spec-20160918.cond.yaml</identity-control-plane-api-spec-spec-file>
     <casper-api-spec-spec-file>source/casper-api.cond.yaml</casper-api-spec-spec-file>
     <oralb-api-spec-spec-file>source/spec-20170115.cond.yaml</oralb-api-spec-spec-file>
     <dbaas-api-spec-spec-file>source/dbaas-api-spec-20160918.cond.yaml</dbaas-api-spec-spec-file>
@@ -1484,7 +1484,7 @@
       <dependency>
         <groupId>com.oracle.pic.identity</groupId>
         <artifactId>identity-control-plane-api-spec</artifactId>
-        <version>0.3.8</version>
+        <version>0.4.15</version>
       </dependency>
       <dependency>
         <groupId>com.oracle.pic.casper</groupId>

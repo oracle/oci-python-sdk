@@ -151,6 +151,95 @@ class IdentityClient(object):
                 body=add_user_to_group_details,
                 response_type="UserGroupMembership")
 
+    def change_tag_namespace_compartment(self, tag_namespace_id, change_tag_namespace_compartment_detail, **kwargs):
+        """
+        changes compartment of a tag namespace.
+        Moves the specified tag namespace to the specified compartment within the same tenancy.
+
+        To move the tag namespace, you must have the manage tag-namespaces permission on both compartments.
+        For more information about IAM policies, see `Details for IAM`__.
+
+        Moving a tag namespace moves all the tag key definitions contained in the tag namespace.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Reference/iampolicyreference.htm
+
+
+        :param str tag_namespace_id: (required)
+            The OCID of the tag namespace.
+
+        :param ChangeTagNamespaceCompartmentDetail change_tag_namespace_compartment_detail: (required)
+            Request object for changing the compartment of a tag namespace.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/tagNamespaces/{tagNamespaceId}/actions/changeCompartment"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "change_tag_namespace_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "tagNamespaceId": tag_namespace_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_tag_namespace_compartment_detail)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_tag_namespace_compartment_detail)
+
     def create_auth_token(self, create_auth_token_details, user_id, **kwargs):
         """
         CreateAuthToken
@@ -3365,7 +3454,7 @@ class IdentityClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+            The OCID of the compartment (remember that the tenancy is simply the root compartment).
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3443,7 +3532,7 @@ class IdentityClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+            The OCID of the compartment (remember that the tenancy is simply the root compartment).
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -3547,7 +3636,7 @@ class IdentityClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+            The OCID of the compartment (remember that the tenancy is simply the root compartment).
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -3688,7 +3777,7 @@ class IdentityClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+            The OCID of the compartment (remember that the tenancy is simply the root compartment).
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -3764,7 +3853,7 @@ class IdentityClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+            The OCID of the compartment (remember that the tenancy is simply the root compartment).
 
         :param str availability_domain: (required)
             The name of the availibilityDomain.
@@ -3831,7 +3920,7 @@ class IdentityClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+            The OCID of the compartment (remember that the tenancy is simply the root compartment).
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -3996,7 +4085,7 @@ class IdentityClient(object):
             Allowed values are: "SAML2"
 
         :param str compartment_id: (required)
-            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+            The OCID of the compartment (remember that the tenancy is simply the root compartment).
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -4158,7 +4247,7 @@ class IdentityClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+            The OCID of the compartment (remember that the tenancy is simply the root compartment).
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -4475,7 +4564,7 @@ class IdentityClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+            The OCID of the compartment (remember that the tenancy is simply the root compartment).
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -4647,7 +4736,7 @@ class IdentityClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+            The OCID of the compartment (remember that the tenancy is simply the root compartment).
 
         :param str user_id: (optional)
             The OCID of the user.
@@ -4733,7 +4822,7 @@ class IdentityClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+            The OCID of the compartment (remember that the tenancy is simply the root compartment).
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -4815,7 +4904,7 @@ class IdentityClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+            The OCID of the compartment (remember that the tenancy is simply the root compartment).
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.

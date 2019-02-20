@@ -22,6 +22,7 @@ Identity
     oci.identity.models.ApiKey
     oci.identity.models.AuthToken
     oci.identity.models.AvailabilityDomain
+    oci.identity.models.ChangeTagNamespaceCompartmentDetail
     oci.identity.models.Compartment
     oci.identity.models.CreateApiKeyDetails
     oci.identity.models.CreateAuthTokenDetails

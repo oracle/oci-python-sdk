@@ -7,6 +7,7 @@ from .add_user_to_group_details import AddUserToGroupDetails
 from .api_key import ApiKey
 from .auth_token import AuthToken
 from .availability_domain import AvailabilityDomain
+from .change_tag_namespace_compartment_detail import ChangeTagNamespaceCompartmentDetail
 from .compartment import Compartment
 from .create_api_key_details import CreateApiKeyDetails
 from .create_auth_token_details import CreateAuthTokenDetails
@@ -77,6 +78,7 @@ identity_type_mapping = {
     "ApiKey": ApiKey,
     "AuthToken": AuthToken,
     "AvailabilityDomain": AvailabilityDomain,
+    "ChangeTagNamespaceCompartmentDetail": ChangeTagNamespaceCompartmentDetail,
     "Compartment": Compartment,
     "CreateApiKeyDetails": CreateApiKeyDetails,
     "CreateAuthTokenDetails": CreateAuthTokenDetails,
