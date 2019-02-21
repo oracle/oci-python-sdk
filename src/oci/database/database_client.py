@@ -3015,6 +3015,11 @@ class DatabaseClient(object):
 
             Allowed values are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION"
 
+        :param str db_workload: (optional)
+            A filter to return only autonomous database resources that match the specified workload type.
+
+            Allowed values are: "OLTP", "DW"
+
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given. The match is not case sensitive.
 
@@ -3043,6 +3048,7 @@ class DatabaseClient(object):
             "sort_by",
             "sort_order",
             "lifecycle_state",
+            "db_workload",
             "display_name",
             "opc_request_id"
         ]
@@ -3072,6 +3078,13 @@ class DatabaseClient(object):
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
                 )
 
+        if 'db_workload' in kwargs:
+            db_workload_allowed_values = ["OLTP", "DW"]
+            if kwargs['db_workload'] not in db_workload_allowed_values:
+                raise ValueError(
+                    "Invalid value for `db_workload`, must be one of {0}".format(db_workload_allowed_values)
+                )
+
         query_params = {
             "compartmentId": compartment_id,
             "limit": kwargs.get("limit", missing),
@@ -3079,6 +3092,7 @@ class DatabaseClient(object):
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "dbWorkload": kwargs.get("db_workload", missing),
             "displayName": kwargs.get("display_name", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}

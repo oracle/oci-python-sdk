@@ -74,6 +74,14 @@ class AutonomousDatabaseSummary(object):
     #: This constant has a value of "BRING_YOUR_OWN_LICENSE"
     LICENSE_MODEL_BRING_YOUR_OWN_LICENSE = "BRING_YOUR_OWN_LICENSE"
 
+    #: A constant which can be used with the db_workload property of a AutonomousDatabaseSummary.
+    #: This constant has a value of "OLTP"
+    DB_WORKLOAD_OLTP = "OLTP"
+
+    #: A constant which can be used with the db_workload property of a AutonomousDatabaseSummary.
+    #: This constant has a value of "DW"
+    DB_WORKLOAD_DW = "DW"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AutonomousDatabaseSummary object with values from keyword arguments.
@@ -143,6 +151,12 @@ class AutonomousDatabaseSummary(object):
             The value to assign to the db_version property of this AutonomousDatabaseSummary.
         :type db_version: str
 
+        :param db_workload:
+            The value to assign to the db_workload property of this AutonomousDatabaseSummary.
+            Allowed values for this property are: "OLTP", "DW", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type db_workload: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -159,7 +173,8 @@ class AutonomousDatabaseSummary(object):
             'license_model': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'db_version': 'str'
+            'db_version': 'str',
+            'db_workload': 'str'
         }
 
         self.attribute_map = {
@@ -177,7 +192,8 @@ class AutonomousDatabaseSummary(object):
             'license_model': 'licenseModel',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'db_version': 'dbVersion'
+            'db_version': 'dbVersion',
+            'db_workload': 'dbWorkload'
         }
 
         self._id = None
@@ -195,6 +211,7 @@ class AutonomousDatabaseSummary(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._db_version = None
+        self._db_workload = None
 
     @property
     def id(self):
@@ -595,6 +612,36 @@ class AutonomousDatabaseSummary(object):
         :type: str
         """
         self._db_version = db_version
+
+    @property
+    def db_workload(self):
+        """
+        Gets the db_workload of this AutonomousDatabaseSummary.
+        The Autonomous Database workload type.
+
+        Allowed values for this property are: "OLTP", "DW", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The db_workload of this AutonomousDatabaseSummary.
+        :rtype: str
+        """
+        return self._db_workload
+
+    @db_workload.setter
+    def db_workload(self, db_workload):
+        """
+        Sets the db_workload of this AutonomousDatabaseSummary.
+        The Autonomous Database workload type.
+
+
+        :param db_workload: The db_workload of this AutonomousDatabaseSummary.
+        :type: str
+        """
+        allowed_values = ["OLTP", "DW"]
+        if not value_allowed_none_or_none_sentinel(db_workload, allowed_values):
+            db_workload = 'UNKNOWN_ENUM_VALUE'
+        self._db_workload = db_workload
 
     def __repr__(self):
         return formatted_flat_dict(self)
