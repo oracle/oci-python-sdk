@@ -13,7 +13,7 @@ def test_all_model_classes_can_be_init_from_kwargs():
     # Programmitically get all the model mappings by inspecting all of the modules
     # in oci.  This assumes that the model has a dictionary with a name that
     # fits the pattern "<module>_type_mapping".  Example, audit_type_mapping.
-    # This list used to be maintained by hand and sometimes new new services were
+    # This list used to be maintained by hand and sometimes new services were
     # not added.
     model_mappings = []
     for x in dir(oci):

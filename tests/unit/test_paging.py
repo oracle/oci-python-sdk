@@ -111,7 +111,14 @@ def test_pagination_get_up_to_limit_yields(identity, config):
         num_iterations += 1
         users_from_response_gen.extend(response.data)
     assert num_iterations > 1
-    assert num_iterations <= 7
+    # The identity service appears to respond with a next page as long as the current request
+    # returned any results.
+    # If last page of results is not full then the number of iterations is less than or equal to the ceiling of
+    # total items / number in page + 1 for the page with no results.
+    # This means that if there are 64 users and we want to get 70 with 10 users per page.  The number of iterations
+    # is ceiling(64 / 10) == 7 + 1 more request because the request which returned the last 4 results has the
+    # next_page set.
+    assert num_iterations <= 8
     assert len(users_from_response_gen) <= 70
 
     users = []
