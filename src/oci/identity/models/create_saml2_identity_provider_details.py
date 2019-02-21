@@ -37,7 +37,7 @@ class CreateSaml2IdentityProviderDetails(CreateIdentityProviderDetails):
 
         :param protocol:
             The value to assign to the protocol property of this CreateSaml2IdentityProviderDetails.
-            Allowed values for this property are: "SAML2"
+            Allowed values for this property are: "SAML2", "ADFS"
         :type protocol: str
 
         :param freeform_tags:

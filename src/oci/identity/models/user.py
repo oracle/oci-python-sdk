@@ -108,6 +108,10 @@ class User(object):
             The value to assign to the capabilities property of this User.
         :type capabilities: UserCapabilities
 
+        :param is_mfa_activated:
+            The value to assign to the is_mfa_activated property of this User.
+        :type is_mfa_activated: bool
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -121,7 +125,8 @@ class User(object):
             'inactive_status': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'capabilities': 'UserCapabilities'
+            'capabilities': 'UserCapabilities',
+            'is_mfa_activated': 'bool'
         }
 
         self.attribute_map = {
@@ -136,7 +141,8 @@ class User(object):
             'inactive_status': 'inactiveStatus',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'capabilities': 'capabilities'
+            'capabilities': 'capabilities',
+            'is_mfa_activated': 'isMfaActivated'
         }
 
         self._id = None
@@ -151,6 +157,7 @@ class User(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._capabilities = None
+        self._is_mfa_activated = None
 
     @property
     def id(self):
@@ -479,6 +486,30 @@ class User(object):
         :type: UserCapabilities
         """
         self._capabilities = capabilities
+
+    @property
+    def is_mfa_activated(self):
+        """
+        **[Required]** Gets the is_mfa_activated of this User.
+        Flag indicates if MFA has been activated for the user.
+
+
+        :return: The is_mfa_activated of this User.
+        :rtype: bool
+        """
+        return self._is_mfa_activated
+
+    @is_mfa_activated.setter
+    def is_mfa_activated(self, is_mfa_activated):
+        """
+        Sets the is_mfa_activated of this User.
+        Flag indicates if MFA has been activated for the user.
+
+
+        :param is_mfa_activated: The is_mfa_activated of this User.
+        :type: bool
+        """
+        self._is_mfa_activated = is_mfa_activated
 
     def __repr__(self):
         return formatted_flat_dict(self)
