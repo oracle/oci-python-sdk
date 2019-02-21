@@ -74,6 +74,7 @@ class VirtualNetworkClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'timeout': kwargs.get('timeout'),
             'base_path': '/20160918',
+            'service_endpoint_template': 'https://iaas.{region}.{secondLevelDomain}',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
         self.base_client = BaseClient("virtual_network", config, signer, core_type_mapping, **base_client_init_kwargs)
