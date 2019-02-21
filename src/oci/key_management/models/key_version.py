@@ -138,7 +138,7 @@ class KeyVersion(object):
         **[Required]** Gets the time_created of this KeyVersion.
         The date and time this key version was created, expressed in `RFC 3339`__ timestamp format.
 
-        Example: `2018-04-03T21:10:29.600Z`
+        Example: \"2018-04-03T21:10:29.600Z\"
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -154,7 +154,7 @@ class KeyVersion(object):
         Sets the time_created of this KeyVersion.
         The date and time this key version was created, expressed in `RFC 3339`__ timestamp format.
 
-        Example: `2018-04-03T21:10:29.600Z`
+        Example: \"2018-04-03T21:10:29.600Z\"
 
         __ https://tools.ietf.org/html/rfc3339
 

@@ -826,9 +826,9 @@ class KmsManagementClient(object):
     def update_key(self, key_id, update_key_details, **kwargs):
         """
         UpdateKey
-        Updates the properties of a key. Specifically, you can
-        only update the `displayName` property. Furthermore, the
-        key must in an `ACTIVE` or `CREATING` state.
+        Updates the properties of a key. Specifically, you can update the
+        `displayName` , `freeformTags`, and `definedTags` properties. Furthermore,
+        the key must in an `ACTIVE` or `CREATING` state.
 
 
         :param str key_id: (required)

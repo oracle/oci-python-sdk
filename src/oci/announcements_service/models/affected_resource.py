@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AffectedResource(object):
     """
-    Descrption of a resource affected by the announcement
+    The resource affected by the event described in the announcement.
     """
 
     def __init__(self, **kwargs):
@@ -50,7 +50,7 @@ class AffectedResource(object):
     def resource_id(self):
         """
         **[Required]** Gets the resource_id of this AffectedResource.
-        The OCID of the resource
+        The OCID of the affected resource.
 
 
         :return: The resource_id of this AffectedResource.
@@ -62,7 +62,7 @@ class AffectedResource(object):
     def resource_id(self, resource_id):
         """
         Sets the resource_id of this AffectedResource.
-        The OCID of the resource
+        The OCID of the affected resource.
 
 
         :param resource_id: The resource_id of this AffectedResource.
@@ -74,7 +74,7 @@ class AffectedResource(object):
     def resource_name(self):
         """
         **[Required]** Gets the resource_name of this AffectedResource.
-        User-friendly name of the resource
+        The friendly name of the resource.
 
 
         :return: The resource_name of this AffectedResource.
@@ -86,7 +86,7 @@ class AffectedResource(object):
     def resource_name(self, resource_name):
         """
         Sets the resource_name of this AffectedResource.
-        User-friendly name of the resource
+        The friendly name of the resource.
 
 
         :param resource_name: The resource_name of this AffectedResource.
@@ -98,7 +98,7 @@ class AffectedResource(object):
     def region(self):
         """
         **[Required]** Gets the region of this AffectedResource.
-        Region where this resource belongs to
+        The region where the affected resource exists.
 
 
         :return: The region of this AffectedResource.
@@ -110,7 +110,7 @@ class AffectedResource(object):
     def region(self, region):
         """
         Sets the region of this AffectedResource.
-        Region where this resource belongs to
+        The region where the affected resource exists.
 
 
         :param region: The region of this AffectedResource.
