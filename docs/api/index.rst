@@ -413,6 +413,44 @@ Resource Search
     :noindex:
 
 
+=========
+Streaming
+=========
+
+---------
+ Clients
+---------
+
+
+Stream Admin
+============
+
+.. autoclass:: oci.streaming.stream_admin_client.StreamAdminClient
+    :members:
+    :noindex:
+
+
+Stream
+======
+
+.. autoclass:: oci.streaming.stream_client.StreamClient
+    :members:
+    :noindex:
+
+
+--------
+ Models
+--------
+
+.. automodule:: oci.streaming.models
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :imported-members:
+    :inherited-members:
+    :noindex:
+
+
 ====
 Waas
 ====

@@ -15,17 +15,31 @@ REGION_REALMS = {
     'us-ashburn-1': 'oc1',
     'eu-frankfurt-1': 'oc1',
     'uk-london-1': 'oc1',
-    'ca-toronto-1': 'oc1'
+    'ca-toronto-1': 'oc1',
+
+    'us-langley-1': 'oc2',
+    'us-luke-1': 'oc2',
+
+    'us-gov-ashburn-1': 'oc3',
+    'us-gov-chicago-1': 'oc3',
+    'us-gov-phoenix-1': 'oc3'
 }
 REALMS = {
-    'oc1': 'oraclecloud.com'
+    'oc1': 'oraclecloud.com',
+    'oc2': 'oraclegovcloud.com',
+    'oc3': 'oraclegovcloud.com'
 }
 REGIONS = [
     "us-phoenix-1",
     "us-ashburn-1",
     "eu-frankfurt-1",
     "uk-london-1",
-    "ca-toronto-1"
+    "ca-toronto-1",
+    "us-langley-1",
+    "us-luke-1",
+    "us-gov-ashburn-1",
+    "us-gov-chicago-1",
+    "us-gov-phoenix-1"
 ]
 SERVICE_ENDPOINTS = service_endpoints.SERVICE_ENDPOINTS
 SERVICE_ENDPOINTS['auth'] = 'https://auth.{domain}'

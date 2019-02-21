@@ -17,7 +17,7 @@ missing = Sentinel("Missing")
 
 class AnnouncementClient(object):
     """
-    A description of the AnnouncementsService API
+    Manage Oracle Cloud Infrastructure console announcements.
     """
 
     def __init__(self, config, **kwargs):
@@ -81,16 +81,16 @@ class AnnouncementClient(object):
 
     def get_announcement(self, announcement_id, **kwargs):
         """
-        GetAnnouncement
-        Gets details about single `Announcement` object
+        Gets information about an announcement.
+        Gets the details of a specific announcement.
 
 
         :param str announcement_id: (required)
-            The OCID of the announcement
+            The OCID of the announcement.
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-            a particular request, please provide the request ID.
+            The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+            a particular request, please provide the complete request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -155,16 +155,16 @@ class AnnouncementClient(object):
 
     def get_announcement_user_status(self, announcement_id, **kwargs):
         """
-        GetAnnouncementUserStatus
-        Get user status of specified announcement
+        Gets the read status of an announcement.
+        Gets information about whether a specific announcement was acknowledged by a user.
 
 
         :param str announcement_id: (required)
-            The OCID of the announcement
+            The OCID of the announcement.
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-            a particular request, please provide the request ID.
+            The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+            a particular request, please provide the complete request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -229,12 +229,13 @@ class AnnouncementClient(object):
 
     def list_announcements(self, compartment_id, **kwargs):
         """
-        ListAnnouncements
-        Gets a list of `Announcement` objects for the current tenancy
+        Lists announcements for the tenancy.
+        Gets a list of announcements for the current tenancy.
 
 
         :param str compartment_id: (required)
-            OCID of the compartment where search is performed. Announcements are specific to tenancy, so this should an ID of the root compartment
+            The OCID of the compartment. Because announcements are specific to a tenancy, this is the
+            OCID of the root compartment.
 
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
@@ -243,35 +244,35 @@ class AnnouncementClient(object):
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
         :param str announcement_type: (optional)
-            Type of the announcements to show
+            The type of announcement.
 
         :param str lifecycle_state: (optional)
-            Filters returned announcements basing on whether they are active now
+            The announcement's current lifecycle state.
 
             Allowed values are: "ACTIVE", "INACTIVE"
 
         :param bool is_banner: (optional)
-            Filters returned announcements basing on whether they should be shown as a banner
+            Whether the announcement is displayed as a console banner.
 
         :param str sort_by: (optional)
-            announcements sort order
+            The criteria to sort by. You can specify only one sort order.
 
             Allowed values are: "timeOneValue", "timeTwoValue", "timeCreated", "referenceTicketNumber", "summary", "announcementType"
 
         :param str sort_order: (optional)
-            sort order
+            The sort order to use. (Sorting by `announcementType` orders the announcements list according to importance.)
 
             Allowed values are: "ASC", "DESC"
 
         :param datetime time_one_earliest_time: (optional)
-            The earliest timeOneValue to include
+            The boundary for the earliest `timeOneValue` date on announcements that you want to see.
 
         :param datetime time_one_latest_time: (optional)
-            The latest timeOneValue to include
+            The boundary for the latest `timeOneValue` date on announcements that you want to see.
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-            a particular request, please provide the request ID.
+            The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+            a particular request, please provide the complete request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -370,22 +371,22 @@ class AnnouncementClient(object):
 
     def update_announcement_user_status(self, announcement_id, status_details, **kwargs):
         """
-        UpdateAnnouncementUserStatus
-        Update `Announcement` status with whether user has seen or supressed the announcement
+        Updates the read status of an announcement.
+        Updates the status of the specified announcement with regard to whether it has been marked as read.
 
 
         :param str announcement_id: (required)
-            The OCID of the announcement
+            The OCID of the announcement.
 
         :param AnnouncementUserStatusDetails status_details: (required)
-            Object for updating a user's status of announcement.
+            The information to use to update the announcement's read status.
 
         :param str if_match: (optional)
-            Optimistic locking version
+            The locking version, used for optimistic concurrency control.
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-            a particular request, please provide the request ID.
+            The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+            a particular request, please provide the complete request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.

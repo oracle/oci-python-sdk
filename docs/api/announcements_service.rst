@@ -24,4 +24,3 @@ Announcements Service
     oci.announcements_service.models.AnnouncementUserStatusDetails
     oci.announcements_service.models.AnnouncementsCollection
     oci.announcements_service.models.BaseAnnouncement
-    oci.announcements_service.models.NotificationFollowupDetails

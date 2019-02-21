@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BaseAnnouncement(object):
     """
-    Base for announcements and incidents
+    Incident information that forms the basis of an announcement. Avoid entering confidential information.
     """
 
     #: A constant which can be used with the announcement_type property of a BaseAnnouncement.
@@ -221,7 +221,7 @@ class BaseAnnouncement(object):
     def id(self):
         """
         **[Required]** Gets the id of this BaseAnnouncement.
-        The OCID of the announcement
+        The OCID of the announcement.
 
 
         :return: The id of this BaseAnnouncement.
@@ -233,7 +233,7 @@ class BaseAnnouncement(object):
     def id(self, id):
         """
         Sets the id of this BaseAnnouncement.
-        The OCID of the announcement
+        The OCID of the announcement.
 
 
         :param id: The id of this BaseAnnouncement.
@@ -245,7 +245,7 @@ class BaseAnnouncement(object):
     def type(self):
         """
         **[Required]** Gets the type of this BaseAnnouncement.
-        Entity type
+        The entity type.
 
 
         :return: The type of this BaseAnnouncement.
@@ -257,7 +257,7 @@ class BaseAnnouncement(object):
     def type(self, type):
         """
         Sets the type of this BaseAnnouncement.
-        Entity type
+        The entity type.
 
 
         :param type: The type of this BaseAnnouncement.
@@ -269,7 +269,7 @@ class BaseAnnouncement(object):
     def reference_ticket_number(self):
         """
         **[Required]** Gets the reference_ticket_number of this BaseAnnouncement.
-        The reference JIRA ticket number
+        The reference Jira ticket number.
 
 
         :return: The reference_ticket_number of this BaseAnnouncement.
@@ -281,7 +281,7 @@ class BaseAnnouncement(object):
     def reference_ticket_number(self, reference_ticket_number):
         """
         Sets the reference_ticket_number of this BaseAnnouncement.
-        The reference JIRA ticket number
+        The reference Jira ticket number.
 
 
         :param reference_ticket_number: The reference_ticket_number of this BaseAnnouncement.
@@ -293,7 +293,8 @@ class BaseAnnouncement(object):
     def summary(self):
         """
         **[Required]** Gets the summary of this BaseAnnouncement.
-        Forms part of the email subject and/or the console representation (a banner or alike)
+        A summary of the issue. A summary might appear in the console banner view of the announcement or in
+        an email subject line. Avoid entering confidential information.
 
 
         :return: The summary of this BaseAnnouncement.
@@ -305,7 +306,8 @@ class BaseAnnouncement(object):
     def summary(self, summary):
         """
         Sets the summary of this BaseAnnouncement.
-        Forms part of the email subject and/or the console representation (a banner or alike)
+        A summary of the issue. A summary might appear in the console banner view of the announcement or in
+        an email subject line. Avoid entering confidential information.
 
 
         :param summary: The summary of this BaseAnnouncement.
@@ -317,7 +319,8 @@ class BaseAnnouncement(object):
     def time_one_title(self):
         """
         Gets the time_one_title of this BaseAnnouncement.
-        The title of the first time value, e.g. Time Started
+        The label associated with an initial time value.
+        Example: `Time Started`
 
 
         :return: The time_one_title of this BaseAnnouncement.
@@ -329,7 +332,8 @@ class BaseAnnouncement(object):
     def time_one_title(self, time_one_title):
         """
         Sets the time_one_title of this BaseAnnouncement.
-        The title of the first time value, e.g. Time Started
+        The label associated with an initial time value.
+        Example: `Time Started`
 
 
         :param time_one_title: The time_one_title of this BaseAnnouncement.
@@ -341,7 +345,8 @@ class BaseAnnouncement(object):
     def time_one_value(self):
         """
         Gets the time_one_value of this BaseAnnouncement.
-        The first time value, actual meaning depending on notification type
+        The actual value of the first time value for the event. Typically, this is the time an event started, but the meaning
+        can vary, depending on the announcement type.
 
 
         :return: The time_one_value of this BaseAnnouncement.
@@ -353,7 +358,8 @@ class BaseAnnouncement(object):
     def time_one_value(self, time_one_value):
         """
         Sets the time_one_value of this BaseAnnouncement.
-        The first time value, actual meaning depending on notification type
+        The actual value of the first time value for the event. Typically, this is the time an event started, but the meaning
+        can vary, depending on the announcement type.
 
 
         :param time_one_value: The time_one_value of this BaseAnnouncement.
@@ -365,7 +371,8 @@ class BaseAnnouncement(object):
     def time_two_title(self):
         """
         Gets the time_two_title of this BaseAnnouncement.
-        The title of the second time value, e.g. Time Ended
+        The label associated with a second time value.
+        Example: `Time Ended`
 
 
         :return: The time_two_title of this BaseAnnouncement.
@@ -377,7 +384,8 @@ class BaseAnnouncement(object):
     def time_two_title(self, time_two_title):
         """
         Sets the time_two_title of this BaseAnnouncement.
-        The title of the second time value, e.g. Time Ended
+        The label associated with a second time value.
+        Example: `Time Ended`
 
 
         :param time_two_title: The time_two_title of this BaseAnnouncement.
@@ -389,7 +397,8 @@ class BaseAnnouncement(object):
     def time_two_value(self):
         """
         Gets the time_two_value of this BaseAnnouncement.
-        The second time value, actual meaning depending on notification type
+        The actual value of the second time value. Typically, this is the time an event ended, but the meaning
+        can vary, depending on the announcement type.
 
 
         :return: The time_two_value of this BaseAnnouncement.
@@ -401,7 +410,8 @@ class BaseAnnouncement(object):
     def time_two_value(self, time_two_value):
         """
         Sets the time_two_value of this BaseAnnouncement.
-        The second time value, actual meaning depending on notification type
+        The actual value of the second time value. Typically, this is the time an event ended, but the meaning
+        can vary, depending on the announcement type.
 
 
         :param time_two_value: The time_two_value of this BaseAnnouncement.
@@ -412,8 +422,8 @@ class BaseAnnouncement(object):
     @property
     def services(self):
         """
-        Gets the services of this BaseAnnouncement.
-        Impacted services
+        **[Required]** Gets the services of this BaseAnnouncement.
+        Impacted Oracle Cloud Infrastructure services.
 
 
         :return: The services of this BaseAnnouncement.
@@ -425,7 +435,7 @@ class BaseAnnouncement(object):
     def services(self, services):
         """
         Sets the services of this BaseAnnouncement.
-        Impacted services
+        Impacted Oracle Cloud Infrastructure services.
 
 
         :param services: The services of this BaseAnnouncement.
@@ -436,8 +446,8 @@ class BaseAnnouncement(object):
     @property
     def affected_regions(self):
         """
-        Gets the affected_regions of this BaseAnnouncement.
-        Impacted regions
+        **[Required]** Gets the affected_regions of this BaseAnnouncement.
+        Impacted regions.
 
 
         :return: The affected_regions of this BaseAnnouncement.
@@ -449,7 +459,7 @@ class BaseAnnouncement(object):
     def affected_regions(self, affected_regions):
         """
         Sets the affected_regions of this BaseAnnouncement.
-        Impacted regions
+        Impacted regions.
 
 
         :param affected_regions: The affected_regions of this BaseAnnouncement.
@@ -461,7 +471,7 @@ class BaseAnnouncement(object):
     def announcement_type(self):
         """
         **[Required]** Gets the announcement_type of this BaseAnnouncement.
-        The detailed description of an announcement
+        The type of announcement. An announcement's type signals its severity.
 
         Allowed values for this property are: "ACTION_RECOMMENDED", "ACTION_REQUIRED", "EMERGENCY_CHANGE", "EMERGENCY_MAINTENANCE", "EMERGENCY_MAINTENANCE_COMPLETE", "EMERGENCY_MAINTENANCE_EXTENDED", "EMERGENCY_MAINTENANCE_RESCHEDULED", "INFORMATION", "PLANNED_CHANGE", "PLANNED_CHANGE_COMPLETE", "PLANNED_CHANGE_EXTENDED", "PLANNED_CHANGE_RESCHEDULED", "PRODUCTION_EVENT_NOTIFICATION", "SCHEDULED_MAINTENANCE"
 
@@ -475,7 +485,7 @@ class BaseAnnouncement(object):
     def announcement_type(self, announcement_type):
         """
         Sets the announcement_type of this BaseAnnouncement.
-        The detailed description of an announcement
+        The type of announcement. An announcement's type signals its severity.
 
 
         :param announcement_type: The announcement_type of this BaseAnnouncement.
@@ -493,7 +503,7 @@ class BaseAnnouncement(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this BaseAnnouncement.
-        Lifecycle states of announcement
+        The current lifecycle state of the announcement.
 
         Allowed values for this property are: "ACTIVE", "INACTIVE"
 
@@ -507,7 +517,7 @@ class BaseAnnouncement(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this BaseAnnouncement.
-        Lifecycle states of announcement
+        The current lifecycle state of the announcement.
 
 
         :param lifecycle_state: The lifecycle_state of this BaseAnnouncement.
@@ -525,7 +535,7 @@ class BaseAnnouncement(object):
     def is_banner(self):
         """
         **[Required]** Gets the is_banner of this BaseAnnouncement.
-        Show announcement as a banner
+        Whether the announcement is displayed as a banner in the console.
 
 
         :return: The is_banner of this BaseAnnouncement.
@@ -537,7 +547,7 @@ class BaseAnnouncement(object):
     def is_banner(self, is_banner):
         """
         Sets the is_banner of this BaseAnnouncement.
-        Show announcement as a banner
+        Whether the announcement is displayed as a banner in the console.
 
 
         :param is_banner: The is_banner of this BaseAnnouncement.
@@ -549,8 +559,10 @@ class BaseAnnouncement(object):
     def time_created(self):
         """
         Gets the time_created of this BaseAnnouncement.
-        The date and time the announcement was created, in the format defined by RFC3339
-        Example: `2016-07-22T17:43:01.389+0000`
+        The date and time the announcement was created, expressed in `RFC 3339`__ timestamp format.
+        Example: `2019-01-01T17:43:01.389+0000`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_created of this BaseAnnouncement.
@@ -562,8 +574,10 @@ class BaseAnnouncement(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this BaseAnnouncement.
-        The date and time the announcement was created, in the format defined by RFC3339
-        Example: `2016-07-22T17:43:01.389+0000`
+        The date and time the announcement was created, expressed in `RFC 3339`__ timestamp format.
+        Example: `2019-01-01T17:43:01.389+0000`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_created: The time_created of this BaseAnnouncement.
@@ -575,8 +589,10 @@ class BaseAnnouncement(object):
     def time_updated(self):
         """
         Gets the time_updated of this BaseAnnouncement.
-        The date and time the announcement was last updated, in the format defined by RFC3339
-        Example: `2016-07-22T17:43:01.389+0000`
+        The date and time the announcement was last updated, expressed in `RFC 3339`__ timestamp format.
+        Example: `2019-01-01T17:43:01.389+0000`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_updated of this BaseAnnouncement.
@@ -588,8 +604,10 @@ class BaseAnnouncement(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this BaseAnnouncement.
-        The date and time the announcement was last updated, in the format defined by RFC3339
-        Example: `2016-07-22T17:43:01.389+0000`
+        The date and time the announcement was last updated, expressed in `RFC 3339`__ timestamp format.
+        Example: `2019-01-01T17:43:01.389+0000`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_updated: The time_updated of this BaseAnnouncement.
