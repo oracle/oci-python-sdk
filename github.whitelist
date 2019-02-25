@@ -55,3 +55,4 @@
 ^src/oci/waas/.*\.py$
 
 ^src/oci/streaming/.*\.py$
+^src/oci/monitoring/.*\.py$

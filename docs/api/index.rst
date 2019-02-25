@@ -363,6 +363,31 @@ Load Balancer
     :noindex:
 
 
+==========
+Monitoring
+==========
+
+--------
+ Client
+--------
+
+.. autoclass:: oci.monitoring.monitoring_client.MonitoringClient
+    :members:
+    :noindex:
+
+--------
+ Models
+--------
+
+.. automodule:: oci.monitoring.models
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :imported-members:
+    :inherited-members:
+    :noindex:
+
+
 ==============
 Object Storage
 ==============
