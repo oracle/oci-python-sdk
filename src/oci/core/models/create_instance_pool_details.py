@@ -45,6 +45,10 @@ class CreateInstancePoolDetails(object):
             The value to assign to the size property of this CreateInstancePoolDetails.
         :type size: int
 
+        :param load_balancers:
+            The value to assign to the load_balancers property of this CreateInstancePoolDetails.
+        :type load_balancers: list[AttachLoadBalancerDetails]
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -53,7 +57,8 @@ class CreateInstancePoolDetails(object):
             'freeform_tags': 'dict(str, str)',
             'instance_configuration_id': 'str',
             'placement_configurations': 'list[CreateInstancePoolPlacementConfigurationDetails]',
-            'size': 'int'
+            'size': 'int',
+            'load_balancers': 'list[AttachLoadBalancerDetails]'
         }
 
         self.attribute_map = {
@@ -63,7 +68,8 @@ class CreateInstancePoolDetails(object):
             'freeform_tags': 'freeformTags',
             'instance_configuration_id': 'instanceConfigurationId',
             'placement_configurations': 'placementConfigurations',
-            'size': 'size'
+            'size': 'size',
+            'load_balancers': 'loadBalancers'
         }
 
         self._compartment_id = None
@@ -73,6 +79,7 @@ class CreateInstancePoolDetails(object):
         self._instance_configuration_id = None
         self._placement_configurations = None
         self._size = None
+        self._load_balancers = None
 
     @property
     def compartment_id(self):
@@ -265,6 +272,30 @@ class CreateInstancePoolDetails(object):
         :type: int
         """
         self._size = size
+
+    @property
+    def load_balancers(self):
+        """
+        Gets the load_balancers of this CreateInstancePoolDetails.
+        The load balancers to attach to the instance pool.
+
+
+        :return: The load_balancers of this CreateInstancePoolDetails.
+        :rtype: list[AttachLoadBalancerDetails]
+        """
+        return self._load_balancers
+
+    @load_balancers.setter
+    def load_balancers(self, load_balancers):
+        """
+        Sets the load_balancers of this CreateInstancePoolDetails.
+        The load balancers to attach to the instance pool.
+
+
+        :param load_balancers: The load_balancers of this CreateInstancePoolDetails.
+        :type: list[AttachLoadBalancerDetails]
+        """
+        self._load_balancers = load_balancers
 
     def __repr__(self):
         return formatted_flat_dict(self)

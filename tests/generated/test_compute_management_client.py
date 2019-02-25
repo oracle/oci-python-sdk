@@ -28,6 +28,44 @@ def vcr_fixture(request):
         yield
 
 
+def test_attach_load_balancer(testing_service_client, config):
+    if not testing_service_client.is_api_enabled('core', 'AttachLoadBalancer'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='AttachLoadBalancer')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
+            if pass_phrase:
+                config['pass_phrase'] = pass_phrase
+            client = oci.core.ComputeManagementClient(config)
+            response = client.attach_load_balancer(
+                instance_pool_id=request.pop(util.camelize('instance_pool_id')),
+                attach_load_balancer_details=request.pop(util.camelize('attach_load_balancer_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'AttachLoadBalancer',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'instancePool',
+            False,
+            False
+        )
+
+
 def test_create_instance_configuration(testing_service_client, config):
     if not testing_service_client.is_api_enabled('core', 'CreateInstanceConfiguration'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -135,6 +173,44 @@ def test_delete_instance_configuration(testing_service_client, config):
             service_error,
             'delete_instance_configuration',
             True,
+            False
+        )
+
+
+def test_detach_load_balancer(testing_service_client, config):
+    if not testing_service_client.is_api_enabled('core', 'DetachLoadBalancer'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='DetachLoadBalancer')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
+            if pass_phrase:
+                config['pass_phrase'] = pass_phrase
+            client = oci.core.ComputeManagementClient(config)
+            response = client.detach_load_balancer(
+                instance_pool_id=request.pop(util.camelize('instance_pool_id')),
+                detach_load_balancer_details=request.pop(util.camelize('detach_load_balancer_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'DetachLoadBalancer',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'instancePool',
+            False,
             False
         )
 

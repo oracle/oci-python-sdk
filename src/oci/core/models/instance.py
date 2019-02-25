@@ -685,7 +685,10 @@ class Instance(object):
         **[Required]** Gets the region of this Instance.
         The region that contains the availability domain the instance is running in.
 
-        Example: `phx`
+        For the us-phoenix-1 and us-ashburn-1 regions, `phx` and `iad` are returned, respectively.
+        For all other regions, the full region name is returned.
+
+        Examples: `phx`, `eu-frankfurt-1`
 
 
         :return: The region of this Instance.
@@ -699,7 +702,10 @@ class Instance(object):
         Sets the region of this Instance.
         The region that contains the availability domain the instance is running in.
 
-        Example: `phx`
+        For the us-phoenix-1 and us-ashburn-1 regions, `phx` and `iad` are returned, respectively.
+        For all other regions, the full region name is returned.
+
+        Examples: `phx`, `eu-frankfurt-1`
 
 
         :param region: The region of this Instance.
