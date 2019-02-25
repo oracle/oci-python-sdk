@@ -131,6 +131,10 @@ class DbSystemSummary(object):
             The value to assign to the ssh_public_keys property of this DbSystemSummary.
         :type ssh_public_keys: list[str]
 
+        :param time_zone:
+            The value to assign to the time_zone property of this DbSystemSummary.
+        :type time_zone: str
+
         :param hostname:
             The value to assign to the hostname property of this DbSystemSummary.
         :type hostname: str
@@ -242,6 +246,7 @@ class DbSystemSummary(object):
             'backup_subnet_id': 'str',
             'shape': 'str',
             'ssh_public_keys': 'list[str]',
+            'time_zone': 'str',
             'hostname': 'str',
             'domain': 'str',
             'version': 'str',
@@ -277,6 +282,7 @@ class DbSystemSummary(object):
             'backup_subnet_id': 'backupSubnetId',
             'shape': 'shape',
             'ssh_public_keys': 'sshPublicKeys',
+            'time_zone': 'timeZone',
             'hostname': 'hostname',
             'domain': 'domain',
             'version': 'version',
@@ -311,6 +317,7 @@ class DbSystemSummary(object):
         self._backup_subnet_id = None
         self._shape = None
         self._ssh_public_keys = None
+        self._time_zone = None
         self._hostname = None
         self._domain = None
         self._version = None
@@ -590,6 +597,34 @@ class DbSystemSummary(object):
         :type: list[str]
         """
         self._ssh_public_keys = ssh_public_keys
+
+    @property
+    def time_zone(self):
+        """
+        Gets the time_zone of this DbSystemSummary.
+        The time zone of the DB system. For details, see `DB System Time Zones`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Database/References/timezones.htm
+
+
+        :return: The time_zone of this DbSystemSummary.
+        :rtype: str
+        """
+        return self._time_zone
+
+    @time_zone.setter
+    def time_zone(self, time_zone):
+        """
+        Sets the time_zone of this DbSystemSummary.
+        The time zone of the DB system. For details, see `DB System Time Zones`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Database/References/timezones.htm
+
+
+        :param time_zone: The time_zone of this DbSystemSummary.
+        :type: str
+        """
+        self._time_zone = time_zone
 
     @property
     def hostname(self):

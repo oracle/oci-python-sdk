@@ -78,6 +78,10 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
             The value to assign to the shape property of this LaunchDbSystemFromBackupDetails.
         :type shape: str
 
+        :param time_zone:
+            The value to assign to the time_zone property of this LaunchDbSystemFromBackupDetails.
+        :type time_zone: str
+
         :param sparse_diskgroup:
             The value to assign to the sparse_diskgroup property of this LaunchDbSystemFromBackupDetails.
         :type sparse_diskgroup: bool
@@ -155,6 +159,7 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
             'subnet_id': 'str',
             'backup_subnet_id': 'str',
             'shape': 'str',
+            'time_zone': 'str',
             'sparse_diskgroup': 'bool',
             'ssh_public_keys': 'list[str]',
             'hostname': 'str',
@@ -181,6 +186,7 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
             'subnet_id': 'subnetId',
             'backup_subnet_id': 'backupSubnetId',
             'shape': 'shape',
+            'time_zone': 'timeZone',
             'sparse_diskgroup': 'sparseDiskgroup',
             'ssh_public_keys': 'sshPublicKeys',
             'hostname': 'hostname',
@@ -206,6 +212,7 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
         self._subnet_id = None
         self._backup_subnet_id = None
         self._shape = None
+        self._time_zone = None
         self._sparse_diskgroup = None
         self._ssh_public_keys = None
         self._hostname = None

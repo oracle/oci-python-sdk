@@ -60,6 +60,10 @@ class LaunchDbSystemBase(object):
             The value to assign to the shape property of this LaunchDbSystemBase.
         :type shape: str
 
+        :param time_zone:
+            The value to assign to the time_zone property of this LaunchDbSystemBase.
+        :type time_zone: str
+
         :param sparse_diskgroup:
             The value to assign to the sparse_diskgroup property of this LaunchDbSystemBase.
         :type sparse_diskgroup: bool
@@ -118,6 +122,7 @@ class LaunchDbSystemBase(object):
             'subnet_id': 'str',
             'backup_subnet_id': 'str',
             'shape': 'str',
+            'time_zone': 'str',
             'sparse_diskgroup': 'bool',
             'ssh_public_keys': 'list[str]',
             'hostname': 'str',
@@ -140,6 +145,7 @@ class LaunchDbSystemBase(object):
             'subnet_id': 'subnetId',
             'backup_subnet_id': 'backupSubnetId',
             'shape': 'shape',
+            'time_zone': 'timeZone',
             'sparse_diskgroup': 'sparseDiskgroup',
             'ssh_public_keys': 'sshPublicKeys',
             'hostname': 'hostname',
@@ -161,6 +167,7 @@ class LaunchDbSystemBase(object):
         self._subnet_id = None
         self._backup_subnet_id = None
         self._shape = None
+        self._time_zone = None
         self._sparse_diskgroup = None
         self._ssh_public_keys = None
         self._hostname = None
@@ -429,6 +436,34 @@ class LaunchDbSystemBase(object):
         :type: str
         """
         self._shape = shape
+
+    @property
+    def time_zone(self):
+        """
+        Gets the time_zone of this LaunchDbSystemBase.
+        The time zone to use for the DB system. For details, see `DB System Time Zones`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Database/References/timezones.htm
+
+
+        :return: The time_zone of this LaunchDbSystemBase.
+        :rtype: str
+        """
+        return self._time_zone
+
+    @time_zone.setter
+    def time_zone(self, time_zone):
+        """
+        Sets the time_zone of this LaunchDbSystemBase.
+        The time zone to use for the DB system. For details, see `DB System Time Zones`__.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Database/References/timezones.htm
+
+
+        :param time_zone: The time_zone of this LaunchDbSystemBase.
+        :type: str
+        """
+        self._time_zone = time_zone
 
     @property
     def sparse_diskgroup(self):
