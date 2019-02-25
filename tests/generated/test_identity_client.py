@@ -667,6 +667,43 @@ def test_create_tag(testing_service_client, config):
         )
 
 
+def test_create_tag_default(testing_service_client, config):
+    if not testing_service_client.is_api_enabled('identity', 'CreateTagDefault'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='CreateTagDefault')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
+            if pass_phrase:
+                config['pass_phrase'] = pass_phrase
+            client = oci.identity.IdentityClient(config)
+            response = client.create_tag_default(
+                create_tag_default_details=request.pop(util.camelize('create_tag_default_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'CreateTagDefault',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'tagDefault',
+            False,
+            False
+        )
+
+
 def test_create_tag_namespace(testing_service_client, config):
     if not testing_service_client.is_api_enabled('identity', 'CreateTagNamespace'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1192,6 +1229,43 @@ def test_delete_swift_password(testing_service_client, config):
         )
 
 
+def test_delete_tag_default(testing_service_client, config):
+    if not testing_service_client.is_api_enabled('identity', 'DeleteTagDefault'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='DeleteTagDefault')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
+            if pass_phrase:
+                config['pass_phrase'] = pass_phrase
+            client = oci.identity.IdentityClient(config)
+            response = client.delete_tag_default(
+                tag_default_id=request.pop(util.camelize('tag_default_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'DeleteTagDefault',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_tag_default',
+            True,
+            False
+        )
+
+
 def test_delete_user(testing_service_client, config):
     if not testing_service_client.is_api_enabled('identity', 'DeleteUser'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1561,6 +1635,43 @@ def test_get_tag(testing_service_client, config):
             result,
             service_error,
             'tag',
+            False,
+            False
+        )
+
+
+def test_get_tag_default(testing_service_client, config):
+    if not testing_service_client.is_api_enabled('identity', 'GetTagDefault'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='GetTagDefault')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
+            if pass_phrase:
+                config['pass_phrase'] = pass_phrase
+            client = oci.identity.IdentityClient(config)
+            response = client.get_tag_default(
+                tag_default_id=request.pop(util.camelize('tag_default_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'GetTagDefault',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'tagDefault',
             False,
             False
         )
@@ -2591,6 +2702,59 @@ def test_list_swift_passwords(testing_service_client, config):
         )
 
 
+def test_list_tag_defaults(testing_service_client, config):
+    if not testing_service_client.is_api_enabled('identity', 'ListTagDefaults'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='ListTagDefaults')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
+            if pass_phrase:
+                config['pass_phrase'] = pass_phrase
+            client = oci.identity.IdentityClient(config)
+            response = client.list_tag_defaults(
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_tag_defaults(
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_tag_defaults(
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'ListTagDefaults',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'tagDefaultSummary',
+            False,
+            True
+        )
+
+
 def test_list_tag_namespaces(testing_service_client, config):
     if not testing_service_client.is_api_enabled('identity', 'ListTagNamespaces'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3364,6 +3528,44 @@ def test_update_tag(testing_service_client, config):
             result,
             service_error,
             'tag',
+            False,
+            False
+        )
+
+
+def test_update_tag_default(testing_service_client, config):
+    if not testing_service_client.is_api_enabled('identity', 'UpdateTagDefault'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='UpdateTagDefault')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
+            if pass_phrase:
+                config['pass_phrase'] = pass_phrase
+            client = oci.identity.IdentityClient(config)
+            response = client.update_tag_default(
+                tag_default_id=request.pop(util.camelize('tag_default_id')),
+                update_tag_default_details=request.pop(util.camelize('update_tag_default_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'UpdateTagDefault',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'tagDefault',
             False,
             False
         )

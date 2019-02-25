@@ -22,6 +22,7 @@ from .create_region_subscription_details import CreateRegionSubscriptionDetails
 from .create_saml2_identity_provider_details import CreateSaml2IdentityProviderDetails
 from .create_smtp_credential_details import CreateSmtpCredentialDetails
 from .create_swift_password_details import CreateSwiftPasswordDetails
+from .create_tag_default_details import CreateTagDefaultDetails
 from .create_tag_details import CreateTagDetails
 from .create_tag_namespace_details import CreateTagNamespaceDetails
 from .create_user_details import CreateUserDetails
@@ -45,6 +46,8 @@ from .smtp_credential import SmtpCredential
 from .smtp_credential_summary import SmtpCredentialSummary
 from .swift_password import SwiftPassword
 from .tag import Tag
+from .tag_default import TagDefault
+from .tag_default_summary import TagDefaultSummary
 from .tag_namespace import TagNamespace
 from .tag_namespace_summary import TagNamespaceSummary
 from .tag_summary import TagSummary
@@ -62,6 +65,7 @@ from .update_saml2_identity_provider_details import UpdateSaml2IdentityProviderD
 from .update_smtp_credential_details import UpdateSmtpCredentialDetails
 from .update_state_details import UpdateStateDetails
 from .update_swift_password_details import UpdateSwiftPasswordDetails
+from .update_tag_default_details import UpdateTagDefaultDetails
 from .update_tag_details import UpdateTagDetails
 from .update_tag_namespace_details import UpdateTagNamespaceDetails
 from .update_user_capabilities_details import UpdateUserCapabilitiesDetails
@@ -96,6 +100,7 @@ identity_type_mapping = {
     "CreateSaml2IdentityProviderDetails": CreateSaml2IdentityProviderDetails,
     "CreateSmtpCredentialDetails": CreateSmtpCredentialDetails,
     "CreateSwiftPasswordDetails": CreateSwiftPasswordDetails,
+    "CreateTagDefaultDetails": CreateTagDefaultDetails,
     "CreateTagDetails": CreateTagDetails,
     "CreateTagNamespaceDetails": CreateTagNamespaceDetails,
     "CreateUserDetails": CreateUserDetails,
@@ -119,6 +124,8 @@ identity_type_mapping = {
     "SmtpCredentialSummary": SmtpCredentialSummary,
     "SwiftPassword": SwiftPassword,
     "Tag": Tag,
+    "TagDefault": TagDefault,
+    "TagDefaultSummary": TagDefaultSummary,
     "TagNamespace": TagNamespace,
     "TagNamespaceSummary": TagNamespaceSummary,
     "TagSummary": TagSummary,
@@ -136,6 +143,7 @@ identity_type_mapping = {
     "UpdateSmtpCredentialDetails": UpdateSmtpCredentialDetails,
     "UpdateStateDetails": UpdateStateDetails,
     "UpdateSwiftPasswordDetails": UpdateSwiftPasswordDetails,
+    "UpdateTagDefaultDetails": UpdateTagDefaultDetails,
     "UpdateTagDetails": UpdateTagDetails,
     "UpdateTagNamespaceDetails": UpdateTagNamespaceDetails,
     "UpdateUserCapabilitiesDetails": UpdateUserCapabilitiesDetails,
