@@ -99,6 +99,8 @@ from .image_source_via_object_storage_tuple_details import ImageSourceViaObjectS
 from .image_source_via_object_storage_uri_details import ImageSourceViaObjectStorageUriDetails
 from .ingress_security_rule import IngressSecurityRule
 from .instance import Instance
+from .instance_agent_config import InstanceAgentConfig
+from .instance_agent_features import InstanceAgentFeatures
 from .instance_configuration import InstanceConfiguration
 from .instance_configuration_attach_vnic_details import InstanceConfigurationAttachVnicDetails
 from .instance_configuration_attach_volume_details import InstanceConfigurationAttachVolumeDetails
@@ -129,6 +131,7 @@ from .instance_source_via_boot_volume_details import InstanceSourceViaBootVolume
 from .instance_source_via_image_details import InstanceSourceViaImageDetails
 from .instance_summary import InstanceSummary
 from .internet_gateway import InternetGateway
+from .launch_instance_agent_config_details import LaunchInstanceAgentConfigDetails
 from .launch_instance_details import LaunchInstanceDetails
 from .launch_options import LaunchOptions
 from .letter_of_authority import LetterOfAuthority
@@ -165,6 +168,7 @@ from .update_drg_attachment_details import UpdateDrgAttachmentDetails
 from .update_drg_details import UpdateDrgDetails
 from .update_ip_sec_connection_details import UpdateIPSecConnectionDetails
 from .update_image_details import UpdateImageDetails
+from .update_instance_agent_config_details import UpdateInstanceAgentConfigDetails
 from .update_instance_configuration_details import UpdateInstanceConfigurationDetails
 from .update_instance_details import UpdateInstanceDetails
 from .update_instance_pool_details import UpdateInstancePoolDetails
@@ -308,6 +312,8 @@ core_type_mapping = {
     "ImageSourceViaObjectStorageUriDetails": ImageSourceViaObjectStorageUriDetails,
     "IngressSecurityRule": IngressSecurityRule,
     "Instance": Instance,
+    "InstanceAgentConfig": InstanceAgentConfig,
+    "InstanceAgentFeatures": InstanceAgentFeatures,
     "InstanceConfiguration": InstanceConfiguration,
     "InstanceConfigurationAttachVnicDetails": InstanceConfigurationAttachVnicDetails,
     "InstanceConfigurationAttachVolumeDetails": InstanceConfigurationAttachVolumeDetails,
@@ -338,6 +344,7 @@ core_type_mapping = {
     "InstanceSourceViaImageDetails": InstanceSourceViaImageDetails,
     "InstanceSummary": InstanceSummary,
     "InternetGateway": InternetGateway,
+    "LaunchInstanceAgentConfigDetails": LaunchInstanceAgentConfigDetails,
     "LaunchInstanceDetails": LaunchInstanceDetails,
     "LaunchOptions": LaunchOptions,
     "LetterOfAuthority": LetterOfAuthority,
@@ -374,6 +381,7 @@ core_type_mapping = {
     "UpdateDrgDetails": UpdateDrgDetails,
     "UpdateIPSecConnectionDetails": UpdateIPSecConnectionDetails,
     "UpdateImageDetails": UpdateImageDetails,
+    "UpdateInstanceAgentConfigDetails": UpdateInstanceAgentConfigDetails,
     "UpdateInstanceConfigurationDetails": UpdateInstanceConfigurationDetails,
     "UpdateInstanceDetails": UpdateInstanceDetails,
     "UpdateInstancePoolDetails": UpdateInstancePoolDetails,
