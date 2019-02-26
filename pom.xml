@@ -422,7 +422,6 @@
           </execution>
           <execution>
             <id>unpack-telemetry-public-api-spec</id>
-            <id>unpack-ons-gateway-spec</id>
             <phase>initialize</phase>
             <goals>
               <goal>unpack</goal>
@@ -431,6 +430,7 @@
               <artifactItems>
                 <artifactItem>
                   <groupId>com.oracle.pic.telemetry.api</groupId>
+                  <artifactId>telemetry-public-api-spec</artifactId>
                   <type>jar</type>
                   <includes>**/*</includes>
                   <outputDirectory>${spec-temp-dir}/telemetry-public-api-spec</outputDirectory>
@@ -897,7 +897,6 @@
           </execution>
           <execution>
             <id>spec-conditionals-prefer-telemetry-public-api-spec</id>
-            <id>spec-conditionals-prefer-ons-gateway-spec</id>
             <phase>initialize</phase>
             <goals>
               <goal>prefer</goal>
@@ -1615,7 +1614,7 @@
               </includes>
             </fileset>
             <fileset>
-              <directory>src/oci/ons</directory>
+              <directory>src/oci/monitoring</directory>
               <includes>
                 <include>**/*</include>
               </includes>
