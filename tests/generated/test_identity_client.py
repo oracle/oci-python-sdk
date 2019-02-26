@@ -28,6 +28,45 @@ def vcr_fixture(request):
         yield
 
 
+def test_activate_mfa_totp_device(testing_service_client, config):
+    if not testing_service_client.is_api_enabled('identity', 'ActivateMfaTotpDevice'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='ActivateMfaTotpDevice')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
+            if pass_phrase:
+                config['pass_phrase'] = pass_phrase
+            client = oci.identity.IdentityClient(config)
+            response = client.activate_mfa_totp_device(
+                user_id=request.pop(util.camelize('user_id')),
+                mfa_totp_device_id=request.pop(util.camelize('mfa_totp_device_id')),
+                mfa_totp_token=request.pop(util.camelize('mfa_totp_token')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'ActivateMfaTotpDevice',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'mfaTotpDeviceSummary',
+            False,
+            False
+        )
+
+
 def test_add_user_to_group(testing_service_client, config):
     if not testing_service_client.is_api_enabled('identity', 'AddUserToGroup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -360,6 +399,43 @@ def test_create_idp_group_mapping(testing_service_client, config):
             result,
             service_error,
             'idpGroupMapping',
+            False,
+            False
+        )
+
+
+def test_create_mfa_totp_device(testing_service_client, config):
+    if not testing_service_client.is_api_enabled('identity', 'CreateMfaTotpDevice'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='CreateMfaTotpDevice')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
+            if pass_phrase:
+                config['pass_phrase'] = pass_phrase
+            client = oci.identity.IdentityClient(config)
+            response = client.create_mfa_totp_device(
+                user_id=request.pop(util.camelize('user_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'CreateMfaTotpDevice',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'mfaTotpDevice',
             False,
             False
         )
@@ -965,6 +1041,44 @@ def test_delete_idp_group_mapping(testing_service_client, config):
         )
 
 
+def test_delete_mfa_totp_device(testing_service_client, config):
+    if not testing_service_client.is_api_enabled('identity', 'DeleteMfaTotpDevice'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='DeleteMfaTotpDevice')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
+            if pass_phrase:
+                config['pass_phrase'] = pass_phrase
+            client = oci.identity.IdentityClient(config)
+            response = client.delete_mfa_totp_device(
+                user_id=request.pop(util.camelize('user_id')),
+                mfa_totp_device_id=request.pop(util.camelize('mfa_totp_device_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'DeleteMfaTotpDevice',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_mfa_totp_device',
+            True,
+            False
+        )
+
+
 def test_delete_policy(testing_service_client, config):
     if not testing_service_client.is_api_enabled('identity', 'DeletePolicy'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1111,6 +1225,44 @@ def test_delete_user(testing_service_client, config):
             service_error,
             'delete_user',
             True,
+            False
+        )
+
+
+def test_generate_totp_seed(testing_service_client, config):
+    if not testing_service_client.is_api_enabled('identity', 'GenerateTotpSeed'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='GenerateTotpSeed')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
+            if pass_phrase:
+                config['pass_phrase'] = pass_phrase
+            client = oci.identity.IdentityClient(config)
+            response = client.generate_totp_seed(
+                user_id=request.pop(util.camelize('user_id')),
+                mfa_totp_device_id=request.pop(util.camelize('mfa_totp_device_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'GenerateTotpSeed',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'mfaTotpDevice',
+            False,
             False
         )
 
@@ -1296,6 +1448,44 @@ def test_get_idp_group_mapping(testing_service_client, config):
             result,
             service_error,
             'idpGroupMapping',
+            False,
+            False
+        )
+
+
+def test_get_mfa_totp_device(testing_service_client, config):
+    if not testing_service_client.is_api_enabled('identity', 'GetMfaTotpDevice'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='GetMfaTotpDevice')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
+            if pass_phrase:
+                config['pass_phrase'] = pass_phrase
+            client = oci.identity.IdentityClient(config)
+            response = client.get_mfa_totp_device(
+                user_id=request.pop(util.camelize('user_id')),
+                mfa_totp_device_id=request.pop(util.camelize('mfa_totp_device_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'GetMfaTotpDevice',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'mfaTotpDeviceSummary',
             False,
             False
         )
@@ -2137,6 +2327,62 @@ def test_list_idp_group_mappings(testing_service_client, config):
             result,
             service_error,
             'idpGroupMapping',
+            False,
+            True
+        )
+
+
+def test_list_mfa_totp_devices(testing_service_client, config):
+    if not testing_service_client.is_api_enabled('identity', 'ListMfaTotpDevices'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='ListMfaTotpDevices')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
+            if pass_phrase:
+                config['pass_phrase'] = pass_phrase
+            client = oci.identity.IdentityClient(config)
+            response = client.list_mfa_totp_devices(
+                user_id=request.pop(util.camelize('user_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_mfa_totp_devices(
+                    user_id=request.pop(util.camelize('user_id')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_mfa_totp_devices(
+                        user_id=request.pop(util.camelize('user_id')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'ListMfaTotpDevices',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'mfaTotpDeviceSummary',
             False,
             True
         )

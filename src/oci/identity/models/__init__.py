@@ -33,6 +33,9 @@ from .group import Group
 from .identity_provider import IdentityProvider
 from .identity_provider_group_summary import IdentityProviderGroupSummary
 from .idp_group_mapping import IdpGroupMapping
+from .mfa_totp_device import MfaTotpDevice
+from .mfa_totp_device_summary import MfaTotpDeviceSummary
+from .mfa_totp_token import MfaTotpToken
 from .policy import Policy
 from .region import Region
 from .region_subscription import RegionSubscription
@@ -104,6 +107,9 @@ identity_type_mapping = {
     "IdentityProvider": IdentityProvider,
     "IdentityProviderGroupSummary": IdentityProviderGroupSummary,
     "IdpGroupMapping": IdpGroupMapping,
+    "MfaTotpDevice": MfaTotpDevice,
+    "MfaTotpDeviceSummary": MfaTotpDeviceSummary,
+    "MfaTotpToken": MfaTotpToken,
     "Policy": Policy,
     "Region": Region,
     "RegionSubscription": RegionSubscription,
