@@ -31,6 +31,7 @@
     <oci-waas-api-spec-spec-file>oci-waas-api-spec.cond.yaml</oci-waas-api-spec-spec-file>
     <rest-api-spec-spec-file>api.yaml</rest-api-spec-spec-file>
     <telemetry-public-api-spec-spec-file>source/telemetry-api.cond.yaml</telemetry-public-api-spec-spec-file>
+    <ons-gateway-spec-spec-file>api.yaml</ons-gateway-spec-spec-file>
   </properties>
   <dependencies>
     <dependency>
@@ -100,6 +101,10 @@
     <dependency>
       <groupId>com.oracle.pic.telemetry.api</groupId>
       <artifactId>telemetry-public-api-spec</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.pic.ons</groupId>
+      <artifactId>ons-gateway-spec</artifactId>
     </dependency>
   </dependencies>
   <build>
@@ -429,6 +434,24 @@
                   <type>jar</type>
                   <includes>**/*</includes>
                   <outputDirectory>${spec-temp-dir}/telemetry-public-api-spec</outputDirectory>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+          <execution>
+            <id>unpack-ons-gateway-spec</id>
+            <phase>initialize</phase>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>com.oracle.pic.ons</groupId>
+                  <artifactId>ons-gateway-spec</artifactId>
+                  <type>jar</type>
+                  <includes>**/*</includes>
+                  <outputDirectory>${spec-temp-dir}/ons-gateway-spec</outputDirectory>
                 </artifactItem>
               </artifactItems>
             </configuration>
@@ -899,6 +922,33 @@
               <groupFileCollectionDir>${enabled-groups-dir}</groupFileCollectionDir>
             </configuration>
           </execution>
+          <execution>
+            <id>spec-conditionals-prefer-ons-gateway-spec</id>
+            <phase>initialize</phase>
+            <goals>
+              <goal>prefer</goal>
+            </goals>
+            <configuration>
+              <inputFiles>
+                <inputFile>${spec-temp-dir}/ons-gateway-spec/source/${ons-gateway-spec-spec-file}</inputFile>
+                <inputFile>${spec-temp-dir}/ons-gateway-spec/${ons-gateway-spec-spec-file}</inputFile>
+              </inputFiles>
+              <outputFile>${preferred-temp-dir}/ons-gateway-spec/${ons-gateway-spec-spec-file}</outputFile>
+            </configuration>
+          </execution>
+          <execution>
+            <id>spec-conditionals-preprocess-ons-gateway-spec</id>
+            <phase>initialize</phase>
+            <goals>
+              <goal>preprocess</goal>
+            </goals>
+            <configuration>
+              <inputFile>${preferred-temp-dir}/ons-gateway-spec/${ons-gateway-spec-spec-file}</inputFile>
+              <outputFile>${preprocessed-temp-dir}/ons-gateway-spec/${ons-gateway-spec-spec-file}</outputFile>
+              <groupFile>${enabled-groups-file}</groupFile>
+              <groupFileCollectionDir>${enabled-groups-dir}</groupFileCollectionDir>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
       <plugin>
@@ -1280,6 +1330,28 @@
               <isTestGenerationEnabled>true</isTestGenerationEnabled>
             </configuration>
           </execution>
+          <execution>
+            <id>python-public-sdk-ons-gateway-spec</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <language>oracle-python-sdk</language>
+              <specPath>${preprocessed-temp-dir}/ons-gateway-spec/${ons-gateway-spec-spec-file}</specPath>
+              <outputDir>src/oci</outputDir>
+              <basePackage>OCI</basePackage>
+              <specGenerationType>PUBLIC</specGenerationType>
+              <additionalProperties>
+                <specName>ons</specName>
+                <generateInitFile>true</generateInitFile>
+                <endpoint>https://notification.{domain}</endpoint>
+              </additionalProperties>
+              <featureIdConfigFile>${feature-id-file}</featureIdConfigFile>
+              <featureIdConfigDir>${feature-id-dir}</featureIdConfigDir>
+              <isTestGenerationEnabled>true</isTestGenerationEnabled>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
       <plugin>
@@ -1547,6 +1619,12 @@
                 <include>**/*</include>
               </includes>
             </fileset>
+            <fileset>
+              <directory>src/oci/ons</directory>
+              <includes>
+                <include>**/*</include>
+              </includes>
+            </fileset>
           </filesets>
         </configuration>
       </plugin>
@@ -1638,6 +1716,11 @@
         <groupId>com.oracle.pic.telemetry.api</groupId>
         <artifactId>telemetry-public-api-spec</artifactId>
         <version>1.0.0-20190128.220050-63</version>
+      </dependency>
+      <dependency>
+        <groupId>com.oracle.pic.ons</groupId>
+        <artifactId>ons-gateway-spec</artifactId>
+        <version>1.0.1016</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

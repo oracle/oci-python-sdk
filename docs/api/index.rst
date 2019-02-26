@@ -413,6 +413,44 @@ Object Storage
     :noindex:
 
 
+===
+Ons
+===
+
+---------
+ Clients
+---------
+
+
+Notification Control Plane
+==========================
+
+.. autoclass:: oci.ons.notification_control_plane_client.NotificationControlPlaneClient
+    :members:
+    :noindex:
+
+
+Notification Data Plane
+=======================
+
+.. autoclass:: oci.ons.notification_data_plane_client.NotificationDataPlaneClient
+    :members:
+    :noindex:
+
+
+--------
+ Models
+--------
+
+.. automodule:: oci.ons.models
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :imported-members:
+    :inherited-members:
+    :noindex:
+
+
 ===============
 Resource Search
 ===============
