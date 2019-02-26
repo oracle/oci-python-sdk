@@ -986,6 +986,19 @@
               <outputFile>${preferred-temp-dir}/autoscaling-public-api-spec/${autoscaling-public-api-spec-spec-file}</outputFile>
             </configuration>
           </execution>
+          <execution>
+            <id>spec-conditionals-preprocess-autoscaling-public-api-spec</id>
+            <phase>initialize</phase>
+            <goals>
+              <goal>preprocess</goal>
+            </goals>
+            <configuration>
+              <inputFile>${preferred-temp-dir}/autoscaling-public-api-spec/${autoscaling-public-api-spec-spec-file}</inputFile>
+              <outputFile>${preprocessed-temp-dir}/autoscaling-public-api-spec/${autoscaling-public-api-spec-spec-file}</outputFile>
+              <groupFile>${enabled-groups-file}</groupFile>
+              <groupFileCollectionDir>${enabled-groups-dir}</groupFileCollectionDir>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
       <plugin>
