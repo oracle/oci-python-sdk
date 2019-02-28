@@ -38,7 +38,7 @@ class ServiceIdRequestDetails(object):
         **[Required]** Gets the service_id of this ServiceIdRequestDetails.
         The `OCID`__ of the service.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The service_id of this ServiceIdRequestDetails.
@@ -52,7 +52,7 @@ class ServiceIdRequestDetails(object):
         Sets the service_id of this ServiceIdRequestDetails.
         The `OCID`__ of the service.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param service_id: The service_id of this ServiceIdRequestDetails.

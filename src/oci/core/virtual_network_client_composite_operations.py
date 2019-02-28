@@ -29,7 +29,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str service_gateway_id: (required)
             The service gateway's `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param ServiceIdRequestDetails attach_service_details: (required)
             ServiceId of Service to be attached to a service gateway.
@@ -1030,7 +1030,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str nat_gateway_id: (required)
             The NAT gateway's `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.NatGateway.lifecycle_state`
@@ -1227,7 +1227,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str service_gateway_id: (required)
             The service gateway's `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.ServiceGateway.lifecycle_state`
@@ -1385,7 +1385,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str service_gateway_id: (required)
             The service gateway's `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param ServiceIdRequestDetails detach_service_details: (required)
             ServiceId of Service to be detached from a service gateway.
@@ -1756,7 +1756,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str nat_gateway_id: (required)
             The NAT gateway's `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param UpdateNatGatewayDetails update_nat_gateway_details: (required)
             Details object for updating a NAT gateway.
@@ -1963,7 +1963,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str service_gateway_id: (required)
             The service gateway's `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param UpdateServiceGatewayDetails update_service_gateway_details: (required)
             Details object for updating a service gateway.

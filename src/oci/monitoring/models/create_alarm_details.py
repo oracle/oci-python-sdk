@@ -179,7 +179,7 @@ class CreateAlarmDetails(object):
         **[Required]** Gets the compartment_id of this CreateAlarmDetails.
         The `OCID`__ of the compartment containing the alarm.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateAlarmDetails.
@@ -193,7 +193,7 @@ class CreateAlarmDetails(object):
         Sets the compartment_id of this CreateAlarmDetails.
         The `OCID`__ of the compartment containing the alarm.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateAlarmDetails.
@@ -208,7 +208,7 @@ class CreateAlarmDetails(object):
         The `OCID`__ of the compartment containing the metric
         being evaluated by the alarm.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The metric_compartment_id of this CreateAlarmDetails.
@@ -223,7 +223,7 @@ class CreateAlarmDetails(object):
         The `OCID`__ of the compartment containing the metric
         being evaluated by the alarm.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param metric_compartment_id: The metric_compartment_id of this CreateAlarmDetails.
@@ -325,8 +325,8 @@ class CreateAlarmDetails(object):
 
           -----
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/Monitoring/Reference/mql.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices
 
 
         :return: The query of this CreateAlarmDetails.
@@ -364,8 +364,8 @@ class CreateAlarmDetails(object):
 
           -----
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/Monitoring/Reference/mql.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices
 
 
         :param query: The query of this CreateAlarmDetails.
@@ -515,7 +515,7 @@ class CreateAlarmDetails(object):
         this alarm will be delivered. An example destination is an OCID for a topic managed by the
         Oracle Cloud Infrastructure Notification service.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The destinations of this CreateAlarmDetails.
@@ -531,7 +531,7 @@ class CreateAlarmDetails(object):
         this alarm will be delivered. An example destination is an OCID for a topic managed by the
         Oracle Cloud Infrastructure Notification service.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param destinations: The destinations of this CreateAlarmDetails.

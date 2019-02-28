@@ -20,10 +20,10 @@ class AlarmStatusSummary(object):
     `About the API`__. For information about available SDKs and tools, see
     `SDKS and Other Tools`__.
 
-    __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#AlarmsOverview
-    __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/Identity/Concepts/policygetstarted.htm
-    __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm
-    __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/sdks.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#AlarmsOverview
+    __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/sdks.htm
     """
 
     #: A constant which can be used with the severity property of a AlarmStatusSummary.
@@ -119,7 +119,7 @@ class AlarmStatusSummary(object):
         **[Required]** Gets the id of this AlarmStatusSummary.
         The `OCID`__ of the alarm.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this AlarmStatusSummary.
@@ -133,7 +133,7 @@ class AlarmStatusSummary(object):
         Sets the id of this AlarmStatusSummary.
         The `OCID`__ of the alarm.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this AlarmStatusSummary.

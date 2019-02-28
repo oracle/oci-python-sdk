@@ -113,7 +113,7 @@ class DbHome(object):
         **[Required]** Gets the id of this DbHome.
         The `OCID`__ of the database home.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DbHome.
@@ -127,7 +127,7 @@ class DbHome(object):
         Sets the id of this DbHome.
         The `OCID`__ of the database home.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DbHome.
@@ -141,7 +141,7 @@ class DbHome(object):
         **[Required]** Gets the compartment_id of this DbHome.
         The `OCID`__ of the compartment.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this DbHome.
@@ -155,7 +155,7 @@ class DbHome(object):
         Sets the compartment_id of this DbHome.
         The `OCID`__ of the compartment.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this DbHome.
@@ -193,7 +193,7 @@ class DbHome(object):
         Gets the last_patch_history_entry_id of this DbHome.
         The `OCID`__ of the last patch history. This value is updated as soon as a patch operation is started.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The last_patch_history_entry_id of this DbHome.
@@ -207,7 +207,7 @@ class DbHome(object):
         Sets the last_patch_history_entry_id of this DbHome.
         The `OCID`__ of the last patch history. This value is updated as soon as a patch operation is started.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param last_patch_history_entry_id: The last_patch_history_entry_id of this DbHome.
@@ -251,7 +251,7 @@ class DbHome(object):
         Gets the db_system_id of this DbHome.
         The `OCID`__ of the DB system.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_system_id of this DbHome.
@@ -265,7 +265,7 @@ class DbHome(object):
         Sets the db_system_id of this DbHome.
         The `OCID`__ of the DB system.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param db_system_id: The db_system_id of this DbHome.

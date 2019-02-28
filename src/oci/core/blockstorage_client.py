@@ -86,7 +86,7 @@ class BlockstorageClient(object):
         Creates a volume backup copy in specified region. For general information about volume backups,
         see `Overview of Block Volume Service Backups`__
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/blockvolumebackups.htm
+        __ https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumebackups.htm
 
 
         :param str volume_backup_id: (required)
@@ -181,7 +181,7 @@ class BlockstorageClient(object):
         You may optionally specify a *display name* for the volume, which is simply a friendly name or
         description. It does not have to be unique, and you can change it. Avoid entering confidential information.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/bootvolumes.htm
+        __ https://docs.cloud.oracle.com/Content/Block/Concepts/bootvolumes.htm
 
 
         :param CreateBootVolumeDetails create_boot_volume_details: (required)
@@ -257,7 +257,7 @@ class BlockstorageClient(object):
         When the data is imaged, it goes into a CREATING state.
         After the backup is fully uploaded to the cloud, it goes into an AVAILABLE state.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/bootvolumebackups.htm
+        __ https://docs.cloud.oracle.com/Content/Block/Concepts/bootvolumebackups.htm
 
 
         :param CreateBootVolumeBackupDetails create_boot_volume_backup_details: (required)
@@ -341,9 +341,9 @@ class BlockstorageClient(object):
         You may optionally specify a *display name* for the volume, which is simply a friendly name or
         description. It does not have to be unique, and you can change it. Avoid entering confidential information.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/overview.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/regions.htm
+        __ https://docs.cloud.oracle.com/Content/Block/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
 
 
         :param CreateVolumeDetails create_volume_details: (required)
@@ -419,7 +419,7 @@ class BlockstorageClient(object):
         When the data is imaged, it goes into a CREATING state.
         After the backup is fully uploaded to the cloud, it goes into an AVAILABLE state.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/blockvolumebackups.htm
+        __ https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumebackups.htm
 
 
         :param CreateVolumeBackupDetails create_volume_backup_details: (required)
@@ -552,7 +552,7 @@ class BlockstorageClient(object):
 
         For more information, see `Volume Groups`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm
+        __ https://docs.cloud.oracle.com/Content/Block/Concepts/volumegroups.htm
 
 
         :param CreateVolumeGroupDetails create_volume_group_details: (required)
@@ -624,7 +624,7 @@ class BlockstorageClient(object):
         Creates a new backup volume group of the specified volume group.
         For more information, see `Volume Groups`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm
+        __ https://docs.cloud.oracle.com/Content/Block/Concepts/volumegroups.htm
 
 
         :param CreateVolumeGroupBackupDetails create_volume_group_backup_details: (required)
@@ -698,7 +698,7 @@ class BlockstorageClient(object):
         `Disconnecting From a Boot Volume`__.
         **Warning:** All data on the boot volume will be permanently lost when the boot volume is deleted.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Tasks/deletingbootvolume.htm
+        __ https://docs.cloud.oracle.com/Content/Block/Tasks/deletingbootvolume.htm
 
 
         :param str boot_volume_id: (required)
@@ -922,7 +922,7 @@ class BlockstorageClient(object):
         `Disconnecting From a Volume`__.
         **Warning:** All data on the volume will be permanently lost when the volume is deleted.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Tasks/disconnectingfromavolume.htm
+        __ https://docs.cloud.oracle.com/Content/Block/Tasks/disconnectingfromavolume.htm
 
 
         :param str volume_id: (required)
@@ -1144,7 +1144,7 @@ class BlockstorageClient(object):
         Deletes the specified volume group. Individual volumes are not deleted, only the volume group is deleted.
         For more information, see `Volume Groups`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm
+        __ https://docs.cloud.oracle.com/Content/Block/Concepts/volumegroups.htm
 
 
         :param str volume_group_id: (required)
@@ -1219,7 +1219,7 @@ class BlockstorageClient(object):
         DeleteVolumeGroupBackup
         Deletes a volume group backup. This operation deletes all the backups in the volume group. For more information, see `Volume Groups`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm
+        __ https://docs.cloud.oracle.com/Content/Block/Concepts/volumegroups.htm
 
 
         :param str volume_group_backup_id: (required)
@@ -1775,14 +1775,14 @@ class BlockstorageClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1910,7 +1910,7 @@ class BlockstorageClient(object):
         GetVolumeGroup
         Gets information for the specified volume group. For more information, see `Volume Groups`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm
+        __ https://docs.cloud.oracle.com/Content/Block/Concepts/volumegroups.htm
 
 
         :param str volume_group_id: (required)
@@ -1976,7 +1976,7 @@ class BlockstorageClient(object):
         GetVolumeGroupBackup
         Gets information for the specified volume group backup. For more information, see `Volume Groups`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm
+        __ https://docs.cloud.oracle.com/Content/Block/Concepts/volumegroups.htm
 
 
         :param str volume_group_backup_id: (required)
@@ -2131,14 +2131,14 @@ class BlockstorageClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -2275,14 +2275,14 @@ class BlockstorageClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str volume_group_id: (optional)
             The OCID of the volume group.
@@ -2360,14 +2360,14 @@ class BlockstorageClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2444,14 +2444,14 @@ class BlockstorageClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -2578,7 +2578,7 @@ class BlockstorageClient(object):
         Lists the volume group backups in the specified compartment. You can filter the results by volume group.
         For more information, see `Volume Groups`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm
+        __ https://docs.cloud.oracle.com/Content/Block/Concepts/volumegroups.htm
 
 
         :param str compartment_id: (required)
@@ -2594,14 +2594,14 @@ class BlockstorageClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -2709,7 +2709,7 @@ class BlockstorageClient(object):
         Lists the volume groups in the specified compartment and availability domain.
         For more information, see `Volume Groups`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm
+        __ https://docs.cloud.oracle.com/Content/Block/Concepts/volumegroups.htm
 
 
         :param str compartment_id: (required)
@@ -2727,14 +2727,14 @@ class BlockstorageClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -2871,14 +2871,14 @@ class BlockstorageClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -3412,7 +3412,7 @@ class BlockstorageClient(object):
 
         For more information, see `Volume Groups`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm
+        __ https://docs.cloud.oracle.com/Content/Block/Concepts/volumegroups.htm
 
 
         :param str volume_group_id: (required)
@@ -3494,7 +3494,7 @@ class BlockstorageClient(object):
         UpdateVolumeGroupBackup
         Updates the display name for the specified volume group backup. For more information, see `Volume Groups`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm
+        __ https://docs.cloud.oracle.com/Content/Block/Concepts/volumegroups.htm
 
 
         :param str volume_group_backup_id: (required)

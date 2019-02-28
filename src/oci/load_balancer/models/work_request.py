@@ -14,7 +14,7 @@ class WorkRequest(object):
     for in-progress work flows.
     For more information about work requests, see `Viewing the State of a Work Request`__.
 
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/viewingworkrequest.htm
+    __ https://docs.cloud.oracle.com/Content/Balance/Tasks/viewingworkrequest.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a WorkRequest.
@@ -110,7 +110,7 @@ class WorkRequest(object):
         **[Required]** Gets the id of this WorkRequest.
         The `OCID`__ of the work request.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this WorkRequest.
@@ -124,7 +124,7 @@ class WorkRequest(object):
         Sets the id of this WorkRequest.
         The `OCID`__ of the work request.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this WorkRequest.
@@ -139,7 +139,7 @@ class WorkRequest(object):
         The `OCID`__ of the load balancer with which the work request
         is associated.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The load_balancer_id of this WorkRequest.
@@ -154,7 +154,7 @@ class WorkRequest(object):
         The `OCID`__ of the load balancer with which the work request
         is associated.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param load_balancer_id: The load_balancer_id of this WorkRequest.

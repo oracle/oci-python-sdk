@@ -1534,7 +1534,7 @@
             <phase>compile</phase>
             <configuration>
               <target>
-                <replace dir="src" token="{{DOC_SERVER_URL}}" value="https://docs.us-phoenix-1.oraclecloud.com" />
+                <replace dir="src" token="{{DOC_SERVER_URL}}" value="https://docs.cloud.oracle.com" />
               </target>
               <failOnError>false</failOnError>
             </configuration>

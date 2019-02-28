@@ -530,7 +530,7 @@ class EmailClient(object):
             paginated \"List\" call. `1` is the minimum, `1000` is the maximum. For important details about
             how pagination works, see `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. The `TIMECREATED` value returns the list in in
@@ -680,7 +680,7 @@ class EmailClient(object):
             paginated \"List\" call. `1` is the minimum, `1000` is the maximum. For important details about
             how pagination works, see `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. The `TIMECREATED` value returns the list in in
@@ -787,7 +787,7 @@ class EmailClient(object):
         include the full set of tags for the sender, partial updates are not permitted.
         For more information about tagging, see `Resource Tags`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param str sender_id: (required)

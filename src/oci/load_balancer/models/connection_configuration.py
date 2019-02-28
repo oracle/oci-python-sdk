@@ -44,7 +44,7 @@ class ConnectionConfiguration(object):
 
         Example: `1200`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration
+        __ https://docs.cloud.oracle.com/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration
 
 
         :return: The idle_timeout of this ConnectionConfiguration.
@@ -64,7 +64,7 @@ class ConnectionConfiguration(object):
 
         Example: `1200`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration
+        __ https://docs.cloud.oracle.com/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration
 
 
         :param idle_timeout: The idle_timeout of this ConnectionConfiguration.

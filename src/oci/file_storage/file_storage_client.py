@@ -179,8 +179,8 @@ class FileStorageClient(object):
         resource's OCID by using a List API operation on that resource
         type or by viewing the resource in the Console.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/regions.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
 
 
         :param CreateFileSystemDetails create_file_system_details: (required)
@@ -282,8 +282,8 @@ class FileStorageClient(object):
         resource's OCID by using a List API operation on that resource
         type, or by viewing the resource in the Console.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/regions.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
 
 
         :param CreateMountTargetDetails create_mount_target_details: (required)
@@ -1066,7 +1066,7 @@ class FileStorageClient(object):
 
             Example: `500`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -1075,7 +1075,7 @@ class FileStorageClient(object):
             For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A user-friendly name. It does not have to be unique, and it is changeable.
@@ -1216,7 +1216,7 @@ class FileStorageClient(object):
 
             Example: `500`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -1225,7 +1225,7 @@ class FileStorageClient(object):
             For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str export_set_id: (optional)
             The OCID of the export set.
@@ -1372,7 +1372,7 @@ class FileStorageClient(object):
 
             Example: `500`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -1381,7 +1381,7 @@ class FileStorageClient(object):
             For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A user-friendly name. It does not have to be unique, and it is changeable.
@@ -1525,7 +1525,7 @@ class FileStorageClient(object):
 
             Example: `500`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -1534,7 +1534,7 @@ class FileStorageClient(object):
             For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A user-friendly name. It does not have to be unique, and it is changeable.
@@ -1678,7 +1678,7 @@ class FileStorageClient(object):
 
             Example: `500`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -1687,7 +1687,7 @@ class FileStorageClient(object):
             For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str lifecycle_state: (optional)
             Filter results by the specified lifecycle state. Must be a valid

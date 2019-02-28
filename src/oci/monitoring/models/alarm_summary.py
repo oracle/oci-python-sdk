@@ -20,10 +20,10 @@ class AlarmSummary(object):
     `About the API`__. For information about available SDKs and tools, see
     `SDKS and Other Tools`__.
 
-    __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#AlarmsOverview
-    __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/Identity/Concepts/policygetstarted.htm
-    __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm
-    __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/sdks.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#AlarmsOverview
+    __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/sdks.htm
     """
 
     #: A constant which can be used with the severity property of a AlarmSummary.
@@ -154,7 +154,7 @@ class AlarmSummary(object):
         **[Required]** Gets the id of this AlarmSummary.
         The `OCID`__ of the alarm.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this AlarmSummary.
@@ -168,7 +168,7 @@ class AlarmSummary(object):
         Sets the id of this AlarmSummary.
         The `OCID`__ of the alarm.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this AlarmSummary.
@@ -216,7 +216,7 @@ class AlarmSummary(object):
         **[Required]** Gets the compartment_id of this AlarmSummary.
         The `OCID`__ of the compartment containing the alarm.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this AlarmSummary.
@@ -230,7 +230,7 @@ class AlarmSummary(object):
         Sets the compartment_id of this AlarmSummary.
         The `OCID`__ of the compartment containing the alarm.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this AlarmSummary.
@@ -245,7 +245,7 @@ class AlarmSummary(object):
         The `OCID`__ of the compartment containing the metric
         being evaluated by the alarm.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The metric_compartment_id of this AlarmSummary.
@@ -260,7 +260,7 @@ class AlarmSummary(object):
         The `OCID`__ of the compartment containing the metric
         being evaluated by the alarm.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param metric_compartment_id: The metric_compartment_id of this AlarmSummary.
@@ -326,8 +326,8 @@ class AlarmSummary(object):
 
           -----
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/Monitoring/Reference/mql.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices
 
 
         :return: The query of this AlarmSummary.
@@ -365,8 +365,8 @@ class AlarmSummary(object):
 
           -----
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/Monitoring/Reference/mql.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices
 
 
         :param query: The query of this AlarmSummary.
@@ -416,7 +416,7 @@ class AlarmSummary(object):
         this alarm will be delivered. An example destination is an OCID for a topic managed by the
         Oracle Cloud Infrastructure Notification service.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The destinations of this AlarmSummary.
@@ -432,7 +432,7 @@ class AlarmSummary(object):
         this alarm will be delivered. An example destination is an OCID for a topic managed by the
         Oracle Cloud Infrastructure Notification service.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param destinations: The destinations of this AlarmSummary.

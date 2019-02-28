@@ -128,7 +128,7 @@ class CreateVcnDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateVcnDetails.
@@ -145,7 +145,7 @@ class CreateVcnDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateVcnDetails.
@@ -197,7 +197,7 @@ class CreateVcnDetails(object):
 
         Example: `vcn1`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
 
 
         :return: The dns_label of this CreateVcnDetails.
@@ -225,7 +225,7 @@ class CreateVcnDetails(object):
 
         Example: `vcn1`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
 
 
         :param dns_label: The dns_label of this CreateVcnDetails.
@@ -243,7 +243,7 @@ class CreateVcnDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateVcnDetails.
@@ -261,7 +261,7 @@ class CreateVcnDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateVcnDetails.

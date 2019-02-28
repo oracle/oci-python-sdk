@@ -558,7 +558,7 @@ class AutoScalingClient(object):
             resources monitored by the metric that you are searching for. Use tenancyId to search in
             the root compartment.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -569,13 +569,13 @@ class AutoScalingClient(object):
             The maximum number of items to return in a paginated \"List\" call. For information about pagination, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/#API/Concepts/usingapi.htm#List_Pagination
+            __ https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call. For information about
             pagination, see `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/#API/Concepts/usingapi.htm#List_Pagination
+            __ https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for
@@ -688,13 +688,13 @@ class AutoScalingClient(object):
             The maximum number of items to return in a paginated \"List\" call. For information about pagination, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/#API/Concepts/usingapi.htm#List_Pagination
+            __ https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call. For information about
             pagination, see `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/#API/Concepts/usingapi.htm#List_Pagination
+            __ https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for

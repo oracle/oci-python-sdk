@@ -104,7 +104,7 @@ class PatchHistoryEntry(object):
         **[Required]** Gets the id of this PatchHistoryEntry.
         The `OCID`__ of the patch history entry.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this PatchHistoryEntry.
@@ -118,7 +118,7 @@ class PatchHistoryEntry(object):
         Sets the id of this PatchHistoryEntry.
         The `OCID`__ of the patch history entry.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this PatchHistoryEntry.
@@ -132,7 +132,7 @@ class PatchHistoryEntry(object):
         **[Required]** Gets the patch_id of this PatchHistoryEntry.
         The `OCID`__ of the patch.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The patch_id of this PatchHistoryEntry.
@@ -146,7 +146,7 @@ class PatchHistoryEntry(object):
         Sets the patch_id of this PatchHistoryEntry.
         The `OCID`__ of the patch.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param patch_id: The patch_id of this PatchHistoryEntry.

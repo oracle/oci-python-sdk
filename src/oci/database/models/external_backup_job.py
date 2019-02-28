@@ -80,7 +80,7 @@ class ExternalBackupJob(object):
         **[Required]** Gets the backup_id of this ExternalBackupJob.
         The `OCID`__ of the associated backup resource.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The backup_id of this ExternalBackupJob.
@@ -94,7 +94,7 @@ class ExternalBackupJob(object):
         Sets the backup_id of this ExternalBackupJob.
         The `OCID`__ of the associated backup resource.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param backup_id: The backup_id of this ExternalBackupJob.
@@ -229,7 +229,7 @@ class ExternalBackupJob(object):
         The auth token to use for access to the Swift compartment bucket that will store the standalone backup.
         For information about auth tokens, see `Working with Auth Tokens`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingcredentials.htm#two
+        __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcredentials.htm#two
 
 
         :return: The swift_password of this ExternalBackupJob.
@@ -244,7 +244,7 @@ class ExternalBackupJob(object):
         The auth token to use for access to the Swift compartment bucket that will store the standalone backup.
         For information about auth tokens, see `Working with Auth Tokens`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingcredentials.htm#two
+        __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcredentials.htm#two
 
 
         :param swift_password: The swift_password of this ExternalBackupJob.

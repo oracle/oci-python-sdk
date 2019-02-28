@@ -12,7 +12,7 @@ class Metric(object):
     The properties that define a metric.
     For information about metrics, see `Metrics Overview`__.
 
-    __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview
+    __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview
     """
 
     def __init__(self, **kwargs):
@@ -119,7 +119,7 @@ class Metric(object):
         The `OCID`__ of the compartment containing
         the resources monitored by the metric.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Metric.
@@ -134,7 +134,7 @@ class Metric(object):
         The `OCID`__ of the compartment containing
         the resources monitored by the metric.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Metric.

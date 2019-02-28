@@ -124,7 +124,7 @@ class CreateLoadBalancerDetails(object):
         **[Required]** Gets the compartment_id of this CreateLoadBalancerDetails.
         The `OCID`__ of the compartment in which to create the load balancer.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateLoadBalancerDetails.
@@ -138,7 +138,7 @@ class CreateLoadBalancerDetails(object):
         Sets the compartment_id of this CreateLoadBalancerDetails.
         The `OCID`__ of the compartment in which to create the load balancer.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateLoadBalancerDetails.
@@ -224,8 +224,8 @@ class CreateLoadBalancerDetails(object):
 
         Example: `true`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/securitylists.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securitylists.htm
+        __ https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works
 
 
         :return: The is_private of this CreateLoadBalancerDetails.
@@ -249,8 +249,8 @@ class CreateLoadBalancerDetails(object):
 
         Example: `true`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/securitylists.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securitylists.htm
+        __ https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works
 
 
         :param is_private: The is_private of this CreateLoadBalancerDetails.
@@ -324,7 +324,7 @@ class CreateLoadBalancerDetails(object):
         **[Required]** Gets the subnet_ids of this CreateLoadBalancerDetails.
         An array of subnet `OCIDs`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_ids of this CreateLoadBalancerDetails.
@@ -338,7 +338,7 @@ class CreateLoadBalancerDetails(object):
         Sets the subnet_ids of this CreateLoadBalancerDetails.
         An array of subnet `OCIDs`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_ids: The subnet_ids of this CreateLoadBalancerDetails.
@@ -395,7 +395,7 @@ class CreateLoadBalancerDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateLoadBalancerDetails.
@@ -412,7 +412,7 @@ class CreateLoadBalancerDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateLoadBalancerDetails.
@@ -429,7 +429,7 @@ class CreateLoadBalancerDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateLoadBalancerDetails.
@@ -446,7 +446,7 @@ class CreateLoadBalancerDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateLoadBalancerDetails.

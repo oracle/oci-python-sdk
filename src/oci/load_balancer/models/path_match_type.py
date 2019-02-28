@@ -69,7 +69,7 @@ class PathMatchType(object):
         For a full description of how the system handles `matchType` in a path route set containing multiple rules, see
         `Managing Request Routing`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managingrequest.htm
+        __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm
 
         Allowed values for this property are: "EXACT_MATCH", "FORCE_LONGEST_PREFIX_MATCH", "PREFIX_MATCH", "SUFFIX_MATCH", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -99,7 +99,7 @@ class PathMatchType(object):
         For a full description of how the system handles `matchType` in a path route set containing multiple rules, see
         `Managing Request Routing`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managingrequest.htm
+        __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm
 
 
         :param match_type: The match_type of this PathMatchType.

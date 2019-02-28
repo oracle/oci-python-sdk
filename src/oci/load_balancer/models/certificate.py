@@ -15,7 +15,7 @@ class Certificate(object):
 
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managingcertificates.htm
+    __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managingcertificates.htm
     """
 
     def __init__(self, **kwargs):

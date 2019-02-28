@@ -65,7 +65,7 @@ class UpdateBackendDetails(object):
 
         Example: `3`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Reference/lbpolicies.htm
+        __ https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm
 
 
         :return: The weight of this UpdateBackendDetails.
@@ -85,7 +85,7 @@ class UpdateBackendDetails(object):
 
         Example: `3`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Reference/lbpolicies.htm
+        __ https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm
 
 
         :param weight: The weight of this UpdateBackendDetails.

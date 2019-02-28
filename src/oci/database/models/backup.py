@@ -169,7 +169,7 @@ class Backup(object):
         Gets the id of this Backup.
         The `OCID`__ of the backup.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Backup.
@@ -183,7 +183,7 @@ class Backup(object):
         Sets the id of this Backup.
         The `OCID`__ of the backup.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Backup.
@@ -197,7 +197,7 @@ class Backup(object):
         Gets the compartment_id of this Backup.
         The `OCID`__ of the compartment.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Backup.
@@ -211,7 +211,7 @@ class Backup(object):
         Sets the compartment_id of this Backup.
         The `OCID`__ of the compartment.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Backup.
@@ -225,7 +225,7 @@ class Backup(object):
         Gets the database_id of this Backup.
         The `OCID`__ of the database.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The database_id of this Backup.
@@ -239,7 +239,7 @@ class Backup(object):
         Sets the database_id of this Backup.
         The `OCID`__ of the database.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param database_id: The database_id of this Backup.

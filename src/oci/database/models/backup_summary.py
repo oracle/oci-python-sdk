@@ -14,7 +14,7 @@ class BackupSummary(object):
 
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
     """
 
     #: A constant which can be used with the type property of a BackupSummary.
@@ -174,7 +174,7 @@ class BackupSummary(object):
         Gets the id of this BackupSummary.
         The `OCID`__ of the backup.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this BackupSummary.
@@ -188,7 +188,7 @@ class BackupSummary(object):
         Sets the id of this BackupSummary.
         The `OCID`__ of the backup.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this BackupSummary.
@@ -202,7 +202,7 @@ class BackupSummary(object):
         Gets the compartment_id of this BackupSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this BackupSummary.
@@ -216,7 +216,7 @@ class BackupSummary(object):
         Sets the compartment_id of this BackupSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this BackupSummary.
@@ -230,7 +230,7 @@ class BackupSummary(object):
         Gets the database_id of this BackupSummary.
         The `OCID`__ of the database.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The database_id of this BackupSummary.
@@ -244,7 +244,7 @@ class BackupSummary(object):
         Sets the database_id of this BackupSummary.
         The `OCID`__ of the database.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param database_id: The database_id of this BackupSummary.

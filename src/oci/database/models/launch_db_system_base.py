@@ -196,7 +196,7 @@ class LaunchDbSystemBase(object):
         **[Required]** Gets the compartment_id of this LaunchDbSystemBase.
         The `OCID`__ of the compartment the DB system  belongs in.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this LaunchDbSystemBase.
@@ -210,7 +210,7 @@ class LaunchDbSystemBase(object):
         Sets the compartment_id of this LaunchDbSystemBase.
         The `OCID`__ of the compartment the DB system  belongs in.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this LaunchDbSystemBase.
@@ -336,7 +336,7 @@ class LaunchDbSystemBase(object):
         Specifying an overlapping subnet will cause the private interconnect to malfunction.
         This restriction applies to both the client subnet and the backup subnet.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this LaunchDbSystemBase.
@@ -358,7 +358,7 @@ class LaunchDbSystemBase(object):
         Specifying an overlapping subnet will cause the private interconnect to malfunction.
         This restriction applies to both the client subnet and the backup subnet.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this LaunchDbSystemBase.
@@ -374,7 +374,7 @@ class LaunchDbSystemBase(object):
 
         **Subnet Restrictions:** See the subnet restrictions information for **subnetId**.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The backup_subnet_id of this LaunchDbSystemBase.
@@ -390,7 +390,7 @@ class LaunchDbSystemBase(object):
 
         **Subnet Restrictions:** See the subnet restrictions information for **subnetId**.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param backup_subnet_id: The backup_subnet_id of this LaunchDbSystemBase.
@@ -560,7 +560,7 @@ class LaunchDbSystemBase(object):
         This parameter is not used for virtual machine DB systems because virtual machine DB systems have a set number of cores for each shape.
         For information about the number of cores for a virtual machine DB system shape, see `Virtual Machine DB Systems`__
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Concepts/overview.htm#virtualmachine
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/overview.htm#virtualmachine
 
 
         :return: The cpu_core_count of this LaunchDbSystemBase.
@@ -586,7 +586,7 @@ class LaunchDbSystemBase(object):
         This parameter is not used for virtual machine DB systems because virtual machine DB systems have a set number of cores for each shape.
         For information about the number of cores for a virtual machine DB system shape, see `Virtual Machine DB Systems`__
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Concepts/overview.htm#virtualmachine
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/overview.htm#virtualmachine
 
 
         :param cpu_core_count: The cpu_core_count of this LaunchDbSystemBase.
@@ -703,7 +703,7 @@ class LaunchDbSystemBase(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this LaunchDbSystemBase.
@@ -720,7 +720,7 @@ class LaunchDbSystemBase(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this LaunchDbSystemBase.
@@ -737,7 +737,7 @@ class LaunchDbSystemBase(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this LaunchDbSystemBase.
@@ -754,7 +754,7 @@ class LaunchDbSystemBase(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this LaunchDbSystemBase.

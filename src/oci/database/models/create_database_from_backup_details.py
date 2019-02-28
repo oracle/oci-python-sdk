@@ -59,7 +59,7 @@ class CreateDatabaseFromBackupDetails(object):
         **[Required]** Gets the backup_id of this CreateDatabaseFromBackupDetails.
         The backup `OCID`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The backup_id of this CreateDatabaseFromBackupDetails.
@@ -73,7 +73,7 @@ class CreateDatabaseFromBackupDetails(object):
         Sets the backup_id of this CreateDatabaseFromBackupDetails.
         The backup `OCID`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param backup_id: The backup_id of this CreateDatabaseFromBackupDetails.

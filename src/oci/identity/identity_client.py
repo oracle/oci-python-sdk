@@ -256,7 +256,7 @@ class IdentityClient(object):
 
         Moving a tag namespace moves all the tag key definitions contained in the tag namespace.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Reference/iampolicyreference.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Reference/iampolicyreference.htm
 
 
         :param str tag_namespace_id: (required)
@@ -349,7 +349,7 @@ class IdentityClient(object):
         does not need to write a policy to give users this ability. To compare, administrators who have permission to the
         tenancy can use this operation to create an auth token for any user, including themselves.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingcredentials.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcredentials.htm
 
 
         :param CreateAuthTokenDetails create_auth_token_details: (required)
@@ -453,8 +453,8 @@ class IdentityClient(object):
         After you send your request, the new object's `lifecycleState` will temporarily be CREATING. Before using the
         object, first make sure its `lifecycleState` has changed to ACTIVE.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policies.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policies.htm
 
 
         :param CreateCompartmentDetails create_compartment_details: (required)
@@ -535,7 +535,7 @@ class IdentityClient(object):
         does not need to write a policy to give users this ability. To compare, administrators who have permission to the
         tenancy can use this operation to create a secret key for any user, including themselves.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingcredentials.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcredentials.htm
 
 
         :param CreateCustomerSecretKeyDetails create_customer_secret_key_details: (required)
@@ -638,8 +638,8 @@ class IdentityClient(object):
         After you send your request, the new object's `lifecycleState` will temporarily be CREATING. Before using the
         object, first make sure its `lifecycleState` has changed to ACTIVE.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policies.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policies.htm
 
 
         :param CreateDynamicGroupDetails create_dynamic_group_details: (required)
@@ -730,8 +730,8 @@ class IdentityClient(object):
         See :func:`add_user_to_group` and
         :func:`create_policy`.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policies.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policies.htm
 
 
         :param CreateGroupDetails create_group_details: (required)
@@ -819,8 +819,8 @@ class IdentityClient(object):
         be CREATING. Before using the object, first make sure its `lifecycleState` has
         changed to ACTIVE.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/federation.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/federation.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param CreateIdentityProviderDetails create_identity_provider_details: (required)
@@ -1065,7 +1065,7 @@ class IdentityClient(object):
         **Note:** The user's Console login is the unique name you specified when you created the user
         (see :func:`create_user`).
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/usercredentials.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/usercredentials.htm
 
 
         :param str user_id: (required)
@@ -1162,9 +1162,9 @@ class IdentityClient(object):
 
         New policies take effect typically within 10 seconds.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policies.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/commonpolicies.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policies.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/commonpolicies.htm
 
 
         :param CreatePolicyDetails create_policy_details: (required)
@@ -1417,7 +1417,7 @@ class IdentityClient(object):
         does not need to write a policy to give users this ability. To compare, administrators who have permission to the
         tenancy can use this operation to create a Swift password for any user, including themselves.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingcredentials.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcredentials.htm
 
 
         :param CreateSwiftPasswordDetails create_swift_password_details: (required)
@@ -1614,7 +1614,7 @@ class IdentityClient(object):
         Tag namespaces cannot be deleted, but they can be retired.
         See `Retiring Key Definitions and Namespace Definitions`__ for more information.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/taggingoverview.htm#Retiring
 
 
         :param CreateTagNamespaceDetails create_tag_namespace_details: (required)
@@ -1719,9 +1719,9 @@ class IdentityClient(object):
 
         **Important:** Make sure to inform the new user which compartment(s) they have access to.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm
 
 
         :param CreateUserDetails create_user_details: (required)
@@ -3848,7 +3848,7 @@ class IdentityClient(object):
         Note that the order of the results returned can change if availability domains are added or removed; therefore, do not
         create a dependency on the list order.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five
+        __ https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five
 
 
         :param str compartment_id: (required)
@@ -3926,7 +3926,7 @@ class IdentityClient(object):
 
         See `Where to Get the Tenancy's OCID and User's OCID`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five
+        __ https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five
 
 
         :param str compartment_id: (required)
@@ -4030,7 +4030,7 @@ class IdentityClient(object):
         Lists all the tags enabled for cost-tracking in the specified tenancy. For information about
         cost-tracking tags, see `Using Cost-tracking Tags`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#costs
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/taggingoverview.htm#costs
 
 
         :param str compartment_id: (required)
@@ -4171,7 +4171,7 @@ class IdentityClient(object):
         the compartment ID (remember that the tenancy is simply the root compartment).
         See `Where to Get the Tenancy's OCID and User's OCID`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five
+        __ https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five
 
 
         :param str compartment_id: (required)
@@ -4247,7 +4247,7 @@ class IdentityClient(object):
         of your compartments as the value for the compartment ID (remember that the tenancy is simply the root compartment).
         See `Where to Get the Tenancy's OCID and User's OCID`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five
+        __ https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five
 
 
         :param str compartment_id: (required)
@@ -4314,7 +4314,7 @@ class IdentityClient(object):
         the compartment ID (remember that the tenancy is simply the root compartment).
         See `Where to Get the Tenancy's OCID and User's OCID`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five
+        __ https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five
 
 
         :param str compartment_id: (required)
@@ -4474,7 +4474,7 @@ class IdentityClient(object):
         compartment ID (remember that the tenancy is simply the root compartment).
         See `Where to Get the Tenancy's OCID and User's OCID`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five
+        __ https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five
 
 
         :param str protocol: (required)
@@ -4761,7 +4761,7 @@ class IdentityClient(object):
         To determine which policies apply to a particular group or compartment, you must view the individual
         statements inside all your policies. There isn't a way to automatically obtain that information via the API.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five
+        __ https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five
 
 
         :param str compartment_id: (required)
@@ -5250,7 +5250,7 @@ class IdentityClient(object):
         If the answer is no, the response is an empty list.
         - Although`userId` and `groupId` are not indvidually required, you must set one of them.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five
+        __ https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five
 
 
         :param str compartment_id: (required)
@@ -5336,7 +5336,7 @@ class IdentityClient(object):
         compartment ID (remember that the tenancy is simply the root compartment).
         See `Where to Get the Tenancy's OCID and User's OCID`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five
+        __ https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five
 
 
         :param str compartment_id: (required)
@@ -6539,7 +6539,7 @@ class IdentityClient(object):
 
         You can't add a namespace with the same name as a retired namespace in the same tenancy.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/taggingoverview.htm#Retiring
 
 
         :param str tag_namespace_id: (required)

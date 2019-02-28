@@ -87,13 +87,13 @@ class DatabaseClient(object):
 
         **Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead using the API directly. See `Migrating an On-Premises Database to Oracle Cloud Infrastructure by Creating a Backup in the Cloud`__ for more information.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Tasks/mig-onprembackup.htm
+        __ https://docs.cloud.oracle.com/Content/Database/Tasks/mig-onprembackup.htm
 
 
         :param str backup_id: (required)
             The backup `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param CompleteExternalBackupJobDetails complete_external_backup_job_details: (required)
             Updates the status of the backup resource.
@@ -544,14 +544,14 @@ class DatabaseClient(object):
         resource in the Console. For more information, see
         `Resource Identifiers`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Tasks/usingdataguard.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Database/Tasks/usingdataguard.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param CreateDataGuardAssociationDetails create_data_guard_association_details: (required)
             A request to create a Data Guard association.
@@ -704,7 +704,7 @@ class DatabaseClient(object):
 
         **Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead using the API directly. See `Migrating an On-Premises Database to Oracle Cloud Infrastructure by Creating a Backup in the Cloud`__ for more information.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Tasks/mig-onprembackup.htm
+        __ https://docs.cloud.oracle.com/Content/Database/Tasks/mig-onprembackup.htm
 
 
         :param CreateExternalBackupJobDetails create_external_backup_job_details: (required)
@@ -791,7 +791,7 @@ class DatabaseClient(object):
         :param str db_node_id: (required)
             The database node `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str action: (required)
             The action to perform on the DB Node.
@@ -891,7 +891,7 @@ class DatabaseClient(object):
         :param str autonomous_data_warehouse_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -966,7 +966,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -1046,7 +1046,7 @@ class DatabaseClient(object):
         :param str backup_id: (required)
             The backup `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -1121,7 +1121,7 @@ class DatabaseClient(object):
         :param str db_home_id: (required)
             The database home `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -1211,12 +1211,12 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str data_guard_association_id: (required)
             The Data Guard association's `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param FailoverDataGuardAssociationDetails failover_data_guard_association_details: (required)
             A request to perform a failover, transitioning a standby database into a primary database.
@@ -1299,7 +1299,7 @@ class DatabaseClient(object):
         :param str autonomous_data_warehouse_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param GenerateAutonomousDataWarehouseWalletDetails generate_autonomous_data_warehouse_wallet_details: (required)
             Request to create a new Autonomous Data Warehouse wallet.
@@ -1390,7 +1390,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param GenerateAutonomousDatabaseWalletDetails generate_autonomous_database_wallet_details: (required)
             Request to create a new Autonomous Transaction Processing database wallet.
@@ -1481,7 +1481,7 @@ class DatabaseClient(object):
         :param str autonomous_data_warehouse_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1547,7 +1547,7 @@ class DatabaseClient(object):
         :param str autonomous_data_warehouse_backup_id: (required)
             The `OCID`__ of the Autonomous Data Warehouse backup.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1613,7 +1613,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -1688,7 +1688,7 @@ class DatabaseClient(object):
         :param str autonomous_database_backup_id: (required)
             The `OCID`__ of the Autonomous Database backup.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -1763,7 +1763,7 @@ class DatabaseClient(object):
         :param str backup_id: (required)
             The backup `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1829,12 +1829,12 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str data_guard_association_id: (required)
             The Data Guard association's `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1901,7 +1901,7 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1967,7 +1967,7 @@ class DatabaseClient(object):
         :param str db_home_id: (required)
             The database home `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2033,12 +2033,12 @@ class DatabaseClient(object):
         :param str db_home_id: (required)
             The database home `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str patch_id: (required)
             The `OCID`__ of the patch.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2105,12 +2105,12 @@ class DatabaseClient(object):
         :param str db_home_id: (required)
             The database home `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str patch_history_entry_id: (required)
             The `OCID`__ of the patch history entry.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2177,7 +2177,7 @@ class DatabaseClient(object):
         :param str db_node_id: (required)
             The database node `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2243,7 +2243,7 @@ class DatabaseClient(object):
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2309,12 +2309,12 @@ class DatabaseClient(object):
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str patch_id: (required)
             The `OCID`__ of the patch.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2381,12 +2381,12 @@ class DatabaseClient(object):
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str patch_history_entry_id: (required)
             The `OCID`__ of the patch history entry.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2451,13 +2451,13 @@ class DatabaseClient(object):
 
         **Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead using the API directly. See `Migrating an On-Premises Database to Oracle Cloud Infrastructure by Creating a Backup in the Cloud`__ for more information.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Tasks/mig-onprembackup.htm
+        __ https://docs.cloud.oracle.com/Content/Database/Tasks/mig-onprembackup.htm
 
 
         :param str backup_id: (required)
             The backup `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2524,7 +2524,7 @@ class DatabaseClient(object):
         options. For more information,
         see `Default Options for the Initial Database`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Tasks/launchingDB.htm#DefaultOptionsfortheInitialDatabase
+        __ https://docs.cloud.oracle.com/Content/Database/Tasks/launchingDB.htm#DefaultOptionsfortheInitialDatabase
 
 
         :param LaunchDbSystemBase launch_db_system_details: (required)
@@ -2599,12 +2599,12 @@ class DatabaseClient(object):
         :param str autonomous_data_warehouse_id: (optional)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (optional)
             The compartment `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -2730,7 +2730,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -2853,12 +2853,12 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (optional)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (optional)
             The compartment `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -2990,7 +2990,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -3119,12 +3119,12 @@ class DatabaseClient(object):
         :param str database_id: (optional)
             The `OCID`__ of the database.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (optional)
             The compartment `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -3201,7 +3201,7 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -3286,12 +3286,12 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str db_home_id: (required)
             A database home `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -3413,7 +3413,7 @@ class DatabaseClient(object):
         :param str db_home_id: (required)
             The database home `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -3498,7 +3498,7 @@ class DatabaseClient(object):
         :param str db_home_id: (required)
             The database home `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -3583,12 +3583,12 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str db_system_id: (required)
             The `OCID`__ of the DB system.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -3710,12 +3710,12 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str db_system_id: (required)
             The `OCID`__ of the DB system.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -3832,7 +3832,7 @@ class DatabaseClient(object):
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -3917,7 +3917,7 @@ class DatabaseClient(object):
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -4005,7 +4005,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -4080,7 +4080,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -4091,7 +4091,7 @@ class DatabaseClient(object):
         :param str backup_id: (optional)
             The `OCID`__ of the backup. Specify a backupId to list only the DB systems that support creating a database using this backup in this compartment.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str sort_by: (optional)
             The field to sort by.  You can provide one sort order (`sortOrder`).  Default order for TIMECREATED is descending.  Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
@@ -4215,7 +4215,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -4229,7 +4229,7 @@ class DatabaseClient(object):
         :param str db_system_id: (optional)
             The DB system `OCID`__. If provided, filters the results to the set of database versions which are supported for the DB system.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -4301,12 +4301,12 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str data_guard_association_id: (required)
             The Data Guard association's `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param ReinstateDataGuardAssociationDetails reinstate_data_guard_association_details: (required)
             A request to reinstate a database in a standby role.
@@ -4389,7 +4389,7 @@ class DatabaseClient(object):
         :param str autonomous_data_warehouse_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param RestoreAutonomousDataWarehouseDetails restore_autonomous_data_warehouse_details: (required)
             Request to perform an Autonomous Data Warehouse restore.
@@ -4471,7 +4471,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param RestoreAutonomousDatabaseDetails restore_autonomous_database_details: (required)
             Request to perform an Autonomous Database restore.
@@ -4553,7 +4553,7 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param RestoreDatabaseDetails restore_database_details: (required)
             Request to perform database restore.
@@ -4635,7 +4635,7 @@ class DatabaseClient(object):
         :param str autonomous_data_warehouse_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -4712,7 +4712,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -4789,7 +4789,7 @@ class DatabaseClient(object):
         :param str autonomous_data_warehouse_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -4866,7 +4866,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -4951,12 +4951,12 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str data_guard_association_id: (required)
             The Data Guard association's `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param SwitchoverDataGuardAssociationDetails switchover_data_guard_association_details: (required)
             Request to swtichover a primary to a standby.
@@ -5039,7 +5039,7 @@ class DatabaseClient(object):
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -5114,7 +5114,7 @@ class DatabaseClient(object):
         :param str autonomous_data_warehouse_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param UpdateAutonomousDataWarehouseDetails update_autonomous_data_warehouse_details: (required)
             Request to update the properties of an Autonomous Data Warehouse.
@@ -5196,7 +5196,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param UpdateAutonomousDatabaseDetails update_autonomous_database_details: (required)
             Request to update the properties of an Autonomous Database.
@@ -5283,7 +5283,7 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param UpdateDatabaseDetails update_database_details: (required)
             Request to perform database update.
@@ -5365,7 +5365,7 @@ class DatabaseClient(object):
         :param str db_home_id: (required)
             The database home `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param UpdateDbHomeDetails update_db_home_details: (required)
             Request to update the properties of a DB Home.
@@ -5447,7 +5447,7 @@ class DatabaseClient(object):
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param UpdateDbSystemDetails update_db_system_details: (required)
             Request to update the properties of a DB system.

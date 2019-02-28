@@ -2644,7 +2644,7 @@ class DnsClient(object):
         server information. For more information about secondary zone, see
         `Manage DNS Service Zone`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/DNS/Tasks/managingdnszones.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/managingdnszones.htm
 
 
         :param str zone_name_or_id: (required)

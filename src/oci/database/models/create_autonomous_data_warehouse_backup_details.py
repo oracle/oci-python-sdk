@@ -71,7 +71,7 @@ class CreateAutonomousDataWarehouseBackupDetails(object):
         **[Required]** Gets the autonomous_data_warehouse_id of this CreateAutonomousDataWarehouseBackupDetails.
         The `OCID`__ of the Autonomous Data Warehouse backup.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The autonomous_data_warehouse_id of this CreateAutonomousDataWarehouseBackupDetails.
@@ -85,7 +85,7 @@ class CreateAutonomousDataWarehouseBackupDetails(object):
         Sets the autonomous_data_warehouse_id of this CreateAutonomousDataWarehouseBackupDetails.
         The `OCID`__ of the Autonomous Data Warehouse backup.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param autonomous_data_warehouse_id: The autonomous_data_warehouse_id of this CreateAutonomousDataWarehouseBackupDetails.

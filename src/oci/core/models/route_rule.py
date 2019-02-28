@@ -192,7 +192,7 @@ class RouteRule(object):
         targets you can specify, see
         `Route Tables`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingroutetables.htm
 
 
         :return: The network_entity_id of this RouteRule.
@@ -208,7 +208,7 @@ class RouteRule(object):
         targets you can specify, see
         `Route Tables`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingroutetables.htm
 
 
         :param network_entity_id: The network_entity_id of this RouteRule.

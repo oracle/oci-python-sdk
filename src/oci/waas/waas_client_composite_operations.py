@@ -29,7 +29,7 @@ class WaasClientCompositeOperations(object):
         :param str waas_policy_id: (required)
             The `OCID`__ of the WAAS policy.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] protection_rule_keys: (required)
 
@@ -147,7 +147,7 @@ class WaasClientCompositeOperations(object):
         :param str certificate_id: (required)
             The `OCID`__ of the SSL certificate used in the WAAS policy. This number is generated when the certificate is added to the policy.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.waas.models.Certificate.lifecycle_state`
@@ -188,7 +188,7 @@ class WaasClientCompositeOperations(object):
         :param str waas_policy_id: (required)
             The `OCID`__ of the WAAS policy.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.waas.models.WorkRequest.status`
@@ -228,7 +228,7 @@ class WaasClientCompositeOperations(object):
         :param str waas_policy_id: (required)
             The `OCID`__ of the WAAS policy.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[AccessRule] access_rules: (required)
 
@@ -270,7 +270,7 @@ class WaasClientCompositeOperations(object):
         :param str waas_policy_id: (required)
             The `OCID`__ of the WAAS policy.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[Captcha] captchas: (required)
             A list of CAPTCHA details.
@@ -313,7 +313,7 @@ class WaasClientCompositeOperations(object):
         :param str certificate_id: (required)
             The `OCID`__ of the SSL certificate used in the WAAS policy. This number is generated when the certificate is added to the policy.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.waas.models.Certificate.lifecycle_state`
@@ -353,7 +353,7 @@ class WaasClientCompositeOperations(object):
         :param str waas_policy_id: (required)
             The `OCID`__ of the WAAS policy.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param DeviceFingerprintChallenge update_device_fingerprint_challenge_details: (required)
             The device fingerprint challenge settings to be updated.
@@ -396,7 +396,7 @@ class WaasClientCompositeOperations(object):
         :param str waas_policy_id: (required)
             The `OCID`__ of the WAAS policy.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[GoodBot] good_bots: (required)
 
@@ -438,7 +438,7 @@ class WaasClientCompositeOperations(object):
         :param str waas_policy_id: (required)
             The `OCID`__ of the WAAS policy.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param HumanInteractionChallenge update_human_interaction_challenge_details: (required)
             The human interaction challenge settings.
@@ -481,7 +481,7 @@ class WaasClientCompositeOperations(object):
         :param str waas_policy_id: (required)
             The `OCID`__ of the WAAS policy.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param JsChallenge update_js_challenge_details: (required)
             The JavaScript challenge settings to be updated.
@@ -524,7 +524,7 @@ class WaasClientCompositeOperations(object):
         :param str waas_policy_id: (required)
             The `OCID`__ of the WAAS policy.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param PolicyConfig update_policy_config_details: (required)
             The new configuration to apply to a WAAS policy.
@@ -567,7 +567,7 @@ class WaasClientCompositeOperations(object):
         :param str waas_policy_id: (required)
             The `OCID`__ of the WAAS policy.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[ProtectionRuleAction] protection_rules: (required)
 
@@ -609,7 +609,7 @@ class WaasClientCompositeOperations(object):
         :param str waas_policy_id: (required)
             The `OCID`__ of the WAAS policy.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param ProtectionSettings update_protection_settings_details: (required)
             The details of the protection settings to be updated.
@@ -652,7 +652,7 @@ class WaasClientCompositeOperations(object):
         :param str waas_policy_id: (required)
             The `OCID`__ of the WAAS policy.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[ThreatFeedAction] threat_feeds: (required)
             A list of threat feeds for which to update the actions.
@@ -695,7 +695,7 @@ class WaasClientCompositeOperations(object):
         :param str waas_policy_id: (required)
             The `OCID`__ of the WAAS policy.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param UpdateWaasPolicyDetails update_waas_policy_details: (required)
             The details of the WAAS policy to update.
@@ -738,7 +738,7 @@ class WaasClientCompositeOperations(object):
         :param str waas_policy_id: (required)
             The `OCID`__ of the WAAS policy.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param AddressRateLimiting update_waf_address_rate_limiting_details: (required)
             The address rate limiting settings.
@@ -781,7 +781,7 @@ class WaasClientCompositeOperations(object):
         :param str waas_policy_id: (required)
             The `OCID`__ of the WAAS policy.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param WafConfig update_waf_config_details: (required)
             The new Web Application Firewall configuration to apply to a WAAS policy.
@@ -824,7 +824,7 @@ class WaasClientCompositeOperations(object):
         :param str waas_policy_id: (required)
             The `OCID`__ of the WAAS policy.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[Whitelist] whitelists: (required)
 

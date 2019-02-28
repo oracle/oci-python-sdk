@@ -20,10 +20,10 @@ class LoadBalancer(object):
     `About the API`__. For information about available SDKs and tools, see
     `SDKS and Other Tools`__.
 
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managingloadbalancer.htm
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/usingapi.htm
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdks.htm
+    __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managingloadbalancer.htm
+    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm
+    __ https://docs.cloud.oracle.com/Content/API/Concepts/sdks.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a LoadBalancer.
@@ -186,7 +186,7 @@ class LoadBalancer(object):
         **[Required]** Gets the id of this LoadBalancer.
         The `OCID`__ of the load balancer.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this LoadBalancer.
@@ -200,7 +200,7 @@ class LoadBalancer(object):
         Sets the id of this LoadBalancer.
         The `OCID`__ of the load balancer.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this LoadBalancer.
@@ -214,7 +214,7 @@ class LoadBalancer(object):
         **[Required]** Gets the compartment_id of this LoadBalancer.
         The `OCID`__ of the compartment containing the load balancer.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this LoadBalancer.
@@ -228,7 +228,7 @@ class LoadBalancer(object):
         Sets the compartment_id of this LoadBalancer.
         The `OCID`__ of the compartment containing the load balancer.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this LoadBalancer.
@@ -394,8 +394,8 @@ class LoadBalancer(object):
 
         Example: `true`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/securitylists.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securitylists.htm
+        __ https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works
 
 
         :return: The is_private of this LoadBalancer.
@@ -419,8 +419,8 @@ class LoadBalancer(object):
 
         Example: `true`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/securitylists.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securitylists.htm
+        __ https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works
 
 
         :param is_private: The is_private of this LoadBalancer.
@@ -434,7 +434,7 @@ class LoadBalancer(object):
         Gets the subnet_ids of this LoadBalancer.
         An array of subnet `OCIDs`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_ids of this LoadBalancer.
@@ -448,7 +448,7 @@ class LoadBalancer(object):
         Sets the subnet_ids of this LoadBalancer.
         An array of subnet `OCIDs`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_ids: The subnet_ids of this LoadBalancer.
@@ -565,7 +565,7 @@ class LoadBalancer(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this LoadBalancer.
@@ -582,7 +582,7 @@ class LoadBalancer(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this LoadBalancer.
@@ -599,7 +599,7 @@ class LoadBalancer(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this LoadBalancer.
@@ -616,7 +616,7 @@ class LoadBalancer(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this LoadBalancer.

@@ -12,7 +12,7 @@ class DhcpSearchDomainOption(DhcpOption):
     DHCP option for specifying a search domain name for DNS queries. For more information, see
     `DNS in Your Virtual Cloud Network`__.
 
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm
+    __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
     """
 
     def __init__(self, **kwargs):
