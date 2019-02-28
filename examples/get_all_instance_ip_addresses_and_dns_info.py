@@ -109,7 +109,7 @@ def get_instance_ip_addresses_and_dns_info(compute_client, virtual_network_clien
 
             # This accounts for (D) / (E) - the hostname labels for private IPs. Additionally, only
             # try and form a FQDN if we have DNS labels for the subnet and the VCN. See:
-            # https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm
+            # https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
             if subnet.dns_label and vcn.dns_label and private_ip.hostname_label:
                 instance_info['dns_info'].append(
                     '{}.{}.{}.oraclevcn.com'.format(private_ip.hostname_label, subnet.dns_label, vcn.dns_label)
@@ -120,7 +120,7 @@ def get_instance_ip_addresses_and_dns_info(compute_client, virtual_network_clien
             #   (F1) Preemptively get the RESERVED public IPs for all compartments and then do an in-memory lookup
             #        to see if they are being used by any of the private IPs we have already retrieved. We
             #        need to look at all compartments as a RESERVED public IP may be in a different compartment
-            #        to the private IP: https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingpublicIPs.htm
+            #        to the private IP: https://docs.cloud.oracle.com/Content/Network/Tasks/managingpublicIPs.htm
             #
             #   (F2) Lazily retrieve the public IP used by the private IP address (if any) by individual calls to
             #        get_public_ip_by_private_ip_id

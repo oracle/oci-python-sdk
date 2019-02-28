@@ -1522,6 +1522,19 @@
               <executable>${basedir}/scripts/strip_trailing_whitespace.py</executable>
             </configuration>
           </execution>
+          <execution>
+            <id>python-public-sdk-fix-doc-url</id>
+            <phase>package</phase>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <configuration>
+              <executable>${basedir}/scripts/fix_doc_links.py</executable>
+              <arguments>
+                <argument>${basedir}</argument>
+              </arguments>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
       <plugin>

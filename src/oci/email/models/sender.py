@@ -178,7 +178,7 @@ class Sender(object):
         Value of the SPF field. For more information about SPF, please see
         `SPF Authentication`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Email/Concepts/overview.htm#components
+        __ https://docs.cloud.oracle.com/Content/Email/Concepts/overview.htm#components
 
 
         :return: The is_spf of this Sender.
@@ -193,7 +193,7 @@ class Sender(object):
         Value of the SPF field. For more information about SPF, please see
         `SPF Authentication`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Email/Concepts/overview.htm#components
+        __ https://docs.cloud.oracle.com/Content/Email/Concepts/overview.htm#components
 
 
         :param is_spf: The is_spf of this Sender.

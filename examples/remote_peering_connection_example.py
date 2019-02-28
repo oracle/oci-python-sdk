@@ -11,7 +11,7 @@
 #   * The remote region (e.g. us-ashburn-1)
 #
 # This script relies on the correct IAM policies already being in place for a given compartment ID.
-# For more information, please refer to: https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/remoteVCNpeering.htm
+# For more information, please refer to: https://docs.cloud.oracle.com/Content/Network/Tasks/remoteVCNpeering.htm
 #
 # In order to demonstrate remote peering, this script will also create one DRG and one VCN in each region. These resources will
 # be deleted at the end of the script. DRGs and VCNs are a finite resource and may require contacting customer support if limits
