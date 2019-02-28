@@ -120,6 +120,10 @@ class Image(object):
             The value to assign to the operating_system_version property of this Image.
         :type operating_system_version: str
 
+        :param agent_features:
+            The value to assign to the agent_features property of this Image.
+        :type agent_features: InstanceAgentFeatures
+
         :param size_in_mbs:
             The value to assign to the size_in_mbs property of this Image.
         :type size_in_mbs: int
@@ -142,6 +146,7 @@ class Image(object):
             'lifecycle_state': 'str',
             'operating_system': 'str',
             'operating_system_version': 'str',
+            'agent_features': 'InstanceAgentFeatures',
             'size_in_mbs': 'int',
             'time_created': 'datetime'
         }
@@ -159,6 +164,7 @@ class Image(object):
             'lifecycle_state': 'lifecycleState',
             'operating_system': 'operatingSystem',
             'operating_system_version': 'operatingSystemVersion',
+            'agent_features': 'agentFeatures',
             'size_in_mbs': 'sizeInMBs',
             'time_created': 'timeCreated'
         }
@@ -175,6 +181,7 @@ class Image(object):
         self._lifecycle_state = None
         self._operating_system = None
         self._operating_system_version = None
+        self._agent_features = None
         self._size_in_mbs = None
         self._time_created = None
 
@@ -519,6 +526,26 @@ class Image(object):
         :type: str
         """
         self._operating_system_version = operating_system_version
+
+    @property
+    def agent_features(self):
+        """
+        Gets the agent_features of this Image.
+
+        :return: The agent_features of this Image.
+        :rtype: InstanceAgentFeatures
+        """
+        return self._agent_features
+
+    @agent_features.setter
+    def agent_features(self, agent_features):
+        """
+        Sets the agent_features of this Image.
+
+        :param agent_features: The agent_features of this Image.
+        :type: InstanceAgentFeatures
+        """
+        self._agent_features = agent_features
 
     @property
     def size_in_mbs(self):

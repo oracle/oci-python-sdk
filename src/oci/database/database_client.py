@@ -74,6 +74,7 @@ class DatabaseClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'timeout': kwargs.get('timeout'),
             'base_path': '/20160918',
+            'service_endpoint_template': 'https://database.{region}.{secondLevelDomain}',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
         self.base_client = BaseClient("database", config, signer, database_type_mapping, **base_client_init_kwargs)
@@ -772,21 +773,19 @@ class DatabaseClient(object):
     def db_node_action(self, db_node_id, action, **kwargs):
         """
         DbNodeAction
-        Performs an action, such as one of the power actions (start, stop, softreset, or reset), on the specified DB Node.
+        Performs one of the following power actions on the specified DB node:
+        - start - power on
+        - stop - power off
+        - softreset - ACPI shutdown and power on
+        - reset - power off and power on
 
-        **start** - power on
-
-        **stop** - power off
-
-        **softreset** - ACPI shutdown and power on
-
-        **reset** - power off and power on
-
-        Note that the **stop** state has no effect on the resources you consume.
-        Billing continues for DB Nodes that you stop, and related resources continue
+        **Note:** Stopping a node affects billing differently, depending on the type of DB system:
+        *Bare metal and Exadata DB systems* - The _stop_ state has no effect on the resources you consume.
+        Billing continues for DB nodes that you stop, and related resources continue
         to apply against any relevant quotas. You must terminate the DB system
         (:func:`terminate_db_system`)
         to remove its resources from billing and quotas.
+        *Virtual machine DB systems* - Stopping a node stops billing for all OCPUs associated with that node, and billing resumes when you restart the node.
 
 
         :param str db_node_id: (required)
@@ -3578,7 +3577,7 @@ class DatabaseClient(object):
     def list_db_homes(self, compartment_id, db_system_id, **kwargs):
         """
         ListDbHomes
-        Gets a list of database homes in the specified DB system and compartment. A database home is a directory where Oracle database software is installed.
+        Gets a list of database homes in the specified DB system and compartment. A database home is a directory where Oracle Database software is installed.
 
 
         :param str compartment_id: (required)
@@ -4210,7 +4209,7 @@ class DatabaseClient(object):
     def list_db_versions(self, compartment_id, **kwargs):
         """
         ListDbVersions
-        Gets a list of supported Oracle database versions.
+        Gets a list of supported Oracle Database versions.
 
 
         :param str compartment_id: (required)

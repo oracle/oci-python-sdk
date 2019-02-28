@@ -89,6 +89,10 @@ class DbSystem(object):
             The value to assign to the availability_domain property of this DbSystem.
         :type availability_domain: str
 
+        :param fault_domains:
+            The value to assign to the fault_domains property of this DbSystem.
+        :type fault_domains: list[str]
+
         :param subnet_id:
             The value to assign to the subnet_id property of this DbSystem.
         :type subnet_id: str
@@ -211,6 +215,7 @@ class DbSystem(object):
             'compartment_id': 'str',
             'display_name': 'str',
             'availability_domain': 'str',
+            'fault_domains': 'list[str]',
             'subnet_id': 'str',
             'backup_subnet_id': 'str',
             'shape': 'str',
@@ -245,6 +250,7 @@ class DbSystem(object):
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'availability_domain': 'availabilityDomain',
+            'fault_domains': 'faultDomains',
             'subnet_id': 'subnetId',
             'backup_subnet_id': 'backupSubnetId',
             'shape': 'shape',
@@ -278,6 +284,7 @@ class DbSystem(object):
         self._compartment_id = None
         self._display_name = None
         self._availability_domain = None
+        self._fault_domains = None
         self._subnet_id = None
         self._backup_subnet_id = None
         self._shape = None
@@ -409,6 +416,30 @@ class DbSystem(object):
         :type: str
         """
         self._availability_domain = availability_domain
+
+    @property
+    def fault_domains(self):
+        """
+        Gets the fault_domains of this DbSystem.
+        List of the fault domains in which this DB system is provisioned.
+
+
+        :return: The fault_domains of this DbSystem.
+        :rtype: list[str]
+        """
+        return self._fault_domains
+
+    @fault_domains.setter
+    def fault_domains(self, fault_domains):
+        """
+        Sets the fault_domains of this DbSystem.
+        List of the fault domains in which this DB system is provisioned.
+
+
+        :param fault_domains: The fault_domains of this DbSystem.
+        :type: list[str]
+        """
+        self._fault_domains = fault_domains
 
     @property
     def subnet_id(self):

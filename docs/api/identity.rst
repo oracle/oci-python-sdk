@@ -22,6 +22,7 @@ Identity
     oci.identity.models.ApiKey
     oci.identity.models.AuthToken
     oci.identity.models.AvailabilityDomain
+    oci.identity.models.ChangeTagNamespaceCompartmentDetail
     oci.identity.models.Compartment
     oci.identity.models.CreateApiKeyDetails
     oci.identity.models.CreateAuthTokenDetails
@@ -47,6 +48,9 @@ Identity
     oci.identity.models.IdentityProvider
     oci.identity.models.IdentityProviderGroupSummary
     oci.identity.models.IdpGroupMapping
+    oci.identity.models.MfaTotpDevice
+    oci.identity.models.MfaTotpDeviceSummary
+    oci.identity.models.MfaTotpToken
     oci.identity.models.Policy
     oci.identity.models.Region
     oci.identity.models.RegionSubscription

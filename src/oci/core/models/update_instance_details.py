@@ -29,6 +29,10 @@ class UpdateInstanceDetails(object):
             The value to assign to the freeform_tags property of this UpdateInstanceDetails.
         :type freeform_tags: dict(str, str)
 
+        :param agent_config:
+            The value to assign to the agent_config property of this UpdateInstanceDetails.
+        :type agent_config: UpdateInstanceAgentConfigDetails
+
         :param metadata:
             The value to assign to the metadata property of this UpdateInstanceDetails.
         :type metadata: dict(str, str)
@@ -42,6 +46,7 @@ class UpdateInstanceDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
+            'agent_config': 'UpdateInstanceAgentConfigDetails',
             'metadata': 'dict(str, str)',
             'extended_metadata': 'dict(str, object)'
         }
@@ -50,6 +55,7 @@ class UpdateInstanceDetails(object):
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
+            'agent_config': 'agentConfig',
             'metadata': 'metadata',
             'extended_metadata': 'extendedMetadata'
         }
@@ -57,6 +63,7 @@ class UpdateInstanceDetails(object):
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
+        self._agent_config = None
         self._metadata = None
         self._extended_metadata = None
 
@@ -159,6 +166,30 @@ class UpdateInstanceDetails(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def agent_config(self):
+        """
+        Gets the agent_config of this UpdateInstanceDetails.
+        Instance agent configuration options to choose for updating the instance
+
+
+        :return: The agent_config of this UpdateInstanceDetails.
+        :rtype: UpdateInstanceAgentConfigDetails
+        """
+        return self._agent_config
+
+    @agent_config.setter
+    def agent_config(self, agent_config):
+        """
+        Sets the agent_config of this UpdateInstanceDetails.
+        Instance agent configuration options to choose for updating the instance
+
+
+        :param agent_config: The agent_config of this UpdateInstanceDetails.
+        :type: UpdateInstanceAgentConfigDetails
+        """
+        self._agent_config = agent_config
 
     @property
     def metadata(self):

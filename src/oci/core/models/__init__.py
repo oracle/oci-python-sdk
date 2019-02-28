@@ -12,6 +12,7 @@ from .app_catalog_subscription import AppCatalogSubscription
 from .app_catalog_subscription_summary import AppCatalogSubscriptionSummary
 from .attach_boot_volume_details import AttachBootVolumeDetails
 from .attach_i_scsi_volume_details import AttachIScsiVolumeDetails
+from .attach_load_balancer_details import AttachLoadBalancerDetails
 from .attach_paravirtualized_volume_details import AttachParavirtualizedVolumeDetails
 from .attach_vnic_details import AttachVnicDetails
 from .attach_volume_details import AttachVolumeDetails
@@ -72,6 +73,7 @@ from .cross_connect_mapping import CrossConnectMapping
 from .cross_connect_port_speed_shape import CrossConnectPortSpeedShape
 from .cross_connect_status import CrossConnectStatus
 from .delete_virtual_circuit_public_prefix_details import DeleteVirtualCircuitPublicPrefixDetails
+from .detach_load_balancer_details import DetachLoadBalancerDetails
 from .device import Device
 from .dhcp_dns_option import DhcpDnsOption
 from .dhcp_option import DhcpOption
@@ -97,6 +99,8 @@ from .image_source_via_object_storage_tuple_details import ImageSourceViaObjectS
 from .image_source_via_object_storage_uri_details import ImageSourceViaObjectStorageUriDetails
 from .ingress_security_rule import IngressSecurityRule
 from .instance import Instance
+from .instance_agent_config import InstanceAgentConfig
+from .instance_agent_features import InstanceAgentFeatures
 from .instance_configuration import InstanceConfiguration
 from .instance_configuration_attach_vnic_details import InstanceConfigurationAttachVnicDetails
 from .instance_configuration_attach_volume_details import InstanceConfigurationAttachVolumeDetails
@@ -117,6 +121,8 @@ from .instance_configuration_volume_source_from_volume_details import InstanceCo
 from .instance_console_connection import InstanceConsoleConnection
 from .instance_credentials import InstanceCredentials
 from .instance_pool import InstancePool
+from .instance_pool_instance_load_balancer_backend import InstancePoolInstanceLoadBalancerBackend
+from .instance_pool_load_balancer_attachment import InstancePoolLoadBalancerAttachment
 from .instance_pool_placement_configuration import InstancePoolPlacementConfiguration
 from .instance_pool_placement_secondary_vnic_subnet import InstancePoolPlacementSecondaryVnicSubnet
 from .instance_pool_summary import InstancePoolSummary
@@ -125,6 +131,7 @@ from .instance_source_via_boot_volume_details import InstanceSourceViaBootVolume
 from .instance_source_via_image_details import InstanceSourceViaImageDetails
 from .instance_summary import InstanceSummary
 from .internet_gateway import InternetGateway
+from .launch_instance_agent_config_details import LaunchInstanceAgentConfigDetails
 from .launch_instance_details import LaunchInstanceDetails
 from .launch_options import LaunchOptions
 from .letter_of_authority import LetterOfAuthority
@@ -161,6 +168,7 @@ from .update_drg_attachment_details import UpdateDrgAttachmentDetails
 from .update_drg_details import UpdateDrgDetails
 from .update_ip_sec_connection_details import UpdateIPSecConnectionDetails
 from .update_image_details import UpdateImageDetails
+from .update_instance_agent_config_details import UpdateInstanceAgentConfigDetails
 from .update_instance_configuration_details import UpdateInstanceConfigurationDetails
 from .update_instance_details import UpdateInstanceDetails
 from .update_instance_pool_details import UpdateInstancePoolDetails
@@ -217,6 +225,7 @@ core_type_mapping = {
     "AppCatalogSubscriptionSummary": AppCatalogSubscriptionSummary,
     "AttachBootVolumeDetails": AttachBootVolumeDetails,
     "AttachIScsiVolumeDetails": AttachIScsiVolumeDetails,
+    "AttachLoadBalancerDetails": AttachLoadBalancerDetails,
     "AttachParavirtualizedVolumeDetails": AttachParavirtualizedVolumeDetails,
     "AttachVnicDetails": AttachVnicDetails,
     "AttachVolumeDetails": AttachVolumeDetails,
@@ -277,6 +286,7 @@ core_type_mapping = {
     "CrossConnectPortSpeedShape": CrossConnectPortSpeedShape,
     "CrossConnectStatus": CrossConnectStatus,
     "DeleteVirtualCircuitPublicPrefixDetails": DeleteVirtualCircuitPublicPrefixDetails,
+    "DetachLoadBalancerDetails": DetachLoadBalancerDetails,
     "Device": Device,
     "DhcpDnsOption": DhcpDnsOption,
     "DhcpOption": DhcpOption,
@@ -302,6 +312,8 @@ core_type_mapping = {
     "ImageSourceViaObjectStorageUriDetails": ImageSourceViaObjectStorageUriDetails,
     "IngressSecurityRule": IngressSecurityRule,
     "Instance": Instance,
+    "InstanceAgentConfig": InstanceAgentConfig,
+    "InstanceAgentFeatures": InstanceAgentFeatures,
     "InstanceConfiguration": InstanceConfiguration,
     "InstanceConfigurationAttachVnicDetails": InstanceConfigurationAttachVnicDetails,
     "InstanceConfigurationAttachVolumeDetails": InstanceConfigurationAttachVolumeDetails,
@@ -322,6 +334,8 @@ core_type_mapping = {
     "InstanceConsoleConnection": InstanceConsoleConnection,
     "InstanceCredentials": InstanceCredentials,
     "InstancePool": InstancePool,
+    "InstancePoolInstanceLoadBalancerBackend": InstancePoolInstanceLoadBalancerBackend,
+    "InstancePoolLoadBalancerAttachment": InstancePoolLoadBalancerAttachment,
     "InstancePoolPlacementConfiguration": InstancePoolPlacementConfiguration,
     "InstancePoolPlacementSecondaryVnicSubnet": InstancePoolPlacementSecondaryVnicSubnet,
     "InstancePoolSummary": InstancePoolSummary,
@@ -330,6 +344,7 @@ core_type_mapping = {
     "InstanceSourceViaImageDetails": InstanceSourceViaImageDetails,
     "InstanceSummary": InstanceSummary,
     "InternetGateway": InternetGateway,
+    "LaunchInstanceAgentConfigDetails": LaunchInstanceAgentConfigDetails,
     "LaunchInstanceDetails": LaunchInstanceDetails,
     "LaunchOptions": LaunchOptions,
     "LetterOfAuthority": LetterOfAuthority,
@@ -366,6 +381,7 @@ core_type_mapping = {
     "UpdateDrgDetails": UpdateDrgDetails,
     "UpdateIPSecConnectionDetails": UpdateIPSecConnectionDetails,
     "UpdateImageDetails": UpdateImageDetails,
+    "UpdateInstanceAgentConfigDetails": UpdateInstanceAgentConfigDetails,
     "UpdateInstanceConfigurationDetails": UpdateInstanceConfigurationDetails,
     "UpdateInstanceDetails": UpdateInstanceDetails,
     "UpdateInstancePoolDetails": UpdateInstancePoolDetails,

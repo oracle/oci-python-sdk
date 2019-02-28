@@ -5,6 +5,7 @@ API Reference
 
 * :doc:`Announcement <announcements_service/client/oci.announcements_service.AnnouncementClient>`
 * :doc:`Audit <audit/client/oci.audit.AuditClient>`
+* :doc:`Auto Scaling <autoscaling/client/oci.autoscaling.AutoScalingClient>`
 * :doc:`Container Engine <container_engine/client/oci.container_engine.ContainerEngineClient>`
 * :doc:`Block Storage <core/client/oci.core.BlockstorageClient>`
 * :doc:`Compute <core/client/oci.core.ComputeClient>`
@@ -20,7 +21,11 @@ API Reference
 * :doc:`Kms Management <key_management/client/oci.key_management.KmsManagementClient>`
 * :doc:`Kms Vault <key_management/client/oci.key_management.KmsVaultClient>`
 * :doc:`Load Balancer <load_balancer/client/oci.load_balancer.LoadBalancerClient>`
+* :doc:`Monitoring <monitoring/client/oci.monitoring.MonitoringClient>`
 * :doc:`Object Storage <object_storage/client/oci.object_storage.ObjectStorageClient>`
+* :doc:`Notification Control Plane <ons/client/oci.ons.NotificationControlPlaneClient>`
+* :doc:`Notification Data Plane <ons/client/oci.ons.NotificationDataPlaneClient>`
+* :doc:`Resource Manager <resource_manager/client/oci.resource_manager.ResourceManagerClient>`
 * :doc:`Resource Search <resource_search/client/oci.resource_search.ResourceSearchClient>`
 * :doc:`Stream Admin <streaming/client/oci.streaming.StreamAdminClient>`
 * :doc:`Stream <streaming/client/oci.streaming.StreamClient>`
@@ -48,6 +53,7 @@ API Reference
 
     announcements_service
     audit
+    autoscaling
     container_engine
     core
     database
@@ -58,7 +64,10 @@ API Reference
     identity
     key_management
     load_balancer
+    monitoring
     object_storage
+    ons
+    resource_manager
     resource_search
     streaming
     waas

@@ -9,7 +9,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociationDetails):
     """
-    The configuration details for creating a Data Guard association to an existing database. A new DbSystem will be launched for standby database.
+    The configuration details for creating a Data Guard association for a bare metal DB system or virtual machine DB system database. A new DB system will be launched to create the standby database.
+
+    **NOTE** - You must use this subtype to create a Data Guard association for a database in a virtual machine DB system.
     """
 
     def __init__(self, **kwargs):

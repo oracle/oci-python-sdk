@@ -79,6 +79,10 @@ class DbNode(object):
             The value to assign to the hostname property of this DbNode.
         :type hostname: str
 
+        :param fault_domain:
+            The value to assign to the fault_domain property of this DbNode.
+        :type fault_domain: str
+
         :param time_created:
             The value to assign to the time_created property of this DbNode.
         :type time_created: datetime
@@ -95,6 +99,7 @@ class DbNode(object):
             'backup_vnic_id': 'str',
             'lifecycle_state': 'str',
             'hostname': 'str',
+            'fault_domain': 'str',
             'time_created': 'datetime',
             'software_storage_size_in_gb': 'int'
         }
@@ -106,6 +111,7 @@ class DbNode(object):
             'backup_vnic_id': 'backupVnicId',
             'lifecycle_state': 'lifecycleState',
             'hostname': 'hostname',
+            'fault_domain': 'faultDomain',
             'time_created': 'timeCreated',
             'software_storage_size_in_gb': 'softwareStorageSizeInGB'
         }
@@ -116,6 +122,7 @@ class DbNode(object):
         self._backup_vnic_id = None
         self._lifecycle_state = None
         self._hostname = None
+        self._fault_domain = None
         self._time_created = None
         self._software_storage_size_in_gb = None
 
@@ -284,6 +291,30 @@ class DbNode(object):
         :type: str
         """
         self._hostname = hostname
+
+    @property
+    def fault_domain(self):
+        """
+        Gets the fault_domain of this DbNode.
+        The name of the fault domain the instance is contained in.
+
+
+        :return: The fault_domain of this DbNode.
+        :rtype: str
+        """
+        return self._fault_domain
+
+    @fault_domain.setter
+    def fault_domain(self, fault_domain):
+        """
+        Sets the fault_domain of this DbNode.
+        The name of the fault domain the instance is contained in.
+
+
+        :param fault_domain: The fault_domain of this DbNode.
+        :type: str
+        """
+        self._fault_domain = fault_domain
 
     @property
     def time_created(self):

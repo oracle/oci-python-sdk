@@ -79,6 +79,101 @@ class IdentityClient(object):
         self.base_client = BaseClient("identity", config, signer, identity_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
 
+    def activate_mfa_totp_device(self, user_id, mfa_totp_device_id, mfa_totp_token, **kwargs):
+        """
+        ActivateMfaTotpDevice
+        Activate the specified MFA TOTP device for the user.
+
+
+        :param str user_id: (required)
+            The OCID of the user.
+
+        :param str mfa_totp_device_id: (required)
+            The OCID of the MFA TOTP device.
+
+        :param MfaTotpToken mfa_totp_token: (required)
+            MFA TOTP token
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.MfaTotpDeviceSummary`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/users/{userId}/mfaTotpDevices/{mfaTotpDeviceId}/actions/activate"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "activate_mfa_totp_device got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "userId": user_id,
+            "mfaTotpDeviceId": mfa_totp_device_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=mfa_totp_token,
+                response_type="MfaTotpDeviceSummary")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=mfa_totp_token,
+                response_type="MfaTotpDeviceSummary")
+
     def add_user_to_group(self, add_user_to_group_details, **kwargs):
         """
         AddUserToGroup
@@ -150,6 +245,95 @@ class IdentityClient(object):
                 header_params=header_params,
                 body=add_user_to_group_details,
                 response_type="UserGroupMembership")
+
+    def change_tag_namespace_compartment(self, tag_namespace_id, change_tag_namespace_compartment_detail, **kwargs):
+        """
+        changes compartment of a tag namespace.
+        Moves the specified tag namespace to the specified compartment within the same tenancy.
+
+        To move the tag namespace, you must have the manage tag-namespaces permission on both compartments.
+        For more information about IAM policies, see `Details for IAM`__.
+
+        Moving a tag namespace moves all the tag key definitions contained in the tag namespace.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Reference/iampolicyreference.htm
+
+
+        :param str tag_namespace_id: (required)
+            The OCID of the tag namespace.
+
+        :param ChangeTagNamespaceCompartmentDetail change_tag_namespace_compartment_detail: (required)
+            Request object for changing the compartment of a tag namespace.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/tagNamespaces/{tagNamespaceId}/actions/changeCompartment"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "change_tag_namespace_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "tagNamespaceId": tag_namespace_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_tag_namespace_compartment_detail)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_tag_namespace_compartment_detail)
 
     def create_auth_token(self, create_auth_token_details, user_id, **kwargs):
         """
@@ -786,6 +970,85 @@ class IdentityClient(object):
                 header_params=header_params,
                 body=create_idp_group_mapping_details,
                 response_type="IdpGroupMapping")
+
+    def create_mfa_totp_device(self, user_id, **kwargs):
+        """
+        CreateMfaTotpDevice
+        Create a new MFA TOTP device for the user. A user can only create one MFA TOTP device.
+
+
+        :param str user_id: (required)
+            The OCID of the user.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.MfaTotpDevice`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/users/{userId}/mfaTotpDevices"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_mfa_totp_device got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "userId": user_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="MfaTotpDevice")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="MfaTotpDevice")
 
     def create_or_reset_ui_password(self, user_id, **kwargs):
         """
@@ -2130,6 +2393,83 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params)
 
+    def delete_mfa_totp_device(self, user_id, mfa_totp_device_id, **kwargs):
+        """
+        DeleteMfaTotpDevice
+        Delete the specified MFA TOTP device for the specified user.
+
+
+        :param str user_id: (required)
+            The OCID of the user.
+
+        :param str mfa_totp_device_id: (required)
+            The OCID of the MFA TOTP device.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/users/{userId}/mfaTotpDevices/{mfaTotpDeviceId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_mfa_totp_device got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "userId": user_id,
+            "mfaTotpDeviceId": mfa_totp_device_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
     def delete_policy(self, policy_id, **kwargs):
         """
         DeletePolicy
@@ -2431,6 +2771,85 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params)
+
+    def generate_totp_seed(self, user_id, mfa_totp_device_id, **kwargs):
+        """
+        GenerateTotpSeed
+        Generate seed for the MFA TOTP device
+
+
+        :param str user_id: (required)
+            The OCID of the user.
+
+        :param str mfa_totp_device_id: (required)
+            The OCID of the MFA TOTP device.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.MfaTotpDevice`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/users/{userId}/mfaTotpDevices/{mfaTotpDeviceId}/actions/generateSeed"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "generate_totp_seed got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "userId": user_id,
+            "mfaTotpDeviceId": mfa_totp_device_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="MfaTotpDevice")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="MfaTotpDevice")
 
     def get_compartment(self, compartment_id, **kwargs):
         """
@@ -2766,6 +3185,74 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 response_type="IdpGroupMapping")
+
+    def get_mfa_totp_device(self, user_id, mfa_totp_device_id, **kwargs):
+        """
+        GetMfaTotpDevice
+        Get the specified MFA TOTP device for the specified user.
+
+
+        :param str user_id: (required)
+            The OCID of the user.
+
+        :param str mfa_totp_device_id: (required)
+            The OCID of the MFA TOTP device.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.MfaTotpDeviceSummary`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/users/{userId}/mfaTotpDevices/{mfaTotpDeviceId}"
+        method = "GET"
+
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_mfa_totp_device got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "userId": user_id,
+            "mfaTotpDeviceId": mfa_totp_device_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="MfaTotpDeviceSummary")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="MfaTotpDeviceSummary")
 
     def get_policy(self, policy_id, **kwargs):
         """
@@ -3365,7 +3852,7 @@ class IdentityClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+            The OCID of the compartment (remember that the tenancy is simply the root compartment).
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3443,7 +3930,7 @@ class IdentityClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+            The OCID of the compartment (remember that the tenancy is simply the root compartment).
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -3547,7 +4034,7 @@ class IdentityClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+            The OCID of the compartment (remember that the tenancy is simply the root compartment).
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -3688,7 +4175,7 @@ class IdentityClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+            The OCID of the compartment (remember that the tenancy is simply the root compartment).
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -3764,7 +4251,7 @@ class IdentityClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+            The OCID of the compartment (remember that the tenancy is simply the root compartment).
 
         :param str availability_domain: (required)
             The name of the availibilityDomain.
@@ -3831,7 +4318,7 @@ class IdentityClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+            The OCID of the compartment (remember that the tenancy is simply the root compartment).
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -3996,7 +4483,7 @@ class IdentityClient(object):
             Allowed values are: "SAML2"
 
         :param str compartment_id: (required)
-            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+            The OCID of the compartment (remember that the tenancy is simply the root compartment).
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -4145,6 +4632,126 @@ class IdentityClient(object):
                 header_params=header_params,
                 response_type="list[IdpGroupMapping]")
 
+    def list_mfa_totp_devices(self, user_id, **kwargs):
+        """
+        ListMfaTotpDevices
+        Lists the MFA TOTP devices for the specified user. The returned object contains the device's OCID, but not
+        the seed. The seed is returned only upon creation or when we regenerate MFA seed for the device.
+
+
+        :param str user_id: (required)
+            The OCID of the user.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+        :param str sort_by: (optional)
+            The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+            TIMECREATED is descending. Default order for NAME is ascending. The NAME
+            sort order is case sensitive.
+
+            **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+            optionally filter by Availability Domain if the scope of the resource type is within a
+            single Availability Domain. If you call one of these \"List\" operations without specifying
+            an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+
+            Allowed values are: "TIMECREATED", "NAME"
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`). The NAME sort order
+            is case sensitive.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.MfaTotpDeviceSummary`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/users/{userId}/mfaTotpDevices"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "page",
+            "limit",
+            "sort_by",
+            "sort_order"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_mfa_totp_devices got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "userId": user_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMECREATED", "NAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[MfaTotpDeviceSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[MfaTotpDeviceSummary]")
+
     def list_policies(self, compartment_id, **kwargs):
         """
         ListPolicies
@@ -4158,7 +4765,7 @@ class IdentityClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+            The OCID of the compartment (remember that the tenancy is simply the root compartment).
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -4475,7 +5082,7 @@ class IdentityClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+            The OCID of the compartment (remember that the tenancy is simply the root compartment).
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -4647,7 +5254,7 @@ class IdentityClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+            The OCID of the compartment (remember that the tenancy is simply the root compartment).
 
         :param str user_id: (optional)
             The OCID of the user.
@@ -4733,7 +5340,7 @@ class IdentityClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+            The OCID of the compartment (remember that the tenancy is simply the root compartment).
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -4815,7 +5422,7 @@ class IdentityClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+            The OCID of the compartment (remember that the tenancy is simply the root compartment).
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
