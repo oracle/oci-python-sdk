@@ -117,7 +117,7 @@ class UpdateDbSystemDetails(object):
     def ssh_public_keys(self):
         """
         Gets the ssh_public_keys of this UpdateDbSystemDetails.
-        The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 10,000 characters.
+        The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 40,000 characters.
 
 
         :return: The ssh_public_keys of this UpdateDbSystemDetails.
@@ -129,7 +129,7 @@ class UpdateDbSystemDetails(object):
     def ssh_public_keys(self, ssh_public_keys):
         """
         Sets the ssh_public_keys of this UpdateDbSystemDetails.
-        The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 10,000 characters.
+        The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 40,000 characters.
 
 
         :param ssh_public_keys: The ssh_public_keys of this UpdateDbSystemDetails.

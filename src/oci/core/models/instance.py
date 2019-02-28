@@ -154,6 +154,10 @@ class Instance(object):
             The value to assign to the time_created property of this Instance.
         :type time_created: datetime
 
+        :param agent_config:
+            The value to assign to the agent_config property of this Instance.
+        :type agent_config: InstanceAgentConfig
+
         :param time_maintenance_reboot_due:
             The value to assign to the time_maintenance_reboot_due property of this Instance.
         :type time_maintenance_reboot_due: datetime
@@ -178,6 +182,7 @@ class Instance(object):
             'shape': 'str',
             'source_details': 'InstanceSourceDetails',
             'time_created': 'datetime',
+            'agent_config': 'InstanceAgentConfig',
             'time_maintenance_reboot_due': 'datetime'
         }
 
@@ -200,6 +205,7 @@ class Instance(object):
             'shape': 'shape',
             'source_details': 'sourceDetails',
             'time_created': 'timeCreated',
+            'agent_config': 'agentConfig',
             'time_maintenance_reboot_due': 'timeMaintenanceRebootDue'
         }
 
@@ -221,6 +227,7 @@ class Instance(object):
         self._shape = None
         self._source_details = None
         self._time_created = None
+        self._agent_config = None
         self._time_maintenance_reboot_due = None
 
     @property
@@ -685,7 +692,10 @@ class Instance(object):
         **[Required]** Gets the region of this Instance.
         The region that contains the availability domain the instance is running in.
 
-        Example: `phx`
+        For the us-phoenix-1 and us-ashburn-1 regions, `phx` and `iad` are returned, respectively.
+        For all other regions, the full region name is returned.
+
+        Examples: `phx`, `eu-frankfurt-1`
 
 
         :return: The region of this Instance.
@@ -699,7 +709,10 @@ class Instance(object):
         Sets the region of this Instance.
         The region that contains the availability domain the instance is running in.
 
-        Example: `phx`
+        For the us-phoenix-1 and us-ashburn-1 regions, `phx` and `iad` are returned, respectively.
+        For all other regions, the full region name is returned.
+
+        Examples: `phx`, `eu-frankfurt-1`
 
 
         :param region: The region of this Instance.
@@ -786,6 +799,26 @@ class Instance(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def agent_config(self):
+        """
+        Gets the agent_config of this Instance.
+
+        :return: The agent_config of this Instance.
+        :rtype: InstanceAgentConfig
+        """
+        return self._agent_config
+
+    @agent_config.setter
+    def agent_config(self, agent_config):
+        """
+        Sets the agent_config of this Instance.
+
+        :param agent_config: The agent_config of this Instance.
+        :type: InstanceAgentConfig
+        """
+        self._agent_config = agent_config
 
     @property
     def time_maintenance_reboot_due(self):

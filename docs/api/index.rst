@@ -63,6 +63,31 @@ Audit
     :noindex:
 
 
+===========
+Autoscaling
+===========
+
+--------
+ Client
+--------
+
+.. autoclass:: oci.autoscaling.auto_scaling_client.AutoScalingClient
+    :members:
+    :noindex:
+
+--------
+ Models
+--------
+
+.. automodule:: oci.autoscaling.models
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :imported-members:
+    :inherited-members:
+    :noindex:
+
+
 ================
 Container Engine
 ================
@@ -363,6 +388,31 @@ Load Balancer
     :noindex:
 
 
+==========
+Monitoring
+==========
+
+--------
+ Client
+--------
+
+.. autoclass:: oci.monitoring.monitoring_client.MonitoringClient
+    :members:
+    :noindex:
+
+--------
+ Models
+--------
+
+.. automodule:: oci.monitoring.models
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :imported-members:
+    :inherited-members:
+    :noindex:
+
+
 ==============
 Object Storage
 ==============
@@ -380,6 +430,69 @@ Object Storage
 --------
 
 .. automodule:: oci.object_storage.models
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :imported-members:
+    :inherited-members:
+    :noindex:
+
+
+===
+Ons
+===
+
+---------
+ Clients
+---------
+
+
+Notification Control Plane
+==========================
+
+.. autoclass:: oci.ons.notification_control_plane_client.NotificationControlPlaneClient
+    :members:
+    :noindex:
+
+
+Notification Data Plane
+=======================
+
+.. autoclass:: oci.ons.notification_data_plane_client.NotificationDataPlaneClient
+    :members:
+    :noindex:
+
+
+--------
+ Models
+--------
+
+.. automodule:: oci.ons.models
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :imported-members:
+    :inherited-members:
+    :noindex:
+
+
+================
+Resource Manager
+================
+
+--------
+ Client
+--------
+
+.. autoclass:: oci.resource_manager.resource_manager_client.ResourceManagerClient
+    :members:
+    :noindex:
+
+--------
+ Models
+--------
+
+.. automodule:: oci.resource_manager.models
     :special-members: __init__
     :members:
     :undoc-members:

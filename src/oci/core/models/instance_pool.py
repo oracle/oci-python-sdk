@@ -91,6 +91,10 @@ class InstancePool(object):
             The value to assign to the time_created property of this InstancePool.
         :type time_created: datetime
 
+        :param load_balancers:
+            The value to assign to the load_balancers property of this InstancePool.
+        :type load_balancers: list[InstancePoolLoadBalancerAttachment]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -102,7 +106,8 @@ class InstancePool(object):
             'lifecycle_state': 'str',
             'placement_configurations': 'list[InstancePoolPlacementConfiguration]',
             'size': 'int',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'load_balancers': 'list[InstancePoolLoadBalancerAttachment]'
         }
 
         self.attribute_map = {
@@ -115,7 +120,8 @@ class InstancePool(object):
             'lifecycle_state': 'lifecycleState',
             'placement_configurations': 'placementConfigurations',
             'size': 'size',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'load_balancers': 'loadBalancers'
         }
 
         self._id = None
@@ -128,6 +134,7 @@ class InstancePool(object):
         self._placement_configurations = None
         self._size = None
         self._time_created = None
+        self._load_balancers = None
 
     @property
     def id(self):
@@ -398,6 +405,30 @@ class InstancePool(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def load_balancers(self):
+        """
+        Gets the load_balancers of this InstancePool.
+        The load balancers attached to the instance pool.
+
+
+        :return: The load_balancers of this InstancePool.
+        :rtype: list[InstancePoolLoadBalancerAttachment]
+        """
+        return self._load_balancers
+
+    @load_balancers.setter
+    def load_balancers(self, load_balancers):
+        """
+        Sets the load_balancers of this InstancePool.
+        The load balancers attached to the instance pool.
+
+
+        :param load_balancers: The load_balancers of this InstancePool.
+        :type: list[InstancePoolLoadBalancerAttachment]
+        """
+        self._load_balancers = load_balancers
 
     def __repr__(self):
         return formatted_flat_dict(self)

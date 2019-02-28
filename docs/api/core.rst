@@ -33,6 +33,7 @@ Core Services
     oci.core.models.AppCatalogSubscriptionSummary
     oci.core.models.AttachBootVolumeDetails
     oci.core.models.AttachIScsiVolumeDetails
+    oci.core.models.AttachLoadBalancerDetails
     oci.core.models.AttachParavirtualizedVolumeDetails
     oci.core.models.AttachVnicDetails
     oci.core.models.AttachVolumeDetails
@@ -93,6 +94,7 @@ Core Services
     oci.core.models.CrossConnectPortSpeedShape
     oci.core.models.CrossConnectStatus
     oci.core.models.DeleteVirtualCircuitPublicPrefixDetails
+    oci.core.models.DetachLoadBalancerDetails
     oci.core.models.Device
     oci.core.models.DhcpDnsOption
     oci.core.models.DhcpOption
@@ -118,6 +120,8 @@ Core Services
     oci.core.models.ImageSourceViaObjectStorageUriDetails
     oci.core.models.IngressSecurityRule
     oci.core.models.Instance
+    oci.core.models.InstanceAgentConfig
+    oci.core.models.InstanceAgentFeatures
     oci.core.models.InstanceConfiguration
     oci.core.models.InstanceConfigurationAttachVnicDetails
     oci.core.models.InstanceConfigurationAttachVolumeDetails
@@ -138,6 +142,8 @@ Core Services
     oci.core.models.InstanceConsoleConnection
     oci.core.models.InstanceCredentials
     oci.core.models.InstancePool
+    oci.core.models.InstancePoolInstanceLoadBalancerBackend
+    oci.core.models.InstancePoolLoadBalancerAttachment
     oci.core.models.InstancePoolPlacementConfiguration
     oci.core.models.InstancePoolPlacementSecondaryVnicSubnet
     oci.core.models.InstancePoolSummary
@@ -146,6 +152,7 @@ Core Services
     oci.core.models.InstanceSourceViaImageDetails
     oci.core.models.InstanceSummary
     oci.core.models.InternetGateway
+    oci.core.models.LaunchInstanceAgentConfigDetails
     oci.core.models.LaunchInstanceDetails
     oci.core.models.LaunchOptions
     oci.core.models.LetterOfAuthority
@@ -182,6 +189,7 @@ Core Services
     oci.core.models.UpdateDrgDetails
     oci.core.models.UpdateIPSecConnectionDetails
     oci.core.models.UpdateImageDetails
+    oci.core.models.UpdateInstanceAgentConfigDetails
     oci.core.models.UpdateInstanceConfigurationDetails
     oci.core.models.UpdateInstanceDetails
     oci.core.models.UpdateInstancePoolDetails

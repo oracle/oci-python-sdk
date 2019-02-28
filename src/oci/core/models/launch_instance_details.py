@@ -66,6 +66,10 @@ class LaunchInstanceDetails(object):
             The value to assign to the metadata property of this LaunchInstanceDetails.
         :type metadata: dict(str, str)
 
+        :param agent_config:
+            The value to assign to the agent_config property of this LaunchInstanceDetails.
+        :type agent_config: LaunchInstanceAgentConfigDetails
+
         :param shape:
             The value to assign to the shape property of this LaunchInstanceDetails.
         :type shape: str
@@ -96,6 +100,7 @@ class LaunchInstanceDetails(object):
             'image_id': 'str',
             'ipxe_script': 'str',
             'metadata': 'dict(str, str)',
+            'agent_config': 'LaunchInstanceAgentConfigDetails',
             'shape': 'str',
             'source_details': 'InstanceSourceDetails',
             'subnet_id': 'str',
@@ -115,6 +120,7 @@ class LaunchInstanceDetails(object):
             'image_id': 'imageId',
             'ipxe_script': 'ipxeScript',
             'metadata': 'metadata',
+            'agent_config': 'agentConfig',
             'shape': 'shape',
             'source_details': 'sourceDetails',
             'subnet_id': 'subnetId',
@@ -133,6 +139,7 @@ class LaunchInstanceDetails(object):
         self._image_id = None
         self._ipxe_script = None
         self._metadata = None
+        self._agent_config = None
         self._shape = None
         self._source_details = None
         self._subnet_id = None
@@ -665,6 +672,26 @@ class LaunchInstanceDetails(object):
         :type: dict(str, str)
         """
         self._metadata = metadata
+
+    @property
+    def agent_config(self):
+        """
+        Gets the agent_config of this LaunchInstanceDetails.
+
+        :return: The agent_config of this LaunchInstanceDetails.
+        :rtype: LaunchInstanceAgentConfigDetails
+        """
+        return self._agent_config
+
+    @agent_config.setter
+    def agent_config(self, agent_config):
+        """
+        Sets the agent_config of this LaunchInstanceDetails.
+
+        :param agent_config: The agent_config of this LaunchInstanceDetails.
+        :type: LaunchInstanceAgentConfigDetails
+        """
+        self._agent_config = agent_config
 
     @property
     def shape(self):
