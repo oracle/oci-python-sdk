@@ -24,6 +24,7 @@
 ^scripts/wercker_validate\.py$
 
 ^tests/[^/]*\.py$
+^tests/configuration/config.sample$
 ^tests/integ/__init__.py$
 ^tests/integ/test_launch_instance_tutorial.py$
 ^tests/integ/util.py$

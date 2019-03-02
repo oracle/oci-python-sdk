@@ -1,0 +1,13 @@
+; Copy this file to file named `config` and fill in the values to run tests
+; which require cloud resources.  You can also run the tests using a different
+; configuration by passing the path to pytest with ``--config-file``.
+; For more information on using ``--config-file`` see README-developement.rst
+; For more information on how to configure the SDK see
+; https://docs.cloud.oracle.com/iaas/Content/API/Concepts/sdkconfig.htm
+
+[DEFAULT]
+tenancy = <TENANCY OCID>
+user = <USER OCID>
+fingerprint = <FINGERPRINT FOR API KEY>
+key_file = <PATH TO API KEY>
+region = <REGION>

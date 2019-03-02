@@ -17,11 +17,11 @@ Assuming that you have Python and `virtualenv` installed, set up your environmen
 
 You should also set up your configuration files as described `here`__
 
-__ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdkconfig.htm 
+__ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdkconfig.htm
 
 Running Tests
 =============
-The SDK uses `pytest` as its test framework. You can run tests against Python 2.7, Python 3.5 and Python 3.6 using the `tox` command. Note that this requires that you have those versions of Python installed, 
+The SDK uses `pytest` as its test framework. You can run tests against Python 2.7, Python 3.5 and Python 3.6 using the `tox` command. Note that this requires that you have those versions of Python installed,
 otherwise you must pass `-e` or run tests directly:
 
 .. code-block:: sh
@@ -41,9 +41,11 @@ If you wish to run an individual test then you can run:
 Specifying a config file
 ------------------------
 
-By default, the tests will look for a config file at 'tests/resources/config'
-and use the ``DEFAULT`` profile.  You can change this with the ``--config-file``
-and ``--config-profile`` options.
+By default, the tests will look for a config file, 'config' in 'tests/resources'.
+If 'tests/resources' does not exist, the tests will try attempt to use
+'tests/configuration/config'.
+The default profile is ``DEFAULT``.  You can change this with the
+``--config-file`` and ``--config-profile`` options.
 
 .. code-block:: sh
 
@@ -53,9 +55,11 @@ and ``--config-profile`` options.
     # Using a different profile in the default config file
     tox -- --config-profile IAD_PROFILE
 
+A sample config file is provided 'tests/configuration/config.sample'
+
 Specifying environment variables
 --------------------------------
-In addition to a valid config file for your tenancy, the tests also require the following environment 
+In addition to a valid config file for your tenancy, the tests also require the following environment
 variables to be set:
 
     * ``OCI_PYSDK_PUBLIC_SSH_KEY_FILE``: path to a public SSH key (.pub file) that will be given access to the instance launched in ``test_launch_instance_tutorial.py``.

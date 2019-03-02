@@ -24,6 +24,7 @@ env/
 docs/warnings.txt
 docs/_build/
 docs/apidocs/
+tests/configuration/config
 tests/resources/test_debug.log
 tests/resources/*.bin
 tests/temp
