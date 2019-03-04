@@ -1187,6 +1187,43 @@ def test_get_db_system_patch_history_entry(testing_service_client, config):
         )
 
 
+def test_get_exadata_iorm_config(testing_service_client, config):
+    if not testing_service_client.is_api_enabled('database', 'GetExadataIormConfig'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='GetExadataIormConfig')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
+            if pass_phrase:
+                config['pass_phrase'] = pass_phrase
+            client = oci.database.DatabaseClient(config)
+            response = client.get_exadata_iorm_config(
+                db_system_id=request.pop(util.camelize('db_system_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'GetExadataIormConfig',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'exadataIormConfig',
+            False,
+            False
+        )
+
+
 def test_get_external_backup_job(testing_service_client, config):
     if not testing_service_client.is_api_enabled('database', 'GetExternalBackupJob'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2722,6 +2759,44 @@ def test_update_db_system(testing_service_client, config):
             result,
             service_error,
             'dbSystem',
+            False,
+            False
+        )
+
+
+def test_update_exadata_iorm_config(testing_service_client, config):
+    if not testing_service_client.is_api_enabled('database', 'UpdateExadataIormConfig'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='UpdateExadataIormConfig')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
+            if pass_phrase:
+                config['pass_phrase'] = pass_phrase
+            client = oci.database.DatabaseClient(config)
+            response = client.update_exadata_iorm_config(
+                db_system_id=request.pop(util.camelize('db_system_id')),
+                exadata_iorm_config_update_details=request.pop(util.camelize('exadata_iorm_config_update_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'UpdateExadataIormConfig',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'exadataIormConfig',
             False,
             False
         )
