@@ -9,8 +9,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BucketSummary(object):
     """
-    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
-    talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+    To use any of the API operations, you must be authorized in an IAM policy. If you are not authorized,
+    talk to an administrator. If you are an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
     __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
@@ -89,7 +89,7 @@ class BucketSummary(object):
     def namespace(self):
         """
         **[Required]** Gets the namespace of this BucketSummary.
-        The namespace in which the bucket lives.
+        The Object Storage namespace in which the bucket lives.
 
 
         :return: The namespace of this BucketSummary.
@@ -101,7 +101,7 @@ class BucketSummary(object):
     def namespace(self, namespace):
         """
         Sets the namespace of this BucketSummary.
-        The namespace in which the bucket lives.
+        The Object Storage namespace in which the bucket lives.
 
 
         :param namespace: The namespace of this BucketSummary.
@@ -215,7 +215,7 @@ class BucketSummary(object):
     def etag(self):
         """
         **[Required]** Gets the etag of this BucketSummary.
-        The entity tag for the bucket.
+        The entity tag (ETag) for the bucket.
 
 
         :return: The etag of this BucketSummary.
@@ -227,7 +227,7 @@ class BucketSummary(object):
     def etag(self, etag):
         """
         Sets the etag of this BucketSummary.
-        The entity tag for the bucket.
+        The entity tag (ETag) for the bucket.
 
 
         :param etag: The etag of this BucketSummary.

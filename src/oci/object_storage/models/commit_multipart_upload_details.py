@@ -9,8 +9,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CommitMultipartUploadDetails(object):
     """
-    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
-    talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+    To use any of the API operations, you must be authorized in an IAM policy. If you are not authorized,
+    talk to an administrator. If you are an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
     __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
@@ -47,7 +47,7 @@ class CommitMultipartUploadDetails(object):
     def parts_to_commit(self):
         """
         **[Required]** Gets the parts_to_commit of this CommitMultipartUploadDetails.
-        The part numbers and ETags for the parts to be committed.
+        The part numbers and entity tags (ETags) for the parts to be committed.
 
 
         :return: The parts_to_commit of this CommitMultipartUploadDetails.
@@ -59,7 +59,7 @@ class CommitMultipartUploadDetails(object):
     def parts_to_commit(self, parts_to_commit):
         """
         Sets the parts_to_commit of this CommitMultipartUploadDetails.
-        The part numbers and ETags for the parts to be committed.
+        The part numbers and entity tags (ETags) for the parts to be committed.
 
 
         :param parts_to_commit: The parts_to_commit of this CommitMultipartUploadDetails.

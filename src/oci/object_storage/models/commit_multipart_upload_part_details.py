@@ -9,8 +9,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CommitMultipartUploadPartDetails(object):
     """
-    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
-    talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+    To use any of the API operations, you must be authorized in an IAM policy. If you are not authorized,
+    talk to an administrator. If you are an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
     __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
@@ -71,7 +71,7 @@ class CommitMultipartUploadPartDetails(object):
     def etag(self):
         """
         **[Required]** Gets the etag of this CommitMultipartUploadPartDetails.
-        The ETag returned when this part was uploaded.
+        The entity tag (ETag) returned when this part was uploaded.
 
 
         :return: The etag of this CommitMultipartUploadPartDetails.
@@ -83,7 +83,7 @@ class CommitMultipartUploadPartDetails(object):
     def etag(self, etag):
         """
         Sets the etag of this CommitMultipartUploadPartDetails.
-        The ETag returned when this part was uploaded.
+        The entity tag (ETag) returned when this part was uploaded.
 
 
         :param etag: The etag of this CommitMultipartUploadPartDetails.

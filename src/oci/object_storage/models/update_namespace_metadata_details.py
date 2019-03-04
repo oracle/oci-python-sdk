@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateNamespaceMetadataDetails(object):
     """
-    An UpdateNamespaceMetadataDetails is used for update NamespaceMetadata. To be able to upate the NamespaceMetadata, a user
+    UpdateNamespaceMetadataDetails is used to update the NamespaceMetadata. To update NamespaceMetadata, a user
     must have NAMESPACE_UPDATE permission.
     """
 
@@ -44,7 +44,7 @@ class UpdateNamespaceMetadataDetails(object):
     def default_s3_compartment_id(self):
         """
         Gets the default_s3_compartment_id of this UpdateNamespaceMetadataDetails.
-        The update compartment id for an S3 client if this field is set.
+        The updated compartment id for use by an S3 client, if this field is set.
 
 
         :return: The default_s3_compartment_id of this UpdateNamespaceMetadataDetails.
@@ -56,7 +56,7 @@ class UpdateNamespaceMetadataDetails(object):
     def default_s3_compartment_id(self, default_s3_compartment_id):
         """
         Sets the default_s3_compartment_id of this UpdateNamespaceMetadataDetails.
-        The update compartment id for an S3 client if this field is set.
+        The updated compartment id for use by an S3 client, if this field is set.
 
 
         :param default_s3_compartment_id: The default_s3_compartment_id of this UpdateNamespaceMetadataDetails.
@@ -68,7 +68,7 @@ class UpdateNamespaceMetadataDetails(object):
     def default_swift_compartment_id(self):
         """
         Gets the default_swift_compartment_id of this UpdateNamespaceMetadataDetails.
-        The update compartment id for a Swift client if this field is set.
+        The updated compartment id for use by a Swift client, if this field is set.
 
 
         :return: The default_swift_compartment_id of this UpdateNamespaceMetadataDetails.
@@ -80,7 +80,7 @@ class UpdateNamespaceMetadataDetails(object):
     def default_swift_compartment_id(self, default_swift_compartment_id):
         """
         Sets the default_swift_compartment_id of this UpdateNamespaceMetadataDetails.
-        The update compartment id for a Swift client if this field is set.
+        The updated compartment id for use by a Swift client, if this field is set.
 
 
         :param default_swift_compartment_id: The default_swift_compartment_id of this UpdateNamespaceMetadataDetails.

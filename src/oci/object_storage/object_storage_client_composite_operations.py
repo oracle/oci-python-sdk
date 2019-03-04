@@ -27,14 +27,14 @@ class ObjectStorageClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str namespace_name: (required)
-            The top-level namespace used for the request.
+            The Object Storage namespace used for the request.
 
         :param str bucket_name: (required)
             The name of the bucket. Avoid entering confidential information.
             Example: `my-new-bucket1`
 
         :param CopyObjectDetails copy_object_details: (required)
-            The source and destination for object to be copied.
+            The source and destination of the object to be copied.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.object_storage.models.WorkRequest.status`
