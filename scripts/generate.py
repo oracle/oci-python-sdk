@@ -47,7 +47,10 @@ def get_spec_to_endpoint_map(pom):
     # specName and endpoint will be in the same additionalProperties node
     for additional_properties in generate_plugin_executions.iter('additionalProperties'):
         spec_name = additional_properties.find('specName').text
-        endpoint = additional_properties.find('endpoint').text
+        endpoint_property = additional_properties.find('endpoint')
+        endpoint = "None"
+        if endpoint_property is not None:
+            endpoint = endpoint_property.text
         specs[spec_name] = endpoint
 
     return specs
