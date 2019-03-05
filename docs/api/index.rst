@@ -88,6 +88,31 @@ Autoscaling
     :noindex:
 
 
+======
+Budget
+======
+
+--------
+ Client
+--------
+
+.. autoclass:: oci.budget.budget_client.BudgetClient
+    :members:
+    :noindex:
+
+--------
+ Models
+--------
+
+.. automodule:: oci.budget.models
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :imported-members:
+    :inherited-members:
+    :noindex:
+
+
 ================
 Container Engine
 ================
