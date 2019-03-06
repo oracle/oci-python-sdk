@@ -1267,6 +1267,43 @@ def test_generate_totp_seed(testing_service_client, config):
         )
 
 
+def test_get_authentication_policy(testing_service_client, config):
+    if not testing_service_client.is_api_enabled('identity', 'GetAuthenticationPolicy'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='GetAuthenticationPolicy')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
+            if pass_phrase:
+                config['pass_phrase'] = pass_phrase
+            client = oci.identity.IdentityClient(config)
+            response = client.get_authentication_policy(
+                compartment_id=request.pop(util.camelize('compartment_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'GetAuthenticationPolicy',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'authenticationPolicy',
+            False,
+            False
+        )
+
+
 def test_get_compartment(testing_service_client, config):
     if not testing_service_client.is_api_enabled('identity', 'GetCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2979,6 +3016,44 @@ def test_update_auth_token(testing_service_client, config):
             result,
             service_error,
             'authToken',
+            False,
+            False
+        )
+
+
+def test_update_authentication_policy(testing_service_client, config):
+    if not testing_service_client.is_api_enabled('identity', 'UpdateAuthenticationPolicy'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='UpdateAuthenticationPolicy')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
+            if pass_phrase:
+                config['pass_phrase'] = pass_phrase
+            client = oci.identity.IdentityClient(config)
+            response = client.update_authentication_policy(
+                compartment_id=request.pop(util.camelize('compartment_id')),
+                update_authentication_policy_details=request.pop(util.camelize('update_authentication_policy_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'UpdateAuthenticationPolicy',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'authenticationPolicy',
             False,
             False
         )

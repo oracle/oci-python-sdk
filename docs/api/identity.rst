@@ -21,6 +21,7 @@ Identity
     oci.identity.models.AddUserToGroupDetails
     oci.identity.models.ApiKey
     oci.identity.models.AuthToken
+    oci.identity.models.AuthenticationPolicy
     oci.identity.models.AvailabilityDomain
     oci.identity.models.ChangeTagNamespaceCompartmentDetail
     oci.identity.models.Compartment
@@ -51,6 +52,7 @@ Identity
     oci.identity.models.MfaTotpDevice
     oci.identity.models.MfaTotpDeviceSummary
     oci.identity.models.MfaTotpToken
+    oci.identity.models.PasswordPolicy
     oci.identity.models.Policy
     oci.identity.models.Region
     oci.identity.models.RegionSubscription
@@ -66,6 +68,7 @@ Identity
     oci.identity.models.Tenancy
     oci.identity.models.UIPassword
     oci.identity.models.UpdateAuthTokenDetails
+    oci.identity.models.UpdateAuthenticationPolicyDetails
     oci.identity.models.UpdateCompartmentDetails
     oci.identity.models.UpdateCustomerSecretKeyDetails
     oci.identity.models.UpdateDynamicGroupDetails

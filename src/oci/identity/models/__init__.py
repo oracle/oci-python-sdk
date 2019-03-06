@@ -6,6 +6,7 @@ from __future__ import absolute_import
 from .add_user_to_group_details import AddUserToGroupDetails
 from .api_key import ApiKey
 from .auth_token import AuthToken
+from .authentication_policy import AuthenticationPolicy
 from .availability_domain import AvailabilityDomain
 from .change_tag_namespace_compartment_detail import ChangeTagNamespaceCompartmentDetail
 from .compartment import Compartment
@@ -36,6 +37,7 @@ from .idp_group_mapping import IdpGroupMapping
 from .mfa_totp_device import MfaTotpDevice
 from .mfa_totp_device_summary import MfaTotpDeviceSummary
 from .mfa_totp_token import MfaTotpToken
+from .password_policy import PasswordPolicy
 from .policy import Policy
 from .region import Region
 from .region_subscription import RegionSubscription
@@ -51,6 +53,7 @@ from .tag_summary import TagSummary
 from .tenancy import Tenancy
 from .ui_password import UIPassword
 from .update_auth_token_details import UpdateAuthTokenDetails
+from .update_authentication_policy_details import UpdateAuthenticationPolicyDetails
 from .update_compartment_details import UpdateCompartmentDetails
 from .update_customer_secret_key_details import UpdateCustomerSecretKeyDetails
 from .update_dynamic_group_details import UpdateDynamicGroupDetails
@@ -80,6 +83,7 @@ identity_type_mapping = {
     "AddUserToGroupDetails": AddUserToGroupDetails,
     "ApiKey": ApiKey,
     "AuthToken": AuthToken,
+    "AuthenticationPolicy": AuthenticationPolicy,
     "AvailabilityDomain": AvailabilityDomain,
     "ChangeTagNamespaceCompartmentDetail": ChangeTagNamespaceCompartmentDetail,
     "Compartment": Compartment,
@@ -110,6 +114,7 @@ identity_type_mapping = {
     "MfaTotpDevice": MfaTotpDevice,
     "MfaTotpDeviceSummary": MfaTotpDeviceSummary,
     "MfaTotpToken": MfaTotpToken,
+    "PasswordPolicy": PasswordPolicy,
     "Policy": Policy,
     "Region": Region,
     "RegionSubscription": RegionSubscription,
@@ -125,6 +130,7 @@ identity_type_mapping = {
     "Tenancy": Tenancy,
     "UIPassword": UIPassword,
     "UpdateAuthTokenDetails": UpdateAuthTokenDetails,
+    "UpdateAuthenticationPolicyDetails": UpdateAuthenticationPolicyDetails,
     "UpdateCompartmentDetails": UpdateCompartmentDetails,
     "UpdateCustomerSecretKeyDetails": UpdateCustomerSecretKeyDetails,
     "UpdateDynamicGroupDetails": UpdateDynamicGroupDetails,
