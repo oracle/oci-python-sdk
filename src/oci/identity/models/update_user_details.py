@@ -21,6 +21,10 @@ class UpdateUserDetails(object):
             The value to assign to the description property of this UpdateUserDetails.
         :type description: str
 
+        :param email:
+            The value to assign to the email property of this UpdateUserDetails.
+        :type email: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateUserDetails.
         :type freeform_tags: dict(str, str)
@@ -32,17 +36,20 @@ class UpdateUserDetails(object):
         """
         self.swagger_types = {
             'description': 'str',
+            'email': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
             'description': 'description',
+            'email': 'email',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
         self._description = None
+        self._email = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -69,6 +76,30 @@ class UpdateUserDetails(object):
         :type: str
         """
         self._description = description
+
+    @property
+    def email(self):
+        """
+        Gets the email of this UpdateUserDetails.
+        The email you assign to the user. Has to be unique across the tenancy.
+
+
+        :return: The email of this UpdateUserDetails.
+        :rtype: str
+        """
+        return self._email
+
+    @email.setter
+    def email(self, email):
+        """
+        Sets the email of this UpdateUserDetails.
+        The email you assign to the user. Has to be unique across the tenancy.
+
+
+        :param email: The email of this UpdateUserDetails.
+        :type: str
+        """
+        self._email = email
 
     @property
     def freeform_tags(self):

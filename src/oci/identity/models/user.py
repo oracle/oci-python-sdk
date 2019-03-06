@@ -74,6 +74,10 @@ class User(object):
             The value to assign to the description property of this User.
         :type description: str
 
+        :param email:
+            The value to assign to the email property of this User.
+        :type email: str
+
         :param identity_provider_id:
             The value to assign to the identity_provider_id property of this User.
         :type identity_provider_id: str
@@ -118,6 +122,7 @@ class User(object):
             'compartment_id': 'str',
             'name': 'str',
             'description': 'str',
+            'email': 'str',
             'identity_provider_id': 'str',
             'external_identifier': 'str',
             'time_created': 'datetime',
@@ -134,6 +139,7 @@ class User(object):
             'compartment_id': 'compartmentId',
             'name': 'name',
             'description': 'description',
+            'email': 'email',
             'identity_provider_id': 'identityProviderId',
             'external_identifier': 'externalIdentifier',
             'time_created': 'timeCreated',
@@ -149,6 +155,7 @@ class User(object):
         self._compartment_id = None
         self._name = None
         self._description = None
+        self._email = None
         self._identity_provider_id = None
         self._external_identifier = None
         self._time_created = None
@@ -256,6 +263,32 @@ class User(object):
         :type: str
         """
         self._description = description
+
+    @property
+    def email(self):
+        """
+        Gets the email of this User.
+        The email you assign to the user during creation.
+        The name must be unique across all users in the tenancy.
+
+
+        :return: The email of this User.
+        :rtype: str
+        """
+        return self._email
+
+    @email.setter
+    def email(self, email):
+        """
+        Sets the email of this User.
+        The email you assign to the user during creation.
+        The name must be unique across all users in the tenancy.
+
+
+        :param email: The email of this User.
+        :type: str
+        """
+        self._email = email
 
     @property
     def identity_provider_id(self):

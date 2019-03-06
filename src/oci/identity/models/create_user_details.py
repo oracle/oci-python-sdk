@@ -29,6 +29,10 @@ class CreateUserDetails(object):
             The value to assign to the description property of this CreateUserDetails.
         :type description: str
 
+        :param email:
+            The value to assign to the email property of this CreateUserDetails.
+        :type email: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateUserDetails.
         :type freeform_tags: dict(str, str)
@@ -42,6 +46,7 @@ class CreateUserDetails(object):
             'compartment_id': 'str',
             'name': 'str',
             'description': 'str',
+            'email': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -50,6 +55,7 @@ class CreateUserDetails(object):
             'compartment_id': 'compartmentId',
             'name': 'name',
             'description': 'description',
+            'email': 'email',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -57,6 +63,7 @@ class CreateUserDetails(object):
         self._compartment_id = None
         self._name = None
         self._description = None
+        self._email = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -133,6 +140,30 @@ class CreateUserDetails(object):
         :type: str
         """
         self._description = description
+
+    @property
+    def email(self):
+        """
+        Gets the email of this CreateUserDetails.
+        The email you assign to the user. Has to be unique across the tenancy.
+
+
+        :return: The email of this CreateUserDetails.
+        :rtype: str
+        """
+        return self._email
+
+    @email.setter
+    def email(self, email):
+        """
+        Sets the email of this CreateUserDetails.
+        The email you assign to the user. Has to be unique across the tenancy.
+
+
+        :param email: The email of this CreateUserDetails.
+        :type: str
+        """
+        self._email = email
 
     @property
     def freeform_tags(self):
