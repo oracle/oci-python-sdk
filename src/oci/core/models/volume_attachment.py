@@ -446,7 +446,7 @@ class VolumeAttachment(object):
     def is_pv_encryption_in_transit_enabled(self):
         """
         Gets the is_pv_encryption_in_transit_enabled of this VolumeAttachment.
-        Whether the enable encryption in transit for the PV volume attachment is on or not.
+        Whether in-transit encryption for the data volume's paravirtualized attachment is enabled or not.
 
 
         :return: The is_pv_encryption_in_transit_enabled of this VolumeAttachment.
@@ -458,7 +458,7 @@ class VolumeAttachment(object):
     def is_pv_encryption_in_transit_enabled(self, is_pv_encryption_in_transit_enabled):
         """
         Sets the is_pv_encryption_in_transit_enabled of this VolumeAttachment.
-        Whether the enable encryption in transit for the PV volume attachment is on or not.
+        Whether in-transit encryption for the data volume's paravirtualized attachment is enabled or not.
 
 
         :param is_pv_encryption_in_transit_enabled: The is_pv_encryption_in_transit_enabled of this VolumeAttachment.

@@ -47,6 +47,42 @@ class FastConnectProviderService(object):
     #: This constant has a value of "PRIVATE"
     SUPPORTED_VIRTUAL_CIRCUIT_TYPES_PRIVATE = "PRIVATE"
 
+    #: A constant which can be used with the customer_asn_management property of a FastConnectProviderService.
+    #: This constant has a value of "CUSTOMER_MANAGED"
+    CUSTOMER_ASN_MANAGEMENT_CUSTOMER_MANAGED = "CUSTOMER_MANAGED"
+
+    #: A constant which can be used with the customer_asn_management property of a FastConnectProviderService.
+    #: This constant has a value of "PROVIDER_MANAGED"
+    CUSTOMER_ASN_MANAGEMENT_PROVIDER_MANAGED = "PROVIDER_MANAGED"
+
+    #: A constant which can be used with the customer_asn_management property of a FastConnectProviderService.
+    #: This constant has a value of "ORACLE_MANAGED"
+    CUSTOMER_ASN_MANAGEMENT_ORACLE_MANAGED = "ORACLE_MANAGED"
+
+    #: A constant which can be used with the provider_service_key_management property of a FastConnectProviderService.
+    #: This constant has a value of "CUSTOMER_MANAGED"
+    PROVIDER_SERVICE_KEY_MANAGEMENT_CUSTOMER_MANAGED = "CUSTOMER_MANAGED"
+
+    #: A constant which can be used with the provider_service_key_management property of a FastConnectProviderService.
+    #: This constant has a value of "PROVIDER_MANAGED"
+    PROVIDER_SERVICE_KEY_MANAGEMENT_PROVIDER_MANAGED = "PROVIDER_MANAGED"
+
+    #: A constant which can be used with the provider_service_key_management property of a FastConnectProviderService.
+    #: This constant has a value of "ORACLE_MANAGED"
+    PROVIDER_SERVICE_KEY_MANAGEMENT_ORACLE_MANAGED = "ORACLE_MANAGED"
+
+    #: A constant which can be used with the bandwith_shape_management property of a FastConnectProviderService.
+    #: This constant has a value of "CUSTOMER_MANAGED"
+    BANDWITH_SHAPE_MANAGEMENT_CUSTOMER_MANAGED = "CUSTOMER_MANAGED"
+
+    #: A constant which can be used with the bandwith_shape_management property of a FastConnectProviderService.
+    #: This constant has a value of "PROVIDER_MANAGED"
+    BANDWITH_SHAPE_MANAGEMENT_PROVIDER_MANAGED = "PROVIDER_MANAGED"
+
+    #: A constant which can be used with the bandwith_shape_management property of a FastConnectProviderService.
+    #: This constant has a value of "ORACLE_MANAGED"
+    BANDWITH_SHAPE_MANAGEMENT_ORACLE_MANAGED = "ORACLE_MANAGED"
+
     #: A constant which can be used with the type property of a FastConnectProviderService.
     #: This constant has a value of "LAYER2"
     TYPE_LAYER2 = "LAYER2"
@@ -94,6 +130,28 @@ class FastConnectProviderService(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type supported_virtual_circuit_types: list[str]
 
+        :param customer_asn_management:
+            The value to assign to the customer_asn_management property of this FastConnectProviderService.
+            Allowed values for this property are: "CUSTOMER_MANAGED", "PROVIDER_MANAGED", "ORACLE_MANAGED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type customer_asn_management: str
+
+        :param provider_service_key_management:
+            The value to assign to the provider_service_key_management property of this FastConnectProviderService.
+            Allowed values for this property are: "CUSTOMER_MANAGED", "PROVIDER_MANAGED", "ORACLE_MANAGED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type provider_service_key_management: str
+
+        :param bandwith_shape_management:
+            The value to assign to the bandwith_shape_management property of this FastConnectProviderService.
+            Allowed values for this property are: "CUSTOMER_MANAGED", "PROVIDER_MANAGED", "ORACLE_MANAGED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type bandwith_shape_management: str
+
+        :param required_total_cross_connects:
+            The value to assign to the required_total_cross_connects property of this FastConnectProviderService.
+        :type required_total_cross_connects: int
+
         :param type:
             The value to assign to the type property of this FastConnectProviderService.
             Allowed values for this property are: "LAYER2", "LAYER3", 'UNKNOWN_ENUM_VALUE'.
@@ -109,6 +167,10 @@ class FastConnectProviderService(object):
             'provider_service_name': 'str',
             'public_peering_bgp_management': 'str',
             'supported_virtual_circuit_types': 'list[str]',
+            'customer_asn_management': 'str',
+            'provider_service_key_management': 'str',
+            'bandwith_shape_management': 'str',
+            'required_total_cross_connects': 'int',
             'type': 'str'
         }
 
@@ -120,6 +182,10 @@ class FastConnectProviderService(object):
             'provider_service_name': 'providerServiceName',
             'public_peering_bgp_management': 'publicPeeringBgpManagement',
             'supported_virtual_circuit_types': 'supportedVirtualCircuitTypes',
+            'customer_asn_management': 'customerAsnManagement',
+            'provider_service_key_management': 'providerServiceKeyManagement',
+            'bandwith_shape_management': 'bandwithShapeManagement',
+            'required_total_cross_connects': 'requiredTotalCrossConnects',
             'type': 'type'
         }
 
@@ -130,6 +196,10 @@ class FastConnectProviderService(object):
         self._provider_service_name = None
         self._public_peering_bgp_management = None
         self._supported_virtual_circuit_types = None
+        self._customer_asn_management = None
+        self._provider_service_key_management = None
+        self._bandwith_shape_management = None
+        self._required_total_cross_connects = None
         self._type = None
 
     @property
@@ -317,6 +387,122 @@ class FastConnectProviderService(object):
         if supported_virtual_circuit_types:
             supported_virtual_circuit_types[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in supported_virtual_circuit_types]
         self._supported_virtual_circuit_types = supported_virtual_circuit_types
+
+    @property
+    def customer_asn_management(self):
+        """
+        **[Required]** Gets the customer_asn_management of this FastConnectProviderService.
+        Who is responsible for managing the ASN information for the network at the other end
+        of the connection from Oracle.
+
+        Allowed values for this property are: "CUSTOMER_MANAGED", "PROVIDER_MANAGED", "ORACLE_MANAGED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The customer_asn_management of this FastConnectProviderService.
+        :rtype: str
+        """
+        return self._customer_asn_management
+
+    @customer_asn_management.setter
+    def customer_asn_management(self, customer_asn_management):
+        """
+        Sets the customer_asn_management of this FastConnectProviderService.
+        Who is responsible for managing the ASN information for the network at the other end
+        of the connection from Oracle.
+
+
+        :param customer_asn_management: The customer_asn_management of this FastConnectProviderService.
+        :type: str
+        """
+        allowed_values = ["CUSTOMER_MANAGED", "PROVIDER_MANAGED", "ORACLE_MANAGED"]
+        if not value_allowed_none_or_none_sentinel(customer_asn_management, allowed_values):
+            customer_asn_management = 'UNKNOWN_ENUM_VALUE'
+        self._customer_asn_management = customer_asn_management
+
+    @property
+    def provider_service_key_management(self):
+        """
+        **[Required]** Gets the provider_service_key_management of this FastConnectProviderService.
+        Who is responsible for managing the provider service key.
+
+        Allowed values for this property are: "CUSTOMER_MANAGED", "PROVIDER_MANAGED", "ORACLE_MANAGED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The provider_service_key_management of this FastConnectProviderService.
+        :rtype: str
+        """
+        return self._provider_service_key_management
+
+    @provider_service_key_management.setter
+    def provider_service_key_management(self, provider_service_key_management):
+        """
+        Sets the provider_service_key_management of this FastConnectProviderService.
+        Who is responsible for managing the provider service key.
+
+
+        :param provider_service_key_management: The provider_service_key_management of this FastConnectProviderService.
+        :type: str
+        """
+        allowed_values = ["CUSTOMER_MANAGED", "PROVIDER_MANAGED", "ORACLE_MANAGED"]
+        if not value_allowed_none_or_none_sentinel(provider_service_key_management, allowed_values):
+            provider_service_key_management = 'UNKNOWN_ENUM_VALUE'
+        self._provider_service_key_management = provider_service_key_management
+
+    @property
+    def bandwith_shape_management(self):
+        """
+        **[Required]** Gets the bandwith_shape_management of this FastConnectProviderService.
+        Who is responsible for managing the virtual circuit bandwidth.
+
+        Allowed values for this property are: "CUSTOMER_MANAGED", "PROVIDER_MANAGED", "ORACLE_MANAGED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The bandwith_shape_management of this FastConnectProviderService.
+        :rtype: str
+        """
+        return self._bandwith_shape_management
+
+    @bandwith_shape_management.setter
+    def bandwith_shape_management(self, bandwith_shape_management):
+        """
+        Sets the bandwith_shape_management of this FastConnectProviderService.
+        Who is responsible for managing the virtual circuit bandwidth.
+
+
+        :param bandwith_shape_management: The bandwith_shape_management of this FastConnectProviderService.
+        :type: str
+        """
+        allowed_values = ["CUSTOMER_MANAGED", "PROVIDER_MANAGED", "ORACLE_MANAGED"]
+        if not value_allowed_none_or_none_sentinel(bandwith_shape_management, allowed_values):
+            bandwith_shape_management = 'UNKNOWN_ENUM_VALUE'
+        self._bandwith_shape_management = bandwith_shape_management
+
+    @property
+    def required_total_cross_connects(self):
+        """
+        **[Required]** Gets the required_total_cross_connects of this FastConnectProviderService.
+        Total number of cross-connect or cross-connect groups required for the virtual circuit.
+
+
+        :return: The required_total_cross_connects of this FastConnectProviderService.
+        :rtype: int
+        """
+        return self._required_total_cross_connects
+
+    @required_total_cross_connects.setter
+    def required_total_cross_connects(self, required_total_cross_connects):
+        """
+        Sets the required_total_cross_connects of this FastConnectProviderService.
+        Total number of cross-connect or cross-connect groups required for the virtual circuit.
+
+
+        :param required_total_cross_connects: The required_total_cross_connects of this FastConnectProviderService.
+        :type: int
+        """
+        self._required_total_cross_connects = required_total_cross_connects
 
     @property
     def type(self):

@@ -462,7 +462,7 @@ class ComputeClient(object):
 
         When importing an image based on the Object Storage URL, use
         :func:`image_source_via_object_storage_uri_details`.
-        See `Object Storage URLs`__ and `pre-authenticated requests`__
+        See `Object Storage URLs`__ and `Using Pre-Authenticated Requests`__
         for constructing URLs for image import/export.
 
         For more information about importing exported images, see
@@ -474,7 +474,7 @@ class ComputeClient(object):
 
         __ https://docs.cloud.oracle.com/Content/Compute/Tasks/managingcustomimages.htm
         __ https://docs.cloud.oracle.com/Content/Compute/Tasks/imageimportexport.htm#URLs
-        __ https://docs.cloud.oracle.com/Content/Object/Tasks/managingaccess.htm#pre-auth
+        __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingpreauthenticatedrequests.htm
         __ https://docs.cloud.oracle.com/Content/Compute/Tasks/imageimportexport.htm
 
 
@@ -1147,13 +1147,13 @@ class ComputeClient(object):
         To perform an image export, you need write access to the Object Storage bucket for the image,
         see `Let Users Write Objects to Object Storage Buckets`__.
 
-        See `Object Storage URLs`__ and `pre-authenticated requests`__
+        See `Object Storage URLs`__ and `Using Pre-Authenticated Requests`__
         for constructing URLs for image import/export.
 
         __ https://docs.cloud.oracle.com/Content/Compute/Tasks/imageimportexport.htm
         __ https://docs.cloud.oracle.com/Content/Identity/Concepts/commonpolicies.htm#Let4
         __ https://docs.cloud.oracle.com/Content/Compute/Tasks/imageimportexport.htm#URLs
-        __ https://docs.cloud.oracle.com/Content/Object/Tasks/managingaccess.htm#pre-auth
+        __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingpreauthenticatedrequests.htm
 
 
         :param str image_id: (required)

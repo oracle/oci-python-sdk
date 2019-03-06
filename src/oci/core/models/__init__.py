@@ -86,6 +86,7 @@ from .export_image_details import ExportImageDetails
 from .export_image_via_object_storage_tuple_details import ExportImageViaObjectStorageTupleDetails
 from .export_image_via_object_storage_uri_details import ExportImageViaObjectStorageUriDetails
 from .fast_connect_provider_service import FastConnectProviderService
+from .fast_connect_provider_service_key import FastConnectProviderServiceKey
 from .get_public_ip_by_ip_address_details import GetPublicIpByIpAddressDetails
 from .get_public_ip_by_private_ip_id_details import GetPublicIpByPrivateIpIdDetails
 from .ip_sec_connection import IPSecConnection
@@ -299,6 +300,7 @@ core_type_mapping = {
     "ExportImageViaObjectStorageTupleDetails": ExportImageViaObjectStorageTupleDetails,
     "ExportImageViaObjectStorageUriDetails": ExportImageViaObjectStorageUriDetails,
     "FastConnectProviderService": FastConnectProviderService,
+    "FastConnectProviderServiceKey": FastConnectProviderServiceKey,
     "GetPublicIpByIpAddressDetails": GetPublicIpByIpAddressDetails,
     "GetPublicIpByPrivateIpIdDetails": GetPublicIpByPrivateIpIdDetails,
     "IPSecConnection": IPSecConnection,

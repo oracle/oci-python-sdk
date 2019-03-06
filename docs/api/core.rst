@@ -107,6 +107,7 @@ Core Services
     oci.core.models.ExportImageViaObjectStorageTupleDetails
     oci.core.models.ExportImageViaObjectStorageUriDetails
     oci.core.models.FastConnectProviderService
+    oci.core.models.FastConnectProviderServiceKey
     oci.core.models.GetPublicIpByIpAddressDetails
     oci.core.models.GetPublicIpByPrivateIpIdDetails
     oci.core.models.IPSecConnection

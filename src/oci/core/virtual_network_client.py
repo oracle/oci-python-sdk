@@ -4245,6 +4245,74 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 response_type="FastConnectProviderService")
 
+    def get_fast_connect_provider_service_key(self, provider_service_id, provider_service_key_name, **kwargs):
+        """
+        GetFastConnectProviderServiceKey
+        Gets the specified provider service key's information.
+
+
+        :param str provider_service_id: (required)
+            The OCID of the provider service.
+
+        :param str provider_service_key_name: (required)
+            The provider service key name.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.FastConnectProviderServiceKey`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/fastConnectProviderServices/{providerServiceId}/providerServiceKeys/{providerServiceKeyName}"
+        method = "GET"
+
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_fast_connect_provider_service_key got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "providerServiceId": provider_service_id,
+            "providerServiceKeyName": provider_service_key_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="FastConnectProviderServiceKey")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="FastConnectProviderServiceKey")
+
     def get_internet_gateway(self, ig_id, **kwargs):
         """
         GetInternetGateway

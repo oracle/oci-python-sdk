@@ -21,16 +21,23 @@ class UpdateCrossConnectGroupDetails(object):
             The value to assign to the display_name property of this UpdateCrossConnectGroupDetails.
         :type display_name: str
 
+        :param customer_reference_name:
+            The value to assign to the customer_reference_name property of this UpdateCrossConnectGroupDetails.
+        :type customer_reference_name: str
+
         """
         self.swagger_types = {
-            'display_name': 'str'
+            'display_name': 'str',
+            'customer_reference_name': 'str'
         }
 
         self.attribute_map = {
-            'display_name': 'displayName'
+            'display_name': 'displayName',
+            'customer_reference_name': 'customerReferenceName'
         }
 
         self._display_name = None
+        self._customer_reference_name = None
 
     @property
     def display_name(self):
@@ -57,6 +64,32 @@ class UpdateCrossConnectGroupDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def customer_reference_name(self):
+        """
+        Gets the customer_reference_name of this UpdateCrossConnectGroupDetails.
+        A reference name or identifier for the physical fiber connection that this cross-connect
+        group uses.
+
+
+        :return: The customer_reference_name of this UpdateCrossConnectGroupDetails.
+        :rtype: str
+        """
+        return self._customer_reference_name
+
+    @customer_reference_name.setter
+    def customer_reference_name(self, customer_reference_name):
+        """
+        Sets the customer_reference_name of this UpdateCrossConnectGroupDetails.
+        A reference name or identifier for the physical fiber connection that this cross-connect
+        group uses.
+
+
+        :param customer_reference_name: The customer_reference_name of this UpdateCrossConnectGroupDetails.
+        :type: str
+        """
+        self._customer_reference_name = customer_reference_name
 
     def __repr__(self):
         return formatted_flat_dict(self)

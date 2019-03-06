@@ -1995,6 +1995,44 @@ def test_get_fast_connect_provider_service(testing_service_client, config):
         )
 
 
+def test_get_fast_connect_provider_service_key(testing_service_client, config):
+    if not testing_service_client.is_api_enabled('core', 'GetFastConnectProviderServiceKey'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='GetFastConnectProviderServiceKey')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
+            if pass_phrase:
+                config['pass_phrase'] = pass_phrase
+            client = oci.core.VirtualNetworkClient(config)
+            response = client.get_fast_connect_provider_service_key(
+                provider_service_id=request.pop(util.camelize('provider_service_id')),
+                provider_service_key_name=request.pop(util.camelize('provider_service_key_name')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'GetFastConnectProviderServiceKey',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'fastConnectProviderServiceKey',
+            False,
+            False
+        )
+
+
 def test_get_internet_gateway(testing_service_client, config):
     if not testing_service_client.is_api_enabled('core', 'GetInternetGateway'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

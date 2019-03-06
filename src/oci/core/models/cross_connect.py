@@ -96,6 +96,10 @@ class CrossConnect(object):
             The value to assign to the port_speed_shape_name property of this CrossConnect.
         :type port_speed_shape_name: str
 
+        :param customer_reference_name:
+            The value to assign to the customer_reference_name property of this CrossConnect.
+        :type customer_reference_name: str
+
         :param time_created:
             The value to assign to the time_created property of this CrossConnect.
         :type time_created: datetime
@@ -110,6 +114,7 @@ class CrossConnect(object):
             'location_name': 'str',
             'port_name': 'str',
             'port_speed_shape_name': 'str',
+            'customer_reference_name': 'str',
             'time_created': 'datetime'
         }
 
@@ -122,6 +127,7 @@ class CrossConnect(object):
             'location_name': 'locationName',
             'port_name': 'portName',
             'port_speed_shape_name': 'portSpeedShapeName',
+            'customer_reference_name': 'customerReferenceName',
             'time_created': 'timeCreated'
         }
 
@@ -133,6 +139,7 @@ class CrossConnect(object):
         self._location_name = None
         self._port_name = None
         self._port_speed_shape_name = None
+        self._customer_reference_name = None
         self._time_created = None
 
     @property
@@ -338,6 +345,32 @@ class CrossConnect(object):
         :type: str
         """
         self._port_speed_shape_name = port_speed_shape_name
+
+    @property
+    def customer_reference_name(self):
+        """
+        Gets the customer_reference_name of this CrossConnect.
+        A reference name or identifier for the physical fiber connection that this cross-connect
+        uses.
+
+
+        :return: The customer_reference_name of this CrossConnect.
+        :rtype: str
+        """
+        return self._customer_reference_name
+
+    @customer_reference_name.setter
+    def customer_reference_name(self, customer_reference_name):
+        """
+        Sets the customer_reference_name of this CrossConnect.
+        A reference name or identifier for the physical fiber connection that this cross-connect
+        uses.
+
+
+        :param customer_reference_name: The customer_reference_name of this CrossConnect.
+        :type: str
+        """
+        self._customer_reference_name = customer_reference_name
 
     @property
     def time_created(self):

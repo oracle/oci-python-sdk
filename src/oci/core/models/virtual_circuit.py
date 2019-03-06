@@ -179,6 +179,10 @@ class VirtualCircuit(object):
             The value to assign to the provider_service_id property of this VirtualCircuit.
         :type provider_service_id: str
 
+        :param provider_service_key_name:
+            The value to assign to the provider_service_key_name property of this VirtualCircuit.
+        :type provider_service_key_name: str
+
         :param provider_service_name:
             The value to assign to the provider_service_name property of this VirtualCircuit.
         :type provider_service_name: str
@@ -232,6 +236,7 @@ class VirtualCircuit(object):
             'oracle_bgp_asn': 'int',
             'provider_name': 'str',
             'provider_service_id': 'str',
+            'provider_service_key_name': 'str',
             'provider_service_name': 'str',
             'provider_state': 'str',
             'public_prefixes': 'list[str]',
@@ -256,6 +261,7 @@ class VirtualCircuit(object):
             'oracle_bgp_asn': 'oracleBgpAsn',
             'provider_name': 'providerName',
             'provider_service_id': 'providerServiceId',
+            'provider_service_key_name': 'providerServiceKeyName',
             'provider_service_name': 'providerServiceName',
             'provider_state': 'providerState',
             'public_prefixes': 'publicPrefixes',
@@ -279,6 +285,7 @@ class VirtualCircuit(object):
         self._oracle_bgp_asn = None
         self._provider_name = None
         self._provider_service_id = None
+        self._provider_service_key_name = None
         self._provider_service_name = None
         self._provider_state = None
         self._public_prefixes = None
@@ -324,7 +331,8 @@ class VirtualCircuit(object):
     def bgp_management(self):
         """
         Gets the bgp_management of this VirtualCircuit.
-        BGP management option.
+        Deprecated. Instead use the information in
+        :class:`FastConnectProviderService`.
 
         Allowed values for this property are: "CUSTOMER_MANAGED", "PROVIDER_MANAGED", "ORACLE_MANAGED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -339,7 +347,8 @@ class VirtualCircuit(object):
     def bgp_management(self, bgp_management):
         """
         Sets the bgp_management of this VirtualCircuit.
-        BGP management option.
+        Deprecated. Instead use the information in
+        :class:`FastConnectProviderService`.
 
 
         :param bgp_management: The bgp_management of this VirtualCircuit.
@@ -649,6 +658,30 @@ class VirtualCircuit(object):
         :type: str
         """
         self._provider_service_id = provider_service_id
+
+    @property
+    def provider_service_key_name(self):
+        """
+        Gets the provider_service_key_name of this VirtualCircuit.
+        The service key name offered by the provider (if the customer is connecting via a provider).
+
+
+        :return: The provider_service_key_name of this VirtualCircuit.
+        :rtype: str
+        """
+        return self._provider_service_key_name
+
+    @provider_service_key_name.setter
+    def provider_service_key_name(self, provider_service_key_name):
+        """
+        Sets the provider_service_key_name of this VirtualCircuit.
+        The service key name offered by the provider (if the customer is connecting via a provider).
+
+
+        :param provider_service_key_name: The provider_service_key_name of this VirtualCircuit.
+        :type: str
+        """
+        self._provider_service_key_name = provider_service_key_name
 
     @property
     def provider_service_name(self):
