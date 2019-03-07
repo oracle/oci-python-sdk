@@ -230,7 +230,7 @@ class LaunchDbSystemBase(object):
         """
         Gets the fault_domains of this LaunchDbSystemBase.
         A fault domain is a grouping of hardware and infrastructure within an availability domain.
-        fault domains let you distribute your instances so that they are not on the same physical
+        Fault domains let you distribute your instances so that they are not on the same physical
         hardware within a single availability domain. A hardware failure or maintenance
         that affects one fault domain does not affect DB systems in other fault domains.
 
@@ -258,7 +258,7 @@ class LaunchDbSystemBase(object):
         """
         Sets the fault_domains of this LaunchDbSystemBase.
         A fault domain is a grouping of hardware and infrastructure within an availability domain.
-        fault domains let you distribute your instances so that they are not on the same physical
+        Fault domains let you distribute your instances so that they are not on the same physical
         hardware within a single availability domain. A hardware failure or maintenance
         that affects one fault domain does not affect DB systems in other fault domains.
 
@@ -517,8 +517,8 @@ class LaunchDbSystemBase(object):
     def hostname(self):
         """
         **[Required]** Gets the hostname of this LaunchDbSystemBase.
-        The hostname for the DB system. The hostname must begin with an alphabetic character and
-        can contain a maximum of 30 alphanumeric characters, including hyphens (-).
+        The hostname for the DB system. The hostname must begin with an alphabetic character, and
+        can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata DB systems.
 
         The maximum length of the combined hostname and domain is 63 characters.
 
@@ -535,8 +535,8 @@ class LaunchDbSystemBase(object):
     def hostname(self, hostname):
         """
         Sets the hostname of this LaunchDbSystemBase.
-        The hostname for the DB system. The hostname must begin with an alphabetic character and
-        can contain a maximum of 30 alphanumeric characters, including hyphens (-).
+        The hostname for the DB system. The hostname must begin with an alphabetic character, and
+        can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata DB systems.
 
         The maximum length of the combined hostname and domain is 63 characters.
 

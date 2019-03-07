@@ -40,12 +40,16 @@ from .database_summary import DatabaseSummary
 from .db_backup_config import DbBackupConfig
 from .db_home import DbHome
 from .db_home_summary import DbHomeSummary
+from .db_iorm_config import DbIormConfig
+from .db_iorm_config_update_detail import DbIormConfigUpdateDetail
 from .db_node import DbNode
 from .db_node_summary import DbNodeSummary
 from .db_system import DbSystem
 from .db_system_shape_summary import DbSystemShapeSummary
 from .db_system_summary import DbSystemSummary
 from .db_version_summary import DbVersionSummary
+from .exadata_iorm_config import ExadataIormConfig
+from .exadata_iorm_config_update_details import ExadataIormConfigUpdateDetails
 from .external_backup_job import ExternalBackupJob
 from .failover_data_guard_association_details import FailoverDataGuardAssociationDetails
 from .generate_autonomous_data_warehouse_wallet_details import GenerateAutonomousDataWarehouseWalletDetails
@@ -108,12 +112,16 @@ database_type_mapping = {
     "DbBackupConfig": DbBackupConfig,
     "DbHome": DbHome,
     "DbHomeSummary": DbHomeSummary,
+    "DbIormConfig": DbIormConfig,
+    "DbIormConfigUpdateDetail": DbIormConfigUpdateDetail,
     "DbNode": DbNode,
     "DbNodeSummary": DbNodeSummary,
     "DbSystem": DbSystem,
     "DbSystemShapeSummary": DbSystemShapeSummary,
     "DbSystemSummary": DbSystemSummary,
     "DbVersionSummary": DbVersionSummary,
+    "ExadataIormConfig": ExadataIormConfig,
+    "ExadataIormConfigUpdateDetails": ExadataIormConfigUpdateDetails,
     "ExternalBackupJob": ExternalBackupJob,
     "FailoverDataGuardAssociationDetails": FailoverDataGuardAssociationDetails,
     "GenerateAutonomousDataWarehouseWalletDetails": GenerateAutonomousDataWarehouseWalletDetails,

@@ -73,6 +73,10 @@ class DbSystem(object):
         Initializes a new DbSystem object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param iorm_config_cache:
+            The value to assign to the iorm_config_cache property of this DbSystem.
+        :type iorm_config_cache: ExadataIormConfig
+
         :param id:
             The value to assign to the id property of this DbSystem.
         :type id: str
@@ -215,6 +219,7 @@ class DbSystem(object):
 
         """
         self.swagger_types = {
+            'iorm_config_cache': 'ExadataIormConfig',
             'id': 'str',
             'compartment_id': 'str',
             'display_name': 'str',
@@ -251,6 +256,7 @@ class DbSystem(object):
         }
 
         self.attribute_map = {
+            'iorm_config_cache': 'iormConfigCache',
             'id': 'id',
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
@@ -286,6 +292,7 @@ class DbSystem(object):
             'defined_tags': 'definedTags'
         }
 
+        self._iorm_config_cache = None
         self._id = None
         self._compartment_id = None
         self._display_name = None
@@ -319,6 +326,26 @@ class DbSystem(object):
         self._license_model = None
         self._freeform_tags = None
         self._defined_tags = None
+
+    @property
+    def iorm_config_cache(self):
+        """
+        Gets the iorm_config_cache of this DbSystem.
+
+        :return: The iorm_config_cache of this DbSystem.
+        :rtype: ExadataIormConfig
+        """
+        return self._iorm_config_cache
+
+    @iorm_config_cache.setter
+    def iorm_config_cache(self, iorm_config_cache):
+        """
+        Sets the iorm_config_cache of this DbSystem.
+
+        :param iorm_config_cache: The iorm_config_cache of this DbSystem.
+        :type: ExadataIormConfig
+        """
+        self._iorm_config_cache = iorm_config_cache
 
     @property
     def id(self):
