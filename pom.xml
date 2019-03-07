@@ -34,6 +34,7 @@
     <ons-gateway-spec-spec-file>api.yaml</ons-gateway-spec-spec-file>
     <autoscaling-public-api-spec-spec-file>release/autoscaling-api-spec.yaml</autoscaling-public-api-spec-spec-file>
     <maestro-spec-spec-file>api.yaml</maestro-spec-spec-file>
+    <budgets-control-plane-spec-spec-file>budget.api.cond.yaml</budgets-control-plane-spec-spec-file>
   </properties>
   <dependencies>
     <dependency>
@@ -115,6 +116,10 @@
     <dependency>
       <groupId>com.oracle.pic.orchestration.orm</groupId>
       <artifactId>maestro-spec</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.oci.usage.budgets</groupId>
+      <artifactId>budgets-control-plane-spec</artifactId>
     </dependency>
   </dependencies>
   <build>
@@ -498,6 +503,24 @@
                   <type>jar</type>
                   <includes>**/*</includes>
                   <outputDirectory>${spec-temp-dir}/maestro-spec</outputDirectory>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+          <execution>
+            <id>unpack-budgets-control-plane-spec</id>
+            <phase>initialize</phase>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>com.oracle.oci.usage.budgets</groupId>
+                  <artifactId>budgets-control-plane-spec</artifactId>
+                  <type>jar</type>
+                  <includes>**/*</includes>
+                  <outputDirectory>${spec-temp-dir}/budgets-control-plane-spec</outputDirectory>
                 </artifactItem>
               </artifactItems>
             </configuration>
@@ -1049,6 +1072,33 @@
               <groupFileCollectionDir>${enabled-groups-dir}</groupFileCollectionDir>
             </configuration>
           </execution>
+          <execution>
+            <id>spec-conditionals-prefer-budgets-control-plane-spec</id>
+            <phase>initialize</phase>
+            <goals>
+              <goal>prefer</goal>
+            </goals>
+            <configuration>
+              <inputFiles>
+                <inputFile>${spec-temp-dir}/budgets-control-plane-spec/source/${budgets-control-plane-spec-spec-file}</inputFile>
+                <inputFile>${spec-temp-dir}/budgets-control-plane-spec/${budgets-control-plane-spec-spec-file}</inputFile>
+              </inputFiles>
+              <outputFile>${preferred-temp-dir}/budgets-control-plane-spec/${budgets-control-plane-spec-spec-file}</outputFile>
+            </configuration>
+          </execution>
+          <execution>
+            <id>spec-conditionals-preprocess-budgets-control-plane-spec</id>
+            <phase>initialize</phase>
+            <goals>
+              <goal>preprocess</goal>
+            </goals>
+            <configuration>
+              <inputFile>${preferred-temp-dir}/budgets-control-plane-spec/${budgets-control-plane-spec-spec-file}</inputFile>
+              <outputFile>${preprocessed-temp-dir}/budgets-control-plane-spec/${budgets-control-plane-spec-spec-file}</outputFile>
+              <groupFile>${enabled-groups-file}</groupFile>
+              <groupFileCollectionDir>${enabled-groups-dir}</groupFileCollectionDir>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
       <plugin>
@@ -1495,6 +1545,27 @@
               <isTestGenerationEnabled>true</isTestGenerationEnabled>
             </configuration>
           </execution>
+          <execution>
+            <id>python-public-sdk-budgets-control-plane-spec</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <language>oracle-python-sdk</language>
+              <specPath>${preprocessed-temp-dir}/budgets-control-plane-spec/${budgets-control-plane-spec-spec-file}</specPath>
+              <outputDir>src/oci</outputDir>
+              <basePackage>OCI</basePackage>
+              <specGenerationType>PUBLIC</specGenerationType>
+              <additionalProperties>
+                <specName>budget</specName>
+                <generateInitFile>true</generateInitFile>
+              </additionalProperties>
+              <featureIdConfigFile>${feature-id-file}</featureIdConfigFile>
+              <featureIdConfigDir>${feature-id-dir}</featureIdConfigDir>
+              <isTestGenerationEnabled>true</isTestGenerationEnabled>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
       <plugin>
@@ -1793,6 +1864,12 @@
                 <include>**/*</include>
               </includes>
             </fileset>
+            <fileset>
+              <directory>src/oci/budget</directory>
+              <includes>
+                <include>**/*</include>
+              </includes>
+            </fileset>
           </filesets>
         </configuration>
       </plugin>
@@ -1899,6 +1976,11 @@
         <groupId>com.oracle.pic.orchestration.orm</groupId>
         <artifactId>maestro-spec</artifactId>
         <version>0.0.8</version>
+      </dependency>
+      <dependency>
+        <groupId>com.oracle.oci.usage.budgets</groupId>
+        <artifactId>budgets-control-plane-spec</artifactId>
+        <version>2.3.1</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

@@ -59,3 +59,5 @@
 ^src/oci/ons/.*\.py$
 ^src/oci/autoscaling/.*\.py$
 ^src/oci/resource_manager/.*\.py$
+
+^src/oci/budget/.*\.py$
