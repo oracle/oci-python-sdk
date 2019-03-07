@@ -38,6 +38,7 @@ Identity
     oci.identity.models.CreateSaml2IdentityProviderDetails
     oci.identity.models.CreateSmtpCredentialDetails
     oci.identity.models.CreateSwiftPasswordDetails
+    oci.identity.models.CreateTagDefaultDetails
     oci.identity.models.CreateTagDetails
     oci.identity.models.CreateTagNamespaceDetails
     oci.identity.models.CreateUserDetails
@@ -62,6 +63,8 @@ Identity
     oci.identity.models.SmtpCredentialSummary
     oci.identity.models.SwiftPassword
     oci.identity.models.Tag
+    oci.identity.models.TagDefault
+    oci.identity.models.TagDefaultSummary
     oci.identity.models.TagNamespace
     oci.identity.models.TagNamespaceSummary
     oci.identity.models.TagSummary
@@ -80,6 +83,7 @@ Identity
     oci.identity.models.UpdateSmtpCredentialDetails
     oci.identity.models.UpdateStateDetails
     oci.identity.models.UpdateSwiftPasswordDetails
+    oci.identity.models.UpdateTagDefaultDetails
     oci.identity.models.UpdateTagDetails
     oci.identity.models.UpdateTagNamespaceDetails
     oci.identity.models.UpdateUserCapabilitiesDetails
