@@ -82,7 +82,7 @@ class IdentityClient(object):
     def activate_mfa_totp_device(self, user_id, mfa_totp_device_id, mfa_totp_token, **kwargs):
         """
         ActivateMfaTotpDevice
-        Activate the specified MFA TOTP device for the user.
+        Activates the specified MFA TOTP device for the user. Activation requires manual interaction with the Console.
 
 
         :param str user_id: (required)
@@ -974,7 +974,7 @@ class IdentityClient(object):
     def create_mfa_totp_device(self, user_id, **kwargs):
         """
         CreateMfaTotpDevice
-        Create a new MFA TOTP device for the user. A user can only create one MFA TOTP device.
+        Creates a new MFA TOTP device for the user. A user can have one MFA TOTP device.
 
 
         :param str user_id: (required)
@@ -2396,7 +2396,7 @@ class IdentityClient(object):
     def delete_mfa_totp_device(self, user_id, mfa_totp_device_id, **kwargs):
         """
         DeleteMfaTotpDevice
-        Delete the specified MFA TOTP device for the specified user.
+        Deletes the specified MFA TOTP device for the specified user.
 
 
         :param str user_id: (required)
@@ -2775,7 +2775,7 @@ class IdentityClient(object):
     def generate_totp_seed(self, user_id, mfa_totp_device_id, **kwargs):
         """
         GenerateTotpSeed
-        Generate seed for the MFA TOTP device
+        Generate seed for the MFA TOTP device.
 
 
         :param str user_id: (required)
@@ -4701,7 +4701,7 @@ class IdentityClient(object):
         """
         ListMfaTotpDevices
         Lists the MFA TOTP devices for the specified user. The returned object contains the device's OCID, but not
-        the seed. The seed is returned only upon creation or when we regenerate MFA seed for the device.
+        the seed. The seed is returned only upon creation or when the IAM service regenerates the MFA seed for the device.
 
 
         :param str user_id: (required)

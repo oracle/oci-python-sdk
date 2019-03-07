@@ -236,7 +236,12 @@ class MfaTotpDeviceSummary(object):
     def inactive_status(self):
         """
         Gets the inactive_status of this MfaTotpDeviceSummary.
-        The detailed status of INACTIVE lifecycleState. Possible values are 1(SUSPENDED), 2(DISABLED), 4(BLOCKED) and 8(LOCKED).
+        The detailed status of INACTIVE lifecycleState.
+        Allowed values are:
+         - 1 - SUSPENDED
+         - 2 - DISABLED
+         - 4 - BLOCKED
+         - 8 - LOCKED
 
 
         :return: The inactive_status of this MfaTotpDeviceSummary.
@@ -248,7 +253,12 @@ class MfaTotpDeviceSummary(object):
     def inactive_status(self, inactive_status):
         """
         Sets the inactive_status of this MfaTotpDeviceSummary.
-        The detailed status of INACTIVE lifecycleState. Possible values are 1(SUSPENDED), 2(DISABLED), 4(BLOCKED) and 8(LOCKED).
+        The detailed status of INACTIVE lifecycleState.
+        Allowed values are:
+         - 1 - SUSPENDED
+         - 2 - DISABLED
+         - 4 - BLOCKED
+         - 8 - LOCKED
 
 
         :param inactive_status: The inactive_status of this MfaTotpDeviceSummary.
