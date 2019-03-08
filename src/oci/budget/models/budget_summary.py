@@ -308,7 +308,7 @@ class BudgetSummary(object):
     def reset_period(self):
         """
         **[Required]** Gets the reset_period of this BudgetSummary.
-        The reset period for the budget. We will start with MONTHLY and look into QUARTERLY and maybe ANNUAL post-MVP.
+        The reset period for the budget.
 
         Allowed values for this property are: "MONTHLY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -323,7 +323,7 @@ class BudgetSummary(object):
     def reset_period(self, reset_period):
         """
         Sets the reset_period of this BudgetSummary.
-        The reset period for the budget. We will start with MONTHLY and look into QUARTERLY and maybe ANNUAL post-MVP.
+        The reset period for the budget.
 
 
         :param reset_period: The reset_period of this BudgetSummary.

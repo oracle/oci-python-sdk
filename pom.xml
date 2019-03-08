@@ -1980,7 +1980,7 @@
       <dependency>
         <groupId>com.oracle.oci.usage.budgets</groupId>
         <artifactId>budgets-control-plane-spec</artifactId>
-        <version>2.3.2</version>
+        <version>2.3.3</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
