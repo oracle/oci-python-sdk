@@ -496,8 +496,12 @@ class AlertRuleSummary(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this AlertRuleSummary.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this AlertRuleSummary.
@@ -509,8 +513,12 @@ class AlertRuleSummary(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this AlertRuleSummary.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this AlertRuleSummary.
@@ -522,8 +530,12 @@ class AlertRuleSummary(object):
     def defined_tags(self):
         """
         Gets the defined_tags of this AlertRuleSummary.
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this AlertRuleSummary.
@@ -535,8 +547,12 @@ class AlertRuleSummary(object):
     def defined_tags(self, defined_tags):
         """
         Sets the defined_tags of this AlertRuleSummary.
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this AlertRuleSummary.

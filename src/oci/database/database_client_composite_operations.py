@@ -1236,7 +1236,7 @@ class DatabaseClientCompositeOperations(object):
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param ExadataIormConfigUpdateDetails exadata_iorm_config_update_details: (required)
             Request to perform database update.

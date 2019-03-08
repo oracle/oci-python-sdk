@@ -609,7 +609,7 @@ class DbSystem(object):
         Gets the time_zone of this DbSystem.
         The time zone of the DB system. For details, see `DB System Time Zones`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Database/References/timezones.htm
+        __ https://docs.cloud.oracle.com/Content/Database/References/timezones.htm
 
 
         :return: The time_zone of this DbSystem.
@@ -623,7 +623,7 @@ class DbSystem(object):
         Sets the time_zone of this DbSystem.
         The time zone of the DB system. For details, see `DB System Time Zones`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Database/References/timezones.htm
+        __ https://docs.cloud.oracle.com/Content/Database/References/timezones.htm
 
 
         :param time_zone: The time_zone of this DbSystem.

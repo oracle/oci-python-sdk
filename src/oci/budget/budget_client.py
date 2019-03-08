@@ -17,7 +17,7 @@ missing = Sentinel("Missing")
 
 class BudgetClient(object):
     """
-    Use the BudgetsControlPlane API to manage budgets and budget alerts.
+    Use the Budgets API to manage budgets and budget alerts.
     """
 
     def __init__(self, config, **kwargs):
