@@ -43,6 +43,8 @@ class SteeringPolicyPriorityAnswerData(object):
     def answer_condition(self):
         """
         Gets the answer_condition of this SteeringPolicyPriorityAnswerData.
+        An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
+
 
         :return: The answer_condition of this SteeringPolicyPriorityAnswerData.
         :rtype: str
@@ -53,6 +55,8 @@ class SteeringPolicyPriorityAnswerData(object):
     def answer_condition(self, answer_condition):
         """
         Sets the answer_condition of this SteeringPolicyPriorityAnswerData.
+        An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
+
 
         :param answer_condition: The answer_condition of this SteeringPolicyPriorityAnswerData.
         :type: str
@@ -62,7 +66,11 @@ class SteeringPolicyPriorityAnswerData(object):
     @property
     def value(self):
         """
-        Gets the value of this SteeringPolicyPriorityAnswerData.
+        **[Required]** Gets the value of this SteeringPolicyPriorityAnswerData.
+        The rank assigned to the set of answers that match the expression in `answerCondition`.
+        Answers with the lowest values move to the beginning of the list without changing the
+        relative order of those with the same value. Answers can be given a value between `0` and `255`.
+
 
         :return: The value of this SteeringPolicyPriorityAnswerData.
         :rtype: int
@@ -73,6 +81,10 @@ class SteeringPolicyPriorityAnswerData(object):
     def value(self, value):
         """
         Sets the value of this SteeringPolicyPriorityAnswerData.
+        The rank assigned to the set of answers that match the expression in `answerCondition`.
+        Answers with the lowest values move to the beginning of the list without changing the
+        relative order of those with the same value. Answers can be given a value between `0` and `255`.
+
 
         :param value: The value of this SteeringPolicyPriorityAnswerData.
         :type: int
