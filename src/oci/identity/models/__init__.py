@@ -6,6 +6,7 @@ from __future__ import absolute_import
 from .add_user_to_group_details import AddUserToGroupDetails
 from .api_key import ApiKey
 from .auth_token import AuthToken
+from .authentication_policy import AuthenticationPolicy
 from .availability_domain import AvailabilityDomain
 from .change_tag_namespace_compartment_detail import ChangeTagNamespaceCompartmentDetail
 from .compartment import Compartment
@@ -22,6 +23,7 @@ from .create_region_subscription_details import CreateRegionSubscriptionDetails
 from .create_saml2_identity_provider_details import CreateSaml2IdentityProviderDetails
 from .create_smtp_credential_details import CreateSmtpCredentialDetails
 from .create_swift_password_details import CreateSwiftPasswordDetails
+from .create_tag_default_details import CreateTagDefaultDetails
 from .create_tag_details import CreateTagDetails
 from .create_tag_namespace_details import CreateTagNamespaceDetails
 from .create_user_details import CreateUserDetails
@@ -36,6 +38,7 @@ from .idp_group_mapping import IdpGroupMapping
 from .mfa_totp_device import MfaTotpDevice
 from .mfa_totp_device_summary import MfaTotpDeviceSummary
 from .mfa_totp_token import MfaTotpToken
+from .password_policy import PasswordPolicy
 from .policy import Policy
 from .region import Region
 from .region_subscription import RegionSubscription
@@ -45,12 +48,15 @@ from .smtp_credential import SmtpCredential
 from .smtp_credential_summary import SmtpCredentialSummary
 from .swift_password import SwiftPassword
 from .tag import Tag
+from .tag_default import TagDefault
+from .tag_default_summary import TagDefaultSummary
 from .tag_namespace import TagNamespace
 from .tag_namespace_summary import TagNamespaceSummary
 from .tag_summary import TagSummary
 from .tenancy import Tenancy
 from .ui_password import UIPassword
 from .update_auth_token_details import UpdateAuthTokenDetails
+from .update_authentication_policy_details import UpdateAuthenticationPolicyDetails
 from .update_compartment_details import UpdateCompartmentDetails
 from .update_customer_secret_key_details import UpdateCustomerSecretKeyDetails
 from .update_dynamic_group_details import UpdateDynamicGroupDetails
@@ -62,6 +68,7 @@ from .update_saml2_identity_provider_details import UpdateSaml2IdentityProviderD
 from .update_smtp_credential_details import UpdateSmtpCredentialDetails
 from .update_state_details import UpdateStateDetails
 from .update_swift_password_details import UpdateSwiftPasswordDetails
+from .update_tag_default_details import UpdateTagDefaultDetails
 from .update_tag_details import UpdateTagDetails
 from .update_tag_namespace_details import UpdateTagNamespaceDetails
 from .update_user_capabilities_details import UpdateUserCapabilitiesDetails
@@ -80,6 +87,7 @@ identity_type_mapping = {
     "AddUserToGroupDetails": AddUserToGroupDetails,
     "ApiKey": ApiKey,
     "AuthToken": AuthToken,
+    "AuthenticationPolicy": AuthenticationPolicy,
     "AvailabilityDomain": AvailabilityDomain,
     "ChangeTagNamespaceCompartmentDetail": ChangeTagNamespaceCompartmentDetail,
     "Compartment": Compartment,
@@ -96,6 +104,7 @@ identity_type_mapping = {
     "CreateSaml2IdentityProviderDetails": CreateSaml2IdentityProviderDetails,
     "CreateSmtpCredentialDetails": CreateSmtpCredentialDetails,
     "CreateSwiftPasswordDetails": CreateSwiftPasswordDetails,
+    "CreateTagDefaultDetails": CreateTagDefaultDetails,
     "CreateTagDetails": CreateTagDetails,
     "CreateTagNamespaceDetails": CreateTagNamespaceDetails,
     "CreateUserDetails": CreateUserDetails,
@@ -110,6 +119,7 @@ identity_type_mapping = {
     "MfaTotpDevice": MfaTotpDevice,
     "MfaTotpDeviceSummary": MfaTotpDeviceSummary,
     "MfaTotpToken": MfaTotpToken,
+    "PasswordPolicy": PasswordPolicy,
     "Policy": Policy,
     "Region": Region,
     "RegionSubscription": RegionSubscription,
@@ -119,12 +129,15 @@ identity_type_mapping = {
     "SmtpCredentialSummary": SmtpCredentialSummary,
     "SwiftPassword": SwiftPassword,
     "Tag": Tag,
+    "TagDefault": TagDefault,
+    "TagDefaultSummary": TagDefaultSummary,
     "TagNamespace": TagNamespace,
     "TagNamespaceSummary": TagNamespaceSummary,
     "TagSummary": TagSummary,
     "Tenancy": Tenancy,
     "UIPassword": UIPassword,
     "UpdateAuthTokenDetails": UpdateAuthTokenDetails,
+    "UpdateAuthenticationPolicyDetails": UpdateAuthenticationPolicyDetails,
     "UpdateCompartmentDetails": UpdateCompartmentDetails,
     "UpdateCustomerSecretKeyDetails": UpdateCustomerSecretKeyDetails,
     "UpdateDynamicGroupDetails": UpdateDynamicGroupDetails,
@@ -136,6 +149,7 @@ identity_type_mapping = {
     "UpdateSmtpCredentialDetails": UpdateSmtpCredentialDetails,
     "UpdateStateDetails": UpdateStateDetails,
     "UpdateSwiftPasswordDetails": UpdateSwiftPasswordDetails,
+    "UpdateTagDefaultDetails": UpdateTagDefaultDetails,
     "UpdateTagDetails": UpdateTagDetails,
     "UpdateTagNamespaceDetails": UpdateTagNamespaceDetails,
     "UpdateUserCapabilitiesDetails": UpdateUserCapabilitiesDetails,

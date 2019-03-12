@@ -25,7 +25,7 @@ class ComputeClient(object):
         Creates a new service client
 
         :param dict config:
-            Configuration keys and values as per `SDK and Tool Configuration <https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdkconfig.htm>`__.
+            Configuration keys and values as per `SDK and Tool Configuration <https://docs.cloud.oracle.com/Content/API/Concepts/sdkconfig.htm>`__.
             The :py:meth:`~oci.config.from_file` method can be used to load configuration from a file. Alternatively, a ``dict`` can be passed. You can validate_config
             the dict using :py:meth:`~oci.config.validate_config`
 
@@ -44,7 +44,7 @@ class ComputeClient(object):
             The signer to use when signing requests made by the service client. The default is to use a :py:class:`~oci.signer.Signer` based on the values
             provided in the config parameter.
 
-            One use case for this parameter is for `Instance Principals authentication <https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
+            One use case for this parameter is for `Instance Principals authentication <https://docs.cloud.oracle.com/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
             by passing an instance of :py:class:`~oci.auth.signers.InstancePrincipalsSecurityTokenSigner` as the value for this keyword argument
         :type signer: :py:class:`~oci.signer.AbstractBaseSigner`
 
@@ -156,7 +156,7 @@ class ComputeClient(object):
         For more information about secondary VNICs, see
         `Virtual Network Interface Cards (VNICs)`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVNICs.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingVNICs.htm
 
 
         :param AttachVnicDetails attach_vnic_details: (required)
@@ -472,10 +472,10 @@ class ComputeClient(object):
         It does not have to be unique, and you can change it. See :func:`update_image`.
         Avoid entering confidential information.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/managingcustomimages.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/imageimportexport.htm#URLs
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Object/Tasks/managingaccess.htm#pre-auth
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/imageimportexport.htm
+        __ https://docs.cloud.oracle.com/Content/Compute/Tasks/managingcustomimages.htm
+        __ https://docs.cloud.oracle.com/Content/Compute/Tasks/imageimportexport.htm#URLs
+        __ https://docs.cloud.oracle.com/Content/Object/Tasks/managingaccess.htm#pre-auth
+        __ https://docs.cloud.oracle.com/Content/Compute/Tasks/imageimportexport.htm
 
 
         :param CreateImageDetails create_image_details: (required)
@@ -550,7 +550,7 @@ class ComputeClient(object):
 
         For more information about console access, see `Accessing the Console`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/serialconsole.htm
+        __ https://docs.cloud.oracle.com/Content/Compute/References/serialconsole.htm
 
 
         :param CreateInstanceConsoleConnectionDetails create_instance_console_connection_details: (required)
@@ -990,7 +990,7 @@ class ComputeClient(object):
         deleting the VNIC causes that route rule to blackhole and the traffic
         will be dropped.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm#privateip
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingroutetables.htm#privateip
 
 
         :param str vnic_attachment_id: (required)
@@ -1150,10 +1150,10 @@ class ComputeClient(object):
         See `Object Storage URLs`__ and `pre-authenticated requests`__
         for constructing URLs for image import/export.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/imageimportexport.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/commonpolicies.htm#Let4
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/imageimportexport.htm#URLs
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Object/Tasks/managingaccess.htm#pre-auth
+        __ https://docs.cloud.oracle.com/Content/Compute/Tasks/imageimportexport.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/commonpolicies.htm#Let4
+        __ https://docs.cloud.oracle.com/Content/Compute/Tasks/imageimportexport.htm#URLs
+        __ https://docs.cloud.oracle.com/Content/Object/Tasks/managingaccess.htm#pre-auth
 
 
         :param str image_id: (required)
@@ -2058,7 +2058,7 @@ class ComputeClient(object):
 
         For more information see `Stopping and Starting an Instance`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/restartinginstance.htm
+        __ https://docs.cloud.oracle.com/Content/Compute/Tasks/restartinginstance.htm
 
 
         :param str instance_id: (required)
@@ -2188,10 +2188,10 @@ class ComputeClient(object):
         You can later add secondary VNICs to an instance. For more information, see
         `Virtual Network Interface Cards (VNICs)`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Concepts/computeoverview.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/regions.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVNICs.htm
+        __ https://docs.cloud.oracle.com/Content/Compute/Concepts/computeoverview.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingVNICs.htm
 
 
         :param LaunchInstanceDetails launch_instance_details: (required)
@@ -2273,14 +2273,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
@@ -2378,14 +2378,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
@@ -2489,14 +2489,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for
@@ -2618,14 +2618,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str instance_id: (optional)
             The OCID of the instance.
@@ -2716,14 +2716,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str instance_id: (optional)
             The OCID of the instance.
@@ -2850,8 +2850,8 @@ class ComputeClient(object):
 
         The order of images returned may change when new images are released.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/images.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/managingcustomimages.htm
+        __ https://docs.cloud.oracle.com/Content/Compute/References/images.htm
+        __ https://docs.cloud.oracle.com/Content/Compute/Tasks/managingcustomimages.htm
 
 
         :param str compartment_id: (required)
@@ -2880,14 +2880,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for
@@ -3011,7 +3011,7 @@ class ComputeClient(object):
 
         For more information about console access, see `Accessing the Console`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/serialconsole.htm
+        __ https://docs.cloud.oracle.com/Content/Compute/References/serialconsole.htm
 
 
         :param str compartment_id: (required)
@@ -3027,14 +3027,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3117,14 +3117,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -3267,14 +3267,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for
@@ -3409,14 +3409,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str image_id: (optional)
             The OCID of an image.
@@ -3508,14 +3508,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str vnic_id: (optional)
             The OCID of the VNIC.
@@ -3608,14 +3608,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str instance_id: (optional)
             The OCID of the instance.

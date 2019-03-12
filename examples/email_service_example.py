@@ -7,7 +7,7 @@
 #   * Creating, retrieving, listing and deleting email senders
 #   * Creating, retrieving, listing and deleting email suppressions
 #   * Obtaining SMTP credentials for your IAM user so that you can send emails.
-#     See https://docs.us-phoenix-1.oraclecloud.com/Content/Email/Tasks/configuresmtpconnection.htm for more
+#     See https://docs.cloud.oracle.com/Content/Email/Tasks/configuresmtpconnection.htm for more
 #     information on sending emails
 #
 # This script accepts three arguments:
@@ -129,7 +129,7 @@ print('Deleted suppression')
 
 # In order to send email, we'll need to create an SMTP credential associated with an IAM user. More
 # information on sending email can be found here:
-# https://docs.us-phoenix-1.oraclecloud.com/Content/Email/Tasks/configuresmtpconnection.htm
+# https://docs.cloud.oracle.com/Content/Email/Tasks/configuresmtpconnection.htm
 #
 # Note, also, that an IAM user can only have two active SMTP credentials at any time
 #

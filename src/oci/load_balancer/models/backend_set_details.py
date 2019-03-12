@@ -13,7 +13,7 @@ class BackendSetDetails(object):
     For more information on backend set configuration, see
     `Managing Backend Sets`__.
 
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managingbackendsets.htm
+    __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managingbackendsets.htm
     """
 
     def __init__(self, **kwargs):

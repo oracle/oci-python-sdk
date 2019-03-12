@@ -67,7 +67,7 @@ class NotificationDataPlaneClientCompositeOperations(object):
         :param str subscription_id: (required)
             The `OCID`__ of the subscription to delete.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.ons.models.Subscription.lifecycle_state`

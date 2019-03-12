@@ -57,7 +57,7 @@ except oci.exceptions.ServiceError as e:
 # will contain information. One key header of interest is archival-state. In this case, because we have only
 # put the object in the bucket, it will start out as "Archived".
 #
-# See https://docs.us-phoenix-1.oraclecloud.com/api/#/en/objectstorage/20160918/Object/HeadObject for
+# See https://docs.cloud.oracle.com/api/#/en/objectstorage/20160918/Object/HeadObject for
 # more information on available headers
 head_object_response = object_storage_client.head_object(namespace, bucket_name, object_name)
 print('Archive state from head_object: {}'.format(head_object_response.headers['archival-state']))
@@ -92,7 +92,7 @@ except oci.exceptions.ServiceError as e:
 #
 # For a restored object, the time-of-archival will be when the object will be archived again.
 #
-# See https://docs.us-phoenix-1.oraclecloud.com/api/#/en/objectstorage/20160918/Object/HeadObject for
+# See https://docs.cloud.oracle.com/api/#/en/objectstorage/20160918/Object/HeadObject for
 # more information on available headers
 head_object_response = object_storage_client.head_object(namespace, bucket_name, object_name)
 print('Archive state from head_object: {}'.format(head_object_response.headers['archival-state']))

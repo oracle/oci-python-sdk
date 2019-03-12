@@ -218,7 +218,7 @@ class DataGuardAssociation(object):
         **[Required]** Gets the id of this DataGuardAssociation.
         The `OCID`__ of the Data Guard association.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DataGuardAssociation.
@@ -232,7 +232,7 @@ class DataGuardAssociation(object):
         Sets the id of this DataGuardAssociation.
         The `OCID`__ of the Data Guard association.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DataGuardAssociation.
@@ -246,7 +246,7 @@ class DataGuardAssociation(object):
         **[Required]** Gets the database_id of this DataGuardAssociation.
         The `OCID`__ of the reporting database.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The database_id of this DataGuardAssociation.
@@ -260,7 +260,7 @@ class DataGuardAssociation(object):
         Sets the database_id of this DataGuardAssociation.
         The `OCID`__ of the reporting database.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param database_id: The database_id of this DataGuardAssociation.
@@ -359,7 +359,7 @@ class DataGuardAssociation(object):
         The `OCID`__ of the DB system containing the associated
         peer database.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The peer_db_system_id of this DataGuardAssociation.
@@ -374,7 +374,7 @@ class DataGuardAssociation(object):
         The `OCID`__ of the DB system containing the associated
         peer database.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param peer_db_system_id: The peer_db_system_id of this DataGuardAssociation.
@@ -388,7 +388,7 @@ class DataGuardAssociation(object):
         Gets the peer_db_home_id of this DataGuardAssociation.
         The `OCID`__ of the database home containing the associated peer database.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The peer_db_home_id of this DataGuardAssociation.
@@ -402,7 +402,7 @@ class DataGuardAssociation(object):
         Sets the peer_db_home_id of this DataGuardAssociation.
         The `OCID`__ of the database home containing the associated peer database.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param peer_db_home_id: The peer_db_home_id of this DataGuardAssociation.
@@ -416,7 +416,7 @@ class DataGuardAssociation(object):
         Gets the peer_database_id of this DataGuardAssociation.
         The `OCID`__ of the associated peer database.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The peer_database_id of this DataGuardAssociation.
@@ -430,7 +430,7 @@ class DataGuardAssociation(object):
         Sets the peer_database_id of this DataGuardAssociation.
         The `OCID`__ of the associated peer database.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param peer_database_id: The peer_database_id of this DataGuardAssociation.
@@ -444,7 +444,7 @@ class DataGuardAssociation(object):
         Gets the peer_data_guard_association_id of this DataGuardAssociation.
         The `OCID`__ of the peer database's Data Guard association.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The peer_data_guard_association_id of this DataGuardAssociation.
@@ -458,7 +458,7 @@ class DataGuardAssociation(object):
         Sets the peer_data_guard_association_id of this DataGuardAssociation.
         The `OCID`__ of the peer database's Data Guard association.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param peer_data_guard_association_id: The peer_data_guard_association_id of this DataGuardAssociation.

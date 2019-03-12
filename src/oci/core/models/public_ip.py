@@ -22,7 +22,7 @@ class PublicIp(object):
     **Warning:** Oracle recommends that you avoid using any confidential information when you
     supply string values using the API.
 
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingpublicIPs.htm
+    __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingpublicIPs.htm
     """
 
     #: A constant which can be used with the assigned_entity_type property of a PublicIp.
@@ -329,7 +329,7 @@ class PublicIp(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this PublicIp.
@@ -346,7 +346,7 @@ class PublicIp(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this PublicIp.
@@ -390,7 +390,7 @@ class PublicIp(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this PublicIp.
@@ -408,7 +408,7 @@ class PublicIp(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this PublicIp.
@@ -517,7 +517,7 @@ class PublicIp(object):
         For more information and comparison of the two types,
         see `Public IP Addresses`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingpublicIPs.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingpublicIPs.htm
 
         Allowed values for this property are: "EPHEMERAL", "RESERVED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -547,7 +547,7 @@ class PublicIp(object):
         For more information and comparison of the two types,
         see `Public IP Addresses`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingpublicIPs.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingpublicIPs.htm
 
 
         :param lifetime: The lifetime of this PublicIp.

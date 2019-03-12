@@ -19,7 +19,7 @@ class DynamicGroup(object):
     in a dynamic group, the membership of an instance certificate to a dynamic group is determined during runtime.
     For more information, see `Managing Dynamic Groups`__.
 
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingdynamicgroups.htm
+    __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingdynamicgroups.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a DynamicGroup.
@@ -218,7 +218,7 @@ class DynamicGroup(object):
         A rule string that defines which instance certificates will be matched.
         For syntax, see `Managing Dynamic Groups`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingdynamicgroups.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingdynamicgroups.htm
 
 
         :return: The matching_rule of this DynamicGroup.
@@ -233,7 +233,7 @@ class DynamicGroup(object):
         A rule string that defines which instance certificates will be matched.
         For syntax, see `Managing Dynamic Groups`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingdynamicgroups.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingdynamicgroups.htm
 
 
         :param matching_rule: The matching_rule of this DynamicGroup.

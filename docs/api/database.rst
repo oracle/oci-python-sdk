@@ -55,12 +55,16 @@ Database
     oci.database.models.DbBackupConfig
     oci.database.models.DbHome
     oci.database.models.DbHomeSummary
+    oci.database.models.DbIormConfig
+    oci.database.models.DbIormConfigUpdateDetail
     oci.database.models.DbNode
     oci.database.models.DbNodeSummary
     oci.database.models.DbSystem
     oci.database.models.DbSystemShapeSummary
     oci.database.models.DbSystemSummary
     oci.database.models.DbVersionSummary
+    oci.database.models.ExadataIormConfig
+    oci.database.models.ExadataIormConfigUpdateDetails
     oci.database.models.ExternalBackupJob
     oci.database.models.FailoverDataGuardAssociationDetails
     oci.database.models.GenerateAutonomousDataWarehouseWalletDetails

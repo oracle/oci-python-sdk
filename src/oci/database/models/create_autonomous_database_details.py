@@ -14,6 +14,14 @@ class CreateAutonomousDatabaseDetails(object):
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
 
+    #: A constant which can be used with the db_workload property of a CreateAutonomousDatabaseDetails.
+    #: This constant has a value of "OLTP"
+    DB_WORKLOAD_OLTP = "OLTP"
+
+    #: A constant which can be used with the db_workload property of a CreateAutonomousDatabaseDetails.
+    #: This constant has a value of "DW"
+    DB_WORKLOAD_DW = "DW"
+
     #: A constant which can be used with the license_model property of a CreateAutonomousDatabaseDetails.
     #: This constant has a value of "LICENSE_INCLUDED"
     LICENSE_MODEL_LICENSE_INCLUDED = "LICENSE_INCLUDED"
@@ -38,6 +46,11 @@ class CreateAutonomousDatabaseDetails(object):
         :param cpu_core_count:
             The value to assign to the cpu_core_count property of this CreateAutonomousDatabaseDetails.
         :type cpu_core_count: int
+
+        :param db_workload:
+            The value to assign to the db_workload property of this CreateAutonomousDatabaseDetails.
+            Allowed values for this property are: "OLTP", "DW"
+        :type db_workload: str
 
         :param data_storage_size_in_tbs:
             The value to assign to the data_storage_size_in_tbs property of this CreateAutonomousDatabaseDetails.
@@ -69,6 +82,7 @@ class CreateAutonomousDatabaseDetails(object):
             'compartment_id': 'str',
             'db_name': 'str',
             'cpu_core_count': 'int',
+            'db_workload': 'str',
             'data_storage_size_in_tbs': 'int',
             'admin_password': 'str',
             'display_name': 'str',
@@ -81,6 +95,7 @@ class CreateAutonomousDatabaseDetails(object):
             'compartment_id': 'compartmentId',
             'db_name': 'dbName',
             'cpu_core_count': 'cpuCoreCount',
+            'db_workload': 'dbWorkload',
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
             'admin_password': 'adminPassword',
             'display_name': 'displayName',
@@ -92,6 +107,7 @@ class CreateAutonomousDatabaseDetails(object):
         self._compartment_id = None
         self._db_name = None
         self._cpu_core_count = None
+        self._db_workload = None
         self._data_storage_size_in_tbs = None
         self._admin_password = None
         self._display_name = None
@@ -105,7 +121,7 @@ class CreateAutonomousDatabaseDetails(object):
         **[Required]** Gets the compartment_id of this CreateAutonomousDatabaseDetails.
         The `OCID`__ of the compartment of the autonomous database.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateAutonomousDatabaseDetails.
@@ -119,7 +135,7 @@ class CreateAutonomousDatabaseDetails(object):
         Sets the compartment_id of this CreateAutonomousDatabaseDetails.
         The `OCID`__ of the compartment of the autonomous database.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateAutonomousDatabaseDetails.
@@ -174,6 +190,38 @@ class CreateAutonomousDatabaseDetails(object):
         :type: int
         """
         self._cpu_core_count = cpu_core_count
+
+    @property
+    def db_workload(self):
+        """
+        Gets the db_workload of this CreateAutonomousDatabaseDetails.
+        The autonomous database workload type.
+
+        Allowed values for this property are: "OLTP", "DW"
+
+
+        :return: The db_workload of this CreateAutonomousDatabaseDetails.
+        :rtype: str
+        """
+        return self._db_workload
+
+    @db_workload.setter
+    def db_workload(self, db_workload):
+        """
+        Sets the db_workload of this CreateAutonomousDatabaseDetails.
+        The autonomous database workload type.
+
+
+        :param db_workload: The db_workload of this CreateAutonomousDatabaseDetails.
+        :type: str
+        """
+        allowed_values = ["OLTP", "DW"]
+        if not value_allowed_none_or_none_sentinel(db_workload, allowed_values):
+            raise ValueError(
+                "Invalid value for `db_workload`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._db_workload = db_workload
 
     @property
     def data_storage_size_in_tbs(self):
@@ -288,7 +336,7 @@ class CreateAutonomousDatabaseDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateAutonomousDatabaseDetails.
@@ -305,7 +353,7 @@ class CreateAutonomousDatabaseDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateAutonomousDatabaseDetails.
@@ -322,7 +370,7 @@ class CreateAutonomousDatabaseDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateAutonomousDatabaseDetails.
@@ -339,7 +387,7 @@ class CreateAutonomousDatabaseDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateAutonomousDatabaseDetails.

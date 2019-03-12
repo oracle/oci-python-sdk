@@ -133,7 +133,7 @@ def delete_internet_gateway(virtual_network, internet_gateway):
 
 
 # This makes sure that we use the internet gateway for accessing the internet. See:
-# https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIGs.htm
+# https://docs.cloud.oracle.com/Content/Network/Tasks/managingIGs.htm
 # for more information.
 #
 # As a convenience, we'll add a route rule to the default route table. However, in your
@@ -240,7 +240,7 @@ try:
     #
     # We can also provide arbitrary string keys and string values. If you are providing these, you should consider
     # whether defined and freeform tags on an instance would better meet your use case. See:
-    # https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm for more information
+    # https://docs.cloud.oracle.com/Content/Identity/Concepts/taggingoverview.htm for more information
     # on tagging
     instance_metadata = {
         'ssh_authorized_keys': ssh_key,
@@ -252,7 +252,7 @@ try:
     # key should be Base64-encoded data and the SDK offers a convenience function to transform
     # a file at a given path to that encoded data
     #
-    # See: https://docs.us-phoenix-1.oraclecloud.com/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails
+    # See: https://docs.cloud.oracle.com/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails
     # for more information
     instance_metadata['user_data'] = oci.util.file_content_as_launch_instance_user_data(
         'examples/launch_instance/user_data.sh'

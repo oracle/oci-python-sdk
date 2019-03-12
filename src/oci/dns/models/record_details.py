@@ -159,7 +159,7 @@ class RecordDetails(object):
         returned presentation of your RDATA may differ from its initial input.
         For more information about RDATA, see `Supported DNS Resource Record Types`__
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/DNS/Reference/supporteddnsresource.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm
 
 
         :return: The rdata of this RecordDetails.
@@ -176,7 +176,7 @@ class RecordDetails(object):
         returned presentation of your RDATA may differ from its initial input.
         For more information about RDATA, see `Supported DNS Resource Record Types`__
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/DNS/Reference/supporteddnsresource.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm
 
 
         :param rdata: The rdata of this RecordDetails.

@@ -132,8 +132,8 @@ class CreatePolicyDetails(object):
         `How Policies Work`__ and
         `Common Policies`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policies.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/commonpolicies.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policies.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/commonpolicies.htm
 
 
         :return: The statements of this CreatePolicyDetails.
@@ -149,8 +149,8 @@ class CreatePolicyDetails(object):
         `How Policies Work`__ and
         `Common Policies`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policies.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/commonpolicies.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policies.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/commonpolicies.htm
 
 
         :param statements: The statements of this CreatePolicyDetails.
@@ -218,7 +218,7 @@ class CreatePolicyDetails(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreatePolicyDetails.
@@ -234,7 +234,7 @@ class CreatePolicyDetails(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreatePolicyDetails.
@@ -250,7 +250,7 @@ class CreatePolicyDetails(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreatePolicyDetails.
@@ -266,7 +266,7 @@ class CreatePolicyDetails(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreatePolicyDetails.

@@ -19,8 +19,8 @@ class DbHomeSummary(object):
 
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Concepts/overview.htm
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.cloud.oracle.com/Content/Database/Concepts/overview.htm
+    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a DbHomeSummary.
@@ -124,7 +124,7 @@ class DbHomeSummary(object):
         **[Required]** Gets the id of this DbHomeSummary.
         The `OCID`__ of the database home.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DbHomeSummary.
@@ -138,7 +138,7 @@ class DbHomeSummary(object):
         Sets the id of this DbHomeSummary.
         The `OCID`__ of the database home.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DbHomeSummary.
@@ -152,7 +152,7 @@ class DbHomeSummary(object):
         **[Required]** Gets the compartment_id of this DbHomeSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this DbHomeSummary.
@@ -166,7 +166,7 @@ class DbHomeSummary(object):
         Sets the compartment_id of this DbHomeSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this DbHomeSummary.
@@ -204,7 +204,7 @@ class DbHomeSummary(object):
         Gets the last_patch_history_entry_id of this DbHomeSummary.
         The `OCID`__ of the last patch history. This value is updated as soon as a patch operation is started.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The last_patch_history_entry_id of this DbHomeSummary.
@@ -218,7 +218,7 @@ class DbHomeSummary(object):
         Sets the last_patch_history_entry_id of this DbHomeSummary.
         The `OCID`__ of the last patch history. This value is updated as soon as a patch operation is started.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param last_patch_history_entry_id: The last_patch_history_entry_id of this DbHomeSummary.
@@ -262,7 +262,7 @@ class DbHomeSummary(object):
         Gets the db_system_id of this DbHomeSummary.
         The `OCID`__ of the DB system.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_system_id of this DbHomeSummary.
@@ -276,7 +276,7 @@ class DbHomeSummary(object):
         Sets the db_system_id of this DbHomeSummary.
         The `OCID`__ of the DB system.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param db_system_id: The db_system_id of this DbHomeSummary.

@@ -21,7 +21,7 @@ class IdpGroupMapping(object):
     **Note:** Any users who are in more than 50 IdP groups cannot be authenticated to use the Oracle
     Cloud Infrastructure Console.
 
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/federation.htm
+    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/federation.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a IdpGroupMapping.

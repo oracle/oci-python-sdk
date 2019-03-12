@@ -15,7 +15,7 @@ class DbNodeSummary(object):
 
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a DbNodeSummary.
@@ -138,7 +138,7 @@ class DbNodeSummary(object):
         **[Required]** Gets the id of this DbNodeSummary.
         The `OCID`__ of the database node.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DbNodeSummary.
@@ -152,7 +152,7 @@ class DbNodeSummary(object):
         Sets the id of this DbNodeSummary.
         The `OCID`__ of the database node.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DbNodeSummary.
@@ -166,7 +166,7 @@ class DbNodeSummary(object):
         **[Required]** Gets the db_system_id of this DbNodeSummary.
         The `OCID`__ of the DB system.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_system_id of this DbNodeSummary.
@@ -180,7 +180,7 @@ class DbNodeSummary(object):
         Sets the db_system_id of this DbNodeSummary.
         The `OCID`__ of the DB system.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param db_system_id: The db_system_id of this DbNodeSummary.
@@ -194,7 +194,7 @@ class DbNodeSummary(object):
         **[Required]** Gets the vnic_id of this DbNodeSummary.
         The `OCID`__ of the VNIC.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The vnic_id of this DbNodeSummary.
@@ -208,7 +208,7 @@ class DbNodeSummary(object):
         Sets the vnic_id of this DbNodeSummary.
         The `OCID`__ of the VNIC.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param vnic_id: The vnic_id of this DbNodeSummary.
@@ -222,7 +222,7 @@ class DbNodeSummary(object):
         Gets the backup_vnic_id of this DbNodeSummary.
         The `OCID`__ of the backup VNIC.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The backup_vnic_id of this DbNodeSummary.
@@ -236,7 +236,7 @@ class DbNodeSummary(object):
         Sets the backup_vnic_id of this DbNodeSummary.
         The `OCID`__ of the backup VNIC.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param backup_vnic_id: The backup_vnic_id of this DbNodeSummary.

@@ -78,7 +78,7 @@ class ObjectLifecyclePolicy(object):
         For an example of this value, see the
         `PutObjectLifecyclePolicy API documentation`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/api/#/en/objectstorage/20160918/ObjectLifecyclePolicy/PutObjectLifecyclePolicy
+        __ https://docs.cloud.oracle.com/iaas/api/#/en/objectstorage/20160918/ObjectLifecyclePolicy/PutObjectLifecyclePolicy
 
 
         :return: The items of this ObjectLifecyclePolicy.
@@ -95,7 +95,7 @@ class ObjectLifecyclePolicy(object):
         For an example of this value, see the
         `PutObjectLifecyclePolicy API documentation`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/api/#/en/objectstorage/20160918/ObjectLifecyclePolicy/PutObjectLifecyclePolicy
+        __ https://docs.cloud.oracle.com/iaas/api/#/en/objectstorage/20160918/ObjectLifecyclePolicy/PutObjectLifecyclePolicy
 
 
         :param items: The items of this ObjectLifecyclePolicy.

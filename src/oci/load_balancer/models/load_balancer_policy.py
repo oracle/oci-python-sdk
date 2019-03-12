@@ -13,7 +13,7 @@ class LoadBalancerPolicy(object):
     For more information on load balancing policies, see
     `How Load Balancing Policies Work`__.
 
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Reference/lbpolicies.htm
+    __ https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm
     """
 
     def __init__(self, **kwargs):

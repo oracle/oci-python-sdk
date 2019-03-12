@@ -69,7 +69,7 @@ class UpdatePrivateIpDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this UpdatePrivateIpDetails.
@@ -86,7 +86,7 @@ class UpdatePrivateIpDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this UpdatePrivateIpDetails.
@@ -130,7 +130,7 @@ class UpdatePrivateIpDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this UpdatePrivateIpDetails.
@@ -148,7 +148,7 @@ class UpdatePrivateIpDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this UpdatePrivateIpDetails.
@@ -174,7 +174,7 @@ class UpdatePrivateIpDetails(object):
 
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
 
 
         :return: The hostname_label of this UpdatePrivateIpDetails.
@@ -200,7 +200,7 @@ class UpdatePrivateIpDetails(object):
 
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
 
 
         :param hostname_label: The hostname_label of this UpdatePrivateIpDetails.

@@ -21,6 +21,7 @@ Identity
     oci.identity.models.AddUserToGroupDetails
     oci.identity.models.ApiKey
     oci.identity.models.AuthToken
+    oci.identity.models.AuthenticationPolicy
     oci.identity.models.AvailabilityDomain
     oci.identity.models.ChangeTagNamespaceCompartmentDetail
     oci.identity.models.Compartment
@@ -37,6 +38,7 @@ Identity
     oci.identity.models.CreateSaml2IdentityProviderDetails
     oci.identity.models.CreateSmtpCredentialDetails
     oci.identity.models.CreateSwiftPasswordDetails
+    oci.identity.models.CreateTagDefaultDetails
     oci.identity.models.CreateTagDetails
     oci.identity.models.CreateTagNamespaceDetails
     oci.identity.models.CreateUserDetails
@@ -51,6 +53,7 @@ Identity
     oci.identity.models.MfaTotpDevice
     oci.identity.models.MfaTotpDeviceSummary
     oci.identity.models.MfaTotpToken
+    oci.identity.models.PasswordPolicy
     oci.identity.models.Policy
     oci.identity.models.Region
     oci.identity.models.RegionSubscription
@@ -60,12 +63,15 @@ Identity
     oci.identity.models.SmtpCredentialSummary
     oci.identity.models.SwiftPassword
     oci.identity.models.Tag
+    oci.identity.models.TagDefault
+    oci.identity.models.TagDefaultSummary
     oci.identity.models.TagNamespace
     oci.identity.models.TagNamespaceSummary
     oci.identity.models.TagSummary
     oci.identity.models.Tenancy
     oci.identity.models.UIPassword
     oci.identity.models.UpdateAuthTokenDetails
+    oci.identity.models.UpdateAuthenticationPolicyDetails
     oci.identity.models.UpdateCompartmentDetails
     oci.identity.models.UpdateCustomerSecretKeyDetails
     oci.identity.models.UpdateDynamicGroupDetails
@@ -77,6 +83,7 @@ Identity
     oci.identity.models.UpdateSmtpCredentialDetails
     oci.identity.models.UpdateStateDetails
     oci.identity.models.UpdateSwiftPasswordDetails
+    oci.identity.models.UpdateTagDefaultDetails
     oci.identity.models.UpdateTagDetails
     oci.identity.models.UpdateTagNamespaceDetails
     oci.identity.models.UpdateUserCapabilitiesDetails

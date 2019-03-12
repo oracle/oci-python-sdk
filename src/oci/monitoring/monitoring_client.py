@@ -26,7 +26,7 @@ class MonitoringClient(object):
         Creates a new service client
 
         :param dict config:
-            Configuration keys and values as per `SDK and Tool Configuration <https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdkconfig.htm>`__.
+            Configuration keys and values as per `SDK and Tool Configuration <https://docs.cloud.oracle.com/Content/API/Concepts/sdkconfig.htm>`__.
             The :py:meth:`~oci.config.from_file` method can be used to load configuration from a file. Alternatively, a ``dict`` can be passed. You can validate_config
             the dict using :py:meth:`~oci.config.validate_config`
 
@@ -45,7 +45,7 @@ class MonitoringClient(object):
             The signer to use when signing requests made by the service client. The default is to use a :py:class:`~oci.signer.Signer` based on the values
             provided in the config parameter.
 
-            One use case for this parameter is for `Instance Principals authentication <https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
+            One use case for this parameter is for `Instance Principals authentication <https://docs.cloud.oracle.com/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
             by passing an instance of :py:class:`~oci.auth.signers.InstancePrincipalsSecurityTokenSigner` as the value for this keyword argument
         :type signer: :py:class:`~oci.signer.AbstractBaseSigner`
 
@@ -164,7 +164,7 @@ class MonitoringClient(object):
         :param str alarm_id: (required)
             The `OCID`__ of an alarm.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Customer part of the request identifier token. If you need to contact Oracle about a particular
@@ -237,7 +237,7 @@ class MonitoringClient(object):
         :param str alarm_id: (required)
             The `OCID`__ of an alarm.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Customer part of the request identifier token. If you need to contact Oracle about a particular
@@ -312,7 +312,7 @@ class MonitoringClient(object):
         :param str alarm_id: (required)
             The `OCID`__ of an alarm.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Customer part of the request identifier token. If you need to contact Oracle about a particular
@@ -330,7 +330,7 @@ class MonitoringClient(object):
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
@@ -341,7 +341,7 @@ class MonitoringClient(object):
 
             Example: 500
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param datetime timestamp_greater_than_or_equal_to: (optional)
             A filter to return only alarm history entries with timestamps occurring on or after the specified date and time. Format defined by RFC3339.
@@ -447,7 +447,7 @@ class MonitoringClient(object):
             resources monitored by the metric that you are searching for. Use tenancyId to search in
             the root compartment.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Customer part of the request identifier token. If you need to contact Oracle about a particular
@@ -457,7 +457,7 @@ class MonitoringClient(object):
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
@@ -468,7 +468,7 @@ class MonitoringClient(object):
 
             Example: 500
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -601,7 +601,7 @@ class MonitoringClient(object):
             resources monitored by the metric that you are searching for. Use tenancyId to search in
             the root compartment.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Customer part of the request identifier token. If you need to contact Oracle about a particular
@@ -618,7 +618,7 @@ class MonitoringClient(object):
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
@@ -629,7 +629,7 @@ class MonitoringClient(object):
 
             Example: 500
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -737,7 +737,7 @@ class MonitoringClient(object):
         Returns metric definitions that match the criteria specified in the request. Compartment OCID required.
         For information about metrics, see `Metrics Overview`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview
 
 
         :param str compartment_id: (required)
@@ -745,7 +745,7 @@ class MonitoringClient(object):
             resources monitored by the metric that you are searching for. Use tenancyId to search in
             the root compartment.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param ListMetricsDetails list_metrics_details: (required)
             The dimensions used to filter metrics.
@@ -758,7 +758,7 @@ class MonitoringClient(object):
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
@@ -769,7 +769,7 @@ class MonitoringClient(object):
 
             Example: 500
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param bool compartment_id_in_subtree: (optional)
             When true, returns resources from all compartments and subcompartments. The parameter can
@@ -852,7 +852,7 @@ class MonitoringClient(object):
 
         https://telemetry-ingestion.eu-frankfurt-1.oraclecloud.com
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/Monitoring/Tasks/publishingcustommetrics.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/publishingcustommetrics.htm
 
 
         :param PostMetricDataDetails post_metric_data_details: (required)
@@ -922,7 +922,7 @@ class MonitoringClient(object):
         :param str alarm_id: (required)
             The `OCID`__ of an alarm.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Customer part of the request identifier token. If you need to contact Oracle about a particular
@@ -993,7 +993,7 @@ class MonitoringClient(object):
         Returns aggregated data that match the criteria specified in the request. Compartment OCID required.
         For information on metric queries, see `Building Metric Queries`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/Monitoring/Tasks/buildingqueries.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/buildingqueries.htm
 
 
         :param str compartment_id: (required)
@@ -1001,7 +1001,7 @@ class MonitoringClient(object):
             resources monitored by the metric that you are searching for. Use tenancyId to search in
             the root compartment.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param SummarizeMetricsDataDetails summarize_metrics_data_details: (required)
             The dimensions used to filter for metrics.
@@ -1086,7 +1086,7 @@ class MonitoringClient(object):
         :param str alarm_id: (required)
             The `OCID`__ of an alarm.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param UpdateAlarmDetails update_alarm_details: (required)
             Document for updating an alarm.

@@ -84,7 +84,7 @@ class CreateDbHomeWithDbSystemIdBase(object):
         **[Required]** Gets the db_system_id of this CreateDbHomeWithDbSystemIdBase.
         The `OCID`__ of the DB system.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_system_id of this CreateDbHomeWithDbSystemIdBase.
@@ -98,7 +98,7 @@ class CreateDbHomeWithDbSystemIdBase(object):
         Sets the db_system_id of this CreateDbHomeWithDbSystemIdBase.
         The `OCID`__ of the DB system.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param db_system_id: The db_system_id of this CreateDbHomeWithDbSystemIdBase.

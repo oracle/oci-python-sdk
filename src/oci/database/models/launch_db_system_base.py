@@ -60,6 +60,10 @@ class LaunchDbSystemBase(object):
             The value to assign to the shape property of this LaunchDbSystemBase.
         :type shape: str
 
+        :param time_zone:
+            The value to assign to the time_zone property of this LaunchDbSystemBase.
+        :type time_zone: str
+
         :param sparse_diskgroup:
             The value to assign to the sparse_diskgroup property of this LaunchDbSystemBase.
         :type sparse_diskgroup: bool
@@ -118,6 +122,7 @@ class LaunchDbSystemBase(object):
             'subnet_id': 'str',
             'backup_subnet_id': 'str',
             'shape': 'str',
+            'time_zone': 'str',
             'sparse_diskgroup': 'bool',
             'ssh_public_keys': 'list[str]',
             'hostname': 'str',
@@ -140,6 +145,7 @@ class LaunchDbSystemBase(object):
             'subnet_id': 'subnetId',
             'backup_subnet_id': 'backupSubnetId',
             'shape': 'shape',
+            'time_zone': 'timeZone',
             'sparse_diskgroup': 'sparseDiskgroup',
             'ssh_public_keys': 'sshPublicKeys',
             'hostname': 'hostname',
@@ -161,6 +167,7 @@ class LaunchDbSystemBase(object):
         self._subnet_id = None
         self._backup_subnet_id = None
         self._shape = None
+        self._time_zone = None
         self._sparse_diskgroup = None
         self._ssh_public_keys = None
         self._hostname = None
@@ -196,7 +203,7 @@ class LaunchDbSystemBase(object):
         **[Required]** Gets the compartment_id of this LaunchDbSystemBase.
         The `OCID`__ of the compartment the DB system  belongs in.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this LaunchDbSystemBase.
@@ -210,7 +217,7 @@ class LaunchDbSystemBase(object):
         Sets the compartment_id of this LaunchDbSystemBase.
         The `OCID`__ of the compartment the DB system  belongs in.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this LaunchDbSystemBase.
@@ -223,7 +230,7 @@ class LaunchDbSystemBase(object):
         """
         Gets the fault_domains of this LaunchDbSystemBase.
         A fault domain is a grouping of hardware and infrastructure within an availability domain.
-        fault domains let you distribute your instances so that they are not on the same physical
+        Fault domains let you distribute your instances so that they are not on the same physical
         hardware within a single availability domain. A hardware failure or maintenance
         that affects one fault domain does not affect DB systems in other fault domains.
 
@@ -251,7 +258,7 @@ class LaunchDbSystemBase(object):
         """
         Sets the fault_domains of this LaunchDbSystemBase.
         A fault domain is a grouping of hardware and infrastructure within an availability domain.
-        fault domains let you distribute your instances so that they are not on the same physical
+        Fault domains let you distribute your instances so that they are not on the same physical
         hardware within a single availability domain. A hardware failure or maintenance
         that affects one fault domain does not affect DB systems in other fault domains.
 
@@ -336,7 +343,7 @@ class LaunchDbSystemBase(object):
         Specifying an overlapping subnet will cause the private interconnect to malfunction.
         This restriction applies to both the client subnet and the backup subnet.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this LaunchDbSystemBase.
@@ -358,7 +365,7 @@ class LaunchDbSystemBase(object):
         Specifying an overlapping subnet will cause the private interconnect to malfunction.
         This restriction applies to both the client subnet and the backup subnet.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this LaunchDbSystemBase.
@@ -374,7 +381,7 @@ class LaunchDbSystemBase(object):
 
         **Subnet Restrictions:** See the subnet restrictions information for **subnetId**.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The backup_subnet_id of this LaunchDbSystemBase.
@@ -390,7 +397,7 @@ class LaunchDbSystemBase(object):
 
         **Subnet Restrictions:** See the subnet restrictions information for **subnetId**.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param backup_subnet_id: The backup_subnet_id of this LaunchDbSystemBase.
@@ -429,6 +436,34 @@ class LaunchDbSystemBase(object):
         :type: str
         """
         self._shape = shape
+
+    @property
+    def time_zone(self):
+        """
+        Gets the time_zone of this LaunchDbSystemBase.
+        The time zone to use for the DB system. For details, see `DB System Time Zones`__.
+
+        __ https://docs.cloud.oracle.com/Content/Database/References/timezones.htm
+
+
+        :return: The time_zone of this LaunchDbSystemBase.
+        :rtype: str
+        """
+        return self._time_zone
+
+    @time_zone.setter
+    def time_zone(self, time_zone):
+        """
+        Sets the time_zone of this LaunchDbSystemBase.
+        The time zone to use for the DB system. For details, see `DB System Time Zones`__.
+
+        __ https://docs.cloud.oracle.com/Content/Database/References/timezones.htm
+
+
+        :param time_zone: The time_zone of this LaunchDbSystemBase.
+        :type: str
+        """
+        self._time_zone = time_zone
 
     @property
     def sparse_diskgroup(self):
@@ -482,8 +517,8 @@ class LaunchDbSystemBase(object):
     def hostname(self):
         """
         **[Required]** Gets the hostname of this LaunchDbSystemBase.
-        The hostname for the DB system. The hostname must begin with an alphabetic character and
-        can contain a maximum of 30 alphanumeric characters, including hyphens (-).
+        The hostname for the DB system. The hostname must begin with an alphabetic character, and
+        can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata DB systems.
 
         The maximum length of the combined hostname and domain is 63 characters.
 
@@ -500,8 +535,8 @@ class LaunchDbSystemBase(object):
     def hostname(self, hostname):
         """
         Sets the hostname of this LaunchDbSystemBase.
-        The hostname for the DB system. The hostname must begin with an alphabetic character and
-        can contain a maximum of 30 alphanumeric characters, including hyphens (-).
+        The hostname for the DB system. The hostname must begin with an alphabetic character, and
+        can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata DB systems.
 
         The maximum length of the combined hostname and domain is 63 characters.
 
@@ -560,7 +595,7 @@ class LaunchDbSystemBase(object):
         This parameter is not used for virtual machine DB systems because virtual machine DB systems have a set number of cores for each shape.
         For information about the number of cores for a virtual machine DB system shape, see `Virtual Machine DB Systems`__
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Concepts/overview.htm#virtualmachine
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/overview.htm#virtualmachine
 
 
         :return: The cpu_core_count of this LaunchDbSystemBase.
@@ -586,7 +621,7 @@ class LaunchDbSystemBase(object):
         This parameter is not used for virtual machine DB systems because virtual machine DB systems have a set number of cores for each shape.
         For information about the number of cores for a virtual machine DB system shape, see `Virtual Machine DB Systems`__
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Concepts/overview.htm#virtualmachine
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/overview.htm#virtualmachine
 
 
         :param cpu_core_count: The cpu_core_count of this LaunchDbSystemBase.
@@ -703,7 +738,7 @@ class LaunchDbSystemBase(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this LaunchDbSystemBase.
@@ -720,7 +755,7 @@ class LaunchDbSystemBase(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this LaunchDbSystemBase.
@@ -737,7 +772,7 @@ class LaunchDbSystemBase(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this LaunchDbSystemBase.
@@ -754,7 +789,7 @@ class LaunchDbSystemBase(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this LaunchDbSystemBase.

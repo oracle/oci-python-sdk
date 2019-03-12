@@ -25,7 +25,7 @@ class VirtualNetworkClient(object):
         Creates a new service client
 
         :param dict config:
-            Configuration keys and values as per `SDK and Tool Configuration <https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdkconfig.htm>`__.
+            Configuration keys and values as per `SDK and Tool Configuration <https://docs.cloud.oracle.com/Content/API/Concepts/sdkconfig.htm>`__.
             The :py:meth:`~oci.config.from_file` method can be used to load configuration from a file. Alternatively, a ``dict`` can be passed. You can validate_config
             the dict using :py:meth:`~oci.config.validate_config`
 
@@ -44,7 +44,7 @@ class VirtualNetworkClient(object):
             The signer to use when signing requests made by the service client. The default is to use a :py:class:`~oci.signer.Signer` based on the values
             provided in the config parameter.
 
-            One use case for this parameter is for `Instance Principals authentication <https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
+            One use case for this parameter is for `Instance Principals authentication <https://docs.cloud.oracle.com/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
             by passing an instance of :py:class:`~oci.auth.signers.InstancePrincipalsSecurityTokenSigner` as the value for this keyword argument
         :type signer: :py:class:`~oci.signer.AbstractBaseSigner`
 
@@ -98,7 +98,7 @@ class VirtualNetworkClient(object):
         :param str service_gateway_id: (required)
             The service gateway's `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param ServiceIdRequestDetails attach_service_details: (required)
             ServiceId of Service to be attached to a service gateway.
@@ -323,7 +323,7 @@ class VirtualNetworkClient(object):
         operation will fail. For more information, see
         `VCN Peering`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/VCNpeering.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/VCNpeering.htm
 
 
         :param str local_peering_gateway_id: (required)
@@ -399,7 +399,7 @@ class VirtualNetworkClient(object):
         operation will fail. For more information, see
         `VCN Peering`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/VCNpeering.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/VCNpeering.htm
 
 
         :param str remote_peering_connection_id: (required)
@@ -482,10 +482,10 @@ class VirtualNetworkClient(object):
         You may optionally specify a *display name* for the CPE, otherwise a default is provided. It does not have to
         be unique, and you can change it. Avoid entering confidential information.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPsec.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/configuringCPE.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingIPsec.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/configuringCPE.htm
 
 
         :param CreateCpeDetails create_cpe_details: (required)
@@ -574,9 +574,9 @@ class VirtualNetworkClient(object):
         You may optionally specify a *display name* for the cross-connect.
         It does not have to be unique, and you can change it. Avoid entering confidential information.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param CreateCrossConnectDetails create_cross_connect_details: (required)
@@ -661,9 +661,9 @@ class VirtualNetworkClient(object):
         You may optionally specify a *display name* for the cross-connect group.
         It does not have to be unique, and you can change it. Avoid entering confidential information.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param CreateCrossConnectGroupDetails create_cross_connect_group_details: (required)
@@ -745,8 +745,8 @@ class VirtualNetworkClient(object):
         You may optionally specify a *display name* for the set of DHCP options, otherwise a default is provided.
         It does not have to be unique, and you can change it. Avoid entering confidential information.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param CreateDhcpDetails create_dhcp_details: (required)
@@ -828,9 +828,9 @@ class VirtualNetworkClient(object):
         You may optionally specify a *display name* for the DRG, otherwise a default is provided.
         It does not have to be unique, and you can change it. Avoid entering confidential information.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingDRGs.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingDRGs.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param CreateDrgDetails create_drg_details: (required)
@@ -911,8 +911,8 @@ class VirtualNetworkClient(object):
         as the VCN. For more information about compartments and access control, see
         `Overview of the IAM Service`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingDRGs.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingDRGs.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
 
 
         :param CreateDrgAttachmentDetails create_drg_attachment_details: (required)
@@ -1003,9 +1003,9 @@ class VirtualNetworkClient(object):
         use :func:`update_internet_gateway` to easily disable/enable
         the gateway without changing the route rule.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIGs.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingIGs.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param CreateInternetGatewayDetails create_internet_gateway_details: (required)
@@ -1101,10 +1101,10 @@ class VirtualNetworkClient(object):
         To get the status of the tunnels (whether they're up or down), use
         :func:`get_ip_sec_connection_device_status`.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPsec.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/configuringCPE.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingIPsec.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/configuringCPE.htm
 
 
         :param CreateIPSecConnectionDetails create_ip_sec_connection_details: (required)
@@ -1316,7 +1316,7 @@ class VirtualNetworkClient(object):
         For more information about secondary private IPs, see
         `IP Addresses`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPaddresses.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingIPaddresses.htm
 
 
         :param CreatePrivateIpDetails create_private_ip_details: (required)
@@ -1407,7 +1407,7 @@ class VirtualNetworkClient(object):
         asynchronous. Poll the public IP's `lifecycleState` to determine if the assignment
         succeeded.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingpublicIPs.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingpublicIPs.htm
 
 
         :param CreatePublicIpDetails create_public_ip_details: (required)
@@ -1561,10 +1561,10 @@ class VirtualNetworkClient(object):
         You may optionally specify a *display name* for the route table, otherwise a default is provided.
         It does not have to be unique, and you can change it. Avoid entering confidential information.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/servicelimits.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/servicelimits.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingroutetables.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param CreateRouteTableDetails create_route_table_details: (required)
@@ -1648,10 +1648,10 @@ class VirtualNetworkClient(object):
         You may optionally specify a *display name* for the security list, otherwise a default is provided.
         It does not have to be unique, and you can change it. Avoid entering confidential information.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/securitylists.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/servicelimits.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securitylists.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/servicelimits.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param CreateSecurityListDetails create_security_list_details: (required)
@@ -1730,8 +1730,8 @@ class VirtualNetworkClient(object):
         You may optionally specify a *display name* for the service gateway, otherwise a default is provided.
         It does not have to be unique, and you can change it. Avoid entering confidential information.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param CreateServiceGatewayDetails create_service_gateway_details: (required)
@@ -1832,14 +1832,14 @@ class VirtualNetworkClient(object):
         VCN Resolver to resolve hostnames for instances in the subnet. For more information, see
         `DNS in Your Virtual Cloud Network`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVCNs.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/servicelimits.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/securitylists.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingDHCP.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingVCNs.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/servicelimits.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingroutetables.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securitylists.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingDHCP.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
 
 
         :param CreateSubnetDetails create_subnet_details: (required)
@@ -1938,12 +1938,12 @@ class VirtualNetworkClient(object):
         or FastConnect. For more information, see
         `Overview of the Networking Service`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVCNs.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingVCNs.htm
         __ https://tools.ietf.org/html/rfc1918
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/overview.htm
 
 
         :param CreateVcnDetails create_vcn_details: (required)
@@ -2034,10 +2034,10 @@ class VirtualNetworkClient(object):
         traffic will not flow. For more information, see
         `Route Tables`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingroutetables.htm
 
 
         :param CreateVirtualCircuitDetails create_virtual_circuit_details: (required)
@@ -2801,7 +2801,7 @@ class VirtualNetworkClient(object):
         :param str nat_gateway_id: (required)
             The NAT gateway's `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -2882,7 +2882,7 @@ class VirtualNetworkClient(object):
         unassigning it from the VNIC causes that route rule to blackhole and the traffic
         will be dropped.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm#privateip
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingroutetables.htm#privateip
 
 
         :param str private_ip_id: (required)
@@ -3279,7 +3279,7 @@ class VirtualNetworkClient(object):
         :param str service_gateway_id: (required)
             The service gateway's `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -3593,7 +3593,7 @@ class VirtualNetworkClient(object):
         :param str service_gateway_id: (required)
             The service gateway's `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param ServiceIdRequestDetails detach_service_details: (required)
             ServiceId of Service to be detached from a service gateway.
@@ -4184,7 +4184,7 @@ class VirtualNetworkClient(object):
         Gets the specified provider service.
         For more information, see `FastConnect Overview`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm
 
 
         :param str provider_service_id: (required)
@@ -4577,7 +4577,7 @@ class VirtualNetworkClient(object):
         :param str nat_gateway_id: (required)
             The NAT gateway's `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -5098,7 +5098,7 @@ class VirtualNetworkClient(object):
         :param str service_id: (required)
             The service's `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -5164,7 +5164,7 @@ class VirtualNetworkClient(object):
         :param str service_gateway_id: (required)
             The service gateway's `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -5486,7 +5486,7 @@ class VirtualNetworkClient(object):
         Lists the regions that support remote VCN peering (which is peering across regions).
         For more information, see `VCN Peering`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/VCNpeering.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/VCNpeering.htm
 
 
         :param obj retry_strategy: (optional)
@@ -5548,14 +5548,14 @@ class VirtualNetworkClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -5630,14 +5630,14 @@ class VirtualNetworkClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -5768,14 +5768,14 @@ class VirtualNetworkClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -5854,14 +5854,14 @@ class VirtualNetworkClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -5995,14 +5995,14 @@ class VirtualNetworkClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -6082,14 +6082,14 @@ class VirtualNetworkClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -6227,14 +6227,14 @@ class VirtualNetworkClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -6313,14 +6313,14 @@ class VirtualNetworkClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -6390,7 +6390,7 @@ class VirtualNetworkClient(object):
 
         For more information, see `FastConnect Overview`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm
 
 
         :param str compartment_id: (required)
@@ -6403,14 +6403,14 @@ class VirtualNetworkClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -6477,7 +6477,7 @@ class VirtualNetworkClient(object):
 
         For more information about virtual circuits, see `FastConnect Overview`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm
 
 
         :param str provider_service_id: (required)
@@ -6490,14 +6490,14 @@ class VirtualNetworkClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -6586,14 +6586,14 @@ class VirtualNetworkClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -6731,14 +6731,14 @@ class VirtualNetworkClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -6821,14 +6821,14 @@ class VirtualNetworkClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -6908,14 +6908,14 @@ class VirtualNetworkClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -7056,14 +7056,14 @@ class VirtualNetworkClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str ip_address: (optional)
             An IP address.
@@ -7187,14 +7187,14 @@ class VirtualNetworkClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str availability_domain: (optional)
             The name of the availability domain.
@@ -7301,14 +7301,14 @@ class VirtualNetworkClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -7390,14 +7390,14 @@ class VirtualNetworkClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -7531,14 +7531,14 @@ class VirtualNetworkClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -7673,14 +7673,14 @@ class VirtualNetworkClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for
@@ -7804,14 +7804,14 @@ class VirtualNetworkClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -7888,14 +7888,14 @@ class VirtualNetworkClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -8026,14 +8026,14 @@ class VirtualNetworkClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -8163,14 +8163,14 @@ class VirtualNetworkClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -8334,14 +8334,14 @@ class VirtualNetworkClient(object):
 
             Example: `50`
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -9195,7 +9195,7 @@ class VirtualNetworkClient(object):
         :param str nat_gateway_id: (required)
             The NAT gateway's `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param UpdateNatGatewayDetails update_nat_gateway_details: (required)
             Details object for updating a NAT gateway.
@@ -9400,7 +9400,7 @@ class VirtualNetworkClient(object):
         returned. For information about the public IP limits, see
         `Public IP Addresses`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingpublicIPs.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingpublicIPs.htm
 
 
         :param str public_ip_id: (required)
@@ -9734,7 +9734,7 @@ class VirtualNetworkClient(object):
         :param str service_gateway_id: (required)
             The service gateway's `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param UpdateServiceGatewayDetails update_service_gateway_details: (required)
             Details object for updating a service gateway.
@@ -9995,7 +9995,7 @@ class VirtualNetworkClient(object):
         Oracle must verify the customer's ownership of each added prefix before
         traffic for that prefix will flow across the virtual circuit.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm
 
 
         :param str virtual_circuit_id: (required)

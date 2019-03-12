@@ -12,7 +12,7 @@ class MetricData(object):
     The set of aggregated data returned for a metric.
     For information about metrics, see `Metrics Overview`__.
 
-    __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview
+    __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview
     """
 
     def __init__(self, **kwargs):
@@ -114,7 +114,7 @@ class MetricData(object):
         The `OCID`__ of the compartment containing the
         resources from which the aggregated data was returned.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this MetricData.
@@ -129,7 +129,7 @@ class MetricData(object):
         The `OCID`__ of the compartment containing the
         resources from which the aggregated data was returned.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this MetricData.

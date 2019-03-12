@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.2.2 - 2019-03-12
+====================
+
+Added
+-----
+* Support for the Budgets service
+* Support for managing multifactor authentication in the Identity service
+* Support for managing default tags in the Identity service
+* Support for account recovery in the Identity service
+* Support for authentication policies in the Identity service
+* Support for specifying the workload type when creating autonomous databases in the Database service
+* Support for I/O resource management for Exadata database systems in the Database service
+* Support for customer-specified timezones on database systems in the Database service
+
+====================
 2.2.1 - 2019-02-28
 ====================
 

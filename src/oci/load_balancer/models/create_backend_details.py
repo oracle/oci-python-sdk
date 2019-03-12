@@ -13,7 +13,7 @@ class CreateBackendDetails(object):
     For more information on backend server configuration, see
     `Managing Backend Servers`__.
 
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managingbackendservers.htm
+    __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managingbackendservers.htm
     """
 
     def __init__(self, **kwargs):
@@ -139,7 +139,7 @@ class CreateBackendDetails(object):
 
         Example: `3`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Reference/lbpolicies.htm
+        __ https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm
 
 
         :return: The weight of this CreateBackendDetails.
@@ -159,7 +159,7 @@ class CreateBackendDetails(object):
 
         Example: `3`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Reference/lbpolicies.htm
+        __ https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm
 
 
         :param weight: The weight of this CreateBackendDetails.

@@ -15,7 +15,7 @@ class DrgAttachment(object):
     **Warning:** Oracle recommends that you avoid using any confidential information when you
     supply string values using the API.
 
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm
+    __ https://docs.cloud.oracle.com/Content/Network/Concepts/overview.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a DrgAttachment.
@@ -241,7 +241,7 @@ class DrgAttachment(object):
         would associate a route table with a DRG attachment, see
         `Advanced Scenario: Transit Routing`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/transitrouting.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/transitrouting.htm
 
 
         :return: The route_table_id of this DrgAttachment.
@@ -257,7 +257,7 @@ class DrgAttachment(object):
         would associate a route table with a DRG attachment, see
         `Advanced Scenario: Transit Routing`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/transitrouting.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/transitrouting.htm
 
 
         :param route_table_id: The route_table_id of this DrgAttachment.

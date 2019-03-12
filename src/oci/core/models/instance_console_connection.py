@@ -15,7 +15,7 @@ class InstanceConsoleConnection(object):
     For more information about console access, see
     `Accessing the Console`__.
 
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/serialconsole.htm
+    __ https://docs.cloud.oracle.com/Content/Compute/References/serialconsole.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a InstanceConsoleConnection.
@@ -173,7 +173,7 @@ class InstanceConsoleConnection(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this InstanceConsoleConnection.
@@ -190,7 +190,7 @@ class InstanceConsoleConnection(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this InstanceConsoleConnection.
@@ -232,7 +232,7 @@ class InstanceConsoleConnection(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this InstanceConsoleConnection.
@@ -250,7 +250,7 @@ class InstanceConsoleConnection(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this InstanceConsoleConnection.
