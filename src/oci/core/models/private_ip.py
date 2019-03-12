@@ -40,8 +40,8 @@ class PrivateIp(object):
     **Warning:** Oracle recommends that you avoid using any confidential information when you
     supply string values using the API.
 
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPaddresses.htm
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingIPaddresses.htm
+    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
     """
 
     def __init__(self, **kwargs):
@@ -202,7 +202,7 @@ class PrivateIp(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this PrivateIp.
@@ -219,7 +219,7 @@ class PrivateIp(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this PrivateIp.
@@ -263,7 +263,7 @@ class PrivateIp(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this PrivateIp.
@@ -281,7 +281,7 @@ class PrivateIp(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this PrivateIp.
@@ -307,7 +307,7 @@ class PrivateIp(object):
 
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
 
 
         :return: The hostname_label of this PrivateIp.
@@ -333,7 +333,7 @@ class PrivateIp(object):
 
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
 
 
         :param hostname_label: The hostname_label of this PrivateIp.

@@ -135,7 +135,7 @@ class AttachVnicDetails(object):
         the VNIC will use. For more information, see
         `Virtual Network Interface Cards (VNICs)`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVNICs.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingVNICs.htm
 
 
         :return: The nic_index of this AttachVnicDetails.
@@ -153,7 +153,7 @@ class AttachVnicDetails(object):
         the VNIC will use. For more information, see
         `Virtual Network Interface Cards (VNICs)`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVNICs.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingVNICs.htm
 
 
         :param nic_index: The nic_index of this AttachVnicDetails.

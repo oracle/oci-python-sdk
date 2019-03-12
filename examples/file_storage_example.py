@@ -13,7 +13,7 @@
 #     * Creating a mount target via which the file system can be accessed. The mount target and file system must
 #       be in the same availability domain in order to export the file system from the mount target
 #     * Creating an export so that we can mount the file system (see
-#       https://docs.us-phoenix-1.oraclecloud.com/Content/File/Tasks/mountingfilesystems.htm for more information)
+#       https://docs.cloud.oracle.com/Content/File/Tasks/mountingfilesystems.htm for more information)
 #     * Creating a snapshot of the file system
 #
 # In order to demonstrate functionality for mount targets and export sets, this script will also create a VCN
@@ -249,7 +249,7 @@ print('=============================\n')
 # file system via the mount target and the file system can be mounted on, say, a compute instance.
 #
 # For more information on mounting file systems see:
-# https://docs.us-phoenix-1.oraclecloud.com/Content/File/Tasks/mountingfilesystems.htm
+# https://docs.cloud.oracle.com/Content/File/Tasks/mountingfilesystems.htm
 create_response = file_storage_client.create_export(
     oci.file_storage.models.CreateExportDetails(
         export_set_id=mount_target.export_set_id,

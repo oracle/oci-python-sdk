@@ -107,7 +107,7 @@ class MetricDataDetails(object):
         **[Required]** Gets the compartment_id of this MetricDataDetails.
         The `OCID`__ of the compartment to use for metrics.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this MetricDataDetails.
@@ -121,7 +121,7 @@ class MetricDataDetails(object):
         Sets the compartment_id of this MetricDataDetails.
         The `OCID`__ of the compartment to use for metrics.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this MetricDataDetails.

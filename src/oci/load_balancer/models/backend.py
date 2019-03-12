@@ -12,7 +12,7 @@ class Backend(object):
     The configuration of a backend server that is a member of a load balancer backend set.
     For more information, see `Managing Backend Servers`__.
 
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managingbackendservers.htm
+    __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managingbackendservers.htm
     """
 
     def __init__(self, **kwargs):
@@ -173,7 +173,7 @@ class Backend(object):
 
         Example: `3`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Reference/lbpolicies.htm
+        __ https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm
 
 
         :return: The weight of this Backend.
@@ -193,7 +193,7 @@ class Backend(object):
 
         Example: `3`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Reference/lbpolicies.htm
+        __ https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm
 
 
         :param weight: The weight of this Backend.

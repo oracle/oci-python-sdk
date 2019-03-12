@@ -27,10 +27,10 @@ class User(object):
     talk to an administrator. If you're an administrator who needs to write policies to give users access,
     see `Getting Started with Policies`__.
 
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/usercredentials.htm
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/federation.htm
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.cloud.oracle.com/Content/API/Concepts/usercredentials.htm
+    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
+    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/federation.htm
+    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a User.
@@ -73,6 +73,10 @@ class User(object):
         :param description:
             The value to assign to the description property of this User.
         :type description: str
+
+        :param email:
+            The value to assign to the email property of this User.
+        :type email: str
 
         :param identity_provider_id:
             The value to assign to the identity_provider_id property of this User.
@@ -118,6 +122,7 @@ class User(object):
             'compartment_id': 'str',
             'name': 'str',
             'description': 'str',
+            'email': 'str',
             'identity_provider_id': 'str',
             'external_identifier': 'str',
             'time_created': 'datetime',
@@ -134,6 +139,7 @@ class User(object):
             'compartment_id': 'compartmentId',
             'name': 'name',
             'description': 'description',
+            'email': 'email',
             'identity_provider_id': 'identityProviderId',
             'external_identifier': 'externalIdentifier',
             'time_created': 'timeCreated',
@@ -149,6 +155,7 @@ class User(object):
         self._compartment_id = None
         self._name = None
         self._description = None
+        self._email = None
         self._identity_provider_id = None
         self._external_identifier = None
         self._time_created = None
@@ -256,6 +263,32 @@ class User(object):
         :type: str
         """
         self._description = description
+
+    @property
+    def email(self):
+        """
+        Gets the email of this User.
+        The email you assign to the user during creation.
+        The name must be unique across all users in the tenancy.
+
+
+        :return: The email of this User.
+        :rtype: str
+        """
+        return self._email
+
+    @email.setter
+    def email(self, email):
+        """
+        Sets the email of this User.
+        The email you assign to the user during creation.
+        The name must be unique across all users in the tenancy.
+
+
+        :param email: The email of this User.
+        :type: str
+        """
+        self._email = email
 
     @property
     def identity_provider_id(self):
@@ -407,7 +440,7 @@ class User(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this User.
@@ -423,7 +456,7 @@ class User(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this User.
@@ -439,7 +472,7 @@ class User(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this User.
@@ -455,7 +488,7 @@ class User(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this User.

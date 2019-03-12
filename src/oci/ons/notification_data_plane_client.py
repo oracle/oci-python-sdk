@@ -26,7 +26,7 @@ class NotificationDataPlaneClient(object):
         Creates a new service client
 
         :param dict config:
-            Configuration keys and values as per `SDK and Tool Configuration <https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdkconfig.htm>`__.
+            Configuration keys and values as per `SDK and Tool Configuration <https://docs.cloud.oracle.com/Content/API/Concepts/sdkconfig.htm>`__.
             The :py:meth:`~oci.config.from_file` method can be used to load configuration from a file. Alternatively, a ``dict`` can be passed. You can validate_config
             the dict using :py:meth:`~oci.config.validate_config`
 
@@ -45,7 +45,7 @@ class NotificationDataPlaneClient(object):
             The signer to use when signing requests made by the service client. The default is to use a :py:class:`~oci.signer.Signer` based on the values
             provided in the config parameter.
 
-            One use case for this parameter is for `Instance Principals authentication <https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
+            One use case for this parameter is for `Instance Principals authentication <https://docs.cloud.oracle.com/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
             by passing an instance of :py:class:`~oci.auth.signers.InstancePrincipalsSecurityTokenSigner` as the value for this keyword argument
         :type signer: :py:class:`~oci.signer.AbstractBaseSigner`
 
@@ -162,7 +162,7 @@ class NotificationDataPlaneClient(object):
         :param str subscription_id: (required)
             The `OCID`__ of the subscription to delete.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -329,7 +329,7 @@ class NotificationDataPlaneClient(object):
         :param str subscription_id: (required)
             The `OCID`__ of the subscription to retrieve.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -404,7 +404,7 @@ class NotificationDataPlaneClient(object):
         :param str id: (required)
             The `OCID`__ of the subscription to unsubscribe from.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str token: (required)
             The subscription confirmation token.
@@ -493,7 +493,7 @@ class NotificationDataPlaneClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str topic_id: (optional)
             Return all subscriptions that are subscribed to the given topic OCID. Either this query parameter or the compartmentId query parameter must be set.
@@ -501,12 +501,12 @@ class NotificationDataPlaneClient(object):
         :param str page: (optional)
             For list pagination. The value of the opc-next-page response header from the previous \"List\" call. For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call. For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -578,13 +578,13 @@ class NotificationDataPlaneClient(object):
         """
         Publishes a message to the specified topic. For more information about publishing messages, see `Publishing Messages`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/Notification/Tasks/publishingmessages.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/publishingmessages.htm
 
 
         :param str topic_id: (required)
             The `OCID`__ of the topic.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param MessageDetails message_details: (required)
             The message to publish.
@@ -671,7 +671,7 @@ class NotificationDataPlaneClient(object):
         :param str id: (required)
             The `OCID`__ of the subscription to resend the confirmation for.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -746,7 +746,7 @@ class NotificationDataPlaneClient(object):
         :param str subscription_id: (required)
             The `OCID`__ of the subscription to update.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param UpdateSubscriptionDetails update_subscription_details: (required)
             The configuration details for updating the subscription.

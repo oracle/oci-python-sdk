@@ -218,7 +218,7 @@ class UpdateWaasPolicyDetails(object):
         Gets the defined_tags of this UpdateWaasPolicyDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see `Resource Tags`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this UpdateWaasPolicyDetails.
@@ -232,7 +232,7 @@ class UpdateWaasPolicyDetails(object):
         Sets the defined_tags of this UpdateWaasPolicyDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see `Resource Tags`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this UpdateWaasPolicyDetails.

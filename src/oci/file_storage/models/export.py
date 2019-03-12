@@ -45,7 +45,7 @@ class Export(object):
 
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/File/Tasks/exportoptions.htm
+    __ https://docs.cloud.oracle.com/Content/File/Tasks/exportoptions.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a Export.

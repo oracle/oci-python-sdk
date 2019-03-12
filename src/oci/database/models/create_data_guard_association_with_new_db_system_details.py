@@ -175,7 +175,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
     def hostname(self):
         """
         Gets the hostname of this CreateDataGuardAssociationWithNewDbSystemDetails.
-        The host name for the DB Node.
+        The hostname for the DB node.
 
 
         :return: The hostname of this CreateDataGuardAssociationWithNewDbSystemDetails.
@@ -187,7 +187,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
     def hostname(self, hostname):
         """
         Sets the hostname of this CreateDataGuardAssociationWithNewDbSystemDetails.
-        The host name for the DB Node.
+        The hostname for the DB node.
 
 
         :param hostname: The hostname of this CreateDataGuardAssociationWithNewDbSystemDetails.

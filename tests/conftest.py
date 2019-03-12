@@ -1,7 +1,7 @@
 # coding: utf-8
 # Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
-import os
+import os.path
 import pytest
 import oci
 
@@ -36,6 +36,9 @@ def config_profile(request):
 
 @pytest.fixture(scope="session")
 def config(config_file, config_profile):
+    if not os.path.exists(config_file):
+        pytest.skip("Config file, {}, does not exist".format(config_file))
+
     config = oci.config.from_file(file_location=config_file, profile_name=config_profile)
     util.target_region = config['region']
 

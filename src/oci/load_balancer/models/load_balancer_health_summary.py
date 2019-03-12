@@ -63,7 +63,7 @@ class LoadBalancerHealthSummary(object):
         **[Required]** Gets the load_balancer_id of this LoadBalancerHealthSummary.
         The `OCID`__ of the load balancer the health status is associated with.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The load_balancer_id of this LoadBalancerHealthSummary.
@@ -77,7 +77,7 @@ class LoadBalancerHealthSummary(object):
         Sets the load_balancer_id of this LoadBalancerHealthSummary.
         The `OCID`__ of the load balancer the health status is associated with.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param load_balancer_id: The load_balancer_id of this LoadBalancerHealthSummary.

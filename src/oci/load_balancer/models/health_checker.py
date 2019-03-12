@@ -12,7 +12,7 @@ class HealthChecker(object):
     The health check policy configuration.
     For more information, see `Editing Health Check Policies`__.
 
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/editinghealthcheck.htm
+    __ https://docs.cloud.oracle.com/Content/Balance/Tasks/editinghealthcheck.htm
     """
 
     def __init__(self, **kwargs):

@@ -73,7 +73,7 @@ class UpdateDrgAttachmentDetails(object):
         would associate a route table with a DRG attachment, see
         `Advanced Scenario: Transit Routing`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/transitrouting.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/transitrouting.htm
 
 
         :return: The route_table_id of this UpdateDrgAttachmentDetails.
@@ -89,7 +89,7 @@ class UpdateDrgAttachmentDetails(object):
         would associate a route table with a DRG attachment, see
         `Advanced Scenario: Transit Routing`__.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/transitrouting.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/transitrouting.htm
 
 
         :param route_table_id: The route_table_id of this UpdateDrgAttachmentDetails.

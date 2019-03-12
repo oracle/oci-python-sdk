@@ -80,7 +80,7 @@ class CreateSubscriptionDetails(object):
         **[Required]** Gets the topic_id of this CreateSubscriptionDetails.
         The `OCID`__ of the topic for the subscription.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The topic_id of this CreateSubscriptionDetails.
@@ -94,7 +94,7 @@ class CreateSubscriptionDetails(object):
         Sets the topic_id of this CreateSubscriptionDetails.
         The `OCID`__ of the topic for the subscription.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param topic_id: The topic_id of this CreateSubscriptionDetails.
@@ -108,7 +108,7 @@ class CreateSubscriptionDetails(object):
         **[Required]** Gets the compartment_id of this CreateSubscriptionDetails.
         The `OCID`__ of the compartment for the subscription.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateSubscriptionDetails.
@@ -122,7 +122,7 @@ class CreateSubscriptionDetails(object):
         Sets the compartment_id of this CreateSubscriptionDetails.
         The `OCID`__ of the compartment for the subscription.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateSubscriptionDetails.
@@ -214,7 +214,7 @@ class CreateSubscriptionDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateSubscriptionDetails.
@@ -230,7 +230,7 @@ class CreateSubscriptionDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateSubscriptionDetails.
@@ -246,7 +246,7 @@ class CreateSubscriptionDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateSubscriptionDetails.
@@ -262,7 +262,7 @@ class CreateSubscriptionDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateSubscriptionDetails.

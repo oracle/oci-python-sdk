@@ -39,6 +39,20 @@ def unique_name(base_name, ignore_vcr=False):
         return base_name + '_' + random_number_string()
 
 
+def get_config_directory():
+    """Get the absolute path to the configuration directory.
+    This maybe the resource directory for legacy reasons.
+    If the resource directory does not exist, then the configuration
+    directory is 'configuration' under the tests directory.
+    """
+    legacy_path = get_resource_directory()
+    if os.path.exists(legacy_path):
+        return legacy_path
+
+    here = os.path.abspath(os.path.dirname(__file__))
+    return os.path.join(here, "configuration")
+
+
 def get_resource_directory():
     """Get the absolute path to the test resources directory.
     File is located based on the relative location of this file (util.py).

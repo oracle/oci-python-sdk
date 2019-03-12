@@ -19,7 +19,7 @@ class SessionPersistenceConfigurationDetails(object):
 
     Example: `SessionPersistenceConfigurationDetails: null`
 
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Reference/sessionpersistence.htm
+    __ https://docs.cloud.oracle.com/Content/Balance/Reference/sessionpersistence.htm
     """
 
     def __init__(self, **kwargs):

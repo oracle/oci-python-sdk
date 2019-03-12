@@ -122,7 +122,7 @@ class TimeoutConnectionAndServiceErrorRetryChecker(BaseRetryChecker):
 
     The last item is configurable via dictionary where the key is some numeric status representing a HTTP status and the value
     is a list of strings with each string representing a textual error code (such as those error codes documented at
-    https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm). If an empty list is provided, then
+    https://docs.cloud.oracle.com/Content/API/References/apierrors.htm). If an empty list is provided, then
     only the numeric status is checked for retry purposes. For a populated array, we are looking for where the numeric status matches
     and the code from the exception appears in the array. As an example:
 

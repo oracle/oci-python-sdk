@@ -97,7 +97,7 @@ class ConfirmationResult(object):
         **[Required]** Gets the topic_id of this ConfirmationResult.
         The `OCID`__ of the topic to delete.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The topic_id of this ConfirmationResult.
@@ -111,7 +111,7 @@ class ConfirmationResult(object):
         Sets the topic_id of this ConfirmationResult.
         The `OCID`__ of the topic to delete.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param topic_id: The topic_id of this ConfirmationResult.
@@ -201,7 +201,7 @@ class ConfirmationResult(object):
         Gets the subscription_id of this ConfirmationResult.
         The `OCID`__ of the subscription.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subscription_id of this ConfirmationResult.
@@ -215,7 +215,7 @@ class ConfirmationResult(object):
         Sets the subscription_id of this ConfirmationResult.
         The `OCID`__ of the subscription.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subscription_id: The subscription_id of this ConfirmationResult.

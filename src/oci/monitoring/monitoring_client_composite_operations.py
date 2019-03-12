@@ -67,7 +67,7 @@ class MonitoringClientCompositeOperations(object):
         :param str alarm_id: (required)
             The `OCID`__ of an alarm.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.monitoring.models.Alarm.lifecycle_state`
@@ -108,7 +108,7 @@ class MonitoringClientCompositeOperations(object):
         :param str alarm_id: (required)
             The `OCID`__ of an alarm.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param UpdateAlarmDetails update_alarm_details: (required)
             Document for updating an alarm.

@@ -9,7 +9,7 @@ import oci
 # Please review the documentation for more information about
 # how Container Engine works, including permissions needed.
 #
-# https://docs.us-phoenix-1.oraclecloud.com/Content/ContEng/Concepts/contengoverview.htm
+# https://docs.cloud.oracle.com/Content/ContEng/Concepts/contengoverview.htm
 
 # Note: Exception handling is rudimentary and would need to be expanded for use in
 #       production.  Please be aware resources may need to be cleaned up manually
@@ -256,11 +256,11 @@ def create_vcn(vn_client, ads, number_of_worker_subnets=3, number_of_lb_subnets=
     """
     create_vcn
 
-    See https://docs.us-phoenix-1.oraclecloud.com/Content/ContEng/Concepts/contengnetworkconfig.htm#VCN
+    See https://docs.cloud.oracle.com/Content/ContEng/Concepts/contengnetworkconfig.htm#VCN
     for details on how the VCN should be configured for container engine.
 
     This function will build a Virtual Cloud Network based on the example network resource configuration:
-    https://docs.us-phoenix-1.oraclecloud.com/Content/ContEng/Concepts/contengnetworkconfigexample.htm
+    https://docs.cloud.oracle.com/Content/ContEng/Concepts/contengnetworkconfigexample.htm
 
     The function returns a dictionary containing the id of the VCN created, a list of worker subnets and
     a list of load balancer subnets
@@ -316,7 +316,7 @@ def create_vcn(vn_client, ads, number_of_worker_subnets=3, number_of_lb_subnets=
     ################
     # Security Lists and Security Rules
     # More information on the security list configuration for container engine can be found here:
-    # https://docs.us-phoenix-1.oraclecloud.com/Content/ContEng/Concepts/contengnetworkconfig.htm#securitylistconfig
+    # https://docs.cloud.oracle.com/Content/ContEng/Concepts/contengnetworkconfig.htm#securitylistconfig
     ################
 
     # Load balancer security rules
@@ -406,7 +406,7 @@ def create_vcn(vn_client, ads, number_of_worker_subnets=3, number_of_lb_subnets=
     ################
     # Subnets
     # More information on the subnet configuration for container engine can be found here:
-    # https://docs.us-phoenix-1.oraclecloud.com/Content/ContEng/Concepts/contengnetworkconfig.htm#subnetconfig
+    # https://docs.cloud.oracle.com/Content/ContEng/Concepts/contengnetworkconfig.htm#subnetconfig
     ################
 
     # Worker subnets

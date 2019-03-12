@@ -11,7 +11,7 @@ class PeerRegionForRemotePeering(object):
     """
     Details about a region that supports remote VCN peering. For more information, see `VCN Peering`__.
 
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/VCNpeering.htm
+    __ https://docs.cloud.oracle.com/Content/Network/Tasks/VCNpeering.htm
     """
 
     def __init__(self, **kwargs):

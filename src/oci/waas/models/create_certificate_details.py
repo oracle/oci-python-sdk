@@ -82,7 +82,7 @@ class CreateCertificateDetails(object):
         **[Required]** Gets the compartment_id of this CreateCertificateDetails.
         The `OCID`__ of the compartment in which to create the SSL certificate.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateCertificateDetails.
@@ -96,7 +96,7 @@ class CreateCertificateDetails(object):
         Sets the compartment_id of this CreateCertificateDetails.
         The `OCID`__ of the compartment in which to create the SSL certificate.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateCertificateDetails.

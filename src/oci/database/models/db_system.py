@@ -73,6 +73,10 @@ class DbSystem(object):
         Initializes a new DbSystem object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param iorm_config_cache:
+            The value to assign to the iorm_config_cache property of this DbSystem.
+        :type iorm_config_cache: ExadataIormConfig
+
         :param id:
             The value to assign to the id property of this DbSystem.
         :type id: str
@@ -108,6 +112,10 @@ class DbSystem(object):
         :param ssh_public_keys:
             The value to assign to the ssh_public_keys property of this DbSystem.
         :type ssh_public_keys: list[str]
+
+        :param time_zone:
+            The value to assign to the time_zone property of this DbSystem.
+        :type time_zone: str
 
         :param hostname:
             The value to assign to the hostname property of this DbSystem.
@@ -211,6 +219,7 @@ class DbSystem(object):
 
         """
         self.swagger_types = {
+            'iorm_config_cache': 'ExadataIormConfig',
             'id': 'str',
             'compartment_id': 'str',
             'display_name': 'str',
@@ -220,6 +229,7 @@ class DbSystem(object):
             'backup_subnet_id': 'str',
             'shape': 'str',
             'ssh_public_keys': 'list[str]',
+            'time_zone': 'str',
             'hostname': 'str',
             'domain': 'str',
             'version': 'str',
@@ -246,6 +256,7 @@ class DbSystem(object):
         }
 
         self.attribute_map = {
+            'iorm_config_cache': 'iormConfigCache',
             'id': 'id',
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
@@ -255,6 +266,7 @@ class DbSystem(object):
             'backup_subnet_id': 'backupSubnetId',
             'shape': 'shape',
             'ssh_public_keys': 'sshPublicKeys',
+            'time_zone': 'timeZone',
             'hostname': 'hostname',
             'domain': 'domain',
             'version': 'version',
@@ -280,6 +292,7 @@ class DbSystem(object):
             'defined_tags': 'definedTags'
         }
 
+        self._iorm_config_cache = None
         self._id = None
         self._compartment_id = None
         self._display_name = None
@@ -289,6 +302,7 @@ class DbSystem(object):
         self._backup_subnet_id = None
         self._shape = None
         self._ssh_public_keys = None
+        self._time_zone = None
         self._hostname = None
         self._domain = None
         self._version = None
@@ -314,12 +328,32 @@ class DbSystem(object):
         self._defined_tags = None
 
     @property
+    def iorm_config_cache(self):
+        """
+        Gets the iorm_config_cache of this DbSystem.
+
+        :return: The iorm_config_cache of this DbSystem.
+        :rtype: ExadataIormConfig
+        """
+        return self._iorm_config_cache
+
+    @iorm_config_cache.setter
+    def iorm_config_cache(self, iorm_config_cache):
+        """
+        Sets the iorm_config_cache of this DbSystem.
+
+        :param iorm_config_cache: The iorm_config_cache of this DbSystem.
+        :type: ExadataIormConfig
+        """
+        self._iorm_config_cache = iorm_config_cache
+
+    @property
     def id(self):
         """
         **[Required]** Gets the id of this DbSystem.
         The `OCID`__ of the DB system.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DbSystem.
@@ -333,7 +367,7 @@ class DbSystem(object):
         Sets the id of this DbSystem.
         The `OCID`__ of the DB system.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DbSystem.
@@ -347,7 +381,7 @@ class DbSystem(object):
         **[Required]** Gets the compartment_id of this DbSystem.
         The `OCID`__ of the compartment.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this DbSystem.
@@ -361,7 +395,7 @@ class DbSystem(object):
         Sets the compartment_id of this DbSystem.
         The `OCID`__ of the compartment.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this DbSystem.
@@ -455,7 +489,7 @@ class DbSystem(object):
         Specifying an overlapping subnet will cause the private interconnect to malfunction.
         This restriction applies to both the client subnet and backup subnet.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this DbSystem.
@@ -477,7 +511,7 @@ class DbSystem(object):
         Specifying an overlapping subnet will cause the private interconnect to malfunction.
         This restriction applies to both the client subnet and backup subnet.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this DbSystem.
@@ -493,7 +527,7 @@ class DbSystem(object):
 
         **Subnet Restriction:** See the subnet restrictions information for **subnetId**.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The backup_subnet_id of this DbSystem.
@@ -509,7 +543,7 @@ class DbSystem(object):
 
         **Subnet Restriction:** See the subnet restrictions information for **subnetId**.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param backup_subnet_id: The backup_subnet_id of this DbSystem.
@@ -568,6 +602,34 @@ class DbSystem(object):
         :type: list[str]
         """
         self._ssh_public_keys = ssh_public_keys
+
+    @property
+    def time_zone(self):
+        """
+        Gets the time_zone of this DbSystem.
+        The time zone of the DB system. For details, see `DB System Time Zones`__.
+
+        __ https://docs.cloud.oracle.com/Content/Database/References/timezones.htm
+
+
+        :return: The time_zone of this DbSystem.
+        :rtype: str
+        """
+        return self._time_zone
+
+    @time_zone.setter
+    def time_zone(self, time_zone):
+        """
+        Sets the time_zone of this DbSystem.
+        The time zone of the DB system. For details, see `DB System Time Zones`__.
+
+        __ https://docs.cloud.oracle.com/Content/Database/References/timezones.htm
+
+
+        :param time_zone: The time_zone of this DbSystem.
+        :type: str
+        """
+        self._time_zone = time_zone
 
     @property
     def hostname(self):
@@ -751,7 +813,7 @@ class DbSystem(object):
         Gets the last_patch_history_entry_id of this DbSystem.
         The `OCID`__ of the last patch history. This value is updated as soon as a patch operation starts.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The last_patch_history_entry_id of this DbSystem.
@@ -765,7 +827,7 @@ class DbSystem(object):
         Sets the last_patch_history_entry_id of this DbSystem.
         The `OCID`__ of the last patch history. This value is updated as soon as a patch operation starts.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param last_patch_history_entry_id: The last_patch_history_entry_id of this DbSystem.
@@ -943,7 +1005,7 @@ class DbSystem(object):
 
         **Note:** For a single-node DB system, this list is empty.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The scan_ip_ids of this DbSystem.
@@ -961,7 +1023,7 @@ class DbSystem(object):
 
         **Note:** For a single-node DB system, this list is empty.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param scan_ip_ids: The scan_ip_ids of this DbSystem.
@@ -979,7 +1041,7 @@ class DbSystem(object):
 
         **Note:** For a single-node DB system, this list is empty.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The vip_ids of this DbSystem.
@@ -997,7 +1059,7 @@ class DbSystem(object):
 
         **Note:** For a single-node DB system, this list is empty.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param vip_ids: The vip_ids of this DbSystem.
@@ -1011,7 +1073,7 @@ class DbSystem(object):
         Gets the scan_dns_record_id of this DbSystem.
         The `OCID`__ of the DNS record for the SCAN IP addresses that are associated with the DB system.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The scan_dns_record_id of this DbSystem.
@@ -1025,7 +1087,7 @@ class DbSystem(object):
         Sets the scan_dns_record_id of this DbSystem.
         The `OCID`__ of the DNS record for the SCAN IP addresses that are associated with the DB system.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param scan_dns_record_id: The scan_dns_record_id of this DbSystem.
@@ -1144,7 +1206,7 @@ class DbSystem(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this DbSystem.
@@ -1161,7 +1223,7 @@ class DbSystem(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this DbSystem.
@@ -1178,7 +1240,7 @@ class DbSystem(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this DbSystem.
@@ -1195,7 +1257,7 @@ class DbSystem(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this DbSystem.

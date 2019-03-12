@@ -25,7 +25,7 @@ class AutoScalingClient(object):
         Creates a new service client
 
         :param dict config:
-            Configuration keys and values as per `SDK and Tool Configuration <https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdkconfig.htm>`__.
+            Configuration keys and values as per `SDK and Tool Configuration <https://docs.cloud.oracle.com/Content/API/Concepts/sdkconfig.htm>`__.
             The :py:meth:`~oci.config.from_file` method can be used to load configuration from a file. Alternatively, a ``dict`` can be passed. You can validate_config
             the dict using :py:meth:`~oci.config.validate_config`
 
@@ -44,7 +44,7 @@ class AutoScalingClient(object):
             The signer to use when signing requests made by the service client. The default is to use a :py:class:`~oci.signer.Signer` based on the values
             provided in the config parameter.
 
-            One use case for this parameter is for `Instance Principals authentication <https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
+            One use case for this parameter is for `Instance Principals authentication <https://docs.cloud.oracle.com/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
             by passing an instance of :py:class:`~oci.auth.signers.InstancePrincipalsSecurityTokenSigner` as the value for this keyword argument
         :type signer: :py:class:`~oci.signer.AbstractBaseSigner`
 
@@ -558,7 +558,7 @@ class AutoScalingClient(object):
             resources monitored by the metric that you are searching for. Use tenancyId to search in
             the root compartment.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -569,13 +569,13 @@ class AutoScalingClient(object):
             The maximum number of items to return in a paginated \"List\" call. For information about pagination, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/#API/Concepts/usingapi.htm#List_Pagination
+            __ https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call. For information about
             pagination, see `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/#API/Concepts/usingapi.htm#List_Pagination
+            __ https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for
@@ -688,13 +688,13 @@ class AutoScalingClient(object):
             The maximum number of items to return in a paginated \"List\" call. For information about pagination, see
             `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/#API/Concepts/usingapi.htm#List_Pagination
+            __ https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call. For information about
             pagination, see `List Pagination`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/#API/Concepts/usingapi.htm#List_Pagination
+            __ https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for

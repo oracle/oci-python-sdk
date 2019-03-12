@@ -22,9 +22,9 @@ class Subnet(object):
     **Warning:** Oracle recommends that you avoid using any confidential information when you
     supply string values using the API.
 
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVCNs.htm
-    __ https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.cloud.oracle.com/Content/Network/Concepts/overview.htm
+    __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingVCNs.htm
+    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a Subnet.
@@ -273,7 +273,7 @@ class Subnet(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this Subnet.
@@ -290,7 +290,7 @@ class Subnet(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this Subnet.
@@ -366,7 +366,7 @@ class Subnet(object):
 
         Example: `subnet123`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
 
 
         :return: The dns_label of this Subnet.
@@ -392,7 +392,7 @@ class Subnet(object):
 
         Example: `subnet123`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
 
 
         :param dns_label: The dns_label of this Subnet.
@@ -410,7 +410,7 @@ class Subnet(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this Subnet.
@@ -428,7 +428,7 @@ class Subnet(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this Subnet.
@@ -598,7 +598,7 @@ class Subnet(object):
 
         Example: `subnet123.vcn1.oraclevcn.com`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
 
 
         :return: The subnet_domain_name of this Subnet.
@@ -618,7 +618,7 @@ class Subnet(object):
 
         Example: `subnet123.vcn1.oraclevcn.com`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
 
 
         :param subnet_domain_name: The subnet_domain_name of this Subnet.

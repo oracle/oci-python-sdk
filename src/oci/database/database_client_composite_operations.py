@@ -219,7 +219,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param CreateDataGuardAssociationDetails create_data_guard_association_details: (required)
             A request to create a Data Guard association.
@@ -300,7 +300,7 @@ class DatabaseClientCompositeOperations(object):
         :param str db_node_id: (required)
             The database node `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str action: (required)
             The action to perform on the DB Node.
@@ -345,7 +345,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_data_warehouse_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousDataWarehouse.lifecycle_state`
@@ -386,7 +386,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousDatabase.lifecycle_state`
@@ -427,7 +427,7 @@ class DatabaseClientCompositeOperations(object):
         :param str backup_id: (required)
             The backup `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.Backup.lifecycle_state`
@@ -468,7 +468,7 @@ class DatabaseClientCompositeOperations(object):
         :param str db_home_id: (required)
             The database home `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.DbHome.lifecycle_state`
@@ -509,12 +509,12 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str data_guard_association_id: (required)
             The Data Guard association's `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param FailoverDataGuardAssociationDetails failover_data_guard_association_details: (required)
             A request to perform a failover, transitioning a standby database into a primary database.
@@ -595,12 +595,12 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str data_guard_association_id: (required)
             The Data Guard association's `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param ReinstateDataGuardAssociationDetails reinstate_data_guard_association_details: (required)
             A request to reinstate a database in a standby role.
@@ -643,7 +643,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_data_warehouse_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param RestoreAutonomousDataWarehouseDetails restore_autonomous_data_warehouse_details: (required)
             Request to perform an Autonomous Data Warehouse restore.
@@ -686,7 +686,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param RestoreAutonomousDatabaseDetails restore_autonomous_database_details: (required)
             Request to perform an Autonomous Database restore.
@@ -729,7 +729,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param RestoreDatabaseDetails restore_database_details: (required)
             Request to perform database restore.
@@ -772,7 +772,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_data_warehouse_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousDataWarehouse.lifecycle_state`
@@ -812,7 +812,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousDatabase.lifecycle_state`
@@ -852,7 +852,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_data_warehouse_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousDataWarehouse.lifecycle_state`
@@ -892,7 +892,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousDatabase.lifecycle_state`
@@ -932,12 +932,12 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str data_guard_association_id: (required)
             The Data Guard association's `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param SwitchoverDataGuardAssociationDetails switchover_data_guard_association_details: (required)
             Request to swtichover a primary to a standby.
@@ -980,7 +980,7 @@ class DatabaseClientCompositeOperations(object):
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.DbSystem.lifecycle_state`
@@ -1021,7 +1021,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_data_warehouse_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param UpdateAutonomousDataWarehouseDetails update_autonomous_data_warehouse_details: (required)
             Request to update the properties of an Autonomous Data Warehouse.
@@ -1064,7 +1064,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param UpdateAutonomousDatabaseDetails update_autonomous_database_details: (required)
             Request to update the properties of an Autonomous Database.
@@ -1107,7 +1107,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param UpdateDatabaseDetails update_database_details: (required)
             Request to perform database update.
@@ -1150,7 +1150,7 @@ class DatabaseClientCompositeOperations(object):
         :param str db_home_id: (required)
             The database home `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param UpdateDbHomeDetails update_db_home_details: (required)
             Request to update the properties of a DB Home.
@@ -1193,7 +1193,7 @@ class DatabaseClientCompositeOperations(object):
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param UpdateDbSystemDetails update_db_system_details: (required)
             Request to update the properties of a DB system.
@@ -1219,6 +1219,49 @@ class DatabaseClientCompositeOperations(object):
             waiter_result = oci.wait_until(
                 self.client,
                 self.client.get_db_system(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_exadata_iorm_config_and_wait_for_state(self, db_system_id, exadata_iorm_config_update_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database.DatabaseClient.update_exadata_iorm_config` and waits for the :py:class:`~oci.database.models.ExadataIormConfig` acted upon
+        to enter the given state(s).
+
+        :param str db_system_id: (required)
+            The DB system `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param ExadataIormConfigUpdateDetails exadata_iorm_config_update_details: (required)
+            Request to perform database update.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.ExadataIormConfig.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database.DatabaseClient.update_exadata_iorm_config`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_exadata_iorm_config(db_system_id, exadata_iorm_config_update_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_exadata_iorm_config(wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )

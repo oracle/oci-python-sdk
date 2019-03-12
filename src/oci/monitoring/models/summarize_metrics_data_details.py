@@ -104,8 +104,8 @@ class SummarizeMetricsDataDetails(object):
 
         Example: `CpuUtilization[1m].sum()`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/Monitoring/Reference/mql.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices
 
 
         :return: The query of this SummarizeMetricsDataDetails.
@@ -128,8 +128,8 @@ class SummarizeMetricsDataDetails(object):
 
         Example: `CpuUtilization[1m].sum()`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/Monitoring/Reference/mql.htm
-        __ https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices
 
 
         :param query: The query of this SummarizeMetricsDataDetails.

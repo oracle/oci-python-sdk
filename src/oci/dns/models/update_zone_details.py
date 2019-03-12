@@ -56,7 +56,7 @@ class UpdateZoneDetails(object):
         For more information, see `Resource Tags`__.
         Example: `{\"bar-key\": \"value\"}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this UpdateZoneDetails.
@@ -72,7 +72,7 @@ class UpdateZoneDetails(object):
         For more information, see `Resource Tags`__.
         Example: `{\"bar-key\": \"value\"}`
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this UpdateZoneDetails.
