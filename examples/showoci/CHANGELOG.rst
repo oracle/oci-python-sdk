@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+3.0.6 - 2019-03-13
+====================
+
+Added
+-----
+* includes OCID in the JSON file for most of objects
+* includes local peering gateway name and IP in the route list
+* Includes Service Gateway info in the route table and vcn
+* Includes DRG name in the route table 
+* Add no data found incase no data extracted
+
+====================
 3.0.5 - 2019-03-12
 ====================
 
@@ -119,7 +131,7 @@ Fixed
 * fix Lb pathroute + listener
 
 ====================
- 1.0.8 - 2017-08-01
+ 1.0.8 - 2018-08-01
 ====================
 
 Added
@@ -134,7 +146,7 @@ Fixed
 * fixed exceptions, added proxy parameter and add git
 
 ====================
- 1.0.0 - 2017-07-26
+ 1.0.0 - 2018-07-26
 ====================
 
 * Initial Release

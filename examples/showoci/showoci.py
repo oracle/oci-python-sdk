@@ -6,7 +6,7 @@
 # @Created On  : Jul 25 2018
 # @Last Updated: Mar 12 2019
 # @author      : Adi Zohar
-# @Version     : 3.0.5
+# @Version     : 3.0.6
 #
 # Supports Python 2.7 and above, Python 3 recommended
 #
@@ -38,6 +38,12 @@
 #    Notifications
 #
 ##########################################################################
+# Global Variables used:
+#    global summary_global_list
+#    global summary_global_total
+#    global config_file
+#    global config_section
+##########################################################################
 from __future__ import print_function
 import oci
 import datetime
@@ -48,7 +54,7 @@ import json
 ##########################################################################
 # config file and proxy
 ##########################################################################
-version = "3.0.5"
+version = "3.0.6"
 config_file = "~/.oci/config"
 oci_min_version = "2.2.1"
 ocid = False
@@ -60,11 +66,10 @@ oci_installed_version = oci.version.__version__
 tabs = ' ' * 4
 taba = '--> '
 
+
 ##########################################################################
 # dot dict
 ##########################################################################
-
-
 class dotdict(dict):
     """dot.notation access to dictionary attributes"""
     __getattr__ = dict.get
@@ -105,8 +110,6 @@ def get_flags(cmd):
         flag += "compartment "
     if cmd.region:
         flag += "region "
-    if cmd.ocid:
-        flag += "ocid "
     if cmd.noroot:
         flag += "noroot "
     if cmd.mgdcompart:
@@ -193,11 +196,10 @@ def print_identity_groups(groups):
         print("Error in print_identity_groups: " + str(e.args))
         pass
 
+
 ##########################################################################
 # Print Identity Policies
 ##########################################################################
-
-
 def print_identity_policies(policies_data):
     try:
         if not policies_data:
@@ -248,11 +250,10 @@ def print_identity_providers(identity_providers):
         print("Error in print_identity_providers: " + str(e.args))
         pass
 
+
 ##########################################################################
 # Print Dynamic Groups
 ##########################################################################
-
-
 def print_identity_dynamic_groups(dynamic_groups):
     try:
         if not dynamic_groups:
@@ -292,22 +293,20 @@ def print_identity_main(data):
         print("Error in print_identity_data: " + str(e.args))
         pass
 
+
 ##########################################################################
 # return compartment name
 ##########################################################################
-
-
 def print_core_network_vcn_compartment(vcn_compartment, data_compartment):
     if vcn_compartment == data_compartment:
         return ""
     val = "  (Compartment=" + data_compartment + ")"
     return val
 
+
 ##########################################################################
 # Print Network VCN Local Peering
 ##########################################################################
-
-
 def print_core_network_vcn_subnet(subnets, vcn_compartment, data_compartment):
     try:
         for subnet in subnets:
@@ -324,11 +323,10 @@ def print_core_network_vcn_subnet(subnets, vcn_compartment, data_compartment):
         print("Error in print_core_network_vcn_subnet: " + str(e.args))
         pass
 
+
 ##########################################################################
 # get DHCP options for DHCP_ID
 ##########################################################################
-
-
 def print_core_network_vcn_dhcp_options(dhcp_options, vcn_compartment, data_compartment):
     try:
         for dhcp in dhcp_options:
@@ -342,11 +340,10 @@ def print_core_network_vcn_dhcp_options(dhcp_options, vcn_compartment, data_comp
         print("Error in print_core_network_vcn_dhcp_options: " + str(e.args))
         pass
 
+
 ##########################################################################
 # Print Network vcn security list
 ##########################################################################
-
-
 def print_core_network_vcn_security_lists(sec_lists, vcn_compartment, data_compartment):
     try:
         if not sec_lists:
@@ -412,8 +409,8 @@ def print_core_network_vcn(vcns):
 
                 for data in vcn['data']:
                     if 'sgw' in data:
-                        if data['sgw'] != "":
-                            print(tabs + "Service GW  : " + data['sgw'] + print_core_network_vcn_compartment(vcn_compartment, data['compartment']))
+                        for sgwloop in data['sgw']:
+                            print(tabs + "Service GW  : " + sgwloop['name'] + " - " + sgwloop['services'] + print_core_network_vcn_compartment(vcn_compartment, data['compartment']))
 
                 for data in vcn['data']:
                     if 'nat' in data:
@@ -474,11 +471,10 @@ def print_core_network_drg(drgs):
         print("Error in print_core_network_vcn: " + str(e.args))
         pass
 
+
 ##########################################################################
 # print network remote peering
 ##########################################################################
-
-
 def print_core_network_remote_peering(rpcs):
 
     try:
@@ -499,11 +495,11 @@ def print_core_network_remote_peering(rpcs):
     except Exception as e:
         print("Error in print_core_network_vcn: " + str(e.args))
         pass
+
+
 ##########################################################################
 # print network cpe
 ##########################################################################
-
-
 def print_core_network_cpe(cpes):
 
     try:
@@ -546,11 +542,10 @@ def print_core_network_ipsec(ipsecs):
         print("Error in print_core_network_ipsec: " + str(e.args))
         pass
 
+
 ##########################################################################
 # print virtual cirtuicts
 ##########################################################################
-
-
 def print_core_network_virtual_circuit(virtual_circuit):
 
     try:
@@ -566,7 +561,7 @@ def print_core_network_virtual_circuit(virtual_circuit):
             print(tabs + "PROVIDER: " + vc['provider_name'] + " - " + vc['provider_service_name'] + " - " + vc['provider_state'] + " - " + vc['service_type'])
             # get tunnel status
             for t in vc['cross_connect_mappings']:
-                print(tabs + "CCMAP  : Cust : " + str(t['customer_bgp_peering_ip']) + " - Ora : " + str(t['oracle_bgp_peering_ip']) + " - VLAN " + str(t['vlan']))
+                print(tabs + "CCMAP   : Cust : " + str(t['customer_bgp_peering_ip']) + " - Ora : " + str(t['oracle_bgp_peering_ip']) + " - VLAN " + str(t['vlan']))
             print("")
 
     except Exception as e:
@@ -713,11 +708,10 @@ def print_file_storage_mount_target(mount_targets):
         print("Error in print_file_storage_mount_target: " + str(e.args))
         pass
 
+
 ##########################################################################
 # print file systems exports
 ##########################################################################
-
-
 def print_file_storage_exports(exports):
 
     try:
@@ -762,11 +756,10 @@ def print_file_storage_main(file_systems):
         print("Error in print_file_storage_main: " + str(e.args))
         pass
 
-##########################################################################
-# File System
-##########################################################################
 
-
+##########################################################################
+# kms vault main
+##########################################################################
 def print_kms_vault_main(kms_vaults):
     try:
 
@@ -790,11 +783,10 @@ def print_kms_vault_main(kms_vaults):
         print("Error in print_kms_vault_main: " + str(e.args))
         pass
 
+
 ##########################################################################
 # print database db system
 ##########################################################################
-
-
 def print_database_db_system_details(dbs):
     try:
         print(taba + dbs['name'])
@@ -835,11 +827,10 @@ def print_database_db_system_details(dbs):
         print("Error in print_database_db_system: " + str(e.args))
         pass
 
+
 ##########################################################################
 # Database db systems
 ##########################################################################
-
-
 def print_database_db_system(list_db_systems):
 
     try:
@@ -873,11 +864,10 @@ def print_database_db_system(list_db_systems):
         print("Error in print_database_db_system: " + str(e.args))
         pass
 
+
 ##########################################################################
 # print database db system
 ##########################################################################
-
-
 def print_database_db_autonomous(dbs):
     try:
         for db in dbs:
@@ -894,11 +884,11 @@ def print_database_db_autonomous(dbs):
     except Exception as e:
         print("Error in print_database_db_autonomous: " + str(e.args))
         pass
+
+
 ##########################################################################
 # Database
 ##########################################################################
-
-
 def print_database_main(list_databases):
     try:
 
@@ -924,11 +914,10 @@ def print_database_main(list_databases):
         print("Error in print_database_main: " + str(e.args))
         pass
 
+
 ##########################################################################
 # object storage
 ##########################################################################
-
-
 def print_object_storage_main(objects):
 
     try:
@@ -943,11 +932,10 @@ def print_object_storage_main(objects):
         print("Error in print_object_storage_main: " + str(e.args))
         pass
 
+
 ##########################################################################
 # Email
 ##########################################################################
-
-
 def print_email_main(emails):
 
     try:
@@ -971,11 +959,10 @@ def print_email_main(emails):
         print("Error in print_email_main: " + str(e.args))
         pass
 
+
 ##########################################################################
 # resource Management
 ##########################################################################
-
-
 def print_resource_management_main(resource_management):
 
     try:
@@ -996,11 +983,10 @@ def print_resource_management_main(resource_management):
         print("Error in print_resource_management_main: " + str(e.args))
         pass
 
+
 ##########################################################################
 # print compute instances
 ##########################################################################
-
-
 def print_core_compute_instances(instances):
 
     try:
@@ -1056,11 +1042,10 @@ def print_core_compute_images(images):
         print("Error in print_core_compute_images: " + str(e.args))
         pass
 
+
 ##########################################################################
 # print compute images
 ##########################################################################
-
-
 def print_core_compute_instance_pool(pools):
 
     try:
@@ -1075,11 +1060,10 @@ def print_core_compute_instance_pool(pools):
         print("Error in print_core_compute_instance_pool: " + str(e.args))
         pass
 
+
 ##########################################################################
 # print compute images
 ##########################################################################
-
-
 def print_core_compute_instance_configuration(configs):
 
     try:
@@ -1094,11 +1078,10 @@ def print_core_compute_instance_configuration(configs):
         print("Error in print_core_compute_instance_configuration: " + str(e.args))
         pass
 
+
 ##########################################################################
 # print compute boot volume
 ##########################################################################
-
-
 def print_core_compute_boot_volume_backup(backups):
 
     try:
@@ -1119,11 +1102,10 @@ def print_core_compute_boot_volume_backup(backups):
         print("Error in print_core_compute_boot_volume_backup: " + str(e.args))
         pass
 
+
 ##########################################################################
 # print compute block volume
 ##########################################################################
-
-
 def print_core_compute_volume_backup(backups):
 
     try:
@@ -1144,11 +1126,10 @@ def print_core_compute_volume_backup(backups):
         print("Error in print_core_compute_boot_volume_backup: " + str(e.args))
         pass
 
+
 ##########################################################################
 # print Compute
 ##########################################################################
-
-
 def print_core_compute_main(data):
 
     try:
@@ -1236,33 +1217,42 @@ def print_showoci_data(data):
     except Exception as e:
         raise Exception("Error in print_showoci_data: " + str(e.args))
 
+
 ##########################################################################
 # print_oci_main
 ##########################################################################
-
-
 def print_oci_main(jsondata, print_version):
     try:
+        has_data = False
         for d in jsondata:
             if 'type' in d:
                 if d['type'] == "showoci":
                     if print_version:
                         print_showoci_data(d['data'])
+
                 elif d['type'] == "identity":
                     print_identity_main(d['data'])
+                    has_data = True
+
                 elif d['type'] == "region":
                     print_region_data(d['region'], d['data'])
+                    has_data = True
+
                 else:
                     print("Error Unknown Type in JSON file...")
+
+        # if no data - print message
+        if not has_data:
+            print("")
+            print("*** Data not found, please check your execution flags ***")
 
     except Exception as e:
         raise Exception("Error in print_oci_main: " + str(e.args))
 
+
 ##########################################################################
 # Load Balancer
 ##########################################################################
-
-
 def summary_load_balancer_main(load_balancers):
     try:
 
@@ -1277,11 +1267,10 @@ def summary_load_balancer_main(load_balancers):
         print("Error in summary_load_balancer_main: " + str(e.args))
         pass
 
+
 ##########################################################################
 # File System
 ##########################################################################
-
-
 def summary_file_storage_main(file_systems):
     try:
 
@@ -1294,11 +1283,10 @@ def summary_file_storage_main(file_systems):
         print("Error in summary_file_storage_main: " + str(e.args))
         pass
 
+
 ##########################################################################
 # object storage
 ##########################################################################
-
-
 def summary_object_storage_main(objects):
 
     try:
@@ -1311,11 +1299,10 @@ def summary_object_storage_main(objects):
         print("Error in summary_object_storage_main: " + str(e.args))
         pass
 
+
 ##########################################################################
 # print database autonumous
 ##########################################################################
-
-
 def summary_database_db_autonomous(dbs):
     try:
         for db in dbs:
@@ -1329,11 +1316,10 @@ def summary_database_db_autonomous(dbs):
         print("Error in summary_database_db_autonomous: " + str(e.args))
         pass
 
+
 ##########################################################################
 # Database
 ##########################################################################
-
-
 def summary_database_main(list_databases):
     try:
 
@@ -1352,11 +1338,11 @@ def summary_database_main(list_databases):
     except Exception as e:
         print("Error in summary_database_main: " + str(e.args))
         pass
+
+
 ##########################################################################
 # Database db systems
 ##########################################################################
-
-
 def summary_database_db_system(list_db_systems):
 
     try:
@@ -1381,11 +1367,10 @@ def summary_database_db_system(list_db_systems):
         print("Error in summary_database_db_system: " + str(e.args))
         pass
 
+
 ##########################################################################
 # print summary_core_compute_shape
 ##########################################################################
-
-
 def summary_core_compute_instances(instances):
 
     try:
@@ -1450,12 +1435,11 @@ def summary_core_compute_main(data):
         print("Error in summary_core_compute_main: " + str(e.args))
         pass
 
+
 ##########################################################################
 # Summary Group By
 # took the function frmo stackoverflow
 ##########################################################################
-
-
 def summery_group_by(key, list_of_dicts):
     d = {}
     for dct in list_of_dicts:
@@ -1475,11 +1459,10 @@ def summery_group_by(key, list_of_dicts):
         final_list.append(temp_d)
     return final_list
 
+
 ##########################################################################
 # Print summary  data
 ##########################################################################
-
-
 def summary_print_results(data, header, header_size):
 
     if len(data) > 0:
@@ -1494,11 +1477,10 @@ def summary_print_results(data, header, header_size):
         for d in sorted(grouped_data, key=lambda i: i['type']):
             print(d['type'].ljust(37) + " - " + str(round(d['size'])).rjust(10))
 
+
 ##########################################################################
 # Print summary Identity data
 ##########################################################################
-
-
 def summary_region_data(region_name, data):
 
     global summary_global_list
@@ -1533,11 +1515,10 @@ def summary_region_data(region_name, data):
     except Exception as e:
         raise Exception("Error in summary_region_data: " + str(e.args))
 
+
 ##########################################################################
 # print_oci_main
 ##########################################################################
-
-
 def summary_oci_main(jsondata, print_version):
 
     global summary_global_total
@@ -1555,11 +1536,10 @@ def summary_oci_main(jsondata, print_version):
     except Exception as e:
         raise Exception("Error in summary_oci_main: " + str(e.args))
 
+
 ##########################################################################
 # Print version
 ##########################################################################
-
-
 def get_version(cmd):
 
     data = {
@@ -1583,10 +1563,6 @@ def get_version(cmd):
 
     return main_data
 
-##########################################################################
-# Return nested compartments list
-##########################################################################
-
 
 ##########################################################################
 # Return compartments with root compartment
@@ -1596,6 +1572,7 @@ def get_compartments_with_root(identity, tenancy, cmd):
         compartments = []
 
         # Build Compartments
+        # return nested compartment list
         def build_compartments_nested(identity, cid, path):
             try:
                 clists = oci.pagination.list_call_get_all_results(identity.list_compartments, cid).data
@@ -1650,11 +1627,10 @@ def get_compartments_with_root(identity, tenancy, cmd):
     except Exception as e:
         raise Exception("Error in get_compartments_with_root:identity.list_compartments: " + str(e.args))
 
+
 ##########################################################################
 # Get Tenancy
 ##########################################################################
-
-
 def get_identity_tenancy(identity, tenancy):
     print("    Tenancy...")
     try:
@@ -1694,6 +1670,7 @@ def get_identity_users(identity, tenancy):
                 group_users.append(next(item for item in groups if item.id == ugm.group_id).name)
 
             data.append({
+                'id': user.id,
                 'name': user.name,
                 'parameters':
                     "API = " + str(len(identity.list_api_keys(user.id).data)) +
@@ -1713,11 +1690,10 @@ def get_identity_users(identity, tenancy):
         print("Error in get_identity_users: " + str(e.args))
         pass
 
+
 ##########################################################################
 # Print Identity Groups
 ##########################################################################
-
-
 def get_identity_groups(identity, tenancy):
     print("    Groups...")
     try:
@@ -1733,7 +1709,7 @@ def get_identity_groups(identity, tenancy):
                     if item.id == ugm.user_id:
                         group_users.append(item.name)
             if len(group_users) > 0:
-                data.append({'name': group.name, 'users': ', '.join(x for x in group_users)})
+                data.append({'id': group.id, 'name': group.name, 'users': ', '.join(x for x in group_users)})
         return data
 
     except oci.exceptions.RequestException:
@@ -1744,11 +1720,10 @@ def get_identity_groups(identity, tenancy):
         print("Error in get_identity_groups: " + str(e.args))
         pass
 
+
 ##########################################################################
 # Print Identity Policies
 ##########################################################################
-
-
 def get_identity_policies(identity, tenancy, handle_managed_compartment, cmd):
     print("    Policies...")
     try:
@@ -1803,6 +1778,7 @@ def get_identity_providers(identity, tenancy):
                 groupdata.append(ig.idp_group_name + " <-> " + next(item for item in groups if item.id == ig.group_id).name)
 
             data.append({
+                'id': d.id,
                 'name': d.name,
                 'description': d.description,
                 'product_type': d.product_type,
@@ -1835,6 +1811,7 @@ def get_identity_dynamic_groups(identity, tenancy):
 
         for dg in dynamic_groups:
             data.append({
+                'id': dg.id,
                 'name': dg.name,
                 'description': dg.description,
                 'matching_rule': dg.matching_rule
@@ -1874,11 +1851,10 @@ def get_identity_main(identity, tenancy_id, handle_managed_compartment, cmd):
         print("Error in oci_identity: " + str(e.args))
         pass
 
+
 ##########################################################################
 # Print Network VCN IGW
 ##########################################################################
-
-
 def get_core_network_vcn_igw(core, compartment, vcn):
     try:
         list_internet_gateways = core.list_internet_gateways(compartment.id, vcn.id).data
@@ -1892,11 +1868,10 @@ def get_core_network_vcn_igw(core, compartment, vcn):
         print("Error in get_core_network_vcn_igw: " + str(e.args))
         pass
 
+
 ##########################################################################
 # Print Network VCN NAT
 ##########################################################################
-
-
 def get_core_network_vcn_nat(core, compartment, vcn):
     try:
         list_nat_gateways = core.list_nat_gateways(compartment.id, vcn_id=vcn.id).data
@@ -1917,20 +1892,26 @@ def get_core_network_vcn_nat(core, compartment, vcn):
         print("Error in get_core_network_vcn_nat: " + str(e.args))
         pass
 
+
 ##########################################################################
 # Print Network VCN SGW
 ##########################################################################
-
-
 def get_core_network_vcn_sgw(core, compartment, vcn):
     try:
         list_service_gateways = core.list_service_gateways(compartment.id, vcn_id=vcn.id).data
-        return str(', '.join(x.display_name for x in list_service_gateways))
+        data = []
+        for sgw in list_service_gateways:
+            value = {}
+            value['id'] = str(sgw.id)
+            value['name'] = str(sgw.display_name)
+            value['services'] = str(', '.join(x.service_name for x in sgw.services))
+            data.append(value)
+        return data
 
     except oci.exceptions.RequestException:
         raise
     except oci.exceptions.ServiceError as e:
-        if e.code == 'NotAuthorizedOrNotFound':
+        if e.code == 'NotAuthorizedOrNotFound' or e.code is None:
             return ""
         raise
     except Exception as e:
@@ -1972,11 +1953,10 @@ def get_core_network_vcn_drg_details(core, drg_attachment):
         print("Error get_core_network_drg_details get_core_network_vcn_drg_attached: " + str(e.args))
         pass
 
+
 ##########################################################################
 # Print Network VCN DRG Attached
 ##########################################################################
-
-
 def get_core_network_vcn_drg_attached(core, compartment, vcn):
     try:
         list_drg_attachments = core.list_drg_attachments(compartment.id, vcn_id=vcn.id).data
@@ -1994,11 +1974,10 @@ def get_core_network_vcn_drg_attached(core, compartment, vcn):
         print("Error in get_core_network_vcn_drg_attached: " + str(e.args))
         pass
 
+
 ##########################################################################
 # Print Network VCN Local Peering
 ##########################################################################
-
-
 def get_core_network_vcn_local_peering(core, compartment, vcn):
     try:
         local_peering_gateways = core.list_local_peering_gateways(compartment.id, vcn.id).data
@@ -2008,7 +1987,12 @@ def get_core_network_vcn_local_peering(core, compartment, vcn):
             if lpg.route_table_id is not None:
                 routestr = " + Transit Route(" + str(get_core_network_route(core, lpg.route_table_id)) + ")"
 
-            data.append(str(lpg.display_name) + " - " + str(lpg.peer_advertised_cidr) + " - " + str(lpg.peering_status) + routestr)
+            # get the cidr block of the peering
+            cidr = " - " + str(lpg.peer_advertised_cidr)
+            if cidr == " - None":
+                cidr = ""
+
+            data.append(str(lpg.display_name) + " - " + str(lpg.peering_status) + cidr + routestr)
         return data
 
     except oci.exceptions.RequestException:
@@ -2019,11 +2003,10 @@ def get_core_network_vcn_local_peering(core, compartment, vcn):
         print("Error in get_core_network_vcn_local_peering: " + str(e.args))
         pass
 
+
 ##########################################################################
 # Print Network VCN subnets
 ##########################################################################
-
-
 def get_core_network_vcn_subnets(core, compartment, vcn):
     try:
         subnets = oci.pagination.list_call_get_all_results(core.list_subnets, compartment.id, vcn.id, sort_by="DISPLAYNAME").data
@@ -2039,6 +2022,7 @@ def get_core_network_vcn_subnets(core, compartment, vcn):
                 availability_domain = "Regional"
 
             val = ({
+                'id': str(subnet.id),
                 'subnet': str(subnet.cidr_block) + "  " + availability_domain + (" (Private) " if subnet.prohibit_public_ip_on_vnic else " (Public)"),
                 'name': str(subnet.display_name),
                 'dns': str(subnet.dns_label),
@@ -2046,8 +2030,6 @@ def get_core_network_vcn_subnets(core, compartment, vcn):
                 'security_list': sec_lists,
                 'route': str(core.get_route_table(subnet.route_table_id).data.display_name)
             })
-            if ocid:
-                val['id'] = str(subnet.id)
             data.append(val)
         return data
 
@@ -2059,11 +2041,10 @@ def get_core_network_vcn_subnets(core, compartment, vcn):
         print("Error in get_core_network_vcn_subnets: " + str(e.args))
         pass
 
+
 ##########################################################################
 # get_core_network_port_range
 ##########################################################################
-
-
 def get_core_network_vcn_security_rule_port_range(name, port_range):
 
     if port_range is None:
@@ -2074,11 +2055,10 @@ def get_core_network_vcn_security_rule_port_range(name, port_range):
     else:
         return name + "(" + str(port_range.min) + "-" + str(port_range.max) + ") "
 
+
 ##########################################################################
 # get Network vcn security rule
 ##########################################################################
-
-
 def get_core_network_vcn_security_rule(security_rule):
     line = ""
     if isinstance(security_rule, oci.core.models.EgressSecurityRule):
@@ -2124,11 +2104,10 @@ def get_core_network_vcn_security_rule(security_rule):
 
     return line
 
+
 ##########################################################################
 # Print Network vcn security list
 ##########################################################################
-
-
 def get_core_network_vcn_security_lists(core, compartment, vcn):
     try:
         sec_lists = oci.pagination.list_call_get_all_results(core.list_security_lists, compartment.id, vcn.id, sort_by="DISPLAYNAME").data
@@ -2154,11 +2133,10 @@ def get_core_network_vcn_security_lists(core, compartment, vcn):
         print("Error in get_core_network_vcn_security_lists: " + str(e.args))
         pass
 
+
 ###########################################################################
 # get Network vcn rouet table
 ##########################################################################
-
-
 def get_core_network_vcn_route_rule(core, route_rule):
 
     try:
@@ -2177,18 +2155,49 @@ def get_core_network_vcn_route_rule(core, route_rule):
             if network_dest is None:
                 network_dest = "privateip (not exist)"
 
+        # if internetgateway - get the destination name
+        if network_dest == "internetgateway":
+            network_dest = "IGW"
+
+        # if internetgateway - get the destination name
+        if network_dest == "drg":
+            if rl.network_entity_id is None:
+                network_dest = "DRG (Not Exist)"
+            else:
+                network_dest = get_core_network_drg_name(core, rl.network_entity_id)
+                if network_dest == "":
+                    network_dest = "DRG (Not Exist)"
+
+        # if internetgateway - get the destination name
+        if network_dest == "natgateway":
+            if rl.network_entity_id is None:
+                network_dest = "NATGW (Not Exist)"
+            else:
+                network_dest = "NATGW"
+
+        # if servicegateway - get the service and sgw name
+        if network_dest == "servicegateway":
+            network_dest = get_core_network_sgw(core, rl.network_entity_id)
+            if network_dest == "":
+                network_dest = "SGW (not exist)"
+
+        # if localpeeringgateway - get the destination name
+        if network_dest == "localpeeringgateway":
+            network_dest = get_core_network_local_peering(core, rl.network_entity_id)
+            if network_dest is None:
+                network_dest = "LPG (not exist)"
+
         # if rl.cidr_block is not None: line+=str(rl.cidr_block)+"  "
-        line += "DST:" + str(rl.destination) + " --> " + str(network_dest)
+        line += "DST:" + str(rl.destination).ljust(18)[0:18] + " --> " + str(network_dest)
         return line
     except Exception as e:
         print("Error in get_core_network_vcn_route_tables: " + str(e.args))
         pass
 
+
 ########################################################################
 # Print Network vcn Route Tables
 ##########################################################################
-
-
 def get_core_network_vcn_route_tables(core, compartment, vcn):
     try:
         route_tables = oci.pagination.list_call_get_all_results(core.list_route_tables, compartment.id, vcn.id, sort_by="DISPLAYNAME").data
@@ -2212,11 +2221,10 @@ def get_core_network_vcn_route_tables(core, compartment, vcn):
         print("Error in get_core_network_vcn_route_tables: " + str(e.args))
         pass
 
+
 ##########################################################################
 # get DHCP options for DHCP_ID
 ##########################################################################
-
-
 def get_core_network_vcn_dhcp_options_opt(dhcp_option):
 
     opt = dhcp_option
@@ -2338,11 +2346,10 @@ def get_core_network_cpe(core, compartment):
         print("Error in get_core_network_cpe: " + str(e.args))
         pass
 
+
 ##########################################################################
 # print network drg
 ##########################################################################
-
-
 def get_core_network_drg(core, compartment):
 
     try:
@@ -2358,6 +2365,24 @@ def get_core_network_drg(core, compartment):
         raise
     except Exception as e:
         print("Error in get_core_network_drg: " + str(e.args))
+        pass
+
+
+##########################################################################
+# get dRG details
+##########################################################################
+def get_core_network_drg_name(core, drg_id):
+    try:
+        # get DRG name
+        drg = core.get_drg(drg_id).data
+        return "DRG - " + str(drg.display_name)
+
+    except oci.exceptions.RequestException:
+        pass
+    except oci.exceptions.ServiceError:
+        pass
+    except Exception as e:
+        print("Error get_core_network_drg_name: " + str(e.args))
         pass
 
 
@@ -2393,11 +2418,10 @@ def get_core_network_remote_peering(core, compartment):
         print("Error in get_core_network_remote_peering: " + str(e.args))
         pass
 
+
 ##########################################################################
 # get network ipsec
 ##########################################################################
-
-
 def get_core_network_ipsec(core, compartment):
 
     try:
@@ -2479,11 +2503,10 @@ def get_core_network_virtual_circuit(core, compartment):
         print("Error in get_core_network_virtual_circuit: " + str(e.args))
         pass
 
+
 ##########################################################################
 # print network fastconnect
 ##########################################################################
-
-
 def get_core_network_fastconnect(core, compartment):
 
     try:
@@ -2510,11 +2533,10 @@ def get_core_network_fastconnect(core, compartment):
         print("Error in get_core_network_fastconnect: " + str(e.args))
         pass
 
+
 ##########################################################################
 # get Network Subnet
 ##########################################################################
-
-
 def get_core_network_subnet(virtual_network, subnet_id):
     try:
         subnet = virtual_network.get_subnet(subnet_id).data
@@ -2531,11 +2553,52 @@ def get_core_network_subnet(virtual_network, subnet_id):
         print("Error in get_core_network_subnet: " + str(e.args))
         pass
 
+
+##########################################################################
+# Print Network VCN Local Peering
+##########################################################################
+def get_core_network_local_peering(core, local_peering_id):
+    try:
+        lpg = core.get_local_peering_gateway(local_peering_id).data
+        cidr = " - " + str(lpg.peer_advertised_cidr)
+        if cidr == " - None":
+            cidr = ""
+
+        return "LPG - " + str(lpg.display_name) + " - " + str(lpg.peering_status) + cidr
+
+    except oci.exceptions.RequestException:
+        pass
+    except oci.exceptions.ServiceError:
+        pass
+    except Exception as e:
+        print("Error in get_core_network_local_peering: " + str(e.args))
+        pass
+
+
+##########################################################################
+# get core network sgw by sgw_id
+##########################################################################
+def get_core_network_sgw(core, sgw_id):
+    try:
+        sgw = core.get_service_gateway(sgw_id).data
+        if sgw is None:
+            return "SGW - None"
+        return "SGW - " + str(sgw.display_name) + " - " + str(', '.join(x.service_name for x in sgw.services))
+
+    except oci.exceptions.RequestException:
+        pass
+    except oci.exceptions.ServiceError as e:
+        if e.code == 'NotAuthorizedOrNotFound':
+            return ""
+        raise
+    except Exception as e:
+        print("Error in get_core_network_sgw: " + str(e.args))
+        pass
+
+
 ##########################################################################
 # get Network Subnet
 ##########################################################################
-
-
 def get_core_network_route(virtual_network, route_table_id):
     try:
         route = virtual_network.get_route_table(route_table_id).data
@@ -2552,11 +2615,10 @@ def get_core_network_route(virtual_network, route_table_id):
         print("Error in get_core_network_route: " + str(e.args))
         pass
 
+
 ##########################################################################
 # get_core_network_private_ip
 ##########################################################################
-
-
 def get_core_network_private_ip(virtual_network, private_ip_id):
 
     try:
@@ -2566,11 +2628,10 @@ def get_core_network_private_ip(virtual_network, private_ip_id):
     except Exception:
         pass
 
+
 ##########################################################################
 # print Core Network Vnic
 ##########################################################################
-
-
 def get_core_network_vnic(virtual_network, vnic_id):
     try:
         if vnic_id is None:
@@ -2597,6 +2658,7 @@ def get_core_network_vnic(virtual_network, vnic_id):
         print("Error in get_core_network_vnic: " + str(e.args))
         pass
 
+
 ##########################################################################
 # Network
 ##########################################################################
@@ -2613,8 +2675,6 @@ def get_core_network_vnic(virtual_network, vnic_id):
 #    list_crossconnect_port_speed_shapes(compartment_id, **kwargs)
 #
 ##########################################################################
-
-
 def get_core_network_main(virtual_network, compartment, compartments):
 
     return_data = {}
@@ -2645,11 +2705,10 @@ def get_core_network_main(virtual_network, compartment, compartments):
 
     return return_data
 
+
 ##########################################################################
 # get volume backup policy
 ##########################################################################
-
-
 def get_core_block_volume_backup_policy(block_storage, volume_id):
 
     try:
@@ -2675,11 +2734,10 @@ def get_core_block_volume_backup_policy(block_storage, volume_id):
         print("Error in get_core_block_volume_backup_policy: " + str(e.args))
         pass
 
+
 ##########################################################################
 # print Core Block boot volume
 ##########################################################################
-
-
 def get_core_block_volume_boot(block_storage, boot_volume_id, compartment_text):
     try:
         bv = block_storage.get_boot_volume(boot_volume_id).data
@@ -2699,11 +2757,10 @@ def get_core_block_volume_boot(block_storage, boot_volume_id, compartment_text):
         print("Error in get_core_block_boot_volume: " + str(e.args))
         pass
 
+
 ##########################################################################
 # print Core Block Volume
 ##########################################################################
-
-
 def get_core_block_volume(block_storage, volume_id, compartment_text):
     try:
         vol = block_storage.get_volume(volume_id).data
@@ -2734,11 +2791,10 @@ def get_core_block_volume(block_storage, volume_id, compartment_text):
         print("Error in get_core_block_volume: " + str(e.args))
         pass
 
+
 ##########################################################################
 # get compute boot volume
 ##########################################################################
-
-
 def get_core_block_volume_boot_backup(block_storage, compartment):
 
     try:
@@ -2824,11 +2880,10 @@ def get_core_block_volume_backup(block_storage, compartment):
         print("Error in get_core_block_volume_block_backup: " + str(e.args))
         pass
 
+
 ##########################################################################
 # print compute instances
 ##########################################################################
-
-
 def get_core_compute_instances(compute, block_storage, virtual_network, compartment, compartments):
 
     try:
@@ -2845,8 +2900,7 @@ def get_core_compute_instances(compute, block_storage, virtual_network, compartm
     for instance in instances:
         if instance.lifecycle_state != "TERMINATED":
             inst = {}
-            if ocid:
-                inst['id'] = instance.id
+            inst['id'] = instance.id
             inst['name'] = ((instance.display_name) + " - " + str(instance.shape) + " - " + str(instance.lifecycle_state))
             inst['sum_info'] = 'Compute'
             inst['sum_shape'] = str(instance.shape)
@@ -2857,8 +2911,7 @@ def get_core_compute_instances(compute, block_storage, virtual_network, compartm
 
             try:
                 inst['image'] = str(compute.get_image(instance.image_id).data.display_name)
-                if ocid:
-                    inst['image_id'] = instance.image_id
+                inst['image_id'] = instance.image_id
             except BaseException:
                 pass
 
@@ -2872,8 +2925,7 @@ def get_core_compute_instances(compute, block_storage, virtual_network, compartm
 
                     for bva in compute.list_boot_volume_attachments(instance.availability_domain, c.id, instance_id=instance.id).data:
                         bvval = {}
-                        if ocid:
-                            bvval['id'] = bva.boot_volume_id
+                        bvval['id'] = bva.boot_volume_id
                         bvval = get_core_block_volume_boot(block_storage, bva.boot_volume_id, comp_text)
                         bv.append(bvval)
                 inst['boot_volume'] = bv
@@ -2891,8 +2943,7 @@ def get_core_compute_instances(compute, block_storage, virtual_network, compartm
                     for va in oci.pagination.list_call_get_all_results(compute.list_volume_attachments, c.id, instance_id=instance.id).data:
                         if (va.lifecycle_state == "ATTACHED"):
                             bvval = {}
-                            if ocid:
-                                bvval['id'] = va.volume_id
+                            bvval['id'] = va.volume_id
                             bvval = get_core_block_volume(block_storage, va.volume_id, comp_text)
                             vol.append(bvval)
                 inst['block_volume'] = vol
@@ -2910,8 +2961,7 @@ def get_core_compute_instances(compute, block_storage, virtual_network, compartm
                     for vna in compute.list_vnic_attachments(c.id, instance_id=instance.id).data:
                         if (vna.lifecycle_state == "ATTACHED"):
                             val = {}
-                            if ocid:
-                                val['id'] = vna.vnic_id
+                            val['id'] = vna.vnic_id
                             val['desc'] = (get_core_network_vnic(virtual_network, vna.vnic_id) + comp_text)
                             vnic.append(val)
                 inst['vnic'] = vnic
@@ -2922,8 +2972,7 @@ def get_core_compute_instances(compute, block_storage, virtual_network, compartm
             try:
                 for icc in compute.list_instance_console_connections(compartment.id, instance_id=instance.id).data:
                     if (icc.lifecycle_state == "ACTIVE"):
-                        if ocid:
-                            inst['console_id'] = icc.id
+                        inst['console_id'] = icc.id
                         inst['console'] = "Console Connection Active"
             except BaseException:
                 pass
@@ -2932,11 +2981,10 @@ def get_core_compute_instances(compute, block_storage, virtual_network, compartm
     # return data
     return data
 
+
 ##########################################################################
 # print compute images
 ##########################################################################
-
-
 def get_core_compute_images(compute, compartment):
 
     try:
@@ -2949,8 +2997,7 @@ def get_core_compute_images(compute, compartment):
             value['desc'] = (str(image.display_name) + " - " + image.operating_system + " - " + str(round(image.size_in_mbs / 1024)) + "gb - Base:  " + compute.get_image(image.base_image_id).data.display_name)
             value['sum_info'] = 'Object Storage - Images (gb)'
             value['sum_size_gb'] = (str(image.size_in_mbs / 1024))
-            if ocid:
-                value['id'] = image.id
+            value['id'] = image.id
             data.append(value)
         return data
 
@@ -2962,11 +3009,10 @@ def get_core_compute_images(compute, compartment):
         print("Error in get_core_compute_images: " + str(e.args))
         pass
 
+
 ##########################################################################
 # print compute instance configuration
 ##########################################################################
-
-
 def get_core_compute_instance_configuration(computeManage, compute, compartment):
 
     try:
@@ -2992,13 +3038,12 @@ def get_core_compute_instance_configuration(computeManage, compute, compartment)
         print("Error in get_core_compute_instance_configuration: " + str(e.args))
         pass
 
+
 ##########################################################################
 # print compute instance pool
 # list_instance_pool_instances (instance_pool_id) - oci.core.models.InstanceSummary
 # list_instance_pools
 ##########################################################################
-
-
 def get_core_compute_instance_pool(computeManage, compute, compartment):
 
     try:
@@ -3031,7 +3076,6 @@ def get_core_compute_instance_pool(computeManage, compute, compartment):
 #
 # class oci.core.ComputeClient(config, **kwargs)
 # TBD - list_volume_group_backups
-# TBD - KMS
 ##########################################################################
 def get_core_compute_main(compute, computeManage, block_storage, virtual_network, compartment, compartments):
     return_data = {}
@@ -3062,11 +3106,10 @@ def get_core_compute_main(compute, computeManage, block_storage, virtual_network
 
     return return_data
 
+
 ##########################################################################
 # print database db nodes
 ##########################################################################
-
-
 def get_database_db_nodes(database, virtual_network, dbs_id, compartment):
 
     try:
@@ -3171,7 +3214,8 @@ def get_database_db_homes(database, virtual_network, dbs_id, compartment):
 
         for db_home in db_homes:
             data.append(
-                {'home': str(db_home.display_name) + " - " + str(db_home.db_version),
+                {'id': str(db_home.id),
+                 'home': str(db_home.display_name) + " - " + str(db_home.db_version),
                  'databases': get_database_db_databases(database, db_home.id, compartment),
                  'patches': get_database_db_homes_patches(database, db_home.id)
                  })
@@ -3233,14 +3277,14 @@ def get_database_db_system_scandns(scan_dns_record_id):
         print("Error in get_database_db_homes: " + str(e.args))
         pass
 
+
 ##########################################################################
 # print database db system
 ##########################################################################
-
-
 def get_database_db_system(database, virtual_network, dbs, compartment):
 
     data = {}
+    data['id'] = str(dbs.id)
     data['name'] = (str(dbs.display_name) + " - " + str(dbs.shape) + " - " + str(dbs.lifecycle_state))
     data['sum_info'] = 'Database - ' + str(dbs.shape) + " - " + get_license_type(str(dbs.license_model))
     data['sum_info_storage'] = 'Database - Storage (gb)'
@@ -3286,11 +3330,10 @@ def get_database_db_system(database, virtual_network, dbs, compartment):
 
     return data
 
+
 ##########################################################################
 # print database db backups
 ##########################################################################
-
-
 def get_database_db_backups(database, dbid):
 
     try:
@@ -3328,7 +3371,7 @@ def get_database_db_backups(database, dbid):
 #
 # class oci.database.DatabaseClient(config, **kwargs)
 #
-# Below APIs not yet done:
+# Below APIs not yet done (TBD):
 # list_db_home_patch_history_entries
 # list_db_system_patch_history_entries
 # list_data_guard_associations
@@ -3359,14 +3402,14 @@ def get_database_db_systems(database, virtual_network, compartment):
         print("Error in get_database_main: " + str(e.args))
         pass
 
+
 ##########################################################################
 # print database db system
 ##########################################################################
-
-
 def get_database_autonomous_details(dbs):
 
     data = {}
+    data['id'] = str(dbs.id)
     data['name'] = (str(dbs.display_name) + " - " + str(dbs.license_model) + " - " + str(dbs.lifecycle_state))
     data['cpu_core_count'] = str(dbs.cpu_core_count)
     data['data_storage_size_in_tbs'] = str(dbs.data_storage_size_in_tbs)
@@ -3381,19 +3424,18 @@ def get_database_autonomous_details(dbs):
     data['sum_size_tb'] = str(dbs.data_storage_size_in_tbs)
     return data
 
+
 ##########################################################################
 # Autonomous
 ##########################################################################
 #
 # class oci.database.DatabaseClient(config, **kwargs)
 #
-# Below APIs not yet done:
+# Below APIs not yet done (TBD):
 # list_autonomous_database_backups
 # list_autonomous_data_warehouse_backups
 #
 ##########################################################################
-
-
 def get_database_autonomous_transaction(database, compartment):
 
     try:
@@ -3415,20 +3457,19 @@ def get_database_autonomous_transaction(database, compartment):
         print("Error in get_database_atp: " + str(e.args))
         pass
 
+
 ##########################################################################
 # Autonomous
 ##########################################################################
 #
 # class oci.database.DatabaseClient(config, **kwargs)
 #
-# Below APIs not yet done:
+# Below APIs not yet done (TBD):
 # list_autonomous_database_backups
 # list_autonomous_databases
 # list_autonomous_data_warehouse_backups
 #
 ##########################################################################
-
-
 def get_database_autonomous_warehouse(database, compartment):
 
     try:
@@ -3450,11 +3491,10 @@ def get_database_autonomous_warehouse(database, compartment):
         print("Error in get_database_autonomous_warehouse: " + str(e.args))
         pass
 
+
 ##########################################################################
 # Database
 ##########################################################################
-
-
 def get_database_main(database, virtual_network, compartment):
 
     return_data = {}
@@ -3476,11 +3516,10 @@ def get_database_main(database, virtual_network, compartment):
 
     return return_data
 
+
 ##########################################################################
 # print file systems snapshot
 ##########################################################################
-
-
 def get_file_storage_snapshots(file_storage, file_system_id):
 
     try:
@@ -3501,11 +3540,10 @@ def get_file_storage_snapshots(file_storage, file_system_id):
         print("Error in get_file_storage_snapshots: " + str(e.args))
         pass
 
+
 ##########################################################################
 # print file systems mount targets
 ##########################################################################
-
-
 def get_file_storage_mount_target(file_storage, virtual_network, export_set):
 
     try:
@@ -3521,7 +3559,7 @@ def get_file_storage_mount_target(file_storage, virtual_network, export_set):
             for private_ip_id in mt.private_ip_ids:
                 datamt.append(get_core_network_private_ip(virtual_network, private_ip_id))
 
-            data.append({'mount': mt.display_name + " - Subnet: " + str(get_core_network_subnet(virtual_network, mt.subnet_id)) + " - " + export_set.lifecycle_state,
+            data.append({'id': str(mt.id), 'mount': str(mt.display_name) + " - Subnet: " + str(get_core_network_subnet(virtual_network, mt.subnet_id)) + " - " + export_set.lifecycle_state,
                          'ips': datamt})
         return data
 
@@ -3533,11 +3571,10 @@ def get_file_storage_mount_target(file_storage, virtual_network, export_set):
         print("Error in get_file_storage_mount_target: " + str(e.args))
         pass
 
+
 ##########################################################################
 # print file systems limits
 ##########################################################################
-
-
 def get_file_storage_limits(export_set):
     try:
         file_details = ""
@@ -3568,11 +3605,10 @@ def get_file_storage_limits(export_set):
         print("Error in get_file_storage_limits: " + str(e.args))
         pass
 
+
 ##########################################################################
 # print file systems exports
 ##########################################################################
-
-
 def get_file_storage_exports(file_storage, virtual_network, file_system_id):
 
     try:
@@ -3601,11 +3637,10 @@ def get_file_storage_exports(file_storage, virtual_network, file_system_id):
         print("Error in get_file_storage_exports: " + str(e.args))
         pass
 
+
 ##########################################################################
 # print file systems snapshot
 ##########################################################################
-
-
 def get_file_storage_details(file_system):
 
     data = str(file_system.display_name) + " - "
@@ -3614,6 +3649,7 @@ def get_file_storage_details(file_system):
     data += str(round(file_system.metered_bytes / 1024 / 1024 / 1024, 1)) + "gb metered"
     return data
 
+
 ##########################################################################
 # File System
 ##########################################################################
@@ -3621,8 +3657,6 @@ def get_file_storage_details(file_system):
 # class oci.file_storage.FileStorageClient(config, **kwargs)
 #
 ##########################################################################
-
-
 def get_file_storage_main(file_storage, identity, virtual_network, compartment):
     try:
         data = []
@@ -3634,6 +3668,7 @@ def get_file_storage_main(file_storage, identity, virtual_network, compartment):
             # print details
             for fs in file_systems:
                 dataval = {}
+                dataval['id'] = str(fs.id)
                 dataval['filesystem'] = get_file_storage_details(fs)
                 dataval['sum_info'] = 'File Storage (gb)'
                 dataval['sum_size_gb'] = round(fs.metered_bytes / 1024 / 1024 / 1024, 3)
@@ -3650,11 +3685,10 @@ def get_file_storage_main(file_storage, identity, virtual_network, compartment):
         print("Error in oci_file_storage: " + str(e.args))
         pass
 
+
 ##########################################################################
 # get_kms_vault_keys
 ##########################################################################
-
-
 def get_kms_vault_keys(kms_keys, config, vault, compartment, compartments):
     try:
         data = []
@@ -3678,6 +3712,7 @@ def get_kms_vault_keys(kms_keys, config, vault, compartment, compartments):
         print("Error in get_kms_vault_keys: " + str(e.args))
         pass
 
+
 ##########################################################################
 # KMS
 ##########################################################################
@@ -3686,8 +3721,6 @@ def get_kms_vault_keys(kms_keys, config, vault, compartment, compartments):
 # class oci.key_management.KmsVaultClient(config, **kwargs)
 #
 ##########################################################################
-
-
 def get_kms_vault_main(kms_vault, config, compartment, compartments):
     try:
         data = []
@@ -3716,11 +3749,10 @@ def get_kms_vault_main(kms_vault, config, compartment, compartments):
         print("Error in get_kms_vault_main: " + str(e.args))
         pass
 
+
 ##########################################################################
 # get pre auth request count
 ##########################################################################
-
-
 def get_object_storage_preauthenticated_requests_count(object_storage, namespace_name, bucket_name):
     try:
         retstr = ""
@@ -3740,11 +3772,10 @@ def get_object_storage_preauthenticated_requests_count(object_storage, namespace
         print("Error in get_object_storage_preauthenticated_requests_count: " + str(e.args))
         pass
 
+
 ##########################################################################
 # get pre auth request count
 ##########################################################################
-
-
 def get_object_storage_object_count(object_storage, namespace_name, bucket_name):
     try:
         bucket = object_storage.get_bucket(namespace_name, bucket_name, fields=['approximateCount', 'approximateSize']).data
@@ -3781,11 +3812,10 @@ def get_object_storage_object_count(object_storage, namespace_name, bucket_name)
         print("Error in get_object_storage_object_count: " + str(e.args))
         pass
 
+
 ##########################################################################
 # get_object_lifecycle_policy
 ##########################################################################
-
-
 def get_object_storage_object_lifecycle(object_storage, namespace_name, bucket_name):
     try:
         retstr = ""
@@ -3852,11 +3882,10 @@ def get_object_storage_main(object_storage, compartment):
         print("Error in get_object_storage_main: " + str(e.args))
         pass
 
+
 ##########################################################################
 # print load balancer backed
 ##########################################################################
-
-
 def get_load_balancer_backend(backend, status):
 
     b = backend
@@ -3867,11 +3896,10 @@ def get_load_balancer_backend(backend, status):
             "Weight=" + str(b.weight)
             )
 
+
 ##########################################################################
 # print load balancer backed
 ##########################################################################
-
-
 def get_load_balancer_bs_healthchecker(health_checker, line):
 
     h = health_checker
@@ -3895,11 +3923,10 @@ def get_load_balancer_bs_healthchecker(health_checker, line):
                     "RegEx=" + str(h.response_body_regex) + ", " +
                     "url_path =" + str(h.url_path))
 
+
 ##########################################################################
 # print load balancer backedset
 ##########################################################################
-
-
 def get_load_balancer_backendset(load_balancer, load_balancer_id):
 
     try:
@@ -3962,6 +3989,7 @@ def get_load_balancer_details(virtual_network, load_balance_obj, status):
     try:
         data = {}
         lb = load_balance_obj
+        data['id'] = str(lb.id)
         data['name'] = str(lb.display_name) + " - " + str(lb.shape_name) + " - " + ("(Private)" if lb.is_private else "(Public)") + " - " + str(lb.lifecycle_state)
         data['status'] = str(status)
 
@@ -4065,6 +4093,7 @@ def get_resource_management_main(orm, compartment):
         for stack in stacks:
             dataval = {}
             dataval['stack_name'] = str(stack.display_name) + " - " + str(stack.description)
+            dataval['id'] = str(stack.id)
 
             # query jobs
             jobs = oci.pagination.list_call_get_all_results(orm.list_jobs, stack_id=stack.id, sort_by="TIMECREATED").data
@@ -4134,20 +4163,17 @@ def get_email_main(email, compartment, tenancy):
     except oci.exceptions.RequestException:
         raise
     except oci.exceptions.ServiceError as e:
-        if e.code == 'NotAuthorized':
-            return []
-        if e.code == 'NotAuthorizedOrNotFound':
+        if e.code.lower().find("auth"):
             return []
         raise
     except Exception as e:
         print("Error in get_email_main: " + str(e))
         pass
 
+
 ##########################################################################
 # run on Region
 ##########################################################################
-
-
 def get_oci_region_data(cmd, config, region_name):
 
     print("\nExtracting Region " + region_name)
@@ -4375,7 +4401,6 @@ def set_parser():
     parser.add_argument('-e', action='store_true', default=False, dest='email', help='Print EMail')
     parser.add_argument('-rm', action='store_true', default=False, dest='orm', help='Print Resource management')
     parser.add_argument('-so', action='store_true', default=False, dest='sumonly', help='Print Summary Only')
-    parser.add_argument('-ocid', action='store_true', default=False, dest='ocid', help='Include OCIDs in Json File')
     parser.add_argument('-mc', action='store_true', default=False, dest='mgdcompart', help='Include ManagedCompartmentForPaaS')
     parser.add_argument('-nr', action='store_true', default=False, dest='noroot', help='Not include root compartment')
     parser.add_argument('-t', default="", dest='profile', help='Config file section to use (tenancy profile)')
@@ -4406,22 +4431,16 @@ def set_parser():
 
     return result
 
+
 ##########################################################################
 # execute_extract
 ##########################################################################
-
-
 def execute_extract():
 
     # get parset cmd
     cmd = set_parser()
     if cmd is None:
         return
-
-    # if include ocid - set main ocid param to true
-    global ocid
-    if cmd.ocid:
-        ocid = True
 
     # get config file - use global parameter config_file
     global config_file
@@ -4461,11 +4480,10 @@ def execute_extract():
         print_oci_main(data, False)
         summary_oci_main(data, False)
 
+
 ##########################################################################
 # check oci version
 ##########################################################################
-
-
 def check_oci_version():
 
     # loop on digits

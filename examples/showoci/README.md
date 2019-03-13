@@ -1,4 +1,5 @@
-# showoci version 3.0.4 - March 10th 2019
+# showoci
+# README.md, last updated 3/13/2019
 ### Oracle Cloud Infrastructure Reporting Tool
 
 ##### Generate OCI resources of your tenancy using Python OCI SDK  
@@ -109,7 +110,7 @@ Download the showoci.py from this project
 $ ./showoci.py  
 
 usage: showoci [-h] [-a] [-ani] [-n] [-i] [-c] [-o] [-l] [-k] [-d] [-f] [-e]
-               [-so] [-ocid] [-mc] [-nr] [-t PROFILE] [-p PROXY] [-rg REGION]
+               [-so] [-mc] [-nr] [-t PROFILE] [-p PROXY] [-rg REGION]
                [-cp COMPART] [-cf CONFIG] [-jf JOUTFILE] [-js] [--version]
 
 optional arguments:
@@ -126,7 +127,6 @@ optional arguments:
   -f            Print File Storage
   -e            Print EMail
   -so           Print Summary Only
-  -ocid         Include OCIDs in Json File
   -mc           Include ManagedCompartmentForPaaS
   -nr           Not include root compartment
   -t PROFILE    Config file section to use (tenancy profile)
