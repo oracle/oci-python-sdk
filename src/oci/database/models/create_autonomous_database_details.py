@@ -1,38 +1,21 @@
 # coding: utf-8
 # Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
-
+from .create_autonomous_database_base import CreateAutonomousDatabaseBase
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
 from oci.decorators import init_model_state_from_kwargs
 
 
 @init_model_state_from_kwargs
-class CreateAutonomousDatabaseDetails(object):
+class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
     """
     Details to create an Oracle Autonomous Database.
-
-    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
-
-    #: A constant which can be used with the db_workload property of a CreateAutonomousDatabaseDetails.
-    #: This constant has a value of "OLTP"
-    DB_WORKLOAD_OLTP = "OLTP"
-
-    #: A constant which can be used with the db_workload property of a CreateAutonomousDatabaseDetails.
-    #: This constant has a value of "DW"
-    DB_WORKLOAD_DW = "DW"
-
-    #: A constant which can be used with the license_model property of a CreateAutonomousDatabaseDetails.
-    #: This constant has a value of "LICENSE_INCLUDED"
-    LICENSE_MODEL_LICENSE_INCLUDED = "LICENSE_INCLUDED"
-
-    #: A constant which can be used with the license_model property of a CreateAutonomousDatabaseDetails.
-    #: This constant has a value of "BRING_YOUR_OWN_LICENSE"
-    LICENSE_MODEL_BRING_YOUR_OWN_LICENSE = "BRING_YOUR_OWN_LICENSE"
 
     def __init__(self, **kwargs):
         """
-        Initializes a new CreateAutonomousDatabaseDetails object with values from keyword arguments.
+        Initializes a new CreateAutonomousDatabaseDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.database.models.CreateAutonomousDatabaseDetails.source` attribute
+        of this class is ``NONE`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param compartment_id:
@@ -77,6 +60,11 @@ class CreateAutonomousDatabaseDetails(object):
             The value to assign to the defined_tags property of this CreateAutonomousDatabaseDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param source:
+            The value to assign to the source property of this CreateAutonomousDatabaseDetails.
+            Allowed values for this property are: "NONE", "DATABASE"
+        :type source: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -88,7 +76,8 @@ class CreateAutonomousDatabaseDetails(object):
             'display_name': 'str',
             'license_model': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'source': 'str'
         }
 
         self.attribute_map = {
@@ -101,7 +90,8 @@ class CreateAutonomousDatabaseDetails(object):
             'display_name': 'displayName',
             'license_model': 'licenseModel',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'source': 'source'
         }
 
         self._compartment_id = None
@@ -114,286 +104,8 @@ class CreateAutonomousDatabaseDetails(object):
         self._license_model = None
         self._freeform_tags = None
         self._defined_tags = None
-
-    @property
-    def compartment_id(self):
-        """
-        **[Required]** Gets the compartment_id of this CreateAutonomousDatabaseDetails.
-        The `OCID`__ of the compartment of the autonomous database.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-
-
-        :return: The compartment_id of this CreateAutonomousDatabaseDetails.
-        :rtype: str
-        """
-        return self._compartment_id
-
-    @compartment_id.setter
-    def compartment_id(self, compartment_id):
-        """
-        Sets the compartment_id of this CreateAutonomousDatabaseDetails.
-        The `OCID`__ of the compartment of the autonomous database.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-
-
-        :param compartment_id: The compartment_id of this CreateAutonomousDatabaseDetails.
-        :type: str
-        """
-        self._compartment_id = compartment_id
-
-    @property
-    def db_name(self):
-        """
-        **[Required]** Gets the db_name of this CreateAutonomousDatabaseDetails.
-        The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
-
-
-        :return: The db_name of this CreateAutonomousDatabaseDetails.
-        :rtype: str
-        """
-        return self._db_name
-
-    @db_name.setter
-    def db_name(self, db_name):
-        """
-        Sets the db_name of this CreateAutonomousDatabaseDetails.
-        The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
-
-
-        :param db_name: The db_name of this CreateAutonomousDatabaseDetails.
-        :type: str
-        """
-        self._db_name = db_name
-
-    @property
-    def cpu_core_count(self):
-        """
-        **[Required]** Gets the cpu_core_count of this CreateAutonomousDatabaseDetails.
-        The number of CPU Cores to be made available to the database.
-
-
-        :return: The cpu_core_count of this CreateAutonomousDatabaseDetails.
-        :rtype: int
-        """
-        return self._cpu_core_count
-
-    @cpu_core_count.setter
-    def cpu_core_count(self, cpu_core_count):
-        """
-        Sets the cpu_core_count of this CreateAutonomousDatabaseDetails.
-        The number of CPU Cores to be made available to the database.
-
-
-        :param cpu_core_count: The cpu_core_count of this CreateAutonomousDatabaseDetails.
-        :type: int
-        """
-        self._cpu_core_count = cpu_core_count
-
-    @property
-    def db_workload(self):
-        """
-        Gets the db_workload of this CreateAutonomousDatabaseDetails.
-        The autonomous database workload type.
-
-        Allowed values for this property are: "OLTP", "DW"
-
-
-        :return: The db_workload of this CreateAutonomousDatabaseDetails.
-        :rtype: str
-        """
-        return self._db_workload
-
-    @db_workload.setter
-    def db_workload(self, db_workload):
-        """
-        Sets the db_workload of this CreateAutonomousDatabaseDetails.
-        The autonomous database workload type.
-
-
-        :param db_workload: The db_workload of this CreateAutonomousDatabaseDetails.
-        :type: str
-        """
-        allowed_values = ["OLTP", "DW"]
-        if not value_allowed_none_or_none_sentinel(db_workload, allowed_values):
-            raise ValueError(
-                "Invalid value for `db_workload`, must be None or one of {0}"
-                .format(allowed_values)
-            )
-        self._db_workload = db_workload
-
-    @property
-    def data_storage_size_in_tbs(self):
-        """
-        **[Required]** Gets the data_storage_size_in_tbs of this CreateAutonomousDatabaseDetails.
-        The size, in terabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed.
-
-
-        :return: The data_storage_size_in_tbs of this CreateAutonomousDatabaseDetails.
-        :rtype: int
-        """
-        return self._data_storage_size_in_tbs
-
-    @data_storage_size_in_tbs.setter
-    def data_storage_size_in_tbs(self, data_storage_size_in_tbs):
-        """
-        Sets the data_storage_size_in_tbs of this CreateAutonomousDatabaseDetails.
-        The size, in terabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed.
-
-
-        :param data_storage_size_in_tbs: The data_storage_size_in_tbs of this CreateAutonomousDatabaseDetails.
-        :type: int
-        """
-        self._data_storage_size_in_tbs = data_storage_size_in_tbs
-
-    @property
-    def admin_password(self):
-        """
-        **[Required]** Gets the admin_password of this CreateAutonomousDatabaseDetails.
-        The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (\") or the username \"admin\", regardless of casing.
-
-
-        :return: The admin_password of this CreateAutonomousDatabaseDetails.
-        :rtype: str
-        """
-        return self._admin_password
-
-    @admin_password.setter
-    def admin_password(self, admin_password):
-        """
-        Sets the admin_password of this CreateAutonomousDatabaseDetails.
-        The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (\") or the username \"admin\", regardless of casing.
-
-
-        :param admin_password: The admin_password of this CreateAutonomousDatabaseDetails.
-        :type: str
-        """
-        self._admin_password = admin_password
-
-    @property
-    def display_name(self):
-        """
-        Gets the display_name of this CreateAutonomousDatabaseDetails.
-        The user-friendly name for the Autonomous Database. The name does not have to be unique.
-
-
-        :return: The display_name of this CreateAutonomousDatabaseDetails.
-        :rtype: str
-        """
-        return self._display_name
-
-    @display_name.setter
-    def display_name(self, display_name):
-        """
-        Sets the display_name of this CreateAutonomousDatabaseDetails.
-        The user-friendly name for the Autonomous Database. The name does not have to be unique.
-
-
-        :param display_name: The display_name of this CreateAutonomousDatabaseDetails.
-        :type: str
-        """
-        self._display_name = display_name
-
-    @property
-    def license_model(self):
-        """
-        Gets the license_model of this CreateAutonomousDatabaseDetails.
-        The Oracle license model that applies to the Oracle Autonomous Database. The default is BRING_YOUR_OWN_LICENSE.
-
-        Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
-
-
-        :return: The license_model of this CreateAutonomousDatabaseDetails.
-        :rtype: str
-        """
-        return self._license_model
-
-    @license_model.setter
-    def license_model(self, license_model):
-        """
-        Sets the license_model of this CreateAutonomousDatabaseDetails.
-        The Oracle license model that applies to the Oracle Autonomous Database. The default is BRING_YOUR_OWN_LICENSE.
-
-
-        :param license_model: The license_model of this CreateAutonomousDatabaseDetails.
-        :type: str
-        """
-        allowed_values = ["LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"]
-        if not value_allowed_none_or_none_sentinel(license_model, allowed_values):
-            raise ValueError(
-                "Invalid value for `license_model`, must be None or one of {0}"
-                .format(allowed_values)
-            )
-        self._license_model = license_model
-
-    @property
-    def freeform_tags(self):
-        """
-        Gets the freeform_tags of this CreateAutonomousDatabaseDetails.
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-        For more information, see `Resource Tags`__.
-
-        Example: `{\"Department\": \"Finance\"}`
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
-
-
-        :return: The freeform_tags of this CreateAutonomousDatabaseDetails.
-        :rtype: dict(str, str)
-        """
-        return self._freeform_tags
-
-    @freeform_tags.setter
-    def freeform_tags(self, freeform_tags):
-        """
-        Sets the freeform_tags of this CreateAutonomousDatabaseDetails.
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-        For more information, see `Resource Tags`__.
-
-        Example: `{\"Department\": \"Finance\"}`
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
-
-
-        :param freeform_tags: The freeform_tags of this CreateAutonomousDatabaseDetails.
-        :type: dict(str, str)
-        """
-        self._freeform_tags = freeform_tags
-
-    @property
-    def defined_tags(self):
-        """
-        Gets the defined_tags of this CreateAutonomousDatabaseDetails.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        For more information, see `Resource Tags`__.
-
-        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
-
-
-        :return: The defined_tags of this CreateAutonomousDatabaseDetails.
-        :rtype: dict(str, dict(str, object))
-        """
-        return self._defined_tags
-
-    @defined_tags.setter
-    def defined_tags(self, defined_tags):
-        """
-        Sets the defined_tags of this CreateAutonomousDatabaseDetails.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        For more information, see `Resource Tags`__.
-
-        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
-
-
-        :param defined_tags: The defined_tags of this CreateAutonomousDatabaseDetails.
-        :type: dict(str, dict(str, object))
-        """
-        self._defined_tags = defined_tags
+        self._source = None
+        self._source = 'NONE'
 
     def __repr__(self):
         return formatted_flat_dict(self)

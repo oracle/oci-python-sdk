@@ -102,7 +102,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.create_autonomous_database` and waits for the :py:class:`~oci.database.models.AutonomousDatabase` acted upon
         to enter the given state(s).
 
-        :param CreateAutonomousDatabaseDetails create_autonomous_database_details: (required)
+        :param CreateAutonomousDatabaseBase create_autonomous_database_details: (required)
             Request to create a new Autonomous Database.
 
         :param list[str] wait_for_states:
