@@ -5,10 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
-3.0.3 - 2019-03-08
+3.0.5 - 2019-03-12
 ====================
 
-Loaded to BitBucket -> GitHub
+Added
+-----
+* Support for Resource Management, Stacks and Jobs
+* Include License type for databases @ summary page
 
 ====================
 3.0.2 - 2019-03-03

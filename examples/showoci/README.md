@@ -1,4 +1,4 @@
-# showoci version 3.0.3 - March 8th 2019
+# showoci version 3.0.4 - March 10th 2019
 ### Oracle Cloud Infrastructure Reporting Tool
 
 ##### Generate OCI resources of your tenancy using Python OCI SDK  
@@ -564,6 +564,14 @@ Adi-Instance-Pool - RUNNING - Size: 1
 --> Approved Senders:
     adi.test@abc.com - ACTIVE
     adi.zohar@efg.com - ACTIVE
+    
+##############################
+#    Resource Management     #
+##############################
+--> StackSimpleVCN - Sub Compartment and VCN Creation
+    ormjob20190303213446 - DESTROY    - SUCCEEDED  - 2019-03-04 02:39
+    ormjob20190303212919 - APPLY      - SUCCEEDED  - 2019-03-04 02:33
+    ormjob20190303211757 - PLAN       - SUCCEEDED  - 2019-03-04 02:21
 
 ##########################################################################################
 #                                 Summary - us-ashburn-1                                 #
