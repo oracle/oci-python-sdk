@@ -6,7 +6,7 @@
 # @Created On  : Jul 25 2018
 # @Last Updated: Mar 12 2019
 # @author      : Adi Zohar
-# @Version     : 3.0.6
+# @Version     : 3.0.7
 #
 # Supports Python 2.7 and above, Python 3 recommended
 #
@@ -54,10 +54,9 @@ import json
 ##########################################################################
 # config file and proxy
 ##########################################################################
-version = "3.0.6"
-config_file = "~/.oci/config"
+version = "3.0.7"
+config_file = oci.config.DEFAULT_LOCATION
 oci_min_version = "2.2.1"
-ocid = False
 oci_installed_version = oci.version.__version__
 
 ##########################################################################
@@ -126,9 +125,9 @@ def get_flags(cmd):
 ##########################################################################
 def get_license_type(license_type):
 
-    if license_type == "LICENSE_INCLUDED":
+    if license_type == oci.database.models.DbSystem.LICENSE_MODEL_LICENSE_INCLUDED:
         return "INCL"
-    elif license_type == "BRING_YOUR_OWN_LICENSE":
+    elif license_type == oci.database.models.DbSystem.LICENSE_MODEL_BRING_YOUR_OWN_LICENSE:
         return "BYOL"
     else:
         return license_type
@@ -880,6 +879,7 @@ def print_database_db_autonomous(dbs):
                 print(tabs + "DB Name : " + db['db_name'])
             if 'time_created' in db:
                 print(tabs + "Created : " + db['time_created'])
+            print("")
 
     except Exception as e:
         print("Error in print_database_db_autonomous: " + str(e.args))
@@ -900,14 +900,9 @@ def print_database_main(list_databases):
             print_database_db_system(list_databases['db_system'])
             print("")
 
-        if 'adwc' in list_databases:
-            print_header("Autonomous DW", 2)
-            print_database_db_autonomous(list_databases['adwc'])
-            print("")
-
-        if 'atp' in list_databases:
-            print_header("Autonomous Database", 2)
-            print_database_db_autonomous(list_databases['atp'])
+        if 'autonomous' in list_databases:
+            print_header("Autonomous Databases", 2)
+            print_database_db_autonomous(list_databases['autonomous'])
             print("")
 
     except Exception as e:
@@ -1206,6 +1201,7 @@ def print_showoci_data(data):
         print("Version        : " + data['version'])
         print("Date/Time      : " + data['datetime'])
         print("Flags          : " + data['flags'])
+        print("Comand Line    : " + data['cmdline'])
         print("OCI SDK Ver    : " + data['oci_sdk_version'])
         if 'proxy' in data:
             print("Proxy         : " + data['proxy'])
@@ -1329,11 +1325,8 @@ def summary_database_main(list_databases):
         if 'db_system' in list_databases:
             summary_database_db_system(list_databases['db_system'])
 
-        if 'adwc' in list_databases:
-            summary_database_db_autonomous(list_databases['adwc'])
-
-        if 'atp' in list_databases:
-            summary_database_db_autonomous(list_databases['atp'])
+        if 'autonomous' in list_databases:
+            summary_database_db_autonomous(list_databases['autonomous'])
 
     except Exception as e:
         print("Error in summary_database_main: " + str(e.args))
@@ -1548,8 +1541,9 @@ def get_version(cmd):
         'config_file': config_file,
         'config_profile': config_section,
         'version': version,
-        'datetime': str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M")),
+        'datetime': str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")),
         'flags': get_flags(cmd),
+        'cmdline': ' '.join(x for x in sys.argv),
         'oci_sdk_version': oci_installed_version
     }
     if cmd.proxy:
@@ -3436,16 +3430,16 @@ def get_database_autonomous_details(dbs):
 # list_autonomous_data_warehouse_backups
 #
 ##########################################################################
-def get_database_autonomous_transaction(database, compartment):
+def get_database_autonomous_databases(database, compartment):
 
     try:
-        list_adwcs = oci.pagination.list_call_get_all_results(database.list_autonomous_databases, compartment.id, sort_by="DISPLAYNAME").data
+        list_autos = oci.pagination.list_call_get_all_results(database.list_autonomous_databases, compartment.id, sort_by="DISPLAYNAME").data
         data = []
 
-        for atp in list_adwcs:
+        for auto in list_autos:
             value = {}
-            if atp.lifecycle_state != "TERMINATED" and atp.lifecycle_state != "UNAVAILABLE":
-                value = get_database_autonomous_details(atp)
+            if auto.lifecycle_state != "TERMINATED" and auto.lifecycle_state != "UNAVAILABLE":
+                value = get_database_autonomous_details(auto)
                 data.append(value)
         return data
 
@@ -3454,41 +3448,7 @@ def get_database_autonomous_transaction(database, compartment):
     except oci.exceptions.ServiceError:
         pass
     except Exception as e:
-        print("Error in get_database_atp: " + str(e.args))
-        pass
-
-
-##########################################################################
-# Autonomous
-##########################################################################
-#
-# class oci.database.DatabaseClient(config, **kwargs)
-#
-# Below APIs not yet done (TBD):
-# list_autonomous_database_backups
-# list_autonomous_databases
-# list_autonomous_data_warehouse_backups
-#
-##########################################################################
-def get_database_autonomous_warehouse(database, compartment):
-
-    try:
-        list_adwcs = oci.pagination.list_call_get_all_results(database.list_autonomous_data_warehouses, compartment.id, sort_by="DISPLAYNAME").data
-        data = []
-
-        for adwc in list_adwcs:
-            value = {}
-            if adwc.lifecycle_state != "TERMINATED" and adwc.lifecycle_state != "UNAVAILABLE":
-                value = get_database_autonomous_details(adwc)
-                data.append(value)
-        return data
-
-    except oci.exceptions.RequestException:
-        pass
-    except oci.exceptions.ServiceError:
-        pass
-    except Exception as e:
-        print("Error in get_database_autonomous_warehouse: " + str(e.args))
+        print("Error in get_database_autonomous_databases: " + str(e.args))
         pass
 
 
@@ -3504,15 +3464,10 @@ def get_database_main(database, virtual_network, compartment):
         if len(data) > 0:
             return_data['db_system'] = data
 
-    data = get_database_autonomous_warehouse(database, compartment)
+    data = get_database_autonomous_databases(database, compartment)
     if data:
         if len(data) > 0:
-            return_data['adwc'] = data
-
-    data = get_database_autonomous_transaction(database, compartment)
-    if data:
-        if len(data) > 0:
-            return_data['atp'] = data
+            return_data['autonomous'] = data
 
     return return_data
 
@@ -4421,12 +4376,9 @@ def set_parser():
     if not (result.all or result.allnoiam or result.network or result.identity or
             result.compute or result.object or result.kms or
             result.load or result.database or result.file or result.email or result.orm):
-        print("")
-        print("*************************************************************")
-        print("*** You must choose at least one parameter for extract !! ***")
-        print("*************************************************************")
-        print("")
+
         parser.print_help()
+        print_header("*** You must choose at least one parameter!! ***", 1)
         return None
 
     return result
@@ -4479,6 +4431,9 @@ def execute_extract():
     else:
         print_oci_main(data, False)
         summary_oci_main(data, False)
+
+    # print completion
+    print_header("Completed at " + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")), 1)
 
 
 ##########################################################################

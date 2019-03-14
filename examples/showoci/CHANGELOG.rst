@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+3.0.7 - 2019-03-14
+====================
+
+Added
+-----
+* Add execution date/time 
+* Add command line
+
+Fixed
+-----
+* Use OCI constants for DBSystem and Config
+
+====================
 3.0.6 - 2019-03-13
 ====================
 
