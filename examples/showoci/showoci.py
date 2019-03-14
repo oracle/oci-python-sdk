@@ -153,7 +153,7 @@ def print_identity_tenancy(tenancy):
 
         print_header("Tenancy", 1)
         print("Name        : " + tenancy['name'])
-        print("OCID        : " + tenancy['id'])
+        print("Tenant ID   : " + tenancy['id'])
         print("Home Region : " + tenancy['home_region_key'])
         print("Subs Region : " + tenancy['subscribe_regions'])
         print("")
