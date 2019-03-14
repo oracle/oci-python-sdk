@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Cluster(object):
     """
-    A Kubernetes cluster.
+    A Kubernetes cluster. Avoid entering confidential information.
     """
 
     #: A constant which can be used with the lifecycle_state property of a Cluster.

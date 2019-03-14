@@ -24,7 +24,7 @@
     <email-api-spec-spec-file>source/email-api-spec.cond.yaml</email-api-spec-spec-file>
     <public-dns-api-spec-spec-file>source/public-dns-api-spec.cond.yaml</public-dns-api-spec-spec-file>
     <resource-query-service-spec-spec-file>rqs.yaml</resource-query-service-spec-spec-file>
-    <clusters-api-spec-spec-file>clusters-api-spec.yaml</clusters-api-spec-spec-file>
+    <clusters-api-spec-spec-file>source/clusters-api-spec.cond.yaml</clusters-api-spec-spec-file>
     <kms-api-spec-spec-file>kms-api-spec-20180608.yaml</kms-api-spec-spec-file>
     <announcements-service-spec-spec-file>source/announcement-service.cond.yaml</announcements-service-spec-spec-file>
     <healthchecks-api-spec-spec-file>ovp-api.yaml</healthchecks-api-spec-spec-file>
@@ -1925,7 +1925,7 @@
       <dependency>
         <groupId>com.oracle.pic.clusters</groupId>
         <artifactId>clusters-api-spec</artifactId>
-        <version>1.0.11</version>
+        <version>1.0.12-20190305.195020-13</version>
       </dependency>
       <dependency>
         <groupId>com.oracle.pic.query</groupId>

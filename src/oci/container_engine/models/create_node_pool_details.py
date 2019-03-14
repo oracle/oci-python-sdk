@@ -33,6 +33,10 @@ class CreateNodePoolDetails(object):
             The value to assign to the kubernetes_version property of this CreateNodePoolDetails.
         :type kubernetes_version: str
 
+        :param node_metadata:
+            The value to assign to the node_metadata property of this CreateNodePoolDetails.
+        :type node_metadata: dict(str, str)
+
         :param node_image_name:
             The value to assign to the node_image_name property of this CreateNodePoolDetails.
         :type node_image_name: str
@@ -63,6 +67,7 @@ class CreateNodePoolDetails(object):
             'cluster_id': 'str',
             'name': 'str',
             'kubernetes_version': 'str',
+            'node_metadata': 'dict(str, str)',
             'node_image_name': 'str',
             'node_shape': 'str',
             'initial_node_labels': 'list[KeyValue]',
@@ -76,6 +81,7 @@ class CreateNodePoolDetails(object):
             'cluster_id': 'clusterId',
             'name': 'name',
             'kubernetes_version': 'kubernetesVersion',
+            'node_metadata': 'nodeMetadata',
             'node_image_name': 'nodeImageName',
             'node_shape': 'nodeShape',
             'initial_node_labels': 'initialNodeLabels',
@@ -88,6 +94,7 @@ class CreateNodePoolDetails(object):
         self._cluster_id = None
         self._name = None
         self._kubernetes_version = None
+        self._node_metadata = None
         self._node_image_name = None
         self._node_shape = None
         self._initial_node_labels = None
@@ -190,6 +197,30 @@ class CreateNodePoolDetails(object):
         :type: str
         """
         self._kubernetes_version = kubernetes_version
+
+    @property
+    def node_metadata(self):
+        """
+        Gets the node_metadata of this CreateNodePoolDetails.
+        A list of key/value pairs to add to each underlying OCI instance in the node pool.
+
+
+        :return: The node_metadata of this CreateNodePoolDetails.
+        :rtype: dict(str, str)
+        """
+        return self._node_metadata
+
+    @node_metadata.setter
+    def node_metadata(self, node_metadata):
+        """
+        Sets the node_metadata of this CreateNodePoolDetails.
+        A list of key/value pairs to add to each underlying OCI instance in the node pool.
+
+
+        :param node_metadata: The node_metadata of this CreateNodePoolDetails.
+        :type: dict(str, str)
+        """
+        self._node_metadata = node_metadata
 
     @property
     def node_image_name(self):
