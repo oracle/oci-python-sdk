@@ -34,6 +34,8 @@ Database
     oci.database.models.CreateAutonomousDataWarehouseBackupDetails
     oci.database.models.CreateAutonomousDataWarehouseDetails
     oci.database.models.CreateAutonomousDatabaseBackupDetails
+    oci.database.models.CreateAutonomousDatabaseBase
+    oci.database.models.CreateAutonomousDatabaseCloneDetails
     oci.database.models.CreateAutonomousDatabaseDetails
     oci.database.models.CreateBackupDetails
     oci.database.models.CreateDataGuardAssociationDetails

@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.2.3 - 2019-03-19
+====================
+
+Added
+-----
+* Support for specifying metadata on node pools in the Container Engine for Kubernetes service
+* Support for provisioning a new autonomous database or autonomous data warehouse as a clone of another in the Database service
+
+Changed
+-------
+* Updated vendored packages. idna==2.8, PyJWT==1.7.1, requests==2.21.0, six==1.12.0, urllib3==1.24.1, requests==2.21.0
+
+====================
 2.2.2 - 2019-03-12
 ====================
 

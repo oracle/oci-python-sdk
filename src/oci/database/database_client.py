@@ -321,7 +321,7 @@ class DatabaseClient(object):
         Creates a new Autonomous Database.
 
 
-        :param CreateAutonomousDatabaseDetails create_autonomous_database_details: (required)
+        :param CreateAutonomousDatabaseBase create_autonomous_database_details: (required)
             Request to create a new Autonomous Database.
 
         :param str opc_retry_token: (optional)

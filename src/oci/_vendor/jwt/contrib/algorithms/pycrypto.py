@@ -1,12 +1,11 @@
 import Crypto.Hash.SHA256
 import Crypto.Hash.SHA384
 import Crypto.Hash.SHA512
-
 from Crypto.PublicKey import RSA
 from Crypto.Signature import PKCS1_v1_5
 
-from ....jwt.algorithms import Algorithm
-from ....jwt.compat import string_types, text_type
+from oci._vendor.jwt.algorithms import Algorithm
+from oci._vendor.jwt.compat import string_types, text_type
 
 
 class RSAAlgorithm(Algorithm):
