@@ -19,6 +19,8 @@ from .complete_external_backup_job_details import CompleteExternalBackupJobDetai
 from .create_autonomous_data_warehouse_backup_details import CreateAutonomousDataWarehouseBackupDetails
 from .create_autonomous_data_warehouse_details import CreateAutonomousDataWarehouseDetails
 from .create_autonomous_database_backup_details import CreateAutonomousDatabaseBackupDetails
+from .create_autonomous_database_base import CreateAutonomousDatabaseBase
+from .create_autonomous_database_clone_details import CreateAutonomousDatabaseCloneDetails
 from .create_autonomous_database_details import CreateAutonomousDatabaseDetails
 from .create_backup_details import CreateBackupDetails
 from .create_data_guard_association_details import CreateDataGuardAssociationDetails
@@ -91,6 +93,8 @@ database_type_mapping = {
     "CreateAutonomousDataWarehouseBackupDetails": CreateAutonomousDataWarehouseBackupDetails,
     "CreateAutonomousDataWarehouseDetails": CreateAutonomousDataWarehouseDetails,
     "CreateAutonomousDatabaseBackupDetails": CreateAutonomousDatabaseBackupDetails,
+    "CreateAutonomousDatabaseBase": CreateAutonomousDatabaseBase,
+    "CreateAutonomousDatabaseCloneDetails": CreateAutonomousDatabaseCloneDetails,
     "CreateAutonomousDatabaseDetails": CreateAutonomousDatabaseDetails,
     "CreateBackupDetails": CreateBackupDetails,
     "CreateDataGuardAssociationDetails": CreateDataGuardAssociationDetails,

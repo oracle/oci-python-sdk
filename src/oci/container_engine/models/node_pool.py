@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class NodePool(object):
     """
-    A pool of compute nodes attached to a cluster.
+    A pool of compute nodes attached to a cluster. Avoid entering confidential information.
     """
 
     def __init__(self, **kwargs):
@@ -36,6 +36,10 @@ class NodePool(object):
         :param kubernetes_version:
             The value to assign to the kubernetes_version property of this NodePool.
         :type kubernetes_version: str
+
+        :param node_metadata:
+            The value to assign to the node_metadata property of this NodePool.
+        :type node_metadata: dict(str, str)
 
         :param node_image_id:
             The value to assign to the node_image_id property of this NodePool.
@@ -76,6 +80,7 @@ class NodePool(object):
             'cluster_id': 'str',
             'name': 'str',
             'kubernetes_version': 'str',
+            'node_metadata': 'dict(str, str)',
             'node_image_id': 'str',
             'node_image_name': 'str',
             'node_shape': 'str',
@@ -92,6 +97,7 @@ class NodePool(object):
             'cluster_id': 'clusterId',
             'name': 'name',
             'kubernetes_version': 'kubernetesVersion',
+            'node_metadata': 'nodeMetadata',
             'node_image_id': 'nodeImageId',
             'node_image_name': 'nodeImageName',
             'node_shape': 'nodeShape',
@@ -107,6 +113,7 @@ class NodePool(object):
         self._cluster_id = None
         self._name = None
         self._kubernetes_version = None
+        self._node_metadata = None
         self._node_image_id = None
         self._node_image_name = None
         self._node_shape = None
@@ -235,6 +242,30 @@ class NodePool(object):
         :type: str
         """
         self._kubernetes_version = kubernetes_version
+
+    @property
+    def node_metadata(self):
+        """
+        Gets the node_metadata of this NodePool.
+        A list of key/value pairs to add to each underlying OCI instance in the node pool.
+
+
+        :return: The node_metadata of this NodePool.
+        :rtype: dict(str, str)
+        """
+        return self._node_metadata
+
+    @node_metadata.setter
+    def node_metadata(self, node_metadata):
+        """
+        Sets the node_metadata of this NodePool.
+        A list of key/value pairs to add to each underlying OCI instance in the node pool.
+
+
+        :param node_metadata: The node_metadata of this NodePool.
+        :type: dict(str, str)
+        """
+        self._node_metadata = node_metadata
 
     @property
     def node_image_id(self):

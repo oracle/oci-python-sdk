@@ -17,7 +17,9 @@ missing = Sentinel("Missing")
 
 class ContainerEngineClient(object):
     """
-    Container Engine for Kubernetes API
+    API for the Container Engine for Kubernetes service. Use this API to build, deploy,
+    and manage cloud-native applications. For more information, see
+    [Overview of Container Engine for Kubernetes](/iaas/Content/ContEng/Concepts/contengoverview.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -74,6 +76,7 @@ class ContainerEngineClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'timeout': kwargs.get('timeout'),
             'base_path': '/20180222',
+            'service_endpoint_template': 'https://containerengine.{region}.{secondLevelDomain}',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
         self.base_client = BaseClient("container_engine", config, signer, container_engine_type_mapping, **base_client_init_kwargs)
@@ -924,10 +927,17 @@ class ContainerEngineClient(object):
             The name to filter on.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
+            1 is the minimum, 1000 is the maximum. For important details about how pagination works,
+            see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
+            For important details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The optional order in which to sort the results.
@@ -1049,10 +1059,17 @@ class ContainerEngineClient(object):
             The name to filter on.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
+            1 is the minimum, 1000 is the maximum. For important details about how pagination works,
+            see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
+            For important details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The optional order in which to sort the results.
@@ -1344,10 +1361,17 @@ class ContainerEngineClient(object):
             Allowed values are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
+            1 is the minimum, 1000 is the maximum. For important details about how pagination works,
+            see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
+            For important details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The optional order in which to sort the results.

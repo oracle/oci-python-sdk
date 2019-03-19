@@ -158,7 +158,7 @@ class ResponseError(HTTPError):
 
 
 class SecurityWarning(HTTPWarning):
-    "Warned when perfoming security reducing actions"
+    "Warned when performing security reducing actions"
     pass
 
 

@@ -139,6 +139,10 @@ class AutonomousDatabaseSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type license_model: str
 
+        :param used_data_storage_size_in_tbs:
+            The value to assign to the used_data_storage_size_in_tbs property of this AutonomousDatabaseSummary.
+        :type used_data_storage_size_in_tbs: int
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this AutonomousDatabaseSummary.
         :type freeform_tags: dict(str, str)
@@ -171,6 +175,7 @@ class AutonomousDatabaseSummary(object):
             'service_console_url': 'str',
             'connection_strings': 'AutonomousDatabaseConnectionStrings',
             'license_model': 'str',
+            'used_data_storage_size_in_tbs': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'db_version': 'str',
@@ -190,6 +195,7 @@ class AutonomousDatabaseSummary(object):
             'service_console_url': 'serviceConsoleUrl',
             'connection_strings': 'connectionStrings',
             'license_model': 'licenseModel',
+            'used_data_storage_size_in_tbs': 'usedDataStorageSizeInTBs',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'db_version': 'dbVersion',
@@ -208,6 +214,7 @@ class AutonomousDatabaseSummary(object):
         self._service_console_url = None
         self._connection_strings = None
         self._license_model = None
+        self._used_data_storage_size_in_tbs = None
         self._freeform_tags = None
         self._defined_tags = None
         self._db_version = None
@@ -520,6 +527,30 @@ class AutonomousDatabaseSummary(object):
         if not value_allowed_none_or_none_sentinel(license_model, allowed_values):
             license_model = 'UNKNOWN_ENUM_VALUE'
         self._license_model = license_model
+
+    @property
+    def used_data_storage_size_in_tbs(self):
+        """
+        Gets the used_data_storage_size_in_tbs of this AutonomousDatabaseSummary.
+        The amount of storage that has been used, in terabytes.
+
+
+        :return: The used_data_storage_size_in_tbs of this AutonomousDatabaseSummary.
+        :rtype: int
+        """
+        return self._used_data_storage_size_in_tbs
+
+    @used_data_storage_size_in_tbs.setter
+    def used_data_storage_size_in_tbs(self, used_data_storage_size_in_tbs):
+        """
+        Sets the used_data_storage_size_in_tbs of this AutonomousDatabaseSummary.
+        The amount of storage that has been used, in terabytes.
+
+
+        :param used_data_storage_size_in_tbs: The used_data_storage_size_in_tbs of this AutonomousDatabaseSummary.
+        :type: int
+        """
+        self._used_data_storage_size_in_tbs = used_data_storage_size_in_tbs
 
     @property
     def freeform_tags(self):

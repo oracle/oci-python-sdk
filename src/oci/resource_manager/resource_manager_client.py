@@ -17,7 +17,7 @@ missing = Sentinel("Missing")
 
 class ResourceManagerClient(object):
     """
-    Oracle Resource Manager API.
+    API for the Resource Manager service. Use this API to install, configure, and manage resources via the "infrastructure-as-code" model. For more information, see [Overview of Resource Manager](/iaas/Content/ResourceManager/Concepts/resourcemanager.htm).
     """
 
     def __init__(self, config, **kwargs):

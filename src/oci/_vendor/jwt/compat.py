@@ -24,19 +24,11 @@ else:
 
 string_types = (text_type, binary_type)
 
-
-def timedelta_total_seconds(delta):
-    try:
-        delta.total_seconds
-    except AttributeError:
-        # On Python 2.6, timedelta instances do not have
-        # a .total_seconds() method.
-        total_seconds = delta.days * 24 * 60 * 60 + delta.seconds
-    else:
-        total_seconds = delta.total_seconds()
-
-    return total_seconds
-
+try:
+    # Importing ABCs from collections will be removed in PY3.8
+    from collections.abc import Iterable, Mapping
+except ImportError:
+    from collections import Iterable, Mapping
 
 try:
     constant_time_compare = hmac.compare_digest

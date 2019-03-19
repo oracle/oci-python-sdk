@@ -5,8 +5,8 @@ import hashlib
 
 import ecdsa
 
-from ....jwt.algorithms import Algorithm
-from ....jwt.compat import string_types, text_type
+from oci._vendor.jwt.algorithms import Algorithm
+from oci._vendor.jwt.compat import string_types, text_type
 
 
 class ECAlgorithm(Algorithm):
