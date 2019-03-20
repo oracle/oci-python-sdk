@@ -165,9 +165,9 @@ class Key(object):
     def current_key_version(self):
         """
         **[Required]** Gets the current_key_version of this Key.
-        The OCID of the KeyVersion resource used in cryptographic operations. During key rotation, service may be in transitional state
-        where this or a newer KeyVersion are used intermittently, and currentKeyVersion field is updated once service is guaranteed to
-        use new KeyVersion for all consequent encrypt operations.
+        The OCID of the KeyVersion resource used in cryptographic operations. During key rotation, service might be in a transitional state
+        where this or a newer KeyVersion are used intermittently. The currentKeyVersion field is updated when the service is guaranteed to
+        use the new KeyVersion for all subsequent encryption operations.
 
 
         :return: The current_key_version of this Key.
@@ -179,9 +179,9 @@ class Key(object):
     def current_key_version(self, current_key_version):
         """
         Sets the current_key_version of this Key.
-        The OCID of the KeyVersion resource used in cryptographic operations. During key rotation, service may be in transitional state
-        where this or a newer KeyVersion are used intermittently, and currentKeyVersion field is updated once service is guaranteed to
-        use new KeyVersion for all consequent encrypt operations.
+        The OCID of the KeyVersion resource used in cryptographic operations. During key rotation, service might be in a transitional state
+        where this or a newer KeyVersion are used intermittently. The currentKeyVersion field is updated when the service is guaranteed to
+        use the new KeyVersion for all subsequent encryption operations.
 
 
         :param current_key_version: The current_key_version of this Key.

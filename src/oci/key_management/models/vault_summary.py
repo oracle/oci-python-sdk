@@ -135,7 +135,7 @@ class VaultSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this VaultSummary.
-        The OCID of the compartment that contains this vault.
+        The OCID of the compartment that contains a particular vault.
 
 
         :return: The compartment_id of this VaultSummary.
@@ -147,7 +147,7 @@ class VaultSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this VaultSummary.
-        The OCID of the compartment that contains this vault.
+        The OCID of the compartment that contains a particular vault.
 
 
         :param compartment_id: The compartment_id of this VaultSummary.

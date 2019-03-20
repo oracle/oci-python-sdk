@@ -71,7 +71,7 @@ class KmsManagementClient(object):
             'regional_client': False,
             'service_endpoint': service_endpoint,
             'timeout': kwargs.get('timeout'),
-            'base_path': '/20180608',
+            'base_path': '/',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
         self.base_client = BaseClient("kms_management", config, signer, key_management_type_mapping, **base_client_init_kwargs)
@@ -79,7 +79,7 @@ class KmsManagementClient(object):
 
     def create_key(self, create_key_details, **kwargs):
         """
-        CreateKey
+        Creates a new key.
         Creates a new key.
 
 
@@ -110,7 +110,7 @@ class KmsManagementClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.Key`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/keys"
+        resource_path = "/20180608/keys"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -156,8 +156,8 @@ class KmsManagementClient(object):
 
     def create_key_version(self, key_id, **kwargs):
         """
-        Create new KeyVersion and rotate the key to use it for encryption.
-        Generates new cryptographic material for a key. Key must be in an `ENABLED` state to be
+        Creates a new KeyVersion resource and rotates the key to use it for encryption.
+        Generates new cryptographic material for a key. The key must be in an `ENABLED` state to be
         rotated.
 
 
@@ -188,7 +188,7 @@ class KmsManagementClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.KeyVersion`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/keys/{keyId}/keyVersions"
+        resource_path = "/20180608/keys/{keyId}/keyVersions"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -244,7 +244,7 @@ class KmsManagementClient(object):
 
     def disable_key(self, key_id, **kwargs):
         """
-        DisableKey
+        Disables a key so it cannot be used for cryptographic operations.
         Disables a key to make it unavailable for encryption
         or decryption.
 
@@ -283,7 +283,7 @@ class KmsManagementClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.Key`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/keys/{keyId}/actions/disable"
+        resource_path = "/20180608/keys/{keyId}/actions/disable"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -341,7 +341,7 @@ class KmsManagementClient(object):
 
     def enable_key(self, key_id, **kwargs):
         """
-        EnableKey
+        Enables a key so it can be used for cryptographic operations.
         Enables a key to make it available for encryption or
         decryption.
 
@@ -380,7 +380,7 @@ class KmsManagementClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.Key`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/keys/{keyId}/actions/enable"
+        resource_path = "/20180608/keys/{keyId}/actions/enable"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -438,7 +438,7 @@ class KmsManagementClient(object):
 
     def get_key(self, key_id, **kwargs):
         """
-        GetKey
+        Gets details about a key.
         Gets information about the specified key.
 
 
@@ -461,7 +461,7 @@ class KmsManagementClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.Key`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/keys/{keyId}"
+        resource_path = "/20180608/keys/{keyId}"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -513,7 +513,7 @@ class KmsManagementClient(object):
 
     def get_key_version(self, key_id, key_version_id, **kwargs):
         """
-        GetKeyVersion
+        Gets details about a key version.
         Gets information about the specified key version.
 
 
@@ -539,7 +539,7 @@ class KmsManagementClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.KeyVersion`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/keys/{keyId}/keyVersions/{keyVersionId}"
+        resource_path = "/20180608/keys/{keyId}/keyVersions/{keyVersionId}"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -592,7 +592,7 @@ class KmsManagementClient(object):
 
     def list_key_versions(self, key_id, **kwargs):
         """
-        ListKeyVersions
+        Lists the KeyVersion resources for a key.
         Lists all key versions for the specified key.
 
 
@@ -634,7 +634,7 @@ class KmsManagementClient(object):
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.key_management.models.KeyVersionSummary`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/keys/{keyId}/keyVersions"
+        resource_path = "/20180608/keys/{keyId}/keyVersions"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -714,7 +714,7 @@ class KmsManagementClient(object):
 
     def list_keys(self, compartment_id, **kwargs):
         """
-        ListKeys
+        Lists keys in the specified vault and compartment.
         Lists the keys in the specified vault and compartment.
 
 
@@ -756,7 +756,7 @@ class KmsManagementClient(object):
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.key_management.models.KeySummary`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/keys"
+        resource_path = "/20180608/keys"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -825,10 +825,10 @@ class KmsManagementClient(object):
 
     def update_key(self, key_id, update_key_details, **kwargs):
         """
-        UpdateKey
+        Updates a key's properties.
         Updates the properties of a key. Specifically, you can update the
-        `displayName` , `freeformTags`, and `definedTags` properties. Furthermore,
-        the key must in an `ACTIVE` or `CREATING` state.
+        `displayName`, `freeformTags`, and `definedTags` properties. Furthermore,
+        the key must in an `ACTIVE` or `CREATING` state to be updated.
 
 
         :param str key_id: (required)
@@ -860,7 +860,7 @@ class KmsManagementClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.Key`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/keys/{keyId}"
+        resource_path = "/20180608/keys/{keyId}"
         method = "PUT"
 
         # Don't accept unknown kwargs
