@@ -7,76 +7,42 @@ from oci.decorators import init_model_state_from_kwargs
 
 
 @init_model_state_from_kwargs
-class ObjectNameFilter(object):
+class PatternDetails(object):
     """
-    A filter that compares object names to a set of prefixes or patterns to determine if a rule applies to a
-    given object. The filter can contain include glob patterns, exclude glob patterns and inclusion prefixes.
-    The inclusion prefixes property is kept for backward compatibility. It is recommended to use inclusion patterns
-    instead of prefixes. Exclusions take precedence over inclusions.
+    Specifying inclusion and exclusion patterns.
     """
 
     def __init__(self, **kwargs):
         """
-        Initializes a new ObjectNameFilter object with values from keyword arguments.
+        Initializes a new PatternDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param inclusion_prefixes:
-            The value to assign to the inclusion_prefixes property of this ObjectNameFilter.
-        :type inclusion_prefixes: list[str]
-
         :param inclusion_patterns:
-            The value to assign to the inclusion_patterns property of this ObjectNameFilter.
+            The value to assign to the inclusion_patterns property of this PatternDetails.
         :type inclusion_patterns: list[str]
 
         :param exclusion_patterns:
-            The value to assign to the exclusion_patterns property of this ObjectNameFilter.
+            The value to assign to the exclusion_patterns property of this PatternDetails.
         :type exclusion_patterns: list[str]
 
         """
         self.swagger_types = {
-            'inclusion_prefixes': 'list[str]',
             'inclusion_patterns': 'list[str]',
             'exclusion_patterns': 'list[str]'
         }
 
         self.attribute_map = {
-            'inclusion_prefixes': 'inclusionPrefixes',
             'inclusion_patterns': 'inclusionPatterns',
             'exclusion_patterns': 'exclusionPatterns'
         }
 
-        self._inclusion_prefixes = None
         self._inclusion_patterns = None
         self._exclusion_patterns = None
 
     @property
-    def inclusion_prefixes(self):
-        """
-        Gets the inclusion_prefixes of this ObjectNameFilter.
-        An array of object name prefixes that the rule will apply to. An empty array means to include all objects.
-
-
-        :return: The inclusion_prefixes of this ObjectNameFilter.
-        :rtype: list[str]
-        """
-        return self._inclusion_prefixes
-
-    @inclusion_prefixes.setter
-    def inclusion_prefixes(self, inclusion_prefixes):
-        """
-        Sets the inclusion_prefixes of this ObjectNameFilter.
-        An array of object name prefixes that the rule will apply to. An empty array means to include all objects.
-
-
-        :param inclusion_prefixes: The inclusion_prefixes of this ObjectNameFilter.
-        :type: list[str]
-        """
-        self._inclusion_prefixes = inclusion_prefixes
-
-    @property
     def inclusion_patterns(self):
         """
-        Gets the inclusion_patterns of this ObjectNameFilter.
+        Gets the inclusion_patterns of this PatternDetails.
         An array of glob patterns to match the object names to include. An empty array includes all objects in the
         bucket. Exclusion patterns take precedence over inclusion patterns.
         A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other
@@ -99,7 +65,7 @@ class ObjectNameFilter(object):
                                 To include a '-' in the range, make it the first or last character.
 
 
-        :return: The inclusion_patterns of this ObjectNameFilter.
+        :return: The inclusion_patterns of this PatternDetails.
         :rtype: list[str]
         """
         return self._inclusion_patterns
@@ -107,7 +73,7 @@ class ObjectNameFilter(object):
     @inclusion_patterns.setter
     def inclusion_patterns(self, inclusion_patterns):
         """
-        Sets the inclusion_patterns of this ObjectNameFilter.
+        Sets the inclusion_patterns of this PatternDetails.
         An array of glob patterns to match the object names to include. An empty array includes all objects in the
         bucket. Exclusion patterns take precedence over inclusion patterns.
         A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other
@@ -130,7 +96,7 @@ class ObjectNameFilter(object):
                                 To include a '-' in the range, make it the first or last character.
 
 
-        :param inclusion_patterns: The inclusion_patterns of this ObjectNameFilter.
+        :param inclusion_patterns: The inclusion_patterns of this PatternDetails.
         :type: list[str]
         """
         self._inclusion_patterns = inclusion_patterns
@@ -138,7 +104,7 @@ class ObjectNameFilter(object):
     @property
     def exclusion_patterns(self):
         """
-        Gets the exclusion_patterns of this ObjectNameFilter.
+        Gets the exclusion_patterns of this PatternDetails.
         An array of glob patterns to match the object names to exclude. An empty array is ignored. Exclusion
         patterns take precedence over inclusion patterns.
         A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other
@@ -161,7 +127,7 @@ class ObjectNameFilter(object):
                                 To include a '-' in the range, make it the first or last character.
 
 
-        :return: The exclusion_patterns of this ObjectNameFilter.
+        :return: The exclusion_patterns of this PatternDetails.
         :rtype: list[str]
         """
         return self._exclusion_patterns
@@ -169,7 +135,7 @@ class ObjectNameFilter(object):
     @exclusion_patterns.setter
     def exclusion_patterns(self, exclusion_patterns):
         """
-        Sets the exclusion_patterns of this ObjectNameFilter.
+        Sets the exclusion_patterns of this PatternDetails.
         An array of glob patterns to match the object names to exclude. An empty array is ignored. Exclusion
         patterns take precedence over inclusion patterns.
         A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other
@@ -192,7 +158,7 @@ class ObjectNameFilter(object):
                                 To include a '-' in the range, make it the first or last character.
 
 
-        :param exclusion_patterns: The exclusion_patterns of this ObjectNameFilter.
+        :param exclusion_patterns: The exclusion_patterns of this PatternDetails.
         :type: list[str]
         """
         self._exclusion_patterns = exclusion_patterns

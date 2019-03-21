@@ -9,8 +9,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RenameObjectDetails(object):
     """
-    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
-    talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+    To use any of the API operations, you must be authorized in an IAM policy. If you are not authorized,
+    talk to an administrator. If you are an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
     __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
@@ -116,7 +116,7 @@ class RenameObjectDetails(object):
     def src_obj_if_match_e_tag(self):
         """
         Gets the src_obj_if_match_e_tag of this RenameObjectDetails.
-        The if-match entity tag of the source object.
+        The if-match entity tag (ETag) of the source object.
 
 
         :return: The src_obj_if_match_e_tag of this RenameObjectDetails.
@@ -128,7 +128,7 @@ class RenameObjectDetails(object):
     def src_obj_if_match_e_tag(self, src_obj_if_match_e_tag):
         """
         Sets the src_obj_if_match_e_tag of this RenameObjectDetails.
-        The if-match entity tag of the source object.
+        The if-match entity tag (ETag) of the source object.
 
 
         :param src_obj_if_match_e_tag: The src_obj_if_match_e_tag of this RenameObjectDetails.
@@ -140,7 +140,7 @@ class RenameObjectDetails(object):
     def new_obj_if_match_e_tag(self):
         """
         Gets the new_obj_if_match_e_tag of this RenameObjectDetails.
-        The if-match entity tag of the new object.
+        The if-match entity tag (ETag) of the new object.
 
 
         :return: The new_obj_if_match_e_tag of this RenameObjectDetails.
@@ -152,7 +152,7 @@ class RenameObjectDetails(object):
     def new_obj_if_match_e_tag(self, new_obj_if_match_e_tag):
         """
         Sets the new_obj_if_match_e_tag of this RenameObjectDetails.
-        The if-match entity tag of the new object.
+        The if-match entity tag (ETag) of the new object.
 
 
         :param new_obj_if_match_e_tag: The new_obj_if_match_e_tag of this RenameObjectDetails.
@@ -164,7 +164,7 @@ class RenameObjectDetails(object):
     def new_obj_if_none_match_e_tag(self):
         """
         Gets the new_obj_if_none_match_e_tag of this RenameObjectDetails.
-        The if-none-match entity tag of the new object.
+        The if-none-match entity tag (ETag) of the new object.
 
 
         :return: The new_obj_if_none_match_e_tag of this RenameObjectDetails.
@@ -176,7 +176,7 @@ class RenameObjectDetails(object):
     def new_obj_if_none_match_e_tag(self, new_obj_if_none_match_e_tag):
         """
         Sets the new_obj_if_none_match_e_tag of this RenameObjectDetails.
-        The if-none-match entity tag of the new object.
+        The if-none-match entity tag (ETag) of the new object.
 
 
         :param new_obj_if_none_match_e_tag: The new_obj_if_none_match_e_tag of this RenameObjectDetails.

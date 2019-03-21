@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequestSummary(object):
     """
-    A summary of workRequest status
+    A summary of the status of a work request.
     """
 
     #: A constant which can be used with the operation_type property of a WorkRequestSummary.
@@ -124,7 +124,7 @@ class WorkRequestSummary(object):
     def operation_type(self):
         """
         Gets the operation_type of this WorkRequestSummary.
-        type of the work request
+        The type of work request.
 
         Allowed values for this property are: "COPY_OBJECT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -139,7 +139,7 @@ class WorkRequestSummary(object):
     def operation_type(self, operation_type):
         """
         Sets the operation_type of this WorkRequestSummary.
-        type of the work request
+        The type of work request.
 
 
         :param operation_type: The operation_type of this WorkRequestSummary.
@@ -154,7 +154,7 @@ class WorkRequestSummary(object):
     def status(self):
         """
         Gets the status of this WorkRequestSummary.
-        status of current work request.
+        The status of a specified work request.
 
         Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "COMPLETED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -169,7 +169,7 @@ class WorkRequestSummary(object):
     def status(self, status):
         """
         Sets the status of this WorkRequestSummary.
-        status of current work request.
+        The status of a specified work request.
 
 
         :param status: The status of this WorkRequestSummary.
@@ -208,10 +208,10 @@ class WorkRequestSummary(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this WorkRequestSummary.
-        The ocid of the compartment that contains the work request. Work requests should be scoped to
+        The OCID of the compartment that contains the work request. Work requests should be scoped to
         the same compartment as the resource the work request affects. If the work request affects multiple resources,
         and those resources are not in the same compartment, it is up to the service team to pick the primary
-        resource whose compartment should be used
+        resource whose compartment should be used.
 
 
         :return: The compartment_id of this WorkRequestSummary.
@@ -223,10 +223,10 @@ class WorkRequestSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this WorkRequestSummary.
-        The ocid of the compartment that contains the work request. Work requests should be scoped to
+        The OCID of the compartment that contains the work request. Work requests should be scoped to
         the same compartment as the resource the work request affects. If the work request affects multiple resources,
         and those resources are not in the same compartment, it is up to the service team to pick the primary
-        resource whose compartment should be used
+        resource whose compartment should be used.
 
 
         :param compartment_id: The compartment_id of this WorkRequestSummary.
@@ -258,7 +258,7 @@ class WorkRequestSummary(object):
     def percent_complete(self):
         """
         Gets the percent_complete of this WorkRequestSummary.
-        Percentage of the request completed.
+        Percentage of the work request completed.
 
 
         :return: The percent_complete of this WorkRequestSummary.
@@ -270,7 +270,7 @@ class WorkRequestSummary(object):
     def percent_complete(self, percent_complete):
         """
         Sets the percent_complete of this WorkRequestSummary.
-        Percentage of the request completed.
+        Percentage of the work request completed.
 
 
         :param percent_complete: The percent_complete of this WorkRequestSummary.
@@ -282,7 +282,7 @@ class WorkRequestSummary(object):
     def time_accepted(self):
         """
         Gets the time_accepted of this WorkRequestSummary.
-        The date and time the request was created, as described in
+        The date and time the work request was created, as described in
         `RFC 3339`__, section 14.29.
 
         __ https://tools.ietf.org/rfc/rfc3339
@@ -297,7 +297,7 @@ class WorkRequestSummary(object):
     def time_accepted(self, time_accepted):
         """
         Sets the time_accepted of this WorkRequestSummary.
-        The date and time the request was created, as described in
+        The date and time the work request was created, as described in
         `RFC 3339`__, section 14.29.
 
         __ https://tools.ietf.org/rfc/rfc3339
@@ -312,8 +312,8 @@ class WorkRequestSummary(object):
     def time_started(self):
         """
         Gets the time_started of this WorkRequestSummary.
-        The date and time the request was started, as described in `RFC 3339`__,
-        section 14.29.
+        The date and time the work request was started, as described in
+        `RFC 3339`__, section 14.29.
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -327,8 +327,8 @@ class WorkRequestSummary(object):
     def time_started(self, time_started):
         """
         Sets the time_started of this WorkRequestSummary.
-        The date and time the request was started, as described in `RFC 3339`__,
-        section 14.29.
+        The date and time the work request was started, as described in
+        `RFC 3339`__, section 14.29.
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -342,7 +342,8 @@ class WorkRequestSummary(object):
     def time_finished(self):
         """
         Gets the time_finished of this WorkRequestSummary.
-        The date and time the object was finished, as described in `RFC 3339`__.
+        The date and time the work request was finished, as described in
+        `RFC 3339`__, section 14.29.
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -356,7 +357,8 @@ class WorkRequestSummary(object):
     def time_finished(self, time_finished):
         """
         Sets the time_finished of this WorkRequestSummary.
-        The date and time the object was finished, as described in `RFC 3339`__.
+        The date and time the work request was finished, as described in
+        `RFC 3339`__, section 14.29.
 
         __ https://tools.ietf.org/rfc/rfc3339
 

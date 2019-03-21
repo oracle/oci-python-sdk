@@ -50,8 +50,10 @@ class WorkRequestError(object):
     def code(self):
         """
         Gets the code of this WorkRequestError.
-        A machine-usable code for the error that occured. Error codes are listed on
-        (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm)
+        A machine-usable code for the error that occurred. For the list of error codes,
+        see `API Errors`__.
+
+        __ https://docs.cloud.oracle.com/Content/API/References/apierrors.htm)
 
 
         :return: The code of this WorkRequestError.
@@ -63,8 +65,10 @@ class WorkRequestError(object):
     def code(self, code):
         """
         Sets the code of this WorkRequestError.
-        A machine-usable code for the error that occured. Error codes are listed on
-        (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm)
+        A machine-usable code for the error that occurred. For the list of error codes,
+        see `API Errors`__.
+
+        __ https://docs.cloud.oracle.com/Content/API/References/apierrors.htm)
 
 
         :param code: The code of this WorkRequestError.
@@ -76,7 +80,7 @@ class WorkRequestError(object):
     def message(self):
         """
         Gets the message of this WorkRequestError.
-        A human readable description of the issue encountered.
+        A human-readable description of the issue that produced the error.
 
 
         :return: The message of this WorkRequestError.
@@ -88,7 +92,7 @@ class WorkRequestError(object):
     def message(self, message):
         """
         Sets the message of this WorkRequestError.
-        A human readable description of the issue encountered.
+        A human-readable description of the issue that produced the error.
 
 
         :param message: The message of this WorkRequestError.
@@ -100,7 +104,7 @@ class WorkRequestError(object):
     def timestamp(self):
         """
         Gets the timestamp of this WorkRequestError.
-        The time the error happened
+        The time the error occurred.
 
 
         :return: The timestamp of this WorkRequestError.
@@ -112,7 +116,7 @@ class WorkRequestError(object):
     def timestamp(self, timestamp):
         """
         Sets the timestamp of this WorkRequestError.
-        The time the error happened
+        The time the error occurred.
 
 
         :param timestamp: The timestamp of this WorkRequestError.

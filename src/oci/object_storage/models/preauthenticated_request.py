@@ -11,10 +11,12 @@ class PreauthenticatedRequest(object):
     """
     Pre-authenticated requests provide a way to let users access a bucket or an object without having their own credentials.
     When you create a pre-authenticated request, a unique URL is generated. Users in your organization, partners, or third
-    parties can use this URL to access the targets identified in the pre-authenticated request. See `Managing Access to Buckets and Objects`__.
+    parties can use this URL to access the targets identified in the pre-authenticated request.
+    See `Using Pre-Authenticated Requests`__.
 
-    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator.
-    If you're an administrator who needs to write policies to give users access, see `Getting Started with Policies`__.
+    To use any of the API operations, you must be authorized in an IAM policy. If you are not authorized, talk to an
+    administrator. If you are an administrator who needs to write policies to give users access, see
+    `Getting Started with Policies`__.
 
     __ https://docs.cloud.oracle.com/Content/Object/Tasks/managingaccess.htm
     __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
@@ -176,9 +178,8 @@ class PreauthenticatedRequest(object):
     def object_name(self):
         """
         Gets the object_name of this PreauthenticatedRequest.
-        The name of the object that is being granted access to by the pre-authenticated request. This can be null and
-        if so, the pre-authenticated request grants access to the entire bucket. Avoid entering confidential information.
-        Example: test/object1.log
+        The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential
+        information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket.
 
 
         :return: The object_name of this PreauthenticatedRequest.
@@ -190,9 +191,8 @@ class PreauthenticatedRequest(object):
     def object_name(self, object_name):
         """
         Sets the object_name of this PreauthenticatedRequest.
-        The name of the object that is being granted access to by the pre-authenticated request. This can be null and
-        if so, the pre-authenticated request grants access to the entire bucket. Avoid entering confidential information.
-        Example: test/object1.log
+        The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential
+        information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket.
 
 
         :param object_name: The object_name of this PreauthenticatedRequest.
@@ -234,7 +234,8 @@ class PreauthenticatedRequest(object):
     def time_expires(self):
         """
         **[Required]** Gets the time_expires of this PreauthenticatedRequest.
-        The expiration date for the pre-authenticated request as per `RFC 3339`__. After this date the pre-authenticated request will no longer be valid.
+        The expiration date for the pre-authenticated request as per `RFC 3339`__. After
+        this date the pre-authenticated request will no longer be valid.
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -248,7 +249,8 @@ class PreauthenticatedRequest(object):
     def time_expires(self, time_expires):
         """
         Sets the time_expires of this PreauthenticatedRequest.
-        The expiration date for the pre-authenticated request as per `RFC 3339`__. After this date the pre-authenticated request will no longer be valid.
+        The expiration date for the pre-authenticated request as per `RFC 3339`__. After
+        this date the pre-authenticated request will no longer be valid.
 
         __ https://tools.ietf.org/rfc/rfc3339
 
