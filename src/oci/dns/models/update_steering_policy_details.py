@@ -12,7 +12,8 @@ class UpdateSteeringPolicyDetails(object):
     The body for updating a steering policy. New rules and answers provided in the request will
     replace the existing rules and answers in the policy.
 
-    *Warning:* Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+
+    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
 
     #: A constant which can be used with the template property of a UpdateSteeringPolicyDetails.
@@ -113,8 +114,7 @@ class UpdateSteeringPolicyDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateSteeringPolicyDetails.
-        A user-friendly name for the steering policy.
-        Does not have to be unique, and it's changeable.
+        A user-friendly name for the steering policy. Does not have to be unique and can be changed.
         Avoid entering confidential information.
 
 
@@ -127,8 +127,7 @@ class UpdateSteeringPolicyDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateSteeringPolicyDetails.
-        A user-friendly name for the steering policy.
-        Does not have to be unique, and it's changeable.
+        A user-friendly name for the steering policy. Does not have to be unique and can be changed.
         Avoid entering confidential information.
 
 
@@ -141,7 +140,7 @@ class UpdateSteeringPolicyDetails(object):
     def ttl(self):
         """
         Gets the ttl of this UpdateSteeringPolicyDetails.
-        The Time To Live for responses from the steering policy, in seconds.
+        The Time To Live (TTL) for responses from the steering policy, in seconds.
         If not specified during creation, a value of 30 seconds will be used.
 
 
@@ -154,7 +153,7 @@ class UpdateSteeringPolicyDetails(object):
     def ttl(self, ttl):
         """
         Sets the ttl of this UpdateSteeringPolicyDetails.
-        The Time To Live for responses from the steering policy, in seconds.
+        The Time To Live (TTL) for responses from the steering policy, in seconds.
         If not specified during creation, a value of 30 seconds will be used.
 
 
@@ -168,11 +167,16 @@ class UpdateSteeringPolicyDetails(object):
         """
         Gets the health_check_monitor_id of this UpdateSteeringPolicyDetails.
         The OCID of the health check monitor providing health data about the answers of the
-        steering policy.
-        A steering policy answer with `rdata` matching a monitored endpoint will use the health
-        data of that endpoint.
-        A steering policy answer with `rdata` not matching any monitored endpoint will be assumed
-        healthy.
+        steering policy. A steering policy answer with `rdata` matching a monitored endpoint
+        will use the health data of that endpoint. A steering policy answer with `rdata` not
+        matching any monitored endpoint will be assumed healthy.
+
+
+        **Note:** To use the Health Check monitoring feature in a steering policy, a monitor
+        must be created using the Health Checks service first. For more information on how to
+        create a monitor, please see `Managing Health Checks`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm
 
 
         :return: The health_check_monitor_id of this UpdateSteeringPolicyDetails.
@@ -185,11 +189,16 @@ class UpdateSteeringPolicyDetails(object):
         """
         Sets the health_check_monitor_id of this UpdateSteeringPolicyDetails.
         The OCID of the health check monitor providing health data about the answers of the
-        steering policy.
-        A steering policy answer with `rdata` matching a monitored endpoint will use the health
-        data of that endpoint.
-        A steering policy answer with `rdata` not matching any monitored endpoint will be assumed
-        healthy.
+        steering policy. A steering policy answer with `rdata` matching a monitored endpoint
+        will use the health data of that endpoint. A steering policy answer with `rdata` not
+        matching any monitored endpoint will be assumed healthy.
+
+
+        **Note:** To use the Health Check monitoring feature in a steering policy, a monitor
+        must be created using the Health Checks service first. For more information on how to
+        create a monitor, please see `Managing Health Checks`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm
 
 
         :param health_check_monitor_id: The health_check_monitor_id of this UpdateSteeringPolicyDetails.
@@ -201,44 +210,50 @@ class UpdateSteeringPolicyDetails(object):
     def template(self):
         """
         Gets the template of this UpdateSteeringPolicyDetails.
-        The common pattern (or lack thereof) to which the steering policy adheres. This
-        value restricts the possible configurations of rules, but thereby supports
-        specifically tailored interfaces. Values other than \"CUSTOM\" require the rules to
-        begin with an unconditional FILTER that keeps answers contingent upon
-        `answer.isDisabled != true`, followed
-        _if and only if the policy references a health check monitor_ by an unconditional
-        HEALTH rule, and require the last rule to be an unconditional LIMIT.
-        What must precede the LIMIT rule is determined by the template value:
-        - FAILOVER requires exactly an unconditional PRIORITY rule that ranks answers by pool.
-          Each answer pool must have a unique priority value assigned to it. Answer data must
-          be defined in the `defaultAnswerData` property for the rule and the `cases` property
-          must not be defined.
-        - LOAD_BALANCE requires exactly an unconditional WEIGHTED rule that shuffles answers
-          by name. Answer data must be defined in the `defaultAnswerData` property for the
-          rule and the `cases` property must not be defined.
-        - ROUTE_BY_GEO requires exactly one PRIORITY rule that ranks answers by pool using the
-          geographical location of the client as a condition. Within that rule you may only
-          use `query.client.geoKey` in the `caseCondition` expressions for defining the cases.
-          For each case in the PRIORITY rule each answer pool must have a unique priority
-          value assigned to it. Answer data can only be defined within cases and
-          `defaultAnswerData` cannot be used in the PRIORITY rule.
-        - ROUTE_BY_ASN requires exactly one PRIORITY rule that ranks answers by pool using the
-          ASN of the client as a condition. Within that rule you may only use
-          `query.client.asn` in the `caseCondition` expressions for defining the cases.
-          For each case in the PRIORITY rule each answer pool must have a unique priority
-          value assigned to it. Answer data can only be defined within cases and
-          `defaultAnswerData` cannot be used in the PRIORITY rule.
-        - ROUTE_BY_IP requires exactly one PRIORITY rule that ranks answers by pool using the
-          IP subnet of the client as a condition. Within that rule you may only use
-          `query.client.address` in the `caseCondition` expressions for defining the cases.
-          For each case in the PRIORITY rule each answer pool must have a unique priority
-          value assigned to it. Answer data can only be defined within cases and
-          `defaultAnswerData` cannot be used in the PRIORITY rule.
-        - CUSTOM allows an arbitrary configuration of rules.
+        A set of predefined rules based on the desired purpose of the steering policy. Each
+        template utilizes Traffic Management's rules in a different order to produce the desired
+        results when answering DNS queries.
 
-        For an existing steering policy, the template value may be changed to any of the
-        supported options but the resulting policy must conform to the requirements for the
-        new template type or else a Bad Request error will be returned.
+
+        **Example:** The `FAILOVER` template determines answers by filtering the policy's answers
+        using the `FILTER` rule first, then the following rules in succession: `HEALTH`, `PRIORITY`,
+        and `LIMIT`. This gives the domain dynamic failover capability.
+
+
+        It is **strongly recommended** to use a template other than `CUSTOM` when creating
+        a steering policy.
+
+
+        All templates require the rule order to begin with an unconditional `FILTER` rule that keeps
+        answers contingent upon `answer.isDisabled != true`, except for `CUSTOM`. A defined
+        `HEALTH` rule must follow the `FILTER` rule if the policy references a `healthCheckMonitorId`.
+        The last rule of a template must must be a `LIMIT` rule. For more information about templates
+        and code examples, see `Traffic Management API Guide`__.
+
+        **Template Types**
+
+        * `FAILOVER` - Uses health check information on your endpoints to determine which DNS answers
+        to serve. If an endpoint fails a health check, the answer for that endpoint will be removed
+        from the list of available answers until the endpoint is detected as healthy.
+
+
+        * `LOAD_BALANCE` - Distributes web traffic to specified endpoints based on defined weights.
+
+
+        * `ROUTE_BY_GEO` - Answers DNS queries based on the query's geographic location. For a list of geographic
+        locations to route by, see `Traffic Management Geographic Locations`__.
+
+
+        * `ROUTE_BY_ASN` - Answers DNS queries based on the query's originating ASN.
+
+
+        * `ROUTE_BY_IP` - Answers DNS queries based on the query's IP address.
+
+
+        * `CUSTOM` - Allows a customized configuration of rules.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Reference/trafficmanagementgeo.htm
 
         Allowed values for this property are: "FAILOVER", "LOAD_BALANCE", "ROUTE_BY_GEO", "ROUTE_BY_ASN", "ROUTE_BY_IP", "CUSTOM"
 
@@ -252,44 +267,50 @@ class UpdateSteeringPolicyDetails(object):
     def template(self, template):
         """
         Sets the template of this UpdateSteeringPolicyDetails.
-        The common pattern (or lack thereof) to which the steering policy adheres. This
-        value restricts the possible configurations of rules, but thereby supports
-        specifically tailored interfaces. Values other than \"CUSTOM\" require the rules to
-        begin with an unconditional FILTER that keeps answers contingent upon
-        `answer.isDisabled != true`, followed
-        _if and only if the policy references a health check monitor_ by an unconditional
-        HEALTH rule, and require the last rule to be an unconditional LIMIT.
-        What must precede the LIMIT rule is determined by the template value:
-        - FAILOVER requires exactly an unconditional PRIORITY rule that ranks answers by pool.
-          Each answer pool must have a unique priority value assigned to it. Answer data must
-          be defined in the `defaultAnswerData` property for the rule and the `cases` property
-          must not be defined.
-        - LOAD_BALANCE requires exactly an unconditional WEIGHTED rule that shuffles answers
-          by name. Answer data must be defined in the `defaultAnswerData` property for the
-          rule and the `cases` property must not be defined.
-        - ROUTE_BY_GEO requires exactly one PRIORITY rule that ranks answers by pool using the
-          geographical location of the client as a condition. Within that rule you may only
-          use `query.client.geoKey` in the `caseCondition` expressions for defining the cases.
-          For each case in the PRIORITY rule each answer pool must have a unique priority
-          value assigned to it. Answer data can only be defined within cases and
-          `defaultAnswerData` cannot be used in the PRIORITY rule.
-        - ROUTE_BY_ASN requires exactly one PRIORITY rule that ranks answers by pool using the
-          ASN of the client as a condition. Within that rule you may only use
-          `query.client.asn` in the `caseCondition` expressions for defining the cases.
-          For each case in the PRIORITY rule each answer pool must have a unique priority
-          value assigned to it. Answer data can only be defined within cases and
-          `defaultAnswerData` cannot be used in the PRIORITY rule.
-        - ROUTE_BY_IP requires exactly one PRIORITY rule that ranks answers by pool using the
-          IP subnet of the client as a condition. Within that rule you may only use
-          `query.client.address` in the `caseCondition` expressions for defining the cases.
-          For each case in the PRIORITY rule each answer pool must have a unique priority
-          value assigned to it. Answer data can only be defined within cases and
-          `defaultAnswerData` cannot be used in the PRIORITY rule.
-        - CUSTOM allows an arbitrary configuration of rules.
+        A set of predefined rules based on the desired purpose of the steering policy. Each
+        template utilizes Traffic Management's rules in a different order to produce the desired
+        results when answering DNS queries.
 
-        For an existing steering policy, the template value may be changed to any of the
-        supported options but the resulting policy must conform to the requirements for the
-        new template type or else a Bad Request error will be returned.
+
+        **Example:** The `FAILOVER` template determines answers by filtering the policy's answers
+        using the `FILTER` rule first, then the following rules in succession: `HEALTH`, `PRIORITY`,
+        and `LIMIT`. This gives the domain dynamic failover capability.
+
+
+        It is **strongly recommended** to use a template other than `CUSTOM` when creating
+        a steering policy.
+
+
+        All templates require the rule order to begin with an unconditional `FILTER` rule that keeps
+        answers contingent upon `answer.isDisabled != true`, except for `CUSTOM`. A defined
+        `HEALTH` rule must follow the `FILTER` rule if the policy references a `healthCheckMonitorId`.
+        The last rule of a template must must be a `LIMIT` rule. For more information about templates
+        and code examples, see `Traffic Management API Guide`__.
+
+        **Template Types**
+
+        * `FAILOVER` - Uses health check information on your endpoints to determine which DNS answers
+        to serve. If an endpoint fails a health check, the answer for that endpoint will be removed
+        from the list of available answers until the endpoint is detected as healthy.
+
+
+        * `LOAD_BALANCE` - Distributes web traffic to specified endpoints based on defined weights.
+
+
+        * `ROUTE_BY_GEO` - Answers DNS queries based on the query's geographic location. For a list of geographic
+        locations to route by, see `Traffic Management Geographic Locations`__.
+
+
+        * `ROUTE_BY_ASN` - Answers DNS queries based on the query's originating ASN.
+
+
+        * `ROUTE_BY_IP` - Answers DNS queries based on the query's IP address.
+
+
+        * `CUSTOM` - Allows a customized configuration of rules.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Reference/trafficmanagementgeo.htm
 
 
         :param template: The template of this UpdateSteeringPolicyDetails.
@@ -307,9 +328,11 @@ class UpdateSteeringPolicyDetails(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this UpdateSteeringPolicyDetails.
-        Simple key-value pair that is applied without any predefined name, type, or scope.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
         For more information, see `Resource Tags`__.
-        Example: `{\"bar-key\": \"value\"}`
+
+
+        **Example:** `{\"Department\": \"Finance\"}`
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
@@ -323,9 +346,11 @@ class UpdateSteeringPolicyDetails(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this UpdateSteeringPolicyDetails.
-        Simple key-value pair that is applied without any predefined name, type, or scope.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
         For more information, see `Resource Tags`__.
-        Example: `{\"bar-key\": \"value\"}`
+
+
+        **Example:** `{\"Department\": \"Finance\"}`
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
@@ -339,8 +364,13 @@ class UpdateSteeringPolicyDetails(object):
     def defined_tags(self):
         """
         Gets the defined_tags of this UpdateSteeringPolicyDetails.
-        Usage of predefined tag keys. These predefined keys are scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+
+        **Example:** `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this UpdateSteeringPolicyDetails.
@@ -352,8 +382,13 @@ class UpdateSteeringPolicyDetails(object):
     def defined_tags(self, defined_tags):
         """
         Sets the defined_tags of this UpdateSteeringPolicyDetails.
-        Usage of predefined tag keys. These predefined keys are scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+
+        **Example:** `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this UpdateSteeringPolicyDetails.
@@ -389,8 +424,9 @@ class UpdateSteeringPolicyDetails(object):
     def rules(self):
         """
         Gets the rules of this UpdateSteeringPolicyDetails.
-        The pipeline of rules that will be processed in sequence to reduce the pool of answers
+        The series of rules that will be processed in sequence to reduce the pool of answers
         to a response for any given request.
+
 
         The first rule receives a shuffled list of all answers, and every other rule receives
         the list of answers emitted by the one preceding it. The last rule populates the
@@ -406,8 +442,9 @@ class UpdateSteeringPolicyDetails(object):
     def rules(self, rules):
         """
         Sets the rules of this UpdateSteeringPolicyDetails.
-        The pipeline of rules that will be processed in sequence to reduce the pool of answers
+        The series of rules that will be processed in sequence to reduce the pool of answers
         to a response for any given request.
+
 
         The first rule receives a shuffled list of all answers, and every other rule receives
         the list of answers emitted by the one preceding it. The last rule populates the

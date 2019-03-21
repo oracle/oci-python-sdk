@@ -10,6 +10,9 @@ from oci.decorators import init_model_state_from_kwargs
 class UpdateSteeringPolicyAttachmentDetails(object):
     """
     The body for updating a steering policy attachment.
+
+
+    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +40,7 @@ class UpdateSteeringPolicyAttachmentDetails(object):
         """
         Gets the display_name of this UpdateSteeringPolicyAttachmentDetails.
         A user-friendly name for the steering policy attachment.
-        Does not have to be unique, and it's changeable.
+        Does not have to be unique and can be changed.
         Avoid entering confidential information.
 
 
@@ -51,7 +54,7 @@ class UpdateSteeringPolicyAttachmentDetails(object):
         """
         Sets the display_name of this UpdateSteeringPolicyAttachmentDetails.
         A user-friendly name for the steering policy attachment.
-        Does not have to be unique, and it's changeable.
+        Does not have to be unique and can be changed.
         Avoid entering confidential information.
 
 

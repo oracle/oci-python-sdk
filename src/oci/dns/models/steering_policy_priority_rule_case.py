@@ -43,6 +43,13 @@ class SteeringPolicyPriorityRuleCase(object):
     def case_condition(self):
         """
         Gets the case_condition of this SteeringPolicyPriorityRuleCase.
+        An expression that uses conditions at the time of a DNS query to indicate
+        whether a case matches. Conditions may include the geographical location, IP
+        subnet, or ASN the DNS query originated. **Example:** If you have an
+        office that uses the subnet `192.0.2.0/24` you could use a `caseCondition`
+        expression `query.client.subnet in ('192.0.2.0/24')` to define a case that
+        matches queries from that office.
+
 
         :return: The case_condition of this SteeringPolicyPriorityRuleCase.
         :rtype: str
@@ -53,6 +60,13 @@ class SteeringPolicyPriorityRuleCase(object):
     def case_condition(self, case_condition):
         """
         Sets the case_condition of this SteeringPolicyPriorityRuleCase.
+        An expression that uses conditions at the time of a DNS query to indicate
+        whether a case matches. Conditions may include the geographical location, IP
+        subnet, or ASN the DNS query originated. **Example:** If you have an
+        office that uses the subnet `192.0.2.0/24` you could use a `caseCondition`
+        expression `query.client.subnet in ('192.0.2.0/24')` to define a case that
+        matches queries from that office.
+
 
         :param case_condition: The case_condition of this SteeringPolicyPriorityRuleCase.
         :type: str
@@ -63,6 +77,8 @@ class SteeringPolicyPriorityRuleCase(object):
     def answer_data(self):
         """
         Gets the answer_data of this SteeringPolicyPriorityRuleCase.
+        An array of `SteeringPolicyPriorityAnswerData` objects.
+
 
         :return: The answer_data of this SteeringPolicyPriorityRuleCase.
         :rtype: list[SteeringPolicyPriorityAnswerData]
@@ -73,6 +89,8 @@ class SteeringPolicyPriorityRuleCase(object):
     def answer_data(self, answer_data):
         """
         Sets the answer_data of this SteeringPolicyPriorityRuleCase.
+        An array of `SteeringPolicyPriorityAnswerData` objects.
+
 
         :param answer_data: The answer_data of this SteeringPolicyPriorityRuleCase.
         :type: list[SteeringPolicyPriorityAnswerData]
