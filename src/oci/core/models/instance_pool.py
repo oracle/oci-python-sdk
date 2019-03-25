@@ -140,7 +140,7 @@ class InstancePool(object):
     def id(self):
         """
         **[Required]** Gets the id of this InstancePool.
-        The OCID of the instance pool
+        The OCID of the instance pool.
 
 
         :return: The id of this InstancePool.
@@ -152,7 +152,7 @@ class InstancePool(object):
     def id(self, id):
         """
         Sets the id of this InstancePool.
-        The OCID of the instance pool
+        The OCID of the instance pool.
 
 
         :param id: The id of this InstancePool.
@@ -164,7 +164,7 @@ class InstancePool(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this InstancePool.
-        The OCID of the compartment containing the instance pool
+        The OCID of the compartment containing the instance pool.
 
 
         :return: The compartment_id of this InstancePool.
@@ -176,7 +176,7 @@ class InstancePool(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this InstancePool.
-        The OCID of the compartment containing the instance pool
+        The OCID of the compartment containing the instance pool.
 
 
         :param compartment_id: The compartment_id of this InstancePool.
@@ -282,7 +282,7 @@ class InstancePool(object):
     def instance_configuration_id(self):
         """
         **[Required]** Gets the instance_configuration_id of this InstancePool.
-        The OCID of the instance configuration associated to the intance pool.
+        The OCID of the instance configuration associated with the instance pool.
 
 
         :return: The instance_configuration_id of this InstancePool.
@@ -294,7 +294,7 @@ class InstancePool(object):
     def instance_configuration_id(self, instance_configuration_id):
         """
         Sets the instance_configuration_id of this InstancePool.
-        The OCID of the instance configuration associated to the intance pool.
+        The OCID of the instance configuration associated with the instance pool.
 
 
         :param instance_configuration_id: The instance_configuration_id of this InstancePool.

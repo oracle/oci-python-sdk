@@ -206,7 +206,11 @@ class FastConnectProviderService(object):
     def description(self):
         """
         Gets the description of this FastConnectProviderService.
-        A description of the service offered by the provider.
+        The location of the provider's website or portal. This portal is where you can get information
+        about the provider service, create a virtual circuit connection from the provider to Oracle
+        Cloud Infrastructure, and retrieve your provider service key for that virtual circuit connection.
+
+        Example: `https://example.com`
 
 
         :return: The description of this FastConnectProviderService.
@@ -218,7 +222,11 @@ class FastConnectProviderService(object):
     def description(self, description):
         """
         Sets the description of this FastConnectProviderService.
-        A description of the service offered by the provider.
+        The location of the provider's website or portal. This portal is where you can get information
+        about the provider service, create a virtual circuit connection from the provider to Oracle
+        Cloud Infrastructure, and retrieve your provider service key for that virtual circuit connection.
+
+        Example: `https://example.com`
 
 
         :param description: The description of this FastConnectProviderService.

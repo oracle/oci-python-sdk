@@ -350,7 +350,7 @@ class ComputeClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str instance_console_connection_id: (required)
-            The OCID of the intance console connection
+            The OCID of the instance console connection.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.InstanceConsoleConnection.lifecycle_state`

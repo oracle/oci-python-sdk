@@ -43,7 +43,7 @@ class DetachLoadBalancerDetails(object):
     def load_balancer_id(self):
         """
         **[Required]** Gets the load_balancer_id of this DetachLoadBalancerDetails.
-        The OCID of the load balancer to detach from the pool.
+        The OCID of the load balancer to detach from the instance pool.
 
 
         :return: The load_balancer_id of this DetachLoadBalancerDetails.
@@ -55,7 +55,7 @@ class DetachLoadBalancerDetails(object):
     def load_balancer_id(self, load_balancer_id):
         """
         Sets the load_balancer_id of this DetachLoadBalancerDetails.
-        The OCID of the load balancer to detach from the pool.
+        The OCID of the load balancer to detach from the instance pool.
 
 
         :param load_balancer_id: The load_balancer_id of this DetachLoadBalancerDetails.
@@ -67,7 +67,7 @@ class DetachLoadBalancerDetails(object):
     def backend_set_name(self):
         """
         **[Required]** Gets the backend_set_name of this DetachLoadBalancerDetails.
-        The name of the backend set on the load balancer to detach from the pool.
+        The name of the backend set on the load balancer to detach from the instance pool.
 
 
         :return: The backend_set_name of this DetachLoadBalancerDetails.
@@ -79,7 +79,7 @@ class DetachLoadBalancerDetails(object):
     def backend_set_name(self, backend_set_name):
         """
         Sets the backend_set_name of this DetachLoadBalancerDetails.
-        The name of the backend set on the load balancer to detach from the pool.
+        The name of the backend set on the load balancer to detach from the instance pool.
 
 
         :param backend_set_name: The backend_set_name of this DetachLoadBalancerDetails.
