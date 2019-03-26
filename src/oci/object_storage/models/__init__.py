@@ -19,6 +19,7 @@ from .object_lifecycle_policy import ObjectLifecyclePolicy
 from .object_lifecycle_rule import ObjectLifecycleRule
 from .object_name_filter import ObjectNameFilter
 from .object_summary import ObjectSummary
+from .pattern_details import PatternDetails
 from .preauthenticated_request import PreauthenticatedRequest
 from .preauthenticated_request_summary import PreauthenticatedRequestSummary
 from .put_object_lifecycle_policy_details import PutObjectLifecyclePolicyDetails
@@ -50,6 +51,7 @@ object_storage_type_mapping = {
     "ObjectLifecycleRule": ObjectLifecycleRule,
     "ObjectNameFilter": ObjectNameFilter,
     "ObjectSummary": ObjectSummary,
+    "PatternDetails": PatternDetails,
     "PreauthenticatedRequest": PreauthenticatedRequest,
     "PreauthenticatedRequestSummary": PreauthenticatedRequestSummary,
     "PutObjectLifecyclePolicyDetails": PutObjectLifecyclePolicyDetails,

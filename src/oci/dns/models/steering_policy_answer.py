@@ -11,7 +11,8 @@ class SteeringPolicyAnswer(object):
     """
     DNS record data with metadata for processing in a steering policy.
 
-    *Warning:* Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+
+    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
 
     def __init__(self, **kwargs):
@@ -67,6 +68,22 @@ class SteeringPolicyAnswer(object):
         """
         **[Required]** Gets the name of this SteeringPolicyAnswer.
         A user-friendly name for the answer, unique within the steering policy.
+        An answer's `name` property can be referenced in `answerCondition` properties
+        of rules using `answer.name`.
+
+        **Example:**
+
+          \"rules\": [
+            {
+              \"ruleType\": \"FILTER\",
+              \"defaultAnswerData\":  [
+                {
+                  \"answerCondition\": \"answer.name == 'server 1'\",
+                  \"shouldKeep\": true
+                }
+              ]
+            }
+          ]
 
 
         :return: The name of this SteeringPolicyAnswer.
@@ -79,6 +96,22 @@ class SteeringPolicyAnswer(object):
         """
         Sets the name of this SteeringPolicyAnswer.
         A user-friendly name for the answer, unique within the steering policy.
+        An answer's `name` property can be referenced in `answerCondition` properties
+        of rules using `answer.name`.
+
+        **Example:**
+
+          \"rules\": [
+            {
+              \"ruleType\": \"FILTER\",
+              \"defaultAnswerData\":  [
+                {
+                  \"answerCondition\": \"answer.name == 'server 1'\",
+                  \"shouldKeep\": true
+                }
+              ]
+            }
+          ]
 
 
         :param name: The name of this SteeringPolicyAnswer.
@@ -91,9 +124,9 @@ class SteeringPolicyAnswer(object):
         """
         **[Required]** Gets the rtype of this SteeringPolicyAnswer.
         The canonical name for the record's type. Only A, AAAA, and CNAME are supported. For more
-        information, see `Resource Record (RR) TYPEs`__.
+        information, see `Supported DNS Resource Record Types`__.
 
-        __ https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4
+        __ https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm
 
 
         :return: The rtype of this SteeringPolicyAnswer.
@@ -106,9 +139,9 @@ class SteeringPolicyAnswer(object):
         """
         Sets the rtype of this SteeringPolicyAnswer.
         The canonical name for the record's type. Only A, AAAA, and CNAME are supported. For more
-        information, see `Resource Record (RR) TYPEs`__.
+        information, see `Supported DNS Resource Record Types`__.
 
-        __ https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4
+        __ https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm
 
 
         :param rtype: The rtype of this SteeringPolicyAnswer.
@@ -121,7 +154,11 @@ class SteeringPolicyAnswer(object):
         """
         **[Required]** Gets the rdata of this SteeringPolicyAnswer.
         The record's data, as whitespace-delimited tokens in
-        type-specific presentation format.
+        type-specific presentation format. All RDATA is normalized and the
+        returned presentation of your RDATA may differ from its initial input.
+        For more information about RDATA, see `Supported DNS Resource Record Types`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm
 
 
         :return: The rdata of this SteeringPolicyAnswer.
@@ -134,7 +171,11 @@ class SteeringPolicyAnswer(object):
         """
         Sets the rdata of this SteeringPolicyAnswer.
         The record's data, as whitespace-delimited tokens in
-        type-specific presentation format.
+        type-specific presentation format. All RDATA is normalized and the
+        returned presentation of your RDATA may differ from its initial input.
+        For more information about RDATA, see `Supported DNS Resource Record Types`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm
 
 
         :param rdata: The rdata of this SteeringPolicyAnswer.
@@ -146,8 +187,23 @@ class SteeringPolicyAnswer(object):
     def pool(self):
         """
         Gets the pool of this SteeringPolicyAnswer.
-        The freeform name of a group of one or more records (e.g., a data center or a geographic
-        region) in which this one is included.
+        The freeform name of a group of one or more records in which this record is included,
+        such as \"LAX data center\". An answer's `pool` property can be referenced in `answerCondition`
+        properties of rules using `answer.pool`.
+
+        **Example:**
+
+          \"rules\": [
+            {
+              \"ruleType\": \"FILTER\",
+              \"defaultAnswerData\":  [
+                {
+                  \"answerCondition\": \"answer.pool == 'US East Servers'\",
+                  \"shouldKeep\": true
+                }
+              ]
+            }
+          ]
 
 
         :return: The pool of this SteeringPolicyAnswer.
@@ -159,8 +215,23 @@ class SteeringPolicyAnswer(object):
     def pool(self, pool):
         """
         Sets the pool of this SteeringPolicyAnswer.
-        The freeform name of a group of one or more records (e.g., a data center or a geographic
-        region) in which this one is included.
+        The freeform name of a group of one or more records in which this record is included,
+        such as \"LAX data center\". An answer's `pool` property can be referenced in `answerCondition`
+        properties of rules using `answer.pool`.
+
+        **Example:**
+
+          \"rules\": [
+            {
+              \"ruleType\": \"FILTER\",
+              \"defaultAnswerData\":  [
+                {
+                  \"answerCondition\": \"answer.pool == 'US East Servers'\",
+                  \"shouldKeep\": true
+                }
+              ]
+            }
+          ]
 
 
         :param pool: The pool of this SteeringPolicyAnswer.
@@ -172,9 +243,21 @@ class SteeringPolicyAnswer(object):
     def is_disabled(self):
         """
         Gets the is_disabled of this SteeringPolicyAnswer.
-        Whether or not an answer should be excluded from responses, e.g. because the corresponding
-        server is down for maintenance. Note, however, that such filtering is not automatic and
-        will only take place if a rule implements it.
+        Set this property to `true` to indicate that the answer is administratively disabled,
+        such as when the corresponding server is down for maintenance. An answer's `isDisabled`
+        property can be referenced in `answerCondition` properties in rules using `answer.isDisabled`.
+
+        **Example:**
+          \"rules\": [
+            {
+              \"ruleType\": \"FILTER\",
+              \"defaultAnswerData\": [
+                {
+                  \"answerCondition\": \"answer.isDisabled != true\",
+                  \"shouldKeep\": true
+                }
+              ]
+            },
 
 
         :return: The is_disabled of this SteeringPolicyAnswer.
@@ -186,9 +269,21 @@ class SteeringPolicyAnswer(object):
     def is_disabled(self, is_disabled):
         """
         Sets the is_disabled of this SteeringPolicyAnswer.
-        Whether or not an answer should be excluded from responses, e.g. because the corresponding
-        server is down for maintenance. Note, however, that such filtering is not automatic and
-        will only take place if a rule implements it.
+        Set this property to `true` to indicate that the answer is administratively disabled,
+        such as when the corresponding server is down for maintenance. An answer's `isDisabled`
+        property can be referenced in `answerCondition` properties in rules using `answer.isDisabled`.
+
+        **Example:**
+          \"rules\": [
+            {
+              \"ruleType\": \"FILTER\",
+              \"defaultAnswerData\": [
+                {
+                  \"answerCondition\": \"answer.isDisabled != true\",
+                  \"shouldKeep\": true
+                }
+              ]
+            },
 
 
         :param is_disabled: The is_disabled of this SteeringPolicyAnswer.

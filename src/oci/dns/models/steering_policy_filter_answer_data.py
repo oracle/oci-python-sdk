@@ -43,6 +43,8 @@ class SteeringPolicyFilterAnswerData(object):
     def answer_condition(self):
         """
         Gets the answer_condition of this SteeringPolicyFilterAnswerData.
+        An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
+
 
         :return: The answer_condition of this SteeringPolicyFilterAnswerData.
         :rtype: str
@@ -53,6 +55,8 @@ class SteeringPolicyFilterAnswerData(object):
     def answer_condition(self, answer_condition):
         """
         Sets the answer_condition of this SteeringPolicyFilterAnswerData.
+        An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
+
 
         :param answer_condition: The answer_condition of this SteeringPolicyFilterAnswerData.
         :type: str
@@ -63,7 +67,7 @@ class SteeringPolicyFilterAnswerData(object):
     def should_keep(self):
         """
         Gets the should_keep of this SteeringPolicyFilterAnswerData.
-        Keep the answer if the value is `true`.
+        Keeps the answer only if the value is `true`.
 
 
         :return: The should_keep of this SteeringPolicyFilterAnswerData.
@@ -75,7 +79,7 @@ class SteeringPolicyFilterAnswerData(object):
     def should_keep(self, should_keep):
         """
         Sets the should_keep of this SteeringPolicyFilterAnswerData.
-        Keep the answer if the value is `true`.
+        Keeps the answer only if the value is `true`.
 
 
         :param should_keep: The should_keep of this SteeringPolicyFilterAnswerData.

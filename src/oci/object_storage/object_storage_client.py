@@ -17,7 +17,7 @@ missing = Sentinel("Missing")
 
 class ObjectStorageClient(object):
     """
-    The Object and Archive Storage APIs for managing buckets and objects.
+    Common set of Object Storage and Archive Storage APIs for managing buckets, objects, and related resources.
     """
 
     def __init__(self, config, **kwargs):
@@ -86,7 +86,7 @@ class ObjectStorageClient(object):
 
 
         :param str namespace_name: (required)
-            The top-level namespace used for the request.
+            The Object Storage namespace used for the request.
 
         :param str bucket_name: (required)
             The name of the bucket. Avoid entering confidential information.
@@ -173,7 +173,7 @@ class ObjectStorageClient(object):
     def cancel_work_request(self, work_request_id, **kwargs):
         """
         Cancel a work request
-        Cancel a work request.
+        Cancels a work request.
 
 
         :param str work_request_id: (required)
@@ -244,11 +244,11 @@ class ObjectStorageClient(object):
     def commit_multipart_upload(self, namespace_name, bucket_name, object_name, upload_id, commit_multipart_upload_details, **kwargs):
         """
         Commit Multipart Upload
-        Commits a multipart upload, which involves checking part numbers and ETags of the parts, to create an aggregate object.
+        Commits a multipart upload, which involves checking part numbers and entity tags (ETags) of the parts, to create an aggregate object.
 
 
         :param str namespace_name: (required)
-            The top-level namespace used for the request.
+            The Object Storage namespace used for the request.
 
         :param str bucket_name: (required)
             The name of the bucket. Avoid entering confidential information.
@@ -262,15 +262,16 @@ class ObjectStorageClient(object):
             The upload ID for a multipart upload.
 
         :param CommitMultipartUploadDetails commit_multipart_upload_details: (required)
-            The part numbers and ETags for the parts you want to commit.
+            The part numbers and entity tags (ETags) for the parts you want to commit.
 
         :param str if_match: (optional)
-            The entity tag to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
+            The entity tag (ETag) to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
             For uploading a part, this is the entity tag of the target part.
 
         :param str if_none_match: (optional)
-            The entity tag to avoid matching. The only valid value is '*', which indicates that the request should fail if the object already exists.
-            For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag of the target part.
+            The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should fail if the object
+            already exists. For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a
+            part, this is the entity tag of the target part.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -351,19 +352,19 @@ class ObjectStorageClient(object):
 
     def copy_object(self, namespace_name, bucket_name, copy_object_details, **kwargs):
         """
-        Create a copy object request
-        Create a request for copy object within or cross region
+        Creates a copy object request.
+        Creates a request to copy an object within a region or to another region.
 
 
         :param str namespace_name: (required)
-            The top-level namespace used for the request.
+            The Object Storage namespace used for the request.
 
         :param str bucket_name: (required)
             The name of the bucket. Avoid entering confidential information.
             Example: `my-new-bucket1`
 
         :param CopyObjectDetails copy_object_details: (required)
-            The source and destination for object to be copied.
+            The source and destination of the object to be copied.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -433,11 +434,12 @@ class ObjectStorageClient(object):
     def create_bucket(self, namespace_name, create_bucket_details, **kwargs):
         """
         Create Bucket
-        Creates a bucket in the given namespace with a bucket name and optional user-defined metadata.
+        Creates a bucket in the given namespace with a bucket name and optional user-defined metadata. Avoid entering
+        confidential information in bucket names.
 
 
         :param str namespace_name: (required)
-            The top-level namespace used for the request.
+            The Object Storage namespace used for the request.
 
         :param CreateBucketDetails create_bucket_details: (required)
             Request object for creating a bucket.
@@ -515,7 +517,7 @@ class ObjectStorageClient(object):
 
 
         :param str namespace_name: (required)
-            The top-level namespace used for the request.
+            The Object Storage namespace used for the request.
 
         :param str bucket_name: (required)
             The name of the bucket. Avoid entering confidential information.
@@ -525,12 +527,13 @@ class ObjectStorageClient(object):
             Request object for creating a multi-part upload.
 
         :param str if_match: (optional)
-            The entity tag to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
+            The entity tag (ETag) to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
             For uploading a part, this is the entity tag of the target part.
 
         :param str if_none_match: (optional)
-            The entity tag to avoid matching. The only valid value is '*', which indicates that the request should fail if the object already exists.
-            For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag of the target part.
+            The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should fail if the object
+            already exists. For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a
+            part, this is the entity tag of the target part.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -610,7 +613,7 @@ class ObjectStorageClient(object):
 
 
         :param str namespace_name: (required)
-            The top-level namespace used for the request.
+            The Object Storage namespace used for the request.
 
         :param str bucket_name: (required)
             The name of the bucket. Avoid entering confidential information.
@@ -689,18 +692,20 @@ class ObjectStorageClient(object):
     def delete_bucket(self, namespace_name, bucket_name, **kwargs):
         """
         DELETE Bucket
-        Deletes a bucket if it is already empty. If the bucket is not empty, use :func:`delete_object` first.
+        Deletes a bucket if the bucket is already empty. If the bucket is not empty, use
+        :func:`delete_object` first. You also cannot
+        delete a bucket that has a pre-authenticated request associated with that bucket.
 
 
         :param str namespace_name: (required)
-            The top-level namespace used for the request.
+            The Object Storage namespace used for the request.
 
         :param str bucket_name: (required)
             The name of the bucket. Avoid entering confidential information.
             Example: `my-new-bucket1`
 
         :param str if_match: (optional)
-            The entity tag to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
+            The entity tag (ETag) to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
             For uploading a part, this is the entity tag of the target part.
 
         :param str opc_client_request_id: (optional)
@@ -775,7 +780,7 @@ class ObjectStorageClient(object):
 
 
         :param str namespace_name: (required)
-            The top-level namespace used for the request.
+            The Object Storage namespace used for the request.
 
         :param str bucket_name: (required)
             The name of the bucket. Avoid entering confidential information.
@@ -786,7 +791,7 @@ class ObjectStorageClient(object):
             Example: `test/object1.log`
 
         :param str if_match: (optional)
-            The entity tag to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
+            The entity tag (ETag) to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
             For uploading a part, this is the entity tag of the target part.
 
         :param str opc_client_request_id: (optional)
@@ -862,7 +867,7 @@ class ObjectStorageClient(object):
 
 
         :param str namespace_name: (required)
-            The top-level namespace used for the request.
+            The Object Storage namespace used for the request.
 
         :param str bucket_name: (required)
             The name of the bucket. Avoid entering confidential information.
@@ -872,7 +877,7 @@ class ObjectStorageClient(object):
             The client request ID for tracing.
 
         :param str if_match: (optional)
-            The entity tag to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
+            The entity tag (ETag) to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
             For uploading a part, this is the entity tag of the target part.
 
         :param obj retry_strategy: (optional)
@@ -944,7 +949,7 @@ class ObjectStorageClient(object):
 
 
         :param str namespace_name: (required)
-            The top-level namespace used for the request.
+            The Object Storage namespace used for the request.
 
         :param str bucket_name: (required)
             The name of the bucket. Avoid entering confidential information.
@@ -1021,31 +1026,32 @@ class ObjectStorageClient(object):
     def get_bucket(self, namespace_name, bucket_name, **kwargs):
         """
         GET Bucket
-        Gets the current representation of the given bucket in the given namespace.
+        Gets the current representation of the given bucket in the given Object Storage namespace.
 
 
         :param str namespace_name: (required)
-            The top-level namespace used for the request.
+            The Object Storage namespace used for the request.
 
         :param str bucket_name: (required)
             The name of the bucket. Avoid entering confidential information.
             Example: `my-new-bucket1`
 
         :param str if_match: (optional)
-            The entity tag to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
+            The entity tag (ETag) to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
             For uploading a part, this is the entity tag of the target part.
 
         :param str if_none_match: (optional)
-            The entity tag to avoid matching. The only valid value is '*', which indicates that the request should fail if the object already exists.
-            For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag of the target part.
+            The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should fail if the object
+            already exists. For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a
+            part, this is the entity tag of the target part.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
 
         :param list[str] fields: (optional)
             Bucket summary includes the 'namespace', 'name', 'compartmentId', 'createdBy', 'timeCreated',
-            and 'etag' fields. This parameter can also include 'approximateCount' (Approximate number of objects) and 'approximateSize'
-            (total approximate size in bytes of all objects). For example 'approximateCount,approximateSize'
+            and 'etag' fields. This parameter can also include 'approximateCount' (approximate number of objects) and 'approximateSize'
+            (total approximate size in bytes of all objects). For example 'approximateCount,approximateSize'.
 
             Allowed values are: "approximateCount", "approximateSize"
 
@@ -1134,7 +1140,11 @@ class ObjectStorageClient(object):
     def get_namespace(self, **kwargs):
         """
         GET Namespace Name
-        Gets the name of the namespace for the user making the request.
+        Each Oracle Cloud Infrastructure tenant is assigned one unique and uneditable Object Storage namespace. The namespace
+        is a system-generated string assigned during account creation. For some older tenancies, the namespace string may be
+        the tenancy name in all lower-case letters. You cannot edit a namespace.
+
+        GetNamespace returns the name of the Object Storage namespace for the user making the request.
 
 
         :param str opc_client_request_id: (optional)
@@ -1192,16 +1202,19 @@ class ObjectStorageClient(object):
     def get_namespace_metadata(self, namespace_name, **kwargs):
         """
         GET Namespace Metadata
-        Get the metadata for the namespace, which contains defaultS3CompartmentId and defaultSwiftCompartmentId.
-        Any user with the NAMESPACE_READ permission will be able to see the current metadata. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write
-        policies to give users access, see `Getting Started with Policies`__.
+        Gets the metadata for the Object Storage namespace, which contains defaultS3CompartmentId and
+        defaultSwiftCompartmentId.
+
+        Any user with the NAMESPACE_READ permission will be able to see the current metadata. If you are
+        not authorized, talk to an administrator. If you are an administrator who needs to write policies
+        to give users access, see
+        `Getting Started with Policies`__.
 
         __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
 
 
         :param str namespace_name: (required)
-            The top-level namespace used for the request.
+            The Object Storage namespace used for the request.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -1274,7 +1287,7 @@ class ObjectStorageClient(object):
 
 
         :param str namespace_name: (required)
-            The top-level namespace used for the request.
+            The Object Storage namespace used for the request.
 
         :param str bucket_name: (required)
             The name of the bucket. Avoid entering confidential information.
@@ -1285,12 +1298,13 @@ class ObjectStorageClient(object):
             Example: `test/object1.log`
 
         :param str if_match: (optional)
-            The entity tag to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
+            The entity tag (ETag) to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
             For uploading a part, this is the entity tag of the target part.
 
         :param str if_none_match: (optional)
-            The entity tag to avoid matching. The only valid value is '*', which indicates that the request should fail if the object already exists.
-            For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag of the target part.
+            The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should fail if the object
+            already exists. For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a
+            part, this is the entity tag of the target part.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -1377,7 +1391,7 @@ class ObjectStorageClient(object):
 
 
         :param str namespace_name: (required)
-            The top-level namespace used for the request.
+            The Object Storage namespace used for the request.
 
         :param str bucket_name: (required)
             The name of the bucket. Avoid entering confidential information.
@@ -1455,7 +1469,7 @@ class ObjectStorageClient(object):
 
 
         :param str namespace_name: (required)
-            The top-level namespace used for the request.
+            The Object Storage namespace used for the request.
 
         :param str bucket_name: (required)
             The name of the bucket. Avoid entering confidential information.
@@ -1534,7 +1548,7 @@ class ObjectStorageClient(object):
     def get_work_request(self, work_request_id, **kwargs):
         """
         GET Work Request Status
-        Gets the status of the work request with the given ID.
+        Gets the status of the work request for the given ID.
 
 
         :param str work_request_id: (required)
@@ -1607,23 +1621,24 @@ class ObjectStorageClient(object):
     def head_bucket(self, namespace_name, bucket_name, **kwargs):
         """
         HEAD Bucket
-        Efficiently checks to see if a bucket exists and gets the current ETag for the bucket.
+        Efficiently checks to see if a bucket exists and gets the current entity tag (ETag) for the bucket.
 
 
         :param str namespace_name: (required)
-            The top-level namespace used for the request.
+            The Object Storage namespace used for the request.
 
         :param str bucket_name: (required)
             The name of the bucket. Avoid entering confidential information.
             Example: `my-new-bucket1`
 
         :param str if_match: (optional)
-            The entity tag to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
+            The entity tag (ETag) to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
             For uploading a part, this is the entity tag of the target part.
 
         :param str if_none_match: (optional)
-            The entity tag to avoid matching. The only valid value is '*', which indicates that the request should fail if the object already exists.
-            For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag of the target part.
+            The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should fail if the object
+            already exists. For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a
+            part, this is the entity tag of the target part.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -1695,11 +1710,11 @@ class ObjectStorageClient(object):
     def head_object(self, namespace_name, bucket_name, object_name, **kwargs):
         """
         HEAD Object
-        Gets the user-defined metadata and entity tag for an object.
+        Gets the user-defined metadata and entity tag (ETag) for an object.
 
 
         :param str namespace_name: (required)
-            The top-level namespace used for the request.
+            The Object Storage namespace used for the request.
 
         :param str bucket_name: (required)
             The name of the bucket. Avoid entering confidential information.
@@ -1710,12 +1725,13 @@ class ObjectStorageClient(object):
             Example: `test/object1.log`
 
         :param str if_match: (optional)
-            The entity tag to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
+            The entity tag (ETag) to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
             For uploading a part, this is the entity tag of the target part.
 
         :param str if_none_match: (optional)
-            The entity tag to avoid matching. The only valid value is '*', which indicates that the request should fail if the object already exists.
-            For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag of the target part.
+            The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should fail if the object
+            already exists. For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a
+            part, this is the entity tag of the target part.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -1788,18 +1804,18 @@ class ObjectStorageClient(object):
     def list_buckets(self, namespace_name, compartment_id, **kwargs):
         """
         List Buckets
-        Gets a list of all `BucketSummary`s in a compartment. A `BucketSummary` contains only summary fields for the bucket
+        Gets a list of all BucketSummary items in a compartment. A BucketSummary contains only summary fields for the bucket
         and does not contain fields like the user-defined metadata.
 
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+        To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
+        talk to an administrator. If you are an administrator who needs to write policies to give users access, see
         `Getting Started with Policies`__.
 
         __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
 
 
         :param str namespace_name: (required)
-            The top-level namespace used for the request.
+            The Object Storage namespace used for the request.
 
         :param str compartment_id: (required)
             The ID of the compartment in which to list buckets.
@@ -1909,7 +1925,7 @@ class ObjectStorageClient(object):
 
 
         :param str namespace_name: (required)
-            The top-level namespace used for the request.
+            The Object Storage namespace used for the request.
 
         :param str bucket_name: (required)
             The name of the bucket. Avoid entering confidential information.
@@ -2008,11 +2024,11 @@ class ObjectStorageClient(object):
     def list_multipart_uploads(self, namespace_name, bucket_name, **kwargs):
         """
         List Multipart Uploads
-        Lists all in-progress multipart uploads for the given bucket in the given namespace.
+        Lists all of the in-progress multipart uploads for the given bucket in the given Object Storage namespace.
 
 
         :param str namespace_name: (required)
-            The top-level namespace used for the request.
+            The Object Storage namespace used for the request.
 
         :param str bucket_name: (required)
             The name of the bucket. Avoid entering confidential information.
@@ -2104,15 +2120,15 @@ class ObjectStorageClient(object):
         List Objects
         Lists the objects in a bucket.
 
-        To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-        talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+        To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
+        talk to an administrator. If you are an administrator who needs to write policies to give users access, see
         `Getting Started with Policies`__.
 
         __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
 
 
         :param str namespace_name: (required)
-            The top-level namespace used for the request.
+            The Object Storage namespace used for the request.
 
         :param str bucket_name: (required)
             The name of the bucket. Avoid entering confidential information.
@@ -2235,7 +2251,7 @@ class ObjectStorageClient(object):
 
 
         :param str namespace_name: (required)
-            The top-level namespace used for the request.
+            The Object Storage namespace used for the request.
 
         :param str bucket_name: (required)
             The name of the bucket. Avoid entering confidential information.
@@ -2586,11 +2602,14 @@ class ObjectStorageClient(object):
     def put_object(self, namespace_name, bucket_name, object_name, put_object_body, **kwargs):
         """
         PUT Object
-        Creates a new object or overwrites an existing one.
+        Creates a new object or overwrites an existing one. See `Special Instructions for Object Storage
+        PUT`__ for request signature requirements.
+
+        __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/signingrequests.htm#ObjectStoragePut
 
 
         :param str namespace_name: (required)
-            The top-level namespace used for the request.
+            The Object Storage namespace used for the request.
 
         :param str bucket_name: (required)
             The name of the bucket. Avoid entering confidential information.
@@ -2607,12 +2626,13 @@ class ObjectStorageClient(object):
             The content length of the body.
 
         :param str if_match: (optional)
-            The entity tag to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
+            The entity tag (ETag) to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
             For uploading a part, this is the entity tag of the target part.
 
         :param str if_none_match: (optional)
-            The entity tag to avoid matching. The only valid value is '*', which indicates that the request should fail if the object already exists.
-            For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag of the target part.
+            The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should fail if the object
+            already exists. For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a
+            part, this is the entity tag of the target part.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -2736,7 +2756,7 @@ class ObjectStorageClient(object):
 
 
         :param str namespace_name: (required)
-            The top-level namespace used for the request.
+            The Object Storage namespace used for the request.
 
         :param str bucket_name: (required)
             The name of the bucket. Avoid entering confidential information.
@@ -2749,12 +2769,13 @@ class ObjectStorageClient(object):
             The client request ID for tracing.
 
         :param str if_match: (optional)
-            The entity tag to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
+            The entity tag (ETag) to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
             For uploading a part, this is the entity tag of the target part.
 
         :param str if_none_match: (optional)
-            The entity tag to avoid matching. The only valid value is '*', which indicates that the request should fail if the object already exists.
-            For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag of the target part.
+            The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should fail if the object
+            already exists. For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a
+            part, this is the entity tag of the target part.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2827,11 +2848,11 @@ class ObjectStorageClient(object):
     def rename_object(self, namespace_name, bucket_name, rename_object_details, **kwargs):
         """
         Rename Object
-        Rename an object from source key to target key in the given namespace.
+        Rename an object in the given Object Storage namespace.
 
 
         :param str namespace_name: (required)
-            The top-level namespace used for the request.
+            The Object Storage namespace used for the request.
 
         :param str bucket_name: (required)
             The name of the bucket. Avoid entering confidential information.
@@ -2908,12 +2929,12 @@ class ObjectStorageClient(object):
     def restore_objects(self, namespace_name, bucket_name, restore_objects_details, **kwargs):
         """
         Restore Objects
-        Restore one or more objects specified by the objectName parameter.
+        Restores one or more objects specified by the objectName parameter.
         By default objects will be restored for 24 hours. Duration can be configured using the hours parameter.
 
 
         :param str namespace_name: (required)
-            The top-level namespace used for the request.
+            The Object Storage namespace used for the request.
 
         :param str bucket_name: (required)
             The name of the bucket. Avoid entering confidential information.
@@ -2994,7 +3015,7 @@ class ObjectStorageClient(object):
 
 
         :param str namespace_name: (required)
-            The top-level namespace used for the request.
+            The Object Storage namespace used for the request.
 
         :param str bucket_name: (required)
             The name of the bucket. Avoid entering confidential information.
@@ -3004,7 +3025,7 @@ class ObjectStorageClient(object):
             Request object for updating a bucket.
 
         :param str if_match: (optional)
-            The entity tag to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
+            The entity tag (ETag) to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
             For uploading a part, this is the entity tag of the target part.
 
         :param str opc_client_request_id: (optional)
@@ -3079,14 +3100,17 @@ class ObjectStorageClient(object):
     def update_namespace_metadata(self, namespace_name, update_namespace_metadata_details, **kwargs):
         """
         PUT Namespace
-        Change the default Swift/S3 compartmentId of user's namespace into the user-defined compartmentId. Upon doing
-        this, all subsequent bucket creations will use the new default compartment, but no previously created
-        buckets will be modified. A user must have the NAMESPACE_UPDATE permission to make changes to the default
-        compartments for S3 and Swift.
+        By default, buckets created using the Amazon S3 Compatibility API or the Swift API are created in the root
+        compartment of the Oracle Cloud Infrastructure tenancy.
+
+        You can change the default Swift/Amazon S3 compartmentId designation to a different compartmentId. All
+        subsequent bucket creations will use the new default compartment, but no previously created
+        buckets will be modified. A user must have NAMESPACE_UPDATE permission to make changes to the default
+        compartments for Amazon S3 and Swift.
 
 
         :param str namespace_name: (required)
-            The top-level namespace used for the request.
+            The Object Storage namespace used for the request.
 
         :param UpdateNamespaceMetadataDetails update_namespace_metadata_details: (required)
             Request object for update NamespaceMetadata.
@@ -3164,7 +3188,7 @@ class ObjectStorageClient(object):
 
 
         :param str namespace_name: (required)
-            The top-level namespace used for the request.
+            The Object Storage namespace used for the request.
 
         :param str bucket_name: (required)
             The name of the bucket. Avoid entering confidential information.
@@ -3181,7 +3205,7 @@ class ObjectStorageClient(object):
             The part number that identifies the object part currently being uploaded.
 
         :param stream upload_part_body: (required)
-            The part being uploaded to the Object Storage Service.
+            The part being uploaded to the Object Storage service.
 
         :param int content_length: (optional)
             The content length of the body.
@@ -3190,12 +3214,13 @@ class ObjectStorageClient(object):
             The client request ID for tracing.
 
         :param str if_match: (optional)
-            The entity tag to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
+            The entity tag (ETag) to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
             For uploading a part, this is the entity tag of the target part.
 
         :param str if_none_match: (optional)
-            The entity tag to avoid matching. The only valid value is '*', which indicates that the request should fail if the object already exists.
-            For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag of the target part.
+            The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should fail if the object
+            already exists. For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a
+            part, this is the entity tag of the target part.
 
         :param str expect: (optional)
             100-continue

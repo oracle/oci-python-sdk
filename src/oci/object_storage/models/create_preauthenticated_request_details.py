@@ -74,7 +74,7 @@ class CreatePreauthenticatedRequestDetails(object):
     def name(self):
         """
         **[Required]** Gets the name of this CreatePreauthenticatedRequestDetails.
-        A user-specified name for the pre-authenticated request. Helpful for management purposes.
+        A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests.
 
 
         :return: The name of this CreatePreauthenticatedRequestDetails.
@@ -86,7 +86,7 @@ class CreatePreauthenticatedRequestDetails(object):
     def name(self, name):
         """
         Sets the name of this CreatePreauthenticatedRequestDetails.
-        A user-specified name for the pre-authenticated request. Helpful for management purposes.
+        A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests.
 
 
         :param name: The name of this CreatePreauthenticatedRequestDetails.
@@ -98,7 +98,8 @@ class CreatePreauthenticatedRequestDetails(object):
     def object_name(self):
         """
         Gets the object_name of this CreatePreauthenticatedRequestDetails.
-        The name of object that is being granted access to by the pre-authenticated request. This can be null and if it is, the pre-authenticated request grants access to the entire bucket.
+        The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential
+        information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket.
 
 
         :return: The object_name of this CreatePreauthenticatedRequestDetails.
@@ -110,7 +111,8 @@ class CreatePreauthenticatedRequestDetails(object):
     def object_name(self, object_name):
         """
         Sets the object_name of this CreatePreauthenticatedRequestDetails.
-        The name of object that is being granted access to by the pre-authenticated request. This can be null and if it is, the pre-authenticated request grants access to the entire bucket.
+        The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential
+        information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket.
 
 
         :param object_name: The object_name of this CreatePreauthenticatedRequestDetails.
@@ -154,7 +156,8 @@ class CreatePreauthenticatedRequestDetails(object):
     def time_expires(self):
         """
         **[Required]** Gets the time_expires of this CreatePreauthenticatedRequestDetails.
-        The expiration date for the pre-authenticated request as per `RFC 3339`__. After this date the pre-authenticated request will no longer be valid.
+        The expiration date for the pre-authenticated request as per `RFC 3339`__.
+        After this date the pre-authenticated request will no longer be valid.
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -168,7 +171,8 @@ class CreatePreauthenticatedRequestDetails(object):
     def time_expires(self, time_expires):
         """
         Sets the time_expires of this CreatePreauthenticatedRequestDetails.
-        The expiration date for the pre-authenticated request as per `RFC 3339`__. After this date the pre-authenticated request will no longer be valid.
+        The expiration date for the pre-authenticated request as per `RFC 3339`__.
+        After this date the pre-authenticated request will no longer be valid.
 
         __ https://tools.ietf.org/rfc/rfc3339
 

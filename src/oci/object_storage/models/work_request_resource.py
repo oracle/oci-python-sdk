@@ -94,7 +94,7 @@ class WorkRequestResource(object):
     def action_type(self):
         """
         Gets the action_type of this WorkRequestResource.
-        The status that a work request can present
+        The status of the work request.
 
         Allowed values for this property are: "CREATED", "UPDATED", "DELETED", "RELATED", "IN_PROGRESS", "READ", "WRITTEN", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -109,7 +109,7 @@ class WorkRequestResource(object):
     def action_type(self, action_type):
         """
         Sets the action_type of this WorkRequestResource.
-        The status that a work request can present
+        The status of the work request.
 
 
         :param action_type: The action_type of this WorkRequestResource.
@@ -124,7 +124,7 @@ class WorkRequestResource(object):
     def entity_type(self):
         """
         Gets the entity_type of this WorkRequestResource.
-        The resource type the work request is affects.
+        The resource type the work request affects.
 
 
         :return: The entity_type of this WorkRequestResource.
@@ -136,7 +136,7 @@ class WorkRequestResource(object):
     def entity_type(self, entity_type):
         """
         Sets the entity_type of this WorkRequestResource.
-        The resource type the work request is affects.
+        The resource type the work request affects.
 
 
         :param entity_type: The entity_type of this WorkRequestResource.
@@ -148,7 +148,7 @@ class WorkRequestResource(object):
     def identifier(self):
         """
         Gets the identifier of this WorkRequestResource.
-        The identifier of the resource the work request affects.
+        The resource type identifier.
 
 
         :return: The identifier of this WorkRequestResource.
@@ -160,7 +160,7 @@ class WorkRequestResource(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this WorkRequestResource.
-        The identifier of the resource the work request affects.
+        The resource type identifier.
 
 
         :param identifier: The identifier of this WorkRequestResource.
@@ -172,7 +172,7 @@ class WorkRequestResource(object):
     def entity_uri(self):
         """
         Gets the entity_uri of this WorkRequestResource.
-        The URI path that the user can do a GET on to access the resource metadata
+        The URI path that you can use for a GET request to access the resource metadata.
 
 
         :return: The entity_uri of this WorkRequestResource.
@@ -184,7 +184,7 @@ class WorkRequestResource(object):
     def entity_uri(self, entity_uri):
         """
         Sets the entity_uri of this WorkRequestResource.
-        The URI path that the user can do a GET on to access the resource metadata
+        The URI path that you can use for a GET request to access the resource metadata.
 
 
         :param entity_uri: The entity_uri of this WorkRequestResource.

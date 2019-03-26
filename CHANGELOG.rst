@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.2.4 - 2019-03-26
+====================
+
+Added
+-----
+* Support for glob patterns and exclusions for object lifecycle management in the Object Storage service
+* Documentation enhancements and corrections for traffic management in the DNS service
+
+====================
 2.2.3 - 2019-03-19
 ====================
 

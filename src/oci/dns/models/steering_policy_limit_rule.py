@@ -60,6 +60,15 @@ class SteeringPolicyLimitRule(SteeringPolicyRule):
     def cases(self):
         """
         Gets the cases of this SteeringPolicyLimitRule.
+        An array of `caseConditions`. A rule may optionally include a sequence of cases defining alternate
+        configurations for how it should behave during processing for any given DNS query. When a rule has
+        no sequence of `cases`, it is always evaluated with the same configuration during processing. When
+        a rule has an empty sequence of `cases`, it is always ignored during processing. When a rule has a
+        non-empty sequence of `cases`, its behavior during processing is configured by the first matching
+        `case` in the sequence. When a rule has no matching cases the rule is ignored. A rule case with no
+        `caseCondition` always matches. A rule case with a `caseCondition` matches only when that expression
+        evaluates to true for the given query.
+
 
         :return: The cases of this SteeringPolicyLimitRule.
         :rtype: list[SteeringPolicyLimitRuleCase]
@@ -70,6 +79,15 @@ class SteeringPolicyLimitRule(SteeringPolicyRule):
     def cases(self, cases):
         """
         Sets the cases of this SteeringPolicyLimitRule.
+        An array of `caseConditions`. A rule may optionally include a sequence of cases defining alternate
+        configurations for how it should behave during processing for any given DNS query. When a rule has
+        no sequence of `cases`, it is always evaluated with the same configuration during processing. When
+        a rule has an empty sequence of `cases`, it is always ignored during processing. When a rule has a
+        non-empty sequence of `cases`, its behavior during processing is configured by the first matching
+        `case` in the sequence. When a rule has no matching cases the rule is ignored. A rule case with no
+        `caseCondition` always matches. A rule case with a `caseCondition` matches only when that expression
+        evaluates to true for the given query.
+
 
         :param cases: The cases of this SteeringPolicyLimitRule.
         :type: list[SteeringPolicyLimitRuleCase]
@@ -82,7 +100,8 @@ class SteeringPolicyLimitRule(SteeringPolicyRule):
         Gets the default_count of this SteeringPolicyLimitRule.
         Defines a default count if `cases` is not defined for the rule or a matching case does
         not define `count`. `defaultCount` is **not** applied if `cases` is defined and there
-        are no matching cases.
+        are no matching cases. In this scenario, the next rule will be processed. If no rules
+        remain to be processed, the answer will be chosen from the remaining list of answers.
 
 
         :return: The default_count of this SteeringPolicyLimitRule.
@@ -96,7 +115,8 @@ class SteeringPolicyLimitRule(SteeringPolicyRule):
         Sets the default_count of this SteeringPolicyLimitRule.
         Defines a default count if `cases` is not defined for the rule or a matching case does
         not define `count`. `defaultCount` is **not** applied if `cases` is defined and there
-        are no matching cases.
+        are no matching cases. In this scenario, the next rule will be processed. If no rules
+        remain to be processed, the answer will be chosen from the remaining list of answers.
 
 
         :param default_count: The default_count of this SteeringPolicyLimitRule.

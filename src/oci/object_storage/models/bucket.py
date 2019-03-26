@@ -13,8 +13,8 @@ class Bucket(object):
     The compartment has policies that indicate what actions a user can perform on a bucket and all the objects in the bucket. For more
     information, see `Managing Buckets`__.
 
-    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
-    talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+    To use any of the API operations, you must be authorized in an IAM policy. If you are not authorized,
+    talk to an administrator. If you are an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
     __ https://docs.cloud.oracle.com/Content/Object/Tasks/managingbuckets.htm
@@ -167,7 +167,7 @@ class Bucket(object):
     def namespace(self):
         """
         **[Required]** Gets the namespace of this Bucket.
-        The namespace in which the bucket lives.
+        The Object Storage namespace in which the bucket lives.
 
 
         :return: The namespace of this Bucket.
@@ -179,7 +179,7 @@ class Bucket(object):
     def namespace(self, namespace):
         """
         Sets the namespace of this Bucket.
-        The namespace in which the bucket lives.
+        The Object Storage namespace in which the bucket lives.
 
 
         :param namespace: The namespace of this Bucket.
@@ -317,7 +317,7 @@ class Bucket(object):
     def etag(self):
         """
         **[Required]** Gets the etag of this Bucket.
-        The entity tag for the bucket.
+        The entity tag (ETag) for the bucket.
 
 
         :return: The etag of this Bucket.
@@ -329,7 +329,7 @@ class Bucket(object):
     def etag(self, etag):
         """
         Sets the etag of this Bucket.
-        The entity tag for the bucket.
+        The entity tag (ETag) for the bucket.
 
 
         :param etag: The etag of this Bucket.
@@ -379,10 +379,10 @@ class Bucket(object):
     def storage_tier(self):
         """
         Gets the storage_tier of this Bucket.
-        The type of storage tier of this bucket.
-        A bucket is set to 'Standard' tier by default, which means the bucket will be put in the standard storage tier.
-        When 'Archive' tier type is set explicitly, the bucket is put in the archive storage tier. The 'storageTier'
-        property is immutable after bucket is created.
+        The storage tier type assigned to the bucket. A bucket is set to 'Standard' tier by default, which means
+        objects uploaded or copied to the bucket will be in the standard storage tier. When the 'Archive' tier type
+        is set explicitly for a bucket, objects uploaded or copied to the bucket will be stored in archive storage.
+        The 'storageTier' property is immutable after bucket is created.
 
         Allowed values for this property are: "Standard", "Archive", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -397,10 +397,10 @@ class Bucket(object):
     def storage_tier(self, storage_tier):
         """
         Sets the storage_tier of this Bucket.
-        The type of storage tier of this bucket.
-        A bucket is set to 'Standard' tier by default, which means the bucket will be put in the standard storage tier.
-        When 'Archive' tier type is set explicitly, the bucket is put in the archive storage tier. The 'storageTier'
-        property is immutable after bucket is created.
+        The storage tier type assigned to the bucket. A bucket is set to 'Standard' tier by default, which means
+        objects uploaded or copied to the bucket will be in the standard storage tier. When the 'Archive' tier type
+        is set explicitly for a bucket, objects uploaded or copied to the bucket will be stored in archive storage.
+        The 'storageTier' property is immutable after bucket is created.
 
 
         :param storage_tier: The storage_tier of this Bucket.
@@ -479,7 +479,7 @@ class Bucket(object):
     def kms_key_id(self):
         """
         Gets the kms_key_id of this Bucket.
-        The OCID of a KMS key id used to call KMS to generate data key, decrypt the encrypted data key
+        The OCID of a KMS key id used to call KMS to generate data key or decrypt the encrypted data key.
 
 
         :return: The kms_key_id of this Bucket.
@@ -491,7 +491,7 @@ class Bucket(object):
     def kms_key_id(self, kms_key_id):
         """
         Sets the kms_key_id of this Bucket.
-        The OCID of a KMS key id used to call KMS to generate data key, decrypt the encrypted data key
+        The OCID of a KMS key id used to call KMS to generate data key or decrypt the encrypted data key.
 
 
         :param kms_key_id: The kms_key_id of this Bucket.
@@ -503,7 +503,7 @@ class Bucket(object):
     def object_lifecycle_policy_etag(self):
         """
         Gets the object_lifecycle_policy_etag of this Bucket.
-        The entity tag for the live object lifecycle policy on the bucket.
+        The entity tag (ETag) for the live object lifecycle policy on the bucket.
 
 
         :return: The object_lifecycle_policy_etag of this Bucket.
@@ -515,7 +515,7 @@ class Bucket(object):
     def object_lifecycle_policy_etag(self, object_lifecycle_policy_etag):
         """
         Sets the object_lifecycle_policy_etag of this Bucket.
-        The entity tag for the live object lifecycle policy on the bucket.
+        The entity tag (ETag) for the live object lifecycle policy on the bucket.
 
 
         :param object_lifecycle_policy_etag: The object_lifecycle_policy_etag of this Bucket.
@@ -553,7 +553,7 @@ class Bucket(object):
     def approximate_size(self):
         """
         Gets the approximate_size of this Bucket.
-        The approximate total size of all objects in the bucket. Size statistics are reported periodically. You will
+        The approximate total size in bytes of all objects in the bucket. Size statistics are reported periodically. You will
         see a lag between what is displayed and the actual size of the bucket.
 
 
@@ -566,7 +566,7 @@ class Bucket(object):
     def approximate_size(self, approximate_size):
         """
         Sets the approximate_size of this Bucket.
-        The approximate total size of all objects in the bucket. Size statistics are reported periodically. You will
+        The approximate total size in bytes of all objects in the bucket. Size statistics are reported periodically. You will
         see a lag between what is displayed and the actual size of the bucket.
 
 
