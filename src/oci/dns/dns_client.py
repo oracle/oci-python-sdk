@@ -82,7 +82,10 @@ class DnsClient(object):
 
     def create_steering_policy(self, create_steering_policy_details, **kwargs):
         """
-        Creates a new steering policy in the specified compartment.
+        Creates a new steering policy in the specified compartment. For more information on
+        creating policies with templates, see `Traffic Management API Guide`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm
 
 
         :param CreateSteeringPolicyDetails create_steering_policy_details: (required)
@@ -151,9 +154,12 @@ class DnsClient(object):
 
     def create_steering_policy_attachment(self, create_steering_policy_attachment_details, **kwargs):
         """
-        Creates a new attachment between a steering policy and a domain.
+        Creates a new attachment between a steering policy and a domain, giving the
+        policy permission to answer queries for the specified domain. A steering policy must
+        be attached to a domain for the policy to answer DNS queries for that domain.
+
         For the purposes of access control, the attachment is automatically placed
-        into the same compartment as the containing zone of the domain.
+        into the same compartment as the domain's zone.
 
 
         :param CreateSteeringPolicyAttachmentDetails create_steering_policy_attachment_details: (required)
@@ -493,7 +499,8 @@ class DnsClient(object):
         """
         Deletes the specified steering policy.
         A `204` response indicates that the delete has been successful.
-        Deletion will fail if the policy is attached to any zones.
+        Deletion will fail if the policy is attached to any zones. To detach a
+        policy from a zone, see `DeleteSteeringPolicyAttachment`.
 
 
         :param str steering_policy_id: (required)
@@ -1470,7 +1477,7 @@ class DnsClient(object):
 
         :param str health_check_monitor_id: (optional)
             Search by health check monitor OCID.
-            Will match any resource whose health check monitor id matches the provided value.
+            Will match any resource whose health check monitor ID matches the provided value.
 
         :param datetime time_created_greater_than_or_equal_to: (optional)
             An `RFC 3339`__ timestamp that states
@@ -1485,7 +1492,7 @@ class DnsClient(object):
             __ https://www.ietf.org/rfc/rfc3339.txt
 
         :param str template: (optional)
-            Search by template type.
+            Search by steering template type.
             Will match any resource whose template type matches the provided value.
 
         :param str lifecycle_state: (optional)
@@ -1494,7 +1501,7 @@ class DnsClient(object):
             Allowed values are: "ACTIVE", "CREATING", "DELETED", "DELETING"
 
         :param str sort_by: (optional)
-            The field by which to sort steering policies.
+            The field by which to sort steering policies. If unspecified, defaults to `timeCreated`.
 
             Allowed values are: "displayName", "timeCreated", "template"
 
@@ -1623,11 +1630,11 @@ class DnsClient(object):
 
         :param str steering_policy_id: (optional)
             Search by steering policy OCID.
-            Will match any resource whose steering policy id matches the provided value.
+            Will match any resource whose steering policy ID matches the provided value.
 
         :param str zone_id: (optional)
             Search by zone OCID.
-            Will match any resource whose zone id matches the provided value.
+            Will match any resource whose zone ID matches the provided value.
 
         :param str domain: (optional)
             Search by domain.
@@ -1655,7 +1662,7 @@ class DnsClient(object):
             Allowed values are: "CREATING", "ACTIVE", "DELETING"
 
         :param str sort_by: (optional)
-            The field by which to sort steering policy attachments.
+            The field by which to sort steering policy attachments. If unspecified, defaults to `timeCreated`.
 
             Allowed values are: "displayName", "timeCreated", "domainName"
 
@@ -1923,7 +1930,10 @@ class DnsClient(object):
 
     def patch_domain_records(self, zone_name_or_id, domain, patch_domain_records_details, **kwargs):
         """
-        Updates records in the specified zone at a domain. You can update one record or all records for the specified zone depending on the changes provided in the request body. You can also add or remove records using this function.
+        Updates records in the specified zone at a domain. You can update
+        one record or all records for the specified zone depending on the changes
+        provided in the request body. You can also add or remove records using this
+        function.
 
 
         :param str zone_name_or_id: (required)
@@ -2460,7 +2470,7 @@ class DnsClient(object):
 
     def update_steering_policy(self, steering_policy_id, update_steering_policy_details, **kwargs):
         """
-        Updates the specified steering policy with your new information.
+        Updates the configuration of the specified steering policy.
 
 
         :param str steering_policy_id: (required)

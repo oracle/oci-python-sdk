@@ -186,7 +186,7 @@ class SteeringPolicyAttachmentSummary(object):
         """
         Gets the display_name of this SteeringPolicyAttachmentSummary.
         A user-friendly name for the steering policy attachment.
-        Does not have to be unique, and it's changeable.
+        Does not have to be unique and can be changed.
         Avoid entering confidential information.
 
 
@@ -200,7 +200,7 @@ class SteeringPolicyAttachmentSummary(object):
         """
         Sets the display_name of this SteeringPolicyAttachmentSummary.
         A user-friendly name for the steering policy attachment.
-        Does not have to be unique, and it's changeable.
+        Does not have to be unique and can be changed.
         Avoid entering confidential information.
 
 
@@ -313,8 +313,7 @@ class SteeringPolicyAttachmentSummary(object):
     def time_created(self):
         """
         Gets the time_created of this SteeringPolicyAttachmentSummary.
-        The date and time the resource was created in \"YYYY-MM-ddThh:mmZ\" format
-        with a Z offset, as defined by RFC 3339.
+        The date and time the resource was created, expressed in RFC 3339 timestamp format.
 
         **Example:** `2016-07-22T17:23:59:60Z`
 
@@ -328,8 +327,7 @@ class SteeringPolicyAttachmentSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this SteeringPolicyAttachmentSummary.
-        The date and time the resource was created in \"YYYY-MM-ddThh:mmZ\" format
-        with a Z offset, as defined by RFC 3339.
+        The date and time the resource was created, expressed in RFC 3339 timestamp format.
 
         **Example:** `2016-07-22T17:23:59:60Z`
 

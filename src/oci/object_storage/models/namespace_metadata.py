@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class NamespaceMetadata(object):
     """
-    A NamespaceMetadata is a map for storing namespace and defaultS3CompartmentId, defaultSwiftCompartmentId.
+    NamespaceMetadata maps a namespace string to defaultS3CompartmentId and defaultSwiftCompartmentId values.
     """
 
     def __init__(self, **kwargs):
@@ -50,7 +50,7 @@ class NamespaceMetadata(object):
     def namespace(self):
         """
         **[Required]** Gets the namespace of this NamespaceMetadata.
-        The namespace to which the metadata belongs.
+        The Object Storage namespace to which the metadata belongs.
 
 
         :return: The namespace of this NamespaceMetadata.
@@ -62,7 +62,7 @@ class NamespaceMetadata(object):
     def namespace(self, namespace):
         """
         Sets the namespace of this NamespaceMetadata.
-        The namespace to which the metadata belongs.
+        The Object Storage namespace to which the metadata belongs.
 
 
         :param namespace: The namespace of this NamespaceMetadata.
@@ -74,7 +74,7 @@ class NamespaceMetadata(object):
     def default_s3_compartment_id(self):
         """
         **[Required]** Gets the default_s3_compartment_id of this NamespaceMetadata.
-        The default compartment ID for an S3 client.
+        If the field is set, specifies the default compartment assignment for the Amazon S3 Compatibility API.
 
 
         :return: The default_s3_compartment_id of this NamespaceMetadata.
@@ -86,7 +86,7 @@ class NamespaceMetadata(object):
     def default_s3_compartment_id(self, default_s3_compartment_id):
         """
         Sets the default_s3_compartment_id of this NamespaceMetadata.
-        The default compartment ID for an S3 client.
+        If the field is set, specifies the default compartment assignment for the Amazon S3 Compatibility API.
 
 
         :param default_s3_compartment_id: The default_s3_compartment_id of this NamespaceMetadata.
@@ -98,7 +98,7 @@ class NamespaceMetadata(object):
     def default_swift_compartment_id(self):
         """
         **[Required]** Gets the default_swift_compartment_id of this NamespaceMetadata.
-        The default compartment ID for a Swift client.
+        If the field is set, specifies the default compartment assignment for the Swift API.
 
 
         :return: The default_swift_compartment_id of this NamespaceMetadata.
@@ -110,7 +110,7 @@ class NamespaceMetadata(object):
     def default_swift_compartment_id(self, default_swift_compartment_id):
         """
         Sets the default_swift_compartment_id of this NamespaceMetadata.
-        The default compartment ID for a Swift client.
+        If the field is set, specifies the default compartment assignment for the Swift API.
 
 
         :param default_swift_compartment_id: The default_swift_compartment_id of this NamespaceMetadata.

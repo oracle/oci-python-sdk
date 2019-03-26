@@ -43,7 +43,7 @@ class RestoreObjectsDetails(object):
     def object_name(self):
         """
         **[Required]** Gets the object_name of this RestoreObjectsDetails.
-        An object which is in archive-tier storage and needs to be restored.
+        An object that is in an archive storage tier and needs to be restored.
 
 
         :return: The object_name of this RestoreObjectsDetails.
@@ -55,7 +55,7 @@ class RestoreObjectsDetails(object):
     def object_name(self, object_name):
         """
         Sets the object_name of this RestoreObjectsDetails.
-        An object which is in archive-tier storage and needs to be restored.
+        An object that is in an archive storage tier and needs to be restored.
 
 
         :param object_name: The object_name of this RestoreObjectsDetails.
@@ -68,7 +68,7 @@ class RestoreObjectsDetails(object):
         """
         Gets the hours of this RestoreObjectsDetails.
         The number of hours for which this object will be restored.
-        By default objects will be restored for 24 hours. Duration can be configured using the hours parameter.
+        By default objects will be restored for 24 hours. You can instead configure the duration using the hours parameter.
 
 
         :return: The hours of this RestoreObjectsDetails.
@@ -81,7 +81,7 @@ class RestoreObjectsDetails(object):
         """
         Sets the hours of this RestoreObjectsDetails.
         The number of hours for which this object will be restored.
-        By default objects will be restored for 24 hours. Duration can be configured using the hours parameter.
+        By default objects will be restored for 24 hours. You can instead configure the duration using the hours parameter.
 
 
         :param hours: The hours of this RestoreObjectsDetails.

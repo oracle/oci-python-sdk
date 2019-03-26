@@ -9,8 +9,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ObjectLifecycleRule(object):
     """
-    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
-    talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+    To use any of the API operations, you must be authorized in an IAM policy. If you are not authorized,
+    talk to an administrator. If you are an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
     __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
@@ -110,7 +110,7 @@ class ObjectLifecycleRule(object):
         """
         **[Required]** Gets the action of this ObjectLifecycleRule.
         The action of the object lifecycle policy rule. Rules using the action 'ARCHIVE' move objects into the
-        `Archival Storage tier`__. Rules using the action
+        `Archive Storage tier`__. Rules using the action
         'DELETE' permanently delete objects from buckets. 'ARCHIVE' and 'DELETE' are the only two supported
         actions at this time.
 
@@ -127,7 +127,7 @@ class ObjectLifecycleRule(object):
         """
         Sets the action of this ObjectLifecycleRule.
         The action of the object lifecycle policy rule. Rules using the action 'ARCHIVE' move objects into the
-        `Archival Storage tier`__. Rules using the action
+        `Archive Storage tier`__. Rules using the action
         'DELETE' permanently delete objects from buckets. 'ARCHIVE' and 'DELETE' are the only two supported
         actions at this time.
 

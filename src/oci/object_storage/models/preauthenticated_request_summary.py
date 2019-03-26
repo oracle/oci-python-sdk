@@ -137,7 +137,8 @@ class PreauthenticatedRequestSummary(object):
     def object_name(self):
         """
         Gets the object_name of this PreauthenticatedRequestSummary.
-        The name of object that is being granted access to by the pre-authenticated request. This can be null and if it is, the pre-authenticated request grants access to the entire bucket.
+        The name of object that is being granted access to by the pre-authenticated request. This can be null and if it is,
+        the pre-authenticated request grants access to the entire bucket.
 
 
         :return: The object_name of this PreauthenticatedRequestSummary.
@@ -149,7 +150,8 @@ class PreauthenticatedRequestSummary(object):
     def object_name(self, object_name):
         """
         Sets the object_name of this PreauthenticatedRequestSummary.
-        The name of object that is being granted access to by the pre-authenticated request. This can be null and if it is, the pre-authenticated request grants access to the entire bucket.
+        The name of object that is being granted access to by the pre-authenticated request. This can be null and if it is,
+        the pre-authenticated request grants access to the entire bucket.
 
 
         :param object_name: The object_name of this PreauthenticatedRequestSummary.

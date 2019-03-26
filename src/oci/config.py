@@ -92,9 +92,10 @@ def from_file(file_location=DEFAULT_LOCATION, profile_name=DEFAULT_PROFILE):
 
 def validate_config(config, **kwargs):
     if 'signer' in kwargs:
-        # The InstancePrincipalsSecurityTokenSigner is self-sufficient and doesn't need to read
-        # the normally-required keys in the config
-        if isinstance(kwargs['signer'], signers.InstancePrincipalsSecurityTokenSigner):
+        # InstancePrincipalsSecurityTokenSigner and  SecurityTokenSigner are
+        # self-sufficient and do not need to read the normally-required keys
+        # in the config
+        if isinstance(kwargs['signer'], signers.InstancePrincipalsSecurityTokenSigner) or isinstance(kwargs['signer'], signers.SecurityTokenSigner):
             return
 
     """Raises ValueError if required fields are missing or malformed."""

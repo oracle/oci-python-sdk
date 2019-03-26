@@ -43,6 +43,8 @@ class SteeringPolicyWeightedAnswerData(object):
     def answer_condition(self):
         """
         Gets the answer_condition of this SteeringPolicyWeightedAnswerData.
+        An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
+
 
         :return: The answer_condition of this SteeringPolicyWeightedAnswerData.
         :rtype: str
@@ -53,6 +55,8 @@ class SteeringPolicyWeightedAnswerData(object):
     def answer_condition(self, answer_condition):
         """
         Sets the answer_condition of this SteeringPolicyWeightedAnswerData.
+        An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
+
 
         :param answer_condition: The answer_condition of this SteeringPolicyWeightedAnswerData.
         :type: str
@@ -62,7 +66,10 @@ class SteeringPolicyWeightedAnswerData(object):
     @property
     def value(self):
         """
-        Gets the value of this SteeringPolicyWeightedAnswerData.
+        **[Required]** Gets the value of this SteeringPolicyWeightedAnswerData.
+        The weight assigned to the set of selected answers. Answers with a higher weight will be served
+        more frequently. Answers can be given a value between `0` and `255`.
+
 
         :return: The value of this SteeringPolicyWeightedAnswerData.
         :rtype: int
@@ -73,6 +80,9 @@ class SteeringPolicyWeightedAnswerData(object):
     def value(self, value):
         """
         Sets the value of this SteeringPolicyWeightedAnswerData.
+        The weight assigned to the set of selected answers. Answers with a higher weight will be served
+        more frequently. Answers can be given a value between `0` and `255`.
+
 
         :param value: The value of this SteeringPolicyWeightedAnswerData.
         :type: int
