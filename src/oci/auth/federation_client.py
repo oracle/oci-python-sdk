@@ -143,10 +143,7 @@ class X509FederationClient(object):
         fingerprint = crypto.load_certificate(crypto.FILETYPE_PEM, self.leaf_certificate_retriever.get_certificate_raw()).digest('sha1').decode('utf-8')
         signer = AuthTokenRequestSigner(self.tenancy_id, fingerprint, self.leaf_certificate_retriever)
 
-        if self.cert_bundle_verify:
-            response = self.requests_session.post(self.federation_endpoint, json=request_payload, auth=signer, verify=self.cert_bundle_verify, timeout=(10, 60))
-        else:
-            response = self.requests_session.post(self.federation_endpoint, json=request_payload, auth=signer, timeout=(10, 60))
+        response = self.requests_session.post(self.federation_endpoint, json=request_payload, auth=signer, verify=self.cert_bundle_verify, timeout=(10, 60))
 
         parsed_response = None
         try:
