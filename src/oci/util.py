@@ -130,3 +130,5 @@ class Sentinel(object):
 
 
 NONE_SENTINEL = Sentinel(name='None', truthy=False)
+
+WAIT_RESOURCE_NOT_FOUND = Sentinel(name='WaitResourceNotFound', truthy=False)

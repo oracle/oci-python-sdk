@@ -2605,7 +2605,7 @@ class ObjectStorageClient(object):
         Creates a new object or overwrites an existing one. See `Special Instructions for Object Storage
         PUT`__ for request signature requirements.
 
-        __ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/signingrequests.htm#ObjectStoragePut
+        __ https://docs.cloud.oracle.com/Content/API/Concepts/signingrequests.htm#ObjectStoragePut
 
 
         :param str namespace_name: (required)
