@@ -5,12 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
-2.2.5 - TBD
+2.2.5 - 2019-04-02
 ====================
 
 Added
 -----
-* TBD
+* Support for provider service key names on virtual circuits in the FastConnect service
+* Support for customer reference names on cross connects and cross connect groups in the FastConnect service
+* A sample showing how to use Streaming service from the SDK is available on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/stream_example.py>`__.
 
 ====================
 2.2.4 - 2019-03-26
