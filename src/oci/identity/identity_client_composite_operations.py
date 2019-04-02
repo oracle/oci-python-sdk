@@ -1,7 +1,8 @@
 # coding: utf-8
 # Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
-import oci   # noqa: F401
+import oci  # noqa: F401
+from oci.util import WAIT_RESOURCE_NOT_FOUND  # noqa: F401
 
 
 class IdentityClientCompositeOperations(object):
@@ -422,7 +423,15 @@ class IdentityClientCompositeOperations(object):
             A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
-        operation_result = self.client.delete_compartment(compartment_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_compartment(compartment_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -461,7 +470,15 @@ class IdentityClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_dynamic_group(dynamic_group_id)
-        operation_result = self.client.delete_dynamic_group(dynamic_group_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_dynamic_group(dynamic_group_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -500,7 +517,15 @@ class IdentityClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_group(group_id)
-        operation_result = self.client.delete_group(group_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_group(group_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -539,7 +564,15 @@ class IdentityClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_identity_provider(identity_provider_id)
-        operation_result = self.client.delete_identity_provider(identity_provider_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_identity_provider(identity_provider_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -578,7 +611,15 @@ class IdentityClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_policy(policy_id)
-        operation_result = self.client.delete_policy(policy_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_policy(policy_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -617,7 +658,15 @@ class IdentityClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_tag_default(tag_default_id)
-        operation_result = self.client.delete_tag_default(tag_default_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_tag_default(tag_default_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -656,7 +705,15 @@ class IdentityClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_user(user_id)
-        operation_result = self.client.delete_user(user_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_user(user_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 

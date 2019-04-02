@@ -1,7 +1,8 @@
 # coding: utf-8
 # Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
-import oci   # noqa: F401
+import oci  # noqa: F401
+from oci.util import WAIT_RESOURCE_NOT_FOUND  # noqa: F401
 
 
 class LoadBalancerClientCompositeOperations(object):
@@ -395,7 +396,15 @@ class LoadBalancerClientCompositeOperations(object):
             A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
-        operation_result = self.client.delete_backend(load_balancer_id, backend_set_name, backend_name, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_backend(load_balancer_id, backend_set_name, backend_name, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -440,7 +449,15 @@ class LoadBalancerClientCompositeOperations(object):
             A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
-        operation_result = self.client.delete_backend_set(load_balancer_id, backend_set_name, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_backend_set(load_balancer_id, backend_set_name, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -486,7 +503,15 @@ class LoadBalancerClientCompositeOperations(object):
             A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
-        operation_result = self.client.delete_certificate(load_balancer_id, certificate_name, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_certificate(load_balancer_id, certificate_name, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -531,7 +556,15 @@ class LoadBalancerClientCompositeOperations(object):
             A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
-        operation_result = self.client.delete_hostname(load_balancer_id, name, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_hostname(load_balancer_id, name, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -576,7 +609,15 @@ class LoadBalancerClientCompositeOperations(object):
             A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
-        operation_result = self.client.delete_listener(load_balancer_id, listener_name, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_listener(load_balancer_id, listener_name, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -616,7 +657,15 @@ class LoadBalancerClientCompositeOperations(object):
             A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
-        operation_result = self.client.delete_load_balancer(load_balancer_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_load_balancer(load_balancer_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -661,7 +710,15 @@ class LoadBalancerClientCompositeOperations(object):
             A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
-        operation_result = self.client.delete_path_route_set(load_balancer_id, path_route_set_name, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_path_route_set(load_balancer_id, path_route_set_name, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -706,7 +763,15 @@ class LoadBalancerClientCompositeOperations(object):
             A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
-        operation_result = self.client.delete_rule_set(load_balancer_id, rule_set_name, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_rule_set(load_balancer_id, rule_set_name, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 

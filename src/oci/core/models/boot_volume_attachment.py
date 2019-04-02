@@ -325,7 +325,7 @@ class BootVolumeAttachment(object):
     def is_pv_encryption_in_transit_enabled(self):
         """
         Gets the is_pv_encryption_in_transit_enabled of this BootVolumeAttachment.
-        Whether the enable encryption in transit for the PV volume attachment is on or not.
+        Whether in-transit encryption for the boot volume's paravirtualized attachment is enabled or not.
 
 
         :return: The is_pv_encryption_in_transit_enabled of this BootVolumeAttachment.
@@ -337,7 +337,7 @@ class BootVolumeAttachment(object):
     def is_pv_encryption_in_transit_enabled(self, is_pv_encryption_in_transit_enabled):
         """
         Sets the is_pv_encryption_in_transit_enabled of this BootVolumeAttachment.
-        Whether the enable encryption in transit for the PV volume attachment is on or not.
+        Whether in-transit encryption for the boot volume's paravirtualized attachment is enabled or not.
 
 
         :param is_pv_encryption_in_transit_enabled: The is_pv_encryption_in_transit_enabled of this BootVolumeAttachment.

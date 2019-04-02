@@ -73,8 +73,8 @@ class ImageSourceDetails(object):
     def source_image_type(self):
         """
         Gets the source_image_type of this ImageSourceDetails.
-        The format of the image to be imported.  Exported Oracle images are QCOW2.  Only monolithic
-        images are supported.
+        The format of the image to be imported.  Only monolithic
+        images are supported. This attribute is not used for exported Oracle images with the OCI image format.
 
         Allowed values for this property are: "QCOW2", "VMDK"
 
@@ -88,8 +88,8 @@ class ImageSourceDetails(object):
     def source_image_type(self, source_image_type):
         """
         Sets the source_image_type of this ImageSourceDetails.
-        The format of the image to be imported.  Exported Oracle images are QCOW2.  Only monolithic
-        images are supported.
+        The format of the image to be imported.  Only monolithic
+        images are supported. This attribute is not used for exported Oracle images with the OCI image format.
 
 
         :param source_image_type: The source_image_type of this ImageSourceDetails.

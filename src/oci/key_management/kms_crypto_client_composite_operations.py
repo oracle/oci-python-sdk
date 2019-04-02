@@ -1,7 +1,8 @@
 # coding: utf-8
 # Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
-import oci   # noqa: F401
+import oci  # noqa: F401
+from oci.util import WAIT_RESOURCE_NOT_FOUND  # noqa: F401
 
 
 class KmsCryptoClientCompositeOperations(object):

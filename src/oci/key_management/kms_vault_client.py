@@ -73,7 +73,7 @@ class KmsVaultClient(object):
             'regional_client': True,
             'service_endpoint': kwargs.get('service_endpoint'),
             'timeout': kwargs.get('timeout'),
-            'base_path': '/20180608',
+            'base_path': '/',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
         self.base_client = BaseClient("kms_vault", config, signer, key_management_type_mapping, **base_client_init_kwargs)
@@ -81,9 +81,9 @@ class KmsVaultClient(object):
 
     def cancel_vault_deletion(self, vault_id, **kwargs):
         """
-        CancelVaultDeletion
-        Cancels the scheduled deletion of the specified Vault, which must be in PendingDeletion
-        state. The Vault and all Keys in it will be moved back to their previous states before
+        Cancels the scheduled deletion of a vault.
+        Cancels the scheduled deletion of the specified vault. Canceling a scheduled deletion
+        restores the vault and all keys in it to the respective states they were in before
         the deletion was scheduled.
 
 
@@ -121,7 +121,7 @@ class KmsVaultClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.Vault`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/vaults/{vaultId}/actions/cancelDeletion"
+        resource_path = "/20180608/vaults/{vaultId}/actions/cancelDeletion"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -179,11 +179,11 @@ class KmsVaultClient(object):
 
     def create_vault(self, create_vault_details, **kwargs):
         """
-        CreateVault
+        Creates a new vault.
         Creates a new vault. The type of vault you create determines key
         placement, pricing, and available options. Options include storage
         isolation, a dedicated service endpoint instead of a shared service
-        endpoint for API calls, and a dedicated HSM or a multitenant HSM.
+        endpoint for API calls, and a dedicated hardware security module (HSM) or a multitenant HSM.
 
 
         :param CreateVaultDetails create_vault_details: (required)
@@ -213,7 +213,7 @@ class KmsVaultClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.Vault`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/vaults"
+        resource_path = "/20180608/vaults"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -259,7 +259,7 @@ class KmsVaultClient(object):
 
     def get_vault(self, vault_id, **kwargs):
         """
-        GetVault
+        Gets details about a vault.
         Gets the specified vault's configuration information.
 
 
@@ -282,7 +282,7 @@ class KmsVaultClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.Vault`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/vaults/{vaultId}"
+        resource_path = "/20180608/vaults/{vaultId}"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -334,8 +334,8 @@ class KmsVaultClient(object):
 
     def list_vaults(self, compartment_id, **kwargs):
         """
-        ListVaults
-        Lists vaults in the specified compartment.
+        Lists vaults in the compartment.
+        Lists the vaults in the specified compartment.
 
 
         :param str compartment_id: (required)
@@ -376,7 +376,7 @@ class KmsVaultClient(object):
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.key_management.models.VaultSummary`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/vaults"
+        resource_path = "/20180608/vaults"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -445,9 +445,9 @@ class KmsVaultClient(object):
 
     def schedule_vault_deletion(self, vault_id, schedule_vault_deletion_details, **kwargs):
         """
-        ScheduleVaultDeletion
-        Schedules the deletion of the specified Vault. The Vault and all Keys in it
-        will be moved to PendingDeletion state and deleted after the retention period.
+        Schedules the deletion of a vault.
+        Schedules the deletion of the specified vault. This sets the state of the vault and all keys in it
+        to `PENDING_DELETION` and then deletes them after the retention period ends.
 
 
         :param str vault_id: (required)
@@ -487,7 +487,7 @@ class KmsVaultClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.Vault`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/vaults/{vaultId}/actions/scheduleDeletion"
+        resource_path = "/20180608/vaults/{vaultId}/actions/scheduleDeletion"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -547,10 +547,10 @@ class KmsVaultClient(object):
 
     def update_vault(self, vault_id, update_vault_details, **kwargs):
         """
-        UpdateVault
+        Updates the properties of a vault.
         Updates the properties of a vault. Specifically, you can update the
-        `displayName` , `freeformTags`, and `definedTags` properties. Furthermore,
-        the vault must be in an `ACTIVE` or `CREATING` state.
+        `displayName`, `freeformTags`, and `definedTags` properties. Furthermore,
+        the vault must be in an `ACTIVE` or `CREATING` state to be updated.
 
 
         :param str vault_id: (required)
@@ -582,7 +582,7 @@ class KmsVaultClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.Vault`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/vaults/{vaultId}"
+        resource_path = "/20180608/vaults/{vaultId}"
         method = "PUT"
 
         # Don't accept unknown kwargs

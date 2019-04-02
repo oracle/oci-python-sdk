@@ -73,6 +73,10 @@ class CrossConnectGroup(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param customer_reference_name:
+            The value to assign to the customer_reference_name property of this CrossConnectGroup.
+        :type customer_reference_name: str
+
         :param time_created:
             The value to assign to the time_created property of this CrossConnectGroup.
         :type time_created: datetime
@@ -83,6 +87,7 @@ class CrossConnectGroup(object):
             'display_name': 'str',
             'id': 'str',
             'lifecycle_state': 'str',
+            'customer_reference_name': 'str',
             'time_created': 'datetime'
         }
 
@@ -91,6 +96,7 @@ class CrossConnectGroup(object):
             'display_name': 'displayName',
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
+            'customer_reference_name': 'customerReferenceName',
             'time_created': 'timeCreated'
         }
 
@@ -98,6 +104,7 @@ class CrossConnectGroup(object):
         self._display_name = None
         self._id = None
         self._lifecycle_state = None
+        self._customer_reference_name = None
         self._time_created = None
 
     @property
@@ -203,6 +210,32 @@ class CrossConnectGroup(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def customer_reference_name(self):
+        """
+        Gets the customer_reference_name of this CrossConnectGroup.
+        A reference name or identifier for the physical fiber connection that this cross-connect
+        group uses.
+
+
+        :return: The customer_reference_name of this CrossConnectGroup.
+        :rtype: str
+        """
+        return self._customer_reference_name
+
+    @customer_reference_name.setter
+    def customer_reference_name(self, customer_reference_name):
+        """
+        Sets the customer_reference_name of this CrossConnectGroup.
+        A reference name or identifier for the physical fiber connection that this cross-connect
+        group uses.
+
+
+        :param customer_reference_name: The customer_reference_name of this CrossConnectGroup.
+        :type: str
+        """
+        self._customer_reference_name = customer_reference_name
 
     @property
     def time_created(self):
