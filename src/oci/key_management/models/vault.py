@@ -384,7 +384,7 @@ class Vault(object):
     def time_of_deletion(self):
         """
         Gets the time_of_deletion of this Vault.
-        An optional property for the deletion time of the Vault expressed in `RFC 3339`__ timestamp format.
+        An optional property for the deletion time of the vault, expressed in `RFC 3339`__ timestamp format.
         Example: `2018-04-03T21:10:29.600Z`
 
         __ https://tools.ietf.org/html/rfc3339
@@ -399,7 +399,7 @@ class Vault(object):
     def time_of_deletion(self, time_of_deletion):
         """
         Sets the time_of_deletion of this Vault.
-        An optional property for the deletion time of the Vault expressed in `RFC 3339`__ timestamp format.
+        An optional property for the deletion time of the vault, expressed in `RFC 3339`__ timestamp format.
         Example: `2018-04-03T21:10:29.600Z`
 
         __ https://tools.ietf.org/html/rfc3339

@@ -25,19 +25,26 @@ class UpdateCrossConnectDetails(object):
             The value to assign to the is_active property of this UpdateCrossConnectDetails.
         :type is_active: bool
 
+        :param customer_reference_name:
+            The value to assign to the customer_reference_name property of this UpdateCrossConnectDetails.
+        :type customer_reference_name: str
+
         """
         self.swagger_types = {
             'display_name': 'str',
-            'is_active': 'bool'
+            'is_active': 'bool',
+            'customer_reference_name': 'str'
         }
 
         self.attribute_map = {
             'display_name': 'displayName',
-            'is_active': 'isActive'
+            'is_active': 'isActive',
+            'customer_reference_name': 'customerReferenceName'
         }
 
         self._display_name = None
         self._is_active = None
+        self._customer_reference_name = None
 
     @property
     def display_name(self):
@@ -96,6 +103,32 @@ class UpdateCrossConnectDetails(object):
         :type: bool
         """
         self._is_active = is_active
+
+    @property
+    def customer_reference_name(self):
+        """
+        Gets the customer_reference_name of this UpdateCrossConnectDetails.
+        A reference name or identifier for the physical fiber connection that this cross-connect
+        uses.
+
+
+        :return: The customer_reference_name of this UpdateCrossConnectDetails.
+        :rtype: str
+        """
+        return self._customer_reference_name
+
+    @customer_reference_name.setter
+    def customer_reference_name(self, customer_reference_name):
+        """
+        Sets the customer_reference_name of this UpdateCrossConnectDetails.
+        A reference name or identifier for the physical fiber connection that this cross-connect
+        uses.
+
+
+        :param customer_reference_name: The customer_reference_name of this UpdateCrossConnectDetails.
+        :type: str
+        """
+        self._customer_reference_name = customer_reference_name
 
     def __repr__(self):
         return formatted_flat_dict(self)

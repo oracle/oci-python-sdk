@@ -58,7 +58,7 @@ class ExportImageViaObjectStorageTupleDetails(ExportImageDetails):
     @property
     def bucket_name(self):
         """
-        Gets the bucket_name of this ExportImageViaObjectStorageTupleDetails.
+        **[Required]** Gets the bucket_name of this ExportImageViaObjectStorageTupleDetails.
         The Object Storage bucket to export the image to.
 
 
@@ -82,7 +82,7 @@ class ExportImageViaObjectStorageTupleDetails(ExportImageDetails):
     @property
     def namespace_name(self):
         """
-        Gets the namespace_name of this ExportImageViaObjectStorageTupleDetails.
+        **[Required]** Gets the namespace_name of this ExportImageViaObjectStorageTupleDetails.
         The Object Storage namespace to export the image to.
 
 
@@ -106,7 +106,7 @@ class ExportImageViaObjectStorageTupleDetails(ExportImageDetails):
     @property
     def object_name(self):
         """
-        Gets the object_name of this ExportImageViaObjectStorageTupleDetails.
+        **[Required]** Gets the object_name of this ExportImageViaObjectStorageTupleDetails.
         The Object Storage object name for the exported image.
 
 

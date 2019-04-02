@@ -1,7 +1,8 @@
 # coding: utf-8
 # Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
-import oci   # noqa: F401
+import oci  # noqa: F401
+from oci.util import WAIT_RESOURCE_NOT_FOUND  # noqa: F401
 
 
 class DatabaseClientCompositeOperations(object):
@@ -358,7 +359,15 @@ class DatabaseClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_autonomous_data_warehouse(autonomous_data_warehouse_id)
-        operation_result = self.client.delete_autonomous_data_warehouse(autonomous_data_warehouse_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_autonomous_data_warehouse(autonomous_data_warehouse_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -399,7 +408,15 @@ class DatabaseClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_autonomous_database(autonomous_database_id)
-        operation_result = self.client.delete_autonomous_database(autonomous_database_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_autonomous_database(autonomous_database_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -440,7 +457,15 @@ class DatabaseClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_backup(backup_id)
-        operation_result = self.client.delete_backup(backup_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_backup(backup_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -481,7 +506,15 @@ class DatabaseClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_db_home(db_home_id)
-        operation_result = self.client.delete_db_home(db_home_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_db_home(db_home_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -993,7 +1026,15 @@ class DatabaseClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_db_system(db_system_id)
-        operation_result = self.client.terminate_db_system(db_system_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.terminate_db_system(db_system_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 

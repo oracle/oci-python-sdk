@@ -43,7 +43,7 @@ class DecryptedData(object):
     def plaintext(self):
         """
         **[Required]** Gets the plaintext of this DecryptedData.
-        The decrypted data, in the form of a base64-encoded value.
+        The decrypted data, expressed as a base64-encoded value.
 
 
         :return: The plaintext of this DecryptedData.
@@ -55,7 +55,7 @@ class DecryptedData(object):
     def plaintext(self, plaintext):
         """
         Sets the plaintext of this DecryptedData.
-        The decrypted data, in the form of a base64-encoded value.
+        The decrypted data, expressed as a base64-encoded value.
 
 
         :param plaintext: The plaintext of this DecryptedData.

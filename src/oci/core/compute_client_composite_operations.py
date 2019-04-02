@@ -1,7 +1,8 @@
 # coding: utf-8
 # Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
-import oci   # noqa: F401
+import oci  # noqa: F401
+from oci.util import WAIT_RESOURCE_NOT_FOUND  # noqa: F401
 
 
 class ComputeClientCompositeOperations(object):
@@ -268,7 +269,15 @@ class ComputeClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_console_history(instance_console_history_id)
-        operation_result = self.client.delete_console_history(instance_console_history_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_console_history(instance_console_history_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -307,7 +316,15 @@ class ComputeClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_image(image_id)
-        operation_result = self.client.delete_image(image_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_image(image_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -346,7 +363,15 @@ class ComputeClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_instance_console_connection(instance_console_connection_id)
-        operation_result = self.client.delete_instance_console_connection(instance_console_connection_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_instance_console_connection(instance_console_connection_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -385,7 +410,15 @@ class ComputeClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_boot_volume_attachment(boot_volume_attachment_id)
-        operation_result = self.client.detach_boot_volume(boot_volume_attachment_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.detach_boot_volume(boot_volume_attachment_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -424,7 +457,15 @@ class ComputeClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_vnic_attachment(vnic_attachment_id)
-        operation_result = self.client.detach_vnic(vnic_attachment_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.detach_vnic(vnic_attachment_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -463,7 +504,15 @@ class ComputeClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_volume_attachment(volume_attachment_id)
-        operation_result = self.client.detach_volume(volume_attachment_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.detach_volume(volume_attachment_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -624,7 +673,15 @@ class ComputeClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_instance(instance_id)
-        operation_result = self.client.terminate_instance(instance_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.terminate_instance(instance_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 

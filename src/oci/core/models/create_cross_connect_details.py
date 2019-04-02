@@ -45,6 +45,10 @@ class CreateCrossConnectDetails(object):
             The value to assign to the port_speed_shape_name property of this CreateCrossConnectDetails.
         :type port_speed_shape_name: str
 
+        :param customer_reference_name:
+            The value to assign to the customer_reference_name property of this CreateCrossConnectDetails.
+        :type customer_reference_name: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -53,7 +57,8 @@ class CreateCrossConnectDetails(object):
             'far_cross_connect_or_cross_connect_group_id': 'str',
             'location_name': 'str',
             'near_cross_connect_or_cross_connect_group_id': 'str',
-            'port_speed_shape_name': 'str'
+            'port_speed_shape_name': 'str',
+            'customer_reference_name': 'str'
         }
 
         self.attribute_map = {
@@ -63,7 +68,8 @@ class CreateCrossConnectDetails(object):
             'far_cross_connect_or_cross_connect_group_id': 'farCrossConnectOrCrossConnectGroupId',
             'location_name': 'locationName',
             'near_cross_connect_or_cross_connect_group_id': 'nearCrossConnectOrCrossConnectGroupId',
-            'port_speed_shape_name': 'portSpeedShapeName'
+            'port_speed_shape_name': 'portSpeedShapeName',
+            'customer_reference_name': 'customerReferenceName'
         }
 
         self._compartment_id = None
@@ -73,6 +79,7 @@ class CreateCrossConnectDetails(object):
         self._location_name = None
         self._near_cross_connect_or_cross_connect_group_id = None
         self._port_speed_shape_name = None
+        self._customer_reference_name = None
 
     @property
     def compartment_id(self):
@@ -267,6 +274,32 @@ class CreateCrossConnectDetails(object):
         :type: str
         """
         self._port_speed_shape_name = port_speed_shape_name
+
+    @property
+    def customer_reference_name(self):
+        """
+        Gets the customer_reference_name of this CreateCrossConnectDetails.
+        A reference name or identifier for the physical fiber connection that this cross-connect
+        uses.
+
+
+        :return: The customer_reference_name of this CreateCrossConnectDetails.
+        :rtype: str
+        """
+        return self._customer_reference_name
+
+    @customer_reference_name.setter
+    def customer_reference_name(self, customer_reference_name):
+        """
+        Sets the customer_reference_name of this CreateCrossConnectDetails.
+        A reference name or identifier for the physical fiber connection that this cross-connect
+        uses.
+
+
+        :param customer_reference_name: The customer_reference_name of this CreateCrossConnectDetails.
+        :type: str
+        """
+        self._customer_reference_name = customer_reference_name
 
     def __repr__(self):
         return formatted_flat_dict(self)

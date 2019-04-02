@@ -1,7 +1,8 @@
 # coding: utf-8
 # Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
-import oci   # noqa: F401
+import oci  # noqa: F401
+from oci.util import WAIT_RESOURCE_NOT_FOUND  # noqa: F401
 
 
 class DnsClientCompositeOperations(object):
@@ -154,7 +155,15 @@ class DnsClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_steering_policy(steering_policy_id)
-        operation_result = self.client.delete_steering_policy(steering_policy_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_steering_policy(steering_policy_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -193,7 +202,15 @@ class DnsClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_steering_policy_attachment(steering_policy_attachment_id)
-        operation_result = self.client.delete_steering_policy_attachment(steering_policy_attachment_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_steering_policy_attachment(steering_policy_attachment_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -232,7 +249,15 @@ class DnsClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_zone(zone_name_or_id)
-        operation_result = self.client.delete_zone(zone_name_or_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_zone(zone_name_or_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 

@@ -4,10 +4,8 @@
 import time
 
 from .exceptions import MaximumWaitTimeExceeded, WaitUntilNotSupported, ServiceError
-from .util import Sentinel
+from .util import WAIT_RESOURCE_NOT_FOUND
 from . import retry
-
-WAIT_RESOURCE_NOT_FOUND = Sentinel(name='WaitResourceNotFound', truthy=False)
 
 
 def wait_until(client, response, property=None, state=None, max_interval_seconds=30, max_wait_seconds=1200, succeed_on_not_found=False, **kwargs):

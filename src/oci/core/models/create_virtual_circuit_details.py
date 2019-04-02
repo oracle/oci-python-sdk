@@ -57,6 +57,10 @@ class CreateVirtualCircuitDetails(object):
             The value to assign to the provider_service_id property of this CreateVirtualCircuitDetails.
         :type provider_service_id: str
 
+        :param provider_service_key_name:
+            The value to assign to the provider_service_key_name property of this CreateVirtualCircuitDetails.
+        :type provider_service_key_name: str
+
         :param provider_service_name:
             The value to assign to the provider_service_name property of this CreateVirtualCircuitDetails.
         :type provider_service_name: str
@@ -84,6 +88,7 @@ class CreateVirtualCircuitDetails(object):
             'gateway_id': 'str',
             'provider_name': 'str',
             'provider_service_id': 'str',
+            'provider_service_key_name': 'str',
             'provider_service_name': 'str',
             'public_prefixes': 'list[CreateVirtualCircuitPublicPrefixDetails]',
             'region': 'str',
@@ -99,6 +104,7 @@ class CreateVirtualCircuitDetails(object):
             'gateway_id': 'gatewayId',
             'provider_name': 'providerName',
             'provider_service_id': 'providerServiceId',
+            'provider_service_key_name': 'providerServiceKeyName',
             'provider_service_name': 'providerServiceName',
             'public_prefixes': 'publicPrefixes',
             'region': 'region',
@@ -113,6 +119,7 @@ class CreateVirtualCircuitDetails(object):
         self._gateway_id = None
         self._provider_name = None
         self._provider_service_id = None
+        self._provider_service_key_name = None
         self._provider_service_name = None
         self._public_prefixes = None
         self._region = None
@@ -333,6 +340,30 @@ class CreateVirtualCircuitDetails(object):
         :type: str
         """
         self._provider_service_id = provider_service_id
+
+    @property
+    def provider_service_key_name(self):
+        """
+        Gets the provider_service_key_name of this CreateVirtualCircuitDetails.
+        The service key name offered by the provider (if the customer is connecting via a provider).
+
+
+        :return: The provider_service_key_name of this CreateVirtualCircuitDetails.
+        :rtype: str
+        """
+        return self._provider_service_key_name
+
+    @provider_service_key_name.setter
+    def provider_service_key_name(self, provider_service_key_name):
+        """
+        Sets the provider_service_key_name of this CreateVirtualCircuitDetails.
+        The service key name offered by the provider (if the customer is connecting via a provider).
+
+
+        :param provider_service_key_name: The provider_service_key_name of this CreateVirtualCircuitDetails.
+        :type: str
+        """
+        self._provider_service_key_name = provider_service_key_name
 
     @property
     def provider_service_name(self):

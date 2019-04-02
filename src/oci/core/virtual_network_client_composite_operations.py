@@ -1,7 +1,8 @@
 # coding: utf-8
 # Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
-import oci   # noqa: F401
+import oci  # noqa: F401
+from oci.util import WAIT_RESOURCE_NOT_FOUND  # noqa: F401
 
 
 class VirtualNetworkClientCompositeOperations(object):
@@ -729,7 +730,15 @@ class VirtualNetworkClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_cross_connect(cross_connect_id)
-        operation_result = self.client.delete_cross_connect(cross_connect_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_cross_connect(cross_connect_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -768,7 +777,15 @@ class VirtualNetworkClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_cross_connect_group(cross_connect_group_id)
-        operation_result = self.client.delete_cross_connect_group(cross_connect_group_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_cross_connect_group(cross_connect_group_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -807,7 +824,15 @@ class VirtualNetworkClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_dhcp_options(dhcp_id)
-        operation_result = self.client.delete_dhcp_options(dhcp_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_dhcp_options(dhcp_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -846,7 +871,15 @@ class VirtualNetworkClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_drg(drg_id)
-        operation_result = self.client.delete_drg(drg_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_drg(drg_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -885,7 +918,15 @@ class VirtualNetworkClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_drg_attachment(drg_attachment_id)
-        operation_result = self.client.delete_drg_attachment(drg_attachment_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_drg_attachment(drg_attachment_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -924,7 +965,15 @@ class VirtualNetworkClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_internet_gateway(ig_id)
-        operation_result = self.client.delete_internet_gateway(ig_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_internet_gateway(ig_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -963,7 +1012,15 @@ class VirtualNetworkClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_ip_sec_connection(ipsc_id)
-        operation_result = self.client.delete_ip_sec_connection(ipsc_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_ip_sec_connection(ipsc_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -1002,7 +1059,15 @@ class VirtualNetworkClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_local_peering_gateway(local_peering_gateway_id)
-        operation_result = self.client.delete_local_peering_gateway(local_peering_gateway_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_local_peering_gateway(local_peering_gateway_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -1043,7 +1108,15 @@ class VirtualNetworkClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_nat_gateway(nat_gateway_id)
-        operation_result = self.client.delete_nat_gateway(nat_gateway_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_nat_gateway(nat_gateway_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -1082,7 +1155,15 @@ class VirtualNetworkClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_public_ip(public_ip_id)
-        operation_result = self.client.delete_public_ip(public_ip_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_public_ip(public_ip_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -1121,7 +1202,15 @@ class VirtualNetworkClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_remote_peering_connection(remote_peering_connection_id)
-        operation_result = self.client.delete_remote_peering_connection(remote_peering_connection_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_remote_peering_connection(remote_peering_connection_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -1160,7 +1249,15 @@ class VirtualNetworkClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_route_table(rt_id)
-        operation_result = self.client.delete_route_table(rt_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_route_table(rt_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -1199,7 +1296,15 @@ class VirtualNetworkClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_security_list(security_list_id)
-        operation_result = self.client.delete_security_list(security_list_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_security_list(security_list_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -1240,7 +1345,15 @@ class VirtualNetworkClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_service_gateway(service_gateway_id)
-        operation_result = self.client.delete_service_gateway(service_gateway_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_service_gateway(service_gateway_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -1279,7 +1392,15 @@ class VirtualNetworkClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_subnet(subnet_id)
-        operation_result = self.client.delete_subnet(subnet_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_subnet(subnet_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -1318,7 +1439,15 @@ class VirtualNetworkClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_vcn(vcn_id)
-        operation_result = self.client.delete_vcn(vcn_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_vcn(vcn_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 
@@ -1357,7 +1486,15 @@ class VirtualNetworkClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         initial_get_result = self.client.get_virtual_circuit(virtual_circuit_id)
-        operation_result = self.client.delete_virtual_circuit(virtual_circuit_id, **operation_kwargs)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_virtual_circuit(virtual_circuit_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
 

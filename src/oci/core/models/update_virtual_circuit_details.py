@@ -50,6 +50,10 @@ class UpdateVirtualCircuitDetails(object):
             Allowed values for this property are: "ACTIVE", "INACTIVE"
         :type provider_state: str
 
+        :param provider_service_key_name:
+            The value to assign to the provider_service_key_name property of this UpdateVirtualCircuitDetails.
+        :type provider_service_key_name: str
+
         :param reference_comment:
             The value to assign to the reference_comment property of this UpdateVirtualCircuitDetails.
         :type reference_comment: str
@@ -62,6 +66,7 @@ class UpdateVirtualCircuitDetails(object):
             'display_name': 'str',
             'gateway_id': 'str',
             'provider_state': 'str',
+            'provider_service_key_name': 'str',
             'reference_comment': 'str'
         }
 
@@ -72,6 +77,7 @@ class UpdateVirtualCircuitDetails(object):
             'display_name': 'displayName',
             'gateway_id': 'gatewayId',
             'provider_state': 'providerState',
+            'provider_service_key_name': 'providerServiceKeyName',
             'reference_comment': 'referenceComment'
         }
 
@@ -81,6 +87,7 @@ class UpdateVirtualCircuitDetails(object):
         self._display_name = None
         self._gateway_id = None
         self._provider_state = None
+        self._provider_service_key_name = None
         self._reference_comment = None
 
     @property
@@ -292,6 +299,30 @@ class UpdateVirtualCircuitDetails(object):
                 .format(allowed_values)
             )
         self._provider_state = provider_state
+
+    @property
+    def provider_service_key_name(self):
+        """
+        Gets the provider_service_key_name of this UpdateVirtualCircuitDetails.
+        The service key name offered by the provider (if the customer is connecting via a provider).
+
+
+        :return: The provider_service_key_name of this UpdateVirtualCircuitDetails.
+        :rtype: str
+        """
+        return self._provider_service_key_name
+
+    @provider_service_key_name.setter
+    def provider_service_key_name(self, provider_service_key_name):
+        """
+        Sets the provider_service_key_name of this UpdateVirtualCircuitDetails.
+        The service key name offered by the provider (if the customer is connecting via a provider).
+
+
+        :param provider_service_key_name: The provider_service_key_name of this UpdateVirtualCircuitDetails.
+        :type: str
+        """
+        self._provider_service_key_name = provider_service_key_name
 
     @property
     def reference_comment(self):
