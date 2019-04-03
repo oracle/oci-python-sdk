@@ -34,7 +34,7 @@ def join_lists(instance_list, events_list, filename):
         print('An unexpected Error Occured writing the file: {0}' .format(e))
 
 
-# This function stopped the instance sent in as a parameter
+# This function stops the instance sent in as a parameter
 def stop_resource(instance_id, region):
     base_compute = oci.core.compute_client.ComputeClient(config)
     base_compute.base_client.set_region(region)
