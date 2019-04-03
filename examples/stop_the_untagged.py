@@ -34,6 +34,7 @@ def join_lists(instance_list, events_list, filename):
         print('An unexpected Error Occured writing the file: {0}' .format(e))
 
 
+# This function stopped the instance sent in as a parameter
 def stop_resource(instance_id, region):
     base_compute = oci.core.compute_client.ComputeClient(config)
     base_compute.base_client.set_region(region)
@@ -176,6 +177,7 @@ def prep_arguments():
 
 
 if __name__ == "__main__":
+    # Starts a timer for the execution time.
     print('Stop the Untagged v0.6')
     start_time = datetime.datetime.now()
     print('Start Time: {0}'.format(start_time.replace(microsecond=0).isoformat()))
@@ -196,8 +198,10 @@ if __name__ == "__main__":
                      'compartment_ocid': 'compartment_ocid', 'creator': 'creator'}
     instances_to_stop.append(instance_line)
 
+    # This is the main function that finds any instance that's not tagged with the search_string
     find_resources_wo_tags(instances_to_stop, search_string)
 
+    # Completes the program and shows the duration of the run
     end_time = datetime.datetime.now()
-    print('\n\nEnd Time: {0}' .format(end_time.replace(microsecond=0).isoformat()))
+    print('\nEnd Time: {0}' .format(end_time.replace(microsecond=0).isoformat()))
     print('Duration: {0}' .format((end_time - start_time)))
