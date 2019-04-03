@@ -31,22 +31,6 @@ def join_lists(instance_list, events_list, filename):
         print('An unexpected Error Occured writing the file: {0}' .format(e))
 
 
-# def write_event_log(in_list, file_name):
-#     with open(file_name, 'w') as f:
-#         for item in in_list:
-#             f.write('{0},{1}\n'
-#                     .format(item['principal_name'], item['instance_ocid'],))
-#
-#
-# def write_log(in_list, file_name):
-#     with open(file_name, 'w') as f:
-#         for item in in_list:
-#             f.write('{0},{1},{2},{3},{4},{5},{6},{7},{8}\n'
-#                     .format(item['stop_datetime'], item['region'], item['compartment_name'], item['instance_name'],
-#                             item['instance_shape'], item['time_created'], item['instance_ocid'],
-#                             item['compartment_ocid'], item['creator']))
-
-
 def stop_resource(instance_id, region):
     base_compute = oci.core.compute_client.ComputeClient(config)
     base_compute.base_client.set_region(region)
@@ -152,7 +136,7 @@ def find_resources_wo_tags(instances_to_stop_list, search_string):
         filter_key = search_string
         for result in results.data.items:
             if (filter_key not in str(result.defined_tags)) or len(result.defined_tags) == 0:
-                if result.lifecycle_state in 'Running':
+                if result.lifecycle_state in ('Provisioning', 'Starting', 'Running'):
                     compute_client.base_client.set_region(region)
                     try:
                         stopped_instances_line = {'stop_datetime': datetime.datetime.utcnow().replace(microsecond=0).isoformat(),
@@ -198,7 +182,7 @@ if __name__ == "__main__":
     print('Start Time: {0}'.format(start_time.replace(microsecond=0).isoformat()))
 
     #replace the profile name with the name of your profile, or remove the parameter to use the default profile.
-    config = oci.config.from_file(profile_name='R2')
+    config = oci.config.from_file()
     identity_client = oci.identity.IdentityClient(config)
 
     # Set the search_string and audit_hours from arguments
