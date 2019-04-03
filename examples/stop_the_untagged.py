@@ -1,23 +1,26 @@
-# coding: utf-8
 # Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
 # This example demonstrates how to find, stop and report on instances that have
 # been improperly tagged.
+#
+# I recommend that you run this every 30 minutes and set the audit hours to 1.
+# Example usage 'stop_the_untagged.py --hours_to_audit 2 --tag_string CostCenter'
+# This searches for any instance without the CostCenter tag applied, stops them, finds who started it and logs
+# the results.
 
 import oci
 import datetime
 import argparse
 
 
-# After determining all the events associated with th stopped instances, merge those event records (Ocid and Email)
+# After determining all the events associated with th stopped instances, merge those event records (OCID and Email)
 # with the existing list of instances_to_stop to add the email to the existing list, then write it to disk.
 def join_lists(instance_list, events_list, filename):
     for item in instance_list:
         for item2 in events_list:
-            # when you find a match between the event_list & instances to stop, add the email to the creator colun
+            # when you find a match between the event_list & instances to stop, add the email to the creator column
             if item['instance_ocid'] == item2['instance_ocid']:
                 item['creator'] = item2['principal_name']
-                #print('\**Found a match! {0}'.format(item))
 
     # Write out this joined list to disk
     try:
@@ -89,7 +92,7 @@ def find_audit_events(instances_to_stop, instance_stop_list, compartment_id_stop
 
             for ae in list_of_audit_events:
                 if ae.event_name == 'LaunchInstance':
-                    if ae.response_payload['id'] in instance_stop_list:  #same as if dict of dicts.
+                    if ae.response_payload['id'] in instance_stop_list:
                         if len(ae.user_name) == 0:
                             principal_name = ae.principal_id.rsplit('/', 1)[-1]
                         else:
@@ -100,9 +103,7 @@ def find_audit_events(instances_to_stop, instance_stop_list, compartment_id_stop
 
                         events_list.append(events_line)
                         print('\t\t\tFound a launch instance: {0}'.format(ae.response_payload['id']))
-    #write a list of audit events for debugging purposes
-    #write_event_log(events_list, 'audit.csv')
-    join_lists(instances_to_stop, events_list, 'finalresult.csv')
+    join_lists(instances_to_stop, events_list, 'stop_the_untagged_result.csv')
 
 
 # This function looks for all compute instances using the RQS (search) service, then it filters that list by looking
@@ -129,7 +130,7 @@ def find_resources_wo_tags(instances_to_stop_list, search_string):
         except oci.exceptions.ServiceError as e:
             print('\t\tRQS Search failed with Service Error: {0}' .format(e))
         except oci.exceptions.RequestException as e:
-            print('\t\tRQS Search failed w/ a Requst exception. {0}' .format(e))
+            print('\t\tRQS Search failed w/ a Request exception. {0}' .format(e))
 
         # Filtering from everything to just those not tagged.
         # This method is needed to also find resources with no tags at all
@@ -156,10 +157,8 @@ def find_resources_wo_tags(instances_to_stop_list, search_string):
                         stop_resource(result.identifier, region)
 
                     except oci.exceptions.ServiceError as e:
-                        print('\t\tThe instance ({0}) could not be retreived. It may be a ghost Search entry.'
+                        print('\t\tThe instance ({0}) could not be retrieved. It may be a ghost Search entry.'
                               .format(result.display_name, e))
-
-    # write_log(instances_to_stop_list, 'stopped_instances_to_audit.csv')
 
     # Only find audit events for  those compartments with a stopped instance
     if len(instances_to_stop_list) != 0:
@@ -177,11 +176,10 @@ def prep_arguments():
 
 
 if __name__ == "__main__":
-    print('Stop the Untagged v0.5')
+    print('Stop the Untagged v0.6')
     start_time = datetime.datetime.now()
     print('Start Time: {0}'.format(start_time.replace(microsecond=0).isoformat()))
 
-    #replace the profile name with the name of your profile, or remove the parameter to use the default profile.
     config = oci.config.from_file()
     identity_client = oci.identity.IdentityClient(config)
 
