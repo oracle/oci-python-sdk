@@ -28,9 +28,14 @@ def vcr_fixture(request):
         yield
 
 
-def test_cancel_vault_deletion(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sparta_kms_us_grp@oracle.com" jiraProject="KMS" opsJiraProject="KMS"
+def test_cancel_vault_deletion(testing_service_client):
     if not testing_service_client.is_api_enabled('key_management', 'CancelVaultDeletion'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('key_management', util.camelize('kms_vault'), 'CancelVaultDeletion')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='key_management', api_name='CancelVaultDeletion')
 
@@ -40,9 +45,6 @@ def test_cancel_vault_deletion(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.key_management.KmsVaultClient(config)
             response = client.cancel_vault_deletion(
                 vault_id=request.pop(util.camelize('vault_id')),
@@ -65,9 +67,14 @@ def test_cancel_vault_deletion(testing_service_client, config):
         )
 
 
-def test_create_vault(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sparta_kms_us_grp@oracle.com" jiraProject="KMS" opsJiraProject="KMS"
+def test_create_vault(testing_service_client):
     if not testing_service_client.is_api_enabled('key_management', 'CreateVault'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('key_management', util.camelize('kms_vault'), 'CreateVault')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='key_management', api_name='CreateVault')
 
@@ -77,9 +84,6 @@ def test_create_vault(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.key_management.KmsVaultClient(config)
             response = client.create_vault(
                 create_vault_details=request.pop(util.camelize('create_vault_details')),
@@ -102,9 +106,14 @@ def test_create_vault(testing_service_client, config):
         )
 
 
-def test_get_vault(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sparta_kms_us_grp@oracle.com" jiraProject="KMS" opsJiraProject="KMS"
+def test_get_vault(testing_service_client):
     if not testing_service_client.is_api_enabled('key_management', 'GetVault'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('key_management', util.camelize('kms_vault'), 'GetVault')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='key_management', api_name='GetVault')
 
@@ -114,9 +123,6 @@ def test_get_vault(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.key_management.KmsVaultClient(config)
             response = client.get_vault(
                 vault_id=request.pop(util.camelize('vault_id')),
@@ -139,9 +145,14 @@ def test_get_vault(testing_service_client, config):
         )
 
 
-def test_list_vaults(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sparta_kms_us_grp@oracle.com" jiraProject="KMS" opsJiraProject="KMS"
+def test_list_vaults(testing_service_client):
     if not testing_service_client.is_api_enabled('key_management', 'ListVaults'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('key_management', util.camelize('kms_vault'), 'ListVaults')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='key_management', api_name='ListVaults')
 
@@ -151,9 +162,6 @@ def test_list_vaults(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.key_management.KmsVaultClient(config)
             response = client.list_vaults(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -195,9 +203,14 @@ def test_list_vaults(testing_service_client, config):
         )
 
 
-def test_schedule_vault_deletion(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sparta_kms_us_grp@oracle.com" jiraProject="KMS" opsJiraProject="KMS"
+def test_schedule_vault_deletion(testing_service_client):
     if not testing_service_client.is_api_enabled('key_management', 'ScheduleVaultDeletion'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('key_management', util.camelize('kms_vault'), 'ScheduleVaultDeletion')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='key_management', api_name='ScheduleVaultDeletion')
 
@@ -207,9 +220,6 @@ def test_schedule_vault_deletion(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.key_management.KmsVaultClient(config)
             response = client.schedule_vault_deletion(
                 vault_id=request.pop(util.camelize('vault_id')),
@@ -233,9 +243,14 @@ def test_schedule_vault_deletion(testing_service_client, config):
         )
 
 
-def test_update_vault(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sparta_kms_us_grp@oracle.com" jiraProject="KMS" opsJiraProject="KMS"
+def test_update_vault(testing_service_client):
     if not testing_service_client.is_api_enabled('key_management', 'UpdateVault'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('key_management', util.camelize('kms_vault'), 'UpdateVault')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='key_management', api_name='UpdateVault')
 
@@ -245,9 +260,6 @@ def test_update_vault(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.key_management.KmsVaultClient(config)
             response = client.update_vault(
                 vault_id=request.pop(util.camelize('vault_id')),

@@ -28,9 +28,14 @@ def vcr_fixture(request):
         yield
 
 
-def test_create_subscription(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_create_subscription(testing_service_client):
     if not testing_service_client.is_api_enabled('ons', 'CreateSubscription'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ons', util.camelize('notification_data_plane'), 'CreateSubscription')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='ons', api_name='CreateSubscription')
 
@@ -40,9 +45,6 @@ def test_create_subscription(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.ons.NotificationDataPlaneClient(config)
             response = client.create_subscription(
                 create_subscription_details=request.pop(util.camelize('create_subscription_details')),
@@ -65,9 +67,14 @@ def test_create_subscription(testing_service_client, config):
         )
 
 
-def test_delete_subscription(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_delete_subscription(testing_service_client):
     if not testing_service_client.is_api_enabled('ons', 'DeleteSubscription'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ons', util.camelize('notification_data_plane'), 'DeleteSubscription')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='ons', api_name='DeleteSubscription')
 
@@ -77,9 +84,6 @@ def test_delete_subscription(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.ons.NotificationDataPlaneClient(config)
             response = client.delete_subscription(
                 subscription_id=request.pop(util.camelize('subscription_id')),
@@ -102,9 +106,14 @@ def test_delete_subscription(testing_service_client, config):
         )
 
 
-def test_get_confirm_subscription(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_get_confirm_subscription(testing_service_client):
     if not testing_service_client.is_api_enabled('ons', 'GetConfirmSubscription'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ons', util.camelize('notification_data_plane'), 'GetConfirmSubscription')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='ons', api_name='GetConfirmSubscription')
 
@@ -114,9 +123,6 @@ def test_get_confirm_subscription(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.ons.NotificationDataPlaneClient(config)
             response = client.get_confirm_subscription(
                 id=request.pop(util.camelize('id')),
@@ -141,9 +147,14 @@ def test_get_confirm_subscription(testing_service_client, config):
         )
 
 
-def test_get_subscription(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_get_subscription(testing_service_client):
     if not testing_service_client.is_api_enabled('ons', 'GetSubscription'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ons', util.camelize('notification_data_plane'), 'GetSubscription')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='ons', api_name='GetSubscription')
 
@@ -153,9 +164,6 @@ def test_get_subscription(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.ons.NotificationDataPlaneClient(config)
             response = client.get_subscription(
                 subscription_id=request.pop(util.camelize('subscription_id')),
@@ -178,9 +186,14 @@ def test_get_subscription(testing_service_client, config):
         )
 
 
-def test_get_unsubscription(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_get_unsubscription(testing_service_client):
     if not testing_service_client.is_api_enabled('ons', 'GetUnsubscription'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ons', util.camelize('notification_data_plane'), 'GetUnsubscription')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='ons', api_name='GetUnsubscription')
 
@@ -190,9 +203,6 @@ def test_get_unsubscription(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.ons.NotificationDataPlaneClient(config)
             response = client.get_unsubscription(
                 id=request.pop(util.camelize('id')),
@@ -217,9 +227,14 @@ def test_get_unsubscription(testing_service_client, config):
         )
 
 
-def test_list_subscriptions(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_list_subscriptions(testing_service_client):
     if not testing_service_client.is_api_enabled('ons', 'ListSubscriptions'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ons', util.camelize('notification_data_plane'), 'ListSubscriptions')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='ons', api_name='ListSubscriptions')
 
@@ -229,9 +244,6 @@ def test_list_subscriptions(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.ons.NotificationDataPlaneClient(config)
             response = client.list_subscriptions(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -273,9 +285,14 @@ def test_list_subscriptions(testing_service_client, config):
         )
 
 
-def test_publish_message(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_publish_message(testing_service_client):
     if not testing_service_client.is_api_enabled('ons', 'PublishMessage'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ons', util.camelize('notification_data_plane'), 'PublishMessage')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='ons', api_name='PublishMessage')
 
@@ -285,9 +302,6 @@ def test_publish_message(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.ons.NotificationDataPlaneClient(config)
             response = client.publish_message(
                 topic_id=request.pop(util.camelize('topic_id')),
@@ -311,9 +325,14 @@ def test_publish_message(testing_service_client, config):
         )
 
 
-def test_resend_subscription_confirmation(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_resend_subscription_confirmation(testing_service_client):
     if not testing_service_client.is_api_enabled('ons', 'ResendSubscriptionConfirmation'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ons', util.camelize('notification_data_plane'), 'ResendSubscriptionConfirmation')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='ons', api_name='ResendSubscriptionConfirmation')
 
@@ -323,9 +342,6 @@ def test_resend_subscription_confirmation(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.ons.NotificationDataPlaneClient(config)
             response = client.resend_subscription_confirmation(
                 id=request.pop(util.camelize('id')),
@@ -348,9 +364,14 @@ def test_resend_subscription_confirmation(testing_service_client, config):
         )
 
 
-def test_update_subscription(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_update_subscription(testing_service_client):
     if not testing_service_client.is_api_enabled('ons', 'UpdateSubscription'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ons', util.camelize('notification_data_plane'), 'UpdateSubscription')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='ons', api_name='UpdateSubscription')
 
@@ -360,9 +381,6 @@ def test_update_subscription(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.ons.NotificationDataPlaneClient(config)
             response = client.update_subscription(
                 subscription_id=request.pop(util.camelize('subscription_id')),

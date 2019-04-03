@@ -1,0 +1,149 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request/enable?lang=Python&serviceName=monitoring&apiName=CreateAlarm
+  response:
+    body: {string: 'true'}
+    headers:
+      Content-Length: ['4']
+      Content-Type: [text/plain]
+      Date: ['Mon, 01 Apr 2019 21:54:08 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/config?serviceName=monitoring&apiName=CreateAlarm&lang=Python&clientName=monitoring
+  response:
+    body: {string: '{"region":"us-phoenix-1","tenantId":"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","userId":"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq","endpoint":null,"fingerprint":"ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9","passPhrase":"dexsdk","keyFile":"java_sdk_admin_key.pem","keyFileContent":"-----BEGIN
+        RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-128-CBC,0C9B64A4AA0303EC02C79E91D0F8B0D0\n\naSd0uIKreq5NirzJ+Esa36lYJo4lU2zSjIIw8wvZEsd+LdaifqONZIfHHiB6/KgG\nse4wd/58tPsiEgnK7D1q8wmdVDouMSX31mhcbq2bwRjXATpNnOMnhDtahJv6cw4M\nDtlXYplk0LzpP6WjqXqFST4Yz0l1NO90ahnruwcb/SUCm12ONMJ5o4G1UO2/0IkX\nTRlMRpm/etIpStNSP+1IsD1gSWlAzhs1zodkpd+2eW2ovlAaY25Hm/aqK97jzsCF\n1f4dCm7spCHYOfv10XHNB99/jomN1KQuDy29MmVaJ9oYpOIDlu0yj4Q/XempLxa6\nhqgt0gUO9cMV2bfStsHKWJwq+KoncamBHpU/+CyNjoYq1QTC0urWlCP5hNo5VZhF\nzXBJa188FD2TiPFU8Z4EhercM83TfBsRVEQOpu5sbMaUOT6xXwnCWfM5Pjxy/0xE\n6oF2zq+H0ES12dh19C5P8ueRFLyhaWFliWJv3SXy9iCslcso6USnBBKnA26xMile\nY3m9uRP31yZW8czxYSIgKEV3Mp3GFAYwuebNjLgIM7xT+PvDiOO4qAhA0waGPhYH\n2QMl9ThSahKT6vpjVUQuGOjaRcJ5Vr73VGX4MnxXVxsl5de6y/ZfP5ndx5Lb4K43\njwrMbCIzrM1ZzR2JMTuMJFDasLjEW/Y9nf7FRh2gByeGLObAmHsjlUdW65QQu+Qy\nu4ADc6TbpqvLobocF5fKgML7JCAA/YqmYlZCV6gGOdKUXUT3VMmZcebcTtw1Zmxh\nwaUQe99D90w3Q/7CCCiGO2waZaTNl+ahVnQZEGHN9xJydkCkfVZDgVmdDmsSXmxo\n2DWf2c2/1me2zZAcW0SFBnyrt3uphdCnICaqXR0AnQUmw49YY4nk2fPTMxZs1r+2\n+poVVEfr//cHTTs4yu9ZVT2wGWf/Ooo4sm7obB8EhGkrXs3ormx9WHj6ezexupsd\nanWE7Uy54ovKdOosKB6nQOfP+Iwe4sSJ6oYPNvvh19v05+AhOCdONjMeCwTfBvtJ\nA5luj6CtFbgSX96A3zTRrTXQO3N4aLTF8niL+FcZ69RzYcxp3rlDSK88JyJ9xsu1\n+lNIcAPAFhzisC/eB9b1eDJ4JErJyIdBTZ4bPv4dtl/RpFcyIA4WMjskGCRo60I7\nN3DVqGGXLlC7KDjvPmdvvfAx3lzcIANhwBhLSQJ+y1bcyW6FcX0ZtY962Hb06Qj5\nXG5nDmT1qVkfDmzpIOF9GtDgch7gtf/EjHOUyaw60dDgJ5RF6lORLjFeuU9W7I1e\nD3mpWb6WP6DKoaQTgrLLrIJCLIdXr92XmvDj+iuYdGhCIkqHWqNbRW4TyiuukNJH\n12Zq/LlA1s58YJVa520o7EOXpmD4sGIrctlI3keSmKhiavy7j5ULz5J++jL+Yxlc\n6h9q4v71oyFmVgNpIEJNg7sSCkE72yzUCaglBUdUIMG3D0sI+VwufC7lbhohvHBr\nNzmbg2bW4x0CCprf/o5JvdNiB+bQdKG4t2Q7fhhZIW7ACii591ZBbpnUakDUQBZa\nV2yMaErypILHlQvlReHXVK1adUTxLNWf//VDoyclQk5k0uFIkUmpn+EXWnEHw7e8\n-----END
+        RSA PRIVATE KEY-----\n"}'}
+    headers:
+      Content-Length: ['2261']
+      Content-Type: [application/json]
+      Date: ['Mon, 01 Apr 2019 21:54:08 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request?serviceName=monitoring&apiName=CreateAlarm&lang=Python&sessionId=0836
+  response:
+    body: {string: '[{"containerId":"562aafbb-8c58-457a-b243-052013b836fd","request":{"createAlarmDetails":{"displayName":"Monitoring_Integration_Test_Alarm_0836","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","metricCompartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","namespace":"oci_telemetry","query":"RequestCount[1m].sum()
+        > 0","resolution":"1m","severity":"ERROR","destinations":["internal:{project:project,component:component,item:item}"],"isEnabled":true,"freeformTags":{"tag1":"value1.__STS0836_9001","tag2":"value2.__STS0836_9001"},"definedTags":{"testing_service_tag_ns_001":{"testing_service_tag_01":"tag4.__STS0836_6289","testing_service_tag_02":"tag5.__STS0836_6289","testing_service_tag_03":"tag6.__STS0836_6289"}}},"opcRetryToken":"2db7a5e8-3211-41b1-aae6-861c20d3a657"}}]'}
+    headers:
+      Content-Length: ['873']
+      Content-Type: [text/plain]
+      Date: ['Mon, 01 Apr 2019 21:54:08 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"displayName": "Monitoring_Integration_Test_Alarm_0836", "compartmentId":
+      "ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba",
+      "metricCompartmentId": "ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba",
+      "namespace": "oci_telemetry", "query": "RequestCount[1m].sum() > 0", "resolution":
+      "1m", "severity": "ERROR", "destinations": ["internal:{project:project,component:component,item:item}"],
+      "isEnabled": true, "freeformTags": {"tag1": "value1.__STS0836_9001", "tag2":
+      "value2.__STS0836_9001"}, "definedTags": {"testing_service_tag_ns_001": {"testing_service_tag_01":
+      "tag4.__STS0836_6289", "testing_service_tag_02": "tag5.__STS0836_6289", "testing_service_tag_03":
+      "tag6.__STS0836_6289"}}}'
+    headers:
+      Content-Length: ['758']
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host content-length content-type x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="PGLJKeWHigxGdQS043ctwLl8ax+4UcpgYev6P+va0MDmc1jHbETMNuDzNZV2SlyALVxEXUxCjCAZiZBz64fkXHjFM2T/D1Z7194kfmkzD6hB/no2K9bQsgmUx3F+u0voLS933BHcyYjCe6LKS/Vxmj93puIpYprE28sDL1jSmS7gFhBs9jWbzolbNVI/Rudwxm6jhK2oe7ASlHaSK1lDstRFLgEp2YOS4NWaYuV7IDGTjAly1jj62XSOejs4JFGBaevaFgU61gcBJOTnVTlgQq93j/833ggCC71FKtoGOW1J9ocfagEAbLhyObatcvaxkJiLk+lyzcb0eLJC6FCP3g==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Mon, 01 Apr 2019 21:54:08 GMT']
+      host: [telemetry.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.5]
+      opc-request-id: [E568950B3F6A4506B539872BF4747A61]
+      opc-retry-token: [2db7a5e8-3211-41b1-aae6-861c20d3a657]
+      user-agent: [Oracle-PythonSDK/2.2.5 (python 3.6.4; x86_64-Darwin)]
+      x-content-sha256: [4Qfpyz7CUf0XubipuHQY4DWXu6y206epxgWVr32z6P0=]
+    method: POST
+    uri: https://telemetry.us-phoenix-1.oraclecloud.com/20180401/alarms
+  response:
+    body: {string: "{\n  \"id\" : \"ocid1.alarm.oc1.phx.aaaaaaaajinvztaa2k7gylff5agmx5fcr7lssuy6peawwcx4fsiun7jszmva\"\
+        ,\n  \"displayName\" : \"Monitoring_Integration_Test_Alarm_0836\",\n  \"compartmentId\"\
+        \ : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"metricCompartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"metricCompartmentIdInSubtree\" : false,\n  \"namespace\" : \"oci_telemetry\"\
+        ,\n  \"query\" : \"RequestCount[1m].sum() > 0\",\n  \"resolution\" : \"1m\"\
+        ,\n  \"pendingDuration\" : \"PT1M\",\n  \"severity\" : \"ERROR\",\n  \"body\"\
+        \ : null,\n  \"destinations\" : [ \"internal:{project:project,component:component,item:item}\"\
+        \ ],\n  \"repeatNotificationDuration\" : null,\n  \"suppression\" : null,\n\
+        \  \"isEnabled\" : true,\n  \"freeformTags\" : {\n    \"tag1\" : \"value1.__STS0836_9001\"\
+        ,\n    \"tag2\" : \"value2.__STS0836_9001\"\n  },\n  \"definedTags\" : {\n\
+        \    \"testing_service_tag_ns_001\" : {\n      \"testing_service_tag_01\"\
+        \ : \"tag4.__STS0836_6289\",\n      \"testing_service_tag_02\" : \"tag5.__STS0836_6289\"\
+        ,\n      \"testing_service_tag_03\" : \"tag6.__STS0836_6289\"\n    }\n  },\n\
+        \  \"lifecycleState\" : \"ACTIVE\",\n  \"timeCreated\" : \"2019-04-01T21:54:09.475Z\"\
+        ,\n  \"timeUpdated\" : \"2019-04-01T21:54:09.475Z\"\n}"}
+    headers:
+      Content-Length: ['1213']
+      Content-Type: [application/json]
+      Date: ['Mon, 01 Apr 2019 21:54:09 GMT']
+      opc-request-id: [E568950B3F6A4506B539872BF4747A61/36A978C2427571844428F564537CB1F7/8639288A0BD3FC166DB7FA88327F54EE]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"containerId": "562aafbb-8c58-457a-b243-052013b836fd", "listResponse":
+      false, "requestClass": "com.oracle.bmc.monitoring.requests.CreateAlarmRequest",
+      "requestJson": "{\"createAlarmDetails\": {\"displayName\": \"Monitoring_Integration_Test_Alarm_0836\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"metricCompartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"namespace\": \"oci_telemetry\", \"query\": \"RequestCount[1m].sum() > 0\",
+      \"resolution\": \"1m\", \"severity\": \"ERROR\", \"destinations\": [\"internal:{project:project,component:component,item:item}\"],
+      \"isEnabled\": true, \"freeformTags\": {\"tag1\": \"value1.__STS0836_9001\",
+      \"tag2\": \"value2.__STS0836_9001\"}, \"definedTags\": {\"testing_service_tag_ns_001\":
+      {\"testing_service_tag_01\": \"tag4.__STS0836_6289\", \"testing_service_tag_02\":
+      \"tag5.__STS0836_6289\", \"testing_service_tag_03\": \"tag6.__STS0836_6289\"}}},
+      \"opcRetryToken\": \"2db7a5e8-3211-41b1-aae6-861c20d3a657\"}", "responseJson":
+      "{\"alarm\": {\"id\": \"ocid1.alarm.oc1.phx.aaaaaaaajinvztaa2k7gylff5agmx5fcr7lssuy6peawwcx4fsiun7jszmva\",
+      \"displayName\": \"Monitoring_Integration_Test_Alarm_0836\", \"compartmentId\":
+      \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"metricCompartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"metricCompartmentIdInSubtree\": false, \"namespace\": \"oci_telemetry\", \"query\":
+      \"RequestCount[1m].sum() > 0\", \"resolution\": \"1m\", \"pendingDuration\":
+      \"PT1M\", \"severity\": \"ERROR\", \"body\": null, \"destinations\": [\"internal:{project:project,component:component,item:item}\"],
+      \"repeatNotificationDuration\": null, \"suppression\": null, \"isEnabled\":
+      true, \"freeformTags\": {\"tag1\": \"value1.__STS0836_9001\", \"tag2\": \"value2.__STS0836_9001\"},
+      \"definedTags\": {\"testingServiceTagNs001\": {\"testingServiceTag01\": \"tag4.__STS0836_6289\",
+      \"testingServiceTag02\": \"tag5.__STS0836_6289\", \"testingServiceTag03\": \"tag6.__STS0836_6289\"}},
+      \"lifecycleState\": \"ACTIVE\", \"timeCreated\": \"2019-04-01T21:54:09.475000+00:00\",
+      \"timeUpdated\": \"2019-04-01T21:54:09.475000+00:00\"}, \"opcRequestId\": \"D5480E5A34794FF1B1CA91E756F46850\",
+      \"opcNextPage\": null}", "responseClass": "com.oracle.bmc.monitoring.responses.CreateAlarmResponse"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2453']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=0836&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Mon, 01 Apr 2019 21:54:09 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+version: 1

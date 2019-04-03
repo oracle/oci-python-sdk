@@ -28,9 +28,14 @@ def vcr_fixture(request):
         yield
 
 
-def test_attach_load_balancer(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_attach_load_balancer(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'AttachLoadBalancer'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute_management'), 'AttachLoadBalancer')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='AttachLoadBalancer')
 
@@ -40,9 +45,6 @@ def test_attach_load_balancer(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.ComputeManagementClient(config)
             response = client.attach_load_balancer(
                 instance_pool_id=request.pop(util.camelize('instance_pool_id')),
@@ -66,9 +68,14 @@ def test_attach_load_balancer(testing_service_client, config):
         )
 
 
-def test_create_instance_configuration(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_create_instance_configuration(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'CreateInstanceConfiguration'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute_management'), 'CreateInstanceConfiguration')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='CreateInstanceConfiguration')
 
@@ -78,9 +85,6 @@ def test_create_instance_configuration(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.ComputeManagementClient(config)
             response = client.create_instance_configuration(
                 create_instance_configuration=request.pop(util.camelize('create_instance_configuration')),
@@ -103,9 +107,14 @@ def test_create_instance_configuration(testing_service_client, config):
         )
 
 
-def test_create_instance_pool(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_create_instance_pool(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'CreateInstancePool'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute_management'), 'CreateInstancePool')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='CreateInstancePool')
 
@@ -115,9 +124,6 @@ def test_create_instance_pool(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.ComputeManagementClient(config)
             response = client.create_instance_pool(
                 create_instance_pool_details=request.pop(util.camelize('create_instance_pool_details')),
@@ -140,9 +146,14 @@ def test_create_instance_pool(testing_service_client, config):
         )
 
 
-def test_delete_instance_configuration(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_delete_instance_configuration(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'DeleteInstanceConfiguration'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute_management'), 'DeleteInstanceConfiguration')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='DeleteInstanceConfiguration')
 
@@ -152,9 +163,6 @@ def test_delete_instance_configuration(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.ComputeManagementClient(config)
             response = client.delete_instance_configuration(
                 instance_configuration_id=request.pop(util.camelize('instance_configuration_id')),
@@ -177,9 +185,14 @@ def test_delete_instance_configuration(testing_service_client, config):
         )
 
 
-def test_detach_load_balancer(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_detach_load_balancer(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'DetachLoadBalancer'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute_management'), 'DetachLoadBalancer')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='DetachLoadBalancer')
 
@@ -189,9 +202,6 @@ def test_detach_load_balancer(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.ComputeManagementClient(config)
             response = client.detach_load_balancer(
                 instance_pool_id=request.pop(util.camelize('instance_pool_id')),
@@ -215,9 +225,14 @@ def test_detach_load_balancer(testing_service_client, config):
         )
 
 
-def test_get_instance_configuration(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_get_instance_configuration(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetInstanceConfiguration'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute_management'), 'GetInstanceConfiguration')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='GetInstanceConfiguration')
 
@@ -227,9 +242,6 @@ def test_get_instance_configuration(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.ComputeManagementClient(config)
             response = client.get_instance_configuration(
                 instance_configuration_id=request.pop(util.camelize('instance_configuration_id')),
@@ -252,9 +264,14 @@ def test_get_instance_configuration(testing_service_client, config):
         )
 
 
-def test_get_instance_pool(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_get_instance_pool(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetInstancePool'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute_management'), 'GetInstancePool')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='GetInstancePool')
 
@@ -264,9 +281,6 @@ def test_get_instance_pool(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.ComputeManagementClient(config)
             response = client.get_instance_pool(
                 instance_pool_id=request.pop(util.camelize('instance_pool_id')),
@@ -289,9 +303,14 @@ def test_get_instance_pool(testing_service_client, config):
         )
 
 
-def test_launch_instance_configuration(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_launch_instance_configuration(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'LaunchInstanceConfiguration'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute_management'), 'LaunchInstanceConfiguration')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='LaunchInstanceConfiguration')
 
@@ -301,9 +320,6 @@ def test_launch_instance_configuration(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.ComputeManagementClient(config)
             response = client.launch_instance_configuration(
                 instance_configuration_id=request.pop(util.camelize('instance_configuration_id')),
@@ -327,9 +343,14 @@ def test_launch_instance_configuration(testing_service_client, config):
         )
 
 
-def test_list_instance_configurations(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_list_instance_configurations(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ListInstanceConfigurations'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute_management'), 'ListInstanceConfigurations')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='ListInstanceConfigurations')
 
@@ -339,9 +360,6 @@ def test_list_instance_configurations(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.ComputeManagementClient(config)
             response = client.list_instance_configurations(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -383,9 +401,14 @@ def test_list_instance_configurations(testing_service_client, config):
         )
 
 
-def test_list_instance_pool_instances(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_list_instance_pool_instances(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ListInstancePoolInstances'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute_management'), 'ListInstancePoolInstances')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='ListInstancePoolInstances')
 
@@ -395,9 +418,6 @@ def test_list_instance_pool_instances(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.ComputeManagementClient(config)
             response = client.list_instance_pool_instances(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -442,9 +462,14 @@ def test_list_instance_pool_instances(testing_service_client, config):
         )
 
 
-def test_list_instance_pools(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_list_instance_pools(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ListInstancePools'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute_management'), 'ListInstancePools')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='ListInstancePools')
 
@@ -454,9 +479,6 @@ def test_list_instance_pools(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.ComputeManagementClient(config)
             response = client.list_instance_pools(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -498,9 +520,14 @@ def test_list_instance_pools(testing_service_client, config):
         )
 
 
-def test_reset_instance_pool(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_reset_instance_pool(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ResetInstancePool'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute_management'), 'ResetInstancePool')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='ResetInstancePool')
 
@@ -510,9 +537,6 @@ def test_reset_instance_pool(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.ComputeManagementClient(config)
             response = client.reset_instance_pool(
                 instance_pool_id=request.pop(util.camelize('instance_pool_id')),
@@ -535,9 +559,14 @@ def test_reset_instance_pool(testing_service_client, config):
         )
 
 
-def test_softreset_instance_pool(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_softreset_instance_pool(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'SoftresetInstancePool'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute_management'), 'SoftresetInstancePool')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='SoftresetInstancePool')
 
@@ -547,9 +576,6 @@ def test_softreset_instance_pool(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.ComputeManagementClient(config)
             response = client.softreset_instance_pool(
                 instance_pool_id=request.pop(util.camelize('instance_pool_id')),
@@ -572,9 +598,14 @@ def test_softreset_instance_pool(testing_service_client, config):
         )
 
 
-def test_start_instance_pool(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_start_instance_pool(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'StartInstancePool'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute_management'), 'StartInstancePool')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='StartInstancePool')
 
@@ -584,9 +615,6 @@ def test_start_instance_pool(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.ComputeManagementClient(config)
             response = client.start_instance_pool(
                 instance_pool_id=request.pop(util.camelize('instance_pool_id')),
@@ -609,9 +637,14 @@ def test_start_instance_pool(testing_service_client, config):
         )
 
 
-def test_stop_instance_pool(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_stop_instance_pool(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'StopInstancePool'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute_management'), 'StopInstancePool')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='StopInstancePool')
 
@@ -621,9 +654,6 @@ def test_stop_instance_pool(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.ComputeManagementClient(config)
             response = client.stop_instance_pool(
                 instance_pool_id=request.pop(util.camelize('instance_pool_id')),
@@ -646,9 +676,14 @@ def test_stop_instance_pool(testing_service_client, config):
         )
 
 
-def test_terminate_instance_pool(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_terminate_instance_pool(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'TerminateInstancePool'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute_management'), 'TerminateInstancePool')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='TerminateInstancePool')
 
@@ -658,9 +693,6 @@ def test_terminate_instance_pool(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.ComputeManagementClient(config)
             response = client.terminate_instance_pool(
                 instance_pool_id=request.pop(util.camelize('instance_pool_id')),
@@ -683,9 +715,14 @@ def test_terminate_instance_pool(testing_service_client, config):
         )
 
 
-def test_update_instance_configuration(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_update_instance_configuration(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'UpdateInstanceConfiguration'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute_management'), 'UpdateInstanceConfiguration')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='UpdateInstanceConfiguration')
 
@@ -695,9 +732,6 @@ def test_update_instance_configuration(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.ComputeManagementClient(config)
             response = client.update_instance_configuration(
                 instance_configuration_id=request.pop(util.camelize('instance_configuration_id')),
@@ -721,9 +755,14 @@ def test_update_instance_configuration(testing_service_client, config):
         )
 
 
-def test_update_instance_pool(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_update_instance_pool(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'UpdateInstancePool'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute_management'), 'UpdateInstancePool')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='UpdateInstancePool')
 
@@ -733,9 +772,6 @@ def test_update_instance_pool(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.ComputeManagementClient(config)
             response = client.update_instance_pool(
                 instance_pool_id=request.pop(util.camelize('instance_pool_id')),

@@ -1,0 +1,137 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request/enable?lang=Python&serviceName=autoscaling&apiName=UpdateAutoScalingConfiguration
+  response:
+    body: {string: 'true'}
+    headers:
+      Content-Length: ['4']
+      Content-Type: [text/plain]
+      Date: ['Mon, 01 Apr 2019 21:46:35 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request?serviceName=autoscaling&apiName=UpdateAutoScalingConfiguration&lang=Python&sessionId=0836
+  response:
+    body: {string: '[{"containerId":"c923837e-e960-42e9-8303-53d118cbd675","request":{"autoScalingConfigurationId":"ocid1.autoscalingconfiguration.oc1.phx.aaaaaaaaz4naqkribslecbjmesndqtata5ruwirjbqh2eknztbuoxsnwvyda","updateAutoScalingConfigurationDetails":{"definedTags":{"testing_service_tag_ns_001":{"testing_service_tag_01":"tag4.__STS0836_7866","testing_service_tag_02":"tag5.__STS0836_7866","testing_service_tag_03":"tag6.__STS0836_7866"}},"displayName":"__STS0836_4947","freeformTags":{"tag1":"value1.__STS0836_2434","tag2":"value2.__STS0836_2434"}},"opcRetryToken":"4d3c42dd-8d46-4a3a-b5eb-20b43543682a"}}]'}
+    headers:
+      Content-Length: ['594']
+      Content-Type: [text/plain]
+      Date: ['Mon, 01 Apr 2019 21:46:35 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"definedTags": {"testing_service_tag_ns_001": {"testing_service_tag_01":
+      "tag4.__STS0836_7866", "testing_service_tag_02": "tag5.__STS0836_7866", "testing_service_tag_03":
+      "tag6.__STS0836_7866"}}, "displayName": "__STS0836_4947", "freeformTags": {"tag1":
+      "value1.__STS0836_2434", "tag2": "value2.__STS0836_2434"}}'
+    headers:
+      Content-Length: ['313']
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host content-length content-type x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/e1:8d:6a:cb:74:ed:25:51:a2:9f:38:a4:71:42:01:c8",signature="a0bpyZLJbCZdi4HXJDVScqn/N2Y3WDfMMgnwFzhhFaHlQH7Nt5VviRpm2knEt8TQvs6u3QTksq4Qy7w0Fgs07kbQWob4IE4ejUQRSwTMb3C5uMqG01gGZRZHegzw39ilALOfc3SgOcZp/rbeAoZjb+V6I5JLZlkpRyLQJLnLjy0touFjpycibmCeIeHO1vHKwjqX9C7L1XpIL1E6SqGyIDnk6+QQf2l6kgQElXw0Hg+3IWd+IHlZ8ME+W1oQjKaATU3T9crmET4y+EtuWSrw8VIYQcpCwcq6iCJvtr/WFVWRcmcvsAr+HoENr/lzD4bKeg5KCDnH6PWI2XFqH+1Peg==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Mon, 01 Apr 2019 21:46:36 GMT']
+      host: [autoscaling.us-phoenix-1.oci.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.5]
+      opc-request-id: [9FE3F1379147412B8809CA7AC4454F76]
+      opc-retry-token: [4d3c42dd-8d46-4a3a-b5eb-20b43543682a]
+      user-agent: [Oracle-PythonSDK/2.2.5 (python 3.6.4; x86_64-Darwin)]
+      x-content-sha256: [S53gP2sholX92Ii4s9tfAiV0lfRtImM4o1rXf1eEn64=]
+    method: PUT
+    uri: https://autoscaling.us-phoenix-1.oci.oraclecloud.com/20181001/autoScalingConfigurations/ocid1.autoscalingconfiguration.oc1.phx.aaaaaaaaz4naqkribslecbjmesndqtata5ruwirjbqh2eknztbuoxsnwvyda
+  response:
+    body: {string: "{\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"definedTags\" : {\n    \"testing_service_tag_ns_001\" : {\n      \"\
+        testing_service_tag_01\" : \"tag4.__STS0836_7866\",\n      \"testing_service_tag_02\"\
+        \ : \"tag5.__STS0836_7866\",\n      \"testing_service_tag_03\" : \"tag6.__STS0836_7866\"\
+        \n    }\n  },\n  \"displayName\" : \"__STS0836_4947\",\n  \"freeformTags\"\
+        \ : {\n    \"tag1\" : \"value1.__STS0836_2434\",\n    \"tag2\" : \"value2.__STS0836_2434\"\
+        \n  },\n  \"id\" : \"ocid1.autoscalingconfiguration.oc1.phx.aaaaaaaaz4naqkribslecbjmesndqtata5ruwirjbqh2eknztbuoxsnwvyda\"\
+        ,\n  \"coolDownInSeconds\" : 300,\n  \"isEnabled\" : true,\n  \"resource\"\
+        \ : {\n    \"type\" : \"instancePool\",\n    \"id\" : \"ocid1.instancepool.oc1.phx.aaaaaaaapqs7p55mk2p7mh6qiasbsgxferg5bw7oyizq4zrihnh3xdnkkjma\"\
+        \n  },\n  \"policies\" : [ {\n    \"policyType\" : \"threshold\",\n    \"\
+        capacity\" : {\n      \"max\" : 3,\n      \"min\" : 1,\n      \"initial\"\
+        \ : 2\n    },\n    \"id\" : \"2dae9c90-a5de-48be-afb5-7228e0fc1c1c\",\n  \
+        \  \"displayName\" : \"policy20190401214046\",\n    \"timeCreated\" : \"2019-04-01T21:40:46.285Z\"\
+        ,\n    \"rules\" : [ {\n      \"action\" : {\n        \"type\" : \"CHANGE_COUNT_BY\"\
+        ,\n        \"value\" : -1\n      },\n      \"displayName\" : \"scalein\",\n\
+        \      \"id\" : \"4934b4d0-f7e4-4f72-b611-017ffcc06569\",\n      \"metric\"\
+        \ : {\n        \"metricType\" : \"CPU_UTILIZATION\",\n        \"threshold\"\
+        \ : {\n          \"operator\" : \"LT\",\n          \"value\" : 30\n      \
+        \  }\n      }\n    }, {\n      \"action\" : {\n        \"type\" : \"CHANGE_COUNT_BY\"\
+        ,\n        \"value\" : 1\n      },\n      \"displayName\" : \"scaleout\",\n\
+        \      \"id\" : \"8d6f46bc-4620-4513-a710-f9b024a644ca\",\n      \"metric\"\
+        \ : {\n        \"metricType\" : \"CPU_UTILIZATION\",\n        \"threshold\"\
+        \ : {\n          \"operator\" : \"GT\",\n          \"value\" : 70\n      \
+        \  }\n      }\n    } ]\n  } ],\n  \"timeCreated\" : \"2019-04-01T21:40:48.151Z\"\
+        \n}"}
+    headers:
+      Connection: [keep-alive]
+      Content-Length: ['1810']
+      Content-Type: [application/json]
+      Date: ['Mon, 01 Apr 2019 21:46:37 GMT']
+      ETag: [0d3d90c9f96897ba14e0c39aa32fdb947f66db43c8110b35e4fde4746e69c9c5]
+      opc-request-id: [9FE3F1379147412B8809CA7AC4454F76/6370CC6D0E87336EB2DACF8B7775116B/C771C3CDBAD2FD12EE4098BF718511B1]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"containerId": "c923837e-e960-42e9-8303-53d118cbd675", "listResponse":
+      false, "requestClass": "com.oracle.bmc.autoscaling.requests.UpdateAutoScalingConfigurationRequest",
+      "requestJson": "{\"autoScalingConfigurationId\": \"ocid1.autoscalingconfiguration.oc1.phx.aaaaaaaaz4naqkribslecbjmesndqtata5ruwirjbqh2eknztbuoxsnwvyda\",
+      \"updateAutoScalingConfigurationDetails\": {\"definedTags\": {\"testing_service_tag_ns_001\":
+      {\"testing_service_tag_01\": \"tag4.__STS0836_7866\", \"testing_service_tag_02\":
+      \"tag5.__STS0836_7866\", \"testing_service_tag_03\": \"tag6.__STS0836_7866\"}},
+      \"displayName\": \"__STS0836_4947\", \"freeformTags\": {\"tag1\": \"value1.__STS0836_2434\",
+      \"tag2\": \"value2.__STS0836_2434\"}}, \"opcRetryToken\": \"4d3c42dd-8d46-4a3a-b5eb-20b43543682a\"}",
+      "responseJson": "{\"autoScalingConfiguration\": {\"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"definedTags\": {\"testingServiceTagNs001\": {\"testingServiceTag01\": \"tag4.__STS0836_7866\",
+      \"testingServiceTag02\": \"tag5.__STS0836_7866\", \"testingServiceTag03\": \"tag6.__STS0836_7866\"}},
+      \"displayName\": \"__STS0836_4947\", \"freeformTags\": {\"tag1\": \"value1.__STS0836_2434\",
+      \"tag2\": \"value2.__STS0836_2434\"}, \"id\": \"ocid1.autoscalingconfiguration.oc1.phx.aaaaaaaaz4naqkribslecbjmesndqtata5ruwirjbqh2eknztbuoxsnwvyda\",
+      \"coolDownInSeconds\": 300, \"isEnabled\": true, \"resource\": {\"type\": \"instancePool\",
+      \"id\": \"ocid1.instancepool.oc1.phx.aaaaaaaapqs7p55mk2p7mh6qiasbsgxferg5bw7oyizq4zrihnh3xdnkkjma\"},
+      \"policies\": [{\"capacity\": {\"max\": 3, \"min\": 1, \"initial\": 2}, \"id\":
+      \"2dae9c90-a5de-48be-afb5-7228e0fc1c1c\", \"displayName\": \"policy20190401214046\",
+      \"policyType\": \"threshold\", \"timeCreated\": \"2019-04-01T21:40:46.285000+00:00\",
+      \"rules\": [{\"action\": {\"type\": \"CHANGE_COUNT_BY\", \"value\": -1}, \"displayName\":
+      \"scalein\", \"id\": \"4934b4d0-f7e4-4f72-b611-017ffcc06569\", \"metric\": {\"metricType\":
+      \"CPU_UTILIZATION\", \"threshold\": {\"operator\": \"LT\", \"value\": 30}}},
+      {\"action\": {\"type\": \"CHANGE_COUNT_BY\", \"value\": 1}, \"displayName\":
+      \"scaleout\", \"id\": \"8d6f46bc-4620-4513-a710-f9b024a644ca\", \"metric\":
+      {\"metricType\": \"CPU_UTILIZATION\", \"threshold\": {\"operator\": \"GT\",
+      \"value\": 70}}}]}], \"timeCreated\": \"2019-04-01T21:40:48.151000+00:00\"},
+      \"opcRequestId\": \"5CB8050F71C8479BBCBA7B352FC86061\", \"opcNextPage\": null,
+      \"eTag\": \"0d3d90c9f96897ba14e0c39aa32fdb947f66db43c8110b35e4fde4746e69c9c5\"}",
+      "responseClass": "com.oracle.bmc.autoscaling.responses.UpdateAutoScalingConfigurationResponse"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2643']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=0836&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Mon, 01 Apr 2019 21:46:37 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+version: 1

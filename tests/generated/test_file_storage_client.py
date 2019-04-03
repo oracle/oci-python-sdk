@@ -28,9 +28,14 @@ def vcr_fixture(request):
         yield
 
 
-def test_create_export(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_create_export(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'CreateExport'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'CreateExport')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='CreateExport')
 
@@ -40,9 +45,6 @@ def test_create_export(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.file_storage.FileStorageClient(config)
             response = client.create_export(
                 create_export_details=request.pop(util.camelize('create_export_details')),
@@ -65,9 +67,14 @@ def test_create_export(testing_service_client, config):
         )
 
 
-def test_create_file_system(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_create_file_system(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'CreateFileSystem'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'CreateFileSystem')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='CreateFileSystem')
 
@@ -77,9 +84,6 @@ def test_create_file_system(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.file_storage.FileStorageClient(config)
             response = client.create_file_system(
                 create_file_system_details=request.pop(util.camelize('create_file_system_details')),
@@ -102,9 +106,14 @@ def test_create_file_system(testing_service_client, config):
         )
 
 
-def test_create_mount_target(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_create_mount_target(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'CreateMountTarget'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'CreateMountTarget')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='CreateMountTarget')
 
@@ -114,9 +123,6 @@ def test_create_mount_target(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.file_storage.FileStorageClient(config)
             response = client.create_mount_target(
                 create_mount_target_details=request.pop(util.camelize('create_mount_target_details')),
@@ -139,9 +145,14 @@ def test_create_mount_target(testing_service_client, config):
         )
 
 
-def test_create_snapshot(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_create_snapshot(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'CreateSnapshot'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'CreateSnapshot')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='CreateSnapshot')
 
@@ -151,9 +162,6 @@ def test_create_snapshot(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.file_storage.FileStorageClient(config)
             response = client.create_snapshot(
                 create_snapshot_details=request.pop(util.camelize('create_snapshot_details')),
@@ -176,9 +184,14 @@ def test_create_snapshot(testing_service_client, config):
         )
 
 
-def test_delete_export(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_delete_export(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'DeleteExport'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'DeleteExport')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='DeleteExport')
 
@@ -188,9 +201,6 @@ def test_delete_export(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.file_storage.FileStorageClient(config)
             response = client.delete_export(
                 export_id=request.pop(util.camelize('export_id')),
@@ -213,9 +223,14 @@ def test_delete_export(testing_service_client, config):
         )
 
 
-def test_delete_file_system(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_delete_file_system(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'DeleteFileSystem'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'DeleteFileSystem')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='DeleteFileSystem')
 
@@ -225,9 +240,6 @@ def test_delete_file_system(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.file_storage.FileStorageClient(config)
             response = client.delete_file_system(
                 file_system_id=request.pop(util.camelize('file_system_id')),
@@ -250,9 +262,14 @@ def test_delete_file_system(testing_service_client, config):
         )
 
 
-def test_delete_mount_target(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_delete_mount_target(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'DeleteMountTarget'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'DeleteMountTarget')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='DeleteMountTarget')
 
@@ -262,9 +279,6 @@ def test_delete_mount_target(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.file_storage.FileStorageClient(config)
             response = client.delete_mount_target(
                 mount_target_id=request.pop(util.camelize('mount_target_id')),
@@ -287,9 +301,14 @@ def test_delete_mount_target(testing_service_client, config):
         )
 
 
-def test_delete_snapshot(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_delete_snapshot(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'DeleteSnapshot'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'DeleteSnapshot')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='DeleteSnapshot')
 
@@ -299,9 +318,6 @@ def test_delete_snapshot(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.file_storage.FileStorageClient(config)
             response = client.delete_snapshot(
                 snapshot_id=request.pop(util.camelize('snapshot_id')),
@@ -324,9 +340,14 @@ def test_delete_snapshot(testing_service_client, config):
         )
 
 
-def test_get_export(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_get_export(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'GetExport'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'GetExport')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='GetExport')
 
@@ -336,9 +357,6 @@ def test_get_export(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.file_storage.FileStorageClient(config)
             response = client.get_export(
                 export_id=request.pop(util.camelize('export_id')),
@@ -361,9 +379,14 @@ def test_get_export(testing_service_client, config):
         )
 
 
-def test_get_export_set(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_get_export_set(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'GetExportSet'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'GetExportSet')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='GetExportSet')
 
@@ -373,9 +396,6 @@ def test_get_export_set(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.file_storage.FileStorageClient(config)
             response = client.get_export_set(
                 export_set_id=request.pop(util.camelize('export_set_id')),
@@ -398,9 +418,14 @@ def test_get_export_set(testing_service_client, config):
         )
 
 
-def test_get_file_system(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_get_file_system(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'GetFileSystem'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'GetFileSystem')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='GetFileSystem')
 
@@ -410,9 +435,6 @@ def test_get_file_system(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.file_storage.FileStorageClient(config)
             response = client.get_file_system(
                 file_system_id=request.pop(util.camelize('file_system_id')),
@@ -435,9 +457,14 @@ def test_get_file_system(testing_service_client, config):
         )
 
 
-def test_get_mount_target(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_get_mount_target(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'GetMountTarget'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'GetMountTarget')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='GetMountTarget')
 
@@ -447,9 +474,6 @@ def test_get_mount_target(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.file_storage.FileStorageClient(config)
             response = client.get_mount_target(
                 mount_target_id=request.pop(util.camelize('mount_target_id')),
@@ -472,9 +496,14 @@ def test_get_mount_target(testing_service_client, config):
         )
 
 
-def test_get_snapshot(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_get_snapshot(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'GetSnapshot'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'GetSnapshot')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='GetSnapshot')
 
@@ -484,9 +513,6 @@ def test_get_snapshot(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.file_storage.FileStorageClient(config)
             response = client.get_snapshot(
                 snapshot_id=request.pop(util.camelize('snapshot_id')),
@@ -509,9 +535,14 @@ def test_get_snapshot(testing_service_client, config):
         )
 
 
-def test_list_export_sets(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_list_export_sets(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'ListExportSets'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'ListExportSets')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='ListExportSets')
 
@@ -521,9 +552,6 @@ def test_list_export_sets(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.file_storage.FileStorageClient(config)
             response = client.list_export_sets(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -568,9 +596,14 @@ def test_list_export_sets(testing_service_client, config):
         )
 
 
-def test_list_exports(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_list_exports(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'ListExports'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'ListExports')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='ListExports')
 
@@ -580,9 +613,6 @@ def test_list_exports(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.file_storage.FileStorageClient(config)
             response = client.list_exports(
                 **(util.camel_to_snake_keys(request))
@@ -621,9 +651,14 @@ def test_list_exports(testing_service_client, config):
         )
 
 
-def test_list_file_systems(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_list_file_systems(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'ListFileSystems'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'ListFileSystems')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='ListFileSystems')
 
@@ -633,9 +668,6 @@ def test_list_file_systems(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.file_storage.FileStorageClient(config)
             response = client.list_file_systems(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -680,9 +712,14 @@ def test_list_file_systems(testing_service_client, config):
         )
 
 
-def test_list_mount_targets(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_list_mount_targets(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'ListMountTargets'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'ListMountTargets')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='ListMountTargets')
 
@@ -692,9 +729,6 @@ def test_list_mount_targets(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.file_storage.FileStorageClient(config)
             response = client.list_mount_targets(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -739,9 +773,14 @@ def test_list_mount_targets(testing_service_client, config):
         )
 
 
-def test_list_snapshots(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_list_snapshots(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'ListSnapshots'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'ListSnapshots')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='ListSnapshots')
 
@@ -751,9 +790,6 @@ def test_list_snapshots(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.file_storage.FileStorageClient(config)
             response = client.list_snapshots(
                 file_system_id=request.pop(util.camelize('file_system_id')),
@@ -795,9 +831,14 @@ def test_list_snapshots(testing_service_client, config):
         )
 
 
-def test_update_export(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_update_export(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'UpdateExport'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'UpdateExport')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='UpdateExport')
 
@@ -807,9 +848,6 @@ def test_update_export(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.file_storage.FileStorageClient(config)
             response = client.update_export(
                 export_id=request.pop(util.camelize('export_id')),
@@ -833,9 +871,14 @@ def test_update_export(testing_service_client, config):
         )
 
 
-def test_update_export_set(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_update_export_set(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'UpdateExportSet'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'UpdateExportSet')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='UpdateExportSet')
 
@@ -845,9 +888,6 @@ def test_update_export_set(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.file_storage.FileStorageClient(config)
             response = client.update_export_set(
                 export_set_id=request.pop(util.camelize('export_set_id')),
@@ -871,9 +911,14 @@ def test_update_export_set(testing_service_client, config):
         )
 
 
-def test_update_file_system(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_update_file_system(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'UpdateFileSystem'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'UpdateFileSystem')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='UpdateFileSystem')
 
@@ -883,9 +928,6 @@ def test_update_file_system(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.file_storage.FileStorageClient(config)
             response = client.update_file_system(
                 file_system_id=request.pop(util.camelize('file_system_id')),
@@ -909,9 +951,14 @@ def test_update_file_system(testing_service_client, config):
         )
 
 
-def test_update_mount_target(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_update_mount_target(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'UpdateMountTarget'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'UpdateMountTarget')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='UpdateMountTarget')
 
@@ -921,9 +968,6 @@ def test_update_mount_target(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.file_storage.FileStorageClient(config)
             response = client.update_mount_target(
                 mount_target_id=request.pop(util.camelize('mount_target_id')),
@@ -947,9 +991,14 @@ def test_update_mount_target(testing_service_client, config):
         )
 
 
-def test_update_snapshot(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_update_snapshot(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'UpdateSnapshot'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'UpdateSnapshot')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='UpdateSnapshot')
 
@@ -959,9 +1008,6 @@ def test_update_snapshot(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.file_storage.FileStorageClient(config)
             response = client.update_snapshot(
                 snapshot_id=request.pop(util.camelize('snapshot_id')),

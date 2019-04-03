@@ -28,9 +28,14 @@ def vcr_fixture(request):
         yield
 
 
-def test_create_alarm(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="pic_ion_dev_grp@oracle.com" jiraProject="https://jira.oci.oraclecorp.com/projects/TEL" opsJiraProject="https://jira-sd.mc1.oracleiaas.com/projects/TEL"
+def test_create_alarm(testing_service_client):
     if not testing_service_client.is_api_enabled('monitoring', 'CreateAlarm'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('monitoring', util.camelize('monitoring'), 'CreateAlarm')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='monitoring', api_name='CreateAlarm')
 
@@ -40,9 +45,6 @@ def test_create_alarm(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.monitoring.MonitoringClient(config)
             response = client.create_alarm(
                 create_alarm_details=request.pop(util.camelize('create_alarm_details')),
@@ -65,9 +67,14 @@ def test_create_alarm(testing_service_client, config):
         )
 
 
-def test_delete_alarm(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="pic_ion_dev_grp@oracle.com" jiraProject="https://jira.oci.oraclecorp.com/projects/TEL" opsJiraProject="https://jira-sd.mc1.oracleiaas.com/projects/TEL"
+def test_delete_alarm(testing_service_client):
     if not testing_service_client.is_api_enabled('monitoring', 'DeleteAlarm'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('monitoring', util.camelize('monitoring'), 'DeleteAlarm')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='monitoring', api_name='DeleteAlarm')
 
@@ -77,9 +84,6 @@ def test_delete_alarm(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.monitoring.MonitoringClient(config)
             response = client.delete_alarm(
                 alarm_id=request.pop(util.camelize('alarm_id')),
@@ -102,9 +106,14 @@ def test_delete_alarm(testing_service_client, config):
         )
 
 
-def test_get_alarm(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="pic_ion_dev_grp@oracle.com" jiraProject="https://jira.oci.oraclecorp.com/projects/TEL" opsJiraProject="https://jira-sd.mc1.oracleiaas.com/projects/TEL"
+def test_get_alarm(testing_service_client):
     if not testing_service_client.is_api_enabled('monitoring', 'GetAlarm'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('monitoring', util.camelize('monitoring'), 'GetAlarm')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='monitoring', api_name='GetAlarm')
 
@@ -114,9 +123,6 @@ def test_get_alarm(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.monitoring.MonitoringClient(config)
             response = client.get_alarm(
                 alarm_id=request.pop(util.camelize('alarm_id')),
@@ -139,9 +145,14 @@ def test_get_alarm(testing_service_client, config):
         )
 
 
-def test_get_alarm_history(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="pic_ion_dev_grp@oracle.com" jiraProject="https://jira.oci.oraclecorp.com/projects/TEL" opsJiraProject="https://jira-sd.mc1.oracleiaas.com/projects/TEL"
+def test_get_alarm_history(testing_service_client):
     if not testing_service_client.is_api_enabled('monitoring', 'GetAlarmHistory'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('monitoring', util.camelize('monitoring'), 'GetAlarmHistory')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='monitoring', api_name='GetAlarmHistory')
 
@@ -151,9 +162,6 @@ def test_get_alarm_history(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.monitoring.MonitoringClient(config)
             response = client.get_alarm_history(
                 alarm_id=request.pop(util.camelize('alarm_id')),
@@ -195,9 +203,14 @@ def test_get_alarm_history(testing_service_client, config):
         )
 
 
-def test_list_alarms(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="pic_ion_dev_grp@oracle.com" jiraProject="https://jira.oci.oraclecorp.com/projects/TEL" opsJiraProject="https://jira-sd.mc1.oracleiaas.com/projects/TEL"
+def test_list_alarms(testing_service_client):
     if not testing_service_client.is_api_enabled('monitoring', 'ListAlarms'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('monitoring', util.camelize('monitoring'), 'ListAlarms')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='monitoring', api_name='ListAlarms')
 
@@ -207,9 +220,6 @@ def test_list_alarms(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.monitoring.MonitoringClient(config)
             response = client.list_alarms(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -251,9 +261,14 @@ def test_list_alarms(testing_service_client, config):
         )
 
 
-def test_list_alarms_status(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="pic_ion_dev_grp@oracle.com" jiraProject="https://jira.oci.oraclecorp.com/projects/TEL" opsJiraProject="https://jira-sd.mc1.oracleiaas.com/projects/TEL"
+def test_list_alarms_status(testing_service_client):
     if not testing_service_client.is_api_enabled('monitoring', 'ListAlarmsStatus'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('monitoring', util.camelize('monitoring'), 'ListAlarmsStatus')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='monitoring', api_name='ListAlarmsStatus')
 
@@ -263,9 +278,6 @@ def test_list_alarms_status(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.monitoring.MonitoringClient(config)
             response = client.list_alarms_status(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -307,9 +319,14 @@ def test_list_alarms_status(testing_service_client, config):
         )
 
 
-def test_list_metrics(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="pic_ion_dev_grp@oracle.com" jiraProject="https://jira.oci.oraclecorp.com/projects/TEL" opsJiraProject="https://jira-sd.mc1.oracleiaas.com/projects/TEL"
+def test_list_metrics(testing_service_client):
     if not testing_service_client.is_api_enabled('monitoring', 'ListMetrics'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('monitoring', util.camelize('monitoring'), 'ListMetrics')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='monitoring', api_name='ListMetrics')
 
@@ -319,9 +336,6 @@ def test_list_metrics(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.monitoring.MonitoringClient(config)
             response = client.list_metrics(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -366,9 +380,14 @@ def test_list_metrics(testing_service_client, config):
         )
 
 
-def test_post_metric_data(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="pic_ion_dev_grp@oracle.com" jiraProject="https://jira.oci.oraclecorp.com/projects/TEL" opsJiraProject="https://jira-sd.mc1.oracleiaas.com/projects/TEL"
+def test_post_metric_data(testing_service_client):
     if not testing_service_client.is_api_enabled('monitoring', 'PostMetricData'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('monitoring', util.camelize('monitoring'), 'PostMetricData')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='monitoring', api_name='PostMetricData')
 
@@ -378,9 +397,6 @@ def test_post_metric_data(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.monitoring.MonitoringClient(config)
             response = client.post_metric_data(
                 post_metric_data_details=request.pop(util.camelize('post_metric_data_details')),
@@ -403,9 +419,14 @@ def test_post_metric_data(testing_service_client, config):
         )
 
 
-def test_remove_alarm_suppression(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="pic_ion_dev_grp@oracle.com" jiraProject="https://jira.oci.oraclecorp.com/projects/TEL" opsJiraProject="https://jira-sd.mc1.oracleiaas.com/projects/TEL"
+def test_remove_alarm_suppression(testing_service_client):
     if not testing_service_client.is_api_enabled('monitoring', 'RemoveAlarmSuppression'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('monitoring', util.camelize('monitoring'), 'RemoveAlarmSuppression')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='monitoring', api_name='RemoveAlarmSuppression')
 
@@ -415,9 +436,6 @@ def test_remove_alarm_suppression(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.monitoring.MonitoringClient(config)
             response = client.remove_alarm_suppression(
                 alarm_id=request.pop(util.camelize('alarm_id')),
@@ -440,9 +458,14 @@ def test_remove_alarm_suppression(testing_service_client, config):
         )
 
 
-def test_summarize_metrics_data(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="pic_ion_dev_grp@oracle.com" jiraProject="https://jira.oci.oraclecorp.com/projects/TEL" opsJiraProject="https://jira-sd.mc1.oracleiaas.com/projects/TEL"
+def test_summarize_metrics_data(testing_service_client):
     if not testing_service_client.is_api_enabled('monitoring', 'SummarizeMetricsData'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('monitoring', util.camelize('monitoring'), 'SummarizeMetricsData')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='monitoring', api_name='SummarizeMetricsData')
 
@@ -452,9 +475,6 @@ def test_summarize_metrics_data(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.monitoring.MonitoringClient(config)
             response = client.summarize_metrics_data(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -478,9 +498,14 @@ def test_summarize_metrics_data(testing_service_client, config):
         )
 
 
-def test_update_alarm(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="pic_ion_dev_grp@oracle.com" jiraProject="https://jira.oci.oraclecorp.com/projects/TEL" opsJiraProject="https://jira-sd.mc1.oracleiaas.com/projects/TEL"
+def test_update_alarm(testing_service_client):
     if not testing_service_client.is_api_enabled('monitoring', 'UpdateAlarm'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('monitoring', util.camelize('monitoring'), 'UpdateAlarm')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='monitoring', api_name='UpdateAlarm')
 
@@ -490,9 +515,6 @@ def test_update_alarm(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.monitoring.MonitoringClient(config)
             response = client.update_alarm(
                 alarm_id=request.pop(util.camelize('alarm_id')),

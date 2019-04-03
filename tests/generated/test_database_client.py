@@ -28,9 +28,14 @@ def vcr_fixture(request):
         yield
 
 
-def test_complete_external_backup_job(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_complete_external_backup_job(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CompleteExternalBackupJob'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'CompleteExternalBackupJob')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='CompleteExternalBackupJob')
 
@@ -40,9 +45,6 @@ def test_complete_external_backup_job(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.complete_external_backup_job(
                 backup_id=request.pop(util.camelize('backup_id')),
@@ -66,9 +68,14 @@ def test_complete_external_backup_job(testing_service_client, config):
         )
 
 
-def test_create_autonomous_data_warehouse(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_create_autonomous_data_warehouse(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateAutonomousDataWarehouse'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'CreateAutonomousDataWarehouse')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='CreateAutonomousDataWarehouse')
 
@@ -78,9 +85,6 @@ def test_create_autonomous_data_warehouse(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.create_autonomous_data_warehouse(
                 create_autonomous_data_warehouse_details=request.pop(util.camelize('create_autonomous_data_warehouse_details')),
@@ -103,9 +107,14 @@ def test_create_autonomous_data_warehouse(testing_service_client, config):
         )
 
 
-def test_create_autonomous_data_warehouse_backup(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_create_autonomous_data_warehouse_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateAutonomousDataWarehouseBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'CreateAutonomousDataWarehouseBackup')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='CreateAutonomousDataWarehouseBackup')
 
@@ -115,9 +124,6 @@ def test_create_autonomous_data_warehouse_backup(testing_service_client, config)
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.create_autonomous_data_warehouse_backup(
                 create_autonomous_data_warehouse_backup_details=request.pop(util.camelize('create_autonomous_data_warehouse_backup_details')),
@@ -140,9 +146,14 @@ def test_create_autonomous_data_warehouse_backup(testing_service_client, config)
         )
 
 
-def test_create_autonomous_database(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_create_autonomous_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateAutonomousDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'CreateAutonomousDatabase')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='CreateAutonomousDatabase')
 
@@ -152,9 +163,6 @@ def test_create_autonomous_database(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.create_autonomous_database(
                 create_autonomous_database_details=request.pop(util.camelize('create_autonomous_database_details')),
@@ -177,9 +185,14 @@ def test_create_autonomous_database(testing_service_client, config):
         )
 
 
-def test_create_autonomous_database_backup(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_create_autonomous_database_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateAutonomousDatabaseBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'CreateAutonomousDatabaseBackup')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='CreateAutonomousDatabaseBackup')
 
@@ -189,9 +202,6 @@ def test_create_autonomous_database_backup(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.create_autonomous_database_backup(
                 create_autonomous_database_backup_details=request.pop(util.camelize('create_autonomous_database_backup_details')),
@@ -214,9 +224,14 @@ def test_create_autonomous_database_backup(testing_service_client, config):
         )
 
 
-def test_create_backup(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_create_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'CreateBackup')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='CreateBackup')
 
@@ -226,9 +241,6 @@ def test_create_backup(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.create_backup(
                 create_backup_details=request.pop(util.camelize('create_backup_details')),
@@ -251,9 +263,14 @@ def test_create_backup(testing_service_client, config):
         )
 
 
-def test_create_data_guard_association(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_create_data_guard_association(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateDataGuardAssociation'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'CreateDataGuardAssociation')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='CreateDataGuardAssociation')
 
@@ -263,9 +280,6 @@ def test_create_data_guard_association(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.create_data_guard_association(
                 database_id=request.pop(util.camelize('database_id')),
@@ -289,9 +303,14 @@ def test_create_data_guard_association(testing_service_client, config):
         )
 
 
-def test_create_db_home(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_create_db_home(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateDbHome'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'CreateDbHome')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='CreateDbHome')
 
@@ -301,9 +320,6 @@ def test_create_db_home(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.create_db_home(
                 create_db_home_with_db_system_id_details=request.pop(util.camelize('create_db_home_with_db_system_id_details')),
@@ -326,9 +342,14 @@ def test_create_db_home(testing_service_client, config):
         )
 
 
-def test_create_external_backup_job(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_create_external_backup_job(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateExternalBackupJob'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'CreateExternalBackupJob')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='CreateExternalBackupJob')
 
@@ -338,9 +359,6 @@ def test_create_external_backup_job(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.create_external_backup_job(
                 create_external_backup_job_details=request.pop(util.camelize('create_external_backup_job_details')),
@@ -363,9 +381,14 @@ def test_create_external_backup_job(testing_service_client, config):
         )
 
 
-def test_db_node_action(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_db_node_action(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DbNodeAction'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'DbNodeAction')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='DbNodeAction')
 
@@ -375,9 +398,6 @@ def test_db_node_action(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.db_node_action(
                 db_node_id=request.pop(util.camelize('db_node_id')),
@@ -401,9 +421,14 @@ def test_db_node_action(testing_service_client, config):
         )
 
 
-def test_delete_autonomous_data_warehouse(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_delete_autonomous_data_warehouse(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DeleteAutonomousDataWarehouse'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'DeleteAutonomousDataWarehouse')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='DeleteAutonomousDataWarehouse')
 
@@ -413,9 +438,6 @@ def test_delete_autonomous_data_warehouse(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.delete_autonomous_data_warehouse(
                 autonomous_data_warehouse_id=request.pop(util.camelize('autonomous_data_warehouse_id')),
@@ -438,9 +460,14 @@ def test_delete_autonomous_data_warehouse(testing_service_client, config):
         )
 
 
-def test_delete_autonomous_database(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_delete_autonomous_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DeleteAutonomousDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'DeleteAutonomousDatabase')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='DeleteAutonomousDatabase')
 
@@ -450,9 +477,6 @@ def test_delete_autonomous_database(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.delete_autonomous_database(
                 autonomous_database_id=request.pop(util.camelize('autonomous_database_id')),
@@ -475,9 +499,14 @@ def test_delete_autonomous_database(testing_service_client, config):
         )
 
 
-def test_delete_backup(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_delete_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DeleteBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'DeleteBackup')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='DeleteBackup')
 
@@ -487,9 +516,6 @@ def test_delete_backup(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.delete_backup(
                 backup_id=request.pop(util.camelize('backup_id')),
@@ -512,9 +538,14 @@ def test_delete_backup(testing_service_client, config):
         )
 
 
-def test_delete_db_home(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_delete_db_home(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DeleteDbHome'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'DeleteDbHome')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='DeleteDbHome')
 
@@ -524,9 +555,6 @@ def test_delete_db_home(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.delete_db_home(
                 db_home_id=request.pop(util.camelize('db_home_id')),
@@ -549,9 +577,14 @@ def test_delete_db_home(testing_service_client, config):
         )
 
 
-def test_failover_data_guard_association(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_failover_data_guard_association(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'FailoverDataGuardAssociation'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'FailoverDataGuardAssociation')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='FailoverDataGuardAssociation')
 
@@ -561,9 +594,6 @@ def test_failover_data_guard_association(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.failover_data_guard_association(
                 database_id=request.pop(util.camelize('database_id')),
@@ -588,9 +618,14 @@ def test_failover_data_guard_association(testing_service_client, config):
         )
 
 
-def test_generate_autonomous_data_warehouse_wallet(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_generate_autonomous_data_warehouse_wallet(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GenerateAutonomousDataWarehouseWallet'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GenerateAutonomousDataWarehouseWallet')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='GenerateAutonomousDataWarehouseWallet')
 
@@ -600,9 +635,6 @@ def test_generate_autonomous_data_warehouse_wallet(testing_service_client, confi
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.generate_autonomous_data_warehouse_wallet(
                 autonomous_data_warehouse_id=request.pop(util.camelize('autonomous_data_warehouse_id')),
@@ -626,9 +658,14 @@ def test_generate_autonomous_data_warehouse_wallet(testing_service_client, confi
         )
 
 
-def test_generate_autonomous_database_wallet(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_generate_autonomous_database_wallet(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GenerateAutonomousDatabaseWallet'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GenerateAutonomousDatabaseWallet')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='GenerateAutonomousDatabaseWallet')
 
@@ -638,9 +675,6 @@ def test_generate_autonomous_database_wallet(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.generate_autonomous_database_wallet(
                 autonomous_database_id=request.pop(util.camelize('autonomous_database_id')),
@@ -664,9 +698,14 @@ def test_generate_autonomous_database_wallet(testing_service_client, config):
         )
 
 
-def test_get_autonomous_data_warehouse(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_autonomous_data_warehouse(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetAutonomousDataWarehouse'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetAutonomousDataWarehouse')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='GetAutonomousDataWarehouse')
 
@@ -676,9 +715,6 @@ def test_get_autonomous_data_warehouse(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.get_autonomous_data_warehouse(
                 autonomous_data_warehouse_id=request.pop(util.camelize('autonomous_data_warehouse_id')),
@@ -701,9 +737,14 @@ def test_get_autonomous_data_warehouse(testing_service_client, config):
         )
 
 
-def test_get_autonomous_data_warehouse_backup(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_autonomous_data_warehouse_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetAutonomousDataWarehouseBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetAutonomousDataWarehouseBackup')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='GetAutonomousDataWarehouseBackup')
 
@@ -713,9 +754,6 @@ def test_get_autonomous_data_warehouse_backup(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.get_autonomous_data_warehouse_backup(
                 autonomous_data_warehouse_backup_id=request.pop(util.camelize('autonomous_data_warehouse_backup_id')),
@@ -738,9 +776,14 @@ def test_get_autonomous_data_warehouse_backup(testing_service_client, config):
         )
 
 
-def test_get_autonomous_database(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_autonomous_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetAutonomousDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetAutonomousDatabase')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='GetAutonomousDatabase')
 
@@ -750,9 +793,6 @@ def test_get_autonomous_database(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.get_autonomous_database(
                 autonomous_database_id=request.pop(util.camelize('autonomous_database_id')),
@@ -775,9 +815,14 @@ def test_get_autonomous_database(testing_service_client, config):
         )
 
 
-def test_get_autonomous_database_backup(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_autonomous_database_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetAutonomousDatabaseBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetAutonomousDatabaseBackup')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='GetAutonomousDatabaseBackup')
 
@@ -787,9 +832,6 @@ def test_get_autonomous_database_backup(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.get_autonomous_database_backup(
                 autonomous_database_backup_id=request.pop(util.camelize('autonomous_database_backup_id')),
@@ -812,9 +854,14 @@ def test_get_autonomous_database_backup(testing_service_client, config):
         )
 
 
-def test_get_backup(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetBackup')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='GetBackup')
 
@@ -824,9 +871,6 @@ def test_get_backup(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.get_backup(
                 backup_id=request.pop(util.camelize('backup_id')),
@@ -849,9 +893,14 @@ def test_get_backup(testing_service_client, config):
         )
 
 
-def test_get_data_guard_association(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_data_guard_association(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetDataGuardAssociation'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetDataGuardAssociation')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='GetDataGuardAssociation')
 
@@ -861,9 +910,6 @@ def test_get_data_guard_association(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.get_data_guard_association(
                 database_id=request.pop(util.camelize('database_id')),
@@ -887,9 +933,14 @@ def test_get_data_guard_association(testing_service_client, config):
         )
 
 
-def test_get_database(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetDatabase')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='GetDatabase')
 
@@ -899,9 +950,6 @@ def test_get_database(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.get_database(
                 database_id=request.pop(util.camelize('database_id')),
@@ -924,9 +972,14 @@ def test_get_database(testing_service_client, config):
         )
 
 
-def test_get_db_home(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_db_home(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetDbHome'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetDbHome')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='GetDbHome')
 
@@ -936,9 +989,6 @@ def test_get_db_home(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.get_db_home(
                 db_home_id=request.pop(util.camelize('db_home_id')),
@@ -961,9 +1011,14 @@ def test_get_db_home(testing_service_client, config):
         )
 
 
-def test_get_db_home_patch(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_db_home_patch(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetDbHomePatch'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetDbHomePatch')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='GetDbHomePatch')
 
@@ -973,9 +1028,6 @@ def test_get_db_home_patch(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.get_db_home_patch(
                 db_home_id=request.pop(util.camelize('db_home_id')),
@@ -999,9 +1051,14 @@ def test_get_db_home_patch(testing_service_client, config):
         )
 
 
-def test_get_db_home_patch_history_entry(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_db_home_patch_history_entry(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetDbHomePatchHistoryEntry'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetDbHomePatchHistoryEntry')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='GetDbHomePatchHistoryEntry')
 
@@ -1011,9 +1068,6 @@ def test_get_db_home_patch_history_entry(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.get_db_home_patch_history_entry(
                 db_home_id=request.pop(util.camelize('db_home_id')),
@@ -1037,9 +1091,14 @@ def test_get_db_home_patch_history_entry(testing_service_client, config):
         )
 
 
-def test_get_db_node(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_db_node(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetDbNode'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetDbNode')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='GetDbNode')
 
@@ -1049,9 +1108,6 @@ def test_get_db_node(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.get_db_node(
                 db_node_id=request.pop(util.camelize('db_node_id')),
@@ -1074,9 +1130,14 @@ def test_get_db_node(testing_service_client, config):
         )
 
 
-def test_get_db_system(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_db_system(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetDbSystem'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetDbSystem')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='GetDbSystem')
 
@@ -1086,9 +1147,6 @@ def test_get_db_system(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.get_db_system(
                 db_system_id=request.pop(util.camelize('db_system_id')),
@@ -1111,9 +1169,14 @@ def test_get_db_system(testing_service_client, config):
         )
 
 
-def test_get_db_system_patch(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_db_system_patch(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetDbSystemPatch'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetDbSystemPatch')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='GetDbSystemPatch')
 
@@ -1123,9 +1186,6 @@ def test_get_db_system_patch(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.get_db_system_patch(
                 db_system_id=request.pop(util.camelize('db_system_id')),
@@ -1149,9 +1209,14 @@ def test_get_db_system_patch(testing_service_client, config):
         )
 
 
-def test_get_db_system_patch_history_entry(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_db_system_patch_history_entry(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetDbSystemPatchHistoryEntry'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetDbSystemPatchHistoryEntry')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='GetDbSystemPatchHistoryEntry')
 
@@ -1161,9 +1226,6 @@ def test_get_db_system_patch_history_entry(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.get_db_system_patch_history_entry(
                 db_system_id=request.pop(util.camelize('db_system_id')),
@@ -1187,9 +1249,14 @@ def test_get_db_system_patch_history_entry(testing_service_client, config):
         )
 
 
-def test_get_exadata_iorm_config(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_exadata_iorm_config(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetExadataIormConfig'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetExadataIormConfig')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='GetExadataIormConfig')
 
@@ -1199,9 +1266,6 @@ def test_get_exadata_iorm_config(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.get_exadata_iorm_config(
                 db_system_id=request.pop(util.camelize('db_system_id')),
@@ -1224,9 +1288,14 @@ def test_get_exadata_iorm_config(testing_service_client, config):
         )
 
 
-def test_get_external_backup_job(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_external_backup_job(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetExternalBackupJob'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetExternalBackupJob')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='GetExternalBackupJob')
 
@@ -1236,9 +1305,6 @@ def test_get_external_backup_job(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.get_external_backup_job(
                 backup_id=request.pop(util.camelize('backup_id')),
@@ -1261,9 +1327,14 @@ def test_get_external_backup_job(testing_service_client, config):
         )
 
 
-def test_launch_db_system(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_launch_db_system(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'LaunchDbSystem'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'LaunchDbSystem')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='LaunchDbSystem')
 
@@ -1273,9 +1344,6 @@ def test_launch_db_system(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.launch_db_system(
                 launch_db_system_details=request.pop(util.camelize('launch_db_system_details')),
@@ -1298,9 +1366,14 @@ def test_launch_db_system(testing_service_client, config):
         )
 
 
-def test_list_autonomous_data_warehouse_backups(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_autonomous_data_warehouse_backups(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListAutonomousDataWarehouseBackups'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListAutonomousDataWarehouseBackups')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='ListAutonomousDataWarehouseBackups')
 
@@ -1310,9 +1383,6 @@ def test_list_autonomous_data_warehouse_backups(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.list_autonomous_data_warehouse_backups(
                 **(util.camel_to_snake_keys(request))
@@ -1351,9 +1421,14 @@ def test_list_autonomous_data_warehouse_backups(testing_service_client, config):
         )
 
 
-def test_list_autonomous_data_warehouses(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_autonomous_data_warehouses(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListAutonomousDataWarehouses'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListAutonomousDataWarehouses')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='ListAutonomousDataWarehouses')
 
@@ -1363,9 +1438,6 @@ def test_list_autonomous_data_warehouses(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.list_autonomous_data_warehouses(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -1407,9 +1479,14 @@ def test_list_autonomous_data_warehouses(testing_service_client, config):
         )
 
 
-def test_list_autonomous_database_backups(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_autonomous_database_backups(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListAutonomousDatabaseBackups'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListAutonomousDatabaseBackups')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='ListAutonomousDatabaseBackups')
 
@@ -1419,9 +1496,6 @@ def test_list_autonomous_database_backups(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.list_autonomous_database_backups(
                 **(util.camel_to_snake_keys(request))
@@ -1460,9 +1534,14 @@ def test_list_autonomous_database_backups(testing_service_client, config):
         )
 
 
-def test_list_autonomous_databases(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_autonomous_databases(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListAutonomousDatabases'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListAutonomousDatabases')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='ListAutonomousDatabases')
 
@@ -1472,9 +1551,6 @@ def test_list_autonomous_databases(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.list_autonomous_databases(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -1516,9 +1592,14 @@ def test_list_autonomous_databases(testing_service_client, config):
         )
 
 
-def test_list_backups(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_backups(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListBackups'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListBackups')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='ListBackups')
 
@@ -1528,9 +1609,6 @@ def test_list_backups(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.list_backups(
                 **(util.camel_to_snake_keys(request))
@@ -1569,9 +1647,14 @@ def test_list_backups(testing_service_client, config):
         )
 
 
-def test_list_data_guard_associations(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_data_guard_associations(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListDataGuardAssociations'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListDataGuardAssociations')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='ListDataGuardAssociations')
 
@@ -1581,9 +1664,6 @@ def test_list_data_guard_associations(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.list_data_guard_associations(
                 database_id=request.pop(util.camelize('database_id')),
@@ -1625,9 +1705,14 @@ def test_list_data_guard_associations(testing_service_client, config):
         )
 
 
-def test_list_databases(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_databases(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListDatabases'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListDatabases')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='ListDatabases')
 
@@ -1637,9 +1722,6 @@ def test_list_databases(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.list_databases(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -1684,9 +1766,14 @@ def test_list_databases(testing_service_client, config):
         )
 
 
-def test_list_db_home_patch_history_entries(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_db_home_patch_history_entries(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListDbHomePatchHistoryEntries'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListDbHomePatchHistoryEntries')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='ListDbHomePatchHistoryEntries')
 
@@ -1696,9 +1783,6 @@ def test_list_db_home_patch_history_entries(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.list_db_home_patch_history_entries(
                 db_home_id=request.pop(util.camelize('db_home_id')),
@@ -1740,9 +1824,14 @@ def test_list_db_home_patch_history_entries(testing_service_client, config):
         )
 
 
-def test_list_db_home_patches(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_db_home_patches(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListDbHomePatches'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListDbHomePatches')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='ListDbHomePatches')
 
@@ -1752,9 +1841,6 @@ def test_list_db_home_patches(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.list_db_home_patches(
                 db_home_id=request.pop(util.camelize('db_home_id')),
@@ -1796,9 +1882,14 @@ def test_list_db_home_patches(testing_service_client, config):
         )
 
 
-def test_list_db_homes(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_db_homes(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListDbHomes'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListDbHomes')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='ListDbHomes')
 
@@ -1808,9 +1899,6 @@ def test_list_db_homes(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.list_db_homes(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -1855,9 +1943,14 @@ def test_list_db_homes(testing_service_client, config):
         )
 
 
-def test_list_db_nodes(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_db_nodes(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListDbNodes'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListDbNodes')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='ListDbNodes')
 
@@ -1867,9 +1960,6 @@ def test_list_db_nodes(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.list_db_nodes(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -1914,9 +2004,14 @@ def test_list_db_nodes(testing_service_client, config):
         )
 
 
-def test_list_db_system_patch_history_entries(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_db_system_patch_history_entries(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListDbSystemPatchHistoryEntries'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListDbSystemPatchHistoryEntries')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='ListDbSystemPatchHistoryEntries')
 
@@ -1926,9 +2021,6 @@ def test_list_db_system_patch_history_entries(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.list_db_system_patch_history_entries(
                 db_system_id=request.pop(util.camelize('db_system_id')),
@@ -1970,9 +2062,14 @@ def test_list_db_system_patch_history_entries(testing_service_client, config):
         )
 
 
-def test_list_db_system_patches(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_db_system_patches(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListDbSystemPatches'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListDbSystemPatches')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='ListDbSystemPatches')
 
@@ -1982,9 +2079,6 @@ def test_list_db_system_patches(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.list_db_system_patches(
                 db_system_id=request.pop(util.camelize('db_system_id')),
@@ -2026,9 +2120,14 @@ def test_list_db_system_patches(testing_service_client, config):
         )
 
 
-def test_list_db_system_shapes(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_db_system_shapes(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListDbSystemShapes'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListDbSystemShapes')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='ListDbSystemShapes')
 
@@ -2038,9 +2137,6 @@ def test_list_db_system_shapes(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.list_db_system_shapes(
                 availability_domain=request.pop(util.camelize('availability_domain')),
@@ -2085,9 +2181,14 @@ def test_list_db_system_shapes(testing_service_client, config):
         )
 
 
-def test_list_db_systems(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_db_systems(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListDbSystems'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListDbSystems')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='ListDbSystems')
 
@@ -2097,9 +2198,6 @@ def test_list_db_systems(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.list_db_systems(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -2141,9 +2239,14 @@ def test_list_db_systems(testing_service_client, config):
         )
 
 
-def test_list_db_versions(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_db_versions(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListDbVersions'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListDbVersions')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='ListDbVersions')
 
@@ -2153,9 +2256,6 @@ def test_list_db_versions(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.list_db_versions(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -2197,9 +2297,14 @@ def test_list_db_versions(testing_service_client, config):
         )
 
 
-def test_reinstate_data_guard_association(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_reinstate_data_guard_association(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ReinstateDataGuardAssociation'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ReinstateDataGuardAssociation')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='ReinstateDataGuardAssociation')
 
@@ -2209,9 +2314,6 @@ def test_reinstate_data_guard_association(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.reinstate_data_guard_association(
                 database_id=request.pop(util.camelize('database_id')),
@@ -2236,9 +2338,14 @@ def test_reinstate_data_guard_association(testing_service_client, config):
         )
 
 
-def test_restore_autonomous_data_warehouse(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_restore_autonomous_data_warehouse(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'RestoreAutonomousDataWarehouse'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'RestoreAutonomousDataWarehouse')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='RestoreAutonomousDataWarehouse')
 
@@ -2248,9 +2355,6 @@ def test_restore_autonomous_data_warehouse(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.restore_autonomous_data_warehouse(
                 autonomous_data_warehouse_id=request.pop(util.camelize('autonomous_data_warehouse_id')),
@@ -2274,9 +2378,14 @@ def test_restore_autonomous_data_warehouse(testing_service_client, config):
         )
 
 
-def test_restore_autonomous_database(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_restore_autonomous_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'RestoreAutonomousDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'RestoreAutonomousDatabase')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='RestoreAutonomousDatabase')
 
@@ -2286,9 +2395,6 @@ def test_restore_autonomous_database(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.restore_autonomous_database(
                 autonomous_database_id=request.pop(util.camelize('autonomous_database_id')),
@@ -2312,9 +2418,14 @@ def test_restore_autonomous_database(testing_service_client, config):
         )
 
 
-def test_restore_database(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_restore_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'RestoreDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'RestoreDatabase')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='RestoreDatabase')
 
@@ -2324,9 +2435,6 @@ def test_restore_database(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.restore_database(
                 database_id=request.pop(util.camelize('database_id')),
@@ -2350,9 +2458,14 @@ def test_restore_database(testing_service_client, config):
         )
 
 
-def test_start_autonomous_data_warehouse(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_start_autonomous_data_warehouse(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'StartAutonomousDataWarehouse'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'StartAutonomousDataWarehouse')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='StartAutonomousDataWarehouse')
 
@@ -2362,9 +2475,6 @@ def test_start_autonomous_data_warehouse(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.start_autonomous_data_warehouse(
                 autonomous_data_warehouse_id=request.pop(util.camelize('autonomous_data_warehouse_id')),
@@ -2387,9 +2497,14 @@ def test_start_autonomous_data_warehouse(testing_service_client, config):
         )
 
 
-def test_start_autonomous_database(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_start_autonomous_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'StartAutonomousDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'StartAutonomousDatabase')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='StartAutonomousDatabase')
 
@@ -2399,9 +2514,6 @@ def test_start_autonomous_database(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.start_autonomous_database(
                 autonomous_database_id=request.pop(util.camelize('autonomous_database_id')),
@@ -2424,9 +2536,14 @@ def test_start_autonomous_database(testing_service_client, config):
         )
 
 
-def test_stop_autonomous_data_warehouse(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_stop_autonomous_data_warehouse(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'StopAutonomousDataWarehouse'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'StopAutonomousDataWarehouse')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='StopAutonomousDataWarehouse')
 
@@ -2436,9 +2553,6 @@ def test_stop_autonomous_data_warehouse(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.stop_autonomous_data_warehouse(
                 autonomous_data_warehouse_id=request.pop(util.camelize('autonomous_data_warehouse_id')),
@@ -2461,9 +2575,14 @@ def test_stop_autonomous_data_warehouse(testing_service_client, config):
         )
 
 
-def test_stop_autonomous_database(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_stop_autonomous_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'StopAutonomousDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'StopAutonomousDatabase')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='StopAutonomousDatabase')
 
@@ -2473,9 +2592,6 @@ def test_stop_autonomous_database(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.stop_autonomous_database(
                 autonomous_database_id=request.pop(util.camelize('autonomous_database_id')),
@@ -2498,9 +2614,14 @@ def test_stop_autonomous_database(testing_service_client, config):
         )
 
 
-def test_switchover_data_guard_association(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_switchover_data_guard_association(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'SwitchoverDataGuardAssociation'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'SwitchoverDataGuardAssociation')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='SwitchoverDataGuardAssociation')
 
@@ -2510,9 +2631,6 @@ def test_switchover_data_guard_association(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.switchover_data_guard_association(
                 database_id=request.pop(util.camelize('database_id')),
@@ -2537,9 +2655,14 @@ def test_switchover_data_guard_association(testing_service_client, config):
         )
 
 
-def test_terminate_db_system(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_terminate_db_system(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'TerminateDbSystem'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'TerminateDbSystem')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='TerminateDbSystem')
 
@@ -2549,9 +2672,6 @@ def test_terminate_db_system(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.terminate_db_system(
                 db_system_id=request.pop(util.camelize('db_system_id')),
@@ -2574,9 +2694,14 @@ def test_terminate_db_system(testing_service_client, config):
         )
 
 
-def test_update_autonomous_data_warehouse(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_update_autonomous_data_warehouse(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateAutonomousDataWarehouse'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'UpdateAutonomousDataWarehouse')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='UpdateAutonomousDataWarehouse')
 
@@ -2586,9 +2711,6 @@ def test_update_autonomous_data_warehouse(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.update_autonomous_data_warehouse(
                 autonomous_data_warehouse_id=request.pop(util.camelize('autonomous_data_warehouse_id')),
@@ -2612,9 +2734,14 @@ def test_update_autonomous_data_warehouse(testing_service_client, config):
         )
 
 
-def test_update_autonomous_database(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_update_autonomous_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateAutonomousDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'UpdateAutonomousDatabase')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='UpdateAutonomousDatabase')
 
@@ -2624,9 +2751,6 @@ def test_update_autonomous_database(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.update_autonomous_database(
                 autonomous_database_id=request.pop(util.camelize('autonomous_database_id')),
@@ -2650,9 +2774,14 @@ def test_update_autonomous_database(testing_service_client, config):
         )
 
 
-def test_update_database(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_update_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'UpdateDatabase')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='UpdateDatabase')
 
@@ -2662,9 +2791,6 @@ def test_update_database(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.update_database(
                 database_id=request.pop(util.camelize('database_id')),
@@ -2688,9 +2814,14 @@ def test_update_database(testing_service_client, config):
         )
 
 
-def test_update_db_home(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_update_db_home(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateDbHome'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'UpdateDbHome')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='UpdateDbHome')
 
@@ -2700,9 +2831,6 @@ def test_update_db_home(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.update_db_home(
                 db_home_id=request.pop(util.camelize('db_home_id')),
@@ -2726,9 +2854,14 @@ def test_update_db_home(testing_service_client, config):
         )
 
 
-def test_update_db_system(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_update_db_system(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateDbSystem'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'UpdateDbSystem')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='UpdateDbSystem')
 
@@ -2738,9 +2871,6 @@ def test_update_db_system(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.update_db_system(
                 db_system_id=request.pop(util.camelize('db_system_id')),
@@ -2764,9 +2894,14 @@ def test_update_db_system(testing_service_client, config):
         )
 
 
-def test_update_exadata_iorm_config(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_update_exadata_iorm_config(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateExadataIormConfig'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'UpdateExadataIormConfig')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='database', api_name='UpdateExadataIormConfig')
 
@@ -2776,9 +2911,6 @@ def test_update_exadata_iorm_config(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.database.DatabaseClient(config)
             response = client.update_exadata_iorm_config(
                 db_system_id=request.pop(util.camelize('db_system_id')),

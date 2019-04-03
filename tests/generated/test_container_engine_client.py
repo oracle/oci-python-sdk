@@ -28,9 +28,14 @@ def vcr_fixture(request):
         yield
 
 
-def test_create_cluster(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_create_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'CreateCluster'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'CreateCluster')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='CreateCluster')
 
@@ -40,9 +45,6 @@ def test_create_cluster(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.container_engine.ContainerEngineClient(config)
             response = client.create_cluster(
                 create_cluster_details=request.pop(util.camelize('create_cluster_details')),
@@ -65,9 +67,14 @@ def test_create_cluster(testing_service_client, config):
         )
 
 
-def test_create_kubeconfig(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_create_kubeconfig(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'CreateKubeconfig'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'CreateKubeconfig')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='CreateKubeconfig')
 
@@ -77,9 +84,6 @@ def test_create_kubeconfig(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.container_engine.ContainerEngineClient(config)
             response = client.create_kubeconfig(
                 cluster_id=request.pop(util.camelize('cluster_id')),
@@ -102,9 +106,14 @@ def test_create_kubeconfig(testing_service_client, config):
         )
 
 
-def test_create_node_pool(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_create_node_pool(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'CreateNodePool'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'CreateNodePool')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='CreateNodePool')
 
@@ -114,9 +123,6 @@ def test_create_node_pool(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.container_engine.ContainerEngineClient(config)
             response = client.create_node_pool(
                 create_node_pool_details=request.pop(util.camelize('create_node_pool_details')),
@@ -139,9 +145,14 @@ def test_create_node_pool(testing_service_client, config):
         )
 
 
-def test_delete_cluster(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_delete_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'DeleteCluster'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'DeleteCluster')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='DeleteCluster')
 
@@ -151,9 +162,6 @@ def test_delete_cluster(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.container_engine.ContainerEngineClient(config)
             response = client.delete_cluster(
                 cluster_id=request.pop(util.camelize('cluster_id')),
@@ -176,9 +184,14 @@ def test_delete_cluster(testing_service_client, config):
         )
 
 
-def test_delete_node_pool(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_delete_node_pool(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'DeleteNodePool'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'DeleteNodePool')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='DeleteNodePool')
 
@@ -188,9 +201,6 @@ def test_delete_node_pool(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.container_engine.ContainerEngineClient(config)
             response = client.delete_node_pool(
                 node_pool_id=request.pop(util.camelize('node_pool_id')),
@@ -213,9 +223,14 @@ def test_delete_node_pool(testing_service_client, config):
         )
 
 
-def test_delete_work_request(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_delete_work_request(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'DeleteWorkRequest'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'DeleteWorkRequest')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='DeleteWorkRequest')
 
@@ -225,9 +240,6 @@ def test_delete_work_request(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.container_engine.ContainerEngineClient(config)
             response = client.delete_work_request(
                 work_request_id=request.pop(util.camelize('work_request_id')),
@@ -250,9 +262,14 @@ def test_delete_work_request(testing_service_client, config):
         )
 
 
-def test_get_cluster(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_get_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'GetCluster'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'GetCluster')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='GetCluster')
 
@@ -262,9 +279,6 @@ def test_get_cluster(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.container_engine.ContainerEngineClient(config)
             response = client.get_cluster(
                 cluster_id=request.pop(util.camelize('cluster_id')),
@@ -287,9 +301,14 @@ def test_get_cluster(testing_service_client, config):
         )
 
 
-def test_get_cluster_options(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_get_cluster_options(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'GetClusterOptions'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'GetClusterOptions')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='GetClusterOptions')
 
@@ -299,9 +318,6 @@ def test_get_cluster_options(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.container_engine.ContainerEngineClient(config)
             response = client.get_cluster_options(
                 cluster_option_id=request.pop(util.camelize('cluster_option_id')),
@@ -324,9 +340,14 @@ def test_get_cluster_options(testing_service_client, config):
         )
 
 
-def test_get_node_pool(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_get_node_pool(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'GetNodePool'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'GetNodePool')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='GetNodePool')
 
@@ -336,9 +357,6 @@ def test_get_node_pool(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.container_engine.ContainerEngineClient(config)
             response = client.get_node_pool(
                 node_pool_id=request.pop(util.camelize('node_pool_id')),
@@ -361,9 +379,14 @@ def test_get_node_pool(testing_service_client, config):
         )
 
 
-def test_get_node_pool_options(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_get_node_pool_options(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'GetNodePoolOptions'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'GetNodePoolOptions')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='GetNodePoolOptions')
 
@@ -373,9 +396,6 @@ def test_get_node_pool_options(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.container_engine.ContainerEngineClient(config)
             response = client.get_node_pool_options(
                 node_pool_option_id=request.pop(util.camelize('node_pool_option_id')),
@@ -398,9 +418,14 @@ def test_get_node_pool_options(testing_service_client, config):
         )
 
 
-def test_get_work_request(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_get_work_request(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'GetWorkRequest'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'GetWorkRequest')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='GetWorkRequest')
 
@@ -410,9 +435,6 @@ def test_get_work_request(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.container_engine.ContainerEngineClient(config)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('work_request_id')),
@@ -435,9 +457,14 @@ def test_get_work_request(testing_service_client, config):
         )
 
 
-def test_list_clusters(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_list_clusters(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'ListClusters'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'ListClusters')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='ListClusters')
 
@@ -447,9 +474,6 @@ def test_list_clusters(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.container_engine.ContainerEngineClient(config)
             response = client.list_clusters(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -491,9 +515,14 @@ def test_list_clusters(testing_service_client, config):
         )
 
 
-def test_list_node_pools(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_list_node_pools(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'ListNodePools'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'ListNodePools')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='ListNodePools')
 
@@ -503,9 +532,6 @@ def test_list_node_pools(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.container_engine.ContainerEngineClient(config)
             response = client.list_node_pools(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -547,9 +573,14 @@ def test_list_node_pools(testing_service_client, config):
         )
 
 
-def test_list_work_request_errors(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_list_work_request_errors(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'ListWorkRequestErrors'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'ListWorkRequestErrors')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='ListWorkRequestErrors')
 
@@ -559,9 +590,6 @@ def test_list_work_request_errors(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.container_engine.ContainerEngineClient(config)
             response = client.list_work_request_errors(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -585,9 +613,14 @@ def test_list_work_request_errors(testing_service_client, config):
         )
 
 
-def test_list_work_request_logs(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_list_work_request_logs(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'ListWorkRequestLogs'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'ListWorkRequestLogs')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='ListWorkRequestLogs')
 
@@ -597,9 +630,6 @@ def test_list_work_request_logs(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.container_engine.ContainerEngineClient(config)
             response = client.list_work_request_logs(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -623,9 +653,14 @@ def test_list_work_request_logs(testing_service_client, config):
         )
 
 
-def test_list_work_requests(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_list_work_requests(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'ListWorkRequests'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'ListWorkRequests')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='ListWorkRequests')
 
@@ -635,9 +670,6 @@ def test_list_work_requests(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.container_engine.ContainerEngineClient(config)
             response = client.list_work_requests(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -679,9 +711,14 @@ def test_list_work_requests(testing_service_client, config):
         )
 
 
-def test_update_cluster(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_update_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'UpdateCluster'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'UpdateCluster')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='UpdateCluster')
 
@@ -691,9 +728,6 @@ def test_update_cluster(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.container_engine.ContainerEngineClient(config)
             response = client.update_cluster(
                 cluster_id=request.pop(util.camelize('cluster_id')),
@@ -717,9 +751,14 @@ def test_update_cluster(testing_service_client, config):
         )
 
 
-def test_update_node_pool(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_update_node_pool(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'UpdateNodePool'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'UpdateNodePool')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='UpdateNodePool')
 
@@ -729,9 +768,6 @@ def test_update_node_pool(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.container_engine.ContainerEngineClient(config)
             response = client.update_node_pool(
                 node_pool_id=request.pop(util.camelize('node_pool_id')),

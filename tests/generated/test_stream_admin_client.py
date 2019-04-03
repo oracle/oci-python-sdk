@@ -28,9 +28,14 @@ def vcr_fixture(request):
         yield
 
 
-def test_create_stream(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_create_stream(testing_service_client):
     if not testing_service_client.is_api_enabled('streaming', 'CreateStream'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('streaming', util.camelize('stream_admin'), 'CreateStream')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='streaming', api_name='CreateStream')
 
@@ -40,9 +45,6 @@ def test_create_stream(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.streaming.StreamAdminClient(config)
             response = client.create_stream(
                 create_stream_details=request.pop(util.camelize('create_stream_details')),
@@ -65,9 +67,14 @@ def test_create_stream(testing_service_client, config):
         )
 
 
-def test_delete_stream(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_delete_stream(testing_service_client):
     if not testing_service_client.is_api_enabled('streaming', 'DeleteStream'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('streaming', util.camelize('stream_admin'), 'DeleteStream')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='streaming', api_name='DeleteStream')
 
@@ -77,9 +84,6 @@ def test_delete_stream(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.streaming.StreamAdminClient(config)
             response = client.delete_stream(
                 stream_id=request.pop(util.camelize('stream_id')),
@@ -102,9 +106,14 @@ def test_delete_stream(testing_service_client, config):
         )
 
 
-def test_get_stream(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_get_stream(testing_service_client):
     if not testing_service_client.is_api_enabled('streaming', 'GetStream'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('streaming', util.camelize('stream_admin'), 'GetStream')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='streaming', api_name='GetStream')
 
@@ -114,9 +123,6 @@ def test_get_stream(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.streaming.StreamAdminClient(config)
             response = client.get_stream(
                 stream_id=request.pop(util.camelize('stream_id')),
@@ -139,9 +145,14 @@ def test_get_stream(testing_service_client, config):
         )
 
 
-def test_list_streams(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_list_streams(testing_service_client):
     if not testing_service_client.is_api_enabled('streaming', 'ListStreams'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('streaming', util.camelize('stream_admin'), 'ListStreams')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='streaming', api_name='ListStreams')
 
@@ -151,9 +162,6 @@ def test_list_streams(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.streaming.StreamAdminClient(config)
             response = client.list_streams(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -195,9 +203,14 @@ def test_list_streams(testing_service_client, config):
         )
 
 
-def test_update_stream(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_update_stream(testing_service_client):
     if not testing_service_client.is_api_enabled('streaming', 'UpdateStream'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('streaming', util.camelize('stream_admin'), 'UpdateStream')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='streaming', api_name='UpdateStream')
 
@@ -207,9 +220,6 @@ def test_update_stream(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.streaming.StreamAdminClient(config)
             response = client.update_stream(
                 stream_id=request.pop(util.camelize('stream_id')),

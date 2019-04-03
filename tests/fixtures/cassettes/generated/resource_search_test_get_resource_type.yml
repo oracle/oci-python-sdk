@@ -1,0 +1,312 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request/enable?lang=Python&serviceName=resourcesearch&apiName=GetResourceType
+  response:
+    body: {string: 'true'}
+    headers:
+      Content-Length: ['4']
+      Content-Type: [text/plain]
+      Date: ['Mon, 01 Apr 2019 22:31:27 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/config?serviceName=resourcesearch&apiName=GetResourceType&lang=Python&clientName=resourceSearch
+  response:
+    body: {string: '{"region":"us-phoenix-1","tenantId":"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","userId":"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq","endpoint":null,"fingerprint":"ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9","passPhrase":"dexsdk","keyFile":"java_sdk_admin_key.pem","keyFileContent":"-----BEGIN
+        RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-128-CBC,0C9B64A4AA0303EC02C79E91D0F8B0D0\n\naSd0uIKreq5NirzJ+Esa36lYJo4lU2zSjIIw8wvZEsd+LdaifqONZIfHHiB6/KgG\nse4wd/58tPsiEgnK7D1q8wmdVDouMSX31mhcbq2bwRjXATpNnOMnhDtahJv6cw4M\nDtlXYplk0LzpP6WjqXqFST4Yz0l1NO90ahnruwcb/SUCm12ONMJ5o4G1UO2/0IkX\nTRlMRpm/etIpStNSP+1IsD1gSWlAzhs1zodkpd+2eW2ovlAaY25Hm/aqK97jzsCF\n1f4dCm7spCHYOfv10XHNB99/jomN1KQuDy29MmVaJ9oYpOIDlu0yj4Q/XempLxa6\nhqgt0gUO9cMV2bfStsHKWJwq+KoncamBHpU/+CyNjoYq1QTC0urWlCP5hNo5VZhF\nzXBJa188FD2TiPFU8Z4EhercM83TfBsRVEQOpu5sbMaUOT6xXwnCWfM5Pjxy/0xE\n6oF2zq+H0ES12dh19C5P8ueRFLyhaWFliWJv3SXy9iCslcso6USnBBKnA26xMile\nY3m9uRP31yZW8czxYSIgKEV3Mp3GFAYwuebNjLgIM7xT+PvDiOO4qAhA0waGPhYH\n2QMl9ThSahKT6vpjVUQuGOjaRcJ5Vr73VGX4MnxXVxsl5de6y/ZfP5ndx5Lb4K43\njwrMbCIzrM1ZzR2JMTuMJFDasLjEW/Y9nf7FRh2gByeGLObAmHsjlUdW65QQu+Qy\nu4ADc6TbpqvLobocF5fKgML7JCAA/YqmYlZCV6gGOdKUXUT3VMmZcebcTtw1Zmxh\nwaUQe99D90w3Q/7CCCiGO2waZaTNl+ahVnQZEGHN9xJydkCkfVZDgVmdDmsSXmxo\n2DWf2c2/1me2zZAcW0SFBnyrt3uphdCnICaqXR0AnQUmw49YY4nk2fPTMxZs1r+2\n+poVVEfr//cHTTs4yu9ZVT2wGWf/Ooo4sm7obB8EhGkrXs3ormx9WHj6ezexupsd\nanWE7Uy54ovKdOosKB6nQOfP+Iwe4sSJ6oYPNvvh19v05+AhOCdONjMeCwTfBvtJ\nA5luj6CtFbgSX96A3zTRrTXQO3N4aLTF8niL+FcZ69RzYcxp3rlDSK88JyJ9xsu1\n+lNIcAPAFhzisC/eB9b1eDJ4JErJyIdBTZ4bPv4dtl/RpFcyIA4WMjskGCRo60I7\nN3DVqGGXLlC7KDjvPmdvvfAx3lzcIANhwBhLSQJ+y1bcyW6FcX0ZtY962Hb06Qj5\nXG5nDmT1qVkfDmzpIOF9GtDgch7gtf/EjHOUyaw60dDgJ5RF6lORLjFeuU9W7I1e\nD3mpWb6WP6DKoaQTgrLLrIJCLIdXr92XmvDj+iuYdGhCIkqHWqNbRW4TyiuukNJH\n12Zq/LlA1s58YJVa520o7EOXpmD4sGIrctlI3keSmKhiavy7j5ULz5J++jL+Yxlc\n6h9q4v71oyFmVgNpIEJNg7sSCkE72yzUCaglBUdUIMG3D0sI+VwufC7lbhohvHBr\nNzmbg2bW4x0CCprf/o5JvdNiB+bQdKG4t2Q7fhhZIW7ACii591ZBbpnUakDUQBZa\nV2yMaErypILHlQvlReHXVK1adUTxLNWf//VDoyclQk5k0uFIkUmpn+EXWnEHw7e8\n-----END
+        RSA PRIVATE KEY-----\n"}'}
+    headers:
+      Content-Length: ['2261']
+      Content-Type: [application/json]
+      Date: ['Mon, 01 Apr 2019 22:31:27 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request?serviceName=resourcesearch&apiName=GetResourceType&lang=Python&sessionId=0836
+  response:
+    body: {string: '[{"containerId":"0c034498-2f14-45c1-8824-995d401cc60e","request":{"name":"Group"}},{"containerId":"95d78070-d155-40e4-b88a-48f527d56211","request":{"name":"Group"}},{"containerId":"054f6f68-ad85-4a21-9ec5-dc0075d5f722","request":{"name":"InvalidTypeNameXXX"}}]'}
+    headers:
+      Content-Length: ['260']
+      Content-Type: [text/plain]
+      Date: ['Mon, 01 Apr 2019 22:31:27 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="EUDKg7pml3dY5DRBolhZ5BTQ8LsGDut1f0oe4pRLVTpvu/lFSgbGp7uaHrLgP5yOeXv9Z1c3hDPb5Jh9zkCEkRgUZpb0xklsxJG2wEcS7mgKxrpDvIVC928I6VaV6v8bu6vy0xVDsVaQdh9mwGwR3iy9j7DCQ9d4op/0m3YpBQAP3pX38sRQkEKFfTNAVZnzOKN+uY0spDKsvIRlOB3isffSoSa0GR8j4sPqaomF8HUsbZpMJG/zapBHcolVE8uVc9pcXRUB1WpHtIg3dBZ3ObeRVfoCGjZBcstknCuwKeX3e185U257cP3MSEEe8q6dZzZMYEZMGRfL3GWou8dMvQ==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Mon, 01 Apr 2019 22:31:27 GMT']
+      host: [query.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.5]
+      opc-request-id: [BAA02D0E15654FB6BCF6DBA8A1993F88]
+      user-agent: [Oracle-PythonSDK/2.2.5 (python 3.6.4; x86_64-Darwin)]
+    method: GET
+    uri: https://query.us-phoenix-1.oraclecloud.com/20180409/resourceTypes/Group
+  response:
+    body: {string: "{\n  \"name\" : \"Group\",\n  \"fields\" : [ {\n    \"fieldType\"\
+        \ : \"IDENTIFIER\",\n    \"fieldName\" : \"compartmentId\",\n    \"isArray\"\
+        \ : false,\n    \"objectProperties\" : null\n  }, {\n    \"fieldType\" : \"\
+        STRING\",\n    \"fieldName\" : \"lifecycleState\",\n    \"isArray\" : false,\n\
+        \    \"objectProperties\" : null\n  }, {\n    \"fieldType\" : \"STRING\",\n\
+        \    \"fieldName\" : \"displayName\",\n    \"isArray\" : false,\n    \"objectProperties\"\
+        \ : null\n  }, {\n    \"fieldType\" : \"DATETIME\",\n    \"fieldName\" : \"\
+        timeCreated\",\n    \"isArray\" : false,\n    \"objectProperties\" : null\n\
+        \  }, {\n    \"fieldType\" : \"STRING\",\n    \"fieldName\" : \"availabilityDomain\"\
+        ,\n    \"isArray\" : false,\n    \"objectProperties\" : null\n  }, {\n   \
+        \ \"fieldType\" : \"OBJECT\",\n    \"fieldName\" : \"definedTags\",\n    \"\
+        isArray\" : true,\n    \"objectProperties\" : [ {\n      \"fieldType\" : \"\
+        STRING\",\n      \"fieldName\" : \"definedTags.key\",\n      \"isArray\" :\
+        \ false,\n      \"objectProperties\" : null\n    }, {\n      \"fieldType\"\
+        \ : \"STRING\",\n      \"fieldName\" : \"definedTags.value\",\n      \"isArray\"\
+        \ : false,\n      \"objectProperties\" : null\n    }, {\n      \"fieldType\"\
+        \ : \"STRING\",\n      \"fieldName\" : \"definedTags.namespace\",\n      \"\
+        isArray\" : false,\n      \"objectProperties\" : null\n    } ]\n  }, {\n \
+        \   \"fieldType\" : \"OBJECT\",\n    \"fieldName\" : \"freeformTags\",\n \
+        \   \"isArray\" : true,\n    \"objectProperties\" : [ {\n      \"fieldType\"\
+        \ : \"STRING\",\n      \"fieldName\" : \"freeformTags.key\",\n      \"isArray\"\
+        \ : false,\n      \"objectProperties\" : null\n    }, {\n      \"fieldType\"\
+        \ : \"STRING\",\n      \"fieldName\" : \"freeformTags.value\",\n      \"isArray\"\
+        \ : false,\n      \"objectProperties\" : null\n    } ]\n  }, {\n    \"fieldType\"\
+        \ : \"IDENTIFIER\",\n    \"fieldName\" : \"identifier\",\n    \"isArray\"\
+        \ : false,\n    \"objectProperties\" : null\n  }, {\n    \"fieldType\" : \"\
+        DATETIME\",\n    \"fieldName\" : \"timeLastIndexed\",\n    \"isArray\" : false,\n\
+        \    \"objectProperties\" : null\n  }, {\n    \"fieldType\" : \"STRING\",\n\
+        \    \"fieldName\" : \"description\",\n    \"isArray\" : false,\n    \"objectProperties\"\
+        \ : null\n  }, {\n    \"fieldType\" : \"STRING\",\n    \"fieldName\" : \"\
+        name\",\n    \"isArray\" : false,\n    \"objectProperties\" : null\n  }, {\n\
+        \    \"fieldType\" : \"INTEGER\",\n    \"fieldName\" : \"inactiveStatus\"\
+        ,\n    \"isArray\" : false,\n    \"objectProperties\" : null\n  } ]\n}"}
+    headers:
+      Connection: [keep-alive]
+      Content-Length: ['2197']
+      Content-Type: [application/json]
+      Date: ['Mon, 01 Apr 2019 22:31:27 GMT']
+      Vary: [Accept-Encoding]
+      X-Content-Type-Options: [nosniff]
+      opc-request-id: [BAA02D0E15654FB6BCF6DBA8A1993F88/0D853D21A1022C1203133E0B1E446209/69FFA98571CD45088A196C7158042C41]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"containerId": "0c034498-2f14-45c1-8824-995d401cc60e", "listResponse":
+      false, "requestClass": "com.oracle.bmc.resourcesearch.requests.GetResourceTypeRequest",
+      "requestJson": "{\"name\": \"Group\"}", "responseJson": "{\"resourceType\":
+      {\"name\": \"Group\", \"fields\": [{\"fieldType\": \"IDENTIFIER\", \"fieldName\":
+      \"compartmentId\", \"isArray\": false, \"objectProperties\": null}, {\"fieldType\":
+      \"STRING\", \"fieldName\": \"lifecycleState\", \"isArray\": false, \"objectProperties\":
+      null}, {\"fieldType\": \"STRING\", \"fieldName\": \"displayName\", \"isArray\":
+      false, \"objectProperties\": null}, {\"fieldType\": \"DATETIME\", \"fieldName\":
+      \"timeCreated\", \"isArray\": false, \"objectProperties\": null}, {\"fieldType\":
+      \"STRING\", \"fieldName\": \"availabilityDomain\", \"isArray\": false, \"objectProperties\":
+      null}, {\"fieldType\": \"OBJECT\", \"fieldName\": \"definedTags\", \"isArray\":
+      true, \"objectProperties\": [{\"fieldType\": \"STRING\", \"fieldName\": \"definedTags.key\",
+      \"isArray\": false, \"objectProperties\": null}, {\"fieldType\": \"STRING\",
+      \"fieldName\": \"definedTags.value\", \"isArray\": false, \"objectProperties\":
+      null}, {\"fieldType\": \"STRING\", \"fieldName\": \"definedTags.namespace\",
+      \"isArray\": false, \"objectProperties\": null}]}, {\"fieldType\": \"OBJECT\",
+      \"fieldName\": \"freeformTags\", \"isArray\": true, \"objectProperties\": [{\"fieldType\":
+      \"STRING\", \"fieldName\": \"freeformTags.key\", \"isArray\": false, \"objectProperties\":
+      null}, {\"fieldType\": \"STRING\", \"fieldName\": \"freeformTags.value\", \"isArray\":
+      false, \"objectProperties\": null}]}, {\"fieldType\": \"IDENTIFIER\", \"fieldName\":
+      \"identifier\", \"isArray\": false, \"objectProperties\": null}, {\"fieldType\":
+      \"DATETIME\", \"fieldName\": \"timeLastIndexed\", \"isArray\": false, \"objectProperties\":
+      null}, {\"fieldType\": \"STRING\", \"fieldName\": \"description\", \"isArray\":
+      false, \"objectProperties\": null}, {\"fieldType\": \"STRING\", \"fieldName\":
+      \"name\", \"isArray\": false, \"objectProperties\": null}, {\"fieldType\": \"INTEGER\",
+      \"fieldName\": \"inactiveStatus\", \"isArray\": false, \"objectProperties\":
+      null}]}, \"opcRequestId\": \"B8F55B46387442E9B108E656BD045459\", \"opcNextPage\":
+      null}", "responseClass": "com.oracle.bmc.resourcesearch.responses.GetResourceTypeResponse"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2337']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=0836&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Mon, 01 Apr 2019 22:31:27 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="EUDKg7pml3dY5DRBolhZ5BTQ8LsGDut1f0oe4pRLVTpvu/lFSgbGp7uaHrLgP5yOeXv9Z1c3hDPb5Jh9zkCEkRgUZpb0xklsxJG2wEcS7mgKxrpDvIVC928I6VaV6v8bu6vy0xVDsVaQdh9mwGwR3iy9j7DCQ9d4op/0m3YpBQAP3pX38sRQkEKFfTNAVZnzOKN+uY0spDKsvIRlOB3isffSoSa0GR8j4sPqaomF8HUsbZpMJG/zapBHcolVE8uVc9pcXRUB1WpHtIg3dBZ3ObeRVfoCGjZBcstknCuwKeX3e185U257cP3MSEEe8q6dZzZMYEZMGRfL3GWou8dMvQ==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Mon, 01 Apr 2019 22:31:27 GMT']
+      host: [query.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.5]
+      opc-request-id: [D2DBFBB687E94DD5A54E000B4B296797]
+      user-agent: [Oracle-PythonSDK/2.2.5 (python 3.6.4; x86_64-Darwin)]
+    method: GET
+    uri: https://query.us-phoenix-1.oraclecloud.com/20180409/resourceTypes/Group
+  response:
+    body: {string: "{\n  \"name\" : \"Group\",\n  \"fields\" : [ {\n    \"fieldType\"\
+        \ : \"IDENTIFIER\",\n    \"fieldName\" : \"compartmentId\",\n    \"isArray\"\
+        \ : false,\n    \"objectProperties\" : null\n  }, {\n    \"fieldType\" : \"\
+        STRING\",\n    \"fieldName\" : \"lifecycleState\",\n    \"isArray\" : false,\n\
+        \    \"objectProperties\" : null\n  }, {\n    \"fieldType\" : \"STRING\",\n\
+        \    \"fieldName\" : \"displayName\",\n    \"isArray\" : false,\n    \"objectProperties\"\
+        \ : null\n  }, {\n    \"fieldType\" : \"DATETIME\",\n    \"fieldName\" : \"\
+        timeCreated\",\n    \"isArray\" : false,\n    \"objectProperties\" : null\n\
+        \  }, {\n    \"fieldType\" : \"STRING\",\n    \"fieldName\" : \"availabilityDomain\"\
+        ,\n    \"isArray\" : false,\n    \"objectProperties\" : null\n  }, {\n   \
+        \ \"fieldType\" : \"OBJECT\",\n    \"fieldName\" : \"definedTags\",\n    \"\
+        isArray\" : true,\n    \"objectProperties\" : [ {\n      \"fieldType\" : \"\
+        STRING\",\n      \"fieldName\" : \"definedTags.key\",\n      \"isArray\" :\
+        \ false,\n      \"objectProperties\" : null\n    }, {\n      \"fieldType\"\
+        \ : \"STRING\",\n      \"fieldName\" : \"definedTags.value\",\n      \"isArray\"\
+        \ : false,\n      \"objectProperties\" : null\n    }, {\n      \"fieldType\"\
+        \ : \"STRING\",\n      \"fieldName\" : \"definedTags.namespace\",\n      \"\
+        isArray\" : false,\n      \"objectProperties\" : null\n    } ]\n  }, {\n \
+        \   \"fieldType\" : \"OBJECT\",\n    \"fieldName\" : \"freeformTags\",\n \
+        \   \"isArray\" : true,\n    \"objectProperties\" : [ {\n      \"fieldType\"\
+        \ : \"STRING\",\n      \"fieldName\" : \"freeformTags.key\",\n      \"isArray\"\
+        \ : false,\n      \"objectProperties\" : null\n    }, {\n      \"fieldType\"\
+        \ : \"STRING\",\n      \"fieldName\" : \"freeformTags.value\",\n      \"isArray\"\
+        \ : false,\n      \"objectProperties\" : null\n    } ]\n  }, {\n    \"fieldType\"\
+        \ : \"IDENTIFIER\",\n    \"fieldName\" : \"identifier\",\n    \"isArray\"\
+        \ : false,\n    \"objectProperties\" : null\n  }, {\n    \"fieldType\" : \"\
+        DATETIME\",\n    \"fieldName\" : \"timeLastIndexed\",\n    \"isArray\" : false,\n\
+        \    \"objectProperties\" : null\n  }, {\n    \"fieldType\" : \"STRING\",\n\
+        \    \"fieldName\" : \"description\",\n    \"isArray\" : false,\n    \"objectProperties\"\
+        \ : null\n  }, {\n    \"fieldType\" : \"STRING\",\n    \"fieldName\" : \"\
+        name\",\n    \"isArray\" : false,\n    \"objectProperties\" : null\n  }, {\n\
+        \    \"fieldType\" : \"INTEGER\",\n    \"fieldName\" : \"inactiveStatus\"\
+        ,\n    \"isArray\" : false,\n    \"objectProperties\" : null\n  } ]\n}"}
+    headers:
+      Connection: [keep-alive]
+      Content-Length: ['2197']
+      Content-Type: [application/json]
+      Date: ['Mon, 01 Apr 2019 22:31:27 GMT']
+      Vary: [Accept-Encoding]
+      X-Content-Type-Options: [nosniff]
+      opc-request-id: [D2DBFBB687E94DD5A54E000B4B296797/913383AD7AD4C3A76F2502FCF9E1777F/4DA2CB23F4104744A24A417AE7357F00]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"containerId": "95d78070-d155-40e4-b88a-48f527d56211", "listResponse":
+      false, "requestClass": "com.oracle.bmc.resourcesearch.requests.GetResourceTypeRequest",
+      "requestJson": "{\"name\": \"Group\"}", "responseJson": "{\"resourceType\":
+      {\"name\": \"Group\", \"fields\": [{\"fieldType\": \"IDENTIFIER\", \"fieldName\":
+      \"compartmentId\", \"isArray\": false, \"objectProperties\": null}, {\"fieldType\":
+      \"STRING\", \"fieldName\": \"lifecycleState\", \"isArray\": false, \"objectProperties\":
+      null}, {\"fieldType\": \"STRING\", \"fieldName\": \"displayName\", \"isArray\":
+      false, \"objectProperties\": null}, {\"fieldType\": \"DATETIME\", \"fieldName\":
+      \"timeCreated\", \"isArray\": false, \"objectProperties\": null}, {\"fieldType\":
+      \"STRING\", \"fieldName\": \"availabilityDomain\", \"isArray\": false, \"objectProperties\":
+      null}, {\"fieldType\": \"OBJECT\", \"fieldName\": \"definedTags\", \"isArray\":
+      true, \"objectProperties\": [{\"fieldType\": \"STRING\", \"fieldName\": \"definedTags.key\",
+      \"isArray\": false, \"objectProperties\": null}, {\"fieldType\": \"STRING\",
+      \"fieldName\": \"definedTags.value\", \"isArray\": false, \"objectProperties\":
+      null}, {\"fieldType\": \"STRING\", \"fieldName\": \"definedTags.namespace\",
+      \"isArray\": false, \"objectProperties\": null}]}, {\"fieldType\": \"OBJECT\",
+      \"fieldName\": \"freeformTags\", \"isArray\": true, \"objectProperties\": [{\"fieldType\":
+      \"STRING\", \"fieldName\": \"freeformTags.key\", \"isArray\": false, \"objectProperties\":
+      null}, {\"fieldType\": \"STRING\", \"fieldName\": \"freeformTags.value\", \"isArray\":
+      false, \"objectProperties\": null}]}, {\"fieldType\": \"IDENTIFIER\", \"fieldName\":
+      \"identifier\", \"isArray\": false, \"objectProperties\": null}, {\"fieldType\":
+      \"DATETIME\", \"fieldName\": \"timeLastIndexed\", \"isArray\": false, \"objectProperties\":
+      null}, {\"fieldType\": \"STRING\", \"fieldName\": \"description\", \"isArray\":
+      false, \"objectProperties\": null}, {\"fieldType\": \"STRING\", \"fieldName\":
+      \"name\", \"isArray\": false, \"objectProperties\": null}, {\"fieldType\": \"INTEGER\",
+      \"fieldName\": \"inactiveStatus\", \"isArray\": false, \"objectProperties\":
+      null}]}, \"opcRequestId\": \"7201AAED0A6A4C3896AA91FE6D073AE5\", \"opcNextPage\":
+      null}", "responseClass": "com.oracle.bmc.resourcesearch.responses.GetResourceTypeResponse"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2337']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=0836&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Mon, 01 Apr 2019 22:31:27 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="q01vIFo9DnKE2QJjN24LqNK3ictCEWRAvr3G+EAaSEZp8A4mtzS8O/v64GIbGTB5qnoGJvw13i5C0Unuy2jbsbUPIpKaIC+4HdQ5YnuCT358U4DURgaY4YaEhPmEt6BtlW5funu6HJikchlZkTWpuEHJV0bggIQxVSu7dMBVAYWWJ797pJukwAKqaiwM3ZOzlvZ1vlrP6WZ4k/SrKLPgdF+wsyT5O3li7RipNT9i3geL51ef9Ny12R7dWqQIjN05Qc2qVFOjBUFxK9U9hd3RMo3JIFXW3na8Ad8xHRp1PXCu5YzFWPJUtcN3j41UR2hCQciLyjROV8wtmssLAQz6iw==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Mon, 01 Apr 2019 22:31:27 GMT']
+      host: [query.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.5]
+      opc-request-id: [E9873F111A114E01BAC2AB5904073BAA]
+      user-agent: [Oracle-PythonSDK/2.2.5 (python 3.6.4; x86_64-Darwin)]
+    method: GET
+    uri: https://query.us-phoenix-1.oraclecloud.com/20180409/resourceTypes/InvalidTypeNameXXX
+  response:
+    body: {string: "{\n  \"code\" : \"NotAuthorizedOrNotFound\",\n  \"message\" :\
+        \ \"Unknown resource type name InvalidTypeNameXXX\"\n}"}
+    headers:
+      Connection: [keep-alive]
+      Content-Length: ['103']
+      Content-Type: [application/json]
+      Date: ['Mon, 01 Apr 2019 22:31:28 GMT']
+      X-Content-Type-Options: [nosniff]
+      opc-request-id: [E9873F111A114E01BAC2AB5904073BAA/7C329A578DBC02854138D607C5A63158/B020B4D8955F4FB1A8CFCB02D2950224]
+    status: {code: 404, message: Not Found}
+- request:
+    body: '{"containerId": "054f6f68-ad85-4a21-9ec5-dc0075d5f722", "listResponse":
+      false, "requestClass": "com.oracle.bmc.resourcesearch.requests.GetResourceTypeRequest",
+      "requestJson": "{\"name\": \"InvalidTypeNameXXX\"}", "errorJson": "{\"code\":
+      \"NotAuthorizedOrNotFound\", \"statusCode\": 404, \"message\": \"Unknown resource
+      type name InvalidTypeNameXXX\", \"opcRequestId\": \"E9873F111A114E01BAC2AB5904073BAA/7C329A578DBC02854138D607C5A63158/B020B4D8955F4FB1A8CFCB02D2950224\"}"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['475']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/error?sessionId=0836&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Mon, 01 Apr 2019 22:31:28 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+version: 1

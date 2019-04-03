@@ -28,9 +28,14 @@ def vcr_fixture(request):
         yield
 
 
-def test_create_key(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sparta_kms_us_grp@oracle.com" jiraProject="KMS" opsJiraProject="KMS"
+def test_create_key(testing_service_client):
     if not testing_service_client.is_api_enabled('key_management', 'CreateKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('key_management', util.camelize('kms_management'), 'CreateKey')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='key_management', api_name='CreateKey')
 
@@ -40,9 +45,6 @@ def test_create_key(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.key_management.KmsManagementClient(config)
             response = client.create_key(
                 create_key_details=request.pop(util.camelize('create_key_details')),
@@ -65,9 +67,14 @@ def test_create_key(testing_service_client, config):
         )
 
 
-def test_create_key_version(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sparta_kms_us_grp@oracle.com" jiraProject="KMS" opsJiraProject="KMS"
+def test_create_key_version(testing_service_client):
     if not testing_service_client.is_api_enabled('key_management', 'CreateKeyVersion'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('key_management', util.camelize('kms_management'), 'CreateKeyVersion')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='key_management', api_name='CreateKeyVersion')
 
@@ -77,9 +84,6 @@ def test_create_key_version(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.key_management.KmsManagementClient(config)
             response = client.create_key_version(
                 key_id=request.pop(util.camelize('key_id')),
@@ -102,9 +106,14 @@ def test_create_key_version(testing_service_client, config):
         )
 
 
-def test_disable_key(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sparta_kms_us_grp@oracle.com" jiraProject="KMS" opsJiraProject="KMS"
+def test_disable_key(testing_service_client):
     if not testing_service_client.is_api_enabled('key_management', 'DisableKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('key_management', util.camelize('kms_management'), 'DisableKey')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='key_management', api_name='DisableKey')
 
@@ -114,9 +123,6 @@ def test_disable_key(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.key_management.KmsManagementClient(config)
             response = client.disable_key(
                 key_id=request.pop(util.camelize('key_id')),
@@ -139,9 +145,14 @@ def test_disable_key(testing_service_client, config):
         )
 
 
-def test_enable_key(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sparta_kms_us_grp@oracle.com" jiraProject="KMS" opsJiraProject="KMS"
+def test_enable_key(testing_service_client):
     if not testing_service_client.is_api_enabled('key_management', 'EnableKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('key_management', util.camelize('kms_management'), 'EnableKey')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='key_management', api_name='EnableKey')
 
@@ -151,9 +162,6 @@ def test_enable_key(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.key_management.KmsManagementClient(config)
             response = client.enable_key(
                 key_id=request.pop(util.camelize('key_id')),
@@ -176,9 +184,14 @@ def test_enable_key(testing_service_client, config):
         )
 
 
-def test_get_key(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sparta_kms_us_grp@oracle.com" jiraProject="KMS" opsJiraProject="KMS"
+def test_get_key(testing_service_client):
     if not testing_service_client.is_api_enabled('key_management', 'GetKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('key_management', util.camelize('kms_management'), 'GetKey')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='key_management', api_name='GetKey')
 
@@ -188,9 +201,6 @@ def test_get_key(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.key_management.KmsManagementClient(config)
             response = client.get_key(
                 key_id=request.pop(util.camelize('key_id')),
@@ -213,9 +223,14 @@ def test_get_key(testing_service_client, config):
         )
 
 
-def test_get_key_version(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sparta_kms_us_grp@oracle.com" jiraProject="KMS" opsJiraProject="KMS"
+def test_get_key_version(testing_service_client):
     if not testing_service_client.is_api_enabled('key_management', 'GetKeyVersion'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('key_management', util.camelize('kms_management'), 'GetKeyVersion')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='key_management', api_name='GetKeyVersion')
 
@@ -225,9 +240,6 @@ def test_get_key_version(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.key_management.KmsManagementClient(config)
             response = client.get_key_version(
                 key_id=request.pop(util.camelize('key_id')),
@@ -251,9 +263,14 @@ def test_get_key_version(testing_service_client, config):
         )
 
 
-def test_list_key_versions(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sparta_kms_us_grp@oracle.com" jiraProject="KMS" opsJiraProject="KMS"
+def test_list_key_versions(testing_service_client):
     if not testing_service_client.is_api_enabled('key_management', 'ListKeyVersions'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('key_management', util.camelize('kms_management'), 'ListKeyVersions')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='key_management', api_name='ListKeyVersions')
 
@@ -263,9 +280,6 @@ def test_list_key_versions(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.key_management.KmsManagementClient(config)
             response = client.list_key_versions(
                 key_id=request.pop(util.camelize('key_id')),
@@ -307,9 +321,14 @@ def test_list_key_versions(testing_service_client, config):
         )
 
 
-def test_list_keys(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sparta_kms_us_grp@oracle.com" jiraProject="KMS" opsJiraProject="KMS"
+def test_list_keys(testing_service_client):
     if not testing_service_client.is_api_enabled('key_management', 'ListKeys'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('key_management', util.camelize('kms_management'), 'ListKeys')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='key_management', api_name='ListKeys')
 
@@ -319,9 +338,6 @@ def test_list_keys(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.key_management.KmsManagementClient(config)
             response = client.list_keys(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -363,9 +379,14 @@ def test_list_keys(testing_service_client, config):
         )
 
 
-def test_update_key(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sparta_kms_us_grp@oracle.com" jiraProject="KMS" opsJiraProject="KMS"
+def test_update_key(testing_service_client):
     if not testing_service_client.is_api_enabled('key_management', 'UpdateKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('key_management', util.camelize('kms_management'), 'UpdateKey')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='key_management', api_name='UpdateKey')
 
@@ -375,9 +396,6 @@ def test_update_key(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.key_management.KmsManagementClient(config)
             response = client.update_key(
                 key_id=request.pop(util.camelize('key_id')),

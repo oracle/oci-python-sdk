@@ -1,0 +1,89 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request/enable?lang=Python&serviceName=announcementsservice&apiName=UpdateAnnouncementUserStatus
+  response:
+    body: {string: 'true'}
+    headers:
+      Content-Length: ['4']
+      Content-Type: [text/plain]
+      Date: ['Mon, 01 Apr 2019 21:30:14 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request?serviceName=announcementsservice&apiName=UpdateAnnouncementUserStatus&lang=Python&sessionId=0836
+  response:
+    body: {string: '[{"containerId":"96a5e011-5814-4ecb-9cf7-6473a397904a","request":{"announcementId":"ocid1.announcement.oc1..aaaaaaaat6pge2h5jp4e2tsgfpz2zuaocqtg3tsjqqvlqmp5w5ivv55szwsa","statusDetails":{"userStatusAnnouncementId":"ocid1.announcement.oc1..aaaaaaaat6pge2h5jp4e2tsgfpz2zuaocqtg3tsjqqvlqmp5w5ivv55szwsa","userId":"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq"}}}]'}
+    headers:
+      Content-Length: ['392']
+      Content-Type: [text/plain]
+      Date: ['Mon, 01 Apr 2019 21:30:14 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"userStatusAnnouncementId": "ocid1.announcement.oc1..aaaaaaaat6pge2h5jp4e2tsgfpz2zuaocqtg3tsjqqvlqmp5w5ivv55szwsa",
+      "userId": "ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq"}'
+    headers:
+      Content-Length: ['206']
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host content-length content-type x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/e1:8d:6a:cb:74:ed:25:51:a2:9f:38:a4:71:42:01:c8",signature="m7IHrLfTj+0eF5HVq9JTyCTQd08BP8POmxvaK09sgf8Hed2Uwokl5+FNDgWW4f/2x2vVLS9/pEzjNeKQg16egGbok3LYz/QnK4AdNl4IjjH6diGvu4eF61/32sXvgojfYT1God8RFte53jTSQV9gZCqaiNDSAyS+JYIbONrndMxGAFDFUzTxUt0Ru5//Eybo5uOILEefambo3WQd/5sRFtwtTQSbJptwt1/FE36HLV8MQyai4r50vfXJNESrzTerXzGtVV1XFOv6y9YBv0EC32UP24kpDXfL/uSVlOOtVnVhqLBKnmTyQc7o8dECHAjdHqz232Ed2LOtBeQkzAPvSg==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Mon, 01 Apr 2019 21:30:14 GMT']
+      host: [announcements.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.5]
+      opc-request-id: [B852AFAF2DD9420EB9C2A1AFB7FBD5C0]
+      user-agent: [Oracle-PythonSDK/2.2.5 (python 3.6.4; x86_64-Darwin)]
+      x-content-sha256: [2j6LuPpMBN5CXi32P8aoMe22hQiS1QevaSks6/FAl00=]
+    method: PUT
+    uri: https://announcements.us-phoenix-1.oraclecloud.com/20180904/announcements/ocid1.announcement.oc1..aaaaaaaat6pge2h5jp4e2tsgfpz2zuaocqtg3tsjqqvlqmp5w5ivv55szwsa/userStatus
+  response:
+    body: {string: ''}
+    headers:
+      Connection: [keep-alive]
+      Content-Type: [application/json]
+      Date: ['Mon, 01 Apr 2019 21:30:14 GMT']
+      X-Content-Type-Options: [nosniff]
+      opc-request-id: [B852AFAF2DD9420EB9C2A1AFB7FBD5C0/EA824DC41F18A0BA45849DB69C6A42C1/D1024F21AC3944DB9230AD0E0FC3C36C]
+    status: {code: 204, message: No Content}
+- request:
+    body: '{"containerId": "96a5e011-5814-4ecb-9cf7-6473a397904a", "listResponse":
+      false, "requestClass": "com.oracle.bmc.announcementsservice.requests.UpdateAnnouncementUserStatusRequest",
+      "requestJson": "{\"announcementId\": \"ocid1.announcement.oc1..aaaaaaaat6pge2h5jp4e2tsgfpz2zuaocqtg3tsjqqvlqmp5w5ivv55szwsa\",
+      \"statusDetails\": {\"userStatusAnnouncementId\": \"ocid1.announcement.oc1..aaaaaaaat6pge2h5jp4e2tsgfpz2zuaocqtg3tsjqqvlqmp5w5ivv55szwsa\",
+      \"userId\": \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\"}}",
+      "responseJson": "{\"updateAnnouncementUserStatus\": null, \"opcRequestId\":
+      \"5181B425EC99400F8F770D720B09C74D\", \"opcNextPage\": null}", "responseClass":
+      "com.oracle.bmc.announcementsservice.responses.UpdateAnnouncementUserStatusResponse"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['784']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=0836&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Mon, 01 Apr 2019 21:30:14 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+version: 1

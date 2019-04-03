@@ -28,9 +28,14 @@ def vcr_fixture(request):
         yield
 
 
-def test_create_topic(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_create_topic(testing_service_client):
     if not testing_service_client.is_api_enabled('ons', 'CreateTopic'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ons', util.camelize('notification_control_plane'), 'CreateTopic')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='ons', api_name='CreateTopic')
 
@@ -40,9 +45,6 @@ def test_create_topic(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.ons.NotificationControlPlaneClient(config)
             response = client.create_topic(
                 create_topic_details=request.pop(util.camelize('create_topic_details')),
@@ -65,9 +67,14 @@ def test_create_topic(testing_service_client, config):
         )
 
 
-def test_delete_topic(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_delete_topic(testing_service_client):
     if not testing_service_client.is_api_enabled('ons', 'DeleteTopic'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ons', util.camelize('notification_control_plane'), 'DeleteTopic')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='ons', api_name='DeleteTopic')
 
@@ -77,9 +84,6 @@ def test_delete_topic(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.ons.NotificationControlPlaneClient(config)
             response = client.delete_topic(
                 topic_id=request.pop(util.camelize('topic_id')),
@@ -102,9 +106,14 @@ def test_delete_topic(testing_service_client, config):
         )
 
 
-def test_get_topic(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_get_topic(testing_service_client):
     if not testing_service_client.is_api_enabled('ons', 'GetTopic'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ons', util.camelize('notification_control_plane'), 'GetTopic')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='ons', api_name='GetTopic')
 
@@ -114,9 +123,6 @@ def test_get_topic(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.ons.NotificationControlPlaneClient(config)
             response = client.get_topic(
                 topic_id=request.pop(util.camelize('topic_id')),
@@ -139,9 +145,14 @@ def test_get_topic(testing_service_client, config):
         )
 
 
-def test_list_topics(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_list_topics(testing_service_client):
     if not testing_service_client.is_api_enabled('ons', 'ListTopics'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ons', util.camelize('notification_control_plane'), 'ListTopics')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='ons', api_name='ListTopics')
 
@@ -151,9 +162,6 @@ def test_list_topics(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.ons.NotificationControlPlaneClient(config)
             response = client.list_topics(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -195,9 +203,14 @@ def test_list_topics(testing_service_client, config):
         )
 
 
-def test_update_topic(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_update_topic(testing_service_client):
     if not testing_service_client.is_api_enabled('ons', 'UpdateTopic'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ons', util.camelize('notification_control_plane'), 'UpdateTopic')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='ons', api_name='UpdateTopic')
 
@@ -207,9 +220,6 @@ def test_update_topic(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.ons.NotificationControlPlaneClient(config)
             response = client.update_topic(
                 topic_id=request.pop(util.camelize('topic_id')),

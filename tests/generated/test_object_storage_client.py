@@ -28,9 +28,14 @@ def vcr_fixture(request):
         yield
 
 
-def test_abort_multipart_upload(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_abort_multipart_upload(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'AbortMultipartUpload'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'AbortMultipartUpload')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='AbortMultipartUpload')
 
@@ -40,9 +45,6 @@ def test_abort_multipart_upload(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.object_storage.ObjectStorageClient(config)
             response = client.abort_multipart_upload(
                 namespace_name=request.pop(util.camelize('namespace_name')),
@@ -68,9 +70,14 @@ def test_abort_multipart_upload(testing_service_client, config):
         )
 
 
-def test_cancel_work_request(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_cancel_work_request(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'CancelWorkRequest'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'CancelWorkRequest')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='CancelWorkRequest')
 
@@ -80,9 +87,6 @@ def test_cancel_work_request(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.object_storage.ObjectStorageClient(config)
             response = client.cancel_work_request(
                 work_request_id=request.pop(util.camelize('work_request_id')),
@@ -105,9 +109,14 @@ def test_cancel_work_request(testing_service_client, config):
         )
 
 
-def test_commit_multipart_upload(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_commit_multipart_upload(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'CommitMultipartUpload'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'CommitMultipartUpload')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='CommitMultipartUpload')
 
@@ -117,9 +126,6 @@ def test_commit_multipart_upload(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.object_storage.ObjectStorageClient(config)
             response = client.commit_multipart_upload(
                 namespace_name=request.pop(util.camelize('namespace_name')),
@@ -146,9 +152,14 @@ def test_commit_multipart_upload(testing_service_client, config):
         )
 
 
-def test_copy_object(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_copy_object(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'CopyObject'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'CopyObject')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='CopyObject')
 
@@ -158,9 +169,6 @@ def test_copy_object(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.object_storage.ObjectStorageClient(config)
             response = client.copy_object(
                 namespace_name=request.pop(util.camelize('namespace_name')),
@@ -185,9 +193,14 @@ def test_copy_object(testing_service_client, config):
         )
 
 
-def test_create_bucket(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_create_bucket(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'CreateBucket'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'CreateBucket')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='CreateBucket')
 
@@ -197,9 +210,6 @@ def test_create_bucket(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.object_storage.ObjectStorageClient(config)
             response = client.create_bucket(
                 namespace_name=request.pop(util.camelize('namespace_name')),
@@ -223,9 +233,14 @@ def test_create_bucket(testing_service_client, config):
         )
 
 
-def test_create_multipart_upload(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_create_multipart_upload(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'CreateMultipartUpload'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'CreateMultipartUpload')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='CreateMultipartUpload')
 
@@ -235,9 +250,6 @@ def test_create_multipart_upload(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.object_storage.ObjectStorageClient(config)
             response = client.create_multipart_upload(
                 namespace_name=request.pop(util.camelize('namespace_name')),
@@ -262,9 +274,14 @@ def test_create_multipart_upload(testing_service_client, config):
         )
 
 
-def test_create_preauthenticated_request(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_create_preauthenticated_request(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'CreatePreauthenticatedRequest'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'CreatePreauthenticatedRequest')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='CreatePreauthenticatedRequest')
 
@@ -274,9 +291,6 @@ def test_create_preauthenticated_request(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.object_storage.ObjectStorageClient(config)
             response = client.create_preauthenticated_request(
                 namespace_name=request.pop(util.camelize('namespace_name')),
@@ -301,9 +315,14 @@ def test_create_preauthenticated_request(testing_service_client, config):
         )
 
 
-def test_delete_bucket(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_delete_bucket(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'DeleteBucket'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'DeleteBucket')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='DeleteBucket')
 
@@ -313,9 +332,6 @@ def test_delete_bucket(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.object_storage.ObjectStorageClient(config)
             response = client.delete_bucket(
                 namespace_name=request.pop(util.camelize('namespace_name')),
@@ -339,9 +355,14 @@ def test_delete_bucket(testing_service_client, config):
         )
 
 
-def test_delete_object(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_delete_object(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'DeleteObject'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'DeleteObject')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='DeleteObject')
 
@@ -351,9 +372,6 @@ def test_delete_object(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.object_storage.ObjectStorageClient(config)
             response = client.delete_object(
                 namespace_name=request.pop(util.camelize('namespace_name')),
@@ -378,9 +396,14 @@ def test_delete_object(testing_service_client, config):
         )
 
 
-def test_delete_object_lifecycle_policy(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_delete_object_lifecycle_policy(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'DeleteObjectLifecyclePolicy'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'DeleteObjectLifecyclePolicy')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='DeleteObjectLifecyclePolicy')
 
@@ -390,9 +413,6 @@ def test_delete_object_lifecycle_policy(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.object_storage.ObjectStorageClient(config)
             response = client.delete_object_lifecycle_policy(
                 namespace_name=request.pop(util.camelize('namespace_name')),
@@ -416,9 +436,14 @@ def test_delete_object_lifecycle_policy(testing_service_client, config):
         )
 
 
-def test_delete_preauthenticated_request(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_delete_preauthenticated_request(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'DeletePreauthenticatedRequest'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'DeletePreauthenticatedRequest')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='DeletePreauthenticatedRequest')
 
@@ -428,9 +453,6 @@ def test_delete_preauthenticated_request(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.object_storage.ObjectStorageClient(config)
             response = client.delete_preauthenticated_request(
                 namespace_name=request.pop(util.camelize('namespace_name')),
@@ -455,9 +477,14 @@ def test_delete_preauthenticated_request(testing_service_client, config):
         )
 
 
-def test_get_bucket(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_get_bucket(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'GetBucket'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'GetBucket')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='GetBucket')
 
@@ -467,9 +494,6 @@ def test_get_bucket(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.object_storage.ObjectStorageClient(config)
             response = client.get_bucket(
                 namespace_name=request.pop(util.camelize('namespace_name')),
@@ -493,9 +517,14 @@ def test_get_bucket(testing_service_client, config):
         )
 
 
-def test_get_namespace(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_get_namespace(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'GetNamespace'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'GetNamespace')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='GetNamespace')
 
@@ -505,9 +534,6 @@ def test_get_namespace(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.object_storage.ObjectStorageClient(config)
             response = client.get_namespace(
                 **(util.camel_to_snake_keys(request))
@@ -529,9 +555,14 @@ def test_get_namespace(testing_service_client, config):
         )
 
 
-def test_get_namespace_metadata(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_get_namespace_metadata(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'GetNamespaceMetadata'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'GetNamespaceMetadata')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='GetNamespaceMetadata')
 
@@ -541,9 +572,6 @@ def test_get_namespace_metadata(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.object_storage.ObjectStorageClient(config)
             response = client.get_namespace_metadata(
                 namespace_name=request.pop(util.camelize('namespace_name')),
@@ -566,9 +594,14 @@ def test_get_namespace_metadata(testing_service_client, config):
         )
 
 
-def test_get_object(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_get_object(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'GetObject'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'GetObject')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='GetObject')
 
@@ -578,9 +611,6 @@ def test_get_object(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.object_storage.ObjectStorageClient(config)
             response = client.get_object(
                 namespace_name=request.pop(util.camelize('namespace_name')),
@@ -605,9 +635,14 @@ def test_get_object(testing_service_client, config):
         )
 
 
-def test_get_object_lifecycle_policy(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_get_object_lifecycle_policy(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'GetObjectLifecyclePolicy'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'GetObjectLifecyclePolicy')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='GetObjectLifecyclePolicy')
 
@@ -617,9 +652,6 @@ def test_get_object_lifecycle_policy(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.object_storage.ObjectStorageClient(config)
             response = client.get_object_lifecycle_policy(
                 namespace_name=request.pop(util.camelize('namespace_name')),
@@ -643,9 +675,14 @@ def test_get_object_lifecycle_policy(testing_service_client, config):
         )
 
 
-def test_get_preauthenticated_request(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_get_preauthenticated_request(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'GetPreauthenticatedRequest'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'GetPreauthenticatedRequest')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='GetPreauthenticatedRequest')
 
@@ -655,9 +692,6 @@ def test_get_preauthenticated_request(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.object_storage.ObjectStorageClient(config)
             response = client.get_preauthenticated_request(
                 namespace_name=request.pop(util.camelize('namespace_name')),
@@ -682,9 +716,14 @@ def test_get_preauthenticated_request(testing_service_client, config):
         )
 
 
-def test_get_work_request(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_get_work_request(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'GetWorkRequest'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'GetWorkRequest')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='GetWorkRequest')
 
@@ -694,9 +733,6 @@ def test_get_work_request(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.object_storage.ObjectStorageClient(config)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('work_request_id')),
@@ -719,9 +755,14 @@ def test_get_work_request(testing_service_client, config):
         )
 
 
-def test_head_bucket(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_head_bucket(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'HeadBucket'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'HeadBucket')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='HeadBucket')
 
@@ -731,9 +772,6 @@ def test_head_bucket(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.object_storage.ObjectStorageClient(config)
             response = client.head_bucket(
                 namespace_name=request.pop(util.camelize('namespace_name')),
@@ -757,9 +795,14 @@ def test_head_bucket(testing_service_client, config):
         )
 
 
-def test_head_object(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_head_object(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'HeadObject'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'HeadObject')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='HeadObject')
 
@@ -769,9 +812,6 @@ def test_head_object(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.object_storage.ObjectStorageClient(config)
             response = client.head_object(
                 namespace_name=request.pop(util.camelize('namespace_name')),
@@ -796,9 +836,14 @@ def test_head_object(testing_service_client, config):
         )
 
 
-def test_list_buckets(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_list_buckets(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'ListBuckets'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'ListBuckets')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='ListBuckets')
 
@@ -808,9 +853,6 @@ def test_list_buckets(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.object_storage.ObjectStorageClient(config)
             response = client.list_buckets(
                 namespace_name=request.pop(util.camelize('namespace_name')),
@@ -855,9 +897,14 @@ def test_list_buckets(testing_service_client, config):
         )
 
 
-def test_list_multipart_upload_parts(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_list_multipart_upload_parts(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'ListMultipartUploadParts'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'ListMultipartUploadParts')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='ListMultipartUploadParts')
 
@@ -867,9 +914,6 @@ def test_list_multipart_upload_parts(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.object_storage.ObjectStorageClient(config)
             response = client.list_multipart_upload_parts(
                 namespace_name=request.pop(util.camelize('namespace_name')),
@@ -920,9 +964,14 @@ def test_list_multipart_upload_parts(testing_service_client, config):
         )
 
 
-def test_list_multipart_uploads(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_list_multipart_uploads(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'ListMultipartUploads'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'ListMultipartUploads')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='ListMultipartUploads')
 
@@ -932,9 +981,6 @@ def test_list_multipart_uploads(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.object_storage.ObjectStorageClient(config)
             response = client.list_multipart_uploads(
                 namespace_name=request.pop(util.camelize('namespace_name')),
@@ -979,9 +1025,14 @@ def test_list_multipart_uploads(testing_service_client, config):
         )
 
 
-def test_list_objects(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_list_objects(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'ListObjects'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'ListObjects')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='ListObjects')
 
@@ -991,9 +1042,6 @@ def test_list_objects(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.object_storage.ObjectStorageClient(config)
             response = client.list_objects(
                 namespace_name=request.pop(util.camelize('namespace_name')),
@@ -1017,9 +1065,14 @@ def test_list_objects(testing_service_client, config):
         )
 
 
-def test_list_preauthenticated_requests(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_list_preauthenticated_requests(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'ListPreauthenticatedRequests'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'ListPreauthenticatedRequests')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='ListPreauthenticatedRequests')
 
@@ -1029,9 +1082,6 @@ def test_list_preauthenticated_requests(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.object_storage.ObjectStorageClient(config)
             response = client.list_preauthenticated_requests(
                 namespace_name=request.pop(util.camelize('namespace_name')),
@@ -1076,9 +1126,14 @@ def test_list_preauthenticated_requests(testing_service_client, config):
         )
 
 
-def test_list_work_request_errors(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_list_work_request_errors(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'ListWorkRequestErrors'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'ListWorkRequestErrors')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='ListWorkRequestErrors')
 
@@ -1088,9 +1143,6 @@ def test_list_work_request_errors(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.object_storage.ObjectStorageClient(config)
             response = client.list_work_request_errors(
                 work_request_id=request.pop(util.camelize('work_request_id')),
@@ -1132,9 +1184,14 @@ def test_list_work_request_errors(testing_service_client, config):
         )
 
 
-def test_list_work_request_logs(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_list_work_request_logs(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'ListWorkRequestLogs'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'ListWorkRequestLogs')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='ListWorkRequestLogs')
 
@@ -1144,9 +1201,6 @@ def test_list_work_request_logs(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.object_storage.ObjectStorageClient(config)
             response = client.list_work_request_logs(
                 work_request_id=request.pop(util.camelize('work_request_id')),
@@ -1188,9 +1242,14 @@ def test_list_work_request_logs(testing_service_client, config):
         )
 
 
-def test_list_work_requests(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_list_work_requests(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'ListWorkRequests'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'ListWorkRequests')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='ListWorkRequests')
 
@@ -1200,9 +1259,6 @@ def test_list_work_requests(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.object_storage.ObjectStorageClient(config)
             response = client.list_work_requests(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -1244,9 +1300,14 @@ def test_list_work_requests(testing_service_client, config):
         )
 
 
-def test_put_object(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_put_object(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'PutObject'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'PutObject')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='PutObject')
 
@@ -1256,9 +1317,6 @@ def test_put_object(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.object_storage.ObjectStorageClient(config)
             response = client.put_object(
                 namespace_name=request.pop(util.camelize('namespace_name')),
@@ -1284,9 +1342,14 @@ def test_put_object(testing_service_client, config):
         )
 
 
-def test_put_object_lifecycle_policy(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_put_object_lifecycle_policy(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'PutObjectLifecyclePolicy'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'PutObjectLifecyclePolicy')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='PutObjectLifecyclePolicy')
 
@@ -1296,9 +1359,6 @@ def test_put_object_lifecycle_policy(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.object_storage.ObjectStorageClient(config)
             response = client.put_object_lifecycle_policy(
                 namespace_name=request.pop(util.camelize('namespace_name')),
@@ -1323,9 +1383,14 @@ def test_put_object_lifecycle_policy(testing_service_client, config):
         )
 
 
-def test_rename_object(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_rename_object(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'RenameObject'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'RenameObject')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='RenameObject')
 
@@ -1335,9 +1400,6 @@ def test_rename_object(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.object_storage.ObjectStorageClient(config)
             response = client.rename_object(
                 namespace_name=request.pop(util.camelize('namespace_name')),
@@ -1362,9 +1424,14 @@ def test_rename_object(testing_service_client, config):
         )
 
 
-def test_restore_objects(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_restore_objects(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'RestoreObjects'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'RestoreObjects')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='RestoreObjects')
 
@@ -1374,9 +1441,6 @@ def test_restore_objects(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.object_storage.ObjectStorageClient(config)
             response = client.restore_objects(
                 namespace_name=request.pop(util.camelize('namespace_name')),
@@ -1401,9 +1465,14 @@ def test_restore_objects(testing_service_client, config):
         )
 
 
-def test_update_bucket(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_update_bucket(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'UpdateBucket'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'UpdateBucket')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='UpdateBucket')
 
@@ -1413,9 +1482,6 @@ def test_update_bucket(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.object_storage.ObjectStorageClient(config)
             response = client.update_bucket(
                 namespace_name=request.pop(util.camelize('namespace_name')),
@@ -1440,9 +1506,14 @@ def test_update_bucket(testing_service_client, config):
         )
 
 
-def test_update_namespace_metadata(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_update_namespace_metadata(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'UpdateNamespaceMetadata'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'UpdateNamespaceMetadata')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='UpdateNamespaceMetadata')
 
@@ -1452,9 +1523,6 @@ def test_update_namespace_metadata(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.object_storage.ObjectStorageClient(config)
             response = client.update_namespace_metadata(
                 namespace_name=request.pop(util.camelize('namespace_name')),
@@ -1478,9 +1546,14 @@ def test_update_namespace_metadata(testing_service_client, config):
         )
 
 
-def test_upload_part(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_upload_part(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'UploadPart'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'UploadPart')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='UploadPart')
 
@@ -1490,9 +1563,6 @@ def test_upload_part(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.object_storage.ObjectStorageClient(config)
             response = client.upload_part(
                 namespace_name=request.pop(util.camelize('namespace_name')),

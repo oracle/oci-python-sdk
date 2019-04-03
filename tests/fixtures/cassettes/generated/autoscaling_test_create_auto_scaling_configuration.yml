@@ -1,0 +1,186 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/e1:8d:6a:cb:74:ed:25:51:a2:9f:38:a4:71:42:01:c8",signature="UWf2632JHR0VWRxE8uCrOLh+i/Vf0+m+9DK9wF3z8tEfbOITa6vHHlEJ47lOKyOrRmYxsItS37Q/bP+XC2x/QxLXOo5o8f/U/tWcpa1ucvkJz4ag0h52dchsejy76NjdUNdXUa42qANlKnU7nBIfeeeC41HTdjr2aYD3ekB1Z8Gb2jqtZD+1cqgzzW2NC6TGHtElusFTmy6fTHiBOzYy4YY5NFvEVCHdfmMptriuSJdGC2gmZRSgBOPjTbG8Ygfae2/wx3XeBKC77tXTu8iU+/dphay9xrWfVzGi2psGehJ3CAUf6g5YS6zJjMwmlTa7zY4B8AfwyIWWEzWPhU+C5w==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Mon, 01 Apr 2019 21:46:25 GMT']
+      host: [identity.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.5]
+      opc-request-id: [EE18592DB5684124AA64AA828A20FFFE]
+      user-agent: [Oracle-PythonSDK/2.2.5 (python 3.6.4; x86_64-Darwin)]
+    method: GET
+    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/availabilityDomains/?compartmentId=ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq
+  response:
+    body: {string: "[ {\n  \"id\" : \"ocid1.availabilitydomain.oc1..aaaaaaaaupx7ga46w4xbb3fnkoh7rtyumacyb3ek6bw7bt3qff3mgt3mbrlq\"\
+        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
+        ,\n  \"name\" : \"FjmN:PHX-AD-1\"\n}, {\n  \"id\" : \"ocid1.availabilitydomain.oc1..aaaaaaaakemzo4ywaynz573sk4jpvwuqi7vmcuxajxfv4jjj2pthez3j2hbq\"\
+        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
+        ,\n  \"name\" : \"FjmN:PHX-AD-2\"\n}, {\n  \"id\" : \"ocid1.availabilitydomain.oc1..aaaaaaaac7uydq54rcymamzauv5pd23qk2g2vqlrfu5jd3y6i6qxpvvzkf7a\"\
+        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
+        ,\n  \"name\" : \"FjmN:PHX-AD-3\"\n} ]"}
+    headers:
+      Cache-Control: ['no-cache, no-store, must-revalidate']
+      Connection: [keep-alive]
+      Content-Length: ['716']
+      Content-Type: [application/json]
+      Date: ['Mon, 01 Apr 2019 21:46:26 GMT']
+      Pragma: [no-cache]
+      X-Content-Type-Options: [nosniff]
+      opc-request-id: [EE18592DB5684124AA64AA828A20FFFE/BBB841F5BABC7D85F6C00C782376358F/E6AD9B2329C688C63D845FB966D4AB98]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request/enable?lang=Python&serviceName=autoscaling&apiName=CreateAutoScalingConfiguration
+  response:
+    body: {string: 'true'}
+    headers:
+      Content-Length: ['4']
+      Content-Type: [text/plain]
+      Date: ['Mon, 01 Apr 2019 21:46:26 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request?serviceName=autoscaling&apiName=CreateAutoScalingConfiguration&lang=Python&sessionId=0836
+  response:
+    body: {string: '[{"containerId":"c923837e-e960-42e9-8303-53d118cbd675","request":{"createAutoScalingConfigurationDetails":{"compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","definedTags":{"testing_service_tag_ns_001":{"testing_service_tag_01":"tag4.__STS0836_5885","testing_service_tag_02":"tag5.__STS0836_5885","testing_service_tag_03":"tag6.__STS0836_5885"}},"displayName":"__STS0836_6486","freeformTags":{"tag1":"value1.__STS0836_3519","tag2":"value2.__STS0836_3519"},"policies":[{"policyType":"threshold","capacity":{"max":3,"min":1,"initial":2},"rules":[{"action":{"type":"CHANGE_COUNT_BY","value":1},"displayName":"scaleout","metric":{"metricType":"CPU_UTILIZATION","threshold":{"operator":"GT","value":70}}},{"action":{"type":"CHANGE_COUNT_BY","value":-1},"displayName":"scalein","metric":{"metricType":"CPU_UTILIZATION","threshold":{"operator":"LT","value":30}}}]}],"resource":{"type":"instancePool","id":"ocid1.instancepool.oc1.phx.aaaaaaaajqlwuwgutn6h4lpkyvyzg4nntkj2va7qdkszwv6r5i63iyncm6ta"}},"opcRetryToken":"1e9c0a2c-cd3d-4774-a11f-dcebfa840407"}}]'}
+    headers:
+      Content-Length: ['1098']
+      Content-Type: [text/plain]
+      Date: ['Mon, 01 Apr 2019 21:46:26 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"compartmentId": "ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba",
+      "definedTags": {"testing_service_tag_ns_001": {"testing_service_tag_01": "tag4.__STS0836_5885",
+      "testing_service_tag_02": "tag5.__STS0836_5885", "testing_service_tag_03": "tag6.__STS0836_5885"}},
+      "displayName": "__STS0836_6486", "freeformTags": {"tag1": "value1.__STS0836_3519",
+      "tag2": "value2.__STS0836_3519"}, "policies": [{"policyType": "threshold", "capacity":
+      {"max": 3, "min": 1, "initial": 2}, "rules": [{"action": {"type": "CHANGE_COUNT_BY",
+      "value": 1}, "displayName": "scaleout", "metric": {"metricType": "CPU_UTILIZATION",
+      "threshold": {"operator": "GT", "value": 70}}}, {"action": {"type": "CHANGE_COUNT_BY",
+      "value": -1}, "displayName": "scalein", "metric": {"metricType": "CPU_UTILIZATION",
+      "threshold": {"operator": "LT", "value": 30}}}]}], "resource": {"type": "instancePool",
+      "id": "ocid1.instancepool.oc1.phx.aaaaaaaajqlwuwgutn6h4lpkyvyzg4nntkj2va7qdkszwv6r5i63iyncm6ta"}}'
+    headers:
+      Content-Length: ['996']
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host content-length content-type x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/e1:8d:6a:cb:74:ed:25:51:a2:9f:38:a4:71:42:01:c8",signature="T78z9wyCUHabWiIQSa0M9ws3uw+9Sk/TeBnXJpnCEIn/NQ0hatt4p5VdNe3qh70g9xQViKkXJh+vVYtxSaDSPS4pso7WylUucr1k5w/36iNdIR+oNUC27ZgtQ7KkRL4kAA1BZi2o7yxrbF6mRJOsj1+AGgFSHBvXLXH5iDRQPsIUFBg1AU802pfwf7yIK2UMDQFgeIryXnnMP3hUHR/QQYvwfXiQq4bVw24S6Ly25W2WlT0jbnuxbzN4tVt3B3Ac5+MYWei87TMfxmzkQhtrxrh9lkMYAu/Krx13pev5XP7FZnKWqxCnJn0+/WrBizaeAPyn16kvPPpqQtlwt1xGoQ==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Mon, 01 Apr 2019 21:46:27 GMT']
+      host: [autoscaling.us-phoenix-1.oci.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.5]
+      opc-request-id: [57C03F1F888D45E2AF1A35AFD60935F6]
+      opc-retry-token: [1e9c0a2c-cd3d-4774-a11f-dcebfa840407]
+      user-agent: [Oracle-PythonSDK/2.2.5 (python 3.6.4; x86_64-Darwin)]
+      x-content-sha256: [KOX+3920sMsCUI6mFABEq61mA3140uBo9soOjXn+WDc=]
+    method: POST
+    uri: https://autoscaling.us-phoenix-1.oci.oraclecloud.com/20181001/autoScalingConfigurations
+  response:
+    body: {string: "{\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"definedTags\" : {\n    \"testing_service_tag_ns_001\" : {\n      \"\
+        testing_service_tag_01\" : \"tag4.__STS0836_5885\",\n      \"testing_service_tag_02\"\
+        \ : \"tag5.__STS0836_5885\",\n      \"testing_service_tag_03\" : \"tag6.__STS0836_5885\"\
+        \n    }\n  },\n  \"displayName\" : \"__STS0836_6486\",\n  \"freeformTags\"\
+        \ : {\n    \"tag1\" : \"value1.__STS0836_3519\",\n    \"tag2\" : \"value2.__STS0836_3519\"\
+        \n  },\n  \"id\" : \"ocid1.autoscalingconfiguration.oc1.phx.aaaaaaaax6cyewu62malqeypvwlsc6v7m4twl2kwkldfniq7ohykjvqh2u6q\"\
+        ,\n  \"coolDownInSeconds\" : 300,\n  \"isEnabled\" : true,\n  \"resource\"\
+        \ : {\n    \"type\" : \"instancePool\",\n    \"id\" : \"ocid1.instancepool.oc1.phx.aaaaaaaajqlwuwgutn6h4lpkyvyzg4nntkj2va7qdkszwv6r5i63iyncm6ta\"\
+        \n  },\n  \"policies\" : [ {\n    \"policyType\" : \"threshold\",\n    \"\
+        capacity\" : {\n      \"max\" : 3,\n      \"min\" : 1,\n      \"initial\"\
+        \ : 2\n    },\n    \"id\" : \"55c371bc-89c6-4855-93a7-a53ebcf0b2bd\",\n  \
+        \  \"displayName\" : \"policy20190401214627\",\n    \"timeCreated\" : \"2019-04-01T21:46:27.975Z\"\
+        ,\n    \"rules\" : [ {\n      \"action\" : {\n        \"type\" : \"CHANGE_COUNT_BY\"\
+        ,\n        \"value\" : -1\n      },\n      \"displayName\" : \"scalein\",\n\
+        \      \"id\" : \"2850966e-5140-47a9-9571-4c3220ee00bd\",\n      \"metric\"\
+        \ : {\n        \"metricType\" : \"CPU_UTILIZATION\",\n        \"threshold\"\
+        \ : {\n          \"operator\" : \"LT\",\n          \"value\" : 30\n      \
+        \  }\n      }\n    }, {\n      \"action\" : {\n        \"type\" : \"CHANGE_COUNT_BY\"\
+        ,\n        \"value\" : 1\n      },\n      \"displayName\" : \"scaleout\",\n\
+        \      \"id\" : \"ab1910c9-46ec-4e0a-b4b8-8ad81bad153f\",\n      \"metric\"\
+        \ : {\n        \"metricType\" : \"CPU_UTILIZATION\",\n        \"threshold\"\
+        \ : {\n          \"operator\" : \"GT\",\n          \"value\" : 70\n      \
+        \  }\n      }\n    } ]\n  } ],\n  \"timeCreated\" : \"2019-04-01T21:46:31.130Z\"\
+        \n}"}
+    headers:
+      Connection: [keep-alive]
+      Content-Length: ['1810']
+      Content-Type: [application/json]
+      Date: ['Mon, 01 Apr 2019 21:46:31 GMT']
+      ETag: [7e64b2534556ecc994373ac33ba3175c61c1a54f551cd97090719cd2bb1529a2]
+      opc-request-id: [57C03F1F888D45E2AF1A35AFD60935F6/E1F5F5B15903CCAC225C6E94BA039A55/B38E1983C8EF08C3916E10096E50404A]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"containerId": "c923837e-e960-42e9-8303-53d118cbd675", "listResponse":
+      false, "requestClass": "com.oracle.bmc.autoscaling.requests.CreateAutoScalingConfigurationRequest",
+      "requestJson": "{\"createAutoScalingConfigurationDetails\": {\"compartmentId\":
+      \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"definedTags\": {\"testing_service_tag_ns_001\": {\"testing_service_tag_01\":
+      \"tag4.__STS0836_5885\", \"testing_service_tag_02\": \"tag5.__STS0836_5885\",
+      \"testing_service_tag_03\": \"tag6.__STS0836_5885\"}}, \"displayName\": \"__STS0836_6486\",
+      \"freeformTags\": {\"tag1\": \"value1.__STS0836_3519\", \"tag2\": \"value2.__STS0836_3519\"},
+      \"policies\": [{\"policyType\": \"threshold\", \"capacity\": {\"max\": 3, \"min\":
+      1, \"initial\": 2}, \"rules\": [{\"action\": {\"type\": \"CHANGE_COUNT_BY\",
+      \"value\": 1}, \"displayName\": \"scaleout\", \"metric\": {\"metricType\": \"CPU_UTILIZATION\",
+      \"threshold\": {\"operator\": \"GT\", \"value\": 70}}}, {\"action\": {\"type\":
+      \"CHANGE_COUNT_BY\", \"value\": -1}, \"displayName\": \"scalein\", \"metric\":
+      {\"metricType\": \"CPU_UTILIZATION\", \"threshold\": {\"operator\": \"LT\",
+      \"value\": 30}}}]}], \"resource\": {\"type\": \"instancePool\", \"id\": \"ocid1.instancepool.oc1.phx.aaaaaaaajqlwuwgutn6h4lpkyvyzg4nntkj2va7qdkszwv6r5i63iyncm6ta\"}},
+      \"opcRetryToken\": \"1e9c0a2c-cd3d-4774-a11f-dcebfa840407\"}", "responseJson":
+      "{\"autoScalingConfiguration\": {\"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"definedTags\": {\"testingServiceTagNs001\": {\"testingServiceTag01\": \"tag4.__STS0836_5885\",
+      \"testingServiceTag02\": \"tag5.__STS0836_5885\", \"testingServiceTag03\": \"tag6.__STS0836_5885\"}},
+      \"displayName\": \"__STS0836_6486\", \"freeformTags\": {\"tag1\": \"value1.__STS0836_3519\",
+      \"tag2\": \"value2.__STS0836_3519\"}, \"id\": \"ocid1.autoscalingconfiguration.oc1.phx.aaaaaaaax6cyewu62malqeypvwlsc6v7m4twl2kwkldfniq7ohykjvqh2u6q\",
+      \"coolDownInSeconds\": 300, \"isEnabled\": true, \"resource\": {\"type\": \"instancePool\",
+      \"id\": \"ocid1.instancepool.oc1.phx.aaaaaaaajqlwuwgutn6h4lpkyvyzg4nntkj2va7qdkszwv6r5i63iyncm6ta\"},
+      \"policies\": [{\"capacity\": {\"max\": 3, \"min\": 1, \"initial\": 2}, \"id\":
+      \"55c371bc-89c6-4855-93a7-a53ebcf0b2bd\", \"displayName\": \"policy20190401214627\",
+      \"policyType\": \"threshold\", \"timeCreated\": \"2019-04-01T21:46:27.975000+00:00\",
+      \"rules\": [{\"action\": {\"type\": \"CHANGE_COUNT_BY\", \"value\": -1}, \"displayName\":
+      \"scalein\", \"id\": \"2850966e-5140-47a9-9571-4c3220ee00bd\", \"metric\": {\"metricType\":
+      \"CPU_UTILIZATION\", \"threshold\": {\"operator\": \"LT\", \"value\": 30}}},
+      {\"action\": {\"type\": \"CHANGE_COUNT_BY\", \"value\": 1}, \"displayName\":
+      \"scaleout\", \"id\": \"ab1910c9-46ec-4e0a-b4b8-8ad81bad153f\", \"metric\":
+      {\"metricType\": \"CPU_UTILIZATION\", \"threshold\": {\"operator\": \"GT\",
+      \"value\": 70}}}]}], \"timeCreated\": \"2019-04-01T21:46:31.130000+00:00\"},
+      \"opcRequestId\": \"B270B28F8F03415C851362F13972C216\", \"opcNextPage\": null,
+      \"eTag\": \"7e64b2534556ecc994373ac33ba3175c61c1a54f551cd97090719cd2bb1529a2\"}",
+      "responseClass": "com.oracle.bmc.autoscaling.responses.CreateAutoScalingConfigurationResponse"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['3271']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=0836&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Mon, 01 Apr 2019 21:46:31 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+version: 1

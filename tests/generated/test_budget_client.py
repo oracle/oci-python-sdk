@@ -28,9 +28,14 @@ def vcr_fixture(request):
         yield
 
 
-def test_create_alert_rule(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="plat_compartments_us_grp@oracle.com" jiraProject="COMP" opsJiraProject="COMP"
+def test_create_alert_rule(testing_service_client):
     if not testing_service_client.is_api_enabled('budget', 'CreateAlertRule'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('budget', util.camelize('budget'), 'CreateAlertRule')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='budget', api_name='CreateAlertRule')
 
@@ -40,9 +45,6 @@ def test_create_alert_rule(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.budget.BudgetClient(config)
             response = client.create_alert_rule(
                 budget_id=request.pop(util.camelize('budget_id')),
@@ -66,9 +68,14 @@ def test_create_alert_rule(testing_service_client, config):
         )
 
 
-def test_create_budget(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="plat_compartments_us_grp@oracle.com" jiraProject="COMP" opsJiraProject="COMP"
+def test_create_budget(testing_service_client):
     if not testing_service_client.is_api_enabled('budget', 'CreateBudget'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('budget', util.camelize('budget'), 'CreateBudget')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='budget', api_name='CreateBudget')
 
@@ -78,9 +85,6 @@ def test_create_budget(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.budget.BudgetClient(config)
             response = client.create_budget(
                 create_budget_details=request.pop(util.camelize('create_budget_details')),
@@ -103,9 +107,14 @@ def test_create_budget(testing_service_client, config):
         )
 
 
-def test_delete_alert_rule(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="plat_compartments_us_grp@oracle.com" jiraProject="COMP" opsJiraProject="COMP"
+def test_delete_alert_rule(testing_service_client):
     if not testing_service_client.is_api_enabled('budget', 'DeleteAlertRule'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('budget', util.camelize('budget'), 'DeleteAlertRule')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='budget', api_name='DeleteAlertRule')
 
@@ -115,9 +124,6 @@ def test_delete_alert_rule(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.budget.BudgetClient(config)
             response = client.delete_alert_rule(
                 budget_id=request.pop(util.camelize('budget_id')),
@@ -141,9 +147,14 @@ def test_delete_alert_rule(testing_service_client, config):
         )
 
 
-def test_delete_budget(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="plat_compartments_us_grp@oracle.com" jiraProject="COMP" opsJiraProject="COMP"
+def test_delete_budget(testing_service_client):
     if not testing_service_client.is_api_enabled('budget', 'DeleteBudget'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('budget', util.camelize('budget'), 'DeleteBudget')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='budget', api_name='DeleteBudget')
 
@@ -153,9 +164,6 @@ def test_delete_budget(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.budget.BudgetClient(config)
             response = client.delete_budget(
                 budget_id=request.pop(util.camelize('budget_id')),
@@ -178,9 +186,14 @@ def test_delete_budget(testing_service_client, config):
         )
 
 
-def test_get_alert_rule(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="plat_compartments_us_grp@oracle.com" jiraProject="COMP" opsJiraProject="COMP"
+def test_get_alert_rule(testing_service_client):
     if not testing_service_client.is_api_enabled('budget', 'GetAlertRule'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('budget', util.camelize('budget'), 'GetAlertRule')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='budget', api_name='GetAlertRule')
 
@@ -190,9 +203,6 @@ def test_get_alert_rule(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.budget.BudgetClient(config)
             response = client.get_alert_rule(
                 budget_id=request.pop(util.camelize('budget_id')),
@@ -216,9 +226,14 @@ def test_get_alert_rule(testing_service_client, config):
         )
 
 
-def test_get_budget(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="plat_compartments_us_grp@oracle.com" jiraProject="COMP" opsJiraProject="COMP"
+def test_get_budget(testing_service_client):
     if not testing_service_client.is_api_enabled('budget', 'GetBudget'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('budget', util.camelize('budget'), 'GetBudget')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='budget', api_name='GetBudget')
 
@@ -228,9 +243,6 @@ def test_get_budget(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.budget.BudgetClient(config)
             response = client.get_budget(
                 budget_id=request.pop(util.camelize('budget_id')),
@@ -253,9 +265,14 @@ def test_get_budget(testing_service_client, config):
         )
 
 
-def test_list_alert_rules(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="plat_compartments_us_grp@oracle.com" jiraProject="COMP" opsJiraProject="COMP"
+def test_list_alert_rules(testing_service_client):
     if not testing_service_client.is_api_enabled('budget', 'ListAlertRules'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('budget', util.camelize('budget'), 'ListAlertRules')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='budget', api_name='ListAlertRules')
 
@@ -265,9 +282,6 @@ def test_list_alert_rules(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.budget.BudgetClient(config)
             response = client.list_alert_rules(
                 budget_id=request.pop(util.camelize('budget_id')),
@@ -309,9 +323,14 @@ def test_list_alert_rules(testing_service_client, config):
         )
 
 
-def test_list_budgets(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="plat_compartments_us_grp@oracle.com" jiraProject="COMP" opsJiraProject="COMP"
+def test_list_budgets(testing_service_client):
     if not testing_service_client.is_api_enabled('budget', 'ListBudgets'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('budget', util.camelize('budget'), 'ListBudgets')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='budget', api_name='ListBudgets')
 
@@ -321,9 +340,6 @@ def test_list_budgets(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.budget.BudgetClient(config)
             response = client.list_budgets(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -365,9 +381,14 @@ def test_list_budgets(testing_service_client, config):
         )
 
 
-def test_update_alert_rule(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="plat_compartments_us_grp@oracle.com" jiraProject="COMP" opsJiraProject="COMP"
+def test_update_alert_rule(testing_service_client):
     if not testing_service_client.is_api_enabled('budget', 'UpdateAlertRule'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('budget', util.camelize('budget'), 'UpdateAlertRule')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='budget', api_name='UpdateAlertRule')
 
@@ -377,9 +398,6 @@ def test_update_alert_rule(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.budget.BudgetClient(config)
             response = client.update_alert_rule(
                 budget_id=request.pop(util.camelize('budget_id')),
@@ -404,9 +422,14 @@ def test_update_alert_rule(testing_service_client, config):
         )
 
 
-def test_update_budget(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="plat_compartments_us_grp@oracle.com" jiraProject="COMP" opsJiraProject="COMP"
+def test_update_budget(testing_service_client):
     if not testing_service_client.is_api_enabled('budget', 'UpdateBudget'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('budget', util.camelize('budget'), 'UpdateBudget')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='budget', api_name='UpdateBudget')
 
@@ -416,9 +439,6 @@ def test_update_budget(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.budget.BudgetClient(config)
             response = client.update_budget(
                 budget_id=request.pop(util.camelize('budget_id')),

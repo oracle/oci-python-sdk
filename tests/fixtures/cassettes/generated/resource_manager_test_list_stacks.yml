@@ -1,0 +1,831 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request/enable?lang=Python&serviceName=resourcemanager&apiName=ListStacks
+  response:
+    body: {string: 'true'}
+    headers:
+      Content-Length: ['4']
+      Content-Type: [text/plain]
+      Date: ['Mon, 01 Apr 2019 22:35:42 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/config?serviceName=resourcemanager&apiName=ListStacks&lang=Python&clientName=resourceManager
+  response:
+    body: {string: '{"region":"us-phoenix-1","tenantId":"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","userId":"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq","endpoint":null,"fingerprint":"ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9","passPhrase":"dexsdk","keyFile":"java_sdk_admin_key.pem","keyFileContent":"-----BEGIN
+        RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-128-CBC,0C9B64A4AA0303EC02C79E91D0F8B0D0\n\naSd0uIKreq5NirzJ+Esa36lYJo4lU2zSjIIw8wvZEsd+LdaifqONZIfHHiB6/KgG\nse4wd/58tPsiEgnK7D1q8wmdVDouMSX31mhcbq2bwRjXATpNnOMnhDtahJv6cw4M\nDtlXYplk0LzpP6WjqXqFST4Yz0l1NO90ahnruwcb/SUCm12ONMJ5o4G1UO2/0IkX\nTRlMRpm/etIpStNSP+1IsD1gSWlAzhs1zodkpd+2eW2ovlAaY25Hm/aqK97jzsCF\n1f4dCm7spCHYOfv10XHNB99/jomN1KQuDy29MmVaJ9oYpOIDlu0yj4Q/XempLxa6\nhqgt0gUO9cMV2bfStsHKWJwq+KoncamBHpU/+CyNjoYq1QTC0urWlCP5hNo5VZhF\nzXBJa188FD2TiPFU8Z4EhercM83TfBsRVEQOpu5sbMaUOT6xXwnCWfM5Pjxy/0xE\n6oF2zq+H0ES12dh19C5P8ueRFLyhaWFliWJv3SXy9iCslcso6USnBBKnA26xMile\nY3m9uRP31yZW8czxYSIgKEV3Mp3GFAYwuebNjLgIM7xT+PvDiOO4qAhA0waGPhYH\n2QMl9ThSahKT6vpjVUQuGOjaRcJ5Vr73VGX4MnxXVxsl5de6y/ZfP5ndx5Lb4K43\njwrMbCIzrM1ZzR2JMTuMJFDasLjEW/Y9nf7FRh2gByeGLObAmHsjlUdW65QQu+Qy\nu4ADc6TbpqvLobocF5fKgML7JCAA/YqmYlZCV6gGOdKUXUT3VMmZcebcTtw1Zmxh\nwaUQe99D90w3Q/7CCCiGO2waZaTNl+ahVnQZEGHN9xJydkCkfVZDgVmdDmsSXmxo\n2DWf2c2/1me2zZAcW0SFBnyrt3uphdCnICaqXR0AnQUmw49YY4nk2fPTMxZs1r+2\n+poVVEfr//cHTTs4yu9ZVT2wGWf/Ooo4sm7obB8EhGkrXs3ormx9WHj6ezexupsd\nanWE7Uy54ovKdOosKB6nQOfP+Iwe4sSJ6oYPNvvh19v05+AhOCdONjMeCwTfBvtJ\nA5luj6CtFbgSX96A3zTRrTXQO3N4aLTF8niL+FcZ69RzYcxp3rlDSK88JyJ9xsu1\n+lNIcAPAFhzisC/eB9b1eDJ4JErJyIdBTZ4bPv4dtl/RpFcyIA4WMjskGCRo60I7\nN3DVqGGXLlC7KDjvPmdvvfAx3lzcIANhwBhLSQJ+y1bcyW6FcX0ZtY962Hb06Qj5\nXG5nDmT1qVkfDmzpIOF9GtDgch7gtf/EjHOUyaw60dDgJ5RF6lORLjFeuU9W7I1e\nD3mpWb6WP6DKoaQTgrLLrIJCLIdXr92XmvDj+iuYdGhCIkqHWqNbRW4TyiuukNJH\n12Zq/LlA1s58YJVa520o7EOXpmD4sGIrctlI3keSmKhiavy7j5ULz5J++jL+Yxlc\n6h9q4v71oyFmVgNpIEJNg7sSCkE72yzUCaglBUdUIMG3D0sI+VwufC7lbhohvHBr\nNzmbg2bW4x0CCprf/o5JvdNiB+bQdKG4t2Q7fhhZIW7ACii591ZBbpnUakDUQBZa\nV2yMaErypILHlQvlReHXVK1adUTxLNWf//VDoyclQk5k0uFIkUmpn+EXWnEHw7e8\n-----END
+        RSA PRIVATE KEY-----\n"}'}
+    headers:
+      Content-Length: ['2261']
+      Content-Type: [application/json]
+      Date: ['Mon, 01 Apr 2019 22:35:42 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request?serviceName=resourcemanager&apiName=ListStacks&lang=Python&sessionId=0836
+  response:
+    body: {string: '[{"containerId":"d6150530-0174-40af-a410-7d1d00969df4","request":{"compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","displayName":"__STS0836_3416","limit":10}},{"containerId":"f20014db-ef2e-4133-b398-8b029b46451e","request":{"id":"ocid1.ormstack.oc1.phx.aaaaaaaacc4yok6bgog4c2nw6lqtbkylhiroypyyc5z4canfulk2wxh5tddq","lifecycleState":"ACTIVE"}},{"containerId":"99754dec-c8a7-463f-a0cf-004e052f25ad","request":{"compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","lifecycleState":"ACTIVE"}}]'}
+    headers:
+      Content-Length: ['591']
+      Content-Type: [text/plain]
+      Date: ['Mon, 01 Apr 2019 22:35:42 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="isHrtkt1qJKGx8cqMR+LerjsBm9SK6AE5SleHLrmlvHOlyjXsTG0QzTSSdkW0c/a3taLWXM75pHIwHrCJC8c22F5dhLxSz676DuuW1vS5a3+MUzo0f8edwVeV5vTDtXtikEGaL9yBHeZoCzR0m2fTNbL3N0lYE1R1Vl+O9/Xh0irmjlti7LMZg1wxS4uNLHHdyP+j8kN4XRykVv5kDQMmtfR3uXsE9ASh/paCT8OEgWAREfde37iJJvucuBoyAMd4bFubemRCntJKa1zA1dafhR4WK/yscleGP+Gu8/qL+oh3qWaiQkpp0NDZQiI3LUmY4hmja8pMh4+GFdku5WWtw==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Mon, 01 Apr 2019 22:35:46 GMT']
+      host: [resourcemanager.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.5]
+      opc-request-id: [2179A19236C1440D9F758CA129102123]
+      user-agent: [Oracle-PythonSDK/2.2.5 (python 3.6.4; x86_64-Darwin)]
+    method: GET
+    uri: https://resourcemanager.us-phoenix-1.oraclecloud.com/20180917/stacks?compartmentId=ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba&displayName=__STS0836_3416&limit=10
+  response:
+    body: {string: '[ ]'}
+    headers:
+      Cache-Control: ['no-cache, no-store, must-revalidate']
+      Connection: [keep-alive]
+      Content-Length: ['3']
+      Content-Type: [application/json]
+      Date: ['Mon, 01 Apr 2019 22:35:47 GMT']
+      Pragma: [no-cache]
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains;]
+      Vary: [Accept-Encoding]
+      X-Content-Type-Options: [nosniff]
+      X-XSS-Protection: [1; mode=block]
+      opc-next-page: [AAAAAAAAAAJleUpyYVdRaU9pSXhPVEVpTENKbGJtTWlPaUpCTWpVMlIwTk5JaXdpWVd4bklqb2laR2x5SW4wLi5KT2xuQW1halNJdlhWakVDLkpKeDRQR01SLUVPZE9HYmpYcWNiTzVqWlZ3dnBzN0kyajhFdjlQbnBfMDUyT0NBX1VIdVNPM0RzdWdiZHR4T0ZsN2t5WF9pT3B4OVZxcVMtZUpqcWxuZ1ZyTUd6bXVIQVZYYnpYY1lTMlZNTXdYVVFWSWFSOXZ0b1ByQTU3Y1o2QUVsOXJKOVlfbUJsbnc0aU9Xa3hveG44ek9SUDcyRDQta0s0M09DTURIQlA4dUhCNl8xaHNxSGs5b21WTllULUF1eEY5Y1B3LUJrQ2UyNjNha2VWNWZ3RVh4cEhnVUJKanNCWjVXMmZWaU5MVXI1OXdWLUpPY0lKUzEzUENqM1BTem11T0x0TEZlOG5qbFhUOVZTdWtoX2Q4dWFWODlHYlRjaEgwWC1wcUNaOC1NVW1MYkRFZ1o5RkN1ajk1TU5JaTVQWU04V1hNbDhIamhpTjhFOXl5UXhoS2Ytb0g3Q0l5c0s0VGJYd19zc2ttMXBFazBTc2htampxeklDYkZ3b2FpWHU4anRmXzhpcmNBcEQ1SUpCdXRaRlBGV0t5ZjJLcmJnZDUzSFF3MDk4WXo4SW04d2xtQXUzRWcyTVFtX2JWYWVjQjlWdmdTbXBDaDBjRnhuNTRTTTFYUGRWTTNKQlF4a0Y3NEtlZ3Q5NUxWVS1NNGFHQUp6OEJtdzd2eGZpSnA3YkpWcFNDUkhTdmZteEQ3WmlqNjVici0wMnZjVDlnTUxOeVJFelpaOWZ6ZFM5MktLYjlEV0xYcjh3bDVtZE0wZmI5QzYwRVlhQXlORTJJU1dSTGdIdUhvWHp3V0tJR1gtc0FrVFh5NkFzenRHcHhtdndlaHlzUk9FR3JnTl9XMHhXTHp3SGYtTzlTTmJvV0ljaUgyUDFMOENmXy1paURkWUJTZHVhT0owdjV2cHkxUUtseGdHQi0wWV9BWjFTLTNkZmVBLjhpZDBwQmUyRFRTMHN5ZHRuYndOWnc=]
+      opc-request-id: [2179A19236C1440D9F758CA129102123/40E5CAA2F88C460E19FF1BC04C9C3DCB/BC2555863E42B5A6C5BAC04B98828C1B]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="pAEy7UtdYGogjaFbIllAgNxWbIo5IUtSqGaveQ1n5kaUUIM3eLNy3fgPJS+ND5zW5UaoIjBP8FwXxqzN6OW3N/dID9dPHPrv4Ug+9InGorADQf/WevuvSGIhx/0/i4O5IiCQSvaUXmKNVDMoEIkT4yauSSVLkEY1voTF9jAvrgqudZ1T3FW8W/vCqWWLMxM5v/Urlwj3rTb4yEfcUo0pWH5Hc9ch9AdPnU/hdKalGjBG2zTrCvUAZbIQcJ8x1vKfqeyYlHNzMt7Kid2rXTFwk0dh+k65KEuCNCjuyv8DxADRcay669Liy26w/eL/mE/kKMOhQ/ksfgTk+MISjduSBA==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Mon, 01 Apr 2019 22:35:47 GMT']
+      host: [resourcemanager.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.5]
+      opc-request-id: [202D556D018A43C7A4702DE7ABC2A3B7]
+      user-agent: [Oracle-PythonSDK/2.2.5 (python 3.6.4; x86_64-Darwin)]
+    method: GET
+    uri: https://resourcemanager.us-phoenix-1.oraclecloud.com/20180917/stacks?compartmentId=ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba&displayName=__STS0836_3416&limit=10&page=AAAAAAAAAAJleUpyYVdRaU9pSXhPVEVpTENKbGJtTWlPaUpCTWpVMlIwTk5JaXdpWVd4bklqb2laR2x5SW4wLi5KT2xuQW1halNJdlhWakVDLkpKeDRQR01SLUVPZE9HYmpYcWNiTzVqWlZ3dnBzN0kyajhFdjlQbnBfMDUyT0NBX1VIdVNPM0RzdWdiZHR4T0ZsN2t5WF9pT3B4OVZxcVMtZUpqcWxuZ1ZyTUd6bXVIQVZYYnpYY1lTMlZNTXdYVVFWSWFSOXZ0b1ByQTU3Y1o2QUVsOXJKOVlfbUJsbnc0aU9Xa3hveG44ek9SUDcyRDQta0s0M09DTURIQlA4dUhCNl8xaHNxSGs5b21WTllULUF1eEY5Y1B3LUJrQ2UyNjNha2VWNWZ3RVh4cEhnVUJKanNCWjVXMmZWaU5MVXI1OXdWLUpPY0lKUzEzUENqM1BTem11T0x0TEZlOG5qbFhUOVZTdWtoX2Q4dWFWODlHYlRjaEgwWC1wcUNaOC1NVW1MYkRFZ1o5RkN1ajk1TU5JaTVQWU04V1hNbDhIamhpTjhFOXl5UXhoS2Ytb0g3Q0l5c0s0VGJYd19zc2ttMXBFazBTc2htampxeklDYkZ3b2FpWHU4anRmXzhpcmNBcEQ1SUpCdXRaRlBGV0t5ZjJLcmJnZDUzSFF3MDk4WXo4SW04d2xtQXUzRWcyTVFtX2JWYWVjQjlWdmdTbXBDaDBjRnhuNTRTTTFYUGRWTTNKQlF4a0Y3NEtlZ3Q5NUxWVS1NNGFHQUp6OEJtdzd2eGZpSnA3YkpWcFNDUkhTdmZteEQ3WmlqNjVici0wMnZjVDlnTUxOeVJFelpaOWZ6ZFM5MktLYjlEV0xYcjh3bDVtZE0wZmI5QzYwRVlhQXlORTJJU1dSTGdIdUhvWHp3V0tJR1gtc0FrVFh5NkFzenRHcHhtdndlaHlzUk9FR3JnTl9XMHhXTHp3SGYtTzlTTmJvV0ljaUgyUDFMOENmXy1paURkWUJTZHVhT0owdjV2cHkxUUtseGdHQi0wWV9BWjFTLTNkZmVBLjhpZDBwQmUyRFRTMHN5ZHRuYndOWnc%3D
+  response:
+    body: {string: '[ ]'}
+    headers:
+      Cache-Control: ['no-cache, no-store, must-revalidate']
+      Connection: [keep-alive]
+      Content-Length: ['3']
+      Content-Type: [application/json]
+      Date: ['Mon, 01 Apr 2019 22:35:47 GMT']
+      Pragma: [no-cache]
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains;]
+      Vary: [Accept-Encoding]
+      X-Content-Type-Options: [nosniff]
+      X-XSS-Protection: [1; mode=block]
+      opc-next-page: [AAAAAAAAAAJleUpyYVdRaU9pSXhPVEVpTENKbGJtTWlPaUpCTWpVMlIwTk5JaXdpWVd4bklqb2laR2x5SW4wLi53elUyRUhyUTBCSUZDdlYtLlQ0akZoUjF6QXFZd25qM2VTS3UxU20zdlJ5RTYwZHJYRzZJQ3ZlcXdTUWoyaFFCSTF5TWV1elVtVW5WYnc4WmF1OS1zcTc2QUhUSEFhZkJ5cDJwa00wYThNSTh0UzFVSzVNaG0tbC1SVFgzTS1SeGE5TjJZd0RaUlY2T01OZDNQUlEtTktGcTZ0LWJfa1NxaFh4MzdCSlJ6Vk0zcTF1QkFyM1dmeEsyM0lXYWxITmVLV3h6VXBwUmxBUV82SHBLYWYxbmFiZlZEbV9YVmNlRGtFRVFRc25Ca2ZuenRVUWpMYzJFSDg3c1JDUTF6QXV1d2ZoendMcGhRcmM5dDhOMnRXbEpzd2ItWEVtTnlrNV9WOHQ2anVpa2g3ZEdWUHFqOHdmRkM3T2N5VGFpUjBsNjRBTkNTUzhoNzBQcmx0VEZTRXBydDNyczBzUzNha1QtOFhLNFlsaC1YNDluZ3o2UlBWQzVwMXZfSEJ4Uk1BSVVPcDlKelFiWXVSNHJ2MUNfZ1MwREp5ZWo4Z1VIVVZ6aUxLYkpkVzhrOVlCSUJEVTBUd2didVFNNjJKWGR2ZF9ONThBQ3ZOaDJtUzhpRDc2NENWMXhyS3pNVks1cENlOUFidmVyQ0R0MDA2LTFEUVZMQkdrT0dvY05QVGFMYndXLUhDMDhGZk9VVk1TczA0UlFpN2pQVC1nay1WNnRCVzV2bUVpb28xSVI5UUZDQmswVDAtV2pmYXpEUmg3eDVyZVNhWC1QRk1aSHotbC1EMk1KbW1nZWU3emV4RFd5TXI3X0JBYjlYRHppSjZMbUN6TmJwVjJBYlI5dlE2TWptQ0QwVVNJMG1vems3eEJ3NmFEUnJiS2U2VlZIb0NqVnlzSWdCeHEwdEVwS2p3aks2c2ttS0ZuRWpXeURHUDM5MDhaTnAtSmlPTTh5Vko4VnRsQjl4TDNyRllRLlpJdmQ5MzNqMEdmRUFwMGkwMnlzbnc=]
+      opc-request-id: [202D556D018A43C7A4702DE7ABC2A3B7/5E1DFC7FB2CE8BD471ADF96ECCEA6D02/2542261CC46249D9D756207A6DD66C4D]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"containerId": "d6150530-0174-40af-a410-7d1d00969df4", "listResponse":
+      true, "requestClass": "com.oracle.bmc.resourcemanager.requests.ListStacksRequest",
+      "requestJson": "{\"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0836_3416\", \"limit\": 10}", "responseJson": "[{\"items\":
+      [], \"opcRequestId\": \"A1743D681FC6402EB479C2508A56ACD5\", \"opcNextPage\":
+      \"AAAAAAAAAAJleUpyYVdRaU9pSXhPVEVpTENKbGJtTWlPaUpCTWpVMlIwTk5JaXdpWVd4bklqb2laR2x5SW4wLi5KT2xuQW1halNJdlhWakVDLkpKeDRQR01SLUVPZE9HYmpYcWNiTzVqWlZ3dnBzN0kyajhFdjlQbnBfMDUyT0NBX1VIdVNPM0RzdWdiZHR4T0ZsN2t5WF9pT3B4OVZxcVMtZUpqcWxuZ1ZyTUd6bXVIQVZYYnpYY1lTMlZNTXdYVVFWSWFSOXZ0b1ByQTU3Y1o2QUVsOXJKOVlfbUJsbnc0aU9Xa3hveG44ek9SUDcyRDQta0s0M09DTURIQlA4dUhCNl8xaHNxSGs5b21WTllULUF1eEY5Y1B3LUJrQ2UyNjNha2VWNWZ3RVh4cEhnVUJKanNCWjVXMmZWaU5MVXI1OXdWLUpPY0lKUzEzUENqM1BTem11T0x0TEZlOG5qbFhUOVZTdWtoX2Q4dWFWODlHYlRjaEgwWC1wcUNaOC1NVW1MYkRFZ1o5RkN1ajk1TU5JaTVQWU04V1hNbDhIamhpTjhFOXl5UXhoS2Ytb0g3Q0l5c0s0VGJYd19zc2ttMXBFazBTc2htampxeklDYkZ3b2FpWHU4anRmXzhpcmNBcEQ1SUpCdXRaRlBGV0t5ZjJLcmJnZDUzSFF3MDk4WXo4SW04d2xtQXUzRWcyTVFtX2JWYWVjQjlWdmdTbXBDaDBjRnhuNTRTTTFYUGRWTTNKQlF4a0Y3NEtlZ3Q5NUxWVS1NNGFHQUp6OEJtdzd2eGZpSnA3YkpWcFNDUkhTdmZteEQ3WmlqNjVici0wMnZjVDlnTUxOeVJFelpaOWZ6ZFM5MktLYjlEV0xYcjh3bDVtZE0wZmI5QzYwRVlhQXlORTJJU1dSTGdIdUhvWHp3V0tJR1gtc0FrVFh5NkFzenRHcHhtdndlaHlzUk9FR3JnTl9XMHhXTHp3SGYtTzlTTmJvV0ljaUgyUDFMOENmXy1paURkWUJTZHVhT0owdjV2cHkxUUtseGdHQi0wWV9BWjFTLTNkZmVBLjhpZDBwQmUyRFRTMHN5ZHRuYndOWnc=\"},
+      {\"items\": [], \"opcRequestId\": \"CDDC8302D41D4F1D98BFF05FCFE00477\", \"opcNextPage\":
+      \"AAAAAAAAAAJleUpyYVdRaU9pSXhPVEVpTENKbGJtTWlPaUpCTWpVMlIwTk5JaXdpWVd4bklqb2laR2x5SW4wLi53elUyRUhyUTBCSUZDdlYtLlQ0akZoUjF6QXFZd25qM2VTS3UxU20zdlJ5RTYwZHJYRzZJQ3ZlcXdTUWoyaFFCSTF5TWV1elVtVW5WYnc4WmF1OS1zcTc2QUhUSEFhZkJ5cDJwa00wYThNSTh0UzFVSzVNaG0tbC1SVFgzTS1SeGE5TjJZd0RaUlY2T01OZDNQUlEtTktGcTZ0LWJfa1NxaFh4MzdCSlJ6Vk0zcTF1QkFyM1dmeEsyM0lXYWxITmVLV3h6VXBwUmxBUV82SHBLYWYxbmFiZlZEbV9YVmNlRGtFRVFRc25Ca2ZuenRVUWpMYzJFSDg3c1JDUTF6QXV1d2ZoendMcGhRcmM5dDhOMnRXbEpzd2ItWEVtTnlrNV9WOHQ2anVpa2g3ZEdWUHFqOHdmRkM3T2N5VGFpUjBsNjRBTkNTUzhoNzBQcmx0VEZTRXBydDNyczBzUzNha1QtOFhLNFlsaC1YNDluZ3o2UlBWQzVwMXZfSEJ4Uk1BSVVPcDlKelFiWXVSNHJ2MUNfZ1MwREp5ZWo4Z1VIVVZ6aUxLYkpkVzhrOVlCSUJEVTBUd2didVFNNjJKWGR2ZF9ONThBQ3ZOaDJtUzhpRDc2NENWMXhyS3pNVks1cENlOUFidmVyQ0R0MDA2LTFEUVZMQkdrT0dvY05QVGFMYndXLUhDMDhGZk9VVk1TczA0UlFpN2pQVC1nay1WNnRCVzV2bUVpb28xSVI5UUZDQmswVDAtV2pmYXpEUmg3eDVyZVNhWC1QRk1aSHotbC1EMk1KbW1nZWU3emV4RFd5TXI3X0JBYjlYRHppSjZMbUN6TmJwVjJBYlI5dlE2TWptQ0QwVVNJMG1vems3eEJ3NmFEUnJiS2U2VlZIb0NqVnlzSWdCeHEwdEVwS2p3aks2c2ttS0ZuRWpXeURHUDM5MDhaTnAtSmlPTTh5Vko4VnRsQjl4TDNyRllRLlpJdmQ5MzNqMEdmRUFwMGkwMnlzbnc=\"}]",
+      "responseClass": "com.oracle.bmc.resourcemanager.responses.ListStacksResponse"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2801']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=0836&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Mon, 01 Apr 2019 22:35:47 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="Ob3AnvynkLlOTln1LBxYWtFKnyXrnuPoOeiLC+KCyRU7Uk5nNGNr3RtNwwCp1PUZ0NJyebfCOdNI2FBjHiahMWyofdYN0NgZGZsrhh3asRFTbNgK7ym78B2hyOU7Yn05Z5FbavHqOeorw2lKbfgQsIS3bDGseREcVRzGo0T/ZXhMnSQcgTlbzz2XlyMc29ojS4aKpuwbP8TRU5Bpv7zkD4doIasmfnA1oT9xwUSRAoXVFpyAx7zsFuz1EsJCOkN7sjRHCpRNPU//I6xM1zgXJrKLyQEU9YKBxiO32KhlQQltBMOEMmJSUweBZ9agWaR4K1ImbzR1+XMr27826GiqDw==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Mon, 01 Apr 2019 22:35:47 GMT']
+      host: [resourcemanager.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.5]
+      opc-request-id: [31B05DBEDDE34B97A11AE9ED3C99DB18]
+      user-agent: [Oracle-PythonSDK/2.2.5 (python 3.6.4; x86_64-Darwin)]
+    method: GET
+    uri: https://resourcemanager.us-phoenix-1.oraclecloud.com/20180917/stacks?id=ocid1.ormstack.oc1.phx.aaaaaaaacc4yok6bgog4c2nw6lqtbkylhiroypyyc5z4canfulk2wxh5tddq&lifecycleState=ACTIVE
+  response:
+    body: {string: "[ {\n  \"id\" : \"ocid1.ormstack.oc1.phx.aaaaaaaacc4yok6bgog4c2nw6lqtbkylhiroypyyc5z4canfulk2wxh5tddq\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"__STS0836_6520\",\n  \"description\" : \"__STS0836_3121\"\
+        ,\n  \"timeCreated\" : \"2019-04-01T22:35:39.595Z\",\n  \"lifecycleState\"\
+        \ : \"ACTIVE\",\n  \"freeformTags\" : {\n    \"tag1\" : \"value1.__STS0836_767\"\
+        ,\n    \"tag2\" : \"value2.__STS0836_767\"\n  },\n  \"definedTags\" : {\n\
+        \    \"testing_service_tag_ns_001\" : {\n      \"testing_service_tag_01\"\
+        \ : \"tag4.__STS0836_2512\",\n      \"testing_service_tag_02\" : \"tag5.__STS0836_2512\"\
+        ,\n      \"testing_service_tag_03\" : \"tag6.__STS0836_2512\"\n    }\n  }\n\
+        } ]"}
+    headers:
+      Cache-Control: ['no-cache, no-store, must-revalidate']
+      Connection: [keep-alive]
+      Content-Length: ['692']
+      Content-Type: [application/json]
+      Date: ['Mon, 01 Apr 2019 22:35:47 GMT']
+      Pragma: [no-cache]
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains;]
+      Vary: [Accept-Encoding]
+      X-Content-Type-Options: [nosniff]
+      X-XSS-Protection: [1; mode=block]
+      opc-request-id: [31B05DBEDDE34B97A11AE9ED3C99DB18/F467FC5C34DB830B3C403265F95B889A/B9F635E464218E21F7B00B69931AB7CD]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"containerId": "f20014db-ef2e-4133-b398-8b029b46451e", "listResponse":
+      true, "requestClass": "com.oracle.bmc.resourcemanager.requests.ListStacksRequest",
+      "requestJson": "{\"id\": \"ocid1.ormstack.oc1.phx.aaaaaaaacc4yok6bgog4c2nw6lqtbkylhiroypyyc5z4canfulk2wxh5tddq\",
+      \"lifecycleState\": \"ACTIVE\"}", "responseJson": "[{\"items\": [{\"id\": \"ocid1.ormstack.oc1.phx.aaaaaaaacc4yok6bgog4c2nw6lqtbkylhiroypyyc5z4canfulk2wxh5tddq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0836_6520\", \"description\": \"__STS0836_3121\", \"timeCreated\":
+      \"2019-04-01T22:35:39.595000+00:00\", \"lifecycleState\": \"ACTIVE\", \"freeformTags\":
+      {\"tag1\": \"value1.__STS0836_767\", \"tag2\": \"value2.__STS0836_767\"}, \"definedTags\":
+      {\"testingServiceTagNs001\": {\"testingServiceTag01\": \"tag4.__STS0836_2512\",
+      \"testingServiceTag02\": \"tag5.__STS0836_2512\", \"testingServiceTag03\": \"tag6.__STS0836_2512\"}}}],
+      \"opcRequestId\": \"91841193EF5F4247A1C4944A61F7A37B\", \"opcNextPage\": null}]",
+      "responseClass": "com.oracle.bmc.resourcemanager.responses.ListStacksResponse"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['1155']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=0836&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Mon, 01 Apr 2019 22:35:47 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="CBHxKfhD6/sJB2ioP0a7e6vFMzrcza8RrPkS1JfXfkM8TvWUwUtIrqW0XFSVn7fyuHkulnYU5FxAl5kydPEzq3Vzw2ounXAHwqWONdxgzrbXbboZ/WQq6oHX/NiTTd0kF6YXbGOUFvSK40Jn98tC9vGViBLnjSfQEt+apDeKZL7dr7aokjo/jEy0Kq+Mt1A5Ln7jAckfgGB72JfcVxFgYLSGTzDyapEPTkoSswNhQEXAvBwRapWKKJ67wkyL22yF7v4Pgy1XyF/LfS8k55H351Y5kV3bE0OAFJkuCmtr3LWNs5q9yzIDiCZL+TPPoZSxqreRITA0FgWdC4i0fTOk7A==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Mon, 01 Apr 2019 22:35:47 GMT']
+      host: [resourcemanager.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.5]
+      opc-request-id: [465C3BA4A90C4AE7B02BFCC0B30DA6CE]
+      user-agent: [Oracle-PythonSDK/2.2.5 (python 3.6.4; x86_64-Darwin)]
+    method: GET
+    uri: https://resourcemanager.us-phoenix-1.oraclecloud.com/20180917/stacks?compartmentId=ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba&lifecycleState=ACTIVE
+  response:
+    body: {string: "[ {\n  \"id\" : \"ocid1.ormstack.oc1.phx.aaaaaaaae4pm4rrbpm4l77q5c2hbdnajcgilvs576dtoilmdv2saaar5unaa\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"__STS0836_9349\",\n  \"description\" : \"__STS0836_2245\"\
+        ,\n  \"timeCreated\" : \"2019-04-01T22:35:46.177Z\",\n  \"lifecycleState\"\
+        \ : \"ACTIVE\",\n  \"freeformTags\" : {\n    \"tag1\" : \"value1.__STS0836_8229\"\
+        ,\n    \"tag2\" : \"value2.__STS0836_8229\"\n  },\n  \"definedTags\" : {\n\
+        \    \"testing_service_tag_ns_001\" : {\n      \"testing_service_tag_01\"\
+        \ : \"tag4.__STS0836_6779\",\n      \"testing_service_tag_02\" : \"tag5.__STS0836_6779\"\
+        ,\n      \"testing_service_tag_03\" : \"tag6.__STS0836_6779\"\n    }\n  }\n\
+        }, {\n  \"id\" : \"ocid1.ormstack.oc1.phx.aaaaaaaavnqdk6gqsrnhzc2e5yxagrahtvcqiajofizcd6nbivumxeiiakhq\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"__STS0836_1397\",\n  \"description\" : \"__STS0836_3813\"\
+        ,\n  \"timeCreated\" : \"2019-04-01T22:35:45.333Z\",\n  \"lifecycleState\"\
+        \ : \"ACTIVE\",\n  \"freeformTags\" : {\n    \"tag1\" : \"value1.__STS0836_5029\"\
+        ,\n    \"tag2\" : \"value2.__STS0836_5029\"\n  },\n  \"definedTags\" : {\n\
+        \    \"testing_service_tag_ns_001\" : {\n      \"testing_service_tag_01\"\
+        \ : \"tag4.__STS0836_682\",\n      \"testing_service_tag_02\" : \"tag5.__STS0836_682\"\
+        ,\n      \"testing_service_tag_03\" : \"tag6.__STS0836_682\"\n    }\n  }\n\
+        }, {\n  \"id\" : \"ocid1.ormstack.oc1.phx.aaaaaaaa2hc625ftdp2egjcyp7gh65jlrctgjb3g6mi5owilg5t6bxsgegsa\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"__STS0836_5986\",\n  \"description\" : \"__STS0836_5853\"\
+        ,\n  \"timeCreated\" : \"2019-04-01T22:35:44.439Z\",\n  \"lifecycleState\"\
+        \ : \"ACTIVE\",\n  \"freeformTags\" : {\n    \"tag1\" : \"value1.__STS0836_4058\"\
+        ,\n    \"tag2\" : \"value2.__STS0836_4058\"\n  },\n  \"definedTags\" : {\n\
+        \    \"testing_service_tag_ns_001\" : {\n      \"testing_service_tag_01\"\
+        \ : \"tag4.__STS0836_5444\",\n      \"testing_service_tag_02\" : \"tag5.__STS0836_5444\"\
+        ,\n      \"testing_service_tag_03\" : \"tag6.__STS0836_5444\"\n    }\n  }\n\
+        }, {\n  \"id\" : \"ocid1.ormstack.oc1.phx.aaaaaaaa72wcvptzua7orid77letrqg242rjnqlsgm6cdmqqiiaejv75j3ka\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"__STS0836_3176\",\n  \"description\" : \"__STS0836_7664\"\
+        ,\n  \"timeCreated\" : \"2019-04-01T22:35:43.430Z\",\n  \"lifecycleState\"\
+        \ : \"ACTIVE\",\n  \"freeformTags\" : {\n    \"tag1\" : \"value1.__STS0836_6712\"\
+        ,\n    \"tag2\" : \"value2.__STS0836_6712\"\n  },\n  \"definedTags\" : {\n\
+        \    \"testing_service_tag_ns_001\" : {\n      \"testing_service_tag_01\"\
+        \ : \"tag4.__STS0836_5138\",\n      \"testing_service_tag_02\" : \"tag5.__STS0836_5138\"\
+        ,\n      \"testing_service_tag_03\" : \"tag6.__STS0836_5138\"\n    }\n  }\n\
+        }, {\n  \"id\" : \"ocid1.ormstack.oc1.phx.aaaaaaaa3gflz3ttausqxgq6we2vxdlpztr7qyjatvczwakgms6echckwsaq\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"__STS0836_6084\",\n  \"description\" : \"__STS0836_8800\"\
+        ,\n  \"timeCreated\" : \"2019-04-01T22:35:42.623Z\",\n  \"lifecycleState\"\
+        \ : \"ACTIVE\",\n  \"freeformTags\" : {\n    \"tag1\" : \"value1.__STS0836_7364\"\
+        ,\n    \"tag2\" : \"value2.__STS0836_7364\"\n  },\n  \"definedTags\" : {\n\
+        \    \"testing_service_tag_ns_001\" : {\n      \"testing_service_tag_01\"\
+        \ : \"tag4.__STS0836_8666\",\n      \"testing_service_tag_02\" : \"tag5.__STS0836_8666\"\
+        ,\n      \"testing_service_tag_03\" : \"tag6.__STS0836_8666\"\n    }\n  }\n\
+        }, {\n  \"id\" : \"ocid1.ormstack.oc1.phx.aaaaaaaacc4yok6bgog4c2nw6lqtbkylhiroypyyc5z4canfulk2wxh5tddq\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"__STS0836_6520\",\n  \"description\" : \"__STS0836_3121\"\
+        ,\n  \"timeCreated\" : \"2019-04-01T22:35:39.595Z\",\n  \"lifecycleState\"\
+        \ : \"ACTIVE\",\n  \"freeformTags\" : {\n    \"tag1\" : \"value1.__STS0836_767\"\
+        ,\n    \"tag2\" : \"value2.__STS0836_767\"\n  },\n  \"definedTags\" : {\n\
+        \    \"testing_service_tag_ns_001\" : {\n      \"testing_service_tag_01\"\
+        \ : \"tag4.__STS0836_2512\",\n      \"testing_service_tag_02\" : \"tag5.__STS0836_2512\"\
+        ,\n      \"testing_service_tag_03\" : \"tag6.__STS0836_2512\"\n    }\n  }\n\
+        }, {\n  \"id\" : \"ocid1.ormstack.oc1.phx.aaaaaaaatg6ffmitdprv4o4fnlmdkymyzwyz4osqjkomwexldwli73sdbnma\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"__STS0836_6585\",\n  \"description\" : \"__STS0836_7019\"\
+        ,\n  \"timeCreated\" : \"2019-04-01T22:35:37.637Z\",\n  \"lifecycleState\"\
+        \ : \"ACTIVE\",\n  \"freeformTags\" : {\n    \"tag1\" : \"value1.__STS0836_2846\"\
+        ,\n    \"tag2\" : \"value2.__STS0836_2846\"\n  },\n  \"definedTags\" : {\n\
+        \    \"testing_service_tag_ns_001\" : {\n      \"testing_service_tag_01\"\
+        \ : \"tag4.__STS0836_4762\",\n      \"testing_service_tag_02\" : \"tag5.__STS0836_4762\"\
+        ,\n      \"testing_service_tag_03\" : \"tag6.__STS0836_4762\"\n    }\n  }\n\
+        }, {\n  \"id\" : \"ocid1.ormstack.oc1.phx.aaaaaaaau5be6uidixqb54bawp3af5k3sr5e533as4haqr52tvzcamaupxkq\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"__STS0836_9300\",\n  \"description\" : \"__STS0836_5268\"\
+        ,\n  \"timeCreated\" : \"2019-04-01T22:35:25.339Z\",\n  \"lifecycleState\"\
+        \ : \"ACTIVE\",\n  \"freeformTags\" : {\n    \"tag1\" : \"value1.__STS0836_8508\"\
+        ,\n    \"tag2\" : \"value2.__STS0836_8508\"\n  },\n  \"definedTags\" : {\n\
+        \    \"testing_service_tag_ns_001\" : {\n      \"testing_service_tag_01\"\
+        \ : \"tag4.__STS0836_9889\",\n      \"testing_service_tag_02\" : \"tag5.__STS0836_9889\"\
+        ,\n      \"testing_service_tag_03\" : \"tag6.__STS0836_9889\"\n    }\n  }\n\
+        }, {\n  \"id\" : \"ocid1.ormstack.oc1.phx.aaaaaaaa2wx5wd5mguhkxe7fwqu44wkwsdigssoxss5ar7fo7md3scr5vapa\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"__STS0836_7649\",\n  \"description\" : \"__STS0836_1063\"\
+        ,\n  \"timeCreated\" : \"2019-04-01T22:31:18.917Z\",\n  \"lifecycleState\"\
+        \ : \"ACTIVE\",\n  \"freeformTags\" : {\n    \"tag1\" : \"value1.__STS0836_935\"\
+        ,\n    \"tag2\" : \"value2.__STS0836_935\"\n  },\n  \"definedTags\" : {\n\
+        \    \"testing_service_tag_ns_001\" : {\n      \"testing_service_tag_01\"\
+        \ : \"tag4.__STS0836_9218\",\n      \"testing_service_tag_02\" : \"tag5.__STS0836_9218\"\
+        ,\n      \"testing_service_tag_03\" : \"tag6.__STS0836_9218\"\n    }\n  }\n\
+        }, {\n  \"id\" : \"ocid1.ormstack.oc1.phx.aaaaaaaaghajzt44jlpscwrvwp45xabds5izntbzdmpybnuzwhcezavov7pq\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"__STS0836_5236\",\n  \"description\" : \"__STS0836_4035\"\
+        ,\n  \"timeCreated\" : \"2019-04-01T22:31:08.842Z\",\n  \"lifecycleState\"\
+        \ : \"ACTIVE\",\n  \"freeformTags\" : {\n    \"tag1\" : \"value1.__STS0836_6375\"\
+        ,\n    \"tag2\" : \"value2.__STS0836_6375\"\n  },\n  \"definedTags\" : {\n\
+        \    \"testing_service_tag_ns_001\" : {\n      \"testing_service_tag_01\"\
+        \ : \"tag4.__STS0836_6419\",\n      \"testing_service_tag_02\" : \"tag5.__STS0836_6419\"\
+        ,\n      \"testing_service_tag_03\" : \"tag6.__STS0836_6419\"\n    }\n  }\n\
+        } ]"}
+    headers:
+      Cache-Control: ['no-cache, no-store, must-revalidate']
+      Connection: [keep-alive]
+      Content-Length: ['6915']
+      Content-Type: [application/json]
+      Date: ['Mon, 01 Apr 2019 22:35:48 GMT']
+      Pragma: [no-cache]
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains;]
+      Vary: [Accept-Encoding]
+      X-Content-Type-Options: [nosniff]
+      X-XSS-Protection: [1; mode=block]
+      opc-next-page: [AAAAAAAAAAJleUpyYVdRaU9pSXhPVEVpTENKbGJtTWlPaUpCTWpVMlIwTk5JaXdpWVd4bklqb2laR2x5SW4wLi40SF8ydms2WkZYZk9XalJWLnlvb2k4WVVhT2czSE8zenlINnhrSTdiYU9DaGM5Y2xreEpReWFjanVqc0szT1dOWEx0TGo4Z3JtSlpteFdhNDBPcnlmQzBRTWhGS1pLUkhINXFRd3JhVHRiRVowMkMxdUsyN1pFcXFSdlRhX2phbDhiMWV5bjY3ZWxWUjNWZXhYNkNXRzNsVk96dFNUS1gtYU03U1dLWUhsSVZEVzFfaGNtZUlmdUxZeTBPX2FvWm5OTTRpcnZISUMwSUo4aW4zTVFqdWJXd2IwOTNfRFRXUEUxMFZ1RUhVVUEtb3NxcXIwMm42RHJRVk5BSmNidnRNcno2aDJha3ZTWTBvc3BxdkhiVlJnQVgxRGlNZEdXUExzUGJQa1ZBUkMtcFVCZGFFbm9Eb1pNY3h6Um5pUlI3WWMxYzBmX21oUFh1NGFfZEM4S0dyS0V0SHlaNENCVEtxN3JEaFpINFZqamc0U01yYTZJQ1h2R0hiSmE0TGo3UGdMbVd0X1lBbElrSENDT1J3aThXTHpKeHZkMGlISzJRMUhmc3ZNZXB1MmlyQWkyRUJmeEdqd2lieEpXNlZYOFNxejNRMnk1UlRjUTNVWUpVU2w0QjI1b1poNUo2cHphNGhaU1F3X2xfTlhoZGwwbW9ZRnJLa0pKVlhyczNNZWZ2bDVWWkpZckRSamFuSktESm5BdEpoSlpwMFZwYzdQVm1aVDVtcFMwN2FnSjhpVlFaRUszTEp3TXdJOEotRE8ydXFMTHpFeHFwMmtXLWNzYVpLYVJpZmt5dGlGcVlMZXNzQ3ZoR1ZITTZBWEM1ZVltS3JzQjVpWTlLMmlzeks0RHMtcTVZMFJQSm5UU3ZqY2NoOEluakplMEVTVWt3UVJTQk9CeXllQWhlME41N21ZUElpUWc1blgtZGZoMk9aZFkzb0VCcjNMWERPSl9TOUY0TVdfSllNc2VBLmt5cHZzbHRiRy1UdVUwSkcwMDRRUWc=]
+      opc-request-id: [465C3BA4A90C4AE7B02BFCC0B30DA6CE/9E36D7CB7D3D1BE726302A5E1D58F51D/CC058DF85EB9EB675530AB94C43291A5]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="fxK73FnCRep54QXC0wHto+joY+cB/mjWwH0rvWD42WSV4SCrQJO5WzsdzrrMtfdoEKoyqWv5dHUz+Ft9ne444mWgtartumOcEgVcLrSG8VjToULTmM9MOKHEtwU/aKqGzy786fo4tkLSpPwSUnjgIgLgnZQqIAHiGl/cUWBtOt2YTvziPZCns48H9rzIgAF7BRixT5lXAna4M1vAL4l2xuTM02YGn9kpFeSb+37mKZJYFnLo6qOPEDwEvZcDxoIYkOWPY5zKDsr+RqvXQgCQFNCtuYoyv2d8XUvNI10yRQOE88Eh2xHoWXX1ICpglB1QjF/sQOhD81COlySOSYGPZw==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Mon, 01 Apr 2019 22:35:48 GMT']
+      host: [resourcemanager.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.5]
+      opc-request-id: [1269AD796571436DBE4B4DB0996AC7F2]
+      user-agent: [Oracle-PythonSDK/2.2.5 (python 3.6.4; x86_64-Darwin)]
+    method: GET
+    uri: https://resourcemanager.us-phoenix-1.oraclecloud.com/20180917/stacks?compartmentId=ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba&lifecycleState=ACTIVE&page=AAAAAAAAAAJleUpyYVdRaU9pSXhPVEVpTENKbGJtTWlPaUpCTWpVMlIwTk5JaXdpWVd4bklqb2laR2x5SW4wLi40SF8ydms2WkZYZk9XalJWLnlvb2k4WVVhT2czSE8zenlINnhrSTdiYU9DaGM5Y2xreEpReWFjanVqc0szT1dOWEx0TGo4Z3JtSlpteFdhNDBPcnlmQzBRTWhGS1pLUkhINXFRd3JhVHRiRVowMkMxdUsyN1pFcXFSdlRhX2phbDhiMWV5bjY3ZWxWUjNWZXhYNkNXRzNsVk96dFNUS1gtYU03U1dLWUhsSVZEVzFfaGNtZUlmdUxZeTBPX2FvWm5OTTRpcnZISUMwSUo4aW4zTVFqdWJXd2IwOTNfRFRXUEUxMFZ1RUhVVUEtb3NxcXIwMm42RHJRVk5BSmNidnRNcno2aDJha3ZTWTBvc3BxdkhiVlJnQVgxRGlNZEdXUExzUGJQa1ZBUkMtcFVCZGFFbm9Eb1pNY3h6Um5pUlI3WWMxYzBmX21oUFh1NGFfZEM4S0dyS0V0SHlaNENCVEtxN3JEaFpINFZqamc0U01yYTZJQ1h2R0hiSmE0TGo3UGdMbVd0X1lBbElrSENDT1J3aThXTHpKeHZkMGlISzJRMUhmc3ZNZXB1MmlyQWkyRUJmeEdqd2lieEpXNlZYOFNxejNRMnk1UlRjUTNVWUpVU2w0QjI1b1poNUo2cHphNGhaU1F3X2xfTlhoZGwwbW9ZRnJLa0pKVlhyczNNZWZ2bDVWWkpZckRSamFuSktESm5BdEpoSlpwMFZwYzdQVm1aVDVtcFMwN2FnSjhpVlFaRUszTEp3TXdJOEotRE8ydXFMTHpFeHFwMmtXLWNzYVpLYVJpZmt5dGlGcVlMZXNzQ3ZoR1ZITTZBWEM1ZVltS3JzQjVpWTlLMmlzeks0RHMtcTVZMFJQSm5UU3ZqY2NoOEluakplMEVTVWt3UVJTQk9CeXllQWhlME41N21ZUElpUWc1blgtZGZoMk9aZFkzb0VCcjNMWERPSl9TOUY0TVdfSllNc2VBLmt5cHZzbHRiRy1UdVUwSkcwMDRRUWc%3D
+  response:
+    body: {string: "[ {\n  \"id\" : \"ocid1.ormstack.oc1..aaaaaaaatydc5fzcnz2pwe3kqm6uu4xwu4ccug5g3js3bozml2vwdec6kqbq\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"JavaSDK.CRUD.1542731593938.JobIntegrationTest.setUp\"\
+        ,\n  \"description\" : \"New stack for testing\",\n  \"timeCreated\" : \"\
+        2018-11-20T16:33:16.209Z\",\n  \"lifecycleState\" : \"ACTIVE\",\n  \"freeformTags\"\
+        \ : {\n    \"tag1\" : \"value1\",\n    \"tag2\" : \"value2\"\n  },\n  \"definedTags\"\
+        \ : {\n    \"java_sdk_tag_ns_001\" : {\n      \"java_sdk_tag_03\" : \"2018-11-20T15:49:23.741Z\"\
+        ,\n      \"java_sdk_tag_01\" : \"10\",\n      \"java_sdk_tag_02\" : \"JavaSDK\"\
+        \n    }\n  }\n}, {\n  \"id\" : \"ocid1.ormstack.oc1..aaaaaaaazilo4iqnqkeocnlxwp4slv6it3o2di5vn77gjeb7ci5mjxzy2amq\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"JavaSDK.CRUD.1537988217083.JobIntegrationTest.setUp\"\
+        ,\n  \"description\" : \"New stack for testing\",\n  \"timeCreated\" : \"\
+        2018-09-26T18:56:57.532Z\",\n  \"lifecycleState\" : \"ACTIVE\",\n  \"freeformTags\"\
+        \ : {\n    \"tag1\" : \"value1\",\n    \"tag2\" : \"value2\"\n  },\n  \"definedTags\"\
+        \ : {\n    \"java_sdk_tag_ns_001\" : {\n      \"java_sdk_tag_03\" : \"2018-09-26T18:56:56.971Z\"\
+        ,\n      \"java_sdk_tag_01\" : \"10\",\n      \"java_sdk_tag_02\" : \"JavaSDK\"\
+        \n    }\n  }\n}, {\n  \"id\" : \"ocid1.ormstack.oc1..aaaaaaaaebaicko32xxdrqyckpizjvuvvxa3evsvxey3uwcs24tlnhwecciq\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"JavaSDK.CRUD.1537987578526.JobIntegrationTest.setUp\"\
+        ,\n  \"description\" : \"New stack for testing\",\n  \"timeCreated\" : \"\
+        2018-09-26T18:46:18.973Z\",\n  \"lifecycleState\" : \"ACTIVE\",\n  \"freeformTags\"\
+        \ : {\n    \"tag1\" : \"value1\",\n    \"tag2\" : \"value2\"\n  },\n  \"definedTags\"\
+        \ : {\n    \"java_sdk_tag_ns_001\" : {\n      \"java_sdk_tag_03\" : \"2018-09-26T18:46:18.368Z\"\
+        ,\n      \"java_sdk_tag_01\" : \"10\",\n      \"java_sdk_tag_02\" : \"JavaSDK\"\
+        \n    }\n  }\n}, {\n  \"id\" : \"ocid1.ormstack.oc1..aaaaaaaakggobcefktgmr5lrzcy3gari7uo43jgri5sgxyzncbugpstq4fsa\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"JavaSDK.CRUD.1537981367496.JobIntegrationTest.setUp\"\
+        ,\n  \"description\" : \"New stack for testing\",\n  \"timeCreated\" : \"\
+        2018-09-26T17:02:47.990Z\",\n  \"lifecycleState\" : \"ACTIVE\",\n  \"freeformTags\"\
+        \ : {\n    \"tag1\" : \"value1\",\n    \"tag2\" : \"value2\"\n  },\n  \"definedTags\"\
+        \ : {\n    \"java_sdk_tag_ns_001\" : {\n      \"java_sdk_tag_03\" : \"2018-09-26T17:02:47.392Z\"\
+        ,\n      \"java_sdk_tag_01\" : \"10\",\n      \"java_sdk_tag_02\" : \"JavaSDK\"\
+        \n    }\n  }\n}, {\n  \"id\" : \"ocid1.ormstack.oc1..aaaaaaaae7zqr2hga3t74c4b3ioatxmho5kcyjw6gkeiqzvlog4tsnbxlayq\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"JavaSDK.CRUD.1537288709366.JobIntegrationTest.setUp\"\
+        ,\n  \"description\" : \"New stack for testing\",\n  \"timeCreated\" : \"\
+        2018-09-18T16:38:29.887Z\",\n  \"lifecycleState\" : \"ACTIVE\",\n  \"freeformTags\"\
+        \ : {\n    \"tag1\" : \"value1\",\n    \"tag2\" : \"value2\"\n  },\n  \"definedTags\"\
+        \ : {\n    \"java_sdk_tag_ns_001\" : {\n      \"java_sdk_tag_03\" : \"2018-09-18T16:38:29.270Z\"\
+        ,\n      \"java_sdk_tag_01\" : \"10\",\n      \"java_sdk_tag_02\" : \"JavaSDK\"\
+        \n    }\n  }\n}, {\n  \"id\" : \"ocid1.ormstack.oc1..aaaaaaaamwl3dmi2ihcgmx3jth4w4yxjoiqkqm2oxbeofjxxa54jqrzlm4jq\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"JavaSDK.CRUD.1536960559784.JobIntegrationTest.setUp\"\
+        ,\n  \"description\" : \"New stack for testing\",\n  \"timeCreated\" : \"\
+        2018-09-14T21:29:20.367Z\",\n  \"lifecycleState\" : \"ACTIVE\",\n  \"freeformTags\"\
+        \ : {\n    \"tag1\" : \"value1\",\n    \"tag2\" : \"value2\"\n  },\n  \"definedTags\"\
+        \ : {\n    \"java_sdk_tag_ns_001\" : {\n      \"java_sdk_tag_03\" : \"2018-09-14T21:29:19.702Z\"\
+        ,\n      \"java_sdk_tag_01\" : \"10\",\n      \"java_sdk_tag_02\" : \"JavaSDK\"\
+        \n    }\n  }\n}, {\n  \"id\" : \"ocid1.ormstack.oc1..aaaaaaaajb4j3ebqfqqklwajtuvr7yvo43c5bs5f7nklydkte67uqaenl4ra\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"JavaSDK.CRUD.1536944511097.JobIntegrationTest.setUp\"\
+        ,\n  \"description\" : \"New stack for testing\",\n  \"timeCreated\" : \"\
+        2018-09-14T17:01:51.624Z\",\n  \"lifecycleState\" : \"ACTIVE\",\n  \"freeformTags\"\
+        \ : {\n    \"tag1\" : \"value1\",\n    \"tag2\" : \"value2\"\n  },\n  \"definedTags\"\
+        \ : {\n    \"java_sdk_tag_ns_001\" : {\n      \"java_sdk_tag_03\" : \"2018-09-14T17:01:51.003Z\"\
+        ,\n      \"java_sdk_tag_01\" : \"10\",\n      \"java_sdk_tag_02\" : \"JavaSDK\"\
+        \n    }\n  }\n}, {\n  \"id\" : \"ocid1.ormstack.oc1..aaaaaaaagfj5dgyk2cfzs6vlkfx7ajjtl6i773atvu5g6dbl44ulqjavmcea\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"JavaSDK.CRUD.1536857360250.JobIntegrationTest.setUp\"\
+        ,\n  \"description\" : \"New stack for testing\",\n  \"timeCreated\" : \"\
+        2018-09-13T16:49:20.827Z\",\n  \"lifecycleState\" : \"ACTIVE\",\n  \"freeformTags\"\
+        \ : {\n    \"tag1\" : \"value1\",\n    \"tag2\" : \"value2\"\n  },\n  \"definedTags\"\
+        \ : {\n    \"java_sdk_tag_ns_001\" : {\n      \"java_sdk_tag_03\" : \"2018-09-13T16:49:20.151Z\"\
+        ,\n      \"java_sdk_tag_01\" : \"10\",\n      \"java_sdk_tag_02\" : \"JavaSDK\"\
+        \n    }\n  }\n}, {\n  \"id\" : \"ocid1.ormstack.oc1..aaaaaaaasrxajg4ymgxnej5gfk5qtte3qe3zomqfutms6llzwoae7xj2yqta\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"JavaSDK.CRUD.1536856800350.JobIntegrationTest.setUp\"\
+        ,\n  \"description\" : \"New stack for testing\",\n  \"timeCreated\" : \"\
+        2018-09-13T16:40:00.990Z\",\n  \"lifecycleState\" : \"ACTIVE\",\n  \"freeformTags\"\
+        \ : {\n    \"tag1\" : \"value1\",\n    \"tag2\" : \"value2\"\n  },\n  \"definedTags\"\
+        \ : {\n    \"java_sdk_tag_ns_001\" : {\n      \"java_sdk_tag_03\" : \"2018-09-13T16:40:00.255Z\"\
+        ,\n      \"java_sdk_tag_01\" : \"10\",\n      \"java_sdk_tag_02\" : \"JavaSDK\"\
+        \n    }\n  }\n}, {\n  \"id\" : \"ocid1.ormstack.oc1..aaaaaaaadduwrs3jm46yuzg7hffy43qpbrx27rj5kxu33nofi4jjkqltafaa\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"JavaSDK.CRUD.1536781967801.JobIntegrationTest.setUp\"\
+        ,\n  \"description\" : \"New stack for testing\",\n  \"timeCreated\" : \"\
+        2018-09-12T19:52:48.345Z\",\n  \"lifecycleState\" : \"ACTIVE\",\n  \"freeformTags\"\
+        \ : {\n    \"tag1\" : \"value1\",\n    \"tag2\" : \"value2\"\n  },\n  \"definedTags\"\
+        \ : {\n    \"java_sdk_tag_ns_001\" : {\n      \"java_sdk_tag_03\" : \"2018-09-12T19:52:47.694Z\"\
+        ,\n      \"java_sdk_tag_01\" : \"10\",\n      \"java_sdk_tag_02\" : \"JavaSDK\"\
+        \n    }\n  }\n}, {\n  \"id\" : \"ocid1.ormstack.oc1..aaaaaaaagvih6uc73ggwii3smoahgwg4wen32s7dlfevq7ypcx5s2fuxqp6q\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"JavaSDK.CRUD.1536686655930.JobIntegrationTest.setUp\"\
+        ,\n  \"description\" : \"New stack for testing\",\n  \"timeCreated\" : \"\
+        2018-09-11T17:24:16.433Z\",\n  \"lifecycleState\" : \"ACTIVE\",\n  \"freeformTags\"\
+        \ : {\n    \"tag1\" : \"value1\",\n    \"tag2\" : \"value2\"\n  },\n  \"definedTags\"\
+        \ : {\n    \"java_sdk_tag_ns_001\" : {\n      \"java_sdk_tag_03\" : \"2018-09-11T17:24:15.826Z\"\
+        ,\n      \"java_sdk_tag_01\" : \"10\",\n      \"java_sdk_tag_02\" : \"JavaSDK\"\
+        \n    }\n  }\n}, {\n  \"id\" : \"ocid1.ormstack.oc1..aaaaaaaa4pb22yl2o7c64rqfcaw7usdk7yyvn6diis24jnqg7am3us6yc7vq\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"JavaSDK.CRUD.1536597212789.JobIntegrationTest.setUp\"\
+        ,\n  \"description\" : \"New stack for testing\",\n  \"timeCreated\" : \"\
+        2018-09-10T16:33:34.283Z\",\n  \"lifecycleState\" : \"ACTIVE\",\n  \"freeformTags\"\
+        \ : {\n    \"tag1\" : \"value1\",\n    \"tag2\" : \"value2\"\n  },\n  \"definedTags\"\
+        \ : {\n    \"java_sdk_tag_ns_001\" : {\n      \"java_sdk_tag_03\" : \"2018-09-10T16:33:32.685Z\"\
+        ,\n      \"java_sdk_tag_01\" : \"10\",\n      \"java_sdk_tag_02\" : \"JavaSDK\"\
+        \n    }\n  }\n}, {\n  \"id\" : \"ocid1.ormstack.oc1..aaaaaaaazpleltiuxs5rnufyoadlc75kqutvwpuyau3ruvgwao7fvera3zjq\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"JavaSDK.CRUD.1536518234576.JobIntegrationTest.setUp\"\
+        ,\n  \"description\" : \"New stack for testing\",\n  \"timeCreated\" : \"\
+        2018-09-09T18:37:15.283Z\",\n  \"lifecycleState\" : \"ACTIVE\",\n  \"freeformTags\"\
+        \ : {\n    \"tag1\" : \"value1\",\n    \"tag2\" : \"value2\"\n  },\n  \"definedTags\"\
+        \ : {\n    \"java_sdk_tag_ns_001\" : {\n      \"java_sdk_tag_03\" : \"2018-09-09T18:37:14.476Z\"\
+        ,\n      \"java_sdk_tag_01\" : \"10\",\n      \"java_sdk_tag_02\" : \"JavaSDK\"\
+        \n    }\n  }\n}, {\n  \"id\" : \"ocid1.ormstack.oc1..aaaaaaaa63gb5rcnnqeawrkjfbccnjakr6gxyxoqlemx6y4zj2ghbivpoxya\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"JavaSDK.CRUD.1536425118928.JobIntegrationTest.setUp\"\
+        ,\n  \"description\" : \"New stack for testing\",\n  \"timeCreated\" : \"\
+        2018-09-08T16:45:19.675Z\",\n  \"lifecycleState\" : \"ACTIVE\",\n  \"freeformTags\"\
+        \ : {\n    \"tag1\" : \"value1\",\n    \"tag2\" : \"value2\"\n  },\n  \"definedTags\"\
+        \ : {\n    \"java_sdk_tag_ns_001\" : {\n      \"java_sdk_tag_03\" : \"2018-09-08T16:45:18.776Z\"\
+        ,\n      \"java_sdk_tag_01\" : \"10\",\n      \"java_sdk_tag_02\" : \"JavaSDK\"\
+        \n    }\n  }\n}, {\n  \"id\" : \"ocid1.ormstack.oc1..aaaaaaaa6x4bo6h5fobntmoly734katczjo35bqv5ycwo7ffacwwflsfhlea\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"JavaSDK.CRUD.1536424717371.JobIntegrationTest.setUp\"\
+        ,\n  \"description\" : \"New stack for testing\",\n  \"timeCreated\" : \"\
+        2018-09-08T16:38:38.045Z\",\n  \"lifecycleState\" : \"ACTIVE\",\n  \"freeformTags\"\
+        \ : {\n    \"tag1\" : \"value1\",\n    \"tag2\" : \"value2\"\n  },\n  \"definedTags\"\
+        \ : {\n    \"java_sdk_tag_ns_001\" : {\n      \"java_sdk_tag_03\" : \"2018-09-08T16:38:37.230Z\"\
+        ,\n      \"java_sdk_tag_01\" : \"10\",\n      \"java_sdk_tag_02\" : \"JavaSDK\"\
+        \n    }\n  }\n}, {\n  \"id\" : \"ocid1.ormstack.oc1..aaaaaaaavcccfscaqfrpg3yewxxndorhgs6oelz2xwyxtzdtncletrtna5qq\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"JavaSDK.CRUD.1536424179319.JobIntegrationTest.setUp\"\
+        ,\n  \"description\" : \"New stack for testing\",\n  \"timeCreated\" : \"\
+        2018-09-08T16:29:40.301Z\",\n  \"lifecycleState\" : \"ACTIVE\",\n  \"freeformTags\"\
+        \ : {\n    \"tag1\" : \"value1\",\n    \"tag2\" : \"value2\"\n  },\n  \"definedTags\"\
+        \ : {\n    \"java_sdk_tag_ns_001\" : {\n      \"java_sdk_tag_03\" : \"2018-09-08T16:29:39.096Z\"\
+        ,\n      \"java_sdk_tag_01\" : \"10\",\n      \"java_sdk_tag_02\" : \"JavaSDK\"\
+        \n    }\n  }\n}, {\n  \"id\" : \"ocid1.ormstack.oc1..aaaaaaaaiu465bmypj5u6eoaocgz5atm67vxesw7esyjpqftdylwxscgklza\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"JavaSDK.CRUD.1536423894086.JobIntegrationTest.setUp\"\
+        ,\n  \"description\" : \"New stack for testing\",\n  \"timeCreated\" : \"\
+        2018-09-08T16:24:54.876Z\",\n  \"lifecycleState\" : \"ACTIVE\",\n  \"freeformTags\"\
+        \ : {\n    \"tag1\" : \"value1\",\n    \"tag2\" : \"value2\"\n  },\n  \"definedTags\"\
+        \ : {\n    \"java_sdk_tag_ns_001\" : {\n      \"java_sdk_tag_03\" : \"2018-09-08T16:24:53.944Z\"\
+        ,\n      \"java_sdk_tag_01\" : \"10\",\n      \"java_sdk_tag_02\" : \"JavaSDK\"\
+        \n    }\n  }\n}, {\n  \"id\" : \"ocid1.ormstack.oc1..aaaaaaaaqom6czwuyqcmkshyrbco4s2ysenf3okkhqg4rwl3oaxx2n6o6xva\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"JavaSDK.CRUD.1536280813358.JobIntegrationTest.setUp\"\
+        ,\n  \"description\" : \"New stack for testing\",\n  \"timeCreated\" : \"\
+        2018-09-07T00:40:14.714Z\",\n  \"lifecycleState\" : \"ACTIVE\",\n  \"freeformTags\"\
+        \ : {\n    \"tag1\" : \"value1\",\n    \"tag2\" : \"value2\"\n  },\n  \"definedTags\"\
+        \ : {\n    \"java_sdk_tag_ns_001\" : {\n      \"java_sdk_tag_03\" : \"2018-09-07T00:40:13.252Z\"\
+        ,\n      \"java_sdk_tag_01\" : \"10\",\n      \"java_sdk_tag_02\" : \"JavaSDK\"\
+        \n    }\n  }\n}, {\n  \"id\" : \"ocid1.ormstack.oc1..aaaaaaaaiix2hwggyjnmf3mc4u4xf3n75kjgqnewkqn7pczhvshymmpbtilq\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"JavaSDK.CRUD.1536179377732.JobIntegrationTest.setUp\"\
+        ,\n  \"description\" : \"New stack for testing\",\n  \"timeCreated\" : \"\
+        2018-09-05T20:29:36.925Z\",\n  \"lifecycleState\" : \"ACTIVE\",\n  \"freeformTags\"\
+        \ : {\n    \"tag1\" : \"value1\",\n    \"tag2\" : \"value2\"\n  },\n  \"definedTags\"\
+        \ : {\n    \"java_sdk_tag_ns_001\" : {\n      \"java_sdk_tag_03\" : \"2018-09-05T20:29:37.630Z\"\
+        ,\n      \"java_sdk_tag_01\" : \"10\",\n      \"java_sdk_tag_02\" : \"JavaSDK\"\
+        \n    }\n  }\n}, {\n  \"id\" : \"ocid1.ormstack.oc1..aaaaaaaath6tyetiv7glbcqjqc6wchqm5ctbxfbhqbzaqdwu2ed7uxsy4cla\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"JavaSDK.CRUD.1536174694459.JobIntegrationTest.setUp\"\
+        ,\n  \"description\" : \"New stack for testing\",\n  \"timeCreated\" : \"\
+        2018-09-05T19:11:33.522Z\",\n  \"lifecycleState\" : \"ACTIVE\",\n  \"freeformTags\"\
+        \ : {\n    \"tag1\" : \"value1\",\n    \"tag2\" : \"value2\"\n  },\n  \"definedTags\"\
+        \ : {\n    \"java_sdk_tag_ns_001\" : {\n      \"java_sdk_tag_03\" : \"2018-09-05T19:11:34.376Z\"\
+        ,\n      \"java_sdk_tag_01\" : \"10\",\n      \"java_sdk_tag_02\" : \"JavaSDK\"\
+        \n    }\n  }\n}, {\n  \"id\" : \"ocid1.ormstack.oc1..aaaaaaaahq27fi5aak7squuidvh2ltkp2euzp3joxarquuvjcgaa3qsdtvwq\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"JavaSDK.CRUD.1536166856841.JobIntegrationTest.setUp\"\
+        ,\n  \"description\" : \"New stack for testing\",\n  \"timeCreated\" : \"\
+        2018-09-05T17:00:55.650Z\",\n  \"lifecycleState\" : \"ACTIVE\",\n  \"freeformTags\"\
+        \ : {\n    \"tag1\" : \"value1\",\n    \"tag2\" : \"value2\"\n  },\n  \"definedTags\"\
+        \ : {\n    \"java_sdk_tag_ns_001\" : {\n      \"java_sdk_tag_03\" : \"2018-09-05T17:00:56.748Z\"\
+        ,\n      \"java_sdk_tag_01\" : \"10\",\n      \"java_sdk_tag_02\" : \"JavaSDK\"\
+        \n    }\n  }\n}, {\n  \"id\" : \"ocid1.ormstack.oc1..aaaaaaaaafbt6aj7iasu7soubnrqdo6wed7jn4xljiobeforvaq3m47c6ooa\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"JavaSDK.CRUD.1535759756790.JobIntegrationTest.setUp\"\
+        ,\n  \"description\" : \"New stack for testing\",\n  \"timeCreated\" : \"\
+        2018-08-31T23:55:57.412Z\",\n  \"lifecycleState\" : \"ACTIVE\",\n  \"freeformTags\"\
+        \ : {\n    \"tag1\" : \"value1\",\n    \"tag2\" : \"value2\"\n  },\n  \"definedTags\"\
+        \ : {\n    \"java_sdk_tag_ns_001\" : {\n      \"java_sdk_tag_03\" : \"2018-08-31T23:55:56.691Z\"\
+        ,\n      \"java_sdk_tag_01\" : \"10\",\n      \"java_sdk_tag_02\" : \"JavaSDK\"\
+        \n    }\n  }\n}, {\n  \"id\" : \"ocid1.ormstack.oc1..aaaaaaaa2xv57c26xjw7c33mtqyax2peagq5pl7g4tupdk6ir5eorpax3loa\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"JavaSDK.CRUD.1535672423085.JobIntegrationTest.setUp\"\
+        ,\n  \"description\" : \"New stack for testing\",\n  \"timeCreated\" : \"\
+        2018-08-30T23:40:23.540Z\",\n  \"lifecycleState\" : \"ACTIVE\",\n  \"freeformTags\"\
+        \ : {\n    \"tag1\" : \"value1\",\n    \"tag2\" : \"value2\"\n  },\n  \"definedTags\"\
+        \ : {\n    \"java_sdk_tag_ns_001\" : {\n      \"java_sdk_tag_03\" : \"2018-08-30T23:40:22.988Z\"\
+        ,\n      \"java_sdk_tag_01\" : \"10\",\n      \"java_sdk_tag_02\" : \"JavaSDK\"\
+        \n    }\n  }\n}, {\n  \"id\" : \"ocid1.ormstack.oc1..aaaaaaaahg5xbgvj7kyrge72otpmm3rpnotqwuwosjdsyhdvqxgkimx2l56q\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"JavaSDK.CRUD.1535655362653.StackIntegrationTest.listStacks5\"\
+        ,\n  \"description\" : \"New stack for list testing\",\n  \"timeCreated\"\
+        \ : \"2018-08-30T18:56:05.827Z\",\n  \"lifecycleState\" : \"ACTIVE\",\n  \"\
+        freeformTags\" : { },\n  \"definedTags\" : { }\n}, {\n  \"id\" : \"ocid1.ormstack.oc1..aaaaaaaab2lncc6wno3ab5vacsxujxx3javibcz6sufwe6juz7posftd6hsq\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"JavaSDK.CRUD.1535655362653.StackIntegrationTest.listStacks4\"\
+        ,\n  \"description\" : \"New stack for list testing\",\n  \"timeCreated\"\
+        \ : \"2018-08-30T18:56:05.340Z\",\n  \"lifecycleState\" : \"ACTIVE\",\n  \"\
+        freeformTags\" : { },\n  \"definedTags\" : { }\n}, {\n  \"id\" : \"ocid1.ormstack.oc1..aaaaaaaakhzhp4pqfu2aron3ejyivnwtgca6rrrhskbzhgqlquikt3qtsrtq\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"JavaSDK.CRUD.1535655362653.StackIntegrationTest.listStacks3\"\
+        ,\n  \"description\" : \"New stack for list testing\",\n  \"timeCreated\"\
+        \ : \"2018-08-30T18:56:04.907Z\",\n  \"lifecycleState\" : \"ACTIVE\",\n  \"\
+        freeformTags\" : { },\n  \"definedTags\" : { }\n}, {\n  \"id\" : \"ocid1.ormstack.oc1..aaaaaaaamoomxpvlnpp6ies7m4xfz5xpdbnii4vxkqqjhyhniodo7ugqkmnq\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"JavaSDK.CRUD.1535655362653.StackIntegrationTest.listStacks2\"\
+        ,\n  \"description\" : \"New stack for list testing\",\n  \"timeCreated\"\
+        \ : \"2018-08-30T18:56:04.400Z\",\n  \"lifecycleState\" : \"ACTIVE\",\n  \"\
+        freeformTags\" : { },\n  \"definedTags\" : { }\n}, {\n  \"id\" : \"ocid1.ormstack.oc1..aaaaaaaa2cpshowavtdkiwg6lqg6joqujjep5xcg5lfjlzbpesxujta3wa2a\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"JavaSDK.CRUD.1535655362653.StackIntegrationTest.listStacks1\"\
+        ,\n  \"description\" : \"New stack for list testing\",\n  \"timeCreated\"\
+        \ : \"2018-08-30T18:56:03.819Z\",\n  \"lifecycleState\" : \"ACTIVE\",\n  \"\
+        freeformTags\" : { },\n  \"definedTags\" : { }\n} ]"}
+    headers:
+      Cache-Control: ['no-cache, no-store, must-revalidate']
+      Connection: [keep-alive]
+      Content-Type: [application/json]
+      Date: ['Mon, 01 Apr 2019 22:35:48 GMT']
+      Pragma: [no-cache]
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains;]
+      Vary: [Accept-Encoding]
+      X-Content-Type-Options: [nosniff]
+      X-XSS-Protection: [1; mode=block]
+      opc-request-id: [1269AD796571436DBE4B4DB0996AC7F2/F91745CB15FB56327D1448C96EFD3AEC/BFAF7C99A0DDA6A925C566BE5081EAAC]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"containerId": "99754dec-c8a7-463f-a0cf-004e052f25ad", "listResponse":
+      true, "requestClass": "com.oracle.bmc.resourcemanager.requests.ListStacksRequest",
+      "requestJson": "{\"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"lifecycleState\": \"ACTIVE\"}", "responseJson": "[{\"items\": [{\"id\": \"ocid1.ormstack.oc1.phx.aaaaaaaae4pm4rrbpm4l77q5c2hbdnajcgilvs576dtoilmdv2saaar5unaa\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0836_9349\", \"description\": \"__STS0836_2245\", \"timeCreated\":
+      \"2019-04-01T22:35:46.177000+00:00\", \"lifecycleState\": \"ACTIVE\", \"freeformTags\":
+      {\"tag1\": \"value1.__STS0836_8229\", \"tag2\": \"value2.__STS0836_8229\"},
+      \"definedTags\": {\"testingServiceTagNs001\": {\"testingServiceTag01\": \"tag4.__STS0836_6779\",
+      \"testingServiceTag02\": \"tag5.__STS0836_6779\", \"testingServiceTag03\": \"tag6.__STS0836_6779\"}}},
+      {\"id\": \"ocid1.ormstack.oc1.phx.aaaaaaaavnqdk6gqsrnhzc2e5yxagrahtvcqiajofizcd6nbivumxeiiakhq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0836_1397\", \"description\": \"__STS0836_3813\", \"timeCreated\":
+      \"2019-04-01T22:35:45.333000+00:00\", \"lifecycleState\": \"ACTIVE\", \"freeformTags\":
+      {\"tag1\": \"value1.__STS0836_5029\", \"tag2\": \"value2.__STS0836_5029\"},
+      \"definedTags\": {\"testingServiceTagNs001\": {\"testingServiceTag01\": \"tag4.__STS0836_682\",
+      \"testingServiceTag02\": \"tag5.__STS0836_682\", \"testingServiceTag03\": \"tag6.__STS0836_682\"}}},
+      {\"id\": \"ocid1.ormstack.oc1.phx.aaaaaaaa2hc625ftdp2egjcyp7gh65jlrctgjb3g6mi5owilg5t6bxsgegsa\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0836_5986\", \"description\": \"__STS0836_5853\", \"timeCreated\":
+      \"2019-04-01T22:35:44.439000+00:00\", \"lifecycleState\": \"ACTIVE\", \"freeformTags\":
+      {\"tag1\": \"value1.__STS0836_4058\", \"tag2\": \"value2.__STS0836_4058\"},
+      \"definedTags\": {\"testingServiceTagNs001\": {\"testingServiceTag01\": \"tag4.__STS0836_5444\",
+      \"testingServiceTag02\": \"tag5.__STS0836_5444\", \"testingServiceTag03\": \"tag6.__STS0836_5444\"}}},
+      {\"id\": \"ocid1.ormstack.oc1.phx.aaaaaaaa72wcvptzua7orid77letrqg242rjnqlsgm6cdmqqiiaejv75j3ka\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0836_3176\", \"description\": \"__STS0836_7664\", \"timeCreated\":
+      \"2019-04-01T22:35:43.430000+00:00\", \"lifecycleState\": \"ACTIVE\", \"freeformTags\":
+      {\"tag1\": \"value1.__STS0836_6712\", \"tag2\": \"value2.__STS0836_6712\"},
+      \"definedTags\": {\"testingServiceTagNs001\": {\"testingServiceTag01\": \"tag4.__STS0836_5138\",
+      \"testingServiceTag02\": \"tag5.__STS0836_5138\", \"testingServiceTag03\": \"tag6.__STS0836_5138\"}}},
+      {\"id\": \"ocid1.ormstack.oc1.phx.aaaaaaaa3gflz3ttausqxgq6we2vxdlpztr7qyjatvczwakgms6echckwsaq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0836_6084\", \"description\": \"__STS0836_8800\", \"timeCreated\":
+      \"2019-04-01T22:35:42.623000+00:00\", \"lifecycleState\": \"ACTIVE\", \"freeformTags\":
+      {\"tag1\": \"value1.__STS0836_7364\", \"tag2\": \"value2.__STS0836_7364\"},
+      \"definedTags\": {\"testingServiceTagNs001\": {\"testingServiceTag01\": \"tag4.__STS0836_8666\",
+      \"testingServiceTag02\": \"tag5.__STS0836_8666\", \"testingServiceTag03\": \"tag6.__STS0836_8666\"}}},
+      {\"id\": \"ocid1.ormstack.oc1.phx.aaaaaaaacc4yok6bgog4c2nw6lqtbkylhiroypyyc5z4canfulk2wxh5tddq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0836_6520\", \"description\": \"__STS0836_3121\", \"timeCreated\":
+      \"2019-04-01T22:35:39.595000+00:00\", \"lifecycleState\": \"ACTIVE\", \"freeformTags\":
+      {\"tag1\": \"value1.__STS0836_767\", \"tag2\": \"value2.__STS0836_767\"}, \"definedTags\":
+      {\"testingServiceTagNs001\": {\"testingServiceTag01\": \"tag4.__STS0836_2512\",
+      \"testingServiceTag02\": \"tag5.__STS0836_2512\", \"testingServiceTag03\": \"tag6.__STS0836_2512\"}}},
+      {\"id\": \"ocid1.ormstack.oc1.phx.aaaaaaaatg6ffmitdprv4o4fnlmdkymyzwyz4osqjkomwexldwli73sdbnma\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0836_6585\", \"description\": \"__STS0836_7019\", \"timeCreated\":
+      \"2019-04-01T22:35:37.637000+00:00\", \"lifecycleState\": \"ACTIVE\", \"freeformTags\":
+      {\"tag1\": \"value1.__STS0836_2846\", \"tag2\": \"value2.__STS0836_2846\"},
+      \"definedTags\": {\"testingServiceTagNs001\": {\"testingServiceTag01\": \"tag4.__STS0836_4762\",
+      \"testingServiceTag02\": \"tag5.__STS0836_4762\", \"testingServiceTag03\": \"tag6.__STS0836_4762\"}}},
+      {\"id\": \"ocid1.ormstack.oc1.phx.aaaaaaaau5be6uidixqb54bawp3af5k3sr5e533as4haqr52tvzcamaupxkq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0836_9300\", \"description\": \"__STS0836_5268\", \"timeCreated\":
+      \"2019-04-01T22:35:25.339000+00:00\", \"lifecycleState\": \"ACTIVE\", \"freeformTags\":
+      {\"tag1\": \"value1.__STS0836_8508\", \"tag2\": \"value2.__STS0836_8508\"},
+      \"definedTags\": {\"testingServiceTagNs001\": {\"testingServiceTag01\": \"tag4.__STS0836_9889\",
+      \"testingServiceTag02\": \"tag5.__STS0836_9889\", \"testingServiceTag03\": \"tag6.__STS0836_9889\"}}},
+      {\"id\": \"ocid1.ormstack.oc1.phx.aaaaaaaa2wx5wd5mguhkxe7fwqu44wkwsdigssoxss5ar7fo7md3scr5vapa\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0836_7649\", \"description\": \"__STS0836_1063\", \"timeCreated\":
+      \"2019-04-01T22:31:18.917000+00:00\", \"lifecycleState\": \"ACTIVE\", \"freeformTags\":
+      {\"tag1\": \"value1.__STS0836_935\", \"tag2\": \"value2.__STS0836_935\"}, \"definedTags\":
+      {\"testingServiceTagNs001\": {\"testingServiceTag01\": \"tag4.__STS0836_9218\",
+      \"testingServiceTag02\": \"tag5.__STS0836_9218\", \"testingServiceTag03\": \"tag6.__STS0836_9218\"}}},
+      {\"id\": \"ocid1.ormstack.oc1.phx.aaaaaaaaghajzt44jlpscwrvwp45xabds5izntbzdmpybnuzwhcezavov7pq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0836_5236\", \"description\": \"__STS0836_4035\", \"timeCreated\":
+      \"2019-04-01T22:31:08.842000+00:00\", \"lifecycleState\": \"ACTIVE\", \"freeformTags\":
+      {\"tag1\": \"value1.__STS0836_6375\", \"tag2\": \"value2.__STS0836_6375\"},
+      \"definedTags\": {\"testingServiceTagNs001\": {\"testingServiceTag01\": \"tag4.__STS0836_6419\",
+      \"testingServiceTag02\": \"tag5.__STS0836_6419\", \"testingServiceTag03\": \"tag6.__STS0836_6419\"}}}],
+      \"opcRequestId\": \"8BC871A22CD74541A7BE944A30955CF0\", \"opcNextPage\": \"AAAAAAAAAAJleUpyYVdRaU9pSXhPVEVpTENKbGJtTWlPaUpCTWpVMlIwTk5JaXdpWVd4bklqb2laR2x5SW4wLi40SF8ydms2WkZYZk9XalJWLnlvb2k4WVVhT2czSE8zenlINnhrSTdiYU9DaGM5Y2xreEpReWFjanVqc0szT1dOWEx0TGo4Z3JtSlpteFdhNDBPcnlmQzBRTWhGS1pLUkhINXFRd3JhVHRiRVowMkMxdUsyN1pFcXFSdlRhX2phbDhiMWV5bjY3ZWxWUjNWZXhYNkNXRzNsVk96dFNUS1gtYU03U1dLWUhsSVZEVzFfaGNtZUlmdUxZeTBPX2FvWm5OTTRpcnZISUMwSUo4aW4zTVFqdWJXd2IwOTNfRFRXUEUxMFZ1RUhVVUEtb3NxcXIwMm42RHJRVk5BSmNidnRNcno2aDJha3ZTWTBvc3BxdkhiVlJnQVgxRGlNZEdXUExzUGJQa1ZBUkMtcFVCZGFFbm9Eb1pNY3h6Um5pUlI3WWMxYzBmX21oUFh1NGFfZEM4S0dyS0V0SHlaNENCVEtxN3JEaFpINFZqamc0U01yYTZJQ1h2R0hiSmE0TGo3UGdMbVd0X1lBbElrSENDT1J3aThXTHpKeHZkMGlISzJRMUhmc3ZNZXB1MmlyQWkyRUJmeEdqd2lieEpXNlZYOFNxejNRMnk1UlRjUTNVWUpVU2w0QjI1b1poNUo2cHphNGhaU1F3X2xfTlhoZGwwbW9ZRnJLa0pKVlhyczNNZWZ2bDVWWkpZckRSamFuSktESm5BdEpoSlpwMFZwYzdQVm1aVDVtcFMwN2FnSjhpVlFaRUszTEp3TXdJOEotRE8ydXFMTHpFeHFwMmtXLWNzYVpLYVJpZmt5dGlGcVlMZXNzQ3ZoR1ZITTZBWEM1ZVltS3JzQjVpWTlLMmlzeks0RHMtcTVZMFJQSm5UU3ZqY2NoOEluakplMEVTVWt3UVJTQk9CeXllQWhlME41N21ZUElpUWc1blgtZGZoMk9aZFkzb0VCcjNMWERPSl9TOUY0TVdfSllNc2VBLmt5cHZzbHRiRy1UdVUwSkcwMDRRUWc=\"},
+      {\"items\": [{\"id\": \"ocid1.ormstack.oc1..aaaaaaaatydc5fzcnz2pwe3kqm6uu4xwu4ccug5g3js3bozml2vwdec6kqbq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"JavaSDK.CRUD.1542731593938.JobIntegrationTest.setUp\", \"description\":
+      \"New stack for testing\", \"timeCreated\": \"2018-11-20T16:33:16.209000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"freeformTags\": {\"tag1\": \"value1\", \"tag2\":
+      \"value2\"}, \"definedTags\": {\"javaSdkTagNs001\": {\"javaSdkTag03\": \"2018-11-20T15:49:23.741Z\",
+      \"javaSdkTag01\": \"10\", \"javaSdkTag02\": \"JavaSDK\"}}}, {\"id\": \"ocid1.ormstack.oc1..aaaaaaaazilo4iqnqkeocnlxwp4slv6it3o2di5vn77gjeb7ci5mjxzy2amq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"JavaSDK.CRUD.1537988217083.JobIntegrationTest.setUp\", \"description\":
+      \"New stack for testing\", \"timeCreated\": \"2018-09-26T18:56:57.532000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"freeformTags\": {\"tag1\": \"value1\", \"tag2\":
+      \"value2\"}, \"definedTags\": {\"javaSdkTagNs001\": {\"javaSdkTag03\": \"2018-09-26T18:56:56.971Z\",
+      \"javaSdkTag01\": \"10\", \"javaSdkTag02\": \"JavaSDK\"}}}, {\"id\": \"ocid1.ormstack.oc1..aaaaaaaaebaicko32xxdrqyckpizjvuvvxa3evsvxey3uwcs24tlnhwecciq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"JavaSDK.CRUD.1537987578526.JobIntegrationTest.setUp\", \"description\":
+      \"New stack for testing\", \"timeCreated\": \"2018-09-26T18:46:18.973000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"freeformTags\": {\"tag1\": \"value1\", \"tag2\":
+      \"value2\"}, \"definedTags\": {\"javaSdkTagNs001\": {\"javaSdkTag03\": \"2018-09-26T18:46:18.368Z\",
+      \"javaSdkTag01\": \"10\", \"javaSdkTag02\": \"JavaSDK\"}}}, {\"id\": \"ocid1.ormstack.oc1..aaaaaaaakggobcefktgmr5lrzcy3gari7uo43jgri5sgxyzncbugpstq4fsa\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"JavaSDK.CRUD.1537981367496.JobIntegrationTest.setUp\", \"description\":
+      \"New stack for testing\", \"timeCreated\": \"2018-09-26T17:02:47.990000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"freeformTags\": {\"tag1\": \"value1\", \"tag2\":
+      \"value2\"}, \"definedTags\": {\"javaSdkTagNs001\": {\"javaSdkTag03\": \"2018-09-26T17:02:47.392Z\",
+      \"javaSdkTag01\": \"10\", \"javaSdkTag02\": \"JavaSDK\"}}}, {\"id\": \"ocid1.ormstack.oc1..aaaaaaaae7zqr2hga3t74c4b3ioatxmho5kcyjw6gkeiqzvlog4tsnbxlayq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"JavaSDK.CRUD.1537288709366.JobIntegrationTest.setUp\", \"description\":
+      \"New stack for testing\", \"timeCreated\": \"2018-09-18T16:38:29.887000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"freeformTags\": {\"tag1\": \"value1\", \"tag2\":
+      \"value2\"}, \"definedTags\": {\"javaSdkTagNs001\": {\"javaSdkTag03\": \"2018-09-18T16:38:29.270Z\",
+      \"javaSdkTag01\": \"10\", \"javaSdkTag02\": \"JavaSDK\"}}}, {\"id\": \"ocid1.ormstack.oc1..aaaaaaaamwl3dmi2ihcgmx3jth4w4yxjoiqkqm2oxbeofjxxa54jqrzlm4jq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"JavaSDK.CRUD.1536960559784.JobIntegrationTest.setUp\", \"description\":
+      \"New stack for testing\", \"timeCreated\": \"2018-09-14T21:29:20.367000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"freeformTags\": {\"tag1\": \"value1\", \"tag2\":
+      \"value2\"}, \"definedTags\": {\"javaSdkTagNs001\": {\"javaSdkTag03\": \"2018-09-14T21:29:19.702Z\",
+      \"javaSdkTag01\": \"10\", \"javaSdkTag02\": \"JavaSDK\"}}}, {\"id\": \"ocid1.ormstack.oc1..aaaaaaaajb4j3ebqfqqklwajtuvr7yvo43c5bs5f7nklydkte67uqaenl4ra\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"JavaSDK.CRUD.1536944511097.JobIntegrationTest.setUp\", \"description\":
+      \"New stack for testing\", \"timeCreated\": \"2018-09-14T17:01:51.624000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"freeformTags\": {\"tag1\": \"value1\", \"tag2\":
+      \"value2\"}, \"definedTags\": {\"javaSdkTagNs001\": {\"javaSdkTag03\": \"2018-09-14T17:01:51.003Z\",
+      \"javaSdkTag01\": \"10\", \"javaSdkTag02\": \"JavaSDK\"}}}, {\"id\": \"ocid1.ormstack.oc1..aaaaaaaagfj5dgyk2cfzs6vlkfx7ajjtl6i773atvu5g6dbl44ulqjavmcea\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"JavaSDK.CRUD.1536857360250.JobIntegrationTest.setUp\", \"description\":
+      \"New stack for testing\", \"timeCreated\": \"2018-09-13T16:49:20.827000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"freeformTags\": {\"tag1\": \"value1\", \"tag2\":
+      \"value2\"}, \"definedTags\": {\"javaSdkTagNs001\": {\"javaSdkTag03\": \"2018-09-13T16:49:20.151Z\",
+      \"javaSdkTag01\": \"10\", \"javaSdkTag02\": \"JavaSDK\"}}}, {\"id\": \"ocid1.ormstack.oc1..aaaaaaaasrxajg4ymgxnej5gfk5qtte3qe3zomqfutms6llzwoae7xj2yqta\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"JavaSDK.CRUD.1536856800350.JobIntegrationTest.setUp\", \"description\":
+      \"New stack for testing\", \"timeCreated\": \"2018-09-13T16:40:00.990000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"freeformTags\": {\"tag1\": \"value1\", \"tag2\":
+      \"value2\"}, \"definedTags\": {\"javaSdkTagNs001\": {\"javaSdkTag03\": \"2018-09-13T16:40:00.255Z\",
+      \"javaSdkTag01\": \"10\", \"javaSdkTag02\": \"JavaSDK\"}}}, {\"id\": \"ocid1.ormstack.oc1..aaaaaaaadduwrs3jm46yuzg7hffy43qpbrx27rj5kxu33nofi4jjkqltafaa\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"JavaSDK.CRUD.1536781967801.JobIntegrationTest.setUp\", \"description\":
+      \"New stack for testing\", \"timeCreated\": \"2018-09-12T19:52:48.345000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"freeformTags\": {\"tag1\": \"value1\", \"tag2\":
+      \"value2\"}, \"definedTags\": {\"javaSdkTagNs001\": {\"javaSdkTag03\": \"2018-09-12T19:52:47.694Z\",
+      \"javaSdkTag01\": \"10\", \"javaSdkTag02\": \"JavaSDK\"}}}, {\"id\": \"ocid1.ormstack.oc1..aaaaaaaagvih6uc73ggwii3smoahgwg4wen32s7dlfevq7ypcx5s2fuxqp6q\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"JavaSDK.CRUD.1536686655930.JobIntegrationTest.setUp\", \"description\":
+      \"New stack for testing\", \"timeCreated\": \"2018-09-11T17:24:16.433000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"freeformTags\": {\"tag1\": \"value1\", \"tag2\":
+      \"value2\"}, \"definedTags\": {\"javaSdkTagNs001\": {\"javaSdkTag03\": \"2018-09-11T17:24:15.826Z\",
+      \"javaSdkTag01\": \"10\", \"javaSdkTag02\": \"JavaSDK\"}}}, {\"id\": \"ocid1.ormstack.oc1..aaaaaaaa4pb22yl2o7c64rqfcaw7usdk7yyvn6diis24jnqg7am3us6yc7vq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"JavaSDK.CRUD.1536597212789.JobIntegrationTest.setUp\", \"description\":
+      \"New stack for testing\", \"timeCreated\": \"2018-09-10T16:33:34.283000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"freeformTags\": {\"tag1\": \"value1\", \"tag2\":
+      \"value2\"}, \"definedTags\": {\"javaSdkTagNs001\": {\"javaSdkTag03\": \"2018-09-10T16:33:32.685Z\",
+      \"javaSdkTag01\": \"10\", \"javaSdkTag02\": \"JavaSDK\"}}}, {\"id\": \"ocid1.ormstack.oc1..aaaaaaaazpleltiuxs5rnufyoadlc75kqutvwpuyau3ruvgwao7fvera3zjq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"JavaSDK.CRUD.1536518234576.JobIntegrationTest.setUp\", \"description\":
+      \"New stack for testing\", \"timeCreated\": \"2018-09-09T18:37:15.283000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"freeformTags\": {\"tag1\": \"value1\", \"tag2\":
+      \"value2\"}, \"definedTags\": {\"javaSdkTagNs001\": {\"javaSdkTag03\": \"2018-09-09T18:37:14.476Z\",
+      \"javaSdkTag01\": \"10\", \"javaSdkTag02\": \"JavaSDK\"}}}, {\"id\": \"ocid1.ormstack.oc1..aaaaaaaa63gb5rcnnqeawrkjfbccnjakr6gxyxoqlemx6y4zj2ghbivpoxya\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"JavaSDK.CRUD.1536425118928.JobIntegrationTest.setUp\", \"description\":
+      \"New stack for testing\", \"timeCreated\": \"2018-09-08T16:45:19.675000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"freeformTags\": {\"tag1\": \"value1\", \"tag2\":
+      \"value2\"}, \"definedTags\": {\"javaSdkTagNs001\": {\"javaSdkTag03\": \"2018-09-08T16:45:18.776Z\",
+      \"javaSdkTag01\": \"10\", \"javaSdkTag02\": \"JavaSDK\"}}}, {\"id\": \"ocid1.ormstack.oc1..aaaaaaaa6x4bo6h5fobntmoly734katczjo35bqv5ycwo7ffacwwflsfhlea\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"JavaSDK.CRUD.1536424717371.JobIntegrationTest.setUp\", \"description\":
+      \"New stack for testing\", \"timeCreated\": \"2018-09-08T16:38:38.045000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"freeformTags\": {\"tag1\": \"value1\", \"tag2\":
+      \"value2\"}, \"definedTags\": {\"javaSdkTagNs001\": {\"javaSdkTag03\": \"2018-09-08T16:38:37.230Z\",
+      \"javaSdkTag01\": \"10\", \"javaSdkTag02\": \"JavaSDK\"}}}, {\"id\": \"ocid1.ormstack.oc1..aaaaaaaavcccfscaqfrpg3yewxxndorhgs6oelz2xwyxtzdtncletrtna5qq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"JavaSDK.CRUD.1536424179319.JobIntegrationTest.setUp\", \"description\":
+      \"New stack for testing\", \"timeCreated\": \"2018-09-08T16:29:40.301000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"freeformTags\": {\"tag1\": \"value1\", \"tag2\":
+      \"value2\"}, \"definedTags\": {\"javaSdkTagNs001\": {\"javaSdkTag03\": \"2018-09-08T16:29:39.096Z\",
+      \"javaSdkTag01\": \"10\", \"javaSdkTag02\": \"JavaSDK\"}}}, {\"id\": \"ocid1.ormstack.oc1..aaaaaaaaiu465bmypj5u6eoaocgz5atm67vxesw7esyjpqftdylwxscgklza\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"JavaSDK.CRUD.1536423894086.JobIntegrationTest.setUp\", \"description\":
+      \"New stack for testing\", \"timeCreated\": \"2018-09-08T16:24:54.876000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"freeformTags\": {\"tag1\": \"value1\", \"tag2\":
+      \"value2\"}, \"definedTags\": {\"javaSdkTagNs001\": {\"javaSdkTag03\": \"2018-09-08T16:24:53.944Z\",
+      \"javaSdkTag01\": \"10\", \"javaSdkTag02\": \"JavaSDK\"}}}, {\"id\": \"ocid1.ormstack.oc1..aaaaaaaaqom6czwuyqcmkshyrbco4s2ysenf3okkhqg4rwl3oaxx2n6o6xva\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"JavaSDK.CRUD.1536280813358.JobIntegrationTest.setUp\", \"description\":
+      \"New stack for testing\", \"timeCreated\": \"2018-09-07T00:40:14.714000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"freeformTags\": {\"tag1\": \"value1\", \"tag2\":
+      \"value2\"}, \"definedTags\": {\"javaSdkTagNs001\": {\"javaSdkTag03\": \"2018-09-07T00:40:13.252Z\",
+      \"javaSdkTag01\": \"10\", \"javaSdkTag02\": \"JavaSDK\"}}}, {\"id\": \"ocid1.ormstack.oc1..aaaaaaaaiix2hwggyjnmf3mc4u4xf3n75kjgqnewkqn7pczhvshymmpbtilq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"JavaSDK.CRUD.1536179377732.JobIntegrationTest.setUp\", \"description\":
+      \"New stack for testing\", \"timeCreated\": \"2018-09-05T20:29:36.925000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"freeformTags\": {\"tag1\": \"value1\", \"tag2\":
+      \"value2\"}, \"definedTags\": {\"javaSdkTagNs001\": {\"javaSdkTag03\": \"2018-09-05T20:29:37.630Z\",
+      \"javaSdkTag01\": \"10\", \"javaSdkTag02\": \"JavaSDK\"}}}, {\"id\": \"ocid1.ormstack.oc1..aaaaaaaath6tyetiv7glbcqjqc6wchqm5ctbxfbhqbzaqdwu2ed7uxsy4cla\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"JavaSDK.CRUD.1536174694459.JobIntegrationTest.setUp\", \"description\":
+      \"New stack for testing\", \"timeCreated\": \"2018-09-05T19:11:33.522000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"freeformTags\": {\"tag1\": \"value1\", \"tag2\":
+      \"value2\"}, \"definedTags\": {\"javaSdkTagNs001\": {\"javaSdkTag03\": \"2018-09-05T19:11:34.376Z\",
+      \"javaSdkTag01\": \"10\", \"javaSdkTag02\": \"JavaSDK\"}}}, {\"id\": \"ocid1.ormstack.oc1..aaaaaaaahq27fi5aak7squuidvh2ltkp2euzp3joxarquuvjcgaa3qsdtvwq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"JavaSDK.CRUD.1536166856841.JobIntegrationTest.setUp\", \"description\":
+      \"New stack for testing\", \"timeCreated\": \"2018-09-05T17:00:55.650000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"freeformTags\": {\"tag1\": \"value1\", \"tag2\":
+      \"value2\"}, \"definedTags\": {\"javaSdkTagNs001\": {\"javaSdkTag03\": \"2018-09-05T17:00:56.748Z\",
+      \"javaSdkTag01\": \"10\", \"javaSdkTag02\": \"JavaSDK\"}}}, {\"id\": \"ocid1.ormstack.oc1..aaaaaaaaafbt6aj7iasu7soubnrqdo6wed7jn4xljiobeforvaq3m47c6ooa\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"JavaSDK.CRUD.1535759756790.JobIntegrationTest.setUp\", \"description\":
+      \"New stack for testing\", \"timeCreated\": \"2018-08-31T23:55:57.412000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"freeformTags\": {\"tag1\": \"value1\", \"tag2\":
+      \"value2\"}, \"definedTags\": {\"javaSdkTagNs001\": {\"javaSdkTag03\": \"2018-08-31T23:55:56.691Z\",
+      \"javaSdkTag01\": \"10\", \"javaSdkTag02\": \"JavaSDK\"}}}, {\"id\": \"ocid1.ormstack.oc1..aaaaaaaa2xv57c26xjw7c33mtqyax2peagq5pl7g4tupdk6ir5eorpax3loa\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"JavaSDK.CRUD.1535672423085.JobIntegrationTest.setUp\", \"description\":
+      \"New stack for testing\", \"timeCreated\": \"2018-08-30T23:40:23.540000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"freeformTags\": {\"tag1\": \"value1\", \"tag2\":
+      \"value2\"}, \"definedTags\": {\"javaSdkTagNs001\": {\"javaSdkTag03\": \"2018-08-30T23:40:22.988Z\",
+      \"javaSdkTag01\": \"10\", \"javaSdkTag02\": \"JavaSDK\"}}}, {\"id\": \"ocid1.ormstack.oc1..aaaaaaaahg5xbgvj7kyrge72otpmm3rpnotqwuwosjdsyhdvqxgkimx2l56q\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"JavaSDK.CRUD.1535655362653.StackIntegrationTest.listStacks5\",
+      \"description\": \"New stack for list testing\", \"timeCreated\": \"2018-08-30T18:56:05.827000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"freeformTags\": {}, \"definedTags\": {}},
+      {\"id\": \"ocid1.ormstack.oc1..aaaaaaaab2lncc6wno3ab5vacsxujxx3javibcz6sufwe6juz7posftd6hsq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"JavaSDK.CRUD.1535655362653.StackIntegrationTest.listStacks4\",
+      \"description\": \"New stack for list testing\", \"timeCreated\": \"2018-08-30T18:56:05.340000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"freeformTags\": {}, \"definedTags\": {}},
+      {\"id\": \"ocid1.ormstack.oc1..aaaaaaaakhzhp4pqfu2aron3ejyivnwtgca6rrrhskbzhgqlquikt3qtsrtq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"JavaSDK.CRUD.1535655362653.StackIntegrationTest.listStacks3\",
+      \"description\": \"New stack for list testing\", \"timeCreated\": \"2018-08-30T18:56:04.907000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"freeformTags\": {}, \"definedTags\": {}},
+      {\"id\": \"ocid1.ormstack.oc1..aaaaaaaamoomxpvlnpp6ies7m4xfz5xpdbnii4vxkqqjhyhniodo7ugqkmnq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"JavaSDK.CRUD.1535655362653.StackIntegrationTest.listStacks2\",
+      \"description\": \"New stack for list testing\", \"timeCreated\": \"2018-08-30T18:56:04.400000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"freeformTags\": {}, \"definedTags\": {}},
+      {\"id\": \"ocid1.ormstack.oc1..aaaaaaaa2cpshowavtdkiwg6lqg6joqujjep5xcg5lfjlzbpesxujta3wa2a\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"JavaSDK.CRUD.1535655362653.StackIntegrationTest.listStacks1\",
+      \"description\": \"New stack for list testing\", \"timeCreated\": \"2018-08-30T18:56:03.819000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"freeformTags\": {}, \"definedTags\": {}}],
+      \"opcRequestId\": \"E82989C3A929452195D40B031C7394D0\", \"opcNextPage\": null}]",
+      "responseClass": "com.oracle.bmc.resourcemanager.responses.ListStacksResponse"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['24877']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=0836&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Mon, 01 Apr 2019 22:35:48 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+version: 1

@@ -1,0 +1,233 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request/enable?lang=Python&serviceName=core&apiName=ListInstancePools
+  response:
+    body: {string: 'true'}
+    headers:
+      Content-Length: ['4']
+      Content-Type: [text/plain]
+      Date: ['Mon, 01 Apr 2019 22:15:16 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/config?serviceName=core&apiName=ListInstancePools&lang=Python&clientName=computeManagement
+  response:
+    body: {string: '{"region":"us-phoenix-1","tenantId":"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","userId":"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq","endpoint":null,"fingerprint":"ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9","passPhrase":"dexsdk","keyFile":"java_sdk_admin_key.pem","keyFileContent":"-----BEGIN
+        RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-128-CBC,0C9B64A4AA0303EC02C79E91D0F8B0D0\n\naSd0uIKreq5NirzJ+Esa36lYJo4lU2zSjIIw8wvZEsd+LdaifqONZIfHHiB6/KgG\nse4wd/58tPsiEgnK7D1q8wmdVDouMSX31mhcbq2bwRjXATpNnOMnhDtahJv6cw4M\nDtlXYplk0LzpP6WjqXqFST4Yz0l1NO90ahnruwcb/SUCm12ONMJ5o4G1UO2/0IkX\nTRlMRpm/etIpStNSP+1IsD1gSWlAzhs1zodkpd+2eW2ovlAaY25Hm/aqK97jzsCF\n1f4dCm7spCHYOfv10XHNB99/jomN1KQuDy29MmVaJ9oYpOIDlu0yj4Q/XempLxa6\nhqgt0gUO9cMV2bfStsHKWJwq+KoncamBHpU/+CyNjoYq1QTC0urWlCP5hNo5VZhF\nzXBJa188FD2TiPFU8Z4EhercM83TfBsRVEQOpu5sbMaUOT6xXwnCWfM5Pjxy/0xE\n6oF2zq+H0ES12dh19C5P8ueRFLyhaWFliWJv3SXy9iCslcso6USnBBKnA26xMile\nY3m9uRP31yZW8czxYSIgKEV3Mp3GFAYwuebNjLgIM7xT+PvDiOO4qAhA0waGPhYH\n2QMl9ThSahKT6vpjVUQuGOjaRcJ5Vr73VGX4MnxXVxsl5de6y/ZfP5ndx5Lb4K43\njwrMbCIzrM1ZzR2JMTuMJFDasLjEW/Y9nf7FRh2gByeGLObAmHsjlUdW65QQu+Qy\nu4ADc6TbpqvLobocF5fKgML7JCAA/YqmYlZCV6gGOdKUXUT3VMmZcebcTtw1Zmxh\nwaUQe99D90w3Q/7CCCiGO2waZaTNl+ahVnQZEGHN9xJydkCkfVZDgVmdDmsSXmxo\n2DWf2c2/1me2zZAcW0SFBnyrt3uphdCnICaqXR0AnQUmw49YY4nk2fPTMxZs1r+2\n+poVVEfr//cHTTs4yu9ZVT2wGWf/Ooo4sm7obB8EhGkrXs3ormx9WHj6ezexupsd\nanWE7Uy54ovKdOosKB6nQOfP+Iwe4sSJ6oYPNvvh19v05+AhOCdONjMeCwTfBvtJ\nA5luj6CtFbgSX96A3zTRrTXQO3N4aLTF8niL+FcZ69RzYcxp3rlDSK88JyJ9xsu1\n+lNIcAPAFhzisC/eB9b1eDJ4JErJyIdBTZ4bPv4dtl/RpFcyIA4WMjskGCRo60I7\nN3DVqGGXLlC7KDjvPmdvvfAx3lzcIANhwBhLSQJ+y1bcyW6FcX0ZtY962Hb06Qj5\nXG5nDmT1qVkfDmzpIOF9GtDgch7gtf/EjHOUyaw60dDgJ5RF6lORLjFeuU9W7I1e\nD3mpWb6WP6DKoaQTgrLLrIJCLIdXr92XmvDj+iuYdGhCIkqHWqNbRW4TyiuukNJH\n12Zq/LlA1s58YJVa520o7EOXpmD4sGIrctlI3keSmKhiavy7j5ULz5J++jL+Yxlc\n6h9q4v71oyFmVgNpIEJNg7sSCkE72yzUCaglBUdUIMG3D0sI+VwufC7lbhohvHBr\nNzmbg2bW4x0CCprf/o5JvdNiB+bQdKG4t2Q7fhhZIW7ACii591ZBbpnUakDUQBZa\nV2yMaErypILHlQvlReHXVK1adUTxLNWf//VDoyclQk5k0uFIkUmpn+EXWnEHw7e8\n-----END
+        RSA PRIVATE KEY-----\n"}'}
+    headers:
+      Content-Length: ['2261']
+      Content-Type: [application/json]
+      Date: ['Mon, 01 Apr 2019 22:15:17 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request?serviceName=core&apiName=ListInstancePools&lang=Python&sessionId=0836
+  response:
+    body: {string: '[{"containerId":"22c37dc4-e215-4e62-9de0-b8718e5f3ce3","request":{"compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","displayName":"__STS0836_2082","limit":10}}]'}
+    headers:
+      Content-Length: ['212']
+      Content-Type: [text/plain]
+      Date: ['Mon, 01 Apr 2019 22:15:17 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="jqTTHb4BuD+M1ZHVsL3vWTTerN/HKGjW/hBxJmqW6pQHS5LTriVPL6RmFQoFdzKHAzRevJ+R+KBxpDLfOarq2E+klJ0bxcAMRYQPU+uYU0Z37h9//en1wDwmyvbnwLpWsWLNrIyPhwhfpjbFKVzg9LL0NxJKCljx+aCTKAlKYpduKPB8rTD0fBr68bv/pJ3owMF6KLuORGb2wAi+pvWPtvD/Hk6svCwBxsYSpyDPPQdlwytGLt1jJeKPBIFM4yC7NEMezJPnolJvtAvYzWDzvh2lgc6cYFaA1RxPBYZwXRJ0NS/pvLY1pcMaTGv5fEKJfNI07b9K4CIkzh7dDxXQqQ==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Mon, 01 Apr 2019 22:15:17 GMT']
+      host: [iaas.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.5]
+      opc-request-id: [6B256628A54F41E48A77EDD3EB039962]
+      user-agent: [Oracle-PythonSDK/2.2.5 (python 3.6.4; x86_64-Darwin)]
+    method: GET
+    uri: https://iaas.us-phoenix-1.oraclecloud.com/20160918/instancePools?compartmentId=ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba&displayName=__STS0836_2082&limit=10
+  response:
+    body: {string: '[{"id":"ocid1.instancepool.oc1.phx.aaaaaaaaqvt323ldcvx4a3u7tb76buh4y64ztuwihzqbfrza7uvtw4ghtf7a","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","displayName":"__STS0836_5923","instanceConfigurationId":"ocid1.instanceconfiguration.oc1.phx.aaaaaaaan2apudfkdnssrvnemjnukovp67phz2dhccz6lvitjr4bq7pmzupa","lifecycleState":"RUNNING","availabilityDomains":["FjmN:PHX-AD-1"],"size":1,"timeCreated":"2019-04-01T22:11:01.999Z","timeStateUpdated":"2019-04-01T22:13:41.230Z"},{"id":"ocid1.instancepool.oc1.phx.aaaaaaaapqs7p55mk2p7mh6qiasbsgxferg5bw7oyizq4zrihnh3xdnkkjma","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","displayName":"__STS0836_3236","instanceConfigurationId":"ocid1.instanceconfiguration.oc1.phx.aaaaaaaazpphanfoqm23mfhuxlzxxulvujdqdvn4ai45nziwz2rrzn2t425a","lifecycleState":"RUNNING","availabilityDomains":["FjmN:PHX-AD-1"],"size":1,"timeCreated":"2019-04-01T21:37:41.583Z","timeStateUpdated":"2019-04-01T21:50:42.742Z"},{"id":"ocid1.instancepool.oc1.phx.aaaaaaaajqlwuwgutn6h4lpkyvyzg4nntkj2va7qdkszwv6r5i63iyncm6ta","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","displayName":"__STS0836_2437","instanceConfigurationId":"ocid1.instanceconfiguration.oc1.phx.aaaaaaaazpphanfoqm23mfhuxlzxxulvujdqdvn4ai45nziwz2rrzn2t425a","lifecycleState":"RUNNING","availabilityDomains":["FjmN:PHX-AD-3"],"size":2,"timeCreated":"2019-04-01T21:31:45.413Z","timeStateUpdated":"2019-04-01T21:40:38.629Z"},{"id":"ocid1.instancepool.oc1.phx.aaaaaaaayiy5fhtq6tlmmx6e7y25kuiofakagdrpkn46qrpkhegybikgxxua","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","displayName":"__STS0098_1491","instanceConfigurationId":"ocid1.instanceconfiguration.oc1.phx.aaaaaaaalnatmibfstpr6ch34g4tkydc4uktsok64c6gbggthmtvh5r5a7zq","lifecycleState":"TERMINATED","availabilityDomains":["FjmN:PHX-AD-1"],"size":1,"timeCreated":"2019-04-01T19:10:27.528Z","timeStateUpdated":"2019-04-01T19:10:41.725Z"},{"id":"ocid1.instancepool.oc1.phx.aaaaaaaa4lan3ipivwkypmf6cnkvqqw422hmxugodzynh7tlgmkviyss5e4a","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","displayName":"__STS0098_875","instanceConfigurationId":"ocid1.instanceconfiguration.oc1.phx.aaaaaaaalnatmibfstpr6ch34g4tkydc4uktsok64c6gbggthmtvh5r5a7zq","lifecycleState":"TERMINATED","availabilityDomains":["FjmN:PHX-AD-1"],"size":1,"timeCreated":"2019-04-01T19:05:08.944Z","timeStateUpdated":"2019-04-01T19:33:05.414Z"},{"id":"ocid1.instancepool.oc1.phx.aaaaaaaasgtcgu5gp47gx3tkna46jatwkkm3cz7yxawrisig3kv3frfgznna","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","displayName":"__STS0826_8344","instanceConfigurationId":"ocid1.instanceconfiguration.oc1.phx.aaaaaaaa2juhlo2o63jjquxff3vgd4h6jlfxtu52msrabaqmnzj4rtdel5wq","lifecycleState":"TERMINATED","availabilityDomains":["FjmN:PHX-AD-3"],"size":1,"timeCreated":"2019-04-01T11:16:15.733Z","timeStateUpdated":"2019-04-01T17:32:49.851Z"},{"id":"ocid1.instancepool.oc1.phx.aaaaaaaap4ntpgnprfcaiwxbnfzfhgsqul6zhdmqumrbzxzrgk4uli5hjwkq","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","displayName":"__STS0826_8456","instanceConfigurationId":"ocid1.instanceconfiguration.oc1.phx.aaaaaaaa2juhlo2o63jjquxff3vgd4h6jlfxtu52msrabaqmnzj4rtdel5wq","lifecycleState":"TERMINATED","availabilityDomains":["FjmN:PHX-AD-3"],"size":1,"timeCreated":"2019-04-01T10:55:59.534Z","timeStateUpdated":"2019-04-01T17:35:52.306Z"},{"id":"ocid1.instancepool.oc1.phx.aaaaaaaa4kyara7sakbqxtkikktyemxeoor6r2otkasdfgc4ubf4ufqdjycq","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","displayName":"__STS0826_612","instanceConfigurationId":"ocid1.instanceconfiguration.oc1.phx.aaaaaaaa2juhlo2o63jjquxff3vgd4h6jlfxtu52msrabaqmnzj4rtdel5wq","lifecycleState":"TERMINATED","availabilityDomains":["FjmN:PHX-AD-3"],"size":1,"timeCreated":"2019-04-01T10:35:39.739Z","timeStateUpdated":"2019-04-01T17:39:14.610Z"},{"id":"ocid1.instancepool.oc1.phx.aaaaaaaacpgp7j6ysced7uppql76hcgcnaxfm7vh7ycsykc7js2hx5picqxa","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","displayName":"__STS0826_2102","instanceConfigurationId":"ocid1.instanceconfiguration.oc1.phx.aaaaaaaaezxobn7xruffw3fmgrbqi7dcbmmfb5lzkwzfolc4tu5br6nb5kca","lifecycleState":"TERMINATED","availabilityDomains":["FjmN:PHX-AD-3"],"size":1,"timeCreated":"2019-04-01T10:15:23.546Z","timeStateUpdated":"2019-04-01T17:42:36.244Z"},{"id":"ocid1.instancepool.oc1.phx.aaaaaaaakqaj2uusx3lf3u3vh4pwkptjjgrckgsbrokbg56fl3sqnuwovzyq","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","displayName":"__STS0641_1686","instanceConfigurationId":"ocid1.instanceconfiguration.oc1.phx.aaaaaaaapjp6ijvvquqrobtq3s2gbnttcuiernxmeqsvo6rjfkcppgmd6ibq","lifecycleState":"TERMINATED","availabilityDomains":["FjmN:PHX-AD-1"],"size":1,"timeCreated":"2019-04-01T09:48:21.187Z","timeStateUpdated":"2019-04-01T09:48:32.026Z"}]'}
+    headers:
+      Connection: [keep-alive]
+      Content-Length: ['5200']
+      Content-Type: [application/json]
+      Date: ['Mon, 01 Apr 2019 22:15:17 GMT']
+      X-Content-Type-Options: [nosniff]
+      opc-next-page: [AAAAAAAAAAAAIQCBIFAUCQKBIFAUCQKKNRSVK4DZLFLGIUTBKU4XAU2YNRIFERKWOBKEKTSLMJDUU5CUK5WFAYKVOBBVIV3QKZGWYSLXKRVTKSTBLBSHAV2WMQ2GE23MOFRDE3DBKIZHQNKTK42HOTDJGU3FS2TIOZQVOOLSMIZWIS2SPEYUOWBRJJYEY3CSJNLVOMJUKRLEKNKSGJFHGWD2MQZGIVDMIJRTG232MRDFE42XIMYWUVSVKZMFEMDIMZHVIQJRMJCTCUKUJBWFCVLOIU2E6V2SNNLW4VJULJWVK6TFIZMTETRSIUZWKRTMOJJHUWTWKVKU4SKVGNKXSYKGLJVVM3DILFKVMSSSK5EGQU2SK5WE2ZLOKJUFM23IGBGTE4ZTMVWXGNKRPJBEQTLLKZNGKR2KNFKUISSIMFKXQRKNK44U6VKGN54VKMRVPJJTCQSPKFLDS2KVIY4HSWJRKUZVMMLMLFMVIVSQKIYDQ5DFNNETEUSVNBXVQMDIPBMDE6DRMFWWWNCOK5YE2YTNORVVK2TINVHG4SRTMVMGISDCKVDDCZKXGU2FCVK2KZKG4RTPKZDWO6SPIRWDGZCHMR2FCVSCOZLVONDUKZKEC6KOGA4U2WSXIV5FC3CSGRLDGUSNJVDTCQ2VKVFFCUJQKJGWGSCKLBMXUZCFK5LEUS3ELBYEEVKEJZWVCVSKKFKEOWJQMJLWYVSTJBGTAUTLIU2WKSDMNRKVGMKMLEYXA3KXIV2GWUZSJZKGEMKOONRFK2CIKZDE4TKUJBKTKVCIKJEVE6TIJRRUQTTQKFKUU6SVNRSDIYSXHAYWIVCKKZHDETSCKZMFUNKWNZETAWLKLJGE6QZRI5RHUVL2KNLFM33ENZJGSUSEIZWFIRKWKVHEMSLXKZMHA6TCKV2DGTLMNMZWI3CCNFMWY4CKJZCES5CZGJSGWZKVNR2FKM2ZGFQVK23ZKIYTSMKPIRHEIWSFMRXVE3TQK5KTGUTLLB4TCRKVI54EYTSFGVMVKWCSNJJEM4CXKFLHAUTCNVUDCUJTIV3VEMBZK5MWYWJUKNDG66DFIZYGWTRQGFTFGWC2NJJFQWTVKFMEMMDBGJRXOVCVNRKU6RKWIJLW4SRQK5DVKMSRGNCXSVJSNBIGEMDIO5KTG4CZKNMGIU3BI54DAYSYJJGE2RLEIVNDG3DRKVWWQ42ZGJDFSUSFKF4U2MTMIZHGY3CCKZKEEMCWIU4WSZBRJZJFGR3QOBJDC2BSKUYFMUK2NNSGQYKFLJFVMV2NGVKW2TTRKFKVM5KVI5YE2VRQJZEVGVTHPJREQTTZKFKTAMCVNVHFAURTJZ3FKVTMI5SDESSFKVDTS4TFKUYU6T2XORHU46TMORKTGSTNKJ5FU52RNRSGMTRSHB4VSWDMNJKUIULXMJWDQ5CPK5UHCVLNIZLVK22SLBLGYQJUKIZDC3KNJBNFAU2FKZLFE2SWI5RG2VJSLIZUM2SSGA2XETJRIZJFKMCWIVSFMQTGMVDUM4SNKU4UYZLOIJGVMM2GJFGFOVJSJZKE44SZGNIXQYSFLJUVMVJUGRHUMVTMJV4TCVKZPJLFAYTNOBHGC2SKORHUMRJSKNWXI33BNU2XMYTNNRXVUMLHGFMTAZDMJYZWQSSWKRGXSTL2JJVVMMLEKJMVQUTOKFLFE23FNVLFCY2HHF3FOV22IZKVGMBUMF4TKSCVNRRTAYZSMQ3FMWCRGFSW4VJVKJVVMWKZNRWHGVDMNRJA]
+      opc-request-id: [6B256628A54F41E48A77EDD3EB039962/EC09EBB8168D75AC84F510A212B4E621/9310AC13E560ED794A19200F967EBA5B]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="UTVGvFMG5Lcq8JWMXgwSi7cY1955WdsyntrcGWuCExnuoEXmHXvNdTq0V/kVCXlCvWmmE3gjJS43MYzY+w1lU6Wiuq3lV/C2X+JowSfSWgEM/Ma5s7pZFdc3exbjJjxyF3N1uyMG+9nF9JVX182cZfV6qSj7UUUJ/KxAw2jxXoazomq/ae6oiPNiU6BfQdjqI8UJNbaU8UePGAM8fjwc5vXrs/+Ja0Y54IshjyFkShbzJhJC0/9D8au0xax/m6dw2TCtoDESwioF2/MFcmPVH66IszQjSPLVlnmmnuiWEh3FkqB93v4iUL2fdX18lHJL7GiicsbcB6gt55EkFpowdg==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Mon, 01 Apr 2019 22:15:17 GMT']
+      host: [iaas.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.5]
+      opc-request-id: [145C2D837391473680A10913E0DF3E5B]
+      user-agent: [Oracle-PythonSDK/2.2.5 (python 3.6.4; x86_64-Darwin)]
+    method: GET
+    uri: https://iaas.us-phoenix-1.oraclecloud.com/20160918/instancePools?compartmentId=ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba&displayName=__STS0836_2082&limit=10&page=AAAAAAAAAAAAIQCBIFAUCQKBIFAUCQKKNRSVK4DZLFLGIUTBKU4XAU2YNRIFERKWOBKEKTSLMJDUU5CUK5WFAYKVOBBVIV3QKZGWYSLXKRVTKSTBLBSHAV2WMQ2GE23MOFRDE3DBKIZHQNKTK42HOTDJGU3FS2TIOZQVOOLSMIZWIS2SPEYUOWBRJJYEY3CSJNLVOMJUKRLEKNKSGJFHGWD2MQZGIVDMIJRTG232MRDFE42XIMYWUVSVKZMFEMDIMZHVIQJRMJCTCUKUJBWFCVLOIU2E6V2SNNLW4VJULJWVK6TFIZMTETRSIUZWKRTMOJJHUWTWKVKU4SKVGNKXSYKGLJVVM3DILFKVMSSSK5EGQU2SK5WE2ZLOKJUFM23IGBGTE4ZTMVWXGNKRPJBEQTLLKZNGKR2KNFKUISSIMFKXQRKNK44U6VKGN54VKMRVPJJTCQSPKFLDS2KVIY4HSWJRKUZVMMLMLFMVIVSQKIYDQ5DFNNETEUSVNBXVQMDIPBMDE6DRMFWWWNCOK5YE2YTNORVVK2TINVHG4SRTMVMGISDCKVDDCZKXGU2FCVK2KZKG4RTPKZDWO6SPIRWDGZCHMR2FCVSCOZLVONDUKZKEC6KOGA4U2WSXIV5FC3CSGRLDGUSNJVDTCQ2VKVFFCUJQKJGWGSCKLBMXUZCFK5LEUS3ELBYEEVKEJZWVCVSKKFKEOWJQMJLWYVSTJBGTAUTLIU2WKSDMNRKVGMKMLEYXA3KXIV2GWUZSJZKGEMKOONRFK2CIKZDE4TKUJBKTKVCIKJEVE6TIJRRUQTTQKFKUU6SVNRSDIYSXHAYWIVCKKZHDETSCKZMFUNKWNZETAWLKLJGE6QZRI5RHUVL2KNLFM33ENZJGSUSEIZWFIRKWKVHEMSLXKZMHA6TCKV2DGTLMNMZWI3CCNFMWY4CKJZCES5CZGJSGWZKVNR2FKM2ZGFQVK23ZKIYTSMKPIRHEIWSFMRXVE3TQK5KTGUTLLB4TCRKVI54EYTSFGVMVKWCSNJJEM4CXKFLHAUTCNVUDCUJTIV3VEMBZK5MWYWJUKNDG66DFIZYGWTRQGFTFGWC2NJJFQWTVKFMEMMDBGJRXOVCVNRKU6RKWIJLW4SRQK5DVKMSRGNCXSVJSNBIGEMDIO5KTG4CZKNMGIU3BI54DAYSYJJGE2RLEIVNDG3DRKVWWQ42ZGJDFSUSFKF4U2MTMIZHGY3CCKZKEEMCWIU4WSZBRJZJFGR3QOBJDC2BSKUYFMUK2NNSGQYKFLJFVMV2NGVKW2TTRKFKVM5KVI5YE2VRQJZEVGVTHPJREQTTZKFKTAMCVNVHFAURTJZ3FKVTMI5SDESSFKVDTS4TFKUYU6T2XORHU46TMORKTGSTNKJ5FU52RNRSGMTRSHB4VSWDMNJKUIULXMJWDQ5CPK5UHCVLNIZLVK22SLBLGYQJUKIZDC3KNJBNFAU2FKZLFE2SWI5RG2VJSLIZUM2SSGA2XETJRIZJFKMCWIVSFMQTGMVDUM4SNKU4UYZLOIJGVMM2GJFGFOVJSJZKE44SZGNIXQYSFLJUVMVJUGRHUMVTMJV4TCVKZPJLFAYTNOBHGC2SKORHUMRJSKNWXI33BNU2XMYTNNRXVUMLHGFMTAZDMJYZWQSSWKRGXSTL2JJVVMMLEKJMVQUTOKFLFE23FNVLFCY2HHF3FOV22IZKVGMBUMF4TKSCVNRRTAYZSMQ3FMWCRGFSW4VJVKJVVMWKZNRWHGVDMNRJA
+  response:
+    body: {string: '[{"id":"ocid1.instancepool.oc1.phx.aaaaaaaacz65j3pfxniuo273cnlxivjj55eyqtoo2hifuzmtt54obsdzemca","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","displayName":"__STS0641_1656","instanceConfigurationId":"ocid1.instanceconfiguration.oc1.phx.aaaaaaaapjp6ijvvquqrobtq3s2gbnttcuiernxmeqsvo6rjfkcppgmd6ibq","lifecycleState":"TERMINATED","availabilityDomains":["FjmN:PHX-AD-1"],"size":1,"timeCreated":"2019-04-01T09:42:36.165Z","timeStateUpdated":"2019-04-01T10:13:13.114Z"},{"id":"ocid1.instancepool.oc1.phx.aaaaaaaadm3dv5w6xokufrv6ge76lqp4q4u2glcd6wqqwfafmoyoxgu74qya","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","displayName":"__STS0826_1952","instanceConfigurationId":"ocid1.instanceconfiguration.oc1.phx.aaaaaaaaezxobn7xruffw3fmgrbqi7dcbmmfb5lzkwzfolc4tu5br6nb5kca","lifecycleState":"TERMINATED","availabilityDomains":["FjmN:PHX-AD-3"],"size":1,"timeCreated":"2019-04-01T08:32:30.407Z","timeStateUpdated":"2019-04-01T17:45:42.015Z"},{"id":"ocid1.instancepool.oc1.phx.aaaaaaaafdkmngqui7edcyecqay67yaamhagphdebxvy2wznolonfzuwhygq","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","displayName":"__STS0826_6087","instanceConfigurationId":"ocid1.instanceconfiguration.oc1.phx.aaaaaaaaezxobn7xruffw3fmgrbqi7dcbmmfb5lzkwzfolc4tu5br6nb5kca","lifecycleState":"TERMINATED","availabilityDomains":["FjmN:PHX-AD-3"],"size":1,"timeCreated":"2019-04-01T08:12:11.188Z","timeStateUpdated":"2019-04-01T17:48:45.032Z"},{"id":"ocid1.instancepool.oc1.phx.aaaaaaaahgqj5rt5hpuxgoctondnzxlasaghnum6v6s7wcunda64rmfn477q","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","displayName":"__STS0826_7883","instanceConfigurationId":"ocid1.instanceconfiguration.oc1.phx.aaaaaaaaezxobn7xruffw3fmgrbqi7dcbmmfb5lzkwzfolc4tu5br6nb5kca","lifecycleState":"TERMINATED","availabilityDomains":["FjmN:PHX-AD-3"],"size":2,"timeCreated":"2019-04-01T08:08:06.526Z","timeStateUpdated":"2019-04-01T17:52:06.518Z"},{"id":"ocid1.instancepool.oc1.phx.aaaaaaaavsja2ayvgempevvysw2azthygli3k23kerugdztgyxxruxzcqlrq","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","displayName":"__STS0574_6166","instanceConfigurationId":"ocid1.instanceconfiguration.oc1.phx.aaaaaaaawc2caf53chhswt36wif4kr6y72ymf7tzizjiytj5a6gzh7mpzkya","lifecycleState":"TERMINATED","availabilityDomains":["FjmN:PHX-AD-3"],"size":1,"timeCreated":"2019-03-31T10:17:15.550Z","timeStateUpdated":"2019-04-01T18:18:05.237Z"},{"id":"ocid1.instancepool.oc1.phx.aaaaaaaav3brbis2kf54fdgbwrf66gugk2mzj4v7jnlytfytqcyeoivumkha","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","displayName":"__STS0574_2396","instanceConfigurationId":"ocid1.instanceconfiguration.oc1.phx.aaaaaaaawc2caf53chhswt36wif4kr6y72ymf7tzizjiytj5a6gzh7mpzkya","lifecycleState":"TERMINATED","availabilityDomains":["FjmN:PHX-AD-3"],"size":2,"timeCreated":"2019-03-31T08:09:14.551Z","timeStateUpdated":"2019-04-01T18:21:24.016Z"},{"id":"ocid1.instancepool.oc1.phx.aaaaaaaautjuxjt4jzedbu7yuegdlejexy4a2iibpkt3o23unjllxxznbcta","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","displayName":"__STS0271_7420","instanceConfigurationId":"ocid1.instanceconfiguration.oc1.phx.aaaaaaaaugma2pammv2t7sfnfdlgs2ihgutsbylsrday5iah5wmkblu5ijia","lifecycleState":"TERMINATED","availabilityDomains":["FjmN:PHX-AD-1"],"size":1,"timeCreated":"2019-03-29T18:11:32.965Z","timeStateUpdated":"2019-04-01T18:24:48.621Z"},{"id":"ocid1.instancepool.oc1.phx.aaaaaaaavuew5ytprqn22vgk27bz5pauqh434uajy3xhtwrbj34v3d57rseq","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","displayName":"__STS0271_7647","instanceConfigurationId":"ocid1.instanceconfiguration.oc1.phx.aaaaaaaaugma2pammv2t7sfnfdlgs2ihgutsbylsrday5iah5wmkblu5ijia","lifecycleState":"TERMINATED","availabilityDomains":["FjmN:PHX-AD-1"],"size":1,"timeCreated":"2019-03-29T16:24:40.148Z","timeStateUpdated":"2019-04-01T18:28:32.254Z"},{"id":"ocid1.instancepool.oc1.phx.aaaaaaaagl7hmjqckovbfedeuxhlgigflqcxtl6mo45bej5lbouans76oaeq","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","displayName":"__STS0214_3864","instanceConfigurationId":"ocid1.instanceconfiguration.oc1.phx.aaaaaaaaokkzdldn7npckh4vgetk5gakjtff6xeqzxv473cbzq7nceehr6qq","lifecycleState":"TERMINATED","availabilityDomains":["FjmN:PHX-AD-3"],"size":1,"timeCreated":"2019-03-28T18:38:31.479Z","timeStateUpdated":"2019-04-01T18:32:18.007Z"},{"id":"ocid1.instancepool.oc1.phx.aaaaaaaam7yiwbfmr37zgiltjtkqybacs6de7aowqlflgvosrzwxj7oyrzua","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","displayName":"__STS0214_987","instanceConfigurationId":"ocid1.instanceconfiguration.oc1.phx.aaaaaaaaokkzdldn7npckh4vgetk5gakjtff6xeqzxv473cbzq7nceehr6qq","lifecycleState":"TERMINATED","availabilityDomains":["FjmN:PHX-AD-3"],"size":1,"timeCreated":"2019-03-28T18:15:40.021Z","timeStateUpdated":"2019-04-01T18:35:38.004Z"}]'}
+    headers:
+      Connection: [keep-alive]
+      Content-Length: ['5210']
+      Content-Type: [application/json]
+      Date: ['Mon, 01 Apr 2019 22:15:17 GMT']
+      X-Content-Type-Options: [nosniff]
+      opc-next-page: [AAAAAAAAAAAAIQCBIFAUCQKBIFAUCQKKNRSVK4DZLFLGIUTBKU4XAU2YNRIFERKWOBKEKTSLMJDUU5CUK5WFAYKVOBBVIV3QKZGWYSLXKRVTKSTBLBSHAV2WMQ2GE23MOFRDE3DBKIZHQNKTK42HOTDJGVZVI3LPPBLGYZDOMJLEUUCXNEYXOU2XKJEUY3TMPFITGUTVKNVFET3EIZYDEU2EM4YVUVKSMFQVQSSXMNCUUZSSKRWEGUKUMMYGGMDMGRJEORSFMJCVSMSOIZBHMV2XJEZGKRCSJ5SUK3CEJ5MGYV2VK5SG4WTNLJVFU2TIPFJHUQSELIZVMQ3BGA2DKVDLJZVVE3KWJVIWY3CWLFWXONDCNRSDMVJSNMYVM6TMNJSDA3CLKNLDSUCUIRBEEVSGKZVE2RRZLJHVI2CCMQZWQR3BGAYXCUKWLJGWCVDIJBREIVTRKUYVUMK2GI2VGWBTIZJE6VTINRITA2CNMJVUK6KNGNUEQVCFLF4E2SCSO5RFQTLUKQYE4MS2IVMXIY32JV3U6R3EIZHEO4DRKRCTCRKWKVHHSZKWIJUU6VZRMFRFQVSQKMYEUTKXNRJEGZKYLJUVOV3MLJLEI23XMRWVUSDCK5JEYVDOLF3WKRKJGRKFOWTOKEZHQ4CMLBHDKVJTMN5FESDQIVHGWMLQKNLUURCSLBDDMWJTMN3WGV22J5QW2NBQKFLGQTCNNRNDAULKIZBVUVDELBGWWNKUJRMG66LFIZFDMTKYKJ3FM2SOIZJW4SSSMMZEKMSNJBSEEYJTKV4WG2ZQPJJDC4DWKZKVE2SVGNSDCYKGKF2GKVLYGZKEM33XKNCEU2LCNNCXUULOMRDFIRDINVSVK5DVMNWU423DJBHDGVLOIJIFORSCLJRVK4CFJ5DWQRCRNVNFIYKGHF2FSVLIGNNEISTZKZLEE23EPEYTIWRTN53U2RDENZMW43DTKN5GQMKONVNHUYKUIF3VO2SWKRHUMVTVKJKU452TNRCXOUSIJZCFCMRRNBMVQRSKKRLVC52XKRGTETCWJI2FKVLENNRFISSNMQZGYRSYGFLHET2XJJBWCMDDPFJDCVSYKNCTSSDFIY4UEVRSHFMU4WDMJRRUOWSZKJKWQNKZNRLFMTKHOR4VEMKKNBRUO5CMKQYVE5K2NRHE2ZKVNRCWGV2FGFGVI2CMKRLEMNLDK5JHSYSEIZWWGM2KGBSFIVSNMFVEEUCXIVYGCVTLOBYFKVSONVHFMSTNKNLTK4SRGFWFIV2EKZYFC6S2KBNG4TTRJVVVU6SZPJITIWKVGV3FE2SNGBHUKNLGJV5EUSTCI5DHKYZRKJ5GKR2WINRW25CTJZVFMWSWGBSGQWKWIZ2E4M3EONRWWTJQKMYWI5TBGFBGYU2FJE2WKR22OZSHSMKYKFVGIWKTKVYFSY2EJEYVERKKKFREKOLWKQZWQMDCKVDHQWTNGFLFGMTENBHUQWSILAYWIT2PJBCXSVKYKZMVIVJRGFJWUWTIJVVUM5CPIZWEKUJSOBXVO3CKNBSG4STVMFLTKNCXIUYVUTSEKZBWCMRRKZRWYURWKFWEMVCNGFLHSU2FJI2GIRZVMFJG2VJQKRDEK6C2I5HEKWKYKZKFIUZQGBHUKZCTMQYFSMKZNVSEEU2VHE2E6VLYLFGUORSSMQZWQWCWI42UIVCUNBZVQMLIN5NGYQSPK5JTKTS2IRBHKTLLKZKVE6JRIVKXUWSZJZ5GQNTDPJNFUWSVOBBA]
+      opc-request-id: [145C2D837391473680A10913E0DF3E5B/6D6064F0A2D52293ED8D9149FE050AF0/BBCBEE0C84EC78EFE35124C1790A6214]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"containerId": "22c37dc4-e215-4e62-9de0-b8718e5f3ce3", "listResponse":
+      true, "requestClass": "com.oracle.bmc.core.requests.ListInstancePoolsRequest",
+      "requestJson": "{\"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0836_2082\", \"limit\": 10}", "responseJson": "[{\"items\":
+      [{\"id\": \"ocid1.instancepool.oc1.phx.aaaaaaaaqvt323ldcvx4a3u7tb76buh4y64ztuwihzqbfrza7uvtw4ghtf7a\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0836_5923\", \"instanceConfigurationId\": \"ocid1.instanceconfiguration.oc1.phx.aaaaaaaan2apudfkdnssrvnemjnukovp67phz2dhccz6lvitjr4bq7pmzupa\",
+      \"lifecycleState\": \"RUNNING\", \"availabilityDomains\": [\"FjmN:PHX-AD-1\"],
+      \"size\": 1, \"timeCreated\": \"2019-04-01T22:11:01.999000+00:00\"}, {\"id\":
+      \"ocid1.instancepool.oc1.phx.aaaaaaaapqs7p55mk2p7mh6qiasbsgxferg5bw7oyizq4zrihnh3xdnkkjma\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0836_3236\", \"instanceConfigurationId\": \"ocid1.instanceconfiguration.oc1.phx.aaaaaaaazpphanfoqm23mfhuxlzxxulvujdqdvn4ai45nziwz2rrzn2t425a\",
+      \"lifecycleState\": \"RUNNING\", \"availabilityDomains\": [\"FjmN:PHX-AD-1\"],
+      \"size\": 1, \"timeCreated\": \"2019-04-01T21:37:41.583000+00:00\"}, {\"id\":
+      \"ocid1.instancepool.oc1.phx.aaaaaaaajqlwuwgutn6h4lpkyvyzg4nntkj2va7qdkszwv6r5i63iyncm6ta\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0836_2437\", \"instanceConfigurationId\": \"ocid1.instanceconfiguration.oc1.phx.aaaaaaaazpphanfoqm23mfhuxlzxxulvujdqdvn4ai45nziwz2rrzn2t425a\",
+      \"lifecycleState\": \"RUNNING\", \"availabilityDomains\": [\"FjmN:PHX-AD-3\"],
+      \"size\": 2, \"timeCreated\": \"2019-04-01T21:31:45.413000+00:00\"}, {\"id\":
+      \"ocid1.instancepool.oc1.phx.aaaaaaaayiy5fhtq6tlmmx6e7y25kuiofakagdrpkn46qrpkhegybikgxxua\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0098_1491\", \"instanceConfigurationId\": \"ocid1.instanceconfiguration.oc1.phx.aaaaaaaalnatmibfstpr6ch34g4tkydc4uktsok64c6gbggthmtvh5r5a7zq\",
+      \"lifecycleState\": \"TERMINATED\", \"availabilityDomains\": [\"FjmN:PHX-AD-1\"],
+      \"size\": 1, \"timeCreated\": \"2019-04-01T19:10:27.528000+00:00\"}, {\"id\":
+      \"ocid1.instancepool.oc1.phx.aaaaaaaa4lan3ipivwkypmf6cnkvqqw422hmxugodzynh7tlgmkviyss5e4a\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0098_875\", \"instanceConfigurationId\": \"ocid1.instanceconfiguration.oc1.phx.aaaaaaaalnatmibfstpr6ch34g4tkydc4uktsok64c6gbggthmtvh5r5a7zq\",
+      \"lifecycleState\": \"TERMINATED\", \"availabilityDomains\": [\"FjmN:PHX-AD-1\"],
+      \"size\": 1, \"timeCreated\": \"2019-04-01T19:05:08.944000+00:00\"}, {\"id\":
+      \"ocid1.instancepool.oc1.phx.aaaaaaaasgtcgu5gp47gx3tkna46jatwkkm3cz7yxawrisig3kv3frfgznna\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0826_8344\", \"instanceConfigurationId\": \"ocid1.instanceconfiguration.oc1.phx.aaaaaaaa2juhlo2o63jjquxff3vgd4h6jlfxtu52msrabaqmnzj4rtdel5wq\",
+      \"lifecycleState\": \"TERMINATED\", \"availabilityDomains\": [\"FjmN:PHX-AD-3\"],
+      \"size\": 1, \"timeCreated\": \"2019-04-01T11:16:15.733000+00:00\"}, {\"id\":
+      \"ocid1.instancepool.oc1.phx.aaaaaaaap4ntpgnprfcaiwxbnfzfhgsqul6zhdmqumrbzxzrgk4uli5hjwkq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0826_8456\", \"instanceConfigurationId\": \"ocid1.instanceconfiguration.oc1.phx.aaaaaaaa2juhlo2o63jjquxff3vgd4h6jlfxtu52msrabaqmnzj4rtdel5wq\",
+      \"lifecycleState\": \"TERMINATED\", \"availabilityDomains\": [\"FjmN:PHX-AD-3\"],
+      \"size\": 1, \"timeCreated\": \"2019-04-01T10:55:59.534000+00:00\"}, {\"id\":
+      \"ocid1.instancepool.oc1.phx.aaaaaaaa4kyara7sakbqxtkikktyemxeoor6r2otkasdfgc4ubf4ufqdjycq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0826_612\", \"instanceConfigurationId\": \"ocid1.instanceconfiguration.oc1.phx.aaaaaaaa2juhlo2o63jjquxff3vgd4h6jlfxtu52msrabaqmnzj4rtdel5wq\",
+      \"lifecycleState\": \"TERMINATED\", \"availabilityDomains\": [\"FjmN:PHX-AD-3\"],
+      \"size\": 1, \"timeCreated\": \"2019-04-01T10:35:39.739000+00:00\"}, {\"id\":
+      \"ocid1.instancepool.oc1.phx.aaaaaaaacpgp7j6ysced7uppql76hcgcnaxfm7vh7ycsykc7js2hx5picqxa\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0826_2102\", \"instanceConfigurationId\": \"ocid1.instanceconfiguration.oc1.phx.aaaaaaaaezxobn7xruffw3fmgrbqi7dcbmmfb5lzkwzfolc4tu5br6nb5kca\",
+      \"lifecycleState\": \"TERMINATED\", \"availabilityDomains\": [\"FjmN:PHX-AD-3\"],
+      \"size\": 1, \"timeCreated\": \"2019-04-01T10:15:23.546000+00:00\"}, {\"id\":
+      \"ocid1.instancepool.oc1.phx.aaaaaaaakqaj2uusx3lf3u3vh4pwkptjjgrckgsbrokbg56fl3sqnuwovzyq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0641_1686\", \"instanceConfigurationId\": \"ocid1.instanceconfiguration.oc1.phx.aaaaaaaapjp6ijvvquqrobtq3s2gbnttcuiernxmeqsvo6rjfkcppgmd6ibq\",
+      \"lifecycleState\": \"TERMINATED\", \"availabilityDomains\": [\"FjmN:PHX-AD-1\"],
+      \"size\": 1, \"timeCreated\": \"2019-04-01T09:48:21.187000+00:00\"}], \"opcRequestId\":
+      \"FA273D5CD1154E678D10463743A8F48F\", \"opcNextPage\": \"AAAAAAAAAAAAIQCBIFAUCQKBIFAUCQKKNRSVK4DZLFLGIUTBKU4XAU2YNRIFERKWOBKEKTSLMJDUU5CUK5WFAYKVOBBVIV3QKZGWYSLXKRVTKSTBLBSHAV2WMQ2GE23MOFRDE3DBKIZHQNKTK42HOTDJGU3FS2TIOZQVOOLSMIZWIS2SPEYUOWBRJJYEY3CSJNLVOMJUKRLEKNKSGJFHGWD2MQZGIVDMIJRTG232MRDFE42XIMYWUVSVKZMFEMDIMZHVIQJRMJCTCUKUJBWFCVLOIU2E6V2SNNLW4VJULJWVK6TFIZMTETRSIUZWKRTMOJJHUWTWKVKU4SKVGNKXSYKGLJVVM3DILFKVMSSSK5EGQU2SK5WE2ZLOKJUFM23IGBGTE4ZTMVWXGNKRPJBEQTLLKZNGKR2KNFKUISSIMFKXQRKNK44U6VKGN54VKMRVPJJTCQSPKFLDS2KVIY4HSWJRKUZVMMLMLFMVIVSQKIYDQ5DFNNETEUSVNBXVQMDIPBMDE6DRMFWWWNCOK5YE2YTNORVVK2TINVHG4SRTMVMGISDCKVDDCZKXGU2FCVK2KZKG4RTPKZDWO6SPIRWDGZCHMR2FCVSCOZLVONDUKZKEC6KOGA4U2WSXIV5FC3CSGRLDGUSNJVDTCQ2VKVFFCUJQKJGWGSCKLBMXUZCFK5LEUS3ELBYEEVKEJZWVCVSKKFKEOWJQMJLWYVSTJBGTAUTLIU2WKSDMNRKVGMKMLEYXA3KXIV2GWUZSJZKGEMKOONRFK2CIKZDE4TKUJBKTKVCIKJEVE6TIJRRUQTTQKFKUU6SVNRSDIYSXHAYWIVCKKZHDETSCKZMFUNKWNZETAWLKLJGE6QZRI5RHUVL2KNLFM33ENZJGSUSEIZWFIRKWKVHEMSLXKZMHA6TCKV2DGTLMNMZWI3CCNFMWY4CKJZCES5CZGJSGWZKVNR2FKM2ZGFQVK23ZKIYTSMKPIRHEIWSFMRXVE3TQK5KTGUTLLB4TCRKVI54EYTSFGVMVKWCSNJJEM4CXKFLHAUTCNVUDCUJTIV3VEMBZK5MWYWJUKNDG66DFIZYGWTRQGFTFGWC2NJJFQWTVKFMEMMDBGJRXOVCVNRKU6RKWIJLW4SRQK5DVKMSRGNCXSVJSNBIGEMDIO5KTG4CZKNMGIU3BI54DAYSYJJGE2RLEIVNDG3DRKVWWQ42ZGJDFSUSFKF4U2MTMIZHGY3CCKZKEEMCWIU4WSZBRJZJFGR3QOBJDC2BSKUYFMUK2NNSGQYKFLJFVMV2NGVKW2TTRKFKVM5KVI5YE2VRQJZEVGVTHPJREQTTZKFKTAMCVNVHFAURTJZ3FKVTMI5SDESSFKVDTS4TFKUYU6T2XORHU46TMORKTGSTNKJ5FU52RNRSGMTRSHB4VSWDMNJKUIULXMJWDQ5CPK5UHCVLNIZLVK22SLBLGYQJUKIZDC3KNJBNFAU2FKZLFE2SWI5RG2VJSLIZUM2SSGA2XETJRIZJFKMCWIVSFMQTGMVDUM4SNKU4UYZLOIJGVMM2GJFGFOVJSJZKE44SZGNIXQYSFLJUVMVJUGRHUMVTMJV4TCVKZPJLFAYTNOBHGC2SKORHUMRJSKNWXI33BNU2XMYTNNRXVUMLHGFMTAZDMJYZWQSSWKRGXSTL2JJVVMMLEKJMVQUTOKFLFE23FNVLFCY2HHF3FOV22IZKVGMBUMF4TKSCVNRRTAYZSMQ3FMWCRGFSW4VJVKJVVMWKZNRWHGVDMNRJA\"},
+      {\"items\": [{\"id\": \"ocid1.instancepool.oc1.phx.aaaaaaaacz65j3pfxniuo273cnlxivjj55eyqtoo2hifuzmtt54obsdzemca\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0641_1656\", \"instanceConfigurationId\": \"ocid1.instanceconfiguration.oc1.phx.aaaaaaaapjp6ijvvquqrobtq3s2gbnttcuiernxmeqsvo6rjfkcppgmd6ibq\",
+      \"lifecycleState\": \"TERMINATED\", \"availabilityDomains\": [\"FjmN:PHX-AD-1\"],
+      \"size\": 1, \"timeCreated\": \"2019-04-01T09:42:36.165000+00:00\"}, {\"id\":
+      \"ocid1.instancepool.oc1.phx.aaaaaaaadm3dv5w6xokufrv6ge76lqp4q4u2glcd6wqqwfafmoyoxgu74qya\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0826_1952\", \"instanceConfigurationId\": \"ocid1.instanceconfiguration.oc1.phx.aaaaaaaaezxobn7xruffw3fmgrbqi7dcbmmfb5lzkwzfolc4tu5br6nb5kca\",
+      \"lifecycleState\": \"TERMINATED\", \"availabilityDomains\": [\"FjmN:PHX-AD-3\"],
+      \"size\": 1, \"timeCreated\": \"2019-04-01T08:32:30.407000+00:00\"}, {\"id\":
+      \"ocid1.instancepool.oc1.phx.aaaaaaaafdkmngqui7edcyecqay67yaamhagphdebxvy2wznolonfzuwhygq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0826_6087\", \"instanceConfigurationId\": \"ocid1.instanceconfiguration.oc1.phx.aaaaaaaaezxobn7xruffw3fmgrbqi7dcbmmfb5lzkwzfolc4tu5br6nb5kca\",
+      \"lifecycleState\": \"TERMINATED\", \"availabilityDomains\": [\"FjmN:PHX-AD-3\"],
+      \"size\": 1, \"timeCreated\": \"2019-04-01T08:12:11.188000+00:00\"}, {\"id\":
+      \"ocid1.instancepool.oc1.phx.aaaaaaaahgqj5rt5hpuxgoctondnzxlasaghnum6v6s7wcunda64rmfn477q\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0826_7883\", \"instanceConfigurationId\": \"ocid1.instanceconfiguration.oc1.phx.aaaaaaaaezxobn7xruffw3fmgrbqi7dcbmmfb5lzkwzfolc4tu5br6nb5kca\",
+      \"lifecycleState\": \"TERMINATED\", \"availabilityDomains\": [\"FjmN:PHX-AD-3\"],
+      \"size\": 2, \"timeCreated\": \"2019-04-01T08:08:06.526000+00:00\"}, {\"id\":
+      \"ocid1.instancepool.oc1.phx.aaaaaaaavsja2ayvgempevvysw2azthygli3k23kerugdztgyxxruxzcqlrq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0574_6166\", \"instanceConfigurationId\": \"ocid1.instanceconfiguration.oc1.phx.aaaaaaaawc2caf53chhswt36wif4kr6y72ymf7tzizjiytj5a6gzh7mpzkya\",
+      \"lifecycleState\": \"TERMINATED\", \"availabilityDomains\": [\"FjmN:PHX-AD-3\"],
+      \"size\": 1, \"timeCreated\": \"2019-03-31T10:17:15.550000+00:00\"}, {\"id\":
+      \"ocid1.instancepool.oc1.phx.aaaaaaaav3brbis2kf54fdgbwrf66gugk2mzj4v7jnlytfytqcyeoivumkha\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0574_2396\", \"instanceConfigurationId\": \"ocid1.instanceconfiguration.oc1.phx.aaaaaaaawc2caf53chhswt36wif4kr6y72ymf7tzizjiytj5a6gzh7mpzkya\",
+      \"lifecycleState\": \"TERMINATED\", \"availabilityDomains\": [\"FjmN:PHX-AD-3\"],
+      \"size\": 2, \"timeCreated\": \"2019-03-31T08:09:14.551000+00:00\"}, {\"id\":
+      \"ocid1.instancepool.oc1.phx.aaaaaaaautjuxjt4jzedbu7yuegdlejexy4a2iibpkt3o23unjllxxznbcta\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0271_7420\", \"instanceConfigurationId\": \"ocid1.instanceconfiguration.oc1.phx.aaaaaaaaugma2pammv2t7sfnfdlgs2ihgutsbylsrday5iah5wmkblu5ijia\",
+      \"lifecycleState\": \"TERMINATED\", \"availabilityDomains\": [\"FjmN:PHX-AD-1\"],
+      \"size\": 1, \"timeCreated\": \"2019-03-29T18:11:32.965000+00:00\"}, {\"id\":
+      \"ocid1.instancepool.oc1.phx.aaaaaaaavuew5ytprqn22vgk27bz5pauqh434uajy3xhtwrbj34v3d57rseq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0271_7647\", \"instanceConfigurationId\": \"ocid1.instanceconfiguration.oc1.phx.aaaaaaaaugma2pammv2t7sfnfdlgs2ihgutsbylsrday5iah5wmkblu5ijia\",
+      \"lifecycleState\": \"TERMINATED\", \"availabilityDomains\": [\"FjmN:PHX-AD-1\"],
+      \"size\": 1, \"timeCreated\": \"2019-03-29T16:24:40.148000+00:00\"}, {\"id\":
+      \"ocid1.instancepool.oc1.phx.aaaaaaaagl7hmjqckovbfedeuxhlgigflqcxtl6mo45bej5lbouans76oaeq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0214_3864\", \"instanceConfigurationId\": \"ocid1.instanceconfiguration.oc1.phx.aaaaaaaaokkzdldn7npckh4vgetk5gakjtff6xeqzxv473cbzq7nceehr6qq\",
+      \"lifecycleState\": \"TERMINATED\", \"availabilityDomains\": [\"FjmN:PHX-AD-3\"],
+      \"size\": 1, \"timeCreated\": \"2019-03-28T18:38:31.479000+00:00\"}, {\"id\":
+      \"ocid1.instancepool.oc1.phx.aaaaaaaam7yiwbfmr37zgiltjtkqybacs6de7aowqlflgvosrzwxj7oyrzua\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0214_987\", \"instanceConfigurationId\": \"ocid1.instanceconfiguration.oc1.phx.aaaaaaaaokkzdldn7npckh4vgetk5gakjtff6xeqzxv473cbzq7nceehr6qq\",
+      \"lifecycleState\": \"TERMINATED\", \"availabilityDomains\": [\"FjmN:PHX-AD-3\"],
+      \"size\": 1, \"timeCreated\": \"2019-03-28T18:15:40.021000+00:00\"}], \"opcRequestId\":
+      \"505033522B9B4E3591F1F4F04BBA5106\", \"opcNextPage\": \"AAAAAAAAAAAAIQCBIFAUCQKBIFAUCQKKNRSVK4DZLFLGIUTBKU4XAU2YNRIFERKWOBKEKTSLMJDUU5CUK5WFAYKVOBBVIV3QKZGWYSLXKRVTKSTBLBSHAV2WMQ2GE23MOFRDE3DBKIZHQNKTK42HOTDJGVZVI3LPPBLGYZDOMJLEUUCXNEYXOU2XKJEUY3TMPFITGUTVKNVFET3EIZYDEU2EM4YVUVKSMFQVQSSXMNCUUZSSKRWEGUKUMMYGGMDMGRJEORSFMJCVSMSOIZBHMV2XJEZGKRCSJ5SUK3CEJ5MGYV2VK5SG4WTNLJVFU2TIPFJHUQSELIZVMQ3BGA2DKVDLJZVVE3KWJVIWY3CWLFWXONDCNRSDMVJSNMYVM6TMNJSDA3CLKNLDSUCUIRBEEVSGKZVE2RRZLJHVI2CCMQZWQR3BGAYXCUKWLJGWCVDIJBREIVTRKUYVUMK2GI2VGWBTIZJE6VTINRITA2CNMJVUK6KNGNUEQVCFLF4E2SCSO5RFQTLUKQYE4MS2IVMXIY32JV3U6R3EIZHEO4DRKRCTCRKWKVHHSZKWIJUU6VZRMFRFQVSQKMYEUTKXNRJEGZKYLJUVOV3MLJLEI23XMRWVUSDCK5JEYVDOLF3WKRKJGRKFOWTOKEZHQ4CMLBHDKVJTMN5FESDQIVHGWMLQKNLUURCSLBDDMWJTMN3WGV22J5QW2NBQKFLGQTCNNRNDAULKIZBVUVDELBGWWNKUJRMG66LFIZFDMTKYKJ3FM2SOIZJW4SSSMMZEKMSNJBSEEYJTKV4WG2ZQPJJDC4DWKZKVE2SVGNSDCYKGKF2GKVLYGZKEM33XKNCEU2LCNNCXUULOMRDFIRDINVSVK5DVMNWU423DJBHDGVLOIJIFORSCLJRVK4CFJ5DWQRCRNVNFIYKGHF2FSVLIGNNEISTZKZLEE23EPEYTIWRTN53U2RDENZMW43DTKN5GQMKONVNHUYKUIF3VO2SWKRHUMVTVKJKU452TNRCXOUSIJZCFCMRRNBMVQRSKKRLVC52XKRGTETCWJI2FKVLENNRFISSNMQZGYRSYGFLHET2XJJBWCMDDPFJDCVSYKNCTSSDFIY4UEVRSHFMU4WDMJRRUOWSZKJKWQNKZNRLFMTKHOR4VEMKKNBRUO5CMKQYVE5K2NRHE2ZKVNRCWGV2FGFGVI2CMKRLEMNLDK5JHSYSEIZWWGM2KGBSFIVSNMFVEEUCXIVYGCVTLOBYFKVSONVHFMSTNKNLTK4SRGFWFIV2EKZYFC6S2KBNG4TTRJVVVU6SZPJITIWKVGV3FE2SNGBHUKNLGJV5EUSTCI5DHKYZRKJ5GKR2WINRW25CTJZVFMWSWGBSGQWKWIZ2E4M3EONRWWTJQKMYWI5TBGFBGYU2FJE2WKR22OZSHSMKYKFVGIWKTKVYFSY2EJEYVERKKKFREKOLWKQZWQMDCKVDHQWTNGFLFGMTENBHUQWSILAYWIT2PJBCXSVKYKZMVIVJRGFJWUWTIJVVUM5CPIZWEKUJSOBXVO3CKNBSG4STVMFLTKNCXIUYVUTSEKZBWCMRRKZRWYURWKFWEMVCNGFLHSU2FJI2GIRZVMFJG2VJQKRDEK6C2I5HEKWKYKZKFIUZQGBHUKZCTMQYFSMKZNVSEEU2VHE2E6VLYLFGUORSSMQZWQWCWI42UIVCUNBZVQMLIN5NGYQSPK5JTKTS2IRBHKTLLKZKVE6JRIVKXUWSZJZ5GQNTDPJNFUWSVOBBA\"}]",
+      "responseClass": "com.oracle.bmc.core.responses.ListInstancePoolsResponse"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['14693']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=0836&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Mon, 01 Apr 2019 22:15:17 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+version: 1

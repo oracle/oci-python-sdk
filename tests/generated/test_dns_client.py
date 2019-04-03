@@ -28,9 +28,14 @@ def vcr_fixture(request):
         yield
 
 
-def test_create_steering_policy(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_create_steering_policy(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'CreateSteeringPolicy'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'CreateSteeringPolicy')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='dns', api_name='CreateSteeringPolicy')
 
@@ -40,9 +45,6 @@ def test_create_steering_policy(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.dns.DnsClient(config)
             response = client.create_steering_policy(
                 create_steering_policy_details=request.pop(util.camelize('create_steering_policy_details')),
@@ -65,9 +67,14 @@ def test_create_steering_policy(testing_service_client, config):
         )
 
 
-def test_create_steering_policy_attachment(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_create_steering_policy_attachment(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'CreateSteeringPolicyAttachment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'CreateSteeringPolicyAttachment')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='dns', api_name='CreateSteeringPolicyAttachment')
 
@@ -77,9 +84,6 @@ def test_create_steering_policy_attachment(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.dns.DnsClient(config)
             response = client.create_steering_policy_attachment(
                 create_steering_policy_attachment_details=request.pop(util.camelize('create_steering_policy_attachment_details')),
@@ -102,9 +106,14 @@ def test_create_steering_policy_attachment(testing_service_client, config):
         )
 
 
-def test_create_zone(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_create_zone(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'CreateZone'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'CreateZone')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='dns', api_name='CreateZone')
 
@@ -114,9 +123,6 @@ def test_create_zone(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.dns.DnsClient(config)
             response = client.create_zone(
                 create_zone_details=request.pop(util.camelize('create_zone_details')),
@@ -139,9 +145,14 @@ def test_create_zone(testing_service_client, config):
         )
 
 
-def test_delete_domain_records(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_delete_domain_records(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'DeleteDomainRecords'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'DeleteDomainRecords')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='dns', api_name='DeleteDomainRecords')
 
@@ -151,9 +162,6 @@ def test_delete_domain_records(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.dns.DnsClient(config)
             response = client.delete_domain_records(
                 zone_name_or_id=request.pop(util.camelize('zone_name_or_id')),
@@ -177,9 +185,14 @@ def test_delete_domain_records(testing_service_client, config):
         )
 
 
-def test_delete_rr_set(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_delete_rr_set(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'DeleteRRSet'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'DeleteRRSet')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='dns', api_name='DeleteRRSet')
 
@@ -189,9 +202,6 @@ def test_delete_rr_set(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.dns.DnsClient(config)
             response = client.delete_rr_set(
                 zone_name_or_id=request.pop(util.camelize('zone_name_or_id')),
@@ -216,9 +226,14 @@ def test_delete_rr_set(testing_service_client, config):
         )
 
 
-def test_delete_steering_policy(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_delete_steering_policy(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'DeleteSteeringPolicy'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'DeleteSteeringPolicy')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='dns', api_name='DeleteSteeringPolicy')
 
@@ -228,9 +243,6 @@ def test_delete_steering_policy(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.dns.DnsClient(config)
             response = client.delete_steering_policy(
                 steering_policy_id=request.pop(util.camelize('steering_policy_id')),
@@ -253,9 +265,14 @@ def test_delete_steering_policy(testing_service_client, config):
         )
 
 
-def test_delete_steering_policy_attachment(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_delete_steering_policy_attachment(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'DeleteSteeringPolicyAttachment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'DeleteSteeringPolicyAttachment')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='dns', api_name='DeleteSteeringPolicyAttachment')
 
@@ -265,9 +282,6 @@ def test_delete_steering_policy_attachment(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.dns.DnsClient(config)
             response = client.delete_steering_policy_attachment(
                 steering_policy_attachment_id=request.pop(util.camelize('steering_policy_attachment_id')),
@@ -290,9 +304,14 @@ def test_delete_steering_policy_attachment(testing_service_client, config):
         )
 
 
-def test_delete_zone(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_delete_zone(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'DeleteZone'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'DeleteZone')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='dns', api_name='DeleteZone')
 
@@ -302,9 +321,6 @@ def test_delete_zone(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.dns.DnsClient(config)
             response = client.delete_zone(
                 zone_name_or_id=request.pop(util.camelize('zone_name_or_id')),
@@ -327,9 +343,14 @@ def test_delete_zone(testing_service_client, config):
         )
 
 
-def test_get_domain_records(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_get_domain_records(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'GetDomainRecords'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'GetDomainRecords')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='dns', api_name='GetDomainRecords')
 
@@ -339,9 +360,6 @@ def test_get_domain_records(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.dns.DnsClient(config)
             response = client.get_domain_records(
                 zone_name_or_id=request.pop(util.camelize('zone_name_or_id')),
@@ -386,9 +404,14 @@ def test_get_domain_records(testing_service_client, config):
         )
 
 
-def test_get_rr_set(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_get_rr_set(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'GetRRSet'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'GetRRSet')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='dns', api_name='GetRRSet')
 
@@ -398,9 +421,6 @@ def test_get_rr_set(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.dns.DnsClient(config)
             response = client.get_rr_set(
                 zone_name_or_id=request.pop(util.camelize('zone_name_or_id')),
@@ -448,9 +468,14 @@ def test_get_rr_set(testing_service_client, config):
         )
 
 
-def test_get_steering_policy(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_get_steering_policy(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'GetSteeringPolicy'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'GetSteeringPolicy')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='dns', api_name='GetSteeringPolicy')
 
@@ -460,9 +485,6 @@ def test_get_steering_policy(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.dns.DnsClient(config)
             response = client.get_steering_policy(
                 steering_policy_id=request.pop(util.camelize('steering_policy_id')),
@@ -485,9 +507,14 @@ def test_get_steering_policy(testing_service_client, config):
         )
 
 
-def test_get_steering_policy_attachment(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_get_steering_policy_attachment(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'GetSteeringPolicyAttachment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'GetSteeringPolicyAttachment')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='dns', api_name='GetSteeringPolicyAttachment')
 
@@ -497,9 +524,6 @@ def test_get_steering_policy_attachment(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.dns.DnsClient(config)
             response = client.get_steering_policy_attachment(
                 steering_policy_attachment_id=request.pop(util.camelize('steering_policy_attachment_id')),
@@ -522,9 +546,14 @@ def test_get_steering_policy_attachment(testing_service_client, config):
         )
 
 
-def test_get_zone(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_get_zone(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'GetZone'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'GetZone')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='dns', api_name='GetZone')
 
@@ -534,9 +563,6 @@ def test_get_zone(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.dns.DnsClient(config)
             response = client.get_zone(
                 zone_name_or_id=request.pop(util.camelize('zone_name_or_id')),
@@ -559,9 +585,14 @@ def test_get_zone(testing_service_client, config):
         )
 
 
-def test_get_zone_records(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_get_zone_records(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'GetZoneRecords'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'GetZoneRecords')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='dns', api_name='GetZoneRecords')
 
@@ -571,9 +602,6 @@ def test_get_zone_records(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.dns.DnsClient(config)
             response = client.get_zone_records(
                 zone_name_or_id=request.pop(util.camelize('zone_name_or_id')),
@@ -615,9 +643,14 @@ def test_get_zone_records(testing_service_client, config):
         )
 
 
-def test_list_steering_policies(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_list_steering_policies(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'ListSteeringPolicies'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'ListSteeringPolicies')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='dns', api_name='ListSteeringPolicies')
 
@@ -627,9 +660,6 @@ def test_list_steering_policies(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.dns.DnsClient(config)
             response = client.list_steering_policies(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -671,9 +701,14 @@ def test_list_steering_policies(testing_service_client, config):
         )
 
 
-def test_list_steering_policy_attachments(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_list_steering_policy_attachments(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'ListSteeringPolicyAttachments'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'ListSteeringPolicyAttachments')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='dns', api_name='ListSteeringPolicyAttachments')
 
@@ -683,9 +718,6 @@ def test_list_steering_policy_attachments(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.dns.DnsClient(config)
             response = client.list_steering_policy_attachments(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -727,9 +759,14 @@ def test_list_steering_policy_attachments(testing_service_client, config):
         )
 
 
-def test_list_zones(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_list_zones(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'ListZones'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'ListZones')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='dns', api_name='ListZones')
 
@@ -739,9 +776,6 @@ def test_list_zones(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.dns.DnsClient(config)
             response = client.list_zones(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -783,9 +817,14 @@ def test_list_zones(testing_service_client, config):
         )
 
 
-def test_patch_domain_records(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_patch_domain_records(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'PatchDomainRecords'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'PatchDomainRecords')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='dns', api_name='PatchDomainRecords')
 
@@ -795,9 +834,6 @@ def test_patch_domain_records(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.dns.DnsClient(config)
             response = client.patch_domain_records(
                 zone_name_or_id=request.pop(util.camelize('zone_name_or_id')),
@@ -822,9 +858,14 @@ def test_patch_domain_records(testing_service_client, config):
         )
 
 
-def test_patch_rr_set(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_patch_rr_set(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'PatchRRSet'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'PatchRRSet')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='dns', api_name='PatchRRSet')
 
@@ -834,9 +875,6 @@ def test_patch_rr_set(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.dns.DnsClient(config)
             response = client.patch_rr_set(
                 zone_name_or_id=request.pop(util.camelize('zone_name_or_id')),
@@ -862,9 +900,14 @@ def test_patch_rr_set(testing_service_client, config):
         )
 
 
-def test_patch_zone_records(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_patch_zone_records(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'PatchZoneRecords'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'PatchZoneRecords')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='dns', api_name='PatchZoneRecords')
 
@@ -874,9 +917,6 @@ def test_patch_zone_records(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.dns.DnsClient(config)
             response = client.patch_zone_records(
                 zone_name_or_id=request.pop(util.camelize('zone_name_or_id')),
@@ -900,9 +940,14 @@ def test_patch_zone_records(testing_service_client, config):
         )
 
 
-def test_update_domain_records(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_update_domain_records(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'UpdateDomainRecords'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'UpdateDomainRecords')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='dns', api_name='UpdateDomainRecords')
 
@@ -912,9 +957,6 @@ def test_update_domain_records(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.dns.DnsClient(config)
             response = client.update_domain_records(
                 zone_name_or_id=request.pop(util.camelize('zone_name_or_id')),
@@ -939,9 +981,14 @@ def test_update_domain_records(testing_service_client, config):
         )
 
 
-def test_update_rr_set(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_update_rr_set(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'UpdateRRSet'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'UpdateRRSet')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='dns', api_name='UpdateRRSet')
 
@@ -951,9 +998,6 @@ def test_update_rr_set(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.dns.DnsClient(config)
             response = client.update_rr_set(
                 zone_name_or_id=request.pop(util.camelize('zone_name_or_id')),
@@ -979,9 +1023,14 @@ def test_update_rr_set(testing_service_client, config):
         )
 
 
-def test_update_steering_policy(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_update_steering_policy(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'UpdateSteeringPolicy'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'UpdateSteeringPolicy')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='dns', api_name='UpdateSteeringPolicy')
 
@@ -991,9 +1040,6 @@ def test_update_steering_policy(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.dns.DnsClient(config)
             response = client.update_steering_policy(
                 steering_policy_id=request.pop(util.camelize('steering_policy_id')),
@@ -1017,9 +1063,14 @@ def test_update_steering_policy(testing_service_client, config):
         )
 
 
-def test_update_steering_policy_attachment(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_update_steering_policy_attachment(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'UpdateSteeringPolicyAttachment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'UpdateSteeringPolicyAttachment')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='dns', api_name='UpdateSteeringPolicyAttachment')
 
@@ -1029,9 +1080,6 @@ def test_update_steering_policy_attachment(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.dns.DnsClient(config)
             response = client.update_steering_policy_attachment(
                 steering_policy_attachment_id=request.pop(util.camelize('steering_policy_attachment_id')),
@@ -1055,9 +1103,14 @@ def test_update_steering_policy_attachment(testing_service_client, config):
         )
 
 
-def test_update_zone(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_update_zone(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'UpdateZone'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'UpdateZone')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='dns', api_name='UpdateZone')
 
@@ -1067,9 +1120,6 @@ def test_update_zone(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.dns.DnsClient(config)
             response = client.update_zone(
                 zone_name_or_id=request.pop(util.camelize('zone_name_or_id')),
@@ -1093,9 +1143,14 @@ def test_update_zone(testing_service_client, config):
         )
 
 
-def test_update_zone_records(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_update_zone_records(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'UpdateZoneRecords'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'UpdateZoneRecords')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='dns', api_name='UpdateZoneRecords')
 
@@ -1105,9 +1160,6 @@ def test_update_zone_records(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.dns.DnsClient(config)
             response = client.update_zone_records(
                 zone_name_or_id=request.pop(util.camelize('zone_name_or_id')),

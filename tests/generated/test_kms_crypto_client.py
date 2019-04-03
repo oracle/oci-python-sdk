@@ -28,9 +28,14 @@ def vcr_fixture(request):
         yield
 
 
-def test_decrypt(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sparta_kms_us_grp@oracle.com" jiraProject="KMS" opsJiraProject="KMS"
+def test_decrypt(testing_service_client):
     if not testing_service_client.is_api_enabled('key_management', 'Decrypt'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('key_management', util.camelize('kms_crypto'), 'Decrypt')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='key_management', api_name='Decrypt')
 
@@ -40,9 +45,6 @@ def test_decrypt(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.key_management.KmsCryptoClient(config)
             response = client.decrypt(
                 decrypt_data_details=request.pop(util.camelize('decrypt_data_details')),
@@ -65,9 +67,14 @@ def test_decrypt(testing_service_client, config):
         )
 
 
-def test_encrypt(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sparta_kms_us_grp@oracle.com" jiraProject="KMS" opsJiraProject="KMS"
+def test_encrypt(testing_service_client):
     if not testing_service_client.is_api_enabled('key_management', 'Encrypt'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('key_management', util.camelize('kms_crypto'), 'Encrypt')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='key_management', api_name='Encrypt')
 
@@ -77,9 +84,6 @@ def test_encrypt(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.key_management.KmsCryptoClient(config)
             response = client.encrypt(
                 encrypt_data_details=request.pop(util.camelize('encrypt_data_details')),
@@ -102,9 +106,14 @@ def test_encrypt(testing_service_client, config):
         )
 
 
-def test_generate_data_encryption_key(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sparta_kms_us_grp@oracle.com" jiraProject="KMS" opsJiraProject="KMS"
+def test_generate_data_encryption_key(testing_service_client):
     if not testing_service_client.is_api_enabled('key_management', 'GenerateDataEncryptionKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('key_management', util.camelize('kms_crypto'), 'GenerateDataEncryptionKey')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='key_management', api_name='GenerateDataEncryptionKey')
 
@@ -114,9 +123,6 @@ def test_generate_data_encryption_key(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.key_management.KmsCryptoClient(config)
             response = client.generate_data_encryption_key(
                 generate_key_details=request.pop(util.camelize('generate_key_details')),

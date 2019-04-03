@@ -1,0 +1,230 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request/enable?lang=Python&serviceName=resourcemanager&apiName=GetJobLogs
+  response:
+    body: {string: 'true'}
+    headers:
+      Content-Length: ['4']
+      Content-Type: [text/plain]
+      Date: ['Mon, 01 Apr 2019 22:35:29 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/config?serviceName=resourcemanager&apiName=GetJobLogs&lang=Python&clientName=resourceManager
+  response:
+    body: {string: '{"region":"us-phoenix-1","tenantId":"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","userId":"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq","endpoint":null,"fingerprint":"ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9","passPhrase":"dexsdk","keyFile":"java_sdk_admin_key.pem","keyFileContent":"-----BEGIN
+        RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-128-CBC,0C9B64A4AA0303EC02C79E91D0F8B0D0\n\naSd0uIKreq5NirzJ+Esa36lYJo4lU2zSjIIw8wvZEsd+LdaifqONZIfHHiB6/KgG\nse4wd/58tPsiEgnK7D1q8wmdVDouMSX31mhcbq2bwRjXATpNnOMnhDtahJv6cw4M\nDtlXYplk0LzpP6WjqXqFST4Yz0l1NO90ahnruwcb/SUCm12ONMJ5o4G1UO2/0IkX\nTRlMRpm/etIpStNSP+1IsD1gSWlAzhs1zodkpd+2eW2ovlAaY25Hm/aqK97jzsCF\n1f4dCm7spCHYOfv10XHNB99/jomN1KQuDy29MmVaJ9oYpOIDlu0yj4Q/XempLxa6\nhqgt0gUO9cMV2bfStsHKWJwq+KoncamBHpU/+CyNjoYq1QTC0urWlCP5hNo5VZhF\nzXBJa188FD2TiPFU8Z4EhercM83TfBsRVEQOpu5sbMaUOT6xXwnCWfM5Pjxy/0xE\n6oF2zq+H0ES12dh19C5P8ueRFLyhaWFliWJv3SXy9iCslcso6USnBBKnA26xMile\nY3m9uRP31yZW8czxYSIgKEV3Mp3GFAYwuebNjLgIM7xT+PvDiOO4qAhA0waGPhYH\n2QMl9ThSahKT6vpjVUQuGOjaRcJ5Vr73VGX4MnxXVxsl5de6y/ZfP5ndx5Lb4K43\njwrMbCIzrM1ZzR2JMTuMJFDasLjEW/Y9nf7FRh2gByeGLObAmHsjlUdW65QQu+Qy\nu4ADc6TbpqvLobocF5fKgML7JCAA/YqmYlZCV6gGOdKUXUT3VMmZcebcTtw1Zmxh\nwaUQe99D90w3Q/7CCCiGO2waZaTNl+ahVnQZEGHN9xJydkCkfVZDgVmdDmsSXmxo\n2DWf2c2/1me2zZAcW0SFBnyrt3uphdCnICaqXR0AnQUmw49YY4nk2fPTMxZs1r+2\n+poVVEfr//cHTTs4yu9ZVT2wGWf/Ooo4sm7obB8EhGkrXs3ormx9WHj6ezexupsd\nanWE7Uy54ovKdOosKB6nQOfP+Iwe4sSJ6oYPNvvh19v05+AhOCdONjMeCwTfBvtJ\nA5luj6CtFbgSX96A3zTRrTXQO3N4aLTF8niL+FcZ69RzYcxp3rlDSK88JyJ9xsu1\n+lNIcAPAFhzisC/eB9b1eDJ4JErJyIdBTZ4bPv4dtl/RpFcyIA4WMjskGCRo60I7\nN3DVqGGXLlC7KDjvPmdvvfAx3lzcIANhwBhLSQJ+y1bcyW6FcX0ZtY962Hb06Qj5\nXG5nDmT1qVkfDmzpIOF9GtDgch7gtf/EjHOUyaw60dDgJ5RF6lORLjFeuU9W7I1e\nD3mpWb6WP6DKoaQTgrLLrIJCLIdXr92XmvDj+iuYdGhCIkqHWqNbRW4TyiuukNJH\n12Zq/LlA1s58YJVa520o7EOXpmD4sGIrctlI3keSmKhiavy7j5ULz5J++jL+Yxlc\n6h9q4v71oyFmVgNpIEJNg7sSCkE72yzUCaglBUdUIMG3D0sI+VwufC7lbhohvHBr\nNzmbg2bW4x0CCprf/o5JvdNiB+bQdKG4t2Q7fhhZIW7ACii591ZBbpnUakDUQBZa\nV2yMaErypILHlQvlReHXVK1adUTxLNWf//VDoyclQk5k0uFIkUmpn+EXWnEHw7e8\n-----END
+        RSA PRIVATE KEY-----\n"}'}
+    headers:
+      Content-Length: ['2261']
+      Content-Type: [application/json]
+      Date: ['Mon, 01 Apr 2019 22:35:29 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request?serviceName=resourcemanager&apiName=GetJobLogs&lang=Python&sessionId=0836
+  response:
+    body: {string: '[{"containerId":"d6150530-0174-40af-a410-7d1d00969df4","request":{"jobId":"ocid1.ormjob.oc1.phx.aaaaaaaalkzehrwfga3wajavv43hbdn6hoxazmf5zhvojcvhiy5ontmzfjqa","limit":10}}]'}
+    headers:
+      Content-Length: ['171']
+      Content-Type: [text/plain]
+      Date: ['Mon, 01 Apr 2019 22:35:29 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="ibeZV2AkWIH3YMffkhRTrX+A6YT+tgaVM+P0K/iqur/m0MM0t9+bQMxXM7Sr0mmBY9j4sEo+RhIzH516ii44znhmSrC+KlzRd6wzc7XG/ZS+mSwjKzTsOAy1WfYZElFWrzsk5g7G9/DaM5Jk/WQJFetlzumvqrpi+Vzv5xv/YPBw9L2zM48eBwm6TCNlQu5LaTTil0+FB/maQMvz974e/MdCfk5mJHBrvKPsBOXE2w98IO7PAroYN6AWYKLqrr5GJWIgyDVoI3T7RUGXJDj7v6A3xa0IM+MOZ4uhaMx4ZO+m3gXuQOEHtDi+JkY7Ujk7XvYmLV80dvEDDQK7sktTDw==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Mon, 01 Apr 2019 22:35:30 GMT']
+      host: [resourcemanager.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.5]
+      opc-request-id: [78FF2049DF7B4BE3BD3658948AF81EDB]
+      user-agent: [Oracle-PythonSDK/2.2.5 (python 3.6.4; x86_64-Darwin)]
+    method: GET
+    uri: https://resourcemanager.us-phoenix-1.oraclecloud.com/20180917/jobs/ocid1.ormjob.oc1.phx.aaaaaaaalkzehrwfga3wajavv43hbdn6hoxazmf5zhvojcvhiy5ontmzfjqa/logs?limit=10
+  response:
+    body: {string: "[ {\n  \"type\" : \"TERRAFORM_CONSOLE\",\n  \"level\" : \"INFO\"\
+        ,\n  \"timestamp\" : \"2019-04-01T22:34:36.837Z\",\n  \"message\" : \"\"\n\
+        }, {\n  \"type\" : \"TERRAFORM_CONSOLE\",\n  \"level\" : \"INFO\",\n  \"timestamp\"\
+        \ : \"2019-04-01T22:34:36.841Z\",\n  \"message\" : \"Initializing provider\
+        \ plugins...\"\n}, {\n  \"type\" : \"TERRAFORM_CONSOLE\",\n  \"level\" : \"\
+        INFO\",\n  \"timestamp\" : \"2019-04-01T22:34:36.841Z\",\n  \"message\" :\
+        \ \"\"\n}, {\n  \"type\" : \"TERRAFORM_CONSOLE\",\n  \"level\" : \"INFO\"\
+        ,\n  \"timestamp\" : \"2019-04-01T22:34:36.841Z\",\n  \"message\" : \"The\
+        \ following providers do not have any version constraints in configuration,\"\
+        \n}, {\n  \"type\" : \"TERRAFORM_CONSOLE\",\n  \"level\" : \"INFO\",\n  \"\
+        timestamp\" : \"2019-04-01T22:34:36.841Z\",\n  \"message\" : \"so the latest\
+        \ version was installed.\"\n}, {\n  \"type\" : \"TERRAFORM_CONSOLE\",\n  \"\
+        level\" : \"INFO\",\n  \"timestamp\" : \"2019-04-01T22:34:36.841Z\",\n  \"\
+        message\" : \"\"\n}, {\n  \"type\" : \"TERRAFORM_CONSOLE\",\n  \"level\" :\
+        \ \"INFO\",\n  \"timestamp\" : \"2019-04-01T22:34:36.841Z\",\n  \"message\"\
+        \ : \"To prevent automatic upgrades to new major versions that may contain\
+        \ breaking\"\n}, {\n  \"type\" : \"TERRAFORM_CONSOLE\",\n  \"level\" : \"\
+        INFO\",\n  \"timestamp\" : \"2019-04-01T22:34:36.841Z\",\n  \"message\" :\
+        \ \"changes, it is recommended to add version = \\\"...\\\" constraints to\
+        \ the\"\n}, {\n  \"type\" : \"TERRAFORM_CONSOLE\",\n  \"level\" : \"INFO\"\
+        ,\n  \"timestamp\" : \"2019-04-01T22:34:36.841Z\",\n  \"message\" : \"corresponding\
+        \ provider blocks in configuration, with the constraint strings\"\n}, {\n\
+        \  \"type\" : \"TERRAFORM_CONSOLE\",\n  \"level\" : \"INFO\",\n  \"timestamp\"\
+        \ : \"2019-04-01T22:34:36.841Z\",\n  \"message\" : \"suggested below.\"\n\
+        } ]"}
+    headers:
+      Cache-Control: ['no-cache, no-store, must-revalidate']
+      Connection: [keep-alive]
+      Content-Length: ['1565']
+      Content-Type: [application/json]
+      Date: ['Mon, 01 Apr 2019 22:35:31 GMT']
+      Pragma: [no-cache]
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains;]
+      Vary: [Accept-Encoding]
+      X-Content-Type-Options: [nosniff]
+      X-XSS-Protection: [1; mode=block]
+      opc-next-page: [CgwI/KOK5QUQwMiCkQMQCQ==]
+      opc-request-id: [78FF2049DF7B4BE3BD3658948AF81EDB/2310CD99065D27E60E948A8E46E702A4/4B480619CCF510EF6C7EF96B87267C75]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="DjEPc1x/Ujozb2Py59JAmNmbXm2lngyGtvlbaF5ikpM9Q35KVXYOPIp9WE/laxH5d99H/RsAxOUrKN14i+Gr400ad6YzIWLtDzHOmv0SGAACAJMEoJ+AHB/3ixgTMvVCoiPUEVp9cmr0yobTVJSU6rqrMvSGYOhVgGCiq1rgHhBfVWahgMwtABkbPTOGIbuKGqRzlkWKa34UxIbJoakQ6Rdnqtvz1pwMbFH0dTFNrKJnG36OOITo2HnmjbaIU5A3uOqXQAonpnt0ynw79/h6TPj9Ukd7rEeyjib2BLpTs1M3dbS7jFVU92vBnoolsXiF3vKgmUR1jt+oz5fdqAo+OQ==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Mon, 01 Apr 2019 22:35:31 GMT']
+      host: [resourcemanager.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.5]
+      opc-request-id: [ACD71C4871E3470E9870FDE7FA3127D1]
+      user-agent: [Oracle-PythonSDK/2.2.5 (python 3.6.4; x86_64-Darwin)]
+    method: GET
+    uri: https://resourcemanager.us-phoenix-1.oraclecloud.com/20180917/jobs/ocid1.ormjob.oc1.phx.aaaaaaaalkzehrwfga3wajavv43hbdn6hoxazmf5zhvojcvhiy5ontmzfjqa/logs?limit=10&page=CgwI%2FKOK5QUQwMiCkQMQCQ%3D%3D
+  response:
+    body: {string: "[ {\n  \"type\" : \"TERRAFORM_CONSOLE\",\n  \"level\" : \"INFO\"\
+        ,\n  \"timestamp\" : \"2019-04-01T22:34:36.841Z\",\n  \"message\" : \"\"\n\
+        }, {\n  \"type\" : \"TERRAFORM_CONSOLE\",\n  \"level\" : \"INFO\",\n  \"timestamp\"\
+        \ : \"2019-04-01T22:34:36.841Z\",\n  \"message\" : \"* provider.archive: version\
+        \ = \\\"~> 1.1\\\"\"\n}, {\n  \"type\" : \"TERRAFORM_CONSOLE\",\n  \"level\"\
+        \ : \"INFO\",\n  \"timestamp\" : \"2019-04-01T22:34:36.841Z\",\n  \"message\"\
+        \ : \"* provider.null: version = \\\"~> 1.0\\\"\"\n}, {\n  \"type\" : \"TERRAFORM_CONSOLE\"\
+        ,\n  \"level\" : \"INFO\",\n  \"timestamp\" : \"2019-04-01T22:34:36.841Z\"\
+        ,\n  \"message\" : \"* provider.random: version = \\\"~> 2.0\\\"\"\n}, {\n\
+        \  \"type\" : \"TERRAFORM_CONSOLE\",\n  \"level\" : \"INFO\",\n  \"timestamp\"\
+        \ : \"2019-04-01T22:34:36.841Z\",\n  \"message\" : \"* provider.template:\
+        \ version = \\\"~> 1.0\\\"\"\n}, {\n  \"type\" : \"TERRAFORM_CONSOLE\",\n\
+        \  \"level\" : \"INFO\",\n  \"timestamp\" : \"2019-04-01T22:34:36.841Z\",\n\
+        \  \"message\" : \"* provider.tls: version = \\\"~> 1.2\\\"\"\n}, {\n  \"\
+        type\" : \"TERRAFORM_CONSOLE\",\n  \"level\" : \"INFO\",\n  \"timestamp\"\
+        \ : \"2019-04-01T22:34:36.841Z\",\n  \"message\" : \"Terraform has been successfully\
+        \ initialized!\"\n}, {\n  \"type\" : \"TERRAFORM_CONSOLE\",\n  \"level\" :\
+        \ \"INFO\",\n  \"timestamp\" : \"2019-04-01T22:34:36.841Z\",\n  \"message\"\
+        \ : \"\"\n}, {\n  \"type\" : \"TERRAFORM_CONSOLE\",\n  \"level\" : \"INFO\"\
+        ,\n  \"timestamp\" : \"2019-04-01T22:34:36.841Z\",\n  \"message\" : \"You\
+        \ may now begin working with Terraform. Try running \\\"terraform plan\\\"\
+        \ to see\"\n}, {\n  \"type\" : \"TERRAFORM_CONSOLE\",\n  \"level\" : \"INFO\"\
+        ,\n  \"timestamp\" : \"2019-04-01T22:34:36.841Z\",\n  \"message\" : \"any\
+        \ changes that are required for your infrastructure. All Terraform commands\"\
+        \n} ]"}
+    headers:
+      Cache-Control: ['no-cache, no-store, must-revalidate']
+      Connection: [keep-alive]
+      Content-Length: ['1575']
+      Content-Type: [application/json]
+      Date: ['Mon, 01 Apr 2019 22:35:31 GMT']
+      Pragma: [no-cache]
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains;]
+      Vary: [Accept-Encoding]
+      X-Content-Type-Options: [nosniff]
+      X-XSS-Protection: [1; mode=block]
+      opc-next-page: [CgwI/KOK5QUQwMiCkQMQEw==]
+      opc-request-id: [ACD71C4871E3470E9870FDE7FA3127D1/2EDB6EFA62E44021B7C4A5A6F3952305/E56F7C5D786D5E88501B09FF230E69F7]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"containerId": "d6150530-0174-40af-a410-7d1d00969df4", "listResponse":
+      true, "requestClass": "com.oracle.bmc.resourcemanager.requests.GetJobLogsRequest",
+      "requestJson": "{\"jobId\": \"ocid1.ormjob.oc1.phx.aaaaaaaalkzehrwfga3wajavv43hbdn6hoxazmf5zhvojcvhiy5ontmzfjqa\",
+      \"limit\": 10}", "responseJson": "[{\"items\": [{\"type\": \"TERRAFORM_CONSOLE\",
+      \"level\": \"INFO\", \"timestamp\": \"2019-04-01T22:34:36.837000+00:00\", \"message\":
+      \"\"}, {\"type\": \"TERRAFORM_CONSOLE\", \"level\": \"INFO\", \"timestamp\":
+      \"2019-04-01T22:34:36.841000+00:00\", \"message\": \"Initializing provider plugins...\"},
+      {\"type\": \"TERRAFORM_CONSOLE\", \"level\": \"INFO\", \"timestamp\": \"2019-04-01T22:34:36.841000+00:00\",
+      \"message\": \"\"}, {\"type\": \"TERRAFORM_CONSOLE\", \"level\": \"INFO\", \"timestamp\":
+      \"2019-04-01T22:34:36.841000+00:00\", \"message\": \"The following providers
+      do not have any version constraints in configuration,\"}, {\"type\": \"TERRAFORM_CONSOLE\",
+      \"level\": \"INFO\", \"timestamp\": \"2019-04-01T22:34:36.841000+00:00\", \"message\":
+      \"so the latest version was installed.\"}, {\"type\": \"TERRAFORM_CONSOLE\",
+      \"level\": \"INFO\", \"timestamp\": \"2019-04-01T22:34:36.841000+00:00\", \"message\":
+      \"\"}, {\"type\": \"TERRAFORM_CONSOLE\", \"level\": \"INFO\", \"timestamp\":
+      \"2019-04-01T22:34:36.841000+00:00\", \"message\": \"To prevent automatic upgrades
+      to new major versions that may contain breaking\"}, {\"type\": \"TERRAFORM_CONSOLE\",
+      \"level\": \"INFO\", \"timestamp\": \"2019-04-01T22:34:36.841000+00:00\", \"message\":
+      \"changes, it is recommended to add version = \\\"...\\\" constraints to the\"},
+      {\"type\": \"TERRAFORM_CONSOLE\", \"level\": \"INFO\", \"timestamp\": \"2019-04-01T22:34:36.841000+00:00\",
+      \"message\": \"corresponding provider blocks in configuration, with the constraint
+      strings\"}, {\"type\": \"TERRAFORM_CONSOLE\", \"level\": \"INFO\", \"timestamp\":
+      \"2019-04-01T22:34:36.841000+00:00\", \"message\": \"suggested below.\"}], \"opcRequestId\":
+      \"7C0C2A15999A48428E6081030E9EAEC2\", \"opcNextPage\": \"CgwI/KOK5QUQwMiCkQMQCQ==\"},
+      {\"items\": [{\"type\": \"TERRAFORM_CONSOLE\", \"level\": \"INFO\", \"timestamp\":
+      \"2019-04-01T22:34:36.841000+00:00\", \"message\": \"\"}, {\"type\": \"TERRAFORM_CONSOLE\",
+      \"level\": \"INFO\", \"timestamp\": \"2019-04-01T22:34:36.841000+00:00\", \"message\":
+      \"* provider.archive: version = \\\"~> 1.1\\\"\"}, {\"type\": \"TERRAFORM_CONSOLE\",
+      \"level\": \"INFO\", \"timestamp\": \"2019-04-01T22:34:36.841000+00:00\", \"message\":
+      \"* provider.null: version = \\\"~> 1.0\\\"\"}, {\"type\": \"TERRAFORM_CONSOLE\",
+      \"level\": \"INFO\", \"timestamp\": \"2019-04-01T22:34:36.841000+00:00\", \"message\":
+      \"* provider.random: version = \\\"~> 2.0\\\"\"}, {\"type\": \"TERRAFORM_CONSOLE\",
+      \"level\": \"INFO\", \"timestamp\": \"2019-04-01T22:34:36.841000+00:00\", \"message\":
+      \"* provider.template: version = \\\"~> 1.0\\\"\"}, {\"type\": \"TERRAFORM_CONSOLE\",
+      \"level\": \"INFO\", \"timestamp\": \"2019-04-01T22:34:36.841000+00:00\", \"message\":
+      \"* provider.tls: version = \\\"~> 1.2\\\"\"}, {\"type\": \"TERRAFORM_CONSOLE\",
+      \"level\": \"INFO\", \"timestamp\": \"2019-04-01T22:34:36.841000+00:00\", \"message\":
+      \"Terraform has been successfully initialized!\"}, {\"type\": \"TERRAFORM_CONSOLE\",
+      \"level\": \"INFO\", \"timestamp\": \"2019-04-01T22:34:36.841000+00:00\", \"message\":
+      \"\"}, {\"type\": \"TERRAFORM_CONSOLE\", \"level\": \"INFO\", \"timestamp\":
+      \"2019-04-01T22:34:36.841000+00:00\", \"message\": \"You may now begin working
+      with Terraform. Try running \\\"terraform plan\\\" to see\"}, {\"type\": \"TERRAFORM_CONSOLE\",
+      \"level\": \"INFO\", \"timestamp\": \"2019-04-01T22:34:36.841000+00:00\", \"message\":
+      \"any changes that are required for your infrastructure. All Terraform commands\"}],
+      \"opcRequestId\": \"375E2BA4A6D34380AF9EB2159A74C556\", \"opcNextPage\": \"CgwI/KOK5QUQwMiCkQMQEw==\"}]",
+      "responseClass": "com.oracle.bmc.resourcemanager.responses.GetJobLogsResponse"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['3986']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=0836&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Mon, 01 Apr 2019 22:35:31 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+version: 1

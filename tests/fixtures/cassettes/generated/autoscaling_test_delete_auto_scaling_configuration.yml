@@ -1,0 +1,83 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request/enable?lang=Python&serviceName=autoscaling&apiName=DeleteAutoScalingConfiguration
+  response:
+    body: {string: 'true'}
+    headers:
+      Content-Length: ['4']
+      Content-Type: [text/plain]
+      Date: ['Mon, 01 Apr 2019 21:46:31 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request?serviceName=autoscaling&apiName=DeleteAutoScalingConfiguration&lang=Python&sessionId=0836
+  response:
+    body: {string: '[{"containerId":"c923837e-e960-42e9-8303-53d118cbd675","request":{"autoScalingConfigurationId":"ocid1.autoscalingconfiguration.oc1.phx.aaaaaaaax6cyewu62malqeypvwlsc6v7m4twl2kwkldfniq7ohykjvqh2u6q"}}]'}
+    headers:
+      Content-Length: ['199']
+      Content-Type: [text/plain]
+      Date: ['Mon, 01 Apr 2019 21:46:31 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/e1:8d:6a:cb:74:ed:25:51:a2:9f:38:a4:71:42:01:c8",signature="cEtpvj0r3oRsqgva4h5ZJsxYXJGP7/xSemo9Gk1aAwnKw69LT1kQ7l0Ju2XYKzMNy1t0lxKoWrcU84GF4bAgNQkUCcVMtuy8lSzjtsSe5VnnHGf2tbMmNRNO6iUT+mgSujpDUo43vLtWW+tN8/u21mvnxFOkrbckHdh3LWnDIsFWEmWWgWcRaBqlrtLFMgwvBD59R34PbSUSfugSPEWic/TkwSNaFSC6Ux8h7jbQTmdAFh5OcnJOrwa0ieZ/176Sbm614XefRudaB8X4yukVh4CF8uVX5gRhuc1GQLtODi/3wrp3q08yrArZIhyyuj4qFbNpHPw0nX7R5rSpy8Vg2A==",version="1"']
+      connection: [keep-alive]
+      content-length: ['0']
+      content-type: [application/json]
+      date: ['Mon, 01 Apr 2019 21:46:31 GMT']
+      host: [autoscaling.us-phoenix-1.oci.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.5]
+      opc-request-id: [C6FCDF6D50DD4B15BC7C94D1C085A8FB]
+      user-agent: [Oracle-PythonSDK/2.2.5 (python 3.6.4; x86_64-Darwin)]
+    method: DELETE
+    uri: https://autoscaling.us-phoenix-1.oci.oraclecloud.com/20181001/autoScalingConfigurations/ocid1.autoscalingconfiguration.oc1.phx.aaaaaaaax6cyewu62malqeypvwlsc6v7m4twl2kwkldfniq7ohykjvqh2u6q
+  response:
+    body: {string: ''}
+    headers:
+      Connection: [keep-alive]
+      Date: ['Mon, 01 Apr 2019 21:46:33 GMT']
+      opc-request-id: [C6FCDF6D50DD4B15BC7C94D1C085A8FB/2771B961CAB2AF1BA502816BE6FDF056/2B66FF19E3D13EA62411DCE043097CCA]
+    status: {code: 204, message: No Content}
+- request:
+    body: '{"containerId": "c923837e-e960-42e9-8303-53d118cbd675", "listResponse":
+      false, "requestClass": "com.oracle.bmc.autoscaling.requests.DeleteAutoScalingConfigurationRequest",
+      "requestJson": "{\"autoScalingConfigurationId\": \"ocid1.autoscalingconfiguration.oc1.phx.aaaaaaaax6cyewu62malqeypvwlsc6v7m4twl2kwkldfniq7ohykjvqh2u6q\"}",
+      "responseJson": "{\"deleteAutoScalingConfiguration\": {}, \"opcRequestId\":
+      \"94720472EE8C4417889FD5DAC8E19511\", \"opcNextPage\": null}", "responseClass":
+      "com.oracle.bmc.autoscaling.responses.DeleteAutoScalingConfigurationResponse"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['562']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=0836&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Mon, 01 Apr 2019 21:46:33 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+version: 1

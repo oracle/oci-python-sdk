@@ -28,9 +28,14 @@ def vcr_fixture(request):
         yield
 
 
-def test_copy_volume_backup(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_copy_volume_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'CopyVolumeBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'CopyVolumeBackup')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='CopyVolumeBackup')
 
@@ -40,9 +45,6 @@ def test_copy_volume_backup(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.copy_volume_backup(
                 volume_backup_id=request.pop(util.camelize('volume_backup_id')),
@@ -66,9 +68,14 @@ def test_copy_volume_backup(testing_service_client, config):
         )
 
 
-def test_create_boot_volume(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_create_boot_volume(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'CreateBootVolume'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'CreateBootVolume')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='CreateBootVolume')
 
@@ -78,9 +85,6 @@ def test_create_boot_volume(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.create_boot_volume(
                 create_boot_volume_details=request.pop(util.camelize('create_boot_volume_details')),
@@ -103,9 +107,14 @@ def test_create_boot_volume(testing_service_client, config):
         )
 
 
-def test_create_boot_volume_backup(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_create_boot_volume_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'CreateBootVolumeBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'CreateBootVolumeBackup')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='CreateBootVolumeBackup')
 
@@ -115,9 +124,6 @@ def test_create_boot_volume_backup(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.create_boot_volume_backup(
                 create_boot_volume_backup_details=request.pop(util.camelize('create_boot_volume_backup_details')),
@@ -140,9 +146,14 @@ def test_create_boot_volume_backup(testing_service_client, config):
         )
 
 
-def test_create_volume(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_create_volume(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'CreateVolume'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'CreateVolume')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='CreateVolume')
 
@@ -152,9 +163,6 @@ def test_create_volume(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.create_volume(
                 create_volume_details=request.pop(util.camelize('create_volume_details')),
@@ -177,9 +185,14 @@ def test_create_volume(testing_service_client, config):
         )
 
 
-def test_create_volume_backup(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_create_volume_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'CreateVolumeBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'CreateVolumeBackup')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='CreateVolumeBackup')
 
@@ -189,9 +202,6 @@ def test_create_volume_backup(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.create_volume_backup(
                 create_volume_backup_details=request.pop(util.camelize('create_volume_backup_details')),
@@ -214,9 +224,14 @@ def test_create_volume_backup(testing_service_client, config):
         )
 
 
-def test_create_volume_backup_policy_assignment(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_create_volume_backup_policy_assignment(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'CreateVolumeBackupPolicyAssignment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'CreateVolumeBackupPolicyAssignment')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='CreateVolumeBackupPolicyAssignment')
 
@@ -226,9 +241,6 @@ def test_create_volume_backup_policy_assignment(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.create_volume_backup_policy_assignment(
                 create_volume_backup_policy_assignment_details=request.pop(util.camelize('create_volume_backup_policy_assignment_details')),
@@ -251,9 +263,14 @@ def test_create_volume_backup_policy_assignment(testing_service_client, config):
         )
 
 
-def test_create_volume_group(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_create_volume_group(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'CreateVolumeGroup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'CreateVolumeGroup')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='CreateVolumeGroup')
 
@@ -263,9 +280,6 @@ def test_create_volume_group(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.create_volume_group(
                 create_volume_group_details=request.pop(util.camelize('create_volume_group_details')),
@@ -288,9 +302,14 @@ def test_create_volume_group(testing_service_client, config):
         )
 
 
-def test_create_volume_group_backup(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_create_volume_group_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'CreateVolumeGroupBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'CreateVolumeGroupBackup')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='CreateVolumeGroupBackup')
 
@@ -300,9 +319,6 @@ def test_create_volume_group_backup(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.create_volume_group_backup(
                 create_volume_group_backup_details=request.pop(util.camelize('create_volume_group_backup_details')),
@@ -325,9 +341,14 @@ def test_create_volume_group_backup(testing_service_client, config):
         )
 
 
-def test_delete_boot_volume(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_delete_boot_volume(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'DeleteBootVolume'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'DeleteBootVolume')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='DeleteBootVolume')
 
@@ -337,9 +358,6 @@ def test_delete_boot_volume(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.delete_boot_volume(
                 boot_volume_id=request.pop(util.camelize('boot_volume_id')),
@@ -362,9 +380,14 @@ def test_delete_boot_volume(testing_service_client, config):
         )
 
 
-def test_delete_boot_volume_backup(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_delete_boot_volume_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'DeleteBootVolumeBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'DeleteBootVolumeBackup')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='DeleteBootVolumeBackup')
 
@@ -374,9 +397,6 @@ def test_delete_boot_volume_backup(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.delete_boot_volume_backup(
                 boot_volume_backup_id=request.pop(util.camelize('boot_volume_backup_id')),
@@ -399,9 +419,14 @@ def test_delete_boot_volume_backup(testing_service_client, config):
         )
 
 
-def test_delete_boot_volume_kms_key(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_delete_boot_volume_kms_key(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'DeleteBootVolumeKmsKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'DeleteBootVolumeKmsKey')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='DeleteBootVolumeKmsKey')
 
@@ -411,9 +436,6 @@ def test_delete_boot_volume_kms_key(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.delete_boot_volume_kms_key(
                 boot_volume_id=request.pop(util.camelize('boot_volume_id')),
@@ -436,9 +458,14 @@ def test_delete_boot_volume_kms_key(testing_service_client, config):
         )
 
 
-def test_delete_volume(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_delete_volume(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'DeleteVolume'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'DeleteVolume')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='DeleteVolume')
 
@@ -448,9 +475,6 @@ def test_delete_volume(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.delete_volume(
                 volume_id=request.pop(util.camelize('volume_id')),
@@ -473,9 +497,14 @@ def test_delete_volume(testing_service_client, config):
         )
 
 
-def test_delete_volume_backup(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_delete_volume_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'DeleteVolumeBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'DeleteVolumeBackup')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='DeleteVolumeBackup')
 
@@ -485,9 +514,6 @@ def test_delete_volume_backup(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.delete_volume_backup(
                 volume_backup_id=request.pop(util.camelize('volume_backup_id')),
@@ -510,9 +536,14 @@ def test_delete_volume_backup(testing_service_client, config):
         )
 
 
-def test_delete_volume_backup_policy_assignment(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_delete_volume_backup_policy_assignment(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'DeleteVolumeBackupPolicyAssignment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'DeleteVolumeBackupPolicyAssignment')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='DeleteVolumeBackupPolicyAssignment')
 
@@ -522,9 +553,6 @@ def test_delete_volume_backup_policy_assignment(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.delete_volume_backup_policy_assignment(
                 policy_assignment_id=request.pop(util.camelize('policy_assignment_id')),
@@ -547,9 +575,14 @@ def test_delete_volume_backup_policy_assignment(testing_service_client, config):
         )
 
 
-def test_delete_volume_group(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_delete_volume_group(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'DeleteVolumeGroup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'DeleteVolumeGroup')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='DeleteVolumeGroup')
 
@@ -559,9 +592,6 @@ def test_delete_volume_group(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.delete_volume_group(
                 volume_group_id=request.pop(util.camelize('volume_group_id')),
@@ -584,9 +614,14 @@ def test_delete_volume_group(testing_service_client, config):
         )
 
 
-def test_delete_volume_group_backup(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_delete_volume_group_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'DeleteVolumeGroupBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'DeleteVolumeGroupBackup')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='DeleteVolumeGroupBackup')
 
@@ -596,9 +631,6 @@ def test_delete_volume_group_backup(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.delete_volume_group_backup(
                 volume_group_backup_id=request.pop(util.camelize('volume_group_backup_id')),
@@ -621,9 +653,14 @@ def test_delete_volume_group_backup(testing_service_client, config):
         )
 
 
-def test_delete_volume_kms_key(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_delete_volume_kms_key(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'DeleteVolumeKmsKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'DeleteVolumeKmsKey')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='DeleteVolumeKmsKey')
 
@@ -633,9 +670,6 @@ def test_delete_volume_kms_key(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.delete_volume_kms_key(
                 volume_id=request.pop(util.camelize('volume_id')),
@@ -658,9 +692,14 @@ def test_delete_volume_kms_key(testing_service_client, config):
         )
 
 
-def test_get_boot_volume(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_get_boot_volume(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetBootVolume'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'GetBootVolume')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='GetBootVolume')
 
@@ -670,9 +709,6 @@ def test_get_boot_volume(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.get_boot_volume(
                 boot_volume_id=request.pop(util.camelize('boot_volume_id')),
@@ -695,9 +731,14 @@ def test_get_boot_volume(testing_service_client, config):
         )
 
 
-def test_get_boot_volume_backup(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_get_boot_volume_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetBootVolumeBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'GetBootVolumeBackup')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='GetBootVolumeBackup')
 
@@ -707,9 +748,6 @@ def test_get_boot_volume_backup(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.get_boot_volume_backup(
                 boot_volume_backup_id=request.pop(util.camelize('boot_volume_backup_id')),
@@ -732,9 +770,14 @@ def test_get_boot_volume_backup(testing_service_client, config):
         )
 
 
-def test_get_boot_volume_kms_key(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_get_boot_volume_kms_key(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetBootVolumeKmsKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'GetBootVolumeKmsKey')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='GetBootVolumeKmsKey')
 
@@ -744,9 +787,6 @@ def test_get_boot_volume_kms_key(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.get_boot_volume_kms_key(
                 boot_volume_id=request.pop(util.camelize('boot_volume_id')),
@@ -769,9 +809,14 @@ def test_get_boot_volume_kms_key(testing_service_client, config):
         )
 
 
-def test_get_volume(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_get_volume(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetVolume'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'GetVolume')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='GetVolume')
 
@@ -781,9 +826,6 @@ def test_get_volume(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.get_volume(
                 volume_id=request.pop(util.camelize('volume_id')),
@@ -806,9 +848,14 @@ def test_get_volume(testing_service_client, config):
         )
 
 
-def test_get_volume_backup(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_get_volume_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetVolumeBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'GetVolumeBackup')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='GetVolumeBackup')
 
@@ -818,9 +865,6 @@ def test_get_volume_backup(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.get_volume_backup(
                 volume_backup_id=request.pop(util.camelize('volume_backup_id')),
@@ -843,9 +887,14 @@ def test_get_volume_backup(testing_service_client, config):
         )
 
 
-def test_get_volume_backup_policy(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_get_volume_backup_policy(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetVolumeBackupPolicy'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'GetVolumeBackupPolicy')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='GetVolumeBackupPolicy')
 
@@ -855,9 +904,6 @@ def test_get_volume_backup_policy(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.get_volume_backup_policy(
                 policy_id=request.pop(util.camelize('policy_id')),
@@ -880,9 +926,14 @@ def test_get_volume_backup_policy(testing_service_client, config):
         )
 
 
-def test_get_volume_backup_policy_asset_assignment(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_get_volume_backup_policy_asset_assignment(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetVolumeBackupPolicyAssetAssignment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'GetVolumeBackupPolicyAssetAssignment')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='GetVolumeBackupPolicyAssetAssignment')
 
@@ -892,9 +943,6 @@ def test_get_volume_backup_policy_asset_assignment(testing_service_client, confi
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.get_volume_backup_policy_asset_assignment(
                 asset_id=request.pop(util.camelize('asset_id')),
@@ -936,9 +984,14 @@ def test_get_volume_backup_policy_asset_assignment(testing_service_client, confi
         )
 
 
-def test_get_volume_backup_policy_assignment(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_get_volume_backup_policy_assignment(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetVolumeBackupPolicyAssignment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'GetVolumeBackupPolicyAssignment')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='GetVolumeBackupPolicyAssignment')
 
@@ -948,9 +1001,6 @@ def test_get_volume_backup_policy_assignment(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.get_volume_backup_policy_assignment(
                 policy_assignment_id=request.pop(util.camelize('policy_assignment_id')),
@@ -973,9 +1023,14 @@ def test_get_volume_backup_policy_assignment(testing_service_client, config):
         )
 
 
-def test_get_volume_group(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_get_volume_group(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetVolumeGroup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'GetVolumeGroup')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='GetVolumeGroup')
 
@@ -985,9 +1040,6 @@ def test_get_volume_group(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.get_volume_group(
                 volume_group_id=request.pop(util.camelize('volume_group_id')),
@@ -1010,9 +1062,14 @@ def test_get_volume_group(testing_service_client, config):
         )
 
 
-def test_get_volume_group_backup(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_get_volume_group_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetVolumeGroupBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'GetVolumeGroupBackup')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='GetVolumeGroupBackup')
 
@@ -1022,9 +1079,6 @@ def test_get_volume_group_backup(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.get_volume_group_backup(
                 volume_group_backup_id=request.pop(util.camelize('volume_group_backup_id')),
@@ -1047,9 +1101,14 @@ def test_get_volume_group_backup(testing_service_client, config):
         )
 
 
-def test_get_volume_kms_key(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_get_volume_kms_key(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetVolumeKmsKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'GetVolumeKmsKey')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='GetVolumeKmsKey')
 
@@ -1059,9 +1118,6 @@ def test_get_volume_kms_key(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.get_volume_kms_key(
                 volume_id=request.pop(util.camelize('volume_id')),
@@ -1084,9 +1140,14 @@ def test_get_volume_kms_key(testing_service_client, config):
         )
 
 
-def test_list_boot_volume_backups(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_list_boot_volume_backups(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ListBootVolumeBackups'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'ListBootVolumeBackups')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='ListBootVolumeBackups')
 
@@ -1096,9 +1157,6 @@ def test_list_boot_volume_backups(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.list_boot_volume_backups(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -1140,9 +1198,14 @@ def test_list_boot_volume_backups(testing_service_client, config):
         )
 
 
-def test_list_boot_volumes(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_list_boot_volumes(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ListBootVolumes'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'ListBootVolumes')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='ListBootVolumes')
 
@@ -1152,9 +1215,6 @@ def test_list_boot_volumes(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.list_boot_volumes(
                 availability_domain=request.pop(util.camelize('availability_domain')),
@@ -1199,9 +1259,14 @@ def test_list_boot_volumes(testing_service_client, config):
         )
 
 
-def test_list_volume_backup_policies(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_list_volume_backup_policies(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ListVolumeBackupPolicies'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'ListVolumeBackupPolicies')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='ListVolumeBackupPolicies')
 
@@ -1211,9 +1276,6 @@ def test_list_volume_backup_policies(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.list_volume_backup_policies(
                 **(util.camel_to_snake_keys(request))
@@ -1252,9 +1314,14 @@ def test_list_volume_backup_policies(testing_service_client, config):
         )
 
 
-def test_list_volume_backups(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_list_volume_backups(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ListVolumeBackups'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'ListVolumeBackups')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='ListVolumeBackups')
 
@@ -1264,9 +1331,6 @@ def test_list_volume_backups(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.list_volume_backups(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -1308,9 +1372,14 @@ def test_list_volume_backups(testing_service_client, config):
         )
 
 
-def test_list_volume_group_backups(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_list_volume_group_backups(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ListVolumeGroupBackups'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'ListVolumeGroupBackups')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='ListVolumeGroupBackups')
 
@@ -1320,9 +1389,6 @@ def test_list_volume_group_backups(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.list_volume_group_backups(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -1364,9 +1430,14 @@ def test_list_volume_group_backups(testing_service_client, config):
         )
 
 
-def test_list_volume_groups(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_list_volume_groups(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ListVolumeGroups'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'ListVolumeGroups')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='ListVolumeGroups')
 
@@ -1376,9 +1447,6 @@ def test_list_volume_groups(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.list_volume_groups(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -1420,9 +1488,14 @@ def test_list_volume_groups(testing_service_client, config):
         )
 
 
-def test_list_volumes(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_list_volumes(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ListVolumes'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'ListVolumes')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='ListVolumes')
 
@@ -1432,9 +1505,6 @@ def test_list_volumes(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.list_volumes(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -1476,9 +1546,14 @@ def test_list_volumes(testing_service_client, config):
         )
 
 
-def test_update_boot_volume(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_update_boot_volume(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'UpdateBootVolume'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'UpdateBootVolume')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='UpdateBootVolume')
 
@@ -1488,9 +1563,6 @@ def test_update_boot_volume(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.update_boot_volume(
                 boot_volume_id=request.pop(util.camelize('boot_volume_id')),
@@ -1514,9 +1586,14 @@ def test_update_boot_volume(testing_service_client, config):
         )
 
 
-def test_update_boot_volume_backup(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_update_boot_volume_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'UpdateBootVolumeBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'UpdateBootVolumeBackup')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='UpdateBootVolumeBackup')
 
@@ -1526,9 +1603,6 @@ def test_update_boot_volume_backup(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.update_boot_volume_backup(
                 boot_volume_backup_id=request.pop(util.camelize('boot_volume_backup_id')),
@@ -1552,9 +1626,14 @@ def test_update_boot_volume_backup(testing_service_client, config):
         )
 
 
-def test_update_boot_volume_kms_key(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_update_boot_volume_kms_key(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'UpdateBootVolumeKmsKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'UpdateBootVolumeKmsKey')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='UpdateBootVolumeKmsKey')
 
@@ -1564,9 +1643,6 @@ def test_update_boot_volume_kms_key(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.update_boot_volume_kms_key(
                 boot_volume_id=request.pop(util.camelize('boot_volume_id')),
@@ -1590,9 +1666,14 @@ def test_update_boot_volume_kms_key(testing_service_client, config):
         )
 
 
-def test_update_volume(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_update_volume(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'UpdateVolume'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'UpdateVolume')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='UpdateVolume')
 
@@ -1602,9 +1683,6 @@ def test_update_volume(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.update_volume(
                 volume_id=request.pop(util.camelize('volume_id')),
@@ -1628,9 +1706,14 @@ def test_update_volume(testing_service_client, config):
         )
 
 
-def test_update_volume_backup(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_update_volume_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'UpdateVolumeBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'UpdateVolumeBackup')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='UpdateVolumeBackup')
 
@@ -1640,9 +1723,6 @@ def test_update_volume_backup(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.update_volume_backup(
                 volume_backup_id=request.pop(util.camelize('volume_backup_id')),
@@ -1666,9 +1746,14 @@ def test_update_volume_backup(testing_service_client, config):
         )
 
 
-def test_update_volume_group(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_update_volume_group(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'UpdateVolumeGroup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'UpdateVolumeGroup')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='UpdateVolumeGroup')
 
@@ -1678,9 +1763,6 @@ def test_update_volume_group(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.update_volume_group(
                 volume_group_id=request.pop(util.camelize('volume_group_id')),
@@ -1704,9 +1786,14 @@ def test_update_volume_group(testing_service_client, config):
         )
 
 
-def test_update_volume_group_backup(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_update_volume_group_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'UpdateVolumeGroupBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'UpdateVolumeGroupBackup')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='UpdateVolumeGroupBackup')
 
@@ -1716,9 +1803,6 @@ def test_update_volume_group_backup(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.update_volume_group_backup(
                 volume_group_backup_id=request.pop(util.camelize('volume_group_backup_id')),
@@ -1742,9 +1826,14 @@ def test_update_volume_group_backup(testing_service_client, config):
         )
 
 
-def test_update_volume_kms_key(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_update_volume_kms_key(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'UpdateVolumeKmsKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'UpdateVolumeKmsKey')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='UpdateVolumeKmsKey')
 
@@ -1754,9 +1843,6 @@ def test_update_volume_kms_key(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.core.BlockstorageClient(config)
             response = client.update_volume_kms_key(
                 volume_id=request.pop(util.camelize('volume_id')),

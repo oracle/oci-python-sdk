@@ -28,9 +28,14 @@ def vcr_fixture(request):
         yield
 
 
-def test_cancel_job(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+def test_cancel_job(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'CancelJob'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_manager', util.camelize('resource_manager'), 'CancelJob')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='resource_manager', api_name='CancelJob')
 
@@ -40,9 +45,6 @@ def test_cancel_job(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.resource_manager.ResourceManagerClient(config)
             response = client.cancel_job(
                 job_id=request.pop(util.camelize('job_id')),
@@ -65,9 +67,14 @@ def test_cancel_job(testing_service_client, config):
         )
 
 
-def test_create_job(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+def test_create_job(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'CreateJob'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_manager', util.camelize('resource_manager'), 'CreateJob')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='resource_manager', api_name='CreateJob')
 
@@ -77,9 +84,6 @@ def test_create_job(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.resource_manager.ResourceManagerClient(config)
             response = client.create_job(
                 create_job_details=request.pop(util.camelize('create_job_details')),
@@ -102,9 +106,14 @@ def test_create_job(testing_service_client, config):
         )
 
 
-def test_create_stack(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+def test_create_stack(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'CreateStack'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_manager', util.camelize('resource_manager'), 'CreateStack')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='resource_manager', api_name='CreateStack')
 
@@ -114,9 +123,6 @@ def test_create_stack(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.resource_manager.ResourceManagerClient(config)
             response = client.create_stack(
                 create_stack_details=request.pop(util.camelize('create_stack_details')),
@@ -139,9 +145,14 @@ def test_create_stack(testing_service_client, config):
         )
 
 
-def test_delete_stack(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+def test_delete_stack(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'DeleteStack'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_manager', util.camelize('resource_manager'), 'DeleteStack')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='resource_manager', api_name='DeleteStack')
 
@@ -151,9 +162,6 @@ def test_delete_stack(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.resource_manager.ResourceManagerClient(config)
             response = client.delete_stack(
                 stack_id=request.pop(util.camelize('stack_id')),
@@ -176,9 +184,14 @@ def test_delete_stack(testing_service_client, config):
         )
 
 
-def test_get_job(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+def test_get_job(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'GetJob'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_manager', util.camelize('resource_manager'), 'GetJob')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='resource_manager', api_name='GetJob')
 
@@ -188,9 +201,6 @@ def test_get_job(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.resource_manager.ResourceManagerClient(config)
             response = client.get_job(
                 job_id=request.pop(util.camelize('job_id')),
@@ -213,9 +223,14 @@ def test_get_job(testing_service_client, config):
         )
 
 
-def test_get_job_logs(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+def test_get_job_logs(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'GetJobLogs'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_manager', util.camelize('resource_manager'), 'GetJobLogs')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='resource_manager', api_name='GetJobLogs')
 
@@ -225,9 +240,6 @@ def test_get_job_logs(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.resource_manager.ResourceManagerClient(config)
             response = client.get_job_logs(
                 job_id=request.pop(util.camelize('job_id')),
@@ -269,9 +281,14 @@ def test_get_job_logs(testing_service_client, config):
         )
 
 
-def test_get_job_logs_content(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+def test_get_job_logs_content(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'GetJobLogsContent'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_manager', util.camelize('resource_manager'), 'GetJobLogsContent')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='resource_manager', api_name='GetJobLogsContent')
 
@@ -281,9 +298,6 @@ def test_get_job_logs_content(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.resource_manager.ResourceManagerClient(config)
             response = client.get_job_logs_content(
                 job_id=request.pop(util.camelize('job_id')),
@@ -306,9 +320,14 @@ def test_get_job_logs_content(testing_service_client, config):
         )
 
 
-def test_get_job_tf_config(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+def test_get_job_tf_config(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'GetJobTfConfig'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_manager', util.camelize('resource_manager'), 'GetJobTfConfig')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='resource_manager', api_name='GetJobTfConfig')
 
@@ -318,9 +337,6 @@ def test_get_job_tf_config(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.resource_manager.ResourceManagerClient(config)
             response = client.get_job_tf_config(
                 job_id=request.pop(util.camelize('job_id')),
@@ -343,9 +359,14 @@ def test_get_job_tf_config(testing_service_client, config):
         )
 
 
-def test_get_job_tf_state(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+def test_get_job_tf_state(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'GetJobTfState'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_manager', util.camelize('resource_manager'), 'GetJobTfState')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='resource_manager', api_name='GetJobTfState')
 
@@ -355,9 +376,6 @@ def test_get_job_tf_state(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.resource_manager.ResourceManagerClient(config)
             response = client.get_job_tf_state(
                 job_id=request.pop(util.camelize('job_id')),
@@ -380,9 +398,14 @@ def test_get_job_tf_state(testing_service_client, config):
         )
 
 
-def test_get_stack(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+def test_get_stack(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'GetStack'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_manager', util.camelize('resource_manager'), 'GetStack')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='resource_manager', api_name='GetStack')
 
@@ -392,9 +415,6 @@ def test_get_stack(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.resource_manager.ResourceManagerClient(config)
             response = client.get_stack(
                 stack_id=request.pop(util.camelize('stack_id')),
@@ -417,9 +437,14 @@ def test_get_stack(testing_service_client, config):
         )
 
 
-def test_get_stack_tf_config(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+def test_get_stack_tf_config(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'GetStackTfConfig'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_manager', util.camelize('resource_manager'), 'GetStackTfConfig')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='resource_manager', api_name='GetStackTfConfig')
 
@@ -429,9 +454,6 @@ def test_get_stack_tf_config(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.resource_manager.ResourceManagerClient(config)
             response = client.get_stack_tf_config(
                 stack_id=request.pop(util.camelize('stack_id')),
@@ -454,9 +476,14 @@ def test_get_stack_tf_config(testing_service_client, config):
         )
 
 
-def test_list_jobs(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+def test_list_jobs(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'ListJobs'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_manager', util.camelize('resource_manager'), 'ListJobs')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='resource_manager', api_name='ListJobs')
 
@@ -466,9 +493,6 @@ def test_list_jobs(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.resource_manager.ResourceManagerClient(config)
             response = client.list_jobs(
                 **(util.camel_to_snake_keys(request))
@@ -507,9 +531,14 @@ def test_list_jobs(testing_service_client, config):
         )
 
 
-def test_list_stacks(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+def test_list_stacks(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'ListStacks'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_manager', util.camelize('resource_manager'), 'ListStacks')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='resource_manager', api_name='ListStacks')
 
@@ -519,9 +548,6 @@ def test_list_stacks(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.resource_manager.ResourceManagerClient(config)
             response = client.list_stacks(
                 **(util.camel_to_snake_keys(request))
@@ -560,9 +586,14 @@ def test_list_stacks(testing_service_client, config):
         )
 
 
-def test_update_job(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+def test_update_job(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'UpdateJob'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_manager', util.camelize('resource_manager'), 'UpdateJob')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='resource_manager', api_name='UpdateJob')
 
@@ -572,9 +603,6 @@ def test_update_job(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.resource_manager.ResourceManagerClient(config)
             response = client.update_job(
                 job_id=request.pop(util.camelize('job_id')),
@@ -598,9 +626,14 @@ def test_update_job(testing_service_client, config):
         )
 
 
-def test_update_stack(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+def test_update_stack(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'UpdateStack'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_manager', util.camelize('resource_manager'), 'UpdateStack')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='resource_manager', api_name='UpdateStack')
 
@@ -610,9 +643,6 @@ def test_update_stack(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.resource_manager.ResourceManagerClient(config)
             response = client.update_stack(
                 stack_id=request.pop(util.camelize('stack_id')),

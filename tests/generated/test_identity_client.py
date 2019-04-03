@@ -28,9 +28,14 @@ def vcr_fixture(request):
         yield
 
 
-def test_activate_mfa_totp_device(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_activate_mfa_totp_device(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'ActivateMfaTotpDevice'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'ActivateMfaTotpDevice')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='ActivateMfaTotpDevice')
 
@@ -40,9 +45,6 @@ def test_activate_mfa_totp_device(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.activate_mfa_totp_device(
                 user_id=request.pop(util.camelize('user_id')),
@@ -67,9 +69,14 @@ def test_activate_mfa_totp_device(testing_service_client, config):
         )
 
 
-def test_add_user_to_group(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_add_user_to_group(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'AddUserToGroup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'AddUserToGroup')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='AddUserToGroup')
 
@@ -79,9 +86,6 @@ def test_add_user_to_group(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.add_user_to_group(
                 add_user_to_group_details=request.pop(util.camelize('add_user_to_group_details')),
@@ -104,9 +108,14 @@ def test_add_user_to_group(testing_service_client, config):
         )
 
 
-def test_change_tag_namespace_compartment(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_change_tag_namespace_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'ChangeTagNamespaceCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'ChangeTagNamespaceCompartment')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='ChangeTagNamespaceCompartment')
 
@@ -116,9 +125,6 @@ def test_change_tag_namespace_compartment(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.change_tag_namespace_compartment(
                 tag_namespace_id=request.pop(util.camelize('tag_namespace_id')),
@@ -142,9 +148,14 @@ def test_change_tag_namespace_compartment(testing_service_client, config):
         )
 
 
-def test_create_auth_token(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_create_auth_token(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'CreateAuthToken'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'CreateAuthToken')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='CreateAuthToken')
 
@@ -154,9 +165,6 @@ def test_create_auth_token(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.create_auth_token(
                 create_auth_token_details=request.pop(util.camelize('create_auth_token_details')),
@@ -180,9 +188,14 @@ def test_create_auth_token(testing_service_client, config):
         )
 
 
-def test_create_compartment(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_create_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'CreateCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'CreateCompartment')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='CreateCompartment')
 
@@ -192,9 +205,6 @@ def test_create_compartment(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.create_compartment(
                 create_compartment_details=request.pop(util.camelize('create_compartment_details')),
@@ -217,9 +227,14 @@ def test_create_compartment(testing_service_client, config):
         )
 
 
-def test_create_customer_secret_key(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_create_customer_secret_key(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'CreateCustomerSecretKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'CreateCustomerSecretKey')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='CreateCustomerSecretKey')
 
@@ -229,9 +244,6 @@ def test_create_customer_secret_key(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.create_customer_secret_key(
                 create_customer_secret_key_details=request.pop(util.camelize('create_customer_secret_key_details')),
@@ -255,9 +267,14 @@ def test_create_customer_secret_key(testing_service_client, config):
         )
 
 
-def test_create_dynamic_group(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_create_dynamic_group(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'CreateDynamicGroup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'CreateDynamicGroup')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='CreateDynamicGroup')
 
@@ -267,9 +284,6 @@ def test_create_dynamic_group(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.create_dynamic_group(
                 create_dynamic_group_details=request.pop(util.camelize('create_dynamic_group_details')),
@@ -292,9 +306,14 @@ def test_create_dynamic_group(testing_service_client, config):
         )
 
 
-def test_create_group(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_create_group(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'CreateGroup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'CreateGroup')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='CreateGroup')
 
@@ -304,9 +323,6 @@ def test_create_group(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.create_group(
                 create_group_details=request.pop(util.camelize('create_group_details')),
@@ -329,9 +345,14 @@ def test_create_group(testing_service_client, config):
         )
 
 
-def test_create_identity_provider(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_create_identity_provider(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'CreateIdentityProvider'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'CreateIdentityProvider')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='CreateIdentityProvider')
 
@@ -341,9 +362,6 @@ def test_create_identity_provider(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.create_identity_provider(
                 create_identity_provider_details=request.pop(util.camelize('create_identity_provider_details')),
@@ -366,9 +384,14 @@ def test_create_identity_provider(testing_service_client, config):
         )
 
 
-def test_create_idp_group_mapping(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_create_idp_group_mapping(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'CreateIdpGroupMapping'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'CreateIdpGroupMapping')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='CreateIdpGroupMapping')
 
@@ -378,9 +401,6 @@ def test_create_idp_group_mapping(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.create_idp_group_mapping(
                 create_idp_group_mapping_details=request.pop(util.camelize('create_idp_group_mapping_details')),
@@ -404,9 +424,14 @@ def test_create_idp_group_mapping(testing_service_client, config):
         )
 
 
-def test_create_mfa_totp_device(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_create_mfa_totp_device(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'CreateMfaTotpDevice'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'CreateMfaTotpDevice')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='CreateMfaTotpDevice')
 
@@ -416,9 +441,6 @@ def test_create_mfa_totp_device(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.create_mfa_totp_device(
                 user_id=request.pop(util.camelize('user_id')),
@@ -441,9 +463,14 @@ def test_create_mfa_totp_device(testing_service_client, config):
         )
 
 
-def test_create_or_reset_ui_password(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_create_or_reset_ui_password(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'CreateOrResetUIPassword'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'CreateOrResetUIPassword')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='CreateOrResetUIPassword')
 
@@ -453,9 +480,6 @@ def test_create_or_reset_ui_password(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.create_or_reset_ui_password(
                 user_id=request.pop(util.camelize('user_id')),
@@ -478,9 +502,14 @@ def test_create_or_reset_ui_password(testing_service_client, config):
         )
 
 
-def test_create_policy(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_create_policy(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'CreatePolicy'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'CreatePolicy')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='CreatePolicy')
 
@@ -490,9 +519,6 @@ def test_create_policy(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.create_policy(
                 create_policy_details=request.pop(util.camelize('create_policy_details')),
@@ -515,9 +541,14 @@ def test_create_policy(testing_service_client, config):
         )
 
 
-def test_create_region_subscription(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_create_region_subscription(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'CreateRegionSubscription'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'CreateRegionSubscription')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='CreateRegionSubscription')
 
@@ -527,9 +558,6 @@ def test_create_region_subscription(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.create_region_subscription(
                 create_region_subscription_details=request.pop(util.camelize('create_region_subscription_details')),
@@ -553,9 +581,14 @@ def test_create_region_subscription(testing_service_client, config):
         )
 
 
-def test_create_smtp_credential(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_create_smtp_credential(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'CreateSmtpCredential'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'CreateSmtpCredential')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='CreateSmtpCredential')
 
@@ -565,9 +598,6 @@ def test_create_smtp_credential(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.create_smtp_credential(
                 create_smtp_credential_details=request.pop(util.camelize('create_smtp_credential_details')),
@@ -591,9 +621,14 @@ def test_create_smtp_credential(testing_service_client, config):
         )
 
 
-def test_create_swift_password(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_create_swift_password(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'CreateSwiftPassword'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'CreateSwiftPassword')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='CreateSwiftPassword')
 
@@ -603,9 +638,6 @@ def test_create_swift_password(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.create_swift_password(
                 create_swift_password_details=request.pop(util.camelize('create_swift_password_details')),
@@ -629,9 +661,14 @@ def test_create_swift_password(testing_service_client, config):
         )
 
 
-def test_create_tag(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_create_tag(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'CreateTag'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'CreateTag')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='CreateTag')
 
@@ -641,9 +678,6 @@ def test_create_tag(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.create_tag(
                 tag_namespace_id=request.pop(util.camelize('tag_namespace_id')),
@@ -667,9 +701,14 @@ def test_create_tag(testing_service_client, config):
         )
 
 
-def test_create_tag_default(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_create_tag_default(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'CreateTagDefault'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'CreateTagDefault')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='CreateTagDefault')
 
@@ -679,9 +718,6 @@ def test_create_tag_default(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.create_tag_default(
                 create_tag_default_details=request.pop(util.camelize('create_tag_default_details')),
@@ -704,9 +740,14 @@ def test_create_tag_default(testing_service_client, config):
         )
 
 
-def test_create_tag_namespace(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_create_tag_namespace(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'CreateTagNamespace'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'CreateTagNamespace')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='CreateTagNamespace')
 
@@ -716,9 +757,6 @@ def test_create_tag_namespace(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.create_tag_namespace(
                 create_tag_namespace_details=request.pop(util.camelize('create_tag_namespace_details')),
@@ -741,9 +779,14 @@ def test_create_tag_namespace(testing_service_client, config):
         )
 
 
-def test_create_user(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_create_user(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'CreateUser'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'CreateUser')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='CreateUser')
 
@@ -753,9 +796,6 @@ def test_create_user(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.create_user(
                 create_user_details=request.pop(util.camelize('create_user_details')),
@@ -778,9 +818,14 @@ def test_create_user(testing_service_client, config):
         )
 
 
-def test_delete_api_key(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_delete_api_key(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'DeleteApiKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'DeleteApiKey')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='DeleteApiKey')
 
@@ -790,9 +835,6 @@ def test_delete_api_key(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.delete_api_key(
                 user_id=request.pop(util.camelize('user_id')),
@@ -816,9 +858,14 @@ def test_delete_api_key(testing_service_client, config):
         )
 
 
-def test_delete_auth_token(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_delete_auth_token(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'DeleteAuthToken'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'DeleteAuthToken')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='DeleteAuthToken')
 
@@ -828,9 +875,6 @@ def test_delete_auth_token(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.delete_auth_token(
                 user_id=request.pop(util.camelize('user_id')),
@@ -854,9 +898,14 @@ def test_delete_auth_token(testing_service_client, config):
         )
 
 
-def test_delete_compartment(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_delete_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'DeleteCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'DeleteCompartment')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='DeleteCompartment')
 
@@ -866,9 +915,6 @@ def test_delete_compartment(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.delete_compartment(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -891,9 +937,14 @@ def test_delete_compartment(testing_service_client, config):
         )
 
 
-def test_delete_customer_secret_key(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_delete_customer_secret_key(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'DeleteCustomerSecretKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'DeleteCustomerSecretKey')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='DeleteCustomerSecretKey')
 
@@ -903,9 +954,6 @@ def test_delete_customer_secret_key(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.delete_customer_secret_key(
                 user_id=request.pop(util.camelize('user_id')),
@@ -929,9 +977,14 @@ def test_delete_customer_secret_key(testing_service_client, config):
         )
 
 
-def test_delete_dynamic_group(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_delete_dynamic_group(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'DeleteDynamicGroup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'DeleteDynamicGroup')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='DeleteDynamicGroup')
 
@@ -941,9 +994,6 @@ def test_delete_dynamic_group(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.delete_dynamic_group(
                 dynamic_group_id=request.pop(util.camelize('dynamic_group_id')),
@@ -966,9 +1016,14 @@ def test_delete_dynamic_group(testing_service_client, config):
         )
 
 
-def test_delete_group(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_delete_group(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'DeleteGroup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'DeleteGroup')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='DeleteGroup')
 
@@ -978,9 +1033,6 @@ def test_delete_group(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.delete_group(
                 group_id=request.pop(util.camelize('group_id')),
@@ -1003,9 +1055,14 @@ def test_delete_group(testing_service_client, config):
         )
 
 
-def test_delete_identity_provider(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_delete_identity_provider(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'DeleteIdentityProvider'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'DeleteIdentityProvider')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='DeleteIdentityProvider')
 
@@ -1015,9 +1072,6 @@ def test_delete_identity_provider(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.delete_identity_provider(
                 identity_provider_id=request.pop(util.camelize('identity_provider_id')),
@@ -1040,9 +1094,14 @@ def test_delete_identity_provider(testing_service_client, config):
         )
 
 
-def test_delete_idp_group_mapping(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_delete_idp_group_mapping(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'DeleteIdpGroupMapping'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'DeleteIdpGroupMapping')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='DeleteIdpGroupMapping')
 
@@ -1052,9 +1111,6 @@ def test_delete_idp_group_mapping(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.delete_idp_group_mapping(
                 identity_provider_id=request.pop(util.camelize('identity_provider_id')),
@@ -1078,9 +1134,14 @@ def test_delete_idp_group_mapping(testing_service_client, config):
         )
 
 
-def test_delete_mfa_totp_device(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_delete_mfa_totp_device(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'DeleteMfaTotpDevice'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'DeleteMfaTotpDevice')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='DeleteMfaTotpDevice')
 
@@ -1090,9 +1151,6 @@ def test_delete_mfa_totp_device(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.delete_mfa_totp_device(
                 user_id=request.pop(util.camelize('user_id')),
@@ -1116,9 +1174,14 @@ def test_delete_mfa_totp_device(testing_service_client, config):
         )
 
 
-def test_delete_policy(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_delete_policy(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'DeletePolicy'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'DeletePolicy')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='DeletePolicy')
 
@@ -1128,9 +1191,6 @@ def test_delete_policy(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.delete_policy(
                 policy_id=request.pop(util.camelize('policy_id')),
@@ -1153,9 +1213,14 @@ def test_delete_policy(testing_service_client, config):
         )
 
 
-def test_delete_smtp_credential(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_delete_smtp_credential(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'DeleteSmtpCredential'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'DeleteSmtpCredential')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='DeleteSmtpCredential')
 
@@ -1165,9 +1230,6 @@ def test_delete_smtp_credential(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.delete_smtp_credential(
                 user_id=request.pop(util.camelize('user_id')),
@@ -1191,9 +1253,14 @@ def test_delete_smtp_credential(testing_service_client, config):
         )
 
 
-def test_delete_swift_password(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_delete_swift_password(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'DeleteSwiftPassword'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'DeleteSwiftPassword')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='DeleteSwiftPassword')
 
@@ -1203,9 +1270,6 @@ def test_delete_swift_password(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.delete_swift_password(
                 user_id=request.pop(util.camelize('user_id')),
@@ -1229,9 +1293,14 @@ def test_delete_swift_password(testing_service_client, config):
         )
 
 
-def test_delete_tag_default(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_delete_tag_default(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'DeleteTagDefault'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'DeleteTagDefault')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='DeleteTagDefault')
 
@@ -1241,9 +1310,6 @@ def test_delete_tag_default(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.delete_tag_default(
                 tag_default_id=request.pop(util.camelize('tag_default_id')),
@@ -1266,9 +1332,14 @@ def test_delete_tag_default(testing_service_client, config):
         )
 
 
-def test_delete_user(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_delete_user(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'DeleteUser'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'DeleteUser')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='DeleteUser')
 
@@ -1278,9 +1349,6 @@ def test_delete_user(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.delete_user(
                 user_id=request.pop(util.camelize('user_id')),
@@ -1303,9 +1371,14 @@ def test_delete_user(testing_service_client, config):
         )
 
 
-def test_generate_totp_seed(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_generate_totp_seed(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'GenerateTotpSeed'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'GenerateTotpSeed')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='GenerateTotpSeed')
 
@@ -1315,9 +1388,6 @@ def test_generate_totp_seed(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.generate_totp_seed(
                 user_id=request.pop(util.camelize('user_id')),
@@ -1341,9 +1411,14 @@ def test_generate_totp_seed(testing_service_client, config):
         )
 
 
-def test_get_authentication_policy(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_get_authentication_policy(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'GetAuthenticationPolicy'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'GetAuthenticationPolicy')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='GetAuthenticationPolicy')
 
@@ -1353,9 +1428,6 @@ def test_get_authentication_policy(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.get_authentication_policy(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -1378,9 +1450,14 @@ def test_get_authentication_policy(testing_service_client, config):
         )
 
 
-def test_get_compartment(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_get_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'GetCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'GetCompartment')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='GetCompartment')
 
@@ -1390,9 +1467,6 @@ def test_get_compartment(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.get_compartment(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -1415,9 +1489,14 @@ def test_get_compartment(testing_service_client, config):
         )
 
 
-def test_get_dynamic_group(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_get_dynamic_group(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'GetDynamicGroup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'GetDynamicGroup')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='GetDynamicGroup')
 
@@ -1427,9 +1506,6 @@ def test_get_dynamic_group(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.get_dynamic_group(
                 dynamic_group_id=request.pop(util.camelize('dynamic_group_id')),
@@ -1452,9 +1528,14 @@ def test_get_dynamic_group(testing_service_client, config):
         )
 
 
-def test_get_group(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_get_group(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'GetGroup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'GetGroup')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='GetGroup')
 
@@ -1464,9 +1545,6 @@ def test_get_group(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.get_group(
                 group_id=request.pop(util.camelize('group_id')),
@@ -1489,9 +1567,14 @@ def test_get_group(testing_service_client, config):
         )
 
 
-def test_get_identity_provider(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_get_identity_provider(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'GetIdentityProvider'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'GetIdentityProvider')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='GetIdentityProvider')
 
@@ -1501,9 +1584,6 @@ def test_get_identity_provider(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.get_identity_provider(
                 identity_provider_id=request.pop(util.camelize('identity_provider_id')),
@@ -1526,9 +1606,14 @@ def test_get_identity_provider(testing_service_client, config):
         )
 
 
-def test_get_idp_group_mapping(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_get_idp_group_mapping(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'GetIdpGroupMapping'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'GetIdpGroupMapping')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='GetIdpGroupMapping')
 
@@ -1538,9 +1623,6 @@ def test_get_idp_group_mapping(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.get_idp_group_mapping(
                 identity_provider_id=request.pop(util.camelize('identity_provider_id')),
@@ -1564,9 +1646,14 @@ def test_get_idp_group_mapping(testing_service_client, config):
         )
 
 
-def test_get_mfa_totp_device(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_get_mfa_totp_device(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'GetMfaTotpDevice'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'GetMfaTotpDevice')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='GetMfaTotpDevice')
 
@@ -1576,9 +1663,6 @@ def test_get_mfa_totp_device(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.get_mfa_totp_device(
                 user_id=request.pop(util.camelize('user_id')),
@@ -1602,9 +1686,14 @@ def test_get_mfa_totp_device(testing_service_client, config):
         )
 
 
-def test_get_policy(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_get_policy(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'GetPolicy'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'GetPolicy')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='GetPolicy')
 
@@ -1614,9 +1703,6 @@ def test_get_policy(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.get_policy(
                 policy_id=request.pop(util.camelize('policy_id')),
@@ -1639,9 +1725,14 @@ def test_get_policy(testing_service_client, config):
         )
 
 
-def test_get_tag(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_get_tag(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'GetTag'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'GetTag')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='GetTag')
 
@@ -1651,9 +1742,6 @@ def test_get_tag(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.get_tag(
                 tag_namespace_id=request.pop(util.camelize('tag_namespace_id')),
@@ -1677,9 +1765,14 @@ def test_get_tag(testing_service_client, config):
         )
 
 
-def test_get_tag_default(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_get_tag_default(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'GetTagDefault'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'GetTagDefault')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='GetTagDefault')
 
@@ -1689,9 +1782,6 @@ def test_get_tag_default(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.get_tag_default(
                 tag_default_id=request.pop(util.camelize('tag_default_id')),
@@ -1714,9 +1804,14 @@ def test_get_tag_default(testing_service_client, config):
         )
 
 
-def test_get_tag_namespace(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_get_tag_namespace(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'GetTagNamespace'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'GetTagNamespace')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='GetTagNamespace')
 
@@ -1726,9 +1821,6 @@ def test_get_tag_namespace(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.get_tag_namespace(
                 tag_namespace_id=request.pop(util.camelize('tag_namespace_id')),
@@ -1751,9 +1843,14 @@ def test_get_tag_namespace(testing_service_client, config):
         )
 
 
-def test_get_tenancy(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_get_tenancy(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'GetTenancy'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'GetTenancy')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='GetTenancy')
 
@@ -1763,9 +1860,6 @@ def test_get_tenancy(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.get_tenancy(
                 tenancy_id=request.pop(util.camelize('tenancy_id')),
@@ -1788,9 +1882,14 @@ def test_get_tenancy(testing_service_client, config):
         )
 
 
-def test_get_user(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_get_user(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'GetUser'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'GetUser')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='GetUser')
 
@@ -1800,9 +1899,6 @@ def test_get_user(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.get_user(
                 user_id=request.pop(util.camelize('user_id')),
@@ -1825,9 +1921,14 @@ def test_get_user(testing_service_client, config):
         )
 
 
-def test_get_user_group_membership(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_get_user_group_membership(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'GetUserGroupMembership'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'GetUserGroupMembership')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='GetUserGroupMembership')
 
@@ -1837,9 +1938,6 @@ def test_get_user_group_membership(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.get_user_group_membership(
                 user_group_membership_id=request.pop(util.camelize('user_group_membership_id')),
@@ -1862,9 +1960,14 @@ def test_get_user_group_membership(testing_service_client, config):
         )
 
 
-def test_get_work_request(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_get_work_request(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'GetWorkRequest'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'GetWorkRequest')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='GetWorkRequest')
 
@@ -1874,9 +1977,6 @@ def test_get_work_request(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('work_request_id')),
@@ -1899,9 +1999,14 @@ def test_get_work_request(testing_service_client, config):
         )
 
 
-def test_list_api_keys(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_api_keys(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'ListApiKeys'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'ListApiKeys')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='ListApiKeys')
 
@@ -1911,9 +2016,6 @@ def test_list_api_keys(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.list_api_keys(
                 user_id=request.pop(util.camelize('user_id')),
@@ -1936,9 +2038,14 @@ def test_list_api_keys(testing_service_client, config):
         )
 
 
-def test_list_auth_tokens(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_auth_tokens(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'ListAuthTokens'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'ListAuthTokens')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='ListAuthTokens')
 
@@ -1948,9 +2055,6 @@ def test_list_auth_tokens(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.list_auth_tokens(
                 user_id=request.pop(util.camelize('user_id')),
@@ -1973,9 +2077,14 @@ def test_list_auth_tokens(testing_service_client, config):
         )
 
 
-def test_list_availability_domains(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_availability_domains(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'ListAvailabilityDomains'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'ListAvailabilityDomains')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='ListAvailabilityDomains')
 
@@ -1985,9 +2094,6 @@ def test_list_availability_domains(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.list_availability_domains(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -2010,9 +2116,14 @@ def test_list_availability_domains(testing_service_client, config):
         )
 
 
-def test_list_compartments(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_compartments(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'ListCompartments'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'ListCompartments')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='ListCompartments')
 
@@ -2022,9 +2133,6 @@ def test_list_compartments(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.list_compartments(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -2066,9 +2174,14 @@ def test_list_compartments(testing_service_client, config):
         )
 
 
-def test_list_cost_tracking_tags(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_cost_tracking_tags(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'ListCostTrackingTags'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'ListCostTrackingTags')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='ListCostTrackingTags')
 
@@ -2078,9 +2191,6 @@ def test_list_cost_tracking_tags(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.list_cost_tracking_tags(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -2122,9 +2232,14 @@ def test_list_cost_tracking_tags(testing_service_client, config):
         )
 
 
-def test_list_customer_secret_keys(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_customer_secret_keys(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'ListCustomerSecretKeys'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'ListCustomerSecretKeys')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='ListCustomerSecretKeys')
 
@@ -2134,9 +2249,6 @@ def test_list_customer_secret_keys(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.list_customer_secret_keys(
                 user_id=request.pop(util.camelize('user_id')),
@@ -2159,9 +2271,14 @@ def test_list_customer_secret_keys(testing_service_client, config):
         )
 
 
-def test_list_dynamic_groups(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_dynamic_groups(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'ListDynamicGroups'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'ListDynamicGroups')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='ListDynamicGroups')
 
@@ -2171,9 +2288,6 @@ def test_list_dynamic_groups(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.list_dynamic_groups(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -2215,9 +2329,14 @@ def test_list_dynamic_groups(testing_service_client, config):
         )
 
 
-def test_list_fault_domains(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_fault_domains(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'ListFaultDomains'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'ListFaultDomains')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='ListFaultDomains')
 
@@ -2227,9 +2346,6 @@ def test_list_fault_domains(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.list_fault_domains(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -2253,9 +2369,14 @@ def test_list_fault_domains(testing_service_client, config):
         )
 
 
-def test_list_groups(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_groups(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'ListGroups'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'ListGroups')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='ListGroups')
 
@@ -2265,9 +2386,6 @@ def test_list_groups(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.list_groups(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -2309,9 +2427,14 @@ def test_list_groups(testing_service_client, config):
         )
 
 
-def test_list_identity_provider_groups(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_identity_provider_groups(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'ListIdentityProviderGroups'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'ListIdentityProviderGroups')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='ListIdentityProviderGroups')
 
@@ -2321,9 +2444,6 @@ def test_list_identity_provider_groups(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.list_identity_provider_groups(
                 identity_provider_id=request.pop(util.camelize('identity_provider_id')),
@@ -2365,9 +2485,14 @@ def test_list_identity_provider_groups(testing_service_client, config):
         )
 
 
-def test_list_identity_providers(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_identity_providers(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'ListIdentityProviders'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'ListIdentityProviders')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='ListIdentityProviders')
 
@@ -2377,9 +2502,6 @@ def test_list_identity_providers(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.list_identity_providers(
                 protocol=request.pop(util.camelize('protocol')),
@@ -2424,9 +2546,14 @@ def test_list_identity_providers(testing_service_client, config):
         )
 
 
-def test_list_idp_group_mappings(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_idp_group_mappings(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'ListIdpGroupMappings'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'ListIdpGroupMappings')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='ListIdpGroupMappings')
 
@@ -2436,9 +2563,6 @@ def test_list_idp_group_mappings(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.list_idp_group_mappings(
                 identity_provider_id=request.pop(util.camelize('identity_provider_id')),
@@ -2480,9 +2604,14 @@ def test_list_idp_group_mappings(testing_service_client, config):
         )
 
 
-def test_list_mfa_totp_devices(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_mfa_totp_devices(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'ListMfaTotpDevices'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'ListMfaTotpDevices')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='ListMfaTotpDevices')
 
@@ -2492,9 +2621,6 @@ def test_list_mfa_totp_devices(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.list_mfa_totp_devices(
                 user_id=request.pop(util.camelize('user_id')),
@@ -2536,9 +2662,14 @@ def test_list_mfa_totp_devices(testing_service_client, config):
         )
 
 
-def test_list_policies(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_policies(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'ListPolicies'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'ListPolicies')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='ListPolicies')
 
@@ -2548,9 +2679,6 @@ def test_list_policies(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.list_policies(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -2592,9 +2720,14 @@ def test_list_policies(testing_service_client, config):
         )
 
 
-def test_list_region_subscriptions(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_region_subscriptions(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'ListRegionSubscriptions'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'ListRegionSubscriptions')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='ListRegionSubscriptions')
 
@@ -2604,9 +2737,6 @@ def test_list_region_subscriptions(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.list_region_subscriptions(
                 tenancy_id=request.pop(util.camelize('tenancy_id')),
@@ -2629,9 +2759,14 @@ def test_list_region_subscriptions(testing_service_client, config):
         )
 
 
-def test_list_regions(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_regions(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'ListRegions'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'ListRegions')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='ListRegions')
 
@@ -2641,9 +2776,6 @@ def test_list_regions(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.list_regions(
                 **(util.camel_to_snake_keys(request))
@@ -2665,9 +2797,14 @@ def test_list_regions(testing_service_client, config):
         )
 
 
-def test_list_smtp_credentials(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_smtp_credentials(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'ListSmtpCredentials'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'ListSmtpCredentials')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='ListSmtpCredentials')
 
@@ -2677,9 +2814,6 @@ def test_list_smtp_credentials(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.list_smtp_credentials(
                 user_id=request.pop(util.camelize('user_id')),
@@ -2702,9 +2836,14 @@ def test_list_smtp_credentials(testing_service_client, config):
         )
 
 
-def test_list_swift_passwords(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_swift_passwords(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'ListSwiftPasswords'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'ListSwiftPasswords')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='ListSwiftPasswords')
 
@@ -2714,9 +2853,6 @@ def test_list_swift_passwords(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.list_swift_passwords(
                 user_id=request.pop(util.camelize('user_id')),
@@ -2739,9 +2875,14 @@ def test_list_swift_passwords(testing_service_client, config):
         )
 
 
-def test_list_tag_defaults(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_tag_defaults(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'ListTagDefaults'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'ListTagDefaults')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='ListTagDefaults')
 
@@ -2751,9 +2892,6 @@ def test_list_tag_defaults(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.list_tag_defaults(
                 **(util.camel_to_snake_keys(request))
@@ -2792,9 +2930,14 @@ def test_list_tag_defaults(testing_service_client, config):
         )
 
 
-def test_list_tag_namespaces(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_tag_namespaces(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'ListTagNamespaces'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'ListTagNamespaces')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='ListTagNamespaces')
 
@@ -2804,9 +2947,6 @@ def test_list_tag_namespaces(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.list_tag_namespaces(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -2848,9 +2988,14 @@ def test_list_tag_namespaces(testing_service_client, config):
         )
 
 
-def test_list_tags(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_tags(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'ListTags'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'ListTags')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='ListTags')
 
@@ -2860,9 +3005,6 @@ def test_list_tags(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.list_tags(
                 tag_namespace_id=request.pop(util.camelize('tag_namespace_id')),
@@ -2904,9 +3046,14 @@ def test_list_tags(testing_service_client, config):
         )
 
 
-def test_list_user_group_memberships(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_user_group_memberships(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'ListUserGroupMemberships'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'ListUserGroupMemberships')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='ListUserGroupMemberships')
 
@@ -2916,9 +3063,6 @@ def test_list_user_group_memberships(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.list_user_group_memberships(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -2960,9 +3104,14 @@ def test_list_user_group_memberships(testing_service_client, config):
         )
 
 
-def test_list_users(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_users(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'ListUsers'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'ListUsers')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='ListUsers')
 
@@ -2972,9 +3121,6 @@ def test_list_users(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.list_users(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -3016,9 +3162,14 @@ def test_list_users(testing_service_client, config):
         )
 
 
-def test_list_work_requests(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_work_requests(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'ListWorkRequests'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'ListWorkRequests')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='ListWorkRequests')
 
@@ -3028,9 +3179,6 @@ def test_list_work_requests(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.list_work_requests(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -3072,9 +3220,14 @@ def test_list_work_requests(testing_service_client, config):
         )
 
 
-def test_remove_user_from_group(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_remove_user_from_group(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'RemoveUserFromGroup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'RemoveUserFromGroup')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='RemoveUserFromGroup')
 
@@ -3084,9 +3237,6 @@ def test_remove_user_from_group(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.remove_user_from_group(
                 user_group_membership_id=request.pop(util.camelize('user_group_membership_id')),
@@ -3109,9 +3259,14 @@ def test_remove_user_from_group(testing_service_client, config):
         )
 
 
-def test_reset_idp_scim_client(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_reset_idp_scim_client(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'ResetIdpScimClient'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'ResetIdpScimClient')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='ResetIdpScimClient')
 
@@ -3121,9 +3276,6 @@ def test_reset_idp_scim_client(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.reset_idp_scim_client(
                 identity_provider_id=request.pop(util.camelize('identity_provider_id')),
@@ -3146,9 +3298,14 @@ def test_reset_idp_scim_client(testing_service_client, config):
         )
 
 
-def test_update_auth_token(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_update_auth_token(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'UpdateAuthToken'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'UpdateAuthToken')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='UpdateAuthToken')
 
@@ -3158,9 +3315,6 @@ def test_update_auth_token(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.update_auth_token(
                 user_id=request.pop(util.camelize('user_id')),
@@ -3185,9 +3339,14 @@ def test_update_auth_token(testing_service_client, config):
         )
 
 
-def test_update_authentication_policy(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_update_authentication_policy(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'UpdateAuthenticationPolicy'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'UpdateAuthenticationPolicy')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='UpdateAuthenticationPolicy')
 
@@ -3197,9 +3356,6 @@ def test_update_authentication_policy(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.update_authentication_policy(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -3223,9 +3379,14 @@ def test_update_authentication_policy(testing_service_client, config):
         )
 
 
-def test_update_compartment(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_update_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'UpdateCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'UpdateCompartment')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='UpdateCompartment')
 
@@ -3235,9 +3396,6 @@ def test_update_compartment(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.update_compartment(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -3261,9 +3419,14 @@ def test_update_compartment(testing_service_client, config):
         )
 
 
-def test_update_customer_secret_key(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_update_customer_secret_key(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'UpdateCustomerSecretKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'UpdateCustomerSecretKey')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='UpdateCustomerSecretKey')
 
@@ -3273,9 +3436,6 @@ def test_update_customer_secret_key(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.update_customer_secret_key(
                 user_id=request.pop(util.camelize('user_id')),
@@ -3300,9 +3460,14 @@ def test_update_customer_secret_key(testing_service_client, config):
         )
 
 
-def test_update_dynamic_group(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_update_dynamic_group(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'UpdateDynamicGroup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'UpdateDynamicGroup')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='UpdateDynamicGroup')
 
@@ -3312,9 +3477,6 @@ def test_update_dynamic_group(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.update_dynamic_group(
                 dynamic_group_id=request.pop(util.camelize('dynamic_group_id')),
@@ -3338,9 +3500,14 @@ def test_update_dynamic_group(testing_service_client, config):
         )
 
 
-def test_update_group(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_update_group(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'UpdateGroup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'UpdateGroup')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='UpdateGroup')
 
@@ -3350,9 +3517,6 @@ def test_update_group(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.update_group(
                 group_id=request.pop(util.camelize('group_id')),
@@ -3376,9 +3540,14 @@ def test_update_group(testing_service_client, config):
         )
 
 
-def test_update_identity_provider(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_update_identity_provider(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'UpdateIdentityProvider'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'UpdateIdentityProvider')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='UpdateIdentityProvider')
 
@@ -3388,9 +3557,6 @@ def test_update_identity_provider(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.update_identity_provider(
                 identity_provider_id=request.pop(util.camelize('identity_provider_id')),
@@ -3414,9 +3580,14 @@ def test_update_identity_provider(testing_service_client, config):
         )
 
 
-def test_update_idp_group_mapping(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_update_idp_group_mapping(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'UpdateIdpGroupMapping'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'UpdateIdpGroupMapping')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='UpdateIdpGroupMapping')
 
@@ -3426,9 +3597,6 @@ def test_update_idp_group_mapping(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.update_idp_group_mapping(
                 identity_provider_id=request.pop(util.camelize('identity_provider_id')),
@@ -3453,9 +3621,14 @@ def test_update_idp_group_mapping(testing_service_client, config):
         )
 
 
-def test_update_policy(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_update_policy(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'UpdatePolicy'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'UpdatePolicy')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='UpdatePolicy')
 
@@ -3465,9 +3638,6 @@ def test_update_policy(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.update_policy(
                 policy_id=request.pop(util.camelize('policy_id')),
@@ -3491,9 +3661,14 @@ def test_update_policy(testing_service_client, config):
         )
 
 
-def test_update_smtp_credential(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_update_smtp_credential(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'UpdateSmtpCredential'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'UpdateSmtpCredential')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='UpdateSmtpCredential')
 
@@ -3503,9 +3678,6 @@ def test_update_smtp_credential(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.update_smtp_credential(
                 user_id=request.pop(util.camelize('user_id')),
@@ -3530,9 +3702,14 @@ def test_update_smtp_credential(testing_service_client, config):
         )
 
 
-def test_update_swift_password(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_update_swift_password(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'UpdateSwiftPassword'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'UpdateSwiftPassword')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='UpdateSwiftPassword')
 
@@ -3542,9 +3719,6 @@ def test_update_swift_password(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.update_swift_password(
                 user_id=request.pop(util.camelize('user_id')),
@@ -3569,9 +3743,14 @@ def test_update_swift_password(testing_service_client, config):
         )
 
 
-def test_update_tag(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_update_tag(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'UpdateTag'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'UpdateTag')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='UpdateTag')
 
@@ -3581,9 +3760,6 @@ def test_update_tag(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.update_tag(
                 tag_namespace_id=request.pop(util.camelize('tag_namespace_id')),
@@ -3608,9 +3784,14 @@ def test_update_tag(testing_service_client, config):
         )
 
 
-def test_update_tag_default(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_update_tag_default(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'UpdateTagDefault'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'UpdateTagDefault')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='UpdateTagDefault')
 
@@ -3620,9 +3801,6 @@ def test_update_tag_default(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.update_tag_default(
                 tag_default_id=request.pop(util.camelize('tag_default_id')),
@@ -3646,9 +3824,14 @@ def test_update_tag_default(testing_service_client, config):
         )
 
 
-def test_update_tag_namespace(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_update_tag_namespace(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'UpdateTagNamespace'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'UpdateTagNamespace')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='UpdateTagNamespace')
 
@@ -3658,9 +3841,6 @@ def test_update_tag_namespace(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.update_tag_namespace(
                 tag_namespace_id=request.pop(util.camelize('tag_namespace_id')),
@@ -3684,9 +3864,14 @@ def test_update_tag_namespace(testing_service_client, config):
         )
 
 
-def test_update_user(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_update_user(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'UpdateUser'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'UpdateUser')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='UpdateUser')
 
@@ -3696,9 +3881,6 @@ def test_update_user(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.update_user(
                 user_id=request.pop(util.camelize('user_id')),
@@ -3722,9 +3904,14 @@ def test_update_user(testing_service_client, config):
         )
 
 
-def test_update_user_capabilities(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_update_user_capabilities(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'UpdateUserCapabilities'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'UpdateUserCapabilities')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='UpdateUserCapabilities')
 
@@ -3734,9 +3921,6 @@ def test_update_user_capabilities(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.update_user_capabilities(
                 user_id=request.pop(util.camelize('user_id')),
@@ -3760,9 +3944,14 @@ def test_update_user_capabilities(testing_service_client, config):
         )
 
 
-def test_update_user_state(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_update_user_state(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'UpdateUserState'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'UpdateUserState')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='UpdateUserState')
 
@@ -3772,9 +3961,6 @@ def test_update_user_state(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.update_user_state(
                 user_id=request.pop(util.camelize('user_id')),
@@ -3798,9 +3984,14 @@ def test_update_user_state(testing_service_client, config):
         )
 
 
-def test_upload_api_key(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_upload_api_key(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'UploadApiKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'UploadApiKey')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='identity', api_name='UploadApiKey')
 
@@ -3810,9 +4001,6 @@ def test_upload_api_key(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.identity.IdentityClient(config)
             response = client.upload_api_key(
                 user_id=request.pop(util.camelize('user_id')),

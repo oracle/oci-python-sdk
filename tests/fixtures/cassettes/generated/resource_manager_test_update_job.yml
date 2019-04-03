@@ -1,0 +1,130 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request/enable?lang=Python&serviceName=resourcemanager&apiName=UpdateJob
+  response:
+    body: {string: 'true'}
+    headers:
+      Content-Length: ['4']
+      Content-Type: [text/plain]
+      Date: ['Mon, 01 Apr 2019 22:35:48 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/config?serviceName=resourcemanager&apiName=UpdateJob&lang=Python&clientName=resourceManager
+  response:
+    body: {string: '{"region":"us-phoenix-1","tenantId":"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","userId":"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq","endpoint":null,"fingerprint":"ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9","passPhrase":"dexsdk","keyFile":"java_sdk_admin_key.pem","keyFileContent":"-----BEGIN
+        RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-128-CBC,0C9B64A4AA0303EC02C79E91D0F8B0D0\n\naSd0uIKreq5NirzJ+Esa36lYJo4lU2zSjIIw8wvZEsd+LdaifqONZIfHHiB6/KgG\nse4wd/58tPsiEgnK7D1q8wmdVDouMSX31mhcbq2bwRjXATpNnOMnhDtahJv6cw4M\nDtlXYplk0LzpP6WjqXqFST4Yz0l1NO90ahnruwcb/SUCm12ONMJ5o4G1UO2/0IkX\nTRlMRpm/etIpStNSP+1IsD1gSWlAzhs1zodkpd+2eW2ovlAaY25Hm/aqK97jzsCF\n1f4dCm7spCHYOfv10XHNB99/jomN1KQuDy29MmVaJ9oYpOIDlu0yj4Q/XempLxa6\nhqgt0gUO9cMV2bfStsHKWJwq+KoncamBHpU/+CyNjoYq1QTC0urWlCP5hNo5VZhF\nzXBJa188FD2TiPFU8Z4EhercM83TfBsRVEQOpu5sbMaUOT6xXwnCWfM5Pjxy/0xE\n6oF2zq+H0ES12dh19C5P8ueRFLyhaWFliWJv3SXy9iCslcso6USnBBKnA26xMile\nY3m9uRP31yZW8czxYSIgKEV3Mp3GFAYwuebNjLgIM7xT+PvDiOO4qAhA0waGPhYH\n2QMl9ThSahKT6vpjVUQuGOjaRcJ5Vr73VGX4MnxXVxsl5de6y/ZfP5ndx5Lb4K43\njwrMbCIzrM1ZzR2JMTuMJFDasLjEW/Y9nf7FRh2gByeGLObAmHsjlUdW65QQu+Qy\nu4ADc6TbpqvLobocF5fKgML7JCAA/YqmYlZCV6gGOdKUXUT3VMmZcebcTtw1Zmxh\nwaUQe99D90w3Q/7CCCiGO2waZaTNl+ahVnQZEGHN9xJydkCkfVZDgVmdDmsSXmxo\n2DWf2c2/1me2zZAcW0SFBnyrt3uphdCnICaqXR0AnQUmw49YY4nk2fPTMxZs1r+2\n+poVVEfr//cHTTs4yu9ZVT2wGWf/Ooo4sm7obB8EhGkrXs3ormx9WHj6ezexupsd\nanWE7Uy54ovKdOosKB6nQOfP+Iwe4sSJ6oYPNvvh19v05+AhOCdONjMeCwTfBvtJ\nA5luj6CtFbgSX96A3zTRrTXQO3N4aLTF8niL+FcZ69RzYcxp3rlDSK88JyJ9xsu1\n+lNIcAPAFhzisC/eB9b1eDJ4JErJyIdBTZ4bPv4dtl/RpFcyIA4WMjskGCRo60I7\nN3DVqGGXLlC7KDjvPmdvvfAx3lzcIANhwBhLSQJ+y1bcyW6FcX0ZtY962Hb06Qj5\nXG5nDmT1qVkfDmzpIOF9GtDgch7gtf/EjHOUyaw60dDgJ5RF6lORLjFeuU9W7I1e\nD3mpWb6WP6DKoaQTgrLLrIJCLIdXr92XmvDj+iuYdGhCIkqHWqNbRW4TyiuukNJH\n12Zq/LlA1s58YJVa520o7EOXpmD4sGIrctlI3keSmKhiavy7j5ULz5J++jL+Yxlc\n6h9q4v71oyFmVgNpIEJNg7sSCkE72yzUCaglBUdUIMG3D0sI+VwufC7lbhohvHBr\nNzmbg2bW4x0CCprf/o5JvdNiB+bQdKG4t2Q7fhhZIW7ACii591ZBbpnUakDUQBZa\nV2yMaErypILHlQvlReHXVK1adUTxLNWf//VDoyclQk5k0uFIkUmpn+EXWnEHw7e8\n-----END
+        RSA PRIVATE KEY-----\n"}'}
+    headers:
+      Content-Length: ['2261']
+      Content-Type: [application/json]
+      Date: ['Mon, 01 Apr 2019 22:35:48 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request?serviceName=resourcemanager&apiName=UpdateJob&lang=Python&sessionId=0836
+  response:
+    body: {string: '[{"containerId":"d6150530-0174-40af-a410-7d1d00969df4","request":{"jobId":"ocid1.ormjob.oc1.phx.aaaaaaaalkzehrwfga3wajavv43hbdn6hoxazmf5zhvojcvhiy5ontmzfjqa","updateJobDetails":{"displayName":"__STS0836_5680","freeformTags":{},"definedTags":{}}}}]'}
+    headers:
+      Content-Length: ['247']
+      Content-Type: [text/plain]
+      Date: ['Mon, 01 Apr 2019 22:35:48 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"displayName": "__STS0836_5680", "freeformTags": {}, "definedTags": {}}'
+    headers:
+      Content-Length: ['72']
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host content-length content-type x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="ver7hVt/xbvmpY+OFT69J+Y47I4E8UB7rQ2hQJTmKmAnzx/M4+OlNUpjnymzP31eo8yIEkZV51E2+WhCFV+06pUiqsWiEKdTAP9cKsPnn4G1hiGJfVLwh/IbjlMf7KrMTkW+jyeFGCaosJF9cDTayhW/aMkYeymu9OQdm3HiClB+9huovRLANiBc93YbtnkPLMdYyNhg7m8PkWIo5ApVHEadfwk+VMwdbf/rXpXx59j3srIv6iUtbF+POYGmZr6KFfEA29rC1aOwN0ky1B5Ztq9h8GbSXsh3E9n3rqKFF2vde28f2katVfbGY+gIjcjhyvlmxaCtg5KzY1WuhwgMJg==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Mon, 01 Apr 2019 22:35:50 GMT']
+      host: [resourcemanager.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.5]
+      opc-request-id: [A901BCD19C724DCDA90348C1D540BD2C]
+      user-agent: [Oracle-PythonSDK/2.2.5 (python 3.6.4; x86_64-Darwin)]
+      x-content-sha256: [IQN7Pe9a4lmj7FVb90hOdQAbtQSBZ336akQUFLO0Cbs=]
+    method: PUT
+    uri: https://resourcemanager.us-phoenix-1.oraclecloud.com/20180917/jobs/ocid1.ormjob.oc1.phx.aaaaaaaalkzehrwfga3wajavv43hbdn6hoxazmf5zhvojcvhiy5ontmzfjqa
+  response:
+    body: {string: "{\n  \"id\" : \"ocid1.ormjob.oc1.phx.aaaaaaaalkzehrwfga3wajavv43hbdn6hoxazmf5zhvojcvhiy5ontmzfjqa\"\
+        ,\n  \"stackId\" : \"ocid1.ormstack.oc1.phx.aaaaaaaa2wx5wd5mguhkxe7fwqu44wkwsdigssoxss5ar7fo7md3scr5vapa\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"displayName\" : \"__STS0836_5680\",\n  \"operation\" : \"PLAN\",\n\
+        \  \"applyJobPlanResolution\" : null,\n  \"resolvedPlanJobId\" : null,\n \
+        \ \"timeCreated\" : \"2019-04-01T22:31:19.896Z\",\n  \"timeFinished\" : \"\
+        2019-04-01T22:35:02.489Z\",\n  \"lifecycleState\" : \"SUCCEEDED\",\n  \"failureDetails\"\
+        \ : null,\n  \"workingDirectory\" : null,\n  \"variables\" : {\n    \"display_name_prefix\"\
+        \ : \"orm-javasdk\",\n    \"compartment_ocid\" : \"fake_compartment_ocid\"\
+        ,\n    \"region\" : \"us-phoenix-1\"\n  },\n  \"freeformTags\" : { },\n  \"\
+        definedTags\" : { }\n}"}
+    headers:
+      Cache-Control: ['no-cache, no-store, must-revalidate']
+      Connection: [keep-alive]
+      Content-Length: ['805']
+      Content-Type: [application/json]
+      Date: ['Mon, 01 Apr 2019 22:35:50 GMT']
+      ETag: [a25f14d8436d3e6895825fadf9ee52f5b54ae9f39b32a2bfe3395fd1ec92025f]
+      Pragma: [no-cache]
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains;]
+      X-Content-Type-Options: [nosniff]
+      X-XSS-Protection: [1; mode=block]
+      opc-request-id: [A901BCD19C724DCDA90348C1D540BD2C/33276BA09877E8133C947A2F5EC832C4/AE4C28FD54C0ABA8FBDBCF231C0271D4]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"containerId": "d6150530-0174-40af-a410-7d1d00969df4", "listResponse":
+      false, "requestClass": "com.oracle.bmc.resourcemanager.requests.UpdateJobRequest",
+      "requestJson": "{\"jobId\": \"ocid1.ormjob.oc1.phx.aaaaaaaalkzehrwfga3wajavv43hbdn6hoxazmf5zhvojcvhiy5ontmzfjqa\",
+      \"updateJobDetails\": {\"displayName\": \"__STS0836_5680\", \"freeformTags\":
+      {}, \"definedTags\": {}}}", "responseJson": "{\"job\": {\"id\": \"ocid1.ormjob.oc1.phx.aaaaaaaalkzehrwfga3wajavv43hbdn6hoxazmf5zhvojcvhiy5ontmzfjqa\",
+      \"stackId\": \"ocid1.ormstack.oc1.phx.aaaaaaaa2wx5wd5mguhkxe7fwqu44wkwsdigssoxss5ar7fo7md3scr5vapa\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0836_5680\", \"operation\": \"PLAN\", \"applyJobPlanResolution\":
+      null, \"resolvedPlanJobId\": null, \"timeCreated\": \"2019-04-01T22:31:19.896000+00:00\",
+      \"timeFinished\": \"2019-04-01T22:35:02.489000+00:00\", \"lifecycleState\":
+      \"SUCCEEDED\", \"failureDetails\": null, \"workingDirectory\": null, \"variables\":
+      {\"displayNamePrefix\": \"orm-javasdk\", \"compartmentOcid\": \"fake_compartment_ocid\",
+      \"region\": \"us-phoenix-1\"}, \"freeformTags\": {}, \"definedTags\": {}}, \"opcRequestId\":
+      \"498DB2578C3F4DA18BD446366B9F40AE\", \"opcNextPage\": null, \"eTag\": \"a25f14d8436d3e6895825fadf9ee52f5b54ae9f39b32a2bfe3395fd1ec92025f\"}",
+      "responseClass": "com.oracle.bmc.resourcemanager.responses.UpdateJobResponse"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['1452']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=0836&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Mon, 01 Apr 2019 22:35:50 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+version: 1

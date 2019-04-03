@@ -28,9 +28,14 @@ def vcr_fixture(request):
         yield
 
 
-def test_get_resource_type(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_get_resource_type(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_search', 'GetResourceType'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_search', util.camelize('resource_search'), 'GetResourceType')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='resource_search', api_name='GetResourceType')
 
@@ -40,9 +45,6 @@ def test_get_resource_type(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.resource_search.ResourceSearchClient(config)
             response = client.get_resource_type(
                 name=request.pop(util.camelize('name')),
@@ -65,9 +67,14 @@ def test_get_resource_type(testing_service_client, config):
         )
 
 
-def test_list_resource_types(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_list_resource_types(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_search', 'ListResourceTypes'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_search', util.camelize('resource_search'), 'ListResourceTypes')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='resource_search', api_name='ListResourceTypes')
 
@@ -77,9 +84,6 @@ def test_list_resource_types(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.resource_search.ResourceSearchClient(config)
             response = client.list_resource_types(
                 **(util.camel_to_snake_keys(request))
@@ -118,9 +122,14 @@ def test_list_resource_types(testing_service_client, config):
         )
 
 
-def test_search_resources(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_search_resources(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_search', 'SearchResources'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_search', util.camelize('resource_search'), 'SearchResources')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='resource_search', api_name='SearchResources')
 
@@ -130,9 +139,6 @@ def test_search_resources(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.resource_search.ResourceSearchClient(config)
             response = client.search_resources(
                 search_details=request.pop(util.camelize('search_details')),

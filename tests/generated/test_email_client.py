@@ -28,9 +28,14 @@ def vcr_fixture(request):
         yield
 
 
-def test_create_sender(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="email-dev_us_grp@oracle.com" jiraProject="Email Delivery (ED)" opsJiraProject="Email Delivery"
+def test_create_sender(testing_service_client):
     if not testing_service_client.is_api_enabled('email', 'CreateSender'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('email', util.camelize('email'), 'CreateSender')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='email', api_name='CreateSender')
 
@@ -40,9 +45,6 @@ def test_create_sender(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.email.EmailClient(config)
             response = client.create_sender(
                 create_sender_details=request.pop(util.camelize('create_sender_details')),
@@ -65,9 +67,14 @@ def test_create_sender(testing_service_client, config):
         )
 
 
-def test_create_suppression(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="email-dev_us_grp@oracle.com" jiraProject="Email Delivery (ED)" opsJiraProject="Email Delivery"
+def test_create_suppression(testing_service_client):
     if not testing_service_client.is_api_enabled('email', 'CreateSuppression'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('email', util.camelize('email'), 'CreateSuppression')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='email', api_name='CreateSuppression')
 
@@ -77,9 +84,6 @@ def test_create_suppression(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.email.EmailClient(config)
             response = client.create_suppression(
                 create_suppression_details=request.pop(util.camelize('create_suppression_details')),
@@ -102,9 +106,14 @@ def test_create_suppression(testing_service_client, config):
         )
 
 
-def test_delete_sender(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="email-dev_us_grp@oracle.com" jiraProject="Email Delivery (ED)" opsJiraProject="Email Delivery"
+def test_delete_sender(testing_service_client):
     if not testing_service_client.is_api_enabled('email', 'DeleteSender'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('email', util.camelize('email'), 'DeleteSender')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='email', api_name='DeleteSender')
 
@@ -114,9 +123,6 @@ def test_delete_sender(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.email.EmailClient(config)
             response = client.delete_sender(
                 sender_id=request.pop(util.camelize('sender_id')),
@@ -139,9 +145,14 @@ def test_delete_sender(testing_service_client, config):
         )
 
 
-def test_delete_suppression(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="email-dev_us_grp@oracle.com" jiraProject="Email Delivery (ED)" opsJiraProject="Email Delivery"
+def test_delete_suppression(testing_service_client):
     if not testing_service_client.is_api_enabled('email', 'DeleteSuppression'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('email', util.camelize('email'), 'DeleteSuppression')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='email', api_name='DeleteSuppression')
 
@@ -151,9 +162,6 @@ def test_delete_suppression(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.email.EmailClient(config)
             response = client.delete_suppression(
                 suppression_id=request.pop(util.camelize('suppression_id')),
@@ -176,9 +184,14 @@ def test_delete_suppression(testing_service_client, config):
         )
 
 
-def test_get_sender(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="email-dev_us_grp@oracle.com" jiraProject="Email Delivery (ED)" opsJiraProject="Email Delivery"
+def test_get_sender(testing_service_client):
     if not testing_service_client.is_api_enabled('email', 'GetSender'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('email', util.camelize('email'), 'GetSender')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='email', api_name='GetSender')
 
@@ -188,9 +201,6 @@ def test_get_sender(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.email.EmailClient(config)
             response = client.get_sender(
                 sender_id=request.pop(util.camelize('sender_id')),
@@ -213,9 +223,14 @@ def test_get_sender(testing_service_client, config):
         )
 
 
-def test_get_suppression(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="email-dev_us_grp@oracle.com" jiraProject="Email Delivery (ED)" opsJiraProject="Email Delivery"
+def test_get_suppression(testing_service_client):
     if not testing_service_client.is_api_enabled('email', 'GetSuppression'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('email', util.camelize('email'), 'GetSuppression')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='email', api_name='GetSuppression')
 
@@ -225,9 +240,6 @@ def test_get_suppression(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.email.EmailClient(config)
             response = client.get_suppression(
                 suppression_id=request.pop(util.camelize('suppression_id')),
@@ -250,9 +262,14 @@ def test_get_suppression(testing_service_client, config):
         )
 
 
-def test_list_senders(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="email-dev_us_grp@oracle.com" jiraProject="Email Delivery (ED)" opsJiraProject="Email Delivery"
+def test_list_senders(testing_service_client):
     if not testing_service_client.is_api_enabled('email', 'ListSenders'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('email', util.camelize('email'), 'ListSenders')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='email', api_name='ListSenders')
 
@@ -262,9 +279,6 @@ def test_list_senders(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.email.EmailClient(config)
             response = client.list_senders(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -306,9 +320,14 @@ def test_list_senders(testing_service_client, config):
         )
 
 
-def test_list_suppressions(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="email-dev_us_grp@oracle.com" jiraProject="Email Delivery (ED)" opsJiraProject="Email Delivery"
+def test_list_suppressions(testing_service_client):
     if not testing_service_client.is_api_enabled('email', 'ListSuppressions'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('email', util.camelize('email'), 'ListSuppressions')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='email', api_name='ListSuppressions')
 
@@ -318,9 +337,6 @@ def test_list_suppressions(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.email.EmailClient(config)
             response = client.list_suppressions(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -362,9 +378,14 @@ def test_list_suppressions(testing_service_client, config):
         )
 
 
-def test_update_sender(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="email-dev_us_grp@oracle.com" jiraProject="Email Delivery (ED)" opsJiraProject="Email Delivery"
+def test_update_sender(testing_service_client):
     if not testing_service_client.is_api_enabled('email', 'UpdateSender'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('email', util.camelize('email'), 'UpdateSender')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='email', api_name='UpdateSender')
 
@@ -374,9 +395,6 @@ def test_update_sender(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.email.EmailClient(config)
             response = client.update_sender(
                 sender_id=request.pop(util.camelize('sender_id')),
