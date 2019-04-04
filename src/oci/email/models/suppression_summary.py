@@ -41,6 +41,10 @@ class SuppressionSummary(object):
         Initializes a new SuppressionSummary object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this SuppressionSummary.
+        :type compartment_id: str
+
         :param email_address:
             The value to assign to the email_address property of this SuppressionSummary.
         :type email_address: str
@@ -61,6 +65,7 @@ class SuppressionSummary(object):
 
         """
         self.swagger_types = {
+            'compartment_id': 'str',
             'email_address': 'str',
             'id': 'str',
             'reason': 'str',
@@ -68,16 +73,42 @@ class SuppressionSummary(object):
         }
 
         self.attribute_map = {
+            'compartment_id': 'compartmentId',
             'email_address': 'emailAddress',
             'id': 'id',
             'reason': 'reason',
             'time_created': 'timeCreated'
         }
 
+        self._compartment_id = None
         self._email_address = None
         self._id = None
         self._reason = None
         self._time_created = None
+
+    @property
+    def compartment_id(self):
+        """
+        Gets the compartment_id of this SuppressionSummary.
+        The OCID for the compartment.
+
+
+        :return: The compartment_id of this SuppressionSummary.
+        :rtype: str
+        """
+        return self._compartment_id
+
+    @compartment_id.setter
+    def compartment_id(self, compartment_id):
+        """
+        Sets the compartment_id of this SuppressionSummary.
+        The OCID for the compartment.
+
+
+        :param compartment_id: The compartment_id of this SuppressionSummary.
+        :type: str
+        """
+        self._compartment_id = compartment_id
 
     @property
     def email_address(self):
