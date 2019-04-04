@@ -560,7 +560,7 @@ class ShowOCIService(object):
                 else:
                     raise
 
-            data_subs = [str(e.region_name) for e in sub_regions]
+            data_subs = [str(es.region_name) for es in sub_regions]
             data = {
                 'id': tenancy.id,
                 'name': tenancy.name,
@@ -696,7 +696,7 @@ class ShowOCIService(object):
                     group_users = []
                     for ugm in user_group_memberships:
                         members.append({'user_id': ugm.user_id, 'group_id': ugm.group_id})
-                        for item in [str(item.name) for item in users if item.id == ugm.user_id]:
+                        for item in [str(item_var.name) for item_var in users if item_var.id == ugm.user_id]:
                             group_users.append(item)
 
                     if group_users:
@@ -1318,7 +1318,7 @@ class ShowOCIService(object):
                     for rt in route_tables:
                         val = {'id': str(rt.id), 'vcn_id': str(rt.vcn_id), 'name': str(rt.display_name),
                                'time_created': str(rt.time_created),
-                               'route_rules': [{'destination': str(e.destination), 'network_entity_id': str(e.network_entity_id)} for e in rt.route_rules],
+                               'route_rules': [{'destination': str(es.destination), 'network_entity_id': str(es.network_entity_id)} for es in rt.route_rules],
                                'compartment_name': str(compartment['name']),
                                'defined_tags': [] if rt.defined_tags is None else rt.defined_tags,
                                'freeform_tags': [] if rt.freeform_tags is None else rt.freeform_tags,
@@ -1599,7 +1599,7 @@ class ShowOCIService(object):
                                'name': str(subnet.display_name), 'cidr_block': str(subnet.cidr_block),
                                'subnet': (str(subnet.cidr_block) + "  " + availability_domain + (" (Private) " if subnet.prohibit_public_ip_on_vnic else " (Public)")),
                                'time_created': str(subnet.time_created),
-                               'security_list_ids': [str(e) for e in subnet.security_list_ids],
+                               'security_list_ids': [str(es) for es in subnet.security_list_ids],
                                'dhcp_options_id': str(subnet.dhcp_options_id),
                                'route_table_id': str(subnet.route_table_id), 'dns_label': str(subnet.dns_label),
                                'defined_tags': [] if subnet.defined_tags is None else subnet.defined_tags,
@@ -2075,7 +2075,7 @@ class ShowOCIService(object):
                                'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                                'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
                                'region_name': str(self.config['region']),
-                               'static_routes': [str(e) for e in arr.static_routes], 'tunnels': data_tun}
+                               'static_routes': [str(es) for es in arr.static_routes], 'tunnels': data_tun}
                         data.append(val)
                         cnt += 1
 
