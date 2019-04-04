@@ -1,5 +1,5 @@
 # showoci
-# README.md, last updated 3/13/2019
+##### README.md, last updated 4/2/2019
 ### Oracle Cloud Infrastructure Reporting Tool
 
 ##### Generate OCI resources of your tenancy using Python OCI SDK  
@@ -15,7 +15,6 @@
 - oci.identity.IdentityClient            
 - oci.load_balancer.LoadBalancerClient   
 - oci.email.EmailClient                  
-- oci.key_management.KmsVaultClient    
 
 ##### Required OCI IAM user with read only privileges:  
 ##### Inspect privilege will have some limitations especially on object storage sizes
@@ -39,6 +38,9 @@ pip install oci oci-cli
 brew install python3
 pip3 install oci oci-cli 
 ```
+
+### Installation on OCI VM with Oracle Cloud Developer Image
+##### All Installed, just run the config below
 
 ### Installation on OCI VM with Oracle Linux 7  
 
@@ -146,6 +148,94 @@ optional arguments:
 ############################################################
 #                  Start Extracting Data                   #
 ############################################################
+
+############################################################
+#                        showoci.py                        #
+############################################################
+Config File    : ~/.oci/config
+Config Profile : adi
+Version        : 19.4.2
+Date/Time      : 2019-04-03 00:00:04
+Comand Line    : -t adi -a
+OCI SDK Ver    : 2.2.1
+
+############################################################
+#                 Load OCI data to Memory                  #
+############################################################
+Load Guide - '.' Compartment, '+' VCN, '-' Subnets
+
+Identity...
+--> Tenancy                  <--  (1) - 0 sec
+--> Compartments             <--  (12) - 0 sec
+
+##############################
+#    Region us-ashburn-1     #
+##############################
+Identity...
+--> Availability Domains     <--  (3) - 0 sec
+
+Network...
+--> Virtual Cloud Networks   <-- ............ (5) - 1 sec
+--> Subnets                  <-- +++++ (54) - 7 sec
+--> Service Gateways         <-- ............ (1) - 1 sec
+--> NAT Gateways             <-- ............ (0) - 0 sec
+--> Dynamic Routing GWs      <-- ............ (3) - 2 sec
+--> Dynamic Routing GW Attch <-- ............ (3) - 1 sec
+--> Customer Prem Equipments <-- ............ (1) - 1 sec
+--> IPSEC tunnels            <-- ............ (0) - 1 sec
+--> Remote Peer Conns        <-- ............ (1) - 1 sec
+--> Virtual Circuits         <-- ............ (2) - 1 sec
+--> Internet Gateways        <-- +++++ (3) - 4 sec
+--> Local Peer GWs           <-- +++++ (0) - 5 sec
+--> Security Lists           <-- +++++ (61) - 5 sec
+--> DHCP Options             <-- +++++ (8) - 5 sec
+--> Route Tables             <-- +++++ (66) - 6 sec
+--> Routed Private IPs       <--  (0) - 0 sec
+
+Compute...
+--> Instances                <-- ............ (146) - 21 sec
+--> Images                   <-- ............ (33) - 5 sec
+--> Boot Volumes Attached    <-- ............ (146) - 5 sec
+--> Volumes Attached         <-- ............ (120) - 8 sec
+--> Vnics Attached           <-- ............ (146) - 22 sec
+--> Instance Configurations  <-- ............ (0) - 1 sec
+--> Instance Pools           <-- ............ (0) - 1 sec
+
+Block Storage...
+--> Block Volume Groups      <-- ............ (0) - 1 sec
+--> Boot Volumes             <-- ............ (157) - 13 sec
+--> Boot Volumes Backups     <-- ............ (7) - 1 sec
+--> Block Volumes            <-- ............ (164) - 15 sec
+--> Block Volumes Backups    <--  (344) - 1 sec
+
+Database...
+--> DB Systems               <-- ............ (3) - 17 sec
+--> Autonomous Databases     <-- ............ (0) - 4 sec
+
+Load Balancer...
+--> Load Balancers           <-- ............ (18) - 5 sec
+--> Backend Sets             <-- LLLLLLLLLLLL (26) - 49 sec
+
+Object Storage...
+--> Buckets                  <-- ............ (4) - 3 sec
+
+File Storage...
+--> File Systems             <-- ............ (5) - 1 sec
+--> Exports                  <-- ............ (8) - 0 sec
+--> Mount Targets            <-- ............ (7) - 2 sec
+
+Email Notifications...
+--> Senders                  <-- ............ (0) - 21 sec
+--> Suppressions             <-- ............ (0) - 2 sec
+
+Resource Management...
+--> Stacks                   <-- ............ (0) - 2 sec
+
+
+############################################################
+#                  Start Processing Data                   #
+############################################################
+
 Extracting Identity
     Tenancy...
     Users...
@@ -163,14 +253,6 @@ Extracting Region us-ashburn-1
     Compartment Adi / Prod...
     Compartment NetworkCompartment...
 
-Extracting Region us-phoenix-1
-    Compartment gse00015259 (root)...
-    Compartment Adi...
-    Compartment Adi / Dev...
-    Compartment Adi / Dev / DevA...
-    Compartment Adi / Dev / DevB...
-    Compartment Adi / Prod...
-    Compartment NetworkCompartment...
 
 ############################################################
 #                         Tenancy                          #
@@ -184,15 +266,12 @@ Subs Region - us-ashburn-1, us-phoenix-1
 #           Users            #
 ##############################
 --> adi.zohar
-    Keys   = API = 0  Tokens = 0  Secret = 0  Swift = 0  SMTP  = 0
     Groups = Administrators 
 
 --> adi_ocicli
-    Keys   = API = 1  Tokens = 1  Secret = 0  Swift = 1  SMTP  = 0
     Groups = Administrators 
 
 --> adi_terraform
-    Keys   = API = 1  Tokens = 1  Secret = 1  Swift = 1  SMTP  = 1
     Groups = Administrators 
 
 ##############################
@@ -358,12 +437,10 @@ Compartment gse00000000 (root):
 ##############################
 #       Remote Peering       #
 ##############################
---> RPC    Id    : ocid1.remotepeeringconnection.oc1.iad.aaaaaaaavvulhrxdlmlnusfus67ilttz3qbyy4cucmck3o7rswll4x5azkha
-           PeerId: ocid1.remotepeeringconnection.oc1.phx.aaaaaaaa6vbbgmamanroam4rn6hmdfsg6l3565v57fwhbu3qgply7w3ggqea
-           Name  : AdiRemotePeer
+--> RPC    Name  : AdiRemotePeer
            DRG   : drg
            Status: PEERED
-           Region: us-phoenix-1
+		   Peer  : PhxRemotePeer - us-phoenix-1
 
 ############################################################
 #                    Compartment Oracle                    #
@@ -372,72 +449,69 @@ Compartment gse00000000 (root):
 ##############################
 #     Compute Instances      #
 ##############################
---> CUST TEST - VM.Standard2.1 - RUNNING
-    AD  : cWKV:US-ASHBURN-AD-2
-    Img : Oracle-Linux-7.5-2018.06.14-0
-    Boot: 47gb - CUST TEST (Boot Volume)  (AVAILABLE)
-    Vol : 100gb - VM001_2nd_100Cold  (AVAILABLE)
-    Vol : 100gb - VM002_DATA_100  (AVAILABLE) Backup=bronze 
-    Vnic: 10.99.3.2 (Priv), None (Pub)  - Primary
 
---> OCLSVM001 - VM.Standard2.2 - RUNNING
-    AD  : cWKV:US-ASHBURN-AD-2
-    Img : Oracle-Linux-7.5-2018.06.14-0
-    Boot: 47gb - OCLSVM001 (Boot Volume)  (AVAILABLE)
-    Vol : 100gb - VM001_DATA_100  (AVAILABLE)
-    Vol : 150gb - VM001_FRM_150  (AVAILABLE)
-    Vnic: 10.99.3.4 (Priv), None (Pub)  - Primary
+--> VM.Standard1.1 - demohost - RUNNING
+        AD  : fHBa:US-ASHBURN-AD-1 - FAULT-DOMAIN-2
+        Img : Oracle-Linux-7.5-2018.06.14-0
+        Boot: 47gb - demohost (Boot Volume) bronze  - Group AdiVol1
+        VNIC: 10.1.0.2 (Prv), 129.213.148.40 (Pub) - Primary , Subnet (sub1 10.1.0.0/26), VCN (vcn)
+        Console Connection Active
 
---> OCLSVR2 - VM.Standard2.2 - RUNNING
-    AD  : cWKV:US-ASHBURN-AD-2
-    Img : Windows-Server-2012-R2-Standard-Edition-VM-Gen2-2018.05.21-0
-    Boot: 256gb - dr2no (Boot Volume)  (AVAILABLE)
-    Vol : 150gb - dr2noBV1  (AVAILABLE)
-    Vnic: 172.27.130.2 (Priv), 129.146.165.108 (Pub)  - Primary
+--> VM.Standard2.1 - inst-hari6-Adi-Instance-Pool - RUNNING
+        AD  : fHBa:US-ASHBURN-AD-3 - FAULT-DOMAIN-3
+        Img : Oracle-Linux-7.5-2018.10.16-0
+        Boot: 47gb - inst-hari6-Adi-Instance-Pool (Boot Volume) 
+        VNIC: 10.1.0.204 (Prv), 129.213.110.160 (Pub) - Primary , Subnet (sub3 10.1.0.192/27), VCN (vcn)
 
 ##############################
 # Compute Inst Configuration #
 ##############################
-AdiInstanceConfig - VM.Standard2.1
-InstanceConfig - VM.Standard1.1
+
+--> AdiInstanceConfig
+        Shape : VM.Standard2.1
+        Image : Oracle-Linux-7.5-2018.10.16-0
+
+--> InstanceConfig
+        Shape : VM.Standard1.1
+        Image : Oracle-Linux-7.5-2018.06.14-0
+
 
 ##############################
 #   Compute Instance Pool    #
 ##############################
-Adi-Instance-Pool - RUNNING - Size: 1
+--> Adi-Instance-Pool - RUNNING - Size: 1
+        ADs   : fHBa:US-ASHBURN-AD-3, fHBa:US-ASHBURN-AD-2
+        Config: AdiInstanceConfig - VM.Standard2.1
 
 ##############################
 #   Compute Custom Images    #
 ##############################
---> AdiZoharImage - Oracle Linux - 47gb - Base:  Oracle-Linux-7.5-2018.06.14-0
+--> adi_custom_image1 - Oracle Linux - 47gb - Base:  Oracle-Linux-7.4-2018.01.10-0
+--> adi_custom_image2 - Oracle Linux - 47gb - Base:  Oracle-Linux-7.4-2018.01.10-0
+
+##############################
+#  Block Boot Not Attached   #
+##############################
+--> 47gb    - BOOTNOTATT (Boot Volume)  - jjZD:US-ASHBURN-AD-3 - 2018-07-09 16:21
 
 ##############################
 #    Boot Volume Backups     #
 ##############################
---> demohost (Boot Volume), FULL, MANUAL, 2018-07-25 03:12 - None
-        Name : demohost_backup
-        Size : 47gb , Stored 14gb
---> demohost (Boot Volume), INCREMENTAL, SCHEDULED, 2018-08-01 16:27 - 2019-08-01 23:07
-        Name : Auto-backup for 2018-08-01 04:00:00 via policy: bronze
+--> demohost (Boot Volume),  - Auto-backup for 2018-08-01 04:00:00 via policy: bronze
+        Type : INCREMENTAL, SCHEDULED, 2018-08-01 16:27 -> 2019-08-01 23:07
         Size : 47gb , Stored 1gb
---> demohost (Boot Volume), INCREMENTAL, SCHEDULED, 2018-09-01 07:50 - 2019-09-01 14:30
-        Name : Auto-backup for 2018-09-01 04:00:00 via policy: bronze
+--> demohost (Boot Volume),  - Auto-backup for 2018-09-01 04:00:00 via policy: bronze
+        Type : INCREMENTAL, SCHEDULED, 2018-09-01 07:50 -> 2019-09-01 14:30
         Size : 47gb , Stored 1gb
---> demohost (Boot Volume), INCREMENTAL, SCHEDULED, 2018-10-01 09:02 - 2019-10-01 15:42
-        Name : Auto-backup for 2018-10-01 04:00:00 via policy: bronze
-        Size : 47gb , Stored 1gb
---> demohost (Boot Volume), INCREMENTAL, SCHEDULED, 2018-11-01 09:07 - 2019-11-01 15:47
-        Name : Auto-backup for 2018-11-01 04:00:00 via policy: bronze
-        Size : 47gb , Stored 10gb
 
 ##############################
 #    Block Volume Backups    #
 ##############################
---> Adi_50G, FULL, MANUAL, 2018-10-22 02:52 - None
-        Name : Adi_Backup_50G
+--> Adi_50G ( Source TERMINATED ) - Adi_Backup_50G
+        Type : FULL, MANUAL, 2018-10-22 02:52 -> Keep
         Size : 50gb , Stored 1gb
---> Adi_50G, INCREMENTAL, SCHEDULED, 2018-11-01 04:40 - 2019-11-01 11:20
-        Name : Auto-backup for 2018-11-01 04:00:00 via policy: bronze
+--> Adi_50G ( Source TERMINATED ) - Auto-backup for 2018-11-01 04:00:00 via policy: bronze
+        Type : INCREMENTAL, SCHEDULED, 2018-11-01 04:40 -> 2019-11-01 11:20
         Size : 50gb , Stored 1gb
 
 ##############################
@@ -523,8 +597,8 @@ Adi-Instance-Pool - RUNNING - Size: 1
 ##############################
 --> fs-9846 - cWKV:US-ASHBURN-AD-1 - ACTIVE - 0.0gb metered
     Export    : /fss/OracleBackup - ACTIVE
-    Export Set: OracleBackup - export set - cWKV:US-ASHBURN-AD-1 - ACTIVE
-    Mount     : OracleBackup - Subnet: 10.99.2.0/24  Production (Private) ACTIVE
+    Export Set: OracleBackup - export set - cWKV:US-ASHBURN-AD-1 - VCN (vcn)
+    Mount     : OracleBackup - Subnet: 10.99.2.0/24  Production (Private) , VCN (vcn)
     Mount IP  : 10.99.2.4 - privateip20180719175445
 
 ##############################

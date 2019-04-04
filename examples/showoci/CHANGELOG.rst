@@ -5,6 +5,31 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+19.4.2 - 2019-04-02
+====================
+
+Added
+-----
+* Split application to classes and modules
+* Added Tags inside Json output
+* Added Cache components and print the cache
+* Added autonomouns database backups
+* uploaded to github
+
+====================
+3.0.7 - 2019-03-14
+====================
+
+Added
+-----
+* Add execution date/time 
+* Add command line
+
+Fixed
+-----
+* Use OCI constants for DBSystem and Config
+
+====================
 3.0.6 - 2019-03-13
 ====================
 
