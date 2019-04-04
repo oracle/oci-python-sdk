@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class GenerateAutonomousDataWarehouseWalletDetails(object):
     """
-    Details to create and download a wallet for an Oracle Autonomous Data Warehouse.
+    **Deprecated.** See :func:`generate_autonomous_database_wallet_details` for reference information about creating and downloading a wallet for an Oracle Autonomous Data Warehouse.
     """
 
     def __init__(self, **kwargs):

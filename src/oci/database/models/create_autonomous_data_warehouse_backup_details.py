@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateAutonomousDataWarehouseBackupDetails(object):
     """
-    Details to create an Oracle Autonomous Data Warehouse backup.
+    **Deprecated.** See :func:`create_autonomous_database_backup_details` for reference information about creating Autonomous Data Warehouse backups.
 
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """

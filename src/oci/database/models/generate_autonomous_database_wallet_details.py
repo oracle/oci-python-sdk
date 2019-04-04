@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class GenerateAutonomousDatabaseWalletDetails(object):
     """
-    Details to create and download an Oracle Autonomous Transaction Processing database wallet.
+    Details to create and download an Oracle Autonomous Database wallet.
     """
 
     def __init__(self, **kwargs):

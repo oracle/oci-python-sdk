@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutonomousDataWarehouseConnectionStrings(object):
     """
-    Connection strings to connect to an Oracle Autonomous Data Warehouse.
+    **Deprecated.** For information about connection strings to connect to an Oracle Autonomous Data Warehouse, see :func:`autonomous_database_connection_strings`.
     """
 
     def __init__(self, **kwargs):

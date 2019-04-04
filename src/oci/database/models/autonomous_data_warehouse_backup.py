@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutonomousDataWarehouseBackup(object):
     """
-    An Autonomous Data Warehouse backup.
+    **Deprecated.** See :class:`AutonomousDatabaseBackup` for reference information about Autonomous Data Warehouse backups.
     """
 
     #: A constant which can be used with the type property of a AutonomousDataWarehouseBackup.

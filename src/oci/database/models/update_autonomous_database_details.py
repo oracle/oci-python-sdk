@@ -14,6 +14,14 @@ class UpdateAutonomousDatabaseDetails(object):
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
 
+    #: A constant which can be used with the license_model property of a UpdateAutonomousDatabaseDetails.
+    #: This constant has a value of "LICENSE_INCLUDED"
+    LICENSE_MODEL_LICENSE_INCLUDED = "LICENSE_INCLUDED"
+
+    #: A constant which can be used with the license_model property of a UpdateAutonomousDatabaseDetails.
+    #: This constant has a value of "BRING_YOUR_OWN_LICENSE"
+    LICENSE_MODEL_BRING_YOUR_OWN_LICENSE = "BRING_YOUR_OWN_LICENSE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateAutonomousDatabaseDetails object with values from keyword arguments.
@@ -43,6 +51,11 @@ class UpdateAutonomousDatabaseDetails(object):
             The value to assign to the defined_tags property of this UpdateAutonomousDatabaseDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param license_model:
+            The value to assign to the license_model property of this UpdateAutonomousDatabaseDetails.
+            Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
+        :type license_model: str
+
         """
         self.swagger_types = {
             'cpu_core_count': 'int',
@@ -50,7 +63,8 @@ class UpdateAutonomousDatabaseDetails(object):
             'display_name': 'str',
             'admin_password': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'license_model': 'str'
         }
 
         self.attribute_map = {
@@ -59,7 +73,8 @@ class UpdateAutonomousDatabaseDetails(object):
             'display_name': 'displayName',
             'admin_password': 'adminPassword',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'license_model': 'licenseModel'
         }
 
         self._cpu_core_count = None
@@ -68,6 +83,7 @@ class UpdateAutonomousDatabaseDetails(object):
         self._admin_password = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._license_model = None
 
     @property
     def cpu_core_count(self):
@@ -232,6 +248,38 @@ class UpdateAutonomousDatabaseDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def license_model(self):
+        """
+        Gets the license_model of this UpdateAutonomousDatabaseDetails.
+        The new Oracle license model that applies to the Oracle Autonomous Transaction Processing database.
+
+        Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
+
+
+        :return: The license_model of this UpdateAutonomousDatabaseDetails.
+        :rtype: str
+        """
+        return self._license_model
+
+    @license_model.setter
+    def license_model(self, license_model):
+        """
+        Sets the license_model of this UpdateAutonomousDatabaseDetails.
+        The new Oracle license model that applies to the Oracle Autonomous Transaction Processing database.
+
+
+        :param license_model: The license_model of this UpdateAutonomousDatabaseDetails.
+        :type: str
+        """
+        allowed_values = ["LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"]
+        if not value_allowed_none_or_none_sentinel(license_model, allowed_values):
+            raise ValueError(
+                "Invalid value for `license_model`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._license_model = license_model
 
     def __repr__(self):
         return formatted_flat_dict(self)

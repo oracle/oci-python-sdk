@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutonomousDataWarehouseSummary(object):
     """
-    An Oracle Autonomous Data Warehouse.
+    **Deprecated.** See :func:`autonomous_database` for reference information about Autonomous Databases with the warehouse workload type.
 
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
