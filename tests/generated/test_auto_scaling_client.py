@@ -28,9 +28,14 @@ def vcr_fixture(request):
         yield
 
 
-def test_create_auto_scaling_configuration(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="COM"
+def test_create_auto_scaling_configuration(testing_service_client):
     if not testing_service_client.is_api_enabled('autoscaling', 'CreateAutoScalingConfiguration'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('autoscaling', util.camelize('auto_scaling'), 'CreateAutoScalingConfiguration')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='autoscaling', api_name='CreateAutoScalingConfiguration')
 
@@ -40,9 +45,6 @@ def test_create_auto_scaling_configuration(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.autoscaling.AutoScalingClient(config)
             response = client.create_auto_scaling_configuration(
                 create_auto_scaling_configuration_details=request.pop(util.camelize('create_auto_scaling_configuration_details')),
@@ -65,9 +67,14 @@ def test_create_auto_scaling_configuration(testing_service_client, config):
         )
 
 
-def test_create_auto_scaling_policy(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="COM"
+def test_create_auto_scaling_policy(testing_service_client):
     if not testing_service_client.is_api_enabled('autoscaling', 'CreateAutoScalingPolicy'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('autoscaling', util.camelize('auto_scaling'), 'CreateAutoScalingPolicy')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='autoscaling', api_name='CreateAutoScalingPolicy')
 
@@ -77,9 +84,6 @@ def test_create_auto_scaling_policy(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.autoscaling.AutoScalingClient(config)
             response = client.create_auto_scaling_policy(
                 auto_scaling_configuration_id=request.pop(util.camelize('auto_scaling_configuration_id')),
@@ -103,9 +107,14 @@ def test_create_auto_scaling_policy(testing_service_client, config):
         )
 
 
-def test_delete_auto_scaling_configuration(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="COM"
+def test_delete_auto_scaling_configuration(testing_service_client):
     if not testing_service_client.is_api_enabled('autoscaling', 'DeleteAutoScalingConfiguration'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('autoscaling', util.camelize('auto_scaling'), 'DeleteAutoScalingConfiguration')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='autoscaling', api_name='DeleteAutoScalingConfiguration')
 
@@ -115,9 +124,6 @@ def test_delete_auto_scaling_configuration(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.autoscaling.AutoScalingClient(config)
             response = client.delete_auto_scaling_configuration(
                 auto_scaling_configuration_id=request.pop(util.camelize('auto_scaling_configuration_id')),
@@ -140,9 +146,14 @@ def test_delete_auto_scaling_configuration(testing_service_client, config):
         )
 
 
-def test_delete_auto_scaling_policy(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="COM"
+def test_delete_auto_scaling_policy(testing_service_client):
     if not testing_service_client.is_api_enabled('autoscaling', 'DeleteAutoScalingPolicy'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('autoscaling', util.camelize('auto_scaling'), 'DeleteAutoScalingPolicy')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='autoscaling', api_name='DeleteAutoScalingPolicy')
 
@@ -152,9 +163,6 @@ def test_delete_auto_scaling_policy(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.autoscaling.AutoScalingClient(config)
             response = client.delete_auto_scaling_policy(
                 auto_scaling_configuration_id=request.pop(util.camelize('auto_scaling_configuration_id')),
@@ -178,9 +186,14 @@ def test_delete_auto_scaling_policy(testing_service_client, config):
         )
 
 
-def test_get_auto_scaling_configuration(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="COM"
+def test_get_auto_scaling_configuration(testing_service_client):
     if not testing_service_client.is_api_enabled('autoscaling', 'GetAutoScalingConfiguration'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('autoscaling', util.camelize('auto_scaling'), 'GetAutoScalingConfiguration')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='autoscaling', api_name='GetAutoScalingConfiguration')
 
@@ -190,9 +203,6 @@ def test_get_auto_scaling_configuration(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.autoscaling.AutoScalingClient(config)
             response = client.get_auto_scaling_configuration(
                 auto_scaling_configuration_id=request.pop(util.camelize('auto_scaling_configuration_id')),
@@ -215,9 +225,14 @@ def test_get_auto_scaling_configuration(testing_service_client, config):
         )
 
 
-def test_get_auto_scaling_policy(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="COM"
+def test_get_auto_scaling_policy(testing_service_client):
     if not testing_service_client.is_api_enabled('autoscaling', 'GetAutoScalingPolicy'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('autoscaling', util.camelize('auto_scaling'), 'GetAutoScalingPolicy')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='autoscaling', api_name='GetAutoScalingPolicy')
 
@@ -227,9 +242,6 @@ def test_get_auto_scaling_policy(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.autoscaling.AutoScalingClient(config)
             response = client.get_auto_scaling_policy(
                 auto_scaling_configuration_id=request.pop(util.camelize('auto_scaling_configuration_id')),
@@ -253,9 +265,14 @@ def test_get_auto_scaling_policy(testing_service_client, config):
         )
 
 
-def test_list_auto_scaling_configurations(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="COM"
+def test_list_auto_scaling_configurations(testing_service_client):
     if not testing_service_client.is_api_enabled('autoscaling', 'ListAutoScalingConfigurations'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('autoscaling', util.camelize('auto_scaling'), 'ListAutoScalingConfigurations')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='autoscaling', api_name='ListAutoScalingConfigurations')
 
@@ -265,9 +282,6 @@ def test_list_auto_scaling_configurations(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.autoscaling.AutoScalingClient(config)
             response = client.list_auto_scaling_configurations(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -309,9 +323,14 @@ def test_list_auto_scaling_configurations(testing_service_client, config):
         )
 
 
-def test_list_auto_scaling_policies(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="COM"
+def test_list_auto_scaling_policies(testing_service_client):
     if not testing_service_client.is_api_enabled('autoscaling', 'ListAutoScalingPolicies'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('autoscaling', util.camelize('auto_scaling'), 'ListAutoScalingPolicies')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='autoscaling', api_name='ListAutoScalingPolicies')
 
@@ -321,9 +340,6 @@ def test_list_auto_scaling_policies(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.autoscaling.AutoScalingClient(config)
             response = client.list_auto_scaling_policies(
                 auto_scaling_configuration_id=request.pop(util.camelize('auto_scaling_configuration_id')),
@@ -365,9 +381,14 @@ def test_list_auto_scaling_policies(testing_service_client, config):
         )
 
 
-def test_update_auto_scaling_configuration(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="COM"
+def test_update_auto_scaling_configuration(testing_service_client):
     if not testing_service_client.is_api_enabled('autoscaling', 'UpdateAutoScalingConfiguration'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('autoscaling', util.camelize('auto_scaling'), 'UpdateAutoScalingConfiguration')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='autoscaling', api_name='UpdateAutoScalingConfiguration')
 
@@ -377,9 +398,6 @@ def test_update_auto_scaling_configuration(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.autoscaling.AutoScalingClient(config)
             response = client.update_auto_scaling_configuration(
                 auto_scaling_configuration_id=request.pop(util.camelize('auto_scaling_configuration_id')),
@@ -403,9 +421,14 @@ def test_update_auto_scaling_configuration(testing_service_client, config):
         )
 
 
-def test_update_auto_scaling_policy(testing_service_client, config):
+# IssueRoutingInfo tag="default" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="COM"
+def test_update_auto_scaling_policy(testing_service_client):
     if not testing_service_client.is_api_enabled('autoscaling', 'UpdateAutoScalingPolicy'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('autoscaling', util.camelize('auto_scaling'), 'UpdateAutoScalingPolicy')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='autoscaling', api_name='UpdateAutoScalingPolicy')
 
@@ -415,9 +438,6 @@ def test_update_auto_scaling_policy(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.autoscaling.AutoScalingClient(config)
             response = client.update_auto_scaling_policy(
                 auto_scaling_configuration_id=request.pop(util.camelize('auto_scaling_configuration_id')),

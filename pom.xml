@@ -3,14 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.bmc.sdk</groupId>
   <artifactId>python-sdk</artifactId>
-  <version>0.2.0-SNAPSHOT</version>
+  <version>1.0.0-SNAPSHOT</version>
   <name>Public Python SDK</name>
   <packaging>pom</packaging>
   <properties>
     <spec-temp-dir>${project.build.directory}/swagger</spec-temp-dir>
     <preferred-temp-dir>${project.build.directory}/preferred</preferred-temp-dir>
     <preprocessed-temp-dir>${project.build.directory}/preprocessed</preprocessed-temp-dir>
-    <enabled-groups-file>${project.basedir}/release-sdk.txt</enabled-groups-file>
     <enabled-groups-dir>${project.basedir}/codegenConfig/enabledGroups</enabled-groups-dir>
     <feature-id-file>${project.basedir}/featureId.yaml</feature-id-file>
     <feature-id-dir>${project.basedir}/codegenConfig/featureIds</feature-id-dir>
@@ -43,7 +42,7 @@
         <executions>
           <execution>
             <id>python-public-sdk-common-generation</id>
-            <phase>compile</phase>
+            <phase>install</phase>
             <goals>
               <goal>exec</goal>
             </goals>
@@ -53,7 +52,7 @@
           </execution>
           <execution>
             <id>python-public-sdk-strip-whitespace</id>
-            <phase>package</phase>
+            <phase>install</phase>
             <goals>
               <goal>exec</goal>
             </goals>
@@ -63,7 +62,7 @@
           </execution>
           <execution>
             <id>python-public-sdk-fix-doc-url</id>
-            <phase>package</phase>
+            <phase>install</phase>
             <goals>
               <goal>exec</goal>
             </goals>
@@ -83,7 +82,7 @@
         <executions>
           <execution>
             <id>replace_links</id>
-            <phase>compile</phase>
+            <phase>install</phase>
             <configuration>
               <target>
                 <replace dir="src" token="{{DOC_SERVER_URL}}" value="https://docs.cloud.oracle.com" />
@@ -103,7 +102,7 @@
         <executions>
           <execution>
             <id>oci-src-no-vendor</id>
-            <phase>compile</phase>
+            <phase>install</phase>
             <goals>
               <goal>format</goal>
             </goals>
@@ -128,7 +127,7 @@
           </execution>
           <execution>
             <id>oci-src-vendor-chardet</id>
-            <phase>compile</phase>
+            <phase>install</phase>
             <goals>
               <goal>format</goal>
             </goals>
@@ -147,7 +146,7 @@
           </execution>
           <execution>
             <id>oci-src-vendor-httpsig</id>
-            <phase>compile</phase>
+            <phase>install</phase>
             <goals>
               <goal>format</goal>
             </goals>
@@ -166,7 +165,7 @@
           </execution>
           <execution>
             <id>oci-src-vendor-idna</id>
-            <phase>compile</phase>
+            <phase>install</phase>
             <goals>
               <goal>format</goal>
             </goals>
@@ -185,7 +184,7 @@
           </execution>
           <execution>
             <id>oci-src-vendor-pyjwt</id>
-            <phase>compile</phase>
+            <phase>install</phase>
             <goals>
               <goal>format</goal>
             </goals>
@@ -204,7 +203,7 @@
           </execution>
           <execution>
             <id>oci-src-vendor-requests</id>
-            <phase>compile</phase>
+            <phase>install</phase>
             <goals>
               <goal>format</goal>
             </goals>
@@ -223,7 +222,7 @@
           </execution>
           <execution>
             <id>oci-src-vendor-urllib3</id>
-            <phase>compile</phase>
+            <phase>install</phase>
             <goals>
               <goal>format</goal>
             </goals>
@@ -245,8 +244,9 @@
     </plugins>
   </build>
   <modules>
-    <module>poms/identity/pom.xml</module>
+    <module>poms/announcements_service/pom.xml</module>
     <module>poms/resource_manager/pom.xml</module>
+    <module>poms/identity/pom.xml</module>
     <module>poms/container_engine/pom.xml</module>
     <module>poms/file_storage/pom.xml</module>
     <module>poms/email/pom.xml</module>
@@ -264,7 +264,6 @@
     <module>poms/budget/pom.xml</module>
     <module>poms/healthchecks/pom.xml</module>
     <module>poms/monitoring/pom.xml</module>
-    <module>poms/announcements_service/pom.xml</module>
     <module>poms/ons/pom.xml</module>
   </modules>
 </project>

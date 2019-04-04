@@ -1,5 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <!--
+  <parent>
+    <groupId>com.oracle.bmc.sdk</groupId>
+    <artifactId>python-sdk</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <relativePath>../../pom.xml</relativePath>
+  </parent>
+  -->
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.bmc.sdk</groupId>
   <artifactId>announcements_service</artifactId>
@@ -9,7 +17,6 @@
     <preprocessed-temp-dir>${project.build.directory}/preprocessed</preprocessed-temp-dir>
     <spec-temp-dir>${project.build.directory}/swagger</spec-temp-dir>
     <preferred-temp-dir>${project.build.directory}/preferred</preferred-temp-dir>
-    <enabled-groups-file>${sdk-root-dir}/preview-sdk.txt</enabled-groups-file>
     <enabled-groups-dir>${sdk-root-dir}/codegenConfig/enabledGroups</enabled-groups-dir>
     <feature-id-file>${sdk-root-dir}/featureId.yaml</feature-id-file>
     <feature-id-dir>${sdk-root-dir}/codegenConfig/featureIds</feature-id-dir>

@@ -1,15 +1,14 @@
 #!/usr/bin/env python
 
-#
-# This script handles generating parts of the code that rely on *all* of the specs.
-# This is outside the scope of the codegen plugin which is invoked once per spec / service.
-#
+import os
 
-import xml.etree.ElementTree as ET
-import re
+# This script generates src/oci/__init__.py.  It is called by one of the
+# steps in main pom.xml.  It uses the directory listing from the poms
+# folder to determine the services that need to be included in
+# src/oci/__init__.py
 
-POM_LOCATION = "pom.xml"
 ROOT_INIT_LOCATION = "src/oci/__init__.py"
+SOURCE_LOCATION = "poms"
 
 ROOT_INIT_FILE_TEMPLATE = """from . import {spec_names}
 from . import auth, config, constants, decorators, exceptions, regions, pagination, retry, fips
@@ -29,43 +28,36 @@ __all__ = [
 """
 
 
-def parse_pom():
-    with open(POM_LOCATION) as f:
-        xmlstring = f.read()
-
-    # Remove the default namespace definition (xmlns="http://some/namespace")
-    # Otherwise for every 'iter' or 'find' we need to specify namespace
-    xmlstring = re.sub(r'\sxmlns="[^"]+"', '', xmlstring, count=1)
-
-    return ET.fromstring(xmlstring)
-
-
-def get_spec_to_endpoint_map(pom):
-    # read specName from each execution of bmc-sdk-swagger-maven-plugin
-    specs = {}
-    generate_plugin_executions = pom.findall(".//plugin[artifactId='bmc-sdk-swagger-maven-plugin']/executions")[0]
-    # specName and endpoint will be in the same additionalProperties node
-    for additional_properties in generate_plugin_executions.iter('additionalProperties'):
-        spec_name = additional_properties.find('specName').text
-        endpoint_property = additional_properties.find('endpoint')
-        endpoint = "None"
-        if endpoint_property is not None:
-            endpoint = endpoint_property.text
-        specs[spec_name] = endpoint
-
-    return specs
-
-
-def write_root_init_file(spec_to_endpoint):
-    sorted_spec_names = sorted(spec_to_endpoint)
-    quoted_spec_names = ['"{}"'.format(spec_name) for spec_name in sorted_spec_names]
+def spec_names_as_csv(spec_names):
+    sorted_spec_names = sorted(spec_names)
     spec_names_csv = ', '.join(sorted_spec_names)
-    quoted_spec_names_csv = ', '.join(quoted_spec_names)
+
+    return spec_names_csv
+
+
+def quote_spec_names(spec_names):
+    sorted_spec_names = sorted(spec_names)
+    quoted_spec_names = ', '.join(['"{}"'.format(spec_name) for spec_name in sorted_spec_names])
+
+    return quoted_spec_names
+
+
+def write_root_init_file():
+    spec_names = []
+    for item in os.listdir(SOURCE_LOCATION):
+        path = os.path.join(SOURCE_LOCATION, item)
+        if os.path.isdir(path):
+            spec_names.append(item)
+
+    spec_names_csv = spec_names_as_csv(spec_names)
+    spec_names_quoted = quote_spec_names(spec_names)
+
+    # print(spec_names_csv)
+    # print(spec_names_quoted)
+
     with open(ROOT_INIT_LOCATION, 'w+') as f:
-        content = ROOT_INIT_FILE_TEMPLATE.format(spec_names=spec_names_csv, quoted_spec_names=quoted_spec_names_csv)
+        content = ROOT_INIT_FILE_TEMPLATE.format(spec_names=spec_names_csv, quoted_spec_names=spec_names_quoted)
         f.write(content)
 
 
-pom = parse_pom()
-spec_to_endpoint = get_spec_to_endpoint_map(pom)
-write_root_init_file(spec_to_endpoint)
+write_root_init_file()

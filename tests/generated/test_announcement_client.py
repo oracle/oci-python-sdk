@@ -28,9 +28,14 @@ def vcr_fixture(request):
         yield
 
 
-def test_get_announcement(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_get_announcement(testing_service_client):
     if not testing_service_client.is_api_enabled('announcements_service', 'GetAnnouncement'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('announcements_service', util.camelize('announcement'), 'GetAnnouncement')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='announcements_service', api_name='GetAnnouncement')
 
@@ -40,9 +45,6 @@ def test_get_announcement(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.announcements_service.AnnouncementClient(config)
             response = client.get_announcement(
                 announcement_id=request.pop(util.camelize('announcement_id')),
@@ -65,9 +67,14 @@ def test_get_announcement(testing_service_client, config):
         )
 
 
-def test_get_announcement_user_status(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_get_announcement_user_status(testing_service_client):
     if not testing_service_client.is_api_enabled('announcements_service', 'GetAnnouncementUserStatus'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('announcements_service', util.camelize('announcement'), 'GetAnnouncementUserStatus')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='announcements_service', api_name='GetAnnouncementUserStatus')
 
@@ -77,9 +84,6 @@ def test_get_announcement_user_status(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.announcements_service.AnnouncementClient(config)
             response = client.get_announcement_user_status(
                 announcement_id=request.pop(util.camelize('announcement_id')),
@@ -102,9 +106,14 @@ def test_get_announcement_user_status(testing_service_client, config):
         )
 
 
-def test_list_announcements(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_list_announcements(testing_service_client):
     if not testing_service_client.is_api_enabled('announcements_service', 'ListAnnouncements'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('announcements_service', util.camelize('announcement'), 'ListAnnouncements')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='announcements_service', api_name='ListAnnouncements')
 
@@ -114,9 +123,6 @@ def test_list_announcements(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.announcements_service.AnnouncementClient(config)
             response = client.list_announcements(
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -158,9 +164,14 @@ def test_list_announcements(testing_service_client, config):
         )
 
 
-def test_update_announcement_user_status(testing_service_client, config):
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_update_announcement_user_status(testing_service_client):
     if not testing_service_client.is_api_enabled('announcements_service', 'UpdateAnnouncementUserStatus'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('announcements_service', util.camelize('announcement'), 'UpdateAnnouncementUserStatus')
+    )
 
     request_containers = testing_service_client.get_requests(service_name='announcements_service', api_name='UpdateAnnouncementUserStatus')
 
@@ -170,9 +181,6 @@ def test_update_announcement_user_status(testing_service_client, config):
         service_error = None
 
         try:
-            pass_phrase = os.environ.get('PYTHON_TESTS_ADMIN_PASS_PHRASE')
-            if pass_phrase:
-                config['pass_phrase'] = pass_phrase
             client = oci.announcements_service.AnnouncementClient(config)
             response = client.update_announcement_user_status(
                 announcement_id=request.pop(util.camelize('announcement_id')),
