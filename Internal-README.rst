@@ -250,6 +250,17 @@ Note that at this time, it will execute the ``merge_and_validate_spec.py`` scrip
 
     pip install -r requirments-internal.txt
 
+To generate the code for a single service you can specify the service when calling mvn clean install
+
+    mvn clean install --projects :<service name>
+
+For example to generate the waas service the command is
+
+    mvn clean install --projects :waas
+
+Note: This will not update src/oci/__init__.py or generate docs.  It will also not substitute the {{DOC_SERVER_URL}} entries or clean up whitespace.
+Always run the full codegen before creating a pull request.
+
 Adding support for new services
 ================================
 
@@ -297,7 +308,7 @@ The script can be run as ``python python_sdk_add_or_update_spec.py --help`` to s
 After you've added the service, you can run the code generator using the steps from the "Running the Code Generator" section of this readme.
 
 Note: This script updates ``pom.xml`` and adds an entry to ``github.whitelist``.  To generate the docs for the new service
-``scripts\doc_gen\generate_service_rst_files.py`` will need to be updated manually.
+make sure the source for the SDK is installed and run `make docs`
 
 Updating existing service spec versions
 =========================================
@@ -317,10 +328,14 @@ Note that we just need to provide the ``--artifact-id`` and the ``--version``
 Releasing Whitelisted Features
 ==============================
 
-When releasing a feature that is wrapped in a conditional in the spec, you need to update release-sdk.txt and then run the code generator.  This might not be necessary
-if the codegenerator.
+New features are added using the self-service pipeline controlled with DEXREQ jira tickets.  The information below is for
+information purposes only.
 
-There are also features that have x-obmcs-feature-id properties.  This is the old way of whitelisting features and they will not result in generated code
-until the feature id is added to featureId.yaml.
+When releasing a feature that is wrapped in a conditional in the spec, you need to add an entry in codegenConfig/enabledGroups
+and then run the code generator.
+
+There are also features that have x-obmcs-feature-id properties.  This is the old way of whitelisting features and they
+will not result in generated codeuntil the feature id is added to featureId.yaml.  Again the code generator will need
+to be run.
 
 Note: There are also blacklisted features which will not generate until they are removed from release-sdk.txt.
