@@ -4,7 +4,7 @@
 # been improperly tagged.
 #
 # I recommend that you run this every 30 minutes and set the audit hours to 1.
-# Example usage 'stop_the_untagged.py --hours_to_audit 2 --tag_string CostCenter'
+# Example usage 'stop_untagged_instances.py --hours_to_audit 2 --tag_string CostCenter'
 # This searches for any instance without the CostCenter tag applied, stops them, finds who started it and logs
 # the results.
 
@@ -104,7 +104,7 @@ def find_audit_events(instances_to_stop, instance_stop_list, compartment_id_stop
 
                         events_list.append(events_line)
                         print('\t\t\tFound a launch instance: {0}'.format(ae.response_payload['id']))
-    join_lists(instances_to_stop, events_list, 'stop_the_untagged_result.csv')
+    join_lists(instances_to_stop, events_list, 'stop_untagged_instances_result.csv')
 
 
 # This function looks for all compute instances using the RQS (search) service, then it filters that list by looking
