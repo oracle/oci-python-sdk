@@ -1,16 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <!--
-  <parent>
-    <groupId>com.oracle.bmc.sdk</groupId>
-    <artifactId>python-sdk</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-    <relativePath>../../pom.xml</relativePath>
-  </parent>
-  -->
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.bmc.sdk</groupId>
-  <artifactId>announcements_service</artifactId>
+  <artifactId>python-sdk-announcements_service-codegen</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <properties>
     <sdk-root-dir>${project.basedir}/../..</sdk-root-dir>
