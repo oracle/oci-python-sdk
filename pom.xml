@@ -1900,7 +1900,7 @@
       <dependency>
         <groupId>com.oracle.pic.dbaas</groupId>
         <artifactId>dbaas-api-spec</artifactId>
-        <version>0.1.108</version>
+        <version>0.1.124</version>
       </dependency>
       <dependency>
         <groupId>com.oracle.pic.sherlock</groupId>

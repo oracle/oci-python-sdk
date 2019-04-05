@@ -67,8 +67,8 @@ class AutonomousDatabaseSummary(object):
     LIFECYCLE_STATE_AVAILABLE_NEEDS_ATTENTION = "AVAILABLE_NEEDS_ATTENTION"
 
     #: A constant which can be used with the lifecycle_state property of a AutonomousDatabaseSummary.
-    #: This constant has a value of "UPDATE_IN_PROGRESS"
-    LIFECYCLE_STATE_UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS"
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
 
     #: A constant which can be used with the license_model property of a AutonomousDatabaseSummary.
     #: This constant has a value of "LICENSE_INCLUDED"
@@ -101,7 +101,7 @@ class AutonomousDatabaseSummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this AutonomousDatabaseSummary.
-            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATE_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -165,6 +165,10 @@ class AutonomousDatabaseSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type db_workload: str
 
+        :param whitelisted_ips:
+            The value to assign to the whitelisted_ips property of this AutonomousDatabaseSummary.
+        :type whitelisted_ips: list[str]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -183,7 +187,8 @@ class AutonomousDatabaseSummary(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'db_version': 'str',
-            'db_workload': 'str'
+            'db_workload': 'str',
+            'whitelisted_ips': 'list[str]'
         }
 
         self.attribute_map = {
@@ -203,7 +208,8 @@ class AutonomousDatabaseSummary(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'db_version': 'dbVersion',
-            'db_workload': 'dbWorkload'
+            'db_workload': 'dbWorkload',
+            'whitelisted_ips': 'whitelistedIps'
         }
 
         self._id = None
@@ -223,6 +229,7 @@ class AutonomousDatabaseSummary(object):
         self._defined_tags = None
         self._db_version = None
         self._db_workload = None
+        self._whitelisted_ips = None
 
     @property
     def id(self):
@@ -286,7 +293,7 @@ class AutonomousDatabaseSummary(object):
         **[Required]** Gets the lifecycle_state of this AutonomousDatabaseSummary.
         The current state of the database.
 
-        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATE_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -305,7 +312,7 @@ class AutonomousDatabaseSummary(object):
         :param lifecycle_state: The lifecycle_state of this AutonomousDatabaseSummary.
         :type: str
         """
-        allowed_values = ["PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATE_IN_PROGRESS"]
+        allowed_values = ["PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -677,6 +684,30 @@ class AutonomousDatabaseSummary(object):
         if not value_allowed_none_or_none_sentinel(db_workload, allowed_values):
             db_workload = 'UNKNOWN_ENUM_VALUE'
         self._db_workload = db_workload
+
+    @property
+    def whitelisted_ips(self):
+        """
+        Gets the whitelisted_ips of this AutonomousDatabaseSummary.
+        The client IP access control list (ACL). Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. This is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet.
+
+
+        :return: The whitelisted_ips of this AutonomousDatabaseSummary.
+        :rtype: list[str]
+        """
+        return self._whitelisted_ips
+
+    @whitelisted_ips.setter
+    def whitelisted_ips(self, whitelisted_ips):
+        """
+        Sets the whitelisted_ips of this AutonomousDatabaseSummary.
+        The client IP access control list (ACL). Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. This is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet.
+
+
+        :param whitelisted_ips: The whitelisted_ips of this AutonomousDatabaseSummary.
+        :type: list[str]
+        """
+        self._whitelisted_ips = whitelisted_ips
 
     def __repr__(self):
         return formatted_flat_dict(self)

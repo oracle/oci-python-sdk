@@ -56,6 +56,10 @@ class UpdateAutonomousDatabaseDetails(object):
             Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
         :type license_model: str
 
+        :param whitelisted_ips:
+            The value to assign to the whitelisted_ips property of this UpdateAutonomousDatabaseDetails.
+        :type whitelisted_ips: list[str]
+
         """
         self.swagger_types = {
             'cpu_core_count': 'int',
@@ -64,7 +68,8 @@ class UpdateAutonomousDatabaseDetails(object):
             'admin_password': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'license_model': 'str'
+            'license_model': 'str',
+            'whitelisted_ips': 'list[str]'
         }
 
         self.attribute_map = {
@@ -74,7 +79,8 @@ class UpdateAutonomousDatabaseDetails(object):
             'admin_password': 'adminPassword',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'license_model': 'licenseModel'
+            'license_model': 'licenseModel',
+            'whitelisted_ips': 'whitelistedIps'
         }
 
         self._cpu_core_count = None
@@ -84,6 +90,7 @@ class UpdateAutonomousDatabaseDetails(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._license_model = None
+        self._whitelisted_ips = None
 
     @property
     def cpu_core_count(self):
@@ -280,6 +287,30 @@ class UpdateAutonomousDatabaseDetails(object):
                 .format(allowed_values)
             )
         self._license_model = license_model
+
+    @property
+    def whitelisted_ips(self):
+        """
+        Gets the whitelisted_ips of this UpdateAutonomousDatabaseDetails.
+        The client IP access control list (ACL). Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. This is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet. To delete all the existing white listed IP\u2019s, use an array with a single empty string entry.
+
+
+        :return: The whitelisted_ips of this UpdateAutonomousDatabaseDetails.
+        :rtype: list[str]
+        """
+        return self._whitelisted_ips
+
+    @whitelisted_ips.setter
+    def whitelisted_ips(self, whitelisted_ips):
+        """
+        Sets the whitelisted_ips of this UpdateAutonomousDatabaseDetails.
+        The client IP access control list (ACL). Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. This is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet. To delete all the existing white listed IP\u2019s, use an array with a single empty string entry.
+
+
+        :param whitelisted_ips: The whitelisted_ips of this UpdateAutonomousDatabaseDetails.
+        :type: list[str]
+        """
+        self._whitelisted_ips = whitelisted_ips
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -146,7 +146,7 @@ def test_create_autonomous_data_warehouse_backup(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_create_autonomous_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateAutonomousDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -185,7 +185,7 @@ def test_create_autonomous_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_create_autonomous_database_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateAutonomousDatabaseBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -460,7 +460,7 @@ def test_delete_autonomous_data_warehouse(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_delete_autonomous_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DeleteAutonomousDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -658,7 +658,7 @@ def test_generate_autonomous_data_warehouse_wallet(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_generate_autonomous_database_wallet(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GenerateAutonomousDatabaseWallet'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -776,7 +776,7 @@ def test_get_autonomous_data_warehouse_backup(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_get_autonomous_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetAutonomousDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -815,7 +815,7 @@ def test_get_autonomous_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_get_autonomous_database_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetAutonomousDatabaseBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1479,7 +1479,7 @@ def test_list_autonomous_data_warehouses(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_list_autonomous_database_backups(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListAutonomousDatabaseBackups'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1534,7 +1534,7 @@ def test_list_autonomous_database_backups(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_list_autonomous_databases(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListAutonomousDatabases'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2378,7 +2378,7 @@ def test_restore_autonomous_data_warehouse(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_restore_autonomous_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'RestoreAutonomousDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2497,7 +2497,7 @@ def test_start_autonomous_data_warehouse(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_start_autonomous_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'StartAutonomousDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2575,7 +2575,7 @@ def test_stop_autonomous_data_warehouse(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_stop_autonomous_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'StopAutonomousDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2734,7 +2734,7 @@ def test_update_autonomous_data_warehouse(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_update_autonomous_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateAutonomousDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

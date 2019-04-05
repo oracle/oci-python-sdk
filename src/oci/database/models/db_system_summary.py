@@ -450,7 +450,7 @@ class DbSystemSummary(object):
     def fault_domains(self):
         """
         Gets the fault_domains of this DbSystemSummary.
-        List of the fault domains in which this DB system is provisioned.
+        List of the Fault Domains in which this DB system is provisioned.
 
 
         :return: The fault_domains of this DbSystemSummary.
@@ -462,7 +462,7 @@ class DbSystemSummary(object):
     def fault_domains(self, fault_domains):
         """
         Sets the fault_domains of this DbSystemSummary.
-        List of the fault domains in which this DB system is provisioned.
+        List of the Fault Domains in which this DB system is provisioned.
 
 
         :param fault_domains: The fault_domains of this DbSystemSummary.
