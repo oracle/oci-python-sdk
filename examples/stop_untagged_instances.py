@@ -83,11 +83,9 @@ def find_audit_events(instances_to_stop, instance_stop_list, compartment_id_stop
         for c in compartment_id_stop_list:
             # clear out the audit events from a compartment
             del list_of_audit_events[:]
-            list_events_response = oci.pagination.list_call_get_all_results(
-                        audit.list_events,
-                        compartment_id=c,
-                        start_time=start_time,
-                        end_time=end_time).data
+            list_events_response = oci.pagination.list_call_get_all_results(audit.list_events, compartment_id=c,
+                                                                            start_time=start_time,
+                                                                            end_time=end_time).data
             list_of_audit_events.extend(list_events_response)
             print('\t\tNumber of audit events in {0}\{1}: {2}' .format(region, identity_client.get_compartment(c).data.name, len(list_of_audit_events)))
 
@@ -113,7 +111,7 @@ def find_audit_events(instances_to_stop, instance_stop_list, compartment_id_stop
 # stopped.
 def find_resources_wo_tags(instances_to_stop_list, search_string):
     instances_stop_list = []
-    compartment_id_stop_list =[]
+    compartment_id_stop_list = []
     search_client = oci.resource_search.ResourceSearchClient(config)
     compute_client = oci.core.ComputeClient(config)
 
