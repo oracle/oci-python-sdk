@@ -392,7 +392,7 @@ class ShowOCIService(object):
     # check service error to ignore
     ##########################################################################
     def __check_service_error(self, code):
-        return 'auth' in str(code).lower() or code == 'Forbidden' or code == 'TooManyRequests'
+        return 'auth' in str(code).lower() or code == 'Forbidden' or code == 'TooManyRequests' or 'notfound' in str(code).lower()
 
     ##########################################################################
     # check if managed paas compartment
@@ -3131,7 +3131,8 @@ class ShowOCIService(object):
                     except oci.exceptions.ServiceError as e:
                         if self.__check_service_error(e.code):
                             pass
-                        raise
+                        else:
+                            raise
 
                     # add the rest
                     val = {'id': str(arr.id), 'shape_name': str(arr.shape_name), 'display_name': str(arr.display_name), 'is_private': str(arr.is_private),
@@ -3406,8 +3407,7 @@ class ShowOCIService(object):
                     # get more info
                     ###############################
                     try:
-                        bucket = object_storage.get_bucket(namespace_name, str(arr.name),
-                                                           fields=['approximateCount', 'approximateSize']).data
+                        bucket = object_storage.get_bucket(namespace_name, str(arr.name), fields=['approximateCount', 'approximateSize']).data
 
                         if bucket:
                             val['public_access_type'] = str(bucket.public_access_type)
