@@ -1106,7 +1106,7 @@ class ShowOCIData(object):
 
                 value = {'id': config['id'], 'name': config['name'],
                          'shape': config['compute_shape'] + block_volumes + secondary_vnics,
-                         'image': config['compute_image']}
+                         'source': config['compute_source']}
                 data.append(value)
 
             return data

@@ -979,7 +979,7 @@ class ShowOCIOutput(object):
             for config in configs:
                 print(self.taba + config['name'])
                 print(self.tabs + self.tabs + "Shape : " + config['shape'])
-                print(self.tabs + self.tabs + "Image : " + config['image'])
+                print(self.tabs + self.tabs + "Source: " + config['source'])
                 print("")
 
         except Exception as e:

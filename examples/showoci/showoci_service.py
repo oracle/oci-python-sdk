@@ -2153,7 +2153,7 @@ class ShowOCIService(object):
             compute[self.C_COMPUTE_BOOT_VOL_ATTACH] += self.__load_core_compute_boot_vol_attach(compute_client, compartments)
             compute[self.C_COMPUTE_VOLUME_ATTACH] += self.__load_core_compute_vol_attach(compute_client, compartments)
             compute[self.C_COMPUTE_VNIC_ATTACH] += self.__load_core_compute_vnic_attach(compute_client, virtual_network, compartments)
-            compute[self.C_COMPUTE_INST_CONFIG] += self.__load_core_compute_inst_config(compute_client, compute_manage, compartments)
+            compute[self.C_COMPUTE_INST_CONFIG] += self.__load_core_compute_inst_config(compute_client, compute_manage, block_storage, compartments)
             compute[self.C_COMPUTE_INST_POOL] += self.__load_core_compute_inst_pool(compute_manage, compartments)
 
             print("")
@@ -2325,7 +2325,7 @@ class ShowOCIService(object):
     ##########################################################################
     # data compute read images
     ##########################################################################
-    def __load_core_compute_inst_config(self, compute, compute_manage, compartments):
+    def __load_core_compute_inst_config(self, compute, compute_manage, block_storage, compartments):
 
         data = []
         cnt = 0
@@ -2358,32 +2358,61 @@ class ShowOCIService(object):
 
                 print(".", end="")
 
-                # config = oci.core.models.InstanceConfiguration
+                # config = oci.core.models.InstanceConfigurationSummary
                 for config in configs:
                     val = {'id': str(config.id), 'time_created': str(config.time_created),
-                           'name': str(config.display_name), 'compute_shape': "", 'compute_image': "",
+                           'name': str(config.display_name), 'compute_shape': "", 'compute_source': "",
                            'compute_display_name': "", 'block_volumes': "", 'secondary_vnics': "",
                            'compartment_id': str(compartment['id']), 'region_name': str(self.config['region'])}
 
                     # get info on the instance details
+                    # arr = oci.core.models.InstanceConfiguration
                     arr = compute_manage.get_instance_configuration(config.id).data
 
+                    # instance_detail = oci.core.models.ComputeInstanceDetails
                     if arr.instance_details:
                         instance_detail = arr.instance_details
-                        val['compute_shape'] = str(instance_detail.launch_details.shape)
-                        val['compute_display_name'] = str(instance_detail.launch_details.display_name)
 
-                        if instance_detail.block_volumes:
-                            val['block_volumes'] = len(instance_detail.block_volumes)
+                        # if instance_detail is ComputeInstanceDetails
+                        if isinstance(instance_detail, oci.core.models.ComputeInstanceDetails):
 
-                        if instance_detail.secondary_vnics:
-                            val['secondary_vnics'] = len(instance_detail.secondary_vnics)
+                            # launch Details
+                            if instance_detail.launch_details:
+                                launch_details = instance_detail.launch_details
 
-                        # get image info
-                        if instance_detail.launch_details.source_details:
-                            image_id = instance_detail.launch_details.source_details.image_id
-                            if image_id:
-                                val['compute_image'] = str(compute.get_image(image_id).data.display_name)
+                                # check if instance is InstanceConfigurationLaunchInstanceDetails
+                                if isinstance(launch_details, oci.core.models.InstanceConfigurationLaunchInstanceDetails):
+
+                                    val['compute_shape'] = str(launch_details.shape)
+                                    val['compute_display_name'] = str(launch_details.display_name)
+                                    if instance_detail.block_volumes:
+                                        val['block_volumes'] = len(instance_detail.block_volumes)
+                                    if instance_detail.secondary_vnics:
+                                        val['secondary_vnics'] = len(instance_detail.secondary_vnics)
+
+                                    # check source details type
+                                    if launch_details.source_details:
+                                        source_details = launch_details.source_details
+
+                                        # if InstanceConfigurationInstanceSourceViaImageDetails
+                                        if isinstance(source_details, oci.core.models.InstanceConfigurationInstanceSourceViaImageDetails):
+                                            if source_details.image_id:
+                                                try:
+                                                    val['compute_source'] = "Image: " + str(compute.get_image(source_details.image_id).data.display_name)
+                                                except oci.exceptions.ServiceError as e:
+                                                    if self.__check_service_error(e.code):
+                                                        val['compute_source'] = "Image"
+
+                                        # if InstanceConfigurationInstanceSourceViaBootVolumeDetails
+                                        if isinstance(source_details, oci.core.models.InstanceConfigurationInstanceSourceViaBootVolumeDetails):
+                                            if source_details.boot_volume_id:
+                                                try:
+                                                    bootvol = block_storage.get_boot_volume(source_details.boot_volume_id)
+                                                    if bootvol:
+                                                        val['compute_source'] = "Boot Volume: " + bootvol['display_name']
+                                                except oci.exceptions.ServiceError as e:
+                                                    if self.__check_service_error(e.code):
+                                                        val['compute_source'] = "Boot Volume"
 
                     data.append(val)
                     cnt += 1
