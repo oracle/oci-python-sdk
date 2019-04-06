@@ -3,9 +3,9 @@
 # showocy_service.py
 #
 # @Created On  : Mar 17 2019
-# @Last Updated: Apr  2 2019
+# @Last Updated: Apr  6 2019
 # @author      : Adi Zohar
-# @Version     : 19.4.2
+# @Version     : 19.4.6
 #
 # Supports Python 2.7 and above, Python 3 recommended
 #
@@ -39,6 +39,7 @@ class ShowOCIFlags(object):
     read_load_balancer = False
     read_email_distribution = False
     read_resource_management = False
+    read_containers = False
     read_ManagedCompartmentForPaaS = True
     read_root_compartment = True
 
@@ -72,7 +73,8 @@ class ShowOCIFlags(object):
                 self.read_object_storage or
                 self.read_load_balancer or
                 self.read_email_distribution or
-                self.read_resource_management)
+                self.read_resource_management or
+                self.read_containers)
 
     ############################################
     # check if to load basic network (vcn+subnets)
@@ -82,7 +84,8 @@ class ShowOCIFlags(object):
                 self.read_compute or
                 self.read_database or
                 self.read_file_storage or
-                self.read_load_balancer)
+                self.read_load_balancer or
+                self.read_containers)
 
 
 ##########################################################################
@@ -175,6 +178,11 @@ class ShowOCIService(object):
     C_DATABASE = "database"
     C_DATABASE_DBSYSTEMS = "dbsystems"
     C_DATABASE_AUTONOMOUS = "autonomous"
+
+    # database
+    C_CONTAINER = "container"
+    C_CONTAINER_CLUSTERS = "clusters"
+    C_CONTAINER_NODE_POOLS = "nodepools"
 
     # Error flag
     error = 0
@@ -492,9 +500,10 @@ class ShowOCIService(object):
         if self.flags.read_object_storage:
             self.__load_object_storage_main()
 
-        # file storage
-        if self.flags.read_file_storage:
-            self.__load_file_storage_main()
+        # file storage - not exist in toronto yet
+        if region_name != "ca-toronto-1":
+            if self.flags.read_file_storage:
+                self.__load_file_storage_main()
 
         # only available in US Regions
         if region_name == "us-ashburn-1" or region_name == "us-phoenix-1":
@@ -506,6 +515,11 @@ class ShowOCIService(object):
             # resource management - only at us for now
             if self.flags.read_resource_management:
                 self.__load_resource_management_main()
+
+        # containers - not exist in toronto yet
+        if region_name != "ca-toronto-1":
+            if self.flags.read_containers:
+                self.__load_container_main()
 
     ##########################################################################
     # Identity Module
@@ -1532,10 +1546,16 @@ class ShowOCIService(object):
                         sec_rules = []
 
                         for sli in sl.ingress_security_rules:
-                            sec_rules.append("Ingres  : " + self.__load_core_network_seclst_rule(sli))
+                            sec_rules.append(
+                                {'is_stateless': str(sli.is_stateless),
+                                 'protocol': str(sli.protocol),
+                                 'desc': "Ingres  : " + self.__load_core_network_seclst_rule(sli)})
 
                         for sle in sl.egress_security_rules:
-                            sec_rules.append("Egres   : " + self.__load_core_network_seclst_rule(sle))
+                            sec_rules.append(
+                                {'is_stateless': str(sle.is_stateless),
+                                 'protocol': str(sle.protocol),
+                                 'desc': "Egres   : " + self.__load_core_network_seclst_rule(sle)})
 
                         # Add info
                         val = {'id': str(sl.id), 'vcn_id': str(sl.vcn_id), 'name': str(sl.display_name),
@@ -2303,7 +2323,9 @@ class ShowOCIService(object):
                 # arr = oci.core.models.Image.
                 for arr in arrs:
                     val = {'id': str(arr.id), 'display_name': str(arr.display_name),
-                           'base_image_id': str(arr.base_image_id), 'operating_system': str(arr.operating_system),
+                           'base_image_id': str(arr.base_image_id),
+                           'time_created': str(arr.time_created),
+                           'operating_system': str(arr.operating_system),
                            'size_in_gbs': str(round(arr.size_in_mbs / 1024)),
                            'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
                            'region_name': str(self.config['region']),
@@ -4112,6 +4134,7 @@ class ShowOCIService(object):
                              'database_edition': str(dbs.database_edition),
                              'compartment_name': str(compartment['name']),
                              'compartment_id': str(compartment['id']),
+                             'time_created': str(dbs.time_created),
                              'region_name': str(self.config['region']),
                              'defined_tags': [] if dbs.defined_tags is None else dbs.defined_tags,
                              'freeform_tags': [] if dbs.freeform_tags is None else dbs.freeform_tags,
@@ -4126,6 +4149,18 @@ class ShowOCIService(object):
                         value['license_model'] = "BYOL"
                     else:
                         value['license_model'] = str(dbs.license_model)
+
+                    # Edition
+                    if dbs.database_edition == oci.database.models.DbSystem.DATABASE_EDITION_ENTERPRISE_EDITION:
+                        value['database_edition_short'] = "EE"
+                    elif dbs.database_edition == oci.database.models.DbSystem.DATABASE_EDITION_ENTERPRISE_EDITION_EXTREME_PERFORMANCE:
+                        value['database_edition_short'] = "XP"
+                    elif dbs.database_edition == oci.database.models.DbSystem.DATABASE_EDITION_ENTERPRISE_EDITION_HIGH_PERFORMANCE:
+                        value['database_edition_short'] = "HP"
+                    elif dbs.database_edition == oci.database.models.DbSystem.DATABASE_EDITION_STANDARD_EDITION:
+                        value['database_edition_short'] = "SE"
+                    else:
+                        value['database_edition_short'] = dbs.database_edition
 
                     # scan IPs
                     value['scan_ips'] = []
@@ -4495,4 +4530,160 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_database_autonomouns_backups", e)
+            return data
+
+    ##########################################################################
+    # __load_container_main
+    ##########################################################################
+    #
+    # OCI Classes used:
+    #
+    # class oci.container_engine.ContainerEngineClient(config, **kwargs)
+    #
+    ##########################################################################
+    def __load_container_main(self):
+
+        try:
+            print("Containers...")
+
+            # ContainerEngineClient
+            container_client = oci.container_engine.ContainerEngineClient(self.config)
+            if self.flags.proxy:
+                container_client.base_client.session.proxies = {'https': self.flags.proxy}
+
+            # reference to compartments
+            compartments = self.get_compartment()
+
+            # add the key if not exists
+            self.__initialize_data_key(self.C_CONTAINER, self.C_CONTAINER_CLUSTERS)
+            self.__initialize_data_key(self.C_CONTAINER, self.C_CONTAINER_NODE_POOLS)
+
+            # reference to orm
+            cp = self.data[self.C_CONTAINER]
+
+            # append the data
+            cp[self.C_CONTAINER_CLUSTERS] += self.__load_container_clusters(container_client, compartments)
+            cp[self.C_CONTAINER_NODE_POOLS] += self.__load_container_node_pools(container_client, compartments)
+            print("")
+
+        except oci.exceptions.RequestException:
+            raise
+        except oci.exceptions.ServiceError:
+            raise
+        except Exception as e:
+            self.__print_error("__load_container_main", e)
+
+    ##########################################################################
+    # __load_container_node_pools
+    ##########################################################################
+    def __load_container_node_pools(self, container_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+
+            self.__load_print_status("Node Pools")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                try:
+                    list_clusters = oci.pagination.list_call_get_all_results(
+                        container_client.list_node_pools, compartment['id'],
+                        sort_by="NAME"
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+
+                print(".", end="")
+
+                # arr = oci.container_engine.models.NodePoolSummary
+                for arr in list_clusters:
+
+                    val = {'id': str(arr.id),
+                           'name': str(arr.name),
+                           'cluster_id': str(arr.cluster_id),
+                           'node_image_id': str(arr.node_image_id),
+                           'kubernetes_version': str(arr.kubernetes_version),
+                           'node_image_name': str(arr.node_image_name),
+                           'node_shape': str(arr.node_shape),
+                           'quantity_per_subnet': str(arr.quantity_per_subnet),
+                           'subnet_ids': [subnets for subnets in arr.subnet_ids],
+                           'compartment_name': str(compartment['name']),
+                           'compartment_id': str(compartment['id']),
+                           'region_name': str(self.config['region'])}
+
+                    # add the data
+                    cnt += 1
+                    data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException:
+            raise
+        except Exception as e:
+            self.__print_error("__load_container_node_pools", e)
+            return data
+
+    ##########################################################################
+    # __load_container_clusters
+    ##########################################################################
+    def __load_container_clusters(self, container_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+
+            self.__load_print_status("Clusters")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                try:
+                    list_clusters = oci.pagination.list_call_get_all_results(
+                        container_client.list_clusters, compartment['id'],
+                        sort_by="NAME"
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+
+                print(".", end="")
+
+                # arr = oci.container_engine.models.ClusterSummary
+                for arr in list_clusters:
+                    if arr.lifecycle_state == oci.container_engine.models.ClusterSummary.LIFECYCLE_STATE_DELETED:
+                        continue
+
+                    val = {'id': str(arr.id), 'name': str(arr.name),
+                           'lifecycle_state': str(arr.lifecycle_state),
+                           'vcn_id': str(arr.vcn_id),
+                           'kubernetes_version': str(arr.kubernetes_version),
+                           'compartment_name': str(compartment['name']),
+                           'compartment_id': str(compartment['id']),
+                           'region_name': str(self.config['region'])}
+
+                    # add the data
+                    cnt += 1
+                    data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException:
+            raise
+        except Exception as e:
+            self.__print_error("__load_container_clusters", e)
             return data

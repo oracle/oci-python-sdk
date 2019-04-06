@@ -3,9 +3,9 @@
 # showocy_output.py
 #
 # @Created On  : Mar 17 2019
-# @Last Updated: Apr  2 2019
+# @Last Updated: Apr  6 2019
 # @author      : Adi Zohar
-# @Version     : 19.4.2
+# @Version     : 19.4.6
 #
 # Supports Python 2.7 and above, Python 3 recommended
 #
@@ -308,7 +308,7 @@ class ShowOCIOutput(object):
                     print(self.tabs + "            : Empty.")
 
                 for slr in sl['sec_rules']:
-                    print(self.tabs + self.tabs + slr)
+                    print(self.tabs + self.tabs + slr['desc'])
 
         except Exception as e:
             self.__print_error("__print_core_network_vcn_security_lists", e)
@@ -332,7 +332,7 @@ class ShowOCIOutput(object):
                     return
 
                 for rl in rt['route_rules']:
-                    print(self.tabs + self.tabs + "Route   : " + str(rl))
+                    print(self.tabs + self.tabs + "Route   : " + str(rl['desc']))
 
         except Exception as e:
             self.__print_error("__print_core_network_vcn_route_tables", e)
@@ -866,6 +866,36 @@ class ShowOCIOutput(object):
             self.__print_error("__print_email_main", e)
 
     ##########################################################################
+    # Email
+    ##########################################################################
+    def __print_container_main(self, containers):
+
+        try:
+            if not containers:
+                return
+
+            self.print_header("Containers", 2)
+
+            for ct in containers:
+                print(self.taba + ct['name'] + " - " + ct['lifecycle_state'] + " - " + ct['kubernetes_version'])
+                print(self.tabs + "VCN   : " + str(ct['vcn_name']))
+
+                # print backups
+                if ct['node_pools']:
+                    for nd in ct['node_pools']:
+                        print(self.tabs + "Node  : " + nd['name'] + " - " + nd['node_image_name'] + " - " + nd['node_shape'])
+
+                        # subnets
+                        if nd['subnets']:
+                            for sub in nd['subnets']:
+                                print(self.tabs + self.tabs + self.tabs + sub)
+
+                print("")
+
+        except Exception as e:
+            self.__print_error("__print_email_main", e)
+
+    ##########################################################################
     # resource Management
     ##########################################################################
     def __print_resource_management_main(self, resource_management):
@@ -1147,6 +1177,8 @@ class ShowOCIOutput(object):
                     self.__print_email_main(cdata['email'])
                 if 'resource_management' in cdata:
                     self.__print_resource_management_main(cdata['resource_management'])
+                if 'containers' in cdata:
+                    self.__print_container_main(cdata['containers'])
 
         except Exception as e:
             self.__print_error("__print_region_data", e)

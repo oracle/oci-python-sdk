@@ -3,10 +3,10 @@
 # Copyright(c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 # showocy.py
 #
-# @Created On  : Jul 25 2018
-# @Last Updated: Apr  2 2019
+# @Created On  : Mar 17 2019
+# @Last Updated: Apr  6 2019
 # @author      : Adi Zohar
-# @Version     : 19.4.2
+# @Version     : 19.4.6
 #
 # Supports Python 2.7 and above, Python 3 recommended
 #
@@ -50,7 +50,7 @@ import sys
 import argparse
 import datetime
 
-version = "19.4.2"
+version = "19.4.6"
 
 ##########################################################################
 # execute_extract
@@ -181,6 +181,7 @@ def set_parser_arguments():
     parser.add_argument('-n', action='store_true', default=False, dest='network', help='Print Network')
     parser.add_argument('-i', action='store_true', default=False, dest='identity', help='Print Identity')
     parser.add_argument('-c', action='store_true', default=False, dest='compute', help='Print Compute')
+    parser.add_argument('-cn', action='store_true', default=False, dest='container', help='Print Containers')
     parser.add_argument('-o', action='store_true', default=False, dest='object', help='Print Object Storage')
     parser.add_argument('-l', action='store_true', default=False, dest='load', help='Print Load Balancer')
     parser.add_argument('-d', action='store_true', default=False, dest='database', help='Print Database')
@@ -209,7 +210,7 @@ def set_parser_arguments():
 
     if not (result.all or result.allnoiam or result.network or result.identity or
             result.compute or result.object or
-            result.load or result.database or result.file or result.email or result.orm):
+            result.load or result.database or result.file or result.email or result.orm or result.container):
 
         parser.print_help()
 
@@ -262,6 +263,9 @@ def set_service_extract_flags(cmd):
 
     if cmd.all or cmd.allnoiam or cmd.email:
         prm.read_email_distribution = True
+
+    if cmd.all or cmd.allnoiam or cmd.container:
+        prm.read_containers = True
 
     if cmd.noroot:
         prm.read_root_compartment = False

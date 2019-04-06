@@ -14,7 +14,8 @@
 - oci.database.DatabaseClient            
 - oci.identity.IdentityClient            
 - oci.load_balancer.LoadBalancerClient   
-- oci.email.EmailClient                  
+- oci.email.EmailClient
+- oci.container_engine.ContainerEngineClient
 
 ##### Required OCI IAM user with read only privileges:  
 ##### Inspect privilege will have some limitations especially on object storage sizes
@@ -647,6 +648,23 @@ Compartment gse00000000 (root):
     ormjob20190303212919 - APPLY      - SUCCEEDED  - 2019-03-04 02:33
     ormjob20190303211757 - PLAN       - SUCCEEDED  - 2019-03-04 02:21
 
+##############################
+#         Containers         #
+##############################
+--> INFA1 - ACTIVE - v1.11.5
+    VCN   : 10.0.0.0/16 - oke-vcn-quick-INFA1-20190306173914 - infa1.oraclevcn.com
+    Node  : pool1 - Oracle-Linux-7.5 - VM.Standard2.1
+            oke-subnet-quick-INFA1-20190306173914-dKrR:US-ASHBURN-AD-2 10.0.11.0/24, VCN (oke-vcn-quick-INFA1-20190306173914)
+            oke-subnet-quick-INFA1-20190306173914-dKrR:US-ASHBURN-AD-1 10.0.10.0/24, VCN (oke-vcn-quick-INFA1-20190306173914)
+            oke-subnet-quick-INFA1-20190306173914-dKrR:US-ASHBURN-AD-3 10.0.12.0/24, VCN (oke-vcn-quick-INFA1-20190306173914)
+
+--> K8S Cluster - ACTIVE - v1.11.5
+    VCN   : 10.0.0.0/16 - oke-vcn-quick-K8S Cluster-20190306130828 - k8scluster.oraclevcn.com
+    Node  : pool1 - Oracle-Linux-7.5 - VM.Standard2.1
+            oke-subnet-quick-K8S Cluster-20190306130828-dKrR:US-ASHBURN-AD-3 10.0.12.0/24, VCN (oke-vcn-quick-K8S Cluster-20190306130828)
+            oke-subnet-quick-K8S Cluster-20190306130828-dKrR:US-ASHBURN-AD-2 10.0.11.0/24, VCN (oke-vcn-quick-K8S Cluster-20190306130828)
+            oke-subnet-quick-K8S Cluster-20190306130828-dKrR:US-ASHBURN-AD-1 10.0.10.0/24, VCN (oke-vcn-quick-K8S Cluster-20190306130828)
+			
 ##########################################################################################
 #                                 Summary - us-ashburn-1                                 #
 ##########################################################################################
