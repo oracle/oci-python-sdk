@@ -1331,8 +1331,8 @@ class ShowOCISummary(object):
     def __summary_database_db_system(self, list_db_systems):
 
         try:
-            nodes = 1
             for dbs in list_db_systems:
+                nodes = 1
                 if 'Exadata' not in dbs['sum_info']:
                     if 'node_count' in dbs:
                         if dbs['node_count'] is not None and dbs['node_count'] != 'None' and dbs['node_count'] != "":
@@ -1466,7 +1466,7 @@ class ShowOCISummary(object):
 
                 # sort and print
                 for d in sorted(grouped_data, key=lambda i: i['type']):
-                    print(d['type'].ljust(37) + " - " + str(round(d['size'])).rjust(10))
+                    print(d['type'].ljust(42) + " - " + str(round(d['size'])).rjust(10))
 
         except Exception as e:
             self.__print_error("__summary_print_results", e)
