@@ -282,18 +282,31 @@ class ShowOCIData(object):
         data = []
         try:
             subnets = self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_SUBNET, 'vcn_id', vcn_id)
+            if not subnets:
+                return data
+
             for subnet in subnets:
 
                 # get the list of security lists
                 sec_lists = []
-                for s in subnet['security_list_ids']:
-                    sl = self.service.search_unique_item(self.service.C_NETWORK, self.service.C_NETWORK_SLIST, 'id', s)
-                    if sl:
-                        sec_lists.append(sl['name'])
+                if 'security_list_ids' in subnet:
+                    for s in subnet['security_list_ids']:
+                        sl = self.service.search_unique_item(self.service.C_NETWORK, self.service.C_NETWORK_SLIST, 'id', s)
+                        if sl:
+                            sec_lists.append(sl['name'])
 
                 # Get the route and dhcp options
-                route_name = self.service.search_unique_item(self.service.C_NETWORK, self.service.C_NETWORK_ROUTE, 'id', subnet['route_table_id'])['name']
-                dhcp_options = self.service.search_unique_item(self.service.C_NETWORK, self.service.C_NETWORK_DHCP, 'id', subnet['dhcp_options_id'])['name']
+                route_name = ""
+                if 'route_table_id' in subnet:
+                    route_name_arr = self.service.search_unique_item(self.service.C_NETWORK, self.service.C_NETWORK_ROUTE, 'id', subnet['route_table_id'])
+                    if route_name_arr:
+                        route_name = route_name_arr['name']
+
+                dhcp_options = ""
+                if 'dhcp_options_id' in subnet:
+                    dhcp_options_arr = self.service.search_unique_item(self.service.C_NETWORK, self.service.C_NETWORK_DHCP, 'id', subnet['dhcp_options_id'])
+                    if dhcp_options_arr:
+                        dhcp_options = dhcp_options_arr['name']
 
                 val = ({
                     'id': subnet['id'],
@@ -1438,11 +1451,11 @@ class ShowOCIData(object):
             list_autos = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_AUTONOMOUS, 'region_name', region_name, 'compartment_id', compartment['id'])
 
             for dbs in list_autos:
-                value = {'id': str(dbs['id']), 'name': (str(dbs['display_name']) + " - " + str(dbs['license_model']) + " - " + str(dbs['lifecycle_state'])),
+                value = {'id': str(dbs['id']), 'name': (str(dbs['display_name']) + " - " + str(dbs['license_model']) + " - " + str(dbs['lifecycle_state']) + " (" + str(dbs['sum_count']) + " OCPUs)"),
                          'cpu_core_count': str(dbs['cpu_core_count']), 'data_storage_size_in_tbs': str(dbs['data_storage_size_in_tbs']),
                          'db_name': str(dbs['db_name']), 'service_console_url': str(dbs['service_console_url']), 'time_created': str(dbs['time_created'])[0:16],
-                         'connection_strings': str(dbs['connection_strings']), 'sum_info': "Autonoumous Database (OCPUs) - " + dbs['license_model'],
-                         'sum_count': str(dbs['sum_count']), 'sum_info_storage': "Autonoumous Database (tb)",
+                         'connection_strings': str(dbs['connection_strings']), 'sum_info': "Autonomous Database (OCPUs) - " + dbs['license_model'],
+                         'sum_count': str(dbs['sum_count']), 'sum_info_storage': "Autonomous Database (tb)",
                          'sum_size_tb': str(dbs['data_storage_size_in_tbs']), 'backups': self.__get_database_autonomous_backups(dbs['backups']),
                          'defined_tags': dbs['defined_tags'], 'freeform_tags': dbs['freeform_tags']}
 
