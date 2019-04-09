@@ -33,6 +33,10 @@ class SenderSummary(object):
         Initializes a new SenderSummary object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this SenderSummary.
+        :type compartment_id: str
+
         :param email_address:
             The value to assign to the email_address property of this SenderSummary.
         :type email_address: str
@@ -61,6 +65,7 @@ class SenderSummary(object):
 
         """
         self.swagger_types = {
+            'compartment_id': 'str',
             'email_address': 'str',
             'id': 'str',
             'lifecycle_state': 'str',
@@ -70,6 +75,7 @@ class SenderSummary(object):
         }
 
         self.attribute_map = {
+            'compartment_id': 'compartmentId',
             'email_address': 'emailAddress',
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
@@ -78,12 +84,37 @@ class SenderSummary(object):
             'defined_tags': 'definedTags'
         }
 
+        self._compartment_id = None
         self._email_address = None
         self._id = None
         self._lifecycle_state = None
         self._time_created = None
         self._freeform_tags = None
         self._defined_tags = None
+
+    @property
+    def compartment_id(self):
+        """
+        Gets the compartment_id of this SenderSummary.
+        The OCID for the compartment.
+
+
+        :return: The compartment_id of this SenderSummary.
+        :rtype: str
+        """
+        return self._compartment_id
+
+    @compartment_id.setter
+    def compartment_id(self, compartment_id):
+        """
+        Sets the compartment_id of this SenderSummary.
+        The OCID for the compartment.
+
+
+        :param compartment_id: The compartment_id of this SenderSummary.
+        :type: str
+        """
+        self._compartment_id = compartment_id
 
     @property
     def email_address(self):

@@ -83,8 +83,11 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
             cert_bundle_verify=kwargs.get('federation_client_cert_bundle_verify', None),
             retry_strategy=kwargs.get('federation_client_retry_strategy', None)
         )
-
-        super(InstancePrincipalsSecurityTokenSigner, self).__init__(federation_client)
+        if 'generic_headers' in kwargs:
+            generic_headers = kwargs['generic_headers']
+            super(InstancePrincipalsSecurityTokenSigner, self).__init__(federation_client=federation_client, generic_headers=generic_headers)
+        else:
+            super(InstancePrincipalsSecurityTokenSigner, self).__init__(federation_client)
 
     def initialize_and_return_region(self):
         if hasattr(self, 'region'):

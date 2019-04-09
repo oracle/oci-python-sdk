@@ -14,6 +14,40 @@ SERVICE_LANGUAGE = "Python"
 
 
 class TestingServiceClient:
+    def get_test_config(self, service_name, client_name, api_name):
+        """
+        Gets testing config from testing service. (oci config)
+
+        :param str service_name
+            The name of the service to request config object for.
+
+        :param str client_name
+            The client of the API to request config object for.
+
+        :param str api_name
+            The name of the API to request config object for.
+
+        :return: A dicts containing config properties to call the API specified by service_name, client_name and api_name
+
+        """
+        service_name = service_name.replace('_', '').lower()
+
+        params = {
+            'serviceName': service_name,
+            'apiName': api_name,
+            'lang': SERVICE_LANGUAGE,
+            'clientName': client_name
+        }
+
+        url = '{service_root_url}/config'.format(service_root_url=SERVICE_ROOT_URL)
+        response = requests.get(url, params=params)
+        response_content = response.content.decode('UTF-8')
+        try:
+            return json.loads(response_content)
+        except json.decoder.JSONDecodeError as e:
+            print('Failed to parse testing service response as valid JSON. Response: ' + response_content)
+            raise e
+
     def get_requests(self, service_name, api_name):
         """
         Gets a list of requests from the testing service to be used in calling the API specified by service_name and api_name.
@@ -128,8 +162,6 @@ class TestingServiceClient:
             data['responseJson'] = json.dumps(response_json)
             data['responseClass'] = response_class
             response = requests.post(success_url, params=params, data=json.dumps(data))
-            assert response.status_code == 200, response.content
-            assert len(response.content) == 0, response.content
         else:
             error = {}
             error['code'] = service_error.code
@@ -141,8 +173,13 @@ class TestingServiceClient:
             print('errorToValidate: {}'.format(json.dumps(data, indent=2)))
 
             response = requests.post(error_url, params=params, data=json.dumps(data))
-            assert response.status_code == 200, response.content
-            assert len(response.content) == 0, response.content
+
+        # dump messages when testing service return 500 (all exceptions inside testing service)
+        if response.status_code == 500:
+            print('Testing service return 500: {content}'.format(content=response.content))
+
+        assert response.status_code == 200, response.content
+        assert len(response.content) == 0, response.content
 
     def get_response_dictionary(self, oci_response, is_delete_operation, data_field_name):
         if is_delete_operation:
