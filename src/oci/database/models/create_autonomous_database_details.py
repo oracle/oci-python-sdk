@@ -52,6 +52,10 @@ class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
             Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
         :type license_model: str
 
+        :param is_auto_scaling_enabled:
+            The value to assign to the is_auto_scaling_enabled property of this CreateAutonomousDatabaseDetails.
+        :type is_auto_scaling_enabled: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateAutonomousDatabaseDetails.
         :type freeform_tags: dict(str, str)
@@ -75,6 +79,7 @@ class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
             'admin_password': 'str',
             'display_name': 'str',
             'license_model': 'str',
+            'is_auto_scaling_enabled': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'source': 'str'
@@ -89,6 +94,7 @@ class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
             'admin_password': 'adminPassword',
             'display_name': 'displayName',
             'license_model': 'licenseModel',
+            'is_auto_scaling_enabled': 'isAutoScalingEnabled',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'source': 'source'
@@ -102,6 +108,7 @@ class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
         self._admin_password = None
         self._display_name = None
         self._license_model = None
+        self._is_auto_scaling_enabled = None
         self._freeform_tags = None
         self._defined_tags = None
         self._source = None
