@@ -192,3 +192,12 @@ def make_dict_keys_camel_case(original_obj):
             new_list.append(make_dict_keys_camel_case(obj))
 
         return new_list
+
+
+# convert the configuration file from testing service to the format python use
+def test_config_to_python_config(test_config):
+    converted_config = camel_to_snake_keys(test_config)
+    converted_config['tenancy'] = converted_config.pop('tenant_id')
+    converted_config['user'] = converted_config.pop('user_id')
+    converted_config['key_content'] = converted_config.pop('key_file_content')
+    return converted_config

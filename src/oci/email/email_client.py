@@ -220,6 +220,11 @@ class EmailClient(object):
         :param str sender_id: (required)
             The unique OCID of the sender.
 
+        :param str if_match: (optional)
+            Used for optimistic concurrency control. In the update or delete call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
         :param str opc_request_id: (optional)
             The request ID for tracing from the system
 
@@ -240,6 +245,7 @@ class EmailClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
+            "if_match",
             "opc_request_id"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -260,6 +266,7 @@ class EmailClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
@@ -796,6 +803,11 @@ class EmailClient(object):
         :param UpdateSenderDetails update_sender_details: (required)
             update details for sender.
 
+        :param str if_match: (optional)
+            Used for optimistic concurrency control. In the update or delete call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
         :param str opc_request_id: (optional)
             The request ID for tracing from the system
 
@@ -816,6 +828,7 @@ class EmailClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
+            "if_match",
             "opc_request_id"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -836,6 +849,7 @@ class EmailClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
