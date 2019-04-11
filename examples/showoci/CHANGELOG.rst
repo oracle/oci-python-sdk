@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
-19.4.15 - 2019-04-15
+19.4.14 - 2019-04-14
 ====================
 
 Added
@@ -18,15 +18,6 @@ Fixed
 -----
 * Fixed summary width 
 * Fixed summary to print only when have data
-
-====================
-19.4.6 - 2019-04-06
-====================
-
-Added
------
-* Added Containers
-* Added Database Edition to the Summary
 
 ====================
 19.4.2 - 2019-04-02
