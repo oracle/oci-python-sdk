@@ -252,7 +252,29 @@ Note that at this time, it will execute the ``merge_and_validate_spec.py`` scrip
 
 Adding support for new services
 ================================
-The `python_sdk_add_or_update_spec.py <https://bitbucket.oci.oraclecorp.com/projects/SDK/repos/auto-gen-utils/browse/add_or_update_scripts/python_sdk_add_or_update_spec.py>`_ script can be used to add a new service to the SDK. An example of running this script is: 
+
+Self-Service
+------------
+
+This is the preferred way to add a service to the Python SDK.
+
+`Requesting a preview SDK <https://confluence.oci.oraclecorp.com/display/DEX/Requesting+a+preview+SDK+CLI>`_
+
+`Requesting a public SDK <https://confluence.oci.oraclecorp.com/pages/viewpage.action?pageId=43683000>`_
+
+`Self-Service Testing and Development <https://confluence.oci.oraclecorp.com/pages/viewpage.action?spaceKey=DEX&title=Self-Service+Testing+and+Development>`_
+
+`SDK Testing with OCI Testing Service Overview <https://confluence.oci.oraclecorp.com/display/DEX/SDK+Testing+with+OCI+Testing+Service+Overview>`_
+
+`SDK / CLI Sample Requirements <https://confluence.oci.oraclecorp.com/pages/viewpage.action?pageId=43687174>`_
+
+Manually
+--------
+
+The manual process for adding a service to the Python SDK has been superceeded by the Self-Service approach documented above.
+The documentation here is provided for cases where Self-Service does not work.
+
+The `python_sdk_add_or_update_spec.py <https://bitbucket.oci.oraclecorp.com/projects/SDK/repos/auto-gen-utils/browse/add_or_update_scripts/python_sdk_add_or_update_spec.py>`_ script can be used to add a new service to the SDK. An example of running this script is:
 
 ::
 
