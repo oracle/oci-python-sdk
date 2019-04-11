@@ -3,9 +3,9 @@
 # showocy_output.py
 #
 # @Created On  : Mar 17 2019
-# @Last Updated: Apr  6 2019
+# @Last Updated: Apr 14 2019
 # @author      : Adi Zohar
-# @Version     : 19.4.6
+# @Version     : 19.4.14
 #
 # Supports Python 2.7 and above, Python 3 recommended
 #
@@ -115,7 +115,7 @@ class ShowOCIOutput(object):
     def __print_identity_tenancy(self, tenancy):
         try:
 
-            self.print_header("Tenancy", 1)
+            self.print_header("Tenancy", 0)
             print("Name        : " + tenancy['name'])
             print("Tenant Id   : " + tenancy['id'])
             print("Home Region : " + tenancy['home_region_key'])
@@ -737,6 +737,8 @@ class ShowOCIOutput(object):
                 for p in dbs['patches']:
                     print(self.tabs + "Patches : " + p)
 
+            print(self.tabs + "        : " + '-' * 90)
+
         except Exception as e:
             self.__print_error("__print_database_db_system_details", e)
 
@@ -767,6 +769,10 @@ class ShowOCIOutput(object):
                     # databases
                     for db in db_home['databases']:
                         print(self.tabs + self.tabs + " DB : " + db['name'])
+
+                        # print data guard
+                        for dg in db['dataguard']:
+                            print(self.tabs + self.tabs + "      " + dg['name'])
 
                         # print backups
                         for backup in db['backups']:
@@ -866,7 +872,27 @@ class ShowOCIOutput(object):
             self.__print_error("__print_email_main", e)
 
     ##########################################################################
-    # Email
+    # Streams
+    ##########################################################################
+    def __print_streams_main(self, streams):
+
+        try:
+            if not streams:
+                return
+
+            self.print_header("Streams", 2)
+
+            for ct in streams:
+                print(self.taba + ct['name'] + ", partitions (" + ct['partitions'] + "), Created: " + ct['time_created'][0:16])
+                print(self.tabs + "URL   : " + str(ct['messages_endpoint']))
+
+                print("")
+
+        except Exception as e:
+            self.__print_error("__print_streams_main", e)
+
+    ##########################################################################
+    # Container
     ##########################################################################
     def __print_container_main(self, containers):
 
@@ -1179,6 +1205,8 @@ class ShowOCIOutput(object):
                     self.__print_resource_management_main(cdata['resource_management'])
                 if 'containers' in cdata:
                     self.__print_container_main(cdata['containers'])
+                if 'streams' in cdata:
+                    self.__print_streams_main(cdata['streams'])
 
         except Exception as e:
             self.__print_error("__print_region_data", e)
@@ -1466,7 +1494,7 @@ class ShowOCISummary(object):
 
                 # sort and print
                 for d in sorted(grouped_data, key=lambda i: i['type']):
-                    print(d['type'].ljust(42) + " - " + str(round(d['size'])).rjust(10))
+                    print(d['type'].ljust(43)[0:42] + " - " + str(round(d['size'])).rjust(10))
 
         except Exception as e:
             self.__print_error("__summary_print_results", e)
@@ -1480,14 +1508,13 @@ class ShowOCISummary(object):
             if not data:
                 return
             self.__summary_print_header("Summary - " + region_name, 0)
+            region_data_exist = False
 
             # loop on compartments
             for cdata in data:
                 self.summary_global_list = []
 
                 compartment_header = ""
-                if 'path' in cdata:
-                    compartment_header = "Summary - Compartment " + cdata['path']
 
                 if 'compute' in cdata:
                     self.__summary_core_compute_main(cdata['compute'])
@@ -1500,8 +1527,18 @@ class ShowOCISummary(object):
                 if 'load_balancer' in cdata:
                     self.__summary_load_balancer_main(cdata['load_balancer'])
 
+                # print compartment header if data in the global list
+                if 'path' in cdata and self.summary_global_list:
+                    compartment_header = "Summary - Compartment " + cdata['path']
+                    region_data_exist = True
+
                 # print results compartment
                 self.__summary_print_results(self.summary_global_list, compartment_header, 3)
+
+            # if not data , print not found
+            if not region_data_exist:
+                print("")
+                print("No Summary data exist in this region")
 
         except Exception as e:
             self.__print_error("__summary_region_data", e)

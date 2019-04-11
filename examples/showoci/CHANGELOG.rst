@@ -5,7 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
-19.4.6 - 2019-04-6
+19.4.15 - 2019-04-15
+====================
+
+Added
+-----
+* Added Database Dataguard Association
+* Added Tenancy information for filtered result
+* Added Streams
+
+Fixed
+-----
+* Fixed summary width 
+* Fixed summary to print only when have data
+
+====================
+19.4.6 - 2019-04-06
 ====================
 
 Added
