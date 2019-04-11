@@ -20,6 +20,15 @@ Fixed
 * Fixed summary to print only when have data
 
 ====================
+19.4.6 - 2019-04-06
+====================
+
+Added
+-----
+* Added Containers
+* Added Database Edition to the Summary
+
+====================
 19.4.2 - 2019-04-02
 ====================
 
