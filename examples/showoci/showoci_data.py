@@ -10,7 +10,6 @@
 # Supports Python 2.7 and above, Python 3 recommended
 #
 # coding: utf-8
-#
 ##########################################################################
 # This file has ShowOCIData class
 # it used the ShowOCIService class and generate JSON structure as output

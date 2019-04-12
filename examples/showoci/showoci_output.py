@@ -10,7 +10,6 @@
 # Supports Python 2.7 and above, Python 3 recommended
 #
 # coding: utf-8
-#
 ##########################################################################
 # This file has ShowOCIOutput class and ShowOCISummary class
 # it accept data as JSON format and print nice output

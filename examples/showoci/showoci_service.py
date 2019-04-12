@@ -1,3 +1,4 @@
+
 ##########################################################################
 # Copyright(c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 # showocy_service.py
@@ -10,7 +11,6 @@
 # Supports Python 2.7 and above, Python 3 recommended
 #
 # coding: utf-8
-#
 ##########################################################################
 # This file has ShowOCIService class, and ShowOCIFlags
 #

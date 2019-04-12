@@ -10,8 +10,7 @@
 #
 # Supports Python 2.7 and above, Python 3 recommended
 #
-# coding: utf-8
-#
+# coding: utf-8 ```
 ##########################################################################
 # OCI Report Tool SHOWOCI:
 #
