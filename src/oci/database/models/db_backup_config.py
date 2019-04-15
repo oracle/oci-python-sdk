@@ -24,16 +24,23 @@ class DbBackupConfig(object):
             The value to assign to the auto_backup_enabled property of this DbBackupConfig.
         :type auto_backup_enabled: bool
 
+        :param recovery_window_in_days:
+            The value to assign to the recovery_window_in_days property of this DbBackupConfig.
+        :type recovery_window_in_days: int
+
         """
         self.swagger_types = {
-            'auto_backup_enabled': 'bool'
+            'auto_backup_enabled': 'bool',
+            'recovery_window_in_days': 'int'
         }
 
         self.attribute_map = {
-            'auto_backup_enabled': 'autoBackupEnabled'
+            'auto_backup_enabled': 'autoBackupEnabled',
+            'recovery_window_in_days': 'recoveryWindowInDays'
         }
 
         self._auto_backup_enabled = None
+        self._recovery_window_in_days = None
 
     @property
     def auto_backup_enabled(self):
@@ -58,6 +65,34 @@ class DbBackupConfig(object):
         :type: bool
         """
         self._auto_backup_enabled = auto_backup_enabled
+
+    @property
+    def recovery_window_in_days(self):
+        """
+        Gets the recovery_window_in_days of this DbBackupConfig.
+        Number of days between the current and the earliest point of recoverability covered by automatic backups.
+        This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window.
+        When the value is updated, it is applied to all existing automatic backups.
+
+
+        :return: The recovery_window_in_days of this DbBackupConfig.
+        :rtype: int
+        """
+        return self._recovery_window_in_days
+
+    @recovery_window_in_days.setter
+    def recovery_window_in_days(self, recovery_window_in_days):
+        """
+        Sets the recovery_window_in_days of this DbBackupConfig.
+        Number of days between the current and the earliest point of recoverability covered by automatic backups.
+        This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window.
+        When the value is updated, it is applied to all existing automatic backups.
+
+
+        :param recovery_window_in_days: The recovery_window_in_days of this DbBackupConfig.
+        :type: int
+        """
+        self._recovery_window_in_days = recovery_window_in_days
 
     def __repr__(self):
         return formatted_flat_dict(self)
