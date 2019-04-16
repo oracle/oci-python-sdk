@@ -28,7 +28,7 @@ def vcr_fixture(request):
         yield
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_create_backend(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'CreateBackend'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -69,7 +69,7 @@ def test_create_backend(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_create_backend_set(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'CreateBackendSet'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -109,7 +109,7 @@ def test_create_backend_set(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_create_certificate(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'CreateCertificate'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -149,7 +149,7 @@ def test_create_certificate(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_create_hostname(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'CreateHostname'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -189,7 +189,7 @@ def test_create_hostname(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_create_listener(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'CreateListener'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -229,7 +229,7 @@ def test_create_listener(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_create_load_balancer(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'CreateLoadBalancer'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -268,7 +268,7 @@ def test_create_load_balancer(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_create_path_route_set(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'CreatePathRouteSet'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -308,7 +308,7 @@ def test_create_path_route_set(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_create_rule_set(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'CreateRuleSet'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -348,7 +348,7 @@ def test_create_rule_set(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_delete_backend(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'DeleteBackend'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -389,7 +389,7 @@ def test_delete_backend(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_delete_backend_set(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'DeleteBackendSet'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -429,7 +429,7 @@ def test_delete_backend_set(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_delete_certificate(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'DeleteCertificate'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -469,7 +469,7 @@ def test_delete_certificate(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_delete_hostname(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'DeleteHostname'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -509,7 +509,7 @@ def test_delete_hostname(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_delete_listener(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'DeleteListener'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -549,7 +549,7 @@ def test_delete_listener(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_delete_load_balancer(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'DeleteLoadBalancer'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -588,7 +588,7 @@ def test_delete_load_balancer(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_delete_path_route_set(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'DeletePathRouteSet'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -628,7 +628,7 @@ def test_delete_path_route_set(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_delete_rule_set(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'DeleteRuleSet'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -668,7 +668,7 @@ def test_delete_rule_set(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_get_backend(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'GetBackend'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -709,7 +709,7 @@ def test_get_backend(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_get_backend_health(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'GetBackendHealth'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -750,7 +750,7 @@ def test_get_backend_health(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_get_backend_set(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'GetBackendSet'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -790,7 +790,7 @@ def test_get_backend_set(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_get_backend_set_health(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'GetBackendSetHealth'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -830,7 +830,7 @@ def test_get_backend_set_health(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_get_health_checker(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'GetHealthChecker'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -870,7 +870,7 @@ def test_get_health_checker(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_get_hostname(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'GetHostname'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -910,7 +910,7 @@ def test_get_hostname(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_get_load_balancer(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'GetLoadBalancer'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -949,7 +949,7 @@ def test_get_load_balancer(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_get_load_balancer_health(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'GetLoadBalancerHealth'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -988,7 +988,7 @@ def test_get_load_balancer_health(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_get_path_route_set(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'GetPathRouteSet'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1028,7 +1028,7 @@ def test_get_path_route_set(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_get_rule_set(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'GetRuleSet'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1068,7 +1068,7 @@ def test_get_rule_set(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_get_work_request(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'GetWorkRequest'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1107,7 +1107,7 @@ def test_get_work_request(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_list_backend_sets(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'ListBackendSets'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1146,7 +1146,7 @@ def test_list_backend_sets(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_list_backends(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'ListBackends'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1186,7 +1186,7 @@ def test_list_backends(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_list_certificates(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'ListCertificates'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1225,7 +1225,7 @@ def test_list_certificates(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_list_hostnames(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'ListHostnames'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1264,7 +1264,7 @@ def test_list_hostnames(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_list_load_balancer_healths(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'ListLoadBalancerHealths'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1322,7 +1322,7 @@ def test_list_load_balancer_healths(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_list_load_balancers(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'ListLoadBalancers'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1380,7 +1380,7 @@ def test_list_load_balancers(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_list_path_route_sets(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'ListPathRouteSets'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1419,7 +1419,7 @@ def test_list_path_route_sets(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_list_policies(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'ListPolicies'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1477,7 +1477,7 @@ def test_list_policies(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_list_protocols(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'ListProtocols'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1535,7 +1535,7 @@ def test_list_protocols(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_list_rule_sets(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'ListRuleSets'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1574,7 +1574,7 @@ def test_list_rule_sets(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_list_shapes(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'ListShapes'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1632,7 +1632,7 @@ def test_list_shapes(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_list_work_requests(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'ListWorkRequests'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1690,7 +1690,7 @@ def test_list_work_requests(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_update_backend(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'UpdateBackend'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1732,7 +1732,7 @@ def test_update_backend(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_update_backend_set(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'UpdateBackendSet'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1773,7 +1773,7 @@ def test_update_backend_set(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_update_health_checker(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'UpdateHealthChecker'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1814,7 +1814,7 @@ def test_update_health_checker(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_update_hostname(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'UpdateHostname'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1855,7 +1855,7 @@ def test_update_hostname(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_update_listener(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'UpdateListener'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1896,7 +1896,7 @@ def test_update_listener(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_update_load_balancer(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'UpdateLoadBalancer'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1936,7 +1936,7 @@ def test_update_load_balancer(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_update_path_route_set(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'UpdatePathRouteSet'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1977,7 +1977,7 @@ def test_update_path_route_set(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_update_rule_set(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'UpdateRuleSet'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
