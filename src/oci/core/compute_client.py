@@ -834,7 +834,7 @@ class ComputeClient(object):
 
 
         :param str instance_console_connection_id: (required)
-            The OCID of the intance console connection
+            The OCID of the instance console connection.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -1791,7 +1791,7 @@ class ComputeClient(object):
 
 
         :param str instance_console_connection_id: (required)
-            The OCID of the intance console connection
+            The OCID of the instance console connection.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.

@@ -50,7 +50,7 @@ class CreateTagDefaultDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateTagDefaultDetails.
-        The OCID of the Compartment. The Tag Default will apply to any resource contained in this Compartment.
+        The OCID of the compartment. The tag default will be applied to all new resources created in this compartment.
 
 
         :return: The compartment_id of this CreateTagDefaultDetails.
@@ -62,7 +62,7 @@ class CreateTagDefaultDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateTagDefaultDetails.
-        The OCID of the Compartment. The Tag Default will apply to any resource contained in this Compartment.
+        The OCID of the compartment. The tag default will be applied to all new resources created in this compartment.
 
 
         :param compartment_id: The compartment_id of this CreateTagDefaultDetails.
@@ -74,7 +74,7 @@ class CreateTagDefaultDetails(object):
     def tag_definition_id(self):
         """
         **[Required]** Gets the tag_definition_id of this CreateTagDefaultDetails.
-        The OCID of the Tag Definition. The Tag Default will always assign a default value for this Tag Definition.
+        The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
 
 
         :return: The tag_definition_id of this CreateTagDefaultDetails.
@@ -86,7 +86,7 @@ class CreateTagDefaultDetails(object):
     def tag_definition_id(self, tag_definition_id):
         """
         Sets the tag_definition_id of this CreateTagDefaultDetails.
-        The OCID of the Tag Definition. The Tag Default will always assign a default value for this Tag Definition.
+        The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
 
 
         :param tag_definition_id: The tag_definition_id of this CreateTagDefaultDetails.
@@ -98,7 +98,7 @@ class CreateTagDefaultDetails(object):
     def value(self):
         """
         **[Required]** Gets the value of this CreateTagDefaultDetails.
-        The default value for the Tag Definition. This will be applied to all resources created in the Compartment.
+        The default value for the tag definition. This will be applied to all new resources created in the compartment.
 
 
         :return: The value of this CreateTagDefaultDetails.
@@ -110,7 +110,7 @@ class CreateTagDefaultDetails(object):
     def value(self, value):
         """
         Sets the value of this CreateTagDefaultDetails.
-        The default value for the Tag Definition. This will be applied to all resources created in the Compartment.
+        The default value for the tag definition. This will be applied to all new resources created in the compartment.
 
 
         :param value: The value of this CreateTagDefaultDetails.

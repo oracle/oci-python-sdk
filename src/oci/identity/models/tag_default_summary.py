@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TagDefaultSummary(object):
     """
-    A document that summarizes the default value for a Tag Definition for all resource types created in a Compartment.
+    Summary information for the specified tag default.
     """
 
     #: A constant which can be used with the lifecycle_state property of a TagDefaultSummary.
@@ -91,7 +91,7 @@ class TagDefaultSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this TagDefaultSummary.
-        The OCID of the Tag Default.
+        The OCID of the tag default.
 
 
         :return: The id of this TagDefaultSummary.
@@ -103,7 +103,7 @@ class TagDefaultSummary(object):
     def id(self, id):
         """
         Sets the id of this TagDefaultSummary.
-        The OCID of the Tag Default.
+        The OCID of the tag default.
 
 
         :param id: The id of this TagDefaultSummary.
@@ -115,7 +115,7 @@ class TagDefaultSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this TagDefaultSummary.
-        The OCID of the Compartment. The Tag Default will apply to any resource contained in this Compartment.
+        The OCID of the compartment. The tag default will apply to all new resources that are created in the compartment.
 
 
         :return: The compartment_id of this TagDefaultSummary.
@@ -127,7 +127,7 @@ class TagDefaultSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this TagDefaultSummary.
-        The OCID of the Compartment. The Tag Default will apply to any resource contained in this Compartment.
+        The OCID of the compartment. The tag default will apply to all new resources that are created in the compartment.
 
 
         :param compartment_id: The compartment_id of this TagDefaultSummary.
@@ -139,7 +139,7 @@ class TagDefaultSummary(object):
     def tag_namespace_id(self):
         """
         **[Required]** Gets the tag_namespace_id of this TagDefaultSummary.
-        The OCID of the Tag Namespace that contains the Tag Definition.
+        The OCID of the tag namespace that contains the tag definition.
 
 
         :return: The tag_namespace_id of this TagDefaultSummary.
@@ -151,7 +151,7 @@ class TagDefaultSummary(object):
     def tag_namespace_id(self, tag_namespace_id):
         """
         Sets the tag_namespace_id of this TagDefaultSummary.
-        The OCID of the Tag Namespace that contains the Tag Definition.
+        The OCID of the tag namespace that contains the tag definition.
 
 
         :param tag_namespace_id: The tag_namespace_id of this TagDefaultSummary.
@@ -163,7 +163,7 @@ class TagDefaultSummary(object):
     def tag_definition_id(self):
         """
         **[Required]** Gets the tag_definition_id of this TagDefaultSummary.
-        The OCID of the Tag Definition. The Tag Default will always assign a default value for this Tag Definition.
+        The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
 
 
         :return: The tag_definition_id of this TagDefaultSummary.
@@ -175,7 +175,7 @@ class TagDefaultSummary(object):
     def tag_definition_id(self, tag_definition_id):
         """
         Sets the tag_definition_id of this TagDefaultSummary.
-        The OCID of the Tag Definition. The Tag Default will always assign a default value for this Tag Definition.
+        The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
 
 
         :param tag_definition_id: The tag_definition_id of this TagDefaultSummary.
@@ -187,7 +187,7 @@ class TagDefaultSummary(object):
     def tag_definition_name(self):
         """
         **[Required]** Gets the tag_definition_name of this TagDefaultSummary.
-        The name used in the Tag Definition. This field is informational in the context of the Tag Default.
+        The name used in the tag definition. This field is informational in the context of the tag default.
 
 
         :return: The tag_definition_name of this TagDefaultSummary.
@@ -199,7 +199,7 @@ class TagDefaultSummary(object):
     def tag_definition_name(self, tag_definition_name):
         """
         Sets the tag_definition_name of this TagDefaultSummary.
-        The name used in the Tag Definition. This field is informational in the context of the Tag Default.
+        The name used in the tag definition. This field is informational in the context of the tag default.
 
 
         :param tag_definition_name: The tag_definition_name of this TagDefaultSummary.
@@ -211,7 +211,7 @@ class TagDefaultSummary(object):
     def value(self):
         """
         **[Required]** Gets the value of this TagDefaultSummary.
-        The default value for the Tag Definition. This will be applied to all resources created in the Compartment.
+        The default value for the tag definition. This will be applied to all new resources created in the compartment.
 
 
         :return: The value of this TagDefaultSummary.
@@ -223,7 +223,7 @@ class TagDefaultSummary(object):
     def value(self, value):
         """
         Sets the value of this TagDefaultSummary.
-        The default value for the Tag Definition. This will be applied to all resources created in the Compartment.
+        The default value for the tag definition. This will be applied to all new resources created in the compartment.
 
 
         :param value: The value of this TagDefaultSummary.
@@ -263,7 +263,7 @@ class TagDefaultSummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this TagDefaultSummary.
-        The tag default's current state. After creating a tagdefault, make sure its `lifecycleState` is ACTIVE before using it.
+        The tag default's current state. After creating a `TagDefault`, make sure its `lifecycleState` is ACTIVE before using it.
 
         Allowed values for this property are: "ACTIVE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -278,7 +278,7 @@ class TagDefaultSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this TagDefaultSummary.
-        The tag default's current state. After creating a tagdefault, make sure its `lifecycleState` is ACTIVE before using it.
+        The tag default's current state. After creating a `TagDefault`, make sure its `lifecycleState` is ACTIVE before using it.
 
 
         :param lifecycle_state: The lifecycle_state of this TagDefaultSummary.

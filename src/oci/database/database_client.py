@@ -180,7 +180,7 @@ class DatabaseClient(object):
     def create_autonomous_data_warehouse(self, create_autonomous_data_warehouse_details, **kwargs):
         """
         Creates a new Autonomous Data Warehouse.
-        Creates a new Autonomous Data Warehouse.
+        **Deprecated.** To create a new Autonomous Data Warehouse, use the :func:`create_autonomous_database` operation and specify `DW` as the workload type.
 
 
         :param CreateAutonomousDataWarehouseDetails create_autonomous_data_warehouse_details: (required)
@@ -249,7 +249,7 @@ class DatabaseClient(object):
     def create_autonomous_data_warehouse_backup(self, create_autonomous_data_warehouse_backup_details, **kwargs):
         """
         Creates a new Autonomous Data Warehouse backup for the specified database.
-        Creates a new Autonomous Data Warehouse backup for the specified database based on the provided request parameters.
+        **Deprecated.** To create a new Autonomous Data Warehouse backup for a specified database, use the :func:`create_autonomous_database_backup` operation.
 
 
         :param CreateAutonomousDataWarehouseBackupDetails create_autonomous_data_warehouse_backup_details: (required)
@@ -885,7 +885,7 @@ class DatabaseClient(object):
     def delete_autonomous_data_warehouse(self, autonomous_data_warehouse_id, **kwargs):
         """
         Deletes the specified Autonomous Data Warehouse.
-        Deletes the specified Autonomous Data Warehouse.
+        **Deprecated.** To delete an Autonomous Data Warehouse, use the :func:`delete_autonomous_database` operation.
 
 
         :param str autonomous_data_warehouse_id: (required)
@@ -1293,7 +1293,7 @@ class DatabaseClient(object):
     def generate_autonomous_data_warehouse_wallet(self, autonomous_data_warehouse_id, generate_autonomous_data_warehouse_wallet_details, **kwargs):
         """
         Creates and downloads a wallet for the specified Autonomous Data Warehouse.
-        Creates and downloads a wallet for the specified Autonomous Data Warehouse.
+        **Deprecated.** To create and download a wallet for an Autonomous Data Warehouse, use the :func:`generate_autonomous_database_wallet` operation.
 
 
         :param str autonomous_data_warehouse_id: (required)
@@ -1383,8 +1383,8 @@ class DatabaseClient(object):
 
     def generate_autonomous_database_wallet(self, autonomous_database_id, generate_autonomous_database_wallet_details, **kwargs):
         """
-        Creates and downloads a wallet for the specified Autonomous Transaction Processing database.
-        Creates and downloads a wallet for the specified Autonomous Transaction Processing database.
+        Creates and downloads a wallet for the specified Autonomous Database.
+        Creates and downloads a wallet for the specified Autonomous Database.
 
 
         :param str autonomous_database_id: (required)
@@ -1393,7 +1393,7 @@ class DatabaseClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param GenerateAutonomousDatabaseWalletDetails generate_autonomous_database_wallet_details: (required)
-            Request to create a new Autonomous Transaction Processing database wallet.
+            Request to create a new Autonomous Database wallet.
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -1475,7 +1475,7 @@ class DatabaseClient(object):
     def get_autonomous_data_warehouse(self, autonomous_data_warehouse_id, **kwargs):
         """
         Gets the details of the specified Autonomous Data Warehouse.
-        Gets the details of the specified Autonomous Data Warehouse.
+        **Deprecated.** To get the details of an Autonomous Data Warehouse, use the :func:`get_autonomous_database` operation.
 
 
         :param str autonomous_data_warehouse_id: (required)
@@ -1541,7 +1541,7 @@ class DatabaseClient(object):
     def get_autonomous_data_warehouse_backup(self, autonomous_data_warehouse_backup_id, **kwargs):
         """
         Gets information about the specified Autonomous Data Warehouse backup.
-        Gets information about the specified Autonomous Data Warehouse backup.
+        **Deprecated.** To get information about a specified Autonomous Data Warehouse backup, use the :func:`get_autonomous_database_backup` operation.
 
 
         :param str autonomous_data_warehouse_backup_id: (required)
@@ -2668,7 +2668,7 @@ class DatabaseClient(object):
     def list_autonomous_data_warehouse_backups(self, **kwargs):
         """
         Gets a list of Autonomous Data Warehouse backups.
-        Gets a list of Autonomous Data Warehouse backups based on either the `autonomousDataWarehouseId` or `compartmentId` specified as a query parameter.
+        **Deprecated.** To get a list of Autonomous Data Warehouse backups, use the :func:`list_autonomous_database_backups` operation.
 
 
         :param str autonomous_data_warehouse_id: (optional)
@@ -2799,7 +2799,7 @@ class DatabaseClient(object):
     def list_autonomous_data_warehouses(self, compartment_id, **kwargs):
         """
         Gets a list of Autonomous Data Warehouses.
-        Gets a list of Autonomous Data Warehouses.
+        **Deprecated.** To get a list of Autonomous Data Warehouses, use the :func:`list_autonomous_databases` operation and specify `DW` as the workload type.
 
 
         :param str compartment_id: (required)
@@ -3088,7 +3088,7 @@ class DatabaseClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the given lifecycle state exactly.
 
-            Allowed values are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION"
+            Allowed values are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING"
 
         :param str db_workload: (optional)
             A filter to return only autonomous database resources that match the specified workload type.
@@ -3147,7 +3147,7 @@ class DatabaseClient(object):
                 )
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION"]
+            lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
@@ -4472,7 +4472,7 @@ class DatabaseClient(object):
     def restore_autonomous_data_warehouse(self, autonomous_data_warehouse_id, restore_autonomous_data_warehouse_details, **kwargs):
         """
         Restores an Autonomous Data Warehouse based on the provided request parameters.
-        Restores an Autonomous Data Warehouse based on the provided request parameters.
+        **Deprecated.** To restore an Autonomous Data Warehouse, use the :func:`restore_autonomous_database` operation.
 
 
         :param str autonomous_data_warehouse_id: (required)
@@ -4718,7 +4718,7 @@ class DatabaseClient(object):
     def start_autonomous_data_warehouse(self, autonomous_data_warehouse_id, **kwargs):
         """
         Starts the specified autonomous Data Warehouse.
-        Starts the specified autonomous Data Warehouse.
+        **Deprecated.** To start an Autonomous Data Warehouse, use the :func:`start_autonomous_database` operation.
 
 
         :param str autonomous_data_warehouse_id: (required)
@@ -4872,7 +4872,7 @@ class DatabaseClient(object):
     def stop_autonomous_data_warehouse(self, autonomous_data_warehouse_id, **kwargs):
         """
         Stops the specified Autonomous Data Warehouse.
-        Stops the specified Autonomous Data Warehouse.
+        **Deprecated.** To stop an Autonomous Data Warehouse, use the :func:`stop_autonomous_database` operation.
 
 
         :param str autonomous_data_warehouse_id: (required)
@@ -5197,7 +5197,7 @@ class DatabaseClient(object):
     def update_autonomous_data_warehouse(self, autonomous_data_warehouse_id, update_autonomous_data_warehouse_details, **kwargs):
         """
         Updates the specified Autonomous Data Warehouse with new CPU core count and size.
-        Updates the specified Autonomous Data Warehouse with a new CPU core count and size.
+        **Deprecated.** To update the CPU core count and storage size of an Autonomous Data Warehouse, use the :func:`update_autonomous_database` operation.
 
 
         :param str autonomous_data_warehouse_id: (required)

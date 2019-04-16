@@ -51,7 +51,10 @@ class FastConnectProviderServiceKey(object):
     def name(self):
         """
         Gets the name of this FastConnectProviderServiceKey.
-        The name of the service key offered by the provider.
+        The service key that the provider gives you when you set up a virtual circuit connection
+        from the provider to Oracle Cloud Infrastructure. Use this value as the `providerServiceKeyName`
+        query parameter for
+        :func:`get_fast_connect_provider_service_key`.
 
 
         :return: The name of this FastConnectProviderServiceKey.
@@ -63,7 +66,10 @@ class FastConnectProviderServiceKey(object):
     def name(self, name):
         """
         Sets the name of this FastConnectProviderServiceKey.
-        The name of the service key offered by the provider.
+        The service key that the provider gives you when you set up a virtual circuit connection
+        from the provider to Oracle Cloud Infrastructure. Use this value as the `providerServiceKeyName`
+        query parameter for
+        :func:`get_fast_connect_provider_service_key`.
 
 
         :param name: The name of this FastConnectProviderServiceKey.

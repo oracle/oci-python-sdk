@@ -1,10 +1,8 @@
-# showoci
-##### README.md, last updated 4/2/2019
-### Oracle Cloud Infrastructure Reporting Tool
+## showoci - Oracle Cloud Infrastructure Reporting Tool
 
-##### Generate OCI resources of your tenancy using Python OCI SDK  
+SHOWOCI is an reporting tool which uses the Python SDK to extract list of resources from your tenant. It covers more than 80% of OCI components, Output can be printer friendly or JSON file.
 
-##### Modules Included:  
+Modules Included:  
 - oci.core.VirtualNetworkClient          
 - oci.core.ComputeClient                 
 - oci.core.ComputeManagementClient       
@@ -16,24 +14,28 @@
 - oci.load_balancer.LoadBalancerClient   
 - oci.email.EmailClient
 - oci.container_engine.ContainerEngineClient
+- oci.streaming.StreamAdminClient
 
-##### Required OCI IAM user with read only privileges:  
-##### Inspect privilege will have some limitations especially on object storage sizes
+
+## OCI User Requirement
+Required OCI IAM user with read only privileges:  
+
+Inspect privilege will have some limitations especially on object storage sizes
 ```
 ALLOW GROUP ReadOnlyUsers to read all-resources IN TENANCY  
 ```
-##### ** DISCLAIMER – This is not official Oracle application
+** DISCLAIMER – This is not official Oracle application
 
-## Installation Guide for Python 3.7.2 with OCI SDK  
+## Installation Guide for Python 3 with OCI SDK  
 
 ### Installation on Windows  
 
-Download Python 3.7.2 - https://www.python.org/ftp/python/3.7.2/python-3.7.2-amd64.exe  
-
 ```
+Download Python 3 from https://www.python.org/ 
 setup.exe
 pip install oci oci-cli  
 ```
+
 ### Installation on Mac using Brew
 ```
 brew install python3
@@ -41,13 +43,17 @@ pip3 install oci oci-cli
 ```
 
 ### Installation on OCI VM with Oracle Cloud Developer Image
-##### All Installed, just run the config below
+```
+All Installed, just run the config below
+```
 
 ### Installation on OCI VM with Oracle Linux 7  
 
-##### Login as opc and install python3 locally  
 ```
+# Login as opc and install python3 locally  
 sudo yum -y install gcc libffi-devel openssl-devel python-devel sqlite-devel 
+
+# example on python 3.7.2, list of python versions can be found here - https://www.python.org/ftp/python/
 wget https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tgz  
 tar zxf Python-3.7.2.tgz  
 cd Python-3.7.2
@@ -55,38 +61,32 @@ cd Python-3.7.2
 make  
 make install  
 cd $HOME  
-```
 
-##### Add python to path  
-```
+# Add python to path  
 echo 'export PATH=$HOME/python/bin:$PATH' >> ~/.bash_profile  
 echo 'export PYTHONPATH=$HOME/python' >> ~/.bash_profile  
 source ~/.bash_profile  
-```
 
-##### Check  
-```
+# check
 which python3  
-```
+python3 --version
 
-##### install oci and oci-cli  
-```
+# install oci and oci-cli  
 pip3 install --upgrade pip  
 pip3 install oci oci-cli  
 ```
 
 ## Setup OCI CLI connectivity  
 
-##### Cloud: login to your OCI Cloud
 ```  
-1. Create new group : ReadOnlyGroup  
-2. Create new Policy: ReadOnlyGroupPolicy with Statement - ALLOW GROUP ReadOnlyGroup to read all-resources IN TENANCY  
-3. Create new User  : readonly.user -> Add to ReadOnlyGroup group  
-```
+1. Login to your OCI Cloud console
+2. Create new group : ReadOnlyGroup  
+3. Create new Policy: ReadOnlyGroupPolicy with Statement - ALLOW GROUP ReadOnlyGroup to read all-resources IN TENANCY  
+4. Create new User  : readonly.user -> Add to ReadOnlyGroup group  
 
-#### Config OCI  
-##### Unix: Login as opc
-```  
+# Config OCI  
+# Login as opc
+
 oci setup config  
 --> config location - /home/opc/.oci/config  
 --> Enter a user OCID - copy from the created user   
@@ -95,51 +95,55 @@ oci setup config
 --> Do you want to generate a new RSA key pair? Y  
 
 Copy the /home/opc/.oci/oci_api_key_public.pem and add it to the OCI User under API Key  
-```
 
-##### Test it:  
-```
+# Test it:  
 $ oci os ns get  
 {  
   "data": "tenant_name_xxx"  
 }  
 ```
 
-Download the showoci.py from this project  
+Download the showoci*.py from this project  
 
-##### Execute  
+Execute  
 
 ```
 $ ./showoci.py  
 
-usage: showoci [-h] [-a] [-ani] [-n] [-i] [-c] [-o] [-l] [-k] [-d] [-f] [-e]
-               [-so] [-mc] [-nr] [-t PROFILE] [-p PROXY] [-rg REGION]
-               [-cp COMPART] [-cf CONFIG] [-jf JOUTFILE] [-js] [--version]
+usage: showoci [-h] [-a] [-ani] [-n] [-i] [-c] [-cn] [-o] [-l] [-d] [-f] [-e]
+               [-s] [-rm] [-so] [-mc] [-nr] [-t PROFILE] [-p PROXY]
+               [-rg REGION] [-cp COMPART] [-cf CONFIG] [-jf JOUTFILE] [-js]
+               [-cachef SERVICEFILE] [-caches] [--version]
 
 optional arguments:
-  -h, --help    show this help message and exit
-  -a            Print All Resources
-  -ani          Print All Resources but identity
-  -n            Print Network
-  -i            Print Identity
-  -c            Print Compute
-  -o            Print Object Storage
-  -l            Print Load Balancer
-  -k            Print Key Management
-  -d            Print Database
-  -f            Print File Storage
-  -e            Print EMail
-  -so           Print Summary Only
-  -mc           Include ManagedCompartmentForPaaS
-  -nr           Not include root compartment
-  -t PROFILE    Config file section to use (tenancy profile)
-  -p PROXY      Set Proxy (i.e. www-proxy-server:80)
-  -rg REGION    Filter by Region
-  -cp COMPART   Filter by Compartment
-  -cf CONFIG    Config File, default=~/.oci/config
-  -jf JOUTFILE  Output to file (JSON format)
-  -js           Output to screen (JSON format)
-  --version     show program's version number and exit
+  -h, --help           show this help message and exit
+  -a                   Print All Resources
+  -ani                 Print All Resources but identity
+  -n                   Print Network
+  -i                   Print Identity
+  -c                   Print Compute
+  -cn                  Print Containers
+  -o                   Print Object Storage
+  -l                   Print Load Balancer
+  -d                   Print Database
+  -f                   Print File Storage
+  -e                   Print EMail
+  -s                   Print Streams
+  -rm                  Print Resource management
+  -so                  Print Summary Only
+  -mc                  exclude ManagedCompartmentForPaaS
+  -nr                  Not include root compartment
+  -t PROFILE           Config file section to use (tenancy profile)
+  -p PROXY             Set Proxy (i.e. www-proxy-server.com:80)
+  -rg REGION           Filter by Region
+  -cp COMPART          Filter by Compartment
+  -cf CONFIG           Config File
+  -jf JOUTFILE         Output to file (JSON format)
+  -js                  Output to screen (JSON format)
+  -cachef SERVICEFILE  Output Cache to file (JSON format)
+  -caches              Output Cache to screen (JSON format)
+  --version            show program's version number and exit
+
 
 ```
 
@@ -255,9 +259,9 @@ Extracting Region us-ashburn-1
     Compartment NetworkCompartment...
 
 
-############################################################
-#                         Tenancy                          #
-############################################################
+##########################################################################################
+#                                        Tenancy                                         #
+##########################################################################################
 Name        - CUST
 OCID        - ocid1.tenancy.oc1..aaaaaaaae5u57gqxs5qas5f33qnge63sdoi7s2ji6bk5slscblmxxxxxxx
 Home Region - IAD
@@ -518,30 +522,26 @@ Compartment gse00000000 (root):
 ##############################
 #         Databases          #
 ##############################
---> ADIDB02 - VM.Standard1.1 - AVAILABLE
-    AD      : fHBa:US-ASHBURN-AD-3
+--> ADI18C - VM.Standard2.1 - AVAILABLE
+    AD      : fHBa:US-ASHBURN-AD-1
     Cores   : 1
     Nodes   : 1
-    Version : 18.3.0.0.180717 - ENTERPRISE_EDITION_EXTREME_PERFORMANCE - BRING_YOUR_OWN_LICENSE
+    Version : 18.4.0.0.181016 - ENTERPRISE_EDITION_EXTREME_PERFORMANCE - BYOL
     Host    : dbhost
-    Domain  : sub3.vcn.oraclevcn.com
+    Domain  : sub1.vcn.oraclevcn.com
     Data    : 256gb - 80%
-    DataSub : 10.1.0.192/27  sub3 (Public)
-    Scan DNS: ocid1.vcndnsrecord.oc1.iad.abuwcljszsvrzlpytvykn4oqoskub6qqebk4wkpkesfa7gdgvf2nomqyrclq
+    DataSub : sub1
+    Scan DNS: ocid1.vcndnsrecord.oc1.iad.abuwcljrt2ctwqn4x4khlkjq7kczhghdv5dnckvrgcxmdzytdcwwzn7caama
     Port    : 1521
-    Patches : Jul 2018 18c Db System patch - 18.3.0.0.180717 - 2018-07-30 - Last Action: APPLY
-    Node    : dbhost - AVAILABLE - 10.1.0.196 (Priv) , 129.213.32.183 (Pub) , Subnet sub3
-    Home    : dbhome20181026162225 - 18.2.0.0.180417
-         PT : Apr 2018 18c Database patch - 18.2.0.0.180417 - 2018-04-25 - Last Action: None
-         PT : Jul 2018 18c Database patch - 18.3.0.0.180717 - 2018-07-30 - Last Action: None
-         DB : ADIDB02 - ADIDB02_iad3n9 - OLTP - AL32UTF8 - AVAILABLE - AutoBck=Y
-                  Automatic Backup - INCREMENTAL - FAILED - 2018-11-02 05:25 - 2018-11-02 05:39 - None
-                  Automatic Backup - INCREMENTAL - ACTIVE - 2018-11-01 05:25 - 2018-11-01 05:39 - 3.5gb
-                  Automatic Backup - INCREMENTAL - ACTIVE - 2018-10-31 05:25 - 2018-10-31 05:46 - 3.5gb
-                  Automatic Backup - INCREMENTAL - ACTIVE - 2018-10-30 05:24 - 2018-10-30 05:30 - 3.4gb
-                  Automatic Backup - INCREMENTAL - ACTIVE - 2018-10-29 05:26 - 2018-10-29 05:34 - 3.3gb
-                  Automatic Backup - INCREMENTAL - ACTIVE - 2018-10-28 05:25 - 2018-10-28 05:34 - 3.2gb
-                  Automatic Backup - INCREMENTAL - ACTIVE - 2018-10-27 05:25 - 2018-10-27 05:46 - 3.0gb
+    Patches : Jan 2019 18c Db System patch - 18.5.0.0.190115 - 2019-02-20 - Last Action: None
+            : ------------------------------------------------------------------------------------------
+    Node    : dbhost - AVAILABLE - 10.1.0.31 (Prv), 129.213.22.165 (Pub) - Primary , Subnet (sub1 10.1.0.0/26), VCN (vcn) - FAULT-DOMAIN-2
+    Home    : dbhome20190410131530 - 18.4.0.0.181016
+         PT : Jan 2019 18c Database patch - 18.5.0.0.190115 - 2019-02-20 - Last Action: None
+         PT : Oct 2018 18c Database patch - 18.4.0.0.181016 - 2019-01-10 - Last Action: None
+         DB : ADIDB - ADIDB_iad1m7 - OLTP - AL32UTF8 - AVAILABLE - AutoBck=N
+              Dataguard: PRIMARY, MAXIMUM_PERFORMANCE (ASYNC), Peer DB: ADIDG:ADIDB_iad1pz
+              Automatic Backup - INCREMENTAL - ACTIVE - 2019-04-10 14:32 - 2019-04-10 14:51 - 3.0gb
 
 --> npappdb - BM.DenseIO1.36 - AVAILABLE
     AD      : iQAs:US-ASHBURN-AD-2
@@ -664,6 +664,12 @@ Compartment gse00000000 (root):
             oke-subnet-quick-K8S Cluster-20190306130828-dKrR:US-ASHBURN-AD-3 10.0.12.0/24, VCN (oke-vcn-quick-K8S Cluster-20190306130828)
             oke-subnet-quick-K8S Cluster-20190306130828-dKrR:US-ASHBURN-AD-2 10.0.11.0/24, VCN (oke-vcn-quick-K8S Cluster-20190306130828)
             oke-subnet-quick-K8S Cluster-20190306130828-dKrR:US-ASHBURN-AD-1 10.0.10.0/24, VCN (oke-vcn-quick-K8S Cluster-20190306130828)
+
+##############################
+#          Streams           #
+##############################
+--> AdiStream, partitions (1), Created: 2019-04-10 20:42
+    URL   : https://api.cell-1.us-ashburn-1.streaming.oci.oraclecloud.com
 			
 ##########################################################################################
 #                                 Summary - us-ashburn-1                                 #

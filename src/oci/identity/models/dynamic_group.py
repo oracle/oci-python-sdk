@@ -81,6 +81,14 @@ class DynamicGroup(object):
             The value to assign to the inactive_status property of this DynamicGroup.
         :type inactive_status: int
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this DynamicGroup.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this DynamicGroup.
+        :type defined_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -90,7 +98,9 @@ class DynamicGroup(object):
             'matching_rule': 'str',
             'time_created': 'datetime',
             'lifecycle_state': 'str',
-            'inactive_status': 'int'
+            'inactive_status': 'int',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -101,7 +111,9 @@ class DynamicGroup(object):
             'matching_rule': 'matchingRule',
             'time_created': 'timeCreated',
             'lifecycle_state': 'lifecycleState',
-            'inactive_status': 'inactiveStatus'
+            'inactive_status': 'inactiveStatus',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags'
         }
 
         self._id = None
@@ -112,6 +124,8 @@ class DynamicGroup(object):
         self._time_created = None
         self._lifecycle_state = None
         self._inactive_status = None
+        self._freeform_tags = None
+        self._defined_tags = None
 
     @property
     def id(self):
@@ -324,6 +338,70 @@ class DynamicGroup(object):
         :type: int
         """
         self._inactive_status = inactive_status
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this DynamicGroup.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this DynamicGroup.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this DynamicGroup.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this DynamicGroup.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this DynamicGroup.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this DynamicGroup.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this DynamicGroup.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this DynamicGroup.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

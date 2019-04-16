@@ -113,7 +113,17 @@ class CreateSubnetDetails(object):
     def availability_domain(self):
         """
         Gets the availability_domain of this CreateSubnetDetails.
-        The availability domain to contain the subnet.
+        Controls whether the subnet is regional or specific to an availability domain. Oracle
+        recommends creating regional subnets because they're more flexible and make it easier to
+        implement failover across availability domains. Originally, AD-specific subnets were the
+        only kind available to use.
+
+        To create a regional subnet, omit this attribute. Then any resources later created in this
+        subnet (such as a Compute instance) can be created in any availability domain in the region.
+
+        To instead create an AD-specific subnet, set this attribute to the availability domain you
+        want this subnet to be in. Then any resources later created in this subnet can only be
+        created in that availability domain.
 
         Example: `Uocm:PHX-AD-1`
 
@@ -127,7 +137,17 @@ class CreateSubnetDetails(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this CreateSubnetDetails.
-        The availability domain to contain the subnet.
+        Controls whether the subnet is regional or specific to an availability domain. Oracle
+        recommends creating regional subnets because they're more flexible and make it easier to
+        implement failover across availability domains. Originally, AD-specific subnets were the
+        only kind available to use.
+
+        To create a regional subnet, omit this attribute. Then any resources later created in this
+        subnet (such as a Compute instance) can be created in any availability domain in the region.
+
+        To instead create an AD-specific subnet, set this attribute to the availability domain you
+        want this subnet to be in. Then any resources later created in this subnet can only be
+        created in that availability domain.
 
         Example: `Uocm:PHX-AD-1`
 
@@ -376,6 +396,7 @@ class CreateSubnetDetails(object):
         subnet cannot have public IP addresses (that is, it's a private
         subnet).
 
+
         Example: `true`
 
 
@@ -396,6 +417,7 @@ class CreateSubnetDetails(object):
         If `prohibitPublicIpOnVnic` is set to true, VNICs created in this
         subnet cannot have public IP addresses (that is, it's a private
         subnet).
+
 
         Example: `true`
 

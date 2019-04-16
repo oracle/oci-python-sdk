@@ -144,7 +144,7 @@ class InstancePoolLoadBalancerAttachment(object):
     def load_balancer_id(self):
         """
         **[Required]** Gets the load_balancer_id of this InstancePoolLoadBalancerAttachment.
-        The OCID of the load balancer attached to the pool.
+        The OCID of the load balancer attached to the instance pool.
 
 
         :return: The load_balancer_id of this InstancePoolLoadBalancerAttachment.
@@ -156,7 +156,7 @@ class InstancePoolLoadBalancerAttachment(object):
     def load_balancer_id(self, load_balancer_id):
         """
         Sets the load_balancer_id of this InstancePoolLoadBalancerAttachment.
-        The OCID of the load balancer attached to the pool.
+        The OCID of the load balancer attached to the instance pool.
 
 
         :param load_balancer_id: The load_balancer_id of this InstancePoolLoadBalancerAttachment.
@@ -216,7 +216,7 @@ class InstancePoolLoadBalancerAttachment(object):
     def vnic_selection(self):
         """
         **[Required]** Gets the vnic_selection of this InstancePoolLoadBalancerAttachment.
-        Indicates which vnic on each instance in the pool should be used to associate with the load balancer. possible values are \"PrimaryVnic\" or the displayName of one of the secondary VNICs on the instance configuration that is associated to the instance pool.
+        Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are \"PrimaryVnic\" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
 
 
         :return: The vnic_selection of this InstancePoolLoadBalancerAttachment.
@@ -228,7 +228,7 @@ class InstancePoolLoadBalancerAttachment(object):
     def vnic_selection(self, vnic_selection):
         """
         Sets the vnic_selection of this InstancePoolLoadBalancerAttachment.
-        Indicates which vnic on each instance in the pool should be used to associate with the load balancer. possible values are \"PrimaryVnic\" or the displayName of one of the secondary VNICs on the instance configuration that is associated to the instance pool.
+        Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are \"PrimaryVnic\" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
 
 
         :param vnic_selection: The vnic_selection of this InstancePoolLoadBalancerAttachment.
@@ -240,7 +240,7 @@ class InstancePoolLoadBalancerAttachment(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this InstancePoolLoadBalancerAttachment.
-        The status of the interaction between the pool and the load balancer.
+        The status of the interaction between the instance pool and the load balancer.
 
         Allowed values for this property are: "ATTACHING", "ATTACHED", "DETACHING", "DETACHED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -255,7 +255,7 @@ class InstancePoolLoadBalancerAttachment(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this InstancePoolLoadBalancerAttachment.
-        The status of the interaction between the pool and the load balancer.
+        The status of the interaction between the instance pool and the load balancer.
 
 
         :param lifecycle_state: The lifecycle_state of this InstancePoolLoadBalancerAttachment.

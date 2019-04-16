@@ -268,8 +268,8 @@ class User(object):
     def email(self):
         """
         Gets the email of this User.
-        The email you assign to the user during creation.
-        The name must be unique across all users in the tenancy.
+        The email address you assign to the user.
+        The email address must be unique across all users in the tenancy.
 
 
         :return: The email of this User.
@@ -281,8 +281,8 @@ class User(object):
     def email(self, email):
         """
         Sets the email of this User.
-        The email you assign to the user during creation.
-        The name must be unique across all users in the tenancy.
+        The email address you assign to the user.
+        The email address must be unique across all users in the tenancy.
 
 
         :param email: The email of this User.

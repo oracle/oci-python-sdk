@@ -296,7 +296,7 @@ class DbNode(object):
     def fault_domain(self):
         """
         Gets the fault_domain of this DbNode.
-        The name of the fault domain the instance is contained in.
+        The name of the Fault Domain the instance is contained in.
 
 
         :return: The fault_domain of this DbNode.
@@ -308,7 +308,7 @@ class DbNode(object):
     def fault_domain(self, fault_domain):
         """
         Sets the fault_domain of this DbNode.
-        The name of the fault domain the instance is contained in.
+        The name of the Fault Domain the instance is contained in.
 
 
         :param fault_domain: The fault_domain of this DbNode.

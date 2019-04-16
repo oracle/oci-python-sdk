@@ -12,7 +12,7 @@ class IPSecConnection(object):
     A connection between a DRG and CPE. This connection consists of multiple IPSec
     tunnels. Creating this connection is one of the steps required when setting up
     an IPSec VPN. For more information, see
-    `Overview of the Networking Service`__.
+    `IPSec VPN`__.
 
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
     talk to an administrator. If you're an administrator who needs to write policies to give users access, see
@@ -21,7 +21,7 @@ class IPSecConnection(object):
     **Warning:** Oracle recommends that you avoid using any confidential information when you
     supply string values using the API.
 
-    __ https://docs.cloud.oracle.com/Content/Network/Concepts/overview.htm
+    __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingIPsec.htm
     __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
     """
 
@@ -40,6 +40,14 @@ class IPSecConnection(object):
     #: A constant which can be used with the lifecycle_state property of a IPSecConnection.
     #: This constant has a value of "TERMINATED"
     LIFECYCLE_STATE_TERMINATED = "TERMINATED"
+
+    #: A constant which can be used with the cpe_local_identifier_type property of a IPSecConnection.
+    #: This constant has a value of "IP_ADDRESS"
+    CPE_LOCAL_IDENTIFIER_TYPE_IP_ADDRESS = "IP_ADDRESS"
+
+    #: A constant which can be used with the cpe_local_identifier_type property of a IPSecConnection.
+    #: This constant has a value of "HOSTNAME"
+    CPE_LOCAL_IDENTIFIER_TYPE_HOSTNAME = "HOSTNAME"
 
     def __init__(self, **kwargs):
         """
@@ -80,6 +88,16 @@ class IPSecConnection(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param cpe_local_identifier:
+            The value to assign to the cpe_local_identifier property of this IPSecConnection.
+        :type cpe_local_identifier: str
+
+        :param cpe_local_identifier_type:
+            The value to assign to the cpe_local_identifier_type property of this IPSecConnection.
+            Allowed values for this property are: "IP_ADDRESS", "HOSTNAME", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type cpe_local_identifier_type: str
+
         :param static_routes:
             The value to assign to the static_routes property of this IPSecConnection.
         :type static_routes: list[str]
@@ -98,6 +116,8 @@ class IPSecConnection(object):
             'freeform_tags': 'dict(str, str)',
             'id': 'str',
             'lifecycle_state': 'str',
+            'cpe_local_identifier': 'str',
+            'cpe_local_identifier_type': 'str',
             'static_routes': 'list[str]',
             'time_created': 'datetime'
         }
@@ -111,6 +131,8 @@ class IPSecConnection(object):
             'freeform_tags': 'freeformTags',
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
+            'cpe_local_identifier': 'cpeLocalIdentifier',
+            'cpe_local_identifier_type': 'cpeLocalIdentifierType',
             'static_routes': 'staticRoutes',
             'time_created': 'timeCreated'
         }
@@ -123,6 +145,8 @@ class IPSecConnection(object):
         self._freeform_tags = None
         self._id = None
         self._lifecycle_state = None
+        self._cpe_local_identifier = None
+        self._cpe_local_identifier_type = None
         self._static_routes = None
         self._time_created = None
 
@@ -154,7 +178,7 @@ class IPSecConnection(object):
     def cpe_id(self):
         """
         **[Required]** Gets the cpe_id of this IPSecConnection.
-        The OCID of the CPE.
+        The OCID of the :class:`Cpe` object.
 
 
         :return: The cpe_id of this IPSecConnection.
@@ -166,7 +190,7 @@ class IPSecConnection(object):
     def cpe_id(self, cpe_id):
         """
         Sets the cpe_id of this IPSecConnection.
-        The OCID of the CPE.
+        The OCID of the :class:`Cpe` object.
 
 
         :param cpe_id: The cpe_id of this IPSecConnection.
@@ -347,6 +371,80 @@ class IPSecConnection(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def cpe_local_identifier(self):
+        """
+        Gets the cpe_local_identifier of this IPSecConnection.
+        Your identifier for your CPE device. Can be either an IP address or a hostname (specifically,
+        the fully qualified domain name (FQDN)). The type of identifier here must correspond
+        to the value for `cpeLocalIdentifierType`.
+
+        If you don't provide a value when creating the IPSec connection, the `ipAddress` attribute
+        for the :class:`Cpe` object specified by `cpeId` is used as the `cpeLocalIdentifier`.
+
+        Example IP address: `10.0.3.3`
+
+        Example hostname: `cpe.example.com`
+
+
+        :return: The cpe_local_identifier of this IPSecConnection.
+        :rtype: str
+        """
+        return self._cpe_local_identifier
+
+    @cpe_local_identifier.setter
+    def cpe_local_identifier(self, cpe_local_identifier):
+        """
+        Sets the cpe_local_identifier of this IPSecConnection.
+        Your identifier for your CPE device. Can be either an IP address or a hostname (specifically,
+        the fully qualified domain name (FQDN)). The type of identifier here must correspond
+        to the value for `cpeLocalIdentifierType`.
+
+        If you don't provide a value when creating the IPSec connection, the `ipAddress` attribute
+        for the :class:`Cpe` object specified by `cpeId` is used as the `cpeLocalIdentifier`.
+
+        Example IP address: `10.0.3.3`
+
+        Example hostname: `cpe.example.com`
+
+
+        :param cpe_local_identifier: The cpe_local_identifier of this IPSecConnection.
+        :type: str
+        """
+        self._cpe_local_identifier = cpe_local_identifier
+
+    @property
+    def cpe_local_identifier_type(self):
+        """
+        Gets the cpe_local_identifier_type of this IPSecConnection.
+        The type of identifier for your CPE device. The value here must correspond to the value
+        for `cpeLocalIdentifier`.
+
+        Allowed values for this property are: "IP_ADDRESS", "HOSTNAME", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The cpe_local_identifier_type of this IPSecConnection.
+        :rtype: str
+        """
+        return self._cpe_local_identifier_type
+
+    @cpe_local_identifier_type.setter
+    def cpe_local_identifier_type(self, cpe_local_identifier_type):
+        """
+        Sets the cpe_local_identifier_type of this IPSecConnection.
+        The type of identifier for your CPE device. The value here must correspond to the value
+        for `cpeLocalIdentifier`.
+
+
+        :param cpe_local_identifier_type: The cpe_local_identifier_type of this IPSecConnection.
+        :type: str
+        """
+        allowed_values = ["IP_ADDRESS", "HOSTNAME"]
+        if not value_allowed_none_or_none_sentinel(cpe_local_identifier_type, allowed_values):
+            cpe_local_identifier_type = 'UNKNOWN_ENUM_VALUE'
+        self._cpe_local_identifier_type = cpe_local_identifier_type
 
     @property
     def static_routes(self):

@@ -83,7 +83,7 @@ class ComputeManagementClient(object):
     def attach_load_balancer(self, instance_pool_id, attach_load_balancer_details, **kwargs):
         """
         AttachLoadBalancer
-        Attach load balancer to the instance pool.
+        Attach a load balancer to the instance pool.
 
 
         :param str instance_pool_id: (required)

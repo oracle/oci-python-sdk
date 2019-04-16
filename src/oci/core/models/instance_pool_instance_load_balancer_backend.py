@@ -75,7 +75,7 @@ class InstancePoolInstanceLoadBalancerBackend(object):
     def load_balancer_id(self):
         """
         **[Required]** Gets the load_balancer_id of this InstancePoolInstanceLoadBalancerBackend.
-        The OCID of the load balancer attached to the pool.
+        The OCID of the load balancer attached to the instance pool.
 
 
         :return: The load_balancer_id of this InstancePoolInstanceLoadBalancerBackend.
@@ -87,7 +87,7 @@ class InstancePoolInstanceLoadBalancerBackend(object):
     def load_balancer_id(self, load_balancer_id):
         """
         Sets the load_balancer_id of this InstancePoolInstanceLoadBalancerBackend.
-        The OCID of the load balancer attached to the pool.
+        The OCID of the load balancer attached to the instance pool.
 
 
         :param load_balancer_id: The load_balancer_id of this InstancePoolInstanceLoadBalancerBackend.

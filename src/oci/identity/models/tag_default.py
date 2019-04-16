@@ -9,13 +9,19 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TagDefault(object):
     """
-    A document that specifies a default value for a Tag Definition for all resource types created in a Compartment.
+    Tag defaults let you specify a default tag (tagnamespace.tag=\"value\") to apply to all resource types
+    in a specified compartment. The tag default is applied at the time the resource is created. Resources
+    that exist in the compartment before you create the tag default are not tagged. The `TagDefault` object
+    specifies the tag and compartment details.
 
-    Tag Defaults are inherited by child compartments. This means that if you set a Tag Default on the root Compartment
-    for a tenancy, all resources are guaranteed to be created with the referenced Tag Definition applied.
+    Tag defaults are inherited by child compartments. This means that if you set a tag default on the root compartment
+    for a tenancy, all resources that are created in the tenancy are tagged. For more information about
+    using tag defaults, see `Managing Tag Defaults`__.
 
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
     talk to an administrator.
+
+    __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingtagdefaults.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a TagDefault.
@@ -97,7 +103,7 @@ class TagDefault(object):
     def id(self):
         """
         **[Required]** Gets the id of this TagDefault.
-        The OCID of the Tag Default.
+        The OCID of the tag default.
 
 
         :return: The id of this TagDefault.
@@ -109,7 +115,7 @@ class TagDefault(object):
     def id(self, id):
         """
         Sets the id of this TagDefault.
-        The OCID of the Tag Default.
+        The OCID of the tag default.
 
 
         :param id: The id of this TagDefault.
@@ -121,7 +127,8 @@ class TagDefault(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this TagDefault.
-        The OCID of the Compartment. The Tag Default will apply to any resource contained in this Compartment.
+        The OCID of the compartment. The tag default applies to all new resources that get created in the
+        compartment. Resources that existed before the tag default was created are not tagged.
 
 
         :return: The compartment_id of this TagDefault.
@@ -133,7 +140,8 @@ class TagDefault(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this TagDefault.
-        The OCID of the Compartment. The Tag Default will apply to any resource contained in this Compartment.
+        The OCID of the compartment. The tag default applies to all new resources that get created in the
+        compartment. Resources that existed before the tag default was created are not tagged.
 
 
         :param compartment_id: The compartment_id of this TagDefault.
@@ -145,7 +153,7 @@ class TagDefault(object):
     def tag_namespace_id(self):
         """
         **[Required]** Gets the tag_namespace_id of this TagDefault.
-        The OCID of the Tag Namespace that contains the Tag Definition.
+        The OCID of the tag namespace that contains the tag definition.
 
 
         :return: The tag_namespace_id of this TagDefault.
@@ -157,7 +165,7 @@ class TagDefault(object):
     def tag_namespace_id(self, tag_namespace_id):
         """
         Sets the tag_namespace_id of this TagDefault.
-        The OCID of the Tag Namespace that contains the Tag Definition.
+        The OCID of the tag namespace that contains the tag definition.
 
 
         :param tag_namespace_id: The tag_namespace_id of this TagDefault.
@@ -169,7 +177,7 @@ class TagDefault(object):
     def tag_definition_id(self):
         """
         **[Required]** Gets the tag_definition_id of this TagDefault.
-        The OCID of the Tag Definition. The Tag Default will always assign a default value for this Tag Definition.
+        The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
 
 
         :return: The tag_definition_id of this TagDefault.
@@ -181,7 +189,7 @@ class TagDefault(object):
     def tag_definition_id(self, tag_definition_id):
         """
         Sets the tag_definition_id of this TagDefault.
-        The OCID of the Tag Definition. The Tag Default will always assign a default value for this Tag Definition.
+        The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
 
 
         :param tag_definition_id: The tag_definition_id of this TagDefault.
@@ -193,7 +201,7 @@ class TagDefault(object):
     def tag_definition_name(self):
         """
         **[Required]** Gets the tag_definition_name of this TagDefault.
-        The name used in the Tag Definition. This field is informational in the context of the Tag Default.
+        The name used in the tag definition. This field is informational in the context of the tag default.
 
 
         :return: The tag_definition_name of this TagDefault.
@@ -205,7 +213,7 @@ class TagDefault(object):
     def tag_definition_name(self, tag_definition_name):
         """
         Sets the tag_definition_name of this TagDefault.
-        The name used in the Tag Definition. This field is informational in the context of the Tag Default.
+        The name used in the tag definition. This field is informational in the context of the tag default.
 
 
         :param tag_definition_name: The tag_definition_name of this TagDefault.
@@ -217,7 +225,7 @@ class TagDefault(object):
     def value(self):
         """
         **[Required]** Gets the value of this TagDefault.
-        The default value for the Tag Definition. This will be applied to all resources created in the Compartment.
+        The default value for the tag definition. This will be applied to all resources created in the compartment.
 
 
         :return: The value of this TagDefault.
@@ -229,7 +237,7 @@ class TagDefault(object):
     def value(self, value):
         """
         Sets the value of this TagDefault.
-        The default value for the Tag Definition. This will be applied to all resources created in the Compartment.
+        The default value for the tag definition. This will be applied to all resources created in the compartment.
 
 
         :param value: The value of this TagDefault.
@@ -269,7 +277,7 @@ class TagDefault(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this TagDefault.
-        The tag default's current state. After creating a tagdefault, make sure its `lifecycleState` is ACTIVE before using it.
+        The tag default's current state. After creating a `TagDefault`, make sure its `lifecycleState` is ACTIVE before using it.
 
         Allowed values for this property are: "ACTIVE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -284,7 +292,7 @@ class TagDefault(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this TagDefault.
-        The tag default's current state. After creating a tagdefault, make sure its `lifecycleState` is ACTIVE before using it.
+        The tag default's current state. After creating a `TagDefault`, make sure its `lifecycleState` is ACTIVE before using it.
 
 
         :param lifecycle_state: The lifecycle_state of this TagDefault.

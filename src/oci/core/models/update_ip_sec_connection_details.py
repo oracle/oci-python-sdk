@@ -12,6 +12,14 @@ class UpdateIPSecConnectionDetails(object):
     UpdateIPSecConnectionDetails model.
     """
 
+    #: A constant which can be used with the cpe_local_identifier_type property of a UpdateIPSecConnectionDetails.
+    #: This constant has a value of "IP_ADDRESS"
+    CPE_LOCAL_IDENTIFIER_TYPE_IP_ADDRESS = "IP_ADDRESS"
+
+    #: A constant which can be used with the cpe_local_identifier_type property of a UpdateIPSecConnectionDetails.
+    #: This constant has a value of "HOSTNAME"
+    CPE_LOCAL_IDENTIFIER_TYPE_HOSTNAME = "HOSTNAME"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateIPSecConnectionDetails object with values from keyword arguments.
@@ -29,22 +37,44 @@ class UpdateIPSecConnectionDetails(object):
             The value to assign to the freeform_tags property of this UpdateIPSecConnectionDetails.
         :type freeform_tags: dict(str, str)
 
+        :param cpe_local_identifier:
+            The value to assign to the cpe_local_identifier property of this UpdateIPSecConnectionDetails.
+        :type cpe_local_identifier: str
+
+        :param cpe_local_identifier_type:
+            The value to assign to the cpe_local_identifier_type property of this UpdateIPSecConnectionDetails.
+            Allowed values for this property are: "IP_ADDRESS", "HOSTNAME"
+        :type cpe_local_identifier_type: str
+
+        :param static_routes:
+            The value to assign to the static_routes property of this UpdateIPSecConnectionDetails.
+        :type static_routes: list[str]
+
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
-            'freeform_tags': 'dict(str, str)'
+            'freeform_tags': 'dict(str, str)',
+            'cpe_local_identifier': 'str',
+            'cpe_local_identifier_type': 'str',
+            'static_routes': 'list[str]'
         }
 
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
-            'freeform_tags': 'freeformTags'
+            'freeform_tags': 'freeformTags',
+            'cpe_local_identifier': 'cpeLocalIdentifier',
+            'cpe_local_identifier_type': 'cpeLocalIdentifierType',
+            'static_routes': 'staticRoutes'
         }
 
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
+        self._cpe_local_identifier = None
+        self._cpe_local_identifier_type = None
+        self._static_routes = None
 
     @property
     def defined_tags(self):
@@ -141,6 +171,106 @@ class UpdateIPSecConnectionDetails(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def cpe_local_identifier(self):
+        """
+        Gets the cpe_local_identifier of this UpdateIPSecConnectionDetails.
+        Your identifier for your CPE device. Can be either an IP address or a hostname (specifically, the
+        fully qualified domain name (FQDN)). The type of identifier you provide here must correspond
+        to the value for `cpeLocalIdentifierType`.
+
+        Example IP address: `10.0.3.3`
+
+        Example hostname: `cpe.example.com`
+
+
+        :return: The cpe_local_identifier of this UpdateIPSecConnectionDetails.
+        :rtype: str
+        """
+        return self._cpe_local_identifier
+
+    @cpe_local_identifier.setter
+    def cpe_local_identifier(self, cpe_local_identifier):
+        """
+        Sets the cpe_local_identifier of this UpdateIPSecConnectionDetails.
+        Your identifier for your CPE device. Can be either an IP address or a hostname (specifically, the
+        fully qualified domain name (FQDN)). The type of identifier you provide here must correspond
+        to the value for `cpeLocalIdentifierType`.
+
+        Example IP address: `10.0.3.3`
+
+        Example hostname: `cpe.example.com`
+
+
+        :param cpe_local_identifier: The cpe_local_identifier of this UpdateIPSecConnectionDetails.
+        :type: str
+        """
+        self._cpe_local_identifier = cpe_local_identifier
+
+    @property
+    def cpe_local_identifier_type(self):
+        """
+        Gets the cpe_local_identifier_type of this UpdateIPSecConnectionDetails.
+        The type of identifier for your CPE device. The value you provide here must correspond to the value
+        for `cpeLocalIdentifier`.
+
+        Allowed values for this property are: "IP_ADDRESS", "HOSTNAME"
+
+
+        :return: The cpe_local_identifier_type of this UpdateIPSecConnectionDetails.
+        :rtype: str
+        """
+        return self._cpe_local_identifier_type
+
+    @cpe_local_identifier_type.setter
+    def cpe_local_identifier_type(self, cpe_local_identifier_type):
+        """
+        Sets the cpe_local_identifier_type of this UpdateIPSecConnectionDetails.
+        The type of identifier for your CPE device. The value you provide here must correspond to the value
+        for `cpeLocalIdentifier`.
+
+
+        :param cpe_local_identifier_type: The cpe_local_identifier_type of this UpdateIPSecConnectionDetails.
+        :type: str
+        """
+        allowed_values = ["IP_ADDRESS", "HOSTNAME"]
+        if not value_allowed_none_or_none_sentinel(cpe_local_identifier_type, allowed_values):
+            raise ValueError(
+                "Invalid value for `cpe_local_identifier_type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._cpe_local_identifier_type = cpe_local_identifier_type
+
+    @property
+    def static_routes(self):
+        """
+        Gets the static_routes of this UpdateIPSecConnectionDetails.
+        Static routes to the CPE. If you provide this attribute, it replaces the entire current set of
+        static routes. A static route's CIDR must not be a multicast address or class E address.
+
+        Example: `10.0.1.0/24`
+
+
+        :return: The static_routes of this UpdateIPSecConnectionDetails.
+        :rtype: list[str]
+        """
+        return self._static_routes
+
+    @static_routes.setter
+    def static_routes(self, static_routes):
+        """
+        Sets the static_routes of this UpdateIPSecConnectionDetails.
+        Static routes to the CPE. If you provide this attribute, it replaces the entire current set of
+        static routes. A static route's CIDR must not be a multicast address or class E address.
+
+        Example: `10.0.1.0/24`
+
+
+        :param static_routes: The static_routes of this UpdateIPSecConnectionDetails.
+        :type: list[str]
+        """
+        self._static_routes = static_routes
 
     def __repr__(self):
         return formatted_flat_dict(self)

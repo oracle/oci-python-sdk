@@ -81,7 +81,7 @@ class UpdateUserDetails(object):
     def email(self):
         """
         Gets the email of this UpdateUserDetails.
-        The email you assign to the user. Has to be unique across the tenancy.
+        The email address you assign to the user. Has to be unique across the tenancy.
 
 
         :return: The email of this UpdateUserDetails.
@@ -93,7 +93,7 @@ class UpdateUserDetails(object):
     def email(self, email):
         """
         Sets the email of this UpdateUserDetails.
-        The email you assign to the user. Has to be unique across the tenancy.
+        The email address you assign to the user. Has to be unique across the tenancy.
 
 
         :param email: The email of this UpdateUserDetails.

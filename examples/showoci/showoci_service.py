@@ -1,16 +1,16 @@
+
 ##########################################################################
 # Copyright(c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 # showocy_service.py
 #
 # @Created On  : Mar 17 2019
-# @Last Updated: Apr  6 2019
+# @Last Updated: Apr 14 2019
 # @author      : Adi Zohar
-# @Version     : 19.4.6
+# @Version     : 19.4.14
 #
 # Supports Python 2.7 and above, Python 3 recommended
 #
 # coding: utf-8
-#
 ##########################################################################
 # This file has ShowOCIService class, and ShowOCIFlags
 #
@@ -40,6 +40,7 @@ class ShowOCIFlags(object):
     read_email_distribution = False
     read_resource_management = False
     read_containers = False
+    read_streams = False
     read_ManagedCompartmentForPaaS = True
     read_root_compartment = True
 
@@ -74,7 +75,8 @@ class ShowOCIFlags(object):
                 self.read_load_balancer or
                 self.read_email_distribution or
                 self.read_resource_management or
-                self.read_containers)
+                self.read_containers or
+                self.read_streams)
 
     ############################################
     # check if to load basic network (vcn+subnets)
@@ -92,7 +94,7 @@ class ShowOCIFlags(object):
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    oci_compatible_version = "2.2.1"
+    oci_compatible_version = "2.2.5"
 
     ##########################################################################
     # Global Constants
@@ -179,10 +181,14 @@ class ShowOCIService(object):
     C_DATABASE_DBSYSTEMS = "dbsystems"
     C_DATABASE_AUTONOMOUS = "autonomous"
 
-    # database
+    # container
     C_CONTAINER = "container"
     C_CONTAINER_CLUSTERS = "clusters"
     C_CONTAINER_NODE_POOLS = "nodepools"
+
+    # streams
+    C_STREAMS = "streams"
+    C_STREAMS_STREAMS = "streams"
 
     # Error flag
     error = 0
@@ -427,7 +433,7 @@ class ShowOCIService(object):
     ##########################################################################
     def __load_data_main(self):
         try:
-            print("Load Guide - '.' Compartment, '+' VCN, '-' Subnets")
+            print("Guide: '.' Compartment, '+' VCN, '-' Subnets, 'a' - auth/notfound")
 
             # print filter by
             if self.flags.filter_by_region:
@@ -515,6 +521,10 @@ class ShowOCIService(object):
             # resource management - only at us for now
             if self.flags.read_resource_management:
                 self.__load_resource_management_main()
+
+            # if streams
+            if self.flags.read_streams:
+                self.__load_streams_main()
 
         # containers - not exist in toronto yet
         if region_name != "ca-toronto-1":
@@ -3629,7 +3639,7 @@ class ShowOCIService(object):
         try:
             print("Email Notifications...")
 
-            # LoadBalancerClient
+            # EmailClient
             email_client = oci.email.EmailClient(self.config)
             if self.flags.proxy:
                 email_client.base_client.session.proxies = {'https': self.flags.proxy}
@@ -4305,6 +4315,7 @@ class ShowOCIService(object):
                         value['auto_backup_enabled'] = True
 
                 value['backups'] = self.__load_database_dbsystems_db_backups(database_client, db.id)
+                value['dataguard'] = self.__load_database_dbsystems_db_dg(database_client, db.id)
                 data.append(value)
 
             # add to main data
@@ -4404,6 +4415,61 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_database_dbsystems_patches", e)
+            return data
+
+    ##########################################################################
+    # get db system patches
+    ##########################################################################
+    def __load_database_dbsystems_db_dg(self, database_client, db_id):
+
+        data = []
+        try:
+            dgs = oci.pagination.list_call_get_all_results(database_client.list_data_guard_associations, database_id=db_id).data
+
+            # dg = oci.database.models.DataGuardAssociationSummary
+            for dg in dgs:
+                if dg.lifecycle_state == oci.database.models.DataGuardAssociationSummary.LIFECYCLE_STATE_TERMINATED or dg.lifecycle_state == oci.database.models.DataGuardAssociationSummary.LIFECYCLE_STATE_FAILED:
+                    continue
+
+                val = ({'id': str(dg.id),
+                        'database_id': str(dg.database_id),
+                        'db_name': "",
+                        'role': str(dg.role),
+                        'peer_role': str(dg.peer_role),
+                        'lifecycle_state': str(dg.lifecycle_state),
+                        'peer_database_id': str(dg.peer_database_id),
+                        'peer_data_guard_association_id': str(dg.peer_data_guard_association_id),
+                        'apply_rate': str(dg.apply_rate),
+                        'apply_lag': str(dg.apply_lag),
+                        'protection_mode': str(dg.protection_mode),
+                        'transport_type': str(dg.transport_type),
+                        'time_created': str(dg.time_created)})
+
+                # get db name
+                try:
+                    database = database_client.get_database(dg.peer_database_id).data
+                    dbsystem = database_client.get_db_system(dg.peer_db_system_id).data
+                    if database and dbsystem:
+                        val['db_name'] = str(dbsystem.display_name) + ":" + str(database.db_unique_name)
+                except oci.exceptions.ServiceError as e:
+                    if not self.__check_service_error(e.code):
+                        raise
+
+                # add the data
+                data.append(val)
+
+            return data
+
+        except oci.exceptions.ServiceError as e:
+            if self.__check_service_error(e.code):
+                self.__load_print_auth_warning()
+                return data
+            else:
+                raise
+        except oci.exceptions.RequestException:
+            raise
+        except Exception as e:
+            self.__print_error("__load_database_dbsystems_db_dg", e)
             return data
 
     ##########################################################################
@@ -4686,4 +4752,97 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_container_clusters", e)
+            return data
+
+    ##########################################################################
+    # __load_streams_main
+    ##########################################################################
+    #
+    # OCI Classes used:
+    #
+    # class oci.streaming.StreamAdminClient(config, **kwargs)
+    #
+    ##########################################################################
+    def __load_streams_main(self):
+
+        try:
+            print("Streams...")
+
+            # StreamAdminClient
+            stream_client = oci.streaming.StreamAdminClient(self.config)
+            if self.flags.proxy:
+                stream_client.base_client.session.proxies = {'https': self.flags.proxy}
+
+            # reference to compartments
+            compartments = self.get_compartment()
+
+            # add the key if not exists
+            self.__initialize_data_key(self.C_STREAMS, self.C_STREAMS_STREAMS)
+
+            # reference to stream
+            stream = self.data[self.C_STREAMS]
+
+            # append the data
+            stream[self.C_STREAMS_STREAMS] += self.__load_streams_streams(stream_client, compartments)
+            print("")
+
+        except oci.exceptions.RequestException:
+            raise
+        except oci.exceptions.ServiceError:
+            raise
+        except Exception as e:
+            self.__print_error("__load_streams_main", e)
+
+    ##########################################################################
+    # __load_streams_streams
+    ##########################################################################
+    def __load_streams_streams(self, stream_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            self.__load_print_status("Streams")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                streams = []
+                try:
+                    streams = oci.pagination.list_call_get_all_results(
+                        stream_client.list_streams, compartment['id'],
+                        sort_by="NAME",
+                        lifecycle_state=oci.streaming.models.StreamSummary.LIFECYCLE_STATE_ACTIVE
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+
+                print(".", end="")
+
+                # stream = oci.streaming.models.StreamSummary
+                for stream in streams:
+                    val = {'id': str(stream.id), 'name': str(stream.name),
+                           'partitions': str(stream.partitions), 'time_created': str(stream.time_created),
+                           'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
+                           'messages_endpoint': str(stream.messages_endpoint),
+                           'defined_tags': [] if stream.defined_tags is None else stream.defined_tags,
+                           'freeform_tags': [] if stream.freeform_tags is None else stream.freeform_tags,
+                           'region_name': str(self.config['region'])}
+
+                    # add the data
+                    cnt += 1
+                    data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException:
+            raise
+        except Exception as e:
+            self.__print_error("__load_streams_streams", e)
             return data
