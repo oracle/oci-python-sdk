@@ -3,14 +3,13 @@
 # showocy_data.py
 #
 # @Created On  : Mar 17 2019
-# @Last Updated: Apr  6 2019
+# @Last Updated: Apr 14 2019
 # @author      : Adi Zohar
-# @Version     : 19.4.6
+# @Version     : 19.4.14
 #
 # Supports Python 2.7 and above, Python 3 recommended
 #
 # coding: utf-8
-#
 ##########################################################################
 # This file has ShowOCIData class
 # it used the ShowOCIService class and generate JSON structure as output
@@ -65,9 +64,8 @@ class ShowOCIData(object):
         try:
 
             # run identity
-            if self.service.flags.read_identity:
-                identity_data = {'type': "identity", 'data': self.service.get_identity()}
-                self.data.append(identity_data)
+            identity_data = {'type': "identity", 'data': self.service.get_identity()}
+            self.data.append(identity_data)
 
             if self.service.flags.is_loop_on_compartments:
 
@@ -142,6 +140,123 @@ class ShowOCIData(object):
             print("\nError in " + classname + ":" + msg + ": " + str(e))
 
         self.error += 1
+
+    ##########################################################################
+    # run on Region
+    ##########################################################################
+    def __get_oci_region_data(self, region_name):
+
+        ret_var = []
+        print("\nProcessing Region " + region_name)
+
+        try:
+
+            # Loop on Compartments and call services
+            compartments = self.service.get_compartment()
+
+            # Loop on all relevant compartments
+            print("\nProcessing...")
+            for compartment in compartments:
+
+                #  check if to skip ManagedCompartmentForPaaS
+                if compartment['name'] == "ManagedCompartmentForPaaS" and not self.service.flags.read_ManagedCompartmentForPaaS:
+                    continue
+
+                print("    Compartment " + compartment['path'] + "...")
+                data = {'compartment': compartment['name'], 'path': compartment['path']}
+                has_data = False
+
+                # run on network module
+                if self.service.flags.read_network:
+                    value = self.__get_core_network_main(region_name, compartment)
+                    if value:
+                        if len(value) > 0:
+                            data['network'] = value
+                            has_data = True
+
+                # run on compute and block storage
+                if self.service.flags.read_compute:
+                    value = self.__get_core_compute_main(region_name, compartment)
+                    if value:
+                        if len(value) > 0:
+                            data['compute'] = value
+                            has_data = True
+
+                # run on database
+                if self.service.flags.read_database:
+                    value = self.__get_database_main(region_name, compartment)
+                    if value:
+                        if len(value) > 0:
+                            data['database'] = value
+                            has_data = True
+
+                # run on file_storage
+                if self.service.flags.read_file_storage:
+                    value = self.__get_file_storage_main(region_name, compartment)
+                    if value:
+                        if len(value) > 0:
+                            data['file_storage'] = value
+                            has_data = True
+
+                # run on object storage
+                if self.service.flags.read_object_storage:
+                    value = self.__get_object_storage_main(region_name, compartment)
+                    if value:
+                        if len(value) > 0:
+                            data['object_storage'] = value
+                            has_data = True
+
+                # run on Load Balancer
+                if self.service.flags.read_load_balancer:
+                    value = self.__get_load_balancer_main(region_name, compartment)
+                    if value:
+                        if len(value) > 0:
+                            data['load_balancer'] = value
+                            has_data = True
+
+                # run on Resource Management
+                if self.service.flags.read_resource_management:
+                    value = self.__get_resource_management_main(region_name, compartment)
+                    if value:
+                        if len(value) > 0:
+                            data['resource_management'] = value
+                            has_data = True
+
+                # email
+                if self.service.flags.read_email_distribution:
+                    value = self.__get_email_main(region_name, compartment)
+                    if value is not None:
+                        if len(value) > 0:
+                            data['email'] = value
+                            has_data = True
+
+                # container
+                if self.service.flags.read_containers:
+                    value = self.__get_container_main(region_name, compartment)
+                    if value is not None:
+                        if len(value) > 0:
+                            data['containers'] = value
+                            has_data = True
+
+                # streams
+                if self.service.flags.read_streams:
+                    value = self.__get_streams_main(region_name, compartment)
+                    if value is not None:
+                        if len(value) > 0:
+                            data['streams'] = value
+                            has_data = True
+
+                # add the data to main Variable
+                if has_data:
+                    ret_var.append(data)
+
+            print("")
+
+            # return var
+            return ret_var
+
+        except Exception as e:
+            self.__print_error("get_oci_region_data", e)
 
     ##########################################################################
     # Print Network VCN NAT
@@ -1296,7 +1411,9 @@ class ShowOCIData(object):
                                   str(db['character_set']) + " - " + str(db['lifecycle_state']) + backupstr),
                          'backups': self.__get_database_db_backups(db['backups']),
                          'time_created': db['time_created'],
-                         'defined_tags': db['defined_tags'], 'freeform_tags': db['freeform_tags']}
+                         'defined_tags': db['defined_tags'],
+                         'dataguard': self.__get_database_db_dataguard(db['dataguard']),
+                         'freeform_tags': db['freeform_tags']}
 
                 data.append(value)
             return data
@@ -1368,6 +1485,38 @@ class ShowOCIData(object):
 
         except Exception as e:
             self.__print_error("__get_database_db_homes", e)
+            return data
+
+    ##########################################################################
+    # __load_database_dbsystems_dbnodes
+    ##########################################################################
+    def __get_database_db_dataguard(self, dataguards):
+
+        data = []
+        try:
+            for dg in dataguards:
+
+                # add data
+                data.append(
+                    {'id': str(dg['id']),
+                     'database_id': str(dg['database_id']),
+                     'peer_name': str(dg['db_name']),
+                     'lifecycle_state': str(dg['lifecycle_state']),
+                     'peer_data_guard_association_id': str(dg['peer_data_guard_association_id']),
+                     'name': "Dataguard: " + dg['role'] + ", " + dg['protection_mode'] + " (" + dg['transport_type'] + "), Peer DB: " + dg['db_name'],
+                     'apply_rate': str(dg['apply_rate']),
+                     'apply_lag': str(dg['apply_lag']),
+                     'peer_role': str(dg['peer_role']),
+                     'protection_mode': str(dg['protection_mode']),
+                     'transport_type': str(dg['transport_type']),
+                     'time_created': str(dg['time_created']),
+                     })
+
+            # add to main data
+            return data
+
+        except Exception as e:
+            self.__print_error("__get_database_db_dataguard", e)
             return data
 
     ##########################################################################
@@ -1896,101 +2045,27 @@ class ShowOCIData(object):
             pass
 
     ##########################################################################
-    # run on Region
+    # Streams
     ##########################################################################
-    def __get_oci_region_data(self, region_name):
-
-        ret_var = []
-        print("\nProcessing Region " + region_name)
-
+    def __get_streams_main(self, region_name, compartment):
         try:
+            streams = self.service.search_multi_items(self.service.C_STREAMS, self.service.C_STREAMS_STREAMS, 'region_name', region_name, 'compartment_id', compartment['id'])
 
-            # Loop on Compartments and call services
-            compartments = self.service.get_compartment()
+            data = []
+            if streams:
+                for stream in streams:
+                    val = {'id': stream['id'],
+                           'name': stream['name'],
+                           'partitions': stream['partitions'],
+                           'time_created': stream['time_created'],
+                           'messages_endpoint': stream['messages_endpoint'],
+                           'defined_tags': stream['defined_tags'],
+                           'freeform_tags': stream['freeform_tags'],
+                           'compartment_name': stream['compartment_name']}
 
-            # Loop on all relevant compartments
-            print("\nProcessing...")
-            for compartment in compartments:
-
-                #  check if to skip ManagedCompartmentForPaaS
-                if compartment['name'] == "ManagedCompartmentForPaaS" and not self.service.flags.read_ManagedCompartmentForPaaS:
-                    continue
-
-                print("    Compartment " + compartment['path'] + "...")
-                data = {'compartment': compartment['name'], 'path': compartment['path']}
-                has_data = False
-
-                # run on network module
-                if self.service.flags.read_network:
-                    value = self.__get_core_network_main(region_name, compartment)
-                    if value:
-                        data['network'] = value
-                        has_data = True
-
-                # run on compute and block storage
-                if self.service.flags.read_compute:
-                    value = self.__get_core_compute_main(region_name, compartment)
-                    if value:
-                        data['compute'] = value
-                        has_data = True
-
-                # run on database
-                if self.service.flags.read_database:
-                    value = self.__get_database_main(region_name, compartment)
-                    if value:
-                        data['database'] = value
-                        has_data = True
-
-                # run on file_storage
-                if self.service.flags.read_file_storage:
-                    value = self.__get_file_storage_main(region_name, compartment)
-                    if value:
-                        data['file_storage'] = value
-                        has_data = True
-
-                # run on object storage
-                if self.service.flags.read_object_storage:
-                    value = self.__get_object_storage_main(region_name, compartment)
-                    if value:
-                        data['object_storage'] = value
-                        has_data = True
-
-                # run on Load Balancer
-                if self.service.flags.read_load_balancer:
-                    value = self.__get_load_balancer_main(region_name, compartment)
-                    if value:
-                        data['load_balancer'] = value
-                        has_data = True
-
-                # run on Resource Management
-                if self.service.flags.read_resource_management:
-                    value = self.__get_resource_management_main(region_name, compartment)
-                    if value:
-                        data['resource_management'] = value
-                        has_data = True
-
-                # email
-                if self.service.flags.read_email_distribution:
-                    value = self.__get_email_main(region_name, compartment)
-                    if value is not None:
-                        data['email'] = value
-                        has_data = True
-
-                # email
-                if self.service.flags.read_containers:
-                    value = self.__get_container_main(region_name, compartment)
-                    if value is not None:
-                        data['containers'] = value
-                        has_data = True
-
-                # add the data to main Variable
-                if has_data:
-                    ret_var.append(data)
-
-            print("")
-
-            # return var
-            return ret_var
+                    data.append(val)
+            return data
 
         except Exception as e:
-            self.__print_error("get_oci_region_data", e)
+            self.__print_error("__get_streams_main", e)
+            pass

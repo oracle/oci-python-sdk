@@ -628,7 +628,7 @@ class IdentityClient(object):
         `Resource Identifiers`__.
 
         You must also specify a *name* for the dynamic group, which must be unique across all dynamic groups in your
-        tenancy, and cannot be changed. Note that this name has to be also unique accross all groups in your tenancy.
+        tenancy, and cannot be changed. Note that this name has to be also unique across all groups in your tenancy.
         You can use this name or the OCID when writing policies that apply to the dynamic group. For more information
         about policies, see `How Policies Work`__.
 
@@ -1596,11 +1596,11 @@ class IdentityClient(object):
     def create_tag_default(self, create_tag_default_details, **kwargs):
         """
         CreateTagDefault
-        Creates a new Tag Default in the specified Compartment for the specified Tag Definition.
+        Creates a new tag default in the specified compartment for the specified tag definition.
 
 
         :param CreateTagDefaultDetails create_tag_default_details: (required)
-            Request object for creating a new Tag Default.
+            Request object for creating a new tag default.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -2777,11 +2777,11 @@ class IdentityClient(object):
     def delete_tag_default(self, tag_default_id, **kwargs):
         """
         DeleteTagDefault
-        Deletes the the specified Tag Default.
+        Deletes the the specified tag default.
 
 
         :param str tag_default_id: (required)
-            The OCID of the Tag Default.
+            The OCID of the tag default.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -3608,11 +3608,11 @@ class IdentityClient(object):
     def get_tag_default(self, tag_default_id, **kwargs):
         """
         GetTagDefault
-        Retrieves the specified Tag Default.
+        Retrieves the specified tag default.
 
 
         :param str tag_default_id: (required)
-            The OCID of the Tag Default.
+            The OCID of the tag default.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -5361,7 +5361,7 @@ class IdentityClient(object):
     def list_tag_defaults(self, **kwargs):
         """
         ListTagDefaults
-        Lists the Tag Defaults for Tag Definitions in the specified Compartment.
+        Lists the tag defaults for tag definitions in the specified compartment.
 
 
         :param str page: (optional)
@@ -5377,7 +5377,7 @@ class IdentityClient(object):
             The OCID of the compartment (remember that the tenancy is simply the root compartment).
 
         :param str tag_definition_id: (optional)
-            The OCID of the Tag Definition.
+            The OCID of the tag definition.
 
         :param str lifecycle_state: (optional)
             A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
@@ -6989,14 +6989,14 @@ class IdentityClient(object):
     def update_tag_default(self, tag_default_id, update_tag_default_details, **kwargs):
         """
         UpdateTagDefault
-        Updates the the specified Tag Default. You can presently update the following fields: `value`.
+        Updates the the specified tag default. You can update the following field: `value`.
 
 
         :param str tag_default_id: (required)
-            The OCID of the Tag Default.
+            The OCID of the tag default.
 
         :param UpdateTagDefaultDetails update_tag_default_details: (required)
-            Request object for updating a Tag Default.
+            Request object for updating a tag default.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`

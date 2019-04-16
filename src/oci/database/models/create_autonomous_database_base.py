@@ -232,7 +232,7 @@ class CreateAutonomousDatabaseBase(object):
     def db_workload(self):
         """
         Gets the db_workload of this CreateAutonomousDatabaseBase.
-        The autonomous database workload type.
+        The autonomous database workload type. OLTP indicates an Autonomous Transaction Processing database and DW indicates an Autonomous Data Warehouse. The default is OLTP.
 
         Allowed values for this property are: "OLTP", "DW"
 
@@ -246,7 +246,7 @@ class CreateAutonomousDatabaseBase(object):
     def db_workload(self, db_workload):
         """
         Sets the db_workload of this CreateAutonomousDatabaseBase.
-        The autonomous database workload type.
+        The autonomous database workload type. OLTP indicates an Autonomous Transaction Processing database and DW indicates an Autonomous Data Warehouse. The default is OLTP.
 
 
         :param db_workload: The db_workload of this CreateAutonomousDatabaseBase.

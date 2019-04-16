@@ -335,7 +335,7 @@ class IdentityClientCompositeOperations(object):
         to enter the given state(s).
 
         :param CreateTagDefaultDetails create_tag_default_details: (required)
-            Request object for creating a new Tag Default.
+            Request object for creating a new tag default.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.identity.models.TagDefault.lifecycle_state`
@@ -645,7 +645,7 @@ class IdentityClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str tag_default_id: (required)
-            The OCID of the Tag Default.
+            The OCID of the tag default.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.identity.models.TagDefault.lifecycle_state`
@@ -1029,10 +1029,10 @@ class IdentityClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str tag_default_id: (required)
-            The OCID of the Tag Default.
+            The OCID of the tag default.
 
         :param UpdateTagDefaultDetails update_tag_default_details: (required)
-            Request object for updating a Tag Default.
+            Request object for updating a tag default.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.identity.models.TagDefault.lifecycle_state`

@@ -191,7 +191,7 @@ class InstancePoolSummary(object):
     def instance_configuration_id(self):
         """
         **[Required]** Gets the instance_configuration_id of this InstancePoolSummary.
-        The OCID of the instance configuration associated to the intance pool.
+        The OCID of the instance configuration associated with the instance pool.
 
 
         :return: The instance_configuration_id of this InstancePoolSummary.
@@ -203,7 +203,7 @@ class InstancePoolSummary(object):
     def instance_configuration_id(self, instance_configuration_id):
         """
         Sets the instance_configuration_id of this InstancePoolSummary.
-        The OCID of the instance configuration associated to the intance pool.
+        The OCID of the instance configuration associated with the instance pool.
 
 
         :param instance_configuration_id: The instance_configuration_id of this InstancePoolSummary.

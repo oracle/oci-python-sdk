@@ -188,7 +188,8 @@ class Subnet(object):
     def availability_domain(self):
         """
         Gets the availability_domain of this Subnet.
-        The subnet's availability domain.
+        The subnet's availability domain. This attribute will be null if this is a regional subnet
+        instead of an AD-specific subnet. Oracle recommends creating regional subnets.
 
         Example: `Uocm:PHX-AD-1`
 
@@ -202,7 +203,8 @@ class Subnet(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this Subnet.
-        The subnet's availability domain.
+        The subnet's availability domain. This attribute will be null if this is a regional subnet
+        instead of an AD-specific subnet. Oracle recommends creating regional subnets.
 
         Example: `Uocm:PHX-AD-1`
 

@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.2.7 - 2019-04-16
+====================
+
+Added
+-----
+* Support for tagging dynamic groups in the Identity service
+* Support for updating network ACLs and license types for autonomous databases and autonomous data warehouses in the Database service
+* Support for editing static routes and IPSec remote IDs in the Virtual Networking service
+* An example for reporting details for multiple Oracle Cloud Infrastructure resources is available on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/showoci/showoci.py>`__.
+
+====================
 2.2.6 - 2019-04-09
 ====================
 

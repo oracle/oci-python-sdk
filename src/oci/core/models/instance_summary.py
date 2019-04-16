@@ -106,7 +106,7 @@ class InstanceSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this InstanceSummary.
-        The OCID of the instance
+        The OCID of the instance.
 
 
         :return: The id of this InstanceSummary.
@@ -118,7 +118,7 @@ class InstanceSummary(object):
     def id(self, id):
         """
         Sets the id of this InstanceSummary.
-        The OCID of the instance
+        The OCID of the instance.
 
 
         :param id: The id of this InstanceSummary.
@@ -354,7 +354,7 @@ class InstanceSummary(object):
     def load_balancer_backends(self):
         """
         Gets the load_balancer_backends of this InstanceSummary.
-        The load balancer backends configured for the instance pool instance.
+        The load balancer backends that are configured for the instance pool instance.
 
 
         :return: The load_balancer_backends of this InstanceSummary.
@@ -366,7 +366,7 @@ class InstanceSummary(object):
     def load_balancer_backends(self, load_balancer_backends):
         """
         Sets the load_balancer_backends of this InstanceSummary.
-        The load balancer backends configured for the instance pool instance.
+        The load balancer backends that are configured for the instance pool instance.
 
 
         :param load_balancer_backends: The load_balancer_backends of this InstanceSummary.

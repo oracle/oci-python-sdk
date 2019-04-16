@@ -57,7 +57,7 @@ class AttachLoadBalancerDetails(object):
     def load_balancer_id(self):
         """
         **[Required]** Gets the load_balancer_id of this AttachLoadBalancerDetails.
-        The OCID of the load balancer to attach to the pool.
+        The OCID of the load balancer to attach to the instance pool.
 
 
         :return: The load_balancer_id of this AttachLoadBalancerDetails.
@@ -69,7 +69,7 @@ class AttachLoadBalancerDetails(object):
     def load_balancer_id(self, load_balancer_id):
         """
         Sets the load_balancer_id of this AttachLoadBalancerDetails.
-        The OCID of the load balancer to attach to the pool.
+        The OCID of the load balancer to attach to the instance pool.
 
 
         :param load_balancer_id: The load_balancer_id of this AttachLoadBalancerDetails.
@@ -129,7 +129,7 @@ class AttachLoadBalancerDetails(object):
     def vnic_selection(self):
         """
         **[Required]** Gets the vnic_selection of this AttachLoadBalancerDetails.
-        Indicates which vnic on each instance in the pool should be used to associate with the load balancer. possible values are \"PrimaryVnic\" or the displayName of one of the secondary VNICs on the instance configuration that is associated to the instance pool.
+        Indicates which VNIC on each instance in the pool should be used to associate with the load balancer. Possible values are \"PrimaryVnic\" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
 
 
         :return: The vnic_selection of this AttachLoadBalancerDetails.
@@ -141,7 +141,7 @@ class AttachLoadBalancerDetails(object):
     def vnic_selection(self, vnic_selection):
         """
         Sets the vnic_selection of this AttachLoadBalancerDetails.
-        Indicates which vnic on each instance in the pool should be used to associate with the load balancer. possible values are \"PrimaryVnic\" or the displayName of one of the secondary VNICs on the instance configuration that is associated to the instance pool.
+        Indicates which VNIC on each instance in the pool should be used to associate with the load balancer. Possible values are \"PrimaryVnic\" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
 
 
         :param vnic_selection: The vnic_selection of this AttachLoadBalancerDetails.

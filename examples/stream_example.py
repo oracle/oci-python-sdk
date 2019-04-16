@@ -33,16 +33,16 @@ def publish_example_messages(client, stream_id):
         encoded_value = base64.b64encode(value)
         message_list.append(oci.streaming.models.PutMessagesDetailsEntry(key=encoded_key, value=encoded_value))
 
-    print ("Publishing {} messages to the stream {} ".format(len(message_list), stream_id))
+    print("Publishing {} messages to the stream {} ".format(len(message_list), stream_id))
     messages = oci.streaming.models.PutMessagesDetails(messages=message_list)
     put_message_result = client.put_messages(stream_id, messages)
 
     # The put_message_result can contain some useful metadata for handling failures
     for entry in put_message_result.data.entries:
         if entry.error:
-            print ("Error ({}) : {}".format(entry.error, entry.error_message))
+            print("Error ({}) : {}".format(entry.error, entry.error_message))
         else:
-            print ("Published message to partition {} , offset {}".format(entry.partition, entry.offset))
+            print("Published message to partition {} , offset {}".format(entry.partition, entry.offset))
 
 
 def get_or_create_stream(client, compartment_id, stream_name, partition, sac_composite):
@@ -51,12 +51,12 @@ def get_or_create_stream(client, compartment_id, stream_name, partition, sac_com
                                        lifecycle_state=oci.streaming.models.StreamSummary.LIFECYCLE_STATE_ACTIVE)
     if list_streams.data:
         # If we find an active stream with the correct name, we'll use it.
-        print ("An active stream {} has been found".format(stream_name))
+        print("An active stream {} has been found".format(stream_name))
         sid = list_streams.data[0].id
         return get_stream(sac_composite.client, sid)
 
-    print (" No Active stream  {} has been found; Creating it now. ".format(stream_name))
-    print (" Creating stream {} with {} partitions.".format(stream_name, partition))
+    print(" No Active stream  {} has been found; Creating it now. ".format(stream_name))
+    print(" Creating stream {} with {} partitions.".format(stream_name, partition))
 
     # Create stream_details object that need to be passed while creating stream.
     stream_details = oci.streaming.models.CreateStreamDetails(name=stream_name, partitions=partition,
@@ -73,7 +73,7 @@ def get_stream(admin_client, stream_id):
 
 
 def delete_stream(client, stream_id):
-    print (" Deleting Stream {}".format(stream_id))
+    print(" Deleting Stream {}".format(stream_id))
     # Stream deletion is an asynchronous operation, give it some time to complete.
     client.delete_stream_and_wait_for_state(stream_id, oci.streaming.models.StreamSummary.LIFECYCLE_STATE_DELETED)
 
@@ -135,7 +135,7 @@ compartment = sys.argv[1]
 stream = get_or_create_stream(stream_admin_client, compartment, STREAM_NAME,
                               PARTITIONS, stream_admin_client_composite).data
 
-print (" Created Stream {} with id : {}".format(stream.name, stream.id))
+print(" Created Stream {} with id : {}".format(stream.name, stream.id))
 
 # Streams are assigned a specific endpoint url based on where they are provisioned.
 # Create a stream client using the provided message endpoint.

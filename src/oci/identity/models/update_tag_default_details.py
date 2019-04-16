@@ -36,7 +36,7 @@ class UpdateTagDefaultDetails(object):
     def value(self):
         """
         **[Required]** Gets the value of this UpdateTagDefaultDetails.
-        The default value for the Tag Definition. This will be applied to all resources created in the Compartment.
+        The default value for the tag definition. This will be applied to all resources created in the Compartment.
 
 
         :return: The value of this UpdateTagDefaultDetails.
@@ -48,7 +48,7 @@ class UpdateTagDefaultDetails(object):
     def value(self, value):
         """
         Sets the value of this UpdateTagDefaultDetails.
-        The default value for the Tag Definition. This will be applied to all resources created in the Compartment.
+        The default value for the tag definition. This will be applied to all resources created in the Compartment.
 
 
         :param value: The value of this UpdateTagDefaultDetails.

@@ -4,14 +4,13 @@
 # showocy.py
 #
 # @Created On  : Mar 17 2019
-# @Last Updated: Apr  6 2019
+# @Last Updated: Apr 14 2019
 # @author      : Adi Zohar
-# @Version     : 19.4.6
+# @Version     : 19.4.14
 #
 # Supports Python 2.7 and above, Python 3 recommended
 #
 # coding: utf-8
-#
 ##########################################################################
 # OCI Report Tool SHOWOCI:
 #
@@ -33,12 +32,17 @@
 # Modules Included:
 #    identity , virtual_network, compute , block_storage, file_storage
 #    object_storage, database, load_balancer, email
-#    resource_management
+#    resource_management, ContainerEngine, Streams
 #
 # Modules Not Yet Covered:
-#    ContainerEngine
 #    Monitoring
 #    Notifications
+#    WaasClient
+#    HealthChecksClient
+#    DnsClient
+#    BudgetClient
+#    AutoScalingClient
+#    AnnouncementClient
 #
 ##########################################################################
 from __future__ import print_function
@@ -50,7 +54,7 @@ import sys
 import argparse
 import datetime
 
-version = "19.4.6"
+version = "19.4.14"
 
 ##########################################################################
 # execute_extract
@@ -187,6 +191,7 @@ def set_parser_arguments():
     parser.add_argument('-d', action='store_true', default=False, dest='database', help='Print Database')
     parser.add_argument('-f', action='store_true', default=False, dest='file', help='Print File Storage')
     parser.add_argument('-e', action='store_true', default=False, dest='email', help='Print EMail')
+    parser.add_argument('-s', action='store_true', default=False, dest='streams', help='Print Streams')
     parser.add_argument('-rm', action='store_true', default=False, dest='orm', help='Print Resource management')
     parser.add_argument('-so', action='store_true', default=False, dest='sumonly', help='Print Summary Only')
     parser.add_argument('-mc', action='store_true', default=False, dest='mgdcompart', help='exclude ManagedCompartmentForPaaS')
@@ -210,7 +215,8 @@ def set_parser_arguments():
 
     if not (result.all or result.allnoiam or result.network or result.identity or
             result.compute or result.object or
-            result.load or result.database or result.file or result.email or result.orm or result.container):
+            result.load or result.database or result.file or result.email or result.orm or result.container or
+            result.streams):
 
         parser.print_help()
 
@@ -266,6 +272,9 @@ def set_service_extract_flags(cmd):
 
     if cmd.all or cmd.allnoiam or cmd.container:
         prm.read_containers = True
+
+    if cmd.all or cmd.allnoiam or cmd.streams:
+        prm.read_streams = True
 
     if cmd.noroot:
         prm.read_root_compartment = False

@@ -4248,14 +4248,18 @@ class VirtualNetworkClient(object):
     def get_fast_connect_provider_service_key(self, provider_service_id, provider_service_key_name, **kwargs):
         """
         GetFastConnectProviderServiceKey
-        Gets the specified provider service key's information.
+        Gets the specified provider service key's information. Use this operation to validate a
+        provider service key. An invalid key returns a 404 error.
 
 
         :param str provider_service_id: (required)
             The OCID of the provider service.
 
         :param str provider_service_key_name: (required)
-            The provider service key name.
+            The provider service key that the provider gives you when you set up a virtual circuit connection
+            from the provider to Oracle Cloud Infrastructure. You can set up that connection and get your
+            provider service key at the provider's website or portal. For the portal location, see the `description`
+            attribute of the :class:`FastConnectProviderService`.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -7135,7 +7139,6 @@ class VirtualNetworkClient(object):
 
         :param str ip_address: (optional)
             An IP address.
-
             Example: `10.0.3.3`
 
         :param str subnet_id: (optional)

@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RestoreAutonomousDataWarehouseDetails(object):
     """
-    Details to restore an Oracle Autonomous Data Warehouse.
+    **Deprecated.** See :func:`restore_autonomous_database_details` for reference information about restoring an Autonomous Data Warehouse.
     """
 
     def __init__(self, **kwargs):
