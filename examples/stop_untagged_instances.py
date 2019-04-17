@@ -146,7 +146,7 @@ def find_resources_wo_tags(instances_to_stop_list, search_string):
                                                   'instance_shape': compute_client.get_instance(result.identifier).data.shape,
                                                   'time_created': result.time_created.replace(microsecond=0).isoformat(),
                                                   'instance_ocid': result.identifier,
-                                                  'compartment_ocid':  result.compartment_id,
+                                                  'compartment_ocid': result.compartment_id,
                                                   'creator': 'Not Found'}
                         instances_to_stop_list.append(stopped_instances_line)
                         instances_stop_list.append(result.identifier)
@@ -169,7 +169,7 @@ def find_resources_wo_tags(instances_to_stop_list, search_string):
 def prep_arguments():
     parser = argparse.ArgumentParser()
     parser.add_argument('--tag_string', default='', help='The string in all tags that will be searched for.')
-    parser.add_argument('--hours_to_audit', default=1, help='The number of hours to serach the audit logs for.')
+    parser.add_argument('--hours_to_audit', default=1, help='The number of hours to search the audit logs for.')
     args = parser.parse_args()
     return args
 
