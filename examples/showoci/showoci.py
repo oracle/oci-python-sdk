@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 ##########################################################################
 # Copyright(c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
-# showocy.py
+# showoci.py
 #
 # @Created On  : Mar 17 2019
 # @Last Updated: Apr 14 2019
