@@ -87,7 +87,7 @@ def find_audit_events(instances_to_stop, instance_stop_list, compartment_id_stop
                                                                             start_time=start_time,
                                                                             end_time=end_time).data
             list_of_audit_events.extend(list_events_response)
-            print('\t\tNumber of audit events in {0}\{1}: {2}' .format(region, identity_client.get_compartment(c).data.name, len(list_of_audit_events)))
+            print('\t\tNumber of audit events in {0}\\{1}: {2}' .format(region, identity_client.get_compartment(c).data.name, len(list_of_audit_events)))
 
             for ae in list_of_audit_events:
                 if ae.event_name == 'LaunchInstance':
