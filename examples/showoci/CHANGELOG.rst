@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+19.4.26 - 2019-04-26
+====================
+
+Added
+-----
+* Added Autonomous Database Whitelist IPs
+* Added Identity - Cost Tracking Tags
+* Added Budgets
+* Added Compute Autoscaling
+
+Fixed / Changed
+---------------
+* Display Volume Backups with 1 line instead of 3 lines
+
+====================
 19.4.14 - 2019-04-14
 ====================
 

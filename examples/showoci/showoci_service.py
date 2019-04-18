@@ -1,12 +1,8 @@
-
 ##########################################################################
 # Copyright(c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
-# showocy_service.py
+# showoci_service.py
 #
-# @Created On  : Mar 17 2019
-# @Last Updated: Apr 14 2019
-# @author      : Adi Zohar
-# @Version     : 19.4.14
+# @author: Adi Zohar
 #
 # Supports Python 2.7 and above, Python 3 recommended
 #
@@ -41,6 +37,7 @@ class ShowOCIFlags(object):
     read_resource_management = False
     read_containers = False
     read_streams = False
+    read_budgets = False
     read_ManagedCompartmentForPaaS = True
     read_root_compartment = True
 
@@ -76,7 +73,8 @@ class ShowOCIFlags(object):
                 self.read_email_distribution or
                 self.read_resource_management or
                 self.read_containers or
-                self.read_streams)
+                self.read_streams or
+                self.read_budgets)
 
     ############################################
     # check if to load basic network (vcn+subnets)
@@ -94,7 +92,7 @@ class ShowOCIFlags(object):
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    oci_compatible_version = "2.2.5"
+    oci_compatible_version = "2.2.7"
 
     ##########################################################################
     # Global Constants
@@ -133,6 +131,7 @@ class ShowOCIService(object):
     C_IDENTITY_PROVIDERS = 'providers'
     C_IDENTITY_DYNAMIC_GROUPS = 'dynamic_groups'
     C_IDENTITY_USERS_GROUPS_MEMBERSHIP = 'users_groups_membership'
+    C_IDENTITY_COST_TRACKING_TAGS = 'cost_tracking_tags'
 
     # Compute Identifiers
     C_COMPUTE = 'compute'
@@ -143,6 +142,7 @@ class ShowOCIService(object):
     C_COMPUTE_BOOT_VOL_ATTACH = 'instance_boot_vol_attach'
     C_COMPUTE_VOLUME_ATTACH = 'instance_volume_attach'
     C_COMPUTE_VNIC_ATTACH = 'instance_vnic_attach'
+    C_COMPUTE_AUTOSCALING = 'auto_scaling'
 
     # Block Storage Identifiers
     C_BLOCK = 'blockstorage'
@@ -189,6 +189,10 @@ class ShowOCIService(object):
     # streams
     C_STREAMS = "streams"
     C_STREAMS_STREAMS = "streams"
+
+    # budgets
+    C_BUDGETS = "budgets"
+    C_BUDGETS_BUDGETS = "budgets"
 
     # Error flag
     error = 0
@@ -261,6 +265,12 @@ class ShowOCIService(object):
     def get_availability_domains(self, region_name):
         ads = self.data[self.C_IDENTITY][self.C_IDENTITY_ADS]
         return [e for e in ads if e['region_name'] == region_name]
+
+    ##########################################################################
+    # return budget data
+    ##########################################################################
+    def get_budgets(self):
+        return self.data[self.C_BUDGETS][self.C_BUDGETS_BUDGETS]
 
     ##########################################################################
     # return subnet
@@ -424,8 +434,9 @@ class ShowOCIService(object):
     ##########################################################################
     # print auth warning
     ##########################################################################
-    def __load_print_auth_warning(self, special_char="a"):
-        self.warning += 1
+    def __load_print_auth_warning(self, special_char="a", increase_warning=True):
+        if increase_warning:
+            self.warning += 1
         print(special_char, end="")
 
     ##########################################################################
@@ -526,6 +537,10 @@ class ShowOCIService(object):
             if self.flags.read_streams:
                 self.__load_streams_main()
 
+            # if budgets
+            if self.flags.read_budgets:
+                self.__load_budgets_main()
+
         # containers - not exist in toronto yet
         if region_name != "ca-toronto-1":
             if self.flags.read_containers:
@@ -557,6 +572,7 @@ class ShowOCIService(object):
                 self.__load_identity_dynamic_groups(identity, tenancy_id)
                 self.__load_identity_policies(identity)
                 self.__load_identity_providers(identity, tenancy_id)
+                self.__load_identity_cost_tracking_tags(identity, tenancy_id)
 
             print("")
         except oci.exceptions.RequestException:
@@ -910,6 +926,46 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_identity_dynamic_groups", e)
+
+    ##########################################################################
+    # load cost tracking tags
+    ##########################################################################
+    def __load_identity_cost_tracking_tags(self, identity, tenancy_id):
+
+        data = []
+        self.__load_print_status("Cost Tracking Tags")
+        start_time = time.time()
+
+        try:
+            try:
+                tags = oci.pagination.list_call_get_all_results(identity.list_cost_tracking_tags, tenancy_id).data
+            except oci.exceptions.ServiceError as e:
+                if self.__check_service_error(e.code):
+                    self.__load_print_auth_warning()
+                else:
+                    raise
+
+            # tag = oci.identity.models.Tag
+            for tag in tags:
+                dataval = {'tag_namespace_id': str(tag.tag_namespace_id),
+                           'tag_namespace_name': str(tag.tag_namespace_name),
+                           'id': str(tag.id),
+                           'name': str(tag.name),
+                           'description': str(tag.description),
+                           'is_retired': str(tag.is_retired),
+                           'time_created': str(tag.time_created),
+                           'is_cost_tracking': str(tag.is_cost_tracking)
+                           }
+                data.append(dataval)
+
+            # add to data
+            self.data[self.C_IDENTITY][self.C_IDENTITY_COST_TRACKING_TAGS] = data
+            self.__load_print_cnt(len(data), start_time)
+
+        except oci.exceptions.RequestException:
+            raise
+        except Exception as e:
+            self.__print_error("__load_identity_cost_tracking_tags", e)
 
     ##########################################################################
     # Load Identity Availability Domains
@@ -2154,6 +2210,11 @@ class ShowOCIService(object):
             if self.flags.proxy:
                 virtual_network.base_client.session.proxies = {'https': self.flags.proxy}
 
+            # auto scaling
+            auto_scaling = oci.autoscaling.AutoScalingClient(self.config)
+            if self.flags.proxy:
+                auto_scaling.base_client.session.proxies = {'https': self.flags.proxy}
+
             # reference to compartments
             compartments = self.get_compartment()
 
@@ -2166,6 +2227,7 @@ class ShowOCIService(object):
 
             self.__initialize_data_key(self.C_COMPUTE, self.C_COMPUTE_INST_CONFIG)
             self.__initialize_data_key(self.C_COMPUTE, self.C_COMPUTE_INST_POOL)
+            self.__initialize_data_key(self.C_COMPUTE, self.C_COMPUTE_AUTOSCALING)
 
             self.__initialize_data_key(self.C_BLOCK, self.C_BLOCK_VOLGRP)
             self.__initialize_data_key(self.C_BLOCK, self.C_BLOCK_BOOT)
@@ -2185,6 +2247,7 @@ class ShowOCIService(object):
             compute[self.C_COMPUTE_VNIC_ATTACH] += self.__load_core_compute_vnic_attach(compute_client, virtual_network, compartments)
             compute[self.C_COMPUTE_INST_CONFIG] += self.__load_core_compute_inst_config(compute_client, compute_manage, block_storage, compartments)
             compute[self.C_COMPUTE_INST_POOL] += self.__load_core_compute_inst_pool(compute_manage, compartments)
+            compute[self.C_COMPUTE_AUTOSCALING] += self.__load_core_compute_autoscaling(auto_scaling, compute_manage, compartments)
 
             print("")
             print("Block Storage...")
@@ -2355,7 +2418,127 @@ class ShowOCIService(object):
             return data
 
     ##########################################################################
-    # data compute read images
+    # compute auto scaling
+    ##########################################################################
+    def __load_core_compute_autoscaling(self, autoscaling, compute_manage, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+
+            self.__load_print_status("Autoscaling")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                autos = []
+                try:
+                    # pagination didn't work on auto scaling code
+                    autos = oci.pagination.list_call_get_all_results(autoscaling.list_auto_scaling_configurations, compartment['id']).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+
+                print(".", end="")
+
+                # loop on array
+                # arr = oci.autoscaling.models.AutoScalingConfigurationSummary
+                for auto in autos:
+                    val = {'id': str(auto.id), 'display_name': str(auto.display_name),
+                           'cool_down_in_seconds': str(auto.cool_down_in_seconds),
+                           'is_enabled': auto.is_enabled,
+                           'time_created': str(auto.time_created),
+                           'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
+                           'region_name': str(self.config['region']),
+                           'resource_id': "",
+                           'resource_type': "",
+                           'resource_name': "",
+                           'policies': []
+                           }
+
+                    ###########################
+                    # get the resources
+                    # if resource is oci.autoscaling.models.InstancePoolResource
+                    ###########################
+                    if auto.resource:
+                        if isinstance(auto.resource, oci.autoscaling.models.InstancePoolResource):
+                            val['resource_id'] = str(auto.resource.id)
+                            val['resource_type'] = str(auto.resource.type)
+
+                            # get instance pool name
+                            try:
+                                pool_name = compute_manage.get_instance_pool(auto.resource.id).data.display_name
+                                val['resource_name'] = str(pool_name)
+                            except oci.exceptions.ServiceError as e:
+                                if self.__check_service_error(e.code):
+                                    self.__load_print_auth_warning("p")
+                                else:
+                                    raise
+
+                    ##################
+                    # get the policy
+                    ##################
+                    try:
+                        policies = autoscaling.list_auto_scaling_policies(auto.id).data
+
+                        # policy = oci.autoscaling.models.AutoScalingPolicySummary
+                        for policy in policies:
+
+                            # read the proper policy which has the capacity and rules
+                            # pol = oci.autoscaling.models.AutoScalingPolicy
+                            # didn't add the rules for now.
+                            pol = autoscaling.get_auto_scaling_policy(auto.id, policy.id).data
+                            if pol:
+                                valpol = {'id': str(pol.id),
+                                          'display_name': str(pol.display_name),
+                                          'policy_type': str(pol.policy_type),
+                                          'time_created': str(pol.time_created),
+                                          'capacity_min': str(pol.capacity.min),
+                                          'capacity_max': str(pol.capacity.max),
+                                          'capacity_initial': str(pol.capacity.initial),
+                                          'rules': []
+                                          }
+
+                                ##############################
+                                # if policy is ThresholdPolicy
+                                ##############################
+                                if pol.policy_type == "threshold":
+                                    for rule in pol.rules:
+                                        valpol['rules'].append(
+                                            str(rule.action.type) + " " +
+                                            str(rule.action.value).ljust(3) + " when " +
+                                            str(rule.metric.metric_type) + " " +
+                                            str(rule.metric.threshold.operator) + " " +
+                                            str(rule.metric.threshold.value))
+
+                                # add policy
+                                val['policies'].append(valpol)
+
+                    except oci.exceptions.ServiceError as e:
+                        if self.__check_service_error(e.code):
+                            self.__load_print_auth_warning("l")
+                        else:
+                            raise
+
+                    data.append(val)
+                    cnt += 1
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException:
+            raise
+        except Exception as e:
+            self.__print_error("__load_core_compute_autoscaling", e)
+            return data
+
+    ##########################################################################
+    # __load_core_compute_inst_config
     ##########################################################################
     def __load_core_compute_inst_config(self, compute, compute_manage, block_storage, compartments):
 
@@ -2382,9 +2565,11 @@ class ShowOCIService(object):
                         compartment['id']
                     ).data
 
+                # inst pool and inst config service often goes down, not marking warning
+                # for inst pool and inst config
                 except oci.exceptions.ServiceError as e:
                     if self.__check_service_error(e.code):
-                        self.__load_print_auth_warning()
+                        self.__load_print_auth_warning("a", False)
                         continue
                     raise
 
@@ -2459,7 +2644,7 @@ class ShowOCIService(object):
             return data
 
     ##########################################################################
-    # data compute read images
+    # __load_core_compute_inst_pool
     ##########################################################################
     def __load_core_compute_inst_pool(self, compute_manage, compartments):
 
@@ -2486,9 +2671,11 @@ class ShowOCIService(object):
                         compartment['id']
                     ).data
 
+                # inst pool and inst config service often goes down, not marking warning
+                # for inst pool and inst config
                 except oci.exceptions.ServiceError as e:
                     if self.__check_service_error(e.code):
-                        self.__load_print_auth_warning()
+                        self.__load_print_auth_warning("a", False)
                         continue
                     raise
 
@@ -4533,6 +4720,7 @@ class ShowOCIService(object):
                              'defined_tags': [] if dbs.defined_tags is None else dbs.defined_tags,
                              'freeform_tags': [] if dbs.freeform_tags is None else dbs.freeform_tags,
                              'region_name': str(self.config['region']),
+                             'whitelisted_ips': "" if dbs.whitelisted_ips is None else str(', '.join(x for x in dbs.whitelisted_ips)),
                              'backups': self.__load_database_autonomouns_backups(database_client, dbs.id)}
 
                     # license model
@@ -4845,4 +5033,109 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_streams_streams", e)
+            return data
+
+    ##########################################################################
+    # __load_budget_main
+    ##########################################################################
+    #
+    # OCI Classes used:
+    #
+    # class oci.budget.BudgetClient(config, **kwargs)
+    #
+    ##########################################################################
+    def __load_budgets_main(self):
+
+        try:
+            print("Budgets...")
+
+            # BudgetClient
+            budget_client = oci.budget.BudgetClient(self.config)
+            if self.flags.proxy:
+                budget_client.base_client.session.proxies = {'https': self.flags.proxy}
+
+            # reference to tenancy
+            tenancy = self.get_tenancy()
+
+            # add the key if not exists
+            self.__initialize_data_key(self.C_BUDGETS, self.C_BUDGETS_BUDGETS)
+
+            # reference to stream
+            budget = self.data[self.C_BUDGETS]
+
+            # append the data
+            budget[self.C_BUDGETS_BUDGETS] += self.__load_budgets_budgets(budget_client, tenancy['id'])
+            print("")
+
+        except oci.exceptions.RequestException:
+            raise
+        except oci.exceptions.ServiceError:
+            raise
+        except Exception as e:
+            self.__print_error("__load_budgets_main", e)
+
+    ##########################################################################
+    # __load_budgets_budgets
+    ##########################################################################
+    def __load_budgets_budgets(self, budget_client, tenancy_id):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            self.__load_print_status("Budgets")
+
+            budgets = []
+            try:
+                budgets = oci.pagination.list_call_get_all_results(
+                    budget_client.list_budgets,
+                    tenancy_id,
+                    lifecycle_state=oci.budget.models.BudgetSummary.LIFECYCLE_STATE_ACTIVE
+                ).data
+
+            except oci.exceptions.ServiceError as e:
+                if self.__check_service_error(e.code):
+                    self.__load_print_auth_warning()
+                else:
+                    raise
+
+            print(".", end="")
+
+            # budget = oci.budget.models.BudgetSummary
+            for budget in budgets:
+                val = {'id': str(budget.id),
+                       'target_compartment_id': str(budget.target_compartment_id),
+                       'compartment_name': "",
+                       'display_name': str(budget.display_name),
+                       'description': str(budget.description),
+                       'amount': str(budget.amount),
+                       'reset_period': str(budget.reset_period),
+                       'alert_rule_count': str(budget.alert_rule_count),
+                       'version': str(budget.version),
+                       'actual_spend': str(budget.actual_spend),
+                       'forecasted_spend': str(budget.forecasted_spend),
+                       'time_spend_computed': str(budget.time_spend_computed),
+                       'time_created': str(budget.time_created),
+                       'time_updated': str(budget.time_updated),
+                       'defined_tags': [] if budget.defined_tags is None else budget.defined_tags,
+                       'freeform_tags': [] if budget.freeform_tags is None else budget.freeform_tags,
+                       'region_name': str(self.config['region'])}
+
+                # fill the comaprtment name
+                compartment = self.search_unique_item(self.C_IDENTITY, self.C_IDENTITY_COMPARTMENTS, 'id', str(budget.target_compartment_id))
+                if compartment:
+                    val['compartment_name'] = compartment['path']
+
+                # add the data
+                cnt += 1
+                data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException:
+            raise
+        except Exception as e:
+            self.__print_error("__load_budgets_budgets", e)
             return data

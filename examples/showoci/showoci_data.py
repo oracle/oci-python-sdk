@@ -1,11 +1,8 @@
 ##########################################################################
 # Copyright(c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
-# showocy_data.py
+# showoci_data.py
 #
-# @Created On  : Mar 17 2019
-# @Last Updated: Apr 14 2019
-# @author      : Adi Zohar
-# @Version     : 19.4.14
+# @author: Adi Zohar
 #
 # Supports Python 2.7 and above, Python 3 recommended
 #
@@ -67,6 +64,12 @@ class ShowOCIData(object):
             identity_data = {'type': "identity", 'data': self.service.get_identity()}
             self.data.append(identity_data)
 
+            # run on budgets module
+            if self.service.flags.read_budgets:
+                budgets_data = {'type': "budgets", 'data': self.service.get_budgets()}
+                self.data.append(budgets_data)
+
+            # run on compartments
             if self.service.flags.is_loop_on_compartments:
 
                 # pointer to Tenancy in cache
@@ -983,28 +986,29 @@ class ShowOCIData(object):
             self.__print_error("__get_core_block_volume", e)
 
     ##########################################################################
-    # get compute boot volume
+    # get compute boot volume or volume
     ##########################################################################
-    def __get_core_block_volume_boot_backup(self, region_name, compartment):
+    def __get_core_block_volume_boot_backup(self, region_name, compartment, volume_name, service_name):
 
         data = []
         try:
-            backups = self.service.search_multi_items(self.service.C_BLOCK, self.service.C_BLOCK_BOOTBACK, 'region_name', region_name, 'compartment_id', compartment['id'])
+            backups = self.service.search_multi_items(self.service.C_BLOCK, service_name, 'region_name', region_name, 'compartment_id', compartment['id'])
 
             for backup in backups:
                 value = {}
 
                 if backup['backup_lifecycle_state'] != "AVAILABLE":
-                    value['name'] = backup['backup_name'] + " ( Source " + backup['backup_lifecycle_state'] + " )"
+                    value['name'] = backup['backup_name'] + " (Source " + backup['backup_lifecycle_state'] + ")"
                 else:
-                    value['name'] = backup['backup_name'] + ", "
+                    value['name'] = backup['backup_name']
 
                 value['desc'] = backup['display_name']
-                value['type'] = backup['type'] + ", " + backup['source_type'] + ", " + backup['time_created'][0:16] + " -> " + backup['expiration_time'][0:16]
-                value['size'] = (str(backup['size_in_gbs']) + "gb " + ", Stored " + str(backup['unique_size_in_gbs']) + "gb")
+                value['type'] = backup['type'][0:4] + ", " + backup['source_type'][0:6] + ", " + backup['time_created'][0:16] + " -> " + backup['expiration_time'][0:16]
+                value['size'] = (str(backup['size_in_gbs']).rjust(3) + "gb " + ", Stored " + str(backup['unique_size_in_gbs']).rjust(3) + "gb")
                 value['sum_info'] = 'Object Storage - BV Backups (gb)'
                 value['sum_size_gb'] = (str(backup['unique_size_in_gbs']))
-                value['boot_volume_id'] = str(backup['boot_volume_id'])
+                value[volume_name] = str(backup[volume_name])
+                value['id'] = str(backup[volume_name])
 
                 data.append(value)
 
@@ -1013,7 +1017,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_core_compute_images", e)
+            self.__print_error("__get_core_block_volume_boot_backup", e)
             return data
 
     ##########################################################################
@@ -1138,39 +1142,6 @@ class ShowOCIData(object):
             return data
 
     ##########################################################################
-    # get compute boot volume
-    ##########################################################################
-    def __get_core_block_volume_backup(self, region_name, compartment):
-
-        data = []
-        try:
-            backups = self.service.search_multi_items(self.service.C_BLOCK, self.service.C_BLOCK_VOLBACK, 'region_name', region_name, 'compartment_id', compartment['id'])
-
-            for backup in backups:
-                value = {}
-
-                if backup['backup_lifecycle_state'] != "AVAILABLE":
-                    value['name'] = backup['backup_name'] + " ( Source " + backup['backup_lifecycle_state'] + " )"
-                else:
-                    value['name'] = backup['backup_name']
-                value['desc'] = backup['display_name']
-                value['type'] = backup['type'] + ", " + backup['source_type'] + ", " + backup['time_created'][0:16] + " -> " + backup['expiration_time'][0:16]
-                value['size'] = (str(backup['size_in_gbs']) + "gb " + ", Stored " + str(backup['unique_size_in_gbs']) + "gb")
-                value['sum_info'] = 'Object Storage - BV Backups (gb)'
-                value['sum_size_gb'] = (str(backup['unique_size_in_gbs']))
-                value['volume_id'] = str(backup['volume_id'])
-
-                data.append(value)
-
-            if len(data) > 0:
-                return sorted(data, key=lambda k: k['name'])
-            return data
-
-        except Exception as e:
-            self.__print_error("__get_core_block_volume_block_backup", e)
-            return data
-
-    ##########################################################################
     # print compute instances
     ##########################################################################
     def __get_core_compute_instances(self, region_name, compartment):
@@ -1250,8 +1221,8 @@ class ShowOCIData(object):
 
             for image in images:
                 value = {'id': image['id'],
-                         'desc': image['display_name'] + " - " + image['operating_system'] + " - " + image[
-                             'size_in_gbs'] + "gb - Base:  " + image['base_image_name'],
+                         'desc': image['display_name'].ljust(24) + " - " + image['operating_system'] + " - " + image[
+                             'size_in_gbs'].rjust(3) + "gb - Base:  " + image['base_image_name'],
                          'sum_info': 'Object Storage - Images (gb)', 'sum_size_gb': image['size_in_gbs'],
                          'time_created': image['time_created'],
                          'defined_tags': image['defined_tags'], 'freeform_tags': image['freeform_tags']}
@@ -1318,6 +1289,35 @@ class ShowOCIData(object):
             return data
 
     ##########################################################################
+    # get compute autoscaling
+    ##########################################################################
+    def __get_core_compute_autoscaling(self, region_name, compartment):
+
+        data = []
+        try:
+
+            autos = self.service.search_multi_items(self.service.C_COMPUTE, self.service.C_COMPUTE_AUTOSCALING, 'region_name', region_name, 'compartment_id', compartment['id'])
+
+            for auto in autos:
+                value = {'id': auto['id'],
+                         'name': str(auto['display_name']) + " (" + ("ENABLED" if auto['is_enabled'] else "DISABLED") + ")",
+                         'time_created': auto['time_created'],
+                         'compartment_name': auto['compartment_name'],
+                         'compartment_id': auto['compartment_id'],
+                         'resource_id': auto['resource_id'],
+                         'resource_name': auto['resource_name'],
+                         'resource_type': auto['resource_type'],
+                         'policies': auto['policies']
+                         }
+                data.append(value)
+
+            return data
+
+        except Exception as e:
+            self.__print_error("__get_core_compute_autoscaling", e)
+            return data
+
+    ##########################################################################
     # Compute
     ##########################################################################
     #
@@ -1345,6 +1345,10 @@ class ShowOCIData(object):
             if len(data) > 0:
                 return_data['instance_pool'] = data
 
+            data = self.__get_core_compute_autoscaling(region_name, compartment)
+            if len(data) > 0:
+                return_data['autoscaling'] = data
+
             data = self.__get_core_block_volume_groups(region_name, compartment)
             if len(data) > 0:
                 return_data['volume_groups'] = data
@@ -1357,11 +1361,11 @@ class ShowOCIData(object):
             if len(data) > 0:
                 return_data['volume_not_attached'] = data
 
-            data = self.__get_core_block_volume_boot_backup(region_name, compartment)
+            data = self.__get_core_block_volume_boot_backup(region_name, compartment, 'boot_volume_id', self.service.C_BLOCK_BOOTBACK)
             if len(data) > 0:
                 return_data['boot_volume_backup'] = data
 
-            data = self.__get_core_block_volume_backup(region_name, compartment)
+            data = self.__get_core_block_volume_boot_backup(region_name, compartment, 'volume_id', self.service.C_BLOCK_VOLBACK)
             if len(data) > 0:
                 return_data['volume_backup'] = data
 
@@ -1606,6 +1610,7 @@ class ShowOCIData(object):
                          'connection_strings': str(dbs['connection_strings']), 'sum_info': "Autonomous Database (OCPUs) - " + dbs['license_model'],
                          'sum_count': str(dbs['sum_count']), 'sum_info_storage': "Autonomous Database (tb)",
                          'sum_size_tb': str(dbs['data_storage_size_in_tbs']), 'backups': self.__get_database_autonomous_backups(dbs['backups']),
+                         'whitelisted_ips': dbs['whitelisted_ips'],
                          'defined_tags': dbs['defined_tags'], 'freeform_tags': dbs['freeform_tags']}
 
                 data.append(value)
