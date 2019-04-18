@@ -270,7 +270,10 @@ class ShowOCIService(object):
     # return budget data
     ##########################################################################
     def get_budgets(self):
-        return self.data[self.C_BUDGETS][self.C_BUDGETS_BUDGETS]
+        if self.C_BUDGETS in self.data:
+            if self.C_BUDGETS_BUDGETS in self.data[self.C_BUDGETS]:
+                return self.data[self.C_BUDGETS][self.C_BUDGETS_BUDGETS]
+        return []
 
     ##########################################################################
     # return subnet
