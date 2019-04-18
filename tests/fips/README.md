@@ -50,7 +50,7 @@ Sample Python program
 
 This Python program which fails when used in FIPS complicant environment
 This is from [confluence](https://confluence.oci.oraclecorp.com/display/SEC/OpenSSL+with+FIPS+for+Python)
-with additions from the [CLI](https://bitbucket.aka.lgl.grungy.us/projects/SDK/repos/python-cli/browse/src/oci_cli/fips.py)
+with additions from the [CLI](https://bitbucket.oci.oraclecorp.com/projects/SDK/repos/python-cli/browse/src/oci_cli/fips.py)
 
 ```
 import ctypes

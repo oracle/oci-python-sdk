@@ -16,8 +16,8 @@ eval "$(pyenv init -)"
 # export PIP_CONFIG_FILE=~/pip.conf
 # touch $PIP_CONFIG_FILE
 # echo "[global]" > $PIP_CONFIG_FILE
-# echo "index-url = https://artifactory.aka.lgl.grungy.us/api/pypi/global-dev-pypi/simple" >> $PIP_CONFIG_FILE
-# echo "trusted-host = artifactory.aka.lgl.grungy.us" >> $PIP_CONFIG_FILE
+# echo "index-url = https://artifactory.oci.oraclecorp.com/api/pypi/global-dev-pypi/simple" >> $PIP_CONFIG_FILE
+# echo "trusted-host = artifactory.oci.oraclecorp.com" >> $PIP_CONFIG_FILE
 
 # Export the path to the fips version of libcrypto
 export FIPS_LIBCRYPTO_PATH=/usr/lib64/libcrypto.so.1.0.2k
