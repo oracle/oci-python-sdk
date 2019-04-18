@@ -2433,6 +2433,10 @@ class ShowOCIService(object):
             # loop on all compartments
             for compartment in compartments:
 
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
                 autos = []
                 try:
                     # pagination didn't work on auto scaling code
