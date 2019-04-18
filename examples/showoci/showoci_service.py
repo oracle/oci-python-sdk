@@ -520,10 +520,25 @@ class ShowOCIService(object):
         if self.flags.read_object_storage:
             self.__load_object_storage_main()
 
-        # file storage - not exist in toronto yet
-        if region_name != "ca-toronto-1":
-            if self.flags.read_file_storage:
-                self.__load_file_storage_main()
+        # file storage
+        if self.flags.read_file_storage:
+            self.__load_file_storage_main()
+
+        # containers
+        if self.flags.read_containers:
+            self.__load_container_main()
+
+        # resource management
+        if self.flags.read_resource_management:
+            self.__load_resource_management_main()
+
+        # if streams
+        if self.flags.read_streams:
+            self.__load_streams_main()
+
+        # if budgets
+        if self.flags.read_budgets:
+            self.__load_budgets_main()
 
         # only available in US Regions
         if region_name == "us-ashburn-1" or region_name == "us-phoenix-1":
@@ -531,23 +546,6 @@ class ShowOCIService(object):
             # email distributions
             if self.flags.read_email_distribution:
                 self.__load_email_main()
-
-            # resource management - only at us for now
-            if self.flags.read_resource_management:
-                self.__load_resource_management_main()
-
-            # if streams
-            if self.flags.read_streams:
-                self.__load_streams_main()
-
-            # if budgets
-            if self.flags.read_budgets:
-                self.__load_budgets_main()
-
-        # containers - not exist in toronto yet
-        if region_name != "ca-toronto-1":
-            if self.flags.read_containers:
-                self.__load_container_main()
 
     ##########################################################################
     # Identity Module
