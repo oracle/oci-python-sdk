@@ -604,7 +604,7 @@ class ShowOCIOutput(object):
                     print(self.tabs + "Path Route : " + prs['name'])
                     if 'path_routes' in prs:
                         for p in prs['path_routes']:
-                            print(self.tabs + "           : Backend: " + str(p.backend_set_name) + ',  Path: ' + p.path)
+                            print(self.tabs + "           : Backend: " + str(p['backend_set_name']) + ',  Path: ' + p['path'])
 
             # Hostnames
             if 'hostnames' in lb:

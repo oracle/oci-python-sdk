@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
-19.4.26 - 2019-04-26
+19.4.23 - 2019-04-23
 ====================
 
 Added
@@ -20,6 +20,7 @@ Added
 Fixed / Changed
 ---------------
 * Display Volume Backups with 1 line instead of 3 lines
+* Fix load balancer pathroute error when output to JSON
 
 ====================
 19.4.14 - 2019-04-14

@@ -3420,7 +3420,16 @@ class ShowOCIService(object):
                     datapath = []
                     for prs in arr.path_route_sets:
                         pro = arr.path_route_sets[prs]
-                        datapath.append({'name': pro.name, 'path_routes': pro.path_routes})
+
+                        # get the path routes
+                        array_path = []
+                        if pro.path_routes is not None:
+                            for path_route in pro.path_routes:
+                                array_path.append({'path': path_route.path, 'backend_set_name': path_route.backend_set_name})
+
+                        # add the paths
+                        datapath.append({'name': pro.name, 'path_routes': array_path})
+
                     val['path_route'] = datapath
 
                     # Hostnames
