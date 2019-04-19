@@ -1554,7 +1554,7 @@ class ShowOCISummary(object):
 
                 # sort and print
                 for d in sorted(grouped_data, key=lambda i: i['type']):
-                    print(d['type'].ljust(43)[0:42] + " - " + str(round(d['size'])).rjust(10))
+                    print(d['type'].ljust(46)[0:45] + " - " + str(round(d['size'])).rjust(10))
 
         except Exception as e:
             self.__print_error("__summary_print_results", e)

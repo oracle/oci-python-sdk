@@ -1152,7 +1152,7 @@ class ShowOCIData(object):
 
             for instance in instances:
                 inst = {'id': instance['id'], 'name': instance['shape'] + " - " + instance['display_name'] + " - " + instance['lifecycle_state'],
-                        'sum_info': 'Compute', 'sum_shape': instance['image_os'] + " - " + instance['shape'],
+                        'sum_info': 'Compute', 'sum_shape': instance['image_os'][0:14] + " - " + instance['shape'],
                         'availability_domain': instance['availability_domain'],
                         'fault_domain': instance['fault_domain'],
                         'time_maintenance_reboot_due': str(instance['time_maintenance_reboot_due']),
