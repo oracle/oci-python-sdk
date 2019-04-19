@@ -703,53 +703,52 @@ Compartment gse00000000 (root):
 ###########################################################################
 #                      Summary - Compartment generic                      #
 ###########################################################################
-Compute - Block Storage (gb)          -       3547
-Compute - VM.Standard1.1              -          1
-Compute - VM.Standard2.1              -          7
-Compute - VM.Standard2.4              -          1
-Object Storage - BV Backups (gb)      -       1276
-Object Storage - Buckets (gb)         -        216
+Compute - Block Storage (gb)              -       3547
+Compute - Oracle Linux - VM.Standard1.1   -          1
+Compute - Oracle Linux - VM.Standard2.1   -          7
+Compute - Oracle Linux - VM.Standard2.4   -          1
+Object Storage - BV Backups (gb)          -       1276
+Object Storage - Buckets (gb)             -        216
 
 ###########################################################################
 #                        Summary - Compartment npdb                       #
 ###########################################################################
-Database - Exadata.Half2.184          -          1
-Object Storage - Buckets (gb)         -       6152
+Database - Exadata.Half2.184              -          1
+Object Storage - Buckets (gb)             -       6152
 
 ###########################################################################
 #                       Summary - Compartment npebs                       #
 ###########################################################################
-Compute - Block Storage (gb)          -      14121
-Compute - VM.Standard2.1              -         16
-Compute - VM.Standard2.2              -         28
-Compute - VM.Standard2.4              -          6
-Compute - VM.Standard2.8              -          5
-File Storage (gb)                     -       2617
-Load Balancer 100Mbps                 -         10
-Object Storage - BV Backups (gb)      -       2806
-Object Storage - Images (gb)          -       1862
+Compute - Block Storage (gb)              -      14121
+Compute - Oracle Linux - VM.Standard2.1   -         16
+Compute - Oracle Linux - VM.Standard2.4   -          6
+Compute - Oracle Linux - VM.Standard2.8   -          5
+Compute - Windows - VM.Standard2.2        -         28
+File Storage (gb)                         -       2617
+Load Balancer 100Mbps                     -         10
+Object Storage - BV Backups (gb)          -       2806
+Object Storage - Images (gb)              -       1862
 
 ##########################################################################################
 #                                     Summary Total                                      #
 ##########################################################################################
-Compute - Block Storage (gb)          -      17668
-Compute - VM.Standard1.1              -          1
-Compute - VM.Standard2.1              -         23
-Compute - VM.Standard2.2              -         28
-Compute - VM.Standard2.4              -          7
-Compute - VM.Standard2.8              -          5
-Database - Exadata.Half2.184          -          1
-File Storage (gb)                     -       2617
-Load Balancer 100Mbps                 -         10
-Object Storage - BV Backups (gb)      -       4082
-Object Storage - Buckets (gb)         -       6368
-Object Storage - Images (gb)          -       1862
+Compute - Block Storage (gb)              -      17668
+Compute - Oracle Linux - VM.Standard1.1   -          1
+Compute - Oracle Linux - VM.Standard2.1   -         23
+Compute - Oracle Linux - VM.Standard2.4   -          7
+Compute - Oracle Linux - VM.Standard2.8   -          5
+Compute - Windows - VM.Standard2.2        -         28
+Database - Exadata.Half2.184              -          1
+File Storage (gb)                         -       2617
+Load Balancer 100Mbps                     -         10
+Object Storage - BV Backups (gb)          -       4082
+Object Storage - Buckets (gb)             -       6368
+Object Storage - Images (gb)              -       1862
 ```
   
 ## Below example JSON report on us-ashburn-1 region, compartment Adi without identity 
 
 ```
-
 > showoci -t gse00015259 -ani -js -rg us-ashburn-1 -cp Adi
 
 ############################################################

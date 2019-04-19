@@ -14,6 +14,7 @@ Added
 * Added Identity - Cost Tracking Tags
 * Added Budgets
 * Added Compute Autoscaling
+* Add OS Version to the compute summary
 
 Fixed / Changed
 ---------------

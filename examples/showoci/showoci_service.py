@@ -2310,7 +2310,7 @@ class ShowOCIService(object):
                 print(".", end="")
 
                 # loop on array
-                # arr = oci.core.models.Instance()
+                # arr = oci.core.models.Instance
                 for arr in arrs:
                     if (arr.lifecycle_state == oci.core.models.Instance.LIFECYCLE_STATE_TERMINATED or
                             arr.lifecycle_state == oci.core.models.Instance.LIFECYCLE_STATE_PROVISIONING or
@@ -2328,11 +2328,20 @@ class ShowOCIService(object):
                            'console_id': "", 'console': "", 'console_connection_string': "",
                            'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                            'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
-                           'console_vnc_connection_string': "", 'image': "Not Found"}
+                           'console_vnc_connection_string': "", 'image': "Not Found", 'image_os': "Oracle Linux"}
 
-                    # check image name
+                    # if PaaS compartment assign Paas Image
+                    if self.__if_managed_paas_compartment(compartment['name']):
+                        val['image_os'] = "PaaS Image"
+                        val['image'] = "PaaS Image"
+
+                    # get image info
                     try:
-                        val['image'] = str(compute.get_image(arr.image_id).data.display_name)
+                        # image = oci.core.models.Image
+                        image = compute.get_image(arr.image_id).data
+                        if image:
+                            val['image'] = str(image.display_name)
+                            val['image_os'] = str(image.operating_system)
                     except Exception:
                         pass
 
